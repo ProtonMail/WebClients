@@ -64,11 +64,6 @@ msgid_plural "{{number}} messages moved to {{folder}}"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/templates/user/signupPayForm.tpl.html:90
-msgctxt "Action"
-msgid "<i class=\"fa fa-lock\"></i> Submit"
-msgstr ""
-
 #: ./src/templates/bridge/bridgeFreePanel.tpl.html:2
 msgctxt "Action"
 msgid "Activate"
@@ -145,7 +140,7 @@ msgctxt "Action"
 msgid "Add auto-reply"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:126
+#: ./src/templates/filter/modal.tpl.html:125
 msgctxt "Action"
 msgid "Add condition"
 msgstr ""
@@ -183,7 +178,7 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:202
+#: ./src/templates/filter/modal.tpl.html:201
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
@@ -194,7 +189,7 @@ msgctxt "Action"
 msgid "Add key"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:148
+#: ./src/templates/filter/modal.tpl.html:147
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -377,7 +372,7 @@ msgstr ""
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:35
-#: ./src/templates/filter/modal.tpl.html:248
+#: ./src/templates/filter/modal.tpl.html:247
 #: ./src/templates/modals/activateOrganization.tpl.html:25
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -399,7 +394,7 @@ msgstr ""
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:16
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:60
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:101
@@ -501,7 +496,7 @@ msgctxt "Action"
 msgid "Change verification number"
 msgstr ""
 
-#: ./src/templates/payment/paypalView.tpl.html:22
+#: ./src/templates/payment/paypalView.tpl.html:20
 msgctxt "Action"
 msgid "Checkout with PayPal"
 msgstr ""
@@ -592,7 +587,7 @@ msgstr ""
 #: ./src/templates/modals/pay.tpl.html:107
 #: ./src/templates/modals/pay.tpl.html:16
 #: ./src/templates/modals/payment/modal.tpl.html:19
-#: ./src/templates/modals/payment/modal.tpl.html:63
+#: ./src/templates/modals/payment/modal.tpl.html:62
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:3
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
@@ -664,6 +659,8 @@ msgctxt "Action"
 msgid "Contacts"
 msgstr ""
 
+#: ./src/templates/modals/card.tpl.html:17
+#: ./src/templates/modals/payment/modal.tpl.html:72
 #: ./src/templates/utils/linkWarningModal.tpl.html:45
 msgctxt "Action"
 msgid "Continue"
@@ -1483,6 +1480,7 @@ msgstr ""
 #: ./src/templates/contact/contactGroupModal.tpl.html:91
 #: ./src/templates/contact/contactSelectorForm.tpl.html:57
 #: ./src/templates/contact/contactSelectorForm.tpl.html:63
+#: ./src/templates/filter/modal.tpl.html:113
 msgctxt "Action"
 msgid "Remove"
 msgstr ""
@@ -1571,6 +1569,7 @@ msgctxt "Action"
 msgid "Restore administrator privileges"
 msgstr ""
 
+#: ./src/templates/payment/paypalView.tpl.html:11
 #: ./src/templates/user/signupPayForm.tpl.html:95
 msgctxt "Action"
 msgid "Retry"
@@ -1606,7 +1605,7 @@ msgstr ""
 #: ./src/templates/directives/composer/composer.tpl.html:119
 #: ./src/templates/directives/composer/composer.tpl.html:126
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:254
+#: ./src/templates/filter/modal.tpl.html:253
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
@@ -1772,15 +1771,15 @@ msgstr ""
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:29
 #: ./src/templates/modals/activateOrganization.tpl.html:28
 #: ./src/templates/modals/bug.tpl.html:19
-#: ./src/templates/modals/card.tpl.html:17
 #: ./src/templates/modals/customizeInvoice.tpl.html:57
 #: ./src/templates/modals/decryptImportKey.tpl.html:20
 #: ./src/templates/modals/humanVerification.tpl.html:22
 #: ./src/templates/modals/organizationRecovery.tpl.html:15
-#: ./src/templates/modals/payment/modal.tpl.html:69
+#: ./src/templates/modals/payment/modal.tpl.html:71
 #: ./src/templates/modals/reactivate.tpl.html:25
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:23
 #: ./src/templates/modals/switchPasswordMode.tpl.html:74
+#: ./src/templates/user/signupPayForm.tpl.html:90
 #: ./src/templates/user/signupUserForm.tpl.html:53
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:19
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:17
@@ -1840,6 +1839,7 @@ msgid "Trust Public Keys"
 msgstr ""
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:6
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:51
 msgctxt "Action"
 msgid "Try again"
 msgstr ""
@@ -1934,6 +1934,11 @@ msgctxt "Action"
 msgid "Uploading"
 msgstr ""
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:54
+msgctxt "Action"
+msgid "Use a different payment method"
+msgstr ""
+
 #: ./src/templates/payment/giftCodeBtn.tpl.html:3
 msgctxt "Action"
 msgid "Use gift code"
@@ -1945,13 +1950,9 @@ msgid "User"
 msgstr ""
 
 #: ./src/templates/modals/domain/verification.tpl.html:38
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:61
 msgctxt "Action"
 msgid "Verify"
-msgstr ""
-
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:17
-msgctxt "Action"
-msgid "Verify payment"
 msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:101
@@ -1998,11 +1999,6 @@ msgstr ""
 #: ./src/templates/payment/donation.tpl.html:129
 msgctxt "Action"
 msgid "complete setup"
-msgstr ""
-
-#: ./src/templates/filter/modal.tpl.html:113
-msgctxt "Action"
-msgid "title"
 msgstr ""
 
 #: ./src/templates/modals/donate.tpl.html:59
@@ -3809,11 +3805,6 @@ msgctxt "Error"
 msgid "Passwords do not match"
 msgstr ""
 
-#: ./src/app/payment/modals/paymentVerificationModal.js:17
-msgctxt "Error"
-msgid "Payment verification modal closed"
-msgstr ""
-
 #: ./src/app/members/services/memberSubLogin.js:16
 #: ./src/app/members/services/membersValidator.js:44
 msgctxt "Error"
@@ -4277,22 +4268,22 @@ msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:135
+#: ./src/templates/filter/modal.tpl.html:134
 msgctxt "Filter modal label"
 msgid "Apply labels"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:210
+#: ./src/templates/filter/modal.tpl.html:209
 msgctxt "Filter modal label"
 msgid "Mark as"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:156
+#: ./src/templates/filter/modal.tpl.html:155
 msgctxt "Filter modal label"
 msgid "Move to"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:235
+#: ./src/templates/filter/modal.tpl.html:234
 msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr ""
@@ -4817,11 +4808,6 @@ msgstr ""
 #: ./src/templates/user/pmSignatureToggle.tpl.html:11
 msgctxt "Info"
 msgid "A <a ui-sref=\"secured.dashboard({scroll: true})\">paid plan</a> is required to turn off the ProtonMail signature. Paid plan revenue allows us to continue supporting free accounts."
-msgstr ""
-
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:12
-msgctxt "Info"
-msgid "A new tab will open to confirm the payment, please disable any popup blockers."
 msgstr ""
 
 #: ./src/app/authentication/interceptors/httpInterceptor.js:19
@@ -5735,6 +5721,11 @@ msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr ""
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:43
+msgctxt "Info"
+msgid "Payment can take a few minutes to fully verify."
+msgstr ""
+
 #: ./src/app/payment/directives/payInvoiceBtn.js:13
 msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
@@ -5821,6 +5812,11 @@ msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr ""
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:48
+msgctxt "Info"
+msgid "Please try again, use a different payment method, or call your bank for assistance."
+msgstr ""
+
 #: ./src/app/members/services/memberActions.js:88
 msgctxt "Info"
 msgid "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support."
@@ -5831,9 +5827,14 @@ msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
 msgstr ""
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:11
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:35
 msgctxt "Info"
-msgid "Please verify the payment in the new tab."
+msgid "Please verify payment at the new tab which was opened."
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
+msgctxt "Info"
+msgid "Please verify the card in the new tab which was opened."
 msgstr ""
 
 #: ./src/app/formUtils/directives/codeVerificator.js:10
@@ -6283,6 +6284,11 @@ msgctxt "Info"
 msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character."
 msgstr ""
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
+msgctxt "Info"
+msgid "Verification can take a few minutes."
+msgstr ""
+
 #: ./src/templates/formUtils/codeVerificator.tpl.html:56
 msgctxt "Info"
 msgid "Verification code sent"
@@ -6298,6 +6304,17 @@ msgstr ""
 #: ./src/templates/contact/contactError.tpl.html:33
 msgctxt "Info"
 msgid "Verification of this content’s signature failed"
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:24
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:31
+msgctxt "Info"
+msgid "Verification will open a new tab, please disable any popup blockers."
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+msgctxt "Info"
+msgid "Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately."
 msgstr ""
 
 #: ./src/templates/layout/pre.tpl.html:4
@@ -6494,6 +6511,11 @@ msgctxt "Info"
 msgid "You will be prompted to save the attachment."
 msgstr ""
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:29
+msgctxt "Info"
+msgid "You will be soon redirected to your bank to verify your payment."
+msgstr ""
+
 #: ./src/templates/payment/paypalView.tpl.html:3
 msgctxt "Info"
 msgid "You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue."
@@ -6544,6 +6566,11 @@ msgstr ""
 #: ./src/templates/partials/safari.warning.tpl.html:13
 msgctxt "Info"
 msgid "Your attachments are secure and encrypted, but to download them requires extra work. We recommend using a different web browser such as Chrome or Firefox for a better user experience."
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:19
+msgctxt "Info"
+msgid "Your bank requires 3-D Secure verification for security purposes."
 msgstr ""
 
 #: ./src/templates/user/humanVerification.tpl.html:18
@@ -6940,7 +6967,7 @@ msgid "Annually"
 msgstr ""
 
 #: ./src/app/labels/directives/dropdownFolders.js:13
-#: ./src/templates/filter/modal.tpl.html:173
+#: ./src/templates/filter/modal.tpl.html:172
 msgctxt "Label"
 msgid "Archive"
 msgstr ""
@@ -7150,7 +7177,7 @@ msgid "Highest security"
 msgstr ""
 
 #: ./src/app/labels/directives/dropdownFolders.js:8
-#: ./src/templates/filter/modal.tpl.html:165
+#: ./src/templates/filter/modal.tpl.html:164
 msgctxt "Label"
 msgid "Inbox"
 msgstr ""
@@ -7288,7 +7315,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:217
+#: ./src/templates/filter/modal.tpl.html:216
 msgctxt "Label"
 msgid "Read"
 msgstr ""
@@ -7329,12 +7356,12 @@ msgid "Signature"
 msgstr ""
 
 #: ./src/app/labels/directives/dropdownFolders.js:18
-#: ./src/templates/filter/modal.tpl.html:181
+#: ./src/templates/filter/modal.tpl.html:180
 msgctxt "Label"
 msgid "Spam"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:224
+#: ./src/templates/filter/modal.tpl.html:223
 msgctxt "Label"
 msgid "Starred"
 msgstr ""
@@ -7355,7 +7382,7 @@ msgid "Time zone"
 msgstr ""
 
 #: ./src/app/labels/directives/dropdownFolders.js:23
-#: ./src/templates/filter/modal.tpl.html:189
+#: ./src/templates/filter/modal.tpl.html:188
 msgctxt "Label"
 msgid "Trash"
 msgstr ""
@@ -8331,12 +8358,12 @@ msgctxt "Payment method"
 msgid "Credit Card"
 msgstr ""
 
-#: ./src/templates/payment/paypalView.tpl.html:6
+#: ./src/templates/payment/paypalView.tpl.html:7
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
 msgstr ""
 
-#: ./src/templates/payment/paypalView.tpl.html:10
+#: ./src/templates/payment/paypalView.tpl.html:8
 msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr ""
@@ -9251,6 +9278,11 @@ msgctxt "Title"
 msgid "2-year plan"
 msgstr ""
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+msgctxt "Title"
+msgid "3-D Secure verification failed"
+msgstr ""
+
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:13
 #: ./src/app/ui/factories/pageTitlesModel.js:25
 msgctxt "Title"
@@ -9260,7 +9292,7 @@ msgstr ""
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:49
-#: ./src/templates/filter/modal.tpl.html:130
+#: ./src/templates/filter/modal.tpl.html:129
 #: ./src/templates/invoices/invoiceList.tpl.html:7
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:215
@@ -9520,6 +9552,16 @@ msgstr ""
 #: ./src/templates/directives/composer/composerInputMeta.tpl.html:20
 msgctxt "Title"
 msgid "CC:"
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:8
+msgctxt "Title"
+msgid "Card verification"
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:13
+msgctxt "Title"
+msgid "Card verification in progress"
 msgstr ""
 
 #. table heading for the domains page table listing of addresses
@@ -10562,12 +10604,12 @@ msgctxt "Title"
 msgid "Payment methods"
 msgstr ""
 
-#: ./src/app/payment/modals/paymentVerificationModal.js:14
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:7
 msgctxt "Title"
 msgid "Payment verification"
 msgstr ""
 
-#: ./src/app/payment/modals/paymentVerificationModal.js:13
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:12
 msgctxt "Title"
 msgid "Payment verification in progress"
 msgstr ""
@@ -10626,6 +10668,11 @@ msgstr ""
 #: ./src/app/members/services/memberActions.js:61
 msgctxt "Title"
 msgid "Privatize User"
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:10
+msgctxt "Title"
+msgid "Processing..."
 msgstr ""
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:45
@@ -12027,6 +12074,11 @@ msgstr ""
 #: ./src/templates/security/sessionLogsTable.tpl.html:27
 msgctxt "auth log entry"
 msgid "Login success"
+msgstr ""
+
+#: ./src/templates/security/sessionLogsTable.tpl.html:36
+msgctxt "auth log entry"
+msgid "Login success (two-factor)"
 msgstr ""
 
 #: ./src/templates/security/sessionLogsTable.tpl.html:30
