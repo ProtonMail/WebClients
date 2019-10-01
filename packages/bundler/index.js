@@ -276,7 +276,7 @@ if (argv._.includes('changelog')) {
     const url = argv.url || (PKG.bugs || {}).url;
     debug({ argv }, 'arguments');
 
-    if (!['dev', process.env.QA_BRANCH].includes(branch)) {
+    if (!['dev', process.env.QA_BRANCH, 'v4'].includes(branch)) {
         return warn(`No changelog available for the branch ${branch}`); // not available
     }
 
