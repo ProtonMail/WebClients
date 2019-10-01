@@ -108,7 +108,6 @@ if [ "$1" = 'changelog' ]; then
     exit;
 fi;
 
-
 if [[ "${1}" =~ (dev|beta|old|tor) ]]; then
     for branch in $(git branch -a);
     do
@@ -116,6 +115,7 @@ if [[ "${1}" =~ (dev|beta|old|tor) ]]; then
             logCommit "$branch";
         fi;
     done;
+    exit;
 fi
 
 
@@ -141,6 +141,7 @@ if [ "$1" = 'prod' ]; then
             logCommit "$branch";
         fi;
     done;
+    exit;
 fi
 
 if [ -z "$1" ]; then

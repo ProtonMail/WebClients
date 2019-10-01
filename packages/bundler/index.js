@@ -142,6 +142,14 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
                 return execa('npm', ['run', 'i18n:upgrade']);
             }
         },
+        {
+            title: 'Generate the version info',
+            task(ctx) {
+                const { tag = `v${PKG.version}`, commit } = ctx.config;
+                const fileName = path.join('dist', 'assets/version.json');
+                return script('createVersionJSON.sh', [commit, tag, fileName]);
+            }
+        },
         ...hookPostTasks,
         {
             title: 'Inform us about new translations available',

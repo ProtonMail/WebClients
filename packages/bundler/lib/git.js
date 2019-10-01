@@ -4,27 +4,25 @@ const { bash, script } = require('./helpers/cli');
 const { title, debug, IS_VERBOSE } = require('./helpers/log')('proton-bundler');
 
 async function push(branch, { tag = 'v0.0.0', originCommit, originBranch }) {
-    const commands = ['cd dist'];
-
+    // can't use await bash, it doesn't keep the context for next commands :/
+    const cmd = ['cd dist'];
     const message = /-prod-/.test(branch) ? `New Release ${tag}` : 'New Release';
     const description = `Based on the commit ${originCommit} on the branch ${originBranch}`;
 
     if (os.platform() === 'linux') {
-        commands.push('git ls-files --deleted -z | xargs -r -0 git rm');
+        cmd.push('git ls-files --deleted -z | xargs -r -0 git rm');
     } else {
-        commands.push('(git ls-files --deleted -z  || echo:) | xargs -0 git rm');
+        cmd.push('(git ls-files --deleted -z  || echo:) | xargs -0 git rm');
     }
-    commands.push('git add --all');
-    commands.push(`git commit -m "${message}" -m '${description}'`);
-    commands.push(`git push origin ${branch}`);
-    commands.push('cd ..');
-    commands.push(`git push origin ${branch}`);
-    return bash(commands.join(' && '));
+    cmd.push('git add --all');
+    cmd.push(`git commit -m "${message}" -m '${description}'`);
+    cmd.push(`git push origin ${branch}`);
+    cmd.push('cd ..');
+    debug(cmd, 'Push branch');
+    return bash(cmd.join(' && '));
 }
 
 async function pull(branch, force, fromCi) {
-    const flag = force ? '-f' : '';
-
     debug({
         branch,
         force,
@@ -32,14 +30,13 @@ async function pull(branch, force, fromCi) {
         GIT_REMOTE_URL_CI: process.env.GIT_REMOTE_URL_CI
     });
 
-    await bash(`git fetch ${flag} origin ${branch}:${branch}`);
-    await bash(`git clone file://$PWD --depth 1 --single-branch --branch ${branch} dist`);
-    await bash('cd dist && rm -rf *');
-
     // For the CI to force SSH
     if (process.env.GIT_REMOTE_URL_CI && fromCi) {
         await bash(`git remote set-url origin ${process.env.GIT_REMOTE_URL_CI}`);
     }
+
+    await bash(`git clone "$(git remote get-url origin)" --depth 1 --branch ${branch} dist`);
+    await bash('cd dist && rm -rf *');
 
     if (IS_VERBOSE) {
         const { stdout } = await bash('git remote show origin');
