@@ -1,3 +1,17 @@
+# [3.16.5] - 2019-10-01
+
+## Fixed
+
+- Both log out and login in events were shown in the authentication logs for some users
+- Payment methods are now refreshed after top up or donation
+- Improvements for 3-D secure payment verification
+- Improvements for some login scenarios
+- Improvements to the translations
+
+## Changed
+
+- Updated pmcrypto library
+
 # [3.16.4] - 2019-09-11
 ## Added
 - Support for payments with 3DS enabled credit cards
