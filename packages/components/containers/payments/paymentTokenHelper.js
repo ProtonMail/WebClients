@@ -102,7 +102,7 @@ export const process = ({ Token, api, ApprovalURL, ReturnHost, signal }) => {
         const onMessage = (event) => {
             const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
-            if (getHostname(origin) !== getHostname(ReturnHost)) {
+            if (getHostname(origin) !== ReturnHost) {
                 return;
             }
 
