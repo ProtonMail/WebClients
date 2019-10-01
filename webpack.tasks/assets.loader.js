@@ -1,13 +1,11 @@
-const LIMIT = 10000;
 const DESIGN_SYSTEM_SVG = /sprite-icons.svg$/;
 
 module.exports = [
     {
         test: /\.(bmp|png|jpg|jpeg|gif|svg)$/,
-        loader: 'url-loader',
+        loader: 'file-loader',
         exclude: DESIGN_SYSTEM_SVG,
         options: {
-            limit: LIMIT,
             name: 'assets/img/[name].[hash:8].[ext]'
         }
     },
