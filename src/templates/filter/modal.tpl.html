@@ -62,13 +62,14 @@
                         class="pm-label"
                         translate
                         translate-context="Title">Logic</label>
-
-                    <select
-                        size="1"
-                        class="pm-field w100 mlauto"
-                        name="logic"
-                        ng-model="ctrl.filter.Simple.Operator"
-                        ng-options="operator.label for operator in ctrl.operators"></select>
+                    <div class="w100">
+                        <select
+                            size="1"
+                            class="pm-field w100"
+                            name="logic"
+                            ng-model="ctrl.filter.Simple.Operator"
+                            ng-options="operator.label for operator in ctrl.operators"></select>
+                    </div>
                 </div>
 
                 <div
@@ -78,12 +79,12 @@
                     }"
                     class="flex flex-nowrap onmobile-flex-column mb1">
 
-                    <div class="pm-label">
+                    <div class="pm-label pt0 mb0-5">
                         <span translate translate-context="Title">Conditions</span>
-                        <span>{{$index + 1}}</span>
+                        <span class="mr1">{{$index + 1}}</span>
                         <button
                             ng-click="ctrl.removeCondition(condition)"
-                            class="pm-button pm-button--small ml1"
+                            class="pm-button pm-button--for-icon "
                             type="button">
                             <icon data-name="trash"></icon>
                             <span class="sr-only" translate-context="action"
@@ -148,7 +149,7 @@
                             class="flex flex-column w100 mb1 mt1">
 
                             <div
-                                class="flex flex-nowrap onmobile-flex-column mb1 EditConditionValue-container mb0-5"
+                                class="flex flex-nowrap mb1 EditConditionValue-container mb0-5"
                                 ng-if="condition.Values.length"
                                 ng-repeat="value in condition.Values track by value"
                                 data-info="Or">
@@ -167,7 +168,7 @@
                                     translate-context="Action">Delete</button>
                             </div>
 
-                            <div class="flex flex-nowrap onmobile-flex-column">
+                            <div class="flex flex-nowrap ">
                                 <input
                                     class="pm-field w80"
                                     id="textOrPattern"
@@ -182,15 +183,15 @@
                                 <button
                                     role="button"
                                     ng-disabled="!condition.value"
-                                    class="pm-button ml1"
+                                    class="pm-button pm-button--for-icon inline-flex ml1"
                                     type="button"
-                                    pt-tooltip-translate="Remove"
+                                    pt-tooltip-translate="Add"
                                     pt-tooltip-translate-context="Action"
                                     ng-hide="ctrl.filter.Simple.Conditions.length === 1"
                                     ng-click="ctrl.removeCondition(condition)"
                                     class="pm_button white">
-                                    <icon data-name="trash" class="mauto"></icon>
-                                    <span class="sr-only" translate-context="action" translate>Remove</span>
+                                    <icon data-name="add" class="mauto"></icon>
+                                    <span class="sr-only" translate-context="action" translate>Add</span>
                                 </button>
                             </div>
 
@@ -206,8 +207,8 @@
                     </div>
                 </div>
 
-                <div class="flex flex-nowrap onmobile-flex-column mb1">
-                    <span class="pm-label"></span>
+                <div class="flex flex-nowrap onmobile-flex-column mb2">
+                    <span class="pm-label pt0"></span>
                     <div class="w100">
                         <button
                             role="button"
