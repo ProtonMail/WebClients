@@ -40,9 +40,16 @@ function printLine {
 # Arg 1 <String> hash of the commit to strart the revision
 # Arg 2 <String> URL of the repository to bind the issue URL with number
 function logCommits {
+    local i=0;
     # We ignore commits from the CI
-    for commit in $(git log "$1"..HEAD --format=%H --invert-grep --grep="\[I18N@" --grep="Upgrade dependencies" --grep="Merge branch"); do
+    for commit in $(git log "$1"..HEAD --format=%H --invert-grep --grep="\[I18N@" --grep="Upgrade dependencies" --grep="Merge branch" --grep="Add change log for" --grep="Fix lint"); do
         printLine "$commit" "$2";
+        ((i+=1))
+
+        # Limit to 25 to prevent too many commits
+        if [ "$i" -eq 25 ]; then
+            break;
+        fi;
     done;
 }
 
@@ -70,7 +77,7 @@ function getChangelogReactComponents {
         rm -rf /tmp/react-components || echo 'nope';
 
         # Faster to clone
-        git clone "git@github.com:ProtonMail/react-components.git" --depth 30 --branch master /tmp/react-components;
+        git clone --quiet "git@github.com:ProtonMail/react-components.git" --depth 30 --branch master /tmp/react-components;
         cd /tmp/react-components;
 
         # Get the issue URL inside the package.
