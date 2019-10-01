@@ -29,7 +29,7 @@ const NewPasswordForm = ({ onSubmit, loading }) => {
                     required
                 />
             </div>
-            <div className="alignright mb1">
+            <div className="mb1">
                 <PasswordInput
                     value={confirmPassword}
                     placeholder={c('Password').t`Confirm new password`}
@@ -40,7 +40,7 @@ const NewPasswordForm = ({ onSubmit, loading }) => {
             </div>
             <Alert type="warning">{c('Info')
                 .t`Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.`}</Alert>
-            <div className="mb1">
+            <div className="alignright mb1">
                 <PrimaryButton loading={loading} type="submit">{c('Action').t`Submit`}</PrimaryButton>
             </div>
         </form>
