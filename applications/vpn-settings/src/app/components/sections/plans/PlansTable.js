@@ -12,16 +12,15 @@ import {
     useToggle
 } from 'react-components';
 import { c } from 'ttag';
-import { PLANS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES, PLAN_SERVICES, CYCLE } from 'proton-shared/lib/constants';
+import { PLANS, PLAN_SERVICES, DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE } from 'proton-shared/lib/constants';
+import { getPlanName } from 'proton-shared/lib/helpers/subscription';
 
 import PlanPrice from './PlanPrice';
 
 const { VISIONARY, VPNBASIC, VPNPLUS } = PLANS;
-const { PLAN } = PLAN_TYPES;
-const { VPN } = PLAN_SERVICES;
-
+const FREE = 'free';
 const PLAN_NUMBERS = {
-    free: 1,
+    [FREE]: 1,
     [VPNBASIC]: 2,
     [VPNPLUS]: 3,
     [VISIONARY]: 4
@@ -40,8 +39,7 @@ const PlansTable = ({
 }) => {
     const { state, toggle } = useToggle(expand);
     const mySubscriptionText = c('Title').t`My subscription`;
-    const { Plans = [] } = subscription;
-    const { Name = 'free' } = Plans.find(({ Services, Type }) => Type === PLAN && Services & VPN) || {};
+    const planName = getPlanName(subscription, PLAN_SERVICES.VPN) || FREE;
     const [countries, countriesLoading] = useVPNCountries();
 
     const getPlan = (planName) => plans.find(({ Name }) => Name === planName);
@@ -55,10 +53,7 @@ const PlansTable = ({
     };
 
     return (
-        <table
-            className="pm-plans-table pm-table--highlight noborder"
-            data-plan-number={Plans.length && PLAN_NUMBERS[Name]}
-        >
+        <table className="pm-plans-table pm-table--highlight noborder" data-plan-number={PLAN_NUMBERS[planName]}>
             <thead>
                 <tr>
                     <th className="is-empty" />
@@ -357,17 +352,17 @@ const PlansTable = ({
                         </th>
                         <td className="aligncenter">
                             <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect()}>
-                                {Name === 'free' ? c('Action').t`Update` : c('Action').t`Select`}
+                                {planName === 'free' ? c('Action').t`Update` : c('Action').t`Select`}
                             </SmallButton>
                         </td>
                         <td className="aligncenter">
                             <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect(VPNBASIC)}>
-                                {Name === VPNBASIC ? c('Action').t`Update` : c('Action').t`Select`}
+                                {planName === VPNBASIC ? c('Action').t`Update` : c('Action').t`Select`}
                             </SmallButton>
                         </td>
                         <td className="aligncenter">
                             <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect(VPNPLUS)}>
-                                {Name === VPNPLUS ? c('Action').t`Update` : c('Action').t`Select`}
+                                {planName === VPNPLUS ? c('Action').t`Update` : c('Action').t`Select`}
                             </SmallButton>
                         </td>
                         <td className="aligncenter">
@@ -376,7 +371,7 @@ const PlansTable = ({
                                 className="pm-button--primary"
                                 onClick={onSelect(VISIONARY)}
                             >
-                                {Name === VISIONARY ? c('Action').t`Update` : c('Action').t`Select`}
+                                {planName === VISIONARY ? c('Action').t`Update` : c('Action').t`Select`}
                             </SmallButton>
                         </td>
                     </tr>
