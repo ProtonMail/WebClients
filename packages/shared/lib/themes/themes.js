@@ -6,16 +6,26 @@ import lightTheme from 'design-system/_sass/pm-styles/_pm-light-theme.scss';
 import blueTheme from 'design-system/_sass/pm-styles/_pm-blue-theme.scss';
 import { c } from 'ttag';
 
-export const PROTON_THEMES = {
-    DARK: {
-        getI18NLabel() {
-            return c('Theme').t`Dark (Default)`;
-        },
-        identifier: '/* dark-theme */',
-        src: themeDarkSvg,
-        theme: '',
-        customizable: false
+export const DEFAULT_THEME = {
+    getI18NLabel() {
+        return c('Theme').t`Dark (Default)`;
     },
+    identifier: '/* default-theme */',
+    src: themeDarkSvg,
+    theme: '',
+    customizable: false
+};
+
+export const CUSTOM_THEME = {
+    getI18NLabel() {
+        return c('Theme').t`Custom theme`;
+    },
+    identifier: '/* custom-theme */',
+    src: themeTestSvg,
+    customizable: true
+};
+
+export const PROTON_THEMES = {
     LIGHT: {
         getI18NLabel() {
             return c('Theme').t`Light`;
@@ -35,14 +45,3 @@ export const PROTON_THEMES = {
         customizable: false
     }
 };
-
-export const CUSTOM_THEME = {
-    getI18NLabel() {
-        return c('Theme').t`Custom theme`;
-    },
-    identifier: '/* custom-theme */',
-    src: themeTestSvg,
-    customizable: true
-};
-
-export const DEFAULT_THEME = PROTON_THEMES.DARK;

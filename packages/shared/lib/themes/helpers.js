@@ -8,6 +8,7 @@ const { protonThemeIdentifiers, protonThemes } = Object.values(PROTON_THEMES).re
     },
     { protonThemeIdentifiers: [], protonThemes: Object.create(null) }
 );
+const defaultThemeIdentifier = DEFAULT_THEME.identifier;
 
 /**
  * Given a theme, return identifier
@@ -16,11 +17,12 @@ const { protonThemeIdentifiers, protonThemes } = Object.values(PROTON_THEMES).re
  */
 export const getThemeIdentifier = (theme) => {
     if (!theme) {
-        return DEFAULT_THEME.identifier;
+        return defaultThemeIdentifier;
     }
-    if (!protonThemeIdentifiers.includes(theme)) {
+    if (![defaultThemeIdentifier, ...protonThemeIdentifiers].includes(theme)) {
         return CUSTOM_THEME.identifier;
     }
+    // for proton themes, the CSS for the theme coincides with the identifier
     return theme;
 };
 
