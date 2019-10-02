@@ -8,7 +8,7 @@ import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 import PlanPrice from './PlanPrice';
 import FeaturesList from './FeaturesList';
 
-const UpgradeModal = ({ plans, onUpgrade, onComparePlans, ...rest }) => {
+const UpgradeModal = ({ plans, onUpgrade, ...rest }) => {
     const { Pricing = {} } = plans.find(({ Name }) => Name === 'plus') || {};
 
     const features = [
@@ -56,7 +56,6 @@ const UpgradeModal = ({ plans, onUpgrade, onComparePlans, ...rest }) => {
                                     className="primary-link hover-same-color"
                                     onClick={() => {
                                         rest.onClose();
-                                        onComparePlans();
                                     }}
                                 >{c('Action').t`Compare all plans`}</LinkButton>
                             </div>
@@ -76,8 +75,7 @@ const UpgradeModal = ({ plans, onUpgrade, onComparePlans, ...rest }) => {
 
 UpgradeModal.propTypes = {
     plans: PropTypes.array.isRequired,
-    onUpgrade: PropTypes.func,
-    onComparePlans: PropTypes.func
+    onUpgrade: PropTypes.func
 };
 
 export default UpgradeModal;

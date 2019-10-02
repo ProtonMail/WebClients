@@ -6,12 +6,10 @@ import {
     DowngradeModal,
     MozillaInfoPanel,
     useSubscription,
-    Button,
     Loader,
     usePlans,
     useApi,
     useUser,
-    useToggle,
     useModals,
     useEventManager,
     useNotifications
@@ -31,10 +29,9 @@ const PlansSection = () => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const [user] = useUser();
-    const { isFree, isPaid } = user;
+    const { isFree } = user;
     const [subscription = {}, loadingSubscription] = useSubscription();
     const [plans = [], loadingPlans] = usePlans();
-    const { state, toggle } = useToggle(!isPaid);
     const api = useApi();
 
     const [showUpgradeModal, setShowUpgradeModel] = useState(false);
@@ -97,13 +94,7 @@ const PlansSection = () => {
 
     useEffect(() => {
         if (showUpgradeModal) {
-            createModal(
-                <UpgradeModal
-                    plans={plans}
-                    onComparePlans={() => !state && toggle()}
-                    onUpgrade={handleModal({ plus: 1 })}
-                />
-            );
+            createModal(<UpgradeModal plans={plans} onUpgrade={handleModal({ plus: 1 })} />);
         }
     }, [showUpgradeModal]);
 
@@ -135,22 +126,17 @@ const PlansSection = () => {
                 ) : null}
                 {Plans.length ? <div>{c('Info').t`You are currently subscribed to ${names}.`}</div> : null}
             </Alert>
-            <Button onClick={toggle}>{state ? c('Action').t`Hide plans` : c('Action').t`Show plans`}</Button>
-            {state ? (
-                <>
-                    <PlansTable
-                        currency={currency}
-                        cycle={cycle}
-                        updateCurrency={setCurrency}
-                        updateCycle={setCycle}
-                        onSelect={handleModal}
-                        user={user}
-                        subscription={subscription}
-                        plans={plans}
-                    />
-                    <p className="small">* {c('Info concerning plan features').t`denotes customizable features`}</p>
-                </>
-            ) : null}
+            <PlansTable
+                currency={currency}
+                cycle={cycle}
+                updateCurrency={setCurrency}
+                updateCycle={setCycle}
+                onSelect={handleModal}
+                user={user}
+                subscription={subscription}
+                plans={plans}
+            />
+            <p className="small">* {c('Info concerning plan features').t`denotes customizable features`}</p>
         </>
     );
 };

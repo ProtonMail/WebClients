@@ -10,9 +10,9 @@ import CycleSelector from './CycleSelector';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 const { PLUS, PROFESSIONAL, VISIONARY } = PLANS;
-
+const FREE = 'free';
 const PLAN_NUMBERS = {
-    free: 1,
+    [FREE]: 1,
     [PLUS]: 2,
     [PROFESSIONAL]: 3,
     [VISIONARY]: 4
@@ -28,7 +28,7 @@ const PlansTable = ({
     updateCycle,
     onSelect
 }) => {
-    const planName = getPlanName(subscription);
+    const planName = getPlanName(subscription) || FREE;
     const { hasPaidVpn } = user;
     const { state, toggle } = useToggle();
     const mySubscription = c('Title').t`My subscription`;
