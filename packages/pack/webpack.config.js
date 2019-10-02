@@ -72,6 +72,7 @@ function main({ port, publicPath, flow, appMode }) {
         },
         resolve: {
             symlinks: false,
+            extensions: ['.js', '.tsx', '.ts'],
             alias: {
                 // Ensure that the correct package is used when symlinking
                 pmcrypto: path.resolve('./node_modules/pmcrypto'),

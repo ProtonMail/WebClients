@@ -34,6 +34,7 @@ module.exports = ({ isProduction }, flow) => {
                 cacheCompression: isProduction,
                 compact: isProduction,
                 presets: [
+                    ['@babel/preset-typescript'],
                     [
                         '@babel/preset-env',
                         {
@@ -82,7 +83,7 @@ module.exports = ({ isProduction }, flow) => {
         ]);
         return [
             {
-                test: /\.js$/,
+                test: /\.js$|\.tsx?$/,
                 exclude: createRegex(
                     excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
                     excludeFiles(BABEL_EXCLUDE_FILES)
@@ -94,16 +95,16 @@ module.exports = ({ isProduction }, flow) => {
 
     return [
         {
-            test: /\.js$/,
+            test: /\.js$|\.tsx?$/,
             use: ['source-map-loader'],
             enforce: 'pre'
         },
         {
-            test: /unsupported\.js$/,
+            test: /unsupported\.(js|tsx?)$/,
             use: UNSUPPORTED_JS_LOADER
         },
         {
-            test: /\.js$/,
+            test: /\.js$|\.tsx?$/,
             exclude: createRegex(
                 excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
                 excludeFiles([...BABEL_EXCLUDE_FILES, 'unsupported.js'])
