@@ -5,7 +5,7 @@ import { Radio } from 'react-components';
 const RadioCard = ({ value, checked, label, name, id, children, onChange, disabled, ...rest }) => {
     return (
         <Radio
-            className="mr1 bordered-container p1 inbl"
+            className="mr1 mb1 bordered-container p1 inbl"
             name={name}
             id={id}
             value={value}

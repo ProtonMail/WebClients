@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeCard, Block } from 'react-components';
 
-const ThemeCards = ({ themeId, onChange, onCustomization, loading, list }) => {
+const ThemeCards = ({ themeIdentifier, onChange, onCustomization, loading, list }) => {
     return (
         <Block className="flex">
-            {list.map(({ label, id, alt, src, customizable }) => {
+            {list.map(({ identifier, label, id, alt, src, customizable }) => {
                 return (
                     <ThemeCard
                         key={id}
@@ -13,8 +13,8 @@ const ThemeCards = ({ themeId, onChange, onCustomization, loading, list }) => {
                         id={id}
                         alt={alt}
                         src={src}
-                        checked={themeId === id}
-                        onChange={() => onChange(id)}
+                        checked={themeIdentifier === identifier}
+                        onChange={() => onChange(identifier)}
                         disabled={loading}
                         customizable={customizable}
                         onCustomization={onCustomization}
@@ -26,7 +26,7 @@ const ThemeCards = ({ themeId, onChange, onCustomization, loading, list }) => {
 };
 
 ThemeCards.propTypes = {
-    themeId: PropTypes.string.isRequired,
+    themeIdentifier: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     onCustomization: PropTypes.func,
     loading: PropTypes.bool,
