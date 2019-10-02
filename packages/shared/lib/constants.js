@@ -522,3 +522,5 @@ export const MAILBOX_LABEL_IDS = {
     SENT: '7',
     DRAFTS: '8'
 };
+
+export const ADD_CARD_MODE = 'add-card';
