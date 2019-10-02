@@ -139,16 +139,20 @@ const SubscriptionModal = ({
                 const checkResult = await callCheck(); // Use check result instead of state because it's not yet updated
                 if (!checkResult.AmountDue) {
                     try {
+                        next(); // Upgrading
                         setLoading(true);
                         await api(subscribe({ Amount: checkResult.AmountDue, ...getCheckParams({ ...model, plans }) }));
                         await call();
                         setLoading(false);
+                        next(); // Thanks
                     } catch (error) {
+                        previous();
                         setLoading(false);
                         throw error;
                     }
+                } else {
+                    next();
                 }
-                next();
             }
         },
         {
