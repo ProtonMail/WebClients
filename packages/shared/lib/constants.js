@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 export const RETRY_DELAY_MAX = 10; // seconds
 export const RETRY_ATTEMPTS_MAX = 5; // how many times to try the same request
 export const OFFLINE_RETRY_DELAY = 2000; // how much time in ms to wait before retrying an offline request
@@ -229,25 +227,6 @@ export const DRAFT_TYPE = {
 export const RIGHT_TO_LEFT = {
     OFF: 0,
     ON: 1
-};
-
-export const THEMES = {
-    DARK: {
-        label: c('Theme').t`Dark (Default)`,
-        identifier: '/* dark-theme */'
-    },
-    LIGHT: {
-        label: c('Theme').t`Light`,
-        identifier: '/* light-theme */'
-    },
-    BLUE: {
-        label: c('Theme').t`Blue`,
-        identifier: '/* blue-theme */'
-    },
-    CUSTOM: {
-        label: c('Theme').t`Custom theme`,
-        identifier: '/* custom-theme */'
-    }
 };
 
 export const DEFAULT_CYCLE = 12;
