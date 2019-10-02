@@ -12,6 +12,7 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import errorSvg from 'design-system/assets/img/pm-images/error.svg';
+import { ADD_CARD_MODE } from 'proton-shared/lib/constants';
 
 import { toParams, process } from './paymentTokenHelper';
 import PaymentVerificationImage from './PaymentVerificationImage';
@@ -25,11 +26,23 @@ const STEPS = {
 
 const PROCESSING_DELAY = 5000;
 
-const PaymentVerificationModal = ({ params, token, approvalURL, returnHost, onSubmit, payment = {}, ...rest }) => {
+const PaymentVerificationModal = ({
+    params,
+    token,
+    approvalURL,
+    returnHost,
+    onSubmit,
+    payment = {},
+    mode,
+    ...rest
+}) => {
+    const isAddCard = mode === ADD_CARD_MODE;
     const TITLES = {
-        [STEPS.REDIRECT]: c('Title').t`Payment verification`,
+        [STEPS.REDIRECT]: isAddCard ? c('Title').t`Card verification` : c('Title').t`Payment verification`,
         [STEPS.REDIRECTING]: c('Title').t`Processing...`,
-        [STEPS.REDIRECTED]: c('Title').t`Payment verification in progress`,
+        [STEPS.REDIRECTED]: isAddCard
+            ? c('Title').t`Card verification in progress`
+            : c('Title').t`Payment verification in progress`,
         [STEPS.FAIL]: c('Title').t`3-D Secure verification failed`
     };
     const [step, setStep] = useState(STEPS.REDIRECT);
@@ -97,8 +110,12 @@ const PaymentVerificationModal = ({ params, token, approvalURL, returnHost, onSu
                             <p className="aligncenter">
                                 <PaymentVerificationImage payment={payment} />
                             </p>
-                            <Alert>{c('Info')
-                                .t`Verification will open a new tab, please disable any popup blockers.`}</Alert>
+                            <Alert>
+                                {isAddCard
+                                    ? c('Info')
+                                          .t`Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.`
+                                    : c('Info').t`Verification will open a new tab, please disable any popup blockers.`}
+                            </Alert>
                         </>
                     ),
                     [STEPS.REDIRECTING]: (
@@ -112,13 +129,20 @@ const PaymentVerificationModal = ({ params, token, approvalURL, returnHost, onSu
                     ),
                     [STEPS.REDIRECTED]: (
                         <>
-                            <p className="aligncenter">{c('Info')
-                                .t`Please verify payment at the new tab which was opened.`}</p>
+                            <p className="aligncenter">
+                                {isAddCard
+                                    ? c('Info').t`Please verify the card in the new tab which was opened.`
+                                    : c('Info').t`Please verify payment at the new tab which was opened.`}
+                            </p>
                             <Loader />
                             <p className="aligncenter">
                                 <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                             </p>
-                            <Alert>{c('Info').t`Payment can take a few minutes to fully verify.`}</Alert>
+                            <Alert>
+                                {isAddCard
+                                    ? c('Info').t`Verification can take a few minutes to fully verify.`
+                                    : c('Info').t`Payment can take a few minutes to fully verify.`}
+                            </Alert>
                         </>
                     ),
                     [STEPS.FAIL]: (
@@ -150,7 +174,8 @@ PaymentVerificationModal.propTypes = {
     approvalURL: PropTypes.string.isRequired,
     returnHost: PropTypes.string.isRequired,
     params: PropTypes.object,
-    payment: PropTypes.object
+    payment: PropTypes.object,
+    mode: PropTypes.string
 };
 
 export default PaymentVerificationModal;

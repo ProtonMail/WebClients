@@ -151,7 +151,7 @@ export const toParams = (params, Token) => {
     };
 };
 
-export const handlePaymentToken = async ({ params, api, createModal }) => {
+export const handlePaymentToken = async ({ params, api, createModal, mode }) => {
     const { Payment, Amount, Currency, PaymentMethodID } = params;
     const { Type } = Payment || {};
 
@@ -179,6 +179,7 @@ export const handlePaymentToken = async ({ params, api, createModal }) => {
     return new Promise((resolve, reject) => {
         createModal(
             <PaymentVerificationModal
+                mode={mode}
                 payment={Payment}
                 params={params}
                 returnHost={ReturnHost}
