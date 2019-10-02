@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Select } from 'react-components';
 
-const PaymentMethodsSelect = ({ method, methods, onChange, loading }) => {
+const PaymentMethodsSelect = ({ method, methods = [], onChange, loading }) => {
     const handleChange = ({ target }) => onChange(target.value);
 
     useEffect(() => {
@@ -10,7 +10,7 @@ const PaymentMethodsSelect = ({ method, methods, onChange, loading }) => {
         if (methods.length) {
             onChange(methods[0].value);
         }
-    }, [methods]);
+    }, [methods[0].value]);
 
     return <Select loading={loading} value={method} options={methods} onChange={handleChange} />;
 };
