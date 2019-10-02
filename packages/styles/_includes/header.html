@@ -46,32 +46,32 @@
           <div class="topnav-container flex-item-centered-vert flex-item-fluid noprint notablet nomobile">
             <ul class="topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap">
               <li class="mr1 flex-item-noshrink">
-                <a href="https://mail.protonmail.com/" class="topnav-link inline-flex flex-nowrap nodecoration rounded"{% if page.pageId != 'settings' %} aria-current="true"{% endif %}>
-                  <svg viewBox="0 0 16 16" class="icon-16p flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert fill-white" role="img" focusable="false" aria-hidden="true">
+                <a href="https://mail.protonmail.com/" class="topnav-link inline-flex flex-nowrap nodecoration"{% if page.pageId != 'settings' %} aria-current="true"{% endif %}>
+                  <svg viewBox="0 0 16 16" class="topnav-icon mr0-5 flex-item-centered-vert icon-16p" role="img" focusable="false" aria-hidden="true">
                     <use xlink:href="#shape-mailbox"></use>
                   </svg>
                   <span class="navigation-title topnav-linkText">Mailbox</span>
                 </a>
               </li>
               <li class="mr1 flex-item-noshrink">
-                <a href="/settings/" class="topnav-link inline-flex flex-nowrap nodecoration rounded"{% if page.pageId == 'settings' %} aria-current="true"{% endif %}>
-                  <svg viewBox="0 0 16 16" class="icon-16p flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert fill-white" role="img" focusable="false" aria-hidden="true">
+                <a href="/settings/" class="topnav-link inline-flex flex-nowrap nodecoration"{% if page.pageId == 'settings' %} aria-current="true"{% endif %}>
+                  <svg viewBox="0 0 16 16" class="topnav-icon mr0-5 flex-item-centered-vert icon-16p" role="img" focusable="false" aria-hidden="true">
                     <use xlink:href="#shape-settings"></use>
                   </svg>
                   <span class="navigation-title topnav-linkText">Settings</span>
                 </a>
               </li>
               <li class="mr1 flex-item-noshrink">
-                <a href="https://github.com/ProtonMail/design-system/" class="topnav-link inline-flex flex-nowrap nodecoration rounded">
-                  <svg viewBox="0 0 16 16" class="icon-16p flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert fill-white" role="img" focusable="false" aria-hidden="true">
+                <a href="https://github.com/ProtonMail/design-system/" class="topnav-link inline-flex flex-nowrap nodecoration">
+                  <svg viewBox="0 0 16 16" class="topnav-icon mr0-5 flex-item-centered-vert icon-16p" role="img" focusable="false" aria-hidden="true">
                     <use xlink:href="#shape-support1"></use>
                   </svg>
                   <span class="navigation-title topnav-linkText">Support</span>
                 </a>
               </li>
               <li class="mlauto mtauto mbauto">
-                <div class="dropDown dropDown--rightArrow inbl dropDown-logout">
-                  <button class="increase-surface-click color-white js-dropDown-button inline-flex flex-items-center flex-nowrap dropDown-logout-button" type="button" aria-expanded="false">
+                <div class="dropDown dropDown--rightArrow flex dropDown-logout">
+                  <button class="navigationUser-button no-pointer-events-children inline-flex flex-items-center flex-nowrap dropDown-logout-button flex increase-surface-click dropdownButton-container" type="button" aria-expanded="false">
                     <span class="alignright flex flex-column mr0-5">
                       <span class="bl mw100 ellipsis">Doctor Willy</span>
                       <span class="bl mw100 ellipsis smaller m0 opacity-30 lh100">willydoctor@protonmail.com</span>
