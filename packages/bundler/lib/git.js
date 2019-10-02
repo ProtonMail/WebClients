@@ -46,16 +46,15 @@ async function pull(branch, force, fromCi) {
 
 async function getConfig() {
     const { stdout: branch } = await bash('git rev-parse --abbrev-ref HEAD');
-
     // Seems to be broken on gitlabci
-    const { stdout: commit = Date.now() } = await bash('git rev-parse HEAD');
+    const { stdout: commit } = await bash('git rev-parse HEAD');
 
     try {
         const { stdout: tag } = await bash('git describe --abbrev=0');
-        return { branch, commit, tag };
+        return { branch, commit: commit || Date.now(), tag };
     } catch (e) {
         // If no tag it crashes
-        return { branch, commit };
+        return { branch, commit: commit || Date.now() };
     }
 }
 
