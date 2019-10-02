@@ -156,8 +156,11 @@ const PaymentVerificationModal = ({
                                 </p>
                             ) : null}
                             <p>
-                                <PrimaryButton onClick={handleCancel}>{c('Action')
-                                    .t`Use a different payment method`}</PrimaryButton>
+                                <PrimaryButton onClick={handleCancel}>
+                                    {isAddCard
+                                        ? c('Action').t`Use a different card`
+                                        : c('Action').t`Use a different payment method`}
+                                </PrimaryButton>
                             </p>
                         </div>
                     )
