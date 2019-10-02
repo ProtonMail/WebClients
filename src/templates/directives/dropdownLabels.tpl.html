@@ -4,10 +4,23 @@
     ng-class="{'dropdown-label-hasLabels': labels.length}"
     autocomplete="off">
 
-    <div class="dropdown-label-title p1">
-        <p class="dropdown-label-title-hasLabels m0" translate translate-context="title">Label as</p>
-        <p class="alert alert-info" translate translate-context="Info">No labels</p>
+    <div class="flex flex-items-center pr1">
+        <div class="dropdown-label-title p1 flex-item-fluid">
+            <p class="dropdown-label-title-hasLabels m0 bold" translate translate-context="title">Label as</p>
+            <p class="alert alert-info" translate translate-context="Info">No labels</p>
+        </div>
+        <div class="flex-item-noshrink">
+            <button
+                type="button"
+                class="pm-button--primary pm-button--small pm-button--for-smallicon no-pointer-events-children dropdown-label-create">
+                <icon data-name="label" data-fill="global-light"></icon>
+                +
+                <span class="sr-only" translate translate-context="Action">Create label</span>
+            </button>
+        </div>
+
     </div>
+
 
     <label class="flex flex-spacebetween pl1 pr1 mb0-5">
         <div>

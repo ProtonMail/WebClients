@@ -39,7 +39,7 @@ function dropdownLabels(
 
         let dropdownId = getID();
         const $search = angular.element(el[0].querySelector('.dropdown-label-search-input'));
-        const $createBtn = el[0].querySelector('.dropdown-label-create');
+        const $createBtn = el.find('.dropdown-label-create');
 
         // When we use the message inside the scope... 💥 so --force works ¯\_(ツ)_/¯
         if (dropdownId === 'null') {
@@ -164,13 +164,13 @@ function dropdownLabels(
         });
 
         el.on('submit', onSubmit);
-        $createBtn.addEventListener('click', onClickCreate);
+        $createBtn.on('click', onClickCreate);
 
         scope.color = ({ Color: color = 'inherit' } = {}, key = 'color') => ({ [key]: color });
 
         scope.$on('$destroy', () => {
             el.off('submit', onSubmit);
-            $createBtn.removeEventListener('click', onClickCreate);
+            $createBtn.of('click', onClickCreate);
             unsubscribe();
         });
     }
