@@ -2,7 +2,7 @@ import { PLAN_TYPES, PLAN_SERVICES, PLANS } from '../constants';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL } = PLAN_SERVICES;
-const { PLUS, VPNPLUS, VISIONARY } = PLANS;
+const { PLUS, VPNPLUS } = PLANS;
 
 /**
  * Get plan from current subscription
@@ -52,5 +52,5 @@ export const isBundleEligible = (subscription = {}) => {
 
     const [{ Name = '' }] = plans;
 
-    return [PLUS, VPNPLUS, VISIONARY].includes(Name);
+    return [PLUS, VPNPLUS].includes(Name);
 };
