@@ -1,4 +1,4 @@
-import { PROTON_THEMES, ALL_THEMES, DEFAULT_THEME } from './themes';
+import { PROTON_THEMES, CUSTOM_THEME, DEFAULT_THEME } from './themes';
 
 const { protonThemeIdentifiers, protonThemes } = Object.values(PROTON_THEMES).reduce(
     (acc, { identifier, theme }) => {
@@ -8,10 +8,6 @@ const { protonThemeIdentifiers, protonThemes } = Object.values(PROTON_THEMES).re
     },
     { protonThemeIdentifiers: [], protonThemes: Object.create(null) }
 );
-const {
-    [DEFAULT_THEME]: { identifier: defaultThemeIdentifier },
-    CUSTOM: { identifier: customThemeIdentifier }
-} = ALL_THEMES;
 
 /**
  * Given a theme, return identifier
@@ -20,10 +16,10 @@ const {
  */
 export const getThemeIdentifier = (theme) => {
     if (!theme) {
-        return defaultThemeIdentifier;
+        return DEFAULT_THEME.identifier;
     }
     if (!protonThemeIdentifiers.includes(theme)) {
-        return customThemeIdentifier;
+        return CUSTOM_THEME.identifier;
     }
     return theme;
 };

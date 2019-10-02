@@ -36,16 +36,13 @@ export const PROTON_THEMES = {
     }
 };
 
-export const ALL_THEMES = {
-    ...PROTON_THEMES,
-    CUSTOM: {
-        getI18NLabel() {
-            return c('Theme').t`Custom theme`;
-        },
-        identifier: '/* custom-theme */',
-        src: themeTestSvg,
-        customizable: true
-    }
+export const CUSTOM_THEME = {
+    getI18NLabel() {
+        return c('Theme').t`Custom theme`;
+    },
+    identifier: '/* custom-theme */',
+    src: themeTestSvg,
+    customizable: true
 };
 
-export const DEFAULT_THEME = 'DARK';
+export const DEFAULT_THEME = PROTON_THEMES.DARK;
