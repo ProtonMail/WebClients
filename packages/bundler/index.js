@@ -96,6 +96,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
                 ctx.originCommit = commit;
                 ctx.originBranch = branch;
                 ctx.tag = tag;
+                debug(ctx, 'git env bundle');
             }
         },
         {
