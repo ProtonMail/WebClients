@@ -16,7 +16,7 @@ async function extractor(app = 'app') {
 
     if (app !== 'app') {
         const dest = PROTON_DEPENDENCIES[app].join(' ');
-        const cmd = `npx ttag extract $(find ${dest} -type f -name '*.js') -o ${TEMPLATE_FILE}`;
+        const cmd = `npx ttag extract $(find ${dest} -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx') -o ${TEMPLATE_FILE}`;
         debug(cmd);
         return bash(cmd);
     }

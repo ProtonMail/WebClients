@@ -20,7 +20,7 @@ function testInvalidFunctionFormat {
     fi
 }
 
-for file in $(find "${1:-src/app}" -type f -name "*.js" -not -path "./node_modules/*");
+for file in $(find "${1:-src/app}" -type f -name "*.js" -o -name '*.ts' -o -name '*.tsx' -not -path "./node_modules/*");
 do
     testInvalidFunctionFormat "$file";
 done;
