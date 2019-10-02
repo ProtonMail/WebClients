@@ -16,6 +16,10 @@ const DangerVerificationForm = ({ onSubmit }) => {
         <form
             onSubmit={(e) => {
                 e.preventDefault();
+
+                if (value !== WORD) {
+                    return;
+                }
                 onSubmit();
             }}
         >
@@ -31,6 +35,7 @@ const DangerVerificationForm = ({ onSubmit }) => {
                     value={value}
                     pattern={WORD}
                     onChange={({ target }) => updateValue(target.value)}
+                    error={value.length > 0 && value !== WORD ? c('Error').t`Please enter '${WORD}'` : ''}
                     required
                 />
             </div>
