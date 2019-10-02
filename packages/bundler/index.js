@@ -146,8 +146,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         {
             title: 'Generate the version info',
             task(ctx) {
-                const { tag = `v${PKG.version}`, originCommit } = ctx.config || {};
-                originCommit;
+                const { tag = `v${PKG.version}`, originCommit } = ctx || {};
                 const fileName = path.join('dist', 'assets/version.json');
                 return script('createVersionJSON.sh', [originCommit, tag, fileName]);
             }
