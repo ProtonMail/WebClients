@@ -65,7 +65,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
             LogicalID: category === CATEGORY.COUNTRY ? undefined : ID,
             Platform: platform,
             Protocol: protocol,
-            Country: ExitCountry
+            Country: ExitCountry === 'GB' ? 'UK' : ExitCountry
         });
         const blob = new Blob([buffer], { type: 'application/x-openvpn-profile' });
         const [country, ...rest] = Domain.split('.');
