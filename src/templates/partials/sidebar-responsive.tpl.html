@@ -23,24 +23,24 @@
                 data-key="{{::state}}"
                 ng-repeat="state in listStates track by $id(state)"></navigation-item>
                 <li class="sidebarApp-divider" aria-hidden="true"></li>
-                <li class="sidebarApp-item navigation__item" ng-class="{ active: ('secured.contacts.**' | includedByState) }">
-                    <a title="Contacts" ui-sref='secured.contacts' class="navigation__link w100">
+                <li class="sidebarApp-item navigation__item">
+                    <a title="Contacts" href="/contacts" class="navigation__link w100">
                         <span class="flex flex-nowrap">
                             <icon data-name="contacts" fill="currentColor" class="navigation__icon mr0-5 mtauto mbauto"></icon>
                             <span translate-context="Title" translate-comment="Folder name" translate>Contacts</span>
                         </span>
                     </a>
                 </li>
-                <li class="sidebarApp-item navigation__item" ng-class="{ active: ('secured.dashboard.**' | includedByState) }" ng-if="isFree">
-                    <a title="Upgrade" ui-sref="secured.dashboard({scroll: true})" class="navigation__link w100">
+                <li class="sidebarApp-item navigation__item" ng-if="isFree">
+                    <a title="Upgrade" href="/settings" class="navigation__link w100">
                         <span class="flex flex-nowrap">
                             <icon data-name="upgrade-to-paid" fill="currentColor" class="navigation__icon mr0-5 mtauto mbauto"></icon>
                             <span translate-context="Title" translate-comment="Folder name" translate>Upgrade</span>
                         </span>
                     </a>
                 </li>
-                <li  class="sidebarApp-item navigation__item" ng-class="{ active: ('secured.account.**' | includedByState) }">
-                    <a title="Settings" ui-sref='secured.account' class="navigation__link w100">
+                <li  class="sidebarApp-item navigation__item">
+                    <a title="Settings" href="/settings" class="navigation__link w100">
                         <span class="flex flex-nowrap">
                             <icon data-name="settings" fill="currentColor" class="navigation__icon mr0-5 mtauto mbauto"></icon>
                             <span translate-context="Title" translate-comment="Folder name" translate>Settings</span>
