@@ -52,6 +52,7 @@
 
 .composerInputMeta-label {
     cursor: pointer;
+    white-space: nowrap;
 }
 .composerInputMeta-label:hover {
     color: $primary;
