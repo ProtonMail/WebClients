@@ -14,7 +14,7 @@ function messageSpamScore(gettextCatalog, translator) {
             "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded! {{startLink}}Learn more{{endLink}}.",
             {
                 startLink:
-                    '<a href="https://protonmail.com/support/knowledge-base/email-has-failed-its-domains-authentication-requirements-warning/" target="_blank">',
+                    '</span><a href="https://protonmail.com/support/knowledge-base/email-has-failed-its-domains-authentication-requirements-warning/" target="_blank">',
                 endLink: '</a>'
             },
             'Info'
@@ -22,7 +22,7 @@ function messageSpamScore(gettextCatalog, translator) {
         [PHISHING]: gettextCatalog.getString(
             'This message may be a phishing attempt. Please check the sender and contents to make sure they are legitimate. {{startLink}}Learn more{{endLink}}.',
             {
-                startLink: '<a href="https://protonmail.com/blog/prevent-phishing-attacks/" target="_blank">',
+                startLink: '</span><a href="https://protonmail.com/blog/prevent-phishing-attacks/" target="_blank">',
                 endLink: '</a>'
             },
             'Info'
@@ -32,13 +32,18 @@ function messageSpamScore(gettextCatalog, translator) {
     return {
         replace: true,
         template: `
-            <div class="messageSpamScore-container">
-                <span class="messageSpamScore-notice"></span>
+            <div class="messageSpamScore-container color-white w100 bg-global-warning rounded p0-5 mb0-5 flex flex-nowrap">
+                <span class="messageSpamScore-notice flex flex-nowrap w100"></span>
             </div>
         `,
         link(scope, el, { score }) {
             const $notice = el[0].querySelector('.messageSpamScore-notice');
-            $notice.innerHTML = I18N[score];
+
+            // regexp to remove ending . as we want to keep the translation and the new version is coming soon ;)
+            if ([DMARC_FAILED, PHISHING].includes(score)) {
+                return ($notice.innerHTML = `<span>${I18N[score].replace(/\.$/, '')}`);
+            }
+            $notice.innerHTML = I18N[score].replace(/\.$/, '');
         }
     };
 }

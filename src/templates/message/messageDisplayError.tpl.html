@@ -1,7 +1,7 @@
 <div class="messageDisplayError-container color-white w100 bg-global-warning rounded p0-5 mb0-5 flex flex-nowrap">
-    <icon data-name="attention" data-size="16" class=" fill-white mtauto mbauto"></icon>
+    <icon data-name="attention" class="flex-item-noshrink fill-white mtauto mbauto"></icon>
     <span ng-if="message.failedDecryption && !message.networkError" class="messageDisplayError-notice pl0-5 pr0-5 w100 mtauto mbauto flex">
-        <span class="messageDisplayError-notice-text flex-item-fluid" translate translate-context="Message decryption error">Decryption error: Decryption of this message's encryption content failed.</span>
+        <span class="messageDisplayError-notice-text flex-item-fluid pr1" translate translate-context="Message decryption error">Decryption error: Decryption of this message's encryption content failed.</span>
         <button type="button" class="color-white bold underline" data-reload-state translate-context="Action to reload the current state" translate>Try again</button>
     </span>
 
