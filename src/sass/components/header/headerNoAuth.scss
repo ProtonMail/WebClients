@@ -20,7 +20,8 @@
 }
 [id="signup"] [id="mainContainer"] { flex: 1; }
 
-[id="signup"] .content {
+[id="signup"] .content,
+[id="login-setup"] .content {
     min-height: 100vh;
 }
 

@@ -1,42 +1,39 @@
 <p>&nbsp;</p>
-<div class="pm_panel wide" ng-if="filling">
+<div class="signUpProcess-step-1 bordered-container mauto signupPage-container" ng-if="filling">
     <div class="aligncenter header">
         <div>
-            <img src="/assets/img/logo-dark.png" height="20" />
+            <img src="/assets/img/logo/logo-purple.svg" height="34" class="signupPayForm-header-logo" />
         </div>
-        <h2>
+        <h2 class="signupUserForm-header-title">
             <i class="fa fa-user"></i>
             <span translate translate-context="Title">Set up your account</span>
         </h2>
     </div>
     <form method="post" ng-submit="setup.$valid && submit(setup)" name="setup" role="form" novalidate class="pm_form">
-        <div class="wrapper margin">
-            <p class="alert alert-info" translate-context="Info" translate>Take back your privacy! Setting up your secure email account takes less than 2 minutes.</p>
+        <div class="relative pl2 pr2 ml2 onmobile-ml0 onmobile-p0">
+            <p class="block-info-standard mb2" translate-context="Info" translate>Take back your privacy! Setting up your secure email account takes less than 2 minutes.</p>
 
-            <div ng-if="chooseDomain">
-                <label class="titleLabel" for="Username">
-                    <em class="num">1</em>
+            <div ng-if="chooseDomain" class="usernameDomain-container" data-step="1">
+                <label class="titleLabel pm-label h6 mb0" for="Username">
                     <span translate translate-context="Title">Email Address</span>
                 </label>
+                <p class="help mt0" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
                 <div class="usernameWrap">
-                    <p class="help" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
                     <strong ng-bind="username"></strong>
-                    <em class="usernameDomain">@</em>
-                    <span class="pm_select inline bigger">
-                        <select class="selectDomain" ng-model="model.domain" ng-options="domain as domain.label for domain in domains track by domain.id"></select>
-                        <i class="fa fa-angle-down"></i>
+                    <em class="usernameDomain ml1 mr1">@</em>
+                    <span class="pm_select flex-item-fluid">
+                        <select class="selectDomain pm-field " ng-model="model.domain" ng-options="domain as domain.label for domain in domains track by domain.id"></select>
                     </span>
                 </div>
             </div>
 
-            <div>
+            <div class="usernameDomain-container" data-step="2">
 
-                <label class="titleLabel" for="password">
-                    <em class="num" ng-if="chooseDomain">2</em>
+                <label class="titleLabel pm-label h6 mb0" for="password">
                     <span translate translate-context="Title">Password</span>
                 </label>
 
-                <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt your messages. Do not lose this password--we cannot recover it.</p>
+                <p class="help mt0" translate-context="Info" translate>This is used to encrypt and decrypt your messages. Do not lose this password--we cannot recover it.</p>
 
                 <password
                     class="loginSetup-field-password"
@@ -58,19 +55,18 @@
                     placeholder-translate="Confirm mailbox password"
                     data-form="setup"></password>
 
-                <p class="alert alert-info" translate-context="Info" translate>If you lose your password, you will not be able to read your emails.</p>
+                <p class="block-info-standard-warning" translate-context="Info" translate>If you lose your password, you will not be able to read your emails.</p>
             </div>
-            <p>&nbsp;</p>
         </div><!--/.wrapper-->
         <div class="aligncenter">
             <p><span translate translate-context="Info">By clicking Setup Account, you agree to abide by</span><br /> <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate-context="Title" translate>ProtonMail's Terms and Conditions</a>.</p>
-            <p><button type="submit" class="pm_button primary large disabled-if-network-activity" translate-context="Action" translate>Setup Account</button></p>
+            <p><button type="submit" class="pm_button pm-button--primary large disabled-if-network-activity" translate-context="Action" translate>Setup Account</button></p>
         </div>
     </form>
 </div>
 
-<div class="pm_panel wide" ng-show="genKeys">
-    <div class="aligncenter header">
+<div class="signUpProcess-step-2  bordered-container mauto signupPage-container" ng-show="genKeys">
+    <div class="aligncenter">
         <div class="creating-loader-container">
             <atom-loader data-loader-theme="primary"></atom-loader>
         </div>
@@ -79,31 +75,31 @@
     <p class="alert" translate-context="Info" translate>This can take a few seconds or a few minutes depending on your device.</p>
 </div>
 
-<div class="pm_panel wide" ng-show="creating" id="setUpProcess">
-    <div class="aligncenter header">
+<div class="signUpProcess-step-3 bordered-container mauto signupPage-container" ng-show="creating" id="setUpProcess">
+    <div class="aligncenter">
         <div class="creating-loader-container">
             <atom-loader data-loader-theme="primary"></atom-loader>
         </div>
         <h2 class="aligncenter" ng-show="!setupError"  translate-context="Title" translate>Setting up account</h2>
         <h2 class="aligncenter" ng-show="setupError" translate-context="Error" translate>Setup failed</h2>
     </div>
-    <p class="alert alert-danger" ng-show="setupError">An error occured while setting up your account. To see common problems and solutions <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
+    <p class="block-info-standard-warning" ng-show="setupError">An error occured while setting up your account. To see common problems and solutions <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
     <div class="wrapper alignleft">
-        <ol id="creationList">
+        <ol id="creationList" class="unstyled creationList">
             <li class="done">
-                <i class="show fa fa-check"></i>
+                <icon data-name="check-circle" data-fill="primary" class="creationList-icon"></icon>
                 <span translate-context="Info" translate>Generating keys</span>
             </li>
             <li ng-class="{ 'done': setupAccount }">
-                <i ng-class="{ 'show': setupAccount }" class="fa fa-check"></i>
+                <icon data-name="check-circle" data-fill="primary" class="creationList-icon" ng-class="{ 'show': setupAccount }"></icon>
                 <span translate-context="Info" translate>Setting up account</span>
             </li>
             <li ng-class="{ 'done': getUserInfo }">
-                <i ng-class="{ 'show': getUserInfo }" class="fa fa-check"></i>
+                <icon data-name="check-circle" data-fill="primary" class="creationList-icon" ng-class="{ 'show': getUserInfo }"></icon>
                 <span translate-context="Info" translate>Done</span>
             </li>
             <li ng-class="{ 'done': finishCreation }">
-                <i ng-class="{ 'show': finishCreation }" class="fa fa-check"></i>
+                <icon data-name="check-circle" data-fill="primary" class="creationList-icon" ng-class="{ 'show': finishCreation }"></icon>
                 <span translate-context="Info" translate>Redirecting</span>
             </li>
         </ol>

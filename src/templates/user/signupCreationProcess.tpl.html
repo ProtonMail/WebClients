@@ -15,29 +15,29 @@
 
     <p class="block-info-error signupCreationProcess-error-msg mb2"><span translate-context="Error" translate>An error occured while trying to create your account. To see common problems and solutions</span> <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/" translate-context="Action" translate>click here</a>.</p>
 
-    <ol id="creationList" class="signupCreationProcess-list unstyled mauto w40 mt1">
+    <ol id="creationList" class="signupCreationProcess-list creationList unstyled mauto w40 mt1">
         <li class="done">
-            <icon data-fill="global-success" data-name="on" class="show"></icon>
+            <icon data-fill="global-success" data-name="check-circle" class="show"></icon>
             <span translate-context="Signup step label" translate>Generating keys</span>
         </li>
         <li ng-class="{ 'done': flow.creation }">
-            <icon data-fill="global-success" ng-class="{ 'show': flow.creation  }" class="show"  data-name="on"></icon>
+            <icon data-fill="global-success" ng-class="{ 'show': flow.creation  }" class="show"  data-name="check-circle"></icon>
             <span translate-context="Signup step label" translate>Creating new account</span>
         </li>
         <li ng-class="{ 'done': flow.loggedin }">
-            <icon data-fill="global-success" ng-class="{ 'show': flow.loggedin }" data-name="on"></icon>
+            <icon data-fill="global-success" ng-class="{ 'show': flow.loggedin }" data-name="check-circle"></icon>
             <span translate-context="Signup step label" translate>Logging in to new account</span>
         </li>
         <li ng-class="{ 'done': flow.setupaccount }">
-            <icon data-fill="global-success" ng-class="{ 'show': flow.setupaccount }" data-name="on"></icon>
+            <icon data-fill="global-success" ng-class="{ 'show': flow.setupaccount }" data-name="check-circle"></icon>
             <span translate-context="Signup step label" translate>Setting up new account</span>
         </li>
         <li ng-class="{ 'done': flow.userready }">
-            <icon data-fill="global-success" ng-class="{ 'show': flow.userready }" data-name="on"></icon>
+            <icon data-fill="global-success" ng-class="{ 'show': flow.userready }" data-name="check-circle"></icon>
             <span translate-context="Signup step label" translate>Done</span>
         </li>
         <li ng-class="{ 'done': flow.done }">
-            <icon data-fill="global-success" ng-class="{ 'show': flow.done }" data-name="on"></icon>
+            <icon data-fill="global-success" ng-class="{ 'show': flow.done }" data-name="check-circle"></icon>
             <span translate-context="Signup step label" translate>Redirecting</span>
         </li>
     </ol>

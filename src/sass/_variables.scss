@@ -65,7 +65,7 @@ $alert:             #f0f0f0;
 $discount:          #FF5400;
 $composerRowBackground: #F7F7F7;
 //============================= Backgrounds =============================//
-$primary: 			       #9397cd;
+$primary: 			       #9397cd !default;
 $primary-light:            lighten($primary, 23);
 $primary-extra-light:      lighten($primary, 27);
 $secondary: 		       #505061;

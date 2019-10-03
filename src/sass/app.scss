@@ -5,6 +5,9 @@ $breakpoint-medium: 1000;
 $breakpoint-small: 800;
 
 @import "~design-system/_sass/reusable-components/design-system-config";
+
+$primary: $pm-primary;
+
 @import "~design-system/_sass/reusable-components/design-system-reset";
 @import "~design-system/_sass/reusable-components/design-system-colors";
 @import "~design-system/_sass/reusable-components/design-system-util-typo-fix";
