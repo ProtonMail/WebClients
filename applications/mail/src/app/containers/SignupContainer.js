@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// eslint-disable-next-line
 const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
     return <>SignupContainer</>;
 };

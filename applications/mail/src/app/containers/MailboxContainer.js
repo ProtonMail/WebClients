@@ -7,6 +7,7 @@ import List from '../components/mailbox/List';
 import View from '../components/mailbox/View';
 import ViewPlaceholder from '../components/mailbox/ViewPlaceholder';
 
+// eslint-disable-next-line
 const MailboxContainer = ({ labelID, elementID, location, history }) => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const elements = [
@@ -420,9 +421,6 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
         return <Loader />;
     }
 
-    const handleCheckAll = (checked = false) => handleCheck(elements.map(({ ID }) => ID), checked);
-    const handleUncheckAll = () => handleCheckAll(false);
-
     const handleCheck = (IDs = [], checked = false) => {
         const update = IDs.reduce((acc, contactID) => {
             acc[contactID] = checked;
@@ -431,6 +429,8 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
         setCheckedElements({ ...checkedElements, ...update });
         setCheckAll(checked && IDs.length === elements.length);
     };
+    const handleCheckAll = (checked = false) => handleCheck(elements.map(({ ID }) => ID), checked);
+    const handleUncheckAll = () => handleCheckAll(false);
 
     return (
         <>
