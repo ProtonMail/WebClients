@@ -170,7 +170,7 @@ function dropdownLabels(
 
         scope.$on('$destroy', () => {
             el.off('submit', onSubmit);
-            $createBtn.of('click', onClickCreate);
+            $createBtn.off('click', onClickCreate);
             unsubscribe();
         });
     }
