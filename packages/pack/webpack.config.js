@@ -22,6 +22,8 @@ function main({ port, publicPath, flow, appMode }) {
 
     const WEBPACK_EXTRA = {
         module: {
+            // Make missing exports an error instead of warning
+            strictExportPresence: true,
             rules: [...jsLoader(conf), ...cssLoader(conf), ...assetsLoader(conf)]
         },
         plugins: plugins(conf),
