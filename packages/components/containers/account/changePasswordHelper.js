@@ -95,10 +95,10 @@ export const handleUnlock = ({ api, oldPassword, totp }) => {
     });
 };
 
-export const handleChangeLoginPassword = async ({ api, newPassword, totp }) => {
+export const handleChangeLoginPassword = async ({ api, newPassword }) => {
     return srpVerify({
         api,
-        credentials: { password: newPassword, totp },
+        credentials: { password: newPassword },
         config: updatePassword()
     });
 };

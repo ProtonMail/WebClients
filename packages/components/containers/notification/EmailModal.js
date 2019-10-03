@@ -30,7 +30,7 @@ const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }) => {
         if (!input && (hasReset || hasNotify)) {
             await new Promise((resolve, reject) => {
                 createModal(
-                    <ConfirmModal onConfirm={resolve} onClose={reject}>
+                    <ConfirmModal title={c('Title').t`Confirm address`} onConfirm={resolve} onClose={reject}>
                         <Alert type="warning">
                             {hasReset &&
                                 !hasNotify &&
