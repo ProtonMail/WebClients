@@ -65,6 +65,7 @@ const SubscriptionModal = ({
             const result = await api(checkSubscription(getCheckParams({ ...m, plans })));
             const { Coupon, Gift } = result;
             const { Code } = Coupon || {}; // Coupon can equals null
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
             const { checkCouponCode } = STEPS[step];
 
             if (checkCouponCode && m.coupon && m.coupon !== Code) {

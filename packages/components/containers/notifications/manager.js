@@ -18,6 +18,20 @@ export default (setNotifications) => {
         });
     };
 
+    const hideNotification = (id) => {
+        return setNotifications((oldNotifications) => {
+            return oldNotifications.map((oldNotification) => {
+                if (oldNotification.id !== id) {
+                    return oldNotification;
+                }
+                return {
+                    ...oldNotification,
+                    isClosing: true
+                };
+            });
+        });
+    };
+
     const createNotification = ({ id = idx++, expiration = 3500, type = 'success', ...rest }) => {
         if (intervalIds[id]) {
             throw new Error('notification already exists');
@@ -39,20 +53,6 @@ export default (setNotifications) => {
                     isClosing: false
                 }
             ];
-        });
-    };
-
-    const hideNotification = (id) => {
-        return setNotifications((oldNotifications) => {
-            return oldNotifications.map((oldNotification) => {
-                if (oldNotification.id !== id) {
-                    return oldNotification;
-                }
-                return {
-                    ...oldNotification,
-                    isClosing: true
-                };
-            });
         });
     };
 

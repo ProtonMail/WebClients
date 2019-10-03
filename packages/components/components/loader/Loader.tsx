@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import { c } from 'ttag';
 import loadingSvg from 'design-system/assets/img/shared/loading-atom.svg';
 import loadingSmallerSvg from 'design-system/assets/img/shared/loading-atom-smaller.svg';
@@ -13,7 +12,11 @@ const IMAGES = {
 const MEDIUM_WIDTH = '80';
 const MEDIUM_HEIGHT = '80';
 
-const Loader = ({ size = 'small' }) => {
+interface Props {
+    size: 'small' | 'medium' | 'big';
+}
+
+const Loader = ({ size = 'small' }: Props) => {
     return (
         <div className="center flex mb2 mt2">
             <img
@@ -25,10 +28,6 @@ const Loader = ({ size = 'small' }) => {
             />
         </div>
     );
-};
-
-Loader.propTypes = {
-    size: PropTypes.oneOf(['small', 'medium', 'big'])
 };
 
 export default Loader;

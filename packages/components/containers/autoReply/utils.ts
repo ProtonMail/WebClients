@@ -1,15 +1,8 @@
 import moment from 'moment-timezone';
 import { c } from 'ttag';
+import { AutoReplyDuration } from 'proton-shared/lib/constants';
 
 export const DAY_MILLISECONDS = 24 * 60 * 60 * 1000;
-
-export const AutoReplyDuration = {
-    FIXED: 0,
-    DAILY: 1,
-    WEEKLY: 2,
-    MONTHLY: 3,
-    PERMANENT: 4
-};
 
 export const getDurationOptions = () => [
     {
@@ -85,7 +78,7 @@ export const getDaysOfMonthOptions = () => [
     { text: c('Option').t`31st of the month`, value: 30 }
 ];
 
-export const getRoundedHours = (time) => {
+export const getRoundedHours = (time: moment.MomentInput) => {
     const startOfDay = moment(time).startOf('day');
 
     return moment(moment(time).diff(startOfDay))
@@ -94,7 +87,7 @@ export const getRoundedHours = (time) => {
         .valueOf();
 };
 
-export const startOfDay = (date) =>
+export const startOfDay = (date: moment.MomentInput) =>
     moment(date)
         .startOf('day')
         .valueOf();

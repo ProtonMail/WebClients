@@ -34,6 +34,22 @@ const I18N = {
 export const containsSamePlans = (a, b) => isEquivalent(pick(a, Object.keys(b)), b);
 
 /**
+ * Convert subscription plans to PlanIDs format required by API requests
+ * @param {Array} plans coming from Subscription API
+ * @returns {Object}
+ */
+export const toPlanMap = (plans = [], key = 'ID') => {
+    return plans.reduce((acc, plan) => {
+        acc[plan[key]] = acc[plan[key]] || 0;
+        acc[plan[key]] += 1;
+        return acc;
+    }, Object.create(null));
+};
+
+export const toPlanIDs = toPlanMap;
+export const toPlanNames = (plans = []) => toPlanMap(plans, 'Name');
+
+/**
  * Build plansMap from current subscription and user demand
  * @param {Object} plansMap user demand
  * Possible entries for plansMap
@@ -127,22 +143,6 @@ export const getSubTotal = ({ plansMap, cycle, plans, services }) => {
         return acc;
     }, 0);
 };
-
-/**
- * Convert subscription plans to PlanIDs format required by API requests
- * @param {Array} plans coming from Subscription API
- * @returns {Object}
- */
-export const toPlanMap = (plans = [], key = 'ID') => {
-    return plans.reduce((acc, plan) => {
-        acc[plan[key]] = acc[plan[key]] || 0;
-        acc[plan[key]] += 1;
-        return acc;
-    }, Object.create(null));
-};
-
-export const toPlanIDs = toPlanMap;
-export const toPlanNames = (plans = []) => toPlanMap(plans, 'Name');
 
 /**
  * Merge addon to addition parameters

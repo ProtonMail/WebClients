@@ -1,35 +1,43 @@
 {
-  "plugins": [
-    "react",
-    "react-hooks"
-  ],
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["react", "react-hooks", "@typescript-eslint"],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "jest": true,
+        "node": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".ts", ".tsx"]
+            }
+        }
+    },
+    "extends": ["plugin:@typescript-eslint/recommended", "eslint:recommended", "plugin:react/recommended"],
+    "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/indent": "off",
+        "react/display-name": "off",
+        "react/prop-types": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "no-console": [
+            "error",
+            {
+                "allow": ["warn", "error"]
+            }
+        ]
     }
-  },
-  "env": {
-    "browser": true,
-    "commonjs": true,
-    "es6": true,
-    "jest": true,
-    "node": true
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
-  ],
-  "rules": {
-    "react/display-name": "off",
-    "react/prop-types": "warn",
-    "react-hooks/rules-of-hooks": "error",
-    "no-console": ["error", { "allow": ["warn", "error"] }]
-  }
 }

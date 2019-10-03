@@ -4,6 +4,7 @@ import 'intersection-observer';
 
 import ObserverSection from './ObserverSection';
 
+/** @type any */
 const ObserverSections = ({ children, setActiveSection }) => {
     React.Children.forEach(children, (child) => {
         if (!child.props.id) throw new Error('All sections to be observed need an id');

@@ -3,7 +3,7 @@ module.exports = {
     verbose: true,
     moduleDirectories: ['node_modules'],
     transform: {
-        '^.+\\.js$': 'babel-jest'
+        '^.+\\.(js|tsx?)$': 'babel-jest'
     },
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$': '<rootDir>/__mocks__/fileMock.js',

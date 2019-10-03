@@ -79,7 +79,9 @@ export const process = ({ Token, api, ApprovalURL, ReturnHost, signal }) => {
 
         const reset = () => {
             listen = false;
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
             window.removeEventListener('message', onMessage, false);
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
             signal.removeEventListener('abort', abort);
         };
 

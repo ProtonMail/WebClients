@@ -4,6 +4,7 @@ import { classnames } from 'react-components';
 
 import { useMainArea } from '../../hooks/useMainArea';
 
+/** @type {any} */
 const SettingsTitle = ({ children }) => {
     const mainAreaRef = useMainArea();
     const [topClass, setClass] = useState('sticky-title--onTop');

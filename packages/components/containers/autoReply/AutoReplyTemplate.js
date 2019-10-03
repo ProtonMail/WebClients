@@ -3,14 +3,9 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { Button } from 'react-components';
 import moment from 'moment';
-import {
-    getDaysOfMonthOptions,
-    getDurationOptions,
-    AutoReplyDuration,
-    DAY_MILLISECONDS,
-    getTimeZoneOptions
-} from './utils';
+import { getDaysOfMonthOptions, getDurationOptions, DAY_MILLISECONDS, getTimeZoneOptions } from './utils';
 import InfoLine from './InfoLine';
+import { AutoReplyDuration } from 'proton-shared/lib/constants';
 
 const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
     const durationLabel = getDurationOptions().find(({ value }) => value === autoresponder.Repeat).text;

@@ -18,6 +18,7 @@ import { updateLocale } from 'proton-shared/lib/api/settings';
 import { loadLocale } from 'proton-shared/lib/i18n';
 import { DEFAULT_LOCALE } from 'proton-shared/lib/constants';
 
+/* eslint-disable @typescript-eslint/camelcase */
 const LOCALES = {
     cs_CZ: 'Čeština',
     de_DE: 'Deutsch',
@@ -38,6 +39,7 @@ const LOCALES = {
     zh_CN: '简体中文',
     zh_TW: '繁體中'
 };
+/* eslint-enable @typescript-eslint/camelcase */
 
 function LanguageSection({ locales }) {
     const [{ Locale }] = useUserSettings();

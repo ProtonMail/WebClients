@@ -13,7 +13,8 @@ import StartDayOfMonthField from './fields/StartDayOfMonthField';
 import EndDayOfMonthField from './fields/EndDayOfMonthField';
 import StartDayOfWeekField from './fields/StartDayOfWeekField';
 import EndDayOfWeekField from './fields/EndDayOfWeekField';
-import { AutoReplyDuration, DAY_MILLISECONDS } from '../utils';
+import { DAY_MILLISECONDS } from '../utils';
+import { AutoReplyDuration } from 'proton-shared/lib/constants';
 
 const AutoReplyForm = ({ model, updateModel }) => {
     if (model.duration === AutoReplyDuration.FIXED) {

@@ -34,15 +34,6 @@ const ThemesSection = () => {
         return { identifier, id, label: getI18NLabel(), alt: id, src, customizable };
     });
 
-    const handleChangeTheme = async (themeIdentifier) => {
-        if (themeIdentifier === CUSTOM_THEME.identifier) {
-            return handleOpenModal();
-        }
-        await api(updateTheme(themeIdentifier));
-        await call();
-        createNotification({ text: c('Success').t`Theme saved` });
-    };
-
     const handleSaveCustomTheme = async (customCSSInput) => {
         await api(updateTheme(customCSSInput));
         await call();
@@ -51,6 +42,15 @@ const ThemesSection = () => {
 
     const handleOpenModal = () => {
         createModal(<CustomThemeModal theme={customCSS} onSave={handleSaveCustomTheme} />);
+    };
+
+    const handleChangeTheme = async (themeIdentifier) => {
+        if (themeIdentifier === CUSTOM_THEME.identifier) {
+            return handleOpenModal();
+        }
+        await api(updateTheme(themeIdentifier));
+        await call();
+        createNotification({ text: c('Success').t`Theme saved` });
     };
 
     return (

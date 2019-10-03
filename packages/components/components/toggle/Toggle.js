@@ -17,6 +17,9 @@ const label = (key) => {
     );
 };
 
+/**
+ * @type any
+ */
 const Toggle = ({ id = 'toggle', className = '', checked = false, loading, onChange, disabled, ...rest }) => {
     const handleChange = (event) => {
         if (!disabled && onChange) {
