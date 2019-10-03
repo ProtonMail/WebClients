@@ -20,7 +20,12 @@ function isDelinquent($state, gettextCatalog, notification, authentication, tran
      * @param  {String} state   State to redirect
      * @param  {String} message Error notification
      */
-    const error = (state = 'secured.payments', message = I18N.ERROR_ADMIN) => {
+    const error = (state, message = I18N.ERROR_ADMIN) => {
+        if (!state) {
+            window.location.href = '/settings';
+            return;
+        }
+
         $state.go(state).then(() => {
             /**
              * Show the notification once all the promises has been resolved.
