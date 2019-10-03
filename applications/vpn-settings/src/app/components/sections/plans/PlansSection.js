@@ -57,6 +57,7 @@ const PlansSection = () => {
                     </ConfirmModal>
                 );
             });
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
             return handleSelectPlan(Name);
         }
 
