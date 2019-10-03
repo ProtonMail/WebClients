@@ -8,13 +8,16 @@ import LabelSortableList from './LabelSortableList';
 import ActionsLabelToolbar from './ActionsLabelToolbar';
 
 function LabelsSection() {
-    const [list = [], loading] = useLabels();
+    const [list, loading] = useLabels();
     const { call } = useEventManager();
     const orderRequest = useApiWithoutResult(orderLabels);
 
-    const [labels, setLabels] = useState(list);
+    const [labels, setLabels] = useState(() => list || []);
 
     useEffect(() => {
+        if (!Array.isArray(list)) {
+            return;
+        }
         setLabels(list);
     }, [list]);
 

@@ -12,10 +12,13 @@ function FiltersSection() {
     const [filters, loading] = useFilters();
     const orderRequest = useApiWithoutResult(updateFilterOrder);
 
-    const [list, setFilters] = useState(filters || []);
+    const [list, setFilters] = useState(() => filters || []);
 
     useEffect(() => {
-        setFilters(filters || []);
+        if (!Array.isArray(filters)) {
+            return;
+        }
+        setFilters(filters);
     }, [filters]);
 
     const getScrollContainer = () => document.querySelector('.main-area');
