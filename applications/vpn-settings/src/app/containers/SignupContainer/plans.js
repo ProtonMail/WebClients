@@ -70,12 +70,11 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                 ),
                 c('Plan Feature').t`Servers in ${countries.basic.length} countries`,
                 c('Plan Feature').t`High speed servers`,
-                c('Plan Feature').t`Filesharing/P2P support`,
-                c('Plan Feature').t`No logs policy`,
                 <>
-                    <span className="mr0-5">{c('Plan Feature').t`P2P support`}</span>
+                    <span className="mr0-5">{c('Plan Feature').t`Filesharing/P2P support`}</span>
                     <Info title={c('Tooltip').t`Support for file sharing protocols such as Bittorrent.`} />
-                </>
+                </>,
+                c('Plan Feature').t`No logs policy`
             ]
         },
         [PLAN.PLUS]: {
