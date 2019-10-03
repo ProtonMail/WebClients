@@ -18,8 +18,8 @@ const { ENABLE_ENCRYPTION } = KEY_FLAGS;
 
 /* @ngInject */
 function contactPgpModel(dispatchers, mailSettingsModel) {
-    const CACHE = {};
-    const { dispatcher, on, unsubscribe } = dispatchers(['advancedSetting']);
+    let CACHE = {};
+    const { dispatcher, on } = dispatchers(['advancedSetting']);
     const set = (key, value) => (CACHE.model[key] = value);
     const get = (key) => CACHE.model[key];
     const dispatch = () => dispatcher.advancedSetting('update', CACHE);
@@ -172,7 +172,7 @@ function contactPgpModel(dispatchers, mailSettingsModel) {
     });
 
     on('logout', () => {
-        unsubscribe();
+        CACHE = {};
     });
 
     return {
