@@ -8,13 +8,17 @@
     </span>
 
     <elements-selector
+        data-position="left"
         ng-if="!idDefined()"
         class="toolBar-select-all mtauto mbauto"></elements-selector>
 
     <span class="toolbar-separator" ng-if="displayPaginator()"></span>
 
 
-    <dropdown-container class="toogleModeElementsDropdown-dropdown flex" ng-class="{ disabled: isDisabled()}">
+    <dropdown-container
+        class="toogleModeElementsDropdown-dropdown flex"
+        ng-class="{ disabled: isDisabled()}"
+        data-position="left">
         <dropdown-button class="pm_trigger toolbar-button toolbar-button--dropdown" ng-disabled="isDisabled()">
             <icon data-name="unread" data-size="16" class="mauto no-pointer-events toolbar-icon"></icon>
             <icon data-name="caret" data-size="16" class="mauto toolbar-icon ml0-25"></icon>

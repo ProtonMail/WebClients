@@ -57,51 +57,59 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog, $compi
         }, '');
     };
 
+    function link(scope, el) {
+        scope.$applyAsync(() => {
+            const dropdownId = el[0].querySelector('.elementsSelector-dropdown').getAttribute('data-dropdown-id');
+
+            el.find('.element-selector-set-scope')
+                .empty()
+                .append($compile(getTemplate())(scope));
+
+            const { dispatcher, on, unsubscribe } = dispatchers(['dropdownApp', 'selectElements']);
+            const $btn = el.find('.elementsSelector-btn-action');
+
+            const allSelected = () => _.every(scope.conversations, { Selected: true });
+
+            const updateView = () => {
+                scope.$applyAsync(() => {
+                    scope.viewLayout = mailSettingsModel.get('ViewLayout');
+                });
+            };
+            on('mailSettings', (event, { type = '' }) => {
+                if (type === 'updated') {
+                    updateView();
+                }
+            });
+
+            $btn.on('click', onClick);
+
+            function onClick({ currentTarget }) {
+                const action = currentTarget.getAttribute('data-action');
+                dispatcher.selectElements(action, { isChecked: true });
+                dispatcher.dropdownApp('action', {
+                    type: 'close',
+                    id: dropdownId
+                });
+            }
+
+            scope.checkedSelectorState = allSelected;
+            updateView();
+            scope.$on('$destroy', () => {
+                unsubscribe();
+                $btn.off('click', onClick);
+            });
+        });
+    }
+
     return {
         replace: true,
         templateUrl: require('../../../templates/elements/elementsSelector.tpl.html'),
-        link(scope, el) {
-            scope.$applyAsync(() => {
-                const dropdownId = el[0].querySelector('.elementsSelector-dropdown').getAttribute('data-dropdown-id');
+        compile(el, { position }) {
+            if (position) {
+                el[0].querySelector('.elementsSelector-dropdown').setAttribute('data-position', position);
+            }
 
-                el.find('.element-selector-set-scope')
-                    .empty()
-                    .append($compile(getTemplate())(scope));
-
-                const { dispatcher, on, unsubscribe } = dispatchers(['dropdownApp', 'selectElements']);
-                const $btn = el.find('.elementsSelector-btn-action');
-
-                const allSelected = () => _.every(scope.conversations, { Selected: true });
-
-                const updateView = () => {
-                    scope.$applyAsync(() => {
-                        scope.viewLayout = mailSettingsModel.get('ViewLayout');
-                    });
-                };
-                on('mailSettings', (event, { type = '' }) => {
-                    if (type === 'updated') {
-                        updateView();
-                    }
-                });
-
-                $btn.on('click', onClick);
-
-                function onClick({ currentTarget }) {
-                    const action = currentTarget.getAttribute('data-action');
-                    dispatcher.selectElements(action, { isChecked: true });
-                    dispatcher.dropdownApp('action', {
-                        type: 'close',
-                        id: dropdownId
-                    });
-                }
-
-                scope.checkedSelectorState = allSelected;
-                updateView();
-                scope.$on('$destroy', () => {
-                    unsubscribe();
-                    $btn.off('click', onClick);
-                });
-            });
+            return link;
         }
     };
 }
