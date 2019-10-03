@@ -150,9 +150,9 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
                         required
                     />
                 </Field>
-                <div className="ml1 flex flex-nowrap flex-items-center">
-                    <Checkbox checked={model.private} onChange={handleChangePrivate} />
-                    {c('Label for new member').t`Private`}
+                <div className="ml1">
+                    <Checkbox checked={model.private} onChange={handleChangePrivate}>{c('Label for new member')
+                        .t`Private`}</Checkbox>
                 </div>
             </Row>
             {model.private ? null : (
