@@ -22,7 +22,23 @@
                 <div class="margin-bottom" translate-context="Info" translate>You are about to open another browser tab and visit:</div>
             </div>
 
-            <span class="bold break">{{ ::ctrl.link }}</span>
+            <div class="flex flex-spacebetween">
+                <span
+                    ng-class="{ellipsis: ctrl.hideMore}"
+                    class="bold break linkWarningModal-link">{{ ::ctrl.link }}</span>
+                <button
+                    ng-if="ctrl.isLongLink && ctrl.hideMore"
+                    ng-click="ctrl.showMore()"
+                    class="pm-button pm-button--small"
+                    translate-context="Action"
+                    translate>Show full link</button>
+                <button
+                    ng-if="ctrl.isLongLink && !ctrl.hideMore"
+                    ng-click="ctrl.showMore()"
+                    class="pm-button pm-button--small"
+                    translate-context="Action"
+                    translate>Hide full link</button>
+            </div>
 
 
             <div ng-if="ctrl.punyCodeLink && !ctrl.punyCodeLinkIE" class="block-info-warning mt1">
