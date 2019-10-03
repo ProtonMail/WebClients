@@ -15,8 +15,8 @@ import {
     useEventManager
 } from 'react-components';
 
-import MemberStorageSelector from './MemberStorageSelector';
-import MemberVPNSelector from './MemberVPNSelector';
+import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
+import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA } from 'proton-shared/lib/constants';
 import { createMember, createMemberAddress } from 'proton-shared/lib/api/members';
 import { setupMemberKey } from './actionHelper';
@@ -29,6 +29,8 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
+    const storageRange = getStorageRange({}, organization);
+    const vpnRange = getVPNRange({}, organization);
     const [model, updateModel] = useState({
         name: '',
         private: false,
@@ -36,8 +38,8 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
         confirm: '',
         address: '',
         domain: domains[0].DomainName,
-        vpn: 1,
-        storage: FIVE_GIGA
+        vpn: vpnRange[0],
+        storage: Math.min(storageRange[1], FIVE_GIGA)
     });
     const update = (key, value) => updateModel({ ...model, [key]: value });
 
@@ -140,7 +142,13 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
             <Row>
                 <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
                 <Field>
-                    <Input id="nameInput" placeholder="Thomas A. Anderson" onChange={handleChange('name')} required />
+                    <Input
+                        id="nameInput"
+                        placeholder="Thomas A. Anderson"
+                        onChange={handleChange('name')}
+                        value={model.name}
+                        required
+                    />
                 </Field>
                 <div className="ml1 flex flex-nowrap flex-items-center">
                     <Checkbox checked={model.private} onChange={handleChangePrivate} />
@@ -179,7 +187,12 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
             <Row>
                 <Label>{c('Label').t`Address`}</Label>
                 <Field>
-                    <Input onChange={handleChange('address')} placeholder={c('Placeholder').t`Address`} required />
+                    <Input
+                        value={model.address}
+                        onChange={handleChange('address')}
+                        placeholder={c('Placeholder').t`Address`}
+                        required
+                    />
                 </Field>
                 <div className="ml1 flex flex-nowrap flex-items-center">
                     {domainOptions.length === 1 ? (
@@ -192,14 +205,19 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
             <Row>
                 <Label>{c('Label').t`Account storage`}</Label>
                 <Field>
-                    <MemberStorageSelector organization={organization} onChange={handleChangeStorage} />
+                    <MemberStorageSelector
+                        value={model.storage}
+                        step={GIGA}
+                        range={storageRange}
+                        onChange={handleChangeStorage}
+                    />
                 </Field>
             </Row>
             {hasVPN ? (
                 <Row>
                     <Label>{c('Label').t`VPN connections`}</Label>
                     <Field>
-                        <MemberVPNSelector organization={organization} onChange={handleChangeVPN} />
+                        <MemberVPNSelector value={model.vpn} step={1} range={vpnRange} onChange={handleChangeVPN} />
                     </Field>
                 </Row>
             ) : null}

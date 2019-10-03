@@ -13,10 +13,11 @@ import {
     useOrganization,
     useLoading
 } from 'react-components';
-
-import MemberStorageSelector from './MemberStorageSelector';
-import MemberVPNSelector from './MemberVPNSelector';
 import { updateName, updateQuota, updateVPN } from 'proton-shared/lib/api/members';
+import { GIGA } from 'proton-shared/lib/constants';
+
+import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
+import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';
 
 const EditMemberModal = ({ onClose, member, ...rest }) => {
     const [organization] = useOrganization();
@@ -43,6 +44,9 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
         createNotification({ text: c('Success').t`User updated` });
     };
 
+    const storageRange = getStorageRange(member, organization);
+    const vpnRange = getVPNRange(member, organization);
+
     return (
         <FormModal
             onClose={onClose}
@@ -68,14 +72,19 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
             <Row>
                 <Label>{c('Label').t`Account storage`}</Label>
                 <Field>
-                    <MemberStorageSelector organization={organization} member={member} onChange={handleChangeStorage} />
+                    <MemberStorageSelector
+                        value={model.storage}
+                        step={GIGA}
+                        range={storageRange}
+                        onChange={handleChangeStorage}
+                    />
                 </Field>
             </Row>
             {hasVPN ? (
                 <Row>
                     <Label>{c('Label').t`VPN connections`}</Label>
                     <Field>
-                        <MemberVPNSelector organization={organization} member={member} onChange={handleChangeVPN} />
+                        <MemberVPNSelector value={model.vpn} step={1} range={vpnRange} onChange={handleChangeVPN} />
                     </Field>
                 </Row>
             ) : null}
