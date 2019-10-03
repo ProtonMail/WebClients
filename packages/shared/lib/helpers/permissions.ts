@@ -1,4 +1,10 @@
-export const hasPermission = (userPermissions, pagePermissions = [], sectionPermissions = []) => {
+import { PERMISSIONS } from '../constants';
+
+export const hasPermission = (
+    userPermissions: PERMISSIONS[],
+    pagePermissions: PERMISSIONS[] = [],
+    sectionPermissions: PERMISSIONS[] = []
+) => {
     const requirements = pagePermissions.concat(sectionPermissions);
 
     if (!requirements.length) {

@@ -1,9 +1,17 @@
 {
-    "extends": "airbnb-base",
     "parserOptions": {
         "ecmaVersion": 2020,
         "sourceType": "module"
     },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".ts", ".tsx"]
+            }
+        }
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
     "env": {
         "browser": true,
         "node": true,
@@ -14,7 +22,11 @@
         "window": "readonly",
         "expectAsync": "readonly"
     },
+    "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended"],
     "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/indent": "off",
         "arrow-parens": ["error", "always"],
         "indent": "off",
         "comma-dangle": ["error", "never"],
@@ -41,12 +53,15 @@
         "import/export": "error",
         "import/prefer-default-export": "off",
         "import/no-extraneous-dependencies": "off",
-        "max-len": ["error", {
-            "ignoreComments": true,
-            "code": 120,
-            "ignoreStrings": true,
-            "ignoreTemplateLiterals": true,
-            "ignoreRegExpLiterals": true
-        }]
+        "max-len": [
+            "error",
+            {
+                "ignoreComments": true,
+                "code": 120,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true,
+                "ignoreRegExpLiterals": true
+            }
+        ]
     }
 }

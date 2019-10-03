@@ -7,10 +7,30 @@ module.exports = (config) => {
             'test/index.spec.js': ['webpack']
         },
         webpack: {
-            mode: 'development'
+            mode: 'development',
+            resolve: {
+                extensions: ['.js', '.ts', '.tsx']
+            },
+            module: {
+                rules: [
+                    {
+                        test: /\.tsx?$/,
+                        use: [
+                            {
+                                loader: 'ts-loader',
+                                options: { transpileOnly: true }
+                            }
+                        ],
+                        exclude: /node_modules/
+                    }
+                ]
+            }
         },
         webpackMiddleware: {
             stats: 'minimal'
+        },
+        mime: {
+            'text/x-typescript': ['ts', 'tsx']
         },
         reporters: ['progress'],
         port: 9876,

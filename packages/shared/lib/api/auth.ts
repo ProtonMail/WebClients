@@ -1,12 +1,12 @@
 export const PASSWORD_WRONG_ERROR = 8002;
 
-export const auth = (data) => ({
+export const auth = (data: any) => ({
     method: 'post',
     url: 'auth',
     data
 });
 
-export const auth2FA = ({ totp, u2f }) => ({
+export const auth2FA = ({ totp, u2f }: any) => ({
     method: 'post',
     url: 'auth/2fa',
     data: {
@@ -25,7 +25,7 @@ export const setRefreshCookies = () => ({
     url: 'auth/refresh'
 });
 
-export const setCookies = ({ UID, AccessToken, RefreshToken, State, RedirectURI = 'https://protonmail.com' }) => ({
+export const setCookies = ({ UID, AccessToken, RefreshToken, State, RedirectURI = 'https://protonmail.com' }: any) => ({
     method: 'post',
     url: 'auth/cookies',
     data: {
@@ -42,7 +42,7 @@ export const setCookies = ({ UID, AccessToken, RefreshToken, State, RedirectURI 
     }
 });
 
-export const getInfo = (Username) => ({
+export const getInfo = (Username: string) => ({
     method: 'post',
     url: 'auth/info',
     data: { Username }
@@ -63,7 +63,7 @@ export const revokeOtherSessions = () => ({
     url: 'auth/sessions'
 });
 
-export const revokeSession = (UID) => ({
+export const revokeSession = (UID: string | number) => ({
     method: 'delete',
     url: `auth/sessions/${UID}`
 });

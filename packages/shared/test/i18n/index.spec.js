@@ -73,6 +73,7 @@ describe('Load the locale', () => {
             const { test, response } = mockFR;
 
             await loadLocale('fr_FR', {
+                /* eslint-disable-next-line @typescript-eslint/camelcase */
                 fr_FR: async () => response
             });
 
@@ -95,6 +96,7 @@ describe('Load the locale', () => {
             expect(document.documentElement.lang).toEqual('');
 
             await loadLocale('es_ES', {
+                /* eslint-disable-next-line @typescript-eslint/camelcase */
                 es_ES: async () => response
             });
 
