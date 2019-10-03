@@ -18,7 +18,7 @@ const ToolbarDropdown = ({ title, content, className, children, originalPlacemen
                 onClick={toggle}
             >
                 <span className="mauto">
-                    <span className="mr0-5">{content}</span>
+                    {content ? <span className="mr0-5">{content}</span> : null}
                     <DropdownCaret className="toolbar-icon" isOpen={isOpen} />
                 </span>
             </button>

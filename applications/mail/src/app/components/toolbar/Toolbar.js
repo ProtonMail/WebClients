@@ -22,7 +22,10 @@ const Toolbar = ({
     selectedIDs = [],
     loading = false,
     onSort,
+    sort,
+    desc,
     onFilter,
+    filter,
     onPrevious,
     onNext
 }) => {
@@ -40,8 +43,8 @@ const Toolbar = ({
                 <ToolbarDropdown content={<Icon className="toolbar-icon" name="label" />}>todo</ToolbarDropdown>
             </div>
             <div className="flex">
-                <FilterDropdown loading={loading} onFilter={onFilter} />
-                <SortDropdown loading={loading} onSort={onSort} />
+                <FilterDropdown loading={loading} filter={filter} onFilter={onFilter} />
+                <SortDropdown loading={loading} sort={sort} desc={desc} onSort={onSort} />
                 <LayoutDropdown mailSettings={mailSettings} />
                 <ToolbarSeparator />
                 <ToolbarButton loading={loading} title={c('Action').t`Previous`} onClick={onPrevious}>
@@ -57,6 +60,8 @@ const Toolbar = ({
 
 Toolbar.propTypes = {
     checkAll: PropTypes.bool.isRequired,
+    desc: PropTypes.number,
+    sort: PropTypes.string,
     onCheckAll: PropTypes.func.isRequired,
     labelID: PropTypes.string.isRequired,
     selectedIDs: PropTypes.array.isRequired,

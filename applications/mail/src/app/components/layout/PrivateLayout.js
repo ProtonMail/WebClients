@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { AppsSidebar, StorageSpaceStatus, MainAreaContext, Href } from 'react-components';
+import { normalize } from 'proton-shared/lib/helpers/string';
 
 import PrivateHeader from '../header/PrivateHeader';
 import PrivateSidebar from '../sidebar/PrivateSidebar';
@@ -11,6 +12,10 @@ import PrivateSidebar from '../sidebar/PrivateSidebar';
 const PrivateLayout = ({ children, location, labelID }) => {
     const mainAreaRef = useRef();
     const [expanded, setExpand] = useState(false);
+
+    const handleSearch = (keyword) => {
+        console.log(normalize(keyword));
+    };
 
     useEffect(() => {
         setExpand(false);
@@ -32,7 +37,12 @@ const PrivateLayout = ({ children, location, labelID }) => {
                 ]}
             />
             <div className="content flex-item-fluid reset4print">
-                <PrivateHeader expanded={expanded} onToggleExpand={() => setExpand(!expanded)} />
+                <PrivateHeader
+                    location={location}
+                    expanded={expanded}
+                    onToggleExpand={() => setExpand(!expanded)}
+                    onSearch={handleSearch}
+                />
                 <div className="flex flex-nowrap">
                     <Route path="/:path" render={() => <PrivateSidebar labelID={labelID} expanded={expanded} />} />
                     <div className="main flex-item-fluid main-area scroll-smooth-touch" ref={mainAreaRef}>

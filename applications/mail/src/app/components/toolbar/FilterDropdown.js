@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import ToolbarDropdown from './ToolbarDropdown';
 
-const FilterDropdown = ({ loading, onFilter }) => {
+const FilterDropdown = ({ loading, filter, onFilter }) => {
+    console.log(filter);
     return (
         <ToolbarDropdown content={<Icon className="toolbar-icon" name="bullet-points" />}>
             <DropdownMenu>
@@ -28,6 +29,7 @@ const FilterDropdown = ({ loading, onFilter }) => {
 
 FilterDropdown.propTypes = {
     loading: PropTypes.bool,
+    filter: PropTypes.string,
     onFilter: PropTypes.func.isRequired
 };
 
