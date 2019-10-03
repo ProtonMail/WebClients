@@ -93,7 +93,6 @@ function addSubProject {
 
     echo "[build.project] npm run build -- $@ "--api=$API" --verbose" >> build.log;
     rm -rf dist;
-    npm run lint;
     npm run build -- $@ "--api=$API" --verbose
     cp -r dist/ "$WEBCLIENT_DIR/$1";
 }
