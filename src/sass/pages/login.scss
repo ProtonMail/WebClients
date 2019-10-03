@@ -51,25 +51,4 @@ body#reset {
     align-items: center;
 }
 
-
-
-body.appConfigBody-is-mobile {
-  #pm_login {
-    input[type="text"],
-    input[type="password"] {
-      background: rgba(0,0,0,.1);
-    }
-  }
-  #pm_login.pm_panel {
-    margin: 0;
-    border: none;
-    background: transparent;
-  }
-  #pm_footer {
-    display: none;
-  }
-}
-
-.login-btn-oldversion::before { content: url('#hostURL2#'); }
-
-// Short resolutions to check
+.loginForm-btn-oldversion::before { content: url('#hostURL2#'); }
