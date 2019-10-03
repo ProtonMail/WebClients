@@ -73,6 +73,10 @@
     }
     .message {
 
+        &.unread .message-header {
+            background: $white
+        }
+
         .recipients-details .messageContacts-email { margin-left: .5em; }
 
         &:not(.open) {
@@ -419,6 +423,21 @@
             animation: nodeInserted;
             animation-duration: 0.001s;
         }
+    }
+}
+
+.message.unread:not(.draft) {
+    .message-header {
+        background: $white
+    }
+
+    .message-header.message-summary::before {
+        background-color: $white;
+    }
+
+    .message-header.message-summary::before {
+        background-color: $white;
+
     }
 }
 
