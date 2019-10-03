@@ -20,7 +20,8 @@ const argv = require('minimist')(process.argv.slice(2), {
         appMode: 'bundle',
         remote: false,
         forceFetch: false,
-        silentMessage: false
+        silentMessage: false,
+        'default-branch': 'master'
     }
 });
 
