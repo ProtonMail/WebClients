@@ -66,39 +66,43 @@
 
     <div ng-if="message.expand" class="message-expand-wrapper relative">
 
-        <div class="inline-flex flex-items-center flex-justify-end message-expand-right-info">
-            <icon
-                ng-if="message.NumAttachments"
-                data-name="attach"
-                class="mr0-5"></icon>
-
-            <div class="labels message-summary-labels">
-                <labels-element
-                    data-button="remove"
-                    data-element="message"
-                    class="message-summary-labels-list flex-nowrap"></labels-element>
-            </div>
-
-            <div class="location message-summary-folder inline-flex folders">
-                <folders-message></folders-message>
-            </div>
-
-            <pt-star
-                data-model="message"
-                class="singleStar ml0-5"
-                data-pt-star-type="message"></pt-star>
-        </div>
-
         <div class="message-header">
 
             <div ng-if="message.toggleDetails" class="mb0-5">
-                <time class="time-readable">{{ ::message.Time | localReadableTime }}</time>
+                <div class="flex flex-items-start flex-nowrap">
+                    <div class="flex-item-fluid">
+                        <time class="time-readable">{{ ::message.Time | localReadableTime }}</time>
+                        <div class="recipients-details-size"><span translate-context="Label for the message size when displaying email details" translate>Size:</span> {{ ::message.Size | bytes }}</div>
+                    </div>
 
-                <div class="recipients-details-size"><span translate-context="Label for the message size when displaying email details" translate>Size:</span> {{ ::message.Size | bytes }}</div>
+                    <div class="flex flex-items-center flex-item-noshrink flex-justify-end message-expand-right-info">
+                        <icon
+                            ng-if="message.NumAttachments"
+                            data-name="attach"
+                            class="mr0-5"></icon>
+
+                        <div class="labels message-summary-labels">
+                            <labels-element
+                                data-button="remove"
+                                data-element="message"
+                                class="message-summary-labels-list flex-nowrap"></labels-element>
+                            </div>
+
+                            <div class="location message-summary-folder inline-flex folders">
+                                <folders-message></folders-message>
+                            </div>
+
+                            <pt-star
+                                data-model="message"
+                                class="singleStar ml0-5"
+                                data-pt-star-type="message"></pt-star>
+                        </div>
+                </div>
+
             </div>
 
-            <div class="recipients-summary mb0-5">
-                <span class="flex">
+            <div class="recipients-summary flex mb0-5">
+                <span class="flex flex-item-fluid ellipsis pr1">
                     <span
                         class="opacity-50 flex-self-vcenter container-to"
                         translate-context="Message recipient label"
@@ -115,6 +119,28 @@
                         translate-context="No recipients to display in the message header"
                         translate>Undisclosed Recipients</span>
                 </span>
+                <div class="inline-flex flex-items-center flex-item-noshrink flex-justify-end message-expand-right-info">
+                    <icon
+                        ng-if="message.NumAttachments"
+                        data-name="attach"
+                        class="mr0-5"></icon>
+
+                    <div class="labels message-summary-labels">
+                        <labels-element
+                            data-button="remove"
+                            data-element="message"
+                            class="message-summary-labels-list flex-nowrap"></labels-element>
+                    </div>
+
+                    <div class="location message-summary-folder inline-flex folders">
+                        <folders-message></folders-message>
+                    </div>
+
+                    <pt-star
+                        data-model="message"
+                        class="singleStar ml0-5"
+                        data-pt-star-type="message"></pt-star>
+                </div>
             </div>
 
             <div class="recipients-details">
