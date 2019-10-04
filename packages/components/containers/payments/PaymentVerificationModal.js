@@ -140,7 +140,7 @@ const PaymentVerificationModal = ({
                             </p>
                             <Alert>
                                 {isAddCard
-                                    ? c('Info').t`Verification can take a few minutes to fully verify.`
+                                    ? c('Info').t`Verification can take a few minutes.`
                                     : c('Info').t`Payment can take a few minutes to fully verify.`}
                             </Alert>
                         </>
