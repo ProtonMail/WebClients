@@ -10,7 +10,8 @@ const StorageSpaceStatus = ({ children }) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
 
-    const usedPercent = Math.round(UsedSpace / MaxSpace);
+    // round with 0.01 precision
+    const usedPercent = Math.round((UsedSpace / MaxSpace) * 10000) / 100;
     const maxSpaceFormatted = humanSize(MaxSpace);
     const usedSpaceFormatted = humanSize(UsedSpace);
     const color =
