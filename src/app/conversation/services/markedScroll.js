@@ -7,16 +7,14 @@ function markedScroll() {
 
     const follow = () => {
         if (!CACHE.wrapper || !CACHE.wrapper.offsetHeight) {
-            CACHE.wrapper = document.body.querySelector('.conversation-wrapper');
+            // Not same wrapper of both modes
+            const cols = document.getElementById('conversation-list-columns');
+            CACHE.wrapper = cols || document.getElementById('wrapper');
         }
 
         _.defer(() => {
             const $marked = getMarked();
-
-            // Focus the checkbox to toggle it with the "space" key
-            $marked.querySelector('.customCheckbox-input').focus();
-
-            CACHE.wrapper.scrollTop = $marked.offsetTop - CACHE.wrapper.offsetHeight / 2;
+            CACHE.wrapper.scrollTop = $marked.offsetTop - CACHE.wrapper.offsetHeight / 1.5;
         });
     };
     const clear = () => (CACHE.wrapper = null);

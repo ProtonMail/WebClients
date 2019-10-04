@@ -8,7 +8,8 @@ function toogleModeElementsDropdown(
     settingsMailApi,
     notification,
     gettextCatalog,
-    mailSettingsModel
+    mailSettingsModel,
+    markedScroll
 ) {
     const { dispatcher } = dispatchers(['settings']);
     const getLayout = (mode) => {
@@ -47,6 +48,7 @@ function toogleModeElementsDropdown(
             const promise = settingsMailApi.updateViewLayout({ ViewLayout: newLayout }).then(() => {
                 dispatcher.settings('viewLayout.updated', { viewLayout: newLayout });
                 tools.mobileResponsive();
+                markedScroll.clear();
                 notification.success(gettextCatalog.getString('Layout saved', null, 'Info'));
             });
 
