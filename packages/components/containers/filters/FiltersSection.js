@@ -48,12 +48,7 @@ function FiltersSection() {
             {loading ? (
                 <Loader />
             ) : list.length ? (
-                <FilterSortableList
-                    getContainer={getScrollContainer}
-                    pressDelay={200}
-                    items={list}
-                    onSortEnd={onSortEnd}
-                />
+                <FilterSortableList getContainer={getScrollContainer} items={list} onSortEnd={onSortEnd} />
             ) : (
                 <Alert>{c('FilterSettings').t`No filters available`}</Alert>
             )}

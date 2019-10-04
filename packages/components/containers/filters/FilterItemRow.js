@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { SortableElement } from 'react-sortable-hoc';
 import {
-    Icon,
     Alert,
     Toggle,
     DropdownActions,
     ConfirmModal,
+    OrderableTableRow,
     useApi,
     useModals,
     useEventManager,
@@ -20,7 +19,7 @@ import { toggleEnable, deleteFilter } from 'proton-shared/lib/api/filters';
 
 import AddFilterModal from './AddFilterModal';
 
-function FilterItemRow({ filter }) {
+function FilterItemRow({ filter, ...rest }) {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
@@ -74,25 +73,21 @@ function FilterItemRow({ filter }) {
     ].filter(Boolean);
 
     return (
-        <tr style={{ backgroundColor: 'white', cursor: 'move' }}>
-            <td>
-                <Icon name="text-justify" />
-            </td>
-            <td>{Name}</td>
-            <td>
-                <div className="w10">
+        <OrderableTableRow
+            cells={[
+                Name,
+                <div key="0" className="w10">
                     <Toggle
                         id={`item-${ID}`}
                         loading={loading}
                         checked={Status === FILTER_STATUS.ENABLED}
                         onChange={(e) => withLoading(handleChangeStatus(e))}
                     />
-                </div>
-            </td>
-            <td>
-                <DropdownActions className="pm-button--small" list={list} />
-            </td>
-        </tr>
+                </div>,
+                <DropdownActions key="1" className="pm-button--small" list={list} />
+            ]}
+            {...rest}
+        ></OrderableTableRow>
     );
 }
 
@@ -100,4 +95,4 @@ FilterItemRow.propTypes = {
     filter: PropTypes.object.isRequired
 };
 
-export default SortableElement(FilterItemRow);
+export default FilterItemRow;
