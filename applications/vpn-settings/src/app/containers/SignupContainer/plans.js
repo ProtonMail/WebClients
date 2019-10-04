@@ -98,7 +98,8 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                         title={c('Tooltip')
                             .t`Access content (Netflix, Amazon Prime, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
                     />
-                </>
+                </>,
+                c('Plan Feature').t`All advanced security features`
             ]
         },
         [PLAN.VISIONARY]: {
