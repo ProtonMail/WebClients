@@ -1,7 +1,19 @@
 <div class="dropdown-folder-container">
 
-    <div class="dropdown-folder-title p1">
-        <p translate translate-context="title" class="m0">Move to</p>
+    <div class="flex flex-items-center pr1">
+        <div class="dropdown-label-title p1 flex-item-fluid">
+            <p class="dropdown-label-title-hasLabels m0 bold" translate translate-context="title">Move to</p>
+        </div>
+        <div class="flex-item-noshrink">
+            <button
+                type="button"
+                class="pm-button--primary pm-button--small pm-button--for-smallicon no-pointer-events-children dropdown-folder-create-button">
+                <icon data-name="folder" data-fill="global-light"></icon>
+                +
+                <span class="sr-only" translate translate-context="Action">Create folder</span>
+            </button>
+        </div>
+
     </div>
 
     <label class="flex flex-spacebetween mb1 pl1 pr1">
