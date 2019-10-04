@@ -99,6 +99,23 @@ function dropdownLabels(
             });
         };
 
+        const onClick = (e) => {
+            if (e.target.classList.contains('dropdown-label-scrollbox-label-icon')) {
+                const ID = e.target.getAttribute('data-label-id');
+                ID &&
+                    scope.$applyAsync(() => {
+                        const label = _.find(scope.labels, { ID });
+                        label.Selected = true;
+                        dispatcher.requestElements('saveLabels', {
+                            labels: scope.labels,
+                            alsoArchive: scope.alsoArchive
+                        });
+                        close();
+                        notification.success(I18N.LABEL_SAVED);
+                    });
+            }
+        };
+
         const onClickCreate = () => {
             lockDropdown();
             labelModal.activate({
@@ -165,11 +182,13 @@ function dropdownLabels(
 
         el.on('submit', onSubmit);
         $createBtn.on('click', onClickCreate);
+        el.on('click', onClick);
 
         scope.color = ({ Color: color = 'inherit' } = {}, key = 'color') => ({ [key]: color });
 
         scope.$on('$destroy', () => {
             el.off('submit', onSubmit);
+            el.off('click', onClick);
             $createBtn.off('click', onClickCreate);
             unsubscribe();
         });
