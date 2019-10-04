@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from '../../helpers/component';
 
 const Paragraph = ({ className = '', children }) => {
-    return <div className={`pt1 pb1 ${className}`}>{children}</div>;
+    return <div className={classnames(['pt1 pb1', className])}>{children}</div>;
 };
 
 Paragraph.propTypes = {

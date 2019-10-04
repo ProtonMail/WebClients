@@ -1,5 +1,6 @@
 import React, { forwardRef, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from '../../helpers/component';
 
 const FileInput = forwardRef(({ children, id = 'fileInput', className, onChange, ...rest }, ref) => {
     const newRef = useRef();
@@ -12,7 +13,7 @@ const FileInput = forwardRef(({ children, id = 'fileInput', className, onChange,
     };
 
     return (
-        <label className={'pm-button '.concat(className || '')} htmlFor={id}>
+        <label className={classnames(['pm-button', className])} htmlFor={id}>
             <input id={id} type="file" className="hidden" onChange={handleChange} {...rest} ref={fileRef} />
             {children}
         </label>

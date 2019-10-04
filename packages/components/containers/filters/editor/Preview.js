@@ -5,6 +5,7 @@ import { Alert, Row, Label, useFormattedLabels } from 'react-components';
 
 import PreviewActionValue from './PreviewActionValue';
 import './Preview.css';
+import { classnames } from '../../../helpers/component';
 
 const formatActions = (actions, labelsModel) => {
     const getMarkLabel = ({ Starred, Read }) => {
@@ -85,7 +86,7 @@ function PreviewFilter({ filter }) {
             <div className="Preview-row">
                 <b className="mb1">{c('Filter preview').t`Conditions`}:</b>
                 {Conditions.map(({ Comparator, Type, Values }, i) => {
-                    const className = 'Preview-condition'.concat(!i ? ' mt1' : '');
+                    const className = classnames(['Preview-condition', !i && 'mt1']);
 
                     return (
                         <Row className={className} key={i.toString()}>
@@ -120,7 +121,7 @@ function PreviewFilter({ filter }) {
                 <b>{c('Filter preview').t`Actions`}:</b>
 
                 {formatActions(Actions, labelsModel).map(({ label, value, icon }, i) => {
-                    const className = 'Preview-condition'.concat(!i ? ' mt1' : '');
+                    const className = classnames(['Preview-condition', !i && 'mt1']);
                     return (
                         <Row className={className} key={i.toString()}>
                             {!i ? (

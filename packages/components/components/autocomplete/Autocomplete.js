@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
 import Awesomplete from 'awesomplete';
 import './Autocomplete.scss';
+import { classnames } from '../../helpers/component';
 
 const Autocomplete = ({
     children,
@@ -83,9 +84,9 @@ const Autocomplete = ({
     }, [awesomplete, list]);
 
     return (
-        <div className={'autocomplete awesomplete w100'.concat(className)} onSubmit={handleSubmit}>
+        <div className={classnames(['autocomplete awesomplete w100', className])} onSubmit={handleSubmit}>
             <div className="autocomplete-container" ref={containerRef}>
-                <div className={`flex pm-field ${inputStyleModifier}`}>
+                <div className={classnames(['flex pm-field', inputStyleModifier])}>
                     {childrenCount > 0 && <div className="flex">{children}</div>}
 
                     <input

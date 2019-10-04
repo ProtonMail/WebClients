@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from '../../helpers/component';
 
 const CURRENCIES = {
     USD: '$',
@@ -16,7 +17,7 @@ const Price = ({ children: amount = 0, currency = '', className = '', divisor = 
 
     if (currency === 'USD') {
         return (
-            <span className={`price ${className}`} data-currency={currency}>
+            <span className={classnames(['price', className])} data-currency={currency}>
                 {p}
                 {c}
                 {v}
@@ -26,7 +27,7 @@ const Price = ({ children: amount = 0, currency = '', className = '', divisor = 
     }
 
     return (
-        <span className={`price ${className}`} data-currency={currency}>
+        <span className={classnames(['price', className])} data-currency={currency}>
             {p}
             {v}
             {currency ? <> {c}</> : null}

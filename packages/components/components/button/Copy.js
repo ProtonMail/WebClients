@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import { Button } from '../button';
+import { classnames } from '../../helpers/component';
 
 const Copy = ({ value, className = '' }) => {
     const [copied, setCopied] = useState(false);
@@ -20,7 +21,7 @@ const Copy = ({ value, className = '' }) => {
         <Button
             onClick={handleClick}
             icon="clipboard"
-            className={`${className} ${copied ? 'copied' : ''}`}
+            className={classnames([className, copied && 'copied'])}
             title={copied ? c('Label').t`Copied` : c('Label').t`Copy`}
         />
     );

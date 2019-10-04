@@ -58,7 +58,7 @@ const Input = React.forwardRef(
                 ) : null}
                 {addIconWrapper(
                     <input
-                        className={`pm-field w100 ${className} ${statusClasses}`}
+                        className={classnames(['pm-field w100', className, statusClasses])}
                         aria-invalid={errorZone && status.isDirty}
                         aria-describedby={uid}
                         id={id}

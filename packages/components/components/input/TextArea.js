@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { generateUID } from '../../helpers/component';
+import { generateUID, classnames } from '../../helpers/component';
 import useAutoGrow from '../../hooks/useAutoGrow';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
@@ -26,7 +26,7 @@ const TextArea = (props) => {
         <>
             <textarea
                 rows={rows}
-                className={`pm-field w100 ${className} ${statusClasses}`}
+                className={classnames(['pm-field w100', className, statusClasses])}
                 aria-invalid={error && status.isDirty}
                 aria-describedby={uid}
                 {...rest}

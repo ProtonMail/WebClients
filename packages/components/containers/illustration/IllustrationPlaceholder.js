@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from '../../helpers/component';
 
 const IllustrationPlaceholder = ({ className, title, text, url, uppercase, children }) => {
     const info = typeof text === 'string' ? <p>{text}</p> : text;
 
     return (
-        <div className={`flex flex-column flex-items-center w100 ${className}`}>
+        <div className={classnames(['flex flex-column flex-items-center w100', className])}>
             <img src={url} alt={title} className="p1 mb1" />
-            <h2 className={`bold ${uppercase ? 'uppercase' : ''}`}>{title}</h2>
+            <h2 className={classnames(['bold', uppercase && 'uppercase'])}>{title}</h2>
             {info}
             {children}
         </div>

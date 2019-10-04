@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from '../../helpers/component';
 
 const DropdownMenuLink = ({ className = '', children, ...rest }) => {
     return (
-        <a className={`w100 pt0-5 pb0-5 inbl nodecoration ${className}`} {...rest}>
+        <a className={classnames(['w100 pt0-5 pb0-5 inbl nodecoration', className])} {...rest}>
             {children}
         </a>
     );

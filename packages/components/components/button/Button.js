@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../icon/Icon';
+import { classnames } from '../../helpers/component';
 
 const Button = ({
     type = 'button',
@@ -22,7 +23,7 @@ const Button = ({
         <button
             role={role}
             disabled={loading ? true : disabled}
-            className={`pm-button ${iconButtonClass} ${className}`}
+            className={classnames(['pm-button', iconButtonClass, className])}
             type={type}
             tabIndex={disabled ? '-1' : tabIndex}
             title={title}

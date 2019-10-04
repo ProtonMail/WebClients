@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import Icon from '../icon/Icon';
 import NavMenu from './NavMenu';
+import { classnames } from '../../helpers/component';
 
 const NavItem = ({ type = 'link', link, isActive, text, aside, onClick, icon, list = [], color, className = '' }) => {
     const content = (
@@ -23,7 +24,7 @@ const NavItem = ({ type = 'link', link, isActive, text, aside, onClick, icon, li
     if (type === 'link') {
         return (
             <li className="navigation__item">
-                <NavLink className={`navigation__link ${className}`} isActive={isActive} to={link}>
+                <NavLink className={classnames(['navigation__link', className])} isActive={isActive} to={link}>
                     {content}
                 </NavLink>
                 {list.length ? <NavMenu list={list} /> : null}
@@ -34,7 +35,7 @@ const NavItem = ({ type = 'link', link, isActive, text, aside, onClick, icon, li
     if (type === 'text') {
         return (
             <li className="navigation__item">
-                <span className={`navigation__link ${className}`}>
+                <span className={classnames(['navigation__link', className])}>
                     {content}
                     {list.length ? <NavMenu list={list} /> : null}
                 </span>
@@ -45,7 +46,7 @@ const NavItem = ({ type = 'link', link, isActive, text, aside, onClick, icon, li
     if (type === 'button') {
         return (
             <li className="navigation__item">
-                <button type="button" className={`w100 navigation__link ${className}`} onClick={onClick}>
+                <button type="button" className={classnames(['w100 navigation__link', className])} onClick={onClick}>
                     {content}
                 </button>
                 {list.length ? <NavMenu list={list} /> : null}

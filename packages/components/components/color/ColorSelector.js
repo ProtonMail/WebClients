@@ -4,18 +4,16 @@ import { Icon, Input } from 'react-components';
 import { LABEL_COLORS } from 'proton-shared/lib/constants';
 
 import './ColorSelector.scss';
+import { classnames } from '../../helpers/component';
 
 const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS }) => {
-    const getClass = (className, more) => {
-        return [className, more].filter(Boolean).join(' ');
-    };
     return (
-        <ul className={getClass('ColorSelector-container unstyled', className)}>
+        <ul className={classnames(['ColorSelector-container unstyled', className])}>
             {colors.map((color, i) => {
                 return (
                     <li
                         key={'mykey' + i}
-                        className={getClass('ColorSelector-item', selected === color && 'selected')}
+                        className={classnames(['ColorSelector-item', selected === color && 'selected'])}
                         style={{ color }}
                     >
                         <Input

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
+import { classnames } from '../../helpers/component';
 
 const Header = ({ children, modalTitleID, className = '', hasClose = true, onClose, ...rest }) => {
     return (
-        <header className={`pm-modalHeader ${className}`} {...rest}>
+        <header className={classnames(['pm-modalHeader', className])} {...rest}>
             {hasClose ? (
                 <button type="button" className="pm-modalClose" title={c('Action').t`Close modal`} onClick={onClose}>
                     ×

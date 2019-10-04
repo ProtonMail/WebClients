@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { classnames } from '../../helpers/component';
 
 const Content = ({ children, className = '', onSubmit = noop, onReset = noop, autoComplete = 'off', ...rest }) => {
     const handleSubmit = (event) => {
@@ -12,7 +13,7 @@ const Content = ({ children, className = '', onSubmit = noop, onReset = noop, au
             onSubmit={handleSubmit}
             onReset={onReset}
             autoComplete={autoComplete}
-            className={`pm-modalContent ${className}`}
+            className={classnames(['pm-modalContent', className])}
             {...rest}
         >
             {children}

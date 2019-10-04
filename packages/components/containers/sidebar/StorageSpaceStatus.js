@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { CircularProgress, Dropdown, Icon, generateUID, useUser, usePopperAnchor } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { classnames } from '../../helpers/component';
 
 const StorageSpaceStatus = ({ children }) => {
     const [{ MaxSpace, UsedSpace }] = useUser();
@@ -59,7 +60,7 @@ const StorageSpaceStatus = ({ children }) => {
                                 <CircularProgress
                                     progress={usedPercent}
                                     size={100}
-                                    className={`circle-chart__background--bigger ${color}`}
+                                    className={classnames(['circle-chart__background--bigger', color])}
                                 />
                                 <span className="centered-absolute">{usedPercent}%</span>
                             </div>

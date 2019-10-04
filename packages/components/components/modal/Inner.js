@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from '../../helpers/component';
 
 const Inner = ({ children, className = '' }) => (
-    <div className={'pm-modalContentInner '.concat(className)}>{children}</div>
+    <div className={classnames(['pm-modalContentInner', className])}>{children}</div>
 );
 
 Inner.propTypes = {

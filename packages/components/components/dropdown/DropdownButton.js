@@ -8,7 +8,7 @@ const DropdownButton = ({ className = '', hasCaret = false, isOpen, children, ..
     return (
         <Button className={classnames(['flex-item-noshrink', className])} aria-expanded={isOpen} {...rest}>
             <span className="mauto">
-                <span className={hasCaret && children ? 'mr0-5' : ''}>{children}</span>
+                <span className={classnames([hasCaret && children && 'mr0-5'])}>{children}</span>
                 {hasCaret && <DropdownCaret isOpen={isOpen} />}
             </span>
         </Button>

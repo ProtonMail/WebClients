@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Icon from './Icon';
+import { classnames } from '../../helpers/component';
 
 const TYPES = {
     success: 'bg-global-success',
@@ -11,7 +12,7 @@ const TYPES = {
 
 const RoundedIcon = ({ className = 'inline-flex rounded50', type = 'success', padding = 'p0-25', ...rest }) => {
     return (
-        <span className={`${className} ${padding} ${TYPES[type]}`}>
+        <span className={classnames([className, padding, TYPES[type]])}>
             <Icon {...rest} />
         </span>
     );

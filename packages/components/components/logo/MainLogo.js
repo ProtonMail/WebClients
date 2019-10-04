@@ -10,6 +10,7 @@ import CalendarLogo from './CalendarLogo';
 import ContactsLogo from './ContactsLogo';
 import MailLogo from './MailLogo';
 import VpnLogo from './VpnLogo';
+import { classnames } from '../../helpers/component';
 
 const { MAIL, VPN } = PLAN_SERVICES;
 const { PROTONMAIL, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR, PROTONVPN_SETTINGS, PROTONMAIL_SETTINGS } = APPS;
@@ -22,7 +23,7 @@ const { PROTONMAIL, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR, PROTONVPN_SETTI
 const MainLogo = ({ url = '/inbox', external = false, className = '' }) => {
     const { APP_NAME, CLIENT_TYPE } = useConfig();
     const [subscription] = useSubscription();
-    const classNames = `logo-container nodecoration flex flex-item-centered-vert ${className}`;
+    const classNames = classnames(['logo-container nodecoration flex flex-item-centered-vert', className]);
     const planName = getPlanName(subscription, CLIENT_TYPE === CLIENT_TYPES.VPN ? VPN : MAIL);
 
     const logo = (() => {

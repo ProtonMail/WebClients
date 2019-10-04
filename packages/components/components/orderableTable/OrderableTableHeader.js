@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { TableHeader } from '../table';
 import './OrderableTableHeader.scss';
+import { classnames } from '../../helpers/component';
 
 const OrderableTableHeader = ({ cells = [], className = '', children, ...rest }) => (
     <TableHeader
@@ -10,7 +11,7 @@ const OrderableTableHeader = ({ cells = [], className = '', children, ...rest })
             null, // column for icon
             ...cells
         ]}
-        className={`orderableTableHeader ${className}`}
+        className={classnames(['orderableTableHeader', className])}
         {...rest}
     >
         {children}

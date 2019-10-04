@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import { Table } from '../table';
 import OrderableContainer from '../orderable/OrderableContainer';
 import './OrderableTable.scss';
+import { classnames } from '../../helpers/component';
 
 const OrderableTable = ({ children = [], className = '', caption, ...props }) => (
     <OrderableContainer helperClass="orderableHelper pm-simple-table" useDragHandle {...props}>
-        <Table caption={caption} className={`orderableTable ${className}`}>
+        <Table caption={caption} className={classnames(['orderableTable', className])}>
             {children}
         </Table>
     </OrderableContainer>

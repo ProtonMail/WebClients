@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../icon/Icon';
+import { classnames } from '../../helpers/component';
 
 const AutocompleteSelection = ({ className, label, onRemove, onLabelChange }) => {
     const editable = !!onLabelChange;
@@ -18,7 +19,7 @@ const AutocompleteSelection = ({ className, label, onRemove, onLabelChange }) =>
     };
 
     return (
-        <div className={`flex bordered-container bg-global-light mr0-5 ${className}`}>
+        <div className={classnames(['flex bordered-container bg-global-light mr0-5', className])}>
             <div
                 className="flex ml0-5 mr0-5 flex-item-centered-vert"
                 onKeyDown={handleKeyDown}

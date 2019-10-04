@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Pikaday from 'pikaday';
+import { classnames } from '../../helpers/component';
 
 // Configuration: https://github.com/Pikaday/Pikaday#configuration
 const DateInput = ({ id, disabled, required = false, placeholder, className = '', ...rest }) => {
@@ -18,7 +19,7 @@ const DateInput = ({ id, disabled, required = false, placeholder, className = ''
     return (
         <input
             id={id}
-            className={`pm-field w100 ${className}`}
+            className={classnames(['pm-field w100', className])}
             placeholder={placeholder}
             disabled={disabled}
             required={required}

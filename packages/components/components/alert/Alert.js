@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { LearnMore } from 'react-components';
+import { classnames } from '../../helpers/component';
 
 const CLASSES = {
     info: 'mb1 block-info-standard',
@@ -11,7 +12,7 @@ const CLASSES = {
 
 const Alert = ({ type = 'info', children, learnMore, className }) => {
     return (
-        <div className={CLASSES[type].concat(` ${className || ''}`)}>
+        <div className={classnames([CLASSES[type], className])}>
             <div className="mw70ch">{children}</div>
             {learnMore ? (
                 <div>

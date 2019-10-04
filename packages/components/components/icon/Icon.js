@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from '../../helpers/component';
 
 /**
  * Component to print svg icon
@@ -35,7 +36,7 @@ const Icon = ({
             <svg
                 style={style}
                 viewBox={viewBox}
-                className={`icon-${size}p `.concat(fillClass, className).trim()}
+                className={classnames([`icon-${size}p`, fillClass, className])}
                 role="img"
                 focusable="false"
                 {...rest}

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import Icon from '../icon/Icon';
+import { classnames } from '../../helpers/component';
 
 const label = (key) => {
     const I18N = {
@@ -39,7 +40,7 @@ const Toggle = ({ id = 'toggle', className = '', checked = false, loading, onCha
                 aria-busy={loading}
                 {...rest}
             />
-            <label htmlFor={id} className={`pm-toggle-label ${className}`}>
+            <label htmlFor={id} className={classnames(['pm-toggle-label', className])}>
                 {label('off')}
                 {label('on')}
             </label>

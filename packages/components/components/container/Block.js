@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from '../../helpers/component';
 
 const Block = ({ children, className = '' }) => {
-    return <div className={`mb1 ${className}`}>{children}</div>;
+    return <div className={classnames(['mb1', className])}>{children}</div>;
 };
 
 Block.propTypes = {
