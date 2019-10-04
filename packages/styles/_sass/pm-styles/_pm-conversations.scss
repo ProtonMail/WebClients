@@ -21,7 +21,8 @@
   padding: em(8) em(12);
 }
 
-.item-is-selected {
+.item-is-selected,
+.item-container.active { // alias for Angular
   background: $conversation-selected-bg;
 }
 

@@ -5,6 +5,7 @@
 - added `pm-button--currentColor` modifier (used in notification area for example)
 - added `navigation__refresh` classes (for mail)
 - added `pm-button--for-smallicon` modifier
+- added placeholder images (no result)
 
 ## Updated/fixes
 
@@ -13,6 +14,7 @@
 - fixed cursor value for modals (Edge bug)
 - fixed header structure of website
 - fixed top navigation
+- fixed selected conversation state
 
 
 # [1.7.5] - 2019-09-27
