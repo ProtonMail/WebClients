@@ -28,7 +28,7 @@
         </div>
     </label>
 
-    <ul class="dropDown-contentInner unstyled mt0-5 mb0-5">
+    <ul class="dropDown-contentInner unstyled mt0-5 mb0-5 pb1">
         <li
             class="dropDown-item alignleft"
             ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchValue})) track by label.ID">
@@ -66,10 +66,12 @@
     </ul>
 
     <button
-        class="pm-button--link disabled-if-network-activity w100 dropdown-folder-create-button p1 mb0-5 mt0-5 no-pointer-events-children">
+        class="pm-button--link disabled-if-network-activity w100 dropdown-folder-create-button p1 mb0-5 mt0-5 no-pointer-events-children"
+        ng-style="!searchValue ? { height: '1px' } : {}"
+        ng-class="{nonvisible: !searchValue}">
         <span
             translate-context="Action"
             translate>Create a new folder</span>
-        <i class="dropdown-folder-create-value">{{searchValue}}</i>
+        <q class="bold color-black">{{searchValue}}</q>
     </button>
 </div>
