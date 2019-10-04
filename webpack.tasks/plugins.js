@@ -60,7 +60,12 @@ const list = [
         })),
         { from: 'src/i18n', to: 'i18n' },
         { from: CONFIG.externalFiles.formgenerator, to: 'form' },
-        { from: 'src/assets', to: 'assets' }
+        { from: 'src/assets', to: 'assets' },
+        {
+            from: 'node_modules/design-system/assets/img/shared/no-result*.svg',
+            to: 'assets/',
+            flatten: true
+        }
     ]),
 
     new WriteWebpackPlugin(

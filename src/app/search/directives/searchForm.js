@@ -38,7 +38,7 @@ function searchForm(
             searchDate.attr('placeholder', dateUtils.I18N.localizedDatePlaceholder);
 
             return (scope, el) => {
-                const { on, unsubscribe, dispatcher } = dispatchers(['dropdownApp']);
+                const { on, unsubscribe, dispatcher } = dispatchers(['dropdownApp'], true);
 
                 const { AutoWildcardSearch } = mailSettingsModel.get();
                 let dropdownID;
@@ -107,6 +107,15 @@ function searchForm(
                 on('labelsModel', (e, { type }) => {
                     if (type === 'cache.update' || type === 'cache.refresh') {
                         folders = searchModel.getFolderList();
+                    }
+                });
+
+                on('search', (e, { type }) => {
+                    if (type === 'reset.search') {
+                        scope.$applyAsync(() => {
+                            scope.query = '';
+                            $input.focus();
+                        });
                     }
                 });
 

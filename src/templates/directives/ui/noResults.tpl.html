@@ -1,5 +1,44 @@
-<div class="messagePlaceholder">
-    <i class="fa messagePlaceholder-icon"></i>
-    <span class="messagePlaceholder-text-block"></span>
-    <h3 class="messagePlaceholder-title"></h3>
-</div>
+<figure class="messagePlaceholder mauto aligncenter">
+    <img
+        src="/assets/no-result-search.svg"
+        class="messagePlaceholder-image"
+        alt="No results found"
+        pt-tooltip-translate="No results found"
+        pt-tooltip-translate-context="Tooltip"
+        data-if="search">
+    <img
+        src="/assets/no-result-folder.svg"
+        class="messagePlaceholder-image"
+        alt="No messages found"
+        pt-tooltip-translate="No messages found"
+        pt-tooltip-translate-context="Tooltip"
+        data-if="folder">
+
+    <figcaption class="mt2">
+        <h3
+            data-if="search"
+            class="messagePlaceholder-text-block bold"
+            translate-context="Search - no results"
+            translate>No results found</h3>
+
+        <h3
+            data-if="folder"
+            class="messagePlaceholder-text-block bold"
+            translate-context="Search - no results"
+            translate>No messages found</h3>
+
+        <p data-if="search">
+            <span translate-context="Search - no results: You can either update your search query or [clear it]" translate>You can either update your search query or</span>
+            <button
+                ng-click="resetSearch()"
+                class="pm-button--link bold"
+                translate-context="Action"
+                translate>Clear it</button>
+        </p>
+
+        <p data-if="folder">
+            <span translate-context="Info" translate>You do not have any messages here.</span>
+        </p>
+        <div class="block-info-standard-error messagePlaceholder-error mt2" hidden></div>
+    </figcaption>
+</figure>
