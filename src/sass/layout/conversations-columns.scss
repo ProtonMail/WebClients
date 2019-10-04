@@ -10,10 +10,6 @@
     &:not(.hasAttachments) .conversation-icon-attachment,
     &:not(.expiring) .conversation-icon-expiration { display: none }
 
-    &.read {
-        background: $read-background;
-        .subject-text { font-weight: normal; color: inherit; }
-    }
     &:not(.read) {
         background: $white;
         .subject-text,
@@ -31,12 +27,10 @@
         top: 0;
         left: 0;
     }
-    &.active {
-        background: $active-background;
-        color: set-color($active-background,$white);
-        border-bottom-color: $active-background;
-        h4 { color: inherit }
+    &.marked.active::before {
+        content: none;
     }
+
 }
 
 
