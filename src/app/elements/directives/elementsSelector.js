@@ -29,7 +29,7 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog, $compi
         },
         star: {
             label: gettextCatalog.getString('All Starred', null, 'Action'),
-            icon: 'star-full',
+            icon: 'starfull',
             action: 'starred'
         }
     };
