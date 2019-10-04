@@ -1,5 +1,5 @@
 module.exports = {
-    logo: 'src/assets/protonvpn.svg',
+    logo: 'src/assets/vpn.svg',
     favicons: {
         appName: 'ProtonVPN Settings',
         appDescription: 'Use ProtonVPN and protect your online activity',
