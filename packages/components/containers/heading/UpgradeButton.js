@@ -8,7 +8,7 @@ const UpgradeButton = ({ className }) => {
     return (
         <a href="/settings/subscription" className={className}>
             <Icon name="upgrade-to-paid" className="topnav-icon mr0-5 flex-item-centered-vert fill-white" />
-            {c('Link').t`Upgrade`}
+            <span className="navigation-title topnav-linkText">{c('Link').t`Upgrade`}</span>
         </a>
     );
 };

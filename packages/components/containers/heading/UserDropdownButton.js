@@ -11,17 +11,17 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }) => {
     return (
         <button
             type="button"
-            className="inline-flex flex-items-center dropDown-logout-button"
+            className="flex flex-items-center flex-nowrap dropDown-logout-button"
             aria-expanded={isOpen}
             ref={buttonRef}
             {...rest}
         >
-            <span className="alignright mr0-5">
-                <span className="bl capitalize">{DisplayName || Name}</span>
-                {Email ? <span className="bl smaller m0 opacity-30 lh100">{Email}</span> : null}
+            <span className="alignright flex flex-column mr0-5">
+                <span className="bl capitalize mw100 ellipsis">{DisplayName || Name}</span>
+                {Email ? <span className="bl mw100 ellipsis smaller m0 opacity-30 lh100">{Email}</span> : null}
             </span>
 
-            <span className="mtauto mbauto bordered rounded50 p0-5 inbl dropDown-logout-initials relative">
+            <span className="mtauto mbauto bordered rounded50 p0-5 inbl dropDown-logout-initials relative flex flex-item-noshrink">
                 <span className="dropDown-logout-text center">{initials}</span>
                 <DropdownCaret isOpen={isOpen} className="icon-12p expand-caret mauto" />
             </span>

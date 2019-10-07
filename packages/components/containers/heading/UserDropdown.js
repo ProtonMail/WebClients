@@ -49,7 +49,7 @@ const UserDropdown = ({ ...rest }) => {
     };
 
     return (
-        <div className="userDropdown" data-cy-header="userDropdown">
+        <div className="flex userDropdown" data-cy-header="userDropdown">
             <UserDropdownButton {...rest} user={user} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} />
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-right">
                 <ul className="unstyled mt0-5 mb0-5">
