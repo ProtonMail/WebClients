@@ -59,14 +59,14 @@ describe('notification service', () => {
     });
 
     it('should display wrapped html notification', () => {
-        showNotification('<div>he<a>asd</a>llo</div>');
+        showNotification('<div>he<a>asd</a>llo.</div>');
         expect(dom[0].querySelector('div[ng-show="$messageTemplate"]').innerHTML)
-            .toBe('<div class="ng-scope">he<a>asd</a>llo</div>');
+            .toBe('<div class="ng-scope">he<a>asd</a>llo.</div>');
     });
 
     it('should display unwrapped html notification', () => {
         showNotification('he<a>sd</a>llo');
         expect(dom[0].querySelector('div[ng-show="$messageTemplate"]').innerHTML)
-            .toEqual('<div class="ng-scope">he<a>sd</a>llo</div>');
+            .toEqual('<div class="ng-scope">he<a>sd</a>llo.</div>');
     });
 });
