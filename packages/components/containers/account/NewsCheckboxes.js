@@ -25,7 +25,7 @@ const NewsCheckboxes = () => {
     const checkboxes = [
         { id: 'announcements', flag: ANNOUNCEMENTS, text: c('Label for news').t`Major announcements (2-3 per year)` },
         { id: 'features', flag: FEATURES, text: c('Label for news').t`Major features (3-4 per year)` },
-        { id: 'business', flag: BUSINESS, text: c('Label for news').t`Proton Business (4-5 per year)` },
+        { id: 'business', flag: BUSINESS, text: c('Label for news').t`Proton for business (4-5 per year)` },
         { id: 'newsletter', flag: NEWSLETTER, text: c('Label for news').t`Proton newsletter (5-6 per year)` },
         { id: 'beta', flag: BETA, text: c('Label for news').t`Proton Beta (10-12 per year)` }
     ];
