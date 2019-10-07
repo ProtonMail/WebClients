@@ -1,6 +1,6 @@
 <header data-responsive-composer="message" class="composerHeader-container flex pb1">
-    <span ng-click="unminimize(message);" class="subject composerHeader-subject flex-self-vcenter pl0-5 ellipsis">{{subject(message)}}</span>
-    <div class="composerHeader-actions actions mlauto">
+    <span ng-click="unminimize(message);" class="subject composerHeader-subject flex-self-vcenter flex-item-fluid pl0-5 pr1 ellipsis">{{subject(message)}}</span>
+    <div class="composerHeader-actions flex-item-noshrink actions mlauto">
         <button
             type="button"
             ng-show="!!!message.minimized"
@@ -37,7 +37,7 @@
         <button
             type="button"
             ng-show="!!message.maximized"
-            class="pm_button link maximize-button hidden-xs composerHeader-btn composer-action-maximize"
+            class="pl0-5 pr0-5 link maximize-button hidden-xs composerHeader-btn composer-action-maximize"
             ng-click="normalize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Exit fullscreen"
@@ -47,7 +47,7 @@
         </button>
         <button
             type="button"
-            class="pm_button link close-button composerHeader-btn composer-action-close"
+            class="pl0-5 pr0-5 link close-button composerHeader-btn composer-action-close"
             ng-click="saveAndClose(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Close"

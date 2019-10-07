@@ -1,13 +1,13 @@
-<div class="autocompleteEmailsItem-container bordered-container flex flex-nowrap flex-row mw80">
+<div class="autocompleteEmailsItem-container bordered-container flex flex-items-center flex-nowrap flex-row mw80">
     <email-encryption-icon
         data-email="email"
         data-message="message"></email-encryption-icon>
 
-    <span class="autocompleteEmails-label pl0-5 pr0-5" tabindex="0">
+    <span class="autocompleteEmails-label mtauto mbauto pl0-5 ellipsis pr0-5" tabindex="0" title="{{ email | labelAutocomplete:message }}">
         {{ email | labelAutocomplete:message }}
     </span>
     <button
-        class="autocompleteEmails-btn-remove pl0-5 pr0-5"
+        class="autocompleteEmails-btn-remove inline-flex pl0-5 pr0-5"
         type="button"
         aria-label="Remove"
         data-address="{{ email.Address }}">

@@ -59,7 +59,7 @@ function autocompleteEmailsItem(
     };
 
     const makeIconGroup = ({ Color }) =>
-        `<icon data-name="contacts-groups" data-size="12" class="autocompleteEmailsItem-icon-group mauto" style="fill:${Color}"></icon>`;
+        `<icon data-name="contacts-groups" data-size="12" class="autocompleteEmailsItem-icon-group mr0-25 ml0-25 mtauto mbauto" style="fill:${Color}"></icon>`;
 
     function link(scope, el, { key }) {
         const { dispatcher, on, unsubscribe } = dispatchers(['recipient.update']);

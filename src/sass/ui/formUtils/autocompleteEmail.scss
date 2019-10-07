@@ -18,6 +18,11 @@
 }
 
 .autocompleteEmailsItem-icon {
+
+    &:empty {
+        padding: 0;
+    }
+
     .encryptionIcon {
         color: $primary;
     }

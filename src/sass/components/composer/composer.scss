@@ -256,10 +256,10 @@
           }
         }
 
-        &.small {
+        &.composer--small {
             height: 480px !important;
         }
-        &.mini {
+        &.composer--mini {
             height: 380px !important;
         }
         &.minimized {
@@ -364,14 +364,6 @@
           @extend .p0;
         }
 
-        select::-ms-expand {
-            display: none;
-        }
-        /* DRY */
-        ::-webkit-input-placeholder {color: $default-color-light;}
-        :-moz-placeholder {color: $default-color-light;}
-        ::-moz-placeholder {color: $default-color-light;}
-        :-ms-input-placeholder {color: $default-color-light;}
 
     }
 
@@ -379,6 +371,8 @@
 
 .composerInputMeta-autocomplete {
     background: #fcfdff;
+    padding-top: .4em;
+    padding-bottom: .1em;
 }
 
 

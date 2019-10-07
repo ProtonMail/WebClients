@@ -28,8 +28,8 @@ function responsiveComposer(AppModel, mailSettingsModel) {
             latestState.isSmall = isSmall;
 
             scope.$applyAsync(() => {
-                AppModel.set('small', height < 700 && height >= 600);
-                AppModel.set('mini', height < 600);
+                AppModel.set('composer--small', height < 700 && height >= 600);
+                AppModel.set('composer--mini', height < 600);
 
                 isSmall && scope.maximize(scope.message);
                 !isSmall && mailSettingsModel.get('ComposerMode') === 0 && scope.normalize(scope.message);
