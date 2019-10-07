@@ -43,11 +43,12 @@ function countElementsSelected(dispatchers, tools, $stateParams, cacheCounters, 
             if ($stateParams.label) {
                 const id = $stateParams.label;
                 const typeOfList = tools.getTypeList();
-                const { Name } = labelsModel.read(id);
+                const { Name, Exclusive } = labelsModel.read(id);
                 const total = cacheCounters.totalMessage(id);
 
                 scope.selectedLabelTotal = toI18n(total);
                 scope.selectedLabelTotalRaw = total;
+                scope.selectedLabelType = Exclusive && 'folder';
                 scope.selectedLabelName = stripHTML(Name);
             }
 

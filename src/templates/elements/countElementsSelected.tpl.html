@@ -3,7 +3,8 @@
     <div class="mlauto mrauto mt2 pt2" ng-if="('secured.label.**' | includedByState) && !numberElementChecked">
 
         <h3 class="bold">
-            <icon data-name="label"></icon>
+            <icon data-name="folder" ng-if="selectedLabelType === 'folder'"></icon>
+            <icon data-name="label" ng-if="selectedLabelType !== 'folder'"></icon>
             <span>{{::selectedLabelName}}</span>
         </h3>
 
