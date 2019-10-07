@@ -7,6 +7,9 @@
         <div class="flex-item-noshrink">
             <button
                 type="button"
+                pt-tooltip-translate-params-search="searchValue"
+                pt-tooltip-translate="Create folder"
+                pt-tooltip-translate-context="Action"
                 class="pm-button--primary pm-button--small pm-button--for-smallicon no-pointer-events-children dropdown-folder-create-button">
                 <icon data-name="folder" data-fill="global-light"></icon>
                 +
@@ -64,14 +67,4 @@
             translate
             translate-context="Info">no folder found</li>
     </ul>
-
-    <button
-        class="pm-button--link disabled-if-network-activity w100 dropdown-folder-create-button p1 mb0-5 mt0-5 no-pointer-events-children"
-        ng-style="!searchValue ? { height: '1px' } : {}"
-        ng-class="{nonvisible: !searchValue}">
-        <span
-            translate-context="Action"
-            translate>Create a new folder</span>
-        <q class="bold color-black">{{searchValue}}</q>
-    </button>
 </div>
