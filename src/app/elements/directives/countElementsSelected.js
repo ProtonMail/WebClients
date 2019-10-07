@@ -1,5 +1,3 @@
-import { ucFirst } from '../../../helpers/string';
-
 /* @ngInject */
 function countElementsSelected(dispatchers, tools, $stateParams, cacheCounters, labelsModel, gettextCatalog) {
     const CLEANER = document.createElement('div');
@@ -42,7 +40,6 @@ function countElementsSelected(dispatchers, tools, $stateParams, cacheCounters, 
 
             if ($stateParams.label) {
                 const id = $stateParams.label;
-                const typeOfList = tools.getTypeList();
                 const { Name, Exclusive } = labelsModel.read(id);
                 const total = cacheCounters.totalMessage(id);
 
