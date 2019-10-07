@@ -63,12 +63,16 @@ const SummarySection = ({ subscription, user, userSettings }) => {
             <div className="p1">
                 <div className="flex-autogrid onmobile-flex-column w100 mb1">
                     <div className="flex-autogrid-item">{c('Label').t`Username`}</div>
-                    <div className="flex-autogrid-item bold">{user.Name}</div>
+                    <div className="flex-autogrid-item bold ellipsis" title={user.Name}>
+                        {user.Name}
+                    </div>
                     <div className="flex-autogrid-item" />
                 </div>
                 <div className="flex-autogrid onmobile-flex-column w100 mb1">
                     <div className="flex-autogrid-item">{c('Label').t`Recovery email`}</div>
-                    <div className="flex-autogrid-item bold">{userSettings.Email.Value || c('Status').t`Not set`}</div>
+                    <div className="flex-autogrid-item bold ellipsis" title={userSettings.Email.Value}>
+                        {userSettings.Email.Value || c('Status').t`Not set`}
+                    </div>
                     <div className="flex-autogrid-item alignright">
                         <Link to="/settings/account">{c('Link').t`Edit`}</Link>
                     </div>
