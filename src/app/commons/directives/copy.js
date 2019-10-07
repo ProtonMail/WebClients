@@ -13,9 +13,6 @@ function copy(gettextCatalog, ptClipboard, translator) {
             const { promise, destroy, I18N: clipboardI18N } = ptClipboard(el[0], () => {
                 return scope.value;
             });
-            console.log(scope.value);
-
-            promise.then(() => console.log('---'));
 
             // NOTE doesn't work until we have CSS tooltip support
             promise.then(() => el.attr('data-tooltip', clipboardI18N.SUCCESS)).catch(() => el.addClass('error'));

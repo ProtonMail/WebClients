@@ -38,7 +38,7 @@ function searchForm(
             searchDate.attr('placeholder', dateUtils.I18N.localizedDatePlaceholder);
 
             return (scope, el) => {
-                const { on, unsubscribe, dispatcher } = dispatchers(['dropdownApp'], true);
+                const { on, unsubscribe, dispatcher } = dispatchers(['dropdownApp']);
 
                 const { AutoWildcardSearch } = mailSettingsModel.get();
                 let dropdownID;
