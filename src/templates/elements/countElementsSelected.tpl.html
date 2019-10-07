@@ -1,16 +1,35 @@
-<div class="countElementsSelected-container pm-flex-content-vertical-center">
-    <span class="flex mlauto mrauto p0-25 rounded50 bg-global-grey">
-        <icon data-name="on" data-size="16" data-fill="white" class="mauto"></icon>
-    </span>
-    <number-element-selected
-        class="countElementsSelected-title"
-        data-number="numberElementChecked"></number-element-selected>
-    <div>
-        <button
-            class="pm-button
-            countElementsSelected-btn-unselect conversationPlaceholder-btn-unselect"
-            ng-show="numberElementChecked > 0"
-            translate
-            translate-context="Action">Deselect all</button>
+<div class="countElementsSelected-container flex w100">
+
+    <div class="mlauto mrauto mt2 pt2" ng-if="('secured.label.**' | includedByState) && !numberElementChecked">
+
+        <h3 class="bold">
+            <icon data-name="label"></icon>
+            <span>{{::selectedLabelName}}</span>
+        </h3>
+
+        <p class="mt0 pt0" ng-bind-html="::selectedLabelTotal"></p>
+
+        <img
+            ng-src="/assets/selected-label-{{selectedLabelTotalRaw > 1 ? 'many' : 'single'}}.svg"
+            class="countElementsSelected-image"
+            alt="Email selected">
+
+    </div>
+    <div class="pm-flex-content-vertical-center" ng-if="!('secured.label.**' | includedByState) || numberElementChecked">
+        <span class="flex mlauto mrauto p0-25 rounded50 bg-global-grey">
+            <icon data-name="on" data-fill="white" class="mauto"></icon>
+        </span>
+        <number-element-selected
+            class="countElementsSelected-title"
+            data-number="numberElementChecked"></number-element-selected>
+        <div>
+            <button
+                class="pm-button
+                countElementsSelected-btn-unselect conversationPlaceholder-btn-unselect"
+                ng-show="numberElementChecked > 0"
+                translate
+                translate-context="Action">Deselect all</button>
+        </div>
+
     </div>
 </div>
