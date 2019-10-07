@@ -21,7 +21,6 @@ import { getPlans, isBundleEligible } from 'proton-shared/lib/helpers/subscripti
 
 import SubscriptionModal from './subscription/SubscriptionModal';
 import { mergePlansMap, getCheckParams } from './subscription/helpers';
-import UpgradeModal from './subscription/UpgradeModal';
 import PlansTable from './PlansTable';
 
 const PlansSection = () => {
@@ -34,7 +33,6 @@ const PlansSection = () => {
     const [plans = [], loadingPlans] = usePlans();
     const api = useApi();
 
-    const [showUpgradeModal, setShowUpgradeModel] = useState(false);
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
     const [cycle, setCycle] = useState(DEFAULT_CYCLE);
     const bundleEligible = isBundleEligible(subscription);
@@ -87,16 +85,7 @@ const PlansSection = () => {
         const [{ Currency, Cycle } = {}] = plans;
         setCurrency(subscription.Currency || Currency);
         setCycle(subscription.Cycle || Cycle);
-        if (isFree) {
-            setShowUpgradeModel(true);
-        }
     }, [loadingSubscription, loadingPlans]);
-
-    useEffect(() => {
-        if (showUpgradeModal) {
-            createModal(<UpgradeModal plans={plans} onUpgrade={handleModal({ plus: 1 })} />);
-        }
-    }, [showUpgradeModal]);
 
     if (subscription.isManagedByMozilla) {
         return (
