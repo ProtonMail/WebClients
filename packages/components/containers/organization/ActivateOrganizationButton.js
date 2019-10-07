@@ -13,8 +13,8 @@ const ActivateOrganizationButton = () => {
     const handleClick = async () => {
         if (MaxMembers === 1) {
             return createNotification({
-                type: 'info',
-                text: c('Info')
+                type: 'error',
+                text: c('Error')
                     .t`Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.`
             });
         }

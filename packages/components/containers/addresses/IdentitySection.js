@@ -65,7 +65,7 @@ const IdentitySection = () => {
         <>
             {title}
             <Alert learnMore="https://protonmail.com/support/knowledge-base/display-name-and-signature/">{c('Info')
-                .t`TODO`}</Alert>
+                .t`Click the Edit button to personalize your email address. Your Display Name appears in the From field when people receive an email from you. Your Signature is appended at the bottom of your messages. Or leave each field empty for more privacy.`}</Alert>
             <Row>
                 <Label htmlFor="addressSelector">{c('Label').t`Select an address`}</Label>
                 <Field>
@@ -78,7 +78,7 @@ const IdentitySection = () => {
                     <Info url="https://protonmail.com/support/knowledge-base/display-name-and-signature/" />
                 </Label>
                 <Field>
-                    <div className="mt0-5 ellipsis" title={address.DisplayName}>
+                    <div className="bordered-container pl1 pr1 pt0-5 pb0-5 ellipsis" title={address.DisplayName}>
                         {address.DisplayName}
                     </div>
                 </Field>
@@ -89,10 +89,14 @@ const IdentitySection = () => {
             <Row>
                 <Label>{c('Label').t`Signature`}</Label>
                 <Field>
-                    <div
-                        className="bordered-container break p1"
-                        dangerouslySetInnerHTML={{ __html: address.Signature }}
-                    />
+                    {address.Signature ? (
+                        <div
+                            className="bordered-container break pl1 pr1 pt0-5 pb0-5"
+                            dangerouslySetInnerHTML={{ __html: address.Signature }}
+                        />
+                    ) : (
+                        <div className="pt0-5">{c('Info').t`Not set`}</div>
+                    )}
                 </Field>
                 <span className="ml1">
                     <Button className="pm-button--primary" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>

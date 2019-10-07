@@ -12,14 +12,14 @@ const CustomThemeModal = ({ onSave, theme: initialTheme = '', ...rest }) => {
         rest.onClose();
     };
 
-    const submit = (
-        <PrimaryButton disabled={!theme} type="submit">
-            {c('Action').t`Save`}
-        </PrimaryButton>
-    );
-
     return (
-        <FormModal submit={submit} onSubmit={handleSubmit} title={c('Title').t`Custom Theme`} small {...rest}>
+        <FormModal
+            submit={<PrimaryButton type="submit">{c('Action').t`Save`}</PrimaryButton>}
+            onSubmit={handleSubmit}
+            title={c('Title').t`Custom Theme`}
+            small
+            {...rest}
+        >
             <Alert type="warning">{c('Warning')
                 .t`Custom themes from third parties can potentially betray your privacy. Only use themes from trusted sources.`}</Alert>
             <Label className="mb1" htmlFor="themeTextarea">{c('Label').t`CSS code`}</Label>

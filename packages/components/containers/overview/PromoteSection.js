@@ -26,7 +26,7 @@ const Panel = ({ model }) => {
                     </div>
                 </div>
                 <div className="flex-autogrid-item flex flex-column flex-items-end">
-                    <img className="h100" src={model.image} alt={model.title} />
+                    <img className="h100" src={model.image} alt={model.title} style={{ maxHeight: '200px' }} s />
                 </div>
             </div>
         </div>

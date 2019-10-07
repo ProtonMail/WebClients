@@ -62,6 +62,7 @@ function FilterEditorSieve({ filter, onChangeBeforeLint = noop, onChange = noop 
 
     return (
         <CodeMirror
+            className="bordered-container"
             value={filter.Sieve}
             options={{
                 mode: 'sieve',

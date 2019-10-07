@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { SubTitle, Row, Label, useMailSettings, Button, useModals } from 'react-components';
+import { SubTitle, Row, Label, Field, useMailSettings, useModals, SmallButton } from 'react-components';
 
 import ShortcutsToggle from './ShortcutsToggle';
 import ShortcutsModal from './ShortcutsModal';
@@ -24,12 +24,17 @@ const ShortcutsSection = () => {
             <SubTitle>{c('Title').t`Shortcuts`}</SubTitle>
             <Row>
                 <Label htmlFor="hotkeysToggle">{c('Title').t`Keyboard shortcuts`}</Label>
-                <div className="w100">
-                    <ShortcutsToggle className="mr1" id="hotkeysToggle" hotkeys={hotkeys} onChange={handleChange} />
+                <Field>
+                    <div>
+                        <ShortcutsToggle className="mr1" id="hotkeysToggle" hotkeys={hotkeys} onChange={handleChange} />
+                    </div>
                     {hotkeys ? (
-                        <Button onClick={handleOpenModal}>{c('Action').t`View keyboard shortcuts`}</Button>
+                        <div className="mt1">
+                            <SmallButton onClick={handleOpenModal}>{c('Action')
+                                .t`View keyboard shortcuts`}</SmallButton>
+                        </div>
                     ) : null}
-                </div>
+                </Field>
             </Row>
         </>
     );

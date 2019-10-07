@@ -11,18 +11,6 @@ import { formatPlans } from '../payments/subscription/helpers';
 const Rows = ({ subscription, user }) => {
     const { mailPlan = {}, vpnPlan = {} } = formatPlans(subscription.Plans);
 
-    if (user.hasPaidMail && mailPlan.Name === 'visionary') {
-        return (
-            <div className="flex-autogrid onmobile-flex-column w100">
-                <div className="flex-autogrid-item">ProtonMail plan</div>
-                <div className="flex-autogrid-item bold">Visionary</div>
-                <div className="flex-autogrid-item alignright">
-                    <Link to="/settings/subscription">{c('Link').t`Manage`}</Link>
-                </div>
-            </div>
-        );
-    }
-
     return (
         <>
             <div className="flex-autogrid onmobile-flex-column w100 mb1">

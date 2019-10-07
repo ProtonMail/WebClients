@@ -137,7 +137,6 @@ export { default as ForgotUsernameForm } from './containers/resetPassword/Forgot
 export { default as ProtonMailAppsSection } from './containers/apps/ProtonMailAppsSection';
 export { default as ProtonMailBetaSection } from './containers/apps/ProtonMailBetaSection';
 export { default as ProtonMailBridgeSection } from './containers/apps/ProtonMailBridgeSection';
-export { default as ProtonVPNAppsSection } from './containers/apps/ProtonVPNAppsSection';
 export { default as DKIMSection } from './containers/domains/DKIMSection';
 export { default as DomainStatus } from './containers/domains/DomainStatus';
 export { default as DomainsTable } from './containers/domains/DomainsTable';

@@ -13,7 +13,7 @@ const CLASSES = {
 const Alert = ({ type = 'info', children, learnMore, className }) => {
     return (
         <div className={classnames([CLASSES[type], className])}>
-            <div className="mw70ch">{children}</div>
+            <div>{children}</div>
             {learnMore ? (
                 <div>
                     <LearnMore url={learnMore} />

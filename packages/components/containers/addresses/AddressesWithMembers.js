@@ -5,6 +5,7 @@ import {
     useMembers,
     useOrganizationKey,
     useMemberAddresses,
+    Alert,
     Loader,
     Table,
     TableHeader,
@@ -55,6 +56,8 @@ const AddressesWithMembers = ({ match, user, organization }) => {
 
     return (
         <>
+            <Alert>{c('Info')
+                .t`Premium plans let you add multiple email addresses to your account. All the emails associated with them will appear in the same mailbox. If you are the admin of a Professional or Visionary plan, you can manage email addresses for each user in your organization by choosing from the dropdown menu below.`}</Alert>
             <AddressesToolbar members={members} onChangeMemberIndex={setMemberIndex} memberIndex={memberIndex} />
             {selectedSelf ? (
                 <AddressesWithUser user={user} />

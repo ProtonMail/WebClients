@@ -38,7 +38,8 @@ const validateAddUser = (organization, organizationKey, verifiedDomains) => {
     const { isOrganizationKeyActive, hasOrganizationKey } = getOrganizationKeyInfo(organizationKey);
     const { MaxMembers, HasKeys, UsedMembers, MaxAddresses, UsedAddresses, MaxSpace, AssignedSpace } = organization;
     if (MaxMembers === 1) {
-        return c('Error').t`Multi-user support requires either a Professional or Visionary plan.`;
+        return c('Error')
+            .t`Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.`;
     }
     if (!HasKeys) {
         return c('Error').t`Please enable multi-user support before adding users to your organization.`;
@@ -128,7 +129,7 @@ const MembersSection = () => {
                 <div>
                     <SearchInput
                         onChange={handleSearch}
-                        placeholder={c('Placeholder').t`Search for user and addresses`}
+                        placeholder={c('Placeholder').t`Search users`}
                         delay={500}
                         value={keywords}
                     />

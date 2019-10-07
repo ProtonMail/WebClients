@@ -8,7 +8,7 @@ const RecoveryEmail = ({ email, onClick }) => {
         <>
             <Field>
                 <div className="ellipsis" title={email}>
-                    {email}
+                    {email || c('Info').t`Not set`}
                 </div>
             </Field>
             <div className="ml1">

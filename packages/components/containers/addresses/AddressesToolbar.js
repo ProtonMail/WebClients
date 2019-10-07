@@ -20,14 +20,16 @@ const AddressesToolbar = ({ memberIndex, onChangeMemberIndex, members }) => {
 
     return (
         <>
-            <Block>
-                <Select
-                    id="memberSelect"
-                    value={memberIndex}
-                    options={options}
-                    onChange={({ target: { value } }) => onChangeMemberIndex(+value)}
-                />
-            </Block>
+            {options.length > 2 ? (
+                <Block>
+                    <Select
+                        id="memberSelect"
+                        value={memberIndex}
+                        options={options}
+                        onChange={({ target: { value } }) => onChangeMemberIndex(+value)}
+                    />
+                </Block>
+            ) : null}
             <Block>{memberIndex === ALL_MEMBERS_ID ? null : <AddAddressButton member={members[memberIndex]} />}</Block>
         </>
     );
