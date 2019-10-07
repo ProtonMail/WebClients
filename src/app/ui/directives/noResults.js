@@ -14,7 +14,10 @@ function noResults(elementsError, gettextCatalog, dispatchers, translator) {
             const { dispatcher } = dispatchers(['search']);
             const { code, error } = elementsError.last();
 
-            scope.resetSearch = () => dispatcher.search('reset.search');
+            scope.resetSearch = () => {
+                dispatcher.search('reset.search');
+                window.history.back();
+            };
 
             if (code === API_CUSTOM_ERROR_CODES.MESSAGE_SEARCH_QUERY_SYNTAX) {
                 const $error = el[0].querySelector('.messagePlaceholder-error');
