@@ -133,6 +133,14 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         },
         ...hookPostTaskBuild,
         {
+            title: 'Generate the version info',
+            task(ctx) {
+                const { tag = `v${PKG.version}`, originCommit } = ctx || {};
+                const fileName = path.join('dist', 'assets/version.json');
+                return script('createVersionJSON.sh', [originCommit, tag, fileName]);
+            }
+        },
+        {
             title: `Push dist to ${branch}`,
             enabled: () => !isCI,
             task: (ctx) => push(branch, ctx)
@@ -142,14 +150,6 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
             enabled: () => runI18n && !isCI && /prod|beta/.test(branch),
             task() {
                 return execa('npm', ['run', 'i18n:upgrade']);
-            }
-        },
-        {
-            title: 'Generate the version info',
-            task(ctx) {
-                const { tag = `v${PKG.version}`, originCommit } = ctx || {};
-                const fileName = path.join('dist', 'assets/version.json');
-                return script('createVersionJSON.sh', [originCommit, tag, fileName]);
             }
         },
         ...hookPostTasks,
