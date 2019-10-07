@@ -224,7 +224,7 @@ textarea[required].pm-field.field-pristine:invalid {
 /* toogle */
 $width: 5.5em !default;
 .pm-toggle-label {
-  margin-top: .5em;
+  margin-top: .15em;
   // height: 2em;
   width: $width;
   display: inline-flex;
@@ -330,6 +330,7 @@ $width: 5.5em !default;
 }
 
 .pm-toggle-label--small {
+  margin-top: .25em;
   font-size: .8em;
   & .pm-toggle-label-img {
     width: 1.3rem;
