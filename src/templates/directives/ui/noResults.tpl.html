@@ -13,6 +13,13 @@
         pt-tooltip-translate="No messages found"
         pt-tooltip-translate-context="Tooltip"
         data-if="folder">
+    <img
+        src="/assets/no-result-inbox.svg"
+        class="messagePlaceholder-image"
+        alt="No messages found"
+        pt-tooltip-translate="No messages found"
+        pt-tooltip-translate-context="Tooltip"
+        data-if="inbox">
 
     <figcaption class="mt2">
         <h3
@@ -27,6 +34,12 @@
             translate-context="Search - no results"
             translate>No messages found</h3>
 
+        <h3
+            data-if="inbox"
+            class="messagePlaceholder-text-block bold"
+            translate-context="Search - no results"
+            translate>Your inbox is empty</h3>
+
         <p data-if="search">
             <span translate-context="Search - no results: You can either update your search query or [clear it]" translate>You can either update your search query or</span>
             <button
@@ -38,6 +51,10 @@
 
         <p data-if="folder">
             <span translate-context="Info" translate>You do not have any messages here.</span>
+        </p>
+
+        <p data-if="inbox">
+            <span translate-context="Info" translate>Seems like you are all caught up for now</span>
         </p>
         <div class="block-info-standard-error messagePlaceholder-error mt2" hidden></div>
     </figcaption>

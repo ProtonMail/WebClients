@@ -17,6 +17,7 @@
 
 
 [id="secured-search"] .messagePlaceholder [data-if]:not([data-if="search"]),
-[id^="secured-"]:not([id="secured-search"]) .messagePlaceholder [data-if]:not([data-if="folder"]) {
+[id^="secured-"]:not([id="secured-search"]):not([id="secured-inbox"]) .messagePlaceholder [data-if]:not([data-if="folder"]) ,
+[id="secured-inbox"] .messagePlaceholder [data-if]:not([data-if="inbox"]) {
     display: none
 }
