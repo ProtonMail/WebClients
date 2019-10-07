@@ -107,3 +107,26 @@ export const groupWith = (compare, arr = []) => {
  * @param {Array} arr array to search in
  */
 export const minBy = (fn, arr = []) => arr.reduce((min, item) => (fn(item) < fn(min) ? item : min), arr[0]);
+
+/**
+ * Order collection of object by a specific key
+ * @param {Array<Object>} collection
+ * @param {String} key
+ * @returns {Array} new collection
+ */
+export const orderBy = (collection = [], key = '') => {
+    if (!key) {
+        throw new Error('"key" needs to be defined when using "orderBy"');
+    }
+    const mapped = collection.map((item, index) => ({ index, item }));
+    mapped.sort((a, b) => {
+        if (a.item[key] > b.item[key]) {
+            return 1;
+        }
+        if (a.item[key] < b.item[key]) {
+            return -1;
+        }
+        return 0;
+    });
+    return mapped.map(({ index }) => collection[index]);
+};
