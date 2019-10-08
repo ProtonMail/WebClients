@@ -1,12 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Group, Button } from '../button';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import SimpleDropdown from '../dropdown/SimpleDropdown';
 
-const Pagination = ({ onNext, onPrevious, onSelect, hasNext = true, hasPrevious = true, page = 1, total, limit }) => {
+interface Props {
+    total: number;
+    limit: number;
+    onSelect: (index: number) => void;
+    page?: number;
+    onNext?: () => void;
+    onPrevious?: () => void;
+    hasNext?: boolean;
+    hasPrevious?: boolean;
+}
+
+const Pagination = ({
+    onNext,
+    onPrevious,
+    onSelect,
+    hasNext = true,
+    hasPrevious = true,
+    page = 1,
+    total,
+    limit
+}: Props) => {
     if (!total) {
         return null;
     }
@@ -62,17 +81,6 @@ const Pagination = ({ onNext, onPrevious, onSelect, hasNext = true, hasPrevious 
             ) : null}
         </Group>
     );
-};
-
-Pagination.propTypes = {
-    onNext: PropTypes.func,
-    onPrevious: PropTypes.func,
-    onSelect: PropTypes.func.isRequired,
-    page: PropTypes.number,
-    total: PropTypes.number.isRequired,
-    limit: PropTypes.number.isRequired,
-    hasNext: PropTypes.bool,
-    hasPrevious: PropTypes.bool
 };
 
 export default Pagination;

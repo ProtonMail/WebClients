@@ -1,8 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { classnames } from '../../helpers/component';
 
-const DropdownMenuButton = ({ className = '', disabled, loading, children, ...rest }) => {
+interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+    loading?: boolean;
+}
+
+const DropdownMenuButton = ({ className = '', disabled, loading, children, ...rest }: Props) => {
     return (
         <button
             type="button"
@@ -13,13 +16,6 @@ const DropdownMenuButton = ({ className = '', disabled, loading, children, ...re
             {children}
         </button>
     );
-};
-
-DropdownMenuButton.propTypes = {
-    className: PropTypes.string,
-    loading: PropTypes.bool,
-    disabled: PropTypes.bool,
-    children: PropTypes.node.isRequired
 };
 
 export default DropdownMenuButton;

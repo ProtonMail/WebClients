@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import loadingSvg from 'design-system/assets/img/shared/loading-atom.svg';
 import loadingSmallerSvg from 'design-system/assets/img/shared/loading-atom-smaller.svg';

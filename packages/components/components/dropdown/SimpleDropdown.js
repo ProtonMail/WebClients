@@ -5,6 +5,9 @@ import { usePopperAnchor } from '../popper';
 import DropdownButton from './DropdownButton';
 import { generateUID } from '../../helpers/component';
 
+/**
+ * @type any
+ */
 const SimpleDropdown = ({ content, children, originalPlacement, size, autoClose, ...rest }) => {
     const [uid] = useState(generateUID('dropdown'));
 
