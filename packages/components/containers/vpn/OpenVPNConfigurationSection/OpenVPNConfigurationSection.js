@@ -155,7 +155,7 @@ const OpenVPNConfigurationSection = () => {
                         <h3>{c('Title').t`Secure core configs`}</h3>
                         <Alert learnMore="https://protonvpn.com/support/secure-core-vpn">
                             {c('Info')
-                                .t`Secure Core configurations add additional protection against VPN endpoint compromise.`}
+                                .t`Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.`}
                         </Alert>
                         {isUpgradeRequiredForSecureCore() && (
                             <Alert learnMore="https://account.protonvpn.com/dashboard">
@@ -177,7 +177,7 @@ const OpenVPNConfigurationSection = () => {
                         <h3>{c('Title').t`Country configs`}</h3>
                         <Alert>
                             {c('Info')
-                                .t`Country Connect configuration files ensure a faster connection to the selected country on average.`}
+                                .t`Install a Country configuration file to connect to a random server in the country of your choice.`}
                         </Alert>
                         {isUpgradeRequiredForCountries() && (
                             <Alert learnMore="https://account.protonvpn.com/dashboard">{c('Info')
@@ -196,7 +196,8 @@ const OpenVPNConfigurationSection = () => {
                 {category === CATEGORY.SERVER && (
                     <>
                         <h3>{c('Title').t`Server configs`}</h3>
-                        <Alert>{c('Info').t`Connect to a single server in the country of your choice.`}</Alert>
+                        <Alert>{c('Info')
+                            .t`Install a Server configuration file to connect to a specific server in the country of your choice.`}</Alert>
                         <ServerConfigs platform={platform} protocol={protocol} loading={loading} servers={allServers} />
                     </>
                 )}
