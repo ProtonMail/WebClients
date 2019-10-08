@@ -62,7 +62,7 @@ const list = [
         { from: CONFIG.externalFiles.formgenerator, to: 'form' },
         { from: 'src/assets', to: 'assets' },
         {
-            from: 'node_modules/design-system/assets/img/shared/no-result*.svg',
+            from: 'node_modules/design-system/assets/img/shared/{no-result,selected-}*.svg',
             to: 'assets/',
             flatten: true
         }
