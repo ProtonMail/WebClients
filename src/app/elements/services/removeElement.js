@@ -15,6 +15,15 @@ function removeElement(
     const I18N = translator(() => ({
         TITLE: gettextCatalog.getString('Delete', null, 'Title'),
         MESSAGE: gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info'),
+        removeMany(count) {
+            return gettextCatalog.getPlural(
+                count,
+                'This action will permanently delete the selected email. Are you sure you want to delete this email?',
+                'This action will permanently delete the selected emails. Are you sure you want to delete these emails?',
+                null,
+                'Info'
+            );
+        },
         DRAFT_INFO: gettextCatalog.getString(
             'The draft(s) selected is open in a composer, this action will close the composer and delete the message.',
             null,
@@ -77,8 +86,8 @@ function removeElement(
                 message: `${I18N.MESSAGE} <br><p><i>${I18N.DRAFT_INFO}</i></p>`
             };
         }
-
-        return { message: I18N.MESSAGE };
+        console.log(ids);
+        return { message: I18N.removeMany(ids.length) };
     };
 
     const removeList = async (ids, context, labelID) => {
