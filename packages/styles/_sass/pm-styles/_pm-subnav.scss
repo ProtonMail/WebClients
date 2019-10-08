@@ -1,0 +1,20 @@
+/*
+ * subnavigation
+ */
+
+.subnav {
+  width: var(--width-subnav, $subnav-width);
+}
+.subnav-inner {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 2em;
+}
+.subnav-link {
+  @extend .nodecoration;
+  @extend .color-global-grey;
+}
+[aria-current="true"].subnav-link {
+  font-weight: bold;
+}

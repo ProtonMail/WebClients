@@ -1,0 +1,39 @@
+/*
+ * aside bar
+ */
+.aside {
+  background: var(--main-bg-color, $pm-global-grey);
+  width: $aside-bar-width;
+  min-height: 100vh;
+  color: $pm-global-light;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+  padding-top: 1.7em;
+}
+
+.aside-link {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  background: var(--bgcolor-aside-link, $pm-global-altgrey);
+
+  &:focus, 
+  &:hover, 
+  &:active,
+  &[aria-current="true"] {
+    background: $white;
+    color: $pm-primary;
+
+    .aside-linkIcon {
+      fill: $pm-primary;
+    }
+
+  }
+}
+.aside-linkIcon {
+  width: 17px;
+  height: 17px;
+  fill: var(--fillcolor-icons, $pm-global-light);
+}

@@ -1,0 +1,61 @@
+/*
+ * navigation
+ */
+
+.navigation__link {
+  padding: 1.1rem 1em 1.1rem 2rem;
+  line-height: 1.3;
+  color:  var(--color-nav-link, $white);
+  text-decoration: none;
+  display: block;
+}
+
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .navigation__link {
+      padding: .75rem 3rem .75rem 1rem;
+    }
+  }
+}
+
+.navigation__icon {
+  fill:  var(--fillcolor-icons, #6D7178);
+}
+
+.navigation__refresh {
+  display: none;
+}
+
+.navigation__link:focus,
+.navigation__link:hover {
+  background: rgba(255,255,255,.05);
+  color:  var(--color-nav-link, $pm-global-light);
+  text-decoration: none;
+  .navigation__icon {
+    fill:  var(--fillcolor-icons, $white);
+  }
+}
+[aria-current="page"].navigation__link {
+  background: var(--main-bg-color, $pm-global-grey);
+  color: var(--color-nav-active, $pm-primary);
+  font-weight: bold;
+  
+  &:hover .navigation__icon,
+  .navigation__icon {
+    fill: var(--color-nav-active, $pm-primary);
+  }
+  
+  .navigation__refresh {
+    display: inline-flex;
+  }
+
+}
+.navigation__counterItem {
+  background: rgba($white, 0.1);
+  font-size: 1.1rem;
+  padding: .1em em(6, 11) .2em;
+  font-weight: normal;
+  &:empty {
+      display: none; // removes a bug on Webkit
+  }
+}

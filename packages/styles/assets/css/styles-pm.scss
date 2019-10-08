@@ -85,6 +85,11 @@ $rtl-option: true;
 @import "pm-styles/pm-header-searchbar";
 @import "pm-styles/pm-header-topnav";
 
+@import "pm-styles/pm-aside";
+@import "pm-styles/pm-toolbar";
+@import "pm-styles/pm-navigation";
+@import "pm-styles/pm-subnav";
+
 @import "design-system-website/global-structure";
 @import "design-system-website/prism";
 //@import "design-system-website/themes"; // only useful for having all styles updated in real time

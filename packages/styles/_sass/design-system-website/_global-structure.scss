@@ -3,48 +3,6 @@ body {
   @extend .no-scroll;
 }
 /* === page === */
-.aside {
-  background: var(--main-bg-color, $pm-global-grey);
-  width: $aside-bar-width;
-  min-height: 100vh;
-  color: $pm-global-light;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 5;
-  padding-top: 1.7em;
-}
-
-.aside-link {
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  padding: 7px;
-  background: var(--bgcolor-aside-link, $pm-global-altgrey);
-
-  &:focus, 
-  &:hover, 
-  &:active,
-  &[aria-current="true"] {
-    background: $white;
-    color: $pm-primary;
-
-    .aside-linkIcon {
-      fill: $pm-primary;
-    }
-
-  }
-}
-.aside-linkIcon {
-  width: 17px;
-  height: 17px;
-  fill: var(--fillcolor-icons, $pm-global-light);
-}
-
-.togglemenu {
-  margin-top: 1.8rem;
-  padding-bottom: 1rem;
-}
-
 .content {
   background-image: -webkit-linear-gradient(top, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) ); 
   background-image: linear-gradient(to bottom, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
@@ -101,83 +59,8 @@ body {
   font-size: 1rem;
 }
 
-@if $rtl-option == true {
-  [dir="rtl"] {
-    .topnav-list { 
-      margin-left: 0;
-      margin-right: 1em;
-    }
-  }
-}
 
 
-.navigation__link {
-  padding: 1.1rem 1em 1.1rem 2rem;
-  line-height: 1.3;
-  color:  var(--color-nav-link, $white);
-  text-decoration: none;
-  display: block;
-}
-
-@if $rtl-option == true {
-  [dir="rtl"] {
-    .navigation__link {
-      padding: .75rem 3rem .75rem 1rem;
-    }
-  }
-}
-
-.has-scroll-inside-navigation > .spacebar-container::before {
-  content: '';
-  position: absolute;
-  top: -2em;
-  right: 0;
-  left: 0;
-  height: 2em;
-  background: linear-gradient(to top, var(--main-bg-color, rgba(0, 0, 0, .4) ) 0, rgba($black, 0) 2em);
-}
-
-.navigation__icon {
-  fill:  var(--fillcolor-icons, #6D7178);
-}
-
-.navigation__refresh {
-  display: none;
-}
-
-.navigation__link:focus,
-.navigation__link:hover {
-  background: rgba(255,255,255,.05);
-  color:  var(--color-nav-link, $pm-global-light);
-  text-decoration: none;
-  .navigation__icon {
-    fill:  var(--fillcolor-icons, $white);
-  }
-}
-[aria-current="page"].navigation__link {
-  background: var(--main-bg-color, $pm-global-grey);
-  color: var(--color-nav-active, $pm-primary);
-  font-weight: bold;
-  
-  &:hover .navigation__icon,
-  .navigation__icon {
-    fill: var(--color-nav-active, $pm-primary);
-  }
-  
-  .navigation__refresh {
-    display: inline-flex;
-  }
-
-}
-.navigation__counterItem {
-  background: rgba($white, 0.1);
-  font-size: 1.1rem;
-  padding: .1em em(6, 11) .2em;
-  font-weight: normal;
-  &:empty {
-      display: none; // removes a bug on Webkit
-  }
-}
 
 
 .main {
@@ -194,55 +77,7 @@ body {
     }
   }
 }
-.toolbar {
-  height: $toolbar-height;
-  background: var(--bgcolor-toolbar, $pm-global-altgrey);
-  border-radius: 4px 4px 0 0;
-  box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.2);
-}
-.toolbar-button {
-  // resets to avoid pm-button styles
-  padding: unset;
-  background: unset;
-  border: unset;
-  border-radius: unset;
 
-  padding-left: em(16, $base-font);
-  padding-right: em(16, $base-font);
-  display: flex; // alignment fix on Chrome
-
-  &:hover {
-    box-shadow: unset;
-    background-color: var(--bgcolor-spacebar, #505560);
-  }
-  &[disabled] {
-    background: unset;
-    opacity: .4;
-  }
-  &:active,
-  &.is-active,
-  &:not(div):active,
-  [aria-expanded="true"] {
-    background: unset;
-    background-color: var(--bgcolor-spacebar, #2F333E);
-  }
-}
-.toolbar-button--dropdown {
-  padding-left: em(12, $base-font);
-  padding-right: em(12, $base-font);
-}
-.toolbar-icon {
-  fill: var(--fillcolor-icons, $white);
-}
-.toolbar-separator {
-  width: 2px;
-  background-image: linear-gradient(90deg, var(--bgcolor-spacebar, #4F5460) 0, var(--bgcolor-spacebar, #4F5460) 1px, var(--bgcolor-spacebar, #353A46) 1px);
-}
-.toolbar button[aria-disabled="true"],
-.toolbar .toolbar-button[aria-disabled="true"] {
-  opacity: .5;
-  pointer-events: none;
-}
 
 .main-area,
 .main-area--withToolbar {
@@ -269,21 +104,4 @@ body {
 }
 .main-area--withToolbar.no-scroll {
   overflow: hidden;
-}
-
-.subnav {
-  width: var(--width-subnav, $subnav-width);
-}
-.subnav-inner {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  padding: 2em;
-}
-.subnav-link {
-  @extend .nodecoration;
-  @extend .color-global-grey;
-}
-[aria-current="true"].subnav-link {
-  font-weight: bold;
 }
