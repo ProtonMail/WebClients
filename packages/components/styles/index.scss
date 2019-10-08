@@ -15,8 +15,6 @@ $path-images: '~design-system/assets/img/shared/';
 @import '~design-system/_sass/reusable-components/design-system-links-icons';
 @import '~design-system/_sass/reusable-components/design-system-layout-modules';
 @import '~design-system/_sass/reusable-components/design-system-forms';
-@import '~design-system/_sass/design-system-website/global-structure';
-@import '~design-system/_sass/design-system-website/inside-content';
 @import '~design-system/_sass/pm-styles/pm-buttons';
 @import '~design-system/_sass/pm-styles/pm-badges';
 @import '~design-system/_sass/pm-styles/pm-containers';
@@ -41,6 +39,15 @@ $path-images: '~design-system/assets/img/shared/';
 @import '~design-system/_sass/pm-styles/pm-progress-contact';
 @import '~design-system/_sass/pm-styles/pm-table-plans';
 @import '~design-system/_sass/pm-styles/pm-circlebar';
+
+@import '~design-system/_sass/pm-styles/pm-aside';
+@import '~design-system/_sass/pm-styles/pm-toolbar';
+@import '~design-system/_sass/pm-styles/pm-navigation';
+@import '~design-system/_sass/pm-styles/pm-subnav';
+
+@import '~design-system/_sass/design-system-website/global-structure';
+@import '~design-system/_sass/design-system-website/inside-content';
+
 @import '~design-system/_sass/reusable-components/design-system-responsive';
 @import '~design-system/_sass/design-system-website/responsive';
 @import '~design-system/_sass/reusable-components/design-system-print';
