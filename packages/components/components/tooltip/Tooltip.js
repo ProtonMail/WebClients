@@ -4,7 +4,7 @@ import { generateUID, classnames } from '../../helpers/component';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 
-const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerClass = 'main' }) => {
+const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerClass = 'main', className }) => {
     const [uid] = useState(generateUID('tooltip'));
 
     const { isRTL } = useRightToLeft();
@@ -28,6 +28,7 @@ const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerCl
                 onFocus={open}
                 onBlur={close}
                 aria-describedby={uid}
+                className={className}
             >
                 {children}
             </span>
@@ -48,7 +49,8 @@ Tooltip.propTypes = {
     originalPlacement: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     title: PropTypes.node.isRequired,
     children: PropTypes.node.isRequired,
-    scrollContainerClass: PropTypes.string
+    scrollContainerClass: PropTypes.string,
+    className: PropTypes.string
 };
 
 export default Tooltip;
