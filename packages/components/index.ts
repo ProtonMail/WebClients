@@ -289,7 +289,7 @@ export { default as useAsync } from './hooks/useAsync';
 export { default as useLoading } from './hooks/useLoading';
 export { default as usePlans } from './hooks/usePlans';
 export { default as usePermissions } from './hooks/usePermissions';
-export { nestChildren, classnames } from './helpers/component';
+export { classnames } from './helpers/component';
 
 export { default as useCache } from './containers/cache/useCache';
 export { default as CacheProvider } from './containers/cache/Provider';
