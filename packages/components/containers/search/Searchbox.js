@@ -5,12 +5,19 @@ import { SearchInput, Icon } from 'react-components';
 
 import { classnames } from '../../helpers/component';
 
-const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onSearch }) => {
+const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onSearch, onChange }) => {
     const [search, updateSearch] = useState(value);
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        onSearch(search);
+        onSearch && onSearch(search);
     };
+
+    const handleChange = (newSearch) => {
+        updateSearch(newSearch);
+        onChange && onChange(newSearch);
+    };
+
     return (
         <form
             name="searchbox"
@@ -21,7 +28,7 @@ const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onS
                 <span className="sr-only">{placeholder}</span>
                 <SearchInput
                     value={search}
-                    onChange={updateSearch}
+                    onChange={handleChange}
                     id="global_search"
                     placeholder={placeholder}
                     className="searchbox-field"
@@ -41,6 +48,7 @@ Searchbox.propTypes = {
     placeholder: PropTypes.string,
     value: PropTypes.string,
     onSearch: PropTypes.func,
+    onChange: PropTypes.func,
     advanced: PropTypes.node
 };
 
