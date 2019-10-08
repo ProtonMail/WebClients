@@ -86,7 +86,7 @@ function removeElement(
                 message: `${I18N.MESSAGE} <br><p><i>${I18N.DRAFT_INFO}</i></p>`
             };
         }
-        console.log(ids);
+
         return { message: I18N.removeMany(ids.length) };
     };
 

@@ -17,6 +17,7 @@
 .composerInputMeta-overlay-fakefield {
     padding: .4em .85em;
     max-height: 2.5em;
+    max-width: calc(100% - 1.3em);
     background: #fcfdff;
 }
 
@@ -32,7 +33,16 @@
     }
 }
 
-.composerInputMeta-container .composerInputMeta-overlay-button {z-index: 2; outline: 0;}
+.composerInputMeta-overlay-button {
+    z-index: 2;
+    outline: 0;
+    padding-left: 0.15em;
+    padding-right: 0.35em
+}
+
+.composer-toggle-ccbcc .composerInputMeta-overlay-button svg {
+    transform: rotate(180deg);
+}
 
 .composerInputMeta-recipients .composerInputMeta-overlay-label {display: none}
 .composerInputMeta-overlay-hidden .composerInputMeta-overlay {

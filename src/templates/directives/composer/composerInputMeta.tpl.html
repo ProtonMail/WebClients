@@ -11,7 +11,7 @@
                 class="w20 mw15e pr1 flex"
                 ng-if="message.ToList.length">
                 <span
-                    class="flex-item-fluid mbauto mtauto"
+                    class="flex-item-fluid mbauto mtauto color-pm-blue"
                     translate-context="Title"
                     translate-comment="To: addresses"
                     translate>To:</span>
@@ -25,6 +25,7 @@
                         data-message="message"></composer-input-recipient>
                     <span
                         ng-if="message.CCList.length"
+                        class="color-pm-blue"
                         translate-context="Title"
                         translate-comment="CC: addresses"
                         translate>CC:</span>
@@ -34,6 +35,7 @@
                         data-message="message"></composer-input-recipient>
                     <span
                         ng-if="message.BCCList.length"
+                        class="color-pm-blue"
                         translate-context="Title"
                         translate-comment="BCC: addresses"
                         translate>BCC:</span>
@@ -49,7 +51,7 @@
     <div class="flex pl0-5 w100">
         <label
             to="composerAutocompleteTo"
-            class="composerInputMeta-label flex-self-vcenter w20 mw15e"
+            class="composerInputMeta-label flex-self-vcenter w20 mw15e color-pm-blue"
             data-action="openModal"
             pt-tooltip-translate="Add contacts"
             pt-tooltip-translate-context="Action"
@@ -61,6 +63,15 @@
             data-message="message"
             data-emails="message.ToList"
             data-key="ToList"></autocomplete-emails>
+
+        <button
+            class="pm-button--link composerInputMeta-overlay-button no-pointer-events-children"
+            tabindex="-1"
+            pt-tooltip-translate="CC BCC"
+            pt-placement="left"
+            pt-tooltip-translate-context="Action">
+            <icon data-name="caret"></icon>
+            <span class="sr-only" translate-context="Action" translate>CC BCC</span>
 
     </div>
 

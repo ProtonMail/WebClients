@@ -46,11 +46,8 @@
         background:$white;
         will-change: transform;
 
-
-        .composer-meta:not(.composer-toggle-ccbcc) .ccRow,
-        .composer-meta:not(.composer-toggle-ccbcc) .bccRow {display: none}
         .ccRow .composerInputMeta-overlay-button,
-        .bccRow .composerInputMeta-overlay-button { display: none }
+        .bccRow .composerInputMeta-overlay-button { visibility: hidden; }
 
         .fill {
           -webkit-flex:1; /* ipad */

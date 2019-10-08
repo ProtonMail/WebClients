@@ -28,12 +28,14 @@
             data-model="message"
             data-label="CC"
             data-key="CCList"
+            ng-if="message.ccbcc"
             class="flex flex-row flex-nowrap ccRow mb0-5 composer-field-CCList"></composer-input-meta>
 
         <composer-input-meta
             data-model="message"
             data-label="BCC"
             data-key="BCCList"
+            ng-if="message.ccbcc"
             class="flex flex-row flex-nowrap bccRow mb0-5 composer-field-BCCList"></composer-input-meta>
 
         <composer-subject class="subjectRow composer-field-Subject"></composer-subject>

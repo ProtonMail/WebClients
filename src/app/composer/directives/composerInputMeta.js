@@ -75,6 +75,12 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
                 scope.containsInvalid = containsInvalid;
 
                 const onClick = ({ target }) => {
+                    console.log(target.className);
+
+                    if (target.classList.contains('composerInputMeta-overlay-button')) {
+                        scope.message.ccbcc = !scope.message.ccbcc;
+                    }
+
                     // Allow the user to select the text inside the autocomplete box cf WebClient#41
                     if (target.classList.contains('autocompleteEmails-label')) {
                         return;
