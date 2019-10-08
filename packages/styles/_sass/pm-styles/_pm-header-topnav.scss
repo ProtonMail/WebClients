@@ -23,6 +23,10 @@
 
 @if $rtl-option == true {
   [dir="rtl"] {
+    .topnav-list { 
+      margin-left: 0;
+      margin-right: 1em;
+    }
     .topnav-icon { 
       margin-right: 0;
       margin-left: .5em;
