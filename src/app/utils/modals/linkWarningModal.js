@@ -15,12 +15,6 @@ function linkWarningModal(pmModal, eventManager, mailSettingsModel, settingsMail
             this.punyCodeLink = /:\/\/xn--/.test(params.link);
             this.punyCodeLinkIE = this.punyCodeLink && (isEdge() || isIE11());
 
-            this.isLongLink = params.link.length > 30;
-            this.hideMore = this.isLongLink;
-            this.showMore = () => {
-                this.hideMore = !this.hideMore;
-            };
-
             this.continue = () => {
                 params.close();
                 const promise = settingsMailApi
