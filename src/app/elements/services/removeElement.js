@@ -125,10 +125,7 @@ function removeElement(
     const remove = ({ getElementsSelected, idsSelected, getTypeSelected } = {}) => {
         const ids = idsSelected();
         const context = getTypeSelected();
-        const { message, isDraftOpen, drafts = [], count, title = I18N.TITLE } = lookForOpenDraft(
-            ids,
-            getElementsSelected
-        );
+        const { message, isDraftOpen, drafts = [], title = I18N.TITLE } = lookForOpenDraft(ids, getElementsSelected);
         const labelID = tools.currentLocation();
 
         confirmModal.activate({
