@@ -46,6 +46,7 @@
         background:$white;
         will-change: transform;
 
+        .toRow:not(.composerInputMeta-recipients) .composerInputMeta-fakelabel { display: none }
         .ccRow .composerInputMeta-overlay-button,
         .bccRow .composerInputMeta-overlay-button { visibility: hidden; }
 
