@@ -74,9 +74,7 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
                 scope.containsRecipient = containsRecipient(scope);
                 scope.containsInvalid = containsInvalid;
 
-                const onClick = (e) => {
-                    const { target } = e;
-
+                const onClick = ({ target }) => {
                     if (target.classList.contains('composerInputMeta-trigger-button')) {
                         return scope.$applyAsync(() => {
                             scope.message.ccbcc = !scope.message.ccbcc;
