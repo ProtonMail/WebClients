@@ -25,6 +25,7 @@ export const getOS = () => {
     return { name, version };
 };
 
+export const isDuckDuckGo = () => navigator.userAgent.includes('DuckDuckGo');
 export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name === 'Mobile Safari';
 export const isSafariMobile = () => ua.browser.name === 'Mobile Safari';
 export const isIE11 = () => ua.browser.name === 'IE' && ua.browser.major === '11';
