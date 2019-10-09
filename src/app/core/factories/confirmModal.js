@@ -22,10 +22,10 @@ function confirmModal(pmModal, gettextCatalog, translator) {
             this.learnMore = params.learnMore;
             this.message = params.message;
             this.confirmText = params.confirmText || I18N.confirm;
+            this.confirmButtonClassName = params.confirmButtonClassName || 'pm-button-blue';
             this.hideClose = params.hideClose;
             this.classNameMessage = !params.customAlert ? getClassName(params) : '';
             this.class = params.class;
-            this.confirmClass = params.confirmClass || 'pm-button-blue';
             this.cancelText = params.cancelText || I18N.cancel;
             this.confirm = () => (hotkeys.bind(['enter']), params.confirm());
             this.cancel = (type = 'cross') => (hotkeys.bind(['enter']), params.cancel(type));

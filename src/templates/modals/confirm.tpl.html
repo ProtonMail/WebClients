@@ -42,7 +42,8 @@
                 ng-click="ctrl.cancel('btn')">{{ ::ctrl.cancelText }}</button>
 
             <button
-                class="{{::ctrl.confirmClass}} disabled-if-network-activity"
+                class="disabled-if-network-activity"
+                ng-class="ctrl.confirmButtonClassName"
                 tabindex="1"
                 id="confirmModalBtn"
                 autofocus>{{ ::ctrl.confirmText }}</button>

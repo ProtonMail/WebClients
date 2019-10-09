@@ -136,6 +136,8 @@ function removeElement(
                 title,
                 message,
                 isDanger: true,
+                confirmText: I18N.TITLE,
+                confirmButtonClassName: 'pm-button--error',
                 cancel: confirmModal.deactivate,
                 async confirm() {
                     confirmModal.deactivate();
