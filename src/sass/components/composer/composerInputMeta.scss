@@ -21,6 +21,10 @@
     background: #fcfdff;
 }
 
+/* Why ??? ¯\_(ツ)_/¯ */
+.composerInputMeta-recipients .composerInputMeta-overlay-fakefield {
+    max-width: calc(100% - 9.5em);
+}
 .composerInputMeta-overlay-list {
 
     .svg-ellipsis-clipper {
