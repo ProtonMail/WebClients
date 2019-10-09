@@ -22,7 +22,10 @@ function menuLabel(dispatchers, $compile, labelsModel, $stateParams, $state, sid
     const template = ({ ID, Color, Name, Exclusive }, isContactState) => {
         const className = getClassName(ID);
         const href = $state.href('secured.label', { label: ID, sort: null, filter: null, page: null });
-        const cleanName = stripHTML(Name);
+        // TRy to template, lol try again
+        const cleanName = stripHTML(Name)
+            .replace(/{{/g, '⦃')
+            .replace(/}}/g, '⦄');
         // Prevent XSS as we can break the title
         const cleanAttr = cleanName.replace(/"|'/g, '');
         const icon = Exclusive === 1 ? 'folder' : 'label';
@@ -32,7 +35,7 @@ function menuLabel(dispatchers, $compile, labelsModel, $stateParams, $state, sid
         return dedentTpl(`<li class="${className}">
             <a href="${href}" internal-link title="${cleanAttr}" data-label="${cleanAttr}" class="btn menuLabel-link navigation__link" data-pt-dropzone-item="${ID}" data-pt-dropzone-item-type="${dropzoneType}">
                 <icon data-name="${iconItem}" class="mr0-5 flex-item-noshrink" style="fill: ${Color || '#CCC'}"></icon>
-                <span class="menuLabel-title flex-item-fluid">${cleanName}</span>
+                <span class="menuLabel-title flex-item-fluid">${cleanAttr}</span>
                 <span class="menuLabel-counter navigation__counterItem flex-item-noshrink rounded" data-label-id="${ID}"></span>
             </a>
         </li>`);
