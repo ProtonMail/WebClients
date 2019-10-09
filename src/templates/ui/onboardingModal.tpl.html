@@ -12,12 +12,12 @@
                 ng-if="ctrl.step === 0"
                 translate-context="Title"
                 translate>Welcome to ProtonMail 4.0</span>
-            <span
+<!--             <span
                 ng-if="ctrl.step === 1"
                 translate-context="Title"
-                translate>Introducing ProtonCalendar</span>
+                translate>Introducing ProtonCalendar</span> -->
             <span
-                ng-if="ctrl.step === 2"
+                ng-if="ctrl.step === 1"
                 translate-context="Title"
                 translate>Have questions or feedback?</span>
 
@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="pm-modalContentInner" ng-if="ctrl.step === 1">
+       <!--  <div class="pm-modalContentInner" ng-if="ctrl.step === -1">
 
             <p translate-context="Info" translate>ProtonCalendar is a new encrypted calendar to go with ProtonMail. Now you can create events which are encrypted in a way that even we cannot see the details of your events.</p>
 
@@ -51,10 +51,10 @@
             <div class="flex flex-spacearound">
                 <img src="/assets/v4-onboad/calendar.jpg">
             </div>
-        </div>
+        </div> -->
 
 
-        <div class="pm-modalContentInner" ng-if="ctrl.step === 2">
+        <div class="pm-modalContentInner" ng-if="ctrl.step === 1">
 
             <p translate-context="Info" translate>Like the new design? Can’t find something? Want to say hello?</p>
 
@@ -86,14 +86,14 @@
             <button
                 class="pm-button-blue disabled-if-network-activity"
                 ng-click="ctrl.next()"
-                ng-if="ctrl.step !== 2"
+                ng-if="ctrl.step !== 1"
                 translate-context="Action"
                 translate>Next</button>
 
             <button
                 class="pm-button-blue disabled-if-network-activity"
                 ng-click="ctrl.cancel()"
-                ng-if="ctrl.step === 2"
+                ng-if="ctrl.step === 1"
                 translate-context="Action"
                 translate>Start exploring</button>
         </footer>
