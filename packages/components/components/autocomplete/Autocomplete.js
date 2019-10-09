@@ -5,6 +5,7 @@ import Awesomplete from 'awesomplete';
 import './Autocomplete.scss';
 import { classnames } from '../../helpers/component';
 
+/** @type any */
 const Autocomplete = ({
     children,
     list = [],

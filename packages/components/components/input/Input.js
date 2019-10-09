@@ -6,6 +6,7 @@ import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 import { c } from 'ttag';
 
+/** @type any */
 const Input = React.forwardRef(
     (
         {

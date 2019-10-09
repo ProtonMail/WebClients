@@ -12,7 +12,7 @@ interface Result<R, U extends any[]> {
     request: (...args: U) => Promise<R>;
 }
 
-const useApiResult = <R, U extends any[]>(fn: QueryFunction<U>, dependencies: string[]): Result<R, U> => {
+const useApiResult = <R, U extends any[]>(fn: QueryFunction<U>, dependencies?: any[]): Result<R, U> => {
     const request = useApi();
     const { loading, result, error, run } = useAsync(true);
 

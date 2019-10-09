@@ -5,6 +5,7 @@ import { generateUID, classnames } from '../../helpers/component';
 import useInput from '../input/useInput';
 import ErrorZone from '../text/ErrorZone';
 
+/** @type any */
 const Select = ({ options, error, size = 1, className = '', multiple = false, loading = false, ...rest }) => {
     const { handlers, statusClasses, status } = useInput({ ...rest });
     const [uid] = useState(generateUID('select'));

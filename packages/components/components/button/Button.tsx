@@ -2,7 +2,8 @@ import React from 'react';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers/component';
 
-interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface Props
+    extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     loading?: boolean;
     buttonRef?: React.Ref<HTMLButtonElement>;
     icon?: React.ReactNode;
