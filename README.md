@@ -116,7 +116,39 @@ It will do everything you need. Import new translations first for a better resul
 
 ## Release notes
 
+### Generate the file CHANGELOG.md
+
+The command is going to generate a new entry inside the file `./CHANGELOG.md`. It works with [semver](https://semver.org/). You set which kind of entry you want (_patch_, _minor_ or _major_) and it's going to add it inside the file.
+
+```sh
+npm run releaser:unshift <patch|minor|major>
+```
+
+> :information_source:  It won't create a new version/git tag
+
+
+ex: today version 3.16.5
+```md
+# [3.16.5] - 2019-10-01
+
+[...]
+``` 
+
+`$ npm run releaser:unshift minor`
+
+Output:
+```md
+# [3.17.0] - 2019-10-01
+
+[...]
+
+# [3.16.5] - 2019-10-01
+
+[...]
+``` 
+
 ### Extract markdown
+
 *NOTE: In order to generate the release notes you need to set the `RELEASER_GH_TOKEN` environment variable.*
 
 To generate release notes for the latest version (tag), run the following command:

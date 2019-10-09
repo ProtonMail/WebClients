@@ -176,7 +176,6 @@
     "deploy": "cross-env NODE_ENV=dist proton-bundler --default-branch v3",
     "deployProd": "npm run deploy -- --branch=deploy-prod-a --flow=many",
     "build:ci": "cross-env NODE_ENV=dist NODE_ENV_DIST=ci tasks/deploy.js",
-    "releaser:extract": "releaser --config releaser.config.js --token $RELEASER_GH_TOKEN",
     "releaser:unshift": "./tasks/unshiftReleaser.sh",
     "i18n:check": "cross-env APP_KEY=Angular  proton-i18n validate",
     "i18n:compile": "cross-env APP_KEY=Angular  proton-i18n compile",
