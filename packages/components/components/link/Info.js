@@ -6,7 +6,14 @@ import Icon from '../icon/Icon';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 
-const Info = ({ url, title, originalPlacement = 'top', scrollContainerClass = 'main', ...rest }) => {
+const Info = ({
+    url,
+    title,
+    originalPlacement = 'top',
+    scrollContainerClass = 'main',
+    buttonClass = 'inline-flex',
+    ...rest
+}) => {
     const [uid] = useState(generateUID('tooltip'));
 
     const { isRTL } = useRightToLeft();
@@ -29,7 +36,7 @@ const Info = ({ url, title, originalPlacement = 'top', scrollContainerClass = 'm
         <>
             <button
                 tabIndex="-1"
-                className="inline-flex"
+                className={buttonClass}
                 onClick={handleClick}
                 ref={anchorRef}
                 onMouseEnter={open}
@@ -60,7 +67,8 @@ Info.propTypes = {
     originalPlacement: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     url: PropTypes.string,
     title: PropTypes.node,
-    scrollContainerClass: PropTypes.string
+    scrollContainerClass: PropTypes.string,
+    buttonClass: PropTypes.string
 };
 
 export default Info;
