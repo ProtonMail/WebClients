@@ -47,8 +47,8 @@
         will-change: transform;
 
         .toRow:not(.composerInputMeta-recipients) .composerInputMeta-fakelabel { display: none }
-        .ccRow .composerInputMeta-overlay-button,
-        .bccRow .composerInputMeta-overlay-button { visibility: hidden; }
+        .ccRow .composerInputMeta-trigger-button,
+        .bccRow .composerInputMeta-trigger-button { visibility: hidden; }
 
         .fill {
           -webkit-flex:1; /* ipad */

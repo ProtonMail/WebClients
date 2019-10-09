@@ -74,11 +74,13 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
                 scope.containsRecipient = containsRecipient(scope);
                 scope.containsInvalid = containsInvalid;
 
-                const onClick = ({ target }) => {
-                    console.log(target.className);
+                const onClick = (e) => {
+                    const { target } = e;
 
-                    if (target.classList.contains('composerInputMeta-overlay-button')) {
-                        scope.message.ccbcc = !scope.message.ccbcc;
+                    if (target.classList.contains('composerInputMeta-trigger-button')) {
+                        return scope.$applyAsync(() => {
+                            scope.message.ccbcc = !scope.message.ccbcc;
+                        });
                     }
 
                     // Allow the user to select the text inside the autocomplete box cf WebClient#41
@@ -109,8 +111,13 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
                     if (isCurrentMsg()) {
                         scope.$applyAsync(() => {
                             scope.message.ccbcc = !scope.message.ccbcc;
-                            scope.message.autocompletesFocussed = true;
                             scope.message.attachmentsToggle = false;
+                            scope.message.autocompletesFocussed = true;
+                            _rAF(() => {
+                                scope.$applyAsync(() => {
+                                    el[0].querySelector('[name="autocomplete"]').click();
+                                });
+                            });
                         });
                     }
                 };

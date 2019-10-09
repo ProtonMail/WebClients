@@ -2,18 +2,13 @@
      ng-class="{'composerInputMeta-recipients': containsRecipient(), 'composerInputMeta-overlay-hidden': message.ccbcc  || message.autocompletesFocussed || containsInvalid(message) }">
 
     <div class="composerInputMeta-overlay pl0-5 w100">
-        <label
-            class="composerInputMeta-overlay-label flex-self-vcenter w20 mw15e pr1 flex"
-            translate-context="Title"
-            translate>Recipients</label>
         <div class="composerInputMeta-overlay-list mw100 composerInputMeta-overlay-button flex-item-fluid flex w100">
             <span class="w20 mw15e pr1 flex">
                 <span
                     class="flex-item-fluid mbauto mtauto color-pm-blue"
-                    ng-if="message.ToList.length"
                     translate-context="Title"
                     translate-comment="To: addresses"
-                    translate>To:</span>
+                    translate>To</span>
             </span>
             <span class="flex-item-fluid bordered-container flex composerInputMeta-overlay-fakefield">
                 <span class="ellipsis mw100">
@@ -63,7 +58,7 @@
             data-key="ToList"></autocomplete-emails>
 
         <button
-            class="pm-button--link composerInputMeta-overlay-button no-pointer-events-children"
+            class="pm-button--link composerInputMeta-trigger-button no-pointer-events-children"
             tabindex="-1"
             pt-tooltip-translate="CC BCC"
             pt-placement="left"

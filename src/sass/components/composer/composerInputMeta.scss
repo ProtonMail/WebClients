@@ -17,15 +17,17 @@
 .composerInputMeta-overlay-fakefield {
     padding: .4em .85em;
     max-height: 2.5em;
-    max-width: calc(100% - 1.3em);
+    max-width: calc(100% - 10em);
     background: #fcfdff;
 }
 
 /* Why ??? ¯\_(ツ)_/¯ */
 .composerInputMeta-recipients .composerInputMeta-overlay-fakefield {
-    max-width: calc(100% - 9.5em);
+    max-width: calc(100% - 10em);
 }
 .composerInputMeta-overlay-list {
+
+    /*max-width: calc(100% - 1.5em);*/
 
     .svg-ellipsis-clipper {
         position: absolute;
@@ -36,19 +38,21 @@
         z-index: -10;
     }
 }
-
-.composerInputMeta-overlay-button {
+.composerInputMeta-overlay-button,
+.composerInputMeta-trigger-button {
     z-index: 2;
-    outline: 0;
     padding-left: 0.15em;
     padding-right: 0.35em
+}
+
+.composerInputMeta-overlay-button {
+    outline: 0;
 }
 
 .composer-toggle-ccbcc .composerInputMeta-overlay-button svg {
     transform: rotate(180deg);
 }
 
-.composerInputMeta-recipients .composerInputMeta-overlay-label {display: none}
 .composerInputMeta-overlay-hidden .composerInputMeta-overlay {
     visibility: hidden;
     pointer-events: none
