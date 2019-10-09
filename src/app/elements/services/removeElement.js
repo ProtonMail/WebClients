@@ -13,9 +13,26 @@ function removeElement(
 ) {
     const { dispatcher } = dispatchers(['composer.update']);
     const I18N = translator(() => ({
+        titleMany(count, isDraftState) {
+            if (isDraftState) {
+                return gettextCatalog.getPlural(count, 'Delete draft', 'Delete drafts', null, 'Title');
+            }
+
+            return gettextCatalog.getPlural(count, 'Delete email', 'Delete emails', null, 'Title');
+        },
         TITLE: gettextCatalog.getString('Delete', null, 'Title'),
         MESSAGE: gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info'),
-        removeMany(count) {
+        removeMany(count, isDraftState) {
+            if (isDraftState) {
+                return gettextCatalog.getPlural(
+                    count,
+                    'This action will permanently delete the draft. Are you sure you want to delete this draft?',
+                    'This action will permanently delete the selected drafts. Are you sure you want to delete these drafts?',
+                    null,
+                    'Info'
+                );
+            }
+
             return gettextCatalog.getPlural(
                 count,
                 'This action will permanently delete the selected email. Are you sure you want to delete this email?',
@@ -66,11 +83,10 @@ function removeElement(
             return acc;
         }, []);
 
+        const isDraftState = $state.includes('secured.drafts.**') || $state.includes('secured.allDrafts.**');
+
         // Check if there is one opened composer in the selection
-        if (
-            ($state.includes('secured.drafts.**') || $state.includes('secured.allDrafts.**')) &&
-            listOpenedDraft.length
-        ) {
+        if (isDraftState && listOpenedDraft.length) {
             const selectedMap = getElementsSelected().reduce(
                 (acc, msg) => {
                     acc.ConversationID[msg.ConversationID] = msg;
@@ -82,12 +98,18 @@ function removeElement(
 
             return {
                 isDraftOpen: true,
+                isDraftState,
                 drafts: listOpenedDraft.map(({ id, key }) => selectedMap[key][id]),
                 message: `${I18N.MESSAGE} <br><p><i>${I18N.DRAFT_INFO}</i></p>`
             };
         }
-
-        return { message: I18N.removeMany(ids.length) };
+        const count = ids.length;
+        return {
+            count,
+            isDraftState,
+            title: I18N.titleMany(count, isDraftState),
+            message: I18N.removeMany(count, isDraftState)
+        };
     };
 
     const removeList = async (ids, context, labelID) => {
@@ -103,13 +125,16 @@ function removeElement(
     const remove = ({ getElementsSelected, idsSelected, getTypeSelected } = {}) => {
         const ids = idsSelected();
         const context = getTypeSelected();
-        const { message, isDraftOpen, drafts = [] } = lookForOpenDraft(ids, getElementsSelected);
+        const { message, isDraftOpen, drafts = [], count, title = I18N.TITLE } = lookForOpenDraft(
+            ids,
+            getElementsSelected
+        );
         const labelID = tools.currentLocation();
 
         confirmModal.activate({
             params: {
+                title,
                 message,
-                title: I18N.TITLE,
                 isDanger: true,
                 cancel: confirmModal.deactivate,
                 async confirm() {
