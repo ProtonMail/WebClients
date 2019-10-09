@@ -21,6 +21,9 @@ function transformBlockquotes(gettextCatalog) {
                     button.className = 'pm-button pm-button--small more proton-message-blockquote-toggle';
                     button.textContent = '...'; // perf issue we can't use <icon> as we don't want to compile.
                     button.setAttribute('title', title);
+
+                    // For some messages, the content of the message before <button> is not inside <div>
+                    blockquote.parentNode.insertBefore(document.createElement('BR'), blockquote);
                     blockquote.parentNode.insertBefore(button, blockquote);
 
                     found = true;
