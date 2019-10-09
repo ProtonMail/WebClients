@@ -432,8 +432,8 @@ export enum CONTACT_CARD_TYPE {
 
 export enum LABEL_TYPE {
     MESSAGE_LABEL = 1,
-    CONTACT_GROUP = 2,
-    MESSAGE_FOLDER = 3
+    MESSAGE_FOLDER = 2,
+    CONTACT_GROUP = 3
 }
 export const DEFAULT_LOCALE = 'en_US';
 
