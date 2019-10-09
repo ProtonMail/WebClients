@@ -35,6 +35,8 @@ const PrivateLayout = ({ children, location }) => {
 
     useEffect(() => {
         setExpand(false);
+
+        mainAreaRef.current.scrollTop = 0;
     }, [location.pathname]);
 
     return (
