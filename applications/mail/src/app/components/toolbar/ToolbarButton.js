@@ -6,7 +6,7 @@ const ToolbarButton = ({ children, loading, disabled, className, ...rest }) => {
     return (
         <button
             type="button"
-            disalbed={disabled || loading}
+            disabled={disabled || loading}
             className={classnames(['toolbar-button', className])}
             {...rest}
         >

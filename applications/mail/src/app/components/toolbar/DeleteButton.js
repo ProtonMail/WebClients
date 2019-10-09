@@ -14,7 +14,7 @@ import {
 import { VIEW_MODE, MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { deleteMessages, emptyLabel } from 'proton-shared/lib/api/messages';
 import { deleteConversations } from 'proton-shared/lib/api/conversations';
-import { c } from 'ttag';
+import { c, ngettext, msgid } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
 
@@ -34,13 +34,18 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => 
         await new Promise((resolve, reject) => {
             createModal(
                 <ConfirmModal
-                    title={c('Title').t`Delete emails`}
+                    title={ngettext(msgid`Delete email`, `Delete emails`, selectedIDs.length)}
                     confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                     onConfirm={resolve}
                     onClose={reject}
                 >
-                    <Alert type="warning">{c('Info')
-                        .t`This action will permanently delete selected emails. Are you sure you want to delete these emails?`}</Alert>
+                    <Alert type="warning">
+                        {ngettext(
+                            msgid`This action will permanently delete the selected email. Are you sure you want to delete this email?`,
+                            `This action will permanently delete the selected emails. Are you sure you want to delete these emails?`,
+                            selectedIDs.length
+                        )}
+                    </Alert>
                 </ConfirmModal>
             );
         });

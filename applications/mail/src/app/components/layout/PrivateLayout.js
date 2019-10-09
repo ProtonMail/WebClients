@@ -46,7 +46,7 @@ const PrivateLayout = ({ children, location, labelID }) => {
                 <div className="flex flex-nowrap">
                     <Route path="/:path" render={() => <PrivateSidebar labelID={labelID} expanded={expanded} />} />
                     <div className="main flex-item-fluid main-area scroll-smooth-touch" ref={mainAreaRef}>
-                        <div className="main flex-item-fluid">
+                        <div className="flex-item-fluid">
                             <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
                         </div>
                     </div>

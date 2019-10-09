@@ -10,7 +10,7 @@ import {
     useMessageCounts,
     PrimaryButton
 } from 'react-components';
-import { SHOW_MOVED, LABEL_TYPE, MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
+import { SHOW_MOVED, LABEL_EXCLUSIVE, MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
 import { redirectTo } from 'proton-shared/lib/helpers/browser';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { c } from 'ttag';
@@ -105,15 +105,13 @@ const PrivateSidebar = ({ expanded = false, labelID: currentLabelID }) => {
                 redirectTo('/settings/labels');
             }
         },
-        ...labels
-            .filter(({ Type }) => [LABEL_TYPE.MESSAGE_LABEL, LABEL_TYPE.MESSAGE_FOLDER].includes(Type))
-            .map(({ ID, Name, Type, Color }) => ({
-                icon: Type === LABEL_TYPE.MESSAGE_LABEL ? 'label' : 'folder',
-                text: Name,
-                aside: getAside(ID),
-                link: `/${ID}`,
-                color: Color
-            }))
+        ...labels.map(({ ID, Name, Exclusive, Color }) => ({
+            icon: Exclusive === LABEL_EXCLUSIVE.LABEL ? 'label' : 'folder',
+            text: Name,
+            aside: getAside(ID),
+            link: `/${ID}`,
+            color: Color
+        }))
     ];
 
     return (

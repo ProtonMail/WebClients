@@ -1,52 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { MainLogo, SupportDropdown, Icon, Href, UserDropdown, Hamburger } from 'react-components';
+import {
+    MainLogo,
+    SupportDropdown,
+    Hamburger,
+    TopNavbar,
+    TopNavbarLink,
+    UpgradeButton,
+    useUser
+} from 'react-components';
 import { c } from 'ttag';
+
 import SearchBar from './SearchBar';
 
 const PrivateHeader = ({ location, expanded, onToggleExpand, onSearch }) => {
+    const [{ hasPaidMail }] = useUser();
     return (
         <header className="header flex flex-nowrap reset4print">
             <MainLogo url="/inbox" className="nomobile" />
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
-            <SearchBar location={location} onSearch={onSearch} />
-            <div className="topnav-container flex-item-centered-vert flex-item-fluid">
-                <ul className="topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap">
-                    <li className="mr1 flex-item-noshrink">
-                        <Link
-                            to="/inbox"
-                            className="topnav-link inline-flex flex-nowrap nodecoration rounded"
-                            aria-current="true"
-                        >
-                            <Icon
-                                name="mailbox"
-                                className="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert fill-white"
-                            />
-                            <span className="navigation-title topnav-linkText">{c('Link').t`Mailbox`}</span>
-                        </Link>
-                    </li>
-                    <li className="mr1 flex-item-noshrink">
-                        <Href
-                            url="/settings"
-                            target="_self"
-                            className="topnav-link inline-flex flex-nowrap nodecoration rounded"
-                        >
-                            <Icon
-                                name="settings"
-                                className="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert fill-white"
-                            />
-                            <span className="navigation-title topnav-linkText">{c('Link').t`Settings`}</span>
-                        </Href>
-                    </li>
-                    <li className="mr1 nomobile">
-                        <SupportDropdown className="topnav-link inline-flex flex-nowrap nodecoration rounded" />
-                    </li>
-                    <li className="mlauto mtauto mbauto relative flex-item-noshrink">
-                        <UserDropdown />
-                    </li>
-                </ul>
-            </div>
+            <SearchBar placeholder={c('Placeholder').t`Search messages`} location={location} onSearch={onSearch} />
+            <TopNavbar>
+                {hasPaidMail ? null : <UpgradeButton external={true} />}
+                <TopNavbarLink to="/inbox" icon="mailbox" text={c('Title').t`Mailbox`} aria-current={true} />
+                <TopNavbarLink external={true} to="/settings" icon="settings-master" text={c('Title').t`Settings`} />
+                <SupportDropdown />
+            </TopNavbar>
         </header>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from 'react-components';
+import { VIEW_MODE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
@@ -13,6 +14,9 @@ import DeleteButton from './DeleteButton';
 import SortDropdown from './SortDropdown';
 import FilterDropdown from './FilterDropdown';
 import SelectAll from './SelectAll';
+import MoveDropdown from '../dropdown/MoveDropdown';
+import LabelDropdown from '../dropdown/LabelDropdown';
+import { ELEMENT_TYPES } from '../../constants';
 
 const Toolbar = ({
     labelID = '',
@@ -29,6 +33,8 @@ const Toolbar = ({
     onPrevious,
     onNext
 }) => {
+    const { ViewMode = VIEW_MODE.GROUP } = mailSettings;
+    const type = ViewMode === VIEW_MODE.GROUP ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
     return (
         <nav className="toolbar flex noprint flex-spacebetween">
             <div className="flex">
@@ -39,8 +45,12 @@ const Toolbar = ({
                 <MoveButtons labelID={labelID} mailSettings={mailSettings} selectedIDs={selectedIDs} />
                 <DeleteButton labelID={labelID} mailSettings={mailSettings} selectedIDs={selectedIDs} />
                 <ToolbarSeparator />
-                <ToolbarDropdown content={<Icon className="toolbar-icon" name="folder" />}>todo</ToolbarDropdown>
-                <ToolbarDropdown content={<Icon className="toolbar-icon" name="label" />}>todo</ToolbarDropdown>
+                <ToolbarDropdown content={<Icon className="toolbar-icon" name="folder" />}>
+                    <MoveDropdown selectedIDs={selectedIDs} type={type} />
+                </ToolbarDropdown>
+                <ToolbarDropdown content={<Icon className="toolbar-icon" name="label" />}>
+                    <LabelDropdown selectedIDs={selectedIDs} type={type} />
+                </ToolbarDropdown>
             </div>
             <div className="flex">
                 <FilterDropdown loading={loading} filter={filter} onFilter={onFilter} />
