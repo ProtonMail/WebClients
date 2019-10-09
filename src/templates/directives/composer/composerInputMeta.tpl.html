@@ -7,17 +7,14 @@
             translate-context="Title"
             translate>Recipients</label>
         <div class="composerInputMeta-overlay-list mw100 composerInputMeta-overlay-button flex-item-fluid flex w100">
-            <span
-                class="w20 mw15e pr1 flex"
-                ng-if="message.ToList.length">
+            <span class="w20 mw15e pr1 flex">
                 <span
                     class="flex-item-fluid mbauto mtauto color-pm-blue"
+                    ng-if="message.ToList.length"
                     translate-context="Title"
                     translate-comment="To: addresses"
                     translate>To:</span>
-                <icon data-name="caret" class="mtauto mbauto"></icon>
             </span>
-            <span class="w20 mw15e pr2 composerInputMeta-fakelabel"></span>
             <span class="flex-item-fluid bordered-container flex composerInputMeta-overlay-fakefield">
                 <span class="ellipsis mw100">
                     <composer-input-recipient
