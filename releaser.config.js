@@ -3,6 +3,7 @@ const moment = require('moment');
 module.exports = {
     upstream: 'ProtonMail/Angular',
     dir: '.',
+    verbosity: 0,
     labels: {
         external: [
             { match: 'Feature', name: 'Added' },
