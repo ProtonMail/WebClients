@@ -26,6 +26,12 @@
 .border-top {
   border-top: 1px solid $pm-global-border;
 }
+.border-left {
+  border-left: 1px solid $pm-global-border;
+}
+.border-right {
+  border-right: 1px solid $pm-global-border;
+}
 
 .shadow-container {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);

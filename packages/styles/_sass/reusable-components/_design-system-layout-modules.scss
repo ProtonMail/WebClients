@@ -297,7 +297,7 @@ $list-width-em: 400 !default;
 /* max-block widths */
 
 /* here you may add max-widths % */
-$list-max-widths: 80, 100 !default;
+$list-max-widths: 50, 80, 100 !default;
 @each $max-width in $list-max-widths {
   .mw#{$max-width} {
     max-width: #{$max-width * 1%};
