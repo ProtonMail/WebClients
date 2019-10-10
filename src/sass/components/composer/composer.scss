@@ -242,14 +242,9 @@
         }
 
         /* STATE CHANGE */
-
-
         @media (min-width:600px) {
           & {
             width: 600px;
-            /* STYLES */
-            //box-shadow: $box-shadow;
-            //border-radius: 2px;
             overflow: hidden;
           }
         }
@@ -260,6 +255,25 @@
         &.composer--mini {
             height: 380px !important;
         }
+
+        &.minimized,
+        &.maximized .composerHeader-container {
+            background: var(--bgcolor-toolbar, $pm-global-altgrey);
+            color: $white;
+
+            .composerHeader-btn {
+                color: currentColor;
+            }
+        }
+
+        .composerHeader-container {
+            width: calc(100% + 1em);
+            padding: .5em;
+            margin-top: -.5em;
+            margin-bottom: .5em;
+            margin-left: -.5em;
+        }
+
         &.minimized {
             height: $composerRowHeight !important;
             overflow: hidden;
@@ -272,15 +286,17 @@
             & > footer {
                 display: none;
             }
+
         }
         &.maximized {
             position: absolute;
-            top: calc(#{$header-height} + 20px);
-            right: 0;
-            bottom: 20px;
+            top: 1rem;
+            right: 1rem !important;
+            bottom: 1rem;
+            width: 100%;
             transition: none;
-            transform: translateX(-20px) !important;
-            width: calc(100% - #{$sidebarWidth} - 40px);
+            transform: none;
+            width: calc(100% - 4.5rem - 2rem);
             height: auto !important;
             max-height: 100%;
             margin: 0;
@@ -366,6 +382,8 @@
     }
 
 }
+
+
 
 .composerInputMeta-autocomplete {
     background: #fcfdff;

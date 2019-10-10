@@ -4,55 +4,55 @@
         <button
             type="button"
             ng-show="!!!message.minimized"
-            class="pl0-5 pr0-5 link minimize-button hidden-xs composerHeader-btn composer-action-minimize"
+            class="pl0-5 pr0-5 minimize-button hidden-xs composerHeader-btn composer-action-minimize"
             ng-click="minimize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Minimize"
             pt-placement="top">
-            <icon data-name="minimize" data-size="16" class="mauto"></icon>
+            <icon data-name="minimize" data-fill="currentColor" class="mauto"></icon>
             <span class="sr-only" translate-context="Action" translate>Minimize</span>
         </button>
         <button
             type="button"
             ng-show="!!message.minimized"
-            class="pl0-5 pr0-5 link expand-button hidden-xs composerHeader-btn composer-action-expand"
+            class="pl0-5 pr0-5 expand-button hidden-xs composerHeader-btn composer-action-expand"
             ng-click="unminimize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Expand"
             pt-placement="top">
-            <icon data-name="minimize" data-size="16" class="mauto rotateX-180"></icon>
+            <icon data-name="minimize" data-fill="currentColor" class="mauto rotateX-180"></icon>
             <span class="sr-only" translate-context="Action" translate>Expand</span>
         </button>
         <button
             type="button"
             ng-show="!!!message.maximized"
-            class="pl0-5 pr0-5 link maximize-button hidden-xs hidden-sm composerHeader-btn composer-action-maximize"
+            class="pl0-5 pr0-5 maximize-button hidden-xs hidden-sm composerHeader-btn composer-action-maximize"
             ng-click="normalize(message);maximize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Fullscreen"
             pt-placement="top">
-            <icon data-name="expand" data-size="16" class="mauto"></icon>
+            <icon data-name="expand" data-fill="currentColor" class="mauto"></icon>
             <span class="sr-only" translate-context="Action" translate>Fullscreen</span>
         </button>
         <button
             type="button"
             ng-show="!!message.maximized"
-            class="pl0-5 pr0-5 link maximize-button hidden-xs composerHeader-btn composer-action-maximize"
+            class="pl0-5 pr0-5 maximize-button hidden-xs composerHeader-btn composer-action-maximize"
             ng-click="normalize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Exit fullscreen"
             pt-placement="top">
-            <icon data-name="contract-window" data-size="16" class="mauto"></icon>
+            <icon data-name="contract-window" data-fill="currentColor" class="mauto"></icon>
             <span class="sr-only" translate-context="Action" translate>Exit fullscreen</span>
         </button>
         <button
             type="button"
-            class="pl0-5 pr0-5 link close-button composerHeader-btn composer-action-close"
+            class="pl0-5 pr0-5 close-button composerHeader-btn composer-action-close"
             ng-click="saveAndClose(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Close"
             pt-placement="top">
-            <icon data-name="off" data-size="16" class="mauto"></icon>
+            <icon data-name="off" data-fill="currentColor" class="mauto"></icon>
             <span class="sr-only" translate-context="Action" translate>Close</span>
         </button>
     </div>
