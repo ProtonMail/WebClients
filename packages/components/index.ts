@@ -127,6 +127,7 @@ export { default as OrderableTable } from './components/orderableTable/Orderable
 export { default as OrderableTableHeader } from './components/orderableTable/OrderableTableHeader';
 export { default as OrderableTableBody } from './components/orderableTable/OrderableTableBody';
 export { default as OrderableTableRow } from './components/orderableTable/OrderableTableRow';
+export { default as LabelModal } from './containers/labels/modals/Edit';
 export { default as SignInLayout } from './containers/login/SignInLayout';
 export { default as PublicHeader } from './containers/login/PublicHeader';
 export { default as ResetPasswordContainer } from './containers/login/ResetPasswordContainer';
