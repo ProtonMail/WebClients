@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import DropdownCaret from './DropdownCaret';
 import { classnames } from 'react-components';
 
-const DropdownButton = ({ buttonRef, className = 'pm-button', hasCaret = false, isOpen, children, ...rest }) => {
+const DropdownButton = ({
+    buttonRef,
+    className = 'pm-button',
+    hasCaret = false,
+    isOpen,
+    children,
+    caretClassName,
+    ...rest
+}) => {
     return (
         <button
             ref={buttonRef}
@@ -14,7 +22,7 @@ const DropdownButton = ({ buttonRef, className = 'pm-button', hasCaret = false, 
         >
             <span className="mauto">
                 <span className={classnames([hasCaret && children && 'mr0-5'])}>{children}</span>
-                {hasCaret && <DropdownCaret isOpen={isOpen} />}
+                {hasCaret && <DropdownCaret className={caretClassName} isOpen={isOpen} />}
             </span>
         </button>
     );
@@ -22,6 +30,7 @@ const DropdownButton = ({ buttonRef, className = 'pm-button', hasCaret = false, 
 
 DropdownButton.propTypes = {
     buttonRef: PropTypes.object,
+    caretClassName: PropTypes.string,
     hasCaret: PropTypes.bool,
     isOpen: PropTypes.bool,
     children: PropTypes.node,

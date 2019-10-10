@@ -8,14 +8,30 @@ import { generateUID } from '../../helpers/component';
 /**
  * @type any
  */
-const SimpleDropdown = ({ content, children, originalPlacement, size, autoClose, hasCaret = true, ...rest }) => {
+const SimpleDropdown = ({
+    content,
+    children,
+    originalPlacement,
+    size,
+    autoClose,
+    hasCaret = true,
+    caretClassName,
+    ...rest
+}) => {
     const [uid] = useState(generateUID('dropdown'));
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
 
     return (
         <>
-            <DropdownButton {...rest} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret={hasCaret}>
+            <DropdownButton
+                {...rest}
+                buttonRef={anchorRef}
+                isOpen={isOpen}
+                onClick={toggle}
+                hasCaret={hasCaret}
+                caretClassName={caretClassName}
+            >
                 {content}
             </DropdownButton>
             <Dropdown
@@ -34,6 +50,7 @@ const SimpleDropdown = ({ content, children, originalPlacement, size, autoClose,
 };
 
 SimpleDropdown.propTypes = {
+    caretClassName: PropTypes.string,
     hasCaret: PropTypes.bool,
     content: PropTypes.node,
     children: PropTypes.node,
