@@ -256,8 +256,7 @@
             height: 380px !important;
         }
 
-        &.minimized,
-        &.maximized .composerHeader-container {
+        .composerHeader-container {
             background: var(--bgcolor-toolbar, $pm-global-altgrey);
             color: $white;
 
