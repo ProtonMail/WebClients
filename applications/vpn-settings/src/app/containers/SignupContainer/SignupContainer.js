@@ -34,9 +34,9 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
         document.title = c('Title').t`Sign up - ProtonVPN`;
         // Always start at plans, or account if plan is preselected
         if (preSelectedPlan) {
-            history.replace(`/signup/${SignupState.Account}`);
+            history.replace(`/signup/${SignupState.Account}`, history.location.state);
         } else {
-            history.replace('/signup');
+            history.replace('/signup', history.location.state);
         }
     }, []);
 
@@ -92,7 +92,7 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
         if (selectedPlan.price.total > 0) {
             goToStep(SignupState.Payment);
         } else if (appliedInvite || appliedCoupon) {
-            await signup(model, { invite: appliedInvite, coupon: appliedCoupon });
+            await withCreateLoading(signup(model, { invite: appliedInvite, coupon: appliedCoupon }));
         } else {
             goToStep(SignupState.Verification);
         }
@@ -221,6 +221,8 @@ SignupContainer.propTypes = {
     }).isRequired,
     history: PropTypes.shape({
         push: PropTypes.func.isRequired,
+        goBack: PropTypes.func.isRequired,
+        replace: PropTypes.func.isRequired,
         location: PropTypes.shape({
             search: PropTypes.string.isRequired,
             state: PropTypes.oneOfType([
