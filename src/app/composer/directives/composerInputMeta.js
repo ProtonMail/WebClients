@@ -78,6 +78,7 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
                     if (target.classList.contains('composerInputMeta-trigger-button')) {
                         return scope.$applyAsync(() => {
                             scope.message.ccbcc = !scope.message.ccbcc;
+                            scope.message.autocompletesFocussed = scope.message.ccbcc === true;
                         });
                     }
 

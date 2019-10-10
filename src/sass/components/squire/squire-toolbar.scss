@@ -26,6 +26,10 @@
 
 }
 
+[data-editor-mode="text/plain"] [class*="squireToolbar-row"] {
+    min-height: 3rem
+}
+
 [class*="squireToolbar-row"] [class*="squireToolbar-action-"]:hover,
 [class*="squireToolbar-row"] [class*="squireToolbar-action-"]:active,
 [class*="squireToolbar-row"] .squireToolbar-action-mode:hover,
