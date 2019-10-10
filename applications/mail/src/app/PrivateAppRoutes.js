@@ -29,7 +29,7 @@ const PrivateAppRoutes = () => {
                     const labelID = LABEL_IDS[currentLabelID] || currentLabelID;
 
                     return (
-                        <PrivateLayout labelID={labelID}>
+                        <PrivateLayout labelID={labelID} location={location} history={history}>
                             <ErrorBoundary key={location.pathname}>
                                 <MailboxContainer
                                     labelID={labelID}

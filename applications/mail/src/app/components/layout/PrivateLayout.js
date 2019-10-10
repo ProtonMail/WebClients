@@ -2,14 +2,13 @@ import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Route } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
 import { AppsSidebar, StorageSpaceStatus, MainAreaContext, Href } from 'react-components';
 import { normalize } from 'proton-shared/lib/helpers/string';
 
 import PrivateHeader from '../header/PrivateHeader';
 import PrivateSidebar from '../sidebar/PrivateSidebar';
 
-const PrivateLayout = ({ children, location, labelID }) => {
+const PrivateLayout = ({ children, location, history, labelID }) => {
     const mainAreaRef = useRef();
     const [expanded, setExpand] = useState(false);
 
@@ -39,6 +38,7 @@ const PrivateLayout = ({ children, location, labelID }) => {
             <div className="content flex-item-fluid reset4print">
                 <PrivateHeader
                     location={location}
+                    history={history}
                     expanded={expanded}
                     onToggleExpand={() => setExpand(!expanded)}
                     onSearch={handleSearch}
@@ -59,7 +59,8 @@ const PrivateLayout = ({ children, location, labelID }) => {
 PrivateLayout.propTypes = {
     children: PropTypes.node.isRequired,
     location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
     labelID: PropTypes.string.isRequired
 };
 
-export default withRouter(PrivateLayout);
+export default PrivateLayout;

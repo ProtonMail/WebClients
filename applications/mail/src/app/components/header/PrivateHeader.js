@@ -7,19 +7,24 @@ import {
     TopNavbar,
     TopNavbarLink,
     UpgradeButton,
+    Searchbox,
     useUser
 } from 'react-components';
 import { c } from 'ttag';
 
-import SearchBar from './SearchBar';
+import AdvancedSearchDropdown from './AdvancedSearchDropdown';
 
-const PrivateHeader = ({ location, expanded, onToggleExpand, onSearch }) => {
+const PrivateHeader = ({ location, history, expanded, onToggleExpand, onSearch }) => {
     const [{ hasPaidMail }] = useUser();
     return (
         <header className="header flex flex-nowrap reset4print">
             <MainLogo url="/inbox" className="nomobile" />
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
-            <SearchBar placeholder={c('Placeholder').t`Search messages`} location={location} onSearch={onSearch} />
+            <Searchbox
+                placeholder={c('Placeholder').t`Search messages`}
+                onSearch={onSearch}
+                advanced={<AdvancedSearchDropdown location={location} history={history} />}
+            />
             <TopNavbar>
                 {hasPaidMail ? null : <UpgradeButton external={true} />}
                 <TopNavbarLink to="/inbox" icon="mailbox" text={c('Title').t`Mailbox`} aria-current={true} />
@@ -32,6 +37,7 @@ const PrivateHeader = ({ location, expanded, onToggleExpand, onSearch }) => {
 
 PrivateHeader.propTypes = {
     location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
     onSearch: PropTypes.func.isRequired,
     expanded: PropTypes.bool,
     onToggleExpand: PropTypes.func.isRequired

@@ -12,9 +12,7 @@ const ItemAttachmentIcon = ({ element = {}, type = ELEMENT_TYPES.CONVERSATION })
         return null;
     }
 
-    const title = ''; // TODO
-
-    return <Icon name="attach" title={title} />;
+    return <Icon name="attach" />;
 };
 
 ItemAttachmentIcon.propTypes = {

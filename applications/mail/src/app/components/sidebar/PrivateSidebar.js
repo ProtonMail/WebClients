@@ -100,6 +100,7 @@ const PrivateSidebar = ({ expanded = false, labelID: currentLabelID }) => {
         {
             icon: 'folder-label',
             text: c('Link').t`Folders/labels`,
+            className: 'alignleft',
             type: 'button',
             onClick() {
                 redirectTo('/settings/labels');
