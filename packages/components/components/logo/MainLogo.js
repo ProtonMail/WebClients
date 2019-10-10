@@ -17,6 +17,7 @@ const { PROTONMAIL, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR, PROTONVPN_SETTI
 
 /**
  * MainLogo component
+ * @type any
  * @param {String} url
  * @param {Boolean} external true for external link
  */
