@@ -12,7 +12,7 @@ import {
     useConfig
 } from 'react-components';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+import { CLIENT_TYPES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
 import EditCardModal from '../payments/EditCardModal';
 import PayPalModal from '../payments/PayPalModal';
@@ -44,6 +44,8 @@ const PaymentMethodsSection = () => {
         createModal(<PayPalModal onChange={request} />);
     };
 
+    const hasPayPal = paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL);
+
     return (
         <>
             <SubTitle>{c('Title').t`Payment methods`}</SubTitle>
@@ -58,7 +60,7 @@ const PaymentMethodsSection = () => {
             <Block>
                 <PrimaryButton className="mr1" onClick={handleCard}>{c('Action')
                     .t`Add credit / debit card`}</PrimaryButton>
-                <PrimaryButton onClick={handlePayPal}>{c('Action').t`Add PayPal`}</PrimaryButton>
+                {hasPayPal ? null : <PrimaryButton onClick={handlePayPal}>{c('Action').t`Add PayPal`}</PrimaryButton>}
             </Block>
             <PaymentMethodsTable loading={loading} methods={paymentMethods} fetchMethods={request} />
         </>
