@@ -1,42 +1,105 @@
 <section>
-    <div id="pm_latest" class="conversationPlaceholder" ng-if="showWelcome">
-        <header translate translate-context="Title">Welcome</header>
-        <section id="storageStatus" ng-show="user.UsedSpace > 0">
-            <div class="wrap">
-                <placeholder-progress></placeholder-progress>
-                <span>
-                    <strong>{{ ::user.UsedSpace | percentage:user.MaxSpace }}%</strong>
-                    <span translate-context="Info" translate>Storage space used.</span>
-                </span>
-            </div>
-        </section>
-        <section ng-if="!isFree">
-            <a href="https://protonmail.com/blog/best-secure-email-app/" target="_blank" title-translate="Learn More" title-translate-context="Link">
-                <img src="/assets/img/welcome/mobile.jpg" />
-            </a>
-        </section>
-        <section ng-if="isFree">
-            <a ui-sref="secured.dashboard({scroll: true})" class="aligncenter latest-upgrade">
-                <img src="/assets/img/latest/privacy.jpg" />
-                <button type="button" class="pm_button primary" translate translate-context="Action">Upgrade account</button>
-            </a>
-        </section>
-        <div class="pm_grid no-padding flex flex-row">
-            <div class="col-1-2">
-                <section>
-                    <a href="https://shop.protonmail.com" target="_blank">
-                        <img src="/assets/img/welcome/shop.jpg" />
-                    </a>
-                </section>
-            </div>
-            <div class="col-1-2">
-                <section>
-                    <a href="https://protonmail.com/support/knowledge-base/custom-domain-support/" target="_blank">
-                        <img src="/assets/img/welcome/domain.jpg" />
-                    </a>
-                </section>
+    <div
+        id="pm_latest"
+        class="conversationPlaceholder flex flex-column w100 aligncenter p1"
+        ng-if="showWelcome">
+
+        <h1
+            translate
+            translate-context="Title"
+            class="aligncenter mt2">Welcome {{::user.Name}}</h1>
+
+        <p class="p0 m0">
+            <span
+                translate-context="You have 5 unread emails in your inbox."
+                translate>You have</span>
+            <strong
+                translate translate-n="welcomeModel.unread"
+                translate-plural="{{$count}} unread emails" translate-context="You have 5 unread emails in your inbox.">{{$count}} unread email</strong>
+            <span
+                translate-context="You have 5 unread emails in your inbox."
+                translate>in your inbox.</span>
+        </p>
+
+        <div ng-if="!isFree" >
+            <p class="mw40e center mb2">
+                <span
+                    translate-context="Info"
+                    translate>Having trouble sending or receiving emails? Interested in helping us improve our service? Feel free to</span>
+                <button
+                    type="button"
+                    class="conversationPlaceholder-bug pm-button--link"
+                    data-click-action="bugReport"
+                    translate-context="Action"
+                    translate>Report bug</button>
+            </p>
+
+            <img
+                class="mt2"
+                src="/assets/welcome-message.svg"
+                class="conversationPlaceholder-image"
+                alt="Welcome back">
+        </div>
+
+        <div ng-if="isFree">
+            <p class="mw40e center mb2 pb2">
+                <span
+                    translate-context="Upgrade to a paid plan starting from $4/month only and get additional storage capacity and more addresses with ProtonMail Plus."
+                    translate>Upgrade to a paid plan starting from</span>
+                <strong
+                    translate-context="Upgrade to a paid plan starting from $4/month only and get additional storage capacity and more addresses with ProtonMail Plus."
+                    translate>$4/month</strong>
+                <span
+                    translate-context="Upgrade to a paid plan starting from $4/month only and get additional storage capacity and more addresses with ProtonMail Plus."
+                    translate>only and get additional storage capacity and more addresses with ProtonMail Plus.</span>
+            </p>
+
+            <div class="flex flex-nowrap mw50e center mt2">
+
+                <div class="bordered-container flex-item-fluid flex flex-column aligncenter p1 mr2">
+                    <img src="/assets/img/welcome/home-icon-mail.svg" alt="" />
+
+                    <p class="bold" translate translate-context="info">5GB Storage</p>
+
+                    <p translate translate-context="info">Get enough storage space to hold on your history of precious communications.</p>
+
+                    <a
+                        href="/settings/subscription"
+                        class="pm-button--primary mtauto"
+                        translate
+                        translate-context="Action">Upgrade</a>
+                </div>
+
+                <div class="bordered-container flex-item-fluid flex flex-column aligncenter p1 mr2">
+                    <img src="/assets/img/welcome/home-icon-mail.svg" alt="" />
+
+                    <p class="bold" translate translate-context="info">5 Email Addresses</p>
+
+                    <p translate translate-context="info">Set up to 5 email addresses and use them as you deem fit.</p>
+
+                    <a
+                        href="/settings/subscription"
+                        class="pm-button--primary mtauto"
+                        translate
+                        translate-context="Action">Upgrade</a>
+                </div>
+
+                <div class="bordered-container flex-item-fluid flex flex-column aligncenter p1">
+                    <img src="/assets/img/welcome/home-icon-mail.svg" alt="" />
+
+                    <p class="bold" translate translate-context="info">Customisation</p>
+
+                    <p translate translate-context="info">Folders, Labels, Auto-reply and more ways to tweak ProtonMail to match the way you work.</p>
+
+                    <a
+                        href="/settings/subscription"
+                        class="pm-button--primary mtauto"
+                        translate
+                        translate-context="Action">Upgrade</a>
+                </div>
             </div>
         </div>
+
     </div>
 
     <count-elements-selected id="pm_placeholder" ng-if="!showWelcome"></count-elements-selected>

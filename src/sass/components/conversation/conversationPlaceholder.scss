@@ -1,110 +1,16 @@
-.conversationPlaceholder {
-	padding:  0;
-	header {
-	    font-size: 24px;
-	    font-weight: 400;
-	    color: #333;
-	    line-height: 1.25em;
-	    margin: 0;
-	    letter-spacing: .04rem;
-	    display: block;
-	    padding-top: ( (($toolbarHeight)-30) /2 );
-	    padding-right: 3rem;
-	    padding-bottom: ( (($toolbarHeight)-30) /2 );
-	    padding-left: 40px;
-	    padding-right: 40px;
-	    border-bottom: 1px solid $border;
-	    margin: 0;
-	}
-	#storageStatus {
-		.wrap {
-			span {
-				color: $default-color;
-				strong {
-					color: $primary;
-				}
-			}
-		}
-	}
-	& > p {
-		margin: 2rem 0;
-	}
-	section {
-		border: 1px solid $border;
-		margin: 20px 20px 0px 20px;
-		padding: 1rem;
-		border-radius: 2px;
-		a {
-			display: block;
-		}
-		img {
-			display: block;
-			width: 100%;
-			height: auto;
-		}
-		.latest-upgrade {
-			display: block;
-			position: relative;
-			cursor: pointer;
-			button {
-				position: absolute;
-				left: 50%;
-				width: 10rem;
-				display: block;
-				margin-left: -5rem;
-				bottom: 2rem;
-			}
-		}
-	}
-    .link {
-    	padding-bottom: 1rem;
-    	display: block;
-    	float: right;
-    	a {
-	    	display: block;
-	    	text-align: center;
-	    	color: $primary;
-	    	clear: both;
-	    	line-height: 2rem;
-	    	height: 2rem;
-	    }
-    }
-    .storageArea {
-    	padding: 0 6rem;
-    	position: relative;
-    	height: 2rem;
-    	line-height: 2rem;
-    	margin-bottom: 1rem;
-    	.current {
-    		position: absolute;
-    		left: 0;
-    		top: 0;
-    		display: block;
-    		height: 2rem;
-    		line-height: 2rem;
-    	}
-    	.total {
-    		position: absolute;
-    		right: 0;
-    		top: 0;
-    		display: block;
-    		height: 2rem;
-    		line-height: 2rem;
-    	}
-	    div.storage {
-	        color: #bbb;
-	        strong {
-	            color: $primary
-	        }
-	        .fa {
-	            margin-right: .5rem;
-	            opacity: .5;
-	        }
-	    }
-		.storageBar {
-			height: 12px;
-			top: .6rem;
-		}
-    }
+@include respond-to(1300) {
 
+    .conversationPlaceholder-box:nth-child(2) {
+        margin-right: 0;
+     }
+    .conversationPlaceholder-box:nth-child(3) {
+       min-width: 100%;
+    }
+}
+
+@include respond-to($breakpoint-medium) {
+    .conversationPlaceholder-box {
+        min-width: 100%;
+        margin-right: 0;
+    }
 }
