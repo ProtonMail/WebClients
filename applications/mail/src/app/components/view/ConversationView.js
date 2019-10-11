@@ -8,7 +8,7 @@ import ItemStar from '../list/ItemStar';
 import { ELEMENT_TYPES } from '../../constants';
 
 const ConversationView = ({ conversationID, messageID }) => {
-    const [conversation, updateConversation] = useState({});
+    const [conversation, updateConversation] = useState();
     const [messages, updateMessages] = useState([]);
     const api = useApi();
     const [loading, withLoading] = useLoading();
@@ -31,10 +31,14 @@ const ConversationView = ({ conversationID, messageID }) => {
         );
     }
 
+    if (!conversation) {
+        return null;
+    }
+
     return (
         <section className="view-column-detail p2 flex-item-fluid scroll-if-needed">
             <header className="flex flex-nowrap flex-spacebetween flex-items-center">
-                <h2>{conversation.Subject}</h2>
+                <h2 className="mb0">{conversation.Subject}</h2>
                 <ItemStar element={conversation} type={ELEMENT_TYPES.CONVERSATION} />
             </header>
             {messages.map((message) => (

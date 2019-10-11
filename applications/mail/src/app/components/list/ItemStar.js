@@ -29,12 +29,7 @@ const ItemStar = ({ element = {}, type = ELEMENT_TYPES.CONVERSATION }) => {
     };
 
     return (
-        <button
-            disabled={loading}
-            type="button"
-            className="starbutton relative"
-            onClick={() => withLoading(handleClick())}
-        >
+        <button disabled={loading} type="button" className="starbutton flex" onClick={() => withLoading(handleClick())}>
             <Icon name={iconName} />
         </button>
     );

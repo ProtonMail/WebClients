@@ -11,17 +11,18 @@ import {
     useModals,
     Alert
 } from 'react-components';
-import { VIEW_MODE, MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { deleteMessages, emptyLabel } from 'proton-shared/lib/api/messages';
 import { deleteConversations } from 'proton-shared/lib/api/conversations';
 import { c, ngettext, msgid } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
+import { getCurrentType } from '../../helpers/element';
+import { ELEMENT_TYPES } from '../../constants';
 
 const { TRASH, SPAM, DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE } = MAILBOX_LABEL_IDS;
 
 const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => {
-    const { ViewMode = VIEW_MODE.GROUP } = mailSettings;
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
@@ -29,6 +30,7 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => 
     const [loading, withLoading] = useLoading();
     const displayDelete = [TRASH, SPAM, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT].includes(labelID);
     const displayEmpty = ![INBOX, SENT, ALL_SENT, ARCHIVE, ALL_MAIL].includes(labelID);
+    const type = getCurrentType({ mailSettings, labelID });
 
     const handleDelete = async () => {
         await new Promise((resolve, reject) => {
@@ -49,7 +51,7 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => 
                 </ConfirmModal>
             );
         });
-        const action = ViewMode === VIEW_MODE.GROUP ? deleteConversations : deleteMessages;
+        const action = type === ELEMENT_TYPES.CONVERSATION ? deleteConversations : deleteMessages;
         await api(action(selectedIDs));
         await call();
         createNotification({ text: c('Success').t`Elements deleted` });

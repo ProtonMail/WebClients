@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { classnames } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
-import { VIEW_MODE, MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import ItemCheckbox from './ItemCheckbox';
 import ItemStar from './ItemStar';
@@ -12,17 +12,17 @@ import { ELEMENT_TYPES } from '../../constants';
 import ItemLabels from './ItemLabels';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
 import ItemLocation from './ItemLocation';
+import { getCurrentType } from '../../helpers/element';
 
 const { SENT, SENT_ALL, DRAFTS, DRAFTS_ALL } = MAILBOX_LABEL_IDS;
 
 const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked = false, onCheck, onClick }) => {
     const { ID, Subject, Time } = element;
     const displayRecipients = [SENT, SENT_ALL, DRAFTS, DRAFTS_ALL].includes(labelID);
-    const { ViewMode = VIEW_MODE.GROUP } = mailSettings;
-    const isGroup = ViewMode === VIEW_MODE.GROUP;
-    const senders = isGroup ? getSenders(element) : [getSender(element)];
-    const recipients = isGroup ? getRecipients(element) : getMessageRecipients(element);
-    const type = isGroup ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
+    const type = getCurrentType({ mailSettings, labelID });
+    const isConversation = type === ELEMENT_TYPES.CONVERSATION;
+    const senders = isConversation ? getSenders(element) : [getSender(element)];
+    const recipients = isConversation ? getRecipients(element) : getMessageRecipients(element);
 
     return (
         <div

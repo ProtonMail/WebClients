@@ -1,32 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MESSAGE_BUTTONS, VIEW_MODE } from 'proton-shared/lib/constants';
+import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
 import { Icon, useApi, useEventManager, useLoading } from 'react-components';
 import { markMessageAsRead, markMessageAsUnread } from 'proton-shared/lib/api/messages';
 import { markConversationsAsRead, markConversationsAsUnread } from 'proton-shared/lib/api/conversations';
 import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
+import { getCurrentType } from '../../helpers/element';
+import { ELEMENT_TYPES } from '../../constants';
 
 const UNREAD = 0;
 const READ = 1;
 
-const ReadUnreadButtons = ({ mailSettings, selectedIDs = [] }) => {
+const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [] }) => {
     const api = useApi();
     const { call } = useEventManager();
-    const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD, ViewMode = VIEW_MODE.GROUP } = mailSettings;
-    const isGroup = ViewMode === VIEW_MODE.GROUP;
+    const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD } = mailSettings;
+    const type = getCurrentType({ mailSettings, labelID });
     const [loading, withLoading] = useLoading();
 
     const markAs = async (status = UNREAD) => {
         const isUnread = status === UNREAD;
-        const action = isGroup
-            ? isUnread
-                ? markConversationsAsUnread
-                : markConversationsAsRead
-            : isUnread
-            ? markMessageAsUnread
-            : markMessageAsRead;
+        const action =
+            type === ELEMENT_TYPES.CONVERSATION
+                ? isUnread
+                    ? markConversationsAsUnread
+                    : markConversationsAsRead
+                : isUnread
+                ? markMessageAsUnread
+                : markMessageAsRead;
         await api(action(selectedIDs));
         await call();
     };
@@ -61,7 +64,8 @@ const ReadUnreadButtons = ({ mailSettings, selectedIDs = [] }) => {
 
 ReadUnreadButtons.propTypes = {
     mailSettings: PropTypes.object.isRequired,
-    selectedIDs: PropTypes.array.isRequired
+    selectedIDs: PropTypes.array.isRequired,
+    labelID: PropTypes.string.isRequired
 };
 
 export default ReadUnreadButtons;

@@ -1,16 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { Button, useUser, useModals, LinkButton, AuthenticatedBugModal } from 'react-components';
+import {
+    Button,
+    useUser,
+    useModals,
+    LinkButton,
+    AuthenticatedBugModal,
+    useConversationCounts,
+    useMessageCounts
+} from 'react-components';
 import { c, ngettext, msgid } from 'ttag';
+import { toMap } from 'proton-shared/lib/helpers/object';
+
 import conversationSingleSvg from 'design-system/assets/img/shared/selected-conversation-single.svg';
 import conversationManySvg from 'design-system/assets/img/shared/selected-conversation-many.svg';
 import welcomeMessageSvg from 'design-system/assets/img/shared/welcome-message.svg';
+import { getCurrentType } from '../../helpers/element';
+import { ELEMENT_TYPES } from '../../constants';
 
-const PlaceholderView = ({ checkedIDs = [], onUncheckAll, welcomeRef }) => {
+const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, welcomeRef, mailSettings }) => {
     const total = checkedIDs.length;
-    const unread = 4;
+    const [conversationCounts] = useConversationCounts();
+    const [messageCounts] = useMessageCounts();
     const [user] = useUser();
     const { createModal } = useModals();
+    const type = getCurrentType({ mailSettings, labelID });
+
+    const unreadMap = useMemo(() => {
+        const counters = type === ELEMENT_TYPES.CONVERSATION ? conversationCounts : messageCounts;
+
+        if (!Array.isArray(counters)) {
+            return {};
+        }
+
+        return toMap(counters, 'LabelID');
+    }, [conversationCounts, messageCounts]);
+
+    const { Unread = 0 } = unreadMap[labelID] || {};
 
     useEffect(() => {
         return () => {
@@ -50,8 +76,8 @@ const PlaceholderView = ({ checkedIDs = [], onUncheckAll, welcomeRef }) => {
                 <p>
                     {ngettext(
                         msgid`You have 1 unread email in this folder`,
-                        `You have ${unread} unread emails in this folder`,
-                        unread
+                        `You have ${Unread} unread emails in this folder`,
+                        Unread
                     )}
                 </p>
                 <p>{c('Info')
@@ -67,8 +93,8 @@ const PlaceholderView = ({ checkedIDs = [], onUncheckAll, welcomeRef }) => {
             <p>
                 {ngettext(
                     msgid`You have 1 unread email in this folder`,
-                    `You have ${unread} unread emails in this folder`,
-                    unread
+                    `You have ${Unread} unread emails in this folder`,
+                    Unread
                 )}
             </p>
             <p>{c('Info').t`Upgrade to a paid plan and get additional storage capacity and more addresses.`}</p>
@@ -77,9 +103,11 @@ const PlaceholderView = ({ checkedIDs = [], onUncheckAll, welcomeRef }) => {
 };
 
 PlaceholderView.propTypes = {
+    labelID: PropTypes.string.isRequired,
     checkedIDs: PropTypes.array,
     onUncheckAll: PropTypes.func,
-    welcomeRef: PropTypes.object
+    welcomeRef: PropTypes.object,
+    mailSettings: PropTypes.object.isRequired
 };
 
 export default PlaceholderView;

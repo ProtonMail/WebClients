@@ -1,24 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon, useLoading, useNotifications, useEventManager, useApi } from 'react-components';
-import { MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { labelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations } from 'proton-shared/lib/api/conversations';
 import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
+import { getCurrentType } from '../../helpers/element';
+import { ELEMENT_TYPES } from '../../constants';
 
 const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT } = MAILBOX_LABEL_IDS;
 
 const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => {
-    const { ViewMode = VIEW_MODE.GROUP } = mailSettings;
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
     const [loading, withLoading] = useLoading();
+    const type = getCurrentType({ mailSettings, labelID });
 
     const handleMove = async (LabelID) => {
-        const action = ViewMode === VIEW_MODE.GROUP ? labelConversations : labelMessages;
+        const action = type === ELEMENT_TYPES.CONVERSATION ? labelConversations : labelMessages;
         await api(action({ LabelID, IDs: selectedIDs }));
         await call();
         createNotification({ text: c('Success').t`Elements moved` });

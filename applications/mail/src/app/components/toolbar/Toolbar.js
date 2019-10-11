@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from 'react-components';
-import { VIEW_MODE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
@@ -16,7 +15,7 @@ import FilterDropdown from './FilterDropdown';
 import SelectAll from './SelectAll';
 import MoveDropdown from '../dropdown/MoveDropdown';
 import LabelDropdown from '../dropdown/LabelDropdown';
-import { ELEMENT_TYPES } from '../../constants';
+import { getCurrentType } from '../../helpers/element';
 
 const Toolbar = ({
     labelID = '',
@@ -33,22 +32,21 @@ const Toolbar = ({
     onPrevious,
     onNext
 }) => {
-    const { ViewMode = VIEW_MODE.GROUP } = mailSettings;
-    const type = ViewMode === VIEW_MODE.GROUP ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
+    const type = getCurrentType({ mailSettings, labelID });
     return (
         <nav className="toolbar flex noprint flex-spacebetween">
             <div className="flex">
                 <SelectAll checked={checkAll} onCheck={onCheckAll} loading={loading} />
                 <ToolbarSeparator />
-                <ReadUnreadButtons mailSettings={mailSettings} selectedIDs={selectedIDs} />
+                <ReadUnreadButtons labelID={labelID} mailSettings={mailSettings} selectedIDs={selectedIDs} />
                 <ToolbarSeparator />
                 <MoveButtons labelID={labelID} mailSettings={mailSettings} selectedIDs={selectedIDs} />
                 <DeleteButton labelID={labelID} mailSettings={mailSettings} selectedIDs={selectedIDs} />
                 <ToolbarSeparator />
-                <ToolbarDropdown content={<Icon className="toolbar-icon" name="folder" autoClose={false} />}>
+                <ToolbarDropdown autoClose={false} content={<Icon className="toolbar-icon" name="folder" />}>
                     <MoveDropdown selectedIDs={selectedIDs} type={type} />
                 </ToolbarDropdown>
-                <ToolbarDropdown content={<Icon className="toolbar-icon" name="label" autoClose={false} />}>
+                <ToolbarDropdown autoClose={false} content={<Icon className="toolbar-icon" name="label" />}>
                     <LabelDropdown selectedIDs={selectedIDs} type={type} />
                 </ToolbarDropdown>
             </div>

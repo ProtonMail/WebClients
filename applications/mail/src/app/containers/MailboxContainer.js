@@ -101,7 +101,12 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
                 {elementID ? (
                     <ConversationView mailSettings={mailSettings} conversationID={elementID} />
                 ) : (
-                    <PlaceholderView welcomeRef={welcomeRef} checkedIDs={checkedIDs} onUncheckAll={handleUncheckAll} />
+                    <PlaceholderView
+                        labelID={labelID}
+                        welcomeRef={welcomeRef}
+                        checkedIDs={checkedIDs}
+                        onUncheckAll={handleUncheckAll}
+                    />
                 )}
             </div>
         </>

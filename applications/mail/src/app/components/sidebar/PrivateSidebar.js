@@ -10,24 +10,26 @@ import {
     useMessageCounts,
     PrimaryButton
 } from 'react-components';
-import { SHOW_MOVED, LABEL_EXCLUSIVE, MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
+import { SHOW_MOVED, LABEL_EXCLUSIVE, MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { redirectTo } from 'proton-shared/lib/helpers/browser';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { c } from 'ttag';
 
 import LocationAside from './LocationAside';
 import RefreshButton from './RefreshButton';
-import { LABEL_IDS_TO_HUMAN } from '../../constants';
+import { LABEL_IDS_TO_HUMAN, ELEMENT_TYPES } from '../../constants';
+import { getCurrentType } from '../../helpers/element';
 
 const PrivateSidebar = ({ expanded = false, labelID: currentLabelID }) => {
     const [conversationCounts, loadingConversationCounts] = useConversationCounts();
     const [messageCounts, loadingMessageCounts] = useMessageCounts();
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [labels, loadingLabels] = useLabels();
-    const { ShowMoved, ViewMode } = mailSettings || {};
+    const { ShowMoved } = mailSettings || {};
+    const type = getCurrentType({ mailSettings, labelID: currentLabelID });
 
     const unreadMap = useMemo(() => {
-        const counters = ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
+        const counters = type === ELEMENT_TYPES.CONVERSATION ? conversationCounts : messageCounts;
 
         if (!Array.isArray(counters)) {
             return {};
