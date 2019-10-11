@@ -6,7 +6,7 @@
 
 // fix "autofill state"
 input:-webkit-autofill{
-  box-shadow: 200px 200px 100px $pm-input-background inset; 
+  box-shadow: 200px 200px 100px $pm-input-background inset;
 }
 
 /* removes X in input when typing in IE/EDGE */
@@ -41,7 +41,8 @@ input::-ms-reveal {
     background-color: $white;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
-  &[aria-invalid="true"]:not(:focus) {
+  &[aria-invalid="true"]:not(:focus),
+  &[aria-invalid="true"]:not(.ng-pristine) {
     border-color: $pm-global-warning;
     box-shadow: none;
   }
@@ -237,7 +238,7 @@ $width: 5.5em !default;
     content: '';
     position: absolute;
     width: calc( #{$width/2} - 2px);
-    transition: transform .25s ease, background-color .25s ease, border-color .25s linear; 
+    transition: transform .25s ease, background-color .25s ease, border-color .25s linear;
     border-radius: 2rem;
     background: $pm-global-muted;
     top: 2px;
@@ -255,7 +256,7 @@ $width: 5.5em !default;
     width: #{$width/2};
     position: relative;
     z-index: 2;
-    transition: fill .1s steps(1, end); 
+    transition: fill .1s steps(1, end);
     display: inline-flex;
   }
 }
