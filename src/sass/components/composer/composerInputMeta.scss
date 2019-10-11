@@ -57,6 +57,11 @@
     visibility: hidden;
     pointer-events: none
 }
+
+.composerInputMeta-overlay-hidden .composerInputMeta-trigger-button {
+    transform: rotate(180deg);
+}
+
 .composerInputMeta-container.composerInputMeta-overlay-hidden {
     max-height: 100%;
     overflow: inherit;
@@ -77,4 +82,12 @@
 
 .composerInputMeta-overlay-list .autocompleteEmailsItem-icon {
     display: inline-block;
+}
+
+.encryptionIcon-loader {
+    min-width: 19px;
+    height: 1em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }

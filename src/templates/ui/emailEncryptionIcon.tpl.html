@@ -1,22 +1,26 @@
 <div class="autocompleteEmailsItem-icon flex flex-item-noshrink mauto">
 
+    <div
+        ng-if="email.loadCryptInfo"
+        class="encryptionIcon-loader"
+        aria-busy="true"></div>
+
     <icon
         data-name="lock"
         data-size="12"
         class="encryptionIcon mtauto mbauto ml0-25 mr0-25"
-        ng-show="!(email.encrypt && email.isPinned && !email.isEO)
+        ng-if="!email.loadCryptInfo && !(email.encrypt && email.isPinned && !email.isEO)
             && (email.encrypt || email.loadCryptInfo || email.isEO)"
         ng-class="{
             'encryptionIcon fa-lock': email.encrypt || email.isEO,
             'encryptionIcon fa-pencil': !email.encrypt && email.sign,
-            'encryptionIcon fa-spinner fa-pulse': email.loadCryptInfo,
             'pgp-encryption-icon': email.isPgp
         }"></icon>
 
     <svg
         width="18"
         viewBox="0 0 374.8 337.1"
-        ng-if="email.encrypt && email.isPinned && !email.isEO"
+        ng-if="!email.loadCryptInfo && email.encrypt && email.isPinned && !email.isEO"
         class="encryptionIcon mtauto mbauto ml0-25 mr0-25"
         ng-class="{
             'pgp-encryption-icon': email.isPgp
@@ -29,7 +33,7 @@
     <svg
         width="18"
         viewBox="0 0 374.8 337.1"
-        ng-if="!email.encrypt && email.sign"
+        ng-if="!email.loadCryptInfo && !email.encrypt && email.sign"
         class="encryptionIcon mtauto mbauto big-encryption-icon ml0-25 mr0-25"
         ng-class="{
             'pgp-encryption-icon': email.isPgp
