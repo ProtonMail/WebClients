@@ -252,7 +252,6 @@ function eventManager(
             notify({
                 message,
                 templateUrl: require('../../../templates/notifications/cross.tpl.html'),
-                duration: '0',
                 onClose: onClose(cookieName)
             });
         });
@@ -369,7 +368,6 @@ function eventManager(
         }
         STATE.notification = notification.warn('', {
             templateUrl: require('../../../templates/notifications/retry.tpl.html'),
-            duration: '0',
             onClick() {
                 closeRetryNotification();
                 loop();
