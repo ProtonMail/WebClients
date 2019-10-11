@@ -15,7 +15,7 @@ import ItemLocation from './ItemLocation';
 
 const { SENT, SENT_ALL, DRAFTS, DRAFTS_ALL } = MAILBOX_LABEL_IDS;
 
-const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked = false, onCheck }) => {
+const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked = false, onCheck, onClick }) => {
     const { ID, Subject, Time } = element;
     const displayRecipients = [SENT, SENT_ALL, DRAFTS, DRAFTS_ALL].includes(labelID);
     const { ViewMode = VIEW_MODE.GROUP } = mailSettings;
@@ -26,12 +26,24 @@ const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked 
 
     return (
         <div
+            onClick={(event) => {
+                if (event.target.classList.contains('item-checkbox') || event.target.closest('.item-checkbox')) {
+                    event.stopPropagation();
+                    return;
+                }
+                onClick(ID);
+            }}
             className={classnames([
                 'flex flex-nowrap item-container bg-global-white',
                 elementID === ID && 'item-is-selected'
             ])}
         >
-            <ItemCheckbox className="mr1" checked={checked} onChange={({ target }) => onCheck(target.checked)}>
+            <ItemCheckbox
+                className="mr1 item-checkbox"
+                checked={checked}
+                onChange={onCheck}
+                data-element-id={element.ID}
+            >
                 {getInitial(displayRecipients ? recipients[0] : senders[0])}
             </ItemCheckbox>
             <div className="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
@@ -66,7 +78,8 @@ Item.propTypes = {
     mailSettings: PropTypes.object.isRequired,
     element: PropTypes.object.isRequired,
     checked: PropTypes.bool,
-    onCheck: PropTypes.func.isRequired
+    onCheck: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired
 };
 
 export default Item;

@@ -45,10 +45,10 @@ const Toolbar = ({
                 <MoveButtons labelID={labelID} mailSettings={mailSettings} selectedIDs={selectedIDs} />
                 <DeleteButton labelID={labelID} mailSettings={mailSettings} selectedIDs={selectedIDs} />
                 <ToolbarSeparator />
-                <ToolbarDropdown content={<Icon className="toolbar-icon" name="folder" />}>
+                <ToolbarDropdown content={<Icon className="toolbar-icon" name="folder" autoClose={false} />}>
                     <MoveDropdown selectedIDs={selectedIDs} type={type} />
                 </ToolbarDropdown>
-                <ToolbarDropdown content={<Icon className="toolbar-icon" name="label" />}>
+                <ToolbarDropdown content={<Icon className="toolbar-icon" name="label" autoClose={false} />}>
                     <LabelDropdown selectedIDs={selectedIDs} type={type} />
                 </ToolbarDropdown>
             </div>

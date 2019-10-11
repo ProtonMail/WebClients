@@ -17,6 +17,7 @@ import { c } from 'ttag';
 
 import LocationAside from './LocationAside';
 import RefreshButton from './RefreshButton';
+import { LABEL_IDS_TO_HUMAN } from '../../constants';
 
 const PrivateSidebar = ({ expanded = false, labelID: currentLabelID }) => {
     const [conversationCounts, loadingConversationCounts] = useConversationCounts();
@@ -53,49 +54,55 @@ const PrivateSidebar = ({ expanded = false, labelID: currentLabelID }) => {
             icon: 'inbox',
             text: c('Link').t`Inbox`,
             aside: getAside(MAILBOX_LABEL_IDS.INBOX),
-            link: '/inbox'
+            link: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`
         },
         {
             icon: 'drafts',
             text: c('Link').t`Drafts`,
             aside: getAside(ShowMoved & SHOW_MOVED.DRAFTS ? MAILBOX_LABEL_IDS.ALL_DRAFTS : MAILBOX_LABEL_IDS.DRAFTS),
-            link: ShowMoved & SHOW_MOVED.DRAFTS ? '/all-drafts' : '/drafts'
+            link:
+                ShowMoved & SHOW_MOVED.DRAFTS
+                    ? `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_DRAFTS]}`
+                    : `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.DRAFTS]}`
         },
         {
             icon: 'sent',
             text: c('Link').t`Sent`,
             aside: getAside(ShowMoved & SHOW_MOVED.SENT ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT),
-            link: ShowMoved & SHOW_MOVED.SENT ? '/all-sent' : '/sent'
+            link:
+                ShowMoved & SHOW_MOVED.SENT
+                    ? `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_SENT]}`
+                    : `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SENT]}`
         },
         {
             icon: 'star',
             text: c('Link').t`Starred`,
             aside: getAside(MAILBOX_LABEL_IDS.STARRED),
-            link: '/starred'
+            link: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.STARRED]}`
         },
         {
             icon: 'archive',
             text: c('Link').t`Archive`,
             aside: getAside(MAILBOX_LABEL_IDS.ARCHIVE),
-            link: '/archive'
+            link: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ARCHIVE]}`
         },
         {
             icon: 'spam',
             text: c('Link').t`Spam`,
             aside: getAside(MAILBOX_LABEL_IDS.SPAM),
-            link: '/spam'
+            link: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SPAM]}`
         },
         {
             icon: 'trash',
             text: c('Link').t`Trash`,
             aside: getAside(MAILBOX_LABEL_IDS.TRASH),
-            link: '/trash'
+            link: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.TRASH]}`
         },
         {
             icon: 'all-emails',
             text: c('Link').t`All mail`,
             aside: getAside(MAILBOX_LABEL_IDS.ALL_MAIL),
-            link: '/all-mail'
+            link: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL]}`
         },
         {
             icon: 'folder-label',

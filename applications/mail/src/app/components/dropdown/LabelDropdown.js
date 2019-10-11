@@ -6,6 +6,7 @@ import {
     useLabels,
     useModals,
     PrimaryButton,
+    LabelModal,
     classnames,
     Tooltip,
     useLoading,
@@ -86,7 +87,7 @@ const LabelDropdown = ({ selectedIDs = [], type }) => {
                     <PrimaryButton
                         className="pm-button--small pm-button--for-smallicon"
                         onClick={() => {
-                            createModal(); // TODO
+                            createModal(<LabelModal type="label" />);
                         }}
                     >
                         <Icon name="label" fill="light" className="flex-item-noshrink mr0-25" />+

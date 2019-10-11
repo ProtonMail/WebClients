@@ -1,12 +1,13 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useMailSettings, Loader } from 'react-components';
 
 import Toolbar from '../components/toolbar/Toolbar';
 import List from '../components/list/List';
-import View from '../components/view/View';
-import ViewPlaceholder from '../components/view/ViewPlaceholder';
+import ConversationView from '../components/view/ConversationView';
+import PlaceholderView from '../components/view/PlaceholderView';
 import elements from './elements';
+import { LABEL_IDS_TO_HUMAN } from '../constants';
 
 // eslint-disable-next-line
 const MailboxContainer = ({ labelID, elementID, location, history }) => {
@@ -16,6 +17,7 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
     const [sort, updateSort] = useState();
     const [desc, updateDesc] = useState();
     const [filter] = useState();
+    const welcomeRef = useRef(false);
 
     const handleSort = ({ Sort, Desc }) => {
         updateDesc(Desc);
@@ -26,7 +28,7 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
     const handleNext = () => {};
     const handlePrevious = () => {};
 
-    const checkedElementIDs = useMemo(() => {
+    const checkedIDs = useMemo(() => {
         return Object.entries(checkedElements).reduce((acc, [elementID, isChecked]) => {
             if (!isChecked) {
                 return acc;
@@ -37,14 +39,14 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
     }, [checkedElements]);
 
     const selectedIDs = useMemo(() => {
-        if (checkedElementIDs.length) {
-            return checkedElementIDs;
+        if (checkedIDs.length) {
+            return checkedIDs;
         }
         if (elementID) {
             return [elementID];
         }
         return [];
-    }, [checkedElementIDs, location.pathname]);
+    }, [checkedIDs, location.pathname]);
 
     if (loadingMailSettings) {
         return <Loader />;
@@ -58,8 +60,16 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
         setCheckedElements({ ...checkedElements, ...update });
         setCheckAll(checked && IDs.length === elements.length);
     };
+
     const handleCheckAll = (checked = false) => handleCheck(elements.map(({ ID }) => ID), checked);
     const handleUncheckAll = () => handleCheckAll(false);
+
+    const handleClick = (elementID) => {
+        history.push({
+            ...location,
+            pathname: `/${LABEL_IDS_TO_HUMAN[labelID] || labelID}/${elementID}`
+        });
+    };
 
     return (
         <>
@@ -84,12 +94,14 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
                     elementID={elementID}
                     elements={elements}
                     selectedIDs={selectedIDs}
+                    checkedIDs={checkedIDs}
                     onCheck={handleCheck}
+                    onClick={handleClick}
                 />
                 {elementID ? (
-                    <View mailSettings={mailSettings} elementID={elementID} />
+                    <ConversationView mailSettings={mailSettings} conversationID={elementID} />
                 ) : (
-                    <ViewPlaceholder selectedIDs={selectedIDs} onUncheckAll={handleUncheckAll} />
+                    <PlaceholderView welcomeRef={welcomeRef} checkedIDs={checkedIDs} onUncheckAll={handleUncheckAll} />
                 )}
             </div>
         </>

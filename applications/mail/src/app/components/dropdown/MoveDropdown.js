@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
+    LabelModal,
     SearchInput,
     Icon,
     useLabels,
@@ -64,7 +65,7 @@ const MoveDropdown = ({ selectedIDs = [], type }) => {
                     <PrimaryButton
                         className="pm-button--small pm-button--for-smallicon"
                         onClick={() => {
-                            createModal(); // TODO
+                            createModal(<LabelModal type="folder" />);
                         }}
                     >
                         <Icon name="folder" fill="light" className="flex-item-noshrink mr0-25" />+

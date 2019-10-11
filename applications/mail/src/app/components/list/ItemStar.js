@@ -7,7 +7,7 @@ import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/
 
 import { ELEMENT_TYPES } from '../../constants';
 
-const ItemStar = ({ element, type = ELEMENT_TYPES.CONVERSATION, disabled }) => {
+const ItemStar = ({ element = {}, type = ELEMENT_TYPES.CONVERSATION }) => {
     const api = useApi();
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
     const { call } = useEventManager();
@@ -30,7 +30,7 @@ const ItemStar = ({ element, type = ELEMENT_TYPES.CONVERSATION, disabled }) => {
 
     return (
         <button
-            disabled={disabled || loading}
+            disabled={loading}
             type="button"
             className="starbutton relative"
             onClick={() => withLoading(handleClick())}
@@ -42,7 +42,6 @@ const ItemStar = ({ element, type = ELEMENT_TYPES.CONVERSATION, disabled }) => {
 
 ItemStar.propTypes = {
     type: PropTypes.oneOf([ELEMENT_TYPES.CONVERSATION, ELEMENT_TYPES.MESSAGE]).isRequired,
-    disabled: PropTypes.bool,
     element: PropTypes.object.isRequired
 };
 
