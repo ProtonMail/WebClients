@@ -16,7 +16,14 @@ import { subscribe, setPaymentMethod, verifyPayment, checkSubscription } from 'p
 import { mergeHeaders } from 'proton-shared/lib/fetch/helpers';
 import { getAuthHeaders } from 'proton-shared/lib/api';
 import { getRandomString } from 'proton-shared/lib/helpers/string';
-import { DEFAULT_CURRENCY, CYCLE, PLAN_TYPES, TOKEN_TYPES, CURRENCIES } from 'proton-shared/lib/constants';
+import {
+    DEFAULT_CURRENCY,
+    CYCLE,
+    PLAN_TYPES,
+    TOKEN_TYPES,
+    CURRENCIES,
+    PAYMENT_METHOD_TYPES
+} from 'proton-shared/lib/constants';
 import { getPlan, PLAN, VPN_PLANS } from './plans';
 import { c } from 'ttag';
 
@@ -220,7 +227,10 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
         }
 
         // Add payment method
-        if (signupToken.paymentDetails) {
+        if (
+            signupToken.paymentDetails &&
+            [PAYMENT_METHOD_TYPES.CARD, PAYMENT_METHOD_TYPES.PAYPAL].includes(signupToken.paymentMethodType)
+        ) {
             await api(withAuthHeaders(UID, AccessToken, setPaymentMethod(signupToken.paymentDetails.Payment)));
         }
 
