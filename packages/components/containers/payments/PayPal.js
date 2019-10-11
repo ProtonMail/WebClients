@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, Loader, SmallButton, Price, useApi, useLoading, PrimaryButton } from 'react-components';
-import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from 'proton-shared/lib/constants';
+import { Alert, Loader, SmallButton, Price, useApi, useLoading, PrimaryButton, LinkButton } from 'react-components';
+import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { createToken } from 'proton-shared/lib/api/payments';
 
 import { toParams, process } from './paymentTokenHelper';
@@ -13,16 +13,16 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     const [loadingToken, withLoadingToken] = useLoading();
     const [loadingVerification, withLoadingVerification] = useLoading();
     const [textError, setTextError] = useState('');
-    const modelRef = useRef({});
+    const paypalRef = useRef({});
+    const paypalCreditRef = useRef({});
 
     const handleCancel = () => {
         abortRef.current && abortRef.current.abort();
     };
 
-    const handleClick = async () => {
+    const handleClick = async ({ Token, ReturnHost, ApprovalURL }) => {
         try {
             abortRef.current = new AbortController();
-            const { Token, ReturnHost, ApprovalURL } = modelRef.current;
             await process({ Token, api, ApprovalURL, ReturnHost, signal: abortRef.current.signal });
             onPay(toParams({ Amount, Currency }, Token));
         } catch (error) {
@@ -33,21 +33,33 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
         }
     };
 
-    const generateToken = async () => {
-        const { Token, ApprovalURL, ReturnHost } = await api(
-            createToken({
-                Amount,
-                Currency,
-                Payment: {
-                    Type: 'paypal'
-                }
-            })
-        );
-        modelRef.current = { Token, ApprovalURL, ReturnHost };
+    const generateTokens = async () => {
+        const [paypalResult, paypalCreditResult] = await Promise.all([
+            api(
+                createToken({
+                    Amount,
+                    Currency,
+                    Payment: {
+                        Type: PAYMENT_METHOD_TYPES.PAYPAL
+                    }
+                })
+            ),
+            api(
+                createToken({
+                    Amount,
+                    Currency,
+                    Payment: {
+                        Type: PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
+                    }
+                })
+            )
+        ]);
+        paypalRef.current = paypalResult;
+        paypalCreditRef.current = paypalCreditResult;
     };
 
     useEffect(() => {
-        withLoadingToken(generateToken());
+        withLoadingToken(generateTokens());
     }, [Amount, Currency]);
 
     if (type === 'payment' && Amount < MIN_PAYPAL_AMOUNT) {
@@ -71,7 +83,7 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
                         loading={loadingToken}
                         onClick={() => {
                             setTextError('');
-                            withLoadingToken(generateToken());
+                            withLoadingToken(generateTokens());
                         }}
                     >{c('Action').t`Try again`}</SmallButton>
                 </div>
@@ -82,6 +94,12 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     if (loadingToken) {
         return <Loader />;
     }
+
+    const clickHere = (
+        <LinkButton key="click-here" onClick={() => withLoadingVerification(handleClick(paypalCreditRef.current))}>{c(
+            'Link'
+        ).t`click here`}</LinkButton>
+    );
 
     return (
         <>
@@ -95,13 +113,48 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
                         </div>
                     </Alert>
                 </>
-            ) : (
-                <Alert>{c('Info')
-                    .t`You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.`}</Alert>
-            )}
-            <PrimaryButton loading={loadingVerification} onClick={() => withLoadingVerification(handleClick())}>{c(
-                'Action'
-            ).t`Check out with PayPal`}</PrimaryButton>
+            ) : null}
+            {!loadingVerification && ['signup', 'subscription', 'invoice', 'credit'].includes(type) ? (
+                <>
+                    <Alert>
+                        {c('Info')
+                            .t`We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.`}
+                    </Alert>
+                    <div className="mb1">
+                        <PrimaryButton onClick={() => withLoadingVerification(handleClick(paypalRef.current))}>{c(
+                            'Action'
+                        ).t`Check out with PayPal`}</PrimaryButton>
+                    </div>
+                    <Alert>{c('Info')
+                        .jt`You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please ${clickHere}.`}</Alert>
+                </>
+            ) : null}
+            {!loadingVerification && type === 'update' ? (
+                <>
+                    <Alert>
+                        {c('Info')
+                            .t`This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.`}
+                    </Alert>
+                    <div className="mb1">
+                        <PrimaryButton onClick={() => withLoadingVerification(handleClick(paypalRef.current))}>{c(
+                            'Action'
+                        ).t`Add PayPal payment method`}</PrimaryButton>
+                    </div>
+                    <Alert>{c('Info')
+                        .t`You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.`}</Alert>
+                </>
+            ) : null}
+            {!loadingVerification && type === 'donation' ? (
+                <>
+                    <Alert>
+                        {c('Info')
+                            .t`We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.`}
+                    </Alert>
+                    <PrimaryButton onClick={() => withLoadingVerification(handleClick(paypalCreditRef.current))}>{c(
+                        'Action'
+                    ).t`Check out with PayPal`}</PrimaryButton>
+                </>
+            ) : null}
         </>
     );
 };
