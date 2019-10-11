@@ -6,6 +6,7 @@ jobs:
      steps:
        - checkout
        - run: npm i
+       - run: npm run check-types
        - run: npx proton-pack
        - run: npm run lint
        - run: npm run i18n:validate

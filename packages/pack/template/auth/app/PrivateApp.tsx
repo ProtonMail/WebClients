@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { ErrorBoundary, StandardPrivateApp } from 'react-components';
 import { UserModel, MailSettingsModel, UserSettingsModel } from 'proton-shared/lib/models';
 
@@ -8,7 +7,13 @@ import Home from './containers/Home';
 import About from './containers/About';
 import PrivateLayout from './components/layout/PrivateLayout';
 
-const PrivateApp = ({ onLogout }) => {
+const NotFoundContainer = () => <h1>Not found</h1>;
+
+interface Props {
+    onLogout: () => void;
+}
+
+const PrivateApp = ({ onLogout }: Props) => {
     return (
         <StandardPrivateApp
             onLogout={onLogout}
@@ -30,10 +35,6 @@ const PrivateApp = ({ onLogout }) => {
             </PrivateLayout>
         </StandardPrivateApp>
     );
-};
-
-PrivateApp.propTypes = {
-    onLogout: PropTypes.func.isRequired
 };
 
 export default PrivateApp;

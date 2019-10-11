@@ -101,7 +101,7 @@ function main({ api = 'dev' }) {
         config,
         apiUrl,
         json,
-        path: path.join(process.cwd(), 'src', 'app', 'config.js')
+        path: path.join(process.cwd(), 'src', 'app', 'config.ts')
     };
 }
 

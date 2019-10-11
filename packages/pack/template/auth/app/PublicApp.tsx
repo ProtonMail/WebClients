@@ -1,12 +1,15 @@
 import React, { useState, useLayoutEffect } from 'react';
-import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Loader, LoginContainer, ModalsChildren } from 'react-components';
+import { Loader, ModalsChildren, LoginForm } from 'react-components';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 
 import PublicLayout from './components/layout/PublicLayout';
 
-const PublicApp = ({ onLogin }) => {
+interface Props {
+    onLogin: (config: any) => void;
+}
+
+const PublicApp = ({ onLogin }: Props) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
@@ -19,7 +22,7 @@ const PublicApp = ({ onLogin }) => {
     }, []);
 
     if (error) {
-        return 'OpenPGP failed to load. Handle better.';
+        return <>OpenPGP failed to load. Handle better.</>;
     }
 
     if (loading) {
@@ -32,16 +35,12 @@ const PublicApp = ({ onLogin }) => {
             <PublicLayout>
                 <Router>
                     <Switch>
-                        <Route render={() => <LoginContainer onLogin={onLogin} />} />
+                        <Route render={() => <LoginForm onLogin={onLogin} />} />
                     </Switch>
                 </Router>
             </PublicLayout>
         </>
     );
-};
-
-PublicApp.propTypes = {
-    onLogin: PropTypes.func.isRequired
 };
 
 export default PublicApp;

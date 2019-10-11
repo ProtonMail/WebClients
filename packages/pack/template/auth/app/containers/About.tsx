@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { SubTitle, Title, Bordered, PrimaryButton, Icon } from 'react-components';
 
