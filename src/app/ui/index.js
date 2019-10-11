@@ -21,7 +21,6 @@ import loaderTag from './directives/loaderTag';
 // import monthdayTimePicker from './directives/monthdayTimePicker';
 import multiselect from './directives/multiselect';
 import noResults from './directives/noResults';
-import numberElementSelected from './directives/numberElementSelected';
 import progressBar from './directives/progressBar';
 import progressUpload from './directives/progressUpload';
 import progressionBtn from './directives/progressionBtn';
@@ -102,7 +101,6 @@ export default angular
     // .directive('monthdayTimePicker', monthdayTimePicker)
     .directive('multiselect', multiselect)
     .directive('noResults', noResults)
-    .directive('numberElementSelected', numberElementSelected)
     .directive('progressBar', progressBar)
     .directive('progressUpload', progressUpload)
     .directive('progressionBtn', progressionBtn)

@@ -14,19 +14,23 @@
             ng-src="/assets/selected-label-{{selectedLabelTotalRaw > 1 ? 'many' : 'single'}}.svg"
             class="countElementsSelected-image"
             alt="Email selected">
-
     </div>
-    <div class="pm-flex-content-vertical-center" ng-if="!('secured.label.**' | includedByState) || numberElementChecked">
-        <span class="flex mlauto mrauto p0-25 rounded50 bg-global-grey">
-            <icon data-name="on" data-fill="white" class="mauto"></icon>
-        </span>
-        <number-element-selected
-            class="countElementsSelected-title"
-            data-number="numberElementChecked"></number-element-selected>
+
+    <div
+        class="pm-flex-content-vertical-center"
+        ng-if="!('secured.label.**' | includedByState) || numberElementChecked">
+
+       <p class="mt0 pt0" ng-bind-html="selectedLabelTotalTxt(numberElementChecked)"></p>
+
+        <img
+            ng-src="/assets/selected-conversation-{{numberElementChecked > 1 ? 'many' : 'single'}}.svg"
+            class="countElementsSelected-image"
+            alt="Conversation selected">
+
         <div>
             <button
-                class="pm-button
-                countElementsSelected-btn-unselect conversationPlaceholder-btn-unselect"
+                class="pm-button countElementsSelected-btn-unselect conversationPlaceholder-btn-unselect"
+                data-click-action="unselect"
                 ng-show="numberElementChecked > 0"
                 translate
                 translate-context="Action">Deselect all</button>
