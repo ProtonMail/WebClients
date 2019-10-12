@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useApi, useLoading, Loader } from 'react-components';
 import { getConversation } from 'proton-shared/lib/api/conversations';
+import { getMessage } from 'proton-shared/lib/api/messages';
+import { orderBy } from 'proton-shared/lib/helpers/array';
 
 import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
@@ -18,6 +20,20 @@ const ConversationView = ({ conversationID, messageID, mailSettings }) => {
         const { Conversation, Messages = [] } = await api(getConversation(conversationID, messageID));
         updateConversation(Conversation);
         updateMessages(Messages);
+    };
+
+    const handleExpand = async (messageID) => {
+        const index = messages.findIndex(({ ID }) => ID === messageID);
+        const message = messages[index];
+
+        // If Body is set we don't need to call the API
+        if (message.Body) {
+            updateMessages([...[...messages].splice(index, 1), { ...message, expanded: true }]);
+            return;
+        }
+
+        const { Message } = await api(getMessage(messageID));
+        updateMessages([...[...messages].splice(index, 1), { ...Message, expanded: true }]);
     };
 
     useEffect(() => {
@@ -45,9 +61,11 @@ const ConversationView = ({ conversationID, messageID, mailSettings }) => {
                 </h2>
                 <ItemStar element={conversation} type={ELEMENT_TYPES.CONVERSATION} />
             </header>
-            {messages.map((message) => (
-                <MessageView key={message.ID} message={message} />
-            ))}
+            {orderBy(messages, 'Order')
+                .reverse()
+                .map((message) => (
+                    <MessageView key={message.ID} message={message} onExpand={handleExpand} />
+                ))}
         </section>
     );
 };
