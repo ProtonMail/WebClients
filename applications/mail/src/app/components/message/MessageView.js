@@ -10,7 +10,7 @@ const MessageView = ({ message, expanded = false, onExpand }) => {
     if (!expanded) {
         return (
             <article
-                className="bg-global-light bordered-container p1 mb1 flex flex-nowrap flex-items-center flex-spacebetween"
+                className="bg-global-light bordered-container pl1 pr1 pt0-5 pb0-5 mb1 flex flex-nowrap flex-items-center flex-spacebetween"
                 onClick={(event) => {
                     if (event.target.classList.contains('item-star') || event.target.closest('.item-star')) {
                         event.stopPropagation();
@@ -24,7 +24,7 @@ const MessageView = ({ message, expanded = false, onExpand }) => {
                     <span className="bold mr0-5" title={message.Sender.Name}>
                         {message.Sender.Name}
                     </span>
-                    <span title={message.Sender.Address}>&lt;{message.Sender.Address}&gt;</span>
+                    <i title={message.Sender.Address}>&lt;{message.Sender.Address}&gt;</i>
                 </div>
                 <div>
                     <ItemDate className="mr1" element={message} type={ELEMENT_TYPES.MESSAGE} />

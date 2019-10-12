@@ -6,7 +6,7 @@ import { ELEMENT_TYPES } from '../../constants';
 
 const ItemAttachmentIcon = ({ element = {}, type = ELEMENT_TYPES.CONVERSATION }) => {
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
-    const hasAttachment = isConversation ? element.NumAttachments : element.HasAttachment;
+    const hasAttachment = isConversation ? element.ContextNumAttachments : element.HasAttachment;
 
     if (!hasAttachment) {
         return null;

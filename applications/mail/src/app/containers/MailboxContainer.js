@@ -4,7 +4,7 @@ import { useMailSettings, Loader } from 'react-components';
 
 import Toolbar from '../components/toolbar/Toolbar';
 import List from '../components/list/List';
-import ConversationView from '../components/view/ConversationView';
+import ConversationView from '../components/conversation/ConversationView';
 import PlaceholderView from '../components/view/PlaceholderView';
 import elements from './elements';
 import { LABEL_IDS_TO_HUMAN } from '../constants';

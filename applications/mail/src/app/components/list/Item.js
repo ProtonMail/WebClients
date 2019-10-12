@@ -14,6 +14,7 @@ import ItemAttachmentIcon from './ItemAttachmentIcon';
 import ItemLocation from './ItemLocation';
 import { getCurrentType } from '../../helpers/element';
 import ItemDate from './ItemDate';
+import NumMessages from '../conversation/NumMessages';
 
 const { SENT, SENT_ALL, DRAFTS, DRAFTS_ALL } = MAILBOX_LABEL_IDS;
 
@@ -52,7 +53,9 @@ const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked 
                     <div className="flex-item-fluid w0 pr1">
                         {type === ELEMENT_TYPES.MESSAGE ? (
                             <ItemLocation message={element} mailSettings={mailSettings} />
-                        ) : null}
+                        ) : (
+                            <NumMessages className="mr0-5" mailSettings={mailSettings} conversation={element} />
+                        )}
                         <span className="inbl mw100 ellipsis">{Subject}</span>
                     </div>
                     <ItemDate element={element} type={type} />

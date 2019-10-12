@@ -22,8 +22,8 @@ export const isMessage = (data) => ELEMENT_TYPES.MESSAGE === getCurrentType(data
  * @param {Integer} element.Time
  * @return {String} Jan 17, 2016
  */
-export const getReadableTime = ({ Time = 0 } = {}) => {
-    const date = new Date(Time * 1000);
+export const getReadableTime = ({ Time = 0, ContextTime = 0 } = {}) => {
+    const date = new Date((ContextTime || Time) * 1000);
     const now = new Date();
     return formatRelative(date, now);
 };

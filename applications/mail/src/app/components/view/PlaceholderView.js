@@ -11,6 +11,7 @@ import {
 } from 'react-components';
 import { c, ngettext, msgid } from 'ttag';
 import { toMap } from 'proton-shared/lib/helpers/object';
+import { capitalize } from 'proton-shared/lib/helpers/string';
 
 import conversationSingleSvg from 'design-system/assets/img/shared/selected-conversation-single.svg';
 import conversationManySvg from 'design-system/assets/img/shared/selected-conversation-many.svg';
@@ -65,14 +66,15 @@ const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, welcomeR
         );
     }
 
-    if (user.hasPaidMail) {
-        const reportBugButton = (
-            <LinkButton key="report-bug-btn" onClick={() => createModal(<AuthenticatedBugModal />)}>{c('Action')
-                .t`report a bug`}</LinkButton>
-        );
-        return (
-            <div className="flex-item-fluid aligncenter p3">
-                <h3>{c('Title').t`Welcome, ${user.Name}!`}</h3>
+    const reportBugButton = (
+        <LinkButton key="report-bug-btn" onClick={() => createModal(<AuthenticatedBugModal />)}>{c('Action')
+            .t`report a bug`}</LinkButton>
+    );
+
+    return (
+        <div className="flex-item-fluid aligncenter p3">
+            <h2>{user.Name ? c('Title').t`Welcome, ${capitalize(user.Name)}!` : c('Title').t`Welcome`}</h2>
+            {Unread ? (
                 <p>
                     {ngettext(
                         msgid`You have 1 unread email in this folder`,
@@ -80,24 +82,19 @@ const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, welcomeR
                         Unread
                     )}
                 </p>
-                <p>{c('Info')
-                    .jt`Having trouble sending or receiving emails? Interested in helping us improve our service? Feel free to ${reportBugButton}.`}</p>
-                <img src={welcomeMessageSvg} alt={c('Alternative text for welcome image').t`Welcome`} />
-            </div>
-        );
-    }
-
-    return (
-        <div className="flex-item-fluid aligncenter p3">
-            <h3>{c('Title').t`Welcome, ${user.Name}!`}</h3>
-            <p>
-                {ngettext(
-                    msgid`You have 1 unread email in this folder`,
-                    `You have ${Unread} unread emails in this folder`,
-                    Unread
-                )}
-            </p>
-            <p>{c('Info').t`Upgrade to a paid plan and get additional storage capacity and more addresses.`}</p>
+            ) : null}
+            {user.hadPaidMail ? (
+                <>
+                    <p>{c('Info')
+                        .jt`Having trouble sending or receiving emails? Interested in helping us improve our service? Feel free to ${reportBugButton}.`}</p>
+                    <img src={welcomeMessageSvg} alt={c('Alternative text for welcome image').t`Welcome`} />
+                </>
+            ) : (
+                <>
+                    <p>{c('Info')
+                        .t`Upgrade to a paid plan starting from $4/month only and get additional storage capacity and more addresses with ProtonMail Plus.`}</p>
+                </>
+            )}
         </div>
     );
 };
