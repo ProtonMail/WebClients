@@ -2,26 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Icon } from 'react-components';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
-const { INBOX, ALL_DRAFTS, ALL_SENT, TRASH, SPAM, ARCHIVE, SENT, DRAFTS } = MAILBOX_LABEL_IDS;
+import { LABEL_IDS_TO_HUMAN } from '../../constants';
 
-const getFolders = () => ({
+const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS } = MAILBOX_LABEL_IDS;
+
+const getFolders = ({ ShowMoved }) => ({
     [INBOX]: {
         icon: 'inbox',
         name: c('Mailbox').t`Inbox`,
         to: '/inbox'
-    },
-    [ALL_DRAFTS]: {
-        icon: 'drafts',
-        name: c('Mailbox').t`Drafts`,
-        to: '/all-drafts'
-    },
-    [ALL_SENT]: {
-        icon: 'sent',
-        name: c('Mailbox').t`Sent`,
-        to: '/all-sent'
     },
     [TRASH]: {
         icon: 'trash',
@@ -41,18 +33,24 @@ const getFolders = () => ({
     [SENT]: {
         icon: 'sent',
         name: c('Mailbox').t`Sent`,
-        to: '/sent'
+        to:
+            ShowMoved & SHOW_MOVED.SENT
+                ? `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_SENT]}`
+                : `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SENT]}`
     },
     [DRAFTS]: {
         icon: 'drafts',
         name: c('Mailbox').t`Drafts`,
-        to: '/drafts'
+        to:
+            ShowMoved & SHOW_MOVED.DRAFTS
+                ? `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_DRAFTS]}`
+                : `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.DRAFTS]}`
     }
 });
 
-const ItemLocation = ({ message }) => {
+const ItemLocation = ({ message, mailSettings }) => {
     const { LabelIDs = [] } = message;
-    const folders = getFolders();
+    const folders = getFolders(mailSettings);
 
     return (
         <>
@@ -69,7 +67,8 @@ const ItemLocation = ({ message }) => {
 };
 
 ItemLocation.propTypes = {
-    message: PropTypes.object.isRequired
+    message: PropTypes.object.isRequired,
+    mailSettings: PropTypes.object.isRequired
 };
 
 export default ItemLocation;

@@ -13,11 +13,12 @@ import ItemLabels from './ItemLabels';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
 import ItemLocation from './ItemLocation';
 import { getCurrentType } from '../../helpers/element';
+import ItemDate from './ItemDate';
 
 const { SENT, SENT_ALL, DRAFTS, DRAFTS_ALL } = MAILBOX_LABEL_IDS;
 
 const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked = false, onCheck, onClick }) => {
-    const { ID, Subject, Time } = element;
+    const { ID, Subject } = element;
     const displayRecipients = [SENT, SENT_ALL, DRAFTS, DRAFTS_ALL].includes(labelID);
     const type = getCurrentType({ mailSettings, labelID });
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
@@ -49,10 +50,12 @@ const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked 
             <div className="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
                 <div className="flex">
                     <div className="flex-item-fluid w0 pr1">
-                        {type === ELEMENT_TYPES.MESSAGE ? <ItemLocation message={element} /> : null}
+                        {type === ELEMENT_TYPES.MESSAGE ? (
+                            <ItemLocation message={element} mailSettings={mailSettings} />
+                        ) : null}
                         <span className="inbl mw100 ellipsis">{Subject}</span>
                     </div>
-                    <div className="item-date flex-item-noshrink">{Time}</div>
+                    <ItemDate element={element} type={type} />
                 </div>
                 <div className="flex">
                     <div className="flex-item-fluid pr1">

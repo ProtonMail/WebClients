@@ -37,7 +37,7 @@ const ConversationView = ({ conversationID, messageID }) => {
 
     return (
         <section className="view-column-detail p2 flex-item-fluid scroll-if-needed">
-            <header className="flex flex-nowrap flex-spacebetween flex-items-center">
+            <header className="flex flex-nowrap flex-spacebetween flex-items-center mb1">
                 <h2 className="mb0">{conversation.Subject}</h2>
                 <ItemStar element={conversation} type={ELEMENT_TYPES.CONVERSATION} />
             </header>

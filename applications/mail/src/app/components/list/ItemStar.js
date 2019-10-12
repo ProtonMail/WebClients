@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon, useLoading, useApi, useEventManager } from 'react-components';
+import { Icon, useLoading, useApi, useEventManager, classnames } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { labelMessages, unlabelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/conversations';
@@ -29,7 +29,12 @@ const ItemStar = ({ element = {}, type = ELEMENT_TYPES.CONVERSATION }) => {
     };
 
     return (
-        <button disabled={loading} type="button" className="starbutton flex" onClick={() => withLoading(handleClick())}>
+        <button
+            disabled={loading}
+            type="button"
+            className={classnames(['starbutton item-star', isStarred && 'starbutton--is-starred'])}
+            onClick={() => withLoading(handleClick())}
+        >
             <Icon name={iconName} />
         </button>
     );
