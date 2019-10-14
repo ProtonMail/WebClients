@@ -68,6 +68,13 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
           ];
 
     const list = [
+        {
+            title: 'Check if the deploy branch exists',
+            enabled: () => /sky/.test(branch),
+            task() {
+                return script('createNewDeployBranch.sh', ['--check', branch], 'inherit');
+            }
+        },
         ...hookPreTasks,
         {
             title: 'Save dependencies if we need',

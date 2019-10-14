@@ -4,6 +4,7 @@ set -eo pipefail
 args=("$@");
 BRANCHES=(${args//,/ });
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD);
+ALL_BRANCHES=$(git ls-remote "$(git remote get-url origin)"  | grep deploy- | awk -F '-' '{print $2}');
 
 function log {
     if [[ "$1" = *"warn"* ]]; then
@@ -26,12 +27,44 @@ function log {
     fi
 }
 
+function contains {
+    for branch in ${ALL_BRANCHES[*]} ; do
+        if [ "$branch" = "$1" ]; then
+            echo 0;
+            return 0;
+        fi;
+    done;
+    echo 1;
+}
+
+function create {
+    git checkout --orphan "deploy-$1";
+    git rm -rf . --quiet;
+    git commit --allow-empty -m "Initial commit";
+    git push origin "deploy-$1";
+    git checkout "$CURRENT_BRANCH";
+}
+
+if [ "$1" = '--check' ]; then
+    if [ -z "$2" ]; then
+        echo "You must set a name. User --check <value>";
+        exit 1;
+    fi
+
+    echo "Check if the branch deploy-$2 already exists";
+    if [[ "$(contains "$2")" = 1 ]]; then
+        echo "Creating branch: deploy-$2";
+        create "$2";
+        echo -e "\e[00;42m✔ So long and thanks for all the fish\e[00m"
+        echo;
+    fi;
+    exit 0;
+fi;
 
 # Check if the command is valid if not, ask for branches
 if [ -z "$BRANCHES" ]; then
   read -p "Name of the branches to create (deploy-<name>. ex: dark,sky): " BRANCHES;
 fi
-
 
 
 if [[ "$1" == "--help" ]]; then
@@ -41,15 +74,11 @@ if [[ "$1" == "--help" ]]; then
     exit 0;
 fi;
 
-git checkout master;
+# git checkout master;
 
 for branch in ${BRANCHES[*]} ; do
-  echo "Creating branch: deploy-$branch"
-  git checkout --orphan "deploy-$branch"
-  git rm -rf . --quiet
-  git commit --allow-empty -m "Initial commit"
-  git push origin "deploy-$branch"
-  git checkout "$CURRENT_BRANCH";
+    echo "Creating branch: deploy-$branch";
+    create "$branch";
 done
 
 echo -e "\e[00;42m✔ So long and thanks for all the fish\e[00m"
