@@ -46,6 +46,7 @@ function create {
 }
 
 if [ "$1" = '--check' ]; then
+
     if [ -z "$2" ]; then
         echo "You must set a name. User --check <value>";
         exit 1;

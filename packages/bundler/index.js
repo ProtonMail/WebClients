@@ -70,7 +70,21 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
     const list = [
         {
             title: 'Check if the deploy branch exists',
-            enabled: () => /sky/.test(branch),
+            skip() {
+                if (!(process.env.QA_BRANCHES || '').length) {
+                    return 'If you do not have QA_BRANCHES inside your .env you cannot deploy to something new';
+                }
+
+                if (`deploy-${process.env.QA_BRANCH}` === branch) {
+                    return '🤖 No need to check for this branch, it exists';
+                }
+
+                const branches = process.env.QA_BRANCHES.split(',').join('|');
+                // Do not try to deploy on QA or cobalt
+                if (new RegExp(`deploy-(cobalt|${branches})`).test(branch)) {
+                    return '✋ You shall not deploy to QA';
+                }
+            },
             async task() {
                 // For the CI to force SSH
                 if (process.env.GIT_REMOTE_URL_CI && argv.fromCi) {
