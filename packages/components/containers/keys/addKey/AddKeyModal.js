@@ -93,7 +93,7 @@ const AddKeyModal = ({ onClose, Address, addressKeys, ...rest }) => {
                 children: (
                     <Alert>
                         {c('alert')
-                            .t`We are now generating encryption keys for your address, this may take several minutes and temporarily freeze your browser.`}
+                            .t`The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.`}
                     </Alert>
                 )
             };

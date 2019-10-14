@@ -86,7 +86,7 @@ const DeleteKeyModal = ({ onClose, Address, addressKeys, KeyID, privateKey, ...r
             return {
                 submit: c('Action').t`Done`,
                 loading: true,
-                children: <Alert>{c('alert').t`We are now deleting the key for your address.`}</Alert>
+                children: <Alert>{c('alert').t`The key for your address is now being deleted.`}</Alert>
             };
         }
 
