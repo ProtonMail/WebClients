@@ -71,8 +71,12 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         {
             title: 'Check if the deploy branch exists',
             enabled: () => /sky/.test(branch),
-            task() {
-                return script('createNewDeployBranch.sh', ['--check', branch], 'inherit');
+            async task() {
+                // For the CI to force SSH
+                if (process.env.GIT_REMOTE_URL_CI && fromCi) {
+                    await bash(`git remote set-url origin ${process.env.GIT_REMOTE_URL_CI}`);
+                }
+                return script('createNewDeployBranch.sh', ['--check', branch.replqce('deploy-', '')], 'inherit');
             }
         },
         ...hookPreTasks,
