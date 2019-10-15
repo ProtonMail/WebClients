@@ -1,6 +1,6 @@
 import parseDomain from 'parse-domain';
 
-const getHostname = (url) => {
+export const getHostname = (url) => {
     if (/^https?:\/\//.test(url)) {
         // Absolute URL.
         // The easy way to parse an URL, is to create <a> element.
