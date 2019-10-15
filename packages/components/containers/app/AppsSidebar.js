@@ -9,7 +9,7 @@ const AppsSidebar = ({ items = [] }) => {
     const { APP_NAME } = useConfig();
     const apps = [
         { appNames: [PROTONMAIL, PROTONMAIL_SETTINGS], icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
-        { appNames: [PROTONCONTACTS], icon: 'contacts', title: 'ProtonContacts', link: '/contacts' }
+        { appNames: [PROTONCONTACTS], icon: 'protoncontacts', title: 'ProtonContacts', link: '/contacts' }
     ].filter(Boolean);
 
     return (
