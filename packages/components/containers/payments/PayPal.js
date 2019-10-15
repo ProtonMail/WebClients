@@ -96,9 +96,13 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     }
 
     const clickHere = (
-        <LinkButton key="click-here" onClick={() => withLoadingVerification(handleClick(paypalCreditRef.current))}>{c(
-            'Link'
-        ).t`click here`}</LinkButton>
+        <LinkButton
+            className="alignbaseline p0"
+            key="click-here"
+            onClick={() => withLoadingVerification(handleClick(paypalCreditRef.current))}
+        >
+            {c('Link').t`click here`}
+        </LinkButton>
     );
 
     return (
