@@ -123,7 +123,10 @@ function signupModel(
             .then((parameters) => {
                 return Payment.verify({ ...parameters, Username: get('username') }).then(({ VerifyCode }) => {
                     set('VerifyCode', VerifyCode);
-                    set('temp.method', parameters.Payment);
+
+                    if (['card', 'paypal'].includes(options.Payment.Type)) {
+                        set('temp.method', parameters.Payment);
+                    }
                 });
             })
             .catch((error = {}) => {

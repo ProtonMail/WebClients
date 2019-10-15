@@ -1,5 +1,6 @@
 import { wait } from '../../../helpers/promiseHelper';
 import { PAYMENT_TOKEN_STATUS } from '../../constants';
+import { getHostname } from '../../../helpers/url';
 
 const {
     STATUS_PENDING,
@@ -43,7 +44,7 @@ const pull = async ({ timer = 0, Token, paymentApi }) => {
     throw new Error('Unknown payment token status');
 };
 
-export const process = ({ Token, paymentApi, ApprovalURL }) => {
+export const process = ({ Token, paymentApi, ReturnHost, ApprovalURL }) => {
     const tab = window.open(ApprovalURL);
     return new Promise((resolve, reject) => {
         let listen = false;
@@ -72,7 +73,7 @@ export const process = ({ Token, paymentApi, ApprovalURL }) => {
         function onMessage(event) {
             const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
-            if (origin !== 'https://secure.protonmail.com') {
+            if (getHostname(origin) !== ReturnHost) {
                 return;
             }
 
@@ -115,7 +116,12 @@ export const handlePaymentToken = async ({ params, paymentApi, paymentVerificati
         return params;
     }
 
-    const { Token, Status, ApprovalURL } = await paymentApi.createToken({ Payment, Amount, Currency, PaymentMethodID });
+    const { Token, Status, ApprovalURL, ReturnHost } = await paymentApi.createToken({
+        Payment,
+        Amount,
+        Currency,
+        PaymentMethodID
+    });
 
     if (Status === STATUS_CHARGEABLE) {
         return toParams(params, Token);
@@ -126,6 +132,7 @@ export const handlePaymentToken = async ({ params, paymentApi, paymentVerificati
             params: {
                 body: params,
                 url: ApprovalURL,
+                returnHost: ReturnHost,
                 token: Token,
                 payment: Payment,
                 paymentVerificationModal,

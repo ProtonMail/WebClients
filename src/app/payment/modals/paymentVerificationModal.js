@@ -30,7 +30,12 @@ function paymentVerificationModal(pmModal, Payment) {
                     timeoutID = setTimeout(() => {
                         $scope.$applyAsync(() => (self.step = 'redirected'));
                     }, PROCESSING_DELAY);
-                    await process({ Token: params.token, paymentApi: Payment, ApprovalURL: params.url });
+                    await process({
+                        Token: params.token,
+                        ReturnHost: params.returnHost,
+                        paymentApi: Payment,
+                        ApprovalURL: params.url
+                    });
                     params.onSubmit(toParams(params.body, params.token));
                 } catch (error) {
                     clearTimeout(timeoutID);

@@ -15,43 +15,67 @@ function paypalView(Payment, notification) {
         link(scope, element, { type = 'payment' }) {
             const Amount = scope.amount;
             const Currency = scope.currency;
-            const setLoading = (status) => scope.$applyAsync(() => (scope.loading = status));
 
-            const generateToken = async () => {
+            scope.isDonation = type === 'donation';
+            scope.isUpdate = type === 'update';
+
+            const generateTokens = async () => {
                 try {
                     scope.$applyAsync(() => {
-                        scope.loading = true;
+                        scope.loadingTokens = true;
                         scope.errorDetails = false;
                     });
 
-                    const { Token, ApprovalURL } = await Payment.createToken({
-                        Amount,
-                        Currency,
-                        Payment: {
-                            Type: 'paypal'
-                        }
-                    });
+                    const [paypalResult, paypalCreditResult] = await Promise.all([
+                        Payment.createToken({
+                            Amount,
+                            Currency,
+                            Payment: {
+                                Type: 'paypal'
+                            }
+                        }),
+                        Payment.createToken({
+                            Amount,
+                            Currency,
+                            Payment: {
+                                Type: 'paypal-credit'
+                            }
+                        })
+                    ]);
 
                     scope.$applyAsync(() => {
-                        scope.token = Token;
-                        scope.approvalURL = ApprovalURL;
-                        scope.loading = false;
+                        scope.paypalModel = paypalResult;
+                        scope.paypalCreditModel = paypalCreditResult;
+                        scope.loadingTokens = false;
                     });
                 } catch (error) {
-                    setLoading(false);
+                    scope.$applyAsync(() => {
+                        scope.loadingTokens = false;
+                    });
                 }
             };
 
-            scope.retry = () => generateToken();
+            scope.retry = () => generateTokens();
 
-            scope.openTab = async () => {
+            scope.openTab = async ({ Token, ReturnHost, ApprovalURL }) => {
                 try {
-                    setLoading(true);
-                    await process({ Token: scope.token, paymentApi: Payment, ApprovalURL: scope.approvalURL });
-                    scope.paypalCallback({ Token: scope.token });
-                    setLoading(false);
+                    scope.$applyAsync(() => {
+                        scope.loadingVerification = true;
+                    });
+                    await process({
+                        Token,
+                        ReturnHost,
+                        ApprovalURL,
+                        paymentApi: Payment
+                    });
+                    scope.paypalCallback({ Token });
+                    scope.$applyAsync(() => {
+                        scope.loadingVerification = false;
+                    });
                 } catch (error) {
-                    setLoading(false);
+                    scope.$applyAsync(() => {
+                        scope.loadingVerification = false;
+                    });
                     error && error.message && notification.error(error.message);
                 }
             };
@@ -69,7 +93,7 @@ function paypalView(Payment, notification) {
                     amount: MAX_PAYPAL_AMOUNT
                 };
             } else {
-                generateToken();
+                generateTokens();
             }
         }
     };
