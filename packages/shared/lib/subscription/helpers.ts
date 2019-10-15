@@ -5,9 +5,15 @@ export const isManagedByMozilla = ({ CouponCode }: { CouponCode?: string | null 
     return coupon.startsWith('MOZILLA') || coupon.startsWith('MOZTEST');
 };
 
-export const getSubscriptionPlans = ({ Plans = [] }) => Plans.filter(({ Type }) => Type === PLAN_TYPES.PLAN);
+interface SubcriptionPlan {
+    Type: PLAN_TYPES;
+    Title: string;
+}
 
-export const getSubscriptionTitle = ({ Plans = [] }) => {
+export const getSubscriptionPlans = <P extends SubcriptionPlan>({ Plans = [] }: { Plans: P[] }) =>
+    Plans.filter(({ Type }) => Type === PLAN_TYPES.PLAN);
+
+export const getSubscriptionTitle = <P extends SubcriptionPlan>({ Plans = [] }: { Plans: P[] }) => {
     return getSubscriptionPlans({ Plans })
         .map(({ Title }) => Title)
         .join(', ');
