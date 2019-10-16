@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { SearchInput, Icon } from 'react-components';
@@ -17,6 +17,11 @@ const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onS
         updateSearch(newSearch);
         onChange && onChange(newSearch);
     };
+
+    useEffect(() => {
+        // needed in case the search is cleared
+        updateSearch(value);
+    }, [value === '']);
 
     return (
         <form
