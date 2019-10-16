@@ -390,8 +390,8 @@ function actionConversation(
 
     async function unlabel(ids = [], labels = []) {
         const promises = labels.map((id) => conversationApi.unlabel(id, ids));
-        await networkActivityTracker.track(Promise.all(promises));
-        await eventManager.call();
+        const processus = Promise.all(promises).then(eventManager.call);
+        await networkActivityTracker.track(processus);
     }
 
     /**
