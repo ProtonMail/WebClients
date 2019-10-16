@@ -1,3 +1,10 @@
+# [3.16.6] - 2019-10-01
+## Fixed
+- Authentication logs show both log out and login in the same row for 2FA logs
+- Add support for PayPal credit
+- Fix show CC/BCC with plain-text mode
+- Fix chinese issue in composer
+
 # [3.16.5] - 2019-10-01
 
 ## Fixed
