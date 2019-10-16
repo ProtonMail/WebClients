@@ -388,6 +388,12 @@ function actionConversation(
         return promise;
     }
 
+    async function unlabel(ids = [], labels = []) {
+        const promises = labels.map((id) => conversationApi.unlabel(id, ids));
+        await networkActivityTracker.track(Promise.all(promises));
+        await eventManager.call();
+    }
+
     /**
      * Move conversation
      * @param {Array} conversationIDs
@@ -519,6 +525,6 @@ function actionConversation(
         displaySuccess();
     }
 
-    return { remove, unread, read, unstar, star, label, move };
+    return { remove, unread, read, unstar, star, label, move, unlabel };
 }
 export default actionConversation;
