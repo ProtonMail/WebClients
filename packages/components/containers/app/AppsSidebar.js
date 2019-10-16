@@ -13,7 +13,7 @@ const AppsSidebar = ({ items = [] }) => {
     ].filter(Boolean);
 
     return (
-        <aside className="aside noprint" id="aside-bar">
+        <aside className="aside noprint nomobile" id="aside-bar">
             <ul className="unstyled m0 aligncenter flex flex-column h100">
                 {apps.map(({ appNames = [], icon, title, link, target }, index) => {
                     const isCurrent = appNames.includes(APP_NAME);
