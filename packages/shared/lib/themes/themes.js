@@ -8,7 +8,7 @@ import { c } from 'ttag';
 
 export const DEFAULT_THEME = {
     getI18NLabel() {
-        return c('Theme').t`Dark (Default)`;
+        return c('Theme').t`Default`;
     },
     identifier: '/* default-theme */',
     src: themeDarkSvg,
