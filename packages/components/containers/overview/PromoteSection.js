@@ -55,7 +55,7 @@ const PromoteSection = ({ subscription, user }) => {
             title: c('Title').t`Thanks for your support`,
             text: c('Info')
                 .t`Help us improve our service and get early access to new features by enrolling in our Beta programs.`,
-            link: '',
+            link: '/settings/apps',
             image: thanksForYourSupportSvg,
             action: c('Action').t`Join`
         },
