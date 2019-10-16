@@ -63,8 +63,6 @@ function labelsElement(dispatchers, labelsModel, authentication, $state, contact
                 }
 
                 if (e.target.classList.contains('labelsElement-btn-remove')) {
-                    scope.element;
-
                     if (!scope.element.ConversationID) {
                         return actionConversation.unlabel([scope.element.ID], [e.target.getAttribute('data-label-id')]);
                     }
