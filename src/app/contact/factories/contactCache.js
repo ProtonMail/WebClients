@@ -5,17 +5,7 @@ import updateCollection from '../../utils/helpers/updateCollection';
 import { CONTACTS_PER_PAGE } from '../../constants';
 
 /* @ngInject */
-function contactCache(
-    $state,
-    $stateParams,
-    dispatchers,
-    networkActivityTracker,
-    Contact,
-    contactDownloader,
-    contactEmails,
-    contactImporter,
-    AppModel
-) {
+function contactCache($state, $stateParams, dispatchers, networkActivityTracker, Contact, contactEmails, AppModel) {
     const CONTACT_STATES = ['secured.contacts'];
     const CACHE = {
         hydrated: false,
@@ -298,8 +288,6 @@ function contactCache(
         type === 'refreshContactEmails' && refreshContactEmails(data);
         type === 'deletedContactEmail' && deletedContactEmail(data);
         type === 'resetContacts' && resetContacts();
-        type === 'importContacts' && contactImporter(data.contactID);
-        type === 'exportContacts' && contactDownloader(data.contactID);
         type === 'selectContacts' && selectContacts(data);
         type === 'searchingContact' && searchingContact(data);
     });

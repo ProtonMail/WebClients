@@ -1,4 +1,3 @@
-import keysView from './directives/keysView';
 import changeMailboxPassword from './factories/changeMailboxPassword';
 import changePasswordModal from './factories/changePasswordModal';
 import checkKeysFormat from './factories/checkKeysFormat';
@@ -17,7 +16,6 @@ export default angular
     .module('proton.keys', [])
     .factory('keysModel', keysModel)
     .factory('decryptKeys', decryptKeys)
-    .directive('keysView', keysView)
     .factory('changeMailboxPassword', changeMailboxPassword)
     .factory('changePasswordModal', changePasswordModal)
     .factory('checkKeysFormat', checkKeysFormat)

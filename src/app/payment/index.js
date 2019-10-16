@@ -1,6 +1,8 @@
 import cardIcon from './directives/cardIcon';
 import cardPanel from './directives/cardPanel';
+import donateBtn from './directives/donateBtn';
 import donation from './directives/donation';
+import donateModal from './modals/donateModal';
 import donationExternalSubmit from './directives/donationExternalSubmit';
 import featuresList from './directives/featuresList';
 import giftCodeBtn from './directives/giftCodeBtn';
@@ -21,8 +23,6 @@ import paymentPlansFormator from './services/paymentPlansFormator';
 import paymentUtils from './services/paymentUtils';
 import cardModal from './modals/cardModal';
 import customizeInvoiceModal from './modals/customizeInvoiceModal';
-import donateModal from './modals/donateModal';
-import giftCodeModal from './modals/giftCodeModal';
 import payModal from './modals/payModal';
 import paymentVerificationModal from './modals/paymentVerificationModal';
 import paymentModal from './modals/paymentModal';
@@ -30,6 +30,7 @@ import paymentModal from './modals/paymentModal';
 export default angular
     .module('proton.payment', [])
     .directive('cardIcon', cardIcon)
+    .directive('donateBtn', donateBtn)
     .directive('cardPanel', cardPanel)
     .directive('donation', donation)
     .directive('donationExternalSubmit', donationExternalSubmit)
@@ -52,8 +53,7 @@ export default angular
     .factory('paymentUtils', paymentUtils)
     .factory('cardModal', cardModal)
     .factory('customizeInvoiceModal', customizeInvoiceModal)
-    .factory('donateModal', donateModal)
-    .factory('giftCodeModal', giftCodeModal)
     .factory('payModal', payModal)
+    .factory('donateModal', donateModal)
     .factory('paymentVerificationModal', paymentVerificationModal)
     .factory('paymentModal', paymentModal).name;

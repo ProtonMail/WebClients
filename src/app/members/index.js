@@ -1,5 +1,3 @@
-import memberEditBtn from './directives/memberEditBtn';
-import restoreAdministratorPanel from './directives/restoreAdministratorPanel';
 import memberApi from './factories/memberApi';
 import memberModel from './factories/memberModel';
 import memberModal from './modals/memberModal';
@@ -10,8 +8,6 @@ import membersValidator from './services/membersValidator';
 
 export default angular
     .module('proton.members', [])
-    .directive('memberEditBtn', memberEditBtn)
-    .directive('restoreAdministratorPanel', restoreAdministratorPanel)
     .factory('memberApi', memberApi)
     .factory('memberModel', memberModel)
     .factory('memberModal', memberModal)

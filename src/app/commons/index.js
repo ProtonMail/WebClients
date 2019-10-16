@@ -12,7 +12,6 @@ import incomingDefault from './models/incomingDefault';
 import invite from './models/invite';
 import key from './models/key';
 import label from './models/label';
-import logs from './models/logs';
 import payment from './models/payment';
 import paymentCache from './models/paymentCache';
 import reset from './models/reset';
@@ -50,7 +49,6 @@ export default angular
     .factory('Invite', invite)
     .factory('Key', key)
     .factory('Label', label)
-    .factory('Logs', logs)
     .factory('Payment', payment)
     .factory('PaymentCache', paymentCache)
     .factory('Reset', reset)

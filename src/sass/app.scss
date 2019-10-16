@@ -46,12 +46,9 @@ $primary: $pm-primary;
 
 @import "~design-system/_sass/design-system-website/global-structure";
 
-
-@import "~ng-sortable/dist/ng-sortable.css";
 @import "~pikaday/css/pikaday.css";
 @import "~dropzone/dist/dropzone.css";
 @import "~awesomplete/awesomplete.css";
-@import "~nouislider/distribute/nouislider.css";
 
 //=== 🚀 Setup ==============================//
 //== Base
@@ -113,7 +110,6 @@ $primary: $pm-primary;
 @import "ui/asSortable";
 @import "ui/copy";
 @import "ui/currencySelector";
-@import "ui/datetimePicker";
 @import "ui/multiselect";
 @import "ui/elementsSelector";
 @import "ui/requestTimeout";
@@ -127,25 +123,15 @@ $primary: $pm-primary;
 @import "ui/formUtils/autocompleteEmail";
 @import "ui/formUtils/codeVerificator";
 @import "ui/intlTelInput";
-@import "ui/timepicker";
 @import "ui/scrollbox";
-@import "ui/arrowsToScroll";
 @import "ui/dropzone";
 @import "ui/progressBar";
 @import "ui/networkActivity";
-
-//== Ui
-@import "components/ui/mozInfo";
-
-// === Settings UI
-@import "settings-ui/headerBlock.scss";
-
 
 //===  Custom Components ================//
 
 // === User
 @import "components/user/generateModal";
-@import "components/user/identitySection";
 @import "components/user/usernamePassword";
 @import "components/user/humanVerification";
 @import "components/user/signupUserForm";
@@ -223,7 +209,6 @@ $primary: $pm-primary;
 @import "components/contact/attachGroupContactEmailsModal";
 @import "components/contact/autocompleteContactGroup";
 @import "components/contact/advancedSettingsBtn";
-@import "components/contact/contactArrowsSort";
 @import "components/contact/actionContactGroup";
 @import "components/contact/manageContactGroupModal";
 @import "components/contact/autocompleteContacts";

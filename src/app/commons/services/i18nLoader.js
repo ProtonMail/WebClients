@@ -38,30 +38,6 @@ function i18nLoader(dispatchers, gettextCatalog, $injector) {
         }
     };
 
-    const localizePikaday = () => {
-        // Because we will lazy load these modules
-        const pikadayConfiguration = $injector.get('pikadayConfiguration');
-
-        /*
-            Do not use the Boolean flag for
-                - weekdays
-                - weekdaysShort
-            The list must start with Sunday, else Pikaday is unable to know what's the firstday of the week, even if you specify firstDay.
-            The actual order of the days is set by the firstday parameter.
-         */
-        pikadayConfiguration.update({
-            i18n: {
-                previousMonth: gettextCatalog.getString('Previous Month', null, 'Pikaday'),
-                nextMonth: gettextCatalog.getString('Next Month', null, 'Pikaday'),
-                months: moment.months(),
-                weekdays: moment.weekdays(),
-                weekdaysShort: moment.weekdaysShort()
-            },
-            firstDay: moment.localeData().firstDayOfWeek(), // most important flag here
-            format: moment.localeData().longDateFormat('L')
-        });
-    };
-
     /**
      * Localize the dates with the current translation locale and browser locale.
      */
@@ -69,8 +45,6 @@ function i18nLoader(dispatchers, gettextCatalog, $injector) {
         const { translationLocale, browserLocale } = CACHE;
         $injector.get('dateUtils').init();
         moment.locale(selectLocale(translationLocale, browserLocale));
-
-        localizePikaday();
         dispatch('load');
     };
 

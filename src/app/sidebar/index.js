@@ -1,5 +1,4 @@
 import btnDisplayMobileSidebar from './directives/btnDisplayMobileSidebar';
-import donateBtn from './directives/donateBtn';
 import menuLabel from './directives/menuLabel';
 import navigationItem from './directives/navigationItem';
 import sidebar from './directives/sidebar';
@@ -12,7 +11,6 @@ import sidebarModel from './factories/sidebarModel';
 export default angular
     .module('proton.sidebar', [])
     .directive('btnDisplayMobileSidebar', btnDisplayMobileSidebar)
-    .directive('donateBtn', donateBtn)
     .directive('menuLabel', menuLabel)
     .directive('navigationItem', navigationItem)
     .directive('sidebar', sidebar)

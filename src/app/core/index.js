@@ -24,7 +24,6 @@ import recoveryCodeModal from './factories/recoveryCodeModal';
 import supportModal from './factories/supportModal';
 import switchPasswordModeModal from './factories/switchPasswordModeModal';
 import twoFAIntroModal from './factories/twoFAIntroModal';
-import verificationModal from './factories/verificationModal';
 import versionInfoModel from './factories/versionInfoModel';
 import welcomeModal from './factories/welcomeModal';
 import windowModel from './factories/windowModel';
@@ -66,7 +65,6 @@ export default angular
     .factory('supportModal', supportModal)
     .factory('switchPasswordModeModal', switchPasswordModeModal)
     .factory('twoFAIntroModal', twoFAIntroModal)
-    .factory('verificationModal', verificationModal)
     .factory('versionInfoModel', versionInfoModel)
     .factory('welcomeModal', welcomeModal)
     .factory('windowModel', windowModel)

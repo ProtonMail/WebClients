@@ -21,19 +21,8 @@ module.exports = {
         ]
     },
     vendor_files: {
-        css: [
-            'ng-sortable/dist/ng-sortable.css',
-            'pikaday/css/pikaday.css',
-            'dropzone/dist/dropzone.css',
-            'awesomplete/awesomplete.css',
-            'nouislider/distribute/nouislider.css',
-            'codemirror/lib/codemirror.css',
-            'codemirror/addon/lint/lint.css',
-            'normalize.css/normalize.css'
-        ].map(bindPrefix),
+        css: ['dropzone/dist/dropzone.css', 'awesomplete/awesomplete.css', 'pikaday/css/pikaday.css'].map(bindPrefix),
 
-        fonts: ['components-font-awesome/fonts', 'text-security/dist/text-security-disc.*'].map(bindPrefix),
-
-        sass_include_dirs: ['bourbon/dist', 'bootstrap-sass-official/assets/stylesheets'].map(bindPrefix)
+        fonts: ['components-font-awesome/fonts', 'text-security/dist/text-security-disc.*'].map(bindPrefix)
     }
 };

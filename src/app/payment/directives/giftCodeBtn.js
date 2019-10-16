@@ -1,5 +1,5 @@
 /* @ngInject */
-function giftCodeBtn(dispatchers, giftCodeModal) {
+function giftCodeBtn(dispatchers) {
     const { dispatcher } = dispatchers(['signup']);
     const dispatch = (type) => dispatcher.signup(type);
 
@@ -10,10 +10,6 @@ function giftCodeBtn(dispatchers, giftCodeModal) {
         scope: {},
         link(scope, element, { action }) {
             const onClick = () => {
-                if (action === 'modal') {
-                    giftCodeModal.activate();
-                }
-
                 if (action === 'displayGiftSignup') {
                     dispatch(action);
                 }
