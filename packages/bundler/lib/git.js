@@ -1,7 +1,7 @@
 const os = require('os');
 
 const { bash, script } = require('./helpers/cli');
-const { title, debug, IS_VERBOSE } = require('./helpers/log')('proton-bundler');
+const { debug, IS_VERBOSE } = require('./helpers/log')('proton-bundler');
 
 async function push(branch, { tag = 'v0.0.0', originCommit, originBranch }) {
     // can't use await bash, it doesn't keep the context for next commands :/
@@ -57,19 +57,17 @@ async function getConfig() {
     }
 }
 
-async function logCommits(branch, flowType, isWebsite) {
+async function logCommits(branch = '', flowType, isWebsite) {
     const [, target] = branch.match(/-(prod|beta|dev|old|tor)/) || [];
 
     if (!target) {
         return;
     }
-
-    console.log('');
-    title('Hash commits');
     const args = [flowType === 'many' ? '' : target];
     isWebsite && args.push('--website');
+
     // Keep log active.
-    return script('logcommits.sh', args).then(({ stdout }) => console.log(stdout) || stdout);
+    return script('logcommits.sh', args).then(({ stdout }) => stdout);
 }
 
 async function generateChangelog(branch, issueURL) {

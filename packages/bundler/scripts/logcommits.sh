@@ -4,8 +4,7 @@ set -eo pipefail
 function logCommit {
     local branch=$(echo "$1" | awk -F "origin/" '{print $2}');
     local commit=$(git rev-parse "$1");
-    printf '%-20s' "[$branch]";
-    printf '%-20s' "$commit";
+    printf '%-20s' "${commit:0:8}---${branch/deploy-/}";
     echo
 }
 

@@ -36,7 +36,8 @@ const {
     customBundler: { tasks: customTasks, config: customConfig },
     getCustomHooks
 } = require('./lib/custom');
-const { pull, push, getConfig, logCommits, generateChangelog } = require('./lib/git');
+const { pull, push, getConfig, generateChangelog } = require('./lib/git');
+const askDeploy = require('./lib/ask');
 const buildRemote = require('./lib/buildRemote');
 
 const PKG = require(path.join(process.cwd(), 'package.json'));
@@ -266,12 +267,7 @@ async function main() {
     isCI && success(`Build CI app to the directory: ${chalk.bold('dist')}`, { time });
 
     if (!isCI && !argv.silentMessage) {
-        return logCommits(branch, flowType).then((data) => {
-            if (/deploy-(beta|prod|old|tor|dev)/.test(branch)) {
-                const [, env] = branch.match(/deploy-(beta|prod|old|tor|dev)/);
-                coucou.send(data, { env, flowType }, PKG);
-            }
-        });
+        return askDeploy(branch, PKG, argv);
     }
 }
 
@@ -280,22 +276,16 @@ if (argv._.includes('hosts')) {
 }
 
 if (argv._.includes('log-commits')) {
-    const parseEnv = (branch, website) => {
+    const parseEnv = ({ branch, website }) => {
         if (website && /deploy-(a|b)$/.test(branch)) {
             return 'deploy-prod';
         }
         return branch;
     };
 
-    const { branch, flow: flowType, custom } = argv;
     debug(argv, 'arguments');
-    const branchName = parseEnv(branch, argv.website);
-    return logCommits(branchName, flowType, argv.website).then((data) => {
-        if (/deploy-(beta|prod|old|tor|dev)/.test(branchName)) {
-            const [, env] = branchName.match(/deploy-(beta|prod|old|tor|dev)/);
-            coucou.send(data, { env, flowType, custom }, PKG);
-        }
-    });
+    const branchName = parseEnv(argv);
+    return askDeploy(branchName, PKG, argv);
 }
 
 if (argv._.includes('changelog')) {

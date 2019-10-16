@@ -44,6 +44,12 @@ module.exports = (scope) => {
         if (!IS_VERBOSE) {
             return;
         }
+
+        if (item instanceof Error) {
+            console.log(`[${scope}]`, message);
+            error(item);
+        }
+
         if (Array.isArray(item) || typeof item === 'object') {
             console.log(`[${scope}]`, message);
             return json(item, false, true);

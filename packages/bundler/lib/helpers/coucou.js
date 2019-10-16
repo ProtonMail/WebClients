@@ -2,39 +2,7 @@ const https = require('https');
 const dedent = require('dedent');
 const { error, success, debug, warn } = require('./log')('proton-bundler');
 
-const URLS = {
-    'protonmail-web': {
-        prod: 'mail',
-        tor: 'https://protonirockerxow.onion'
-    },
-    'proton-vpn-settings': {
-        prod: 'account'
-    }
-};
-
-const getURL = (name, env) => {
-    const { [env]: scope = env } = URLS[name] || {};
-
-    if (env === 'tor') {
-        return scope;
-    }
-    return `${scope}.${process.env.DEPLOY_MESSAGE_URL}`;
-};
-
-const listURLs = (flowType, env) => {
-    if (flowType === 'many') {
-        return ['prod', 'beta', 'dev', 'tor'];
-    }
-    return [env];
-};
-
-const generateTplURL = (env, name, flowType) => {
-    return listURLs(flowType, env)
-        .map((scope) => `- *[${scope}]*: ${getURL(name, scope)}`)
-        .join('\n');
-};
-
-async function send(data, { env, flowType, custom, mode = 'deploy' }, { name } = {}) {
+async function send(data, { env, mode = 'deploy' }, { name } = {}) {
     const requests = {
         deploy() {
             if (!process.env.DEPLOY_MESSAGES_HOOK) {
@@ -42,16 +10,7 @@ async function send(data, { env, flowType, custom, mode = 'deploy' }, { name } =
             }
 
             const { pathname, host } = new URL(process.env.DEPLOY_MESSAGES_HOOK);
-            const text = dedent`
-                ${process.env.DEPLOY_MESSAGE} *${name}*?
-
-                _url(s)_:
-                ${custom || generateTplURL(env, name, flowType)}
-
-                Informations:
-                ${data}
-            `.trim();
-            return { pathname, host, text };
+            return { pathname, host, text: dedent`${data}` };
         },
         changelog() {
             if (!process.env.CHANGELOG_QA_HOOK) {
