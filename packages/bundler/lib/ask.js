@@ -5,9 +5,16 @@ const { debug } = require('./helpers/log')('proton-bundler');
 
 async function main(branch = '', PKG, { flow, website }) {
     try {
-        const output = await logCommits(branch, flow, website);
+        const canContact =
+            /deploy-(beta|prod|old|tor|dev)/.test(branch) || (website && /deploy-(beta|prod|dev|a|b)/.test(branch));
 
+        const output = await logCommits(branch, flow, website);
         debug(output, 'log-commits');
+
+        // Feature only availabe for a few branches
+        if (!canContact) {
+            return console.log(output);
+        }
 
         // Feature not available without this CLI
         if (!process.env.MESSAGE_DEPLOY_CLI) {
@@ -36,7 +43,7 @@ async function main(branch = '', PKG, { flow, website }) {
 
         debug(stdout, 'message deploy');
 
-        if (/deploy-(beta|prod|old|tor|dev)/.test(branch)) {
+        if (canContact) {
             const [, env] = branch.match(/deploy-(beta|prod|old|tor|dev)/);
             coucou.send(stdout, { env, flowType: flow }, PKG);
         }
