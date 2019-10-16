@@ -1,12 +1,25 @@
 <div class="paypal-container">
-    <div class="alert alert-danger" ng-if="errorDetails">
-        <div class="margin-bottom">
-            <span ng-if="errorDetails.validator === 'duckduckgo'" translate-context="PayPal error" translate>The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.</span>
-            <span ng-if="errorDetails.validator === 'min'" translate-context="Paypal error" translate>Amount below minimum.</span>
-            <span ng-if="errorDetails.validator === 'max'" translate-context="Paypal error" translate>Amount above the maximum.</span>
-            <span ng-if="errorDetails.validator === 'min' || errorDetails.validator === 'max'">({{ errorDetails.amount / 100 }} {{ currency }})</span>
-        </div>
-    </div>
+
+    <p
+        class="block-info-error paypal-error-amount"
+        ng-if="errorDetails">
+        <span
+            ng-if="errorDetails.validator === 'duckduckgo'"
+            translate-context="PayPal error"
+            translate>The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.</span>
+
+        <span
+            class="paypal-error-max"
+            ng-if="errorDetails.validator === 'max'"
+            translate-context="Paypal error"
+            translate>Amount above the maximum.</span>
+        <span
+            class="paypal-error-min"
+            ng-if="errorDetails.validator === 'min'"
+            translate-context="Paypal error"
+            translate>Amount below minimum.</span> ({{ errorDetails.amount / 100 }} {{ currency }})
+    </p>
+
 
     <div ng-if="loadingTokens">
         <loader-tag></loader-tag>
@@ -18,26 +31,47 @@
         <p translate-context="Info" translate>Verification can take a few minutes.</p>
     </div>
 
-    <div ng-if="!errorDetails && !loadingTokens && !loadingVerification && !isDonation && !isUpdate">
-        <p class="alert alert-info" translate-context="Info" translate>We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.</p>
+    <div
+        class="flex"
+        ng-if="!errorDetails && !loadingTokens && !loadingVerification && !isDonation && !isUpdate">
+        <p class="block-info-standard" translate-context="Info" translate>We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.</p>
         <div class="margin-bottom">
-            <button class="pm_button primary" type="button" ng-click="openTab(paypalModel)" translate-context="Action" translate>Check out with PayPal</button>
+            <button
+                class="pm-button-blue mauto"
+                type="button"
+                ng-click="openTab(paypalModel)"
+                translate-context="Action"
+                translate>Check out with PayPal</button>
         </div>
-        <p class="alert alert-info">
+        <p class="block-info-standard">
             <span translate-context="Info" translate>You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please</span> <a href="#" ng-click="openTab(paypalCreditModel)" translate-context="Link" translate>click here</a>.
         </p>
     </div>
 
-    <div ng-if="!errorDetails && !loadingTokens && !loadingVerification && isUpdate">
-        <p class="alert alert-info" translate-context="Info" translate>This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.</p>
+    <div
+        class="flex"
+        ng-if="!errorDetails && !loadingTokens && !loadingVerification && isUpdate">
+        <p class="block-info-standard" translate-context="Info" translate>This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.</p>
         <div class="margin-bottom">
-            <button class="pm_button primary" type="button" ng-click="openTab(paypalModel)" translate-context="Action" translate>Add PayPal payment method</button>
+            <button
+                class="pm-button-blue mauto"
+                type="button"
+                ng-click="openTab(paypalModel)"
+                translate-context="Action"
+                translate>Add PayPal payment method</button>
         </div>
-        <p class="alert alert-info" translate-context="Info" translate>You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.</p>
+        <p class="block-info-standard" translate-context="Info" translate>You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.</p>
     </div>
 
-    <div ng-if="!errorDetails && !loadingTokens && !loadingVerification && isDonation">
-        <p class="alert alert-info" translate-context="Info" translate>We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.</p>
-        <button class="pm_button primary" type="button" ng-click="openTab(paypalCreditModel)" translate-context="Action" translate>Check out with PayPal</button>
+    <div
+        class="flex"
+        ng-if="!errorDetails && !loadingTokens && !loadingVerification && isDonation">
+        <p class="block-info-standard" translate-context="Info" translate>We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.</p>
+        <button
+            class="pm-button-blue mauto"
+            type="button"
+            ng-click="openTab(paypalCreditModel)"
+            translate-context="Action"
+            translate>Check out with PayPal</button>
     </div>
 </div>
