@@ -1,5 +1,7 @@
-<form class="commandPalette-container" novalidate ng-class="{ 'commandPalette-visible': isVisible }">
-    <button type="reset" class="commandPalette-btn-close fa fa-close"></button>
+<form class="commandPalette-container shadow-container bordered" novalidate ng-class="{ 'commandPalette-visible': isVisible }">
+    <button type="reset" class="commandPalette-btn-close no-pointer-events-children pm-button--small">
+        <icon data-name="close" data-fill="currentColor"></icon>
+    </button>
     <div class="commandPalette-field">
         <label for="" class="commandPalette-label">Command</label>
         <autocomplete-command

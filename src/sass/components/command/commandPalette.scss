@@ -6,12 +6,11 @@
     bottom: 0;
     left: 0;
     width: 500px;
-    height: 240px;
-    padding: 1.7rem 1rem 1rem 1rem;
+    height: 280px;
+    padding: 2.5rem;
     margin: auto;
     background: white;
     border-radius: .2em;
-    box-shadow: 0 0 .4em .1em rgba(0, 0, 0, .25);
     transform: translateY(-50%);
 }
 
@@ -40,7 +39,6 @@
         align-items: center;
         flex: 1;
         background: #eee;
-        font-weight: bold;
 
     }
 
@@ -83,13 +81,6 @@
     position: absolute;
     top: .4em;
     right: 0.2em;
-    background: none;
+    padding: .2rem;
     border: 0
-}
-
-.commandPalette-btn-close:active { color: $blue-gray }
-
-.appConfigBody-commandPalette::before {
-    background: rgba(0, 0, 0, .5);
-    z-index: 3001 !important;
 }
