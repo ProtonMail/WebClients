@@ -62,7 +62,7 @@ const PromoteSection = ({ subscription, user }) => {
         payMonthly: {
             title: c('Title').t`Get 20% discount`,
             text: c('Info').t`Pay for both ProtonMail and ProtonVPN and get 20% off your entire subscription.`,
-            link: '',
+            link: '/settings/subscription',
             image: get20PerscentDiscountSvg,
             action: c('Action').t`Upgrade`
         }
