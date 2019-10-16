@@ -8,6 +8,9 @@
 - added placeholder images (no result)
 - added helper `color-currentColor` (for notification zone)
 - added CSS custom property `--label-width`
+- added more border and max width options
+- hover state for conversations
+- add protoncontacts icon
 
 ## Updated/fixes
 
@@ -24,6 +27,7 @@
 - fixed `line-height` of text in user dropdown
 - fixed drop down example on design system website
 - splitted `global-structure` into several fragments
+- Hotfix form error with AngularJS
 
 
 # [1.7.5] - 2019-09-27
