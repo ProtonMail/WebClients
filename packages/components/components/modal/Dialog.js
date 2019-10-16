@@ -9,6 +9,7 @@ const CLASSES = {
     MODAL_SMALL: 'pm-modal--smaller'
 };
 
+/** @type any */
 const Dialog = ({
     onExit,
     small: isSmall = false,

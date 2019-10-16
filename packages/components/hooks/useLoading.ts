@@ -1,23 +1,22 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 
-/**
- * Given a promise, sets and resets loading when it's finished
- * @param {Boolean} initialState
- * @return {[]}
- */
-const useLoading = (initialState = false) => {
+type WithLoading = <T>(promise: Promise<T | void>) => Promise<T | void>;
+
+const useLoading = (initialState = false): [boolean, WithLoading] => {
     const [loading, setLoading] = useState(initialState);
     const unmountedRef = useRef(false);
     const counterRef = useRef(0);
 
     useEffect(() => {
-        return () => (unmountedRef.current = true);
+        return () => {
+            unmountedRef.current = true;
+        };
     }, []);
 
-    const withLoading = useCallback((promise) => {
+    const withLoading = useCallback<WithLoading>((promise) => {
         if (!promise) {
             setLoading(false);
-            return;
+            return Promise.resolve();
         }
         const counterNext = counterRef.current + 1;
         counterRef.current = counterNext;

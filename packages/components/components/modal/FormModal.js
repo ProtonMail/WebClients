@@ -11,6 +11,7 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 
+/** @type any */
 const Modal = ({
     onClose,
     onSubmit,
