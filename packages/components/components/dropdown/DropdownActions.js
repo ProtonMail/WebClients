@@ -44,7 +44,7 @@ const DropdownActions = ({ loading = false, disabled = false, list = [], classNa
                 originalPlacement="bottom-right"
                 disabled={disabled}
                 loading={loading}
-                className={classnames(['pm-group-button pm-button--for-icon', className])}
+                className={classnames(['pm-button pm-group-button pm-button--for-icon', className])}
                 title={c('Title').t`Open actions dropdown`}
                 content=""
             >
