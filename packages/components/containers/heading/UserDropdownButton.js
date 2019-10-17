@@ -16,7 +16,7 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }) => {
             ref={buttonRef}
             {...rest}
         >
-            <span className="alignright flex flex-column mr0-5">
+            <span className="alignright flex flex-column mr0-5 nomobile">
                 <span className="bl capitalize mw100 ellipsis">{DisplayName || Name}</span>
                 {Email ? <span className="bl mw100 ellipsis smaller m0 opacity-30 lh100">{Email}</span> : null}
             </span>
