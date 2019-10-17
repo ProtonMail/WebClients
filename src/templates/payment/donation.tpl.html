@@ -20,46 +20,48 @@
             translate
             translate-context="Title">Amount</label>
 
-        <div class="donateModal-choose-amount w66 flex flex-items-end">
-            <div class="pm-group-buttons">
-             <button
-               class="pm-group-button pm-button pm-button--for-icon donationForm-btn-amount"
-               ng-class="{ 'is-active': model.amount === 5 }"
-               type="button"
-               data-amount="5">5</button>
-             <button
-               class="pm-group-button pm-button pm-button--for-icon donationForm-btn-amount"
-               ng-class="{ 'is-active': model.amount === 10 }"
-               type="button"
-               data-amount="10">10</button>
-             <button
-               class="pm-group-button pm-button pm-button--for-icon donationForm-btn-amount"
-               ng-class="{ 'is-active': model.amount === 50 }"
-               type="button"
-               data-amount="50">50</button>
-             <button
-               class="pm-group-button pm-button pm-button--for-icon donationForm-btn-amount"
-               ng-class="{ 'is-active': model.amount === 100 }"
-               type="button"
-               data-amount="100">100</button>
+        <div class="donateModal-choose-amount w40 flex flex-items-end">
+            <div class="flex flex-spacebetween w100">
+                <button
+                    class="pm-button pm-button--for-icon donationForm-btn-amount w20"
+                    ng-class="{ 'is-active': model.amount === 5 }"
+                    type="button"
+                    data-amount="5">5</button>
+                <button
+                    class="pm-button pm-button--for-icon donationForm-btn-amount w20"
+                    ng-class="{ 'is-active': model.amount === 10 }"
+                    type="button"
+                    data-amount="10">10</button>
+                <button
+                    class="pm-button pm-button--for-icon donationForm-btn-amount w20"
+                    ng-class="{ 'is-active': model.amount === 50 }"
+                    type="button"
+                    data-amount="50">50</button>
+                <button
+                    class="pm-button pm-button--for-icon donationForm-btn-amount w20"
+                    ng-class="{ 'is-active': model.amount === 100 }"
+                    type="button"
+                    data-amount="100">100</button>
             </div>
 
-            <input
-               type="number"
-               min="2"
-               max="999999"
-               class="pm-field w20 ml0-5 mr0-5"
-               id="otherAmount"
-               name="otherAmount"
-               ng-model="model.otherAmount"
-               ng-focus="onFocusOtherAmount()"
-               placeholder-translate-context="Other amount to donate"
-               placeholder-translate="Other">
+            <div class="flex flex-spacebetween w100 mt0-5">
+                <input
+                   type="number"
+                   min="2"
+                   max="999999"
+                   class="pm-field mr0-5 flex-item-fluid"
+                   id="otherAmount"
+                   name="otherAmount"
+                   ng-model="model.otherAmount"
+                   ng-focus="onFocusOtherAmount()"
+                   placeholder-translate-context="Other amount to donate"
+                   placeholder-translate="Other">
 
-            <select
-               class="donateModal-select-currency mlauto pm-field"
-               ng-model="model.currency"
-               ng-options="currency.label for currency in currencies"></select>
+                <select
+                   class="donateModal-select-currency mlauto pm-field w30"
+                   ng-model="model.currency"
+                   ng-options="currency.label for currency in currencies"></select>
+            </div>
 
             <div
                 class="error-zone w100"
@@ -80,13 +82,13 @@
                     class="m0 color-global-warning"
                     translate-context="Error"
                     translate>Thank you for your willingness to donate. The maximum we can accept in single donations is 999 999 at this moment. Thank you</p>
-
             </div>
-       </div>
+        </div>
+
    </div>
 
 
-    <div class="donationForm-paymentMethod flex flex-nowrap onmobile-flex-column mb2">
+    <div class="donationForm-paymentMethod flex flex-nowrap onmobile-flex-column mb2 ">
         <label
             for="paymentMethod"
             class="pt0-5 w33"
@@ -94,7 +96,7 @@
             translate>Select payment method:</label>
         <select
             id="paymentMethod"
-            class="pm-field flex-item-fluid"
+            class="pm-field w40"
             ng-model="model.method"
             ng-options="method.label for method in methods"></select>
     </div>
@@ -106,7 +108,7 @@
 
     <card-view
         ng-if="model.method.value === 'card'"
-        class="donationForm-cardView"
+        class="donationForm-cardView w70 mauto"
         data-card="model.card"
         data-form="donationForm"></card-view>
 
