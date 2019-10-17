@@ -1,70 +1,133 @@
-<div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
-    <form name="paymentVerificationForm" class="modal-dialog" ng-submit="ctrl.submit()" novalidate>
-        <button type="button" ng-if="ctrl.step === 'redirect'" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 ng-if="ctrl.step === 'redirect'" class="modal-title">
-                    <span ng-if="!ctrl.isAddCard" translate-context="Title" translate>Payment verification</span>
-                    <span ng-if="ctrl.isAddCard" translate-context="Title" translate>Card verification</span>
-                </h4>
-                <h4 ng-if="ctrl.step === 'redirecting'" class="modal-title" translate-context="Title" translate>Processing...</h4>
-                <h4 ng-if="ctrl.step === 'redirected'" class="modal-title">
-                    <span ng-if="!ctrl.isAddCard" translate-context="Title" translate>Payment verification in progress</span>
-                    <span ng-if="ctrl.isAddCard" translate-context="Title" translate>Card verification in progress</span>
-                </h4>
-                <h4 ng-if="ctrl.step === 'duckduckgo'" class="modal-title" translate-context="Title" translate>Unsupported browser</h4>
-                <h4 ng-if="ctrl.step === 'fail'" class="modal-title" translate-context="Title" translate>3-D Secure verification failed</h4>
+<dialog>
+
+    <header class="pm-modalHeader">
+        <button
+            type="button"
+            class="pm-modalClose"
+            ng-click="ctrl.cancel()"
+            title-translate="Close"
+            title-translate-context="Action">×</button>
+        <h1 id="modalTitle" class="pm-modalTitle">
+            <span
+                ng-if="ctrl.step === 'redirect' && !ctrl.isAddCard"
+                translate-context="Payment verification 3D Secure modal title"
+                translate>Payment verification</span>
+            <span
+                ng-if="ctrl.step === 'redirect' && ctrl.isAddCard"
+                translate-context="Payment verification 3D Secure modal title"
+                translate>Card verification</span>
+            <span
+                ng-if="ctrl.step === 'redirecting'"
+                translate-context="Payment verification 3D Secure modal title"
+                translate>Processing...</span>
+            <span
+                ng-if="ctrl.step === 'redirected' && !ctrl.isAddCard"
+                translate-context="Payment verification 3D Secure modal title"
+                translate>Payment verification in progress</span>
+            <span
+                ng-if="ctrl.step === 'redirected' && ctrl.isAddCard"
+                translate-context="Payment verification 3D Secure modal title"
+                translate>Card verification in progress</span>
+            <span
+                ng-if="ctrl.step === 'duckduckgo'"
+                translate-context="Payment verification 3D Secure modal title"
+                translate>Unsupported browser</span>
+            <span
+                ng-if="ctrl.step === 'fail'"
+                translate-context="Payment verification 3D Secure modal title"
+                translate>3-D Secure verification failed</span>
+        </h1>
+    </header>
+
+    <form
+        class="pm-modalContent"
+        name="paymentVerificationForm"
+        autocomplete="off"
+        ng-submit="ctrl.submit()"
+        novalidate>
+
+        <div class="pm-modalContentInner">
+
+            <div ng-if="ctrl.step === 'redirect'">
+                <p class="aligncenter" translate-context="Info" translate>Your bank requires 3-D Secure verification for security purposes.</p>
+                <p class="aligncenter">
+                    <payment-verification-logo data-payment="ctrl.payment"></payment-verification-logo>
+                </p>
+                <p class="block-info-standard">
+                    <span ng-if="!ctrl.isAddCard" translate-context="Info" translate>Verification will open a new tab, please disable any popup blockers.</span>
+                    <span ng-if="ctrl.isAddCard" translate-context="Info" translate>Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately.</span>
+                </p>
             </div>
-            <div class="modal-body">
-                <div ng-if="ctrl.step === 'redirect'">
-                    <p class="text-center" translate-context="Info" translate>Your bank requires 3-D Secure verification for security purposes.</p>
-                    <p class="text-center">
-                        <payment-verification-logo payment="ctrl.payment"></payment-verification-logo>
-                    </p>
-                    <p class="alert alert-info">
-                        <span ng-if="!ctrl.isAddCard" translate-context="Info" translate>Verification will open a new tab, please disable any popup blockers.</span>
-                        <span ng-if="ctrl.isAddCard" translate-context="Info" translate>Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately.</span>
-                    </p>
-                </div>
-                <div ng-if="ctrl.step === 'redirecting'">
-                    <p class="text-center" translate-context="Info" translate>You will be soon redirected to your bank to verify your payment.</p>
-                    <loader-tag></loader-tag>
-                    <p class="alert alert-info" translate-context="Info" translate>Verification will open a new tab, please disable any popup blockers.</p>
-                </div>
-                <div ng-if="ctrl.step === 'redirected'">
-                    <p class="text-center">
-                        <span ng-if="!ctrl.isAddCard" translate-context="Info" translate>Please verify payment at the new tab which was opened.</span>
-                        <span ng-if="ctrl.isAddCard" translate-context="Info" translate>Please verify the card in the new tab which was opened.</span>
-                    </p>
-                    <loader-tag></loader-tag>
-                    <p class="text-center">
-                        <button class="pm_button link" type="button" ng-click="ctrl.cancel()">Cancel</button>
-                    </p>
-                    <p class="alert alert-info">
-                        <span ng-if="!ctrl.isAddCard" translate-context="Info" translate>Payment can take a few minutes to fully verify.</span>
-                        <span ng-if="ctrl.isAddCard" translate-context="Info" translate>Verification can take a few minutes.</span>
-                    </p>
-                </div>
-                <div ng-if="ctrl.step === 'duckduckgo'">
-                    <p class="alert alert-error" translate-context="Error" translate>The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.</p>
-                    <button class="pm_button" type="button" ng-click="ctrl.cancel()" translate-context="Action" translate>Close</button>
-                </div>
-                <div ng-if="ctrl.step === 'fail'" class="text-center">
-                    <p translate-context="Info" translate>Please try again, use a different payment method, or call your bank for assistance.</p>
-                    <img src="/assets/img/error.svg" alt="Error" />
-                    <p ng-if="ctrl.tryAgain">
-                        <button class="pm_button" type="submit" translate-context="Action" translate>Try again</button>
-                    </p>
-                    <p>
-                        <button class="pm_button primary" type="button" ng-click="ctrl.cancel()" translate-context="Action" translate>Use a different payment method</button>
-                    </p>
-                </div>
+
+            <div ng-if="ctrl.step === 'redirecting'">
+                <p class="aligncenter" translate-context="Info" translate>You will be soon redirected to your bank to verify your payment.</p>
+                <loader-tag></loader-tag>
+                <p class="block-info-standard" translate-context="Info" translate>Verification will open a new tab, please disable any popup blockers.</p>
             </div>
+
+            <div ng-if="ctrl.step === 'redirected'">
+                <p class="aligncenter">
+                    <span ng-if="!ctrl.isAddCard" translate-context="Info" translate>Please verify payment at the new tab which was opened.</span>
+                    <span ng-if="ctrl.isAddCard" translate-context="Info" translate>Please verify the card in the new tab which was opened.</span>
+                </p>
+                <loader-tag></loader-tag>
+                <p class="aligncenter">
+                    <button
+                        class="pm-button--link"
+                        type="button"
+                        ng-click="ctrl.cancel()">Cancel</button>
+                </p>
+                <p class="block-info-standard">
+                    <span ng-if="!ctrl.isAddCard" translate-context="Info" translate>Payment can take a few minutes to fully verify.</span>
+                    <span ng-if="ctrl.isAddCard" translate-context="Info" translate>Verification can take a few minutes.</span>
+                </p>
+            </div>
+
+            <div ng-if="ctrl.step === 'duckduckgo'" class="aligncenter">
+                <p class="block-info-error" translate-context="Error" translate>The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.</p>
+
+                <button
+                    class="pm-button"
+                    type="button"
+                    ng-click="ctrl.cancel()"
+                    translate-context="Action"
+                    translate>Close</button>
+            </div>
+
+            <div ng-if="ctrl.step === 'fail'" class="aligncenter">
+                <p translate-context="Info" translate>Please try again, use a different payment method, or call your bank for assistance.</p>
+                <img src="/assets/img/error.svg" alt="Error" />
+                <p ng-if="ctrl.tryAgain">
+                    <button
+                        class="pm-button"
+                        type="submit"
+                        translate-context="Action"
+                        translate>Try again</button>
+                </p>
+                <p>
+                    <button
+                        class="pm-button-blue"
+                        type="button"
+                        ng-click="ctrl.cancel()"
+                        translate-context="Action"
+                        translate>Use a different payment method</button>
+                </p>
+            </div>
+
         </div>
-        <div class="modal-footer">
-            <button ng-if="ctrl.step === 'redirect'" type="button" class="pm_button modal-footer-button" ng-click="ctrl.cancel()" translate-context="Action" translate>Cancel</button>
-            <button ng-if="ctrl.step === 'redirect'" autofocus class="pm_button primary modal-footer-button" translate-context="Action" translate>Verify</button>
-        </div>
+
+        <footer class="pm-modalFooter flex flex-spacebetween" ng-if="ctrl.step === 'redirect'">
+            <button
+                type="button"
+                class="pm-button-blueborder"
+                ng-click="ctrl.cancel()"
+                translate
+                translate-context="Action">Cancel</button>
+            <button
+                class="pm-button-blue"
+                translate
+                translate-context="Action">Verify</button>
+        </footer>
     </form>
-    <div class="modal-overlay"></div>
-</div>
+
+</dialog>
