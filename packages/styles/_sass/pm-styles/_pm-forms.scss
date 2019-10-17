@@ -19,8 +19,9 @@ input::-ms-reveal {
   display: none;
 }
 
+$field-container: 26rem !default;
 .pm-field-container {
-  width: 26rem;
+  width: $field-container;
   @extend .mw100;
   @extend .inbl;
   &.auto {
@@ -383,3 +384,26 @@ $pm-label-width: 18em !default;
     border-color: $pm-global-warning;
   }
 }
+
+
+/* special case for very large inputs in modals, like rich text editor */
+.pm-modalContainer .pm-field-container--full {
+  width: calc(100% - var(--label-width, #{$pm-label-width}));
+}
+@include respond-to(1360) { 
+  .pm-modalContainer .pm-field-container--full {
+      width: $field-container;
+  }
+}
+@include respond-to(830) { 
+  .pm-modalContainer .pm-field-container--full {
+      width: calc(100% - var(--label-width, #{$pm-label-width}));
+  }
+}
+
+@include respond-to($breakpoint-small) { 
+  .pm-modalContainer .pm-field-container--full {
+      width: 100%;
+  }
+}
+/* end special case */
