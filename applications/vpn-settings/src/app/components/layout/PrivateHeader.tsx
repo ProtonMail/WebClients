@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainLogo, SupportDropdown, TopNavbar, Hamburger } from 'react-components';
+import { MainLogo, TopNavbar, Hamburger } from 'react-components';
 
 interface Props extends React.HTMLProps<HTMLElement> {
     expanded?: boolean;
@@ -12,9 +12,7 @@ const PrivateHeader = ({ expanded, onToggleExpand }: Props) => {
             <MainLogo url="/account" className="nomobile" />
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
             <div className="searchbox-container nomobile" />
-            <TopNavbar>
-                <SupportDropdown />
-            </TopNavbar>
+            <TopNavbar />
         </header>
     );
 };
