@@ -9,16 +9,23 @@
             translate-context="Title"
             class="aligncenter mt2">Welcome {{::user.DisplayName}}</h1>
 
-        <p class="p0 m0">
+        <p class="p0 m0" ng-if="welcomeModel.unread">
             <span
                 translate-context="You have 5 unread emails in your inbox."
                 translate>You have</span>
             <strong
                 translate translate-n="welcomeModel.unread"
-                translate-plural="{{$count}} unread emails" translate-context="You have 5 unread emails in your inbox.">{{$count}} unread email</strong>
+                translate-plural="{{$count}} unread emails"
+                translate-context="You have 5 unread emails in your inbox.">{{$count}} unread email</strong>
             <span
                 translate-context="You have 5 unread emails in your inbox."
                 translate>in your inbox.</span>
+        </p>
+
+        <p class="p0 m0" ng-if="!welcomeModel.unread">
+            <span
+                translate-context="Empty inbox message ~ welcome page"
+                translate>You do not have any unread emails in your inbox.</span>
         </p>
 
         <div ng-if="!isFree" >
