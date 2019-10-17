@@ -68,7 +68,6 @@ const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }) => {
             onClose={onClose}
             onSubmit={() => withLoading(handleSubmit())}
             title={c('Title').t`Update recovery/notification email`}
-            small
             {...rest}
         >
             <Row>
