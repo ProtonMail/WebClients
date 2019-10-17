@@ -33,7 +33,7 @@ function countElementsSelected(dispatchers, tools, $stateParams, cacheCounters, 
         conversation(n) {
             return gettextCatalog.getPlural(n, '{{$count}} conversation', '{{$count}} conversations', {}, 'Info');
         },
-        messages(n) {
+        message(n) {
             return gettextCatalog.getPlural(n, '{{$count}} message', '{{$count}} messages', {}, 'Info');
         },
         elements(n) {
@@ -71,7 +71,6 @@ function countElementsSelected(dispatchers, tools, $stateParams, cacheCounters, 
                 scope.selectedLabelTotalRaw = total;
                 scope.selectedLabelType = Exclusive && 'folder';
                 scope.selectedLabelName = stripHTML(Name);
-                return;
             }
 
             scope.selectedLabelTotalTxt = (n) => I18N.elements(n);
