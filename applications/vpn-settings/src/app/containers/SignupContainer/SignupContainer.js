@@ -106,9 +106,7 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
 
     const handlePayment = async (model, paymentParameters = {}) => {
         const paymentDetails = await makePayment(model, paymentParameters);
-        const { Payment = {} } = paymentParameters;
-        const { Type = '' } = Payment;
-        await withCreateLoading(signup(model, { paymentDetails, paymentMethodType: Type }));
+        await withCreateLoading(signup(model, { paymentDetails, paymentMethodType: paymentParameters.type }));
         setModel(model);
     };
 
