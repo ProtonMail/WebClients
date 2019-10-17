@@ -13,7 +13,7 @@ const MEDIUM_WIDTH = '80';
 const MEDIUM_HEIGHT = '80';
 
 interface Props {
-    size: 'small' | 'medium' | 'big';
+    size?: 'small' | 'medium' | 'big';
 }
 
 const Loader = ({ size = 'small' }: Props) => {

@@ -5,6 +5,7 @@ import { usePopper, Popper } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { noop } from 'proton-shared/lib/helpers/function';
 
+/** @type any */
 const Dropdown = ({
     anchorRef,
     children,

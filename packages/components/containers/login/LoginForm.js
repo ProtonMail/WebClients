@@ -30,6 +30,7 @@ const FORM = {
     UNLOCK: 3
 };
 
+/** @type any */
 const LoginForm = ({ onLogin, ignoreUnlock = false, needHelp }) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();

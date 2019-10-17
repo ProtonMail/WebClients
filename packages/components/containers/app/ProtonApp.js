@@ -19,6 +19,7 @@ import CacheProvider from '../cache/Provider';
 import AuthenticationProvider from '../authentication/Provider';
 import RightToLeftProvider from '../rightToLeft/Provider';
 
+/** @type any */
 const ProtonApp = ({ config, children }) => {
     const authentication = useInstance(() =>
         createAuthentication(createSecureSessionStorage([MAILBOX_PASSWORD_KEY, UID_KEY]))
