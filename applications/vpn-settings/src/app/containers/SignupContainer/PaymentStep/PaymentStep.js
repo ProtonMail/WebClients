@@ -34,7 +34,14 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                                 <PrimaryButton
                                     loading={loading}
                                     disabled={!canPay}
-                                    onClick={() => withLoading(onPay(model, parameters))}
+                                    onClick={() =>
+                                        withLoading(
+                                            onPay(model, {
+                                                ...parameters,
+                                                type: PAYMENT_METHOD_TYPES.CARD
+                                            })
+                                        )
+                                    }
                                 >{c('Action').t`Confirm payment`}</PrimaryButton>
                             </Field>
                         )}
