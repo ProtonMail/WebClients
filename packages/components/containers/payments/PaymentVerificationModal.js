@@ -12,7 +12,7 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import errorSvg from 'design-system/assets/img/pm-images/error.svg';
-import { ADD_CARD_MODE } from 'proton-shared/lib/constants';
+import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
 import { toParams, process } from './paymentTokenHelper';
 import PaymentVerificationImage from './PaymentVerificationImage';
@@ -71,7 +71,7 @@ const PaymentVerificationModal = ({
                 ApprovalURL: approvalURL,
                 signal: abortRef.current.signal
             });
-            onSubmit(toParams(params, token));
+            onSubmit(toParams(params, token, PAYMENT_METHOD_TYPES.CARD));
             rest.onClose();
         } catch (error) {
             clearTimeout(timeoutID);

@@ -139,11 +139,13 @@ export const process = ({ Token, api, ApprovalURL, ReturnHost, signal }) => {
  * Prepare parameters to be sent to API
  * @param {Object} params
  * @param {String} Token
+ * @param {String} type original type used to generate the token (card, paypal, paypal-credit)
  * @returns {Object}
  */
-export const toParams = (params, Token) => {
+export const toParams = (params, Token, type) => {
     return {
         ...params,
+        type,
         Payment: {
             Type: TOKEN,
             Details: {
@@ -175,7 +177,7 @@ export const handlePaymentToken = async ({ params, api, createModal, mode }) => 
     );
 
     if (Status === STATUS_CHARGEABLE) {
-        return toParams(params, Token);
+        return toParams(params, Token, Type);
     }
 
     return new Promise((resolve, reject) => {

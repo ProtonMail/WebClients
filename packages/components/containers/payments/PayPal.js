@@ -20,11 +20,11 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
         abortRef.current && abortRef.current.abort();
     };
 
-    const handleClick = async ({ Token, ReturnHost, ApprovalURL }) => {
+    const handleClick = async ({ type, Token, ReturnHost, ApprovalURL }) => {
         try {
             abortRef.current = new AbortController();
             await process({ Token, api, ApprovalURL, ReturnHost, signal: abortRef.current.signal });
-            onPay(toParams({ Amount, Currency }, Token));
+            onPay(toParams({ Amount, Currency }, Token, type));
         } catch (error) {
             // if not coming from API error
             if (error.message && !error.config) {
@@ -54,8 +54,14 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
                 })
             )
         ]);
-        paypalRef.current = paypalResult;
-        paypalCreditRef.current = paypalCreditResult;
+        paypalRef.current = {
+            ...paypalResult,
+            type: PAYMENT_METHOD_TYPES.PAYPAL
+        };
+        paypalCreditRef.current = {
+            ...paypalCreditResult,
+            type: PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
+        };
     };
 
     useEffect(() => {
