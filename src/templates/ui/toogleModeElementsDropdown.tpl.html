@@ -1,7 +1,10 @@
 <div class="toogleModeElementsDropdown-container flex" data-layout="{{layout}}">
 
     <dropdown-container class="toogleModeElementsDropdown-dropdown flex">
-        <dropdown-button class="toolbar-button toolbar-button--dropdown">
+        <dropdown-button
+            class="toolbar-button toolbar-button--dropdown"
+            pt-tooltip-translate="Change layout"
+            pt-tooltip-translate-context="Action toolbar">
             <span class="mauto flex" data-if="col">
                 <icon data-name="layout-columns" class="mauto toolbar-icon"></icon>
                 <span class="sr-only" translate-context="Action" translate>Change layout (columns)</span>
