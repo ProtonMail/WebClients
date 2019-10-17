@@ -3,6 +3,9 @@ import cardPanel from './directives/cardPanel';
 import donateBtn from './directives/donateBtn';
 import donation from './directives/donation';
 import donateModal from './modals/donateModal';
+import bitcoinDetails from './directives/bitcoinDetails';
+import bitcoinQrcode from './directives/bitcoinQrcode';
+import bitcoinView from './directives/bitcoinView';
 import donationExternalSubmit from './directives/donationExternalSubmit';
 import featuresList from './directives/featuresList';
 import giftCodeBtn from './directives/giftCodeBtn';
@@ -34,7 +37,10 @@ export default angular
     .directive('cardPanel', cardPanel)
     .directive('donation', donation)
     .directive('donationExternalSubmit', donationExternalSubmit)
+    .directive('bitcoinDetails', bitcoinDetails)
+    .directive('bitcoinQrcode', bitcoinQrcode)
     .directive('featuresList', featuresList)
+    .directive('bitcoinView', bitcoinView)
     .directive('giftCodeBtn', giftCodeBtn)
     .directive('giftCodeInput', giftCodeInput)
     .directive('giftCodeValidator', giftCodeValidator)
