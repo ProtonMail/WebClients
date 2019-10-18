@@ -1,10 +1,10 @@
 <header data-responsive-composer="message" class="composerHeader-container flex pb1">
     <span ng-click="unminimize(message);" class="subject composerHeader-subject flex-self-vcenter flex-item-fluid pl0-5 pr1 ellipsis">{{subject(message)}}</span>
-    <div class="composerHeader-actions flex-item-noshrink actions mlauto">
+    <div class="composerHeader-actions flex-item-noshrink flex actions mlauto">
         <button
             type="button"
             ng-show="!!!message.minimized"
-            class="pl0-5 pr0-5 minimize-button hidden-xs composerHeader-btn composer-action-minimize"
+            class="flex pl0-5 pr0-5 minimize-button hidden-xs composerHeader-btn composer-action-minimize"
             ng-click="minimize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Minimize"
@@ -15,7 +15,7 @@
         <button
             type="button"
             ng-show="!!message.minimized"
-            class="pl0-5 pr0-5 expand-button hidden-xs composerHeader-btn composer-action-expand"
+            class="flex pl0-5 pr0-5 expand-button hidden-xs composerHeader-btn composer-action-expand"
             ng-click="unminimize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Expand"
@@ -26,7 +26,7 @@
         <button
             type="button"
             ng-show="!!!message.maximized"
-            class="pl0-5 pr0-5 maximize-button hidden-xs hidden-sm composerHeader-btn composer-action-maximize"
+            class="flex pl0-5 pr0-5 maximize-button hidden-xs hidden-sm composerHeader-btn composer-action-maximize"
             ng-click="normalize(message);maximize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Fullscreen"
@@ -37,7 +37,7 @@
         <button
             type="button"
             ng-show="!!message.maximized"
-            class="pl0-5 pr0-5 maximize-button hidden-xs composerHeader-btn composer-action-maximize"
+            class="flex pl0-5 pr0-5 maximize-button hidden-xs composerHeader-btn composer-action-maximize"
             ng-click="normalize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Exit fullscreen"
@@ -47,7 +47,7 @@
         </button>
         <button
             type="button"
-            class="pl0-5 pr0-5 close-button composerHeader-btn composer-action-close"
+            class="flex pl0-5 pr0-5 close-button composerHeader-btn composer-action-close"
             ng-click="saveAndClose(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Close"

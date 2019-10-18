@@ -17,14 +17,10 @@
 .composerInputMeta-overlay-fakefield {
     padding: .4em .85em;
     max-height: 2.5em;
-    max-width: calc(100% - 10em);
+    margin-right: 2.6rem;
     background: #fcfdff;
 }
 
-/* Why ??? ¯\_(ツ)_/¯ */
-.composerInputMeta-recipients .composerInputMeta-overlay-fakefield {
-    max-width: calc(100% - 10em);
-}
 .composerInputMeta-overlay-list {
 
     /*max-width: calc(100% - 1.5em);*/
@@ -38,28 +34,30 @@
         z-index: -10;
     }
 }
-.composerInputMeta-overlay-button,
 .composerInputMeta-trigger-button {
     z-index: 2;
-    padding-left: 0.15em;
-    padding-right: 0.35em
+    padding-left: .5rem;
+    padding-right: .5rem;
 }
+
+.composerInputMeta-overlay-button {
+    z-index: 2;
+}
+
+
 
 .composerInputMeta-overlay-button {
     outline: 0;
 }
 
-.composer-toggle-ccbcc .composerInputMeta-overlay-button svg {
+.composer-toggle-ccbcc .composerInputMeta-overlay-button svg,
+.composer-toggle-ccbcc .composerInputMeta-trigger-button svg {
     transform: rotate(180deg);
 }
 
 .composerInputMeta-overlay-hidden .composerInputMeta-overlay {
     visibility: hidden;
     pointer-events: none
-}
-
-.composer-toggle-ccbcc .composerInputMeta-trigger-button svg {
-    transform: rotate(180deg);
 }
 
 .composerInputMeta-container.composerInputMeta-overlay-hidden {

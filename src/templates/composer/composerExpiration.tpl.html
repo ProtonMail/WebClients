@@ -1,17 +1,17 @@
 <form class="composerExpiration-container" name="expirationForm">
-    <div class="shadow-container flex flex-column m1 p1">
-        <header class="composerExpiration-header">
+    <div class="shadow-container flex flex-column flex-nowrap m1 p1 onmobile-m0 scroll-if-needed">
+        <header class="composerExpiration-header flex-item-noshrink">
             <h3 translate translate-context="Title">Expiration time</h3>
         </header>
-        <p class="block-info-standard" translate-context="Warning" translate>
+        <p class="block-info-standard flex-item-noshrink" translate-context="Warning" translate>
                 If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.<br>
                 <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">
                     Learn more
                 </a>
         </p>
-        <p translate translate-context="Info" class="bold mt0">This message will expire in</p>
-        <div class="pm_form alert aligncenter flex_item-fluid composerExpiration-fields-container">
-            <div class="composerExpiration-field-weeks mr0-5">
+        <p translate translate-context="Info" class="bold mt0 onmobile-m0 flex-item-noshrink">This message will expire in</p>
+        <div class="pm_form alert aligncenter flex_item-fluid composerExpiration-fields-container flex-item-noshrink">
+            <div class="composerExpiration-field-weeks automobile mr0-5">
                 <select
                     name="weeks"
                     id="weeks"
@@ -22,7 +22,7 @@
                 <label translate translate-context="Delay" for="weeks">Weeks</label>
             </div>
 
-            <div class="composerExpiration-field-days mr0-5">
+            <div class="composerExpiration-field-days automobile mr0-5">
                 <select
                     name="days"
                     id="days"
@@ -32,7 +32,7 @@
                 <label translate translate-context="Delay" for="days">Days</label>
             </div>
 
-            <div class="composerExpiration-field-hours">
+            <div class="composerExpiration-field-hours automobile">
                 <select
                     name="hours"
                     id="hours"
@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <footer class="alignright flex flex-spacebetween mtauto">
+        <footer class="alignright flex flex-spacebetween mtauto flex-item-noshrink onmobile-pb1">
             <button
                 type="button"
                 class="pm-button mobileFull composer-options-btn-cancel composerExpiration-btn-cancel"

@@ -537,6 +537,15 @@
     }
 }
 
+@include respond-to(400) {
+
+    .composer-footer-other-actions {
+       float: none;
+       margin-top: .5em;
+    }
+
+}
+
 
 @media screen and (max-height: 500px) {
     #pm_composer {

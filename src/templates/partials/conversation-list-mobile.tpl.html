@@ -15,7 +15,7 @@
 
             <select-box-element class="mr1"></select-box-element>
             <div class="flex-item-fluid flex flex-column flex-spacebetween item-titlesender">
-                <div class="flex">
+                <div class="flex mw100">
                     <div class="subject flex-item-fluid flex flex-nowrap w0 pr1" ng-attr-title="{{ conversation.Subject | unescape }}">
                         <states-elements></states-elements>
                         <folders-element data-conversation="conversation"></folders-element>
@@ -26,7 +26,7 @@
                         <time-element></time-element>
                     </span>
                 </div>
-                <div class="flex">
+                <div class="flex mw100">
                     <span
                     class="senders flex flex-item-fluid pr1"
                     ng-class="{ 'full': !hasLabels(conversation) }">

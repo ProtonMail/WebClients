@@ -1,16 +1,16 @@
 <form class="options composerEncrypt-container" name="encryptForm">
-    <div class="shadow-container flex flex-column m1 p1">
-        <header class="composerEncrypt-header">
+    <div class="shadow-container flex flex-column flex-nowrap onmobile-flex-column m1 p1 onmobile-m0 scroll-if-needed">
+        <header class="composerEncrypt-header flex-item-noshrink">
             <h3 translate translate-context="Title">Encrypt for non-ProtonMail users</h3>
         </header>
-        <p class="block-info-standard" translate translate-context="Info">
+        <p class="block-info-standard flex-item-noshrink onmobile-mt0" translate translate-context="Info">
             Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.<br>
             <a href="https://protonmail.com/support/knowledge-base/encrypt-for-outside-users/" target="_blank">
                 Learn more
             </a>
         </p>
-        <div class="alert flex-item-fluid">
-            <div ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}" class="flex flex-row mb0-5">
+        <div class="alert flex-item-fluid flex-item-noshrink">
+            <div ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}" class="flex flex-row onmobile-flex-column mb0-5">
                 <label
                     for="outsidePw"
                     class="text-muted bold flex-item-fluid" translate translate-context="Title">Message Password</label>
@@ -28,7 +28,7 @@
                         required>
                 </div>
             </div>
-            <div ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}" class="flex flex-row mb0-5">
+            <div ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}" class="flex flex-row onmobile-flex-column mb0-5">
                 <label
                     for="outsidePwConfirm"
                     class="text-muted bold flex-item-fluid" translate translate-context="Title">Confirm Password</label>
@@ -46,7 +46,7 @@
                         required>
                 </div>
             </div>
-            <div class="flex flex-row mb0-5">
+            <div class="flex flex-row onmobile-flex-column mb0-5">
                 <label
                     for="outsidePwHint"
                     class="text-muted flex-item-fluid">
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <footer class="alignright flex flex-spacebetween mtauto">
+        <footer class="alignright flex flex-spacebetween flex-item-noshrink mtauto onmobile-pb1">
             <button
                 type="button"
                 class="pm-button mobileFull composer-options-btn-cancel composerEncrypt-btn-cancel"
