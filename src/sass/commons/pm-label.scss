@@ -10,7 +10,8 @@
         border: 2px solid currentColor;
         background-color: currentColor;
         transition: max-width .25s ease;
-        max-height: 100% /* Prevent wrong height on Edge ~ row mode */
+        max-height: 100%; /* Prevent wrong height on Edge ~ row mode */
+        max-width: 15em;
     }
     [class*="-label"]:last-of-type {margin-right: 0}
 
