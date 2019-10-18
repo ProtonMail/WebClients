@@ -95,10 +95,10 @@ function conversation(
             scope.showNonTrashed = false;
             AppModel.set('numberElementSelected', 1);
             AppModel.set('showWelcome', false);
+            scope.isMobile = AppModel.is('mobile');
             scope.inTrash = $state.includes('secured.trash.**');
             scope.inSpam = $state.includes('secured.spam.**');
             scope.getElements = () => [scope.conversation];
-
             const openMarked = (message) => () => {
                 const msg = message || scope.markedMessage;
 
@@ -165,6 +165,14 @@ function conversation(
                         return dispatcher.messageActions('move', { ids: [scope.markedMessage.ID], labelID });
                     }
                     actionConversation.move([scope.conversation.ID], labelID);
+                }
+            });
+
+            on('AppModel', (e, { type }) => {
+                if (type === 'mobile') {
+                    scope.$applyAsync(() => {
+                        scope.isMobile = AppModel.is('mobile');
+                    });
                 }
             });
 

@@ -11,6 +11,7 @@
 
                 <div class="labels message-summary-labels">
                     <labels-element
+                        ng-if="!isMobile"
                         data-button="remove"
                         data-element="conversation"
                         class="message-summary-labels-list flex-nowrap"></labels-element>
@@ -22,6 +23,12 @@
                     data-pt-star-type="conversation"></pt-star>
             </div>
 
+        </div>
+        <div ng-if="isMobile">
+            <labels-element
+                data-button="remove"
+                data-element="conversation"
+                class="message-summary-labels-list flex-nowrap "></labels-element>
         </div>
 
         <div ng-hide="'secured.search.**' | includedByState" class="containsMessage flex flex-column">
