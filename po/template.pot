@@ -110,6 +110,11 @@ msgctxt "Action"
 msgid "Add Filter"
 msgstr ""
 
+#: ./src/templates/payment/paypalView.tpl.html:33
+msgctxt "Action"
+msgid "Add PayPal payment method"
+msgstr ""
+
 #: ./src/templates/views/payments.tpl.html:15
 msgctxt "Action"
 msgid "Add Payment Method"
@@ -496,9 +501,10 @@ msgctxt "Action"
 msgid "Change verification number"
 msgstr ""
 
-#: ./src/templates/payment/paypalView.tpl.html:20
+#: ./src/templates/payment/paypalView.tpl.html:23
+#: ./src/templates/payment/paypalView.tpl.html:40
 msgctxt "Action"
-msgid "Checkout with PayPal"
+msgid "Check out with PayPal"
 msgstr ""
 
 #: ./src/templates/contact/contactPhotoRow.tpl.html:27
@@ -625,7 +631,7 @@ msgctxt "Action"
 msgid "Common login problems"
 msgstr ""
 
-#: ./src/templates/user/humanVerification.tpl.html:92
+#: ./src/templates/user/humanVerification.tpl.html:93
 msgctxt "Action"
 msgid "Complete setup"
 msgstr ""
@@ -1569,7 +1575,6 @@ msgctxt "Action"
 msgid "Restore administrator privileges"
 msgstr ""
 
-#: ./src/templates/payment/paypalView.tpl.html:11
 #: ./src/templates/user/signupPayForm.tpl.html:95
 msgctxt "Action"
 msgid "Retry"
@@ -1996,7 +2001,7 @@ msgctxt "Action"
 msgid "click here"
 msgstr ""
 
-#: ./src/templates/payment/donation.tpl.html:129
+#: ./src/templates/payment/donation.tpl.html:130
 msgctxt "Action"
 msgid "complete setup"
 msgstr ""
@@ -5837,6 +5842,11 @@ msgctxt "Info"
 msgid "Please verify the card in the new tab which was opened."
 msgstr ""
 
+#: ./src/templates/payment/paypalView.tpl.html:15
+msgctxt "Info"
+msgid "Please verify your PayPal account at the new tab which was opened."
+msgstr ""
+
 #: ./src/app/formUtils/directives/codeVerificator.js:10
 msgctxt "Info"
 msgid "Please wait {{delay}} second(s) before requesting a new code"
@@ -6206,6 +6216,11 @@ msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr ""
 
+#: ./src/templates/payment/paypalView.tpl.html:31
+msgctxt "Info"
+msgid "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue."
+msgstr ""
+
 #: ./src/templates/partials/safari.attachment.warning.tpl.html:14
 #: ./src/templates/partials/safari.warning.tpl.html:14
 msgctxt "Info"
@@ -6285,6 +6300,7 @@ msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (
 msgstr ""
 
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
+#: ./src/templates/payment/paypalView.tpl.html:17
 msgctxt "Info"
 msgid "Verification can take a few minutes."
 msgstr ""
@@ -6357,6 +6373,12 @@ msgstr ""
 #: ./src/templates/contact/importContactModal.tpl.html:9
 msgctxt "Info"
 msgid "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard. (UTF-8 encoding). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Need help?</a>"
+msgstr ""
+
+#: ./src/templates/payment/paypalView.tpl.html:21
+#: ./src/templates/payment/paypalView.tpl.html:39
+msgctxt "Info"
+msgid "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
 msgstr ""
 
 #: ./src/app/message/directives/unsubscribePanel.js:24
@@ -6494,6 +6516,16 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr ""
 
+#: ./src/templates/payment/paypalView.tpl.html:35
+msgctxt "Info"
+msgid "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
+msgstr ""
+
+#: ./src/templates/payment/paypalView.tpl.html:26
+msgctxt "Info"
+msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please"
+msgstr ""
+
 #: ./src/app/members/services/memberActions.js:38
 msgctxt "Info"
 msgid "You must provide this user with the Organization Password in order to fully activate administrator privileges."
@@ -6514,11 +6546,6 @@ msgstr ""
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:29
 msgctxt "Info"
 msgid "You will be soon redirected to your bank to verify your payment."
-msgstr ""
-
-#: ./src/templates/payment/paypalView.tpl.html:3
-msgctxt "Info"
-msgid "You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue."
 msgstr ""
 
 #: ./src/templates/modals/payment/modal.tpl.html:39
@@ -7751,6 +7778,11 @@ msgctxt "Link"
 msgid "Why is this required?"
 msgstr ""
 
+#: ./src/templates/payment/paypalView.tpl.html:26
+msgctxt "Link"
+msgid "click here"
+msgstr ""
+
 #: ./src/templates/modals/deleteAccount.tpl.html:11
 msgctxt "Link"
 msgid "this procedure"
@@ -8358,12 +8390,12 @@ msgctxt "Payment method"
 msgid "Credit Card"
 msgstr ""
 
-#: ./src/templates/payment/paypalView.tpl.html:7
+#: ./src/templates/payment/paypalView.tpl.html:4
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
 msgstr ""
 
-#: ./src/templates/payment/paypalView.tpl.html:8
+#: ./src/templates/payment/paypalView.tpl.html:5
 msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr ""
