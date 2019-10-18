@@ -49,3 +49,25 @@ body.appConfigBody-is-mobile {
     }
 
 }
+
+
+.appConfigBody-is-mobile[id^="secured-"][id$="-element"] {
+
+
+    .toolbar-separator,
+    .toolbarDesktop-select-label,
+    .toogleModeElementsDropdown-dropdown,
+    .headerSecured-container {
+        display: none
+    }
+
+    .toolbar .toolbar-button {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .items-column-list, .view-column-detail, [id="wrapper"], .securedContent-wrapper {
+        height: 100%;
+        max-height: 100%;
+    }
+}
