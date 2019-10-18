@@ -114,7 +114,7 @@
 
     <paypal-view
         ng-if="model.method.value === 'paypal' && !donationForm.otherAmount.$error.max"
-        data-type="donation"
+        data-type="{{::type}}"
         data-amount="getAmount()"
         data-currency="model.currency.value"
         data-callback="paypalCallback"></paypal-view>
