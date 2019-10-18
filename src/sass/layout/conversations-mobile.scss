@@ -53,11 +53,11 @@ body.appConfigBody-is-mobile {
 
 .appConfigBody-is-mobile[id^="secured-"][id$="-element"] {
 
-
     .toolbar-separator,
     .toolbarDesktop-select-label,
+    .headerSecuredMobile-compose,
     .toogleModeElementsDropdown-dropdown,
-    .headerSecured-container {
+    .headerSecured-container-retour {
         display: none
     }
 
