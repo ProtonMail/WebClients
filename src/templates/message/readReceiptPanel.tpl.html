@@ -1,5 +1,9 @@
-<div class="readReceiptPanel-container bg-white w100 rounded bordered-container p0-5 mb0-5 flex flex-nowrap">
+<div class="readReceiptPanel-container bg-white w100 rounded bordered-container p0-5 mb0-5 flex flex-nowrap flex-items-center">
     <icon data-name="info" class="flex-item-noshrink fill-global-gre mtauto mbauto"></icon>
-    <span class="readReceiptPanel-notice-text pl0-5 pr0-5  mtauto mbauto flex-item-fluid" translate-context="Info display in the read receipt panel (message view)" translate>The sender has requested a read receipt</span>
-    <button type="button" class="readReceiptPanel-button disabled-if-network-activity link bold" translate-context="Action" translate>Send receipt</button>
+    <span class="w100 flex flex-wrap">
+        <span class="readReceiptPanel-notice-text pl0-5 pr0-5  mtauto mbauto flex-item-fluid-auto" translate-context="Info display in the read receipt panel (message view)" translate>The sender has requested a read receipt</span>
+        <span class="flex-item-noshrink flex">
+            <button type="button" class="readReceiptPanel-button disabled-if-network-activity pl0-5 pr0-5 link bold" translate-context="Action" translate>Send receipt</button>
+        </span>
+    </span>
 </div>

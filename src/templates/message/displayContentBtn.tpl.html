@@ -4,11 +4,15 @@
         'displayContentBtn-type-embedded': message.showEmbedded === false,
         'displayContentBtn-type-remote': message.showImages === false}">
     <icon data-name="insert-image" class="flex-item-noshrink fill-global-grey mtauto mbauto"></icon>
-    <span class="pl0-5 pr0-5  mtauto mbauto flex-item-fluid">
-        <span class="displayContentBtn-notice-text"></span>
+    <span class="w100 flex flex-wrap">
+        <span class="pl0-5 pr0-5  mtauto mbauto flex-item-fluid-auto">
+            <span class="displayContentBtn-notice-text"></span>
+        </span>
+        <span class="flex-item-noshrink flex">
+            <button
+                class="displayContentBtn-button link pl0-5 pr0-5 bold"
+                translate
+                translate-context="Action">Load</button>
+        </span>
     </span>
-    <button
-        class="displayContentBtn-button link bold"
-        translate
-        translate-context="Action">Load</button>
 </div>

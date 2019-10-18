@@ -181,35 +181,35 @@
                 </div>
             </div>
 
-            <div class="action-row mb0-5 flex flex-spacebetween">
+            <div class="action-row flex flex-items-center flex-spacebetween">
 
-                <button class="toggleDetails link" data-action-message="toggleDetails">
+                <button class="toggleDetails link mb0-5" data-action-message="toggleDetails">
                     <span class="toggleDetails-label-show" translate translate-context="Action">Show details</span>
                     <span class="toggleDetails-label-hide" translate translate-context="Action">Hide details</span>
                 </button>
 
                 <div class="actions flex" ng-if="message.decrypting === false">
 
-                    <div class="pm-group-buttons mr1">
+                    <div class="pm-group-buttons mr1 mb0-5">
                         <filter-button
                             data-message="message"
-                            class="pm_buttons flex pm-group-button pm-button p0"></filter-button>
+                            class="pm_buttons flex pm-group-button pm-button pm-button--for-icon"></filter-button>
 
                         <folder-selector-dropdown
                             data-message="message"
-                            class="pm_buttons flex pm-group-button pm-button p0"></folder-selector-dropdown>
+                            class="pm_buttons flex pm-group-button pm-button pm-button--for-icon"></folder-selector-dropdown>
 
                         <label-selector-dropdown
                             data-message="message"
-                            class="pm_buttons flex pm-group-button pm-button p0"></label-selector-dropdown>
+                            class="pm_buttons flex pm-group-button pm-button pm-button--for-icon"></label-selector-dropdown>
 
                         <message-options
-                            class="pm_buttons flex pm-group-button pm-button p0"></message-options>
+                            class="pm_buttons flex pm-group-button pm-button pm-button--for-icon"></message-options>
                     </div>
 
-                    <div class="pm-group-buttons">
+                    <div class="pm-group-buttons mb0-5">
                         <button
-                            class="pm-group-button pm-button pm-button--for-icon dropdown-actions-nowrap-reply"
+                            class="pm-group-button inline-flex pm-button pm-button--for-icon dropdown-actions-nowrap-reply"
                             data-action-compose="::message"
                             data-action-compose-type="reply"
                             pt-tooltip-translate="Reply"
@@ -220,7 +220,7 @@
                         </button>
 
                         <button
-                            class="pm-group-button pm-button pm-button--for-icon dropdown-actions-nowrap-replyall"
+                            class="pm-group-button inline-flex pm-button pm-button--for-icon dropdown-actions-nowrap-replyall"
                             data-action-compose="::message"
                             data-action-compose-type="replyall"
                             pt-tooltip-translate="Reply all"
@@ -231,7 +231,7 @@
                         </button>
 
                         <button
-                            class="pm-group-button pm-button pm-button--for-icon dropdown-actions-nowrap-forward"
+                            class="pm-group-button inline-flex pm-button pm-button--for-icon dropdown-actions-nowrap-forward"
                             data-action-compose="::message"
                             data-action-compose-type="forward"
                             pt-tooltip-translate="Forward"

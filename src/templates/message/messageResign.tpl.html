@@ -1,18 +1,22 @@
 <div class="message-resign-container bg-global-attention color-white w100 rounded p0-5 mb0-5 flex flex-nowrap">
     <icon data-name="attention" data-size="16" class=" fill-white mtauto mbauto"></icon>
-    <div class="message-resign-notice flex flex-item-fluid pr1">
+    <div class="message-resign-notice w100 flex flex-wrap">
         <span
-            class="message-resign-notice-text pl0-5 pr0-5  mtauto mbauto flex-item-fluid"
+            class="message-resign-notice-text pl0-5 pr0-5 mtauto mbauto flex-item-fluid-auto pr1"
             translate-context="Info"
             translate>The message signature could not be verified as the signature on the contact is invalid.</span>
-        <a
-            class="message-resign-notice-link color-white bold underline mtauto mbauto"
-            href="https://protonmail.com/support/knowledge-base/sending-a-message-using-pgppgp/"
-            target="_blank"
-            translate-context="Action"
-            translate>Learn more</a>
+        <span class="flex-item-noshrink flex">
+            <a
+                class="message-resign-notice-link color-white pl0-5 pr0-5 bold mtauto mbauto"
+                href="https://protonmail.com/support/knowledge-base/sending-a-message-using-pgppgp/"
+                target="_blank"
+                translate-context="Action"
+                translate>Learn more</a>
+            <button type="button" class="message-resign-button pl0-5 pr0-5 underline color-white bold">
+                <span translate-context="Action" translate>Re-sign</span>
+            </button>
+        </span>
+
     </div>
-    <button type="button" class="message-resign-button color-white bold underline uppercase">
-        <span translate-context="Action" translate>Re-sign</span>
-    </button>
+
 </div>

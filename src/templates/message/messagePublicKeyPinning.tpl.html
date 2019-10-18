@@ -1,20 +1,24 @@
 <div class="message-pinning-container bg-white w100 rounded bordered-container p0-5 mb0-5 flex flex-nowrap">
     <icon data-name="info" class="flex-item-noshrink fill-global-grey mtauto mbauto"></icon>
-    <span class="message-pinning-notice flex flex-item-fluid pr1">
+    <span class="message-pinning-notice w100 flex flex-wrap">
         <span
-            class="message-pinning-notice-text pl0-5 pr0-5 mtauto mbauto flex-item-fluid"
+            class="message-pinning-notice-text pl0-5 pr0-5 flex-item-fluid-auto pr1"
             translate-context="Info"
             translate>This sender's public key has not been trusted yet.</span>
-        <button
-            class="link nodecoration bold"
-            data-action="never-show"
-            translate-context="Action"
-            translate>Never show</button>
+        <span class="flex-item-noshrink flex">
+            <button
+                class="link nodecoration pl0-5 pr0-5 bold"
+                data-action="never-show"
+                translate-context="Action"
+                translate>Never show</button>
+            <button
+                type="button"
+                data-action="settings"
+                class="message-pin-show-button pl0-5 pr0-5 link nodecoration bold"
+                translate-context="Action"
+                translate>Trust keys</button>
+        </span>
+
     </span>
-    <button
-        type="button"
-        data-action="settings"
-        class="message-pin-show-button link nodecoration bold"
-        translate-context="Action"
-        translate>Trust keys</button>
+
 </div>

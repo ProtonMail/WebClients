@@ -1,28 +1,31 @@
 <div class="public-key-found-container bg-white w100 rounded bordered-container flex-items-center p0-5 mb0-5 flex flex-nowrap"
     ng-class="{ 'messageExtra-container-warning': message.verified > 1 }">
     <icon data-name="info" class="flex-item-noshrink fill-global-grey mtauto mbauto"></icon>
-    <span class="public-key-found-notice flex flex-item-fluid flex-items-center pr1">
+    <span class="public-key-found-notice w100 flex flex-wrap">
         <span
-            class="public-key-found-notice-text pl0-5 pr0-5  mtauto mbauto flex-item-fluid"
+            class="public-key-found-notice-text pl0-5 pr0-5 flex-item-fluid-auto pr1"
             ng-if="message.verified < 2 && !message.isInternal()"
             translate-context="Info"
             translate>An unknown public key has been detected for this recipient.</span>
         <span
-            class="public-key-found-notice-text pl0-5 pr0-5  mtauto mbauto flex-item-fluid"
+            class="public-key-found-notice-text pl0-5 pr0-5 flex-item-fluid-auto pr1"
             ng-if="message.isInternal() || message.verified > 1"
             translate-context="Info"
             translate>This message is signed by a public key that has not been trusted yet.
         </span>
-        <a
-            class="public-key-found-notice-link nodecoration bold"
-            href="https://protonmail.com/support/knowledge-base/how-to-use-pgp/"
-            target="_blank"
-            translate-context="Action"
-            translate>Learn more</a>
+        <span class="flex-item-noshrink flex">
+            <a
+                class="public-key-found-notice-link pl0-5 pr0-5 nodecoration bold"
+                href="https://protonmail.com/support/knowledge-base/how-to-use-pgp/"
+                target="_blank"
+                translate-context="Action"
+                translate>Learn more</a>
+            <button
+                type="button"
+                class="public-key-found-button link pl0-5 pr0-5 nodecoration bold"
+                translate-context="Action"
+                translate>Trust key</button>
+        </span>
     </span>
-    <button
-        type="button"
-        class="public-key-found-button link nodecoration bold"
-        translate-context="Action"
-        translate>Trust key</button>
+
 </div>
