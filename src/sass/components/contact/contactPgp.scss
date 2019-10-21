@@ -1,0 +1,222 @@
+contact-public-keys .pm_table {
+
+    margin-top: 0;
+
+    table {
+        min-width: 550px;
+    }
+
+    td, th {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .fingerprint {
+        padding-right: 0;
+    }
+
+    .actions {
+        width: 73px;
+        text-align: center;
+
+        .pm_button {
+            padding: 0;
+        }
+    }
+
+    button {
+        padding: 0;
+    }
+
+    .download-action {
+        width: 5px;
+        padding-left: 0;
+    }
+
+    .created, .expires {
+        width: 86px;
+    }
+
+    .bits {
+        width: 81px;
+    }
+
+    tbody .bits {
+        font-size: 0.75em;
+    }
+
+    .primary {
+        width: 116px;
+        text-align: center;
+    }
+
+    code {
+        overflow: hidden;
+        display: block;
+        word-break: normal;
+        text-overflow: ellipsis;
+    }
+
+    .empty-table td {
+        text-align: center;
+        background-color: $primary-light;
+
+        i {
+            margin-right: 10px;
+        }
+    }
+
+
+    .warning-message {
+        background-color: rgba(255, 165, 0, 0.4);
+    }
+}
+
+
+contact-public-keys button, .public-key-controls button {
+    border: 0;
+    -webkit-appearance: none;
+    background: none;
+}
+
+.contact-pgp-container {
+
+    .upload-helper {
+        display: none
+    }
+    /*
+     * Hide .item-no-keys if we have keys
+     */
+    &:not(.pgp-no-keys) .item-no-keys {
+        display: none;
+    }
+    /*
+     * Hide .item-has-keys if we don't have keys
+     */
+    &.pgp-no-keys .item-has-keys {
+        display: none;
+    }
+    /*
+     * Hide when not all keys are expired, there are no keys, or encryption is not enabled.
+     */
+    &:not(.pgp-expired), &.pgp-no-keys, &:not(.pgp-encrypt)  {
+        .expired-key-message {
+            display: none;
+        }
+    }
+    /*
+     * Hide the primary public key column if we are not encrypting and the advanced settings is in external mode
+     */
+    &.pgp-external:not(.pgp-encrypt) .primary {
+        display: none;
+    }
+    /*
+     * Hide the pgp messages when not signing: the selected scheme is not actually used in that case
+     */
+    &:not(.pgp-sign) .pgp-mime-only,
+    &:not(.pgp-sign) .pgp-inline-only {
+        display: none;
+    }
+    /*
+     * Hide the pgp mime message when that scheme is not selected
+     */
+    &:not(.pgp-mime) .pgp-mime-only {
+        display: none;
+    }
+    /*
+     * Hide the pgp inline message when that scheme is not selected
+     */
+    &:not(.pgp-inline) .pgp-inline-only {
+        display:none;
+    }
+    /*
+     * Hide pgp not signed if signed
+     */
+    &.pgp-sign .pgp-not-signed {
+        display: none;
+    }
+    /*
+     * Hide enabled address only if the address is disabled
+     */
+    &.pgp-address-disabled .enabled-address-only {
+        display: none;
+    }
+    /*
+     * Hide primary missing elements when we have primary keys
+     */
+    &:not(.pgp-no-primary) .pgp-missing-primary {
+        display: none;
+    }
+    /*
+     * Hide any message targeting disabled addresses when not the address is not disabled
+     */
+    &:not(.pgp-address-disabled) .disabled-address {
+        display: none;
+    }
+}
+
+.pgp-internal .pgp-external-only { display: none }
+.pgp-external .pgp-internal-only { display: none }
+
+.pgp-no-keys .contactEncryptToggle-container,
+.pgp-external.pgp-encrypt .contactMimetypeSelector-container,
+.pgp-external.pgp-sign .contactMimetypeSelector-container,
+.pgp-encrypt .contactSignToggle-container {
+    opacity: 0.75;
+    pointer-events: none;
+
+    .fa {
+        pointer-events: all;
+    }
+}
+
+.contactEncryptToggle-warning-icon { color: $orange }
+.contact-pgp-container:not(.pgp-no-keys) .contactEncryptToggle-warning-icon { display: none }
+
+.contactPublicKeyLabel-container.no-upload-button .contactPublicKeyLabel-button { display: none }
+
+.public-key-button {
+    margin-left: 7px;
+}
+
+.public-key-controls {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contactSchemeSelector-container,
+.contactSignToggle-container{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.contactMimetypeSelector-label,
+.contactEncryptToggle-label,
+.contactSignToggle-label,
+.contactKeyPinning-label {
+    width: 30%;
+}
+
+.contactSchemeSelector-container .pm_select {
+    flex-grow: 1;
+}
+
+.contactPublicKeyLabel-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.appConfigBody-is-mobile {
+    .contactSchemeSelector-container,
+    .contactEncryptToggle-container,
+    .contactSignToggle-container {
+        flex-direction: column;
+    }
+
+    .contactSchemeSelector-label,
+    .contactEncryptToggle-label,
+    .contactSignToggle-label,
+    .contactKeyPinning-label {
+        width: 100%;
+    }
+}

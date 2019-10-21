@@ -180,7 +180,7 @@ $primary: $pm-primary;
 @import "components/message/messageExtra";
 @import "components/message/messageOptions";
 @import "components/message/phishingBtn";
-@import "components/message/trustPublicKeyModal.scss";
+@import "components/message/trustPublicKeyModal";
 
 //== Conversations
 @import "components/conversation/conversation";
@@ -218,6 +218,7 @@ $primary: $pm-primary;
 @import "components/contact/contactAddressInput";
 @import "components/contact/contactAskEncryption";
 @import "components/contact/contactSelectorForm";
+@import "components/contact/contactPgp";
 
 //== Squire
 @import "components/squire/squire-toolbar";
