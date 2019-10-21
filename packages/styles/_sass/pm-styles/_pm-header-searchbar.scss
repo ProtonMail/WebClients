@@ -56,6 +56,12 @@
   }
 }
 
+@include respond-to($breakpoint-small) { 
+  .searchbox-advanced-search-button {
+    position: static;
+  }
+}
+
 @if $rtl-option == true {
   [dir="rtl"] {
     .searchbox-field[type="search"] { 
