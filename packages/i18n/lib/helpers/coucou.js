@@ -1,10 +1,14 @@
 const path = require('path');
 const got = require('got');
 const dedent = require('dedent');
-const { error, success } = require('./log')('proton-i18n');
+const { error, success, warn } = require('./log')('proton-i18n');
 
 async function send(type, message = '') {
     try {
+        if (!process.env.CROWDIN_MESSAGES_HOOK) {
+            return warn('No deploy hook available');
+        }
+
         const { name } = require(path.resolve(process.cwd(), 'package.json'));
         const map = {
             coucou: `:rocket: *translations available for the env*: _${message}_`,

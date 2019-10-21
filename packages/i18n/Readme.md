@@ -124,7 +124,8 @@ You need to have a file `.env` inside the directory `<project>/env/`.
 ```sh
 CROWDIN_KEY_API=<API-KEY>
 CROWDIN_PROJECT_NAME=<CROWDIN-PROJECT-NAME>
-CROWDIN_FILE_NAME='<FILE NAME>.pot'
+CROWDIN_FILE_NAME='<FILE NAME AVAILABLE ON CROWDIN>' // ex: ProtonVPN Settings Website.pot
+I18N_TEMPLATE_FILE:<FILE SOURCE TO UPLOAD TO CROWDIN>
 I18N_EXTRACT_DIR:<OUTPUT DIR FOR POT FILE>
 I18N_JSON_DIR:<OUTPUT DIR FOR TRANSLATED JSON>
 ``` 
@@ -138,9 +139,10 @@ APP_KEY=Angular
 
 > We need this key to detect the project as we require some custom code for it.
 
-### About I18N custom OUTPUT dir
+### About I18N custom variables
 
 You don't need to set the key, only if you want to change them.
+- `I18N_TEMPLATE_FILE`: Default value -> `template.pot`
 - `I18N_EXTRACT_DIR`: Default value -> `po`
 - `I18N_JSON_DIR`: Default value -> `src/i18n`
 

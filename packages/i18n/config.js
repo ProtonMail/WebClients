@@ -15,7 +15,7 @@ const PROTON_DEPENDENCIES = {
 };
 
 const getFiles = () => {
-    const TEMPLATE_NAME = 'template.pot';
+    const TEMPLATE_NAME = process.env.I18N_TEMPLATE_FILE || 'template.pot';
     const I18N_EXTRACT_DIR = process.env.I18N_EXTRACT_DIR || 'po';
     const I18N_JSON_DIR = process.env.I18N_JSON_DIR || 'src/i18n';
     const LANG_EXPORTABLE_LIST = path.join(process.cwd(), I18N_EXTRACT_DIR, 'i18n.txt');
