@@ -33,6 +33,7 @@ export { default as Information } from './components/container/Information';
 export { default as ObserverSection } from './components/container/ObserverSection';
 export { default as ObserverSections } from './components/container/ObserverSections';
 export { default as Tooltip } from './components/tooltip/Tooltip';
+export { default as FloatingButton } from './components/button/FloatingButton';
 export { default as PrimaryButton } from './components/button/PrimaryButton';
 export { default as WarningButton } from './components/button/WarningButton';
 export { default as ErrorButton } from './components/button/ErrorButton';
