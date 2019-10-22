@@ -14,15 +14,18 @@ import {
     DonateModal,
     generateUID,
     PrimaryButton,
-    useConfig
+    useConfig,
+    useSubscription
 } from 'react-components';
 import { revoke } from 'proton-shared/lib/api/auth';
-import { APPS, CLIENT_TYPES } from 'proton-shared/lib/constants';
+import { APPS, CLIENT_TYPES, PLANS } from 'proton-shared/lib/constants';
+import { getPlanName } from 'proton-shared/lib/helpers/subscription';
 
 import UserDropdownButton from './UserDropdownButton';
 
 const { PROTONMAIL_SETTINGS } = APPS;
 const { VPN } = CLIENT_TYPES;
+const { PROFESSIONAL, VISIONARY } = PLANS;
 
 const UserDropdown = ({ ...rest }) => {
     const { APP_NAME, CLIENT_TYPE } = useConfig();
@@ -30,10 +33,12 @@ const UserDropdown = ({ ...rest }) => {
     const [user] = useUser();
     const { DisplayName, Email, Name } = user;
     const [{ Name: organizationName } = {}] = useOrganization();
+    const [subscription] = useSubscription();
     const { logout } = useAuthentication();
     const { createModal } = useModals();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
+    const planName = getPlanName(subscription);
 
     const handleBugReportClick = () => {
         createModal(<AuthenticatedBugModal />);
@@ -62,7 +67,7 @@ const UserDropdown = ({ ...rest }) => {
                                 {Email}
                             </span>
                         ) : null}
-                        {organizationName ? (
+                        {[PROFESSIONAL, VISIONARY].includes(planName) && organizationName ? (
                             <span title={organizationName} className="ellipsis mw100">
                                 {organizationName}
                             </span>
