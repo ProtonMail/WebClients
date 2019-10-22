@@ -11,7 +11,7 @@ function appVersion(releaseNotesModal) {
         replace: true,
         template: `<a data-prefix="v" href="${CONFIG.articleLink}" title="${
             CONFIG.date_version
-        }" target="_blank" class="color-white nodecoration">v${CONFIG.app_version}</a>`,
+        }" target="_blank" class="color-white hover-same-color nodecoration">v${CONFIG.app_version}</a>`,
         link(scope, element) {
             element.on('click', onClick);
 
