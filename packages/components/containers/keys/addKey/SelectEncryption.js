@@ -33,7 +33,7 @@ const SelectEncryption = ({ encryptionType, setEncryptionType }) => {
                 return (
                     <Row key={i}>
                         <Radio id={id} checked={value === encryptionType} onChange={() => setEncryptionType(value)}>
-                            {label}
+                            <span>{label}</span>
                         </Radio>
                     </Row>
                 );

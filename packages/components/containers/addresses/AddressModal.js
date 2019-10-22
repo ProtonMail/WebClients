@@ -12,13 +12,16 @@ import {
     useLoading,
     useNotifications,
     useEventManager,
+    useModals,
     useApi
 } from 'react-components';
 
 import useAddressModal from './useAddressModal';
 import DomainsSelect from './DomainsSelect';
+import CreateMissingKeysAddressModal from './CreateMissingKeysAddressModal';
 
-const AddressModal = ({ onClose, member, ...rest }) => {
+const AddressModal = ({ onClose, member, organizationKey, ...rest }) => {
+    const { createModal } = useModals();
     const { call } = useEventManager();
     const api = useApi();
     const { model, update } = useAddressModal(member);
@@ -30,7 +33,7 @@ const AddressModal = ({ onClose, member, ...rest }) => {
     const handleSubmit = async () => {
         const { name: DisplayName, address: Local, domain: Domain } = model;
 
-        await api(
+        const { Address } = await api(
             createAddress({
                 MemberID: member.ID,
                 Local,
@@ -42,6 +45,10 @@ const AddressModal = ({ onClose, member, ...rest }) => {
 
         onClose();
         createNotification({ text: c('Success').t`Address added` });
+
+        createModal(
+            <CreateMissingKeysAddressModal organizationKey={organizationKey} member={member} addresses={[Address]} />
+        );
     };
 
     return (
@@ -96,7 +103,8 @@ const AddressModal = ({ onClose, member, ...rest }) => {
 
 AddressModal.propTypes = {
     onClose: PropTypes.func,
-    member: PropTypes.object
+    member: PropTypes.object,
+    organizationKey: PropTypes.object
 };
 
 export default AddressModal;

@@ -5,6 +5,8 @@ import {
     useMembers,
     useOrganizationKey,
     useMemberAddresses,
+    useModals,
+    AddressModal,
     Alert,
     Loader,
     Table,
@@ -22,6 +24,7 @@ import AddressActions from './AddressActions';
 import AddressesWithUser from './AddressesWithUser';
 
 const AddressesWithMembers = ({ match, user, organization }) => {
+    const { createModal } = useModals();
     const [members, loadingMembers] = useMembers();
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [memberIndex, setMemberIndex] = useState(-1);
@@ -58,7 +61,14 @@ const AddressesWithMembers = ({ match, user, organization }) => {
         <>
             <Alert>{c('Info')
                 .t`Premium plans let you add multiple email addresses to your account. All the emails associated with them will appear in the same mailbox. If you are the admin of a Professional or Visionary plan, you can manage email addresses for each user in your organization by choosing from the dropdown menu below.`}</Alert>
-            <AddressesToolbar members={members} onChangeMemberIndex={setMemberIndex} memberIndex={memberIndex} />
+            <AddressesToolbar
+                members={members}
+                onChangeMemberIndex={setMemberIndex}
+                onAddAddress={(member) =>
+                    createModal(<AddressModal member={member} organizationKey={organizationKey} />)
+                }
+                memberIndex={memberIndex}
+            />
             {selectedSelf ? (
                 <AddressesWithUser user={user} />
             ) : (

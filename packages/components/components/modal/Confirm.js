@@ -4,10 +4,10 @@ import { c } from 'ttag';
 import { FormModal } from 'react-components';
 
 const Confirm = ({
-    title,
     onClose,
     onConfirm,
     children,
+    title = c('Action').t`Confirm`,
     cancel = c('Action').t`Cancel`,
     confirm = c('Action').t`Confirm`,
     ...rest
@@ -33,7 +33,7 @@ const Confirm = ({
 Confirm.propTypes = {
     onClose: PropTypes.func,
     onConfirm: PropTypes.func,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     children: PropTypes.node.isRequired,
     cancel: PropTypes.node,
     confirm: PropTypes.node,

@@ -8,6 +8,7 @@ import {
     useEventManager,
     useLoading,
     FormModal,
+    Alert,
     Table,
     TableHeader,
     TableBody,
@@ -144,6 +145,8 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
             loading={loading}
             {...rest}
         >
+            <Alert>{c('Info')
+                .t`Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.`}</Alert>
             <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
             <Table>
                 <TableHeader
