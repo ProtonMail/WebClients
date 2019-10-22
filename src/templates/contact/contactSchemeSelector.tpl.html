@@ -1,12 +1,22 @@
-<div class="contactSchemeSelector-container">
-    <label for="contactSchemeSelector" class="contactSchemeSelector-label">
+<div class="contactSchemeSelector-container flex flex-nowrap onmobile-flex-column mb1">
+
+    <label for="contactSchemeSelector" class="contactSchemeSelector-label pm-label">
         <span translate-context="Label for contact Scheme selector" translate>Cryptographic scheme</span>
         <a href="https://protonmail.com/support/knowledge-base/pgp-mime-pgp-inline/" target="_blank">
-            <i class="fa fa-info-circle text-purple" pt-tooltip-translate-context="Info for contact Scheme selector" pt-tooltip-translate="Select the PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages."></i>
+            <icon
+                data-name="info"
+                data-size="12"
+                pt-tooltip-translate-context="Info for contact Scheme selector"
+                pt-tooltip-translate="Select the PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages."></icon>
         </a>
     </label>
-    <span class="pm_select">
-        <select id="contactSchemeSelector" ng-model="scheme" ng-options="option.label for option in options track by option.value" ng-change="onChange()"></select>
-        <i class="fa fa-angle-down"></i>
+
+    <span class="pm-field-container">
+        <select
+            id="contactSchemeSelector"
+            class="pm-field"
+            ng-model="scheme"
+            ng-options="option.label for option in options track by option.value"
+            ng-change="onChange()"></select>
     </span>
 </div>

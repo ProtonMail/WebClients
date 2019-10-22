@@ -162,15 +162,24 @@ contact-public-keys button, .public-key-controls button {
 .pgp-external.pgp-encrypt .contactMimetypeSelector-container,
 .pgp-external.pgp-sign .contactMimetypeSelector-container,
 .pgp-encrypt .contactSignToggle-container {
-    opacity: 0.75;
+    opacity: .5;
     pointer-events: none;
+}
 
-    .fa {
-        pointer-events: all;
+.pgp-no-keys .contactEncryptToggle-container {
+    opacity: 1;
+
+    .pm-label {
+        opacity: .5
+    }
+    .pm-field-container {
+        display: none
+    }
+    .contactEncryptToggle-warning-icon {
+        opacity: 1
     }
 }
 
-.contactEncryptToggle-warning-icon { color: $orange }
 .contact-pgp-container:not(.pgp-no-keys) .contactEncryptToggle-warning-icon { display: none }
 
 .contactPublicKeyLabel-container.no-upload-button .contactPublicKeyLabel-button { display: none }
@@ -192,7 +201,6 @@ contact-public-keys button, .public-key-controls button {
 
 .contactMimetypeSelector-label,
 .contactEncryptToggle-label,
-.contactSignToggle-label,
 .contactKeyPinning-label {
     width: 30%;
 }
@@ -201,10 +209,6 @@ contact-public-keys button, .public-key-controls button {
     flex-grow: 1;
 }
 
-.contactPublicKeyLabel-container {
-    display: flex;
-    justify-content: space-between;
-}
 
 .appConfigBody-is-mobile {
     .contactSchemeSelector-container,

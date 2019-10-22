@@ -1,17 +1,23 @@
-<div class="contactEncryptToggle-container pm-field-container">
-    <label for="contactEncryptToggle" class="pm-label">
-        <span translate-context="Label for contact Encrypt toggle" translate>Encrypt</span>
-        <icon
-            data-name="attention"
-            class="ontactEncryptToggle-warning-icon"
-            pt-tooltip-translate-context="Tooltip"
-            pt-tooltip-translate="Please upload a valid encryption key first before enabling encryption"></icon>
+<div class="contactEncryptToggle-container flex flex-nowrap onmobile-flex-column mb1">
+    <label
+        for="contactEncryptToggle"
+        class="pm-label"
+        translate-context="Label for contact Encrypt toggle"
+        translate>Encrypt</span>
     </label>
-    <toggle
-        data-id="contactEncryptToggle"
-        data-name="advancedSetting"
-        data-type="updateEncrypt"
-        data-status="value"
-        data-on="ON"
-        data-off="OFF"></toggle>
+
+    <span
+        class="block-info-standard-warning contactEncryptToggle-warning-icon"
+        translate-context
+        translate>Please upload a valid encryption key first before enabling encryption</span>
+
+    <span class="pm-field-container">
+        <toggle
+            data-id="contactEncryptToggle"
+            data-name="advancedSetting"
+            data-type="updateEncrypt"
+            data-status="value"
+            data-on="ON"
+            data-off="OFF"></toggle>
+    </span>
 </div>
