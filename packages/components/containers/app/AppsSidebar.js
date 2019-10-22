@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon, useConfig } from 'react-components';
+import { Icon, useConfig, Tooltip } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 
 const { PROTONMAIL, PROTONCONTACTS, PROTONMAIL_SETTINGS } = APPS;
@@ -20,16 +20,17 @@ const AppsSidebar = ({ items = [] }) => {
                     const key = `${index}`;
                     return (
                         <li key={key} className="mb0-5">
-                            <a
-                                href={link}
-                                target={target ? target : '_self'}
-                                className="center flex aside-link"
-                                title={title}
-                                disabled={isCurrent}
-                                aria-current={isCurrent}
-                            >
-                                <Icon name={icon} className="aside-linkIcon mauto fill-global-light" />
-                            </a>
+                            <Tooltip title={title} originalPlacement="right">
+                                <a
+                                    href={link}
+                                    target={target ? target : '_self'}
+                                    className="center flex aside-link"
+                                    disabled={isCurrent}
+                                    aria-current={isCurrent}
+                                >
+                                    <Icon name={icon} className="aside-linkIcon mauto fill-global-light" />
+                                </a>
+                            </Tooltip>
                         </li>
                     );
                 })}
