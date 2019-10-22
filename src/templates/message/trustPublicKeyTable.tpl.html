@@ -1,17 +1,16 @@
 <form name="trustForm">
-    <div class="pm_table">
+    <div class="pm-simple-table noborder border-collapse">
         <table>
             <thead>
             <tr>
                 <th scope="col" style="padding-left: 2rem;" translate-context="Title" translate>Address</th>
                 <th scope="col">
                     <span translate-context="Title" translate>Use for encryption</span>
-                    <i
-                        class="fa fa-info-circle"
+                    <icon
+                        data-name="info"
+                        data-size="12"
                         pt-tooltip-translate-context="Tooltip"
-                        pt-tooltip-translate="Using this key for encryption will encrypt outgoing messages
-                       to this address with this key and set this key as the primary PGP key for this address."
-                    ></i>
+                        pt-tooltip-translate="Using this key for encryption will encrypt outgoing messages to this address with this key and set this key as the primary PGP key for this address."></icon>
                 </th>
             </tr>
             </thead>
@@ -19,15 +18,15 @@
             <tr ng-repeat="row in addresses">
                 <td>
                     <input
-                           type="email"
-                           ng-model="row.adr"
-                           id="publicKeyAddress{{$index}}"
-                           name="publicKeyAddress{{$index}}"
-                           ng-class="{ empty: !row.adr }"
-                    >
+                       type="email"
+                       class="pm-field"
+                       ng-model="row.adr"
+                       id="publicKeyAddress{{$index}}"
+                       name="publicKeyAddress{{$index}}"
+                       ng-class="{ empty: !row.adr }">
                     <div class="trust-address-validation" ng-messages="trustForm['publicKeyAddress'+$index].$error" role="alert">
-                        <div class="ng-messages-errors">
-                            <p ng-message="email" class="text-red"  translate-context="Error" translate>Invalid email</p>
+                        <div class="ng-messages-errors color-global-warning error-zone">
+                            <p ng-message="email" translate-context="Error" translate>Invalid email</p>
                         </div>
                     </div>
                 </td>

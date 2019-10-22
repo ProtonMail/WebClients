@@ -8,7 +8,6 @@ function trustPublicKeyModal(pmModal) {
             this.keyInfo = params.keyInfo;
             this.addresses = params.addresses;
             this.isInternal = params.isInternal;
-            this.cancel = params.cancel;
             this.submit = () => {
                 params.submit(this.addresses);
             };
