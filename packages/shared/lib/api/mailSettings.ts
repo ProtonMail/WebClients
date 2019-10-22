@@ -136,3 +136,9 @@ export const updateConfirmLink = (ConfirmLink: number) => ({
     method: 'put',
     data: { ConfirmLink }
 });
+
+export const updateAutoWildcardSearch = (AutoWildcardSearch: number) => ({
+    url: 'settings/mail/autowildcard',
+    method: 'put',
+    data: { AutoWildcardSearch }
+});
