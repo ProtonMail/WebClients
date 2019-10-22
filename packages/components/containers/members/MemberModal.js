@@ -62,7 +62,7 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
             config: createMember({
                 Name: model.name,
                 Private: +model.private,
-                MaxSpace: model.storage,
+                MaxSpace: +model.storage,
                 MaxVPN: model.vpn
             })
         });

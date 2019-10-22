@@ -35,9 +35,9 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
 
     const handleSubmit = async () => {
         await api(updateName(member.ID, model.name));
-        await api(updateQuota(member.ID, model.storage));
+        await api(updateQuota(member.ID, +model.storage));
         if (hasVPN) {
-            await api(updateVPN(member.ID, model.vpn));
+            await api(updateVPN(member.ID, +model.vpn));
         }
         await call();
         onClose();

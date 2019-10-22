@@ -185,7 +185,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }) => {
                     </>
                 ),
                 async onSubmit() {
-                    await api(updateQuota(currentMemberID, model.storage));
+                    await api(updateQuota(currentMemberID, +model.storage));
 
                     if (hasPaidVpn) {
                         return next();
@@ -218,7 +218,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }) => {
                     </>
                 ),
                 async onSubmit() {
-                    await api(updateVPN(currentMemberID, model.vpn));
+                    await api(updateVPN(currentMemberID, +model.vpn));
                     await call();
 
                     createNotification({ text: c('Success').t`Organization activated` });
