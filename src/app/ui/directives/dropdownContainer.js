@@ -48,9 +48,7 @@ function dropdownContainer(dispatchers) {
                 document.body.addEventListener('keydown', onKeydown, false);
             }
 
-            function onClick(e) {
-                e.stopPropagation();
-                const { target } = e;
+            function onClick({ target }) {
                 if (target !== el[0] && !el[0].contains(target) && !isLocked) {
                     toggle(true);
                     attachListener(true);
