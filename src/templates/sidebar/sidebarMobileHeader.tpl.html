@@ -1,12 +1,7 @@
-<header class="sidebarMobileHeader-container">
+<header class="sidebarMobileHeader-container flex w100 flex-spacebetween">
+    <protonmail-logo class="onmobile-pl0 onmobile-ml0-5"></protonmail-logo>
+
     <btn-display-mobile-sidebar
-        class="pull-right round sidebarMobileHeader-btn-sidebar"
+        class="round sidebarMobileHeader-btn-sidebar"
         data-type="hide"></btn-display-mobile-sidebar>
-    <a class="sidebarMobileHeader-logo logo" ui-sref="secured.inbox" title="ProtonMail ~ back to inbox">
-        <img src="assets/img/logo.png" height="20" alt="ProtonMail">
-    </a>
-    <div class="sidebarMobileHeader-userDisplay">
-        <span class="sidebarMobileHeader-userDisplay-name">{{ displayName }}</span>
-        <strong class="sidebarMobileHeader-userDisplay-email">{{ email }}</strong>
-    </div>
 </header>

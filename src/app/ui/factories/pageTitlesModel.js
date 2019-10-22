@@ -143,27 +143,27 @@ function pageTitlesModel($injector, dispatchers, gettextCatalog, authentication,
      * @param  {String} options.name
      * @return {String}
      */
-    const find = ({ name } = {}, withEmail = true) => {
+    const find = ({ name } = {}, withEmail = true, format = formatTitle) => {
         const mailbox = tools.currentMailbox() || tools.filteredState();
 
         if (/login|reset-password|pre-invite|invite/.test(mailbox || name)) {
-            return formatTitle(MAP.login);
+            return format(MAP.login);
         }
 
         if (/(signup|eo\.|support)/.test(mailbox || name)) {
-            return formatTitle(MAP[mailbox || name]);
+            return format(MAP[mailbox || name]);
         }
 
         if (/contacts.list/.test(mailbox || name)) {
-            return formatTitle(MAP.contacts);
+            return format(MAP.contacts);
         }
 
         if (/contacts.new/.test(mailbox || name)) {
-            return formatTitle(MAP.contactsCreate);
+            return format(MAP.contactsCreate);
         }
 
         if (/contacts.detail/.test(mailbox || name)) {
-            return formatTitle(MAP.contact);
+            return format(MAP.contact);
         }
 
         const isLabelState = mailbox === 'label';
@@ -172,10 +172,10 @@ function pageTitlesModel($injector, dispatchers, gettextCatalog, authentication,
 
         if (MAP[mailbox] || isLabelState) {
             const value = !isLabelState ? MAP[mailbox] : getLabelState();
-            return formatTitle(value, number, Email);
+            return format(value, number, Email);
         }
 
-        return formatTitle(mailbox, number, Email);
+        return format(mailbox, number, Email);
     };
 
     return { find };

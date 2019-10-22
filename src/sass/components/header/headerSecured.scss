@@ -22,7 +22,7 @@ body.appConfigBody-is-mobile .navigationBlackFriday {list-style: none}
     font-size: 2em
 }
 
-.headerSecuredMobile-searchBtn { width: 3em }
+.headerSecuredMobile-searchBtn { width: 3em }
 
 .headerSecuredMobile-compose {
     position: fixed;
@@ -37,7 +37,13 @@ body.appConfigBody-is-mobile .navigationBlackFriday {list-style: none}
 }
 
 .appConfigBody-is-mobile .dropDown-content--advancedSearch {
-    width: calc(100vw - 4rem);
+    width: 100vw;
+    right: -10.3rem; // ( 2* .5em + setting icon size/padding + userdropdown + padding-right of container, etc. )
+    margin-top: .65em;
+
+    &::before {
+      right: 11.5rem;
+    }
 }
 
 

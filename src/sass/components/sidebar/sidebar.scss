@@ -121,8 +121,6 @@
     transform: translateX(-100%);
     max-height: 100%;
 
-    .sidebarApp-container { padding: 2rem }
-
     .refresh { display: none }
 
     .navigationItem-item, .sidebarApp-link {
@@ -148,6 +146,7 @@
         max-height: 100%;
         min-height: 100%;
         max-width: 100%;
+        overflow: hidden;
     }
 
 }
