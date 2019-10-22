@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { SearchInput, Icon } from 'react-components';
-
-import { classnames } from '../../helpers/component';
+import { SearchInput, Icon, classnames } from 'react-components';
 
 const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onSearch, onChange }) => {
     const [search, updateSearch] = useState(value);
