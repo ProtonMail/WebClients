@@ -50,3 +50,10 @@
   opacity: .5;
   pointer-events: none;
 }
+
+
+@include respond-to($breakpoint-small) {
+  .toolbar {
+    border-radius: 0;
+  }
+}

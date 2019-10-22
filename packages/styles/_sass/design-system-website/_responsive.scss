@@ -86,11 +86,20 @@
   }
   .sidebar {
     position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
     z-index: 500;
+    width: 100%;
     background-image: linear-gradient(to bottom, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
     transform-origin: 0 50%;
     transition: 0s visibility ease, .25s transform ease;
     transition-delay: 0s;
+    max-width: 100%;
+    width: 100%;
+    max-height: none;
+    padding-top: 1em;
   }
   .sidebar[data-expanded="false"] {
     transform: translateX(-100%);

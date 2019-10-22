@@ -198,3 +198,11 @@
 .sprite-css-on {
   background-image: url("#{$path-images}sprite-for-css-only.svg#css-on");
 }
+
+
+
+@include respond-to($breakpoint-small) {
+  .toolbar {
+    border-radius: 4px 4px 0 0;
+  }
+}
