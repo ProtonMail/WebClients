@@ -11,21 +11,32 @@ function countElementsSelected(dispatchers, tools, $stateParams, cacheCounters, 
         return CLEANER.innerHTML;
     };
 
-    const I18N = {
-        label(n) {
-            const totalEmail = gettextCatalog.getPlural(
-                n,
-                '{{$count}} email tagged',
-                '{{$count}} emails tagged',
-                {},
-                'Info number email selected'
-            );
-            const countEmailSelected = `<span class="color-pm-blue">${totalEmail}</span>`;
+    function getCounter(n) {
+        const totalEmail = gettextCatalog.getPlural(
+            n,
+            '{{$count}} email tagged',
+            '{{$count}} emails tagged',
+            {},
+            'Info number email selected'
+        );
+        return `<span class="color-pm-blue">${totalEmail}</span>`;
+    }
 
+    const I18N = {
+        folder(n) {
+            return gettextCatalog.getString(
+                'You have {{::countEmailSelected}} with this folder.',
+                {
+                    countEmailSelected: getCounter(n)
+                },
+                'Info'
+            );
+        },
+        label(n) {
             return gettextCatalog.getString(
                 'You have {{::countEmailSelected}} with this label.',
                 {
-                    countEmailSelected
+                    countEmailSelected: getCounter(n)
                 },
                 'Info'
             );
@@ -67,7 +78,7 @@ function countElementsSelected(dispatchers, tools, $stateParams, cacheCounters, 
                 const { Name, Exclusive } = labelsModel.read(id);
                 const total = cacheCounters.totalMessage(id);
 
-                scope.selectedLabelTotal = I18N.label(total);
+                scope.selectedLabelTotal = I18N[Exclusive ? 'folder' : 'label'](total);
                 scope.selectedLabelTotalRaw = total;
                 scope.selectedLabelType = Exclusive && 'folder';
                 scope.selectedLabelName = stripHTML(Name);
