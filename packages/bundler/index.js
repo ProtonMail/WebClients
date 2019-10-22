@@ -86,6 +86,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
                     return '✋ You shall not deploy to QA';
                 }
             },
+            enabled: () => !/dev|beta|prod/.test(branch),
             async task() {
                 // For the CI to force SSH
                 if (process.env.GIT_REMOTE_URL_CI && argv.fromCi) {
