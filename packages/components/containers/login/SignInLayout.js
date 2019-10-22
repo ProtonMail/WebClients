@@ -12,7 +12,7 @@ const { VPN } = CLIENT_TYPES;
 const SignInLayout = ({ children, title }) => {
     const { CLIENT_TYPE } = useConfig();
     const isVPN = CLIENT_TYPE === VPN;
-    const staticURL = isVPN ? 'https://protonvpn.com' : 'https://protonmail.com';
+    const staticURL = isVPN ? 'protonvpn.com' : 'protonmail.com';
 
     useEffect(() => {
         document.title = `${title} - ${isVPN ? 'ProtonVPN' : 'ProtonMail'}`;
@@ -24,7 +24,11 @@ const SignInLayout = ({ children, title }) => {
                 left={
                     <>
                         <span className="opacity-50">{c('Label').t`Back to:`}</span>{' '}
-                        <Href url={staticURL} className="inbl color-white nodecoration hover-same-color" target="_self">
+                        <Href
+                            url={`https://${staticURL}`}
+                            className="inbl color-white nodecoration hover-same-color"
+                            target="_self"
+                        >
                             {staticURL}
                         </Href>
                     </>
