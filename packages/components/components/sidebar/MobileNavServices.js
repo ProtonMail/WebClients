@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useActiveBreakpoint } from 'react-components';
-import { isMobile } from 'proton-shared/lib/helpers/responsive';
 
 const MobileNavServices = ({ children }) => {
-    const breakpoint = useActiveBreakpoint();
+    const { isMobile } = useActiveBreakpoint();
 
-    if (!isMobile(breakpoint)) {
+    if (!isMobile) {
         return null;
     }
 
