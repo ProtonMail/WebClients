@@ -1,5 +1,5 @@
-<div class="elements-selector pl0-5" ng-class="{disabled: !conversations.length}" >
-    <label class="elements-selector-check pm-select-all ml1">
+<div class="elements-selector" ng-class="{disabled: !conversations.length}" >
+    <label class="elements-selector-check pm-select-all ml0-75 pl1">
         <custom-checkbox
             class="elements-selector-label"
             ng-class="{disabled: !conversations.length}"
@@ -17,8 +17,9 @@
     </label>
 
     <dropdown-container class="elementsSelector-dropdown">
-        <dropdown-button class="pl0-5 pr0-5">
+        <dropdown-button class="pr0-5">
             <icon data-name="caret" data-size="12" class="no-pointer-events toolbar-icon mtauto mbauto"></icon>
+            <span class="sr-only" translate-context="Action" translate>Select options</span>
         </dropdown-button>
 
         <dropdown-content>
