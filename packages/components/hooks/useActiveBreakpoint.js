@@ -23,15 +23,21 @@ const useActiveBreakpoint = () => {
         };
     }, []);
 
-    return useMemo(
-        () => ({
+    return useMemo(() => {
+        const isDesktop = breakpoint === 'desktop';
+        const isTablet = breakpoint === 'tablet';
+        const isMobile = breakpoint === 'mobile';
+        const isTinyMobile = breakpoint === 'tinymobile';
+
+        return {
             breakpoint,
-            isDesktop: breakpoint === 'desktop',
-            isTablet: breakpoint === 'tablet',
-            isMobile: breakpoint === 'mobile'
-        }),
-        [breakpoint]
-    );
+            isDesktop,
+            isTablet,
+            isMobile,
+            isTinyMobile,
+            isNarrow: isMobile || isTinyMobile
+        };
+    }, [breakpoint]);
 };
 
 export default useActiveBreakpoint;

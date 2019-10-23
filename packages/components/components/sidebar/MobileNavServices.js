@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { useActiveBreakpoint } from 'react-components';
 
 const MobileNavServices = ({ children }) => {
-    const { isMobile } = useActiveBreakpoint();
+    const { isNarrow } = useActiveBreakpoint();
 
-    if (!isMobile) {
+    if (!isNarrow) {
         return null;
     }
 
