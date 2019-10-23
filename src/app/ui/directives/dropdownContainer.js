@@ -8,8 +8,11 @@ function dropdownContainer(dispatchers) {
         leftBottom: 'dropDown--leftBottomArrow'
     };
 
+    let MAP = Object.create(null);
+
     function link(scope, el, { position, mode }) {
         const id = generateUID();
+        MAP[id] = false;
 
         // Handle toolbar style by hand POST digest else compile will remove them
         if (mode === 'toolbar') {
@@ -35,6 +38,13 @@ function dropdownContainer(dispatchers) {
                 isOpen && $content.setAttribute('hidden', isOpen);
                 !isOpen && $content.removeAttribute('hidden');
                 dispatcher.dropdownApp('state', { isOpened: !isOpen, id });
+
+                MAP[id] = !isOpen;
+
+                // Check if all items are closed
+                if (!Object.keys(MAP).some((key) => MAP[key])) {
+                    dispatcher.dropdownApp('visibility', { isOpened: false });
+                }
             };
 
             function attachListener(remove) {
@@ -77,6 +87,8 @@ function dropdownContainer(dispatchers) {
             on('dropdownApp', (e, { type, data = {} }) => {
                 if (type === 'closeOthers' && data.id !== id) {
                     toggle(true);
+                    MAP[data.id] = true;
+                    MAP[id] = false;
                 }
 
                 if (data.id !== id) {
@@ -96,6 +108,7 @@ function dropdownContainer(dispatchers) {
                 attachListener(true);
                 $btn.removeEventListener('click', onClickButton);
                 unsubscribe();
+                delete MAP[id];
             });
         });
     }

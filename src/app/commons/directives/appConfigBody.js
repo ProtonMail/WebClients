@@ -32,7 +32,8 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
         storageLimitReached: 'hasStickyMessages', // Note: Improve this if you need to add more sticky messages.
         isSecure: 'secure',
         isUnlock: 'unlock',
-        newVersion: 'newVersion'
+        newVersion: 'newVersion',
+        dropdownApp: className('dropdown--open')
     };
 
     return {
@@ -67,6 +68,15 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
             on('mailSettings', (event, { type = '' }) => {
                 if (type === 'updated') {
                     updateRows();
+                }
+            });
+
+            on('dropdownApp', (e, { type, data }) => {
+                if (type === 'state' && data.isOpened) {
+                    toggleClass(mapClassNames.dropdownApp, true);
+                }
+                if (type === 'visibility' && !data.isOpened) {
+                    toggleClass(mapClassNames.dropdownApp, false);
                 }
             });
 
