@@ -158,7 +158,18 @@
     height: auto;
 }
 
-@media (max-height: 550px), (max-width: 35em) {
+@media (max-height: 42.5em), (max-width: 35em) {
+    .navigation {
+        overflow: auto;
+        margin-top: 1em;
+        > * {
+            flex-shrink: 0;
+        }
+    }
+    .navigation__list {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
     [id="sidebarLabels"] {
         height: auto;
         overflow: visible;
