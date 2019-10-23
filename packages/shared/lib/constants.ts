@@ -533,9 +533,3 @@ export enum AutoReplyDuration {
 }
 
 export const ADD_CARD_MODE = 'add-card';
-
-export enum ACTIVE_BREAKPOINTS {
-    DESKTOP = 'desktop',
-    TABLET = 'tablet',
-    MOBILE = 'mobile'
-}
