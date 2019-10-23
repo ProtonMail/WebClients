@@ -378,6 +378,12 @@ $conversations-column-width: 35% !default;  // used also to align search bar on 
     }
   }
 
+  @else if $query-type == "height" {
+     @media (max-height: em($breakpoint, $root-default-font-size)) {
+      @content;
+     }
+  }
+
   @else  {
     @warn "Type non supported.";
   }
