@@ -80,7 +80,7 @@ body {
 
 
 .main-area,
-.main-area--withToolbar {
+.main-area--withToolbar{
   background: $white;
   color: $pm-global-grey;
   height: calc(100vh - #{$header-height} );
@@ -104,4 +104,16 @@ body {
 }
 .main-area--withToolbar.no-scroll {
   overflow: hidden;
+  height: calc(100vh - #{$toolbar-height} );
+  max-height: calc(100vh - #{$toolbar-height} );
+}
+.main-area--noHeader {
+  @extend .main-area;
+  height: calc(100vh);
+  max-height: calc(100vh);
+}
+.main-area--withToolbar--noHeader {
+  @extend .main-area--withToolbar;
+  height: calc(100vh - #{$toolbar-height} );
+  max-height: calc(100vh - #{$toolbar-height} );
 }
