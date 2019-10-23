@@ -8,7 +8,9 @@ function getVersion {
         return 0;
     fi;
 
-    local version=$(cat package.json | awk 'match($0, /"version": "([0-9]+\.[0-9]+\.[0-9]+)"/, arr) { print arr[1]; }');
+    # Sadly MacOS doesn't have gawk but awk, which doesn't support this match :/
+    # awk 'match($0, /"version": "([0-9]+\.[0-9]+\.[0-9]+)"/, arr) { print arr[1]; }'
+    local version=$(cat package.json | awk '/"version": "(.+)"/{print $2}' | sed 's/"//g;s/,//g');
     echo "$version";
 }
 
