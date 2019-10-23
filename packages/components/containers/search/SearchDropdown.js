@@ -23,6 +23,7 @@ const SearchDropdown = ({
             <form className="p1" name="search-dropdown" onSubmit={handleSubmit}>
                 <div className="mb1">
                     <Input
+                        autoFocus={true}
                         value={search}
                         onChange={({ target }) => updateSearch(target.value)}
                         placeholder={placeholder}

@@ -20,7 +20,6 @@ import {
     useModals,
     useOrganizationKey
 } from 'react-components';
-import { Link } from 'react-router-dom';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { DOMAIN_STATE } from 'proton-shared/lib/constants';
 
@@ -181,10 +180,6 @@ const MembersSection = () => {
                 {organization.UsedMembers} / {organization.MaxMembers}{' '}
                 {c('Info').ngettext(msgid`user used`, `users used`, organization.UsedMembers)}
             </Block>
-            <Alert>
-                <span className="mr0-5">{c('Info').t`You can add and manage addresses for the user in your`}</span>
-                <Link to="/settings/addresses">{c('Link').t`Address settings`}</Link>
-            </Alert>
         </>
     );
 };

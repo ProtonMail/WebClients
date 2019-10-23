@@ -13,7 +13,7 @@ const StickyLabelsToggle = ({ id, stickyLabels, onToggle, loading, ...rest }) =>
         toggle();
     };
 
-    return <Toggle id={id} checked={state} onChange={handleToggle} disabled={loading} {...rest} />;
+    return <Toggle id={id} checked={state} onChange={handleToggle} loading={loading} {...rest} />;
 };
 
 StickyLabelsToggle.propTypes = {
