@@ -1,16 +1,16 @@
-<label class="selectBoxElement-container">
+<label class="selectBoxElement-container needsclick">
 
     <input
         type="checkbox"
-        class="item-checkbox sr-only selectBoxElement-input"
+        class="item-checkbox sr-only selectBoxElement-input needsclick"
         ng-checked="conversations[$index].Selected"
         data-index="{{ $index }}"
         aria-label="{{ ::conversation.Subject | unescape }}">
 
     <span
-        class="item-icon flex-item-noshrink rounded50 bg-white inline-flex selectBoxElement-about">
-        <span class="mauto item-abbr selectBoxElement-initiak">{{ ::conversation.Senders[0] | initials}}</span>
-        <span class="item-icon-fakecheck mauto selectBoxElement-checkbox">
+        class="item-icon flex-item-noshrink rounded50 bg-white inline-flex selectBoxElement-about no-pointer-events-children needsclick">
+        <span class="mauto item-abbr selectBoxElement-initiak no-events-children">{{ ::conversation.Senders[0] | initials}}</span>
+        <span class="item-icon-fakecheck mauto selectBoxElement-checkbox ">
           <icon
             data-name="on"
             data-fill="white"
