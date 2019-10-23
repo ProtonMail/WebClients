@@ -2,50 +2,52 @@
     method="post"
     id="pm_loginUnlock"
     name="unlockForm"
-    class="pm_panel pm_form alt loginFormUnlock-container pm_panel-login__inner bordered-container"
+    class="pm_panel pm_form alt loginFormUnlock-container"
     novalidate
     role="form"
     autocomplete="off">
+    <div class="pm_panel-login__inner bordered-container">
 
 
-    <div class="mb2 aligncenter">
-        <img src="assets/img/logo.svg" height="20" width="148" alt="ProtonMail" />
-    </div>
+        <div class="mb2 aligncenter">
+            <img src="assets/img/logo.svg" height="20" width="148" alt="ProtonMail" />
+        </div>
 
-    <h1 class="aligncenter h4 uppercase flex">
-        <span translate-context="Title" translate>Decrypt Mailbox</span>
-    </h1>
+        <h1 class="aligncenter h4 uppercase flex">
+            <span translate-context="Title" translate>Decrypt Mailbox</span>
+        </h1>
 
-    <label for="password" class="pb0-5 bl" translate-context="Label" translate>Mailbox password</label>
-    <password
-        class="mb1 focus unlock-input-password"
-        data-id="mailboxPassword"
-        data-name="mailbox-password"
-        data-value="mailboxPassword"
-        data-form="unlockForm"
-        placeholder-translate-context="Placeholder"
-        placeholder-translate="Mailbox password"></password>
+        <label for="password" class="pb0-5 bl" translate-context="Label" translate>Mailbox password</label>
+        <password
+            class="mb1 focus unlock-input-password"
+            data-id="mailboxPassword"
+            data-name="mailbox-password"
+            data-value="mailboxPassword"
+            data-form="unlockForm"
+            placeholder-translate-context="Placeholder"
+            placeholder-translate="Mailbox password"></password>
 
-    <div class="loginForm-actions">
-        <div class="loginForm-actions-column">
-            <button
-                id="unlock_btn"
-                class="loginForm-actions-main pm-button--large mb1 w100 aligncenter pm-button-blue disabled-if-network-activity"
-                type="submit"
-                ng-disabled="unlockForm.$invalid || loading"
-                translate-context="Action"
-                translate>Unlock</button>
-
-            <div class="alignright pb1">
+        <div class="loginForm-actions">
+            <div class="loginForm-actions-column">
                 <button
-                    type="button"
-                    data-action="reset"
-                    class="login-support white-link unlock-btn-forgot"
+                    id="unlock_btn"
+                    class="loginForm-actions-main pm-button--large mb1 w100 aligncenter pm-button-blue disabled-if-network-activity"
+                    type="submit"
+                    ng-disabled="unlockForm.$invalid || loading"
                     translate-context="Action"
-                    translate
-                    translate-comment="link to reset mailbox">Forgot password?</button>
-            </div>
+                    translate>Unlock</button>
 
+                <div class="alignright pb1">
+                    <button
+                        type="button"
+                        data-action="reset"
+                        class="login-support white-link unlock-btn-forgot"
+                        translate-context="Action"
+                        translate
+                        translate-comment="link to reset mailbox">Forgot password?</button>
+                </div>
+
+            </div>
         </div>
     </div>
 </form>

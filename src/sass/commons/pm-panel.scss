@@ -42,7 +42,7 @@ body.appConfigBody-is-mobile {
 	.pm_panel {
         width: auto;
         max-width: $panel;
-		padding: 15px 20px;
+		padding: 15px;
         margin-top: 2rem;
 
         &-bottom {
@@ -52,17 +52,17 @@ body.appConfigBody-is-mobile {
            padding-right: 20px;
            text-align: center;
         }
-        &.alt,
-        &-login__inner {
-            background: transparent;
-            border: 0;
-        }
         &-login__inner,
         &-twofactors,
         &-outsideunlock {
             padding-left: 20px !important;
             padding-right: 20px !important;
         }
+    .pm_panel-login__inner {
+        width: auto;
+        max-width: $panel;
+		padding: 15px;
+    }
     }
     .loginForm-actions-help {
         text-align: center;

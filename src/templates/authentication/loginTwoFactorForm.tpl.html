@@ -2,47 +2,49 @@
     method="post"
     id="pm_loginTwoFactor"
     name="twoFactorForm"
-    class="pm_panel alt pm_panel-twofactors pm_form loginFormTwoFa-container pm_panel-login__inner bordered-container"
+    class="pm_panel alt pm_panel-twofactors pm_form loginFormTwoFa-container"
     novalidate
     role="form"
     autocomplete="off">
+    <div class="pm_panel-login__inner bordered-container">
 
-    <div class="mb2 aligncenter">
-        <img src="assets/img/logo.svg" height="20" width="148" alt="ProtonMail" />
-    </div>
+        <div class="mb2 aligncenter">
+            <img src="assets/img/logo.svg" height="20" width="148" alt="ProtonMail" />
+        </div>
 
-    <h1 class="aligncenter h4 uppercase flex">
-        <span translate-context="Title" translate>Two-Factor Authentication</span>
-    </h1>
+        <h1 class="aligncenter h4 uppercase flex">
+            <span translate-context="Title" translate>Two-Factor Authentication</span>
+        </h1>
 
-    <div class="mt2 pb1">
-        <label for="twoFactorCode" class="pb0-5 bl" translate translate-context="Label">Two-factor passcode</label>
-        <two-fa-field
-            ng-model="twoFactorCode"
-            autofocus
-            id="twoFactorCode"
-            name="twoFactorCode"
-            placeholder-translate-context="Placeholder"
-            placeholder-translate="Two-factor passcode"></two-fa-field>
-    </div>
+        <div class="mt2 pb1">
+            <label for="twoFactorCode" class="pb0-5 bl" translate translate-context="Label">Two-factor passcode</label>
+            <two-fa-field
+                ng-model="twoFactorCode"
+                autofocus
+                id="twoFactorCode"
+                name="twoFactorCode"
+                placeholder-translate-context="Placeholder"
+                placeholder-translate="Two-factor passcode"></two-fa-field>
+        </div>
 
-    <div class="loginForm-actions">
-        <div class="loginForm-actions-column">
-            <button
-                id="login_btn_2fa"
-                type="submit"
-                class="loginForm-actions-main pm-button--large mb1 w100 aligncenter pm-button-blue disabled-if-network-activity"
-                ng-disabled="twoFactorForm.$invalid || loading"
-                translate-context="Action"
-                translate>Login</button>
-
-            <div class="alignright pb1">
-               <a
-                    class="pm_button white-link"
-                    data-action="help"
+        <div class="loginForm-actions">
+            <div class="loginForm-actions-column">
+                <button
+                    id="login_btn_2fa"
+                    type="submit"
+                    class="loginForm-actions-main pm-button--large mb1 w100 aligncenter pm-button-blue disabled-if-network-activity"
+                    ng-disabled="twoFactorForm.$invalid || loading"
                     translate-context="Action"
-                    translate-comment="link for login help"
-                    translate>Need help?</a>
+                    translate>Login</button>
+
+                <div class="alignright pb1">
+                <a
+                        class="pm_button white-link"
+                        data-action="help"
+                        translate-context="Action"
+                        translate-comment="link for login help"
+                        translate>Need help?</a>
+                </div>
             </div>
         </div>
     </div>

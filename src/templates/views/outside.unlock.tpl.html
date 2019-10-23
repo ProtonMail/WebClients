@@ -2,57 +2,58 @@
     method="post"
     id="pm_loginUnlock"
     name="unlockForm"
-    class="pm_panel pm_form alt loginFormUnlock-container pm_panel-login__inner bordered-container mauto"
+    class="pm_panel pm_form alt loginFormUnlock-container mauto"
     novalidate
     role="form"
     ng-submit="unlock()"
     ng-keypress="keypress($event)"
     ng-if="tokenError !== true"
     autocomplete="off">
+    <div class="pm_panel-login__inner bordered-container">
+
+        <div class="mb2 aligncenter">
+            <img src="assets/img/logo.svg" height="20" width="148" alt="ProtonMail" />
+        </div>
+
+        <h1 class="aligncenter h4 uppercase flex">
+            <span translate-context="Title" translate>Decrypt message</span>
+        </h1>
+
+        <div class="block-info-standard-error" id="error521" ng-if="error">{{ error.message }}</div>
 
 
-    <div class="mb2 aligncenter">
-        <img src="assets/img/logo.svg" height="20" width="148" alt="ProtonMail" />
-    </div>
+        <label for="password" class="pb0-5 bl" translate-context="Label" translate>Message password</label>
+        <password
+            class="mb1 focus unlock-input-password"
+            data-id="MessagePassword"
+            data-name="MessagePassword"
+            data-autofocus="true"
+            data-value="params.MessagePassword"
+            data-form="unlockForm"
+            placeholder-translate-context="Placeholder"
+            placeholder-translate="Message password"></password>
 
-    <h1 class="aligncenter h4 uppercase flex">
-        <span translate-context="Title" translate>Decrypt message</span>
-    </h1>
-
-    <div class="block-info-standard-error" id="error521" ng-if="error">{{ error.message }}</div>
-
-
-    <label for="password" class="pb0-5 bl" translate-context="Label" translate>Message password</label>
-    <password
-        class="mb1 focus unlock-input-password"
-        data-id="MessagePassword"
-        data-name="MessagePassword"
-        data-autofocus="true"
-        data-value="params.MessagePassword"
-        data-form="unlockForm"
-        placeholder-translate-context="Placeholder"
-        placeholder-translate="Message password"></password>
-
-    <div class="loginForm-actions">
-        <div class="loginForm-actions-column">
-            <button
-                id="unlock_btn"
-                class="loginForm-actions-main pm-button--large mb1 w100 aligncenter pm-button-blue disabled-if-network-activity"
-                type="submit"
-                translate-context="Action"
-                translate>Decrypt</button>
+        <div class="loginForm-actions">
+            <div class="loginForm-actions-column">
+                <button
+                    id="unlock_btn"
+                    class="loginForm-actions-main pm-button--large mb1 w100 aligncenter pm-button-blue disabled-if-network-activity"
+                    type="submit"
+                    translate-context="Action"
+                    translate>Decrypt</button>
 
 
-            <div class="mt2 mb1 text-notransform loginForm-actions-help aligncenter">
-                <a
-                    class="loginForm-btn-help white-link"
-                    href="https://protonmail.com/support"
-                    target="_blanck"
-                    translate-comment="Action"
-                    translate-context="link to support portal"
-                    translate>Need help?</a>
+                <div class="mt2 mb1 text-notransform loginForm-actions-help aligncenter">
+                    <a
+                        class="loginForm-btn-help white-link"
+                        href="https://protonmail.com/support"
+                        target="_blanck"
+                        translate-comment="Action"
+                        translate-context="link to support portal"
+                        translate>Need help?</a>
+                </div>
+
             </div>
-
         </div>
     </div>
 </form>
