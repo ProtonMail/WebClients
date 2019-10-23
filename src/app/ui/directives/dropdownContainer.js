@@ -8,7 +8,7 @@ function dropdownContainer(dispatchers) {
         leftBottom: 'dropDown--leftBottomArrow'
     };
 
-    let MAP = Object.create(null);
+    const MAP = Object.create(null);
 
     function link(scope, el, { position, mode }) {
         const id = generateUID();
