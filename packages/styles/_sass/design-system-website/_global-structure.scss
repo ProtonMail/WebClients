@@ -116,4 +116,10 @@ body {
   @extend .main-area--withToolbar;
   height: calc(100vh - #{$toolbar-height} );
   max-height: calc(100vh - #{$toolbar-height} );
+
+  .view-column-detail {
+    height: calc(100vh - #{$toolbar-height} );
+    max-height: calc(100vh - #{$toolbar-height} );
+  }
 }
+

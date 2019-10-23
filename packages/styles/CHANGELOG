@@ -17,6 +17,7 @@
 - added FAB styles
 - added option on `respond-to` (`$query-type == "height"`)
 - added `plus` icon
+- added `0.75` margin helpers
 
 ## Updated/fixes
 
@@ -37,6 +38,7 @@
 - fixed special case of long inputs in modal (rich text edition, etc.) using `pm-field-container--full`
 - fixed notification display on mobile
 - added `compose-fab--inBackground` modifier
+- fixed height issues on contact containers (`items-column-list--mobile`, `view-column-detail`)
 
 
 # [1.7.5] - 2019-09-27

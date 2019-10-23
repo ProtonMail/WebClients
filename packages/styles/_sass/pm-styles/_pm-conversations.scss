@@ -11,6 +11,7 @@
 }
 
 .items-column-list,
+.items-column-list--mobile,
 .view-column-detail {
   height: calc(100vh - #{$header-height} - #{$toolbar-height} );
 }
