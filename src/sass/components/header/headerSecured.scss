@@ -27,11 +27,11 @@ body.appConfigBody-is-mobile .navigationBlackFriday {list-style: none}
 
 .appConfigBody-is-mobile .dropDown-content--advancedSearch {
     width: 100vw;
-    right: -10.3rem; // ( 2* .5em + setting icon size/padding + userdropdown + padding-right of container, etc. )
+    right: -10.9rem; // ( 2* .5em + setting icon size/padding + userdropdown + padding-right of container, etc. )
     margin-top: .65em;
 
     &::before {
-      right: 11.5rem;
+      right: 12rem;
     }
 }
 
@@ -47,5 +47,11 @@ body.appConfigBody-is-mobile .navigationBlackFriday {list-style: none}
 .appConfigBody-is-mobile.appConfigBody-activeComposer {
     .headerSecuredMobile-compose {
         pointer-events: none
+    }
+}
+
+@include respond-to(660, 'height') {
+    .appConfigBody-dropdown--open .compose-fab {
+        z-index: 0;
     }
 }
