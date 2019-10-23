@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Input, SimpleDropdown, Icon } from 'react-components';
+import { SearchInput, SimpleDropdown, Icon } from 'react-components';
 import { PrimaryButton } from '../../components/button';
 import { c } from 'ttag';
 
@@ -22,10 +22,11 @@ const SearchDropdown = ({
         <SimpleDropdown autoClose={false} content={<Icon name="search" />} {...rest}>
             <form className="p1" name="search-dropdown" onSubmit={handleSubmit}>
                 <div className="mb1">
-                    <Input
+                    <SearchInput
                         autoFocus={true}
+                        delay={0}
                         value={search}
-                        onChange={({ target }) => updateSearch(target.value)}
+                        onChange={(newValue) => updateSearch(newValue)}
                         placeholder={placeholder}
                     />
                 </div>
