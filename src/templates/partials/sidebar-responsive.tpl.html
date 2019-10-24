@@ -8,7 +8,7 @@
                 class="sidebarApp-item navigation__item"
                 data-key="{{::state}}"
                 ng-repeat="state in listStates track by $id(state)"></navigation-item>
-                <li class="sidebarApp-divider" aria-hidden="true"></li>
+                <li class="sidebarApp-divider" aria-hidden="true" ng-if="isFree"></li>
                 <li class="sidebarApp-item navigation__item" ng-if="isFree">
                     <a title="Upgrade" href="/settings" class="navigation__link w100">
                         <span class="flex flex-nowrap">

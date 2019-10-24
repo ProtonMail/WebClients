@@ -35,3 +35,15 @@
 
 
 .appConfigBody-request-timeout .conversation { display: none }
+
+
+@include respond-to(1180) {
+    .welcome-container {
+       flex-direction: column;
+       > * {
+           margin-bottom: 1em;
+           width: 100%;
+           flex-basis: auto;
+       }
+    }
+}

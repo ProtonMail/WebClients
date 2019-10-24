@@ -7,7 +7,7 @@
         <h1
             translate
             translate-context="Title"
-            class="aligncenter mt2">Welcome {{::user.DisplayName}}</h1>
+            class="aligncenter mt2">Welcome, {{::user.DisplayName}}!</h1>
 
         <p class="p0 m0" ng-if="welcomeModel.unread">
             <span
@@ -61,7 +61,7 @@
                     translate>only and get additional storage capacity and more addresses with ProtonMail Plus.</span>
             </p>
 
-            <div class="flex flex-nowrap mw50e center mt2">
+            <div class="flex flex-nowrap welcome-container mw50e center mt2">
 
                 <div class="bordered-container flex-item-fluid flex flex-column aligncenter p1 mr2">
                     <img src="/assets/img/welcome/home-icon-mail.svg" alt="" />
