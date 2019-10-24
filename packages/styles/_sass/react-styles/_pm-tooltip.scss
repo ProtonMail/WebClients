@@ -7,7 +7,7 @@ $arrow-width: 0.5em;
   z-index: 666;
   width: $tooltip-width;
   border-radius: $global-border-radius;
-  background: $pm-global-grey;
+  background: $black;
   color: $pm-global-light;
   padding: 0.5em;
   text-align: center;
@@ -54,25 +54,25 @@ $arrow-width: 0.5em;
 .tooltip--top-left::before,
 .tooltip--top-right::before {
   top: 100%;
-  border-top: $arrow-width solid $pm-global-grey;
+  border-top: $arrow-width solid $black;
 }
 .tooltip--bottom::before,
 .tooltip--bottom-left::before,
 .tooltip--bottom-right::before {
   bottom: 100%;
-  border-bottom: $arrow-width solid $pm-global-grey;
+  border-bottom: $arrow-width solid $black;
 }
 .tooltip--right::before,
 .tooltip--right-top::before,
 .tooltip--right-bottom::before {
   left: -#{$arrow-width * 2};
-  border-right: $arrow-width solid $pm-global-grey;
+  border-right: $arrow-width solid $black;
 }
 .tooltip--left::before,
 .tooltip--left-top::before,
 .tooltip--left-bottom::before {
   right: -#{$arrow-width * 2};
-  border-left: $arrow-width solid $pm-global-grey;
+  border-left: $arrow-width solid $black;
 }
 
 .tooltip--top::before,
