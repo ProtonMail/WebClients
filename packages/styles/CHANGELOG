@@ -1,4 +1,4 @@
-# [1.7.x] - 2019-09-xx
+# [1.7.6] - 2019-10-24
 
 ## New
 
@@ -18,6 +18,7 @@
 - added option on `respond-to` (`$query-type == "height"`)
 - added `plus` icon
 - added `0.75` margin helpers
+- added `selectall` icon
 
 ## Updated/fixes
 
@@ -40,6 +41,7 @@
 - added `compose-fab--inBackground` modifier
 - fixed height issues on contact containers (`items-column-list--mobile`, `view-column-detail`)
 - fix tooltip background color
+- updated `reload` icon
 
 
 # [1.7.5] - 2019-09-27
