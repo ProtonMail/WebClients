@@ -6,7 +6,7 @@
     <sticky-messages></sticky-messages>
     <request-timeout></request-timeout>
     <no-results ng-if="conversations.length === 0 && elementsLoaded"></no-results>
-    <section class="item-wrapper">
+    <section class="item-wrapper scroll-smooth-touch">
         <div
             ng-repeat="conversation in conversations track by conversation.ID"
             class="conversation relative item-container flex bg-global-light "
