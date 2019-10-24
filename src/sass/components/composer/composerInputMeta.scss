@@ -59,6 +59,7 @@
     visibility: hidden;
     pointer-events: none
 }
+.composerInputMeta-container:not(.composerInputMeta-overlay-hidden) .encryptionIcon-loader { display: none }
 
 .composerInputMeta-container.composerInputMeta-overlay-hidden {
     max-height: 100%;
