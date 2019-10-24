@@ -386,6 +386,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
                 <Field>
                     <PasswordInput
                         id="newPassword"
+                        key={`${isSecondPhase}${labels.newPassword}`}
                         value={inputs.newPassword}
                         onChange={({ target: { value } }) => setInput({ newPassword: value })}
                         error={errors.confirmPasswordError}
@@ -400,6 +401,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
                 <Field>
                     <PasswordInput
                         id="confirmPassword"
+                        key={`${isSecondPhase}${labels.confirmPassword}`}
                         value={inputs.confirmPassword}
                         onChange={({ target: { value } }) => setInput({ confirmPassword: value })}
                         error={errors.confirmPasswordError}
