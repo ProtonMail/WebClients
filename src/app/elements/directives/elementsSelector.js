@@ -9,7 +9,7 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog, $compi
     const ACTIONS = {
         all: {
             label: gettextCatalog.getString('Select All', null, 'Action'),
-            icon: 'ordered-list',
+            icon: 'selectall',
             action: 'all'
         },
         unread: {
