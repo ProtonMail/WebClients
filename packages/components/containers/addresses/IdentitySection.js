@@ -77,8 +77,8 @@ const IdentitySection = () => {
                     <span className="mr0-5">{c('Label').t`Display name`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/display-name-and-signature/" />
                 </Label>
-                <Field>
-                    <div className="bordered-container pl1 pr1 pt0-5 pb0-5 ellipsis" title={address.DisplayName}>
+                <Field className="bordered-container">
+                    <div className="pl1 pr1 pt0-5 pb0-5 ellipsis" title={address.DisplayName}>
                         {address.DisplayName}
                     </div>
                 </Field>
@@ -88,10 +88,10 @@ const IdentitySection = () => {
             </Row>
             <Row>
                 <Label>{c('Label').t`Signature`}</Label>
-                <Field>
+                <Field className="bordered-container">
                     {address.Signature ? (
                         <div
-                            className="bordered-container break pl1 pr1 pt0-5 pb0-5"
+                            className="break pl1 pr1 pt0-5 pb0-5"
                             dangerouslySetInnerHTML={{ __html: address.Signature }}
                         />
                     ) : (

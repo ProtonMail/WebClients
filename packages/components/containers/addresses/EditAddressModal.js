@@ -56,7 +56,6 @@ const EditAddressModal = ({ onClose, address, ...rest }) => {
                         value={model.displayName}
                         placeholder={c('Placeholder').t`Choose display name`}
                         onChange={handleDisplayName}
-                        required
                     />
                 </Field>
             </Row>
