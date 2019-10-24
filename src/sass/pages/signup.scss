@@ -106,6 +106,12 @@
 /* RESPONSIVE */
 
 body.appConfigBody-is-mobile {
+
+    .signupPage-container {
+        padding-right: 2rem;
+        padding-left: 2rem
+    }
+
     [class*='signUpProcess-step-'],
     [class*='signUpProcess-step-'] .pm_panel { margin: 0; max-width: none; }
     [class*='signUpProcess-step-'] [data-step]::before { display: none }

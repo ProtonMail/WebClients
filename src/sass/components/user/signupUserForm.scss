@@ -35,7 +35,14 @@
 .signUpProcess-btn-create { margin-bottom: 1em; }
 
 .appConfigBody-is-mobile  {
+
     .signupUserForm-container iframe {
-        height: 8rem
+        height: 11rem
+    }
+
+    .signupUserForm-container iframe[data-is-loading="true"],
+    .signupUserForm-container iframe[data-is-available="true"],
+    .signupUserForm-container iframe[data-has-error="true"] {
+        min-height: 14rem
     }
 }
