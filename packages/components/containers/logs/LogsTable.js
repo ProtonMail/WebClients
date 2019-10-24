@@ -20,7 +20,7 @@ const getEventsI18N = () => ({
     [LOGIN_SUCCESS]: c('Log event').t`Login success`,
     [LOGOUT]: c('Log event').t`Logout`,
     [LOGIN_FAILURE_2FA]: c('Log event').t`Login failure (2FA)`,
-    [LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Login failure (2FA)`
+    [LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Login success (2FA)`
 });
 
 const LogsTable = ({ logs, logAuth, loading }) => {
