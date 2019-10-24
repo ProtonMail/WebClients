@@ -70,6 +70,9 @@ function SecuredController(
             setUserType();
         });
     });
+    on('logout', () => {
+        AppModel.set('showWelcome', true);
+    });
 
     const ONBOARD_MODAL_COOKIE = 'protonmail-v4-onboard-modal';
 
