@@ -127,7 +127,7 @@ const PlansTable = ({
                     <td className="aligncenter">0.5</td>
                     <td className="aligncenter">5*</td>
                     <td className="aligncenter">5 / {c('X / user').t`user`}</td>
-                    <td className="aligncenter">30</td>
+                    <td className="aligncenter">20</td>
                 </tr>
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
