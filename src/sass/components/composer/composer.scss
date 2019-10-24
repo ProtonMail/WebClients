@@ -294,7 +294,7 @@
             bottom: 1rem;
             width: 100%;
             transition: none;
-            transform: none;
+            transform: none !important;
             width: calc(100% - 4.5rem - 2rem);
             height: auto !important;
             max-height: 100%;
