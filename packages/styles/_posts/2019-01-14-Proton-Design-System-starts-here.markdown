@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Proton Design System starts here"
-intro:  "Here is the first step for Proton Design System, starting with ProtonMail V4.0."
+intro:  "Here is the first step for Proton Design System, starting with ProtonMail 4.0."
 date:   2019-01-14 13:37:42 +0100
 categories: update announcement
 ---
