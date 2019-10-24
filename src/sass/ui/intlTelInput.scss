@@ -103,6 +103,9 @@
 .intl-tel-input .country-list .country-name {
     margin-right: 6px
 }
+.intl-tel-input .country-list .country-name {
+    color: $pm-global-altgrey;
+}
 .intl-tel-input.allow-dropdown input,
 .intl-tel-input.allow-dropdown input[type=text],
 .intl-tel-input.allow-dropdown input[type=tel] {
