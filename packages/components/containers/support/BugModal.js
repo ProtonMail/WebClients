@@ -84,7 +84,7 @@ const BugModal = ({ onClose, username: Username = '', location, addresses = [], 
         Client,
         ClientVersion: APP_VERSION,
         ClientType: CLIENT_TYPE,
-        Title: options[0].value,
+        Title: `[BETA] ${options[0].value}`,
         Description: '',
         Username,
         Email
