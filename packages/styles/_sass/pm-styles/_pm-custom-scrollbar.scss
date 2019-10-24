@@ -3,6 +3,11 @@ $scrollbar-color: $black !default;
 $scrollbar-thumb-color: #586065 !default;
 $scrollbar-thumb-height: 40px !default;
 
+.customScrollBar-container {
+  scrollbar-color: $scrollbar-thumb-color $black;
+  scrollbar-width: thin;
+}
+
 .customScrollBar-container::-webkit-scrollbar {
   width: $scrollbar-width;
 }
@@ -22,25 +27,4 @@ $scrollbar-thumb-height: 40px !default;
   height: $scrollbar-thumb-height;
   background-color: $scrollbar-thumb-color;
   border-radius: #{$scrollbar-width/2};
-}
-
-
-/* to target devices than can hover with a precise pointer (mouse) */
-/* Idea : make scroll appear only on hover */
-@media (hover: hover) and (pointer: fine) {
-
-  .customScrollBar-container::-webkit-scrollbar-track:vertical,
-  .customScrollBar-container::-webkit-scrollbar-track-piece,
-  .customScrollBar-container::-webkit-scrollbar-thumb:vertical  {
-	  background-color: transparent;
-  }
-
-  .customScrollBar-container:hover::-webkit-scrollbar-track:vertical,
-  .customScrollBar-container:hover::-webkit-scrollbar-track-piece {
-	  background-color: $black;
-  }
-	.customScrollBar-container:hover::-webkit-scrollbar-thumb:vertical {
-	  background-color: $scrollbar-thumb-color;
-	}
-
 }
