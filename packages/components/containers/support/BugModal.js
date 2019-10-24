@@ -84,7 +84,7 @@ const BugModal = ({ onClose, username: Username = '', location, addresses = [], 
         Client,
         ClientVersion: APP_VERSION,
         ClientType: CLIENT_TYPE,
-        Title: CLIENT_TYPE === VPN ? options[0].value : `[BETA] ${options[0].value}`,
+        Title: CLIENT_TYPE === VPN ? options[0].value : `[V4] ${options[0].value}`,
         Description: '',
         Username,
         Email
