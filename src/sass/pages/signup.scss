@@ -107,7 +107,7 @@
 
 body.appConfigBody-is-mobile {
     [class*='signUpProcess-step-'],
-    [class*='signUpProcess-step-'] .pm_panel { margin: 0; padding: 1em !important; max-width: none; }
+    [class*='signUpProcess-step-'] .pm_panel { margin: 0; max-width: none; }
     [class*='signUpProcess-step-'] [data-step]::before { display: none }
     [class*='signUpProcess-step-'] .customMaskInput-mask { margin-top: 0; }
     [class*='signUpProcess-step-'] .signup-radio-label {

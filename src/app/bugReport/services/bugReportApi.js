@@ -42,6 +42,10 @@ function bugReportApi(
         }
     };
 
+    const prependTitle = (text = '') => {
+        return `[V4] ${text}`;
+    };
+
     const getViewLayout = (type) => MAP_MODE.layout[type] || 'unknown';
     const getViewMode = (type) => MAP_MODE.view[type] || 'undefined';
 
@@ -75,7 +79,7 @@ function bugReportApi(
         return {
             ...getClient(),
             Resolution: `${window.innerHeight} x ${window.innerWidth}`,
-            Title: `[Angular] Bug [${$state.$current.name}]`,
+            Title: prependTitle(`[Angular] Bug [${$state.$current.name}]`),
             Description: '',
             Username: Name,
             Email
