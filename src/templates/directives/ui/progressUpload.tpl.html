@@ -1,18 +1,18 @@
-<div class="progressLoader-container pm_button progressUpload-uploading bg-white p0">
+<div class="progressLoader-container flex flex-spacebetween bordered-container p0-25 flex-nowrap flex-items-center pm_button progressUpload-uploading bg-white p0">
 
-    <div class="progressLoader-attachment">
-        <icon data-name="file-image" class="progressLoader-icon" ng-class="(model.packet.Inline !== 1) ? 'hidden' : ''"></icon>
-        <icon data-name="attach" class="progressLoader-icon" ng-class="(model.packet.Inline === 1) ? 'hidden' : ''"></icon>
-        <span class="progressLoader-name">{{ ::model.packet.filename }}</span>
+    <div class="progressLoader-attachment flex flex-nowrap flex-item-fluid">
+        <icon data-name="file-image" class="progressLoader-icon flex-item-noshrink mauto" ng-class="(model.packet.Inline !== 1) ? 'hidden' : ''"></icon>
+        <icon data-name="attach" class="progressLoader-icon flex-item-noshrink mauto" ng-class="(model.packet.Inline === 1) ? 'hidden' : ''"></icon>
+        <span class="progressLoader-name flex-item-fluid ellipsis pl0-5 pr0-5">{{ ::model.packet.filename }}</span>
     </div>
 
     <progression-btn
         data-action="close"
         data-file-name="{{::model.packet.filename}}"
-        class="progressLoader-btn-close"></progression-btn>
+        class="progressLoader-btn-close flex-item-noshrink mauto flex"></progression-btn>
 
     <progression-btn
         data-action="remove"
         data-file-name="{{::model.packet.filename}}"
-        class="progressLoader-btn-remove"></progression-btn>
+        class="progressLoader-btn-remove flex-item-noshrink mauto flex"></progression-btn>
 </div>
