@@ -237,17 +237,12 @@ export enum CYCLE {
     TWO_YEARS = 24
 }
 
-const BLACK_FRIDAY_YEAR = 2018;
 export const BLACK_FRIDAY = {
-    YEAR: BLACK_FRIDAY_YEAR,
-    COUPON_CODE: 'TWO4ONE2018',
-    CYCLE: CYCLE.TWO_YEARS,
-    BETWEEN: {
-        START: `${BLACK_FRIDAY_YEAR}-11-23`,
-        END: `${BLACK_FRIDAY_YEAR}-11-26`
-    },
-    INTERVAL: 10 * 60 * 1000
+    COUPON_CODE: 'BF2019',
+    START: '2019-11-17',
+    END: '2019-12-09'
 };
+
 export const MIN_PAYPAL_AMOUNT = 500;
 export const MAX_PAYPAL_AMOUNT = 99999900;
 export enum NEWS {
