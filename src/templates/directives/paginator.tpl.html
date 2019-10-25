@@ -13,17 +13,19 @@
             <icon name="caret" class="dropdownv4-icon mauto toolbar-icon ml0-25"></icon>
         </dropdown-button>
 
-        <dropdown-content class="paginator-dropdown dropDown-content--narrow scroll-if-needed">
-            <ul class="unstyled mt0-5 mb0-5">
-                <li class="dropDown-item" ng-repeat="p in pages track by p">
-                    <button class="w100 pt0-5 pb0-5 no-pointer-events-children" data-value="{{::p}}">
-                        <em
-                            translate
-                            translate-context="Title"
-                            translate-comment="current page dropdown in paginator">Page</em> {{ ::p }}
-                    </button>
-                </li>
-            </ul>
+        <dropdown-content class="dropDown-content--narrow">
+            <div class="scroll-if-needed paginator-dropdown">
+                <ul class="unstyled mt0-5 mb0-5">
+                    <li class="dropDown-item" ng-repeat="p in pages track by p">
+                        <button class="w100 pt0-5 pb0-5 no-pointer-events-children" data-value="{{::p}}">
+                            <span
+                                translate
+                                translate-context="Title"
+                                translate-comment="current page dropdown in paginator">Page</span> {{ ::p }}
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </dropdown-content>
     </dropdown-container>
 
