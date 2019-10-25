@@ -54,3 +54,8 @@ export const isBundleEligible = (subscription = {}) => {
 
     return [PLUS, VPNPLUS].includes(Name);
 };
+
+export const hasLifetime = (subscription = {}) => {
+    const { CouponCode = '' } = subscription;
+    return CouponCode === 'LIFETIME';
+};
