@@ -2,11 +2,11 @@ import { EVENT_ACTIONS } from '../constants';
 
 const { DELETE, CREATE, UPDATE } = EVENT_ACTIONS;
 
-function sort(list = [], hasSort) {
-    if (!hasSort) {
+function sort(list = [], sortByKey) {
+    if (!sortByKey) {
         return list;
     }
-    return list.sort((itemA, itemB) => itemA.Order - itemB.Order);
+    return list.sort((itemA, itemB) => itemA[sortByKey] - itemB[sortByKey]);
 }
 
 const defaultMerge = (oldModel, newModel) => {
@@ -44,7 +44,7 @@ const updateCollection = ({ model = [], events = [], item, merge = defaultMerge 
     );
 
     const todos = [].concat(todo[CREATE], todo[UPDATE]);
-    const hasSort = 'Order' in (todos[0] || {});
+    const sortByKey = ['Order', 'Priority'].find((sortProperty) => sortProperty in (todos[0] || {}));
 
     // NOTE We cannot trust Action so "create" and "update" events need to be handle in the way
     const { collection } = todos.reduce(
@@ -73,7 +73,7 @@ const updateCollection = ({ model = [], events = [], item, merge = defaultMerge 
         }
     );
 
-    return sort(collection, hasSort).filter(({ ID }) => !todo[DELETE][ID]);
+    return sort(collection, sortByKey).filter(({ ID }) => !todo[DELETE][ID]);
 };
 
 export default updateCollection;
