@@ -16,9 +16,11 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }) => {
             ref={buttonRef}
             {...rest}
         >
-            <span className="alignright flex flex-column mr0-5 nomobile">
-                <span className="bl capitalize mw100 ellipsis">{DisplayName || Name}</span>
-                {Email ? <span className="bl mw100 ellipsis smaller m0 opacity-30 lh100">{Email}</span> : null}
+            <span className="alignright flex flex-column mr0-5 lh130 nomobile">
+                <span className="inbl mw100 ellipsis dropDown-logout-displayName">{DisplayName || Name}</span>
+                {Email ? (
+                    <span className="inbl mw100 ellipsis m0 opacity-30 dropDown-logout-email">{Email}</span>
+                ) : null}
             </span>
 
             <span className="mtauto mbauto bordered rounded50 p0-5 inbl dropDown-logout-initials relative flex flex-item-noshrink">
