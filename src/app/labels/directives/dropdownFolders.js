@@ -52,6 +52,15 @@ function dropdownFolders(labelsModel, dispatchers, labelModal, gettextCatalog) {
                 if (target.hasAttribute('data-folder-id')) {
                     scope.$applyAsync(() => {
                         const folderID = target.getAttribute('data-folder-id');
+
+                        if (scope.message) {
+                            dispatcher.messageActions('move', {
+                                ids: [scope.message.ID],
+                                labelID: folderID
+                            });
+                            return close();
+                        }
+
                         dispatcher.requestElements('moveTo', {
                             folderID
                         });

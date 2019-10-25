@@ -106,6 +106,17 @@ function dropdownLabels(
                     scope.$applyAsync(() => {
                         const label = _.find(scope.labels, { ID });
                         label.Selected = true;
+
+                        if (scope.message) {
+                            dispatcher.messageActions('label', {
+                                messages: [scope.message],
+                                labels: scope.labels,
+                                alsoArchive: scope.alsoArchive
+                            });
+                            notification.success(I18N.LABELS_SAVED);
+                            return close();
+                        }
+
                         dispatcher.requestElements('saveLabels', {
                             labels: scope.labels,
                             alsoArchive: scope.alsoArchive
