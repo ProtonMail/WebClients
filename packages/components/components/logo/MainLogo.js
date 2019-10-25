@@ -4,7 +4,7 @@ import { useSubscription, Href, useConfig } from 'react-components';
 import { Link } from 'react-router-dom';
 
 import { APPS, PLAN_SERVICES, CLIENT_TYPES } from 'proton-shared/lib/constants';
-import { getPlanName } from 'proton-shared/lib/helpers/subscription';
+import { getPlanName, hasLifetime } from 'proton-shared/lib/helpers/subscription';
 
 import CalendarLogo from './CalendarLogo';
 import ContactsLogo from './ContactsLogo';
@@ -25,7 +25,9 @@ const MainLogo = ({ url = '/inbox', external = false, className = '' }) => {
     const { APP_NAME, CLIENT_TYPE } = useConfig();
     const [subscription] = useSubscription();
     const classNames = classnames(['logo-container nodecoration flex flex-item-centered-vert', className]);
-    const planName = getPlanName(subscription, CLIENT_TYPE === CLIENT_TYPES.VPN ? VPN : MAIL);
+    const planName = hasLifetime(subscription)
+        ? 'Lifetime'
+        : getPlanName(subscription, CLIENT_TYPE === CLIENT_TYPES.VPN ? VPN : MAIL);
 
     const logo = (() => {
         // we do not have the proper logos for all the products yet. Use mail logo in the meantime
