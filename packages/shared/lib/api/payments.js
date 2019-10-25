@@ -123,3 +123,8 @@ export const verifyPayment = ({ Amount, Credit, Currency, Payment, GiftCode }) =
     method: 'post',
     data: { Amount, Credit, Currency, Payment, GiftCode }
 });
+
+export const getLastCancelledSubscription = () => ({
+    url: 'payments/subscription/latest',
+    method: 'get'
+});
