@@ -7,7 +7,7 @@
             ng-repeat="conversation in conversations track by conversation.ID"
             data-pt-draggable-element
             data-elements-container
-            class="conversation relative item-container-row flex bg-global-light"
+            class="conversation relative item-container-row cursor-pointer flex bg-global-light"
             ng-class="getClassNames(conversation, markedElement)">
 
             <select-box-element class="mr1"></select-box-element>
