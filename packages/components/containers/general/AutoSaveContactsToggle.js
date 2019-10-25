@@ -1,23 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Toggle, useToggle, useNotifications, useEventManager, useApiWithoutResult } from 'react-components';
+import { Toggle, useNotifications, useEventManager, useApi, useLoading } from 'react-components';
 import { updateAutoSaveContacts } from 'proton-shared/lib/api/mailSettings';
 
 const AutoSaveContactsToggle = ({ autoSaveContacts, ...rest }) => {
+    const api = useApi();
+    const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
-    const { request, loading } = useApiWithoutResult(updateAutoSaveContacts);
-    const { state, toggle } = useToggle(!!autoSaveContacts);
 
     const handleChange = async ({ target }) => {
-        await request(+target.checked);
-        call();
-        toggle();
+        await api(updateAutoSaveContacts(+target.checked));
+        await call();
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
-    return <Toggle loading={loading} checked={state} onChange={handleChange} {...rest} />;
+    return (
+        <Toggle
+            loading={loading}
+            checked={autoSaveContacts}
+            onChange={(event) => withLoading(handleChange(event))}
+            {...rest}
+        />
+    );
 };
 
 AutoSaveContactsToggle.propTypes = {
