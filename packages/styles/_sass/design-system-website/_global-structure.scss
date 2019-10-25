@@ -79,33 +79,29 @@ body {
 }
 
 
-.main-area,
-.main-area--withToolbar{
+.main-area {
   background: $white;
   color: $pm-global-grey;
   height: calc(100vh - #{$header-height} );
+  max-height: calc(100vh - #{$header-height} );
   overflow: auto;
+  border-radius: 4px 4px 0 0;
   
   &.no-scroll {
     overflow: hidden;
   }
 }
-.main-area {
-  border-radius: 4px 4px 0 0;
-}
 .main-area--withToolbar {
+  @extend .main-area;
   height: calc(100vh - #{$header-height} - #{$toolbar-height} );
   max-height: calc(100vh - #{$header-height} - #{$toolbar-height} );
+  border-radius: 0;
 }
+
 .main-full {
   height: 100vh;
   overflow: auto;
   @extend .bg-global-altgrey-gradient;
-}
-.main-area--withToolbar.no-scroll {
-  overflow: hidden;
-  height: calc(100vh - #{$toolbar-height} );
-  max-height: calc(100vh - #{$toolbar-height} );
 }
 .main-area--noHeader {
   @extend .main-area;
