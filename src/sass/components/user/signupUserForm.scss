@@ -40,6 +40,14 @@
         height: 11rem
     }
 
+    .signupUserForm-container .bottom {
+        min-height: 24rem
+    }
+
+    .signupUserForm-container iframe.bottom[data-has-error="true"] {
+        min-height: 29rem
+    }
+
     .signupUserForm-container iframe[data-is-loading="true"],
     .signupUserForm-container iframe[data-is-available="true"],
     .signupUserForm-container iframe[data-has-error="true"] {
