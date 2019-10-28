@@ -9,19 +9,19 @@ const { MAIL, VPN } = PLAN_SERVICES;
 const I18N = {
     included: c('Option').t`included`,
     address(value) {
-        return c('Option').ngettext(msgid`1 address`, `${value} addresses`, value);
+        return c('Option').ngettext(msgid`${value} address`, `${value} addresses`, value);
     },
     space(value) {
-        return c('Option').ngettext(msgid`1 GB storage`, `${value} GB storage`, value);
+        return c('Option').ngettext(msgid`${value} GB storage`, `${value} GB storage`, value);
     },
     domain(value) {
-        return c('Option').ngettext(msgid`1 custom domain`, `${value} custom domains`, value);
+        return c('Option').ngettext(msgid`${value} custom domain`, `${value} custom domains`, value);
     },
     member(value) {
-        return c('Option').ngettext(msgid`1 user`, `${value} users`, value);
+        return c('Option').ngettext(msgid`${value} user`, `${value} users`, value);
     },
     vpn(value) {
-        return c('Option').ngettext(msgid`1 VPN connection`, `${value} VPN connections`, value);
+        return c('Option').ngettext(msgid`${value} VPN connection`, `${value} VPN connections`, value);
     }
 };
 
