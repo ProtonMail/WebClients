@@ -16,7 +16,7 @@ import {
 import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from 'proton-shared/lib/constants';
 
 import EditAddressModal from './EditAddressModal';
-import PMSignatureToggle from './PMSignatureToggle';
+import PMSignatureField from './PMSignatureField';
 
 const IdentitySection = () => {
     const [addresses, loading] = useAddresses();
@@ -104,9 +104,7 @@ const IdentitySection = () => {
             </Row>
             <Row>
                 <Label htmlFor="pmSignatureToggle">{c('Label').t`ProtonMail signature`}</Label>
-                <Field>
-                    <PMSignatureToggle id="pmSignatureToggle" />
-                </Field>
+                <PMSignatureField id="pmSignatureToggle" />
             </Row>
         </>
     );
