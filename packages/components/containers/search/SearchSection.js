@@ -30,10 +30,10 @@ const SearchSection = () => {
                 <Field>
                     <Toggle
                         loading={loading}
-                        checked={!!AutoWildcardSearch}
+                        checked={!AutoWildcardSearch}
                         id="exactMatchToggle"
                         onChange={({ target: { checked } }) => {
-                            withLoading(api(updateAutoWildcardSearch(+checked)).then(call));
+                            withLoading(api(updateAutoWildcardSearch(+!checked)).then(call));
                         }}
                     />
                 </Field>
