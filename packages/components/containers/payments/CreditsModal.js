@@ -20,6 +20,7 @@ import { DEFAULT_CURRENCY, DEFAULT_CREDITS_AMOUNT, CLIENT_TYPES, MIN_CREDIT_AMOU
 import PaymentSelector from './PaymentSelector';
 import Payment from './Payment';
 import usePayment from './usePayment';
+import useCard from './useCard';
 import { handlePaymentToken } from './paymentTokenHelper';
 
 const getCurrenciesI18N = () => ({
@@ -40,6 +41,7 @@ const CreditsModal = (props) => {
     const [loading, withLoading] = useLoading();
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
     const [amount, setAmount] = useState(DEFAULT_CREDITS_AMOUNT);
+    const card = useCard();
 
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
@@ -92,6 +94,7 @@ const CreditsModal = (props) => {
                 amount={amount}
                 currency={currency}
                 parameters={parameters}
+                card={card}
                 onParameters={setParameters}
                 onMethod={setMethod}
                 onValidCard={setCardValidity}

@@ -8,6 +8,7 @@ import { DEFAULT_CURRENCY, DEFAULT_DONATION_AMOUNT } from 'proton-shared/lib/con
 import PaymentSelector from './PaymentSelector';
 import Payment from './Payment';
 import usePayment from './usePayment';
+import useCard from './useCard';
 import { handlePaymentToken } from './paymentTokenHelper';
 
 const DonateModal = ({ ...rest }) => {
@@ -18,6 +19,7 @@ const DonateModal = ({ ...rest }) => {
     const [amount, setAmount] = useState(DEFAULT_DONATION_AMOUNT);
     const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
     const { createModal } = useModals();
+    const card = useCard();
 
     const handleSubmit = async (params = parameters) => {
         const requestBody = await handlePaymentToken({
@@ -59,6 +61,7 @@ const DonateModal = ({ ...rest }) => {
                 amount={amount}
                 currency={currency}
                 parameters={parameters}
+                card={card}
                 onParameters={setParameters}
                 onMethod={setMethod}
                 onValidCard={setCardValidity}

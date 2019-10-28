@@ -33,6 +33,7 @@ import Thanks from './Thanks';
 import { getCheckParams, toPlanMap, containsSamePlans } from './helpers';
 import { handlePaymentToken } from '../paymentTokenHelper';
 import Upgrading from './Upgrading';
+import useCard from '../useCard';
 
 const { MAIL } = CLIENT_TYPES;
 const ORDER_SUMMARY_ID = 'order-summary';
@@ -58,6 +59,7 @@ const SubscriptionModal = ({
     const [model, setModel] = useState({ cycle, currency, coupon, plansMap });
     const { call } = useEventManager();
     const { step, next, previous, goTo } = useStep(initialStep);
+    const card = useCard();
 
     const callCheck = async (m = model) => {
         try {
@@ -221,6 +223,7 @@ const SubscriptionModal = ({
                         cycle={model.cycle}
                         currency={model.currency}
                         parameters={parameters}
+                        card={card}
                         onParameters={setParameters}
                         onMethod={setMethod}
                         onValidCard={setCardValidity}

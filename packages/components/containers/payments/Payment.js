@@ -23,7 +23,8 @@ const Payment = ({
     onMethod,
     onValidCard,
     onPay,
-    fieldClassName
+    fieldClassName,
+    card
 }) => {
     const { methods, options, loading } = usePaymentMethods({ amount, coupon, type });
 
@@ -89,6 +90,7 @@ const Payment = ({
                         currency={currency}
                         onCard={handleCard}
                         onPayPal={onPay}
+                        card={card}
                         type={type}
                         method={method}
                         methods={methods}
@@ -107,6 +109,7 @@ Payment.propTypes = {
     coupon: PropTypes.string,
     currency: PropTypes.oneOf(['EUR', 'CHF', 'USD']),
     parameters: PropTypes.object,
+    card: PropTypes.object,
     onParameters: PropTypes.func,
     method: PropTypes.string,
     onMethod: PropTypes.func,

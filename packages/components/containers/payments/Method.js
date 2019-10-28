@@ -4,7 +4,6 @@ import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { Loader } from 'react-components';
 
 import Card from './Card';
-import useCard from './useCard';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PayPal from './PayPal';
 import Cash from './Cash';
@@ -12,8 +11,8 @@ import Bitcoin from './Bitcoin';
 
 const { CARD, PAYPAL, BITCOIN, CASH } = PAYMENT_METHOD_TYPES;
 
-const Method = ({ type, amount = 0, currency, onCard, onPayPal, method, methods, loading }) => {
-    const { card, updateCard, errors, isValid } = useCard();
+const Method = ({ type, amount = 0, currency, onCard, onPayPal, method, methods, loading, card: cardToUse }) => {
+    const { card, updateCard, errors, isValid } = cardToUse;
 
     useEffect(() => {
         onCard({ card, isValid });
@@ -54,6 +53,7 @@ Method.propTypes = {
     methods: PropTypes.array,
     type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit']),
     amount: PropTypes.number,
+    card: PropTypes.object.isRequired,
     onCard: PropTypes.func,
     onPayPal: PropTypes.func,
     currency: PropTypes.oneOf(['EUR', 'CHF', 'USD'])
