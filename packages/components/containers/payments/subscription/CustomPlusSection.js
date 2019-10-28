@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { c } from 'ttag';
-import { Select, Info } from 'react-components';
+import { Select } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 import { ADDON_NAMES, PLANS } from 'proton-shared/lib/constants';
 
@@ -71,7 +70,6 @@ const CustomPlusSection = ({ plans, model, onChange }) => {
                         value={model.plansMap[ADDON_NAMES.ADDRESS]}
                         onChange={handleChange(ADDON_NAMES.ADDRESS)}
                     />
-                    <Info title={c('Tooltip').t`Add additional addresses to your account.`} />
                 </div>
                 <div>
                     {model.plansMap[ADDON_NAMES.ADDRESS] ? (
@@ -93,7 +91,6 @@ const CustomPlusSection = ({ plans, model, onChange }) => {
                         value={model.plansMap[ADDON_NAMES.DOMAIN]}
                         onChange={handleChange(ADDON_NAMES.DOMAIN)}
                     />
-                    <Info title={c('Tooltip').t`Use your own domain name.`} />
                 </div>
                 <div>
                     {model.plansMap[ADDON_NAMES.DOMAIN] ? (

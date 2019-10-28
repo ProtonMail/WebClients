@@ -54,7 +54,7 @@ const PlansSection = () => {
         createModal(<DowngradeModal onConfirm={handleUnsubscribe} />);
     };
 
-    const handleModal = (newPlansMap) => async () => {
+    const handleModal = (newPlansMap, step) => async () => {
         if (!newPlansMap) {
             handleOpenModal();
             return;
@@ -74,6 +74,7 @@ const PlansSection = () => {
                 coupon={coupon}
                 currency={currency}
                 cycle={cycle}
+                step={step}
             />
         );
     };

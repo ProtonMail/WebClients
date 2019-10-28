@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { SmallButton, Price, Icon, Info, Tooltip, useToggle } from 'react-components';
+import { SmallButton, Price, Icon, Info, Tooltip, useToggle, classnames } from 'react-components';
 import { getPlanName } from 'proton-shared/lib/helpers/subscription';
 import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS } from 'proton-shared/lib/constants';
 
@@ -36,7 +36,7 @@ const PlansTable = ({
     const getPrice = (planName) => {
         const plan = plans.find(({ Name }) => Name === planName);
         const monthlyPrice = (
-            <Price className="h3 mb0" currency={currency} suffix={planName === 'professional' ? '/mo/user' : '/mo'}>
+            <Price className="h3 mb0" currency={currency} suffix={planName === PROFESSIONAL ? '/mo/user' : '/mo'}>
                 {plan.Pricing[cycle] / cycle}
             </Price>
         );
@@ -101,9 +101,9 @@ const PlansTable = ({
                         )}
                     </th>
                     <td className="bg-global-light aligncenter">FREE</td>
-                    <td className="bg-global-light aligncenter">{getPrice('plus')}</td>
-                    <td className="bg-global-light aligncenter">{getPrice('professional')}</td>
-                    <td className="bg-global-light aligncenter">{getPrice('visionary')}</td>
+                    <td className="bg-global-light aligncenter">{getPrice(PLUS)}</td>
+                    <td className="bg-global-light aligncenter">{getPrice(PROFESSIONAL)}</td>
+                    <td className="bg-global-light aligncenter">{getPrice(VISIONARY)}</td>
                 </tr>
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
@@ -321,12 +321,12 @@ const PlansTable = ({
                         </SmallButton>
                     </td>
                     <td className="aligncenter">
-                        <SmallButton className="pm-button--link" onClick={onSelect({ plus: 1, vpnplus: 1 })}>
+                        <SmallButton className="pm-button--link" onClick={onSelect({ plus: 1, vpnplus: 1 }, 1)}>
                             {hasPaidVpn ? c('Action').t`Edit VPN` : c('Action').t`Add VPN`}
                         </SmallButton>
                     </td>
                     <td className="aligncenter">
-                        <SmallButton className="pm-button--link" onClick={onSelect({ professional: 1, vpnplus: 1 })}>
+                        <SmallButton className="pm-button--link" onClick={onSelect({ professional: 1, vpnplus: 1 }, 1)}>
                             {hasPaidVpn ? c('Action').t`Edit VPN` : c('Action').t`Add VPN`}
                         </SmallButton>
                     </td>
@@ -339,23 +339,37 @@ const PlansTable = ({
                         </SmallButton>
                     </th>
                     <td className="aligncenter">
-                        <SmallButton className="pm-button--primary" onClick={onSelect()}>{c('Action')
-                            .t`Update`}</SmallButton>
-                    </td>
-                    <td className="aligncenter">
-                        <SmallButton className="pm-button--primary" onClick={onSelect({ plus: 1, vpnplus: 1 })}>{c(
-                            'Action'
-                        ).t`Update`}</SmallButton>
+                        <SmallButton
+                            disabled={planName === FREE}
+                            className={classnames([planName !== FREE && 'pm-button--primary'])}
+                            onClick={onSelect()}
+                        >
+                            {planName === FREE ? c('Action').t`Update` : c('Action').t`Select`}
+                        </SmallButton>
                     </td>
                     <td className="aligncenter">
                         <SmallButton
-                            className="pm-button--primary"
-                            onClick={onSelect({ professional: 1, vpnplus: 1 })}
-                        >{c('Action').t`Update`}</SmallButton>
+                            className={classnames([planName !== PLUS && 'pm-button--primary'])}
+                            onClick={onSelect({ plus: 1 })}
+                        >
+                            {planName === PLUS ? c('Action').t`Update` : c('Action').t`Select`}
+                        </SmallButton>
                     </td>
                     <td className="aligncenter">
-                        <SmallButton className="pm-button--primary" onClick={onSelect({ visionary: 1 })}>{c('Action')
-                            .t`Update`}</SmallButton>
+                        <SmallButton
+                            className={classnames([planName !== PROFESSIONAL && 'pm-button--primary'])}
+                            onClick={onSelect({ professional: 1 })}
+                        >
+                            {planName === PROFESSIONAL ? c('Action').t`Update` : c('Action').t`Select`}
+                        </SmallButton>
+                    </td>
+                    <td className="aligncenter">
+                        <SmallButton
+                            className={classnames([planName !== VISIONARY && 'pm-button--primary'])}
+                            onClick={onSelect({ visionary: 1 })}
+                        >
+                            {planName === VISIONARY ? c('Action').t`Update` : c('Action').t`Select`}
+                        </SmallButton>
                     </td>
                 </tr>
             </tbody>
