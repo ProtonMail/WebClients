@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
+    Alert,
     Button,
     FormModal,
     ResetButton,
@@ -147,7 +148,7 @@ function AddFilterModal({ filter, type, mode = 'create', onEdit = noop, ...props
             noValidate={true}
             className={isPreview ? 'AddFilterModal-isPreview' : ''}
             title={
-                !isPreview ? c('Add Filter Modal').t`Custom Filter` : c('Add Filter Modal').t`Custom Filter (Preview)`
+                !isPreview ? c('Add filter modal').t`Custom filter` : c('Add filter modal').t`Custom filter (preview)`
             }
             onClose={props.onClose}
             footer={getFooter(reqCreate.loading || reqUpdate.loading)}
@@ -155,6 +156,10 @@ function AddFilterModal({ filter, type, mode = 'create', onEdit = noop, ...props
         >
             {type === 'complex' ? (
                 <div className="AddFilterModal-editor">
+                    <Alert learnMore="https://protonmail.com/support/knowledge-base/sieve-advanced-custom-filters/">{c(
+                        'Info'
+                    )
+                        .t`Custom filters work on all new emails, including incoming emails as well as sent emails. To find out how to write Sieve filters.`}</Alert>
                     <NameEditor error={errors.name} filter={filterModel} onChange={handleChangeName} />
                     <SieveEditor
                         filter={filterModel}
