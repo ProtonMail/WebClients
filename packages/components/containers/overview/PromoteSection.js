@@ -1,7 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { CYCLE } from 'proton-shared/lib/constants';
 import { Link } from 'react-router-dom';
 import thanksForYourSupportSvg from 'design-system/assets/img/pm-images/love.svg';
 import contactYourAdminSvg from 'design-system/assets/img/pm-images/settings.svg';
@@ -26,7 +25,7 @@ const Panel = ({ model }) => {
                     </div>
                 </div>
                 <div className="flex-autogrid-item flex flex-column flex-items-end">
-                    <img className="h100" src={model.image} alt={model.title} style={{ maxHeight: '200px' }} s />
+                    <img className="h100" src={model.image} alt={model.title} style={{ maxHeight: '200px' }} />
                 </div>
             </div>
         </div>
@@ -37,7 +36,8 @@ Panel.propTypes = {
     model: PropTypes.object.isRequired
 };
 
-const PromoteSection = ({ subscription, user }) => {
+const PromoteSection = ({ user }) => {
+    const { isPaid, hasPaidMail, hasPaidVpn, isMember } = user;
     const MODELS = {
         member: {
             title: c('Title').t`Need help?`,
@@ -59,7 +59,7 @@ const PromoteSection = ({ subscription, user }) => {
             image: thanksForYourSupportSvg,
             action: c('Action').t`Join`
         },
-        payMonthly: {
+        payBundle: {
             title: c('Title').t`Get 20% discount`,
             text: c('Info').t`Pay for both ProtonMail and ProtonVPN and get 20% off your entire subscription.`,
             link: '/settings/subscription',
@@ -68,15 +68,15 @@ const PromoteSection = ({ subscription, user }) => {
         }
     };
 
-    if (user.isMember) {
+    if (isMember) {
         return <Panel model={MODELS.member} />;
     }
 
-    if (user.isPaid) {
-        if (subscription.Cycle === CYCLE.MONTHLY) {
-            return <Panel model={MODELS.payMonthly} />;
-        }
+    if ((hasPaidMail && !hasPaidVpn) || (!hasPaidMail && hasPaidVpn)) {
+        return <Panel model={MODELS.payBundle} />;
+    }
 
+    if (isPaid) {
         return <Panel model={MODELS.pay} />;
     }
 
@@ -84,7 +84,6 @@ const PromoteSection = ({ subscription, user }) => {
 };
 
 PromoteSection.propTypes = {
-    subscription: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired
 };
 
