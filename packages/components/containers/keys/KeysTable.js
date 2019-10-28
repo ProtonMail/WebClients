@@ -5,6 +5,7 @@ import { Table, TableCell, TableRow, TableBody } from 'react-components';
 
 import KeysActions from './KeysActions';
 import KeysStatus from './KeysStatus';
+import { Copy } from '../../components/button';
 
 const KeysTable = ({ keys = [], onAction }) => {
     const headerCells = [
@@ -31,9 +32,12 @@ const KeysTable = ({ keys = [], onAction }) => {
                         <TableRow
                             key={ID}
                             cells={[
-                                <code key={1} className="mw100 inbl ellipsis">
-                                    {fingerprint}
-                                </code>,
+                                <div key={1} className="flex flex-row flex-nowrap flex-items-center">
+                                    <Copy value={fingerprint} className="pm-button--small" />
+                                    <code className="ml1 mw100 inbl ellipsis" title={fingerprint}>
+                                        {fingerprint}
+                                    </code>
+                                </div>,
                                 algorithm,
                                 <KeysStatus key={2} {...status} />,
                                 <KeysActions
