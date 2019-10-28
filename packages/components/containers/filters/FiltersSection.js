@@ -38,7 +38,7 @@ function FiltersSection() {
             <SubTitle>{c('FilterSettings').t`Custom Filters`}</SubTitle>
             <Alert type="info">
                 {c('FilterSettings')
-                    .t`Add a custom filter to perform actions suche as automatically labeling or archiving messages.`}
+                    .t`Add a custom filter to perform actions such as automatically labeling or archiving messages.`}
             </Alert>
 
             <Block>
