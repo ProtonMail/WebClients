@@ -1,4 +1,4 @@
-import isWithinRange from 'date-fns/is_within_range'
+import isWithinRange from 'date-fns/is_within_range';
 
 import { BLACK_FRIDAY } from '../constants';
 
