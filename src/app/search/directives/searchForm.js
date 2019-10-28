@@ -50,7 +50,7 @@ function searchForm(
                 const $input = el[0].querySelector('.search-form-fieldset-input');
 
                 scope.model = {
-                    wildcard: Boolean(AutoWildcardSearch),
+                    wildcard: AutoWildcardSearch === 0,
                     folder: folders[0],
                     address: addresses[0],
                     attachments: '2'
