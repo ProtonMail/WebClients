@@ -12,7 +12,7 @@ const ICONS = {
     [LOGIN_SUCCESS]: <Icon name="on" />,
     [LOGOUT]: <Icon name="on" />,
     [LOGIN_FAILURE_2FA]: <Icon name="off" />,
-    [LOGIN_SUCCESS_AWAIT_2FA]: <Icon name="off" />
+    [LOGIN_SUCCESS_AWAIT_2FA]: <Icon name="on" />
 };
 
 const getEventsI18N = () => ({
