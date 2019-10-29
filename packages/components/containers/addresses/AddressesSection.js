@@ -9,7 +9,7 @@ const AddressesSection = () => {
     const [user] = useUser();
     const [organization, loadingOrganization] = useOrganization();
 
-    const { MaxMembers, UsedAddresses, MaxAddresses } = organization || {};
+    const { UsedAddresses, MaxAddresses } = organization || {};
 
     if (loadingOrganization) {
         return <Loader />;
@@ -18,7 +18,7 @@ const AddressesSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Addresses`}</SubTitle>
-            {MaxMembers > 1 && user.isAdmin ? (
+            {user.isAdmin ? (
                 <AddressesWithMembers user={user} organization={organization} />
             ) : (
                 <AddressesWithUser user={user} />
