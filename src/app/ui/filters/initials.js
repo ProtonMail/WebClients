@@ -11,7 +11,16 @@ function initials() {
         return `${getLetter(name)}${getLetter(name2)}`;
     };
 
-    const formatSender = ({ Name = '', Address = '' } = {}) => {
+    /**
+     * Extract the sender informations
+     *     - Sender if we list messages
+     *     - Sender if we list conversations
+     * @param  {Object} options.Sender
+     * @param  {Array} options.Senders <...Sender>
+     * @return {string}
+     */
+    const formatSender = ({ Sender, Senders: [sender] = [] }) => {
+        const { Name = '', Address = '' } = sender || Sender || {};
         return formatString(Name || Address);
     };
 
