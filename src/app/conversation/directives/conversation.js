@@ -25,8 +25,8 @@ function conversation(
      * @return {Function} <index:Integer, max:Integer, type:String>
      */
     const getScrollToPosition = () => {
-        const container = document.getElementById('pm_thread');
-        const HEIGHT = 42;
+        const container = document.getElementById('conversation-view');
+        const HEIGHT = 50;
 
         /**
          * Compute the size to remove or add for the scroll

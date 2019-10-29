@@ -458,6 +458,10 @@
     display: none !important;
 }
 
+.message.marked {
+    border-left-color: $pm-blue;
+}
+
 #conversation-view:empty,
 .message.message-mode-plain .displayContentBtn-container { display: none }
 
