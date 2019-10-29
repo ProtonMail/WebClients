@@ -76,12 +76,25 @@ function SecuredController(
 
     const ONBOARD_MODAL_COOKIE = 'protonmail-v4-onboard-modal';
 
-    if (!$cookies.get(ONBOARD_MODAL_COOKIE)) {
+    const hasSeenOboardingModal = () => {
+        try {
+            return $cookies.get(ONBOARD_MODAL_COOKIE) || localStorage.getItem(ONBOARD_MODAL_COOKIE);
+        } catch (e) {}
+    };
+
+    const setSeenOboardingModal = () => {
+        try {
+            $cookies.put(ONBOARD_MODAL_COOKIE, 'true');
+            localStorage.setItem(ONBOARD_MODAL_COOKIE, 'true');
+        } catch (e) {}
+    };
+
+    if (!hasSeenOboardingModal()) {
         _.defer(() => {
             onboardingModal.activate({
                 params: {
                     hookClose() {
-                        $cookies.put(ONBOARD_MODAL_COOKIE, 'true');
+                        setSeenOboardingModal();
                     }
                 }
             });
