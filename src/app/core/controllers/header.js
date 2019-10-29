@@ -1,5 +1,3 @@
-import { WIZARD_ENABLED } from '../../constants';
-
 /* @ngInject */
 function HeaderController($scope, $state, authentication, dispatchers, organizationModel, userType) {
     const { on, unsubscribe } = dispatchers();
@@ -13,7 +11,6 @@ function HeaderController($scope, $state, authentication, dispatchers, organizat
     $scope.params = {};
     $scope.user = authentication.user;
     $scope.organization = organizationModel.get();
-    $scope.wizardEnabled = WIZARD_ENABLED;
     $scope.ctrl = {};
     $scope.starred = 2;
 
