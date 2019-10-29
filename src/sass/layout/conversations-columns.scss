@@ -10,7 +10,7 @@
     &:not(.hasAttachments) .conversation-icon-attachment,
     &:not(.expiring) .conversation-icon-expiration { display: none }
 
-    &:not(.read) {
+    &:not(.read):not(.active) {
         background: $white;
         .subject-text,
         .senders,
