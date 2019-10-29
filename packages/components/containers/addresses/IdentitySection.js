@@ -95,7 +95,7 @@ const IdentitySection = () => {
                             dangerouslySetInnerHTML={{ __html: address.Signature }}
                         />
                     ) : (
-                        <div className="pt0-5">{c('Info').t`Not set`}</div>
+                        <div className="pl1 pr1 pt0-5 pb0-5">{c('Info').t`Not set`}</div>
                     )}
                 </Field>
                 <span className="ml1">
