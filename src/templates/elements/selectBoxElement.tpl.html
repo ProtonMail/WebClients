@@ -1,8 +1,8 @@
-<label class="selectBoxElement-container needsclick">
+<label class="selectBoxElement-container needsclick relative">
 
     <input
         type="checkbox"
-        class="item-checkbox sr-only selectBoxElement-input needsclick"
+        class="item-checkbox selectBoxElement-input needsclick inner-ratio-container cursor-pointer m0"
         ng-checked="conversations[$index].Selected"
         data-index="{{ $index }}"
         aria-label="{{ ::conversation.Subject | unescape }}">
