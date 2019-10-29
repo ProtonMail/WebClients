@@ -261,3 +261,8 @@ $conversation-icon-size: 4rem !default;
 .compose-fab--inBackground {
   z-index: 0;
 }
+
+.protonmail_quote {
+  border-left: 1px solid $pm-global-border;
+  padding-left: 1rem;
+}
