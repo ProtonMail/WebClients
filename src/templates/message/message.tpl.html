@@ -41,7 +41,7 @@
                     data-name="attach"
                     class="mr0-5"></icon>
 
-                <folders-message></folders-message>
+                <folders-message  ng-if="!message.expand"></folders-message>
 
                 <div class="labels message-summary-labels mr0-5" ng-if="!message.expand">
                     <labels-element
