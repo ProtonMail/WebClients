@@ -38,7 +38,7 @@ function ptDndNotification(AppModel, PTDNDCONSTANTS, gettextCatalog) {
     const suffix = testEdge ? '!important' : '';
 
     const makeNotification = () => {
-        const $notif = document.createElement('SPAN');
+        const $notif = document.createElement('DIV');
         $notif.className = CLASSNAME.NOTIF;
         document.body.appendChild($notif);
         return $notif;

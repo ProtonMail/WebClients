@@ -17,6 +17,7 @@
     position: absolute;
     z-index: 99999;
     background: white;
+    opacity: 1;
     border: 1px solid $pm-global-grey;
     padding: .5em 1em;
     font-size: .9em;
@@ -26,5 +27,6 @@
     color: $pm-global-altgrey;
 }
 
-.ptdnd-notification-firefox { z-index: 0 }
+.ptdnd-notification-firefox { z-index: -1; }
+.ptdnd-notification-firefox .ptdnd-drag-start { opacity: 1 }
 .ptdnd-notification:not(.ptdnd-notification-active) { display: none }
