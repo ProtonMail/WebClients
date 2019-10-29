@@ -17,7 +17,7 @@
 
                 <li class="dropDown-item pl1 pr1">
                     <button
-                        class="w100 pt0-5 pb0-5 alignleft"
+                        class="w100 pt0-5 pb0-5 alignleft no-pointer-events-children"
                         data-action-message="move"
                         data-action-message-type="inbox">
                         <icon data-name="inbox"></icon>
@@ -27,7 +27,7 @@
 
                 <li class="dropDown-item pl1 pr1">
                     <button
-                        class="w100 pt0-5 pb0-5 alignleft"
+                        class="w100 pt0-5 pb0-5 alignleft no-pointer-events-children"
                         data-action-message="move"
                         data-action-message-type="trash">
                         <icon data-name="trash"></icon>
@@ -37,7 +37,7 @@
 
                 <li class="dropDown-item pl1 pr1">
                     <button
-                        class="w100 pt0-5 pb0-5 alignleft"
+                        class="w100 pt0-5 pb0-5 alignleft no-pointer-events-children"
                         data-action-message="unread">
                         <icon data-name="unread"></icon>
                         <span translate translate-context="Action" class="mauto">Mark as unread</span>
@@ -46,7 +46,7 @@
 
                 <li class="dropDown-item pl1 pr1" ng-hide="'secured.spam.**' | includedByState">
                     <button
-                        class="w100 pt0-5 pb0-5 alignleft"
+                        class="w100 pt0-5 pb0-5 alignleft no-pointer-events-children"
                         data-action-message="move"
                         data-action-message-type="spam">
                         <icon data-name="spam"></icon>
@@ -56,16 +56,23 @@
 
                 <li class="dropDown-item pl1 pr1" ng-if="'secured.trash.**' | includedByState">
                     <button
-                        class="w100 pt0-5 pb0-5 alignleft"
+                        class="w100 pt0-5 pb0-5 alignleft no-pointer-events-children"
                         data-action-message="delete">
                         <icon data-name="delete"></icon>
                         <span translate translate-context="Action" class="mauto">Delete</span>
                     </button>
                 </li>
 
+                <li class="dropDown-item pl1 pr1">
+                    <button class="w100 pt0-5 pb0-5 alignleft no-pointer-events-children" data-action-message="reportPhishing">
+                        <icon data-name="phishing"></icon>
+                        <span translate translate-context="Action" class="mauto">Report phishing</span>
+                    </button>
+                </li>
+
                 <li class="dropDown-item pl1 pr1" data-if-message-mode="html">
                     <button
-                        class="w100 pt0-5 pb0-5 alignleft"
+                        class="w100 pt0-5 pb0-5 alignleft no-pointer-events-children"
                         data-action-message="togglePlainHtml">
                         <icon data-name="view-source-code"></icon>
                         <span translate translate-context="Action" class="mauto">View source code</span>
@@ -74,7 +81,7 @@
 
                 <li class="dropDown-item pl1 pr1" data-if-message-mode="plain">
                     <button
-                        class="w100 pt0-5 pb0-5 alignleft"
+                        class="w100 pt0-5 pb0-5 alignleft no-pointer-events-children"
                         data-action-message="togglePlainHtml">
                             <icon data-name="view-html-code"></icon>
                             <span translate translate-context="Action" class="mauto">View rendered HTML</span>
@@ -84,7 +91,7 @@
 
                 <li class="dropDown-item pl1 pr1">
                     <button
-                        class="w100 pt0-5 pb0-5 alignleft"
+                        class="w100 pt0-5 pb0-5 alignleft no-pointer-events-children"
                         data-action-message="viewPgp">
                         <icon data-name="view-headers"></icon>
                         <span translate translate-context="Action" class="mauto">View headers</span>
@@ -93,7 +100,7 @@
 
                 <li class="dropDown-item pl1 pr1" ng-if="!message.failedDecryption">
                     <button
-                        class="w100 pt0-5 pb0-5 alignleft"
+                        class="w100 pt0-5 pb0-5 alignleft no-pointer-events-children"
                         data-action-message="downloadEml">
                         <icon data-name="export"></icon>
                         <span translate translate-context="Action" class="mauto">Export</span>
@@ -102,7 +109,7 @@
 
                 <li class="dropDown-item pl1 pr1">
                     <button
-                        class="w100 pt0-5 pb0-5 alignleft"
+                        class="w100 pt0-5 pb0-5 alignleft no-pointer-events-children"
                         data-action-message="print">
                         <icon data-name="print"></icon>
                         <span translate translate-context="Action" class="mauto">Print</span>

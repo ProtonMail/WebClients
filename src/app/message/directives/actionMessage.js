@@ -2,7 +2,17 @@ import { MAILBOX_IDENTIFIERS } from '../../constants';
 import { combineHeaders, splitMail } from '../../../helpers/mail';
 
 /* @ngInject */
-function actionMessage(dispatchers, downloadFile, mimeMessageBuilder, networkActivityTracker, pgpModal, printModal) {
+function actionMessage(
+    bugReportModel,
+    dispatchers,
+    downloadFile,
+    mimeMessageBuilder,
+    networkActivityTracker,
+    pgpModal,
+    printModal,
+    notification,
+    gettextCatalog
+) {
     const { dispatcher } = dispatchers(['messageActions']);
     const disp = (message = {}) => (action = '', mailbox = '') => {
         dispatcher.messageActions(action, {
@@ -60,6 +70,9 @@ function actionMessage(dispatchers, downloadFile, mimeMessageBuilder, networkAct
     return {
         link(scope, el, { actionMessage, actionMessageType = '' }) {
             const dispatch = disp(scope.message);
+            const I18N = {
+                PHISHING_REPORTED: gettextCatalog.getString('Phishing reported', null, 'Success notification message')
+            };
             function onClick() {
                 switch (actionMessage) {
                     case 'unread':
@@ -110,6 +123,11 @@ function actionMessage(dispatchers, downloadFile, mimeMessageBuilder, networkAct
                         downloadEML(scope);
                         break;
                     }
+
+                    case 'reportPhishing':
+                        bugReportModel.reportPhishing(scope.message);
+                        notification.success(I18N.PHISHING_REPORTED);
+                        break;
 
                     default:
                         dispatch(actionMessage, actionMessageType);

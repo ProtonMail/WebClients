@@ -20,7 +20,6 @@ import messageExtra from './directives/messageExtra';
 import messageSignatureStatus from './directives/messageSignatureStatus';
 import messageSpamScore from './directives/messageSpamScore';
 import messageView from './directives/messageView';
-import phishingBtn from './directives/phishingBtn';
 import renderMessageBody from './directives/renderMessageBody';
 import toggleBlockquote from './directives/toggleBlockquote';
 import toggleMessage from './directives/toggleMessage';
@@ -98,7 +97,6 @@ export default angular
     .directive('messageSignatureStatus', messageSignatureStatus)
     .directive('messageSpamScore', messageSpamScore)
     .directive('messageView', messageView)
-    .directive('phishingBtn', phishingBtn)
     .directive('renderMessageBody', renderMessageBody)
     .directive('toggleBlockquote', toggleBlockquote)
     .directive('toggleMessage', toggleMessage)
