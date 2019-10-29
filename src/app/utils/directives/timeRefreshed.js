@@ -17,7 +17,6 @@ function timeRefreshed($filter, dispatchers) {
                 const timeRefreshed = attrs.timeRefreshed;
                 element.text(filter(timeRefreshed));
                 const date = getDate(timeRefreshed);
-                element[0].title = date;
                 isTime && element[0].setAttribute('datetime', date);
             };
             const id = setInterval(updateTime, timeInterval);
