@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { queryAvailableDomains, queryPremiumDomains } from 'proton-shared/lib/api/domains';
-import { useApi, useLoading, useUser, useDomains, Select } from 'react-components';
+import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
+import { useApi, useLoading, useUser, useDomains, Select, usePremiumDomains } from 'react-components';
 
 import { fakeEvent } from '../../helpers/component';
 
@@ -9,6 +9,7 @@ const DomainsSelect = ({ member, onChange, className }) => {
     const api = useApi();
     const [user] = useUser();
     const [domains, loadingDomains] = useDomains();
+    const [premiumDomains, loadingPremiumDomains] = usePremiumDomains();
     const [loading, withLoading] = useLoading();
 
     const [options, setOptions] = useState([]);
@@ -26,11 +27,8 @@ const DomainsSelect = ({ member, onChange, className }) => {
         }, []);
 
     const queryDomains = async () => {
-        const [premium, available] = await Promise.all([
-            member.Self && user.hasPaidMail ? api(queryPremiumDomains()).then(({ Domains }) => Domains) : [],
-            member.Self ? api(queryAvailableDomains()).then(({ Domains }) => Domains) : []
-        ]);
-
+        const premium = member.Self && user.hasPaidMail ? premiumDomains : [];
+        const available = member.Self ? await api(queryAvailableDomains()).then(({ Domains }) => Domains) : [];
         const domainNames = [].concat(premium, available, formatDomains(domains));
 
         setOptions(domainNames.map((text) => ({ text, value: text })));
@@ -46,7 +44,7 @@ const DomainsSelect = ({ member, onChange, className }) => {
     return (
         <Select
             className={className}
-            disabled={loadingDomains || loading}
+            disabled={loadingDomains || loadingPremiumDomains || loading}
             value={domain}
             options={options}
             onChange={handleChange}
