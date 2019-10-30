@@ -6,20 +6,21 @@ import { isURL } from 'proton-shared/lib/helpers/validators';
 import Button from '../button/Button';
 import useMailSettings from '../../hooks/useMailSettings';
 
-const RemoteImage = (props) => {
+const RemoteImage = ({ src, text = c('Action').t`Load image`, ...rest }) => {
     const [{ ShowImages }, loading] = useMailSettings();
-    const [showAnyways, setShowAnyways] = useState(!isURL(props.src));
+    const [showAnyways, setShowAnyways] = useState(!isURL(src));
 
     const handleClick = () => setShowAnyways(true);
 
     if ((!loading && ShowImages & SHOW_IMAGES.REMOTE) || showAnyways) {
-        return <img {...props} />;
+        return <img src={src} {...rest} />;
     }
-    return <Button onClick={handleClick}>{c('Action').t`Load image`}</Button>;
+    return <Button onClick={handleClick}>{text}</Button>;
 };
 
 RemoteImage.propTypes = {
-    src: PropTypes.string.isRequired
+    src: PropTypes.string.isRequired,
+    text: PropTypes.string
 };
 
 export default RemoteImage;
