@@ -45,6 +45,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                             onChange('month', month);
                             onChange('year', year);
                         }}
+                        required
                     />
                 </div>
                 <div className="flex-autogrid-item">
