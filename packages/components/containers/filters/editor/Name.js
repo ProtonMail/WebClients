@@ -17,9 +17,10 @@ function NameEditor({ filter, onChange = noop, error = {} }) {
                     defaultValue={filter.Name}
                     onChange={handleChange}
                     placeholder={c('Placeholder').t`Name`}
-                    required
                 />
-                {error.isEmpty ? <ErrorZone id="filterNameError">{c('Error').t`Username required`}</ErrorZone> : null}
+                {error.isEmpty ? (
+                    <ErrorZone id="filterNameError">{c('Error').t`Filter name required`}</ErrorZone>
+                ) : null}
             </Field>
         </Row>
     );
