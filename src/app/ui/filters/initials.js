@@ -24,7 +24,7 @@ function initials() {
         return formatString(Name || Address);
     };
 
-    return (input) => {
+    return (input = '') => {
         if (typeof input !== 'string') {
             return formatSender(input);
         }
