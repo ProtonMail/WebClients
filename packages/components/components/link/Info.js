@@ -28,7 +28,8 @@ const Info = ({
         scrollContainerClass
     });
 
-    const handleClick = () => {
+    const handleClick = (event) => {
+        event.preventDefault();
         url && window.open(url);
     };
 
