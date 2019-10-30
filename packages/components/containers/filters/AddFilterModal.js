@@ -39,12 +39,17 @@ function AddFilterModal({ filter, type, mode = 'create', onEdit = noop, ...props
     const reqUpdate = useApiWithoutResult(updateFilter);
 
     const create = async (filter) => {
-        const { Filter } = await reqCreate.request(filter);
-        call();
-        createNotification({
-            text: c('Notification').t`${Filter.Name} created`
-        });
-        props.onClose();
+        try {
+            const { Filter } = await reqCreate.request(filter);
+            createNotification({
+                text: c('Notification').t`${Filter.Name} created`
+            });
+        } finally {
+            // Some failed request will add the filter but in disabled mode
+            // So we have to refresh the list in both cases
+            call();
+            props.onClose();
+        }
     };
 
     const update = async (filter) => {
@@ -188,7 +193,7 @@ function AddFilterModal({ filter, type, mode = 'create', onEdit = noop, ...props
 }
 
 AddFilterModal.propTypes = {
-    filter: PropTypes.object.isRequired,
+    filter: PropTypes.object,
     onEdit: PropTypes.func,
     onClose: PropTypes.func,
     mode: PropTypes.string,
