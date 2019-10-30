@@ -459,7 +459,29 @@
 }
 
 .message.marked {
-    border-left-color: $pm-blue;
+    border-color: $pm-blue;
+    border-width: 2px;
+
+    .message-summary.message-summary.message-summary::before {
+        top: -2px;
+        border-top-color: $pm-blue;
+        border-top-width: 2px;
+    }
+}
+
+.message.marked:nth-of-type(odd) {
+    .message-summary.message-summary::before {
+        border-right-width: 2px;
+        border-right-color: $pm-blue;
+        right: -2px;
+    }
+}
+.message.marked:nth-of-type(even) {
+    .message-summary.message-summary::before {
+        left: -2px;
+        border-left-width: 2px;
+        border-left-color: $pm-blue;
+    }
 }
 
 #conversation-view:empty,
