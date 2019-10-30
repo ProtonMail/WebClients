@@ -469,14 +469,14 @@
     }
 }
 
-.message.marked:nth-of-type(odd) {
+.message.marked.sent {
     .message-summary.message-summary::before {
         border-right-width: 2px;
         border-right-color: $pm-blue;
         right: -2px;
     }
 }
-.message.marked:nth-of-type(even) {
+.message.marked:not(.sent) {
     .message-summary.message-summary::before {
         left: -2px;
         border-left-width: 2px;
