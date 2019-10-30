@@ -93,10 +93,6 @@ function dropdownFolders(labelsModel, dispatchers, labelModal, gettextCatalog) {
                         }, 100);
                     });
                 }
-
-                if (type === 'state' && !data.isOpened) {
-                    clean();
-                }
             });
 
             el.on('click', onClickList);

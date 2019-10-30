@@ -185,10 +185,6 @@ function dropdownLabels(
                     $timeout(() => $search.focus(), 100, false);
                 });
             }
-
-            if (type === 'state' && !data.isOpened) {
-                clean();
-            }
         });
 
         el.on('submit', onSubmit);
