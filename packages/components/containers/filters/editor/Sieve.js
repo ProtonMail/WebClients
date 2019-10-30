@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import codemirror from 'codemirror';
 import PropTypes from 'prop-types';
 import { UnControlled as CodeMirror } from 'react-codemirror2';
@@ -39,6 +39,8 @@ codemirror.registerHelper(
 function FilterEditorSieve({ filter, onChangeBeforeLint = noop, onChange = noop }) {
     const api = useApi();
 
+    const [value, setValue] = useState(null);
+
     useEffect(() => {
         /*
             Cheat to avoid broken context with react lifecycle as we can't
@@ -50,6 +52,8 @@ function FilterEditorSieve({ filter, onChangeBeforeLint = noop, onChange = noop 
             onChange(!!list.length, text);
             return list;
         };
+
+        setTimeout(() => setValue(filter.Sieve), 300);
 
         return () => {
             delete codemirror._uglyGlobal;
@@ -63,7 +67,7 @@ function FilterEditorSieve({ filter, onChangeBeforeLint = noop, onChange = noop 
     return (
         <CodeMirror
             className="bordered-container"
-            value={filter.Sieve}
+            value={value}
             options={{
                 mode: 'sieve',
                 lineNumbers: true,
