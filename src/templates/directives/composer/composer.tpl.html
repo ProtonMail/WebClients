@@ -77,7 +77,6 @@
             pt-placement="top">
             <icon
                 data-name="attach"
-                data-size="16"
                 ng-class="{
                     'fill-pm-blue': message.Attachments && message.Attachments.length > 0
                 }"
@@ -97,7 +96,6 @@
             pt-tooltip-translate-context="Action">
             <icon
                 data-name="expiration"
-                data-size="16"
                 ng-class="{
                     'fill-pm-blue': message.ExpiresIn > 0
                 }"
@@ -117,7 +115,6 @@
             pt-tooltip-translate="Encryption">
             <icon
                 data-name="lock"
-                data-size="16"
                 ng-class="{
                     'fill-pm-blue': message.isEO()
                 }"
@@ -133,8 +130,8 @@
                 pt-tooltip-translate="Delete draft"
                 pt-tooltip-translate-context="Action"
                 pt-placement="top">
-                <icon data-name="trash" data-size="16" class=" mauto"></icon>
-                <span class="composer-btn-discard-text" translate translate-context="Action">Discard</span>
+                <icon data-name="trash" class=" mauto"></icon>
+                <span class="composer-btn-discard-text sr-only" translate translate-context="Action">Discard</span>
             </button>
 
             <button
@@ -143,8 +140,8 @@
                 pt-tooltip-translate="Save"
                 pt-placement="top"
                 pt-tooltip-translate-context="Action">
-                <icon data-name="save" data-size="16" class=" mauto"></icon>
-                <span class="composer-btn-save-text" translate translate-context="Action">Save</span>
+                <icon data-name="save" class=" mauto"></icon>
+                <span class="composer-btn-save-text sr-only" translate translate-context="Action">Save</span>
             </button>
             <btn-send-message
                 class="pm-button-blue mobileFull composer-btn-send"
