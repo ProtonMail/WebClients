@@ -14,6 +14,7 @@ import PlanUpsell from './SelectedPlan/PlanUpsell';
 import useVerification from './VerificationStep/useVerification';
 import { checkCookie } from 'proton-shared/lib/helpers/cookies';
 import MobileRedirectionStep from './MobileRedirectionStep/MobileRedirectionStep';
+import PublicPage from '../../components/page/PublicPage';
 
 const SignupState = {
     Plan: 'plan',
@@ -31,7 +32,6 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
     const availablePlans = checkCookie('offer', 'bestdeal') ? BEST_DEAL_PLANS : VPN_PLANS;
 
     useEffect(() => {
-        document.title = c('Title').t`Sign up - ProtonVPN`;
         // Always start at plans, or account if plan is preselected
         if (preSelectedPlan) {
             history.replace(`/signup/${SignupState.Account}`, history.location.state);
@@ -142,72 +142,80 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
     );
 
     return (
-        <main className="flex flex-item-fluid main-area">
-            <div className="center p2 container-plans-signup onmobile-p1">
-                <div className="flex flex-nowrap flex-items-center onmobile-flex-wrap mb1">
-                    <div className="flex-item-fluid plan-back-button">
-                        {!creatingAccount &&
-                            (signupState && signupState !== SignupState.Plan ? (
-                                <Button onClick={() => history.goBack()}>{c('Action').t`Back`}</Button>
-                            ) : (
-                                <Href className="pm-button" url="https://protonvpn.com" target="_self">{c('Action')
-                                    .t`Homepage`}</Href>
-                            ))}
+        <PublicPage title={c('Title').t`Sign up`}>
+            <main className="flex flex-item-fluid main-area">
+                <div className="center p2 container-plans-signup onmobile-p1">
+                    <div className="flex flex-nowrap flex-items-center onmobile-flex-wrap mb1">
+                        <div className="flex-item-fluid plan-back-button">
+                            {!creatingAccount &&
+                                (signupState && signupState !== SignupState.Plan ? (
+                                    <Button onClick={() => history.goBack()}>{c('Action').t`Back`}</Button>
+                                ) : (
+                                    <Href className="pm-button" url="https://protonvpn.com" target="_self">{c('Action')
+                                        .t`Homepage`}</Href>
+                                ))}
+                        </div>
+                        <div className="onmobile-min-w100 onmobile-aligncenter onmobile-mt0-5">
+                            <Href url="https://protonvpn.com" target="_self">
+                                <VpnLogo className="fill-primary" />
+                            </Href>
+                        </div>
+                        <div className="flex-item-fluid alignright plan-help-button">
+                            <SupportDropdown content={c('Action').t`Need help`} />
+                        </div>
                     </div>
-                    <div className="onmobile-min-w100 onmobile-aligncenter onmobile-mt0-5">
-                        <Href url="https://protonvpn.com" target="_self">
-                            <VpnLogo className="fill-primary" />
-                        </Href>
-                    </div>
-                    <div className="flex-item-fluid alignright plan-help-button">
-                        <SupportDropdown content={c('Action').t`Need help`} />
-                    </div>
+
+                    <Title className="signup-title mt1-5">{c('Title').t`Sign up`}</Title>
+
+                    {isLoading || creatingAccount ? (
+                        <div className="aligncenter mt2">
+                            <FullLoader color="pm-primary" size={200} />
+                            <TextLoader>
+                                {isLoading ? c('Info').t`Loading` : c('Info').t`Creating your account`}
+                            </TextLoader>
+                        </div>
+                    ) : (
+                        <>
+                            {(!signupState || signupState === SignupState.Plan) && (
+                                <PlanStep
+                                    plans={availablePlans.map((plan) => getPlanByName(plan))}
+                                    model={model}
+                                    onChangeCycle={(cycle) => setModel({ ...model, cycle })}
+                                    onChangeCurrency={(currency) => setModel({ ...model, currency })}
+                                    signupAvailability={signupAvailability}
+                                    onSelectPlan={handleSelectPlan}
+                                />
+                            )}
+                            {signupState === SignupState.Account && (
+                                <AccountStep model={model} onContinue={handleCreateAccount}>
+                                    {selectedPlanComponent}
+                                </AccountStep>
+                            )}
+                            {signupState === SignupState.Verification && (
+                                <VerificationStep
+                                    model={model}
+                                    allowedMethods={signupAvailability.allowedMethods}
+                                    onVerify={(...rest) => withCreateLoading(handleVerification(...rest))}
+                                    requestCode={requestCode}
+                                >
+                                    {selectedPlanComponent}
+                                </VerificationStep>
+                            )}
+                            {signupState === SignupState.Payment && (
+                                <PaymentStep
+                                    model={model}
+                                    paymentAmount={selectedPlan.price.total}
+                                    onPay={handlePayment}
+                                >
+                                    {selectedPlanComponent}
+                                </PaymentStep>
+                            )}
+                            {signupState === SignupState.MobileRedirection && <MobileRedirectionStep model={model} />}
+                        </>
+                    )}
                 </div>
-
-                <Title className="signup-title mt1-5">{c('Title').t`Sign up`}</Title>
-
-                {isLoading || creatingAccount ? (
-                    <div className="aligncenter mt2">
-                        <FullLoader color="pm-primary" size={200} />
-                        <TextLoader>{isLoading ? c('Info').t`Loading` : c('Info').t`Creating your account`}</TextLoader>
-                    </div>
-                ) : (
-                    <>
-                        {(!signupState || signupState === SignupState.Plan) && (
-                            <PlanStep
-                                plans={availablePlans.map((plan) => getPlanByName(plan))}
-                                model={model}
-                                onChangeCycle={(cycle) => setModel({ ...model, cycle })}
-                                onChangeCurrency={(currency) => setModel({ ...model, currency })}
-                                signupAvailability={signupAvailability}
-                                onSelectPlan={handleSelectPlan}
-                            />
-                        )}
-                        {signupState === SignupState.Account && (
-                            <AccountStep model={model} onContinue={handleCreateAccount}>
-                                {selectedPlanComponent}
-                            </AccountStep>
-                        )}
-                        {signupState === SignupState.Verification && (
-                            <VerificationStep
-                                model={model}
-                                allowedMethods={signupAvailability.allowedMethods}
-                                onVerify={(...rest) => withCreateLoading(handleVerification(...rest))}
-                                requestCode={requestCode}
-                            >
-                                {selectedPlanComponent}
-                            </VerificationStep>
-                        )}
-                        {signupState === SignupState.Payment && (
-                            <PaymentStep model={model} paymentAmount={selectedPlan.price.total} onPay={handlePayment}>
-                                {selectedPlanComponent}
-                            </PaymentStep>
-                        )}
-                        {signupState === SignupState.MobileRedirection && <MobileRedirectionStep model={model} />}
-                    </>
-                )}
-            </div>
-        </main>
+            </main>
+        </PublicPage>
     );
 };
 

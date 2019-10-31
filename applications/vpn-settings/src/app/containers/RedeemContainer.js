@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { Title } from 'react-components';
 import RedeemCouponForm from '../components/sections/redeem/RedeemCouponForm';
 import PublicHeader from '../components/layout/PublicHeader';
+import PublicPage from '../components/page/PublicPage';
 
 import GadgetImage from 'design-system/assets/img/pv-images/redeem/gadgets.png';
 import SwissBasedIcon from 'design-system/assets/img/pv-images/redeem/swiss_based.svg';
@@ -14,7 +15,7 @@ import DNSIcon from 'design-system/assets/img/pv-images/redeem/dns.svg';
 import EncryptionIcon from 'design-system/assets/img/pv-images/redeem/encryption.svg';
 
 const RedeemContainer = ({ history }) => (
-    <div>
+    <PublicPage title={c('Title').t`Redeem coupon`}>
         <div className="pt2 pl2 pr2">
             <PublicHeader />
         </div>
@@ -89,7 +90,7 @@ const RedeemContainer = ({ history }) => (
                 ))}
             </div>
         </div>
-    </div>
+    </PublicPage>
 );
 
 RedeemContainer.propTypes = {
