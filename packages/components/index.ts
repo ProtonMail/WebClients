@@ -296,6 +296,7 @@ export { default as useLoading } from './hooks/useLoading';
 export { default as usePlans } from './hooks/usePlans';
 export { default as usePermissions } from './hooks/usePermissions';
 export { classnames } from './helpers/component';
+export { generateUID } from './helpers/component';
 
 export { default as useCache } from './containers/cache/useCache';
 export { default as CacheProvider } from './containers/cache/Provider';
