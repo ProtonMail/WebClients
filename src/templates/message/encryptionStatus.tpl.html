@@ -1,21 +1,21 @@
 <div class="encryptionStatus-container">
     <a
-        class="nodecoration color-global-grey no-pointer-events-children"
+        class="nodecoration color-global-grey no-pointer-events-children flex"
         href="https://protonmail.com/support/knowledge-base/what-is-encrypted/"
         target="_blank"
         ng-if="!displaySignatureStatus() && !message.isPGPEncrypted()"
         ng-class="{
             'color-pm-blue': message.isInternal() || message.isSentEncrypted() || message.isDraft() || message.isAuto(),
         }">
-        <icon data-name="lock" data-size="16" data-fill="currentColor" class="mauto "></icon>
+        <icon data-name="lock" data-fill="currentColor" class="mauto flex-self-vcenter"></icon>
     </a>
 
     <a
-        class="nodecoration color-global-grey no-pointer-events-children"
+        class="nodecoration color-global-grey no-pointer-events-children flex"
         href="https://protonmail.com/support/knowledge-base/how-to-use-pgp"
         target="_blank"
         ng-if="!displaySignatureStatus() && message.isPGPEncrypted()">
-        <icon data-name="lock" data-size="16" data-fill="currentColor" class="mauto "></icon>
+        <icon data-name="lock" data-fill="currentColor" class="mauto flex-self-vcenter"></icon>
     </a>
 
     <a
@@ -24,7 +24,7 @@
         class=" no-pointer-events-children"
         ng-if="displaySignatureStatus()">
         <svg
-            class="signed-lock"
+            class="signed-lock flex-self-vcenter"
             width="18"
             viewBox="0 0 374.8 337.1"
             ng-class="{
