@@ -7,7 +7,7 @@ import useSignup from './useSignup';
 import { c } from 'ttag';
 import VerificationStep from './VerificationStep/VerificationStep';
 import PaymentStep from './PaymentStep/PaymentStep';
-import { PLAN, VPN_PLANS, BEST_DEAL_PLANS } from './plans';
+import { PLAN, VPN_PLANS, BEST_DEAL_PLANS, PLAN_BUNDLES } from './plans';
 import { CYCLE } from 'proton-shared/lib/constants';
 import PlanDetails from './SelectedPlan/PlanDetails';
 import PlanUpsell from './SelectedPlan/PlanUpsell';
@@ -29,23 +29,42 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
     const searchParams = new URLSearchParams(history.location.search);
     const preSelectedPlan = searchParams.get('plan');
     const redirectToMobile = searchParams.get('from') === 'mobile';
-    const availablePlans = checkCookie('offer', 'bestdeal') ? BEST_DEAL_PLANS : VPN_PLANS;
+    const couponCode = searchParams.get('coupon');
+    const currency = searchParams.get('currency');
+    const billingCycle = Number(searchParams.get('billing'));
+
+    const availablePlans = checkCookie('offer', 'bestdeal')
+        ? BEST_DEAL_PLANS
+        : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
+
+    const historyState = history.location.state || {};
+    const invite = historyState.invite;
+    const coupon =
+        historyState.coupon ||
+        (couponCode && {
+            code: couponCode,
+            plan: preSelectedPlan,
+            cycle: billingCycle
+        });
 
     useEffect(() => {
         // Always start at plans, or account if plan is preselected
         if (preSelectedPlan) {
-            history.replace(`/signup/${SignupState.Account}`, history.location.state);
+            history.replace(`/signup/${SignupState.Account}`, {
+                coupon,
+                invite
+            });
         } else {
-            history.replace('/signup', history.location.state);
+            history.replace('/signup', {
+                coupon,
+                invite
+            });
         }
     }, []);
 
     const signupState = match.params.step;
     const [upsellDone, setUpsellDone] = useState(false);
     const [creatingAccount, withCreateLoading] = useLoading(false);
-    const historyState = history.location.state || {};
-    const invite = historyState.invite;
-    const coupon = historyState.coupon;
 
     const goToStep = (step) => history.push(`/signup/${step}`);
 
@@ -75,8 +94,8 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
         { coupon, invite, availablePlans },
         {
             planName: preSelectedPlan,
-            cycle: Number(searchParams.get('billing')),
-            currency: searchParams.get('currency')
+            cycle: billingCycle,
+            currency
         }
     );
     const { verify, requestCode } = useVerification();
@@ -148,7 +167,9 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
                     <div className="flex flex-nowrap flex-items-center onmobile-flex-wrap mb1">
                         <div className="flex-item-fluid plan-back-button">
                             {!creatingAccount &&
-                                (signupState && signupState !== SignupState.Plan ? (
+                                (signupState &&
+                                signupState !== SignupState.Plan &&
+                                selectedPlan.planName !== PLAN.BUNDLE_PLUS ? (
                                     <Button onClick={() => history.goBack()}>{c('Action').t`Back`}</Button>
                                 ) : (
                                     <Href className="pm-button" url="https://protonvpn.com" target="_self">{c('Action')

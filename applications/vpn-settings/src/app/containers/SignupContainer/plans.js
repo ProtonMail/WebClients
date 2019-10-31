@@ -9,16 +9,22 @@ import visionaryPlanSvg from 'design-system/assets/img/pv-images/plans/visionary
 
 export const PLAN = {
     FREE: 'free',
+    BUNDLE_PLUS: 'plus_vpnplus',
     VISIONARY: PLANS.VISIONARY,
     BASIC: PLANS.VPNBASIC,
     PLUS: PLANS.VPNPLUS
 };
 
 export const PLAN_NAMES = {
+    [PLAN.BUNDLE_PLUS]: 'Mail+VPN Plus',
     [PLAN.FREE]: 'Free',
     [PLAN.VISIONARY]: 'Visionary',
     [PLAN.BASIC]: 'Basic',
     [PLAN.PLUS]: 'Plus'
+};
+
+export const PLAN_BUNDLES = {
+    [PLAN.BUNDLE_PLUS]: [PLANS.PLUS, PLANS.VPNPLUS]
 };
 
 export const VPN_PLANS = [PLAN.FREE, PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
@@ -114,6 +120,30 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                 ),
                 c('Plan Feature').t`ProtonMail Visionary account`
             ]
+        },
+        [PLAN.BUNDLE_PLUS]: {
+            image: <img width={100} src={visionaryPlanSvg} alt={`${PLAN_NAMES[PLAN.VISIONARY]} plan image`} />,
+            description: c('Plan Description').t`Bundle bundle bundle`,
+            additionalFeatures: c('Plan feature').t`ProtonMail Plus plan included`,
+            features: [
+                c('Plan Feature').ngettext(
+                    msgid`${maxConnections} simultaneous VPN connection`,
+                    `${maxConnections} simultaneous VPN connections`,
+                    maxConnections
+                ),
+                countries.basic.length !== countries.all.length &&
+                    c('Plan Feature').t`Servers in ${countries.all.length} countries`,
+                c('Plan Feature').t`Secure Core`,
+                c('Plan Feature').t`Highest speeds`,
+                <>
+                    <span className="mr0-5">{c('Plan Feature').t`Access blocked content`}</span>
+                    <Info
+                        title={c('Tooltip')
+                            .t`Access content (Netflix, Amazon Prime, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                    />
+                </>,
+                c('Plan Feature').t`All advanced security features`
+            ]
         }
     }[plan]);
 
@@ -132,15 +162,17 @@ const getPlanPrice = (plan, cycle) => {
 
 export const getPlan = (planName, cycle, plans = [], countries = []) => {
     const plan = plans.find(({ Type, Name }) => Type === PLAN_TYPES.PLAN && Name === planName);
-    const price = plan ? getPlanPrice(plan, cycle) : { monthly: 0, total: 0, totalMonthly: 0, saved: 0 };
+    const price = (plan && getPlanPrice(plan, cycle)) || { monthly: 0, total: 0, totalMonthly: 0, saved: 0 };
+
     return {
-        ...getPlanFeatures(planName, plan ? plan.MaxVPN : 1, countries),
+        ...getPlanFeatures(planName, plan ? plan.MaxVPN || 0 : 1, countries),
         planName,
         title: PLAN_NAMES[planName],
         id: plan && plan.ID,
         disabled: !plan && planName !== PLAN.FREE,
         price,
-        couponDiscount: plan && Math.abs(plan.CouponDiscount),
+        couponDiscount:
+            plan && typeof plan.AmountDue !== 'undefined' && Math.abs(price.monthly * cycle - plan.AmountDue),
         couponDescription: plan && plan.CouponDescription
     };
 };
