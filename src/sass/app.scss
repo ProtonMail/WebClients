@@ -95,6 +95,7 @@ $primary: $pm-primary;
 @import "commons/flex-grid";
 @import "commons/pm-noscript";
 @import "commons/ptDnd";
+@import "commons/ptDnd";
 
 //=== 👉 SVG Icons =====================//
 @import "svg/locks";
@@ -127,6 +128,7 @@ $primary: $pm-primary;
 @import "ui/dropzone";
 @import "ui/progressBar";
 @import "ui/networkActivity";
+@import "ui/dropdownContent";
 
 //===  Custom Components ================//
 
