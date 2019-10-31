@@ -1,14 +1,15 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { c } from 'ttag';
-import { Sidebar, Icons, MainAreaContext } from 'react-components';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { Sidebar, Icons, MainAreaContext, useToggle } from 'react-components';
+import { withRouter, RouteComponentProps, match } from 'react-router-dom';
 import Header from './PrivateHeader';
 
 const getSidebar = () => {
     return [
         {
             text: c('Link').t`Home`,
-            link: '/'
+            link: '/',
+            isActive: (m: match) => !!m && m.isExact
         },
         {
             text: c('Link').t`About`,
@@ -22,21 +23,21 @@ interface Props extends RouteComponentProps {
 }
 
 const PrivateLayout = ({ children, location }: Props) => {
-    const mainAreaRef = useRef<HTMLElement>();
-    const [isHeaderExpanded, setHeaderExpanded] = useState(false);
+    const mainAreaRef = useRef<HTMLElement>(null);
+    const { state: isHeaderExpanded, toggle: toggleHeaderExpanded, set: setHeaderExpanded } = useToggle();
 
     useEffect(() => {
         setHeaderExpanded(false);
-        mainAreaRef.current.scrollTop = 0;
+        if (mainAreaRef.current) {
+            mainAreaRef.current.scrollTop = 0;
+        }
     }, [location.pathname]);
-
-    const toggleExpand = () => setHeaderExpanded(!isHeaderExpanded);
 
     return (
         <>
-            <Header expanded={isHeaderExpanded} onToggleExpand={toggleExpand} />
+            <Header expanded={isHeaderExpanded} onToggleExpand={toggleHeaderExpanded} />
             <div className="flex flex-nowrap">
-                <Sidebar list={getSidebar()} />
+                <Sidebar expanded={isHeaderExpanded} onToggleExpand={toggleHeaderExpanded} list={getSidebar()} />
                 <main ref={mainAreaRef} className="main flex-item-fluid main-area main-area-content">
                     <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
                 </main>
