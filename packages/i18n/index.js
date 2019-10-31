@@ -74,7 +74,7 @@ async function main() {
                 },
                 {
                     title: 'Commit translations',
-                    task: () => {
+                    task() {
                         const task = !isWebsite ? 'upgrade' : 'upgrade-website';
                         require('./lib/commit')(task);
                     }
