@@ -17,51 +17,14 @@
     float: right;
 }
 
-.eventsAttachments-download-link * { pointer-events: none; }
-
-.eventsAttachments-details {
-    background: $composer-background;
-    border-radius: $border-radius-large;
-    margin-bottom: .5rem;
-}
-
-.eventsAttachments-details-wrapper {
-    padding: .8rem 1rem;
-    border: 1px solid $toolbar-border;
-}
-
-.eventsAttachments-details[open] .eventsAttachments-summary {
-    border-radius: 4px 4px 0 0;
-
-    &:after {
-        font-family: FontAwesome;
-        content:"\f106";
-    }
-}
-
 .eventsAttachments-summary {
-    background: $tertiary;
-    padding: .7rem 1rem;
-    border-radius: $border-radius-large;
-
+    background-position-x: calc(100% - 1em) !important;
     &:hover {
         cursor: pointer;
     }
 
-    .fa {
-        margin-right: 4px;
-    }
-
-    &:after {
-        font-family: FontAwesome;
-        content:"\f107";
-        float: right;
-        margin-top: 1px;
-        text-align: center;
-    }
-
     &::-webkit-details-marker {
-        display: none
+        display: none;
     }
 }
 
