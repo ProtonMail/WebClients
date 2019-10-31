@@ -414,6 +414,7 @@
     }
 }
 
+
 .message.unread:not(.draft) {
     .message-header {
         background: $white
@@ -438,6 +439,10 @@
 
     table {
         table-layout: auto
+    }
+
+    blockquote {
+        @extend [class*="block-info"], [class*="block-info-standard"], .block-info-standard
     }
 }
 
