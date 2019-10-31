@@ -14,5 +14,9 @@
     }
 }
 
-.elements-selector.disabled { pointer-events: none }
-
+.elements-selector.disabled {
+    cursor: not-allowed !important;
+    * {
+        pointer-events: none
+    }
+}
