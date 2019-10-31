@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { SearchInput, DropdownButton, Dropdown, Icon, usePopperAnchor, PrimaryButton } from 'react-components';
 import { c } from 'ttag';
@@ -16,10 +16,11 @@ const SearchDropdown = ({
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
     const [search, updateSearch] = useState(initialSearch);
 
+    useEffect(() => updateSearch(initialSearch), [initialSearch]);
+
     const handleSubmit = (event) => {
         event.preventDefault();
         onSearch(search);
-        updateSearch('');
         close();
     };
 
