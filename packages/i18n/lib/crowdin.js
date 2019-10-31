@@ -91,6 +91,7 @@ async function createExport() {
 async function downloadAll() {
     const fileName = 'all.zip';
     const url = getURL(`download/${fileName}`);
+    debug(url, 'DOWNLOAD ZIP');
     const { body } = await got(url, { encoding: null });
     return JSZip.loadAsync(body);
 }
@@ -102,6 +103,9 @@ async function downloadAll() {
  */
 const getFileNameLang = (lang) => {
     const file = path.basename(FILE_NAME, '.pot');
+    if (/\.json$/.test(file)) {
+        return file;
+    }
     return `${file}-${lang}.po`;
 };
 
@@ -115,9 +119,10 @@ async function fetchThemAll(spinner) {
         throw new Error(`You must create a file ${LANG_EXPORTABLE_LIST}. More informations on the wiki`);
     }
 
+    const isJSON = /\.json$/.test(FILE_NAME);
     const content = fs.readFileSync(LANG_EXPORTABLE_LIST, 'utf8').toString();
     const list = content.split('\n').filter(Boolean);
-    debug(list);
+    debug(list, 'List translations');
     // Extract only files from our selection list
     const zip = await downloadAll();
     spinner.stop();
@@ -125,16 +130,21 @@ async function fetchThemAll(spinner) {
     const spinnerZip = spin('Extracting translations');
     const fileList = list.map(async (lang) => {
         const input = path.join(lang, getFileNameLang(lang));
-        debug(input);
-        const file = await zip.file(input).async('string');
-        return { lang, file };
+        debug(input, 'input file');
+        try {
+            const file = await zip.file(input).async('string');
+            return { lang, file, isJSON };
+        } catch (e) {
+            warn(`Translation for ${lang} not available.\n${e.message}`);
+        }
     });
     const files = await Promise.all(fileList);
     spinnerZip.stop();
 
     // Write them on the project
-    files.forEach(({ lang, file }) => {
-        const fileName = `${translateLang(lang)}.po`;
+    files.filter(Boolean).forEach(({ lang, file, isJSON }) => {
+        const ext = isJSON ? 'json' : 'po';
+        const fileName = `${translateLang(lang)}.${ext}`;
         const output = path.join(I18N_OUTPUT_DIR, fileName);
         debug(`[${lang}] Write: ${output}`);
         fs.writeFileSync(output, file);

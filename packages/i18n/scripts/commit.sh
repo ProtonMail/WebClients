@@ -30,3 +30,11 @@ if [ "$3" = 'upgrade' ]; then
     git add "$2/*.json"
     (git commit -m 'i18n ~ Upgrade translations from crowdin' && git push origin $(git rev-parse --abbrev-ref HEAD)) || echo "[i18n] Nothing to upgrade"
 fi
+
+if [ "$3" = 'upgrade-website' ]; then
+    # For both flags we will refresh translations
+    git add -f "$1/*.json"
+    git add -f "$1/lang.json"
+    git add "$2/*.json"
+    (git commit -m 'i18n ~ Upgrade translations from crowdin' && git push origin $(git rev-parse --abbrev-ref HEAD)) || echo "[i18n] Nothing to upgrade"
+fi

@@ -41,6 +41,7 @@ async function main() {
     }
 
     if (is('upgrade')) {
+        const isWebsite = argv.website;
         // Add custom limit if we don't use custom
         require('./lib/upgrade')(
             [
@@ -63,15 +64,20 @@ async function main() {
                 },
                 {
                     title: 'Store a cache of translations available in the app',
+                    enabled: !isWebsite,
                     task: () => require('./lib/cache').write()
                 },
                 {
                     title: 'Export translations as JSON',
+                    enabled: !isWebsite, // we use JSON for websites
                     task: () => require('./lib/compile')()
                 },
                 {
                     title: 'Commit translations',
-                    task: () => require('./lib/commit')('upgrade')
+                    task: () => {
+                        const task = !isWebsite ? 'upgrade' : 'upgrade-website';
+                        require('./lib/commit')(task);
+                    }
                 },
                 {
                     title: 'ha que coucou',
