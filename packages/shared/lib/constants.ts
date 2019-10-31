@@ -12,6 +12,10 @@ export enum APPS {
     PROTONVPN_SETTINGS = 'proton-vpn-settings',
     PROTONADMIN = 'proton-admin'
 }
+export enum API_CODES {
+    ARRAY_GLOBAL_SUCCESS = 1001,
+    ARRAY_ELEMENT_SUCCESS = 1000
+}
 export const MAIN_USER_KEY = 'USER_KEYS';
 export const SECURE_SESSION_STORAGE_KEY = 'SECURE';
 export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
