@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Payment, usePayment, PrimaryButton, Field, Row, useLoading, SubTitle } from 'react-components';
+import { Alert, Payment, usePayment, PrimaryButton, Field, Row, useLoading, SubTitle, useCard } from 'react-components';
 import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 
@@ -9,6 +9,7 @@ import LoginPanel from '../LoginPanel';
 const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
     const [loading, withLoading] = useLoading();
     const { method, setMethod, parameters, canPay, setParameters, setCardValidity } = usePayment();
+    const card = useCard();
 
     return (
         <div className="pt2 mb2">
@@ -17,6 +18,7 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                 <div>
                     <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss laws`}</Alert>
                     <Payment
+                        card={card}
                         type="signup"
                         method={method}
                         amount={paymentAmount}
