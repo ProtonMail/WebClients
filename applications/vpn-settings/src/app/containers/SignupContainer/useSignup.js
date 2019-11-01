@@ -27,7 +27,7 @@ import {
 import { getPlan, PLAN, VPN_PLANS, PLAN_BUNDLES } from './plans';
 import { c } from 'ttag';
 
-const toPlanMap = (plans) => plans.reduce((planMap, plan) => ({ ...planMap, [plan.ID]: 1 }), {});
+const toPlanMap = (plans) => plans.reduce((planMap, plan) => ({ ...planMap, [plan.ID || plan.id]: 1 }), {});
 
 const getSignupAvailability = (isDirectSignupEnabled, allowedMethods = []) => {
     const email = allowedMethods.includes(TOKEN_TYPES.EMAIL);
