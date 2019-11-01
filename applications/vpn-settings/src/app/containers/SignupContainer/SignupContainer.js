@@ -182,7 +182,7 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
                             </Href>
                         </div>
                         <div className="flex-item-fluid alignright plan-help-button">
-                            <SupportDropdown content={c('Action').t`Need help`} />
+                            <SupportDropdown className="inline-flex" content={c('Action').t`Need help`} />
                         </div>
                     </div>
 
