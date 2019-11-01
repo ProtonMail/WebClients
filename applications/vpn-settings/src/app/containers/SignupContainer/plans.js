@@ -172,7 +172,7 @@ export const getPlan = (planName, cycle, plans = [], countries = []) => {
         disabled: !plan && planName !== PLAN.FREE,
         price,
         couponDiscount:
-            plan && typeof plan.AmountDue !== 'undefined' && Math.abs(price.monthly * cycle - plan.AmountDue),
+            plan && typeof plan.AmountDue !== 'undefined' ? Math.abs(price.monthly * cycle - plan.AmountDue) : 0,
         couponDescription: plan && plan.CouponDescription
     };
 };
