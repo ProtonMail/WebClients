@@ -51,6 +51,13 @@
   pointer-events: none;
 }
 
+.toolbar-select {
+  padding-left: em(16, $base-font);
+  padding-right: em(16, $base-font);
+  color: var(--fillcolor-icons, $white);
+  background: url("#{$path-images}sprite-for-css-only.svg#css-caret-white") calc(100% - 6px) 50% no-repeat;
+}
+
 
 @include respond-to($breakpoint-small) {
   .toolbar {

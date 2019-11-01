@@ -1,0 +1,85 @@
+$minicalendar-day-color: $white !default;
+$minicalendar-fontsize: 1rem !default;
+
+.mini-calendar {
+    font-size: $minicalendar-fontsize;
+}
+
+.mini-calendar-grid--displayWeekNumber {
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-template-rows: auto;
+}
+
+.minicalendar-weekdays,
+.minicalendar-weeknumbers,
+.minicalendar-day--inactive-month {
+    opacity: .4;
+}
+
+.minicalendar-weeknumbers {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat( var(--minicalendar-weeknumbers-numberOfWeeks, 5), 1fr);
+}
+.minicalendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat( var(--minicalendar-weekdays-numberOfDaysInWeek, 7), 1fr);
+    grid-template-rows: 1fr;
+}
+.minicalendar-days {
+    display: grid;
+    grid-template-columns: repeat( var(--minicalendar-days-numberOfDays, 7), 1fr);
+    grid-template-rows: repeat( var(----minicalendar-days-numberOfWeeks, 4), 1fr)
+}
+
+.minicalendar-day {
+    color: $minicalendar-day-color;
+}
+
+.minicalendar-days {
+    user-select: none;
+}
+
+.minicalendar-weekdays {
+    border-bottom: 1px solid $pm-global-border;
+}
+
+.minicalendar-weeknumbers span {
+    &:not(:first-of-type) {
+        border-right: 1px solid $pm-global-border;
+    }
+}
+
+.minicalendar-day[aria-current=true] {
+    color: $white;
+    font-weight: bold;
+    background: $pm-primary-dark;
+    border-radius: 100px;
+}
+.minicalendar-day[aria-selected=true] {
+    color: $white;
+    font-weight: bold;
+    background: $pm-primary;
+}
+
+.minicalendar-day--marker {
+    height: 3px;
+    width: 3px;
+    background-color: $pm-primary;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.minicalendar-day--marker[aria-current=true] {
+    background-color: $white;
+}
+
+.minicalendar-day--range-bound {
+    background: $pm-primary;
+}
+.minicalendar-day--range {
+    background: $pm-primary-light;
+}
