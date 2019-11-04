@@ -91,7 +91,7 @@ function generateV4Logs {
     local commits=$(git log --since="$1" --format=%H --invert-grep --grep="\[I18N@" --grep="Upgrade dependencies" --grep="Merge branch" --grep="Add change log for" --grep="Fix lint");
 
     if [ -z "$commits" ]; then
-        return 1;
+        return 0;
     fi;
 
     local url=$(node -e "console.log(require('./package.json').bugs.url)");
