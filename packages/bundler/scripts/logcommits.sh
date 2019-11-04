@@ -94,7 +94,7 @@ function generateV4Logs {
         return 0;
     fi;
 
-    local url=$(node -e "console.log(require('./package.json').bugs.url)");
+    local url=$(node -e "console.log(require('./package.json').bugs.url)" | sed 's/WebClient/Angular/i');
     local appName="$(cat package.json | grep '"name"' | awk '{print $2}' | sed 's/"//g;s/,//')";
 
     echo "";
@@ -117,8 +117,9 @@ function generateV4Logs {
 # Clone every repo to extract the changes
 function changelogV4 {
     local projects=('proton-contacts' 'proton-mail-settings' 'proton-shared' 'react-components');
-    local latestCommit="$(cd dist/ && git log -1 --format=%cd --date=iso)";
-    local url=$(node -e "console.log(require('./package.json').bugs.url)" | sed 's/WebClient/Angular/');
+
+    # Get the previous commit as the latest one is the one from the build a few seconfs ago
+    local latestCommit="$(cd dist/ && git log -2 --format=%cd --date=iso | tail -1)";
 
     for project in ${projects[*]}; do
         rm -rf "/tmp/$project" || echo "[$project already exists] /tmp/$project";
