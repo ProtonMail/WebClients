@@ -150,13 +150,15 @@ function ConditionsEditor({ filter, onChange = noop, errors = [] }) {
                                 />
                             </Field>
                         )}
-                        <div className="ml1">
-                            <ErrorButton
-                                title={c('Action').t`Remove condition`}
-                                icon="trash"
-                                onClick={handleRemoveCondition(index)}
-                            />
-                        </div>
+                        {model.Simple.Conditions.length > 1 && (
+                            <div className="ml1">
+                                <ErrorButton
+                                    title={c('Action').t`Remove condition`}
+                                    icon="trash"
+                                    onClick={handleRemoveCondition(index)}
+                                />
+                            </div>
+                        )}
                     </Row>
                 );
             })}

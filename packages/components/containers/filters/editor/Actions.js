@@ -5,6 +5,7 @@ import { Loader, Label, Field, Select, Row, useFormattedLabels, ErrorZone } from
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import LabelActions from './LabelActions';
+import AutoReplyAction from './AutoReplyAction';
 
 function ActionsEditor({ filter, onChange = noop, errors = {} }) {
     const { Actions } = filter.Simple;
@@ -25,8 +26,16 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
             value: 'archive'
         },
         {
-            text: c('Filter Actions').t`Move to mailbox`,
+            text: c('Filter Actions').t`Move to inbox`,
             value: 'inbox'
+        },
+        {
+            text: c('Filter Actions').t`Move to spam`,
+            value: 'spam'
+        },
+        {
+            text: c('Filter Actions').t`Move to trash`,
+            value: 'trash'
         }
     ].concat(folders);
 
@@ -52,7 +61,8 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
             }
         }),
         moveTo: (value) => ({ FileInto: [value] }),
-        labels: (Labels) => ({ Labels })
+        labels: (Labels) => ({ Labels }),
+        autoReply: (Vacation) => ({ Vacation })
     };
 
     const handleChange = (mode) => {
@@ -92,42 +102,55 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
         onChange(ACTIONS.labels(labels));
     };
 
+    const handleOnChangeAutoReply = (autoReply) => {
+        onChange(ACTIONS.autoReply(autoReply));
+    };
+
     return (
-        <Row>
-            <Label htmlFor="actions">{c('New Label form').t`Actions`}</Label>
-            <Field>
-                <div className="mb1">
-                    {loading ? (
-                        <Loader />
-                    ) : (
-                        <LabelActions onChange={handleOnChangeLabel} labels={labels} selection={getSelectedLabels()} />
-                    )}
-                </div>
-                <div className="mb1">
-                    {loading ? (
-                        <Loader />
-                    ) : (
+        <>
+            <div className="flex flex-nowrap onmobile-flex-column">
+                <Label htmlFor="actions">{c('New Label form').t`Actions`}</Label>
+                <Field>
+                    <div className="mb1">
+                        {loading ? (
+                            <Loader />
+                        ) : (
+                            <LabelActions
+                                onChange={handleOnChangeLabel}
+                                labels={labels}
+                                selection={getSelectedLabels()}
+                            />
+                        )}
+                    </div>
+                    <div className="mb1">
+                        {loading ? (
+                            <Loader />
+                        ) : (
+                            <Select
+                                options={MOVE_TO}
+                                onChange={handleChange('moveTo')}
+                                className="mlauto"
+                                defaultValue={getDefaultValue('moveTo')}
+                            />
+                        )}
+                    </div>
+                    <div className="mb1">
                         <Select
-                            options={MOVE_TO}
-                            onChange={handleChange('moveTo')}
+                            options={MARK_AS}
+                            onChange={handleChange('markAs')}
                             className="mlauto"
-                            defaultValue={getDefaultValue('moveTo')}
+                            defaultValue={getDefaultValue('markAs')}
                         />
-                    )}
-                </div>
-                <div className="mb1">
-                    <Select
-                        options={MARK_AS}
-                        onChange={handleChange('markAs')}
-                        className="mlauto"
-                        defaultValue={getDefaultValue('markAs')}
-                    />
-                </div>
-                {errors.isValid === false ? (
+                    </div>
+                </Field>
+            </div>
+            <AutoReplyAction onChange={handleOnChangeAutoReply} defaultValue={Actions.Vacation} />
+            {errors.isValid === false ? (
+                <Row>
                     <ErrorZone id="ActionsError">{c('Error').t`A filter must have an action`}</ErrorZone>
-                ) : null}
-            </Field>
-        </Row>
+                </Row>
+            ) : null}
+        </>
     );
 }
 
