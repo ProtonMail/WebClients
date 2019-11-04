@@ -1,4 +1,4 @@
-import { formatRelative } from 'date-fns';
+import { formatRelative, format } from 'date-fns';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
 
 import { ELEMENT_TYPES } from '../constants';
@@ -26,4 +26,9 @@ export const getReadableTime = ({ Time = 0, ContextTime = 0 } = {}) => {
     const date = new Date((ContextTime || Time) * 1000);
     const now = new Date();
     return formatRelative(date, now);
+};
+
+export const getReadableFullTime = ({ Time = 0, ContextTime = 0 } = {}) => {
+    const date = new Date((ContextTime || Time) * 1000);
+    return format(date, 'Ppp');
 };

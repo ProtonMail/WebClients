@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useApi, useLoading, Loader } from 'react-components';
+import { useApi, useLoading, Loader, useLabels } from 'react-components';
 import { getConversation } from 'proton-shared/lib/api/conversations';
 import { getMessage } from 'proton-shared/lib/api/messages';
 import { orderBy } from 'proton-shared/lib/helpers/array';
@@ -9,10 +9,12 @@ import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
 import { ELEMENT_TYPES } from '../../constants';
 import NumMessages from './NumMessages';
+import ItemLabels from '../list/ItemLabels';
 
 const ConversationView = ({ conversationID, messageID, mailSettings }) => {
     const [conversation, updateConversation] = useState();
     const [messages, updateMessages] = useState([]);
+    const [labels] = useLabels();
     const api = useApi();
     const [loading, withLoading] = useLoading();
 
@@ -24,16 +26,26 @@ const ConversationView = ({ conversationID, messageID, mailSettings }) => {
 
     const handleExpand = async (messageID) => {
         const index = messages.findIndex(({ ID }) => ID === messageID);
-        const message = messages[index];
 
-        // If Body is set we don't need to call the API
-        if (message.Body) {
-            updateMessages([...[...messages].splice(index, 1), { ...message, expanded: true }]);
+        if (index === -1) {
             return;
         }
 
+        const message = messages[index];
+        const copyMessages = [...messages];
+
+        // If Body is set we don't need to call the API
+        if (message.Body) {
+            copyMessages[index] = { ...message, expanded: true };
+            updateMessages(copyMessages);
+            return;
+        }
+
+        copyMessages[index] = { ...message, loading: true };
+        updateMessages([...copyMessages]);
         const { Message } = await api(getMessage(messageID));
-        updateMessages([...[...messages].splice(index, 1), { ...Message, expanded: true }]);
+        copyMessages[index] = { ...Message, loading: false, expanded: true };
+        updateMessages([...copyMessages]);
     };
 
     useEffect(() => {
@@ -59,12 +71,21 @@ const ConversationView = ({ conversationID, messageID, mailSettings }) => {
                     <NumMessages mailSettings={mailSettings} className="mr0-25" conversation={conversation} />
                     {conversation.Subject}
                 </h2>
-                <ItemStar element={conversation} type={ELEMENT_TYPES.CONVERSATION} />
+                <div>
+                    <ItemLabels labels={labels} max={4} element={conversation} type={ELEMENT_TYPES.CONVERSATION} />
+                    <ItemStar element={conversation} type={ELEMENT_TYPES.CONVERSATION} />
+                </div>
             </header>
             {orderBy(messages, 'Order')
                 .reverse()
                 .map((message) => (
-                    <MessageView key={message.ID} message={message} onExpand={handleExpand} />
+                    <MessageView
+                        key={message.ID}
+                        message={message}
+                        labels={labels}
+                        mailSettings={mailSettings}
+                        onExpand={handleExpand}
+                    />
                 ))}
         </section>
     );
