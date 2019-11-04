@@ -70,7 +70,11 @@ async function logCommits(branch = '', flowType, isWebsite) {
     return script('logcommits.sh', args).then(({ stdout }) => stdout);
 }
 
-async function generateChangelog(branch, issueURL) {
+async function generateChangelog(branch, issueURL, isV4) {
+    if (isV4) {
+        return script('logcommits.sh', ['changelog-v4']).then(({ stdout }) => console.log(stdout) || stdout);
+    }
+
     const args = ['changelog', `--branch ${branch}`, `--issue-url ${issueURL}`];
     return script('logcommits.sh', args).then(({ stdout }) => console.log(stdout) || stdout);
 }

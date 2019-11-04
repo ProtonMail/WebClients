@@ -290,21 +290,23 @@ if (argv._.includes('log-commits')) {
 }
 
 if (argv._.includes('changelog')) {
-    const { branch } = argv;
+    const { branch, mode } = argv;
     const url = argv.url || (PKG.bugs || {}).url;
+    const isV4 = mode === 'v4';
     debug({ argv }, 'arguments');
 
-    if (!['dev', 'v4', process.env.QA_BRANCH].includes(branch)) {
+    if (!['dev', 'v4', process.env.QA_BRANCH].includes(branch) && !isV4) {
         return warn(`No changelog available for the branch ${branch}`); // not available
     }
 
-    if (!url) {
+    if (!url && !isV4) {
         return warn('No URL found for the issues');
     }
 
-    return generateChangelog(branch, url).then((data) => {
+    return generateChangelog(branch, url, isV4).then((data) => {
+        const env = isV4 ? 'https://v4.protonmail.blue' : branch;
         if (data) {
-            coucou.send(data, { env: branch, mode: 'changelog' }, PKG);
+            coucou.send(data, { env, mode: 'changelog' }, PKG);
         }
     });
 }
