@@ -9,9 +9,7 @@ function actionMessage(
     mimeMessageBuilder,
     networkActivityTracker,
     pgpModal,
-    printModal,
-    notification,
-    gettextCatalog
+    printModal
 ) {
     const { dispatcher } = dispatchers(['messageActions']);
     const disp = (message = {}) => (action = '', mailbox = '') => {
@@ -70,9 +68,6 @@ function actionMessage(
     return {
         link(scope, el, { actionMessage, actionMessageType = '' }) {
             const dispatch = disp(scope.message);
-            const I18N = {
-                PHISHING_REPORTED: gettextCatalog.getString('Phishing reported', null, 'Success notification message')
-            };
             function onClick() {
                 switch (actionMessage) {
                     case 'unread':
@@ -126,7 +121,6 @@ function actionMessage(
 
                     case 'reportPhishing':
                         bugReportModel.reportPhishing(scope.message);
-                        notification.success(I18N.PHISHING_REPORTED);
                         break;
 
                     default:
