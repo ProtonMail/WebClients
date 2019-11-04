@@ -38,41 +38,27 @@ $conversation-icon-size: 4rem !default;
   border: 1px solid $pm-global-border;
 }
 
-// hover state for checkbox when hover the item (only the item, not the checkbox)
-.item-container:hover {
-  .item-abbr {
-    display: none;
-  }
-  .item-checkbox + .item-icon > .item-icon-fakecheck {
-    display: flex;
-    transform: scale(1);
-  }
-  .item-icon-fakecheck-icon {
-    fill: $pm-global-border;
-  }
-}
-
 .item-checkbox {
   // hidden fake check by default
   & + .item-icon > .item-icon-fakecheck {
     display: none;
   }
 
-  // focus state (used global hover state)
-  &:focus + .item-icon {
-    & > .item-abbr {
-      display: none;
-    }
+  // focus state (used global hover state) => NEEDS IMPROVEMENTS
+  // &:focus + .item-icon {
+  //   & > .item-abbr {
+  //     display: none;
+  //   }
 
-    & > .item-icon-fakecheck {
-      display: flex;
-      transform: scale(1);
-    }
+  //   & > .item-icon-fakecheck {
+  //     display: flex;
+  //     transform: scale(1);
+  //   }
 
-    .item-icon-fakecheck-icon {
-      fill: $pm-global-border;
-    }
-  } 
+  //   .item-icon-fakecheck-icon {
+  //     fill: $pm-global-border;
+  //   }
+  // } 
 
   // hover state of checkbox
   & + .item-icon:hover {
