@@ -290,7 +290,7 @@ if (argv._.includes('log-commits')) {
 }
 
 if (argv._.includes('changelog')) {
-    const { branch, mode } = argv;
+    const { branch, mode, api } = argv;
     const url = argv.url || (PKG.bugs || {}).url;
     const isV4 = mode === 'v4';
     debug({ argv }, 'arguments');
@@ -306,7 +306,7 @@ if (argv._.includes('changelog')) {
     return generateChangelog(branch, url, isV4).then((data) => {
         const env = isV4 ? 'https://v4.protonmail.blue' : branch;
         if (data) {
-            coucou.send(data, { env, mode: 'changelog' }, PKG);
+            coucou.send(data, { env, mode: 'changelog', api }, PKG);
         }
     });
 }

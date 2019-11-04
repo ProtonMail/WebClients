@@ -2,7 +2,7 @@ const https = require('https');
 const dedent = require('dedent');
 const { error, success, debug, warn } = require('./log')('proton-bundler');
 
-async function send(data, { env, mode = 'deploy' }, { name } = {}) {
+async function send(data, { env, mode = 'deploy', api }) {
     const requests = {
         deploy() {
             if (!process.env.DEPLOY_MESSAGES_HOOK) {
@@ -19,8 +19,10 @@ async function send(data, { env, mode = 'deploy' }, { name } = {}) {
 
             const { pathname, host } = new URL(process.env.CHANGELOG_QA_HOOK);
             const scope = env === 'dev' ? `_available in a few minutes on ${env}_` : `_available on ${env}_`;
+            const apiRow = api ? `API: *${api}*` : '';
             const text = dedent`
-                *Changelog* [${name}]: ${scope}
+                ${scope}
+                ${apiRow}
 
                 ${data}
             `.trim();
