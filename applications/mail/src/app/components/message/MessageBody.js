@@ -10,13 +10,13 @@ import {
     useApi,
     useEventManager
 } from 'react-components';
-import { markMessageAsUnread } from 'proton-shared/lib/api/messages';
+import { markMessageAsRead } from 'proton-shared/lib/api/messages';
 
 const MessageBody = ({ message = {} }) => {
     const api = useApi();
     const { call } = useEventManager();
     const { Body, AddressID, Time } = message;
-    const [body] = useState(Body);
+    const [body, updateBody] = useState(Body);
     const [loading, withLoading] = useLoading();
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
@@ -26,21 +26,28 @@ const MessageBody = ({ message = {} }) => {
 
     console.log(addressKeys, Time);
 
-    const markAsUnread = async () => {
-        await api(markMessageAsUnread([message.ID]));
-        await call();
-    };
-
-    const decryptyBody = async () => {
-        // updateBody();
+    const markAsRead = async () => {
         if (message.Unread) {
-            markAsUnread() // No await to not slow down the UX
-                .then(() => call());
+            await api(markMessageAsRead([message.ID]));
+            await call();
         }
     };
 
+    const decryptyBody = async () => {};
+
+    const formatContent = async (content) => {
+        return content;
+    };
+
     useEffect(() => {
-        withLoading(decryptyBody());
+        const promise = decryptyBody()
+            .then((content) => {
+                markAsRead(); // No await to not slow down the UX
+                return formatContent(content);
+            })
+            .then(updateBody);
+
+        withLoading(promise);
     }, []);
 
     if (loading || loadingUserKeys || loadingAddresses || loadingAddressesKeys) {
