@@ -418,6 +418,10 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 2, 3 !default; // specify 2.
   opacity: 0.3;
 }
 
+.filter-blur {
+  filter: blur(4px);
+}
+
 .hidden,
 [hidden] {
   display: none;
