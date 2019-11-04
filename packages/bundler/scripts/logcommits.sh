@@ -86,6 +86,53 @@ function getChangelogReactComponents {
     fi;
 }
 
+function generateV4Logs {
+    local i=0;
+    local commits=$(git log --since="$1" --format=%H --invert-grep --grep="\[I18N@" --grep="Upgrade dependencies" --grep="Merge branch" --grep="Add change log for" --grep="Fix lint");
+
+    if [ -z "$commits" ]; then
+        return 1;
+    fi;
+
+    local url=$(node -e "console.log(require('./package.json').bugs.url)");
+    local appName="$(cat package.json | grep '"name"' | awk '{print $2}' | sed 's/"//g;s/,//')";
+
+    echo "";
+    echo "*${appName/protonmail-web/Mail}*:";
+
+    # We ignore commits from the CI
+    for commit in $commits; do
+        printLine "$commit" "$url";
+        ((i+=1))
+
+        # Limit to 25 to prevent too many commits
+        if [ "$i" -eq 40 ]; then
+            break;
+        fi;
+    done;
+}
+
+##
+# Generate a "raw" changelog from all our FE projects linked to the V4
+# Clone every repo to extract the changes
+function changelogV4 {
+    local projects=('proton-contacts' 'proton-mail-settings' 'proton-shared' 'react-components');
+    local latestCommit="$(cd dist/ && git log -1 --format=%cd --date=iso)";
+    local url=$(node -e "console.log(require('./package.json').bugs.url)" | sed 's/WebClient/Angular/');
+
+    for project in ${projects[*]}; do
+        rm -rf "/tmp/$project" || echo "[$project already exists] /tmp/$project";
+        git clone "git@github.com:ProtonMail/$project.git" --depth 30 "/tmp/$project" --quiet &
+    done;
+
+    wait;
+
+    generateV4Logs "$latestCommit";
+
+    for project in ${projects[*]}; do
+        cd "/tmp/$project" && generateV4Logs "$latestCommit";
+    done;
+}
 
 if [ "$1" = 'changelog' ]; then
     BRANCH="";
@@ -111,6 +158,11 @@ if [ "$1" = 'changelog' ]; then
 
     getChangelogRepo $BRANCH $ISSUE_URL;
     getChangelogReactComponents
+    exit;
+fi;
+
+if [ "$1" = 'changelog-v4' ]; then
+    changelogV4;
     exit;
 fi;
 
