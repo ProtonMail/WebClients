@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote',
     '.gmail_quote',
@@ -14,38 +16,36 @@ const BLOCKQUOTE_SELECTORS = [
     'blockquote[type="cite"]'
 ];
 
-/* @ngInject */
-function transformBlockquotes(gettextCatalog) {
-    const quotes = BLOCKQUOTE_SELECTORS.map((selector) => `${selector}:not(:empty)`).join(',');
+const quotes = BLOCKQUOTE_SELECTORS.map((selector) => `${selector}:not(:empty)`).join(',');
 
-    return (html) => {
-        const blockquotes = [].slice.call(html.querySelectorAll(quotes));
-        const parent = html.textContent;
-        let found = false;
+export const transformBlockquotes = (html) => {
+    const blockquotes = [...html.querySelectorAll(quotes)];
+    const parent = html.textContent;
+    let found = false;
 
-        blockquotes.forEach((blockquote) => {
-            if (!found) {
-                const child = blockquote.textContent;
-                const [before = '', after = ''] = parent.split(child);
+    console.log('transformBlockquotes', blockquotes);
 
-                if (child.length < parent.length && before.length && !after.length) {
-                    const button = document.createElement('button');
-                    const title = gettextCatalog.getString('Show previous message', null, 'Title');
+    blockquotes.forEach((blockquote) => {
+        if (!found) {
+            const child = blockquote.textContent;
+            const [before = '', after = ''] = parent.split(child);
 
-                    button.className = 'pm-button pm-button--small more proton-message-blockquote-toggle';
-                    button.textContent = '...'; // perf issue we can't use <icon> as we don't want to compile.
-                    button.setAttribute('title', title);
+            if (child.length < parent.length && before.length && !after.length) {
+                const button = document.createElement('button');
+                const title = c('Title').t`Show previous message`;
 
-                    // For some messages, the content of the message before <button> is not inside <div>
-                    blockquote.parentNode.insertBefore(document.createElement('BR'), blockquote);
-                    blockquote.parentNode.insertBefore(button, blockquote);
+                button.className = 'pm-button pm-button--small more proton-message-blockquote-toggle';
+                button.textContent = '...'; // perf issue we can't use <icon> as we don't want to compile.
+                button.setAttribute('title', title);
 
-                    found = true;
-                }
+                // For some messages, the content of the message before <button> is not inside <div>
+                blockquote.parentNode.insertBefore(document.createElement('BR'), blockquote);
+                blockquote.parentNode.insertBefore(button, blockquote);
+
+                found = true;
             }
-        });
+        }
+    });
 
-        return html;
-    };
-}
-export default transformBlockquotes;
+    return html;
+};

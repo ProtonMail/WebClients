@@ -4,16 +4,19 @@ import { useGetMailSettings } from './useMailSettings';
 import { transformEscape } from '../transforms/transformEscape';
 import { transformLinks } from '../transforms/transformLinks';
 import { transformEmbedded } from '../transforms/transformEmbedded';
+import { transformWelcome } from '../transforms/transformWelcome';
+import { transformBlockquotes } from '../transforms/transformBlockquotes';
+import { transformStylesheet } from '../transforms/transformStylesheet';
 
 // Reference: Angular/src/app/message/services/prepareContent.js
 
 const transformers = [
     transformEscape,
     transformLinks,
-    transformEmbedded
-    // TODO: transformWelcome,
-    // TODO: transformBlockquotes,
-    // TODO: transformStylesheet
+    transformEmbedded,
+    transformWelcome,
+    transformBlockquotes,
+    transformStylesheet
     // TODO: transformAttachements
     // TODO: transformRemote
 ];
@@ -30,8 +33,9 @@ export const useFormatContent = () => {
         console.log('formatContent', document, message, mailSettings);
 
         const result = await transformers.reduce(async (documentPromise, transformer) => {
+            const document = await documentPromise;
             console.log('transformer', transformer);
-            return transformer(await documentPromise, message, { action, cache, mailSettings });
+            return transformer(document, message, { action, cache, mailSettings });
         }, content);
 
         return result.innerHTML;
