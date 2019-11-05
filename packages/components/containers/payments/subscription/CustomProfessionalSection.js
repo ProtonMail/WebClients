@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Select, Info } from 'react-components';
+import { Select } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 import { ADDON_NAMES, PLANS } from 'proton-shared/lib/constants';
 
@@ -41,13 +41,11 @@ const CustomProfessionalSection = ({ plans, model, onChange }) => {
             <div className="flex flex-spacebetween pb1 mb1 border-bottom">
                 <div>
                     <Select
+                        title={c('Tooltip')
+                            .t`For each additional user, 5GB of storage and 5 email addresses are added to your subscription.`}
                         options={memberOptions}
                         value={model.plansMap[ADDON_NAMES.MEMBER]}
                         onChange={handleChange(ADDON_NAMES.MEMBER)}
-                    />
-                    <Info
-                        title={c('Tooltip')
-                            .t`For each additional user, 5GB of storage and 5 email addresses are added to your subscription.`}
                     />
                 </div>
                 <div>
@@ -66,13 +64,11 @@ const CustomProfessionalSection = ({ plans, model, onChange }) => {
             <div className="flex flex-spacebetween pb1 mb1 border-bottom">
                 <div>
                     <Select
+                        title={c('Tooltip')
+                            .t`Allows you to host emails for your own domain(s) at ProtonMail, e.g. thomas.anderson@example.com`}
                         options={domainOptions}
                         value={model.plansMap[ADDON_NAMES.DOMAIN]}
                         onChange={handleChange(ADDON_NAMES.DOMAIN)}
-                    />
-                    <Info
-                        title={c('Tooltip')
-                            .t`Allows you to host emails for your own domain(s) at ProtonMail, e.g. thomas.anderson@example.com`}
                     />
                 </div>
                 <div>
