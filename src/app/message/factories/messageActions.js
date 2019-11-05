@@ -349,7 +349,7 @@ function messageActions(
             { events: [], promises: [] }
         );
 
-        const promise = $q.all(promises);
+        const promise = $q.all(promises).then(eventManager.call);
         cache.addToDispatcher(promise);
 
         if (context === true) {

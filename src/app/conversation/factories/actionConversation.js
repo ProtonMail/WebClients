@@ -304,7 +304,7 @@ function actionConversation(
      * @param {Boolean} alsoArchive
      * @return {Promise}
      */
-    function label(ids = [], labels = [], alsoArchive = false) {
+    async function label(ids = [], labels = [], alsoArchive = false) {
         const REMOVE = 0;
         const ADD = 1;
         const process = (events) => {
@@ -374,7 +374,7 @@ function actionConversation(
             });
         };
 
-        const promise = Promise.all(getPromises(events), getPromises(events, REMOVE));
+        const promise = Promise.all(getPromises(events), getPromises(events, REMOVE)).then(eventManager.call);
 
         cache.addToDispatcher(promise);
 
@@ -383,9 +383,7 @@ function actionConversation(
         }
 
         promise.then(() => process(events));
-        networkActivityTracker.track(promise);
-
-        return promise;
+        return networkActivityTracker.track(promise);
     }
 
     async function unlabel(ids = [], labels = []) {
