@@ -1,5 +1,6 @@
-$minicalendar-day-color: $white !default;
-$minicalendar-fontsize: 1rem !default;
+$minicalendar-day-color: $black !default;
+$minicalendar-day-color-on-dark-background: $white !default;
+$minicalendar-fontsize: 1.2rem !default;
 
 .mini-calendar {
     font-size: $minicalendar-fontsize;
@@ -35,6 +36,9 @@ $minicalendar-fontsize: 1rem !default;
 
 .minicalendar-day {
     color: $minicalendar-day-color;
+}
+.minicalendar--onDarkBackground .minicalendar-day {
+    color: $minicalendar-day-color-on-dark-background;
 }
 
 .minicalendar-days {
