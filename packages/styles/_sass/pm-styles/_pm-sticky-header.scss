@@ -15,6 +15,9 @@ $sticky-title-height: 10rem !default;
 .sticky-title--onTop {
   box-shadow: none;
 }
+.sticky-title--noPadding {
+  padding: 0;
+}
 
 .container-section-sticky {
   padding: 3em 2em 0 2em;
