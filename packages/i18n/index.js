@@ -69,7 +69,7 @@ async function main() {
                 },
                 {
                     title: 'Export translations as JSON',
-                    enabled: !isWebsite, // we use JSON for websites
+                    enabled: !isWebsite,
                     task: () => require('./lib/compile')()
                 },
                 {
