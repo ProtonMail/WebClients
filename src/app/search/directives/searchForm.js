@@ -50,17 +50,17 @@ function searchForm(
                 const $input = el[0].querySelector('.search-form-fieldset-input');
 
                 scope.model = {
+                    query: searchValue.generateSearchString(folders),
                     wildcard: AutoWildcardSearch === 0,
                     folder: folders[0],
                     address: addresses[0],
                     attachments: '2'
                 };
-                scope.query = searchValue.generateSearchString(folders);
 
                 const onOpen = () => {
                     // Auto get data from the query
                     const parameters = {
-                        ...searchValue.extractParameters(scope.query, folders),
+                        ...searchValue.extractParameters(scope.model.query, folders),
                         ...$stateParams
                     };
 
@@ -85,7 +85,7 @@ function searchForm(
                 });
 
                 on('$stateChangeSuccess', () => {
-                    scope.query = searchValue.generateSearchString(folders);
+                    scope.model.query = searchValue.generateSearchString(folders);
                 });
 
                 on('dropdownApp', (e, { type, data }) => {
@@ -113,7 +113,7 @@ function searchForm(
                 on('search', (e, { type }) => {
                     if (type === 'reset.search') {
                         scope.$applyAsync(() => {
-                            scope.query = '';
+                            scope.model.query = '';
                             $input.focus();
                         });
                     }
@@ -128,16 +128,18 @@ function searchForm(
                 };
 
                 const onSubmit = () => {
-                    const query = scope.query;
-                    const isOpen = el[0].classList.contains(CLASS_OPEN);
-                    const data = searchValue.extractParameters(query, folders);
-                    const model = searchModel.build(scope.model);
-                    const state = getState(query || model.keyword || isOpen);
+                    scope.$applyAsync(() => {
+                        const isOpen = el[0].classList.contains(CLASS_OPEN);
+                        const query = scope.model.query;
+                        const data = searchValue.extractParameters(query, folders);
+                        const model = searchModel.build(scope.model);
+                        const state = getState(query || isOpen);
 
-                    if (!isOpen) {
-                        return go(state, searchModel.build(data));
-                    }
-                    return go(state, model);
+                        if (!isOpen) {
+                            return go(state, searchModel.build(data));
+                        }
+                        return go(state, model);
+                    });
                 };
 
                 el.on('submit', onSubmit);
