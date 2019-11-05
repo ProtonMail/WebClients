@@ -17,7 +17,14 @@
         ng-if="!('secured.label.**' | includedByState) || numberElementChecked">
 
         <h3 class="bold">{{::selectedLabelName}}</h3>
-        <p class="mt0 pt0" ng-bind-html="selectedLabelTotalTxt(numberElementChecked)"></p>
+        <p
+            class="mt0 pt0"
+            ng-if="numberElementChecked"
+            ng-bind-html="selectedLabelTotalTxt(numberElementChecked)"></p>
+        <p
+            class="mt0 pt0"
+            ng-if="!numberElementChecked"
+            ng-bind-html="getTotalBoxTxt()"></p>
 
         <img
             ng-src="/assets/selected-conversation-{{numberElementChecked > 1 ? 'many' : 'single'}}.svg"

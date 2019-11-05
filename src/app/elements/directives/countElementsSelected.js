@@ -31,6 +31,15 @@ function countElementsSelected(
     }
 
     const I18N = {
+        stored(total) {
+            return gettextCatalog.getPlural(
+                total,
+                '{{$count}} email stored',
+                '{{$count}} emails stored',
+                {},
+                'Info number email stored inside a folder'
+            );
+        },
         folder(n) {
             return gettextCatalog.getString(
                 'You have {{::countEmailSelected}} with this folder.',
@@ -67,6 +76,19 @@ function countElementsSelected(
                 },
                 'Info'
             );
+        },
+        totalBox(state) {
+            const total = sidebarModel.getRawTotal(state);
+            const totalEmail = this.stored(total);
+            const count = `<b>${totalEmail}</b>`;
+
+            return gettextCatalog.getString(
+                'You have {{count}} in this folder',
+                {
+                    count
+                },
+                'Info'
+            );
         }
     };
 
@@ -74,6 +96,7 @@ function countElementsSelected(
         replace: true,
         templateUrl: require('../../../templates/elements/countElementsSelected.tpl.html'),
         link(scope, el) {
+            const state = window.location.pathname.replace('/', '');
             const { dispatcher } = dispatchers(['selectElements']);
             const STATES = sidebarModel.getStateConfig();
 
@@ -93,11 +116,12 @@ function countElementsSelected(
                 scope.selectedLabelType = Exclusive && 'folder';
                 scope.selectedLabelName = stripHTML(Name);
             } else {
-                const { label = '' } = STATES[window.location.pathname.replace('/', '')] || {};
+                const { label = '' } = STATES[state] || {};
                 label && (scope.selectedLabelName = stripHTML(label));
             }
 
             scope.selectedLabelTotalTxt = (n) => I18N.elements(n);
+            scope.getTotalBoxTxt = () => I18N.totalBox(state);
 
             el.on('click', onClick);
 

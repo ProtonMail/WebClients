@@ -62,6 +62,12 @@ function sidebarModel(tools, cacheCounters, gettextCatalog, dynamicStates, conta
         return cacheCounters[`unread${key}`](id);
     };
 
+    const getRawTotal = (mailbox) => {
+        const type = tools.getTypeList(mailbox);
+        const key = type === 'conversation' ? 'Conversation' : 'Message';
+        return cacheCounters[`total${key}`](getFolderID(mailbox));
+    };
+
     const renameMailbox = (mailbox) => {
         if (mailbox === 'sent') {
             return dynamicStates.getSentState('');
@@ -103,6 +109,6 @@ function sidebarModel(tools, cacheCounters, gettextCatalog, dynamicStates, conta
         return count <= 0 ? '' : count;
     };
 
-    return { unread, getStateConfig, totalMember };
+    return { unread, getStateConfig, totalMember, getRawTotal };
 }
 export default sidebarModel;
