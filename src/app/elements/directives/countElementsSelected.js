@@ -27,7 +27,7 @@ function countElementsSelected(
             {},
             'Info number email selected'
         );
-        return `<span class="color-pm-blue">${totalEmail}</span>`;
+        return `<b>${totalEmail}</b>`;
     }
 
     const I18N = {
