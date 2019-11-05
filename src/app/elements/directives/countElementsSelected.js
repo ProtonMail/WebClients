@@ -41,10 +41,11 @@ function countElementsSelected(
             );
         },
         folder(n) {
+            const countEmailSelected = `<b>${this.stored(n)}</b>`;
             return gettextCatalog.getString(
                 'You have {{::countEmailSelected}} with this folder.',
                 {
-                    countEmailSelected: getCounter(n)
+                    countEmailSelected
                 },
                 'Info'
             );
