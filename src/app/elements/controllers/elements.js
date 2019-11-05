@@ -738,10 +738,29 @@ function ElementsController(
         const ids = idsSelected();
 
         if (type === 'conversation') {
-            actionConversation.label(ids, labels, alsoArchive);
-        } else if (type === 'message') {
-            const messages = getElementsSelected();
+            // Fast assign label
+            if (ids.length === 1) {
+                const [{ Labels = [] } = {}] = getElementsSelected();
+                const mapLabels = _.map(Labels, 'ID').reduce((acc, item) => {
+                    if (isNaN(+item)) {
+                        acc[item] = true;
+                    }
+                    return acc;
+                }, Object.create(null));
 
+                /*
+                    Keep only labels we have in the conversation + new ones if they exist.
+                    Prevent too many calls to unlabel if there is no Sleected on a label.
+                 */
+                const newlabels = labels.filter(({ ID, Selected }) => Selected || mapLabels[ID]);
+                return actionConversation.label(ids, newlabels, alsoArchive);
+            }
+
+            actionConversation.label(ids, labels, alsoArchive);
+        }
+
+        if (type === 'message') {
+            const messages = getElementsSelected();
             dispatcher.messageActions('label', { messages, labels, alsoArchive });
         }
     };
