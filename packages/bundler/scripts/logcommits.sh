@@ -128,6 +128,9 @@ function changelogV4 {
 
     wait;
 
+    printf '%-20s' '[Previous deploy]' "$latestCommit";
+    echo "";
+
     generateV4Logs "$latestCommit";
 
     for project in ${projects[*]}; do
