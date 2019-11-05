@@ -15,10 +15,11 @@ export const getContact = (contactID) => ({
     method: 'get'
 });
 
-export const addContacts = ({ Contacts, Overwrite, Labels } = {}) => ({
+export const addContacts = ({ Contacts, Overwrite, Labels, timeout } = {}) => ({
     url: 'contacts',
     method: 'post',
-    data: { Contacts, Overwrite, Labels }
+    data: { Contacts, Overwrite, Labels },
+    timeout
 });
 
 export const updateContact = (contactID, { Cards } = {}) => ({
