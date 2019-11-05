@@ -1,6 +1,6 @@
 import { API_CODES } from '../../constants';
 
-const { ARRAY_GLOBAL_SUCCESS, ARRAY_ELEMENT_SUCCESS } = API_CODES;
+const { GLOBAL_SUCCESS, SINGLE_SUCCESS } = API_CODES;
 
 interface Response {
     Response: { Code: number };
@@ -12,8 +12,8 @@ interface Responses {
 }
 
 export const allSucceded = ({ Code, Responses = [] }: Responses): boolean => {
-    if (Code !== ARRAY_GLOBAL_SUCCESS) {
+    if (Code !== GLOBAL_SUCCESS) {
         return false;
     }
-    return !Responses.some(({ Response: { Code } }) => Code !== ARRAY_ELEMENT_SUCCESS);
+    return !Responses.some(({ Response: { Code } }) => Code !== SINGLE_SUCCESS);
 };
