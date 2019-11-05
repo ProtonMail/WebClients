@@ -115,9 +115,6 @@
 	.no-margin {
 		margin: 0;
 	}
-	.cursor-pointer{
-		cursor: pointer;
-	}
 	.dull {
 		opacity: .5;
 	}
@@ -125,7 +122,7 @@
 		font-size:1rem;
 	}
 	.help {
-		font-size: 12px;
+		font-size: 1.2rem;
 		font-style: italic;
 	}
 	.or {
@@ -173,3 +170,4 @@ fieldset legend {
 	padding: 0 .5rem;
 	background-color: rgba(0,0,0,.06);
 }
+

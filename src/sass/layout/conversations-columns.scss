@@ -34,6 +34,42 @@
 }
 
 
+// fix to have multi-selection working on Firefox AND hover state for fake checkbox
+// this fix is Angular only
+.selectBoxElement-container:hover {
+    .item-icon {
+        background-color: $white;
+        border-color: $pm-global-border;
+        & > .item-abbr {
+          display: none;
+        }
+        & > .item-icon-fakecheck {
+          display: flex;
+          transform: scale(1);
+        }
+        .item-icon-fakecheck-icon {
+          fill: $pm-primary;
+        }
+      }
+    .item-checkbox:checked + .item-icon {
+        background-color: $pm-primary;
+        border-color: $pm-primary;
+        & > .item-abbr {
+          display: none;
+        }
+        & > .item-icon-fakecheck {
+          display: flex;
+
+          animation: conversationIconIn ease .15s;
+        }
+        .item-icon-fakecheck-icon {
+          fill: $white;
+        }
+
+      }
+}
+
+
 .appConfigBody-request-timeout .conversation { display: none }
 
 
