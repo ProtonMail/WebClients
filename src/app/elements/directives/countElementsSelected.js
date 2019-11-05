@@ -1,5 +1,13 @@
 /* @ngInject */
-function countElementsSelected(dispatchers, tools, $stateParams, cacheCounters, labelsModel, gettextCatalog) {
+function countElementsSelected(
+    dispatchers,
+    tools,
+    $stateParams,
+    cacheCounters,
+    labelsModel,
+    gettextCatalog,
+    sidebarModel
+) {
     const CLEANER = document.createElement('div');
     /**
      * Remove HTML inside a string, prevent XSS
@@ -50,7 +58,7 @@ function countElementsSelected(dispatchers, tools, $stateParams, cacheCounters, 
         elements(n) {
             const type = tools.getTypeList();
             const totalEmail = this[type](n);
-            const count = `<span class="color-pm-blue bold">${totalEmail}</span>`;
+            const count = `<b>${totalEmail}</b>`;
 
             return gettextCatalog.getString(
                 'You selected {{count}} from this folder.',
@@ -67,6 +75,8 @@ function countElementsSelected(dispatchers, tools, $stateParams, cacheCounters, 
         templateUrl: require('../../../templates/elements/countElementsSelected.tpl.html'),
         link(scope, el) {
             const { dispatcher } = dispatchers(['selectElements']);
+            const STATES = sidebarModel.getStateConfig();
+
             const onClick = ({ target }) => {
                 if (target.getAttribute('data-click-action') === 'unselect') {
                     dispatcher.selectElements('all', { isChecked: false });
@@ -82,6 +92,9 @@ function countElementsSelected(dispatchers, tools, $stateParams, cacheCounters, 
                 scope.selectedLabelTotalRaw = total;
                 scope.selectedLabelType = Exclusive && 'folder';
                 scope.selectedLabelName = stripHTML(Name);
+            } else {
+                const { label = '' } = STATES[window.location.pathname.replace('/', '')] || {};
+                label && (scope.selectedLabelName = stripHTML(label));
             }
 
             scope.selectedLabelTotalTxt = (n) => I18N.elements(n);

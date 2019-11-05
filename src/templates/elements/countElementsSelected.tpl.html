@@ -1,12 +1,8 @@
 <div class="countElementsSelected-container flex w100">
 
-    <div class="mlauto mrauto mt2 pt2" ng-if="('secured.label.**' | includedByState) && !numberElementChecked">
+    <div class="mlauto mrauto mauto pt2" ng-if="('secured.label.**' | includedByState) && !numberElementChecked">
 
-        <h3 class="bold">
-            <icon data-name="folder" ng-if="selectedLabelType === 'folder'"></icon>
-            <icon data-name="label" ng-if="selectedLabelType !== 'folder'"></icon>
-            <span>{{::selectedLabelName}}</span>
-        </h3>
+        <h3 class="bold">{{::selectedLabelName}}</h3>
 
         <p class="mt0 pt0" ng-bind-html="::selectedLabelTotal"></p>
 
@@ -20,7 +16,8 @@
         class="pm-flex-content-vertical-center"
         ng-if="!('secured.label.**' | includedByState) || numberElementChecked">
 
-       <p class="mt0 pt0" ng-bind-html="selectedLabelTotalTxt(numberElementChecked)"></p>
+        <h3 class="bold">{{::selectedLabelName}}</h3>
+        <p class="mt0 pt0" ng-bind-html="selectedLabelTotalTxt(numberElementChecked)"></p>
 
         <img
             ng-src="/assets/selected-conversation-{{numberElementChecked > 1 ? 'many' : 'single'}}.svg"
@@ -29,11 +26,12 @@
 
         <div>
             <button
-                class="pm-button countElementsSelected-btn-unselect conversationPlaceholder-btn-unselect"
+                class="pm-button countElementsSelected-btn-unselect conversationPlaceholder-btn-unselect no-pointer-events-children"
                 data-click-action="unselect"
-                ng-show="numberElementChecked > 0"
-                translate
-                translate-context="Action">Deselect all</button>
+                ng-if="numberElementChecked > 0">
+                    <span ng-if="numberElementChecked === 1" translate translate-context="Action">Deselect</span>
+                    <span ng-if="numberElementChecked > 1" translate translate-context="Action">Deselect all</span>
+                </button>
         </div>
 
     </div>
