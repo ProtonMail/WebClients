@@ -124,3 +124,6 @@ body {
   }
 }
 
+.main-area-content {
+  background: var(--bgcolor-main-area, #{$white});
+}
