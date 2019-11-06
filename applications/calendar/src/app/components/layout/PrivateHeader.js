@@ -12,14 +12,14 @@ import {
 import { c } from 'ttag';
 
 const PrivateHeader = ({ title, url, inSettings, onCreateEvent, expanded, onToggleExpand, isNarrow }) => {
-    const [{ isFree }] = useUser();
+    const [{ hasPaidMail }] = useUser();
     return (
         <header className="header flex flex-nowrap reset4print">
             <MainLogo url={url} className="nomobile" />
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
             {title && isNarrow ? <span className="big ellipsis">{title}</span> : null}
             <TopNavbar>
-                {isFree || isNarrow ? null : <UpgradeButton external={true} />}
+                {hasPaidMail || isNarrow ? null : <UpgradeButton external={true} />}
                 {isNarrow && !inSettings ? null : (
                     <TopNavbarLink
                         className="nomobile"
