@@ -32,11 +32,9 @@ const EventForm = ({ displayWeekNumbers, weekStartsOn, calendars = [], model, er
                             />
                             {c('Label').t`All day event`}
                         </label>
-                        {model.hasMoreOptions ? null : (
-                            <LinkButton onClick={() => setModel({ ...model, hasMoreOptions: true })}>
-                                {c('Action').t`More options`}
-                            </LinkButton>
-                        )}
+                        <LinkButton onClick={() => setModel({ ...model, hasMoreOptions: !model.hasMoreOptions })}>
+                            {model.hasMoreOptions ? c('Action').t`Less options` : c('Action').t`More options`}
+                        </LinkButton>
                     </div>
                 </div>
             </Row>
