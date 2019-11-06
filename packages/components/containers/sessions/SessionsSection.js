@@ -103,11 +103,11 @@ const SessionsSection = () => {
                                 key={key}
                                 cells={[
                                     i18n[session.ClientID],
-                                    <Time format="LLL" key={key}>
+                                    <Time format="PPp" key={1}>
                                         {session.CreateTime}
                                     </Time>,
                                     <SessionAction
-                                        key={key}
+                                        key={2}
                                         session={session}
                                         currentUID={currentUID}
                                         onRevoke={() => withLoading(handleRevoke(session.UID))}

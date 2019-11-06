@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ContactEmailsModel, ContactsModel, UserModel } from 'proton-shared/lib/models';
 import { useEventManager, useCache } from 'react-components';
@@ -8,12 +8,18 @@ import { OrganizationModel } from 'proton-shared/lib/models/organizationModel';
 import { MembersModel } from 'proton-shared/lib/models/membersModel';
 import { EVENT_ERRORS } from 'proton-shared/lib/errors';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
+import { AddressesModel } from 'proton-shared/lib/models/addressesModel';
+import { KEY as USER_KEYS_CACHE_KEY } from '../../hooks/useUserKeys';
+import { CACHE_KEY as ADDRESS_KEYS_CACHE, KEY as ADDRESSES_KEYS_CACHE } from '../../hooks/useAddressesKeys';
+import { KEY as CALENDAR_BOOTSTRAP_CACHE } from '../../hooks/useGetCalendarBootstrap';
+import { CACHE_KEY as CALENDAR_KEYS_CACHE } from '../../hooks/useGetCalendarKeys';
+import { updateObject as updateCalendarObject } from 'proton-shared/lib/models/calendarBootstrap';
 
-const ModelListener = ({ models }) => {
+const EventModelListener = ({ models }) => {
     const { subscribe } = useEventManager();
     const cache = useCache();
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const modelsMap = models.reduce((acc, model) => {
             return {
                 ...acc,
@@ -29,10 +35,6 @@ const ModelListener = ({ models }) => {
                 }
 
                 const { value: oldValue, status } = cache.get(key) || {};
-
-                if (status === STATUS.PENDING) {
-                    throw new Error('Event manager tried to update a pending model');
-                }
 
                 if (status === STATUS.RESOLVED) {
                     cache.set(key, {
@@ -56,6 +58,19 @@ const ModelListener = ({ models }) => {
                     cache.delete(OrganizationModel.key);
                     cache.delete(MembersModel.key);
                 }
+                // Since the keys could have changed, clear the cached keys.
+                cache.delete(USER_KEYS_CACHE_KEY);
+            }
+
+            if (data[AddressesModel.key]) {
+                // TODO: Be smarter and just delete the address keys that changed
+                // Since the keys could have changed, clear the cached keys.
+                cache.delete(ADDRESS_KEYS_CACHE);
+                cache.delete(ADDRESSES_KEYS_CACHE);
+            }
+
+            if (data) {
+                updateCalendarObject(data, cache.get(CALENDAR_BOOTSTRAP_CACHE), cache.get(CALENDAR_KEYS_CACHE));
             }
         });
     }, []);
@@ -63,8 +78,8 @@ const ModelListener = ({ models }) => {
     return null;
 };
 
-ModelListener.propTypes = {
+EventModelListener.propTypes = {
     models: PropTypes.array.isRequired
 };
 
-export default ModelListener;
+export default EventModelListener;

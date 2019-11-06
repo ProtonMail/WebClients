@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import moment from 'moment';
 import {
     Button,
     ButtonGroup,
@@ -16,6 +15,7 @@ import {
     useApiWithoutResult,
     useModals
 } from 'react-components';
+import { fromUnixTime } from 'date-fns';
 import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
 import { updateLogAuth } from 'proton-shared/lib/api/settings';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
@@ -63,7 +63,7 @@ const LogsSection = () => {
         const { Logs = [] } = await requestDownload.request();
         const data = Logs.reduce(
             (acc, { Event, Time, IP }) => {
-                acc.push(`${i18n[Event]},${moment(Time * 1000).toISOString()},${IP}`);
+                acc.push(`${i18n[Event]},${fromUnixTime(Time).toISOString()},${IP}`);
                 return acc;
             },
             [['Event', 'Time', 'IP'].join(',')]

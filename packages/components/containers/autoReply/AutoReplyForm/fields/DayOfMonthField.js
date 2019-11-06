@@ -1,25 +1,27 @@
 import React from 'react';
 import { Row, Label, Field, Select } from 'react-components';
-import { c } from 'ttag';
 import PropTypes from 'prop-types';
+
 import { getDaysOfMonthOptions } from '../../utils';
 
-const EndDayOfMonthField = ({ value, onChange }) => {
+const DayOfMonthField = ({ id, label, value, onChange }) => {
     const handleChange = ({ target }) => onChange(+target.value);
 
     return (
         <Row>
-            <Label htmlFor="endDayOfMonth">{c('Label').t`End day of month`}</Label>
+            <Label htmlFor={id}>{label}</Label>
             <Field>
-                <Select id="endDayOfMonth" options={getDaysOfMonthOptions()} value={value} onChange={handleChange} />
+                <Select id={id} options={getDaysOfMonthOptions()} value={value} onChange={handleChange} />
             </Field>
         </Row>
     );
 };
 
-EndDayOfMonthField.propTypes = {
+DayOfMonthField.propTypes = {
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
     value: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired
 };
 
-export default EndDayOfMonthField;
+export default DayOfMonthField;

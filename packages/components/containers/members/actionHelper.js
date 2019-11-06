@@ -1,5 +1,5 @@
 import { encryptPrivateKey } from 'pmcrypto';
-import { encryptMemberToken, generateMemberToken } from 'proton-shared/lib/keys/organizationKeys';
+import { generateMemberToken, encryptMemberToken } from 'proton-shared/lib/keys/memberToken';
 import { getKeyFlagsAddress } from 'proton-shared/lib/keys/keyFlags';
 import { createMemberKeyRoute, setupMemberKeyRoute } from 'proton-shared/lib/api/memberKeys';
 import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';

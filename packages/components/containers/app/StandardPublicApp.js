@@ -2,15 +2,28 @@ import React, { useEffect, useState } from 'react';
 import { LoaderPage, GenericError, ModalsChildren } from 'react-components';
 import PropTypes from 'prop-types';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
-import { getBrowserLocale, loadLocale } from 'proton-shared/lib/i18n';
+import { getBrowserLocale, getClosestMatches } from 'proton-shared/lib/i18n/helper';
+import loadLocale from 'proton-shared/lib/i18n/loadLocale';
 
 const StandardPublicApp = ({ locales = {}, children }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
     useEffect(() => {
+        const browserLocale = getBrowserLocale();
+
         (async () => {
-            await Promise.all([loadOpenPGP(), loadLocale(getBrowserLocale(), locales)]);
+            await Promise.all([
+                loadOpenPGP(),
+                loadLocale({
+                    ...getClosestMatches({
+                        locale: browserLocale,
+                        browserLocale,
+                        locales
+                    }),
+                    locales
+                })
+            ]);
         })()
             .then(() => setLoading(false))
             .catch(() => setError(true));

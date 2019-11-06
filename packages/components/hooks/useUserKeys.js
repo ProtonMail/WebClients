@@ -1,36 +1,44 @@
-import { usePromiseResult, useAuthentication } from 'react-components';
-import { getKeys } from 'pmcrypto';
-import { decryptMemberToken } from 'proton-shared/lib/keys/organizationKeys';
+import { useCallback } from 'react';
+import { decryptKeyWithFormat, decryptPrivateKeyArmored, getUserKeyPassword } from 'proton-shared/lib/keys/keys';
 import { noop } from 'proton-shared/lib/helpers/function';
+import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
+import useAuthentication from '../containers/authentication/useAuthentication';
+import { useGetUser } from './useUser';
+import useCache from '../containers/cache/useCache';
 
-import { decryptPrivateKey, decryptPrivateKeyArmored } from 'proton-shared/lib/keys/keys';
+export const KEY = 'USER_KEYS';
 
-const useUserKeys = (User) => {
+export const useGetUserKeysRaw = () => {
     const authentication = useAuthentication();
+    const getUser = useGetUser();
 
-    return usePromiseResult(async () => {
-        const { OrganizationPrivateKey, Keys } = User;
+    return useCallback(async () => {
+        const { OrganizationPrivateKey, Keys } = await getUser();
+
         const keyPassword = authentication.getPassword();
 
-        // Case for admins logged in to non-private members.
         const organizationKey = OrganizationPrivateKey
             ? await decryptPrivateKeyArmored(OrganizationPrivateKey, keyPassword).catch(noop)
             : undefined;
 
         return Promise.all(
             Keys.map(async (Key) => {
-                const { PrivateKey, Token } = Key;
-                const [privateKey] = await getKeys(PrivateKey).catch(() => []);
-                try {
-                    const privateKeyPassword = Token ? await decryptMemberToken(Token, organizationKey) : keyPassword;
-                    await decryptPrivateKey(privateKey, privateKeyPassword);
-                    return { Key, privateKey, publicKey: privateKey.toPublic() };
-                } catch (e) {
-                    return { Key, privateKey, publicKey: privateKey.toPublic(), error: e };
-                }
+                return decryptKeyWithFormat(Key, await getUserKeyPassword(Key, { organizationKey, keyPassword }));
             })
         );
-    }, [User]);
+    }, [getUser]);
 };
 
-export default useUserKeys;
+export const useGetUserKeys = () => {
+    const cache = useCache();
+    const miss = useGetUserKeysRaw();
+    return useCallback(async () => {
+        return getPromiseValue(cache, KEY, miss);
+    }, [miss]);
+};
+
+export const useUserKeys = () => {
+    const cache = useCache();
+    const getUserKeysAsync = useGetUserKeys();
+    return useCachedModelResult(cache, KEY, getUserKeysAsync);
+};

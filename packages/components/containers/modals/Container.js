@@ -11,6 +11,9 @@ const ModalsContainer = ({ modals, removeModal, hideModal, location }) => {
             return;
         }
         modals.forEach(({ id, content }) => {
+            if (content.props.disableCloseOnLocation) {
+                return;
+            }
             content.props.onClose && content.props.onClose();
             hideModal(id);
         });
@@ -35,9 +38,9 @@ const ModalsContainer = ({ modals, removeModal, hideModal, location }) => {
         const lastModal = modals[modals.length - 1];
 
         const onKeydown = (event) => {
-            const { id, closeOnEscape, content } = lastModal;
+            const { id, content } = lastModal;
 
-            if (closeOnEscape && event.key === 'Escape') {
+            if (!content.props.disableCloseOnEscape && event.key === 'Escape') {
                 event.preventDefault();
                 content.props.onClose && content.props.onClose();
                 hideModal(id);

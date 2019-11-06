@@ -15,7 +15,8 @@ import {
     TableRow
 } from 'react-components';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
-import { decryptMemberToken, generateMemberAddressKey } from 'proton-shared/lib/keys/organizationKeys';
+import { generateMemberAddressKey } from 'proton-shared/lib/keys/organizationKeys';
+import { decryptMemberToken } from 'proton-shared/lib/keys/memberToken';
 import { decryptPrivateKeyArmored, generateAddressKey } from 'proton-shared/lib/keys/keys';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';

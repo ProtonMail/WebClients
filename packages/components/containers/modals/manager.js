@@ -15,7 +15,7 @@ export default (setModals) => {
         });
     };
 
-    const createModal = (content, options = {}) => {
+    const createModal = (content) => {
         const id = idx++;
 
         if (idx >= 1000) {
@@ -28,9 +28,6 @@ export default (setModals) => {
                 {
                     id,
                     content,
-                    closeOnEscape: true,
-                    closeOnOuterClick: true,
-                    ...options,
                     isClosing: false
                 }
             ];

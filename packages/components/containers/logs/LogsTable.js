@@ -52,7 +52,7 @@ const LogsTable = ({ logs, logAuth, loading }) => {
                                     {ICONS[Event]} {i18n[Event]}
                                 </>,
                                 logAuth === ADVANCED ? IP : '',
-                                <Time key={key} format="LLL">
+                                <Time key={key} format="PPp">
                                     {time}
                                 </Time>
                             ]}

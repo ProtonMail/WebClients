@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { queryPlans } from 'proton-shared/lib/api/payments';
 
 import useCachedModelResult from './useCachedModelResult';
@@ -15,7 +16,8 @@ const getPlans = (api, Currency) => api(queryPlans({ Currency })).then(({ Plans 
 const usePlans = (currency) => {
     const api = useApi();
     const cache = useCache();
-    return useCachedModelResult(cache, KEY, () => getPlans(api, currency));
+    const miss = useCallback(() => getPlans(api, currency), [api, currency]);
+    return useCachedModelResult(cache, KEY, miss);
 };
 
 export default usePlans;

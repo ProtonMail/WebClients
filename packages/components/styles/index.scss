@@ -4,7 +4,6 @@ $path-images: '~design-system/assets/img/shared/';
 @import '~react-quill/dist/quill.bubble.css';
 @import '~react-quill/dist/quill.snow.css';
 
-@import '~pikaday/css/pikaday.css';
 @import '~awesomplete/awesomplete.css';
 
 @import '~design-system/_sass/reusable-components/design-system-config';
@@ -40,6 +39,7 @@ $path-images: '~design-system/assets/img/shared/';
 @import '~design-system/_sass/pm-styles/pm-progress-contact';
 @import '~design-system/_sass/pm-styles/pm-table-plans';
 @import '~design-system/_sass/pm-styles/pm-circlebar';
+@import '~design-system/_sass/pm-styles/pm-mini-calendar';
 
 @import '~design-system/_sass/pm-styles/pm-aside';
 @import '~design-system/_sass/pm-styles/pm-toolbar';

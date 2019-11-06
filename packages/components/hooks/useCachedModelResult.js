@@ -1,20 +1,13 @@
-import { useEffect, useReducer, useRef } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import { STATUS } from 'proton-shared/lib/models/cache';
 
-export const getState = ({ value, status } = { status: STATUS.PENDING }) => {
+export const getState = ({ value, status } = { status: STATUS.PENDING }, oldState = []) => {
     return [
-        status === STATUS.PENDING || status === STATUS.RESOLVED ? value : undefined,
+        // The old state value is returned in case the model has been deleted from the cache
+        status === STATUS.PENDING || status === STATUS.RESOLVED ? value || oldState[0] : undefined,
         status === STATUS.PENDING,
         status === STATUS.REJECTED ? value : undefined
     ];
-};
-
-export const reducer = (oldValue, record = { status: STATUS.PENDING }) => {
-    const newValue = getState(record);
-    if (newValue.every((value, i) => value === oldValue[i])) {
-        return oldValue;
-    }
-    return newValue;
 };
 
 const getRecordPending = (promise) => {
@@ -54,16 +47,21 @@ const getRecordThen = (promise) => {
  * @param {Function} miss
  * @return {Object}
  */
-const update = (cache, key, miss) => {
+export const update = (cache, key, miss) => {
     const oldRecord = cache.get(key);
     if (!oldRecord || oldRecord.status === STATUS.REJECTED) {
-        const promise = miss();
+        const promise = miss(key);
         const record = getRecordPending(promise);
         cache.set(key, record);
         getRecordThen(promise).then((newRecord) => cache.get(key) === record && cache.set(key, newRecord));
         return record;
     }
     return oldRecord;
+};
+
+export const getPromiseValue = (cache, key, miss) => {
+    const record = update(cache, key, miss);
+    return record.promise || record.value;
 };
 
 /**
@@ -74,35 +72,36 @@ const update = (cache, key, miss) => {
  * @return {[value, loading, error]}
  */
 const useCachedModelResult = (cache, key, miss) => {
-    const [state, dispatch] = useReducer(reducer, undefined, () => {
-        return getState(update(cache, key, miss));
-    });
-    const keyRef = useRef(key);
+    const [forceRefresh, setForceRefresh] = useState();
+    const latestValue = useRef();
+
+    const result = useMemo(() => {
+        return getState(update(cache, key, miss), latestValue.current);
+    }, [cache, key, miss, forceRefresh]);
 
     useEffect(() => {
+        // https://reactjs.org/docs/hooks-faq.html#how-to-read-an-often-changing-value-from-usecallback
+        latestValue.current = result;
+    });
+
+    useEffect(() => {
+        const checkForChange = () => {
+            const newValue = getState(cache.get(key), latestValue.current);
+            if (newValue.some((value, i) => value !== latestValue.current[i])) {
+                setForceRefresh({});
+            }
+        };
         const cacheListener = (changedKey) => {
             if (changedKey !== key) {
                 return;
             }
-            // If it was removed, rerun it
-            if (!cache.has(key)) {
-                return dispatch(update(cache, key, miss));
-            }
-            dispatch(cache.get(key));
+            checkForChange();
         };
-        const unsubscribeCache = cache.subscribe(cacheListener);
-        // If the key is the same, just read the current value from the cache to ensure we're on the latest state.
-        if (keyRef.current === key) {
-            dispatch(cache.get(key));
-        } else {
-            // If the key has changed, retry the re-fetch strategy.
-            dispatch(update(cache, key, miss));
-            keyRef.current = key;
-        }
-        return unsubscribeCache;
-    }, [key]);
+        checkForChange();
+        return cache.subscribe(cacheListener);
+    }, [cache, key, miss]);
 
-    return state;
+    return result;
 };
 
 export default useCachedModelResult;

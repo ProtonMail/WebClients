@@ -1,8 +1,9 @@
-import moment from 'moment-timezone';
 import { c } from 'ttag';
 import { AutoReplyDuration } from 'proton-shared/lib/constants';
 
-export const DAY_MILLISECONDS = 24 * 60 * 60 * 1000;
+export const DAY_SECONDS = 24 * 60 * 60;
+export const HOUR_SECONDS = 60 * 60;
+export const MINUTES_SECONDS = 60;
 
 export const getDurationOptions = () => [
     {
@@ -27,23 +28,24 @@ export const getDurationOptions = () => [
     }
 ];
 
-export const getWeekdayOptions = () => {
-    const firstDayOfWeek = moment.localeData().firstDayOfWeek();
-    return moment.weekdays(true).map((text, index) => ({ text, value: (index + firstDayOfWeek) % 7 }));
+export const getMatchingTimezone = (timezone: string, timezoneOptions: { text: string; value: string }[]) => {
+    return (
+        timezoneOptions.find(({ value }) => {
+            return value === timezone;
+            // Can be stored as "Singapore", now expecting Asia/Singapore
+        }) ||
+        timezoneOptions.find(({ value }) => {
+            return value.includes(timezone);
+        })
+    );
 };
 
-export const getTimeZoneOptions = () => {
-    const momentNow = moment(new Date());
-
-    return moment.tz.names().map((name) => {
-        const offset = momentNow.tz(name).format('Z');
-        return {
-            text: `${name}: UTC ${offset}`,
-            value: name
-        };
-    });
-};
-
+/**
+ * Get a list with the days of the month and their
+ * index position (in the week) according to current locale
+ *
+ * @return {Object} [{ text: 'name of day', value: index position in week }]
+ */
 export const getDaysOfMonthOptions = () => [
     { text: c('Option').t`1st of the month`, value: 0 },
     { text: c('Option').t`2nd of the month`, value: 1 },
@@ -77,17 +79,3 @@ export const getDaysOfMonthOptions = () => [
     { text: c('Option').t`30th of the month`, value: 29 },
     { text: c('Option').t`31st of the month`, value: 30 }
 ];
-
-export const getRoundedHours = (time: moment.MomentInput) => {
-    const startOfDay = moment(time).startOf('day');
-
-    return moment(moment(time).diff(startOfDay))
-        .startOf('hour')
-        .add(30 * Math.floor(moment(time).minutes() / 30), 'minutes')
-        .valueOf();
-};
-
-export const startOfDay = (date: moment.MomentInput) =>
-    moment(date)
-        .startOf('day')
-        .valueOf();

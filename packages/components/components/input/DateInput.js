@@ -1,40 +1,106 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Pikaday from 'pikaday';
-import { classnames } from '../../helpers/component';
+import { format, parse, addDays } from 'date-fns';
+import { dateLocale } from 'proton-shared/lib/i18n';
 
-// Configuration: https://github.com/Pikaday/Pikaday#configuration
-const DateInput = ({ id, disabled, required = false, placeholder, className = '', ...rest }) => {
-    const inputRef = useRef();
+import Input from './Input';
+import { usePopperAnchor } from '../popper';
+import Dropdown from '../dropdown/Dropdown';
+import { generateUID } from '../../helpers/component';
+import LocalizedMiniCalendar from '../miniCalendar/LocalizedMiniCalendar';
+
+const toFormatted = (value, locale) => {
+    return format(value, 'PP', { locale });
+};
+
+const fromFormatted = (value, locale) => {
+    return parse(value, 'PP', new Date(), { locale });
+};
+
+const DateInput = ({ value, min, max, onChange, displayWeekNumbers, weekStartsOn, ...rest }) => {
+    const [uid] = useState(generateUID('dropdown'));
+    const { anchorRef, isOpen, open, close } = usePopperAnchor();
+    const [temporaryInput, setTemporaryInput] = useState(() => toFormatted(value, dateLocale));
 
     useEffect(() => {
-        const picker = new Pikaday({
-            field: inputRef.current,
-            ...rest
-        });
+        setTemporaryInput(toFormatted(value, dateLocale));
+    }, [value.getTime()]);
 
-        return () => picker.destroy();
-    }, []);
+    const handleSelectDate = (newDate) => {
+        const newDateTime = +newDate;
+        if ((min && +min > newDateTime) || (max && +max < newDateTime)) {
+            setTemporaryInput(toFormatted(value, dateLocale));
+            return;
+        }
+        onChange(newDate);
+    };
+
+    const parseAndSetDate = () => {
+        try {
+            const newDate = fromFormatted(temporaryInput, dateLocale);
+            const newDateTime = +newDate;
+            if (!isNaN(newDateTime)) {
+                return handleSelectDate(newDate);
+            }
+            // eslint-disable-next-line no-empty
+        } catch (e) {}
+
+        setTemporaryInput(toFormatted(value, dateLocale));
+    };
+
+    const handleBlur = () => {
+        parseAndSetDate();
+        close();
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            parseAndSetDate();
+            event.preventDefault();
+        }
+        if (event.key === 'ArrowDown') {
+            handleSelectDate(addDays(value, -1));
+        }
+        if (event.key === 'ArrowUp') {
+            handleSelectDate(addDays(value, 1));
+        }
+    };
 
     return (
-        <input
-            id={id}
-            className={classnames(['pm-field w100', className])}
-            placeholder={placeholder}
-            disabled={disabled}
-            required={required}
-            ref={inputRef}
-            type="text"
-        />
-    ); // Using type="text" as recommended by Pikaday (https://github.com/Pikaday/Pikaday)
+        <>
+            <Input
+                type="text"
+                ref={anchorRef}
+                onFocus={open}
+                onBlur={handleBlur}
+                onKeyDown={handleKeyDown}
+                value={temporaryInput}
+                onChange={({ target: { value } }) => setTemporaryInput(value)}
+                {...rest}
+            />
+            <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} autoClose={false}>
+                <LocalizedMiniCalendar
+                    date={value}
+                    onSelectDate={handleSelectDate}
+                    displayWeekNumbers={displayWeekNumbers}
+                    weekStartsOn={weekStartsOn}
+                />
+            </Dropdown>
+        </>
+    );
 };
 
 DateInput.propTypes = {
     id: PropTypes.string,
     disabled: PropTypes.bool,
     required: PropTypes.bool,
-    placeholder: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    displayWeekNumbers: PropTypes.bool,
+    weekStartsOn: PropTypes.number,
+    value: PropTypes.instanceOf(Date).isRequired,
+    min: PropTypes.instanceOf(Date),
+    max: PropTypes.instanceOf(Date),
+    onChange: PropTypes.func.isRequired
 };
 
 export default DateInput;

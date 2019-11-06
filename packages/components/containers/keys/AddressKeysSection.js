@@ -92,7 +92,7 @@ const AddressKeysSection = () => {
     const { ID: addressID, Email: addressEmail } = address;
     const addressKeys = addressesKeysMap && addressesKeysMap[addressID];
 
-    if (loadingAddressesKeys || !Array.isArray(addressKeys)) {
+    if (loadingAddressesKeys && !Array.isArray(addressKeys)) {
         return (
             <>
                 {title}

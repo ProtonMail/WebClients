@@ -1,15 +1,41 @@
 import React from 'react';
-import { SubTitle, Row, Field, Label, useModals, useMailSettings, Alert } from 'react-components';
+import {
+    SubTitle,
+    Row,
+    Field,
+    Label,
+    useModals,
+    useMailSettings,
+    Alert,
+    useLoading,
+    useApi,
+    useEventManager
+} from 'react-components';
+import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
 
 import { c } from 'ttag';
 import AutoReplyModal from './AutoReplyModal';
-import AutoReplyToggle from './AutoReplyToggle';
 import AutoReplyTemplate from './AutoReplyTemplate';
+import Toggle from '../../components/toggle/Toggle';
 
 const AutoReplySection = () => {
     const { createModal } = useModals();
     const [{ AutoResponder }] = useMailSettings();
-    const handleOpenModal = () => createModal(<AutoReplyModal />);
+    const api = useApi();
+    const { call } = useEventManager();
+    const [loading, withLoading] = useLoading();
+
+    const handleOpenModal = () => {
+        createModal(<AutoReplyModal autoresponder={AutoResponder} />);
+    };
+
+    const handleToggle = async (isEnabled) => {
+        if (isEnabled) {
+            return handleOpenModal();
+        }
+        await api(updateAutoresponder({ ...AutoResponder, IsEnabled: false }));
+        await call();
+    };
 
     return (
         <>
@@ -24,7 +50,12 @@ const AutoReplySection = () => {
                     <Label htmlFor="autoReplyToggle" className="flex-item-centered-vert">{c('Label')
                         .t`Auto-reply`}</Label>
                     <Field>
-                        <AutoReplyToggle autoresponder={AutoResponder} id="autoReplyToggle" />
+                        <Toggle
+                            id="autoReplyToggle"
+                            loading={loading}
+                            checked={AutoResponder.IsEnabled}
+                            onChange={({ target: { checked } }) => withLoading(handleToggle(checked))}
+                        />
                     </Field>
                 </Row>
 

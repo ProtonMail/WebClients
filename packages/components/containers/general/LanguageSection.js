@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
+import PropTypes from 'prop-types';
 import {
     SubTitle,
     Row,
@@ -8,15 +8,15 @@ import {
     Label,
     Select,
     useApi,
-    useForceRefresh,
     useLoading,
     useNotifications,
+    useForceRefresh,
     useEventManager,
     useUserSettings
 } from 'react-components';
 import { updateLocale } from 'proton-shared/lib/api/settings';
-import { loadLocale } from 'proton-shared/lib/i18n';
-import { DEFAULT_LOCALE } from 'proton-shared/lib/constants';
+import loadLocale from 'proton-shared/lib/i18n/loadLocale';
+import { getBrowserLocale, getClosestMatches } from 'proton-shared/lib/i18n/helper';
 
 /* eslint-disable @typescript-eslint/camelcase */
 const LOCALES = {
@@ -41,7 +41,7 @@ const LOCALES = {
 };
 /* eslint-enable @typescript-eslint/camelcase */
 
-function LanguageSection({ locales }) {
+const LanguageSection = ({ locales = {} }) => {
     const [{ Locale }] = useUserSettings();
     const api = useApi();
     const { call } = useEventManager();
@@ -49,7 +49,7 @@ function LanguageSection({ locales }) {
     const [loading, withLoading] = useLoading();
     const forceRefresh = useForceRefresh();
 
-    const options = [DEFAULT_LOCALE].concat(Object.keys(locales)).map((value) => ({
+    const options = Object.keys(LOCALES).map((value) => ({
         text: LOCALES[value],
         value
     }));
@@ -57,9 +57,17 @@ function LanguageSection({ locales }) {
     const handleChange = async ({ target }) => {
         const newLocale = target.value;
         await api(updateLocale(newLocale));
-        await loadLocale(newLocale, locales);
+        await loadLocale({
+            ...getClosestMatches({
+                locale: newLocale,
+                browserLocale: getBrowserLocale(),
+                locales
+            }),
+            locales
+        });
         await call();
         createNotification({ text: c('Success').t`Locale updated` });
+        forceRefresh();
     };
 
     return (
@@ -74,16 +82,14 @@ function LanguageSection({ locales }) {
                         id="languageSelect"
                         options={options}
                         onChange={(e) => {
-                            withLoading(handleChange(e))
-                                // To avoid state change on unmounted component
-                                .then(forceRefresh);
+                            withLoading(handleChange(e));
                         }}
                     />
                 </Field>
             </Row>
         </>
     );
-}
+};
 
 LanguageSection.propTypes = {
     locales: PropTypes.object.isRequired

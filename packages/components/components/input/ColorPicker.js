@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { Button, Icon } from 'react-components';
+import { Icon, DropdownButton } from 'react-components';
 import { ChromePicker } from 'react-color';
 import tinycolor from 'tinycolor2';
 
 import './ColorPicker.scss';
-import { classnames } from '../../helpers/component';
 
-const ColorPicker = ({ color = 'blue', onChange = noop, className = '', ...rest }) => {
+const ColorPicker = ({ color = 'blue', onChange = noop, ...rest }) => {
     const [display, setDisplay] = useState(false);
     const colorModel = tinycolor(color);
     const iconColor = colorModel.isValid() ? colorModel.toHexString() : '';
@@ -22,12 +21,11 @@ const ColorPicker = ({ color = 'blue', onChange = noop, className = '', ...rest 
         </div>
     );
 
-    // TODO replace alias by proper icon (circle)
     return (
         <div className="relative">
-            <Button className={classnames(['pm-button--for-icon', className])} onClick={handleClick} {...rest}>
-                <Icon className="flex-item-noshrink" name="alias" color={iconColor} />
-            </Button>
+            <DropdownButton onClick={handleClick} hasCaret={true} {...rest}>
+                <Icon className="flex-item-noshrink" name="circle" color={iconColor} />
+            </DropdownButton>
             {display ? picker : null}
         </div>
     );
