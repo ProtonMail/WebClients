@@ -41,7 +41,7 @@ function printLine {
 function logCommits {
     local i=0;
     # We ignore commits from the CI
-    for commit in $(git log "$1"..HEAD --format=%H --invert-grep --grep="\[I18N@" --grep="Upgrade dependencies" --grep="Merge branch" --grep="Add change log for" --grep="Fix lint"); do
+    for commit in $(git log "$1"..HEAD --format=%H --invert-grep --grep="\[I18N@" --grep="Upgrade dependencies" --grep="Merge branch" --grep="Add change log for" --grep="Fix lint" --grep="[CI]"); do
         printLine "$commit" "$2";
         ((i+=1))
 
@@ -127,9 +127,6 @@ function changelogV4 {
     done;
 
     wait;
-
-    printf '%-20s' '[Previous deploy]' "$latestCommit";
-    echo "";
 
     generateV4Logs "$latestCommit";
 
