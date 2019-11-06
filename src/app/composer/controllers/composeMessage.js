@@ -267,9 +267,14 @@ function ComposeMessageController(
                 const { message, isMessage } = data;
                 isMessage &&
                     $scope.$applyAsync(() => {
-                        message.autocompletesFocussed = false;
-                        message.attachmentsToggle = false;
-                        message.ccbcc = false;
+                        // Else it will lose the new emails added inside BCC/To
+                        _rAF(() => {
+                            $scope.$applyAsync(() => {
+                                message.autocompletesFocussed = false;
+                                message.attachmentsToggle = false;
+                                message.ccbcc = false;
+                            });
+                        });
                     });
                 break;
             }
