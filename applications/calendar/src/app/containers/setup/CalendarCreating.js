@@ -7,8 +7,8 @@ const CalendarCreating = () => {
     return (
         <>
             <Alert>{c('Info').t`Give us a moment while we prepare your calendar.`}</Alert>
-            <div className="w50 center">
-                <Loader />
+            <div className="aligncenter">
+                <Loader size="medium" />
                 <p>{c('Info').t`Creating your calendar...`}</p>
             </div>
         </>

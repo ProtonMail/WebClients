@@ -30,7 +30,7 @@ const WelcomeModal = (props) => {
     const getAddressKeys = useGetAddressKeys();
     const api = useApi();
     const [isLoading, withLoading] = useLoading();
-    const title = isLoading ? c('Title').t`Preparing your calendar` : c('Title').t`Welcome to ProtonCalendar!`;
+    const title = isLoading ? c('Title').t`Preparing your calendar` : c('Title').t`Welcome to ProtonCalendar`;
 
     const handleCustomize = () => {
         if (!calendarRef.current) {
@@ -72,7 +72,7 @@ const WelcomeModal = (props) => {
     };
 
     useEffect(() => {
-        withLoading(Promise.all([setup(), wait(2000)])); // Wait intentionally 2 seconds to let the user see the loading state
+        withLoading(Promise.all([setup(), wait(3000)])); // Wait intentionally 3 seconds to let the user see the loading state
     }, []);
 
     return (
@@ -85,6 +85,7 @@ const WelcomeModal = (props) => {
             onSubmit={isLoading ? noop : props.onClose}
             {...props}
             onClose={isLoading ? noop : handleCustomize}
+            small={true}
         >
             {isLoading ? <CalendarCreating /> : <CalendarReady />}
         </FormModal>
@@ -93,7 +94,8 @@ const WelcomeModal = (props) => {
 
 WelcomeModal.propTypes = {
     addresses: PropTypes.array,
-    user: PropTypes.object
+    user: PropTypes.object,
+    onClose: PropTypes.func
 };
 
 export default WelcomeModal;

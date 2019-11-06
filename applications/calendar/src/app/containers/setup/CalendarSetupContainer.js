@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useCalendars, useModals, useUser } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { startOfWeek, endOfWeek } from 'proton-shared/lib/date-fns-utc';
@@ -48,6 +49,10 @@ const CalendarSetupContainer = ({ children }) => {
             <TimeGrid now={now} date={now} dateRange={dateRange} components={{}} />
         </CalendarContainerView>
     );
+};
+
+CalendarSetupContainer.propTypes = {
+    children: PropTypes.node
 };
 
 export default CalendarSetupContainer;

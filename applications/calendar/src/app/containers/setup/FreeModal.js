@@ -10,15 +10,16 @@ const FreeModal = (props) => {
     };
     return (
         <FormModal
-            title={c('Title').t`Welcome to ProtonCalendar!`}
+            title={c('Title').t`Welcome to ProtonCalendar`}
             hasClose={false}
             close={null}
             submit={c('Action').t`Back to ProtonMail`}
             {...props}
             onSubmit={goBack}
             onClose={goBack}
+            small={true}
         >
-            <div className="w50 center">
+            <div className="aligncenter">
                 <img src={betaSvg} alt="Beta" />
                 <p>{c('Info')
                     .t`ProtonCalendar is currently in Beta and is only available to paid users of ProtonMail.`}</p>
