@@ -24,7 +24,7 @@ const EventForm = ({ displayWeekNumbers, weekStartsOn, calendars = [], model, er
                 <Label> </Label>
                 <div className="flex-item-fluid">
                     <div className="flex flex-spacebetween flex-nowrap flex-items-center">
-                        <label htmlFor="event-allday-checkbox" className="pt0-5">
+                        <label htmlFor="event-allday-checkbox" className="inline-flex flex-items-center">
                             <Checkbox
                                 id="event-allday-checkbox"
                                 checked={model.isAllDay}
