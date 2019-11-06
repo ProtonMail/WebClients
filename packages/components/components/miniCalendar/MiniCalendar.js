@@ -62,14 +62,14 @@ const MiniCalendar = ({
         setTemporaryDate();
     }, [selectedDate]);
 
-    const classWeekNumber = displayWeekNumbers ? 'mini-calendar-grid--displayWeekNumber' : '';
+    const classWeekNumber = displayWeekNumbers ? 'minicalendar-grid--displayWeekNumber' : '';
     const classDark = displayedOnDarkBackground ? 'minicalendar--onDarkBackground' : '';
 
     const preventLeaveFocus = (e) => e.preventDefault();
 
     return (
         <div
-            className={classnames(['mini-calendar', classDark])}
+            className={classnames(['minicalendar', classDark])}
             onMouseDown={preventLeaveFocus}
             aria-label={monthLabel}
         >
@@ -77,18 +77,18 @@ const MiniCalendar = ({
                 <span className="bold flex-item-fluid">{monthLabel}</span>
                 {hasCursors ? (
                     <>
-                        <button type="button" className="mr1" onClick={() => handleSwitchMonth(-1)}>
-                            <Icon name="caret" size={12} className="rotateZ-90 fill-white" />
+                        <button type="button" title={prevMonth} className="mr1" onClick={() => handleSwitchMonth(-1)}>
+                            <Icon name="caret" size={12} className="rotateZ-90 minicalendar-icon" />
                             <span className="sr-only">{prevMonth}</span>
                         </button>
-                        <button type="button" onClick={() => handleSwitchMonth(1)}>
-                            <Icon name="caret" size={12} className="rotateZ-270 fill-white" />
+                        <button type="button" title={nextMonth} onClick={() => handleSwitchMonth(1)}>
+                            <Icon name="caret" size={12} className="rotateZ-270 minicalendar-icon" />
                             <span className="sr-only">{nextMonth}</span>
                         </button>
                     </>
                 ) : null}
             </div>
-            <div className={classnames(['mini-calendar-grid', classWeekNumber])}>
+            <div className={classnames(['minicalendar-grid', classWeekNumber])}>
                 {displayWeekNumbers ? <WeekNumbers numberOfWeeks={numberOfWeeks} days={days} /> : null}
                 <div>
                     <WeekDays
