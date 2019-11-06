@@ -1,6 +1,7 @@
 $calendar-aside-width: 60px !default;
 $calendar-hour-height: 48px !default;
 $border: #dadce0 1px solid !default;
+$gridcell-right-margin: 1.5em;
 
 .calendar-time-fullday {
     border-bottom: $border;
@@ -34,9 +35,9 @@ $border: #dadce0 1px solid !default;
     pointer-events: none;
     z-index: 3;
     position: absolute;
-    border-bottom: red 2px solid;
+    border-top: red 2px solid;
     left: 0;
-    right: 0;
+    right: -$gridcell-right-margin;
 }
 
 .calendar-aside {
@@ -59,7 +60,7 @@ $border: #dadce0 1px solid !default;
 .gridcell {
     position: relative;
     height: 100%;
-    margin-right: 24px;
+    margin-right: $gridcell-right-margin;
 
     &:before {
         content: '';

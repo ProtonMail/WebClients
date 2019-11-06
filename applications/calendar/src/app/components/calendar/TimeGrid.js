@@ -261,10 +261,12 @@ const TimeGrid = ({
                                             isSelected
                                         });
                                     })}
+                                {isDateYYMMDDEqual(day, now) ? (
+                                    <div className="nowHourLine" style={{ top: nowTop }} />
+                                ) : null}
                             </div>
                         );
                     })}
-                    <div className="nowHourLine" style={{ top: nowTop }} />
                 </div>
             </div>
             {morePopoverStyle &&
