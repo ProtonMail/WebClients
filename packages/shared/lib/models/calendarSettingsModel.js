@@ -1,14 +1,12 @@
-import { getCalendarSettings } from '../api/calendarSettings';
+import { getCalendarUserSettings } from '../api/calendars';
 import updateObject from '../helpers/updateObject';
 
-export const getCalendarSettingsModel = (api) => {
-    return api(getCalendarSettings()).then(({ CalendarUserSettings }) => CalendarUserSettings);
+export const getCalendarUserSettingsModel = (api) => {
+    return api(getCalendarUserSettings()).then(({ CalendarUserSettings }) => CalendarUserSettings);
 };
 
-export const handleCalendarSettingsEvents = updateObject;
-
-export const CalendarSettingsModel = {
+export const CalendarUserSettingsModel = {
     key: 'CalendarUserSettings',
-    get: getCalendarSettingsModel,
+    get: getCalendarUserSettingsModel,
     update: updateObject
 };

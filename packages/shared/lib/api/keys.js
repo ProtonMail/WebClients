@@ -1,6 +1,6 @@
 export const getPublicKeys = ({ Email, Fingerprint }) => ({
     url: 'keys',
-    medthod: 'get',
+    method: 'get',
     params: { Email, Fingerprint }
 });
 

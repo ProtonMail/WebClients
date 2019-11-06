@@ -3,8 +3,6 @@ import {
     getMessage,
     getSignature,
     splitMessage,
-    encodeBase64,
-    arrayToBinaryString,
     decryptMessage,
     getKeys,
     createMessage,
@@ -16,14 +14,21 @@ import { c } from 'ttag';
 
 import { noop } from '../helpers/function';
 import { uniqueBy } from '../helpers/array';
-import { getPrimaryKey } from './keys';
+import { serializeUint8Array } from '../helpers/serialization';
+import { hasBit } from '../helpers/bitset';
+import { splitKeys } from './keys';
+
+export const KEY_FLAGS = {
+    PRIMARY: 0b1,
+    ACTIVE: 0b01
+};
 
 /**
  * @return {String}
  */
 export const generatePassphrase = () => {
     const value = getRandomValues(new Uint8Array(32));
-    return encodeBase64(arrayToBinaryString(value));
+    return serializeUint8Array(value);
 };
 
 /**
@@ -63,56 +68,28 @@ export const encryptPassphrase = async ({ passphrase, privateKey, memberPublicKe
 
     return {
         keyPackets: memberPublicKeysList.reduce((acc, [memberID], index) => {
-            acc[memberID] = encodeBase64(arrayToBinaryString(asymmetric[index]));
+            acc[memberID] = serializeUint8Array(asymmetric[index]);
             return acc;
         }, Object.create(null)),
-        dataPacket: encodeBase64(arrayToBinaryString(encrypted[0])),
+        dataPacket: serializeUint8Array(encrypted[0]),
         signature
     };
-};
-
-/**
- * Finds the member and the decrypted primary key of the address belonging to the user of the calendar in the list of members.
- * @param {Array} calendarMembers - The members of the calendar
- * @param {Array} addresses - The addresses belonging to the user
- * @param {Object} addressesKeysMap - The decrypted keys map belonging to the addresses
- * @return {{primaryKey, member}}
- */
-export const findPrimaryAddressKey = ({ calendarMembers = [], addresses = [], addressesKeysMap = {} }) => {
-    // eslint-disable-next-line no-restricted-syntax
-    for (const member of calendarMembers) {
-        const address =
-            addresses.find(({ Email: AddressEmail }) => {
-                return member.Email === AddressEmail;
-            }) || {};
-        const addressKeys = addressesKeysMap[address.ID];
-        const { privateKey } = getPrimaryKey(addressKeys) || {};
-
-        if (!privateKey || !privateKey.isDecrypted()) {
-            continue;
-        }
-
-        return {
-            member,
-            primaryKey: privateKey
-        };
-    }
 };
 
 /**
  * Decrypts a calendar passphrase with a private key
  * @param {String} armoredPassphrase
  * @param {String} armoredSignature
- * @param {Object} privateKey decrypted private key
- * @param {String} publicKey
+ * @param {Array} privateKeys
+ * @param {Array} publicKeys
  * @return {String} - the decrypted passphrase
  */
-export const decryptPassphrase = async ({ armoredPassphrase, armoredSignature, privateKey, publicKey }) => {
+export const decryptPassphrase = async ({ armoredPassphrase, armoredSignature, privateKeys, publicKeys }) => {
     const { data: decryptedPassphrase, verified } = await decryptMessage({
         message: await getMessage(armoredPassphrase),
         signature: await getSignature(armoredSignature),
-        privateKeys: [privateKey],
-        publicKeys: [publicKey]
+        privateKeys,
+        publicKeys
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -125,70 +102,111 @@ export const decryptPassphrase = async ({ armoredPassphrase, armoredSignature, p
 };
 
 /**
- * Decrypt all passphrases for a given member and its primary key.
+ * @param {Array} Members
+ * @param {Array} Addresses
+ * @return {Object}
+ */
+export const getAddressesMembersMap = (Members = [], Addresses = []) => {
+    return Members.reduce((acc, Member) => {
+        const Address = Addresses.find(({ Email }) => Email === Member.Email);
+        if (!Address) {
+            return acc;
+        }
+        acc[Member.ID] = Address;
+        return acc;
+    }, {});
+};
+
+/**
+ * @param {Array} Keys
+ * @param {Array} Passphrases
+ * @return {Array}
+ */
+export const getRequiredPassphrases = (Keys = [], Passphrases = []) => {
+    return uniqueBy(Keys, ({ PassphraseID }) => PassphraseID)
+        .map(({ PassphraseID }) => Passphrases.find(({ ID }) => ID === PassphraseID))
+        .filter(Boolean);
+};
+
+/**
+ * Decrypt all passphrases for the keys of calendar for a given member and the address keys
  * Verifies the signature against the same key.
- * @param {Array} passphrases
- * @param {String} memberID
- * @param {Object} primaryKey
+ * @param {Array} Passphrases
+ * @param {Object} addressesMembersMap
+ * @param {Object} addressesKeysMap
  * @return {Promise}
  */
-export const decryptPassphrases = async (passphrases, memberID, primaryKey) => {
-    const publicKey = primaryKey.toPublic();
+export const decryptCalendarKeysPassphrases = async ({ Passphrases = [], addressesMembersMap, addressesKeysMap }) => {
+    const result = await Promise.all(
+        Passphrases.map(async ({ MemberPassphrases = [] } = {}) => {
+            // Try to decrypt each passphrase with the address keys belonging to that member until it succeeds.
+            // eslint-disable-next-line no-restricted-syntax
+            for (const { Passphrase, Signature, MemberID } of MemberPassphrases) {
+                const Address = addressesMembersMap[MemberID];
 
-    const decryptedPassphrases = await Promise.all(
-        passphrases.map(({ MemberPassphrases }) => {
-            const { Passphrase: armoredPassphrase, Signature: armoredSignature } =
-                MemberPassphrases.find(({ MemberID: otherMemberID }) => otherMemberID === memberID) || {};
+                if (!Address || !addressesKeysMap[Address.ID]) {
+                    continue;
+                }
 
-            return decryptPassphrase({
-                armoredPassphrase,
-                armoredSignature,
-                privateKey: primaryKey,
-                publicKey
-            }).catch(noop);
+                const result = await decryptPassphrase({
+                    armoredPassphrase: Passphrase,
+                    armoredSignature: Signature,
+                    ...splitKeys(addressesKeysMap[Address.ID])
+                }).catch(noop);
+
+                if (result) {
+                    return result;
+                }
+            }
         })
     );
-    return passphrases.reduce(
+
+    return Passphrases.reduce(
         (acc, { ID }, i) => ({
             ...acc,
-            [ID]: decryptedPassphrases[i]
+            [ID]: result[i]
         }),
         {}
     );
 };
 
 /**
- * Decrypt the calendar keys for a given member.
- * @param {Array} calendarKeys - the calendar keys as coming from the API
- * @param {Array} calendarPassphrases - the calendar passphrases as coming from the API
- * @param {Object} calendarMember - the calendar member as coming from the API
- * @param {PGPKey} primaryKey - the decrypted primary key of the member
+ * Decrypt the calendar keys.
+ * @param {Array} Keys - the calendar keys as coming from the API
+ * @param {Object} passphrasesMap - The decrypted passphrases map as returned by `decryptCalendarKeysPassphrases`
  * @return {Promise}
  */
-export const decryptCalendarKeys = async ({
-    calendarKeys = [],
-    calendarPassphrases = [],
-    calendarMember,
-    primaryKey
-}) => {
-    // Get all the passphrases that exist in the calendar keys
-    const requiredPassphrases = uniqueBy(calendarKeys, ({ PassphraseID }) => PassphraseID).map(({ PassphraseID }) => {
-        return calendarPassphrases.find(({ ID }) => ID === PassphraseID);
-    });
-    const decryptedPassphrasesMap = await decryptPassphrases(requiredPassphrases, calendarMember.ID, primaryKey);
-
+export const decryptCalendarKeys = async (Keys, passphrasesMap = {}) => {
     return Promise.all(
-        calendarKeys.map(async (Key) => {
+        Keys.map(async (Key) => {
             const { PrivateKey, PassphraseID } = Key;
-            const decryptedPassphrase = decryptedPassphrasesMap[PassphraseID];
+            const decryptedPassphrase = passphrasesMap[PassphraseID];
 
             const [privateKey] = await getKeys(PrivateKey);
             await privateKey.decrypt(decryptedPassphrase).catch(noop);
 
             return {
                 Key,
-                privateKey
+                privateKey,
+                publicKey: privateKey.toPublic()
             };
         })
     );
+};
+
+export const getDecryptedPassphrase = async ({ privateKeys, publicKeys, MemberID, PassphraseID, Passphrases = [] }) => {
+    const { MemberPassphrases = [] } = Passphrases.find(({ ID }) => ID === PassphraseID) || {};
+    const { Passphrase, Signature } =
+        MemberPassphrases.find(({ MemberID: otherMemberID }) => otherMemberID === MemberID) || {};
+
+    return decryptPassphrase({
+        armoredPassphrase: Passphrase,
+        armoredSignature: Signature,
+        privateKeys,
+        publicKeys
+    }).catch(noop);
+};
+
+export const getPrimaryKey = (Keys = []) => {
+    return Keys.find(({ Flags }) => hasBit(Flags, KEY_FLAGS.PRIMARY));
 };

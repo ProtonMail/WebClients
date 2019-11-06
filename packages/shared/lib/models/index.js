@@ -12,6 +12,6 @@ export { UserModel } from './userModel';
 export { UserSettingsModel } from './userSettingsModel';
 export { SubscriptionModel } from './subscriptionModel';
 export { CalendarsModel } from './calendarsModel';
-export { CalendarSettingsModel } from './calendarSettingsModel';
+export { CalendarUserSettingsModel } from './calendarSettingsModel';
 export { ConversationCountsModel } from './conversationCountsModel';
 export { MessageCountsModel } from './messageCountsModel';

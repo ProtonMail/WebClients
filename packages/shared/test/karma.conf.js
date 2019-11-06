@@ -24,7 +24,8 @@ module.exports = (config) => {
                         exclude: /node_modules/
                     }
                 ]
-            }
+            },
+            devtool: 'inline-source-map'
         },
         webpackMiddleware: {
             stats: 'minimal'

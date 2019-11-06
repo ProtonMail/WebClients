@@ -56,8 +56,8 @@ describe('keys', () => {
         const decryptedPassphrase = await decryptPassphrase({
             armoredPassphrase,
             armoredSignature,
-            privateKey: decryptedPrivateKey,
-            publicKey: decryptedPrivateKey.toPublic()
+            privateKeys: decryptedPrivateKey,
+            publicKeys: decryptedPrivateKey.toPublic()
         });
         const decryptedCalendarKey = await decryptPrivateKey(calendarKey, decryptedPassphrase);
         expect(decryptedCalendarKey.isDecrypted()).toBeTruthy();

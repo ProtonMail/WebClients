@@ -1,8 +1,7 @@
-import isWithinRange from 'date-fns/is_within_range';
+import { isWithinInterval } from 'date-fns';
 
 import { BLACK_FRIDAY } from '../constants';
 
 export const isBlackFridayPeriod = () => {
-    const now = new Date();
-    return isWithinRange(now, BLACK_FRIDAY.START, BLACK_FRIDAY.END);
+    return isWithinInterval(new Date(), { start: BLACK_FRIDAY.START, end: BLACK_FRIDAY.END });
 };

@@ -40,6 +40,7 @@ const createCache = (map = new Map()) => {
         toObject,
         delete: remove,
         subscribe: listeners.subscribe,
+        notify: listeners.notify,
         reset
     };
 };

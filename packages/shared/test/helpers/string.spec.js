@@ -1,4 +1,4 @@
-import { capitalize, getRandomString, getInitial } from '../../lib/helpers/string';
+import { capitalize, getRandomString, getInitial, findLongestMatchingIndex } from '../../lib/helpers/string';
 
 describe('string', () => {
     describe('getRandomString', () => {
@@ -6,6 +6,18 @@ describe('string', () => {
         it('should generate a random string of length 16', () => {
             const result = getRandomString(16);
             expect(result).toEqual('ABCDEFGHIJKLMNOP');
+        });
+    });
+
+    describe('longest match', () => {
+        it('should get the longest matching string', () => {
+            const x = ['14:00', '14:30'];
+            expect(findLongestMatchingIndex(x, '14')).toBe(0);
+            expect(findLongestMatchingIndex(x, '14:35')).toBe(1);
+            expect(findLongestMatchingIndex(x, '14:30')).toBe(1);
+            expect(findLongestMatchingIndex(x, '13:35')).toBe(0);
+            expect(findLongestMatchingIndex(x, '23:35')).toBe(-1);
+            expect(findLongestMatchingIndex()).toBe(-1);
         });
     });
 

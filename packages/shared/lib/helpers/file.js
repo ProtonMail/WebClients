@@ -1,4 +1,5 @@
-import { arrayToBinaryString, binaryStringToArray, decodeBase64 } from 'pmcrypto';
+import { arrayToBinaryString } from 'pmcrypto';
+import { deserializeUint8Array } from './serialization';
 
 /**
  * Convert file to encoded base 64 string
@@ -90,7 +91,7 @@ export const readDataUrl = (url = '') => {
         throw new Error(error);
     }
 
-    return binaryStringToArray(decodeBase64(base64));
+    return deserializeUint8Array(base64);
 };
 
 /**

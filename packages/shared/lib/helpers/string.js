@@ -99,3 +99,28 @@ export const hasProtonDomain = (email = '') => {
     const protonmailRegex = /@(protonmail\.(com|ch)|pm\.me|)$/i;
     return protonmailRegex.test(email);
 };
+
+const getMatchingCharacters = (string, substring) => {
+    let i;
+    for (i = 0; i < substring.length; ++i) {
+        if (string[i] !== substring[i]) {
+            return i;
+        }
+    }
+    return i > 0 ? i : 0;
+};
+
+export const findLongestMatchingIndex = (strings = [], substring = '') => {
+    let max = 0;
+    let i = -1;
+
+    strings.forEach((string, idx) => {
+        const numberOfMatches = getMatchingCharacters(string, substring);
+        if (numberOfMatches > max) {
+            max = numberOfMatches;
+            i = idx;
+        }
+    });
+
+    return i;
+};

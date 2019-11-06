@@ -126,6 +126,11 @@ export const updateEvent = (calendarID, eventID, data) => ({
     data
 });
 
+export const deleteEvent = (calendarID, eventID) => ({
+    url: `calendars/${calendarID}/events/${eventID}`,
+    method: 'delete'
+});
+
 export const getAttendees = (calendarID, eventID) => ({
     url: `calendars/${calendarID}/events/${eventID}/attendees`,
     method: 'get'
@@ -165,13 +170,30 @@ export const updateCalendarSettings = (calendarID, data) => ({
     data
 });
 
-export const getUserSettings = () => ({
-    url: 'calendars/settings',
+export const getCalendarUserSettings = () => ({
+    url: 'settings/calendar',
     method: 'get'
 });
 
-export const updateUserSettings = (data) => ({
-    url: 'calendars/settings',
+export const updateCalendarUserSettings = (data) => ({
+    url: 'settings/calendar',
     method: 'put',
     data
+});
+
+export const getEventsOccurrences = (calendarID, year, params) => ({
+    url: `calendars/${calendarID}/events/year/${year}`,
+    method: 'get',
+    params
+});
+
+export const queryCalendarAlarms = (calendarID, params) => ({
+    url: `calendars/${calendarID}/alarms`,
+    method: 'get',
+    params
+});
+
+export const getCalendarAlarm = (calendarID, alarmID) => ({
+    url: `calendars/${calendarID}/alarms/${alarmID}`,
+    method: 'get'
 });
