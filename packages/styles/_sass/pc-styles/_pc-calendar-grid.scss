@@ -1,0 +1,93 @@
+$calendar-aside-width: 6rem !default;
+$calendar-hour-height: 4.8rem !default;
+$calendar-grid-border: $pm-global-border 1px solid !default;
+$gridcell-right-margin: 1.5em;
+
+.calendar-grid-heading-number {
+    border-radius: 50%;
+    width: 1.75em;
+    height: 1.75em;
+    display: inline-flex;
+}
+.calendar-grid-heading[aria-current="date"] {
+    .calendar-grid-heading-number {
+        background-color: $pm-primary;
+        color: $white;
+    }
+    .calendar-grid-heading-day {
+        font-weight: bold;
+    }
+}
+
+
+.calendar-time-fullday {
+    border-bottom: $calendar-grid-border;
+}
+
+
+.calendar-grid-dayLine,
+.calendar-grid-hourLine,
+.calendar-grid-gridcell {
+    &:after {
+        content: '';
+        position: absolute;
+        pointer-events: none;
+    }
+}
+.calendar-grid-dayLine {
+    &:after {
+        border-left: $calendar-grid-border;
+        height: 100%;
+        margin-left: -1px;
+    }
+}
+.calendar-grid-hourLine {
+    height: $calendar-hour-height;
+
+    &:after {
+        border-bottom: $calendar-grid-border;
+        width: calc(100% - #{$calendar-aside-width});
+        margin-top: -1px;
+    }
+}
+
+.calendar-grid-nowHourLine {
+    z-index: 3;
+    border-bottom: 2px solid $pm-primary;
+    left: -10px;
+    right: -$gridcell-right-margin;
+    &:before {
+        content: '';
+        position: absolute;
+        width: .7rem;
+        height: .7rem;
+        border-radius: 50%;
+        background-color: $pm-primary;
+        top: -0.3rem;
+        left: -0.35rem;
+    } 
+}
+
+.calendar-aside {
+    width: $calendar-aside-width;
+}
+
+.calendar-grid-timeBlock {
+    height: $calendar-hour-height;
+}
+
+.calendar-grid-timeText {
+    top: -1rem;
+    font-size: 1rem;
+}
+
+.calendar-grid-gridcell {
+    margin-right: $gridcell-right-margin;
+
+    &:after {
+        border-left: $calendar-grid-border;
+        height: 100%;
+        margin-left: -1px;
+    }
+}
+
