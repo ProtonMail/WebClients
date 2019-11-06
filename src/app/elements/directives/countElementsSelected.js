@@ -47,7 +47,7 @@ function countElementsSelected(
                 {
                     countEmailSelected
                 },
-                'ex: You have 10 emails storrf in this folder'
+                'ex: You have 10 emails stored in this folder'
             );
         },
         label(n) {
