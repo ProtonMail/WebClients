@@ -63,13 +63,13 @@ $minicalendar-fontsize: 1.2rem !default;
     }
 }
 
-.minicalendar-day[aria-current=true] {
+.minicalendar-day[aria-current="date"] {
     color: $white;
     font-weight: bold;
     background: $pm-primary-dark;
     border-radius: 100px;
 }
-.minicalendar-day[aria-selected=true] {
+.minicalendar-day[aria-pressed=true] {
     color: $white;
     font-weight: bold;
     background: $pm-primary;
