@@ -7,6 +7,8 @@ import { transformEmbedded } from '../transforms/transformEmbedded';
 import { transformWelcome } from '../transforms/transformWelcome';
 import { transformBlockquotes } from '../transforms/transformBlockquotes';
 import { transformStylesheet } from '../transforms/transformStylesheet';
+import { transformAttachements } from '../transforms/transformAttachements';
+import { transformRemote } from '../transforms/transformRemote';
 
 // Reference: Angular/src/app/message/services/prepareContent.js
 
@@ -16,9 +18,9 @@ const transformers = [
     transformEmbedded,
     transformWelcome,
     transformBlockquotes,
-    transformStylesheet
-    // TODO: transformAttachements
-    // TODO: transformRemote
+    transformStylesheet,
+    transformAttachements,
+    transformRemote
 ];
 
 export const useFormatContent = () => {

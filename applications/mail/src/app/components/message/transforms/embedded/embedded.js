@@ -20,7 +20,7 @@ const testDiv = document.createElement('DIV');
  * @return {Promise}
  */
 export const parser = async (message, mailSettings, { direction = 'blob', text = '', isOutside = false } = {}) => {
-    const content = text || message.getDecryptedBody();
+    const content = text; // || message.getDecryptedBody();
 
     testDiv.innerHTML = escapeSrc(content); // We don't use embeddedUtils.getBodyParser because the content is already cleaned
 

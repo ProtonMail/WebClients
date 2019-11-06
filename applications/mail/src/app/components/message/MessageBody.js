@@ -35,7 +35,7 @@ const MessageBody = ({ message = {} }) => {
         return <Loader />;
     }
 
-    return <div className="p1" dangerouslySetInnerHTML={{ __html: body }} />;
+    return <div className="p1 bodyDecrypted" dangerouslySetInnerHTML={{ __html: body }} />;
 };
 
 MessageBody.propTypes = {
