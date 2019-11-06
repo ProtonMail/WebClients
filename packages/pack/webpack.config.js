@@ -86,7 +86,8 @@ function main({ port, publicPath, flow, appMode }) {
                 'proton-shared': path.resolve('./node_modules/proton-shared'),
                 'react-components': path.resolve('./node_modules/react-components'),
                 // Else it will use the one from react-component, shared etc. if we use npm link
-                ttag: path.resolve('./node_modules/ttag')
+                ttag: path.resolve('./node_modules/ttag'),
+                'date-fns': path.resolve('./node_modules/date-fns')
             }
         },
         entry: {
