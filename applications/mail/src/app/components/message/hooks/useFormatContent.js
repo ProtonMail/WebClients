@@ -9,11 +9,13 @@ import { transformBlockquotes } from '../transforms/transformBlockquotes';
 import { transformStylesheet } from '../transforms/transformStylesheet';
 import { transformAttachements } from '../transforms/transformAttachements';
 import { transformRemote } from '../transforms/transformRemote';
+import { transformBase } from '../transforms/transformBase';
 
 // Reference: Angular/src/app/message/services/prepareContent.js
 
 const transformers = [
-    transformEscape,
+    transformEscape, // Has to be in first place as it initialy parse the string content
+    transformBase,
     transformLinks,
     transformEmbedded,
     transformWelcome,
@@ -32,14 +34,20 @@ export const useFormatContent = () => {
     return useCallback(async (content, message, action) => {
         const mailSettings = await getMailSettings();
 
-        console.log('formatContent', document, message, mailSettings);
+        console.log('formatContent', content, message, mailSettings);
 
-        const result = await transformers.reduce(async (documentPromise, transformer) => {
-            const document = await documentPromise;
-            console.log('transformer', transformer);
-            return transformer(document, message, { action, cache, mailSettings });
-        }, content);
+        let resultMetadata = {};
 
-        return result.innerHTML;
+        const { document } = await transformers.reduce(
+            async (promise, transformer) => {
+                const { document, metadata = {} } = await promise;
+                resultMetadata = { ...resultMetadata, ...metadata };
+                console.log('transformer', transformer);
+                return transformer({ document, message, action, cache, mailSettings });
+            },
+            { document: content }
+        );
+
+        return { content: document.innerHTML, metadata: resultMetadata };
     });
 };

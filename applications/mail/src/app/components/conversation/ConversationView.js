@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useApi, useLoading, Loader, useLabels } from 'react-components';
 import { getConversation } from 'proton-shared/lib/api/conversations';
-import { getMessage } from 'proton-shared/lib/api/messages';
 import { orderBy } from 'proton-shared/lib/helpers/array';
 
 import MessageView from '../message/MessageView';
@@ -22,30 +21,6 @@ const ConversationView = ({ conversationID, messageID, mailSettings }) => {
         const { Conversation, Messages = [] } = await api(getConversation(conversationID, messageID));
         updateConversation(Conversation);
         updateMessages(Messages);
-    };
-
-    const handleExpand = async (messageID) => {
-        const index = messages.findIndex(({ ID }) => ID === messageID);
-
-        if (index === -1) {
-            return;
-        }
-
-        const message = messages[index];
-        const copyMessages = [...messages];
-
-        // If Body is set we don't need to call the API
-        if (message.Body) {
-            copyMessages[index] = { ...message, expanded: true };
-            updateMessages(copyMessages);
-            return;
-        }
-
-        copyMessages[index] = { ...message, loading: true };
-        updateMessages([...copyMessages]);
-        const { Message } = await api(getMessage(messageID));
-        copyMessages[index] = { ...Message, loading: false, expanded: true };
-        updateMessages([...copyMessages]);
     };
 
     useEffect(() => {
@@ -79,13 +54,7 @@ const ConversationView = ({ conversationID, messageID, mailSettings }) => {
             {orderBy(messages, 'Order')
                 .reverse()
                 .map((message) => (
-                    <MessageView
-                        key={message.ID}
-                        message={message}
-                        labels={labels}
-                        mailSettings={mailSettings}
-                        onExpand={handleExpand}
-                    />
+                    <MessageView key={message.ID} message={message} labels={labels} mailSettings={mailSettings} />
                 ))}
         </section>
     );

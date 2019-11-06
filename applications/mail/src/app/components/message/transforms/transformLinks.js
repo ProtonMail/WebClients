@@ -63,8 +63,8 @@ const disableAnchors = (link) => {
     isEmptyAnchor(link) && (link.style.pointerEvents = 'none');
 };
 
-export async function transformLinks(html) {
-    const links = [...html.querySelectorAll('[href]')];
+export const transformLinks = ({ document }) => {
+    const links = [...document.querySelectorAll('[href]')];
 
     console.log('transformLinks', links);
 
@@ -75,5 +75,5 @@ export async function transformLinks(html) {
         disableAnchors(link);
     });
 
-    return html;
-}
+    return { document };
+};

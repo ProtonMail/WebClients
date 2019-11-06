@@ -1,4 +1,3 @@
-import transformBase from './transformBase';
 import { uniqID } from '../helpers/stringHelper';
 import { protonizer as purifyHTML } from '../helpers/purifyHelper';
 import { parseInDiv } from '../helpers/domHelper';
@@ -94,8 +93,8 @@ function escapeSVG(input = '') {
  * @param  {String} options.action           Type of action
  * @return {Node}                            Parser
  */
-export const transformEscape = async (content, message, { action, cache, activeCache = true } = {}) => {
-    const value = removeBase64(content, cache, activeCache);
+export const transformEscape = async ({ document, action, cache, activeCache = true } = {}) => {
+    const value = removeBase64(document, cache, activeCache);
     const activeHooks = action !== 'user.inject';
-    return transformBase(purifyHTML(escapeSVG(value), activeHooks));
+    return { document: purifyHTML(escapeSVG(value), activeHooks) };
 };

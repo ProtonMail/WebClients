@@ -6,15 +6,15 @@ import * as embedded from './embedded/embedded';
 const EMBEDDED_CLASSNAME = 'proton-embedded';
 const wrapImage = (img) => wrap(img, '<div class="image loading"></div>');
 
-export const transformEmbedded = async (html, message, { action, mailSettings }) => {
-    const images = [...html.querySelectorAll('img[proton-src]')];
+export const transformEmbedded = async ({ document, message, action, mailSettings }) => {
+    const images = [...document.querySelectorAll('img[proton-src]')];
     // const { ShowImages = 0 } = mailSettingsModel.get();
     const { ShowImages = 0 } = mailSettings;
     const isReplyForward = /^reply|forward/.test(action);
     const show = message.showEmbedded === true || ShowImages & SHOW_IMAGES.EMBEDDED;
     // TODO: const isEoReply = $state.is('eo.reply');
     const isEoReply = false;
-    const getAttachment = embedded.getAttachment(message, html);
+    const getAttachment = embedded.getAttachment(message, document);
 
     console.log('transformEmbedded', images);
 
@@ -77,5 +77,5 @@ export const transformEmbedded = async (html, message, { action, mailSettings })
         }
     });
 
-    return html;
+    return { document, metadata: { hasImages: images.length > 0 } };
 };

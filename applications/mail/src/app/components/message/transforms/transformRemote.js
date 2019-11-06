@@ -71,12 +71,12 @@ function prepareInjection(html) {
     return attributes;
 }
 
-export const transformRemote = (html, message, { action, mailSettings }) => {
+export const transformRemote = ({ document, message, action, mailSettings }) => {
     const showImages =
         message.showImages ||
         mailSettings.ShowImages & SHOW_IMAGES.REMOTE ||
         WHITELIST.includes(message.Sender.Address);
-    const content = html.innerHTML;
+    const content = document.innerHTML;
 
     // Bind the boolean only if there are something
     if (new RegExp(REGEXP_FIXER, 'g').test(content)) {
@@ -87,14 +87,14 @@ export const transformRemote = (html, message, { action, mailSettings }) => {
         // If load:manual we use a custom directive to inject the content
         if (action === 'user.inject') {
             // const list = prepareInjection(html);
-            prepareInjection(html);
+            prepareInjection(document);
             // const hasSVG = /svg/.test(html.innerHTML);
             // if (list.length || hasSVG) {
             //     dispatcher['message.open']('remote.injected', { action, list, message, hasSVG });
             // }
         } else {
-            html.innerHTML = content.replace(new RegExp(REGEXP_FIXER, 'g'), (match, $1) => $1.substring(7));
+            document.innerHTML = content.replace(new RegExp(REGEXP_FIXER, 'g'), (match, $1) => $1.substring(7));
         }
     }
-    return html;
+    return { document };
 };

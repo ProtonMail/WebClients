@@ -2,7 +2,7 @@ import { parser } from './embedded/embedded';
 
 // const { dispatcher } = dispatchers(['embedded.injected', 'message.embedded', 'message.open']);
 
-export const transformAttachements = async (body, message, { mailSettings }) => {
+export const transformAttachements = async ({ document, message, mailSettings }) => {
     /**
      * Usefull when we inject the content into the message (load:manual)
      */
@@ -24,9 +24,9 @@ export const transformAttachements = async (body, message, { mailSettings }) => 
      */
     // $rootScope.$applyAsync(() =>
 
-    await parser(message, mailSettings, { direction: 'blob', text: body.innerHTML });
+    await parser(message, mailSettings, { direction: 'blob', text: document.innerHTML });
 
     // (() => dispatcher['message.embedded']('loaded', { message, body, action }));
 
-    return body;
+    return { document };
 };

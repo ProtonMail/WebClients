@@ -1,6 +1,6 @@
-export const transformWelcome = (html) => {
+export const transformWelcome = ({ document }) => {
     // For the welcome email, we need to change the path to the welcome image lock
-    const images = [...html.querySelectorAll('img[src="/img/app/welcome_lock.gif"]')];
+    const images = [...document.querySelectorAll('img[src="/img/app/welcome_lock.gif"]')];
 
     console.log('transformWelcome', images);
 
@@ -10,5 +10,5 @@ export const transformWelcome = (html) => {
         });
     }
 
-    return html;
+    return { document };
 };

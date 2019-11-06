@@ -23,11 +23,11 @@ const getBaseURL = (base) => {
  * @param  {Node} html HTML document from DOMPurify
  * @return {Node}      Dom based
  */
-function transformBase(html) {
-    const base = html.querySelector('base');
+export const transformBase = ({ document }) => {
+    const base = document.querySelector('base');
 
     if (!base || !base.getAttribute('href')) {
-        return html;
+        return { document };
     }
 
     // Make sure base has trailing slash
@@ -40,7 +40,7 @@ function transformBase(html) {
     };
 
     ELEMENTS.forEach(({ selector, attribute }) => {
-        [].slice.call(html.querySelectorAll(selector)).forEach((el) => {
+        [...document.querySelectorAll(selector)].forEach((el) => {
             const keyproton = `proton-${attribute}`;
             const value = el.getAttribute(attribute) || '';
             const ptValue = el.getAttribute(keyproton) || '';
@@ -56,6 +56,5 @@ function transformBase(html) {
         });
     });
 
-    return html;
-}
-export default transformBase;
+    return { document };
+};

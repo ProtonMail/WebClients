@@ -18,9 +18,9 @@ const BLOCKQUOTE_SELECTORS = [
 
 const quotes = BLOCKQUOTE_SELECTORS.map((selector) => `${selector}:not(:empty)`).join(',');
 
-export const transformBlockquotes = (html) => {
-    const blockquotes = [...html.querySelectorAll(quotes)];
-    const parent = html.textContent;
+export const transformBlockquotes = ({ document }) => {
+    const blockquotes = [...document.querySelectorAll(quotes)];
+    const parent = document.textContent;
     let found = false;
 
     console.log('transformBlockquotes', blockquotes);
@@ -47,5 +47,5 @@ export const transformBlockquotes = (html) => {
         }
     });
 
-    return html;
+    return { document };
 };
