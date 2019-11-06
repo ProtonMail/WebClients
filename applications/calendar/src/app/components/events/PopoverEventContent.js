@@ -44,19 +44,19 @@ const PopoverEventContent = ({ targetCalendar = {}, targetEvent = {}, model, for
             </PopoverRow>
             {model.location ? (
                 <PopoverRow>
-                    <Icon name="address" className="flex-item-noshrink mr1" />
-                    <span>{model.location}</span>
+                    <Icon title={c('Title').t`Location`} name="address" className="flex-item-noshrink mr1" />
+                    <span className="break">{model.location}</span>
                 </PopoverRow>
             ) : null}
             {calendarName ? (
                 <PopoverRow>
                     <CalendarIcon color={Color} className="mr1" />
-                    <span>{calendarName}</span>
+                    <span className="break">{calendarName}</span>
                 </PopoverRow>
             ) : null}
             {model.description ? (
                 <PopoverRow>
-                    <Icon name="note" className="flex-item-noshrink mr1" />
+                    <Icon title={c('Title').t`Description`} name="note" className="flex-item-noshrink mr1" />
                     <p className="break mt0 mb0">{model.description}</p>
                 </PopoverRow>
             ) : null}

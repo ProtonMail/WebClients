@@ -59,7 +59,7 @@ const FullDayEvent = ({
 
     return (
         <div style={style} className={className} data-ignore-create="1" onClick={onClick}>
-            <div className="dayeventcell--inner" style={eventStyle} ref={eventRef}>
+            <div className="dayeventcell--inner pl0-5 pr0-5" style={eventStyle} ref={eventRef}>
                 {content}
             </div>
         </div>
