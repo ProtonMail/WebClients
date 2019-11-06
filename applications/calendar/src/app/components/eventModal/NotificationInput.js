@@ -43,7 +43,7 @@ const NotificationInput = ({
           };
 
     return (
-        <div className={classnames(['flex flex-nowrap', className])}>
+        <div className={classnames(['flex flex-nowrap flex-items-center', className])}>
             {hasType ? (
                 <Select
                     className="mr1"
