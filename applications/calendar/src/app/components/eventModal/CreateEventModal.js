@@ -173,6 +173,7 @@ const CreateEventModal = ({
 
     return (
         <FormModal
+            className="pm-modal--shorterLabels"
             title={Event ? i18n.update : i18n.create}
             loading={loadingAction || loadingEvent}
             onSubmit={loadingAction || loadingEvent ? noop : () => withLoadingAction(handleSubmit())}
