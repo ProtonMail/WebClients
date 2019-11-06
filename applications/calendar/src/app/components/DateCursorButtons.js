@@ -1,85 +1,82 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Icon } from 'react-components';
-import moment from 'moment';
-import { addDays, addWeeks, addMonths, addYears } from 'date-fns';
+import { format } from 'date-fns';
+import { dateLocale } from 'proton-shared/lib/i18n';
 
 import { VIEWS } from '../constants';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
 
-export const getDateDiff = (date, view, diff) => {
-    switch (view) {
-        case DAY:
-            return addDays(date, diff);
-        case WEEK:
-            return addWeeks(date, diff);
-        case MONTH:
-            return addMonths(date, diff);
-        case YEAR:
-            return addYears(date, diff);
-        case AGENDA:
-            return addMonths(date, diff);
-    }
-};
-
 const FORMATS = {
-    [DAY]: 'MMMM GGGG',
-    [WEEK]: 'MMMM GGGG',
-    [MONTH]: 'MMMM GGGG',
-    [YEAR]: 'GGGG',
-    [AGENDA]: 'MMMM GGGG'
+    [DAY]: 'PPP',
+    [WEEK]: 'PPP',
+    [MONTH]: 'MMMM yyyy',
+    [YEAR]: 'yyyy',
+    [AGENDA]: 'MMMM yyyy'
 };
 
-const DateCursorButtons = ({ view, currentDate, onDate }) => {
-    const today = moment().format('LL');
-    const currentRange = moment(currentDate).format(FORMATS[view]);
+const DateCursorButtons = ({ view, currentDate, now, dateRange, onToday, onPrev, onNext }) => {
+    const currentRange = useMemo(() => {
+        if (view === WEEK) {
+            const to = format(dateRange[1], FORMATS[view], { locale: dateLocale });
+            if (dateRange[0].getMonth() === dateRange[1].getMonth()) {
+                const from = format(dateRange[0], 'd', { locale: dateLocale });
+                return `${from} - ${to}`;
+            }
+            const from = format(dateRange[0], FORMATS[view], { locale: dateLocale });
+            return `${from} - ${to}`;
+        }
+        return format(currentDate, FORMATS[view], { locale: dateLocale });
+    }, [dateRange, view]);
+
+    const today = useMemo(() => {
+        return format(now, 'PP', { locale: dateLocale });
+    }, []);
 
     const previous = {
-        day: c('Action').t`Previous day`,
-        week: c('Action').t`Previous week`,
-        month: c('Action').t`Previous month`,
-        year: c('Action').t`Previous year`
+        [DAY]: c('Action').t`Previous day`,
+        [WEEK]: c('Action').t`Previous week`,
+        [MONTH]: c('Action').t`Previous month`,
+        [YEAR]: c('Action').t`Previous year`
     }[view];
 
     const next = {
-        day: c('Action').t`Next day`,
-        week: c('Action').t`Next week`,
-        month: c('Action').t`Next month`,
-        year: c('Action').t`Next year`
+        [DAY]: c('Action').t`Next day`,
+        [WEEK]: c('Action').t`Next week`,
+        [MONTH]: c('Action').t`Next month`,
+        [YEAR]: c('Action').t`Next year`
     }[view];
 
     return (
         <>
-            <button type="button" className="toolbar-button" title={today} onClick={() => onDate(new Date())}>{c(
-                'Action'
-            ).t`Today`}</button>
-            <span className="toolbar-separator ml0-5 mr0-5"></span>
-            <button
-                type="button"
-                className="toolbar-button"
-                title={previous}
-                onClick={() => onDate(getDateDiff(currentDate, view, -1))}
-            >
-                <Icon name="arrow-left" />
+            <button type="button" className="toolbar-button color-currentColor" title={today} onClick={onToday}>
+                <Icon name="target" className="flex-item-noshrink mtauto mbauto toolbar-icon" />
+                <span className="ml0-5 mtauto mbauto nomobile">{c('Action').t`Today`}</span>
             </button>
-            <span className="pl0-5 pr0-5">{currentRange}</span>
-            <button
-                type="button"
-                className="toolbar-button"
-                title={next}
-                onClick={() => onDate(getDateDiff(currentDate, view, 1))}
-            >
-                <Icon name="arrow-right" />
+            <span className="toolbar-separator" />
+            <button type="button" className="toolbar-button" title={previous} onClick={onPrev}>
+                <Icon name="arrow-left" className="mauto toolbar-icon" />
+                <span className="sr-only">{previous}</span>
+            </button>
+            <span className="pl0-5 pr0-5 mtauto mbauto">{currentRange}</span>
+            <button type="button" className="toolbar-button" title={next} onClick={onNext}>
+                <Icon name="arrow-right" className="mauto toolbar-icon" />
+                <span className="sr-only">{next}</span>
             </button>
         </>
     );
 };
 
 DateCursorButtons.propTypes = {
-    currentDate: PropTypes.instanceOf(Date),
-    onDate: PropTypes.func,
+    now: PropTypes.instanceOf(Date),
+    utcDate: PropTypes.instanceOf(Date),
+    dateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
+    onPrev: PropTypes.func,
+    onNext: PropTypes.func,
+    onToday: PropTypes.func,
+    customRange: PropTypes.number,
     view: PropTypes.oneOf([DAY, WEEK, MONTH, YEAR, AGENDA])
 };
 

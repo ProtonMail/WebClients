@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import { classnames } from 'react-components';
 
 const Main = ({ children, className }) => {
-    return (
-        <main className={classnames(['main-area-content bg-white relative flex-item-fluid', className])}>
-            {children}
-        </main>
-    );
+    return <main className={classnames(['relative flex-item-fluid', className])}>{children}</main>;
 };
 
 Main.propTypes = {

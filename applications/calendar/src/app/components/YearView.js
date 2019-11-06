@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import {} from 'react-components';
+import { LocalizedMiniCalendar, useApi } from 'react-components';
 import { c } from 'ttag';
 import { getYear } from 'date-fns';
+import { getEventsOccurrences } from 'proton-shared/lib/api/calendars';
 
-import MiniCalendar from './miniCalendar/MiniCalendar';
+const EVERY_MINUTE = 60 * 1000;
 
-const YearView = ({ currentDate, onSelectDate }) => {
+const YearView = ({ calendarIDs = [], tzid: Timezone, currentDate, onSelectDate }) => {
+    const api = useApi();
     const year = getYear(currentDate);
+    const [occurrences, setOccurrences] = useState({});
     const months = [
         { title: c('Month').t`January`, date: new Date(year, 0, 1) },
         { title: c('Month').t`February`, date: new Date(year, 1, 1) },
@@ -22,13 +25,47 @@ const YearView = ({ currentDate, onSelectDate }) => {
         { title: c('Month').t`November`, date: new Date(year, 10, 1) },
         { title: c('Month').t`December`, date: new Date(year, 11, 1) }
     ];
+
+    const fetchOccurrences = async () => {
+        const result = await Promise.all(
+            calendarIDs.map((calendarID) =>
+                api(getEventsOccurrences(calendarID, year, { Timezone })).then(({ Occurrences = [] }) => Occurrences)
+            )
+        );
+        setOccurrences(
+            result
+                .join()
+                .split(',')
+                .reduce((acc, dateString) => {
+                    const [year, month, day] = dateString.split('-');
+                    const date = new Date(+year, month - 1, +day);
+                    acc[date.getTime()] = true;
+                    return acc;
+                }, {})
+        );
+    };
+
+    useEffect(() => {
+        fetchOccurrences();
+        const intervalID = setInterval(fetchOccurrences, EVERY_MINUTE);
+
+        return () => {
+            clearInterval(intervalID);
+        };
+    }, [Timezone, year, calendarIDs]);
+
     return (
         <div className="flex flex-spacebetween">
             {months.map((month, index) => {
                 const key = `${index}`;
                 return (
                     <div className="w25 p1" key={key}>
-                        <MiniCalendar date={month.date} onSelectDate={onSelectDate} />
+                        <LocalizedMiniCalendar
+                            date={month.date}
+                            onSelectDate={onSelectDate}
+                            markers={occurrences}
+                            hasCursors={false}
+                        />
                     </div>
                 );
             })}
@@ -37,6 +74,8 @@ const YearView = ({ currentDate, onSelectDate }) => {
 };
 
 YearView.propTypes = {
+    tzid: PropTypes.string.isRequired,
+    calendarIDs: PropTypes.arrayOf(PropTypes.string),
     currentDate: PropTypes.instanceOf(Date),
     onSelectDate: PropTypes.func,
     schedules: PropTypes.array

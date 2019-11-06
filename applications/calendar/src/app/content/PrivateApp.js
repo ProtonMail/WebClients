@@ -1,31 +1,75 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ErrorBoundary, StandardPrivateApp } from 'react-components';
-import { UserModel, UserSettingsModel, CalendarsModel } from 'proton-shared/lib/models';
-import { Route, Switch } from 'react-router';
+import {
+    EventManagerProvider,
+    EventModelListener,
+    EventNotices,
+    ErrorBoundary,
+    LoaderPage,
+    ThemeInjector,
+    ModalsChildren
+} from 'react-components';
+import {
+    UserModel,
+    UserSettingsModel,
+    CalendarsModel,
+    CalendarUserSettingsModel,
+    AddressesModel
+} from 'proton-shared/lib/models';
+import { Redirect, Route, Switch } from 'react-router';
 
-import CalendarContainer from '../containers/CalendarContainer';
-import SettingsContainer from '../containers/SettingsContainer';
+import CalendarContainer from '../containers/calendar/CalendarContainer';
+import SettingsContainer from '../containers/settings/SettingsContainer';
+import CalendarSetupContainer from '../containers/setup/CalendarSetupContainer';
+import CalendarPreload from './CalendarPreload';
 
-const EVENT_MODELS = [UserModel, UserSettingsModel, CalendarsModel];
+const EVENT_MODELS = [UserModel, UserSettingsModel, CalendarsModel, CalendarUserSettingsModel, AddressesModel];
 
-const PRELOAD_MODELS = [UserSettingsModel, UserModel];
+const PRELOAD_MODELS = [UserSettingsModel, UserModel, AddressesModel, CalendarsModel];
 
 const PrivateApp = ({ onLogout }) => {
+    const [loading, setLoading] = useState(true);
+    const eventManagerRef = useRef();
+
+    if (loading) {
+        return (
+            <>
+                <CalendarPreload
+                    locales={{}}
+                    preloadModels={PRELOAD_MODELS}
+                    onSuccess={(ev) => {
+                        eventManagerRef.current = ev;
+                        setLoading(false);
+                    }}
+                    onError={onLogout}
+                />
+                <ModalsChildren />
+                <LoaderPage />
+            </>
+        );
+    }
+
     return (
-        <StandardPrivateApp
-            onLogout={onLogout}
-            locales={{} /* todo */}
-            preloadModels={PRELOAD_MODELS}
-            eventModels={EVENT_MODELS}
-        >
+        <EventManagerProvider eventManager={eventManagerRef.current}>
+            <ModalsChildren />
+            <EventModelListener models={EVENT_MODELS} />
+            <EventNotices />
+            <ThemeInjector />
             <ErrorBoundary>
-                <Switch>
-                    <Route path="/calendar/settings" component={SettingsContainer} />
-                    <Route path="/calendar" component={CalendarContainer} />
-                </Switch>
+                <CalendarSetupContainer>
+                    <Switch>
+                        <Route path="/calendar/settings" component={SettingsContainer} />
+                        <Route
+                            path="/calendar"
+                            render={({ history, location }) => {
+                                return <CalendarContainer history={history} location={location} />;
+                            }}
+                        />
+                        <Redirect to="/calendar" />
+                    </Switch>
+                </CalendarSetupContainer>
             </ErrorBoundary>
-        </StandardPrivateApp>
+        </EventManagerProvider>
     );
 };
 

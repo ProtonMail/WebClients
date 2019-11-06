@@ -1,9 +1,10 @@
 {
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
     "plugins": [
         "react",
         "react-hooks",
-        "import"
+        "import",
+        "@typescript-eslint"
     ],
     "parserOptions": {
         "ecmaVersion": 2018,
@@ -22,12 +23,18 @@
     "settings": {
         "react": {
             "version": "detect"
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".ts", ".tsx"]
+            }
         }
     },
     "globals": {
         "PL_IS_STANDALONE": true
     },
     "extends": [
+        "plugin:@typescript-eslint/recommended",
         "eslint:recommended",
         "plugin:react/recommended"
     ],
@@ -39,6 +46,9 @@
         "import/named": 2,
         "import/namespace": 2,
         "import/default": 2,
-        "import/export": 2
+        "import/export": 2,
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/indent": "off"
     }
 }

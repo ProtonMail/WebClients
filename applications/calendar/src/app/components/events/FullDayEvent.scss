@@ -1,0 +1,12 @@
+.dayeventcell {
+    padding-right: 10px;
+    padding-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.dayeventcell--inner {
+    border-radius: 2px;
+    overflow: hidden;
+    min-height: 100%;
+}

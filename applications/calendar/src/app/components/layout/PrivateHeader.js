@@ -1,61 +1,58 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MainLogo, Icon, UpgradeButton, useUser, UserDropdown, SupportDropdown } from 'react-components';
-import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
+import {
+    MainLogo,
+    UpgradeButton,
+    useUser,
+    Hamburger,
+    TopNavbar,
+    TopNavbarLink,
+    FloatingButton
+} from 'react-components';
 import { c } from 'ttag';
 
-const PrivateHeader = ({ location }) => {
+const PrivateHeader = ({ title, url, inSettings, onCreateEvent, expanded, onToggleExpand, isNarrow }) => {
     const [{ isFree }] = useUser();
-    const inSettings = location.pathname.startsWith('/calendar/settings');
     return (
         <header className="header flex flex-nowrap reset4print">
-            <MainLogo />
-            <div className="searchbox-container relative flex-item-centered-vert"></div>
-            <div className="topnav-container flex-item-centered-vert flex-item-fluid">
-                <ul className="topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap">
-                    <li className="mr1">
-                        <Link
-                            to="/calendar"
-                            className="topnav-link inline-flex flex-nowrap nodecoration rounded"
-                            aria-current={!inSettings}
-                        >
-                            <Icon name="calendar" className="topnav-icon mr0-5 flex-item-centered-vert fill-white" />
-                            {c('Title').t`Calendar`}
-                        </Link>
-                    </li>
-                    <li className="mr1">
-                        <Link
-                            to="/calendar/settings"
-                            className="topnav-link inline-flex flex-nowrap nodecoration rounded"
-                            aria-current={inSettings}
-                        >
-                            <Icon
-                                name="settings-master"
-                                className="topnav-icon mr0-5 flex-item-centered-vert fill-white"
-                            />
-                            {c('Title').t`Settings`}
-                        </Link>
-                    </li>
-                    {isFree ? (
-                        <li className="mr1">
-                            <UpgradeButton className="topnav-link inline-flex flex-nowrap nodecoration rounded" />
-                        </li>
-                    ) : null}
-                    <li className="mr1">
-                        <SupportDropdown />
-                    </li>
-                    <li className="mlauto mtauto mbauto relative flex-item-noshrink">
-                        <UserDropdown />
-                    </li>
-                </ul>
-            </div>
+            <MainLogo url={url} className="nomobile" />
+            <Hamburger expanded={expanded} onToggle={onToggleExpand} />
+            {title && isNarrow ? <span className="big ellipsis">{title}</span> : null}
+            <TopNavbar>
+                {isFree || isNarrow ? null : <UpgradeButton external={true} />}
+                {isNarrow && !inSettings ? null : (
+                    <TopNavbarLink
+                        className="nomobile"
+                        to={url}
+                        icon="calendar"
+                        text={c('Title').t`Calendar`}
+                        aria-current={!inSettings}
+                    />
+                )}
+                {isNarrow && inSettings ? null : (
+                    <TopNavbarLink
+                        to={`${url}/settings/general`}
+                        icon="settings-master"
+                        text={c('Title').t`Settings`}
+                        aria-current={inSettings}
+                    />
+                )}
+            </TopNavbar>
+            {isNarrow && !inSettings && onCreateEvent ? (
+                <FloatingButton onClick={() => onCreateEvent()} icon="plus" />
+            ) : null}
         </header>
     );
 };
 
 PrivateHeader.propTypes = {
-    location: PropTypes.object
+    isNarrow: PropTypes.bool,
+    expanded: PropTypes.bool,
+    onToggleExpand: PropTypes.func,
+    onCreateEvent: PropTypes.func,
+    inSettings: PropTypes.bool,
+    url: PropTypes.string,
+    title: PropTypes.string
 };
 
-export default withRouter(PrivateHeader);
+export default PrivateHeader;
