@@ -127,7 +127,7 @@ const TimeGrid = ({
     );
 
     useEffect(() => {
-        if (!scrollRef.current) {
+        if (!scrollRef || !scrollRef.current) {
             return;
         }
 
@@ -143,7 +143,7 @@ const TimeGrid = ({
         return () => {
             el.removeEventListener('scroll', onScroll);
         };
-    }, [scrollRef.current]);
+    }, [scrollRef && scrollRef.current]);
 
     return (
         <div className="relative main-area-content" ref={mainRef}>

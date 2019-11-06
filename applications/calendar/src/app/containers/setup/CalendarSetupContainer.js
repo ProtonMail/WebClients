@@ -45,7 +45,7 @@ const CalendarSetupContainer = ({ children }) => {
             setTzid={noop}
             setCustom={noop}
         >
-            <TimeGrid now={now} dateRange={dateRange} components={{}} />
+            <TimeGrid now={now} date={now} dateRange={dateRange} components={{}} />
         </CalendarContainerView>
     );
 };
