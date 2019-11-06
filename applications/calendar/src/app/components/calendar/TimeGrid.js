@@ -6,7 +6,6 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { isDateYYMMDDEqual } from 'proton-shared/lib/date/date';
 
 import { sortWithTemporaryEvent } from './layout';
-import './TimeGrid.scss';
 import useTimeGridMouseHandler from './useTimeGridMouseHandler';
 import useTimeGridEventLayout from './useTimeGridEventLayout';
 import useDayGridEventLayout from './useDayGridEventLayout';
@@ -152,17 +151,21 @@ const TimeGrid = ({
                     <div className="calendar-aside"></div>
                     {days.map((day) => {
                         return (
-                            <div
-                                className="flex-item-fluid aligncenter"
+                            <button
+                                className="flex-item-fluid aligncenter calendar-grid-heading p0-5"
+                                type="button"
                                 key={day.getUTCDate()}
                                 aria-current={isDateYYMMDDEqual(day, now) ? 'date' : undefined}
                                 aria-pressed={isDateYYMMDDEqual(day, date) ? true : undefined}
                                 onClick={() => onClickDate(day)}
                             >
-                                {day.getUTCDate()}
-                                <br />
-                                {weekdaysLong[day.getUTCDay()]}
-                            </div>
+                                <span className="calendar-grid-heading-number mt0-25">
+                                    <span className="mauto">{day.getUTCDate()}</span>
+                                </span>
+                                <span className="calendar-grid-heading-day bl mt0 mb0 big">
+                                    {weekdaysLong[day.getUTCDay()]}
+                                </span>
+                            </button>
                         );
                     })}
                 </div>
@@ -174,7 +177,7 @@ const TimeGrid = ({
                     <div className="flex-item-fluid relative">
                         <div className="flex">
                             {days.map((day) => {
-                                return <div className="dayLine flex-item-fluid" key={day.getUTCDate()} />;
+                                return <div className="calendar-grid-dayLine flex-item-fluid" key={day.getUTCDate()} />;
                             })}
                         </div>
                         <div
@@ -220,28 +223,32 @@ const TimeGrid = ({
                 <div className="calendar-aside">
                     {hours.map((hour, i) => {
                         return (
-                            <div className="timeBlock" key={i}>
-                                {i === 0 ? null : <span className="timeText">{formattedHours[i]}</span>}
+                            <div className="calendar-grid-timeBlock" key={i}>
+                                {i === 0 ? null : (
+                                    <span className="calendar-grid-timeText aligncenter bl relative">
+                                        {formattedHours[i]}
+                                    </span>
+                                )}
                             </div>
                         );
                     })}
                 </div>
 
-                <div className="">
+                <div className="calendar-grid-hours">
                     {hours.map((hour) => {
-                        return <div className="hourLine" key={hour.getUTCHours()} />;
+                        return <div className="calendar-grid-hourLine" key={hour.getUTCHours()} />;
                     })}
                 </div>
 
                 <div
-                    className="flex flex-item-fluid relative gridcells"
+                    className="flex flex-item-fluid relative calendar-grid-gridcells"
                     onMouseDownCapture={onTimeGridMouseDown}
                     ref={timeGridRef}
                 >
                     {days.map((day) => {
                         const key = getKey(day);
                         return (
-                            <div className="flex-item-fluid gridcell" key={key}>
+                            <div className="flex-item-fluid relative calendar-grid-gridcell h100" key={key}>
                                 {Array.isArray(eventsPerDay[key]) &&
                                     eventsPerDay[key].map((eventTimeDay, i) => {
                                         const { idx } = eventTimeDay;
@@ -262,7 +269,7 @@ const TimeGrid = ({
                                         });
                                     })}
                                 {isDateYYMMDDEqual(day, now) ? (
-                                    <div className="nowHourLine" style={{ top: nowTop }} />
+                                    <div className="calendar-grid-nowHourLine absolute" style={{ top: nowTop }} />
                                 ) : null}
                             </div>
                         );
