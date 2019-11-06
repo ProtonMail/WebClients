@@ -15,7 +15,7 @@ import {
     useEventManager
 } from 'react-components';
 
-const EMPTY_VALUES = [/<div><br><\/div>/, /<div>\s*<\/div>/];
+const EMPTY_VALUES = [/^(<div><br><\/div>)+$/, /^(<div>\s*<\/div>)+$/];
 
 const formatSignature = (value) => (EMPTY_VALUES.some((regex) => regex.test(value)) ? '' : value);
 
