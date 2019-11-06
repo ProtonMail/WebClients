@@ -52,7 +52,7 @@ const ViewSelector = ({ isNarrow, range, loading = false, disabled = false, view
                         aria-pressed={v === view ? true : undefined}
                         onClick={() => onChange(value)}
                     >
-                        {text}
+                        <span className="mauto">{text}</span>
                     </button>
                 );
             })}
