@@ -44,14 +44,15 @@ export const propertiesToModel = ({
     };
 };
 
-const toDateTimeModel = ({ value, parameters = {} }, tzid) => {
-    // If it's an all day even or it's not a time in UTC, this time is already relative.
-    if (parameters.type === 'date' || !value.isUTC) {
+const toDateTimeModel = ({ value, parameters: { type, tzid: specificTzid } = {} }, calendarTzid) => {
+    // If it's an all day event or it has a timezone, this time is already relative.
+    // Special case for date-times that are UTC but has a UTC timezone.
+    if (type === 'date' || !value.isUTC || specificTzid) {
         return toUTCDate(value);
     }
     // If it's UTC time, convert it into to the timezone of the calendar.
     if (value.isUTC) {
-        return toUTCDate(convertUTCDateTimeToZone(value, tzid));
+        return toUTCDate(convertUTCDateTimeToZone(value, calendarTzid));
     }
 };
 
