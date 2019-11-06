@@ -85,6 +85,7 @@ $modal-smaller-width: 28em !default;
   flex-direction: column;
   cursor: default;
 }
+
 @keyframes pm-modalIn {
   0% {
     opacity: 0;
@@ -119,6 +120,7 @@ $modal-smaller-width: 28em !default;
   width: $modal-wider-width;
   max-width: $modal-wider-max-width;
 }
+
 
 
 
@@ -204,6 +206,14 @@ $modal-smaller-width: 28em !default;
 }
 .pm-modalContentInner > p:last-child {
   margin-bottom: 0;
+}
+
+
+
+// adaptation for labels
+$pm-label-shorter-width: 10em !default;
+.pm-modal--shorterLabels .pm-label {
+  width: var(--label-shorter-width, $pm-label-shorter-width);
 }
 
 // single button on right
