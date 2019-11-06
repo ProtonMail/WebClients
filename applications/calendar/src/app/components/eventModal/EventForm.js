@@ -1,62 +1,28 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Row, Label, Input, Select, Checkbox, LinkButton, TextArea, DateInput, TimeInput } from 'react-components';
+import { Row, Label, Input, Select, Checkbox, LinkButton, TextArea } from 'react-components';
 
 import Notifications from './Notifications';
 import TimezoneSelector from '../TimezoneSelector';
 import FrequencyInput from './FrequencyInput';
 import CalendarIcon from '../calendar/CalendarIcon';
+import TimeEventRow from './TimeEventRow';
 
 const EventForm = ({ displayWeekNumbers, weekStartsOn, calendars = [], model, errors, setModel }) => {
     const calendarOptions = calendars.map(({ ID, Name }) => ({ text: Name, value: ID }));
     return (
         <>
+            <TimeEventRow
+                model={model}
+                setModel={setModel}
+                errors={errors}
+                displayWeekNumbers={displayWeekNumbers}
+                weekStartsOn={weekStartsOn}
+            />
             <Row>
-                <Label htmlFor="startDate">{c('Label').t`From`}</Label>
+                <Label> </Label>
                 <div className="flex-item-fluid">
-                    <div className="flex flex-nowrap">
-                        <DateInput
-                            id="startDate"
-                            className="mr0-5"
-                            required
-                            value={model.start.date}
-                            onChange={(newDate) => setModel({ ...model, start: { ...model.start, date: newDate } })}
-                            aria-invalid={!!errors.start}
-                            displayWeekNumbers={displayWeekNumbers}
-                            weekStartsOn={weekStartsOn}
-                        />
-                        {!model.isAllDay ? (
-                            <TimeInput
-                                value={model.start.time}
-                                onChange={(newTime) => setModel({ ...model, start: { ...model.start, time: newTime } })}
-                                aria-invalid={!!errors.start}
-                            />
-                        ) : null}
-                    </div>
-                </div>
-            </Row>
-            <Row>
-                <Label htmlFor="endDate">{c('Label').t`To`}</Label>
-                <div className="flex-item-fluid">
-                    <div className="flex flex-nowrap mb0-5">
-                        <DateInput
-                            id="endDate"
-                            className="mr0-5"
-                            required
-                            value={model.end.date}
-                            onChange={(newDate) => setModel({ ...model, end: { ...model.end, date: newDate } })}
-                            aria-invalid={!!errors.end}
-                            displayWeekNumbers={displayWeekNumbers}
-                        />
-                        {!model.isAllDay ? (
-                            <TimeInput
-                                value={model.end.time}
-                                onChange={(newTime) => setModel({ ...model, end: { ...model.end, time: newTime } })}
-                                aria-invalid={!!errors.end}
-                            />
-                        ) : null}
-                    </div>
                     <div className="flex flex-spacebetween flex-nowrap flex-items-center">
                         <label htmlFor="event-allday-checkbox" className="pt0-5">
                             <Checkbox
