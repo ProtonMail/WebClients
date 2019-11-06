@@ -197,7 +197,7 @@ const CalendarContainerView = ({
                                     }
                                     timezoneSelector={
                                         <TimezoneSelector
-                                            className="toolbar-select nomobile"
+                                            className="toolbar-select nomobile notablet"
                                             timezone={tzid}
                                             onChange={setTzid}
                                         />

@@ -5,9 +5,9 @@ const CalendarToolbar = ({ dateCursorButtons, timezoneSelector, viewSelector }) 
     return (
         <div className="toolbar flex flex-nowrap noprint no-scroll">
             {dateCursorButtons}
-            <span className="mlauto toolbar-separator nomobile" />
+            <span className="mlauto toolbar-separator" />
             {timezoneSelector}
-            <span className="toolbar-separator" />
+            <span className="toolbar-separator notablet nomobile" />
             {viewSelector}
         </div>
     );
