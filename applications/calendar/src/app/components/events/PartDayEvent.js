@@ -15,7 +15,14 @@ const getBackground = (id, isAllDay, isSelected) => {
     return '';
 };
 
-const PartDayEvent = ({ style, formatTime, event: { start, end, data, id, isAllDay }, isSelected, eventRef }) => {
+const PartDayEvent = ({
+    style,
+    formatTime,
+    event: { start, end, data, id, isAllDay },
+    isSelected,
+    isBeforeNow,
+    eventRef
+}) => {
     const [value, loading, error] = useReadCalendarEvent(data);
     const model = useReadEvent(value);
     const calendarColor = (data && data.Calendar && data.Calendar.Color) || undefined;

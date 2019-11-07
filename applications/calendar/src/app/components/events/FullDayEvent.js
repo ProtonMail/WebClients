@@ -12,6 +12,7 @@ const FullDayEvent = ({
     event: { start, end, data, id, isAllDay },
     event,
     isSelected,
+    isBeforeNow,
     eventRef,
     onClick
 }) => {

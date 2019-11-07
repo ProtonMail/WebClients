@@ -201,6 +201,7 @@ const TimeGrid = ({
 
                                 const event = getEvent(idx, eventsInRow, dayEvents);
                                 const isSelected = event.id === selectedEventID;
+                                const isBeforeNow = now > event.end && !isDateYYMMDDEqual(now, event.end);
                                 const eventRef = isSelected && isFirstSelection ? selectedEventRef : undefined;
                                 if (eventRef) {
                                     isFirstSelection = false;
@@ -211,7 +212,8 @@ const TimeGrid = ({
                                     key: event.id,
                                     eventRef,
                                     formatTime,
-                                    isSelected
+                                    isSelected,
+                                    isBeforeNow
                                 });
                             })}
                         </div>
@@ -255,6 +257,7 @@ const TimeGrid = ({
                                         const event = timeEvents[idx];
                                         const style = eventsLaidOut[key][i];
                                         const isSelected = event.id === selectedEventID;
+                                        const isBeforeNow = now > event.end;
                                         const eventRef = isSelected && isFirstSelection ? selectedEventRef : undefined;
                                         if (eventRef) {
                                             isFirstSelection = false;
@@ -265,7 +268,8 @@ const TimeGrid = ({
                                             key: event.id,
                                             formatTime,
                                             eventRef,
-                                            isSelected
+                                            isSelected,
+                                            isBeforeNow
                                         });
                                     })}
                                 {isDateYYMMDDEqual(day, now) ? (

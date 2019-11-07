@@ -211,6 +211,7 @@ const DayGrid = ({
 
                                         const event = getEvent(idx, eventsInRow, sortedEvents);
                                         const isSelected = event.id === selectedEventID;
+                                        const isBeforeNow = now > event.end && !isDateYYMMDDEqual(now, event.end);
                                         const eventRef = isSelected && isFirstSelection ? selectedEventRef : undefined;
                                         if (eventRef) {
                                             isFirstSelection = false;
@@ -219,6 +220,7 @@ const DayGrid = ({
                                             event,
                                             style,
                                             key: event.id,
+                                            isBeforeNow,
                                             eventRef,
                                             formatTime,
                                             isSelected
