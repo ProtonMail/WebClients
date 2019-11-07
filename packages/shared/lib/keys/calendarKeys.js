@@ -93,7 +93,7 @@ export const decryptPassphrase = async ({ armoredPassphrase, armoredSignature, p
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-        const error = new Error(c('Error').t`'Signature verification failed`);
+        const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;
     }
