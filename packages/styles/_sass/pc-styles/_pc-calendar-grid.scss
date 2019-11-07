@@ -19,12 +19,6 @@ $gridcell-right-margin: 1.5em;
     }
 }
 
-
-.calendar-time-fullday {
-    border-bottom: $calendar-grid-border;
-}
-
-
 .calendar-grid-dayLine,
 .calendar-grid-hourLine,
 .calendar-grid-gridcell {
@@ -75,10 +69,6 @@ $gridcell-right-margin: 1.5em;
 
 .calendar-fullday-row {
     border-bottom: $calendar-grid-border;
-}
-
-.calendar-aside-weekNumber {
-    border-top: $calendar-grid-border;
 }
 
 .calendar-grid-timeBlock {
