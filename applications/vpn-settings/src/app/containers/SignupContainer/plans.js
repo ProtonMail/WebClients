@@ -123,7 +123,7 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
         },
         [PLAN.BUNDLE_PLUS]: {
             image: <img width={100} src={visionaryPlanSvg} alt={`${PLAN_NAMES[PLAN.VISIONARY]} plan image`} />,
-            description: c('Plan Description').t`Bundle bundle bundle`,
+            description: c('Plan Description').t`Bundle plan`,
             additionalFeatures: c('Plan feature').t`ProtonMail Plus plan included`,
             features: [
                 c('Plan Feature').ngettext(
@@ -168,7 +168,7 @@ export const getPlan = (planName, cycle, plans = [], countries = []) => {
         ...getPlanFeatures(planName, plan ? plan.MaxVPN || 0 : 1, countries),
         planName,
         title: PLAN_NAMES[planName],
-        id: plan && plan.ID,
+        ID: plan && plan.ID,
         disabled: !plan && planName !== PLAN.FREE,
         price,
         couponDiscount:

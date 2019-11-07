@@ -27,7 +27,8 @@ import {
 import { getPlan, PLAN, VPN_PLANS, PLAN_BUNDLES } from './plans';
 import { c } from 'ttag';
 
-const toPlanMap = (plans) => plans.reduce((planMap, plan) => ({ ...planMap, [plan.ID || plan.id]: 1 }), {});
+const firstIn = (array, values) => values.find((value) => value && array.includes(value));
+const toPlanMap = (plans) => plans.reduce((planMap, plan) => ({ ...planMap, [plan.ID]: 1 }), {});
 
 const getSignupAvailability = (isDirectSignupEnabled, allowedMethods = []) => {
     const email = allowedMethods.includes(TOKEN_TYPES.EMAIL);
@@ -69,15 +70,20 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
     const [appliedInvite, setAppliedInvite] = useState();
 
     const signupAvailability = result && getSignupAvailability(result.Direct, result.VerifyMethods);
-    const defaultCurrency = plans && plans[0] ? plans[0].Currency : DEFAULT_CURRENCY;
-    const defaultCycle = coupon ? coupon.cycle : CYCLE.YEARLY;
-    const defaultPlan = coupon ? coupon.plan : PLAN.PLUS;
     const isLoading = !plansWithCoupons || !signupAvailability || countriesLoading;
 
+    const initialCycle = firstIn(Object.values(CYCLE), [initialModel.cycle, coupon && coupon.cycle, CYCLE.YEARLY]);
+    const initialPlan = firstIn(Object.values(PLAN), [initialModel.planName, coupon && coupon.plan, PLAN.PLUS]);
+    const initialCurrency = firstIn(CURRENCIES, [
+        initialModel.currency,
+        plans && plans[0] && plans[0].Currency,
+        DEFAULT_CURRENCY
+    ]);
+
     const [model, setModel] = useState({
-        planName: Object.values(PLAN).includes(initialModel.planName) ? initialModel.planName : defaultPlan,
-        cycle: Object.values(CYCLE).includes(initialModel.cycle) ? initialModel.cycle : defaultCycle,
-        currency: CURRENCIES.includes(initialModel.currency) ? initialModel.currency : defaultCurrency,
+        planName: initialPlan,
+        cycle: initialCycle,
+        currency: initialCurrency,
         email: initialModel.email || '',
         username: initialModel.username || '',
         password: initialModel.password || ''
@@ -127,21 +133,16 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
         const getPlanWithCoupon = (plan) => getPlansWithCoupon([plan]);
 
         const applyCoupon = async () => {
+            const bundle = PLAN_BUNDLES[model.planName];
             const plansInfo = plans.filter(
                 ({ Name, Type }) => Type === PLAN_TYPES.PLAN && availablePlans.includes(Name)
             );
 
-            const bundle = PLAN_BUNDLES[model.planName];
-            const bundlePlan =
-                bundle &&
-                (await getPlansWithCoupon(
-                    plans.filter(({ Name, Type }) => Type === PLAN_TYPES.PLAN && bundle.includes(Name)),
-                    model.planName
-                ));
+            const bundlePlans =
+                bundle && plans.filter(({ Name, Type }) => Type === PLAN_TYPES.PLAN && bundle.includes(Name));
+            const bundlePlan = bundle && (await getPlansWithCoupon(bundlePlans, model.planName));
 
-            const plansWithCoupons = await Promise.all(
-                bundlePlan ? [...plansInfo, bundlePlan] : plansInfo.map(getPlanWithCoupon)
-            );
+            const plansWithCoupons = await Promise.all(bundlePlan ? [bundlePlan] : plansInfo.map(getPlanWithCoupon));
             setAppliedCoupon(coupon);
             setPlansWithCoupons(plansWithCoupons);
         };

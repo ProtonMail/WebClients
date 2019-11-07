@@ -66,7 +66,11 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
     const [upsellDone, setUpsellDone] = useState(false);
     const [creatingAccount, withCreateLoading] = useLoading(false);
 
-    const goToStep = (step) => history.push(`/signup/${step}`);
+    const goToStep = (step) =>
+        history.push(`/signup/${step}`, {
+            coupon,
+            invite
+        });
 
     const handleLogin = (...args) => {
         if (redirectToMobile) {
