@@ -100,3 +100,26 @@ $gridcell-right-margin: 1.5em;
     }
 }
 
+
+
+
+.calendar-daygrid-weeknumber {
+    border-bottom: $calendar-grid-border;
+}
+.calendar-daygrid-weeknumber-width {
+    width: 2rem;
+}
+.calendar-daygrid-row {
+    border-bottom: $calendar-grid-border;
+}
+.calendar-daygrid-columns {
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
+    right: 0;
+}
+
+.calendar-daygrid-day,
+.calendar-daygrid-column {
+    border-right: $calendar-grid-border;
+}
