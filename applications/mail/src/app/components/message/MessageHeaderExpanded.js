@@ -11,6 +11,7 @@ import ItemLocation from '../list/ItemLocation';
 import MoveDropdown from '../dropdown/MoveDropdown';
 import LabelDropdown from '../dropdown/LabelDropdown';
 import MessageHeaderExtra from './MessageHeaderExtra';
+import MessageLock from './MessageLock';
 
 const MessageHeaderExpanded = ({
     labels,
@@ -35,6 +36,7 @@ const MessageHeaderExpanded = ({
                             {message.Sender.Name}
                         </span>
                         <i title={message.Sender.Address}>&lt;{message.Sender.Address}&gt;</i>
+                        <MessageLock message={message} messageMetadata={messageMetadata} />
                     </div>
                     <div>
                         <ItemLabels max={4} element={message} labels={labels} type={ELEMENT_TYPES.MESSAGE} />

@@ -5,8 +5,9 @@ import { c } from 'ttag';
 import ItemStar from '../list/ItemStar';
 import ItemDate from '../list/ItemDate';
 import { ELEMENT_TYPES } from '../../constants';
+import MessageLock from './MessageLock';
 
-const MessageHeaderCollapsed = ({ message, onExpand }) => {
+const MessageHeaderCollapsed = ({ message, messageMetadata, onExpand }) => {
     const handleClick = (event) => {
         if (event.target.classList.contains('item-star') || event.target.closest('.item-star')) {
             event.stopPropagation();
@@ -27,6 +28,7 @@ const MessageHeaderCollapsed = ({ message, onExpand }) => {
                     {message.Sender.Name}
                 </span>
                 <i title={message.Sender.Address}>&lt;{message.Sender.Address}&gt;</i>
+                <MessageLock message={message} messageMetadata={messageMetadata} />
             </div>
             <div>
                 <ItemDate className="mr1" element={message} type={ELEMENT_TYPES.MESSAGE} />
@@ -38,6 +40,7 @@ const MessageHeaderCollapsed = ({ message, onExpand }) => {
 
 MessageHeaderCollapsed.propTypes = {
     message: PropTypes.object.isRequired,
+    messageMetadata: PropTypes.object.isRequired,
     onExpand: PropTypes.func
 };
 

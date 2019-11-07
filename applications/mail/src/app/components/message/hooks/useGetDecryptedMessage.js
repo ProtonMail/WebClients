@@ -3,6 +3,7 @@ import { useGetPublicKeys, useGetAddressKeys } from 'react-components';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { decryptMessageLegacy } from 'pmcrypto';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { VERIFICATION_STATUS } from '../constants';
 
 const isMime = ({ MIMEType }) => MIMEType === MIME_TYPES.MIME;
 
@@ -26,14 +27,18 @@ export const useGetDecryptedMessage = () => {
         if (isMime(message)) {
             // TODO: decrypt mime message
         } else {
-            const decrypted = await decryptMessageLegacy({
+            const { data, verified: pmcryptoVerified = VERIFICATION_STATUS.NOT_SIGNED } = await decryptMessageLegacy({
                 message: message.Body,
                 messageDate: new Date(message.Time * 1000), // getDate(this),
                 privateKeys,
                 publicKeys
             });
 
-            return decrypted.data;
+            const signedInvalid = VERIFICATION_STATUS.SIGNED_AND_INVALID;
+            const signedPubkey = VERIFICATION_STATUS.SIGNED_NO_PUB_KEY;
+            const verified = !publicKeys.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
+
+            return { raw: data, verified };
         }
 
         return 'hi';

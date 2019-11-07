@@ -5,7 +5,7 @@ import { useToggle, Loader } from 'react-components';
 import { useGetDecryptedMessage } from './hooks/useGetDecryptedMessage';
 import { useFormatContent } from './hooks/useFormatContent';
 import { useLoadMessage } from './hooks/useLoadMessage';
-// import { usePrepareMessage } from './hooks/usePrepareMessage';
+
 import MessageBody from './MessageBody';
 import MessageHeaderCollapsed from './MessageHeaderCollapsed';
 import MessageHeaderExpanded from './MessageHeaderExpanded';
@@ -25,10 +25,12 @@ const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
     // TODO: Handle cache
     const prepareMessage = async () => {
         const message = await loadMessage();
-        const raw = await getDecryptedMessage(message);
-        const metadata = await initialize({ raw }, message);
+        const decrypted = await getDecryptedMessage(message);
+        const metadata = await initialize(decrypted, message);
         setMessageMetadata(metadata);
         setLoaded(true);
+
+        console.log('Prepared message', metadata);
     };
 
     const handleLoadImages = async () => {
@@ -54,7 +56,7 @@ const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
             {loaded ? <MessageBody content={messageMetadata.content} /> : <Loader />}
         </MessageHeaderExpanded>
     ) : (
-        <MessageHeaderCollapsed message={message} onExpand={handleExpand} />
+        <MessageHeaderCollapsed message={message} messageMetadata={messageMetadata} onExpand={handleExpand} />
     );
 };
 
