@@ -11,7 +11,7 @@ function toogleModeElementsDropdown(
     mailSettingsModel,
     markedScroll
 ) {
-    const { dispatcher } = dispatchers(['settings']);
+    const { dispatcher } = dispatchers(['settings', 'dropdownApp']);
     const getLayout = (mode) => {
         const { ViewLayout } = mailSettingsModel.get();
 
@@ -74,6 +74,15 @@ function toogleModeElementsDropdown(
                     const newLayout = await changeTo(target.getAttribute('data-action'), scope.layout);
                     scope.$applyAsync(() => {
                         scope.layout = setLayout(newLayout);
+
+                        const dropdownId = el[0]
+                            .querySelector('.toogleModeElementsDropdown-dropdown')
+                            .getAttribute('data-dropdown-id');
+
+                        dispatcher.dropdownApp('action', {
+                            type: 'close',
+                            id: dropdownId
+                        });
                     });
                 }
             };

@@ -101,6 +101,7 @@ function advancedFilterElement(
 
     return {
         replace: true,
+        scope: {},
         templateUrl: require('../../../templates/elements/advancedFilterElement.tpl.html'),
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
