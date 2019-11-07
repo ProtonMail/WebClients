@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
-"PO-Revision-Date: 2019-07-19 09:32\n"
+"PO-Revision-Date: 2019-11-07 14:52\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -74,11 +74,6 @@ msgid_plural "{{number}} messages moved to {{folder}}"
 msgstr[0] "1 mensagem movida para {{folder}}"
 msgstr[1] "{{number}} mensagens movidas para {{folder}}"
 
-#: ./src/templates/user/signupPayForm.tpl.html:90
-msgctxt "Action"
-msgid "<i class=\"fa fa-lock\"></i> Submit"
-msgstr "<i class=\"fa fa-lock\"></i> Enviar"
-
 #: ./src/templates/bridge/bridgeFreePanel.tpl.html:2
 msgctxt "Action"
 msgid "Activate"
@@ -125,6 +120,11 @@ msgctxt "Action"
 msgid "Add Filter"
 msgstr "Adicionar filtro"
 
+#: ./src/templates/payment/paypalView.tpl.html:33
+msgctxt "Action"
+msgid "Add PayPal payment method"
+msgstr "Adicionar Paypal como método de pagamento"
+
 #: ./src/templates/views/payments.tpl.html:15
 msgctxt "Action"
 msgid "Add Payment Method"
@@ -155,7 +155,7 @@ msgctxt "Action"
 msgid "Add auto-reply"
 msgstr "Adicionar resposta automática"
 
-#: ./src/templates/filter/modal.tpl.html:126
+#: ./src/templates/filter/modal.tpl.html:125
 msgctxt "Action"
 msgid "Add condition"
 msgstr "Adicionar condição"
@@ -193,7 +193,7 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr "Adicionar filtros"
 
-#: ./src/templates/filter/modal.tpl.html:202
+#: ./src/templates/filter/modal.tpl.html:201
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
@@ -204,7 +204,7 @@ msgctxt "Action"
 msgid "Add key"
 msgstr "Adicionar chave"
 
-#: ./src/templates/filter/modal.tpl.html:148
+#: ./src/templates/filter/modal.tpl.html:147
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -282,7 +282,7 @@ msgstr "Alinhar à direita"
 #: ./src/app/elements/directives/elementsSelector.js:21
 msgctxt "Action"
 msgid "All Read"
-msgstr "Todos lidos"
+msgstr "Todas lidas"
 
 #: ./src/app/elements/directives/elementsSelector.js:31
 msgctxt "Action"
@@ -292,7 +292,7 @@ msgstr "Todos com estrela"
 #: ./src/app/elements/directives/elementsSelector.js:16
 msgctxt "Action"
 msgid "All Unread"
-msgstr "Todos não lidos"
+msgstr "Todas não lidas"
 
 #: ./src/app/elements/directives/elementsSelector.js:26
 msgctxt "Action"
@@ -387,7 +387,7 @@ msgstr "CC CCO"
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:35
-#: ./src/templates/filter/modal.tpl.html:248
+#: ./src/templates/filter/modal.tpl.html:247
 #: ./src/templates/modals/activateOrganization.tpl.html:25
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -409,6 +409,7 @@ msgstr "CC CCO"
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:60
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:101
@@ -510,6 +511,12 @@ msgctxt "Action"
 msgid "Change verification number"
 msgstr "Alterar número de verificação"
 
+#: ./src/templates/payment/paypalView.tpl.html:23
+#: ./src/templates/payment/paypalView.tpl.html:40
+msgctxt "Action"
+msgid "Check out with PayPal"
+msgstr "Finalizar compra com PayPal"
+
 #: ./src/templates/contact/contactPhotoRow.tpl.html:27
 #: ./src/templates/directives/core/bugModalView.tpl.html:113
 msgctxt "Action"
@@ -520,11 +527,6 @@ msgstr "Limpar"
 msgctxt "Action"
 msgid "Clear all formatting"
 msgstr "Limpar toda formatação"
-
-#: ./src/templates/payment/paypalView.tpl.html:6
-msgctxt "Action"
-msgid "Click here to try again"
-msgstr "Clique aqui para tentar novamente"
 
 #: ./src/templates/address/selectAddressModal.tpl.html:3
 #: ./src/templates/address/setupAddressModal.tpl.html:3
@@ -601,7 +603,8 @@ msgstr "Clique aqui para tentar novamente"
 #: ./src/templates/modals/pay.tpl.html:107
 #: ./src/templates/modals/pay.tpl.html:16
 #: ./src/templates/modals/payment/modal.tpl.html:19
-#: ./src/templates/modals/payment/modal.tpl.html:63
+#: ./src/templates/modals/payment/modal.tpl.html:62
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:3
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
 #: ./src/templates/modals/releaseNotes.tpl.html:28
@@ -625,8 +628,8 @@ msgstr "Clique aqui para tentar novamente"
 #: ./src/templates/payment/giftCodeModal.tpl.html:3
 #: ./src/templates/utils/discardModal.tpl.html:3
 #: ./src/templates/utils/linkWarningModal.tpl.html:3
-#: ./src/templates/utils/printModal.tpl.html:20
-#: ./src/templates/utils/printModal.tpl.html:39
+#: ./src/templates/utils/printModal.tpl.html:19
+#: ./src/templates/utils/printModal.tpl.html:38
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:4
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:4
 msgctxt "Action"
@@ -638,7 +641,7 @@ msgctxt "Action"
 msgid "Common login problems"
 msgstr "Problemas comuns para iniciar sessão"
 
-#: ./src/templates/user/humanVerification.tpl.html:92
+#: ./src/templates/user/humanVerification.tpl.html:93
 msgctxt "Action"
 msgid "Complete setup"
 msgstr "Configuração completa"
@@ -672,6 +675,8 @@ msgctxt "Action"
 msgid "Contacts"
 msgstr "Contatos"
 
+#: ./src/templates/modals/card.tpl.html:17
+#: ./src/templates/modals/payment/modal.tpl.html:72
 #: ./src/templates/utils/linkWarningModal.tpl.html:45
 msgctxt "Action"
 msgid "Continue"
@@ -691,7 +696,7 @@ msgstr "Criar conta"
 #: ./src/templates/contact/manageContactGroupModal.tpl.html:100
 msgctxt "Action"
 msgid "Create a new contact group"
-msgstr "Crie um novo grupo de contato"
+msgstr "Crie um novo grupo de contatos"
 
 #: ./src/templates/labels/dropdownFolders.tpl.html:35
 msgctxt "Action"
@@ -755,7 +760,7 @@ msgstr "Descriptografar"
 #: ./src/templates/ui/toolbarMobile.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:124
 #: ./src/templates/views/labels.tpl.html:63
-#: ./src/templates/views/payments.tpl.html:42
+#: ./src/templates/views/payments.tpl.html:45
 msgctxt "Action"
 msgid "Delete"
 msgstr "Excluir"
@@ -779,12 +784,12 @@ msgstr "Desmarcar todos"
 #: ./src/templates/security/logManager.tpl.html:25
 msgctxt "Action"
 msgid "Disable"
-msgstr "Desabilitar"
+msgstr "Desativar"
 
 #: ./src/templates/views/security.tpl.html:13
 msgctxt "Action"
 msgid "Disable Two-Factor Authentication"
-msgstr "Desabilitar a autenticação de dois fatores"
+msgstr "Desativar autenticação de dois fatores"
 
 #. form option
 #. notification settings option
@@ -795,7 +800,7 @@ msgstr "Desabilitar a autenticação de dois fatores"
 #: ./src/templates/views/account.tpl.html:88
 msgctxt "Action"
 msgid "Disabled"
-msgstr "Desabilitado"
+msgstr "Desativado"
 
 #: ./src/templates/directives/composer/composer.tpl.html:116
 msgctxt "Action"
@@ -906,27 +911,27 @@ msgstr "Esvaziar lixeira"
 #: ./src/app/address/directives/addressBtnActions.js:7
 msgctxt "Action"
 msgid "Enable"
-msgstr "Habilitar"
+msgstr "Ativar"
 
 #: ./src/templates/views/security.tpl.html:14
 msgctxt "Action"
 msgid "Enable Two-Factor Authentication"
-msgstr "Habilitar autenticação de dois fatores"
+msgstr "Ativar autenticação de dois fatores"
 
 #: ./src/templates/address/addressKeysView.tpl.html:98
 msgctxt "Action"
 msgid "Enable encryption"
-msgstr "Habilitar criptografia"
+msgstr "Ativar criptografia"
 
 #: ./src/app/members/directives/memberEditBtn.js:12
 msgctxt "Action"
 msgid "Enable multi-user support"
-msgstr "Habilitar suporte múltiplos usuários"
+msgstr "Ativar suporte múltiplos usuários"
 
 #: ./src/templates/address/addressKeysView.tpl.html:119
 msgctxt "Action"
 msgid "Enable signature verification"
-msgstr "Habilitar verificação de assinatura"
+msgstr "Ativar verificação de assinatura"
 
 #. form option
 #. notification settings option
@@ -936,7 +941,7 @@ msgstr "Habilitar verificação de assinatura"
 #: ./src/templates/views/account.tpl.html:82
 msgctxt "Action"
 msgid "Enabled"
-msgstr "Habilitado"
+msgstr "Ativado"
 
 #: ./src/templates/payment/featuresList.tpl.html:46
 msgctxt "Action"
@@ -1187,7 +1192,7 @@ msgid "Make Private"
 msgstr "Tornar privado"
 
 #: ./src/app/address/directives/addressBtnActions.js:4
-#: ./src/templates/views/payments.tpl.html:38
+#: ./src/templates/views/payments.tpl.html:41
 msgctxt "Action"
 msgid "Make default"
 msgstr "Tornar padrão"
@@ -1212,13 +1217,13 @@ msgstr "Manualmente"
 #: ./src/templates/ui/toolbarMobile.tpl.html:22
 msgctxt "Action"
 msgid "Mark as read"
-msgstr "Marcar como lido"
+msgstr "Marcar como lida"
 
 #: ./src/templates/views/appearance.tpl.html:81
 #: ./src/templates/views/appearance.tpl.html:82
 msgctxt "Action"
 msgid "Mark as read - Mark as unread"
-msgstr "Marcar como lido - marcar como não lido"
+msgstr "Marcar como lida - marcar como não lida"
 
 #: ./src/templates/ui/toolbarMobile.tpl.html:13
 msgctxt "Action"
@@ -1236,13 +1241,13 @@ msgstr "Marcar como spam"
 #: ./src/templates/ui/toolbarMobile.tpl.html:18
 msgctxt "Action"
 msgid "Mark as unread"
-msgstr "Marcar como não lido"
+msgstr "Marcar como não lida"
 
 #: ./src/templates/views/appearance.tpl.html:89
 #: ./src/templates/views/appearance.tpl.html:90
 msgctxt "Action"
 msgid "Mark as unread - Mark as read"
-msgstr "Marcar como não lido - marcar como lido"
+msgstr "Marcar como não lida - marcar como lida"
 
 #: ./src/templates/address/addressKeysView.tpl.html:182
 msgctxt "Action"
@@ -1422,7 +1427,7 @@ msgid "Previous"
 msgstr "Anterior"
 
 #: ./src/templates/message/message.tpl.html:246
-#: ./src/templates/utils/printModal.tpl.html:45
+#: ./src/templates/utils/printModal.tpl.html:44
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -1491,6 +1496,7 @@ msgstr "Recarregar ProtonMail"
 #: ./src/templates/contact/contactGroupModal.tpl.html:91
 #: ./src/templates/contact/contactSelectorForm.tpl.html:57
 #: ./src/templates/contact/contactSelectorForm.tpl.html:63
+#: ./src/templates/filter/modal.tpl.html:113
 msgctxt "Action"
 msgid "Remove"
 msgstr "Remover"
@@ -1614,7 +1620,7 @@ msgstr "Revogar todas as sessões"
 #: ./src/templates/directives/composer/composer.tpl.html:119
 #: ./src/templates/directives/composer/composer.tpl.html:126
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:254
+#: ./src/templates/filter/modal.tpl.html:253
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
@@ -1672,7 +1678,7 @@ msgctxt "Action"
 msgid "Send"
 msgstr "Enviar"
 
-#: ./src/app/composer/services/validateMessage.js:32
+#: ./src/app/composer/services/validateMessage.js:25
 #: ./src/templates/modals/expirationModal.tpl.html:55
 msgctxt "Action"
 msgid "Send anyway"
@@ -1780,15 +1786,15 @@ msgstr "Organizar em ordem alfabética"
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:29
 #: ./src/templates/modals/activateOrganization.tpl.html:28
 #: ./src/templates/modals/bug.tpl.html:19
-#: ./src/templates/modals/card.tpl.html:17
 #: ./src/templates/modals/customizeInvoice.tpl.html:57
 #: ./src/templates/modals/decryptImportKey.tpl.html:20
 #: ./src/templates/modals/humanVerification.tpl.html:22
 #: ./src/templates/modals/organizationRecovery.tpl.html:15
-#: ./src/templates/modals/payment/modal.tpl.html:69
+#: ./src/templates/modals/payment/modal.tpl.html:71
 #: ./src/templates/modals/reactivate.tpl.html:25
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:23
 #: ./src/templates/modals/switchPasswordMode.tpl.html:74
+#: ./src/templates/user/signupPayForm.tpl.html:90
 #: ./src/templates/user/signupUserForm.tpl.html:53
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:19
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:17
@@ -1848,6 +1854,7 @@ msgid "Trust Public Keys"
 msgstr "Confiar em chaves públicas"
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:6
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:51
 msgctxt "Action"
 msgid "Try again"
 msgstr "Tentar novamente"
@@ -1882,7 +1889,7 @@ msgctxt "Action"
 msgid "Unsubscribe"
 msgstr "Cancelar inscrição"
 
-#: ./src/templates/views/payments.tpl.html:40
+#: ./src/templates/views/payments.tpl.html:43
 msgctxt "Action"
 msgid "Update"
 msgstr "Atualizar"
@@ -1942,6 +1949,11 @@ msgctxt "Action"
 msgid "Uploading"
 msgstr "Enviando"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:54
+msgctxt "Action"
+msgid "Use a different payment method"
+msgstr "Usar um método de pagamento diferente"
+
 #: ./src/templates/payment/giftCodeBtn.tpl.html:3
 msgctxt "Action"
 msgid "Use gift code"
@@ -1953,6 +1965,7 @@ msgid "User"
 msgstr "Usuário"
 
 #: ./src/templates/modals/domain/verification.tpl.html:38
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:61
 msgctxt "Action"
 msgid "Verify"
 msgstr "Verificar"
@@ -1998,15 +2011,10 @@ msgctxt "Action"
 msgid "click here"
 msgstr "clique aqui"
 
-#: ./src/templates/payment/donation.tpl.html:129
+#: ./src/templates/payment/donation.tpl.html:130
 msgctxt "Action"
 msgid "complete setup"
 msgstr "configuração completa"
-
-#: ./src/templates/filter/modal.tpl.html:113
-msgctxt "Action"
-msgid "title"
-msgstr "título"
 
 #: ./src/templates/modals/donate.tpl.html:59
 msgctxt "Action"
@@ -2087,7 +2095,7 @@ msgstr "Relatar problema"
 #: ./src/templates/contact/contactGroupsDropdown.tpl.html:2
 msgctxt "Action toolbar"
 msgid "Add to contact group"
-msgstr "Adicionar ao grupo de contato"
+msgstr "Adicionar ao grupo de contatos"
 
 #: ./src/templates/ui/toolbarDesktop.tpl.html:41
 #: ./src/templates/ui/toolbarDesktop.tpl.html:52
@@ -2126,7 +2134,7 @@ msgstr "Padrão"
 #: ./src/templates/views/members.tpl.html:267
 msgctxt "Address state badge"
 msgid "Disabled"
-msgstr "Desabilitado"
+msgstr "Desativado"
 
 #. address state badge
 #. form option
@@ -2135,7 +2143,7 @@ msgstr "Desabilitado"
 #: ./src/templates/views/members.tpl.html:266
 msgctxt "Address state badge"
 msgid "Enabled"
-msgstr "Habilitado"
+msgstr "Ativado"
 
 #. address state badge
 #: ./src/templates/views/domains.tpl.html:227
@@ -2826,12 +2834,12 @@ msgctxt "Credit card CVC"
 msgid "Security Code"
 msgstr "Código de segurança"
 
-#: ./src/app/payment/modals/cardModal.js:25
+#: ./src/app/payment/modals/cardModal.js:35
 msgctxt "Credit card modal"
 msgid "Add a credit card."
 msgstr "Adicionar cartão de crédito."
 
-#: ./src/app/payment/modals/cardModal.js:13
+#: ./src/app/payment/modals/cardModal.js:23
 msgctxt "Credit card modal"
 msgid "Update your credit card information."
 msgstr "Atualize as suas informações do cartão de crédito."
@@ -2900,7 +2908,7 @@ msgstr "avançado"
 #: ./src/templates/directives/contact/contactPgp.tpl.html:28
 msgctxt "Danger"
 msgid "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending."
-msgstr "A verificação de endereço com chaves confiáveis ​​está habilitada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
+msgstr "A verificação de endereço com chaves confiáveis ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
 
 #: ./src/templates/directives/contact/contactPgp.tpl.html:33
 msgctxt "Danger"
@@ -3329,7 +3337,7 @@ msgstr "Excluir tudo"
 #: ./src/app/settings/controllers/security.js:29
 msgctxt "Disable 2FA"
 msgid "Two-factor authentication disabled"
-msgstr "Autenticação de dois fatores desabilitada"
+msgstr "Autenticação de dois fatores desativada"
 
 #: ./src/templates/dashboard/vpnDiscountPanel.tpl.html:3
 msgctxt "Discount displayed in the dashboard"
@@ -3369,7 +3377,7 @@ msgstr "Seu suporte é essencial para manter o ProtonMail funcionando. Obrigado 
 #: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
-msgstr "Sua inscrição foi cancelada com sucesso"
+msgstr "Sua assinatura foi cancelada com sucesso"
 
 #: ./src/templates/attachments/btnDownloadAttachments.tpl.html:1
 msgctxt "Download attachments"
@@ -3414,7 +3422,7 @@ msgstr "Cabeçalhos criptografados"
 #: ./src/templates/labels/labelNameInput.tpl.html:21
 msgctxt "Error"
 msgid "A group with this name already exists."
-msgstr "Um grupo com este nome já existe."
+msgstr "Já existe um grupo com este nome."
 
 #: ./src/templates/modals/customizeInvoice.tpl.html:45
 msgctxt "Error"
@@ -3483,7 +3491,7 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr "Contato não possui endereço de e-mail"
 
-#: ./src/app/composer/services/validateMessage.js:69
+#: ./src/app/composer/services/validateMessage.js:55
 msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr "Entre em contato com o administrador da sua organização para resolver isso."
@@ -3529,11 +3537,6 @@ msgctxt "Error"
 msgid "Error activating organization keys"
 msgstr "Erro ao ativar chaves da organização"
 
-#: ./src/templates/payment/paypalView.tpl.html:6
-msgctxt "Error"
-msgid "Error connecting to PayPal."
-msgstr "Erro ao conectar ao PayPal."
-
 #: ./src/app/message/factories/messageModel.js:39
 #: ./src/app/outside/controllers/outside.js:34
 msgctxt "Error"
@@ -3565,7 +3568,7 @@ msgctxt "Error"
 msgid "Failed to encrypt attachment. Please try again."
 msgstr "Falha ao criptografar o anexo. Por favor, tente novamente."
 
-#: ./src/app/ui/directives/autocompleteEmails.js:31
+#: ./src/app/ui/directives/autocompleteEmails.js:24
 msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
 msgstr "Falha ao obter informações da chave para {{emails}}. Removendo da lista de destinatários. Por favor, tente novamente."
@@ -3618,7 +3621,7 @@ msgid "Image upload failed"
 msgstr "Falha no carregamento da imagem"
 
 #: ./src/app/address/factories/reactivateKeys.js:27
-#: ./src/app/authentication/directives/loginContainer.js:38
+#: ./src/app/authentication/directives/loginContainer.js:58
 #: ./src/app/keys/factories/decryptImportKeyModal.js:28
 msgctxt "Error"
 msgid "Incorrect decryption password"
@@ -3642,7 +3645,7 @@ msgstr "Endereço inválido"
 #: ./src/templates/formUtils/cardView.tpl.html:19
 msgctxt "Error"
 msgid "Invalid card number"
-msgstr "Número de cartão Inválido"
+msgstr "Número do cartão inválido"
 
 #: ./src/app/payment/factories/paymentModel.js:16
 msgctxt "Error"
@@ -3670,7 +3673,7 @@ msgctxt "Error"
 msgid "Invalid file type"
 msgstr "Tipo de arquivo inválido"
 
-#: ./src/app/contact/directives/contactSelectorForm.js:8
+#: ./src/app/contact/directives/contactSelectorForm.js:6
 msgctxt "Error"
 msgid "Invalid form"
 msgstr "Formulário inválido"
@@ -3758,9 +3761,9 @@ msgstr "Nome necessário."
 #: ./src/app/core/directives/signupIframe.js:45
 msgctxt "Error"
 msgid "No Internet connection found."
-msgstr "Nenhuma conexão com a Internet foi encontrada."
+msgstr "Nenhuma conexão com a internet foi encontrada."
 
-#: ./src/app/composer/services/validateMessage.js:63
+#: ./src/app/composer/services/validateMessage.js:49
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr "Sem endereços com chaves disponíveis para compor uma mensagem."
@@ -3837,7 +3840,7 @@ msgctxt "Error"
 msgid "Please enter a password for this email."
 msgstr "Por favor, digite uma senha para este e-mail."
 
-#: ./src/app/composer/services/validateMessage.js:47
+#: ./src/app/composer/services/validateMessage.js:40
 msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "Por favor, insira pelo menos um destinatário."
@@ -3852,7 +3855,7 @@ msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "Por favor, digite seu código de dois fatores"
 
-#: ./src/app/keys/services/decryptKeys.js:12
+#: ./src/app/keys/services/decryptKeys.js:10
 msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
 msgstr "A chave primária do endereço {{email}} não pode ser descriptografada. Você não poderá ler ou escrever qualquer e-mail deste endereço"
@@ -3892,7 +3895,7 @@ msgctxt "Error"
 msgid "Sign up failed"
 msgstr "Falha ao cadastrar-se"
 
-#: ./src/app/composer/services/validateMessage.js:41
+#: ./src/app/composer/services/validateMessage.js:34
 msgctxt "Error"
 msgid "Some email addresses are invalid"
 msgstr "Alguns endereços de e-mail estão inválidos"
@@ -3949,7 +3952,7 @@ msgctxt "Error"
 msgid "The email body is not a valid MIME message."
 msgstr "O corpo do e-mail não é uma mensagem MIME válida."
 
-#: ./src/app/composer/services/validateMessage.js:39
+#: ./src/app/composer/services/validateMessage.js:32
 msgctxt "Error"
 msgid "The following addresses are not valid: {{emails}}"
 msgstr "Os seguintes endereços não são válidos: {{emails}}"
@@ -3959,20 +3962,15 @@ msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr "A validade máxima é de 4 semanas."
 
-#: ./src/app/composer/services/validateMessage.js:42
+#: ./src/app/composer/services/validateMessage.js:35
 msgctxt "Error"
 msgid "The maximum length of the message body is 16,000,000 characters."
 msgstr "O comprimento máximo do corpo da mensagem é de 16.000.000 de caracteres."
 
-#: ./src/app/composer/services/validateMessage.js:48
+#: ./src/app/composer/services/validateMessage.js:41
 msgctxt "Error"
 msgid "The maximum length of the subject is {{size}}."
 msgstr "O tamanho máximo do assunto é {{size}}."
-
-#: ./src/app/ui/directives/autocompleteEmails.js:24
-msgctxt "Error"
-msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
-msgstr "O número máximo ({{total}}) de destinatários é {{limit}}."
 
 #: ./src/app/core/directives/signupIframe.js:46
 msgctxt "Error"
@@ -4021,7 +4019,7 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr "A verificação não obteve êxito. Por favor, tente novamente dentro de uma hora."
 
-#: ./src/app/composer/services/validateMessage.js:33
+#: ./src/app/composer/services/validateMessage.js:26
 msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr "Espere que o anexo ser enviado ou cancele o envio."
@@ -4046,7 +4044,7 @@ msgctxt "Error"
 msgid "You are using an outdated version of ProtonMail, please refresh the page."
 msgstr "Você está usando uma versão desatualizada do ProtonMail. Por favor, atualize a página."
 
-#: ./src/app/composer/services/validateMessage.js:62
+#: ./src/app/composer/services/validateMessage.js:48
 msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr "Você pode gerar suas chaves aqui"
@@ -4073,11 +4071,6 @@ msgctxt "Error"
 msgid "You have reached the max recipients (25) per message"
 msgstr "Você atingiu o número máximo de destinatários (25) por mensagem"
 
-#: ./src/app/contact/directives/contactSelectorForm.js:9
-msgctxt "Error"
-msgid "You have reached the max recipients ({{limit}}) per message"
-msgstr "Você atingiu o número máximo de destinatários ({{limit}}) por mensagem"
-
 #: ./src/app/address/factories/addressModel.js:32
 msgctxt "Error"
 msgid "You have used all addresses in your plan. Please upgrade your plan to add a new address"
@@ -4092,11 +4085,6 @@ msgstr "Você usou todos os endereços em seu plano. Por favor, faça o upgrade 
 msgctxt "Error"
 msgid "You have used all users in your plan. Please upgrade your plan to add a new user."
 msgstr "Você usou todos os usuários em seu plano. Por favor, faça o upgrade do seu plano para adicionar um novo usuário."
-
-#: ./src/app/composer/services/validateMessage.js:54
-msgctxt "Error"
-msgid "You have {{total}} recipients. The maximum number is {{limit}}."
-msgstr "Você tem {{total}} destinatários. O número máximo é {{limit}}."
 
 #: ./src/app/organization/modals/setupOrganizationModal.js:26
 msgctxt "Error"
@@ -4162,7 +4150,7 @@ msgstr "Falha na importação. Por favor, verifique o arquivo de importação ou
 #: ./src/templates/ui/dateTimePicker.tpl.html:22
 msgctxt "Error input"
 msgid "Please enter a valid date and time."
-msgstr "Por favor digite data e hora válidas."
+msgstr "Por favor, digite data e hora válidas."
 
 #: ./src/templates/ui/dateTimePicker.tpl.html:21
 msgctxt "Error input"
@@ -4299,22 +4287,22 @@ msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr "Texto ou padrão"
 
-#: ./src/templates/filter/modal.tpl.html:135
+#: ./src/templates/filter/modal.tpl.html:134
 msgctxt "Filter modal label"
 msgid "Apply labels"
 msgstr "Aplicar marcadores"
 
-#: ./src/templates/filter/modal.tpl.html:210
+#: ./src/templates/filter/modal.tpl.html:209
 msgctxt "Filter modal label"
 msgid "Mark as"
 msgstr "Marcar como"
 
-#: ./src/templates/filter/modal.tpl.html:156
+#: ./src/templates/filter/modal.tpl.html:155
 msgctxt "Filter modal label"
 msgid "Move to"
 msgstr "Mover para"
 
-#: ./src/templates/filter/modal.tpl.html:235
+#: ./src/templates/filter/modal.tpl.html:234
 msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr "Enviar resposta automática"
@@ -4493,12 +4481,12 @@ msgstr "Ir para lixeira"
 #: ./src/app/utils/services/hotkeys.js:11
 msgctxt "Hotkey description"
 msgid "Mark as read"
-msgstr "Marcar como lido"
+msgstr "Marcar como lida"
 
 #: ./src/app/utils/services/hotkeys.js:12
 msgctxt "Hotkey description"
 msgid "Mark as unread"
-msgstr "Marcar como não lido"
+msgstr "Marcar como não lida"
 
 #: ./src/app/utils/services/hotkeys.js:15
 msgctxt "Hotkey description"
@@ -4892,7 +4880,7 @@ msgstr "Endereço desativado"
 #: ./src/app/address/factories/addressModel.js:39
 msgctxt "Info"
 msgid "Address enabled"
-msgstr "Endereço habilitado"
+msgstr "Endereço ativado"
 
 #: ./src/app/address/factories/addressModel.js:41
 msgctxt "Info"
@@ -4984,7 +4972,7 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this label? Removing a label will not remove the messages with that label."
 msgstr "Você tem certeza de que deseja excluir esse marcador? A remoção de um marcador não removerá as mensagens com este marcador."
 
-#: ./src/app/settings/controllers/payments.js:87
+#: ./src/app/settings/controllers/payments.js:88
 msgctxt "Info"
 msgid "Are you sure you want to delete this payment method?"
 msgstr "Você tem certeza de que deseja excluir esse método de pagamento?"
@@ -4992,7 +4980,7 @@ msgstr "Você tem certeza de que deseja excluir esse método de pagamento?"
 #: ./src/app/address/factories/addressModel.js:45
 msgctxt "Info"
 msgid "Are you sure you want to disable this address?"
-msgstr "Você tem certeza de que deseja desabilitar este endereço?"
+msgstr "Você tem certeza de que deseja desativar este endereço?"
 
 #: ./src/app/settings/controllers/security.js:24
 msgctxt "Info"
@@ -5228,7 +5216,7 @@ msgid "Decryption of this content failed"
 msgstr "Falha ao descriptografar este conteúdo"
 
 #: ./src/templates/user/addressesSection.tpl.html:34
-#: ./src/templates/views/payments.tpl.html:35
+#: ./src/templates/views/payments.tpl.html:37
 msgctxt "Info"
 msgid "Default"
 msgstr "Padrão"
@@ -5251,12 +5239,12 @@ msgstr "Descrição"
 #: ./src/templates/views/account.tpl.html:113
 msgctxt "Info"
 msgid "Desktop notifications are currently <strong>disabled</strong>. To enable them, you need to go to your browser settings."
-msgstr "As notificações na área de trabalho estão atualmente <strong>desabilitadas</strong>. Para habilitar, você precisa ir nas configurações do seu navegador."
+msgstr "As notificações na área de trabalho está atualmente <strong>desativada</strong>. Para ativar, você precisa ir nas configurações do seu navegador."
 
 #: ./src/templates/views/account.tpl.html:103
 msgctxt "Info"
 msgid "Desktop notifications are currently <strong>enabled</strong>."
-msgstr "As notificações na área de trabalho estão atualmente <strong>habilitadas</strong>."
+msgstr "As notificações na área de trabalho está atualmente <strong>desativada</strong>."
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:65
 msgctxt "Info"
@@ -5352,6 +5340,11 @@ msgstr "Digite a senha da organização para restaurar os privilégios de admini
 msgctxt "Info"
 msgid "Every 2 years"
 msgstr "A cada 2 anos"
+
+#: ./src/templates/views/payments.tpl.html:38
+msgctxt "Info"
+msgid "Expired"
+msgstr "Expirado"
 
 #: ./src/templates/contact/contactActionHeader.tpl.html:47
 #: ./src/templates/contact/contactActionHeader.tpl.html:8
@@ -5460,7 +5453,7 @@ msgstr "Se você perder sua senha, não poderá ler seus e-mails."
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:11
 msgctxt "Info"
 msgid "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit 2FA code to log into your account. Each code can only be used once."
-msgstr "Se você perdeu seu dispositivo com autenticação de dois fatores ativado, estes códigos podem ser utilizados ao invés do código de 6 dígitos de dois fatores para entrar em sua conta. Cada código só pode ser utilizado uma única vez."
+msgstr "Se você perdeu o seu dispositivo com autenticação de dois fatores ativado, estes códigos podem ser utilizados ao invés do código de 6 dígitos de dois fatores para entrar em sua conta. Cada código só pode ser utilizado uma única vez."
 
 #: ./src/templates/modals/domain/spf.tpl.html:31
 msgctxt "Info"
@@ -5475,15 +5468,15 @@ msgstr "Se você deseja excluir esta conta para combiná-la com outra, NÃO a ex
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:10
 msgctxt "Info"
 msgid "Important: Please make sure you saved the recovery codes. Otherwise you can permanently lose access to your account if you lose your 2FA device."
-msgstr "Importante: Por favor, certifique-se de salvar os códigos de recuperação. Caso contrário, você perderá permanentemente o acesso a sua conta se perder seu dispositivo com autenticação de duas etapas."
+msgstr "Importante: Por favor, certifique-se de salvar os códigos de recuperação. Caso contrário, poderá perder permanentemente o acesso à sua conta caso perca o seu dispositivo de autenticação de dois fatores."
 
 #: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:18
 msgctxt "Info"
 msgid "In the next few weeks, ProtonMail will drop support for Internet Explorer. Download one of the modern browsers below."
 msgstr "Nas próximas semanas, o ProtonMail irá encerrar o suporte para o Internet Explorer. Baixe um dos navegadores modernos abaixo."
 
-#: ./src/app/payment/modals/payModal.js:14
-#: ./src/app/settings/controllers/payments.js:147
+#: ./src/app/payment/modals/payModal.js:17
+#: ./src/app/settings/controllers/payments.js:148
 msgctxt "Info"
 msgid "Invoice paid"
 msgstr "Fatura paga"
@@ -5506,7 +5499,7 @@ msgstr "Mantenha esta senha segura -- não pode ser recuperada."
 #: ./src/templates/modals/domain/dkim.tpl.html:32
 msgctxt "Info"
 msgid "Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM"
-msgstr "Mantenha este registro em seu DNS enquanto você usar o DKIM. Você pode alterar seu Valor para <code>off</code> para desabilitar o DKIM"
+msgstr "Mantenha este registro em seu DNS enquanto você usar o DKIM. Você pode alterar seu Valor para <code>off</code> para desativar o DKIM"
 
 #: ./src/app/address/factories/reactivateKeys.js:22
 msgctxt "Info"
@@ -5536,7 +5529,6 @@ msgid "Loading themes will override your current theme!"
 msgstr "Carregar temas irá sobrepor o seu tema atual!"
 
 #: ./src/templates/formUtils/captcha.tpl.html:2
-#: ./src/templates/payment/paypalView.tpl.html:22
 msgctxt "Info"
 msgid "Loading..."
 msgstr "Carregando..."
@@ -5622,7 +5614,7 @@ msgctxt "Info"
 msgid "No logs yet"
 msgstr "Ainda não há registros"
 
-#: ./src/app/composer/services/validateMessage.js:61
+#: ./src/app/composer/services/validateMessage.js:47
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr "Você não escreveu um assunto. Deseja enviar mesmo assim?"
@@ -5748,6 +5740,11 @@ msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr "O PayPal não está disponível no momento, tente novamente mais tarde."
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:43
+msgctxt "Info"
+msgid "Payment can take a few minutes to fully verify."
+msgstr "O pagamento pode demorar alguns minutos para ser totalmente verificado."
+
 #: ./src/app/payment/directives/payInvoiceBtn.js:13
 msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
@@ -5834,6 +5831,11 @@ msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "Por favor, toque e segure no anexo e selecione Abrir na nova aba."
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:48
+msgctxt "Info"
+msgid "Please try again, use a different payment method, or call your bank for assistance."
+msgstr "Por favor, tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
+
 #: ./src/app/members/services/memberActions.js:88
 msgctxt "Info"
 msgid "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support."
@@ -5843,6 +5845,21 @@ msgstr "Faça o upgrade para um plano Profissional com mais de 1 usuário ou uma
 msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
 msgstr "Por favor, atualize para um plano pago para obter estes recursos premium."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:35
+msgctxt "Info"
+msgid "Please verify payment at the new tab which was opened."
+msgstr "Por favor, verifique o pagamento na nova guia que foi aberta."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
+msgctxt "Info"
+msgid "Please verify the card in the new tab which was opened."
+msgstr "Por favor, verifique o cartão na nova guia que foi aberta no seu navegador."
+
+#: ./src/templates/payment/paypalView.tpl.html:15
+msgctxt "Info"
+msgid "Please verify your PayPal account at the new tab which was opened."
+msgstr "Verifique sua conta do PayPal na nova guia que foi aberta."
 
 #: ./src/app/formUtils/directives/codeVerificator.js:10
 msgctxt "Info"
@@ -5868,7 +5885,7 @@ msgstr "O ProtonMail permite que você personalize completamente sua experiênci
 #: ./src/templates/modals/switchPasswordMode.tpl.html:10
 msgctxt "Info"
 msgid "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save."
-msgstr "O ProtonMail também pode ser usado com uma única senha que substitui as senhas de acesso e da caixa de correio. Para alterar para o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
+msgstr "O ProtonMail também pode ser usado com uma única senha que substituí as senhas de acesso e da caixa de correio. Para mudar para o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
 
 #: ./src/templates/pmMe/pmMeView.tpl.html:9
 msgctxt "Info"
@@ -6081,7 +6098,7 @@ msgstr "Esses e-mails também estão em seus contatos. Deseja remover do seus co
 #: ./src/templates/views/signup.tpl.html:14
 msgctxt "Info"
 msgid "This can take a few seconds or a few minutes depending on your device."
-msgstr "Isto pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo."
+msgstr "Isto pode demorar alguns segundos ou minutos dependendo do seu dispositivo."
 
 #: ./src/templates/partials/conversation.tpl.html:11
 msgctxt "Info"
@@ -6211,7 +6228,12 @@ msgstr "Isso criará uma nova chave criptográfica para sua organização. Chave
 #: ./src/app/dashboard/factories/downgrade.js:15
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
-msgstr "Isso irá regredir sua conta para o plano gratuito. O ProtonMail é um software livre mantido por doações e contas pagas. Por favor, considere fazer uma doação para que possamos continuar oferecendo o serviço gratuitamente.<br /><br />Nota: Endereços de e-mail adicionais, domínios personalizados e outros usuários precisam ser removidos/desativados antes de executar esta ação."
+msgstr "Isso irá rebaixar sua conta para o plano gratuito. O ProtonMail é um software livre mantido por doações e contas pagas. Por favor, considere fazer uma doação para que possamos continuar oferecendo o serviço gratuitamente.<br /><br />Nota: Endereços de e-mail adicionais, domínios e usuários personalizados precisam ser removidos/desativados antes de executar esta ação."
+
+#: ./src/templates/payment/paypalView.tpl.html:31
+msgctxt "Info"
+msgid "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue."
+msgstr "Isso permitirá que o PayPal seja usado para pagar sua assinatura Proton. Vamos redirecioná-lo para o PayPal em uma nova guia do navegador. Desative qualquer bloqueador de pop-ups que estiver usando."
 
 #: ./src/templates/partials/safari.attachment.warning.tpl.html:14
 #: ./src/templates/partials/safari.warning.tpl.html:14
@@ -6291,6 +6313,12 @@ msgctxt "Info"
 msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character."
 msgstr "Os caracteres válidos são A-Z, a-z, 0-9,. (ponto), _ (sublinhado) e - (hífen). O login deve começar e terminar com um caractere alfanumérico."
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
+#: ./src/templates/payment/paypalView.tpl.html:17
+msgctxt "Info"
+msgid "Verification can take a few minutes."
+msgstr "A verificação pode levar alguns minutos."
+
 #: ./src/templates/formUtils/codeVerificator.tpl.html:56
 msgctxt "Info"
 msgid "Verification code sent"
@@ -6307,6 +6335,17 @@ msgstr "Erro de verificação"
 msgctxt "Info"
 msgid "Verification of this content’s signature failed"
 msgstr "Falha na verificação da assinatura deste conteúdo"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:24
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:31
+msgctxt "Info"
+msgid "Verification will open a new tab, please disable any popup blockers."
+msgstr "A verificação irá abrir um nova guia no seu navegador. Por favor, desative todos os bloqueadores de pop-ups."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+msgctxt "Info"
+msgid "Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately."
+msgstr "O processo de verificação irá precisar abrir uma nova guia. Por favor, desative os bloqueadores de pop-ups. <b>Você não será cobrado</b>. Qualquer quantia usada para verificar seu cartão será reembolsado imediatamente."
 
 #: ./src/templates/layout/pre.tpl.html:4
 msgctxt "Info"
@@ -6349,6 +6388,12 @@ msgstr "Nós recomendamos usar senhas diferentes para acesso e caixa de correio.
 msgctxt "Info"
 msgid "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard. (UTF-8 encoding). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Need help?</a>"
 msgstr "Oferecemos suporte a importação de arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e outros aplicativos. Também oferecemos suporte a importação de vCard. (Codificação UTF-8). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\"> Precisa de ajuda? </a>"
+
+#: ./src/templates/payment/paypalView.tpl.html:21
+#: ./src/templates/payment/paypalView.tpl.html:39
+msgctxt "Info"
+msgid "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
+msgstr "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
 
 #: ./src/app/message/directives/unsubscribePanel.js:24
 msgctxt "Info"
@@ -6423,7 +6468,7 @@ msgstr "Você pode descriptografar o arquivo com um programa, como {{link}}, se 
 #: ./src/templates/security/logManager.tpl.html:81
 msgctxt "Info"
 msgid "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
-msgstr "Você pode habilitar o registro de autenticação para ver quando sua conta é acessada e de qual IP. Registramos o endereço IP que acessa a conta e a hora, bem como tentativas falhas."
+msgstr "Você pode ativar o registro de autenticação para ver quando sua conta é acessada e de qual IP. Registramos o endereço IP que acessa a conta e a hora, bem como tentativas falhas."
 
 #: ./src/templates/pmMe/pmMeView.tpl.html:15
 msgctxt "Info"
@@ -6485,6 +6530,16 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "Você deve ativar a chave privada da organização com a senha da chave de organização de backup fornecida pelo administrador da sua organização."
 
+#: ./src/templates/payment/paypalView.tpl.html:35
+msgctxt "Info"
+msgid "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
+msgstr "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal para que possa ser adicionada como método de pagamento."
+
+#: ./src/templates/payment/paypalView.tpl.html:26
+msgctxt "Info"
+msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please"
+msgstr "Você precisa ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal. Se a sua conta do PayPal não tiver isso,"
+
 #: ./src/app/members/services/memberActions.js:38
 msgctxt "Info"
 msgid "You must provide this user with the Organization Password in order to fully activate administrator privileges."
@@ -6502,10 +6557,10 @@ msgctxt "Info"
 msgid "You will be prompted to save the attachment."
 msgstr "Você será solicitado a salvar o anexo."
 
-#: ./src/templates/payment/paypalView.tpl.html:3
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:29
 msgctxt "Info"
-msgid "You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue."
-msgstr "Você precisará entrar na sua conta PayPal para concluir esta transação. Abriremos uma nova aba com o PayPal para você. Se você usa qualquer bloqueador de pop-ups, desative-o para continuar."
+msgid "You will be soon redirected to your bank to verify your payment."
+msgstr "Você será redirecionado em breve para o seu banco para verificar o pagamento."
 
 #: ./src/templates/modals/payment/modal.tpl.html:39
 msgctxt "Info"
@@ -6522,7 +6577,7 @@ msgctxt "Info"
 msgid "Your VPN account has not yet been activated, go to <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> to sign up and activate your account."
 msgstr "Sua conta VPN ainda não foi ativada, vá para <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\"> https://account.protonvpn.com/signup</a> para se inscrever e ativar sua conta."
 
-#: ./src/app/composer/services/validateMessage.js:74
+#: ./src/app/composer/services/validateMessage.js:60
 #: ./src/templates/invoices/invoiceSection.tpl.html:50
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
@@ -6553,6 +6608,11 @@ msgstr "Seus privilégios de administrador foram revogados."
 msgctxt "Info"
 msgid "Your attachments are secure and encrypted, but to download them requires extra work. We recommend using a different web browser such as Chrome or Firefox for a better user experience."
 msgstr "Seus anexos são seguros e criptografados, mas para baixá-los são necessários alguns passos extras. Recomendamos o uso de um navegador diferente, como o Chrome ou o Firefox, para uma melhor experiência de uso."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:19
+msgctxt "Info"
+msgid "Your bank requires 3-D Secure verification for security purposes."
+msgstr "Por motivos de segurança, seu banco requer a verificação de segurança 3-D."
 
 #: ./src/templates/user/humanVerification.tpl.html:18
 msgctxt "Info"
@@ -6619,7 +6679,7 @@ msgstr "mês"
 #: ./src/templates/contact/dropdownGroups.tpl.html:37
 msgctxt "Info"
 msgid "no contact group found"
-msgstr "nenhum grupo de contato encontrado"
+msgstr "nenhum grupo de contatos encontrado"
 
 #: ./src/templates/labels/dropdownFolders.tpl.html:27
 msgctxt "Info"
@@ -6888,7 +6948,7 @@ msgstr "Comprometida"
 #: ./src/templates/address/addressKeysView.tpl.html:83
 msgctxt "Key state badge"
 msgid "Disabled"
-msgstr "Desabilitada"
+msgstr "Desativada"
 
 #. key state badge
 #: ./src/templates/address/addressKeysView.tpl.html:76
@@ -6949,7 +7009,7 @@ msgid "Annually"
 msgstr "Anualmente"
 
 #: ./src/app/labels/directives/dropdownFolders.js:13
-#: ./src/templates/filter/modal.tpl.html:173
+#: ./src/templates/filter/modal.tpl.html:172
 msgctxt "Label"
 msgid "Archive"
 msgstr "Arquivo"
@@ -7084,12 +7144,12 @@ msgstr "Duração"
 #: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:4
 msgctxt "Label"
 msgid "Enable"
-msgstr "Habilitar"
+msgstr "Ativar"
 
 #: ./src/templates/views/labels.tpl.html:53
 msgctxt "Label"
 msgid "Enable/disable desktop and mobile notifications"
-msgstr "Habilitar/desabilitar notificações na área de trabalho e dispositivos móveis"
+msgstr "Ativar/desativar notificações na área de trabalho e dispositivos móveis"
 
 #: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:85
 msgctxt "Label"
@@ -7159,7 +7219,7 @@ msgid "Highest security"
 msgstr "Segurança máxima"
 
 #: ./src/app/labels/directives/dropdownFolders.js:8
-#: ./src/templates/filter/modal.tpl.html:165
+#: ./src/templates/filter/modal.tpl.html:164
 msgctxt "Label"
 msgid "Inbox"
 msgstr "Caixa de entrada"
@@ -7297,10 +7357,10 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr "Página Inicial do ProtonVPN"
 
-#: ./src/templates/filter/modal.tpl.html:217
+#: ./src/templates/filter/modal.tpl.html:216
 msgctxt "Label"
 msgid "Read"
-msgstr "Lido"
+msgstr "Lida"
 
 #: ./src/templates/autoresponder/autoresponder.tpl.html:13
 msgctxt "Label"
@@ -7338,12 +7398,12 @@ msgid "Signature"
 msgstr "Assinatura"
 
 #: ./src/app/labels/directives/dropdownFolders.js:18
-#: ./src/templates/filter/modal.tpl.html:181
+#: ./src/templates/filter/modal.tpl.html:180
 msgctxt "Label"
 msgid "Spam"
 msgstr "Spam"
 
-#: ./src/templates/filter/modal.tpl.html:224
+#: ./src/templates/filter/modal.tpl.html:223
 msgctxt "Label"
 msgid "Starred"
 msgstr "Com estrela"
@@ -7364,7 +7424,7 @@ msgid "Time zone"
 msgstr "Fuso horário"
 
 #: ./src/app/labels/directives/dropdownFolders.js:23
-#: ./src/templates/filter/modal.tpl.html:189
+#: ./src/templates/filter/modal.tpl.html:188
 msgctxt "Label"
 msgid "Trash"
 msgstr "Lixeira"
@@ -7704,7 +7764,7 @@ msgstr "Mais informações"
 #: ./src/templates/views/security.tpl.html:28
 msgctxt "Link"
 msgid "Learn more"
-msgstr "Mais informações"
+msgstr "Saiba mais"
 
 #: ./src/templates/modals/releaseNotes.tpl.html:14
 #: ./src/templates/pmMe/pmMeView.tpl.html:11
@@ -7732,6 +7792,11 @@ msgstr "Qual é a diferença entre os perfis de acesso do ProtonVPN e OpenVPN?"
 msgctxt "Link"
 msgid "Why is this required?"
 msgstr "O que é necessário?"
+
+#: ./src/templates/payment/paypalView.tpl.html:26
+msgctxt "Link"
+msgid "click here"
+msgstr "clique aqui"
 
 #: ./src/templates/modals/deleteAccount.tpl.html:11
 msgctxt "Link"
@@ -8045,7 +8110,7 @@ msgstr "Guia 2FA"
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:11
 msgctxt "Modal setup 2FA"
 msgid "If you have never used 2FA before, we strongly recommend you reading our 2FA Guide first."
-msgstr "Se você nunca usou a autenticação de dois fatores antes, nós recomendamos fortemente que leia primeiro nosso Guia 2FA."
+msgstr "Se você nunca usou a autenticação de dois fatores antes, nós recomendamos que leia primeiro nosso guia de autenticação de dois fatores."
 
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:6
 msgctxt "Modal setup 2FA"
@@ -8057,7 +8122,7 @@ msgctxt "Modal setup 2FA"
 msgid "This wizard will enable Two Factor Authentication (2FA) on your ProtonMail account. 2FA will make your ProtonMail account more secure so we recommend enabling it."
 msgstr "Este assistente permitirá a Autenticação de dois fatores (2FA) em sua conta do ProtonMail. O 2FA tornará a sua conta ProtonMail mais segura, por isso recomendamos habilitá-la."
 
-#: ./src/templates/utils/printModal.tpl.html:30
+#: ./src/templates/utils/printModal.tpl.html:29
 msgctxt "Modal title"
 msgid "Print preview"
 msgstr "Pré-visualizar impressão"
@@ -8075,7 +8140,7 @@ msgstr "Anexar chave pública"
 #: ./src/templates/squire/moreToggle.tpl.html:42
 msgctxt "More Toggles"
 msgid "Request Read Receipt"
-msgstr "Enviar confirmação de leitura"
+msgstr "Solicitar confirmação de leitura"
 
 #: ./src/templates/squire/moreToggle.tpl.html:32
 msgctxt "More Toggles"
@@ -8182,7 +8247,7 @@ msgctxt "Notification update"
 msgid "The public key with fingerprint {{ fingerprint }} was replaced with a revoked key."
 msgstr "A chave pública com impressão digital {{ fingerprint }} foi substituída por uma chave revogada."
 
-#: ./src/app/utils/services/eventManager.js:163
+#: ./src/app/utils/services/eventManager.js:164
 msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr "Nova mensagem de {{sender}}"
@@ -8315,12 +8380,12 @@ msgid_plural "User IDs mismatch. The emails {{emails}} are assigned to this key.
 msgstr[0] "Incompatibilidade de IDs de usuário. A chave está atribuída para {{emails}}."
 msgstr[1] "Incompatibilidade de IDs de usuário. Os e-mails {{emails}} estão atribuídos a essa chave."
 
-#: ./src/app/settings/controllers/payments.js:99
+#: ./src/app/settings/controllers/payments.js:100
 msgctxt "Payment"
 msgid "Payment method deleted"
 msgstr "Método de pagamento excluído"
 
-#: ./src/app/settings/controllers/payments.js:78
+#: ./src/app/settings/controllers/payments.js:79
 msgctxt "Payment"
 msgid "Payment method updated"
 msgstr "Método de pagamento atualizado"
@@ -8345,12 +8410,12 @@ msgctxt "Payment method"
 msgid "Credit Card"
 msgstr "Cartão de crédito"
 
-#: ./src/templates/payment/paypalView.tpl.html:10
+#: ./src/templates/payment/paypalView.tpl.html:4
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
 msgstr "Quantidade acima do máximo."
 
-#: ./src/templates/payment/paypalView.tpl.html:14
+#: ./src/templates/payment/paypalView.tpl.html:5
 msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr "Quantidade abaixo do mínimo."
@@ -8736,12 +8801,12 @@ msgstr "Escolha uma nova senha"
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:4
 msgctxt "Restore administrator panel"
 msgid "* Creating new sub-users"
-msgstr "* Criando novos sub usuários"
+msgstr "* Criando novos subusuários"
 
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:5
 msgctxt "Restore administrator panel"
 msgid "* Reading emails of non-private subusers"
-msgstr "* Ler e-mails de sub usuários não privados"
+msgstr "* Ler e-mails de subusuários que não são privados"
 
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:2
 msgctxt "Restore administrator panel"
@@ -8969,17 +9034,17 @@ msgstr "Preferência de envio de e-mails atualizada"
 #: ./src/app/address/directives/addressKeysView.js:63
 msgctxt "Success"
 msgid "Encryption and signature verification disabled"
-msgstr "Criptografia e verificação de assinatura desabilitada"
+msgstr "Criptografia e verificação de assinatura desativada"
 
 #: ./src/app/address/directives/addressKeysView.js:61
 msgctxt "Success"
 msgid "Encryption disabled"
-msgstr "Criptografia desabilitada"
+msgstr "Criptografia desativada"
 
 #: ./src/app/address/directives/addressKeysView.js:68
 msgctxt "Success"
 msgid "Encryption enabled"
-msgstr "Criptografia habilitada"
+msgstr "Criptografia ativada"
 
 #: ./src/app/settings/directives/encryptionView.js:15
 msgctxt "Success"
@@ -9119,7 +9184,7 @@ msgstr "Configurações atualizadas"
 #: ./src/app/address/directives/addressKeysView.js:62
 msgctxt "Success"
 msgid "Signature verification enabled"
-msgstr "Verificação de assinatura habilitada"
+msgstr "Verificação de assinatura ativada"
 
 #: ./src/app/settings/controllers/appearance.js:108
 msgctxt "Success"
@@ -9265,6 +9330,11 @@ msgctxt "Title"
 msgid "2-year plan"
 msgstr "Plano de 2 anos"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+msgctxt "Title"
+msgid "3-D Secure verification failed"
+msgstr "Falha na verificação 3-D de segurança"
+
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:13
 #: ./src/app/ui/factories/pageTitlesModel.js:25
 msgctxt "Title"
@@ -9274,7 +9344,7 @@ msgstr "Conta"
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:49
-#: ./src/templates/filter/modal.tpl.html:130
+#: ./src/templates/filter/modal.tpl.html:129
 #: ./src/templates/invoices/invoiceList.tpl.html:7
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:215
@@ -9282,7 +9352,7 @@ msgstr "Conta"
 #: ./src/templates/views/invoices.tpl.html:20
 #: ./src/templates/views/invoices.tpl.html:50
 #: ./src/templates/views/members.tpl.html:159
-#: ./src/templates/views/payments.tpl.html:26
+#: ./src/templates/views/payments.tpl.html:25
 msgctxt "Title"
 msgid "Actions"
 msgstr "Ações"
@@ -9536,6 +9606,16 @@ msgctxt "Title"
 msgid "CC:"
 msgstr "CC:"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:8
+msgctxt "Title"
+msgid "Card verification"
+msgstr "Verificação do cartão"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:13
+msgctxt "Title"
+msgid "Card verification in progress"
+msgstr "Verificação do cartão em progresso"
+
 #. table heading for the domains page table listing of addresses
 #: ./src/templates/views/domains.tpl.html:210
 msgctxt "Title"
@@ -9630,7 +9710,7 @@ msgstr "Confirmar senha de redefinição"
 #: ./src/app/dashboard/factories/downgrade.js:14
 msgctxt "Title"
 msgid "Confirm downgrade"
-msgstr "Confirmar o downgrade"
+msgstr "Confirmar rebaixamento"
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:40
 msgctxt "Title"
@@ -9856,7 +9936,7 @@ msgctxt "Title"
 msgid "Delete label"
 msgstr "Remover marcador"
 
-#: ./src/app/settings/controllers/payments.js:86
+#: ./src/app/settings/controllers/payments.js:87
 msgctxt "Title"
 msgid "Delete payment method"
 msgstr "Excluir método de pagamento"
@@ -9890,12 +9970,12 @@ msgstr "Assinatura digital verificada"
 #: ./src/app/settings/controllers/security.js:23
 msgctxt "Title"
 msgid "Disable Two-Factor Authentication"
-msgstr "Desabilitar autenticação de dois fatores"
+msgstr "Desativar autenticação de dois fatores"
 
 #: ./src/app/address/factories/addressModel.js:44
 msgctxt "Title"
 msgid "Disable address"
-msgstr "Desabilitar endereço"
+msgstr "Desativar endereço"
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:39
 msgctxt "Title"
@@ -10055,11 +10135,6 @@ msgstr "Erro ao descriptografar o anexo"
 msgctxt "Title"
 msgid "Event"
 msgstr "Evento"
-
-#: ./src/templates/views/payments.tpl.html:24
-msgctxt "Title"
-msgid "Expiration"
-msgstr "Expiração"
 
 #: ./src/templates/composer/composerExpiration.tpl.html:3
 msgctxt "Title"
@@ -10289,7 +10364,7 @@ msgctxt "Title"
 msgid "Keyboard Shortcuts"
 msgstr "Atalhos do teclado"
 
-#: ./src/app/composer/services/validateMessage.js:68
+#: ./src/app/composer/services/validateMessage.js:54
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:68
 #: ./src/app/ui/factories/pageTitlesModel.js:43
 msgctxt "Title"
@@ -10395,6 +10470,11 @@ msgctxt "Title"
 msgid "Message headers"
 msgstr "Cabeçalho da mensagem"
 
+#: ./src/templates/views/payments.tpl.html:23
+msgctxt "Title"
+msgid "Method"
+msgstr "Método"
+
 #: ./src/templates/views/members.tpl.html:9
 msgctxt "Title"
 msgid "Multi-User Support"
@@ -10452,7 +10532,7 @@ msgctxt "Title"
 msgid "No messages"
 msgstr "Não há mensagens"
 
-#: ./src/app/composer/services/validateMessage.js:60
+#: ./src/app/composer/services/validateMessage.js:46
 msgctxt "Title"
 msgid "No subject"
 msgstr "Sem assunto"
@@ -10473,11 +10553,6 @@ msgstr "Notificação"
 msgctxt "Title"
 msgid "Notifications"
 msgstr "Notificações"
-
-#: ./src/templates/views/payments.tpl.html:23
-msgctxt "Title"
-msgid "Number"
-msgstr "Número"
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:19
 msgctxt "Title"
@@ -10581,6 +10656,16 @@ msgctxt "Title"
 msgid "Payment methods"
 msgstr "Métodos de pagamento"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:7
+msgctxt "Title"
+msgid "Payment verification"
+msgstr "Verificação de pagamento"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:12
+msgctxt "Title"
+msgid "Payment verification in progress"
+msgstr "Verificação de pagamento em progresso"
+
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:63
 msgctxt "Title"
 msgid "Payments"
@@ -10636,6 +10721,11 @@ msgstr "Senha da chave privada necessária"
 msgctxt "Title"
 msgid "Privatize User"
 msgstr "Tonar usuário privado"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:10
+msgctxt "Title"
+msgid "Processing..."
+msgstr "Processando..."
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:45
 msgctxt "Title"
@@ -10943,6 +11033,7 @@ msgstr "Estado da arte"
 #: ./src/templates/invoices/invoiceList.tpl.html:9
 #: ./src/templates/modals/generate.tpl.html:55
 #: ./src/templates/views/domains.tpl.html:208
+#: ./src/templates/views/payments.tpl.html:24
 msgctxt "Title"
 msgid "Status"
 msgstr "Status"
@@ -11055,7 +11146,7 @@ msgstr "Autenticação de dois fatores"
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:6
 msgctxt "Title"
 msgid "Two-factor authentication enabled"
-msgstr "Autenticação de dois fatores habilitada"
+msgstr "Autenticação de dois fatores ativada"
 
 #: ./src/templates/invoices/invoiceList.tpl.html:8
 #: ./src/templates/modals/domain/dkim.tpl.html:20
@@ -11063,7 +11154,6 @@ msgstr "Autenticação de dois fatores habilitada"
 #: ./src/templates/modals/domain/mx.tpl.html:20
 #: ./src/templates/modals/domain/spf.tpl.html:19
 #: ./src/templates/modals/domain/verification.tpl.html:20
-#: ./src/templates/views/payments.tpl.html:25
 msgctxt "Title"
 msgid "Type"
 msgstr "Tipo"
@@ -11192,7 +11282,7 @@ msgstr "Agora você tem uma conta de e-mail criptografada!"
 #: ./src/app/labels/services/manageLabels.js:17
 msgctxt "Title"
 msgid "contact group"
-msgstr "grupo de contato"
+msgstr "grupo de contatos"
 
 #: ./src/app/labels/services/manageLabels.js:15
 msgctxt "Title"
@@ -11317,7 +11407,7 @@ msgstr "abaixo:"
 #: ./src/templates/views/account.tpl.html:115
 msgctxt "To enable desktop notifications, click here"
 msgid "To enable desktop notifications,"
-msgstr "Para habilitar notificações no desktop,"
+msgstr "Para ativar notificações no desktop,"
 
 #: ./src/templates/elements/ptStar.tpl.html:3
 msgctxt "Toggle Star message/conversation"
@@ -11520,7 +11610,7 @@ msgstr "ProtonVPN criptografa sua conexão de internet para manter sua atividade
 #: ./src/templates/dashboard/vpnColumns.tpl.html:6
 msgctxt "Tooltip"
 msgid "Provides additional protection against VPN server compromise by routing connections through our Secure Core network"
-msgstr "Fornece proteção adicional contra o comprometimento do servidor VPN através do roteamento de conexões da nossa rede Secure Core"
+msgstr "Fornece uma proteção adicional contra o comprometimento do servidor VPN ao rotear conexões através da nossa rede Secure Core"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:83
 msgctxt "Tooltip"
@@ -11602,7 +11692,7 @@ msgstr "Criada em {{ date }}"
 #: ./src/templates/settings/encryptionView.tpl.html:112
 msgctxt "Tooltip prompt to trust keys"
 msgid "When receiving an internal message from a sender that has no trusted keys in your contacts, show a banner asking if you want to enable trusted keys."
-msgstr "Ao receber uma mensagem interna de um remetente que não possui chaves confiáveis no seus contatos irá mostrar uma aviso perguntando se você deseja habilitar as chaves confiáveis."
+msgstr "Ao receber uma mensagem interna de um remetente que não possui chaves confiáveis no seus contatos irá mostrar uma aviso perguntando se você deseja ativar as chaves confiáveis."
 
 #: ./src/templates/settings/encryptionView.tpl.html:30
 msgctxt "Tooltip sign external messages"
@@ -11983,7 +12073,7 @@ msgstr "Por favor, adicione uma senha para os seguintes destinatários"
 #: ./src/templates/modals/expirationModal.tpl.html:29
 msgctxt "Warning"
 msgid "Please disable PGP Sending for the following recipients"
-msgstr "Por favor, desabilite o envio PGP para os seguintes destinatários"
+msgstr "Por favor, desative o envio PGP para os seguintes destinatários"
 
 #: ./src/app/composer/services/autoPinPrimaryKeys.js:36
 msgctxt "Warning"
@@ -12039,6 +12129,11 @@ msgctxt "auth log entry"
 msgid "Login success"
 msgstr "Login realizado com sucesso"
 
+#: ./src/templates/security/sessionLogsTable.tpl.html:36
+msgctxt "auth log entry"
+msgid "Login success (two-factor)"
+msgstr "Login efetuado com sucesso (dois fatores)"
+
 #: ./src/templates/security/sessionLogsTable.tpl.html:30
 msgctxt "auth log entry"
 msgid "Logout"
@@ -12047,7 +12142,7 @@ msgstr "Encerrar sessão"
 #: ./src/templates/payment/bitcoinView.tpl.html:16
 msgctxt "bitcoin error request"
 msgid "Error connecting to the Bitcoin API."
-msgstr "Erro na conexão à API do Bitcoin."
+msgstr "Erro ao conectar com a API do Bitcoin."
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:47
 msgctxt "bug report modal"
@@ -12244,12 +12339,12 @@ msgstr "Novos endereços podem ser adicionados em"
 #: ./src/templates/address/addressKeysView.tpl.html:171
 msgctxt "key flag info"
 msgid "Disables encryption with this key"
-msgstr "Desabilitar a criptografia com esta chave"
+msgstr "Desativar a criptografia com esta chave"
 
 #: ./src/templates/address/addressKeysView.tpl.html:182
 msgctxt "key flag info"
 msgid "Disables signature verification and encryption with this key"
-msgstr "Desabilitar a verificação de assinatura e criptografia com esta chave"
+msgstr "Desativa a verificação de assinatura e criptografia com esta chave"
 
 #: ./src/templates/address/addressKeysView.tpl.html:113
 msgctxt "key flag info"

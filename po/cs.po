@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Czech\n"
 "Language: cs_CZ\n"
-"PO-Revision-Date: 2019-07-19 09:23\n"
+"PO-Revision-Date: 2019-11-07 14:26\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -76,11 +76,6 @@ msgstr[1] "{{number}} zprávy přesunuty do složky {{folder}}"
 msgstr[2] "{{number}} zpráv přesunuto do složky {{folder}}"
 msgstr[3] "Počet zpráv přesunutých do složky {{folder}}: {{number}}"
 
-#: ./src/templates/user/signupPayForm.tpl.html:90
-msgctxt "Action"
-msgid "<i class=\"fa fa-lock\"></i> Submit"
-msgstr "<i class=\"fa fa-lock\"></i> Odeslat"
-
 #: ./src/templates/bridge/bridgeFreePanel.tpl.html:2
 msgctxt "Action"
 msgid "Activate"
@@ -127,6 +122,11 @@ msgctxt "Action"
 msgid "Add Filter"
 msgstr "Přidat filtr"
 
+#: ./src/templates/payment/paypalView.tpl.html:33
+msgctxt "Action"
+msgid "Add PayPal payment method"
+msgstr "Přidat PayPal jako způsob platby"
+
 #: ./src/templates/views/payments.tpl.html:15
 msgctxt "Action"
 msgid "Add Payment Method"
@@ -157,7 +157,7 @@ msgctxt "Action"
 msgid "Add auto-reply"
 msgstr "Přidat automatickou odpověď"
 
-#: ./src/templates/filter/modal.tpl.html:126
+#: ./src/templates/filter/modal.tpl.html:125
 msgctxt "Action"
 msgid "Add condition"
 msgstr "Přidat podmínku"
@@ -195,7 +195,7 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr "Přidat filtry"
 
-#: ./src/templates/filter/modal.tpl.html:202
+#: ./src/templates/filter/modal.tpl.html:201
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
@@ -206,7 +206,7 @@ msgctxt "Action"
 msgid "Add key"
 msgstr "Přidat klíč"
 
-#: ./src/templates/filter/modal.tpl.html:148
+#: ./src/templates/filter/modal.tpl.html:147
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -389,7 +389,7 @@ msgstr "CC BCC"
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:35
-#: ./src/templates/filter/modal.tpl.html:248
+#: ./src/templates/filter/modal.tpl.html:247
 #: ./src/templates/modals/activateOrganization.tpl.html:25
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -411,6 +411,7 @@ msgstr "CC BCC"
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:60
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:101
@@ -512,6 +513,12 @@ msgctxt "Action"
 msgid "Change verification number"
 msgstr "Změna ověřovacího čísla"
 
+#: ./src/templates/payment/paypalView.tpl.html:23
+#: ./src/templates/payment/paypalView.tpl.html:40
+msgctxt "Action"
+msgid "Check out with PayPal"
+msgstr "Zaplatit pomocí PayPal"
+
 #: ./src/templates/contact/contactPhotoRow.tpl.html:27
 #: ./src/templates/directives/core/bugModalView.tpl.html:113
 msgctxt "Action"
@@ -522,11 +529,6 @@ msgstr "Vymazat"
 msgctxt "Action"
 msgid "Clear all formatting"
 msgstr "Vymazat veškeré formátování"
-
-#: ./src/templates/payment/paypalView.tpl.html:6
-msgctxt "Action"
-msgid "Click here to try again"
-msgstr "Klikněte zde a zkuste to znovu"
 
 #: ./src/templates/address/selectAddressModal.tpl.html:3
 #: ./src/templates/address/setupAddressModal.tpl.html:3
@@ -603,7 +605,8 @@ msgstr "Klikněte zde a zkuste to znovu"
 #: ./src/templates/modals/pay.tpl.html:107
 #: ./src/templates/modals/pay.tpl.html:16
 #: ./src/templates/modals/payment/modal.tpl.html:19
-#: ./src/templates/modals/payment/modal.tpl.html:63
+#: ./src/templates/modals/payment/modal.tpl.html:62
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:3
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
 #: ./src/templates/modals/releaseNotes.tpl.html:28
@@ -627,8 +630,8 @@ msgstr "Klikněte zde a zkuste to znovu"
 #: ./src/templates/payment/giftCodeModal.tpl.html:3
 #: ./src/templates/utils/discardModal.tpl.html:3
 #: ./src/templates/utils/linkWarningModal.tpl.html:3
-#: ./src/templates/utils/printModal.tpl.html:20
-#: ./src/templates/utils/printModal.tpl.html:39
+#: ./src/templates/utils/printModal.tpl.html:19
+#: ./src/templates/utils/printModal.tpl.html:38
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:4
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:4
 msgctxt "Action"
@@ -640,7 +643,7 @@ msgctxt "Action"
 msgid "Common login problems"
 msgstr "Běžné problémy s přihlášením"
 
-#: ./src/templates/user/humanVerification.tpl.html:92
+#: ./src/templates/user/humanVerification.tpl.html:93
 msgctxt "Action"
 msgid "Complete setup"
 msgstr "Dokončit nastavení"
@@ -674,6 +677,8 @@ msgctxt "Action"
 msgid "Contacts"
 msgstr "Kontakty"
 
+#: ./src/templates/modals/card.tpl.html:17
+#: ./src/templates/modals/payment/modal.tpl.html:72
 #: ./src/templates/utils/linkWarningModal.tpl.html:45
 msgctxt "Action"
 msgid "Continue"
@@ -757,7 +762,7 @@ msgstr "Dešifrovat"
 #: ./src/templates/ui/toolbarMobile.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:124
 #: ./src/templates/views/labels.tpl.html:63
-#: ./src/templates/views/payments.tpl.html:42
+#: ./src/templates/views/payments.tpl.html:45
 msgctxt "Action"
 msgid "Delete"
 msgstr "Odstranit"
@@ -1189,7 +1194,7 @@ msgid "Make Private"
 msgstr "Nastavit jako soukromé"
 
 #: ./src/app/address/directives/addressBtnActions.js:4
-#: ./src/templates/views/payments.tpl.html:38
+#: ./src/templates/views/payments.tpl.html:41
 msgctxt "Action"
 msgid "Make default"
 msgstr "Nastavit jako výchozí"
@@ -1424,7 +1429,7 @@ msgid "Previous"
 msgstr "Předchozí"
 
 #: ./src/templates/message/message.tpl.html:246
-#: ./src/templates/utils/printModal.tpl.html:45
+#: ./src/templates/utils/printModal.tpl.html:44
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -1493,6 +1498,7 @@ msgstr "Znovu načíst ProtonMail"
 #: ./src/templates/contact/contactGroupModal.tpl.html:91
 #: ./src/templates/contact/contactSelectorForm.tpl.html:57
 #: ./src/templates/contact/contactSelectorForm.tpl.html:63
+#: ./src/templates/filter/modal.tpl.html:113
 msgctxt "Action"
 msgid "Remove"
 msgstr "Odstranit"
@@ -1616,7 +1622,7 @@ msgstr "Odhlásit z relací"
 #: ./src/templates/directives/composer/composer.tpl.html:119
 #: ./src/templates/directives/composer/composer.tpl.html:126
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:254
+#: ./src/templates/filter/modal.tpl.html:253
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
@@ -1674,7 +1680,7 @@ msgctxt "Action"
 msgid "Send"
 msgstr "Odeslat"
 
-#: ./src/app/composer/services/validateMessage.js:32
+#: ./src/app/composer/services/validateMessage.js:25
 #: ./src/templates/modals/expirationModal.tpl.html:55
 msgctxt "Action"
 msgid "Send anyway"
@@ -1782,15 +1788,15 @@ msgstr "Seřadit abecedně"
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:29
 #: ./src/templates/modals/activateOrganization.tpl.html:28
 #: ./src/templates/modals/bug.tpl.html:19
-#: ./src/templates/modals/card.tpl.html:17
 #: ./src/templates/modals/customizeInvoice.tpl.html:57
 #: ./src/templates/modals/decryptImportKey.tpl.html:20
 #: ./src/templates/modals/humanVerification.tpl.html:22
 #: ./src/templates/modals/organizationRecovery.tpl.html:15
-#: ./src/templates/modals/payment/modal.tpl.html:69
+#: ./src/templates/modals/payment/modal.tpl.html:71
 #: ./src/templates/modals/reactivate.tpl.html:25
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:23
 #: ./src/templates/modals/switchPasswordMode.tpl.html:74
+#: ./src/templates/user/signupPayForm.tpl.html:90
 #: ./src/templates/user/signupUserForm.tpl.html:53
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:19
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:17
@@ -1850,6 +1856,7 @@ msgid "Trust Public Keys"
 msgstr "Důvěřovat veřejným klíčům"
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:6
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:51
 msgctxt "Action"
 msgid "Try again"
 msgstr "Zkuste to znovu"
@@ -1884,7 +1891,7 @@ msgctxt "Action"
 msgid "Unsubscribe"
 msgstr "Odhlásit odběr"
 
-#: ./src/templates/views/payments.tpl.html:40
+#: ./src/templates/views/payments.tpl.html:43
 msgctxt "Action"
 msgid "Update"
 msgstr "Aktualizovat"
@@ -1944,6 +1951,11 @@ msgctxt "Action"
 msgid "Uploading"
 msgstr "Nahrávám"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:54
+msgctxt "Action"
+msgid "Use a different payment method"
+msgstr "Použijte jinou platební metodu"
+
 #: ./src/templates/payment/giftCodeBtn.tpl.html:3
 msgctxt "Action"
 msgid "Use gift code"
@@ -1955,6 +1967,7 @@ msgid "User"
 msgstr "Uživatel"
 
 #: ./src/templates/modals/domain/verification.tpl.html:38
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:61
 msgctxt "Action"
 msgid "Verify"
 msgstr "Ověřit"
@@ -2000,15 +2013,10 @@ msgctxt "Action"
 msgid "click here"
 msgstr "klikněte zde"
 
-#: ./src/templates/payment/donation.tpl.html:129
+#: ./src/templates/payment/donation.tpl.html:130
 msgctxt "Action"
 msgid "complete setup"
 msgstr "dokončit nastavení"
-
-#: ./src/templates/filter/modal.tpl.html:113
-msgctxt "Action"
-msgid "title"
-msgstr "titul"
 
 #: ./src/templates/modals/donate.tpl.html:59
 msgctxt "Action"
@@ -2827,12 +2835,12 @@ msgctxt "Credit card CVC"
 msgid "Security Code"
 msgstr "Bezpečnostní kód"
 
-#: ./src/app/payment/modals/cardModal.js:25
+#: ./src/app/payment/modals/cardModal.js:35
 msgctxt "Credit card modal"
 msgid "Add a credit card."
 msgstr "Přidat platební kartu."
 
-#: ./src/app/payment/modals/cardModal.js:13
+#: ./src/app/payment/modals/cardModal.js:23
 msgctxt "Credit card modal"
 msgid "Update your credit card information."
 msgstr "Aktualizovat údaje o platební kartě."
@@ -3486,7 +3494,7 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr "Kontakt neobsahuje e-mailovou adresu"
 
-#: ./src/app/composer/services/validateMessage.js:69
+#: ./src/app/composer/services/validateMessage.js:55
 msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr "Obraťte se na svého správce ogranizace, abyste to vyřešili."
@@ -3532,11 +3540,6 @@ msgctxt "Error"
 msgid "Error activating organization keys"
 msgstr "Chyba při aktivaci klíčů organizace"
 
-#: ./src/templates/payment/paypalView.tpl.html:6
-msgctxt "Error"
-msgid "Error connecting to PayPal."
-msgstr "Chyba při připojování k PayPalu."
-
 #: ./src/app/message/factories/messageModel.js:39
 #: ./src/app/outside/controllers/outside.js:34
 msgctxt "Error"
@@ -3568,7 +3571,7 @@ msgctxt "Error"
 msgid "Failed to encrypt attachment. Please try again."
 msgstr "Přílohu se nepodařilo zašifrovat. Zkuste to prosím znovu."
 
-#: ./src/app/ui/directives/autocompleteEmails.js:31
+#: ./src/app/ui/directives/autocompleteEmails.js:24
 msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
 msgstr "Nepodařilo se získat klíč pro adresy: {{emails}}. Tyto adresy budou odebrány ze seznamu příjemců. Prosím, zkuste to znovu."
@@ -3621,7 +3624,7 @@ msgid "Image upload failed"
 msgstr "Nahrání obrázku se nezdařilo"
 
 #: ./src/app/address/factories/reactivateKeys.js:27
-#: ./src/app/authentication/directives/loginContainer.js:38
+#: ./src/app/authentication/directives/loginContainer.js:58
 #: ./src/app/keys/factories/decryptImportKeyModal.js:28
 msgctxt "Error"
 msgid "Incorrect decryption password"
@@ -3673,7 +3676,7 @@ msgctxt "Error"
 msgid "Invalid file type"
 msgstr "Neplatný typ souboru"
 
-#: ./src/app/contact/directives/contactSelectorForm.js:8
+#: ./src/app/contact/directives/contactSelectorForm.js:6
 msgctxt "Error"
 msgid "Invalid form"
 msgstr "Neplatný formulář"
@@ -3763,7 +3766,7 @@ msgctxt "Error"
 msgid "No Internet connection found."
 msgstr "Nebylo nalezeno žádné připojení k internetu."
 
-#: ./src/app/composer/services/validateMessage.js:63
+#: ./src/app/composer/services/validateMessage.js:49
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr "Není k dispozici adresa s klíči pro vytvoření zprávy."
@@ -3840,7 +3843,7 @@ msgctxt "Error"
 msgid "Please enter a password for this email."
 msgstr "Zadejte prosím heslo k tomuto emailu."
 
-#: ./src/app/composer/services/validateMessage.js:47
+#: ./src/app/composer/services/validateMessage.js:40
 msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "Zadejte prosím alespoň jednoho příjemce."
@@ -3855,7 +3858,7 @@ msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "Zadejte prosím své dvoufázové heslo"
 
-#: ./src/app/keys/services/decryptKeys.js:12
+#: ./src/app/keys/services/decryptKeys.js:10
 msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
 msgstr "Primární klíč pro adresu {{email}} nelze dešifrovat. Nebudete moci číst ani psát e-mail z této adresy"
@@ -3895,7 +3898,7 @@ msgctxt "Error"
 msgid "Sign up failed"
 msgstr "Přihlášení selhalo"
 
-#: ./src/app/composer/services/validateMessage.js:41
+#: ./src/app/composer/services/validateMessage.js:34
 msgctxt "Error"
 msgid "Some email addresses are invalid"
 msgstr "Některé e-mailové adresy jsou neplatné"
@@ -3954,7 +3957,7 @@ msgctxt "Error"
 msgid "The email body is not a valid MIME message."
 msgstr "Tělo e-mailu není platná MIME zpráva."
 
-#: ./src/app/composer/services/validateMessage.js:39
+#: ./src/app/composer/services/validateMessage.js:32
 msgctxt "Error"
 msgid "The following addresses are not valid: {{emails}}"
 msgstr "Následující adresy nejsou platné: {{emails}}"
@@ -3964,20 +3967,15 @@ msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr "Maximální doba vypršení platnosti jsou 4 týdny."
 
-#: ./src/app/composer/services/validateMessage.js:42
+#: ./src/app/composer/services/validateMessage.js:35
 msgctxt "Error"
 msgid "The maximum length of the message body is 16,000,000 characters."
 msgstr "Maximální délka zprávy je 16 000 000 znaků."
 
-#: ./src/app/composer/services/validateMessage.js:48
+#: ./src/app/composer/services/validateMessage.js:41
 msgctxt "Error"
 msgid "The maximum length of the subject is {{size}}."
 msgstr "Maximální délka předmětu je {{size}}."
-
-#: ./src/app/ui/directives/autocompleteEmails.js:24
-msgctxt "Error"
-msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
-msgstr "Maximální počet příjemců ({{total}}) je {{limit}}."
 
 #: ./src/app/core/directives/signupIframe.js:46
 msgctxt "Error"
@@ -4026,7 +4024,7 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr "Ověření se nezdařilo, zkuste to prosím za hodinu znovu."
 
-#: ./src/app/composer/services/validateMessage.js:33
+#: ./src/app/composer/services/validateMessage.js:26
 msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr "Počkejte, dokud neskončí nahrávání přílohy, nebo nahrávání zrušte."
@@ -4051,7 +4049,7 @@ msgctxt "Error"
 msgid "You are using an outdated version of ProtonMail, please refresh the page."
 msgstr "Používáte neaktuální verzi ProtonMailu, prosím obnovte stránku."
 
-#: ./src/app/composer/services/validateMessage.js:62
+#: ./src/app/composer/services/validateMessage.js:48
 msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr "Zde si můžete vygenerovat Vaše klíče"
@@ -4078,11 +4076,6 @@ msgctxt "Error"
 msgid "You have reached the max recipients (25) per message"
 msgstr "Dosáhl jsem maxima příjemců (25) v rámci jedné zprávy"
 
-#: ./src/app/contact/directives/contactSelectorForm.js:9
-msgctxt "Error"
-msgid "You have reached the max recipients ({{limit}}) per message"
-msgstr "Dosáhl jsem maxima příjemců ({{limit}}) v rámci jedné zprávy"
-
 #: ./src/app/address/factories/addressModel.js:32
 msgctxt "Error"
 msgid "You have used all addresses in your plan. Please upgrade your plan to add a new address"
@@ -4097,11 +4090,6 @@ msgstr "Všechny adresy ve vašem tarifu jsou vyčerpány. Přejděte na vyšš�
 msgctxt "Error"
 msgid "You have used all users in your plan. Please upgrade your plan to add a new user."
 msgstr "Limit počtu uživatelů ve vašem plánu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
-
-#: ./src/app/composer/services/validateMessage.js:54
-msgctxt "Error"
-msgid "You have {{total}} recipients. The maximum number is {{limit}}."
-msgstr "Vybrali jste {{total}} příjemců. Maximální počet je {{limit}}."
 
 #: ./src/app/organization/modals/setupOrganizationModal.js:26
 msgctxt "Error"
@@ -4306,22 +4294,22 @@ msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr "Text nebo vzor"
 
-#: ./src/templates/filter/modal.tpl.html:135
+#: ./src/templates/filter/modal.tpl.html:134
 msgctxt "Filter modal label"
 msgid "Apply labels"
 msgstr "Použít štítky"
 
-#: ./src/templates/filter/modal.tpl.html:210
+#: ./src/templates/filter/modal.tpl.html:209
 msgctxt "Filter modal label"
 msgid "Mark as"
 msgstr "Označit jako"
 
-#: ./src/templates/filter/modal.tpl.html:156
+#: ./src/templates/filter/modal.tpl.html:155
 msgctxt "Filter modal label"
 msgid "Move to"
 msgstr "Přesunout do"
 
-#: ./src/templates/filter/modal.tpl.html:235
+#: ./src/templates/filter/modal.tpl.html:234
 msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr "Poslat automatickou odpověď"
@@ -4995,7 +4983,7 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this label? Removing a label will not remove the messages with that label."
 msgstr "Opravdu chcete odstranit tento štítek? Odebrání štítku nesmaže zprávy označené tímto štítkem."
 
-#: ./src/app/settings/controllers/payments.js:87
+#: ./src/app/settings/controllers/payments.js:88
 msgctxt "Info"
 msgid "Are you sure you want to delete this payment method?"
 msgstr "Opravdu chcete odstranit tento způsob platby?"
@@ -5239,7 +5227,7 @@ msgid "Decryption of this content failed"
 msgstr "Dešifrování obsahu se nezdařilo"
 
 #: ./src/templates/user/addressesSection.tpl.html:34
-#: ./src/templates/views/payments.tpl.html:35
+#: ./src/templates/views/payments.tpl.html:37
 msgctxt "Info"
 msgid "Default"
 msgstr "Výchozí"
@@ -5363,6 +5351,11 @@ msgstr "Zadejte heslo organizace, chtete-li obnovit oprávnění správce. <a hr
 msgctxt "Info"
 msgid "Every 2 years"
 msgstr "Každé 2 roky"
+
+#: ./src/templates/views/payments.tpl.html:38
+msgctxt "Info"
+msgid "Expired"
+msgstr "Vypršelo"
 
 #: ./src/templates/contact/contactActionHeader.tpl.html:47
 #: ./src/templates/contact/contactActionHeader.tpl.html:8
@@ -5493,8 +5486,8 @@ msgctxt "Info"
 msgid "In the next few weeks, ProtonMail will drop support for Internet Explorer. Download one of the modern browsers below."
 msgstr "ProtonMail v následujících týdnech ukončí podporu pro prohlížeče Internet Explorer. Níže si stáhněte jeden z moderních prohlížečů."
 
-#: ./src/app/payment/modals/payModal.js:14
-#: ./src/app/settings/controllers/payments.js:147
+#: ./src/app/payment/modals/payModal.js:17
+#: ./src/app/settings/controllers/payments.js:148
 msgctxt "Info"
 msgid "Invoice paid"
 msgstr "Faktura zaplacena"
@@ -5547,7 +5540,6 @@ msgid "Loading themes will override your current theme!"
 msgstr "Načtení nového vzhledu přepíše ten současný!"
 
 #: ./src/templates/formUtils/captcha.tpl.html:2
-#: ./src/templates/payment/paypalView.tpl.html:22
 msgctxt "Info"
 msgid "Loading..."
 msgstr "Načítání..."
@@ -5635,7 +5627,7 @@ msgctxt "Info"
 msgid "No logs yet"
 msgstr "Zatím žádné záznamy"
 
-#: ./src/app/composer/services/validateMessage.js:61
+#: ./src/app/composer/services/validateMessage.js:47
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr "Žádný předmět, přesto odeslat?"
@@ -5761,6 +5753,11 @@ msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr "PayPal není momentálně dostupný, zkuste to prosím později."
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:43
+msgctxt "Info"
+msgid "Payment can take a few minutes to fully verify."
+msgstr "Než bude platba zcela ověřena, může to trvat i několik minut."
+
 #: ./src/app/payment/directives/payInvoiceBtn.js:13
 msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
@@ -5847,6 +5844,11 @@ msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "Prosím podržte prst na příloze a vyberte Otevřít na nové záložce."
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:48
+msgctxt "Info"
+msgid "Please try again, use a different payment method, or call your bank for assistance."
+msgstr "Zkuste to znovu prosím, použijte jinou platební metodu nebo kontaktujte svoji banku."
+
 #: ./src/app/members/services/memberActions.js:88
 msgctxt "Info"
 msgid "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support."
@@ -5856,6 +5858,21 @@ msgstr "Chcete-li získat podporu pro 1 nebo více uživatelů, přejděte pros�
 msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
 msgstr "Chcete-li použít tuto prémiovou funkci, upgradujte na placený plán."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:35
+msgctxt "Info"
+msgid "Please verify payment at the new tab which was opened."
+msgstr "Ověřte prosím platbu v nové záložce, která je již otevřena."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
+msgctxt "Info"
+msgid "Please verify the card in the new tab which was opened."
+msgstr "Ověřte prosím kartu v nové záložce, která je již otevřena."
+
+#: ./src/templates/payment/paypalView.tpl.html:15
+msgctxt "Info"
+msgid "Please verify your PayPal account at the new tab which was opened."
+msgstr "Ověřte prosím váš Paypal účet v nové záložce, která je již otevřena."
 
 #: ./src/app/formUtils/directives/codeVerificator.js:10
 msgctxt "Info"
@@ -6146,12 +6163,12 @@ msgstr "Používá se k obnovení účtu, pokud ztratíte, nebo zapomenete Vaše
 #: ./src/templates/utils/linkWarningModal.tpl.html:25
 msgctxt "Info"
 msgid "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
-msgstr ""
+msgstr "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
 
 #: ./src/templates/utils/linkWarningModal.tpl.html:17
 msgctxt "Info"
 msgid "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it."
-msgstr ""
+msgstr "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
 
 #: ./src/templates/message/messageAutoGenerated.tpl.html:3
 msgctxt "Info"
@@ -6225,6 +6242,11 @@ msgstr "Tento proces vytvoří pro Vaši organizaci nový šifrovací klíč. 40
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Tímto přejdete na účet zdarma. ProtonMail je svobodný software, který je podporován příspěvky a placenými účty. Prosím, zvažte poskytnutí příspěvku, abychom mohli i nadále poskytovat služby zdarma. <br /><br />Poznámka: další adresy, vlastní domény a uživatelé musí být odstraněny/zrušeny před provedením této operace."
+
+#: ./src/templates/payment/paypalView.tpl.html:31
+msgctxt "Info"
+msgid "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue."
+msgstr "Toto umožní použít Paypal pro platby Proton předplatného. Přesměrujeme vás na Váš PayPal v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím pro než budete pokračovat."
 
 #: ./src/templates/partials/safari.attachment.warning.tpl.html:14
 #: ./src/templates/partials/safari.warning.tpl.html:14
@@ -6304,6 +6326,12 @@ msgctxt "Info"
 msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character."
 msgstr "Platné znaky jsou A-Z, a-z, 0-9, . (tečka), _ (podtržítko) a - (pomlčka). Přihlašovací jméno musí začínat a končit alfanumerickým znakem."
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
+#: ./src/templates/payment/paypalView.tpl.html:17
+msgctxt "Info"
+msgid "Verification can take a few minutes."
+msgstr "Ověřování může trvat několik minut."
+
 #: ./src/templates/formUtils/codeVerificator.tpl.html:56
 msgctxt "Info"
 msgid "Verification code sent"
@@ -6320,6 +6348,17 @@ msgstr "Chyba ověření"
 msgctxt "Info"
 msgid "Verification of this content’s signature failed"
 msgstr "Ověření podpisu tohoto obsahu selhalo"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:24
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:31
+msgctxt "Info"
+msgid "Verification will open a new tab, please disable any popup blockers."
+msgstr "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+msgctxt "Info"
+msgid "Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately."
+msgstr "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken.<b>Nebude účtován</b>. Jakákoli částka použitá pro ověření karty bude obratem vrácena."
 
 #: ./src/templates/layout/pre.tpl.html:4
 msgctxt "Info"
@@ -6362,6 +6401,12 @@ msgstr "Doporučujeme používat různá hesla pro přihlášení a k e-mailové
 msgctxt "Info"
 msgid "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard. (UTF-8 encoding). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Need help?</a>"
 msgstr "Podporujeme import CSV souborů z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některé další. Podporujeme také import vCard. (Kódování UTF-8). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Potřebujete pomoc?</a>"
+
+#: ./src/templates/payment/paypalView.tpl.html:21
+#: ./src/templates/payment/paypalView.tpl.html:39
+msgctxt "Info"
+msgid "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
+msgstr "Pro dokončení transakce Vás přesměrujeme na váš PayPal účet v nové záložce prohlížeče. Pokud používáte blokování vyskakovacích oken, pro pokračování je prosím vypněte."
 
 #: ./src/app/message/directives/unsubscribePanel.js:24
 msgctxt "Info"
@@ -6498,6 +6543,16 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "Musíte aktivovat soukromý klíč vaší organizace pomocí hesla klíče organizace pro zálohování, které vám poskytne správce organizace."
 
+#: ./src/templates/payment/paypalView.tpl.html:35
+msgctxt "Info"
+msgid "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
+msgstr "Abyste mohli přidat PayPal jako platební metodu, musíte jej mít propojený s kreditní kartou nebo bankovním účtem."
+
+#: ./src/templates/payment/paypalView.tpl.html:26
+msgctxt "Info"
+msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please"
+msgstr "Váš PayPal účet musíte mít propojený s kreditní kartou nebo bankovním účtem. Pokud to Váš PayPal účet nemá, prosím"
+
 #: ./src/app/members/services/memberActions.js:38
 msgctxt "Info"
 msgid "You must provide this user with the Organization Password in order to fully activate administrator privileges."
@@ -6515,10 +6570,10 @@ msgctxt "Info"
 msgid "You will be prompted to save the attachment."
 msgstr "Budete vyzváni k uložení přílohy."
 
-#: ./src/templates/payment/paypalView.tpl.html:3
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:29
 msgctxt "Info"
-msgid "You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue."
-msgstr "Pro dokončení transakce se budete muset přihlásit k účtu PayPal. Otevřeme PayPal v nové záložce. Používáte-li blokování vyskakovacích oken, zakažte blokování, a poté pokračujte."
+msgid "You will be soon redirected to your bank to verify your payment."
+msgstr "Pro ověření platby budete přesměrováni na Vaši banku."
 
 #: ./src/templates/modals/payment/modal.tpl.html:39
 msgctxt "Info"
@@ -6535,7 +6590,7 @@ msgctxt "Info"
 msgid "Your VPN account has not yet been activated, go to <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> to sign up and activate your account."
 msgstr "VPN účet zatím nebyl aktivován, přejděte k <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> registraci a účet aktivujte."
 
-#: ./src/app/composer/services/validateMessage.js:74
+#: ./src/app/composer/services/validateMessage.js:60
 #: ./src/templates/invoices/invoiceSection.tpl.html:50
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
@@ -6566,6 +6621,11 @@ msgstr "Administrátorská oprávnění byla odebrána."
 msgctxt "Info"
 msgid "Your attachments are secure and encrypted, but to download them requires extra work. We recommend using a different web browser such as Chrome or Firefox for a better user experience."
 msgstr "Vaše přílohy jsou v bezpečí a šifrované, ale jejich stáhnutí vyžaduje práci navíc. Pro lepší uživatelský komfort doporučujeme používat jiný prohlížeč jako je Chrome, nebo Firefox."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:19
+msgctxt "Info"
+msgid "Your bank requires 3-D Secure verification for security purposes."
+msgstr "Z důvodu bezpečnosti, Vaše banka vyžaduje ověření pomocí 3-D Secure."
 
 #: ./src/templates/user/humanVerification.tpl.html:18
 msgctxt "Info"
@@ -6976,7 +7036,7 @@ msgid "Annually"
 msgstr "Ročně"
 
 #: ./src/app/labels/directives/dropdownFolders.js:13
-#: ./src/templates/filter/modal.tpl.html:173
+#: ./src/templates/filter/modal.tpl.html:172
 msgctxt "Label"
 msgid "Archive"
 msgstr "Archiv"
@@ -7186,7 +7246,7 @@ msgid "Highest security"
 msgstr "Nejvyšší zabezpečení"
 
 #: ./src/app/labels/directives/dropdownFolders.js:8
-#: ./src/templates/filter/modal.tpl.html:165
+#: ./src/templates/filter/modal.tpl.html:164
 msgctxt "Label"
 msgid "Inbox"
 msgstr "Doručená pošta"
@@ -7324,7 +7384,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr "Domovská stránka ProtonVPN"
 
-#: ./src/templates/filter/modal.tpl.html:217
+#: ./src/templates/filter/modal.tpl.html:216
 msgctxt "Label"
 msgid "Read"
 msgstr "Číst"
@@ -7365,12 +7425,12 @@ msgid "Signature"
 msgstr "Podpis"
 
 #: ./src/app/labels/directives/dropdownFolders.js:18
-#: ./src/templates/filter/modal.tpl.html:181
+#: ./src/templates/filter/modal.tpl.html:180
 msgctxt "Label"
 msgid "Spam"
 msgstr "Nevyžádaná pošta"
 
-#: ./src/templates/filter/modal.tpl.html:224
+#: ./src/templates/filter/modal.tpl.html:223
 msgctxt "Label"
 msgid "Starred"
 msgstr "Oblíbené"
@@ -7391,7 +7451,7 @@ msgid "Time zone"
 msgstr "Časové pásmo"
 
 #: ./src/app/labels/directives/dropdownFolders.js:23
-#: ./src/templates/filter/modal.tpl.html:189
+#: ./src/templates/filter/modal.tpl.html:188
 msgctxt "Label"
 msgid "Trash"
 msgstr "Koš"
@@ -7760,6 +7820,11 @@ msgctxt "Link"
 msgid "Why is this required?"
 msgstr "Proč je to povinné?"
 
+#: ./src/templates/payment/paypalView.tpl.html:26
+msgctxt "Link"
+msgid "click here"
+msgstr "klikněte zde"
+
 #: ./src/templates/modals/deleteAccount.tpl.html:11
 msgctxt "Link"
 msgid "this procedure"
@@ -8083,7 +8148,7 @@ msgctxt "Modal setup 2FA"
 msgid "This wizard will enable Two Factor Authentication (2FA) on your ProtonMail account. 2FA will make your ProtonMail account more secure so we recommend enabling it."
 msgstr "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem ProtonMail účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější ProtonMail účet."
 
-#: ./src/templates/utils/printModal.tpl.html:30
+#: ./src/templates/utils/printModal.tpl.html:29
 msgctxt "Modal title"
 msgid "Print preview"
 msgstr "Náhled tisku"
@@ -8208,7 +8273,7 @@ msgctxt "Notification update"
 msgid "The public key with fingerprint {{ fingerprint }} was replaced with a revoked key."
 msgstr "Veřejný klíč s otiskem {{ fingerprint }} byl nahrazen zneplatněným klíčem."
 
-#: ./src/app/utils/services/eventManager.js:163
+#: ./src/app/utils/services/eventManager.js:164
 msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr "Nová zpráva od {{sender}}"
@@ -8343,12 +8408,12 @@ msgstr[1] "Indentifikátory uživatele (IDs) se neshodují. Tento klíč je při
 msgstr[2] "Indentifikátory uživatele ID se neshodují. Tento klíč je přiřazen k {{emails}}."
 msgstr[3] "Indentifikátory uživatele (IDs) se neshodují. Emailové adresy {{emails}} jsou přiřazeny k tomuto klíči."
 
-#: ./src/app/settings/controllers/payments.js:99
+#: ./src/app/settings/controllers/payments.js:100
 msgctxt "Payment"
 msgid "Payment method deleted"
 msgstr "Způsob platby byl odstraněn"
 
-#: ./src/app/settings/controllers/payments.js:78
+#: ./src/app/settings/controllers/payments.js:79
 msgctxt "Payment"
 msgid "Payment method updated"
 msgstr "Způsob platby byl aktualizován"
@@ -8373,12 +8438,12 @@ msgctxt "Payment method"
 msgid "Credit Card"
 msgstr "Platební karta"
 
-#: ./src/templates/payment/paypalView.tpl.html:10
+#: ./src/templates/payment/paypalView.tpl.html:4
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
 msgstr "Hodnota je vyšší než maximální částka."
 
-#: ./src/templates/payment/paypalView.tpl.html:14
+#: ./src/templates/payment/paypalView.tpl.html:5
 msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr "Hodnota je nižší než minimální částka."
@@ -9303,6 +9368,11 @@ msgctxt "Title"
 msgid "2-year plan"
 msgstr "dvouletý tarif"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+msgctxt "Title"
+msgid "3-D Secure verification failed"
+msgstr "Ověření 3D Secure selhalo"
+
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:13
 #: ./src/app/ui/factories/pageTitlesModel.js:25
 msgctxt "Title"
@@ -9312,7 +9382,7 @@ msgstr "Účet"
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:49
-#: ./src/templates/filter/modal.tpl.html:130
+#: ./src/templates/filter/modal.tpl.html:129
 #: ./src/templates/invoices/invoiceList.tpl.html:7
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:215
@@ -9320,7 +9390,7 @@ msgstr "Účet"
 #: ./src/templates/views/invoices.tpl.html:20
 #: ./src/templates/views/invoices.tpl.html:50
 #: ./src/templates/views/members.tpl.html:159
-#: ./src/templates/views/payments.tpl.html:26
+#: ./src/templates/views/payments.tpl.html:25
 msgctxt "Title"
 msgid "Actions"
 msgstr "Akce"
@@ -9573,6 +9643,16 @@ msgstr "Kopie"
 msgctxt "Title"
 msgid "CC:"
 msgstr "Kopie:"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:8
+msgctxt "Title"
+msgid "Card verification"
+msgstr "Ověření karty"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:13
+msgctxt "Title"
+msgid "Card verification in progress"
+msgstr "Probíhá ověřování karty"
 
 #. table heading for the domains page table listing of addresses
 #: ./src/templates/views/domains.tpl.html:210
@@ -9894,7 +9974,7 @@ msgctxt "Title"
 msgid "Delete label"
 msgstr "Odebrat štítek"
 
-#: ./src/app/settings/controllers/payments.js:86
+#: ./src/app/settings/controllers/payments.js:87
 msgctxt "Title"
 msgid "Delete payment method"
 msgstr "Odstranit způsob platby"
@@ -10093,11 +10173,6 @@ msgstr "Chyba při dešifrování přílohy"
 msgctxt "Title"
 msgid "Event"
 msgstr "Událost"
-
-#: ./src/templates/views/payments.tpl.html:24
-msgctxt "Title"
-msgid "Expiration"
-msgstr "Expirace"
 
 #: ./src/templates/composer/composerExpiration.tpl.html:3
 msgctxt "Title"
@@ -10327,7 +10402,7 @@ msgctxt "Title"
 msgid "Keyboard Shortcuts"
 msgstr "Klávesové zkratky"
 
-#: ./src/app/composer/services/validateMessage.js:68
+#: ./src/app/composer/services/validateMessage.js:54
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:68
 #: ./src/app/ui/factories/pageTitlesModel.js:43
 msgctxt "Title"
@@ -10433,6 +10508,11 @@ msgctxt "Title"
 msgid "Message headers"
 msgstr "Hlavička zprávy"
 
+#: ./src/templates/views/payments.tpl.html:23
+msgctxt "Title"
+msgid "Method"
+msgstr "Metoda"
+
 #: ./src/templates/views/members.tpl.html:9
 msgctxt "Title"
 msgid "Multi-User Support"
@@ -10490,7 +10570,7 @@ msgctxt "Title"
 msgid "No messages"
 msgstr "Žádné zprávy"
 
-#: ./src/app/composer/services/validateMessage.js:60
+#: ./src/app/composer/services/validateMessage.js:46
 msgctxt "Title"
 msgid "No subject"
 msgstr "Žádný předmět"
@@ -10511,11 +10591,6 @@ msgstr "Oznámení"
 msgctxt "Title"
 msgid "Notifications"
 msgstr "Oznámení"
-
-#: ./src/templates/views/payments.tpl.html:23
-msgctxt "Title"
-msgid "Number"
-msgstr "Číslo"
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:19
 msgctxt "Title"
@@ -10619,6 +10694,16 @@ msgctxt "Title"
 msgid "Payment methods"
 msgstr "Způsoby plateb"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:7
+msgctxt "Title"
+msgid "Payment verification"
+msgstr "Ověřování platby"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:12
+msgctxt "Title"
+msgid "Payment verification in progress"
+msgstr "Probíhá ověřování platby"
+
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:63
 msgctxt "Title"
 msgid "Payments"
@@ -10674,6 +10759,11 @@ msgstr "Heslo soukromého klíče je povinné"
 msgctxt "Title"
 msgid "Privatize User"
 msgstr "Privatizovat uživatele"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:10
+msgctxt "Title"
+msgid "Processing..."
+msgstr "Zpracovávání..."
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:45
 msgctxt "Title"
@@ -10981,6 +11071,7 @@ msgstr "Nejmodernější technologie"
 #: ./src/templates/invoices/invoiceList.tpl.html:9
 #: ./src/templates/modals/generate.tpl.html:55
 #: ./src/templates/views/domains.tpl.html:208
+#: ./src/templates/views/payments.tpl.html:24
 msgctxt "Title"
 msgid "Status"
 msgstr "Stav"
@@ -11101,7 +11192,6 @@ msgstr "Dvoufázové ověřování zapnuto"
 #: ./src/templates/modals/domain/mx.tpl.html:20
 #: ./src/templates/modals/domain/spf.tpl.html:19
 #: ./src/templates/modals/domain/verification.tpl.html:20
-#: ./src/templates/views/payments.tpl.html:25
 msgctxt "Title"
 msgid "Type"
 msgstr "Typ"
@@ -12094,6 +12184,11 @@ msgstr "Přihlášení selhalo (dvoufázové)"
 msgctxt "auth log entry"
 msgid "Login success"
 msgstr "Přihlášení úspěšné"
+
+#: ./src/templates/security/sessionLogsTable.tpl.html:36
+msgctxt "auth log entry"
+msgid "Login success (two-factor)"
+msgstr "Úspěšné přihlášení (dvou-faktorové)"
 
 #: ./src/templates/security/sessionLogsTable.tpl.html:30
 msgctxt "auth log entry"

@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2019-07-19 09:21\n"
+"PO-Revision-Date: 2019-11-07 14:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -75,11 +75,6 @@ msgstr[0] "Un mesaj mutat în {{folder}}"
 msgstr[1] "{{number}} mesaje mutate în {{folder}}"
 msgstr[2] "{{number}} de mesaje mutate în {{folder}}"
 
-#: ./src/templates/user/signupPayForm.tpl.html:90
-msgctxt "Action"
-msgid "<i class=\"fa fa-lock\"></i> Submit"
-msgstr "<i class=\"fa fa-lock\"></i> Trimitere"
-
 #: ./src/templates/bridge/bridgeFreePanel.tpl.html:2
 msgctxt "Action"
 msgid "Activate"
@@ -126,6 +121,11 @@ msgctxt "Action"
 msgid "Add Filter"
 msgstr "Adăugare filtru"
 
+#: ./src/templates/payment/paypalView.tpl.html:33
+msgctxt "Action"
+msgid "Add PayPal payment method"
+msgstr "Adăugare PayPal ca metodă de plată"
+
 #: ./src/templates/views/payments.tpl.html:15
 msgctxt "Action"
 msgid "Add Payment Method"
@@ -156,7 +156,7 @@ msgctxt "Action"
 msgid "Add auto-reply"
 msgstr "Adăugare autorăspuns"
 
-#: ./src/templates/filter/modal.tpl.html:126
+#: ./src/templates/filter/modal.tpl.html:125
 msgctxt "Action"
 msgid "Add condition"
 msgstr "Adăugare condiție"
@@ -194,7 +194,7 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr "Adăugare filtre"
 
-#: ./src/templates/filter/modal.tpl.html:202
+#: ./src/templates/filter/modal.tpl.html:201
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
@@ -205,7 +205,7 @@ msgctxt "Action"
 msgid "Add key"
 msgstr "Adăugare cheie"
 
-#: ./src/templates/filter/modal.tpl.html:148
+#: ./src/templates/filter/modal.tpl.html:147
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -388,7 +388,7 @@ msgstr "C CA"
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:35
-#: ./src/templates/filter/modal.tpl.html:248
+#: ./src/templates/filter/modal.tpl.html:247
 #: ./src/templates/modals/activateOrganization.tpl.html:25
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -410,6 +410,7 @@ msgstr "C CA"
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:60
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:101
@@ -511,6 +512,12 @@ msgctxt "Action"
 msgid "Change verification number"
 msgstr "Schimbare număr de verificare"
 
+#: ./src/templates/payment/paypalView.tpl.html:23
+#: ./src/templates/payment/paypalView.tpl.html:40
+msgctxt "Action"
+msgid "Check out with PayPal"
+msgstr "Plată cu PayPal"
+
 #: ./src/templates/contact/contactPhotoRow.tpl.html:27
 #: ./src/templates/directives/core/bugModalView.tpl.html:113
 msgctxt "Action"
@@ -521,11 +528,6 @@ msgstr "Eliminare"
 msgctxt "Action"
 msgid "Clear all formatting"
 msgstr "Eliminare formatări"
-
-#: ./src/templates/payment/paypalView.tpl.html:6
-msgctxt "Action"
-msgid "Click here to try again"
-msgstr "Apăsați aici pentru reîncercare"
 
 #: ./src/templates/address/selectAddressModal.tpl.html:3
 #: ./src/templates/address/setupAddressModal.tpl.html:3
@@ -602,7 +604,8 @@ msgstr "Apăsați aici pentru reîncercare"
 #: ./src/templates/modals/pay.tpl.html:107
 #: ./src/templates/modals/pay.tpl.html:16
 #: ./src/templates/modals/payment/modal.tpl.html:19
-#: ./src/templates/modals/payment/modal.tpl.html:63
+#: ./src/templates/modals/payment/modal.tpl.html:62
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:3
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
 #: ./src/templates/modals/releaseNotes.tpl.html:28
@@ -626,8 +629,8 @@ msgstr "Apăsați aici pentru reîncercare"
 #: ./src/templates/payment/giftCodeModal.tpl.html:3
 #: ./src/templates/utils/discardModal.tpl.html:3
 #: ./src/templates/utils/linkWarningModal.tpl.html:3
-#: ./src/templates/utils/printModal.tpl.html:20
-#: ./src/templates/utils/printModal.tpl.html:39
+#: ./src/templates/utils/printModal.tpl.html:19
+#: ./src/templates/utils/printModal.tpl.html:38
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:4
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:4
 msgctxt "Action"
@@ -639,7 +642,7 @@ msgctxt "Action"
 msgid "Common login problems"
 msgstr "Probleme frecvente de conectare"
 
-#: ./src/templates/user/humanVerification.tpl.html:92
+#: ./src/templates/user/humanVerification.tpl.html:93
 msgctxt "Action"
 msgid "Complete setup"
 msgstr "Finalizare configurare"
@@ -673,6 +676,8 @@ msgctxt "Action"
 msgid "Contacts"
 msgstr "Contacte"
 
+#: ./src/templates/modals/card.tpl.html:17
+#: ./src/templates/modals/payment/modal.tpl.html:72
 #: ./src/templates/utils/linkWarningModal.tpl.html:45
 msgctxt "Action"
 msgid "Continue"
@@ -756,7 +761,7 @@ msgstr "Decriptare"
 #: ./src/templates/ui/toolbarMobile.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:124
 #: ./src/templates/views/labels.tpl.html:63
-#: ./src/templates/views/payments.tpl.html:42
+#: ./src/templates/views/payments.tpl.html:45
 msgctxt "Action"
 msgid "Delete"
 msgstr "Ștergere"
@@ -1188,7 +1193,7 @@ msgid "Make Private"
 msgstr "Privat"
 
 #: ./src/app/address/directives/addressBtnActions.js:4
-#: ./src/templates/views/payments.tpl.html:38
+#: ./src/templates/views/payments.tpl.html:41
 msgctxt "Action"
 msgid "Make default"
 msgstr "Implicită"
@@ -1423,7 +1428,7 @@ msgid "Previous"
 msgstr "Anteriorul"
 
 #: ./src/templates/message/message.tpl.html:246
-#: ./src/templates/utils/printModal.tpl.html:45
+#: ./src/templates/utils/printModal.tpl.html:44
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -1492,6 +1497,7 @@ msgstr "Reîncărcare ProtonMail"
 #: ./src/templates/contact/contactGroupModal.tpl.html:91
 #: ./src/templates/contact/contactSelectorForm.tpl.html:57
 #: ./src/templates/contact/contactSelectorForm.tpl.html:63
+#: ./src/templates/filter/modal.tpl.html:113
 msgctxt "Action"
 msgid "Remove"
 msgstr "Eliminare"
@@ -1615,7 +1621,7 @@ msgstr "Anulare sesiuni"
 #: ./src/templates/directives/composer/composer.tpl.html:119
 #: ./src/templates/directives/composer/composer.tpl.html:126
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:254
+#: ./src/templates/filter/modal.tpl.html:253
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
@@ -1673,7 +1679,7 @@ msgctxt "Action"
 msgid "Send"
 msgstr "Trimite"
 
-#: ./src/app/composer/services/validateMessage.js:32
+#: ./src/app/composer/services/validateMessage.js:25
 #: ./src/templates/modals/expirationModal.tpl.html:55
 msgctxt "Action"
 msgid "Send anyway"
@@ -1781,15 +1787,15 @@ msgstr "Sortare alfabetică"
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:29
 #: ./src/templates/modals/activateOrganization.tpl.html:28
 #: ./src/templates/modals/bug.tpl.html:19
-#: ./src/templates/modals/card.tpl.html:17
 #: ./src/templates/modals/customizeInvoice.tpl.html:57
 #: ./src/templates/modals/decryptImportKey.tpl.html:20
 #: ./src/templates/modals/humanVerification.tpl.html:22
 #: ./src/templates/modals/organizationRecovery.tpl.html:15
-#: ./src/templates/modals/payment/modal.tpl.html:69
+#: ./src/templates/modals/payment/modal.tpl.html:71
 #: ./src/templates/modals/reactivate.tpl.html:25
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:23
 #: ./src/templates/modals/switchPasswordMode.tpl.html:74
+#: ./src/templates/user/signupPayForm.tpl.html:90
 #: ./src/templates/user/signupUserForm.tpl.html:53
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:19
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:17
@@ -1849,6 +1855,7 @@ msgid "Trust Public Keys"
 msgstr "Chei publice de încredere"
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:6
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:51
 msgctxt "Action"
 msgid "Try again"
 msgstr "Reîncercați"
@@ -1883,7 +1890,7 @@ msgctxt "Action"
 msgid "Unsubscribe"
 msgstr "Dezabonare"
 
-#: ./src/templates/views/payments.tpl.html:40
+#: ./src/templates/views/payments.tpl.html:43
 msgctxt "Action"
 msgid "Update"
 msgstr "Actualizare"
@@ -1943,6 +1950,11 @@ msgctxt "Action"
 msgid "Uploading"
 msgstr "Încărcare"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:54
+msgctxt "Action"
+msgid "Use a different payment method"
+msgstr "Folosiți o metodă de plată diferită"
+
 #: ./src/templates/payment/giftCodeBtn.tpl.html:3
 msgctxt "Action"
 msgid "Use gift code"
@@ -1954,6 +1966,7 @@ msgid "User"
 msgstr "Utilizator"
 
 #: ./src/templates/modals/domain/verification.tpl.html:38
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:61
 msgctxt "Action"
 msgid "Verify"
 msgstr "Verificare"
@@ -1999,15 +2012,10 @@ msgctxt "Action"
 msgid "click here"
 msgstr "apăsați aici"
 
-#: ./src/templates/payment/donation.tpl.html:129
+#: ./src/templates/payment/donation.tpl.html:130
 msgctxt "Action"
 msgid "complete setup"
 msgstr "finalizare configurare"
-
-#: ./src/templates/filter/modal.tpl.html:113
-msgctxt "Action"
-msgid "title"
-msgstr "titlu"
 
 #: ./src/templates/modals/donate.tpl.html:59
 msgctxt "Action"
@@ -2828,12 +2836,12 @@ msgctxt "Credit card CVC"
 msgid "Security Code"
 msgstr "Cod de securitate"
 
-#: ./src/app/payment/modals/cardModal.js:25
+#: ./src/app/payment/modals/cardModal.js:35
 msgctxt "Credit card modal"
 msgid "Add a credit card."
 msgstr "Adăugare card de credit."
 
-#: ./src/app/payment/modals/cardModal.js:13
+#: ./src/app/payment/modals/cardModal.js:23
 msgctxt "Credit card modal"
 msgid "Update your credit card information."
 msgstr "Actualizare informații card de credit."
@@ -3486,7 +3494,7 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr "Contactul nu are adresă de e-mail"
 
-#: ./src/app/composer/services/validateMessage.js:69
+#: ./src/app/composer/services/validateMessage.js:55
 msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr "Contactați administratorul organizației pentru a rezolva acest lucru."
@@ -3532,11 +3540,6 @@ msgctxt "Error"
 msgid "Error activating organization keys"
 msgstr "Eroare activare chei organizație"
 
-#: ./src/templates/payment/paypalView.tpl.html:6
-msgctxt "Error"
-msgid "Error connecting to PayPal."
-msgstr "Eroare conectare la PayPal."
-
 #: ./src/app/message/factories/messageModel.js:39
 #: ./src/app/outside/controllers/outside.js:34
 msgctxt "Error"
@@ -3568,7 +3571,7 @@ msgctxt "Error"
 msgid "Failed to encrypt attachment. Please try again."
 msgstr "Eșuare criptare atașament. Reîncercați."
 
-#: ./src/app/ui/directives/autocompleteEmails.js:31
+#: ./src/app/ui/directives/autocompleteEmails.js:24
 msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
 msgstr "Nu s-au putut obține informațiile cheilor pentru {{emails}}. Se elimină din lista destinatarilor. Încercați din nou."
@@ -3621,7 +3624,7 @@ msgid "Image upload failed"
 msgstr "Eșuare încărcare imagine"
 
 #: ./src/app/address/factories/reactivateKeys.js:27
-#: ./src/app/authentication/directives/loginContainer.js:38
+#: ./src/app/authentication/directives/loginContainer.js:58
 #: ./src/app/keys/factories/decryptImportKeyModal.js:28
 msgctxt "Error"
 msgid "Incorrect decryption password"
@@ -3673,7 +3676,7 @@ msgctxt "Error"
 msgid "Invalid file type"
 msgstr "Tip fișier nevalid"
 
-#: ./src/app/contact/directives/contactSelectorForm.js:8
+#: ./src/app/contact/directives/contactSelectorForm.js:6
 msgctxt "Error"
 msgid "Invalid form"
 msgstr "Formular nevalid"
@@ -3763,7 +3766,7 @@ msgctxt "Error"
 msgid "No Internet connection found."
 msgstr "Nu există conexiune la internet."
 
-#: ./src/app/composer/services/validateMessage.js:63
+#: ./src/app/composer/services/validateMessage.js:49
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr "Nu exista adrese cu chei disponibile pentru a compune un mesaj."
@@ -3840,7 +3843,7 @@ msgctxt "Error"
 msgid "Please enter a password for this email."
 msgstr "Introduceți o parolă pentru acest mesaj."
 
-#: ./src/app/composer/services/validateMessage.js:47
+#: ./src/app/composer/services/validateMessage.js:40
 msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "Specificați cel puțin un destinatar."
@@ -3855,7 +3858,7 @@ msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "Introduceți codul de acces cu doi factori"
 
-#: ./src/app/keys/services/decryptKeys.js:12
+#: ./src/app/keys/services/decryptKeys.js:10
 msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
 msgstr "Cheia primară pentru {{email}} nu poate fi decriptată. Nu veți putea citi sau scrie vreun mesaj de pe această adresă."
@@ -3895,7 +3898,7 @@ msgctxt "Error"
 msgid "Sign up failed"
 msgstr "Înscriere eșuată"
 
-#: ./src/app/composer/services/validateMessage.js:41
+#: ./src/app/composer/services/validateMessage.js:34
 msgctxt "Error"
 msgid "Some email addresses are invalid"
 msgstr "Unele adrese de e-mail nu sunt valide"
@@ -3953,7 +3956,7 @@ msgctxt "Error"
 msgid "The email body is not a valid MIME message."
 msgstr "Conținutul mesajului nu este un mesaj valid MIME."
 
-#: ./src/app/composer/services/validateMessage.js:39
+#: ./src/app/composer/services/validateMessage.js:32
 msgctxt "Error"
 msgid "The following addresses are not valid: {{emails}}"
 msgstr "Următoarele adrese nu sunt valide: {{emails}}"
@@ -3963,20 +3966,15 @@ msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr "Perioada maximă de expirare este 4 săptămâni."
 
-#: ./src/app/composer/services/validateMessage.js:42
+#: ./src/app/composer/services/validateMessage.js:35
 msgctxt "Error"
 msgid "The maximum length of the message body is 16,000,000 characters."
 msgstr "Lungimea maximă a mesajului este 16.000.000 de caractere."
 
-#: ./src/app/composer/services/validateMessage.js:48
+#: ./src/app/composer/services/validateMessage.js:41
 msgctxt "Error"
 msgid "The maximum length of the subject is {{size}}."
 msgstr "Lungimea maximă a subiectului este {{size}}."
-
-#: ./src/app/ui/directives/autocompleteEmails.js:24
-msgctxt "Error"
-msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
-msgstr "Numărul total de destinatari este ({{total}}) din maxim {{limit}}."
 
 #: ./src/app/core/directives/signupIframe.js:46
 msgctxt "Error"
@@ -4025,7 +4023,7 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr "Verificarea nu a reușit. Reîncercaţi într-o oră."
 
-#: ./src/app/composer/services/validateMessage.js:33
+#: ./src/app/composer/services/validateMessage.js:26
 msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr "Așteptați încărcarea atașamentului sau opriți încărcarea."
@@ -4050,7 +4048,7 @@ msgctxt "Error"
 msgid "You are using an outdated version of ProtonMail, please refresh the page."
 msgstr "Folosiți o versiune mai veche a ProtonMail. Actualizați pagina."
 
-#: ./src/app/composer/services/validateMessage.js:62
+#: ./src/app/composer/services/validateMessage.js:48
 msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr "Puteți genera cheile aici"
@@ -4077,11 +4075,6 @@ msgctxt "Error"
 msgid "You have reached the max recipients (25) per message"
 msgstr "Ați atins numărul maxim de destinatari (25) per mesaj."
 
-#: ./src/app/contact/directives/contactSelectorForm.js:9
-msgctxt "Error"
-msgid "You have reached the max recipients ({{limit}}) per message"
-msgstr "Ați atins numărul maxim de destinatari {{limit}} per mesaj."
-
 #: ./src/app/address/factories/addressModel.js:32
 msgctxt "Error"
 msgid "You have used all addresses in your plan. Please upgrade your plan to add a new address"
@@ -4096,11 +4089,6 @@ msgstr "V-ați folosit toate adresele din plan. Vă rugăm să treceți la un pl
 msgctxt "Error"
 msgid "You have used all users in your plan. Please upgrade your plan to add a new user."
 msgstr "V-ați folosit toate adresele din plan. Vă rugăm să treceți la un plan plătit superior pentru a adăuga un utilizator nou."
-
-#: ./src/app/composer/services/validateMessage.js:54
-msgctxt "Error"
-msgid "You have {{total}} recipients. The maximum number is {{limit}}."
-msgstr "Aveți {{total}} destinatari. Numărul maxim este {{limit}}."
 
 #: ./src/app/organization/modals/setupOrganizationModal.js:26
 msgctxt "Error"
@@ -4304,22 +4292,22 @@ msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr "Text sau model"
 
-#: ./src/templates/filter/modal.tpl.html:135
+#: ./src/templates/filter/modal.tpl.html:134
 msgctxt "Filter modal label"
 msgid "Apply labels"
 msgstr "Aplicare etichete"
 
-#: ./src/templates/filter/modal.tpl.html:210
+#: ./src/templates/filter/modal.tpl.html:209
 msgctxt "Filter modal label"
 msgid "Mark as"
 msgstr "Marcare ca"
 
-#: ./src/templates/filter/modal.tpl.html:156
+#: ./src/templates/filter/modal.tpl.html:155
 msgctxt "Filter modal label"
 msgid "Move to"
 msgstr "Mutare în"
 
-#: ./src/templates/filter/modal.tpl.html:235
+#: ./src/templates/filter/modal.tpl.html:234
 msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr "Trimitere autorăspuns"
@@ -4991,7 +4979,7 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this label? Removing a label will not remove the messages with that label."
 msgstr "Sigur doriți să ștergeți această etichetă? Ștergerea unei etichete nu va șterge mesajele etichetate cu ea."
 
-#: ./src/app/settings/controllers/payments.js:87
+#: ./src/app/settings/controllers/payments.js:88
 msgctxt "Info"
 msgid "Are you sure you want to delete this payment method?"
 msgstr "Sigur doriți să ștergeți această metodă de plată?"
@@ -5235,7 +5223,7 @@ msgid "Decryption of this content failed"
 msgstr "Decriptarea acestui conținut a eșuat"
 
 #: ./src/templates/user/addressesSection.tpl.html:34
-#: ./src/templates/views/payments.tpl.html:35
+#: ./src/templates/views/payments.tpl.html:37
 msgctxt "Info"
 msgid "Default"
 msgstr "Implicit"
@@ -5359,6 +5347,11 @@ msgstr "Introduceți parola organizației pentru a restaura drepturile de admini
 msgctxt "Info"
 msgid "Every 2 years"
 msgstr "Bianual"
+
+#: ./src/templates/views/payments.tpl.html:38
+msgctxt "Info"
+msgid "Expired"
+msgstr "Expirată"
 
 #: ./src/templates/contact/contactActionHeader.tpl.html:47
 #: ./src/templates/contact/contactActionHeader.tpl.html:8
@@ -5489,8 +5482,8 @@ msgctxt "Info"
 msgid "In the next few weeks, ProtonMail will drop support for Internet Explorer. Download one of the modern browsers below."
 msgstr "În următoarele săptămâni, ProtonMail va renunța la suportul pentru Internet Explorer. Descărcați unul din navigatoarele moderne de mai jos."
 
-#: ./src/app/payment/modals/payModal.js:14
-#: ./src/app/settings/controllers/payments.js:147
+#: ./src/app/payment/modals/payModal.js:17
+#: ./src/app/settings/controllers/payments.js:148
 msgctxt "Info"
 msgid "Invoice paid"
 msgstr "Factura plătită"
@@ -5543,7 +5536,6 @@ msgid "Loading themes will override your current theme!"
 msgstr "Încărcarea temelor va suprascrie tema curentă!"
 
 #: ./src/templates/formUtils/captcha.tpl.html:2
-#: ./src/templates/payment/paypalView.tpl.html:22
 msgctxt "Info"
 msgid "Loading..."
 msgstr "Se încarcă..."
@@ -5630,7 +5622,7 @@ msgctxt "Info"
 msgid "No logs yet"
 msgstr "Încă nu sunt jurnale"
 
-#: ./src/app/composer/services/validateMessage.js:61
+#: ./src/app/composer/services/validateMessage.js:47
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr "Fără subiect, trimiteți așa?"
@@ -5756,6 +5748,11 @@ msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr "PayPal nu este momentan disponibil, vă rugăm încercați mai târziu."
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:43
+msgctxt "Info"
+msgid "Payment can take a few minutes to fully verify."
+msgstr "Verificarea plății poate dura câteva minute."
+
 #: ./src/app/payment/directives/payInvoiceBtn.js:13
 msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
@@ -5842,6 +5839,11 @@ msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "Atingeți și țineți apăsat pe atașament și selectați «Deschidere în filă nouă»."
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:48
+msgctxt "Info"
+msgid "Please try again, use a different payment method, or call your bank for assistance."
+msgstr "Reîncercați, folosiți o metodă de plată diferită sau sunați-vă banca pentru asistență."
+
 #: ./src/app/members/services/memberActions.js:88
 msgctxt "Info"
 msgid "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support."
@@ -5851,6 +5853,21 @@ msgstr "Vă rugăm treceți la planul Profesional cu mai mult de un utilizator s
 msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
 msgstr "Vă rugăm să treceți la un plan cu plată pentru aceste funcții speciale."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:35
+msgctxt "Info"
+msgid "Please verify payment at the new tab which was opened."
+msgstr "Verificați efectuarea plății în noua fereastră deschisă."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
+msgctxt "Info"
+msgid "Please verify the card in the new tab which was opened."
+msgstr "Verificați cardul în noua fereastră deschisă."
+
+#: ./src/templates/payment/paypalView.tpl.html:15
+msgctxt "Info"
+msgid "Please verify your PayPal account at the new tab which was opened."
+msgstr "Verificați contul de PayPal în noua fereastră ce a fost deschisă."
 
 #: ./src/app/formUtils/directives/codeVerificator.js:10
 msgctxt "Info"
@@ -6221,6 +6238,11 @@ msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Aceasta va transforma contul dvs. la un cont gratuit. ProtonMail este un program gratuit care este suportat din donații și conturi plătite. Vă rugăm să luați în considerare să faceți o donație astfel încât să putem oferi serviciul gratuit. <br /><br />Atenție: Toate datele pentru adresele adiționale, domeniile personale și utilizatori trebuie eliminate/dezactivate înainte de a efectua această operație."
 
+#: ./src/templates/payment/paypalView.tpl.html:31
+msgctxt "Info"
+msgid "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue."
+msgstr "Aceasta va activa PayPal ca metodă de plată pentru abonamentul la Proton. Veți fi redirectat spre PayPal într-o fereastră nouă. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
+
 #: ./src/templates/partials/safari.attachment.warning.tpl.html:14
 #: ./src/templates/partials/safari.warning.tpl.html:14
 msgctxt "Info"
@@ -6299,6 +6321,12 @@ msgctxt "Info"
 msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character."
 msgstr "Caractere valide sunt A-Z, a-z, 0-9. (punct), _ (liniuța de subliniere) și - (cratimă). Numele de utilizator trebuie să înceapă și să se termine cu un caracter alfanumeric."
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
+#: ./src/templates/payment/paypalView.tpl.html:17
+msgctxt "Info"
+msgid "Verification can take a few minutes."
+msgstr "Verificarea poate dura câteva minute."
+
 #: ./src/templates/formUtils/codeVerificator.tpl.html:56
 msgctxt "Info"
 msgid "Verification code sent"
@@ -6315,6 +6343,17 @@ msgstr "Eroare verificare"
 msgctxt "Info"
 msgid "Verification of this content’s signature failed"
 msgstr "Eșuare verificare semnătură conținut"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:24
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:31
+msgctxt "Info"
+msgid "Verification will open a new tab, please disable any popup blockers."
+msgstr "Verificarea va deschide o fereastră nouă. Dezactivați programele care blochează ferestrele flotante."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+msgctxt "Info"
+msgid "Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately."
+msgstr "Verificarea va deschide o fereastră nouă. Dezactivați programele care blochează ferestrele flotante.<b>Nu veți fi taxat</b>. Orice sumă retrasă pentru verificarea cardului vă va fi rambursată imediat."
 
 #: ./src/templates/layout/pre.tpl.html:4
 msgctxt "Info"
@@ -6357,6 +6396,12 @@ msgstr "Vă recomandăm să folosiți parole diferite pentru conectare și pentr
 msgctxt "Info"
 msgid "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard. (UTF-8 encoding). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Need help?</a>"
 msgstr "Se suportă importarea fișierelor CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte câteva aplicații. Se suportă și importarea fișierelor vCard. (codificate UTF-8). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Doriți ajutor?</a>"
+
+#: ./src/templates/payment/paypalView.tpl.html:21
+#: ./src/templates/payment/paypalView.tpl.html:39
+msgctxt "Info"
+msgid "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
+msgstr "Veți fi redirecționat(ă) spre PayPal într-o fereastră nouă pentru a finaliza tranzacția. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
 
 #: ./src/app/message/directives/unsubscribePanel.js:24
 msgctxt "Info"
@@ -6493,6 +6538,16 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "Trebuie să activați cheia privată a organizației cu parola de rezervă a cheii organizației primită de la administratorul organizației."
 
+#: ./src/templates/payment/paypalView.tpl.html:35
+msgctxt "Info"
+msgid "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
+msgstr "Trebuie să aveți un card de credit sau un cont bancar asociat cu contul de PayPal pentru a-l adăuga ca metodă de plată."
+
+#: ./src/templates/payment/paypalView.tpl.html:26
+msgctxt "Info"
+msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please"
+msgstr "Trebuie să aveți un card de credit sau cont bancar asociat la contul de PayPal. Dacă contul de PayPal nu are așa ceva, atunci"
+
 #: ./src/app/members/services/memberActions.js:38
 msgctxt "Info"
 msgid "You must provide this user with the Organization Password in order to fully activate administrator privileges."
@@ -6510,10 +6565,10 @@ msgctxt "Info"
 msgid "You will be prompted to save the attachment."
 msgstr "Vi se va solicita să salvați atașamentul."
 
-#: ./src/templates/payment/paypalView.tpl.html:3
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:29
 msgctxt "Info"
-msgid "You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue."
-msgstr "Trebuie să vă conectați în contul dvs. de PayPal pentru a completa această tranzacție. Se va deschide o filă nouă cu PayPal. Dacă folosiți blocarea ferestrelor contextuale (pop-up), dezactivați blocarea lor înainte de a continua."
+msgid "You will be soon redirected to your bank to verify your payment."
+msgstr "Veți fi redirecționat spre bancă pentru a verifica efectuarea plății."
 
 #: ./src/templates/modals/payment/modal.tpl.html:39
 msgctxt "Info"
@@ -6530,7 +6585,7 @@ msgctxt "Info"
 msgid "Your VPN account has not yet been activated, go to <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> to sign up and activate your account."
 msgstr "Contul dvs. VPN nu a fost încă activat, vizitați <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> pentru a vă înscrie și activa contul."
 
-#: ./src/app/composer/services/validateMessage.js:74
+#: ./src/app/composer/services/validateMessage.js:60
 #: ./src/templates/invoices/invoiceSection.tpl.html:50
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
@@ -6561,6 +6616,11 @@ msgstr "Drepturile administrative v-au fost revocate."
 msgctxt "Info"
 msgid "Your attachments are secure and encrypted, but to download them requires extra work. We recommend using a different web browser such as Chrome or Firefox for a better user experience."
 msgstr "Atașamentele sunt sigure și criptate, dat pentru a le descărca este nevoie de un efort suplimentar. Vă recomandăm să folosiți un navigator diferit cum ar fi Chrome sau Firefox pentru o experiență mai bună."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:19
+msgctxt "Info"
+msgid "Your bank requires 3-D Secure verification for security purposes."
+msgstr "Banca solicită verificarea cu sistemul 3-D Secure pentru asigurarea securității."
 
 #: ./src/templates/user/humanVerification.tpl.html:18
 msgctxt "Info"
@@ -6964,7 +7024,7 @@ msgid "Annually"
 msgstr "Anual"
 
 #: ./src/app/labels/directives/dropdownFolders.js:13
-#: ./src/templates/filter/modal.tpl.html:173
+#: ./src/templates/filter/modal.tpl.html:172
 msgctxt "Label"
 msgid "Archive"
 msgstr "Arhivă"
@@ -7174,7 +7234,7 @@ msgid "Highest security"
 msgstr "Securitate maximă"
 
 #: ./src/app/labels/directives/dropdownFolders.js:8
-#: ./src/templates/filter/modal.tpl.html:165
+#: ./src/templates/filter/modal.tpl.html:164
 msgctxt "Label"
 msgid "Inbox"
 msgstr "Primite"
@@ -7312,7 +7372,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr "Pagina ProtonVPN"
 
-#: ./src/templates/filter/modal.tpl.html:217
+#: ./src/templates/filter/modal.tpl.html:216
 msgctxt "Label"
 msgid "Read"
 msgstr "Citit"
@@ -7353,12 +7413,12 @@ msgid "Signature"
 msgstr "Semnătură"
 
 #: ./src/app/labels/directives/dropdownFolders.js:18
-#: ./src/templates/filter/modal.tpl.html:181
+#: ./src/templates/filter/modal.tpl.html:180
 msgctxt "Label"
 msgid "Spam"
 msgstr "Spam"
 
-#: ./src/templates/filter/modal.tpl.html:224
+#: ./src/templates/filter/modal.tpl.html:223
 msgctxt "Label"
 msgid "Starred"
 msgstr "Marcate"
@@ -7379,7 +7439,7 @@ msgid "Time zone"
 msgstr "Fus orar"
 
 #: ./src/app/labels/directives/dropdownFolders.js:23
-#: ./src/templates/filter/modal.tpl.html:189
+#: ./src/templates/filter/modal.tpl.html:188
 msgctxt "Label"
 msgid "Trash"
 msgstr "Gunoi"
@@ -7503,7 +7563,7 @@ msgstr "Adresa extinsă (numărul apartamentului)"
 #: ./src/templates/contact/contactAddressInput.tpl.html:3
 msgctxt "Label for address input in contact details"
 msgid "Post office box"
-msgstr "Căsuță poștală"
+msgstr "Cutie poștală"
 
 #: ./src/templates/contact/contactAddressInput.tpl.html:17
 msgctxt "Label for address input in contact details"
@@ -7747,6 +7807,11 @@ msgstr "Care este diferența dintre conectarea la ProtonVPN și OpenVPN?"
 msgctxt "Link"
 msgid "Why is this required?"
 msgstr "De ce este necesară?"
+
+#: ./src/templates/payment/paypalView.tpl.html:26
+msgctxt "Link"
+msgid "click here"
+msgstr "apăsați aici"
 
 #: ./src/templates/modals/deleteAccount.tpl.html:11
 msgctxt "Link"
@@ -8071,7 +8136,7 @@ msgctxt "Modal setup 2FA"
 msgid "This wizard will enable Two Factor Authentication (2FA) on your ProtonMail account. 2FA will make your ProtonMail account more secure so we recommend enabling it."
 msgstr "Acest asistent va activa Autentificarea cu doi factori (A2F) pentru contul dvs. ProtonMail. A2F va face contul ProtonMail mai sigur astfel încât vă recomandăm s-o activați."
 
-#: ./src/templates/utils/printModal.tpl.html:30
+#: ./src/templates/utils/printModal.tpl.html:29
 msgctxt "Modal title"
 msgid "Print preview"
 msgstr "Vizualizare înaintea imprimării"
@@ -8196,7 +8261,7 @@ msgctxt "Notification update"
 msgid "The public key with fingerprint {{ fingerprint }} was replaced with a revoked key."
 msgstr "Cheia publică cu amprenta {{ fingerprint }} a fost înlocuită cu o cheie revocată."
 
-#: ./src/app/utils/services/eventManager.js:163
+#: ./src/app/utils/services/eventManager.js:164
 msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr "Mesaj nou de la {{sender}}"
@@ -8330,12 +8395,12 @@ msgstr[0] "Nepotrivire ID utilizator. Această cheie este atribuită adresei {{e
 msgstr[1] "Nepotrivire ID utilizator. Adresele {{emails}} sunt atribuite acestei chei."
 msgstr[2] "Nepotrivire ID utilizator. Adresele {{emails}} sunt atribuite acestei chei."
 
-#: ./src/app/settings/controllers/payments.js:99
+#: ./src/app/settings/controllers/payments.js:100
 msgctxt "Payment"
 msgid "Payment method deleted"
 msgstr "Metodă de plată ștearsă"
 
-#: ./src/app/settings/controllers/payments.js:78
+#: ./src/app/settings/controllers/payments.js:79
 msgctxt "Payment"
 msgid "Payment method updated"
 msgstr "Metodă de plată actualizată"
@@ -8360,12 +8425,12 @@ msgctxt "Payment method"
 msgid "Credit Card"
 msgstr "Card de credit"
 
-#: ./src/templates/payment/paypalView.tpl.html:10
+#: ./src/templates/payment/paypalView.tpl.html:4
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
 msgstr "Sumă mai mare decât maximul acceptat."
 
-#: ./src/templates/payment/paypalView.tpl.html:14
+#: ./src/templates/payment/paypalView.tpl.html:5
 msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr "Sumă mai mică decât minimul acceptat."
@@ -9286,6 +9351,11 @@ msgctxt "Title"
 msgid "2-year plan"
 msgstr "Plan 2 ani"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+msgctxt "Title"
+msgid "3-D Secure verification failed"
+msgstr "Verificarea cu 3-D Secure a eșuat"
+
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:13
 #: ./src/app/ui/factories/pageTitlesModel.js:25
 msgctxt "Title"
@@ -9295,7 +9365,7 @@ msgstr "Cont"
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:49
-#: ./src/templates/filter/modal.tpl.html:130
+#: ./src/templates/filter/modal.tpl.html:129
 #: ./src/templates/invoices/invoiceList.tpl.html:7
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:215
@@ -9303,7 +9373,7 @@ msgstr "Cont"
 #: ./src/templates/views/invoices.tpl.html:20
 #: ./src/templates/views/invoices.tpl.html:50
 #: ./src/templates/views/members.tpl.html:159
-#: ./src/templates/views/payments.tpl.html:26
+#: ./src/templates/views/payments.tpl.html:25
 msgctxt "Title"
 msgid "Actions"
 msgstr "Acțiuni"
@@ -9556,6 +9626,16 @@ msgstr "CC"
 msgctxt "Title"
 msgid "CC:"
 msgstr "C:"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:8
+msgctxt "Title"
+msgid "Card verification"
+msgstr "Verificare card"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:13
+msgctxt "Title"
+msgid "Card verification in progress"
+msgstr "Verificare card în desfășurare"
 
 #. table heading for the domains page table listing of addresses
 #: ./src/templates/views/domains.tpl.html:210
@@ -9877,7 +9957,7 @@ msgctxt "Title"
 msgid "Delete label"
 msgstr "Ștergere etichetă"
 
-#: ./src/app/settings/controllers/payments.js:86
+#: ./src/app/settings/controllers/payments.js:87
 msgctxt "Title"
 msgid "Delete payment method"
 msgstr "Ștergere metodă de plată"
@@ -10076,11 +10156,6 @@ msgstr "Eroare la decriptarea atașamentelor"
 msgctxt "Title"
 msgid "Event"
 msgstr "Eveniment"
-
-#: ./src/templates/views/payments.tpl.html:24
-msgctxt "Title"
-msgid "Expiration"
-msgstr "Expirare"
 
 #: ./src/templates/composer/composerExpiration.tpl.html:3
 msgctxt "Title"
@@ -10310,7 +10385,7 @@ msgctxt "Title"
 msgid "Keyboard Shortcuts"
 msgstr "Combinații taste"
 
-#: ./src/app/composer/services/validateMessage.js:68
+#: ./src/app/composer/services/validateMessage.js:54
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:68
 #: ./src/app/ui/factories/pageTitlesModel.js:43
 msgctxt "Title"
@@ -10416,6 +10491,11 @@ msgctxt "Title"
 msgid "Message headers"
 msgstr "Antete mesaj"
 
+#: ./src/templates/views/payments.tpl.html:23
+msgctxt "Title"
+msgid "Method"
+msgstr "Metoda"
+
 #: ./src/templates/views/members.tpl.html:9
 msgctxt "Title"
 msgid "Multi-User Support"
@@ -10473,7 +10553,7 @@ msgctxt "Title"
 msgid "No messages"
 msgstr "Nu sunt mesaje"
 
-#: ./src/app/composer/services/validateMessage.js:60
+#: ./src/app/composer/services/validateMessage.js:46
 msgctxt "Title"
 msgid "No subject"
 msgstr "Fără subiect"
@@ -10494,11 +10574,6 @@ msgstr "Notificare"
 msgctxt "Title"
 msgid "Notifications"
 msgstr "Notificări"
-
-#: ./src/templates/views/payments.tpl.html:23
-msgctxt "Title"
-msgid "Number"
-msgstr "Număr"
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:19
 msgctxt "Title"
@@ -10602,6 +10677,16 @@ msgctxt "Title"
 msgid "Payment methods"
 msgstr "Metode de plată"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:7
+msgctxt "Title"
+msgid "Payment verification"
+msgstr "Verificare plată"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:12
+msgctxt "Title"
+msgid "Payment verification in progress"
+msgstr "Verificarea plății în desfășurare"
+
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:63
 msgctxt "Title"
 msgid "Payments"
@@ -10657,6 +10742,11 @@ msgstr "Parolă cheie privată obligatorie"
 msgctxt "Title"
 msgid "Privatize User"
 msgstr "Convertire în privat"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:10
+msgctxt "Title"
+msgid "Processing..."
+msgstr "Se procesează..."
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:45
 msgctxt "Title"
@@ -10964,6 +11054,7 @@ msgstr "De ultimă oră"
 #: ./src/templates/invoices/invoiceList.tpl.html:9
 #: ./src/templates/modals/generate.tpl.html:55
 #: ./src/templates/views/domains.tpl.html:208
+#: ./src/templates/views/payments.tpl.html:24
 msgctxt "Title"
 msgid "Status"
 msgstr "Stare"
@@ -11084,7 +11175,6 @@ msgstr "Autentificare cu doi factori activată"
 #: ./src/templates/modals/domain/mx.tpl.html:20
 #: ./src/templates/modals/domain/spf.tpl.html:19
 #: ./src/templates/modals/domain/verification.tpl.html:20
-#: ./src/templates/views/payments.tpl.html:25
 msgctxt "Title"
 msgid "Type"
 msgstr "Tip"
@@ -12068,6 +12158,11 @@ msgstr "Conectare eșuată (doi factori)"
 msgctxt "auth log entry"
 msgid "Login success"
 msgstr "Conectare reușită"
+
+#: ./src/templates/security/sessionLogsTable.tpl.html:36
+msgctxt "auth log entry"
+msgid "Login success (two-factor)"
+msgstr "Conectare reușită (doi factori)"
 
 #: ./src/templates/security/sessionLogsTable.tpl.html:30
 msgctxt "auth log entry"
