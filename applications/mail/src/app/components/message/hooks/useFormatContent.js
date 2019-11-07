@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import { useCache } from 'react-components';
 import { useGetMailSettings } from './useMailSettings';
 import { transformEscape } from '../transforms/transformEscape';
@@ -13,8 +12,8 @@ import { transformBase } from '../transforms/transformBase';
 
 // Reference: Angular/src/app/message/services/prepareContent.js
 
-const transformers = [
-    transformEscape, // Has to be in first place as it initialy parse the string content
+const all = [
+    transformEscape,
     transformBase,
     transformLinks,
     transformEmbedded,
@@ -29,25 +28,27 @@ export const useFormatContent = () => {
     const getMailSettings = useGetMailSettings();
     const cache = useCache();
 
-    // TODO: Handle blacklist and whitelist
-
-    return useCallback(async (content, message, action) => {
+    const formatContent = async (inputMetadata, message, transformers, action) => {
         const mailSettings = await getMailSettings();
 
-        console.log('formatContent', content, message, mailSettings);
+        // console.log('formatContent', inputMetadata, message, mailSettings);
 
-        let resultMetadata = {};
+        const metadata = await transformers.reduce(async (promise, transformer) => {
+            const metadata = await promise;
+            const newMetadata = await transformer(metadata, { message, action, cache, mailSettings });
+            return { ...metadata, ...newMetadata };
+        }, inputMetadata);
 
-        const { document } = await transformers.reduce(
-            async (promise, transformer) => {
-                const { document, metadata = {} } = await promise;
-                resultMetadata = { ...resultMetadata, ...metadata };
-                console.log('transformer', transformer);
-                return transformer({ document, message, action, cache, mailSettings });
-            },
-            { document: content }
-        );
+        return { ...metadata, content: metadata.document.innerHTML };
+    };
 
-        return { content: document.innerHTML, metadata: resultMetadata };
-    });
+    const initialize = (metadata, message, action) => {
+        return formatContent(metadata, message, all, action);
+    };
+
+    const loadImages = (metadata, message, action) => {
+        return formatContent({ ...metadata, showImages: true }, message, [transformRemote], action);
+    };
+
+    return { initialize, loadImages };
 };

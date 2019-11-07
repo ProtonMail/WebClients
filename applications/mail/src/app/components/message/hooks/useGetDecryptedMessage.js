@@ -12,7 +12,9 @@ export const useGetDecryptedMessage = () => {
     const getPublicKeys = useGetPublicKeys();
     const getAddressKeys = useGetAddressKeys();
 
+    // Cache result
     return useCallback(async (message) => {
+        // Do it in //
         const { publicKeys = [] } = await getPublicKeys(message.Sender.Address);
         const addressKeys = await getAddressKeys(message.AddressID);
         const { privateKeys } = splitKeys(addressKeys);

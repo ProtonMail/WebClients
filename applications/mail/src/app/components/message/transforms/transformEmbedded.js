@@ -6,7 +6,7 @@ import * as embedded from './embedded/embedded';
 const EMBEDDED_CLASSNAME = 'proton-embedded';
 const wrapImage = (img) => wrap(img, '<div class="image loading"></div>');
 
-export const transformEmbedded = async ({ document, message, action, mailSettings }) => {
+export const transformEmbedded = async ({ document }, { message, action, mailSettings }) => {
     const images = [...document.querySelectorAll('img[proton-src]')];
     // const { ShowImages = 0 } = mailSettingsModel.get();
     const { ShowImages = 0 } = mailSettings;
@@ -70,12 +70,12 @@ export const transformEmbedded = async ({ document, message, action, mailSetting
             return;
         }
 
-        message.showEmbedded = false;
+        // message.showEmbedded = false;
         // Inline embedded images does not have an attachment.
         if (attachment) {
             image.setAttribute('alt', attachment.Name);
         }
     });
 
-    return { document, metadata: { hasImages: images.length > 0 } };
+    return { document, hasImages: images.length > 0 };
 };

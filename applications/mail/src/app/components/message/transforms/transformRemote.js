@@ -71,13 +71,12 @@ function prepareInjection(html) {
     return attributes;
 }
 
-export const transformRemote = ({ document, message, action, mailSettings }) => {
+export const transformRemote = ({ document, showImages: inputShowImages }, { message, action, mailSettings }) => {
     const showImages =
-        message.showImages ||
-        mailSettings.ShowImages & SHOW_IMAGES.REMOTE ||
-        WHITELIST.includes(message.Sender.Address);
+        inputShowImages || mailSettings.ShowImages & SHOW_IMAGES.REMOTE || WHITELIST.includes(message.Sender.Address);
     const content = document.innerHTML;
 
+    // TODO: Still needed ?
     // Bind the boolean only if there are something
     if (new RegExp(REGEXP_FIXER, 'g').test(content)) {
         message.showImages = showImages;
@@ -96,5 +95,5 @@ export const transformRemote = ({ document, message, action, mailSettings }) => 
             document.innerHTML = content.replace(new RegExp(REGEXP_FIXER, 'g'), (match, $1) => $1.substring(7));
         }
     }
-    return { document };
+    return { document, showImages };
 };

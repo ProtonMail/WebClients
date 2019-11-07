@@ -10,8 +10,18 @@ import ItemLabels from '../list/ItemLabels';
 import ItemLocation from '../list/ItemLocation';
 import MoveDropdown from '../dropdown/MoveDropdown';
 import LabelDropdown from '../dropdown/LabelDropdown';
+import MessageHeaderExtra from './MessageHeaderExtra';
 
-const MessageHeaderExpanded = ({ labels, message, mailSettings, showDetails, toggleDetails, children }) => {
+const MessageHeaderExpanded = ({
+    labels,
+    message,
+    messageMetadata,
+    onLoadImages,
+    mailSettings,
+    showDetails,
+    toggleDetails,
+    children
+}) => {
     const { ToList = [], CCList = [], BCCList = [] } = message;
     const recipients = [...ToList, ...BCCList, ...CCList];
 
@@ -74,6 +84,7 @@ const MessageHeaderExpanded = ({ labels, message, mailSettings, showDetails, tog
                         </Group>
                     </div>
                 </div>
+                <MessageHeaderExtra message={message} messageMetadata={messageMetadata} onLoadImages={onLoadImages} />
             </div>
             {children}
         </article>
@@ -84,6 +95,8 @@ MessageHeaderExpanded.propTypes = {
     labels: PropTypes.array,
     mailSettings: PropTypes.object.isRequired,
     message: PropTypes.object.isRequired,
+    messageMetadata: PropTypes.object.isRequired,
+    onLoadImages: PropTypes.func.isRequired,
     showDetails: PropTypes.bool.isRequired,
     toggleDetails: PropTypes.func.isRequired,
     children: PropTypes.node

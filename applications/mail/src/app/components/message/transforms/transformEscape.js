@@ -93,8 +93,8 @@ function escapeSVG(input = '') {
  * @param  {String} options.action           Type of action
  * @return {Node}                            Parser
  */
-export const transformEscape = async ({ document, action, cache, activeCache = true } = {}) => {
-    const value = removeBase64(document, cache, activeCache);
+export const transformEscape = async ({ raw }, { action, cache, activeCache = true } = {}) => {
+    const value = removeBase64(raw, cache, activeCache);
     const activeHooks = action !== 'user.inject';
     return { document: purifyHTML(escapeSVG(value), activeHooks) };
 };

@@ -1,32 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useToggle, Loader } from 'react-components';
 
-import { usePrepareMessage } from './hooks/usePrepareMessage';
+import { useGetDecryptedMessage } from './hooks/useGetDecryptedMessage';
+import { useFormatContent } from './hooks/useFormatContent';
+import { useLoadMessage } from './hooks/useLoadMessage';
+// import { usePrepareMessage } from './hooks/usePrepareMessage';
 import MessageBody from './MessageBody';
 import MessageHeaderCollapsed from './MessageHeaderCollapsed';
 import MessageHeaderExpanded from './MessageHeaderExpanded';
 
 const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
+    const [message, loadMessage] = useLoadMessage(inputMessage);
+    const getDecryptedMessage = useGetDecryptedMessage();
+    const { initialize, loadImages } = useFormatContent();
+
+    const { state: expanded, set: setExpanded } = useToggle();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
-    const { message, messageMetadata, load } = usePrepareMessage(inputMessage);
 
-    if (messageMetadata.expanded) {
-        console.log('MessageView', messageMetadata, message);
-    }
+    // Not using usePromiseResult as in this case the task has to be called later
+    const [loaded, setLoaded] = useState(false);
+    const [messageMetadata, setMessageMetadata] = useState({});
 
-    return !messageMetadata.expanded ? (
-        <MessageHeaderCollapsed message={message} onExpand={load} />
-    ) : (
+    // TODO: Handle cache
+    const prepareMessage = async () => {
+        const message = await loadMessage();
+        const raw = await getDecryptedMessage(message);
+        const metadata = await initialize({ raw }, message);
+        setMessageMetadata(metadata);
+        setLoaded(true);
+    };
+
+    const handleLoadImages = async () => {
+        const metadata = await loadImages(messageMetadata, message);
+        setMessageMetadata(metadata);
+    };
+
+    const handleExpand = () => {
+        setExpanded(true);
+        prepareMessage();
+    };
+
+    return expanded ? (
         <MessageHeaderExpanded
             message={message}
+            messageMetadata={messageMetadata}
+            onLoadImages={handleLoadImages}
             labels={labels}
             mailSettings={mailSettings}
             showDetails={showDetails}
             toggleDetails={toggleDetails}
         >
-            {messageMetadata.loading ? <Loader /> : <MessageBody content={messageMetadata.content} />}
+            {loaded ? <MessageBody content={messageMetadata.content} /> : <Loader />}
         </MessageHeaderExpanded>
+    ) : (
+        <MessageHeaderCollapsed message={message} onExpand={handleExpand} />
     );
 };
 
