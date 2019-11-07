@@ -12,6 +12,7 @@ import {
     useApi,
     useEventManager,
     useNotifications,
+    useLoading,
     useModals,
     ConfirmModal
 } from 'react-components';
@@ -25,6 +26,20 @@ const CalendarsTable = () => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [calendars, loadingCalendars] = useCalendars();
+    const [loading, withLoading] = useLoading();
+
+    const handleDelete = async (ID) => {
+        await new Promise((resolve, reject) => {
+            createModal(
+                <ConfirmModal title={c('Title').t`Confirm delete`} onClose={reject} onConfirm={resolve}>
+                    <Alert>{c('Info').t`Are you sure you want to delete this calendar?`}</Alert>
+                </ConfirmModal>
+            );
+        });
+        await api(removeCalendar(ID));
+        await call();
+        createNotification({ text: c('Success').t`Calendar removed` });
+    };
 
     return (
         <Table loading={loadingCalendars}>
@@ -41,17 +56,8 @@ const CalendarsTable = () => {
                         },
                         calendars.length > 1 && {
                             text: c('Action').t`Delete`,
-                            async onClick() {
-                                await new Promise((resolve, reject) => {
-                                    createModal(
-                                        <ConfirmModal title={c('Title').t`Confirm delete`} onClose={reject} onConfirm={resolve}>
-                                            <Alert>{c('Info').t`Are you sure you want to delete this calendar?`}</Alert>
-                                        </ConfirmModal>
-                                    );
-                                });
-                                await api(removeCalendar(ID));
-                                await call();
-                                createNotification({ text: c('Success').t`Calendar removed` });
+                            onClick() {
+                                withLoading(handleDelete(ID));
                             }
                         }
                     ].filter(Boolean);
@@ -64,7 +70,12 @@ const CalendarsTable = () => {
                                     <Icon name="calendar" color={Color} className="mr0-5" />
                                     {Name}
                                 </div>,
-                                <DropdownActions className="pm-group-button pm-button--small" key={1} list={list} />
+                                <DropdownActions
+                                    className="pm-group-button pm-button--small"
+                                    key={1}
+                                    list={list}
+                                    loading={loading}
+                                />
                             ]}
                         />
                     );

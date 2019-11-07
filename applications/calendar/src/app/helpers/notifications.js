@@ -52,14 +52,14 @@ export const DEFAULT_FULL_DAY_NOTIFICATION = triggerToModel({
 
 export const DEFAULT_PART_DAY_NOTIFICATIONS = [
     {
-        type: NOTIFICATION_TYPE.DEVICE,
+        Type: NOTIFICATION_TYPE.DEVICE,
         Trigger: '-PT15M'
     }
 ];
 
 export const DEFAULT_FULL_DAY_NOTIFICATIONS = [
     {
-        type: NOTIFICATION_TYPE.DEVICE,
+        Type: NOTIFICATION_TYPE.DEVICE,
         Trigger: '-PT15H'
     }
 ];

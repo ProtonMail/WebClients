@@ -48,9 +48,10 @@ const CalendarModal = ({ calendar, ...rest }) => {
         color: DEFAULT_CALENDAR.color,
         display: true,
         addressOptions: [],
+        duration: DEFAULT_EVENT_DURATION,
         defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
-        partDayNotifications: notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false),
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
+        partDayNotifications: notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false),
         fullDayNotifications: notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true)
     }));
 
@@ -143,6 +144,9 @@ const CalendarModal = ({ calendar, ...rest }) => {
 
         const { Calendar = {} } = await api(calendar ? updateCalendar(calendar.ID, data) : createCalendar(data));
 
+        // Either the one that was edited or created.
+        const actualCalendarID = (calendar && calendar.ID) || Calendar.ID;
+
         // Key setup
         if (!calendar) {
             const [addresses, addressKeys] = await Promise.all([getAddresses(), getAddressKeys(addressID)]);
@@ -152,7 +156,7 @@ const CalendarModal = ({ calendar, ...rest }) => {
                 api,
                 addressID,
                 addressKeys,
-                calendarID: Calendar.ID,
+                calendarID: actualCalendarID,
                 email
             });
         }
@@ -161,8 +165,8 @@ const CalendarModal = ({ calendar, ...rest }) => {
             duration,
             fullDayNotifications,
             partDayNotifications,
-            _emailPartDayNotifications,
-            _emailFullDayNotifications
+            _emailPartDayNotifications = [],
+            _emailFullDayNotifications = []
         } = model;
 
         const calendarSettingsData = {
@@ -171,7 +175,7 @@ const CalendarModal = ({ calendar, ...rest }) => {
             DefaultPartDayNotifications: modelToNotifications(partDayNotifications.concat(_emailPartDayNotifications))
         };
 
-        await api(updateCalendarSettings(calendar.ID, calendarSettingsData));
+        await api(updateCalendarSettings(actualCalendarID, calendarSettingsData));
         await call();
 
         rest.onClose();
