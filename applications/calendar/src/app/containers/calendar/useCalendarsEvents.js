@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState, useMemo, useCallback } from 'react';
 import { useApi, useEventManager } from 'react-components';
 import { queryEvents } from 'proton-shared/lib/api/calendars';
-import { min, max, getUnixTime } from 'date-fns';
+import { min, max, differenceInHours, getUnixTime } from 'date-fns';
 import {
     fromUTCDate,
     toUTCDate,
@@ -307,7 +307,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                         ? eventStart
                         : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(eventStart), tzid));
                     const end = isAllDay ? eventEnd : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(eventEnd), tzid));
-                    const isAllPartDay = end.getUTCDate() !== start.getUTCDate();
+                    const isAllPartDay = differenceInHours(end, start) >= 24;
                     return {
                         data: {
                             Event,
