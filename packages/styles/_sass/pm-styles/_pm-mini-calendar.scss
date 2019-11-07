@@ -18,11 +18,6 @@ $minicalendar-fontsize: 1.2rem !default;
     opacity: .4;
 }
 
-.minicalendar-weeknumbers {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat( var(--minicalendar-weeknumbers-numberOfWeeks, 5), 1fr);
-}
 .minicalendar-weekdays {
     display: grid;
     grid-template-columns: repeat( var(--minicalendar-weekdays-numberOfDaysInWeek, 7), 1fr);
@@ -54,20 +49,33 @@ $minicalendar-fontsize: 1.2rem !default;
 }
 
 .minicalendar-weekdays {
-    border-bottom: 1px solid $pm-global-border;
+    border-bottom: 1px dotted $pm-global-border;
 }
 
-.minicalendar-weeknumbers span {
-    &:not(:first-of-type) {
-        border-right: 1px solid $pm-global-border;
+.minicalendar-weeknumbers > span {
+
+    &:first-of-type {
+        border-bottom: 1px dotted $pm-global-border;
     }
+    &:not(:first-of-type) {
+        min-height: 2em;
+    }
+
+}
+.minicalendar-weeknumbers-heading {
+    display: inline-block;
+    transform: scale(.7);
 }
 
+.minicalendar-day {
+    min-width: 2em;
+    min-height: 2em;
+}
 .minicalendar-day[aria-current="date"] {
     color: $white;
     font-weight: bold;
     background: $pm-primary-dark;
-    border-radius: 100px;
+    border-radius: 50%;
 }
 .minicalendar-day[aria-pressed=true] {
     color: $white;
