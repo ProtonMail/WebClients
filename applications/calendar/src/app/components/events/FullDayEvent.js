@@ -1,14 +1,13 @@
 import React, { useMemo } from 'react';
-import { LoaderIcon } from 'react-components';
+import { LoaderIcon, classnames } from 'react-components';
 
-import './FullDayEvent.scss';
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 import { c } from 'ttag';
 
 const FullDayEvent = ({
     style,
     formatTime,
-    className = 'dayeventcell absolute',
+    className = 'calendar-dayeventcell absolute',
     event: { start, end, data, id, isAllDay },
     event,
     isSelected,
@@ -58,9 +57,16 @@ const FullDayEvent = ({
         );
     })();
 
+    const isBeforeNowClassModifier = isBeforeNow ? 'calendar-dayeventcell--isBefore' : '';
+
     return (
-        <div style={style} className={className} data-ignore-create="1" onClick={onClick}>
-            <div className="dayeventcell--inner pl0-5 pr0-5" style={eventStyle} ref={eventRef}>
+        <div
+            style={style}
+            className={classnames([className, isBeforeNowClassModifier])}
+            data-ignore-create="1"
+            onClick={onClick}
+        >
+            <div className="calendar-dayeventcell-inner pl0-5 pr0-5" style={eventStyle} ref={eventRef}>
                 {content}
             </div>
         </div>

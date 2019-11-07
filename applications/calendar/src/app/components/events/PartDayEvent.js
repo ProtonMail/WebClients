@@ -1,8 +1,6 @@
 import React, { useMemo } from 'react';
-import { LoaderIcon } from 'react-components';
+import { LoaderIcon, classnames } from 'react-components';
 import { c } from 'ttag';
-
-import './PartDayEvent.scss';
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 
 const getBackground = (id, isAllDay, isSelected) => {
@@ -62,8 +60,14 @@ const PartDayEvent = ({
         );
     })();
 
+    const isBeforeNowClassModifier = isBeforeNow ? 'calendar-eventcell--isBefore' : '';
+
     return (
-        <div style={eventStyle} className="eventcell pl0-5 pr0-5" ref={eventRef}>
+        <div
+            style={eventStyle}
+            className={classnames(['calendar-eventcell pl0-5 pr0-5', isBeforeNowClassModifier])}
+            ref={eventRef}
+        >
             {content}
         </div>
     );
