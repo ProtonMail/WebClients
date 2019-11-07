@@ -1,6 +1,7 @@
 $minicalendar-day-color: $black !default;
 $minicalendar-day-color-on-dark-background: $white !default;
 $minicalendar-fontsize: 1.2rem !default;
+$minicalendar-cell-size: 1.9em !default;
 
 .minicalendar {
     font-size: $minicalendar-fontsize;
@@ -58,7 +59,7 @@ $minicalendar-fontsize: 1.2rem !default;
         border-bottom: 1px dotted $pm-global-border;
     }
     &:not(:first-of-type) {
-        min-height: 2em;
+        min-height: $minicalendar-cell-size;
     }
 
 }
@@ -68,8 +69,9 @@ $minicalendar-fontsize: 1.2rem !default;
 }
 
 .minicalendar-day {
-    min-width: 2em;
-    min-height: 2em;
+    position: relative;
+    min-width: $minicalendar-cell-size;
+    min-height: $minicalendar-cell-size;
 }
 .minicalendar-day[aria-current="date"] {
     color: $white;
@@ -83,9 +85,13 @@ $minicalendar-fontsize: 1.2rem !default;
     background: $pm-primary;
 }
 
+$minicalendar-day-marker-size: 3px !default;
 .minicalendar-day--marker {
-    height: 3px;
-    width: 3px;
+    position: absolute;
+    bottom: 1px;
+    left: calc(50% - #{$minicalendar-day-marker-size/2});
+    height: $minicalendar-day-marker-size;
+    width: $minicalendar-day-marker-size;
     background-color: $pm-primary;
     border-radius: 50%;
     display: block;
@@ -93,8 +99,11 @@ $minicalendar-fontsize: 1.2rem !default;
     margin-right: auto;
 }
 
-.minicalendar-day--marker[aria-current=true] {
-    background-color: $white;
+.minicalendar-day[aria-pressed=true],
+.minicalendar-day[aria-pressed=date] {
+    .minicalendar-day--marker {
+        background-color: $white;
+    }
 }
 
 .minicalendar-day--range-bound {
