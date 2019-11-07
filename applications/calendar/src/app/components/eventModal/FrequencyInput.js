@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const FREQUENCY = {
-    ONCE: 0,
+    ONCE: 'ONCE',
     WEEKLY: 'WEEKLY',
     MONTHLY: 'MONTHLY',
     YEARLY: 'YEARLY'
