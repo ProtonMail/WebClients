@@ -25,6 +25,11 @@ const Modal = ({
     hasSubmit = true,
     hasClose = true,
     noValidate = false,
+    // Destructure these options so they are not passed to the DOM.
+    // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
+    disableCloseOnLocation,
+    // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
+    disableCloseOnOnEscape,
     ...rest
 }) => {
     // Because we will forget
@@ -102,7 +107,9 @@ Modal.propTypes = {
     small: PropTypes.bool,
     background: PropTypes.bool,
     hasSubmit: PropTypes.bool,
-    hasClose: PropTypes.bool
+    hasClose: PropTypes.bool,
+    disableCloseOnLocation: PropTypes.bool,
+    disableCloseOnOnEscape: PropTypes.bool
 };
 
 export default Modal;
