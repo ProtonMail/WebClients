@@ -73,14 +73,24 @@ const useDayGridMouseHandler = ({
                 document.removeEventListener('mouseup', handleMouseUp, true);
                 document.removeEventListener('mousemove', handleMouseMove, true);
 
-                if (result) {
-                    e.preventDefault();
-                    e.stopPropagation();
+                e.preventDefault();
+                e.stopPropagation();
 
+                if (result) {
                     setSelectedEventID(result.id);
                     //onDragCreate(result);
                     //setTemporaryEvents();
                     //setDateRange();
+                } else {
+                    // No range created, just a simple click
+                    result = {
+                        id: 'tmp',
+                        start: getNewTime(startTargetDate, 0),
+                        end: getNewTime(startTargetDate, 0),
+                        isAllDay: true
+                    };
+                    setTemporaryEvent(result);
+                    setSelectedEventID(result.id);
                 }
             };
 

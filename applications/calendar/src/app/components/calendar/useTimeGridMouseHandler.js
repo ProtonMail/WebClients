@@ -35,6 +35,7 @@ const useTimeGridMouseHandler = ({
 }) => {
     return (e) => {
         const dragCreateMouseDown = (daysContainer, startTargetDate, startTargetMinutes) => {
+            const startDate = days[startTargetDate];
             let endTargetDate = startTargetDate;
             let endTargetMinutes;
             let oldMouseY = CREATE_STATE_INIT;
@@ -70,7 +71,6 @@ const useTimeGridMouseHandler = ({
                     endTargetDate * totalMinutes + endTargetMinutes >=
                     startTargetDate * totalMinutes + startTargetMinutes;
 
-                const startDate = days[startTargetDate];
                 const endDate = days[endTargetDate];
 
                 if (isAfter) {
@@ -97,14 +97,23 @@ const useTimeGridMouseHandler = ({
                 document.removeEventListener('mouseup', handleMouseUp, true);
                 document.removeEventListener('mousemove', handleMouseMove, true);
 
-                if (result) {
-                    e.preventDefault();
-                    e.stopPropagation();
+                e.preventDefault();
+                e.stopPropagation();
 
+                if (result) {
                     setSelectedEventID(result.id);
                     //onDragCreate(result);
                     //setTemporaryEvents();
                     //setDateRange();
+                } else {
+                    // No range created, just a simple click
+                    result = {
+                        id: 'tmp',
+                        start: getNewTime(startDate, startTargetMinutes),
+                        end: getNewTime(startDate, startTargetMinutes + 30)
+                    };
+                    setTemporaryEvent(result);
+                    setSelectedEventID(result.id);
                 }
             };
 
