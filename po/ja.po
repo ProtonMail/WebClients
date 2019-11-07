@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2019-07-19 09:26\n"
+"PO-Revision-Date: 2019-11-07 14:33\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -73,11 +73,6 @@ msgid "1 message moved to {{folder}}"
 msgid_plural "{{number}} messages moved to {{folder}}"
 msgstr[0] "{{number}}件のメッセージを{{folder}}に移動します"
 
-#: ./src/templates/user/signupPayForm.tpl.html:90
-msgctxt "Action"
-msgid "<i class=\"fa fa-lock\"></i> Submit"
-msgstr "<i class=\"fa fa-lock\"></i> 送信"
-
 #: ./src/templates/bridge/bridgeFreePanel.tpl.html:2
 msgctxt "Action"
 msgid "Activate"
@@ -124,6 +119,11 @@ msgctxt "Action"
 msgid "Add Filter"
 msgstr "フィルターを追加"
 
+#: ./src/templates/payment/paypalView.tpl.html:33
+msgctxt "Action"
+msgid "Add PayPal payment method"
+msgstr "PayPal払いを追加"
+
 #: ./src/templates/views/payments.tpl.html:15
 msgctxt "Action"
 msgid "Add Payment Method"
@@ -154,7 +154,7 @@ msgctxt "Action"
 msgid "Add auto-reply"
 msgstr "自動返信を追加"
 
-#: ./src/templates/filter/modal.tpl.html:126
+#: ./src/templates/filter/modal.tpl.html:125
 msgctxt "Action"
 msgid "Add condition"
 msgstr "条件の追加"
@@ -192,7 +192,7 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr "フィルターを追加"
 
-#: ./src/templates/filter/modal.tpl.html:202
+#: ./src/templates/filter/modal.tpl.html:201
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
@@ -203,7 +203,7 @@ msgctxt "Action"
 msgid "Add key"
 msgstr "鍵を追加"
 
-#: ./src/templates/filter/modal.tpl.html:148
+#: ./src/templates/filter/modal.tpl.html:147
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -386,7 +386,7 @@ msgstr "CCとBCC"
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:35
-#: ./src/templates/filter/modal.tpl.html:248
+#: ./src/templates/filter/modal.tpl.html:247
 #: ./src/templates/modals/activateOrganization.tpl.html:25
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -408,6 +408,7 @@ msgstr "CCとBCC"
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:60
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:101
@@ -509,6 +510,12 @@ msgctxt "Action"
 msgid "Change verification number"
 msgstr "確認番号の変更"
 
+#: ./src/templates/payment/paypalView.tpl.html:23
+#: ./src/templates/payment/paypalView.tpl.html:40
+msgctxt "Action"
+msgid "Check out with PayPal"
+msgstr "PayPalで支払う"
+
 #: ./src/templates/contact/contactPhotoRow.tpl.html:27
 #: ./src/templates/directives/core/bugModalView.tpl.html:113
 msgctxt "Action"
@@ -519,11 +526,6 @@ msgstr "消去"
 msgctxt "Action"
 msgid "Clear all formatting"
 msgstr "書式を全て消去"
-
-#: ./src/templates/payment/paypalView.tpl.html:6
-msgctxt "Action"
-msgid "Click here to try again"
-msgstr "ここをクリックして、もう一度やり直してください。"
 
 #: ./src/templates/address/selectAddressModal.tpl.html:3
 #: ./src/templates/address/setupAddressModal.tpl.html:3
@@ -600,7 +602,8 @@ msgstr "ここをクリックして、もう一度やり直してください。
 #: ./src/templates/modals/pay.tpl.html:107
 #: ./src/templates/modals/pay.tpl.html:16
 #: ./src/templates/modals/payment/modal.tpl.html:19
-#: ./src/templates/modals/payment/modal.tpl.html:63
+#: ./src/templates/modals/payment/modal.tpl.html:62
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:3
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
 #: ./src/templates/modals/releaseNotes.tpl.html:28
@@ -624,8 +627,8 @@ msgstr "ここをクリックして、もう一度やり直してください。
 #: ./src/templates/payment/giftCodeModal.tpl.html:3
 #: ./src/templates/utils/discardModal.tpl.html:3
 #: ./src/templates/utils/linkWarningModal.tpl.html:3
-#: ./src/templates/utils/printModal.tpl.html:20
-#: ./src/templates/utils/printModal.tpl.html:39
+#: ./src/templates/utils/printModal.tpl.html:19
+#: ./src/templates/utils/printModal.tpl.html:38
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:4
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:4
 msgctxt "Action"
@@ -637,7 +640,7 @@ msgctxt "Action"
 msgid "Common login problems"
 msgstr "一般的なログインの問題"
 
-#: ./src/templates/user/humanVerification.tpl.html:92
+#: ./src/templates/user/humanVerification.tpl.html:93
 msgctxt "Action"
 msgid "Complete setup"
 msgstr "セットアップの完了"
@@ -671,6 +674,8 @@ msgctxt "Action"
 msgid "Contacts"
 msgstr "連絡先"
 
+#: ./src/templates/modals/card.tpl.html:17
+#: ./src/templates/modals/payment/modal.tpl.html:72
 #: ./src/templates/utils/linkWarningModal.tpl.html:45
 msgctxt "Action"
 msgid "Continue"
@@ -754,7 +759,7 @@ msgstr "復号化"
 #: ./src/templates/ui/toolbarMobile.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:124
 #: ./src/templates/views/labels.tpl.html:63
-#: ./src/templates/views/payments.tpl.html:42
+#: ./src/templates/views/payments.tpl.html:45
 msgctxt "Action"
 msgid "Delete"
 msgstr "削除"
@@ -864,7 +869,7 @@ msgstr "編集"
 #: ./src/templates/filter/customFilterList.tpl.html:36
 msgctxt "Action"
 msgid "Edit sieve"
-msgstr "振り分けの編集"
+msgstr "仕分けの編集"
 
 #: ./src/app/address/directives/addressBtnActions.js:5
 msgctxt "Action"
@@ -1186,7 +1191,7 @@ msgid "Make Private"
 msgstr "私用に設定"
 
 #: ./src/app/address/directives/addressBtnActions.js:4
-#: ./src/templates/views/payments.tpl.html:38
+#: ./src/templates/views/payments.tpl.html:41
 msgctxt "Action"
 msgid "Make default"
 msgstr "既定に設定"
@@ -1421,7 +1426,7 @@ msgid "Previous"
 msgstr "前へ"
 
 #: ./src/templates/message/message.tpl.html:246
-#: ./src/templates/utils/printModal.tpl.html:45
+#: ./src/templates/utils/printModal.tpl.html:44
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -1490,6 +1495,7 @@ msgstr "ページを再読込み"
 #: ./src/templates/contact/contactGroupModal.tpl.html:91
 #: ./src/templates/contact/contactSelectorForm.tpl.html:57
 #: ./src/templates/contact/contactSelectorForm.tpl.html:63
+#: ./src/templates/filter/modal.tpl.html:113
 msgctxt "Action"
 msgid "Remove"
 msgstr "削除"
@@ -1613,7 +1619,7 @@ msgstr "セッションを取り消す"
 #: ./src/templates/directives/composer/composer.tpl.html:119
 #: ./src/templates/directives/composer/composer.tpl.html:126
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:254
+#: ./src/templates/filter/modal.tpl.html:253
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
@@ -1671,7 +1677,7 @@ msgctxt "Action"
 msgid "Send"
 msgstr "送信"
 
-#: ./src/app/composer/services/validateMessage.js:32
+#: ./src/app/composer/services/validateMessage.js:25
 #: ./src/templates/modals/expirationModal.tpl.html:55
 msgctxt "Action"
 msgid "Send anyway"
@@ -1779,15 +1785,15 @@ msgstr "アルファベット順に並べ替え"
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:29
 #: ./src/templates/modals/activateOrganization.tpl.html:28
 #: ./src/templates/modals/bug.tpl.html:19
-#: ./src/templates/modals/card.tpl.html:17
 #: ./src/templates/modals/customizeInvoice.tpl.html:57
 #: ./src/templates/modals/decryptImportKey.tpl.html:20
 #: ./src/templates/modals/humanVerification.tpl.html:22
 #: ./src/templates/modals/organizationRecovery.tpl.html:15
-#: ./src/templates/modals/payment/modal.tpl.html:69
+#: ./src/templates/modals/payment/modal.tpl.html:71
 #: ./src/templates/modals/reactivate.tpl.html:25
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:23
 #: ./src/templates/modals/switchPasswordMode.tpl.html:74
+#: ./src/templates/user/signupPayForm.tpl.html:90
 #: ./src/templates/user/signupUserForm.tpl.html:53
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:19
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:17
@@ -1847,6 +1853,7 @@ msgid "Trust Public Keys"
 msgstr "公開鍵を信頼"
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:6
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:51
 msgctxt "Action"
 msgid "Try again"
 msgstr "再試行"
@@ -1881,7 +1888,7 @@ msgctxt "Action"
 msgid "Unsubscribe"
 msgstr "退会"
 
-#: ./src/templates/views/payments.tpl.html:40
+#: ./src/templates/views/payments.tpl.html:43
 msgctxt "Action"
 msgid "Update"
 msgstr "更新"
@@ -1941,6 +1948,11 @@ msgctxt "Action"
 msgid "Uploading"
 msgstr "アップロード中"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:54
+msgctxt "Action"
+msgid "Use a different payment method"
+msgstr "他の支払い方法を使用する"
+
 #: ./src/templates/payment/giftCodeBtn.tpl.html:3
 msgctxt "Action"
 msgid "Use gift code"
@@ -1952,6 +1964,7 @@ msgid "User"
 msgstr "ユーザー"
 
 #: ./src/templates/modals/domain/verification.tpl.html:38
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:61
 msgctxt "Action"
 msgid "Verify"
 msgstr "検証"
@@ -1997,15 +2010,10 @@ msgctxt "Action"
 msgid "click here"
 msgstr "ここをクリック"
 
-#: ./src/templates/payment/donation.tpl.html:129
+#: ./src/templates/payment/donation.tpl.html:130
 msgctxt "Action"
 msgid "complete setup"
 msgstr "セットアップを完了"
-
-#: ./src/templates/filter/modal.tpl.html:113
-msgctxt "Action"
-msgid "title"
-msgstr "タイトル"
 
 #: ./src/templates/modals/donate.tpl.html:59
 msgctxt "Action"
@@ -2821,12 +2829,12 @@ msgctxt "Credit card CVC"
 msgid "Security Code"
 msgstr "セキュリティコード"
 
-#: ./src/app/payment/modals/cardModal.js:25
+#: ./src/app/payment/modals/cardModal.js:35
 msgctxt "Credit card modal"
 msgid "Add a credit card."
 msgstr "クレジットカード情報を追加してください。"
 
-#: ./src/app/payment/modals/cardModal.js:13
+#: ./src/app/payment/modals/cardModal.js:23
 msgctxt "Credit card modal"
 msgid "Update your credit card information."
 msgstr "クレジットカード情報を更新"
@@ -3477,7 +3485,7 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr "連絡先にメールアドレスがありません。"
 
-#: ./src/app/composer/services/validateMessage.js:69
+#: ./src/app/composer/services/validateMessage.js:55
 msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr "これを解決するには、組織の管理者に連絡してください。"
@@ -3523,11 +3531,6 @@ msgctxt "Error"
 msgid "Error activating organization keys"
 msgstr "組織用の鍵の有効化でエラーが発生しました。"
 
-#: ./src/templates/payment/paypalView.tpl.html:6
-msgctxt "Error"
-msgid "Error connecting to PayPal."
-msgstr "PayPalへの接続でエラーが発生しました。"
-
 #: ./src/app/message/factories/messageModel.js:39
 #: ./src/app/outside/controllers/outside.js:34
 msgctxt "Error"
@@ -3559,7 +3562,7 @@ msgctxt "Error"
 msgid "Failed to encrypt attachment. Please try again."
 msgstr "添付ファイルの暗号化に失敗しました。もう一度お試しください。"
 
-#: ./src/app/ui/directives/autocompleteEmails.js:31
+#: ./src/app/ui/directives/autocompleteEmails.js:24
 msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
 msgstr "{{emails}}の鍵情報の取得に失敗しました。受信者リストから一旦削除し、再度お試しください。"
@@ -3612,7 +3615,7 @@ msgid "Image upload failed"
 msgstr "画像のアップロードに失敗しました。"
 
 #: ./src/app/address/factories/reactivateKeys.js:27
-#: ./src/app/authentication/directives/loginContainer.js:38
+#: ./src/app/authentication/directives/loginContainer.js:58
 #: ./src/app/keys/factories/decryptImportKeyModal.js:28
 msgctxt "Error"
 msgid "Incorrect decryption password"
@@ -3664,7 +3667,7 @@ msgctxt "Error"
 msgid "Invalid file type"
 msgstr "無効なファイルタイプです。"
 
-#: ./src/app/contact/directives/contactSelectorForm.js:8
+#: ./src/app/contact/directives/contactSelectorForm.js:6
 msgctxt "Error"
 msgid "Invalid form"
 msgstr "無効な形式です"
@@ -3754,7 +3757,7 @@ msgctxt "Error"
 msgid "No Internet connection found."
 msgstr "インターネットに接続されていません。"
 
-#: ./src/app/composer/services/validateMessage.js:63
+#: ./src/app/composer/services/validateMessage.js:49
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr "メールアドレスに有効な暗号鍵が設定さていないため、メッセージが作成できません。"
@@ -3831,7 +3834,7 @@ msgctxt "Error"
 msgid "Please enter a password for this email."
 msgstr "このメールのパスワードを入力してください。"
 
-#: ./src/app/composer/services/validateMessage.js:47
+#: ./src/app/composer/services/validateMessage.js:40
 msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "少なくとも1 つの宛先を入力してください。"
@@ -3846,7 +3849,7 @@ msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "2要素認証のパスコードを入力してください。"
 
-#: ./src/app/keys/services/decryptKeys.js:12
+#: ./src/app/keys/services/decryptKeys.js:10
 msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
 msgstr "アドレス {{email}} のプライマリー鍵が復号できません。 このアドレスのメールの読み書きはできません"
@@ -3886,7 +3889,7 @@ msgctxt "Error"
 msgid "Sign up failed"
 msgstr "アカウント登録に失敗しました。"
 
-#: ./src/app/composer/services/validateMessage.js:41
+#: ./src/app/composer/services/validateMessage.js:34
 msgctxt "Error"
 msgid "Some email addresses are invalid"
 msgstr "いくつかの電子メールアドレスが無効です。"
@@ -3942,7 +3945,7 @@ msgctxt "Error"
 msgid "The email body is not a valid MIME message."
 msgstr "メール本文が、有効なMIMEメッセージではありません。"
 
-#: ./src/app/composer/services/validateMessage.js:39
+#: ./src/app/composer/services/validateMessage.js:32
 msgctxt "Error"
 msgid "The following addresses are not valid: {{emails}}"
 msgstr "次のアドレスは有効ではありません: {{emails}}"
@@ -3952,20 +3955,15 @@ msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr "有効期限は最長４週間までです。"
 
-#: ./src/app/composer/services/validateMessage.js:42
+#: ./src/app/composer/services/validateMessage.js:35
 msgctxt "Error"
 msgid "The maximum length of the message body is 16,000,000 characters."
 msgstr "メッセージの本文は最大1600万文字までです。"
 
-#: ./src/app/composer/services/validateMessage.js:48
+#: ./src/app/composer/services/validateMessage.js:41
 msgctxt "Error"
 msgid "The maximum length of the subject is {{size}}."
 msgstr "件名は {{size}} 字まで入力できます。"
-
-#: ./src/app/ui/directives/autocompleteEmails.js:24
-msgctxt "Error"
-msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
-msgstr "合計{{total}} の受信者が設定されています。最大{{limit}} までです。"
 
 #: ./src/app/core/directives/signupIframe.js:46
 msgctxt "Error"
@@ -4014,7 +4012,7 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr "検証に失敗しました。一時間程経ってからもう一度試してください。"
 
-#: ./src/app/composer/services/validateMessage.js:33
+#: ./src/app/composer/services/validateMessage.js:26
 msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr "添付ファイルのアップロードが完了するまでしばらく待つか、キャンセルしてください。"
@@ -4039,7 +4037,7 @@ msgctxt "Error"
 msgid "You are using an outdated version of ProtonMail, please refresh the page."
 msgstr "ProtonMail の古いバージョンを使用している場合、ページを更新してください。"
 
-#: ./src/app/composer/services/validateMessage.js:62
+#: ./src/app/composer/services/validateMessage.js:48
 msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr "鍵をここで作成できます。"
@@ -4066,11 +4064,6 @@ msgctxt "Error"
 msgid "You have reached the max recipients (25) per message"
 msgstr "メッセージあたりの最大受信者 (25) に達しました"
 
-#: ./src/app/contact/directives/contactSelectorForm.js:9
-msgctxt "Error"
-msgid "You have reached the max recipients ({{limit}}) per message"
-msgstr "メッセージあたりの受信者の最大数 ({{limit}}) に達しました"
-
 #: ./src/app/address/factories/addressModel.js:32
 msgctxt "Error"
 msgid "You have used all addresses in your plan. Please upgrade your plan to add a new address"
@@ -4085,11 +4078,6 @@ msgstr "現在のプランでのメールアドレス数の上限に達しまし
 msgctxt "Error"
 msgid "You have used all users in your plan. Please upgrade your plan to add a new user."
 msgstr "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
-
-#: ./src/app/composer/services/validateMessage.js:54
-msgctxt "Error"
-msgid "You have {{total}} recipients. The maximum number is {{limit}}."
-msgstr "{{total}} の受信者があります。最大数は {{limit}} です。"
 
 #: ./src/app/organization/modals/setupOrganizationModal.js:26
 msgctxt "Error"
@@ -4291,22 +4279,22 @@ msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr "テキストまたはパターン"
 
-#: ./src/templates/filter/modal.tpl.html:135
+#: ./src/templates/filter/modal.tpl.html:134
 msgctxt "Filter modal label"
 msgid "Apply labels"
 msgstr "ラベルの適用"
 
-#: ./src/templates/filter/modal.tpl.html:210
+#: ./src/templates/filter/modal.tpl.html:209
 msgctxt "Filter modal label"
 msgid "Mark as"
 msgstr "印をつける"
 
-#: ./src/templates/filter/modal.tpl.html:156
+#: ./src/templates/filter/modal.tpl.html:155
 msgctxt "Filter modal label"
 msgid "Move to"
 msgstr "フォルダーに移動する"
 
-#: ./src/templates/filter/modal.tpl.html:235
+#: ./src/templates/filter/modal.tpl.html:234
 msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr "自動返信を送信"
@@ -4973,7 +4961,7 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this label? Removing a label will not remove the messages with that label."
 msgstr "このラベルを本当に削除しますか？ラベルを削除しても、そのラベルが付いたメッセージは削除されません。"
 
-#: ./src/app/settings/controllers/payments.js:87
+#: ./src/app/settings/controllers/payments.js:88
 msgctxt "Info"
 msgid "Are you sure you want to delete this payment method?"
 msgstr "この支払い方法を削除してよろしいですか？"
@@ -5217,7 +5205,7 @@ msgid "Decryption of this content failed"
 msgstr "コンテンツの復号に失敗しました。"
 
 #: ./src/templates/user/addressesSection.tpl.html:34
-#: ./src/templates/views/payments.tpl.html:35
+#: ./src/templates/views/payments.tpl.html:37
 msgctxt "Info"
 msgid "Default"
 msgstr "既定"
@@ -5341,6 +5329,11 @@ msgstr "管理者権限を復元するには組織パスワードを入力して
 msgctxt "Info"
 msgid "Every 2 years"
 msgstr "2 年払い"
+
+#: ./src/templates/views/payments.tpl.html:38
+msgctxt "Info"
+msgid "Expired"
+msgstr "有効期限切れ"
 
 #: ./src/templates/contact/contactActionHeader.tpl.html:47
 #: ./src/templates/contact/contactActionHeader.tpl.html:8
@@ -5471,8 +5464,8 @@ msgctxt "Info"
 msgid "In the next few weeks, ProtonMail will drop support for Internet Explorer. Download one of the modern browsers below."
 msgstr "数週間中に、ProtonMailはInternet Explorerへのサーポートを廃止します。下記のブラウザからどれかをダウンロードしてください。"
 
-#: ./src/app/payment/modals/payModal.js:14
-#: ./src/app/settings/controllers/payments.js:147
+#: ./src/app/payment/modals/payModal.js:17
+#: ./src/app/settings/controllers/payments.js:148
 msgctxt "Info"
 msgid "Invoice paid"
 msgstr "支払い済み請求書"
@@ -5525,7 +5518,6 @@ msgid "Loading themes will override your current theme!"
 msgstr "テーマを読み込むと、現在のテーマは上書きされます。"
 
 #: ./src/templates/formUtils/captcha.tpl.html:2
-#: ./src/templates/payment/paypalView.tpl.html:22
 msgctxt "Info"
 msgid "Loading..."
 msgstr "読み込み中..."
@@ -5610,7 +5602,7 @@ msgctxt "Info"
 msgid "No logs yet"
 msgstr "ログはまだありません。"
 
-#: ./src/app/composer/services/validateMessage.js:61
+#: ./src/app/composer/services/validateMessage.js:47
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr "件名なしのまま送信しますか？"
@@ -5736,6 +5728,11 @@ msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr "PayPalでのお支払いは現在ご利用になれません。しばらくしてから再度お試しください。"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:43
+msgctxt "Info"
+msgid "Payment can take a few minutes to fully verify."
+msgstr ""
+
 #: ./src/app/payment/directives/payInvoiceBtn.js:13
 msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
@@ -5822,6 +5819,11 @@ msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "添付ファイルを長押しして、新しいタブで開くを選択してください。"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:48
+msgctxt "Info"
+msgid "Please try again, use a different payment method, or call your bank for assistance."
+msgstr "再度試すか、別の支払い方法を用いてください。あるいはあなたの銀行にお尋ねください。"
+
 #: ./src/app/members/services/memberActions.js:88
 msgctxt "Info"
 msgid "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support."
@@ -5831,6 +5833,21 @@ msgstr "複数ユーザーで利用する場合はPROFESSIONALプランもしく
 msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
 msgstr "このプレミアム機能を使用するには有料プランにアップグレードする必要があります。"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:35
+msgctxt "Info"
+msgid "Please verify payment at the new tab which was opened."
+msgstr "新たに開かれたタブで支払いの検証を行ってください。"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
+msgctxt "Info"
+msgid "Please verify the card in the new tab which was opened."
+msgstr "新たに開かれたタブでカードの検証を行ってください。"
+
+#: ./src/templates/payment/paypalView.tpl.html:15
+msgctxt "Info"
+msgid "Please verify your PayPal account at the new tab which was opened."
+msgstr "新たに開かれたタブでPaypalアカウントの検証を行ってください。"
 
 #: ./src/app/formUtils/directives/codeVerificator.js:10
 msgctxt "Info"
@@ -6201,6 +6218,11 @@ msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "この操作により、無料のアカウントにダウングレードされます。 ProtonMailは無料サービスで、寄付や有料アカウントによって成り立っています。 私たちが無料サービスを提供し続けられるように、どうか寄付をご検討ください。<br /> <br />注：追加のアドレス、独自ドメイン、およびユーザーは、この操作を実行する前に削除するかまたは無効にする必要があります。"
 
+#: ./src/templates/payment/paypalView.tpl.html:31
+msgctxt "Info"
+msgid "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue."
+msgstr ""
+
 #: ./src/templates/partials/safari.attachment.warning.tpl.html:14
 #: ./src/templates/partials/safari.warning.tpl.html:14
 msgctxt "Info"
@@ -6279,6 +6301,12 @@ msgctxt "Info"
 msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character."
 msgstr "有効な文字は、A〜Z、a〜z、0〜9です。 .(ピリオド)、_(アンダースコア)、 - (ハイフン)です。 ログインは、始まりと終りが英数字である必要があります。"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
+#: ./src/templates/payment/paypalView.tpl.html:17
+msgctxt "Info"
+msgid "Verification can take a few minutes."
+msgstr ""
+
 #: ./src/templates/formUtils/codeVerificator.tpl.html:56
 msgctxt "Info"
 msgid "Verification code sent"
@@ -6295,6 +6323,17 @@ msgstr "検証エラーが発生しました。"
 msgctxt "Info"
 msgid "Verification of this content’s signature failed"
 msgstr "このコンテンツの署名の検証に失敗しました。"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:24
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:31
+msgctxt "Info"
+msgid "Verification will open a new tab, please disable any popup blockers."
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+msgctxt "Info"
+msgid "Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately."
+msgstr ""
 
 #: ./src/templates/layout/pre.tpl.html:4
 msgctxt "Info"
@@ -6337,6 +6376,12 @@ msgstr "ログインとメールボックス用のパスワードは違うもの
 msgctxt "Info"
 msgid "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard. (UTF-8 encoding). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Need help?</a>"
 msgstr "Outlook、 Outlook Express、 Yahoo! Mail、 Hotmail、 Eudoraおよび、その他のアプリケーションからのCSVファイルのインポートに対応しています。またUTF-8エンコードのvCard形式にも対応しています。<a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">インポートについて</a>"
+
+#: ./src/templates/payment/paypalView.tpl.html:21
+#: ./src/templates/payment/paypalView.tpl.html:39
+msgctxt "Info"
+msgid "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
+msgstr ""
 
 #: ./src/app/message/directives/unsubscribePanel.js:24
 msgctxt "Info"
@@ -6473,6 +6518,16 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "バックアップしてある組織用の鍵のパスワードで、組織用の秘密鍵を有効化する必要があります。"
 
+#: ./src/templates/payment/paypalView.tpl.html:35
+msgctxt "Info"
+msgid "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
+msgstr ""
+
+#: ./src/templates/payment/paypalView.tpl.html:26
+msgctxt "Info"
+msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please"
+msgstr ""
+
 #: ./src/app/members/services/memberActions.js:38
 msgctxt "Info"
 msgid "You must provide this user with the Organization Password in order to fully activate administrator privileges."
@@ -6490,10 +6545,10 @@ msgctxt "Info"
 msgid "You will be prompted to save the attachment."
 msgstr "添付ファイルの保存が促されます。"
 
-#: ./src/templates/payment/paypalView.tpl.html:3
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:29
 msgctxt "Info"
-msgid "You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue."
-msgstr "この取引を完了するには、PayPalアカウントにログインする必要があります。 PayPalの新しいタブを開きます。 ポップアップをブロックしている場合は、その機能を無効にしてください。"
+msgid "You will be soon redirected to your bank to verify your payment."
+msgstr ""
 
 #: ./src/templates/modals/payment/modal.tpl.html:39
 msgctxt "Info"
@@ -6510,7 +6565,7 @@ msgctxt "Info"
 msgid "Your VPN account has not yet been activated, go to <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> to sign up and activate your account."
 msgstr "VPNアカウントはまだ有効になっていません。<a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a>からアカウント登録と有効化をしてください。"
 
-#: ./src/app/composer/services/validateMessage.js:74
+#: ./src/app/composer/services/validateMessage.js:60
 #: ./src/templates/invoices/invoiceSection.tpl.html:50
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
@@ -6541,6 +6596,11 @@ msgstr "管理者権限が失効しています。"
 msgctxt "Info"
 msgid "Your attachments are secure and encrypted, but to download them requires extra work. We recommend using a different web browser such as Chrome or Firefox for a better user experience."
 msgstr "添付ファイルは暗号化され安全ですが、ダウンロードには追加の作業が必要です。使い勝手を向上させるには、ChromeやFirefoxなどの別のWebブラウザのご使用をお勧めします。"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:19
+msgctxt "Info"
+msgid "Your bank requires 3-D Secure verification for security purposes."
+msgstr ""
 
 #: ./src/templates/user/humanVerification.tpl.html:18
 msgctxt "Info"
@@ -6930,7 +6990,7 @@ msgid "Annually"
 msgstr "年払い"
 
 #: ./src/app/labels/directives/dropdownFolders.js:13
-#: ./src/templates/filter/modal.tpl.html:173
+#: ./src/templates/filter/modal.tpl.html:172
 msgctxt "Label"
 msgid "Archive"
 msgstr "アーカイブ"
@@ -7140,7 +7200,7 @@ msgid "Highest security"
 msgstr "最高水準のセキュリティ"
 
 #: ./src/app/labels/directives/dropdownFolders.js:8
-#: ./src/templates/filter/modal.tpl.html:165
+#: ./src/templates/filter/modal.tpl.html:164
 msgctxt "Label"
 msgid "Inbox"
 msgstr "受信箱"
@@ -7278,7 +7338,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr "ProtonVPN ホームページ"
 
-#: ./src/templates/filter/modal.tpl.html:217
+#: ./src/templates/filter/modal.tpl.html:216
 msgctxt "Label"
 msgid "Read"
 msgstr "既読"
@@ -7319,12 +7379,12 @@ msgid "Signature"
 msgstr "署名"
 
 #: ./src/app/labels/directives/dropdownFolders.js:18
-#: ./src/templates/filter/modal.tpl.html:181
+#: ./src/templates/filter/modal.tpl.html:180
 msgctxt "Label"
 msgid "Spam"
 msgstr "迷惑メール"
 
-#: ./src/templates/filter/modal.tpl.html:224
+#: ./src/templates/filter/modal.tpl.html:223
 msgctxt "Label"
 msgid "Starred"
 msgstr "星印"
@@ -7345,7 +7405,7 @@ msgid "Time zone"
 msgstr "タイムゾーン"
 
 #: ./src/app/labels/directives/dropdownFolders.js:23
-#: ./src/templates/filter/modal.tpl.html:189
+#: ./src/templates/filter/modal.tpl.html:188
 msgctxt "Label"
 msgid "Trash"
 msgstr "ごみ箱"
@@ -7714,6 +7774,11 @@ msgctxt "Link"
 msgid "Why is this required?"
 msgstr "この必要性について"
 
+#: ./src/templates/payment/paypalView.tpl.html:26
+msgctxt "Link"
+msgid "click here"
+msgstr ""
+
 #: ./src/templates/modals/deleteAccount.tpl.html:11
 msgctxt "Link"
 msgid "this procedure"
@@ -8031,7 +8096,7 @@ msgctxt "Modal setup 2FA"
 msgid "This wizard will enable Two Factor Authentication (2FA) on your ProtonMail account. 2FA will make your ProtonMail account more secure so we recommend enabling it."
 msgstr "このウィザードはProtonMailアカウントで２要素認証を有効にします。セキュリティをより高めるため２要素認証の使用をお勧めします。"
 
-#: ./src/templates/utils/printModal.tpl.html:30
+#: ./src/templates/utils/printModal.tpl.html:29
 msgctxt "Modal title"
 msgid "Print preview"
 msgstr "印刷プレビュー"
@@ -8156,7 +8221,7 @@ msgctxt "Notification update"
 msgid "The public key with fingerprint {{ fingerprint }} was replaced with a revoked key."
 msgstr "フィンガープリント{{ fingerprint }} の公開鍵が取り消されました。"
 
-#: ./src/app/utils/services/eventManager.js:163
+#: ./src/app/utils/services/eventManager.js:164
 msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr "{{sender}}からの新着メールがあります。"
@@ -8288,12 +8353,12 @@ msgid "User IDs mismatch. This key is assigned to {{emails}}."
 msgid_plural "User IDs mismatch. The emails {{emails}} are assigned to this key."
 msgstr[0] "ユーザーIDが一致しません。この鍵は{{emails}} に割り当てられています。"
 
-#: ./src/app/settings/controllers/payments.js:99
+#: ./src/app/settings/controllers/payments.js:100
 msgctxt "Payment"
 msgid "Payment method deleted"
 msgstr "支払い方法が削除されました。"
 
-#: ./src/app/settings/controllers/payments.js:78
+#: ./src/app/settings/controllers/payments.js:79
 msgctxt "Payment"
 msgid "Payment method updated"
 msgstr "支払い方法が更新されました。"
@@ -8318,12 +8383,12 @@ msgctxt "Payment method"
 msgid "Credit Card"
 msgstr "クレジットカード"
 
-#: ./src/templates/payment/paypalView.tpl.html:10
+#: ./src/templates/payment/paypalView.tpl.html:4
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
 msgstr "金額が上限を超えています。"
 
-#: ./src/templates/payment/paypalView.tpl.html:14
+#: ./src/templates/payment/paypalView.tpl.html:5
 msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr "最少金額以下です。"
@@ -9230,6 +9295,11 @@ msgctxt "Title"
 msgid "2-year plan"
 msgstr "2 年プラン"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+msgctxt "Title"
+msgid "3-D Secure verification failed"
+msgstr "3Dセキュアの検証に失敗しました"
+
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:13
 #: ./src/app/ui/factories/pageTitlesModel.js:25
 msgctxt "Title"
@@ -9239,7 +9309,7 @@ msgstr "アカウント"
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:49
-#: ./src/templates/filter/modal.tpl.html:130
+#: ./src/templates/filter/modal.tpl.html:129
 #: ./src/templates/invoices/invoiceList.tpl.html:7
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:215
@@ -9247,7 +9317,7 @@ msgstr "アカウント"
 #: ./src/templates/views/invoices.tpl.html:20
 #: ./src/templates/views/invoices.tpl.html:50
 #: ./src/templates/views/members.tpl.html:159
-#: ./src/templates/views/payments.tpl.html:26
+#: ./src/templates/views/payments.tpl.html:25
 msgctxt "Title"
 msgid "Actions"
 msgstr "動作"
@@ -9374,7 +9444,7 @@ msgstr "金額"
 #: ./src/app/payment/directives/paymentPlanOverview.js:47
 msgctxt "Title"
 msgid "Amount Due"
-msgstr ""
+msgstr "支払い総額"
 
 #: ./src/templates/modals/pay.tpl.html:44
 msgctxt "Title"
@@ -9458,7 +9528,7 @@ msgstr "Bcc"
 #: ./src/templates/directives/composer/composerInputMeta.tpl.html:29
 msgctxt "Title"
 msgid "BCC:"
-msgstr ""
+msgstr "Bcc："
 
 #: ./src/templates/squire/colorPopover.tpl.html:5
 msgctxt "Title"
@@ -9478,7 +9548,7 @@ msgstr "請求情報"
 #: ./src/templates/message/trustPublicKeyInfo.tpl.html:8
 msgctxt "Title"
 msgid "Bits"
-msgstr ""
+msgstr "鍵長"
 
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
@@ -9499,6 +9569,16 @@ msgstr "Cc"
 #: ./src/templates/directives/composer/composerInputMeta.tpl.html:20
 msgctxt "Title"
 msgid "CC:"
+msgstr "Cc："
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:8
+msgctxt "Title"
+msgid "Card verification"
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:13
+msgctxt "Title"
+msgid "Card verification in progress"
 msgstr ""
 
 #. table heading for the domains page table listing of addresses
@@ -9694,7 +9774,7 @@ msgstr "アカウントの作成"
 #: ./src/templates/message/trustPublicKeyInfo.tpl.html:6
 msgctxt "Title"
 msgid "Created"
-msgstr ""
+msgstr "作成日"
 
 #: ./src/templates/user/signupCreationProcess.tpl.html:11
 msgctxt "Title"
@@ -9821,7 +9901,7 @@ msgctxt "Title"
 msgid "Delete label"
 msgstr "ラベルの削除"
 
-#: ./src/app/settings/controllers/payments.js:86
+#: ./src/app/settings/controllers/payments.js:87
 msgctxt "Title"
 msgid "Delete payment method"
 msgstr "支払い方法の削除"
@@ -10021,11 +10101,6 @@ msgctxt "Title"
 msgid "Event"
 msgstr "イベント"
 
-#: ./src/templates/views/payments.tpl.html:24
-msgctxt "Title"
-msgid "Expiration"
-msgstr "期限切れ"
-
 #: ./src/templates/composer/composerExpiration.tpl.html:3
 msgctxt "Title"
 msgid "Expiration time"
@@ -10034,7 +10109,7 @@ msgstr "有効期限"
 #: ./src/templates/message/trustPublicKeyInfo.tpl.html:7
 msgctxt "Title"
 msgid "Expires"
-msgstr ""
+msgstr "有効期限"
 
 #: ./src/templates/modals/exportKeyModal.tpl.html:6
 msgctxt "Title"
@@ -10254,7 +10329,7 @@ msgctxt "Title"
 msgid "Keyboard Shortcuts"
 msgstr "キーボードショートカット"
 
-#: ./src/app/composer/services/validateMessage.js:68
+#: ./src/app/composer/services/validateMessage.js:54
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:68
 #: ./src/app/ui/factories/pageTitlesModel.js:43
 msgctxt "Title"
@@ -10360,6 +10435,11 @@ msgctxt "Title"
 msgid "Message headers"
 msgstr "メッセージのヘッダー"
 
+#: ./src/templates/views/payments.tpl.html:23
+msgctxt "Title"
+msgid "Method"
+msgstr ""
+
 #: ./src/templates/views/members.tpl.html:9
 msgctxt "Title"
 msgid "Multi-User Support"
@@ -10417,7 +10497,7 @@ msgctxt "Title"
 msgid "No messages"
 msgstr "メッセージはありません。"
 
-#: ./src/app/composer/services/validateMessage.js:60
+#: ./src/app/composer/services/validateMessage.js:46
 msgctxt "Title"
 msgid "No subject"
 msgstr "件名なし"
@@ -10438,11 +10518,6 @@ msgstr "通知"
 msgctxt "Title"
 msgid "Notifications"
 msgstr "通知"
-
-#: ./src/templates/views/payments.tpl.html:23
-msgctxt "Title"
-msgid "Number"
-msgstr "番号"
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:19
 msgctxt "Title"
@@ -10546,6 +10621,16 @@ msgctxt "Title"
 msgid "Payment methods"
 msgstr "支払い方法"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:7
+msgctxt "Title"
+msgid "Payment verification"
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:12
+msgctxt "Title"
+msgid "Payment verification in progress"
+msgstr ""
+
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:63
 msgctxt "Title"
 msgid "Payments"
@@ -10601,6 +10686,11 @@ msgstr "秘密鍵のパスワード要求"
 msgctxt "Title"
 msgid "Privatize User"
 msgstr "ユーザーの私用化"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:10
+msgctxt "Title"
+msgid "Processing..."
+msgstr "処理中..."
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:45
 msgctxt "Title"
@@ -10908,6 +10998,7 @@ msgstr ""
 #: ./src/templates/invoices/invoiceList.tpl.html:9
 #: ./src/templates/modals/generate.tpl.html:55
 #: ./src/templates/views/domains.tpl.html:208
+#: ./src/templates/views/payments.tpl.html:24
 msgctxt "Title"
 msgid "Status"
 msgstr "状態"
@@ -11028,7 +11119,6 @@ msgstr "2 要素認証を有効にしました。"
 #: ./src/templates/modals/domain/mx.tpl.html:20
 #: ./src/templates/modals/domain/spf.tpl.html:19
 #: ./src/templates/modals/domain/verification.tpl.html:20
-#: ./src/templates/views/payments.tpl.html:25
 msgctxt "Title"
 msgid "Type"
 msgstr "種類"
@@ -11052,7 +11142,7 @@ msgstr "アップグレード"
 #: ./src/templates/message/trustPublicKeyTable.tpl.html:8
 msgctxt "Title"
 msgid "Use for encryption"
-msgstr ""
+msgstr "暗号化に使用する"
 
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:18
@@ -11293,12 +11383,12 @@ msgstr "星印をはずす"
 #: ./src/app/payment/directives/paymentPlanOverview.js:32
 msgctxt "Tooltip"
 msgid "1-year plan, {{percentage}} off"
-msgstr ""
+msgstr "1 年プラン ({{percentage}} 割引)"
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:34
 msgctxt "Tooltip"
 msgid "2-year plan, {{percentage}} off"
-msgstr ""
+msgstr "2 年プラン ({{percentage}} 割引)"
 
 #: ./src/templates/dashboard/totalRows.tpl.html:43
 msgctxt "Tooltip"
@@ -11318,12 +11408,12 @@ msgstr ""
 #: ./src/templates/dashboard/totalRows.tpl.html:22
 msgctxt "Tooltip"
 msgid "Annual subscription discount"
-msgstr ""
+msgstr "年間購読の割引です"
 
 #: ./src/templates/dashboard/totalRows.tpl.html:26
 msgctxt "Tooltip"
 msgid "Annual subscription with VPN discount"
-msgstr ""
+msgstr "VPN付き年間購読の割引です"
 
 #: ./src/templates/directives/composer/composer.tpl.html:62
 #: ./src/templates/views/outside.reply.tpl.html:37
@@ -11415,7 +11505,7 @@ msgstr ""
 #: ./src/app/ui/services/encryptionStatus.js:41
 msgctxt "Tooltip"
 msgid "Loading encryption info..."
-msgstr ""
+msgstr "暗号化情報を読み込み中..."
 
 #: ./src/templates/views/outside.unlock.tpl.html:15
 msgctxt "Tooltip"
@@ -11425,7 +11515,7 @@ msgstr ""
 #: ./src/templates/dashboard/totalRows.tpl.html:6
 msgctxt "Tooltip"
 msgid "Monthly subscription with VPN discount"
-msgstr ""
+msgstr "VPN付き月額購読の割引です"
 
 #: ./src/templates/elements/labelsElement.tpl.html:11
 msgctxt "Tooltip"
@@ -11527,7 +11617,7 @@ msgstr "信頼する"
 msgctxt "Tooltip"
 msgid "Using this key for encryption will encrypt outgoing messages\n"
 "                       to this address with this key and set this key as the primary PGP key for this address."
-msgstr ""
+msgstr "プライマリーPGP鍵として設定し、この鍵を使用して送信メッセージを暗号化します。"
 
 #: ./src/templates/views/appearance.tpl.html:119
 msgctxt "Tooltip"
@@ -11992,6 +12082,11 @@ msgctxt "auth log entry"
 msgid "Login success"
 msgstr "ログイン成功"
 
+#: ./src/templates/security/sessionLogsTable.tpl.html:36
+msgctxt "auth log entry"
+msgid "Login success (two-factor)"
+msgstr "ログイン成功 (２要素認証)"
+
 #: ./src/templates/security/sessionLogsTable.tpl.html:30
 msgctxt "auth log entry"
 msgid "Logout"
@@ -12167,24 +12262,24 @@ msgstr "ドメインが使用済み"
 #: ./src/templates/modals/generate.tpl.html:25
 msgctxt "info"
 msgid "RSA 2048-bit (Older but faster)"
-msgstr ""
+msgstr "RSA 2048ビット鍵 (高速)"
 
 #. form option comment
 #: ./src/templates/modals/generate.tpl.html:30
 msgctxt "info"
 msgid "RSA 4096-bit (Secure but slow)"
-msgstr ""
+msgstr "RSA 4096ビット鍵 (安全、低速)"
 
 #: ./src/templates/directives/composer/composerSubject.tpl.html:2
 msgctxt "info"
 msgid "Subject"
-msgstr ""
+msgstr "件名"
 
 #. form option comment
 #: ./src/templates/modals/generate.tpl.html:35
 msgctxt "info"
 msgid "X25519 (Modern, fastest, secure)"
-msgstr ""
+msgstr "X25519 (現代的、高速、安全)"
 
 #: ./src/templates/user/addressesSection.tpl.html:10
 msgctxt "info link to Addresses/Users in Signatures page"
