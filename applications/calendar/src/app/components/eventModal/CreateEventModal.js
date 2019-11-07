@@ -30,7 +30,7 @@ import { deleteEvent } from 'proton-shared/lib/api/calendars';
 const CreateEventModal = ({
     start,
     end,
-    isAllDay,
+    isAllDay = false,
     displayWeekNumbers,
     weekStartsOn,
     calendars,
@@ -97,6 +97,7 @@ const CreateEventModal = ({
                 Addresses,
                 color,
                 title,
+                isAllDay,
                 start,
                 end
             });
