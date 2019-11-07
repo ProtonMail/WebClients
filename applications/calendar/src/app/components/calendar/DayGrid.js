@@ -8,7 +8,6 @@ import { eachDayOfInterval, getWeekNumber } from 'proton-shared/lib/date-fns-utc
 
 import { sortWithTemporaryEvent } from './layout';
 import useDayGridEventLayout from './useDayGridEventLayout';
-import './DayGrid.scss';
 import { TYPES } from './constants';
 import useDayGridMouseHandler from './useDayGridMouseHandler';
 import usePopoverEvent from './usePopoverEvent';
@@ -133,11 +132,11 @@ const DayGrid = ({
 
     return (
         <div className="flex flex-column relative h100" ref={mainRef}>
-            <div className="flex daygrid-days">
-                {displayWeekNumbers ? <div className="daygrid-weeknumber-width" /> : null}
+            <div className="flex calendar-daygrid-days">
+                {displayWeekNumbers ? <div className="calendar-daygrid-weeknumber-width" /> : null}
                 {rows[0].map((day) => {
                     return (
-                        <div className="flex-item-fluid aligncenter daygrid-day" key={day.getUTCDate()}>
+                        <div className="flex-item-fluid aligncenter calendar-daygrid-day" key={day.getUTCDate()}>
                             {weekdaysLong[day.getUTCDay()]}
                         </div>
                     );
@@ -145,13 +144,13 @@ const DayGrid = ({
             </div>
             <div className="flex flex-item-fluid">
                 {displayWeekNumbers ? (
-                    <div className="flex flex-column daygrid-weeknumber-width">
+                    <div className="flex flex-column calendar-daygrid-weeknumber-width">
                         {rows.map((days) => {
                             const week = getWeekNumber(days[0]);
                             return (
                                 <div
                                     key={week}
-                                    className="flex-item-fluid flex flex-column relative daygrid-weeknumber"
+                                    className="flex-item-fluid flex flex-column relative calendar-daygrid-weeknumber"
                                 >
                                     {week}
                                 </div>
@@ -169,10 +168,13 @@ const DayGrid = ({
                         const { eventsInRow, eventsInRowStyles, eventsInRowSummary } = eventsPerRows[rowIndex];
                         return (
                             <div key={rowIndex} className="flex-item-fluid flex flex-column h100 w100 relative">
-                                <div className="flex daygrid-columns">
+                                <div className="flex calendar-daygrid-columns">
                                     {days.map((day) => {
                                         return (
-                                            <div className="flex-item-fluid daygrid-column" key={day.getUTCDate()} />
+                                            <div
+                                                className="flex-item-fluid calendar-daygrid-column"
+                                                key={day.getUTCDate()}
+                                            />
                                         );
                                     })}
                                 </div>
@@ -192,7 +194,7 @@ const DayGrid = ({
                                     })}
                                 </div>
                                 <div
-                                    className="relative flex-item-fluid daygrid-row"
+                                    className="relative flex-item-fluid calendar-daygrid-row"
                                     data-row={rowIndex}
                                     {...(rowIndex === 0 ? { ref: firstRowRef } : undefined)}
                                 >
