@@ -70,6 +70,15 @@ $gridcell-right-margin: 1.5em;
 
 .calendar-aside {
     width: $calendar-aside-width;
+    font-size: 1rem;
+}
+
+.calendar-fullday-row {
+    border-bottom: $calendar-grid-border;
+}
+
+.calendar-aside-weekNumber {
+    border-top: $calendar-grid-border;
 }
 
 .calendar-grid-timeBlock {
