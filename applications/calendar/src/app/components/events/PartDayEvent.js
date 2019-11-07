@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react';
 import { LoaderIcon, classnames } from 'react-components';
 import { c } from 'ttag';
+
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
+import { bestColor } from '../../helpers/color';
 
 const getBackground = (id, isAllDay, isSelected) => {
     if (isSelected) {
@@ -26,9 +28,11 @@ const PartDayEvent = ({
     const calendarColor = (data && data.Calendar && data.Calendar.Color) || undefined;
 
     const eventStyle = useMemo(() => {
+        const background = calendarColor || getBackground(id, isAllDay, isSelected);
         return {
             ...style,
-            background: calendarColor || getBackground(id, isAllDay, isSelected)
+            background,
+            color: bestColor(background)
         };
     }, [calendarColor, style, isAllDay, isSelected]);
 

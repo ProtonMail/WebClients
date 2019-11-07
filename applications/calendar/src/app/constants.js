@@ -61,3 +61,8 @@ export const NOTIFICATION_UNITS = {
 };
 
 export const DEFAULT_EVENT_DURATION = 30;
+
+export const COLORS = {
+    BLACK: '#000',
+    WHITE: '#FFF'
+};

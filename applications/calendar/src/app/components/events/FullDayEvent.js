@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react';
 import { LoaderIcon, classnames } from 'react-components';
+import { c } from 'ttag';
 
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
-import { c } from 'ttag';
+import { bestColor } from '../../helpers/color';
 
 const FullDayEvent = ({
     style,
@@ -24,8 +25,10 @@ const FullDayEvent = ({
         if (!isAllDay) {
             return {};
         }
+        const background = calendarColor || 'rgba(255,0,255,0.3)';
         return {
-            background: calendarColor || 'rgba(255,0,255,0.3)'
+            background,
+            color: bestColor(background)
         };
     }, [calendarColor, isAllDay, isSelected]);
 
