@@ -26,6 +26,7 @@ function AccountController(
     const { on, unsubscribe } = dispatchers();
     $scope.emailing = { announcements: false, features: false, newsletter: false, beta: false };
     $scope.locales = [
+        { label: 'Català', key: 'ca_ES' },
         { label: 'Čeština', key: 'cs_CZ' },
         { label: 'Deutsch', key: 'de_DE' },
         { label: 'English', key: 'en_US' },
@@ -37,6 +38,7 @@ function AccountController(
         { label: '日本語', key: 'ja_JP' },
         { label: 'Nederlands', key: 'nl_NL' },
         { label: 'Polski', key: 'pl_PL' },
+        { label: 'Português', key: 'pt_PT' },
         { label: 'Português, brasileiro', key: 'pt_BR' },
         { label: 'Pусский', key: 'ru_RU' },
         { label: 'Română', key: 'ro_RO' },
