@@ -187,7 +187,12 @@ const TimeGrid = ({
                                 return <div className="calendar-grid-dayLine flex-item-fluid" key={day.getUTCDate()} />;
                             })}
                         </div>
-                        <div className="calendar-time-fullday" data-row="0" onMouseDownCapture={onDayGridMouseDown}>
+                        <div
+                            className="calendar-time-fullday"
+                            style={{ height: actualRows * dayEventHeight + 'px' }}
+                            data-row="0"
+                            onMouseDownCapture={onDayGridMouseDown}
+                        >
                             {eventsInRowStyles.map(({ idx, type, style }) => {
                                 if (type === 'more') {
                                     const isSelected = isMoreSelected(idx, moreIdx, 0, moreRow);
