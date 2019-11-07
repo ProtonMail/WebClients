@@ -144,13 +144,6 @@ const TimeGrid = ({
         };
     }, [scrollRef && scrollRef.current]);
 
-    const weekNumber = (
-        <span className="alignright inline-flex flex-column mlauto mrauto lh110 pt0-5 pb0-5">
-            <span>{week}</span>
-            <span>{getWeekNumber(days[0])}</span>
-        </span>
-    );
-
     return (
         <div className="relative main-area-content" ref={mainRef}>
             <div className={classnames(['sticky-title sticky-title--noPadding', topClass])}>
@@ -178,9 +171,7 @@ const TimeGrid = ({
                 </div>
 
                 <div className="flex calendar-fullday-row">
-                    <div className="calendar-aside calendar-aside-weekNumber flex">
-                        {displayWeekNumbers ? weekNumber : null}
-                    </div>
+                    <div className="calendar-aside calendar-aside-weekNumber flex"></div>
                     <div className="flex-item-fluid relative">
                         <div className="flex">
                             {days.map((day) => {
