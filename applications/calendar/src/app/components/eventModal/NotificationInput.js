@@ -79,12 +79,12 @@ const NotificationInput = ({
                 value={unit}
                 options={[
                     !isAllDay && {
-                        text: c('Time unit').ngettext(msgid`Minute`, 'Minutes', modifiedValue),
+                        text: c('Time unit').ngettext(msgid`Minute`, `Minutes`, modifiedValue),
                         value: MINUTES
                     },
-                    !isAllDay && { text: c('Time unit').ngettext(msgid`Hour`, 'Hours', modifiedValue), value: HOURS },
-                    { text: c('Time unit').ngettext(msgid`Day`, 'Days', modifiedValue), value: DAY },
-                    { text: c('Time unit').ngettext(msgid`Week`, 'Weeks', modifiedValue), value: WEEK }
+                    !isAllDay && { text: c('Time unit').ngettext(msgid`Hour`, `Hours`, modifiedValue), value: HOURS },
+                    { text: c('Time unit').ngettext(msgid`Day`, `Days`, modifiedValue), value: DAY },
+                    { text: c('Time unit').ngettext(msgid`Week`, `Weeks`, modifiedValue), value: WEEK }
                 ].filter(Boolean)}
                 onChange={({ target }) => onChange({ ...notification, unit: +target.value })}
             />
