@@ -144,11 +144,18 @@ const TimeGrid = ({
         };
     }, [scrollRef && scrollRef.current]);
 
+    const weekNumber = (
+        <span className="alignright inline-flex flex-column mlauto mrauto lh110 pt0-5 pb0-5">
+            <span>{week}</span>
+            <span>{getWeekNumber(days[0])}</span>
+        </span>
+    );
+
     return (
         <div className="relative main-area-content" ref={mainRef}>
             <div className={classnames(['sticky-title sticky-title--noPadding', topClass])}>
                 <div className="flex">
-                    <div className="calendar-aside"></div>
+                    <div className="calendar-aside aligncenter"></div>
                     {days.map((day) => {
                         return (
                             <button
@@ -162,7 +169,7 @@ const TimeGrid = ({
                                 <span className="calendar-grid-heading-number mt0-25">
                                     <span className="mauto">{day.getUTCDate()}</span>
                                 </span>
-                                <span className="calendar-grid-heading-day bl mt0 mb0 big">
+                                <span className="calendar-grid-heading-day ellipsis bl mt0 mb0 big">
                                     {weekdaysLong[day.getUTCDay()]}
                                 </span>
                             </button>
@@ -170,9 +177,9 @@ const TimeGrid = ({
                     })}
                 </div>
 
-                <div className="flex">
-                    <div className="calendar-aside">
-                        {displayWeekNumbers ? `${week} ${getWeekNumber(days[0])}` : null}
+                <div className="flex calendar-fullday-row">
+                    <div className="calendar-aside calendar-aside-weekNumber flex">
+                        {displayWeekNumbers ? weekNumber : null}
                     </div>
                     <div className="flex-item-fluid relative">
                         <div className="flex">
@@ -180,12 +187,7 @@ const TimeGrid = ({
                                 return <div className="calendar-grid-dayLine flex-item-fluid" key={day.getUTCDate()} />;
                             })}
                         </div>
-                        <div
-                            className="calendar-time-fullday"
-                            style={{ height: actualRows * dayEventHeight + 'px' }}
-                            data-row="0"
-                            onMouseDownCapture={onDayGridMouseDown}
-                        >
+                        <div className="calendar-time-fullday" data-row="0" onMouseDownCapture={onDayGridMouseDown}>
                             {eventsInRowStyles.map(({ idx, type, style }) => {
                                 if (type === 'more') {
                                     const isSelected = isMoreSelected(idx, moreIdx, 0, moreRow);
