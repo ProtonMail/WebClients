@@ -32,6 +32,7 @@ const DateInput = ({ value, min, max, onChange, displayWeekNumbers, weekStartsOn
             setTemporaryInput(toFormatted(value, dateLocale));
             return;
         }
+        anchorRef.current.blur();
         onChange(newDate);
     };
 
