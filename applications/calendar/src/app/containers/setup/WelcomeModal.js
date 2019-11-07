@@ -12,8 +12,9 @@ import {
     useNotifications
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { createCalendar } from 'proton-shared/lib/api/calendars';
+import { createCalendar, updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
 import { wait } from 'proton-shared/lib/helpers/promise';
+import { getTimezone } from 'proton-shared/lib/date/timezone';
 
 import { setupCalendarKey } from '../../helpers/calendarModal';
 import { DEFAULT_CALENDAR } from '../../constants';
@@ -58,13 +59,21 @@ const WelcomeModal = (props) => {
             })
         );
 
-        await setupCalendarKey({
-            api,
-            addressID: primaryAddressID,
-            addressKeys: await getAddressKeys(primaryAddressID),
-            calendarID: Calendar.ID,
-            email
-        });
+        await Promise.all([
+            api(
+                updateCalendarUserSettings({
+                    PrimaryTimezone: getTimezone(),
+                    AutoDetectPrimaryTimezone: 0
+                })
+            ),
+            setupCalendarKey({
+                api,
+                addressID: primaryAddressID,
+                addressKeys: await getAddressKeys(primaryAddressID),
+                calendarID: Calendar.ID,
+                email
+            })
+        ]);
 
         await call();
 
