@@ -3,11 +3,12 @@ import {
     AppsSidebar,
     classnames,
     Href,
-    Loader,
+    FullLoader,
     LocalizedMiniCalendar,
     StorageSpaceStatus,
     useActiveBreakpoint,
-    useToggle
+    useToggle,
+    TextLoader
 } from 'react-components';
 import { c } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
@@ -157,19 +158,9 @@ const CalendarContainerView = ({
                         calendars={calendars}
                     />
                     {isLoading ? (
-                        <div
-                            style={{
-                                position: 'fixed',
-                                top: '10px',
-                                left: '50%',
-                                zIndex: 100,
-                                width: '200px',
-                                height: '80px',
-                                borderRadius: '10px',
-                                background: '#fff'
-                            }}
-                        >
-                            <Loader />
+                        <div className="calendar-loader-container aligncenter p1">
+                            <FullLoader color="global-light" size="60" />
+                            <TextLoader className="m0">{c('Info').t`Loading events`}</TextLoader>
                         </div>
                     ) : null}
                     <div className="main flex-item-fluid">
