@@ -233,6 +233,10 @@ export enum RIGHT_TO_LEFT {
     ON = 1
 }
 
+export enum ORGANIZATION_FLAGS {
+    LOYAL = 1
+}
+
 export const DEFAULT_CYCLE = 12;
 
 export enum CYCLE {
