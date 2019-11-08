@@ -4,6 +4,7 @@ import _ from 'lodash';
 function searchForm(
     dispatchers,
     $state,
+    hotkeys,
     $stateParams,
     authentication,
     searchModel,
@@ -99,8 +100,10 @@ function searchForm(
 
                     if (type === 'state') {
                         const action = data.isOpened ? 'add' : 'remove';
+                        const actionHot = data.isOpened ? 'pause' : 'unpause';
                         el[0].classList[action](CLASS_OPEN);
                         data.isOpened && scope.$applyAsync(onOpen);
+                        hotkeys[actionHot]();
                     }
                 });
 
@@ -125,6 +128,7 @@ function searchForm(
                         type: 'close',
                         id: dropdownID
                     });
+                    hotkeys.unpause();
                 };
 
                 const onSubmit = () => {
@@ -134,7 +138,7 @@ function searchForm(
                         const data = searchValue.extractParameters(query, folders);
                         const model = searchModel.build(scope.model);
                         const state = getState(query || isOpen);
-
+                        hotkeys.unpause();
                         if (!isOpen) {
                             return go(state, searchModel.build(data));
                         }
@@ -142,11 +146,16 @@ function searchForm(
                     });
                 };
 
+                $input.addEventListener('focus', hotkeys.pause);
+                $input.addEventListener('blur', hotkeys.unpause);
+
                 el.on('submit', onSubmit);
 
                 scope.$on('$destroy', () => {
                     el.off('submit', onSubmit);
                     unsubscribe();
+                    $input.removeListener('focus', hotkeys.pause);
+                    $input.removeListener('blur', hotkeys.unpause);
                 });
             };
         }

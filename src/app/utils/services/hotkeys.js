@@ -130,6 +130,7 @@ function hotkeys($state, $injector, dispatchers, gettextCatalog, translator) {
         {
             keyboard: 'c',
             callback: composer,
+            global: true,
             description: I18N.OPEN_COMPOSER
         },
         {
@@ -161,6 +162,7 @@ function hotkeys($state, $injector, dispatchers, gettextCatalog, translator) {
         { keyboard: 'enter', callback: openMarked },
         {
             keyboard: 'r',
+            global: true,
             callback: read,
             description: I18N.MARK_AS_READ,
             keyEventType: KEY_EVENT_TYPE.UP
@@ -168,36 +170,46 @@ function hotkeys($state, $injector, dispatchers, gettextCatalog, translator) {
         {
             keyboard: 'u',
             callback: unread,
+            global: true,
             description: I18N.MARK_AS_UNREAD,
             keyEventType: KEY_EVENT_TYPE.UP
         },
-        { keyboard: '.', callback: toggleStar },
+        {
+            keyboard: '.',
+            global: true,
+            callback: toggleStar
+        },
         {
             keyboard: 'i',
             callback: inbox,
+            global: true,
             description: I18N.MOVE_TO_INBOX,
             keyEventType: KEY_EVENT_TYPE.UP
         },
         {
             keyboard: ['t', 'del', 'command+backspace'],
+            global: true,
             callback: trash,
             description: I18N.MOVE_TO_TRASH,
             keyEventType: KEY_EVENT_TYPE.UP
         },
         {
             keyboard: 'a',
+            global: true,
             callback: archive,
             description: I18N.MOVE_TO_ARCHIVE,
             keyEventType: KEY_EVENT_TYPE.UP
         },
         {
             keyboard: 's',
+            global: true,
             callback: spam,
             description: I18N.MOVE_TO_SPAM,
             keyEventType: KEY_EVENT_TYPE.UP
         },
         {
             keyboard: '?',
+            global: true,
             callback: help,
             description: I18N.SHOW_HOTKEYS_LIST
         },
