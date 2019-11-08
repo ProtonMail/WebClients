@@ -165,6 +165,7 @@ export { default as DomainsSection } from './containers/domains/DomainsSection';
 export { default as AddressesTable } from './containers/domains/AddressesTable';
 export { default as DomainSection } from './containers/domains/DomainSection';
 export { default as DowngradeModal } from './containers/payments/DowngradeModal';
+export { default as LossLoyaltyModal } from './containers/payments/LossLoyaltyModal';
 export { default as BillingSection } from './containers/payments/BillingSection';
 export { default as GiftCodeInput } from './containers/payments/GiftCodeInput';
 export { default as PlansSection } from './containers/payments/PlansSection';

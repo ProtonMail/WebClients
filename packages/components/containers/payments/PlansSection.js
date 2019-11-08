@@ -4,8 +4,10 @@ import {
     SubTitle,
     Alert,
     DowngradeModal,
+    LossLoyaltyModal,
     MozillaInfoPanel,
     useSubscription,
+    useOrganization,
     Loader,
     usePlans,
     useApi,
@@ -18,6 +20,7 @@ import {
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 import { getPlans, isBundleEligible } from 'proton-shared/lib/helpers/subscription';
+import { isLoyal } from 'proton-shared/lib/helpers/organization';
 
 import SubscriptionModal from './subscription/SubscriptionModal';
 import { mergePlansMap, getCheckParams } from './subscription/helpers';
@@ -30,6 +33,7 @@ const PlansSection = () => {
     const [user] = useUser();
     const { isFree } = user;
     const [subscription = {}, loadingSubscription] = useSubscription();
+    const [organization = {}, loadingOrganization] = useOrganization();
     const [plans = [], loadingPlans] = usePlans();
     const api = useApi();
 
@@ -47,11 +51,19 @@ const PlansSection = () => {
         createNotification({ text: c('Success').t`You have successfully unsubscribed` });
     };
 
-    const handleOpenModal = () => {
+    const handleOpenModal = async () => {
         if (isFree) {
             return createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
         }
-        createModal(<DowngradeModal onConfirm={handleUnsubscribe} />);
+        await new Promise((resolve, reject) => {
+            createModal(<DowngradeModal onConfirm={resolve} onClose={reject} />);
+        });
+        if (isLoyal(organization)) {
+            await new Promise((resolve, reject) => {
+                createModal(<LossLoyaltyModal user={user} onConfirm={resolve} onClose={reject} />);
+            });
+        }
+        return handleUnsubscribe();
     };
 
     const handleModal = (newPlansMap, step) => async () => {
@@ -97,7 +109,7 @@ const PlansSection = () => {
         );
     }
 
-    if (loadingSubscription || loadingPlans) {
+    if (loadingSubscription || loadingPlans || loadingOrganization) {
         return (
             <>
                 <SubTitle>{c('Title').t`Plans`}</SubTitle>
