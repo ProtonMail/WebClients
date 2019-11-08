@@ -38,6 +38,11 @@ const useApiResult = <R, U extends any[]>(fn: QueryFunction<U>, dependencies?: a
         }
     }, [...hookDependencies]);
 
+    if (error) {
+        // Throw in render to allow the error boundary to catch it
+        throw error;
+    }
+
     return {
         result,
         error,

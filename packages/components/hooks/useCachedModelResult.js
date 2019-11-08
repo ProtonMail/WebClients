@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { STATUS } from 'proton-shared/lib/models/cache';
 
+const ERROR_IDX = 2;
+
 export const getState = ({ value, status } = { status: STATUS.PENDING }, oldState = []) => {
     return [
         // The old state value is returned in case the model has been deleted from the cache
@@ -47,21 +49,20 @@ const getRecordThen = (promise) => {
  * @param {Function} miss
  * @return {Object}
  */
-export const update = (cache, key, miss) => {
-    const oldRecord = cache.get(key);
-    if (!oldRecord || oldRecord.status === STATUS.REJECTED) {
-        const promise = miss(key);
-        const record = getRecordPending(promise);
-        cache.set(key, record);
-        getRecordThen(promise).then((newRecord) => cache.get(key) === record && cache.set(key, newRecord));
-        return record;
-    }
-    return oldRecord;
+const update = (cache, key, promise) => {
+    const record = getRecordPending(promise);
+    cache.set(key, record);
+    getRecordThen(promise).then((newRecord) => cache.get(key) === record && cache.set(key, newRecord));
+    return record;
 };
 
 export const getPromiseValue = (cache, key, miss) => {
-    const record = update(cache, key, miss);
-    return record.promise || record.value;
+    const oldRecord = cache.get(key);
+    if (!oldRecord || oldRecord.status === STATUS.REJECTED) {
+        const record = update(cache, key, miss(key));
+        return record.promise;
+    }
+    return oldRecord.promise || Promise.resolve(oldRecord.value);
 };
 
 /**
@@ -76,7 +77,12 @@ const useCachedModelResult = (cache, key, miss) => {
     const latestValue = useRef();
 
     const result = useMemo(() => {
-        return getState(update(cache, key, miss), latestValue.current);
+        const oldRecord = cache.get(key);
+        // If no record, or it's the first time loading this hook and the promise was previously rejected, retry the fetch strategy.
+        if (!oldRecord || (!latestValue.current && oldRecord.status === STATUS.REJECTED)) {
+            return getState(update(cache, key, miss(key)), latestValue.current);
+        }
+        return getState(oldRecord, latestValue.current);
     }, [cache, key, miss, forceRefresh]);
 
     useEffect(() => {
@@ -100,6 +106,11 @@ const useCachedModelResult = (cache, key, miss) => {
         checkForChange();
         return cache.subscribe(cacheListener);
     }, [cache, key, miss]);
+
+    // Throw in render to allow the error boundary to catch it
+    if (result[ERROR_IDX]) {
+        throw result[ERROR_IDX];
+    }
 
     return result;
 };
