@@ -8,8 +8,8 @@ export const notificationUnitToString = (n, unit) => {
     return {
         [NOTIFICATION_UNITS.WEEK]: c('Notifications').ngettext(msgid`${n} week`, `${n} weeks`, n),
         [NOTIFICATION_UNITS.DAY]: c('Notifications').ngettext(msgid`${n} day`, `${n} days`, n),
-        [NOTIFICATION_UNITS.MINUTES]: c('Notifications').ngettext(msgid`${n} minutes`, `${n} minutes`, n),
-        [NOTIFICATION_UNITS.HOURS]: c('Notifications').ngettext(msgid`${n} hours`, `${n} hours`, n)
+        [NOTIFICATION_UNITS.MINUTES]: c('Notifications').ngettext(msgid`${n} minute`, `${n} minutes`, n),
+        [NOTIFICATION_UNITS.HOURS]: c('Notifications').ngettext(msgid`${n} hour`, `${n} hours`, n)
     }[unit];
 };
 
