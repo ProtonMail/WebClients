@@ -2,19 +2,22 @@ import { REGEX_IMAGE_EXTENSION } from '../constants';
 import { toBase64 } from './file';
 
 /**
- * Convert base64 string to Image
- * @param  {String} base64str
+ * Convert url to Image
+ * @param  {String} url
  * @return {Object}
  */
-export const toImage = (base64str) => {
-    return new Promise((resolve) => {
+export const toImage = (url) => {
+    return new Promise((resolve, reject) => {
+        if (!url) {
+            return reject(new Error('url required'));
+        }
         const image = new Image();
-
         image.onload = () => {
             resolve(image);
         };
+        image.onerror = reject;
 
-        image.src = base64str;
+        image.src = url;
     });
 };
 
