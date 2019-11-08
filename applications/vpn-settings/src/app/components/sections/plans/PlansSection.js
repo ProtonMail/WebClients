@@ -7,18 +7,21 @@ import {
     Loader,
     useSubscription,
     DowngradeModal,
+    LossLoyaltyModal,
     useModals,
     SubscriptionModal,
     useLoading,
     useEventManager,
     useNotifications,
     useUser,
-    ConfirmModal
+    ConfirmModal,
+    useOrganization
 } from 'react-components';
 import { c } from 'ttag';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { isBundleEligible, getPlans, getPlan } from 'proton-shared/lib/helpers/subscription';
+import { isLoyal } from 'proton-shared/lib/helpers/organization';
 import { mergePlansMap } from 'react-components/containers/payments/subscription/helpers';
 import { PLANS } from 'proton-shared/lib/constants';
 
@@ -26,7 +29,8 @@ import PlansTable from './PlansTable';
 
 const PlansSection = () => {
     const api = useApi();
-    const [{ isFree, isPaid }] = useUser();
+    const [user] = useUser();
+    const { isFree, isPaid } = user;
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -35,6 +39,7 @@ const PlansSection = () => {
     const [cycle, updateCycle] = useState(DEFAULT_CYCLE);
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
+    const [organization, loadingOrganization] = useOrganization();
     const bundleEligible = isBundleEligible(subscription);
     const names = getPlans(subscription)
         .map(({ Title }) => Title)
@@ -64,6 +69,11 @@ const PlansSection = () => {
         await new Promise((resolve, reject) => {
             createModal(<DowngradeModal onConfirm={resolve} onClose={reject} />);
         });
+        if (isLoyal(organization)) {
+            await new Promise((resolve, reject) => {
+                createModal(<LossLoyaltyModal user={user} onConfirm={resolve} onClose={reject} />);
+            });
+        }
         await api(deleteSubscription());
         await call();
         createNotification({ text: c('Success').t`You have successfully unsubscribed` });
@@ -121,7 +131,7 @@ const PlansSection = () => {
         }
     }, [subscription]);
 
-    if (loadingPlans || loadingSubscription) {
+    if (loadingPlans || loadingSubscription || loadingOrganization) {
         return (
             <>
                 <SubTitle>{c('Title').t`Plans`}</SubTitle>
