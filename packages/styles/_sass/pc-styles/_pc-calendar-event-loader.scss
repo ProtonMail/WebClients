@@ -1,0 +1,12 @@
+$width-calendar-loader-container: 25rem !default;
+.calendar-loader-container {
+    position: fixed;
+    top: 1rem;
+    left: calc(50% - #{$width-calendar-loader-container/2});
+    max-width: 100%;
+    z-index: 100;
+    width: $width-calendar-loader-container;
+    background: $black;
+    color: $white;
+    border-radius: $global-border-radius;
+}
