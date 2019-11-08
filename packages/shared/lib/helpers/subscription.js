@@ -1,5 +1,4 @@
 import { PLAN_TYPES, PLAN_SERVICES, PLANS, ORGANIZATION_FLAGS } from '../constants';
-import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL } = PLAN_SERVICES;
@@ -59,8 +58,4 @@ export const isBundleEligible = (subscription = {}) => {
 export const hasLifetime = (subscription = {}) => {
     const { CouponCode = '' } = subscription;
     return CouponCode === 'LIFETIME';
-};
-
-export const isLoyal = (organization = {}) => {
-    return hasBit(organization.Flags, ORGANIZATION_FLAGS.LOYAL);
 };
