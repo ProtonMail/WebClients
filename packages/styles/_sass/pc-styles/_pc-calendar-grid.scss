@@ -126,7 +126,7 @@ $gridcell-right-margin: 1.5em;
 
 .calendar-dayeventcell--isBefore,
 .calendar-eventcell--isBefore {
-    filter: opacity(.8);
+    filter: opacity(.7);
 }
 
 .calendar-dayeventcell-inner {
@@ -140,6 +140,7 @@ $gridcell-right-margin: 1.5em;
     background: #0074D9;
     color: $black;
     border-radius: 2px;
+    transition: filter .5s ease;
 
     &:after {
         position: absolute;
