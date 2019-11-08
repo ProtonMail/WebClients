@@ -140,9 +140,11 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
 
             const bundlePlans =
                 bundle && plans.filter(({ Name, Type }) => Type === PLAN_TYPES.PLAN && bundle.includes(Name));
-            const bundlePlan = bundle && (await getPlansWithCoupon(bundlePlans, model.planName));
+            const bundlePlan = bundle && getPlansWithCoupon(bundlePlans, model.planName);
 
-            const plansWithCoupons = await Promise.all(bundlePlan ? [bundlePlan] : plansInfo.map(getPlanWithCoupon));
+            const plansWithCoupons = await Promise.all(
+                bundlePlan ? [...bundlePlans, bundlePlan] : plansInfo.map(getPlanWithCoupon)
+            );
             setAppliedCoupon(coupon);
             setPlansWithCoupons(plansWithCoupons);
         };
@@ -211,10 +213,10 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
     const getToken = ({ coupon, invite, verificationToken, paymentDetails }) => {
         if (invite) {
             return { Token: `${invite.selector}:${invite.token}`, TokenType: TOKEN_TYPES.INVITE };
-        } else if (coupon) {
-            return { Token: coupon.code, TokenType: TOKEN_TYPES.COUPON };
         } else if (paymentDetails) {
             return { Token: paymentDetails.VerifyCode, TokenType: TOKEN_TYPES.PAYMENT };
+        } else if (coupon) {
+            return { Token: coupon.code, TokenType: TOKEN_TYPES.COUPON };
         }
         return verificationToken;
     };
@@ -247,13 +249,12 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
         if (planName !== PLAN.FREE) {
             const bundle = PLAN_BUNDLES[selectedPlan.planName];
             const plans = bundle ? bundle.map((name) => getPlanByName(name)) : [selectedPlan];
-
             const subscription = {
                 PlanIDs: toPlanMap(plans),
                 Amount: 0,
                 Currency: currency,
                 Cycle: cycle,
-                CouponCode: signupToken.coupon ? Token : undefined
+                CouponCode: signupToken.coupon ? signupToken.coupon.code : undefined
             };
             await api(withAuthHeaders(UID, AccessToken, subscribe(subscription)));
         }

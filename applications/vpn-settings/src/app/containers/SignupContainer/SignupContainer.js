@@ -129,7 +129,14 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
 
     const handlePayment = async (model, paymentParameters = {}) => {
         const paymentDetails = await makePayment(model, paymentParameters);
-        await withCreateLoading(signup(model, { paymentDetails, paymentMethodType: paymentParameters.type }));
+        await withCreateLoading(
+            signup(model, {
+                invite: appliedInvite,
+                coupon: appliedCoupon,
+                paymentDetails,
+                paymentMethodType: paymentParameters.type
+            })
+        );
         setModel(model);
     };
 
