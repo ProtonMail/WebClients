@@ -277,7 +277,11 @@ export default angular
                     token: null
                 },
                 views: {
-                    'panel@support': {
+                    'main@': {
+                        controller: 'SupportController',
+                        templateUrl: require('../templates/layout/login.tpl.html')
+                    },
+                    'panel@support.reset-password': {
                         templateUrl: require('../templates/views/reset-login-password.tpl.html')
                     }
                 }
