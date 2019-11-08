@@ -58,7 +58,9 @@ const PartDayEvent = ({
 
         return (
             <>
-                <div className="ellipsis">{loading ? <LoaderIcon /> : model.title}</div>
+                <div className={classnames(['ellipsis', loading && 'calendar-skeleton-loading'])}>
+                    {loading ? '' : model.title}
+                </div>
                 <div className="ellipsis">{timeString}</div>
             </>
         );
