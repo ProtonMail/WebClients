@@ -102,7 +102,7 @@ const MiniCalendar = ({
                     </>
                 ) : null}
             </div>
-            <div className={classnames(['minicalendar-grid pl1 pr1 pb1', classWeekNumber])}>
+            <div className={classnames(['minicalendar-grid pl0-75 pr0-75 pb1', classWeekNumber])}>
                 {displayWeekNumbers ? <WeekNumbers numberOfWeeks={numberOfWeeks} days={days} /> : null}
                 <div>
                     <WeekDays

@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TextLoader = ({ children }) => {
-    return <p className="atomLoader-text">{children}</p>;
+import { classnames } from '../../helpers/component';
+
+const TextLoader = ({ children, className }) => {
+    return <p className={classnames(['atomLoader-text', className])}>{children}</p>;
 };
 
 TextLoader.propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    className: PropTypes.string
 };
 
 export default TextLoader;

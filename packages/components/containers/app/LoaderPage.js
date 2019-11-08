@@ -4,8 +4,6 @@ import { FullLoader, TextLoader, useConfig } from 'react-components';
 import { c } from 'ttag';
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
-import './loaderPage.scss';
-
 const { VPN } = CLIENT_TYPES;
 
 const LoaderPage = ({ text, color = 'global-light' }) => {
