@@ -61,6 +61,6 @@ export const hasLifetime = (subscription = {}) => {
     return CouponCode === 'LIFETIME';
 };
 
-export const hasLayoltyBonus = (organization = {}) => {
+export const isLoyal = (organization = {}) => {
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.LOYAL);
 };
