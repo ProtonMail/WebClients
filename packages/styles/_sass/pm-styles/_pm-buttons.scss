@@ -357,10 +357,12 @@
   padding-right: 0;
   &:focus,
   &:hover,
+  &:not(div):active,
   &:active {
     color: $color-hover;
     text-decoration: underline;
     box-shadow: none;
+    background: transparent; // to avoid heriting from other classes
   }
   &[disabled],
   &.is-disabled {
