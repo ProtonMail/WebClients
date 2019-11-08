@@ -70,6 +70,11 @@ $minicalendar-cell-size: 2em !default;
 
 .minicalendar-day {
     position: relative;
+    min-width: #{$minicalendar-cell-size + 0.35em};
+    min-height: #{$minicalendar-cell-size + 0.35em};
+}
+
+.minicalendar-grid--displayWeekNumber .minicalendar-day {
     min-width: $minicalendar-cell-size;
     min-height: $minicalendar-cell-size;
 }
