@@ -73,22 +73,36 @@ const MiniCalendar = ({
             onMouseDown={preventLeaveFocus}
             aria-label={monthLabel}
         >
-            <div className="flex">
-                <span className="bold flex-item-fluid">{monthLabel}</span>
+            <div className="flex flex-items-center p1">
                 {hasCursors ? (
                     <>
-                        <button type="button" title={prevMonth} className="mr1" onClick={() => handleSwitchMonth(-1)}>
+                        <button
+                            type="button"
+                            title={prevMonth}
+                            className="flex ml0-5 mr0-5"
+                            onClick={() => handleSwitchMonth(-1)}
+                        >
                             <Icon name="caret" size={12} className="rotateZ-90 minicalendar-icon" />
                             <span className="sr-only">{prevMonth}</span>
                         </button>
-                        <button type="button" title={nextMonth} onClick={() => handleSwitchMonth(1)}>
+                    </>
+                ) : null}
+                <span className="bold flex-item-fluid aligncenter ellipsis">{monthLabel}</span>
+                {hasCursors ? (
+                    <>
+                        <button
+                            type="button"
+                            title={nextMonth}
+                            className="flex ml0-5 mr0-5"
+                            onClick={() => handleSwitchMonth(1)}
+                        >
                             <Icon name="caret" size={12} className="rotateZ-270 minicalendar-icon" />
                             <span className="sr-only">{nextMonth}</span>
                         </button>
                     </>
                 ) : null}
             </div>
-            <div className={classnames(['minicalendar-grid', classWeekNumber])}>
+            <div className={classnames(['minicalendar-grid pl1 pr1 pb1', classWeekNumber])}>
                 {displayWeekNumbers ? <WeekNumbers numberOfWeeks={numberOfWeeks} days={days} /> : null}
                 <div>
                     <WeekDays

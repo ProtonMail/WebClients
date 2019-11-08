@@ -11,14 +11,18 @@ const WeekNumbers = ({ days, numberOfWeeks }) => {
     const weekNumberLabels = useMemo(() => {
         return Array.from({ length: numberOfWeeks }, (a, i) => {
             const weekNumber = getWeek(days[i + i * 7]);
-            return <span key={weekNumber}>{weekNumber}</span>;
+            return (
+                <span className="italic flex-item-fluid flex" key={weekNumber}>
+                    <span className="mauto">{weekNumber}</span>
+                </span>
+            );
         });
     }, [days]);
 
     return (
-        <div className="aligncenter minicalendar-weeknumbers" style={style}>
+        <div className="aligncenter minicalendar-weeknumbers flex flex-column" style={style}>
             <span>
-                <span className="sr-only">{c('Info').t`Week number`}</span>
+                <span className="minicalendar-weeknumbers-heading">{c('Info').t`Week`}</span>
             </span>
             {weekNumberLabels}
         </div>
