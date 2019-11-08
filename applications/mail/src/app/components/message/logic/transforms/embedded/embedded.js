@@ -6,7 +6,9 @@ import * as embeddedStore from './embeddedStore';
 import * as embeddedParser from './embeddedParser';
 
 const REGEXP_CID_START = /^cid:/g;
-const testDiv = document.createElement('DIV');
+
+const escape = ({ document }) => (document.innerHTML = escapeSrc(document.innerHTML));
+const unescape = ({ document }) => (document.innerHTML = unescapeSrc(document.innerHTML));
 
 /**
  * Parse a message in order to
@@ -19,12 +21,12 @@ const testDiv = document.createElement('DIV');
  * @param  {String} text      Alternative body to parse
  * @return {Promise}
  */
-export const parser = async (message, mailSettings, { direction = 'blob', text = '', isOutside = false } = {}) => {
-    const content = text; // || message.getDecryptedBody();
-
-    testDiv.innerHTML = escapeSrc(content); // We don't use embeddedUtils.getBodyParser because the content is already cleaned
-
-    if (!embeddedFinder.find(message, testDiv)) {
+export const parser = async (
+    message,
+    mailSettings,
+    { direction = 'blob', isOutside = false, attachmentLoader } = {}
+) => {
+    if (!embeddedFinder.find(message)) {
         /**
          * cf #5088 we need to escape the body again if we forgot to set the password First.
          * Prevent unescaped HTML.
@@ -32,17 +34,20 @@ export const parser = async (message, mailSettings, { direction = 'blob', text =
          * Don't do it everytime because it's "slow" and we don't want to slow down the process.
          */
         if (isOutside) {
-            embeddedParser.mutateHTML(message, direction, testDiv);
-            return unescapeSrc(testDiv.innerHTML);
+            escape(message);
+            embeddedParser.mutateHTML(message, direction);
+            unescape(message);
+            return { document: message.document };
         }
 
-        return content;
+        return {};
     }
 
-    await embeddedParser.decrypt(message, mailSettings);
-
-    embeddedParser.mutateHTML(message, direction, testDiv);
-    return unescapeSrc(testDiv.innerHTML);
+    escape(message);
+    await embeddedParser.decrypt(message, mailSettings, attachmentLoader);
+    embeddedParser.mutateHTML(message, direction);
+    unescape(message);
+    return { document: message.document };
 };
 
 export const addEmbedded = (message, cid, data, MIME) => {
@@ -72,13 +77,13 @@ export const getUrl = (node) => {
  * @param  {Document} html Message body parser
  * @return {Function}
  */
-export const getAttachment = (message, html) => {
+export const getAttachment = (message) => {
     /**
      * @param  {String} src - cid:url
      */
     return (src) => {
         const cid = src.replace(REGEXP_CID_START, '');
-        const contains = embeddedFinder.find(message, html);
+        const contains = embeddedFinder.find(message);
         if (contains) {
             return embeddedStore.cid.get(message)[cid] || {};
         }

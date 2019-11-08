@@ -15,7 +15,7 @@ const ENCRYPTED_STATUS = {
 const EMBEDDED_CLASSNAME = 'proton-embedded';
 
 // TODO: Remove these mocks
-const AttachmentLoader = { get: noop, has: noop };
+// const AttachmentLoader = { get: noop, has: noop };
 const invalidSignature = { confirm: noop, askAgain: noop };
 
 /**
@@ -51,12 +51,11 @@ const actionDirection = {
  * This function expects the content to be unescaped later.
  * @param  {Resource} message             Message
  * @param  {String} direction             Parsing to execute, blob || cid
- * @param  {Node} testDiv
  * @return {String}                       Parsed HTML
  */
-export const mutateHTML = (message, direction, testDiv) => {
+export const mutateHTML = (message, direction) => {
     Object.keys(embeddedStore.cid.get(message)).forEach((cid) => {
-        const nodes = embeddedUtils.findEmbedded(cid, testDiv);
+        const nodes = embeddedUtils.findEmbedded(cid, message.document);
 
         if (nodes.length) {
             const { url = '' } = embeddedStore.getBlob(cid);
@@ -101,7 +100,7 @@ export const removeEmbeddedHTML = (message, Headers = {}, content = '') => {
  * @param {Object} message
  * @param {Array} list (list of attachments)
  */
-const triggerSigVerification = (message, list) => {
+const triggerSigVerification = (message, list, attachmentLoader) => {
     /*
      * launch and forget: we don't need to do anything with the result
      * wait a bit before disabling the invalidsignature modal
@@ -109,17 +108,18 @@ const triggerSigVerification = (message, list) => {
      */
     Promise.all(
         list.map(({ attachment }) =>
-            AttachmentLoader.get(attachment, message)
+            attachmentLoader
+                .get(attachment, message)
                 .then(() => wait(1000))
                 .then(() => invalidSignature.askAgain(message, attachment, false))
         )
     );
 };
 
-export const decrypt = (message, mailSettings) => {
+export const decrypt = (message, mailSettings, attachmentLoader) => {
     const list = embeddedFinder.listInlineAttachments(message);
-    const show = message.showEmbedded === true || mailSettings.ShowImages & SHOW_IMAGES.EMBEDDED;
-    const sigList = show ? list : list.filter(({ attachment }) => AttachmentLoader.has(attachment));
+    const show = message.showEmbeddedImages === true || mailSettings.ShowImages & SHOW_IMAGES.EMBEDDED;
+    const sigList = show ? list : list.filter(({ attachment }) => attachmentLoader.has(attachment));
 
     // For a draft if we close it before the end of the attachment upload, there are no keyPackets
     const promise = flow(
@@ -128,22 +128,23 @@ export const decrypt = (message, mailSettings) => {
         filter(({ cid }) => !embeddedStore.hasBlob(cid) && show),
         map(({ cid, attachment }) => {
             const storeAttachement = embeddedStore.store(message, cid);
-            return AttachmentLoader.get(attachment, message).then((buffer) =>
-                storeAttachement(buffer, attachment.MIMEType)
-            );
+            return attachmentLoader.get(attachment, message).then((buffer) => {
+                console.log('back in decrypt', buffer);
+                return storeAttachement(buffer, attachment.MIMEType);
+            });
         })
     )(list);
 
     if (!promise.length) {
         // all cid was already stored, we can resolve
-        triggerSigVerification(message, sigList);
+        triggerSigVerification(message, sigList, attachmentLoader);
         return Promise.resolve({});
     }
 
     return Promise.all(promise).then(() => {
         // We need to trigger on the original list not after filtering: after filter they are just stored
         // somewhere else
-        triggerSigVerification(message, sigList);
+        triggerSigVerification(message, sigList, attachmentLoader);
         return list.reduce((acc, { cid }) => {
             acc[cid] = embeddedStore.getBlob(cid);
             return acc;

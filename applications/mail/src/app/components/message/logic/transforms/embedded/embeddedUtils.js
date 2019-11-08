@@ -71,10 +71,10 @@ export const readCID = (Headers = {}) => {
 /**
  * Find embedded element in div
  * @param {String} cid
- * @param {HTMLElement} testDiv
+ * @param {HTMLElement} document
  * @return {Array}
  */
-export const findEmbedded = (cid, testDiv) => {
+export const findEmbedded = (cid, document) => {
     // If cid is an empty string, it can give a false positive
     if (!cid) {
         return [];
@@ -87,7 +87,7 @@ export const findEmbedded = (cid, testDiv) => {
         `img[data-src="cid:${cid}"]`,
         `img[proton-src="cid:${cid}"]`
     ];
-    return [].slice.call(testDiv.querySelectorAll(selector.join(', ')));
+    return [...document.querySelectorAll(selector.join(', '))];
 };
 
 /**
@@ -107,13 +107,13 @@ export const findEmbedded = (cid, testDiv) => {
 /**
  * Extract embedded attachment from body
  * @param {Array} attachments
- * @param {Node} testDiv
+ * @param {Node} document
  * @return {Array}
  */
-export const extractEmbedded = (attachments = [], testDiv) => {
+export const extractEmbedded = (attachments = [], document) => {
     return attachments.filter(({ Headers = {} }) => {
         const cid = readCID(Headers);
-        const nodes = findEmbedded(cid, testDiv);
+        const nodes = findEmbedded(cid, document);
 
         return nodes.length;
     });

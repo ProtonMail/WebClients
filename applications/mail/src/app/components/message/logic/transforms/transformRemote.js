@@ -71,20 +71,20 @@ function prepareInjection(html) {
     return attributes;
 }
 
-export const transformRemote = ({ data: message, document, showImages: inputShowImages }, { action, mailSettings }) => {
+export const transformRemote = (
+    { data: message, document, showRemoteImages: inputShowImages },
+    { action, mailSettings }
+) => {
+    const regex = new RegExp(REGEXP_FIXER, 'g');
     const showImages =
         inputShowImages || mailSettings.ShowImages & SHOW_IMAGES.REMOTE || WHITELIST.includes(message.Sender.Address);
     const content = document.innerHTML;
-
-    // TODO: Still needed ?
-    // Bind the boolean only if there are something
-    if (new RegExp(REGEXP_FIXER, 'g').test(content)) {
-        message.showImages = showImages;
-    }
+    const hasImages = regex.test(content);
 
     if (showImages) {
         // If load:manual we use a custom directive to inject the content
         if (action === 'user.inject') {
+            // TODO: uncoment this block
             // const list = prepareInjection(html);
             prepareInjection(document);
             // const hasSVG = /svg/.test(html.innerHTML);
@@ -92,8 +92,8 @@ export const transformRemote = ({ data: message, document, showImages: inputShow
             //     dispatcher['message.open']('remote.injected', { action, list, message, hasSVG });
             // }
         } else {
-            document.innerHTML = content.replace(new RegExp(REGEXP_FIXER, 'g'), (match, $1) => $1.substring(7));
+            document.innerHTML = content.replace(regex, (match, $1) => $1.substring(7));
         }
     }
-    return { document, showImages };
+    return { document, showRemoteImages: hasImages ? showImages : undefined };
 };

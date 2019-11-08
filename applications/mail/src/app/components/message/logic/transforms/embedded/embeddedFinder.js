@@ -1,15 +1,15 @@
 import * as embeddedUtils from './embeddedUtils';
 import * as embeddedStore from './embeddedStore';
 
-export const find = (message, testDiv) => {
-    const list = message.Attachments || [];
-    message.NumEmbedded = 0;
+export const find = (message) => {
+    const list = message.data.Attachments || [];
+    // message.NumEmbedded = 0;
 
     if (!list.length) {
         return false;
     }
 
-    const embeddedAttachments = embeddedUtils.extractEmbedded(list, testDiv);
+    const embeddedAttachments = embeddedUtils.extractEmbedded(list, message.document);
 
     embeddedAttachments.forEach((attachment) => {
         embeddedStore.cid.add(message, attachment);
@@ -24,7 +24,8 @@ export const find = (message, testDiv) => {
  * @return {Array}
  */
 export const listInlineAttachments = (message) => {
-    const list = message.getAttachments();
+    // const list = message.getAttachments();
+    const list = message.data.Attachments || [];
     const MAP_CID = embeddedStore.cid.get(message);
 
     return Object.keys(MAP_CID).reduce((acc, cid) => {

@@ -6,17 +6,18 @@ import * as embedded from './embedded/embedded';
 const EMBEDDED_CLASSNAME = 'proton-embedded';
 const wrapImage = (img) => wrap(img, '<div class="image loading"></div>');
 
-export const transformEmbedded = async ({ data: message, document }, { action, mailSettings }) => {
-    const images = [...document.querySelectorAll('img[proton-src]')];
-    // const { ShowImages = 0 } = mailSettingsModel.get();
+export const transformEmbedded = async (message, { action, mailSettings }) => {
+    const images = [...message.document.querySelectorAll('img[proton-src]')];
     const { ShowImages = 0 } = mailSettings;
     const isReplyForward = /^reply|forward/.test(action);
-    const show = message.showEmbedded === true || ShowImages & SHOW_IMAGES.EMBEDDED;
+    const show = message.showEmbeddedImages === true || ShowImages & SHOW_IMAGES.EMBEDDED;
     // TODO: const isEoReply = $state.is('eo.reply');
     const isEoReply = false;
-    const getAttachment = embedded.getAttachment(message, document);
+    const getAttachment = embedded.getAttachment(message);
 
-    // console.log('transformEmbedded', images);
+    console.log('transformEmbedded', show);
+
+    let showEmbedded = message.showEmbeddedImages;
 
     images.forEach((image) => {
         const src = image.getAttribute('proton-src');
@@ -70,12 +71,13 @@ export const transformEmbedded = async ({ data: message, document }, { action, m
             return;
         }
 
-        // message.showEmbedded = false;
+        showEmbedded = false;
+
         // Inline embedded images does not have an attachment.
         if (attachment) {
             image.setAttribute('alt', attachment.Name);
         }
     });
 
-    return { document, hasImages: images.length > 0 };
+    return { document: message.document, showEmbeddedImages: showEmbedded };
 };

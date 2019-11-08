@@ -13,19 +13,24 @@ const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
     const { state: showDetails, toggle: toggleDetails } = useToggle();
 
     // Not using usePromiseResult as in this case the task has to be called later
+    // TODO: use useAsync
     const [loaded, setLoaded] = useState(false);
 
     const [message, setMessage] = useState({ data: inputMessage });
 
-    const { initialize, loadImages } = useComputeMessage(mailSettings);
+    const { initialize, loadRemoteImages, loadEmbeddedImages } = useComputeMessage(mailSettings);
 
     const prepareMessage = async () => {
         setMessage(await initialize(message));
         setLoaded(true);
     };
 
-    const handleLoadImages = async () => {
-        setMessage(await loadImages(message));
+    const handleLoadRemoteImages = async () => {
+        setMessage(await loadRemoteImages(message));
+    };
+
+    const handleLoadEmbeddedImages = async () => {
+        setMessage(await loadEmbeddedImages(message));
     };
 
     const handleExpand = () => {
@@ -37,7 +42,8 @@ const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
         <MessageHeaderExpanded
             message={message}
             messageLoaded={loaded}
-            onLoadImages={handleLoadImages}
+            onLoadRemoteImages={handleLoadRemoteImages}
+            onLoadEmbeddedImages={handleLoadEmbeddedImages}
             labels={labels}
             mailSettings={mailSettings}
             showDetails={showDetails}

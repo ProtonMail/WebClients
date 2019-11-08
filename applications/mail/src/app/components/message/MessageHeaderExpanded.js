@@ -17,7 +17,8 @@ const MessageHeaderExpanded = ({
     labels,
     message,
     messageLoaded,
-    onLoadImages,
+    onLoadRemoteImages,
+    onLoadEmbeddedImages,
     mailSettings,
     showDetails,
     toggleDetails,
@@ -87,7 +88,11 @@ const MessageHeaderExpanded = ({
                         </Group>
                     </div>
                 </div>
-                <MessageHeaderExtra message={message} onLoadImages={onLoadImages} />
+                <MessageHeaderExtra
+                    message={message}
+                    onLoadRemoteImages={onLoadRemoteImages}
+                    onLoadEmbeddedImages={onLoadEmbeddedImages}
+                />
             </div>
             {children}
         </article>
@@ -99,7 +104,8 @@ MessageHeaderExpanded.propTypes = {
     mailSettings: PropTypes.object.isRequired,
     message: PropTypes.object.isRequired,
     messageLoaded: PropTypes.bool.isRequired,
-    onLoadImages: PropTypes.func.isRequired,
+    onLoadRemoteImages: PropTypes.func.isRequired,
+    onLoadEmbeddedImages: PropTypes.func.isRequired,
     showDetails: PropTypes.bool.isRequired,
     toggleDetails: PropTypes.func.isRequired,
     children: PropTypes.node

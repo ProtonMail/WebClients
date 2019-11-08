@@ -125,15 +125,16 @@ export const unescapeSrc = (value = '') => value.replace(/ data-src=/g, ' src=')
 
 export const matches = (node, selector) => (node.matches || node.msMatchesSelector).call(node, selector);
 
-export const wrap = (node, html) => {
+export const wrap = (element, html) => {
     const container = document.createElement('div');
     container.innerHTML = html;
 
     const wrapper = container.firstChild;
 
-    wrapper.firstChild = node;
+    wrapper.innerHTML = element.outerHTML;
 
-    node.parentNode.replaceChild(node, wrapper);
+    element.parentNode.insertBefore(wrapper, element);
+    element.remove();
 };
 
 export const parseInDiv = (content) => {

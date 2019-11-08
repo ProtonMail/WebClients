@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useCache } from 'react-components';
 import { transformEscape } from '../logic/transforms/transformEscape';
 import { transformLinks } from '../logic/transforms/transformLinks';
@@ -11,7 +12,7 @@ import { transformBase } from '../logic/transforms/transformBase';
 import { useDecryptMessage } from './useDecryptMessage';
 import { useLoadMessage } from './useLoadMessage';
 import { useMarkAsRead } from './useMarkAsRead';
-import { useCallback } from 'react';
+import { useAttachmentLoader } from './useAttachmentLoader';
 
 // Reference: Angular/src/app/message/services/prepareContent.js
 
@@ -32,13 +33,14 @@ export const useComputeMessage = (mailSettings) => {
     const load = useLoadMessage();
     const markAsRead = useMarkAsRead();
     const decrypt = useDecryptMessage();
+    const attachmentLoader = useAttachmentLoader();
 
     /**
      * Run a computation on a message, wait until it finish
      * Return the message extanded with the result of the computation
      */
     const run = useCallback(async (message, compute, action) => {
-        const result = (await compute(message, { action, cache, mailSettings })) || {};
+        const result = (await compute(message, { action, cache, mailSettings, attachmentLoader })) || {};
 
         if (result.document) {
             result.content = result.document.innerHTML;
@@ -61,9 +63,13 @@ export const useComputeMessage = (mailSettings) => {
         return runSerial(message, [load, markAsRead, decrypt, ...transforms], action);
     });
 
-    const loadImages = useCallback((message, action) => {
-        return run({ ...message, showImages: true }, transformRemote, action);
+    const loadRemoteImages = useCallback((message, action) => {
+        return run({ ...message, showRemoteImages: true }, transformRemote, action);
     });
 
-    return { run, runSerial, initialize, loadImages };
+    const loadEmbeddedImages = useCallback((message, action) => {
+        return runSerial({ ...message, showEmbeddedImages: true }, [transformEmbedded, transformAttachements], action);
+    });
+
+    return { run, runSerial, initialize, loadRemoteImages, loadEmbeddedImages };
 };
