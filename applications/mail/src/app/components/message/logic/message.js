@@ -160,3 +160,21 @@ export const sameSender = (messages = []) => {
         }).length
     );
 };
+
+export const getParsedHeaders = (message, parameter) => {
+    const { ParsedHeaders = {} } = message;
+
+    if (parameter) {
+        return ParsedHeaders[parameter];
+    }
+
+    return ParsedHeaders;
+};
+
+export const getListUnsubscribe = (message) => {
+    return getParsedHeaders(message, 'List-Unsubscribe') || '';
+};
+
+export const getListUnsubscribePost = (message) => {
+    return getParsedHeaders(message, 'List-Unsubscribe-Post') || '';
+};

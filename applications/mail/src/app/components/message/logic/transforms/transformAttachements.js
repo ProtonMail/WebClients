@@ -2,7 +2,7 @@ import { parser } from './embedded/embedded';
 
 // const { dispatcher } = dispatchers(['embedded.injected', 'message.embedded', 'message.open']);
 
-export const transformAttachements = async ({ document }, { message, mailSettings }) => {
+export const transformAttachements = async ({ data: message, document }, { mailSettings }) => {
     /**
      * Usefull when we inject the content into the message (load:manual)
      */

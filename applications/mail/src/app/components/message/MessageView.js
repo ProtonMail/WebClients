@@ -2,40 +2,30 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useToggle, Loader } from 'react-components';
 
-import { useGetDecryptedMessage } from './hooks/useGetDecryptedMessage';
-import { useFormatContent } from './hooks/useFormatContent';
-import { useLoadMessage } from './hooks/useLoadMessage';
+import { useComputeMessage } from './hooks/useComputeMessage';
 
 import MessageBody from './MessageBody';
 import MessageHeaderCollapsed from './MessageHeaderCollapsed';
 import MessageHeaderExpanded from './MessageHeaderExpanded';
 
 const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
-    const [message, loadMessage] = useLoadMessage(inputMessage);
-    const getDecryptedMessage = useGetDecryptedMessage();
-    const { initialize, loadImages } = useFormatContent();
-
     const { state: expanded, set: setExpanded } = useToggle();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
 
     // Not using usePromiseResult as in this case the task has to be called later
     const [loaded, setLoaded] = useState(false);
-    const [messageMetadata, setMessageMetadata] = useState({});
 
-    // TODO: Handle cache
+    const [message, setMessage] = useState({ data: inputMessage });
+
+    const { initialize, loadImages } = useComputeMessage(mailSettings);
+
     const prepareMessage = async () => {
-        const message = await loadMessage();
-        const decrypted = await getDecryptedMessage(message);
-        const metadata = await initialize(decrypted, message);
-        setMessageMetadata(metadata);
+        setMessage(await initialize(message));
         setLoaded(true);
-
-        console.log('Prepared message', metadata);
     };
 
     const handleLoadImages = async () => {
-        const metadata = await loadImages(messageMetadata, message);
-        setMessageMetadata(metadata);
+        setMessage(await loadImages(message));
     };
 
     const handleExpand = () => {
@@ -46,17 +36,17 @@ const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
     return expanded ? (
         <MessageHeaderExpanded
             message={message}
-            messageMetadata={messageMetadata}
+            messageLoaded={loaded}
             onLoadImages={handleLoadImages}
             labels={labels}
             mailSettings={mailSettings}
             showDetails={showDetails}
             toggleDetails={toggleDetails}
         >
-            {loaded ? <MessageBody content={messageMetadata.content} /> : <Loader />}
+            {loaded ? <MessageBody content={message.content} /> : <Loader />}
         </MessageHeaderExpanded>
     ) : (
-        <MessageHeaderCollapsed message={message} messageMetadata={messageMetadata} onExpand={handleExpand} />
+        <MessageHeaderCollapsed message={message} onExpand={handleExpand} />
     );
 };
 

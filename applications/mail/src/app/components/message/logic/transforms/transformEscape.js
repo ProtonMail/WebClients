@@ -1,6 +1,6 @@
-import { uniqID } from '../helpers/stringHelper';
-import { protonizer as purifyHTML } from '../helpers/purifyHelper';
-import { parseInDiv } from '../helpers/domHelper';
+import { uniqID } from '../../helpers/stringHelper';
+import { protonizer as purifyHTML } from '../../helpers/purifyHelper';
+import { parseInDiv } from '../../helpers/domHelper';
 
 /*
  * match attributes or elements with svg, xlink, srcset, src, background, poster.

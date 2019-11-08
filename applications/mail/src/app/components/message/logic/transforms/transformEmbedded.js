@@ -1,12 +1,12 @@
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
-import { wrap } from '../helpers/domHelper';
-import { isInlineEmbedded, isEmbedded } from '../helpers/imageHelper';
+import { wrap } from '../../helpers/domHelper';
+import { isInlineEmbedded, isEmbedded } from '../../helpers/imageHelper';
 import * as embedded from './embedded/embedded';
 
 const EMBEDDED_CLASSNAME = 'proton-embedded';
 const wrapImage = (img) => wrap(img, '<div class="image loading"></div>');
 
-export const transformEmbedded = async ({ document }, { message, action, mailSettings }) => {
+export const transformEmbedded = async ({ data: message, document }, { action, mailSettings }) => {
     const images = [...document.querySelectorAll('img[proton-src]')];
     // const { ShowImages = 0 } = mailSettingsModel.get();
     const { ShowImages = 0 } = mailSettings;
@@ -16,7 +16,7 @@ export const transformEmbedded = async ({ document }, { message, action, mailSet
     const isEoReply = false;
     const getAttachment = embedded.getAttachment(message, document);
 
-    console.log('transformEmbedded', images);
+    // console.log('transformEmbedded', images);
 
     images.forEach((image) => {
         const src = image.getAttribute('proton-src');

@@ -1,4 +1,4 @@
-import { matches } from '../helpers/domHelper';
+import { matches } from '../../helpers/domHelper';
 
 const PROTOCOLS = ['ftp://', 'http://', 'https://', 'xmpp:', 'tel:', 'callto:'];
 const ALL_PROTOCOLS = PROTOCOLS.concat(['mailto:']);
@@ -66,7 +66,7 @@ const disableAnchors = (link) => {
 export const transformLinks = ({ document }) => {
     const links = [...document.querySelectorAll('[href]')];
 
-    console.log('transformLinks', links);
+    // console.log('transformLinks', links);
 
     links.forEach((link) => {
         httpInNewTab(link);

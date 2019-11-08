@@ -7,16 +7,17 @@ import { getEncryptionType } from './logic/encryptionType';
 
 // Reference: Angular/src/templates/message/encryptionStatus.tpl.html
 
-const MessageLock = ({ message, messageMetadata }) => {
-    const displaySignature = displaySignatureStatus(message, messageMetadata.verified);
-    const pgpEncrypted = isPGPEncrypted(message);
+const MessageLock = ({ message }) => {
+    const displaySignature = displaySignatureStatus(message);
+    const pgpEncrypted = isPGPEncrypted(message.data);
+    const title = getEncryptionType(message);
 
     return (
         <>
             {!displaySignature && !pgpEncrypted && (
-                <Tooltip title={getEncryptionType(message, messageMetadata.verified)}>
+                <Tooltip title={title}>
                     <LinkButton
-                        className="nodecoration color-global-grey no-pointer-events-children flex"
+                        className="nodecoration color-global-grey no-pointer-events-children"
                         href="https://protonmail.com/support/knowledge-base/what-is-encrypted/"
                     >
                         {/* TODO: 'color-pm-blue': message.isInternal() || message.isSentEncrypted() || message.isDraft() || message.isAuto(), */}
@@ -29,8 +30,7 @@ const MessageLock = ({ message, messageMetadata }) => {
 };
 
 MessageLock.propTypes = {
-    message: PropTypes.object.isRequired,
-    messageMetadata: PropTypes.object.isRequired
+    message: PropTypes.object.isRequired
 };
 
 export default MessageLock;

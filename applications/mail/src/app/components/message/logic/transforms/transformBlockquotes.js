@@ -23,8 +23,6 @@ export const transformBlockquotes = ({ document }) => {
     const parent = document.textContent;
     let found = false;
 
-    console.log('transformBlockquotes', blockquotes);
-
     blockquotes.forEach((blockquote) => {
         if (!found) {
             const child = blockquote.textContent;

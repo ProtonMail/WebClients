@@ -9,20 +9,19 @@ const isMime = ({ MIMEType }) => MIMEType === MIME_TYPES.MIME;
 
 // Reference: Angular/src/app/message/factories/messageModel.js decryptBody
 
-export const useGetDecryptedMessage = () => {
+export const useDecryptMessage = () => {
     const getPublicKeys = useGetPublicKeys();
     const getAddressKeys = useGetAddressKeys();
 
     // Cache result
-    return useCallback(async (message) => {
-        // Do it in //
-        const { publicKeys = [] } = await getPublicKeys(message.Sender.Address);
-        const addressKeys = await getAddressKeys(message.AddressID);
+    return useCallback(async ({ data: message }) => {
+        const [{ publicKeys = [] }, addressKeys] = await Promise.all([
+            getPublicKeys(message.Sender.Address),
+            getAddressKeys(message.AddressID)
+        ]);
         const { privateKeys } = splitKeys(addressKeys);
 
         // TODO: filter out compromised addresses (if not done already)
-
-        console.log('useGetMessageBody', message, message.MIMEType);
 
         if (isMime(message)) {
             // TODO: decrypt mime message
@@ -38,9 +37,9 @@ export const useGetDecryptedMessage = () => {
             const signedPubkey = VERIFICATION_STATUS.SIGNED_NO_PUB_KEY;
             const verified = !publicKeys.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
 
-            return { raw: data, verified };
+            return { raw: data, verified, publicKeys, privateKeys };
         }
 
-        return 'hi';
+        return {};
     });
 };

@@ -1,5 +1,5 @@
-import { isInlineEmbedded } from '../../helpers/imageHelper';
-import { escapeSrc, unescapeSrc } from '../../helpers/domHelper';
+import { isInlineEmbedded } from '../../../helpers/imageHelper';
+import { escapeSrc, unescapeSrc } from '../../../helpers/domHelper';
 import * as embeddedFinder from './embeddedFinder';
 import * as embeddedUtils from './embeddedUtils';
 import * as embeddedStore from './embeddedStore';

@@ -3,7 +3,7 @@ import { SHOW_IMAGES } from 'proton-shared/lib/constants';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import { parseInDiv } from '../../helpers/domHelper';
+import { parseInDiv } from '../../../helpers/domHelper';
 import * as embeddedUtils from './embeddedUtils';
 import * as embeddedStore from './embeddedStore';
 import * as embeddedFinder from './embeddedFinder';

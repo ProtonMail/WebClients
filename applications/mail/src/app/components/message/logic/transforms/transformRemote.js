@@ -71,7 +71,7 @@ function prepareInjection(html) {
     return attributes;
 }
 
-export const transformRemote = ({ document, showImages: inputShowImages }, { message, action, mailSettings }) => {
+export const transformRemote = ({ data: message, document, showImages: inputShowImages }, { action, mailSettings }) => {
     const showImages =
         inputShowImages || mailSettings.ShowImages & SHOW_IMAGES.REMOTE || WHITELIST.includes(message.Sender.Address);
     const content = document.innerHTML;

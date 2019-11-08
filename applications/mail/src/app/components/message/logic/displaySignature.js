@@ -26,7 +26,7 @@ const { SIGNED_AND_INVALID, SIGNED_AND_VALID, NOT_SIGNED } = VERIFICATION_STATUS
  *  same security.
  *  @return {() => boolean} whether to display the signature status
  */
-export const displaySignatureStatus = (message, verified) => {
+export const displaySignatureStatus = ({ data: message, verified }) => {
     // TODO: const isSentByMe = message.isSentByMe();
     const isSentByMe = false;
 
@@ -35,9 +35,9 @@ export const displaySignatureStatus = (message, verified) => {
         return verified === SIGNED_AND_INVALID || verified === SIGNED_AND_VALID;
     }
     // SENT messages
-    const imported = isImported(message);
-    const auto = isAuto(message);
-    const period = inSigningPeriod(message.Time);
+    const imported = isImported(message.data);
+    const auto = isAuto(message.data);
+    const period = inSigningPeriod(message.data.Time);
     // Rule 1:
     if (!auto && !imported && !period) {
         return false;

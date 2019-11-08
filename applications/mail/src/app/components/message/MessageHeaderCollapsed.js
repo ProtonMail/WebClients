@@ -7,7 +7,9 @@ import ItemDate from '../list/ItemDate';
 import { ELEMENT_TYPES } from '../../constants';
 import MessageLock from './MessageLock';
 
-const MessageHeaderCollapsed = ({ message, messageMetadata, onExpand }) => {
+const MessageHeaderCollapsed = ({ message, onExpand }) => {
+    const { Name, Address } = message.data.Sender;
+
     const handleClick = (event) => {
         if (event.target.classList.contains('item-star') || event.target.closest('.item-star')) {
             event.stopPropagation();
@@ -24,15 +26,15 @@ const MessageHeaderCollapsed = ({ message, messageMetadata, onExpand }) => {
         >
             <div>
                 <span className="mr0-5">{c('Label').t`From:`}</span>
-                <span className="bold mr0-5" title={message.Sender.Name}>
-                    {message.Sender.Name}
+                <span className="bold mr0-5" title={Name}>
+                    {Name}
                 </span>
-                <i title={message.Sender.Address}>&lt;{message.Sender.Address}&gt;</i>
-                <MessageLock message={message} messageMetadata={messageMetadata} />
+                <i title={Address}>&lt;{Address}&gt;</i>
+                <MessageLock message={message} />
             </div>
             <div>
-                <ItemDate className="mr1" element={message} type={ELEMENT_TYPES.MESSAGE} />
-                <ItemStar element={message} type={ELEMENT_TYPES.MESSAGE} />
+                <ItemDate className="mr1" element={message.data} type={ELEMENT_TYPES.MESSAGE} />
+                <ItemStar element={message.data} type={ELEMENT_TYPES.MESSAGE} />
             </div>
         </article>
     );
@@ -40,7 +42,6 @@ const MessageHeaderCollapsed = ({ message, messageMetadata, onExpand }) => {
 
 MessageHeaderCollapsed.propTypes = {
     message: PropTypes.object.isRequired,
-    messageMetadata: PropTypes.object.isRequired,
     onExpand: PropTypes.func
 };
 
