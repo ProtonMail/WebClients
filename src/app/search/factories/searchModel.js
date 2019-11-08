@@ -130,7 +130,7 @@ function searchModel(addressesModel, gettextCatalog, labelsModel, translator) {
             ...resetParameters(),
             to: model.to,
             from: model.from,
-            keyword: model.keyword,
+            keyword: model.query,
             wildcard: isNaN(wildcard) ? undefined : wildcard,
             attachments: isNaN(attachments) ? undefined : attachments,
             address: (model.address || {}).ID,
