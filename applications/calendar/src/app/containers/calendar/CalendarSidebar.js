@@ -77,7 +77,7 @@ const CalendarSidebar = ({
                     onClick={() => onCreateEvent({ type: 'event' })}
                 >{c('Action').t`New event`}</PrimaryButton>
             </div>
-            <div>{miniCalendar}</div>
+            <div className="nomobile">{miniCalendar}</div>
             <nav className="navigation flex-item-fluid scroll-if-needed mb1">
                 <NavMenu list={list} className="mb0" />
                 {calendarsListView}

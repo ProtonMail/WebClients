@@ -135,7 +135,11 @@ const DayGrid = ({
                 {displayWeekNumbers ? <div className="calendar-daygrid-weeknumber-width" /> : null}
                 {rows[0].map((day) => {
                     return (
-                        <div className="flex-item-fluid aligncenter calendar-daygrid-day" key={day.getUTCDate()}>
+                        <div
+                            className="flex-item-fluid aligncenter calendar-daygrid-day big m0 p0-75"
+                            key={day.getUTCDate()}
+                            aria-current={day.getUTCDay() === now.getUTCDay() ? 'true' : null}
+                        >
                             {weekdaysLong[day.getUTCDay()]}
                         </div>
                     );
@@ -149,9 +153,9 @@ const DayGrid = ({
                             return (
                                 <div
                                     key={week}
-                                    className="flex-item-fluid flex flex-column relative calendar-daygrid-weeknumber"
+                                    className="flex-item-fluid flex flex-column flex relative calendar-daygrid-weeknumber"
                                 >
-                                    {week}
+                                    <span className="mauto opacity-40 small">{week}</span>
                                 </div>
                             );
                         })}
@@ -159,7 +163,7 @@ const DayGrid = ({
                 ) : null}
 
                 <div
-                    className="flex flex-item-fluid flex-column daygrid-rows"
+                    className="flex flex-item-fluid flex-column calendar-daygrid-rows"
                     ref={rowsWrapperRef}
                     onMouseDownCapture={onDayGridMouseDown}
                 >
@@ -180,15 +184,19 @@ const DayGrid = ({
                                 <div className="flex">
                                     {days.map((day) => {
                                         return (
-                                            <div
-                                                className="flex-item-fluid aligncenter"
+                                            <button
+                                                type="button"
+                                                aria-label={day}
+                                                className="flex-item-fluid aligncenter calendar-monthgrid-day p0-25"
                                                 key={day.getUTCDate()}
                                                 aria-current={isDateYYMMDDEqual(day, now) ? 'date' : undefined}
                                                 aria-pressed={isDateYYMMDDEqual(day, date) ? true : undefined}
                                                 onClick={() => onClickDate(day)}
                                             >
-                                                {day.getUTCDate()}
-                                            </div>
+                                                <span className="calendar-monthgrid-day-number flex mauto">
+                                                    <span className="mauto">{day.getUTCDate()}</span>
+                                                </span>
+                                            </button>
                                         );
                                     })}
                                 </div>
@@ -197,6 +205,18 @@ const DayGrid = ({
                                     data-row={rowIndex}
                                     {...(rowIndex === 0 ? { ref: firstRowRef } : undefined)}
                                 >
+                                    <div className="flex flex-row h100">
+                                        {days.map((day) => {
+                                            return (
+                                                <div
+                                                    key={day.getUTCDate()}
+                                                    className="flex-item-fluid calendar-monthgrid-day"
+                                                    aria-hidden="true"
+                                                ></div>
+                                            );
+                                        })}
+                                    </div>
+
                                     {eventsInRowStyles.map(({ idx, type, style }) => {
                                         if (type === 'more') {
                                             const isSelected = isMoreSelected(idx, moreIdx, rowIndex, moreRow);

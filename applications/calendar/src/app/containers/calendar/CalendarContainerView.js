@@ -201,7 +201,7 @@ const CalendarContainerView = ({
                                     >
                                         {children}
                                     </div>
-                                    <div className="w50p nomobile"></div>
+                                    <div className="w50p nomobile hidden"></div>
                                 </div>
                             </div>
                         </Main>
