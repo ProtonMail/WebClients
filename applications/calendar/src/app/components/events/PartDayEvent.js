@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { LoaderIcon, classnames } from 'react-components';
+import { classnames } from 'react-components';
 import { c } from 'ttag';
 
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
