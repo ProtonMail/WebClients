@@ -12,6 +12,8 @@ import getRandomValues from 'get-random-values';
 import { VERIFICATION_STATUS } from 'pmcrypto/lib/constants';
 import { c } from 'ttag';
 
+import { ENCRYPTION_TYPES, ENCRYPTION_CONFIGS } from '../constants';
+import { normalize } from '../helpers/string';
 import { noop } from '../helpers/function';
 import { uniqueBy } from '../helpers/array';
 import { serializeUint8Array } from '../helpers/serialization';
@@ -207,6 +209,56 @@ export const getDecryptedPassphrase = async ({ privateKeys, publicKeys, MemberID
     }).catch(noop);
 };
 
+/**
+ * @param {Array} Keys
+ * @returns {Object}
+ */
 export const getPrimaryKey = (Keys = []) => {
     return Keys.find(({ Flags }) => hasBit(Flags, KEY_FLAGS.PRIMARY));
+};
+
+/**
+ * Convert a map of email -> value to the corresponding member id -> value
+ * @param {Array} Members
+ * @param {Object} emailMap
+ * @returns {{}}
+ */
+export const getKeysMemberMap = (Members = [], emailMap = {}) => {
+    return Object.keys(emailMap).reduce((acc, email) => {
+        const { ID: memberID } = Members.find(({ Email }) => normalize(Email) === normalize(email));
+        if (!memberID) {
+            throw new Error(c('Error').t`Could not find address ${email}.`);
+        }
+        acc[memberID] = emailMap[email];
+        return acc;
+    }, {});
+};
+
+/**
+ * Generate the payload required for calendar keys.
+ * @param {String} addressID
+ * @param {PGPKey} privateKey
+ * @param {Object} memberPublicKeys
+ * @returns {Promise}
+ */
+export const generateCalendarKeyPayload = async ({ addressID, privateKey, memberPublicKeys }) => {
+    const passphrase = generatePassphrase();
+    const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519];
+    const [
+        { privateKeyArmored: PrivateKey },
+        { dataPacket: DataPacket, keyPackets: KeyPackets, signature: Signature }
+    ] = await Promise.all([
+        generateCalendarKey({ passphrase, encryptionConfig }),
+        encryptPassphrase({ passphrase, privateKey, memberPublicKeys })
+    ]);
+
+    return {
+        AddressID: addressID,
+        Signature,
+        PrivateKey,
+        Passphrase: {
+            DataPacket,
+            KeyPackets
+        }
+    };
 };
