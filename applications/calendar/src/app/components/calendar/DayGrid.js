@@ -56,6 +56,7 @@ const DayGrid = ({
     components: { FullDayEvent, PopoverEvent, MorePopoverEvent, MoreFullDayEvent },
     events,
     formatTime,
+    formatDate,
     onClickDate,
     onEditEvent,
     onCreateEvent,
@@ -98,6 +99,12 @@ const DayGrid = ({
         eventsPerRows,
         rows
     });
+
+    const formattedDates = useMemo(() => {
+        return rows.map((days) => {
+            return days.map(formatDate);
+        });
+    }, [rows, formatDate]);
 
     const selectedEventRef = useRef();
     const mainRef = useRef();
@@ -171,7 +178,7 @@ const DayGrid = ({
                         const { eventsInRow, eventsInRowStyles, eventsInRowSummary } = eventsPerRows[rowIndex];
                         return (
                             <div key={rowIndex} className="flex-item-fluid flex flex-column h100 w100 relative">
-                                <div className="flex calendar-daygrid-columns">
+                                <div className="flex calendar-daygrid-columns no-pointer-events">
                                     {days.map((day) => {
                                         return (
                                             <div
@@ -182,11 +189,11 @@ const DayGrid = ({
                                     })}
                                 </div>
                                 <div className="flex">
-                                    {days.map((day) => {
+                                    {days.map((day, dayIndex) => {
                                         return (
                                             <button
                                                 type="button"
-                                                aria-label={day}
+                                                aria-label={formattedDates[rowIndex][dayIndex]}
                                                 className="flex-item-fluid aligncenter calendar-monthgrid-day p0-25"
                                                 key={day.getUTCDate()}
                                                 aria-current={isDateYYMMDDEqual(day, now) ? 'date' : undefined}
@@ -205,18 +212,6 @@ const DayGrid = ({
                                     data-row={rowIndex}
                                     {...(rowIndex === 0 ? { ref: firstRowRef } : undefined)}
                                 >
-                                    <div className="flex flex-row h100">
-                                        {days.map((day) => {
-                                            return (
-                                                <div
-                                                    key={day.getUTCDate()}
-                                                    className="flex-item-fluid calendar-monthgrid-day"
-                                                    aria-hidden="true"
-                                                ></div>
-                                            );
-                                        })}
-                                    </div>
-
                                     {eventsInRowStyles.map(({ idx, type, style }) => {
                                         if (type === 'more') {
                                             const isSelected = isMoreSelected(idx, moreIdx, rowIndex, moreRow);

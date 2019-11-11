@@ -278,6 +278,9 @@ const CalendarContainer = ({ history, location }) => {
 
     const isLoading = loadingCalendars || loadingCalendarSettings || loadingEvents;
 
+    const formatDate = useCallback((utcDate) => {
+        return format(utcDate, 'PP', { locale: dateLocale });
+    }, []);
     const formatEventTime = useCallback((utcDate) => {
         return format(utcDate, 'p', { locale: dateLocale });
     }, []);
@@ -335,6 +338,7 @@ const CalendarContainer = ({ history, location }) => {
                             now={utcNowDateInTimezone}
                             events={calendarsEvents}
                             formatTime={formatEventTime}
+                            formatDate={formatDate}
                             onClickDate={handleClickDateWeekView}
                             onEditEvent={handleEventModal}
                             components={components}
