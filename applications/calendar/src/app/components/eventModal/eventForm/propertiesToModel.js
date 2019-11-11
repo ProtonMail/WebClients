@@ -1,4 +1,4 @@
-import { getTzid, isIcalPropertyAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import { getTzid, isIcalPropertyAllDay } from 'proton-shared/lib/calendar/vcalConverter';
 
 import { getDateTimeState } from './state';
 import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';

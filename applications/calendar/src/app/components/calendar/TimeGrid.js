@@ -1,5 +1,5 @@
 import React, { createElement, useMemo, useRef, useState, useEffect } from 'react';
-import { eachDayOfInterval, format, getWeekNumber } from 'proton-shared/lib/date-fns-utc';
+import { eachDayOfInterval, format } from 'proton-shared/lib/date-fns-utc';
 import PropTypes from 'prop-types';
 import { useWindowSize, classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -32,10 +32,8 @@ const TimeGrid = ({
     events = [],
     components: { FullDayEvent, PartDayEvent, PopoverEvent, MorePopoverEvent, MoreFullDayEvent },
     formatTime = defaultFormat,
-    displayWeekNumbers = false,
     onClickDate = noop,
     onEditEvent = noop,
-    week = 'Week',
     weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     scrollRef
 }) => {

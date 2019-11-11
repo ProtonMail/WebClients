@@ -1,13 +1,8 @@
 import { useRef, useEffect, useState, useMemo, useCallback } from 'react';
 import { useApi, useEventManager } from 'react-components';
 import { queryEvents } from 'proton-shared/lib/api/calendars';
-import { min, max, differenceInHours, getUnixTime } from 'date-fns';
-import {
-    fromUTCDate,
-    toUTCDate,
-    convertUTCDateTimeToZone,
-    convertZonedDateTimeToUTC
-} from 'proton-shared/lib/date/timezone';
+import { differenceInHours, getUnixTime } from 'date-fns';
+import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { unwrap } from 'proton-shared/lib/calendar/helper';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';

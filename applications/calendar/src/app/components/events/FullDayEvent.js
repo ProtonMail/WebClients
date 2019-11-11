@@ -9,7 +9,7 @@ const FullDayEvent = ({
     style,
     formatTime,
     className = 'calendar-dayeventcell absolute',
-    event: { start, end, data, id, isAllDay },
+    event: { start, data, isAllDay },
     event,
     isSelected,
     isBeforeNow,

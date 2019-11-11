@@ -1,4 +1,5 @@
 import { addMinutes } from 'proton-shared/lib/date-fns-utc';
+// eslint-disable-next-line @typescript-eslint/camelcase
 import { unstable_batchedUpdates } from 'react-dom';
 import { getKey } from './splitTimeGridEventsPerDay';
 import { getRelativePosition, getTargetIndex } from './mouseHelpers/mathHelpers';

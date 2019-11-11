@@ -50,7 +50,7 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
 
     const targetEventData = targetEvent && targetEvent.data;
     const targetCalendar = targetEventData && targetEventData.Calendar;
-    const calendarColor = (targetCalendar && targetCalendar.Color) || undefined;
+    //const calendarColor = (targetCalendar && targetCalendar.Color) || undefined;
     const isCreateEvent = targetEvent.id === 'tmp' && !targetEventData;
     const isMoveEvent = targetEvent.id === 'tmp' && targetEventData;
 

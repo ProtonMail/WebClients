@@ -47,14 +47,13 @@ export const renderEvent = ({ style, data, children, isSelected, eventRef, forma
 };
 
 const DayGrid = ({
-    children,
     now,
     date,
     dateRange: [start, end],
     dateRange,
     displayWeekNumbers = false,
     tzid,
-    components: { FullDayEvent, PartDayEvent, PopoverEvent, MorePopoverEvent, MoreFullDayEvent },
+    components: { FullDayEvent, PopoverEvent, MorePopoverEvent, MoreFullDayEvent },
     events,
     formatTime,
     onClickDate,

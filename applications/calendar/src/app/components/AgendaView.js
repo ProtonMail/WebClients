@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { getKey, splitTimeGridEventsPerDay } from './calendar/splitTimeGridEventsPerDay';
 import { formatWithLocale } from 'proton-shared/lib/i18n/dateFnHelper';
 
-const AgendaView = ({ events, dateRange, currentDate, onSelectDate }) => {
+const AgendaView = ({ events, dateRange, onSelectDate }) => {
     const splittedEvents = useMemo(() => {
         const result = splitTimeGridEventsPerDay({
             events: events,

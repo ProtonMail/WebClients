@@ -57,16 +57,7 @@ export const modelToDateProperty = ({ isAllDay, date, time, tzid: specificTzid }
     return getDateTimeProperty(dateTimeObject, specificTzid, tzid);
 };
 
-export const modelToGeneralProperties = ({
-    uid,
-    title,
-    location,
-    description,
-    frequency,
-    attendees,
-    organizer,
-    rest
-}) => {
+export const modelToGeneralProperties = ({ uid, title, location, description, frequency, attendees, rest }) => {
     const properties = {
         summary: { value: title },
         ...rest
