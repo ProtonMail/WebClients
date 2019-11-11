@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { createAddress } from 'proton-shared/lib/api/addresses';
-import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
+import { ADDRESS_TYPE, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import {
     FormModal,
     Alert,
@@ -63,9 +63,15 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }) => {
         onClose();
         createNotification({ text: c('Success').t`Address added` });
 
-        createModal(
-            <CreateMissingKeysAddressModal organizationKey={organizationKey} member={member} addresses={[Address]} />
-        );
+        if (member.Self || member.Private === MEMBER_PRIVATE.READABLE) {
+            createModal(
+                <CreateMissingKeysAddressModal
+                    organizationKey={organizationKey}
+                    member={member}
+                    addresses={[Address]}
+                />
+            );
+        }
     };
 
     return (
