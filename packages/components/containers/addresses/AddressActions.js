@@ -12,6 +12,7 @@ import {
     Alert
 } from 'react-components';
 import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
+import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 
 import EditAddressModal from './EditAddressModal';
 import CreateMissingKeysAddressModal from './CreateMissingKeysAddressModal';
@@ -37,6 +38,9 @@ const AddressActions = ({ address, member, user, organizationKey }) => {
 
     const handleDelete = async () => {
         await confirmDelete();
+        if (address.Status === ADDRESS_STATUS.STATUS_ENABLED) {
+            await api(disableAddress(address.ID));
+        }
         await api(deleteAddress(address.ID));
         await call();
         createNotification({ text: c('Success notification').t`Address deleted` });
