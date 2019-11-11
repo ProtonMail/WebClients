@@ -1,9 +1,11 @@
 $calendar-aside-width: 6rem !default;
 $calendar-hour-height: 4.8rem !default;
-$calendar-grid-border: $pm-global-border 1px solid !default;
+$calendar-grid-color: $pm-global-border !default;
+$calendar-grid-border: $calendar-grid-color 1px solid !default;
 $gridcell-right-margin: 1.5em;
 
-.calendar-grid-heading-number {
+.calendar-grid-heading-number,
+.calendar-monthgrid-day-number {
     border-radius: 50%;
     width: 1.75em;
     height: 1.75em;
@@ -95,12 +97,18 @@ $gridcell-right-margin: 1.5em;
 
 .calendar-daygrid-weeknumber {
     border-bottom: $calendar-grid-border;
+    border-right: $calendar-grid-border;
+    background-color: $pm-global-light;
 }
 .calendar-daygrid-weeknumber-width {
-    width: 2rem;
+    width: 2.5rem;
 }
-.calendar-daygrid-row {
+.calendar-daygrid-row,
+.calendar-daygrid-days {
     border-bottom: $calendar-grid-border;
+}
+.calendar-daygrid-day[aria-current=true] {
+  font-weight: bold;
 }
 .calendar-daygrid-columns {
     top: 0; 
@@ -109,11 +117,17 @@ $gridcell-right-margin: 1.5em;
     right: 0;
 }
 
-.calendar-daygrid-day,
-.calendar-daygrid-column {
+.calendar-daygrid-column,
+.calendar-monthgrid-day {
     border-right: $calendar-grid-border;
 }
 
+.calendar-monthgrid-day[aria-current="date"] {
+    .calendar-monthgrid-day-number {
+        background-color: $pm-primary;
+        color: $white;
+    }
+}
 
 
 // events
