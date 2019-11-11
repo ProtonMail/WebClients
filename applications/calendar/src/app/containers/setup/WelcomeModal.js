@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
@@ -9,14 +9,22 @@ import {
     useModals,
     useGetAddresses,
     useGetAddressKeys,
-    useNotifications
+    useNotifications,
+    GenericError,
+    Button
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { createCalendar, updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
+import {
+    createCalendar,
+    queryMembers,
+    setupCalendar,
+    updateCalendarUserSettings
+} from 'proton-shared/lib/api/calendars';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
+import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
+import { generateCalendarKeyPayload, getKeysMemberMap } from 'proton-shared/lib/keys/calendarKeys';
 
-import { setupCalendarKey } from '../../helpers/calendarModal';
 import { DEFAULT_CALENDAR } from '../../constants';
 import CalendarModal from '../../containers/settings/CalendarModal';
 import CalendarCreating from './CalendarCreating';
@@ -31,6 +39,7 @@ const WelcomeModal = (props) => {
     const getAddressKeys = useGetAddressKeys();
     const api = useApi();
     const [isLoading, withLoading] = useLoading();
+    const [error, setError] = useState();
     const title = isLoading ? c('Title').t`Preparing your calendar` : c('Title').t`Welcome to ProtonCalendar`;
 
     const handleCustomize = () => {
@@ -44,35 +53,39 @@ const WelcomeModal = (props) => {
     const setup = async () => {
         const addresses = await getAddresses();
         if (!addresses.length) {
-            createNotification({ text: c('Error').t`Please create an address first.`, type: 'error' });
-            return;
+            throw new Error(c('Error').t`Please create an address first.`);
         }
 
-        const [{ ID: primaryAddressID, Email: email = '' }] = addresses;
-        const { Calendar = {} } = await api(
-            createCalendar({
-                AddressID: primaryAddressID,
-                Name: DEFAULT_CALENDAR.name,
-                Color: DEFAULT_CALENDAR.color,
-                Description: DEFAULT_CALENDAR.description,
-                Display: 1
+        const [{ ID: primaryAddressID, Email: primaryAddressEmail = '' }] = addresses;
+        const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
+            getPrimaryKey(await getAddressKeys(primaryAddressID)) || {};
+        if (!primaryAddressKey || !primaryAddressKey.isDecrypted()) {
+            throw new Error(c('Error').t`Primary address key is not decrypted.`);
+        }
+
+        const calendarPayload = {
+            Name: DEFAULT_CALENDAR.name,
+            Color: DEFAULT_CALENDAR.color,
+            Description: DEFAULT_CALENDAR.description,
+            Display: 1,
+            AddressID: primaryAddressID
+        };
+
+        const { Calendar = {} } = await api(createCalendar(calendarPayload));
+        const { Members = [] } = await api(queryMembers(Calendar.ID));
+
+        const calendarKeyPayload = await generateCalendarKeyPayload({
+            addressID: primaryAddressID,
+            calendarID: Calendar.ID,
+            privateKey: primaryAddressKey,
+            memberPublicKeys: getKeysMemberMap(Members, {
+                [primaryAddressEmail]: primaryAddressPublicKey
             })
-        );
+        });
 
         await Promise.all([
-            api(
-                updateCalendarUserSettings({
-                    PrimaryTimezone: getTimezone(),
-                    AutoDetectPrimaryTimezone: 0
-                })
-            ),
-            setupCalendarKey({
-                api,
-                addressID: primaryAddressID,
-                addressKeys: await getAddressKeys(primaryAddressID),
-                calendarID: Calendar.ID,
-                email
-            })
+            api(updateCalendarUserSettings({ PrimaryTimezone: getTimezone(), AutoDetectPrimaryTimezone: 0 })),
+            api(setupCalendar(Calendar.ID, calendarKeyPayload))
         ]);
 
         await call();
@@ -81,7 +94,17 @@ const WelcomeModal = (props) => {
     };
 
     useEffect(() => {
-        withLoading(Promise.all([setup(), wait(3000)])); // Wait intentionally 3 seconds to let the user see the loading state
+        // Wait intentionally to let the user see the loading state
+        withLoading(
+            Promise.all([setup(), wait(3000)]).catch((error) => {
+                // if not coming from API error
+                if (error.message && !error.config) {
+                    createNotification({ text: error.message, type: 'error' });
+                }
+                console.error(error);
+                setError(true);
+            })
+        );
     }, []);
 
     return (
@@ -89,14 +112,20 @@ const WelcomeModal = (props) => {
             loading={isLoading}
             title={title}
             hasClose={false}
-            close={c('Action').t`Customize calendar`}
-            submit={c('Action').t`Continue`}
-            onSubmit={isLoading ? noop : props.onClose}
+            close={
+                error ? null : (
+                    <Button type="button" disabled={isLoading} onClick={handleCustomize}>
+                        {c('Action').t`Customize calendar`}
+                    </Button>
+                )
+            }
+            submit={error ? null : c('Action').t`Continue`}
+            onSubmit={isLoading || error ? noop : props.onClose}
             {...props}
-            onClose={isLoading ? noop : handleCustomize}
+            onClose={isLoading || error ? noop : props.onClose}
             small={true}
         >
-            {isLoading ? <CalendarCreating /> : <CalendarReady />}
+            {error ? <GenericError /> : isLoading ? <CalendarCreating /> : <CalendarReady />}
         </FormModal>
     );
 };

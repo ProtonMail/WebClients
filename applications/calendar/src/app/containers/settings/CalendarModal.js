@@ -14,9 +14,15 @@ import {
     useGetAddressKeys
 } from 'react-components';
 
-import { createCalendar, updateCalendarSettings, updateCalendar } from 'proton-shared/lib/api/calendars';
+import {
+    createCalendar,
+    updateCalendarSettings,
+    updateCalendar,
+    setupCalendar,
+    queryMembers
+} from 'proton-shared/lib/api/calendars';
+import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
 
-import { setupCalendarKey } from '../../helpers/calendarModal';
 import { DEFAULT_CALENDAR, DEFAULT_EVENT_DURATION, NOTIFICATION_TYPE } from '../../constants';
 import CalendarSettingsTab from './CalendarSettingsTab';
 import EventSettingsTab from './EventSettingsTab';
@@ -28,6 +34,7 @@ import {
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS
 } from '../../helpers/notifications';
+import { generateCalendarKeyPayload, getKeysMemberMap } from 'proton-shared/lib/keys/calendarKeys';
 
 const CalendarModal = ({ calendar, ...rest }) => {
     const api = useApi();
@@ -130,36 +137,53 @@ const CalendarModal = ({ calendar, ...rest }) => {
         );
     }, []);
 
-    const handleSubmit = async () => {
-        // Calendar creation / update
-        const { addressID } = model;
+    const handleCreateCalendar = async (addressID, calendarPayload) => {
+        const [addresses, addressKeys] = await Promise.all([getAddresses(), getAddressKeys(addressID)]);
 
-        const data = {
+        const { Email: primaryAddressEmail = '' } = addresses.find(({ ID }) => ID === addressID) || {};
+        const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } = getPrimaryKey(addressKeys) || {};
+        if (!primaryAddressKey || !primaryAddressKey.isDecrypted()) {
+            createNotification({ text: c('Error').t`Primary address key is not decrypted.`, type: 'error' });
+            return;
+        }
+
+        const { Calendar = {} } = await api(
+            createCalendar({
+                ...calendarPayload,
+                AddressID: addressID
+            })
+        );
+        const { Members = [] } = await api(queryMembers(Calendar.ID));
+
+        const calendarKeyPayload = await generateCalendarKeyPayload({
+            addressID,
+            calendarID: Calendar.ID,
+            privateKey: primaryAddressKey,
+            memberPublicKeys: getKeysMemberMap(Members, {
+                [primaryAddressEmail]: primaryAddressPublicKey
+            })
+        });
+
+        await api(setupCalendar(Calendar.ID, calendarKeyPayload));
+
+        return Calendar.ID;
+    };
+
+    const handleUpdateCalendar = async (calendarPayload) => {
+        await api(updateCalendar(calendar.ID, calendarPayload));
+        return calendar.ID;
+    };
+
+    const handleSubmit = async () => {
+        const calendarPayload = {
             Name: model.name,
             Color: model.color,
             Display: +model.display,
-            Description: model.description,
-            ...(!calendar ? { AddressID: addressID } : {})
+            Description: model.description
         };
-
-        const { Calendar = {} } = await api(calendar ? updateCalendar(calendar.ID, data) : createCalendar(data));
-
-        // Either the one that was edited or created.
-        const actualCalendarID = (calendar && calendar.ID) || Calendar.ID;
-
-        // Key setup
-        if (!calendar) {
-            const [addresses, addressKeys] = await Promise.all([getAddresses(), getAddressKeys(addressID)]);
-
-            const { Email: email = '' } = addresses.find(({ ID }) => ID === addressID);
-            await setupCalendarKey({
-                api,
-                addressID,
-                addressKeys,
-                calendarID: actualCalendarID,
-                email
-            });
-        }
+        const actualCalendarID = calendar
+            ? await handleUpdateCalendar(calendarPayload)
+            : await handleCreateCalendar(model.addressID, calendarPayload);
 
         const {
             duration,
