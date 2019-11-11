@@ -76,16 +76,18 @@ export const keysReducer = (keys, { type, payload }) => {
 
         getAndAssertOldKey(targetID);
 
-        return keys.map((key) => {
-            const { Key } = key;
-            return {
-                ...key,
-                Key: {
-                    ...Key,
-                    Primary: Key.ID === targetID ? 1 : 0
-                }
-            };
-        });
+        return keys
+            .map((key) => {
+                const { Key } = key;
+                return {
+                    ...key,
+                    Key: {
+                        ...Key,
+                        Primary: Key.ID === targetID ? 1 : 0
+                    }
+                };
+            })
+            .sort(({ Key: { Primary: primaryA } }, { Key: { Primary: primaryB } }) => primaryB - primaryA);
     }
 
     if (type === ACTIONS.REMOVE) {

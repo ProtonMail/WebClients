@@ -18,11 +18,13 @@ export const generateKeySaltAndPassphrase = async (password) => {
 };
 
 /**
+ * Get primary address or user key.
+ * The API returns a sorted list, with the first key being the primary key.
  * @param {Array} keys - Keys array that has been prepared by `prepareKeys`
  * @return {Object}
  */
 export const getPrimaryKey = (keys = []) => {
-    return keys.find(({ Key: { Primary } }) => Primary === 1);
+    return keys[0];
 };
 
 /**

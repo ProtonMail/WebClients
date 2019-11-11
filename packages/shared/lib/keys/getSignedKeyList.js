@@ -1,4 +1,5 @@
 import { signMessage } from 'pmcrypto';
+import { getPrimaryKey } from './keys';
 
 export const getSignature = async (Data, primaryKey) => {
     const { signature } = await signMessage({
@@ -17,12 +18,6 @@ const transformKeysOutput = (keys) => {
             Flags,
             Fingerprint: privateKey.getFingerprint()
         };
-    });
-};
-
-const getPrimaryKey = (keys) => {
-    return keys.find(({ Key: { Primary } }) => {
-        return Primary === 1;
     });
 };
 
