@@ -71,6 +71,9 @@
 .bg-primary {
   background-color: $pm-primary;
 }
+.bg-inherit {
+  background: inherit;
+}
 
 .fill-global-grey {
   fill: $pm-global-grey;
