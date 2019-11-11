@@ -48,13 +48,11 @@ const FullDayEvent = ({
             );
         }
 
-        if (loading) {
-            <LoaderIcon />;
-        }
-
         return (
-            <div className="flex flex-nowrap">
-                <span className="ellipsis flex-item-fluid">{model.title}</span>
+            <div className="flex flex-nowrap bg-inherit">
+                <span className={classnames(['ellipsis flex-item-fluid', loading && 'calendar-skeleton-loading'])}>
+                    {loading ? '' : model.title}
+                </span>
                 {isCreateEvent || (isAllDay && model.isAllDay) ? null : <span className="">{timeString}</span>}
             </div>
         );

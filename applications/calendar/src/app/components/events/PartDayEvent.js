@@ -26,7 +26,6 @@ const PartDayEvent = ({
     const [value, loading, error] = useReadCalendarEvent(data);
     const model = useReadEvent(value);
     const calendarColor = (data && data.Calendar && data.Calendar.Color) || undefined;
-
     const eventStyle = useMemo(() => {
         const background = calendarColor || getBackground(id, isAllDay, isSelected);
         return {
@@ -50,10 +49,6 @@ const PartDayEvent = ({
                     {error && error.message}
                 </div>
             );
-        }
-
-        if (loading) {
-            <LoaderIcon />;
         }
 
         return (
