@@ -137,7 +137,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onClose, ...rest }) => {
                         if (!oldKeyContainer) {
                             throw new Error(c('Error').t`Key does not exist`);
                         }
-                        if (!oldKeyContainer.Key.ID !== keyID) {
+                        if (oldKeyContainer.Key.ID !== keyID) {
                             throw new Error(c('Error').t`Key ID mismatch`);
                         }
 
