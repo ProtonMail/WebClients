@@ -61,7 +61,7 @@ $gridcell-right-margin: 1.5em;
         background-color: $pm-primary;
         top: -0.3rem;
         left: -0.35rem;
-    } 
+    }
 }
 
 .calendar-aside {
@@ -111,14 +111,14 @@ $gridcell-right-margin: 1.5em;
   font-weight: bold;
 }
 .calendar-daygrid-columns {
-    top: 0; 
-    left: 0; 
-    bottom: 0; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
     right: 0;
 }
 
-.calendar-daygrid-column,
-.calendar-monthgrid-day {
+.calendar-daygrid-column {
     border-right: $calendar-grid-border;
 }
 
