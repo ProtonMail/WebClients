@@ -7,7 +7,10 @@
             ng-click="ctrl.cancel()"
             ng-if="!ctrl.hideClose"
             title-translate="Close"
-            title-translate-context="Action">×</button>
+            title-translate-context="Action">
+            <icon data-name="close" class="pm-modalClose-icon"></icon>
+            <span class="sr-only" translate translate-context="Action">Close</span>
+        </button>
         <h1
             ng-if="ctrl.title"
             id="modalTitle"

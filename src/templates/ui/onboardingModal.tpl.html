@@ -6,7 +6,10 @@
             class="pm-modalClose"
             ng-click="ctrl.cancel()"
             title-translate="Close"
-            title-translate-context="Action">×</button>
+            title-translate-context="Action">
+            <icon data-name="close" class="pm-modalClose-icon"></icon>
+            <span class="sr-only" translate translate-context="Action">Close</span>
+        </button>
         <h1 id="modalTitle" class="pm-modalTitle aligncenter">
             <span
                 ng-if="ctrl.step === 0"
