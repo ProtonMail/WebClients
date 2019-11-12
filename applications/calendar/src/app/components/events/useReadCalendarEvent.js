@@ -18,7 +18,7 @@ export const useReadEvent = (value) => {
     }, [value]);
 };
 
-export const useReadCalendarEvent = ({ readEvent, eventCounter, Calendar, Event } = {}) => {
+export const useReadCalendarEvent = ({ readEvent, counter, Calendar, Event } = {}) => {
     const eventCounterRef = useRef();
     const unmountedRef = useRef();
 
@@ -55,16 +55,16 @@ export const useReadCalendarEvent = ({ readEvent, eventCounter, Calendar, Event 
             return;
         }
 
-        eventCounterRef.current = eventCounter;
-        const counter = eventCounterRef.current;
+        eventCounterRef.current = counter;
+        const currentCounter = eventCounterRef.current;
         setState([state[0], true, undefined]);
 
         promise.then(([result, , error]) => {
-            if (counter === eventCounterRef.current && !unmountedRef.current) {
+            if (currentCounter === eventCounterRef.current && !unmountedRef.current) {
                 setState([result, false, error]);
             }
         });
-    }, [Event && Event.ID, eventCounter]);
+    }, [Event && Event.ID, counter]);
 
     return state;
 };

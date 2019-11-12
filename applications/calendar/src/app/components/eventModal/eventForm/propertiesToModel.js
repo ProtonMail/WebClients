@@ -8,19 +8,13 @@ import {
     fromUTCDate,
     toUTCDate
 } from 'proton-shared/lib/date/timezone';
+import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
 
-export const propertiesToModel = ({
-    uid,
-    dtstart,
-    dtend,
-    location,
-    description,
-    summary,
-    rrule,
-    attendee,
-    ...rest
-}) => {
+export const propertiesToModel = (component) => {
+    const { uid, dtstart, dtend, location, description, summary, rrule, attendee, ...rest } = component;
+
     const isAllDay = dtstart && isIcalPropertyAllDay(dtstart);
+
     return {
         uid: uid ? uid.value : undefined,
         isAllDay,
@@ -29,7 +23,7 @@ export const propertiesToModel = ({
         location: location ? location.value : '',
         description: description ? description.value : '',
         // If start or end has a timezone, automatically toggle more options
-        hasMoreOptions: dtstart && dtend && !!(getTzid(dtstart) || getTzid(dtend)),
+        hasMoreOptions: dtstart && dtend && !!(getTzid(dtstart) || getTzid(dtend) || isIcalRecurring(component)),
         attendees: attendee
             ? attendee.map(
                   ({ value, parameters: { cn = '', rsvp = 'FALSE', ['x-pm-permissions']: permissions } = {} }) => ({

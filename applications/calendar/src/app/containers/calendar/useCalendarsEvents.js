@@ -3,10 +3,12 @@ import { useApi, useEventManager } from 'react-components';
 import { queryEvents } from 'proton-shared/lib/api/calendars';
 import { differenceInHours, getUnixTime } from 'date-fns';
 import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
+import { isIcalRecurring, getOccurencesBetween } from 'proton-shared/lib/calendar/recurring';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { unwrap } from 'proton-shared/lib/calendar/helper';
-import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import { isIcalPropertyAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
+import createIntervalTree from 'interval-tree';
 import useGetCalendarEventRaw from './useGetCalendarEventRaw';
 import useGetCalendarEventPersonal from './useGetCalendarEventPersonal';
 
@@ -37,23 +39,43 @@ const getPaginatedEvents = async (api, calendarID, dateRange, tzid) => {
     return results;
 };
 
+const getRecurringEvents = (events, recurringEvents, searchStart, searchEnd) => {
+    const result = [];
+    for (const id of recurringEvents.keys()) {
+        const { component } = events.get(id);
+        const recurringEventCache = recurringEvents.get(id);
+
+        const utcIntervals = getOccurencesBetween(component, searchStart, searchEnd, recurringEventCache);
+
+        if (!utcIntervals || !utcIntervals.length) {
+            continue;
+        }
+
+        result.push({
+            id,
+            events: utcIntervals
+        });
+    }
+    return result;
+};
+
 const contains = (range, otherRanges) => {
     return otherRanges.some((otherRange) => {
         return otherRange && otherRange[1] >= range[1] && otherRange[0] <= range[0];
     });
 };
 
-const removeEventFromCache = ({ tree, events, decryptedEvents, EventID }) => {
+const removeEventFromCache = (EventID, { tree, events, decryptedEvents, recurringEvents }) => {
     const oldEvent = events.get(EventID);
     if (oldEvent) {
-        const idx = tree.findIndex(({ EventID: otherEventID }) => otherEventID === EventID);
-        tree.splice(idx, 1);
+        tree.remove(+oldEvent.start, +oldEvent.end, EventID);
     }
+    recurringEvents.delete(EventID);
     events.delete(EventID);
     decryptedEvents.delete(EventID);
 };
 
-const setEventInCache = ({ tree, events, decryptedEvents, Event, isInitialFetch }) => {
+const setEventInCache = (Event, { tree, events, recurringEvents, decryptedEvents, isInitialFetch }) => {
     try {
         const { ID: EventID, SharedEvents } = Event;
 
@@ -73,29 +95,52 @@ const setEventInCache = ({ tree, events, decryptedEvents, Event, isInitialFetch 
             return;
         }
 
-        if (oldEvent) {
-            const idx = tree.findIndex(({ EventID: otherEventID }) => otherEventID === EventID);
-            tree.splice(idx, 1);
+        const { dtstart, dtend } = component;
+
+        const start = propertyToUTCDate(dtstart);
+        const end = propertyToUTCDate(dtend);
+
+        const isRecurring = isIcalRecurring(component);
+
+        if (isRecurring) {
+            if (oldEvent && !oldEvent.isRecurring) {
+                tree.remove(+oldEvent.start, +oldEvent.end, EventID);
+            }
+
+            recurringEvents.set(EventID, {});
+        } else {
+            if (oldEvent && oldEvent.isRecurring) {
+                recurringEvents.delete(EventID);
+            }
+
+            if (!oldEvent) {
+                // First time
+                tree.insert(+start, +end, EventID);
+            } else if (+start !== +oldEvent.start || +end !== oldEvent.end) {
+                // Interval changed
+                tree.remove(+oldEvent.start, +oldEvent.end, EventID);
+                tree.insert(+start, +end, EventID);
+            }
         }
 
-        const {
-            dtstart,
-            dtend,
-            dtstart: { parameters: { type = '' } = {} }
-        } = component;
+        const isAllDay = isIcalPropertyAllDay(dtstart);
+        const isAllPartDay = differenceInHours(end, start) >= 24;
 
-        const isAllDay = type === 'date';
-        const eventStart = propertyToUTCDate(dtstart);
-        const eventEnd = propertyToUTCDate(dtend);
-
-        tree.push({ eventStart: +eventStart, eventEnd: +eventEnd, EventID });
-        events.set(EventID, {
+        const record = {
             Event,
+            component,
+
+            isRecurring,
             isAllDay,
-            eventCounter: ((oldEvent && oldEvent.eventCounter) || 0) + 1,
-            eventStart,
-            eventEnd
-        });
+            isAllPartDay,
+
+            start,
+            end,
+
+            counter: ((oldEvent && oldEvent.counter) || 0) + 1
+        };
+
+        events.set(EventID, record);
         decryptedEvents.delete(EventID);
     } catch (e) {
         console.error(e);
@@ -145,8 +190,8 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                     if (!calendarID) {
                         return;
                     }
-                    const { tree, events, decryptedEvents } = cacheRef.current.calendars[calendarID];
-                    removeEventFromCache({ tree, events, decryptedEvents, EventID });
+                    const { tree, events, decryptedEvents, recurringEvents } = cacheRef.current.calendars[calendarID];
+                    removeEventFromCache(EventID, { tree, events, decryptedEvents, recurringEvents });
 
                     // TODO: Only increment count if this event happened in the date range we are currently interested in
                     count++;
@@ -154,14 +199,8 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
 
                 if (Action === UPDATE || Action === CREATE) {
                     const { CalendarID } = Event;
-                    const { tree, events, decryptedEvents } = cacheRef.current.calendars[CalendarID];
 
-                    setEventInCache({
-                        Event,
-                        tree,
-                        events,
-                        decryptedEvents
-                    });
+                    setEventInCache(Event, cacheRef.current.calendars[CalendarID]);
 
                     // TODO: Only increment count if this event happened in the date range we are currently interested in
                     count++;
@@ -196,9 +235,10 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
             if (!cacheRef.current.calendars[CalendarID]) {
                 cacheRef.current.calendars[CalendarID] = {
                     events: new Map(),
+                    recurringEvents: new Map(),
                     decryptedEvents: new Map(),
                     // Replace with interval tree
-                    tree: [],
+                    tree: createIntervalTree(),
                     dateRanges: []
                 };
             }
@@ -221,15 +261,17 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                 toFetch.map(async ({ ID: CalendarID }) => {
                     const Events = await getPaginatedEvents(api, CalendarID, utcDateRange, tzid);
 
-                    const { dateRanges, tree, events, decryptedEvents } = cacheRef.current.calendars[CalendarID];
+                    const { dateRanges, tree, events, recurringEvents, decryptedEvents } = cacheRef.current.calendars[
+                        CalendarID
+                    ];
 
                     dateRanges.push([utcDateRange[0], utcDateRange[1]]);
 
                     Events.forEach((Event) => {
-                        setEventInCache({
-                            Event,
+                        setEventInCache(Event, {
                             tree,
                             events,
+                            recurringEvents,
                             decryptedEvents,
                             isInitialFetch: true
                         });
@@ -286,38 +328,72 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                     return [];
                 }
 
-                const { tree, events } = cacheRef.current.calendars[ID];
+                const { tree, events, recurringEvents } = cacheRef.current.calendars[ID];
 
                 // Add a day in both ranges to not miss events due to tz since they are stored in UTC time
                 const searchStart = +utcDateRange[0] - DAY_IN_MILLISECONDS;
                 const searchEnd = +utcDateRange[1] + DAY_IN_MILLISECONDS;
 
-                const results = tree.filter(({ eventStart, eventEnd }) => {
-                    return eventStart <= searchEnd && eventEnd >= searchStart;
+                const results = tree.search(searchStart, searchEnd).map(([, , id]) => {
+                    const { Event, isAllDay, isAllPartDay, start, end, counter } = events.get(id);
+
+                    const data = {
+                        Event,
+                        Calendar,
+                        readEvent,
+                        counter
+                    };
+
+                    return {
+                        id,
+                        isAllDay,
+                        isAllPartDay,
+                        start,
+                        end,
+                        data
+                    };
                 });
 
-                return results.map(({ EventID }) => {
-                    const { eventStart, eventEnd, eventCounter, Event, isAllDay } = events.get(EventID);
-                    const start = isAllDay
-                        ? eventStart
-                        : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(eventStart), tzid));
-                    const end = isAllDay ? eventEnd : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(eventEnd), tzid));
-                    const isAllPartDay = differenceInHours(end, start) >= 24;
-                    return {
-                        data: {
+                const recurringResults = getRecurringEvents(events, recurringEvents, searchStart, searchEnd)
+                    .map(({ id, events: expandedEvents }) => {
+                        const { Event, isAllDay, isAllPartDay, counter } = events.get(id);
+
+                        const data = {
                             Event,
                             Calendar,
                             readEvent,
-                            eventCounter
-                        },
+                            counter
+                        };
 
-                        isAllDay: isAllDay || isAllPartDay,
-                        isAllPartDay,
-                        id: EventID,
-                        start,
-                        end
-                    };
-                });
+                        return expandedEvents.map(([start, end], i) => {
+                            return {
+                                id: `${id}-${i}`,
+                                isAllDay,
+                                isAllPartDay,
+                                start,
+                                end,
+                                data
+                            };
+                        });
+                    })
+                    .flat();
+
+                return results
+                    .concat(recurringResults)
+                    .map(({ start: utcStart, end: utcEnd, isAllDay, isAllPartDay, data, id }) => {
+                        const start = isAllDay
+                            ? utcStart
+                            : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStart), tzid));
+                        const end = isAllDay ? utcEnd : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcEnd), tzid));
+
+                        return {
+                            id,
+                            isAllDay: isAllDay || isAllPartDay,
+                            start,
+                            end,
+                            data
+                        };
+                    });
             })
             .flat();
 
