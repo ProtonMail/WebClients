@@ -9,8 +9,7 @@ const FullDayEvent = ({
     style,
     formatTime,
     className = 'calendar-dayeventcell absolute',
-    event: { start, data: { Calendar, Event } = {}, data: targetEventData, isAllDay },
-    event: targetEvent,
+    event: { start, data: { Calendar } = {}, data: targetEventData, isAllDay, isAllPartDay },
     isSelected,
     isBeforeNow,
     eventRef,
@@ -36,9 +35,6 @@ const FullDayEvent = ({
         return formatTime(start);
     }, [start]);
 
-    const isTmpEvent = targetEvent.id === 'tmp';
-    const isCreateEvent = isTmpEvent && !Event;
-
     const content = (() => {
         if (error) {
             return (
@@ -54,7 +50,7 @@ const FullDayEvent = ({
                 <span className={classnames(['ellipsis flex-item-fluid', loading && 'calendar-skeleton-loading'])}>
                     {loading ? '' : model.title}
                 </span>
-                {isCreateEvent || (isAllDay && model.isAllDay) ? null : <span className="">{timeString}</span>}
+                {isAllDay && isAllPartDay ? <span className="">{timeString}</span> : null}
             </div>
         );
     })();

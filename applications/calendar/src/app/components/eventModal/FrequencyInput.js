@@ -3,12 +3,7 @@ import { Select } from 'react-components';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const FREQUENCY = {
-    ONCE: 'ONCE',
-    WEEKLY: 'WEEKLY',
-    MONTHLY: 'MONTHLY',
-    YEARLY: 'YEARLY'
-};
+import { FREQUENCY } from '../../constants';
 
 const FrequencyInput = ({ value, onChange }) => {
     const frequencies = [

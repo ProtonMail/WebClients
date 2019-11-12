@@ -60,6 +60,13 @@ export const NOTIFICATION_UNITS = {
     MINUTES: 4
 };
 
+export const FREQUENCY = {
+    ONCE: 'ONCE',
+    WEEKLY: 'WEEKLY',
+    MONTHLY: 'MONTHLY',
+    YEARLY: 'YEARLY'
+};
+
 export const DEFAULT_EVENT_DURATION = 30;
 
 export const COLORS = {

@@ -1,4 +1,3 @@
-import { FREQUENCY } from '../FrequencyInput';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
     DEFAULT_FULL_DAY_NOTIFICATIONS,
@@ -6,7 +5,7 @@ import {
     DEFAULT_PART_DAY_NOTIFICATIONS,
     notificationsToModel
 } from '../../../helpers/notifications';
-import { DEFAULT_EVENT_DURATION, NOTIFICATION_TYPE } from '../../../constants';
+import { DEFAULT_EVENT_DURATION, NOTIFICATION_TYPE, FREQUENCY } from '../../../constants';
 import { propertiesToDateTimeModel, propertiesToModel, propertiesToNotificationModel } from './propertiesToModel';
 import { c } from 'ttag';
 

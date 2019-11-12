@@ -1,14 +1,14 @@
 import { getTzid, isIcalPropertyAllDay } from 'proton-shared/lib/calendar/vcalConverter';
+import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
 
 import { getDateTimeState } from './state';
-import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
+import { FREQUENCY, NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
     fromUTCDate,
     toUTCDate
 } from 'proton-shared/lib/date/timezone';
-import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
 
 export const propertiesToModel = (component) => {
     const { uid, dtstart, dtend, location, description, summary, rrule, attendee, ...rest } = component;
@@ -18,7 +18,7 @@ export const propertiesToModel = (component) => {
     return {
         uid: uid ? uid.value : undefined,
         isAllDay,
-        frequency: rrule && rrule.value ? rrule.value.freq : 0,
+        frequency: rrule && rrule.value ? rrule.value.freq : FREQUENCY.ONCE,
         title: summary ? summary.value : '',
         location: location ? location.value : '',
         description: description ? description.value : '',

@@ -1,8 +1,7 @@
 import { withRequiredProperties } from 'proton-shared/lib/calendar/veventHelper';
 import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
 
-import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
-import { FREQUENCY } from '../FrequencyInput';
+import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN, FREQUENCY } from '../../../constants';
 
 const getValarmTriggerAt = (date) => {
     return {

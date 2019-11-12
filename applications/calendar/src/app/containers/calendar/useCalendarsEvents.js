@@ -124,7 +124,7 @@ const setEventInCache = (Event, { tree, events, recurringEvents, decryptedEvents
         }
 
         const isAllDay = isIcalPropertyAllDay(dtstart);
-        const isAllPartDay = differenceInHours(end, start) >= 24;
+        const isAllPartDay = !isAllDay && differenceInHours(end, start) >= 24;
 
         const record = {
             Event,
@@ -389,6 +389,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                         return {
                             id,
                             isAllDay: isAllDay || isAllPartDay,
+                            isAllPartDay,
                             start,
                             end,
                             data
