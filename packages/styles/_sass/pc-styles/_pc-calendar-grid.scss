@@ -178,12 +178,24 @@ $calendar-popover-width: 250px !default;
     position: absolute;
     background: $white;
     z-index: 10;
-    transition: all .2s ease;
-    width: 250px;
+    animation: eventpopoverIn ease .15s;
+    animation-fill-mode: both;
+    transform-origin: 50%;
+    // transition: all .25s ease; should be applied only when opened and end of animation
+    width: 300px;
     max-height: 70%;
     overflow: auto;
     background: $white;
     border-radius: $global-border-radius;
     box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
     color: $pm-global-grey;
+}
+
+@keyframes eventpopoverIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
 }
