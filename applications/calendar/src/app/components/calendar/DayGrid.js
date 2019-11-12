@@ -137,145 +137,148 @@ const DayGrid = ({
     let isFirstSelection = true;
 
     return (
-        <div className="flex flex-column relative h100" ref={mainRef}>
-            <div className="flex calendar-daygrid-days">
-                {displayWeekNumbers ? <div className="calendar-daygrid-weeknumber-width" /> : null}
-                {rows[0].map((day) => {
-                    return (
-                        <div
-                            className="flex-item-fluid aligncenter calendar-daygrid-day big m0 p0-75"
-                            key={day.getUTCDate()}
-                            aria-current={day.getUTCDay() === now.getUTCDay() ? 'true' : null}
-                        >
-                            {weekdaysLong[day.getUTCDay()]}
-                        </div>
-                    );
-                })}
-            </div>
-            <div className="flex flex-item-fluid">
-                {displayWeekNumbers ? (
-                    <div className="flex flex-column calendar-daygrid-weeknumber-width">
-                        {rows.map((days) => {
-                            const week = getWeekNumber(days[0]);
-                            return (
-                                <div
-                                    key={week}
-                                    className="flex-item-fluid flex flex-column flex relative calendar-daygrid-weeknumber"
-                                >
-                                    <span className="mauto opacity-40 small">{week}</span>
-                                </div>
-                            );
-                        })}
-                    </div>
-                ) : null}
-
-                <div
-                    className="flex flex-item-fluid flex-column calendar-daygrid-rows"
-                    ref={rowsWrapperRef}
-                    onMouseDownCapture={onDayGridMouseDown}
-                >
-                    {rows.map((days, rowIndex) => {
-                        const { eventsInRow, eventsInRowStyles, eventsInRowSummary } = eventsPerRows[rowIndex];
+        <div className="flex-item-fluid scroll-if-needed view-column-detail">
+            <div className="flex flex-column relative h100" ref={mainRef}>
+                <div className="flex calendar-daygrid-days">
+                    {displayWeekNumbers ? <div className="calendar-daygrid-weeknumber-width" /> : null}
+                    {rows[0].map((day) => {
                         return (
-                            <div key={rowIndex} className="flex-item-fluid flex flex-column h100 w100 relative">
-                                <div className="flex calendar-daygrid-columns no-pointer-events">
-                                    {days.map((day) => {
-                                        return (
-                                            <div
-                                                className="flex-item-fluid calendar-daygrid-column"
-                                                key={day.getUTCDate()}
-                                            />
-                                        );
-                                    })}
-                                </div>
-                                <div className="flex">
-                                    {days.map((day, dayIndex) => {
-                                        return (
-                                            <button
-                                                type="button"
-                                                aria-label={formattedDates[rowIndex][dayIndex]}
-                                                className="flex-item-fluid aligncenter calendar-monthgrid-day p0-25"
-                                                key={day.getUTCDate()}
-                                                aria-current={isDateYYMMDDEqual(day, now) ? 'date' : undefined}
-                                                aria-pressed={isDateYYMMDDEqual(day, date) ? true : undefined}
-                                                onClick={() => onClickDate(day)}
-                                            >
-                                                <span className="calendar-monthgrid-day-number flex mauto">
-                                                    <span className="mauto">{day.getUTCDate()}</span>
-                                                </span>
-                                            </button>
-                                        );
-                                    })}
-                                </div>
-                                <div
-                                    className="relative flex-item-fluid calendar-daygrid-row"
-                                    data-row={rowIndex}
-                                    {...(rowIndex === 0 ? { ref: firstRowRef } : undefined)}
-                                >
-                                    {eventsInRowStyles.map(({ idx, type, style }) => {
-                                        if (type === 'more') {
-                                            const isSelected = isMoreSelected(idx, moreIdx, rowIndex, moreRow);
-                                            const eventRef = isSelected ? selectedMoreRef : undefined;
-                                            return createElement(MoreFullDayEvent, {
-                                                key: `more${idx}`,
-                                                style,
-                                                more: eventsInRowSummary[idx].more,
-                                                eventRef,
-                                                isSelected
-                                            });
-                                        }
-
-                                        const event = getEvent(idx, eventsInRow, sortedEvents);
-                                        const isSelected = event.id === selectedEventID;
-                                        const isBeforeNow = now > event.end && !isDateYYMMDDEqual(now, event.end);
-                                        const eventRef = isSelected && isFirstSelection ? selectedEventRef : undefined;
-                                        if (eventRef) {
-                                            isFirstSelection = false;
-                                        }
-                                        return createElement(FullDayEvent, {
-                                            event,
-                                            style,
-                                            key: event.id,
-                                            isBeforeNow,
-                                            eventRef,
-                                            formatTime,
-                                            isSelected
-                                        });
-                                    })}
-                                </div>
+                            <div
+                                className="flex-item-fluid aligncenter calendar-daygrid-day big m0 p0-75"
+                                key={day.getUTCDate()}
+                                aria-current={day.getUTCDay() === now.getUTCDay() ? 'true' : null}
+                            >
+                                {weekdaysLong[day.getUTCDay()]}
                             </div>
                         );
                     })}
                 </div>
+                <div className="flex flex-item-fluid">
+                    {displayWeekNumbers ? (
+                        <div className="flex flex-column calendar-daygrid-weeknumber-width">
+                            {rows.map((days) => {
+                                const week = getWeekNumber(days[0]);
+                                return (
+                                    <div
+                                        key={week}
+                                        className="flex-item-fluid flex flex-column flex relative calendar-daygrid-weeknumber"
+                                    >
+                                        <span className="mauto opacity-40 small">{week}</span>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    ) : null}
+
+                    <div
+                        className="flex flex-item-fluid flex-column calendar-daygrid-rows"
+                        ref={rowsWrapperRef}
+                        onMouseDownCapture={onDayGridMouseDown}
+                    >
+                        {rows.map((days, rowIndex) => {
+                            const { eventsInRow, eventsInRowStyles, eventsInRowSummary } = eventsPerRows[rowIndex];
+                            return (
+                                <div key={rowIndex} className="flex-item-fluid flex flex-column h100 w100 relative">
+                                    <div className="flex calendar-daygrid-columns no-pointer-events">
+                                        {days.map((day) => {
+                                            return (
+                                                <div
+                                                    className="flex-item-fluid calendar-daygrid-column"
+                                                    key={day.getUTCDate()}
+                                                />
+                                            );
+                                        })}
+                                    </div>
+                                    <div className="flex">
+                                        {days.map((day, dayIndex) => {
+                                            return (
+                                                <button
+                                                    type="button"
+                                                    aria-label={formattedDates[rowIndex][dayIndex]}
+                                                    className="flex-item-fluid aligncenter calendar-monthgrid-day p0-25"
+                                                    key={day.getUTCDate()}
+                                                    aria-current={isDateYYMMDDEqual(day, now) ? 'date' : undefined}
+                                                    aria-pressed={isDateYYMMDDEqual(day, date) ? true : undefined}
+                                                    onClick={() => onClickDate(day)}
+                                                >
+                                                    <span className="calendar-monthgrid-day-number flex mauto">
+                                                        <span className="mauto">{day.getUTCDate()}</span>
+                                                    </span>
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                                    <div
+                                        className="relative flex-item-fluid calendar-daygrid-row"
+                                        data-row={rowIndex}
+                                        {...(rowIndex === 0 ? { ref: firstRowRef } : undefined)}
+                                    >
+                                        {eventsInRowStyles.map(({ idx, type, style }) => {
+                                            if (type === 'more') {
+                                                const isSelected = isMoreSelected(idx, moreIdx, rowIndex, moreRow);
+                                                const eventRef = isSelected ? selectedMoreRef : undefined;
+                                                return createElement(MoreFullDayEvent, {
+                                                    key: `more${idx}`,
+                                                    style,
+                                                    more: eventsInRowSummary[idx].more,
+                                                    eventRef,
+                                                    isSelected
+                                                });
+                                            }
+
+                                            const event = getEvent(idx, eventsInRow, sortedEvents);
+                                            const isSelected = event.id === selectedEventID;
+                                            const isBeforeNow = now > event.end && !isDateYYMMDDEqual(now, event.end);
+                                            const eventRef =
+                                                isSelected && isFirstSelection ? selectedEventRef : undefined;
+                                            if (eventRef) {
+                                                isFirstSelection = false;
+                                            }
+                                            return createElement(FullDayEvent, {
+                                                event,
+                                                style,
+                                                key: event.id,
+                                                isBeforeNow,
+                                                eventRef,
+                                                formatTime,
+                                                isSelected
+                                            });
+                                        })}
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+                {morePopoverStyle &&
+                    selectedMoreData &&
+                    createElement(MorePopoverEvent, {
+                        events: selectedMoreData,
+                        style: morePopoverStyle,
+                        layout: morePopoverLayout,
+                        eventRef: selectedEventRef,
+                        selectedEventID,
+                        setSelectedEventID,
+                        selectedMoreDate,
+                        formatTime,
+                        onClose: () => setMoreDateIdx()
+                    })}
+                {popoverStyle &&
+                    selectedEvent &&
+                    createElement(PopoverEvent, {
+                        event: selectedEvent,
+                        style: popoverStyle,
+                        layout: popoverLayout,
+                        tzid,
+                        formatTime,
+                        onClose: () => {
+                            setSelectedEventID();
+                            setTemporaryEvent();
+                        },
+                        onEditEvent,
+                        onCreateEvent
+                    })}
             </div>
-            {morePopoverStyle &&
-                selectedMoreData &&
-                createElement(MorePopoverEvent, {
-                    events: selectedMoreData,
-                    style: morePopoverStyle,
-                    layout: morePopoverLayout,
-                    eventRef: selectedEventRef,
-                    selectedEventID,
-                    setSelectedEventID,
-                    selectedMoreDate,
-                    formatTime,
-                    onClose: () => setMoreDateIdx()
-                })}
-            {popoverStyle &&
-                selectedEvent &&
-                createElement(PopoverEvent, {
-                    event: selectedEvent,
-                    style: popoverStyle,
-                    layout: popoverLayout,
-                    tzid,
-                    formatTime,
-                    onClose: () => {
-                        setSelectedEventID();
-                        setTemporaryEvent();
-                    },
-                    onEditEvent,
-                    onCreateEvent
-                })}
         </div>
     );
 };

@@ -42,6 +42,8 @@ const CalendarSetupContainer = ({ children }) => {
             utcDefaultDate={now}
             utcDateRange={dateRange}
             onCreateEvent={noop}
+            onClickToday={noop}
+            onChangeView={noop}
             tzid={'Europe/Zurich'}
             setTzid={noop}
             setCustom={noop}

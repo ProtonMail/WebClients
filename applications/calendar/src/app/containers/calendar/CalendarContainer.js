@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef } from 'react';
+import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef, useLayoutEffect } from 'react';
 import { useModals, useCalendars, useCalendarUserSettings } from 'react-components';
 import {
     convertUTCDateTimeToZone,
@@ -151,7 +151,7 @@ const CalendarContainer = ({ history, location }) => {
 
     const [nowDate, setNowDate] = useState(() => new Date());
 
-    const scrollRef = useRef();
+    const timeGridViewRef = useRef();
 
     useEffect(() => {
         const handle = setInterval(() => setNowDate(new Date()), 30000);
@@ -241,6 +241,28 @@ const CalendarContainer = ({ history, location }) => {
         setCustom({ view: newView, range: undefined, date: newDate });
     }, []);
 
+    const scrollToNow = useCallback(() => {
+        setTimeout(() => {
+            if (timeGridViewRef.current) {
+                timeGridViewRef.current.scrollToNow();
+            }
+        }, 10);
+    }, []);
+
+    useLayoutEffect(() => {
+        scrollToNow();
+    }, []);
+
+    const handleChangeView = useCallback((newView) => {
+        setCustom({ view: newView, range: undefined });
+        scrollToNow();
+    }, []);
+
+    const handleClickToday = useCallback(() => {
+        setCustom({ date: utcDefaultDate });
+        scrollToNow();
+    }, []);
+
     const handleClickDateWeekView = useCallback((newDate) => {
         setDateAndView(newDate, DAY);
     }, []);
@@ -306,7 +328,8 @@ const CalendarContainer = ({ history, location }) => {
             utcDate={utcDate}
             utcDateRange={utcDateRange}
             onCreateEvent={handleEventModal}
-            scrollRef={scrollRef}
+            onClickToday={handleClickToday}
+            onChangeView={handleChangeView}
         >
             {(() => {
                 if (view === DAY || view === WEEK) {
@@ -322,7 +345,7 @@ const CalendarContainer = ({ history, location }) => {
                             onClickDate={handleClickDateWeekView}
                             onEditEvent={handleEventModal}
                             components={components}
-                            scrollRef={scrollRef}
+                            ref={timeGridViewRef}
                             week={week}
                             weekDaysLong={weekdaysLong}
                         />

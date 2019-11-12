@@ -57,9 +57,10 @@ const CalendarContainerView = ({
     utcDateRange,
 
     onCreateEvent,
+    onClickToday,
+    onChangeView,
 
-    children,
-    scrollRef
+    children
 }) => {
     const { state: expanded, toggle: onToggleExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
@@ -97,14 +98,6 @@ const CalendarContainerView = ({
 
     const handleClickLocalDate = useCallback((newDate) => {
         setCustom({ date: localToUtcDate(newDate) });
-    }, []);
-
-    const handleClickToday = useCallback(() => {
-        setCustom({ date: utcDefaultDate });
-    }, []);
-
-    const handleChangeView = useCallback((newView) => {
-        setCustom({ view: newView, range: undefined });
     }, []);
 
     const handleClickNext = useCallback(() => {
@@ -173,7 +166,7 @@ const CalendarContainerView = ({
                                             dateRange={localDateRange}
                                             currentDate={localDate}
                                             now={localNowDate}
-                                            onToday={handleClickToday}
+                                            onToday={onClickToday}
                                             onNext={handleClickNext}
                                             onPrev={handleClickPrev}
                                         />
@@ -183,7 +176,7 @@ const CalendarContainerView = ({
                                             isNarrow={isNarrow}
                                             view={view}
                                             range={range}
-                                            onChange={handleChangeView}
+                                            onChange={onChangeView}
                                         />
                                     }
                                     timezoneSelector={
@@ -195,12 +188,7 @@ const CalendarContainerView = ({
                                     }
                                 />
                                 <div className="flex main-area--withToolbar">
-                                    <div
-                                        className="flex-item-fluid scroll-if-needed view-column-detail"
-                                        ref={scrollRef}
-                                    >
-                                        {children}
-                                    </div>
+                                    {children}
                                     <div className="w50p nomobile hidden"></div>
                                 </div>
                             </div>
@@ -222,13 +210,14 @@ CalendarContainerView.propTypes = {
     setTzid: PropTypes.func,
     setCustom: PropTypes.func,
     onCreateEvent: PropTypes.func,
+    onClickToday: PropTypes.func,
+    onChangeView: PropTypes.func,
     utcDefaultDate: PropTypes.instanceOf(Date),
     utcDate: PropTypes.instanceOf(Date),
     utcDateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
     view: PropTypes.oneOf([DAY, WEEK, MONTH, YEAR, AGENDA]),
     children: PropTypes.node,
-    range: PropTypes.number,
-    scrollRef: PropTypes.object
+    range: PropTypes.number
 };
 
 export default CalendarContainerView;
