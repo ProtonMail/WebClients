@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import {
     SmallButton,
     PrimaryButton,
+    Icon,
     Loader,
     useApi,
     useEventManager,
@@ -22,7 +23,6 @@ import { c } from 'ttag';
 import { deleteEvent } from 'proton-shared/lib/api/calendars';
 import createOrUpdateEvent from 'proton-shared/lib/calendar/integration/createOrUpdateEvent';
 
-import './PopoverEvent.scss';
 import usePopoverPlacement from './usePopoverPlacement';
 import { getI18N } from '../eventModal/eventForm/i18n';
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
@@ -167,15 +167,16 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
     if (error) {
         return (
             <div style={otherStyle} className="eventpopover p1" ref={ref}>
-                <header className="">
-                    <h3>{c('Error').t`Error`}</h3>
+                <header>
+                    <h1 className="h3">{c('Error').t`Error`}</h1>
                     <button
                         type="button"
                         className="pm-modalClose"
                         title={c('Action').t`Close popover`}
                         onClick={onClose}
                     >
-                        ×
+                        <Icon className="pm-modalClose-icon" name="close" />
+                        <span className="sr-only">{c('Action').t`Close popover`}</span>
                     </button>
                 </header>
                 <div className="ellipsis">
@@ -218,7 +219,8 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                     <h3 className="">{model.title}</h3>
                 )}
                 <button type="button" className="pm-modalClose" title={c('Action').t`Close popover`} onClick={onClose}>
-                    ×
+                    <Icon className="pm-modalClose-icon" name="close" />
+                    <span className="sr-only">{c('Action').t`Close popover`}</span>
                 </button>
             </header>
             <div>

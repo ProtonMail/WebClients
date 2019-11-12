@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { c } from 'ttag';
+import { Icon } from 'react-components';
 import PropTypes from 'prop-types';
 
 import usePopoverPlacement from './usePopoverPlacement';
@@ -21,10 +22,11 @@ const MorePopoverEvent = ({
 
     return (
         <div style={otherStyle} className="eventpopover p1" ref={ref}>
-            <header className="">
-                <h1 className="">{selectedMoreDate && selectedMoreDate.getUTCDate()}</h1>
+            <header>
+                <h1 className="h3">{selectedMoreDate && selectedMoreDate.getUTCDate()}</h1>
                 <button type="button" className="pm-modalClose" title={c('Action').t`Close popover`} onClick={onClose}>
-                    ×
+                    <Icon className="pm-modalClose-icon" name="close" />
+                    <span className="sr-only">{c('Action').t`Close popover`}</span>
                 </button>
             </header>
             <div>
