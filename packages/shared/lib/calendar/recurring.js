@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { differenceInMinutes } from 'date-fns';
 import { getInternalDateTimeValue, internalValueToIcalValue } from './vcal';
-import { isIcalPropertyAllDay, propertyToUTCDate } from './vcalConverter';
+import { isIcalAllDay, propertyToUTCDate } from './vcalConverter';
 import { addDays, addMilliseconds, differenceInCalendarDays, MILLISECONDS_IN_MINUTE } from '../date-fns-utc';
 
 const YEAR_IN_MS = Date.UTC(1971, 0, 1);
@@ -40,14 +40,11 @@ const fillOccurrencesBetween = (start, end, iterator, eventDuration, internalDts
     return result;
 };
 
-export const getOccurencesBetween = (
-    { dtstart: internalDtstart, dtend: internalDtEnd, rrule: internalRrule },
-    start,
-    end,
-    cache = {}
-) => {
+export const getOccurencesBetween = (component, start, end, cache = {}) => {
+    const { dtstart: internalDtstart, dtend: internalDtEnd, rrule: internalRrule } = component;
+
     if (!cache.start) {
-        const isAllDay = isIcalPropertyAllDay(internalDtstart);
+        const isAllDay = isIcalAllDay(component);
         const dtstartType = isAllDay ? 'date' : 'date-time';
 
         // Pretend the (local) date is in UTC time to keep the absolute times.
@@ -81,20 +78,26 @@ export const getOccurencesBetween = (
 
         const interval = [start - YEAR_IN_MS, end + YEAR_IN_MS];
 
-        const result = fillOccurrencesBetween(
-            interval[0],
-            interval[1],
-            iterator,
-            eventDuration,
-            internalDtstart,
-            isAllDay
-        );
+        try {
+            const result = fillOccurrencesBetween(
+                interval[0],
+                interval[1],
+                iterator,
+                eventDuration,
+                internalDtstart,
+                isAllDay
+            );
 
-        cache.iteration = {
-            iterator,
-            result,
-            interval
-        };
+            cache.iteration = {
+                iterator,
+                result,
+                interval
+            };
+        } catch (e) {
+            console.error(e);
+            // Pretend it was ok
+            return [];
+        }
     }
 
     return cache.iteration.result.filter(([eventStart, eventEnd]) => isInInterval(+eventStart, +eventEnd, start, end));

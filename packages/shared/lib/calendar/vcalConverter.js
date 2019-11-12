@@ -1,4 +1,4 @@
-import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, toLocalDate, toUTCDate } from '../date/timezone';
+import { convertZonedDateTimeToUTC, toUTCDate } from '../date/timezone';
 
 export const dateToProperty = ({ year, month = 1, day = 1 }) => {
     // All day date properties are always floating time
@@ -37,7 +37,10 @@ export const getDateTimeProperty = (zonelessTime, specificTzid, tzid) => {
      * If no specific timezone is wanted, convert the zoneless time
      * into the current timezone (of the calendar). Then convert
      * the zoned time into UTC time.
+     *
+     * Disable this behavior for now, because it breaks recurring events.
      */
+    /*
     if (!specificTzid) {
         const utcZonedTime = convertZonedDateTimeToUTC(zonelessTime, tzid);
         return dateTimeToProperty({
@@ -45,19 +48,25 @@ export const getDateTimeProperty = (zonelessTime, specificTzid, tzid) => {
             isUTC: true
         });
     }
+    */
     /**
      * If a specific timezone is wanted, the zoneless time is already relative
      * to the specific timezone so we can store it as-is.
      */
+    const isUTC = !!(specificTzid || '').toLowerCase().includes('utc');
     return dateTimeToProperty({
         ...zonelessTime,
-        isUTC: false,
-        tzid: specificTzid
+        isUTC,
+        tzid: isUTC ? undefined : specificTzid
     });
 };
 
 export const isIcalPropertyAllDay = ({ parameters }) => {
     return parameters ? parameters.type === 'date' : false;
+};
+
+export const isIcalAllDay = ({ dtstart, dtend }) => {
+    return !!((dtstart && isIcalPropertyAllDay(dtstart)) || (dtend && isIcalPropertyAllDay(dtend)));
 };
 
 /**
@@ -73,5 +82,3 @@ export const propertyToUTCDate = ({ value, parameters = {} }) => {
     // For dates with a timezone, convert the relative date time to UTC time
     return toUTCDate(convertZonedDateTimeToUTC(value, parameters.tzid));
 };
-
-export const getTzid = ({ parameters: { tzid } = {} }) => tzid;
