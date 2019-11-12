@@ -1,8 +1,9 @@
 import { useCallback } from 'react';
 import { getFullCalendar } from 'proton-shared/lib/api/calendars';
+import createCache from 'proton-shared/lib/helpers/cache';
 import useCache from '../containers/cache/useCache';
 import useApi from '../containers/api/useApi';
-import { getPromiseValue } from './useCachedModelResult';
+import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 
 export const KEY = 'CALENDAR_BOOTSTRAP';
 
@@ -14,7 +15,10 @@ export const useGetCalendarBootstrap = () => {
     return useCallback(
         (key) => {
             if (!cache.has(KEY)) {
-                cache.set(KEY, new Map());
+                cache.set(KEY, createCache());
+            }
+            if (!key) {
+                return Promise.resolve();
             }
             const subCache = cache.get(KEY);
             return getPromiseValue(subCache, key, miss);
@@ -23,4 +27,11 @@ export const useGetCalendarBootstrap = () => {
     );
 };
 
-export default useGetCalendarBootstrap;
+export const useCalendarBootstrap = (calendarID) => {
+    const cache = useCache();
+    const getCalendarBootstrap = useGetCalendarBootstrap();
+    if (!cache.has(KEY)) {
+        cache.set(KEY, createCache());
+    }
+    return useCachedModelResult(cache.get(KEY), calendarID, getCalendarBootstrap);
+};

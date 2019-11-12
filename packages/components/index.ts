@@ -358,7 +358,7 @@ export { useUserKeys, useGetUserKeys } from './hooks/useUserKeys';
 export { useAddressesKeys, useGetAddressesKeys } from './hooks/useAddressesKeys';
 export { useGetAddressKeys } from './hooks/useGetAddressKeys';
 export { useGetPublicKeys } from './hooks/useGetPublicKeys';
-export { useGetCalendarBootstrap } from './hooks/useGetCalendarBootstrap';
+export { useCalendarBootstrap, useGetCalendarBootstrap } from './hooks/useGetCalendarBootstrap';
 export { useGetCalendarKeys } from './hooks/useGetCalendarKeys';
 export { default as useOrganizationKey } from './hooks/useOrganizationKey';
 export { default as useSortedList, useSortedListAsync } from './hooks/useSortedList';

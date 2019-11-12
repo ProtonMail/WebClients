@@ -46,7 +46,7 @@ const getRecordThen = (promise) => {
  * 3) A mounted component receives an update that the key has changed.
  * @param {Object} cache
  * @param {Object} key
- * @param {Function} miss
+ * @param {Promise} promise
  * @return {Object}
  */
 const update = (cache, key, promise) => {

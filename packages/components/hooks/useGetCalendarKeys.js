@@ -5,7 +5,7 @@ import { decryptCalendarKeys, decryptPassphrase, getAddressesMembersMap } from '
 import useCache from '../containers/cache/useCache';
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
-import useGetCalendarBootstrap from './useGetCalendarBootstrap';
+import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 import { getPromiseValue } from './useCachedModelResult';
 
 export const CACHE_KEY = 'CALENDAR_KEYS';
