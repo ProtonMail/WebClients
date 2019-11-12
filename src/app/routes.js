@@ -7,6 +7,8 @@ import {
     INVITE_URL,
     MAILBOX_IDENTIFIERS,
     CURRENCIES,
+    DEFAULT_CURRENCY,
+    DEFAULT_CYCLE,
     BILLING_CYCLE,
     SIGNUP_PLANS,
     BLACK_FRIDAY
@@ -187,8 +189,8 @@ export default angular
                     inviteSelector: undefined, // set by invite
                     inviteToken: undefined, // set by invite
                     plan: null, // 'free' / 'plus' / 'visionary' / 'plus_vpnplus'
-                    billing: null, // 1 / 12
-                    currency: null, // 'CHF' / 'EUR' / 'USD'
+                    billing: `${DEFAULT_CYCLE}`, // 1 / 12
+                    currency: DEFAULT_CURRENCY, // 'CHF' / 'EUR' / 'USD'
                     coupon: null
                 },
                 views: {
@@ -216,11 +218,30 @@ export default angular
                             return;
                         }
 
-                        // Remove the black friday coupon if it's not yet time.
-                        const coupon =
-                            couponParam === BLACK_FRIDAY.COUPON_CODE ? isDealEvent() && couponParam : couponParam;
+                        const config = { planNames: plan.split('_'), currency, cycle };
 
-                        return { planNames: plan.split('_'), currency, cycle, coupon };
+                        // Allow BF only for a period
+                        if (couponParam === BLACK_FRIDAY.COUPON_CODE) {
+                            if (!isDealEvent()) {
+                                return config;
+                            }
+
+                            const [plus, vpnPlusPlus] = BLACK_FRIDAY.PLANS;
+
+                            // Allow only plus 12/24
+                            if (BLACK_FRIDAY.CYCLES.includes(cycle) && plan === plus) {
+                                config.coupon = couponParam;
+                            }
+
+                            // Allow vpn_plus 24
+                            if (BLACK_FRIDAY.CYCLE === cycle && plan === vpnPlusPlus) {
+                                config.coupon = couponParam;
+                            }
+
+                            return config;
+                        }
+
+                        return { ...config, coupon: couponParam };
                     },
                     optionsHumanCheck(signupModel) {
                         return signupModel.getOptionsVerification();

@@ -1,17 +1,12 @@
 import blackFridayOffers from '../helpers/blackFridayOffers';
-import { isDealEvent } from '../helpers/blackFridayHelper';
 import { BLACK_FRIDAY, CYCLE } from '../../constants';
 import { getPlansMap } from '../../../helpers/paymentHelper';
-import { getItem, setItem } from '../../../helpers/storageHelper';
+import { setItem } from '../../../helpers/storageHelper';
 
 /* @ngInject */
 function blackFridayModel(authentication, subscriptionModel, paymentModel, PaymentCache) {
     // Needed as function because the authentiation.user.ID can change.
     const getKey = () => `protonmail_black_friday_${authentication.user.ID}_${BLACK_FRIDAY.YEAR}`;
-
-    const hasSeenOffer = () => {
-        return getItem(getKey(), false);
-    };
 
     const saveClose = () => {
         setItem(getKey(), 'closed');
@@ -22,14 +17,8 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
      * @param {boolean} force
      * @returns {boolean}
      */
-    const isDealPeriod = (force = false) => {
-        if (!blackFridayOffers(subscriptionModel.get(), authentication.user).length) {
-            return false;
-        }
-        if (!force && hasSeenOffer()) {
-            return false;
-        }
-        return isDealEvent();
+    const isDealPeriod = () => {
+        return false;
     };
 
     /**
