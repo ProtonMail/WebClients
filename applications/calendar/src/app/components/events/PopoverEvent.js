@@ -116,16 +116,17 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
             Addresses,
             isAllDay: targetEvent.isAllDay,
             start: targetEvent.start,
-            end: targetEvent.end
+            end: targetEvent.end,
+            tzid
         });
 
         const eventModel = veventComponent
             ? getExistingEvent({
                   veventComponent,
                   veventValarmComponent: personalMap[emptyModel.memberID],
-                  tzid,
                   start: targetEvent.start,
-                  end: targetEvent.end
+                  end: targetEvent.end,
+                  tzid
               })
             : {};
 

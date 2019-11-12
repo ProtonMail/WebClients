@@ -8,20 +8,12 @@ const TimezoneSelector = ({
     loading = false,
     disabled = false,
     timezone,
-    defaultTimezone = '',
     onChange,
     ...rest
 }) => {
     const timezoneOptions = useMemo(() => {
         return getTimeZoneOptions(new Date());
     }, []);
-
-    const options = useMemo(() => {
-        const extra = defaultTimezone
-            ? [{ key: -1, value: 'default', text: c('Label').t`Default` + ` (${defaultTimezone})` }]
-            : [];
-        return extra.concat(timezoneOptions);
-    }, [defaultTimezone]);
 
     return (
         <select
@@ -35,7 +27,7 @@ const TimezoneSelector = ({
             }}
             {...rest}
         >
-            {options.map(({ text, value, key }) => {
+            {timezoneOptions.map(({ text, value, key }) => {
                 return (
                     <option key={key} value={value}>
                         {text}

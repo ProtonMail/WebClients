@@ -6,7 +6,7 @@ import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from 'proton-shared/
 import { isIcalRecurring, getOccurencesBetween } from 'proton-shared/lib/calendar/recurring';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { unwrap } from 'proton-shared/lib/calendar/helper';
-import { isIcalPropertyAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import createIntervalTree from 'interval-tree';
 import useGetCalendarEventRaw from './useGetCalendarEventRaw';
@@ -47,14 +47,11 @@ const getRecurringEvents = (events, recurringEvents, searchStart, searchEnd) => 
 
         const utcIntervals = getOccurencesBetween(component, searchStart, searchEnd, recurringEventCache);
 
-        if (!utcIntervals || !utcIntervals.length) {
+        if (!utcIntervals.length) {
             continue;
         }
 
-        result.push({
-            id,
-            events: utcIntervals
-        });
+        result.push({ id, events: utcIntervals });
     }
     return result;
 };
@@ -123,7 +120,7 @@ const setEventInCache = (Event, { tree, events, recurringEvents, decryptedEvents
             }
         }
 
-        const isAllDay = isIcalPropertyAllDay(dtstart);
+        const isAllDay = isIcalAllDay(component);
         const isAllPartDay = !isAllDay && differenceInHours(end, start) >= 24;
 
         const record = {

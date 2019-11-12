@@ -8,6 +8,8 @@ import {
 import { DEFAULT_EVENT_DURATION, NOTIFICATION_TYPE, FREQUENCY } from '../../../constants';
 import { propertiesToDateTimeModel, propertiesToModel, propertiesToNotificationModel } from './propertiesToModel';
 import { c } from 'ttag';
+import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
+import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
 
 export const getState = ({
     title = '',
@@ -85,9 +87,14 @@ export const getStartAndEnd = ({
     };
 };
 
-export const getExistingEvent = ({ veventComponent, veventValarmComponent, tzid, start, end }) => {
+export const getExistingEvent = ({ veventComponent, veventValarmComponent, start, end, tzid }) => {
+    const isAllDay = isIcalAllDay(veventComponent);
+    const isRecurring = isIcalRecurring(veventComponent);
+
     const newModel = propertiesToModel(veventComponent);
-    const newDateTime = propertiesToDateTimeModel(veventComponent, newModel.isAllDay, tzid, start, end);
+    const newDateTime = propertiesToDateTimeModel(veventComponent, isAllDay, tzid, start, end);
+
+    const hasDifferingTimezone = newDateTime.start.tzid !== tzid || newDateTime.end.tzid !== tzid;
 
     // Email notifications are not supported atm.
     const newNotifications = propertiesToNotificationModel(veventValarmComponent, newModel.isAllDay).filter(
@@ -97,6 +104,8 @@ export const getExistingEvent = ({ veventComponent, veventValarmComponent, tzid,
     return {
         ...newModel,
         ...newNotifications,
+        isAllDay,
+        hasMoreOptions: isRecurring || hasDifferingTimezone,
         ...(newModel.isAllDay
             ? {
                   fullDayNotifications: newNotifications
@@ -120,7 +129,17 @@ export const updateItem = (array, index, newItem) => {
 };
 export const removeItem = (array, index) => array.filter((oldValue, i) => i !== index);
 
-export const getEmptyModel = ({ isAllDay, title, calendarID, CalendarBootstrap, Addresses, start, end, color }) => {
+export const getEmptyModel = ({
+    isAllDay,
+    title,
+    calendarID,
+    CalendarBootstrap,
+    Addresses,
+    start,
+    end,
+    color,
+    tzid
+}) => {
     const { Members = [], CalendarSettings } = CalendarBootstrap;
 
     // By default takes the first one
@@ -148,7 +167,8 @@ export const getEmptyModel = ({ isAllDay, title, calendarID, CalendarBootstrap, 
         ...getStartAndEnd({
             defaultDuration: DefaultEventDuration,
             start,
-            end
+            end,
+            tzid
         }),
         defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,

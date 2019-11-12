@@ -49,7 +49,8 @@ const CreateEventModal = ({
             ...getStartAndEnd({
                 defaultDuration: 30,
                 start,
-                end
+                end,
+                tzid
             }),
             isAllDay,
             type,
@@ -100,16 +101,17 @@ const CreateEventModal = ({
                 title,
                 isAllDay,
                 start,
-                end
+                end,
+                tzid
             });
 
             const eventModel = veventComponent
                 ? getExistingEvent({
                       veventComponent,
                       veventValarmComponent: personalMap[emptyModel.memberID],
-                      tzid,
                       start,
-                      end
+                      end,
+                      tzid
                   })
                 : {};
 

@@ -1,29 +1,22 @@
-import { getTzid, isIcalPropertyAllDay } from 'proton-shared/lib/calendar/vcalConverter';
-import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
-
-import { getDateTimeState } from './state';
-import { FREQUENCY, NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
+import { getTzid } from 'proton-shared/lib/calendar/vcalConverter';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
     fromUTCDate,
     toUTCDate
 } from 'proton-shared/lib/date/timezone';
+import { getDateTimeState } from './state';
+import { FREQUENCY, NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 
 export const propertiesToModel = (component) => {
-    const { uid, dtstart, dtend, location, description, summary, rrule, attendee, ...rest } = component;
-
-    const isAllDay = dtstart && isIcalPropertyAllDay(dtstart);
+    const { uid, location, description, summary, rrule, attendee, ...rest } = component;
 
     return {
         uid: uid ? uid.value : undefined,
-        isAllDay,
         frequency: rrule && rrule.value ? rrule.value.freq : FREQUENCY.ONCE,
         title: summary ? summary.value : '',
         location: location ? location.value : '',
         description: description ? description.value : '',
-        // If start or end has a timezone, automatically toggle more options
-        hasMoreOptions: dtstart && dtend && !!(getTzid(dtstart) || getTzid(dtend) || isIcalRecurring(component)),
         attendees: attendee
             ? attendee.map(
                   ({ value, parameters: { cn = '', rsvp = 'FALSE', ['x-pm-permissions']: permissions } = {} }) => ({
@@ -72,8 +65,8 @@ export const propertiesToDateTimeModel = ({ dtstart, dtend }, isAllDay, tzid, ne
     const relativeEnd = toDateTimeModel(dtend, tzid);
 
     return {
-        start: getDateTimeState(relativeNewStart || relativeStart, tzStart),
-        end: getDateTimeState(relativeNewEnd || relativeEnd, tzEnd)
+        start: getDateTimeState(relativeNewStart || relativeStart, tzStart || tzid),
+        end: getDateTimeState(relativeNewEnd || relativeEnd, tzEnd || tzid)
     };
 };
 

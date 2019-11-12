@@ -1,18 +1,21 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { propertiesToModel, propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToModel';
+import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
 
 export const useReadEvent = (value) => {
     return useMemo(() => {
         const [veventComponent = {}, alarmMap = {}] = value || [];
         const model = propertiesToModel(veventComponent);
+        const isAllDay = isIcalAllDay(veventComponent);
         const notifications = Object.keys(alarmMap)
             .map((key) => {
-                return propertiesToNotificationModel(alarmMap[key], model.isAllDay);
+                return propertiesToNotificationModel(alarmMap[key], isAllDay);
             })
             .flat();
 
         return {
             ...model,
+            isAllDay,
             notifications
         };
     }, [value]);
