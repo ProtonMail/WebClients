@@ -1,4 +1,3 @@
-import { getTzid } from 'proton-shared/lib/calendar/vcalConverter';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -31,16 +30,11 @@ export const propertiesToModel = (component) => {
     };
 };
 
-const toDateTimeModel = ({ value, parameters: { type, tzid: specificTzid } = {} }, calendarTzid) => {
-    // If it's an all day event or it has a timezone, this time is already relative.
-    // Special case for date-times that are UTC but has a UTC timezone.
-    if (type === 'date' || !value.isUTC || specificTzid) {
-        return toUTCDate(value);
+const getTzid = ({ value, parameters: { type, tzid } = {} }) => {
+    if (type === 'date') {
+        return;
     }
-    // If it's UTC time, convert it into to the timezone of the calendar.
-    if (value.isUTC) {
-        return toUTCDate(convertUTCDateTimeToZone(value, calendarTzid));
-    }
+    return value.isUTC ? 'UTC' : tzid;
 };
 
 const getNewTime = (newTime, specificTzid, tzid) => {
@@ -55,14 +49,14 @@ const getNewTime = (newTime, specificTzid, tzid) => {
 };
 
 export const propertiesToDateTimeModel = ({ dtstart, dtend }, isAllDay, tzid, newStart, newEnd) => {
-    const tzStart = getTzid(dtstart);
-    const tzEnd = getTzid(dtend);
+    const tzStart = isAllDay ? undefined : getTzid(dtstart);
+    const tzEnd = isAllDay ? undefined : getTzid(dtend);
 
     const relativeNewStart = newStart ? getNewTime(newStart, tzStart, tzid) : undefined;
     const relativeNewEnd = newEnd ? getNewTime(newEnd, tzEnd, tzid) : undefined;
 
-    const relativeStart = toDateTimeModel(dtstart, tzid);
-    const relativeEnd = toDateTimeModel(dtend, tzid);
+    const relativeStart = toUTCDate(dtstart.value);
+    const relativeEnd = toUTCDate(dtend.value);
 
     return {
         start: getDateTimeState(relativeNewStart || relativeStart, tzStart || tzid),
