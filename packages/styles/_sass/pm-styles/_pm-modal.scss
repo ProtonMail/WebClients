@@ -126,8 +126,9 @@ $modal-smaller-width: 28em !default;
 
 .pm-modalClose {
   position: absolute;
+  @extend .flex;
   right: .5rem;
-  top: .2rem;
+  top: 1rem;
   background: transparent;
   border-radius: 1em;
   color: $pm-global-grey;
@@ -136,6 +137,9 @@ $modal-smaller-width: 28em !default;
   padding: 0;
   line-height: 1;
   cursor: pointer;
+}
+.pm-modalClose-icon {
+  fill: $pm-global-grey;
 }
 // not defined, left this in case of
 // .pm-modalClose:focus,
