@@ -39,6 +39,18 @@ describe('recurring', () => {
         ]);
     });
 
+    it('should get occurrences between a dst range', () => {
+        const result = getOccurencesBetween(component, Date.UTC(2019, 9, 26), Date.UTC(2019, 9, 29));
+
+        expect(
+            result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
+        ).toEqual([
+            '2019-10-26T00:30:00.000Z - 2019-10-26T01:30:00.000Z',
+            '2019-10-27T00:30:00.000Z - 2019-10-27T02:30:00.000Z',
+            '2019-10-28T01:30:00.000Z - 2019-10-28T02:30:00.000Z'
+        ]);
+    });
+
     it('should get cached occurrences between a range', () => {
         const cache = {};
         const result1 = getOccurencesBetween(component, Date.UTC(2019, 2, 1), Date.UTC(2019, 2, 3), cache);

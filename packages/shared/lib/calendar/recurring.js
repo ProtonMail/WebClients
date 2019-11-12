@@ -3,6 +3,7 @@ import { differenceInMinutes } from 'date-fns';
 import { getInternalDateTimeValue, internalValueToIcalValue } from './vcal';
 import { isIcalAllDay, propertyToUTCDate } from './vcalConverter';
 import { addDays, addMilliseconds, differenceInCalendarDays, MILLISECONDS_IN_MINUTE } from '../date-fns-utc';
+import { fromUTCDate, toUTCDate } from '../date/timezone';
 
 const YEAR_IN_MS = Date.UTC(1971, 0, 1);
 
@@ -18,18 +19,28 @@ const fillOccurrencesBetween = (start, end, iterator, eventDuration, internalDts
 
     // eslint-disable-next-line no-cond-assign
     while ((next = iterator.next())) {
+        const localStart = toUTCDate(getInternalDateTimeValue(next));
+        const localEnd = addMilliseconds(localStart, eventDuration);
+
         const utcStart = propertyToUTCDate({
             value: {
                 ...internalDtstart.value,
-                ...getInternalDateTimeValue(next),
-                isUTC: internalDtstart.value.isUTC
+                ...fromUTCDate(localStart)
             },
             parameters: internalDtstart.parameters
         });
 
-        const utcEnd = isAllDay ? addDays(utcStart, eventDuration) : addMilliseconds(utcStart, eventDuration);
+        const utcEnd = isAllDay
+            ? addDays(utcStart, eventDuration)
+            : propertyToUTCDate({
+                  value: {
+                      ...internalDtstart.value,
+                      ...fromUTCDate(localEnd)
+                  },
+                  parameters: internalDtstart.parameters
+              });
 
-        if (utcEnd > end) {
+        if (utcStart > end) {
             break;
         }
 
