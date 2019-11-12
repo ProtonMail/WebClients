@@ -10,7 +10,6 @@ import {
     useGetAddressKeys,
     useGetCalendarBootstrap,
     useGetCalendarKeys,
-    useGetCalendars,
     useLoading,
     useNotifications,
     useModals,
@@ -42,23 +41,23 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
 
     const [tmpTitle, setTmpTitle] = useState('');
 
-    const getCalendars = useGetCalendars();
     const getCalendarKeys = useGetCalendarKeys();
     const getAddresses = useGetAddresses();
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddressKeys = useGetAddressKeys();
 
-    const targetEventData = targetEvent && targetEvent.data;
-    const targetCalendar = targetEventData && targetEventData.Calendar;
-    //const calendarColor = (targetCalendar && targetCalendar.Color) || undefined;
-    const isCreateEvent = targetEvent.id === 'tmp' && !targetEventData;
-    const isMoveEvent = targetEvent.id === 'tmp' && targetEventData;
+    const targetEventData = (targetEvent && targetEvent.data) || {};
+    const { Calendar, Event } = targetEventData;
+
+    const isTmpEvent = targetEvent.id === 'tmp';
+    const isCreateEvent = isTmpEvent && !Event;
+    const isMoveEvent = isTmpEvent && !!Event;
 
     const [value, isLoading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value);
 
     const handleDelete = async () => {
-        if (!targetEventData) {
+        if (!Event) {
             return;
         }
         await new Promise((resolve, reject) => {
@@ -73,7 +72,6 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                 </ConfirmModal>
             );
         });
-        const { Event } = targetEventData;
         await api(deleteEvent(Event.CalendarID, Event.ID));
         await call();
         const i18n = getI18N('event');
@@ -82,7 +80,7 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
 
     const handleEdit = () => {
         onEditEvent({
-            Event: targetEventData ? targetEventData.Event : undefined,
+            Event: Event || undefined,
             ...(isCreateEvent || isMoveEvent
                 ? {
                       start: targetEvent.start,
@@ -93,25 +91,22 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                 ? {
                       title: tmpTitle
                   }
+                : undefined),
+            ...(isCreateEvent
+                ? {
+                      calendarID: Calendar.ID
+                  }
                 : undefined)
         });
     };
 
-    const getFirstCalendarID = async () => {
-        const Calendars = await getCalendars();
-        if (!Calendars.length) {
-            throw new Error('No calendars, should never happen');
-        }
-        return Calendars[0].ID;
-    };
-
     const getModel = async () => {
-        const actualCalendarID = targetEventData ? targetEventData.Event.CalendarID : await getFirstCalendarID();
+        const actualCalendarID = Event ? Event.CalendarID : Calendar.ID;
 
         const [CalendarBootstrap, Addresses, [veventComponent, personalMap]] = await Promise.all([
             getCalendarBootstrap(actualCalendarID),
             getAddresses(),
-            targetEventData ? value : []
+            Event ? value : []
         ]);
 
         const emptyModel = getEmptyModel({
@@ -225,8 +220,8 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
             </header>
             <div>
                 <PopoverEventContent
-                    targetCalendar={targetCalendar}
-                    targetEvent={targetEvent}
+                    Calendar={Calendar}
+                    event={targetEvent}
                     model={model}
                     formatTime={formatTime}
                     tmpTitle={tmpTitle}

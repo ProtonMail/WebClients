@@ -52,6 +52,8 @@ const DayGrid = ({
     dateRange: [start, end],
     dateRange,
     displayWeekNumbers = false,
+    isInteractionEnabled = false,
+    defaultEventData,
     tzid,
     components: { FullDayEvent, PopoverEvent, MorePopoverEvent, MoreFullDayEvent },
     events,
@@ -95,6 +97,7 @@ const DayGrid = ({
         setTemporaryEvent,
         setSelectedEventID,
         setMoreDateIdx,
+        defaultEventData,
         events: sortedEvents,
         eventsPerRows,
         rows
@@ -173,7 +176,7 @@ const DayGrid = ({
                     <div
                         className="flex flex-item-fluid flex-column calendar-daygrid-rows"
                         ref={rowsWrapperRef}
-                        onMouseDownCapture={onDayGridMouseDown}
+                        onMouseDownCapture={isInteractionEnabled ? onDayGridMouseDown : undefined}
                     >
                         {rows.map((days, rowIndex) => {
                             const { eventsInRow, eventsInRowStyles, eventsInRowSummary } = eventsPerRows[rowIndex];

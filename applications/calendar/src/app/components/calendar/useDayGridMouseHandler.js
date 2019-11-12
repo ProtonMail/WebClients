@@ -11,6 +11,7 @@ const useDayGridMouseHandler = ({
     setTemporaryEvent,
     setSelectedEventID,
     setMoreDateIdx,
+    defaultEventData,
     rows,
     eventsPerRows,
     events
@@ -54,14 +55,16 @@ const useDayGridMouseHandler = ({
                         id: 'tmp',
                         start: getNewTime(startTargetDate, 0),
                         end: getNewTime(endTargetDate, 0),
-                        isAllDay: true
+                        isAllDay: true,
+                        data: defaultEventData
                     };
                 } else {
                     result = {
                         id: 'tmp',
                         start: getNewTime(endTargetDate, 0),
                         end: getNewTime(startTargetDate, 0),
-                        isAllDay: true
+                        isAllDay: true,
+                        data: defaultEventData
                     };
                 }
 
@@ -87,7 +90,8 @@ const useDayGridMouseHandler = ({
                         id: 'tmp',
                         start: getNewTime(startTargetDate, 0),
                         end: getNewTime(startTargetDate, 0),
-                        isAllDay: true
+                        isAllDay: true,
+                        data: defaultEventData
                     };
                     setTemporaryEvent(result);
                     setSelectedEventID(result.id);

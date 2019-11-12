@@ -8,25 +8,25 @@ import { c } from 'ttag';
 import PopoverNotification from './PopoverNotification';
 import CalendarIcon from '../calendar/CalendarIcon';
 
-const PopoverEventContent = ({ targetCalendar = {}, targetEvent = {}, model, formatTime }) => {
-    const { Name: calendarName, Color } = targetCalendar;
+const PopoverEventContent = ({ Calendar = {}, event: { start, end } = {}, model, formatTime }) => {
+    const { Name: calendarName, Color } = Calendar;
 
     const dateString = useMemo(() => {
-        const dateStart = formatUTC(targetEvent.start, 'PPP', { locale: dateLocale });
-        const dateEnd = formatUTC(targetEvent.end, 'PPP', { locale: dateLocale });
+        const dateStart = formatUTC(start, 'PPP', { locale: dateLocale });
+        const dateEnd = formatUTC(end, 'PPP', { locale: dateLocale });
 
         if (dateStart === dateEnd) {
             return dateStart;
         }
 
         return `${dateStart} - ${dateEnd}`;
-    }, [targetEvent.start, targetEvent.end]);
+    }, [start, end]);
 
     const timeString = useMemo(() => {
-        const timeStart = formatTime(targetEvent.start);
-        const timeEnd = formatTime(targetEvent.end);
+        const timeStart = formatTime(start);
+        const timeEnd = formatTime(end);
         return `${timeStart} - ${timeEnd}`;
-    }, [targetEvent.start, targetEvent.end]);
+    }, [start, end]);
 
     return (
         <>
@@ -71,8 +71,8 @@ const PopoverEventContent = ({ targetCalendar = {}, targetEvent = {}, model, for
 };
 
 PopoverEventContent.propTypes = {
-    targetCalendar: PropTypes.object,
-    targetEvent: PropTypes.object,
+    Calendar: PropTypes.object,
+    event: PropTypes.object,
     model: PropTypes.object,
     formatTime: PropTypes.func
 };

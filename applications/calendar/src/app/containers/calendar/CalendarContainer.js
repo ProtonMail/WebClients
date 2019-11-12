@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef, useLayoutEffect } from 'react';
-import { useModals, useCalendars, useCalendarUserSettings } from 'react-components';
+import { useModals, useCalendars, useCalendarUserSettings, useCalendarBootstrap } from 'react-components';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -276,7 +276,7 @@ const CalendarContainer = ({ history, location }) => {
     }, []);
 
     const handleEventModal = useCallback(
-        ({ Event, start, end, isAllDay, type, title } = {}) => {
+        ({ Event, start, end, isAllDay, type, title, calendarID } = {}) => {
             if (!calendars || !calendars.length) {
                 return;
             }
@@ -289,6 +289,7 @@ const CalendarContainer = ({ history, location }) => {
                     type={type}
                     title={title}
                     calendars={calendars}
+                    calendarID={calendarID || calendars[0].ID}
                     displayWeekNumbers={displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
                     tzid={tzid}
@@ -298,7 +299,18 @@ const CalendarContainer = ({ history, location }) => {
         [calendars, tzid, weekStartsOn, displayWeekNumbers]
     );
 
-    const isLoading = loadingCalendars || loadingCalendarSettings || loadingEvents;
+    const defaultCalendar = calendars[0];
+    const [
+        { CalendarSettings: { DefaultEventDuration: defaultEventDuration = 30 } = {} } = {},
+        loadingCalendarBootstrap
+    ] = useCalendarBootstrap(defaultCalendar && defaultCalendar.ID);
+    const defaultEventData = useMemo(() => {
+        return {
+            Calendar: defaultCalendar
+        };
+    }, [defaultCalendar]);
+
+    const isLoading = loadingCalendarBootstrap || loadingCalendars || loadingCalendarSettings || loadingEvents;
 
     const formatDate = useCallback((utcDate) => {
         return format(utcDate, 'PP', { locale: dateLocale });
@@ -345,7 +357,10 @@ const CalendarContainer = ({ history, location }) => {
                             onClickDate={handleClickDateWeekView}
                             onEditEvent={handleEventModal}
                             components={components}
+                            isInteractionEnabled={!isLoading}
                             ref={timeGridViewRef}
+                            defaultEventDuration={defaultEventDuration}
+                            defaultEventData={defaultEventData}
                             week={week}
                             weekDaysLong={weekdaysLong}
                         />
@@ -362,6 +377,8 @@ const CalendarContainer = ({ history, location }) => {
                             events={calendarsEvents}
                             formatTime={formatEventTime}
                             formatDate={formatDate}
+                            defaultEventData={defaultEventData}
+                            isInteractionEnabled={!isLoading}
                             onClickDate={handleClickDateWeekView}
                             onEditEvent={handleEventModal}
                             components={components}

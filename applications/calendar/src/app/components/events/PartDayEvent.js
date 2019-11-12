@@ -5,29 +5,19 @@ import { c } from 'ttag';
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 import { bestColor } from '../../helpers/color';
 
-const getBackground = (id, isAllDay, isSelected) => {
-    if (isSelected) {
-        return 'rgba(255,0,255,0.1)';
-    }
-    if (id === 'tmp') {
-        return 'rgba(255,0,255,0.3)';
-    }
-    return '';
-};
-
 const PartDayEvent = ({
     style,
     formatTime,
-    event: { start, end, data, id, isAllDay },
+    event: { start, end, data: { Calendar } = {}, data: targetEventData, isAllDay },
     isSelected,
     isBeforeNow,
     eventRef
 }) => {
-    const [value, loading, error] = useReadCalendarEvent(data);
+    const [value, loading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value);
-    const calendarColor = (data && data.Calendar && data.Calendar.Color) || undefined;
+    const calendarColor = Calendar.Color;
     const eventStyle = useMemo(() => {
-        const background = calendarColor || getBackground(id, isAllDay, isSelected);
+        const background = calendarColor;
         return {
             ...style,
             background,

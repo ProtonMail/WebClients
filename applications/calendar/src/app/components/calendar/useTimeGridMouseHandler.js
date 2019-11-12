@@ -30,6 +30,8 @@ const useTimeGridMouseHandler = ({
     interval,
     setTemporaryEvent,
     setSelectedEventID,
+    defaultEventDuration,
+    defaultEventData,
     events,
     eventsPerDay,
     days
@@ -78,13 +80,15 @@ const useTimeGridMouseHandler = ({
                     result = {
                         id: 'tmp',
                         start: getNewTime(startDate, startTargetMinutes),
-                        end: getNewTime(endDate, endTargetMinutes + interval)
+                        end: getNewTime(endDate, endTargetMinutes + interval),
+                        data: defaultEventData
                     };
                 } else {
                     result = {
                         id: 'tmp',
                         start: getNewTime(endDate, endTargetMinutes),
-                        end: getNewTime(startDate, startTargetMinutes)
+                        end: getNewTime(startDate, startTargetMinutes),
+                        data: defaultEventData
                     };
                 }
 
@@ -111,7 +115,8 @@ const useTimeGridMouseHandler = ({
                     result = {
                         id: 'tmp',
                         start: getNewTime(startDate, startTargetMinutes),
-                        end: getNewTime(startDate, startTargetMinutes + 30)
+                        end: getNewTime(startDate, startTargetMinutes + defaultEventDuration),
+                        data: defaultEventData
                     };
                     setTemporaryEvent(result);
                     setSelectedEventID(result.id);

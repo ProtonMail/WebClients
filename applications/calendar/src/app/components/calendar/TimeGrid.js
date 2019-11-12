@@ -36,6 +36,9 @@ const TimeGrid = React.forwardRef(
             formatTime = defaultFormat,
             onClickDate = noop,
             onEditEvent = noop,
+            defaultEventDuration = 30,
+            defaultEventData,
+            isInteractionEnabled = false,
             weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         },
         ref
@@ -80,9 +83,11 @@ const TimeGrid = React.forwardRef(
         const [eventsPerDay, eventsLaidOut] = useTimeGridEventLayout(timeEvents, days, totalMinutes);
 
         const onDayGridMouseDown = useDayGridMouseHandler({
+            isInteractionEnabled,
             setTemporaryEvent,
             setSelectedEventID,
             setMoreDateIdx,
+            defaultEventData,
             events: dayEvents,
             eventsPerRows,
             rows: daysRows
@@ -92,6 +97,8 @@ const TimeGrid = React.forwardRef(
             totalDays: days.length,
             totalMinutes,
             interval: 30,
+            defaultEventDuration,
+            defaultEventData,
             setTemporaryEvent,
             setSelectedEventID,
             events: timeEvents,
@@ -206,7 +213,7 @@ const TimeGrid = React.forwardRef(
                                     className="calendar-time-fullday"
                                     style={{ height: actualRows * dayEventHeight + 'px' }}
                                     data-row="0"
-                                    onMouseDownCapture={onDayGridMouseDown}
+                                    onMouseDownCapture={isInteractionEnabled ? onDayGridMouseDown : undefined}
                                 >
                                     {eventsInRowStyles.map(({ idx, type, style }) => {
                                         if (type === 'more') {
@@ -266,7 +273,7 @@ const TimeGrid = React.forwardRef(
 
                         <div
                             className="flex flex-item-fluid relative calendar-grid-gridcells"
-                            onMouseDownCapture={onTimeGridMouseDown}
+                            onMouseDownCapture={isInteractionEnabled ? onTimeGridMouseDown : undefined}
                             ref={timeGridRef}
                         >
                             {days.map((day) => {
@@ -345,6 +352,8 @@ TimeGrid.propTypes = {
     onCreateEvent: PropTypes.func,
     onEditEvent: PropTypes.func,
     onClickDate: PropTypes.func,
+    isInteractionEnabled: PropTypes.bool,
+    defaultEventDuration: PropTypes.number,
     events: PropTypes.array,
     dateRange: PropTypes.array,
     now: PropTypes.instanceOf(Date),

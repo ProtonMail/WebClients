@@ -9,23 +9,23 @@ const FullDayEvent = ({
     style,
     formatTime,
     className = 'calendar-dayeventcell absolute',
-    event: { start, data, isAllDay },
-    event,
+    event: { start, data: { Calendar, Event } = {}, data: targetEventData, isAllDay },
+    event: targetEvent,
     isSelected,
     isBeforeNow,
     eventRef,
     onClick
 }) => {
-    const [value, loading, error] = useReadCalendarEvent(data);
+    const [value, loading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value);
 
-    const calendarColor = (data && data.Calendar && data.Calendar.Color) || undefined;
+    const calendarColor = Calendar.Color;
 
     const eventStyle = useMemo(() => {
         if (!isAllDay) {
             return {};
         }
-        const background = calendarColor || 'rgba(255,0,255,0.3)';
+        const background = calendarColor;
         return {
             background,
             color: bestColor(background)
@@ -36,7 +36,8 @@ const FullDayEvent = ({
         return formatTime(start);
     }, [start]);
 
-    const isCreateEvent = event.id === 'tmp' && !event.data;
+    const isTmpEvent = targetEvent.id === 'tmp';
+    const isCreateEvent = isTmpEvent && !Event;
 
     const content = (() => {
         if (error) {

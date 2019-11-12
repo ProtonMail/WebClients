@@ -34,6 +34,7 @@ const CreateEventModal = ({
     displayWeekNumbers,
     weekStartsOn,
     calendars,
+    calendarID,
     tzid,
     type = 'event',
     title,
@@ -82,7 +83,7 @@ const CreateEventModal = ({
 
     useEffect(() => {
         const initalize = async () => {
-            const actualCalendarID = Event ? Event.CalendarID : calendars[0].ID;
+            const actualCalendarID = Event ? Event.CalendarID : calendarID;
 
             const [CalendarBootstrap, Addresses, [veventComponent, personalMap]] = await Promise.all([
                 getCalendarBootstrap(actualCalendarID),
