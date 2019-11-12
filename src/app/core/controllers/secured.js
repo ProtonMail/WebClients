@@ -7,7 +7,6 @@ function SecuredController(
     addressWithoutKeysManager,
     AppModel,
     authentication,
-    blackFridayHandler,
     cacheCounters,
     contactCache,
     desktopNotifications,
@@ -58,8 +57,6 @@ function SecuredController(
     addressWithoutKeysManager.manage().catch(_.noop);
 
     prepareDraft.init();
-
-    blackFridayHandler();
 
     versionInfoModel();
 

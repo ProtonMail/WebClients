@@ -462,17 +462,19 @@ export const VERSION_INFO = {
 
 export const SIGNUP_PLANS = ['plus', 'visionary', 'plus_vpnplus'];
 
-const BLACK_FRIDAY_YEAR = 2018;
+const BLACK_FRIDAY_YEAR = 2019;
 
 export const BUNDLE_COUPON_CODE = 'BUNDLE';
 
 export const BLACK_FRIDAY = {
+    PLANS: ['plus', 'plus_vpnplus'],
     YEAR: BLACK_FRIDAY_YEAR,
-    COUPON_CODE: 'TWO4ONE2018',
+    COUPON_CODE: 'BF2019',
     CYCLE: CYCLE.TWO_YEARS,
+    CYCLES: [CYCLE.TWO_YEARS, CYCLE.YEARLY],
     BETWEEN: {
-        START: `${BLACK_FRIDAY_YEAR}-11-23`,
-        END: `${BLACK_FRIDAY_YEAR}-11-26`
+        START: `${BLACK_FRIDAY_YEAR}-11-01`,
+        END: `${BLACK_FRIDAY_YEAR}-12-8`
     },
     INTERVAL: 10 * 60 * 1000
 };
