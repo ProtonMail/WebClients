@@ -64,7 +64,7 @@ export const isIcalPropertyAllDay = ({ parameters }) => {
  * Returns a date object relative to UTC time.
  * @param {Object} value
  * @param {Object} parameters
- * @return {{date: *, tzid: *}}
+ * @return {Date}
  */
 export const propertyToUTCDate = ({ value, parameters = {} }) => {
     if (value.isUTC || parameters.type === 'date') {

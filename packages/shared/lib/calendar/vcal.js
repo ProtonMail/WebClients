@@ -59,7 +59,7 @@ const getInternalDateValue = (value) => {
     };
 };
 
-const getInternalDateTimeValue = (value) => {
+export const getInternalDateTimeValue = (value) => {
     return {
         ...getInternalDateValue(value),
         hours: value.hour,
