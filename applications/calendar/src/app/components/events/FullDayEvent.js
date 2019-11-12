@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { classnames } from 'react-components';
+import { Icon, classnames } from 'react-components';
 import { c } from 'ttag';
 
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
@@ -48,6 +48,7 @@ const FullDayEvent = ({
         return (
             <div className="flex flex-nowrap bg-inherit">
                 <span className={classnames(['ellipsis flex-item-fluid', loading && 'calendar-skeleton-loading'])}>
+                    {!isAllDay ? <Icon className="mr0-25" size={12} name="circle" color={calendarColor} /> : null}
                     {loading ? '' : model.title}
                 </span>
                 {isAllDay && isAllPartDay ? <span className="">{timeString}</span> : null}
