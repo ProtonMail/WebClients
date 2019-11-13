@@ -99,9 +99,17 @@ function searchForm(
                     }
 
                     if (type === 'state') {
-                        const action = data.isOpened ? 'add' : 'remove';
                         const actionHot = data.isOpened ? 'pause' : 'unpause';
-                        el[0].classList[action](CLASS_OPEN);
+
+                        if (data.isOpened) {
+                            el[0].classList.add(CLASS_OPEN);
+                        } else {
+                            // defer so on Submit we're able to deal with the advanced search
+                            _.defer(() => {
+                                el[0].classList.remove(CLASS_OPEN);
+                            }, 300);
+                        }
+
                         data.isOpened && scope.$applyAsync(onOpen);
                         hotkeys[actionHot]();
                     }
@@ -132,18 +140,23 @@ function searchForm(
                 };
 
                 const onSubmit = () => {
-                    scope.$applyAsync(() => {
-                        const isOpen = el[0].classList.contains(CLASS_OPEN);
-                        const query = scope.model.query;
-                        const data = searchValue.extractParameters(query, folders);
-                        const model = searchModel.build(scope.model);
-                        const state = getState(query || isOpen);
-                        hotkeys.unpause();
-                        if (!isOpen) {
-                            return go(state, searchModel.build(data));
-                        }
-                        return go(state, model);
-                    });
+                    const isOpen = el[0].classList.contains(CLASS_OPEN);
+                    const query = isOpen ? scope.model.keyword : scope.model.query;
+                    const data = searchValue.extractParameters(query, folders);
+                    const model = searchModel.build(scope.model);
+                    const state = getState(query || isOpen);
+                    hotkeys.unpause();
+
+                    if (!isOpen) {
+                        return go(
+                            state,
+                            searchModel.build({
+                                ...data,
+                                keyword: data.keyword || data.query
+                            })
+                        );
+                    }
+                    return go(state, model);
                 };
 
                 $input.addEventListener('focus', hotkeys.pause);
