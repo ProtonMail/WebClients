@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useCalendars, useModals, useUser } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -15,6 +15,7 @@ const CalendarSetupContainer = ({ children }) => {
     const { createModal } = useModals();
     const [calendars] = useCalendars();
     const [{ isFree }] = useUser();
+    const timeGridViewRef = useRef();
 
     useEffect(() => {
         if (isFree) {
@@ -48,7 +49,7 @@ const CalendarSetupContainer = ({ children }) => {
             setTzid={noop}
             setCustom={noop}
         >
-            <TimeGrid now={now} date={now} dateRange={dateRange} components={{}} />
+            <TimeGrid now={now} date={now} dateRange={dateRange} components={{}} ref={timeGridViewRef} />
         </CalendarContainerView>
     );
 };
