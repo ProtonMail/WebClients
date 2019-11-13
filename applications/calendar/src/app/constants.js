@@ -62,6 +62,7 @@ export const NOTIFICATION_UNITS = {
 
 export const FREQUENCY = {
     ONCE: 'ONCE',
+    DAILY: 'DAILY',
     WEEKLY: 'WEEKLY',
     MONTHLY: 'MONTHLY',
     YEARLY: 'YEARLY'
