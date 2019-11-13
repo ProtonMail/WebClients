@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useToggle, Loader } from 'react-components';
+import { useToggle, Loader, classnames } from 'react-components';
 
 import { useComputeMessage } from './hooks/useComputeMessage';
 import { hasAttachments } from './logic/message';
@@ -40,28 +40,33 @@ const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
         prepareMessage();
     };
 
-    return expanded ? (
-        <MessageHeaderExpanded
-            message={message}
-            messageLoaded={loaded}
-            onLoadRemoteImages={handleLoadRemoteImages}
-            onLoadEmbeddedImages={handleLoadEmbeddedImages}
-            labels={labels}
-            mailSettings={mailSettings}
-            showDetails={showDetails}
-            toggleDetails={toggleDetails}
-        >
-            {loaded ? (
+    return (
+        <article className={classnames(['message-container mb2', expanded && 'is-opened'])}>
+            {expanded ? (
                 <>
-                    <MessageBody content={message.content} />
-                    {hasAttachments(message.data) ? <MessageFooter message={message} /> : null}
+                    <MessageHeaderExpanded
+                        message={message}
+                        messageLoaded={loaded}
+                        onLoadRemoteImages={handleLoadRemoteImages}
+                        onLoadEmbeddedImages={handleLoadEmbeddedImages}
+                        labels={labels}
+                        mailSettings={mailSettings}
+                        showDetails={showDetails}
+                        toggleDetails={toggleDetails}
+                    />
+                    {loaded ? (
+                        <>
+                            <MessageBody message={message} />
+                            {hasAttachments(message.data) ? <MessageFooter message={message} /> : null}
+                        </>
+                    ) : (
+                        <Loader />
+                    )}
                 </>
             ) : (
-                <Loader />
+                <MessageHeaderCollapsed message={message} onExpand={handleExpand} />
             )}
-        </MessageHeaderExpanded>
-    ) : (
-        <MessageHeaderCollapsed message={message} onExpand={handleExpand} />
+        </article>
     );
 };
 

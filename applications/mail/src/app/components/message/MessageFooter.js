@@ -15,7 +15,7 @@ const MessageFooter = ({ message }) => {
     const numPureAttachments = numAttachments - numEmbedded;
 
     return (
-        <div className="p1">
+        <div className="message-attachments">
             <header className="listAttachments-header">
                 <span className="title">
                     <strong className="listAttachments-title-size">{humanAttachmentsSize}</strong>

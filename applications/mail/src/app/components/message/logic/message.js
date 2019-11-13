@@ -21,7 +21,7 @@ const {
     FLAG_PUBLIC_KEY
 } = MESSAGE_FLAGS;
 
-const { MIME } = MIME_TYPES;
+const { PLAINTEXT, MIME } = MIME_TYPES;
 
 /**
  * Check if a message has a mime type
@@ -182,3 +182,5 @@ export const getListUnsubscribePost = (message) => {
 export const getAttachments = (message) => message.Attachments || [];
 export const hasAttachments = (message) => getAttachments(message).length > 0;
 export const attachmentsSize = (message) => getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
+
+export const isPlainText = (message) => message.MIMEType === PLAINTEXT;

@@ -6,6 +6,7 @@ import ItemStar from '../list/ItemStar';
 import ItemDate from '../list/ItemDate';
 import { ELEMENT_TYPES } from '../../constants';
 import MessageLock from './MessageLock';
+import { isSent } from './logic/message';
 
 const MessageHeaderCollapsed = ({ message, onExpand }) => {
     const { Name, Address } = message.data.Sender;
@@ -19,9 +20,11 @@ const MessageHeaderCollapsed = ({ message, onExpand }) => {
         onExpand();
     };
 
+    const inOutClass = isSent(message.data) ? 'is-outbound' : 'is-inbound';
+
     return (
-        <article
-            className="bg-global-light bordered-container pl1 pr1 pt0-5 pb0-5 mb1 flex flex-nowrap flex-items-center flex-spacebetween"
+        <div
+            className={`message-header flex flex-nowrap flex-items-center flex-spacebetween ${inOutClass}`}
             onClick={handleClick}
         >
             <div>
@@ -36,7 +39,7 @@ const MessageHeaderCollapsed = ({ message, onExpand }) => {
                 <ItemDate className="mr1" element={message.data} type={ELEMENT_TYPES.MESSAGE} />
                 <ItemStar element={message.data} type={ELEMENT_TYPES.MESSAGE} />
             </div>
-        </article>
+        </div>
     );
 };
 

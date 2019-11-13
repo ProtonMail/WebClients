@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isPlainText } from './logic/message';
+import { classnames } from 'react-components';
 
-const MessageBody = ({ content }) => {
-    return <div className="p1 bodyDecrypted" dangerouslySetInnerHTML={{ __html: content }} />;
+const MessageBody = ({ message: { content, data: message } }) => {
+    const plain = isPlainText(message);
+    return (
+        <div
+            className={classnames(['message-content bodyDecrypted', plain && 'plain'])}
+            dangerouslySetInnerHTML={{ __html: content }}
+        />
+    );
 };
 
 MessageBody.propTypes = {
-    content: PropTypes.string.isRequired
+    message: PropTypes.object.isRequired
 };
 
 export default MessageBody;
