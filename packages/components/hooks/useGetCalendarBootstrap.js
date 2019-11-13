@@ -10,15 +10,20 @@ export const KEY = 'CALENDAR_BOOTSTRAP';
 export const useGetCalendarBootstrap = () => {
     const api = useApi();
     const cache = useCache();
-    const miss = useCallback((calendarID) => api(getFullCalendar(calendarID)), [api]);
+    const miss = useCallback(
+        (calendarID) => {
+            if (!calendarID) {
+                return Promise.resolve();
+            }
+            return api(getFullCalendar(calendarID));
+        },
+        [api]
+    );
 
     return useCallback(
         (key) => {
             if (!cache.has(KEY)) {
                 cache.set(KEY, createCache());
-            }
-            if (!key) {
-                return Promise.resolve();
             }
             const subCache = cache.get(KEY);
             return getPromiseValue(subCache, key, miss);
