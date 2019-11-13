@@ -97,7 +97,7 @@ function filterModal(
                 value: 'archive'
             },
             {
-                label: gettextCatalog.getString('Move to mailbox', null, 'Filter modal action'),
+                label: gettextCatalog.getString('Move to inbox', null, 'Filter modal action'),
                 value: 'inbox'
             },
             ...folders

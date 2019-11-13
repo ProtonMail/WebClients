@@ -32,7 +32,7 @@ function manageLabels(
                 if (isContactGroup) {
                     if (total > 1) {
                         return gettextCatalog.getString(
-                            'Are you sure you want to delete these contact groups ? Contacts in the group aren’t deleted if the contact group is deleted.',
+                            'Are you sure you want to delete these contact groups? Contacts in the group aren’t deleted if the contact group is deleted.',
                             null,
                             'Info'
                         );
