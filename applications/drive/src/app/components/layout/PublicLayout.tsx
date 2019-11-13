@@ -1,23 +1,17 @@
 import React, { useRef } from 'react';
-import { Icons, MainAreaContext } from 'react-components';
+import { MainAreaContext } from 'react-components';
 
 interface Props {
     children: React.ReactNode;
 }
 
-// TODO: fix ref
 const PublicLayout = ({ children }: Props) => {
-    const mainAreaRef = useRef<HTMLElement>();
+    const mainAreaRef = useRef<HTMLElement>(null);
 
     return (
-        <>
-            <div className="flex flex-nowrap">
-                <main ref={mainAreaRef} className="main flex-item-fluid main-area">
-                    <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
-                </main>
-            </div>
-            <Icons />
-        </>
+        <main ref={mainAreaRef} className="main-full flex flex-column flex-nowrap reset4print">
+            <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
+        </main>
     );
 };
 

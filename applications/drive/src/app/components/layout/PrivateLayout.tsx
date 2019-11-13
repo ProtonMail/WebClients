@@ -1,22 +1,22 @@
 import React, { useRef, useEffect } from 'react';
 import { c } from 'ttag';
-import { Sidebar, Icons, MainAreaContext, useToggle } from 'react-components';
-import { withRouter, RouteComponentProps, match } from 'react-router-dom';
+import { Sidebar, MainAreaContext, useToggle, AppsSidebar } from 'react-components';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import Header from './PrivateHeader';
 
 const getSidebar = () => {
     return [
         {
-            text: c('Link').t`Home`,
-            link: '/',
-            isActive: (m: match) => !!m && m.isExact
-        },
-        {
-            text: c('Link').t`About`,
-            link: '/about'
+            text: c('Link').t`Drive`,
+            link: '/drive'
         }
     ];
 };
+
+const getMobileLinks = () => [
+    { to: '/inbox', icon: 'protonmail', external: true, current: false },
+    { to: '/contacts', icon: 'protoncontacts', external: false, current: true }
+];
 
 interface Props extends RouteComponentProps {
     children: React.ReactNode;
@@ -34,16 +34,24 @@ const PrivateLayout = ({ children, location }: Props) => {
     }, [location.pathname]);
 
     return (
-        <>
-            <Header expanded={isHeaderExpanded} onToggleExpand={toggleHeaderExpanded} />
-            <div className="flex flex-nowrap">
-                <Sidebar expanded={isHeaderExpanded} onToggleExpand={toggleHeaderExpanded} list={getSidebar()} />
-                <main ref={mainAreaRef} className="main flex-item-fluid main-area main-area-content">
-                    <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
-                </main>
+        <div className="flex flex-nowrap no-scroll">
+            <AppsSidebar />
+            <div className="content flex-item-fluid reset4print">
+                <Header expanded={isHeaderExpanded} onToggleExpand={toggleHeaderExpanded} title={c('Title').t`Drive`} />
+                <div className="flex flex-nowrap">
+                    <Sidebar
+                        url="/drive"
+                        expanded={isHeaderExpanded}
+                        onToggleExpand={toggleHeaderExpanded}
+                        list={getSidebar()}
+                        mobileLinks={getMobileLinks()}
+                    />
+                    <main ref={mainAreaRef} className="main flex-item-fluid main-area main-area-content">
+                        <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
+                    </main>
+                </div>
             </div>
-            <Icons />
-        </>
+        </div>
     );
 };
 

@@ -1,13 +1,10 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { ErrorBoundary, StandardPrivateApp } from 'react-components';
-import { UserModel, MailSettingsModel, UserSettingsModel } from 'proton-shared/lib/models';
+import { UserModel } from 'proton-shared/lib/models';
 
-import Home from './containers/Home';
-import About from './containers/About';
+import Drive from './containers/Drive';
 import PrivateLayout from './components/layout/PrivateLayout';
-
-const NotFoundContainer = () => <h1>Not found</h1>;
 
 interface Props {
     onLogout: () => void;
@@ -15,19 +12,14 @@ interface Props {
 
 const PrivateApp = ({ onLogout }: Props) => {
     return (
-        <StandardPrivateApp
-            onLogout={onLogout}
-            preloadModels={[UserModel, UserSettingsModel]}
-            eventModels={[UserModel, MailSettingsModel]}
-        >
+        <StandardPrivateApp onLogout={onLogout} preloadModels={[UserModel]} eventModels={[UserModel]}>
             <PrivateLayout>
                 <Route
                     render={({ location }) => (
                         <ErrorBoundary key={location.key}>
                             <Switch>
-                                <Route path="/" exact component={Home} />
-                                <Route path="/about" exact component={About} />
-                                <Route component={NotFoundContainer} />
+                                <Route path="/drive" exact component={Drive} />
+                                <Redirect to="/drive" />
                             </Switch>
                         </ErrorBoundary>
                     )}

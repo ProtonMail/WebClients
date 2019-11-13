@@ -1,24 +1,23 @@
 import React from 'react';
-import { UserDropdown, Hamburger } from 'react-components';
+import { MainLogo, TopNavbar, Hamburger, useActiveBreakpoint, SupportDropdown } from 'react-components';
 
 interface Props {
     expanded: boolean;
     onToggleExpand: () => void;
+    title: string;
 }
 
-// TODO: add logo to MainLogo in react-components, and remove the placeholder
-const Header = ({ expanded, onToggleExpand }: Props) => {
-    return (
-        <header className="header flex flex-nowrap flex-spacebetween reset4print">
-            <Hamburger expanded={expanded} onToggle={onToggleExpand} />
-            {/* <MainLogo url="/" className="nomobile" /> */}
-            <img
-                className="nomobile"
-                src="https://mail.protonmail.com/assets/img/logo.png"
-                alt="Placeholder app logo"
-            />
+const Header = ({ expanded, onToggleExpand, title }: Props) => {
+    const { isNarrow } = useActiveBreakpoint();
 
-            <UserDropdown />
+    return (
+        <header className="header flex flex-items-center flex-nowrap reset4print">
+            <MainLogo url="/drive" className="nomobile" />
+            <Hamburger expanded={expanded} onToggle={onToggleExpand} />
+            {title && isNarrow ? <span className="h3 mb0 ellipsis lh-standard">{title}</span> : null}
+            <TopNavbar>
+                <SupportDropdown />
+            </TopNavbar>
         </header>
     );
 };

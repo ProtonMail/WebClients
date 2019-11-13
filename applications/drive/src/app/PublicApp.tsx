@@ -1,8 +1,6 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Loader, ModalsChildren, LoginForm } from 'react-components';
-import { loadOpenPGP } from 'proton-shared/lib/openpgp';
-
+import { LoginForm, StandardPublicApp } from 'react-components';
 import PublicLayout from './components/layout/PublicLayout';
 
 interface Props {
@@ -10,28 +8,8 @@ interface Props {
 }
 
 const PublicApp = ({ onLogin }: Props) => {
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
-
-    useLayoutEffect(() => {
-        (async () => {
-            await Promise.all([loadOpenPGP()]);
-        })()
-            .then(() => setLoading(false))
-            .catch(() => setError(true));
-    }, []);
-
-    if (error) {
-        return <>OpenPGP failed to load. Handle better.</>;
-    }
-
-    if (loading) {
-        return <Loader />;
-    }
-
     return (
-        <>
-            <ModalsChildren />
+        <StandardPublicApp>
             <PublicLayout>
                 <Router>
                     <Switch>
@@ -39,7 +17,7 @@ const PublicApp = ({ onLogin }: Props) => {
                     </Switch>
                 </Router>
             </PublicLayout>
-        </>
+        </StandardPublicApp>
     );
 };
 
