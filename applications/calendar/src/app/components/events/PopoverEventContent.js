@@ -4,9 +4,25 @@ import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { Icon } from 'react-components';
 import { c } from 'ttag';
+import { FREQUENCY } from '../../constants';
 
 import PopoverNotification from './PopoverNotification';
 import CalendarIcon from '../calendar/CalendarIcon';
+
+const getFrequencyString = (frequency, startDay) => {
+    if (frequency === FREQUENCY.DAILY) {
+        return c('Info').t`Daily`;
+    }
+    if (frequency === FREQUENCY.WEEKLY) {
+        return c('Info').t`Weekly on ${startDay}`;
+    }
+    if (frequency === FREQUENCY.MONTHLY) {
+        return c('Info').t`Monthly on ${startDay}`;
+    }
+    if (frequency === FREQUENCY.YEARLY) {
+        return c('Info').t`Yearly on ${startDay}`;
+    }
+};
 
 const PopoverEventContent = ({ Calendar = {}, event: { start, end } = {}, model, formatTime }) => {
     const { Name: calendarName, Color } = Calendar;
@@ -22,11 +38,19 @@ const PopoverEventContent = ({ Calendar = {}, event: { start, end } = {}, model,
         return `${dateStart} - ${dateEnd}`;
     }, [start, end]);
 
+    const dayString = useMemo(() => {
+        return formatUTC(start, 'cccc', { locale: dateLocale });
+    }, [start]);
+
     const timeString = useMemo(() => {
         const timeStart = formatTime(start);
         const timeEnd = formatTime(end);
         return `${timeStart} - ${timeEnd}`;
     }, [start, end]);
+
+    const frequencyString = useMemo(() => {
+        return getFrequencyString(model.frequency, dayString);
+    }, [model.frequency, dayString]);
 
     return (
         <>
@@ -35,7 +59,12 @@ const PopoverEventContent = ({ Calendar = {}, event: { start, end } = {}, model,
                 <div className="flex flex-column">
                     {model.isAllDay ? null : <span>{timeString}</span>}
                     <span>{dateString}</span>
-                    {model.frequency ? <span></span> : null}
+                    {frequencyString ? (
+                        <span>
+                            <Icon name="reload" size={12} />
+                            {frequencyString}
+                        </span>
+                    ) : null}
                 </div>
             </div>
             {model.location ? (
