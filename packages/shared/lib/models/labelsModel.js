@@ -12,7 +12,7 @@ export const LabelsModel = {
     update: (model, events) => updateCollection({ model, events, item: ({ Label }) => Label })
 };
 
-const defaultMap = (label) => ({ key: label.Name, value: label });
+const defaultMap = (label) => ({ key: label.Path, value: label });
 
 export function factory(list = [], { formatMapLabel = defaultMap, formatMapFolder = defaultMap } = {}) {
     const { folders, labels, mapLabels, mapFolders } = list.reduce(
