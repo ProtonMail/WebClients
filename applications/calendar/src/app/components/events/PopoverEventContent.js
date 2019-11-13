@@ -80,15 +80,15 @@ const PopoverEventContent = ({ Calendar = {}, event: { start, end } = {}, model,
                 </div>
             ) : null}
             {model.description ? (
-                <div className="flex flex-items-center flex-nowrap mb0-5">
-                    <Icon title={c('Title').t`Description`} name="note" className="flex-item-noshrink mr1" />
+                <div className="flex flex-nowrap mb0-5">
+                    <Icon title={c('Title').t`Description`} name="note" className="flex-item-noshrink mr1 mt0-25" />
                     <p className="break mt0 mb0">{model.description}</p>
                 </div>
             ) : null}
             {model.notifications && Array.isArray(model.notifications) && model.notifications.length ? (
-                <div className="flex flex-items-center flex-nowrap mb0-5">
-                    <Icon name="notifications-enabled" className="flex-item-noshrink mr1" />
-                    <div>
+                <div className="flex flex-nowrap mb0-5">
+                    <Icon name="notifications-enabled" className="flex-item-noshrink mr1 mt0-25" />
+                    <div className="flex flex-column">
                         {model.notifications.map((notification, i) => {
                             return <PopoverNotification key={i} notification={notification} formatTime={formatTime} />;
                         })}
