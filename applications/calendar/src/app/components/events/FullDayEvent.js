@@ -47,9 +47,16 @@ const FullDayEvent = ({
 
         return (
             <div className="flex flex-nowrap bg-inherit">
-                <span className={classnames(['ellipsis flex-item-fluid', loading && 'calendar-skeleton-loading'])}>
-                    {!isAllDay ? <Icon className="mr0-25" size={12} name="circle" color={calendarColor} /> : null}
-                    {loading ? '' : model.title}
+                <span
+                    className={classnames([
+                        'flex-item-fluid flex flex-nowrap flex-items-center',
+                        loading && 'calendar-skeleton-loading'
+                    ])}
+                >
+                    {!isAllDay ? (
+                        <Icon className="mr0-25 flex-item-noshrink" size={12} name="circle" color={calendarColor} />
+                    ) : null}
+                    {loading ? '' : <span className="flex-item-fluid ellipsis">{model.title}</span>}
                 </span>
                 {isAllDay && isAllPartDay ? <span className="">{timeString}</span> : null}
             </div>
