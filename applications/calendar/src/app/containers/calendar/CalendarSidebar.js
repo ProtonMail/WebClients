@@ -43,7 +43,9 @@ const CalendarSidebar = ({
                     <span className="flex flex-nowrap flex-items-center">
                         <Checkbox
                             className="mr0-25 fill-currentColor"
+                            color="white"
                             backgroundColor={Color}
+                            borderColor={Color}
                             checked={!!Display}
                             disabled={loadingAction}
                             onChange={({ target: { checked } }) => withLoadingAction(handleVisibility(ID, checked))}
