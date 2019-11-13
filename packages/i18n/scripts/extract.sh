@@ -22,7 +22,6 @@ function main {
     done;
 
     wait;
-        sed -i '' '/QA_BRANCHES=/d' .env;
 
     # ignore pmcrypto as it contains mailparser :/
     npx ttag extract $(find ./i18n-js -type f -name '*.js' -not -path "*/pmcrypto/*" -not -path "*/core-js/*") -o "$1";
