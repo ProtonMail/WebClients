@@ -14,7 +14,7 @@ function LabelActions({ selection = [], labels = [], onChange = noop }) {
         multiple: true,
         initialSelectedItems: selection,
         onChange(selection) {
-            onChange(selection.map(({ Name }) => Name));
+            onChange(selection.map(({ Path }) => Path));
         }
     });
 

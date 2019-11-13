@@ -83,7 +83,7 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
 
         if (mode === 'moveTo') {
             const MAP = labelModel.getLabelsMap();
-            const key = Actions.FileInto.find((name) => !MAP[name]);
+            const key = Actions.FileInto.find((path) => !MAP[path]);
             if (key) {
                 return key;
             }
@@ -93,7 +93,7 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
     const getSelectedLabels = () => {
         const MAP = labelModel.getLabelsMap();
         const { Labels = [], FileInto } = Actions;
-        const toLabel = (name) => MAP[name];
+        const toLabel = (path) => MAP[path];
         const list = FileInto.filter(toLabel);
         return [...new Set(Labels.concat(list))].map(toLabel);
     };
