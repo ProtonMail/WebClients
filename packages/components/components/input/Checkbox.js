@@ -13,6 +13,7 @@ const Checkbox = ({
     indeterminate = false,
     color,
     backgroundColor,
+    borderColor,
     children,
     ...rest
 }) => {
@@ -33,7 +34,10 @@ const Checkbox = ({
                 checked={checked}
                 {...rest}
             />
-            <span className="pm-checkbox-fakecheck" style={{ background: backgroundColor, color }}>
+            <span
+                className="pm-checkbox-fakecheck"
+                style={{ borderColor: borderColor, background: backgroundColor, color }}
+            >
                 <Icon className={classnames(['pm-checkbox-fakecheck-img', color && 'fill-currentColor'])} name="on" />
             </span>
             {children}
@@ -45,6 +49,7 @@ Checkbox.propTypes = {
     loading: PropTypes.bool,
     disabled: PropTypes.bool,
     backgroundColor: PropTypes.string,
+    borderColor: PropTypes.string,
     color: PropTypes.string,
     id: PropTypes.string,
     className: PropTypes.string,
