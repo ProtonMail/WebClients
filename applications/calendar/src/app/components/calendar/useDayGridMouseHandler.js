@@ -107,7 +107,7 @@ const useDayGridMouseHandler = ({
             const initialIdx = oldIdx;
             let result;
 
-            const { id, start, end, data, targetId } = event;
+            const { id, start, end, data, targetId, isAllDay, isAllPartDay } = event;
 
             const handleMouseMove = (e) => {
                 e.preventDefault();
@@ -132,7 +132,8 @@ const useDayGridMouseHandler = ({
                     start: getDiffTime(start, differenceInDays, 0),
                     end: getDiffTime(end, differenceInDays, 0),
                     data,
-                    isAllDay: true,
+                    isAllDay,
+                    isAllPartDay,
                     // Temporary events already have a target id
                     targetId: id === 'tmp' ? targetId : id
                 };
