@@ -9,6 +9,7 @@ import ToolbarDropdown from './ToolbarDropdown';
 
 const LayoutDropdown = ({ mailSettings = {} }) => {
     const { ViewLayout = VIEW_LAYOUT.COLUMN } = mailSettings;
+
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();

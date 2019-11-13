@@ -39,7 +39,7 @@ const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => {
                     title={c('Action').t`Move to trash`}
                     onClick={() => withLoading(handleMove(TRASH))}
                 >
-                    <Icon className="toolbar-icon" name="trash" />
+                    <Icon className="toolbar-icon mauto" name="trash" />
                 </ToolbarButton>
             ) : null}
             {displayInbox ? (
@@ -48,7 +48,7 @@ const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => {
                     title={c('Action').t`Move to inbox`}
                     onClick={() => withLoading(handleMove(INBOX))}
                 >
-                    <Icon className="toolbar-icon" name="inbox" />
+                    <Icon className="toolbar-icon mauto" name="inbox" />
                 </ToolbarButton>
             ) : null}
             {displayArchive ? (
@@ -57,7 +57,7 @@ const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => {
                     title={c('Action').t`Move to archive`}
                     onClick={() => withLoading(handleMove(ARCHIVE))}
                 >
-                    <Icon className="toolbar-icon" name="archive" />
+                    <Icon className="toolbar-icon mauto" name="archive" />
                 </ToolbarButton>
             ) : null}
             {displaySpam ? (
@@ -66,7 +66,7 @@ const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => {
                     title={c('Action').t`Move to spam`}
                     onClick={() => withLoading(handleMove(SPAM))}
                 >
-                    <Icon className="toolbar-icon" name="spam" />
+                    <Icon className="toolbar-icon mauto" name="spam" />
                 </ToolbarButton>
             ) : null}
         </>

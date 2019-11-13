@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { useMailSettings, Loader } from 'react-components';
+import { useMailSettings, Loader, classnames } from 'react-components';
 
 import Toolbar from '../components/toolbar/Toolbar';
 import List from '../components/list/List';
@@ -8,6 +8,9 @@ import ConversationView from '../components/conversation/ConversationView';
 import PlaceholderView from '../components/view/PlaceholderView';
 import elements from './elements';
 import { LABEL_IDS_TO_HUMAN } from '../constants';
+import { VIEW_LAYOUT } from 'proton-shared/lib/constants';
+
+import './main-area.scss';
 
 // eslint-disable-next-line
 const MailboxContainer = ({ labelID, elementID, location, history }) => {
@@ -71,10 +74,21 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
         });
     };
 
+    const handleBack = () => {
+        history.push({
+            ...location,
+            pathname: `/${LABEL_IDS_TO_HUMAN[labelID] || labelID}`
+        });
+    };
+
+    const { ViewLayout = VIEW_LAYOUT.COLUMN } = mailSettings;
+    const isColumnMode = ViewLayout === VIEW_LAYOUT.COLUMN;
+
     return (
         <>
             <Toolbar
                 labelID={labelID}
+                elementID={elementID}
                 selectedIDs={selectedIDs}
                 mailSettings={mailSettings}
                 checkAll={checkAll}
@@ -86,29 +100,38 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
                 filter={filter}
                 onNext={handleNext}
                 onPrevious={handlePrevious}
+                onBack={handleBack}
             />
-            <div className="main-area--withToolbar flex-item-fluid flex reset4print">
-                <List
-                    labelID={labelID}
-                    mailSettings={mailSettings}
-                    elementID={elementID}
-                    elements={elements}
-                    selectedIDs={selectedIDs}
-                    checkedIDs={checkedIDs}
-                    onCheck={handleCheck}
-                    onClick={handleClick}
-                />
-                {elementID ? (
-                    <ConversationView mailSettings={mailSettings} conversationID={elementID} />
-                ) : (
-                    <PlaceholderView
+            <div
+                className={classnames([
+                    'main-area--withToolbar flex-item-fluid flex reset4print',
+                    !isColumnMode && 'main-area--rowMode'
+                ])}
+            >
+                {(isColumnMode || !elementID) && (
+                    <List
                         labelID={labelID}
                         mailSettings={mailSettings}
-                        welcomeRef={welcomeRef}
+                        elementID={elementID}
+                        elements={elements}
+                        selectedIDs={selectedIDs}
                         checkedIDs={checkedIDs}
-                        onUncheckAll={handleUncheckAll}
+                        onCheck={handleCheck}
+                        onClick={handleClick}
                     />
                 )}
+                {(isColumnMode || elementID) &&
+                    (elementID ? (
+                        <ConversationView mailSettings={mailSettings} conversationID={elementID} />
+                    ) : (
+                        <PlaceholderView
+                            labelID={labelID}
+                            mailSettings={mailSettings}
+                            welcomeRef={welcomeRef}
+                            checkedIDs={checkedIDs}
+                            onUncheckAll={handleUncheckAll}
+                        />
+                    ))}
             </div>
         </>
     );

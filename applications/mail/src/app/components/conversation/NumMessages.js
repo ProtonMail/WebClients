@@ -5,7 +5,7 @@ const NumMessages = ({ conversation, className }) => {
     // ContextNumMessages shoud not be used
     const { NumMessages = 0 } = conversation;
 
-    if (NumMessages === 0) {
+    if (NumMessages <= 1) {
         return null;
     }
 
