@@ -16,6 +16,7 @@
 - added calendar event loader/skeleton loading anim styles
 - added `bg-inherit` helper class
 - added `w95` helper
+- added mini calendar range selection styles
 
 ## Updated/fixes
 
@@ -27,9 +28,12 @@
 - added a fix for Angular bug with Safari
 - removed “global” hover state for conversations
 - updated `protoncalendar` icon
-- fixed mini calendar icon color
+- fixed mini calendar icon color/removed transitions
 - fixes for calendar display
 - fix issue with `pm-button--link`
+- fix for Safari slow perf (filter CSS)
+- fix modal icons
+- fix flags
 
 
 ## New

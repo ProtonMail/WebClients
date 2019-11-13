@@ -2,6 +2,7 @@ $minicalendar-day-color: $black !default;
 $minicalendar-day-color-on-dark-background: $white !default;
 $minicalendar-fontsize: 1.2rem !default;
 $minicalendar-cell-size: 2em !default;
+$minicalendar-bg-color-range-selection: #50555F !default;
 
 .minicalendar {
     font-size: $minicalendar-fontsize;
@@ -125,11 +126,9 @@ $minicalendar-day-marker-size: 3px !default;
 .minicalendar-day--range-bound {
     background: $pm-primary;
 }
-.minicalendar-day--range-bound-begin.minicalendar-day--range-bound-end {
-    border-radius: 50%;
-}
+
 .minicalendar-day--range[aria-pressed=true] {
-    background: $pm-primary-light;
+    background: $minicalendar-bg-color-range-selection;
     border-radius: 0;
 }
 
@@ -142,6 +141,9 @@ $minicalendar-day-marker-size: 3px !default;
     .minicalendar-day--range-bound-end  {
         border-top-right-radius: 40%;
         border-bottom-right-radius: 40%;
+    }
+    .minicalendar-day--range-bound-begin.minicalendar-day--range-bound-end {
+        border-radius: 50%;
     }
 }
 
