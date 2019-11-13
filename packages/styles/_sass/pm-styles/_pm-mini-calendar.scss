@@ -27,7 +27,8 @@ $minicalendar-cell-size: 2em !default;
 .minicalendar-days {
     display: grid;
     grid-template-columns: repeat( var(--minicalendar-days-numberOfDays, 7), 1fr);
-    grid-template-rows: repeat( var(----minicalendar-days-numberOfWeeks, 4), 1fr)
+    grid-template-rows: repeat( var(----minicalendar-days-numberOfWeeks, 4), 1fr);
+    grid-gap: 1px 0px;
 }
 
 .minicalendar-day {
@@ -78,16 +79,26 @@ $minicalendar-cell-size: 2em !default;
     min-width: $minicalendar-cell-size;
     min-height: $minicalendar-cell-size;
 }
-.minicalendar-day[aria-current="date"] {
+.minicalendar-day[aria-current="date"]::before {
+    content: attr(data-current-day);
+    speak: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    line-height: 2;
+
     color: $white;
     font-weight: bold;
     background: $pm-primary-dark;
     border-radius: 50%;
 }
 .minicalendar-day[aria-pressed=true] {
-    color: $white;
-    font-weight: bold;
-    background: $pm-primary;
+     color: $white;
+     font-weight: bold;
+     background: $pm-primary;
+     border-radius: 50%;
 }
 
 $minicalendar-day-marker-size: 3px !default;
@@ -114,6 +125,23 @@ $minicalendar-day-marker-size: 3px !default;
 .minicalendar-day--range-bound {
     background: $pm-primary;
 }
-.minicalendar-day--range {
-    background: $pm-primary-light;
+.minicalendar-day--range-bound-begin.minicalendar-day--range-bound-end {
+    border-radius: 50%;
 }
+.minicalendar-day--range[aria-pressed=true] {
+    background: $pm-primary-light;
+    border-radius: 0;
+}
+
+// minicalendar-day--range-bound-begin     minicalendar-day--range-bound-end
+.minicalendar {
+    .minicalendar-day--range-bound-begin  {
+        border-top-left-radius: 40%;
+        border-bottom-left-radius: 40%;
+    }
+    .minicalendar-day--range-bound-end  {
+        border-top-right-radius: 40%;
+        border-bottom-right-radius: 40%;
+    }
+}
+
