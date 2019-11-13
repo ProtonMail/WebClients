@@ -26,7 +26,9 @@ export const parser = async (
     mailSettings,
     { direction = 'blob', isOutside = false, attachmentLoader } = {}
 ) => {
-    if (!embeddedFinder.find(message)) {
+    const numEmbedded = embeddedFinder.find(message).length;
+
+    if (numEmbedded === 0) {
         /**
          * cf #5088 we need to escape the body again if we forgot to set the password First.
          * Prevent unescaped HTML.
@@ -47,7 +49,7 @@ export const parser = async (
     await embeddedParser.decrypt(message, mailSettings, attachmentLoader);
     embeddedParser.mutateHTML(message, direction);
     unescape(message);
-    return { document: message.document };
+    return { document: message.document, numEmbedded };
 };
 
 export const addEmbedded = (message, cid, data, MIME) => {

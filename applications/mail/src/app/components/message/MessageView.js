@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { useToggle, Loader } from 'react-components';
 
 import { useComputeMessage } from './hooks/useComputeMessage';
+import { hasAttachments } from './logic/message';
 
 import MessageBody from './MessageBody';
 import MessageHeaderCollapsed from './MessageHeaderCollapsed';
 import MessageHeaderExpanded from './MessageHeaderExpanded';
+import MessageFooter from './MessageFooter';
 
 const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
     const { state: expanded, set: setExpanded } = useToggle();
@@ -49,7 +51,14 @@ const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
             showDetails={showDetails}
             toggleDetails={toggleDetails}
         >
-            {loaded ? <MessageBody content={message.content} /> : <Loader />}
+            {loaded ? (
+                <>
+                    <MessageBody content={message.content} />
+                    {hasAttachments(message.data) ? <MessageFooter message={message} /> : null}
+                </>
+            ) : (
+                <Loader />
+            )}
         </MessageHeaderExpanded>
     ) : (
         <MessageHeaderCollapsed message={message} onExpand={handleExpand} />

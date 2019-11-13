@@ -178,3 +178,7 @@ export const getListUnsubscribe = (message) => {
 export const getListUnsubscribePost = (message) => {
     return getParsedHeaders(message, 'List-Unsubscribe-Post') || '';
 };
+
+export const getAttachments = (message) => message.Attachments || [];
+export const hasAttachments = (message) => getAttachments(message).length > 0;
+export const attachmentsSize = (message) => getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);

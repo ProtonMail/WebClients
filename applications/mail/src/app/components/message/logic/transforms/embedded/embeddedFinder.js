@@ -3,10 +3,9 @@ import * as embeddedStore from './embeddedStore';
 
 export const find = (message) => {
     const list = message.data.Attachments || [];
-    // message.NumEmbedded = 0;
 
     if (!list.length) {
-        return false;
+        return 0;
     }
 
     const embeddedAttachments = embeddedUtils.extractEmbedded(list, message.document);
@@ -15,7 +14,7 @@ export const find = (message) => {
         embeddedStore.cid.add(message, attachment);
     });
 
-    return embeddedStore.cid.contains(message);
+    return embeddedAttachments;
 };
 
 /**
