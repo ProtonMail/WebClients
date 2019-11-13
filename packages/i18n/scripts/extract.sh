@@ -14,16 +14,26 @@ function main {
     for file in $(find ./dist/ -type f -name "*.js.map");
     do
         echo "[Parsing] $file";
-        /tmp/sourcemapper/bin/sourcemapper --input "$file" --output 'i18n-js' &
+        if [[ "$OSTYPE" = "darwin"* ]]; then
+            /tmp/sourcemapper/bin/isourcemapper --input "$file" --output 'i18n-js' &
+        else
+            /tmp/sourcemapper/bin/sourcemapper --input "$file" --output 'i18n-js' &
+        fi
     done;
 
     wait;
+        sed -i '' '/QA_BRANCHES=/d' .env;
 
     # ignore pmcrypto as it contains mailparser :/
     npx ttag extract $(find ./i18n-js -type f -name '*.js' -not -path "*/pmcrypto/*" -not -path "*/core-js/*") -o "$1";
 
     # Remove useless path
-    sed -i 's|i18n-js/webpack:/||g;s| /src/app/| src/app/|g' "$1";
+    if [[ "$OSTYPE" = "darwin"* ]]; then
+        sed -i '' 's|i18n-js/webpack:/||g;s| /src/app/| src/app/|g' "$1";
+    else
+        sed -i 's|i18n-js/webpack:/||g;s| /src/app/| src/app/|g' "$1";
+    fi
+
     rm -rf "./i18n-js";
     ls -lh ./po
 }
