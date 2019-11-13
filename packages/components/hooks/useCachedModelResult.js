@@ -92,7 +92,11 @@ const useCachedModelResult = (cache, key, miss) => {
 
     useEffect(() => {
         const checkForChange = () => {
-            const newValue = getState(cache.get(key), latestValue.current);
+            const oldRecord = cache.get(key);
+            if (!oldRecord) {
+                return setForceRefresh({});
+            }
+            const newValue = getState(oldRecord, latestValue.current);
             if (newValue.some((value, i) => value !== latestValue.current[i])) {
                 setForceRefresh({});
             }

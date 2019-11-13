@@ -25,8 +25,7 @@ export const useGetCalendarBootstrap = () => {
             if (!cache.has(KEY)) {
                 cache.set(KEY, createCache());
             }
-            const subCache = cache.get(KEY);
-            return getPromiseValue(subCache, key, miss);
+            return getPromiseValue(cache.get(KEY), key, miss);
         },
         [cache, miss]
     );
