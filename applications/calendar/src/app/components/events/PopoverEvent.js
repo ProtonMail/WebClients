@@ -47,7 +47,7 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
     const getAddressKeys = useGetAddressKeys();
 
     const targetEventData = (targetEvent && targetEvent.data) || {};
-    const { id, isAllDay } = targetEvent;
+    const { id, isAllDay, start, end } = targetEvent;
     const { Calendar, Event } = targetEventData;
 
     const isTmpEvent = id === 'tmp';
@@ -84,8 +84,8 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
             Event: Event || undefined,
             ...(isCreateEvent || isMoveEvent
                 ? {
-                      start: targetEvent.start,
-                      end: targetEvent.end
+                      start,
+                      end
                   }
                 : undefined),
             ...(isCreateEvent && tmpTitle
@@ -120,9 +120,9 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
             calendarID: actualCalendarID,
             CalendarBootstrap,
             Addresses,
-            isAllDay: targetEvent.isAllDay,
-            start: targetEvent.start,
-            end: targetEvent.end,
+            isAllDay,
+            start,
+            end,
             tzid
         });
 
@@ -130,8 +130,8 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
             ? getExistingEvent({
                   veventComponent,
                   veventValarmComponent: personalMap[emptyModel.memberID],
-                  start: targetEvent.start,
-                  end: targetEvent.end,
+                  start,
+                  end,
                   tzid
               })
             : {};
@@ -150,7 +150,7 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
         const veventComponent = modelToVeventComponent(model, tzid);
 
         await createOrUpdateEvent({
-            Event: targetEventData ? targetEventData.Event : undefined,
+            Event: Event ? Event : undefined,
             veventComponent,
             memberID,
             calendarID,
@@ -213,7 +213,6 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                         type="text"
                         value={tmpTitle}
                         autoFocus={true}
-                        // Too lazy to change to a form
                         onKeyDown={({ key }) => key === 'Enter' && withLoadingAction(handleSave())}
                         onChange={({ target: { value } }) => setTmpTitle(value)}
                     />
