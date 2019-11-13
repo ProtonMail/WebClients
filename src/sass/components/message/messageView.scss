@@ -456,11 +456,17 @@
     background-color: transparent;
 }
 
-.message:not(.message-is-replied):not(.message-is-repliedall):not(.message-is-forwarded) [data-if-is],
-.message.message-is-replied [data-if-is]:not([data-if-is="replied"]),
-.message.message-is-repliedall [data-if-is]:not([data-if-is="repliedall"]),
-.message.message-is-forwarded [data-if-is]:not([data-if-is="forwarded"]) {
-    display: none !important;
+.message [data-if-is] {
+    display: none;
+}
+.message-is-replied [data-if-is="replied"] {
+    display: inline-block;
+}
+.message-is-repliedall [data-if-is="repliedall"] {
+    display: inline-block;
+}
+.message-is-forwarded [data-if-is="forwarded"] {
+    display: inline-block;
 }
 
 .message.marked {
