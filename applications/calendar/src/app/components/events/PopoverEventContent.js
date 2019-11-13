@@ -60,9 +60,9 @@ const PopoverEventContent = ({ Calendar = {}, event: { start, end } = {}, model,
                     {model.isAllDay ? null : <span>{timeString}</span>}
                     <span>{dateString}</span>
                     {frequencyString ? (
-                        <span>
+                        <span className="flex flex-items-center flex-nowrap">
                             <Icon name="reload" size={12} />
-                            {frequencyString}
+                            <span className="ml0-25 flex-item-fluid ellipsis">{frequencyString}</span>
                         </span>
                     ) : null}
                 </div>
