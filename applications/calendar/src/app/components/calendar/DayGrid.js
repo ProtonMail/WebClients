@@ -147,7 +147,7 @@ const DayGrid = ({
                     {rows[0].map((day) => {
                         return (
                             <div
-                                className="flex-item-fluid aligncenter calendar-daygrid-day big m0 p0-75"
+                                className="flex-item-fluid aligncenter calendar-daygrid-day big m0 p0-75 ellipsis"
                                 key={day.getUTCDate()}
                                 aria-current={day.getUTCDay() === now.getUTCDay() ? 'true' : null}
                             >
