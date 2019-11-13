@@ -129,7 +129,6 @@ export const decrypt = (message, mailSettings, attachmentLoader) => {
         map(({ cid, attachment }) => {
             const storeAttachement = embeddedStore.store(message, cid);
             return attachmentLoader.get(attachment, message).then((buffer) => {
-                console.log('back in decrypt', buffer);
                 return storeAttachement(buffer, attachment.MIMEType);
             });
         })

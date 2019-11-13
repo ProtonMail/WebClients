@@ -6,41 +6,40 @@ import { transformEmbedded } from '../logic/transforms/transformEmbedded';
 import { transformWelcome } from '../logic/transforms/transformWelcome';
 import { transformBlockquotes } from '../logic/transforms/transformBlockquotes';
 import { transformStylesheet } from '../logic/transforms/transformStylesheet';
-import { transformAttachements } from '../logic/transforms/transformAttachements';
 import { transformRemote } from '../logic/transforms/transformRemote';
 import { transformBase } from '../logic/transforms/transformBase';
 import { useDecryptMessage } from './useDecryptMessage';
 import { useLoadMessage } from './useLoadMessage';
 import { useMarkAsRead } from './useMarkAsRead';
-import { useAttachmentLoader } from './useAttachmentLoader';
+import { useTransformAttachments } from './useAttachments';
 
 // Reference: Angular/src/app/message/services/prepareContent.js
-
-const transforms = [
-    transformEscape,
-    transformBase,
-    transformLinks,
-    transformEmbedded,
-    transformWelcome,
-    transformBlockquotes,
-    transformStylesheet,
-    transformAttachements,
-    transformRemote
-];
 
 export const useComputeMessage = (mailSettings) => {
     const cache = useCache();
     const load = useLoadMessage();
     const markAsRead = useMarkAsRead();
     const decrypt = useDecryptMessage();
-    const attachmentLoader = useAttachmentLoader();
+    const transformAttachements = useTransformAttachments();
+
+    const transforms = [
+        transformEscape,
+        transformBase,
+        transformLinks,
+        transformEmbedded,
+        transformWelcome,
+        transformBlockquotes,
+        transformStylesheet,
+        transformAttachements,
+        transformRemote
+    ];
 
     /**
      * Run a computation on a message, wait until it finish
      * Return the message extanded with the result of the computation
      */
     const run = useCallback(async (message, compute, action) => {
-        const result = (await compute(message, { action, cache, mailSettings, attachmentLoader })) || {};
+        const result = (await compute(message, { action, cache, mailSettings })) || {};
 
         if (result.document) {
             result.content = result.document.innerHTML;

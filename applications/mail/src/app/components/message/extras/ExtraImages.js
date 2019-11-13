@@ -4,8 +4,6 @@ import { Icon, LinkButton } from 'react-components';
 import { c } from 'ttag';
 
 const ExtraImages = ({ message: { showRemoteImages, showEmbeddedImages }, type, onLoadImages }) => {
-    console.log('ExtraImages', showRemoteImages, showEmbeddedImages);
-
     // Flags will not be setted if there is no images
     if ((type === 'remote' && showRemoteImages !== false) || (type === 'embedded' && showEmbeddedImages !== false)) {
         return null;

@@ -15,7 +15,7 @@ export const transformEmbedded = async (message, { action, mailSettings }) => {
     const isEoReply = false;
     const getAttachment = embedded.getAttachment(message);
 
-    console.log('transformEmbedded', show);
+    // console.log('transformEmbedded', show);
 
     let showEmbedded = message.showEmbeddedImages;
 
