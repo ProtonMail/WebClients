@@ -10,13 +10,16 @@ const DRAG_EVENT_MOVE = 1;
 const DRAG_EVENT_TIME_UP = 2;
 const DRAG_EVENT_TIME_DOWN = 3;
 
-const getType = (position, offset) => {
+const getType = (/*position, offset*/) => {
+    /*
+    // Support removed for this because the handle needs to be stable
     if (position <= offset) {
         return DRAG_EVENT_TIME_UP;
     }
     if (position >= 1 - offset) {
         return DRAG_EVENT_TIME_DOWN;
     }
+     */
     return DRAG_EVENT_MOVE;
 };
 
