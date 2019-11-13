@@ -1,4 +1,12 @@
-import React, { createElement, useMemo, useRef, useState, useCallback, useImperativeHandle } from 'react';
+import React, {
+    createElement,
+    useMemo,
+    useRef,
+    useState,
+    useCallback,
+    useImperativeHandle,
+    useLayoutEffect
+} from 'react';
 import { eachDayOfInterval, format } from 'proton-shared/lib/date-fns-utc';
 import PropTypes from 'prop-types';
 import { useWindowSize, classnames } from 'react-components';
@@ -158,6 +166,10 @@ const TimeGrid = React.forwardRef(
             }),
             [ref, nowTop]
         );
+
+        useLayoutEffect(() => {
+            ref.current.scrollToNow();
+        }, []);
 
         return (
             <div

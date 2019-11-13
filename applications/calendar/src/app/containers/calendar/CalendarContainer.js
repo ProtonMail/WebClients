@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef, useLayoutEffect } from 'react';
+import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef } from 'react';
 import { useModals, useCalendars, useCalendarUserSettings, useCalendarBootstrap } from 'react-components';
 import {
     convertUTCDateTimeToZone,
@@ -247,10 +247,6 @@ const CalendarContainer = ({ history, location }) => {
                 timeGridViewRef.current.scrollToNow();
             }
         }, 10);
-    }, []);
-
-    useLayoutEffect(() => {
-        scrollToNow();
     }, []);
 
     const handleChangeView = useCallback((newView) => {
