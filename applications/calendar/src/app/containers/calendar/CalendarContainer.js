@@ -272,7 +272,7 @@ const CalendarContainer = ({ history, location }) => {
     }, []);
 
     const handleEventModal = useCallback(
-        ({ Event, start, end, isAllDay, type, title, calendarID } = {}) => {
+        ({ Event, start, end, isAllDay, type, title, calendarID, onClose } = {}) => {
             if (!calendars || !calendars.length) {
                 return;
             }
@@ -289,6 +289,7 @@ const CalendarContainer = ({ history, location }) => {
                     displayWeekNumbers={displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
                     tzid={tzid}
+                    onClose={onClose}
                 />
             );
         },

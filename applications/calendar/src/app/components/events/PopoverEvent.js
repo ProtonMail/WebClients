@@ -96,7 +96,11 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                 ? {
                       calendarID: Calendar.ID
                   }
-                : undefined)
+                : undefined),
+            onClose: () => {
+                // When the modal closes, close this popover too.
+                onClose();
+            }
         });
     };
 
