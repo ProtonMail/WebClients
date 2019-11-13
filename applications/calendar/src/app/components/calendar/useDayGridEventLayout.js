@@ -38,27 +38,27 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
                 return acc;
             }, {});
 
+            const moreDays = Object.keys(eventsInRowSummary).reduce((acc, dayIndex) => {
+                if (eventsInRowSummary[dayIndex].more <= 0) {
+                    return acc;
+                }
+                acc.push({
+                    idx: +dayIndex,
+                    type: 'more',
+                    style: {
+                        top: `${numberOfRows * dayEventHeight}px`,
+                        left: toPercent(dayIndex / columns),
+                        height: `${dayEventHeight}px`,
+                        width: toPercent(1 / columns)
+                    }
+                });
+                return acc;
+            }, []);
+
             const eventsInRowStyles = eventsLaidOut.reduce((acc, { column: eventRow }, i) => {
                 const { start, end } = eventsInRow[i];
 
-                // The "MORE" button
                 if (eventRow >= numberOfRows) {
-                    if (eventsInRowSummary[start].rendered) {
-                        return acc;
-                    }
-                    eventsInRowSummary[start].rendered = true;
-
-                    acc.push({
-                        idx: start,
-                        type: 'more',
-                        style: {
-                            top: `${numberOfRows * dayEventHeight}px`,
-                            left: toPercent(start / columns),
-                            height: `${dayEventHeight}px`,
-                            width: toPercent(1 / columns)
-                        }
-                    });
-
                     return acc;
                 }
 
@@ -82,7 +82,7 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
 
             return {
                 eventsInRow,
-                eventsInRowStyles,
+                eventsInRowStyles: eventsInRowStyles.concat(moreDays),
                 eventsInRowSummary,
                 maxRows
             };
