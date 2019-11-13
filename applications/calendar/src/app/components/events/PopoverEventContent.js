@@ -24,7 +24,12 @@ const getFrequencyString = (frequency, startDay) => {
     }
 };
 
-const PopoverEventContent = ({ Calendar = {}, event: { start, end } = {}, model, formatTime }) => {
+const PopoverEventContent = ({
+    Calendar = {},
+    event: { start, end, isAllDay, isAllPartDay } = {},
+    model,
+    formatTime
+}) => {
     const { Name: calendarName, Color } = Calendar;
 
     const dateString = useMemo(() => {
@@ -57,7 +62,7 @@ const PopoverEventContent = ({ Calendar = {}, event: { start, end } = {}, model,
             <div className="flex flex-nowrap mb0-5">
                 <Icon name="clock" className="flex-item-noshrink mr1 mt0-25" />
                 <div className="flex flex-column">
-                    {model.isAllDay ? null : <span>{timeString}</span>}
+                    {!isAllDay || isAllPartDay ? <span>{timeString}</span> : null}
                     <span>{dateString}</span>
                     {frequencyString ? (
                         <span className="flex flex-items-center flex-nowrap">

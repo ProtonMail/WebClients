@@ -58,7 +58,7 @@ const FullDayEvent = ({
                     ) : null}
                     {loading ? '' : <span className="flex-item-fluid ellipsis">{model.title}</span>}
                 </span>
-                {isAllDay && isAllPartDay ? <span className="">{timeString}</span> : null}
+                {isAllPartDay ? <span className="">{timeString}</span> : null}
             </div>
         );
     })();
