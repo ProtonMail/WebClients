@@ -47,9 +47,10 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
     const getAddressKeys = useGetAddressKeys();
 
     const targetEventData = (targetEvent && targetEvent.data) || {};
+    const { id, isAllDay } = targetEvent;
     const { Calendar, Event } = targetEventData;
 
-    const isTmpEvent = targetEvent.id === 'tmp';
+    const isTmpEvent = id === 'tmp';
     const isCreateEvent = isTmpEvent && !Event;
     const isMoveEvent = isTmpEvent && !!Event;
 
@@ -94,6 +95,7 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                 : undefined),
             ...(isCreateEvent
                 ? {
+                      isAllDay,
                       calendarID: Calendar.ID
                   }
                 : undefined),

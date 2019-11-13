@@ -300,7 +300,8 @@ const CalendarContainer = ({ history, location }) => {
     const [
         { CalendarSettings: { DefaultEventDuration: defaultEventDuration = 30 } = {} } = {},
         loadingCalendarBootstrap
-    ] = useCalendarBootstrap(defaultCalendar && defaultCalendar.ID);
+    ] = useCalendarBootstrap(defaultCalendar ? defaultCalendar.ID : undefined);
+
     const defaultEventData = useMemo(() => {
         return {
             Calendar: defaultCalendar
