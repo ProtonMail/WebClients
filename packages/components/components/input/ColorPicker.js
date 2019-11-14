@@ -1,33 +1,31 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { Icon, DropdownButton } from 'react-components';
-import { ChromePicker } from 'react-color';
+import { Icon, Dropdown, DropdownButton, generateUID, usePopperAnchor, ColorSelector } from 'react-components';
 import tinycolor from 'tinycolor2';
 
-import './ColorPicker.scss';
-
-const ColorPicker = ({ color = 'blue', onChange = noop, ...rest }) => {
-    const [display, setDisplay] = useState(false);
+const ColorPicker = ({ color = 'blue', onChange = noop }) => {
     const colorModel = tinycolor(color);
     const iconColor = colorModel.isValid() ? colorModel.toHexString() : '';
-    const handleClick = () => setDisplay(!display);
-    const handleClose = () => setDisplay(false);
 
-    const picker = (
-        <div className="popover">
-            <div className="cover" onClick={handleClose} />
-            <ChromePicker color={color} onChange={onChange} />
-        </div>
-    );
+    const [uid] = useState(generateUID('dropdown'));
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
+
+    const handleChange = (color) => () => onChange({ hex: color });
 
     return (
-        <div className="relative">
-            <DropdownButton onClick={handleClick} hasCaret={true} {...rest}>
+        <>
+            <DropdownButton buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret={true}>
                 <Icon className="flex-item-noshrink" name="circle" color={iconColor} />
             </DropdownButton>
-            {display ? picker : null}
-        </div>
+            <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+                <ColorSelector
+                    selected={color}
+                    onChange={handleChange}
+                    className="p1 pt0-5 pb0-5 flex flex-row flex-wrap flex-spacearound"
+                />
+            </Dropdown>
+        </>
     );
 };
 
