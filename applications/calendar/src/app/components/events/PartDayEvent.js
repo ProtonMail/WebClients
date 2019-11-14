@@ -56,7 +56,7 @@ const PartDayEvent = ({
     return (
         <div
             style={eventStyle}
-            className={classnames(['calendar-eventcell pl0-5 pr0-5', isBeforeNowClassModifier])}
+            className={classnames(['calendar-eventcell no-scroll pl0-5 pr0-5', isBeforeNowClassModifier])}
             ref={eventRef}
         >
             {content}
