@@ -130,13 +130,13 @@ function searchForm(
                     }
                 });
 
-                const go = (state, data) => {
-                    $state.go(state, data);
+                const go = async (state, data) => {
+                    await $state.go(state, data);
                     dispatcher.dropdownApp('action', {
                         type: 'close',
                         id: dropdownID
                     });
-                    hotkeys.unpause();
+                    hotkeys.pause();
                 };
 
                 const onSubmit = () => {
@@ -167,8 +167,8 @@ function searchForm(
                 scope.$on('$destroy', () => {
                     el.off('submit', onSubmit);
                     unsubscribe();
-                    $input.removeListener('focus', hotkeys.pause);
-                    $input.removeListener('blur', hotkeys.unpause);
+                    $input.removeEventListener('focus', hotkeys.pause);
+                    $input.removeEventListener('blur', hotkeys.unpause);
                 });
             };
         }
