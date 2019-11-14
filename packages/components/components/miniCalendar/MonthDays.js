@@ -103,9 +103,18 @@ const MonthDays = ({
                 const isActiveMonth = isSameMonth(dayDate, activeDate);
                 const isCurrent = isSameDay(now, dayDate);
                 const isInterval =
-                    rangeStart && rangeEnd && isWithinInterval(dayDate, { start: rangeStart, end: rangeEnd });
+                    (rangeStart && rangeEnd && isWithinInterval(dayDate, { start: rangeStart, end: rangeEnd })) ||
+                    (rangeStart && isSameDay(rangeStart, dayDate));
                 const isIntervalBound = isSameDay(rangeStart, dayDate) || isSameDay(rangeEnd, dayDate);
                 const isPressed = isSameDay(selectedDate, dayDate) || isInterval;
+
+                // only for CSS layout: beginning/end of week OR beginning/end of interval in week
+                const isIntervalBoundBegin =
+                    (isInterval && i % numberOfDays === 0) || (isInterval && isSameDay(rangeStart, dayDate));
+                const isIntervalBoundEnd =
+                    (isInterval && i % numberOfDays === numberOfDays - 1) ||
+                    (isInterval && isSameDay(rangeEnd, dayDate)) ||
+                    (!rangeEnd && isIntervalBoundBegin);
 
                 const hasMarker = markers[dayDate.getTime()];
 
@@ -113,6 +122,8 @@ const MonthDays = ({
                     'minicalendar-day no-pointer-events-children',
                     !isActiveMonth && 'minicalendar-day--inactive-month',
                     isIntervalBound && 'minicalendar-day--range-bound',
+                    isIntervalBoundBegin && 'minicalendar-day--range-bound-begin',
+                    isIntervalBoundEnd && 'minicalendar-day--range-bound-end',
                     isInterval && 'minicalendar-day--range'
                 ]);
 
@@ -124,6 +135,7 @@ const MonthDays = ({
                         key={dayDate.toString()}
                         className={className}
                         data-i={i}
+                        data-current-day={dayDate.getDate()}
                     >
                         <span className="minicalendar-day-inner">{dayDate.getDate()}</span>
                         {hasMarker ? <span className="minicalendar-day--marker" /> : null}

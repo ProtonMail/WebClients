@@ -12,7 +12,7 @@ const WeekNumbers = ({ days, numberOfWeeks }) => {
         return Array.from({ length: numberOfWeeks }, (a, i) => {
             const weekNumber = getWeek(days[i + i * 7]);
             return (
-                <span className="italic flex-item-fluid flex" key={weekNumber}>
+                <span className="italic flex-item-fluid flex minicalendar-weeknumbers-number" key={weekNumber}>
                     <span className="mauto">{weekNumber}</span>
                 </span>
             );
