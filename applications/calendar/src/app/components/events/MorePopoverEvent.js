@@ -23,7 +23,7 @@ const MorePopoverEvent = ({
     return (
         <div style={otherStyle} className="eventpopover p1" ref={ref}>
             <header>
-                <h1 className="h3">{selectedMoreDate && selectedMoreDate.getUTCDate()}</h1>
+                <h1 className="eventpopover-title">{selectedMoreDate && selectedMoreDate.getUTCDate()}</h1>
                 <button type="button" className="pm-modalClose" title={c('Action').t`Close popover`} onClick={onClose}>
                     <Icon className="pm-modalClose-icon" name="close" />
                     <span className="sr-only">{c('Action').t`Close popover`}</span>

@@ -210,14 +210,16 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                 {isCreateEvent ? (
                     <input
                         placeholder={c('Placeholder').t`Add an event title`}
+                        aria-label={c('Info').t`Add an event title`}
                         type="text"
+                        className="pm-field w95 mb1 mt0-25"
                         value={tmpTitle}
                         autoFocus={true}
                         onKeyDown={({ key }) => key === 'Enter' && withLoadingAction(handleSave())}
                         onChange={({ target: { value } }) => setTmpTitle(value)}
                     />
                 ) : (
-                    <h3 className="">{model.title}</h3>
+                    <h1 className="eventpopover-title">{model.title}</h1>
                 )}
                 <button type="button" className="pm-modalClose" title={c('Action').t`Close popover`} onClick={onClose}>
                     <Icon className="pm-modalClose-icon" name="close" />
