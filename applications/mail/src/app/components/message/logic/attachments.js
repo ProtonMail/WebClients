@@ -95,8 +95,6 @@ export const getDecryptedAttachment = async (message, attachment, { cache, api }
 };
 
 export const getAndVerify = async (attachment = {}, message = {}, reverify = false, { cache, api, verify }) => {
-    console.log('useAttachmentLoader.getAndVerify', attachment, message, reverify);
-
     if (attachment.Preview) {
         return attachment.Preview;
     }

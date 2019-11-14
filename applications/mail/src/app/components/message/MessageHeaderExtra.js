@@ -5,7 +5,7 @@ import ExtraUnsubscribe from './extras/ExtraUnsubscribe';
 
 const MessageHeaderExtra = ({ message, onLoadRemoteImages, onLoadEmbeddedImages }) => {
     return (
-        <section className="mt0-5">
+        <section className="mt0-5 stop-propagation">
             {/* TODO: ExpirationTime */}
             {/* TODO: SpamScore */}
             {/* TODO: MIMEParsingFailed */}

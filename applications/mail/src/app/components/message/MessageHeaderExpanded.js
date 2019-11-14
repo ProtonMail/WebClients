@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { SimpleDropdown, Icon, Group, ButtonGroup } from 'react-components';
+import { SimpleDropdown, Icon, Group, ButtonGroup, useToggle } from 'react-components';
+import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import ItemStar from '../list/ItemStar';
 import ItemDate from '../list/ItemDate';
@@ -13,6 +14,8 @@ import LabelDropdown from '../dropdown/LabelDropdown';
 import MessageHeaderExtra from './MessageHeaderExtra';
 import MessageLock from './MessageLock';
 import { isSent } from './logic/message';
+import MessageHeaderRecipients from './MessageHeaderRecipients';
+import ItemAttachmentIcon from '../list/ItemAttachmentIcon';
 
 const MessageHeaderExpanded = ({
     labels,
@@ -21,16 +24,24 @@ const MessageHeaderExpanded = ({
     onLoadRemoteImages,
     onLoadEmbeddedImages,
     mailSettings,
-    showDetails,
-    toggleDetails
+    onCollapse
 }) => {
+    const { state: showDetails, toggle: toggleDetails } = useToggle();
+
     const { Name, Address } = message.data.Sender;
-    const { ToList = [], CCList = [], BCCList = [] } = message.data;
-    const recipients = [...ToList, ...BCCList, ...CCList];
     const inOutClass = isSent(message.data) ? 'is-outbound' : 'is-inbound';
 
+    const handleClick = (event) => {
+        if (event.target.closest('.stop-propagation')) {
+            event.stopPropagation();
+            return;
+        }
+
+        onCollapse();
+    };
+
     return (
-        <div className={`message-header ${inOutClass}`}>
+        <div className={`message-header cursor-pointer ${inOutClass}`} onClick={handleClick}>
             <div className="flex flex-nowrap flex-items-center flex-spacebetween mb0-5">
                 <div>
                     <span className="mr0-5">{c('Label').t`From:`}</span>
@@ -41,28 +52,28 @@ const MessageHeaderExpanded = ({
                     <MessageLock message={message} />
                 </div>
                 <div>
+                    <ItemDate element={message.data} mode="distance" />
+                </div>
+            </div>
+            <div className="flex flex-nowrap flex-items-start flex-spacebetween mb0-5">
+                <MessageHeaderRecipients message={message.data} showDetails={showDetails} />
+                <div className="stop-propagation">
+                    <ItemAttachmentIcon element={message.data} type={ELEMENT_TYPES.MESSAGE} />
                     <ItemLabels max={4} element={message.data} labels={labels} type={ELEMENT_TYPES.MESSAGE} />
                     <ItemLocation message={message.data} mailSettings={mailSettings} />
-                    <ItemDate element={message.data} type={ELEMENT_TYPES.MESSAGE} showDetails={showDetails} />
                     <ItemStar element={message.data} type={ELEMENT_TYPES.MESSAGE} />
                 </div>
             </div>
-            <div className="flex mb0-5">
-                <span className="mr0-5">{c('Label').t`To:`}</span>
-                {recipients.map(({ Address = '', Name = '' }, index) => {
-                    return (
-                        <span key={Address} className="mr0-5" title={Address}>
-                            {Name || Address}
-                            {index < recipients.length - 1 && ','}
-                        </span>
-                    );
-                })}
-            </div>
             {showDetails ? (
-                <div className="mb0-5">
-                    <span className="mr0-5">{c('Label').t`Size:`}</span>
-                    <span>{message.data.Size}</span>
-                </div>
+                <>
+                    <div className="mb0-5">
+                        <span className="mr0-5">{c('Label').t`Size:`}</span>
+                        <span>{humanSize(message.data.Size)}</span>
+                    </div>
+                    <div className="mb0-5">
+                        <ItemDate element={message.data} mode="full" />
+                    </div>
+                </>
             ) : null}
             <MessageHeaderExtra
                 message={message}
@@ -70,10 +81,10 @@ const MessageHeaderExpanded = ({
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
             />
             <div className="flex flex-spacebetween mb1 flex-nowrap">
-                <a onClick={toggleDetails} className="bold flex-self-vcenter">
+                <a onClick={toggleDetails} className="bold flex-self-vcenter stop-propagation">
                     {showDetails ? c('Action').t`Hide details` : c('Action').t`Show details`}
                 </a>
-                <div>
+                <div className="stop-propagation">
                     <Group className="mr1">
                         <SimpleDropdown autoClose={false} content={<Icon name="folder" />}>
                             <MoveDropdown selectedIDs={[message.data.ID]} type={ELEMENT_TYPES.MESSAGE} />
@@ -107,8 +118,7 @@ MessageHeaderExpanded.propTypes = {
     messageLoaded: PropTypes.bool.isRequired,
     onLoadRemoteImages: PropTypes.func.isRequired,
     onLoadEmbeddedImages: PropTypes.func.isRequired,
-    showDetails: PropTypes.bool.isRequired,
-    toggleDetails: PropTypes.func.isRequired
+    onCollapse: PropTypes.func.isRequired
 };
 
 export default MessageHeaderExpanded;

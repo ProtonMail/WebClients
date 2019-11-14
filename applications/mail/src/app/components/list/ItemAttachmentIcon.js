@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { Icon } from 'react-components';
 
 import { ELEMENT_TYPES } from '../../constants';
+import { hasAttachments } from '../message/logic/message';
 
 const ItemAttachmentIcon = ({ element = {}, type = ELEMENT_TYPES.CONVERSATION }) => {
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
-    const hasAttachment = isConversation ? element.ContextNumAttachments : element.HasAttachment;
+    const hasAttachment = isConversation ? element.ContextNumAttachments : hasAttachments(element);
 
     if (!hasAttachment) {
         return null;

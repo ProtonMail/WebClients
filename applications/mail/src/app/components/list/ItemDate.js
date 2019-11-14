@@ -2,19 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { classnames } from 'react-components';
 
-import { ELEMENT_TYPES } from '../../constants';
-import { getReadableTime, getReadableFullTime } from '../../helpers/element';
+import { getDate } from '../../helpers/element';
+import { formatSimpleDate, formatFullDate, formatDistanceToNow } from '../message/helpers/dateHelper';
 
-const ItemDate = ({ element, className, showDetails = false }) => {
-    const readableDate = showDetails ? getReadableFullTime(element) : getReadableTime(element);
-    return <span className={classnames(['item-date', className])}>{readableDate}</span>;
+const FORMATERS = {
+    simple: formatSimpleDate,
+    full: formatFullDate,
+    distance: formatDistanceToNow
+};
+
+// TODO: Update with a setInterval?
+
+const ItemDate = ({ element, className, mode = 'simple' }) => {
+    const formater = FORMATERS[mode] || FORMATERS.distance;
+    return <span className={classnames(['item-date', className])}>{formater(getDate(element))}</span>;
 };
 
 ItemDate.propTypes = {
     element: PropTypes.object.isRequired,
     className: PropTypes.string,
-    type: PropTypes.oneOf([ELEMENT_TYPES.CONVERSATION, ELEMENT_TYPES.MESSAGE]).isRequired,
-    showDetails: PropTypes.bool
+    mode: PropTypes.string
 };
 
 export default ItemDate;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon, LinkButton, Tooltip } from 'react-components';
+import { Icon, Tooltip, Href } from 'react-components';
 import { displaySignatureStatus } from './logic/displaySignature';
 import { isPGPEncrypted } from './logic/message';
 import { getEncryptionType } from './logic/encryptionType';
@@ -16,13 +16,13 @@ const MessageLock = ({ message }) => {
         <>
             {!displaySignature && !pgpEncrypted && (
                 <Tooltip title={title}>
-                    <LinkButton
-                        className="nodecoration color-global-grey no-pointer-events-children"
+                    <Href
+                        className="color-global-grey no-pointer-events-children"
                         href="https://protonmail.com/support/knowledge-base/what-is-encrypted/"
                     >
                         {/* TODO: 'color-pm-blue': message.isInternal() || message.isSentEncrypted() || message.isDraft() || message.isAuto(), */}
                         <Icon name="lock" />
-                    </LinkButton>
+                    </Href>
                 </Tooltip>
             )}
         </>

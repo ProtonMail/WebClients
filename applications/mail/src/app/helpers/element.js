@@ -17,6 +17,8 @@ export const getCurrentType = ({ labelID = '', mailSettings = {} }) => {
 export const isConversation = (data) => ELEMENT_TYPES.CONVERSATION === getCurrentType(data);
 export const isMessage = (data) => ELEMENT_TYPES.MESSAGE === getCurrentType(data);
 
+export const getDate = ({ Time = 0, ContextTime = 0 } = {}) => new Date((ContextTime || Time) * 1000);
+
 /**
  * Get readable time to display from message / conversation
  * @param {Integer} element.Time

@@ -16,11 +16,16 @@ const ConversationView = ({ conversationID, messageID, mailSettings }) => {
     const [labels] = useLabels();
     const api = useApi();
     const [loading, withLoading] = useLoading();
+    const [initialExpand, setInitialExpand] = useState(null);
 
     const requestConversation = async () => {
         const { Conversation, Messages = [] } = await api(getConversation(conversationID, messageID));
+        const messages = orderBy(Messages, 'Order');
         updateConversation(Conversation);
-        updateMessages(Messages);
+        updateMessages(messages);
+        if (messages.length > 0) {
+            setInitialExpand(messages[messages.length - 1].ID);
+        }
     };
 
     useEffect(() => {
@@ -51,11 +56,16 @@ const ConversationView = ({ conversationID, messageID, mailSettings }) => {
                     <ItemStar element={conversation} type={ELEMENT_TYPES.CONVERSATION} />
                 </div>
             </header>
-            {orderBy(messages, 'Order')
-                .reverse()
-                .map((message) => (
-                    <MessageView key={message.ID} message={message} labels={labels} mailSettings={mailSettings} />
-                ))}
+            {messages.map((message, index) => (
+                <MessageView
+                    key={message.ID}
+                    message={message}
+                    initialExpand={message.ID === initialExpand}
+                    labels={labels}
+                    mailSettings={mailSettings}
+                    conversationIndex={index}
+                />
+            ))}
         </section>
     );
 };

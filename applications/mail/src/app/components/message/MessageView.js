@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useToggle, Loader, classnames } from 'react-components';
 
@@ -10,22 +10,28 @@ import MessageHeaderCollapsed from './MessageHeaderCollapsed';
 import MessageHeaderExpanded from './MessageHeaderExpanded';
 import MessageFooter from './MessageFooter';
 
-const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
-    const { state: expanded, set: setExpanded } = useToggle();
-    const { state: showDetails, toggle: toggleDetails } = useToggle();
-
-    // Not using usePromiseResult as in this case the task has to be called later
-    // TODO: use useAsync
+const MessageView = ({ labels, message: inputMessage, mailSettings, initialExpand, conversationIndex }) => {
+    const { state: expanded, set: setExpanded } = useToggle(initialExpand);
     const [loaded, setLoaded] = useState(false);
-
     const [message, setMessage] = useState({ data: inputMessage });
+    const elementRef = useRef();
 
     const { initialize, loadRemoteImages, loadEmbeddedImages } = useComputeMessage(mailSettings);
 
     const prepareMessage = async () => {
         setMessage(await initialize(message));
         setLoaded(true);
+        // Don't scroll if it's the first message of the conversation and only on the first automatic expand
+        if (conversationIndex !== 0 && initialExpand) {
+            elementRef.current && elementRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     };
+
+    useEffect(() => {
+        if (!loaded && expanded) {
+            prepareMessage();
+        }
+    }, [expanded]);
 
     const handleLoadRemoteImages = async () => {
         setMessage(await loadRemoteImages(message));
@@ -35,13 +41,12 @@ const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
         setMessage(await loadEmbeddedImages(message));
     };
 
-    const handleExpand = () => {
-        setExpanded(true);
-        prepareMessage();
+    const handleExpand = (value) => () => {
+        setExpanded(value);
     };
 
     return (
-        <article className={classnames(['message-container mb2', expanded && 'is-opened'])}>
+        <article ref={elementRef} className={classnames(['message-container mb2', expanded && 'is-opened'])}>
             {expanded ? (
                 <>
                     <MessageHeaderExpanded
@@ -51,8 +56,7 @@ const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
                         onLoadEmbeddedImages={handleLoadEmbeddedImages}
                         labels={labels}
                         mailSettings={mailSettings}
-                        showDetails={showDetails}
-                        toggleDetails={toggleDetails}
+                        onCollapse={handleExpand(false)}
                     />
                     {loaded ? (
                         <>
@@ -64,7 +68,7 @@ const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
                     )}
                 </>
             ) : (
-                <MessageHeaderCollapsed message={message} onExpand={handleExpand} />
+                <MessageHeaderCollapsed message={message} labels={labels} onExpand={handleExpand(true)} />
             )}
         </article>
     );
@@ -73,7 +77,9 @@ const MessageView = ({ labels, message: inputMessage, mailSettings }) => {
 MessageView.propTypes = {
     labels: PropTypes.array,
     mailSettings: PropTypes.object.isRequired,
-    message: PropTypes.object.isRequired
+    message: PropTypes.object.isRequired,
+    initialExpand: PropTypes.bool.isRequired,
+    conversationIndex: PropTypes.number.isRequired
 };
 
 export default MessageView;

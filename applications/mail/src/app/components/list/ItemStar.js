@@ -32,7 +32,7 @@ const ItemStar = ({ element = {}, type = ELEMENT_TYPES.CONVERSATION }) => {
         <button
             disabled={loading}
             type="button"
-            className={classnames(['starbutton item-star', isStarred && 'starbutton--is-starred'])}
+            className={classnames(['starbutton item-star inline-flex', isStarred && 'starbutton--is-starred'])}
             onClick={() => withLoading(handleClick())}
         >
             <Icon name={iconName} />
