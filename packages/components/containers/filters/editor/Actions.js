@@ -147,6 +147,7 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
             <AutoReplyAction onChange={handleOnChangeAutoReply} defaultValue={Actions.Vacation} />
             {errors.isValid === false ? (
                 <Row>
+                    <Label>{/* Dummy label to hold space */ ' '}</Label>
                     <ErrorZone id="ActionsError">{c('Error').t`A filter must have an action`}</ErrorZone>
                 </Row>
             ) : null}

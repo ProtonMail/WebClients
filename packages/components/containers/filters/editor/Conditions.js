@@ -2,14 +2,38 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Label, Select, Row, Field, ErrorButton, PrimaryButton, ErrorZone } from 'react-components';
-import { getI18n as getI18nFilter, newCondition } from 'proton-shared/lib/filters/factory';
+import { getI18n as getI18nFilter, newCondition as newConditionModel } from 'proton-shared/lib/filters/factory';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import FilterConditionValues from '../FilterConditionValues';
 import RadioContainsAttachements from '../RadioContainsAttachements';
 
 function ConditionsEditor({ filter, onChange = noop, errors = [] }) {
-    const [model, setModel] = useState(filter);
+    // Managing ids on the conditions to
+    const [currentId, setCurrentId] = useState(1);
+
+    const initIds = (filter) => {
+        let id = currentId;
+        filter.Simple.Conditions = filter.Simple.Conditions.map((condition) => {
+            if (!condition.id) {
+                return { ...condition, id: id++ };
+            }
+            return condition;
+        });
+        if (id !== currentId) {
+            setCurrentId(id);
+        }
+        return filter;
+    };
+
+    const [model, setModel] = useState(initIds(filter));
+
+    const newCondition = () => {
+        const condition = newConditionModel();
+        condition.id = currentId;
+        setCurrentId(currentId + 1);
+        return condition;
+    };
 
     const { COMPARATORS, TYPES } = getI18nFilter();
     const toOptions = (list = []) => list.map(({ label: text, value }) => ({ text, value }));
@@ -70,10 +94,10 @@ function ConditionsEditor({ filter, onChange = noop, errors = [] }) {
         syncModel(target.value, config, newComparator);
     };
 
-    const handleDeleteValue = (config) => (value) => {
+    const handleDeleteValue = (config) => (index) => {
         const { condition, scope } = config;
-        const newScoped = condition[scope].filter((val) => val !== value);
-        syncModel(value, config, newScoped);
+        const newScoped = condition[scope].filter((_, i) => i !== index);
+        syncModel(null, config, newScoped);
     };
 
     const handleAddValue = (config) => (value) => {
@@ -82,11 +106,9 @@ function ConditionsEditor({ filter, onChange = noop, errors = [] }) {
         syncModel(value, config, newScoped);
     };
 
-    const handleEditValue = (config) => ({ before, value }) => {
+    const handleEditValue = (config) => ({ index, value }) => {
         const { condition, scope } = config;
-        const newScoped = condition[scope].map((val) => {
-            return before === val ? value : val;
-        });
+        const newScoped = condition[scope].map((existingValue, i) => (i === index ? value : existingValue));
         syncModel(value, config, newScoped);
     };
 
@@ -97,7 +119,7 @@ function ConditionsEditor({ filter, onChange = noop, errors = [] }) {
             {model.Simple.Conditions.map((condition, index) => {
                 const n = index + 1;
                 return (
-                    <Row key={`condition-${index}`}>
+                    <Row key={`condition-${condition.id}`}>
                         <Label>{c('Label').t`Conditions ${n}`}</Label>
                         {condition.Type.value === 'attachments' ? (
                             <Field>
@@ -119,21 +141,22 @@ function ConditionsEditor({ filter, onChange = noop, errors = [] }) {
                             </Field>
                         ) : (
                             <Field>
-                                <Select
-                                    options={toOptions(TYPES)}
-                                    className="mb1"
-                                    defaultValue={condition.Type.value}
-                                    onChange={handleChangeType({
-                                        scope: 'Type',
-                                        condition,
-                                        index
-                                    })}
-                                />
+                                <div className="mb1">
+                                    <Select
+                                        options={toOptions(TYPES)}
+                                        defaultValue={condition.Type.value}
+                                        onChange={handleChangeType({
+                                            scope: 'Type',
+                                            condition,
+                                            index
+                                        })}
+                                    />
 
-                                {hasError('type', index) ? (
-                                    <ErrorZone id="ActionsError">{c('Error')
-                                        .t`You must choose a type of condition`}</ErrorZone>
-                                ) : null}
+                                    {hasError('type', index) ? (
+                                        <ErrorZone id="ActionsError">{c('Error')
+                                            .t`You must choose a type of condition`}</ErrorZone>
+                                    ) : null}
+                                </div>
 
                                 <FilterConditionValues
                                     options={toOptions(COMPARATORS)}

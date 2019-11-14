@@ -16,6 +16,24 @@ function FilterConditionValues({
     onEdit = noop,
     error = {}
 }) {
+    const allButLast = condition.Values.slice(0, -1);
+    const lastIndex = condition.Values.length - 1;
+    const last = condition.Values[lastIndex];
+
+    const handleEdit = (index) => (value) => {
+        if (index === -1) {
+            return onAdd(value);
+        }
+
+        if (value === '' && index === 0) {
+            return onDelete(0);
+        }
+
+        onEdit({ index, value });
+    };
+
+    const handleDelete = (index) => () => onDelete(index);
+
     const hasError = (key) => (error.errors || []).includes(key);
     return (
         <>
@@ -28,13 +46,18 @@ function FilterConditionValues({
             />
 
             <div className="flex flex-column w100">
-                {condition.Values.map((value, i) => {
+                {allButLast.map((value, i) => {
                     return (
-                        <EditConditionValue value={value} onEdit={onEdit} onClickDelete={onDelete} key={'index' + i} />
+                        <EditConditionValue
+                            value={value}
+                            onEdit={handleEdit(i)}
+                            onClickDelete={handleDelete(i)}
+                            key={'index' + i}
+                        />
                     );
                 })}
 
-                <AddConditionValue onAdd={onAdd} />
+                <AddConditionValue value={last} onAdd={onAdd} onEdit={handleEdit(lastIndex)} />
                 {hasError('value') ? (
                     <ErrorZone id="ActionsError">{c('Error').t`You must set a value`}</ErrorZone>
                 ) : null}

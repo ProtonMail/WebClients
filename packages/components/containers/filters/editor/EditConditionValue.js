@@ -5,8 +5,8 @@ import { Input, Button } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 function EditConditionValue({ value, onClickDelete = noop, onEdit = noop }) {
-    const handleClick = () => onClickDelete(value);
-    const handleInput = ({ target }) => onEdit({ before: value, value: target.value });
+    const handleClick = () => onClickDelete();
+    const handleInput = ({ target }) => onEdit(target.value);
 
     return (
         <div className="flex flex-nowrap mb1" data-info={c('Filter condition').t`Or`}>
@@ -19,8 +19,8 @@ function EditConditionValue({ value, onClickDelete = noop, onEdit = noop }) {
 EditConditionValue.propTypes = {
     className: PropTypes.string,
     value: PropTypes.string.isRequired,
-    onEdit: PropTypes.func,
-    onClickDelete: PropTypes.func
+    onEdit: PropTypes.func.isRequired,
+    onClickDelete: PropTypes.func.isRequired
 };
 
 export default EditConditionValue;
