@@ -47,7 +47,7 @@ If you use Windows, you will need to have bash on your computer in order to exec
 2. `npm config set script-shell "C:\\Program Files\\git\\bin\\bash.exe"`
 3. :popcorn:
 
-[More informations](https://stackoverflow.com/questions/23243353/how-to-set-shell-for-npm-run-scripts-in-windows)
+[More information](https://stackoverflow.com/questions/23243353/how-to-set-shell-for-npm-run-scripts-in-windows)
 
 ## Development
 
@@ -66,7 +66,7 @@ CONTACTS_APP=contacts
 CALENDAR_APP=calendar
 ``` 
 
-- **ROOT_DIR**: _mandatory_ Direcotory where your apps are cf [Where should I clone them](https://github.com/ProtonMail/protonmail-settings#where-should-i-should-i-clone-them-) 
+- **ROOT_DIR**: _mandatory_ Directory where your apps are cf [Where should I clone them](https://github.com/ProtonMail/protonmail-settings#where-should-i-should-i-clone-them-) 
 - **WEBCLIENT_APP**: Current directory where the Webclient is (_by default `Angular`_)
 - **SETTINGS_APP**: Current directory where protonmail-settings is (_by default `protonmail-settings`_)
 - **CONTACTS_APP**: Current directory where proton-contacts is (_by default `proton-contacts`_)

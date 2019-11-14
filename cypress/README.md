@@ -2,7 +2,7 @@
 
 ## How to get intelligent code suggestions
 
-The tsconfig.json file inside the main Cypress folder is enough to get your IDE ofchoice to get intelligent code suggestions (Intellisense if you are using Visual Studio Code).
+The tsconfig.json file inside the main Cypress folder is enough to get your IDE of choice to get intelligent code suggestions (Intellisense if you are using Visual Studio Code).
 
 For more info regarding the subject, check the original Cypress documentation:
 https://docs.cypress.io/guides/tooling/intelligent-code-completion.html
