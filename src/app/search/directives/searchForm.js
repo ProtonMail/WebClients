@@ -99,8 +99,6 @@ function searchForm(
                     }
 
                     if (type === 'state') {
-                        const actionHot = data.isOpened ? 'pause' : 'unpause';
-
                         if (data.isOpened) {
                             el[0].classList.add(CLASS_OPEN);
                             hotkeys.pause();
