@@ -103,15 +103,19 @@ function searchForm(
 
                         if (data.isOpened) {
                             el[0].classList.add(CLASS_OPEN);
+                            hotkeys.pause();
                         } else {
                             // defer so on Submit we're able to deal with the advanced search
                             _.defer(() => {
                                 el[0].classList.remove(CLASS_OPEN);
                             }, 300);
+
+                            if (document.activeElement !== $input) {
+                                hotkeys.unpause();
+                            }
                         }
 
                         data.isOpened && scope.$applyAsync(onOpen);
-                        hotkeys[actionHot]();
                     }
                 });
 
@@ -159,8 +163,13 @@ function searchForm(
                     return go(state, model);
                 };
 
+                const onBlur = () => {
+                    const isOpen = el[0].classList.contains(CLASS_OPEN);
+                    !isOpen && hotkeys.unpause();
+                };
+
                 $input.addEventListener('focus', hotkeys.pause);
-                $input.addEventListener('blur', hotkeys.unpause);
+                $input.addEventListener('blur', onBlur);
 
                 el.on('submit', onSubmit);
 
@@ -168,7 +177,7 @@ function searchForm(
                     el.off('submit', onSubmit);
                     unsubscribe();
                     $input.removeEventListener('focus', hotkeys.pause);
-                    $input.removeEventListener('blur', hotkeys.unpause);
+                    $input.removeEventListener('blur', onBlur);
                 });
             };
         }
