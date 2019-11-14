@@ -197,6 +197,9 @@ $calendar-popover-width: 250px !default;
     box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
     color: $pm-global-grey;
 }
+.eventpopover-title {
+    font-size: 2.2rem;
+}
 
 @keyframes eventpopoverIn {
     0% {
