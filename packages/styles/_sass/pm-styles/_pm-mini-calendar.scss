@@ -88,13 +88,18 @@ $minicalendar-bg-color-range-selection: #50555F !default;
     left: 0;
     right: 0;
     bottom: 0;
-    line-height: 2;
+    line-height: 2.3;
 
     color: $white;
     font-weight: bold;
     background: $pm-primary-dark;
     border-radius: 50%;
 }
+
+.minicalendar-grid--displayWeekNumber .minicalendar-day[aria-current="date"]::before {
+    line-height: 2;
+}
+
 .minicalendar-day[aria-pressed=true] {
      color: $white;
      font-weight: bold;
