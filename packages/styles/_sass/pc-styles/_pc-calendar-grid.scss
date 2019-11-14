@@ -172,6 +172,13 @@ $gridcell-right-margin: 1.5em;
     }
 }
 
+@include respond-to($breakpoint-small) { 
+    .calendar-eventcell-title, 
+    .calendar-eventcell-timestring {
+        font-size: 1.2rem;
+    }
+}
+
 // popover
 $calendar-popover-width: 250px !default;
 .eventpopover {
