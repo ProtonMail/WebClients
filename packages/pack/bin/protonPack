@@ -14,13 +14,22 @@ const { getPort, getPublicPath, findPort } = require('../webpack/helpers/source'
 
 const is = (command) => argv._.includes(command);
 
+const getAppMode = () => {
+    // Many flags appMode creates an array, take the last one.
+    if (Array.isArray(argv.appMode)) {
+        const { length, [length - 1]: last, first } = argv.appMode;
+        return last || first || 'bundle';
+    }
+    return argv.appMode || 'bundle';
+};
+
 const {
     config: appConfig,
     path: appConfigPath,
     apiUrl,
     json: jsonConfig
 } = configAppBuilder(argv);
-const APP_MODE = argv.appMode || 'bundle';
+const APP_MODE = getAppMode();
 
 async function main() {
 
