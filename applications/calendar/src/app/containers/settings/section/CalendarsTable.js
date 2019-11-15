@@ -66,16 +66,11 @@ const CalendarsTable = () => {
                         <TableRow
                             key={ID}
                             cells={[
-                                <div key={0}>
+                                <div key={0} className="flex flex-items-center">
                                     <Icon name="calendar" color={Color} className="mr0-5" />
                                     {Name}
                                 </div>,
-                                <DropdownActions
-                                    className="pm-group-button pm-button--small"
-                                    key={1}
-                                    list={list}
-                                    loading={loading}
-                                />
+                                <DropdownActions className="pm-button--small" key={1} list={list} loading={loading} />
                             ]}
                         />
                     );
