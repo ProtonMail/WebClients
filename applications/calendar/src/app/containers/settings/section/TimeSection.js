@@ -5,9 +5,7 @@ import {
     Label,
     Field,
     Select,
-    Loader,
     useEventManager,
-    useCalendarUserSettings,
     useNotifications,
     useApi,
     useLoading,
@@ -21,19 +19,26 @@ import TimezoneSelector from '../../../components/TimezoneSelector';
 import { SETTINGS_TIME_FORMAT } from '../../../constants';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
 
-const TimeSection = () => {
-    const [timezone] = useState(() => getTimezone());
+const TimeSection = ({
+    calendarSettings: {
+        AutoDetectPrimaryTimezone,
+        DisplaySecondaryTimezone,
+        TimeFormat,
+        PrimaryTimezone,
+        SecondaryTimezone
+    }
+}) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
+
+    const [timezone] = useState(() => getTimezone());
 
     const [loadingTimeFormat, withLoadingTimeFormat] = useLoading();
     const [loadingAutoDetect, withLoadingAutoDetect] = useLoading();
     const [loadingPrimaryTimeZone, withLoadingPrimaryTimeZone] = useLoading();
     const [loadingSecondaryTimeZone, withLoadingSecondaryTimeZone] = useLoading();
     const [loadingDisplaySecondaryTimezone, withLoadingDisplaySecondaryTimezone] = useLoading();
-
-    const [calendarSettings, loadingCalendarSettings] = useCalendarUserSettings();
 
     const handleChange = async (data) => {
         await api(updateCalendarUserSettings(data));
@@ -47,23 +52,6 @@ const TimeSection = () => {
         updateLongLocale({ displayAMPM: value === SETTINGS_TIME_FORMAT.H12 });
         createNotification({ text: c('Success').t`Preference saved` });
     };
-
-    if (loadingCalendarSettings) {
-        return (
-            <>
-                <SubTitle>{c('Title').t`Region & time zone`}</SubTitle>
-                <Loader />
-            </>
-        );
-    }
-
-    const {
-        AutoDetectPrimaryTimezone,
-        DisplaySecondaryTimezone,
-        TimeFormat,
-        PrimaryTimezone,
-        SecondaryTimezone
-    } = calendarSettings;
 
     const primaryTimezoneValue = AutoDetectPrimaryTimezone ? timezone : PrimaryTimezone || timezone;
     const secondaryTimezoneValue = DisplaySecondaryTimezone

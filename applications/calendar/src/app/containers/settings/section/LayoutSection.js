@@ -5,12 +5,10 @@ import {
     Label,
     Field,
     Checkbox,
-    Loader,
     useApi,
     useLoading,
     useEventManager,
-    useNotifications,
-    useCalendarUserSettings
+    useNotifications
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
@@ -18,7 +16,7 @@ import { updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
 import WeekStartSelector from '../WeekStartSelector';
 import ViewPreferenceSelector from '../ViewPreferenceSelector';
 
-const LayoutSection = () => {
+const LayoutSection = ({ calendarSettings: { WeekStart, ViewPreference, DisplayWeekNumber } }) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -27,24 +25,11 @@ const LayoutSection = () => {
     const [loadingWeekStart, withLoadingWeekStart] = useLoading();
     const [loadingWeekNumberDisplay, withLoadingWeekNumberDisplay] = useLoading();
 
-    const [calendarSettings, loadingCalendarSettings] = useCalendarUserSettings();
-
     const handleChange = async (data) => {
         await api(updateCalendarUserSettings(data));
         await call();
         createNotification({ text: c('Success').t`Preference saved` });
     };
-
-    if (loadingCalendarSettings) {
-        return (
-            <>
-                <SubTitle>{c('Title').t`Layout`}</SubTitle>
-                <Loader />
-            </>
-        );
-    }
-
-    const { WeekStart, ViewPreference, DisplayWeekNumber } = calendarSettings;
 
     return (
         <>

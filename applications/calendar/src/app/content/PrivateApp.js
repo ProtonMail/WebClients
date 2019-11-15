@@ -17,12 +17,9 @@ import {
     CalendarUserSettingsModel,
     AddressesModel
 } from 'proton-shared/lib/models';
-import { Redirect, Route, Switch } from 'react-router';
 
-import CalendarContainer from '../containers/calendar/CalendarContainer';
-import SettingsContainer from '../containers/settings/SettingsContainer';
-import CalendarSetupContainer from '../containers/setup/CalendarSetupContainer';
 import CalendarPreload from './CalendarPreload';
+import MainContainer from '../containers/calendar/MainContainer';
 
 const EVENT_MODELS = [UserModel, UserSettingsModel, CalendarsModel, CalendarUserSettingsModel, AddressesModel];
 
@@ -57,18 +54,7 @@ const PrivateApp = ({ onLogout }) => {
             <EventNotices />
             <ThemeInjector />
             <ErrorBoundary>
-                <CalendarSetupContainer>
-                    <Switch>
-                        <Route path="/calendar/settings" component={SettingsContainer} />
-                        <Route
-                            path="/calendar"
-                            render={({ history, location }) => {
-                                return <CalendarContainer history={history} location={location} />;
-                            }}
-                        />
-                        <Redirect to="/calendar" />
-                    </Switch>
-                </CalendarSetupContainer>
+                <MainContainer/>
             </ErrorBoundary>
         </EventManagerProvider>
     );

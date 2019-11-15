@@ -3,10 +3,10 @@ import React from 'react';
 import CalendarsSection from './section/CalendarsSection';
 import Main from '../../components/Main';
 
-const SettingsCalendarPage = () => {
+const SettingsCalendarPage = ({ calendars }) => {
     return (
         <Main className="p2">
-            <CalendarsSection />
+            <CalendarsSection calendars={calendars} />
         </Main>
     );
 };

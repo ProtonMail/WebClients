@@ -8,7 +8,6 @@ import {
     TableBody,
     TableRow,
     DropdownActions,
-    useCalendars,
     useApi,
     useEventManager,
     useNotifications,
@@ -20,12 +19,11 @@ import { removeCalendar } from 'proton-shared/lib/api/calendars';
 
 import CalendarModal from '../CalendarModal';
 
-const CalendarsTable = () => {
+const CalendarsTable = ({ calendars }) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
-    const [calendars, loadingCalendars] = useCalendars();
     const [loading, withLoading] = useLoading();
 
     const handleDelete = async (ID) => {
@@ -42,7 +40,7 @@ const CalendarsTable = () => {
     };
 
     return (
-        <Table loading={loadingCalendars}>
+        <Table>
             <TableHeader cells={[c('Header').t`Name`, c('Header').t`Actions`]} />
             <TableBody>
                 {(calendars || []).map((calendar) => {

@@ -14,13 +14,7 @@ import {
     useGetAddressKeys
 } from 'react-components';
 
-import {
-    createCalendar,
-    updateCalendarSettings,
-    updateCalendar,
-    setupCalendar,
-    queryMembers
-} from 'proton-shared/lib/api/calendars';
+import { createCalendar, updateCalendarSettings, updateCalendar } from 'proton-shared/lib/api/calendars';
 import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
 
 import { DEFAULT_CALENDAR, DEFAULT_EVENT_DURATION, NOTIFICATION_TYPE } from '../../constants';
@@ -34,7 +28,7 @@ import {
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS
 } from '../../helpers/notifications';
-import { generateCalendarKeyPayload, getKeysMemberMap } from 'proton-shared/lib/keys/calendarKeys';
+import { setupCalendarKeys } from '../setup/resetHelper';
 
 const validate = ({ name }) => {
     const errors = {};
@@ -166,18 +160,15 @@ const CalendarModal = ({ calendar, ...rest }) => {
                 AddressID: addressID
             })
         );
-        const { Members = [] } = await api(queryMembers(Calendar.ID));
 
-        const calendarKeyPayload = await generateCalendarKeyPayload({
+        await setupCalendarKeys({
+            api,
+            calendars: [Calendar],
             addressID,
-            calendarID: Calendar.ID,
+            addressEmail: primaryAddressEmail,
             privateKey: primaryAddressKey,
-            memberPublicKeys: getKeysMemberMap(Members, {
-                [primaryAddressEmail]: primaryAddressPublicKey
-            })
+            publicKey: primaryAddressPublicKey
         });
-
-        await api(setupCalendar(Calendar.ID, calendarKeyPayload));
 
         return Calendar.ID;
     };

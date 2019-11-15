@@ -14,21 +14,17 @@ import {
     Button
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import {
-    createCalendar,
-    queryMembers,
-    setupCalendar,
-    updateCalendarUserSettings
-} from 'proton-shared/lib/api/calendars';
+import { createCalendar, updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
 import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
-import { generateCalendarKeyPayload, getKeysMemberMap } from 'proton-shared/lib/keys/calendarKeys';
 
-import { DEFAULT_CALENDAR } from '../../constants';
+import { DEFAULT_CALENDAR, SETTINGS_TIME_FORMAT } from '../../constants';
 import CalendarModal from '../../containers/settings/CalendarModal';
 import CalendarCreating from './CalendarCreating';
 import CalendarReady from './CalendarReady';
+import { setupCalendarKeys } from './resetHelper';
+import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 
 const WelcomeModal = (props) => {
     const calendarRef = useRef();
@@ -57,8 +53,10 @@ const WelcomeModal = (props) => {
         }
 
         const [{ ID: primaryAddressID, Email: primaryAddressEmail = '' }] = addresses;
-        const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
-            getPrimaryKey(await getAddressKeys(primaryAddressID)) || {};
+        const {
+            privateKey: primaryAddressKey,
+            publicKey: primaryAddressPublicKey
+        } = getPrimaryKey(await getAddressKeys(primaryAddressID)) || {};
         if (!primaryAddressKey || !primaryAddressKey.isDecrypted()) {
             throw new Error(c('Error').t`Primary address key is not decrypted.`);
         }
@@ -72,21 +70,27 @@ const WelcomeModal = (props) => {
         };
 
         const { Calendar = {} } = await api(createCalendar(calendarPayload));
-        const { Members = [] } = await api(queryMembers(Calendar.ID));
 
-        const calendarKeyPayload = await generateCalendarKeyPayload({
-            addressID: primaryAddressID,
-            calendarID: Calendar.ID,
-            privateKey: primaryAddressKey,
-            memberPublicKeys: getKeysMemberMap(Members, {
-                [primaryAddressEmail]: primaryAddressPublicKey
-            })
-        });
+        // Improve guessing
+        const defaultTimeFormat = SETTINGS_TIME_FORMAT.H24;
 
         await Promise.all([
-            api(updateCalendarUserSettings({ PrimaryTimezone: getTimezone(), AutoDetectPrimaryTimezone: 0 })),
-            api(setupCalendar(Calendar.ID, calendarKeyPayload))
+            api(updateCalendarUserSettings({
+                PrimaryTimezone: getTimezone(),
+                AutoDetectPrimaryTimezone: 0,
+                TimeFormat: defaultTimeFormat
+            })),
+            setupCalendarKeys({
+                api,
+                calendars: [Calendar],
+                addressID: primaryAddressID,
+                addressEmail: primaryAddressEmail,
+                privateKey: primaryAddressKey,
+                publicKey: primaryAddressPublicKey
+            })
         ]);
+
+        updateLongLocale({ displayAMPM: defaultTimeFormat === SETTINGS_TIME_FORMAT.H12 });
 
         await call();
 

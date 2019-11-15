@@ -1,6 +1,5 @@
 import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef } from 'react';
 import {
-    useCalendars,
     useCalendarUserSettings,
     useCalendarBootstrap,
     useAddresses,
@@ -20,6 +19,8 @@ import useCalendarsEvents from './useCalendarsEvents';
 import { getDateRange } from './helper';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
+//import { hasBit } from 'proton-shared/lib/helpers/bitset';
+//import { CALENDAR_STATUS } from 'proton-shared/lib/calendar/constants';
 
 const { DAY, WEEK, MONTH } = VIEWS;
 
@@ -140,15 +141,17 @@ const customReducer = (oldState, newState) => {
     return oldState;
 };
 
-const CalendarContainer = ({ history, location }) => {
-    const [calendars, loadingCalendars] = useCalendars();
+const CalendarContainer = ({ calendars, history, location }) => {
     const [calendarSettings, loadingCalendarSettings] = useCalendarUserSettings();
     const [addresses, loadingAddresses] = useAddresses();
 
     const interactiveRef = useRef();
 
     const visibleCalendars = useMemo(() => {
-        return calendars ? calendars.filter(({ Display }) => !!Display) : undefined;
+        return calendars
+            //? calendars.filter(({ Display, Status }) => !!Display && hasBit(Status, CALENDAR_STATUS.ACTIVE))
+            ? calendars.filter(({ Display }) => !!Display)
+            : undefined;
     }, [calendars]);
 
     const [nowDate, setNowDate] = useState(() => new Date());
@@ -316,7 +319,7 @@ const CalendarContainer = ({ history, location }) => {
     const [containerRef, setContainerRef] = useState();
 
     const isLoading =
-        loadingCalendarBootstrap || loadingCalendars || loadingCalendarSettings || loadingEvents || loadingAddresses;
+        loadingCalendarBootstrap || loadingCalendarSettings || loadingEvents || loadingAddresses;
 
     return (
         <CalendarContainerView
