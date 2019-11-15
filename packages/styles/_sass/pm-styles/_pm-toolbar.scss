@@ -57,6 +57,9 @@
   color: var(--fillcolor-icons, $white);
   background: url("#{$path-images}sprite-for-css-only.svg#css-caret-white") calc(100% - 6px) 50% no-repeat;
 }
+.toolbar-select option {
+  color: $black; // for Chrome bug
+}
 
 
 @include respond-to($breakpoint-small) {
