@@ -116,6 +116,7 @@ const CalendarModal = ({ calendar, ...rest }) => {
                 calendarID: calendar.ID,
                 name: calendar.Name,
                 display: calendar.Display,
+                description: calendar.Description,
                 color: calendar.Color,
                 addressID,
                 addressOptions: addresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
