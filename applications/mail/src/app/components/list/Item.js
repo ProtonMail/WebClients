@@ -7,10 +7,10 @@ import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from 'proton-shared/lib/constants';
 import ItemCheckbox from './ItemCheckbox';
 import { getSenders, getRecipients } from '../../helpers/conversation';
 import { getSender, getRecipients as getMessageRecipients } from '../../helpers/message';
-import { ELEMENT_TYPES } from '../../constants';
 import { getCurrentType } from '../../helpers/element';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
+import { isConversation } from '../../helpers/element';
 
 const { SENT, SENT_ALL, DRAFTS, DRAFTS_ALL } = MAILBOX_LABEL_IDS;
 
@@ -18,9 +18,9 @@ const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked 
     const { ID } = element;
     const displayRecipients = [SENT, SENT_ALL, DRAFTS, DRAFTS_ALL].includes(labelID);
     const type = getCurrentType({ mailSettings, labelID });
-    const isConversation = type === ELEMENT_TYPES.CONVERSATION;
-    const senders = isConversation ? getSenders(element) : [getSender(element)];
-    const recipients = isConversation ? getRecipients(element) : getMessageRecipients(element);
+    // const isConversation = type === ELEMENT_TYPES.CONVERSATION;
+    const senders = isConversation(element) ? getSenders(element) : [getSender(element)];
+    const recipients = isConversation(element) ? getRecipients(element) : getMessageRecipients(element);
 
     const { ViewLayout = VIEW_LAYOUT.COLUMN } = mailSettings;
     const isColumnMode = ViewLayout === VIEW_LAYOUT.COLUMN;

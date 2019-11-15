@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Href } from 'react-components';
 import { c } from 'ttag';
-import { getListUnsubscribe } from '../logic/message';
+import { getListUnsubscribe } from '../../../helpers/message';
 
 const ExtraUnsubscribe = ({ message }) => {
     if (/*unsubscribed || */ !getListUnsubscribe(message.data)) {

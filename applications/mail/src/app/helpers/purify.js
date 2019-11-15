@@ -1,6 +1,6 @@
 import DOMPurify from 'dompurify';
 
-import { unicodeTag, unescapeCSSEncoding, escape } from './stringHelper';
+import { unicodeTag, unescapeCSSEncoding, escape } from './string';
 
 /*
 This is valid

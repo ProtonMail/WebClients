@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useCache, useApi } from 'react-components';
-import { getAndVerify, getCacheKey } from '../logic/attachments';
-import { parser } from '../logic/transforms/embedded/embedded';
+import { getAndVerify, getCacheKey } from '../helpers/attachments';
+import { parser } from '../helpers/embedded/embedded';
 import { useSignatures } from './useSignatures';
 
 const CACHE_KEY = 'Attachments';

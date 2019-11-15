@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { classnames } from 'react-components';
 
 import { getDate } from '../../helpers/element';
-import { formatSimpleDate, formatFullDate, formatDistanceToNow } from '../message/helpers/dateHelper';
+import { formatSimpleDate, formatFullDate, formatDistanceToNow } from '../../helpers/date';
 
 const FORMATERS = {
     simple: formatSimpleDate,

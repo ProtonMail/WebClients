@@ -1,4 +1,4 @@
-import { matches } from '../../helpers/domHelper';
+import { matches } from '../dom';
 
 const PROTOCOLS = ['ftp://', 'http://', 'https://', 'xmpp:', 'tel:', 'callto:'];
 const ALL_PROTOCOLS = PROTOCOLS.concat(['mailto:']);

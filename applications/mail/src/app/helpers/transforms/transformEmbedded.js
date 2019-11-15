@@ -1,7 +1,7 @@
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
-import { wrap } from '../../helpers/domHelper';
-import { isInlineEmbedded, isEmbedded } from '../../helpers/imageHelper';
-import * as embedded from './embedded/embedded';
+import { wrap } from '../dom';
+import { isInlineEmbedded, isEmbedded } from '../image';
+import * as embedded from '../embedded/embedded';
 
 const EMBEDDED_CLASSNAME = 'proton-embedded';
 const wrapImage = (img) => wrap(img, '<div class="image loading"></div>');

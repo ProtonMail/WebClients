@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 import { Icon } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import { attachmentsSize, getAttachments } from './logic/message';
+import { attachmentsSize, getAttachments } from '../../helpers/message';
 import MessageAttachment from './MessageAttachment';
 
 const MessageFooter = ({ message }) => {

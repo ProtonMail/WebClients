@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
-import ItemStar from '../list/ItemStar';
-import ItemDate from '../list/ItemDate';
-import { ELEMENT_TYPES } from '../../constants';
-import MessageLock from './MessageLock';
-import { isSent } from './logic/message';
-import ItemLabels from '../list/ItemLabels';
-import ItemAttachmentIcon from '../list/ItemAttachmentIcon';
+import ItemStar from '../../list/ItemStar';
+import ItemDate from '../../list/ItemDate';
+import { ELEMENT_TYPES } from '../../../constants';
+import MessageLock from '../MessageLock';
+import { isSent } from '../../../helpers/message';
+import ItemLabels from '../../list/ItemLabels';
+import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 
-const MessageHeaderCollapsed = ({ message, labels, onExpand }) => {
+const HeaderCollapsed = ({ message, labels, onExpand }) => {
     const { Name, Address } = message.data.Sender;
 
     const handleClick = (event) => {
@@ -47,10 +47,10 @@ const MessageHeaderCollapsed = ({ message, labels, onExpand }) => {
     );
 };
 
-MessageHeaderCollapsed.propTypes = {
+HeaderCollapsed.propTypes = {
     message: PropTypes.object.isRequired,
     labels: PropTypes.array.isRequired,
     onExpand: PropTypes.func
 };
 
-export default MessageHeaderCollapsed;
+export default HeaderCollapsed;

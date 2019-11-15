@@ -18,28 +18,8 @@ RecipientsList.propTypes = {
     list: PropTypes.array.isRequired
 };
 
-const MessageHeaderRecipients = ({ message, showDetails = false }) => {
+const HeaderRecipientsDetails = ({ message }) => {
     const { ToList = [], CCList = [], BCCList = [] } = message;
-
-    if (!showDetails) {
-        const recipients = [...ToList, ...BCCList, ...CCList];
-
-        return (
-            <div className="flex">
-                <span className="opacity-50 flex-self-vcenter container-to">{c('Label').t`To:`}</span>
-                <span className="flex-self-vcenter mr1">
-                    {recipients.map(({ Address = '', Name = '' }, index) => {
-                        return (
-                            <span key={index} className="mr0-5" title={Address}>
-                                {Name || Address}
-                                {index < recipients.length - 1 && ','}
-                            </span>
-                        );
-                    })}
-                </span>
-            </div>
-        );
-    }
 
     return (
         <div className="flex flex-column">
@@ -71,9 +51,8 @@ const MessageHeaderRecipients = ({ message, showDetails = false }) => {
     );
 };
 
-MessageHeaderRecipients.propTypes = {
-    message: PropTypes.object.isRequired,
-    showDetails: PropTypes.bool
+HeaderRecipientsDetails.propTypes = {
+    message: PropTypes.object.isRequired
 };
 
-export default MessageHeaderRecipients;
+export default HeaderRecipientsDetails;

@@ -4,20 +4,21 @@ import { c } from 'ttag';
 import { SimpleDropdown, Icon, Group, ButtonGroup, useToggle } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import ItemStar from '../list/ItemStar';
-import ItemDate from '../list/ItemDate';
-import { ELEMENT_TYPES } from '../../constants';
-import ItemLabels from '../list/ItemLabels';
-import ItemLocation from '../list/ItemLocation';
-import MoveDropdown from '../dropdown/MoveDropdown';
-import LabelDropdown from '../dropdown/LabelDropdown';
-import MessageHeaderExtra from './MessageHeaderExtra';
-import MessageLock from './MessageLock';
-import { isSent } from './logic/message';
-import MessageHeaderRecipients from './MessageHeaderRecipients';
-import ItemAttachmentIcon from '../list/ItemAttachmentIcon';
+import ItemStar from '../../list/ItemStar';
+import ItemDate from '../../list/ItemDate';
+import { ELEMENT_TYPES } from '../../../constants';
+import ItemLabels from '../../list/ItemLabels';
+import ItemLocation from '../../list/ItemLocation';
+import MoveDropdown from '../../dropdown/MoveDropdown';
+import LabelDropdown from '../../dropdown/LabelDropdown';
+import HeaderExtra from './HeaderExtra';
+import MessageLock from '../MessageLock';
+import { isSent } from '../../../helpers/message';
+import HeaderRecipientsSimple from './HeaderRecipientsSimple';
+import HeaderRecipientsDetails from './HeaderRecipientsDetails';
+import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 
-const MessageHeaderExpanded = ({
+const HeaderExpanded = ({
     labels,
     message,
     messageLoaded,
@@ -56,7 +57,11 @@ const MessageHeaderExpanded = ({
                 </div>
             </div>
             <div className="flex flex-nowrap flex-items-start flex-spacebetween mb0-5">
-                <MessageHeaderRecipients message={message.data} showDetails={showDetails} />
+                {showDetails ? (
+                    <HeaderRecipientsDetails message={message.data} />
+                ) : (
+                    <HeaderRecipientsSimple message={message.data} />
+                )}
                 <div className="stop-propagation">
                     <ItemAttachmentIcon element={message.data} type={ELEMENT_TYPES.MESSAGE} />
                     <ItemLabels max={4} element={message.data} labels={labels} type={ELEMENT_TYPES.MESSAGE} />
@@ -75,7 +80,7 @@ const MessageHeaderExpanded = ({
                     </div>
                 </>
             ) : null}
-            <MessageHeaderExtra
+            <HeaderExtra
                 message={message}
                 onLoadRemoteImages={onLoadRemoteImages}
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
@@ -111,7 +116,7 @@ const MessageHeaderExpanded = ({
     );
 };
 
-MessageHeaderExpanded.propTypes = {
+HeaderExpanded.propTypes = {
     labels: PropTypes.array,
     mailSettings: PropTypes.object.isRequired,
     message: PropTypes.object.isRequired,
@@ -121,4 +126,4 @@ MessageHeaderExpanded.propTypes = {
     onCollapse: PropTypes.func.isRequired
 };
 
-export default MessageHeaderExpanded;
+export default HeaderExpanded;

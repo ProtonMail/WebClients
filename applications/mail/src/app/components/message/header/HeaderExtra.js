@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ExtraImages from './extras/ExtraImages';
-import ExtraUnsubscribe from './extras/ExtraUnsubscribe';
+import ExtraImages from '../extras/ExtraImages';
+import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 
-const MessageHeaderExtra = ({ message, onLoadRemoteImages, onLoadEmbeddedImages }) => {
+const HeaderExtra = ({ message, onLoadRemoteImages, onLoadEmbeddedImages }) => {
     return (
         <section className="mt0-5 stop-propagation">
             {/* TODO: ExpirationTime */}
@@ -22,10 +22,10 @@ const MessageHeaderExtra = ({ message, onLoadRemoteImages, onLoadEmbeddedImages 
     );
 };
 
-MessageHeaderExtra.propTypes = {
+HeaderExtra.propTypes = {
     message: PropTypes.object.isRequired,
     onLoadRemoteImages: PropTypes.func.isRequired,
     onLoadEmbeddedImages: PropTypes.func.isRequired
 };
 
-export default MessageHeaderExtra;
+export default HeaderExtra;

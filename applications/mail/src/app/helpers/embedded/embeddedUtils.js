@@ -1,7 +1,7 @@
 import mimemessage from 'mimemessage';
 
 // import { toUnsignedString, ucFirst } from '../../../helpers/string';
-import { ucFirst } from '../../../helpers/stringHelper';
+import { ucFirst } from '../string';
 // import transformEscape from '../../message/helpers/transformEscape';
 
 const REGEXP_CID_START = /^cid:/g;

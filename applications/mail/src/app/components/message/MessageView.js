@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useToggle, Loader, classnames } from 'react-components';
 
-import { useComputeMessage } from './hooks/useComputeMessage';
-import { hasAttachments } from './logic/message';
+import { useComputeMessage } from '../../hooks/useComputeMessage';
+import { hasAttachments } from '../../helpers/message';
 
 import MessageBody from './MessageBody';
-import MessageHeaderCollapsed from './MessageHeaderCollapsed';
-import MessageHeaderExpanded from './MessageHeaderExpanded';
+import HeaderCollapsed from './header/HeaderCollapsed';
+import HeaderExpanded from './header/HeaderExpanded';
 import MessageFooter from './MessageFooter';
 
 const MessageView = ({ labels, message: inputMessage, mailSettings, initialExpand, conversationIndex }) => {
@@ -49,7 +49,7 @@ const MessageView = ({ labels, message: inputMessage, mailSettings, initialExpan
         <article ref={elementRef} className={classnames(['message-container mb2', expanded && 'is-opened'])}>
             {expanded ? (
                 <>
-                    <MessageHeaderExpanded
+                    <HeaderExpanded
                         message={message}
                         messageLoaded={loaded}
                         onLoadRemoteImages={handleLoadRemoteImages}
@@ -68,7 +68,7 @@ const MessageView = ({ labels, message: inputMessage, mailSettings, initialExpan
                     )}
                 </>
             ) : (
-                <MessageHeaderCollapsed message={message} labels={labels} onExpand={handleExpand(true)} />
+                <HeaderCollapsed message={message} labels={labels} onExpand={handleExpand(true)} />
             )}
         </article>
     );

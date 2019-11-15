@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Tooltip, Href } from 'react-components';
-import { displaySignatureStatus } from './logic/displaySignature';
-import { isPGPEncrypted } from './logic/message';
-import { getEncryptionType } from './logic/encryptionType';
+import { displaySignatureStatus } from '../../helpers/displaySignature';
+import { isPGPEncrypted } from '../../helpers/message';
+import { getEncryptionType } from '../../helpers/encryptionType';
 
 // Reference: Angular/src/templates/message/encryptionStatus.tpl.html
 
