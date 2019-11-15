@@ -136,6 +136,7 @@ $gridcell-right-margin: 1.5em;
     padding-bottom: 5px;
     white-space: nowrap;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .calendar-dayeventcell--isBefore,
@@ -155,6 +156,7 @@ $gridcell-right-margin: 1.5em;
     color: $black;
     border-radius: 2px;
     transition: opacity .5s ease;
+    cursor: pointer;
 
     &:after {
         position: absolute;
