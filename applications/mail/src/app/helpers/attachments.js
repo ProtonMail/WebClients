@@ -6,6 +6,8 @@ import {
     decryptSessionKey,
     getMessage
 } from 'pmcrypto';
+import JSZip from 'jszip';
+import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { getAttachment } from '../api/attachments';
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
@@ -103,7 +105,140 @@ export const getAndVerify = async (attachment = {}, message = {}, reverify = fal
         return data;
     }
 
-    await verify(attachment, data, message, signatures);
+    verify && (await verify(attachment, data, message, signatures));
 
     return data;
+};
+
+/**
+ * Format attachment for the download
+ * @param  {Object} attachment
+ * @param  {Object} message    Message
+ * @param  {Node} el         Link clicked
+ * @return {Promise}
+ */
+const formatDownload = async (attachment, message, { cache, api }) => {
+    console.log('formatDownload', attachment);
+    try {
+        const data = await getAndVerify(attachment, message, false, { cache, api });
+        return {
+            data,
+            Name: attachment.Name,
+            MIMEType: attachment.MIMEType,
+            ID: attachment.ID
+        };
+    } catch (e) {
+        // If the decryption fails we download the encrypted version
+        console.log('error', e);
+        if (e.data) {
+            return {
+                data: e.data,
+                Name: `${attachment.Name}.pgp`,
+                MIMEType: 'application/pgp',
+                isError: true,
+                ID: attachment.ID
+            };
+        }
+        throw e;
+    }
+};
+
+/**
+ * Generate a download for an attachment
+ * @param  {Object} attachment
+ * @return {void}
+ */
+const generateDownload = async (message, attachment) => {
+    // TODO: uncomment
+    // try {
+    //     await checkAllSignatures(message, [attachment]);
+    // } catch (e) {
+    //     // swallow as the user is informed already by a confirmation and actually caused this error
+    //     return;
+    // }
+
+    downloadFile(new Blob([attachment.data], { type: attachment.MIMEType }), attachment.Name);
+};
+
+/**
+ * Download an attachment
+ * @param  {Object} attachment
+ * @param  {Message} message
+ * @param  {Node} el
+ * @return {Promise}
+ */
+export const download = async (attachment, message, { cache, api }) => {
+    const att = await formatDownload(attachment, message, { cache, api });
+
+    // TODO: uncomment
+    // if (att.isError) {
+    //     if (!(await allowDownloadBrokenAtt())) {
+    //         return; // We don't want to download it
+    //     }
+    // }
+
+    return generateDownload(message, att);
+};
+
+/**
+ * The attachment's Name is not uniq we need a uniq name in order
+ * to make the zip. The lib doesn't allow duplicates
+ * @param  {Message} message
+ * @return {Array}         Array of promises
+ */
+const formatDownloadAll = async (message, { cache, api }) => {
+    const { Attachments = [] } = message.data;
+    const { list } = Attachments.reduce(
+        (acc, att) => {
+            if (!acc.map[att.Name]) {
+                acc.map[att.Name] = { index: 0 };
+            } else {
+                acc.map[att.Name].index++;
+                // We can have an extension
+                const name = att.Name.split('.');
+                const ext = name.pop();
+                const newName = `${name.join('.')} (${acc.map[att.Name].index}).${ext}`;
+                att.Name = newName;
+            }
+            acc.list.push(att);
+            return acc;
+        },
+        { list: [], map: {} }
+    );
+
+    return Promise.all(list.map((att) => formatDownload(att, message, { cache, api })));
+};
+
+const getZipAttachmentName = (message) => `Attachments-${message.Subject}.zip`;
+
+/**
+ * Download all attachments as a zipfile
+ * @param  {Object} message Message
+ * @param  {Node} el      link clicked
+ * @return {Promise}         Always success
+ */
+export const downloadAll = async (message = {}, { cache, api }) => {
+    const list = await formatDownloadAll(message, { cache, api });
+
+    // TODO: uncomment
+    // try {
+    //     await checkAllSignatures(message, list);
+    // } catch (e) {
+    //     // swallow as the user is informed already by a confirmation and actually caused this error
+    //     return;
+    // }
+
+    // TODO: uncomment
+    // // Detect if we have at least one error
+    // if (list.some(({ isError }) => isError)) {
+    //     if (!(await allowDownloadBrokenAtt())) {
+    //         return; // We don't want to download it
+    //     }
+    // }
+
+    const zip = new JSZip();
+    list.forEach(({ Name, data }) => zip.file(Name, data));
+    const content = await zip.generateAsync({ type: 'blob' });
+    console.log('coucou', getZipAttachmentName(message.data));
+    downloadFile(content, getZipAttachmentName(message.data));
 };

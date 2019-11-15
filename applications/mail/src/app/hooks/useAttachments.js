@@ -1,6 +1,11 @@
 import { useCallback } from 'react';
 import { useCache, useApi } from 'react-components';
-import { getAndVerify, getCacheKey } from '../helpers/attachments';
+import {
+    getAndVerify,
+    getCacheKey,
+    download as downloadAttachment,
+    downloadAll as downloadAllAttachment
+} from '../helpers/attachments';
 import { parser } from '../helpers/embedded/embedded';
 import { useSignatures } from './useSignatures';
 
@@ -34,7 +39,14 @@ export const useAttachments = () => {
 
     const has = useCallback((attachment = {}) => cache.get(getCacheKey(attachment)), [cache]);
 
-    return { get, reverify, has };
+    const download = useCallback(
+        (attachment = {}, message = {}) => downloadAttachment(attachment, message, { cache, api }),
+        [cache, api]
+    );
+
+    const downloadAll = useCallback((message = {}) => downloadAllAttachment(message, { cache, api }), [cache, api]);
+
+    return { get, reverify, has, download, downloadAll };
 };
 
 export const useTransformAttachments = () => {
