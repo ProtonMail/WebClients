@@ -64,7 +64,8 @@ const DateCursorButtons = ({ view, currentDate, now, dateRange, onToday, onPrev,
                 <Icon name="arrow-right" className="mauto toolbar-icon" />
                 <span className="sr-only">{next}</span>
             </button>
-            <span className="pl0-5 pr0-5 mtauto mbauto">{currentRange}</span>
+            <span className="toolbar-separator" />
+            <span className="pl1 pr0-5 mtauto mbauto">{currentRange}</span>
         </>
     );
 };
