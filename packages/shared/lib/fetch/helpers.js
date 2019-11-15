@@ -43,7 +43,7 @@ const appendQueryParams = (url, params) => {
  * @returns {URL}
  */
 export const createUrl = (urlString, params = {}) => {
-    const url = new URL(urlString, location.origin);
+    const url = new URL(urlString, window.location.origin);
     appendQueryParams(url, params);
     return url;
 };
