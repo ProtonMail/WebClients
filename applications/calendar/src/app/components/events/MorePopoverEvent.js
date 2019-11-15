@@ -43,7 +43,7 @@ const MorePopoverEvent = ({
                             formatTime={formatTime}
                             event={event}
                             key={event.id}
-                            className="dayeventcell"
+                            className="calendar-dayeventcell"
                             isSelected={isSelected}
                             {...props}
                         />

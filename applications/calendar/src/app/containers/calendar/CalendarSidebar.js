@@ -37,20 +37,23 @@ const CalendarSidebar = ({
         if (calendars.length === 0) {
             return null;
         }
-        return calendars.map(({ ID, Name, Display, Color }) => {
+        return calendars.map(({ ID, Name, Display, Color }, i) => {
             return (
                 <div className="navigation__link" key={ID}>
                     <span className="flex flex-nowrap flex-items-center">
                         <Checkbox
-                            className="mr0-25 fill-currentColor"
+                            className="mr0-25 fill-currentColor flex-item-noshrink"
                             color="white"
                             backgroundColor={Color}
                             borderColor={Color}
                             checked={!!Display}
                             disabled={loadingAction}
+                            aria-describedby={`calendar-${i}`}
                             onChange={({ target: { checked } }) => withLoadingAction(handleVisibility(ID, checked))}
                         />
-                        <span className="ellipsis mw100">{Name}</span>
+                        <span className="ellipsis mw100" id={`calendar-${i}`} title={Name}>
+                            {Name}
+                        </span>
                     </span>
                 </div>
             );
@@ -80,7 +83,7 @@ const CalendarSidebar = ({
                 >{c('Action').t`New event`}</PrimaryButton>
             </div>
             <div className="nomobile">{miniCalendar}</div>
-            <nav className="navigation flex-item-fluid scroll-if-needed mb1">
+            <nav className="navigation mw100 flex-item-fluid scroll-if-needed mb1">
                 <NavMenu list={list} className="mb0" />
                 {calendarsListView}
             </nav>
