@@ -8,6 +8,7 @@ import {
 } from '../helpers/attachments';
 import { parser } from '../helpers/embedded/embedded';
 import { useSignatures } from './useSignatures';
+import { MessageExtended, Attachment } from '../models/message';
 
 const CACHE_KEY = 'Attachments';
 
@@ -28,23 +29,29 @@ export const useAttachments = () => {
     const { verify } = useSignatures();
 
     const get = useCallback(
-        (attachment = {}, message = {}) => getAndVerify(attachment, message, false, { cache, api, verify }),
+        (attachment: Attachment = {}, message: MessageExtended = {}) =>
+            getAndVerify(attachment, message, false, { cache, api, verify }),
         [cache, api]
     );
 
     const reverify = useCallback(
-        (attachment = {}, message = {}) => getAndVerify(attachment, message, true, { cache, api, verify }),
+        (attachment: Attachment = {}, message: MessageExtended = {}) =>
+            getAndVerify(attachment, message, true, { cache, api, verify }),
         [cache, api]
     );
 
-    const has = useCallback((attachment = {}) => cache.get(getCacheKey(attachment)), [cache]);
+    const has = useCallback((attachment: Attachment = {}) => cache.get(getCacheKey(attachment)), [cache]);
 
     const download = useCallback(
-        (attachment = {}, message = {}) => downloadAttachment(attachment, message, { cache, api }),
+        (attachment: Attachment = {}, message: MessageExtended = {}) =>
+            downloadAttachment(attachment, message, { cache, api }),
         [cache, api]
     );
 
-    const downloadAll = useCallback((message = {}) => downloadAllAttachment(message, { cache, api }), [cache, api]);
+    const downloadAll = useCallback((message: MessageExtended = {}) => downloadAllAttachment(message, { cache, api }), [
+        cache,
+        api
+    ]);
 
     return { get, reverify, has, download, downloadAll };
 };
@@ -52,7 +59,10 @@ export const useAttachments = () => {
 export const useTransformAttachments = () => {
     const attachmentLoader = useAttachments();
 
-    return useCallback(async (message, { mailSettings }) => {
-        return parser(message, mailSettings, { direction: 'blob', attachmentLoader });
-    });
+    return useCallback(
+        async (message: MessageExtended, { mailSettings }: any) => {
+            return parser(message, mailSettings, { direction: 'blob', attachmentLoader });
+        },
+        [attachmentLoader]
+    );
 };

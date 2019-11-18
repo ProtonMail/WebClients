@@ -1,20 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import { useToggle, Loader, classnames } from 'react-components';
 
 import { useComputeMessage } from '../../hooks/useComputeMessage';
 import { hasAttachments } from '../../helpers/message';
+import { Label } from '../../models/label';
 
 import MessageBody from './MessageBody';
 import HeaderCollapsed from './header/HeaderCollapsed';
 import HeaderExpanded from './header/HeaderExpanded';
 import MessageFooter from './MessageFooter';
+import { Message, MessageExtended } from '../../models/message';
 
-const MessageView = ({ labels, message: inputMessage, mailSettings, initialExpand, conversationIndex }) => {
+interface Props {
+    labels: Label[];
+    message: Message;
+    mailSettings: any;
+    initialExpand: boolean;
+    conversationIndex: number;
+}
+
+const MessageView = ({ labels = [], message: inputMessage, mailSettings, initialExpand, conversationIndex }: Props) => {
     const { state: expanded, set: setExpanded } = useToggle(initialExpand);
     const [loaded, setLoaded] = useState(false);
-    const [message, setMessage] = useState({ data: inputMessage });
-    const elementRef = useRef();
+    const [message, setMessage] = useState({ data: inputMessage } as MessageExtended);
+    const elementRef = useRef<HTMLElement>(null);
 
     const { initialize, loadRemoteImages, loadEmbeddedImages } = useComputeMessage(mailSettings);
 
@@ -41,7 +50,7 @@ const MessageView = ({ labels, message: inputMessage, mailSettings, initialExpan
         setMessage(await loadEmbeddedImages(message));
     };
 
-    const handleExpand = (value) => () => {
+    const handleExpand = (value: boolean) => () => {
         setExpanded(value);
     };
 
@@ -72,14 +81,6 @@ const MessageView = ({ labels, message: inputMessage, mailSettings, initialExpan
             )}
         </article>
     );
-};
-
-MessageView.propTypes = {
-    labels: PropTypes.array,
-    mailSettings: PropTypes.object.isRequired,
-    message: PropTypes.object.isRequired,
-    initialExpand: PropTypes.bool.isRequired,
-    conversationIndex: PropTypes.number.isRequired
 };
 
 export default MessageView;

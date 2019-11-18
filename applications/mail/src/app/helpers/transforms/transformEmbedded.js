@@ -6,7 +6,7 @@ import * as embedded from '../embedded/embedded';
 const EMBEDDED_CLASSNAME = 'proton-embedded';
 const wrapImage = (img) => wrap(img, '<div class="image loading"></div>');
 
-export const transformEmbedded = async (message, { action, mailSettings }) => {
+export const transformEmbedded = async (message, { action = null, mailSettings }) => {
     const images = [...message.document.querySelectorAll('img[proton-src]')];
     const { ShowImages = 0 } = mailSettings;
     const isReplyForward = /^reply|forward/.test(action);

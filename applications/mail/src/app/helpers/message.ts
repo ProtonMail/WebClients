@@ -2,6 +2,7 @@ import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 
 import { MESSAGE_FLAGS, SIGNATURE_START } from '../constants';
+import { Message } from '../models/message';
 
 const {
     FLAG_RECEIVED,
@@ -24,19 +25,19 @@ const { PLAINTEXT, MIME } = MIME_TYPES;
  * Check if a message has a mime type
  * @return {function({MIMEType}): boolean}
  */
-const hasMimeType = (type) => ({ MIMEType } = {}) => MIMEType === type;
+const hasMimeType = (type: string) => ({ MIMEType }: Message = {}) => MIMEType === type;
 
 /**
  * Check if a message has a flag in the flags bitmap
  * @param {Number} flag
  * @returns {Function}
  */
-export const hasFlag = (flag) => ({ Flags = 0 } = {}) => hasBit(Flags, flag);
+export const hasFlag = (flag: number) => ({ Flags = 0 }: Message = {}) => hasBit(Flags, flag);
 
 export const isRequestReadReceipt = hasFlag(FLAG_RECEIPT_REQUEST);
 export const isImported = hasFlag(FLAG_IMPORTED);
 export const isInternal = hasFlag(FLAG_INTERNAL);
-export const isExternal = (message) => !isInternal(message);
+export const isExternal = (message: Message) => !isInternal(message);
 export const isAuto = hasFlag(FLAG_AUTO);
 export const isReceived = hasFlag(FLAG_RECEIVED);
 export const isSent = hasFlag(FLAG_SENT);
@@ -44,25 +45,25 @@ export const isReplied = hasFlag(FLAG_REPLIED);
 export const isRepliedAll = hasFlag(FLAG_REPLIEDALL);
 export const isForwarded = hasFlag(FLAG_FORWARDED);
 export const isSentAndReceived = hasFlag(FLAG_SENT | FLAG_RECEIVED);
-export const isDraft = (message) => !isSent(message) && !isReceived(message);
+export const isDraft = (message: Message) => !isSent(message) && !isReceived(message);
 export const isE2E = hasFlag(FLAG_E2E);
 export const isSentEncrypted = hasFlag(FLAG_E2E | FLAG_SENT);
 export const isInternalEncrypted = hasFlag(FLAG_E2E | FLAG_INTERNAL);
 export const isSign = hasFlag(FLAG_SIGN);
 export const isAttachPublicKey = hasFlag(FLAG_PUBLIC_KEY);
-export const isExternalEncrypted = (message) => isE2E(message) && !isInternal(message);
-export const isPGPEncrypted = (message) => isExternal(message) && isReceived(message) && isE2E(message);
-export const inSigningPeriod = ({ Time }) => Time >= SIGNATURE_START;
+export const isExternalEncrypted = (message: Message) => isE2E(message) && !isInternal(message);
+export const isPGPEncrypted = (message: Message) => isExternal(message) && isReceived(message) && isE2E(message);
+export const inSigningPeriod = ({ Time = 0 }: Message) => Time >= SIGNATURE_START;
 
 export const isMIME = hasMimeType(MIME);
-export const isPGPInline = (message) => isPGPEncrypted(message) && !isMIME(message);
+export const isPGPInline = (message: Message) => isPGPEncrypted(message) && !isMIME(message);
 
 /**
  * Get sender from message
  * @param {Object} message.Sender
  * @return {String} Name || Address
  */
-export const getSender = ({ Sender = {} } = {}) => {
+export const getSender = ({ Sender = {} }: Message = {}) => {
     const { Name = '', Address = '' } = Sender;
     return Name || Address;
 };
@@ -156,7 +157,7 @@ export const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) =
  * @param {Integer} message.Time
  * @return {Date}
  */
-export const getDate = ({ Time = 0 } = {}) => new Date(Time * 1000);
+export const getDate = ({ Time = 0 }: Message = {}) => new Date(Time * 1000);
 
 /**
  * Check if these all messages shared the same sender (by email address)
@@ -179,7 +180,7 @@ export const getDate = ({ Time = 0 } = {}) => new Date(Time * 1000);
 //     );
 // };
 
-export const getParsedHeaders = (message, parameter) => {
+export const getParsedHeaders = (message: Message, parameter: string) => {
     const { ParsedHeaders = {} } = message;
 
     if (parameter) {
@@ -189,16 +190,17 @@ export const getParsedHeaders = (message, parameter) => {
     return ParsedHeaders;
 };
 
-export const getListUnsubscribe = (message) => {
+export const getListUnsubscribe = (message: Message) => {
     return getParsedHeaders(message, 'List-Unsubscribe') || '';
 };
 
-export const getListUnsubscribePost = (message) => {
+export const getListUnsubscribePost = (message: Message) => {
     return getParsedHeaders(message, 'List-Unsubscribe-Post') || '';
 };
 
-export const getAttachments = (message) => message.Attachments || [];
-export const hasAttachments = (message) => getAttachments(message).length > 0;
-export const attachmentsSize = (message) => getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
+export const getAttachments = (message: Message = {}) => message.Attachments || [];
+export const hasAttachments = (message: Message = {}) => getAttachments(message).length > 0;
+export const attachmentsSize = (message: Message = {}) =>
+    getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
 
-export const isPlainText = (message) => message.MIMEType === PLAINTEXT;
+export const isPlainText = (message: Message = {}) => message.MIMEType === PLAINTEXT;

@@ -12,10 +12,21 @@ import { useDecryptMessage } from './useDecryptMessage';
 import { useLoadMessage } from './useLoadMessage';
 import { useMarkAsRead } from './useMarkAsRead';
 import { useTransformAttachments } from './useAttachments';
+import { MessageExtended } from '../models/message';
 
 // Reference: Angular/src/app/message/services/prepareContent.js
 
-export const useComputeMessage = (mailSettings) => {
+interface ComputationOption {
+    action?: string;
+    cache: any;
+    mailSettings: any;
+}
+
+interface Computation {
+    (message: MessageExtended, options: ComputationOption): Promise<MessageExtended> | MessageExtended;
+}
+
+export const useComputeMessage = (mailSettings: any) => {
     const cache = useCache();
     const load = useLoadMessage();
     const markAsRead = useMarkAsRead();
@@ -38,37 +49,53 @@ export const useComputeMessage = (mailSettings) => {
      * Run a computation on a message, wait until it finish
      * Return the message extanded with the result of the computation
      */
-    const run = useCallback(async (message, compute, action) => {
+    const run = useCallback(async (message: MessageExtended, compute: Computation, action?: string) => {
         const result = (await compute(message, { action, cache, mailSettings })) || {};
 
         if (result.document) {
             result.content = result.document.innerHTML;
         }
 
-        return { ...message, ...result };
-    });
+        return { ...message, ...result } as MessageExtended;
+    }, []);
 
     /**
      * Run a list of computation sequentially
      */
-    const runSerial = useCallback(async (message, computes, action) => {
-        return await computes.reduce(async (messagePromise, compute) => {
-            return run(await messagePromise, compute, action);
-        }, message);
-    });
+    const runSerial = useCallback(
+        async (message: MessageExtended, computes: Computation[], action?: string) => {
+            return await computes.reduce(async (messagePromise: Promise<MessageExtended>, compute: Computation) => {
+                return run(await messagePromise, compute, action);
+            }, Promise.resolve(message));
+        },
+        [run]
+    );
 
     // TODO: Handle cache?
-    const initialize = useCallback((message, action) => {
-        return runSerial(message, [load, markAsRead, decrypt, ...transforms], action);
-    });
+    const initialize = useCallback(
+        (message: MessageExtended, action?: string) => {
+            return runSerial(message, [load, markAsRead, decrypt, ...transforms], action);
+        },
+        [runSerial]
+    );
 
-    const loadRemoteImages = useCallback((message, action) => {
-        return run({ ...message, showRemoteImages: true }, transformRemote, action);
-    });
+    const loadRemoteImages = useCallback(
+        (message: MessageExtended, action?: string) => {
+            return run({ ...message, showRemoteImages: true }, transformRemote, action);
+        },
+        [run]
+    );
 
-    const loadEmbeddedImages = useCallback((message, action) => {
-        return runSerial({ ...message, showEmbeddedImages: true }, [transformEmbedded, transformAttachements], action);
-    });
+    const loadEmbeddedImages = useCallback(
+        (message: MessageExtended, action?: string) => {
+            return runSerial(
+                { ...message, showEmbeddedImages: true },
+                [transformEmbedded, transformAttachements],
+                action
+            );
+        },
+        [runSerial]
+    );
 
     return { run, runSerial, initialize, loadRemoteImages, loadEmbeddedImages };
 };

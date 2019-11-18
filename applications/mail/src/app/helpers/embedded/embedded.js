@@ -17,8 +17,9 @@ const unescape = ({ document }) => (document.innerHTML = unescapeSrc(document.in
  *     - Bind blobs or cid to the body
  * @param  {Message} message
  * @param  {MailSettingsModel} mailSettings
- * @param  {String} direction blob | cid
- * @param  {String} text      Alternative body to parse
+ * @param  {object} options
+ * param  {String} direction blob | cid
+ * param  {String} text      Alternative body to parse
  * @return {Promise}
  */
 export const parser = async (

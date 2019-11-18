@@ -9,22 +9,23 @@ import {
 import JSZip from 'jszip';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { getAttachment } from '../api/attachments';
+import { Attachment, MessageExtended, Message } from '../models/message';
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
 
 // TODO: Handle isOutside()
 
 // export const getCacheKey = ({ ID }) => `Attachment.${ID}`;
-export const getCacheKey = ({ ID }) => ID;
+export const getCacheKey = ({ ID }: Attachment) => ID;
 
-export const decrypt = async (attachment, sessionKey = {}) => {
+export const decrypt = async (attachment: any, sessionKey = {}) => {
     // create new Uint8Array to store decrypted attachment
     const at = new Uint8Array(attachment);
 
     try {
         // decrypt the att
         const { data, signatures } = await decryptMessage({
-            message: await getMessage(at),
+            message: await getMessage(at as any),
             sessionKeys: [sessionKey],
             format: 'binary'
         });
@@ -40,7 +41,7 @@ export const decrypt = async (attachment, sessionKey = {}) => {
     }
 };
 
-export const getRequest = ({ ID } = {}, api) => {
+export const getRequest = ({ ID }: Attachment = {}, api: any) => {
     // if (isOutside()) {
     //     const decryptedToken = eoStore.getToken();
     //     const token = $stateParams.tag;
@@ -51,13 +52,13 @@ export const getRequest = ({ ID } = {}, api) => {
     return api(getAttachment(ID));
 };
 
-export const getSessionKey = async (message, attachment) => {
-    if (attachment.sessionKey) {
-        return attachment;
-    }
+export const getSessionKey = async (message: MessageExtended, attachment: Attachment) => {
+    // if (attachment.sessionKey) {
+    //     return attachment;
+    // }
 
     const keyPackets = binaryStringToArray(decodeBase64(attachment.KeyPackets));
-    const options = { message: await getMessage(keyPackets) };
+    const options: any = { message: await getMessage(keyPackets) };
 
     // if (isOutside()) {
     //     options.passwords = [eoStore.getPassword()];
@@ -72,7 +73,11 @@ export const getSessionKey = async (message, attachment) => {
     return { ...attachment, sessionKey };
 };
 
-export const getDecryptedAttachmentAPI = async (message, attachment, { cache, api }) => {
+export const getDecryptedAttachmentAPI = async (
+    message: MessageExtended,
+    attachment: Attachment,
+    { cache, api }: any
+) => {
     const data = await getRequest(attachment, api);
     // console.log('response', response);
     // const data = null;
@@ -88,7 +93,7 @@ export const getDecryptedAttachmentAPI = async (message, attachment, { cache, ap
     }
 };
 
-export const getDecryptedAttachment = async (message, attachment, { cache, api }) => {
+export const getDecryptedAttachment = async (message: MessageExtended, attachment: Attachment, { cache, api }: any) => {
     const cadata = cache.get(getCacheKey(attachment));
     if (cadata) {
         return { ...cadata, fromCache: true };
@@ -96,7 +101,12 @@ export const getDecryptedAttachment = async (message, attachment, { cache, api }
     return getDecryptedAttachmentAPI(message, attachment, { cache, api });
 };
 
-export const getAndVerify = async (attachment = {}, message = {}, reverify = false, { cache, api, verify }) => {
+export const getAndVerify = async (
+    attachment: Attachment = {},
+    message: MessageExtended = {},
+    reverify = false,
+    { cache, api, verify }: any
+) => {
     if (attachment.Preview) {
         return attachment.Preview;
     }
@@ -117,7 +127,7 @@ export const getAndVerify = async (attachment = {}, message = {}, reverify = fal
  * @param  {Node} el         Link clicked
  * @return {Promise}
  */
-const formatDownload = async (attachment, message, { cache, api }) => {
+const formatDownload = async (attachment: Attachment, message: MessageExtended, { cache, api }: any) => {
     console.log('formatDownload', attachment);
     try {
         const data = await getAndVerify(attachment, message, false, { cache, api });
@@ -148,7 +158,7 @@ const formatDownload = async (attachment, message, { cache, api }) => {
  * @param  {Object} attachment
  * @return {void}
  */
-const generateDownload = async (message, attachment) => {
+const generateDownload = async (message: MessageExtended, attachment: Attachment) => {
     // TODO: uncomment
     // try {
     //     await checkAllSignatures(message, [attachment]);
@@ -167,7 +177,7 @@ const generateDownload = async (message, attachment) => {
  * @param  {Node} el
  * @return {Promise}
  */
-export const download = async (attachment, message, { cache, api }) => {
+export const download = async (attachment: Attachment, message: MessageExtended, { cache, api }: any) => {
     const att = await formatDownload(attachment, message, { cache, api });
 
     // TODO: uncomment
@@ -186,18 +196,19 @@ export const download = async (attachment, message, { cache, api }) => {
  * @param  {Message} message
  * @return {Array}         Array of promises
  */
-const formatDownloadAll = async (message, { cache, api }) => {
-    const { Attachments = [] } = message.data;
-    const { list } = Attachments.reduce(
-        (acc, att) => {
-            if (!acc.map[att.Name]) {
-                acc.map[att.Name] = { index: 0 };
+const formatDownloadAll = async (message: MessageExtended, { cache, api }: any) => {
+    const { Attachments = [] } = message.data || {};
+    const { list }: { list: Attachment[] } = Attachments.reduce(
+        (acc: any, att) => {
+            const name = att.Name || '';
+            if (!acc.map[name]) {
+                acc.map[name] = { index: 0 };
             } else {
-                acc.map[att.Name].index++;
+                acc.map[name].index++;
                 // We can have an extension
-                const name = att.Name.split('.');
-                const ext = name.pop();
-                const newName = `${name.join('.')} (${acc.map[att.Name].index}).${ext}`;
+                const currentName = name.split('.');
+                const ext = currentName.pop();
+                const newName = `${currentName.join('.')} (${acc.map[name].index}).${ext}`;
                 att.Name = newName;
             }
             acc.list.push(att);
@@ -209,7 +220,7 @@ const formatDownloadAll = async (message, { cache, api }) => {
     return Promise.all(list.map((att) => formatDownload(att, message, { cache, api })));
 };
 
-const getZipAttachmentName = (message) => `Attachments-${message.Subject}.zip`;
+const getZipAttachmentName = (message: Message = {}) => `Attachments-${message.Subject}.zip`;
 
 /**
  * Download all attachments as a zipfile
@@ -217,7 +228,7 @@ const getZipAttachmentName = (message) => `Attachments-${message.Subject}.zip`;
  * @param  {Node} el      link clicked
  * @return {Promise}         Always success
  */
-export const downloadAll = async (message = {}, { cache, api }) => {
+export const downloadAll = async (message: MessageExtended = {}, { cache, api }: any) => {
     const list = await formatDownloadAll(message, { cache, api });
 
     // TODO: uncomment
@@ -237,8 +248,7 @@ export const downloadAll = async (message = {}, { cache, api }) => {
     // }
 
     const zip = new JSZip();
-    list.forEach(({ Name, data }) => zip.file(Name, data));
+    list.forEach(({ Name = '', data }) => zip.file(Name, data));
     const content = await zip.generateAsync({ type: 'blob' });
-    console.log('coucou', getZipAttachmentName(message.data));
     downloadFile(content, getZipAttachmentName(message.data));
 };

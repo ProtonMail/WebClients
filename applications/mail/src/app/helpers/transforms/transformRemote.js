@@ -72,12 +72,13 @@ function prepareInjection(html) {
 }
 
 export const transformRemote = (
-    { data: message, document, showRemoteImages: inputShowImages },
-    { action, mailSettings }
+    { data: message = {}, document = null, showRemoteImages: inputShowImages = false },
+    { action = null, mailSettings }
 ) => {
     const regex = new RegExp(REGEXP_FIXER, 'g');
     const showImages =
-        inputShowImages || mailSettings.ShowImages & SHOW_IMAGES.REMOTE || WHITELIST.includes(message.Sender.Address);
+        inputShowImages ||
+        !!(mailSettings.ShowImages & SHOW_IMAGES.REMOTE || WHITELIST.includes(message.Sender.Address));
     const content = document.innerHTML;
     const hasImages = regex.test(content);
 
