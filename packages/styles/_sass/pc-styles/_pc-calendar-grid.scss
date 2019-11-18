@@ -42,7 +42,7 @@ $gridcell-right-margin: 1.5em;
 
     &:after {
         border-bottom: $calendar-grid-border;
-        width: calc(100% - #{$calendar-aside-width});
+        width: 100%;
         margin-top: -1px;
     }
 }
