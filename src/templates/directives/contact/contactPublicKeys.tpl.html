@@ -1,4 +1,4 @@
-<contact-key-pinning ng-if="internalKeys.RecipientType === 1"></contact-key-pinning>
+<contact-key-pinning ng-if="internalKeys.RecipientType === 1 || (internalKeys.RecipientType === 2 && BE.items.length)"></contact-key-pinning>
 
 <contact-public-key-label
     class="no-upload-button"
@@ -13,7 +13,7 @@
 ></contact-public-key-label>
 
 <contact-public-key-table
-    ng-if="internalKeys.RecipientType === 1"
+    ng-if="internalKeys.RecipientType === 1 || (internalKeys.RecipientType === 2 && BE.items.length)"
     data-items="BE.items"
     data-primary-key="protonFingerprint"
     data-enable-trust="true"

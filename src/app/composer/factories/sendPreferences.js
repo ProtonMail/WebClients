@@ -15,14 +15,6 @@ function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, co
     const { on } = dispatchers();
     const usesDefaults = (contactEmail) => !contactEmail || contactEmail.Defaults;
 
-    const isInternalUser = async (email) => {
-        const normalizedEmail = normalizeEmail(email);
-        const {
-            [normalizedEmail]: { RecipientType }
-        } = await keyCache.get([normalizedEmail]);
-        return RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
-    };
-
     const toSchemeConstant = (value) => {
         switch (value) {
             case 'pgp-mime':
@@ -74,28 +66,29 @@ function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, co
      */
     const getDefaultInfo = async (
         email,
-        { Keys = {}, Warnings: warnings = [] },
+        { RecipientType, Keys = [], Warnings: warnings = [] },
         defaultMimeType,
         eoEnabled,
         globalSign
     ) => {
-        const isInternal = await isInternalUser(email);
+        const isInternal = RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
+        const isExternal = RecipientType === RECIPIENT_TYPE.TYPE_EXTERNAL;
         const settingsScheme = mailSettingsModel.get('PGPScheme');
         const settingsMime = settingsScheme === PACKAGE_TYPE.SEND_PGP_MIME ? 'multipart/mixed' : 'text/plain';
         const address = addressesModel.getByEmail(email);
         const ownAddress = isOwnAddress(address, Keys);
 
-        if (isInternal && Keys.length) {
+        if ((isInternal || isExternal) && Keys.length) {
             const fallbackAddress = isFallbackAddress(address, Keys);
 
             return {
                 warnings,
                 encrypt: true,
                 sign: true,
-                mimetype: defaultMimeType,
+                mimetype: isExternal ? settingsMime : defaultMimeType,
                 publickeys: await getKeys(Keys[0].PublicKey),
                 primaryPinned: !fallbackAddress,
-                scheme: PACKAGE_TYPE.SEND_PM,
+                scheme: isInternal ? PACKAGE_TYPE.SEND_PM : settingsScheme,
                 pinned: ownAddress,
                 ownAddress,
                 isVerified: true
@@ -143,10 +136,10 @@ function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, co
      * or if atleast on of the Sending keys are in the contacts
      * Should be done on extract, so API changes (the other user resetting their password) are noticed.
      * @param base64Keys
-     * @param Keys
+     * @param {Array} Keys
      * @returns {boolean}
      */
-    const isPrimaryPinned = async (base64Keys, { Keys }, email) => {
+    const isPrimaryPinned = async (base64Keys, Keys, email) => {
         if (base64Keys.length === 0) {
             const address = addressesModel.getByEmail(email);
             return !isFallbackAddress(address, Keys);
@@ -189,10 +182,11 @@ function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, co
         email
     ) => {
         const info = {};
-        const { RecipientType, Warnings = [] } = keyData;
+        const { RecipientType, Warnings = [], Keys = [] } = keyData;
         const isInternal = RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
-        const primaryPinned = isInternal ? await isPrimaryPinned(emailKeys, keyData, email) : true;
-        const pmKey = isInternal ? await getKeys(keyData.Keys[0].PublicKey) : [];
+        const isExternalWithKeys = RecipientType === RECIPIENT_TYPE.TYPE_EXTERNAL && Keys.length > 0;
+        const primaryPinned = isInternal || isExternalWithKeys ? await isPrimaryPinned(emailKeys, Keys, email) : true;
+        const pmKey = isInternal || isExternalWithKeys ? await getKeys(Keys[0].PublicKey) : [];
         // In case the pgp packet list contains multiple keys, only the first one is taken.
         const keyObjs = await Promise.all(
             emailKeys
@@ -206,8 +200,8 @@ function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, co
 
         info.publickeys = keyObjects.length && primaryPinned ? keyObjects[0] : pmKey;
         info.warnings = Warnings;
-        info.encrypt = isInternal || (encryptFlag && !!keyObjects.length);
-        info.sign = isInternal || (signFlag === null ? !!globalSign : signFlag);
+        info.encrypt = isInternal || isExternalWithKeys || (encryptFlag && !!keyObjects.length);
+        info.sign = isInternal || isExternalWithKeys || (signFlag === null ? !!globalSign : signFlag);
         info.sign = info.sign || encryptFlag;
 
         if (isInternal) {
@@ -268,6 +262,7 @@ function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, co
     const getApiInfo = async (email, keyData, defaultMimeType, eoEnabled, globalSign) => {
         const normalizedEmail = normalizeEmail(email);
         const isInternal = keyData.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
+        const isExternalWithKeys = keyData.RecipientType === RECIPIENT_TYPE.TYPE_EXTERNAL && keyData.Keys.length > 0;
 
         const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
         if (usesDefaults(contactEmail)) {
@@ -303,8 +298,12 @@ function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, co
         const data = {
             encryptFlag:
                 isInternal ||
+                isExternalWithKeys ||
                 ((encryptFlag ? encryptFlag.valueOf().toLowerCase() !== 'false' : false) && emailKeys.length > 0),
-            signFlag: isInternal || (signFlag ? signFlag.valueOf().toLowerCase() !== 'false' : null),
+            signFlag:
+                isInternal ||
+                isExternalWithKeys ||
+                (signFlag ? signFlag.valueOf().toLowerCase() !== 'false' : !!globalSign),
             emailKeys: base64Keys,
             mimetype: mimetype !== 'text/plain' && mimetype !== 'text/html' ? null : mimetype,
             scheme: isInternal ? PACKAGE_TYPE.SEND_PM : scheme,

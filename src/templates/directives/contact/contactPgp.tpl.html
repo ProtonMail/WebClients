@@ -72,7 +72,7 @@
         data-form="form"
         data-model="model.Sign"></contact-sign-toggle>
     <contact-scheme-selector
-        class="pgp-external-only"
+        ng-if="isExternal"
         data-form="form"
         data-model="model.Scheme"
         ></contact-scheme-selector>
