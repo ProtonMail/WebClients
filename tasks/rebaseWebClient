@@ -46,6 +46,7 @@ const getAngularRelease = async (name, hash) => {
 const getWebclientRelease = async () => {
     const commands = [
         'git checkout public --quiet',
+        'git pull webclient public',
         'git log -1 --pretty=format:"%s" --abbrev-commit'
     ];
     const { stdout = '' } = await exec(commands.join(' && '));

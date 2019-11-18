@@ -10,11 +10,9 @@ const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 /* @ngInject */
 function dashboardModel(
     $filter,
-    confirmModal,
     dashboardConfiguration,
     dispatchers,
     downgrade,
-    gettextCatalog,
     PaymentCache,
     paymentModal,
     subscriptionModel,
