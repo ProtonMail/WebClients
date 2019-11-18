@@ -72,4 +72,32 @@ export const addYears = (date, amount) => {
     return addMonths(date, amount * 12);
 };
 
+export const isSameYear = (dateLeft, dateRight) => {
+    return dateLeft.getUTCFullYear() === dateRight.getUTCFullYear();
+};
+
+export const isSameMonth = (dateLeft, dateRight) => {
+    if (!isSameYear(dateLeft, dateRight)) {
+        return false;
+    }
+    return dateLeft.getUTCMonth() === dateRight.getUTCMonth();
+};
+
+export const isSameDay = (dateLeft, dateRight) => {
+    if (!isSameMonth(dateLeft, dateRight)) {
+        return false;
+    }
+    return dateLeft.getUTCDate() === dateRight.getUTCDate();
+};
+
+/**
+ * Check if a later date happens on the following day to an earlier date
+ * @param {Date} dateLeft       Earlier date
+ * @param {Date} dateRight      Later date
+ */
+export const isNextDay = (dateLeft, dateRight) => {
+    const tomorrow = new Date(Date.UTC(dateLeft.getUTCFullYear(), dateLeft.getUTCMonth(), dateLeft.getUTCDate() + 1));
+    return isSameDay(tomorrow, dateRight);
+};
+
 export { default as format } from './format';
