@@ -222,6 +222,7 @@ const CalendarModal = ({ calendar, ...rest }) => {
 
     return (
         <FormModal
+            className="pm-modal--shorterLabels w100"
             title={title}
             submit={calendar ? c('Action').t`Update` : c('Action').t`Create`}
             onSubmit={() => withLoadingAction(handleSubmit())}
