@@ -1,3 +1,15 @@
+# [3.16.8] - 2019-11-18
+
+- WKD support for contacts
+- Added loyalty benefits modal when unsubscribing
+
+# [3.16.7] - 2019-11-14
+
+- Signup improvements
+- Added back Portuguese and Calataln translations
+- Uupdated translations
+- Fixed a typo in the 2FA modal
+
 # [3.16.6] - 2019-10-01
 ## Fixed
 - Authentication logs show both log out and login in the same row for 2FA logs
