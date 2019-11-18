@@ -81,9 +81,6 @@ const useDayGridMouseHandler = ({
 
                 if (result) {
                     setSelectedEventID(result.id);
-                    //onDragCreate(result);
-                    //setTemporaryEvents();
-                    //setDateRange();
                 } else {
                     // No range created, just a simple click
                     result = {
@@ -151,10 +148,9 @@ const useDayGridMouseHandler = ({
 
                 if (result) {
                     setSelectedEventID(result.id);
-                    //onDragMove(result);
                 } else {
                     setSelectedEventID(event.id);
-                    //onClickEvent(event);
+                    setTemporaryEvent();
                 }
             };
 
@@ -169,6 +165,7 @@ const useDayGridMouseHandler = ({
                 document.removeEventListener('mouseup', handleMouseUp, true);
                 setSelectedEventID();
                 setMoreDateIdx(moreIdx);
+                setTemporaryEvent();
             };
 
             document.addEventListener('mouseup', handleMouseUp, true);

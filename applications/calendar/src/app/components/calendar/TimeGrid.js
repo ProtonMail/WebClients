@@ -334,7 +334,10 @@ const TimeGrid = React.forwardRef(
                             layout: morePopoverLayout,
                             eventRef: selectedEventRef,
                             selectedEventID,
-                            setSelectedEventID,
+                            setSelectedEventID: (id) => {
+                                setSelectedEventID(id);
+                                setTemporaryEvent();
+                            },
                             selectedMoreDate,
                             formatTime,
                             onClose: () => setMoreDateIdx()

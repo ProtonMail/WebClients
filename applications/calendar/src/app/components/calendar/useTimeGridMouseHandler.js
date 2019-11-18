@@ -110,9 +110,6 @@ const useTimeGridMouseHandler = ({
 
                 if (result) {
                     setSelectedEventID(result.id);
-                    //onDragCreate(result);
-                    //setTemporaryEvents();
-                    //setDateRange();
                 } else {
                     // No range created, just a simple click
                     result = {
@@ -248,10 +245,9 @@ const useTimeGridMouseHandler = ({
 
                 if (result) {
                     setSelectedEventID(result.id);
-                    //onDragMove(result);
                 } else {
                     setSelectedEventID(event.id);
-                    //onClickEvent(event);
+                    setTemporaryEvent();
                 }
             };
 
