@@ -68,7 +68,7 @@ $modal-smaller-width: 28em !default;
 
 .pm-modal {
   position: relative;
-  width: $modal-width;
+  //width: $modal-width;
   max-height: $modal-max-height;
   max-width: $modal-max-width;
   background: $white;
