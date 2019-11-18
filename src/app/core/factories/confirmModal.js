@@ -23,8 +23,9 @@ function confirmModal(pmModal, gettextCatalog, translator) {
             this.message = params.message;
             this.confirmText = params.confirmText || I18N.confirm;
             this.hideClose = params.hideClose;
-            this.classNameMessage = getClassName(params);
+            this.classNameMessage = !params.customAlert ? getClassName(params) : '';
             this.class = params.class;
+            this.confirmClass = params.confirmClass || 'primary';
             this.cancelText = params.cancelText || I18N.cancel;
             this.confirm = () => (hotkeys.bind(['enter']), params.confirm());
             this.cancel = (type = 'cross') => (hotkeys.bind(['enter']), params.cancel(type));

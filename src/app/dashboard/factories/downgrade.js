@@ -1,5 +1,8 @@
+import { hasBit } from '../../../helpers/bitHelper';
+
 /* @ngInject */
 function downgrade(
+    authentication,
     confirmModal,
     eventManager,
     gettextCatalog,
@@ -7,9 +10,11 @@ function downgrade(
     notification,
     Payment,
     translator,
-    subscriptionModel
+    subscriptionModel,
+    organizationModel
 ) {
     const FREE_PLAN = { Type: 1, Name: 'free' };
+    const LOYAL = 1;
     const I18N = translator(() => ({
         downgradeTitle: gettextCatalog.getString('Confirm downgrade', null, 'Title'),
         downgradeMessage: gettextCatalog.getString(
@@ -17,7 +22,39 @@ function downgrade(
             null,
             'Info'
         ),
-        successMessage: gettextCatalog.getString('You have successfully unsubscribed', null, 'Downgrade account')
+        successMessage: gettextCatalog.getString('You have successfully unsubscribed', null, 'Downgrade account'),
+        loyalTitle: gettextCatalog.getString('Confirm loss of Proton bonuses', null, 'Title'),
+        loyalConfirmText: gettextCatalog.getString('Remove bonuses', null, 'button'),
+        loyalMessage() {
+            const message = gettextCatalog.getString(
+                'As an early Proton user, your account has extra features.',
+                null,
+                'Info'
+            );
+            const warn = gettextCatalog.getString(
+                'By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.',
+                null,
+                'Info'
+            );
+            const items = [
+                authentication.hasPaidMail() && gettextCatalog.getString('+5GB bonus storage', null, 'Info'),
+                authentication.hasPaidVpn() &&
+                    gettextCatalog.getString(
+                        '+2 connections for ProtonVPN (allows you to connect more devices to VPN)',
+                        null,
+                        'Info'
+                    )
+            ]
+                .filter(Boolean)
+                .reduce((acc, item) => {
+                    const node = document.createElement('LI');
+                    node.textContent = item;
+                    acc.appendChild(node);
+                    return acc;
+                }, document.createElement('UL')).outerHTML;
+
+            return `<p>${message}</p><div class="alert alert-danger"><strong>${warn}</strong>${items}</div>`;
+        }
     }));
 
     function unsubscribe() {
@@ -26,24 +63,61 @@ function downgrade(
             .then(() => subscriptionModel.set(FREE_PLAN));
     }
 
-    return () => {
-        confirmModal.activate({
-            params: {
-                title: I18N.downgradeTitle,
-                message: I18N.downgradeMessage,
-                confirm() {
-                    const promise = unsubscribe().then(() => {
-                        confirmModal.deactivate();
-                        notification.success(I18N.successMessage);
-                    });
+    function isLoyal(organization = {}) {
+        return hasBit(organization.Flags, LOYAL);
+    }
 
-                    networkActivityTracker.track(promise);
-                },
-                cancel() {
-                    confirmModal.deactivate();
+    async function check() {
+        await new Promise((resolve, reject) => {
+            confirmModal.activate({
+                params: {
+                    title: I18N.downgradeTitle,
+                    message: I18N.downgradeMessage,
+                    confirm() {
+                        confirmModal.deactivate();
+                        resolve();
+                    },
+                    cancel() {
+                        confirmModal.deactivate();
+                        reject();
+                    }
                 }
-            }
+            });
         });
-    };
+
+        const organization = organizationModel.get();
+
+        if (isLoyal(organization)) {
+            await new Promise((resolve, reject) => {
+                // defer modal as there is an issue with the $digest. It won't show the modal
+                const id = setTimeout(() => {
+                    confirmModal.activate({
+                        params: {
+                            title: I18N.loyalTitle,
+                            message: I18N.loyalMessage(),
+                            confirmText: I18N.loyalConfirmText,
+                            confirmClass: 'error',
+                            customAlert: true,
+                            confirm() {
+                                confirmModal.deactivate();
+                                resolve();
+                            },
+                            cancel() {
+                                confirmModal.deactivate();
+                                reject();
+                            }
+                        }
+                    });
+                    clearTimeout(id);
+                }, 300);
+            });
+        }
+
+        const promise = unsubscribe();
+        await networkActivityTracker.track(promise);
+        notification.success(I18N.successMessage);
+    }
+
+    return check;
 }
 export default downgrade;

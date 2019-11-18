@@ -17,7 +17,6 @@ function authentication(
     User,
     compatApi,
     AppModel,
-    settingsApi,
     tempStorage,
     upgradeKeys,
     decryptKeys
