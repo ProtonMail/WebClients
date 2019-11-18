@@ -5,13 +5,12 @@ import { c } from 'ttag';
 
 import { SETTINGS_WEEK_START } from '../../constants';
 
-const { MONDAY, SATURDAY, SUNDAY } = SETTINGS_WEEK_START;
+const { MONDAY, SUNDAY } = SETTINGS_WEEK_START;
 
 const WeekStartSelector = ({ day, onChangeDay, ...rest }) => {
     return (
         <Select
             options={[
-                { text: c('Week day').t`Saturday`, value: SATURDAY },
                 { text: c('Week day').t`Sunday`, value: SUNDAY },
                 { text: c('Week day').t`Monday`, value: MONDAY }
             ]}
