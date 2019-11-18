@@ -65,10 +65,20 @@ function contactPgp(dispatchers, contactPgpModel) {
             contactPgpModel.init(scope.model, scope.email, scope.internalKeys);
 
             const internalUser = contactPgpModel.isInternalUser();
+            const externalUser = contactPgpModel.isExternalUser();
+            const hasKeys = contactPgpModel.hasKeys();
             const disabledUser = contactPgpModel.isDisabledUser();
 
-            toggle(element, 'pgp-external', !internalUser);
-            toggle(element, 'pgp-internal', internalUser);
+            /**
+             * Special case for external user with keys where the scheme selector should be displayed.
+             * Right now an external user with keys is treated as an internal user, since it uses css
+             * to hide/show classes. This overrides that for the scheme selector to always show it for
+             * external users.
+             */
+            scope.isExternal = externalUser;
+
+            toggle(element, 'pgp-external', externalUser && !hasKeys);
+            toggle(element, 'pgp-internal', internalUser || (externalUser && hasKeys));
             toggle(element, 'pgp-address-disabled', disabledUser);
             toggle(element, 'pgp-inline', contactPgpModel.isPGPInline());
             toggle(element, 'pgp-mime', contactPgpModel.isPGPMime());
