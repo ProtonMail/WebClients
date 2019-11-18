@@ -24,6 +24,7 @@ import { deleteUser, unlockPasswordChanges } from 'proton-shared/lib/api/user';
 import { reportBug } from 'proton-shared/lib/api/reports';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { collectInfo, getClient } from '../../helpers/report';
+import { wait } from 'proton-shared/lib/helpers/promise';
 
 const DeleteAccountModal = ({ onClose, ...rest }) => {
     const { createNotification } = useNotifications();
@@ -50,7 +51,6 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
 
             eventManager.stop();
 
-            // This is just used to verify that the entered password and totp code is correct
             await srpAuth({
                 api,
                 credentials: { password: model.password, totp: model.twoFa },
@@ -72,14 +72,14 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
                 );
             }
 
-            await srpAuth({
-                api,
-                credentials: { password: model.password, totp: model.twoFa },
-                config: deleteUser()
-            });
+            await api(deleteUser());
+
+            createNotification({ text: c('Success').t`Account deleted. Logging out...` });
+
+            // Add an artificial delay to show the notification.
+            await wait(2500);
 
             onClose();
-            createNotification({ text: c('Success').t`Account deleted` });
             authentication.logout();
         } catch (error) {
             eventManager.start();
