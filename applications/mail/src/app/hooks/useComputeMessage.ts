@@ -9,7 +9,7 @@ import { transformStylesheet } from '../helpers/transforms/transformStylesheet';
 import { transformRemote } from '../helpers/transforms/transformRemote';
 import { transformBase } from '../helpers/transforms/transformBase';
 import { useDecryptMessage } from './useDecryptMessage';
-import { useLoadMessage } from './useLoadMessage';
+import { useMessages } from './useMessages';
 import { useMarkAsRead } from './useMarkAsRead';
 import { useTransformAttachments } from './useAttachments';
 import { MessageExtended } from '../models/message';
@@ -28,7 +28,7 @@ interface Computation {
 
 export const useComputeMessage = (mailSettings: any) => {
     const cache = useCache();
-    const load = useLoadMessage();
+    const { ensureBody } = useMessages();
     const markAsRead = useMarkAsRead();
     const decrypt = useDecryptMessage();
     const transformAttachements = useTransformAttachments();
@@ -74,7 +74,7 @@ export const useComputeMessage = (mailSettings: any) => {
     // TODO: Handle cache?
     const initialize = useCallback(
         (message: MessageExtended, action?: string) => {
-            return runSerial(message, [load, decrypt, markAsRead, ...transforms], action);
+            return runSerial(message, [ensureBody, decrypt, markAsRead, ...transforms], action);
         },
         [runSerial]
     );

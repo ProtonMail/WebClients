@@ -16,7 +16,7 @@ import { capitalize } from 'proton-shared/lib/helpers/string';
 import conversationSingleSvg from 'design-system/assets/img/shared/selected-conversation-single.svg';
 import conversationManySvg from 'design-system/assets/img/shared/selected-conversation-many.svg';
 import welcomeMessageSvg from 'design-system/assets/img/shared/welcome-message.svg';
-import { getCurrentType } from '../../helpers/element';
+import { getCurrentType } from '../../helpers/elements';
 import { ELEMENT_TYPES } from '../../constants';
 
 const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, welcomeRef, mailSettings }) => {

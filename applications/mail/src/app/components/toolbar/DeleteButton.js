@@ -17,7 +17,7 @@ import { deleteConversations } from 'proton-shared/lib/api/conversations';
 import { c, msgid } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
-import { getCurrentType } from '../../helpers/element';
+import { getCurrentType } from '../../helpers/elements';
 import { ELEMENT_TYPES } from '../../constants';
 
 const { TRASH, SPAM, DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE } = MAILBOX_LABEL_IDS;

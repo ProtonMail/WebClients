@@ -7,10 +7,9 @@ import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from 'proton-shared/lib/constants';
 import ItemCheckbox from './ItemCheckbox';
 import { getSenders, getRecipients } from '../../helpers/conversation';
 import { getSender, getRecipients as getMessageRecipients } from '../../helpers/message';
-import { getCurrentType } from '../../helpers/element';
+import { getCurrentType, isConversation } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
-import { isConversation } from '../../helpers/element';
 
 const { SENT, SENT_ALL, DRAFTS, DRAFTS_ALL } = MAILBOX_LABEL_IDS;
 

@@ -18,7 +18,7 @@ import { c } from 'ttag';
 import LocationAside from './LocationAside';
 import RefreshButton from './RefreshButton';
 import { LABEL_IDS_TO_HUMAN, ELEMENT_TYPES } from '../../constants';
-import { getCurrentType } from '../../helpers/element';
+import { getCurrentType } from '../../helpers/elements';
 
 const PrivateSidebar = ({ expanded = false, labelID: currentLabelID }) => {
     const [conversationCounts, loadingConversationCounts] = useConversationCounts();

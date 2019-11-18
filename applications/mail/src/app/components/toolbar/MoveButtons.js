@@ -7,7 +7,7 @@ import { labelConversations } from 'proton-shared/lib/api/conversations';
 import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
-import { getCurrentType } from '../../helpers/element';
+import { getCurrentType } from '../../helpers/elements';
 import { ELEMENT_TYPES } from '../../constants';
 
 const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT } = MAILBOX_LABEL_IDS;

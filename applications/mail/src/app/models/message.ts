@@ -22,6 +22,7 @@ export interface Message {
     Body?: any;
     Flags?: number;
     Time?: number;
+    ContextTime?: number;
     Sender?: Recipient;
     ToList?: Recipient[];
     CCList?: Recipient[];

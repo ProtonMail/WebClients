@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { classnames } from 'react-components';
 
-import { getDate } from '../../helpers/element';
+import { getDate } from '../../helpers/elements';
 import { formatSimpleDate, formatFullDate, formatDistanceToNow } from '../../helpers/date';
 
 const FORMATERS = {

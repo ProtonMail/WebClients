@@ -17,7 +17,7 @@ import SelectAll from './SelectAll';
 import MoveDropdown from '../dropdown/MoveDropdown';
 import LabelDropdown from '../dropdown/LabelDropdown';
 import BackButton from './BackButton';
-import { getCurrentType } from '../../helpers/element';
+import { getCurrentType } from '../../helpers/elements';
 
 const Toolbar = ({
     labelID = '',

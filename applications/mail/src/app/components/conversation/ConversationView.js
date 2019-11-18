@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useApi, useLoading, Loader, useLabels } from 'react-components';
-import { getConversation } from 'proton-shared/lib/api/conversations';
+import { useLoading, Loader, useLabels } from 'react-components';
 import { orderBy } from 'proton-shared/lib/helpers/array';
 
 import MessageView from '../message/MessageView';
@@ -9,17 +8,18 @@ import ItemStar from '../list/ItemStar';
 import { ELEMENT_TYPES } from '../../constants';
 import NumMessages from './NumMessages';
 import ItemLabels from '../list/ItemLabels';
+import { useConversations } from '../../hooks/useConversations';
 
 const ConversationView = ({ conversationID, messageID, mailSettings }) => {
     const [conversation, updateConversation] = useState();
     const [messages, updateMessages] = useState([]);
     const [labels] = useLabels();
-    const api = useApi();
     const [loading, withLoading] = useLoading();
     const [initialExpand, setInitialExpand] = useState(null);
+    const { getConversation } = useConversations();
 
     const requestConversation = async () => {
-        const { Conversation, Messages = [] } = await api(getConversation(conversationID, messageID));
+        const { Conversation, Messages = [] } = await getConversation(conversationID, messageID);
         const messages = orderBy(Messages, 'Order');
         updateConversation(Conversation);
         updateMessages(messages);
