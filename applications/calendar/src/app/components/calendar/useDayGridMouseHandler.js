@@ -190,6 +190,9 @@ const useDayGridMouseHandler = ({
 
         // If hitting the week container
         if ((targetRow >= 0 && target === rowElement) || target.dataset.ignoreCreate) {
+            e.preventDefault();
+            e.stopPropagation();
+
             return dragCreateMouseDown(currentTarget, targetDate);
         }
 

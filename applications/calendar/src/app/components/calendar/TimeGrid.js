@@ -277,17 +277,17 @@ const TimeGrid = React.forwardRef(
                             })}
                         </div>
 
-                        <div className="calendar-grid-hours">
-                            {hours.map((hour) => {
-                                return <div className="calendar-grid-hourLine" key={hour.getUTCHours()} />;
-                            })}
-                        </div>
-
                         <div
                             className="flex flex-item-fluid relative calendar-grid-gridcells"
                             onMouseDownCapture={isInteractionEnabled ? onTimeGridMouseDown : undefined}
                             ref={timeGridRef}
                         >
+                            <div className="calendar-grid-hours">
+                                {hours.map((hour) => {
+                                    return <div className="calendar-grid-hourLine" key={hour.getUTCHours()} />;
+                                })}
+                            </div>
+
                             {days.map((day) => {
                                 const key = getKey(day);
                                 return (

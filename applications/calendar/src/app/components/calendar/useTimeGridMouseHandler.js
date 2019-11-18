@@ -261,10 +261,13 @@ const useTimeGridMouseHandler = ({
         const targetDate = getTargetIndex(e.pageX, rect.left, rect.width, totalDays);
         const targetMinutes = getTargetMinutes(e.pageY, rect.top, rect.height, totalMinutes, interval);
 
-        const dayContainerNode = currentTarget.childNodes[targetDate];
+        const dayContainerNode = currentTarget.childNodes[targetDate + 1]; // + 1 for the hour lines
 
         // If hitting the days container or the day container
         if (currentTarget === target || dayContainerNode === target) {
+            e.preventDefault();
+            e.stopPropagation();
+
             return dragCreateMouseDown(currentTarget, targetDate, targetMinutes);
         }
 
