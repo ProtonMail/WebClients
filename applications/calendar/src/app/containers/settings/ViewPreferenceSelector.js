@@ -6,13 +6,21 @@ import { SETTINGS_VIEW } from '../../constants';
 
 const { DAY, WEEK, MONTH, YEAR, PLANNING } = SETTINGS_VIEW;
 
-const ViewPreferenceSelector = ({ className = 'pm-field w100', loading = false, disabled = false, view, onChange, ...rest }) => {
+const ViewPreferenceSelector = ({
+    className = 'pm-field w100',
+    loading = false,
+    disabled = false,
+    view,
+    onChange,
+    ...rest
+}) => {
     const options = [
         { text: c('Calendar view').t`Day`, value: DAY },
         { text: c('Calendar view').t`Week`, value: WEEK },
-        { text: c('Calendar view').t`Month`, value: MONTH },
-        { text: c('Calendar view').t`Year`, value: YEAR },
-        { text: c('Calendar view').t`Agenda`, value: PLANNING },
+        { text: c('Calendar view').t`Month`, value: MONTH }
+        // not activated for beta
+        //{ text: c('Calendar view').t`Year`, value: YEAR },
+        //{ text: c('Calendar view').t`Agenda`, value: PLANNING },
     ].filter(Boolean);
 
     return (
