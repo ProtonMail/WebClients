@@ -1,7 +1,5 @@
-const { promises: fs, constants: FS_CONSTANTS } = require('fs');
-const path = require('path');
-
-const { success, warn, debug } = require('./helpers/log')('proton-i18n');
+const { success, debug } = require('./helpers/log')('proton-i18n');
+const { hasDirectory } = require('./helpers/file');
 const { script, bash } = require('./helpers/cli');
 const { getFiles, PROTON_DEPENDENCIES } = require('../config');
 
@@ -24,18 +22,8 @@ async function extractor(app = 'app') {
     return script('extract.sh', [TEMPLATE_FILE], 'inherit');
 }
 
-async function hasDirectory() {
-    const dir = path.dirname(TEMPLATE_FILE);
-    try {
-        await fs.access(dir, FS_CONSTANTS.F_OK | FS_CONSTANTS.W_OK);
-    } catch (e) {
-        warn(`Cannot find/write the directory ${dir}, we're going to create it`);
-        await fs.mkdir(dir);
-    }
-}
-
 async function main(app) {
-    await hasDirectory();
+    await hasDirectory(TEMPLATE_FILE);
     const { stdout } = await extractor(app);
     debug(stdout);
     success(`Translations extracted to ${TEMPLATE_FILE}`);

@@ -1,5 +1,6 @@
 const path = require('path');
 const { success, debug, spin } = require('./helpers/log')('proton-i18n');
+const { hasDirectory } = require('./helpers/file');
 const { bash } = require('./helpers/cli');
 const { I18N_JSON_DIR, I18N_EXTRACT_DIR, CACHE_FILE } = require('../config').getFiles();
 
@@ -15,6 +16,8 @@ async function getConfig() {
 
 async function run({ file, lang, key }) {
     const output = `${I18N_JSON_DIR}/${lang}.json`;
+
+    await hasDirectory(output);
 
     if (process.env.APP_KEY === 'Angular') {
         const cmd = `npx angular-gettext-cli --files ${file} --dest ${output} --compile --format json`;
