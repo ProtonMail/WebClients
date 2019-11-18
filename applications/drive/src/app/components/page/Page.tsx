@@ -13,7 +13,7 @@ const Page = ({ title, toolbar, children }: Props) => {
     }, [title]);
 
     return (
-        <div className="content flex-item-fluid reset4print">
+        <div className="flex-item-fluid reset4print">
             {toolbar}
             <div
                 className={classnames([

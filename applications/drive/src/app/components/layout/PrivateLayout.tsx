@@ -46,7 +46,7 @@ const PrivateLayout = ({ children, location }: Props) => {
                         list={getSidebar()}
                         mobileLinks={getMobileLinks()}
                     />
-                    <main ref={mainAreaRef} className="main flex-item-fluid main-area main-area-content">
+                    <main ref={mainAreaRef} className="main flex-item-fluid">
                         <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
                     </main>
                 </div>
