@@ -6,15 +6,20 @@ import { Alert, ConfirmModal, ErrorButton, Paragraph } from 'react-components';
 const LossLoyaltyModal = ({ user = {}, ...rest }) => {
     return (
         <ConfirmModal
-            title={c('Title').t`Confirm loss of Proton loyalty benefits`}
-            confirm={<ErrorButton type="submit">{c('Action').t`Confirm`}</ErrorButton>}
+            title={c('Title').t`Confirm loss of Proton bonuses`}
+            confirm={<ErrorButton type="submit">{c('Action').t`Remove bonuses`}</ErrorButton>}
             {...rest}
         >
-            <Paragraph>{c('Info').t`As a long-term paid user, you are entitled to Proton loyalty benefits.`}</Paragraph>
+            <Paragraph>{c('Info').t`As an early Proton user, your account has extra features..`}</Paragraph>
             <Alert type="warning">
-                {c('Info').t`By downgrading to a Free plan, you will permanently lose your current benefits:`}
-                {user.hasPaidMail ? <div>{c('Info').t`+5 GB storage for ProtonMail`}</div> : null}
-                {user.hasPaidVpn ? <div>{c('Info').t`+2 devices connected at once for ProtonVPN`}</div> : null}
+                {c('Info')
+                    .t`By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.`}
+                <ul>
+                    {user.hasPaidMail ? <li>{c('Info').t`+5GB bonus storage`}</li> : null}
+                    {user.hasPaidVpn ? (
+                        <li>{c('Info').t`+2 connections for ProtonVPN (allows you to connect more devices to VPN)`}</li>
+                    ) : null}
+                </ul>
             </Alert>
         </ConfirmModal>
     );
