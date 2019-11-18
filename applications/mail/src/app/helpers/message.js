@@ -15,8 +15,8 @@ export const getSender = ({ Sender = {} } = {}) => {
  * @param {Array} message.CCList
  * @return {Array} [Name || Address]
  */
-export const getRecipients = ({ ToList = [], BCCList = [], CCList = [] } = {}) => {
-    return [...ToList, ...BCCList, ...CCList].map(({ Address, Name }) => Name || Address);
+export const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => {
+    return [...ToList, ...CCList, ...BCCList].map(({ Address, Name }) => Name || Address);
 };
 
 /**
