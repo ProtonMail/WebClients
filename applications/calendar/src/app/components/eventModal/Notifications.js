@@ -21,7 +21,7 @@ const Notifications = ({ notifications, hasWhen, hasType, defaultNotification, o
                             onChange={(newNotification) => onChange(updateItem(notifications, index, newNotification))}
                         />
                         <LinkButton
-                            className="flex-item-noshrink"
+                            className="flex-item-noshrink ml0-5"
                             title={c('Action').t`Remove notification`}
                             onClick={() => onChange(removeItem(notifications, index))}
                         >{c('Action').t`Delete`}</LinkButton>

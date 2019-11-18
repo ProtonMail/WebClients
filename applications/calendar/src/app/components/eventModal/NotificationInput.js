@@ -43,88 +43,101 @@ const NotificationInput = ({
           };
 
     return (
-        <div className={classnames(['flex flex-nowrap flex-items-center', className])}>
-            {hasType ? (
-                <Select
+        <div
+            className={classnames([
+                'flex flex-nowrap flex-items-center flex-item-fluid',
+                className,
+                isAllDay && 'onmobile-flex-column'
+            ])}
+        >
+            <span className={classnames(['flex flex-nowrap flex-items-center', isAllDay && 'onmobile-mb0-5'])}>
+                {hasType ? (
+                    <Select
+                        className="mr1"
+                        value={type}
+                        options={[
+                            { text: c('Notification type').t`Notification`, value: DEVICE },
+                            { text: c('Notification type').t`Email`, value: EMAIL }
+                        ]}
+                        onChange={({ target }) => onChange({ ...notification, type: +target.value })}
+                    />
+                ) : null}
+                <Input
+                    type="number"
                     className="mr1"
-                    value={type}
-                    options={[
-                        { text: c('Notification type').t`Notification`, value: DEVICE },
-                        { text: c('Notification type').t`Email`, value: EMAIL }
-                    ]}
-                    onChange={({ target }) => onChange({ ...notification, type: +target.value })}
-                />
-            ) : null}
-            <Input
-                type="number"
-                className="mr1"
-                value={modifiedValue}
-                onChange={({ target }) => {
-                    const newValue = +target.value;
-                    if (isAllDayBefore && unit === NOTIFICATION_UNITS.DAY) {
-                        if (newValue <= 0) {
+                    value={modifiedValue}
+                    onChange={({ target }) => {
+                        const newValue = +target.value;
+                        if (isAllDayBefore && unit === NOTIFICATION_UNITS.DAY) {
+                            if (newValue <= 0) {
+                                return;
+                            }
+                            onChange({ ...notification, value: newValue - 1 });
                             return;
                         }
-                        onChange({ ...notification, value: newValue - 1 });
-                        return;
-                    }
-                    if (newValue < 0) {
-                        return;
-                    }
-                    onChange({ ...notification, value: newValue });
-                }}
-            />
-            <Select
-                className="mr1"
-                value={unit}
-                options={[
-                    !isAllDay && {
-                        text: c('Time unit').ngettext(msgid`Minute`, `Minutes`, modifiedValue),
-                        value: MINUTES
-                    },
-                    !isAllDay && { text: c('Time unit').ngettext(msgid`Hour`, `Hours`, modifiedValue), value: HOURS },
-                    { text: c('Time unit').ngettext(msgid`Day`, `Days`, modifiedValue), value: DAY },
-                    { text: c('Time unit').ngettext(msgid`Week`, `Weeks`, modifiedValue), value: WEEK }
-                ].filter(Boolean)}
-                onChange={({ target }) => onChange({ ...notification, unit: +target.value })}
-            />
-            {hasWhen ? (
-                <Select
-                    className="mr1"
-                    value={when}
-                    options={[
-                        { text: notificationI18N[BEFORE], value: BEFORE },
-                        { text: notificationI18N[AFTER], value: AFTER }
-                    ]}
-                    onChange={({ target }) => onChange({ ...notification, when: target.value })}
-                />
-            ) : (
-                notificationI18N[when].toLowerCase()
-            )}
-            {isAllDay ? (
-                <TimeInput
-                    value={modifiedAt}
-                    onChange={(at) => {
-                        if (isAllDayBefore) {
-                            onChange({
-                                ...notification,
-                                at: new Date(
-                                    at.getFullYear(),
-                                    at.getMonth(),
-                                    at.getDate(),
-                                    24 - at.getHours(),
-                                    at.getMinutes()
-                                )
-                            });
+                        if (newValue < 0) {
                             return;
                         }
-                        onChange({
-                            ...notification,
-                            at
-                        });
+                        onChange({ ...notification, value: newValue });
                     }}
                 />
-            ) : null}
+                <Select
+                    className={classnames(['mr1', isAllDay && 'onmobile-mr0'])}
+                    value={unit}
+                    options={[
+                        !isAllDay && {
+                            text: c('Time unit').ngettext(msgid`Minute`, `Minutes`, modifiedValue),
+                            value: MINUTES
+                        },
+                        !isAllDay && {
+                            text: c('Time unit').ngettext(msgid`Hour`, `Hours`, modifiedValue),
+                            value: HOURS
+                        },
+                        { text: c('Time unit').ngettext(msgid`Day`, `Days`, modifiedValue), value: DAY },
+                        { text: c('Time unit').ngettext(msgid`Week`, `Weeks`, modifiedValue), value: WEEK }
+                    ].filter(Boolean)}
+                    onChange={({ target }) => onChange({ ...notification, unit: +target.value })}
+                />
+            </span>
+            <span className="flex flex-nowrap flex-items-center">
+                {hasWhen ? (
+                    <Select
+                        className="mr1 flex-item-noshrink pr0-5"
+                        value={when}
+                        options={[
+                            { text: notificationI18N[BEFORE], value: BEFORE },
+                            { text: notificationI18N[AFTER], value: AFTER }
+                        ]}
+                        onChange={({ target }) => onChange({ ...notification, when: target.value })}
+                    />
+                ) : (
+                    <span className="flex-item-noshrink pr0-5">{notificationI18N[when].toLowerCase()}</span>
+                )}
+                {isAllDay ? (
+                    <TimeInput
+                        value={modifiedAt}
+                        onChange={(at) => {
+                            if (isAllDayBefore) {
+                                onChange({
+                                    ...notification,
+                                    at: new Date(
+                                        at.getFullYear(),
+                                        at.getMonth(),
+                                        at.getDate(),
+                                        24 - at.getHours(),
+                                        at.getMinutes()
+                                    )
+                                });
+                                return;
+                            }
+                            onChange({
+                                ...notification,
+                                at
+                            });
+                        }}
+                    />
+                ) : null}
+            </span>
         </div>
     );
 };
