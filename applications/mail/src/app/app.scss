@@ -1,1 +1,10 @@
 @import '~react-components/styles/index';
+
+// stuff for responsive
+@import '~design-system/_sass/reusable-components/design-system-responsive';
+@import '~design-system/_sass/design-system-website/responsive';
+
+// others
+@import '~design-system/_sass/reusable-components/design-system-print';
+@import '~design-system/_sass/reusable-components/design-system-viewport-fix';
+@import '~design-system/_sass/reusable-components/design-system-reduced-motion';

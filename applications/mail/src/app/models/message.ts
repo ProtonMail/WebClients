@@ -29,6 +29,7 @@ export interface Message {
     BCCList?: Recipient[];
     ParsedHeaders?: { [key: string]: any };
     Attachments?: Attachment[];
+    Unread?: number;
     Size?: number;
 }
 

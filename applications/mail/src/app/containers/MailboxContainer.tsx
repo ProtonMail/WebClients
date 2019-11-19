@@ -148,7 +148,9 @@ const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
             >
                 <div className="items-column-list scroll-if-needed scroll-smooth-touch">
                     {loadingElements ? (
-                        <Loader />
+                        <div className="flex flex-justify-center h100">
+                            <Loader />
+                        </div>
                     ) : (
                         (columnMode || !elementID) && (
                             <List

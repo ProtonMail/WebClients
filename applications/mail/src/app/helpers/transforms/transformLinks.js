@@ -66,8 +66,6 @@ const disableAnchors = (link) => {
 export const transformLinks = ({ document }) => {
     const links = [...document.querySelectorAll('[href]')];
 
-    // console.log('transformLinks', links);
-
     links.forEach((link) => {
         httpInNewTab(link);
         noReferrerInfo(link);

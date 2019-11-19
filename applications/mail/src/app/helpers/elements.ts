@@ -3,6 +3,7 @@ import { MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
 
 import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
+// import { Conversation } from '../models/conversation';
 
 const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, ALL_MAIL } = MAILBOX_LABEL_IDS;
 
@@ -39,4 +40,14 @@ export const getReadableTime = ({ Time = 0, ContextTime = 0 }: Element = {}) => 
 export const getReadableFullTime = ({ Time = 0, ContextTime = 0 }: Element = {}) => {
     const date = new Date((ContextTime || Time) * 1000);
     return format(date, 'Ppp');
+};
+
+export const isUnread = (element: Element) => {
+    if ('NumUnread' in element) {
+        return element.NumUnread !== 0;
+    }
+    if ('Unread' in element) {
+        return element.Unread !== 0;
+    }
+    return false;
 };

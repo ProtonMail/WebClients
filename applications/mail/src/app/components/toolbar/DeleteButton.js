@@ -94,7 +94,7 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => 
                     title={c('Action').t`Empty folder`}
                     onClick={() => withLoading(handleEmpty())}
                 >
-                    <Icon className="toolbar-icon" name="empty-folder" />
+                    <Icon className="toolbar-icon mauto" name="empty-folder" />
                 </ToolbarButton>
             ) : null}
         </>

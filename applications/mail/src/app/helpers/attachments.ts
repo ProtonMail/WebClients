@@ -63,7 +63,6 @@ export const getSessionKey = async (message: MessageExtended, attachment: Attach
     // if (isOutside()) {
     //     options.passwords = [eoStore.getPassword()];
     // } else {
-    // console.log('getSessionKey', message);
     // options.privateKeys = keysModel.getPrivateKeys(message.AddressID);
     options.privateKeys = message.privateKeys;
     // }
@@ -79,7 +78,6 @@ export const getDecryptedAttachmentAPI = async (
     { cache, api }: any
 ) => {
     const data = await getRequest(attachment, api);
-    // console.log('response', response);
     // const data = null;
     try {
         const { sessionKey } = await getSessionKey(message, attachment);
@@ -128,7 +126,6 @@ export const getAndVerify = async (
  * @return {Promise}
  */
 const formatDownload = async (attachment: Attachment, message: MessageExtended, { cache, api }: any) => {
-    console.log('formatDownload', attachment);
     try {
         const data = await getAndVerify(attachment, message, false, { cache, api });
         return {
@@ -139,7 +136,6 @@ const formatDownload = async (attachment: Attachment, message: MessageExtended, 
         };
     } catch (e) {
         // If the decryption fails we download the encrypted version
-        console.log('error', e);
         if (e.data) {
             return {
                 data: e.data,

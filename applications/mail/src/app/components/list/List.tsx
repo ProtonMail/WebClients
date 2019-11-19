@@ -1,22 +1,35 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { useLabels } from 'react-components';
 
 import Item from './Item';
+import { Element } from '../../models/element';
 
-const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs = [], onCheck, onClick }) => {
+interface Props {
+    labelID: string;
+    elementID?: string;
+    mailSettings: any;
+    elements?: Element[];
+    checkedIDs?: string[];
+    onCheck: Function;
+    onClick: Function;
+}
+
+const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs = [], onCheck, onClick }: Props) => {
     const [labels] = useLabels();
     const [lastChecked, setLastChecked] = useState(); // Store ID of the last contact ID checked
 
-    const handleCheck = ({ target, nativeEvent }) => {
-        const { shiftKey } = nativeEvent;
-        const elementID = target.getAttribute('data-element-id');
+    const handleCheck = (event: React.MouseEvent) => {
+        const target = event.target as HTMLInputElement;
+        const { shiftKey } = event.nativeEvent;
+        const elementID = target.getAttribute('data-element-id') || '';
         const elementIDs = [elementID];
 
         if (lastChecked && shiftKey) {
             const start = elements.findIndex(({ ID }) => ID === elementID);
             const end = elements.findIndex(({ ID }) => ID === lastChecked);
-            elementIDs.push(...elements.slice(Math.min(start, end), Math.max(start, end) + 1).map(({ ID }) => ID));
+            elementIDs.push(
+                ...elements.slice(Math.min(start, end), Math.max(start, end) + 1).map(({ ID }) => ID || '')
+            );
         }
 
         setLastChecked(elementID);
@@ -33,7 +46,7 @@ const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs
                         key={element.ID}
                         elementID={elementID}
                         element={element}
-                        checked={checkedIDs.includes(element.ID)}
+                        checked={checkedIDs.includes(element.ID || '')}
                         onCheck={handleCheck}
                         onClick={onClick}
                         mailSettings={mailSettings}
@@ -42,16 +55,6 @@ const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs
             })}
         </>
     );
-};
-
-List.propTypes = {
-    labelID: PropTypes.string.isRequired,
-    elementID: PropTypes.string,
-    mailSettings: PropTypes.object.isRequired,
-    elements: PropTypes.array,
-    checkedIDs: PropTypes.array,
-    onCheck: PropTypes.func,
-    onClick: PropTypes.func
 };
 
 export default List;

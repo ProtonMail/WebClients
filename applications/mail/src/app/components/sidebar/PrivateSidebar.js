@@ -129,11 +129,11 @@ const PrivateSidebar = ({ expanded = false, labelID: currentLabelID }) => {
             <div className="nodesktop notablet">
                 <MainLogo url="/inbox" />
             </div>
-            <div className="pl1 pr1">
+            <div className="pl1 pr1 mb1">
                 <PrimaryButton className="w100 bold">{c('Action').t`Compose`}</PrimaryButton>
             </div>
-            <nav className="navigation mw100 flex-item-fluid scroll-if-needed mb1">
-                <NavMenu list={list} />
+            <nav className="navigation mw100 flex-item-fluid scroll-if-needed">
+                <NavMenu list={list} className="mt0" />
             </nav>
         </div>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { classnames } from 'react-components';
 
 import ItemStar from './ItemStar';
 import { ELEMENT_TYPES } from '../../constants';
@@ -8,44 +8,49 @@ import ItemAttachmentIcon from './ItemAttachmentIcon';
 import ItemLocation from './ItemLocation';
 import ItemDate from './ItemDate';
 import NumMessages from '../conversation/NumMessages';
+import { Label } from '../../models/label';
+import { Element } from '../../models/element';
 
-const ItemColumnLayout = ({ labels, element, mailSettings = {}, type, senders }) => {
+interface Props {
+    labels?: Label[];
+    element: Element;
+    mailSettings: any;
+    type: string;
+    senders: string;
+    unread: boolean;
+}
+
+const ItemColumnLayout = ({ labels, element, mailSettings = {}, type, senders, unread }: Props) => {
     const { Subject } = element;
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
 
     return (
         <div className="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
             <div className="flex">
-                <div className="flex-item-fluid w0 pr1">
+                <div className="flex-item-fluid flex w0 pr1">
                     {isConversation ? (
-                        <NumMessages className="mr0-5" mailSettings={mailSettings} conversation={element} />
+                        <NumMessages className={classnames(['mr0-25', unread && 'bold'])} conversation={element} />
                     ) : (
                         <ItemLocation message={element} mailSettings={mailSettings} />
                     )}
-                    <span className="inbl mw100 ellipsis">{Subject}</span>
+                    <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
                 </div>
-                <ItemDate element={element} type={type} />
+                <ItemDate element={element} className={unread ? 'bold' : undefined} />
             </div>
             <div className="flex">
-                <div className="flex-item-fluid pr1">
-                    <span className="inbl mw100 ellipsis">{senders}</span>
+                <div className="flex-item-fluid flex pr1">
+                    <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{senders}</span>
                 </div>
                 <div className="item-icons">
                     <ItemLabels max={4} type={type} labels={labels} element={element} />
+                    {' ' /* This space is important to keep a small space between elements */}
                     <ItemAttachmentIcon element={element} type={type} />
+                    {' ' /* This space is important to keep a small space between elements */}
                     <ItemStar element={element} type={type} />
                 </div>
             </div>
         </div>
     );
-};
-
-ItemColumnLayout.propTypes = {
-    labels: PropTypes.array,
-    element: PropTypes.object.isRequired,
-    mailSettings: PropTypes.object.isRequired,
-    type: PropTypes.string.isRequired,
-    senders: PropTypes.string.isRequired
 };
 
 export default ItemColumnLayout;

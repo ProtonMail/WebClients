@@ -35,7 +35,7 @@ const ItemStar = ({ element = {}, type = ELEMENT_TYPES.CONVERSATION }) => {
             className={classnames(['starbutton item-star inline-flex', isStarred && 'starbutton--is-starred'])}
             onClick={() => withLoading(handleClick())}
         >
-            <Icon name={iconName} />
+            <Icon name={iconName} fill="" />
         </button>
     );
 };
