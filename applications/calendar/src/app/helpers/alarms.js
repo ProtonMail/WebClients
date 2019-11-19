@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { toUTCDate, fromUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
 import formatUTC from 'proton-shared/lib/date-fns-utc/format';
+import { dateLocale } from 'proton-shared/lib/i18n';
 import { isSameDay, isNextDay, isSameMonth, isSameYear } from 'proton-shared/lib/date-fns-utc/index';
 
 /**
@@ -51,22 +52,26 @@ export const getAlarmMessage = (rawEvent, now, tzid) => {
     const isThisYear = isSameYear(nowDateTimezoned, startDateTimeZoned);
 
     if (isToday) {
-        return c('Alarm notification').t`${title} will start at ${formatUTC(startDateTimeZoned, 'p')}`;
+        return c('Alarm notification').t`${title} will start at ${formatUTC(startDateTimeZoned, 'p', {
+            locale: dateLocale
+        })}`;
     }
     if (isTomorrow) {
-        return c('Alarm notification').t`${title} will start tomorrow at ${formatUTC(startDateTimeZoned, 'p')}`;
+        return c('Alarm notification').t`${title} will start tomorrow at ${formatUTC(startDateTimeZoned, 'p', {
+            locale: dateLocale
+        })}`;
     }
     if (isThisMonth) {
-        return c('Alarm notification').t`${title} will start ${formatUTC(startDateTimeZoned, 'eeee do')} at ${formatUTC(
-            startDateTimeZoned,
-            'p'
-        )}`;
+        return c('Alarm notification').t`${title} will start ${formatUTC(startDateTimeZoned, 'eeee do', {
+            locale: dateLocale
+        })} at ${formatUTC(startDateTimeZoned, 'p', { locale: dateLocale })}`;
     }
     if (isThisYear) {
-        return c('Alarm notification').t`${title} will start ${formatUTC(
-            startDateTimeZoned,
-            'eeee do MMMM'
-        )} at ${formatUTC(startDateTimeZoned, 'p')}`;
+        return c('Alarm notification').t`${title} will start ${formatUTC(startDateTimeZoned, 'eeee do MMMM', {
+            locale: dateLocale
+        })} at ${formatUTC(startDateTimeZoned, 'p')}`;
     }
-    return c('Alarm notification').t`${title} will start on ${formatUTC(startDateTimeZoned, 'PPPp')}`;
+    return c('Alarm notification').t`${title} will start on ${formatUTC(startDateTimeZoned, 'PPPp', {
+        locale: dateLocale
+    })}`;
 };
