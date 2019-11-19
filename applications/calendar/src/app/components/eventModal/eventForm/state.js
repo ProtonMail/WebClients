@@ -11,6 +11,8 @@ import { c } from 'ttag';
 import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
 import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
 
+import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
+
 export const getState = ({
     title = '',
     description = '',
@@ -69,7 +71,10 @@ export const getDateTimeState = (utcDate, tzid) => {
 export const getStartAndEnd = ({
     now = new Date(),
     defaultDuration = 30,
-    start = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), 0)),
+    start = getSnappedDate(
+        new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes() + 30)),
+        30
+    ),
     end = new Date(
         Date.UTC(
             start.getUTCFullYear(),
