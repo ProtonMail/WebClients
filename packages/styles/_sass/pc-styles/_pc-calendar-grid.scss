@@ -160,10 +160,15 @@ $gridcell-right-margin: 1.5em;
     opacity: .7;
 }
 
+$calendar-dayeventcell-hover-color: #F1F3F4 !default;
 .calendar-dayeventcell-inner {
     border-radius: 2px;
     overflow: hidden;
-    min-height: 100%;
+    min-height: 100%;    
+    &:focus,
+    &:hover {
+        background-color: $calendar-dayeventcell-hover-color;
+    }
 }
 
 .calendar-eventcell {
