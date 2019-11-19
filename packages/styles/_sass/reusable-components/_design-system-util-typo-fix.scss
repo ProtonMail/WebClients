@@ -171,6 +171,12 @@ abbr[title] {
   text-overflow: ellipsis; 
   white-space: nowrap;
 }
+.ellipsis-four-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
 
 .uppercase {
   text-transform: uppercase;
