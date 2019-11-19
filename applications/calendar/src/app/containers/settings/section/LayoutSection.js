@@ -22,7 +22,11 @@ const LayoutSection = () => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [loading, withLoading] = useLoading();
+
+    const [loadingView, withLoadingView] = useLoading();
+    const [loadingWeekStart, withLoadingWeekStart] = useLoading();
+    const [loadingWeekNumberDisplay, withLoadingWeekNumberDisplay] = useLoading();
+
     const [calendarSettings, loadingCalendarSettings] = useCalendarUserSettings();
 
     const handleChange = async (data) => {
@@ -51,8 +55,8 @@ const LayoutSection = () => {
                     <ViewPreferenceSelector
                         id="view-select"
                         view={ViewPreference}
-                        loading={loading}
-                        onChange={(ViewPreference) => withLoading(handleChange({ ViewPreference }))}
+                        loading={loadingView}
+                        onChange={(ViewPreference) => withLoadingView(handleChange({ ViewPreference }))}
                     />
                 </Field>
             </Row>
@@ -62,8 +66,8 @@ const LayoutSection = () => {
                     <WeekStartSelector
                         id="week-start-select"
                         day={WeekStart}
-                        loading={loading}
-                        onChangeDay={(WeekStart) => withLoading(handleChange({ WeekStart }))}
+                        loading={loadingWeekStart}
+                        onChangeDay={(WeekStart) => withLoadingWeekStart(handleChange({ WeekStart }))}
                     />
                 </Field>
             </Row>
@@ -73,9 +77,9 @@ const LayoutSection = () => {
                     <Checkbox
                         id="week-numbers-display"
                         checked={!!DisplayWeekNumber}
-                        loading={loading}
+                        loading={loadingWeekNumberDisplay}
                         onChange={({ target: { checked } }) =>
-                            withLoading(handleChange({ DisplayWeekNumber: +checked }))
+                            withLoadingWeekNumberDisplay(handleChange({ DisplayWeekNumber: +checked }))
                         }
                     />
                 </Field>

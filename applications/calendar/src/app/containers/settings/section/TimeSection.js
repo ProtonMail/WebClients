@@ -27,7 +27,14 @@ const TimeSection = () => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [loading, withLoading] = useLoading();
+
+    const [loadingDateFormat, withLoadingDateFormat] = useLoading();
+    const [loadingTimeFormat, withLoadingTimeFormat] = useLoading();
+    const [loadingAutoDetect, withLoadingAutoDetect] = useLoading();
+    const [loadingPrimaryTimeZone, withLoadingPrimaryTimeZone] = useLoading();
+    const [loadingSecondaryTimeZone, withLoadingSecondaryTimeZone] = useLoading();
+    const [loadingDisplaySecondaryTimezone, withLoadingDisplaySecondaryTimezone] = useLoading();
+
     const [calendarSettings, loadingCalendarSettings] = useCalendarUserSettings();
 
     const handleChange = async (data) => {
@@ -74,9 +81,9 @@ const TimeSection = () => {
                 <Field>
                     <Select
                         id="date-format-select"
-                        loading={loading}
-                        onChange={({ target }) => withLoading(handleChange({ DateFormat: +target.value }))}
-                        value={DateFormat ? DateFormat : SETTINGS_DATE_FORMAT.MMDDYYYY}
+                        loading={loadingDateFormat}
+                        onChange={({ target }) => withLoadingDateFormat(handleChange({ DateFormat: +target.value }))}
+                        value={DateFormat}
                         options={[
                             { text: `12/31/${year}`, value: SETTINGS_DATE_FORMAT.DDMMYYYY },
                             { text: `31/12/${year}`, value: SETTINGS_DATE_FORMAT.MMDDYYYY },
@@ -90,9 +97,9 @@ const TimeSection = () => {
                 <Field>
                     <Select
                         id="time-format-select"
-                        loading={loading}
-                        onChange={({ target }) => withLoading(handleTimeFormat(+target.value))}
-                        value={TimeFormat ? TimeFormat : SETTINGS_TIME_FORMAT.H24}
+                        loading={loadingTimeFormat}
+                        onChange={({ target }) => withLoadingTimeFormat(handleTimeFormat(+target.value))}
+                        value={TimeFormat}
                         options={[
                             { text: '1pm', value: SETTINGS_TIME_FORMAT.H12 },
                             { text: '13:00', value: SETTINGS_TIME_FORMAT.H24 }
@@ -105,10 +112,10 @@ const TimeSection = () => {
                 <Field>
                     <div className="mb1">
                         <Checkbox
-                            disabled={loading}
+                            disabled={loadingAutoDetect}
                             checked={!!AutoDetectPrimaryTimezone}
                             onChange={({ target }) =>
-                                withLoading(
+                                withLoadingAutoDetect(
                                     handleChange({
                                         AutoDetectPrimaryTimezone: +target.checked,
                                         // Set a timezone if it's the first time
@@ -120,10 +127,12 @@ const TimeSection = () => {
                     </div>
                     <div>
                         <TimezoneSelector
-                            loading={loading}
+                            loading={loadingPrimaryTimeZone}
                             disabled={!!AutoDetectPrimaryTimezone}
                             timezone={primaryTimezoneValue}
-                            onChange={(PrimaryTimezone) => withLoading(handleChange({ PrimaryTimezone }))}
+                            onChange={(PrimaryTimezone) =>
+                                withLoadingPrimaryTimeZone(handleChange({ PrimaryTimezone }))
+                            }
                         />
                     </div>
                 </Field>
@@ -133,10 +142,10 @@ const TimeSection = () => {
                 <Field>
                     <div className="mb1">
                         <Checkbox
-                            disabled={loading}
+                            disabled={loadingDisplaySecondaryTimezone}
                             checked={!!DisplaySecondaryTimezone}
                             onChange={({ target }) =>
-                                withLoading(
+                                withLoadingDisplaySecondaryTimezone(
                                     handleChange({
                                         DisplaySecondaryTimezone: +target.checked,
                                         // Set a timezone if it's the first time
@@ -148,10 +157,12 @@ const TimeSection = () => {
                     </div>
                     <div>
                         <TimezoneSelector
-                            loading={loading}
+                            loading={loadingSecondaryTimeZone}
                             disabled={!DisplaySecondaryTimezone}
                             timezone={secondaryTimezoneValue}
-                            onChange={(SecondaryTimezone) => withLoading(handleChange({ SecondaryTimezone }))}
+                            onChange={(SecondaryTimezone) =>
+                                withLoadingSecondaryTimeZone(handleChange({ SecondaryTimezone }))
+                            }
                         />
                     </div>
                 </Field>
