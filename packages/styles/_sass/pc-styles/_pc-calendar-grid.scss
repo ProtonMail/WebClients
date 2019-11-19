@@ -147,12 +147,14 @@ $gridcell-right-margin: 1.5em;
 
 
 // events
+$calendar-dayevent-cell-height: 24px !default; // careful when updating this (depends also on JS calculations)
 .calendar-dayeventcell {
     padding-right: 10px;
     padding-bottom: 5px;
     white-space: nowrap;
     overflow: hidden;
     cursor: pointer;
+    height: $calendar-dayevent-cell-height;
 }
 
 .calendar-dayeventcell--isBefore,
