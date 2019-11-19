@@ -8,7 +8,7 @@ import { bestColor } from '../../helpers/color';
 const FullDayEvent = ({
     style,
     formatTime,
-    className = 'calendar-dayeventcell absolute',
+    className = 'calendar-dayeventcell absolute alignleft',
     event: { start, data: { Calendar } = {}, data: targetEventData, isAllDay, isAllPartDay },
     isSelected,
     isBeforeNow,
@@ -66,16 +66,17 @@ const FullDayEvent = ({
     const isBeforeNowClassModifier = isBeforeNow ? 'calendar-dayeventcell--isBefore' : '';
 
     return (
-        <div
+        <button
+            type="button"
             style={style}
             className={classnames([className, isBeforeNowClassModifier])}
             data-ignore-create="1"
             onClick={onClick}
         >
-            <div className="calendar-dayeventcell-inner pl0-5 pr0-5" style={eventStyle} ref={eventRef}>
+            <span className="calendar-dayeventcell-inner inbl w100 pl0-5 pr0-5" style={eventStyle} ref={eventRef}>
                 {content}
-            </div>
-        </div>
+            </span>
+        </button>
     );
 };
 
