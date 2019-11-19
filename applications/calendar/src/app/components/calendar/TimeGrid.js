@@ -189,7 +189,7 @@ const TimeGrid = React.forwardRef(
                     <div
                         ref={titleRef}
                         className={classnames([
-                            'sticky-title sticky-title--noPadding',
+                            'sticky-title sticky-title--noPadding onmobile-remain-sticky',
                             !scrollTop && 'sticky-title--onTop'
                         ])}
                     >
