@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { useApi } from 'react-components';
@@ -17,6 +17,16 @@ const AlarmWatcher = ({ alarms = [], updateAlarms, tzid }) => {
 
     const alarmsLength = alarms.length;
     const firstAlarmID = alarmsLength ? alarms[0].ID : undefined;
+
+    const handleCreateDesktopNotification = useCallback((text) => {
+        create(c('Title').t`Calendar alarm`, {
+            body: text,
+            icon: '/assets/img/notification-badge.gif',
+            onClick() {
+                window.focus();
+            }
+        });
+    }, []);
 
     useEffect(() => {
         if (!cacheRef.current) {
@@ -41,17 +51,7 @@ const AlarmWatcher = ({ alarms = [], updateAlarms, tzid }) => {
             const delay = differenceInMilliseconds(nextAlarmTime, now);
             cacheRef.current.timeoutID = setTimeout(() => {
                 const text = getAlarmMessage(nextEventRaw, now, tzid);
-                const title = c('Title').t`Calendar alarm`;
-                // the notification must be created at the end of the timeout
-                (() => {
-                    create(title, {
-                        body: text,
-                        icon: '/assets/img/notification-badge.gif',
-                        onClick() {
-                            window.focus();
-                        }
-                    });
-                })();
+                handleCreateDesktopNotification(text);
                 updateAlarms((alarms) => alarms.slice(1));
             }, delay);
         };
