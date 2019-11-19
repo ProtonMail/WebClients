@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useMailSettings, Loader, classnames, useLoading } from 'react-components';
 
 import { Element } from '../models/element';
@@ -18,6 +17,7 @@ import ConversationView from '../components/conversation/ConversationView';
 import PlaceholderView from '../components/view/PlaceholderView';
 
 import './main-area.scss';
+import MessageOnlyView from '../components/message/MessageOnlyView';
 
 interface Props {
     labelID: string;
@@ -26,12 +26,11 @@ interface Props {
     history: any;
 }
 
-// eslint-disable-next-line
 const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const { getConversations } = useConversations();
     const { getMessages } = useMessages();
-    const [loading, withLoading] = useLoading();
+    const [loadingElements, withLoadingElements] = useLoading(true);
     const [elements, setElements] = useState<Element[]>([]);
     const [checkedElements, setCheckedElements] = useState(Object.create(null));
     const [checkAll, setCheckAll] = useState(false);
@@ -53,7 +52,7 @@ const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
                 }
             };
 
-            withLoading(load());
+            withLoadingElements(load());
         }
     }, [labelID, loadingMailSettings]);
 
@@ -86,7 +85,7 @@ const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
         return [];
     }, [checkedIDs, location.pathname]);
 
-    if (loadingMailSettings || loading) {
+    if (loadingMailSettings) {
         return <Loader />;
     }
 
@@ -121,6 +120,7 @@ const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
     };
 
     const columnMode = isColumnMode(mailSettings);
+    const conversationMode = isConversationMode(mailSettings);
 
     return (
         <>
@@ -146,40 +146,46 @@ const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
                     !columnMode && 'main-area--rowMode'
                 ])}
             >
-                {(columnMode || !elementID) && (
-                    <List
-                        labelID={labelID}
-                        mailSettings={mailSettings}
-                        elementID={elementID}
-                        elements={elements}
-                        // selectedIDs={selectedIDs}
-                        checkedIDs={checkedIDs}
-                        onCheck={handleCheck}
-                        onClick={handleClick}
-                    />
-                )}
-                {(columnMode || elementID) &&
-                    (elementID ? (
-                        <ConversationView mailSettings={mailSettings} conversationID={elementID} />
+                <div className="items-column-list scroll-if-needed scroll-smooth-touch">
+                    {loadingElements ? (
+                        <Loader />
                     ) : (
-                        <PlaceholderView
-                            labelID={labelID}
-                            mailSettings={mailSettings}
-                            welcomeRef={welcomeRef}
-                            checkedIDs={checkedIDs}
-                            onUncheckAll={handleUncheckAll}
-                        />
-                    ))}
+                        (columnMode || !elementID) && (
+                            <List
+                                labelID={labelID}
+                                mailSettings={mailSettings}
+                                elementID={elementID}
+                                elements={elements}
+                                // selectedIDs={selectedIDs}
+                                checkedIDs={checkedIDs}
+                                onCheck={handleCheck}
+                                onClick={handleClick}
+                            />
+                        )
+                    )}
+                </div>
+                {(columnMode || elementID) && (
+                    <section className="view-column-detail p2 flex-item-fluid scroll-if-needed">
+                        {elementID ? (
+                            conversationMode ? (
+                                <ConversationView mailSettings={mailSettings} conversationID={elementID} />
+                            ) : (
+                                <MessageOnlyView mailSettings={mailSettings} messageID={elementID} />
+                            )
+                        ) : (
+                            <PlaceholderView
+                                labelID={labelID}
+                                mailSettings={mailSettings}
+                                welcomeRef={welcomeRef}
+                                checkedIDs={checkedIDs}
+                                onUncheckAll={handleUncheckAll}
+                            />
+                        )}
+                    </section>
+                )}
             </div>
         </>
     );
-};
-
-MailboxContainer.propTypes = {
-    labelID: PropTypes.string,
-    elementID: PropTypes.string,
-    location: PropTypes.object,
-    history: PropTypes.object
 };
 
 export default MailboxContainer;

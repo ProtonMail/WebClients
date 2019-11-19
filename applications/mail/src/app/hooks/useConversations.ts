@@ -10,8 +10,8 @@ export const useConversations = () => {
     const getConversation = useCallback(
         async (
             conversationID: string,
-            messageID: string
-        ): Promise<{ Conversation: Conversation; Message: Message }> => {
+            messageID?: string
+        ): Promise<{ Conversation: Conversation; Messages: Message[] }> => {
             return api(queryConversation(conversationID, messageID));
         },
         [api]

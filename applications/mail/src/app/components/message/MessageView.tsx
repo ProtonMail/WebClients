@@ -15,11 +15,17 @@ interface Props {
     labels: Label[];
     message: Message;
     mailSettings: any;
-    initialExpand: boolean;
-    conversationIndex: number;
+    initialExpand?: boolean;
+    conversationIndex?: number;
 }
 
-const MessageView = ({ labels = [], message: inputMessage, mailSettings, initialExpand, conversationIndex }: Props) => {
+const MessageView = ({
+    labels = [],
+    message: inputMessage,
+    mailSettings,
+    initialExpand = true,
+    conversationIndex = 0
+}: Props) => {
     const { state: expanded, set: setExpanded } = useToggle(initialExpand);
     const [loaded, setLoaded] = useState(false);
     const [message, setMessage] = useState({ data: inputMessage } as MessageExtended);

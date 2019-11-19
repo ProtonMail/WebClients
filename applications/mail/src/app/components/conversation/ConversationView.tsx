@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { useLoading, Loader, useLabels } from 'react-components';
 import { orderBy } from 'proton-shared/lib/helpers/array';
 
@@ -9,10 +8,17 @@ import { ELEMENT_TYPES } from '../../constants';
 import NumMessages from './NumMessages';
 import ItemLabels from '../list/ItemLabels';
 import { useConversations } from '../../hooks/useConversations';
+import { Message } from '../../models/message';
 
-const ConversationView = ({ conversationID, messageID, mailSettings }) => {
+interface Props {
+    conversationID: string;
+    messageID?: string;
+    mailSettings: any;
+}
+
+const ConversationView = ({ conversationID, messageID, mailSettings }: Props) => {
     const [conversation, updateConversation] = useState();
-    const [messages, updateMessages] = useState([]);
+    const [messages, updateMessages] = useState<Message[]>([]);
     const [labels] = useLabels();
     const [loading, withLoading] = useLoading();
     const [initialExpand, setInitialExpand] = useState(null);
@@ -30,14 +36,10 @@ const ConversationView = ({ conversationID, messageID, mailSettings }) => {
 
     useEffect(() => {
         withLoading(requestConversation());
-    }, []);
+    }, [conversationID, messageID]);
 
     if (loading) {
-        return (
-            <section className="view-column-detail p2 flex-item-fluid scroll-if-needed">
-                <Loader />
-            </section>
-        );
+        return <Loader />;
     }
 
     if (!conversation) {
@@ -45,10 +47,10 @@ const ConversationView = ({ conversationID, messageID, mailSettings }) => {
     }
 
     return (
-        <section className="view-column-detail p2 flex-item-fluid scroll-if-needed">
+        <>
             <header className="flex flex-nowrap flex-spacebetween flex-items-center mb1">
                 <h2 className="mb0">
-                    <NumMessages mailSettings={mailSettings} className="mr0-25" conversation={conversation} />
+                    <NumMessages className="mr0-25" conversation={conversation} />
                     {conversation.Subject}
                 </h2>
                 <div>
@@ -66,14 +68,8 @@ const ConversationView = ({ conversationID, messageID, mailSettings }) => {
                     conversationIndex={index}
                 />
             ))}
-        </section>
+        </>
     );
-};
-
-ConversationView.propTypes = {
-    conversationID: PropTypes.string.isRequired,
-    messageID: PropTypes.string,
-    mailSettings: PropTypes.object.isRequired
 };
 
 export default ConversationView;

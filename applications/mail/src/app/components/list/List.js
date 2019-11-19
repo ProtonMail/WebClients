@@ -24,7 +24,7 @@ const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs
     };
 
     return (
-        <div className="items-column-list scroll-if-needed scroll-smooth-touch">
+        <>
             {elements.map((element) => {
                 return (
                     <Item
@@ -40,7 +40,7 @@ const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs
                     />
                 );
             })}
-        </div>
+        </>
     );
 };
 

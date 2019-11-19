@@ -81,7 +81,7 @@ export const useComputeMessage = (mailSettings: any) => {
 
     const loadRemoteImages = useCallback(
         (message: MessageExtended, action?: string) => {
-            return run({ ...message, showRemoteImages: true }, transformRemote, action);
+            return run({ ...message, showRemoteImages: true }, transformRemote as Computation, action);
         },
         [run]
     );

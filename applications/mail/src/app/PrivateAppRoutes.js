@@ -16,7 +16,7 @@ const PrivateAppRoutes = () => {
                     const labelID = HUMAN_TO_LABEL_IDS[currentLabelID] || currentLabelID;
                     return (
                         <PrivateLayout labelID={labelID} location={location} history={history}>
-                            <ErrorBoundary key={location.pathname}>
+                            <ErrorBoundary>
                                 <MailboxContainer
                                     labelID={labelID}
                                     elementID={elementID}

@@ -1,7 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Conversation } from '../../models/conversation';
 
-const NumMessages = ({ conversation, className }) => {
+interface Props {
+    conversation: Conversation;
+    className?: string;
+}
+
+const NumMessages = ({ conversation, className }: Props) => {
     // ContextNumMessages shoud not be used
     const { NumMessages = 0 } = conversation;
 
@@ -10,11 +15,6 @@ const NumMessages = ({ conversation, className }) => {
     }
 
     return <span className={className}>({NumMessages})</span>;
-};
-
-NumMessages.propTypes = {
-    className: PropTypes.string,
-    conversation: PropTypes.object.isRequired
 };
 
 export default NumMessages;
