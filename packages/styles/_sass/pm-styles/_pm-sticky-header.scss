@@ -42,7 +42,7 @@ $sticky-title-height: 10rem !default;
 
 // not sticky on mobile
 @include respond-to($breakpoint-small) { 
-  .sticky-title {
+  .sticky-title:not(.onmobile-remain-sticky) {
     position: static;
     box-shadow: none;
   }
