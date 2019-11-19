@@ -241,7 +241,9 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                         />
                     </div>
                 ) : (
-                    <h1 className="eventpopover-title">{model.title}</h1>
+                    <h1 className="eventpopover-title ellipsis-four-lines cut" title={model.title}>
+                        {model.title}
+                    </h1>
                 )}
                 <button type="button" className="pm-modalClose" title={c('Action').t`Close popover`} onClick={onClose}>
                     <Icon className="pm-modalClose-icon" name="close" />
