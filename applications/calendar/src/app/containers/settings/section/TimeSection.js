@@ -101,8 +101,8 @@ const TimeSection = () => {
                         onChange={({ target }) => withLoadingTimeFormat(handleTimeFormat(+target.value))}
                         value={TimeFormat}
                         options={[
-                            { text: '1pm', value: SETTINGS_TIME_FORMAT.H12 },
-                            { text: '13:00', value: SETTINGS_TIME_FORMAT.H24 }
+                            { text: '12h', value: SETTINGS_TIME_FORMAT.H12 },
+                            { text: '24h', value: SETTINGS_TIME_FORMAT.H24 }
                         ]}
                     />
                 </Field>
