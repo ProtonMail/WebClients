@@ -1,14 +1,12 @@
 import {
     startOfDay,
     endOfDay,
-
     startOfWeek,
     endOfWeek,
     startOfMonth,
     endOfMonth,
     startOfYear,
     endOfYear,
-
     addDays,
     addWeeks,
     addMonths,
@@ -47,12 +45,12 @@ export const getDateDiff = (date, range, view, direction) => {
             return addDays(date, direction);
         case WEEK:
             if (range >= 0) {
-                return addDays(date, direction * range);
+                return addDays(date, direction * (1 + range));
             }
             return addWeeks(date, direction);
         case MONTH:
             if (range >= 0) {
-                return addDays(date, direction * range * 7);
+                return addDays(date, direction * (1 + range) * 7);
             }
             return addMonths(date, direction);
         case YEAR:
