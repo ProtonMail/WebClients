@@ -22,6 +22,7 @@ const MainForm = ({ displayWeekNumbers, weekStartsOn, model, errors, setModel, c
                         id="event-title-input"
                         placeholder={PLACEHOLDER_TITLE[model.type]}
                         required
+                        error={errors.title}
                         value={model.title}
                         onChange={({ target }) => setModel({ ...model, title: target.value })}
                     />

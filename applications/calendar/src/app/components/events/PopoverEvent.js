@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
     SmallButton,
     PrimaryButton,
+    Input,
     Icon,
     Loader,
     useApi,
@@ -56,6 +57,7 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
 
     const [value, isLoading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value);
+    const [errors, setErrors] = useState({});
 
     const handleDelete = async () => {
         if (!Event) {
@@ -116,7 +118,7 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
         ]);
 
         const emptyModel = getEmptyModel({
-            title: tmpTitle,
+            title: (tmpTitle || '').trim(),
             calendarID: actualCalendarID,
             CalendarBootstrap,
             Addresses,
@@ -142,12 +144,22 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
         };
     };
 
+    useEffect(() => {
+        if (errors.title) {
+            setErrors({});
+        }
+    }, [tmpTitle]);
+
     const handleSave = async () => {
         const model = await getModel();
 
         const { calendarID, addressID, memberID } = model;
         const [addressKeys, calendarKeys] = await Promise.all([getAddressKeys(addressID), getCalendarKeys(calendarID)]);
         const veventComponent = modelToVeventComponent(model, tzid);
+
+        if (!veventComponent.summary.value) {
+            return setErrors({ title: c('Error').t`Title required` });
+        }
 
         await createOrUpdateEvent({
             Event: Event ? Event : undefined,
@@ -205,19 +217,29 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
     }
 
     return (
-        <div style={otherStyle} className="eventpopover p1" ref={ref}>
+        <form
+            style={otherStyle}
+            onSubmit={(e) => {
+                e.preventDefault();
+                withLoadingAction(handleSave());
+            }}
+            className="eventpopover p1"
+            ref={ref}
+        >
             <header className="">
                 {isCreateEvent ? (
-                    <input
-                        placeholder={c('Placeholder').t`Add an event title`}
-                        aria-label={c('Info').t`Add an event title`}
-                        type="text"
-                        className="pm-field w95 mb1 mt0-25"
-                        value={tmpTitle}
-                        autoFocus={true}
-                        onKeyDown={({ key }) => key === 'Enter' && withLoadingAction(handleSave())}
-                        onChange={({ target: { value } }) => setTmpTitle(value)}
-                    />
+                    <div className="mb1 w95">
+                        <Input
+                            placeholder={c('Placeholder').t`Add an event title`}
+                            aria-label={c('Info').t`Add an event title`}
+                            type="text"
+                            value={tmpTitle}
+                            autoFocus={true}
+                            required={true}
+                            error={errors.title}
+                            onChange={({ target: { value } }) => setTmpTitle(value)}
+                        />
+                    </div>
                 ) : (
                     <h1 className="eventpopover-title">{model.title}</h1>
                 )}
@@ -242,11 +264,9 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                         <SmallButton onClick={onClose}>{c('Action').t`Cancel`}</SmallButton>
                         <div>
                             <SmallButton className="mr1" onClick={handleEdit}>{c('Action').t`More`}</SmallButton>
-                            <PrimaryButton
-                                className="pm-button--small"
-                                onClick={loadingAction ? noop : () => withLoadingAction(handleSave())}
-                                loading={loadingAction}
-                            >{c('Action').t`Save`}</PrimaryButton>
+                            <PrimaryButton type="submit" className="pm-button--small" loading={loadingAction}>{c(
+                                'Action'
+                            ).t`Save`}</PrimaryButton>
                         </div>
                     </>
                 ) : (
@@ -261,7 +281,7 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                     </>
                 )}
             </footer>
-        </div>
+        </form>
     );
 };
 

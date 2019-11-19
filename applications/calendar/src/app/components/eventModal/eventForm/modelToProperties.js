@@ -58,7 +58,7 @@ export const modelToDateProperty = ({ isAllDay, date, time, tzid: specificTzid }
 
 export const modelToGeneralProperties = ({ uid, title, location, description, frequency, attendees, rest }) => {
     const properties = {
-        summary: { value: title },
+        summary: { value: title.trim() },
         ...rest
     };
 

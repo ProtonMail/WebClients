@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
     FormModal,
@@ -19,7 +19,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import { validateDateTimeProperties } from './validator';
 import { getI18N } from './eventForm/i18n';
-import { modelToDateProperty, modelToVeventComponent } from './eventForm/modelToProperties';
+import { modelToVeventComponent } from './eventForm/modelToProperties';
 import { getState, getEmptyModel, getExistingEvent, getStartAndEnd } from './eventForm/state';
 import MainForm from './MainForm';
 import useGetCalendarEventRaw from '../../containers/calendar/useGetCalendarEventRaw';
@@ -66,19 +66,7 @@ const CreateEventModal = ({
     const getEventRaw = useGetCalendarEventRaw();
     const getEventPersonal = useGetCalendarEventPersonal();
     const i18n = getI18N(model.type);
-
-    const errors = useMemo(() => {
-        const { start, end, isAllDay } = model;
-        if (!start) {
-            return;
-        }
-        const dtStartProperty = modelToDateProperty({ ...start, isAllDay }, tzid);
-        const dtEndProperty = modelToDateProperty({ ...end, isAllDay }, tzid);
-        const dateTimesError = validateDateTimeProperties(dtStartProperty, dtEndProperty);
-        return {
-            end: dateTimesError
-        };
-    }, [model.start, model.end, model.isAllDay]);
+    const [errors, setErrors] = useState({});
 
     useEffect(() => {}, [model.memberID]);
 
@@ -130,14 +118,23 @@ const CreateEventModal = ({
         );
     }, []);
 
+    useEffect(() => {
+        if (errors.title) {
+            setErrors({});
+        }
+    }, [model]);
+
     const handleSubmit = async () => {
-        for (const errorKey of Object.keys(errors)) {
-            if (errors[errorKey]) {
-                return createNotification({ text: errors[errorKey], type: 'error' });
-            }
+        const veventComponent = modelToVeventComponent(model, tzid);
+
+        if (!veventComponent.summary.value) {
+            return setErrors({ title: c('Error').t`Title required` });
         }
 
-        const veventComponent = modelToVeventComponent(model, tzid);
+        if (!validateDateTimeProperties(veventComponent.dtstart, veventComponent.dtend)) {
+            return setErrors({ end: c('Error').t`Start time must be before end time` });
+        }
+
         const { calendarID, addressID, memberID } = model;
         const [addressKeys, calendarKeys] = await Promise.all([getAddressKeys(addressID), getCalendarKeys(calendarID)]);
         await createOrUpdateEvent({
