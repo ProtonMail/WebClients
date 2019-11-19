@@ -28,18 +28,18 @@ const AlarmWatcher = ({ alarms = [], updateAlarms, tzid }) => {
             const [{ ID, EventID, CalendarID, NextOccurrence }] = alarms;
             const { Event: nextEvent } = await api(getEvent(CalendarID, EventID));
             const nextEventRaw = await getEventRaw(nextEvent);
-            if (ID === cacheRef.current.nextAlarmID && tzid === cacheRef.current.tzid) {
+            if (ID === cacheRef.current.nextAlarmID) {
                 return;
             }
+            cacheRef.current.nextAlarmID = ID;
             if (cacheRef.current.timeout) {
                 clearTimeout(cacheRef.current.timeout);
             }
             const nextAlarmTime = fromUnixTime(NextOccurrence);
             const now = Date.now();
             const delay = differenceInMilliseconds(nextAlarmTime, now);
-            const message = await getAlarmMessage(nextEventRaw, now, tzid);
-            // eslint-disable-next-line require-atomic-updates
             cacheRef.current.timeout = setTimeout(() => {
+                const message = getAlarmMessage(nextEventRaw, now, tzid);
                 createNotification({ text: message });
                 updateAlarms((alarms) => alarms.slice(1));
             }, delay);

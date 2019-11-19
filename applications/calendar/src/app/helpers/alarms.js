@@ -31,7 +31,7 @@ export const insertAlarm = (newAlarm, existingAlarms = []) => {
     return newAlarms.length === existingAlarms.length ? [...existingAlarms, newAlarm] : [...newAlarms];
 };
 
-export const getAlarmMessage = async (rawEvent, now, tzid) => {
+export const getAlarmMessage = (rawEvent, now, tzid) => {
     const {
         dtstart,
         summary: { value: title }
