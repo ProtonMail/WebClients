@@ -42,7 +42,7 @@ const useGetCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
             }
             return queryAllCalendarAlarms({
                 calendarID,
-                Start: newAlarms[newAlarmsLength - 1].NextOccurrence,
+                Start: newAlarms[newAlarmsLength - 1].Occurrence,
                 End,
                 previousAlarms: allAlarms
             });
@@ -56,7 +56,7 @@ const useGetCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
                 )
             );
             // we rebuild the list of alarms completely as there is no need to keep previous alarms
-            setAlarms(orderBy(fetchedAlarms.flat(), 'NextOcurrence'));
+            setAlarms(orderBy(fetchedAlarms.flat(), 'Occurrence'));
         };
 
         clearInterval(cacheRef.current.intervalID);
@@ -74,10 +74,11 @@ const useGetCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
     useEffect(() => {
         return subscribe(({ CalendarAlarms = [] }) => {
             const futureRequestedAlarms = CalendarAlarms.filter(
-                ({ Action, Alarm: { NextOccurrence, CalendarID } = {} }) =>
+                ({ Action, Alarm: { Occurrence, CalendarID } = {} }) =>
                     Action === DELETE ||
                     (requestedCalendarsIDs.includes(CalendarID) &&
-                        NextOccurrence !== null && NextOccurrence - getUnixTime(Date.now()) < lookAhead)
+                        Occurrence !== null &&
+                        Occurrence - getUnixTime(Date.now()) < lookAhead)
             );
             if (!futureRequestedAlarms.length) {
                 return;

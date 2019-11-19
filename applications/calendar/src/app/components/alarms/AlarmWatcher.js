@@ -26,7 +26,7 @@ const AlarmWatcher = ({ alarms = [], updateAlarms, tzid }) => {
             if (!alarmsLength) {
                 return;
             }
-            const [{ ID, EventID, CalendarID, NextOccurrence }] = alarms;
+            const [{ ID, EventID, CalendarID, Occurrence }] = alarms;
             const { Event: nextEvent } = await api(getEvent(CalendarID, EventID));
             const nextEventRaw = await getEventRaw(nextEvent);
             if (ID === cacheRef.current.nextAlarmID) {
@@ -36,7 +36,7 @@ const AlarmWatcher = ({ alarms = [], updateAlarms, tzid }) => {
             if (cacheRef.current.timeoutID) {
                 clearTimeout(cacheRef.current.timeoutID);
             }
-            const nextAlarmTime = fromUnixTime(NextOccurrence);
+            const nextAlarmTime = fromUnixTime(Occurrence);
             const now = Date.now();
             const delay = differenceInMilliseconds(nextAlarmTime, now);
             cacheRef.current.timeoutID = setTimeout(() => {

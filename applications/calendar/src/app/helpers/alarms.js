@@ -6,7 +6,7 @@ import formatUTC from 'proton-shared/lib/date-fns-utc/format';
 import { isSameDay, isNextDay, isSameMonth, isSameYear } from 'proton-shared/lib/date-fns-utc/index';
 
 /**
- * Given a list of existing alarms ordered by a NextOccurrence key,
+ * Given a list of existing alarms ordered by a Occurrence key,
  * insert a new alarm in the proper place in the list
  * @param {Object} newAlarm
  * @param {Array} existingAlarms
@@ -14,10 +14,10 @@ import { isSameDay, isNextDay, isSameMonth, isSameYear } from 'proton-shared/lib
  * @return {Array}
  */
 export const insertAlarm = (newAlarm, existingAlarms = []) => {
-    const { NextOccurrence } = newAlarm;
+    const { Occurrence } = newAlarm;
     const { newAlarms } = existingAlarms.reduce(
         (acc, alarm) => {
-            if (!acc.done && NextOccurrence <= alarm.NextOccurrence) {
+            if (!acc.done && Occurrence <= alarm.Occurrence) {
                 acc.newAlarms.push(newAlarm, alarm);
                 acc.done = true;
             } else {
