@@ -9,8 +9,9 @@ import {
 } from 'proton-shared/lib/date/timezone';
 import { c } from 'ttag';
 import { getFormattedWeekdays, isDateYYMMDDEqual } from 'proton-shared/lib/date/date';
-import { format } from 'proton-shared/lib/date-fns-utc';
+import { format, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
+import { findTimeZone, getUTCOffset } from 'timezone-support';
 import { VIEWS, SETTINGS_VIEW } from '../../constants';
 import CreateEventModal from '../../components/eventModal/CreateEventModal';
 import useCalendarsEvents from './useCalendarsEvents';
@@ -85,8 +86,28 @@ const getWeekStartsOn = ({ WeekStart = 0 } = {}) => {
     return WeekStart % 7;
 };
 
+const getDisplaySecondaryTimezone = ({ DisplaySecondaryTimezone } = {}) => {
+    return !!DisplaySecondaryTimezone;
+};
+
+const getSecondaryTimezone = ({ SecondaryTimezone } = {}) => {
+    return SecondaryTimezone;
+};
+
 const getDisplayWeekNumbers = ({ DisplayWeekNumber } = {}) => {
     return !!DisplayWeekNumber;
+};
+
+const formatTimezoneAbbreviation = (abbreviation, offset) => {
+    const withPlus = (n) => `${n > 0 ? '+' : ''}${n}`;
+    const toHours = (n) => Math.round(n / 60);
+    const toText = (abbreviation) => {
+        if (isNaN(abbreviation)) {
+            return abbreviation;
+        }
+        return 'GMT';
+    };
+    return `${toText(abbreviation)} ${withPlus(toHours(offset))}`;
 };
 
 export const getTzid = ({ AutoDetectPrimaryTimezone, PrimaryTimezone } = {}, defaultTimezone) => {
@@ -211,6 +232,22 @@ const CalendarContainer = ({ history, location }) => {
     const range = getRange(view, customRange);
     const weekStartsOn = getWeekStartsOn(calendarSettings);
     const displayWeekNumbers = getDisplayWeekNumbers(calendarSettings);
+    const displaySecondaryTimezone = getDisplaySecondaryTimezone(calendarSettings);
+    const secondaryTzid = getSecondaryTimezone(calendarSettings);
+
+    const timezoneInformation = useMemo(() => {
+        const { abbreviation, offset } = getUTCOffset(nowDate, findTimeZone(tzid));
+        const { abbreviation: secondaryAbbreviaton, offset: secondaryOffset } = getUTCOffset(
+            nowDate,
+            findTimeZone(secondaryTzid || tzid)
+        );
+
+        return {
+            primaryTimezone: `${formatTimezoneAbbreviation(abbreviation, -offset)}`,
+            secondaryTimezone: `${formatTimezoneAbbreviation(secondaryAbbreviaton, -secondaryOffset)}`,
+            secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE
+        };
+    }, [secondaryTzid, tzid]);
 
     useEffect(() => {
         const newRoute = toUrlParams({ date: utcDate, defaultDate: utcDefaultDate, view, defaultView, range });
@@ -346,7 +383,9 @@ const CalendarContainer = ({ history, location }) => {
                     return (
                         <TimeGrid
                             tzid={tzid}
+                            {...timezoneInformation}
                             displayWeekNumbers={displayWeekNumbers}
+                            displaySecondaryTimezone={displaySecondaryTimezone}
                             now={utcNowDateInTimezone}
                             date={utcDate}
                             dateRange={utcDateRange}

@@ -39,6 +39,10 @@ const TimeGrid = React.forwardRef(
             tzid,
             date,
             dateRange: [start, end],
+            displaySecondaryTimezone,
+            primaryTimezone,
+            secondaryTimezone,
+            secondaryTimezoneOffset,
             events = [],
             components: { FullDayEvent, PartDayEvent, PopoverEvent, MorePopoverEvent, MoreFullDayEvent },
             formatTime = defaultFormat,
@@ -75,6 +79,10 @@ const TimeGrid = React.forwardRef(
         const formattedHours = useMemo(() => {
             return hours.map(formatTime);
         }, [formatTime]);
+
+        const formattedSecondaryHours = useMemo(() => {
+            return hours.map((hourDate) => formatTime(new Date(hourDate.getTime() - secondaryTimezoneOffset)));
+        }, [secondaryTimezoneOffset, formatTime]);
 
         const timeEvents = useMemo(() => sortedEvents.filter((e) => !e.isAllDay), [sortedEvents]);
         const dayEvents = useMemo(() => sortedEvents.filter((e) => !!e.isAllDay), [sortedEvents]);
@@ -185,8 +193,18 @@ const TimeGrid = React.forwardRef(
                             !scrollTop && 'sticky-title--onTop'
                         ])}
                     >
-                        <div className="flex">
-                            <div className="calendar-aside aligncenter"></div>
+                        <div className="flex calendar-first-row-heading">
+                            {displaySecondaryTimezone ? (
+                                <div className="calendar-aside aligncenter flex flex-column flex-justify-end">
+                                    <div className="calendar-secondary-timezone-cell calendar-secondary-timezone-cell--header">
+                                        {secondaryTimezone}
+                                    </div>
+                                </div>
+                            ) : null}
+                            <div className="calendar-aside flex flex-column flex-justify-end">
+                                <div className="aligncenter">{primaryTimezone}</div>
+                            </div>
+
                             {days.map((day) => {
                                 return (
                                     <button
@@ -209,7 +227,8 @@ const TimeGrid = React.forwardRef(
                         </div>
 
                         <div className="flex calendar-fullday-row">
-                            <div className="calendar-aside calendar-aside-weekNumber flex"></div>
+                            {displaySecondaryTimezone ? <div className="calendar-aside"></div> : null}
+                            <div className="calendar-aside calendar-aside-weekNumber aligncenter"></div>
                             <div className="flex-item-fluid relative">
                                 <div className="flex">
                                     {days.map((day) => {
@@ -263,13 +282,28 @@ const TimeGrid = React.forwardRef(
                     </div>
 
                     <div className="flex">
+                        {displaySecondaryTimezone ? (
+                            <div className="calendar-aside calendar-secondary-timezone-cell">
+                                {formattedSecondaryHours.map((text, i) => {
+                                    return (
+                                        <div className="calendar-grid-timeBlock" key={i}>
+                                            {i === 0 ? null : (
+                                                <span className="calendar-grid-timeText aligncenter bl relative">
+                                                    {text}
+                                                </span>
+                                            )}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        ) : null}
                         <div className="calendar-aside">
-                            {hours.map((hour, i) => {
+                            {formattedHours.map((text, i) => {
                                 return (
                                     <div className="calendar-grid-timeBlock" key={i}>
                                         {i === 0 ? null : (
                                             <span className="calendar-grid-timeText aligncenter bl relative">
-                                                {formattedHours[i]}
+                                                {text}
                                             </span>
                                         )}
                                     </div>
