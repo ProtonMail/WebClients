@@ -104,7 +104,8 @@ $gridcell-right-margin: 1.5em;
     width: 2.5rem;
 }
 .calendar-daygrid-row,
-.calendar-daygrid-days {
+.calendar-daygrid-days,
+.calendar-first-row-heading {
     border-bottom: $calendar-grid-border;
 }
 .calendar-daygrid-day[aria-current=true] {
@@ -127,6 +128,21 @@ $gridcell-right-margin: 1.5em;
         background-color: $pm-primary;
         color: $white;
     }
+}
+
+// secondary timezone
+.calendar-secondary-timezone-cell {
+    border-right: $calendar-grid-border;
+    background-color: $pm-global-light;
+}
+.calendar-secondary-timezone-cell--header {
+    border-top: $calendar-grid-border;
+    border-right: $calendar-grid-border;
+    border-top-right-radius: $global-border-radius;
+    border-top-left-radius: $global-border-radius;
+}
+.sticky-title .calendar-grid-dayLine::after {
+    border-left: 0;
 }
 
 
