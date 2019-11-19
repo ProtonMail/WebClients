@@ -171,6 +171,9 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
         </div>
     );
 
+    const isBlackFridayCoupon = appliedCoupon && appliedCoupon.code === 'BF2019';
+    const homepageUrl = isBlackFridayCoupon ? 'https://protonvpn.com/blackfriday' : 'https://protonvpn.com';
+
     return (
         <PublicPage title={c('Title').t`Sign up`}>
             <main className="flex flex-item-fluid main-area--noHeader">
@@ -183,12 +186,13 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
                                 selectedPlan.planName !== PLAN.BUNDLE_PLUS ? (
                                     <Button onClick={() => history.goBack()}>{c('Action').t`Back`}</Button>
                                 ) : (
-                                    <Href className="pm-button" url="https://protonvpn.com" target="_self">{c('Action')
-                                        .t`Homepage`}</Href>
+                                    <Href className="pm-button" url={homepageUrl} target="_self">
+                                        {isBlackFridayCoupon ? c('Action').t`Back` : c('Action').t`Homepage`}
+                                    </Href>
                                 ))}
                         </div>
                         <div className="onmobile-min-w100 onmobile-aligncenter onmobile-mt0-5">
-                            <Href url="https://protonvpn.com" target="_self">
+                            <Href url={homepageUrl} target="_self">
                                 <VpnLogo className="fill-primary" />
                             </Href>
                         </div>
