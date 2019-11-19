@@ -77,7 +77,7 @@ const useGetCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
                 ({ Action, Alarm: { NextOccurrence, CalendarID } = {} }) =>
                     Action === DELETE ||
                     (requestedCalendarsIDs.includes(CalendarID) &&
-                        (NextOccurrence !== null || NextOccurrence - Date.now() < lookAhead))
+                        NextOccurrence !== null && NextOccurrence - getUnixTime(Date.now()) < lookAhead)
             );
             if (!futureRequestedAlarms.length) {
                 return;
