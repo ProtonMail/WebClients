@@ -3,7 +3,7 @@ import { useEffect, useCallback } from 'react';
 import useAsync from './useAsync';
 import useApi from '../containers/api/useApi';
 
-type QueryFunction<U extends any[]> = (...args: U) => { method: string; url: string };
+type QueryFunction = (...args: any[]) => { method: string; url: string };
 
 interface Result<R, U extends any[]> {
     result: R | undefined;
@@ -12,7 +12,10 @@ interface Result<R, U extends any[]> {
     request: (...args: U) => Promise<R>;
 }
 
-const useApiResult = <R, U extends any[]>(fn: QueryFunction<U>, dependencies?: any[]): Result<R, U> => {
+const useApiResult = <R, F extends QueryFunction>(
+    fn: QueryFunction,
+    dependencies?: any[]
+): Result<R, Parameters<F>> => {
     const request = useApi();
     const { loading, result, error, run } = useAsync(true);
 
@@ -21,7 +24,7 @@ const useApiResult = <R, U extends any[]>(fn: QueryFunction<U>, dependencies?: a
 
     // Callback updates
     const requestAndSetResults = useCallback(
-        (...args: U) => {
+        (...args: Parameters<F>) => {
             const promise = request(fn(...args));
             run(promise);
             return promise;
@@ -32,7 +35,7 @@ const useApiResult = <R, U extends any[]>(fn: QueryFunction<U>, dependencies?: a
     useEffect(() => {
         // If user has specified any dependencies, auto request
         if (dependencies) {
-            requestAndSetResults(...(([] as unknown) as U)).catch(() => {
+            requestAndSetResults(...(([] as unknown) as Parameters<F>)).catch(() => {
                 // catch the error to stop the "uncaught exception error"
             });
         }
