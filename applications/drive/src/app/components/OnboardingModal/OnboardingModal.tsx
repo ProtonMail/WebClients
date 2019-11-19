@@ -13,7 +13,7 @@ interface Props {
 const OnboardingModal = ({ modalTitleID = 'modalTitle', onClose = noop, ...rest }: Props) => {
     const [currentStep, setCurrentStep] = useState(0);
 
-    const betaText = <strong>{c('BetaText').t`ProtonDrive Beta`}</strong>;
+    const betaText = <strong key="title">{c('BetaText').t`ProtonDrive Beta`}</strong>;
     const steps = [
         {
             text: c('Info').t`Choose to Upload a file`,
@@ -38,7 +38,6 @@ const OnboardingModal = ({ modalTitleID = 'modalTitle', onClose = noop, ...rest 
 
     const handleNextClick = () => {
         if (isLastStep) {
-            // TODO: create drive share
             onClose();
         } else {
             setCurrentStep(currentStep + 1);

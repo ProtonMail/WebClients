@@ -3,7 +3,7 @@ import { Alert, Block } from 'react-components';
 import { c } from 'ttag';
 
 const OnboardingStepInfo = () => {
-    const betaText = <strong>{c('BetaText').t`ProtonDrive Beta`}</strong>;
+    const betaText = <strong key="title">{c('BetaText').t`ProtonDrive Beta`}</strong>;
 
     return (
         <Alert className="aligncenter">

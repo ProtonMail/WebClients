@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { ErrorBoundary, StandardPrivateApp } from 'react-components';
-import { UserModel } from 'proton-shared/lib/models';
+import { UserModel, AddressesModel } from 'proton-shared/lib/models';
 
 import Drive from './containers/Drive';
 import PrivateLayout from './components/layout/PrivateLayout';
@@ -12,7 +12,11 @@ interface Props {
 
 const PrivateApp = ({ onLogout }: Props) => {
     return (
-        <StandardPrivateApp onLogout={onLogout} preloadModels={[UserModel]} eventModels={[UserModel]}>
+        <StandardPrivateApp
+            onLogout={onLogout}
+            preloadModels={[UserModel, AddressesModel]}
+            eventModels={[UserModel, AddressesModel]}
+        >
             <PrivateLayout>
                 <Route
                     render={({ location }) => (
