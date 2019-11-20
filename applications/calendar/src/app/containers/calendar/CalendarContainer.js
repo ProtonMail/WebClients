@@ -5,7 +5,9 @@ import {
     convertZonedDateTimeToUTC,
     fromUTCDate,
     toUTCDate,
-    getTimezone
+    getTimezone,
+    formatTimezoneOffset,
+    formatTimezoneAbbreviation
 } from 'proton-shared/lib/date/timezone';
 import { c } from 'ttag';
 import { getFormattedWeekdays, isDateYYMMDDEqual } from 'proton-shared/lib/date/date';
@@ -98,16 +100,8 @@ const getDisplayWeekNumbers = ({ DisplayWeekNumber } = {}) => {
     return !!DisplayWeekNumber;
 };
 
-const formatTimezoneAbbreviation = (abbreviation, offset) => {
-    const withPlus = (n) => `${n > 0 ? '+' : ''}${n}`;
-    const toHours = (n) => Math.round(n / 60);
-    const toText = (abbreviation) => {
-        if (isNaN(abbreviation)) {
-            return abbreviation;
-        }
-        return 'GMT';
-    };
-    return `${toText(abbreviation)} ${withPlus(toHours(offset))}`;
+const formatAbbreviation = (abbreviation, offset) => {
+    return `${formatTimezoneAbbreviation(abbreviation)} ${formatTimezoneOffset(offset)}`;
 };
 
 export const getTzid = ({ AutoDetectPrimaryTimezone, PrimaryTimezone } = {}, defaultTimezone) => {
@@ -243,8 +237,8 @@ const CalendarContainer = ({ history, location }) => {
         );
 
         return {
-            primaryTimezone: `${formatTimezoneAbbreviation(abbreviation, -offset)}`,
-            secondaryTimezone: `${formatTimezoneAbbreviation(secondaryAbbreviaton, -secondaryOffset)}`,
+            primaryTimezone: `${formatAbbreviation(abbreviation, offset)}`,
+            secondaryTimezone: `${formatAbbreviation(secondaryAbbreviaton, secondaryOffset)}`,
             secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE
         };
     }, [secondaryTzid, tzid]);
