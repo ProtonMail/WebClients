@@ -473,8 +473,8 @@ export const BLACK_FRIDAY = {
     CYCLE: CYCLE.TWO_YEARS,
     CYCLES: [CYCLE.TWO_YEARS, CYCLE.YEARLY],
     BETWEEN: {
-        START: `${BLACK_FRIDAY_YEAR}-11-01`,
-        END: `${BLACK_FRIDAY_YEAR}-12-8`
+        START: new Date(`${BLACK_FRIDAY_YEAR}-11-01`),
+        END: new Date(`${BLACK_FRIDAY_YEAR}-12-08`)
     },
     INTERVAL: 10 * 60 * 1000
 };
