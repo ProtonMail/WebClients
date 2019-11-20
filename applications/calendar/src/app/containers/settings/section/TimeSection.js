@@ -109,7 +109,7 @@ const TimeSection = () => {
             </Row>
             <Row>
                 <Label>{c('Primary timezone').t`Primary time zone`}</Label>
-                <Field>
+                <Field className="pt0-25">
                     <div className="mb1">
                         <Checkbox
                             disabled={loadingAutoDetect}
@@ -139,7 +139,7 @@ const TimeSection = () => {
             </Row>
             <Row>
                 <Label>{c('Secondary timezone').t`Secondary time zone`}</Label>
-                <Field>
+                <Field className="pt0-25">
                     <div className="mb1">
                         <Checkbox
                             disabled={loadingDisplaySecondaryTimezone}

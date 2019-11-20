@@ -73,7 +73,7 @@ const LayoutSection = () => {
             </Row>
             <Row>
                 <Label htmlFor="week-numbers-display">{c('Label').t`Show week numbers`}</Label>
-                <Field>
+                <Field className="pt0-25">
                     <Checkbox
                         id="week-numbers-display"
                         checked={!!DisplayWeekNumber}
