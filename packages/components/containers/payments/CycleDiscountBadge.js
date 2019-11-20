@@ -16,7 +16,7 @@ const getTooltipI18N = () => ({
     [TWO_YEARS]: c('Tooltip').t`Discount applied for two-year billing cycle`
 });
 
-const CycleDiscountBadge = ({ cycle }) => {
+const CycleDiscountBadge = ({ cycle = MONTHLY }) => {
     if (cycle === MONTHLY) {
         return null;
     }

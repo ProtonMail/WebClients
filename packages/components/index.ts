@@ -171,6 +171,10 @@ export { default as GiftCodeInput } from './containers/payments/GiftCodeInput';
 export { default as PlansSection } from './containers/payments/PlansSection';
 export { default as SubscriptionSection } from './containers/payments/subscription/SubscriptionSection';
 export { default as SubscriptionModal } from './containers/payments/subscription/SubscriptionModal';
+export { default as BlackFridayModal } from './containers/payments/subscription/BlackFridayModal';
+export { default as MailBlackFridayModal } from './containers/payments/subscription/MailBlackFridayModal';
+export { default as VPNBlackFridayModal } from './containers/payments/subscription/VPNBlackFridayModal';
+export { default as BlackFridayNavbarLink } from './containers/payments/subscription/BlackFridayNavbarLink';
 export { default as UpgradeModal } from './containers/payments/subscription/UpgradeModal';
 export { default as AmountButton } from './containers/payments/AmountButton';
 export { default as Bitcoin } from './containers/payments/Bitcoin';
@@ -332,6 +336,7 @@ export {
 
 export { useUser, useGetUser } from './hooks/useUser';
 export { default as useUserVPN } from './hooks/useUserVPN';
+export { default as useBlackFriday } from './hooks/useBlackFriday';
 export { default as useCachedModelResult } from './hooks/useCachedModelResult';
 export { default as usePromiseResult } from './hooks/usePromiseResult';
 export { useAddresses, useGetAddresses } from './hooks/useAddresses';

@@ -2,9 +2,12 @@ import { PLAN_SERVICES, PLAN_TYPES, ADDON_NAMES } from 'proton-shared/lib/consta
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { c, msgid } from 'ttag';
 import { isEquivalent, pick } from 'proton-shared/lib/helpers/object';
+import { getLastCancelledSubscription } from 'proton-shared/lib/api/payments';
+import { getUnixTime } from 'date-fns';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL, VPN } = PLAN_SERVICES;
+const SEPTEMBER_30 = getUnixTime(new Date('2019-10-30'));
 
 const I18N = {
     included: c('Option').t`included`,
@@ -283,4 +286,20 @@ export const getCheckParams = ({
         Cycle,
         ...rest
     };
+};
+
+/**
+ * Check if the current user is eligible to Black Friday discount
+ * @param {Function} api useApi hook
+ * @returns {Promise<Boolean>}
+ */
+export const checkLastCancelledSubscription = async (api) => {
+    // Return the latest subscription cancellation time, return null if the user never had any subscription, 0 if the user currently has an active subscription
+    const { LastSubscriptionEnd = 0 } = await api(getLastCancelledSubscription());
+
+    if (LastSubscriptionEnd === null) {
+        return true;
+    }
+
+    return LastSubscriptionEnd ? LastSubscriptionEnd < SEPTEMBER_30 : false;
 };

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Badge } from 'react-components';
-import { COUPON_CODES } from 'proton-shared/lib/constants';
+import { COUPON_CODES, BLACK_FRIDAY } from 'proton-shared/lib/constants';
 
-const { BUNDLE, BLACK_FRIDAY_2018, PMTEAM } = COUPON_CODES;
+const { BUNDLE, PMTEAM } = COUPON_CODES;
 
 const CouponDiscountBadge = ({ code }) => {
     if (code === BUNDLE) {
@@ -15,10 +15,13 @@ const CouponDiscountBadge = ({ code }) => {
         );
     }
 
-    if (code === BLACK_FRIDAY_2018) {
+    if (code === BLACK_FRIDAY.COUPON_CODE) {
         return (
-            <Badge type="success" tooltip={c('Discount with coupon code').t`50% discount applied to your subscription`}>
-                -50%
+            <Badge
+                type="success"
+                tooltip={c('Discount with coupon code').t`Black Friday 2019 newcomer discount has been applied`}
+            >
+                Black Friday
             </Badge>
         );
     }

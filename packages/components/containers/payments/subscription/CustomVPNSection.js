@@ -8,7 +8,7 @@ import { PLAN_SERVICES, ADDON_NAMES } from 'proton-shared/lib/constants';
 
 import PlanPrice from './PlanPrice';
 import { getTextOption, getPlan, getAddon, getSubTotal } from './helpers';
-import CyclePromotion from './CyclePromotion';
+import AlertPromotion from './AlertPromotion';
 import CycleDiscountBadge from '../CycleDiscountBadge';
 
 const { VPN } = PLAN_SERVICES;
@@ -49,7 +49,7 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
         <>
             <Alert>{c('Info')
                 .t`By using ProtonVPN to browse the web, your Internet connection is encrypted to ensure that your navigation is secure. ProtonVPN has servers located in 30+ countries around the world.`}</Alert>
-            <CyclePromotion model={model} onChange={onChange} />
+            <AlertPromotion model={model} onChange={onChange} />
             <table className="pm-plans-table noborder">
                 <thead>
                     <tr>

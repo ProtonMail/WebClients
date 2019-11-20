@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { PLAN_SERVICES } from 'proton-shared/lib/constants';
 
 import { getSubTotal } from './helpers';
-import CyclePromotion from './CyclePromotion';
+import AlertPromotion from './AlertPromotion';
 import CustomPlusSection from './CustomPlusSection';
 import CustomProfessionalSection from './CustomProfessionalSection';
 import PlanPrice from './PlanPrice';
@@ -16,7 +16,7 @@ const CustomMailSection = ({ plans, model, onChange }) => {
     const subTotal = getSubTotal({ ...model, plans, services: MAIL });
     return (
         <>
-            <CyclePromotion model={model} onChange={onChange} />
+            <AlertPromotion model={model} onChange={onChange} />
             {model.plansMap.plus ? <CustomPlusSection plans={plans} model={model} onChange={onChange} /> : null}
             {model.plansMap.professional ? (
                 <CustomProfessionalSection plans={plans} model={model} onChange={onChange} />

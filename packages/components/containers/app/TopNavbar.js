@@ -16,7 +16,7 @@ const TopNavbar = ({ children, className = '' }) => {
         >
             <ul
                 className={classnames([
-                    'topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap',
+                    'topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap flex-items-center',
                     navIcons === 4 && 'topnav-list--four-elements'
                 ])}
             >

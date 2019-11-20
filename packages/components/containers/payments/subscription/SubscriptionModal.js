@@ -46,6 +46,7 @@ const SubscriptionModal = ({
     coupon = '',
     plansMap = {},
     step: initialStep = 0,
+    customize = true,
     ...rest
 }) => {
     const { CLIENT_TYPE } = useConfig();
@@ -171,7 +172,7 @@ const SubscriptionModal = ({
         }
     ];
 
-    if (plansMap.vpnplus || plansMap.vpnbasic) {
+    if (customize && (plansMap.vpnplus || plansMap.vpnbasic)) {
         STEPS.unshift({
             title: c('Title').t`VPN protection`,
             submit: c('Action').t`Next`,
@@ -184,7 +185,7 @@ const SubscriptionModal = ({
         });
     }
 
-    if (CLIENT_TYPE === MAIL && (plansMap.plus || plansMap.professional)) {
+    if (customize && CLIENT_TYPE === MAIL && (plansMap.plus || plansMap.professional)) {
         STEPS.unshift({
             title: c('Title').t`Customization`,
             submit: c('Action').t`Next`,
@@ -222,6 +223,7 @@ const SubscriptionModal = ({
                         amount={check.AmountDue}
                         cycle={model.cycle}
                         currency={model.currency}
+                        coupon={model.coupon}
                         parameters={parameters}
                         card={card}
                         onParameters={setParameters}
@@ -235,7 +237,7 @@ const SubscriptionModal = ({
                 <>
                     <Button onClick={previous} disabled={loading}>{c('Action').t`Previous`}</Button>
                     <PrimaryButton type="submit" disabled={!canPay} loading={loading}>{c('Action')
-                        .t`Continue`}</PrimaryButton>
+                        .t`Pay`}</PrimaryButton>
                 </>
             ),
             onSubmit: () => {
@@ -288,6 +290,7 @@ const SubscriptionModal = ({
 };
 
 SubscriptionModal.propTypes = {
+    customize: PropTypes.bool,
     subscription: PropTypes.object,
     onClose: PropTypes.func,
     step: PropTypes.number,

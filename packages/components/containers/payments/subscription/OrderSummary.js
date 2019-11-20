@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CyclePromotion from './CyclePromotion';
+import AlertPromotion from './AlertPromotion';
 import SubscriptionDetails from './SubscriptionDetails';
 import PaymentDetails from './PaymentDetails';
 
 const OrderSummary = ({ plans, model, onChange, check }) => {
     return (
         <>
-            <CyclePromotion model={model} onChange={onChange} />
+            <AlertPromotion model={model} onChange={onChange} />
             <SubscriptionDetails model={model} plans={plans} check={check} onChange={onChange} />
             <PaymentDetails model={model} check={check} onChange={onChange} />
         </>
