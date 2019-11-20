@@ -80,8 +80,10 @@ const PopoverEventContent = ({
             ) : null}
             {calendarName ? (
                 <div className="flex flex-items-center flex-nowrap mb0-5">
-                    <CalendarIcon color={Color} className="mr1" />
-                    <span className="break">{calendarName}</span>
+                    <CalendarIcon color={Color} className="flex-item-noshrink mr1" />
+                    <span className="ellipsis" title={calendarName}>
+                        {calendarName}
+                    </span>
                 </div>
             ) : null}
             {model.description ? (

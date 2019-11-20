@@ -250,7 +250,7 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                     <span className="sr-only">{c('Action').t`Close popover`}</span>
                 </button>
             </header>
-            <div>
+            <div className="pb0-5">
                 <PopoverEventContent
                     Calendar={Calendar}
                     event={targetEvent}
