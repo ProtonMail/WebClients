@@ -86,8 +86,7 @@ const TimeSection = () => {
                         value={DateFormat}
                         options={[
                             { text: `12/31/${year}`, value: SETTINGS_DATE_FORMAT.DDMMYYYY },
-                            { text: `31/12/${year}`, value: SETTINGS_DATE_FORMAT.MMDDYYYY },
-                            { text: `${year}-12-31`, value: SETTINGS_DATE_FORMAT.YYYYMMDD }
+                            { text: `31/12/${year}`, value: SETTINGS_DATE_FORMAT.MMDDYYYY }
                         ]}
                     />
                 </Field>
