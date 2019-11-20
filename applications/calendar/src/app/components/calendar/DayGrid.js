@@ -277,6 +277,7 @@ const DayGrid = ({
                         layout: popoverLayout,
                         tzid,
                         formatTime,
+                        setSelectedEventID,
                         onClose: () => {
                             setSelectedEventID();
                             setTemporaryEvent();

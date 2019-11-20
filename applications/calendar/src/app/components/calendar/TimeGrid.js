@@ -384,6 +384,7 @@ const TimeGrid = React.forwardRef(
                             layout: popoverLayout,
                             tzid,
                             formatTime,
+                            setSelectedEventID,
                             onClose: () => {
                                 setSelectedEventID();
                                 setTemporaryEvent();

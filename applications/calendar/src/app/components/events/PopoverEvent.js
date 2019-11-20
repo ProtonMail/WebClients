@@ -31,7 +31,16 @@ import { modelToVeventComponent } from '../eventModal/eventForm/modelToPropertie
 import { getEmptyModel, getExistingEvent } from '../eventModal/eventForm/state';
 import PopoverEventContent from './PopoverEventContent';
 
-const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, event: targetEvent }) => {
+const PopoverEvent = ({
+    tzid,
+    formatTime,
+    setSelectedEventID,
+    onEditEvent,
+    onClose,
+    style,
+    layout,
+    event: targetEvent
+}) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -82,6 +91,7 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
     };
 
     const handleEdit = () => {
+        setSelectedEventID();
         onEditEvent({
             Event: Event || undefined,
             ...(isCreateEvent || isMoveEvent
