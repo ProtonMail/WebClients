@@ -42,7 +42,7 @@ const TimeGrid = React.forwardRef(
             displaySecondaryTimezone,
             primaryTimezone,
             secondaryTimezone,
-            secondaryTimezoneOffset,
+            secondaryTimezoneOffset = 0,
             events = [],
             components: { FullDayEvent, PartDayEvent, PopoverEvent, MorePopoverEvent, MoreFullDayEvent },
             formatTime = defaultFormat,
