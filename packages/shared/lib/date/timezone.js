@@ -103,6 +103,28 @@ export const getTimezone = () => {
     return timezone;
 };
 
+export const formatTimezoneOffset = (offset) => {
+    // offset comes with the opposite sign in the timezone-support library
+    const sign = Math.sign(offset) === 1 ? '-' : '+';
+    const minutes = Math.abs(offset % 60);
+    const hours = (Math.abs(offset) - minutes) / 60;
+
+    if (minutes > 0) {
+        const paddedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+        return `${sign}${hours}:${paddedMinutes}`;
+    }
+
+    return `${sign}${hours}`;
+};
+
+export const formatTimezoneAbbreviation = (abbreviation) => {
+    // eslint-disable-next-line no-restricted-globals
+    if (isNaN(abbreviation)) {
+        return abbreviation;
+    }
+    return 'GMT';
+};
+
 /**
  * Get a list of all IANA time zones
  * @return {Array<Object>}      [{ text: 'Africa/Nairobi: UTC +03:00', value: 'Africa/Nairobi'}, ...]
@@ -114,11 +136,12 @@ export const getTimeZoneOptions = (date = new Date()) => {
             .concat('UTC')
             .filter((name) => NOT_SUPPORTED_ZONES.indexOf(name) === -1)
             .map((name) => {
-                const { offset } = getUTCOffset(date, findTimeZone(name));
+                const { abbreviation, offset } = getUTCOffset(date, findTimeZone(name));
 
                 return {
                     name,
-                    offset
+                    offset,
+                    abbreviation
                 };
             })
             .sort(({ offset: offsetA, name: nameA }, { offset: offsetB, name: nameB }) => {
@@ -129,16 +152,8 @@ export const getTimeZoneOptions = (date = new Date()) => {
                 return diff;
             })
             .map(({ name, offset }, i) => {
-                // offset comes with the opposite sign in the timezone-support library
-                const sign = Math.sign(offset) === 1 ? '-' : '+';
-                const minutes = Math.abs(offset % 60);
-                const hours = (Math.abs(offset) - minutes) / 60;
-
-                const mm = minutes < 10 ? `0${minutes}` : `${minutes}`;
-                const hh = hours < 10 ? `0${hours}` : `${hours}`;
-
                 return {
-                    text: `(GMT ${sign}${hh}:${mm}) ${name}`,
+                    text: `(GMT${formatTimezoneOffset(offset)}) ${name}`,
                     value: name,
                     key: i
                 };
