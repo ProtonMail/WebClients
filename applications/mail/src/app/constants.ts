@@ -1,3 +1,4 @@
+import { c } from 'ttag';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 export const ELEMENT_TYPES = {
@@ -22,6 +23,19 @@ export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc
     acc[value] = key;
     return acc;
 }, Object.create(null));
+
+export const LABEL_IDS_TO_I18N = {
+    [MAILBOX_LABEL_IDS.INBOX]: c('Link').t`Inbox`,
+    [MAILBOX_LABEL_IDS.ALL_DRAFTS]: c('Link').t`Drafts`,
+    [MAILBOX_LABEL_IDS.ALL_SENT]: c('Link').t`Sent`,
+    [MAILBOX_LABEL_IDS.TRASH]: c('Link').t`Trash`,
+    [MAILBOX_LABEL_IDS.SPAM]: c('Link').t`Spam`,
+    [MAILBOX_LABEL_IDS.ALL_MAIL]: c('Link').t`All mail`,
+    [MAILBOX_LABEL_IDS.ARCHIVE]: c('Link').t`Archive`,
+    [MAILBOX_LABEL_IDS.SENT]: c('Link').t`Sent`,
+    [MAILBOX_LABEL_IDS.DRAFTS]: c('Link').t`Drafts`,
+    [MAILBOX_LABEL_IDS.STARRED]: c('Link').t`Starred`
+};
 
 export const SIGNATURE_START = 1546300800; // January 1, 2019
 

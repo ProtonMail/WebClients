@@ -7,6 +7,7 @@ import { Message } from '../models/message';
 
 import { useConversations } from '../hooks/useConversations';
 import { useMessages } from '../hooks/useMessages';
+import { useMailboxPageTitle } from '../hooks/useMailboxPageTitle';
 
 import { isColumnMode, isConversationMode } from '../helpers/mailSettings';
 import { getHumanLabelID } from '../helpers/labels';
@@ -38,6 +39,8 @@ const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
     const [desc, updateDesc] = useState();
     const [filter] = useState();
     const welcomeRef = useRef(false);
+
+    useMailboxPageTitle(labelID, elements);
 
     useEffect(() => {
         if (!loadingMailSettings) {
