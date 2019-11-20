@@ -33,9 +33,10 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
     const currency = searchParams.get('currency');
     const billingCycle = Number(searchParams.get('billing'));
 
-    const availablePlans = checkCookie('offer', 'bestdeal')
-        ? BEST_DEAL_PLANS
-        : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
+    const availablePlans =
+        checkCookie('offer', 'bestdeal') && !redirectToMobile
+            ? BEST_DEAL_PLANS
+            : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
 
     const historyState = history.location.state || {};
     const invite = historyState.invite;
