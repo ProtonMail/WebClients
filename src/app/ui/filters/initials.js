@@ -4,8 +4,14 @@ function initials() {
 
     const formatString = (input = '') => {
         const [name, name2 = ''] = input.split(' ');
+
         if (!name2 || !/^\w/.test(name2)) {
             return getLetter(name);
+        }
+
+        // If Emoji ingnore it
+        if (!/^\w/.test(name) && name2) {
+            return getLetter(name2);
         }
 
         return `${getLetter(name)}${getLetter(name2)}`;
