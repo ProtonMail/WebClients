@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { format, parse, addDays } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
@@ -17,54 +17,82 @@ const fromFormatted = (value, locale) => {
     return parse(value, 'PP', new Date(), { locale });
 };
 
-const DateInput = ({ value, min, max, onChange, displayWeekNumbers, weekStartsOn, ...rest }) => {
+const DateInput = ({ value, onChange, displayWeekNumbers, weekStartsOn, ...rest }) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor();
-    const [temporaryInput, setTemporaryInput] = useState(() => toFormatted(value, dateLocale));
+
+    const [temporaryInput, setTemporaryInput] = useState('');
+    const [showTemporary, setShowTemporary] = useState(false);
 
     useEffect(() => {
         setTemporaryInput(toFormatted(value, dateLocale));
-    }, [value.getTime()]);
+    }, [+value]);
 
-    const handleSelectDate = (newDate) => {
-        const newDateTime = +newDate;
-        if ((min && +min > newDateTime) || (max && +max < newDateTime)) {
-            setTemporaryInput(toFormatted(value, dateLocale));
+    const currentInput = useMemo(() => toFormatted(value, dateLocale), [value]);
+
+    const temporaryValue = useMemo(() => {
+        if (!temporaryInput) {
             return;
         }
-        anchorRef.current.blur();
-        onChange(newDate);
-    };
-
-    const parseAndSetDate = () => {
         try {
             const newDate = fromFormatted(temporaryInput, dateLocale);
-            const newDateTime = +newDate;
-            if (!isNaN(newDateTime)) {
-                return handleSelectDate(newDate);
+            if (newDate.getFullYear() < 1900 || newDate.getFullYear() > 2200) {
+                return;
             }
+            if (isNaN(+newDate)) {
+                return;
+            }
+            return newDate;
             // eslint-disable-next-line no-empty
         } catch (e) {}
+    }, [temporaryInput]);
 
+    const actualValue = temporaryValue || value;
+
+    const parseAndTriggerChange = () => {
+        // Before the new date is set, the input is reset to the old date in case the onChange handler rejects the change,
+        // or it's an invalid date that couldn't be parsed
         setTemporaryInput(toFormatted(value, dateLocale));
+        if (temporaryValue) {
+            onChange(temporaryValue);
+        }
     };
 
-    const handleBlur = () => {
-        parseAndSetDate();
+    const handleFocusInput = () => {
+        open();
+
+        setShowTemporary(true);
+        setTemporaryInput(currentInput);
+    };
+
+    const handleBlurInput = () => {
+        parseAndTriggerChange();
         close();
+
+        setShowTemporary(false);
+        setTemporaryInput('');
     };
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            parseAndSetDate();
+            parseAndTriggerChange();
             event.preventDefault();
         }
         if (event.key === 'ArrowDown') {
-            handleSelectDate(addDays(value, -1));
+            setTemporaryInput(toFormatted(addDays(actualValue, -1), dateLocale));
         }
         if (event.key === 'ArrowUp') {
-            handleSelectDate(addDays(value, 1));
+            setTemporaryInput(toFormatted(addDays(actualValue, 1), dateLocale));
         }
+    };
+
+    const handleClickDate = (newDate) => {
+        setTemporaryInput(toFormatted(newDate, dateLocale));
+        setTimeout(() => anchorRef.current && anchorRef.current.blur());
+    };
+
+    const handleInputChange = ({ target: { value } }) => {
+        setTemporaryInput(value);
     };
 
     return (
@@ -72,17 +100,17 @@ const DateInput = ({ value, min, max, onChange, displayWeekNumbers, weekStartsOn
             <Input
                 type="text"
                 ref={anchorRef}
-                onFocus={open}
-                onBlur={handleBlur}
+                onFocus={handleFocusInput}
+                onBlur={handleBlurInput}
                 onKeyDown={handleKeyDown}
-                value={temporaryInput}
-                onChange={({ target: { value } }) => setTemporaryInput(value)}
+                value={showTemporary ? temporaryInput : currentInput}
+                onChange={handleInputChange}
                 {...rest}
             />
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} autoClose={false}>
                 <LocalizedMiniCalendar
-                    date={value}
-                    onSelectDate={handleSelectDate}
+                    date={actualValue}
+                    onSelectDate={handleClickDate}
                     displayWeekNumbers={displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
                 />
@@ -99,8 +127,6 @@ DateInput.propTypes = {
     displayWeekNumbers: PropTypes.bool,
     weekStartsOn: PropTypes.number,
     value: PropTypes.instanceOf(Date).isRequired,
-    min: PropTypes.instanceOf(Date),
-    max: PropTypes.instanceOf(Date),
     onChange: PropTypes.func.isRequired
 };
 
