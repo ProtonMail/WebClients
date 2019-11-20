@@ -42,7 +42,7 @@ const PrivateLayout = ({ children, location }) => {
     return (
         <div className="flex flex-nowrap no-scroll">
             <div className="content flex-item-fluid reset4print">
-                <PrivateHeader expanded={expanded} onToggleExpand={onToggleExpand} />
+                <PrivateHeader location={location} expanded={expanded} onToggleExpand={onToggleExpand} />
                 <div className="flex flex-nowrap">
                     <Route
                         path="/:path"
