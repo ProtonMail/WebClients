@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { Icon, classnames } from 'react-components';
-import { c } from 'ttag';
 
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 import { bestColor } from '../../helpers/color';
@@ -37,12 +36,7 @@ const FullDayEvent = ({
 
     const content = (() => {
         if (error) {
-            return (
-                <div className="ellipsis">
-                    {c('Error').t`Error: `}
-                    {error && error.message}
-                </div>
-            );
+            return <Icon name="lock" className="fill-currentColor" />;
         }
 
         return (

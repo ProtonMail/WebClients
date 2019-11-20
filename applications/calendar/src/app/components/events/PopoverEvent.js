@@ -179,6 +179,7 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
     };
 
     if (error) {
+        const errorMessage = error.message || '';
         return (
             <div style={otherStyle} className="eventpopover p1" ref={ref}>
                 <header>
@@ -193,10 +194,11 @@ const PopoverEvent = ({ tzid, onClose, formatTime, onEditEvent, style, layout, e
                         <span className="sr-only">{c('Action').t`Close popover`}</span>
                     </button>
                 </header>
-                <div className="ellipsis">
-                    {c('Error').t`Error: `}
-                    {error && error.message}
-                </div>
+                <Alert type="error">
+                    {errorMessage.includes('decrypt')
+                        ? c('Error').t`Decryption error: Decryption of this event's content failed.`
+                        : c('Error').t`Error: ${errorMessage}`}
+                </Alert>
                 <footer>
                     <SmallButton
                         onClick={loadingAction ? noop : () => withLoadingAction(handleDelete())}
