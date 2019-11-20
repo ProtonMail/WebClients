@@ -9,6 +9,8 @@ function ptDraggableElement(ptDraggleCreator, ptDndModel, AppModel) {
             model: scope.conversation,
             type: scope.conversation.ConversationID ? 'message' : 'conversation',
             hookDragStart(target, event) {
+                dispatcher.dropdownApp('closeOthers');
+
                 const value = AppModel.get('numberElementChecked');
                 if (scope.conversation.Selected) {
                     // To keep the $scope up to date as we cannot display the notifcation after the digest

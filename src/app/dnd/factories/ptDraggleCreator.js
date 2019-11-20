@@ -68,7 +68,7 @@ function ptDraggleCreator(AppModel, dispatchers, ptDndModel, ptDndUtils, PTDNDCO
     function main(link) {
         return {
             link(scope, el, attr) {
-                const { dispatcher } = dispatchers(['dnd']);
+                const { dispatcher } = dispatchers(['dnd', 'dropdownApp']);
                 const id = ptDndUtils.generateUniqId();
 
                 el[0].setAttribute('draggable', true);
