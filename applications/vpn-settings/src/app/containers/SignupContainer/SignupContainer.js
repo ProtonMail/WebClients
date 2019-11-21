@@ -49,8 +49,8 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
         });
 
     useEffect(() => {
-        // Always start at plans, or account if plan is preselected
-        if (preSelectedPlan) {
+        // Always start at plans, or account if paid plan is preselected
+        if (preSelectedPlan && preSelectedPlan !== 'free') {
             history.replace(`/signup/${SignupState.Account}`, {
                 coupon,
                 invite
