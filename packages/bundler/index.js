@@ -229,7 +229,7 @@ async function main() {
     }
 
     // Custom local deploy for the CI
-    const isCI = process.env.NODE_ENV_DIST === 'ci';
+    const isCI = process.env.NODE_ENV_DIST === 'bundle-only';
     const branch = argv.branch;
     const flowType = argv.flow;
     const runI18n = argv.i18n;
