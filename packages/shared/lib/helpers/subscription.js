@@ -2,7 +2,7 @@ import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE } from '../constants';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL } = PLAN_SERVICES;
-const { PLUS, VPNPLUS } = PLANS;
+const { PLUS, VPNPLUS, VISIONARY } = PLANS;
 
 /**
  * Get plan from current subscription
@@ -58,6 +58,16 @@ export const isBundleEligible = (subscription = {}) => {
 export const hasLifetime = (subscription = {}) => {
     const { CouponCode = '' } = subscription;
     return CouponCode === 'LIFETIME';
+};
+
+/**
+ * Check if the current subscription has visionary plan
+ * @param {Object} subscription
+ * @returns {Boolean}
+ */
+export const hasVisionary = (subscription = {}) => {
+    const { Plans = [] } = subscription;
+    return Plans.some(({ Name }) => Name === VISIONARY);
 };
 
 /**
