@@ -192,6 +192,7 @@ function main(argv) {
             hookPostTaskBuild: [
                 {
                     title: 'Generate the changelog',
+                    enabled: () => !isCI,
                     task(ctx) {
                         const { changelogPath } = ctx.config;
                         const fileName = path.join('dist', changelogPath);
