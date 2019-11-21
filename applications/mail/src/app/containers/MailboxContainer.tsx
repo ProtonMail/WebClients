@@ -1,12 +1,8 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { useMailSettings, Loader, classnames, useLoading } from 'react-components';
+import React, { useState, useMemo, useRef } from 'react';
+import { Loader, classnames } from 'react-components';
 
 import { Element } from '../models/element';
-import { Conversation } from '../models/conversation';
-import { Message } from '../models/message';
 
-import { useConversations } from '../hooks/useConversations';
-import { useMessages } from '../hooks/useMessages';
 import { useMailboxPageTitle } from '../hooks/useMailboxPageTitle';
 
 import { isColumnMode, isConversationMode } from '../helpers/mailSettings';
@@ -19,20 +15,29 @@ import PlaceholderView from '../components/view/PlaceholderView';
 
 import './main-area.scss';
 import MessageOnlyView from '../components/message/MessageOnlyView';
+import { ElementProps } from './ElementsContainer';
+import { History, Location } from 'history';
 
-interface Props {
+interface Props extends ElementProps {
     labelID: string;
-    elementID: string;
-    location: any;
-    history: any;
+    mailSettings: any;
+    elementID?: string;
+    location: Location;
+    history: History;
 }
 
-const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
-    const [mailSettings, loadingMailSettings] = useMailSettings();
-    const { getConversations } = useConversations();
-    const { getMessages } = useMessages();
-    const [loadingElements, withLoadingElements] = useLoading(true);
-    const [elements, setElements] = useState<Element[]>([]);
+const MailboxContainer = ({
+    labelID,
+    mailSettings,
+    elementID,
+    location,
+    history,
+    elements,
+    loading,
+    page,
+    setPage,
+    total
+}: Props) => {
     const [checkedElements, setCheckedElements] = useState(Object.create(null));
     const [checkAll, setCheckAll] = useState(false);
     const [sort, updateSort] = useState();
@@ -42,31 +47,12 @@ const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
 
     useMailboxPageTitle(labelID, elements);
 
-    useEffect(() => {
-        if (!loadingMailSettings) {
-            const conversationMode = isConversationMode(mailSettings);
-            const request = conversationMode ? getConversations : getMessages;
-            const load = async () => {
-                const result = await request(labelID);
-                if (conversationMode) {
-                    setElements((result as { Conversations: Conversation[] }).Conversations);
-                } else {
-                    setElements((result as { Messages: Message[] }).Messages);
-                }
-            };
-
-            withLoadingElements(load());
-        }
-    }, [labelID, loadingMailSettings]);
-
     const handleSort = ({ Sort, Desc }: any) => {
         updateDesc(Desc);
         updateSort(Sort);
     };
 
-    const handleFilter = () => {}; // eslint-disable-line
-    const handleNext = () => {}; // eslint-disable-line
-    const handlePrevious = () => {}; // eslint-disable-line
+    const handleFilter = () => {};
 
     const checkedIDs = useMemo(() => {
         return Object.entries(checkedElements).reduce((acc, [elementID, isChecked]) => {
@@ -87,10 +73,6 @@ const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
         }
         return [];
     }, [checkedIDs, location.pathname]);
-
-    if (loadingMailSettings) {
-        return <Loader />;
-    }
 
     const handleCheck = (IDs: string[] = [], checked = false) => {
         const update = IDs.reduce((acc, contactID) => {
@@ -139,9 +121,10 @@ const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
                 desc={desc}
                 onFilter={handleFilter}
                 filter={filter}
-                onNext={handleNext}
-                onPrevious={handlePrevious}
                 onBack={handleBack}
+                page={page}
+                total={total}
+                setPage={setPage}
             />
             <div
                 className={classnames([
@@ -150,7 +133,7 @@ const MailboxContainer = ({ labelID, elementID, location, history }: Props) => {
                 ])}
             >
                 <div className="items-column-list scroll-if-needed scroll-smooth-touch">
-                    {loadingElements ? (
+                    {loading ? (
                         <div className="flex flex-justify-center h100">
                             <Loader />
                         </div>

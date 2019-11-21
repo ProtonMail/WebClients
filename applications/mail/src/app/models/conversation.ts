@@ -1,4 +1,5 @@
 import { Recipient } from './message';
+import { Label } from './label';
 
 export interface Conversation {
     ID?: string;
@@ -10,4 +11,5 @@ export interface Conversation {
     Senders?: Recipient[];
     Recipients?: Recipient[];
     NumUnread?: number;
+    Labels?: Label[];
 }

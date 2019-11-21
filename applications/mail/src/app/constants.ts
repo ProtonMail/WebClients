@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
+export const PAGE_SIZE = 50;
+
 export const ELEMENT_TYPES = {
     MESSAGE: 'message',
     CONVERSATION: 'conversation'

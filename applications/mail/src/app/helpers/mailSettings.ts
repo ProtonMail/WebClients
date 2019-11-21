@@ -5,5 +5,6 @@ interface MailSettings {
     ViewMode?: number;
 }
 
-export const isColumnMode = ({ ViewLayout = VIEW_LAYOUT.COLUMN }: MailSettings) => ViewLayout === VIEW_LAYOUT.COLUMN;
-export const isConversationMode = ({ ViewMode = VIEW_MODE.GROUP }: MailSettings) => ViewMode === VIEW_MODE.GROUP;
+export const isColumnMode = ({ ViewLayout = VIEW_LAYOUT.COLUMN }: MailSettings = {}) =>
+    ViewLayout === VIEW_LAYOUT.COLUMN;
+export const isConversationMode = ({ ViewMode = VIEW_MODE.GROUP }: MailSettings = {}) => ViewMode === VIEW_MODE.GROUP;

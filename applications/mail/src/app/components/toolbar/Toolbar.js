@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from 'react-components';
-import { c } from 'ttag';
-import { VIEW_LAYOUT } from 'proton-shared/lib/constants';
 
-import ToolbarButton from './ToolbarButton';
 import ToolbarSeparator from './ToolbarSeparator';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import ToolbarDropdown from './ToolbarDropdown';
@@ -17,7 +14,9 @@ import SelectAll from './SelectAll';
 import MoveDropdown from '../dropdown/MoveDropdown';
 import LabelDropdown from '../dropdown/LabelDropdown';
 import BackButton from './BackButton';
+import PagingControls from './PagingControls';
 import { getCurrentType } from '../../helpers/elements';
+import { isColumnMode } from '../../helpers/mailSettings';
 
 const Toolbar = ({
     labelID = '',
@@ -32,19 +31,19 @@ const Toolbar = ({
     desc,
     onFilter,
     filter,
-    onPrevious,
-    onNext,
-    onBack
+    onBack,
+    page,
+    total,
+    setPage
 }) => {
     const type = getCurrentType({ mailSettings, labelID });
 
-    const { ViewLayout = VIEW_LAYOUT.COLUMN } = mailSettings;
-    const isColumnMode = ViewLayout === VIEW_LAYOUT.COLUMN;
+    const columnMode = isColumnMode(mailSettings);
 
     return (
         <nav className="toolbar flex noprint flex-spacebetween">
             <div className="flex">
-                {isColumnMode || !elementID ? (
+                {columnMode || !elementID ? (
                     <SelectAll checked={checkAll} onCheck={onCheckAll} loading={loading} />
                 ) : (
                     <BackButton onClick={onBack} />
@@ -67,12 +66,7 @@ const Toolbar = ({
                 <SortDropdown loading={loading} sort={sort} desc={desc} onSort={onSort} />
                 <LayoutDropdown mailSettings={mailSettings} />
                 <ToolbarSeparator />
-                <ToolbarButton loading={loading} title={c('Action').t`Previous`} onClick={onPrevious}>
-                    <Icon className="toolbar-icon rotateZ-90 mauto" name="caret" />
-                </ToolbarButton>
-                <ToolbarButton loading={loading} title={c('Action').t`Next`} onClick={onNext}>
-                    <Icon className="toolbar-icon rotateZ-270 mauto" name="caret" />
-                </ToolbarButton>
+                <PagingControls loading={loading} page={page} total={total} setPage={setPage} />
             </div>
         </nav>
     );
@@ -88,12 +82,13 @@ Toolbar.propTypes = {
     elementID: PropTypes.string,
     selectedIDs: PropTypes.array.isRequired,
     mailSettings: PropTypes.object.isRequired,
-    onPrevious: PropTypes.func.isRequired,
-    onNext: PropTypes.func.isRequired,
     onSort: PropTypes.func.isRequired,
     onFilter: PropTypes.func.isRequired,
     onBack: PropTypes.func.isRequired,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
+    page: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    setPage: PropTypes.func.isRequired
 };
 
 export default Toolbar;

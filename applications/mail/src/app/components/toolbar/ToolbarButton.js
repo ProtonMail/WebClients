@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { classnames } from 'react-components';
 
-const ToolbarButton = ({ children, loading, disabled, className, ...rest }) => {
+const ToolbarButton = ({ children, loading = false, disabled = false, className = '', ...rest }) => {
     return (
         <button
             type="button"

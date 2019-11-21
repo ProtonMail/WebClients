@@ -1,3 +1,5 @@
+import { Label } from './label';
+
 export interface Recipient {
     Name?: string;
     Address?: string;
@@ -31,6 +33,7 @@ export interface Message {
     Attachments?: Attachment[];
     Unread?: number;
     Size?: number;
+    Labels?: Label[];
 }
 
 export interface MessageExtended {
