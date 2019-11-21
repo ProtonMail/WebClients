@@ -86,7 +86,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
                     return '✋ You shall not deploy to QA';
                 }
             },
-            enabled: () => !/dev|beta|prod|tor|old/.test(branch),
+            enabled: () => !isCI && !/dev|beta|prod|tor|old/.test(branch),
             async task() {
                 // For the CI to force SSH
                 if (process.env.GIT_REMOTE_URL_CI && argv.fromCi) {
@@ -107,7 +107,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
             title: 'Clear previous dist',
             async task() {
                 await del(['dist', 'distCurrent', 'distback'], { dryRun: false });
-                isCI && execa('mkdir dist');
+                isCI && (await bash('mkdir dist'));
             }
         },
         {
@@ -118,7 +118,6 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         ...configTasks,
         {
             title: 'Extract git env for the bundle',
-            enabled: () => !isCI,
             async task(ctx) {
                 const { commit, branch, tag } = await getConfig();
                 ctx.originCommit = commit;
@@ -254,6 +253,7 @@ async function main() {
         apiUrl,
         appMode,
         isRemoteBuild,
+        isCI,
         SENTRY: process.env.NODE_ENV_SENTRY
     });
 
