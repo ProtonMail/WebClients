@@ -45,7 +45,7 @@ const MailboxContainer = ({
     const [filter] = useState();
     const welcomeRef = useRef(false);
 
-    useMailboxPageTitle(labelID, elements);
+    useMailboxPageTitle(labelID);
 
     const handleSort = ({ Sort, Desc }: any) => {
         updateDesc(Desc);

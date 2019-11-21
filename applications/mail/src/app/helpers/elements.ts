@@ -51,15 +51,3 @@ export const isUnread = (element: Element) => {
     }
     return false;
 };
-
-export const countUnread = (elements: Element[]) => {
-    return elements.reduce((count, element) => {
-        if ('NumUnread' in element) {
-            return count + (element.NumUnread || 0);
-        }
-        if ('Unread' in element) {
-            return count + (element.Unread || 0);
-        }
-        return count;
-    }, 0);
-};
