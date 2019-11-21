@@ -1,85 +1,150 @@
-<div
-    class="pm_modal important {{ctrl.class}} generateModal-container"
-    ng-class="{ 'generateModal-process': ctrl.process }"
-    role="dialog">
-    <form method="post" class="modal-dialog" ng-submit="ctrl.submit()" novalidate>
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">{{ ::ctrl.title }}</h4>
+<dialog
+    class="generateModal-container"
+    ng-class="{ 'generateModal-process': ctrl.process }">
+
+    <header class="pm-modalHeader">
+        <button
+            type="button"
+            class="pm-modalClose"
+            ng-click="ctrl.cancel()"
+            ng-if="!ctrl.hideClose"
+            title-translate="Close"
+            title-translate-context="Action">
+            <icon data-name="close" class="pm-modalClose-icon"></icon>
+            <span class="sr-only" translate translate-context="Action">Close</span>
+        </button>
+        <h1
+            ng-if="ctrl.title"
+            id="modalTitle"
+            class="pm-modalTitle">{{ ::ctrl.title }}</h1>
+    </header>
+
+    <form
+        class="pm-modalContent"
+        method="post"
+        ng-submit="ctrl.submit()"
+        novalidate>
+
+        <div class="pm-modalContentInner">
+            <div class="block-info mb1" ng-if="ctrl.message">{{::ctrl.message}}</div>
+
+            <div class="flex flex-nowrap onmobile-flex-column mb1">
+
+                <span>
+                    <label class="inline-flex">
+                        <custom-radio
+                            data-custom-ng-model="ctrl.encryptionConfigName"
+                            data-custom-value="RSA2048"></custom-radio>
+
+                        <strong
+                            translate
+                            translate-context="Title"
+                            translate-comment="form option heading">High security</strong>
+                        <i
+                            translate
+                            translate-context="info"
+                            translate-comment="form option comment">RSA 2048-bit (Older but faster)</i>
+                    </label>
+                </span>
             </div>
-            <div class="modal-body pm_form">
-                <p ng-show="ctrl.message" class="generateModal-key-about">{{ ::ctrl.message }}</p>
-                <div class="pm_grid" ng-if="ctrl.askPassword">
-                    <div class="col-1-2">
-                        <label for="password" translate translate-context="Title">Password</label>
-                    </div>
-                    <div class="col-1-2">
-                        <input id="password" type="password" ng-model="ctrl.password" />
-                    </div>
-                </div>
-                <div class="generateModal-key-config">
-                    <label class="checkbox">
-                        <custom-radio data-custom-ng-model="ctrl.encryptionConfigName" data-custom-value="RSA2048"></custom-radio>
-                        <strong translate translate-context="Title" translate-comment="form option heading">High security</strong>
-                        <i translate translate-context="info" translate-comment="form option comment">RSA 2048-bit (Older but faster)</i>
+
+            <div class="flex flex-nowrap onmobile-flex-column mb1">
+
+                <span>
+                    <label class="inline-flex">
+                        <custom-radio
+                            data-custom-ng-model="ctrl.encryptionConfigName"
+                            data-custom-value="RSA4096"></custom-radio>
+
+                        <strong
+                            translate
+                            translate-context="Title"
+                            translate-comment="form option heading">Highest security</strong>
+                        <i
+                            translate
+                            translate-context="info"
+                            translate-comment="form option comment">RSA 4096-bit (Secure but slow)</i>
                     </label>
-                    <label class="checkbox">
-                        <custom-radio data-custom-ng-model="ctrl.encryptionConfigName" data-custom-value="RSA4096"></custom-radio>
-                        <strong translate translate-context="Title" translate-comment="form option heading">Highest security</strong>
-                        <i translate translate-context="info" translate-comment="form option comment">RSA 4096-bit (Secure but slow)</i>
-                    </label>
-                    <label class="checkbox">
-                        <custom-radio data-custom-ng-model="ctrl.encryptionConfigName" data-custom-value="X25519"></custom-radio>
-                        <strong translate translate-context="Title" translate-comment="form option heading">State-of-the-art</strong>
-                        <i translate translate-context="info" translate-comment="form option comment">X25519 (Modern, fastest, secure)</i>
-                    </label>
-                </div>
-                <p
-                    class="alert alert-info generateModal-key-about"
-                    ng-if="ctrl.encryptionConfigName === 'RSA4096'"
-                    translate-context="Info"
-                    translate>Generating RSA 4096-bit encryption keys may crash or freeze your browser. RSA 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
-
-                <p
-                    class="generateModal-process-about"
-                    translate-context="Info"
-                    translate>We are now generating encryption keys for your address, this may take several minutes and temporarily freeze your browser.</p>
-
-
-                <div class="pm_table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th scope="col" translate translate-context="Title" translate-comment="table heading">Address</th>
-                                <th scope="col" style="width: 6rem" class="alignright generate-status" translate translate-context="Title" translate-comment="table heading">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr
-                                class="generateModal-row"
-                                data-state="{{address.state}}"
-                                ng-repeat="address in ctrl.addresses | orderBy: 'Order' track by address.ID">
-                                <td>{{ ::address.Email }}</td>
-                                <td class="generate-status alignright">
-                                    <span class="pm_badge generateModal-state-queued" translate translate-context="key generation progrss">Queued</span>
-                                    <span class="generateModal-state-generating pm_badge"><i class="fa fa-spinner fa-spin"></i> <span translate translate-context="key generation progrss">Generating</span></span>
-                                    <span class="generateModal-state-done pm_badge success" translate translate-context="key generation progrss">Done</span>
-                                    <span class="generateModal-state-saved pm_badge success" translate translate-context="key generation progrss">Saved</span>
-                                    <span class="generateModal-state-error pm_badge error" translate translate-context="Error" translate-comment="key generation progrss">Error</span>
-
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                </span>
             </div>
+
+            <div class="flex flex-nowrap onmobile-flex-column mb1">
+
+                <span>
+                    <label class="inline-flex">
+                        <custom-radio
+                            data-custom-ng-model="ctrl.encryptionConfigName"
+                            data-custom-value="X25519"></custom-radio>
+
+                        <strong
+                            translate
+                            translate-context="Title"
+                            translate-comment="form option heading">State-of-the-art</strong>
+                        <i
+                            translate
+                            translate-context="info"
+                            translate-comment="form option comment">X25519 (Modern, fastest, secure)</i>
+                    </label>
+                </span>
+            </div>
+
+            <p
+                class="block-info-standard-warning generateModal-key-about"
+                ng-if="ctrl.encryptionConfigName === 'RSA4096'"
+                translate-context="Info"
+                translate>Generating RSA 4096-bit encryption keys may crash or freeze your browser. RSA 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
+
+            <p
+                class="generateModal-process-about block-info-standard"
+                translate-context="Info"
+                translate>We are now generating encryption keys for your address, this may take several minutes and temporarily freeze your browser.</p>
+
+            <table class="pm-simple-table noborder border-collapse pm-simple-table--has-actions">
+              <caption class="sr-only">Invoices</caption>
+              <thead>
+                <tr>
+                  <th scope="col" translate translate-context="Title" translate-comment="table heading">Address</th>
+                  <th scope="col" translate translate-context="Title" translate-comment="table heading">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                    class="generateModal-row"
+                    data-state="{{address.state}}"
+                    ng-repeat="address in ctrl.addresses | orderBy: 'Order' track by address.ID">
+                        <td>{{ ::address.Email }}</td>
+                        <td class="generate-status alignright">
+                            <span class="badgeLabel-grey generateModal-state-queued" translate translate-context="key generation progrss">Queued</span>
+                            <span class="generateModal-state-generating badgeLabel-grey"><i class="fa fa-spinner fa-spin"></i> <span translate translate-context="key generation progrss">Generating</span></span>
+                            <span class="generateModal-state-done badgeLabel-success" translate translate-context="key generation progrss">Done</span>
+                            <span class="generateModal-state-saved badgeLabel-success" translate translate-context="key generation progrss">Saved</span>
+                            <span class="generateModal-state-error badgeLabel-error" translate translate-context="Error" translate-comment="key generation progrss">Error</span>
+
+                        </td>
+                </tr>
+              </tbody>
+            </table>
+
+
         </div>
-        <div class="modal-footer">
-            <button type="button" class="pm_button modal-footer-button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true" translate translate-context="Action">Cancel</button>
-            <button type="submit" class="pm_button primary modal-footer-button" ng-disabled="ctrl.process === true" translate translate-context="Action">Generate Keys</button>
-            <button ng-if="ctrl.import" type="submit" class="pm_button link modal-footer-button" ng-disabled="ctrl.process === true" translate translate-context="Action" ng-click="ctrl.import()">Import</button>
-        </div>
+
+        <footer class="pm-modalFooter flex flex-spacebetween">
+            <button
+                class="pm-button-blueborder disabled-if-network-activity"
+                id="cancelModalBtn"
+                type="button"
+                ng-click="ctrl.cancel('btn')"
+                translate
+                translate-context="Action">Cancel</button>
+
+            <button
+                class="pm-button-blue disabled-if-network-activity"
+                tabindex="1"
+                id="confirmModalBtn"
+                ng-disabled="ctrl.process === true"
+                autofocus
+                translate
+                translate-context="Action">Generate Keys</button>
+        </footer>
     </form>
-    <div class="modal-overlay"></div>
-</div>
+</dialog>

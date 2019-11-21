@@ -10,8 +10,6 @@
     [class*="generateModal-key-"] { display: none }
 }
 
-[class*="generateModal-state"] { color: $text; }
-
 .generateModal-row[data-state="0"] {
     .generateModal-state-generating,
     .generateModal-state-done,
