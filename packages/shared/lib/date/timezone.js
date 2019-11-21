@@ -153,7 +153,7 @@ export const getTimeZoneOptions = (date = new Date()) => {
             })
             .map(({ name, offset }, i) => {
                 return {
-                    text: `(GMT${formatTimezoneOffset(offset)}) ${name}`,
+                    text: `${name} (GMT${formatTimezoneOffset(offset)})`,
                     value: name,
                     key: i
                 };
