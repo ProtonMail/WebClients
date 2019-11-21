@@ -187,9 +187,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                     if (!calendarID) {
                         return;
                     }
-                    const { tree, events, decryptedEvents, recurringEvents } = cacheRef.current.calendars[calendarID];
-                    removeEventFromCache(EventID, { tree, events, decryptedEvents, recurringEvents });
-
+                    removeEventFromCache(EventID, cacheRef.current.calendars[calendarID]);
                     // TODO: Only increment count if this event happened in the date range we are currently interested in
                     count++;
                 }
@@ -197,8 +195,11 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                 if (Action === UPDATE || Action === CREATE) {
                     const { CalendarID } = Event;
 
-                    setEventInCache(Event, cacheRef.current.calendars[CalendarID]);
-
+                    const calendarCache = cacheRef.current.calendars[CalendarID];
+                    if (!calendarCache) {
+                        return;
+                    }
+                    setEventInCache(Event, calendarCache);
                     // TODO: Only increment count if this event happened in the date range we are currently interested in
                     count++;
                 }
