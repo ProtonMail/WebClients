@@ -1,4 +1,4 @@
-import { PLAN_TYPES, PLAN_SERVICES, PLANS, ORGANIZATION_FLAGS } from '../constants';
+import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE } from '../constants';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL } = PLAN_SERVICES;
@@ -58,4 +58,16 @@ export const isBundleEligible = (subscription = {}) => {
 export const hasLifetime = (subscription = {}) => {
     const { CouponCode = '' } = subscription;
     return CouponCode === 'LIFETIME';
+};
+
+/**
+ *
+ * @param {String} name plan or addon name
+ * @param {Array} plans coming for Plans API
+ * @param {Object} subscription
+ * @returns {Number} price
+ */
+export const getMonthlyBaseAmount = (name = '', plans = [], subscription = {}) => {
+    const base = plans.find(({ Name }) => Name === name);
+    return subscription.Plans.filter(({ Name }) => Name === name).reduce((acc) => acc + base.Pricing[CYCLE.MONTHLY], 0);
 };
