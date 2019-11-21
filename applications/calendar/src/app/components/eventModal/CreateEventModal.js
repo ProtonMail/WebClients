@@ -67,6 +67,7 @@ const CreateEventModal = ({
     const getEventPersonal = useGetCalendarEventPersonal();
     const i18n = getI18N(model.type);
     const [errors, setErrors] = useState({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     useEffect(() => {}, [model.memberID]);
 
@@ -122,10 +123,12 @@ const CreateEventModal = ({
         if (errors.title) {
             setErrors({});
         }
-    }, [model]);
+    }, [model.title]);
 
     const handleSubmit = async () => {
         const veventComponent = modelToVeventComponent(model, tzid);
+
+        setIsSubmitted(true);
 
         if (!veventComponent.summary.value) {
             return setErrors({ title: c('Error').t`Title required` });
@@ -159,6 +162,12 @@ const CreateEventModal = ({
         return rest.onClose();
     };
 
+    const submitButton = (
+        <PrimaryButton loading={loadingAction || loadingEvent} type="submit">
+            {c('Action').t`Save`}
+        </PrimaryButton>
+    );
+
     const submit = Event ? (
         <div>
             <Button
@@ -166,10 +175,10 @@ const CreateEventModal = ({
                 loading={loadingAction}
                 className="mr1"
             >{c('Action').t`Delete`}</Button>
-            <PrimaryButton loading={loadingAction} type="submit">{c('Action').t`Save`}</PrimaryButton>
+            {submitButton}
         </div>
     ) : (
-        c('Action').t`Save`
+        submitButton
     );
 
     return (
@@ -188,6 +197,7 @@ const CreateEventModal = ({
                     displayWeekNumbers={displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
                     errors={errors}
+                    isSubmitted={isSubmitted}
                     model={model}
                     setModel={setModel}
                     calendars={calendars}

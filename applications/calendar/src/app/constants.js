@@ -74,3 +74,9 @@ export const COLORS = {
     BLACK: '#000',
     WHITE: '#FFF'
 };
+
+export const MAX_LENGTHS = {
+    TITLE: 255,
+    DESCRIPTION: 255,
+    LOCATION: 255
+};

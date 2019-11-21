@@ -136,7 +136,7 @@ export const removeItem = (array, index) => array.filter((oldValue, i) => i !== 
 
 export const getEmptyModel = ({
     isAllDay,
-    title,
+    title = '',
     calendarID,
     CalendarBootstrap,
     Addresses,

@@ -30,6 +30,7 @@ import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 import { modelToVeventComponent } from '../eventModal/eventForm/modelToProperties';
 import { getEmptyModel, getExistingEvent } from '../eventModal/eventForm/state';
 import PopoverEventContent from './PopoverEventContent';
+import { MAX_LENGTHS } from '../../constants';
 
 const PopoverEvent = ({
     tzid,
@@ -67,6 +68,7 @@ const PopoverEvent = ({
     const [value, isLoading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value);
     const [errors, setErrors] = useState({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleDelete = async () => {
         if (!Event) {
@@ -167,6 +169,8 @@ const PopoverEvent = ({
         const [addressKeys, calendarKeys] = await Promise.all([getAddressKeys(addressID), getCalendarKeys(calendarID)]);
         const veventComponent = modelToVeventComponent(model, tzid);
 
+        setIsSubmitted(true);
+
         if (!veventComponent.summary.value) {
             return setErrors({ title: c('Error').t`Title required` });
         }
@@ -247,9 +251,10 @@ const PopoverEvent = ({
                             type="text"
                             value={tmpTitle}
                             autoFocus={true}
-                            required={true}
+                            isSubmitted={isSubmitted}
                             error={errors.title}
                             onChange={({ target: { value } }) => setTmpTitle(value)}
+                            maxLength={MAX_LENGTHS.TITLE}
                         />
                     </div>
                 ) : (

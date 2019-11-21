@@ -1,7 +1,7 @@
 import { withRequiredProperties } from 'proton-shared/lib/calendar/veventHelper';
 import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
 
-import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN, FREQUENCY } from '../../../constants';
+import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN, FREQUENCY, MAX_LENGTHS } from '../../../constants';
 
 const getValarmTriggerAt = (date) => {
     return {
@@ -58,7 +58,7 @@ export const modelToDateProperty = ({ isAllDay, date, time, tzid: specificTzid }
 
 export const modelToGeneralProperties = ({ uid, title, location, description, frequency, attendees, rest }) => {
     const properties = {
-        summary: { value: title.trim() },
+        summary: { value: title.trim().slice(0, MAX_LENGTHS.TITLE) },
         ...rest
     };
 
@@ -67,11 +67,11 @@ export const modelToGeneralProperties = ({ uid, title, location, description, fr
     }
 
     if (location) {
-        properties.location = { value: location };
+        properties.location = { value: location.slice(0, MAX_LENGTHS.LOCATION) };
     }
 
     if (description) {
-        properties.description = { value: description };
+        properties.description = { value: description.slice(0, MAX_LENGTHS.DESCRIPTION) };
     }
 
     if (frequency && frequency !== FREQUENCY.ONCE) {

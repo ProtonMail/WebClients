@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Label, Field, Select, Toggle, ColorPicker, Input, TextArea } from 'react-components';
 import { c } from 'ttag';
+import { MAX_LENGTHS } from '../../constants';
 
 const CalendarSettingsTab = ({ model, setModel }) => {
     const addressText = useMemo(() => {
@@ -31,16 +32,16 @@ const CalendarSettingsTab = ({ model, setModel }) => {
                     <span className="mr0-5">{c('Label').t`Default email`}</span>
                 </Label>
                 <Field>
-                    {
-                        model.calendarID
-                            ? addressText
-                            : <Select
-                                id="calendar-address-select"
-                                value={model.addressID}
-                                onChange={({ target }) => setModel({ ...model, addressID: target.value })}
-                                options={model.addressOptions}
-                            />
-                    }
+                    {model.calendarID ? (
+                        addressText
+                    ) : (
+                        <Select
+                            id="calendar-address-select"
+                            value={model.addressID}
+                            onChange={({ target }) => setModel({ ...model, addressID: target.value })}
+                            options={model.addressOptions}
+                        />
+                    )}
                 </Field>
             </Row>
             <Row>
@@ -62,6 +63,7 @@ const CalendarSettingsTab = ({ model, setModel }) => {
                         value={model.description}
                         placeholder={c('Placeholder').t`Add a calendar description`}
                         onChange={({ target }) => setModel({ ...model, description: target.value })}
+                        maxLength={MAX_LENGTHS.DESCRIPTION}
                     />
                 </Field>
             </Row>

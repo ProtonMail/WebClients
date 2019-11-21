@@ -8,6 +8,7 @@ import TimezoneSelector from '../TimezoneSelector';
 import FrequencyInput from './FrequencyInput';
 import CalendarIcon from '../calendar/CalendarIcon';
 import TimeEventRow from './TimeEventRow';
+import { MAX_LENGTHS } from '../../constants';
 
 const EventForm = ({ displayWeekNumbers, weekStartsOn, calendars = [], model, errors, setModel }) => {
     const calendarOptions = calendars.map(({ ID, Name }) => ({ text: Name, value: ID }));
@@ -97,6 +98,7 @@ const EventForm = ({ displayWeekNumbers, weekStartsOn, calendars = [], model, er
                         placeholder={c('Placeholder').t`Add a location`}
                         value={model.location}
                         onChange={({ target }) => setModel({ ...model, location: target.value })}
+                        maxLength={MAX_LENGTHS.LOCATION}
                     />
                 </div>
             </Row>
@@ -109,6 +111,7 @@ const EventForm = ({ displayWeekNumbers, weekStartsOn, calendars = [], model, er
                         placeholder={c('Placeholder').t`Add a description`}
                         value={model.description}
                         onChange={({ target }) => setModel({ ...model, description: target.value })}
+                        maxLength={MAX_LENGTHS.DESCRIPTION}
                     />
                 </div>
             </Row>

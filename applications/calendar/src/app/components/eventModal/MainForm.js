@@ -6,8 +6,9 @@ import { c } from 'ttag';
 import EventForm from './EventForm';
 import AlarmForm from './AlarmForm';
 import TaskForm from './TaskForm';
+import { MAX_LENGTHS } from '../../constants';
 
-const MainForm = ({ displayWeekNumbers, weekStartsOn, model, errors, setModel, calendars }) => {
+const MainForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, model, errors, setModel, calendars }) => {
     const PLACEHOLDER_TITLE = {
         event: c('Placeholder').t`Add an event title`,
         alarm: c('Placeholder').t`Add an alarm title`,
@@ -21,10 +22,12 @@ const MainForm = ({ displayWeekNumbers, weekStartsOn, model, errors, setModel, c
                     <Input
                         id="event-title-input"
                         placeholder={PLACEHOLDER_TITLE[model.type]}
-                        required
+                        autoFocus={true}
                         error={errors.title}
                         value={model.title}
+                        maxLength={MAX_LENGTHS.TITLE}
                         onChange={({ target }) => setModel({ ...model, title: target.value })}
+                        isSubmitted={isSubmitted}
                     />
                 </div>
             </Row>
