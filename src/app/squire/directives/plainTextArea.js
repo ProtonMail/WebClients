@@ -41,7 +41,7 @@ function plainTextArea(dispatchers, mailSettingsModel, hotkeys) {
             }, 300);
 
             let isEditorFocused = false;
-            const onFocus = () => (isEditorFocused = true);
+            const onFocus = () => (isEditorFocused = true && hotkeys.pause());
             const onBlur = () => (isEditorFocused = false);
             const onInput = _.debounce(() => {
                 isEditorFocused && dispatcher['composer.update']('autosave.message', { message: scope.message });
