@@ -33,8 +33,8 @@ const PopoverEventContent = ({
     const { Name: calendarName, Color } = Calendar;
 
     const dateString = useMemo(() => {
-        const dateStart = formatUTC(start, 'PPP', { locale: dateLocale });
-        const dateEnd = formatUTC(end, 'PPP', { locale: dateLocale });
+        const dateStart = formatUTC(start, 'PP', { locale: dateLocale });
+        const dateEnd = formatUTC(end, 'PP', { locale: dateLocale });
 
         if (dateStart === dateEnd) {
             return dateStart;

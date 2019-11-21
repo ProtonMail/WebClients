@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import {
     SubTitle,
     Row,
@@ -18,17 +18,15 @@ import { updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
 import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 
 import TimezoneSelector from '../../../components/TimezoneSelector';
-import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '../../../constants';
+import { SETTINGS_TIME_FORMAT } from '../../../constants';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
 
 const TimeSection = () => {
-    const year = useMemo(() => new Date().getFullYear(), []);
     const [timezone] = useState(() => getTimezone());
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
-    const [loadingDateFormat, withLoadingDateFormat] = useLoading();
     const [loadingTimeFormat, withLoadingTimeFormat] = useLoading();
     const [loadingAutoDetect, withLoadingAutoDetect] = useLoading();
     const [loadingPrimaryTimeZone, withLoadingPrimaryTimeZone] = useLoading();
@@ -62,7 +60,6 @@ const TimeSection = () => {
     const {
         AutoDetectPrimaryTimezone,
         DisplaySecondaryTimezone,
-        DateFormat,
         TimeFormat,
         PrimaryTimezone,
         SecondaryTimezone
@@ -76,21 +73,6 @@ const TimeSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Region & time zone`}</SubTitle>
-            <Row>
-                <Label htmlFor="date-format-select">{c('Label').t`Date format`}</Label>
-                <Field>
-                    <Select
-                        id="date-format-select"
-                        loading={loadingDateFormat}
-                        onChange={({ target }) => withLoadingDateFormat(handleChange({ DateFormat: +target.value }))}
-                        value={DateFormat}
-                        options={[
-                            { text: `12/31/${year}`, value: SETTINGS_DATE_FORMAT.DDMMYYYY },
-                            { text: `31/12/${year}`, value: SETTINGS_DATE_FORMAT.MMDDYYYY }
-                        ]}
-                    />
-                </Field>
-            </Row>
             <Row>
                 <Label htmlFor="time-format-select">{c('Label').t`Time format`}</Label>
                 <Field>
