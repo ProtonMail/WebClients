@@ -103,6 +103,10 @@ export const getTimezone = () => {
     return timezone;
 };
 
+export const getTimezoneOffset = (nowDate, timezone) => {
+    return getUTCOffset(nowDate, findTimeZone(timezone));
+};
+
 export const formatTimezoneOffset = (offset) => {
     // offset comes with the opposite sign in the timezone-support library
     const sign = Math.sign(offset) === 1 ? '-' : '+';
