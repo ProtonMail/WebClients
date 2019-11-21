@@ -12,6 +12,7 @@ Default tasks:
 - Copy htaccess
 - [beta/prod] Upgrade translations inside the app (_json files_) [How to setup](https://github.com/ProtonMail/proton-bundler#Sync-i18n)
 - Build the app [How to setup](https://github.com/ProtonMail/proton-bundler#Build-the-app)
+- Add a file assets/version.json ex: `{ "version": "v3.16.9", "commit": "1899d63792d8528edc9c3ff68a865b7299f190e5" }` 
 - Push to the deploy branch
 - Upgrade crowdin with latest translations from the app [How to setup](https://github.com/ProtonMail/proton-bundler#Sync-i18n)
 
