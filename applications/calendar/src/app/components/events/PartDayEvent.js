@@ -30,6 +30,9 @@ const PartDayEvent = ({
         return `${timeStart} - ${timeEnd}`;
     }, [start, end]);
 
+    const isLessThanOneHour = end - start < 3600000;
+    const shouldHideTime = isLessThanOneHour && model.title;
+
     const content = (() => {
         if (error) {
             return <Icon name="lock" className="fill-currentColor" />;
@@ -45,7 +48,9 @@ const PartDayEvent = ({
                 >
                     {loading ? '' : model.title}
                 </div>
-                <div className="ellipsis calendar-eventcell-timestring">{timeString}</div>
+                <div className={classnames(['ellipsis calendar-eventcell-timestring', shouldHideTime && 'hidden'])}>
+                    {timeString}
+                </div>
             </>
         );
     })();
