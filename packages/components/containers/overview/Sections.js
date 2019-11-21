@@ -11,7 +11,7 @@ const Sections = ({ route, sections = [], text, permissions = [], pagePermission
                 sections
                     .reduce((acc, { text, id, hide }) => {
                         if (!hide) {
-                            acc.push({ text, id, route: `${route}#${id}` });
+                            acc.push({ text, id, route: { pathname: route, hash: id } });
                         }
                         return acc;
                     }, [])
@@ -28,7 +28,11 @@ const Sections = ({ route, sections = [], text, permissions = [], pagePermission
                     })
             ) : (
                 <li>
-                    <LinkItem route={route} text={text} permission={hasPermission(permissions, pagePermissions)} />
+                    <LinkItem
+                        route={{ pathname: route }}
+                        text={text}
+                        permission={hasPermission(permissions, pagePermissions)}
+                    />
                 </li>
             )}
         </ul>

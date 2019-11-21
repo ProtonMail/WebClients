@@ -18,7 +18,7 @@ const LinkItem = ({ route, text, permission }) => {
 };
 
 LinkItem.propTypes = {
-    route: PropTypes.string,
+    route: PropTypes.object,
     permission: PropTypes.bool,
     text: PropTypes.string
 };

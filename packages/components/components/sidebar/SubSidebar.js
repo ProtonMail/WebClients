@@ -1,17 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const SubSidebar = ({ list = [], children, activeSection }) => {
-    const handleClick = (event) => {
-        const el = document.querySelector(`#${event.currentTarget.dataset.targetId}`);
-        // If the element was found, no need to set the hash since the intersection observer will do it
-        if (el) {
-            event.preventDefault();
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    };
-
     return (
         <div className="subnav notablet nomobile bg-global-light noprint">
             <div className="subnav-inner">
@@ -21,14 +13,14 @@ const SubSidebar = ({ list = [], children, activeSection }) => {
                         const isCurrent = activeSection === id;
                         return (
                             <li key={id} className="mb0-5">
-                                <a
+                                <Link
                                     className="subnav-link"
                                     data-target-id={id}
-                                    onClick={handleClick}
+                                    to={{ hash: id }}
                                     aria-current={isCurrent}
                                 >
                                     {text}
-                                </a>
+                                </Link>
                             </li>
                         );
                     })}
