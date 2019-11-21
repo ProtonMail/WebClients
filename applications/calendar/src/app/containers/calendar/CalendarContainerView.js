@@ -52,6 +52,8 @@ const CalendarContainerView = ({
 
     view,
 
+    nowDate,
+
     utcDefaultDate,
     utcDate,
     utcDateRange,
@@ -182,6 +184,7 @@ const CalendarContainerView = ({
                                     timezoneSelector={
                                         <TimezoneSelector
                                             className="toolbar-select nomobile notablet"
+                                            nowDate={nowDate}
                                             timezone={tzid}
                                             onChange={setTzid}
                                         />
@@ -212,6 +215,7 @@ CalendarContainerView.propTypes = {
     onCreateEvent: PropTypes.func,
     onClickToday: PropTypes.func,
     onChangeView: PropTypes.func,
+    nowDate: PropTypes.instanceOf(Date),
     utcDefaultDate: PropTypes.instanceOf(Date),
     utcDate: PropTypes.instanceOf(Date),
     utcDateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),

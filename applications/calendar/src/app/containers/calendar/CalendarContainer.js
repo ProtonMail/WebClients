@@ -6,13 +6,13 @@ import {
     fromUTCDate,
     toUTCDate,
     getTimezone,
-    formatTimezoneOffset
+    formatTimezoneOffset,
+    getTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
 import { c } from 'ttag';
 import { getFormattedWeekdays, isDateYYMMDDEqual } from 'proton-shared/lib/date/date';
 import { format, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { findTimeZone, getUTCOffset } from 'timezone-support';
 import { VIEWS, SETTINGS_VIEW } from '../../constants';
 import CreateEventModal from '../../components/eventModal/CreateEventModal';
 import useCalendarsEvents from './useCalendarsEvents';
@@ -229,12 +229,11 @@ const CalendarContainer = ({ history, location }) => {
     const secondaryTzid = getSecondaryTimezone(calendarSettings);
 
     const timezoneInformation = useMemo(() => {
-        const { abbreviation, offset } = getUTCOffset(nowDate, findTimeZone(tzid));
-        const { abbreviation: secondaryAbbreviaton, offset: secondaryOffset } = getUTCOffset(
+        const { abbreviation, offset } = getTimezoneOffset(nowDate, tzid);
+        const { abbreviation: secondaryAbbreviaton, offset: secondaryOffset } = getTimezoneOffset(
             nowDate,
-            findTimeZone(secondaryTzid || tzid)
+            secondaryTzid || tzid
         );
-
         return {
             primaryTimezone: `${formatAbbreviation(abbreviation, offset)}`,
             secondaryTimezone: `${formatAbbreviation(secondaryAbbreviaton, secondaryOffset)}`,
@@ -364,6 +363,7 @@ const CalendarContainer = ({ history, location }) => {
             range={range}
             setCustom={setCustom}
             view={view}
+            nowDate={nowDate}
             utcDefaultDate={utcDefaultDate}
             utcDate={utcDate}
             utcDateRange={utcDateRange}
