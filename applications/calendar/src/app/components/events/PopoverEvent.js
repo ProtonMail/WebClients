@@ -253,7 +253,7 @@ const PopoverEvent = ({
                         />
                     </div>
                 ) : (
-                    <h1 className="eventpopover-title ellipsis-four-lines cut" title={model.title}>
+                    <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={model.title}>
                         {model.title}
                     </h1>
                 )}

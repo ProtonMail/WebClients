@@ -24,7 +24,7 @@ const MorePopoverEvent = ({
         <div style={otherStyle} className="eventpopover p1" ref={ref}>
             <header>
                 <h1
-                    className="eventpopover-title ellipsis-four-lines cut"
+                    className="eventpopover-title lh-standard ellipsis-four-lines cut"
                     title={selectedMoreDate && selectedMoreDate.getUTCDate()}
                 >
                     {selectedMoreDate && selectedMoreDate.getUTCDate()}
