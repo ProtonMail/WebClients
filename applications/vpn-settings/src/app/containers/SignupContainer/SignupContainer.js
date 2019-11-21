@@ -182,9 +182,7 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
                     <div className="flex flex-nowrap flex-items-center onmobile-flex-wrap mb1">
                         <div className="flex-item-fluid plan-back-button">
                             {!creatingAccount &&
-                                (signupState &&
-                                signupState !== SignupState.Plan &&
-                                selectedPlan.planName !== PLAN.BUNDLE_PLUS ? (
+                                (signupState && signupState !== SignupState.Plan && !isBlackFridayCoupon ? (
                                     <Button onClick={() => history.goBack()}>{c('Action').t`Back`}</Button>
                                 ) : (
                                     <Href className="pm-button" url={homepageUrl} target="_self">
