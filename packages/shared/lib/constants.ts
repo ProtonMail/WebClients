@@ -237,6 +237,9 @@ export enum ORGANIZATION_FLAGS {
     LOYAL = 1
 }
 
+export const LOYAL_BONUS_STORAGE = 5 * GIGA;
+export const LOYAL_BONUS_CONNECTION = 2;
+
 export const DEFAULT_CYCLE = 12;
 
 export enum CYCLE {
