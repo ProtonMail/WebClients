@@ -7,10 +7,20 @@ import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 
 const TextArea = (props) => {
-    const { className = '', error, rows: maxRows = 5, minRows = 1, autoGrow = false, onChange, ...rest } = props;
+    const {
+        className = '',
+        error,
+        rows: maxRows = 5,
+        minRows = 1,
+        autoGrow = false,
+        onChange,
+        isSubmitted,
+        ...rest
+    } = props;
     const { rows, updateTextArea } = useAutoGrow({ maxRows, minRows, autoGrow });
     const { handlers, statusClasses, status } = useInput({
         ...props,
+        isSubmitted,
         onChange(e) {
             if (updateTextArea) {
                 updateTextArea(e);
@@ -22,17 +32,19 @@ const TextArea = (props) => {
     });
     const [uid] = useState(generateUID('textarea'));
 
+    const hasError = error && (status.isDirty || isSubmitted);
+
     return (
         <>
             <textarea
                 rows={rows}
                 className={classnames(['pm-field w100', className, statusClasses])}
-                aria-invalid={error && status.isDirty}
+                aria-invalid={hasError}
                 aria-describedby={uid}
                 {...rest}
                 {...handlers}
             />
-            <ErrorZone id={uid}>{error && status.isDirty ? error : ''}</ErrorZone>
+            <ErrorZone id={uid}>{hasError ? error : ''}</ErrorZone>
         </>
     );
 };
@@ -50,6 +62,7 @@ TextArea.propTypes = {
     onPressEnter: PropTypes.func,
     placeholder: PropTypes.string,
     required: PropTypes.bool,
+    isSubmitted: PropTypes.bool,
     rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     minRows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     textareaRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
 
 import { generateUID, classnames } from '../../helpers/component';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
-import { c } from 'ttag';
 
 /** @type any */
 const Input = React.forwardRef(
@@ -17,6 +17,7 @@ const Input = React.forwardRef(
             className = '',
             type = 'text',
             onPressEnter,
+            isSubmitted,
             loading = false,
             required = false,
             id,
@@ -26,9 +27,11 @@ const Input = React.forwardRef(
         },
         ref
     ) => {
-        const { handlers, statusClasses, status } = useInput({ onPressEnter, ...rest });
+        const { handlers, statusClasses, status } = useInput({ onPressEnter, isSubmitted, ...rest });
         const [uid] = useState(generateUID('input'));
         const errorZone = required && !value && !error ? c('Error').t`This field is required` : error;
+
+        const hasError = errorZone && (status.isDirty || isSubmitted);
 
         const addIconWrapper = (child) => {
             if (!icon) {
@@ -39,7 +42,7 @@ const Input = React.forwardRef(
                 <div
                     className={classnames([
                         'relative pm-field-icon-container w100',
-                        errorZone && status.isDirty && 'pm-field-icon-container--invalid'
+                        hasError && 'pm-field-icon-container--invalid'
                     ])}
                 >
                     {child}
@@ -60,7 +63,7 @@ const Input = React.forwardRef(
                 {addIconWrapper(
                     <input
                         className={classnames(['pm-field w100', className, statusClasses])}
-                        aria-invalid={errorZone && status.isDirty}
+                        aria-invalid={hasError}
                         aria-describedby={uid}
                         id={id}
                         ref={ref}
@@ -75,7 +78,7 @@ const Input = React.forwardRef(
                     />
                 )}
                 <ErrorZone className={errorZoneClassName} id={uid}>
-                    {errorZone && status.isDirty ? errorZone : ''}
+                    {hasError ? errorZone : ''}
                 </ErrorZone>
             </>
         );
@@ -91,6 +94,7 @@ Input.propTypes = {
     className: PropTypes.string,
     disabled: PropTypes.bool,
     loading: PropTypes.bool,
+    isSubmitted: PropTypes.bool,
     id: PropTypes.string,
     name: PropTypes.string,
     onBlur: PropTypes.func,

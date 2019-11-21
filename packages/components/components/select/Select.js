@@ -6,9 +6,20 @@ import useInput from '../input/useInput';
 import ErrorZone from '../text/ErrorZone';
 
 /** @type any */
-const Select = ({ options, error, size = 1, className = '', multiple = false, loading = false, ...rest }) => {
-    const { handlers, statusClasses, status } = useInput({ ...rest });
+const Select = ({
+    options,
+    error,
+    size = 1,
+    className = '',
+    multiple = false,
+    loading = false,
+    isSubmitted,
+    ...rest
+}) => {
+    const { handlers, statusClasses, status } = useInput({ isSubmitted, ...rest });
     const [uid] = useState(generateUID('select'));
+
+    const hasError = error && (status.isDirty || isSubmitted);
 
     return (
         <>
@@ -26,7 +37,7 @@ const Select = ({ options, error, size = 1, className = '', multiple = false, lo
                     </option>
                 ))}
             </select>
-            <ErrorZone id={uid}>{error && status.isDirty ? error : ''}</ErrorZone>
+            <ErrorZone id={uid}>{hasError ? error : ''}</ErrorZone>
         </>
     );
 };
@@ -35,6 +46,7 @@ Select.propTypes = {
     error: PropTypes.string,
     disabled: PropTypes.bool,
     loading: PropTypes.bool,
+    isSubmitted: PropTypes.bool,
     size: PropTypes.number,
     onChange: PropTypes.func,
     onBlur: PropTypes.func,
