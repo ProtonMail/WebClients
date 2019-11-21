@@ -11,6 +11,7 @@ $gridcell-right-margin: 1.5em;
     height: 1.75em;
     display: inline-flex;
 }
+
 .calendar-grid-heading[aria-current="date"] {
     .calendar-grid-heading-number {
         background-color: $pm-primary;
@@ -19,6 +20,10 @@ $gridcell-right-margin: 1.5em;
     .calendar-grid-heading-day {
         font-weight: bold;
     }
+}
+
+.calendar-grid-heading-day-shortname {
+    display: none;
 }
 
 .calendar-grid-dayLine,
@@ -202,6 +207,19 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
     .calendar-eventcell-timestring {
         font-size: 1.2rem;
     }
+
+
+    .calendar-grid-heading-day-fullname {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
 }
 
 // popover
