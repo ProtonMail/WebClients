@@ -6,8 +6,7 @@ import {
     fromUTCDate,
     toUTCDate,
     getTimezone,
-    formatTimezoneOffset,
-    formatTimezoneAbbreviation
+    formatTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
 import { c } from 'ttag';
 import { getFormattedWeekdays, isDateYYMMDDEqual } from 'proton-shared/lib/date/date';
@@ -101,7 +100,7 @@ const getDisplayWeekNumbers = ({ DisplayWeekNumber } = {}) => {
 };
 
 const formatAbbreviation = (abbreviation, offset) => {
-    return `${formatTimezoneAbbreviation(abbreviation)} ${formatTimezoneOffset(offset)}`;
+    return `GMT${formatTimezoneOffset(offset)}`;
 };
 
 export const getTzid = ({ AutoDetectPrimaryTimezone, PrimaryTimezone } = {}, defaultTimezone) => {
