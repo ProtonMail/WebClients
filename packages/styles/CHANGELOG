@@ -1,15 +1,13 @@
-# [1.7.X] - 2019-11-XX
+# [1.7.7] - 2019-11-21
 
 ## New
 
-- added `shape-circle` icon
-- added calendar icon
+- added `circle`, `calendar`, `clock` and `target` icons
 - added mini-calendar styles
 - added `toolbar-select` styles
 - added `mw8e` helper
 - added `filter-blur` helper
 - added `w50p` helper
-- added `clock` and `target` icons
 - added `.pm-modal--shorterLabels` modifier
 - added `calendar-grid` fragment
 - added `atomLoader-text` styles
@@ -43,7 +41,7 @@
 - fix Chrome bug for selects
 - fix standard modal width
 - added a `max-width` on user drop down display name
-- fix path not closed properly in SVG
+- fix path not closed properly in SVG (thanks @johBerlin !)
 
 
 ## New
