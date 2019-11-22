@@ -4,6 +4,7 @@
 
 .subnav {
   width: var(--width-subnav, $subnav-width);
+  background: var(--bgcolor-subnav, $pm-global-light);
 }
 .subnav-inner {
   position: -webkit-sticky;
