@@ -185,7 +185,7 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
     color: $black;
     border-radius: 2px;
     transition: opacity .5s ease;
-    cursor: pointer;
+    cursor: grab;
 
     &:after {
         position: absolute;
@@ -201,10 +201,6 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
         pointer-events: none;
         border: 1px solid #fff;
     }
-}
-
-.calendar-eventcell--isGrabbed {
-    cursor: grab;
 }
 
 @include respond-to($breakpoint-small) { 
