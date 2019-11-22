@@ -8,11 +8,11 @@ import { transformStylesheet } from '../helpers/transforms/transformStylesheet';
 import { transformRemote } from '../helpers/transforms/transformRemote';
 import { transformBase } from '../helpers/transforms/transformBase';
 import { useDecryptMessage } from './useDecryptMessage';
-import { useMessages } from './useMessages';
-import { useMarkAsRead } from './useMarkAsRead';
 import { useTransformAttachments } from './useAttachments';
 import { MessageContext } from '../containers/MessageProvider';
 import { Message, MessageExtended } from '../models/message';
+import { getMessage, markMessageAsRead } from 'proton-shared/lib/api/messages';
+import { useApi, useEventManager } from 'react-components';
 
 interface ComputationOption {
     action?: string;
@@ -27,6 +27,7 @@ interface Computation {
 }
 
 interface MessageActions {
+    load: () => Promise<void>;
     initialize: () => Promise<void>;
     loadRemoteImages: () => Promise<void>;
     loadEmbeddedImages: () => Promise<void>;
@@ -35,14 +36,14 @@ interface MessageActions {
 export const useMessage = (inputMessage: Message, mailSettings: any): [MessageExtended, MessageActions] => {
     const messageID = inputMessage.ID || '';
 
+    const api = useApi();
+    const { call } = useEventManager();
     const cache = useContext(MessageContext);
     const computeCache = useMemo(() => new Map(), []);
     const [message, setMessage] = useState<MessageExtended>(
         cache.has(messageID) ? cache.get(messageID) : { data: inputMessage }
     );
 
-    const { ensureBody } = useMessages();
-    const markAsRead = useMarkAsRead();
     const decrypt = useDecryptMessage();
     const transformAttachements = useTransformAttachments();
 
@@ -77,6 +78,35 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
         transformRemote
     ];
 
+    const loadData = useCallback(
+        async ({ data: message = {} }: MessageExtended) => {
+            // If the Body is already there, no need to send a request
+            if (!message.Body) {
+                const { Message } = await api(getMessage(message.ID));
+                return { data: Message as Message };
+            }
+            return {} as MessageExtended;
+        },
+        [api]
+    );
+
+    const markAsRead = useCallback(
+        async ({ data: message }: MessageExtended) => {
+            const markAsRead = async () => {
+                await api(markMessageAsRead([message.ID]));
+                call();
+            };
+
+            if (message.Unread) {
+                markAsRead(); // No await to not slow down the UX
+                return { data: { ...message, Unread: 0 } } as MessageExtended;
+            }
+
+            return {} as MessageExtended;
+        },
+        [api]
+    );
+
     /**
      * Run a computation on a message, wait until it finish
      * Return the message extanded with the result of the computation
@@ -106,13 +136,23 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
         [runSingle, cache]
     );
 
+    const load = useCallback(async () => {
+        const message = cache.get(messageID);
+        const newMessage = await run(message, [loadData]);
+        cache.set(messageID, { ...newMessage, loaded: true });
+    }, [messageID, run, cache]);
+
     const initialize = useCallback(
         async (action?) => {
             const message = cache.get(messageID);
-            const newMessage = await run(message, [ensureBody, decrypt, markAsRead, ...transforms], action);
+            const newMessage = await run(
+                message,
+                [loadData, decrypt, markAsRead, ...transforms] as Computation[],
+                action
+            );
             cache.set(messageID, { ...newMessage, initialized: true });
         },
-        [run, cache]
+        [messageID, run, cache]
     );
 
     const loadRemoteImages = useCallback(
@@ -125,7 +165,7 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
             );
             cache.set(messageID, newMessage);
         },
-        [run, cache]
+        [messageID, run, cache]
     );
 
     const loadEmbeddedImages = useCallback(
@@ -133,17 +173,18 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
             const message = cache.get(messageID);
             const newMessage = await run(
                 { ...message, showEmbeddedImages: true },
-                [transformEmbedded, transformAttachements],
+                [transformEmbedded, transformAttachements] as Computation[],
                 action
             );
             cache.set(messageID, newMessage);
         },
-        [run, cache]
+        [messageID, run, cache]
     );
 
     return [
         message,
         {
+            load,
             initialize,
             loadRemoteImages,
             loadEmbeddedImages

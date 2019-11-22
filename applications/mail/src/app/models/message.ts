@@ -34,6 +34,7 @@ export interface Message {
     Unread?: number;
     Size?: number;
     Labels?: Label[];
+    LabelIDs?: string[];
 }
 
 export interface MessageExtended {
@@ -44,6 +45,7 @@ export interface MessageExtended {
     verified?: number;
     publicKeys?: any[];
     privateKeys?: any[];
+    loaded?: boolean;
     initialized?: boolean;
     showRemoteImages?: boolean;
     showEmbeddedImages?: boolean;

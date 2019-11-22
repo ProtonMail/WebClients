@@ -9,7 +9,7 @@ import HeaderCollapsed from './header/HeaderCollapsed';
 import HeaderExpanded from './header/HeaderExpanded';
 import MessageFooter from './MessageFooter';
 import { Message } from '../../models/message';
-import { useMessage } from '../../hooks/useNewMessage';
+import { useMessage } from '../../hooks/useMessage';
 
 interface Props {
     labels: Label[];

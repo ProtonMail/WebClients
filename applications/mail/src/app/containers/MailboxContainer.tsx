@@ -13,12 +13,13 @@ import List from '../components/list/List';
 import ConversationView from '../components/conversation/ConversationView';
 import PlaceholderView from '../components/view/PlaceholderView';
 
-import './main-area.scss';
 import MessageOnlyView from '../components/message/MessageOnlyView';
-import { ElementProps } from './ElementsContainer';
 import { History, Location } from 'history';
+import { useElements } from '../hooks/useElements';
 
-interface Props extends ElementProps {
+import './main-area.scss';
+
+interface Props {
     labelID: string;
     mailSettings: any;
     elementID?: string;
@@ -26,24 +27,21 @@ interface Props extends ElementProps {
     history: History;
 }
 
-const MailboxContainer = ({
-    labelID,
-    mailSettings,
-    elementID,
-    location,
-    history,
-    elements,
-    loading,
-    page,
-    setPage,
-    total
-}: Props) => {
+const MailboxContainer = ({ labelID, mailSettings, elementID, location, history }: Props) => {
+    const [page, setPage] = useState(0);
     const [checkedElements, setCheckedElements] = useState(Object.create(null));
     const [checkAll, setCheckAll] = useState(false);
     const [sort, updateSort] = useState();
     const [desc, updateDesc] = useState();
     const [filter] = useState();
     const welcomeRef = useRef(false);
+
+    const [elements, loading, total] = useElements({
+        conversationMode: isConversationMode(mailSettings),
+        labelID,
+        pageNumber: page,
+        pageSize: 50
+    });
 
     useMailboxPageTitle(labelID);
 

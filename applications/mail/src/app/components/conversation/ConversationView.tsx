@@ -6,7 +6,7 @@ import ItemStar from '../list/ItemStar';
 import { ELEMENT_TYPES } from '../../constants';
 import NumMessages from './NumMessages';
 import ItemLabels from '../list/ItemLabels';
-import { useConversation } from '../../hooks/useNewConversation';
+import { useConversation } from '../../hooks/useConversation';
 
 interface Props {
     conversationID: string;

@@ -12,4 +12,5 @@ export interface Conversation {
     Recipients?: Recipient[];
     NumUnread?: number;
     Labels?: Label[];
+    LabelIDs?: string[];
 }

@@ -1,12 +1,16 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useApi, useEventManager } from 'react-components';
 import { queryConversations, getConversation } from 'proton-shared/lib/api/conversations';
+import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { Conversation } from '../models/conversation';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { getTime } from '../helpers/conversation';
+import { Message } from '../models/message';
+import { Element } from '../models/element';
 
 interface Options {
+    conversationMode: boolean;
     labelID: string;
     pageNumber?: number;
     pageSize?: number;
@@ -17,11 +21,12 @@ interface Options {
 interface Cache {
     total: number;
     pages: number[];
-    conversations: { [ID: string]: Conversation };
+    elements: { [ID: string]: Element };
 }
 
 interface Event {
     Conversations?: ConversationEvent[];
+    Messages?: MessageEvent[];
 }
 
 interface ConversationEvent {
@@ -30,9 +35,18 @@ interface ConversationEvent {
     Action: EVENT_ACTIONS;
 }
 
-const emptyCache = (): Cache => ({ conversations: {}, pages: [], total: 0 });
+interface MessageEvent {
+    ID: string;
+    Message: Message;
+    Action: EVENT_ACTIONS;
+}
 
-export const useConversations = ({
+type ElementEvent = ConversationEvent | MessageEvent;
+
+const emptyCache = (): Cache => ({ elements: {}, pages: [], total: 0 });
+
+export const useElements = ({
+    conversationMode,
     labelID,
     pageNumber = 0,
     pageSize = 50
@@ -47,62 +61,106 @@ export const useConversations = ({
 
     // Prevent updating the state when the cache is already empty
     const resetCache = () => {
-        if (localCache.pages.length > 0 || Object.values(localCache.conversations).length > 0) {
+        if (localCache.pages.length > 0 || Object.values(localCache.elements).length > 0) {
             console.log('actual reset cache');
             setLocalCache(emptyCache());
         }
     };
 
+    const queryElement = async (elementID: string): Promise<Element> => {
+        const query = conversationMode ? getConversation : getMessage;
+        const result = await api(query(elementID));
+        return conversationMode ? result.Conversation : result.Message;
+    };
+
+    const queryElements = async (): Promise<{ Total: number; Elements: Element[] }> => {
+        const query = conversationMode ? queryConversations : queryMessageMetadata;
+        const result = await api(
+            query({
+                Page: pageNumber,
+                PageSize: pageSize,
+                // Limit: 100,
+                LabelID: labelID
+                // Sort,
+                // Desc = 1,
+                // Begin,
+                // End,
+                // BeginID,
+                // EndID,
+                // Keyword,
+                // To,
+                // From,
+                // Subject,
+                // Attachments,
+                // Starred,
+                // Unread,
+                // AddressID,
+                // ID,
+                // AutoWildcard
+            } as any)
+        );
+        return {
+            Total: result.Total,
+            Elements: conversationMode ? result.Conversations : result.Messages
+        };
+    };
+
     // Listen to event manager and update de cache
     useEffect(
         () =>
-            subscribe(async ({ Conversations = [] }: Event) => {
-                console.log('Event', Conversations);
+            subscribe(async ({ Conversations = [], Messages = [] }: Event) => {
+                const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
 
-                const { toDelete, toUpdate, toCreate } = Conversations.reduce(
-                    (acc, { ID, Conversation, Action }) => {
+                console.log('Event', Elements);
+
+                const { toDelete, toUpdate, toCreate } = Elements.reduce(
+                    (acc, event) => {
+                        const { ID, Action } = event;
+                        const Element = conversationMode
+                            ? (event as ConversationEvent).Conversation
+                            : (event as MessageEvent).Message;
                         if (Action === EVENT_ACTIONS.DELETE) {
                             acc.toDelete.push(ID);
                         }
                         if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                            acc.toUpdate.push({ ID, ...Conversation });
+                            acc.toUpdate.push({ ID, ...Element });
                         }
                         if (Action === EVENT_ACTIONS.CREATE) {
-                            acc.toCreate.push(Conversation);
+                            acc.toCreate.push(Element);
                         }
                         return acc;
                     },
-                    { toDelete: [] as string[], toUpdate: [] as Conversation[], toCreate: [] as Conversation[] }
+                    { toDelete: [] as string[], toUpdate: [] as Element[], toCreate: [] as Element[] }
                 );
 
                 const toUpdateCompleted = await Promise.all(
                     toUpdate.map(async (conversation) => {
-                        const conversationID = conversation.ID || '';
-                        const existingConversation = localCache.conversations[conversationID];
+                        const elementID = conversation.ID || '';
+                        const existingConversation = localCache.elements[elementID];
 
                         return existingConversation
                             ? { ...existingConversation, ...conversation }
-                            : await api(getConversation(conversationID)).then(({ Conversation }: any) => Conversation);
+                            : queryElement(elementID);
                     })
                 );
 
                 setLocalCache((localCache) => {
-                    const newReplacements: { [ID: string]: Conversation } = {};
+                    const newReplacements: { [ID: string]: Element } = {};
 
-                    [...toCreate, ...toUpdateCompleted].forEach((Conversation) => {
-                        newReplacements[Conversation.ID] = Conversation;
+                    [...toCreate, ...toUpdateCompleted].forEach((element) => {
+                        newReplacements[element.ID || ''] = element;
                     });
-                    const newConversations = {
-                        ...localCache.conversations,
+                    const newElements = {
+                        ...localCache.elements,
                         ...newReplacements
                     };
-                    toDelete.forEach((conversationID) => {
-                        delete newConversations[conversationID];
+                    toDelete.forEach((elementID) => {
+                        delete newElements[elementID];
                     });
 
                     return {
                         ...localCache,
-                        conversations: newConversations
+                        elements: newElements
                     };
                 });
             }),
@@ -124,13 +182,13 @@ export const useConversations = ({
     }, [pageNumber]);
 
     // Compute the conversations list from the cache
-    const conversations = useMemo(() => {
+    const elements = useMemo(() => {
         const minPage = localCache.pages.reduce((acc, page) => (page < acc ? page : acc), localCache.pages[0]);
         const startIndex = (pageNumber - minPage) * pageSize;
         const endIndex = startIndex + pageSize;
-        return Object.values(localCache.conversations)
-            .sort((c1, c2) => getTime(c2, labelID) - getTime(c1, labelID))
-            .filter(({ Labels = [] }) => Labels.some(({ ID }) => ID === labelID))
+        return Object.values(localCache.elements)
+            .sort((e1, e2) => getTime(e2, labelID) - getTime(e1, labelID))
+            .filter(({ LabelIDs = [] }) => LabelIDs.some((ID: string) => ID === labelID))
             .slice(startIndex, endIndex);
     }, [localCache, labelID, pageNumber, pageSize]);
 
@@ -153,37 +211,14 @@ export const useConversations = ({
             console.log('Load', 'label', labelID, 'page', pageNumber);
             setLoading(true);
             try {
-                const { Total, Conversations } = await api(
-                    queryConversations({
-                        Page: pageNumber,
-                        PageSize: pageSize,
-                        // Limit: 100,
-                        LabelID: labelID
-                        // Sort,
-                        // Desc = 1,
-                        // Begin,
-                        // End,
-                        // BeginID,
-                        // EndID,
-                        // Keyword,
-                        // To,
-                        // From,
-                        // Subject,
-                        // Attachments,
-                        // Starred,
-                        // Unread,
-                        // AddressID,
-                        // ID,
-                        // AutoWildcard
-                    } as any)
-                );
+                const { Total, Elements } = await queryElements();
                 setLoading(false);
                 setLocalCache((localCache) => ({
                     total: Total,
                     pages: [...localCache.pages, pageNumber],
-                    conversations: {
-                        ...localCache.conversations,
-                        ...toMap(Conversations, 'ID')
+                    elements: {
+                        ...localCache.elements,
+                        ...toMap(Elements, 'ID')
                     }
                 }));
             } catch (error) {
@@ -196,5 +231,5 @@ export const useConversations = ({
         // If labelID changes, the cache will be reseted
     }, [pageNumber, localCache]);
 
-    return [conversations, loading, total];
+    return [elements, loading, total];
 };

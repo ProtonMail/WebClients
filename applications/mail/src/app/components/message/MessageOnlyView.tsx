@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useLoading, Loader, useLabels } from 'react-components';
+import React, { useEffect } from 'react';
+import { Loader, useLabels } from 'react-components';
 
 import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
 import { ELEMENT_TYPES } from '../../constants';
 import ItemLabels from '../list/ItemLabels';
-import { useMessages } from '../../hooks/useMessages';
+import { useMessage } from '../../hooks/useMessage';
 
 interface Props {
     messageID: string;
@@ -13,19 +13,16 @@ interface Props {
 }
 
 const MessageOnlyView = ({ messageID, mailSettings }: Props) => {
-    const [message, setMessage] = useState();
     const [labels] = useLabels();
-    const [loading, withLoading] = useLoading();
-    const { getMessage } = useMessages();
 
-    const requestConversation = async () => {
-        const { Message } = await getMessage(messageID);
-        setMessage(Message);
-    };
+    const [{ data: message, loaded }, { load }] = useMessage({ ID: messageID }, mailSettings);
+    const loading = !loaded;
 
     useEffect(() => {
-        withLoading(requestConversation());
-    }, [messageID]);
+        if (!loaded) {
+            load();
+        }
+    }, [messageID, loaded]);
 
     if (loading) {
         return <Loader />;
