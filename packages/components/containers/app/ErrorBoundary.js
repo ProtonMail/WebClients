@@ -25,13 +25,14 @@ class ErrorBoundary extends React.Component {
         if (!this.state.hasError) {
             return this.props.children;
         }
-        return <GenericError className="pt2" />;
+        return this.props.component || <GenericError className="pt2" />;
     }
 }
 
 ErrorBoundary.propTypes = {
     children: PropTypes.node,
-    onError: PropTypes.func
+    onError: PropTypes.func,
+    component: PropTypes.node
 };
 
 export default ErrorBoundary;
