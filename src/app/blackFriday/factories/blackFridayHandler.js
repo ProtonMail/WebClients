@@ -15,6 +15,7 @@ function blackFridayHandler(Payment, blackFridayModel, dispatchers) {
     async function init() {
         const { dispatcher } = dispatchers(['blackFriday']);
         const { LastSubscriptionEnd } = await Payment.latestSubscription();
+
         if (isAbleToSeeBF(LastSubscriptionEnd)) {
             blackFridayModel.allow();
             dispatcher.blackFriday('run');

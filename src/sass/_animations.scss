@@ -184,21 +184,18 @@ Inpiration from 'esjay'
 
 
 .pulsor {
-    -webkit-animation: pusate 2s infinite alternate;
-    -moz-animation: pusate 2s infinite alternate;
-    -animation: pusate 2s infinite alternate
+    animation: pusate 2s infinite alternate
 }
-@-webkit-keyframes pusate {
-    from { background: rgba(0,0,0,.2); }
-    to { background: #D32E26; }
-}
-@-moz-keyframes pusate {
-    from { background: rgba(0,0,0,.2); }
-    to { background: #D32E26; }
-}
+
 @keyframes pusate {
-    from { background: rgba(0,0,0,.2); }
-    to { background: #D32E26; }
+    from {
+        background-color: transparent;
+        color: $white;
+    }
+    to {
+        background-color: rgba(255, 255, 255, .05);
+        color: #D32E26;
+    }
 }
 
 

@@ -262,6 +262,10 @@ $primary: $pm-primary;
 //== Modals
 @import "components/modals/index";
 
+//== BF
+@import 'components/blackFriday/navigationBlackFriday';
+
+
 //=== 📄 Pages =============================//
 @import "pages/login";
 @import "pages/pgp";

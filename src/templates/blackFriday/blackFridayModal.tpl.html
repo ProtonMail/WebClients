@@ -1,11 +1,17 @@
-<div class="pm_modal blackFridayModal {{ctrl.class}}" role="dialog" style="display: block;">
-    <div class="modal-dialog">
-        <button type="button" ng-click="ctrl.close()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
-        <div class="modal-content">
-            <div class="modal-body">
-                <black-friday></black-friday>
-            </div>
-        </div>
-    </div>
-    <div class="modal-overlay"></div>
-</div>
+<dialog ng-class="ctrl.class" class="blackFridayModal">
+
+    <header class="pm-modalHeader">
+        <button
+            type="button"
+            class="pm-modalClose"
+            ng-click="ctrl.cancel()"
+            ng-if="!ctrl.hideClose"
+            title-translate="Close"
+            title-translate-context="Action">
+            <icon data-name="close" class="pm-modalClose-icon"></icon>
+            <span class="sr-only" translate translate-context="Action">Close</span>
+        </button>
+    </header>
+
+    <black-friday></black-friday>
+</dialog>
