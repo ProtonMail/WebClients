@@ -14,7 +14,7 @@ import {
     useUser,
     useAddresses
 } from 'react-components';
-import { CYCLE, PLAN_NAMES, COUPON_CODES } from 'proton-shared/lib/constants';
+import { CYCLE, PLAN_NAMES, COUPON_CODES, BLACK_FRIDAY } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { isBundleEligible } from 'proton-shared/lib/helpers/subscription';
 
@@ -86,7 +86,7 @@ const SubscriptionSection = ({ permission }) => {
     const { mailPlan, vpnPlan } = formatPlans(Plans);
     const { Name: mailPlanName } = mailPlan || {};
     const { Name: vpnPlanName } = vpnPlan || {};
-    const canRemoveCoupon = CouponCode && CouponCode !== BUNDLE;
+    const canRemoveCoupon = CouponCode && ![BUNDLE, BLACK_FRIDAY.COUPON_CODE].includes(CouponCode);
     const i18n = getCyclesi18n();
 
     /**
