@@ -1,4 +1,4 @@
-import { isAfter, isSameDay, isSameMonth, isWithinInterval } from 'date-fns';
+import { isBefore, isAfter, isSameDay, isSameMonth, isWithinInterval } from 'date-fns';
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
@@ -12,6 +12,8 @@ const MonthDays = ({
     dateRange,
     formatDay,
     now,
+    min,
+    max,
     selectedDate,
     activeDate,
     numberOfDays,
@@ -100,7 +102,10 @@ const MonthDays = ({
             onMouseOver={onSelectDateRange ? handleMouseOver : null}
         >
             {days.map((dayDate, i) => {
-                const isActiveMonth = isSameMonth(dayDate, activeDate);
+                const isBeforeMin = min ? isBefore(dayDate, min) : false;
+                const isAfterMax = max ? isAfter(dayDate, max) : false;
+                const isOutsideMinMax = isBeforeMin || isAfterMax;
+                const isActiveMonth = isOutsideMinMax ? false : isSameMonth(dayDate, activeDate);
                 const isCurrent = isSameDay(now, dayDate);
                 const isInterval =
                     (rangeStart && rangeEnd && isWithinInterval(dayDate, { start: rangeStart, end: rangeEnd })) ||
@@ -129,6 +134,7 @@ const MonthDays = ({
 
                 return (
                     <button
+                        disabled={isOutsideMinMax}
                         aria-label={formatDay(dayDate)}
                         aria-current={isCurrent ? 'date' : undefined}
                         aria-pressed={isPressed ? true : undefined}
@@ -156,6 +162,8 @@ MonthDays.propTypes = {
     numberOfDays: PropTypes.number.isRequired,
     numberOfWeeks: PropTypes.number.isRequired,
     now: PropTypes.instanceOf(Date),
+    min: PropTypes.instanceOf(Date),
+    max: PropTypes.instanceOf(Date),
     selectedDate: PropTypes.instanceOf(Date),
     activeDate: PropTypes.instanceOf(Date)
 };

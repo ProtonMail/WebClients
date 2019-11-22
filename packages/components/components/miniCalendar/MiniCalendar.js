@@ -13,6 +13,8 @@ const MiniCalendar = ({
     hasCursors = true,
     now = new Date(),
     date: selectedDate,
+    min,
+    max,
     dateRange,
     onSelectDate,
     onSelectDateRange,
@@ -112,6 +114,8 @@ const MiniCalendar = ({
                         weekStartsOn={weekStartsOn}
                     />
                     <MonthDays
+                        min={min}
+                        max={max}
                         markers={markers}
                         numberOfWeeks={numberOfWeeks}
                         numberOfDays={numberOfDays}
@@ -134,6 +138,8 @@ MiniCalendar.propTypes = {
     hasCursors: PropTypes.bool,
     markers: PropTypes.object,
     date: PropTypes.instanceOf(Date).isRequired,
+    min: PropTypes.instanceOf(Date),
+    max: PropTypes.instanceOf(Date),
     dateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
     dateFnLocale: PropTypes.object.isRequired,
     nextMonth: PropTypes.string.isRequired,

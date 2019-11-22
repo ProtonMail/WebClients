@@ -17,7 +17,7 @@ const fromFormatted = (value, locale) => {
     return parse(value, 'p', new Date(), { locale });
 };
 
-const TimeInput = ({ onChange, value, interval = 30, ...rest }) => {
+const TimeInput = ({ onChange, value, interval = 30, min, max, ...rest }) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor();
     const [temporaryInput, setTemporaryInput] = useState(() => toFormatted(value, dateLocale));
@@ -79,6 +79,14 @@ const TimeInput = ({ onChange, value, interval = 30, ...rest }) => {
         });
     }, []);
 
+    const filteredOptions = useMemo(() => {
+        return options.filter(({ value }) => {
+            const minCondition = min ? value >= min : true;
+            const maxCondition = max ? value <= max : true;
+            return minCondition && maxCondition;
+        });
+    }, [options, min, max]);
+
     const matchingIndex = useMemo(() => {
         const idx = findLongestMatchingIndex(options.map(({ label }) => label), temporaryInput);
         return idx === -1 ? undefined : idx;
@@ -111,7 +119,7 @@ const TimeInput = ({ onChange, value, interval = 30, ...rest }) => {
             <Dropdown size="narrow" id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} autoClose={false}>
                 <div className="dropDown-content" onMouseDown={(e) => e.preventDefault()} ref={scrollRef}>
                     <ul className="unstyled mt0 mb0" ref={listRef}>
-                        {options.map(({ label, value: otherValue }, i) => {
+                        {filteredOptions.map(({ label, value: otherValue }, i) => {
                             const isSelected = label === temporaryInput;
                             return (
                                 <li className={classnames(['pt0-5 pb0-5 p1', isSelected && 'bold'])} key={i}>
@@ -135,6 +143,8 @@ const TimeInput = ({ onChange, value, interval = 30, ...rest }) => {
 
 TimeInput.propTypes = {
     value: PropTypes.instanceOf(Date).isRequired,
+    min: PropTypes.instanceOf(Date),
+    max: PropTypes.instanceOf(Date),
     onChange: PropTypes.func.isRequired,
     interval: PropTypes.number
 };

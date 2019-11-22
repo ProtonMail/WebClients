@@ -17,7 +17,7 @@ const fromFormatted = (value, locale) => {
     return parse(value, 'PP', new Date(), { locale });
 };
 
-const DateInput = ({ value, onChange, displayWeekNumbers, weekStartsOn, ...rest }) => {
+const DateInput = ({ value, onChange, displayWeekNumbers, weekStartsOn, min, max, ...rest }) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor();
 
@@ -110,6 +110,8 @@ const DateInput = ({ value, onChange, displayWeekNumbers, weekStartsOn, ...rest 
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} autoClose={false}>
                 <LocalizedMiniCalendar
                     date={actualValue}
+                    min={min}
+                    max={max}
                     onSelectDate={handleClickDate}
                     displayWeekNumbers={displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
@@ -127,6 +129,8 @@ DateInput.propTypes = {
     displayWeekNumbers: PropTypes.bool,
     weekStartsOn: PropTypes.number,
     value: PropTypes.instanceOf(Date).isRequired,
+    min: PropTypes.instanceOf(Date),
+    max: PropTypes.instanceOf(Date),
     onChange: PropTypes.func.isRequired
 };
 
