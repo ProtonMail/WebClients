@@ -36,37 +36,29 @@ function conversation(
          */
         const getDelta = (node, type) => {
             if (type === 'UP') {
+                const previous = (node.parentElement.previousElementSibling || {}).firstElementChild;
                 // First element
-                if (!node.previousElementSibling) {
-                    return 0;
+                if (previous.nodeName !== 'ARTICLE' || previous.parentElement.id === 'message0') {
+                    return (container.scrollTop = 0);
                 }
 
-                // If it's open add its size + the height of an item
-                const isOpen = node.previousElementSibling.classList.contains('open');
-                return isOpen ? node.previousElementSibling.offsetHeight + HEIGHT : HEIGHT;
+                return previous.scrollIntoView({
+                    block: 'start',
+                    behavior: 'smooth'
+                });
             }
 
-            // For the next one
-            const isOpen = node.nextElementSibling && node.nextElementSibling.classList.contains('open');
-            return isOpen ? node.nextElementSibling.offsetHeight + HEIGHT : HEIGHT;
+            const next = (node.parentElement.nextElementSibling || {}).firstElementChild;
+
+            return next.scrollIntoView({
+                block: 'start',
+                behavior: 'smooth'
+            });
         };
 
         return (index, max, type = 'UP') => {
             const $item = container.querySelector('.message.marked');
-            if ($item) {
-                const delta = getDelta($item, type);
-                if (index === 0) {
-                    return (container.scrollTop = 0);
-                }
-
-                if (type === 'UP') {
-                    container.scrollTop -= delta;
-                }
-
-                if (type === 'DOWN') {
-                    container.scrollTop = $item.offsetTop + delta - container.offsetHeight / 2;
-                }
-            }
+            $item && _rAF(() => getDelta($item, type));
         };
     };
 
