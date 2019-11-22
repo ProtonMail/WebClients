@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Select } from 'react-components';
 import { CYCLE, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
+import { isBlackFridayPeriod, isAfterBlackFriday } from 'proton-shared/lib/helpers/blackfriday';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
@@ -19,7 +20,7 @@ const CycleSelector = ({
     const { Cycle = DEFAULT_CYCLE } = subscription;
     const handleChange = ({ target }) => onSelect(+target.value);
 
-    if (Cycle === TWO_YEARS) {
+    if (Cycle === TWO_YEARS || isBlackFridayPeriod() || isAfterBlackFriday()) {
         options.push({ text: c('Billing cycle option').t`Two-year`, value: TWO_YEARS });
     }
 
