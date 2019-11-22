@@ -56,13 +56,7 @@ export const getState = ({
 export const getDateTimeState = (utcDate, tzid) => {
     return {
         // These should be local dates since the mini calendar and time input uses that.
-        date: new Date(
-            utcDate.getUTCFullYear(),
-            utcDate.getUTCMonth(),
-            utcDate.getUTCDate(),
-            utcDate.getUTCHours(),
-            utcDate.getUTCMinutes()
-        ),
+        date: new Date(utcDate.getUTCFullYear(), utcDate.getUTCMonth(), utcDate.getUTCDate(), 0, 0),
         time: new Date(2000, 0, 1, utcDate.getUTCHours(), utcDate.getUTCMinutes()),
         tzid
     };
@@ -169,6 +163,7 @@ export const getEmptyModel = ({
         calendarID,
         memberID: Member.ID,
         addressID,
+        defaultDuration: DefaultEventDuration,
         ...getStartAndEnd({
             defaultDuration: DefaultEventDuration,
             start,
