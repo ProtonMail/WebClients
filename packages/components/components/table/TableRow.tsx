@@ -1,9 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import TableCell from './TableCell';
 
-const TableRow = ({ cells = [], ...rest }) => {
+interface Props extends React.HTMLAttributes<HTMLTableRowElement> {
+    cells: React.ReactNode[];
+}
+
+const TableRow = ({ cells = [], ...rest }: Props) => {
     return (
         <tr {...rest}>
             {cells.map((cell, index) => (
@@ -11,10 +13,6 @@ const TableRow = ({ cells = [], ...rest }) => {
             ))}
         </tr>
     );
-};
-
-TableRow.propTypes = {
-    cells: PropTypes.arrayOf(PropTypes.node)
 };
 
 export default TableRow;

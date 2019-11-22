@@ -1,8 +1,14 @@
 import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers/component';
+
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+    loading?: boolean;
+    backgroundColor?: string;
+    borderColor?: string;
+    color?: string;
+    indeterminate?: boolean;
+}
 
 const Checkbox = ({
     id,
@@ -16,11 +22,13 @@ const Checkbox = ({
     borderColor,
     children,
     ...rest
-}) => {
-    const inputRef = useRef(null);
+}: Props) => {
+    const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        inputRef.current.indeterminate = indeterminate;
+        if (inputRef.current) {
+            inputRef.current.indeterminate = indeterminate;
+        }
     }, [indeterminate]);
 
     return (
@@ -43,19 +51,6 @@ const Checkbox = ({
             {children}
         </label>
     );
-};
-
-Checkbox.propTypes = {
-    loading: PropTypes.bool,
-    disabled: PropTypes.bool,
-    backgroundColor: PropTypes.string,
-    borderColor: PropTypes.string,
-    color: PropTypes.string,
-    id: PropTypes.string,
-    className: PropTypes.string,
-    checked: PropTypes.bool.isRequired,
-    indeterminate: PropTypes.bool,
-    children: PropTypes.node
 };
 
 export default Checkbox;

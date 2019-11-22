@@ -1,7 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const TableCell = ({ children, type = 'body', ...rest }) => {
+interface Props extends React.ThHTMLAttributes<HTMLTableHeaderCellElement> {
+    children: React.ReactNode;
+    type?: 'body' | 'header' | 'footer';
+}
+
+const TableCell = ({ children, type = 'body', ...rest }: Props) => {
     if (type === 'header' || type === 'footer') {
         return (
             <th scope="col" {...rest}>
@@ -11,11 +15,6 @@ const TableCell = ({ children, type = 'body', ...rest }) => {
     }
 
     return <td {...rest}>{children}</td>;
-};
-
-TableCell.propTypes = {
-    children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    type: PropTypes.string
 };
 
 export default TableCell;

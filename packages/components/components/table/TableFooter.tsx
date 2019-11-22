@@ -1,9 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import TableCell from './TableCell';
 
-const TableFooter = ({ cells = [], ...rest }) => {
+interface Props extends React.HTMLAttributes<HTMLTableSectionElement> {
+    cells: React.ReactNode[];
+}
+
+const TableFooter = ({ cells = [], ...rest }: Props) => {
     return (
         <tfoot {...rest}>
             <tr>
@@ -13,10 +15,6 @@ const TableFooter = ({ cells = [], ...rest }) => {
             </tr>
         </tfoot>
     );
-};
-
-TableFooter.propTypes = {
-    cells: PropTypes.arrayOf(PropTypes.node)
 };
 
 export default TableFooter;

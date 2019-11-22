@@ -1,9 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import TableCell from './TableCell';
 
-const TableHeader = ({ cells = [], children, ...rest }) => {
+interface Props {
+    cells?: React.ReactNode[];
+    children?: React.ReactNode;
+}
+
+const TableHeader = ({ cells = [], children, ...rest }: Props) => {
     return (
         <thead {...rest}>
             {children || (
@@ -17,11 +20,6 @@ const TableHeader = ({ cells = [], children, ...rest }) => {
             )}
         </thead>
     );
-};
-
-TableHeader.propTypes = {
-    cells: PropTypes.arrayOf(PropTypes.node),
-    children: PropTypes.node
 };
 
 export default TableHeader;
