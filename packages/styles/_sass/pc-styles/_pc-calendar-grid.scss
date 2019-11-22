@@ -167,6 +167,7 @@ $calendar-dayevent-cell-height: 24px !default; // careful when updating this (de
     opacity: .7;
 }
 
+
 $calendar-dayeventcell-hover-color: #F1F3F4 !default;
 .calendar-dayeventcell-inner {
     border-radius: 2px;
@@ -200,6 +201,10 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
         pointer-events: none;
         border: 1px solid #fff;
     }
+}
+
+.calendar-eventcell--isGrabbed {
+    cursor: grab;
 }
 
 @include respond-to($breakpoint-small) { 
