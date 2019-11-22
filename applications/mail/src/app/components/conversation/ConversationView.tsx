@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useLoading, Loader, useLabels } from 'react-components';
-import { orderBy } from 'proton-shared/lib/helpers/array';
+import React from 'react';
+import { Loader, useLabels } from 'react-components';
 
 import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
 import { ELEMENT_TYPES } from '../../constants';
 import NumMessages from './NumMessages';
 import ItemLabels from '../list/ItemLabels';
-import { useConversations } from '../../hooks/useConversations';
-import { Message } from '../../models/message';
+import { useConversation } from '../../hooks/useNewConversation';
 
 interface Props {
     conversationID: string;
@@ -16,31 +14,16 @@ interface Props {
     mailSettings: any;
 }
 
-const ConversationView = ({ conversationID, messageID, mailSettings }: Props) => {
-    const [conversation, updateConversation] = useState();
-    const [messages, updateMessages] = useState<Message[]>([]);
+const ConversationView = ({ conversationID, mailSettings }: Props) => {
     const [labels] = useLabels();
-    const [loading, withLoading] = useLoading();
-    const [initialExpand, setInitialExpand] = useState(null);
-    const { getConversation } = useConversations();
-
-    const requestConversation = async () => {
-        const { Conversation, Messages = [] } = await getConversation(conversationID, messageID);
-        const messages = orderBy(Messages, 'Order');
-        updateConversation(Conversation);
-        updateMessages(messages);
-        if (messages.length > 0) {
-            setInitialExpand(messages[messages.length - 1].ID);
-        }
-    };
-
-    useEffect(() => {
-        withLoading(requestConversation());
-    }, [conversationID, messageID]);
+    const [conversationData, loading] = useConversation(conversationID);
 
     if (loading) {
         return <Loader />;
     }
+
+    const { Conversation: conversation, Messages: messages = [] } = conversationData;
+    const initialExpand = messages.length > 0 ? messages[messages.length - 1].ID : null;
 
     if (!conversation) {
         return null;
