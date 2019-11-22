@@ -191,7 +191,8 @@
     "create:test": "appComponent --test",
     "cypress:open": "./tasks/lazyInstallVendor e2e && cypress open",
     "i18n:getlatest": "cross-env APP_KEY=Angular proton-i18n upgrade --limit-i18n 65",
-    "bundle": "cross-env NODE_ENV_DIST=bundle-only NODE_ENV=dist proton-bundler"
+    "bundle": "./node_modules/proton-bundler/scripts/createVersionJSON.sh && cross-env NODE_ENV=dev tasks/setupConfig.js",
+    "postbundle": "cross-env NODE_ENV_DIST=bundle-only NODE_ENV=dist proton-bundler"
   },
   "lint-staged": {
     "linters": {
