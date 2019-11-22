@@ -36,6 +36,20 @@ import {
 } from '../../helpers/notifications';
 import { generateCalendarKeyPayload, getKeysMemberMap } from 'proton-shared/lib/keys/calendarKeys';
 
+const validate = ({ name, description }) => {
+    const errors = {};
+
+    if (!name) {
+        errors.name = c('Error').t`Name required`;
+    }
+
+    if (!description) {
+        errors.description = c('Error').t`Description required`;
+    }
+
+    return errors;
+};
+
 const CalendarModal = ({ calendar, ...rest }) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -45,6 +59,7 @@ const CalendarModal = ({ calendar, ...rest }) => {
     const [loadingSetup, withLoading] = useLoading(true);
     const [loadingAction, withLoadingAction] = useLoading();
     const { createNotification } = useNotifications();
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const isEdit = !!calendar;
 
@@ -52,6 +67,7 @@ const CalendarModal = ({ calendar, ...rest }) => {
 
     const [model, setModel] = useState(() => ({
         name: '',
+        description: '',
         color: DEFAULT_CALENDAR.color,
         display: true,
         addressOptions: [],
@@ -175,16 +191,30 @@ const CalendarModal = ({ calendar, ...rest }) => {
         return calendar.ID;
     };
 
+    const formattedModel = {
+        ...model,
+        name: model.name.trim(),
+        description: model.description.trim()
+    };
+
+    const errors = validate(formattedModel);
+
     const handleSubmit = async () => {
+        setIsSubmitted(true);
+        if (Object.keys(errors).length > 0) {
+            return;
+        }
+
         const calendarPayload = {
-            Name: model.name,
-            Color: model.color,
-            Display: +model.display,
-            Description: model.description
+            Name: formattedModel.name,
+            Color: formattedModel.color,
+            Display: +formattedModel.display,
+            Description: formattedModel.description
         };
+
         const actualCalendarID = calendar
             ? await handleUpdateCalendar(calendarPayload)
-            : await handleCreateCalendar(model.addressID, calendarPayload);
+            : await handleCreateCalendar(formattedModel.addressID, calendarPayload);
 
         const {
             duration,
@@ -192,7 +222,7 @@ const CalendarModal = ({ calendar, ...rest }) => {
             partDayNotifications,
             _emailPartDayNotifications = [],
             _emailFullDayNotifications = []
-        } = model;
+        } = formattedModel;
 
         const calendarSettingsData = {
             DefaultEventDuration: +duration,
@@ -212,11 +242,19 @@ const CalendarModal = ({ calendar, ...rest }) => {
     const tabs = [
         {
             title: c('Header').t`Calendar settings`,
-            content: <CalendarSettingsTab model={model} setModel={setModel} onClose={rest.onClose} />
+            content: (
+                <CalendarSettingsTab
+                    isSubmitted={isSubmitted}
+                    errors={errors}
+                    model={model}
+                    setModel={setModel}
+                    onClose={rest.onClose}
+                />
+            )
         },
         {
             title: c('Header').t`Event settings`,
-            content: <EventSettingsTab model={model} setModel={setModel} />
+            content: <EventSettingsTab isSubmitted={isSubmitted} errors={errors} model={model} setModel={setModel} />
         }
     ];
 

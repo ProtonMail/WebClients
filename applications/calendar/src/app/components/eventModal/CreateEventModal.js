@@ -27,6 +27,20 @@ import useGetCalendarEventPersonal from '../../containers/calendar/useGetCalenda
 import createOrUpdateEvent from 'proton-shared/lib/calendar/integration/createOrUpdateEvent';
 import { deleteEvent } from 'proton-shared/lib/api/calendars';
 
+const validate = ({ dtstart, dtend, summary }) => {
+    const errors = {};
+
+    if (!summary.value) {
+        errors.title = c('Error').t`Title required`;
+    }
+
+    if (!validateDateTimeProperties(dtstart, dtend)) {
+        errors.end = c('Error').t`Start time must be before end time`;
+    }
+
+    return errors;
+};
+
 const CreateEventModal = ({
     start,
     end,
@@ -66,7 +80,6 @@ const CreateEventModal = ({
     const getEventRaw = useGetCalendarEventRaw();
     const getEventPersonal = useGetCalendarEventPersonal();
     const i18n = getI18N(model.type);
-    const [errors, setErrors] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     useEffect(() => {}, [model.memberID]);
@@ -119,23 +132,13 @@ const CreateEventModal = ({
         );
     }, []);
 
-    useEffect(() => {
-        if (errors.title) {
-            setErrors({});
-        }
-    }, [model.title]);
+    const veventComponent = modelToVeventComponent(model, tzid);
+    const errors = validate(veventComponent);
 
     const handleSubmit = async () => {
-        const veventComponent = modelToVeventComponent(model, tzid);
-
         setIsSubmitted(true);
-
-        if (!veventComponent.summary.value) {
-            return setErrors({ title: c('Error').t`Title required` });
-        }
-
-        if (!validateDateTimeProperties(veventComponent.dtstart, veventComponent.dtend)) {
-            return setErrors({ end: c('Error').t`Start time must be before end time` });
+        if (Object.keys(errors).length > 0) {
+            return;
         }
 
         const { calendarID, addressID, memberID } = model;

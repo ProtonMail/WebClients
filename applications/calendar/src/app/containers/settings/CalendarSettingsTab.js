@@ -4,7 +4,7 @@ import { Row, Label, Field, Select, Toggle, ColorPicker, Input, TextArea } from 
 import { c } from 'ttag';
 import { MAX_LENGTHS } from '../../constants';
 
-const CalendarSettingsTab = ({ model, setModel }) => {
+const CalendarSettingsTab = ({ isSubmitted, errors, model, setModel }) => {
     const addressText = useMemo(() => {
         const option = model.addressOptions.find(({ value: ID }) => ID === model.addressID);
         return (option && option.text) || '';
@@ -18,9 +18,11 @@ const CalendarSettingsTab = ({ model, setModel }) => {
                     <Input
                         id="calendar-name-input"
                         value={model.name}
+                        error={errors.name}
+                        isSubmitted={isSubmitted}
                         placeholder={c('Placeholder').t`Add a calendar name`}
-                        required
                         onChange={({ target }) => setModel({ ...model, name: target.value })}
+                        autoFocus={true}
                     />
                 </Field>
                 <div className="ml1">
@@ -64,6 +66,8 @@ const CalendarSettingsTab = ({ model, setModel }) => {
                         placeholder={c('Placeholder').t`Add a calendar description`}
                         onChange={({ target }) => setModel({ ...model, description: target.value })}
                         maxLength={MAX_LENGTHS.DESCRIPTION}
+                        error={errors.description}
+                        isSubmitted={isSubmitted}
                     />
                 </Field>
             </Row>
@@ -76,6 +80,8 @@ CalendarSettingsTab.propTypes = {
     addressesKeysMap: PropTypes.object,
     calendar: PropTypes.object,
     model: PropTypes.object,
+    errors: PropTypes.object,
+    isSubmitted: PropTypes.bool,
     setModel: PropTypes.func,
     onClose: PropTypes.func
 };
