@@ -1,14 +1,14 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { c } from 'ttag';
-import { Sidebar, MainAreaContext, useToggle, AppsSidebar } from 'react-components';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { Sidebar, AppsSidebar, useToggle } from 'react-components';
 import Header from './PrivateHeader';
 
 const getSidebar = () => {
     return [
         {
-            text: c('Link').t`Drive`,
-            link: '/drive'
+            text: c('Link').t`My files`,
+            link: '/drive',
+            icon: 'inbox'
         }
     ];
 };
@@ -18,20 +18,12 @@ const getMobileLinks = () => [
     { to: '/contacts', icon: 'protoncontacts', external: false, current: true }
 ];
 
-interface Props extends RouteComponentProps {
+interface Props {
     children: React.ReactNode;
 }
 
-const PrivateLayout = ({ children, location }: Props) => {
-    const mainAreaRef = useRef<HTMLElement>(null);
-    const { state: isHeaderExpanded, toggle: toggleHeaderExpanded, set: setHeaderExpanded } = useToggle();
-
-    useEffect(() => {
-        setHeaderExpanded(false);
-        if (mainAreaRef.current) {
-            mainAreaRef.current.scrollTop = 0;
-        }
-    }, [location.pathname]);
+const PrivateLayout = ({ children }: Props) => {
+    const { state: isHeaderExpanded, toggle: toggleHeaderExpanded } = useToggle();
 
     return (
         <div className="flex flex-nowrap no-scroll">
@@ -46,13 +38,11 @@ const PrivateLayout = ({ children, location }: Props) => {
                         list={getSidebar()}
                         mobileLinks={getMobileLinks()}
                     />
-                    <main ref={mainAreaRef} className="main flex-item-fluid">
-                        <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
-                    </main>
+                    <main className="main flex-item-fluid">{children}</main>
                 </div>
             </div>
         </div>
     );
 };
 
-export default withRouter(PrivateLayout);
+export default PrivateLayout;

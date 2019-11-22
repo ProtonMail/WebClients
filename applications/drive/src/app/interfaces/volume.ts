@@ -10,3 +10,11 @@ export interface CreateDriveVolume {
     FolderHashKey: string;
     VolumeMaxSpace: 1000000;
 }
+
+export interface CreatedDriveVolume {
+    ID: string;
+    Share: {
+        ID: string;
+        LinkID: string;
+    };
+}

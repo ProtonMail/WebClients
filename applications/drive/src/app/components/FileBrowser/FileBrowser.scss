@@ -1,0 +1,7 @@
+@import '~design-system/_sass/reusable-components/design-system-config';
+
+.filebrowser-row:hover,
+.filebrowser-row:focus {
+    background-color: $pm-global-light;
+    cursor: pointer;
+}

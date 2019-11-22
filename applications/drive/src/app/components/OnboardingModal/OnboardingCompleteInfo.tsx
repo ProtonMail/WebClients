@@ -5,7 +5,7 @@ import { c } from 'ttag';
 const OnboardingCompleteInfo = () => {
     const email = 'drive@protonmail.com';
     const emailLink = (
-        <a href={`mailto:${email}`} title={email}>
+        <a key="emailLink" href={`mailto:${email}`} title={email}>
             {email}
         </a>
     );
