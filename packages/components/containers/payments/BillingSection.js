@@ -78,7 +78,8 @@ const BillingSection = ({ permission }) => {
                     <div className="flex-autogrid onmobile-flex-column w100 mb1">
                         <div className="flex-autogrid-item">{c('Label').t`Credits`}</div>
                         <div className="flex-autogrid-item">
-                            <LinkButton onClick={handleOpenCreditsModal}>{c('Action').t`Add credits`}</LinkButton>
+                            <LinkButton className="p0" onClick={handleOpenCreditsModal}>{c('Action')
+                                .t`Add credits`}</LinkButton>
                         </div>
                         <div className="flex-autogrid-item bold alignright">{Credit / 100}</div>
                     </div>
@@ -91,7 +92,8 @@ const BillingSection = ({ permission }) => {
                             />
                         </div>
                         <div className="flex-autogrid-item">
-                            <LinkButton onClick={handleOpenGiftCodeModal}>{c('Action').t`Use gift code`}</LinkButton>
+                            <LinkButton className="p0" onClick={handleOpenGiftCodeModal}>{c('Action')
+                                .t`Use gift code`}</LinkButton>
                         </div>
                         <div className="flex-autogrid-item" />
                     </div>
@@ -316,7 +318,7 @@ const BillingSection = ({ permission }) => {
                         <div className="flex-autogrid-item">{c('Label').t`Billing cycle`}</div>
                         <div className="flex-autogrid-item">
                             {Cycle === MONTHLY ? (
-                                <LinkButton onClick={handleOpenSubscriptionModal}>{c('Action')
+                                <LinkButton className="p0" onClick={handleOpenSubscriptionModal}>{c('Action')
                                     .t`Pay annualy and save 20%!`}</LinkButton>
                             ) : null}
                         </div>
@@ -339,7 +341,8 @@ const BillingSection = ({ permission }) => {
                     <div className="flex-autogrid onmobile-flex-column w100 mb1">
                         <div className="flex-autogrid-item">{c('Label').t`Credits`}</div>
                         <div className="flex-autogrid-item">
-                            <LinkButton onClick={handleOpenCreditsModal}>{c('Action').t`Add credits`}</LinkButton>
+                            <LinkButton className="p0" onClick={handleOpenCreditsModal}>{c('Action')
+                                .t`Add credits`}</LinkButton>
                         </div>
                         <div className="flex-autogrid-item bold alignright">{Credit / 100}</div>
                     </div>
@@ -352,7 +355,8 @@ const BillingSection = ({ permission }) => {
                             />
                         </div>
                         <div className="flex-autogrid-item">
-                            <LinkButton onClick={handleOpenGiftCodeModal}>{c('Action').t`Use gift code`}</LinkButton>
+                            <LinkButton className="p0" onClick={handleOpenGiftCodeModal}>{c('Action')
+                                .t`Use gift code`}</LinkButton>
                         </div>
                         <div className="flex-autogrid-item" />
                     </div>
