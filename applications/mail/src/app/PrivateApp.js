@@ -14,7 +14,9 @@ import {
 } from 'proton-shared/lib/models';
 
 import locales from './locales';
-import PrivateAppRoutes from './PrivateAppRoutes';
+import { Route } from 'react-router-dom';
+import PageContainer from './containers/PageContainer';
+import MessageProvider from './containers/MessageProvider';
 
 const PrivateApp = ({ onLogout }) => {
     return (
@@ -34,7 +36,9 @@ const PrivateApp = ({ onLogout }) => {
                 OrganizationModel
             ]}
         >
-            <PrivateAppRoutes />
+            <MessageProvider>
+                <Route path="/:labelID/:elementID?" component={PageContainer} />
+            </MessageProvider>
         </StandardPrivateApp>
     );
 };

@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useToggle, Loader, classnames } from 'react-components';
 
-import { useComputeMessage } from '../../hooks/useComputeMessage';
 import { hasAttachments } from '../../helpers/message';
 import { Label } from '../../models/label';
 
@@ -9,7 +8,8 @@ import MessageBody from './MessageBody';
 import HeaderCollapsed from './header/HeaderCollapsed';
 import HeaderExpanded from './header/HeaderExpanded';
 import MessageFooter from './MessageFooter';
-import { Message, MessageExtended } from '../../models/message';
+import { Message } from '../../models/message';
+import { useMessage } from '../../hooks/useNewMessage';
 
 interface Props {
     labels: Label[];
@@ -27,15 +27,13 @@ const MessageView = ({
     conversationIndex = 0
 }: Props) => {
     const { state: expanded, set: setExpanded } = useToggle(initialExpand);
-    const [loaded, setLoaded] = useState(false);
-    const [message, setMessage] = useState({ data: inputMessage } as MessageExtended);
     const elementRef = useRef<HTMLElement>(null);
+    const [message, { initialize, loadRemoteImages, loadEmbeddedImages }] = useMessage(inputMessage, mailSettings);
 
-    const { initialize, loadRemoteImages, loadEmbeddedImages } = useComputeMessage(mailSettings);
+    const loaded = !!message.initialized;
 
     const prepareMessage = async () => {
-        setMessage(await initialize(message));
-        setLoaded(true);
+        await initialize();
         // Don't scroll if it's the first message of the conversation and only on the first automatic expand
         if (conversationIndex !== 0 && initialExpand) {
             elementRef.current && elementRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -46,14 +44,14 @@ const MessageView = ({
         if (!loaded && expanded) {
             prepareMessage();
         }
-    }, [expanded]);
+    }, [loaded, expanded]);
 
     const handleLoadRemoteImages = async () => {
-        setMessage(await loadRemoteImages(message));
+        await loadRemoteImages();
     };
 
     const handleLoadEmbeddedImages = async () => {
-        setMessage(await loadEmbeddedImages(message));
+        await loadEmbeddedImages();
     };
 
     const handleExpand = (value: boolean) => () => {

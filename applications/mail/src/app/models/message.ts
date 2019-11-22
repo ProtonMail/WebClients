@@ -37,13 +37,14 @@ export interface Message {
 }
 
 export interface MessageExtended {
-    data?: Message;
+    data: Message;
     raw?: string;
     document?: HTMLElement;
     content?: string;
     verified?: number;
     publicKeys?: any[];
     privateKeys?: any[];
+    initialized?: boolean;
     showRemoteImages?: boolean;
     showEmbeddedImages?: boolean;
     numEmbedded?: number;
