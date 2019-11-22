@@ -313,7 +313,17 @@ const BillingSection = ({ permission }) => {
                 </div>
                 <div className="bg-global-light pt1 pl1 pr1">
                     <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                        <div className="flex-autogrid-item">{c('Label').t`Subscription renewal date`}</div>
+                        <div className="flex-autogrid-item">{c('Label').t`Billing cycle`}</div>
+                        <div className="flex-autogrid-item">
+                            {Cycle === MONTHLY ? (
+                                <LinkButton onClick={handleOpenSubscriptionModal}>{c('Action')
+                                    .t`Pay annualy and save 20%!`}</LinkButton>
+                            ) : null}
+                        </div>
+                        <div className="flex-autogrid-item bold alignright">{i18n[Cycle]}</div>
+                    </div>
+                    <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                        <div className="flex-autogrid-item">{c('Label').t`Renewal date`}</div>
                         <div className="flex-autogrid-item" />
                         <div className="flex-autogrid-item bold alignright">
                             <Time>{PeriodEnd}</Time>
@@ -332,16 +342,6 @@ const BillingSection = ({ permission }) => {
                             <LinkButton onClick={handleOpenCreditsModal}>{c('Action').t`Add credits`}</LinkButton>
                         </div>
                         <div className="flex-autogrid-item bold alignright">{Credit / 100}</div>
-                    </div>
-                    <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                        <div className="flex-autogrid-item">{c('Label').t`Billing cycle`}</div>
-                        <div className="flex-autogrid-item">
-                            {Cycle === MONTHLY ? (
-                                <LinkButton onClick={handleOpenSubscriptionModal}>{c('Action')
-                                    .t`Pay annualy and save 20%!`}</LinkButton>
-                            ) : null}
-                        </div>
-                        <div className="flex-autogrid-item bold alignright">{i18n[Cycle]}</div>
                     </div>
                     <div className="flex-autogrid onmobile-flex-column w100">
                         <div className="flex-autogrid-item">
