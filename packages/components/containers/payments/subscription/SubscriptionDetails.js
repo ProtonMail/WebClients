@@ -7,7 +7,7 @@ import { PLAN_SERVICES, COUPON_CODES, BLACK_FRIDAY, CYCLE } from 'proton-shared/
 import { getSubTotal, getPlan } from './helpers';
 import PlanPrice from './PlanPrice';
 import CycleDiscountBadge from '../CycleDiscountBadge';
-import CouponDiscountBadge from '../CouponDiscountBadge';
+import DiscountBadge from '../DiscountBadge';
 import CouponForm from './CouponForm';
 
 const { BUNDLE } = COUPON_CODES;
@@ -107,7 +107,7 @@ const SubscriptionDetails = ({ model, plans, check, onChange }) => {
                                     c('Label').t`Cycle discount +`}{' '}
                                 {c('Label').t`Coupon`} <code className="bold">{model.coupon}</code>
                             </span>
-                            <CouponDiscountBadge code={model.coupon} cycle={model.cycle} />
+                            <DiscountBadge code={model.coupon} cycle={model.cycle} />
                             {canRemoveCoupon ? (
                                 <SmallButton className="pm-button--link" onClick={handleRemoveCoupon}>{c('Action')
                                     .t`Remove coupon`}</SmallButton>

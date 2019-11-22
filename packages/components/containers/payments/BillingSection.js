@@ -1,27 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { c } from 'ttag';
-import { PLAN_NAMES, CYCLE } from 'proton-shared/lib/constants';
+import { c, msgid } from 'ttag';
+import { PLAN_NAMES, CYCLE, LOYAL_BONUS_STORAGE, LOYAL_BONUS_CONNECTION } from 'proton-shared/lib/constants';
+import { isLoyal } from 'proton-shared/lib/helpers/organization';
 import {
-    Button,
     Alert,
     SubTitle,
     Price,
     Loader,
     MozillaInfoPanel,
-    SmallButton,
+    LinkButton,
     Time,
+    Info,
     useUser,
     useSubscription,
-    useModals
+    useOrganization,
+    useModals,
+    usePlans
 } from 'react-components';
+import { getMonthlyBaseAmount, hasVisionary } from 'proton-shared/lib/helpers/subscription';
 
-import { formatPlans } from './subscription/helpers';
-import CycleDiscountBadge from './CycleDiscountBadge';
-import CouponDiscountBadge from './CouponDiscountBadge';
+import { formatPlans, toPlanNames } from './subscription/helpers';
+import DiscountBadge from './DiscountBadge';
 import GiftCodeModal from './GiftCodeModal';
 import CreditsModal from './CreditsModal';
 import PlanPrice from './subscription/PlanPrice';
+import SubscriptionModal from './subscription/SubscriptionModal';
+import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
@@ -46,52 +51,56 @@ const getSubTotal = (plans = []) => {
 
 const BillingSection = ({ permission }) => {
     const i18n = getCyclesI18N();
-
     const { createModal } = useModals();
+    const [{ hasPaidMail, hasPaidVpn, Credit }] = useUser();
+    const [plans, loadingPlans] = usePlans();
+    const [subscription, loadingSubscription] = useSubscription();
+    const [organization, loadingOrganization] = useOrganization();
     const handleOpenGiftCodeModal = () => createModal(<GiftCodeModal />);
     const handleOpenCreditsModal = () => createModal(<CreditsModal />);
-    const [{ hasPaidMail, hasPaidVpn, Credit }] = useUser();
-    const [
-        { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd, isManagedByMozilla } = {},
-        loadingSubscription
-    ] = useSubscription();
+    const handleOpenSubscriptionModal = () =>
+        createModal(
+            <SubscriptionModal
+                subscription={subscription}
+                plansMap={toPlanNames(subscription.Plans)}
+                coupon={subscription.CouponCode}
+                currency={subscription.Currency}
+                cycle={YEARLY}
+            />
+        );
 
     if (!permission) {
         return (
             <>
                 <SubTitle>{c('Title').t`Billing details`}</SubTitle>
                 <Alert>{c('Info').t`There are no billing details available for your current subscription.`}</Alert>
-                {Credit ? (
-                    <div className="shadow-container mb1">
-                        <div className="p1 bg-global-light">
-                            <div className="flex-autogrid onmobile-flex-column w100">
-                                <div className="flex-autogrid-item pb0">{c('Label').t`Credits`}</div>
-                                <div className="flex-autogrid-item pb0" />
-                                <div className="flex-autogrid-item pb0 bold">{Credit / 100}</div>
-                                <div className="flex-autogrid-item pb0 alignright">
-                                    <SmallButton onClick={handleOpenCreditsModal}>{c('Action')
-                                        .t`Add credits`}</SmallButton>
-                                </div>
-                            </div>
+                <div className="shadow-container mb1">
+                    <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                        <div className="flex-autogrid-item">{c('Label').t`Credits`}</div>
+                        <div className="flex-autogrid-item">
+                            <LinkButton onClick={handleOpenCreditsModal}>{c('Action').t`Add credits`}</LinkButton>
                         </div>
+                        <div className="flex-autogrid-item bold alignright">{Credit / 100}</div>
                     </div>
-                ) : null}
-                <Button onClick={handleOpenGiftCodeModal} className="mr1">{c('Action').t`Use gift code`}</Button>
-                {Credit ? null : <Button onClick={handleOpenCreditsModal}>{c('Action').t`Add credits`}</Button>}
+                    <div className="flex-autogrid onmobile-flex-column w100">
+                        <div className="flex-autogrid-item">
+                            {c('Label').t`Gift code`}{' '}
+                            <Info
+                                title={c('Info')
+                                    .t`If you purchased a gift code or received one from our support team, you can enter it here.`}
+                            />
+                        </div>
+                        <div className="flex-autogrid-item">
+                            <LinkButton onClick={handleOpenGiftCodeModal}>{c('Action').t`Use gift code`}</LinkButton>
+                        </div>
+                        <div className="flex-autogrid-item" />
+                    </div>
+                </div>
             </>
         );
     }
 
-    if (isManagedByMozilla) {
-        return (
-            <>
-                <SubTitle>{c('Title').t`Billing details`}</SubTitle>
-                <MozillaInfoPanel />
-            </>
-        );
-    }
-
-    if (loadingSubscription) {
+    if (loadingSubscription || loadingPlans || loadingOrganization) {
         return (
             <>
                 <SubTitle>{c('Title').t`Billing details`}</SubTitle>
@@ -100,179 +109,250 @@ const BillingSection = ({ permission }) => {
         );
     }
 
+    if (subscription.ManagedByMozilla) {
+        return (
+            <>
+                <SubTitle>{c('Title').t`Billing details`}</SubTitle>
+                <MozillaInfoPanel />
+            </>
+        );
+    }
+
+    const { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd } = subscription;
     const { mailPlan, vpnPlan, addressAddon, domainAddon, memberAddon, vpnAddon, spaceAddon } = formatPlans(Plans);
     const subTotal = getSubTotal(Plans);
+    const discount = Amount - subTotal;
+    const loyal = isLoyal(organization);
 
     return (
         <>
             <SubTitle>{c('Title').t`Billing details`}</SubTitle>
+            <Alert>{c('Info').t`We always use credits before charging your saved payment method.`}</Alert>
             <div className="shadow-container">
-                <div className="p1">
-                    {hasPaidMail && mailPlan ? (
+                {hasPaidMail ? (
+                    <div className="border-bottom pt1 pl1 pr1">
+                        {mailPlan ? (
+                            <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                                <div className="flex-autogrid-item">{c('Label').t`ProtonMail plan`}</div>
+                                <div className="flex-autogrid-item bold">{PLAN_NAMES[mailPlan.Name]}</div>
+                                <div className="flex-autogrid-item bold alignright">
+                                    <PlanPrice
+                                        amount={getMonthlyBaseAmount(mailPlan.Name, plans, subscription)}
+                                        currency={Currency}
+                                        cycle={MONTHLY}
+                                    />
+                                </div>
+                            </div>
+                        ) : null}
+                        {memberAddon ? (
+                            <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                                <div className="flex-autogrid-item">{c('Label').t`Extra users`}</div>
+                                <div className="flex-autogrid-item bold">
+                                    +
+                                    {c('Addon unit for subscription').ngettext(
+                                        msgid`${memberAddon.MaxMembers} user`,
+                                        `${memberAddon.MaxMembers} users`,
+                                        memberAddon.MaxMembers
+                                    )}
+                                </div>
+                                <div className="flex-autogrid-item bold alignright">
+                                    <PlanPrice
+                                        amount={getMonthlyBaseAmount(memberAddon.Name, plans, subscription)}
+                                        currency={Currency}
+                                        cycle={MONTHLY}
+                                    />
+                                </div>
+                            </div>
+                        ) : null}
+                        {addressAddon ? (
+                            <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                                <div className="flex-autogrid-item">{c('Label').t`Extra email addresses`}</div>
+                                <div className="flex-autogrid-item bold">
+                                    +
+                                    {c('Addon unit for subscription').ngettext(
+                                        msgid`${addressAddon.MaxAddresses} address`,
+                                        `${addressAddon.MaxAddresses} addresses`,
+                                        addressAddon.MaxAddresses
+                                    )}
+                                </div>
+                                <div className="flex-autogrid-item bold alignright">
+                                    <PlanPrice
+                                        amount={getMonthlyBaseAmount(addressAddon.Name, plans, subscription)}
+                                        currency={Currency}
+                                        cycle={MONTHLY}
+                                    />
+                                </div>
+                            </div>
+                        ) : null}
+                        {spaceAddon ? (
+                            <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                                <div className="flex-autogrid-item">{c('Label').t`Extra storage`}</div>
+                                <div className="flex-autogrid-item bold">+{humanSize(spaceAddon.MaxSpace)}</div>
+                                <div className="flex-autogrid-item bold alignright">
+                                    <PlanPrice
+                                        amount={getMonthlyBaseAmount(spaceAddon.Name, plans, subscription)}
+                                        currency={Currency}
+                                        cycle={MONTHLY}
+                                    />
+                                </div>
+                            </div>
+                        ) : null}
+                        {loyal ? (
+                            <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                                <div className="flex-autogrid-item">{c('Label').t`Bonus storage`}</div>
+                                <div className="flex-autogrid-item bold">+{humanSize(LOYAL_BONUS_STORAGE)}</div>
+                                <div className="flex-autogrid-item bold alignright">
+                                    <PlanPrice amount={0} currency={Currency} cycle={MONTHLY} />
+                                </div>
+                            </div>
+                        ) : null}
+                        {domainAddon ? (
+                            <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                                <div className="flex-autogrid-item">{c('Label').t`Extra domains`}</div>
+                                <div className="flex-autogrid-item bold">
+                                    +
+                                    {c('Addon unit for subscription').ngettext(
+                                        msgid`${domainAddon.MaxDomains} domain`,
+                                        `${domainAddon.MaxDomains} domains`,
+                                        domainAddon.MaxDomains
+                                    )}
+                                </div>
+                                <div className="flex-autogrid-item bold alignright">
+                                    <PlanPrice
+                                        amount={getMonthlyBaseAmount(domainAddon.Name, plans, subscription)}
+                                        currency={Currency}
+                                        cycle={MONTHLY}
+                                    />
+                                </div>
+                            </div>
+                        ) : null}
+                    </div>
+                ) : null}
+                {hasPaidVpn && !hasVisionary(subscription) ? (
+                    <div className="border-bottom pt1 pl1 pr1">
+                        {vpnPlan ? (
+                            <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                                <div className="flex-autogrid-item">{c('Label').t`ProtonVPN plan`}</div>
+                                <div className="flex-autogrid-item bold">{PLAN_NAMES[vpnPlan.Name]}</div>
+                                <div className="flex-autogrid-item bold alignright">
+                                    <PlanPrice
+                                        amount={getMonthlyBaseAmount(vpnPlan.Name, plans, subscription)}
+                                        currency={Currency}
+                                        cycle={MONTHLY}
+                                    />
+                                </div>
+                            </div>
+                        ) : null}
+                        {vpnAddon ? (
+                            <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                                <div className="flex-autogrid-item">{c('Label').t`Extra connections`}</div>
+                                <div className="flex-autogrid-item bold">
+                                    +
+                                    {c('Addon unit for subscription').ngettext(
+                                        msgid`${vpnAddon.MaxVPN} connection`,
+                                        `${vpnAddon.MaxVPN} connections`,
+                                        vpnAddon.MaxVPN
+                                    )}
+                                </div>
+                                <div className="flex-autogrid-item bold alignright">
+                                    <PlanPrice
+                                        amount={getMonthlyBaseAmount(vpnAddon.Name, plans, subscription)}
+                                        currency={Currency}
+                                        cycle={MONTHLY}
+                                    />
+                                </div>
+                            </div>
+                        ) : null}
+                        {loyal ? (
+                            <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                                <div className="flex-autogrid-item">{c('Label').t`Bonus connections`}</div>
+                                <div className="flex-autogrid-item bold">
+                                    +
+                                    {c('Addon unit for subscription').ngettext(
+                                        msgid`${LOYAL_BONUS_CONNECTION} connection`,
+                                        `${LOYAL_BONUS_CONNECTION} connections`,
+                                        LOYAL_BONUS_CONNECTION
+                                    )}
+                                </div>
+                                <div className="flex-autogrid-item bold alignright">
+                                    <PlanPrice amount={0} currency={Currency} cycle={MONTHLY} />
+                                </div>
+                            </div>
+                        ) : null}
+                    </div>
+                ) : null}
+                {CouponCode || [YEARLY, TWO_YEARS].includes(Cycle) ? (
+                    <div className="border-bottom pt1 pl1 pr1">
                         <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                            <div className="flex-autogrid-item">{c('Label').t`ProtonMail plan`}</div>
-                            <div className="flex-autogrid-item bold">{PLAN_NAMES[mailPlan.Name]}</div>
-                            <div className="flex-autogrid-item bold">
-                                <PlanPrice
-                                    amount={mailPlan.Amount}
-                                    currency={mailPlan.Currency}
-                                    cycle={mailPlan.Cycle}
-                                />
-                            </div>
-                            <div className="flex-autogrid-item alignright">
-                                <CycleDiscountBadge cycle={Cycle} />
-                            </div>
-                        </div>
-                    ) : null}
-                    {memberAddon ? (
-                        <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                            <div className="flex-autogrid-item">{c('Label').t`Extra users`}</div>
-                            <div className="flex-autogrid-item bold">+{memberAddon.MaxMembers}</div>
-                            <div className="flex-autogrid-item bold">
-                                <PlanPrice
-                                    amount={memberAddon.Amount}
-                                    currency={memberAddon.Currency}
-                                    cycle={memberAddon.Cycle}
-                                />
-                            </div>
-                            <div className="flex-autogrid-item alignright">
-                                <CycleDiscountBadge cycle={Cycle} />
-                            </div>
-                        </div>
-                    ) : null}
-                    {addressAddon ? (
-                        <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                            <div className="flex-autogrid-item">{c('Label').t`Extra email addresses`}</div>
-                            <div className="flex-autogrid-item bold">+{addressAddon.MaxAddresses}</div>
-                            <div className="flex-autogrid-item bold">
-                                <PlanPrice
-                                    amount={addressAddon.Amount}
-                                    currency={addressAddon.Currency}
-                                    cycle={addressAddon.Cycle}
-                                />
-                            </div>
-                            <div className="flex-autogrid-item alignright">
-                                <CycleDiscountBadge cycle={Cycle} />
-                            </div>
-                        </div>
-                    ) : null}
-                    {spaceAddon ? (
-                        <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                            <div className="flex-autogrid-item">{c('Label').t`Extra storage`}</div>
-                            <div className="flex-autogrid-item bold">+{spaceAddon.MaxSpace}</div>
-                            <div className="flex-autogrid-item bold">
-                                <PlanPrice
-                                    amount={spaceAddon.Amount}
-                                    currency={spaceAddon.Currency}
-                                    cycle={spaceAddon.Cycle}
-                                />
-                            </div>
-                            <div className="flex-autogrid-item alignright">
-                                <CycleDiscountBadge cycle={Cycle} />
-                            </div>
-                        </div>
-                    ) : null}
-                    {domainAddon ? (
-                        <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                            <div className="flex-autogrid-item">{c('Label').t`Extra domains`}</div>
-                            <div className="flex-autogrid-item bold">+{domainAddon.MaxDomains}</div>
-                            <div className="flex-autogrid-item bold">
-                                <PlanPrice
-                                    amount={domainAddon.Amount}
-                                    currency={domainAddon.Currency}
-                                    cycle={domainAddon.Cycle}
-                                />
-                            </div>
-                            <div className="flex-autogrid-item alignright">
-                                <CycleDiscountBadge cycle={Cycle} />
-                            </div>
-                        </div>
-                    ) : null}
-                    {hasPaidVpn && vpnPlan ? (
-                        <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                            <div className="flex-autogrid-item">{c('Label').t`ProtonVPN plan`}</div>
-                            <div className="flex-autogrid-item bold">{PLAN_NAMES[vpnPlan.Name]}</div>
-                            <div className="flex-autogrid-item bold">
-                                <PlanPrice amount={vpnPlan.Amount} currency={vpnPlan.Currency} cycle={vpnPlan.Cycle} />
-                            </div>
-                            <div className="flex-autogrid-item alignright">
-                                <CycleDiscountBadge cycle={Cycle} />
-                            </div>
-                        </div>
-                    ) : null}
-                    {vpnAddon ? (
-                        <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                            <div className="flex-autogrid-item">{c('Label').t`Extra VPN connections`}</div>
-                            <div className="flex-autogrid-item bold">+{vpnAddon.MaxVPN}</div>
-                            <div className="flex-autogrid-item bold">
-                                <PlanPrice
-                                    amount={vpnAddon.Amount}
-                                    currency={vpnAddon.Currency}
-                                    cycle={vpnAddon.Cycle}
-                                />
-                            </div>
-                            <div className="flex-autogrid-item alignright">
-                                <CycleDiscountBadge cycle={Cycle} />
-                            </div>
-                        </div>
-                    ) : null}
-                    {CouponCode ? (
-                        <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                            <div className="flex-autogrid-item">{c('Label').t`Sub-total`}</div>
+                            <div className="flex-autogrid-item h4 mb0">{c('Label').t`Sub-total`}</div>
                             <div className="flex-autogrid-item" />
-                            <div className="flex-autogrid-item bold">
-                                <PlanPrice amount={subTotal} currency={Currency} cycle={Cycle} />
+                            <div className="flex-autogrid-item h4 mb0 bold alignright">
+                                <PlanPrice amount={subTotal} currency={Currency} cycle={MONTHLY} />
                             </div>
-                            <div className="flex-autogrid-item" />
                         </div>
-                    ) : null}
-                    {CouponCode ? (
                         <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                            <div className="flex-autogrid-item">{c('Label').t`Coupon`}</div>
+                            <div className="flex-autogrid-item">{c('Label').t`Discount`}</div>
                             <div className="flex-autogrid-item">
-                                <strong>{CouponCode}</strong> <CouponDiscountBadge code={CouponCode} />
+                                {CouponCode ? <code className="bold mr1">{CouponCode}</code> : null}
+                                <DiscountBadge code={CouponCode} cycle={Cycle} />
                             </div>
-                            <div className="flex-autogrid-item bold">
-                                <PlanPrice amount={Amount - subTotal} currency={Currency} cycle={Cycle} />
+                            <div className="flex-autogrid-item bold alignright">
+                                <PlanPrice amount={discount} currency={Currency} cycle={MONTHLY} />
                             </div>
-                            <div className="flex-autogrid-item" />
                         </div>
-                    ) : null}
-                    {Cycle !== MONTHLY ? (
-                        <div className="flex-autogrid onmobile-flex-column w100 mb1">
-                            <div className="flex-autogrid-item">{c('Label').t`Total`}</div>
-                            <div className="flex-autogrid-item" />
-                            <div className="flex-autogrid-item bold">
-                                <PlanPrice amount={Amount} currency={Currency} cycle={Cycle} />
-                            </div>
-                            <div className="flex-autogrid-item" />
+                    </div>
+                ) : null}
+                <div className="pt1 pl1 pr1">
+                    <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                        <div className="flex-autogrid-item h4 mb0">{c('Label').t`Total`}</div>
+                        <div className="flex-autogrid-item" />
+                        <div className="flex-autogrid-item h4 mb0 bold alignright">
+                            <PlanPrice amount={Amount} currency={Currency} cycle={Cycle} />
                         </div>
-                    ) : null}
+                    </div>
                 </div>
-                <div className="p1 bg-global-light">
+                <div className="bg-global-light pt1 pl1 pr1">
+                    <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                        <div className="flex-autogrid-item">{c('Label').t`Subscription renewal date`}</div>
+                        <div className="flex-autogrid-item" />
+                        <div className="flex-autogrid-item bold alignright">
+                            <Time>{PeriodEnd}</Time>
+                        </div>
+                    </div>
                     <div className="flex-autogrid onmobile-flex-column w100 mb1">
                         <div className="flex-autogrid-item">{c('Label').t`Amount due`}</div>
-                        <div className="flex-autogrid-item bold">{i18n[Cycle]}</div>
-                        <div className="flex-autogrid-item bold">
+                        <div className="flex-autogrid-item" />
+                        <div className="flex-autogrid-item bold alignright">
                             <Price currency={Currency}>{Amount}</Price>
-                        </div>
-                        <div className="flex-autogrid-item alignright">
-                            <SmallButton onClick={handleOpenGiftCodeModal}>{c('Action').t`Use gift code`}</SmallButton>
                         </div>
                     </div>
                     <div className="flex-autogrid onmobile-flex-column w100 mb1">
                         <div className="flex-autogrid-item">{c('Label').t`Credits`}</div>
-                        <div className="flex-autogrid-item" />
-                        <div className="flex-autogrid-item bold">{Credit / 100}</div>
-                        <div className="flex-autogrid-item alignright">
-                            <SmallButton onClick={handleOpenCreditsModal}>{c('Action').t`Add credits`}</SmallButton>
+                        <div className="flex-autogrid-item">
+                            <LinkButton onClick={handleOpenCreditsModal}>{c('Action').t`Add credits`}</LinkButton>
                         </div>
+                        <div className="flex-autogrid-item bold alignright">{Credit / 100}</div>
+                    </div>
+                    <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                        <div className="flex-autogrid-item">{c('Label').t`Billing cycle`}</div>
+                        <div className="flex-autogrid-item">
+                            {Cycle === MONTHLY ? (
+                                <LinkButton onClick={handleOpenSubscriptionModal}>{c('Action')
+                                    .t`Pay annualy and save 20%!`}</LinkButton>
+                            ) : null}
+                        </div>
+                        <div className="flex-autogrid-item bold alignright">{i18n[Cycle]}</div>
                     </div>
                     <div className="flex-autogrid onmobile-flex-column w100">
-                        <div className="flex-autogrid-item">{c('Label').t`Billing cycle end date`}</div>
-                        <div className="flex-autogrid-item" />
-                        <div className="flex-autogrid-item bold">
-                            <Time>{PeriodEnd}</Time>
+                        <div className="flex-autogrid-item">
+                            {c('Label').t`Gift code`}{' '}
+                            <Info
+                                title={c('Info')
+                                    .t`If you purchased a gift code or received one from our support team, you can enter it here.`}
+                            />
+                        </div>
+                        <div className="flex-autogrid-item">
+                            <LinkButton onClick={handleOpenGiftCodeModal}>{c('Action').t`Use gift code`}</LinkButton>
                         </div>
                         <div className="flex-autogrid-item" />
                     </div>

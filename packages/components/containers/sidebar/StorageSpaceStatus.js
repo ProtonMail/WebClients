@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { CircularProgress, Dropdown, Icon, generateUID, useUser, usePopperAnchor } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+
 import { classnames } from '../../helpers/component';
 
 const StorageSpaceStatus = ({ children }) => {
@@ -26,8 +27,8 @@ const StorageSpaceStatus = ({ children }) => {
             <button type="button" aria-describedby={uid} onClick={toggle} ref={anchorRef}>
                 <CircularProgress progress={usedPercent} className={color}>
                     <g className="circle-chart__info">
-                        <rect x="17" y="14" width="1.55" height="9.1" className="circle-chart__percent fill-white"/>
-                        <rect x="17" y="11" width="1.55" height="1.53" className="circle-chart__percent fill-white"/>
+                        <rect x="17" y="14" width="1.55" height="9.1" className="circle-chart__percent fill-white" />
+                        <rect x="17" y="11" width="1.55" height="1.53" className="circle-chart__percent fill-white" />
                     </g>
                 </CircularProgress>
                 <span className="smallest mt0 mb0-5 mlauto mrauto lh100 circle-chart-info opacity-40 bl">

@@ -4,9 +4,11 @@ import { c } from 'ttag';
 import { Badge } from 'react-components';
 import { COUPON_CODES, BLACK_FRIDAY, CYCLE } from 'proton-shared/lib/constants';
 
+import CycleDiscountBadge from './CycleDiscountBadge';
+
 const { BUNDLE, PMTEAM } = COUPON_CODES;
 
-const CouponDiscountBadge = ({ code, cycle }) => {
+const DiscountBadge = ({ code, cycle }) => {
     if (code === BUNDLE) {
         if (cycle === CYCLE.YEARLY) {
             return (
@@ -52,12 +54,12 @@ const CouponDiscountBadge = ({ code, cycle }) => {
         return <Badge type="success">-100%</Badge>;
     }
 
-    return null;
+    return <CycleDiscountBadge cycle={cycle} />;
 };
 
-CouponDiscountBadge.propTypes = {
+DiscountBadge.propTypes = {
     code: PropTypes.string,
     cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS])
 };
 
-export default CouponDiscountBadge;
+export default DiscountBadge;

@@ -19,7 +19,7 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { isBundleEligible } from 'proton-shared/lib/helpers/subscription';
 
 import { formatPlans, toPlanNames } from './helpers';
-import CouponDiscountBadge from '../CouponDiscountBadge';
+import DiscountBadge from '../DiscountBadge';
 import SubscriptionModal from './SubscriptionModal';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
@@ -252,7 +252,7 @@ const SubscriptionSection = ({ permission }) => {
                                 <strong>{CouponCode}</strong>
                             </div>
                             <div className="flex-autogrid-item color-global-success">
-                                <CouponDiscountBadge code={CouponCode} />
+                                <DiscountBadge code={CouponCode} cycle={Cycle} />
                             </div>
                             <div className="flex-autogrid-item alignright">
                                 {canRemoveCoupon ? (
