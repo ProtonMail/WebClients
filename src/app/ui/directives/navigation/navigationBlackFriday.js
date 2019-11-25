@@ -1,7 +1,7 @@
 import { getEventName } from '../../../blackFriday/helpers/blackFridayHelper';
 
 /* @ngInject */
-function navigationBlackFriday($stateParams, blackFridayModalOpener, $cookies, dispatchers) {
+function navigationBlackFriday($stateParams, blackFridayModalOpener, $cookies, dispatchers, blackFridayModel) {
     const COOKIE_NAME = 'protonmail-BF-autoload-modal';
 
     /*
@@ -45,7 +45,7 @@ function navigationBlackFriday($stateParams, blackFridayModalOpener, $cookies, d
             on('blackFriday', (event, { type = '' }) => {
                 if (type === 'run') {
                     // Open only once then you need to click button
-                    if (!isFirstTime()) {
+                    if (!isFirstTime() && blackFridayModel.isDealPeriod()) {
                         blackFridayModalOpener();
                         setAlreadySeen();
                     }
