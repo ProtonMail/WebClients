@@ -26,9 +26,13 @@ const AddonRow = ({ label, used, max, format = identity }) => {
         <div className="flex-autogrid onmobile-flex-column w100 mb1">
             <div className="flex-autogrid-item pl1">{label}</div>
             <div className="flex-autogrid-item">
-                <strong>{used ? `${format(used)} ${c('x of y').t`of`} ${format(max)}` : format(max)}</strong>
+                <strong>
+                    {Number.isInteger(used) ? `${format(used)} ${c('x of y').t`of`} ${format(max)}` : format(max)}
+                </strong>
             </div>
-            <div className="flex-autogrid-item">{used ? <Progress value={(used * 100) / max} /> : null}</div>
+            <div className="flex-autogrid-item">
+                {Number.isInteger(used) ? <Progress value={(used * 100) / max} /> : null}
+            </div>
         </div>
     );
 };
