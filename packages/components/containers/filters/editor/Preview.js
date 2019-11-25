@@ -100,7 +100,7 @@ function PreviewFilter({ filter }) {
                                     {Type.label} {Comparator.label}
                                 </b>
                                 :{' '}
-                                {Values.map((val, i) => {
+                                {Values.filter((val) => val !== null).map((val, i) => {
                                     return (
                                         <span
                                             className="Preview-condition-value"

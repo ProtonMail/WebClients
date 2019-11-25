@@ -5,7 +5,7 @@ import { Input, Button } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 function AddCondtionValue({ value = '', onEdit = noop, onAdd = noop }) {
-    const handleAdd = () => onAdd('');
+    const handleAdd = () => onAdd(null);
 
     // keyDown as it won't trigger the submit event ;)
     const handleKeyDown = (e) => {
@@ -17,13 +17,13 @@ function AddCondtionValue({ value = '', onEdit = noop, onAdd = noop }) {
         handleAdd();
     };
 
-    const handleInput = ({ target }) => onEdit(target.value);
+    const handleInput = ({ target }) => onEdit(target.value === '' ? null : target.value);
 
     return (
         <div className="flex flex-nowrap">
             <Input
                 id="textOrPattern"
-                value={value}
+                value={value === null ? '' : value}
                 className="mr1"
                 onKeyDown={handleKeyDown}
                 onInput={handleInput}

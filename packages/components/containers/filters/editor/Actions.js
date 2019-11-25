@@ -19,7 +19,8 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
 
     const MOVE_TO = [
         {
-            text: c('Filter Actions').t`Move to ...`
+            text: c('Filter Actions').t`Move to ...`,
+            value: ''
         },
         {
             text: c('Filter Actions').t`Move to archive`,
@@ -60,7 +61,7 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
                 Read: value === 'read'
             }
         }),
-        moveTo: (value) => ({ FileInto: [value] }),
+        moveTo: (value) => ({ FileInto: value === '' ? [] : [value] }),
         labels: (Labels) => ({ Labels }),
         autoReply: (Vacation) => ({ Vacation })
     };
