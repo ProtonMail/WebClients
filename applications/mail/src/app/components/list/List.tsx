@@ -18,10 +18,9 @@ const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs
     const [labels] = useLabels();
     const [lastChecked, setLastChecked] = useState(); // Store ID of the last contact ID checked
 
-    const handleCheck = (event: React.MouseEvent) => {
+    const handleCheck = (elementID: string) => (event: React.MouseEvent) => {
         const target = event.target as HTMLInputElement;
         const { shiftKey } = event.nativeEvent;
-        const elementID = target.getAttribute('data-element-id') || '';
         const elementIDs = [elementID];
 
         if (lastChecked && shiftKey) {
@@ -47,7 +46,7 @@ const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs
                         elementID={elementID}
                         element={element}
                         checked={checkedIDs.includes(element.ID || '')}
-                        onCheck={handleCheck}
+                        onCheck={handleCheck(element.ID || '')}
                         onClick={onClick}
                         mailSettings={mailSettings}
                     />

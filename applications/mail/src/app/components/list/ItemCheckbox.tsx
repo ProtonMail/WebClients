@@ -1,11 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Icon } from 'react-components';
+import { Icon, classnames } from 'react-components';
 
-const ItemCheckbox = ({ children, className, ...rest }) => {
+interface Props {
+    children: JSX.Element;
+    className: string;
+}
+
+const ItemCheckbox = ({ children, className, ...rest }: Props) => {
     return (
-        <label className={className}>
-            <input type="checkbox" className="item-checkbox sr-only" {...rest} />
+        <label className={classnames(['relative', className])}>
+            <input type="checkbox" className="item-checkbox inner-ratio-container cursor-pointer m0" {...rest} />
             <span className="item-icon flex-item-noshrink rounded50 bg-white inline-flex">
                 <span className="mauto item-abbr">{children}</span>
                 <span className="item-icon-fakecheck mauto">
@@ -14,11 +18,6 @@ const ItemCheckbox = ({ children, className, ...rest }) => {
             </span>
         </label>
     );
-};
-
-ItemCheckbox.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string
 };
 
 export default ItemCheckbox;
