@@ -88,7 +88,7 @@ const TimeGrid = React.forwardRef(
         const dayEvents = useMemo(() => sortedEvents.filter((e) => !!e.isAllDay), [sortedEvents]);
         const daysRows = useMemo(() => [days], [days]);
 
-        const dayEventHeight = 24;
+        const dayEventHeight = 28;
         const numberOfRows = 3;
 
         const displayViewClass = days.length > 2 ? 'is-week-view' : 'is-day-view';

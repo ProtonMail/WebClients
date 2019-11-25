@@ -70,7 +70,7 @@ const DayGrid = ({
     const [windowWidth, windowHeight] = useWindowSize();
 
     const daysInWeek = 7;
-    const dayEventHeight = 24; // in px
+    const dayEventHeight = 28; // in px
 
     const rows = useMemo(() => {
         return chunk(eachDayOfInterval(start, end), daysInWeek);

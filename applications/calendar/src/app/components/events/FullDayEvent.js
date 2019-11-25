@@ -60,17 +60,20 @@ const FullDayEvent = ({
     const isBeforeNowClassModifier = isBeforeNow ? 'calendar-dayeventcell--isBefore' : '';
 
     return (
-        <button
-            type="button"
-            style={style}
-            className={classnames([className, isBeforeNowClassModifier])}
-            data-ignore-create="1"
-            onClick={onClick}
-        >
-            <span className="calendar-dayeventcell-inner inbl w100 pl0-5 pr0-5" style={eventStyle} ref={eventRef}>
+        <div style={style} className={classnames([className, isBeforeNowClassModifier])} data-ignore-create="1">
+            <button
+                onClick={onClick}
+                type="button"
+                className={classnames([
+                    'calendar-dayeventcell-inner alignleft inbl w100 pl0-5 pr0-5',
+                    !isAllDay && 'calendar-dayeventcell-inner--notAllDay'
+                ])}
+                style={eventStyle}
+                ref={eventRef}
+            >
                 {content}
-            </span>
-        </button>
+            </button>
+        </div>
     );
 };
 
