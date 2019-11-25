@@ -3,6 +3,7 @@ $calendar-hour-height: 4.8rem !default;
 $calendar-grid-color: $pm-global-border !default;
 $calendar-grid-border: $calendar-grid-color 1px solid !default;
 $gridcell-right-margin: 1.5em;
+$border-event-cells: 1px solid rgba(0, 0, 0, .2);
 
 .calendar-grid-heading-number,
 .calendar-monthgrid-day-number {
@@ -172,7 +173,8 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
 .calendar-dayeventcell-inner {
     border-radius: 2px;
     overflow: hidden;
-    min-height: 100%;    
+    min-height: 100%;
+    border: $border-event-cells;
     &:focus,
     &:hover {
         background-color: $calendar-dayeventcell-hover-color;
@@ -185,15 +187,14 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
     color: $black;
     border-radius: 2px;
     transition: opacity .5s ease;
+    border: $border-event-cells;
     cursor: pointer;
 
     &:after {
         position: absolute;
         top: -1px;
         left: -1px;
-        width: -webkit-calc(100% + 2px);
         width: calc(100% + 2px);
-        height: -webkit-calc(100% + 2px);
         height: calc(100% + 2px);
         content: '';
         box-sizing: border-box;
