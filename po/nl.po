@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
-"PO-Revision-Date: 2019-11-07 14:37\n"
+"PO-Revision-Date: 2019-11-25 09:30\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -1039,6 +1039,11 @@ msgstr "Sleutels genereren"
 msgctxt "Action"
 msgid "Generate missing keys"
 msgstr "Ontbrekende sleutels genereren"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:40
+msgctxt "Action"
+msgid "Get the deal"
+msgstr "Pak deze deal"
 
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
@@ -3371,7 +3376,7 @@ msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
 msgstr "Uw steun is essentieel om ProtonMail te laten voortbestaan. Bedankt voor het steunen van meer privacy op het web!"
 
-#: ./src/app/dashboard/factories/downgrade.js:20
+#: ./src/app/dashboard/factories/downgrade.js:25
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
 msgstr "U bent succesvol afgemeld"
@@ -3471,7 +3476,7 @@ msgstr "Kan het bestand niet converteren"
 #: ./src/app/members/services/membersValidator.js:54
 msgctxt "Error"
 msgid "Cannot decrypt organization key"
-msgstr "Kan organisatiesleutel niet ontsleutelen"
+msgstr "Kan organisatiesleutel niet decoderen"
 
 #: ./src/app/attachments/services/attachmentDownloader.js:58
 msgctxt "Error"
@@ -3501,7 +3506,7 @@ msgstr "Kan geen verbinding maken met de server."
 #: ./src/templates/views/outside.reply.tpl.html:25
 msgctxt "Error"
 msgid "Decryption error"
-msgstr "Ontsleutelingsfout"
+msgstr "Decoderingsfout"
 
 #: ./src/templates/views/outside.reply.tpl.html:26
 msgctxt "Error"
@@ -3563,7 +3568,7 @@ msgstr "Fout bij het kopiëren"
 #: ./src/app/attachments/services/AttachmentLoader.js:30
 msgctxt "Error"
 msgid "Failed to encrypt attachment. Please try again."
-msgstr "Versleutelen van bijlage is mislukt. Probeer s.v.p. opnieuw."
+msgstr "Versleutelen van bijlage is mislukt. Probeer opnieuw."
 
 #: ./src/app/ui/directives/autocompleteEmails.js:24
 msgctxt "Error"
@@ -3687,7 +3692,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "Ongeldige geschenkcode"
 
-#: ./src/app/routes.js:115
+#: ./src/app/routes.js:117
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "Ongeldige uitnodigingscode"
@@ -4106,7 +4111,7 @@ msgstr "U moet een e-mail instellen"
 #: ./src/app/user/services/isDelinquent.js:11
 msgctxt "Error"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
-msgstr "Uw account heeft een openstaande factuur. Betaal s.v.p. alle openstaande rekeningen."
+msgstr "Uw account heeft een openstaande factuur. Betaal alle onbetaalde rekeningen."
 
 #: ./src/app/attachments/services/attachmentDownloader.js:33
 msgctxt "Error"
@@ -4543,7 +4548,7 @@ msgstr "Importeren"
 #: ./src/templates/modals/changePassword.tpl.html:27
 msgctxt "Info"
 msgid "* Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages."
-msgstr "* Vergeet dit wachtwoord NIET. Als u het vergeet kan u niet meer inloggen of uw berichten ontsleutelen."
+msgstr "* Vergeet dit wachtwoord NIET. Als u het vergeet kan u niet meer inloggen of uw berichten decoderen."
 
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:16
 #: ./src/templates/modals/changePassword.tpl.html:32
@@ -4564,6 +4569,16 @@ msgstr "* Bewaar uw wachtwoord op een veilige plaats. Klik op het <i class=\"fa 
 msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* Het is raadzaam eerst een herstel-e-mailadres toe te voegen. U kunt anders uw account niet herstellen als er iets misgaat."
+
+#: ./src/app/dashboard/factories/downgrade.js:42
+msgctxt "Info"
+msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
+msgstr "+2 verbindingen voor ProtonVPN (hiermee kunt u meer apparaten verbinden met een VPN)"
+
+#: ./src/app/dashboard/factories/downgrade.js:40
+msgctxt "Info"
+msgid "+5GB bonus storage"
+msgstr "+5GB bonusopslag"
 
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
@@ -5004,6 +5019,11 @@ msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
 msgstr "Weet u het zeker? Dit kan niet ongedaan worden gemaakt."
 
+#: ./src/app/dashboard/factories/downgrade.js:29
+msgctxt "Info"
+msgid "As an early Proton user, your account has extra features."
+msgstr "Als een vroege Protongebruiker, heeft uw account extra functies."
+
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
 msgid "Attached Event"
@@ -5017,7 +5037,7 @@ msgstr "Deelnemers"
 #: ./src/templates/autoresponder/autoresponder.tpl.html:3
 msgctxt "Info"
 msgid "Automatic replies can respond automatically to incoming messages (such as when you are on vacation and can't respond)."
-msgstr "Automatische antwoorden kunnen automatisch reageren op inkomende berichten (zoals wanneer je op vakantie bent en niet kan reageren)."
+msgstr "Automatische antwoorden kunnen automatisch reageren op inkomende berichten (zoals wanneer u op vakantie bent en niet kan reageren)."
 
 #: ./src/templates/views/members.tpl.html:77
 msgctxt "Info"
@@ -5059,6 +5079,12 @@ msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr "Gefactureerd als {{amount}} /jaar"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:20
+#: ./src/app/blackFriday/directives/blackFriday.js:22
+msgctxt "Info"
+msgid "Billed as {{price}}"
+msgstr "Gefactureerd als {{price}}"
+
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
@@ -5089,8 +5115,13 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "Door te klikken op Versturen, gaat u ermee akkoord zich te houden aan"
 
+#: ./src/app/dashboard/factories/downgrade.js:34
+msgctxt "Info"
+msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
+msgstr "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
+
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:392
+#: ./src/app/routes.js:413
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "Door het venster nu te verlaten verliest u wat u geschreven heeft in deze e-mail. U kunt een concept opslaan als u later verder wil schrijven."
@@ -5131,7 +5162,7 @@ msgstr "Klik op een contactpersoon om het te bekijken of te bewerken."
 #: ./src/templates/partials/safari.warning.tpl.html:16
 msgctxt "Info"
 msgid "Click your attachment once to decrypt it. Once decryption finishes you will see a download arrow icon appear."
-msgstr "Klik éénmaal op uw bijlage om deze te ontsleutelen. Zodra het ontcijferen voltooid is verschijnt er een download-icoon."
+msgstr "Klik éénmaal op uw bijlage om deze te decoderen. Zodra het decoderen voltooid is verschijnt er een download-icoon."
 
 #. form option
 #: ./src/templates/views/appearance.tpl.html:46
@@ -5245,7 +5276,7 @@ msgstr "Bureaubladmeldingen zijn momenteel <strong>ingeschakeld</strong>."
 #: ./src/templates/modals/switchPasswordMode.tpl.html:65
 msgctxt "Info"
 msgid "Do NOT forget your mailbox password. If you forget it, you will not be able to decrypt your messages."
-msgstr "Vergeet het mailboxwachtwoord NIET. Als u het vergeet kunt u uw berichten niet meer ontsleutelen."
+msgstr "Vergeet het mailboxwachtwoord NIET. Als u het vergeet kunt u uw berichten niet meer decoderen."
 
 #: ./src/templates/search/searchForm.tpl.html:37
 msgctxt "Info"
@@ -5635,7 +5666,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "OpenVPN-wachtwoord bijgewerkt"
 
-#: ./src/app/settings/controllers/account.js:176
+#: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Bewerking kreeg wegens veiligheidsredenen een time-out, probeer het opnieuw"
@@ -5918,6 +5949,16 @@ msgctxt "Info"
 msgid "Remove the attachment {{fileName}}"
 msgstr "Verwijder de bijlage {{fileName}}"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:26
+msgctxt "Info"
+msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
+msgstr "Vernieuwt na 1 jaar tegen een gereduceerde jaarlijkse prijs van {{price}} per jaar (20% korting)"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:33
+msgctxt "Info"
+msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
+msgstr "Vernieuwt na 2 jaar tegen een kortingsprijs van 2 jaar van {{price}} per jaar ({{discount}}% korting)"
+
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
 msgid "Required"
@@ -5977,6 +6018,11 @@ msgstr "Contactpersoon opslaan"
 msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Bewaar uw wachtwoord op een veilige plaats. Klik op het <i class=\"fa fa-eye\"></i> pictogram om te controleren of u het wachtwoord correct hebt ingevoerd."
+
+#: ./src/app/blackFriday/directives/blackFriday.js:42
+msgctxt "Info"
+msgid "Save {{price}}"
+msgstr "{{price}} opslaan"
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6074,7 +6120,7 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "De handtekening van het bericht kan niet worden geverifieerd omdat de handtekening op de contactpersoon ongeldig is."
 
-#: ./src/app/routes.js:172
+#: ./src/app/routes.js:174
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "Thema gereset! U wordt omgeleid..."
@@ -6171,7 +6217,7 @@ msgstr "Dit bericht is ondertekend door een publieke sleutel die nog niet als ve
 #: ./src/app/message/directives/messageSpamScore.js:22
 msgctxt "Info"
 msgid "This message may be a phishing attempt. Please check the sender and contents to make sure they are legitimate. {{startLink}}Learn more{{endLink}}."
-msgstr "Dit bericht is mogelijk een poging tot phishing. Controleer s.v.p. de afzender en de inhoud om te controleren dat de afzender van het bericht van legitiem is. {{startLink}}Meer weten{{endLink}}."
+msgstr "Dit bericht is mogelijk een poging tot phishing. Controleer de afzender en de inhoud om te controleren dat de afzender van het bericht van legitiem is. {{startLink}}Meer weten{{endLink}}."
 
 #: ./src/templates/composer/composerExpiration.tpl.html:8
 msgctxt "Info"
@@ -6221,7 +6267,7 @@ msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr "Dit maakt een nieuwe versleutelingssleutel aan voor uw organisatie. Sleutels met een lengte van 4096-bits werken alleen op krachtige computers. Voor de meeste gebruikers is het aangeraden de standaardwaarde van 2048-bits te gebruiken."
 
-#: ./src/app/dashboard/factories/downgrade.js:15
+#: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Dit zal uw account naar een gratis account downgraden. ProtonMail is gratis software die wordt ondersteund door donaties en betaalde accounts. Overweeg om een donatie te maken zodat wij de service gratis kunnen blijven aanbieden. <br /><br />Opmerking: extra adressen, eigen domeinen en gebruikers moeten worden verwijderd/uitgeschakeld voordat u deze actie uitvoert."
@@ -6252,7 +6298,7 @@ msgstr "Ontdek hoe Sieve filters worden geschreven, <a target=\"_blank\" href=\"
 #: ./src/templates/payment/paymentForm.tpl.html:66
 msgctxt "Info"
 msgid "To pay via Cash, please email us at <strong>contact@protonmail.com</strong> for instructions."
-msgstr "Om contant te betalen, stuur ons s.v.p. een e-mail op <strong>contact@protonmail.com</strong> voor instructies."
+msgstr "Om contant te betalen, stuur ons een e-mail op <strong>contact@protonmail.com</strong> voor instructies."
 
 #: ./src/templates/directives/contact/contactPgp.tpl.html:36
 msgctxt "Info"
@@ -6358,12 +6404,12 @@ msgstr "WAARSCHUWING: VERWIJDERING IS PERMANENT"
 #: ./src/templates/modals/deleteAccount.tpl.html:15
 msgctxt "Info"
 msgid "WARNING: THIS ALSO DELETES ALL CONNECTED SERVICES (ex: <i>ProtonVPN</i>)"
-msgstr "WAARSCHUWING: THIS ALSO DELETES ALLE CONNECTEERD SERVICES (ex: <i>ProtonVPN</i>)"
+msgstr "WAARSCHUWING: DIT VERWIJDERT OOK ALLE AANGESLOTEN DIENSTEN (bijv: <i>ProtonVPN</i>)"
 
 #: ./src/templates/modals/generate.tpl.html:44
 msgctxt "Info"
 msgid "We are now generating encryption keys for your address, this may take several minutes and temporarily freeze your browser."
-msgstr "We zijn nu sleutels aan het genereren voor uw e-mailadres, dit kan enkele minuten duren en kan mogelijk uw browser tijdelijk bevriezen."
+msgstr "We zijn nu sleutels aan het genereren voor uw e-mailadres, dit kan enkele minuten duren en mogelijk kan uw browser tijdelijk bevriezen."
 
 #: ./src/templates/contact/contactLoaderModal.tpl.html:62
 msgctxt "Info"
@@ -6476,7 +6522,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "U kunt nu ook berichten ontvangen op uw @pm.me-adres (afkorting voor 'ProtonMail me' of 'Private Message me')."
 
-#: ./src/app/settings/controllers/account.js:107
+#: ./src/app/settings/controllers/account.js:109
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "U hebt een nieuwe e-mail"
@@ -6582,7 +6628,7 @@ msgstr "Uw account heeft een openstaande factuur. Betaal alle openstaande rekeni
 #: ./src/templates/modals/payment/modal.tpl.html:41
 msgctxt "Info"
 msgid "Your account is being updated, this may take up to 30 seconds."
-msgstr "Uw account wordt geüpdatet, dit kan tot 30 seconde duren."
+msgstr "Uw account wordt geüpdatet, dit kan tot 30 seconden duren."
 
 #: ./src/templates/vpn/vpnView.tpl.html:15
 msgctxt "Info"
@@ -6902,7 +6948,7 @@ msgstr "Annulering"
 #: ./src/app/invoices/filters/invoiceInfo.js:18
 msgctxt "Invoice type display as badge"
 msgid "Credit"
-msgstr "Credit"
+msgstr "Tegoed"
 
 #: ./src/app/invoices/filters/invoiceInfo.js:19
 msgctxt "Invoice type display as badge"
@@ -7212,7 +7258,7 @@ msgstr "Strikte beveiliging"
 #: ./src/templates/modals/member.tpl.html:57
 msgctxt "Label"
 msgid "Highest security"
-msgstr "Meest strikte beveiliging"
+msgstr "Hoogste beveiliging"
 
 #: ./src/app/labels/directives/dropdownFolders.js:8
 #: ./src/templates/filter/modal.tpl.html:164
@@ -8011,7 +8057,7 @@ msgstr "PGP-ondertekend bericht van geverifieerd e-mailadres"
 #: ./src/app/message/factories/getEncryptionType.js:44
 msgctxt "Message encryption status"
 msgid "Sender verification failed"
-msgstr "Verificatie afzender mislukt"
+msgstr "Verificatie van afzender is mislukt"
 
 #: ./src/app/message/factories/getEncryptionType.js:39
 msgctxt "Message encryption status"
@@ -8059,7 +8105,7 @@ msgstr "Concept"
 #: ./src/templates/message/message.tpl.html:38
 msgctxt "Message label"
 msgid "Sent"
-msgstr "Verzend"
+msgstr "Verzonden"
 
 #: ./src/templates/message/messageDisplayError.tpl.html:13
 msgctxt "Message network error"
@@ -8398,7 +8444,7 @@ msgstr "Kortingscode"
 #: ./src/app/payment/services/paymentUtils.js:11
 msgctxt "Payment method"
 msgid "Cash"
-msgstr "Cash"
+msgstr "Contant"
 
 #: ./src/app/payment/services/paymentUtils.js:12
 msgctxt "Payment method"
@@ -8613,7 +8659,7 @@ msgstr "Telefoonnummer"
 #: ./src/templates/contact/contactAddressInput.tpl.html:4
 msgctxt "Placeholder"
 msgid "Post office box"
-msgstr "Postkantoor box"
+msgstr "Postbus"
 
 #: ./src/templates/contact/contactAddressInput.tpl.html:18
 msgctxt "Placeholder"
@@ -8729,7 +8775,7 @@ msgstr "Ondersteuning"
 #: ./src/app/payment/services/paymentPlansFormator.js:9
 msgctxt "Plan feature"
 msgid "Unlimited Folders / Unlimited labels"
-msgstr "Onbeperkte mappen / Onbeperkte labels"
+msgstr "Onbeperkt aantal mappen / labels"
 
 #: ./src/app/payment/services/paymentPlansFormator.js:13
 msgctxt "Plan feature"
@@ -8781,11 +8827,11 @@ msgstr "Bevestig nieuw wachtwoord"
 #: ./src/templates/views/reset-login-password.tpl.html:167
 msgctxt "Reset your login"
 msgid "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages."
-msgstr "Vergeet dit wachtwoord NIET. Als u het vergeet kunt u niet meer inloggen of uw berichten ontsleutelen."
+msgstr "Vergeet dit wachtwoord NIET. Als u het vergeet kunt u niet meer inloggen of uw berichten decoderen."
 
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
-msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
+msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
 msgstr "Bewaar uw wachtwoord op een veilige plaats. Klik op het <i class=\"fa fa-eye\"></i> pictogram om te controleren of u het wachtwoord correct hebt ingevoerd."
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
@@ -9021,7 +9067,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "Domein geverifieerd"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:328
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "E-mailvoorkeuren bijgewerkt"
@@ -9066,13 +9112,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Geschenkcode toegepast"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Sneltoetsvoorkeuren bijgewerkt"
 
-#: ./src/app/settings/controllers/account.js:260
-#: ./src/app/settings/controllers/account.js:269
+#: ./src/app/settings/controllers/account.js:262
+#: ./src/app/settings/controllers/account.js:271
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Afbeeldingsvoorkeuren bijgewerkt"
@@ -9118,10 +9164,10 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Wachtwoord bijgewerkt"
 
-#: ./src/app/settings/controllers/account.js:139
-#: ./src/app/settings/controllers/account.js:159
-#: ./src/app/settings/controllers/account.js:251
-#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/account.js:141
+#: ./src/app/settings/controllers/account.js:161
+#: ./src/app/settings/controllers/account.js:253
+#: ./src/app/settings/controllers/account.js:279
 #: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
@@ -9149,7 +9195,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Publieke sleutel vertrouwd"
 
-#: ./src/app/settings/controllers/account.js:124
+#: ./src/app/settings/controllers/account.js:126
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "Herstel/notificatie e-mail opgeslagen"
@@ -9580,6 +9626,11 @@ msgctxt "Title"
 msgid "Bits"
 msgstr "Bits"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:3
+msgctxt "Title"
+msgid "Black Friday Sale"
+msgstr "Black Friday Verkoop"
+
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
 msgid "Bridge IMAP/SMTP"
@@ -9702,7 +9753,7 @@ msgctxt "Title"
 msgid "Confirm Reset Password"
 msgstr "Herstelwachtwoord bevestigen"
 
-#: ./src/app/dashboard/factories/downgrade.js:14
+#: ./src/app/dashboard/factories/downgrade.js:19
 msgctxt "Title"
 msgid "Confirm downgrade"
 msgstr "Downgrade bevestigen"
@@ -9711,6 +9762,11 @@ msgstr "Downgrade bevestigen"
 msgctxt "Title"
 msgid "Confirm login password"
 msgstr "Bevestig inlogwachtwoord"
+
+#: ./src/app/dashboard/factories/downgrade.js:26
+msgctxt "Title"
+msgid "Confirm loss of Proton bonuses"
+msgstr "Bevestig verlies van Proton bonussen"
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"
@@ -9876,12 +9932,12 @@ msgstr "Dag van de maand"
 #: ./src/templates/authentication/loginUnlock.tpl.html:13
 msgctxt "Title"
 msgid "Decrypt Mailbox"
-msgstr "Mailbox ontsleutelen"
+msgstr "Mailbox decoderen"
 
 #: ./src/templates/views/outside.unlock.tpl.html:7
 msgctxt "Title"
 msgid "Decrypt message"
-msgstr "Bericht ontsleutelen"
+msgstr "Bericht decoderen"
 
 #: ./src/app/composer/controllers/composeMessage.js:572
 #: ./src/app/contact/factories/contactEditor.js:338
@@ -10019,6 +10075,11 @@ msgctxt "Title"
 msgid "Domains"
 msgstr "Domeinen"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:4
+msgctxt "Title"
+msgid "Don't miss out on limited time discounts for newcomers!"
+msgstr "Mis geen melding van beperkte tijdkortingen voor nieuwkomers!"
+
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
 #: ./src/templates/user/humanVerification.tpl.html:56
@@ -10121,7 +10182,7 @@ msgstr "Fout"
 #: ./src/app/attachments/services/attachmentDownloader.js:39
 msgctxt "Title"
 msgid "Error decrypting attachment"
-msgstr "Fout bij ontsleutelen bijlage"
+msgstr "Fout bij decoderen van bijlage"
 
 #. Table heading
 #: ./src/templates/security/sessionLogsTable.tpl.html:7
@@ -11365,7 +11426,7 @@ msgstr "Contactpersonen samenvoegen"
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:6
 msgctxt "Title for the custom plan modal"
 msgid "Plan Details"
-msgstr "Abonnement Details"
+msgstr "Details over abonnement"
 
 #: ./src/templates/dashboard/customVpnModal.tpl.html:6
 msgctxt "Title for the vpn modal"
@@ -11381,6 +11442,11 @@ msgstr "Naam / handtekening"
 msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Factuur"
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:15
+msgctxt "Title most popular offer"
+msgid "Most popular"
+msgstr "Meest populair"
 
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
@@ -11998,7 +12064,7 @@ msgstr "Gerelateerde"
 #: ./src/app/contact/factories/contactTransformLabel.js:33
 msgctxt "VCard key name"
 msgid "Revision"
-msgstr "Herziening"
+msgstr "Revisie"
 
 #: ./src/app/contact/factories/contactTransformLabel.js:34
 msgctxt "VCard key name"
@@ -12053,7 +12119,7 @@ msgstr "BETA"
 #: ./src/templates/authentication/loginForm.tpl.html:88
 msgctxt "Want to test the latest features? Log in on BETA"
 msgid "Want to test the latest features? Log in on"
-msgstr "Wil je de nieuwste functies testen? Log in op"
+msgstr "Wil u de nieuwste functies testen? Log in op"
 
 #: ./src/templates/composer/composerExpiration.tpl.html:49
 msgctxt "Warning"
@@ -12063,12 +12129,12 @@ msgstr "Als u dit bericht naar een niet-Protonmail-gebruiker verzendt, zorg dan 
 #: ./src/templates/modals/expirationModal.tpl.html:16
 msgctxt "Warning"
 msgid "Please add a password for the following recipients"
-msgstr "Voeg s.v.p. een wachtwoord toe voor de volgende ontvangers"
+msgstr "Voeg een wachtwoord toe voor de volgende ontvangers"
 
 #: ./src/templates/modals/expirationModal.tpl.html:29
 msgctxt "Warning"
 msgid "Please disable PGP Sending for the following recipients"
-msgstr "Schakel PGP s.v.p. uit om te verzenden naar de volgende ontvangers"
+msgstr "Schakel PGP uit om te verzenden naar de volgende ontvangers"
 
 #: ./src/app/composer/services/autoPinPrimaryKeys.js:36
 msgctxt "Warning"
@@ -12105,7 +12171,7 @@ msgstr "of"
 #: ./src/app/ui/directives/atomLoader.js:4
 msgctxt "atom text loader"
 msgid "Decrypting"
-msgstr "Ontsleutelen"
+msgstr "Decoderen"
 
 #: ./src/app/ui/directives/atomLoader.js:5
 msgctxt "atom text loader"
@@ -12171,6 +12237,11 @@ msgstr "E-mailadres"
 msgctxt "bug report modal label"
 msgid "What happened?"
 msgstr "Wat is er gebeurd?"
+
+#: ./src/app/dashboard/factories/downgrade.js:27
+msgctxt "button"
+msgid "Remove bonuses"
+msgstr "Verwijder bonussen"
 
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
@@ -12410,6 +12481,11 @@ msgstr "Verplaats {{total}} {{type}}"
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Ster {{total}} {{type}}"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:39
+msgctxt "price"
+msgid "/mo"
+msgstr "/maand"
 
 #: ./src/app/utils/factories/printMessageModel.js:12
 msgctxt "printed message info"

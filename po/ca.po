@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
-"PO-Revision-Date: 2019-11-07 14:25\n"
+"PO-Revision-Date: 2019-11-25 09:23\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -1039,6 +1039,11 @@ msgstr "Generar claus"
 msgctxt "Action"
 msgid "Generate missing keys"
 msgstr "Generar claus perdudes"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:40
+msgctxt "Action"
+msgid "Get the deal"
+msgstr "Obteniu l’oferta"
 
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
@@ -3374,7 +3379,7 @@ msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
 msgstr "El vostre suport és imprescindible per mantenir ProtonMail. Gràcies per recolzar la privacitat d'internet!"
 
-#: ./src/app/dashboard/factories/downgrade.js:20
+#: ./src/app/dashboard/factories/downgrade.js:25
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
 msgstr "Heu anul·lat la subscripció amb èxit"
@@ -3690,7 +3695,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "Codi de regal no vàlid"
 
-#: ./src/app/routes.js:115
+#: ./src/app/routes.js:117
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "Enllaç d'invitació no vàlid"
@@ -4569,6 +4574,16 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* Recomanem que afegiu una adreça de correu de recuperació abans. Altrament, no podreu recuperar el vostre compte si alguna cosa surt malament."
 
+#: ./src/app/dashboard/factories/downgrade.js:42
+msgctxt "Info"
+msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
+msgstr "+2 connexions per a ProtonVPN (permet connectar més dispositius a VPN)"
+
+#: ./src/app/dashboard/factories/downgrade.js:40
+msgctxt "Info"
+msgid "+5GB bonus storage"
+msgstr "+5GB de bonus d’emmagatzematge"
+
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
@@ -5008,6 +5023,11 @@ msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
 msgstr "Esteu segur? Això no es pot desfer."
 
+#: ./src/app/dashboard/factories/downgrade.js:29
+msgctxt "Info"
+msgid "As an early Proton user, your account has extra features."
+msgstr "Com a usuari Proton primerenc, el vostre compte té funcions addicionals."
+
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
 msgid "Attached Event"
@@ -5063,6 +5083,12 @@ msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr "Facturat com a {{amount}} /any"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:20
+#: ./src/app/blackFriday/directives/blackFriday.js:22
+msgctxt "Info"
+msgid "Billed as {{price}}"
+msgstr "Facturat com {{price}}"
+
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
@@ -5093,8 +5119,13 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "Clicant \"Enviar\", esteu acceptant complir amb"
 
+#: ./src/app/dashboard/factories/downgrade.js:34
+msgctxt "Info"
+msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
+msgstr "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
+
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:392
+#: ./src/app/routes.js:413
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "En sortir ara, perdreu el que heu escrit en aquest correu electrònic. Podeu desar un esborrany si voleu tornar-hi més endavant."
@@ -5639,7 +5670,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "Contrasenya OpenVPN actualitzada"
 
-#: ./src/app/settings/controllers/account.js:176
+#: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "S'ha esgotat el temps d'espera de l'operació per raons de seguretat, proveu de nou"
@@ -5922,6 +5953,16 @@ msgctxt "Info"
 msgid "Remove the attachment {{fileName}}"
 msgstr "Eliminar el fitxer adjunt {{fileName}}"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:26
+msgctxt "Info"
+msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
+msgstr "Renova després d'un any a un preu anual de {{price}} (20% de descompte)"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:33
+msgctxt "Info"
+msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
+msgstr "Renova després de dos anys amb un descompte del preu bianual de {{price}} cada 2 anys ({{discount}} de descompte)"
+
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
 msgid "Required"
@@ -5981,6 +6022,11 @@ msgstr "Desa el contacte"
 msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Guardeu les seves contrasenyes en un lloc segur. Feu clic a la icona <i class=\"fa fa-eye\"></i> per confirmar que ha escrit la contrasenya correctament."
+
+#: ./src/app/blackFriday/directives/blackFriday.js:42
+msgctxt "Info"
+msgid "Save {{price}}"
+msgstr "Estalvia {{price}}"
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6078,7 +6124,7 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "La signatura del missatge no es pot verificar perquè la signatura del contacte no és vàlida."
 
-#: ./src/app/routes.js:172
+#: ./src/app/routes.js:174
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "Tema reinicialitzat! Redireccionant..."
@@ -6225,7 +6271,7 @@ msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr "Això crearà una nova clau de xifrat per a la vostra organització. Les claus de 4096 bits només funcionen en ordinadors d'alt rendiment, per a la majoria d'usuaris recomanem l'ús de claus de 2048 bits."
 
-#: ./src/app/dashboard/factories/downgrade.js:15
+#: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Això farà baixar de categoria el vostre compte a la versió gratuïta. ProtonMail és un software lliure que es recolza en donacions i comptes de pagament. Si us plau, considereu fer una donació per tal que puguem seguir oferint el servei sense cost. <br /><br />Nota: Les adreces addicionals, els dominis personalitzats, i els usuaris s'han d'esborrar/inhabilitar abans de poder realitzar aquesta acció."
@@ -6480,7 +6526,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Ara també podeu rebre missatges a la vostra adreça @pm.me (abreviat de \"ProtonMail me\" o \"Private Message me\")."
 
-#: ./src/app/settings/controllers/account.js:107
+#: ./src/app/settings/controllers/account.js:109
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Teniu un nou correu electrònic"
@@ -8182,7 +8228,7 @@ msgstr "Carpeta"
 #: ./src/app/ui/directives/noResults.js:12
 msgctxt "No results heading"
 msgid "Inbox"
-msgstr "Bústia d’entrada"
+msgstr "Safata d'entrada"
 
 #: ./src/app/ui/directives/noResults.js:48
 msgctxt "No results heading"
@@ -8332,7 +8378,7 @@ msgstr "Esborranys"
 #: ./src/app/search/factories/searchModel.js:10
 msgctxt "Option for search panel"
 msgid "Inbox"
-msgstr "Bústia d’entrada"
+msgstr "Safata d'entrada"
 
 #: ./src/app/search/factories/searchModel.js:15
 #: ./src/app/search/factories/searchModel.js:16
@@ -8787,7 +8833,7 @@ msgstr "NO oblideu aquesta contrasenya. Si l'oblideu, no podreu accedir ni desxi
 
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
-msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
+msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
 msgstr "Guardeu les seves contrasenyes en un lloc segur. Feu clic a la icona <i class=\"fa fa-eye\"></i> per confirmar que ha escrit la contrasenya correctament."
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
@@ -9023,7 +9069,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "Domini verificat"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:328
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Preferència de correu electrònic actualitzada"
@@ -9068,13 +9114,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Codi de regal aplicat"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Preferències de tecles d'accés actualitzades"
 
-#: ./src/app/settings/controllers/account.js:260
-#: ./src/app/settings/controllers/account.js:269
+#: ./src/app/settings/controllers/account.js:262
+#: ./src/app/settings/controllers/account.js:271
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Preferències d'imatge actualitzades"
@@ -9120,10 +9166,10 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Contrasenya actualitzada"
 
-#: ./src/app/settings/controllers/account.js:139
-#: ./src/app/settings/controllers/account.js:159
-#: ./src/app/settings/controllers/account.js:251
-#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/account.js:141
+#: ./src/app/settings/controllers/account.js:161
+#: ./src/app/settings/controllers/account.js:253
+#: ./src/app/settings/controllers/account.js:279
 #: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
@@ -9151,7 +9197,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Clau pública de confiança"
 
-#: ./src/app/settings/controllers/account.js:124
+#: ./src/app/settings/controllers/account.js:126
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "Correu electrònic de recuperació / notificació desat"
@@ -9582,6 +9628,11 @@ msgctxt "Title"
 msgid "Bits"
 msgstr "Bits"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:3
+msgctxt "Title"
+msgid "Black Friday Sale"
+msgstr "Oferta del Black Friday"
+
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
 msgid "Bridge IMAP/SMTP"
@@ -9704,7 +9755,7 @@ msgctxt "Title"
 msgid "Confirm Reset Password"
 msgstr "Confirma Restablir contrasenya"
 
-#: ./src/app/dashboard/factories/downgrade.js:14
+#: ./src/app/dashboard/factories/downgrade.js:19
 msgctxt "Title"
 msgid "Confirm downgrade"
 msgstr "Confirmar baixar de categoria"
@@ -9713,6 +9764,11 @@ msgstr "Confirmar baixar de categoria"
 msgctxt "Title"
 msgid "Confirm login password"
 msgstr "Confirma la contrasenya d'inici de sessió"
+
+#: ./src/app/dashboard/factories/downgrade.js:26
+msgctxt "Title"
+msgid "Confirm loss of Proton bonuses"
+msgstr "Confirmeu la pèrdua de bonificacions de Proton"
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"
@@ -10021,6 +10077,11 @@ msgctxt "Title"
 msgid "Domains"
 msgstr "Dominis"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:4
+msgctxt "Title"
+msgid "Don't miss out on limited time discounts for newcomers!"
+msgstr "No us perdeu els descomptes de temps limitat per als nouvinguts!"
+
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
 #: ./src/templates/user/humanVerification.tpl.html:56
@@ -10304,7 +10365,7 @@ msgstr "Importar"
 #: ./src/app/ui/factories/pageTitlesModel.js:41
 msgctxt "Title"
 msgid "Inbox"
-msgstr "Bústia d’entrada"
+msgstr "Safata d'entrada"
 
 #: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:13
 msgctxt "Title"
@@ -11384,6 +11445,11 @@ msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Factura"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:15
+msgctxt "Title most popular offer"
+msgid "Most popular"
+msgstr "Més popular"
+
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
 msgid "Pasted-image"
@@ -12177,6 +12243,11 @@ msgctxt "bug report modal label"
 msgid "What happened?"
 msgstr "Què ha passat?"
 
+#: ./src/app/dashboard/factories/downgrade.js:27
+msgctxt "button"
+msgid "Remove bonuses"
+msgstr "Suprimeix bonus"
+
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
 msgid "Wizard"
@@ -12415,6 +12486,11 @@ msgstr "Moviment {{total}} {{type}}"
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Estrella {{total}} {{type}}"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:39
+msgctxt "price"
+msgid "/mo"
+msgstr "/mes"
 
 #: ./src/app/utils/factories/printMessageModel.js:12
 msgctxt "printed message info"

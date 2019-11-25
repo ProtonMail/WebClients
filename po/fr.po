@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2019-11-07 14:21\n"
+"PO-Revision-Date: 2019-11-25 09:21\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -1039,6 +1039,11 @@ msgstr "Générer les clés"
 msgctxt "Action"
 msgid "Generate missing keys"
 msgstr "Générer les clés manquantes"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:40
+msgctxt "Action"
+msgid "Get the deal"
+msgstr "Profitez de l'offre"
 
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
@@ -3374,7 +3379,7 @@ msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
 msgstr "Votre soutien est essentiel au maintien de ProtonMail. Merci de nous aider dans notre combat pour la protection de la vie privée sur Internet !"
 
-#: ./src/app/dashboard/factories/downgrade.js:20
+#: ./src/app/dashboard/factories/downgrade.js:25
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
 msgstr "Vous vous êtes désabonné avec succès"
@@ -3690,7 +3695,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "Code cadeau invalide"
 
-#: ./src/app/routes.js:115
+#: ./src/app/routes.js:117
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "Lien d'invitation invalide"
@@ -3913,7 +3918,7 @@ msgstr "Texte ou modèle déjà inclus"
 #: ./src/templates/payment/donation.tpl.html:90
 msgctxt "Error"
 msgid "Thank you for your willingness to donate. The maximum we can accept in single donations is 999 999 at this moment. Thank you"
-msgstr "Nous vous remercions d'envisager un don. Cependant, nous ne pouvons accepter des dons dont le montant dépasse 999 999 pour le moment. Merci de votre compréhension."
+msgstr "Nous vous remercions d'envisager de faire un don. Cependant, nous ne pouvons accepter des dons uniques d’un montant supérieur à 999 999 pour le moment. Merci de votre compréhension"
 
 #: ./src/app/authentication/interceptors/httpInterceptor.js:26
 msgctxt "Error"
@@ -4569,6 +4574,16 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* Nous recommandons d’ajouter une adresse email de récupération. Dans le cas contraire, vous ne serez pas en mesure de récupérer votre compte."
 
+#: ./src/app/dashboard/factories/downgrade.js:42
+msgctxt "Info"
+msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
+msgstr "+2 connections pour ProtonVPN (vous permet de connecter plus d'appareils au VPN)"
+
+#: ./src/app/dashboard/factories/downgrade.js:40
+msgctxt "Info"
+msgid "+5GB bonus storage"
+msgstr "+5 Go d'espace de stockage en prime"
+
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
@@ -5008,6 +5023,11 @@ msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
 msgstr "Êtes-vous sûr ? Cette action ne peut être annulée."
 
+#: ./src/app/dashboard/factories/downgrade.js:29
+msgctxt "Info"
+msgid "As an early Proton user, your account has extra features."
+msgstr "Étant un des premiers utilisateurs de Proton, votre compte bénéficie de fonctionnalités supplémentaires."
+
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
 msgid "Attached Event"
@@ -5063,6 +5083,12 @@ msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr "Facturé {{amount}} /an"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:20
+#: ./src/app/blackFriday/directives/blackFriday.js:22
+msgctxt "Info"
+msgid "Billed as {{price}}"
+msgstr "Facturé {{price}}"
+
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
@@ -5093,8 +5119,13 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "En cliquant sur Envoyer, vous acceptez de respecter les"
 
+#: ./src/app/dashboard/factories/downgrade.js:34
+msgctxt "Info"
+msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
+msgstr "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous effectuez une nouvelle mise à niveau à l'avenir."
+
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:392
+#: ./src/app/routes.js:413
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "En quittant maintenant, vous allez perdre ce que vous avez écrit dans cet email. Vous pouvez sauvegarder un brouillon si vous souhaitez y revenir plus tard."
@@ -5639,7 +5670,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "Mot de passe OpenVPN mis à jour"
 
-#: ./src/app/settings/controllers/account.js:176
+#: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "L'opération a expiré pour des raisons de sécurité. Merci d'essayer à nouveau"
@@ -5922,6 +5953,16 @@ msgctxt "Info"
 msgid "Remove the attachment {{fileName}}"
 msgstr "Supprimer la pièce jointe {{fileName}}"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:26
+msgctxt "Info"
+msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
+msgstr "Renouvellement après 1 an à un prix annuel réduit de {{price}} par an (réduction de 20%)"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:33
+msgctxt "Info"
+msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
+msgstr "Renouvellement après 2 ans à un prix bisannuel réduit de {{price}} tous les 2 ans (réduction de {{discount}}%)"
+
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
 msgid "Required"
@@ -5981,6 +6022,11 @@ msgstr "Enregistrer le contact"
 msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Enregistrez votre mot de passe dans un endroit sûr. Cliquez sur l'icône <i class=\"fa fa-eye\"></i> pour confirmer que vous avez tapé votre mot de passe correctement."
+
+#: ./src/app/blackFriday/directives/blackFriday.js:42
+msgctxt "Info"
+msgid "Save {{price}}"
+msgstr "Économisez {{price}}"
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6078,7 +6124,7 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "La signature du message n’a pas pu être vérifiée étant donné que la signature associée au contact n’est pas valide."
 
-#: ./src/app/routes.js:172
+#: ./src/app/routes.js:174
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "Réinitialisation du thème ! Redirection..."
@@ -6225,7 +6271,7 @@ msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr "Cela créera une nouvelle clé de chiffrement pour votre organisation. Les clés d'une longueur de 4096 bits ne fonctionnent que sur des ordinateurs très performants, pour la plupart des utilisateurs, nous recommandons d’utiliser des clés d'une longueur de 2048 bits."
 
-#: ./src/app/dashboard/factories/downgrade.js:15
+#: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Votre compte va passer à l'offre gratuite. ProtonMail est un logiciel gratuit soutenu par des dons et les offres payantes. Vous pouvez envisager de faire un don pour nous aider à maintenir un service gratuit.<br /><br /> Note : Les adresses supplémentaires ainsi que les domaines personnalisés et les membres doivent être supprimés/désactivés avant d’exécuter cette action."
@@ -6480,7 +6526,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Vous pouvez désormais également recevoir des messages sur votre adresse @pm.me (diminutif de ProtonMail me ou de Private Message me)."
 
-#: ./src/app/settings/controllers/account.js:107
+#: ./src/app/settings/controllers/account.js:109
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Vous avez un nouveau message"
@@ -6787,7 +6833,7 @@ msgstr "Automatique indique que le format dans le composeur est utilisé pour en
 #: ./src/templates/contact/contactSchemeSelector.tpl.html:5
 msgctxt "Info for contact Scheme selector"
 msgid "Select the PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages."
-msgstr "Sélectionnez le protocole PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut."
+msgstr "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut."
 
 #: ./src/templates/ui/mozInfo.tpl.html:5
 msgctxt "Info for mozilla condition"
@@ -7578,7 +7624,7 @@ msgstr "Format"
 #: ./src/templates/contact/contactSchemeSelector.tpl.html:3
 msgctxt "Label for contact Scheme selector"
 msgid "Cryptographic scheme"
-msgstr "Modèle de chiffrement"
+msgstr "Schéma cryptographique"
 
 #: ./src/templates/contact/contactSignToggle.tpl.html:3
 msgctxt "Label for contact Sign toggle"
@@ -8789,8 +8835,8 @@ msgstr "* N’oubliez SURTOUT PAS ce mot de passe. Si vous l’oubliez, vous ne 
 
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
-msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
-msgstr "Enregistrez votre mot de passe dans un endroit sûr. Cliquez sur l'icône <i class=\"fa fa-eye\"></i> pour confirmer que vous avez tapé votre mot de passe correctement."
+msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
+msgstr "Enregistrez votre mot de passe dans un endroit sûr. Cliquez sur l'icône <i class=\"fa fa-eye\"></i> pour vérifier que vous avez tapé votre mot de passe correctement."
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
 msgctxt "Reset your password"
@@ -9025,7 +9071,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "Domaine vérifié"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:328
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Préférences d'email mises à jour"
@@ -9070,13 +9116,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Code cadeau appliqué"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Préférences de raccourcis mises à jour"
 
-#: ./src/app/settings/controllers/account.js:260
-#: ./src/app/settings/controllers/account.js:269
+#: ./src/app/settings/controllers/account.js:262
+#: ./src/app/settings/controllers/account.js:271
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Préférences d’image mises à jour"
@@ -9122,10 +9168,10 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Mot de passe mis à jour"
 
-#: ./src/app/settings/controllers/account.js:139
-#: ./src/app/settings/controllers/account.js:159
-#: ./src/app/settings/controllers/account.js:251
-#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/account.js:141
+#: ./src/app/settings/controllers/account.js:161
+#: ./src/app/settings/controllers/account.js:253
+#: ./src/app/settings/controllers/account.js:279
 #: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
@@ -9153,7 +9199,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Clé publique fiable"
 
-#: ./src/app/settings/controllers/account.js:124
+#: ./src/app/settings/controllers/account.js:126
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "Email de récupération/notification enregistré"
@@ -9584,6 +9630,11 @@ msgctxt "Title"
 msgid "Bits"
 msgstr "Bits"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:3
+msgctxt "Title"
+msgid "Black Friday Sale"
+msgstr "Promotion Black Friday"
+
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
 msgid "Bridge IMAP/SMTP"
@@ -9706,7 +9757,7 @@ msgctxt "Title"
 msgid "Confirm Reset Password"
 msgstr "Confirmer la réinitialisation du mot de passe"
 
-#: ./src/app/dashboard/factories/downgrade.js:14
+#: ./src/app/dashboard/factories/downgrade.js:19
 msgctxt "Title"
 msgid "Confirm downgrade"
 msgstr "Confirmez votre changement d'offre"
@@ -9715,6 +9766,11 @@ msgstr "Confirmez votre changement d'offre"
 msgctxt "Title"
 msgid "Confirm login password"
 msgstr "Confirmer le mot de passe de connexion"
+
+#: ./src/app/dashboard/factories/downgrade.js:26
+msgctxt "Title"
+msgid "Confirm loss of Proton bonuses"
+msgstr "Confirmer la perte des bonus Proton"
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"
@@ -10022,6 +10078,11 @@ msgstr "Adresses du nom de domaine"
 msgctxt "Title"
 msgid "Domains"
 msgstr "Noms de domaine"
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:4
+msgctxt "Title"
+msgid "Don't miss out on limited time discounts for newcomers!"
+msgstr "Ne manquez pas les réductions à durée limitée pour les nouveaux arrivants !"
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
@@ -11386,6 +11447,11 @@ msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Facture"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:15
+msgctxt "Title most popular offer"
+msgid "Most popular"
+msgstr "Le plus populaire"
+
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
 msgid "Pasted-image"
@@ -11681,7 +11747,7 @@ msgstr "Données chiffrées avec une signature numérique vérifiée"
 #: ./src/templates/settings/encryptionView.tpl.html:64
 msgctxt "Tooltip default pgp scheme"
 msgid "Select the default PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages. Click for more info."
-msgstr "Sélectionnez le protocole PGP par défaut à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut. Cliquez ici pour plus d’informations."
+msgstr "Sélectionnez le schéma PGP à utiliser par défaut lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut. Cliquez ici pour plus d’informations."
 
 #: ./src/app/authentication/factories/activeSessionsModel.js:15
 msgctxt "Tooltip display per session"
@@ -11696,7 +11762,7 @@ msgstr "Lorsque vous recevez un message interne d’un de vos contacts qui n’a
 #: ./src/templates/settings/encryptionView.tpl.html:30
 msgctxt "Tooltip sign external messages"
 msgid "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below."
-msgstr "Signer automatiquement tous vos messages sortants permet aux utilisateurs de vérifier l'authenticité de vos messages. Cela se fait en combinaison avec le procédé PGP par défaut qui est sélectionné ci-dessous."
+msgstr "Signer automatiquement tous vos messages sortants permet aux utilisateurs de vérifier l'authenticité de vos messages. Cela se fait en combinaison avec le schéma PGP qui est sélectionné ci-dessous."
 
 #: ./src/templates/views/account.tpl.html:75
 msgctxt "Tooltip to explain daily email notifications"
@@ -11870,7 +11936,7 @@ msgstr "Portable"
 #: ./src/app/contact/factories/contactTransformLabel.js:45
 msgctxt "VCard key name"
 msgid "Cryptographic scheme"
-msgstr "Modèle de chiffrement"
+msgstr "Schéma cryptographique"
 
 #: ./src/app/contact/factories/contactTransformLabel.js:11
 msgctxt "VCard key name"
@@ -12178,6 +12244,11 @@ msgctxt "bug report modal label"
 msgid "What happened?"
 msgstr "Que s'est-il passé ?"
 
+#: ./src/app/dashboard/factories/downgrade.js:27
+msgctxt "button"
+msgid "Remove bonuses"
+msgstr "Retirer les bonus"
+
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
 msgid "Wizard"
@@ -12416,6 +12487,11 @@ msgstr "Déplacer {{total}} {{type}}"
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Ajouter aux favoris {{total}} {{type}}"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:39
+msgctxt "price"
+msgid "/mo"
+msgstr "/mois"
 
 #: ./src/app/utils/factories/printMessageModel.js:12
 msgctxt "printed message info"

@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2019-11-07 14:33\n"
+"PO-Revision-Date: 2019-11-25 09:28\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -1038,6 +1038,11 @@ msgstr "鍵を生成"
 msgctxt "Action"
 msgid "Generate missing keys"
 msgstr "紛失した鍵の生成"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:40
+msgctxt "Action"
+msgid "Get the deal"
+msgstr "割引を入手"
 
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
@@ -3368,7 +3373,7 @@ msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
 msgstr "あなたのサポートはProtonMail の運用を維持するために不可欠です。インターネット上のプライバシーに支援をいただきありがとうございます。"
 
-#: ./src/app/dashboard/factories/downgrade.js:20
+#: ./src/app/dashboard/factories/downgrade.js:25
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
 msgstr "退会手続きが正常に行なわれました。"
@@ -3684,7 +3689,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "無効なギフトコードです。"
 
-#: ./src/app/routes.js:115
+#: ./src/app/routes.js:117
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "無効な招待用のリンクです。"
@@ -4560,6 +4565,16 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* 最初に回復用のメールアドレスの追加をお勧めします。そうしなければ、何らかの障害時にアカウントの回復ができません。"
 
+#: ./src/app/dashboard/factories/downgrade.js:42
+msgctxt "Info"
+msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
+msgstr ""
+
+#: ./src/app/dashboard/factories/downgrade.js:40
+msgctxt "Info"
+msgid "+5GB bonus storage"
+msgstr ""
+
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
@@ -4997,6 +5012,11 @@ msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
 msgstr "元には戻せませんが、本当によろしいですか。"
 
+#: ./src/app/dashboard/factories/downgrade.js:29
+msgctxt "Info"
+msgid "As an early Proton user, your account has extra features."
+msgstr ""
+
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
 msgid "Attached Event"
@@ -5052,6 +5072,12 @@ msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr "1年毎に {{amount}} のご請求"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:20
+#: ./src/app/blackFriday/directives/blackFriday.js:22
+msgctxt "Info"
+msgid "Billed as {{price}}"
+msgstr "支払い額 {{price}}"
+
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
@@ -5082,8 +5108,13 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "送信のクリックによって、次の規約への同意とみなされます。"
 
+#: ./src/app/dashboard/factories/downgrade.js:34
+msgctxt "Info"
+msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
+msgstr ""
+
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:392
+#: ./src/app/routes.js:413
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "保存せずに閉じると記入内容は失われます。後からこのメールの編集を続けたい場合、下書きとして保存することができます。"
@@ -5627,7 +5658,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "OpenVPNのパスワードが更新されました。"
 
-#: ./src/app/settings/controllers/account.js:176
+#: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "セキュリティ上の理由から操作はタイムアウトしました。再度お試しください。"
@@ -5731,7 +5762,7 @@ msgstr "PayPalでのお支払いは現在ご利用になれません。しばら
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:43
 msgctxt "Info"
 msgid "Payment can take a few minutes to fully verify."
-msgstr ""
+msgstr "お支払いの検証完了に数分かかる場合があります。"
 
 #: ./src/app/payment/directives/payInvoiceBtn.js:13
 msgctxt "Info"
@@ -5910,6 +5941,16 @@ msgctxt "Info"
 msgid "Remove the attachment {{fileName}}"
 msgstr "この添付ファイル{{fileName}} の削除"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:26
+msgctxt "Info"
+msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
+msgstr "1年あたり {{price}}(20%割引) の割引価格で1年ごとに更新されます。"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:33
+msgctxt "Info"
+msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
+msgstr "2年あたり {{price}}({{discount}}%割引) の割引価格で2年ごとに更新されます。"
+
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
 msgid "Required"
@@ -5969,6 +6010,11 @@ msgstr "連絡先を保存"
 msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "パスワードは安全な場所に保管してください。 パスワードが正しく入力されたか確認するには、アイコン<i class=\"fa fa-eye\"></i> をクリックしてください。"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:42
+msgctxt "Info"
+msgid "Save {{price}}"
+msgstr "{{price}} 割引"
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6066,7 +6112,7 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "連絡先の署名が無効のため、メッセージの署名が検証できませんでした。"
 
-#: ./src/app/routes.js:172
+#: ./src/app/routes.js:174
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "テーマをリセットしました。 リダイレクトします..."
@@ -6213,7 +6259,7 @@ msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr "組織用の暗号鍵を作成します。4096ビット鍵は高性能コンピューターでのみ動作します。ほとんどのユーザーには2048ビット鍵の使用をお勧めします。"
 
-#: ./src/app/dashboard/factories/downgrade.js:15
+#: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "この操作により、無料のアカウントにダウングレードされます。 ProtonMailは無料サービスで、寄付や有料アカウントによって成り立っています。 私たちが無料サービスを提供し続けられるように、どうか寄付をご検討ください。<br /> <br />注：追加のアドレス、独自ドメイン、およびユーザーは、この操作を実行する前に削除するかまたは無効にする必要があります。"
@@ -6305,7 +6351,7 @@ msgstr "有効な文字は、A〜Z、a〜z、0〜9です。 .(ピリオド)、_(
 #: ./src/templates/payment/paypalView.tpl.html:17
 msgctxt "Info"
 msgid "Verification can take a few minutes."
-msgstr ""
+msgstr "検証に数分かかることがあります。"
 
 #: ./src/templates/formUtils/codeVerificator.tpl.html:56
 msgctxt "Info"
@@ -6328,12 +6374,12 @@ msgstr "このコンテンツの署名の検証に失敗しました。"
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:31
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers."
-msgstr ""
+msgstr "検証のために新しいタブを開きます、ポップアップブロッカーはオフにしてください。"
 
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately."
-msgstr ""
+msgstr "検証のために新しいタブを開きます、ポップアップブロッカーはオフにしてください。<b>この検証作業では課金されません。</b>カードの確認に使用した金額は直ちに返金されます。"
 
 #: ./src/templates/layout/pre.tpl.html:4
 msgctxt "Info"
@@ -6468,7 +6514,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "あなたの@ pm.meアドレス（ProtonMail meまたはPrivate Message meの略）でメッセージを受信することもできます。"
 
-#: ./src/app/settings/controllers/account.js:107
+#: ./src/app/settings/controllers/account.js:109
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "新しいメールがあります。"
@@ -7777,7 +7823,7 @@ msgstr "この必要性について"
 #: ./src/templates/payment/paypalView.tpl.html:26
 msgctxt "Link"
 msgid "click here"
-msgstr ""
+msgstr "ここをクリック"
 
 #: ./src/templates/modals/deleteAccount.tpl.html:11
 msgctxt "Link"
@@ -8488,7 +8534,7 @@ msgstr "メールアドレス"
 #: ./src/templates/formUtils/codeVerificator.tpl.html:8
 msgctxt "Placeholder"
 msgid "Email verification"
-msgstr ""
+msgstr "メールの検証"
 
 #: ./src/templates/contact/contactAddressInput.tpl.html:6
 msgctxt "Placeholder"
@@ -8763,8 +8809,8 @@ msgstr "このパスワードを忘れないでください。忘れてしまっ
 
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
-msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
-msgstr "パスワードは安全な場所に保管してください。 パスワードが正しく入力されたか確認するには、アイコン<i class=\"fa fa-eye\"></i> をクリックしてください。"
+msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
+msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
 msgctxt "Reset your password"
@@ -8879,7 +8925,7 @@ msgstr "ストレージの容量が上限に達しました。メールの送受
 msgctxt "Storage warning"
 msgid "You have reached 100% of your storage capacity. You won't be able to send or receive emails\n"
 "                unless you permanently delete some emails or purchase more storage. {{learnMoreLink}}."
-msgstr ""
+msgstr "ストレージ容量の上限に達しました。いくつかのメールの削除あるいは、ストレージを追加購入しない限り、メールの送受信はできません。 {{learnMoreLink}}。"
 
 #: ./src/app/user/factories/storageWarning.js:15
 msgctxt "Storage warning"
@@ -8995,7 +9041,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "ドメインが確認されました。"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:328
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "メールの設定が更新されました。"
@@ -9040,13 +9086,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "ギフトコードが適用されました。"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "ホットキー設定が更新されました。"
 
-#: ./src/app/settings/controllers/account.js:260
-#: ./src/app/settings/controllers/account.js:269
+#: ./src/app/settings/controllers/account.js:262
+#: ./src/app/settings/controllers/account.js:271
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "画像設定が更新されました。"
@@ -9092,10 +9138,10 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "パスワードを更新しました"
 
-#: ./src/app/settings/controllers/account.js:139
-#: ./src/app/settings/controllers/account.js:159
-#: ./src/app/settings/controllers/account.js:251
-#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/account.js:141
+#: ./src/app/settings/controllers/account.js:161
+#: ./src/app/settings/controllers/account.js:253
+#: ./src/app/settings/controllers/account.js:279
 #: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
@@ -9122,7 +9168,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "公開鍵が信頼されました"
 
-#: ./src/app/settings/controllers/account.js:124
+#: ./src/app/settings/controllers/account.js:126
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "回復 / 通知用のメールアドレスが保存されました。"
@@ -9550,6 +9596,11 @@ msgctxt "Title"
 msgid "Bits"
 msgstr "鍵長"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:3
+msgctxt "Title"
+msgid "Black Friday Sale"
+msgstr "ブラックフライデー割引"
+
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
 msgid "Bridge IMAP/SMTP"
@@ -9672,7 +9723,7 @@ msgctxt "Title"
 msgid "Confirm Reset Password"
 msgstr "パスワードリセットの確認"
 
-#: ./src/app/dashboard/factories/downgrade.js:14
+#: ./src/app/dashboard/factories/downgrade.js:19
 msgctxt "Title"
 msgid "Confirm downgrade"
 msgstr "ダウングレードの確認"
@@ -9681,6 +9732,11 @@ msgstr "ダウングレードの確認"
 msgctxt "Title"
 msgid "Confirm login password"
 msgstr "ログインパスワードの確認"
+
+#: ./src/app/dashboard/factories/downgrade.js:26
+msgctxt "Title"
+msgid "Confirm loss of Proton bonuses"
+msgstr ""
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"
@@ -9988,6 +10044,11 @@ msgstr "ドメインアドレス"
 msgctxt "Title"
 msgid "Domains"
 msgstr "ドメイン"
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:4
+msgctxt "Title"
+msgid "Don't miss out on limited time discounts for newcomers!"
+msgstr "新規登録者のための期間限定割引をお見逃しなく。"
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
@@ -11348,6 +11409,11 @@ msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr ""
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:15
+msgctxt "Title most popular offer"
+msgid "Most popular"
+msgstr "最も人気"
+
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
 msgid "Pasted-image"
@@ -12085,7 +12151,7 @@ msgstr "ログイン成功"
 #: ./src/templates/security/sessionLogsTable.tpl.html:36
 msgctxt "auth log entry"
 msgid "Login success (two-factor)"
-msgstr "ログイン成功 (２要素認証)"
+msgstr "ログイン成功 (2要素認証)"
 
 #: ./src/templates/security/sessionLogsTable.tpl.html:30
 msgctxt "auth log entry"
@@ -12131,6 +12197,11 @@ msgstr "メールアドレス"
 msgctxt "bug report modal label"
 msgid "What happened?"
 msgstr "どのような症状がでましたか？（英語）"
+
+#: ./src/app/dashboard/factories/downgrade.js:27
+msgctxt "button"
+msgid "Remove bonuses"
+msgstr ""
 
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
@@ -12367,6 +12438,11 @@ msgstr "{{total}}{{type}}を移動"
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "{{total}} {type}}に星印を付ける"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:39
+msgctxt "price"
+msgid "/mo"
+msgstr "/月"
 
 #: ./src/app/utils/factories/printMessageModel.js:12
 msgctxt "printed message info"

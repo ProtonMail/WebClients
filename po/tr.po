@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
-"PO-Revision-Date: 2019-11-07 14:44\n"
+"PO-Revision-Date: 2019-11-25 09:33\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -1039,6 +1039,11 @@ msgstr "Anahtarları oluştur"
 msgctxt "Action"
 msgid "Generate missing keys"
 msgstr "Eksik anahtarları oluştur"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:40
+msgctxt "Action"
+msgid "Get the deal"
+msgstr "Anlaşmayı yap"
 
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
@@ -3374,7 +3379,7 @@ msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
 msgstr "ProtonMail'i çalışır tutmak için desteğiniz gereklidir. İnternet gizliliğini desteklediğiniz için teşekkür ederiz!"
 
-#: ./src/app/dashboard/factories/downgrade.js:20
+#: ./src/app/dashboard/factories/downgrade.js:25
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
 msgstr "Abonelikten başarıyla çıktınız"
@@ -3690,7 +3695,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "Geçersiz hediye kodu"
 
-#: ./src/app/routes.js:115
+#: ./src/app/routes.js:117
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "Geçersiz davet bağlantısı"
@@ -4569,6 +4574,16 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "Önce bir kurtarma e-posta adresi eklemenizi öneririz. Aksi takdirde, bir şeyler ters giderse hesabınızı kurtaramazsınız."
 
+#: ./src/app/dashboard/factories/downgrade.js:42
+msgctxt "Info"
+msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
+msgstr "ProtonVPN için +2 bağlantı (VPN'ye daha çok aygıt bağlamana izin verir)"
+
+#: ./src/app/dashboard/factories/downgrade.js:40
+msgctxt "Info"
+msgid "+5GB bonus storage"
+msgstr "+5GB bonus saklama alanı"
+
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
@@ -5009,6 +5024,11 @@ msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
 msgstr "Emin misiniz? Bu geri alınamaz."
 
+#: ./src/app/dashboard/factories/downgrade.js:29
+msgctxt "Info"
+msgid "As an early Proton user, your account has extra features."
+msgstr "Erken bir Proton kullanıcısı olarak, hesabınız ekstra özelliklere sahiptir."
+
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
 msgid "Attached Event"
@@ -5064,6 +5084,12 @@ msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr "{{amount}} olarak faturalandırıldı /yıl"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:20
+#: ./src/app/blackFriday/directives/blackFriday.js:22
+msgctxt "Info"
+msgid "Billed as {{price}}"
+msgstr "{{price}} olarak faturalandırıldı"
+
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
@@ -5094,8 +5120,13 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "Gönder düğmesine tıklayarak şunlara uymayı kabul ediyorsunuz:"
 
+#: ./src/app/dashboard/factories/downgrade.js:34
+msgctxt "Info"
+msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
+msgstr "Ücretsiz bir plana geçerek gelecekte tekrar yükseltme yapsanız bile, bu avantajları kalıcı olarak kaybedeceksiniz."
+
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:392
+#: ./src/app/routes.js:413
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "Şimdi bırakarak, bu e-postada yazdıklarınızı kaybedeceksiniz. Daha sonra geri dönmek isterseniz bir taslak olarak saklayabilirsiniz."
@@ -5640,7 +5671,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "OpenVPN parolası güncellendi"
 
-#: ./src/app/settings/controllers/account.js:176
+#: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Güvenlik nedeniyle işlem zaman aşımına uğradı. Lütfen tekrar deneyin"
@@ -5923,6 +5954,16 @@ msgctxt "Info"
 msgid "Remove the attachment {{fileName}}"
 msgstr "{{fileName}} ekini kaldır"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:26
+msgctxt "Info"
+msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
+msgstr "1 yıl sonra her yıl, yıllık {{price}} indirimli fiyata yeniler (%20 indirim)"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:33
+msgctxt "Info"
+msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
+msgstr "2 yıl sonra 2 yılda bir, 2 yıllık {{price}} indirimli fiyata yeniler (%{{discount}} indirim)"
+
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
 msgid "Required"
@@ -5982,6 +6023,11 @@ msgstr "Kişiyi kaydet"
 msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Parolalarınızı güvenli bir yere kaydedin. Parolanızı doğru yazdığınızı onaylamak için <i class=\"fa fa-eye\"></i>simgesine tıklayın."
+
+#: ./src/app/blackFriday/directives/blackFriday.js:42
+msgctxt "Info"
+msgid "Save {{price}}"
+msgstr "{{price}} Kaydet"
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6079,7 +6125,7 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "İleti imzası geçersiz olduğu için, ileti imzası doğrulanamadı."
 
-#: ./src/app/routes.js:172
+#: ./src/app/routes.js:174
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "Tema sıfırlandı! Yönlendiriliyor..."
@@ -6226,7 +6272,7 @@ msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr "Bu işlem kuruluşunuz için yeni bir şifreleme anahtarı oluşturacaktır. 4096 bitlik anahtarlar yalnızca yüksek performanslı bilgisayarlarda çalışır; çoğu kullanıcı için 2048 bitlik anahtarlar kullanılmasını öneririz."
 
-#: ./src/app/dashboard/factories/downgrade.js:15
+#: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Bu, hesabınızı ücretsiz bir hesaba indirgeyecektir. ProtonMail, bağış ve ücretli hesaplar ile desteklenen ücretsiz bir yazılımdır. Lütfen ücretsiz olarak hizmet vermeye devam edebilmemiz için bağış yapmayı düşünün. <br /><br />Not: Bu işlemi gerçekleştirmeden önce ek adresler, özel etki alanları ve kullanıcılar kaldırılmalı / devre dışı bırakılmalıdır."
@@ -6481,7 +6527,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Artık @pm.me adresinden de iletiler alabilirsiniz (ProtonMail için kısa ilet veya bana özel ileti)."
 
-#: ./src/app/settings/controllers/account.js:107
+#: ./src/app/settings/controllers/account.js:109
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Yeni bir e-postanız var"
@@ -8791,8 +8837,8 @@ msgstr "Bu şifreyi UNUTMAYIN. Unutursanız, iletilerinize giriş yapamaz veya i
 
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
-msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
-msgstr "Parolanızı güvenli bir yerde saklayın. Parolanızı doğru yazdığınızdan emin olmak için <i class=\"fa fa-eye\"></i> simgesine tıklayın."
+msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
+msgstr "Şifrenizi güvenli bir yere kaydedin. Şifrenizi doğru yazdığınızı onaylamak için <i class=\"fa fa-eye\"></i> simgesine tıklayın."
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
 msgctxt "Reset your password"
@@ -9025,7 +9071,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "Etki alanı doğrulandı"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:328
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "E-posta tercihi güncellendi"
@@ -9070,13 +9116,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Hediye kodu uygulandı"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Kısayol tercihleri güncellendi"
 
-#: ./src/app/settings/controllers/account.js:260
-#: ./src/app/settings/controllers/account.js:269
+#: ./src/app/settings/controllers/account.js:262
+#: ./src/app/settings/controllers/account.js:271
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Resim tercihleri güncellendi"
@@ -9122,10 +9168,10 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Parola güncellendi"
 
-#: ./src/app/settings/controllers/account.js:139
-#: ./src/app/settings/controllers/account.js:159
-#: ./src/app/settings/controllers/account.js:251
-#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/account.js:141
+#: ./src/app/settings/controllers/account.js:161
+#: ./src/app/settings/controllers/account.js:253
+#: ./src/app/settings/controllers/account.js:279
 #: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
@@ -9153,7 +9199,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Genel anahtar güvenilir"
 
-#: ./src/app/settings/controllers/account.js:124
+#: ./src/app/settings/controllers/account.js:126
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "Kurtarma/bildirim e-postası kaydedildi"
@@ -9584,6 +9630,11 @@ msgctxt "Title"
 msgid "Bits"
 msgstr "Bit"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:3
+msgctxt "Title"
+msgid "Black Friday Sale"
+msgstr "Kara Cuma Satışı"
+
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
 msgid "Bridge IMAP/SMTP"
@@ -9706,7 +9757,7 @@ msgctxt "Title"
 msgid "Confirm Reset Password"
 msgstr "Parola Sıfırlamayı Onayla"
 
-#: ./src/app/dashboard/factories/downgrade.js:14
+#: ./src/app/dashboard/factories/downgrade.js:19
 msgctxt "Title"
 msgid "Confirm downgrade"
 msgstr "Düşürmeyi onayla"
@@ -9715,6 +9766,11 @@ msgstr "Düşürmeyi onayla"
 msgctxt "Title"
 msgid "Confirm login password"
 msgstr "Giriş parolasını onayla"
+
+#: ./src/app/dashboard/factories/downgrade.js:26
+msgctxt "Title"
+msgid "Confirm loss of Proton bonuses"
+msgstr "Proton bonuslarının kaybını onayla"
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"
@@ -10022,6 +10078,11 @@ msgstr "Etki alanı adresi"
 msgctxt "Title"
 msgid "Domains"
 msgstr "Etki Alanları"
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:4
+msgctxt "Title"
+msgid "Don't miss out on limited time discounts for newcomers!"
+msgstr "Yeni başlayanlar için sınırlı bir süre olan indirimi kaçırmayın!"
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
@@ -11386,6 +11447,11 @@ msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Fatura"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:15
+msgctxt "Title most popular offer"
+msgid "Most popular"
+msgstr "En popüler"
+
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
 msgid "Pasted-image"
@@ -12177,6 +12243,11 @@ msgctxt "bug report modal label"
 msgid "What happened?"
 msgstr "Ne oldu?"
 
+#: ./src/app/dashboard/factories/downgrade.js:27
+msgctxt "button"
+msgid "Remove bonuses"
+msgstr "Bonusları kaldır"
+
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
 msgid "Wizard"
@@ -12415,6 +12486,11 @@ msgstr "Taşı {{total}} {{type}}"
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Yıldız {{total}} {{type}}"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:39
+msgctxt "price"
+msgid "/mo"
+msgstr "/ay"
 
 #: ./src/app/utils/factories/printMessageModel.js:12
 msgctxt "printed message info"

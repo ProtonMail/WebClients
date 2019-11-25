@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Czech\n"
 "Language: cs_CZ\n"
-"PO-Revision-Date: 2019-11-07 14:26\n"
+"PO-Revision-Date: 2019-11-25 09:23\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -1041,6 +1041,11 @@ msgstr "Generovat klíče"
 msgctxt "Action"
 msgid "Generate missing keys"
 msgstr "Generovat chybějící klíče"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:40
+msgctxt "Action"
+msgid "Get the deal"
+msgstr ""
 
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
@@ -2571,7 +2576,7 @@ msgstr "E-mailová adresa"
 #: ./src/templates/squire/addLink.tpl.html:2
 msgctxt "Composer, add Link"
 msgid "In the first box, put the link/email/phone number the text should go to. In the second box, put the text you want to appear."
-msgstr "Do prvního políčka vložte link nebo zadejte email/telefonní číslo, kterému text má být doručen. Do druhého políčka zadejte text, který chcete aby se objevil."
+msgstr "Do prvního políčka vložte odkaz nebo zadejte e-mail/telefonní číslo, kterému text má být doručen. Do druhého políčka zadejte text, který chcete aby se objevil."
 
 #: ./src/app/squire/modals/addLinkModal.js:6
 msgctxt "Composer, add Link"
@@ -3377,7 +3382,7 @@ msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
 msgstr "Vaše podpora je velmi důležitá k tomu, abychom mohli provozovat ProtonMail. Děkujeme, že podporujete ochranu soukromí na internetu!"
 
-#: ./src/app/dashboard/factories/downgrade.js:20
+#: ./src/app/dashboard/factories/downgrade.js:25
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
 msgstr "Předplatné bylo úspěšně zrušeno"
@@ -3693,7 +3698,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "Neplatný dárkový kód"
 
-#: ./src/app/routes.js:115
+#: ./src/app/routes.js:117
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "Neplatný odkaz pozvánky"
@@ -4576,6 +4581,16 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* Doporučujeme si nejprve přidat záložní e-mailovou adresu. Jinak nebudete moci obnovit svůj účet pokud se něco stane."
 
+#: ./src/app/dashboard/factories/downgrade.js:42
+msgctxt "Info"
+msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
+msgstr ""
+
+#: ./src/app/dashboard/factories/downgrade.js:40
+msgctxt "Info"
+msgid "+5GB bonus storage"
+msgstr ""
+
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
@@ -5019,6 +5034,11 @@ msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
 msgstr "Jste si jisti? Nelze to vrátit zpět."
 
+#: ./src/app/dashboard/factories/downgrade.js:29
+msgctxt "Info"
+msgid "As an early Proton user, your account has extra features."
+msgstr ""
+
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
 msgid "Attached Event"
@@ -5074,6 +5094,12 @@ msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr "Zaplaceno {{amount}} / rok"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:20
+#: ./src/app/blackFriday/directives/blackFriday.js:22
+msgctxt "Info"
+msgid "Billed as {{price}}"
+msgstr ""
+
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
@@ -5104,8 +5130,13 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "Kliknutím na tlačítko Odeslat, souhlasíte s dodržováním"
 
+#: ./src/app/dashboard/factories/downgrade.js:34
+msgctxt "Info"
+msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
+msgstr ""
+
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:392
+#: ./src/app/routes.js:413
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "Pokud teď odejdete, ztratíte vše, co jste zatím napsali. E-mail můžete uložit jako koncept a vrátit se k němu později."
@@ -5652,7 +5683,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "OpenVPN heslo aktualizováno"
 
-#: ./src/app/settings/controllers/account.js:176
+#: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Operace byla z bezpečnostních důvodů přerušena. Zkuste to prosím znovu"
@@ -5935,6 +5966,16 @@ msgctxt "Info"
 msgid "Remove the attachment {{fileName}}"
 msgstr "Odstranit přílohu {{fileName}}"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:26
+msgctxt "Info"
+msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
+msgstr ""
+
+#: ./src/app/blackFriday/directives/blackFriday.js:33
+msgctxt "Info"
+msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
+msgstr ""
+
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
 msgid "Required"
@@ -5994,6 +6035,11 @@ msgstr "Uložit kontakt"
 msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Hesla ukládejte na bezpečném místě. Klikněte na ikonu <i class=\"fa fa-eye\"></i> a ujistěte se, že jste heslo zadali správně."
+
+#: ./src/app/blackFriday/directives/blackFriday.js:42
+msgctxt "Info"
+msgid "Save {{price}}"
+msgstr ""
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6091,7 +6137,7 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "Podpis kontaktu není platný a proto nelze ověřit podpis zprávy."
 
-#: ./src/app/routes.js:172
+#: ./src/app/routes.js:174
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "Obnova motivu! Přesměrování..."
@@ -6238,7 +6284,7 @@ msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr "Tento proces vytvoří pro Vaši organizaci nový šifrovací klíč. 4096-bitové klíče fungují pouze na vysoce výkonných počítačích, pro většinu uživatelů doporučujeme používat 2048-bitové klíče."
 
-#: ./src/app/dashboard/factories/downgrade.js:15
+#: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Tímto přejdete na účet zdarma. ProtonMail je svobodný software, který je podporován příspěvky a placenými účty. Prosím, zvažte poskytnutí příspěvku, abychom mohli i nadále poskytovat služby zdarma. <br /><br />Poznámka: další adresy, vlastní domény a uživatelé musí být odstraněny/zrušeny před provedením této operace."
@@ -6493,7 +6539,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Nyní lze také přijímat zprávy na adresu @pm.me (zkratka pro \"ProtonMail me\" nebo \"Private Message me\")."
 
-#: ./src/app/settings/controllers/account.js:107
+#: ./src/app/settings/controllers/account.js:109
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Máte novou zprávu"
@@ -8818,8 +8864,8 @@ msgstr "Nezapomeňte toto heslo. V případě, že ho zapomenete, nebudete se mo
 
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
-msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
-msgstr "Heslo uložte na bezpečném místě. Klikněte na ikonu <i class=\"fa fa-eye\"></i> a ujistěte se, že jste heslo zadali správně."
+msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
+msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
 msgctxt "Reset your password"
@@ -9056,7 +9102,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "Doména ověřena"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:328
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Předvolby e-mailu byly aktualizovány"
@@ -9101,13 +9147,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Kód kupónu byl použit"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Předvolby klávesových zkratek aktualizovány"
 
-#: ./src/app/settings/controllers/account.js:260
-#: ./src/app/settings/controllers/account.js:269
+#: ./src/app/settings/controllers/account.js:262
+#: ./src/app/settings/controllers/account.js:271
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Předvolby obrázku byly aktualizovány"
@@ -9153,10 +9199,10 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Heslo bylo změněno"
 
-#: ./src/app/settings/controllers/account.js:139
-#: ./src/app/settings/controllers/account.js:159
-#: ./src/app/settings/controllers/account.js:251
-#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/account.js:141
+#: ./src/app/settings/controllers/account.js:161
+#: ./src/app/settings/controllers/account.js:253
+#: ./src/app/settings/controllers/account.js:279
 #: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
@@ -9186,7 +9232,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Veřejný klíč je důvěryhodný"
 
-#: ./src/app/settings/controllers/account.js:124
+#: ./src/app/settings/controllers/account.js:126
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "Sekundární/Notifikační e-mail uložen"
@@ -9623,6 +9669,11 @@ msgctxt "Title"
 msgid "Bits"
 msgstr "Bits"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:3
+msgctxt "Title"
+msgid "Black Friday Sale"
+msgstr ""
+
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
 msgid "Bridge IMAP/SMTP"
@@ -9745,7 +9796,7 @@ msgctxt "Title"
 msgid "Confirm Reset Password"
 msgstr "Potvrdit obnovení hesla"
 
-#: ./src/app/dashboard/factories/downgrade.js:14
+#: ./src/app/dashboard/factories/downgrade.js:19
 msgctxt "Title"
 msgid "Confirm downgrade"
 msgstr "Potvrď downgrade"
@@ -9754,6 +9805,11 @@ msgstr "Potvrď downgrade"
 msgctxt "Title"
 msgid "Confirm login password"
 msgstr "Potvrdit přihlašovací heslo"
+
+#: ./src/app/dashboard/factories/downgrade.js:26
+msgctxt "Title"
+msgid "Confirm loss of Proton bonuses"
+msgstr ""
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"
@@ -10061,6 +10117,11 @@ msgstr "Doménové adresy"
 msgctxt "Title"
 msgid "Domains"
 msgstr "Domény"
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:4
+msgctxt "Title"
+msgid "Don't miss out on limited time discounts for newcomers!"
+msgstr ""
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
@@ -11433,6 +11494,11 @@ msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Faktura"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:15
+msgctxt "Title most popular offer"
+msgid "Most popular"
+msgstr ""
+
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
 msgid "Pasted-image"
@@ -12235,6 +12301,11 @@ msgctxt "bug report modal label"
 msgid "What happened?"
 msgstr "Co se stalo?"
 
+#: ./src/app/dashboard/factories/downgrade.js:27
+msgctxt "button"
+msgid "Remove bonuses"
+msgstr ""
+
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
 msgid "Wizard"
@@ -12479,6 +12550,11 @@ msgstr "Přesunout {{total}} {{type}}"
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Označit {{total}} {{type}}"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:39
+msgctxt "price"
+msgid "/mo"
+msgstr ""
 
 #: ./src/app/utils/factories/printMessageModel.js:12
 msgctxt "printed message info"

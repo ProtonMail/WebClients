@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2019-11-07 14:41\n"
+"PO-Revision-Date: 2019-11-25 09:32\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -1041,6 +1041,11 @@ msgstr "Создать ключи"
 msgctxt "Action"
 msgid "Generate missing keys"
 msgstr "Создать недостающие ключи"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:40
+msgctxt "Action"
+msgid "Get the deal"
+msgstr "Воспользоваться спредложением"
 
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
@@ -3380,7 +3385,7 @@ msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
 msgstr "Ваша поддержка крайне важна для продолжения работы ProtonMail. Благодарим за поддержку конфиденциальности в Интернете!"
 
-#: ./src/app/dashboard/factories/downgrade.js:20
+#: ./src/app/dashboard/factories/downgrade.js:25
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
 msgstr "Подписка успешно отменена"
@@ -3696,7 +3701,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "Неправильный подарочный код"
 
-#: ./src/app/routes.js:115
+#: ./src/app/routes.js:117
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "Неверная ссылка приглашения"
@@ -4579,6 +4584,16 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* Мы рекомендуем сначала добавить резервный адрес электронной почты. В противном случае вы не сможете восстановить свою учётную запись, если что-то пойдёт не так."
 
+#: ./src/app/dashboard/factories/downgrade.js:42
+msgctxt "Info"
+msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
+msgstr ""
+
+#: ./src/app/dashboard/factories/downgrade.js:40
+msgctxt "Info"
+msgid "+5GB bonus storage"
+msgstr "+ 5ГБ бонусного хранилища"
+
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
@@ -5022,6 +5037,11 @@ msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
 msgstr "Вы уверены? Это действие не может быть отменено."
 
+#: ./src/app/dashboard/factories/downgrade.js:29
+msgctxt "Info"
+msgid "As an early Proton user, your account has extra features."
+msgstr ""
+
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
 msgid "Attached Event"
@@ -5077,6 +5097,12 @@ msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr "Оплачивается в сумме {{amount}} /год"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:20
+#: ./src/app/blackFriday/directives/blackFriday.js:22
+msgctxt "Info"
+msgid "Billed as {{price}}"
+msgstr "Сумма к оплате {{price}}"
+
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
@@ -5107,8 +5133,13 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "Нажимая \"Отправить\", вы соглашаетесь соблюдать"
 
+#: ./src/app/dashboard/factories/downgrade.js:34
+msgctxt "Info"
+msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
+msgstr ""
+
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:392
+#: ./src/app/routes.js:413
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "Прерываясь сейчас, вы потеряете всё написанное в этом сообщении. Вы можете сохранить черновик, если захотите вернуться к нему позднее."
@@ -5656,7 +5687,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "Пароль OpenVPN обновлён"
 
-#: ./src/app/settings/controllers/account.js:176
+#: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Время выполнения операции было обнулено из соображений безопасности, пожалуйста, попробуйте ещё раз"
@@ -5939,6 +5970,16 @@ msgctxt "Info"
 msgid "Remove the attachment {{fileName}}"
 msgstr "Удалите вложение {{fileName}}"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:26
+msgctxt "Info"
+msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
+msgstr ""
+
+#: ./src/app/blackFriday/directives/blackFriday.js:33
+msgctxt "Info"
+msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
+msgstr ""
+
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
 msgid "Required"
@@ -5998,6 +6039,11 @@ msgstr "Сохранить контакт"
 msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Сохраните пароли где-нибудь в надёжном месте. Нажмите на значок <i class=\"fa fa-eye\"></i>, чтобы проверить правильность ввода пароля."
+
+#: ./src/app/blackFriday/directives/blackFriday.js:42
+msgctxt "Info"
+msgid "Save {{price}}"
+msgstr "Сохранить {{price}}"
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6095,7 +6141,7 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "Подпись сообщения не может быть проверена, поскольку неправильна подпись контакта."
 
-#: ./src/app/routes.js:172
+#: ./src/app/routes.js:174
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "Тема сброшена! Перенаправление..."
@@ -6242,7 +6288,7 @@ msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr "Это создаст новый ключ шифрования для вашей организации. 4096-битные ключи работают только на высокопроизводительных компьютерах. Большинству пользователей мы рекомендуем использовать 2048-битные ключи."
 
-#: ./src/app/dashboard/factories/downgrade.js:15
+#: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Это понизит вашу учётную запись до бесплатной. ProtonMail является свободным программным обеспечением, поддерживающимся за счёт пожертвований и платных учётных записей. Пожалуйста, рассмотрите возможность пожертвований для того, чтобы мы могли продолжать предоставлять услуги бесплатно.<br /><br />Замечание: дополнительные адреса, пользовательские домены и пользователи должны быть удалены или отключены перед выполнением данного действия."
@@ -6497,7 +6543,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Теперь вы также можете получать сообщения на свой адрес @pm.me (сокращённое название от \"ProtonMail me\" или \"Private Message me\")."
 
-#: ./src/app/settings/controllers/account.js:107
+#: ./src/app/settings/controllers/account.js:109
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Вы получили новое письмо"
@@ -8822,8 +8868,8 @@ msgstr "НЕ забывайте данный пароль. Если вы его 
 
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
-msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
-msgstr "Сохраните пароль где-нибудь в надёжном месте. Нажмите на значок <i class=\"fa fa-eye\"></i>, чтобы проверить правильность ввода пароля."
+msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
+msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
 msgctxt "Reset your password"
@@ -9062,7 +9108,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "Домен подтверждён"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:328
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Настройка отправки почты обновлена"
@@ -9107,13 +9153,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Подарочный код применён"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Настройки сочетаний клавиш обновлены"
 
-#: ./src/app/settings/controllers/account.js:260
-#: ./src/app/settings/controllers/account.js:269
+#: ./src/app/settings/controllers/account.js:262
+#: ./src/app/settings/controllers/account.js:271
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Настройки изображений обновлены"
@@ -9159,10 +9205,10 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Пароль обновлён"
 
-#: ./src/app/settings/controllers/account.js:139
-#: ./src/app/settings/controllers/account.js:159
-#: ./src/app/settings/controllers/account.js:251
-#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/account.js:141
+#: ./src/app/settings/controllers/account.js:161
+#: ./src/app/settings/controllers/account.js:253
+#: ./src/app/settings/controllers/account.js:279
 #: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
@@ -9192,7 +9238,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Включено доверие публичному ключу"
 
-#: ./src/app/settings/controllers/account.js:124
+#: ./src/app/settings/controllers/account.js:126
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "Адрес эл. почты для восстановления доступа/уведомлений сохранён"
@@ -9629,6 +9675,11 @@ msgctxt "Title"
 msgid "Bits"
 msgstr "Бит"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:3
+msgctxt "Title"
+msgid "Black Friday Sale"
+msgstr "Распродажа в Чёрную пятницу"
+
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
 msgid "Bridge IMAP/SMTP"
@@ -9751,7 +9802,7 @@ msgctxt "Title"
 msgid "Confirm Reset Password"
 msgstr "Подтвердите пароль сброса"
 
-#: ./src/app/dashboard/factories/downgrade.js:14
+#: ./src/app/dashboard/factories/downgrade.js:19
 msgctxt "Title"
 msgid "Confirm downgrade"
 msgstr "Подтвердите понижение"
@@ -9760,6 +9811,11 @@ msgstr "Подтвердите понижение"
 msgctxt "Title"
 msgid "Confirm login password"
 msgstr "Подтвердить входной пароль"
+
+#: ./src/app/dashboard/factories/downgrade.js:26
+msgctxt "Title"
+msgid "Confirm loss of Proton bonuses"
+msgstr ""
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"
@@ -10067,6 +10123,11 @@ msgstr "Адреса доменов"
 msgctxt "Title"
 msgid "Domains"
 msgstr "Домены"
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:4
+msgctxt "Title"
+msgid "Don't miss out on limited time discounts for newcomers!"
+msgstr "Не пропустите ограниченные по времени скидки для новых пользователей!"
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
@@ -11439,6 +11500,11 @@ msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Счёт"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:15
+msgctxt "Title most popular offer"
+msgid "Most popular"
+msgstr "Самое популярное"
+
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
 msgid "Pasted-image"
@@ -12241,6 +12307,11 @@ msgctxt "bug report modal label"
 msgid "What happened?"
 msgstr "Что случилось?"
 
+#: ./src/app/dashboard/factories/downgrade.js:27
+msgctxt "button"
+msgid "Remove bonuses"
+msgstr "Удалить бонусы"
+
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
 msgid "Wizard"
@@ -12485,6 +12556,11 @@ msgstr "Переместить {{total}} {{type}}"
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Добавлено к избранному: {{total}} {{type}}"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:39
+msgctxt "price"
+msgid "/mo"
+msgstr "/мес"
 
 #: ./src/app/utils/factories/printMessageModel.js:12
 msgctxt "printed message info"

@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Croatian\n"
 "Language: hr_HR\n"
-"PO-Revision-Date: 2019-11-07 14:55\n"
+"PO-Revision-Date: 2019-11-25 09:39\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -1023,7 +1023,7 @@ msgstr "Zaboravili ste korisničko ime?"
 #: ./src/templates/message/message.tpl.html:182
 msgctxt "Action"
 msgid "Forward"
-msgstr "Naprijed"
+msgstr "Proslijedi"
 
 #: ./src/templates/directives/composer/composer-header.tpl.html:24
 msgctxt "Action"
@@ -1041,10 +1041,15 @@ msgctxt "Action"
 msgid "Generate missing keys"
 msgstr "Generirajte ključe koji nedostaju"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:40
+msgctxt "Action"
+msgid "Get the deal"
+msgstr "Ugrabite ponudu"
+
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
 msgid "Go to dashboard"
-msgstr "Idi na nadzornu ploču"
+msgstr "Idi na upravljačku ploču"
 
 #. Make sure this string is short please
 #: ./src/templates/views/reset-login-password.tpl.html:46
@@ -1594,7 +1599,7 @@ msgstr "Ponovno pokušaj"
 #: ./src/app/members/directives/memberEditBtn.js:10
 msgctxt "Action"
 msgid "Revoke Admin"
-msgstr "Vraćanje administratora"
+msgstr "Opoziv administratorskih prava"
 
 #: ./src/templates/views/security.tpl.html:27
 msgctxt "Action"
@@ -2317,7 +2322,7 @@ msgstr "Postavka 'Uključi i premješteno' znači da će se poslane poruke i ski
 #: ./src/app/bugReport/services/bugReportApi.js:126
 msgctxt "Bug report successfully"
 msgid "Bug reported"
-msgstr "Greška je prijavljena"
+msgstr "Pogreška je prijavljena"
 
 #: ./src/app/dashboard/directives/addVpn.js:5
 msgctxt "Button"
@@ -3377,7 +3382,7 @@ msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
 msgstr "Vaša podrška je neophodna za održavanje ProtonMaila. Hvala na podržavanju internetske privatnosti!"
 
-#: ./src/app/dashboard/factories/downgrade.js:20
+#: ./src/app/dashboard/factories/downgrade.js:25
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
 msgstr "Uspješno ste poništili pretplatu"
@@ -3533,38 +3538,38 @@ msgstr "Adresa e-pošte je obavezna"
 #: ./src/templates/modals/generate.tpl.html:69
 msgctxt "Error"
 msgid "Error"
-msgstr "Greška"
+msgstr "Pogreška"
 
 #: ./src/app/organization/modals/activateOrganizationModal.js:18
 msgctxt "Error"
 msgid "Error activating organization keys"
-msgstr "Greška pri aktivaciji organizacijskih ključeva"
+msgstr "Pogreška pri aktivaciji organizacijskih ključeva"
 
 #: ./src/app/message/factories/messageModel.js:39
 #: ./src/app/outside/controllers/outside.js:34
 msgctxt "Error"
 msgid "Error encrypting message"
-msgstr "Greška pri šifriranju poruke"
+msgstr "Pogreška pri šifriranju poruke"
 
 #: ./src/app/address/directives/addressKeysView.js:69
 msgctxt "Error"
 msgid "Error reactivating key. Please try again"
-msgstr "Greška pri ponovnoj aktivaciji ključa. Molimo pokušajte ponovno"
+msgstr "Pogreška pri ponovnoj aktivaciji ključa. Molimo pokušajte ponovno"
 
 #: ./src/app/organization/modals/activateOrganizationModal.js:34
 msgctxt "Error"
 msgid "Error restoring organization keys"
-msgstr "Greška pri vraćanju organizacijskih ključeva"
+msgstr "Pogreška pri vraćanju organizacijskih ključeva"
 
 #: ./src/app/message/directives/messagePublicKeyFound.js:20
 msgctxt "Error"
 msgid "Error while adding the public key to the contacts"
-msgstr "Greška prilikom dodavanja javnog ključa u kontakte"
+msgstr "Pogreška prilikom dodavanja javnog ključa u kontakte"
 
 #: ./src/app/commons/services/ptClipboard.js:7
 msgctxt "Error"
 msgid "Error while copying"
-msgstr "Greška prilikom kopiranja"
+msgstr "Pogreška prilikom kopiranja"
 
 #: ./src/app/attachments/services/AttachmentLoader.js:30
 msgctxt "Error"
@@ -3606,7 +3611,7 @@ msgstr "Polje je potrebno"
 #: ./src/app/attachments/services/AttachmentEvent.js:6
 msgctxt "Error"
 msgid "ICS parsing error:"
-msgstr "Greška u ICS parsiranju:"
+msgstr "Pogreška u ICS parsiranju:"
 
 #: ./src/templates/views/reset-login-password.tpl.html:56
 msgctxt "Error"
@@ -3693,7 +3698,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "Nevažeći darovni kôd"
 
-#: ./src/app/routes.js:115
+#: ./src/app/routes.js:117
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "Nevažeća poveznica pozivnice"
@@ -4574,6 +4579,16 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* Preporučujemo da prvo dodate e-poštu za oporavak. Inače nećete moći oporaviti račun u slučaju da nešto pođe po zlu."
 
+#: ./src/app/dashboard/factories/downgrade.js:42
+msgctxt "Info"
+msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
+msgstr "+2 veze za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)"
+
+#: ./src/app/dashboard/factories/downgrade.js:40
+msgctxt "Info"
+msgid "+5GB bonus storage"
+msgstr "+ 5GB dodatnog prostora za pohranu"
+
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
@@ -5015,6 +5030,11 @@ msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
 msgstr "Jeste li sigurni? Ova radnja se ne može poništiti."
 
+#: ./src/app/dashboard/factories/downgrade.js:29
+msgctxt "Info"
+msgid "As an early Proton user, your account has extra features."
+msgstr "Kao rani korisnik Protona, vaš račun ima dodatne značajke."
+
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
 msgid "Attached Event"
@@ -5070,6 +5090,12 @@ msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr "Naplaćuje se {{amount}} godišnje"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:20
+#: ./src/app/blackFriday/directives/blackFriday.js:22
+msgctxt "Info"
+msgid "Billed as {{price}}"
+msgstr "Naplaćeno {{price}}"
+
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
@@ -5100,8 +5126,13 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "Pritiskom na Pošalji, prihvaćate se pridržavati"
 
+#: ./src/app/dashboard/factories/downgrade.js:34
+msgctxt "Info"
+msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
+msgstr "Prelaskom na Besplatni plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
+
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:392
+#: ./src/app/routes.js:413
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "Ukoliko napustite sada, izgubit ćete ono što ste napisali u ovoj e-poruci. Možete spremiti kao skicu ako kasnije želite koristiti."
@@ -5647,7 +5678,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "Lozinka za OpenVPN je ažurirana"
 
-#: ./src/app/settings/controllers/account.js:176
+#: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Operacija je istekla iz sigurnosnih razloga, molimo pokušajte ponovno"
@@ -5930,6 +5961,16 @@ msgctxt "Info"
 msgid "Remove the attachment {{fileName}}"
 msgstr "Ukloni privitak {{fileName}}"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:26
+msgctxt "Info"
+msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
+msgstr "Obnova nakon 1 godine po godišnjoj cijeni s popustom od {{price}} godišnje (20% popusta)"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:33
+msgctxt "Info"
+msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
+msgstr "Obnova nakon 2 godine po dvogodišnjoj cijeni s popustom od {{price}} svake dvije godine ({{discount}}% popusta)"
+
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
 msgid "Required"
@@ -5989,6 +6030,11 @@ msgstr "Spremi kontakt"
 msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Spremite svoje lozinke na sigurno. Pritisnite na <i class=\"fa fa-eye\"></i> ikonu da biste potvrdili da ste unijeli lozinku točno."
+
+#: ./src/app/blackFriday/directives/blackFriday.js:42
+msgctxt "Info"
+msgid "Save {{price}}"
+msgstr "Uštedi {{price}}"
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6086,7 +6132,7 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "Potpis poruke nije mogao biti potvrđen jer je potpis na kontaktu nevažeći."
 
-#: ./src/app/routes.js:172
+#: ./src/app/routes.js:174
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "Tema ponovno postavljena! Preusmjeravanje..."
@@ -6233,7 +6279,7 @@ msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr "Ovo će stvoriti novi ključ za šifriranje za vašu organizaciju. 4096-bitni ključevi rade samo na računalima s visokim performansama, a za većinu korisnika preporučujemo upotrebu 2048-bitnih ključeva."
 
-#: ./src/app/dashboard/factories/downgrade.js:15
+#: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Ovo će sniziti status Vašeg računa na besplatni račun. ProtonMail je besplatan softver koji je podržan od donacija i pretplaćenih računa. Molimo razmislite o doniranju kako bismo mogli i dalje besplatno nuditi našu uslugu.<br /><br />Napomena: Dodatne adrese, prilagođene domene i korisnici moraju biti uklonjeni/onemogućeni prije izvođenja ove radnje."
@@ -6488,7 +6534,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Sada možete primati poruke i na @pm.me adrese e-pošte (skraćeno od ProtonMail me ili Private Message me)."
 
-#: ./src/app/settings/controllers/account.js:107
+#: ./src/app/settings/controllers/account.js:109
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Imaš novu poruku"
@@ -7991,7 +8037,7 @@ msgstr "Poruka je prazna"
 #: ./src/templates/message/messageDisplayError.tpl.html:3
 msgctxt "Message decryption error"
 msgid "Decryption error: Decryption of this message's encryption content failed."
-msgstr "Greška pri dešifriranju: Dešifriranje sadržaja enkripcije ove poruke nije uspjelo."
+msgstr "Pogreška pri dešifriranju: Dešifriranje sadržaja enkripcije ove poruke nije uspjelo."
 
 #: ./src/app/message/factories/getEncryptionType.js:46
 msgctxt "Message encryption status"
@@ -8805,7 +8851,7 @@ msgstr "NEMOJTE zaboraviti ovu lozinku. Ako je zaboravite, nećete se moći prij
 
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
-msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
+msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
 msgstr "Spremite svoju lozinku na sigurno. Pritisnite na <i class=\"fa fa-eye\"></i> ikonu da biste potvrdili da ste unijeli lozinku točno."
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
@@ -9043,7 +9089,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "Domena je potvrđena"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:328
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Ažurirana je postavka e-pošte"
@@ -9088,13 +9134,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Kôd darovnog kupona je primjenjen"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Ažurirane su postavke prečaca"
 
-#: ./src/app/settings/controllers/account.js:260
-#: ./src/app/settings/controllers/account.js:269
+#: ./src/app/settings/controllers/account.js:262
+#: ./src/app/settings/controllers/account.js:271
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Postavke slike su ažurirane"
@@ -9140,10 +9186,10 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Lozinka je ažurirana"
 
-#: ./src/app/settings/controllers/account.js:139
-#: ./src/app/settings/controllers/account.js:159
-#: ./src/app/settings/controllers/account.js:251
-#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/account.js:141
+#: ./src/app/settings/controllers/account.js:161
+#: ./src/app/settings/controllers/account.js:253
+#: ./src/app/settings/controllers/account.js:279
 #: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
@@ -9172,7 +9218,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Pouzdani javni ključ"
 
-#: ./src/app/settings/controllers/account.js:124
+#: ./src/app/settings/controllers/account.js:126
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "Adresa e-pošte za oporavak/obavijesti je spremljena"
@@ -9606,6 +9652,11 @@ msgctxt "Title"
 msgid "Bits"
 msgstr "Bitovi"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:3
+msgctxt "Title"
+msgid "Black Friday Sale"
+msgstr "Akcija za crni petak"
+
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
 msgid "Bridge IMAP/SMTP"
@@ -9728,7 +9779,7 @@ msgctxt "Title"
 msgid "Confirm Reset Password"
 msgstr "Potvrdi lozinku za ponovno postavljanje"
 
-#: ./src/app/dashboard/factories/downgrade.js:14
+#: ./src/app/dashboard/factories/downgrade.js:19
 msgctxt "Title"
 msgid "Confirm downgrade"
 msgstr "Potvrdi snižavanje statusa"
@@ -9737,6 +9788,11 @@ msgstr "Potvrdi snižavanje statusa"
 msgctxt "Title"
 msgid "Confirm login password"
 msgstr "Potvrdi lozinku za prijavu"
+
+#: ./src/app/dashboard/factories/downgrade.js:26
+msgctxt "Title"
+msgid "Confirm loss of Proton bonuses"
+msgstr "Potvrdite gubitak Proton bonusa"
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"
@@ -10045,6 +10101,11 @@ msgctxt "Title"
 msgid "Domains"
 msgstr "Domene"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:4
+msgctxt "Title"
+msgid "Don't miss out on limited time discounts for newcomers!"
+msgstr "Ne propustite vremenski ograničene popuste za pridošlice!"
+
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
 #: ./src/templates/user/humanVerification.tpl.html:56
@@ -10142,7 +10203,7 @@ msgstr "Upišite vašu lozinku:"
 #: ./src/templates/views/outside.unlock.tpl.html:38
 msgctxt "Title"
 msgid "Error"
-msgstr "Greška"
+msgstr "Pogreška"
 
 #: ./src/app/attachments/services/attachmentDownloader.js:39
 msgctxt "Title"
@@ -11412,6 +11473,11 @@ msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Račun"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:15
+msgctxt "Title most popular offer"
+msgid "Most popular"
+msgstr "Najpopularnije"
+
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
 msgid "Pasted-image"
@@ -12172,7 +12238,7 @@ msgstr "Odjava"
 #: ./src/templates/payment/bitcoinView.tpl.html:16
 msgctxt "bitcoin error request"
 msgid "Error connecting to the Bitcoin API."
-msgstr "Greška prilikom spajanja na Bitcoin API."
+msgstr "Pogreška prilikom spajanja na Bitcoin API."
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:47
 msgctxt "bug report modal"
@@ -12208,6 +12274,11 @@ msgstr "Adresa e-pošte"
 msgctxt "bug report modal label"
 msgid "What happened?"
 msgstr "Što se dogodilo?"
+
+#: ./src/app/dashboard/factories/downgrade.js:27
+msgctxt "button"
+msgid "Remove bonuses"
+msgstr "Ukloni bonuse"
 
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
@@ -12450,6 +12521,11 @@ msgstr "Premjestite {{total}} {{type}}"
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Zvijezda {{total}} {{type}}"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:39
+msgctxt "price"
+msgid "/mo"
+msgstr "/mj"
 
 #: ./src/app/utils/factories/printMessageModel.js:12
 msgctxt "printed message info"

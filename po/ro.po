@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2019-11-07 14:20\n"
+"PO-Revision-Date: 2019-11-25 09:21\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -1040,6 +1040,11 @@ msgstr "Generare chei"
 msgctxt "Action"
 msgid "Generate missing keys"
 msgstr "Generare chei lipsă"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:40
+msgctxt "Action"
+msgid "Get the deal"
+msgstr "Obțineți oferta"
 
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
@@ -3377,7 +3382,7 @@ msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
 msgstr "Suportul dvs. este esențial pentru a păstra funcționarea ProtonMail. Vă mulțumim pentru sprijinirea confidențialității Internetului!"
 
-#: ./src/app/dashboard/factories/downgrade.js:20
+#: ./src/app/dashboard/factories/downgrade.js:25
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
 msgstr "V-ați dezabonat cu succes"
@@ -3693,7 +3698,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "Cod cadou nevalid"
 
-#: ./src/app/routes.js:115
+#: ./src/app/routes.js:117
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "Legătură invitație nevalidă"
@@ -4574,6 +4579,16 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* Vă recomandăm să adăugați un e-mail de recuperare mai întâi. Altfel, nu veți putea recupera contul dacă ceva nu merge bine."
 
+#: ./src/app/dashboard/factories/downgrade.js:42
+msgctxt "Info"
+msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
+msgstr "+2 conexiuni pentru ProtonVPN (permite conectarea mai multor dispozitive la VPN)"
+
+#: ./src/app/dashboard/factories/downgrade.js:40
+msgctxt "Info"
+msgid "+5GB bonus storage"
+msgstr "+5 GB stocare bonus"
+
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
@@ -5015,6 +5030,11 @@ msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
 msgstr "Sunteți sigur(ă)? Această acțiune nu poate fi anulată."
 
+#: ./src/app/dashboard/factories/downgrade.js:29
+msgctxt "Info"
+msgid "As an early Proton user, your account has extra features."
+msgstr "Ca utilizator Proton timpuriu, aveți funcții suplimentare în cont."
+
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
 msgid "Attached Event"
@@ -5070,6 +5090,12 @@ msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr "Facturat ca {{amount}}/an"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:20
+#: ./src/app/blackFriday/directives/blackFriday.js:22
+msgctxt "Info"
+msgid "Billed as {{price}}"
+msgstr "Facturat cu {{price}}"
+
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
@@ -5100,8 +5126,13 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "Apăsând pe Trimitere, sunteți de acord să respectați"
 
+#: ./src/app/dashboard/factories/downgrade.js:34
+msgctxt "Info"
+msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
+msgstr "Revenind la planul Gratuit, veți pierde permanent aceste avantaje, chiar dacă veți face upgrade ulterior."
+
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:392
+#: ./src/app/routes.js:413
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "Părăsind pagina veți pierde ce ați scris în acest e-mail. Puteți salva o schiță în cazul în care doriți să reluați mesajul mai târziu."
@@ -5647,7 +5678,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "Parolă OpenVPN actualizată"
 
-#: ./src/app/settings/controllers/account.js:176
+#: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Operația a expirat din motive de securitate, vă rugăm reîncercați"
@@ -5930,6 +5961,16 @@ msgctxt "Info"
 msgid "Remove the attachment {{fileName}}"
 msgstr "Se elimină atașamentul {{fileName}}"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:26
+msgctxt "Info"
+msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
+msgstr "Reînnoire după un an la prețul redus de {{price}} pe an (reducere 20%)"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:33
+msgctxt "Info"
+msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
+msgstr "Reînnoire după doi ani la prețul redus pentru doi ani de {{price}} bianual ({{reducere discount}}%)"
+
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
 msgid "Required"
@@ -5989,6 +6030,11 @@ msgstr "Salvare contact"
 msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Salvați parola într-un loc sigur. Apăsați pe pictograma <i class=\"fa fa-eye\"></i> pentru a confirma că ați introdus corect parola."
+
+#: ./src/app/blackFriday/directives/blackFriday.js:42
+msgctxt "Info"
+msgid "Save {{price}}"
+msgstr "Economisiți {{price}}"
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6086,7 +6132,7 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "Semnătura mesajului nu a putut fi verificată deoarece semnătura contactului nu este validă."
 
-#: ./src/app/routes.js:172
+#: ./src/app/routes.js:174
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "Reinițializare temă! Redirecționare..."
@@ -6233,7 +6279,7 @@ msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr "Aceasta va crea o cheie de criptare pentru organizație. Cheile de 4096 de biți funcționează doar pe calculatoare foarte performante. Pentru majoritatea utilizatorilor recomandăm utilizarea cheilor de 2048 de biți."
 
-#: ./src/app/dashboard/factories/downgrade.js:15
+#: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Aceasta va transforma contul dvs. la un cont gratuit. ProtonMail este un program gratuit care este suportat din donații și conturi plătite. Vă rugăm să luați în considerare să faceți o donație astfel încât să putem oferi serviciul gratuit. <br /><br />Atenție: Toate datele pentru adresele adiționale, domeniile personale și utilizatori trebuie eliminate/dezactivate înainte de a efectua această operație."
@@ -6488,7 +6534,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Acum puteți primi mesajele și pe adresele de tip @pm.me (prescurtare de la «ProtonMail me» sau «Private Message me»)."
 
-#: ./src/app/settings/controllers/account.js:107
+#: ./src/app/settings/controllers/account.js:109
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Aveți un mesaj nou"
@@ -8805,7 +8851,7 @@ msgstr "NU uitați această parolă. Dacă o uitați, nu vă veți mai putea con
 
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
-msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
+msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
 msgstr "Salvați parola într-un loc sigur. Apăsați pe pictograma <i class=\"fa fa-eye\"></i> pentru a confirma că ați introdus corect parola."
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
@@ -9043,7 +9089,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "Domeniu verificat"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:328
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Preferințe e-mail actualizate"
@@ -9088,13 +9134,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Cod cadou aplicat"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Preferințele pentru chei rapide au fost actualizate"
 
-#: ./src/app/settings/controllers/account.js:260
-#: ./src/app/settings/controllers/account.js:269
+#: ./src/app/settings/controllers/account.js:262
+#: ./src/app/settings/controllers/account.js:271
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Preferințe imagini actualizate"
@@ -9140,10 +9186,10 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Parolă actualizată"
 
-#: ./src/app/settings/controllers/account.js:139
-#: ./src/app/settings/controllers/account.js:159
-#: ./src/app/settings/controllers/account.js:251
-#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/account.js:141
+#: ./src/app/settings/controllers/account.js:161
+#: ./src/app/settings/controllers/account.js:253
+#: ./src/app/settings/controllers/account.js:279
 #: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
@@ -9172,7 +9218,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Cheie publică aprobată"
 
-#: ./src/app/settings/controllers/account.js:124
+#: ./src/app/settings/controllers/account.js:126
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "E-mail recuperare/notificare salvat"
@@ -9606,6 +9652,11 @@ msgctxt "Title"
 msgid "Bits"
 msgstr "Biți"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:3
+msgctxt "Title"
+msgid "Black Friday Sale"
+msgstr "Reduceri de Vinerea Neagră"
+
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
 msgid "Bridge IMAP/SMTP"
@@ -9728,7 +9779,7 @@ msgctxt "Title"
 msgid "Confirm Reset Password"
 msgstr "Confirmare resetare parolă"
 
-#: ./src/app/dashboard/factories/downgrade.js:14
+#: ./src/app/dashboard/factories/downgrade.js:19
 msgctxt "Title"
 msgid "Confirm downgrade"
 msgstr "Confirmare modificare ofertă"
@@ -9737,6 +9788,11 @@ msgstr "Confirmare modificare ofertă"
 msgctxt "Title"
 msgid "Confirm login password"
 msgstr "Confirmare parolă conectare"
+
+#: ./src/app/dashboard/factories/downgrade.js:26
+msgctxt "Title"
+msgid "Confirm loss of Proton bonuses"
+msgstr "Confirmare pierdere bonusuri Proton"
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"
@@ -10044,6 +10100,11 @@ msgstr "Adrese domeniu"
 msgctxt "Title"
 msgid "Domains"
 msgstr "Domenii"
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:4
+msgctxt "Title"
+msgid "Don't miss out on limited time discounts for newcomers!"
+msgstr "Nu ratați perioada limitată de reduceri pentru nou veniți!"
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
@@ -11412,6 +11473,11 @@ msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Factura"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:15
+msgctxt "Title most popular offer"
+msgid "Most popular"
+msgstr "Cel mai popular"
+
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
 msgid "Pasted-image"
@@ -12209,6 +12275,11 @@ msgctxt "bug report modal label"
 msgid "What happened?"
 msgstr "Ce s-a întâmplat?"
 
+#: ./src/app/dashboard/factories/downgrade.js:27
+msgctxt "button"
+msgid "Remove bonuses"
+msgstr "Anulare bonusuri"
+
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
 msgid "Wizard"
@@ -12450,6 +12521,11 @@ msgstr "Mutare {{total}} {{type}}"
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Marcare {{total}} {{type}}"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:39
+msgctxt "price"
+msgid "/mo"
+msgstr "/lună"
 
 #: ./src/app/utils/factories/printMessageModel.js:12
 msgctxt "printed message info"
