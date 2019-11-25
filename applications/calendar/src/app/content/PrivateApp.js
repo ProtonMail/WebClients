@@ -9,6 +9,7 @@ import {
     ThemeInjector,
     ModalsChildren
 } from 'react-components';
+import { c } from 'ttag';
 import {
     UserModel,
     UserSettingsModel,
@@ -44,7 +45,7 @@ const PrivateApp = ({ onLogout }) => {
                     onError={onLogout}
                 />
                 <ModalsChildren />
-                <LoaderPage />
+                <LoaderPage text={c('Info').t`Loading ProtonCalendar`} />
             </>
         );
     }
