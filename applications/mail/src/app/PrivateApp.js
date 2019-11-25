@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 import { StandardPrivateApp } from 'react-components';
+
 import {
     UserModel,
     MailSettingsModel,
@@ -14,7 +16,6 @@ import {
 } from 'proton-shared/lib/models';
 
 import locales from './locales';
-import { Route } from 'react-router-dom';
 import PageContainer from './containers/PageContainer';
 import MessageProvider from './containers/MessageProvider';
 
