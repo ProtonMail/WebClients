@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const SubSidebar = ({ list = [], children, activeSection }) => {
     return (
-        <div className="subnav notablet nomobile bg-global-light noprint">
+        <div className="subnav notablet nomobile noprint">
             <div className="subnav-inner">
                 <p className="uppercase smaller">{c('Title').t`Navigation`}</p>
                 <ul className="unstyled subnav-list">
