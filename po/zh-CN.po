@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
-"PO-Revision-Date: 2019-11-07 14:47\n"
+"PO-Revision-Date: 2019-11-25 09:34\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -1038,6 +1038,11 @@ msgstr "生成密钥"
 msgctxt "Action"
 msgid "Generate missing keys"
 msgstr "正在产生丢失密钥"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:40
+msgctxt "Action"
+msgid "Get the deal"
+msgstr "立即享受优惠"
 
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
@@ -3371,7 +3376,7 @@ msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
 msgstr "您的支持对于 ProtonMail 至关重要。感谢您支持互联网隐私保护！"
 
-#: ./src/app/dashboard/factories/downgrade.js:20
+#: ./src/app/dashboard/factories/downgrade.js:25
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
 msgstr "您已成功降级"
@@ -3687,7 +3692,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "礼品码无效"
 
-#: ./src/app/routes.js:115
+#: ./src/app/routes.js:117
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "无效的邀请链接"
@@ -4563,6 +4568,16 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* 我们建议您先添加一个密保邮箱。否则一旦出现问题，您将无法找回账号。"
 
+#: ./src/app/dashboard/factories/downgrade.js:42
+msgctxt "Info"
+msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
+msgstr "+2 台设备可接入 ProtonVPN"
+
+#: ./src/app/dashboard/factories/downgrade.js:40
+msgctxt "Info"
+msgid "+5GB bonus storage"
+msgstr "+5 GB 存储空间"
+
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
@@ -4999,6 +5014,11 @@ msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
 msgstr "您确定吗？此操作不能撤销。"
 
+#: ./src/app/dashboard/factories/downgrade.js:29
+msgctxt "Info"
+msgid "As an early Proton user, your account has extra features."
+msgstr "作为早期 Proton 用户，您可以享受以下特权。"
+
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
 msgid "Attached Event"
@@ -5054,6 +5074,12 @@ msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr "以每年 {{amount}} 计费"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:20
+#: ./src/app/blackFriday/directives/blackFriday.js:22
+msgctxt "Info"
+msgid "Billed as {{price}}"
+msgstr "实际支付 {{price}}"
+
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
@@ -5084,8 +5110,13 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "点击提交即表示您同意"
 
+#: ./src/app/dashboard/factories/downgrade.js:34
+msgctxt "Info"
+msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
+msgstr "降级为免费用户后，您将永远失去这些特权，无论以后是否再开通付费账户。"
+
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:392
+#: ./src/app/routes.js:413
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "离开现在, 你将失去你写在这封电子邮件。如果您想以后再来, 可以保存草稿。"
@@ -5629,7 +5660,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "OpenVPN密码已更新。"
 
-#: ./src/app/settings/controllers/account.js:176
+#: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "由于安全原因, 操作超时, 请重试"
@@ -5912,6 +5943,16 @@ msgctxt "Info"
 msgid "Remove the attachment {{fileName}}"
 msgstr "删除附件 {{fileName}}"
 
+#: ./src/app/blackFriday/directives/blackFriday.js:26
+msgctxt "Info"
+msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
+msgstr "一年后续费价 {{price}}/年（节省 20%）"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:33
+msgctxt "Info"
+msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
+msgstr "两年后续费价 {{price}}/两年（节省 {{discount}}%）"
+
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
 msgid "Required"
@@ -5971,6 +6012,11 @@ msgstr "保存联系人"
 msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "妥善保管您的密码。点击 <i class=\"fa fa-eye\"></i> 图标确认您已正确输入密码。"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:42
+msgctxt "Info"
+msgid "Save {{price}}"
+msgstr "节省 {{price}}"
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6068,7 +6114,7 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "无法验证邮件签名，因为联系人的签名无效"
 
-#: ./src/app/routes.js:172
+#: ./src/app/routes.js:174
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "已重置主题！正在重定向……"
@@ -6215,7 +6261,7 @@ msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr "该操作将为您的机构创建新密钥。4096 位密钥只适用于性能较高的计算机，我们建议大多数用户使用 2048 位密钥。"
 
-#: ./src/app/dashboard/factories/downgrade.js:15
+#: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "此操作将把您的账户降级为免费账户。ProtonMail 是依靠捐款和付费账户支持的免费软件，请考虑给我们捐款帮助我们继续免费提供服务。<br /><br />注意：执行此操作前需要先移除或停用付费获得的地址、自定域名和用户。"
@@ -6470,7 +6516,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "您现在可以使用 @pm.me 地址（ProtonMail me 或 Private Message me 的缩写）接收邮件了。"
 
-#: ./src/app/settings/controllers/account.js:107
+#: ./src/app/settings/controllers/account.js:109
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "您收到了一封新邮件"
@@ -8766,8 +8812,8 @@ msgstr "切勿遗忘此密码，否则您将无法登录，也无法解密邮件
 
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
-msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
-msgstr "妥善保管您的密码。点击 <i class=\"fa fa-eye\"></i> 图标确认您已正确输入密码。"
+msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
+msgstr "务必妥善保管您的密码。点击 <i class=\"fa fa-eye\"></i> 图标可确认您已正确输入密码。"
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
 msgctxt "Reset your password"
@@ -8998,7 +9044,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "域名已验证"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:328
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "邮件首选项已更新"
@@ -9043,13 +9089,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "成功使用礼品码"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "快捷键首选项已更新"
 
-#: ./src/app/settings/controllers/account.js:260
-#: ./src/app/settings/controllers/account.js:269
+#: ./src/app/settings/controllers/account.js:262
+#: ./src/app/settings/controllers/account.js:271
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "图片首选项已更新"
@@ -9095,10 +9141,10 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "密码已更新"
 
-#: ./src/app/settings/controllers/account.js:139
-#: ./src/app/settings/controllers/account.js:159
-#: ./src/app/settings/controllers/account.js:251
-#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/account.js:141
+#: ./src/app/settings/controllers/account.js:161
+#: ./src/app/settings/controllers/account.js:253
+#: ./src/app/settings/controllers/account.js:279
 #: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
@@ -9125,7 +9171,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "公钥已被信任"
 
-#: ./src/app/settings/controllers/account.js:124
+#: ./src/app/settings/controllers/account.js:126
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "密保/通知邮箱已保存"
@@ -9553,6 +9599,11 @@ msgctxt "Title"
 msgid "Bits"
 msgstr "位数"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:3
+msgctxt "Title"
+msgid "Black Friday Sale"
+msgstr "黑色星期五特惠"
+
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
 msgid "Bridge IMAP/SMTP"
@@ -9675,7 +9726,7 @@ msgctxt "Title"
 msgid "Confirm Reset Password"
 msgstr "重设密码"
 
-#: ./src/app/dashboard/factories/downgrade.js:14
+#: ./src/app/dashboard/factories/downgrade.js:19
 msgctxt "Title"
 msgid "Confirm downgrade"
 msgstr "确认降级"
@@ -9684,6 +9735,11 @@ msgstr "确认降级"
 msgctxt "Title"
 msgid "Confirm login password"
 msgstr "确认登录密码"
+
+#: ./src/app/dashboard/factories/downgrade.js:26
+msgctxt "Title"
+msgid "Confirm loss of Proton bonuses"
+msgstr "确定放弃 Proton 特权"
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"
@@ -9991,6 +10047,11 @@ msgstr "域名地址"
 msgctxt "Title"
 msgid "Domains"
 msgstr "域名"
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:4
+msgctxt "Title"
+msgid "Don't miss out on limited time discounts for newcomers!"
+msgstr "千万别错过面向新用户的限时优惠！"
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
@@ -11351,6 +11412,11 @@ msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "账单"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:15
+msgctxt "Title most popular offer"
+msgid "Most popular"
+msgstr "最受欢迎"
+
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
 msgid "Pasted-image"
@@ -12135,6 +12201,11 @@ msgctxt "bug report modal label"
 msgid "What happened?"
 msgstr "问题描述"
 
+#: ./src/app/dashboard/factories/downgrade.js:27
+msgctxt "button"
+msgid "Remove bonuses"
+msgstr "放弃特权"
+
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
 msgid "Wizard"
@@ -12370,6 +12441,11 @@ msgstr "移动 {{total}} {{type}}"
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "{{total}} {{type}}已加星标"
+
+#: ./src/app/blackFriday/directives/blackFriday.js:39
+msgctxt "price"
+msgid "/mo"
+msgstr "/月"
 
 #: ./src/app/utils/factories/printMessageModel.js:12
 msgctxt "printed message info"
