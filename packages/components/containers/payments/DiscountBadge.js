@@ -25,9 +25,9 @@ const DiscountBadge = ({ code, cycle }) => {
             return (
                 <Badge
                     type="success"
-                    tooltip={c('Discount with coupon code').t`46% discount applied to your subscription`}
+                    tooltip={c('Discount with coupon code').t`47% discount applied to your subscription`}
                 >
-                    -46%
+                    -47%
                 </Badge>
             );
         }
