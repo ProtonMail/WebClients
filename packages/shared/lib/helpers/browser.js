@@ -31,6 +31,7 @@ export const isSafariMobile = () => ua.browser.name === 'Mobile Safari';
 export const isIE11 = () => ua.browser.name === 'IE' && ua.browser.major === '11';
 export const isEdge = () => ua.browser.name === 'Edge';
 export const isFirefox = () => ua.browser.name === 'Firefox';
+export const isFirefoxFocus = () => ua.browser.name === 'Firefox Focus';
 export const isChrome = () => ua.browser.name === 'Chrome';
 export const isMac = () => ua.os.name === 'Mac OS';
 export const hasTouch = 'ontouchstart' in document.documentElement;
@@ -49,6 +50,14 @@ export const doNotTrack = () => {
         navigator.msDoNotTrack === '1' ||
         window.doNotTrack === '1'
     );
+};
+
+/**
+ * Do not support window.open event after user interaction
+ * @returns {Boolean}
+ */
+export const doNotWindowOpen = () => {
+    return isDuckDuckGo() || isFirefoxFocus();
 };
 
 export const parseURL = (url = '') => {
