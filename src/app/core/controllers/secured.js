@@ -16,6 +16,7 @@ function SecuredController(
     mailSettingsModel,
     resurrecter,
     versionInfoModel,
+    blackFridayHandler,
     prepareDraft,
     userType
 ) {
@@ -35,6 +36,7 @@ function SecuredController(
     };
 
     setUserType();
+    blackFridayHandler();
 
     resurrecter.init();
     const bindAppValue = (key, { value }) => $scope.$applyAsync(() => ($scope[key] = value));

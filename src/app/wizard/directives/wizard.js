@@ -27,11 +27,15 @@ function wizard(dispatchers, $stateParams, $timeout, $state, welcomeModal, wizar
             };
 
             // Initialization
-            $timeout(() => {
-                if ($stateParams.welcome) {
-                    welcome();
-                }
-            }, 0);
+            $timeout(
+                () => {
+                    if ($stateParams.welcome) {
+                        welcome();
+                    }
+                },
+                0,
+                false
+            );
 
             /**
              * Listen to the differents actions

@@ -15,8 +15,10 @@ function navigation(dispatchers, blackFridayModel) {
                 type === 'update' && update();
             });
 
+            on('updateUser', update);
+
             on('blackFriday', (event, { type = '' }) => {
-                type === 'tictac' && update();
+                type === 'run' && update();
             });
 
             update();

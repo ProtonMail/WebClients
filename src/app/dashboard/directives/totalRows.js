@@ -49,7 +49,11 @@ function totalRows(
             scope.onChange = () => dispatcher.dashboard('change.cycle', { cycle: scope.cycle });
 
             function bindClass() {
-                const action = subscriptionModel.cycle() === TWO_YEARS || isDealEvent() ? 'add' : 'remove';
+                const test =
+                    subscriptionModel.cycle() === TWO_YEARS ||
+                    isDealEvent() ||
+                    subscriptionModel.name() !== 'professional';
+                const action = test ? 'add' : 'remove';
 
                 element[0].classList[action](HAS_TWO_YEARS_CLASS);
             }

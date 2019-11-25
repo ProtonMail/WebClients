@@ -1,30 +1,36 @@
 <div class="blackFriday-container">
     <header class="blackFriday-header">
-        <span class="blackFriday-header-info">{{ state.header }}</span>
-        <black-friday-countdown data-end="{{::state.end}}"></black-friday-countdown>
+        <h1 translate-context="Title" translate>Black Friday Sale</h1>
+        <h2 translate-context="Title" translate>Don't miss out on limited time discounts for newcomers!</h2>
     </header>
 
     <div class="blackFriday-content">
-        <span class="blackFridayIntro">{{ state.intro }}</span>
 
         <div class="blackFridayOffers-container">
             <div class="blackFridayOffer-container" ng-repeat="offer in offers track by $id(offer)">
 
-                <div class="blackFridayOffer-header" data-percentage="{{ ::offer.percentage }}">{{ ::offer.header }}</div>
-
-                <div class="blackFridayOffer-content">
-                    <div class="blackFridayOffer-plans">
-                        <span class="blackFridayOffer-plans-title" ng-repeat="name in ::offer.plans">
-                            {{ ::name }}
-                        </span>
+                <div
+                    class="bf-best-offer"
+                    ng-if="$index === 1">
+                        <span  translate-context="Title most popular offer" translate>Most popular</span>
                     </div>
 
+                <div class="blackFridayOffer-header">
+                    <div class="bf-bubble-percent">
+                        <div class="bf-bubble-percentTxt">{{ ::offer.percentage }}%<div>off</div></div>
+                    </div>
+                    <div class="be-headerOffer-titles">
+                        <span>{{ ::offer.header.type }}</span>
+                        <h5>{{ ::offer.header.title }}</h5>
+                    </div>
+                </div>
+
+                <div class="blackFridayOffer-content">
+
                     <div class="blackFridayOffer-price-container">
-                        <div class="blackFridayOffer-price-info">
-                            {{ ::offer.discountedPrice }}<span class="blackFridayOffer-price-month">{{ ::state.perMonth }}</span>
-                        </div>
+                        <div class="blackFridayOffer-price-info" ng-bind-html="getPrice(offer)"></div>
                         <div class="blackFridayOffer-price-regular">
-                            {{ ::offer.regularPrice }}<span>{{ ::state.perMonth }}</span>
+                            Regular price: <strike>{{ ::offer.price.monthlyRegular }}{{::state.perMonth}}</strike>
                         </div>
                         <div class="blackFridayOffer-price-savings">
                             {{ ::offer.savings }}
@@ -37,10 +43,12 @@
                     <button
                         type="button"
                         ng-disabled="state.loading"
-                        class="pm_button primary blackFridayOffer-buy"
+                        class="pm_button blackFridayOffer-buy"
+                        ng-class="{'primary': $index === 1}"
                         data-buy-offer="{{ $index }}"
-                    >{{ ::state.buy }}
-                    </button>
+                    >{{ ::state.buy }}</button>
+
+                    <div>{{::offer.billingTxt}} ({{$index +1}})</div>
                 </div>
             </div>
         </div>
@@ -56,7 +64,7 @@
 
         <div class="blackFridayAfter-container">
             <span class="blackFridayAfter-item" ng-repeat="offer in offers track by $id(offer)">
-                {{ ::offer.afterBilling }}
+                ({{$index + 1}}) {{ ::offer.afterBilling }}
             </span>
         </div>
     </footer>

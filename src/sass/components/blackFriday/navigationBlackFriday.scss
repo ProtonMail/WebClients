@@ -4,7 +4,7 @@
 }
 
 .navigationBlackFriday-icon,
-.navigationBlackFriday-icon:after  {
+.navigationBlackFriday-icon::after  {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,14 +12,10 @@
 
 .navigationBlackFriday-icon { width: 100% }
 
-.navigationBlackFriday-icon:after {
-    content:"%";
-    width: 20px;
-    height: 20px;
+.navigationBlackFriday-icon::after {
+    content: url(assets('bf/icon-bf.svg'));
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
-    font-family: arial;
-    font-weight: bold;
-    text-transform: none;
-    font-size: 11px;
     animation: pusate 2s infinite alternate;
 }
