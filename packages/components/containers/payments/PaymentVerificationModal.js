@@ -8,16 +8,19 @@ import {
     ResetButton,
     useNotifications,
     useApi,
-    PrimaryButton
+    PrimaryButton,
+    DuckDuckGoAlertError
 } from 'react-components';
 import { c } from 'ttag';
 import errorSvg from 'design-system/assets/img/pm-images/error.svg';
 import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { isDuckDuckGo } from 'proton-shared/lib/helpers/browser';
 
 import { toParams, process } from './paymentTokenHelper';
 import PaymentVerificationImage from './PaymentVerificationImage';
 
 const STEPS = {
+    DUCKDUCKGO: 'duckduckgo',
     REDIRECT: 'redirect',
     REDIRECTING: 'redirecting',
     REDIRECTED: 'redirected',
@@ -38,6 +41,7 @@ const PaymentVerificationModal = ({
 }) => {
     const isAddCard = mode === ADD_CARD_MODE;
     const TITLES = {
+        [STEPS.DUCKDUCKGO]: c('Title').t`Unsupported browser`,
         [STEPS.REDIRECT]: isAddCard ? c('Title').t`Card verification` : c('Title').t`Payment verification`,
         [STEPS.REDIRECTING]: c('Title').t`Processing...`,
         [STEPS.REDIRECTED]: isAddCard
@@ -45,7 +49,7 @@ const PaymentVerificationModal = ({
             : c('Title').t`Payment verification in progress`,
         [STEPS.FAIL]: c('Title').t`3-D Secure verification failed`
     };
-    const [step, setStep] = useState(STEPS.REDIRECT);
+    const [step, setStep] = useState(() => (isDuckDuckGo() ? STEPS.DUCKDUCKGO : STEPS.REDIRECT));
     const [error, setError] = useState({});
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -143,6 +147,12 @@ const PaymentVerificationModal = ({
                                     ? c('Info').t`Verification can take a few minutes.`
                                     : c('Info').t`Payment can take a few minutes to fully verify.`}
                             </Alert>
+                        </>
+                    ),
+                    [STEPS.DUCKDUCKGO]: (
+                        <>
+                            <DuckDuckGoAlertError />
+                            <Button onClick={handleCancel}>{c('Action').t`Close`}</Button>
                         </>
                     ),
                     [STEPS.FAIL]: (
