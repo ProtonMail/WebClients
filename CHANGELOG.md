@@ -1,3 +1,14 @@
+# [3.16.10] - 2019-11-25
+## Added
+- warning for browsers that do not support payment confirmations in a new tab
+
+## Changed
+- Payment improvements
+
+# [3.16.9] - 2019-11-20
+
+- Fixed an issue that caused Safari to show inconsistent dates in some cases
+
 # [3.16.8] - 2019-11-18
 
 - WKD support for contacts
