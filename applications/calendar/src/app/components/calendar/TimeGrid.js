@@ -91,6 +91,8 @@ const TimeGrid = React.forwardRef(
         const dayEventHeight = 24;
         const numberOfRows = 3;
 
+        const displayViewClass = days.length > 2 ? 'is-week-view' : 'is-day-view';
+
         const eventsPerRows = useDayGridEventLayout(daysRows, dayEvents, numberOfRows, dayEventHeight);
 
         const [{ eventsInRow, eventsInRowStyles, maxRows, eventsInRowSummary }] = eventsPerRows;
@@ -181,7 +183,7 @@ const TimeGrid = React.forwardRef(
 
         return (
             <div
-                className="flex-item-fluid scroll-if-needed view-column-detail"
+                className={classnames(['flex-item-fluid scroll-if-needed view-column-detail', displayViewClass])}
                 onScroll={handleScroll}
                 ref={scrollRef}
             >

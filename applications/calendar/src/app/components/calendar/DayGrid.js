@@ -140,7 +140,7 @@ const DayGrid = ({
     let isFirstSelection = true;
 
     return (
-        <div className="flex-item-fluid scroll-if-needed view-column-detail">
+        <div className="flex-item-fluid scroll-if-needed view-column-detail is-month-view">
             <div className="flex flex-column relative h100" ref={mainRef}>
                 <div className="flex calendar-daygrid-days">
                     {displayWeekNumbers ? <div className="calendar-daygrid-weeknumber-width" /> : null}
@@ -151,7 +151,15 @@ const DayGrid = ({
                                 key={day.getUTCDate()}
                                 aria-current={day.getUTCDay() === now.getUTCDay() ? 'true' : null}
                             >
-                                {weekdaysLong[day.getUTCDay()]}
+                                <span className="calendar-grid-heading-day-fullname">
+                                    {weekdaysLong[day.getUTCDay()]}
+                                </span>
+                                <span
+                                    className="calendar-grid-heading-day-shortname nodesktop notablet"
+                                    aria-hidden="true"
+                                >
+                                    {weekdaysLong[day.getUTCDay()][0]}
+                                </span>
                             </div>
                         );
                     })}

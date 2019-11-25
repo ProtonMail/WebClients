@@ -1,5 +1,9 @@
 $width-sidebar: 26rem;
 
+$breakpoint-medium     : 1000;
+$breakpoint-small      : 870;
+$breakpoint-tiny       : 520;
+
 
 // include components that are shared across all Proton Products
 @import '~react-components/styles/index';
