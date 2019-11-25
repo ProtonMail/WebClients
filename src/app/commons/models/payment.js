@@ -183,6 +183,8 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
         });
     };
 
+    const latestSubscription = () => response($http.get(requestUrl('subscription', 'latest')));
+
     /**
      * Validate a subscription
      */
@@ -247,7 +249,8 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
         subscribe,
         unsubscribe,
         delete: destroy,
-        btc
+        btc,
+        latestSubscription
     };
 }
 export default Payment;

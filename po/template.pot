@@ -1030,6 +1030,11 @@ msgctxt "Action"
 msgid "Generate missing keys"
 msgstr ""
 
+#: ./src/app/blackFriday/directives/blackFriday.js:40
+msgctxt "Action"
+msgid "Get the deal"
+msgstr ""
+
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
 msgid "Go to dashboard"
@@ -5064,6 +5069,12 @@ msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr ""
 
+#: ./src/app/blackFriday/directives/blackFriday.js:20
+#: ./src/app/blackFriday/directives/blackFriday.js:22
+msgctxt "Info"
+msgid "Billed as {{price}}"
+msgstr ""
+
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
@@ -5928,6 +5939,16 @@ msgctxt "Info"
 msgid "Remove the attachment {{fileName}}"
 msgstr ""
 
+#: ./src/app/blackFriday/directives/blackFriday.js:26
+msgctxt "Info"
+msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
+msgstr ""
+
+#: ./src/app/blackFriday/directives/blackFriday.js:33
+msgctxt "Info"
+msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
+msgstr ""
+
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
 msgid "Required"
@@ -5986,6 +6007,11 @@ msgstr ""
 #: ./src/templates/modals/switchPasswordMode.tpl.html:66
 msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
+msgstr ""
+
+#: ./src/app/blackFriday/directives/blackFriday.js:42
+msgctxt "Info"
+msgid "Save {{price}}"
 msgstr ""
 
 #: ./src/app/address/directives/addressKeysView.js:37
@@ -9585,6 +9611,11 @@ msgctxt "Title"
 msgid "Bits"
 msgstr ""
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:3
+msgctxt "Title"
+msgid "Black Friday Sale"
+msgstr ""
+
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
 msgid "Bridge IMAP/SMTP"
@@ -10027,6 +10058,11 @@ msgstr ""
 #: ./src/templates/views/domains.tpl.html:8
 msgctxt "Title"
 msgid "Domains"
+msgstr ""
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:4
+msgctxt "Title"
+msgid "Don't miss out on limited time discounts for newcomers!"
 msgstr ""
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
@@ -11392,6 +11428,11 @@ msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr ""
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:15
+msgctxt "Title most popular offer"
+msgid "Most popular"
+msgstr ""
+
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
 msgid "Pasted-image"
@@ -12425,6 +12466,11 @@ msgstr ""
 #: ./src/app/dnd/services/actionDnd.js:24
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
+msgstr ""
+
+#: ./src/app/blackFriday/directives/blackFriday.js:39
+msgctxt "price"
+msgid "/mo"
 msgstr ""
 
 #: ./src/app/utils/factories/printMessageModel.js:12
