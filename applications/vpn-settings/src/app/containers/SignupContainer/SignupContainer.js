@@ -28,15 +28,10 @@ const SignupState = {
 const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
     const searchParams = new URLSearchParams(history.location.search);
     const preSelectedPlan = searchParams.get('plan');
-    const redirectToMobile = searchParams.get('from') === 'mobile';
+    const from = searchParams.get('from');
     const couponCode = searchParams.get('coupon');
     const currency = searchParams.get('currency');
     const billingCycle = Number(searchParams.get('billing'));
-
-    const availablePlans =
-        checkCookie('offer', 'bestdeal') && !redirectToMobile
-            ? BEST_DEAL_PLANS
-            : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
 
     const historyState = history.location.state || {};
     const invite = historyState.invite;
@@ -48,6 +43,12 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
             cycle: billingCycle
         });
 
+    const redirectToMobile = (from || historyState.from) === 'mobile';
+    const availablePlans =
+        checkCookie('offer', 'bestdeal') && !redirectToMobile
+            ? BEST_DEAL_PLANS
+            : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
+
     useEffect(() => {
         // Always start at plans, or account if paid plan is preselected
         if (preSelectedPlan && preSelectedPlan !== 'free') {
@@ -58,7 +59,8 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
         } else {
             history.replace('/signup', {
                 coupon,
-                invite
+                invite,
+                from
             });
         }
     }, []);
