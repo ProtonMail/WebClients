@@ -164,10 +164,15 @@ export function format(filter, mode) {
 
     // Order is always [<move-dir>, ...<add-labels>]
     const { FileInto = [], Labels = [] } = filter.Simple.Actions;
+
     const newFilter = {
         ...omit(filter, ['Sieve']),
         Simple: {
             ...filter.Simple,
+            Conditions: filter.Simple.Conditions.map((Condition) => ({
+                ...Condition,
+                Values: Condition.Values.filter((value) => value !== null)
+            })),
             Actions: {
                 ...omit(filter.Simple.Actions, 'Labels'),
                 FileInto: FileInto.concat(Labels)
