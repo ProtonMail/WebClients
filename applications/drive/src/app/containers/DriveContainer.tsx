@@ -40,8 +40,6 @@ function DriveContainer({ match, history }: RouteComponentProps<{ shareId?: stri
         }
     };
 
-    const redirectToLink = (shareId: string, linkId: string) => history.replace(`/drive/${shareId}/folder/${linkId}`);
-
     useEffect(() => {
         const { shareId, type, linkId } = match.params;
         let didCancel = false;
@@ -53,7 +51,7 @@ function DriveContainer({ match, history }: RouteComponentProps<{ shareId?: stri
                 createModal(<OnboardingModal />);
                 const { Share } = await createVolume();
                 if (!didCancel) {
-                    redirectToLink(Share.ID, Share.LinkID);
+                    setResource({ shareId: Share.ID, linkId: Share.LinkID, type: LinkType.FOLDER });
                 }
                 return;
             }
@@ -68,7 +66,7 @@ function DriveContainer({ match, history }: RouteComponentProps<{ shareId?: stri
                 setResource(initialResource);
             } else {
                 const { Share } = initResult;
-                redirectToLink(Share.ShareID, Share.LinkID);
+                setResource({ shareId: Share.ShareID, linkId: Share.LinkID, type: LinkType.FOLDER });
             }
         };
 
