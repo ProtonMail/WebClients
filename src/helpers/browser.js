@@ -29,9 +29,12 @@ export const isChrome = () => $.ua.browser.name === 'Chrome';
 export const isMac = () => getOS().name === 'Mac OS';
 export const hasTouch = 'ontouchstart' in document.documentElement;
 
-export const isDuckDuckGo = () => {
+export const isBrowserWithout3DS = () => {
     // Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.108 Mobile Safari/537.36 DuckDuckGo/5
-    return navigator.userAgent.includes('DuckDuckGo');
+    const isDonald = navigator.userAgent.includes('DuckDuckGo');
+    const isFFocus = $.ua.browser.name === 'Firefox Focus';
+
+    return isFFocus || isDonald;
 };
 
 /**
