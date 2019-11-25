@@ -13,7 +13,7 @@ export { default as Select } from './components/select/Select';
 export { default as Breadcrumb } from './components/breadcrumb/Breadcrumb';
 export { default as Wizard } from './components/wizard/Wizard';
 export { default as Alert } from './components/alert/Alert';
-export { default as DuckDuckGoAlertError } from './components/alert/DuckDuckGoAlertError';
+export { default as DoNotWindowOpenAlertError } from './components/alert/DoNotWindowOpenAlertError';
 export { default as Icon } from './components/icon/Icon';
 export { default as RoundedIcon } from './components/icon/RoundedIcon';
 export { default as Icons } from './components/icon/Icons';

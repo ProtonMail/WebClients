@@ -10,13 +10,13 @@ import {
     useLoading,
     PrimaryButton,
     LinkButton,
-    DuckDuckGoAlertError
+    DoNotWindowOpenAlertError
 } from 'react-components';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { createToken } from 'proton-shared/lib/api/payments';
 
 import { toParams, process } from './paymentTokenHelper';
-import { isDuckDuckGo } from 'proton-shared/lib/helpers/browser';
+import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
 
 const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     const api = useApi();
@@ -108,8 +108,8 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
         );
     }
 
-    if (isDuckDuckGo()) {
-        return <DuckDuckGoAlertError />;
+    if (doNotWindowOpen()) {
+        return <DoNotWindowOpenAlertError />;
     }
 
     if (loadingToken) {
