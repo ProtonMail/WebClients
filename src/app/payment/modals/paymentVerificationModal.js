@@ -1,4 +1,5 @@
 import { toParams, process } from '../helpers/paymentToken';
+import { isDuckDuckGo } from '../../../helpers/browser';
 
 /* @ngInject */
 function paymentVerificationModal(pmModal, Payment) {
@@ -10,7 +11,7 @@ function paymentVerificationModal(pmModal, Payment) {
         controller: function(params, $scope) {
             const self = this;
 
-            self.step = 'redirect';
+            self.step = isDuckDuckGo() ? 'duckduckgo' : 'redirect';
             self.payment = params.payment;
             self.isAddCard = params.mode === 'add-card';
 

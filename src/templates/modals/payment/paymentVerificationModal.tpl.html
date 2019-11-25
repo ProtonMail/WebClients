@@ -12,6 +12,7 @@
                     <span ng-if="!ctrl.isAddCard" translate-context="Title" translate>Payment verification in progress</span>
                     <span ng-if="ctrl.isAddCard" translate-context="Title" translate>Card verification in progress</span>
                 </h4>
+                <h4 ng-if="ctrl.step === 'duckduckgo'" class="modal-title" translate-context="Title" translate>Unsupported browser</h4>
                 <h4 ng-if="ctrl.step === 'fail'" class="modal-title" translate-context="Title" translate>3-D Secure verification failed</h4>
             </div>
             <div class="modal-body">
@@ -43,6 +44,10 @@
                         <span ng-if="!ctrl.isAddCard" translate-context="Info" translate>Payment can take a few minutes to fully verify.</span>
                         <span ng-if="ctrl.isAddCard" translate-context="Info" translate>Verification can take a few minutes.</span>
                     </p>
+                </div>
+                <div ng-if="ctrl.step === 'duckduckgo'">
+                    <p class="alert alert-error" translate-context="Error" translate>The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.</p>
+                    <button class="pm_button" type="button" ng-click="ctrl.cancel()" translate-context="Action" translate>Close</button>
                 </div>
                 <div ng-if="ctrl.step === 'fail'" class="text-center">
                     <p translate-context="Info" translate>Please try again, use a different payment method, or call your bank for assistance.</p>

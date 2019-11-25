@@ -1,5 +1,6 @@
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from '../../constants';
 import { process } from '../helpers/paymentToken';
+import { isDuckDuckGo } from '../../../helpers/browser';
 
 /* @ngInject */
 function paypalView(Payment, notification) {
@@ -91,6 +92,10 @@ function paypalView(Payment, notification) {
                     type: 'validator.amount',
                     validator: 'max',
                     amount: MAX_PAYPAL_AMOUNT
+                };
+            } else if (isDuckDuckGo()) {
+                scope.errorDetails = {
+                    validator: 'duckduckgo'
                 };
             } else {
                 generateTokens();
