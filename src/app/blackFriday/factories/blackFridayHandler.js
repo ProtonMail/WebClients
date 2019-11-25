@@ -1,3 +1,5 @@
+import { BLACK_FRIDAY } from '../../constants';
+
 /* @ngInject */
 function blackFridayHandler(Payment, blackFridayModel, dispatchers) {
     const OCTOBER_01 = +new Date('2019-10-01') / 1000; // Unix TS
@@ -19,6 +21,9 @@ function blackFridayHandler(Payment, blackFridayModel, dispatchers) {
         if (isAbleToSeeBF(LastSubscriptionEnd)) {
             blackFridayModel.allow();
             dispatcher.blackFriday('run');
+            setInterval(() => {
+                dispatcher.blackFriday('run');
+            }, BLACK_FRIDAY.INTERVAL);
         }
     }
 
