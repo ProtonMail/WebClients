@@ -215,6 +215,7 @@
     "node": ">=8.0.0"
   },
   "version": "3.16.19",
+  "version-beta": "4.0.0-beta3",
   "husky": {
     "hooks": {
       "pre-commit": "git update-index --assume-unchanged package-lock.json && ./tasks/metrics.sh"

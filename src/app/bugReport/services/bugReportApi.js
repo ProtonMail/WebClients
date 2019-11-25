@@ -18,7 +18,7 @@ Raven.config(CONFIG.sentry.sentry, {
     release: CONFIG.sentry.release
 }).install();
 Raven.setTagsContext({
-    appVersion: CONFIG.app_version
+    appVersion: CONFIG.app_version_v4
 });
 
 /* @ngInject */
@@ -59,7 +59,7 @@ function bugReportApi(
             Browser: browser.name,
             BrowserVersion: browser.version,
             Client: 'Angular',
-            ClientVersion: CONFIG.app_version,
+            ClientVersion: CONFIG.app_version_v4,
             ClientType: CLIENT_TYPE,
             ViewLayout: getViewLayout(ViewLayout),
             ViewMode: getViewMode(ViewMode),
@@ -149,7 +149,7 @@ function bugReportApi(
         };
         Raven.setUserContext();
         Raven.setUserContext(crashData);
-        Raven.captureException(error, { appVersion: CONFIG.app_version });
+        Raven.captureException(error, { appVersion: CONFIG.app_version_v4 });
     };
 
     const phishing = (message) => {
