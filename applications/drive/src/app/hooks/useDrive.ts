@@ -1,12 +1,13 @@
 import { useGetAddressKeys, useGetAddresses, useApi, useCache } from 'react-components';
 import { getPrimaryAddress } from 'proton-shared/lib/helpers/address';
-import { generateDriveBootstrap, decryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
+import { generateDriveBootstrap } from 'proton-shared/lib/keys/driveKeys';
 import { queryCreateDriveVolume } from '../api/volume';
 import { queryUserShares, queryShareBootstrap } from '../api/share';
 import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
 import { UserShare, ShareBootstrap } from '../interfaces/share';
 import { CreatedDriveVolume } from '../interfaces/volume';
-import { decryptPrivateKeyArmored } from 'proton-shared/lib/keys/keys';
+import { decryptPrivateKeyArmored, splitKeys } from 'proton-shared/lib/keys/keys';
+import { decryptMessage, getMessage } from 'pmcrypto/lib/pmcrypto';
 
 function useDrive() {
     const api = useApi();
@@ -23,11 +24,14 @@ function useDrive() {
     const getShareBootstrap = (shareId: string): Promise<{ Share: ShareBootstrap; privateKey: any }> => {
         return getPromiseValue(cache, `drive/shares/${shareId}`, async () => {
             const Share: ShareBootstrap = await api(queryShareBootstrap(shareId));
-            const [{ privateKey }] = await getAddressKeys(Share.AddressID);
-            const decryptedSharePassphrase = await decryptUnsigned({
-                armoredMessage: Share.Passphrase,
-                privateKey
+            const { privateKeys, publicKeys } = splitKeys(await getAddressKeys(Share.AddressID));
+
+            const { data: decryptedSharePassphrase } = await decryptMessage({
+                message: await getMessage(Share.Passphrase),
+                privateKeys,
+                publicKeys
             });
+
             const shareKey = await decryptPrivateKeyArmored(Share.Key, decryptedSharePassphrase);
             return { Share, privateKey: shareKey };
         });
