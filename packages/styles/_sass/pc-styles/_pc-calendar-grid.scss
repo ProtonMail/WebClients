@@ -210,16 +210,25 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
         font-size: 1.2rem;
     }
 
-
-    .calendar-grid-heading-day-fullname {
-        border: 0;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
+    // we show abbreviated version only on week/month view
+    .is-week-view,
+    .is-month-view {
+        .calendar-grid-heading-day-fullname {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+    }
+    // thus hide the abbrievated version on day view
+    .is-day-view {
+        .calendar-grid-heading-day-shortname {
+            display: none;
+        }
     }
 
 }
