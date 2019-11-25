@@ -1,9 +1,10 @@
 <div class="paypal-container">
-    <div class="alert alert-danger paypal-error-amount" ng-if="errorDetails" data-type="{{errorDetails.validator}}">
+    <div class="alert alert-danger" ng-if="errorDetails">
         <div class="margin-bottom">
-            <span class="paypal-error-max" translate-context="Paypal error" translate>Amount above the maximum.</span>
-            <span class="paypal-error-min" translate-context="Paypal error" translate>Amount below minimum.</span>
-            ({{ errorDetails.amount / 100 }} {{ currency }})
+            <span ng-if="errorDetails.validator === 'duckduckgo'" translate-context="PayPal error" translate>The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.</span>
+            <span ng-if="errorDetails.validator === 'min'" translate-context="Paypal error" translate>Amount below minimum.</span>
+            <span ng-if="errorDetails.validator === 'max'" translate-context="Paypal error" translate>Amount above the maximum.</span>
+            <span ng-if="errorDetails.validator === 'min' || errorDetails.validator === 'max'">({{ errorDetails.amount / 100 }} {{ currency }})</span>
         </div>
     </div>
 
