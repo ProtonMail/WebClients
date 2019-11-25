@@ -77,6 +77,7 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 
 .calendar-fullday-row {
     border-bottom: $calendar-grid-border;
+    padding-bottom: 3px;
 }
 
 .calendar-grid-timeBlock {
@@ -113,9 +114,6 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 .calendar-daygrid-days,
 .calendar-first-row-heading {
     border-bottom: $calendar-grid-border;
-}
-.calendar-first-row-heading {
-    margin-bottom: 1px;
 }
 .calendar-daygrid-day[aria-current=true] {
   font-weight: bold;
@@ -156,13 +154,12 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 
 
 // events
-$calendar-dayevent-cell-height: 24px !default; // careful when updating this (depends also on JS calculations)
+$calendar-dayevent-cell-height: 28px !default; // careful when updating this (depends also on JS calculations)
 .calendar-dayeventcell {
     padding-right: 10px;
-    padding-bottom: 5px;
+    padding-top: 3px;
     white-space: nowrap;
     overflow: hidden;
-    cursor: pointer;
     height: $calendar-dayevent-cell-height;
 }
 
@@ -182,6 +179,9 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
     &:hover {
         background-color: $calendar-dayeventcell-hover-color;
     }
+}
+.calendar-dayeventcell-inner--notAllDay {
+    border: 0;
 }
 
 .calendar-eventcell {
