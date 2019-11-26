@@ -62,7 +62,6 @@ export const useElements = ({
     // Prevent updating the state when the cache is already empty
     const resetCache = () => {
         if (localCache.pages.length > 0 || Object.values(localCache.elements).length > 0) {
-            console.log('actual reset cache');
             setLocalCache(emptyCache());
         }
     };
@@ -171,12 +170,10 @@ export const useElements = ({
 
     // Reset local cache when needed
     useEffect(() => {
-        console.log('Reset cache (label or pageSize)');
         resetCache();
     }, [labelID, pageSize]);
     useEffect(() => {
         if (!isConsecutive(pageNumber)) {
-            console.log('Reset cache (not consecutive)');
             resetCache();
         }
     }, [pageNumber]);
@@ -186,6 +183,7 @@ export const useElements = ({
         const minPage = localCache.pages.reduce((acc, page) => (page < acc ? page : acc), localCache.pages[0]);
         const startIndex = (pageNumber - minPage) * pageSize;
         const endIndex = startIndex + pageSize;
+
         return Object.values(localCache.elements)
             .sort((e1, e2) => getTime(e2, labelID) - getTime(e1, labelID))
             .filter(({ LabelIDs = [] }) => LabelIDs.some((ID: string) => ID === labelID))
@@ -208,19 +206,20 @@ export const useElements = ({
         };
 
         const load = async () => {
-            console.log('Load', 'label', labelID, 'page', pageNumber);
             setLoading(true);
             try {
                 const { Total, Elements } = await queryElements();
                 setLoading(false);
-                setLocalCache((localCache) => ({
-                    total: Total,
-                    pages: [...localCache.pages, pageNumber],
-                    elements: {
-                        ...localCache.elements,
-                        ...toMap(Elements, 'ID')
-                    }
-                }));
+                setLocalCache((localCache) => {
+                    return {
+                        total: Total,
+                        pages: [...localCache.pages, pageNumber],
+                        elements: {
+                            ...localCache.elements,
+                            ...toMap(Elements, 'ID')
+                        }
+                    };
+                });
             } catch (error) {
                 setLoading(false);
             }
