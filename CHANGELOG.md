@@ -1,3 +1,7 @@
+# [3.16.12] - 2019-11-26
+## Fixed
+- prices on some promotion modals were shown incorrectly
+
 # [3.16.11] - 2019-11-25
 ## Fixed
 - Black Friday link condition
