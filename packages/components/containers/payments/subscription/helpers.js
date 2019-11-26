@@ -7,7 +7,7 @@ import { getUnixTime } from 'date-fns';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL, VPN } = PLAN_SERVICES;
-const SEPTEMBER_30 = getUnixTime(new Date('2019-10-30'));
+const OCTOBER_01 = getUnixTime(new Date('2019-10-01'));
 
 const I18N = {
     included: c('Option').t`included`,
@@ -301,5 +301,5 @@ export const checkLastCancelledSubscription = async (api) => {
         return true;
     }
 
-    return LastSubscriptionEnd ? LastSubscriptionEnd < SEPTEMBER_30 : false;
+    return LastSubscriptionEnd ? LastSubscriptionEnd < OCTOBER_01 : false;
 };
