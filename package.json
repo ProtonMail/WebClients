@@ -165,7 +165,7 @@
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js",
     "testwatch": "npm test -- --auto-watch --no-single-run",
     "preversion": "git update-index --no-assume-unchanged package-lock.json",
-    "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags",
+    "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags && git push",
     "config": "cross-env NODE_ENV=dev NODE_ENV_MODE=config tasks/setupConfig.js",
     "start": "./node_modules/proton-bundler/scripts/createVersionJSON.sh && cross-env NODE_ENV=dev tasks/setupConfig.js",
     "poststart": "npm run dev",
