@@ -1,13 +1,17 @@
 import { getEventName } from '../../../blackFriday/helpers/blackFridayHelper';
 
 /* @ngInject */
-function navigationBlackFriday() {
+function navigationBlackFriday(blackFridayModel, dispatchers) {
+    const IS_BLACK_FRIDAY_CLASS = 'navigationBlackFriday-is-black-friday';
+
     return {
         restrict: 'E',
         scope: {},
         replace: true,
         templateUrl: require('../../../../templates/ui/navigation/navigationBlackFriday.tpl.html'),
         link(scope, element) {
+            const { on, unsubscribe } = dispatchers();
+
             const textEl = element[0].querySelector('.navigation-title');
 
             const refresh = () => {
@@ -27,10 +31,15 @@ function navigationBlackFriday() {
                 type === 'update' && update();
             });
 
+            on('blackFriday', (event, { type = '' }) => {
+                type === 'run' && update();
+            });
+
             on('updateUser', update);
 
             scope.$on('$destroy', () => {
                 clearInterval(id);
+                unsubscribe();
             });
         }
     };
