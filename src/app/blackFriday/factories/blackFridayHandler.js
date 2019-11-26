@@ -1,6 +1,6 @@
 /* @ngInject */
 function blackFridayHandler(Payment, blackFridayModel, dispatchers) {
-    const SEPTEMBER_30 = +new Date('2019-10-30') / 1000; // Unix TS
+    const OCTOBER_01 = +new Date('2019-10-01') / 1000; // Unix TS
 
     const isAbleToSeeBF = (latest = 0) => {
         // New user
@@ -9,7 +9,7 @@ function blackFridayHandler(Payment, blackFridayModel, dispatchers) {
         }
 
         // Free from at least > 1 month
-        return latest && latest < SEPTEMBER_30;
+        return latest && latest < OCTOBER_01;
     };
 
     async function init() {
