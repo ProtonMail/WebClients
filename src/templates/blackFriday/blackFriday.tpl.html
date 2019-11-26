@@ -17,7 +17,7 @@
 
                 <div class="blackFridayOffer-header">
                     <div class="bf-bubble-percent">
-                        <div class="bf-bubble-percentTxt">{{ ::offer.percentage }}%<div>off</div></div>
+                        <div class="bf-bubble-percentTxt">{{ ::offer.percentage }}%<div><span  translate-context="Discount offer X% off" translate>off</span></div></div>
                     </div>
                     <div class="be-headerOffer-titles">
                         <span>{{ ::offer.header.type }}</span>
@@ -30,7 +30,7 @@
                     <div class="blackFridayOffer-price-container">
                         <div class="blackFridayOffer-price-info" ng-bind-html="getPrice(offer)"></div>
                         <div class="blackFridayOffer-price-regular">
-                            Regular price: <strike>{{ ::offer.price.monthlyRegular }}{{::state.perMonth}}</strike>
+                            <span  translate-context="Price offer" translate>Regular price</span>: <strike>{{ ::offer.price.monthlyRegular }}{{::state.perMonth}}</strike>
                         </div>
                         <div class="blackFridayOffer-price-savings">
                             {{ ::offer.savings }}
