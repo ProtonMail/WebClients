@@ -46,11 +46,12 @@ async function send(data, { env, mode = 'deploy', api }) {
 
         const req = https.request(
             {
-                host,
+                host: 'proxy',
                 port: 443,
                 path: pathname,
                 method: 'POST',
                 headers: {
+                    host,
                     'Content-Type': 'application/json',
                     'Content-Length': Buffer.byteLength(body, 'utf8')
                 }
