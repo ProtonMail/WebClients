@@ -1,3 +1,7 @@
+# [3.16.11] - 2019-11-25
+## Fixed
+- Black Friday link condition
+
 # [3.16.10] - 2019-11-25
 ## Added
 - warning for browsers that do not support payment confirmations in a new tab
