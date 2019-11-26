@@ -163,6 +163,10 @@ $dropDown-narrow-width: 8em !default;
     background: $white;
     height: 10px;
   }
+
+  button {
+    color: currentColor;
+  }
 }
 
 /* border on items */
