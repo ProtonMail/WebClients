@@ -38,15 +38,6 @@ $minicalendar-bg-color-range-selection: #51555F !default;
 .minicalendar-icon {
     fill: $minicalendar-day-color;
 }
-.minicalendar--onDarkBackground {
-    .minicalendar-day {
-        color: $minicalendar-day-color-on-dark-background;
-    }
-    .minicalendar-icon {
-        fill: $minicalendar-day-color-on-dark-background;
-    }
-}
-
 .minicalendar-days {
     user-select: none;
 }
@@ -74,6 +65,11 @@ $minicalendar-bg-color-range-selection: #51555F !default;
     position: relative;
     min-width: #{$minicalendar-cell-size + 0.35em};
     min-height: #{$minicalendar-cell-size + 0.35em};
+    border-radius: 50%;
+    &:focus,
+    &:hover {
+        background: rgba($minicalendar-bg-color-range-selection, .25);
+    }
 }
 
 .minicalendar-grid--displayWeekNumber .minicalendar-day {
@@ -88,7 +84,7 @@ $minicalendar-bg-color-range-selection: #51555F !default;
     left: 0;
     right: 0;
     bottom: 0;
-    line-height: 2.3;
+    line-height: 2.3;  // check modifier below when no week displayed
 
     color: $white;
     font-weight: bold;
@@ -96,8 +92,23 @@ $minicalendar-bg-color-range-selection: #51555F !default;
     border-radius: 50%;
 }
 
-.minicalendar-grid--displayWeekNumber .minicalendar-day[aria-current="date"]::before {
-    line-height: 2;
+.minicalendar-grid--displayWeekNumber .minicalendar-day {
+    &[aria-current="date"]::before {
+        line-height: 2;
+    }
+}
+
+.minicalendar--onDarkBackground {
+    .minicalendar-day {
+        color: $minicalendar-day-color-on-dark-background;
+        &:focus,
+        &:hover {
+            background: rgba($minicalendar-bg-color-range-selection, .8);
+        }
+    }
+    .minicalendar-icon {
+        fill: $minicalendar-day-color-on-dark-background;
+    }
 }
 
 .minicalendar-day[aria-pressed=true] {
@@ -132,18 +143,24 @@ $minicalendar-day-marker-size: 3px !default;
     background: $pm-primary;
 }
 
-.minicalendar-day--range[aria-pressed=true] {
+.minicalendar-day--range[aria-pressed=true],
+.minicalendar-day--range[aria-pressed=true]:hover,
+.minicalendar-day--range[aria-pressed=true]:focus {
     background: $minicalendar-bg-color-range-selection;
     border-radius: 0;
 }
 
-// minicalendar-day--range-bound-begin     minicalendar-day--range-bound-end
+// ranges
 .minicalendar {
-    .minicalendar-day--range-bound-begin  {
+    .minicalendar-day--range-bound-begin,
+    .minicalendar-day--range-bound-begin:hover,
+    .minicalendar-day--range-bound-begin:focus  {
         border-top-left-radius: 40%;
         border-bottom-left-radius: 40%;
     }
-    .minicalendar-day--range-bound-end  {
+    .minicalendar-day--range-bound-end,
+    .minicalendar-day--range-bound-end:hover,
+    .minicalendar-day--range-bound-end:focus  {
         border-top-right-radius: 40%;
         border-bottom-right-radius: 40%;
     }
