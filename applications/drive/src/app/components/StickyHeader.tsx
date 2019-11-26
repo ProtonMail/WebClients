@@ -30,7 +30,7 @@ const StickyHeader = ({ children }: Props) => {
 
     return (
         <div className={classnames(['sticky-title', topClass])}>
-            <div className="pl0-75 pt0-5 pb0-5 pr0-75">{children}</div>
+            <div className="pl0-25 pt0-5 pb0-5 pr0-25">{children}</div>
         </div>
     );
 };

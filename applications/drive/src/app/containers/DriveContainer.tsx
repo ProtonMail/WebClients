@@ -82,7 +82,7 @@ function DriveContainer({ match, history }: RouteComponentProps<{ shareId?: stri
     }, [match.params]);
 
     return (
-        <Page title={c('Title').t`My files`}>
+        <Page title={c('Title').t`My files`} className="flex flex-column">
             <StickyHeader>
                 <h3 className="mb0">{c('Title').t`My files`}</h3>
             </StickyHeader>

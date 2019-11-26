@@ -1,7 +1,35 @@
-@import '~design-system/_sass/reusable-components/design-system-config';
+.pd-fb-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: auto;
 
-.filebrowser-row:hover,
-.filebrowser-row:focus {
+    th {
+        text-align: left;
+        font-weight: normal;
+        color: rgba($pm-global-grey, 0.5);
+        border-top: 1px solid $pm-global-border;
+        padding: em(10) em(16) em(10) 0;
+    }
+
+    td {
+        padding: em(16) em(16) em(16) 0;
+    }
+
+    td,
+    th {
+        border-bottom: 1px solid $pm-global-border;
+        &:first-of-type {
+            padding-left: em(16);
+        }
+    }
+}
+
+.pd-fb-table-heading-name {
+    padding-left: 25px;
+}
+
+.pd-fb-table-row:hover,
+.pd-fb-table-row:focus {
     background-color: $pm-global-light;
     cursor: pointer;
 }

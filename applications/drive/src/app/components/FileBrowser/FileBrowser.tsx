@@ -1,8 +1,7 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, Checkbox } from 'react-components';
+import { TableBody, Checkbox } from 'react-components';
 import { c } from 'ttag';
 import ItemRow from './ItemRow';
-import './FileBrowser.scss';
 import { LinkType } from '../../interfaces/folder';
 import EmptyFolder from './EmptyFolder';
 
@@ -47,24 +46,28 @@ const FileBrowser = ({
 
     return (
         <div className="flex flex-item-fluid" onClick={onEmptyAreaClick}>
-            <Table>
-                <TableHeader
-                    cells={[
-                        <div key="select-all" style={{ width: 0 }} onClick={(e) => e.stopPropagation()}>
-                            <Checkbox
-                                readOnly
-                                disabled={!folderContents.length}
-                                indeterminate={someSelected}
-                                checked={allSelected}
-                                onChange={onToggleAllSelected}
-                            />
-                        </div>,
-                        c('TableHeader').t`Name`,
-                        c('TableHeader').t`Type`,
-                        c('TableHeader').t`Modified`,
-                        c('TableHeader').t`Size`
-                    ]}
-                />
+            <table className="pd-fb-table w100 noborder min-w35e">
+                <thead>
+                    <tr>
+                        <th>
+                            <div key="select-all" onClick={(e) => e.stopPropagation()}>
+                                <Checkbox
+                                    readOnly
+                                    disabled={!folderContents.length}
+                                    indeterminate={someSelected}
+                                    checked={allSelected}
+                                    onChange={onToggleAllSelected}
+                                />
+                            </div>
+                        </th>
+                        <th className="w50">
+                            <div className="pd-fb-table-heading-name ml0-5">{c('TableHeader').t`Name`}</div>
+                        </th>
+                        <th className="w15">{c('TableHeader').t`Type`}</th>
+                        <th className="w20">{c('TableHeader').t`Modified`}</th>
+                        <th className="w15">{c('TableHeader').t`Size`}</th>
+                    </tr>
+                </thead>
                 <TableBody loading={loading} colSpan={5}>
                     {folderContents.map((item) => (
                         <ItemRow
@@ -78,7 +81,7 @@ const FileBrowser = ({
                         />
                     ))}
                 </TableBody>
-            </Table>
+            </table>
         </div>
     );
 };

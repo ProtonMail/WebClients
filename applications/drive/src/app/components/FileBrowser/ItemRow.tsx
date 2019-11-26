@@ -35,26 +35,28 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
 
     return (
         <TableRow
-            className="filebrowser-row"
+            className="pd-fb-table-row"
             onMouseDown={() => document.getSelection()?.removeAllRanges()}
             onClick={handleRowClick}
             onDoubleClick={handleRowDoubleClick}
             cells={[
-                <div
-                    key="select"
-                    style={{ width: 0 }}
-                    onClick={(e) => e.stopPropagation()}
-                    onDoubleClick={(e) => e.stopPropagation()}
-                >
+                <div key="select" onClick={(e) => e.stopPropagation()} onDoubleClick={(e) => e.stopPropagation()}>
                     <Checkbox checked={isSelected} onChange={() => onToggleSelect(item.LinkID)} />
                 </div>,
                 <span key="filename" className="flex flex-items-center">
-                    <Icon name={isFolder ? 'folder' : 'file-unknown'} className="mr0-5" />
+                    <Icon
+                        name={isFolder ? 'folder' : 'drafts'}
+                        fill={isFolder ? 'attention' : 'altgrey'}
+                        className="mr0-5"
+                        size={25}
+                    />
                     {item.Name}
                 </span>,
                 isFolder ? c('Label').t`Folder` : c('Label').t`File`,
-                <Time key="dateModified">{item.Modified}</Time>,
-                typeof item.Size !== 'undefined' && humanSize(item.Size)
+                <Time key="dateModified" format="PPp">
+                    {item.Modified}
+                </Time>,
+                typeof item.Size !== 'undefined' ? humanSize(item.Size) : '-'
             ]}
         />
     );

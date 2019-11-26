@@ -4,11 +4,12 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 interface Props extends RouteComponentProps {
     title: string;
+    className?: string;
     toolbar?: React.ReactNode;
     children: React.ReactNode;
 }
 
-const Page = ({ title, toolbar, children }: Props) => {
+const Page = ({ title, toolbar, children, className }: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const Page = ({ title, toolbar, children }: Props) => {
             {toolbar}
             <div
                 ref={mainAreaRef}
-                className={classnames([toolbar ? `main-area--withToolbar` : `main-area`, 'reset4print'])}
+                className={classnames([toolbar ? `main-area--withToolbar` : `main-area`, 'reset4print', className])}
             >
                 <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
             </div>
