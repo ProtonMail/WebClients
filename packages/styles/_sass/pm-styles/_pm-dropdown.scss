@@ -173,6 +173,10 @@ $dropDown-narrow-width: 8em !default;
   }
 }
 
+.dropDown-link {
+  color: currentColor;
+}
+
 
 /* border on items */
 .dropDown-item + .dropDown-item {
