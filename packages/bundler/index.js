@@ -111,6 +111,12 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
             }
         },
         {
+            title: 'Prepare build missing dir',
+            async task() {
+                await bash("[ ! -d 'src/i18n' ] && mkdir src/i18n");
+            }
+        },
+        {
             title: 'Lint sources',
             enabled: () => argv.lint !== false && !isRemoteBuild,
             task: () => execa('npm', ['run', 'lint'])
