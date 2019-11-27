@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { isBlackFridayPeriod } from 'proton-shared/lib/helpers/blackfriday';
 
-const EVERY_TEN_MINUTES = 10 * 60 * 1000;
+const EVERY_MINUTE = 60 * 1000;
 
 const useBlackFriday = () => {
     const [blackFriday, setBlackFriday] = useState(isBlackFridayPeriod());
@@ -9,7 +9,7 @@ const useBlackFriday = () => {
     useEffect(() => {
         const intervalID = setInterval(() => {
             setBlackFriday(isBlackFridayPeriod());
-        }, EVERY_TEN_MINUTES);
+        }, EVERY_MINUTE);
 
         return () => {
             clearInterval(intervalID);
