@@ -9,7 +9,7 @@ import {
     useConversationCounts,
     useMessageCounts
 } from 'react-components';
-import { c, ngettext, msgid } from 'ttag';
+import { c, msgid } from 'ttag';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { capitalize } from 'proton-shared/lib/helpers/string';
 
@@ -49,7 +49,7 @@ const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, welcomeR
         return (
             <div className="flex-item-fluid aligncenter p3">
                 <p className="mb2">
-                    {ngettext(
+                    {c('Title').ngettext(
                         msgid`You selected 1 element from this folder`,
                         `You selected ${total} elements from this folder`,
                         total
@@ -71,12 +71,14 @@ const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, welcomeR
             .t`report a bug`}</LinkButton>
     );
 
+    const userName = capitalize(user.Name);
+
     return (
         <div className="flex-item-fluid aligncenter p3">
-            <h2>{user.Name ? c('Title').t`Welcome, ${capitalize(user.Name)}!` : c('Title').t`Welcome`}</h2>
+            <h2>{user.Name ? c('Title').t`Welcome, ${userName}!` : c('Title').t`Welcome`}</h2>
             {Unread ? (
                 <p>
-                    {ngettext(
+                    {c('Title').ngettext(
                         msgid`You have 1 unread email in this folder`,
                         `You have ${Unread} unread emails in this folder`,
                         Unread
