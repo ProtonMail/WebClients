@@ -1,10 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eo pipefail
 
 args=("$@");
 BRANCHES=(${args//,/ });
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD);
-ALL_BRANCHES=$(git ls-remote "$(git remote get-url origin)"  | grep deploy- | awk -F '-' '{print $2}');
 
 function log {
     if [[ "$1" = *"warn"* ]]; then
@@ -28,7 +27,9 @@ function log {
 }
 
 function contains {
-    for branch in ${ALL_BRANCHES[*]} ; do
+    local branches=$(git ls-remote "$(git remote get-url origin)"  | grep deploy- | awk -F '-' '{print $2}');
+
+    for branch in ${branches[*]} ; do
         if [ "$branch" = "$1" ]; then
             echo 0;
             return 0;
