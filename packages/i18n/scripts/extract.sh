@@ -8,6 +8,10 @@ function main {
         echo "we have a cache"
     fi;
 
+    if [ ! -d "src/i18n" ]; then
+        mkdir 'src/i18n';
+    fi;
+
     rm -rf ./dist;
     npm run build;
 
