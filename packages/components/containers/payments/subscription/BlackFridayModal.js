@@ -10,6 +10,7 @@ import {
     CurrencySelector,
     useLoading,
     useApi,
+    useBlackFriday,
     Price
 } from 'react-components';
 import { checkSubscription } from 'proton-shared/lib/api/payments';
@@ -23,6 +24,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
     const [loading, withLoading] = useLoading();
     const [currency, updateCurrency] = useState(DEFAULT_CURRENCY);
     const [pricing, updatePricing] = useState({});
+    const isBlackFriday = useBlackFriday();
 
     const DEAL_TITLE = {
         [MONTHLY]: c('Title').t`1 month deal`,
@@ -94,6 +96,12 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
     useEffect(() => {
         withLoading(getBundlePrices());
     }, []);
+
+    useEffect(() => {
+        if (!isBlackFriday) {
+            rest.onClose();
+        }
+    }, [isBlackFriday]);
 
     return (
         <FormModal title={c('Title').t`Black Friday sale`} loading={loading} footer={null} {...rest}>
@@ -202,6 +210,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
 };
 
 BlackFridayModal.propTypes = {
+    onClose: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
     bundles: PropTypes.arrayOf(
         PropTypes.shape({
