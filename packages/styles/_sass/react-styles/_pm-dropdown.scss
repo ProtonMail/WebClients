@@ -169,7 +169,10 @@ $dropDown-narrow-width: 8em !default;
   }
 }
 
-.dropDown-link {
+.dropDown-link,
+.dropDown-link:focus,
+.dropDown-link:hover,
+.dropDown-link:active {
   color: currentColor;
 }
 
