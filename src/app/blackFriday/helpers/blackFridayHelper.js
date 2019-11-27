@@ -1,6 +1,7 @@
 import { BLACK_FRIDAY } from '../../constants';
 
-export const isBlackFriday = () => moment().isBetween(BLACK_FRIDAY.BETWEEN.START, BLACK_FRIDAY.BETWEEN.END);
+export const isBlackFriday = () =>
+    moment().isBetween(BLACK_FRIDAY.BETWEEN.START, moment(BLACK_FRIDAY.BETWEEN.END).utc());
 
 export const isCyberMonday = () => false;
 
