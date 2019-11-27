@@ -11,6 +11,7 @@ import {
     useLoading,
     useApi,
     useBlackFriday,
+    useNotifications,
     Price
 } from 'react-components';
 import { checkSubscription } from 'proton-shared/lib/api/payments';
@@ -25,6 +26,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
     const [currency, updateCurrency] = useState(DEFAULT_CURRENCY);
     const [pricing, updatePricing] = useState({});
     const isBlackFriday = useBlackFriday();
+    const { createNotification } = useNotifications();
 
     const DEAL_TITLE = {
         [MONTHLY]: c('Title').t`1 month deal`,
@@ -100,6 +102,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
     useEffect(() => {
         if (!isBlackFriday) {
             rest.onClose();
+            createNotification({ text: c('Info').t`Black Friday is over`, type: 'info' });
         }
     }, [isBlackFriday]);
 
