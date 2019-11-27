@@ -27,7 +27,7 @@ interface Props {
     history: History;
 }
 
-const MailboxContainer = ({ labelID, mailSettings, elementID, location, history }: Props) => {
+const MailboxContainer = ({ labelID, mailSettings, elementID: inputElementID, location, history }: Props) => {
     const [page, setPage] = useState(0);
     const [checkedElements, setCheckedElements] = useState(Object.create(null));
     const [checkAll, setCheckAll] = useState(false);
@@ -62,6 +62,13 @@ const MailboxContainer = ({ labelID, mailSettings, elementID, location, history 
         }, [] as string[]);
     }, [checkedElements]);
 
+    const elementID = useMemo(() => {
+        if (checkedIDs.length > 0) {
+            return undefined;
+        }
+        return inputElementID;
+    }, [inputElementID, checkedIDs]);
+
     const selectedIDs = useMemo(() => {
         if (checkedIDs.length) {
             return checkedIDs;
@@ -70,7 +77,7 @@ const MailboxContainer = ({ labelID, mailSettings, elementID, location, history 
             return [elementID];
         }
         return [];
-    }, [checkedIDs, location.pathname]);
+    }, [checkedIDs, elementID]);
 
     const handleCheck = (IDs: string[] = [], checked = false) => {
         const update = IDs.reduce((acc, contactID) => {

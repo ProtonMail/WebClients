@@ -4,3 +4,9 @@ export interface Label {
     Color?: string;
     ContextTime?: number;
 }
+
+export interface LabelCount {
+    LabelID?: string;
+    Total?: number;
+    Unread?: number;
+}
