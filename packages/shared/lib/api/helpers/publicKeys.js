@@ -10,7 +10,7 @@ export const getPublicKeysEmailHelper = async (api, Email) => {
     try {
         const { Keys = [], ...rest } = await api(getPublicKeys({ Email }));
         // eslint-disable-next-line no-unused-vars
-        const publicKeys = (await Promise.all(
+        const publicKeys = await Promise.all(
             Keys.map(
                 ({ PublicKey }) =>
                     getKeys(PublicKey)
@@ -18,7 +18,7 @@ export const getPublicKeysEmailHelper = async (api, Email) => {
                         .catch(noop)
                 // eslint-disable-next-line
             )
-        )).filter(Boolean);
+        );
         return {
             ...rest,
             Keys,
@@ -27,7 +27,7 @@ export const getPublicKeysEmailHelper = async (api, Email) => {
     } catch (error) {
         const { data = {} } = error;
         if (EMAIL_ERRORS.includes(data.Code)) {
-            return { Keys: [] };
+            return { Keys: [], publicKeys: [] };
         }
         throw error;
     }
