@@ -30,6 +30,10 @@
   background: $conversation-selected-bg;
 }
 
+.item-container:not(.item-contact):not(.read):not(.active) {
+  background: $white;
+}
+
 $conversation-icon-size: 4rem !default;
 .item-icon {
   width: $conversation-icon-size;
