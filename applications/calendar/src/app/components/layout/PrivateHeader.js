@@ -17,7 +17,7 @@ const PrivateHeader = ({ title, url, inSettings, onCreateEvent, expanded, onTogg
         <header className="header flex flex-nowrap reset4print">
             <MainLogo url={url} className="nomobile" />
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
-            {title && isNarrow ? <span className="big ellipsis">{title}</span> : null}
+            {title && isNarrow ? <span className="big lh-standard mtauto mbauto ellipsis">{title}</span> : null}
             <TopNavbar>
                 {hasPaidMail || isNarrow ? null : <UpgradeButton external={true} />}
                 {isNarrow && !inSettings ? null : (
