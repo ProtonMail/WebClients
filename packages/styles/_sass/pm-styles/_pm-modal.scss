@@ -220,6 +220,12 @@ $pm-label-shorter-width: 10em !default;
   width: var(--label-shorter-width, $pm-label-shorter-width);
 }
 
+@include respond-to($breakpoint-small) { 
+  .pm-modal--shorterLabels .onmobile-flex-column .pm-label {
+    width: 100%;
+  }
+}
+
 // single button on right
 .pm-modalFooter [class*="pm-button"]:only-child {
   margin-left: auto;
