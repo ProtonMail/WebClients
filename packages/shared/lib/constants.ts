@@ -257,6 +257,7 @@ export enum CYCLE {
 export const BLACK_FRIDAY = {
     COUPON_CODE: 'BF2019',
     START: new Date(Date.UTC(2019, 10, 26, 6)), // Nov 26, 2019 06:00:00 UTC
+    FIRST_END: new Date(Date.UTC(2019, 10, 30, 12)), // Nov 30, 2019 12:00:00 UTC
     END: new Date(Date.UTC(2019, 11, 9, 8)) // Dec 9th 2019, 08:00:00 UTC
 };
 
