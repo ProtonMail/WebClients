@@ -42,12 +42,13 @@ $offer-header-size: 50px;
     position: relative;
     padding: 4rem 0 0;
     text-align: center;
-    margin-bottom: 4em;
+    margin-bottom: 5em;
     font-size: 1.2rem;
 
     h1, h2 {
         color: $white;
         font-weight: bold;
+        overflow: initial;
     }
 
     h1 {
@@ -69,7 +70,8 @@ $offer-header-size: 50px;
 .blackFridayCountdown-container {
     min-height: 27px;
     font-size: 1.3em;
-    color: $secondary-text-color;
+    color: $white;
+    font-weight: bold
 }
 
 .blackFridayIntro {
@@ -93,58 +95,39 @@ $offer-header-size: 50px;
 
 .blackFridayOffers-container {
     display: flex;
-
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 }
 
 .blackFridayOffer-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: $white;
     border: .3em solid transparent;
     border-radius: .5rem;
     flex: 0 0 calc(33% - .5rem);
-
     text-align: center;
     font-weight: bold;
 }
 
-.blackFridayOffer-container:first-of-type,
-.blackFridayOffer-container:last-of-type {
-    margin-top: -1.1rem;
+
+.blackFridayOffer-container:nth-of-type(1) {
+    .be-headerOffer-titles span { display: none }
 }
-
 .blackFridayOffer-container:nth-of-type(2) {
-
-    border-color: transparent;
 
     .blackFridayOffer-price-info {
         color: $primary;
     }
-    .blackFridayOffer-price-savings {
-        display: block;
-    }
+
 }
 
 .blackFridayOffer-container:hover {
     border-color: $primary
 }
 
-.bf-best-offer {
-    margin-top: -.3em;
-    margin-right: -.3em;
-    margin-left: -.3em;
-    background-color: $primary;
-    padding: 1rem;
-    text-transform: uppercase;
-    color: $white;
-    border-radius: .5rem .5rem 0 0
-}
-
-.bf-best-offer + .blackFridayOffer-header .bf-bubble-percent {
-    top: -185%;
-}
 
 .blackFridayOffer-header {
     font-size: 1.2em;
@@ -159,17 +142,17 @@ $offer-header-size: 50px;
     color: $white;
     text-transform: uppercase;
     position: absolute;
-    top: calc(-50% - .8em);
+    top: calc(-50% - 1.7em);
     left: 0;
     right: 0;
     display: flex
 }
 
 .bf-bubble-percentTxt {
-    border-radius: 50%;
-    background: #2f333e;
-    font-size: .8em;
-    padding: 1em;
+    border-radius: 100%;
+    background: lighten($bug, 5%);
+    font-size: 1em;
+    padding: 1em 1.1em;
     margin: auto
 }
 
@@ -179,12 +162,27 @@ $offer-header-size: 50px;
     color: $primary;
 }
 
-.be-headerOffer-titles * {
-    font-size: 1.2rem
+.be-headerOffer-titles {
+    font-size: 1.2rem;
+
+    h5 {
+        font-size: 1em;
+        padding-bottom: .2em;
+    }
+
+    span {
+        font-size: .8em
+    }
 }
 
 .blackFridayOffer-content {
-    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 2rem 1rem;
+    width: 100%;
     color: #2f333e
 }
 
@@ -222,16 +220,16 @@ $offer-header-size: 50px;
 }
 
 .blackFridayOffer-price-savings {
-    margin: 2em 0;
-    font-size: 1.2em;
+    margin: 1em 0 1rem;
+    font-size: 1.5em;
     color: $primary;
     text-transform: uppercase;
-    display: none
 }
 
 .blackFridayOffer-buy {
     position: relative;
-    width: 70%;
+    width: 90%;
+    margin-top: auto;
     margin-bottom: 2em;
 }
 
@@ -248,6 +246,11 @@ $offer-header-size: 50px;
 .blackFridayAfter-item {
     display: block;
     margin-bottom: .5em;
+}
+
+.bf-billedas {
+    font-weight: normal;
+    color: darken($gray-light, 20%);
 }
 
 .blackFriday-container .currencySelector-container {

@@ -1,7 +1,7 @@
 <div class="blackFriday-container">
     <header class="blackFriday-header">
         <h1 translate-context="Title" translate>Black Friday Sale</h1>
-        <h2 translate-context="Title" translate>Don't miss out on limited time discounts for newcomers!</h2>
+        <black-friday-countdown></black-friday-countdown>
     </header>
 
     <div class="blackFriday-content">
@@ -9,19 +9,13 @@
         <div class="blackFridayOffers-container">
             <div class="blackFridayOffer-container" ng-repeat="offer in offers track by $id(offer)">
 
-                <div
-                    class="bf-best-offer"
-                    ng-if="$index === 1">
-                        <span  translate-context="Title most popular offer" translate>Most popular</span>
-                    </div>
-
                 <div class="blackFridayOffer-header">
                     <div class="bf-bubble-percent">
                         <div class="bf-bubble-percentTxt">{{ ::offer.percentage }}%<div><span  translate-context="Discount offer X% off" translate>off</span></div></div>
                     </div>
                     <div class="be-headerOffer-titles">
-                        <span>{{ ::offer.header.type }}</span>
                         <h5>{{ ::offer.header.title }}</h5>
+                        <span>{{ ::offer.header.type }}</span>
                     </div>
                 </div>
 
@@ -43,12 +37,11 @@
                     <button
                         type="button"
                         ng-disabled="state.loading"
-                        class="pm_button blackFridayOffer-buy"
-                        ng-class="{'primary': $index === 1}"
+                        class="pm_button blackFridayOffer-buy primary"
                         data-buy-offer="{{ $index }}"
                     >{{ ::state.buy }}</button>
 
-                    <div>{{::offer.billingTxt}} ({{$index +1}})</div>
+                    <div class="bf-billedas">{{::offer.billingTxt}} {{'*'.repeat($index +1)}}</div>
                 </div>
             </div>
         </div>
@@ -64,7 +57,7 @@
 
         <div class="blackFridayAfter-container">
             <span class="blackFridayAfter-item" ng-repeat="offer in offers track by $id(offer)">
-                ({{$index + 1}}) {{ ::offer.afterBilling }}
+                {{'*'.repeat($index +1)}} {{ ::offer.afterBilling }}
             </span>
         </div>
     </footer>
