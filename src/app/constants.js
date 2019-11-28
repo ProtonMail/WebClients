@@ -474,6 +474,7 @@ export const BLACK_FRIDAY = {
     CYCLES: [CYCLE.TWO_YEARS, CYCLE.YEARLY],
     BETWEEN: {
         START: new Date(`November 26, ${BLACK_FRIDAY_YEAR} 06:00:00`),
+        END_HALF: new Date(1575100800 * 1000), // Nov 30 8AM UTC
         END: new Date(1575878400 * 1000) // Dec 9th 8:00 UTC
     },
     INTERVAL: 10 * 60 * 1000

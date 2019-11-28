@@ -3340,7 +3340,7 @@ msgctxt "Discount displayed in the dashboard"
 msgid "Get 20% off when you get both ProtonMail and ProtonVPN"
 msgstr ""
 
-#: ./src/templates/blackFriday/blackFriday.tpl.html:20
+#: ./src/templates/blackFriday/blackFriday.tpl.html:14
 msgctxt "Discount offer X% off"
 msgid "off"
 msgstr ""
@@ -5080,9 +5080,13 @@ msgid "Billed as {{amount}} /yr"
 msgstr ""
 
 #: ./src/app/blackFriday/directives/blackFriday.js:20
+msgctxt "Info"
+msgid "Billed as {{price}} for 1 year"
+msgstr ""
+
 #: ./src/app/blackFriday/directives/blackFriday.js:22
 msgctxt "Info"
-msgid "Billed as {{price}}"
+msgid "Billed as {{price}} for 2 years"
 msgstr ""
 
 #: ./src/app/filter/directives/emailBlockList.js:7
@@ -5368,6 +5372,7 @@ msgctxt "Info"
 msgid "Every 2 years"
 msgstr ""
 
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:30
 #: ./src/templates/views/payments.tpl.html:38
 msgctxt "Info"
 msgid "Expired"
@@ -8782,7 +8787,7 @@ msgctxt "Plan feature"
 msgid "Unlimited sending"
 msgstr ""
 
-#: ./src/templates/blackFriday/blackFriday.tpl.html:33
+#: ./src/templates/blackFriday/blackFriday.tpl.html:27
 msgctxt "Price offer"
 msgid "Regular price"
 msgstr ""
@@ -10078,11 +10083,6 @@ msgstr ""
 #: ./src/templates/views/domains.tpl.html:8
 msgctxt "Title"
 msgid "Domains"
-msgstr ""
-
-#: ./src/templates/blackFriday/blackFriday.tpl.html:4
-msgctxt "Title"
-msgid "Don't miss out on limited time discounts for newcomers!"
 msgstr ""
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
@@ -11453,11 +11453,6 @@ msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr ""
 
-#: ./src/templates/blackFriday/blackFriday.tpl.html:15
-msgctxt "Title most popular offer"
-msgid "Most popular"
-msgstr ""
-
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
 msgid "Pasted-image"
@@ -12168,6 +12163,34 @@ msgstr ""
 msgctxt "Write a feedback about ProtonMail"
 msgid "Your thoughts..."
 msgstr ""
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:7
+msgctxt "X days before the end"
+msgid "{{$count}} day"
+msgid_plural "{{$count}} days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:10
+msgctxt "X hours before the end"
+msgid "{{$count}} hour"
+msgid_plural "{{$count}} hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:13
+msgctxt "X minutes before the end"
+msgid "{{$count}} minute"
+msgid_plural "{{$count}} minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:22
+msgctxt "X seconds before the end"
+msgid "{{$count}} second"
+msgid_plural "{{$count}} seconds"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ./src/templates/contact/contactNoResult.tpl.html:6
 msgctxt "You can Add contact or Import contacts"

@@ -17,9 +17,9 @@ function blackFriday(
         2: 'Two-year deal',
         billing(price, cycle) {
             if (cycle === 12) {
-                return gettextCatalog.getString('Billed as {{price}}', { price }, 'Info');
+                return gettextCatalog.getString('Billed as {{price}} for 1 year', { price }, 'Info');
             }
-            return gettextCatalog.getString('Billed as {{price}}', { price }, 'Info');
+            return gettextCatalog.getString('Billed as {{price}} for 2 years', { price }, 'Info');
         },
         afterBilling(price, cycle, index) {
             if (cycle === 12) {
@@ -88,7 +88,8 @@ function blackFriday(
         const val = priceRegular * delta;
         const percentage = percentageFilter((val - priceOffer) / val);
         const afterBillValue = planList.length === 2 ? 19040 : offer.Amount;
-        const savingsPrice = ((24 * priceRegular) / 12 / 100) * percentage;
+        const savingsPrice = !index ? priceRegular - priceOffer : ((24 * priceRegular) / 12 / 100) * percentage;
+
         return {
             offer,
             price,

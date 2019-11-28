@@ -1,12 +1,40 @@
-import { TIME } from '../../constants';
+import { TIME, BLACK_FRIDAY } from '../../constants';
 
 /* @ngInject */
-function blackFridayCountdown() {
+function blackFridayCountdown(translator, gettextCatalog) {
+    const I18N = translator(() => ({
+        days(n) {
+            return gettextCatalog.getPlural(n, '{{$count}} day', '{{$count}} days', {}, 'X days before the end');
+        },
+        hours(n) {
+            return gettextCatalog.getPlural(n, '{{$count}} hour', '{{$count}} hours', {}, 'X hours before the end');
+        },
+        minutes(n) {
+            return gettextCatalog.getPlural(
+                n,
+                '{{$count}} minute',
+                '{{$count}} minutes',
+                {},
+                'X minutes before the end'
+            );
+        },
+        seconds(n) {
+            return gettextCatalog.getPlural(
+                n,
+                '{{$count}} second',
+                '{{$count}} seconds',
+                {},
+                'X seconds before the end'
+            );
+        },
+        expired: gettextCatalog.getString('Expired', null, 'Info')
+    }));
+
     const render = (today, ts) => {
         const diff = moment(ts).diff(today);
 
         if (diff < 0) {
-            return 'Expired';
+            return I18N.expired;
         }
 
         const days = Math.floor(diff / TIME.DAY);
@@ -14,7 +42,7 @@ function blackFridayCountdown() {
         const minutes = Math.floor((diff % TIME.HOUR) / TIME.MINUTE);
         const seconds = Math.floor((diff % TIME.MINUTE) / TIME.SECOND);
 
-        return [`${days} d`, `${hours} h`, `${minutes} m`, `${seconds} s`].join(' : ');
+        return [I18N.days(days), I18N.hours(hours), I18N.minutes(minutes), I18N.seconds(seconds)].join(' | ');
     };
 
     return {
@@ -22,16 +50,30 @@ function blackFridayCountdown() {
         replace: true,
         templateUrl: require('../../../templates/blackFriday/blackFridayCountdown.tpl.html'),
         scope: {},
-        link(scope, el, { end = '' }) {
-            let timestamp = moment(end, 'YYYY-MM-DD').valueOf();
+        link(scope, el) {
             const today = moment(new Date());
+            const config = {
+                halfDone: false,
+                timestamp: +BLACK_FRIDAY.BETWEEN.END_HALF,
+                timestampEnd: +BLACK_FRIDAY.BETWEEN.END
+            };
+            const refresh = () => {
+                if (!config.halfDone) {
+                    config.timestamp -= TIME.SECOND;
+                    const output = render(today, config.timestamp);
+                    config.halfDone = output === I18N.expired;
+                    !config.halfDone && (el[0].textContent = output);
+                }
 
-            el[0].textContent = render(today, timestamp);
+                if (config.halfDone) {
+                    config.timestampEnd -= TIME.SECOND;
+                    el[0].textContent = render(today, config.timestampEnd);
+                }
+            };
 
-            const id = setInterval(() => {
-                timestamp -= TIME.SECOND;
-                el[0].textContent = render(today, timestamp);
-            }, TIME.SECOND);
+            refresh();
+
+            const id = setInterval(refresh, TIME.SECOND);
 
             scope.$on('$destroy', () => {
                 clearInterval(id);
