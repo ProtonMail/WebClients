@@ -42,7 +42,7 @@ async function send(data, { env, mode = 'deploy', api }) {
             text
         });
 
-        await bash(`curl -X POST -H 'Content-type: application/json' --data '${body}' ${url}`);
+        await bash(`curl -X POST -H 'Content-type: application/json' --data "${body}" ${url}`);
         success('Message sent !');
     } catch (e) {
         error(e);
