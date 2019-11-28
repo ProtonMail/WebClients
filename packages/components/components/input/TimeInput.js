@@ -88,9 +88,12 @@ const TimeInput = ({ onChange, value, interval = 30, min, max, ...rest }) => {
     }, [options, min, max]);
 
     const matchingIndex = useMemo(() => {
-        const idx = findLongestMatchingIndex(options.map(({ label }) => label), temporaryInput);
+        const idx = findLongestMatchingIndex(
+            filteredOptions.map(({ label }) => label),
+            temporaryInput
+        );
         return idx === -1 ? undefined : idx;
-    }, [options, temporaryInput]);
+    }, [filteredOptions, temporaryInput]);
 
     useEffect(() => {
         if (!isOpen) {
