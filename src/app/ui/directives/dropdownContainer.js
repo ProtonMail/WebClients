@@ -1,7 +1,7 @@
 import { generateUID } from '../../../helpers/string';
 
 /* @ngInject */
-function dropdownContainer(dispatchers) {
+function dropdownContainer(dispatchers, hotkeys) {
     const CLASSNAMES = {
         left: 'dropDown--leftArrow',
         right: 'dropDown--rightArrow',
@@ -48,6 +48,8 @@ function dropdownContainer(dispatchers) {
             };
 
             function attachListener(remove) {
+                hotkeys[!remove ? 'pause' : 'unpause']();
+
                 if (remove) {
                     document.body.removeEventListener('click', onClick, false);
                     document.body.removeEventListener('keydown', onKeydown, false);
@@ -96,7 +98,7 @@ function dropdownContainer(dispatchers) {
                 }
 
                 if (type === 'action') {
-                    toggle(data.type === 'close');
+                    toggle(data.type === 'close', data.id);
                 }
 
                 if (type === 'lock') {
