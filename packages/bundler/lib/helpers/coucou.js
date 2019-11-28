@@ -43,7 +43,11 @@ async function send(data, { env, mode = 'deploy', api }) {
         });
 
         // Escape the body.
-        await bash(`curl -X POST -H 'Content-type: application/json' --data "${body.replace(/"/g, '\\"')}" ${url}`);
+        await bash(
+            `curl -X POST -H 'Content-type: application/json' --data "${body
+                .replace(/"/g, '\\"')
+                .replace(/`/g, '\\`')}" ${url}`
+        );
         success('Message sent !');
     } catch (e) {
         error(e);
