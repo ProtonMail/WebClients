@@ -2,8 +2,9 @@ const bindPrefix = (name) => `node_modules/${name}`;
 
 module.exports = {
     externalFiles: {
-        openpgp: ['openpgp/dist/openpgp.min.js', 'openpgp/dist/compat/openpgp.min.js'].map(bindPrefix),
-        openpgpWorker: bindPrefix('openpgp/dist/openpgp.worker.min.js'),
+        openpgp: ['openpgp/dist/lightweight/openpgp.min.js', 'openpgp/dist/compat/openpgp.min.js'].map(bindPrefix),
+        openpgpElliptic: bindPrefix('openpgp/dist/lightweight/elliptic.min.js'),
+        openpgpWorker: bindPrefix('openpgp/dist/lightweight/openpgp.worker.min.js'),
         formgenerator: bindPrefix('pt-formgenerator/dist'),
         list: ['.htaccess', 'manifest.json', 'robots.txt']
     },

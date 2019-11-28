@@ -8,7 +8,7 @@ import { check, redirect } from '../helpers/compat';
 import '../sass/app.scss';
 
 // eslint-disable-next-line no-undef
-const { main, compat, worker } = PM_OPENPGP;
+const { main, compat, worker, elliptic } = PM_OPENPGP;
 
 const dl = ({ filepath, integrity }) => {
     const options = {
@@ -43,7 +43,7 @@ const isUnsupportedWorker = () => {
     const workerPromise = dl(worker).catch(() => dl(worker));
 
     const openpgpContents = await openpgpPromise;
-    const [app] = await Promise.all([initPromise, initMain(openpgpContents)]);
+    const [app] = await Promise.all([initPromise, initMain(openpgpContents, elliptic)]);
 
     // bootstrap the app
     app.default();
