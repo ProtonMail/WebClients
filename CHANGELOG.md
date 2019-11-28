@@ -1,3 +1,7 @@
+# [3.16.13] - 2019-11-28
+## Improved
+- Payment and promotion modals
+
 # [3.16.12] - 2019-11-26
 ## Fixed
 - prices on some promotion modals were shown incorrectly
