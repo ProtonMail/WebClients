@@ -2,6 +2,12 @@ export const RETRY_DELAY_MAX = 10; // seconds
 export const RETRY_ATTEMPTS_MAX = 5; // how many times to try the same request
 export const OFFLINE_RETRY_DELAY = 2000; // how much time in ms to wait before retrying an offline request
 export const OFFLINE_RETRY_ATTEMPTS_MAX = 3; // how many times to try the same request when offline
+export const MILLISECOND = 1;
+export const SECOND = 1000;
+export const MINUTE = 60 * SECOND;
+export const HOUR = 60 * MINUTE;
+export const DAY = 24 * HOUR;
+
 export enum APPS {
     PROTONMAIL = 'proton-mail',
     PROTONMAIL_SETTINGS = 'proton-mail-settings',
