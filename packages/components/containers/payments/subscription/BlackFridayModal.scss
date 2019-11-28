@@ -6,3 +6,23 @@
 .blackfriday-monthly-price .suffix {
     font-size: small;
 }
+
+.blackfriday-percentage {
+    height: 4em;
+    width: 4em;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: -3em;
+    border-radius: 50%;
+    padding: 0.5em;
+}
+
+.blackfriday-countdown-container {
+    margin-bottom: 4em;
+}
+
+@include respond-to($breakpoint-small) {
+    .blackfriday-plan-container {
+        margin-bottom: 4em;
+    }
+}
