@@ -113,7 +113,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         {
             title: 'Prepare build missing dir',
             async task() {
-                await bash("[ ! -d 'src/i18n' ] && mkdir src/i18n");
+                await bash("[ ! -d 'src/i18n' ] && mkdir src/i18n || echo 'Already there'");
             }
         },
         {
