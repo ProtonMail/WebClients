@@ -3,6 +3,7 @@ import { MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
 
 import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
+import { Sort } from '../models/tools';
 // import { Conversation } from '../models/conversation';
 
 const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, ALL_MAIL } = MAILBOX_LABEL_IDS;
@@ -50,4 +51,20 @@ export const isUnread = (element: Element) => {
         return element.Unread !== 0;
     }
     return false;
+};
+
+export const getLabel = ({ Labels = [] }: Element, labelID: string) => Labels.find(({ ID = '' }) => ID === labelID);
+
+export const getTime = (element: Element, labelID: string) =>
+    element.ContextTime || (getLabel(element, labelID) || {}).ContextTime || 0;
+
+export const getSize = ({ Size = 0 }: Element) => Size;
+
+export const sort = (elements: Element[], sort: Sort, labelID: string) => {
+    const getValue = {
+        Time: getTime,
+        Size: getSize
+    }[sort.sort];
+    const compare = (a: number, b: number) => (sort.desc ? b - a : a - b);
+    return elements.sort((e1, e2) => compare(getValue(e1, labelID), getValue(e2, labelID)));
 };

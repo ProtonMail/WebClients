@@ -59,7 +59,8 @@ const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [] }) => {
         buttons.reverse();
     }
 
-    return buttons;
+    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/20356
+    return <>{buttons}</>;
 };
 
 ReadUnreadButtons.propTypes = {

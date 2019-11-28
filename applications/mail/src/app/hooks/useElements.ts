@@ -5,17 +5,17 @@ import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { Conversation } from '../models/conversation';
 import { toMap } from 'proton-shared/lib/helpers/object';
-import { getTime } from '../helpers/conversation';
+import { sort as sortElements } from '../helpers/elements';
 import { Message } from '../models/message';
 import { Element } from '../models/element';
+import { Page, Filter, Sort } from '../models/tools';
 
 interface Options {
     conversationMode: boolean;
     labelID: string;
-    pageNumber?: number;
-    pageSize?: number;
-    filter?: any;
-    sort?: any;
+    page: Page;
+    sort: Sort;
+    filter: Filter;
 }
 
 interface Cache {
@@ -48,8 +48,9 @@ const emptyCache = (): Cache => ({ elements: {}, pages: [], total: 0 });
 export const useElements = ({
     conversationMode,
     labelID,
-    pageNumber = 0,
-    pageSize = 50
+    page,
+    sort,
+    filter
 }: Options): [Conversation[], boolean, number] => {
     const api = useApi();
     const { subscribe } = useEventManager();
@@ -76,12 +77,12 @@ export const useElements = ({
         const query = conversationMode ? queryConversations : queryMessageMetadata;
         const result = await api(
             query({
-                Page: pageNumber,
-                PageSize: pageSize,
-                // Limit: 100,
-                LabelID: labelID
-                // Sort,
-                // Desc = 1,
+                Page: page.page,
+                PageSize: page.size,
+                Limit: page.limit,
+                LabelID: labelID,
+                Sort: sort.sort,
+                Desc: sort.desc ? 1 : 0,
                 // Begin,
                 // End,
                 // BeginID,
@@ -92,7 +93,7 @@ export const useElements = ({
                 // Subject,
                 // Attachments,
                 // Starred,
-                // Unread,
+                Unread: filter.Unread
                 // AddressID,
                 // ID,
                 // AutoWildcard
@@ -170,31 +171,32 @@ export const useElements = ({
 
     // Reset local cache when needed
     useEffect(() => {
+        console.log('reset cache');
         resetCache();
-    }, [labelID, pageSize]);
+    }, [labelID, page.size, sort, filter]);
     useEffect(() => {
-        if (!isConsecutive(pageNumber)) {
+        console.log('reset cache consecutive');
+        if (!isConsecutive(page.page)) {
             resetCache();
         }
-    }, [pageNumber]);
+    }, [page.page]);
 
     // Compute the conversations list from the cache
     const elements = useMemo(() => {
         const minPage = localCache.pages.reduce((acc, page) => (page < acc ? page : acc), localCache.pages[0]);
-        const startIndex = (pageNumber - minPage) * pageSize;
-        const endIndex = startIndex + pageSize;
-
-        return Object.values(localCache.elements)
-            .sort((e1, e2) => getTime(e2, labelID) - getTime(e1, labelID))
-            .filter(({ LabelIDs = [] }) => LabelIDs.some((ID: string) => ID === labelID))
-            .slice(startIndex, endIndex);
-    }, [localCache, labelID, pageNumber, pageSize]);
+        const startIndex = (page.page - minPage) * page.size;
+        const endIndex = startIndex + page.size;
+        const elements = Object.values(localCache.elements).filter(({ LabelIDs = [] }) =>
+            LabelIDs.some((ID: string) => ID === labelID)
+        );
+        return sortElements(elements, sort, labelID).slice(startIndex, endIndex);
+    }, [localCache, labelID, page.page, page.size]);
 
     const total = useMemo(() => localCache.total, [localCache.total]);
 
     // Request data when not in the cache
     useEffect(() => {
-        // No second request if already one underway. TODO: What if parameters change?
+        // No second request if already one underway. TODO: What if parameters has changed?
         // Send request if page not in cache
         const shouldSendRequest = () => {
             // TODO: Check for page size BUT it's complicated
@@ -202,7 +204,7 @@ export const useElements = ({
             // - check against total responses
             // - check against last page size
             // WARNING: a problem in the check could trigger infinite requests
-            return !loading && !localCache.pages.includes(pageNumber);
+            return !loading && !localCache.pages.includes(page.page);
         };
 
         const load = async () => {
@@ -213,7 +215,7 @@ export const useElements = ({
                 setLocalCache((localCache) => {
                     return {
                         total: Total,
-                        pages: [...localCache.pages, pageNumber],
+                        pages: [...localCache.pages, page.page],
                         elements: {
                             ...localCache.elements,
                             ...toMap(Elements, 'ID')
@@ -228,7 +230,7 @@ export const useElements = ({
         shouldSendRequest() && load();
 
         // If labelID changes, the cache will be reseted
-    }, [pageNumber, localCache]);
+    }, [localCache, page.page]);
 
     return [elements, loading, total];
 };

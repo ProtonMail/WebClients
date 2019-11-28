@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Icon } from 'react-components';
 
 import ToolbarSeparator from './ToolbarSeparator';
@@ -17,6 +16,24 @@ import BackButton from './BackButton';
 import PagingControls from './PagingControls';
 import { getCurrentType } from '../../helpers/elements';
 import { isColumnMode } from '../../helpers/mailSettings';
+import { Page, Sort, Filter } from '../../models/tools';
+
+interface Props {
+    loading?: boolean;
+    checkAll: boolean;
+    onCheckAll: () => void;
+    labelID: string;
+    elementID?: string;
+    selectedIDs: string[];
+    mailSettings: any;
+    page: Page;
+    onPage: (page: number) => void;
+    sort: Sort;
+    onSort: (sort: Sort) => void;
+    filter: Filter;
+    onFilter: (filter: Filter) => void;
+    onBack: () => void;
+}
 
 const Toolbar = ({
     labelID = '',
@@ -28,14 +45,12 @@ const Toolbar = ({
     loading = false,
     onSort,
     sort,
-    desc,
     onFilter,
     filter,
     onBack,
     page,
-    total,
-    setPage
-}) => {
+    onPage
+}: Props) => {
     const type = getCurrentType({ mailSettings, labelID });
 
     const columnMode = isColumnMode(mailSettings);
@@ -63,32 +78,13 @@ const Toolbar = ({
             </div>
             <div className="flex">
                 <FilterDropdown loading={loading} filter={filter} onFilter={onFilter} />
-                <SortDropdown loading={loading} sort={sort} desc={desc} onSort={onSort} />
+                <SortDropdown loading={loading} sort={sort} onSort={onSort} />
                 <LayoutDropdown mailSettings={mailSettings} />
                 <ToolbarSeparator />
-                <PagingControls loading={loading} page={page} total={total} setPage={setPage} />
+                <PagingControls loading={loading} page={page} onPage={onPage} />
             </div>
         </nav>
     );
-};
-
-Toolbar.propTypes = {
-    checkAll: PropTypes.bool.isRequired,
-    desc: PropTypes.number,
-    sort: PropTypes.string,
-    filter: PropTypes.string,
-    onCheckAll: PropTypes.func.isRequired,
-    labelID: PropTypes.string.isRequired,
-    elementID: PropTypes.string,
-    selectedIDs: PropTypes.array.isRequired,
-    mailSettings: PropTypes.object.isRequired,
-    onSort: PropTypes.func.isRequired,
-    onFilter: PropTypes.func.isRequired,
-    onBack: PropTypes.func.isRequired,
-    loading: PropTypes.bool,
-    page: PropTypes.number.isRequired,
-    total: PropTypes.number.isRequired,
-    setPage: PropTypes.func.isRequired
 };
 
 export default Toolbar;

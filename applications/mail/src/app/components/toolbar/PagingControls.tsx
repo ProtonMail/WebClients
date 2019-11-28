@@ -4,35 +4,28 @@ import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
 import ToolbarDropdown from './ToolbarDropdown';
-import { PAGE_SIZE } from '../../constants';
 
 import './PagingControls.scss';
+import { Page } from '../../models/tools';
 
 interface Props {
     loading: boolean;
-    page: number;
-    total: number;
-    setPage: (page: number) => void;
+    page: Page;
+    onPage: (page: number) => void;
 }
 
-const PagingControls = ({ loading, page, total, setPage }: Props) => {
-    const handleNext = () => {
-        setPage(page + 1);
-    };
-    const handlePrevious = () => {
-        setPage(page - 1);
-    };
-    const handlePage = (newPage: number) => () => {
-        setPage(newPage);
-    };
-
-    const pageCount = Math.floor(total / PAGE_SIZE);
+const PagingControls = ({ loading, page, onPage }: Props) => {
+    const setPage = (pageNumber: number) => onPage(pageNumber);
+    const handleNext = () => setPage(page.page + 1);
+    const handlePrevious = () => setPage(page.page - 1);
+    const handlePage = (newPage: number) => () => setPage(newPage);
+    const pageCount = Math.floor(page.total / page.size);
 
     return (
         <>
             <ToolbarButton
                 loading={loading}
-                disabled={page <= 0}
+                disabled={page.page <= 0}
                 title={c('Action').t`Previous`}
                 onClick={handlePrevious}
             >
@@ -40,7 +33,7 @@ const PagingControls = ({ loading, page, total, setPage }: Props) => {
             </ToolbarButton>
             <ToolbarDropdown
                 title={c('Action').t`Change layout`}
-                content={page + 1}
+                content={page.page + 1}
                 className="paging-dropdown"
                 size="narrow"
             >
@@ -54,7 +47,7 @@ const PagingControls = ({ loading, page, total, setPage }: Props) => {
             </ToolbarDropdown>
             <ToolbarButton
                 loading={loading}
-                disabled={page >= pageCount}
+                disabled={page.page >= pageCount}
                 title={c('Action').t`Next`}
                 onClick={handleNext}
             >

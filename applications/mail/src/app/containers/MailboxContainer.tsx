@@ -1,21 +1,32 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Loader, classnames } from 'react-components';
+import { History, Location } from 'history';
 
 import { Element } from '../models/element';
+import { Sort, Filter, Page } from '../models/tools';
 
 import { useMailboxPageTitle } from '../hooks/useMailboxPageTitle';
+import { useElements } from '../hooks/useElements';
 
 import { isColumnMode, isConversationMode } from '../helpers/mailSettings';
-import { getHumanLabelID } from '../helpers/labels';
+import { getSearchParams } from '../helpers/url';
+import {
+    pageFromUrl,
+    sortFromUrl,
+    filterFromUrl,
+    setPageInUrl,
+    setSortInUrl,
+    setFilterInUrl,
+    setPathInUrl
+} from '../helpers/mailboxUrl';
 
 import Toolbar from '../components/toolbar/Toolbar';
 import List from '../components/list/List';
 import ConversationView from '../components/conversation/ConversationView';
 import PlaceholderView from '../components/view/PlaceholderView';
-
 import MessageOnlyView from '../components/message/MessageOnlyView';
-import { History, Location } from 'history';
-import { useElements } from '../hooks/useElements';
+
+import { PAGE_SIZE } from '../constants';
 
 import './main-area.scss';
 
@@ -28,29 +39,39 @@ interface Props {
 }
 
 const MailboxContainer = ({ labelID, mailSettings, elementID: inputElementID, location, history }: Props) => {
-    const [page, setPage] = useState(0);
+    const columnMode = isColumnMode(mailSettings);
+    const conversationMode = isConversationMode(mailSettings);
+
+    // Page state is hybrid: page number is handled by the url, total computed in useElements, size and limit are constants
+    // Yet, it is simpler to co-localize all these data in one object
+    const [page, setPage] = useState<Page>({
+        page: pageFromUrl(location),
+        total: 0,
+        size: PAGE_SIZE,
+        limit: PAGE_SIZE
+    });
+
+    const searchParams = getSearchParams(location);
+
+    const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
+    const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
+
     const [checkedElements, setCheckedElements] = useState(Object.create(null));
     const [checkAll, setCheckAll] = useState(false);
-    const [sort, updateSort] = useState();
-    const [desc, updateDesc] = useState();
-    const [filter] = useState();
     const welcomeRef = useRef(false);
 
     const [elements, loading, total] = useElements({
         conversationMode: isConversationMode(mailSettings),
         labelID,
-        pageNumber: page,
-        pageSize: 50
+        page,
+        sort,
+        filter
     });
 
+    useEffect(() => setPage({ ...page, page: pageFromUrl(location) }), [searchParams.page]);
+    useEffect(() => setPage({ ...page, total }), [total]);
+
     useMailboxPageTitle(labelID);
-
-    const handleSort = ({ Sort, Desc }: any) => {
-        updateDesc(Desc);
-        updateSort(Sort);
-    };
-
-    const handleFilter = () => {};
 
     const checkedIDs = useMemo(() => {
         return Object.entries(checkedElements).reduce((acc, [elementID, isChecked]) => {
@@ -79,6 +100,12 @@ const MailboxContainer = ({ labelID, mailSettings, elementID: inputElementID, lo
         return [];
     }, [checkedIDs, elementID]);
 
+    const handleElement = (elementID: string) => history.push(setPathInUrl(location, labelID, elementID));
+    const handleBack = () => history.push(setPathInUrl(location, labelID));
+    const handlePage = (pageNumber: number) => history.push(setPageInUrl(location, pageNumber));
+    const handleSort = (sort: Sort) => history.push(setSortInUrl(location, sort));
+    const handleFilter = (filter: Filter) => history.push(setFilterInUrl(location, filter));
+
     const handleCheck = (IDs: string[] = [], checked = false) => {
         const update = IDs.reduce((acc, contactID) => {
             acc[contactID] = checked;
@@ -93,24 +120,8 @@ const MailboxContainer = ({ labelID, mailSettings, elementID: inputElementID, lo
             elements.map(({ ID = '' }: Element) => ID),
             checked
         );
+
     const handleUncheckAll = () => handleCheckAll(false);
-
-    const handleClick = (elementID: string) => {
-        history.push({
-            ...location,
-            pathname: `/${getHumanLabelID(labelID)}/${elementID}`
-        });
-    };
-
-    const handleBack = () => {
-        history.push({
-            ...location,
-            pathname: `/${getHumanLabelID(labelID)}`
-        });
-    };
-
-    const columnMode = isColumnMode(mailSettings);
-    const conversationMode = isConversationMode(mailSettings);
 
     return (
         <>
@@ -121,15 +132,13 @@ const MailboxContainer = ({ labelID, mailSettings, elementID: inputElementID, lo
                 mailSettings={mailSettings}
                 checkAll={checkAll}
                 onCheckAll={handleCheckAll}
-                onSort={handleSort}
-                sort={sort}
-                desc={desc}
-                onFilter={handleFilter}
-                filter={filter}
-                onBack={handleBack}
                 page={page}
-                total={total}
-                setPage={setPage}
+                onPage={handlePage}
+                sort={sort}
+                onSort={handleSort}
+                filter={filter}
+                onFilter={handleFilter}
+                onBack={handleBack}
             />
             <div
                 className={classnames([
@@ -152,7 +161,7 @@ const MailboxContainer = ({ labelID, mailSettings, elementID: inputElementID, lo
                                 // selectedIDs={selectedIDs}
                                 checkedIDs={checkedIDs}
                                 onCheck={handleCheck}
-                                onClick={handleClick}
+                                onClick={handleElement}
                             />
                         )
                     )}

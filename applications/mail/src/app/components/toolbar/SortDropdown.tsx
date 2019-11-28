@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { DropdownMenu, DropdownMenuButton, Icon } from 'react-components';
 import { c } from 'ttag';
 
 import ToolbarDropdown from './ToolbarDropdown';
+import { Sort } from '../../models/tools';
 
 const ASC = 0;
 const DESC = 1;
@@ -21,42 +21,48 @@ const ICONS = {
     }
 };
 
-const SortDropdown = ({ loading, sort = 'Time', desc = ASC, onSort }) => {
+interface Props {
+    loading?: boolean;
+    sort: Sort;
+    onSort: (sort: Sort) => void;
+}
+
+const SortDropdown = ({ loading, sort: { sort, desc }, onSort }: Props) => {
     return (
-        <ToolbarDropdown content={<Icon className="toolbar-icon" name={ICONS[sort][desc]} />}>
+        <ToolbarDropdown content={<Icon className="toolbar-icon" name={ICONS[sort][desc ? DESC : ASC]} />}>
             <DropdownMenu>
                 <DropdownMenuButton
-                    disabled={sort === SIZE && desc === ASC}
+                    disabled={sort === SIZE && !desc}
                     className="alignleft"
                     loading={loading}
-                    onClick={() => onSort({ Sort: SIZE, Desc: ASC })}
+                    onClick={() => onSort({ sort: SIZE, desc: false })}
                 >
                     <Icon name={ICONS[SIZE][ASC]} className="mr0-5" />
                     {c('Action').t`Size: small to large`}
                 </DropdownMenuButton>
                 <DropdownMenuButton
-                    disabled={sort === SIZE && desc === DESC}
+                    disabled={sort === SIZE && desc}
                     className="alignleft"
                     loading={loading}
-                    onClick={() => onSort({ Sort: SIZE, Desc: DESC })}
+                    onClick={() => onSort({ sort: SIZE, desc: true })}
                 >
                     <Icon name={ICONS[SIZE][DESC]} className="mr0-5" />
                     {c('Action').t`Size: large to small`}
                 </DropdownMenuButton>
                 <DropdownMenuButton
-                    disabled={sort === TIME && desc === DESC}
+                    disabled={sort === TIME && desc}
                     className="alignleft"
                     loading={loading}
-                    onClick={() => onSort({ Sort: TIME, Desc: DESC })}
+                    onClick={() => onSort({ sort: TIME, desc: true })}
                 >
                     <Icon name={ICONS[TIME][DESC]} className="mr0-5" />
                     {c('Action').t`Date: new to old`}
                 </DropdownMenuButton>
                 <DropdownMenuButton
-                    disabled={sort === TIME && desc === ASC}
+                    disabled={sort === TIME && !desc}
                     className="alignleft"
                     loading={loading}
-                    onClick={() => onSort({ Sort: TIME, Desc: ASC })}
+                    onClick={() => onSort({ sort: TIME, desc: false })}
                 >
                     <Icon name={ICONS[TIME][ASC]} className="mr0-5" />
                     {c('Action').t`Date: old to new`}
@@ -64,13 +70,6 @@ const SortDropdown = ({ loading, sort = 'Time', desc = ASC, onSort }) => {
             </DropdownMenu>
         </ToolbarDropdown>
     );
-};
-
-SortDropdown.propTypes = {
-    sort: PropTypes.string,
-    desc: PropTypes.number,
-    loading: PropTypes.bool,
-    onSort: PropTypes.func.isRequired
 };
 
 export default SortDropdown;
