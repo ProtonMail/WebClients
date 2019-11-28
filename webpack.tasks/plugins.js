@@ -19,8 +19,9 @@ const makeSRC = (list) => list.map((file) => path.resolve(file));
 
 const isDistRelease = env.isDistRelease();
 
-const { main, worker, compat, definition } = transformOpenpgpFiles(
+const { main, elliptic, worker, compat, definition } = transformOpenpgpFiles(
     CONFIG.externalFiles.openpgp,
+    CONFIG.externalFiles.openpgpElliptic,
     CONFIG.externalFiles.openpgpWorker,
     isDistRelease
 );
@@ -64,7 +65,7 @@ const list = [
     ]),
 
     new WriteWebpackPlugin(
-        [main, compat, worker].map(({ filepath, contents }) => ({
+        [main, elliptic, compat, worker].map(({ filepath, contents }) => ({
             name: filepath,
             data: Buffer.from(contents)
         }))
