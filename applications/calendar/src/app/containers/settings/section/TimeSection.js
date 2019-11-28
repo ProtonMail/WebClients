@@ -89,11 +89,12 @@ const TimeSection = () => {
                 </Field>
             </Row>
             <Row>
-                <Label>{c('Primary timezone').t`Primary time zone`}</Label>
+                <Label id="label-primary-timezone">{c('Primary timezone').t`Primary time zone`}</Label>
                 <Field className="pt0-25">
                     <div className="mb1">
                         <Checkbox
                             disabled={loadingAutoDetect}
+                            aria-describedby="label-primary-timezone"
                             checked={!!AutoDetectPrimaryTimezone}
                             onChange={({ target }) =>
                                 withLoadingAutoDetect(

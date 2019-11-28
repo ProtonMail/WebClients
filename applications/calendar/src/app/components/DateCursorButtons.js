@@ -51,20 +51,25 @@ const DateCursorButtons = ({ view, currentDate, now, dateRange, onToday, onPrev,
 
     return (
         <>
-            <button type="button" className="toolbar-button color-currentColor" title={today} onClick={onToday}>
+            <button
+                type="button"
+                className="toolbar-button color-currentColor flex-item-noshrink"
+                title={today}
+                onClick={onToday}
+            >
                 <Icon name="target" className="flex-item-noshrink mtauto mbauto toolbar-icon" />
                 <span className="ml0-5 mtauto mbauto nomobile">{c('Action').t`Today`}</span>
             </button>
-            <span className="toolbar-separator" />
-            <button type="button" className="toolbar-button" title={previous} onClick={onPrev}>
+            <span className="toolbar-separator flex-item-noshrink" />
+            <button type="button" className="toolbar-button flex-item-noshrink" title={previous} onClick={onPrev}>
                 <Icon name="arrow-left" className="mauto toolbar-icon" />
                 <span className="sr-only">{previous}</span>
             </button>
-            <button type="button" className="toolbar-button" title={next} onClick={onNext}>
+            <button type="button" className="toolbar-button flex-item-noshrink" title={next} onClick={onNext}>
                 <Icon name="arrow-right" className="mauto toolbar-icon" />
                 <span className="sr-only">{next}</span>
             </button>
-            <span className="toolbar-separator" />
+            <span className="toolbar-separator flex-item-noshrink" />
             <span className="pl1 pr0-5 mtauto mbauto">{currentRange}</span>
         </>
     );

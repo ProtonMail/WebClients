@@ -72,7 +72,7 @@ const LayoutSection = () => {
                 </Field>
             </Row>
             <Row>
-                <Label htmlFor="week-numbers-display">{c('Label').t`Show week numbers`}</Label>
+                <Label htmlFor="week-numbers-display">{c('Label').t`Week numbers`}</Label>
                 <Field className="pt0-25">
                     <Checkbox
                         id="week-numbers-display"
@@ -81,7 +81,7 @@ const LayoutSection = () => {
                         onChange={({ target: { checked } }) =>
                             withLoadingWeekNumberDisplay(handleChange({ DisplayWeekNumber: +checked }))
                         }
-                    />
+                    >{c('Checkbox').t`Show week numbers`}</Checkbox>
                 </Field>
             </Row>
         </>

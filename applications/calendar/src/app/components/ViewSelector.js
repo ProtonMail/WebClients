@@ -20,7 +20,7 @@ const ViewSelector = ({ isNarrow, range, loading = false, disabled = false, view
         return (
             <select
                 disabled={loading || disabled}
-                className="toolbar-select"
+                className="toolbar-select flex-item-noshrink"
                 title={c('Action').t`Select calendar view`}
                 value={range ? CUSTOM : view}
                 onChange={({ target }) => onChange(+target.value)}

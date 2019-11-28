@@ -25,9 +25,12 @@ const CalendarSettingsTab = ({ isSubmitted, errors, model, setModel }) => {
                         autoFocus={true}
                     />
                 </Field>
-                <div className="ml1">
+            </Row>
+            <Row>
+                <span className="pm-label">{c('Label').t`Choose a color`}</span>
+                <Field>
                     <ColorPicker color={model.color} onChange={({ hex: color }) => setModel({ ...model, color })} />
-                </div>
+                </Field>
             </Row>
             <Row>
                 <Label htmlFor="calendar-address-select">
@@ -35,7 +38,9 @@ const CalendarSettingsTab = ({ isSubmitted, errors, model, setModel }) => {
                 </Label>
                 <Field>
                     {model.calendarID ? (
-                        addressText
+                        <>
+                            <span className="pt0-5 flex">{addressText}</span>
+                        </>
                     ) : (
                         <Select
                             id="calendar-address-select"
