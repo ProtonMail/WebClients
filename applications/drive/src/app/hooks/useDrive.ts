@@ -1,6 +1,6 @@
 import { useGetAddressKeys, useGetAddresses, useApi, useCache } from 'react-components';
 import { getPrimaryAddress } from 'proton-shared/lib/helpers/address';
-import { generateDriveBootstrap } from 'proton-shared/lib/keys/driveKeys';
+import { generateDriveBootstrap, encryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
 import { queryCreateDriveVolume } from '../api/volume';
 import { queryUserShares, queryShareBootstrap } from '../api/share';
 import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
@@ -49,12 +49,18 @@ function useDrive() {
         const [{ privateKey }] = await getAddressKeys(AddressID);
         const bootstrap = await generateDriveBootstrap(privateKey);
 
+        // TODO: generate a real one when implementing lookup
+        const FolderHashKey = await encryptUnsigned({
+            message: 'n/a',
+            privateKey
+        });
+
         const { Volume } = await api(
             queryCreateDriveVolume({
                 AddressID,
                 VolumeName: 'MainVolume',
                 ShareName: 'MainShare',
-                FolderHashKey: 'n/a', // TODO: generate when implementing lookup
+                FolderHashKey,
                 VolumeMaxSpace: 1000000,
                 ...bootstrap
             })
