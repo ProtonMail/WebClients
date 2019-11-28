@@ -1,5 +1,5 @@
 /* @ngInject */
-function commandPalette(AppModel, dispatchers) {
+function commandPalette(AppModel, dispatchers, hotkeys) {
     return {
         replace: true,
         scope: {},
@@ -23,6 +23,7 @@ function commandPalette(AppModel, dispatchers) {
                     scope.$applyAsync(() => {
                         scope.isVisible = !scope.isVisible;
                         AppModel.set('commandPalette', scope.isVisible);
+
                         _rAF(() => {
                             if (!$input) {
                                 $input = el.find('input');
@@ -33,11 +34,23 @@ function commandPalette(AppModel, dispatchers) {
                 }
             });
 
+            on('AppModel', (e, { type, data = {} }) => {
+                if (type === 'commandPalette') {
+                    if (data.value) {
+                        return hotkeys.unbindAndKeep(['shift+space']);
+                    }
+
+                    hotkeys.unbind();
+                    hotkeys.bind();
+                }
+            });
+
             el.on('reset', hide);
 
             scope.$on('$destroy', () => {
                 unsubscribe();
                 el.off('reset', hide);
+                hotkeys.bind();
             });
         }
     };

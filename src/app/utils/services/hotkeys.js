@@ -315,6 +315,9 @@ function hotkeys($state, $injector, dispatchers, gettextCatalog, translator) {
 
             filterBinding(list, removeBinding);
         },
+        unbindAndKeep(list = []) {
+            [...keys].filter(({ keyboard }) => !list.includes(keyboard)).forEach(removeBinding);
+        },
         trigger(...arg) {
             return mousetrapInstance.trigger(...arg);
         },
