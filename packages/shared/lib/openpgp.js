@@ -27,7 +27,7 @@ const isUnsupportedWorker = () => {
 export const init = async () => {
     // PM_OPENPGP is set from webpack
     // eslint-disable-next-line no-undef
-    const { main, compat, worker } = PM_OPENPGP;
+    const { main, compat, elliptic, worker } = PM_OPENPGP;
 
     // pre-fetch everything
     const isCompat = !hasModulesSupport();
@@ -38,7 +38,7 @@ export const init = async () => {
     const workerPromise = dl(worker).catch(() => dl(worker));
 
     const openpgpContents = await openpgpPromise;
-    await initMain(openpgpContents);
+    await initMain(openpgpContents, elliptic);
 
     // Compat browsers do not support the worker.
     if (isCompat || isUnsupportedWorker()) {
