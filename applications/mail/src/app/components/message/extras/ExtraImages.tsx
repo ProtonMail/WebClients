@@ -1,9 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Icon } from 'react-components';
 import { c } from 'ttag';
+import { MessageExtended } from '../../../models/message';
 
-const ExtraImages = ({ message: { showRemoteImages, showEmbeddedImages }, type, onLoadImages }) => {
+interface Props {
+    message: MessageExtended;
+    type: string;
+    onLoadImages: () => void;
+}
+
+const ExtraImages = ({
+    message: { showRemoteImages = true, showEmbeddedImages = true },
+    type,
+    onLoadImages
+}: Props) => {
     // Flags will not be setted if there is no images
     if ((type === 'remote' && showRemoteImages !== false) || (type === 'embedded' && showEmbeddedImages !== false)) {
         return null;
@@ -22,12 +32,6 @@ const ExtraImages = ({ message: { showRemoteImages, showEmbeddedImages }, type, 
             </a>
         </div>
     );
-};
-
-ExtraImages.propTypes = {
-    message: PropTypes.object.isRequired,
-    type: PropTypes.string.isRequired,
-    onLoadImages: PropTypes.func.isRequired
 };
 
 export default ExtraImages;

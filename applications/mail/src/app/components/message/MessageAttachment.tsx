@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { Icon, classnames } from 'react-components';
 import { useAttachments } from '../../hooks/useAttachments';
+import { Attachment, MessageExtended } from '../../models/message';
+import { isEmbeddedLocal } from '../../helpers/attachments';
 
 // Reference: Angular/src/templates/attachments/attachmentElement.tpl.html
 
-const OUTER_MAP_CLASSNAME = {
+const OUTER_MAP_CLASSNAME: { [key: string]: string } = {
     zip: 'file-rar-zip',
     mp3: 'file-video',
     javascript: 'file-unknown',
@@ -18,29 +19,26 @@ const OUTER_MAP_CLASSNAME = {
     word: 'file-doc'
 };
 
-const INNER_MAP_CLASSNAME = {
+const INNER_MAP_CLASSNAME: { [key: string]: string } = {
     'pgp-keys': 'fa-key'
 };
 
-const getFileIconType = ({ MIMEType }) => {
+const getFileIconType = ({ MIMEType = '' }: Attachment) => {
     const key = Object.keys(OUTER_MAP_CLASSNAME).find((key) => MIMEType.includes(key));
-    return OUTER_MAP_CLASSNAME[key];
+    return OUTER_MAP_CLASSNAME[key || ''] || '';
 };
 
-const getInnerFileIconType = ({ MIMEType }) => {
+const getInnerFileIconType = ({ MIMEType = '' }: Attachment) => {
     const key = Object.keys(INNER_MAP_CLASSNAME).find((key) => MIMEType.includes(key));
-    return INNER_MAP_CLASSNAME[key];
+    return INNER_MAP_CLASSNAME[key || ''] || '';
 };
 
-/*
- * embedded.isEmbedded doesn't work :/
- * As we have the header, it should be fine
- */
-const isEmbeddedLocal = ({ Headers: { 'content-disposition': disposition, embedded } = {} } = {}) => {
-    return disposition === 'inline' || embedded === 1;
-};
+interface Props {
+    attachment: Attachment;
+    message: MessageExtended;
+}
 
-const MessageAttachment = ({ attachment, message }) => {
+const MessageAttachment = ({ attachment, message }: Props) => {
     const { download } = useAttachments();
     const [showLoader, setShowLoader] = useState(false);
     const [showInstant, setShowInstant] = useState(false);
@@ -85,11 +83,6 @@ const MessageAttachment = ({ attachment, message }) => {
             </a>
         </li>
     );
-};
-
-MessageAttachment.propTypes = {
-    attachment: PropTypes.object.isRequired,
-    message: PropTypes.object.isRequired
 };
 
 export default MessageAttachment;

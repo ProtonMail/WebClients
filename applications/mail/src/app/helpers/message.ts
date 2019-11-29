@@ -45,14 +45,14 @@ export const isReplied = hasFlag(FLAG_REPLIED);
 export const isRepliedAll = hasFlag(FLAG_REPLIEDALL);
 export const isForwarded = hasFlag(FLAG_FORWARDED);
 export const isSentAndReceived = hasFlag(FLAG_SENT | FLAG_RECEIVED);
-export const isDraft = (message: Message) => !isSent(message) && !isReceived(message);
+export const isDraft = (message: Message = {}) => !isSent(message) && !isReceived(message);
 export const isE2E = hasFlag(FLAG_E2E);
 export const isSentEncrypted = hasFlag(FLAG_E2E | FLAG_SENT);
 export const isInternalEncrypted = hasFlag(FLAG_E2E | FLAG_INTERNAL);
 export const isSign = hasFlag(FLAG_SIGN);
 export const isAttachPublicKey = hasFlag(FLAG_PUBLIC_KEY);
 export const isExternalEncrypted = (message: Message) => isE2E(message) && !isInternal(message);
-export const isPGPEncrypted = (message: Message) => isExternal(message) && isReceived(message) && isE2E(message);
+export const isPGPEncrypted = (message: Message = {}) => isExternal(message) && isReceived(message) && isE2E(message);
 export const inSigningPeriod = ({ Time = 0 }: Message) => Time >= SIGNATURE_START;
 
 export const isMIME = hasMimeType(MIME);

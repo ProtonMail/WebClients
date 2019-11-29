@@ -1,8 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
+import { Message } from '../../../models/message';
 
-const HeaderRecipientsSimple = ({ message }) => {
+interface Props {
+    message?: Message;
+}
+
+const HeaderRecipientsSimple = ({ message = {} }: Props) => {
     const { ToList = [], CCList = [], BCCList = [] } = message;
     const recipients = [...ToList, ...BCCList, ...CCList];
 
@@ -21,11 +25,6 @@ const HeaderRecipientsSimple = ({ message }) => {
             </span>
         </div>
     );
-};
-
-HeaderRecipientsSimple.propTypes = {
-    message: PropTypes.object.isRequired,
-    showDetails: PropTypes.bool
 };
 
 export default HeaderRecipientsSimple;

@@ -94,7 +94,7 @@ const getFromType = (message) => {
     return I18N.clear;
 };
 
-export const getEncryptionType = ({ data: message, verified = 0 }) => {
+export const getEncryptionType = ({ data: message = {}, verified = 0 }) => {
     const encType = getFromType(message);
 
     if (encType.length > verified) {

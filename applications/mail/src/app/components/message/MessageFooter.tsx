@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 import { Icon } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
@@ -7,8 +6,13 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { attachmentsSize, getAttachments } from '../../helpers/message';
 import MessageAttachment from './MessageAttachment';
 import { useAttachments } from '../../hooks/useAttachments';
+import { MessageExtended } from '../../models/message';
 
-const MessageFooter = ({ message }) => {
+interface Props {
+    message: MessageExtended;
+}
+
+const MessageFooter = ({ message }: Props) => {
     const { downloadAll } = useAttachments();
     const [showLoader, setShowLoader] = useState(false);
     const [showInstant, setShowInstant] = useState(false);
@@ -16,7 +20,7 @@ const MessageFooter = ({ message }) => {
     const humanAttachmentsSize = humanSize(attachmentsSize(message.data));
     const attachments = getAttachments(message.data);
     const numAttachments = attachments.length;
-    const numEmbedded = message.numEmbedded;
+    const numEmbedded = message.numEmbedded || 0;
     const numPureAttachments = numAttachments - numEmbedded;
 
     const handleDownloadAll = async () => {
@@ -72,10 +76,6 @@ const MessageFooter = ({ message }) => {
             </ul>
         </div>
     );
-};
-
-MessageFooter.propTypes = {
-    message: PropTypes.object.isRequired
 };
 
 export default MessageFooter;

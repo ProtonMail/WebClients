@@ -1,8 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
+import { Message, Recipient } from '../../../models/message';
 
-const RecipientsList = ({ list }) => (
+interface Props {
+    message?: Message;
+}
+
+interface ListProps {
+    list: Recipient[];
+}
+
+const RecipientsList = ({ list }: ListProps) => (
     <span className="flex-self-vcenter flex flex-column">
         {list.map(({ Address = '', Name = '' }, index) => {
             return (
@@ -14,11 +22,7 @@ const RecipientsList = ({ list }) => (
     </span>
 );
 
-RecipientsList.propTypes = {
-    list: PropTypes.array.isRequired
-};
-
-const HeaderRecipientsDetails = ({ message }) => {
+const HeaderRecipientsDetails = ({ message = {} }: Props) => {
     const { ToList = [], CCList = [], BCCList = [] } = message;
 
     return (
@@ -49,10 +53,6 @@ const HeaderRecipientsDetails = ({ message }) => {
             )}
         </div>
     );
-};
-
-HeaderRecipientsDetails.propTypes = {
-    message: PropTypes.object.isRequired
 };
 
 export default HeaderRecipientsDetails;

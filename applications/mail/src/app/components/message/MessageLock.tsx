@@ -1,13 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Icon, Tooltip, Href, classnames } from 'react-components';
 import { displaySignatureStatus } from '../../helpers/displaySignature';
 import { isPGPEncrypted, isInternal, isSentEncrypted, isDraft, isAuto } from '../../helpers/message';
 import { getEncryptionType } from '../../helpers/encryptionType';
+import { MessageExtended } from '../../models/message';
 
 // Reference: Angular/src/templates/message/encryptionStatus.tpl.html
 
-const MessageLock = ({ message }) => {
+interface Props {
+    message: MessageExtended;
+    className?: string;
+}
+
+const MessageLock = ({ message, className: inputClassName }: Props) => {
     const displaySignature = displaySignatureStatus(message);
     const pgpEncrypted = isPGPEncrypted(message.data);
 
@@ -23,6 +28,7 @@ const MessageLock = ({ message }) => {
     const internal =
         isInternal(message.data) || isSentEncrypted(message.data) || isDraft(message.data) || isAuto(message.data);
     const className = classnames([
+        inputClassName,
         'no-pointer-events-children',
         ...(displaySignature
             ? [
@@ -41,10 +47,6 @@ const MessageLock = ({ message }) => {
             </Href>
         </Tooltip>
     );
-};
-
-MessageLock.propTypes = {
-    message: PropTypes.object.isRequired
 };
 
 export default MessageLock;

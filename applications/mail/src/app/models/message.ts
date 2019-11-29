@@ -11,9 +11,11 @@ export interface Attachment {
     KeyPackets?: any;
     MIMEType?: string;
     data?: any;
+    Headers?: { [key: string]: string };
 }
 
 export interface Message {
+    ID?: string;
     Subject?: string;
     AddressID?: string;
     MIMEType?: string;
@@ -26,6 +28,7 @@ export interface Message {
     BCCList?: Recipient[];
     ParsedHeaders?: { [key: string]: any };
     Attachments?: Attachment[];
+    Size?: number;
 }
 
 export interface MessageExtended {
@@ -33,9 +36,10 @@ export interface MessageExtended {
     raw?: string;
     document?: HTMLElement;
     content?: string;
-    verified?: boolean;
+    verified?: number;
     publicKeys?: any[];
     privateKeys?: any[];
     showRemoteImages?: boolean;
     showEmbeddedImages?: boolean;
+    numEmbedded?: number;
 }

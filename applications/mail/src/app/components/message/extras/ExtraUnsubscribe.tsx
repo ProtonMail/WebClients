@@ -1,11 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Icon, Href } from 'react-components';
 import { c } from 'ttag';
 import { getListUnsubscribe } from '../../../helpers/message';
+import { MessageExtended } from '../../../models/message';
 
-const ExtraUnsubscribe = ({ message }) => {
-    if (/*unsubscribed || */ !getListUnsubscribe(message.data)) {
+interface Props {
+    message: MessageExtended;
+}
+
+const ExtraUnsubscribe = ({ message: { data: message = {} } }: Props) => {
+    if (/*unsubscribed || */ !getListUnsubscribe(message)) {
         return null;
     }
 
@@ -24,10 +28,6 @@ const ExtraUnsubscribe = ({ message }) => {
             </span>
         </div>
     );
-};
-
-ExtraUnsubscribe.propTypes = {
-    message: PropTypes.object.isRequired
 };
 
 export default ExtraUnsubscribe;

@@ -1,11 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
+import { MessageExtended } from '../../../models/message';
 
-const HeaderExtra = ({ message, onLoadRemoteImages, onLoadEmbeddedImages }) => {
+interface Props {
+    message: MessageExtended;
+    onLoadRemoteImages: () => void;
+    onLoadEmbeddedImages: () => void;
+}
+
+const HeaderExtra = ({ message, onLoadRemoteImages, onLoadEmbeddedImages }: Props) => {
     return (
-        <section className="mt0-5 stop-propagation">
+        <section className="ml1 mr1 mt0-5">
             {/* TODO: ExpirationTime */}
             {/* TODO: SpamScore */}
             {/* TODO: MIMEParsingFailed */}
@@ -20,12 +26,6 @@ const HeaderExtra = ({ message, onLoadRemoteImages, onLoadEmbeddedImages }) => {
             <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />
         </section>
     );
-};
-
-HeaderExtra.propTypes = {
-    message: PropTypes.object.isRequired,
-    onLoadRemoteImages: PropTypes.func.isRequired,
-    onLoadEmbeddedImages: PropTypes.func.isRequired
 };
 
 export default HeaderExtra;

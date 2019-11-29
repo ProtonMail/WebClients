@@ -26,7 +26,7 @@ const { SIGNED_AND_INVALID, SIGNED_AND_VALID, NOT_SIGNED } = VERIFICATION_STATUS
  *  same security.
  *  @return {() => boolean} whether to display the signature status
  */
-export const displaySignatureStatus = ({ data: message, verified }) => {
+export const displaySignatureStatus = ({ data: message = {}, verified = 0 }) => {
     // TODO: const isSentByMe = message.isSentByMe();
     const isSentByMe = false;
 

@@ -252,3 +252,9 @@ export const downloadAll = async (message: MessageExtended = {}, { cache, api }:
     const content = await zip.generateAsync({ type: 'blob' });
     downloadFile(content, getZipAttachmentName(message.data));
 };
+
+export const isEmbeddedLocal = ({
+    Headers: { 'content-disposition': disposition, embedded } = {}
+}: Attachment = {}) => {
+    return disposition === 'inline' || Number(embedded) === 1;
+};
