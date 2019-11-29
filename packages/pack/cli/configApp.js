@@ -69,7 +69,8 @@ const API_TARGETS = {
 const SECURE_URL = ENV_CONFIG.secure;
 
 function main({ api = 'dev' }) {
-    const apiUrl = API_TARGETS[api] || API_TARGETS.prod;
+    const [mainApi, extendedApi] = api.split('+');
+    const apiUrl = API_TARGETS[extendedApi || mainApi] || API_TARGETS.prod;
     const secureUrl = SECURE_URL[api] || SECURE_URL.prod;
 
     const json = {

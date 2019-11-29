@@ -97,6 +97,7 @@ async function main() {
 
           - ${chalk.blue('compile')}
                 - --api=<String>: Change the API, based on your env.json
+                        <MainAPI>+<ExtendedAPI>: Use MainAPI as a base for the env but use ExtendedAPI as the URL -> dev+proxy
                 - --publicPath=/settings/: to build the app based on /settings/
               Build the app
 
