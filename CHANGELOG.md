@@ -1,3 +1,7 @@
+# [3.16.14] - 2019-11-29
+## Fixed
+- The compose button was not usable for some users
+
 # [3.16.13] - 2019-11-28
 ## Improved
 - Payment and promotion modals
