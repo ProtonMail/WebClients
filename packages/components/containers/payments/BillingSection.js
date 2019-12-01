@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 import { PLAN_NAMES, CYCLE, LOYAL_BONUS_STORAGE, LOYAL_BONUS_CONNECTION } from 'proton-shared/lib/constants';
 import { isLoyal } from 'proton-shared/lib/helpers/organization';
+import { unique } from 'proton-shared/lib/helpers/array';
 import {
     Alert,
     SubTitle,
@@ -36,19 +37,6 @@ const getCyclesI18N = () => ({
     [TWO_YEARS]: c('Billing cycle').t`2-year`
 });
 
-/**
- * Define sub-total from current subscription
- * @param {Array} plans coming from Subscription API
- * @returns {Number} subTotal
- */
-const getSubTotal = (plans = []) => {
-    const config = formatPlans(plans);
-
-    return Object.entries(config).reduce((acc, [, { Amount }]) => {
-        return acc + Amount;
-    }, 0);
-};
-
 const BillingSection = ({ permission }) => {
     const i18n = getCyclesI18N();
     const { createModal } = useModals();
@@ -74,7 +62,7 @@ const BillingSection = ({ permission }) => {
             <>
                 <SubTitle>{c('Title').t`Billing details`}</SubTitle>
                 <Alert>{c('Info').t`There are no billing details available for your current subscription.`}</Alert>
-                <div className="shadow-container mb1">
+                <div className="shadow-container mb1 pt1 pl1 pr1">
                     <div className="flex-autogrid onmobile-flex-column w100 mb1">
                         <div className="flex-autogrid-item">{c('Label').t`Credits`}</div>
                         <div className="flex-autogrid-item">
@@ -122,8 +110,10 @@ const BillingSection = ({ permission }) => {
 
     const { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd } = subscription;
     const { mailPlan, vpnPlan, addressAddon, domainAddon, memberAddon, vpnAddon, spaceAddon } = formatPlans(Plans);
-    const subTotal = getSubTotal(Plans);
-    const discount = Amount - subTotal;
+    const subTotal = unique(Plans.map(({ Name }) => Name)).reduce((acc, planName) => {
+        return acc + getMonthlyBaseAmount(planName, plans, subscription);
+    }, 0);
+    const discount = Amount / Cycle - subTotal;
     const loyal = isLoyal(organization);
 
     return (
