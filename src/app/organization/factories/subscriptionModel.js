@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from '../../constants';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS_TYPE, BLACK_FRIDAY } from '../../constants';
 
 const PAID_TYPES = {
     plus: ['plus'],
@@ -21,7 +21,7 @@ const MAP_ADDONS = {
 };
 
 /* @ngInject */
-function subscriptionModel(dispatchers, Payment) {
+function subscriptionModel(dispatchers, Payment, $injector) {
     const CACHE = {};
     const { dispatcher, on } = dispatchers(['subscription']);
 
@@ -93,6 +93,10 @@ function subscriptionModel(dispatchers, Payment) {
         !noEvent && dispatcher.subscription('update', { subscription: copy });
     }
 
+    function setVPN(data = {}) {
+        CACHE.vpn = angular.copy(data);
+    }
+
     function coupon() {
         const { CouponCode } = get();
         // CouponCode is apparently null from the API.
@@ -100,8 +104,11 @@ function subscriptionModel(dispatchers, Payment) {
     }
 
     function fetch() {
-        return Payment.subscription().then((data = {}) => {
-            set(data.Subscription);
+        const promises = [Payment.subscription(), $injector.get('vpnApi').get()];
+
+        return Promise.all(promises).then(([subData = {}, vpnData = {}]) => {
+            set(subData.Subscription);
+            setVPN((vpnData.data || {}).VPN);
             return get();
         });
     }
@@ -122,12 +129,28 @@ function subscriptionModel(dispatchers, Payment) {
         return 'free';
     }
 
+    const withCoupon = (coupon) => {
+        const { CouponCode = '' } = CACHE.subscription || {};
+        return CouponCode === coupon;
+    };
+
+    const isPlusForBF2019 = (cycle = DEFAULT_CYCLE) => {
+        const isPlus = hasPaid('plus');
+        const hasCoupon = withCoupon(BLACK_FRIDAY.COUPON_CODE);
+
+        const { Plans = [] } = CACHE.subscription || {};
+        const total = Plans.filter(({ Type, Cycle }) => Type === PLANS_TYPE.PLAN && Cycle === cycle).length;
+
+        // Plus account, only plus plan and no coupon bf2019 active
+        return isPlus && total === 1 && !hasCoupon;
+    };
+
     on('app.event', (event, { type, data }) => {
         if (type === 'subscription.event') {
             set(data.subscription);
         }
     });
 
-    return { set, get, name, fetch, hasPaid, coupon, count, cycle, currency, isMoz };
+    return { isPlusForBF2019, withCoupon, set, get, name, fetch, hasPaid, coupon, count, cycle, currency, isMoz };
 }
 export default subscriptionModel;

@@ -99,6 +99,7 @@ $offer-header-size: 50px;
     justify-content: space-between;
 }
 
+
 .blackFridayOffer-container {
     position: relative;
     display: flex;
@@ -184,6 +185,18 @@ $offer-header-size: 50px;
     padding: 2rem 1rem;
     width: 100%;
     color: #2f333e
+}
+
+.blackFridayOffers-container[data-offer-n="2"] {
+    justify-content: center;
+
+    .blackFridayOffer-container + .blackFridayOffer-container {
+        margin-left: 2rem;
+    }
+
+    .blackFridayOffer-container:nth-of-type(1) .be-headerOffer-titles span {
+        display: block;
+    }
 }
 
 .blackFridayOffer-plans {
@@ -320,3 +333,21 @@ $offer-header-size: 50px;
     }
 }
 
+
+
+.blackFridayOffers-container[data-offer-n="1"] {
+    justify-content: center;
+
+
+    .blackFridayOffer-container:nth-of-type(1) .be-headerOffer-titles span {
+        display: block;
+    }
+}
+
+.appConfigBody-is-mobile .blackFridayOffers-container[data-offer-n="1"] {
+
+    .blackFridayOffer-container + .blackFridayOffer-container {
+        margin-left: 0
+    }
+
+}
