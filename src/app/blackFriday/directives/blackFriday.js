@@ -88,7 +88,11 @@ function blackFriday(
         const val = priceRegular * delta;
         const percentage = percentageFilter((val - priceOffer) / val);
         const afterBillValue = planList.length === 2 ? 19040 : offer.Amount;
-        const savingsPrice = !index ? priceRegular - priceOffer : ((24 * priceRegular) / 12 / 100) * percentage;
+        let savingsPrice = !index ? priceRegular - priceOffer : ((24 * priceRegular) / 12 / 100) * percentage;
+
+        if (subscriptionModel.isPlusForBF2019()) {
+            savingsPrice = val - priceOffer;
+        }
 
         return {
             offer,

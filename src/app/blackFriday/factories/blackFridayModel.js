@@ -21,7 +21,10 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
      *     - Must be between START-END
      * @return {Boolean}
      */
-    const isDealPeriod = () => userType().isFree && allowed && isDealEvent();
+    const isDealPeriod = () => {
+        const isAvailable = userType().isFree && allowed && isDealEvent();
+        return isAvailable || (subscriptionModel.isPlusForBF2019() && isDealEvent());
+    };
 
     /**
      * Get the black friday offers.
@@ -34,7 +37,7 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
         const Plans = await PaymentCache.plans();
         const plansMap = getPlansMap(Plans);
 
-        const offers = blackFridayOffers(currency).map(({ plans, ...offer }) => {
+        const offers = blackFridayOffers(currency, subscriptionModel.isPlusForBF2019()).map(({ plans, ...offer }) => {
             const { PlanIDs, planList } = plans.reduce(
                 (acc, name) => {
                     acc.PlanIDs.push(plansMap[name].ID);
