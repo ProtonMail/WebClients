@@ -220,7 +220,7 @@ function main(argv) {
                     title: `Build the contacts application ${suffixRemote('contacts')}`,
                     skip() {
                         if (argv.contacts === false) {
-                            return 'Flag --no-contact inside the command.';
+                            return 'Flag --no-contacts inside the command.';
                         }
                     },
                     task() {

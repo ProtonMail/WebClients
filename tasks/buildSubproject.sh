@@ -85,15 +85,15 @@ function addSubProject {
 
     if [ ! -d "./node_modules/react" ]; then
         if [[ -f "./package-lock.json" ]]; then
-            npm ci;
+            npm --no-color ci;
         else
-            npm i --no-audit --no-package-lock;
+            npm --no-color i --no-audit --no-package-lock;
         fi;
     fi
 
     echo "[build.project] npm run build -- $@ "--api=$API" --verbose" >> build.log;
     rm -rf dist;
-    npm run build -- $@ "--api=$API" --verbose
+    npm --no-color run build -- $@ "--api=$API" --verbose
     cp -r dist/ "$WEBCLIENT_DIR/$1";
 }
 

@@ -157,14 +157,18 @@
   },
   "license": "MIT",
   "scripts": {
+    "install:dev": "npm i --no-progress --no-audit && npm run unfollow:lock",
+    "install:dev:no-lock": "npm i --no-progress --no-audit --no-package-lock",
     "postinstall": "./tasks/checkDependencies.js",
+    "follow:lock": "git update-index --no-assume-unchanged package-lock.json",
+    "unfollow:lock": "git update-index --assume-unchanged package-lock.json",
     "lint": "eslint src/app src/helpers --ext .js --quiet --cache",
     "e2e": "./tasks/lazyInstallVendor e2e && cypress run",
     "pretest": "./tasks/lazyInstallVendor test && del ./build && cross-env NODE_ENV=test npm run config",
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js",
     "testwatch": "npm test -- --auto-watch --no-single-run",
-    "preversion": "git update-index --no-assume-unchanged package-lock.json",
-    "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags && git push",
+    "preversion": "npm run follow:lock",
+    "postversion": "npm run unfollow:lock && git push --tags && git push",
     "config": "cross-env NODE_ENV=dev NODE_ENV_MODE=config tasks/setupConfig.js",
     "start": "./node_modules/proton-bundler/scripts/createVersionJSON.sh && cross-env NODE_ENV=dev tasks/setupConfig.js",
     "poststart": "npm run dev",
@@ -193,8 +197,9 @@
     "create:test": "appComponent --test",
     "cypress:open": "./tasks/lazyInstallVendor e2e && cypress open",
     "i18n:getlatest": "cross-env APP_KEY=Angular proton-i18n upgrade --custom",
-    "bundle": "./node_modules/proton-bundler/scripts/createVersionJSON.sh && cross-env NODE_ENV=dev tasks/setupConfig.js",
-    "postbundle": "cross-env NODE_ENV_DIST=bundle-only NODE_ENV=dist proton-bundler",
+    "prebundle": "./node_modules/proton-bundler/scripts/createVersionJSON.sh && cross-env NODE_ENV=dist tasks/setupConfig.js",
+    "bundle": "cross-env NODE_ENV_DIST=bundle-only NODE_ENV=dist proton-bundler",
+    "bundle:no-subprojects": "npm run bundle -- --no-settings --no-contacts",
     "deploy:v4": "npm run deploy -- --branch=deploy-v4 --remote-pm-settings --remote-calendar --remote-contacts"
   },
   "lint-staged": {
@@ -218,7 +223,7 @@
   "version-beta": "4.0.0-beta3",
   "husky": {
     "hooks": {
-      "pre-commit": "git update-index --assume-unchanged package-lock.json && ./tasks/metrics.sh"
+      "pre-commit": "npm run unfollow:lock && ./tasks/metrics.sh"
     }
   }
 }
