@@ -10,6 +10,7 @@ $offer-header-size: 50px;
 .blackFridayModal .modal-dialog {
     border-color: $background;
     width: 58rem;
+    margin-left: calc(-58rem/2);
 }
 
 .blackFridayModal  .modal-dialog .close {
@@ -338,10 +339,36 @@ $offer-header-size: 50px;
 .blackFridayOffers-container[data-offer-n="1"] {
     justify-content: center;
 
+    .blackFridayOffer-container {
+        flex: 0 0 40%
+    }
+
 
     .blackFridayOffer-container:nth-of-type(1) .be-headerOffer-titles span {
         display: block;
     }
+}
+
+@media (max-width: 915px) and (min-width: 800px) {
+    .navigation > li { flex: 0 0 90px; }
+    .blackFridayModal .modal-dialog {
+        border-color: $background;
+        width: 100vw;
+        margin-left: calc(-100vw/2);
+    }
+
+}
+
+@media (max-width: 800px) and (min-width: 600px) {
+
+    .blackFridayOffers-container[data-offer-n="1"] {
+        padding: 0;
+
+        .blackFridayOffer-container {
+            flex: 0 0 50%
+        }
+    }
+
 }
 
 .appConfigBody-is-mobile .blackFridayOffers-container[data-offer-n="1"] {
@@ -351,3 +378,5 @@ $offer-header-size: 50px;
     }
 
 }
+
+
