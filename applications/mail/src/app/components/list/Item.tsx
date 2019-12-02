@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { classnames } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from 'proton-shared/lib/constants';
@@ -22,12 +22,12 @@ interface Props {
     mailSettings: any;
     element: Element;
     checked?: boolean;
-    onCheck: Function;
-    onClick: Function;
+    onCheck: (event: ChangeEvent) => void;
+    onClick: (ID: string) => void;
 }
 
 const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked = false, onCheck, onClick }: Props) => {
-    const { ID } = element;
+    const { ID = '' } = element;
     const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
     const type = getCurrentType({ mailSettings, labelID });
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
@@ -58,12 +58,7 @@ const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked 
                 !unread && 'read'
             ])}
         >
-            <ItemCheckbox
-                className="mr1 item-checkbox"
-                checked={checked}
-                onChange={onCheck}
-                data-element-id={element.ID}
-            >
+            <ItemCheckbox className="mr1 item-checkbox" checked={checked} onChange={onCheck}>
                 {getInitial(displayRecipients ? recipients[0] : senders[0])}
             </ItemCheckbox>
             <ItemLayout

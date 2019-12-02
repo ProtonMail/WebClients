@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { ReactElement, ChangeEvent } from 'react';
 import { Icon, classnames } from 'react-components';
 
 interface Props {
-    children: JSX.Element;
+    children: ReactElement | string;
     className: string;
+    checked: boolean;
+    onChange: (event: ChangeEvent) => void;
 }
 
 const ItemCheckbox = ({ children, className, ...rest }: Props) => {

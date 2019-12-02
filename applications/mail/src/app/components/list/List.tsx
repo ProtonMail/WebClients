@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { useLabels } from 'react-components';
 
 import Item from './Item';
@@ -10,17 +10,17 @@ interface Props {
     mailSettings: any;
     elements?: Element[];
     checkedIDs?: string[];
-    onCheck: Function;
-    onClick: Function;
+    onCheck: (IDs?: string[], checked?: boolean) => void;
+    onClick: (ID: string) => void;
 }
 
 const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs = [], onCheck, onClick }: Props) => {
     const [labels] = useLabels();
     const [lastChecked, setLastChecked] = useState(); // Store ID of the last contact ID checked
 
-    const handleCheck = (elementID: string) => (event: React.MouseEvent) => {
+    const handleCheck = (elementID: string) => (event: ChangeEvent) => {
         const target = event.target as HTMLInputElement;
-        const { shiftKey } = event.nativeEvent;
+        const { shiftKey } = event.nativeEvent as any;
         const elementIDs = [elementID];
 
         if (lastChecked && shiftKey) {

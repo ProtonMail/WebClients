@@ -38,7 +38,7 @@ export interface Message {
 }
 
 export interface MessageExtended {
-    data: Message;
+    data?: Message;
     raw?: string;
     document?: HTMLElement;
     content?: string;

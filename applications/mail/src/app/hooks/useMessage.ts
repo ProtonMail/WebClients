@@ -91,9 +91,9 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
     );
 
     const markAsRead = useCallback(
-        async ({ data: message }: MessageExtended) => {
+        async ({ data: message = {} }: MessageExtended) => {
             const markAsRead = async () => {
-                await api(markMessageAsRead([message.ID]));
+                await api(markMessageAsRead([message.ID || '']));
                 call();
             };
 

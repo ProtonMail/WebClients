@@ -35,7 +35,7 @@ export const MessageContext = createContext<MessageCache>(null as any /* Just to
  * The purpose of this provider is to synchronize individual message fetches with updates from the event manager,
  * and to have a separate LRU cache for it.
  */
-const ContactProvider = ({ children }: Props) => {
+const MessageProvider = ({ children }: Props) => {
     const { subscribe } = useEventManager();
     const cache: MessageCache = useInstance(() => {
         return createCache(createLRU({ max: 10 } as any));
@@ -47,7 +47,7 @@ const ContactProvider = ({ children }: Props) => {
                 return;
             }
             for (const { ID, Action } of Messages) {
-                // Ignore updates for non-fetched contacts.
+                // Ignore updates for non-fetched messages.
                 if (!cache.has(ID)) {
                     continue;
                 }
@@ -68,4 +68,4 @@ const ContactProvider = ({ children }: Props) => {
     return <MessageContext.Provider value={cache}>{children}</MessageContext.Provider>;
 };
 
-export default ContactProvider;
+export default MessageProvider;

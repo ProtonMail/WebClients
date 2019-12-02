@@ -107,11 +107,11 @@ export const useElements = ({
 
     // Listen to event manager and update de cache
     useEffect(
-        () =>
-            subscribe(async ({ Conversations = [], Messages = [] }: Event) => {
+        () => {
+            return subscribe(async ({ Conversations = [], Messages = [] }: Event) => {
                 const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
 
-                // console.log('Event', Elements);
+                console.log('Event', Elements);
 
                 const { toDelete, toUpdate, toCreate } = Elements.reduce(
                     (acc, event) => {
@@ -163,7 +163,8 @@ export const useElements = ({
                         elements: newElements
                     };
                 });
-            }),
+            });
+        },
         // Having the cache in dependency will subscribe / unsubscribe to the eventmanager many times
         // But it's mandatory for the function to have the reference of the current localCache
         [localCache]
@@ -181,6 +182,8 @@ export const useElements = ({
 
     // Compute the conversations list from the cache
     const elements = useMemo(() => {
+        console.log('useMemo', localCache, labelID, page.page, page.size);
+
         const minPage = localCache.pages.reduce((acc, page) => (page < acc ? page : acc), localCache.pages[0]);
         const startIndex = (page.page - minPage) * page.size;
         const endIndex = startIndex + page.size;
@@ -209,7 +212,6 @@ export const useElements = ({
             setLoading(true);
             try {
                 const { Total, Elements } = await queryElements();
-                setLoading(false);
                 setLocalCache((localCache) => {
                     return {
                         total: Total,
@@ -220,7 +222,7 @@ export const useElements = ({
                         }
                     };
                 });
-            } catch (error) {
+            } finally {
                 setLoading(false);
             }
         };
