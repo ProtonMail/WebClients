@@ -102,7 +102,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
             ) : (
                 <>
                     <Alert>{c('Info').t`Don't miss out on limited time discounts for newcomers!`}</Alert>
-                    <div className="flex-autogrid flex-items-end">
+                    <div className="flex-autogrid onmobile-flex-column flex-items-end">
                         {bundles.map(({ name, cycle, planIDs, popular, couponCode }, index) => {
                             const key = `${index}`;
                             const { withCoupon = 0, withoutCouponMonthly = 0, save = 0 } = pricing[index] || {};
