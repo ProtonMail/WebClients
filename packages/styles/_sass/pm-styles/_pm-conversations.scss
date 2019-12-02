@@ -25,12 +25,17 @@
   padding: em(8) em(12);
 }
 
+.item-container,
+.item-container-row {
+  background: $pm-global-light;
+}
+
 .item-is-selected,
 .item-container.active { // alias for Angular
   background: $conversation-selected-bg;
 }
 
-.item-container:not(.item-contact):not(.read):not(.active) {
+.item-container:not(.item-is-selected):not(.item-contact):not(.read):not(.active) {
   background: $white;
 }
 
