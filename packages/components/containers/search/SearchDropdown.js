@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { SearchInput, DropdownButton, Dropdown, Icon, usePopperAnchor, PrimaryButton } from 'react-components';
+import {
+    SearchInput,
+    DropdownButton,
+    Dropdown,
+    Icon,
+    usePopperAnchor,
+    PrimaryButton,
+    ResetButton
+} from 'react-components';
 import { c } from 'ttag';
 
 import { generateUID } from '../../helpers/component';
@@ -24,6 +32,13 @@ const SearchDropdown = ({
         close();
     };
 
+    const handleReset = (event) => {
+        event.preventDefault();
+        updateSearch('');
+        onSearch('');
+        close();
+    };
+
     return (
         <>
             <DropdownButton {...rest} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle}>
@@ -40,8 +55,9 @@ const SearchDropdown = ({
                             placeholder={placeholder}
                         />
                     </div>
-                    <div>
-                        <PrimaryButton className="w100" type="submit">{c('Action').t`Search`}</PrimaryButton>
+                    <div className="flex flex-nowrap">
+                        <ResetButton className="w50" onClick={handleReset}>{c('Action').t`Clear`}</ResetButton>
+                        <PrimaryButton className="w50 ml1" type="submit">{c('Action').t`Search`}</PrimaryButton>
                     </div>
                 </form>
             </Dropdown>

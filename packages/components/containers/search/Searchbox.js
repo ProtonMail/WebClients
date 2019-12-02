@@ -16,6 +16,12 @@ const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onS
         onChange && onChange(newSearch);
     };
 
+    const handleClear = () => {
+        updateSearch('');
+        onChange && onChange('');
+        onSearch && onSearch('');
+    };
+
     useEffect(() => {
         // needed in case the search is cleared
         updateSearch(value);
@@ -41,6 +47,14 @@ const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onS
                 <Icon name="search" className="fill-white mauto searchbox-search-button-icon" />
                 <span className="sr-only">{c('Action').t`Search`}</span>
             </button>
+            {// Clear button is hidden when using advanced mode because the buttons use the same spots
+            // If there is the need of having both, a positioning solution will have to be found
+            !advanced && search !== '' && (
+                <button type="button" className="searchbox-advanced-search-button flex" onClick={handleClear}>
+                    <Icon name="close" className="fill-white mauto searchbox-search-button-icon" />
+                    <span className="sr-only">{c('Action').t`Clear`}</span>
+                </button>
+            )}
             {advanced}
         </form>
     );
