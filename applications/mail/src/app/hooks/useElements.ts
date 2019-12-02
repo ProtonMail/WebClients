@@ -111,7 +111,7 @@ export const useElements = ({
             subscribe(async ({ Conversations = [], Messages = [] }: Event) => {
                 const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
 
-                console.log('Event', Elements);
+                // console.log('Event', Elements);
 
                 const { toDelete, toUpdate, toCreate } = Elements.reduce(
                     (acc, event) => {
@@ -171,11 +171,9 @@ export const useElements = ({
 
     // Reset local cache when needed
     useEffect(() => {
-        console.log('reset cache');
         resetCache();
     }, [labelID, page.size, sort, filter]);
     useEffect(() => {
-        console.log('reset cache consecutive');
         if (!isConsecutive(page.page)) {
             resetCache();
         }
