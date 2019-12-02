@@ -55,7 +55,7 @@ const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked 
                 'flex flex-nowrap cursor-pointer',
                 isColumnMode ? 'item-container' : 'item-container-row',
                 elementID === ID && 'item-is-selected',
-                unread ? 'bg-global-white' : 'bg-global-light'
+                !unread && 'read'
             ])}
         >
             <ItemCheckbox
