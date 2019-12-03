@@ -3,6 +3,7 @@ export interface Label {
     Name?: string;
     Color?: string;
     ContextTime?: number;
+    Exclusive?: number;
 }
 
 export interface LabelCount {

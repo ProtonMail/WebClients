@@ -111,8 +111,6 @@ export const useElements = ({
             return subscribe(async ({ Conversations = [], Messages = [] }: Event) => {
                 const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
 
-                console.log('Event', Elements);
-
                 const { toDelete, toUpdate, toCreate } = Elements.reduce(
                     (acc, event) => {
                         const { ID, Action } = event;
@@ -182,8 +180,6 @@ export const useElements = ({
 
     // Compute the conversations list from the cache
     const elements = useMemo(() => {
-        console.log('useMemo', localCache, labelID, page.page, page.size);
-
         const minPage = localCache.pages.reduce((acc, page) => (page < acc ? page : acc), localCache.pages[0]);
         const startIndex = (page.page - minPage) * page.size;
         const endIndex = startIndex + page.size;

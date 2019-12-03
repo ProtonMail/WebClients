@@ -33,17 +33,19 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
             </ToolbarButton>
             <ToolbarDropdown
                 title={c('Action').t`Change layout`}
-                content={page.page + 1}
+                content={String(page.page + 1)}
                 className="paging-dropdown"
                 size="narrow"
             >
-                <DropdownMenu>
-                    {[...Array(pageCount)].map((_, i) => (
-                        <DropdownMenuButton loading={loading} key={i} onClick={handlePage(i)}>
-                            {i + 1}
-                        </DropdownMenuButton>
-                    ))}
-                </DropdownMenu>
+                {() => (
+                    <DropdownMenu>
+                        {[...Array(pageCount)].map((_, i) => (
+                            <DropdownMenuButton loading={loading} key={i} onClick={handlePage(i)}>
+                                {i + 1}
+                            </DropdownMenuButton>
+                        ))}
+                    </DropdownMenu>
+                )}
             </ToolbarDropdown>
             <ToolbarButton
                 loading={loading}
