@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS_TYPE, BLACK_FRIDAY } from '../../constants';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS_TYPE, BLACK_FRIDAY, CYCLE } from '../../constants';
 
 const PAID_TYPES = {
     plus: ['plus'],
@@ -21,7 +21,7 @@ const MAP_ADDONS = {
 };
 
 /* @ngInject */
-function subscriptionModel(dispatchers, Payment, $injector) {
+function subscriptionModel(dispatchers, Payment) {
     const CACHE = {};
     const { dispatcher, on } = dispatchers(['subscription']);
 
@@ -93,10 +93,6 @@ function subscriptionModel(dispatchers, Payment, $injector) {
         !noEvent && dispatcher.subscription('update', { subscription: copy });
     }
 
-    function setVPN(data = {}) {
-        CACHE.vpn = angular.copy(data);
-    }
-
     function coupon() {
         const { CouponCode } = get();
         // CouponCode is apparently null from the API.
@@ -104,11 +100,8 @@ function subscriptionModel(dispatchers, Payment, $injector) {
     }
 
     function fetch() {
-        const promises = [Payment.subscription(), $injector.get('vpnApi').get()];
-
-        return Promise.all(promises).then(([subData = {}, vpnData = {}]) => {
-            set(subData.Subscription);
-            setVPN((vpnData.data || {}).VPN);
+        return Payment.subscription().then((data = {}) => {
+            set(data.Subscription);
             return get();
         });
     }
@@ -134,12 +127,13 @@ function subscriptionModel(dispatchers, Payment, $injector) {
         return CouponCode === coupon;
     };
 
-    const isPlusForBF2019 = (cycle = DEFAULT_CYCLE) => {
+    const isPlusForBF2019 = () => {
         const isPlus = hasPaid('plus');
         const hasCoupon = withCoupon(BLACK_FRIDAY.COUPON_CODE);
 
+        const isValidCycle = (cycle) => [CYCLE.MONTHLY, CYCLE.YEARLY].includes(cycle);
         const { Plans = [] } = CACHE.subscription || {};
-        const total = Plans.filter(({ Type, Cycle }) => Type === PLANS_TYPE.PLAN && Cycle === cycle).length;
+        const total = Plans.filter(({ Type, Cycle }) => Type === PLANS_TYPE.PLAN && isValidCycle(Cycle)).length;
 
         // Plus account, only plus plan and no coupon bf2019 active
         return isPlus && total === 1 && !hasCoupon;
