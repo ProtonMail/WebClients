@@ -36,8 +36,9 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
     const getOffers = async (currency) => {
         const Plans = await PaymentCache.plans();
         const plansMap = getPlansMap(Plans);
+        const isPlus = subscriptionModel.isPlusForBF2019();
 
-        const offers = blackFridayOffers(currency, subscriptionModel.isPlusForBF2019()).map(({ plans, ...offer }) => {
+        const offers = blackFridayOffers(currency, isPlus).map(({ plans, ...offer }) => {
             const { PlanIDs, planList } = plans.reduce(
                 (acc, name) => {
                     acc.PlanIDs.push(plansMap[name].ID);
