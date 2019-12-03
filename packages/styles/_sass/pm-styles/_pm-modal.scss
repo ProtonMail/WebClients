@@ -3,7 +3,7 @@
  */
 /* overlay covers everything */
 $modal-width: 50% !default;
-$modal-max-width: 70rem;
+$modal-max-width: 70rem !default;
 
 $modal-breakpoint-width: 52em !default;
 $modal-breakpoint-height: 22em !default;
@@ -11,7 +11,10 @@ $modal-breakpoint-height: 22em !default;
 $modal-max-height: 80% !default;
 
 $modal-wider-width: 70% !default;
-$modal-wider-max-width: 100rem;
+$modal-wider-max-width: 100rem !default;
+
+$modal-full-width: 100% !default;
+$modal-full-max-width: 100% !default;
 
 $modal-smaller-width: 28em !default;
 
@@ -119,6 +122,10 @@ $modal-smaller-width: 28em !default;
 .pm-modal--wider {
   width: $modal-wider-width;
   max-width: $modal-wider-max-width;
+}
+.pm-modal--full {
+  width: $modal-full-width;
+  max-width: $modal-full-max-width;
 }
 
 
