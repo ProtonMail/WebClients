@@ -69,21 +69,24 @@ const CalendarSidebar = ({
     ];
 
     return (
-        <div className="sidebar flex flex-column noprint" data-expanded={expanded}>
+        <div
+            className="sidebar flex flex-nowrap flex-column noprint customScrollBar-container"
+            data-expanded={expanded}
+        >
             <div className="nodesktop notablet flex-item-noshrink">
                 <div className="flex flex-spacebetween flex-items-center">
                     <MainLogo url={url} />
                     <Hamburger expanded={expanded} onToggle={onToggleExpand} />
                 </div>
             </div>
-            <div className="pl1 pr1 pb1">
+            <div className="pl1 pr1 pb1 flex-item-noshrink">
                 <PrimaryButton
                     className="pm-button--large bold mt0-25 w100"
                     onClick={() => onCreateEvent({ type: 'event' })}
                 >{c('Action').t`New event`}</PrimaryButton>
             </div>
-            <div className="nomobile">{miniCalendar}</div>
-            <nav className="navigation mw100 flex-item-fluid scroll-if-needed mb1">
+            <div className="nomobile flex-item-noshrink">{miniCalendar}</div>
+            <nav className="navigation mw100 flex-item-fluid-auto flex-item-noshrink scroll-if-needed mb1">
                 <NavMenu list={list} className="mb0" />
                 {calendarsListView}
             </nav>
