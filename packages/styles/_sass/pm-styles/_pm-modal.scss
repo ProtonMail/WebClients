@@ -13,8 +13,7 @@ $modal-max-height: 80% !default;
 $modal-wider-width: 70% !default;
 $modal-wider-max-width: 100rem !default;
 
-$modal-full-width: 100% !default;
-$modal-full-max-width: 100% !default;
+$modal-full-dimension: 98% !default;
 
 $modal-smaller-width: 28em !default;
 
@@ -124,8 +123,11 @@ $modal-smaller-width: 28em !default;
   max-width: $modal-wider-max-width;
 }
 .pm-modal--full {
-  width: $modal-full-width;
-  max-width: $modal-full-max-width;
+  width: $modal-full-dimension;
+  max-width: $modal-full-dimension;
+  height: $modal-full-dimension;
+  max-height: $modal-full-dimension;
+  margin: 1%;
 }
 
 
