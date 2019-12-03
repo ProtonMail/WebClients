@@ -1,4 +1,4 @@
-import { BLACK_FRIDAY, CYBER_MONDAY } from '../../constants';
+import { BLACK_FRIDAY, CYBER_MONDAY, PLANS_TYPE } from '../../constants';
 import { isBlackFriday } from '../helpers/blackFridayHelper';
 import { getAfterCouponDiscount } from '../../../helpers/paymentHelper';
 
@@ -66,14 +66,15 @@ function blackFriday(
     const percentageFilter = $filter('percentage');
     const currencyFilter = (amount, cycle, currency) => $filter('currency')(amount / 100 / cycle, currency, true);
 
-    const getClickData = (PlanIDs, valid) => {
-        return {
-            payment: valid,
-            PlanIDs
-        };
+    const getClickData = (plans, payment) => {
+        if (subscriptionModel.isPlusForBF2019()) {
+            return { payment, plans: plans.concat(subscriptionModel.getAddons()) };
+        }
+
+        return { payment, plans };
     };
 
-    const getOffer = ({ offer, config: { PlanIDs, planList, Cycle } }, index) => {
+    const getOffer = ({ offer, config: { planList, Cycle } }, index) => {
         // Plans are all Cycle 1
         const priceRegular = planList.reduce((acc, { Amount, Cycle }) => acc + (Cycle === 1 ? Amount * 12 : Amount), 0);
 
@@ -101,7 +102,7 @@ function blackFriday(
 
             savings: TEXTS.savings(currencyFilter(savingsPrice, 1, offer.Currency)),
             afterBilling: TEXTS.afterBilling(currencyFilter(afterBillValue, 1, offer.Currency), offer.Cycle, index),
-            clickData: getClickData(PlanIDs, offer),
+            clickData: getClickData(planList, offer),
             header: TEXTS.offer(planList, Cycle),
             billingTxt: TEXTS.billing(price.total, offer.Cycle)
         };
@@ -134,20 +135,49 @@ function blackFriday(
              * Opens up the payment to buy an offer.
              * @returns {Promise}
              */
-            const openPayment = async ({ payment, PlanIDs }) => {
+            const openPayment = async ({ payment, plans: planList }) => {
                 if (scope.state.loading) {
                     return;
                 }
+
+                const planIDs = planList.reduce((acc, { ID, Type }) => {
+                    if (Type === PLANS_TYPE.PLAN) {
+                        acc[ID] = 1;
+                    }
+
+                    if (Type === PLANS_TYPE.ADDON) {
+                        acc[ID] = (acc[ID] || 0) + 1;
+                    }
+                    return acc;
+                }, {});
 
                 // Get with monthly cycle to ensure caching for paymentPlanOverview. Only needed for IDs.
                 const promise = wrapLoading(PaymentCache.plans());
                 const plans = await networkActivityTracker.track(promise);
 
+                // we re-check again for plus as you might have addons
+                if (subscriptionModel.isPlusForBF2019()) {
+                    const { Currency, Cycle } = payment;
+                    const valid = await PaymentCache.valid({
+                        Currency,
+                        Cycle,
+                        PlanIDs: planIDs
+                    });
+                    return paymentModal.activate({
+                        params: {
+                            isBlackFriday: true,
+                            valid,
+                            planIDs,
+                            plans
+                        }
+                    });
+                }
+
                 paymentModal.activate({
                     params: {
                         isBlackFriday: true,
-                        planIDs: PlanIDs.reduce((acc, id) => ((acc[id] = 1), acc), {}),
                         valid: payment,
+                        planIDs,
                         plans
                     }
                 });

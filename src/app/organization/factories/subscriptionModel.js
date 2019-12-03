@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS_TYPE, BLACK_FRIDAY, CYCLE } from '../../constants';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS_TYPE, BLACK_FRIDAY } from '../../constants';
 
 const PAID_TYPES = {
     plus: ['plus'],
@@ -131,12 +131,17 @@ function subscriptionModel(dispatchers, Payment) {
         const isPlus = hasPaid('plus');
         const hasCoupon = withCoupon(BLACK_FRIDAY.COUPON_CODE);
 
-        const isValidCycle = (cycle) => [CYCLE.MONTHLY, CYCLE.YEARLY].includes(cycle);
         const { Plans = [] } = CACHE.subscription || {};
-        const total = Plans.filter(({ Type, Cycle }) => Type === PLANS_TYPE.PLAN && isValidCycle(Cycle)).length;
+        const isBF2018 = withCoupon('TWO4ONE2018');
+        const total = Plans.filter(({ Type }) => Type === PLANS_TYPE.PLAN).length;
 
-        // Plus account, only plus plan and no coupon bf2019 active
-        return isPlus && total === 1 && !hasCoupon;
+        // Plus account, only plus plan and no coupon bf2019/bf2018 active
+        return isPlus && total === 1 && !hasCoupon && !isBF2018;
+    };
+
+    const getAddons = () => {
+        const { Plans = [] } = CACHE.subscription || {};
+        return Plans.filter(({ Type }) => Type === PLANS_TYPE.ADDON);
     };
 
     on('app.event', (event, { type, data }) => {
@@ -145,6 +150,20 @@ function subscriptionModel(dispatchers, Payment) {
         }
     });
 
-    return { isPlusForBF2019, withCoupon, set, get, name, fetch, hasPaid, coupon, count, cycle, currency, isMoz };
+    return {
+        isPlusForBF2019,
+        getAddons,
+        withCoupon,
+        set,
+        get,
+        name,
+        fetch,
+        hasPaid,
+        coupon,
+        count,
+        cycle,
+        currency,
+        isMoz
+    };
 }
 export default subscriptionModel;
