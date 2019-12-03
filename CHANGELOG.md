@@ -1,3 +1,11 @@
+# [3.16.16] - 2019-12-03
+## Fixed
+- organization admins were not able to log into non-private user accounts
+
+# [3.16.15] - 2019-12-02
+## Changed
+- Updated promotional modal for Plus users
+
 # [3.16.14] - 2019-11-29
 ## Fixed
 - The compose button was not usable for some users
