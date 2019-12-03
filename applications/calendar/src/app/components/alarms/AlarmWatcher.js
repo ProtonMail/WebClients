@@ -1,11 +1,11 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { useApi } from 'react-components';
+import { useApi, useLoading } from 'react-components';
 
 import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
 import { getEvent } from 'proton-shared/lib/api/calendars';
-import { create } from 'proton-shared/lib/helpers/desktopNotification';
+import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
 import calendarSvg from 'design-system/assets/img/pm-images/calendar.svg';
 
 import useGetCalendarEventRaw from '../../containers/calendar/useGetCalendarEventRaw';
@@ -25,6 +25,8 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
     const api = useApi();
     const cacheRef = useRef();
     const [isPastAlarm, setIsPastAlarm] = useState(Object.create(null));
+
+    const [loading, withLoading] = useLoading();
     const getEventRaw = useGetCalendarEventRaw();
 
     const firstAlarm = useMemo(() => {
@@ -39,7 +41,17 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
         return undefined;
     }, [alarms, isPastAlarm]);
 
+    // temporary code for standalone app
     useEffect(() => {
+        if (!isEnabled()) {
+            request();
+        }
+    }, []);
+
+    useEffect(() => {
+        if (loading) {
+            return;
+        }
         if (!cacheRef.current) {
             cacheRef.current = { tzid };
         }
@@ -63,7 +75,7 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
             }, delay);
         };
 
-        setNextAlarm();
+        withLoading(setNextAlarm());
 
         return () => {
             if (!cacheRef.current.timeoutID) {
@@ -78,7 +90,6 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
 
 AlarmWatcher.propTypes = {
     alarms: PropTypes.array,
-    updateAlarms: PropTypes.func,
     tzid: PropTypes.string.isRequired
 };
 

@@ -54,25 +54,19 @@ const useCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
     const fetchAlarms = useCallback(async ({ api, IDs, end }) => {
         const Start = getUnixTime(Date.now());
         const End = end || Start + lookAhead;
-        const toFetchIDs = IDs.reduce((acc, ID) => {
-            if (!cacheRef.current.calendarAlarms[ID]) {
-                acc.push(ID);
-            }
-            acc.push(ID);
-            return acc;
-        }, []);
-        await Promise.all(
-            toFetchIDs.map(async (ID) => {
-                const allCalendarAlarms = await queryAllCalendarAlarms({ api, calendarID: ID, Start, End });
-                cacheRef.current.calendarAlarms[ID] = allCalendarAlarms;
+        const activeAlarms = await Promise.all(
+            IDs.map(async (ID) => {
+                if (!cacheRef.current.calendarAlarms[ID]) {
+                    cacheRef.current.calendarAlarms[ID] = queryAllCalendarAlarms({ api, calendarID: ID, Start, End });
+                }
+                return await cacheRef.current.calendarAlarms[ID];
             })
         );
-        const activeAlarms = IDs.map((ID) => cacheRef.current.calendarAlarms[ID]).flat();
         if (api.signal && api.signal.aborted) {
             return;
         }
         // we rebuild the list of alarms completely as there is no need to keep previous alarms
-        setAlarms(orderBy(activeAlarms, 'Occurrence'));
+        setAlarms(orderBy(activeAlarms.flat(), 'Occurrence'));
     }, []);
 
     // initial fetch
@@ -80,7 +74,7 @@ const useCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
         const abortController = new AbortController();
         const apiWithAbort = (config) => api({ ...config, signal: abortController.signal });
 
-        // clear cache
+        // clear possible interval timeout in cache
         if (cacheRef.current) {
             clearInterval(cacheRef.current.intervalID);
         }
@@ -89,10 +83,16 @@ const useCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
             end: getUnixTime(Date.now()) + lookAhead,
             abortController
         };
+
+        // fetch alarms
         withLoading(fetchAlarms({ api: apiWithAbort, IDs: requestedCalendarsIDs }));
+
+        // set interval for fetching alarms again after (lookahead / 2) has passed
         cacheRef.current.intervalID = setInterval(() => {
+            // clear alarms in cache
+            cacheRef.current.calendarAlarms = Object.create(null);
             withLoading(fetchAlarms({ api: apiWithAbort, IDs: requestedCalendarsIDs }));
-        }, lookAhead / 2);
+        }, (1000 * lookAhead) / 2);
 
         return () => {
             clearInterval(cacheRef.current.intervalID);
@@ -145,7 +145,7 @@ const useCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
         });
     }, []);
 
-    return [alarms, setAlarms, loading];
+    return [alarms, loading];
 };
 
 export default useCalendarsAlarms;
