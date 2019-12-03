@@ -41,37 +41,28 @@ export const getAlarmMessage = (rawEvent, now, tzid) => {
     // Determine if the event is happening in timezoned today, tomorrow, this month or this year.
     // For that, compute the UTC times of the timezoned end of today, end of month and end of year
     const UTCStartDate = propertyToUTCDate(dtstart);
-    const startTimeZoned = convertUTCDateTimeToZone(fromUTCDate(UTCStartDate), tzid);
-    const startDateTimeZoned = toUTCDate(startTimeZoned);
-    const nowTimezoned = convertUTCDateTimeToZone(fromUTCDate(new Date(now)), tzid);
-    const nowDateTimezoned = toUTCDate(nowTimezoned);
+    const startDateTimezoned = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(UTCStartDate), tzid));
+    const nowDateTimezoned = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(new Date(now)), tzid));
 
-    const isToday = isSameDay(nowDateTimezoned, startDateTimeZoned);
-    const isTomorrow = isNextDay(nowDateTimezoned, startDateTimeZoned);
-    const isThisMonth = isSameMonth(nowDateTimezoned, startDateTimeZoned);
-    const isThisYear = isSameYear(nowDateTimezoned, startDateTimeZoned);
+    const formattedHour = formatUTC(startDateTimezoned, 'p', { locale: dateLocale });
 
-    if (isToday) {
-        return c('Alarm notification').t`${title} will start at ${formatUTC(startDateTimeZoned, 'p', {
-            locale: dateLocale
-        })}`;
+    if (isSameDay(nowDateTimezoned, startDateTimezoned)) {
+        return c('Alarm notification').t`${title} will start at ${formattedHour}`;
     }
-    if (isTomorrow) {
-        return c('Alarm notification').t`${title} will start tomorrow at ${formatUTC(startDateTimeZoned, 'p', {
-            locale: dateLocale
-        })}`;
+    if (isNextDay(nowDateTimezoned, startDateTimezoned)) {
+        return c('Alarm notification').t`${title} will start tomorrow at ${formattedHour}`;
     }
-    if (isThisMonth) {
-        return c('Alarm notification').t`${title} will start ${formatUTC(startDateTimeZoned, 'eeee do', {
+    if (isSameMonth(nowDateTimezoned, startDateTimezoned)) {
+        return c('Alarm notification').t`${title} will start ${formatUTC(startDateTimezoned, 'eeee do', {
             locale: dateLocale
-        })} at ${formatUTC(startDateTimeZoned, 'p', { locale: dateLocale })}`;
+        })} at ${formattedHour}`;
     }
-    if (isThisYear) {
-        return c('Alarm notification').t`${title} will start ${formatUTC(startDateTimeZoned, 'eeee do MMMM', {
+    if (isSameYear(nowDateTimezoned, startDateTimezoned)) {
+        return c('Alarm notification').t`${title} will start ${formatUTC(startDateTimezoned, 'eeee do MMMM', {
             locale: dateLocale
-        })} at ${formatUTC(startDateTimeZoned, 'p')}`;
+        })} at ${formattedHour}`;
     }
-    return c('Alarm notification').t`${title} will start on ${formatUTC(startDateTimeZoned, 'PPPp', {
+    return c('Alarm notification').t`${title} will start on ${formatUTC(startDateTimezoned, 'PPPp', {
         locale: dateLocale
-    })}`;
+    })} at ${formattedHour}`;
 };
