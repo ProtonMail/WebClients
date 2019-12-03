@@ -1,3 +1,7 @@
+# [3.16.17] - 2019-12-03
+## Fixed
+- extending some customized plans displayed an error that upgrade is not possible
+
 # [3.16.16] - 2019-12-03
 ## Fixed
 - organization admins were not able to log into non-private user accounts
