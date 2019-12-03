@@ -2,12 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Badge } from 'react-components';
-import { COUPON_CODES, BLACK_FRIDAY } from 'proton-shared/lib/constants';
+import { COUPON_CODES, BLACK_FRIDAY, CYCLE } from 'proton-shared/lib/constants';
 
 const { BUNDLE, PMTEAM } = COUPON_CODES;
 
-const CouponDiscountBadge = ({ code }) => {
+const CouponDiscountBadge = ({ code, cycle }) => {
     if (code === BUNDLE) {
+        if (cycle === CYCLE.YEARLY) {
+            return (
+                <Badge
+                    type="success"
+                    tooltip={c('Discount with coupon code').t`36% discount applied to your subscription`}
+                >
+                    -36%
+                </Badge>
+            );
+        }
+
+        if (cycle === CYCLE.TWO_YEARS) {
+            return (
+                <Badge
+                    type="success"
+                    tooltip={c('Discount with coupon code').t`46% discount applied to your subscription`}
+                >
+                    -46%
+                </Badge>
+            );
+        }
+
         return (
             <Badge type="success" tooltip={c('Discount with coupon code').t`20% discount applied to your subscription`}>
                 -20%
@@ -34,7 +56,8 @@ const CouponDiscountBadge = ({ code }) => {
 };
 
 CouponDiscountBadge.propTypes = {
-    code: PropTypes.string
+    code: PropTypes.string,
+    cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS])
 };
 
 export default CouponDiscountBadge;

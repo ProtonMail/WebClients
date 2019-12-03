@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { SmallButton, useToggle } from 'react-components';
-import { PLAN_SERVICES, COUPON_CODES, BLACK_FRIDAY } from 'proton-shared/lib/constants';
+import { PLAN_SERVICES, COUPON_CODES, BLACK_FRIDAY, CYCLE } from 'proton-shared/lib/constants';
 
 import { getSubTotal, getPlan } from './helpers';
 import PlanPrice from './PlanPrice';
@@ -28,16 +28,12 @@ const Rows = ({ model, plans }) => {
     const i18n = getTitlesI18N();
 
     if (visionary) {
-        const visionaryPlan = getPlan(plans, { name: 'visionary' });
+        const visionarySubTotal = getSubTotal({ ...model, plans, cycle: CYCLE.MONTHLY });
         return (
             <div className="flex flex-spacebetween mb1">
                 <div>{i18n.visionary}</div>
                 <div>
-                    <PlanPrice
-                        amount={visionaryPlan.Pricing[model.cycle]}
-                        cycle={model.cycle}
-                        currency={model.currency}
-                    />
+                    <PlanPrice amount={visionarySubTotal} cycle={CYCLE.MONTHLY} currency={model.currency} />
                 </div>
             </div>
         );
@@ -47,32 +43,28 @@ const Rows = ({ model, plans }) => {
     const vpnPlanName = vpnbasic ? 'vpnbasic' : vpnplus ? 'vpnplus' : '';
     const mailPlan = mailPlanName ? getPlan(plans, { name: mailPlanName }) : '';
     const vpnPlan = vpnPlanName ? getPlan(plans, { name: vpnPlanName }) : '';
-    const mailSubTotal = getSubTotal({ ...model, plans, services: MAIL });
-    const vpnSubTotal = getSubTotal({ ...model, plans, services: VPN });
+    const mailSubTotal = getSubTotal({ ...model, plans, services: MAIL, cycle: CYCLE.MONTHLY });
+    const vpnSubTotal = getSubTotal({ ...model, plans, services: VPN, cycle: CYCLE.MONTHLY });
     const mailTitle = `${plus || professional ? (plus ? i18n.plus : i18n.professional) : i18n.mailfree}`;
     const vpnTitle = `${vpnbasic || vpnplus ? (vpnbasic ? i18n.vpnbasic : i18n.vpnplus) : i18n.vpnfree}`;
 
     return (
         <>
             <div className="flex flex-spacebetween mb1">
-                <div>
-                    {mailTitle} {plus || professional ? <CycleDiscountBadge cycle={model.cycle} /> : null}
-                </div>
+                <div>{mailTitle}</div>
                 <div>
                     {mailPlan ? (
-                        <PlanPrice amount={mailSubTotal} cycle={model.cycle} currency={model.currency} />
+                        <PlanPrice amount={mailSubTotal} cycle={CYCLE.MONTHLY} currency={model.currency} />
                     ) : (
                         c('Price').t`Free`
                     )}
                 </div>
             </div>
             <div className="flex flex-spacebetween mb1 pb1 border-bottom">
-                <div>
-                    {vpnTitle} {vpnbasic || vpnplus ? <CycleDiscountBadge cycle={model.cycle} /> : null}
-                </div>
+                <div>{vpnTitle}</div>
                 <div>
                     {vpnPlan ? (
-                        <PlanPrice amount={vpnSubTotal} cycle={model.cycle} currency={model.currency} />
+                        <PlanPrice amount={vpnSubTotal} cycle={CYCLE.MONTHLY} currency={model.currency} />
                     ) : (
                         c('Price').t`Free`
                     )}
@@ -88,10 +80,12 @@ Rows.propTypes = {
 };
 
 const SubscriptionDetails = ({ model, plans, check, onChange }) => {
-    const subTotal = getSubTotal({ ...model, plans });
+    const subTotal = getSubTotal({ ...model, plans, cycle: CYCLE.MONTHLY });
     const { state, toggle } = useToggle();
     const handleRemoveCoupon = () => onChange({ ...model, coupon: '' }, true);
     const canRemoveCoupon = ![BUNDLE, BLACK_FRIDAY.COUPON_CODE].includes(model.coupon);
+    const total = check.Amount + check.CouponDiscount;
+    const discount = total / model.cycle - subTotal; // Includes coupon discount and cycle discount
 
     return (
         <>
@@ -102,15 +96,18 @@ const SubscriptionDetails = ({ model, plans, check, onChange }) => {
                     <div className="flex flex-spacebetween mb1 pb1 border-bottom">
                         <div className="bold">{c('Label').t`Sub-total`}</div>
                         <div className="bold">
-                            <PlanPrice amount={subTotal} cycle={model.cycle} currency={model.currency} />
+                            <PlanPrice amount={subTotal} cycle={CYCLE.MONTHLY} currency={model.currency} />
                         </div>
                     </div>
                     <div className="flex flex-spacebetween mb1 pb1 border-bottom">
                         <div>
                             <span className="mr0-5">
-                                {c('Label').t`Coupon`} {model.coupon}
+                                {[CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle) &&
+                                    model.coupon !== BLACK_FRIDAY.COUPON_CODE &&
+                                    c('Label').t`Cycle discount +`}{' '}
+                                {c('Label').t`Coupon`} <code className="bold">{model.coupon}</code>
                             </span>
-                            <CouponDiscountBadge code={model.coupon} />
+                            <CouponDiscountBadge code={model.coupon} cycle={model.cycle} />
                             {canRemoveCoupon ? (
                                 <SmallButton className="pm-button--link" onClick={handleRemoveCoupon}>{c('Action')
                                     .t`Remove coupon`}</SmallButton>
@@ -119,22 +116,34 @@ const SubscriptionDetails = ({ model, plans, check, onChange }) => {
                         <div>
                             <PlanPrice
                                 className="color-global-success"
-                                amount={check.CouponDiscount}
-                                cycle={model.cycle}
+                                amount={discount}
+                                cycle={CYCLE.MONTHLY}
                                 currency={model.currency}
                             />
                         </div>
                     </div>
                 </>
             ) : null}
+            {!model.coupon && [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle) ? (
+                <div className="flex flex-spacebetween mb1 pb1 border-bottom">
+                    <div>
+                        <span className="mr0-5">{c('Label').t`Cycle discount`}</span>
+                        <CycleDiscountBadge cycle={model.cycle} />
+                    </div>
+                    <div>
+                        <PlanPrice
+                            className="color-global-success"
+                            amount={discount}
+                            cycle={CYCLE.MONTHLY}
+                            currency={model.currency}
+                        />
+                    </div>
+                </div>
+            ) : null}
             <div className="flex flex-spacebetween">
                 <div className="bold">{c('Label').t`Total`}</div>
                 <div className="bold">
-                    <PlanPrice
-                        amount={check.Amount + check.CouponDiscount}
-                        cycle={model.cycle}
-                        currency={model.currency}
-                    />
+                    <PlanPrice amount={total} cycle={model.cycle} currency={model.currency} />
                 </div>
             </div>
             {model.coupon ? null : (
