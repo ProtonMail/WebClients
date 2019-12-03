@@ -70,7 +70,7 @@ const Toolbar = ({
                 <DeleteButton labelID={labelID} mailSettings={mailSettings} selectedIDs={selectedIDs} />
                 <ToolbarSeparator />
                 <ToolbarDropdown autoClose={false} content={<Icon className="toolbar-icon" name="folder" />}>
-                    {() => <MoveDropdown selectedIDs={selectedIDs} type={type} />}
+                    {({ onClose }) => <MoveDropdown selectedIDs={selectedIDs} type={type} onClose={onClose} />}
                 </ToolbarDropdown>
                 <ToolbarDropdown autoClose={false} content={<Icon className="toolbar-icon" name="label" />}>
                     {({ onClose }) => <LabelDropdown selectedIDs={selectedIDs} type={type} onClose={onClose} />}

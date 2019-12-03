@@ -8,9 +8,18 @@ interface Props {
     content?: ReactNode;
     children: ({ onClose }: { onClose: () => void }) => ReactNode;
     size?: string;
+    [rest: string]: any;
 }
 
-const ToolbarDropdown = ({ title, content, className, children, autoClose = true, size = 'normal' }: Props) => {
+const ToolbarDropdown = ({
+    title,
+    content,
+    className,
+    children,
+    autoClose = true,
+    size = 'normal',
+    ...rest
+}: Props) => {
     const [uid] = useState(generateUID('dropdown'));
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
@@ -25,6 +34,7 @@ const ToolbarDropdown = ({ title, content, className, children, autoClose = true
                 hasCaret={true}
                 caretClassName="toolbar-icon"
                 className={classnames(['flex-item-noshrink toolbar-button toolbar-button--dropdown', className])}
+                {...rest}
             >
                 {content}
             </DropdownButton>

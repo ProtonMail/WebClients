@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
 import { Icon, useApi, useEventManager, useLoading } from 'react-components';
 import { markMessageAsRead, markMessageAsUnread } from 'proton-shared/lib/api/messages';
@@ -13,7 +12,13 @@ import { ELEMENT_TYPES } from '../../constants';
 const UNREAD = 0;
 const READ = 1;
 
-const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [] }) => {
+interface Props {
+    mailSettings: any;
+    selectedIDs: string[];
+    labelID: string;
+}
+
+const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [] }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD } = mailSettings;
@@ -61,12 +66,6 @@ const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [] }) => {
 
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/20356
     return <>{buttons}</>;
-};
-
-ReadUnreadButtons.propTypes = {
-    mailSettings: PropTypes.object.isRequired,
-    selectedIDs: PropTypes.array.isRequired,
-    labelID: PropTypes.string.isRequired
 };
 
 export default ReadUnreadButtons;

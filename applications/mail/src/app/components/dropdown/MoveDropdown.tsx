@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import {
     LabelModal,
-    SearchInput,
+    SearchInput as UntypedSearchInput,
     Icon,
     useLabels,
     useModals,
@@ -11,7 +10,8 @@ import {
     Tooltip,
     useLoading,
     useApi,
-    useNotifications
+    useNotifications,
+    useEventManager
 } from 'react-components';
 import { LABEL_EXCLUSIVE, MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
@@ -19,22 +19,32 @@ import { normalize } from 'proton-shared/lib/helpers/string';
 import { labelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations } from 'proton-shared/lib/api/conversations';
 
-import './MoveDropdown.scss';
 import { ELEMENT_TYPES } from '../../constants';
+import { Label } from '../../models/label';
+
+import './MoveDropdown.scss';
+
+const SearchInput = UntypedSearchInput as any;
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
-const MoveDropdown = ({ selectedIDs = [], type }) => {
+interface Props {
+    selectedIDs: string[];
+    type: string;
+    onClose: () => void;
+}
+
+const MoveDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const api = useApi();
+    const { call } = useEventManager();
     const { createModal } = useModals();
-    const [labels = []] = useLabels();
+    const [labels = []]: [Label[]] = useLabels();
     const [search, updateSearch] = useState('');
     const normSearch = normalize(search);
     const folders = labels
         .filter(({ Exclusive }) => Exclusive === LABEL_EXCLUSIVE.FOLDER)
-        .map((folder) => ({ ...folder, icon: 'folder' }))
         .concat(
             [
                 { ID: INBOX, Name: c('Mailbox').t`Inbox`, icon: 'inbox' },
@@ -51,10 +61,12 @@ const MoveDropdown = ({ selectedIDs = [], type }) => {
             return normName.includes(normSearch);
         });
 
-    const handleMove = async (LabelID) => {
+    const handleMove = async (folder: Label) => {
         const action = type === ELEMENT_TYPES.CONVERSATION ? labelConversations : labelMessages;
-        await api(action({ LabelID, IDs: selectedIDs }));
-        createNotification({ text: c('Success').t`Elements moved` });
+        await api(action({ LabelID: folder.ID, IDs: selectedIDs }));
+        await call();
+        onClose();
+        createNotification({ text: c('Success').t`Elements moved to ${folder.Name}` });
     };
 
     return (
@@ -65,7 +77,7 @@ const MoveDropdown = ({ selectedIDs = [], type }) => {
                     <PrimaryButton
                         className="pm-button--small pm-button--for-smallicon"
                         onClick={() => {
-                            createModal(<LabelModal type="folder" />);
+                            createModal(<LabelModal type="folder" label={null} />);
                         }}
                     >
                         <Icon name="folder" fill="light" className="flex-item-noshrink mr0-25" />+
@@ -83,18 +95,18 @@ const MoveDropdown = ({ selectedIDs = [], type }) => {
             </div>
             <div className="scroll-if-needed scroll-smooth-touch moveDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
-                    {folders.map(({ ID = '', Name = '', Color = '', icon }, index) => {
+                    {folders.map((folder, index) => {
                         return (
-                            <li key={ID} className={classnames([index < folders.length - 1 && 'border-bottom'])}>
+                            <li key={folder.ID} className={classnames([index < folders.length - 1 && 'border-bottom'])}>
                                 <button
                                     type="button"
                                     disabled={loading}
                                     className="w100 flex flex-nowrap flex-items-center pt0-5 pb0-5"
-                                    onClick={() => withLoading(handleMove(ID))}
+                                    onClick={() => withLoading(handleMove(folder))}
                                 >
-                                    <Icon name={icon} color={Color} className="flex-item-noshrink mr0-5" />
-                                    <span className="ellipsis" title={Name}>
-                                        {Name}
+                                    <Icon name="folder" color={folder.Color} className="flex-item-noshrink mr0-5" />
+                                    <span className="ellipsis" title={folder.Name}>
+                                        {folder.Name}
                                     </span>
                                 </button>
                             </li>
@@ -104,11 +116,6 @@ const MoveDropdown = ({ selectedIDs = [], type }) => {
             </div>
         </div>
     );
-};
-
-MoveDropdown.propTypes = {
-    selectedIDs: PropTypes.arrayOf(PropTypes.string),
-    type: PropTypes.oneOf([ELEMENT_TYPES.CONVERSATION, ELEMENT_TYPES.MESSAGE]).isRequired
 };
 
 export default MoveDropdown;

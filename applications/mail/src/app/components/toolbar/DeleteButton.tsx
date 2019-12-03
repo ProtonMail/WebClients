@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
     Icon,
     useLoading,
@@ -22,14 +21,20 @@ import { ELEMENT_TYPES } from '../../constants';
 
 const { TRASH, SPAM, DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE } = MAILBOX_LABEL_IDS;
 
-const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => {
+interface Props {
+    labelID: string;
+    mailSettings: any;
+    selectedIDs: string[];
+}
+
+const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
     const api = useApi();
     const [loading, withLoading] = useLoading();
-    const displayDelete = [TRASH, SPAM, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT].includes(labelID);
-    const displayEmpty = ![INBOX, SENT, ALL_SENT, ARCHIVE, ALL_MAIL].includes(labelID);
+    const displayDelete = [TRASH, SPAM, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT].includes(labelID as MAILBOX_LABEL_IDS);
+    const displayEmpty = ![INBOX, SENT, ALL_SENT, ARCHIVE, ALL_MAIL].includes(labelID as MAILBOX_LABEL_IDS);
     const type = getCurrentType({ mailSettings, labelID });
 
     const handleDelete = async () => {
@@ -37,7 +42,7 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => 
             createModal(
                 <ConfirmModal
                     title={c('Title').ngettext(msgid`Delete email`, `Delete emails`, selectedIDs.length)}
-                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    confirm={(<ErrorButton type="submit" icon={null}>{c('Action').t`Delete`}</ErrorButton>) as any}
                     onConfirm={resolve}
                     onClose={reject}
                 >
@@ -62,7 +67,7 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => 
             createModal(
                 <ConfirmModal
                     title={c('Title').t`Empty folder`}
-                    confirm={<ErrorButton type="submit">{c('Action').t`Empty`}</ErrorButton>}
+                    confirm={(<ErrorButton type="submit" icon={null}>{c('Action').t`Empty`}</ErrorButton>) as any}
                     onConfirm={resolve}
                     onClose={reject}
                 >
@@ -72,7 +77,7 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => 
             );
         });
         c;
-        await api(emptyLabel({ LabelID: labelID }));
+        await api(emptyLabel({ LabelID: labelID, AddressID: undefined }));
         await call();
         createNotification({ text: c('Success').t`Folder cleared` });
     };
@@ -99,12 +104,6 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }) => 
             ) : null}
         </>
     );
-};
-
-DeleteButton.propTypes = {
-    labelID: PropTypes.string.isRequired,
-    mailSettings: PropTypes.object.isRequired,
-    selectedIDs: PropTypes.array.isRequired
 };
 
 export default DeleteButton;

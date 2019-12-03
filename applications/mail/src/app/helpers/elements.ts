@@ -55,6 +55,11 @@ export const isUnread = (element: Element) => {
 
 export const getLabel = ({ Labels = [] }: Element, labelID: string) => Labels.find(({ ID = '' }) => ID === labelID);
 
+export const hasLabel = (element: Element, labelID: string) => {
+    const labelIDs = element.Labels ? element.Labels.map(({ ID }) => ID || '') : element.LabelIDs || [];
+    return labelIDs.some((ID) => labelID === ID);
+};
+
 export const getTime = (element: Element, labelID: string) =>
     element.ContextTime || (getLabel(element, labelID) || {}).ContextTime || 0;
 

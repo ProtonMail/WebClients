@@ -5,7 +5,7 @@ import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { Conversation } from '../models/conversation';
 import { toMap } from 'proton-shared/lib/helpers/object';
-import { sort as sortElements } from '../helpers/elements';
+import { sort as sortElements, hasLabel } from '../helpers/elements';
 import { Message } from '../models/message';
 import { Element } from '../models/element';
 import { Page, Filter, Sort } from '../models/tools';
@@ -111,6 +111,8 @@ export const useElements = ({
             return subscribe(async ({ Conversations = [], Messages = [] }: Event) => {
                 const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
 
+                console.log('event', Elements);
+
                 const { toDelete, toUpdate, toCreate } = Elements.reduce(
                     (acc, event) => {
                         const { ID, Action } = event;
@@ -183,9 +185,7 @@ export const useElements = ({
         const minPage = localCache.pages.reduce((acc, page) => (page < acc ? page : acc), localCache.pages[0]);
         const startIndex = (page.page - minPage) * page.size;
         const endIndex = startIndex + page.size;
-        const elements = Object.values(localCache.elements).filter(({ LabelIDs = [] }) =>
-            LabelIDs.some((ID: string) => ID === labelID)
-        );
+        const elements = Object.values(localCache.elements).filter((element) => hasLabel(element, labelID));
         return sortElements(elements, sort, labelID).slice(startIndex, endIndex);
     }, [localCache, labelID, page.page, page.size]);
 
