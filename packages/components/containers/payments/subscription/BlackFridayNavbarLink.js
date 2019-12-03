@@ -14,7 +14,7 @@ import {
 
 import { checkLastCancelledSubscription } from './helpers';
 
-const BlackFridayNavbarLink = ({ to, location, getModal }) => {
+const BlackFridayNavbarLink = ({ to, location, getModal, ...rest }) => {
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
@@ -61,7 +61,16 @@ const BlackFridayNavbarLink = ({ to, location, getModal }) => {
         return null;
     }
 
-    return <TopNavbarLink to={to} icon={icon} text={text} onClick={handleClick} />;
+    return (
+        <TopNavbarLink
+            to={to}
+            aria-current={location.pathname === to}
+            icon={icon}
+            text={text}
+            onClick={handleClick}
+            {...rest}
+        />
+    );
 };
 
 BlackFridayNavbarLink.propTypes = {
