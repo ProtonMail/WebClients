@@ -15,6 +15,7 @@ const handleCreateDesktopNotification = (text) => {
     create(c('Title').t`Calendar alarm`, {
         body: text,
         icon: calendarSvg,
+        timeout: 10000,
         onClick() {
             window.focus();
         }

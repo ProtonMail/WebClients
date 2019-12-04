@@ -7,30 +7,53 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import { isSameDay, isNextDay, isSameMonth, isSameYear } from 'proton-shared/lib/date-fns-utc/index';
 
 /**
- * Given a list of existing alarms ordered by a Occurrence key,
- * insert a new alarm in the proper place in the list
+ * Given an object with calendar IDs as keys and lists of ordered alarms as values,
+ * insert a new alarm in the proper place in the proper list
  * @param {Object} newAlarm
- * @param {Array} existingAlarms
+ * @param {Object} calendarAlarms
+ * @param {String} calendarID
  *
  * @return {Array}
  */
-export const insertAlarm = (newAlarm, existingAlarms = []) => {
-    const { Occurrence } = newAlarm;
-    const { newAlarms } = existingAlarms.reduce(
-        (acc, alarm) => {
-            if (!acc.done && Occurrence <= alarm.Occurrence) {
-                acc.newAlarms.push(newAlarm, alarm);
-                acc.done = true;
-            } else {
-                acc.newAlarms.push(alarm);
-            }
+export const insertAlarm = (newAlarm, calendarAlarms, calendarID) =>
+    Object.keys(calendarAlarms).reduce((acc, ID) => {
+        if (ID !== calendarID) {
+            acc[ID] = calendarAlarms[ID];
             return acc;
-        },
-        { newAlarms: [], done: false }
-    );
-    // if the new alarm was not added (either because it must be added last or there were no existing alarms), add it at the end
-    return newAlarms.length === existingAlarms.length ? [...existingAlarms, newAlarm] : [...newAlarms];
-};
+        }
+        const { Occurrence } = newAlarm;
+        const existingAlarms = calendarAlarms[ID] || [];
+        const { newAlarms } = existingAlarms.reduce(
+            (acc, alarm) => {
+                if (!acc.done && Occurrence <= alarm.Occurrence) {
+                    acc.newAlarms.push(newAlarm, alarm);
+                    acc.done = true;
+                } else {
+                    acc.newAlarms.push(alarm);
+                }
+                return acc;
+            },
+            { newAlarms: [], done: false }
+        );
+        // if the new alarm was not added (either because it must be added last or there were no existing alarms), add it at the end
+        const newOrderedAlarms =
+            newAlarms.length === existingAlarms.length ? [...existingAlarms, newAlarm] : [...newAlarms];
+        acc[ID] = newOrderedAlarms;
+        return acc;
+    }, {});
+
+/**
+ * Given an object with calendar IDs as keys and lists of alarms as values,
+ * delete an alarm if it's found in any of those lists
+ * @param {String} alarmID
+ * @param {Object} calendarAlarms
+ * @returns {Object}
+ */
+export const deleteAlarm = (alarmID, calendarAlarms = {}) =>
+    Object.keys(calendarAlarms).reduce((acc, calendarID) => {
+        acc[calendarID] = calendarAlarms[calendarID].filter(({ ID }) => ID !== alarmID);
+        return acc;
+    }, {});
 
 export const getAlarmMessage = (rawEvent, now, tzid) => {
     const {

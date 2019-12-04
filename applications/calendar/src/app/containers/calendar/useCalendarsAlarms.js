@@ -1,11 +1,11 @@
-import { useEffect, useState, useMemo, useRef, useCallback } from 'react';
+import { useEffect, useMemo, useRef, useCallback, useState } from 'react';
 import { useApi, useEventManager, useLoading } from 'react-components';
 import { getUnixTime } from 'date-fns';
 
 import { queryCalendarAlarms } from 'proton-shared/lib/api/calendars';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { orderBy } from 'proton-shared/lib/helpers/array';
-import { insertAlarm } from '../../helpers/alarms';
+import { insertAlarm, deleteAlarm } from '../../helpers/alarms';
 import { DAY } from '../../constants';
 
 const { DELETE, CREATE, UPDATE } = EVENT_ACTIONS;
@@ -41,7 +41,7 @@ const queryAllCalendarAlarms = async ({ api, calendarID, Start, End, previousAla
  */
 const useCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
     const [loading, withLoading] = useLoading(true);
-    const [alarms, setAlarms] = useState([]);
+    const [calendarAlarms, setCalendarAlarms] = useState({});
 
     const { subscribe } = useEventManager();
     const api = useApi();
@@ -54,19 +54,16 @@ const useCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
     const fetchAlarms = useCallback(async ({ api, IDs, end }) => {
         const Start = getUnixTime(Date.now());
         const End = end || Start + lookAhead;
-        const activeAlarms = await Promise.all(
+        await Promise.all(
             IDs.map(async (ID) => {
-                if (!cacheRef.current.calendarAlarms[ID]) {
-                    cacheRef.current.calendarAlarms[ID] = queryAllCalendarAlarms({ api, calendarID: ID, Start, End });
+                if (!cacheRef.current.checkedCalendars[ID]) {
+                    cacheRef.current.checkedCalendars[ID] = true;
+                    // eslint-disable-next-line require-atomic-updates
+                    const allCalendarAlarms = await queryAllCalendarAlarms({ api, calendarID: ID, Start, End });
+                    setCalendarAlarms((alarms) => ({ ...alarms, [ID]: allCalendarAlarms }));
                 }
-                return await cacheRef.current.calendarAlarms[ID];
             })
         );
-        if (api.signal && api.signal.aborted) {
-            return;
-        }
-        // we rebuild the list of alarms completely as there is no need to keep previous alarms
-        setAlarms(orderBy(activeAlarms.flat(), 'Occurrence'));
     }, []);
 
     // initial fetch
@@ -79,7 +76,7 @@ const useCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
             clearInterval(cacheRef.current.intervalID);
         }
         cacheRef.current = {
-            calendarAlarms: Object.create(null),
+            checkedCalendars: Object.create(null),
             end: getUnixTime(Date.now()) + lookAhead,
             abortController
         };
@@ -90,7 +87,7 @@ const useCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
         // set interval for fetching alarms again after (lookahead / 2) has passed
         cacheRef.current.intervalID = setInterval(() => {
             // clear alarms in cache
-            cacheRef.current.calendarAlarms = Object.create(null);
+            cacheRef.current.checkedCalendars = Object.create(null);
             withLoading(fetchAlarms({ api: apiWithAbort, IDs: requestedCalendarsIDs }));
         }, (1000 * lookAhead) / 2);
 
@@ -115,37 +112,38 @@ const useCalendarsAlarms = (requestedCalendars, lookAhead = 14 * DAY) => {
             if (!cacheRef.current) {
                 return;
             }
-            const futureRequestedAlarms = CalendarAlarms.filter(
-                ({ Action, Alarm: { Occurrence, CalendarID } = {} }) =>
-                    Action === DELETE ||
-                    (requestedCalendarsIDs.includes(CalendarID) &&
-                        Occurrence !== null &&
-                        Occurrence - getUnixTime(Date.now()) < lookAhead)
+            const filteredAlarms = CalendarAlarms.filter(
+                ({ Action, Alarm: { Occurrence } = {} }) =>
+                    Action === DELETE || (Occurrence !== null && Occurrence < cacheRef.current.end)
             );
-            if (!futureRequestedAlarms.length) {
+            if (!filteredAlarms.length) {
                 return;
             }
-            for (const { ID: alarmID, Action, Alarm = {} } of futureRequestedAlarms) {
+            for (const { ID: alarmID, Action, Alarm = {} } of filteredAlarms) {
                 if (Action === DELETE) {
-                    setAlarms((alarms) => alarms.filter(({ ID }) => ID !== alarmID));
+                    setCalendarAlarms((alarms) => deleteAlarm(alarmID, alarms));
                 }
                 if (Action === CREATE) {
                     // place the new alarm in the list of alarms in the proper order
-                    setAlarms((alarms) => insertAlarm(Alarm, alarms));
+                    setCalendarAlarms((alarms) => insertAlarm(Alarm, alarms, Alarm.CalendarID));
                 }
                 if (Action === UPDATE) {
                     // this case only happens when the user changes timezone
-                    setAlarms((alarms) => {
+                    setCalendarAlarms((alarms) => {
                         // the easiest way to update is to first erase the alarm from the list
                         const filteredAlarms = alarms.filter(({ ID }) => ID !== alarmID);
-                        return insertAlarm(Alarm, filteredAlarms);
+                        return insertAlarm(Alarm, filteredAlarms, Alarm.CalendarID);
                     });
                 }
             }
         });
     }, []);
 
-    return [alarms, loading];
+    return useMemo(() => {
+        const activeAlarms = requestedCalendarsIDs.map((calendarID) => calendarAlarms[calendarID]).flat();
+        const orderedActiveAlarms = orderBy(activeAlarms, 'Occurrence');
+        return [orderedActiveAlarms, loading];
+    }, [calendarAlarms, loading, requestedCalendarsIDs]);
 };
 
 export default useCalendarsAlarms;
