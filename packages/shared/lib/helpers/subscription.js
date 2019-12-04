@@ -1,4 +1,6 @@
 import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE } from '../constants';
+import { toMap } from './object';
+import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL } = PLAN_SERVICES;
@@ -80,4 +82,25 @@ export const hasVisionary = (subscription = {}) => {
 export const getMonthlyBaseAmount = (name = '', plans = [], subscription = {}) => {
     const base = plans.find(({ Name }) => Name === name);
     return subscription.Plans.filter(({ Name }) => Name === name).reduce((acc) => acc + base.Pricing[CYCLE.MONTHLY], 0);
+};
+
+/**
+ * Calculate total from planIDs configuration
+ * @param {Array<Object>} params.plans
+ * @param {Object} params.planIDs
+ * @param {Number} params.cycle
+ * @param {Number} params.service
+ * @returns {Number} total
+ */
+export const getTotal = ({ plans = [], planIDs = {}, cycle = CYCLE.MONTHLY, service }) => {
+    const plansMap = toMap(plans);
+    return Object.entries(planIDs).reduce((acc, [planID = '', quantity = 0]) => {
+        const { Pricing = {}, Services } = plansMap[planID];
+
+        if (Number.isInteger(service) && !hasBit(Services, service)) {
+            return acc;
+        }
+
+        return acc + Pricing[cycle] * quantity;
+    }, 0);
 };
