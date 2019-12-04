@@ -103,6 +103,17 @@ body {
   border-radius: 0;
 }
 
+// only for Safari mobile shitty way to handle vh unit
+.main-area--paddingFix {
+  padding-bottom: 5em;
+}
+@include respond-to($breakpoint-small) { 
+  .main-area--paddingFix {
+    padding-bottom: 8em; 
+    // thanks Apple for the fixed toolbar at the bottom
+  }
+}
+
 .main-full {
   height: 100vh;
   overflow: auto;
