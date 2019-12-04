@@ -68,7 +68,7 @@ const SettingsContainer = () => {
                         onToggleExpand={onToggleExpand}
                         mobileLinks={mobileLinks}
                     />
-                    <div className="main flex-item-fluid main-area" ref={mainAreaRef}>
+                    <div className="main flex-item-fluid main-area main-area--paddingFix" ref={mainAreaRef}>
                         <Switch>
                             <Route path="/calendar/settings/calendars" component={CalendarsPage} />
                             <Route path="/calendar/settings/general" component={GeneralPage} />
