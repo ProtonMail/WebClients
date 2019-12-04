@@ -74,7 +74,7 @@ export const useComputeMessage = (mailSettings: any) => {
     // TODO: Handle cache?
     const initialize = useCallback(
         (message: MessageExtended, action?: string) => {
-            return runSerial(message, [load, markAsRead, decrypt, ...transforms], action);
+            return runSerial(message, [load, decrypt, markAsRead, ...transforms], action);
         },
         [runSerial]
     );

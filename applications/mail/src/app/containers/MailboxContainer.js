@@ -27,9 +27,9 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
         updateSort(Sort);
     };
 
-    const handleFilter = () => {};
-    const handleNext = () => {};
-    const handlePrevious = () => {};
+    const handleFilter = () => {}; // eslint-disable-line
+    const handleNext = () => {}; // eslint-disable-line
+    const handlePrevious = () => {}; // eslint-disable-line
 
     const checkedIDs = useMemo(() => {
         return Object.entries(checkedElements).reduce((acc, [elementID, isChecked]) => {
@@ -64,7 +64,11 @@ const MailboxContainer = ({ labelID, elementID, location, history }) => {
         setCheckAll(checked && IDs.length === elements.length);
     };
 
-    const handleCheckAll = (checked = false) => handleCheck(elements.map(({ ID }) => ID), checked);
+    const handleCheckAll = (checked = false) =>
+        handleCheck(
+            elements.map(({ ID }) => ID),
+            checked
+        );
     const handleUncheckAll = () => handleCheckAll(false);
 
     const handleClick = (elementID) => {

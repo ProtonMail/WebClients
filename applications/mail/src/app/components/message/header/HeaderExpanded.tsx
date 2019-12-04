@@ -96,11 +96,6 @@ const HeaderExpanded = ({
                     </div>
                 </>
             ) : null}
-            <HeaderExtra
-                message={message}
-                onLoadRemoteImages={onLoadRemoteImages}
-                onLoadEmbeddedImages={onLoadEmbeddedImages}
-            />
             <div className="flex flex-spacebetween ml1 mr1 mb1 flex-nowrap">
                 <a onClick={toggleDetails} className="bold flex-self-vcenter stop-propagation">
                     {showDetails ? c('Action').t`Hide details` : c('Action').t`Show details`}
@@ -128,6 +123,11 @@ const HeaderExpanded = ({
                     </Group>
                 </div>
             </div>
+            <HeaderExtra
+                message={message}
+                onLoadRemoteImages={onLoadRemoteImages}
+                onLoadEmbeddedImages={onLoadEmbeddedImages}
+            />
         </div>
     );
 };
