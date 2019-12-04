@@ -186,6 +186,7 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
 
 .calendar-eventcell {
     position: absolute;
+    z-index: 10;
     background: #0074D9;
     color: $black;
     border-radius: 2px;
