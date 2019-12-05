@@ -57,7 +57,7 @@ if [ "$1" = '--check' ]; then
     if [[ "$(contains "$2")" = 1 ]]; then
         echo "Creating branch: deploy-$2";
         create "$2";
-        echo -e "\e[00;42m✔ So long and thanks for all the fish\e[00m"
+        echo -e "✔ So long and thanks for all the fish"
         echo;
     fi;
     exit 0;
@@ -83,6 +83,6 @@ for branch in ${BRANCHES[*]} ; do
     create "$branch";
 done
 
-echo -e "\e[00;42m✔ So long and thanks for all the fish\e[00m"
+echo -e "✔ So long and thanks for all the fish"
 echo;
 
