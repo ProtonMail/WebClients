@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { CircularProgress, Dropdown, Icon, generateUID, useUser, usePopperAnchor } from 'react-components';
+import {
+    CircularProgress,
+    Dropdown,
+    Icon,
+    Loader,
+    generateUID,
+    useUser,
+    usePopperAnchor,
+    useSubscription
+} from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { hasVisionary, hasLifetime } from 'proton-shared/lib/helpers/subscription';
 
 import { classnames } from '../../helpers/component';
 
-const StorageSpaceStatus = ({ children }) => {
+const StorageSpaceStatus = ({ upgradeButton }) => {
     const [{ MaxSpace, UsedSpace }] = useUser();
+    const [subscription, loadingSubscription] = useSubscription();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
+    const canUpgradeStorage = !hasVisionary(subscription) && !hasLifetime(subscription);
 
     // round with 0.01 precision
     const usedPercent = Math.round((UsedSpace / MaxSpace) * 10000) / 100;
@@ -69,7 +81,7 @@ const StorageSpaceStatus = ({ children }) => {
                                     {c('Info').t`Your storage space is shared across all Proton products.`}
                                 </span>
                             </div>
-                            {children}
+                            {loadingSubscription ? <Loader /> : canUpgradeStorage ? upgradeButton : null}
                         </div>
                     </div>
                 </div>
@@ -79,7 +91,7 @@ const StorageSpaceStatus = ({ children }) => {
 };
 
 StorageSpaceStatus.propTypes = {
-    children: PropTypes.node
+    upgradeButton: PropTypes.node.isRequired
 };
 
 export default StorageSpaceStatus;
