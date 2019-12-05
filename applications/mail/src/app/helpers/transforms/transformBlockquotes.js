@@ -18,9 +18,9 @@ const BLOCKQUOTE_SELECTORS = [
 
 const quotes = BLOCKQUOTE_SELECTORS.map((selector) => `${selector}:not(:empty)`).join(',');
 
-export const transformBlockquotes = ({ document }) => {
-    const blockquotes = [...document.querySelectorAll(quotes)];
-    const parent = document.textContent;
+export const transformBlockquotes = ({ document: doc }) => {
+    const blockquotes = [...doc.querySelectorAll(quotes)];
+    const parent = doc.textContent;
     let found = false;
 
     blockquotes.forEach((blockquote) => {

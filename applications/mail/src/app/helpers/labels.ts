@@ -11,7 +11,7 @@ export const getLabelName = (labelID: string, labels: Label[]): string => {
         return getI18nLabelID(labelID);
     }
 
-    const labelsMap: { [key: string]: Label } = toMap(labels);
+    const labelsMap: { [key: string]: Label } = toMap(labels) as any;
     if (labelID in labelsMap) {
         return labelsMap[labelID].Name || labelID;
     }

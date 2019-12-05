@@ -3,13 +3,14 @@ import { useLabels, useUser, useConversationCounts, useMessageCounts, useMailSet
 import { getLabelName } from '../helpers/labels';
 import { isConversationMode } from '../helpers/mailSettings';
 import { toMap } from 'proton-shared/lib/helpers/object';
+import { LabelCount } from '../models/label';
 
 export const useMailboxPageTitle = (labelID: string) => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [labels, loadingLabels] = useLabels();
     const [user, loadingUser] = useUser();
-    const [conversationCounts, loadingConversationCounts] = useConversationCounts();
-    const [messageCounts, loadingMessageCounts] = useMessageCounts();
+    const [conversationCounts, loadingConversationCounts] = useConversationCounts() as [LabelCount[], boolean];
+    const [messageCounts, loadingMessageCounts] = useMessageCounts() as [LabelCount[], boolean];
 
     const loadings = [loadingMailSettings, loadingLabels, loadingUser, loadingConversationCounts, loadingMessageCounts];
 
@@ -17,7 +18,8 @@ export const useMailboxPageTitle = (labelID: string) => {
         if (loadings.every((loading) => !loading)) {
             const conversationMode = isConversationMode(mailSettings);
             const counters = conversationMode ? conversationCounts : messageCounts;
-            const unreads = (toMap(counters, 'LabelID')[labelID] || {}).Unread;
+            const countersMap = toMap(counters, 'LabelID') as { [labelID: string]: LabelCount };
+            const unreads = (countersMap[labelID] || {}).Unread || 0;
             const unreadString = unreads > 0 ? `(${unreads}) ` : '';
             const labelName = getLabelName(labelID, labels);
             const address = user.Email;

@@ -22,7 +22,7 @@ export const useDecryptMessage = () => {
                 getPublicKeys(message.Sender.Address),
                 getAddressKeys(message.AddressID)
             ]);
-            const { privateKeys } = splitKeys(addressKeys);
+            const { privateKeys } = splitKeys(addressKeys) as any;
 
             // TODO: filter out compromised addresses (if not done already)
 

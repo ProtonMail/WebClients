@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
-import { SimpleDropdown, Icon, Group, ButtonGroup, useToggle } from 'react-components';
+import { Icon, Group, ButtonGroup, useToggle } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import ItemStar from '../../list/ItemStar';
@@ -20,6 +20,7 @@ import { MessageExtended } from '../../../models/message';
 import { Label } from '../../../models/label';
 
 import './MessageHeader.scss';
+import HeaderDropdown from './HeaderDropdown';
 
 interface Props {
     labels?: Label[];
@@ -105,12 +106,24 @@ const HeaderExpanded = ({
                 </a>
                 <div className="stop-propagation">
                     <Group className="mr1">
-                        <SimpleDropdown autoClose={false} content={<Icon name="folder" />}>
-                            <MoveDropdown selectedIDs={[(message.data || {}).ID]} type={ELEMENT_TYPES.MESSAGE} />
-                        </SimpleDropdown>
-                        <SimpleDropdown autoClose={false} content={<Icon name="label" />}>
-                            <LabelDropdown selectedIDs={[(message.data || {}).ID]} type={ELEMENT_TYPES.MESSAGE} />
-                        </SimpleDropdown>
+                        <HeaderDropdown autoClose={false} content={<Icon name="folder" />}>
+                            {({ onClose }) => (
+                                <MoveDropdown
+                                    selectedIDs={[(message.data || {}).ID || '']}
+                                    type={ELEMENT_TYPES.MESSAGE}
+                                    onClose={onClose}
+                                />
+                            )}
+                        </HeaderDropdown>
+                        <HeaderDropdown autoClose={false} content={<Icon name="label" />}>
+                            {({ onClose }) => (
+                                <LabelDropdown
+                                    selectedIDs={[(message.data || {}).ID || '']}
+                                    type={ELEMENT_TYPES.MESSAGE}
+                                    onClose={onClose}
+                                />
+                            )}
+                        </HeaderDropdown>
                     </Group>
 
                     <Group>

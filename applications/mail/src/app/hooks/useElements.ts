@@ -214,7 +214,7 @@ export const useElements = ({
                         pages: [...localCache.pages, page.page],
                         elements: {
                             ...localCache.elements,
-                            ...toMap(Elements, 'ID')
+                            ...(toMap(Elements, 'ID') as { [ID: string]: Element })
                         }
                     };
                 });
