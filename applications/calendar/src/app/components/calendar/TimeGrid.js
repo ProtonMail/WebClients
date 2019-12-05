@@ -307,7 +307,7 @@ const TimeGrid = React.forwardRef(
                                 })}
                             </div>
                         ) : null}
-                        <div className="calendar-aside">
+                        <div className="calendar-aside calendar-primary-timezone-cell">
                             {formattedHours.map((text, i) => {
                                 return (
                                     <div className="calendar-grid-timeBlock" key={i}>
