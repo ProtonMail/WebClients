@@ -36,15 +36,11 @@ import {
 } from '../../helpers/notifications';
 import { generateCalendarKeyPayload, getKeysMemberMap } from 'proton-shared/lib/keys/calendarKeys';
 
-const validate = ({ name, description }) => {
+const validate = ({ name }) => {
     const errors = {};
 
     if (!name) {
         errors.name = c('Error').t`Name required`;
-    }
-
-    if (!description) {
-        errors.description = c('Error').t`Description required`;
     }
 
     return errors;
