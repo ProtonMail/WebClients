@@ -27,13 +27,13 @@ const SignupState = {
 // TODO: Flexible urls and plans for reuse between project
 const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
     const searchParams = new URLSearchParams(history.location.search);
-    const preSelectedPlan = searchParams.get('plan');
     const from = searchParams.get('from');
     const couponCode = searchParams.get('coupon');
     const currency = searchParams.get('currency');
     const billingCycle = Number(searchParams.get('billing'));
 
     const historyState = history.location.state || {};
+    const preSelectedPlan = searchParams.get('plan') || historyState.preSelectedPlan;
     const invite = historyState.invite;
     const coupon =
         historyState.coupon ||
@@ -54,13 +54,15 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
         if (preSelectedPlan && preSelectedPlan !== 'free') {
             history.replace(`/signup/${SignupState.Account}`, {
                 coupon,
-                invite
+                invite,
+                preSelectedPlan
             });
         } else {
             history.replace('/signup', {
                 coupon,
                 invite,
-                from
+                from,
+                preSelectedPlan
             });
         }
     }, []);
@@ -72,7 +74,8 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
     const goToStep = (step) =>
         history.push(`/signup/${step}`, {
             coupon,
-            invite
+            invite,
+            preSelectedPlan
         });
 
     const handleLogin = (...args) => {
