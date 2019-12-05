@@ -349,6 +349,8 @@ export enum PLANS {
     VPNPLUS = 'vpnplus'
 }
 
+export const FREE = 'free';
+
 export const PLAN_NAMES = {
     [PLANS.PLUS]: 'Plus',
     [PLANS.PROFESSIONAL]: 'Professional',
