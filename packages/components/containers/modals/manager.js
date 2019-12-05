@@ -1,6 +1,11 @@
-export default (setModals) => {
-    let idx = 1;
+const updatePosition = (modal, i, arr) => ({
+    ...modal,
+    isFirst: i === 0,
+    isLast: i === arr.length - 1,
+    isBehind: i !== arr.length - 1
+});
 
+export default (modals, setModals) => {
     const hideModal = (id) => {
         return setModals((oldModals) => {
             return oldModals.map((old) => {
@@ -15,14 +20,18 @@ export default (setModals) => {
         });
     };
 
-    const createModal = (content) => {
-        const id = idx++;
-
-        if (idx >= 1000) {
-            idx = 0;
-        }
-
+    const removeModal = (id) => {
         return setModals((oldModals) => {
+            return oldModals.filter(({ id: otherId }) => id !== otherId).map(updatePosition);
+        });
+    };
+
+    const createModal = (content) => {
+        const id = Math.random()
+            .toString(36)
+            .substr(2, 9);
+
+        setModals((oldModals) => {
             return [
                 ...oldModals,
                 {
@@ -30,20 +39,21 @@ export default (setModals) => {
                     content,
                     isClosing: false
                 }
-            ];
+            ].map(updatePosition);
         });
+
+        return id;
     };
 
-    const removeModal = (id) => {
-        return setModals((oldModals) => {
-            return oldModals.filter(({ id: otherId }) => id !== otherId);
-        });
+    const getModal = (id) => {
+        return modals.find(({ id: otherId }) => id === otherId);
     };
 
     return {
         createModal,
         hideModal,
         removeModal,
+        getModal,
         resetModals: () => setModals([])
     };
 };

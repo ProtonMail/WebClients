@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { OverlayModal } from 'react-components';
 import { withRouter } from 'react-router-dom';
+
+import OverlayModal from '../../components/modal/Overlay';
 
 const ModalsContainer = ({ modals, removeModal, hideModal, location }) => {
     const [containerIsClosing, setContainerIsClosing] = useState(false);
@@ -11,6 +12,9 @@ const ModalsContainer = ({ modals, removeModal, hideModal, location }) => {
             return;
         }
         modals.forEach(({ id, content }) => {
+            if (!content) {
+                return;
+            }
             if (content.props.disableCloseOnLocation) {
                 return;
             }
@@ -30,35 +34,14 @@ const ModalsContainer = ({ modals, removeModal, hideModal, location }) => {
         }
     }, [modals]);
 
-    useEffect(() => {
-        if (modals.length === 0) {
-            return;
-        }
-
-        const lastModal = modals[modals.length - 1];
-
-        const onKeydown = (event) => {
-            const { id, content } = lastModal;
-
-            if (!content.props.disableCloseOnEscape && event.key === 'Escape') {
-                event.preventDefault();
-                content.props.onClose && content.props.onClose();
-                hideModal(id);
-            }
-        };
-
-        document.addEventListener('keydown', onKeydown);
-        return () => {
-            document.removeEventListener('keydown', onKeydown);
-        };
-    }, [modals]);
-
     if (modals.length === 0 && !containerIsClosing) {
         return null;
     }
 
-    const list = modals.map(({ id, content, isClosing }, i) => {
-        const isLast = i === modals.length - 1;
+    const list = modals.map(({ id, content, isClosing, isFirst, isLast, isBehind }) => {
+        if (!content) {
+            return null;
+        }
 
         const handleModalExit = () => {
             content.props.onExit && content.props.onExit();
@@ -73,7 +56,9 @@ const ModalsContainer = ({ modals, removeModal, hideModal, location }) => {
         return React.cloneElement(content, {
             onClose: handleModalClose,
             onExit: handleModalExit,
-            isBehind: !isLast,
+            isFirst,
+            isLast,
+            isBehind,
             isClosing,
             key: id
         });

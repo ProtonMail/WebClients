@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Portal from '../portal/Portal';
 import { classnames } from '../../helpers/component';
@@ -14,48 +14,25 @@ const Dialog = ({
     onExit,
     small: isSmall = false,
     isClosing = false,
+    // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
+    isFirst = false,
+    // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
+    isLast = false,
     isBehind = false,
     modalTitleID,
     children,
-    onClose,
     className: extraClassNames = '',
     ...rest
 }) => {
-    const isContainerClick = useRef(false);
-
     const handleAnimationEnd = ({ animationName }) => {
         if (animationName === CLASSES.MODAL_OUT && isClosing) {
             onExit && onExit();
         }
     };
 
-    /**
-     * Handle click outside of the dialog by listening to mousedown and mouseup
-     * to solve the case where a user starts her click inside the dialog, and
-     * releases the click outside of the dialog. Since it's not possible to
-     * stop propagation in this case, ensure that mouseDown and mouseUp were
-     * both targeting outside of the container.
-     */
-    const handleMouseDown = (e) => {
-        isContainerClick.current = e.currentTarget === e.target;
-    };
-    const handleMouseUp = (e) => {
-        isContainerClick.current = isContainerClick.current && e.currentTarget === e.target;
-    };
-    const handleClick = () => {
-        if (isContainerClick.current) {
-            return onClose();
-        }
-    };
-
     return (
         <Portal>
-            <div
-                onMouseDown={handleMouseDown}
-                onMouseUp={handleMouseUp}
-                onClick={handleClick}
-                className={classnames(['pm-modalContainer', isBehind && 'pm-modalContainer--inBackground'])}
-            >
+            <div className={classnames(['pm-modalContainer', isBehind && 'pm-modalContainer--inBackground'])}>
                 <dialog
                     aria-labelledby={modalTitleID}
                     aria-modal="true"
@@ -85,6 +62,8 @@ Dialog.propTypes = {
     className: PropTypes.string,
     small: PropTypes.bool,
     isBehind: PropTypes.bool,
+    isFirst: PropTypes.bool,
+    isLast: PropTypes.bool,
     isClosing: PropTypes.bool
 };
 
