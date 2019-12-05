@@ -47,8 +47,8 @@ function dropdownContainer(dispatchers, hotkeys) {
                 }
             };
 
-            function attachListener(remove) {
-                hotkeys[!remove ? 'pause' : 'unpause']();
+            function attachListener(remove, ignoreEvent) {
+                !ignoreEvent && hotkeys[!remove ? 'pause' : 'unpause']();
 
                 if (remove) {
                     document.body.removeEventListener('click', onClick, false);
@@ -107,7 +107,8 @@ function dropdownContainer(dispatchers, hotkeys) {
             });
 
             scope.$on('$destroy', () => {
-                attachListener(true);
+                // We don't want to unpause hotkeys on destroy as we destroy when we switch states
+                attachListener(true, true);
                 $btn.removeEventListener('click', onClickButton);
                 unsubscribe();
                 delete MAP[id];
