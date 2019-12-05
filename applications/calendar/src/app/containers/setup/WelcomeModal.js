@@ -47,7 +47,7 @@ const WelcomeModal = (props) => {
             return;
         }
         props.onClose();
-        createModal(<CalendarModal onClose={() => {}} calendar={calendarRef.current} />);
+        createModal(<CalendarModal calendar={calendarRef.current} />);
     };
 
     const setup = async () => {

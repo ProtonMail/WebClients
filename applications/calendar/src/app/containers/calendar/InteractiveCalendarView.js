@@ -223,7 +223,7 @@ const InteractiveCalendarView = ({
                 }
 
                 if (!newTemporaryEvent) {
-                    newTemporaryEvent = getEditTemporaryEvent(event, newTemporaryModel);
+                    newTemporaryEvent = getEditTemporaryEvent(event, newTemporaryModel, tzid);
                 }
 
                 const {
@@ -557,7 +557,7 @@ const InteractiveCalendarView = ({
                             onEdit={() => {
                                 const newTemporaryModel = getUpdateModel(targetEvent.data);
                                 const newTemporaryEvent = getTemporaryEvent(
-                                    getEditTemporaryEvent(targetEvent, newTemporaryModel),
+                                    getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid),
                                     newTemporaryModel,
                                     tzid
                                 );

@@ -11,12 +11,12 @@ import { getDateTimeState } from '../../components/eventModal/eventForm/state';
 
 const modelToEventProperties = (oldTemporaryEvent, { start, end, isAllDay }, tzid) => {
     // If unrelevant things were changed, like title or description
-    if (oldTemporaryEvent &&
-        oldTemporaryEvent.tmpData && (
-            oldTemporaryEvent.tmpData.start === start &&
+    if (
+        oldTemporaryEvent &&
+        oldTemporaryEvent.tmpData &&
+        oldTemporaryEvent.tmpData.start === start &&
             oldTemporaryEvent.tmpData.end === end &&
             oldTemporaryEvent.tmpData.isAllDay === isAllDay
-        )
     ) {
         return;
     }
@@ -45,17 +45,18 @@ export const getCreateTemporaryEvent = (Calendar) => {
         data: {
             Calendar
         }
-    }
+    };
 };
 
-export const getEditTemporaryEvent = ({ id, targetId, data }, model) => {
+export const getEditTemporaryEvent = ({ id, targetId, data }, model, tzid) => {
     return {
         id: 'tmp',
         targetId: targetId || id,
         data,
+        ...modelToEventProperties({}, model, tzid),
         tmpData: model,
         tmpDataOriginal: model
-    }
+    };
 };
 
 export const getTemporaryEvent = (temporaryEvent, model, tzid) => {
