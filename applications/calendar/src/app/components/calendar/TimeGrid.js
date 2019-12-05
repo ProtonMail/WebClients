@@ -1,13 +1,4 @@
-import React, {
-    createElement,
-    useMemo,
-    useRef,
-    useState,
-    useCallback,
-    useImperativeHandle,
-    useLayoutEffect,
-    useEffect
-} from 'react';
+import React, { useMemo, useRef, useState, useCallback, useImperativeHandle, useLayoutEffect, useEffect } from 'react';
 import { eachDayOfInterval, format } from 'proton-shared/lib/date-fns-utc';
 import PropTypes from 'prop-types';
 import { classnames } from 'react-components';
@@ -125,30 +116,34 @@ const TimeGrid = React.forwardRef(
         const handleMouseDownRef = useRef();
 
         handleMouseDownRef.current = (e) => {
-            if (handleDayGridMouseDown({
-                e,
-                onMouseDown,
-                rows: daysRows,
-                events: dayEvents,
-                eventsPerRows,
-                dayGridEl: dayGridRef.current,
-            })) {
+            if (
+                handleDayGridMouseDown({
+                    e,
+                    onMouseDown,
+                    rows: daysRows,
+                    events: dayEvents,
+                    eventsPerRows,
+                    dayGridEl: dayGridRef.current
+                })
+            ) {
                 return;
             }
 
-            if (handleTimeGridMouseDown({
-                e,
-                onMouseDown,
-                totalDays: days.length,
-                totalMinutes,
-                interval: 30,
-                events: timeEvents,
-                eventsPerDay,
-                days,
-                timeGridEl: timeGridRef.current,
-                scrollEl: scrollRef.current,
-                titleEl: titleRef.current
-            })) {
+            if (
+                handleTimeGridMouseDown({
+                    e,
+                    onMouseDown,
+                    totalDays: days.length,
+                    totalMinutes,
+                    interval: 30,
+                    events: timeEvents,
+                    eventsPerDay,
+                    days,
+                    timeGridEl: timeGridRef.current,
+                    scrollEl: scrollRef.current,
+                    titleEl: titleRef.current
+                })
+            ) {
                 return;
             }
         };
@@ -162,7 +157,7 @@ const TimeGrid = React.forwardRef(
             return () => {
                 window.removeEventListener('mousedown', handleMouseDown, true);
             };
-    }, [isInteractionEnabled]);
+        }, [isInteractionEnabled]);
 
         useLayoutEffect(() => {
             ref.current.scrollToNow();
@@ -216,18 +211,14 @@ const TimeGrid = React.forwardRef(
                                     <RowEvents
                                         FullDayEvent={FullDayEvent}
                                         MoreFullDayEvent={MoreFullDayEvent}
-
                                         eventsInRowStyles={eventsInRowStyles}
                                         eventsInRowSummary={eventsInRowSummary}
                                         eventsInRow={eventsInRow}
                                         events={dayEvents}
-
                                         formatTime={formatTime}
                                         now={now}
-
                                         targetMoreData={targetMoreData}
                                         targetMoreRef={targetMoreRef}
-
                                         targetEventRef={targetEventRef}
                                         targetEventData={targetEventData}
                                     />
@@ -238,13 +229,13 @@ const TimeGrid = React.forwardRef(
 
                     <div className="flex">
                         {displaySecondaryTimezone ? (
-                            <HourTexts className="calendar-aside calendar-secondary-timezone-cell" hours={formattedSecondaryHours}/>
+                            <HourTexts
+                                className="calendar-aside calendar-secondary-timezone-cell"
+                                hours={formattedSecondaryHours}
+                            />
                         ) : null}
-                        <HourTexts className="calendar-aside calendar-primary-timezone-cell" hours={formattedHours}/>
-                        <div
-                            className="flex flex-item-fluid relative calendar-grid-gridcells"
-                            ref={timeGridRef}
-                        >
+                        <HourTexts className="calendar-aside calendar-primary-timezone-cell" hours={formattedHours} />
+                        <div className="flex flex-item-fluid relative calendar-grid-gridcells" ref={timeGridRef}>
                             <HourLines hours={hours} />
                             {days.map((day, dayIndex) => {
                                 const key = getKey(day);

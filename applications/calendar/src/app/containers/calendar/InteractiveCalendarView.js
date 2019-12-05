@@ -14,7 +14,7 @@ import {
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 
-import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
+import { format } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import createOrUpdateEvent from 'proton-shared/lib/calendar/integration/createOrUpdateEvent';
@@ -23,8 +23,8 @@ import { deleteEvent } from 'proton-shared/lib/api/calendars';
 import {
     getExistingEvent,
     getInitialModel,
-    getTimeInUtc, hasDoneChanges,
-    hasEditedDateTime, hasEditedText
+    getTimeInUtc,
+    hasDoneChanges
 } from '../../components/eventModal/eventForm/state';
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
 import { modelToVeventComponent } from '../../components/eventModal/eventForm/modelToProperties';
@@ -36,12 +36,7 @@ import CreateEventPopover from '../../components/eventModal/CreateEventPopover';
 import EventPopover from '../../components/events/EventPopover';
 import MorePopoverEvent from '../../components/events/MorePopoverEvent';
 
-import {
-    getCreateTemporaryEvent,
-    getEditTemporaryEvent,
-    getTemporaryEvent,
-    getUpdatedDateTime
-} from './eventHelper';
+import { getCreateTemporaryEvent, getEditTemporaryEvent, getTemporaryEvent, getUpdatedDateTime } from './eventHelper';
 import CalendarView from './CalendarView';
 import useUnload from '../../hooks/useUnload';
 import { findUpwards } from '../../components/calendar/mouseHelpers/domHelpers';
@@ -84,7 +79,7 @@ const InteractiveCalendarView = ({
 
     interactiveRef,
     containerRef,
-    timeGridViewRef,
+    timeGridViewRef
 }) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -197,13 +192,9 @@ const InteractiveCalendarView = ({
                 return;
             }
 
-            let newTemporaryModel = temporaryEvent && event.id === 'tmp'
-                ? temporaryEvent.tmpData
-                : undefined;
+            let newTemporaryModel = temporaryEvent && event.id === 'tmp' ? temporaryEvent.tmpData : undefined;
 
-            let newTemporaryEvent = temporaryEvent && event.id === 'tmp'
-                ? temporaryEvent
-                : undefined;
+            let newTemporaryEvent = temporaryEvent && event.id === 'tmp' ? temporaryEvent : undefined;
 
             let initialModel = newTemporaryModel;
 
@@ -278,9 +269,10 @@ const InteractiveCalendarView = ({
                 return;
             }
 
-            let newTemporaryModel = (temporaryEvent && isInTemporaryBlocking)
-                ? temporaryEvent.tmpData
-                : getCreateModel({ isAllDay: isFromAllDay });
+            let newTemporaryModel =
+                temporaryEvent && isInTemporaryBlocking
+                    ? temporaryEvent.tmpData
+                    : getCreateModel({ isAllDay: isFromAllDay });
 
             const isAllowed = !!newTemporaryModel;
 
@@ -295,7 +287,8 @@ const InteractiveCalendarView = ({
 
             return ({ action, payload }) => {
                 const {
-                    result: { start, end }, idx
+                    result: { start, end },
+                    idx
                 } = payload;
 
                 const normalizedStart = getNormalizedTime(isFromAllDay, initialStart, start);
@@ -343,8 +336,11 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSaveEvent = async ({ tmpData, data: { Event }}) => {
-        const { calendar: { id: calendarID }, member: { memberID, addressID } } = tmpData;
+    const handleSaveEvent = async ({ tmpData, data: { Event } }) => {
+        const {
+            calendar: { id: calendarID },
+            member: { memberID, addressID }
+        } = tmpData;
         const [addressKeys, calendarKeys] = await Promise.all([getAddressKeys(addressID), getCalendarKeys(calendarID)]);
         const veventComponent = modelToVeventComponent(tmpData, tzid);
         await createOrUpdateEvent({
@@ -368,8 +364,7 @@ const InteractiveCalendarView = ({
                     confirm={c('Action').t`Discard`}
                     onClose={reject}
                     onConfirm={resolve}
-                >
-                </ConfirmModal>
+                ></ConfirmModal>
             );
         });
     };
@@ -405,8 +400,7 @@ const InteractiveCalendarView = ({
             if (!ask) {
                 return Promise.reject(new Error('Keep event'));
             }
-            return handleCloseConfirmation()
-                .catch(() => Promise.reject(new Error('Keep event')));
+            return handleCloseConfirmation().catch(() => Promise.reject(new Error('Keep event')));
         }
         return Promise.resolve();
     };
@@ -426,19 +420,16 @@ const InteractiveCalendarView = ({
         handleEditEvent(newTemporaryEvent);
     };
 
-    useImperativeHandle(
-        interactiveRef,
-        () => ({
-            closePopover: () => {
-                handleConfirmDeleteTemporary({ ask: true })
-                    .then(safeCloseTemporaryEventAndPopover)
-                    .catch(noop);
-            },
-            createEvent: () => {
-                handleCreateEvent()
-            },
-        }),
-    );
+    useImperativeHandle(interactiveRef, () => ({
+        closePopover: () => {
+            handleConfirmDeleteTemporary({ ask: true })
+                .then(safeCloseTemporaryEventAndPopover)
+                .catch(noop);
+        },
+        createEvent: () => {
+            handleCreateEvent();
+        }
+    }));
 
     const [targetEventRef, setTargetEventRef] = useState();
     const [targetMoreRef, setTargetMoreRef] = useState();
@@ -465,9 +456,11 @@ const InteractiveCalendarView = ({
         // listener to prevent clicks on the popover to be interpreted as an auto close click
         const handler = (e) => {
             // Only ask to auto close if an action wasn't clicked.
-            if (findUpwards(e.target, e.currentTarget, (el) => {
-                return ['BUTTON', 'A', 'SELECT', 'INPUT'].includes(el.nodeName);
-            })) {
+            if (
+                findUpwards(e.target, e.currentTarget, (el) => {
+                    return ['BUTTON', 'A', 'SELECT', 'INPUT'].includes(el.nodeName);
+                })
+            ) {
                 autoCloseRef.current({ ask: false });
                 return;
             }
@@ -477,13 +470,19 @@ const InteractiveCalendarView = ({
         return () => containerRef.removeEventListener('click', handler);
     }, [containerRef]);
 
-    const formatDate = useCallback((utcDate) => {
-        return format(utcDate, 'PP', { locale: dateLocale });
-    }, [dateLocale]);
+    const formatDate = useCallback(
+        (utcDate) => {
+            return format(utcDate, 'PP', { locale: dateLocale });
+        },
+        [dateLocale]
+    );
 
-    const formatTime = useCallback((utcDate) => {
-        return format(utcDate, 'p', { locale: dateLocale });
-    }, [dateLocale]);
+    const formatTime = useCallback(
+        (utcDate) => {
+            return format(utcDate, 'p', { locale: dateLocale });
+        },
+        [dateLocale]
+    );
 
     const weekdaysLong = useMemo(() => {
         return getFormattedWeekdays('cccc', { locale: dateLocale });
@@ -493,36 +492,35 @@ const InteractiveCalendarView = ({
         <>
             <CalendarView
                 view={view}
-
                 isInteractionEnabled={!isLoading}
                 onMouseDown={handleMouseDown}
-
                 tzid={tzid}
                 primaryTimezone={primaryTimezone}
                 secondaryTimezone={secondaryTimezone}
                 secondaryTimezoneOffset={secondaryTimezoneOffset}
-
                 targetEventData={targetEventData}
                 targetEventRef={setTargetEventRef}
                 targetMoreRef={setTargetMoreRef}
                 targetMoreData={targetMoreData}
-
                 displayWeekNumbers={displayWeekNumbers}
                 displaySecondaryTimezone={displaySecondaryTimezone}
-
                 now={now}
                 date={date}
                 dateRange={dateRange}
                 events={sortedEventsWithTemporary}
                 onClickDate={onClickDate}
-
                 formatTime={formatTime}
                 formatDate={formatDate}
                 weekdaysLong={weekdaysLong}
-
                 timeGridViewRef={timeGridViewRef}
             />
-            <Popover containerRef={document.body} targetRef={targetEventRef} isOpen={!!targetEvent} once={true} when={targetEvent ? targetEvent.start : undefined}>
+            <Popover
+                containerRef={document.body}
+                targetRef={targetEventRef}
+                isOpen={!!targetEvent}
+                once={true}
+                when={targetEvent ? targetEvent.start : undefined}
+            >
                 {({ style, ref }) => {
                     if (targetEvent.id === 'tmp') {
                         return (
@@ -607,7 +605,9 @@ const InteractiveCalendarView = ({
                     model={tmpData}
                     setModel={handleSetTemporaryEventModel}
                     onSave={() => handleSaveEvent(temporaryEvent)}
-                    onDelete={() => temporaryEvent.data && temporaryEvent.data.Event && handleDeleteEvent(temporaryEvent.data.Event)}
+                    onDelete={() =>
+                        temporaryEvent.data && temporaryEvent.data.Event && handleDeleteEvent(temporaryEvent.data.Event)
+                    }
                     onClose={({ safe = false } = {}) => {
                         if (safe) {
                             return hideModal(eventModalID);
@@ -624,10 +624,9 @@ const InteractiveCalendarView = ({
                     isCreateEvent={isCreatingEvent}
                     {...getModal(eventModalID)}
                 />
-            ): null}
+            ) : null}
         </>
     );
 };
 
 export default InteractiveCalendarView;
-

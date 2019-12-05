@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useRef, useLayoutEffect, useEffect } from 'react';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import PropTypes from 'prop-types';
-import { eachDayOfInterval, getWeekNumber, isSameDay } from 'proton-shared/lib/date-fns-utc';
+import { eachDayOfInterval, getWeekNumber } from 'proton-shared/lib/date-fns-utc';
 
 import useDayGridEventLayout from './useDayGridEventLayout';
 import createDayGridMouseHandler from './interactions/dayGridMouseHandler';
@@ -159,18 +159,14 @@ const DayGrid = ({
                                         <RowEvents
                                             FullDayEvent={FullDayEvent}
                                             MoreFullDayEvent={MoreFullDayEvent}
-
                                             eventsInRowStyles={eventsInRowStyles}
                                             eventsInRowSummary={eventsInRowSummary}
                                             eventsInRow={eventsInRow}
                                             events={events}
-
                                             formatTime={formatTime}
                                             now={now}
-
                                             targetMoreData={targetMoreData}
                                             targetMoreRef={targetMoreRef}
-
                                             targetEventRef={targetEventRef}
                                             targetEventData={targetEventData}
                                         />
