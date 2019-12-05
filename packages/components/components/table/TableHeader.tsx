@@ -1,7 +1,7 @@
 import React from 'react';
 import TableCell from './TableCell';
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLTableSectionElement> {
     cells?: React.ReactNode[];
     children?: React.ReactNode;
 }
