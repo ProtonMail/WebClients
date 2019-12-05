@@ -47,24 +47,16 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
     const decrypt = useDecryptMessage();
     const transformAttachements = useTransformAttachments();
 
-    // Put in state the message from the cache
-    useEffect(() => {
-        const updateMessage = () => {
-            if (!cache.has(messageID)) {
-                cache.set(messageID, { data: inputMessage });
-            }
-
-            setMessage(cache.get(messageID));
-        };
-
-        updateMessage();
-
-        return cache.subscribe((changedMessageID) => {
-            if (changedMessageID === messageID) {
-                updateMessage();
-            }
-        });
-    }, [messageID, cache]);
+    // Listen to cache for updates on the current message
+    useEffect(
+        () =>
+            cache.subscribe((changedMessageID) => {
+                if (changedMessageID === messageID) {
+                    setMessage(cache.get(messageID));
+                }
+            }),
+        [messageID, cache]
+    );
 
     const transforms = [
         transformEscape,
@@ -137,14 +129,12 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
     );
 
     const load = useCallback(async () => {
-        const message = cache.get(messageID);
         const newMessage = await run(message, [loadData]);
         cache.set(messageID, { ...newMessage, loaded: true });
     }, [messageID, run, cache]);
 
     const initialize = useCallback(
         async (action?) => {
-            const message = cache.get(messageID);
             const newMessage = await run(
                 message,
                 [loadData, decrypt, markAsRead, ...transforms] as Computation[],
@@ -157,7 +147,6 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
 
     const loadRemoteImages = useCallback(
         async (action?) => {
-            const message = cache.get(messageID);
             const newMessage = await run(
                 { ...message, showRemoteImages: true },
                 [transformRemote as Computation],
@@ -170,7 +159,6 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
 
     const loadEmbeddedImages = useCallback(
         async (action?) => {
-            const message = cache.get(messageID);
             const newMessage = await run(
                 { ...message, showEmbeddedImages: true },
                 [transformEmbedded, transformAttachements] as Computation[],
@@ -188,6 +176,6 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
             initialize,
             loadRemoteImages,
             loadEmbeddedImages
-        } as MessageActions
+        }
     ];
 };

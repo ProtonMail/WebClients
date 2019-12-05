@@ -38,7 +38,7 @@ export const MessageContext = createContext<MessageCache>(null as any /* Just to
 const MessageProvider = ({ children }: Props) => {
     const { subscribe } = useEventManager();
     const cache: MessageCache = useInstance(() => {
-        return createCache(createLRU({ max: 10 } as any));
+        return createCache(createLRU({ max: 50 } as any));
     });
 
     useLayoutEffect(() => {

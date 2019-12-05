@@ -14,7 +14,7 @@ import { Label } from '../../../models/label';
 interface Props {
     message: MessageExtended;
     labels: Label[];
-    onExpand: () => {};
+    onExpand: () => void;
 }
 
 const HeaderCollapsed = ({ message, labels, onExpand }: Props) => {

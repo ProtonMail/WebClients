@@ -4,7 +4,7 @@ import { MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
 import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
 import { Sort } from '../models/tools';
-// import { Conversation } from '../models/conversation';
+import { Message } from '../models/message';
 
 const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, ALL_MAIL } = MAILBOX_LABEL_IDS;
 
@@ -22,8 +22,8 @@ export const getCurrentType = ({ labelID = '', mailSettings = {} }: TypeParams) 
     return ViewMode === VIEW_MODE.GROUP ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
 };
 
-export const isConversation = (data: TypeParams) => ELEMENT_TYPES.CONVERSATION === getCurrentType(data);
-export const isMessage = (data: TypeParams) => ELEMENT_TYPES.MESSAGE === getCurrentType(data);
+export const isConversation = (element: Element): boolean => !(element as Message).conversationID;
+export const isMessage = (element: Element): boolean => !isConversation(element);
 
 export const getDate = ({ Time = 0, ContextTime = 0 }: Element = {}) => new Date((ContextTime || Time) * 1000);
 
