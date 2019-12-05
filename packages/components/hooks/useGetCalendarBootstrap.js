@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { getFullCalendar } from 'proton-shared/lib/api/calendars';
 import createCache from 'proton-shared/lib/helpers/cache';
+import { STATUS } from 'proton-shared/lib/models/cache';
 import useCache from '../containers/cache/useCache';
 import useApi from '../containers/api/useApi';
 import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
@@ -28,6 +29,23 @@ export const useGetCalendarBootstrap = () => {
             return getPromiseValue(cache.get(KEY), key, miss);
         },
         [cache, miss]
+    );
+};
+
+export const useReadCalendarBootstrap = () => {
+    const cache = useCache();
+    return useCallback(
+        (calendarID) => {
+            if (!cache.has(KEY)) {
+                cache.set(KEY, createCache());
+            }
+            const oldRecord = cache.get(KEY).get(calendarID);
+            if (!oldRecord || oldRecord.status !== STATUS.RESOLVED) {
+                return;
+            }
+            return oldRecord.value;
+        },
+        [cache]
     );
 };
 

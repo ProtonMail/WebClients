@@ -324,17 +324,11 @@ export { default as AddFilterModal } from './containers/filters/AddFilterModal';
 export { default as AddEmailToListModal } from './containers/filters/AddEmailToListModal';
 export { default as StorageSpaceStatus } from './containers/sidebar/StorageSpaceStatus';
 
-export {
-    default as OpenVPNConfigurationSection
-} from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
+export { default as OpenVPNConfigurationSection } from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNClientsSection/ProtonVPNClientsSection';
 export { default as OpenVPNAccountSection } from './containers/vpn/OpenVPNAccountSection/OpenVPNAccountSection';
-export {
-    default as ProtonVPNResourcesSection
-} from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
-export {
-    default as ProtonVPNCredentialsSection
-} from './containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection';
+export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
+export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection';
 
 export { useUser, useGetUser } from './hooks/useUser';
 export { default as useUserVPN } from './hooks/useUserVPN';
@@ -365,7 +359,11 @@ export { useUserKeys, useGetUserKeys } from './hooks/useUserKeys';
 export { useAddressesKeys, useGetAddressesKeys } from './hooks/useAddressesKeys';
 export { useGetAddressKeys } from './hooks/useGetAddressKeys';
 export { useGetPublicKeys } from './hooks/useGetPublicKeys';
-export { useCalendarBootstrap, useGetCalendarBootstrap } from './hooks/useGetCalendarBootstrap';
+export {
+    useCalendarBootstrap,
+    useReadCalendarBootstrap,
+    useGetCalendarBootstrap
+} from './hooks/useGetCalendarBootstrap';
 export { useGetCalendarKeys } from './hooks/useGetCalendarKeys';
 export { default as useOrganizationKey } from './hooks/useOrganizationKey';
 export { default as useSortedList, useSortedListAsync } from './hooks/useSortedList';
