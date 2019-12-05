@@ -26,7 +26,6 @@ $modal-smaller-width: 28em !default;
   left: 0;
   background: rgba( 0, 0, 0, .4 );
   z-index: 666;
-  cursor: pointer;
   animation: pm-modalOverlayIn ease .5s 1 normal ;
 }
 
@@ -36,7 +35,6 @@ $modal-smaller-width: 28em !default;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  cursor: pointer;
   z-index: 666;
   -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
 }
@@ -230,7 +228,7 @@ $pm-label-shorter-width: 10em !default;
   width: var(--label-shorter-width, $pm-label-shorter-width);
 }
 
-@include respond-to($breakpoint-small) { 
+@include respond-to($breakpoint-small) {
   .pm-modal--shorterLabels .onmobile-flex-column .pm-label {
     width: 100%;
   }
