@@ -44,11 +44,14 @@ const SettingsContainer = () => {
         <div className="flex flex-nowrap no-scroll">
             <AppsSidebar
                 items={[
-                    <StorageSpaceStatus key="storage">
-                        <Href url="/settings/subscription" target="_self" className="pm-button pm-button--primary">
-                            {c('Action').t`Upgrade`}
-                        </Href>
-                    </StorageSpaceStatus>
+                    <StorageSpaceStatus
+                        key="storage"
+                        upgradeButton={
+                            <Href url="/settings/subscription" target="_self" className="pm-button pm-button--primary">
+                                {c('Action').t`Upgrade`}
+                            </Href>
+                        }
+                    />
                 ]}
             />
             <div className="content flex-item-fluid reset4print">
