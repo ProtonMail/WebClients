@@ -14,6 +14,7 @@ const RowEvents = ({
 
     formatTime,
     now,
+    row,
 
     targetMoreData,
     targetMoreRef,
@@ -23,7 +24,7 @@ const RowEvents = ({
 }) => {
     return eventsInRowStyles.map(({ idx, type, style }) => {
         if (type === 'more') {
-            const isSelected = targetMoreData && idx === targetMoreData.idx && 0 === targetMoreData.row;
+            const isSelected = targetMoreData && idx === targetMoreData.idx && row === targetMoreData.row;
             const eventRef = isSelected ? targetMoreRef : undefined;
             return (
                 <MoreFullDayEvent
@@ -40,9 +41,9 @@ const RowEvents = ({
 
         const isTemporary = event.id === 'tmp';
         const isSelected = targetEventData && event.id === targetEventData.id;
-        const isThisSelected = (isSelected && isTemporary) || isSelected &&
-            targetEventData.idx === 0 &&
-            targetEventData.type === TYPE.DAYGRID;
+        const isThisSelected =
+            (isSelected && isTemporary) ||
+            (isSelected && targetEventData.idx === row && targetEventData.type === TYPE.DAYGRID);
 
         const eventRef = isThisSelected ? targetEventRef : undefined;
 
