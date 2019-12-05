@@ -356,6 +356,12 @@ $pm-label-width: 18em !default;
   }
 }
 
+// case for forms labelled only with icons (calendar popover, etc.)
+$pm-label-icon-width: 2em !default;
+.pm-form--iconLabels .pm-label {
+  width: $pm-label-icon-width;
+}
+
 /* container address */
 .pm-field-container--address {
   margin-top: -1.6em;
