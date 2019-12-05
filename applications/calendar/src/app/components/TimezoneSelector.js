@@ -7,16 +7,12 @@ const TimezoneSelector = ({
     className = 'pm-field w100',
     loading = false,
     disabled = false,
-    nowDate = new Date(),
+    currentDate = new Date(),
     timezone,
     onChange,
     ...rest
 }) => {
-    const defaultNowDate = useMemo(() => {
-        return new Date();
-    }, []);
-
-    const actualDate = nowDate || defaultNowDate;
+    const actualDate = currentDate;
 
     const timezoneOptions = useMemo(() => {
         return getTimeZoneOptions(actualDate);
@@ -51,7 +47,7 @@ TimezoneSelector.propTypes = {
     className: PropTypes.string,
     defaultTimezone: PropTypes.string,
     disabled: PropTypes.bool,
-    nowDate: PropTypes.instanceOf(Date),
+    currentDate: PropTypes.instanceOf(Date),
     loading: PropTypes.bool
 };
 

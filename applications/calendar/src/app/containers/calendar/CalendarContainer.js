@@ -219,28 +219,6 @@ const CalendarContainer = ({ calendars, history, location }) => {
     const displaySecondaryTimezone = getDisplaySecondaryTimezone(calendarSettings);
     const secondaryTzid = getSecondaryTimezone(calendarSettings);
 
-    const timezoneInformation = useMemo(() => {
-        const { abbreviation, offset } = getTimezoneOffset(nowDate, tzid);
-        const { abbreviation: secondaryAbbreviaton, offset: secondaryOffset } = getTimezoneOffset(
-            nowDate,
-            secondaryTzid || tzid
-        );
-        return {
-            primaryTimezone: `${formatAbbreviation(abbreviation, offset)}`,
-            secondaryTimezone: `${formatAbbreviation(secondaryAbbreviaton, secondaryOffset)}`,
-            secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE
-        };
-    }, [secondaryTzid, tzid]);
-
-    useEffect(() => {
-        const newRoute = toUrlParams({ date: utcDate, defaultDate: utcDefaultDate, view, defaultView, range });
-        if (location.pathname === newRoute) {
-            return;
-        }
-        history.push({ pathname: newRoute });
-        // Intentionally not listening to everything to only trigger URL updates when these variables change.
-    }, [view, range, utcDate]);
-
     const utcDateRange = useMemo(() => {
         return getDateRange(utcDate, range, view, weekStartsOn);
     }, [view, utcDate, weekStartsOn, range]);
@@ -252,6 +230,29 @@ const CalendarContainer = ({ calendars, history, location }) => {
         ],
         [utcDateRange, tzid]
     );
+
+    const timezoneInformation = useMemo(() => {
+        const startWeekDate = utcDateRange[0];
+        const { abbreviation, offset } = getTimezoneOffset(startWeekDate, tzid);
+        const { abbreviation: secondaryAbbreviaton, offset: secondaryOffset } = getTimezoneOffset(
+            startWeekDate,
+            secondaryTzid || tzid
+        );
+        return {
+            primaryTimezone: `${formatAbbreviation(abbreviation, offset)}`,
+            secondaryTimezone: `${formatAbbreviation(secondaryAbbreviaton, secondaryOffset)}`,
+            secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE
+        };
+    }, [utcDateRange, secondaryTzid, tzid]);
+
+    useEffect(() => {
+        const newRoute = toUrlParams({ date: utcDate, defaultDate: utcDefaultDate, view, defaultView, range });
+        if (location.pathname === newRoute) {
+            return;
+        }
+        history.push({ pathname: newRoute });
+        // Intentionally not listening to everything to only trigger URL updates when these variables change.
+    }, [view, range, utcDate]);
 
     const [calendarsEvents, loadingEvents] = useCalendarsEvents(visibleCalendars, utcDateRangeInTimezone, tzid);
 
