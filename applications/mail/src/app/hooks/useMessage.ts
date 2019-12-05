@@ -154,7 +154,7 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
             );
             cache.set(messageID, newMessage);
         },
-        [messageID, run, cache]
+        [message, run, cache]
     );
 
     const loadEmbeddedImages = useCallback(
@@ -166,7 +166,7 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
             );
             cache.set(messageID, newMessage);
         },
-        [messageID, run, cache]
+        [message, run, cache]
     );
 
     return [

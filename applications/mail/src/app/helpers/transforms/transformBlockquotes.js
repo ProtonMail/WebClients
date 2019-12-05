@@ -45,5 +45,5 @@ export const transformBlockquotes = ({ document: doc }) => {
         }
     });
 
-    return { document };
+    return { document: doc };
 };

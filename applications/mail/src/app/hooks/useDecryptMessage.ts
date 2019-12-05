@@ -28,6 +28,7 @@ export const useDecryptMessage = () => {
 
             if (isMIME(message)) {
                 // TODO: decrypt mime message
+                console.warn('Mime messages are not yet supported');
             } else {
                 const {
                     data,
