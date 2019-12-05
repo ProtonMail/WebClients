@@ -102,7 +102,7 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 
 .calendar-grid-gridcell {
     margin-right: $gridcell-right-margin;
-    
+
 
     &:after {
         border-left: $calendar-grid-border;
@@ -188,6 +188,7 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
     overflow: hidden;
     min-height: 100%;
     border: $border-event-cells;
+    cursor: pointer;
     &:focus,
     &:hover {
         background-color: $calendar-dayeventcell-hover-color;
@@ -222,8 +223,8 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
 }
 
 
-@include respond-to($breakpoint-small) { 
-    .calendar-eventcell-title, 
+@include respond-to($breakpoint-small) {
+    .calendar-eventcell-title,
     .calendar-eventcell-timestring {
         font-size: 1.2rem;
     }
@@ -294,11 +295,11 @@ $calendar-popover-width: 250px !default;
     width: 100%;
     height: 5em;
 }
-@include respond-to($breakpoint-small) { 
+@include respond-to($breakpoint-small) {
     .is-day-view::after,
     .is-week-view::after,
     .is-month-view::after {
-        padding-bottom: 8em; 
+        padding-bottom: 8em;
         // thanks Apple for the fixed toolbar at the bottom
     }
 }
