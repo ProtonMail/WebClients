@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { LinkButton } from 'react-components';
 import { c } from 'ttag';
 
-import NotificationInput from './NotificationInput';
+import NotificationInput from './inputs/NotificationInput';
 import { updateItem, removeItem, addItem } from './eventForm/state';
 
 const Notifications = ({ notifications, hasWhen, hasType, defaultNotification, onChange }) => {

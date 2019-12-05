@@ -1,34 +1,24 @@
 import React from 'react';
-import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Row, Label } from 'react-components';
+import { Icon } from 'react-components';
 
-import Notifications from './Notifications';
 import AllDayCheckbox from './inputs/AllDayCheckbox';
 import CalendarSelectRow from './rows/CalendarSelectRow';
 import LocationRow from './rows/LocationRow';
 import DescriptionRow from './rows/DescriptionRow';
-import FrequencyRow from './rows/FrequencyRow';
 import TimezoneRow from './rows/TimezoneRow';
 import MoreRow from './rows/MoreRow';
 import DateTimeRow from './rows/DateTimeRow';
 import TitleRow from './rows/TitleRow';
 import { getAllDayCheck } from './eventForm/stateActions';
 
-const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, errors, model, setModel }) => {
-    const frequencyRow = model.hasMoreOptions ? (
-        <FrequencyRow
-            label={c('Label').t`Frequency`}
-            value={model.frequency}
-            onChange={(frequency) => setModel({ ...model, frequency })}
-        />
-    ) : null;
-
+const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, errors, model, setModel }) => {
     const timezoneRows =
         model.hasMoreOptions && !model.isAllDay ? (
             <TimezoneRow
-                startLabel={c('Label').t`Start timezone`}
-                endLabel={c('Label').t`End timezone`}
+                collapseOnMobile={false}
+                startLabel={<Icon name="timezone1"/>}
+                endLabel={<Icon name="timezone1"/>}
                 start={model.start}
                 end={model.end}
                 onChangeStart={(start) => setModel({ ...model, start })}
@@ -38,17 +28,20 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
 
     const calendarRow = model.calendars.length ? (
         <CalendarSelectRow
-            label={c('Label').t`Calendar`}
+            collapseOnMobile={false}
+            label={<Icon name="calendar"/>}
             options={model.calendars}
             value={model.calendar}
             onChange={({ id, color }) => setModel({ ...model, calendar: { id, color } })}
+            withIcon={true}
         />
     ) : null;
 
     return (
         <>
             <TitleRow
-                label={c('Label').t`Title`}
+                collapseOnMobile={false}
+                label={<Icon name="circle"/>}
                 type={model.type}
                 value={model.title}
                 error={errors.title}
@@ -56,7 +49,8 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                 isSubmitted={isSubmitted}
             />
             <DateTimeRow
-                label={c('Label').t`Time`}
+                collapseOnMobile={false}
+                label={<Icon name="clock"/>}
                 model={model}
                 setModel={setModel}
                 endError={errors.end}
@@ -64,52 +58,37 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                 weekStartsOn={weekStartsOn}
                 isNarrow={isNarrow}
             />
-            <MoreRow hasMore={model.hasMoreOptions} onChange={(hasMoreOptions) => setModel({ ...model, hasMoreOptions })}>
+            <MoreRow
+                collapseOnMobile={false}
+                displayMore={!model.isAllDay}
+                hasMore={model.hasMoreOptions}
+                onChange={(hasMoreOptions) => setModel({ ...model, hasMoreOptions })}
+            >
                 <AllDayCheckbox
                     checked={model.isAllDay}
                     onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck(model, isAllDay) })}
                 />
             </MoreRow>
-            {frequencyRow}
             {timezoneRows}
             {calendarRow}
             <LocationRow
-                label={c('Label').t`Location`}
+                collapseOnMobile={false}
+                // todo icon
+                label={<Icon name="domains"/>}
                 value={model.location}
                 onChange={(location) => setModel({ ...model, location })}
             />
             <DescriptionRow
-                label={c('Label').t`Description`}
+                collapseOnMobile={false}
+                label={<Icon name="note"/>}
                 value={model.description}
                 onChange={(description) => setModel({ ...model, description })}
             />
-            <Row>
-                <Label>{c('Label').t`Notifications`}</Label>
-                <div className="flex-item-fluid">
-                    {model.isAllDay ? (
-                        <Notifications
-                            notifications={model.fullDayNotifications}
-                            defaultNotification={model.defaultFullDayNotification}
-                            onChange={(notifications) => {
-                                setModel({ ...model, fullDayNotifications: notifications });
-                            }}
-                        />
-                    ) : (
-                        <Notifications
-                            notifications={model.partDayNotifications}
-                            defaultNotification={model.defaultPartDayNotification}
-                            onChange={(notifications) => {
-                                setModel({ ...model, partDayNotifications: notifications });
-                            }}
-                        />
-                    )}
-                </div>
-            </Row>
         </>
     );
 };
 
-EventForm.propTypes = {
+MinimalEventForm.propTypes = {
     model: PropTypes.object,
     errors: PropTypes.object,
     setModel: PropTypes.func,
@@ -118,4 +97,4 @@ EventForm.propTypes = {
     weekStartsOn: PropTypes.number
 };
 
-export default EventForm;
+export default MinimalEventForm;

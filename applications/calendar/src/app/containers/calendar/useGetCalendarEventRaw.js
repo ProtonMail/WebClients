@@ -28,7 +28,7 @@ const useGetCalendarEventRaw = () => {
                 }
 
                 const { publicKeys = [] } = await getPublicKeys(Event.Author);
-                return publicKeys;
+                return publicKeys.filter(Boolean);
             };
 
             const [calendarKeys, authorPublicKeys] = await Promise.all([

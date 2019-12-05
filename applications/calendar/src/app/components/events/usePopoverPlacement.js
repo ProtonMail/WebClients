@@ -15,7 +15,7 @@ const usePopoverPlacement = (ref, style, layout) => {
 
         const {
             rect: { height: containerHeight, width: containerWidth },
-            eventWidth = 0
+            targetWidth = 0
         } = layout;
         const { width: elementWidth, height: elementHeight } = elementRect;
 
@@ -30,7 +30,7 @@ const usePopoverPlacement = (ref, style, layout) => {
             }
 
             // Then try to the right of the element
-            const leftPlacement2 = leftCoordinate + eventWidth;
+            const leftPlacement2 = leftCoordinate + targetWidth;
             // Push it back if it's still too large.
             const diffOverFlowX = leftPlacement2 + elementWidth - containerWidth;
             return diffOverFlowX >= 0 ? leftPlacement2 - diffOverFlowX : leftPlacement2;

@@ -1,47 +1,42 @@
-import React, { useRef } from 'react';
-import { c } from 'ttag';
-import { Icon } from 'react-components';
-import PropTypes from 'prop-types';
+import React from 'react';
 
-import usePopoverPlacement from './usePopoverPlacement';
 import FullDayEvent from './FullDayEvent';
+import PopoverHeader from './PopoverHeader';
+import PopoverContent from './PopoverContent';
+import { TYPE } from '../calendar/interactions/constants';
 
 const MorePopoverEvent = ({
+    date,
     onClose,
     formatTime,
     style,
-    layout,
     events = [],
-    eventRef,
-    selectedEventID,
-    selectedMoreDate,
-    setSelectedEventID
+    popoverRef,
+    onClickEvent,
+    targetEventRef,
+    targetEventData
 }) => {
-    const ref = useRef();
-    const otherStyle = usePopoverPlacement(ref, style, layout);
-
     return (
-        <div style={otherStyle} className="eventpopover p1" ref={ref}>
-            <header>
-                <h1
-                    className="eventpopover-title lh-standard ellipsis-four-lines cut"
-                    title={selectedMoreDate && selectedMoreDate.getUTCDate()}
-                >
-                    {selectedMoreDate && selectedMoreDate.getUTCDate()}
+        <div style={style} className="eventpopover p1" ref={popoverRef}>
+            <PopoverHeader onClose={onClose}>
+                <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={date.getUTCDate()}>
+                    {date.getUTCDate()}
                 </h1>
-                <button type="button" className="pm-modalClose" title={c('Action').t`Close popover`} onClick={onClose}>
-                    <Icon className="pm-modalClose-icon" name="close" />
-                    <span className="sr-only">{c('Action').t`Close popover`}</span>
-                </button>
-            </header>
-            <div>
+            </PopoverHeader>
+            <PopoverContent>
                 {events.map((event) => {
                     const props = {
-                        onClick: () => setSelectedEventID(event.id)
+                        onClick: () => onClickEvent({ id: event.id, idx: date.getUTCDate(), type: TYPE.MORE })
                     };
-                    const isSelected = selectedEventID === event.id;
-                    if (isSelected) {
-                        props.eventRef = eventRef;
+                    const isSelected = targetEventData && targetEventData.id === event.id;
+                    const isThisSelected =
+                        targetEventData &&
+                        isSelected &&
+                        targetEventData.idx === date.getUTCDate() &&
+                        targetEventData.type === TYPE.MORE;
+
+                    if (isThisSelected) {
+                        props.eventRef = targetEventRef;
                     }
                     return (
                         <FullDayEvent
@@ -54,17 +49,12 @@ const MorePopoverEvent = ({
                         />
                     );
                 })}
-            </div>
+            </PopoverContent>
         </div>
     );
 };
 
 MorePopoverEvent.propTypes = {
-    style: PropTypes.object.isRequired,
-    data: PropTypes.object.isRequired,
-    selectedEventID: PropTypes.string,
-    setSelectedEventID: PropTypes.func.isRequired,
-    onClose: PropTypes.func.isRequired
 };
 
 export default MorePopoverEvent;

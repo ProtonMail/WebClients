@@ -1,5 +1,4 @@
-import { eachDayOfInterval, startOfDay, endOfDay, min, max } from 'proton-shared/lib/date-fns-utc';
-import { isDateYYMMDDEqual } from 'proton-shared/lib/date/date';
+import { isSameDay, eachDayOfInterval, startOfDay, endOfDay, min, max } from 'proton-shared/lib/date-fns-utc';
 
 export const getKey = (date) => {
     const year = date.getUTCFullYear();
@@ -33,9 +32,14 @@ export const splitTimeGridEventsPerDay = ({ events = [], min: minDate, max: maxD
         eachDayOfInterval(startDate, endDate).forEach((date) => {
             const key = getKey(date);
 
-            const startTime = isDateYYMMDDEqual(date, start) ? toUTCMinutes(start) : 0;
+            const startTime = isSameDay(date, start) ? toUTCMinutes(start) : 0;
+            const endTime = isSameDay(date, end) ? toUTCMinutes(end) : totalMinutes;
 
-            const endTime = isDateYYMMDDEqual(date, end) ? toUTCMinutes(end) : totalMinutes;
+            // Special case for part day events that are for example between 1st january 14:00 to 2nd of january 00:00
+            // where nothing should be displayed in the 2nd of january
+            if (endTime === 0 && !isSameDay(start, end)) {
+                return;
+            }
 
             if (!acc[key]) {
                 acc[key] = [];

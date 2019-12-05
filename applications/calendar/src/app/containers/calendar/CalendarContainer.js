@@ -1,5 +1,10 @@
 import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef } from 'react';
-import { useModals, useCalendars, useCalendarUserSettings, useCalendarBootstrap } from 'react-components';
+import {
+    useCalendars,
+    useCalendarUserSettings,
+    useCalendarBootstrap,
+    useAddresses,
+} from 'react-components';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -9,26 +14,14 @@ import {
     formatTimezoneOffset,
     getTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
-import { c } from 'ttag';
-import { getFormattedWeekdays, isDateYYMMDDEqual } from 'proton-shared/lib/date/date';
-import { format, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
-import { dateLocale } from 'proton-shared/lib/i18n';
+import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
 import { VIEWS, SETTINGS_VIEW } from '../../constants';
-import CreateEventModal from '../../components/eventModal/CreateEventModal';
 import useCalendarsEvents from './useCalendarsEvents';
 import { getDateRange } from './helper';
-import TimeGrid from '../../components/calendar/TimeGrid';
-import DayGrid from '../../components/calendar/DayGrid';
-import YearView from '../../components/YearView';
-import AgendaView from '../../components/AgendaView';
-import FullDayEvent from '../../components/events/FullDayEvent';
-import PartDayEvent from '../../components/events/PartDayEvent';
-import PopoverEvent from '../../components/events/PopoverEvent';
-import MorePopoverEvent from '../../components/events/MorePopoverEvent';
-import MoreFullDayEvent from '../../components/events/MoreFullDayEvent';
 import CalendarContainerView from './CalendarContainerView';
+import InteractiveCalendarView from './InteractiveCalendarView';
 
-const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
+const { DAY, WEEK, MONTH } = VIEWS;
 
 const URL_PARAMS_VIEWS_CONVERSION = {
     //'year': YEAR,
@@ -124,7 +117,7 @@ const fromUrlParams = (pathname) => {
 
 const toUrlParams = ({ date, defaultDate, view, defaultView, range }) => {
     const dateParams =
-        !range && isDateYYMMDDEqual(date, defaultDate)
+        !range && isSameDay(date, defaultDate)
             ? undefined
             : [date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()];
     const viewParam = !dateParams && view === defaultView ? undefined : VIEW_URL_PARAMS_VIEWS_CONVERSION[view];
@@ -147,17 +140,12 @@ const customReducer = (oldState, newState) => {
     return oldState;
 };
 
-const components = {
-    FullDayEvent,
-    PartDayEvent,
-    PopoverEvent,
-    MorePopoverEvent,
-    MoreFullDayEvent
-};
-
 const CalendarContainer = ({ history, location }) => {
     const [calendars, loadingCalendars] = useCalendars();
     const [calendarSettings, loadingCalendarSettings] = useCalendarUserSettings();
+    const [addresses, loadingAddresses] = useAddresses();
+
+    const interactiveRef = useRef();
 
     const visibleCalendars = useMemo(() => {
         return calendars ? calendars.filter(({ Display }) => !!Display) : undefined;
@@ -246,7 +234,7 @@ const CalendarContainer = ({ history, location }) => {
         if (location.pathname === newRoute) {
             return;
         }
-        history.push(newRoute);
+        history.push({ pathname: newRoute });
         // Intentionally not listening to everything to only trigger URL updates when these variables change.
     }, [view, range, utcDate]);
 
@@ -263,8 +251,6 @@ const CalendarContainer = ({ history, location }) => {
     );
 
     const [calendarsEvents, loadingEvents] = useCalendarsEvents(visibleCalendars, utcDateRangeInTimezone, tzid);
-
-    const { createModal } = useModals();
 
     const setDateAndView = useCallback((newDate, newView) => {
         setCustom({ view: newView, range: undefined, date: newDate });
@@ -288,10 +274,31 @@ const CalendarContainer = ({ history, location }) => {
         scrollToNow();
     }, []);
 
+    const handleChangeDate = useCallback((newDate) => {
+        setCustom({ date: newDate });
+    }, []);
+
+    const handleChangeDateRange = useCallback((newDate, numberOfDays) => {
+        if (numberOfDays >= 7) {
+            setCustom({
+                view: MONTH,
+                range: Math.floor(numberOfDays / 7),
+                date: newDate
+            });
+            return;
+        }
+        setCustom({
+            view: WEEK,
+            range: numberOfDays,
+            date: newDate
+        });
+    }, []);
+
     const handleClickDateWeekView = useCallback((newDate) => {
         setDateAndView(newDate, DAY);
     }, []);
 
+    /*
     const handleClickDateYearView = useCallback((newDate) => {
         setDateAndView(newDate, WEEK);
     }, []);
@@ -299,58 +306,17 @@ const CalendarContainer = ({ history, location }) => {
     const handleClickDateAgendaView = useCallback((newDate) => {
         setDateAndView(newDate, WEEK);
     }, []);
-
-    const handleEventModal = useCallback(
-        ({ Event, start, end, isAllDay, type, title, calendarID, onClose } = {}) => {
-            if (!calendars || !calendars.length) {
-                return;
-            }
-            createModal(
-                <CreateEventModal
-                    Event={Event}
-                    start={start}
-                    end={end}
-                    isAllDay={isAllDay}
-                    type={type}
-                    title={title}
-                    calendars={calendars}
-                    calendarID={calendarID || calendars[0].ID}
-                    displayWeekNumbers={displayWeekNumbers}
-                    weekStartsOn={weekStartsOn}
-                    tzid={tzid}
-                    onClose={onClose}
-                />
-            );
-        },
-        [calendars, tzid, weekStartsOn, displayWeekNumbers]
-    );
+    */
 
     const defaultCalendar = calendars[0];
-    const [
-        { CalendarSettings: { DefaultEventDuration: defaultEventDuration = 30 } = {} } = {},
-        loadingCalendarBootstrap
-    ] = useCalendarBootstrap(defaultCalendar ? defaultCalendar.ID : undefined);
+    const [defaultCalendarBootstrap, loadingCalendarBootstrap] = useCalendarBootstrap(
+        defaultCalendar ? defaultCalendar.ID : undefined
+    );
 
-    const defaultEventData = useMemo(() => {
-        return {
-            Calendar: defaultCalendar
-        };
-    }, [defaultCalendar]);
+    const [containerRef, setContainerRef] = useState();
 
-    const isLoading = loadingCalendarBootstrap || loadingCalendars || loadingCalendarSettings || loadingEvents;
-
-    const formatDate = useCallback((utcDate) => {
-        return format(utcDate, 'PP', { locale: dateLocale });
-    }, []);
-    const formatEventTime = useCallback((utcDate) => {
-        return format(utcDate, 'p', { locale: dateLocale });
-    }, []);
-
-    const weekdaysLong = useMemo(() => {
-        return getFormattedWeekdays('cccc', { locale: dateLocale });
-    }, [dateLocale]);
-
-    const week = c('Label').t`Week`;
+    const isLoading =
+        loadingCalendarBootstrap || loadingCalendars || loadingCalendarSettings || loadingEvents || loadingAddresses;
 
     return (
         <CalendarContainerView
@@ -367,77 +333,41 @@ const CalendarContainer = ({ history, location }) => {
             utcDefaultDate={utcDefaultDate}
             utcDate={utcDate}
             utcDateRange={utcDateRange}
-            onCreateEvent={handleEventModal}
+            onCreateEvent={() => interactiveRef.current && interactiveRef.current.createEvent()}
             onClickToday={handleClickToday}
+            onChangeDate={handleChangeDate}
+            onChangeDateRange={handleChangeDateRange}
             onChangeView={handleChangeView}
+            containerRef={setContainerRef}
         >
-            {(() => {
-                if (view === DAY || view === WEEK) {
-                    return (
-                        <TimeGrid
-                            tzid={tzid}
-                            {...timezoneInformation}
-                            displayWeekNumbers={displayWeekNumbers}
-                            displaySecondaryTimezone={displaySecondaryTimezone}
-                            now={utcNowDateInTimezone}
-                            date={utcDate}
-                            dateRange={utcDateRange}
-                            events={calendarsEvents}
-                            formatTime={formatEventTime}
-                            onClickDate={handleClickDateWeekView}
-                            onEditEvent={handleEventModal}
-                            components={components}
-                            isInteractionEnabled={!isLoading}
-                            ref={timeGridViewRef}
-                            defaultEventDuration={defaultEventDuration}
-                            defaultEventData={defaultEventData}
-                            week={week}
-                            weekDaysLong={weekdaysLong}
-                        />
-                    );
-                }
-                if (view === MONTH) {
-                    return (
-                        <DayGrid
-                            tzid={tzid}
-                            displayWeekNumbers={displayWeekNumbers}
-                            date={utcDate}
-                            dateRange={utcDateRange}
-                            now={utcNowDateInTimezone}
-                            events={calendarsEvents}
-                            formatTime={formatEventTime}
-                            formatDate={formatDate}
-                            defaultEventData={defaultEventData}
-                            isInteractionEnabled={!isLoading}
-                            onClickDate={handleClickDateWeekView}
-                            onEditEvent={handleEventModal}
-                            components={components}
-                            weekDaysLong={weekdaysLong}
-                        />
-                    );
-                }
-                if (view === YEAR) {
-                    return (
-                        <YearView
-                            tzid={tzid}
-                            calendarIDs={visibleCalendars.map(({ ID }) => ID)}
-                            displayWeekNumbers={displayWeekNumbers}
-                            currentDate={utcDate}
-                            onSelectDate={handleClickDateYearView}
-                        />
-                    );
-                }
-                if (view === AGENDA) {
-                    return (
-                        <AgendaView
-                            events={calendarsEvents}
-                            currentDate={utcDate}
-                            dateRange={utcDateRange}
-                            onSelectDate={handleClickDateAgendaView}
-                        />
-                    );
-                }
-            })()}
+            <InteractiveCalendarView
+                view={view}
+                isLoading={isLoading}
+
+                tzid={tzid}
+                {...timezoneInformation}
+
+                displayWeekNumbers={displayWeekNumbers}
+                displaySecondaryTimezone={displaySecondaryTimezone}
+                weekStartsOn={weekStartsOn}
+
+                now={utcNowDateInTimezone}
+                date={utcDate}
+                dateRange={utcDateRange}
+                events={calendarsEvents}
+
+                onClickDate={handleClickDateWeekView}
+                onChangeDate={handleChangeDate}
+
+                addresses={addresses}
+                calendars={calendars}
+                defaultCalendar={defaultCalendar}
+                defaultCalendarBootstrap={defaultCalendarBootstrap}
+
+                interactiveRef={interactiveRef}
+                containerRef={containerRef}
+                timeGridViewRef={timeGridViewRef}
+            />
         </CalendarContainerView>
     );
 };

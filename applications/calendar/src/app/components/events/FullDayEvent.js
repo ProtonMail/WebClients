@@ -8,7 +8,7 @@ const FullDayEvent = ({
     style,
     formatTime,
     className = 'calendar-dayeventcell absolute alignleft',
-    event: { start, data: { Calendar } = {}, data: targetEventData, isAllDay, isAllPartDay },
+    event: { start, data: { Calendar } = {}, data: targetEventData, isAllDay, isAllPartDay, tmpData },
     isSelected,
     isBeforeNow,
     eventRef,
@@ -34,6 +34,8 @@ const FullDayEvent = ({
         return formatTime(start);
     }, [start]);
 
+    const titleString = tmpData && tmpData.title || !loading && model.title || '';
+
     const content = (() => {
         if (error) {
             return <Icon name="lock" className="fill-currentColor" />;
@@ -50,7 +52,7 @@ const FullDayEvent = ({
                     {!isAllDay ? (
                         <Icon className="mr0-25 flex-item-noshrink" size={12} name="circle" color={calendarColor} />
                     ) : null}
-                    {loading ? '' : <span className="flex-item-fluid ellipsis">{model.title}</span>}
+                    {loading ? '' : <span className="flex-item-fluid ellipsis">{titleString}</span>}
                 </span>
                 {isAllPartDay ? <span className="">{timeString}</span> : null}
             </div>
@@ -61,9 +63,8 @@ const FullDayEvent = ({
 
     return (
         <div style={style} className={classnames([className, isBeforeNowClassModifier])} data-ignore-create="1">
-            <button
+            <div
                 onClick={onClick}
-                type="button"
                 className={classnames([
                     'calendar-dayeventcell-inner alignleft inbl w100 pl0-5 pr0-5',
                     !isAllDay && 'calendar-dayeventcell-inner--notAllDay'
@@ -72,7 +73,7 @@ const FullDayEvent = ({
                 ref={eventRef}
             >
                 {content}
-            </button>
+            </div>
         </div>
     );
 };

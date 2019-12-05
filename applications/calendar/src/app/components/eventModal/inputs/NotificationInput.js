@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Input, Select, TimeInput, classnames } from 'react-components';
 import { c, msgid } from 'ttag';
 
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, NOTIFICATION_TYPE } from '../../constants';
+import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, NOTIFICATION_TYPE } from '../../../constants';
 
 const { EMAIL, DEVICE } = NOTIFICATION_TYPE;
 const { DAY, MINUTES, HOURS, WEEK } = NOTIFICATION_UNITS;

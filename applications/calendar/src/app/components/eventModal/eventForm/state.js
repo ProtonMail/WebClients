@@ -1,3 +1,9 @@
+import { c } from 'ttag';
+import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
+import { convertZonedDateTimeToUTC, toUTCDate } from 'proton-shared/lib/date/timezone';
+import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
+
+import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
     DEFAULT_FULL_DAY_NOTIFICATIONS,
@@ -5,53 +11,10 @@ import {
     DEFAULT_PART_DAY_NOTIFICATIONS,
     notificationsToModel
 } from '../../../helpers/notifications';
-import { DEFAULT_EVENT_DURATION, NOTIFICATION_TYPE, FREQUENCY } from '../../../constants';
+import { DEFAULT_EVENT_DURATION, FREQUENCY, NOTIFICATION_TYPE } from '../../../constants';
 import { propertiesToDateTimeModel, propertiesToModel, propertiesToNotificationModel } from './propertiesToModel';
-import { c } from 'ttag';
-import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
-import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
-
-import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
-
-export const getState = ({
-    title = '',
-    description = '',
-    location = '',
-    type = 'event',
-    frequency = FREQUENCY.ONCE,
-    isAllDay = false,
-    fullDayNotifications = [],
-    partDayNotifications = [],
-    attendees = [],
-    calendarID,
-    addressID,
-    memberID,
-    members = [],
-    organizer,
-    start,
-    end,
-    defaultTzid
-} = {}) => {
-    return {
-        calendarID,
-        addressID,
-        memberID,
-        organizer,
-        members,
-        type,
-        isAllDay,
-        fullDayNotifications,
-        partDayNotifications,
-        attendees,
-        frequency,
-        start,
-        end,
-        title,
-        description,
-        location,
-        defaultTzid
-    };
-};
+import { modelToGeneralProperties } from './modelToProperties';
+import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 
 export const getDateTimeState = (utcDate, tzid) => {
     return {
@@ -62,36 +25,97 @@ export const getDateTimeState = (utcDate, tzid) => {
     };
 };
 
-export const getStartAndEnd = ({
-    now = new Date(),
-    defaultDuration = 30,
-    start = getSnappedDate(
+export const getNotificationModels = ({
+                                          DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
+                                          DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS
+                                      }) => {
+    return {
+        defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
+        defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
+        partDayNotifications: notificationsToModel(DefaultPartDayNotifications, false).filter(
+            ({ type }) => type === NOTIFICATION_TYPE.DEVICE
+        ),
+        fullDayNotifications: notificationsToModel(DefaultFullDayNotifications, true).filter(
+            ({ type }) => type === NOTIFICATION_TYPE.DEVICE
+        )
+    };
+};
+
+export const getInitialDateTimeModel = (defaultEventDuration, tzid) => {
+    const now = new Date();
+
+    const start = getSnappedDate(
         new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes() + 30)),
         30
-    ),
-    end = new Date(
+    );
+
+    const end = new Date(
         Date.UTC(
             start.getUTCFullYear(),
             start.getUTCMonth(),
             start.getUTCDate(),
             start.getUTCHours(),
-            start.getUTCMinutes() + defaultDuration
+            start.getUTCMinutes() + defaultEventDuration
         )
-    ),
-    tzid
-}) => {
+    );
+
     return {
         start: getDateTimeState(start, tzid),
         end: getDateTimeState(end, tzid)
     };
 };
 
-export const getExistingEvent = ({ veventComponent, veventValarmComponent, start, end, tzid }) => {
+export const getInitialMemberModel = (Addresses, Members, Member, Address) => {
+    const { ID: addressID } = Address;
+    const { ID: memberID } = Member;
+    return {
+        member: {
+            addressID,
+            memberID
+        }
+    };
+};
+
+const getCalendarsModel = (Calendar, Calendars = []) => {
+    if (!Calendars.some(({ ID }) => ID === Calendar.ID)) {
+        throw new Error('Calendar not found');
+    }
+    return {
+        calendars: Calendars.map(({ ID, Name, Color }) => ({ text: Name, value: ID, color: Color })),
+        calendar: {
+            id: Calendar.ID,
+            color: Calendar.Color
+        }
+    };
+};
+
+export const getInitialModel = ({ CalendarSettings, Calendar, Calendars, Members, Member, Addresses, Address, isAllDay, tzid }) => {
+    const { DefaultEventDuration: defaultEventDuration = DEFAULT_EVENT_DURATION } = CalendarSettings;
+    const dateTimeModel = getInitialDateTimeModel(defaultEventDuration, tzid);
+    const notificationModel = getNotificationModels(CalendarSettings);
+    const memberModel = getInitialMemberModel(Addresses, Members, Member, Address);
+    const calendarsModel = getCalendarsModel(Calendar, Calendars);
+
+    return {
+        title: '',
+        location: '',
+        description: '',
+        frequency: FREQUENCY.ONCE,
+        isAllDay,
+        defaultEventDuration,
+        ...notificationModel,
+        ...memberModel,
+        ...dateTimeModel,
+        ...calendarsModel
+    };
+};
+
+export const getExistingEvent = ({ veventComponent, veventValarmComponent, tzid }) => {
     const isAllDay = isIcalAllDay(veventComponent);
     const isRecurring = isIcalRecurring(veventComponent);
 
     const newModel = propertiesToModel(veventComponent);
-    const newDateTime = propertiesToDateTimeModel(veventComponent, isAllDay, tzid, start, end);
+    const newDateTime = propertiesToDateTimeModel(veventComponent, isAllDay, tzid);
 
     const hasDifferingTimezone = newDateTime.start.tzid !== tzid || newDateTime.end.tzid !== tzid;
 
@@ -107,11 +131,11 @@ export const getExistingEvent = ({ veventComponent, veventValarmComponent, start
         hasMoreOptions: isRecurring || hasDifferingTimezone,
         ...(newModel.isAllDay
             ? {
-                  fullDayNotifications: newNotifications
-              }
+                fullDayNotifications: newNotifications
+            }
             : {
-                  partDayNotifications: newNotifications
-              }),
+                partDayNotifications: newNotifications
+            }),
         start: newDateTime.start,
         end: newDateTime.end
     };
@@ -128,60 +152,56 @@ export const updateItem = (array, index, newItem) => {
 };
 export const removeItem = (array, index) => array.filter((oldValue, i) => i !== index);
 
-export const getEmptyModel = ({
-    isAllDay,
-    title = '',
-    calendarID,
-    CalendarBootstrap,
-    Addresses,
-    start,
-    end,
-    color,
-    tzid
-}) => {
-    const { Members = [], CalendarSettings } = CalendarBootstrap;
+export const getTimeInUtc = ({ date, time, tzid }) => {
+    return toUTCDate(
+        convertZonedDateTimeToUTC(
+            {
+                year: date.getFullYear(),
+                month: date.getMonth() + 1,
+                day: date.getDate(),
+                hours: time.getHours(),
+                minutes: time.getMinutes()
+            },
+            tzid
+        )
+    );
+};
 
-    // By default takes the first one
-    const [Member = {}] = Members;
-    const Address = Addresses.find(({ Email }) => Member.Email === Email);
-    if (!Address) {
-        throw new Error(c('Error').t`Member address not found`);
+export const validate = ({ start, end, title }) => {
+    const errors = {};
+
+    const generalProperties = modelToGeneralProperties({ title });
+
+    if (!generalProperties.summary.value) {
+        errors.title = c('Error').t`Title required`;
     }
 
-    const {
-        DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
-        DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
-        DefaultEventDuration = DEFAULT_EVENT_DURATION
-    } = CalendarSettings;
+    const utcStart = getTimeInUtc(start);
+    const utcEnd = getTimeInUtc(end);
 
-    const { ID: addressID, Email, DisplayName } = Address;
+    if (utcStart > utcEnd) {
+        errors.end = c('Error').t`Start time must be before end time`;
+    }
 
-    return {
-        title,
-        color,
-        isAllDay,
-        calendarID,
-        memberID: Member.ID,
-        addressID,
-        defaultDuration: DefaultEventDuration,
-        ...getStartAndEnd({
-            defaultDuration: DefaultEventDuration,
-            start,
-            end,
-            tzid
-        }),
-        defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
-        defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
-        partDayNotifications: notificationsToModel(DefaultPartDayNotifications, false).filter(
-            ({ type }) => type === NOTIFICATION_TYPE.DEVICE
-        ),
-        fullDayNotifications: notificationsToModel(DefaultFullDayNotifications, true).filter(
-            ({ type }) => type === NOTIFICATION_TYPE.DEVICE
-        ),
-        organizer: {
-            name: DisplayName,
-            email: Email
-        },
-        members: Members
-    };
+    return errors;
+};
+
+const keys = ['title', 'location', 'description'];
+
+export const hasEditedText = (model, otherModel) => {
+    return keys.some((key) => {
+        return model[key] !== otherModel[key];
+    });
+};
+
+export const hasEditedDateTime = ({ time, date }, { time: otherTime, date: otherDate }) => {
+    return time.getHours() !== otherTime.getHours() || time.getMinutes() !== otherTime.getMinutes() || !isSameDay(date, otherDate);
+};
+
+export const hasDoneChanges = (model, otherModel, isEditMode) => {
+    return hasEditedText(model, otherModel) ||
+        isEditMode && (
+            hasEditedDateTime(model.start, otherModel.start) ||
+            hasEditedDateTime(model.end, otherModel.end)
+        );
 };

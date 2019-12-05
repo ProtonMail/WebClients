@@ -48,8 +48,6 @@ const CalendarContainerView = ({
 
     range,
 
-    setCustom,
-
     view,
 
     nowDate,
@@ -61,8 +59,11 @@ const CalendarContainerView = ({
     onCreateEvent,
     onClickToday,
     onChangeView,
+    onChangeDate,
+    onChangeDateRange,
 
-    children
+    children,
+    containerRef
 }) => {
     const { state: expanded, toggle: onToggleExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
@@ -83,35 +84,23 @@ const CalendarContainerView = ({
     const handleSelectDateRange = useCallback(([start, end]) => {
         const numberOfDays = differenceInCalendarDays(end, start);
         const newDate = localToUtcDate(start);
-        if (numberOfDays >= 7) {
-            setCustom({
-                view: MONTH,
-                range: Math.floor(numberOfDays / 7),
-                date: newDate
-            });
-        } else {
-            setCustom({
-                view: WEEK,
-                range: numberOfDays,
-                date: newDate
-            });
-        }
+        onChangeDateRange(newDate, numberOfDays);
     }, []);
 
     const handleClickLocalDate = useCallback((newDate) => {
-        setCustom({ date: localToUtcDate(newDate) });
+        onChangeDate(localToUtcDate(newDate));
     }, []);
 
     const handleClickNext = useCallback(() => {
-        setCustom({ date: getDateDiff(utcDate, range, view, 1) });
+        onChangeDate(getDateDiff(utcDate, range, view, 1));
     }, [utcDate, range, view]);
 
     const handleClickPrev = useCallback(() => {
-        setCustom({ date: getDateDiff(utcDate, range, view, -1) });
+        onChangeDate(getDateDiff(utcDate, range, view, -1));
     }, [utcDate, range, view]);
 
     return (
-        <div className="flex flex-nowrap no-scroll">
+        <div className="flex flex-nowrap no-scroll" ref={containerRef}>
             <AppsSidebar
                 items={[
                     <StorageSpaceStatus key="storage">

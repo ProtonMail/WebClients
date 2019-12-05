@@ -1,9 +1,4 @@
-import {
-    convertUTCDateTimeToZone,
-    convertZonedDateTimeToUTC,
-    fromUTCDate,
-    toUTCDate
-} from 'proton-shared/lib/date/timezone';
+import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import { getDateTimeState } from './state';
 import { FREQUENCY, NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 
@@ -37,30 +32,16 @@ const getTzid = ({ value, parameters: { type, tzid } = {} }) => {
     return value.isUTC ? 'UTC' : tzid;
 };
 
-const getNewTime = (newTime, specificTzid, tzid) => {
-    // If there is no original timezone specified, the time is already in the UTC time of the calendar,
-    if (!specificTzid) {
-        return newTime;
-    }
-    // First convert the new time into true UTC time (and not the UTC time of the calendar)
-    const actualUtcTime = convertZonedDateTimeToUTC(fromUTCDate(newTime), tzid);
-    // Then convert the UTC time into the original timezone.
-    return toUTCDate(convertUTCDateTimeToZone(actualUtcTime, specificTzid));
-};
-
-export const propertiesToDateTimeModel = ({ dtstart, dtend }, isAllDay, tzid, newStart, newEnd) => {
+export const propertiesToDateTimeModel = ({ dtstart, dtend }, isAllDay, tzid) => {
     const tzStart = isAllDay ? undefined : getTzid(dtstart);
     const tzEnd = isAllDay ? undefined : getTzid(dtend);
-
-    const relativeNewStart = newStart ? getNewTime(newStart, tzStart, tzid) : undefined;
-    const relativeNewEnd = newEnd ? getNewTime(newEnd, tzEnd, tzid) : undefined;
 
     const relativeStart = toUTCDate(dtstart.value);
     const relativeEnd = toUTCDate(dtend.value);
 
     return {
-        start: getDateTimeState(relativeNewStart || relativeStart, tzStart || tzid),
-        end: getDateTimeState(relativeNewEnd || relativeEnd, tzEnd || tzid)
+        start: getDateTimeState(relativeStart, tzStart || tzid),
+        end: getDateTimeState(relativeEnd, tzEnd || tzid)
     };
 };
 

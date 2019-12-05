@@ -27,28 +27,22 @@ const removeById = (arr, id) => {
 };
 
 export const sortWithTemporaryEvent = (events, temporaryEvent) => {
+    const eventsCopy = events.concat();
     if (!temporaryEvent) {
-        return sortEvents(events.concat());
+        return sortEvents(eventsCopy);
     }
-
-    if (!temporaryEvent.isAllDay) {
-        const sortedEvents = sortEvents([temporaryEvent, ...events]);
-
-        // When dragging an event, remove the original event
-        if (temporaryEvent.targetId) {
-            removeById(sortedEvents, temporaryEvent.targetId);
-        }
-
-        return sortedEvents;
-    }
-
-    // For all day events, push the event before any event that is overlapping
-    const sortedEvents = sortEvents(events.concat());
 
     // When dragging an event, remove the original event
     if (temporaryEvent.targetId) {
-        removeById(sortedEvents, temporaryEvent.targetId);
+        removeById(eventsCopy, temporaryEvent.targetId);
     }
+
+    if (!temporaryEvent.isAllDay) {
+        return sortEvents([temporaryEvent, ...eventsCopy]);
+    }
+
+    // For all day events, push the event before any event that is overlapping
+    const sortedEvents = sortEvents(eventsCopy);
 
     const idx = sortedEvents.findIndex((a) => {
         return a.end >= temporaryEvent.start;

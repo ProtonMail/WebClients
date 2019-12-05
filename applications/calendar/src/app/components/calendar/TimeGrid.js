@@ -5,24 +5,28 @@ import React, {
     useState,
     useCallback,
     useImperativeHandle,
-    useLayoutEffect
+    useLayoutEffect,
+    useEffect
 } from 'react';
 import { eachDayOfInterval, format } from 'proton-shared/lib/date-fns-utc';
 import PropTypes from 'prop-types';
-import { useWindowSize, classnames } from 'react-components';
+import { classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { isDateYYMMDDEqual } from 'proton-shared/lib/date/date';
+import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 
-import { sortWithTemporaryEvent } from './layout';
-import useTimeGridMouseHandler from './useTimeGridMouseHandler';
+import handleTimeGridMouseDown from './interactions/timeGridMouseHandler';
+import handleDayGridMouseDown from './interactions/dayGridMouseHandler';
+import { toPercent } from './mouseHelpers/mathHelpers';
+
 import useTimeGridEventLayout from './useTimeGridEventLayout';
 import useDayGridEventLayout from './useDayGridEventLayout';
 import { getKey, toUTCMinutes } from './splitTimeGridEventsPerDay';
-import useDayGridMouseHandler from './useDayGridMouseHandler';
-import usePopoverEvent from './usePopoverEvent';
-import useMore from './useMore';
-import { getEvent, isMoreSelected } from './DayGrid';
-import { toPercent } from './mouseHelpers/mathHelpers';
+import HourLines from './TimeGrid/HourLines';
+import HourTexts from './TimeGrid/HourTexts';
+import DayLines from './TimeGrid/DayLines';
+import DayButtons from './TimeGrid/DayButtons';
+import DayEvents from './TimeGrid/DayEvents';
+import RowEvents from './DayGrid/RowEvents';
 
 const hours = Array.from({ length: 24 }, (a, i) => {
     return new Date(Date.UTC(2000, 0, 1, i));
@@ -36,7 +40,6 @@ const TimeGrid = React.forwardRef(
     (
         {
             now,
-            tzid,
             date,
             dateRange: [start, end],
             displaySecondaryTimezone,
@@ -44,37 +47,31 @@ const TimeGrid = React.forwardRef(
             secondaryTimezone,
             secondaryTimezoneOffset = 0,
             events = [],
-            components: { FullDayEvent, PartDayEvent, PopoverEvent, MorePopoverEvent, MoreFullDayEvent },
+            components: { FullDayEvent, PartDayEvent, MoreFullDayEvent },
             formatTime = defaultFormat,
             onClickDate = noop,
-            onEditEvent = noop,
-            defaultEventDuration = 30,
-            defaultEventData,
+            onMouseDown = noop,
             isInteractionEnabled = false,
-            weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+            weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            targetEventRef,
+            targetEventData,
+            targetMoreRef,
+            targetMoreData
         },
         ref
     ) => {
         const timeGridRef = useRef();
+        const dayGridRef = useRef();
         const mainRef = useRef();
         const nowRef = useRef();
         const titleRef = useRef();
         const scrollRef = useRef();
-        const [windowWidth, windowHeight] = useWindowSize();
 
         const [scrollTop, setScrollTop] = useState();
 
         const days = useMemo(() => {
             return eachDayOfInterval(start, end);
         }, [+start, +end]);
-
-        const [temporaryEvent, setTemporaryEvent] = useState();
-        const [selectedEventID, setSelectedEventID] = useState();
-        const [moreDateIdx, setMoreDateIdx] = useState();
-
-        const sortedEvents = useMemo(() => {
-            return sortWithTemporaryEvent(events, temporaryEvent);
-        }, [temporaryEvent, events]);
 
         const formattedHours = useMemo(() => {
             return hours.map(formatTime);
@@ -84,8 +81,8 @@ const TimeGrid = React.forwardRef(
             return hours.map((hourDate) => formatTime(new Date(hourDate.getTime() - secondaryTimezoneOffset)));
         }, [secondaryTimezoneOffset, formatTime]);
 
-        const timeEvents = useMemo(() => sortedEvents.filter((e) => !e.isAllDay), [sortedEvents]);
-        const dayEvents = useMemo(() => sortedEvents.filter((e) => !!e.isAllDay), [sortedEvents]);
+        const timeEvents = useMemo(() => events.filter((e) => !e.isAllDay), [events]);
+        const dayEvents = useMemo(() => events.filter((e) => !!e.isAllDay), [events]);
         const daysRows = useMemo(() => [days], [days]);
 
         const dayEventHeight = 28;
@@ -100,60 +97,8 @@ const TimeGrid = React.forwardRef(
 
         const [eventsPerDay, eventsLaidOut] = useTimeGridEventLayout(timeEvents, days, totalMinutes);
 
-        const onDayGridMouseDown = useDayGridMouseHandler({
-            isInteractionEnabled,
-            setTemporaryEvent,
-            setSelectedEventID,
-            setMoreDateIdx,
-            defaultEventData,
-            events: dayEvents,
-            eventsPerRows,
-            rows: daysRows
-        });
-
-        const onTimeGridMouseDown = useTimeGridMouseHandler({
-            totalDays: days.length,
-            totalMinutes,
-            interval: 30,
-            defaultEventDuration,
-            defaultEventData,
-            setTemporaryEvent,
-            setSelectedEventID,
-            events: timeEvents,
-            eventsPerDay,
-            days
-        });
-
         const nowTop = toUTCMinutes(now) / totalMinutes;
         const nowTopPercentage = toPercent(nowTop);
-
-        const selectedEventRef = useRef();
-        const selectedEvent = useMemo(() => {
-            return sortedEvents.find(({ id }) => id === selectedEventID);
-        }, [selectedEventID, sortedEvents]);
-
-        const [popoverStyle, popoverLayout] = usePopoverEvent(
-            selectedEvent,
-            selectedEventRef,
-            mainRef,
-            days,
-            windowWidth,
-            windowHeight
-        );
-        let isFirstSelection = true;
-
-        const selectedMoreRef = useRef();
-        const [selectedMoreData, moreRow, moreIdx] = useMore(moreDateIdx, eventsPerRows, dayEvents);
-        const selectedMoreDate =
-            typeof moreRow !== 'undefined' && typeof moreIdx !== 'undefined' ? days[moreIdx] : undefined;
-        const [morePopoverStyle, morePopoverLayout] = usePopoverEvent(
-            selectedMoreData,
-            selectedMoreRef,
-            mainRef,
-            days,
-            windowWidth,
-            windowHeight
-        );
 
         const handleScroll = useCallback(({ target }) => {
             setScrollTop(target.scrollTop);
@@ -176,6 +121,48 @@ const TimeGrid = React.forwardRef(
             }),
             [ref, nowTop]
         );
+
+        const handleMouseDownRef = useRef();
+
+        handleMouseDownRef.current = (e) => {
+            if (handleDayGridMouseDown({
+                e,
+                onMouseDown,
+                rows: daysRows,
+                events: dayEvents,
+                eventsPerRows,
+                dayGridEl: dayGridRef.current,
+            })) {
+                return;
+            }
+
+            if (handleTimeGridMouseDown({
+                e,
+                onMouseDown,
+                totalDays: days.length,
+                totalMinutes,
+                interval: 30,
+                events: timeEvents,
+                eventsPerDay,
+                days,
+                timeGridEl: timeGridRef.current,
+                scrollEl: scrollRef.current,
+                titleEl: titleRef.current
+            })) {
+                return;
+            }
+        };
+
+        useEffect(() => {
+            if (!isInteractionEnabled) {
+                return;
+            }
+            const handleMouseDown = (e) => handleMouseDownRef.current(e);
+            window.addEventListener('mousedown', handleMouseDown, true);
+            return () => {
+                window.removeEventListener('mousedown', handleMouseDown, true);
+            };
+    }, [isInteractionEnabled]);
 
         useLayoutEffect(() => {
             ref.current.scrollToNow();
@@ -206,86 +193,44 @@ const TimeGrid = React.forwardRef(
                             <div className="calendar-aside flex flex-column flex-justify-end">
                                 <div className="aligncenter">{primaryTimezone}</div>
                             </div>
-
-                            {days.map((day) => {
-                                return (
-                                    <button
-                                        className="flex-item-fluid aligncenter calendar-grid-heading p0-5"
-                                        type="button"
-                                        key={day.getUTCDate()}
-                                        aria-current={isDateYYMMDDEqual(day, now) ? 'date' : undefined}
-                                        aria-pressed={isDateYYMMDDEqual(day, date) ? true : undefined}
-                                        onClick={() => onClickDate(day)}
-                                    >
-                                        <span className="calendar-grid-heading-number mt0-25">
-                                            <span className="mauto">{day.getUTCDate()}</span>
-                                        </span>
-                                        <span className="calendar-grid-heading-day ellipsis bl mt0 mb0 big">
-                                            <span className="calendar-grid-heading-day-fullname">
-                                                {weekdaysLong[day.getUTCDay()]}
-                                            </span>
-                                            <span
-                                                className="calendar-grid-heading-day-shortname nodesktop notablet"
-                                                aria-hidden="true"
-                                            >
-                                                {weekdaysLong[day.getUTCDay()][0]}
-                                            </span>
-                                        </span>
-                                    </button>
-                                );
-                            })}
+                            <DayButtons
+                                days={days}
+                                now={now}
+                                date={date}
+                                onClickDate={onClickDate}
+                                weekdaysLong={weekdaysLong}
+                            />
                         </div>
 
                         <div className="flex calendar-fullday-row">
                             {displaySecondaryTimezone ? <div className="calendar-aside"></div> : null}
                             <div className="calendar-aside calendar-aside-weekNumber aligncenter"></div>
                             <div className="flex-item-fluid relative">
-                                <div className="flex">
-                                    {days.map((day) => {
-                                        return (
-                                            <div
-                                                className="calendar-grid-dayLine flex-item-fluid"
-                                                key={day.getUTCDate()}
-                                            />
-                                        );
-                                    })}
-                                </div>
+                                <DayLines days={days} />
                                 <div
                                     className="calendar-time-fullday"
                                     style={{ height: actualRows * dayEventHeight + 'px' }}
                                     data-row="0"
-                                    onMouseDownCapture={isInteractionEnabled ? onDayGridMouseDown : undefined}
+                                    ref={dayGridRef}
                                 >
-                                    {eventsInRowStyles.map(({ idx, type, style }) => {
-                                        if (type === 'more') {
-                                            const isSelected = isMoreSelected(idx, moreIdx, 0, moreRow);
-                                            const eventRef = isSelected ? selectedMoreRef : undefined;
-                                            return createElement(MoreFullDayEvent, {
-                                                key: `more${idx}`,
-                                                style,
-                                                more: eventsInRowSummary[idx].more,
-                                                eventRef,
-                                                isSelected
-                                            });
-                                        }
+                                    <RowEvents
+                                        FullDayEvent={FullDayEvent}
+                                        MoreFullDayEvent={MoreFullDayEvent}
 
-                                        const event = getEvent(idx, eventsInRow, dayEvents);
-                                        const isSelected = event.id === selectedEventID;
-                                        const isBeforeNow = now > event.end && !isDateYYMMDDEqual(now, event.end);
-                                        const eventRef = isSelected && isFirstSelection ? selectedEventRef : undefined;
-                                        if (eventRef) {
-                                            isFirstSelection = false;
-                                        }
-                                        return createElement(FullDayEvent, {
-                                            event,
-                                            style,
-                                            key: event.id,
-                                            eventRef,
-                                            formatTime,
-                                            isSelected,
-                                            isBeforeNow
-                                        });
-                                    })}
+                                        eventsInRowStyles={eventsInRowStyles}
+                                        eventsInRowSummary={eventsInRowSummary}
+                                        eventsInRow={eventsInRow}
+                                        events={dayEvents}
+
+                                        formatTime={formatTime}
+                                        now={now}
+
+                                        targetMoreData={targetMoreData}
+                                        targetMoreRef={targetMoreRef}
+
+                                        targetEventRef={targetEventRef}
+                                        targetEventData={targetEventData}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -293,72 +238,30 @@ const TimeGrid = React.forwardRef(
 
                     <div className="flex">
                         {displaySecondaryTimezone ? (
-                            <div className="calendar-aside calendar-secondary-timezone-cell">
-                                {formattedSecondaryHours.map((text, i) => {
-                                    return (
-                                        <div className="calendar-grid-timeBlock" key={i}>
-                                            {i === 0 ? null : (
-                                                <span className="calendar-grid-timeText aligncenter bl relative">
-                                                    {text}
-                                                </span>
-                                            )}
-                                        </div>
-                                    );
-                                })}
-                            </div>
+                            <HourTexts className="calendar-aside calendar-secondary-timezone-cell" hours={formattedSecondaryHours}/>
                         ) : null}
-                        <div className="calendar-aside calendar-primary-timezone-cell">
-                            {formattedHours.map((text, i) => {
-                                return (
-                                    <div className="calendar-grid-timeBlock" key={i}>
-                                        {i === 0 ? null : (
-                                            <span className="calendar-grid-timeText aligncenter bl relative">
-                                                {text}
-                                            </span>
-                                        )}
-                                    </div>
-                                );
-                            })}
-                        </div>
-
+                        <HourTexts className="calendar-aside calendar-primary-timezone-cell" hours={formattedHours}/>
                         <div
                             className="flex flex-item-fluid relative calendar-grid-gridcells"
-                            onMouseDownCapture={isInteractionEnabled ? onTimeGridMouseDown : undefined}
                             ref={timeGridRef}
                         >
-                            <div className="calendar-grid-hours">
-                                {hours.map((hour) => {
-                                    return <div className="calendar-grid-hourLine" key={hour.getUTCHours()} />;
-                                })}
-                            </div>
-
-                            {days.map((day) => {
+                            <HourLines hours={hours} />
+                            {days.map((day, dayIndex) => {
                                 const key = getKey(day);
                                 return (
                                     <div className="flex-item-fluid relative calendar-grid-gridcell h100" key={key}>
-                                        {Array.isArray(eventsPerDay[key]) &&
-                                            eventsPerDay[key].map((eventTimeDay, i) => {
-                                                const { idx } = eventTimeDay;
-                                                const event = timeEvents[idx];
-                                                const style = eventsLaidOut[key][i];
-                                                const isSelected = event.id === selectedEventID;
-                                                const isBeforeNow = now > event.end;
-                                                const eventRef =
-                                                    isSelected && isFirstSelection ? selectedEventRef : undefined;
-                                                if (eventRef) {
-                                                    isFirstSelection = false;
-                                                }
-                                                return createElement(PartDayEvent, {
-                                                    event,
-                                                    style,
-                                                    key: event.id,
-                                                    formatTime,
-                                                    eventRef,
-                                                    isSelected,
-                                                    isBeforeNow
-                                                });
-                                            })}
-                                        {isDateYYMMDDEqual(day, now) ? (
+                                        <DayEvents
+                                            Component={PartDayEvent}
+                                            eventsPerDay={eventsPerDay[key]}
+                                            eventsLaidOut={eventsLaidOut[key]}
+                                            timeEvents={timeEvents}
+                                            dayIndex={dayIndex}
+                                            targetEventData={targetEventData}
+                                            targetEventRef={targetEventRef}
+                                            formatTime={formatTime}
+                                            now={now}
+                                        />
+                                        {isSameDay(day, now) ? (
                                             <div
                                                 className="calendar-grid-nowHourLine absolute"
                                                 ref={nowRef}
@@ -370,37 +273,6 @@ const TimeGrid = React.forwardRef(
                             })}
                         </div>
                     </div>
-                    {morePopoverStyle &&
-                        selectedMoreData &&
-                        createElement(MorePopoverEvent, {
-                            events: selectedMoreData,
-                            style: morePopoverStyle,
-                            layout: morePopoverLayout,
-                            eventRef: selectedEventRef,
-                            selectedEventID,
-                            setSelectedEventID: (id) => {
-                                setSelectedEventID(id);
-                                setTemporaryEvent();
-                            },
-                            selectedMoreDate,
-                            formatTime,
-                            onClose: () => setMoreDateIdx()
-                        })}
-                    {popoverStyle &&
-                        selectedEvent &&
-                        createElement(PopoverEvent, {
-                            event: selectedEvent,
-                            style: popoverStyle,
-                            layout: popoverLayout,
-                            tzid,
-                            formatTime,
-                            setSelectedEventID,
-                            onClose: () => {
-                                setSelectedEventID();
-                                setTemporaryEvent();
-                            },
-                            onEditEvent
-                        })}
                 </div>
             </div>
         );

@@ -2,7 +2,7 @@ import { MORE_BITS } from './constants';
 import { useMemo } from 'react';
 import { getEvent } from './DayGrid';
 
-const useMore = (moreDateIdx, eventsPerRows, events) => {
+const useMore = (moreDateIdx, rows, eventsPerRows, events) => {
     return useMemo(() => {
         if (typeof moreDateIdx === 'undefined') {
             return [];
@@ -20,10 +20,11 @@ const useMore = (moreDateIdx, eventsPerRows, events) => {
             return [];
         }
 
-        const moreData = eventsInRowSummary[moreIdx].events.map((i) => {
+        const moreEvents = eventsInRowSummary[moreIdx].events.map((i) => {
             return getEvent(i, eventsInRow, events);
         });
-        return [moreData, moreRow, moreIdx];
+        const moreDate = rows[moreRow][moreIdx];
+        return [moreEvents, moreDate, moreRow, moreIdx];
     }, [moreDateIdx, eventsPerRows, events]);
 };
 

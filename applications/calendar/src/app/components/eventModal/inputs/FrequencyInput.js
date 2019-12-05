@@ -3,7 +3,7 @@ import { Select } from 'react-components';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { FREQUENCY } from '../../constants';
+import { FREQUENCY } from '../../../constants';
 
 const FrequencyInput = ({ value, onChange }) => {
     const frequencies = [

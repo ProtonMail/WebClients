@@ -7,7 +7,7 @@ import { bestColor } from '../../helpers/color';
 const PartDayEvent = ({
     style,
     formatTime,
-    event: { start, end, data: { Calendar } = {}, data: targetEventData, isAllDay },
+    event: { start, end, data: { Calendar } = {}, data: targetEventData, tmpData, isAllDay },
     isSelected,
     isBeforeNow,
     eventRef
@@ -24,6 +24,8 @@ const PartDayEvent = ({
         };
     }, [calendarColor, style, isAllDay, isSelected]);
 
+    const titleString = tmpData && tmpData.title || !loading && model.title || '';
+
     const timeString = useMemo(() => {
         const timeStart = formatTime(start);
         const timeEnd = formatTime(end);
@@ -31,7 +33,7 @@ const PartDayEvent = ({
     }, [start, end]);
 
     const isLessThanOneHour = end - start < 3600000;
-    const shouldHideTime = isLessThanOneHour && model.title;
+    const shouldHideTime = isLessThanOneHour && titleString;
 
     const content = (() => {
         if (error) {
@@ -46,7 +48,7 @@ const PartDayEvent = ({
                         loading && 'calendar-skeleton-loading'
                     ])}
                 >
-                    {loading ? '' : model.title}
+                    {titleString}
                 </div>
                 <div className={classnames(['ellipsis calendar-eventcell-timestring', shouldHideTime && 'hidden'])}>
                     {timeString}
