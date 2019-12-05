@@ -81,6 +81,11 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
     font-size: 1rem;
 }
 
+.calendar-secondary-timezone-cell,
+.calendar-primary-timezone-cell {
+    border-bottom: $calendar-grid-border;
+}
+
 .calendar-fullday-row {
     border-bottom: $calendar-grid-border;
     padding-bottom: 3px;
