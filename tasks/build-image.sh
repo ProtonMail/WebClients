@@ -10,6 +10,11 @@ GIT_HEAD_DESC="$(git describe --long --dirty --all)"
 
 [ "${CI_JOB_TOKEN:-}" ] && docker login -u gitlab-ci-token -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
 
+if [ "${GCR_CREDENTIALS_JSON:-}" ]; then
+    echo '=> logging in to gcr.io'
+    echo "${GCR_CREDENTIALS_JSON}" | docker login -u _json_key --password-stdin gcr.io
+fi
+
 if [ ! "${CI:-}" ]; then
     COMMIT_TAG='local'
 fi
@@ -68,4 +73,13 @@ if [ "${CI:-}" ]; then
     echo "=> Pushing images..."
     clock docker push "${image_name}:${COMMIT_TAG}"
     clock docker push "${image_name}:${BRANCH_TAG}"
+fi
+
+if [ "${EXTRA_REGISTRY_IMAGE:-}" ]; then
+    extra_image_name="${EXTRA_REGISTRY_IMAGE}/dist"
+
+    docker tag "${image_name}:${COMMIT_TAG}" "${extra_image_name}:${COMMIT_TAG}"
+    docker tag "${image_name}:${BRANCH_TAG}" "${extra_image_name}:${BRANCH_TAG}"
+    clock docker push "${extra_image_name}:${COMMIT_TAG}"
+    clock docker push "${extra_image_name}:${COMMIT_TAG}"
 fi

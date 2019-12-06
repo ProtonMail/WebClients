@@ -7,7 +7,7 @@ const dedent = require('dedent');
 const execa = require('execa');
 const localIp = require('my-local-ip');
 const portfinder = require('portfinder'); // Coming from webpack-dev-server
-const { success } = require('./helpers/log.js'); // Coming from webpack-dev-server
+const { success } = require('./helpers/log');
 
 // Default PORT for webpack
 portfinder.basePort = 8080;
