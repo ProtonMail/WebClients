@@ -7,11 +7,7 @@ const findCalendarID = (calendarBootstrapCache, cb) => {
     // eslint-disable-next-line no-restricted-syntax
     for (const [calendarID, record] of calendarBootstrapCache) {
         // The old bootstrapped result
-        if (
-            record &&
-            record.value &&
-            cb(record.value)
-        ) {
+        if (record && record.value && cb(record.value)) {
             return calendarID;
         }
     }
@@ -37,7 +33,7 @@ export const updateObject = (
         // eslint-disable-next-line no-restricted-syntax
         for (const { ID: CalendarID, CalendarSettings: newValue } of CalendarSettings) {
             const oldRecord = calendarBootstrapCache.get(CalendarID);
-            if (oldRecord.value) {
+            if (oldRecord && oldRecord.value) {
                 // Mutation is on purpose, since it assumes it's never rendered.
                 oldRecord.value.CalendarSettings = newValue;
             }

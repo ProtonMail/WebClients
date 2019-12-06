@@ -52,6 +52,17 @@ export const reactivateCalendarKey = (calendarID, keyID, data) => ({
     data
 });
 
+export const getCalendarGroupReset = () => ({
+    url: 'calendars/keys/reset',
+    method: 'get'
+});
+
+export const resetCalendarGroup = (data) => ({
+    url: 'calendars/keys/reset',
+    method: 'post',
+    data
+});
+
 export const pinPassphrase = (calendarID, eaid, data) => ({
     url: `calendars/${calendarID}/passphrase/members/${eaid}`,
     method: 'put',
