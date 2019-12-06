@@ -4,7 +4,7 @@ set -eo pipefail
 # Store the ref of the commit we use to build the translations
 LAST_COMMIT=$(git rev-parse HEAD);
 # Short version, enough to create a unique commit
-LAST_COMMIT_SHORT="${LAST_COMMIT:0:12}";
+LAST_COMMIT_SHORT="${LAST_COMMIT:0:8}";
 
 echo;
 printf '%-25s' "[LAST_COMMIT]";
@@ -28,7 +28,7 @@ if [ "$3" = 'upgrade' ]; then
     git add -f "$1/*.po"
     git add -f "$1/lang.json"
     git add "$2/*.json"
-    (git commit -m 'i18n ~ Upgrade translations from crowdin' && git push origin $(git rev-parse --abbrev-ref HEAD)) || echo "[i18n] Nothing to upgrade"
+    (git commit -m "[i18n@$LAST_COMMIT_SHORT] ~ Upgrade translations from crowdin" && git push origin $(git rev-parse --abbrev-ref HEAD)) || echo "[i18n] Nothing to upgrade"
 fi
 
 if [ "$3" = 'upgrade-website' ]; then
