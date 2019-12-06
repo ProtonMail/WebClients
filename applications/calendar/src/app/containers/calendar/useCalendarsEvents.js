@@ -167,13 +167,13 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
 
             const calendars = cacheRef.current.calendars;
 
-            let count = 0;
+            let actions = 0;
 
             Calendars.forEach(({ ID: CalendarID, Action }) => {
                 if (Action === DELETE) {
                     if (calendars[CalendarID]) {
                         delete cacheRef.current.calendars[CalendarID];
-                        count++;
+                        actions++;
                     }
                 }
             });
@@ -189,7 +189,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                     }
                     removeEventFromCache(EventID, cacheRef.current.calendars[calendarID]);
                     // TODO: Only increment count if this event happened in the date range we are currently interested in
-                    count++;
+                    actions++;
                 }
 
                 if (Action === UPDATE || Action === CREATE) {
@@ -201,11 +201,11 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                     }
                     setEventInCache(Event, calendarCache);
                     // TODO: Only increment count if this event happened in the date range we are currently interested in
-                    count++;
+                    actions++;
                 }
             });
 
-            if (count > 0) {
+            if (actions > 0) {
                 setRerender((old) => ++old);
             }
         });

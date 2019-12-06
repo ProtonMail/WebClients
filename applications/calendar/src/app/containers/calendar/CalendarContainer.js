@@ -1,9 +1,5 @@
 import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef } from 'react';
-import {
-    useCalendarUserSettings,
-    useCalendarBootstrap,
-    useAddresses,
-} from 'react-components';
+import { useCalendarUserSettings, useCalendarBootstrap, useAddresses } from 'react-components';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -19,6 +15,7 @@ import useCalendarsEvents from './useCalendarsEvents';
 import { getDateRange } from './helper';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
+import AlarmContainer from '../alarms/AlarmContainer';
 //import { hasBit } from 'proton-shared/lib/helpers/bitset';
 //import { CALENDAR_STATUS } from 'proton-shared/lib/calendar/constants';
 
@@ -149,8 +146,8 @@ const CalendarContainer = ({ calendars, history, location }) => {
 
     const visibleCalendars = useMemo(() => {
         return calendars
-            //? calendars.filter(({ Display, Status }) => !!Display && hasBit(Status, CALENDAR_STATUS.ACTIVE))
-            ? calendars.filter(({ Display }) => !!Display)
+            ? //? calendars.filter(({ Display, Status }) => !!Display && hasBit(Status, CALENDAR_STATUS.ACTIVE))
+              calendars.filter(({ Display }) => !!Display)
             : undefined;
     }, [calendars]);
 
@@ -319,8 +316,7 @@ const CalendarContainer = ({ calendars, history, location }) => {
 
     const [containerRef, setContainerRef] = useState();
 
-    const isLoading =
-        loadingCalendarBootstrap || loadingCalendarSettings || loadingEvents || loadingAddresses;
+    const isLoading = loadingCalendarBootstrap || loadingCalendarSettings || loadingEvents || loadingAddresses;
 
     return (
         <CalendarContainerView
@@ -347,31 +343,26 @@ const CalendarContainer = ({ calendars, history, location }) => {
             <InteractiveCalendarView
                 view={view}
                 isLoading={isLoading}
-
                 tzid={tzid}
                 {...timezoneInformation}
-
                 displayWeekNumbers={displayWeekNumbers}
                 displaySecondaryTimezone={displaySecondaryTimezone}
                 weekStartsOn={weekStartsOn}
-
                 now={utcNowDateInTimezone}
                 date={utcDate}
                 dateRange={utcDateRange}
                 events={calendarsEvents}
-
                 onClickDate={handleClickDateWeekView}
                 onChangeDate={handleChangeDate}
-
                 addresses={addresses}
                 calendars={calendars}
                 defaultCalendar={defaultCalendar}
                 defaultCalendarBootstrap={defaultCalendarBootstrap}
-
                 interactiveRef={interactiveRef}
                 containerRef={containerRef}
                 timeGridViewRef={timeGridViewRef}
             />
+            <AlarmContainer calendars={visibleCalendars} tzid={tzid} />
         </CalendarContainerView>
     );
 };
