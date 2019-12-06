@@ -235,6 +235,9 @@ $conversation-icon-size: 4rem !default;
   font-size: 1.2rem;
   opacity: .5;
 }
+.message-infobox {
+  background: $white;
+}
 
 .container-to {
   min-width: 3em;
