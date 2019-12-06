@@ -17,8 +17,8 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
         model.hasMoreOptions && !model.isAllDay ? (
             <TimezoneRow
                 collapseOnMobile={false}
-                startLabel={<Icon name="timezone1"/>}
-                endLabel={<Icon name="timezone1"/>}
+                startLabel={<Icon name="timezone1" />}
+                endLabel={<Icon name="timezone1" />}
                 start={model.start}
                 end={model.end}
                 onChangeStart={(start) => setModel({ ...model, start })}
@@ -29,7 +29,7 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
     const calendarRow = model.calendars.length ? (
         <CalendarSelectRow
             collapseOnMobile={false}
-            label={<Icon name="calendar"/>}
+            label={<Icon name="calendar" />}
             options={model.calendars}
             value={model.calendar}
             onChange={({ id, color }) => setModel({ ...model, calendar: { id, color } })}
@@ -41,7 +41,7 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
         <>
             <TitleRow
                 collapseOnMobile={false}
-                label={<Icon name="circle"/>}
+                label={<Icon name="circle" />}
                 type={model.type}
                 value={model.title}
                 error={errors.title}
@@ -50,7 +50,7 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
             />
             <DateTimeRow
                 collapseOnMobile={false}
-                label={<Icon name="clock"/>}
+                label={<Icon name="clock" />}
                 model={model}
                 setModel={setModel}
                 endError={errors.end}
@@ -73,14 +73,13 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
             {calendarRow}
             <LocationRow
                 collapseOnMobile={false}
-                // todo icon
-                label={<Icon name="domains"/>}
+                label={<Icon name="address" />}
                 value={model.location}
                 onChange={(location) => setModel({ ...model, location })}
             />
             <DescriptionRow
                 collapseOnMobile={false}
-                label={<Icon name="note"/>}
+                label={<Icon name="note" />}
                 value={model.description}
                 onChange={(description) => setModel({ ...model, description })}
             />

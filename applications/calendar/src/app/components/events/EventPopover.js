@@ -1,5 +1,5 @@
 import React from 'react';
-import { SmallButton, PrimaryButton, Loader, useLoading, useNotifications, Alert } from 'react-components';
+import { SmallButton, PrimaryButton, Loader, useLoading, useNotifications, Alert, Icon } from 'react-components';
 import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { c } from 'ttag';
@@ -47,7 +47,7 @@ const EventPopover = ({ formatTime, onEdit, onDelete, onClose, style, popoverRef
     if (error) {
         const errorMessage = error.message || '';
         return (
-            <div style={style} className="eventpopover p1" ref={popoverRef}>
+            <div style={style} className="eventpopover" ref={popoverRef}>
                 <PopoverHeader onClose={onClose}>
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
@@ -65,17 +65,17 @@ const EventPopover = ({ formatTime, onEdit, onDelete, onClose, style, popoverRef
 
     if (isLoading) {
         return (
-            <div style={style} className="eventpopover p1" ref={popoverRef}>
+            <div style={style} className="eventpopover" ref={popoverRef}>
                 <Loader />
             </div>
         );
     }
 
     return (
-        <div style={style} className="eventpopover p1" ref={popoverRef}>
+        <div style={style} className="eventpopover" ref={popoverRef}>
             <PopoverHeader onClose={onClose}>
                 <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={model.title}>
-                    {model.title}
+                    <Icon name="circle" color={Calendar.Color} size={25} /> {model.title}
                 </h1>
             </PopoverHeader>
             <PopoverContent>
