@@ -183,3 +183,10 @@ $ proton-i18n crowdin --list --type --limit=95 > po/i18n.txt
 ``` 
 
 > _list based on the code of the translation and limit progress >= 95 + approved >= 95_
+
+
+## Tests
+
+### Update test linter
+
+Add a use case inside `test/js` then run `./test/run.sh generate`
