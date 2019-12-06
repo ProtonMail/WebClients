@@ -44,6 +44,7 @@ function create {
     git commit --allow-empty -m "Initial commit";
     git push origin "deploy-$1";
     git checkout "$CURRENT_BRANCH";
+    git fetch
 }
 
 if [ "$1" = '--check' ]; then
