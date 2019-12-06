@@ -40,8 +40,6 @@ if [ "$1" = 'test' ]; then
     echo -e "\e[32m ✔ lint translations for valid\e[0m";
   fi;
 
-  cmp  $EXPECTATION_BROKEN test/output-broken.log
-
   if [ "$(cat test/output-broken.log)" != "$expectedBroken" ]; then
     hasError=true;
     echo -e " 💥 \e[1m\e[31mwrong output for BROKEN\e[39m\e[0m"
