@@ -78,7 +78,7 @@ const guessTimezone = (timezones) => {
     try {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         // Ensure it exists.
-        return timezones.find((tz) => tz === timezone);
+        return findTimeZone(timezone).name;
     } catch (error) {
         const date = new Date();
         const timezoneOffset = date.getTimezoneOffset();
