@@ -133,7 +133,8 @@ const useCalendarsAlarms = (calendars, lookAhead = 2 * DAY * 1000) => {
 
             let actions = 0;
 
-            const { cache, start, end } = cacheRef.current;
+            const { cache, end } = cacheRef.current;
+            const now = new Date();
 
             Calendars.forEach(({ ID: CalendarID, Action }) => {
                 if (Action === DELETE) {
@@ -152,7 +153,7 @@ const useCalendarsAlarms = (calendars, lookAhead = 2 * DAY * 1000) => {
 
                 const hasCalendarInCache = !!cache[CalendarID];
                 const occurenceInMs = Occurrence > 0 ? Occurrence * 1000 : -1;
-                const isAlarmInRange = Occurrence !== -1 && occurenceInMs >= start && occurenceInMs <= end;
+                const isAlarmInRange = Occurrence !== -1 && occurenceInMs >= now && occurenceInMs <= end;
 
                 return hasCalendarInCache && isAlarmInRange;
             });
