@@ -14,14 +14,15 @@ import { HOUR } from '../../constants';
 
 const MIN_CUTOFF = -HOUR * 1000;
 
-const displayNotification = (text) => {
-    create(c('Title').t`Calendar alarm`, {
+const displayNotification = ({ title = c('Title').t`Calendar alarm`, text, ...rest }) => {
+    create(title, {
         body: text,
         icon: calendarSvg,
         timeout: 10000,
         onClick() {
             window.focus();
-        }
+        },
+        ...rest
     });
 };
 
@@ -48,32 +49,16 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
         let unmounted;
 
         const run = () => {
-            if (!cacheRef.current) {
-                cacheRef.current = { seen: new Set(), next: undefined };
-            }
-            const { seen, next } = cacheRef.current;
-
-            const { ID, Occurrence, CalendarID, EventID } = getFirstUnseenAlarm(alarms, seen) || { ID: 'non-existing' };
-
-            if (
-                next &&
-                next.id === ID &&
-                next.occurrence === Occurrence &&
-                next.calendarID === CalendarID &&
-                next.eventID === EventID
-            ) {
+            if (unmounted) {
                 return;
             }
-            cacheRef.current.next = {
-                id: ID,
-                occurrence: Occurrence,
-                eventID: EventID,
-                calendarID: CalendarID
-            };
-
-            if (timeoutHandle) {
-                clearTimeout(timeoutHandle);
+            if (!cacheRef.current) {
+                cacheRef.current = new Set();
             }
+
+            const { ID, Occurrence, CalendarID, EventID } = getFirstUnseenAlarm(alarms, cacheRef.current) || {
+                ID: 'non-existing'
+            };
 
             if (ID === 'non-existing') {
                 return;
@@ -85,13 +70,8 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
             const delay = Math.max(diff, 0);
 
             timeoutHandle = setTimeout(() => {
-                if (unmounted) {
-                    return;
-                }
-
                 // Eagerly add the event to seen, ignore if it would fail
-                cacheRef.current.seen.add(ID);
-                cacheRef.current.next = undefined;
+                cacheRef.current.add(ID);
 
                 // Ignore the event if it's in the past after the cutoff
                 if (diff < MIN_CUTOFF) {
@@ -106,7 +86,7 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
                             return;
                         }
                         const text = getAlarmMessage(eventRaw, new Date(), tzid);
-                        displayNotification(text);
+                        displayNotification({ text });
                     });
 
                 setTimeout(run, 0);
