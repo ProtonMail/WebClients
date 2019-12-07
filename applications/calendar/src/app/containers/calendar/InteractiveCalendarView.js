@@ -71,6 +71,7 @@ const InteractiveCalendarView = ({
 
     onClickDate,
     onChangeDate,
+    onInteraction,
 
     calendars,
     addresses,
@@ -98,6 +99,10 @@ const InteractiveCalendarView = ({
     const isCreatingEvent = tmpData && !tmpEvent;
     const isEditingEvent = tmpData && !!tmpEvent;
     const isInTemporaryBlocking = tmpData && hasDoneChanges(tmpData, tmpDataOriginal, isEditingEvent);
+
+    useEffect(() => {
+        onInteraction && onInteraction(!!temporaryEvent);
+    }, [!!temporaryEvent]);
 
     useUnload(isInTemporaryBlocking ? c('Alert').t`By leaving now, you will lose your event.` : undefined);
 

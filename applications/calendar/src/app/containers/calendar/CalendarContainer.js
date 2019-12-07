@@ -141,6 +141,7 @@ const customReducer = (oldState, newState) => {
 const CalendarContainer = ({ calendars, history, location }) => {
     const [calendarSettings, loadingCalendarSettings] = useCalendarUserSettings();
     const [addresses, loadingAddresses] = useAddresses();
+    const [disableCreate, setDisableCreate] = useState(false);
 
     const interactiveRef = useRef();
 
@@ -333,7 +334,9 @@ const CalendarContainer = ({ calendars, history, location }) => {
             utcDefaultDate={utcDefaultDate}
             utcDate={utcDate}
             utcDateRange={utcDateRange}
-            onCreateEvent={() => interactiveRef.current && interactiveRef.current.createEvent()}
+            onCreateEvent={
+                disableCreate ? undefined : () => interactiveRef.current && interactiveRef.current.createEvent()
+            }
             onClickToday={handleClickToday}
             onChangeDate={handleChangeDate}
             onChangeDateRange={handleChangeDateRange}
@@ -354,6 +357,7 @@ const CalendarContainer = ({ calendars, history, location }) => {
                 events={calendarsEvents}
                 onClickDate={handleClickDateWeekView}
                 onChangeDate={handleChangeDate}
+                onInteraction={(active) => setDisableCreate(active)}
                 addresses={addresses}
                 calendars={calendars}
                 defaultCalendar={defaultCalendar}

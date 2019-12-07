@@ -82,7 +82,8 @@ const CalendarSidebar = ({
             <div className="pl1 pr1 pb1 flex-item-noshrink">
                 <PrimaryButton
                     className="pm-button--large bold mt0-25 w100"
-                    onClick={() => onCreateEvent({ type: 'event' })}
+                    disabled={!onCreateEvent}
+                    onClick={() => onCreateEvent()}
                 >{c('Action').t`New event`}</PrimaryButton>
             </div>
             <div className="nomobile flex-item-noshrink">{miniCalendar}</div>
