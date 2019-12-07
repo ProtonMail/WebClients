@@ -103,8 +103,8 @@ export const getTimezone = () => {
     return timezone;
 };
 
-export const getTimezoneOffset = (nowDate, timezone) => {
-    return getUTCOffset(nowDate, findTimeZone(timezone));
+export const getTimezoneOffset = (nowDate, tzid) => {
+    return getUTCOffset(nowDate, findTimeZone(tzid));
 };
 
 export const formatTimezoneOffset = (offset) => {
@@ -179,8 +179,8 @@ const findZoneTransitionIndex = ({
     unixTime,
     untils,
     offsets,
-    moveAmbiguousForward = false,
-    moveInvalidForward = false
+    moveAmbiguousForward = true, // move an ambiguous date like Sunday 27 October 2019 2:00 AM CET, which corresponds to two times because of DST change, to the latest of the two
+    moveInvalidForward = true // move an invalid date like Sunday 31 March 2019 2:00 AM CET, which does not correspond to any time because of DST change, to Sunday 31 March 2019 3:00 AM CET
 }) => {
     const max = untils.length - 1;
 
