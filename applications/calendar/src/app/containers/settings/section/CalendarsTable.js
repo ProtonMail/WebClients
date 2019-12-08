@@ -1,44 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import {
-    Icon,
-    Alert,
-    Table,
-    TableHeader,
-    TableBody,
-    TableRow,
-    DropdownActions,
-    useApi,
-    useEventManager,
-    useNotifications,
-    useLoading,
-    useModals,
-    ConfirmModal
-} from 'react-components';
-import { removeCalendar } from 'proton-shared/lib/api/calendars';
+import { Icon, Table, TableHeader, TableBody, TableRow, DropdownActions } from 'react-components';
 
-import CalendarModal from '../CalendarModal';
-
-const CalendarsTable = ({ calendars }) => {
-    const api = useApi();
-    const { call } = useEventManager();
-    const { createModal } = useModals();
-    const { createNotification } = useNotifications();
-    const [loading, withLoading] = useLoading();
-
-    const handleDelete = async (ID) => {
-        await new Promise((resolve, reject) => {
-            createModal(
-                <ConfirmModal title={c('Title').t`Confirm delete`} onClose={reject} onConfirm={resolve}>
-                    <Alert>{c('Info').t`Are you sure you want to delete this calendar?`}</Alert>
-                </ConfirmModal>
-            );
-        });
-        await api(removeCalendar(ID));
-        await call();
-        createNotification({ text: c('Success').t`Calendar removed` });
-    };
-
+const CalendarsTable = ({ calendars, onEdit, onDelete, loading }) => {
     return (
         <Table>
             <TableHeader cells={[c('Header').t`Name`, c('Header').t`Actions`]} />
@@ -48,15 +12,11 @@ const CalendarsTable = ({ calendars }) => {
                     const list = [
                         {
                             text: c('Action').t`Edit`,
-                            onClick() {
-                                createModal(<CalendarModal calendar={calendar} />);
-                            }
+                            onClick: () => onEdit(calendar)
                         },
                         calendars.length > 1 && {
                             text: c('Action').t`Delete`,
-                            onClick() {
-                                withLoading(handleDelete(ID));
-                            }
+                            onClick: () => onDelete(calendar)
                         }
                     ].filter(Boolean);
 
