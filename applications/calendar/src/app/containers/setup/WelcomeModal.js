@@ -18,13 +18,13 @@ import { createCalendar, updateCalendarUserSettings } from 'proton-shared/lib/ap
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
 import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
+import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 
 import { DEFAULT_CALENDAR, SETTINGS_TIME_FORMAT } from '../../constants';
 import CalendarModal from '../../containers/settings/CalendarModal';
 import CalendarCreating from './CalendarCreating';
 import CalendarReady from './CalendarReady';
 import { setupCalendarKeys } from './resetHelper';
-import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 
 const WelcomeModal = (props) => {
     const calendarRef = useRef();
@@ -53,10 +53,8 @@ const WelcomeModal = (props) => {
         }
 
         const [{ ID: primaryAddressID, Email: primaryAddressEmail = '' }] = addresses;
-        const {
-            privateKey: primaryAddressKey,
-            publicKey: primaryAddressPublicKey
-        } = getPrimaryKey(await getAddressKeys(primaryAddressID)) || {};
+        const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
+            getPrimaryKey(await getAddressKeys(primaryAddressID)) || {};
         if (!primaryAddressKey || !primaryAddressKey.isDecrypted()) {
             throw new Error(c('Error').t`Primary address key is not decrypted.`);
         }
@@ -75,11 +73,13 @@ const WelcomeModal = (props) => {
         const defaultTimeFormat = SETTINGS_TIME_FORMAT.H24;
 
         await Promise.all([
-            api(updateCalendarUserSettings({
-                PrimaryTimezone: getTimezone(),
-                AutoDetectPrimaryTimezone: 0,
-                TimeFormat: defaultTimeFormat
-            })),
+            api(
+                updateCalendarUserSettings({
+                    PrimaryTimezone: getTimezone(),
+                    AutoDetectPrimaryTimezone: 1,
+                    TimeFormat: defaultTimeFormat
+                })
+            ),
             setupCalendarKeys({
                 api,
                 calendars: [Calendar],
