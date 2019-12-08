@@ -15,7 +15,7 @@ const createDragCreateEvent = ({
     rows,
     eventsPerRows,
     dayGridEl,
-    onMouseDown,
+    onMouseDown
 }) => {
     let endTargetDate;
     let oldMouseX = -1;
@@ -29,8 +29,8 @@ const createDragCreateEvent = ({
         action: ACTIONS.CREATE_DOWN,
         payload: {
             type: TYPE.DAYGRID,
-            idx: targetRow,
-        },
+            idx: targetRow
+        }
     });
 
     // Not allowed, abort
@@ -71,12 +71,12 @@ const createDragCreateEvent = ({
         if (isAfter) {
             result = {
                 start: getNewTime(startTargetDate, 0),
-                end: getNewTime(endTargetDate, 0),
+                end: getNewTime(endTargetDate, 0)
             };
         } else {
             result = {
                 start: getNewTime(endTargetDate, 0),
-                end: getNewTime(startTargetDate, 0),
+                end: getNewTime(startTargetDate, 0)
             };
         }
 
@@ -86,13 +86,13 @@ const createDragCreateEvent = ({
                 type: TYPE.DAYGRID,
                 idx: currentTargetRow,
                 result
-            },
+            }
         });
     };
 
     const handleMouseUp = (e) => {
-        window.removeEventListener('mouseup', handleMouseUp, true);
-        window.removeEventListener('mousemove', handleMouseMove, true);
+        document.removeEventListener('mouseup', handleMouseUp, true);
+        document.removeEventListener('mousemove', handleMouseMove, true);
 
         e.preventDefault();
         e.stopPropagation();
@@ -104,13 +104,13 @@ const createDragCreateEvent = ({
                     type: TYPE.DAYGRID,
                     idx: currentTargetRow,
                     result
-                },
+                }
             });
         } else {
             // No range created, just a simple click
             result = {
                 start: getNewTime(startTargetDate, 0),
-                end: getNewTime(startTargetDate, 0),
+                end: getNewTime(startTargetDate, 0)
             };
             callback({
                 action: ACTIONS.CREATE_UP,
@@ -118,28 +118,19 @@ const createDragCreateEvent = ({
                     type: TYPE.DAYGRID,
                     idx: targetRow,
                     result
-                },
+                }
             });
         }
 
         callback = undefined;
     };
 
-    window.addEventListener('mouseup', handleMouseUp, true);
-    window.addEventListener('mousemove', handleMouseMove, true);
+    document.addEventListener('mouseup', handleMouseUp, true);
+    document.addEventListener('mousemove', handleMouseMove, true);
     blockClick();
 };
 
-const createDragMoveEvent = ({
-    e,
-    event,
-    targetRow,
-    targetDay,
-    daysPerRow,
-    eventsPerRows,
-    dayGridEl,
-    onMouseDown,
-}) => {
+const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, eventsPerRows, dayGridEl, onMouseDown }) => {
     let oldIdx = targetRow * daysPerRow + targetDay;
     const initialIdx = oldIdx;
     let result;
@@ -158,7 +149,7 @@ const createDragMoveEvent = ({
             type: TYPE.DAYGRID,
             idx: targetRow,
             event
-        },
+        }
     });
 
     if (!callback) {
@@ -188,7 +179,7 @@ const createDragMoveEvent = ({
 
         result = {
             start: getDiffTime(start, differenceInDays, 0),
-            end: getDiffTime(end, differenceInDays, 0),
+            end: getDiffTime(end, differenceInDays, 0)
         };
 
         callback({
@@ -196,14 +187,14 @@ const createDragMoveEvent = ({
             payload: {
                 type: TYPE.DAYGRID,
                 idx: currentTargetRow,
-                result,
-            },
+                result
+            }
         });
     };
 
     const handleMouseUp = (e) => {
-        window.removeEventListener('mouseup', handleMouseUp, true);
-        window.removeEventListener('mousemove', handleMouseMove, true);
+        document.removeEventListener('mouseup', handleMouseUp, true);
+        document.removeEventListener('mousemove', handleMouseMove, true);
 
         e.preventDefault();
         e.stopPropagation();
@@ -215,7 +206,7 @@ const createDragMoveEvent = ({
                     type: TYPE.DAYGRID,
                     idx: currentTargetRow,
                     result
-                },
+                }
             });
         } else {
             callback({
@@ -223,7 +214,7 @@ const createDragMoveEvent = ({
                 payload: {
                     type: TYPE.DAYGRID,
                     idx: targetRow,
-                    event,
+                    event
                 }
             });
         }
@@ -231,30 +222,23 @@ const createDragMoveEvent = ({
         callback = undefined;
     };
 
-    window.addEventListener('mouseup', handleMouseUp, true);
-    window.addEventListener('mousemove', handleMouseMove, true);
+    document.addEventListener('mouseup', handleMouseUp, true);
+    document.addEventListener('mousemove', handleMouseMove, true);
     blockClick();
 };
 
 const createUpMoreEvent = (cb) => {
     const handleMouseUp = (e) => {
-        window.removeEventListener('mouseup', handleMouseUp, true);
+        document.removeEventListener('mouseup', handleMouseUp, true);
         e.preventDefault();
         e.stopPropagation();
         cb();
     };
-    window.addEventListener('mouseup', handleMouseUp, true);
+    document.addEventListener('mouseup', handleMouseUp, true);
     blockClick();
 };
 
-export default ({
-    e,
-    onMouseDown,
-    rows,
-    eventsPerRows,
-    events,
-    dayGridEl
-}) => {
+export default ({ e, onMouseDown, rows, eventsPerRows, events, dayGridEl }) => {
     const { target } = e;
 
     const rowElement = findUpwards(target, dayGridEl, (el) => typeof el.dataset.row !== 'undefined');
@@ -309,7 +293,7 @@ export default ({
                 events: moreEvents,
                 idx: eventStyle.idx,
                 row: targetRow
-            },
+            }
         });
         if (!callback) {
             return;

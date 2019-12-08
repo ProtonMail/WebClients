@@ -99,6 +99,7 @@ const InteractiveCalendarView = ({
     const isCreatingEvent = tmpData && !tmpEvent;
     const isEditingEvent = tmpData && !!tmpEvent;
     const isInTemporaryBlocking = tmpData && hasDoneChanges(tmpData, tmpDataOriginal, isEditingEvent);
+    const isScrollDisabled = interactiveData && !temporaryEvent;
 
     useEffect(() => {
         onInteraction && onInteraction(!!temporaryEvent);
@@ -518,6 +519,7 @@ const InteractiveCalendarView = ({
                 formatDate={formatDate}
                 weekdaysLong={weekdaysLong}
                 timeGridViewRef={timeGridViewRef}
+                isScrollDisabled={isScrollDisabled}
             />
             <Popover
                 containerRef={document.body}

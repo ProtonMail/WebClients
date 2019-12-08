@@ -23,9 +23,8 @@ const getAutoScrollOptions = (titleEl) => {
     return {
         marginTop: titleElRect.height + margin,
         marginBottom: margin
-    }
+    };
 };
-
 
 const getType = (/*position, offset*/) => {
     /*
@@ -65,8 +64,8 @@ const createDragCreateMouseDown = ({
         action: ACTIONS.CREATE_DOWN,
         payload: {
             type: TYPE.TIMEGRID,
-            idx: startDate,
-        },
+            idx: startDate
+        }
     });
 
     // Not allowed, abort
@@ -107,9 +106,7 @@ const createDragCreateMouseDown = ({
         endTargetDate = targetDate;
         endTargetMinutes = newEndTargetMinutes;
 
-        const isAfter =
-            endTargetDate * totalMinutes + endTargetMinutes >=
-            targetDate * totalMinutes + targetMinutes;
+        const isAfter = endTargetDate * totalMinutes + endTargetMinutes >= targetDate * totalMinutes + targetMinutes;
 
         const endDate = days[endTargetDate];
 
@@ -117,12 +114,12 @@ const createDragCreateMouseDown = ({
             const newEnd = Math.min(totalMinutes, endTargetMinutes + interval);
             result = {
                 start: getNewTime(startDate, targetMinutes),
-                end: getNewTime(endDate, newEnd),
+                end: getNewTime(endDate, newEnd)
             };
         } else {
             result = {
                 start: getNewTime(endDate, endTargetMinutes),
-                end: getNewTime(startDate, targetMinutes),
+                end: getNewTime(startDate, targetMinutes)
             };
         }
 
@@ -132,14 +129,13 @@ const createDragCreateMouseDown = ({
                 type: TYPE.TIMEGRID,
                 idx: endTargetDate,
                 result
-            },
+            }
         });
-
     };
 
     const handleMouseUp = (e) => {
-        window.removeEventListener('mouseup', handleMouseUp, true);
-        window.removeEventListener('mousemove', handleMouseMove, true);
+        document.removeEventListener('mouseup', handleMouseUp, true);
+        document.removeEventListener('mousemove', handleMouseMove, true);
         autoScroll.onMouseUp(e);
 
         // The action was to drag & drop to create an event, a temporary event may or may not already exist.
@@ -153,9 +149,10 @@ const createDragCreateMouseDown = ({
                     type: TYPE.TIMEGRID,
                     idx: endTargetDate,
                     result
-                },
+                }
             });
-        } else { // No d&d, just a click on the timegrid.
+        } else {
+            // No d&d, just a click on the timegrid.
             // No range created, just a simple click
             const start = getNewTime(startDate, targetMinutes);
 
@@ -168,7 +165,7 @@ const createDragCreateMouseDown = ({
                         start,
                         end: start
                     }
-                },
+                }
             });
 
             e.preventDefault();
@@ -178,11 +175,10 @@ const createDragCreateMouseDown = ({
         callback = undefined;
     };
 
-    window.addEventListener('mouseup', handleMouseUp, true);
-    window.addEventListener('mousemove', handleMouseMove, true);
+    document.addEventListener('mouseup', handleMouseUp, true);
+    document.addEventListener('mousemove', handleMouseMove, true);
     blockClick();
 };
-
 
 const createDragMoveEvent = ({
     e,
@@ -216,7 +212,7 @@ const createDragMoveEvent = ({
             type: TYPE.TIMEGRID,
             event,
             idx: targetDate
-        },
+        }
     });
 
     // Move was not allowed, abort
@@ -237,7 +233,7 @@ const createDragMoveEvent = ({
                 type: TYPE.TIMEGRID,
                 result,
                 day
-            },
+            }
         });
     };
 
@@ -265,7 +261,7 @@ const createDragMoveEvent = ({
 
             result = {
                 start: newStart,
-                end: newEnd,
+                end: newEnd
             };
 
             handleMove(e, result, currentTargetDate);
@@ -285,7 +281,7 @@ const createDragMoveEvent = ({
                     const diffTimeWithPadding = addMinutes(diffTime, extra);
                     result = {
                         start: end,
-                        end: diffTimeWithPadding,
+                        end: diffTimeWithPadding
                     };
                 } else {
                     const diffTimeWithPadding = addMinutes(diffTime, -extra);
@@ -308,7 +304,7 @@ const createDragMoveEvent = ({
                     const diffTimeWithPadding = addMinutes(diffTime, -extra);
                     result = {
                         start: diffTimeWithPadding,
-                        end: start,
+                        end: start
                     };
                 }
             }
@@ -318,8 +314,8 @@ const createDragMoveEvent = ({
     };
 
     const handleMouseUp = (e) => {
-        window.removeEventListener('mouseup', handleMouseUp, true);
-        window.removeEventListener('mousemove', handleMouseMove, true);
+        document.removeEventListener('mouseup', handleMouseUp, true);
+        document.removeEventListener('mousemove', handleMouseMove, true);
         autoScroll.onMouseUp(e);
 
         // The action was to drag & drop the event
@@ -333,9 +329,10 @@ const createDragMoveEvent = ({
                     type: TYPE.TIMEGRID,
                     result,
                     idx: currentTargetDate
-                },
+                }
             });
-        } else { // Click on the event
+        } else {
+            // Click on the event
             e.preventDefault();
             e.stopPropagation();
 
@@ -351,8 +348,8 @@ const createDragMoveEvent = ({
         callback = undefined;
     };
 
-    window.addEventListener('mouseup', handleMouseUp, true);
-    window.addEventListener('mousemove', handleMouseMove, true);
+    document.addEventListener('mouseup', handleMouseUp, true);
+    document.addEventListener('mousemove', handleMouseMove, true);
     blockClick();
 };
 
@@ -423,8 +420,11 @@ export default ({
 
     const type = getType(eventTargetPosition, 0.2);
 
-    const normalizedType = (type === DRAG_EVENT_TIME_UP && event.start.getUTCDate() !== day.getUTCDate()) ||
-    (type === DRAG_EVENT_TIME_DOWN && event.end.getUTCDate() !== day.getUTCDate()) ? DRAG_EVENT_MOVE : type;
+    const normalizedType =
+        (type === DRAG_EVENT_TIME_UP && event.start.getUTCDate() !== day.getUTCDate()) ||
+        (type === DRAG_EVENT_TIME_DOWN && event.end.getUTCDate() !== day.getUTCDate())
+            ? DRAG_EVENT_MOVE
+            : type;
 
     createDragMoveEvent({
         e,

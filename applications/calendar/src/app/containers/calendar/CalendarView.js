@@ -43,6 +43,7 @@ const CalendarView = ({
 
     onClickDate,
     timeGridViewRef,
+    isScrollDisabled,
 
     weekdaysLong,
     formatTime,
@@ -58,6 +59,7 @@ const CalendarView = ({
                 secondaryTimezone={secondaryTimezone}
                 secondaryTimezoneOffset={secondaryTimezoneOffset}
                 isInteractionEnabled={isInteractionEnabled}
+                isScrollDisabled={isScrollDisabled}
                 onMouseDown={onMouseDown}
                 targetEventData={targetEventData}
                 targetEventRef={targetEventRef}

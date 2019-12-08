@@ -1,4 +1,3 @@
-
 export const findUpwards = (target, outOfBoundsElement, cb) => {
     let current = target;
     do {
@@ -35,8 +34,8 @@ export const blockClick = () => {
     };
     const cancel = () => {
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        window.removeEventListener('mouseup', handleMouseUp, true);
-        window.removeEventListener('click', block, true)
+        document.removeEventListener('mouseup', handleMouseUp, true);
+        document.removeEventListener('click', block, true);
     };
     let done = false;
     const handleMouseUp = () => {
@@ -48,8 +47,8 @@ export const blockClick = () => {
             cancel();
         }, 1);
     };
-    window.addEventListener('mouseup', handleMouseUp, true);
-    window.addEventListener('click', block, true);
+    document.addEventListener('mouseup', handleMouseUp, true);
+    document.addEventListener('click', block, true);
     return cancel;
 };
 
@@ -64,7 +63,7 @@ export const createAutoScroll = (container, { marginTop = 5, marginBottom = 5, s
                 return;
             }
             const pre = container.scrollTop;
-            container.scrollTop = pre + (direction * speed);
+            container.scrollTop = pre + direction * speed;
             if (container.scrollTop === pre) {
                 return;
             }
@@ -73,7 +72,7 @@ export const createAutoScroll = (container, { marginTop = 5, marginBottom = 5, s
         cb();
         return () => {
             stop = true;
-        }
+        };
     };
 
     const onMouseMove = (e) => {
@@ -107,6 +106,5 @@ export const createAutoScroll = (container, { marginTop = 5, marginBottom = 5, s
     return {
         onMouseMove,
         onMouseUp
-    }
+    };
 };
-

@@ -18,6 +18,7 @@ import DayLines from './TimeGrid/DayLines';
 import DayButtons from './TimeGrid/DayButtons';
 import DayEvents from './TimeGrid/DayEvents';
 import RowEvents from './DayGrid/RowEvents';
+import { disableScroll, enableScroll } from './mouseHelpers/scrollHelper';
 
 const hours = Array.from({ length: 24 }, (a, i) => {
     return new Date(Date.UTC(2000, 0, 1, i));
@@ -43,6 +44,7 @@ const TimeGrid = React.forwardRef(
             onClickDate = noop,
             onMouseDown = noop,
             isInteractionEnabled = false,
+            isScrollDisabled = false,
             weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
             targetEventRef,
             targetEventData,
@@ -153,11 +155,28 @@ const TimeGrid = React.forwardRef(
                 return;
             }
             const handleMouseDown = (e) => handleMouseDownRef.current(e);
-            window.addEventListener('mousedown', handleMouseDown, true);
+            document.addEventListener('mousedown', handleMouseDown, true);
             return () => {
-                window.removeEventListener('mousedown', handleMouseDown, true);
+                document.removeEventListener('mousedown', handleMouseDown, true);
             };
         }, [isInteractionEnabled]);
+
+        useEffect(() => {
+            const target = scrollRef.current;
+            if (!target) {
+                return;
+            }
+            if (isScrollDisabled) {
+                disableScroll(target);
+            } else {
+                enableScroll(target);
+            }
+            return () => {
+                if (isScrollDisabled) {
+                    enableScroll(target);
+                }
+            };
+        }, [!!isScrollDisabled, scrollRef.current]);
 
         useLayoutEffect(() => {
             ref.current.scrollToNow();
