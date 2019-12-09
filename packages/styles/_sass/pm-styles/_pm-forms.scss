@@ -148,6 +148,7 @@ textarea[required].pm-field.field-pristine:invalid {
   display: inline-flex;
   border: 1px solid $pm-global-border;
   border-radius: 2px;
+  min-width: 1.6rem;
   width: 1.6rem;
   height: 1.6rem;
   margin: auto .5rem auto 0;
