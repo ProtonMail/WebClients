@@ -26,6 +26,9 @@
 .border-top {
   border-top: 1px solid $pm-global-border;
 }
+.border-top--dashed {
+  border-top-style: dashed;
+}
 .border-left {
   border-left: 1px solid $pm-global-border;
 }
