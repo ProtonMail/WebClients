@@ -203,6 +203,10 @@ svg {
   }
 }
 
+.fixed {
+  position: fixed;
+}
+
 /* hardware-acceleration activation */
 .hardware-accelerated {
   @include vendor-prefix(transform, translateZ(0));
