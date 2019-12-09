@@ -76,7 +76,7 @@ const CalendarView = ({
                 components={components}
                 ref={timeGridViewRef}
                 week={week}
-                weekDaysLong={weekdaysLong}
+                weekdaysLong={weekdaysLong}
             />
         );
     }
@@ -99,7 +99,7 @@ const CalendarView = ({
                 formatDate={formatDate}
                 onClickDate={onClickDate}
                 components={components}
-                weekDaysLong={weekdaysLong}
+                weekdaysLong={weekdaysLong}
             />
         );
     }
