@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2019-11-25 09:24\n"
+"PO-Revision-Date: 2019-12-04 18:21\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -121,7 +121,7 @@ msgctxt "Action"
 msgid "Add Filter"
 msgstr "Filter hinzufügen"
 
-#: ./src/templates/payment/paypalView.tpl.html:33
+#: ./src/templates/payment/paypalView.tpl.html:34
 msgctxt "Action"
 msgid "Add PayPal payment method"
 msgstr "PayPal als Zahlungsmethode hinzufügen"
@@ -410,7 +410,7 @@ msgstr "CC BCC"
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:60
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:65
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:101
@@ -460,17 +460,17 @@ msgstr "Schriftgröße ändern"
 #: ./src/templates/ui/chooseLayoutBtns.tpl.html:2
 msgctxt "Action"
 msgid "Change layout"
-msgstr "Layout ändern"
+msgstr "Darstellung ändern"
 
 #: ./src/templates/ui/chooseLayoutBtns.tpl.html:10
 msgctxt "Action"
 msgid "Change layout (columns)"
-msgstr "Layout ändern (Spalten)"
+msgstr "Darstellung ändern (Spalten)"
 
 #: ./src/templates/ui/chooseLayoutBtns.tpl.html:20
 msgctxt "Action"
 msgid "Change layout (rows)"
-msgstr "Layout ändern (Zeilen)"
+msgstr "Darstellung ändern (Zeilen)"
 
 #: ./src/templates/views/account.tpl.html:137
 msgctxt "Action"
@@ -512,8 +512,8 @@ msgctxt "Action"
 msgid "Change verification number"
 msgstr "Bestätigungsnummer ändern"
 
-#: ./src/templates/payment/paypalView.tpl.html:23
-#: ./src/templates/payment/paypalView.tpl.html:40
+#: ./src/templates/payment/paypalView.tpl.html:24
+#: ./src/templates/payment/paypalView.tpl.html:41
 msgctxt "Action"
 msgid "Check out with PayPal"
 msgstr "Mit PayPal bezahlen"
@@ -606,6 +606,7 @@ msgstr "Alle Formatierungen entfernen"
 #: ./src/templates/modals/payment/modal.tpl.html:19
 #: ./src/templates/modals/payment/modal.tpl.html:62
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:3
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:50
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
 #: ./src/templates/modals/releaseNotes.tpl.html:28
@@ -1006,7 +1007,7 @@ msgstr "Abschließen"
 #: ./src/templates/partials/sidebar.tpl.html:20
 msgctxt "Action"
 msgid "Folders / Labels"
-msgstr "Ordner / Kategorien"
+msgstr "Ordner/Kategorien"
 
 #. link to reset mailbox
 #: ./src/templates/authentication/loginUnlock.tpl.html:37
@@ -1538,7 +1539,7 @@ msgstr "Sicher antworten"
 #: ./src/templates/ui/navigation/navigationReport.tpl.html:7
 msgctxt "Action"
 msgid "Report bug"
-msgstr "Bug melden"
+msgstr "Fehler melden"
 
 #: ./src/templates/message/phishingBtn.tpl.html:7
 msgctxt "Action"
@@ -1847,7 +1848,7 @@ msgstr "Diese Nachricht enthält eingebettete Grafiken"
 #: ./src/app/message/directives/displayContentBtn.js:5
 msgctxt "Action"
 msgid "This message contains remote content"
-msgstr "Diese Nachricht enthält entfernte Inhalte"
+msgstr "Diese Nachricht enthält Inhalte aus externen Quellen"
 
 #: ./src/templates/modals/trustPublicKey.tpl.html:41
 msgctxt "Action"
@@ -1860,7 +1861,7 @@ msgid "Trust Public Keys"
 msgstr "Öffentlichen Schlüsseln vertrauen"
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:6
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:51
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:56
 msgctxt "Action"
 msgid "Try again"
 msgstr "Erneut versuchen"
@@ -1903,7 +1904,6 @@ msgstr "Aktualisieren"
 #. link to dashboard
 #: ./src/templates/dashboard/overviewSection.tpl.html:23
 #: ./src/templates/dashboard/overviewSection.tpl.html:42
-#: ./src/templates/ui/navigation/navigation.tpl.html:7
 #: ./src/templates/views/members.tpl.html:58
 #: ./src/templates/views/members.tpl.html:71
 #: ./src/templates/views/members.tpl.html:84
@@ -1955,7 +1955,7 @@ msgctxt "Action"
 msgid "Uploading"
 msgstr "Lade hoch"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:54
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:59
 msgctxt "Action"
 msgid "Use a different payment method"
 msgstr "Eine andere Zahlungsmethode verwenden"
@@ -1971,7 +1971,7 @@ msgid "User"
 msgstr "Benutzer"
 
 #: ./src/templates/modals/domain/verification.tpl.html:38
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:61
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:66
 msgctxt "Action"
 msgid "Verify"
 msgstr "Verifizieren"
@@ -2316,7 +2316,7 @@ msgstr "Mindestbetrag unterschritten • ({{ ::validator.amountMin / 100 }} {{::
 #: ./src/templates/views/appearance.tpl.html:188
 msgctxt "Bubbule info in appearance sent and drafts folders"
 msgid "Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder."
-msgstr "Die Einstellung \"Verschobene einbeziehen\" bedeutet, dass Gesendet/Entwürfe-Nachrichten, die in andere Ordner verschoben wurden, weiterhin im Gesendet/Entwürfe Ordner angezeigt werden."
+msgstr "Die Einstellung „Verschobene einschließen” bedeutet, dass gesendete Nachrichten und Entwürfe, die in andere Ordner verschoben wurden, weiterhin in den Ordnern „Gesendet” und „Entwürfe” angezeigt werden."
 
 #: ./src/app/bugReport/services/bugReportApi.js:126
 msgctxt "Bug report successfully"
@@ -2372,7 +2372,7 @@ msgstr "Visionary aktualisieren"
 #: ./src/app/dashboard/directives/selectPlan.js:20
 msgctxt "Button to select plan on the dashboard"
 msgid "Upgrade to Plus"
-msgstr "Auf den Plus-Tarif aktualisieren"
+msgstr "Zu Plus wechseln"
 
 #: ./src/app/dashboard/directives/selectPlan.js:21
 msgctxt "Button to select plan on the dashboard"
@@ -2921,7 +2921,7 @@ msgstr "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, mu
 #: ./src/templates/dashboard/visionaryColumn.tpl.html:3
 msgctxt "Dashboard free plan title"
 msgid "Current Plan"
-msgstr "Aktueller Tarif"
+msgstr "Aktuelles Paket"
 
 #: ./src/templates/dashboard/professionalColumn.tpl.html:13
 #: ./src/templates/dashboard/professionalColumn.tpl.html:18
@@ -3090,7 +3090,7 @@ msgstr "Unbegrenztes Senden"
 #: ./src/templates/dashboard/professionalColumn.tpl.html:3
 msgctxt "Dashboard plan title"
 msgid "Current Plan"
-msgstr "Aktueller Tarif"
+msgstr "Aktuelles Paket"
 
 #: ./src/templates/dashboard/freeColumn.tpl.html:33
 msgctxt "Dashboard plan type"
@@ -3351,6 +3351,11 @@ msgstr "(Rabatt wird an der Kasse gezeigt)"
 msgctxt "Discount displayed in the dashboard"
 msgid "Get 20% off when you get both ProtonMail and ProtonVPN"
 msgstr "Sie erhalten 20% Rabatt, wenn Sie sowohl ProtonMail als auch ProtonVPN bestellen."
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:14
+msgctxt "Discount offer X% off"
+msgid "off"
+msgstr "Aus"
 
 #: ./src/templates/views/domains.tpl.html:131
 msgctxt "Domain status"
@@ -3928,6 +3933,11 @@ msgctxt "Error"
 msgid "The attachment will be downloaded but it will still be encrypted."
 msgstr "Der Anhang wird heruntergeladen, bleibt jedoch weiterhin verschlüsselt."
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:49
+msgctxt "Error"
+msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+msgstr "Der von Ihnen verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwenden Sie einen anderen Browser oder melden Sie sich über einen Computer an."
+
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:27
 msgctxt "Error"
 msgid "The code is too long, max 8 characters"
@@ -4152,7 +4162,7 @@ msgstr "Importieren fehlgeschlagen. Bitte überprüfen Sie die Importdatei oder 
 #: ./src/templates/ui/dateTimePicker.tpl.html:22
 msgctxt "Error input"
 msgid "Please enter a valid date and time."
-msgstr "Bitte eine gültige E-Mail-Adresse eingeben."
+msgstr "Bitte ein gültiges Datum und eine gültige Uhrzeit eingeben"
 
 #: ./src/templates/ui/dateTimePicker.tpl.html:21
 msgctxt "Error input"
@@ -4232,17 +4242,17 @@ msgstr "Ungültige E-Mail-Adresse oder Passwort"
 #: ./src/templates/formUtils/cardView.tpl.html:6
 msgctxt "Example user"
 msgid "Thomas Anderson"
-msgstr "Thomas Anderson"
+msgstr "Max Mustermann"
 
 #: ./src/templates/modals/addAddress.tpl.html:39
 msgctxt "Example user"
 msgid "thomas.anderson"
-msgstr "thomas.anderson"
+msgstr "max.mustermann"
 
 #: ./src/templates/modals/member.tpl.html:23
 msgctxt "Exemple name for the user"
 msgid "ex: Thomas Anderson"
-msgstr "z.B.: Thomas Anderson"
+msgstr "z.B.: Max Mustermann"
 
 #: ./src/templates/sidebar/sidebarContact.tpl.html:20
 msgctxt "Export contacts button in the sidebar"
@@ -5038,7 +5048,7 @@ msgstr "Teilnehmende"
 #: ./src/templates/autoresponder/autoresponder.tpl.html:3
 msgctxt "Info"
 msgid "Automatic replies can respond automatically to incoming messages (such as when you are on vacation and can't respond)."
-msgstr "Automatische Antworten können automatisch auf eingehende Nachrichten reagieren (z. B. wenn Sie im Urlaub sind und deshalb nicht antworten können)."
+msgstr "„Automatisches Antworten” kann automatisch auf eingehende Nachrichten reagieren (z. B. wenn Sie im Urlaub sind und deshalb nicht antworten können)."
 
 #: ./src/templates/views/members.tpl.html:77
 msgctxt "Info"
@@ -5081,10 +5091,14 @@ msgid "Billed as {{amount}} /yr"
 msgstr "Berechnet als {{amount}}/Jahr"
 
 #: ./src/app/blackFriday/directives/blackFriday.js:20
+msgctxt "Info"
+msgid "Billed as {{price}} for 1 year"
+msgstr "Berechnet werden {{price}} für ein Jahr"
+
 #: ./src/app/blackFriday/directives/blackFriday.js:22
 msgctxt "Info"
-msgid "Billed as {{price}}"
-msgstr "Abgerechnet als {{price}}"
+msgid "Billed as {{price}} for 2 years"
+msgstr "Berechnet werden {{price}} für zwei Jahre"
 
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
@@ -5130,7 +5144,7 @@ msgstr "Wenn Sie die Seite verlassen, wird diese Nachricht verworfen. Sie könne
 #: ./src/app/settings/services/composerSettings.js:22
 msgctxt "Info"
 msgid "Change composer mode to {{value}}"
-msgstr "Nachrichtenformat ändern zu {{value}}"
+msgstr "Nachrichtenformat geändert zu {{value}}"
 
 #: ./src/app/settings/services/composerSettings.js:25
 msgctxt "Info"
@@ -5224,7 +5238,7 @@ msgstr "Eigener Filter gelöscht"
 #: ./src/templates/filter/modal.tpl.html:23
 msgctxt "Info"
 msgid "Custom filters work on all new emails, including incoming emails as well as sent emails"
-msgstr "Benutzerdefinierte Filter funktionieren bei allen neuen E-Mails, einschließlich eingehender und gesendeter Nachrichten"
+msgstr "Benutzerdefinierte Filter funktionieren bei allen neuen E-Mails, einschließlich eingehender und ausgehender Nachrichten"
 
 #: ./src/templates/views/appearance.tpl.html:142
 msgctxt "Info"
@@ -5369,6 +5383,7 @@ msgctxt "Info"
 msgid "Every 2 years"
 msgstr "Alle 2 Jahre"
 
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:30
 #: ./src/templates/views/payments.tpl.html:38
 msgctxt "Info"
 msgid "Expired"
@@ -5465,7 +5480,7 @@ msgstr "Wenn diese Domäne derzeit aktiv E-Mails empfängt, erstellen Sie alle v
 #: ./src/templates/partials/wizard.tpl.html:44
 msgctxt "Info"
 msgid "If you have questions or need help, please visit <a href=\"https://protonmail.com/support\" target=\"_blank\">our support page</a> to find troubleshooting guides and contact our support team. If you find a bug in ProtonMail, please let us know! You can send us a bug report by clicking <em>Report bug</em> <strong>(1)</strong>"
-msgstr "Wenn Sie Fragen haben oder Hilfe benötigen, besuchen Sie bitte <a href=\"https://protonmail.com/support\" target=\"_blank\">unsere Support Seite</a> um Anleitungen zur Fehlersuche zu finden und unser Support-Team zu kontaktieren. Wenn Sie einen Bug in ProtonMail entdecken, teilen Sie uns diesen bitte mit! Sie können uns einen Bug-Report senden indem Sie auf <em>Bugs melden</em> <strong>(1)</strong> klicken"
+msgstr "Wenn Sie Fragen haben oder Hilfe benötigen, besuchen Sie bitte <a href=\"https://protonmail.com/support\" target=\"_blank\">unsere Support Seite</a> um Anleitungen zur Fehlersuche zu finden und unser Support-Team zu kontaktieren. Wenn Sie einen Fehler in ProtonMail entdecken, teilen Sie uns diesen bitte mit! Sie können uns einen Bug-Report senden indem Sie auf <em>Bugs melden</em> <strong>(1)</strong> klicken"
 
 #: ./src/templates/modals/domain/dmarc.tpl.html:12
 msgctxt "Info"
@@ -5538,7 +5553,7 @@ msgstr "Schlüssel reaktiviert"
 #: ./src/app/ui/directives/chooseLayoutBtns.js:33
 msgctxt "Info"
 msgid "Layout saved"
-msgstr "Layout gespeichert"
+msgstr "Darstellung gespeichert"
 
 #: ./src/app/message/directives/unsubscribePanel.js:20
 #: ./src/templates/message/messageAutoGenerated.tpl.html:4
@@ -5768,7 +5783,7 @@ msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr "PayPal ist zurzeit nicht verfügbar, bitte versuchen Sie es später erneut."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:43
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
 msgctxt "Info"
 msgid "Payment can take a few minutes to fully verify."
 msgstr "Die vollständige Überprüfung der Zahlung kann einige Minuten dauern."
@@ -5859,7 +5874,7 @@ msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "Bitte den Anhang antippen und festhalten und „In neuem Tab öffnen” wählen."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:48
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:53
 msgctxt "Info"
 msgid "Please try again, use a different payment method, or call your bank for assistance."
 msgstr "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an Ihre Bank."
@@ -5874,17 +5889,17 @@ msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
 msgstr "Bitte wechseln Sie zu einem kostenpflichtigen Tarif, um diese Premium-Funktion nutzen zu können."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:35
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
 msgctxt "Info"
 msgid "Please verify payment at the new tab which was opened."
 msgstr "Bitte überprüfen Sie die Zahlung im neu geöffneten Tab."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:37
 msgctxt "Info"
 msgid "Please verify the card in the new tab which was opened."
 msgstr "Bitte überprüfen Sie die Karte im neu geöffneten Tab."
 
-#: ./src/templates/payment/paypalView.tpl.html:15
+#: ./src/templates/payment/paypalView.tpl.html:16
 msgctxt "Info"
 msgid "Please verify your PayPal account at the new tab which was opened."
 msgstr "Bitte überprüfen Sie Ihr PayPal-Konto im neu geöffneten Tab."
@@ -5907,7 +5922,7 @@ msgstr "ProtonMail-Adressen können niemals gelöscht (nur deaktiviert) werden. 
 #: ./src/templates/partials/wizard.tpl.html:21
 msgctxt "Info"
 msgid "ProtonMail allows you to fully customize your inbox experience. By clicking <strong>(1)</strong> you can quickly switch between two possible layouts. You can set a default layout, set your composer style, adjust button layouts, and even switch themes under <em>Settings</em> <span class=\"fa fa-chevron-right\"></span> <em>Appearance</em> <strong>(2)</strong>"
-msgstr "ProtonMail ermöglicht es Ihnen, das Aussehen Ihres Posteingangs vollständig anzupassen. Indem Sie <strong>(1)</strong> klicken, können Sie zwischen zwei verfügbaren Layouts wechseln. Sie können ein Standard-Layout festlegen, das Aussehen des Fensters zum Verfassen, Button-Layouts und sogar Designs unter <em>Einstellungen</em><span class=\"fa fa-chevron-right\"></span><em>Aussehen</em> anpassen <strong>(2)</strong>"
+msgstr "ProtonMail ermöglicht es Ihnen, das Aussehen Ihres Posteingangs vollständig anzupassen. Indem Sie <strong>(1)</strong> klicken, können Sie zwischen zwei verfügbaren Darstellungen wechseln. Sie können ein Standardansicht festlegen, das Aussehen des Fensters zum Verfassen, Symboledarstellung und sogar Designs unter <em>Einstellungen</em><span class=\"fa fa-chevron-right\"></span><em>Aussehen</em> anpassen <strong>(2)</strong>"
 
 #: ./src/templates/modals/changePassword.tpl.html:17
 #: ./src/templates/modals/switchPasswordMode.tpl.html:10
@@ -5933,7 +5948,7 @@ msgstr "ProtonMail unterstützt IMAP/SMTP über die Anwendung „ProtonMail Brid
 #: ./src/templates/views/appearance.tpl.html:42
 msgctxt "Info"
 msgid "ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts."
-msgstr "ProtonMail unterstützt sowohl Spalten- als auch Reihen-Layouts für den Posteingang. Mit dieser Einstellung ist es möglich, zwischen beiden Layouts zu wechseln."
+msgstr "ProtonMail unterstützt sowohl Spalten- als auch Zeilenansichten für den Posteingang. Mit dieser Einstellung ist es möglich, zwischen beiden Darstellungen zu wechseln."
 
 #: ./src/templates/modals/domain/dkim.tpl.html:11
 msgctxt "Info"
@@ -6273,7 +6288,7 @@ msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Dies wird Ihren Account auf einen kostenlosen Account herunterstufen. ProtonMail ist freie Software, die von Spenden und bezahlten Konten unterstützt wird. Bitte erwägen Sie zu spenden, damit wir diesen Service weiterhin kostenlos anbieten können. <br /><br />Hinweis: Zusätzliche Adressen, eigene Domains und Benutzer müssen gelöscht bzw. deaktiviert werden, bevor Sie diese Aktion ausführen können."
 
-#: ./src/templates/payment/paypalView.tpl.html:31
+#: ./src/templates/payment/paypalView.tpl.html:32
 msgctxt "Info"
 msgid "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue."
 msgstr "Dies wird es ermöglichen, PayPal für Ihr Proton-Abonnement zu verwenden. Wir werden Sie in einem neuen Browser-Tab zu PayPal weiterleiten. Wenn Sie irgendwelche Pop-up-Blocker verwenden, deaktivieren Sie diese bitte, um fortzufahren."
@@ -6324,12 +6339,12 @@ msgstr "Führen Sie ein Upgrade auf ein kostenpflichtiges Konto durch, um E-Mail
 #: ./src/templates/vpn/vpnView.tpl.html:38
 msgctxt "Info"
 msgid "Use the following credentials to log into the <a href=\"https://protonvpn.com/download\" target=\"_blank\">ProtonVPN native clients</a>."
-msgstr "Benutzen Sie die folgenden Anmeldeinformationen um sich in den <a href=\"https://protonvpn.com/download\" target=\"_blank\">nativen ProtonVPN-Clients</a> anzumelden."
+msgstr "Verwenden Sie die folgenden Anmeldeinformationen, um sich bei den <a href=\"https://protonvpn.com/download\" target=\"_blank\">nativen ProtonVPN-Clients</a> anzumelden."
 
 #: ./src/templates/vpn/openVpnSection.tpl.html:10
 msgctxt "Info"
 msgid "Use the following credentials when connecting to ProtonVPN with third party clients, for example: Tunnelblick on MacOS or OpenVPN on GNU/Linux."
-msgstr "Benutzen Sie die folgenden Anmeldeinformationen wenn Sie sich über Drittanwendungen wie zum Beispiel Tunnelblick auf MacOS oder OpenVPN auf GNU/Linux mit ProtonVPN verbinden."
+msgstr "Verwenden Sie die folgenden Anmeldeinformationen, wenn Sie sich z.B. über Drittanwendungen mit ProtonVPN verbinden möchten: „Tunnelblick” auf MacOS oder „OpenVPN” auf GNU/Linux."
 
 #: ./src/app/members/services/editMemberProcess.js:17
 msgctxt "Info"
@@ -6356,8 +6371,8 @@ msgctxt "Info"
 msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character."
 msgstr "Gültige Zeichen sind A-Z, a-z, 0-9, . (Punkt), _ (Unterstrich) und - (Bindestrich). Der Benutzername muss mit einem alphanumerischen Zeichen beginnen und enden."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
-#: ./src/templates/payment/paypalView.tpl.html:17
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:45
+#: ./src/templates/payment/paypalView.tpl.html:18
 msgctxt "Info"
 msgid "Verification can take a few minutes."
 msgstr "Die Überprüfung kann einige Minuten dauern."
@@ -6379,13 +6394,13 @@ msgctxt "Info"
 msgid "Verification of this content’s signature failed"
 msgstr "Überprüfung dieser Signatur fehlgeschlagen"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:24
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:31
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:32
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers."
 msgstr "Die Verifizierung öffnet eine neue Registerkarte. Bitte deaktivieren Sie alle Popup-Blocker."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:26
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately."
 msgstr "Die Verifizierung öffnet einen neuen Tab. Bitte deaktivieren Sie alle Popup-Blocker. <b>Ihr Konto wird nicht belastet</b>. Jeder Betrag, der zur Überprüfung der Karte verwendet wird, wird sofort zurückerstattet."
@@ -6432,8 +6447,8 @@ msgctxt "Info"
 msgid "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard. (UTF-8 encoding). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Need help?</a>"
 msgstr "ProtonMail unterstützt den Import von CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und weiteren Anwendungen. ProtonMail unterstützt außerdem den Import von vCard. (UTF-8-Kodierung). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Benötigen Sie Hilfe?</a>"
 
-#: ./src/templates/payment/paypalView.tpl.html:21
-#: ./src/templates/payment/paypalView.tpl.html:39
+#: ./src/templates/payment/paypalView.tpl.html:22
+#: ./src/templates/payment/paypalView.tpl.html:40
 msgctxt "Info"
 msgid "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
 msgstr "Wir werden Sie in einem neuen Browser-Tab zu PayPal weiterleiten, um diese Transaktion abzuschließen. Wenn Sie einen Popup-Blocker verwenden, deaktivieren Sie diese bitte, um fortzufahren."
@@ -6573,12 +6588,12 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "Sie müssen den privaten Schlüssel Ihrer Organisation mit dem Passwort Ihres Backup-Organisationsschlüssels, der Ihnen vom Organisationsadministrator bereitgestellt wurde, aktivieren."
 
-#: ./src/templates/payment/paypalView.tpl.html:35
+#: ./src/templates/payment/paypalView.tpl.html:36
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
 msgstr "Sie müssen eine Kreditkarte oder ein Bankkonto mit Ihrem PayPal-Konto verknüpfen, um es als Zahlungsmethode hinzufügen zu können."
 
-#: ./src/templates/payment/paypalView.tpl.html:26
+#: ./src/templates/payment/paypalView.tpl.html:27
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please"
 msgstr "Sie müssen eine Kreditkarte oder ein Bankkonto mit Ihrem PayPal-Konto verknüpft haben. Sollte Ihrem PayPal-Konto kein Konto/Kreditkarte zugeordnet sein, klicken Sie bitte auf"
@@ -6600,7 +6615,7 @@ msgctxt "Info"
 msgid "You will be prompted to save the attachment."
 msgstr "Sie werden aufgefordert, den Anhang zu speichern."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:29
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:30
 msgctxt "Info"
 msgid "You will be soon redirected to your bank to verify your payment."
 msgstr "Sie werden in Kürze zu Ihrer Bank weitergeleitet, um Ihre Zahlung zu bestätigen."
@@ -6652,7 +6667,7 @@ msgctxt "Info"
 msgid "Your attachments are secure and encrypted, but to download them requires extra work. We recommend using a different web browser such as Chrome or Firefox for a better user experience."
 msgstr "Ihre Anhänge sind sicher und verschlüsselt aber der Download erfordert zusätzliche Schritte. Wir empfehlen Ihnen einen anderen Webbrowser wie Chrome oder Firefox für eine besseres Nutzungserlebnis zu verwenden."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:19
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:20
 msgctxt "Info"
 msgid "Your bank requires 3-D Secure verification for security purposes."
 msgstr "Ihre Bank benötigt aus Sicherheitsgründen eine „3-D Secure”-Bestätigung."
@@ -6820,7 +6835,7 @@ msgstr "Wird gespeichert"
 #: ./src/templates/message/readReceiptPanel.tpl.html:3
 msgctxt "Info display in the read receipt panel (message view)"
 msgid "The sender has requested a read receipt"
-msgstr "Der Absender hat einen Lesebestätigung angefordert"
+msgstr "Der Absender hat eine Lesebestätigung angefordert"
 
 #: ./src/templates/contact/contactMimetypeSelector.tpl.html:4
 msgctxt "Info for contact MIMEType selector"
@@ -7827,14 +7842,14 @@ msgstr "Supportseite"
 #: ./src/templates/vpn/openVpnSection.tpl.html:12
 msgctxt "Link"
 msgid "What is the difference between ProtonVPN and OpenVPN logins?"
-msgstr "Was ist der Unterschied zwischen ProtonVPN- und OpenVPN-Logins?"
+msgstr "Worin besteht der Unterschied zwischen ProtonVPN- und OpenVPN-Anmeldungen?"
 
 #: ./src/templates/user/humanVerification.tpl.html:40
 msgctxt "Link"
 msgid "Why is this required?"
 msgstr "Warum wird das benötigt?"
 
-#: ./src/templates/payment/paypalView.tpl.html:26
+#: ./src/templates/payment/paypalView.tpl.html:27
 msgctxt "Link"
 msgid "click here"
 msgstr "Hier klicken"
@@ -8295,7 +8310,7 @@ msgstr "Neue Nachricht von {{sender}}"
 #: ./src/app/composer/controllers/composeMessage.js:340
 msgctxt "Notify the user when he try to open more than  composer"
 msgid "Maximum composer reached"
-msgstr "Maximale Anzahl von Verfassern erreicht"
+msgstr "Maximale Anzahl von Verfassen-Fenstern erreicht"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:29
 msgctxt "Number of failed contact during merge"
@@ -8420,6 +8435,11 @@ msgid_plural "User IDs mismatch. The emails {{emails}} are assigned to this key.
 msgstr[0] "Benutzerkennungen stimmen nicht überein. Dieser Schlüssel ist der E-Mail-Adresse {{emails}} zugeordnet."
 msgstr[1] "Benutzerkennungen stimmen nicht überein. Dieser Schlüssel ist den E-Mail-Adressen {{emails}} zugeordnet."
 
+#: ./src/templates/payment/paypalView.tpl.html:4
+msgctxt "PayPal error"
+msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+msgstr "Der von Ihnen verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwenden Sie einen anderen Browser oder melden Sie sich über einen Computer an."
+
 #: ./src/app/settings/controllers/payments.js:100
 msgctxt "Payment"
 msgid "Payment method deleted"
@@ -8450,7 +8470,7 @@ msgctxt "Payment method"
 msgid "Credit Card"
 msgstr "Kreditkarte"
 
-#: ./src/templates/payment/paypalView.tpl.html:4
+#: ./src/templates/payment/paypalView.tpl.html:6
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
 msgstr "Höchstbetrag überschritten"
@@ -8678,7 +8698,7 @@ msgstr "E-Mail-Adresse zur Wiederherstellung"
 #: ./src/templates/contact/contactSelectorForm.tpl.html:15
 msgctxt "Placeholder"
 msgid "Search for emails"
-msgstr "Nach Nachrichten suchen"
+msgstr "Nachrichten durchsuchen"
 
 #: ./src/templates/contact/contactAddressInput.tpl.html:14
 msgctxt "Placeholder"
@@ -8739,7 +8759,7 @@ msgstr "Schlüsselwörter"
 #: ./src/templates/search/searchForm.tpl.html:7
 msgctxt "Placeholder search"
 msgid "Search messages"
-msgstr "Nachrichten suchen"
+msgstr "Nachrichten durchsuchen"
 
 #: ./src/app/payment/services/paymentPlansFormator.js:8
 msgctxt "Plan feature"
@@ -8780,6 +8800,11 @@ msgstr "Unbegrenzte Anzahl Ordner und unbegrenzte Anzahl Kategorien"
 msgctxt "Plan feature"
 msgid "Unlimited sending"
 msgstr "Unbegrenztes Senden"
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:27
+msgctxt "Price offer"
+msgid "Regular price"
+msgstr "Normaler Preis"
 
 #: ./src/app/dashboard/directives/vpnRow.js:25
 msgctxt "ProtonVPN with X connections"
@@ -9368,7 +9393,7 @@ msgctxt "Title"
 msgid "2-year plan"
 msgstr "2-Jahres-Abo"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:16
 msgctxt "Title"
 msgid "3-D Secure verification failed"
 msgstr "„3-D Secure”-Bestätigung fehlgeschlagen"
@@ -9579,7 +9604,7 @@ msgstr "Automatische Antwort"
 #: ./src/templates/autoresponder/autoresponderView.tpl.html:5
 msgctxt "Title"
 msgid "Automatic Replies"
-msgstr "Automatische Antworten"
+msgstr "Automatisches Antworten"
 
 #. Section heading
 #. Settings/Account page form heading for enabling or disabling autosave contacts
@@ -10072,11 +10097,6 @@ msgctxt "Title"
 msgid "Domains"
 msgstr "Domains"
 
-#: ./src/templates/blackFriday/blackFriday.tpl.html:4
-msgctxt "Title"
-msgid "Don't miss out on limited time discounts for newcomers!"
-msgstr "Verpassen Sie keine der zeitlich begrenzten Rabatte für Neueinsteiger!"
-
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
 #: ./src/templates/user/humanVerification.tpl.html:56
@@ -10238,7 +10258,7 @@ msgstr "Fingerabdruck"
 #: ./src/templates/views/labels.tpl.html:6
 msgctxt "Title"
 msgid "Folders / Labels"
-msgstr "Ordner / Kategorien"
+msgstr "Ordner/Kategorien"
 
 #. message metadata
 #. printed message info
@@ -10442,7 +10462,7 @@ msgstr "Sprache"
 #: ./src/templates/views/appearance.tpl.html:36
 msgctxt "Title"
 msgid "Layout"
-msgstr "Layout"
+msgstr "Darstellung"
 
 #: ./src/templates/utils/linkWarningModal.tpl.html:7
 msgctxt "Title"
@@ -10452,12 +10472,12 @@ msgstr "Link bestätigen"
 #: ./src/templates/views/account.tpl.html:265
 msgctxt "Title"
 msgid "Load embedded images"
-msgstr "Eingebettete Bilder laden"
+msgstr "Eingebettete Grafiken laden"
 
 #: ./src/templates/views/account.tpl.html:243
 msgctxt "Title"
 msgid "Load remote content"
-msgstr "Remoteinhalte laden"
+msgstr "Inhalte aus externen Quellen laden"
 
 #: ./src/templates/views/pgp.tpl.html:4
 msgctxt "Title"
@@ -10727,7 +10747,7 @@ msgstr "Zahlungen"
 #: ./src/templates/partials/wizard.tpl.html:19
 msgctxt "Title"
 msgid "Personalize your layout"
-msgstr "Personalisieren Sie Ihr Layout"
+msgstr "Personalisieren Sie Ihre Darstellungsansicht"
 
 #: ./src/templates/payment/paymentPlanOverview.tpl.html:3
 #: ./src/templates/user/signupPayForm.tpl.html:18
@@ -10800,7 +10820,7 @@ msgstr "ProtonVPN"
 #: ./src/templates/vpn/vpnView.tpl.html:62
 msgctxt "Title"
 msgid "ProtonVPN Resources"
-msgstr "ProtonVPN Ressourcen"
+msgstr "ProtonVPN-Quellen"
 
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:6
 msgctxt "Title"
@@ -10845,7 +10865,7 @@ msgstr "Benutzer entfernen"
 #: ./src/templates/modals/bug.tpl.html:6
 msgctxt "Title"
 msgid "Report Bug"
-msgstr "Bug melden"
+msgstr "Fehler melden"
 
 #: ./src/templates/views/account.tpl.html:284
 msgctxt "Title"
@@ -11216,6 +11236,11 @@ msgctxt "Title"
 msgid "Unsubscribe from mailing list?"
 msgstr "Aus der Mailingliste austragen?"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+msgctxt "Title"
+msgid "Unsupported browser"
+msgstr "Nicht unterstützter Browser"
+
 #: ./src/templates/modals/member.tpl.html:14
 msgctxt "Title"
 msgid "Update user"
@@ -11439,11 +11464,6 @@ msgstr "Name / Signatur"
 msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Rechnung"
-
-#: ./src/templates/blackFriday/blackFriday.tpl.html:15
-msgctxt "Title most popular offer"
-msgid "Most popular"
-msgstr "Am beliebtesten"
 
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
@@ -12154,6 +12174,34 @@ msgctxt "Write a feedback about ProtonMail"
 msgid "Your thoughts..."
 msgstr "Ihre Meinung …"
 
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:7
+msgctxt "X days before the end"
+msgid "{{$count}} day"
+msgid_plural "{{$count}} days"
+msgstr[0] "{{$count}} Tag"
+msgstr[1] "{{$count}} Tage"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:10
+msgctxt "X hours before the end"
+msgid "{{$count}} hour"
+msgid_plural "{{$count}} hours"
+msgstr[0] "{{$count}} Stunde"
+msgstr[1] "{{$count}} Stunden"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:13
+msgctxt "X minutes before the end"
+msgid "{{$count}} minute"
+msgid_plural "{{$count}} minutes"
+msgstr[0] "{{$count}} Minute"
+msgstr[1] "{{$count}} Minuten"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:22
+msgctxt "X seconds before the end"
+msgid "{{$count}} second"
+msgid_plural "{{$count}} seconds"
+msgstr[0] "{{$count}} Sekunde"
+msgstr[1] "{{$count}} Sekunden"
+
 #: ./src/templates/contact/contactNoResult.tpl.html:6
 msgctxt "You can Add contact or Import contacts"
 msgid "You can"
@@ -12299,7 +12347,7 @@ msgstr "Ein kostenpflichtiges Konto ist die beste Möglichkeit, ProtonMail zu un
 #: ./src/templates/views/dashboard.tpl.html:37
 msgctxt "dashboard, donation informations"
 msgid "Your donation helps us support more users and continue to develop ProtonMail as free and open source software."
-msgstr "Ihre Spende hilft uns, mehr Benutzer zu unterstützen und ProtonMail als freie und Open Source Software weiterzuentwickeln."
+msgstr "Ihre Spende hilft uns, weitere Benutzer zu unterstützen und ProtonMail als freie und Open Source Software weiterzuentwickeln."
 
 #: ./src/templates/views/domains.tpl.html:71
 msgctxt "domain status"

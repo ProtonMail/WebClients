@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
-"PO-Revision-Date: 2019-11-25 09:21\n"
+"PO-Revision-Date: 2019-12-05 04:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -71,7 +71,7 @@ msgstr "<p>Se han creado demasiadas cuentas de ProtonMail desde su conexión.</p
 msgctxt "Action"
 msgid "1 message moved to {{folder}}"
 msgid_plural "{{number}} messages moved to {{folder}}"
-msgstr[0] "Un mensaje movido a {{folder}}"
+msgstr[0] "1 mensaje movido a {{folder}}"
 msgstr[1] "{{number}} mensajes movidos a {{folder}}"
 
 #: ./src/templates/bridge/bridgeFreePanel.tpl.html:2
@@ -120,7 +120,7 @@ msgctxt "Action"
 msgid "Add Filter"
 msgstr "Añadir Filtro"
 
-#: ./src/templates/payment/paypalView.tpl.html:33
+#: ./src/templates/payment/paypalView.tpl.html:34
 msgctxt "Action"
 msgid "Add PayPal payment method"
 msgstr "Añadir método de pago de PayPal"
@@ -241,7 +241,7 @@ msgstr "Añadir usuario"
 #: ./src/templates/payment/featuresList.tpl.html:14
 msgctxt "Action"
 msgid "Add your domain"
-msgstr "Añadir su dominio"
+msgstr "Añadir tu dominio"
 
 #: ./src/templates/views/domains.tpl.html:74
 msgctxt "Action"
@@ -409,7 +409,7 @@ msgstr "CC CCO"
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:60
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:65
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:101
@@ -511,8 +511,8 @@ msgctxt "Action"
 msgid "Change verification number"
 msgstr "Cambiar número de verificación"
 
-#: ./src/templates/payment/paypalView.tpl.html:23
-#: ./src/templates/payment/paypalView.tpl.html:40
+#: ./src/templates/payment/paypalView.tpl.html:24
+#: ./src/templates/payment/paypalView.tpl.html:41
 msgctxt "Action"
 msgid "Check out with PayPal"
 msgstr "Pagar con PayPal"
@@ -605,6 +605,7 @@ msgstr "Borrar formato"
 #: ./src/templates/modals/payment/modal.tpl.html:19
 #: ./src/templates/modals/payment/modal.tpl.html:62
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:3
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:50
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
 #: ./src/templates/modals/releaseNotes.tpl.html:28
@@ -1475,7 +1476,7 @@ msgstr "Citar"
 #: ./src/templates/message/messageResign.tpl.html:15
 msgctxt "Action"
 msgid "RE-SIGN"
-msgstr "RE-FIRMAR"
+msgstr "VOLVER A FIRMAR"
 
 #: ./src/templates/address/addressKeysView.tpl.html:134
 msgctxt "Action"
@@ -1542,7 +1543,7 @@ msgstr "Notificar error"
 #: ./src/templates/message/phishingBtn.tpl.html:7
 msgctxt "Action"
 msgid "Report phishing"
-msgstr "Reportar suplantación"
+msgstr "Notificar suplantación de identidad"
 
 #: ./src/templates/views/reset-login-password.tpl.html:133
 msgctxt "Action"
@@ -1603,7 +1604,7 @@ msgstr "Revocar privilegios de aministrador"
 #: ./src/templates/views/security.tpl.html:27
 msgctxt "Action"
 msgid "Revoke all other sessions"
-msgstr "Revocar las demás sesiones"
+msgstr "Revocar todas las demás sesiones"
 
 #: ./src/app/members/directives/memberEditBtn.js:13
 msgctxt "Action"
@@ -1692,7 +1693,7 @@ msgstr "Enviar de todos modos"
 #: ./src/templates/formUtils/codeVerificator.tpl.html:70
 msgctxt "Action"
 msgid "Send new code"
-msgstr "Enviar código nuevo"
+msgstr "Enviar nuevo código"
 
 #: ./src/templates/message/readReceiptPanel.tpl.html:5
 msgctxt "Action"
@@ -1770,7 +1771,7 @@ msgstr "Regístrese gratis"
 #: ./src/templates/elements/advancedFilterElement.tpl.html:81
 msgctxt "Action"
 msgid "Size: Large to small"
-msgstr "Tamaño: grande a pequeño"
+msgstr "Tamaño: Grande a pequeño"
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:72
 msgctxt "Action"
@@ -1859,7 +1860,7 @@ msgid "Trust Public Keys"
 msgstr "Confiar claves públicas"
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:6
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:51
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:56
 msgctxt "Action"
 msgid "Try again"
 msgstr "Vuelva a intentarlo"
@@ -1902,7 +1903,6 @@ msgstr "Actualizar"
 #. link to dashboard
 #: ./src/templates/dashboard/overviewSection.tpl.html:23
 #: ./src/templates/dashboard/overviewSection.tpl.html:42
-#: ./src/templates/ui/navigation/navigation.tpl.html:7
 #: ./src/templates/views/members.tpl.html:58
 #: ./src/templates/views/members.tpl.html:71
 #: ./src/templates/views/members.tpl.html:84
@@ -1954,7 +1954,7 @@ msgctxt "Action"
 msgid "Uploading"
 msgstr "Cargando"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:54
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:59
 msgctxt "Action"
 msgid "Use a different payment method"
 msgstr "Use un método de pago diferente"
@@ -1970,7 +1970,7 @@ msgid "User"
 msgstr "Usuario"
 
 #: ./src/templates/modals/domain/verification.tpl.html:38
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:61
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:66
 msgctxt "Action"
 msgid "Verify"
 msgstr "Verificar"
@@ -3354,6 +3354,11 @@ msgctxt "Discount displayed in the dashboard"
 msgid "Get 20% off when you get both ProtonMail and ProtonVPN"
 msgstr "Obtenga 20% de descuento cuando obtiene ambos ProtonMail y ProtonVPN"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:14
+msgctxt "Discount offer X% off"
+msgid "off"
+msgstr "descuento"
+
 #: ./src/templates/views/domains.tpl.html:131
 msgctxt "Domain status"
 msgid "Check your DNS settings."
@@ -3930,6 +3935,11 @@ msgctxt "Error"
 msgid "The attachment will be downloaded but it will still be encrypted."
 msgstr "El adjunto será descargado pero aún estará cifrado."
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:49
+msgctxt "Error"
+msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+msgstr "El navegador que está utilizando no permite que el pago sea autorizado. Utilice un navegador diferente o inicie sesión a través de un ordenador."
+
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:27
 msgctxt "Error"
 msgid "The code is too long, max 8 characters"
@@ -4170,7 +4180,7 @@ msgstr "Por favor ingrese un día del mes y hora válidos."
 #: ./src/templates/ui/monthdayTimePicker.tpl.html:20
 msgctxt "Error input"
 msgid "Please enter a valid day in the month."
-msgstr "Por favor ingrese una día del mes válido."
+msgstr "Por favor ingrese un día del mes válido."
 
 #: ./src/templates/ui/weekdayTimePicker.tpl.html:30
 msgctxt "Error input"
@@ -5084,10 +5094,14 @@ msgid "Billed as {{amount}} /yr"
 msgstr "Facturado como {{amount}}/año"
 
 #: ./src/app/blackFriday/directives/blackFriday.js:20
+msgctxt "Info"
+msgid "Billed as {{price}} for 1 year"
+msgstr "Facturado como {{price}} por 1 año"
+
 #: ./src/app/blackFriday/directives/blackFriday.js:22
 msgctxt "Info"
-msgid "Billed as {{price}}"
-msgstr "Facturado como {{price}}"
+msgid "Billed as {{price}} for 2 years"
+msgstr "Facturado como {{price}} por 2 años"
 
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
@@ -5372,6 +5386,7 @@ msgctxt "Info"
 msgid "Every 2 years"
 msgstr "Cada dos años"
 
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:30
 #: ./src/templates/views/payments.tpl.html:38
 msgctxt "Info"
 msgid "Expired"
@@ -5771,7 +5786,7 @@ msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr "PayPal no está disponible actualmente, por favor inténtelo más tarde."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:43
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
 msgctxt "Info"
 msgid "Payment can take a few minutes to fully verify."
 msgstr "El pago puede tardar unos minutos para verificarse completamente."
@@ -5862,7 +5877,7 @@ msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "Toque y mantenga pulsado el archivo adjunto y seleccione Abrir en nueva pestaña."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:48
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:53
 msgctxt "Info"
 msgid "Please try again, use a different payment method, or call your bank for assistance."
 msgstr "Inténtelo de nuevo, use un método de pago diferente o llame a su banco para obtener ayuda."
@@ -5877,17 +5892,17 @@ msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
 msgstr "Actualice a un plan de pago para usar esta función premium."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:35
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
 msgctxt "Info"
 msgid "Please verify payment at the new tab which was opened."
 msgstr "Verifique que el pago en la pestaña nueva que se abrió."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:37
 msgctxt "Info"
 msgid "Please verify the card in the new tab which was opened."
 msgstr "Verifique la tarjeta en la pestaña nueva que se abrió."
 
-#: ./src/templates/payment/paypalView.tpl.html:15
+#: ./src/templates/payment/paypalView.tpl.html:16
 msgctxt "Info"
 msgid "Please verify your PayPal account at the new tab which was opened."
 msgstr "Verifique su cuenta de PayPal en la pestaña nueva que se abrió."
@@ -6276,7 +6291,7 @@ msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Esto degradará su cuenta a una cuenta gratuita. ProtonMail es un software libre apoyado por donaciones y cuentas de pago. Por favor considere hacer una donación para que podamos seguir ofreciendo un servicio gratuito.<br /><br />Nota: las direcciones adicionales, los dominios personalizados y los usuarios deben ser eliminados antes de realizar esta acción."
 
-#: ./src/templates/payment/paypalView.tpl.html:31
+#: ./src/templates/payment/paypalView.tpl.html:32
 msgctxt "Info"
 msgid "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue."
 msgstr "Esto permitirá a PayPal ser usado para pagar su suscripción a Proton. Le redirigiremos a PayPal en una pestaña nueva del navegador. Si utiliza cualquier bloqueador emergente, desactívelo para continuar."
@@ -6359,8 +6374,8 @@ msgctxt "Info"
 msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character."
 msgstr "Caracteres válidos son A-z, a-z, 0-9, . (punto), _ (guión bajo) y - (guión). El inicio de sesión debe comenzar y terminar con un carácter alfanumérico."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
-#: ./src/templates/payment/paypalView.tpl.html:17
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:45
+#: ./src/templates/payment/paypalView.tpl.html:18
 msgctxt "Info"
 msgid "Verification can take a few minutes."
 msgstr "La verificación puede tardar unos minutos."
@@ -6382,13 +6397,13 @@ msgctxt "Info"
 msgid "Verification of this content’s signature failed"
 msgstr "Falló la verificación de la firma de este contenido"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:24
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:31
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:32
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers."
 msgstr "La verificación abrirá una pestaña nueva, deshabilite cualquier bloqueador de ventanas emergentes."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:26
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately."
 msgstr "La verificación abrirá una pestaña nueva, deshabilite cualquier bloqueador de ventanas emergentes. <b>No se le cobrará</b>. Cualquier monto usado para verificar la tarjeta será reembolsado inmediatamente."
@@ -6435,8 +6450,8 @@ msgctxt "Info"
 msgid "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard. (UTF-8 encoding). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Need help?</a>"
 msgstr "Admitimos formatos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y otras aplicaciones. También admitimos vCard (codificación UTF-8). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">¿Necesita ayuda?</a>"
 
-#: ./src/templates/payment/paypalView.tpl.html:21
-#: ./src/templates/payment/paypalView.tpl.html:39
+#: ./src/templates/payment/paypalView.tpl.html:22
+#: ./src/templates/payment/paypalView.tpl.html:40
 msgctxt "Info"
 msgid "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
 msgstr "Le redirigiremos a PayPal en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
@@ -6576,12 +6591,12 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "Debe activar la clave privada de su organización con la copia de seguridad suministrada por el administrador de la organización."
 
-#: ./src/templates/payment/paypalView.tpl.html:35
+#: ./src/templates/payment/paypalView.tpl.html:36
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
 msgstr "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada con su cuenta de PayPal para añadirla como método de pago."
 
-#: ./src/templates/payment/paypalView.tpl.html:26
+#: ./src/templates/payment/paypalView.tpl.html:27
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please"
 msgstr "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada con su cuenta de PayPal. Si su cuenta de PayPal no tiene eso, por favor haga"
@@ -6603,7 +6618,7 @@ msgctxt "Info"
 msgid "You will be prompted to save the attachment."
 msgstr "Se le pedirá guardar el archivo adjunto."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:29
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:30
 msgctxt "Info"
 msgid "You will be soon redirected to your bank to verify your payment."
 msgstr "Pronto será redirigido a su banco para verificar su pago."
@@ -6655,7 +6670,7 @@ msgctxt "Info"
 msgid "Your attachments are secure and encrypted, but to download them requires extra work. We recommend using a different web browser such as Chrome or Firefox for a better user experience."
 msgstr "Sus archivos adjuntos son seguros y cifrados, pero para descargarlos requiere un trabajo adicional. Recomendamos utilizar un navegador web diferente, como Chrome o Firefox, para una mejor experiencia del usuario."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:19
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:20
 msgctxt "Info"
 msgid "Your bank requires 3-D Secure verification for security purposes."
 msgstr "Su banco requiere la verificación de seguridad 3-D por razones de seguridad."
@@ -7756,7 +7771,7 @@ msgstr "Añadir otra dirección"
 #: ./src/templates/vpn/vpnView.tpl.html:73
 msgctxt "Link"
 msgid "Download Page"
-msgstr "Descargar página"
+msgstr "Página de descarga"
 
 #: ./src/templates/bridge/bridgePaidPanel.tpl.html:3
 msgctxt "Link"
@@ -7839,7 +7854,7 @@ msgctxt "Link"
 msgid "Why is this required?"
 msgstr "¿Por qué se requiere esto?"
 
-#: ./src/templates/payment/paypalView.tpl.html:26
+#: ./src/templates/payment/paypalView.tpl.html:27
 msgctxt "Link"
 msgid "click here"
 msgstr "clic aquí"
@@ -8425,6 +8440,11 @@ msgid_plural "User IDs mismatch. The emails {{emails}} are assigned to this key.
 msgstr[0] "La ID del usuario no coincide. Esta clave está asignada a {{emails}}."
 msgstr[1] "Las ID del usuario no coinciden. Los correos {{emails}} están asignados a esta clave."
 
+#: ./src/templates/payment/paypalView.tpl.html:4
+msgctxt "PayPal error"
+msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+msgstr "El navegador que está utilizando no permite que el pago sea autorizado. Utilice un navegador diferente o inicie sesión a través de un ordenador."
+
 #: ./src/app/settings/controllers/payments.js:100
 msgctxt "Payment"
 msgid "Payment method deleted"
@@ -8455,7 +8475,7 @@ msgctxt "Payment method"
 msgid "Credit Card"
 msgstr "Tarjeta de crédito"
 
-#: ./src/templates/payment/paypalView.tpl.html:4
+#: ./src/templates/payment/paypalView.tpl.html:6
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
 msgstr "Monto por encima del máximo."
@@ -8785,6 +8805,11 @@ msgstr "Carpetas ilimitadas / Etiquetas ilimitadas"
 msgctxt "Plan feature"
 msgid "Unlimited sending"
 msgstr "Envío ilimitado"
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:27
+msgctxt "Price offer"
+msgid "Regular price"
+msgstr "Precio habitual"
 
 #: ./src/app/dashboard/directives/vpnRow.js:25
 msgctxt "ProtonVPN with X connections"
@@ -9376,7 +9401,7 @@ msgctxt "Title"
 msgid "2-year plan"
 msgstr "Plan de dos años"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:16
 msgctxt "Title"
 msgid "3-D Secure verification failed"
 msgstr "Falló la verificación de seguridad 3-D"
@@ -9525,12 +9550,12 @@ msgstr "Monto"
 #: ./src/app/payment/directives/paymentPlanOverview.js:47
 msgctxt "Title"
 msgid "Amount Due"
-msgstr "Monto vencido"
+msgstr "Monto debido"
 
 #: ./src/templates/modals/pay.tpl.html:44
 msgctxt "Title"
 msgid "Amount due"
-msgstr "Importe vencido"
+msgstr "Importe debido"
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:38
 #: ./src/app/ui/factories/pageTitlesModel.js:29
@@ -10080,11 +10105,6 @@ msgctxt "Title"
 msgid "Domains"
 msgstr "Dominios"
 
-#: ./src/templates/blackFriday/blackFriday.tpl.html:4
-msgctxt "Title"
-msgid "Don't miss out on limited time discounts for newcomers!"
-msgstr "¡No se pierda los descuentos por tiempo limitado para los recién llegados!"
-
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
 #: ./src/templates/user/humanVerification.tpl.html:56
@@ -10394,7 +10414,7 @@ msgstr "Saltos"
 #: ./src/app/organization/modals/activateOrganizationModal.js:5
 msgctxt "Title"
 msgid "Key Activation"
-msgstr "Clave de activación"
+msgstr "Activación de clave"
 
 #: ./src/app/address/services/deleteKeyProcess.js:26
 msgctxt "Title"
@@ -10404,7 +10424,7 @@ msgstr "Respaldo de claves"
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:6
 msgctxt "Title"
 msgid "Key password"
-msgstr "Clave de contraseña"
+msgstr "Contraseña de clave"
 
 #: ./src/templates/modals/generateOrganization.tpl.html:41
 msgctxt "Title"
@@ -10858,7 +10878,7 @@ msgstr "Notificar error"
 #: ./src/templates/views/account.tpl.html:284
 msgctxt "Title"
 msgid "Request link confirmation"
-msgstr "Solicitar enlace de confirmación"
+msgstr "Solicitar confirmación de enlace"
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:3
 msgctxt "Title"
@@ -11130,7 +11150,7 @@ msgstr "Color de texto"
 #: ./src/templates/modals/payment/modal.tpl.html:47
 msgctxt "Title"
 msgid "Thank you for your subscription!"
-msgstr "¡Gracias por su suscrpción!"
+msgstr "¡Gracias por su suscripción!"
 
 #: ./src/app/user/directives/signupPayForm.js:21
 msgctxt "Title"
@@ -11223,6 +11243,11 @@ msgstr "Tipo"
 msgctxt "Title"
 msgid "Unsubscribe from mailing list?"
 msgstr "¿Desuscribirse de la lista de correo?"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+msgctxt "Title"
+msgid "Unsupported browser"
+msgstr "Navegador no soportado"
 
 #: ./src/templates/modals/member.tpl.html:14
 msgctxt "Title"
@@ -11447,11 +11472,6 @@ msgstr "Nombre / Firma"
 msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Factura"
-
-#: ./src/templates/blackFriday/blackFriday.tpl.html:15
-msgctxt "Title most popular offer"
-msgid "Most popular"
-msgstr "Más popular"
 
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
@@ -12164,6 +12184,34 @@ msgstr "Puede también enviar de todos modos sin expiración a estos destinatari
 msgctxt "Write a feedback about ProtonMail"
 msgid "Your thoughts..."
 msgstr "Sus pensamientos..."
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:7
+msgctxt "X days before the end"
+msgid "{{$count}} day"
+msgid_plural "{{$count}} days"
+msgstr[0] "{{$count}} día"
+msgstr[1] "{{$count}} días"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:10
+msgctxt "X hours before the end"
+msgid "{{$count}} hour"
+msgid_plural "{{$count}} hours"
+msgstr[0] "{{$count}} hora"
+msgstr[1] "{{$count}} horas"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:13
+msgctxt "X minutes before the end"
+msgid "{{$count}} minute"
+msgid_plural "{{$count}} minutes"
+msgstr[0] "{{$count}} minuto"
+msgstr[1] "{{$count}} minutos"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:22
+msgctxt "X seconds before the end"
+msgid "{{$count}} second"
+msgid_plural "{{$count}} seconds"
+msgstr[0] "{{$count}} segundo"
+msgstr[1] "{{$count}} segundos"
 
 #: ./src/templates/contact/contactNoResult.tpl.html:6
 msgctxt "You can Add contact or Import contacts"

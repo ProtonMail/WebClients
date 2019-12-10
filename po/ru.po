@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2019-11-25 09:32\n"
+"PO-Revision-Date: 2019-12-01 00:21\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -122,7 +122,7 @@ msgctxt "Action"
 msgid "Add Filter"
 msgstr "Добавить фильтр"
 
-#: ./src/templates/payment/paypalView.tpl.html:33
+#: ./src/templates/payment/paypalView.tpl.html:34
 msgctxt "Action"
 msgid "Add PayPal payment method"
 msgstr "Добавить способ оплаты PayPal"
@@ -411,7 +411,7 @@ msgstr "Копия/Скрытая"
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:60
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:65
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:101
@@ -513,8 +513,8 @@ msgctxt "Action"
 msgid "Change verification number"
 msgstr "Изменить номер телефона для проверки"
 
-#: ./src/templates/payment/paypalView.tpl.html:23
-#: ./src/templates/payment/paypalView.tpl.html:40
+#: ./src/templates/payment/paypalView.tpl.html:24
+#: ./src/templates/payment/paypalView.tpl.html:41
 msgctxt "Action"
 msgid "Check out with PayPal"
 msgstr "Оплатить при помощи PayPal"
@@ -607,6 +607,7 @@ msgstr "Очистить всё форматирование"
 #: ./src/templates/modals/payment/modal.tpl.html:19
 #: ./src/templates/modals/payment/modal.tpl.html:62
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:3
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:50
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
 #: ./src/templates/modals/releaseNotes.tpl.html:28
@@ -1861,7 +1862,7 @@ msgid "Trust Public Keys"
 msgstr "Доверять публичным ключам"
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:6
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:51
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:56
 msgctxt "Action"
 msgid "Try again"
 msgstr "Попробовать снова"
@@ -1904,7 +1905,6 @@ msgstr "Обновить"
 #. link to dashboard
 #: ./src/templates/dashboard/overviewSection.tpl.html:23
 #: ./src/templates/dashboard/overviewSection.tpl.html:42
-#: ./src/templates/ui/navigation/navigation.tpl.html:7
 #: ./src/templates/views/members.tpl.html:58
 #: ./src/templates/views/members.tpl.html:71
 #: ./src/templates/views/members.tpl.html:84
@@ -1956,7 +1956,7 @@ msgctxt "Action"
 msgid "Uploading"
 msgstr "Загрузка"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:54
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:59
 msgctxt "Action"
 msgid "Use a different payment method"
 msgstr "Использовать другой способ оплаты"
@@ -1972,7 +1972,7 @@ msgid "User"
 msgstr "Пользователь"
 
 #: ./src/templates/modals/domain/verification.tpl.html:38
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:61
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:66
 msgctxt "Action"
 msgid "Verify"
 msgstr "Подтвердить"
@@ -3360,6 +3360,11 @@ msgctxt "Discount displayed in the dashboard"
 msgid "Get 20% off when you get both ProtonMail and ProtonVPN"
 msgstr "Получите скидку в 20% при заказе ProtonMail и ProtonVPN"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:14
+msgctxt "Discount offer X% off"
+msgid "off"
+msgstr "."
+
 #: ./src/templates/views/domains.tpl.html:131
 msgctxt "Domain status"
 msgid "Check your DNS settings."
@@ -3935,6 +3940,11 @@ msgstr "API ProtonMail отключён:"
 msgctxt "Error"
 msgid "The attachment will be downloaded but it will still be encrypted."
 msgstr "Вложение будет скачано, но в зашифрованном виде."
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:49
+msgctxt "Error"
+msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+msgstr "Браузер, который вы сейчас используете, не позволяет совершить платеж. Пожалуйста, используйте другой браузер или войдите через компьютер."
 
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:27
 msgctxt "Error"
@@ -5098,10 +5108,14 @@ msgid "Billed as {{amount}} /yr"
 msgstr "Оплачивается в сумме {{amount}} /год"
 
 #: ./src/app/blackFriday/directives/blackFriday.js:20
+msgctxt "Info"
+msgid "Billed as {{price}} for 1 year"
+msgstr "Сумма к оплате {{price}} за 1 год"
+
 #: ./src/app/blackFriday/directives/blackFriday.js:22
 msgctxt "Info"
-msgid "Billed as {{price}}"
-msgstr "Сумма к оплате {{price}}"
+msgid "Billed as {{price}} for 2 years"
+msgstr "Сумма к оплате {{price}} за 2 года"
 
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
@@ -5136,7 +5150,7 @@ msgstr "Нажимая \"Отправить\", вы соглашаетесь с�
 #: ./src/app/dashboard/factories/downgrade.js:34
 msgctxt "Info"
 msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
-msgstr ""
+msgstr "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
 
 #: ./src/app/composer/controllers/composeMessage.js:140
 #: ./src/app/routes.js:413
@@ -5386,6 +5400,7 @@ msgctxt "Info"
 msgid "Every 2 years"
 msgstr "Каждые 2 года"
 
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:30
 #: ./src/templates/views/payments.tpl.html:38
 msgctxt "Info"
 msgid "Expired"
@@ -5788,7 +5803,7 @@ msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr "PayPal на данный момент недоступен, пожалуйста, попробуйте позднее."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:43
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
 msgctxt "Info"
 msgid "Payment can take a few minutes to fully verify."
 msgstr "Полная проверка платежа может занять несколько минут."
@@ -5879,7 +5894,7 @@ msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "Пожалуйста, нажмите и удерживайте вложение, затем выберите \"Открыть в новой вкладке\"."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:48
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:53
 msgctxt "Info"
 msgid "Please try again, use a different payment method, or call your bank for assistance."
 msgstr "Пожалуйста, попробуйте ещё раз, используйте другой способ оплаты или обратитесь в ваш банк за помощью."
@@ -5894,17 +5909,17 @@ msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
 msgstr "Пожалуйста, перейдите на платный тариф, чтобы пользоваться этой особой функцией."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:35
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
 msgctxt "Info"
 msgid "Please verify payment at the new tab which was opened."
 msgstr "Пожалуйста, подтвердите оплату в новой вкладке, которая была открыта."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:37
 msgctxt "Info"
 msgid "Please verify the card in the new tab which was opened."
 msgstr "Пожалуйста, подтвердите карту в новой вкладке, которая была открыта."
 
-#: ./src/templates/payment/paypalView.tpl.html:15
+#: ./src/templates/payment/paypalView.tpl.html:16
 msgctxt "Info"
 msgid "Please verify your PayPal account at the new tab which was opened."
 msgstr "Пожалуйста, подтвердите свои счёт/учётную запись PayPal в новой вкладке, которая была открыта."
@@ -5973,7 +5988,7 @@ msgstr "Удалите вложение {{fileName}}"
 #: ./src/app/blackFriday/directives/blackFriday.js:26
 msgctxt "Info"
 msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
-msgstr ""
+msgstr "Автопродление через 1 год по сниженной годовой цене {{price}} в год (скидка 20%)"
 
 #: ./src/app/blackFriday/directives/blackFriday.js:33
 msgctxt "Info"
@@ -6293,7 +6308,7 @@ msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Это понизит вашу учётную запись до бесплатной. ProtonMail является свободным программным обеспечением, поддерживающимся за счёт пожертвований и платных учётных записей. Пожалуйста, рассмотрите возможность пожертвований для того, чтобы мы могли продолжать предоставлять услуги бесплатно.<br /><br />Замечание: дополнительные адреса, пользовательские домены и пользователи должны быть удалены или отключены перед выполнением данного действия."
 
-#: ./src/templates/payment/paypalView.tpl.html:31
+#: ./src/templates/payment/paypalView.tpl.html:32
 msgctxt "Info"
 msgid "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue."
 msgstr "Это позволит вам оплачивать подписку на Proton через PayPal. Мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-нибудь блокировщиками всплывающих окон, пожалуйста, временно отключите их перед продолжением."
@@ -6376,8 +6391,8 @@ msgctxt "Info"
 msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character."
 msgstr "Допустимые знаки: A-Z, a-z, 0-9, . (точка), _ (подчёркивание) и - (дефис). Имя для входа (логин) должно начинаться с буквы/цифры и оканчиваться буквой/цифрой."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
-#: ./src/templates/payment/paypalView.tpl.html:17
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:45
+#: ./src/templates/payment/paypalView.tpl.html:18
 msgctxt "Info"
 msgid "Verification can take a few minutes."
 msgstr "Проверка может занять несколько минут."
@@ -6399,13 +6414,13 @@ msgctxt "Info"
 msgid "Verification of this content’s signature failed"
 msgstr "Проверка подписи этого контакта не удалась"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:24
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:31
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:32
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers."
 msgstr "Для подтверждения откроется новая вкладка. Пожалуйста, отключите любые блокировщики всплывающих окон."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:26
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately."
 msgstr "Для подтверждения оплаты откроется новая вкладка. Пожалуйста, отключите любые блокировщики всплывающих окон. <b>Снятия ваших средств не произойдёт</b>. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
@@ -6452,8 +6467,8 @@ msgctxt "Info"
 msgid "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard. (UTF-8 encoding). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Need help?</a>"
 msgstr "Мы поддерживаем импорт CSV-файлов из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и из некоторых других приложений. Также у нас поддерживается импорт vCard. (Кодировки UTF-8). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Нужна помощь?</a>"
 
-#: ./src/templates/payment/paypalView.tpl.html:21
-#: ./src/templates/payment/paypalView.tpl.html:39
+#: ./src/templates/payment/paypalView.tpl.html:22
+#: ./src/templates/payment/paypalView.tpl.html:40
 msgctxt "Info"
 msgid "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
 msgstr "Для завершения этой транзакции мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-нибудь блокировщиками всплывающих окон, пожалуйста, временно отключите их перед продолжением."
@@ -6593,12 +6608,12 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "Вы должны активировать закрытый ключ своей организации запасным паролем ключа организации, предоставленным администратором вашей организации."
 
-#: ./src/templates/payment/paypalView.tpl.html:35
+#: ./src/templates/payment/paypalView.tpl.html:36
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
 msgstr ""
 
-#: ./src/templates/payment/paypalView.tpl.html:26
+#: ./src/templates/payment/paypalView.tpl.html:27
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please"
 msgstr ""
@@ -6620,7 +6635,7 @@ msgctxt "Info"
 msgid "You will be prompted to save the attachment."
 msgstr "Вам будет предложено сохранить вложение."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:29
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:30
 msgctxt "Info"
 msgid "You will be soon redirected to your bank to verify your payment."
 msgstr "Вскоре вы будете перенаправлены в ваш банк для подтверждения вашего платежа."
@@ -6672,7 +6687,7 @@ msgctxt "Info"
 msgid "Your attachments are secure and encrypted, but to download them requires extra work. We recommend using a different web browser such as Chrome or Firefox for a better user experience."
 msgstr "Ваши вложения защищены и зашифрованы, но для их скачивания требуются дополнительные действия. Для более удобной работы мы рекомендуем использовать другой веб-браузер, такой, как Chrome или Firefox."
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:19
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:20
 msgctxt "Info"
 msgid "Your bank requires 3-D Secure verification for security purposes."
 msgstr "Ваш банк требует проверки 3-D Secure в целях безопасности."
@@ -7870,7 +7885,7 @@ msgctxt "Link"
 msgid "Why is this required?"
 msgstr "Почему это необходимо?"
 
-#: ./src/templates/payment/paypalView.tpl.html:26
+#: ./src/templates/payment/paypalView.tpl.html:27
 msgctxt "Link"
 msgid "click here"
 msgstr "нажмите здесь"
@@ -8458,6 +8473,11 @@ msgstr[1] "Идентификаторы пользователя не совпа
 msgstr[2] "Идентификаторы пользователя не совпадают. Адреса {{emails}} назначены для этого ключа."
 msgstr[3] "Идентификаторы пользователя не совпадают. Адреса {{emails}} назначены для этого ключа."
 
+#: ./src/templates/payment/paypalView.tpl.html:4
+msgctxt "PayPal error"
+msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+msgstr "Браузер, который вы сейчас используете, не позволяет совершить платеж. Пожалуйста, используйте другой браузер или войдите через компьютер."
+
 #: ./src/app/settings/controllers/payments.js:100
 msgctxt "Payment"
 msgid "Payment method deleted"
@@ -8488,7 +8508,7 @@ msgctxt "Payment method"
 msgid "Credit Card"
 msgstr "Банковская карта"
 
-#: ./src/templates/payment/paypalView.tpl.html:4
+#: ./src/templates/payment/paypalView.tpl.html:6
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
 msgstr "Сумма выше допустимого максимума."
@@ -8819,6 +8839,11 @@ msgctxt "Plan feature"
 msgid "Unlimited sending"
 msgstr "Нет ограничений на отправку"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:27
+msgctxt "Price offer"
+msgid "Regular price"
+msgstr "Обычная цена"
+
 #: ./src/app/dashboard/directives/vpnRow.js:25
 msgctxt "ProtonVPN with X connections"
 msgid "connections"
@@ -8869,7 +8894,7 @@ msgstr "НЕ забывайте данный пароль. Если вы его 
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
 msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
-msgstr ""
+msgstr "Сохраните свой пароль в надежном месте. Нажмите на <i class=\"fa fa-eye\"></i> значок, чтобы подтвердить, что вы ввели свой пароль правильно."
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
 msgctxt "Reset your password"
@@ -9420,7 +9445,7 @@ msgctxt "Title"
 msgid "2-year plan"
 msgstr "2-летний тариф"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:16
 msgctxt "Title"
 msgid "3-D Secure verification failed"
 msgstr "Сбой проверки 3-D Secure"
@@ -10123,11 +10148,6 @@ msgstr "Адреса доменов"
 msgctxt "Title"
 msgid "Domains"
 msgstr "Домены"
-
-#: ./src/templates/blackFriday/blackFriday.tpl.html:4
-msgctxt "Title"
-msgid "Don't miss out on limited time discounts for newcomers!"
-msgstr "Не пропустите ограниченные по времени скидки для новых пользователей!"
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
@@ -11268,6 +11288,11 @@ msgctxt "Title"
 msgid "Unsubscribe from mailing list?"
 msgstr "Отписаться от рассылки?"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+msgctxt "Title"
+msgid "Unsupported browser"
+msgstr "Неподдерживаемый браузер"
+
 #: ./src/templates/modals/member.tpl.html:14
 msgctxt "Title"
 msgid "Update user"
@@ -11499,11 +11524,6 @@ msgstr "Имя / Подпись"
 msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Счёт"
-
-#: ./src/templates/blackFriday/blackFriday.tpl.html:15
-msgctxt "Title most popular offer"
-msgid "Most popular"
-msgstr "Самое популярное"
 
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
@@ -12226,6 +12246,42 @@ msgstr "Вы всё равно можете отправить без срока
 msgctxt "Write a feedback about ProtonMail"
 msgid "Your thoughts..."
 msgstr "Ваши мысли..."
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:7
+msgctxt "X days before the end"
+msgid "{{$count}} day"
+msgid_plural "{{$count}} days"
+msgstr[0] "{{$count}} день"
+msgstr[1] "{{$count}} дня"
+msgstr[2] "{{$count}} дней"
+msgstr[3] "{{$count}} дней"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:10
+msgctxt "X hours before the end"
+msgid "{{$count}} hour"
+msgid_plural "{{$count}} hours"
+msgstr[0] "{{$count}} час"
+msgstr[1] "{{$count}} часа"
+msgstr[2] "{{$count}} часов"
+msgstr[3] "{{$count}} часов"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:13
+msgctxt "X minutes before the end"
+msgid "{{$count}} minute"
+msgid_plural "{{$count}} minutes"
+msgstr[0] "{{$count}} минута"
+msgstr[1] "{{$count}} минуты"
+msgstr[2] "{{$count}} минут"
+msgstr[3] "{{$count}} минут"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:22
+msgctxt "X seconds before the end"
+msgid "{{$count}} second"
+msgid_plural "{{$count}} seconds"
+msgstr[0] "{{$count}} секунда"
+msgstr[1] "{{$count}} секунды"
+msgstr[2] "{{$count}} секунд"
+msgstr[3] "{{$count}} секунд"
 
 #: ./src/templates/contact/contactNoResult.tpl.html:6
 msgctxt "You can Add contact or Import contacts"
