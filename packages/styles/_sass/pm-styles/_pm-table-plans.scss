@@ -140,6 +140,10 @@ $nb-plans-max: 4 !default;
         border-radius: $global-border-radius $global-border-radius 0 0;
       }
     }
+    & tr td:nth-child(#{$i+2}),
+    & tr th:nth-child(#{$i+2}) {
+      border-left: 0;
+    }
   }
 
 }
