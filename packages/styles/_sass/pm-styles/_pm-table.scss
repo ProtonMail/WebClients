@@ -25,6 +25,10 @@
   }
 }
 
+.pm-plans-table-highlight-cell {
+  background: $pm-global-light;
+}
+
 /* alternate bg for rows */
 .pm-simple-table--alternate-bg-row tbody tr:nth-child(odd){
   background-color: $pm-global-light;

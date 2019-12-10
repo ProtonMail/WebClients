@@ -26,6 +26,7 @@
 - fix modal display in case of low viewport height
 - fix `z-index`es for Calendar
 - add `min-width` to `pm-checkbox-fakecheck`
+- removed `bg-global-light` class in table examples for `pm-plans-table-highlight-cell` (more darkmode-friendly)
 
 
 # [1.7.7] - 2019-11-21
