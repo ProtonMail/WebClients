@@ -33,8 +33,17 @@ const OnboardingModal = ({ modalTitleID = 'modalTitle', onClose = noop, ...rest 
         { image: 'https://via.placeholder.com/600x300.png', info: <OnboardingCompleteInfo /> }
     ];
 
+    const isFirstStep = currentStep === 0;
     const isLastStep = currentStep === steps.length - 1;
     const step = steps[currentStep];
+
+    const handleBackClick = () => {
+        if (isFirstStep) {
+            onClose();
+        } else {
+            setCurrentStep(currentStep - 1);
+        }
+    };
 
     const handleNextClick = () => {
         if (isLastStep) {
@@ -68,7 +77,9 @@ const OnboardingModal = ({ modalTitleID = 'modalTitle', onClose = noop, ...rest 
                     <img className="w100" src={step.image} alt="placeholder" />
                 </InnerModal>
                 <FooterModal>
-                    <Button onClick={onClose}>{c('Action').t`Skip`}</Button>
+                    <Button onClick={handleBackClick}>
+                        {isFirstStep ? c('Action').t`Skip tutorial` : c('Action').t`Back`}
+                    </Button>
                     <PrimaryButton onClick={handleNextClick}>
                         {isLastStep ? c('Action').t`Start storing files` : c('Action').t`Next`}
                     </PrimaryButton>
