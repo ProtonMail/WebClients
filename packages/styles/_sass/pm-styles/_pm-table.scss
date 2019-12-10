@@ -25,6 +25,10 @@
   }
 }
 
+/* alternate bg for rows */
+.pm-simple-table--alternate-bg-row tbody tr:nth-child(odd){
+  background-color: $pm-global-light;
+} 
 
 .pm-simple-table--has-actions {
   td:last-child,
