@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
-"PO-Revision-Date: 2019-11-25 09:35\n"
+"PO-Revision-Date: 2019-12-05 10:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -119,7 +119,7 @@ msgctxt "Action"
 msgid "Add Filter"
 msgstr "新增篩選器"
 
-#: ./src/templates/payment/paypalView.tpl.html:33
+#: ./src/templates/payment/paypalView.tpl.html:34
 msgctxt "Action"
 msgid "Add PayPal payment method"
 msgstr "新增 PayPal 付款方式"
@@ -408,7 +408,7 @@ msgstr "抄送密件副本"
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:60
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:65
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:101
@@ -510,8 +510,8 @@ msgctxt "Action"
 msgid "Change verification number"
 msgstr "更改驗證號碼"
 
-#: ./src/templates/payment/paypalView.tpl.html:23
-#: ./src/templates/payment/paypalView.tpl.html:40
+#: ./src/templates/payment/paypalView.tpl.html:24
+#: ./src/templates/payment/paypalView.tpl.html:41
 msgctxt "Action"
 msgid "Check out with PayPal"
 msgstr "使用 PayPal 結帳"
@@ -604,6 +604,7 @@ msgstr "清除所有格式"
 #: ./src/templates/modals/payment/modal.tpl.html:19
 #: ./src/templates/modals/payment/modal.tpl.html:62
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:3
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:50
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
 #: ./src/templates/modals/releaseNotes.tpl.html:28
@@ -1858,7 +1859,7 @@ msgid "Trust Public Keys"
 msgstr "信任的公開金鑰"
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:6
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:51
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:56
 msgctxt "Action"
 msgid "Try again"
 msgstr "再試一次"
@@ -1901,7 +1902,6 @@ msgstr "更新"
 #. link to dashboard
 #: ./src/templates/dashboard/overviewSection.tpl.html:23
 #: ./src/templates/dashboard/overviewSection.tpl.html:42
-#: ./src/templates/ui/navigation/navigation.tpl.html:7
 #: ./src/templates/views/members.tpl.html:58
 #: ./src/templates/views/members.tpl.html:71
 #: ./src/templates/views/members.tpl.html:84
@@ -1953,7 +1953,7 @@ msgctxt "Action"
 msgid "Uploading"
 msgstr "上傳中"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:54
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:59
 msgctxt "Action"
 msgid "Use a different payment method"
 msgstr "使用不同的付款方式"
@@ -1969,7 +1969,7 @@ msgid "User"
 msgstr "使用者"
 
 #: ./src/templates/modals/domain/verification.tpl.html:38
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:61
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:66
 msgctxt "Action"
 msgid "Verify"
 msgstr "驗證"
@@ -3351,6 +3351,11 @@ msgctxt "Discount displayed in the dashboard"
 msgid "Get 20% off when you get both ProtonMail and ProtonVPN"
 msgstr "當你同時購買 ProtonMail 和 ProtonVPN 的時候可以取得 20% 的折扣"
 
+#: ./src/templates/blackFriday/blackFriday.tpl.html:14
+msgctxt "Discount offer X% off"
+msgid "off"
+msgstr "關閉"
+
 #: ./src/templates/views/domains.tpl.html:131
 msgctxt "Domain status"
 msgid "Check your DNS settings."
@@ -3926,6 +3931,11 @@ msgstr "ProtonMail API 正處於離線狀態："
 msgctxt "Error"
 msgid "The attachment will be downloaded but it will still be encrypted."
 msgstr "附件會被下載，但仍會被加密。"
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:49
+msgctxt "Error"
+msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+msgstr "您正在使用的瀏覽器不允許您完整授權付款。請使用其他瀏覽器或透過電腦登入。"
 
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:27
 msgctxt "Error"
@@ -5077,10 +5087,14 @@ msgid "Billed as {{amount}} /yr"
 msgstr "以每年 {{amount}} 計費"
 
 #: ./src/app/blackFriday/directives/blackFriday.js:20
+msgctxt "Info"
+msgid "Billed as {{price}} for 1 year"
+msgstr "以 {{price}} 計費，為期1年"
+
 #: ./src/app/blackFriday/directives/blackFriday.js:22
 msgctxt "Info"
-msgid "Billed as {{price}}"
-msgstr "以 {{price}} 計費"
+msgid "Billed as {{price}} for 2 years"
+msgstr "以 {{price}} 計費，為期2年"
 
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
@@ -5365,6 +5379,7 @@ msgctxt "Info"
 msgid "Every 2 years"
 msgstr "每2年"
 
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:30
 #: ./src/templates/views/payments.tpl.html:38
 msgctxt "Info"
 msgid "Expired"
@@ -5763,7 +5778,7 @@ msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr "目前無法使用 PayPal ，請稍後再試。"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:43
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
 msgctxt "Info"
 msgid "Payment can take a few minutes to fully verify."
 msgstr "付款可能需要數分鐘才能完全驗證。"
@@ -5854,7 +5869,7 @@ msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "請點選並按住附件, 然後選擇在新頁籤打開。"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:48
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:53
 msgctxt "Info"
 msgid "Please try again, use a different payment method, or call your bank for assistance."
 msgstr "請重試一次，使用不同的付款方式，或是聯絡你的銀行來協助。"
@@ -5869,17 +5884,17 @@ msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
 msgstr "請升級到付費方案以使用此高級功能。"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:35
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
 msgctxt "Info"
 msgid "Please verify payment at the new tab which was opened."
 msgstr "請在開啟的新分頁中驗證付款。"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:37
 msgctxt "Info"
 msgid "Please verify the card in the new tab which was opened."
 msgstr "請在開啟的新分頁中驗證卡片。"
 
-#: ./src/templates/payment/paypalView.tpl.html:15
+#: ./src/templates/payment/paypalView.tpl.html:16
 msgctxt "Info"
 msgid "Please verify your PayPal account at the new tab which was opened."
 msgstr "請在開啟的新分頁中驗證您的 PayPal 帳號。"
@@ -6268,7 +6283,7 @@ msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "這會將您的帳戶降級至免費帳戶。ProtonMail 是一項由捐款及付費帳戶支撐的免費服務，請考慮捐款，讓我們能繼續提供免費服務。<br /><br />注意：額外地址、自訂網域及用戶需要先行移除或停用。"
 
-#: ./src/templates/payment/paypalView.tpl.html:31
+#: ./src/templates/payment/paypalView.tpl.html:32
 msgctxt "Info"
 msgid "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue."
 msgstr "這將會啟用 PayPal 以支付您的 Proton 訂閱。我們將會把您在新瀏覽器分頁中重新導向至 PayPal。如果您使用了任何彈出式視窗攔截程式，請停用以繼續。"
@@ -6351,8 +6366,8 @@ msgctxt "Info"
 msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character."
 msgstr "有效字元為英文字母 (A-Z, a-z) 、數字 (0-9) 、點號 (.) 、底線 (_) 及連字號 (-) 。登入名稱必須以英數字元開始和結束。"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
-#: ./src/templates/payment/paypalView.tpl.html:17
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:45
+#: ./src/templates/payment/paypalView.tpl.html:18
 msgctxt "Info"
 msgid "Verification can take a few minutes."
 msgstr "驗證需要幾分鐘的時間。"
@@ -6374,13 +6389,13 @@ msgctxt "Info"
 msgid "Verification of this content’s signature failed"
 msgstr "內容簽章驗證失敗"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:24
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:31
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:32
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers."
 msgstr "驗證將會開啟新分頁，請停用所有彈出式視窗攔截程式。"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:25
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:26
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately."
 msgstr "驗證將會開啟新分頁，請停用所有彈出式視窗攔截程式。<b>您將不會被收費</b>。任何用於驗證卡片的金額都會馬上退還。"
@@ -6427,8 +6442,8 @@ msgctxt "Info"
 msgid "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard. (UTF-8 encoding). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Need help?</a>"
 msgstr "我們支援匯入 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 及其他程式的 CSV 檔案。我們亦支援匯入 vCard （UTF-8 編碼）。<a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">需要幫助？</a>"
 
-#: ./src/templates/payment/paypalView.tpl.html:21
-#: ./src/templates/payment/paypalView.tpl.html:39
+#: ./src/templates/payment/paypalView.tpl.html:22
+#: ./src/templates/payment/paypalView.tpl.html:40
 msgctxt "Info"
 msgid "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
 msgstr "我們將會把您在新瀏覽器分頁中重新導向至 PayPal 以完成此交易。如果您使用了任何彈出式視窗攔截程式，請停用以繼續。"
@@ -6568,12 +6583,12 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "您必須使用組織管理員提供給您的備份組織金鑰密碼來啟動組織私密金鑰。"
 
-#: ./src/templates/payment/paypalView.tpl.html:35
+#: ./src/templates/payment/paypalView.tpl.html:36
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
 msgstr "您必須有信用卡或連結到您的 PayPal 帳號的銀行帳戶，才能將其新增為付款方式。"
 
-#: ./src/templates/payment/paypalView.tpl.html:26
+#: ./src/templates/payment/paypalView.tpl.html:27
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please"
 msgstr "您必須有信用卡或連結到您的 PayPal 帳號的銀行帳戶。如果您的 PayPal 帳號沒有的話，請"
@@ -6595,7 +6610,7 @@ msgctxt "Info"
 msgid "You will be prompted to save the attachment."
 msgstr "系統將提示您儲存附件。"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:29
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:30
 msgctxt "Info"
 msgid "You will be soon redirected to your bank to verify your payment."
 msgstr "你將很快地重導到你的銀行去驗證付款"
@@ -6647,7 +6662,7 @@ msgctxt "Info"
 msgid "Your attachments are secure and encrypted, but to download them requires extra work. We recommend using a different web browser such as Chrome or Firefox for a better user experience."
 msgstr "您的附件是安全並且加密過的, 但下載它們需要額外的動作。我們建議使用不同的網頁瀏覽器, 例如 Chrome 或 火狐, 以獲得更好的使用者體驗。"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:19
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:20
 msgctxt "Info"
 msgid "Your bank requires 3-D Secure verification for security purposes."
 msgstr "你的銀行為了安全的理由要求使用3-D安全驗證"
@@ -7824,7 +7839,7 @@ msgctxt "Link"
 msgid "Why is this required?"
 msgstr "為什麼需要這項目？"
 
-#: ./src/templates/payment/paypalView.tpl.html:26
+#: ./src/templates/payment/paypalView.tpl.html:27
 msgctxt "Link"
 msgid "click here"
 msgstr "點擊此處"
@@ -8409,6 +8424,11 @@ msgid "User IDs mismatch. This key is assigned to {{emails}}."
 msgid_plural "User IDs mismatch. The emails {{emails}} are assigned to this key."
 msgstr[0] "使用者 ID 不相符。將金鑰分配給 {{emails}}。"
 
+#: ./src/templates/payment/paypalView.tpl.html:4
+msgctxt "PayPal error"
+msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+msgstr "您正在使用的瀏覽器不允許您完整授權付款。請使用其他瀏覽器或透過電腦登入。"
+
 #: ./src/app/settings/controllers/payments.js:100
 msgctxt "Payment"
 msgid "Payment method deleted"
@@ -8439,7 +8459,7 @@ msgctxt "Payment method"
 msgid "Credit Card"
 msgstr "信用卡"
 
-#: ./src/templates/payment/paypalView.tpl.html:4
+#: ./src/templates/payment/paypalView.tpl.html:6
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
 msgstr "金額高於最大值。"
@@ -8769,6 +8789,11 @@ msgstr "無限資料夾/無限標籤"
 msgctxt "Plan feature"
 msgid "Unlimited sending"
 msgstr "不設發送量限制"
+
+#: ./src/templates/blackFriday/blackFriday.tpl.html:27
+msgctxt "Price offer"
+msgid "Regular price"
+msgstr "一般價格"
 
 #: ./src/app/dashboard/directives/vpnRow.js:25
 msgctxt "ProtonVPN with X connections"
@@ -9353,7 +9378,7 @@ msgctxt "Title"
 msgid "2-year plan"
 msgstr "2年方案"
 
-#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:16
 msgctxt "Title"
 msgid "3-D Secure verification failed"
 msgstr "3-D 安全驗證失敗"
@@ -10056,11 +10081,6 @@ msgstr "域地址"
 msgctxt "Title"
 msgid "Domains"
 msgstr "網域"
-
-#: ./src/templates/blackFriday/blackFriday.tpl.html:4
-msgctxt "Title"
-msgid "Don't miss out on limited time discounts for newcomers!"
-msgstr "不要錯過新人的限時折扣！"
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
@@ -11201,6 +11221,11 @@ msgctxt "Title"
 msgid "Unsubscribe from mailing list?"
 msgstr "取消郵件群組的訂閱？"
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
+msgctxt "Title"
+msgid "Unsupported browser"
+msgstr "不支援的瀏覽器"
+
 #: ./src/templates/modals/member.tpl.html:14
 msgctxt "Title"
 msgid "Update user"
@@ -11420,11 +11445,6 @@ msgstr "名稱/簽名"
 msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "發票"
-
-#: ./src/templates/blackFriday/blackFriday.tpl.html:15
-msgctxt "Title most popular offer"
-msgid "Most popular"
-msgstr "最熱門"
 
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
@@ -12132,6 +12152,30 @@ msgstr "您可以任意寄送給以下收件人，無須考慮郵件到期時間
 msgctxt "Write a feedback about ProtonMail"
 msgid "Your thoughts..."
 msgstr "您的意見"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:7
+msgctxt "X days before the end"
+msgid "{{$count}} day"
+msgid_plural "{{$count}} days"
+msgstr[0] "{{$count}} 天"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:10
+msgctxt "X hours before the end"
+msgid "{{$count}} hour"
+msgid_plural "{{$count}} hours"
+msgstr[0] "{{$count}} 小時"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:13
+msgctxt "X minutes before the end"
+msgid "{{$count}} minute"
+msgid_plural "{{$count}} minutes"
+msgstr[0] "{{$count}} 分鐘"
+
+#: ./src/app/blackFriday/directives/blackFridayCountdown.js:22
+msgctxt "X seconds before the end"
+msgid "{{$count}} second"
+msgid_plural "{{$count}} seconds"
+msgstr[0] "{{$count}} 秒"
 
 #: ./src/templates/contact/contactNoResult.tpl.html:6
 msgctxt "You can Add contact or Import contacts"
