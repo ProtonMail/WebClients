@@ -26,9 +26,9 @@ export const getDateTimeState = (utcDate, tzid) => {
 };
 
 export const getNotificationModels = ({
-                                          DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
-                                          DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS
-                                      }) => {
+    DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
+    DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS
+}) => {
     return {
         defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
@@ -89,7 +89,17 @@ const getCalendarsModel = (Calendar, Calendars = []) => {
     };
 };
 
-export const getInitialModel = ({ CalendarSettings, Calendar, Calendars, Members, Member, Addresses, Address, isAllDay, tzid }) => {
+export const getInitialModel = ({
+    CalendarSettings,
+    Calendar,
+    Calendars,
+    Members,
+    Member,
+    Addresses,
+    Address,
+    isAllDay,
+    tzid
+}) => {
     const { DefaultEventDuration: defaultEventDuration = DEFAULT_EVENT_DURATION } = CalendarSettings;
     const dateTimeModel = getInitialDateTimeModel(defaultEventDuration, tzid);
     const notificationModel = getNotificationModels(CalendarSettings);
@@ -131,11 +141,11 @@ export const getExistingEvent = ({ veventComponent, veventValarmComponent, tzid 
         hasMoreOptions: isRecurring || hasDifferingTimezone,
         ...(newModel.isAllDay
             ? {
-                fullDayNotifications: newNotifications
-            }
+                  fullDayNotifications: newNotifications
+              }
             : {
-                partDayNotifications: newNotifications
-            }),
+                  partDayNotifications: newNotifications
+              }),
         start: newDateTime.start,
         end: newDateTime.end
     };
@@ -186,22 +196,51 @@ export const validate = ({ start, end, title }) => {
     return errors;
 };
 
-const keys = ['title', 'location', 'description'];
+const keys = ['title', 'location', 'description', 'isAllDay', 'frequency'];
 
-export const hasEditedText = (model, otherModel) => {
+export const hasEdited = (keys, model, otherModel) => {
     return keys.some((key) => {
         return model[key] !== otherModel[key];
     });
 };
 
+export const hasEditedTimezone = ({ tzid }, { tzid: otherTzid }) => {
+    return tzid !== otherTzid;
+};
+
+const hasEditedHourMinutes = (a, b) => a.getHours() !== b.getHours() || a.getMinutes() !== b.getMinutes();
+
 export const hasEditedDateTime = ({ time, date }, { time: otherTime, date: otherDate }) => {
-    return time.getHours() !== otherTime.getHours() || time.getMinutes() !== otherTime.getMinutes() || !isSameDay(date, otherDate);
+    return hasEditedHourMinutes(time, otherTime) || !isSameDay(date, otherDate);
+};
+
+const hasEditedNotification = (notification, otherNotification) => {
+    return (
+        hasEdited(['type', 'unit', 'when', 'value'], notification, otherNotification) ||
+        hasEditedHourMinutes(notification.at, otherNotification.at)
+    );
+};
+
+const hasEditedNotifications = (
+    { isAllDay, partDayNotifications, fullDayNotifications },
+    { partDayNotifications: otherPartDayNotifications, fullDayNotifications: otherFullDayNotifications }
+) => {
+    const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
+    const otherNotifications = isAllDay ? otherFullDayNotifications : otherPartDayNotifications;
+
+    return (
+        notifications.length !== otherNotifications.length ||
+        notifications.some((notification, i) => hasEditedNotification(notification, otherNotifications[i]))
+    );
 };
 
 export const hasDoneChanges = (model, otherModel, isEditMode) => {
-    return hasEditedText(model, otherModel) ||
-        isEditMode && (
-            hasEditedDateTime(model.start, otherModel.start) ||
-            hasEditedDateTime(model.end, otherModel.end)
-        );
+    return (
+        hasEdited(keys, model, otherModel) ||
+        hasEditedNotifications(model, otherModel) ||
+        hasEditedTimezone(model.start, otherModel.start) ||
+        hasEditedTimezone(model.end, otherModel.end) ||
+        (isEditMode &&
+            (hasEditedDateTime(model.start, otherModel.start) || hasEditedDateTime(model.end, otherModel.end)))
+    );
 };
