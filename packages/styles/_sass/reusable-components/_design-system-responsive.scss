@@ -43,6 +43,13 @@
   }
 
   .ontablet- {
+    &flex-column {
+      flex-direction: column;
+      & > * {
+        width: 100%;
+        flex-basis: auto;
+      }
+    }
     &w100        { width: 100%; }
     &mw100       { max-width: 100% }
   }
