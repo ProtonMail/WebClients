@@ -22,7 +22,7 @@ const getValarmTriggerUnit = (unit) => {
     );
 };
 
-export const getValarmTrigger = ({ isAllDay, unit, when, value, at }) => {
+export const getValarmTrigger = ({ isAllDay, unit, when, value = 0, at }) => {
     const isNegative = when === NOTIFICATION_WHEN.BEFORE;
     return {
         weeks: 0,

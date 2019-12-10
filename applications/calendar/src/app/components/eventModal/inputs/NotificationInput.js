@@ -23,7 +23,8 @@ const NotificationInput = ({
      * For all day events that are before, the day and hour needs to be modified to correctly say e.g.
      * 1 day before at 9 am for -PT15H
      */
-    const modifiedValue = isAllDayBefore && unit === NOTIFICATION_UNITS.DAY ? value + 1 : value;
+    const numberValue = +value || 0;
+    const modifiedValue = isAllDayBefore && unit === NOTIFICATION_UNITS.DAY ? numberValue + 1 : numberValue;
 
     const modifiedAt = useMemo(() => {
         if (isAllDayBefore) {
@@ -65,8 +66,11 @@ const NotificationInput = ({
                 <Input
                     type="number"
                     className="mr1"
-                    value={modifiedValue}
+                    value={value === '' ? '' : modifiedValue}
                     onChange={({ target }) => {
+                        if (target.value === '') {
+                            return onChange({ ...notification, value: '' });
+                        }
                         const newValue = +target.value;
                         if (isAllDayBefore && unit === NOTIFICATION_UNITS.DAY) {
                             if (newValue <= 0) {
@@ -143,7 +147,7 @@ const NotificationInput = ({
 };
 
 const NotificationShape = PropTypes.shape({
-    value: PropTypes.number,
+    value: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
     isAllDay: PropTypes.bool,
     at: PropTypes.instanceOf(Date),
     unit: PropTypes.oneOf([WEEK, DAY, HOURS, MINUTES]),
