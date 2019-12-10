@@ -42,7 +42,6 @@ const FileBrowser = ({
 
     const folderContents = contents ?? [];
     const allSelected = !!folderContents.length && folderContents.length === selectedItems.length;
-    const someSelected = !!folderContents.length && !allSelected && !!selectedItems.length;
 
     return (
         <div className="flex flex-item-fluid" onClick={onEmptyAreaClick}>
@@ -54,7 +53,6 @@ const FileBrowser = ({
                                 <Checkbox
                                     readOnly
                                     disabled={!folderContents.length}
-                                    indeterminate={someSelected}
                                     checked={allSelected}
                                     onChange={onToggleAllSelected}
                                 />
