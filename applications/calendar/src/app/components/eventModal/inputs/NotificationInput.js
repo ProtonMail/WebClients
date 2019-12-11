@@ -4,6 +4,7 @@ import { Input, Select, TimeInput, classnames } from 'react-components';
 import { c, msgid } from 'ttag';
 
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, NOTIFICATION_TYPE } from '../../../constants';
+import { transformBeforeAt } from '../../../helpers/notifications';
 
 const { EMAIL, DEVICE } = NOTIFICATION_TYPE;
 const { DAY, MINUTES, HOURS, WEEK } = NOTIFICATION_UNITS;
@@ -28,7 +29,7 @@ const NotificationInput = ({
 
     const modifiedAt = useMemo(() => {
         if (isAllDayBefore) {
-            return new Date(at.getFullYear(), at.getMonth(), at.getDate(), 24 - at.getHours(), at.getMinutes());
+            return transformBeforeAt(at);
         }
         return at;
     }, [isAllDay, at, when]);
@@ -124,13 +125,7 @@ const NotificationInput = ({
                             if (isAllDayBefore) {
                                 onChange({
                                     ...notification,
-                                    at: new Date(
-                                        at.getFullYear(),
-                                        at.getMonth(),
-                                        at.getDate(),
-                                        24 - at.getHours(),
-                                        at.getMinutes()
-                                    )
+                                    at: transformBeforeAt(at)
                                 });
                                 return;
                             }

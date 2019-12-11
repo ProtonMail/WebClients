@@ -1,10 +1,12 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 
 import {
     notificationAtToString,
     notificationUnitToString,
-    notificationWhenToString
+    notificationWhenToString,
+    transformBeforeAt
 } from '../../helpers/notifications';
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../constants';
 
@@ -14,10 +16,7 @@ const PopoverNotification = ({ notification, formatTime }) => {
         const isAllDayBefore = isAllDay && when === NOTIFICATION_WHEN.BEFORE;
 
         const modifiedValue = isAllDayBefore && unit === NOTIFICATION_UNITS.DAY ? value + 1 : value;
-
-        const modifiedAt = isAllDayBefore
-            ? new Date(Date.UTC(2000, 0, 1, 24 - at.getHours(), at.getMinutes()))
-            : new Date(Date.UTC(2000, 0, 1, at.getHours(), at.getMinutes()));
+        const modifiedAt = toUTCDate(fromLocalDate(isAllDayBefore ? transformBeforeAt(at) : at));
 
         return [
             notificationUnitToString(modifiedValue, unit),
