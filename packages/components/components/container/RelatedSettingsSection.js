@@ -12,13 +12,13 @@ const RelatedSettingsSection = ({ list = [{}] }) => {
     return (
         <>
             <SubTitle>{c('Title').t`Related settings`}</SubTitle>
-            <div className="flex flex-spacebetween">
+            <div className="flex flex-spacebetween ontablet-flex-column">
                 {list.map(({ icon, text, to, link }, index) => {
                     return (
-                        <div key={index.toString()} className="w45">
+                        <div key={index.toString()} className="w45 flex ontablet-mb1">
                             <Information icon={icon}>
                                 <Paragraph>{text}</Paragraph>
-                                <Paragraph className="aligncenter">
+                                <Paragraph className="aligncenter mtauto">
                                     <Link className="pm-button pm-button--primary" to={to}>
                                         {link}
                                     </Link>

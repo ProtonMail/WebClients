@@ -4,11 +4,11 @@ import { Icon } from 'react-components';
 
 const Information = ({ icon = 'info', children }) => {
     return (
-        <div className="information-panel bordered-container relative">
-            <div className="information-panel-image flex bg-global-light">
+        <div className="information-panel bordered-container relative flex flex-column">
+            <div className="information-panel-image flex bg-global-highlight">
                 <Icon name={icon} className="mauto" />
             </div>
-            <div className="information-panel-content">{children}</div>
+            <div className="information-panel-content flex h100  flex-column">{children}</div>
         </div>
     );
 };
