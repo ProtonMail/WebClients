@@ -50,7 +50,6 @@ const getPaginatedEvents = async (api, calendarID, dateRange, tzid) => {
         const lastEvent = Events.length > 0 ? Events[Events.length - 1] : undefined;
         results = results.concat(Events);
         lastStart = Events.length === PageSize ? parseNextPaginationStart(lastEvent) : undefined;
-        console.log(Events.length - 1, PageSize);
     }
 
     return results;
