@@ -6,8 +6,6 @@
 .totalRows-container > label  [class*='-left'],
 .totalRows-container > label  [class*='-right'] { display: flex }
 
-.totalRows-container:not(.totalRows-has-2-years) .totalRows-label-2-year { display: none }
-
 .totalRows-cycle {
     flex-grow: 1;
     min-width: 1px; /*IE*/
