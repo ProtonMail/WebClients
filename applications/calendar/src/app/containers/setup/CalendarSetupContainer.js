@@ -21,34 +21,23 @@ const CalendarSetupContainer = ({ calendars, user: { isFree }, children }) => {
 
     const [hasModal, setHasModal] = useState(() => {
         const hasCalendarsToReset = calendars.some(({ Flags }) => {
-            return (Flags & RESET_MASK) > 0
+            return (Flags & RESET_MASK) > 0;
         });
         const isNoCalendarSetup = calendars.length === 0;
 
         const getModal = () => {
             if (isNoCalendarSetup && isFree) {
-                return (
-                    <FreeModal />
-                );
+                return <FreeModal />;
             }
 
             const reset = () => setHasModal(false);
 
             if (isNoCalendarSetup) {
-                return (
-                    <WelcomeModal
-                        onExit={reset}
-                    />
-                );
+                return <WelcomeModal onExit={reset} />;
             }
 
             if (hasCalendarsToReset) {
-                return (
-                    <ResetModal
-                        calendars={calendars}
-                        onExit={reset}
-                    />
-                );
+                return <ResetModal calendars={calendars} onExit={reset} />;
             }
         };
 
@@ -67,23 +56,21 @@ const CalendarSetupContainer = ({ calendars, user: { isFree }, children }) => {
         const dateRange = [startOfWeek(now), endOfWeek(now)];
 
         return (
-            <>
-                <CalendarContainerView
-                    view={VIEWS.WEEK}
-                    isBlurred={true}
-                    utcDate={now}
-                    utcDefaultDate={now}
-                    utcDateRange={dateRange}
-                    onCreateEvent={noop}
-                    onClickToday={noop}
-                    onChangeView={noop}
-                    tzid={'Europe/Zurich'}
-                    setTzid={noop}
-                    setCustom={noop}
-                >
-                    <TimeGrid now={now} date={now} dateRange={dateRange} components={{}} ref={timeGridViewRef} />
-                </CalendarContainerView>
-            </>
+            <CalendarContainerView
+                view={VIEWS.WEEK}
+                isBlurred={true}
+                utcDate={now}
+                utcDefaultDate={now}
+                utcDateRange={dateRange}
+                onCreateEvent={noop}
+                onClickToday={noop}
+                onChangeView={noop}
+                tzid={'Europe/Zurich'}
+                setTzid={noop}
+                setCustom={noop}
+            >
+                <TimeGrid now={now} date={now} dateRange={dateRange} components={{}} ref={timeGridViewRef} />
+            </CalendarContainerView>
         );
     }
 
