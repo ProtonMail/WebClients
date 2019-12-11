@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function composer(AppModel, attachmentFileFormat, dispatchers, mailSettingsModel) {
+function composer(AppModel, attachmentFileFormat, dispatchers, mailSettingsModel, hotkeys) {
     const CLASS_DRAGGABLE = 'composer-draggable';
     const CLASS_DRAGGABLE_EDITOR = 'composer-draggable-editor';
 
@@ -79,6 +79,8 @@ function composer(AppModel, attachmentFileFormat, dispatchers, mailSettingsModel
 
             const onClick = ({ target }) => {
                 const className = target.className;
+
+                hotkeys.pause();
 
                 if (!/composerHeader-btn/.test(className)) {
                     focusComposer('click', {
