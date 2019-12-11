@@ -60,13 +60,7 @@ const MailboxContainer = ({ labelID, mailSettings, elementID: inputElementID, lo
     const [checkAll, setCheckAll] = useState(false);
     const welcomeRef = useRef(false);
 
-    const [elements, loading, total] = useElements({
-        conversationMode: isConversationMode(mailSettings),
-        labelID,
-        page,
-        sort,
-        filter
-    });
+    const [elements, loading, total] = useElements({ conversationMode, labelID, page, sort, filter });
 
     useEffect(() => setPage({ ...page, page: pageFromUrl(location) }), [searchParams.page]);
     useEffect(() => setPage({ ...page, total }), [total]);
@@ -170,7 +164,11 @@ const MailboxContainer = ({ labelID, mailSettings, elementID: inputElementID, lo
                     <section className="view-column-detail p2 flex-item-fluid scroll-if-needed">
                         {elementID ? (
                             conversationMode ? (
-                                <ConversationView mailSettings={mailSettings} conversationID={elementID} />
+                                <ConversationView
+                                    labelID={labelID}
+                                    mailSettings={mailSettings}
+                                    conversationID={elementID}
+                                />
                             ) : (
                                 <MessageOnlyView mailSettings={mailSettings} messageID={elementID} />
                             )

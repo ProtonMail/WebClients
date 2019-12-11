@@ -122,6 +122,9 @@ export const useElements = ({
                         if (Action === EVENT_ACTIONS.DELETE) {
                             acc.toDelete.push(ID);
                         }
+                        if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
+                            console.warn('Event type UPDATE_DRAFT on Element not supported');
+                        }
                         if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
                             acc.toUpdate.push({ ID, ...Element });
                         }
@@ -134,13 +137,11 @@ export const useElements = ({
                 );
 
                 const toUpdateCompleted = await Promise.all(
-                    toUpdate.map(async (conversation) => {
-                        const elementID = conversation.ID || '';
-                        const existingConversation = localCache.elements[elementID];
+                    toUpdate.map(async (element) => {
+                        const elementID = element.ID || '';
+                        const existingElement = localCache.elements[elementID];
 
-                        return existingConversation
-                            ? { ...existingConversation, ...conversation }
-                            : queryElement(elementID);
+                        return existingElement ? { ...existingElement, ...element } : queryElement(elementID);
                     })
                 );
 

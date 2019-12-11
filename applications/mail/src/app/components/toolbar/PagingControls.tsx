@@ -35,6 +35,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
                 title={c('Action').t`Change layout`}
                 content={String(page.page + 1)}
                 className="paging-dropdown"
+                disabled={pageCount === 0}
                 size="narrow"
             >
                 {() => (

@@ -7,6 +7,7 @@ interface Props {
     className?: string;
     content?: ReactNode;
     children: ({ onClose }: { onClose: () => void }) => ReactNode;
+    disabled?: boolean;
     size?: string;
     [rest: string]: any;
 }
@@ -17,6 +18,7 @@ const ToolbarDropdown = ({
     className,
     children,
     autoClose = true,
+    disabled = false,
     size = 'normal',
     ...rest
 }: Props) => {
@@ -32,6 +34,7 @@ const ToolbarDropdown = ({
                 isOpen={isOpen}
                 onClick={toggle}
                 hasCaret={true}
+                disabled={disabled}
                 caretClassName="toolbar-icon"
                 className={classnames(['flex-item-noshrink toolbar-button toolbar-button--dropdown', className])}
                 {...rest}

@@ -204,3 +204,27 @@ export const attachmentsSize = (message: Message = {}) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
 
 export const isPlainText = (message: Message = {}) => message.MIMEType === PLAINTEXT;
+
+export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
+    if (!isSent({ Flags })) {
+        return false;
+    }
+
+    if (isAuto({ Flags })) {
+        return true;
+    }
+
+    const autoReplyHeaders = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
+    const autoReplyHeaderValues = [
+        ['Auto-Submitted', 'auto-replied'],
+        ['Precedence', 'auto_reply'],
+        ['X-Precedence', 'auto_reply'],
+        ['Delivered-To', 'autoresponder']
+    ];
+    // These headers are not always available. But we should check them to support
+    // outlook / mail autoresponses.
+    return (
+        autoReplyHeaders.some((h) => h in ParsedHeaders) ||
+        autoReplyHeaderValues.some(([k, v]) => k in ParsedHeaders && ParsedHeaders[k].toLowerCase() === v)
+    );
+};

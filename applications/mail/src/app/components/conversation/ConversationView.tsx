@@ -7,14 +7,16 @@ import { ELEMENT_TYPES } from '../../constants';
 import NumMessages from './NumMessages';
 import ItemLabels from '../list/ItemLabels';
 import { useConversation } from '../../hooks/useConversation';
+import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 
 interface Props {
+    labelID: string;
     conversationID: string;
     messageID?: string;
     mailSettings: any;
 }
 
-const ConversationView = ({ conversationID, mailSettings }: Props) => {
+const ConversationView = ({ labelID, conversationID, mailSettings }: Props) => {
     const [labels] = useLabels();
     const [conversationData, loading] = useConversation(conversationID);
 
@@ -23,11 +25,12 @@ const ConversationView = ({ conversationID, mailSettings }: Props) => {
     }
 
     const { Conversation: conversation, Messages: messages = [] } = conversationData;
-    const initialExpand = messages.length > 0 ? messages[messages.length - 1].ID : null;
 
     if (!conversation) {
         return null;
     }
+
+    const initialExpand = findMessageToExpand(labelID, messages).ID;
 
     return (
         <>

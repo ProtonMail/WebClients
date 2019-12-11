@@ -46,7 +46,7 @@ const MessageProvider = ({ children }: Props) => {
             if (!Array.isArray(Messages)) {
                 return;
             }
-            for (const { ID, Action } of Messages) {
+            for (const { ID, Action, Message } of Messages) {
                 // Ignore updates for non-fetched messages.
                 if (!cache.has(ID)) {
                     continue;
@@ -55,11 +55,10 @@ const MessageProvider = ({ children }: Props) => {
                     cache.delete(ID);
                 }
                 if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-                    // TODO: Try to do something smart
-                    cache.delete(ID);
+                    console.warn('Event type UPDATE_DRAFT on Message not supported', Messages);
                 }
                 if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                    // TODO: Try to do something smart
+                    cache.set(ID, { ...cache.get(ID), ...Message });
                 }
             }
         });
