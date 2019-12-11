@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
     EventManagerProvider,
@@ -29,6 +29,10 @@ const PrivateApp = ({ onLogout }) => {
     const [loading, setLoading] = useState(true);
     const eventManagerRef = useRef();
 
+    useEffect(() => {
+        document.title = 'ProtonCalendar';
+    }, []);
+
     if (loading) {
         return (
             <>
@@ -54,7 +58,7 @@ const PrivateApp = ({ onLogout }) => {
             <EventNotices />
             <ThemeInjector />
             <ErrorBoundary>
-                <MainContainer/>
+                <MainContainer />
             </ErrorBoundary>
         </EventManagerProvider>
     );

@@ -163,10 +163,6 @@ const CalendarContainer = ({ calendars, history, location }) => {
         };
     }, []);
 
-    useEffect(() => {
-        document.title = 'ProtonCalendar';
-    }, []);
-
     const { view: urlView, range: urlRange, date: urlDate } = useMemo(() => fromUrlParams(location.pathname), [
         location.pathname
     ]);
