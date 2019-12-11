@@ -2,12 +2,11 @@ import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { useApi } from 'react-components';
-
 import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
 import { getEvent } from 'proton-shared/lib/api/calendars';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
-import calendarSvg from 'design-system/assets/img/pm-images/calendar.svg';
 
+import notificationIcon from '../../../assets/notification.gif';
 import useGetCalendarEventRaw from '../../containers/calendar/useGetCalendarEventRaw';
 import { getAlarmMessage } from '../../helpers/alarms';
 import { MINUTE } from '../../constants';
@@ -15,9 +14,9 @@ import { MINUTE } from '../../constants';
 const MIN_CUTOFF = -MINUTE * 1000;
 
 const displayNotification = ({ title = c('Title').t`Calendar alarm`, text, ...rest }) => {
-    create(title, {
+    return create(title, {
         body: text,
-        icon: calendarSvg,
+        icon: notificationIcon,
         onClick() {
             window.focus();
         },
