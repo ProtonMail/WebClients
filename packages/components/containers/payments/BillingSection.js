@@ -303,7 +303,7 @@ const BillingSection = ({ permission }) => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-global-light pt1 pl1 pr1">
+                <div className="bg-global-highlight pt1 pl1 pr1">
                     <div className="flex-autogrid onmobile-flex-column w100 mb1">
                         <div className="flex-autogrid-item">{c('Label').t`Billing cycle`}</div>
                         <div className="flex-autogrid-item">
