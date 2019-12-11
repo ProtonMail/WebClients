@@ -35,9 +35,7 @@ function DriveContainer({ match, history }: RouteComponentProps<{ shareId?: stri
     const [resource, setResource] = useState<DriveResource>();
 
     const navigateToResource = (resource: DriveResource) => {
-        if (resource.type === LinkType.FOLDER) {
-            history.push(`/drive/${resource.shareId}/folder/${resource.linkId}`);
-        }
+        history.push(`/drive/${resource.shareId}/folder/${resource.linkId}`);
     };
 
     useEffect(() => {

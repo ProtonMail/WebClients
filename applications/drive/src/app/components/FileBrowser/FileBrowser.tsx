@@ -19,7 +19,7 @@ interface Props {
     selectedItems: FileBrowserItem[];
     onToggleItemSelected: (item: string) => void;
     onItemClick: (item: string) => void;
-    onItemDoubleClick: (item: string, type: LinkType) => void;
+    onItemDoubleClick: (item: FileBrowserItem) => void;
     onShiftClick: (item: string) => void;
     onEmptyAreaClick: () => void;
     onToggleAllSelected: () => void;

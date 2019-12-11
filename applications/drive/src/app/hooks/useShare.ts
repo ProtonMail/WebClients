@@ -3,8 +3,10 @@ import { useCache, useApi } from 'react-components';
 import { decryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
 import { decryptPrivateKeyArmored } from 'proton-shared/lib/keys/keys';
 import { queryFolderChildren, queryGetFolder } from '../api/folder';
-import { DriveLink, FolderMeta } from '../interfaces/folder';
+import { DriveLink, FolderMeta, FolderMetaResult, FolderContentsResult } from '../interfaces/folder';
 import useDrive from './useDrive';
+import { DriveFile, DriveFileResult } from '../interfaces/file';
+import { queryFile } from '../api/files';
 
 function useShare(shareId: string) {
     const api = useApi();
@@ -13,7 +15,7 @@ function useShare(shareId: string) {
 
     const getFolderMeta = async (linkId: string): Promise<{ Folder: FolderMeta; privateKey: any }> =>
         getPromiseValue(cache, `drive/shares/${shareId}/folder/${linkId}`, async () => {
-            const { Folder } = await api(queryGetFolder(shareId, linkId));
+            const { Folder }: FolderMetaResult = await api(queryGetFolder(shareId, linkId));
 
             const { privateKey: parentKey } = Folder.ParentLinkID
                 ? await getFolderMeta(Folder.ParentLinkID)
@@ -29,10 +31,10 @@ function useShare(shareId: string) {
 
     const getFolderContents = async (linkId: string): Promise<DriveLink[]> =>
         getPromiseValue(cache, `drive/shares/${shareId}/folder/${linkId}/children`, async () => {
-            const { Links } = await api(queryFolderChildren(shareId, linkId));
+            const { Links }: FolderContentsResult = await api(queryFolderChildren(shareId, linkId));
 
             return await Promise.all(
-                Links.map(async ({ Name, ParentLinkID, ...rest }: DriveLink) => {
+                Links.map(async ({ Name, ParentLinkID, ...rest }) => {
                     const { privateKey } = await getFolderMeta(ParentLinkID);
                     return {
                         ...rest,
@@ -43,7 +45,22 @@ function useShare(shareId: string) {
             );
         });
 
-    return { getFolderContents, getFolderMeta };
+    const getFileMeta = async (linkId: string): Promise<{ File: DriveFile; privateKey: any }> =>
+        getPromiseValue(cache, `drive/shares/${shareId}/file/${linkId}`, async () => {
+            const { File }: DriveFileResult = await api(queryFile(shareId, linkId));
+            const { privateKey: parentKey } = await getFolderMeta(File.ParentLinkID);
+            const decryptedFilePassphrase = await decryptUnsigned({
+                armoredMessage: File.Passphrase,
+                privateKey: parentKey
+            });
+            const privateKey = await decryptPrivateKeyArmored(File.Key, decryptedFilePassphrase);
+            return {
+                File,
+                privateKey
+            };
+        });
+
+    return { getFolderMeta, getFolderContents, getFileMeta };
 }
 
 export default useShare;
