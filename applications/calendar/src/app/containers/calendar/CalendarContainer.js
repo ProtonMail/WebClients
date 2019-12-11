@@ -230,10 +230,10 @@ const CalendarContainer = ({ calendars, history, location }) => {
     );
 
     const timezoneInformation = useMemo(() => {
-        const startWeekDate = utcDateRange[0];
-        const { abbreviation, offset } = getTimezoneOffset(startWeekDate, tzid);
+        const [startDate] = utcDateRangeInTimezone;
+        const { abbreviation, offset } = getTimezoneOffset(startDate, tzid);
         const { abbreviation: secondaryAbbreviaton, offset: secondaryOffset } = getTimezoneOffset(
-            startWeekDate,
+            startDate,
             secondaryTzid || tzid
         );
         return {
@@ -241,7 +241,7 @@ const CalendarContainer = ({ calendars, history, location }) => {
             secondaryTimezone: `${formatAbbreviation(secondaryAbbreviaton, secondaryOffset)}`,
             secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE
         };
-    }, [utcDateRange, secondaryTzid, tzid]);
+    }, [utcDateRangeInTimezone, secondaryTzid, tzid]);
 
     useEffect(() => {
         const newRoute = toUrlParams({ date: utcDate, defaultDate: utcDefaultDate, view, defaultView, range });
@@ -330,7 +330,7 @@ const CalendarContainer = ({ calendars, history, location }) => {
             range={range}
             setCustom={setCustom}
             view={view}
-            nowDate={nowDate}
+            utcDateRangeInTimezone={utcDateRangeInTimezone}
             utcDefaultDate={utcDefaultDate}
             utcDate={utcDate}
             utcDateRange={utcDateRange}

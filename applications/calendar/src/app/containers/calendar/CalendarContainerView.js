@@ -52,6 +52,7 @@ const CalendarContainerView = ({
     utcDefaultDate,
     utcDate,
     utcDateRange,
+    utcDateRangeInTimezone,
 
     onCreateEvent,
     onClickToday,
@@ -173,7 +174,7 @@ const CalendarContainerView = ({
                                     timezoneSelector={
                                         <TimezoneSelector
                                             className="toolbar-select nomobile notablet"
-                                            currentDate={localDate}
+                                            date={utcDateRangeInTimezone[0]}
                                             timezone={tzid}
                                             onChange={setTzid}
                                         />
@@ -181,7 +182,7 @@ const CalendarContainerView = ({
                                 />
                                 <div className="flex main-area--withToolbar">
                                     {children}
-                                    <div className="w50p nomobile hidden"></div>
+                                    <div className="w50p nomobile hidden" />
                                 </div>
                             </div>
                         </Main>
@@ -207,6 +208,7 @@ CalendarContainerView.propTypes = {
     utcDefaultDate: PropTypes.instanceOf(Date),
     utcDate: PropTypes.instanceOf(Date),
     utcDateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
+    utcDateRangeInTimezone: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
     view: PropTypes.oneOf([DAY, WEEK, MONTH, YEAR, AGENDA]),
     children: PropTypes.node,
     range: PropTypes.number

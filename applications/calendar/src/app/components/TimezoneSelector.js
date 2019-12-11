@@ -7,14 +7,14 @@ const TimezoneSelector = ({
     className = 'pm-field w100',
     loading = false,
     disabled = false,
-    currentDate,
+    date,
     timezone,
     onChange,
     ...rest
 }) => {
     const timezoneOptions = useMemo(() => {
-        return getTimeZoneOptions(currentDate || new Date());
-    }, [currentDate]);
+        return getTimeZoneOptions(date || new Date());
+    }, [date]);
 
     return (
         <select
@@ -23,8 +23,7 @@ const TimezoneSelector = ({
             title={c('Action').t`Select timezone`}
             value={timezone}
             onChange={({ target }) => {
-                // Just having undefined does not work
-                onChange(target.value === 'default' ? undefined : target.value);
+                onChange(target.value);
             }}
             {...rest}
         >
@@ -45,7 +44,7 @@ TimezoneSelector.propTypes = {
     className: PropTypes.string,
     defaultTimezone: PropTypes.string,
     disabled: PropTypes.bool,
-    currentDate: PropTypes.instanceOf(Date),
+    date: PropTypes.instanceOf(Date),
     loading: PropTypes.bool
 };
 
