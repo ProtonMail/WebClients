@@ -10,7 +10,7 @@ interface Props {
     selectedItems: FileBrowserItem[];
     onToggleSelect: (item: string) => void;
     onClick: (item: string) => void;
-    onDoubleClick: (item: string, type: LinkType) => void;
+    onDoubleClick: (item: FileBrowserItem) => void;
     onShiftClick: (item: string) => void;
 }
 
@@ -25,9 +25,9 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
             onClick(item.LinkID);
         }
     };
-    const handleRowDoubleClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
+    const handleRowDoubleClick = (e: React.MouseEvent<HTMLTableRowElement> | React.TouchEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
-        onDoubleClick(item.LinkID, item.Type);
+        onDoubleClick(item);
     };
 
     const isFolder = item.Type === LinkType.FOLDER;
@@ -39,6 +39,7 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
             onMouseDown={() => document.getSelection()?.removeAllRanges()}
             onClick={handleRowClick}
             onDoubleClick={handleRowDoubleClick}
+            onTouchEnd={handleRowDoubleClick}
             cells={[
                 <div key="select" onClick={(e) => e.stopPropagation()} onDoubleClick={(e) => e.stopPropagation()}>
                     <Checkbox checked={isSelected} onChange={() => onToggleSelect(item.LinkID)} />
@@ -56,7 +57,7 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
                 <Time key="dateModified" format="PPp">
                     {item.Modified}
                 </Time>,
-                typeof item.Size !== 'undefined' ? humanSize(item.Size) : '-'
+                item.Size ? humanSize(item.Size) : '-'
             ]}
         />
     );

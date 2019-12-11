@@ -12,13 +12,22 @@ export interface DriveLink {
     Type: LinkType;
     Created: number;
     Modified: number;
+    Size: number;
+}
+
+export interface FolderContentsResult {
+    Links: DriveLink[];
 }
 
 export interface FolderMeta {
     Name: string;
     Passphrase: string;
-    PrivateKey: string;
+    Key: string;
     Hash: string;
     HashKey: string;
     ParentLinkID?: string;
+}
+
+export interface FolderMetaResult {
+    Folder: FolderMeta;
 }

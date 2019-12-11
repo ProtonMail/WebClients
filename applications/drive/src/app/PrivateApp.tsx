@@ -5,6 +5,7 @@ import { UserModel, AddressesModel } from 'proton-shared/lib/models';
 
 import DriveContainer from './containers/DriveContainer';
 import PrivateLayout from './components/layout/PrivateLayout';
+import { DownloadProvider } from './components/downloads/DownloadProvider';
 
 interface Props {
     onLogout: () => void;
@@ -28,10 +29,12 @@ const PrivateApp = ({ onLogout }: Props) => {
                                 </div>
                             }
                         >
-                            <Switch>
-                                <Route path="/drive/:shareId?/:type?/:linkId?" exact component={DriveContainer} />
-                                <Redirect to="/drive" />
-                            </Switch>
+                            <DownloadProvider>
+                                <Switch>
+                                    <Route path="/drive/:shareId?/:type?/:linkId?" exact component={DriveContainer} />
+                                    <Redirect to="/drive" />
+                                </Switch>
+                            </DownloadProvider>
                         </ErrorBoundary>
                     )}
                 />
