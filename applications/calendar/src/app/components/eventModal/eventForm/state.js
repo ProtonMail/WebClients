@@ -130,16 +130,15 @@ export const getExistingEvent = ({ veventComponent, veventValarmComponent, tzid 
     const hasDifferingTimezone = newDateTime.start.tzid !== tzid || newDateTime.end.tzid !== tzid;
 
     // Email notifications are not supported atm.
-    const newNotifications = propertiesToNotificationModel(veventValarmComponent, newModel.isAllDay).filter(
+    const newNotifications = propertiesToNotificationModel(veventValarmComponent, isAllDay).filter(
         ({ type }) => type === NOTIFICATION_TYPE.DEVICE
     );
 
     return {
         ...newModel,
-        ...newNotifications,
         isAllDay,
         hasMoreOptions: isRecurring || hasDifferingTimezone,
-        ...(newModel.isAllDay
+        ...(isAllDay
             ? {
                   fullDayNotifications: newNotifications
               }
