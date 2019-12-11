@@ -94,7 +94,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                 if (serverTime) {
                     updateServerTime(serverTime);
                 }
-                return output === 'stream' ? response.body.getReader() : response[output]();
+                return output === 'stream' ? response.body : response[output]();
             });
         };
     }
