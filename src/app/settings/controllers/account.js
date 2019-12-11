@@ -36,16 +36,18 @@ function AccountController(
         { label: 'Hrvatski', key: 'hr_HR' },
         { label: 'Italiano', key: 'it_IT' },
         { label: '日本語', key: 'ja_JP' },
-        { label: 'Nederlands', key: 'nl_NL' },
+        { label: 'Dutch', key: 'nl_NL' },
         { label: 'Polski', key: 'pl_PL' },
         { label: 'Português', key: 'pt_PT' },
-        { label: 'Português, brasileiro', key: 'pt_BR' },
+        { label: 'Português do Brasil', key: 'pt_BR' },
         { label: 'Pусский', key: 'ru_RU' },
         { label: 'Română', key: 'ro_RO' },
         { label: 'Türkçe', key: 'tr_TR' },
         { label: 'Українська', key: 'uk_UA' },
         { label: '简体中文', key: 'zh_CN' },
-        { label: '繁體中文', key: 'zh_TW' }
+        { label: '繁體中文', key: 'zh_TW' },
+        { label: 'Icelandic', key: 'is_IS' },
+        { label: 'Danish', key: 'da_DA' }
     ];
     $scope.locale = _.find($scope.locales, { key: gettextCatalog.getCurrentLanguage() }) || $scope.locales[0];
     const EMAILING_KEYS = Object.keys($scope.emailing);
