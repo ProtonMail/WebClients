@@ -16,9 +16,22 @@ const { DELETE, CREATE, UPDATE } = EVENT_ACTIONS;
 
 const DAY_IN_MILLISECONDS = 86400000;
 
+const parseNextPaginationStart = ({ SharedEvents = [] }) => {
+    try {
+        const { Data = '' } = SharedEvents.find(({ Type }) => Type === 2);
+        const component = parse(unwrap(Data));
+        if (component.component !== 'vevent') {
+            return undefined;
+        }
+        const { dtstart } = component;
+        return getUnixTime(propertyToUTCDate(dtstart));
+    } catch (e) {
+        return undefined;
+    }
+};
+
 const getPaginatedEvents = async (api, calendarID, dateRange, tzid) => {
     let results = [];
-    let lastEventID;
 
     const PageSize = 100;
 
@@ -30,11 +43,15 @@ const getPaginatedEvents = async (api, calendarID, dateRange, tzid) => {
         Page: 0
     };
 
-    do {
-        const { Events } = await api(queryEvents(calendarID, { ...params, Start: lastEventID || params.Start }));
+    let lastStart = params.Start;
+
+    while (lastStart) {
+        const { Events } = await api(queryEvents(calendarID, { ...params, Start: lastStart }));
+        const lastEvent = Events.length > 0 ? Events[Events.length - 1] : undefined;
         results = results.concat(Events);
-        lastEventID = Events.length === PageSize ? Events[Events.length - 1].ID : undefined;
-    } while (lastEventID);
+        lastStart = Events.length === PageSize ? parseNextPaginationStart(lastEvent) : undefined;
+        console.log(Events.length - 1, PageSize);
+    }
 
     return results;
 };
