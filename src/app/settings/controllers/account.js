@@ -47,7 +47,8 @@ function AccountController(
         { label: '简体中文', key: 'zh_CN' },
         { label: '繁體中文', key: 'zh_TW' },
         { label: 'Icelandic', key: 'is_IS' },
-        { label: 'Danish', key: 'da_DA' }
+        { label: 'Danish', key: 'da_DK' },
+        { label: 'Hungarian', key: 'hu_HU' }
     ];
     $scope.locale = _.find($scope.locales, { key: gettextCatalog.getCurrentLanguage() }) || $scope.locales[0];
     const EMAILING_KEYS = Object.keys($scope.emailing);
