@@ -81,5 +81,13 @@ if [ "${EXTRA_REGISTRY_IMAGE:-}" ]; then
     docker tag "${image_name}:${COMMIT_TAG}" "${extra_image_name}:${COMMIT_TAG}"
     docker tag "${image_name}:${BRANCH_TAG}" "${extra_image_name}:${BRANCH_TAG}"
     clock docker push "${extra_image_name}:${COMMIT_TAG}"
-    clock docker push "${extra_image_name}:${COMMIT_TAG}"
+    clock docker push "${extra_image_name}:${BRANCH_TAG}"
+fi
+
+echo "=> Images pushed:"
+echo "- ${image_name}:${COMMIT_TAG}"
+echo "- ${image_name}:${BRANCH_TAG}"
+if [ "${EXTRA_REGISTRY_IMAGE:-}" ]; then
+    echo "- ${extra_image_name}:${COMMIT_TAG}"
+    echo "- ${extra_image_name}:${BRANCH_TAG}"
 fi
