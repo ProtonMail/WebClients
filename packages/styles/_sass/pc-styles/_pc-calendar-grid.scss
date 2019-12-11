@@ -253,7 +253,7 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
 }
 
 // popover
-$calendar-popover-width: 250px !default;
+$calendar-popover-width: 400px !default;
 .eventpopover {
     position: absolute;
     background: $white;
@@ -262,7 +262,8 @@ $calendar-popover-width: 250px !default;
     animation-fill-mode: both;
     transform-origin: 50%;
     // transition: all .25s ease; should be applied only when opened and end of animation
-    width: 300px;
+    width: $calendar-popover-width;
+    padding: 1.5em;
     max-height: 70%;
     overflow: auto;
     border-radius: $global-border-radius;
