@@ -11,4 +11,9 @@ declare module 'service-worker-loader!*' {
     export { ServiceWorkerNoSupportError, scriptUrl };
 }
 
+declare module 'pmcrypto/lib/openpgp' {
+    const openpgp: any;
+    export { openpgp };
+}
+
 declare const PL_IS_STANDALONE: boolean;

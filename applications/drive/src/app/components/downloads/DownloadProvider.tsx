@@ -66,9 +66,12 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     const [downloads, setDownloads] = useState<Download[]>([]);
 
     useEffect(() => {
-        initDownloadSW().catch((err) => {
-            console.log('Download worker failed to start:', err);
-        });
+        initDownloadSW().catch((error) =>
+            console.error(
+                'Available download size will be limited because service worker failed to start:',
+                error.message
+            )
+        );
     }, []);
 
     const updateDownloadState = (id: string, state: DownloadState) => {
