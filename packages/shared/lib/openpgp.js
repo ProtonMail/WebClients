@@ -24,7 +24,7 @@ const isUnsupportedWorker = () => {
  * Initialize openpgp
  * @return {Promise}
  */
-export const init = async () => {
+export const init = async (openpgpConfig) => {
     // PM_OPENPGP is set from webpack
     // eslint-disable-next-line no-undef
     const { main, compat, elliptic, worker } = PM_OPENPGP;
@@ -38,7 +38,7 @@ export const init = async () => {
     const workerPromise = dl(worker).catch(() => dl(worker));
 
     const openpgpContents = await openpgpPromise;
-    await initMain(openpgpContents, elliptic);
+    await initMain(openpgpContents, elliptic, openpgpConfig);
 
     // Compat browsers do not support the worker.
     if (isCompat || isUnsupportedWorker()) {
@@ -57,7 +57,7 @@ let promise;
  * Get the openpgp init promise singleton
  * @return {Promise}
  */
-export const loadOpenPGP = () => {
+export const loadOpenPGP = (openpgpConfig) => {
     // eslint-disable-next-line no-return-assign
-    return promise || (promise = init());
+    return promise || (promise = init(openpgpConfig));
 };

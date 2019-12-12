@@ -3,7 +3,7 @@ import { init, createWorker } from 'pmcrypto';
 
 import { loadScript } from './dom';
 
-export const initMain = async (openpgpContents, ellipticOptions) => {
+export const initMain = async (openpgpContents, ellipticOptions, openpgpConfig = {}) => {
     const mainUrl = URL.createObjectURL(new Blob([openpgpContents], { type: 'text/javascript' }));
     await loadScript(mainUrl);
     URL.revokeObjectURL(mainUrl);
@@ -13,6 +13,10 @@ export const initMain = async (openpgpContents, ellipticOptions) => {
         integrity: ellipticOptions.integrity,
         credentials: 'same-origin'
     };
+
+    Object.entries(openpgpConfig).forEach(([key, value]) => {
+        window.openpgp.config[key] = value;
+    });
 
     init(window.openpgp);
 };
