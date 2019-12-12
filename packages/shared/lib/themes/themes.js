@@ -4,7 +4,7 @@ import themeBlueSvg from 'design-system/assets/img/pm-images/theme-blue.svg';
 import themeTestSvg from 'design-system/assets/img/pm-images/theme-test.svg';
 import lightTheme from 'design-system/_sass/pm-styles/_pm-light-theme.scss';
 import blueTheme from 'design-system/_sass/pm-styles/_pm-blue-theme.scss';
-import darkMode from 'design-system/_sass/pm-styles/_pm-darkmode.scss';
+import darkMode from 'design-system/_sass/pm-styles/_pm-dark-theme.scss';
 import { c } from 'ttag';
 
 export const DEFAULT_THEME = {
@@ -49,7 +49,7 @@ export const PROTON_THEMES = {
         getI18NLabel() {
             return c('Theme').t`Dark mode`;
         },
-        identifier: '/* dark-theme */',
+        identifier: '/* dark-mode */',
         src: themeBlueSvg,
         theme: darkMode,
         customizable: false
