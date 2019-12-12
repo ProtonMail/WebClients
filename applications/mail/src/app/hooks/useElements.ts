@@ -9,6 +9,7 @@ import { sort as sortElements, hasLabel } from '../helpers/elements';
 import { Message } from '../models/message';
 import { Element } from '../models/element';
 import { Page, Filter, Sort } from '../models/tools';
+import { expectedPageLength } from '../helpers/paging';
 
 interface Options {
     conversationMode: boolean;
@@ -27,6 +28,8 @@ interface Cache {
 interface Event {
     Conversations?: ConversationEvent[];
     Messages?: MessageEvent[];
+    ConversationCounts?: ElementCountEvent[];
+    MessageCounts?: ElementCountEvent[];
 }
 
 interface ConversationEvent {
@@ -39,6 +42,12 @@ interface MessageEvent {
     ID: string;
     Message: Message;
     Action: EVENT_ACTIONS;
+}
+
+interface ElementCountEvent {
+    LabelID: string;
+    Total: number;
+    Unread: number;
 }
 
 type ElementEvent = ConversationEvent | MessageEvent;
@@ -108,63 +117,69 @@ export const useElements = ({
     // Listen to event manager and update de cache
     useEffect(
         () => {
-            return subscribe(async ({ Conversations = [], Messages = [] }: Event) => {
-                const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
+            return subscribe(
+                async ({ Conversations = [], Messages = [], ConversationCounts = [], MessageCounts = [] }: Event) => {
+                    const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
+                    const Counts: ElementCountEvent[] = conversationMode ? ConversationCounts : MessageCounts;
 
-                console.log('event', Elements);
+                    const count = Counts.find((count) => count.LabelID === labelID);
 
-                const { toDelete, toUpdate, toCreate } = Elements.reduce(
-                    (acc, event) => {
-                        const { ID, Action } = event;
-                        const Element = conversationMode
-                            ? (event as ConversationEvent).Conversation
-                            : (event as MessageEvent).Message;
-                        if (Action === EVENT_ACTIONS.DELETE) {
-                            acc.toDelete.push(ID);
-                        }
-                        if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-                            console.warn('Event type UPDATE_DRAFT on Element not supported');
-                        }
-                        if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                            acc.toUpdate.push({ ID, ...Element });
-                        }
-                        if (Action === EVENT_ACTIONS.CREATE) {
-                            acc.toCreate.push(Element);
-                        }
-                        return acc;
-                    },
-                    { toDelete: [] as string[], toUpdate: [] as Element[], toCreate: [] as Element[] }
-                );
+                    console.log('event', Elements, count);
 
-                const toUpdateCompleted = await Promise.all(
-                    toUpdate.map(async (element) => {
-                        const elementID = element.ID || '';
-                        const existingElement = localCache.elements[elementID];
+                    const { toDelete, toUpdate, toCreate } = Elements.reduce(
+                        (acc, event) => {
+                            const { ID, Action } = event;
+                            const Element = conversationMode
+                                ? (event as ConversationEvent).Conversation
+                                : (event as MessageEvent).Message;
+                            if (Action === EVENT_ACTIONS.DELETE) {
+                                acc.toDelete.push(ID);
+                            }
+                            if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
+                                console.warn('Event type UPDATE_DRAFT on Element not supported');
+                            }
+                            if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+                                acc.toUpdate.push({ ID, ...Element });
+                            }
+                            if (Action === EVENT_ACTIONS.CREATE) {
+                                acc.toCreate.push(Element);
+                            }
+                            return acc;
+                        },
+                        { toDelete: [] as string[], toUpdate: [] as Element[], toCreate: [] as Element[] }
+                    );
 
-                        return existingElement ? { ...existingElement, ...element } : queryElement(elementID);
-                    })
-                );
+                    const toUpdateCompleted = await Promise.all(
+                        toUpdate.map(async (element) => {
+                            const elementID = element.ID || '';
+                            const existingElement = localCache.elements[elementID];
 
-                setLocalCache((localCache) => {
-                    const newReplacements: { [ID: string]: Element } = {};
+                            return existingElement ? { ...existingElement, ...element } : queryElement(elementID);
+                        })
+                    );
 
-                    [...toCreate, ...toUpdateCompleted].forEach((element) => {
-                        newReplacements[element.ID || ''] = element;
+                    setLocalCache((localCache) => {
+                        const newReplacements: { [ID: string]: Element } = {};
+
+                        [...toCreate, ...toUpdateCompleted].forEach((element) => {
+                            newReplacements[element.ID || ''] = element;
+                        });
+                        const newElements = {
+                            ...localCache.elements,
+                            ...newReplacements
+                        };
+                        toDelete.forEach((elementID) => {
+                            delete newElements[elementID];
+                        });
+
+                        return {
+                            ...localCache,
+                            elements: newElements,
+                            total: count ? count.Total : localCache.total
+                        };
                     });
-                    const newElements = {
-                        ...localCache.elements,
-                        ...newReplacements
-                    };
-                    toDelete.forEach((elementID) => {
-                        delete newElements[elementID];
-                    });
-
-                    return {
-                        ...localCache,
-                        elements: newElements
-                    };
-                });
-            });
+                }
+            );
         },
         // Having the cache in dependency will subscribe / unsubscribe to the eventmanager many times
         // But it's mandatory for the function to have the reference of the current localCache
@@ -194,16 +209,17 @@ export const useElements = ({
 
     // Request data when not in the cache
     useEffect(() => {
-        // No second request if already one underway. TODO: What if parameters has changed?
-        // Send request if page not in cache
-        const shouldSendRequest = () => {
-            // TODO: Check for page size BUT it's complicated
-            // - check against page size
-            // - check against total responses
-            // - check against last page size
-            // WARNING: a problem in the check could trigger infinite requests
-            return !loading && !localCache.pages.includes(page.page);
-        };
+        /**
+         * Should send request if:
+         * - No request currently underway. TODO: What if parameters has changed?
+         * - The page is not already in the cache
+         * - Or the cache contains the expected count of elements
+         * Beware, the total in the page object can't be trusted, it's managed afterwards by the view
+         * so the total from the cache has to be used
+         */
+        const shouldSendRequest = () =>
+            !loading &&
+            (!localCache.pages.includes(page.page) || elements.length !== expectedPageLength({ ...page, total }));
 
         const load = async () => {
             setLoading(true);

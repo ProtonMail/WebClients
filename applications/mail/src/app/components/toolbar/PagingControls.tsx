@@ -7,6 +7,7 @@ import ToolbarDropdown from './ToolbarDropdown';
 
 import './PagingControls.scss';
 import { Page } from '../../models/tools';
+import { pageCount } from '../../helpers/paging';
 
 interface Props {
     loading: boolean;
@@ -19,7 +20,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
     const handleNext = () => setPage(page.page + 1);
     const handlePrevious = () => setPage(page.page - 1);
     const handlePage = (newPage: number) => () => setPage(newPage);
-    const pageCount = Math.floor(page.total / page.size);
+    const count = pageCount(page);
 
     return (
         <>
@@ -35,12 +36,12 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
                 title={c('Action').t`Change layout`}
                 content={String(page.page + 1)}
                 className="paging-dropdown"
-                disabled={pageCount === 0}
+                disabled={count === 0}
                 size="narrow"
             >
                 {() => (
                     <DropdownMenu>
-                        {[...Array(pageCount)].map((_, i) => (
+                        {[...Array(count)].map((_, i) => (
                             <DropdownMenuButton loading={loading} key={i} onClick={handlePage(i)}>
                                 {i + 1}
                             </DropdownMenuButton>
@@ -50,7 +51,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
             </ToolbarDropdown>
             <ToolbarButton
                 loading={loading}
-                disabled={page.page >= pageCount}
+                disabled={page.page >= count}
                 title={c('Action').t`Next`}
                 onClick={handleNext}
             >

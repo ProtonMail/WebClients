@@ -70,6 +70,13 @@ export const sort = (elements: Element[], sort: Sort, labelID: string) => {
         Time: getTime,
         Size: getSize
     }[sort.sort];
-    const compare = (a: number, b: number) => (sort.desc ? b - a : a - b);
-    return elements.sort((e1, e2) => compare(getValue(e1, labelID), getValue(e2, labelID)));
+    const compare = (a: Element, b: Element) => {
+        const valueA = getValue(a, labelID);
+        const valueB = getValue(b, labelID);
+        if (valueA === valueB) {
+            return (a.Order || 0) - (b.Order || 0);
+        }
+        return sort.desc ? valueB - valueA : valueA - valueB;
+    };
+    return [...elements].sort((e1, e2) => compare(e1, e2));
 };

@@ -36,6 +36,7 @@ export interface Message {
     Labels?: Label[];
     LabelIDs?: string[];
     conversationID?: string;
+    Order?: number;
 }
 
 export interface MessageExtended {

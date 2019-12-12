@@ -13,4 +13,5 @@ export interface Conversation {
     NumUnread?: number;
     Labels?: Label[];
     LabelIDs?: string[];
+    Order?: number;
 }
