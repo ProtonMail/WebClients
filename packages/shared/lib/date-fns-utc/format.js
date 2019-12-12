@@ -1,6 +1,6 @@
 import longFormatters from 'date-fns/_lib/format/longFormatters/index';
 import formatters from 'date-fns/_lib/format/formatters/index';
-import { dateLocale } from '../i18n';
+import defaultLocale from 'date-fns/locale/en-US';
 
 /**
  * We copy here (with some refactor) the code for the format function from the 'date-fns' library.
@@ -52,7 +52,7 @@ const toInteger = (dirtyNumber) => {
  * @returns {String}
  */
 const formatUTC = (utcDate, formatString, options = {}) => {
-    const locale = options.locale || dateLocale;
+    const locale = options.locale || defaultLocale;
     const localeFirstWeekContainsDate = locale && locale.options && locale.options.firstWeekContainsDate;
     const defaultFirstWeekContainsDate =
         localeFirstWeekContainsDate == null ? 1 : toInteger(localeFirstWeekContainsDate);
