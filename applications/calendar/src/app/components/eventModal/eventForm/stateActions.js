@@ -36,12 +36,12 @@ export const getAllDayCheck = (oldModel, isAllDay) => {
         const {
             start: { time: startTime },
             end: { time: endTime }
-        } = getInitialDateTimeModel(oldModel.defaultEventDuration);
+        } = getInitialDateTimeModel(oldModel.initialDate, oldModel.defaultEventDuration);
 
         return {
             isAllDay,
             start: { ...oldModel.start, time: startTime },
-            end: { ...oldModel.end, time: endTime },
+            end: { ...oldModel.end, time: endTime }
         };
     }
 
@@ -49,4 +49,3 @@ export const getAllDayCheck = (oldModel, isAllDay) => {
         isAllDay
     };
 };
-

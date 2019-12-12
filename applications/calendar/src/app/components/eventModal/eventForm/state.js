@@ -120,6 +120,7 @@ export const getInitialModel = ({
         location: '',
         description: '',
         frequency: FREQUENCY.ONCE,
+        initialDate,
         isAllDay,
         defaultEventDuration,
         ...notificationModel,
