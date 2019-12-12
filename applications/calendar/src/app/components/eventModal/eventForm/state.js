@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
-import { convertZonedDateTimeToUTC, toUTCDate } from 'proton-shared/lib/date/timezone';
+import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
 
 import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
@@ -41,12 +41,20 @@ export const getNotificationModels = ({
     };
 };
 
-export const getInitialDateTimeModel = (defaultEventDuration, tzid) => {
-    const now = new Date();
+export const getInitialDateTimeModel = (initialDate, defaultEventDuration, tzid) => {
+    const snapInterval = 30;
 
     const start = getSnappedDate(
-        new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes() + 30)),
-        30
+        new Date(
+            Date.UTC(
+                initialDate.getUTCFullYear(),
+                initialDate.getUTCMonth(),
+                initialDate.getUTCDate(),
+                initialDate.getUTCHours(),
+                initialDate.getUTCMinutes() + snapInterval
+            )
+        ),
+        snapInterval
     );
 
     const end = new Date(
@@ -90,6 +98,7 @@ const getCalendarsModel = (Calendar, Calendars = []) => {
 };
 
 export const getInitialModel = ({
+    initialDate = toUTCDate(fromLocalDate(new Date())), // Needs to be in fake utc time
     CalendarSettings,
     Calendar,
     Calendars,
@@ -101,7 +110,7 @@ export const getInitialModel = ({
     tzid
 }) => {
     const { DefaultEventDuration: defaultEventDuration = DEFAULT_EVENT_DURATION } = CalendarSettings;
-    const dateTimeModel = getInitialDateTimeModel(defaultEventDuration, tzid);
+    const dateTimeModel = getInitialDateTimeModel(initialDate, defaultEventDuration, tzid);
     const notificationModel = getNotificationModels(CalendarSettings);
     const memberModel = getInitialMemberModel(Addresses, Members, Member, Address);
     const calendarsModel = getCalendarsModel(Calendar, Calendars);

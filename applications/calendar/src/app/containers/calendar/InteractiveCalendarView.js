@@ -130,6 +130,16 @@ const InteractiveCalendarView = ({
     };
 
     const getCreateModel = ({ isAllDay }) => {
+        const initialDate = new Date(
+            Date.UTC(
+                date.getUTCFullYear(),
+                date.getUTCMonth(),
+                date.getUTCDate(),
+                now.getUTCHours(),
+                now.getUTCMinutes()
+            )
+        );
+
         const { Members = [], CalendarSettings } = defaultCalendarBootstrap;
         const [Member = {}] = Members;
         const Address = addresses.find(({ Email }) => Member.Email === Email);
@@ -137,6 +147,7 @@ const InteractiveCalendarView = ({
             return;
         }
         return getInitialModel({
+            initialDate,
             CalendarSettings,
             Calendar: defaultCalendar,
             Calendars: calendars,
