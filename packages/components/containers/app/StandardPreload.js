@@ -16,16 +16,19 @@ export const getEventID = ({ cache, api }) => {
     return Promise.resolve(tmpEventID || api(getLatestID()).then(({ EventID }) => EventID));
 };
 
-const StandardPreload = ({ locales = {}, preloadModels = [], onSuccess, onError }) => {
+const StandardPreload = ({ locales = {}, preloadModels = [], openpgpConfig, onSuccess, onError }) => {
     const api = useApi();
     const cache = useCache();
 
     useEffect(() => {
         (async () => {
             const [[userSettings], eventID] = await Promise.all([
-                loadModels(uniqueBy([UserSettingsModel, UserModel, ...preloadModels], (x) => x), { api, cache }),
+                loadModels(
+                    uniqueBy([UserSettingsModel, UserModel, ...preloadModels], (x) => x),
+                    { api, cache }
+                ),
                 getEventID({ api, cache }),
-                loadOpenPGP()
+                loadOpenPGP(openpgpConfig)
             ]);
 
             await loadLocale({

@@ -5,7 +5,7 @@ import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { getBrowserLocale, getClosestMatches } from 'proton-shared/lib/i18n/helper';
 import loadLocale from 'proton-shared/lib/i18n/loadLocale';
 
-const StandardPublicApp = ({ locales = {}, children }) => {
+const StandardPublicApp = ({ locales = {}, openpgpConfig, children }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
@@ -14,7 +14,7 @@ const StandardPublicApp = ({ locales = {}, children }) => {
 
         (async () => {
             await Promise.all([
-                loadOpenPGP(),
+                loadOpenPGP(openpgpConfig),
                 loadLocale({
                     ...getClosestMatches({
                         locale: browserLocale,
@@ -47,6 +47,7 @@ const StandardPublicApp = ({ locales = {}, children }) => {
 
 StandardPublicApp.propTypes = {
     locales: PropTypes.object,
+    openpgpConfig: PropTypes.object,
     children: PropTypes.node
 };
 

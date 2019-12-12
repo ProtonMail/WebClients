@@ -8,7 +8,14 @@ import LoaderPage from './LoaderPage';
 import StandardPreload from './StandardPreload';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 
-const StandardPrivateApp = ({ locales = {}, onLogout, preloadModels = [], eventModels = [], children }) => {
+const StandardPrivateApp = ({
+    locales = {},
+    onLogout,
+    openpgpConfig,
+    preloadModels = [],
+    eventModels = [],
+    children
+}) => {
     const [loading, setLoading] = useState(true);
     const eventManagerRef = useRef();
 
@@ -16,6 +23,7 @@ const StandardPrivateApp = ({ locales = {}, onLogout, preloadModels = [], eventM
         return (
             <>
                 <StandardPreload
+                    openpgpConfig={openpgpConfig}
                     locales={locales}
                     preloadModels={preloadModels}
                     onSuccess={(ev) => {
@@ -45,6 +53,7 @@ StandardPrivateApp.propTypes = {
     onLogout: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
     locales: PropTypes.object,
+    openpgpConfig: PropTypes.object,
     preloadModels: PropTypes.array,
     eventModels: PropTypes.array
 };
