@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
 import registerServiceWorker from 'service-worker-loader!./downloadSW';
 import { isSafari, isEdge } from 'proton-shared/lib/helpers/browser';
+import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 
 interface DownloadMeta {
     filename: string;
@@ -13,14 +14,7 @@ interface DownloadMeta {
  * Edge - doesn't support ReadableStream() constructor, will support it in chromium version.
  * For them download is done in-memory using blob response.
  */
-const useBlobFallback = isSafari() || isEdge();
-
-function createDownloadAnchor(src: string, blobFileName: string) {
-    const link = document.createElement('a');
-    link.href = src;
-    link.download = blobFileName;
-    link.click();
-}
+let useBlobFallback = isSafari() || isEdge();
 
 function createDownloadIframe(src: string) {
     const iframe = document.createElement('iframe');
@@ -53,13 +47,12 @@ function serviceWorkerKeepAlive() {
     }, 10000);
 }
 
-export function initDownloadSW() {
+export async function initDownloadSW() {
     if ('serviceWorker' in navigator) {
-        return registerServiceWorker({ scope: '/' }).then((registration) => {
-            serviceWorkerKeepAlive();
-            return registration;
-        });
+        await registerServiceWorker({ scope: '/' });
+        serviceWorkerKeepAlive();
     } else {
+        useBlobFallback = true;
         throw new Error('Service workers are not supported by this browser');
     }
 }
@@ -68,12 +61,10 @@ export async function openDownloadStream(
     { filename, mimeType, size }: DownloadMeta,
     { onCancel }: { onCancel: () => void }
 ) {
-    const worker = await wakeUpServiceWorker();
-
     const chunks: Uint8Array[] = [];
     const channel = new MessageChannel();
 
-    const stream = new window.WritableStream({
+    const stream = new WritableStream({
         write(block: Uint8Array) {
             if (useBlobFallback) {
                 chunks.push(block);
@@ -85,8 +76,7 @@ export async function openDownloadStream(
         close() {
             if (useBlobFallback) {
                 const blob = new Blob(chunks, { type: 'application/octet-stream; charset=utf-8' });
-                const url = URL.createObjectURL(blob);
-                createDownloadAnchor(url, filename);
+                downloadFile(blob, filename);
             } else {
                 channel.port1.postMessage({ action: 'end' });
             }
@@ -94,6 +84,8 @@ export async function openDownloadStream(
     });
 
     if (!useBlobFallback) {
+        const worker = await wakeUpServiceWorker();
+
         // Channel to stream file contents through
         channel.port1.onmessage = ({ data }) => {
             if (data?.action === 'download_canceled') {
