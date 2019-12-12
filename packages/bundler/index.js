@@ -170,9 +170,9 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
                 const { tag = `v${PKG.version}`, originCommit } = ctx || {};
                 const fileName = path.join('dist', 'assets/version.json');
 
-                if (/v4/.test(branch)) {
-                    const date = moment().format('MM.DD');
-                    return script('createVersionJSON.sh', [originCommit, `v4.0.0~${date}`, fileName]);
+                // custom version for v4
+                if (PKG['version-beta']) {
+                    return script('createVersionJSON.sh', [originCommit, `${PKG['version-beta']}`, fileName]);
                 }
 
                 return script('createVersionJSON.sh', [originCommit, tag, fileName]);
