@@ -8,7 +8,7 @@ import { getChildrenElements } from '../../../helpers/domHelper';
 const { IFRAME_CLASS } = DEFAULT_SQUIRE_VALUE;
 
 /* @ngInject */
-function squireEditor(dispatchers, editorModel, sanitize) {
+function squireEditor(dispatchers, editorModel, sanitize, AppModel) {
     const CACHE = {};
 
     const { dispatcher } = dispatchers(['squire.editor']);
@@ -63,6 +63,13 @@ function squireEditor(dispatchers, editorModel, sanitize) {
         const head = doc.head || doc.getElementsByTagName('head')[0];
         const style = doc.createElement('style');
 
+        const colorsVariations = (colorStandard, colorDarkmode) => {
+            if (AppModel.is('darkmode')) {
+                return colorDarkmode;
+            }
+            return colorStandard;
+        };
+
         const css = `
             html {
                 height: 100%
@@ -75,7 +82,9 @@ function squireEditor(dispatchers, editorModel, sanitize) {
                 font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
                 font-size: 14px;
                 line-height: 1.65em;
-                color: #222;
+                color: ${colorsVariations('#222', '#fff')};
+                background: ${colorsVariations('#fff', '#3c414e')};
+                /* to fix, CSS var are not passing through the iframe */
                 word-wrap: break-word;
             }
 

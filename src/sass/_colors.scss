@@ -1,5 +1,5 @@
 .composer-container,
 .squire-container {
     background: $composer-background;
-    color: $composer-color;
+    color: var(--color-main-area, $composer-color);
 }

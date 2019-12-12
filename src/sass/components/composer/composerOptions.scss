@@ -7,7 +7,7 @@
     padding: 2rem 10px;
     margin-bottom: 0 !important;
     z-index: 99999;
-    background: $white;
+    background: var(--bgcolor-main-area, $white);
     display: none;
     &.show {
         display: flex;

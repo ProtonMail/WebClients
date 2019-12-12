@@ -57,7 +57,7 @@ function unsubscribePanel(
         replace: true,
         restrict: 'E',
         template: `
-                <div class="bg-white w100 rounded bordered-container p0-5 mb0-5 flex flex-nowrap flex-items-center">
+                <div class="message-infobox w100 rounded bordered-container p0-5 mb0-5 flex flex-nowrap flex-items-center">
                     <icon data-name="email" class="flex-item-noshrink fill-global-grey mtauto mbauto"></icon>
                     <span class="w100 flex flex-wrap">
                         <span class="pl0-5 pr0-5 flex-item-fluid-auto pr1">${I18N.notice}</span>

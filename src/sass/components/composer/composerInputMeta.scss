@@ -9,7 +9,7 @@
     display: flex;
     position: absolute;
     z-index: 2;
-    background: white;
+    background: var(--bgcolor-main-area, white) ;
     height: 100%;
     left: 0;
 }
@@ -18,7 +18,7 @@
     padding: .4em .85em;
     max-height: 2.5em;
     margin-right: 2.6rem;
-    background: #fcfdff;
+    background: var(--bgcolor-input, #fcfdff);
 }
 
 .composerInputMeta-overlay-list {

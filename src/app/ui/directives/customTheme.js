@@ -10,6 +10,7 @@ const customTheme = (AppModel, dispatchers, mailSettingsModel, organizationModel
             if (isLoggedIn) {
                 const { Theme: organizationTheme } = organizationModel.get() || {};
                 const userTheme = mailSettingsModel.get('Theme');
+                AppModel.set('darkmode', userTheme.startsWith('/* dark-mode'));
                 el[0].textContent = organizationTheme || userTheme || '';
             }
         };

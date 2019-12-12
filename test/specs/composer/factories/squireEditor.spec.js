@@ -10,6 +10,9 @@ describe('squire editor', () => {
     let compile;
     let rootScope;
     let scope;
+    const appmodel = {
+        is: _.identity
+    };
     const sanitize = {
         content: _.identity
     };
@@ -21,7 +24,7 @@ describe('squire editor', () => {
 
         const dispatchers = dispatchersService(rootScope);
         const editorModel = editorModelService();
-        squireEditor = service(dispatchers, editorModel, sanitize);
+        squireEditor = service(dispatchers, editorModel, sanitize, appmodel);
     }));
 
     beforeEach(() => {

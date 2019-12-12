@@ -14,7 +14,7 @@
 
 
 .autocompleteEmails-item {
-    background-color: $pm-global-light;
+    background-color: var(--bgcolor-item-column-list, $pm-global-light);
     margin-bottom: 5px;
     margin-right: 5px;
     text-shadow: none;
@@ -30,9 +30,13 @@
     color: $exp;
 }
 
+.autocompleteEmails-input {
+    color: var(--color-main-area, $pm-global-grey);
+}
+
 .autocompleteEmails-label {
-    border-left: 1px solid $pm-global-border;
-    border-right: 1px solid $pm-global-border;
+    border-left: 1px solid var(--bordercolor-input, $pm-global-border);
+    border-right: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 /* Generated via autocompleteEmailsItem by the directive */
 .autocompleteEmailsItem-icon-group {
@@ -65,8 +69,8 @@
         max-height: 150px;
         overflow: auto;
         z-index: 99999;
-        border: 1px solid $border;
-        background-color: $white;
+        border: 1px solid var(--bordercolor-input, $border);
+        background-color: var(--bgcolor-input, $white);
         box-shadow: none;
         transform: scale(1) !important;
         transition-duration: 0s !important;
@@ -77,14 +81,14 @@
     ul:empty,
     ul::before {display: none}
 
-    li[aria-selected="true"], li[aria-selected="true"]:hover {background-color: $default-color-light}
+    li[aria-selected="true"], li[aria-selected="true"]:hover {background-color: var(--bgcolor-input,$default-color-light);}
 
-    li:hover {background-color: $light}
+    li:hover {background-color: var(--bordercolor-input, $light);}
 
     li,
     li:hover,
     li[aria-selected="true"],
-    li[aria-selected="true"]:hover {color: $default-color }
+    li[aria-selected="true"]:hover {color: var(--color-main-area, $default-color) }
 
     mark,
     li:hover mark,
@@ -100,8 +104,8 @@
     max-height: 150px;
     overflow: auto;
     z-index: 9000;
-    border: 1px solid $border;
-    background-color: $white;
+    border: 1px solid var(--bordercolor-input, $border);
+    background-color: var(--bgcolor-input, $white);
     box-shadow: none;
     transform: scale(1) !important;
     transition-duration: 0s !important;

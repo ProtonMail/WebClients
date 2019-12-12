@@ -1,4 +1,6 @@
-.composerAttachments-container { background: #fcfdff }
+.composerAttachments-container {
+    background: var(--bgcolor-input, #fcfdff);
+}
 .composerAttachments-hidden {display: none}
 
 .composerAttachments-close .composerAttachments-loaders {display: none}

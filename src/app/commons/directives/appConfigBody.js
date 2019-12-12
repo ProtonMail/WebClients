@@ -33,7 +33,8 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
         isSecure: 'secure',
         isUnlock: 'unlock',
         newVersion: 'newVersion',
-        dropdownApp: className('dropdown--open')
+        dropdownApp: className('dropdown--open'),
+        darkmode: className('darkmode')
     };
 
     return {

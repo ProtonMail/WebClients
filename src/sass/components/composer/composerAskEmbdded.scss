@@ -24,8 +24,8 @@
     height: 100%;
     overflow: hidden;
     z-index: 15000; // ask Embedding should always be on top of the toolbar!
-    background: #F5F5F5;
-    color: #505061;
+    background: var(--bgcolor-main-area, #F5F5F5);
+    color: var(--color-main-area, #505061);
     text-align: center;
 }
 

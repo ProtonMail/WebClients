@@ -1,5 +1,5 @@
 .squireToolbar-container {
-    background: #fcfdff;
+    background: var(--bgcolor-input, #fcfdff);
 }
 
 .squireToolbar-container.b .squireToolbar-action-bold,
@@ -34,7 +34,7 @@
 [class*="squireToolbar-row"] [class*="squireToolbar-action-"]:active,
 [class*="squireToolbar-row"] .squireToolbar-action-mode:hover,
 [class*="squireToolbar-row"] .squireToolbar-action-mode:active {
-    background: #FFF;
+    background: var(--bgcolor-main-area, $white);
     //border: 1px solid $border;
 }
 
@@ -47,7 +47,7 @@
 }
 
 
-[class*="squireToolbar-action-"]:hover { background-color: $pm-global-muted !important }
+[class*="squireToolbar-action-"]:hover { background-color: var(--bgcolor-main-area, $pm-global-muted) !important }
 
 
 .squireToolbar-row-1 {
@@ -136,7 +136,7 @@
     width: 1px;
     //height: $composerRowHeight;
     align-self: stretch;
-    background: $pm-global-border;
+    background: var(--bordercolor-input, $border);
 }
 
 [name="signature"] [class*="squireToolbar-action-"] {
@@ -155,14 +155,14 @@
 
 .squireToolbar-action-color {
     width: 42px;
-    background-color: #FFF;
+    background-color: var(--bgcolor-input, $white);
 }
 
 .squire-popover {
     position: absolute;
     z-index: 1005;
-    background: $white;
-    border: 1px solid $border;
+    background: var(--bgcolor-input, $white);
+    border: 1px solid var(--bordercolor-input, $border);
     white-space: nowrap;
     right: 10px !important;
     padding: 0;
@@ -233,8 +233,8 @@
 .squireToolbar-select-list {
     position: absolute;
     z-index: 1005;
-    background: $white;
-    border: 1px solid $pm-global-border;
+    background: var(--bgcolor-input, $white);
+    border: 1px solid var(--bordercolor-input, $pm-global-border);
     white-space: nowrap;
     top: 100%;
     left: 0;
@@ -302,7 +302,7 @@
 .squireToolbar-dropdown-divider {
     height: 1px;
     margin: 4px 0;
-    background-color: $pm-global-border;
+    background-color: var(--bordercolor-input, $pm-global-border);
 }
 
 .squireToolbar-select-item {
@@ -310,7 +310,7 @@
     align-items: center;
     cursor: pointer;
     padding: 0 2.5rem 0 .5rem; // don't touch the padding right
-    border-top: 1px dotted lighten( $border, 20% );
+    border-top: 1px dotted var(--bordercolor-input, lighten( $border, 20% ));
     line-height: 2;
     list-style: none;
 
@@ -320,7 +320,7 @@
 .squireToolbar-dropdown-divider + .squireToolbar-select-item,
 .squireToolbar-select-item:first-child { border: 0 }
 .squireToolbar-select-item:hover {
-    background: lighten( $border, 20% )
+    background: var(--bordercolor-input, lighten( $border, 20% ));
 }
 
 
@@ -330,7 +330,7 @@ $sizes: 10, 12, 14, 16, 18, 20, 22, 24, 26;
     .squireToolbar-select-item[data-value="#{$size}"] { font-size: #{$size}px }
 
     /* current selected size on click */
-    [data-font-size="#{$size}"] .squireToolbar-select-item[data-value="#{$size}"] { background: lighten( $border, 15% ) }
+    [data-font-size="#{$size}"] .squireToolbar-select-item[data-value="#{$size}"] { background: var(--bgcolor-main-area, lighten( $border, 15% )); }
 }
 
 
@@ -342,7 +342,7 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
     }
 
     [data-font-family^="#{$font}"] .squireToolbar-select-item[data-value^="#{$font}"] {
-        background: lighten( $border, 15% )
+        background: var(--bgcolor-main-area, lighten( $border, 15% ));
     }
 }
 
@@ -367,6 +367,10 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
         border-color: transparent;
         transition: background,border ease-out .2s
     }
+}
+
+.squireDropdown-item-label {
+    color: var(--color-main-area, #555);
 }
 
 .squireToolbar-action-mode .squireDropdown-item-label {

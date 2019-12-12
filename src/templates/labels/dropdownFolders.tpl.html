@@ -36,7 +36,7 @@
             class="dropDown-item alignleft"
             ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchValue})) track by label.ID">
 
-            <button class="w100 flex pt0-5 pb0-5 no-pointer-events-children" data-folder-id="{{ ::label.ID }}">
+            <button class="w100 flex pt0-5 pb0-5 dropDown-logout-button no-pointer-events-children" data-folder-id="{{ ::label.ID }}">
                 <div class="flex w100">
                     <icon
                         data-name="folder"
@@ -51,7 +51,7 @@
             class="dropDown-item"
             ng-repeat="label in (filteredLabels2 = (mailboxes | filter: {Name: searchValue})) track by label.ID">
 
-            <button class="w100 flex pt0-5 pb0-5 no-pointer-events-children" data-folder-id="{{ ::label.ID }}">
+            <button class="w100 flex pt0-5 pb0-5 dropDown-logout-button no-pointer-events-children" data-folder-id="{{ ::label.ID }}">
                 <div class="flex w100">
                     <icon
                         data-name="{{::label.icon}}"

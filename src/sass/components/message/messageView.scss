@@ -11,7 +11,7 @@
 }
 
 .message-container.draft {
-    border-color: $pm-global-muted;
+    border-color: var(--bgcolor-main-area, $pm-global-muted);
     .mailboxitem-folder { display: none }
 }
 

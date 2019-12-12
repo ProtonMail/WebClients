@@ -43,7 +43,7 @@
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 
         /* STYLES */
-        background:$white;
+        background: var(--bgcolor-main-area, $white);
         will-change: transform;
 
         .toRow:not(.composerInputMeta-recipients) .composerInputMeta-fakelabel { display: none }
@@ -257,7 +257,7 @@
         }
 
         .composerHeader-container {
-            background: var(--bgcolor-toolbar, $pm-global-altgrey);
+            background: var(--bgcolor-main-area, $pm-global-altgrey);
             color: $white;
 
             .composerHeader-btn {
@@ -383,7 +383,7 @@
 }
 
 .composerInputMeta-autocomplete {
-    background: #fcfdff;
+    background: var(--bgcolor-input, #fcfdff);
     padding-top: .4em;
     padding-bottom: .1em;
 }
