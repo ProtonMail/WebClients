@@ -124,7 +124,7 @@ function signupModel(
                 return Payment.verify({ ...parameters, Username: get('username') }).then(({ VerifyCode }) => {
                     set('VerifyCode', VerifyCode);
 
-                    if (['card', 'paypal'].includes(options.Payment.Type)) {
+                    if (['card', 'paypal', 'token'].includes(options.Payment.Type)) {
                         set('temp.method', parameters.Payment);
                     }
                 });
