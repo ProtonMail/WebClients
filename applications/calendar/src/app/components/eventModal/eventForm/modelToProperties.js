@@ -2,12 +2,23 @@ import { withRequiredProperties } from 'proton-shared/lib/calendar/veventHelper'
 import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
 
 import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN, FREQUENCY, MAX_LENGTHS } from '../../../constants';
+import { transformBeforeAt } from '../../../helpers/notifications';
 
-const getValarmTriggerAt = (date) => {
+const modifyAllDayValarm = ({ isNegative, days, ...rest }, date) => {
+    const modifiedAt = isNegative ? transformBeforeAt(date) : date;
+
+    const hours = modifiedAt.getHours();
+    const minutes = modifiedAt.getMinutes();
+
+    const modifiedDays = isNegative && hours === 0 && minutes === 0 ? Math.max(days, 1) : Math.max(days, 1) - 1;
+
     return {
-        hours: date.getHours(),
-        minutes: date.getMinutes(),
-        seconds: 0
+        ...rest,
+        days: modifiedDays,
+        hours,
+        minutes,
+        seconds: 0,
+        isNegative
     };
 };
 
@@ -22,18 +33,18 @@ const getValarmTriggerUnit = (unit) => {
     );
 };
 
-export const getValarmTrigger = ({ isAllDay, unit, when, value = 0, at }) => {
+export const getValarmTrigger = ({ isAllDay, unit, when, value, at }) => {
     const isNegative = when === NOTIFICATION_WHEN.BEFORE;
-    return {
+    const result = {
         weeks: 0,
         days: 0,
         hours: 0,
         minutes: 0,
         seconds: 0,
         [getValarmTriggerUnit(unit)]: value,
-        ...(isAllDay ? getValarmTriggerAt(at) : {}),
         isNegative
     };
+    return isAllDay ? modifyAllDayValarm(result, at) : result;
 };
 
 export const modelToDateProperty = ({ isAllDay, date, time, tzid: specificTzid }, tzid) => {

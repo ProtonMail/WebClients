@@ -1,10 +1,9 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Input, Select, TimeInput, classnames } from 'react-components';
 import { c, msgid } from 'ttag';
 
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, NOTIFICATION_TYPE } from '../../../constants';
-import { transformBeforeAt } from '../../../helpers/notifications';
 
 const { EMAIL, DEVICE } = NOTIFICATION_TYPE;
 const { DAY, MINUTES, HOURS, WEEK } = NOTIFICATION_UNITS;
@@ -20,19 +19,7 @@ const NotificationInput = ({
 }) => {
     const isAllDayBefore = isAllDay && when === BEFORE;
 
-    /**
-     * For all day events that are before, the day and hour needs to be modified to correctly say e.g.
-     * 1 day before at 9 am for -PT15H
-     */
     const numberValue = +value || 0;
-    const modifiedValue = isAllDayBefore && unit === NOTIFICATION_UNITS.DAY ? numberValue + 1 : numberValue;
-
-    const modifiedAt = useMemo(() => {
-        if (isAllDayBefore) {
-            return transformBeforeAt(at);
-        }
-        return at;
-    }, [isAllDay, at, when]);
 
     const notificationI18N = isAllDay
         ? {
@@ -67,23 +54,33 @@ const NotificationInput = ({
                 <Input
                     type="number"
                     className="mr1"
-                    value={value === '' ? '' : modifiedValue}
-                    onChange={({ target }) => {
-                        if (target.value === '') {
-                            return onChange({ ...notification, value: '' });
+                    step="1"
+                    min="0"
+                    value={value === '' ? '' : numberValue}
+                    onInput={({ target, target: { value: newValue, validity } }) => {
+                        const isClear = validity.valid;
+                        // Prevent broken input on certain browsers...
+                        if (newValue === '') {
+                            const newValue = isClear ? '' : value;
+                            target.value = newValue;
+                            return onChange({ ...notification, value: newValue });
                         }
-                        const newValue = +target.value;
+                        const intValue = parseInt(newValue, 10);
+                        if (isNaN(intValue)) {
+                            return;
+                        }
                         if (isAllDayBefore && unit === NOTIFICATION_UNITS.DAY) {
-                            if (newValue <= 0) {
+                            if (intValue <= 0) {
+                                target.value = 1;
+                                onChange({ ...notification, value: 1 });
                                 return;
                             }
-                            onChange({ ...notification, value: newValue - 1 });
+                        }
+                        if (intValue < 0) {
                             return;
                         }
-                        if (newValue < 0) {
-                            return;
-                        }
-                        onChange({ ...notification, value: newValue });
+                        target.value = intValue;
+                        onChange({ ...notification, value: intValue });
                     }}
                 />
                 <Select
@@ -91,17 +88,24 @@ const NotificationInput = ({
                     value={unit}
                     options={[
                         !isAllDay && {
-                            text: c('Time unit').ngettext(msgid`Minute`, `Minutes`, modifiedValue),
+                            text: c('Time unit').ngettext(msgid`Minute`, `Minutes`, numberValue),
                             value: MINUTES
                         },
                         !isAllDay && {
-                            text: c('Time unit').ngettext(msgid`Hour`, `Hours`, modifiedValue),
+                            text: c('Time unit').ngettext(msgid`Hour`, `Hours`, numberValue),
                             value: HOURS
                         },
-                        { text: c('Time unit').ngettext(msgid`Day`, `Days`, modifiedValue), value: DAY },
-                        { text: c('Time unit').ngettext(msgid`Week`, `Weeks`, modifiedValue), value: WEEK }
+                        { text: c('Time unit').ngettext(msgid`Day`, `Days`, numberValue), value: DAY },
+                        { text: c('Time unit').ngettext(msgid`Week`, `Weeks`, numberValue), value: WEEK }
                     ].filter(Boolean)}
-                    onChange={({ target }) => onChange({ ...notification, unit: +target.value })}
+                    onChange={({ target }) => {
+                        const newUnit = +target.value;
+                        if (isAllDay && newUnit === DAY && value === 0 && when === BEFORE) {
+                            onChange({ ...notification, value: 1, unit: newUnit });
+                            return;
+                        }
+                        onChange({ ...notification, unit: newUnit });
+                    }}
                 />
             </span>
             <span className="flex flex-nowrap flex-items-center">
@@ -118,31 +122,14 @@ const NotificationInput = ({
                 ) : (
                     <span className="flex-item-noshrink pr0-5">{notificationI18N[when].toLowerCase()}</span>
                 )}
-                {isAllDay ? (
-                    <TimeInput
-                        value={modifiedAt}
-                        onChange={(at) => {
-                            if (isAllDayBefore) {
-                                onChange({
-                                    ...notification,
-                                    at: transformBeforeAt(at)
-                                });
-                                return;
-                            }
-                            onChange({
-                                ...notification,
-                                at
-                            });
-                        }}
-                    />
-                ) : null}
+                {isAllDay ? <TimeInput value={at} onChange={(at) => onChange({ ...notification, at })} /> : null}
             </span>
         </div>
     );
 };
 
 const NotificationShape = PropTypes.shape({
-    value: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     isAllDay: PropTypes.bool,
     at: PropTypes.instanceOf(Date),
     unit: PropTypes.oneOf([WEEK, DAY, HOURS, MINUTES]),

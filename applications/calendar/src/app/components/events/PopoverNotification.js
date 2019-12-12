@@ -5,21 +5,15 @@ import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import {
     notificationAtToString,
     notificationUnitToString,
-    notificationWhenToString,
-    transformBeforeAt
+    notificationWhenToString
 } from '../../helpers/notifications';
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../constants';
 
 const PopoverNotification = ({ notification, formatTime }) => {
     const str = useMemo(() => {
         const { value, unit, when, at, isAllDay } = notification;
-        const isAllDayBefore = isAllDay && when === NOTIFICATION_WHEN.BEFORE;
-
-        const modifiedValue = isAllDayBefore && unit === NOTIFICATION_UNITS.DAY ? value + 1 : value;
-        const modifiedAt = toUTCDate(fromLocalDate(isAllDayBefore ? transformBeforeAt(at) : at));
-
+        const modifiedAt = toUTCDate(fromLocalDate(at));
         return [
-            notificationUnitToString(modifiedValue, unit),
+            notificationUnitToString(value, unit),
             notificationWhenToString(when),
             isAllDay && notificationAtToString(formatTime(modifiedAt))
         ]
