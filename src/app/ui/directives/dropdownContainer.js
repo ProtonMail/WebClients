@@ -63,6 +63,11 @@ function dropdownContainer(dispatchers, hotkeys) {
             }
 
             function onClick({ target }) {
+                if (window.pm_composer.contains(target)) {
+                    toggle(true);
+                    return attachListener(true, true, true);
+                }
+
                 // Click inside the dropdown will close it, ensure we remove all attachment -> without changing the hotkeys status
                 if (target !== el[0] && el[0].contains(target) && !isLocked) {
                     attachListener(true, true, true);
