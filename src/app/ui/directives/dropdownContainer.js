@@ -47,8 +47,10 @@ function dropdownContainer(dispatchers, hotkeys) {
                 }
             };
 
-            function attachListener(remove, ignoreEvent) {
-                !ignoreEvent && hotkeys[!remove ? 'pause' : 'unpause']();
+            function attachListener(remove, ignoreEvent, silent) {
+                if (!silent) {
+                    !ignoreEvent && hotkeys[!remove ? 'pause' : 'unpause']();
+                }
 
                 if (remove) {
                     document.body.removeEventListener('click', onClick, false);
@@ -61,6 +63,11 @@ function dropdownContainer(dispatchers, hotkeys) {
             }
 
             function onClick({ target }) {
+                // Click inside the dropdown will close it, ensure we remove all attachment -> without changing the hotkeys status
+                if (target !== el[0] && el[0].contains(target) && !isLocked) {
+                    attachListener(true, true, true);
+                }
+
                 if (target !== el[0] && !el[0].contains(target) && !isLocked) {
                     toggle(true);
                     attachListener(true);
