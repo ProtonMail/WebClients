@@ -1,9 +1,14 @@
 $calendar-aside-width: 6rem !default;
 $calendar-hour-height: 4.8rem !default;
 $calendar-grid-color: $pm-global-border !default;
-$calendar-grid-border: $calendar-grid-color 1px solid !default;
+$calendar-grid-border: var(--bordercolor-input, $calendar-grid-color) 1px solid !default;
 $gridcell-right-margin: 1.5em;
 $border-event-cells: 1px solid rgba(0, 0, 0, .2);
+
+.calendar-grid-heading,
+.calendar-monthgrid-day {
+    color: var(--color-main-area, $pm-global-grey);
+}
 
 .calendar-grid-heading-number,
 .calendar-monthgrid-day-number {
@@ -14,6 +19,7 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 }
 
 .calendar-grid-heading[aria-current="date"] {
+    color: var(--color-main-area, $pm-global-grey);
     .calendar-grid-heading-number {
         background-color: $pm-primary;
         color: $white;
@@ -118,7 +124,7 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 .calendar-daygrid-weeknumber {
     border-bottom: $calendar-grid-border;
     border-right: $calendar-grid-border;
-    background-color: $pm-global-light;
+    background-color: var(--bgcolor-subnav, $pm-global-light);
 }
 .calendar-daygrid-weeknumber-width {
     width: 2.5rem;
@@ -153,7 +159,7 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 // secondary timezone
 .calendar-secondary-timezone-cell {
     border-right: $calendar-grid-border;
-    background-color: $pm-global-light;
+    background-color: var(--bgcolor-subnav, $pm-global-light);
 }
 .calendar-secondary-timezone-cell--header {
     border-top: $calendar-grid-border;
@@ -189,9 +195,10 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
     min-height: 100%;
     border: $border-event-cells;
     cursor: pointer;
+    color: var(--color-main-area, $pm-global-grey);
     &:focus,
     &:hover {
-        background-color: $calendar-dayeventcell-hover-color;
+        background-color: var(--bgcolor-input, $calendar-dayeventcell-hover-color);
     }
 }
 .calendar-dayeventcell-inner--notAllDay {
@@ -256,7 +263,8 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
 $calendar-popover-width: 400px !default;
 .eventpopover {
     position: absolute;
-    background: $white;
+    background: var(--bgcolor-main-area, $white);
+    color: var(--color-main-area, $pm-global-grey);
     z-index: 10;
     animation: eventpopoverIn ease .15s;
     animation-fill-mode: both;
@@ -269,7 +277,6 @@ $calendar-popover-width: 400px !default;
     overflow: auto;
     border-radius: $global-border-radius;
     box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
-    color: $pm-global-grey;
 }
 .eventpopover-title {
     font-size: 2.2rem;

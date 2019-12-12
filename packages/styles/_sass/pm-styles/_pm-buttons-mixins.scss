@@ -1,0 +1,87 @@
+// these mixins are present to be called from pm-buttons and pm-darkmode
+@import "../reusable-components/design-system-config";
+
+
+@mixin button-disabled-state-dm {
+  opacity: .6;
+  background-color: $pm-global-grey;
+  color: rgba( $pm-global-muted, .6 );
+  border-color: rgba( $pm-global-muted, .6 );
+  pointer-events: none;
+}
+
+@mixin pm-button-dark {
+  color: $white;
+  background-color: $pm-global-grey;
+  border-color: var(--bordercolor-input, $pm-global-border);
+
+  &:focus,
+  &:hover,
+  &.is-hover {
+    color: $white;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
+  &.is-active {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &[disabled],
+  &.is-disabled {
+    @include button-disabled-state-dm;
+  }
+  /* just to cancel examples  */
+  &.is-hover:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+@mixin pm-button-blueborder-dark {
+  border-color: $pm-primary-light;
+  color: $pm-primary-light;
+  background-color: $pm-global-grey;
+
+  &:focus,
+  &:hover,
+  &:focus-within,
+  &.is-hover,
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
+  &.is-active {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: $pm-primary-light;
+    color: $pm-primary-dark;
+  }
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
+  &.is-active {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &[disabled],
+  &.is-disabled {
+    @include button-disabled-state-dm;
+  }
+}
+
+@mixin pv-button-greenborder-dark {
+  border-color: $pv-green-light;
+  color: $pv-green-light;
+  background-color: $pm-global-grey;
+
+  &:focus,
+  &:hover,
+  &:focus-within,
+  &.is-hover,
+  &:active,
+  &.is-active {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: $pv-green-dark;
+    color: $pv-green-dark;
+  }
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
+  &.is-active {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &[disabled],
+  &.is-disabled {
+    @include button-disabled-state-dm;
+  }
+}

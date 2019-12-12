@@ -32,7 +32,7 @@ $size-current-pin: 16px !default;
 
 .wizard-item {
   
-  background: $pm-global-border;
+  background: var(--bordercolor-input, $pm-global-border);
 
   &:not(:last-child) {
     @extend .flex-item-fluid;
@@ -41,11 +41,11 @@ $size-current-pin: 16px !default;
   // positionned first element always with a aria-current/is-complete
   &:first-child {
     background: none;
-    background-image: linear-gradient(to left, $pm-global-border 0,  $pm-global-border calc(100% - #{$height-wizard/2}), transparent calc(100% - #{$height-wizard/2}) );
+    background-image: linear-gradient(to left, var(--bordercolor-input, $pm-global-border) 0,  var(--bordercolor-input, $pm-global-border) calc(100% - #{$height-wizard/2}), transparent calc(100% - #{$height-wizard/2}) );
   }
   &:last-child {
     background: none;
-    background-image: linear-gradient(to right, $pm-global-border 0,  $pm-global-border 50%, transparent 50%);
+    background-image: linear-gradient(to right, var(--bordercolor-input, $pm-global-border) 0,  var(--bordercolor-input, $pm-global-border) 50%, transparent 50%);
     &.is-complete::after {
       content: none;
     }

@@ -80,8 +80,8 @@ body {
 
 
 .main-area {
-  background: $white;
-  color: $pm-global-grey;
+  background: var(--bgcolor-main-area, $white);
+  color: var(--color-main-area, $pm-global-grey);
   height: calc(100vh - #{$header-height} );
   max-height: calc(100vh - #{$header-height} );
   overflow: auto;

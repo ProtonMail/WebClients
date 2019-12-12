@@ -1,12 +1,12 @@
 /* input design */
 ::placeholder {
-  color: rgba($pm-global-grey, .65);
+  color: var(--color-input, rgba($pm-global-grey, .65));
   font-style: italic;
 }
 
 // fix "autofill state"
 input:-webkit-autofill{
-  box-shadow: 200px 200px 100px $pm-input-background inset;
+  box-shadow: 200px 200px 100px var(--bgcolor-input, $pm-input-background) inset;
 }
 
 /* removes X in input when typing in IE/EDGE */
@@ -31,15 +31,16 @@ $field-container: 26rem !default;
 
 .pm-field {
   filter: none; // fixes Firefox autofill color
-  border: $input-defaut-border;
+  border: 1px solid var(--bordercolor-input, $input-defaut-border);
   padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
-  background-color: $pm-input-background;
+  background-color: var(--bgcolor-input, $pm-input-background);
   border-radius: $global-border-radius;
+  color: var(--color-input, $pm-global-grey);
   outline: 0;
   &:focus,
   &.focus,
   &:focus-within {
-    background-color: $white;
+    background-color: var(--bgcolor-main-area, $white);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
   &[aria-invalid="true"]:not(:focus),
@@ -81,7 +82,7 @@ $field-container: 26rem !default;
 }
 
 select.pm-field {
-  background: $pm-input-background url("#{$path-images}sprite-for-css-only.svg#css-caret") calc(100% - 6px) 50% no-repeat;
+  background: var(--bgcolor-input, $pm-input-background) url("#{$path-images}sprite-for-css-only.svg#css-caret") calc(100% - 6px) 50% no-repeat;
   background-size: 1.5rem;
   padding-left: 1em;
   height: 3.5rem;
@@ -146,7 +147,7 @@ textarea[required].pm-field.field-pristine:invalid {
 /* checkboxes */
 .pm-checkbox-fakecheck {
   display: inline-flex;
-  border: 1px solid $pm-global-border;
+  border: 1px solid var(--bordercolor-input, $pm-global-border);
   border-radius: 2px;
   min-width: 1.6rem;
   width: 1.6rem;
@@ -171,7 +172,7 @@ textarea[required].pm-field.field-pristine:invalid {
   }
   &[disabled] + .pm-checkbox-fakecheck,
   &:indeterminate + .pm-checkbox-fakecheck {
-    background: $pm-global-muted;
+    background: var(--bgcolor-disabled-checkboxes-radios, $pm-global-muted);
   }
   &:indeterminate + .pm-checkbox-fakecheck {
       content: '';
@@ -185,7 +186,7 @@ textarea[required].pm-field.field-pristine:invalid {
 // exception for toolbar
 .pm-select-all {
   .pm-checkbox-fakecheck {
-    border: 1px solid var(--fillcolor-icons, #585C67);
+    border: 1px solid #585C67;
     background-color: var(--bgcolor-aside-link, #484E59);
   }
   .pm-checkbox-fakecheck-img {
@@ -219,7 +220,7 @@ textarea[required].pm-field.field-pristine:invalid {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
   &[disabled] + .pm-radio-fakeradio {
-    background: $pm-global-muted;
+    background: var(--bgcolor-disabled-checkboxes-radios, $pm-global-muted);
   }
 }
 
@@ -231,8 +232,8 @@ $width: 5.5em !default;
   // height: 2em;
   width: $width;
   display: inline-flex;
-  border: 1px solid $pm-global-border;
-  background: #fcfdff;
+  border: 1px solid var(--bordercolor-input, $pm-global-border);
+  background: var(--bgcolor-input, #fcfdff);
   border-radius: 2rem;
   padding: 2px;
   position: relative;
@@ -242,12 +243,12 @@ $width: 5.5em !default;
     width: calc( #{$width/2} - 2px);
     transition: transform .25s ease, background-color .25s ease, border-color .25s linear;
     border-radius: 2rem;
-    background: $pm-global-muted;
+    background: var(--bgcolor-input, $pm-global-muted);
     top: 2px;
     left: 0;
     bottom: 2px;
     transform: translateX(2px);
-    border: 1px solid $pm-global-border;
+    border: 1px solid var(--bordercolor-input, $pm-global-border);
   }
   & > .pm-toggle-label-text {
     align-self: center;

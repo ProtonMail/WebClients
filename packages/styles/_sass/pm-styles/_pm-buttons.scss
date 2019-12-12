@@ -2,6 +2,8 @@
 /*
  * Buttons
  */
+@import "pm-buttons-mixins";
+
 [class*="pm-button"],
 [class*="pv-button"] {
   border-radius: $global-border-radius;
@@ -19,7 +21,6 @@
     text-decoration: none;
   }
 }
-
 
 .pm-button {
   border-color: $pm-global-border;
@@ -56,37 +57,16 @@
   &.p0 {
     padding: 0;
   }
-
 }
+
 
 .pm-button-dark {
-  color: $white;
-  background-color: $pm-global-grey;
-  border-color: $pm-global-border;
-
-  &:focus,
-  &:hover,
-  &.is-hover {
-    color: $white;
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
-  &.is-active {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  &[disabled],
-  &.is-disabled {
-    background-color: $pm-global-muted;
-    color: rgba( $pm-global-grey, .3 );
-    pointer-events: none;
-  }
-  /* just to cancel examples  */
-  &.is-hover:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
+  @include pm-button-dark;
 }
 
-.pm-button-blue {
+
+.pm-button-blue,
+.pm-button.pm-button-blue {
   color: $white;
   background-color: $pm-primary;
   border: 1px solid $pm-primary;
@@ -147,35 +127,13 @@
   }
 }
 
-.pm-button-blueborder-dark {
-  border-color: $pm-primary-light;
-  color: $pm-primary-light;
-  background-color: $pm-global-grey;
 
-  &:focus,
-  &:hover,
-  &:focus-within,
-  &.is-hover,
-  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
-  &.is-active {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-color: $pm-primary-light;
-    color: $pm-primary-dark;
-  }
-  &:active,
-  &.is-active {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  &[disabled],
-  &.is-disabled {
-    background-color: $pm-global-muted;
-    color: rgba( $pm-global-grey, .3 );
-    border-color: $pm-global-border;
-    pointer-events: none;
-  }
+.pm-button-blueborder-dark {
+  @include pm-button-blueborder-dark;
 }
 
-.pv-button-green {
+.pv-button-green,
+.pm-button.pv-button-green {
   color: $white;
   background-color: $pv-green;
   border: 1px solid $pv-green;
@@ -236,32 +194,9 @@
   }
 }
 
-.pv-button-greenborder-dark {
-  border: 1px solid $pv-green-light;
-  color: $pv-green-light;
-  background-color: $pm-global-grey;
 
-  &:focus,
-  &:hover,
-  &:focus-within,
-  &.is-hover,
-  &:active,
-  &.is-active {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-color: $pv-green-dark;
-    color: $pv-green-dark;
-  }
-  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
-  &.is-active {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  &[disabled],
-  &.is-disabled {
-    background-color: $pm-global-muted;
-    color: rgba( $pm-global-grey, .3 );
-    border-color: $pm-global-border;
-    pointer-events: none;
-  }
+.pv-button-greenborder-dark {
+  @include pv-button-greenborder-dark;
 }
 
 
@@ -347,7 +282,8 @@
     @extend .pv-button-greenborder-dark;
   }
 }
-.pm-button--link {
+.pm-button--link,
+.pm-button.pm-button--link {
   color: $color-links;
   border-width: 0;
   box-shadow: none;
@@ -366,7 +302,7 @@
   }
   &[disabled],
   &.is-disabled {
-    color: rgba( $pm-global-grey, .5 );
+    color:  rgba( $pm-global-grey, .5 );
     pointer-events: none;
     text-decoration: none;
     background-color: transparent; // to avoid heriting from other classes
@@ -399,9 +335,9 @@
 }
 
 /* other aliases requested */
-.pm-button--redborder {
+.pm-button--redborder.pm-button--redborder { // for darkmode... again
   @extend .pm-button;
-  border: 1px solid $pm-global-warning;
+  border-color: $pm-global-warning;
   color: $pm-global-warning;
 }
 

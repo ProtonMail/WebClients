@@ -7,7 +7,7 @@ $progress-contact-height: 6px !default;
   -ms-appearance: none;
   appearance: none;
     
-  background: $pm-global-border;
+  background: var(--bordercolor-input, $pm-global-border);
   // for Edge/IE
   color: $pm-primary;
 
@@ -15,7 +15,7 @@ $progress-contact-height: 6px !default;
   height: $progress-contact-height;
 
   &::-webkit-progress-bar {
-    background-color: $pm-global-border;
+    background-color: var(--bordercolor-input, $pm-global-border);
     border-radius: #{$progress-contact-height/2};
   }
 

@@ -60,6 +60,10 @@ $pm-input-background   : #fcfdff !default;
 $plan-logo-color       : #8ed60f !default;
 $conversation-selected-bg: #e3e7f6 !default;
 
+// needed for darkmode
+$pm-secondary-grey     : #2e323d !default;
+$pm-tertiary-grey      : #505560 !default; // border input 
+
 // colors
 $color-links           : $pm-primary !default;
 $color-hover           : $black !default;
@@ -72,7 +76,7 @@ $color-txt-button      : $black !default;
 $global-border-radius  : 3px !default;
 
 // inputs
-$input-defaut-border   : 1px solid $pm-global-border !default;
+$input-defaut-border   : $pm-global-border !default;
 
 // main breakpoints
 $breakpoint-large      : 1500 !default;

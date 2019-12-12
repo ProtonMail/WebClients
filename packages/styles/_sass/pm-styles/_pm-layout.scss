@@ -17,6 +17,6 @@ hr {
 
 kbd {
   @extend .rounded;
-  @extend .bg-global-light;
-  border: 1px solid $pm-global-border;
+  background-color: var(--bgcolor-main-area, $pm-global-light);
+  border: 1px solid var(--bordercolor-input, $pm-global-border);
 }

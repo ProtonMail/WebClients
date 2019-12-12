@@ -33,7 +33,7 @@ $minicalendar-bg-color-range-selection: #51555F !default;
 }
 
 .minicalendar-day {
-    color: $minicalendar-day-color;
+    color: var(--color-main-area, $minicalendar-day-color);
 }
 .minicalendar-icon {
     fill: $minicalendar-day-color;

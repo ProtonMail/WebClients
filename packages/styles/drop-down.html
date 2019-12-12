@@ -109,9 +109,9 @@ section: design
         </button>
         <div class="js-dropDown-content unstyled dropDown-content dropDown-content--narrow" hidden>
           <ul class="unstyled mt0-5 mb0-5 aligncenter">
-            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5" aria-current="page">1</button></li>
-            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">2</button></li>
-            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">3</button></li>
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor" aria-current="page">1</button></li>
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor">2</button></li>
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor">3</button></li>
             <li class="dropDown-item"><a class="w100 pt0-5 pb0-5 inbl nodecoration">link</a></li>
           </ul>
         </div>
@@ -152,9 +152,9 @@ section: design
       </button>
       <div class="js-dropDown-content unstyled dropDown-content dropDown-content--narrow" hidden>
         <ul class="unstyled p1 aligncenter dropDown-contentInner">
-          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5" aria-current="page">1</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor" aria-current="page">1</button></li>
           {% for i in (2..20) %}
-          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">{{ i }} </button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor">{{ i }} </button></li>
           {% endfor %}
         </ul>
       </div>
@@ -200,16 +200,16 @@ section: design
     &lt;div <strong>class="unstyled dropDown-content dropDown-content--narrow"</strong> hidden&gt;
       &lt;ul <strong>class="unstyled mt0-5 mb0-5 aligncenter"</strong>&gt;
         &lt;li class="dropDown-item"&gt;
-          &lt;button class="w100 pt0-5 pb0-5" <strong>aria-current="page"</strong>&gt;1&lt;/button&gt;
+          &lt;button class="w100 pt0-5 pb0-5 color-currentColor" <strong>aria-current="page"</strong>&gt;1&lt;/button&gt;
         &lt;/li&gt;
         &lt;li class="dropDown-item"&gt;
-          &lt;button class="w100 pt0-5 pb0-5"&gt;2&lt;/button&gt;
+          &lt;button class="w100 pt0-5 pb0-5 color-currentColor"&gt;2&lt;/button&gt;
         &lt;/li&gt;
         &lt;li class="dropDown-item"&gt;
-          &lt;button class="w100 pt0-5 pb0-5"&gt;3&lt;/button&gt;
+          &lt;button class="w100 pt0-5 pb0-5 color-currentColor"&gt;3&lt;/button&gt;
         &lt;/li&gt;
         &lt;li class="dropDown-item"&gt;
-          &lt;a class="w100 pt0-5 pb0-5 inbl nodecoration"&gt;link&lt;/a&gt;
+          &lt;a class="w100 pt0-5 pb0-5 color-currentColor inbl nodecoration"&gt;link&lt;/a&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
@@ -246,9 +246,9 @@ section: design
       </button>
       <div class="js-dropDown-content unstyled dropDown-content dropDown-content--narrow" hidden>
         <ul class="unstyled mt0-5 mb0-5 ml1 mr1 aligncenter">
-          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
-          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
-          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor">Blah</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor">Blah</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor">Blah</button></li>
         </ul>
       </div>
     </div>
@@ -277,9 +277,9 @@ section: design
         </button>
         <div class="js-dropDown-content unstyled dropDown-content dropDown-content--narrow" hidden>
           <ul class="unstyled mt0-5 mb0-5 ml1 mr1 aligncenter">
-            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
-            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
-            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor">Blah</button></li>
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor">Blah</button></li>
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor">Blah</button></li>
           </ul>
         </div>
       </div>
@@ -302,7 +302,7 @@ section: design
     &lt;/button&gt;
     &lt;div class="js-dropDown-content unstyled dropDown-content <strong>dropDown-content--narrow</strong>" hidden&gt;
       &lt;ul class="unstyled mt0-5 mb0-5 ml1 mr1 aligncenter"&gt;
-        &lt;li class="dropDown-item"&gt;&lt;button class="w100 pt0-5 pb0-5"&gt;Blah&lt;/button&gt;&lt;/li&gt;
+        &lt;li class="dropDown-item"&gt;&lt;button class="w100 pt0-5 pb0-5 color-currentColor"&gt;Blah&lt;/button&gt;&lt;/li&gt;
         …
       &lt;/ul&gt;
     &lt;/div&gt;
@@ -323,9 +323,9 @@ section: design
       </button>
       <div class="js-dropDown-content unstyled dropDown-content dropDown-content--wide" hidden>
         <ul class="unstyled mt0-5 mb0-5 ml1 mr1">
-          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">A first action</button></li>
-          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">Another action</button></li>
-          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">A third action</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor alignleft">A first action</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor alignleft">Another action</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor alignleft">A third action</button></li>
         </ul>
       </div>
     </div>
@@ -338,13 +338,13 @@ section: design
   &lt;div <strong>class="dropDown-content dropDown-content--wide" hidden</strong>&gt;
     &lt;ul <strong>class="unstyled mt0-5 mb0-5 ml1 mr1"</strong>&gt;
       &lt;li <strong>class="dropDown-item</strong>"&gt;
-        &lt;button class="w100 pt0-5 pb0-5 alignleft"&gt;A first action&lt;/button&gt;
+        &lt;button class="w100 pt0-5 pb0-5 color-currentColor alignleft"&gt;A first action&lt;/button&gt;
       &lt;/li&gt;
       &lt;li class="dropDown-item"&gt;
-        &lt;button class="w100 pt0-5 pb0-5 alignleft"&gt;Another action&lt;/button&gt;
+        &lt;button class="w100 pt0-5 pb0-5 color-currentColor alignleft"&gt;Another action&lt;/button&gt;
       &lt;/li&gt;
       &lt;li class="dropDown-item"&gt;
-        &lt;button class="w100 pt0-5 pb0-5 alignleft"&gt;A third action&lt;/button&gt;
+        &lt;button class="w100 pt0-5 pb0-5 color-currentColor alignleft"&gt;A third action&lt;/button&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
@@ -364,9 +364,9 @@ section: design
       </button>
       <div class="js-dropDown-content unstyled dropDown-content" hidden>
         <ul class="unstyled mt0-5 mb0-5 ml1 mr1">
-          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">A first action</button></li>
-          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">Another action</button></li>
-          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">A third action</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor alignleft">A first action</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor alignleft">Another action</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 color-currentColor alignleft">A third action</button></li>
         </ul>
       </div>
     </div>
@@ -379,13 +379,13 @@ section: design
   &lt;div <strong>class="dropDown-content" hidden</strong>&gt;
     &lt;ul <strong>class="unstyled mt0-5 mb0-5 ml1 mr1"</strong>&gt;
       &lt;li <strong>class="dropDown-item</strong>"&gt;
-        &lt;button <strong>class="w100 pt0-5 pb0-5 alignleft"</strong>&gt;A first action&lt;/button&gt;
+        &lt;button <strong>class="w100 pt0-5 pb0-5 color-currentColor alignleft"</strong>&gt;A first action&lt;/button&gt;
       &lt;/li&gt;
       &lt;li class="dropDown-item"&gt;
-        &lt;button class="w100 pt0-5 pb0-5 alignleft"&gt;Another action&lt;/button&gt;
+        &lt;button class="w100 pt0-5 pb0-5 color-currentColor alignleft"&gt;Another action&lt;/button&gt;
       &lt;/li&gt;
       &lt;li class="dropDown-item"&gt;
-        &lt;button class="w100 pt0-5 pb0-5 alignleft"&gt;A third action&lt;/button&gt;
+        &lt;button class="w100 pt0-5 pb0-5 color-currentColor alignleft"&gt;A third action&lt;/button&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;

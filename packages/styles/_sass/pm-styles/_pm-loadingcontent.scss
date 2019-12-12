@@ -8,6 +8,7 @@ button[aria-busy="true"] {
     background-image: url(#{$path-images}loading-atom-smaller-disabled.svg);
     background-position: calc(100% - 4px) 50%;
     background-size: 10px 10px;
+    background-repeat: no-repeat;
 }
 
 tr[aria-busy="true"] {

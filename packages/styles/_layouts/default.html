@@ -81,16 +81,6 @@
 
               {% include nav.html %}
 
-              <div class="flex-item-noshrink hidden relative nomobile spacebar-container aligncenter">
-
-                <meter class="spacebar inbl w100 alignleft" min="0" max="100" low="0" high="100" value="42" aria-describedby="sizeRemaining">
-                </meter>
-
-                <span class="bl small m0 spacebar-size" id="sizeRemaining">4.2 GB / 10 GB</span>
-                <span class="bl small m0 spacebar-version opacity-30">ProtonMail V4.00</span>
-
-              </div>
-
             </div>
 
           </div>
@@ -104,7 +94,7 @@
 
                 {% include sub-nav.html %}                
 
-                <main class="main-area-content bg-white relative {% if page.subsection %} {% elsif page.pageId <> 'conversations' %}p2{% endif %} flex-item-fluid" title="{{ page.subsection }}">
+                <main class="main-area-content relative {% if page.subsection %} {% elsif page.pageId <> 'conversations' %}p2{% endif %} flex-item-fluid" title="{{ page.subsection }}">
 
                   <h1 class="{% if page.pageId == 'conversations' %}sr-only{% endif %}{% if page.subsection %} sticky-title {% endif %}">{{ page.title }}</h1>
 

@@ -14,7 +14,11 @@
 }
 .subnav-link {
   @extend .nodecoration;
-  @extend .color-global-grey;
+  color: var(--color-subnav-link, $pm-global-grey);
+  &:focus,
+  &:hover {
+    color: var(--color-subnav-link, $pm-global-grey);
+  }
 }
 [aria-current="true"].subnav-link {
   font-weight: bold;

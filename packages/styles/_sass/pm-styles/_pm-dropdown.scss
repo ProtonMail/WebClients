@@ -20,10 +20,10 @@ $dropDown-narrow-width: 8em !default;
   visibility: visible;
   transition-delay: 0s;
   width: $dropDown-width; 
-  background: $white;
+  background: var(--bgcolor-main-area, $white);
   border-radius: $global-border-radius;
   box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
-  color: $pm-global-grey;
+  color: var(--color-main-area, $pm-global-grey);
 }
 
 .dropDown-content--narrow {
@@ -76,8 +76,8 @@ $dropDown-narrow-width: 8em !default;
   padding: 0; // no padding for the drop shadow :-\
   margin: 0 0 0 1em;
   
-  background: $white no-repeat;
-  background-image: radial-gradient(farthest-side at 50% 0,#acb0bf,transparent),radial-gradient(farthest-side at 50% 100%,#acb0bf,transparent);
+  background: var(--bgcolor-main-area, $white) no-repeat;
+  background-image: radial-gradient(farthest-side at 50% 0,var(--bordercolor-input, #acb0bf),transparent),radial-gradient(farthest-side at 50% 100%,var(--bordercolor-input, #acb0bf),transparent);
   background-position: 50% 0, 0 100%;
   background-size: calc(100% - 20px) 3px;
 
@@ -93,7 +93,7 @@ $dropDown-narrow-width: 8em !default;
     position: relative;
     display: block;
     z-index: 1;
-    background: $white;
+    background: var(--bgcolor-main-area, $white);
     height: 10px;
   }
 }
@@ -129,7 +129,7 @@ $dropDown-narrow-width: 8em !default;
   width: 1rem;
   height: 1rem;
   border: 1rem solid transparent;
-  border-bottom: 1rem solid $white;
+  border-bottom: 1rem solid var(--bgcolor-main-area, $white);
 }
 
 .dropDown--leftArrow .dropDown-content::before {
@@ -145,7 +145,7 @@ $dropDown-narrow-width: 8em !default;
   left: -2rem;
   bottom: 1rem;
   border: 1rem solid transparent;
-  border-right: 1rem solid $white;
+  border-right: 1rem solid var(--bgcolor-main-area, $white);
 }
 
 @if $rtl-option == true {
@@ -168,7 +168,7 @@ $dropDown-narrow-width: 8em !default;
       left: 100%;
       right: auto;
       border: 1rem solid transparent;
-      border-left: 1rem solid $white;
+      border-left: 1rem solid var(--bgcolor-main-area, $white);
     }
   }
 }
@@ -180,7 +180,7 @@ $dropDown-narrow-width: 8em !default;
 
 /* border on items */
 .dropDown-item + .dropDown-item {
-  border-top: 1px solid $pm-global-border;
+  border-top: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
 /* pagination caret */

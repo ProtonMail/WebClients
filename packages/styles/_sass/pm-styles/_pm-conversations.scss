@@ -4,7 +4,8 @@
 
 .items-column-list {
   width: calc( (100% + var(--width-sidebar, #{$width-sidebar}) ) * #{$conversations-column-width/1%/100} );
-  border-right: 1px solid $pm-global-border;
+  border-right: 1px solid var(--bordercolor-input, $pm-global-border);
+  background: var(--bgcolor-item-column-list, $white);
 }
 .items-column-list--mobile {
   width: 100%;
@@ -16,10 +17,15 @@
   height: calc(100vh - #{$header-height} - #{$toolbar-height} );
 }
 
+.view-column-detail {
+  background: var(--bgcolor-view-column-detail, $white);
+}
+
 .item-container,
 .item-container-row {
   padding: em(15) em(12);
-  border-bottom: 1px solid $pm-global-border;
+  border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+  background-color: var(--bgcolor-item-column-list, $pm-global-light);
 }
 .item-container-row {
   padding: em(8) em(12);
@@ -27,16 +33,16 @@
 
 .item-container,
 .item-container-row {
-  background: $pm-global-light;
+  background: var(--bgcolor-item-column-list, $pm-global-light);
 }
 
 .item-is-selected,
 .item-container.active { // alias for Angular
-  background: $conversation-selected-bg;
+  background: var(--bgcolor-item-column-active, $conversation-selected-bg);
 }
 
 .item-container:not(.item-is-selected):not(.item-contact):not(.read):not(.active) {
-  background: $white;
+  background: var(--bgcolor-toolbar, $white);
 }
 
 $conversation-icon-size: 4rem !default;
@@ -44,7 +50,8 @@ $conversation-icon-size: 4rem !default;
   width: $conversation-icon-size;
   height: $conversation-icon-size;
   font-size: 1.2rem;
-  border: 1px solid $pm-global-border;
+  border: 1px solid var(--bordercolor-input, $pm-global-border);
+  background-color: var(--bordercolor-input, $white);
 }
 
 .item-checkbox {
@@ -72,7 +79,7 @@ $conversation-icon-size: 4rem !default;
   // hover state of checkbox
   & + .item-icon:hover {
     background-color: $white;
-    border-color: $pm-global-border;
+    border-color: var(--bordercolor-input, $pm-global-border);
     & > .item-abbr {
       display: none;
     }
@@ -118,7 +125,7 @@ $conversation-icon-size: 4rem !default;
 }
 
 .starbutton {
-  fill: $pm-global-grey;
+  fill: var(--fillcolor-icons, $pm-global-grey);
   width: 1.6rem;
   height: 1.6rem;
   opacity: .5;
@@ -149,11 +156,11 @@ $conversation-icon-size: 4rem !default;
  * view messages
  */
 .message-container {
-  border: 1px solid $pm-global-border;
+  border: 1px solid var(--bordercolor-input, $pm-global-border);
   border-radius: $global-border-radius;
 }
 .message-header {
-  background-color: $pm-global-light;
+  background-color: var(--bgcolor-input, $pm-global-light);
   @extend .p1;
   @extend .relative;
 
@@ -167,9 +174,9 @@ $conversation-icon-size: 4rem !default;
     height: 17px;
     transform: skewX(50deg) translateX(-10px);
 
-    border-top: 1px solid $pm-global-border;
-    border-left: 1px solid $pm-global-border;
-    background-color: $pm-global-light;
+    border-top: 1px solid var(--bordercolor-input, $pm-global-border);
+    border-left: 1px solid var(--bordercolor-input, $pm-global-border);
+    background-color: var(--bgcolor-input, $pm-global-light);
   }
 
   &.is-outbound::before {
@@ -182,9 +189,9 @@ $conversation-icon-size: 4rem !default;
     height: 17px;
     transform: skewX(-50deg) translateX(10px);
 
-    border-top: 1px solid $pm-global-border;
-    border-right: 1px solid $pm-global-border;
-    background-color: $pm-global-light;
+    border-top: 1px solid var(--bordercolor-input, $pm-global-border);
+    border-right: 1px solid var(--bordercolor-input, $pm-global-border);
+    background-color: var(--bgcolor-input, $pm-global-light);
   }
 
 }
@@ -193,7 +200,7 @@ $conversation-icon-size: 4rem !default;
 .message-container.is-opened {
 
   > .message-header {
-      border-bottom: 1px solid $pm-global-border;
+      border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
   }
 
 }
@@ -205,13 +212,13 @@ $conversation-icon-size: 4rem !default;
 
 .message-expand {
   padding: 0 .5em .6em; // centers 
-  background-color: $pm-global-light;
+  background-color: var(--bgcolor-input, $pm-global-light);
   line-height: .75;
 }
 
 .message-attachments {
   @extend .p1;
-  border-top: 1px solid $pm-global-border;
+  border-top: 1px solid var(--bordercolor-input, $pm-global-border);
   font-size: 1.4rem;
 }
 
@@ -226,9 +233,14 @@ $conversation-icon-size: 4rem !default;
 }
 .message-attachmentIcon {
   width: 2.6em;
+  svg:not([class*="fill-"]) {
+    fill: var(--color-main-area, $black);
+  }
 }
+
+
 .message-attachmentInfo {
-  border-left: 1px solid $pm-global-border;
+  border-left: 1px solid var(--bordercolor-input, $pm-global-border);
   padding: .3em .7em;
 }
 .message-attachmentSize {
@@ -236,7 +248,7 @@ $conversation-icon-size: 4rem !default;
   opacity: .5;
 }
 .message-infobox {
-  background: $white;
+  background: var(--bgcolor-main-area, $white);
 }
 
 .container-to {
@@ -261,6 +273,6 @@ $conversation-icon-size: 4rem !default;
 }
 
 .protonmail_quote {
-  border-left: 1px solid $pm-global-border;
+  border-left: 1px solid var(--bordercolor-input, $pm-global-border);
   padding-left: 1rem;
 }

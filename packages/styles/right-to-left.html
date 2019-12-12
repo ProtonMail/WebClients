@@ -50,7 +50,7 @@ direction: rtl
   <div class="flex-autogrid-item">
     <div class="information-panel bordered-container relative ml1 mr1">
       <div class="information-panel-image flex bg-global-light">
-        <svg viewBox="0 0 16 16" class="icon-16p mauto" role="img" aria-hidden="true" focusable="false">
+        <svg viewBox="0 0 16 16" class="icon-16p mauto information-panel-icon" role="img" aria-hidden="true" focusable="false">
           <use xlink:href="#shape-email-address"></use>
         <svg>
       </div>
@@ -132,14 +132,16 @@ direction: rtl
     </p>
 
     <p>
-      <span class="relative password-revealer-container">
-        <input type="password" id="id_field_password" class="pm-field w100" value="" />
-        <button type="button" class="password-revealer inline-flex js-toggle-password" title="Reveal password">
-            <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mauto" role="img" aria-hidden="true" focusable="false">
-                <use xlink:href="#shape-read"></use>
-            </svg>
-            <span class="sr-only">Reveal Password</span>
-        </button>
+      <span class="pm-field-container">
+        <span class="relative pm-field-icon-container w100">
+            <input type="password" id="id_field_password" class="pm-field w100" value="" />
+            <button type="button" class="right-icon absolute flex js-toggle-password" title="Reveal password">
+                <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mauto" role="img" aria-hidden="true" focusable="false">
+                    <use xlink:href="#shape-read"></use>
+                </svg>
+                <span class="sr-only">Reveal Password</span>
+            </button>
+        </span>
       </span>
     </p>
 

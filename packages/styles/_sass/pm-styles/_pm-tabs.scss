@@ -3,7 +3,7 @@
   padding: 0;
   @extend .unstyled;
   @extend .flex;
-  border-bottom: 1px solid $pm-global-border;
+  border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
 .tabs-list-item {
@@ -12,14 +12,15 @@
 
 .tabs-list-link {
   @extend .flex;
-  color: $pm-global-grey;
-  border-bottom: 2px solid $pm-global-border; 
+  color: var(--color-main-area, $pm-global-grey);
+  border-bottom: 2px solid var(--bordercolor-input, $pm-global-border); 
   padding: .5em;
   @extend .nodecoration;
   @extend .relative;
   top: 1px;
   &:focus,
   &:hover {
+    color: var(--color-main-area, $pm-global-grey);
     font-weight: bold;
     @extend .nodecoration;
   }

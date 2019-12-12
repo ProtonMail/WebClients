@@ -6,7 +6,7 @@ $stroke-width: 3px !default; // be careful to udpate SVG if you want to update t
   fill: transparent;
 }
 .circle-chart__background--bigger .circle-chart__background {
-  stroke: rgba($pm-global-grey, .2);
+  stroke: var(--bgcolor-input, rgba($pm-global-grey, .2));
   opacity: .4;
 }
 

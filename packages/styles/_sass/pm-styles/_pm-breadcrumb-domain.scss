@@ -9,7 +9,7 @@
   display: inline-block;
   width: 1.6rem;
   height: 1.6rem;
-  background: $pm-input-background url("#{$path-images}sprite-for-css-only.svg#css-greater") 0 0 no-repeat;
+  background: transparent url("#{$path-images}sprite-for-css-only.svg#css-greater") 0 0 no-repeat;
   background-size: 1.4rem;
   position: relative;
   top: 6px;
@@ -25,6 +25,7 @@
 .breadcrumb-button {
   padding: .4em;
   opacity: .3;
+  color: inherit;
 }
 [disabled][aria-current="step"].breadcrumb-button {
   font-weight: bold;

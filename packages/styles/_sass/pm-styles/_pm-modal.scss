@@ -72,8 +72,8 @@ $modal-smaller-width: 28em !default;
   width: $modal-max-width;
   max-height: $modal-max-height;
   max-width: $modal-max-width;
-  background: $white;
-  color: $pm-global-grey;
+  background: var(--bgcolor-main-area, $white);
+  color: var(--color-main-area, $pm-global-grey);
   padding: 0;
   overflow: hidden;
   border-radius: $global-border-radius;
@@ -197,8 +197,8 @@ $modal-smaller-width: 28em !default;
   flex: 1 1 auto;
   padding: 0 rem(30);
 
-  background: $white no-repeat;
-  background-image: radial-gradient(farthest-side at 50% 0,#acb0bf,transparent),radial-gradient(farthest-side at 50% 100%,#acb0bf,transparent);
+  background: var(--bgcolor-main-area, $white) no-repeat;
+  background-image: radial-gradient(farthest-side at 50% 0,var(--bordercolor-input, #acb0bf),transparent),radial-gradient(farthest-side at 50% 100%,var(--bordercolor-input, #acb0bf),transparent); 
   background-position: 50% 0, 0 100%;
   background-size: calc(100% - 20px) 3px;
 }
@@ -209,7 +209,7 @@ $modal-smaller-width: 28em !default;
     position: relative;
     display: block;
     z-index: 1;
-    background: $white;
+    background: var(--bgcolor-main-area, $white);
     height: 10px;
   }
 }

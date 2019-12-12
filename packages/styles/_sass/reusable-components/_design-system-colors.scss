@@ -37,7 +37,7 @@
 }
 
 .bg-global-highlight {
-  background-color: $pm-global-light;
+  background-color: var(--bgcolor-input, $pm-global-light);
 }
 
 
@@ -59,7 +59,7 @@
 }
 
 .bg-white-dm {
-  background-color: $white;
+  background-color: var(--bgcolor-main-area, $white);
 }
 
 .bg-visionary {

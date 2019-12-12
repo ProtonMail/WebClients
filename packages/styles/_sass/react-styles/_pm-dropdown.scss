@@ -12,10 +12,10 @@ $dropDown-narrow-width: 8em !default;
   visibility: visible;
   transition-delay: 0s;
   width: $dropDown-width;
-  background: $white;
+  background: var(--bgcolor-main-area, $white);
   border-radius: $global-border-radius;
   box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
-  color: $pm-global-grey;
+  color: var(--color-main-area, $pm-global-grey);
 }
 
 .dropDown--narrow {
@@ -88,25 +88,25 @@ $dropDown-narrow-width: 8em !default;
 .dropDown--top-left::before,
 .dropDown--top-right::before {
   top: 100%;
-  border-top: 1rem solid $white;
+  border-top: 1rem solid var(--bgcolor-main-area, $white);
 }
 .dropDown--bottom::before,
 .dropDown--bottom-left::before,
 .dropDown--bottom-right::before {
   top: -2rem;
-  border-bottom: 1rem solid $white;
+  border-bottom: 1rem solid var(--bgcolor-main-area, $white);
 }
 .dropDown--left::before,
 .dropDown--left-top::before,
 .dropDown--left-bottom::before {
   left: 100%;
-  border-left: 1rem solid $white;
+  border-left: 1rem solid var(--bgcolor-main-area, $white);
 }
 .dropDown--right::before,
 .dropDown--right-top::before,
 .dropDown--right-bottom::before {
   left: -2rem;
-  border-right: 1rem solid $white;
+  border-right: 1rem solid var(--bgcolor-main-area, $white);
 }
 
 .dropDown--top::before,
@@ -142,8 +142,7 @@ $dropDown-narrow-width: 8em !default;
   overflow: auto;
   max-height: 30vh;
   border-radius: $global-border-radius;
-
-  background: $white no-repeat;
+  background: var(--bgcolor-main-area, $white) no-repeat;
   background-image: radial-gradient(
       farthest-side at 50% 0,
       #acb0bf,
@@ -160,7 +159,7 @@ $dropDown-narrow-width: 8em !default;
     position: relative;
     display: block;
     z-index: 1;
-    background: $white;
+    background: var(--bgcolor-main-area, $white);
     height: 10px;
   }
 
@@ -178,5 +177,5 @@ $dropDown-narrow-width: 8em !default;
 
 /* border on items */
 .dropDown-item + .dropDown-item {
-  border-top: 1px solid $pm-global-border;
+  border-top: 1px solid var(--bordercolor-input, $pm-global-border);
 }

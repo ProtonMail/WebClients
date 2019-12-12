@@ -12,7 +12,7 @@
 .pm-simple-table td,
 .pm-simple-table th {
   padding: em(9);
-  border-bottom: 1px solid $pm-global-border;
+  border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 .pm-simple-table th:not(.pm-simple-table-row-th) {
   @extend .uppercase;
@@ -26,12 +26,12 @@
 }
 
 .pm-plans-table-row--highlighted {
-  background: $pm-global-light;
+  background-color: var(--bgcolor-input, $pm-global-light);
 }
 
 /* alternate bg for rows */
 .pm-simple-table--alternate-bg-row tbody tr:nth-child(odd){
-  background-color: $pm-global-light;
+  background-color: var(--bgcolor-input, $pm-global-light);
 } 
 
 .pm-simple-table--has-actions {

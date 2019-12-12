@@ -34,7 +34,7 @@ subsection: buttons
             <td class="p1 alignleft">
                 <code>.pm-button</code> 
                 <button type="button" class="js-copy-clipboard js-trigger-notification" title="Copy to clipboard" data-notification-text="Successfully copied" data-notification-type="success">
-                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p" role="img" focusable="false">
+                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p fill-global-grey" role="img" focusable="false">
                         <use xlink:href="#shape-clipboard"></use>
                     </svg>
                     <span class="sr-only">Copy to clipboard</span>
@@ -50,7 +50,7 @@ subsection: buttons
             <td class="p1 alignleft">
                 <code>.pm-button-dark</code> 
                 <button type="button" class="js-copy-clipboard js-trigger-notification" title="Copy to clipboard" data-notification-text="Successfully copied" data-notification-type="success">
-                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p" role="img" focusable="false">
+                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p fill-global-grey" role="img" focusable="false">
                         <use xlink:href="#shape-clipboard"></use>
                     </svg>
                     <span class="sr-only">Copy to clipboard</span>
@@ -83,7 +83,7 @@ subsection: buttons
             <td class="p1 alignleft">
                 <code>.pm-button-blue</code> 
                 <button type="button" class="js-copy-clipboard js-trigger-notification" title="Copy to clipboard" data-notification-text="Successfully copied" data-notification-type="success">
-                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p" role="img" focusable="false">
+                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p fill-global-grey" role="img" focusable="false">
                         <use xlink:href="#shape-clipboard"></use>
                     </svg>
                     <span class="sr-only">Copy to clipboard</span>
@@ -99,7 +99,7 @@ subsection: buttons
             <td class="p1 alignleft">
                 <code>.pm-button-blueborder</code> 
                 <button type="button" class="js-copy-clipboard js-trigger-notification" title="Copy to clipboard">
-                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p" role="img" focusable="false">
+                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p fill-global-grey" role="img" focusable="false">
                         <use xlink:href="#shape-clipboard"></use>
                     </svg>
                     <span class="sr-only">Copy to clipboard</span>
@@ -115,7 +115,7 @@ subsection: buttons
             <td class="p1 alignleft">
                 <code>.pm-button-blueborder-dark</code> 
                 <button type="button" class="js-copy-clipboard js-trigger-notification" title="Copy to clipboard" data-notification-text="Successfully copied" data-notification-type="success">
-                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p" role="img" focusable="false">
+                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p fill-global-grey" role="img" focusable="false">
                         <use xlink:href="#shape-clipboard"></use>
                     </svg>
                     <span class="sr-only">Copy to clipboard</span>
@@ -148,7 +148,7 @@ subsection: buttons
             <td class="p1 alignleft">
                 <code>.pv-button-green</code> 
                 <button type="button" class="js-copy-clipboard js-trigger-notification" title="Copy to clipboard" data-notification-text="Successfully copied" data-notification-type="success">
-                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p" role="img" focusable="false">
+                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p fill-global-grey" role="img" focusable="false">
                         <use xlink:href="#shape-clipboard"></use>
                     </svg>
                     <span class="sr-only">Copy to clipboard</span>
@@ -164,7 +164,7 @@ subsection: buttons
             <td class="p1 alignleft">
                 <code>.pv-button-greenborder</code> 
                 <button type="button" class="js-copy-clipboard js-trigger-notification" title="Copy to clipboard" data-notification-text="Successfully copied" data-notification-type="success">
-                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p" role="img" focusable="false">
+                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p fill-global-grey" role="img" focusable="false">
                         <use xlink:href="#shape-clipboard"></use>
                     </svg>
                     <span class="sr-only">Copy to clipboard</span>
@@ -180,7 +180,7 @@ subsection: buttons
             <td class="p1 alignleft">
                 <code>.pv-button-greenborder-dark</code> 
                 <button type="button" class="js-copy-clipboard js-trigger-notification" title="Copy to clipboard" data-notification-text="Successfully copied" data-notification-type="success">
-                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p" role="img" focusable="false">
+                    <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p fill-global-grey" role="img" focusable="false">
                         <use xlink:href="#shape-clipboard"></use>
                     </svg>
                     <span class="sr-only">Copy to clipboard</span>
@@ -289,14 +289,14 @@ subsection: buttons
     <span class="p1 flex-self-vcenter">
         <code>.pm-button--{{ alias }}</code> 
         <button type="button" class="js-copy-clipboard js-trigger-notification" title="Copy to clipboard" data-notification-text="Successfully copied" data-notification-type="success">
-            <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p" role="img" focusable="false">
+            <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p fill-global-grey" role="img" focusable="false">
              <use xlink:href="#shape-clipboard"></use>
             </svg>
             <span class="sr-only">Copy to clipboard</span>
         </button>
     </span>
 </div>
-{% if alias == 'link'  %}
+{% if alias == 'link' or alias == 'primary' or alias == 'primaryborder'  %}
 <div class="flex flex-nowrap mb2 onmobile-flex-column">
     <span class="p1 w200p">
         <button class="pm-button pm-button--{{ alias }}" disabled>Button {{ alias }} (disabled)</button>
@@ -305,7 +305,7 @@ subsection: buttons
     <span class="p1 flex-self-vcenter">
         <code>.pm-button--{{ alias }}</code> 
         <button type="button" class="js-copy-clipboard js-trigger-notification" title="Copy to clipboard" data-notification-text="Successfully copied" data-notification-type="success">
-            <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p" role="img" focusable="false">
+            <svg viewBox="0 0 16 16" aria-hidden="true" class="icon-16p fill-global-grey" role="img" focusable="false">
              <use xlink:href="#shape-clipboard"></use>
             </svg>
             <span class="sr-only">Copy to clipboard</span>

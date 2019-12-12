@@ -24,8 +24,8 @@ section: design
       <div class="square-color bg-global-altgrey-gradient"></div>
       <div class="flex-item-fluid pl1">
           <h2 class="h5">Global Alt Grey <br />(gradient)</h2>
-          <p class="mb0-5"><code class="border bg-global-border p0-25 rounded">#262a33</code> → <code class="border bg-global-border p0-25 rounded">#3C414E</code></p>
-          <p class="mt0-5"><code class="border bg-global-border p0-25 rounded">38/42/51</code> → <code class="border bg-global-border p0-25 rounded">60/65/78</code></p>
+          <p class="mb0-5"><code class="border bg-colors p0-25 rounded">#262a33</code> → <code class="border bg-colors p0-25 rounded">#3C414E</code></p>
+          <p class="mt0-5"><code class="border bg-colors p0-25 rounded">38/42/51</code> → <code class="border bg-colors p0-25 rounded">60/65/78</code></p>
           <p class="mt0-5 mb0-5">CSS classes:</p>
           <p class="mt0-5 mb0-5"><code class="border p0-25 rounded bg-global-altgrey-gradient color-global-light">.bg-global-altgrey-gradient</code></p>
       </div>
@@ -41,15 +41,15 @@ section: design
       <div class="square-color bg-{{ listColorsNames[forloop.index0] }}"></div>
       <div class="flex-item-fluid pl1">
           <h2 class="h5">{{ listColors[forloop.index0] }}</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#{{ listColorsRgb[forloop.index0] }}</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">{{ listColorsHex[forloop.index0] }}</code></p>
+          <p class="mb0-5">Hex: <code class="border bg-colors p0-25 rounded">#{{ listColorsRgb[forloop.index0] }}</code></p>
+          <p class="mt0-5">RGB: <code class="border bg-colors p0-25 rounded">{{ listColorsHex[forloop.index0] }}</code></p>
 
           <p class="mt0-5 mb0-5">CSS classes:</p>
           <p class="mt0-5 mb0-5"><code class="border p0-25 rounded bg-{{ listColorsNames[forloop.index0] }} color-{{ colorText }}">.bg-{{ listColorsNames[forloop.index0] }}</code></p>
           <p class="mt0-5"><code class="border p0-25 rounded color-{{ listColorsNames[forloop.index0] }} bg-{{ colorText }}">.color-{{ listColorsNames[forloop.index0] }}</code></p>
 
           <p class="mt0-5 mb0-5">For SVG bg/stroke<br> <code class="border p0-25 rounded bg-{{ listColorsNames[forloop.index0] }} color-{{ colorText }}">.fill-{{ listColorsNames[forloop.index0] }}</code><br> <code class="border p0-25 rounded bg-{{ listColorsNames[forloop.index0] }} color-{{ colorText }}">.stroke-{{ listColorsNames[forloop.index0] }}</code></p>
-          <p class="mt0-5">Sass:<br> <code class="border bg-global-border p0-25 rounded">{{ listSassVars[forloop.index0] }}</code></p>
+          <p class="mt0-5">Sass:<br> <code class="border bg-colors p0-25 rounded">{{ listSassVars[forloop.index0] }}</code></p>
 
 
       </div>
@@ -63,7 +63,9 @@ section: design
 <p>Note: if you need the current color of the text for filling a SVG, you may use <code>fill-currentColor</code> or <code>stroke-currentColor</code>. <br>
   Class aliases exist also for <code>$primary-color</code>: <code>fill-primary</code>/<code>bg-primary</code>/<code>color-primary</code>.</p>
 
-<p>For highlighting using <code>bg-global-light</code>, you may use the alias <code>bg-global-highlight</code> (dark mode friendly).</p>
+<p>For highlighting using <code>bg-global-light</code>, you may use the alias <code>bg-global-highlight</code>, same for <code>bg-white/bg-white-dm</code> (dark mode friendly).</p>
+
+
 
 <h3>Plan colors</h3>
 <div class="flex pt2 mb2">
@@ -77,14 +79,14 @@ section: design
   <div class="square-color bg-{{ listColorsNamesPlans[forloop.index0] }}"></div>
   <div class="flex-item-fluid pl1">
       <h2 class="h5">{{ listColorsPlans[forloop.index0] }}</h2>
-      <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#{{ listColorsRgbPlans[forloop.index0] }}</code></p>
+      <p class="mb0-5">Hex: <code class="border bg-colors p0-25 rounded">#{{ listColorsRgbPlans[forloop.index0] }}</code></p>
 
       <p class="mt0-5 mb0-5">CSS classes:</p>
       <p class="mt0-5 mb0-5"><code class="border p0-25 rounded bg-{{ listColorsNamesPlans[forloop.index0] }} color-{{ colorText }}">.bg-{{ listColorsNamesPlans[forloop.index0] }}</code></p>
       <p class="mt0-5"><code class="border p0-25 rounded color-{{ listColorsNamesPlans[forloop.index0] }} bg-{{ colorText }}">.color-{{ listColorsNamesPlans[forloop.index0] }}</code></p>
 
       <p class="mt0-5 mb0-5">For SVG bg<br> <code class="border p0-25 rounded bg-{{ listColorsNamesPlans[forloop.index0] }} color-{{ colorText }}">.fill-{{ listColorsNamesPlans[forloop.index0] }}</code><br> <code class="border p0-25 rounded bg-{{ listColorsNamesPlans[forloop.index0] }} color-{{ colorText }}">.stroke-{{ listColorsNamesPlans[forloop.index0] }}</code></p>
-      <p class="mt0-5">Sass:<br> <code class="border bg-global-border p0-25 rounded">{{ listSassVarsPlans[forloop.index0] }}</code></p>
+      <p class="mt0-5">Sass:<br> <code class="border bg-colors p0-25 rounded">{{ listSassVarsPlans[forloop.index0] }}</code></p>
 
 
   </div>

@@ -65,8 +65,18 @@
   fill: $plan-logo-color;
 }
 
-.customScrollBar-container {
-  max-height: 150px;
+.customScrollBar-container--only4DesignSystem {
+   max-height: 150px;
+}
+
+
+.bg-colors {
+  background-color: $pm-global-border;
+}
+@media (prefers-color-scheme: dark) {
+  .bg-colors {
+    background-color: $pm-global-altgrey;
+  }
 }
 
 
@@ -208,4 +218,11 @@
   .toolbar {
     border-radius: 4px 4px 0 0;
   }
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  // find a clever way to adapt only this website :)
+  @import "pm-styles/pm-darkmode";
 }

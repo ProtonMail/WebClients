@@ -80,7 +80,12 @@ section: design
 <pre class=" language-markup"><code>&lt;div <strong>class="pm-modalOverlay"</strong>&gt;
   &lt;dialog <strong>class="pm-modal"</strong> role="dialog" open aria-labelledby="modalTitle"&gt;
     &lt;header <strong>class="pm-modalHeader"</strong>&gt;
-      &lt;button type="button" <strong>class="pm-modalClose"</strong> title="Close"&gt;×&lt;/button&gt;
+      &lt;button type="button" <strong>class="pm-modalClose"</strong> title="Close"&gt;
+        &lt;svg viewBox="0 0 16 16" class="icon-16p fill-global-grey" role="img" aria-hidden="true" focusable="false"&gt;
+          &lt;use xlink:href="#shape-off"&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        &lt;span class="sr-only"&gt;Close&lt;/span&gt;
+      &lt;/button&gt;
       &lt;h1 <strong>id="modalTitle" class="pm-modalTitle"</strong>&gt;Title for your modal&lt;/h1&gt;
     &lt;/header&gt;
     &lt;div <strong>class="pm-modalContent"</strong>&gt;

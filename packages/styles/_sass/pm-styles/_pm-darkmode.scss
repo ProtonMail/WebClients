@@ -1,0 +1,142 @@
+/*
+ * Come to the Dark Mode, we have wookies
+ */
+
+@import "pm-buttons-mixins";
+
+// forms/buttons
+.pm-button {
+  @include pm-button-dark;
+}
+.pm-button-blueborder {
+  @include pm-button-blueborder-dark;
+}
+.pv-button-greenborder {
+  @include pv-button-greenborder-dark;
+}
+
+.pm-button-blue,
+.pm-button.pm-button-blue,
+.pv-button-green,
+.pm-button.pv-button-green {
+  &[disabled],
+  &.is-disabled {
+    @include button-disabled-state-dm;
+  }
+}
+
+.pm-button--link,
+a, .link,
+.pm-button.pm-button--link {
+  &:focus,
+  &:hover,
+  &:not(div):active,
+  &:active {
+    color: currentColor;
+  }
+  &[disabled],
+  &.is-disabled {
+    color:  rgba( $white, .5 );
+  }
+}
+
+
+.pm-field {
+    &[type="search"] {
+      background-image: url("#{$path-images}sprite-for-css-only.svg#css-search-white");
+    }
+}
+@if $rtl-option == true {
+  [dir="rtl"] {
+    [type="search"].pm-field {
+      background-image: url("#{$path-images}sprite-for-css-only.svg#css-search-rtl-white");
+    }
+  }
+}
+
+.pm-field[disabled] {
+  color:  rgba( $white, .5);
+  opacity: .6;
+}
+
+
+select.pm-field {
+    background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-white");
+}
+.pm-checkbox {
+    &:indeterminate + .pm-checkbox-fakecheck {
+        background-image: url("#{$path-images}sprite-for-css-only.svg#css-dash-white");
+    }
+}
+.pm-toggle-checkbox {
+    &[aria-busy="true"] + .pm-toggle-label  {
+      &::before {
+        background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
+      }
+    }
+    &[disabled] + .pm-toggle-label  {
+      background-color: transparent;
+      opacity: .6;
+    }
+}
+  
+
+.searchbox-field[type="search"] {
+  background-image: none;
+}
+
+// loading
+[aria-busy="true"] {
+  background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
+}
+
+button[aria-busy="true"] {
+  background-image: url(#{$path-images}loading-atom-smaller-disabled-dark.svg);
+}
+
+
+
+td[aria-busy="true"] {
+  position: relative;
+  background-image: none;
+  &::before {
+    background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
+  }
+}
+
+// others
+details {
+  &[open] > summary {
+    background-image: url(#{$path-images}sprite-for-css-only.svg#css-caret-close-white);
+  }
+}
+summary {
+  background-image: url(#{$path-images}sprite-for-css-only.svg#css-caret-white);
+}
+
+
+
+// quick and dirty
+.fill-global-grey,
+.fill-black { fill: $white; } // dirty, I know
+
+
+// global
+:root {
+    --bgcolor-item-column-list: #{$pm-global-grey};
+    --bgcolor-view-column-detail: #{$pm-secondary-grey};
+    --bgcolor-main-area: #{$pm-secondary-grey};
+    --bgcolor-subnav: #{$pm-global-grey};
+    --bgcolor-toolbar: #{$pm-global-altgrey};
+    --color-subnav-link: #{$white};
+    --color-main-area: #{$white};
+    --fillcolor-icons: #{$white};
+    --bgcolor-disabled-checkboxes-radios: #{$pm-global-altgrey};
+
+    --bgcolor-item-column-active: #{$pm-blue-dark};
+
+    --bordercolor-input: #{$pm-tertiary-grey};
+    --bgcolor-input: #{$pm-global-altgrey};
+    --color-input: #{$white};
+
+}

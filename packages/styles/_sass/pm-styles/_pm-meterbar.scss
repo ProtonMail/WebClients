@@ -71,7 +71,7 @@ $meterbar-height: 6px !default;
   /* autoprefixer: ignore next */
   appearance: none;
   height: 1.5rem;
-  background: $pm-global-muted;
+  background: var(--bordercolor-input, $pm-global-muted);
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 
   &::-webkit-meter-bar {

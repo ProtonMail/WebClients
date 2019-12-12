@@ -20,7 +20,7 @@ $stroke-width-big: 4 !default;
 
 .loadingAnimation-circle {
   fill: transparent;
-  stroke: $pm-global-grey;
+  stroke: var(--fillcolor-icons, $pm-global-grey);
   stroke-width: $stroke-width-big;
   transform-origin: 50%;
   will-change: transform;
