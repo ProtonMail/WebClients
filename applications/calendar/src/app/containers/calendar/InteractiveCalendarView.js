@@ -129,8 +129,8 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const getCreateModel = ({ isAllDay }) => {
-        const initialDate = new Date(
+    const getInitialDate = () => {
+        return new Date(
             Date.UTC(
                 date.getUTCFullYear(),
                 date.getUTCMonth(),
@@ -139,6 +139,10 @@ const InteractiveCalendarView = ({
                 now.getUTCMinutes()
             )
         );
+    };
+
+    const getCreateModel = ({ isAllDay }) => {
+        const initialDate = getInitialDate();
 
         const { Members = [], CalendarSettings } = defaultCalendarBootstrap;
         const [Member = {}] = Members;
@@ -161,6 +165,8 @@ const InteractiveCalendarView = ({
     };
 
     const getUpdateModel = ({ Calendar, Event, readEvent }) => {
+        const initialDate = getInitialDate();
+
         const calendarBootstrap = readCalendarBootstrap(Calendar.ID);
         const { Members = [], CalendarSettings } = calendarBootstrap;
         const [Member = {}] = Members;
@@ -169,6 +175,7 @@ const InteractiveCalendarView = ({
             return;
         }
         const createResult = getInitialModel({
+            initialDate,
             CalendarSettings,
             Calendar,
             Calendars: calendars,

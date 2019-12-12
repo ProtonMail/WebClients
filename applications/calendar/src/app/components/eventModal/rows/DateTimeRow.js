@@ -1,29 +1,17 @@
 import { DateInput, Label, Row, TimeInput } from 'react-components';
 import React from 'react';
-import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from 'proton-shared/lib/date/timezone';
-import { addDays, isSameDay } from 'date-fns';
+import {
+    convertUTCDateTimeToZone,
+    convertZonedDateTimeToUTC,
+    fromUTCDate,
+    toUTCDate
+} from 'proton-shared/lib/date/timezone';
+import { MILLISECONDS_IN_MINUTE, startOfDay } from 'proton-shared/lib/date-fns-utc';
+import { addDays } from 'date-fns';
 import { getDateTimeState, getTimeInUtc } from '../eventForm/state';
 import { c } from 'ttag';
-import { getStartTimeChange } from '../eventForm/stateActions';
 
-const getMinEndTime = (start, end, isAllDay) => {
-    if (isAllDay) {
-        return [start.date];
-    }
-
-    const startUtcDate = getTimeInUtc(start);
-
-    const minLocalDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startUtcDate), end.tzid));
-    const { date: minDate, time: minTime } = getDateTimeState(minLocalDate);
-
-    // If the minDate with the currently selected end time would lead to an error, don't allow it to be selected
-    const minTimeUtcDate = getTimeInUtc({ ...end, date: minDate, time: end.time });
-
-    return [
-        startUtcDate > minTimeUtcDate ? addDays(minDate, 1) : minDate,
-        isSameDay(minDate, end.date) ? minTime : undefined
-    ];
-};
+const DEFAULT_MIN_TIME = new Date(Date.UTC(2000, 0, 1, 0, 0));
 
 const DateTimeRow = ({
     collapseOnMobile,
@@ -37,12 +25,54 @@ const DateTimeRow = ({
 }) => {
     const { isAllDay, start, end } = model;
 
-    const [minEndDate, minEndTime] = getMinEndTime(start, end, isAllDay);
+    const startUtcDate = getTimeInUtc(start);
+    const endUtcDate = getTimeInUtc(end);
+
+    const isDuration = endUtcDate - startUtcDate < 24 * 60 * MILLISECONDS_IN_MINUTE;
+    const minEndTimeInTimezone = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startUtcDate), end.tzid));
+    const { time: minEndTime } = getDateTimeState(isDuration ? minEndTimeInTimezone : DEFAULT_MIN_TIME);
+
+    const getMinEndDate = () => {
+        const { date: minDate } = getDateTimeState(minEndTimeInTimezone);
+        // If the minDate with the currently selected end time would lead to an error, don't allow it to be selected
+        const minTimeUtcDate = getTimeInUtc({ ...end, date: minDate, time: end.time });
+        return startUtcDate > minTimeUtcDate ? addDays(minDate, 1) : minDate;
+    };
+
+    const minEndDate = isAllDay ? start.date : getMinEndDate();
+
+    const getStartChange = (newStart) => {
+        const newStartUtcDate = getTimeInUtc(newStart);
+        const diffInMs = newStartUtcDate - startUtcDate;
+
+        const newEndDate = new Date(+endUtcDate + diffInMs);
+        const endLocalDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(newEndDate), end.tzid));
+        const newEnd = getDateTimeState(endLocalDate, end.tzid);
+
+        return {
+            start: newStart,
+            end: newEnd
+        };
+    };
+
+    const getEndTimeChange = (newTime) => {
+        const diffMs = newTime - minEndTime;
+
+        const endTimeInTimezone = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(endUtcDate), end.tzid));
+
+        const minEndUtcDateBase = isDuration ? minEndTimeInTimezone : startOfDay(endTimeInTimezone);
+
+        const endUtcDateBase = toUTCDate(convertZonedDateTimeToUTC(fromUTCDate(minEndUtcDateBase), end.tzid));
+        const newEndUtcDate = new Date(+endUtcDateBase + diffMs);
+        const endLocalDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(newEndUtcDate), end.tzid));
+
+        return getDateTimeState(endLocalDate, end.tzid);
+    };
 
     const handleChangeStartDate = (newDate) => {
         setModel({
             ...model,
-            ...getStartTimeChange(model, {
+            ...getStartChange({
                 ...start,
                 date: newDate
             })
@@ -52,7 +82,7 @@ const DateTimeRow = ({
     const handleChangeStartTime = (newTime) => {
         setModel({
             ...model,
-            ...getStartTimeChange(model, {
+            ...getStartChange({
                 ...start,
                 time: newTime
             })
@@ -60,9 +90,8 @@ const DateTimeRow = ({
     };
 
     const handleEndUpdate = (newEnd) => {
-        const startTime = getTimeInUtc(start);
         const endTime = getTimeInUtc(newEnd);
-        if (startTime > endTime) {
+        if (startUtcDate > endTime) {
             return;
         }
         setModel({
@@ -79,10 +108,7 @@ const DateTimeRow = ({
     };
 
     const handleChangeEndTime = (newTime) => {
-        handleEndUpdate({
-            ...end,
-            time: newTime
-        });
+        handleEndUpdate(getEndTimeChange(newTime));
     };
 
     const startTimeInput = isAllDay ? null : (
@@ -95,6 +121,7 @@ const DateTimeRow = ({
             value={end.time}
             onChange={handleChangeEndTime}
             aria-invalid={!!endError}
+            displayDuration={isDuration}
             min={minEndTime}
         />
     );
@@ -158,7 +185,9 @@ const DateTimeRow = ({
                         {startDateInput}
                         {startTimeInput}
                     </div>
-                    <div className="aligncenter" style={{width: '2em'}}>-</div>
+                    <div className="aligncenter" style={{ width: '2em' }}>
+                        -
+                    </div>
                     <div className="flex flex-nowrap">
                         {endDateInput}
                         {endTimeInput}

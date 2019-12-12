@@ -1,32 +1,4 @@
-import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
-import { getDateTimeState, getInitialDateTimeModel } from './state';
-
-export const getStartTimeChange = ({ start, end }, newStart) => {
-    const oldStartDate = toUTCDate({
-        ...fromLocalDate(start.date),
-        hours: start.time.getHours(),
-        minutes: start.time.getMinutes()
-    });
-    const newStartDate = toUTCDate({
-        ...fromLocalDate(newStart.date),
-        hours: newStart.time.getHours(),
-        minutes: newStart.time.getMinutes()
-    });
-    const difference = newStartDate - oldStartDate;
-    const oldEndDate = toUTCDate({
-        ...fromLocalDate(end.date),
-        hours: end.time.getHours(),
-        minutes: end.time.getMinutes()
-    });
-
-    const newEndDate = new Date(+oldEndDate + difference);
-    const newEnd = getDateTimeState(newEndDate, end.tzid);
-
-    return {
-        start: newStart,
-        end: newEnd
-    };
-};
+import { getInitialDateTimeModel } from './state';
 
 const isZeroHoursMinutes = (date) => date.getHours() === 0 && date.getMinutes() === 0;
 
