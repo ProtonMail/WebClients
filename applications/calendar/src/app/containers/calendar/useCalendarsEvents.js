@@ -299,7 +299,15 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
             }
 
             setLoading(false);
-        })().catch((e) => console.error(e));
+        })().catch((e) => {
+            // If unmounted, or not the last execution, ignore
+            if (cacheRef.current.isUnmounted || latestRef !== cacheRef.current.ref) {
+                return;
+            }
+
+            setLoading(false);
+            console.error(e);
+        });
     }, [requestedCalendars, utcDateRange]);
 
     const readEvent = useCallback((CalendarID, EventID) => {
