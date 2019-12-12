@@ -13,6 +13,24 @@ describe('sort', () => {
             getEvent(30, 50)
         ]);
     });
+
+    test('it should prioritize all day events if are not seen as part day events', () => {
+        const a = {
+            start: new Date(Date.UTC(2000, 1, 4, 0, 0)),
+            end: new Date(Date.UTC(2000, 1, 4, 0, 0)),
+            isAllDay: true
+        };
+        const b = {
+            start: new Date(Date.UTC(2000, 1, 5, 0, 0)),
+            end: new Date(Date.UTC(2000, 1, 5, 0, 0)),
+            isAllDay: true
+        };
+        const c = {
+            start: new Date(Date.UTC(2000, 1, 4, 16, 0)),
+            end: new Date(Date.UTC(2000, 1, 5, 15, 0))
+        };
+        expect(sortEvents([b, a, c])).toEqual([a, c, b]);
+    });
 });
 
 const H = 60;

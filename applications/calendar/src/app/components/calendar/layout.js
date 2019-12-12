@@ -1,5 +1,12 @@
+import { isSameDay } from 'proton-shared/lib/date-fns-utc';
+
 const isAllDayPrio = (a, b) => {
-    return a.start.getUTCDate() === b.end.getUTCDate() && a.isAllDay && !b.isAllDay;
+    // If a is an all day event,
+    // b is a part day event,
+    // and the all day event starts on the same day that b ends and (b does not span multiple days)
+    // The last check is needed because a part day event can span on 2 days without being seen
+    // as a an all day event
+    return a.isAllDay && !b.isAllDay && isSameDay(a.start, b.end) && isSameDay(b.start, b.end);
 };
 
 export const sortEvents = (events) => {
