@@ -2,6 +2,7 @@ import themeDarkSvg from 'design-system/assets/img/pm-images/theme-dark.svg';
 import themeLightSvg from 'design-system/assets/img/pm-images/theme-light.svg';
 import themeBlueSvg from 'design-system/assets/img/pm-images/theme-blue.svg';
 import themeTestSvg from 'design-system/assets/img/pm-images/theme-test.svg';
+import themeDarkmodeSvg from 'design-system/assets/img/pm-images/theme-darkmode.svg';
 import lightTheme from 'design-system/_sass/pm-styles/_pm-light-theme.scss';
 import blueTheme from 'design-system/_sass/pm-styles/_pm-blue-theme.scss';
 import darkMode from 'design-system/_sass/pm-styles/_pm-dark-theme.scss';
@@ -50,7 +51,7 @@ export const PROTON_THEMES = {
             return c('Theme').t`Dark mode`;
         },
         identifier: '/* dark-mode */',
-        src: themeBlueSvg,
+        src: themeDarkmodeSvg,
         theme: darkMode,
         customizable: false
     }
