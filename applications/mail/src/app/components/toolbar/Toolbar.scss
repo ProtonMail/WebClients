@@ -1,0 +1,22 @@
+// TODO: Remove this in favor of something clean in the DS
+
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+
+.toolbar-button {
+    color: white;
+}
+
+.toolbar-dropdown {
+    ul {
+        margin: 0;
+    }
+
+    button {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    button:disabled {
+        background-color: $pm-global-muted;
+    }
+}

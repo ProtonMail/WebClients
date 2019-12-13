@@ -3,6 +3,7 @@ import { useLabels } from 'react-components';
 
 import Item from './Item';
 import { Element } from '../../models/element';
+import EmptyView from '../view/EmptyView';
 
 interface Props {
     labelID: string;
@@ -16,7 +17,7 @@ interface Props {
 
 const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs = [], onCheck, onClick }: Props) => {
     const [labels] = useLabels();
-    const [lastChecked, setLastChecked] = useState(); // Store ID of the last contact ID checked
+    const [lastChecked, setLastChecked] = useState(); // Store ID of the last element ID checked
 
     const handleCheck = (elementID: string) => (event: ChangeEvent) => {
         const target = event.target as HTMLInputElement;
@@ -35,7 +36,9 @@ const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs
         onCheck(elementIDs, target.checked);
     };
 
-    return (
+    return elements.length === 0 ? (
+        <EmptyView labelID={labelID} />
+    ) : (
         <>
             {elements.map((element) => {
                 return (

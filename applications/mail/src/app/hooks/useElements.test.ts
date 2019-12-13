@@ -61,20 +61,20 @@ describe('useElements', () => {
     describe('elements memo', () => {
         it('should order by label context time', async () => {
             const result = await setup({ elements: [element1, element2] });
-            const [elements] = result.result.current;
+            const [, elements] = result.result.current;
             expect(elements).toEqual([element2, element1]);
         });
 
         it('should filter message with the right label', async () => {
             const result = await setup({ elements: [element1, element2, element3] });
-            const [elements] = result.result.current;
+            const [, elements] = result.result.current;
             expect(elements.length).toBe(2);
         });
 
         it('should limit to the page size', async () => {
             const page: Page = { page: 0, size: 5, limit: 5, total: 15 };
             const result = await setup({ elements: getElements(page.total), page });
-            const [elements] = result.result.current;
+            const [, elements] = result.result.current;
             expect(elements.length).toBe(page.size);
         });
 
@@ -87,7 +87,7 @@ describe('useElements', () => {
             page.page = 1;
             await setup({ elements: allElements.slice(page.size), page });
 
-            const [elements] = result.result.current;
+            const [, elements] = result.result.current;
             expect(elements.length).toBe(page.total - page.size);
         });
 
@@ -95,11 +95,11 @@ describe('useElements', () => {
             const elements = [element1, element2];
             const sort: Sort = { sort: 'Size', desc: false };
             let result = await setup({ elements, sort });
-            expect(result.result.current[0]).toEqual([element2, element1]);
+            expect(result.result.current[1]).toEqual([element2, element1]);
 
             sort.desc = true;
             result = await setup({ elements, sort });
-            expect(result.result.current[0]).toEqual([element1, element2]);
+            expect(result.result.current[1]).toEqual([element1, element2]);
         });
     });
 
@@ -117,8 +117,9 @@ describe('useElements', () => {
 
             expect(api).toHaveBeenCalledWith(expectedRequest);
 
-            const [elements, loading, total] = result.result.current;
+            const [resultLabelID, elements, loading, total] = result.result.current;
 
+            expect(resultLabelID).toBe(labelID);
             expect(elements.length).toBe(page.size);
             expect(loading).toBe(false);
             expect(total).toBe(page.total);

@@ -24,7 +24,7 @@ const PrivateLayout = ({ children, location, history, labelID }) => {
         <div className="flex flex-nowrap no-scroll">
             <AppsSidebar
                 items={[
-                    <StorageSpaceStatus key="storage">
+                    <StorageSpaceStatus key="storage" upgradeButton={<div />}>
                         <Href
                             url="/settings/subscription"
                             target="_self"

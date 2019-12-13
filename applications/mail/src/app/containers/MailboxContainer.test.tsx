@@ -26,13 +26,13 @@ describe('MailboxContainer', () => {
     };
 
     it('should show loader instead of list when elements loading', () => {
-        (useElements as jest.Mock).mockReturnValue([[], true, jest.fn()]);
+        (useElements as jest.Mock).mockReturnValue([labelID, [], true, jest.fn()]);
         const result = render(<MailboxContainer {...emptyProps} />);
         expect(result).toMatchSnapshot();
     });
 
     it('should show list when elements finish loading', () => {
-        (useElements as jest.Mock).mockReturnValue([[], false, jest.fn()]);
+        (useElements as jest.Mock).mockReturnValue([labelID, [], false, jest.fn()]);
         const result = render(<MailboxContainer {...emptyProps} />);
         expect(result).toMatchSnapshot();
     });

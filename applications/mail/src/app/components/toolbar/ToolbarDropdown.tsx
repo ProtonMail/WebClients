@@ -41,7 +41,15 @@ const ToolbarDropdown = ({
             >
                 {content}
             </DropdownButton>
-            <Dropdown id={uid} size={size} autoClose={autoClose} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+            <Dropdown
+                id={uid}
+                size={size}
+                autoClose={autoClose}
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+                className="toolbar-dropdown"
+            >
                 {children({ onClose: close })}
             </Dropdown>
         </>

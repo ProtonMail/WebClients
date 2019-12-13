@@ -19,8 +19,15 @@ interface Options {
     filter: Filter;
 }
 
+interface CacheParams {
+    labelID: string;
+    sort: Sort;
+    filter: Filter;
+}
+
 interface Cache {
-    total: number;
+    params: CacheParams;
+    page: Page;
     pages: number[];
     elements: { [ID: string]: Element };
 }
@@ -52,7 +59,7 @@ interface ElementCountEvent {
 
 type ElementEvent = ConversationEvent | MessageEvent;
 
-const emptyCache = (): Cache => ({ elements: {}, pages: [], total: 0 });
+const emptyCache = (page: Page, params: CacheParams): Cache => ({ params, page, elements: {}, pages: [] });
 
 export const useElements = ({
     conversationMode,
@@ -60,21 +67,44 @@ export const useElements = ({
     page,
     sort,
     filter
-}: Options): [Conversation[], boolean, number] => {
+}: Options): [string, Conversation[], boolean, number] => {
     const api = useApi();
     const { subscribe } = useEventManager();
     const [loading, setLoading] = useState(false);
-    const [localCache, setLocalCache] = useState<Cache>(emptyCache());
+    const [localCache, setLocalCache] = useState<Cache>(emptyCache(page, { labelID, sort, filter }));
 
-    const isConsecutive = (newPage: number) =>
-        localCache.pages.some((page) => page === newPage || page === newPage - 1 || page === newPage + 1);
+    // Compute the conversations list from the cache
+    const elements = useMemo(() => {
+        // Getting all params from the cache and not from scoped params
+        // To prevent any desynchronization between cache and the output of the memo
+        const {
+            params: { labelID, sort },
+            page
+        } = localCache;
+        const minPage = localCache.pages.reduce((acc, page) => (page < acc ? page : acc), localCache.pages[0]);
+        const startIndex = (page.page - minPage) * page.size;
+        const endIndex = startIndex + page.size;
+        const elementsArray = Object.values(localCache.elements);
+        const filtered = elementsArray.filter((element) => hasLabel(element, labelID));
+        const sorted = sortElements(filtered, sort, labelID);
+        return sorted.slice(startIndex, endIndex);
+    }, [localCache]);
 
-    // Prevent updating the state when the cache is already empty
-    const resetCache = () => {
-        if (localCache.pages.length > 0 || Object.values(localCache.elements).length > 0) {
-            setLocalCache(emptyCache());
-        }
-    };
+    const total = useMemo(() => localCache.page.total, [localCache.page.total]);
+
+    const paramsChanged = () =>
+        labelID !== localCache.params.labelID || sort !== localCache.params.sort || filter !== localCache.params.filter;
+
+    const pageCached = () => localCache.pages.includes(page.page);
+
+    const pageIsConsecutive = () =>
+        localCache.pages.some((p) => p === page.page || p === page.page - 1 || p === page.page + 1);
+
+    const isExpectedLength = () => elements.length === expectedPageLength({ ...page, total });
+
+    const shouldResetCache = () => !loading && (paramsChanged() || !pageIsConsecutive());
+
+    const shouldSendRequest = () => !loading && (shouldResetCache() || !pageCached() || !isExpectedLength());
 
     const queryElement = async (elementID: string): Promise<Element> => {
         const query = conversationMode ? getConversation : getMessage;
@@ -113,6 +143,40 @@ export const useElements = ({
             Elements: conversationMode ? result.Conversations : result.Messages
         };
     };
+
+    const resetCache = () => setLocalCache(emptyCache(page, { labelID, sort, filter }));
+
+    const load = async () => {
+        setLoading(true);
+        try {
+            const { Total, Elements } = await queryElements();
+            setLocalCache(
+                (localCache: Cache): Cache => {
+                    return {
+                        ...localCache,
+                        page: {
+                            ...localCache.page,
+                            page: page.page,
+                            total: Total
+                        },
+                        pages: [...localCache.pages, page.page],
+                        elements: {
+                            ...localCache.elements,
+                            ...(toMap(Elements, 'ID') as { [ID: string]: Element })
+                        }
+                    };
+                }
+            );
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Main effect watching all inputs and responsible to trigger actions on the cache
+    useEffect(() => {
+        shouldResetCache() && resetCache();
+        shouldSendRequest() && load();
+    }, [labelID, page, sort, filter]);
 
     // Listen to event manager and update de cache
     useEffect(
@@ -175,7 +239,10 @@ export const useElements = ({
                         return {
                             ...localCache,
                             elements: newElements,
-                            total: count ? count.Total : localCache.total
+                            page: {
+                                ...localCache.page,
+                                total: count ? count.Total : localCache.page.total
+                            }
                         };
                     });
                 }
@@ -186,64 +253,5 @@ export const useElements = ({
         [localCache]
     );
 
-    // Reset local cache when needed
-    useEffect(() => {
-        resetCache();
-    }, [labelID, page.size, sort, filter]);
-    useEffect(() => {
-        if (!isConsecutive(page.page)) {
-            resetCache();
-        }
-    }, [page.page]);
-
-    // Compute the conversations list from the cache
-    const elements = useMemo(() => {
-        const minPage = localCache.pages.reduce((acc, page) => (page < acc ? page : acc), localCache.pages[0]);
-        const startIndex = (page.page - minPage) * page.size;
-        const endIndex = startIndex + page.size;
-        const elements = Object.values(localCache.elements).filter((element) => hasLabel(element, labelID));
-        return sortElements(elements, sort, labelID).slice(startIndex, endIndex);
-    }, [localCache, labelID, page.page, page.size]);
-
-    const total = useMemo(() => localCache.total, [localCache.total]);
-
-    // Request data when not in the cache
-    useEffect(() => {
-        /**
-         * Should send request if:
-         * - No request currently underway. TODO: What if parameters has changed?
-         * - The page is not already in the cache
-         * - Or the cache contains the expected count of elements
-         * Beware, the total in the page object can't be trusted, it's managed afterwards by the view
-         * so the total from the cache has to be used
-         */
-        const shouldSendRequest = () =>
-            !loading &&
-            (!localCache.pages.includes(page.page) || elements.length !== expectedPageLength({ ...page, total }));
-
-        const load = async () => {
-            setLoading(true);
-            try {
-                const { Total, Elements } = await queryElements();
-                setLocalCache((localCache) => {
-                    return {
-                        total: Total,
-                        pages: [...localCache.pages, page.page],
-                        elements: {
-                            ...localCache.elements,
-                            ...(toMap(Elements, 'ID') as { [ID: string]: Element })
-                        }
-                    };
-                });
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        shouldSendRequest() && load();
-
-        // If labelID changes, the cache will be reseted
-    }, [localCache, page.page]);
-
-    return [elements, loading, total];
+    return [localCache.params.labelID, elements, loading, localCache.page.total];
 };

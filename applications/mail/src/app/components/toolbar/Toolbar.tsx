@@ -18,6 +18,8 @@ import { getCurrentType } from '../../helpers/elements';
 import { isColumnMode } from '../../helpers/mailSettings';
 import { Page, Sort, Filter } from '../../models/tools';
 
+import './Toolbar.scss';
+
 interface Props {
     loading?: boolean;
     checkAll: boolean;

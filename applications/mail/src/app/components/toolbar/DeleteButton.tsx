@@ -90,7 +90,7 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }: Pro
                     title={c('Action').t`Delete`}
                     onClick={() => withLoading(handleDelete())}
                 >
-                    <Icon className="toolbar-icon" name="delete" />
+                    <Icon className="toolbar-icon mauto" name="delete" />
                 </ToolbarButton>
             ) : null}
             {displayEmpty ? (

@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import ToolbarButton from './ToolbarButton';
 import ToolbarDropdown from './ToolbarDropdown';
 
-import './PagingControls.scss';
 import { Page } from '../../models/tools';
 import { pageCount } from '../../helpers/paging';
 
@@ -35,14 +34,18 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
             <ToolbarDropdown
                 title={c('Action').t`Change layout`}
                 content={String(page.page + 1)}
-                className="paging-dropdown"
-                disabled={count === 0}
+                disabled={count <= 1}
                 size="narrow"
             >
                 {() => (
                     <DropdownMenu>
                         {[...Array(count)].map((_, i) => (
-                            <DropdownMenuButton loading={loading} key={i} onClick={handlePage(i)}>
+                            <DropdownMenuButton
+                                key={i}
+                                loading={loading}
+                                disabled={page.page === i}
+                                onClick={handlePage(i)}
+                            >
                                 {i + 1}
                             </DropdownMenuButton>
                         ))}
@@ -51,7 +54,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
             </ToolbarDropdown>
             <ToolbarButton
                 loading={loading}
-                disabled={page.page >= count}
+                disabled={page.page >= count - 1}
                 title={c('Action').t`Next`}
                 onClick={handleNext}
             >

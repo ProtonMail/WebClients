@@ -38,7 +38,13 @@ interface Props {
     history: History;
 }
 
-const MailboxContainer = ({ labelID, mailSettings, elementID: inputElementID, location, history }: Props) => {
+const MailboxContainer = ({
+    labelID: inputLabelID,
+    mailSettings,
+    elementID: inputElementID,
+    location,
+    history
+}: Props) => {
     const columnMode = isColumnMode(mailSettings);
     const conversationMode = isConversationMode(mailSettings);
 
@@ -60,7 +66,13 @@ const MailboxContainer = ({ labelID, mailSettings, elementID: inputElementID, lo
     const [checkAll, setCheckAll] = useState(false);
     const welcomeRef = useRef(false);
 
-    const [elements, loading, total] = useElements({ conversationMode, labelID, page, sort, filter });
+    const [labelID, elements, loading, total] = useElements({
+        conversationMode,
+        labelID: inputLabelID,
+        page,
+        sort,
+        filter
+    });
 
     useEffect(() => setPage({ ...page, page: pageFromUrl(location) }), [searchParams.page]);
     useEffect(() => setPage({ ...page, total }), [total]);
@@ -152,7 +164,6 @@ const MailboxContainer = ({ labelID, mailSettings, elementID: inputElementID, lo
                                 mailSettings={mailSettings}
                                 elementID={elementID}
                                 elements={elements}
-                                // selectedIDs={selectedIDs}
                                 checkedIDs={checkedIDs}
                                 onCheck={handleCheck}
                                 onClick={handleElement}
