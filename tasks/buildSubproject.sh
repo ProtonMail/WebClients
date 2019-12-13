@@ -84,11 +84,11 @@ function loadProject {
 function addSubProject {
 
     if [ ! -d "./node_modules/react" ]; then
-        if [[ -f "./package-lock.json" ]]; then
-            npm --no-color ci;
-        else
+        # if [[ -f "./package-lock.json" ]]; then
+        #     npm --no-color ci;
+        # else
             npm --no-color i --no-audit --no-package-lock;
-        fi;
+        # fi;
     fi
 
     echo "[build.project] npm run build -- $@ "--api=$API" --verbose" >> build.log;
