@@ -1,27 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
-const got = require('got');
 const chalk = require('chalk');
 const JSZip = require('jszip');
 const parseCSV = require('csv-parse/lib/sync');
 const moment = require('moment');
 const argv = require('minimist')(process.argv.slice(2));
-const FormData = require('form-data');
 const renderHelp = require('./helpers/help');
 const coucou = require('./helpers/coucou');
+const apiCrowdin = require('./helpers/apiCrowdin');
 
 const { spin, success, debug, warn } = require('./helpers/log')('proton-i18n');
 const { getFiles, getCrowdin } = require('../config');
 
-const { KEY_API, FILE_NAME, PROJECT_NAME } = getCrowdin();
-
-const { TEMPLATE_NAME, I18N_OUTPUT_DIR, I18N_JSON_DIR, TEMPLATE_FILE_FULL, LANG_EXPORTABLE_LIST } = getFiles();
-
-const getURL = (scope, flag = '') => {
-    const customFlag = flag ? `&${flag}` : '';
-    return `https://api.crowdin.com/api/project/${PROJECT_NAME}/${scope}?key=${KEY_API}${customFlag}`.trim();
-};
+const { FILE_NAME } = getCrowdin();
+const { I18N_OUTPUT_DIR, I18N_JSON_DIR, LANG_EXPORTABLE_LIST } = getFiles();
 
 /**
  * Format the lang output as we have some custom case because we don't
@@ -38,49 +31,23 @@ const translateLang = (input) => {
     return map[input] || input;
 };
 
-const extractXML = (key) => new RegExp(`(?<=<${key}>)[^<]+`);
-
 /**
  * Check the export status on the API to see its progress
  */
-async function checkExport() {
-    const { body = '' } = await got(getURL('export-status'));
-
-    // Extract items from the XML response
-    const [status] = body.match(extractXML('status'));
-    const [progress] = body.match(extractXML('progress'));
-    const [build] = body.match(extractXML('last_build'));
-
-    debug(body);
+async function checkExport(spinner) {
+    const { last_build: build, status, progress } = await apiCrowdin.checkStatusExport();
+    spinner && spinner.stop();
     const date = moment(build).format('DD-MM-YYYY HH:mm');
-    console.log(`Last export of translations: ${date}`);
-    console.log(`[${status}] ${progress}%`);
+    success(`Last export of translations: ${date} - status:${status} ${progress}%`);
 }
 
 /**
  * Ask crowdin to create an export
  * This process can be very slow as it's a trigger, so we cancel
- * the request if it takes more than 2s -> it means it's building
+ * the request if it takes more than 5s -> it means it's building
  */
-async function createExport() {
-    const url = getURL('export');
-    const request = got(url);
-
-    try {
-        // In can take a lot of time
-        setTimeout(() => {
-            console.log('Cancel request');
-            request.cancel();
-        }, 2000);
-        const { body = '' } = await request;
-        debug(body);
-        await checkExport();
-    } catch (e) {
-        if (request.isCanceled) {
-            return;
-        }
-        throw e;
-    }
+function createExport() {
+    return apiCrowdin.createExport();
 }
 
 /**
@@ -89,11 +56,8 @@ async function createExport() {
  * @return {JSZip} Instance of JSZip
  */
 async function downloadAll() {
-    const fileName = 'all.zip';
-    const url = getURL(`download/${fileName}`);
-    debug(url, 'DOWNLOAD ZIP');
-    const { body } = await got(url, { encoding: null });
-    return JSZip.loadAsync(body);
+    const data = await apiCrowdin.download();
+    return JSZip.loadAsync(data);
 }
 
 /**
@@ -156,42 +120,25 @@ async function fetchThemAll(spinner) {
  * Update latest translations to crowdin
  */
 async function udpate(spinner) {
-    const url = getURL('update-file');
-    const form = new FormData();
-    form.append(`files[/${FILE_NAME}]`, fs.createReadStream(TEMPLATE_FILE_FULL), {
-        filename: `@${TEMPLATE_NAME}`
-    });
+    const { success: isSuccess, type } = await apiCrowdin.upload();
+    spinner.stop();
 
-    async function sendOrCreate(form) {
-        try {
-            const { body = '' } = await got.post(url, { body: form });
-            spinner.stop();
-            success('Update crowdin with latest template');
-            return { body, mode: 'update' };
-        } catch (e) {
-            if (/404/.test(e.message)) {
-                warn('Cannot update it, we need to create it');
-                const { body = '' } = await got.post(getURL('add-file'), { body: form });
-                spinner.stop();
-                success('Create new template on crowdin');
-                return { body, mode: 'create' };
-            }
-
-            throw e;
-        }
+    if (isSuccess && type === 'update') {
+        success('Update crowdin with latest template');
     }
 
-    const { body, mode } = await sendOrCreate(form);
-    coucou.send(mode); // Inform us about the change 📢
-    debug(body);
+    if (isSuccess && type === 'create') {
+        success('Create new template on crowdin');
+    }
+
+    coucou.send(type); // Inform us about the change 📢
 }
 
 /**
  * Update latest translations to crowdin
  */
 async function listTranslations(spinner, opt = {}) {
-    const url = getURL('status', 'json');
-    const { body = '' } = await got(url, { json: true });
+    const body = await apiCrowdin.getStatus();
 
     /**
      * Format output of the function when we list translations
@@ -217,7 +164,6 @@ async function listTranslations(spinner, opt = {}) {
     };
 
     spinner.stop();
-    debug(body);
     const list = _.sortBy(body, ['translated_progress', 'approved_progress'])
         .reverse()
         .filter(limit)
@@ -236,16 +182,11 @@ async function listTranslations(spinner, opt = {}) {
 }
 
 async function listMembers(spinner, format = 'top') {
-    const getExport = async () => {
-        const form = new FormData();
-        form.append('format', 'csv');
-        const request = got.post(getURL('reports/top-members/export'), { body: form });
-        const { body = '' } = await request;
-        const [hash] = body.match(extractXML('hash'));
-        debug(body);
-        return hash;
-    };
+    const body = await apiCrowdin.getTopMember();
 
+    if (!body) {
+        return;
+    }
     const makeOutput = (body) => {
         const list = parseCSV(body, {
             columns: true,
@@ -274,13 +215,9 @@ async function listMembers(spinner, format = 'top') {
         };
     };
 
-    const hash = await getExport();
-    const url = getURL('reports/top-members/download').concat(`&hash=${hash}`);
-    debug({ hash, url });
-    const { body = '' } = await got(url, { formData: { format: 'csv' } });
     const data = makeOutput(body);
 
-    debug({ format, output: data[format] });
+    debug({ format, output: data[format], outputFile: path.join(I18N_JSON_DIR, 'topMembers.json') });
     spinner.stop();
     fs.writeFileSync(path.join(I18N_JSON_DIR, 'topMembers.json'), JSON.stringify(data[format]));
     success('Export top members');

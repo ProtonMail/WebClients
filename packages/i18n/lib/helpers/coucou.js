@@ -1,7 +1,7 @@
 const path = require('path');
-const got = require('got');
 const dedent = require('dedent');
 const { error, success, warn } = require('./log')('proton-i18n');
+const { bash } = require('./cli');
 
 async function send(type, message = '') {
     try {
@@ -18,15 +18,21 @@ async function send(type, message = '') {
         };
 
         const header = map[type];
-        await got.post(process.env.CROWDIN_MESSAGES_HOOK, {
-            body: JSON.stringify({
-                text: dedent`
-                    ${header}
+        const body = JSON.stringify({
+            mrkdwn: true,
+            text: dedent`
+                ${header}
 
-                    ${type !== 'coucou' ? message : ''}
-                `.trim()
-            })
+                ${type !== 'coucou' ? message : ''}
+            `.trim()
         });
+
+        // Escape the body.
+        await bash(
+            `curl -X POST -H 'Content-type: application/json' --data "${body
+                .replace(/"/g, '\\"')
+                .replace(/`/g, '\\`')}" ${process.env.CROWDIN_MESSAGES_HOOK}`
+        );
 
         success('Message sent !');
     } catch (e) {
