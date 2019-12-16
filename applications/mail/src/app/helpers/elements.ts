@@ -1,26 +1,18 @@
 import { formatRelative, format } from 'date-fns';
-import { MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
 
 import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
 import { Sort } from '../models/tools';
 import { Message } from '../models/message';
-
-const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, ALL_MAIL } = MAILBOX_LABEL_IDS;
+import { isConversationMode } from './mailSettings';
 
 export interface TypeParams {
-    labelID: string;
-    mailSettings: any;
+    labelID?: string;
+    mailSettings?: any;
 }
 
-export const getCurrentType = ({ labelID = '', mailSettings = {} }: TypeParams) => {
-    if ([SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, ALL_MAIL].includes(labelID as MAILBOX_LABEL_IDS)) {
-        return ELEMENT_TYPES.MESSAGE;
-    }
-
-    const { ViewMode = VIEW_MODE.GROUP } = mailSettings;
-    return ViewMode === VIEW_MODE.GROUP ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
-};
+export const getCurrentType = ({ labelID, mailSettings }: TypeParams) =>
+    isConversationMode(labelID, mailSettings) ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
 
 export const isConversation = (element: Element): boolean => !(element as Message).conversationID;
 export const isMessage = (element: Element): boolean => !isConversation(element);
@@ -61,7 +53,7 @@ export const hasLabel = (element: Element, labelID: string) => {
 };
 
 export const getTime = (element: Element, labelID: string) =>
-    element.ContextTime || (getLabel(element, labelID) || {}).ContextTime || 0;
+    element.ContextTime || element.Time || (getLabel(element, labelID) || {}).ContextTime || 0;
 
 export const getSize = ({ Size = 0 }: Element) => Size;
 

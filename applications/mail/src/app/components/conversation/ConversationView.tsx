@@ -37,6 +37,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings }: Props) => {
     const inTrash = labelID === MAILBOX_LABEL_IDS.TRASH;
     const filteredMessages = messages.filter((message) => inTrash === hasLabel(message, MAILBOX_LABEL_IDS.TRASH));
     const messagesToShow = filter ? filteredMessages : messages;
+    const showTrashWarning = filteredMessages.length !== messages.length;
 
     const initialExpand = findMessageToExpand(labelID, messagesToShow).ID;
 
@@ -53,7 +54,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings }: Props) => {
                         <ItemStar element={conversation} type={ELEMENT_TYPES.CONVERSATION} />
                     </div>
                 </div>
-                <TrashWarning inTrash={inTrash} filter={filter} onToggle={toggleFilter} />
+                {showTrashWarning && <TrashWarning inTrash={inTrash} filter={filter} onToggle={toggleFilter} />}
             </header>
             {messagesToShow.map((message, index) => (
                 <MessageView

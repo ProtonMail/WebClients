@@ -13,7 +13,8 @@ import {
     useApi,
     useNotifications,
     Checkbox,
-    useEventManager
+    useEventManager,
+    generateUID
 } from 'react-components';
 import { LABEL_EXCLUSIVE } from 'proton-shared/lib/constants';
 import { labelMessages, unlabelMessages } from 'proton-shared/lib/api/messages';
@@ -34,6 +35,7 @@ interface Props {
 }
 
 const LabelDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
+    const [uid] = useState(generateUID('label-dropdown'));
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const api = useApi();
@@ -88,6 +90,9 @@ const LabelDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
             acc[ID] = (target as HTMLInputElement).checked;
             return acc;
         }, Object.create(null));
+
+        console.log('handleCheck', selectedLabelIDs, update);
+
         updateSelectedLabelIDs({ ...selectedLabelIDs, ...update });
     };
 
@@ -118,9 +123,11 @@ const LabelDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
             <div className="scroll-if-needed scroll-smooth-touch mb1 labelDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
                     {list.map(({ ID = '', Name = '', Color = '' }, index) => {
+                        // The dropdown is several times in the view, native html ids has to be different each time
+                        const lineId = `${uid}-${ID}`;
                         return (
                             <li
-                                key={ID}
+                                key={lineId}
                                 className={classnames([
                                     'w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5',
                                     index < list.length - 1 && 'border-bottom'
@@ -128,13 +135,13 @@ const LabelDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
                             >
                                 <div className="flex flex-nowrap flex-spacebetween flex-items-center">
                                     <Icon name="label" color={Color} className="flex-item-noshrink mr0-5" />
-                                    <label htmlFor={ID} title={Name} className="ellipsis">
+                                    <label htmlFor={lineId} title={Name} className="ellipsis">
                                         {Name}
                                     </label>
                                 </div>
                                 <Checkbox
                                     className="flex-item-noshrink"
-                                    id={ID}
+                                    id={lineId}
                                     checked={selectedLabelIDs[ID] || false}
                                     onChange={handleCheck(ID)}
                                 />

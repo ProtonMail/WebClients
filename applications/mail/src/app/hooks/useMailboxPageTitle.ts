@@ -16,7 +16,7 @@ export const useMailboxPageTitle = (labelID: string) => {
 
     useEffect(() => {
         if (loadings.every((loading) => !loading)) {
-            const conversationMode = isConversationMode(mailSettings);
+            const conversationMode = isConversationMode(labelID, mailSettings);
             const counters = conversationMode ? conversationCounts : messageCounts;
             const countersMap = toMap(counters, 'LabelID') as { [labelID: string]: LabelCount };
             const unreads = (countersMap[labelID] || {}).Unread || 0;

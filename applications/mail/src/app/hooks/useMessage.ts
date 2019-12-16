@@ -47,16 +47,16 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
     const decrypt = useDecryptMessage();
     const transformAttachements = useTransformAttachments();
 
-    // Listen to cache for updates on the current message
-    useEffect(
-        () =>
-            cache.subscribe((changedMessageID) => {
-                if (changedMessageID === messageID) {
-                    setMessage(cache.get(messageID));
-                }
-            }),
-        [messageID, cache]
-    );
+    // Update message state and listen to cache for updates on the current message
+    useEffect(() => {
+        cache.has(messageID) ? setMessage(cache.get(messageID)) : setMessage({ data: inputMessage });
+
+        return cache.subscribe((changedMessageID) => {
+            if (changedMessageID === messageID) {
+                setMessage(cache.get(messageID));
+            }
+        });
+    }, [messageID, cache]);
 
     const transforms = [
         transformEscape,
@@ -131,7 +131,7 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
     const load = useCallback(async () => {
         const newMessage = await run(message, [loadData]);
         cache.set(messageID, { ...newMessage, loaded: true });
-    }, [messageID, run, cache]);
+    }, [messageID, message, run, cache]);
 
     const initialize = useCallback(
         async (action?) => {
@@ -142,7 +142,7 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
             );
             cache.set(messageID, { ...newMessage, initialized: true });
         },
-        [messageID, run, cache]
+        [messageID, message, run, cache]
     );
 
     const loadRemoteImages = useCallback(
@@ -154,7 +154,7 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
             );
             cache.set(messageID, newMessage);
         },
-        [message, run, cache]
+        [messageID, message, message, run, cache]
     );
 
     const loadEmbeddedImages = useCallback(
@@ -166,7 +166,7 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
             );
             cache.set(messageID, newMessage);
         },
-        [message, run, cache]
+        [messageID, message, run, cache]
     );
 
     return [

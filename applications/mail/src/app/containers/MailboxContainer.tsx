@@ -46,7 +46,7 @@ const MailboxContainer = ({
     history
 }: Props) => {
     const columnMode = isColumnMode(mailSettings);
-    const conversationMode = isConversationMode(mailSettings);
+    const conversationMode = isConversationMode(inputLabelID, mailSettings);
 
     // Page state is hybrid: page number is handled by the url, total computed in useElements, size and limit are constants
     // Yet, it is simpler to co-localize all these data in one object
@@ -152,13 +152,13 @@ const MailboxContainer = ({
                     !columnMode && 'main-area--rowMode'
                 ])}
             >
-                <div className="items-column-list scroll-if-needed scroll-smooth-touch">
-                    {loading ? (
-                        <div className="flex flex-justify-center h100">
-                            <Loader />
-                        </div>
-                    ) : (
-                        (columnMode || !elementID) && (
+                {(columnMode || !elementID) && (
+                    <div className="items-column-list scroll-if-needed scroll-smooth-touch">
+                        {loading ? (
+                            <div className="flex flex-justify-center h100">
+                                <Loader />
+                            </div>
+                        ) : (
                             <List
                                 labelID={labelID}
                                 mailSettings={mailSettings}
@@ -168,9 +168,9 @@ const MailboxContainer = ({
                                 onCheck={handleCheck}
                                 onClick={handleElement}
                             />
-                        )
-                    )}
-                </div>
+                        )}
+                    </div>
+                )}
                 {(columnMode || elementID) && (
                     <section className="view-column-detail p2 flex-item-fluid scroll-if-needed">
                         {elementID ? (

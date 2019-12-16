@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { MAILBOX_LABEL_IDS } from 'react-components/node_modules/proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import noResultSearchSvg from 'design-system/assets/img/shared/no-result-search.svg';
 import noResultFolderSvg from 'design-system/assets/img/shared/no-result-folder.svg';
 import noResultInboxSvg from 'design-system/assets/img/shared/no-result-inbox.svg';

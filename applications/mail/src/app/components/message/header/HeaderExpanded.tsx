@@ -79,7 +79,7 @@ const HeaderExpanded = ({
                 ) : (
                     <HeaderRecipientsSimple message={message.data} />
                 )}
-                <div className="stop-propagation">
+                <div>
                     <ItemAttachmentIcon element={message.data || {}} type={ELEMENT_TYPES.MESSAGE} />
                     {' ' /* This space is important to keep a small space between elements */}
                     <ItemLabels max={4} element={message.data || {}} labels={labels} type={ELEMENT_TYPES.MESSAGE} />
@@ -101,10 +101,10 @@ const HeaderExpanded = ({
                 </>
             ) : null}
             <div className="flex flex-spacebetween ml1 mr1 mb1 flex-nowrap">
-                <a onClick={toggleDetails} className="bold flex-self-vcenter stop-propagation">
+                <a onClick={toggleDetails} className="bold flex-self-vcenter">
                     {showDetails ? c('Action').t`Hide details` : c('Action').t`Show details`}
                 </a>
-                <div className="stop-propagation">
+                <div>
                     <Group className="mr1">
                         <HeaderDropdown autoClose={false} content={<Icon name="folder" />}>
                             {({ onClose }) => (

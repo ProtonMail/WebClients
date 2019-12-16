@@ -8,7 +8,7 @@ interface MailSettings {
 export const isColumnMode = ({ ViewLayout = VIEW_LAYOUT.COLUMN }: MailSettings = {}) =>
     ViewLayout === VIEW_LAYOUT.COLUMN;
 
-export const isConversationMode = (labelID: string, { ViewMode = VIEW_MODE.GROUP }: MailSettings = {}) => {
+export const isConversationMode = (labelID = '', { ViewMode = VIEW_MODE.GROUP }: MailSettings = {}) => {
     const alwaysMessageLabels = [
         MAILBOX_LABEL_IDS.DRAFTS,
         MAILBOX_LABEL_IDS.ALL_DRAFTS,
