@@ -8,7 +8,7 @@
     </button>
 
     <dropdown-container class="pm-group-buttons" data-position="right">
-        <dropdown-button class="toolbar-button toolbar-button--dropdown dropDown-logout-button paginator-indicator">
+        <dropdown-button class="toolbar-button toolbar-button--dropdown dropDown-link paginator-indicator">
             <span class="mauto">{{ ::page }}</span>
             <icon name="caret" class="dropdownv4-icon mauto toolbar-icon ml0-25"></icon>
         </dropdown-button>
@@ -17,7 +17,7 @@
             <div class="scroll-if-needed paginator-dropdown">
                 <ul class="unstyled mt0-5 mb0-5">
                     <li class="dropDown-item" ng-repeat="p in pages track by p">
-                        <button class="w100 pt0-5 pb0-5 dropDown-logout-button no-pointer-events-children" data-value="{{::p}}">
+                        <button class="w100 pt0-5 pb0-5 dropDown-link no-pointer-events-children" data-value="{{::p}}">
                             <span
                                 translate
                                 translate-context="Title"

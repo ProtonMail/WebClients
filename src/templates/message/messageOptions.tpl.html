@@ -18,7 +18,7 @@
 
                 <li class="dropDown-item pl1 pr1">
                     <button
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-logout-button no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-link no-pointer-events-children"
                         data-action-message="move"
                         data-action-message-type="inbox">
                         <icon data-name="inbox" class="mt0-25"></icon>
@@ -28,7 +28,7 @@
 
                 <li class="dropDown-item pl1 pr1">
                     <button
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-logout-button no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-link no-pointer-events-children"
                         data-action-message="move"
                         data-action-message-type="trash">
                         <icon data-name="trash" class="mt0-25"></icon>
@@ -38,7 +38,7 @@
 
                 <li class="dropDown-item pl1 pr1">
                     <button
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft flex dropDown-logout-button no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft flex dropDown-link no-pointer-events-children"
                         data-action-message="unread">
                         <icon data-name="unread" class="mt0-25"></icon>
                         <span translate translate-context="Action" class="mtauto mbauto ml0-5">Mark as unread</span>
@@ -47,7 +47,7 @@
 
                 <li class="dropDown-item pl1 pr1" ng-hide="'secured.spam.**' | includedByState">
                     <button
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-logout-button no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-link no-pointer-events-children"
                         data-action-message="move"
                         data-action-message-type="spam">
                         <icon data-name="spam" class="mt0-25"></icon>
@@ -57,7 +57,7 @@
 
                 <li class="dropDown-item pl1 pr1" ng-if="'secured.trash.**' | includedByState">
                     <button
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-logout-button no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-link no-pointer-events-children"
                         data-action-message="delete">
                         <icon data-name="delete" class="mt0-25"></icon>
                         <span translate translate-context="Action" class="mtauto mbauto ml0-5">Delete</span>
@@ -65,7 +65,7 @@
                 </li>
 
                 <li class="dropDown-item pl1 pr1">
-                    <button class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-logout-button no-pointer-events-children" data-action-message="reportPhishing">
+                    <button class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-link no-pointer-events-children" data-action-message="reportPhishing">
                         <icon data-name="phishing" class="mt0-25"></icon>
                         <span translate translate-context="Action" class="mtauto mbauto ml0-5">Report phishing</span>
                     </button>
@@ -73,7 +73,7 @@
 
                 <li class="dropDown-item pl1 pr1" data-if-message-mode="html">
                     <button
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-logout-button no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-link no-pointer-events-children"
                         data-action-message="togglePlainHtml">
                         <icon data-name="view-source-code" class="mt0-25"></icon>
                         <span translate translate-context="Action" class="mtauto mbauto ml0-5">View source code</span>
@@ -82,7 +82,7 @@
 
                 <li class="dropDown-item pl1 pr1" data-if-message-mode="plain">
                     <button
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-logout-button no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-link no-pointer-events-children"
                         data-action-message="togglePlainHtml">
                             <icon data-name="view-html-code" class="mt0-25"></icon>
                             <span translate translate-context="Action" class="mtauto mbauto ml0-5">View rendered HTML</span>
@@ -92,7 +92,7 @@
 
                 <li class="dropDown-item pl1 pr1">
                     <button
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-logout-button no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-link no-pointer-events-children"
                         data-action-message="viewPgp">
                         <icon data-name="view-headers" class="mt0-25"></icon>
                         <span translate translate-context="Action" class="mtauto mbauto ml0-5">View headers</span>
@@ -101,7 +101,7 @@
 
                 <li class="dropDown-item pl1 pr1" ng-if="!message.failedDecryption">
                     <button
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-logout-button no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-link no-pointer-events-children"
                         data-action-message="downloadEml">
                         <icon data-name="export" class="mt0-25"></icon>
                         <span translate translate-context="Action" class="mtauto mbauto ml0-5">Export</span>
@@ -110,7 +110,7 @@
 
                 <li class="dropDown-item pl1 pr1">
                     <button
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-logout-button no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft dropDown-link no-pointer-events-children"
                         data-action-message="print">
                         <icon data-name="print" class="mt0-25"></icon>
                         <span translate translate-context="Action" class="mtauto mbauto ml0-5">Print</span>
