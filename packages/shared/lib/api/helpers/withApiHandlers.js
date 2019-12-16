@@ -140,7 +140,10 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                 }
 
                 if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
-                    return retryHandler(e).then(() => perform(attempts + 1, RETRY_ATTEMPTS_MAX), () => onError(e));
+                    return retryHandler(e).then(
+                        () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
+                        () => onError(e)
+                    );
                 }
 
                 const { code } = getError(e);
@@ -152,7 +155,7 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                         const hasParams = ['get', 'delete'].includes(options.method.toLowerCase());
                         const key = hasParams ? 'params' : 'data';
 
-                        return perform({
+                        return call({
                             ...options,
                             [key]: {
                                 ...options[key],
