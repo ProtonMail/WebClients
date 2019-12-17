@@ -85,7 +85,7 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
                             return;
                         }
                         const text = getAlarmMessage(eventRaw, new Date(), tzid, { locale: dateLocale });
-                        displayNotification({ text });
+                        displayNotification({ text, tag: ID });
                     });
 
                 setTimeout(run, 0);
