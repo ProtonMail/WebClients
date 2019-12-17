@@ -1,7 +1,7 @@
 import themeDarkSvg from 'design-system/assets/img/pm-images/theme-dark.svg';
 import themeLightSvg from 'design-system/assets/img/pm-images/theme-light.svg';
 import themeBlueSvg from 'design-system/assets/img/pm-images/theme-blue.svg';
-import themeTestSvg from 'design-system/assets/img/pm-images/theme-test.svg';
+import themeTestSvg from 'design-system/assets/img/pm-images/theme-company.svg';
 import themeDarkmodeSvg from 'design-system/assets/img/pm-images/theme-darkmode.svg';
 import lightTheme from 'design-system/_sass/pm-styles/_pm-light-theme.scss';
 import blueTheme from 'design-system/_sass/pm-styles/_pm-blue-theme.scss';
@@ -10,7 +10,7 @@ import { c } from 'ttag';
 
 export const DEFAULT_THEME = {
     getI18NLabel() {
-        return c('Theme').t`Default`;
+        return c('Theme').t`Default theme`;
     },
     identifier: '/* default-theme */',
     src: themeDarkSvg,
@@ -48,7 +48,7 @@ export const PROTON_THEMES = {
     },
     DARK: {
         getI18NLabel() {
-            return c('Theme').t`Dark mode`;
+            return c('Theme').t`Dark theme`;
         },
         identifier: '/* dark-mode */',
         src: themeDarkmodeSvg,
