@@ -94,8 +94,8 @@ const MonthDays = ({
     const [rangeStart, rangeEnd] = temporaryDateRange || dateRange || [];
 
     return (
-        <div
-            className="aligncenter minicalendar-days"
+        <ul
+            className="unstyled m0 aligncenter minicalendar-days"
             style={style}
             onClick={handleClick}
             onMouseDown={onSelectDateRange ? handleMouseDown : null}
@@ -133,22 +133,23 @@ const MonthDays = ({
                 ]);
 
                 return (
-                    <button
-                        disabled={isOutsideMinMax}
-                        aria-label={formatDay(dayDate)}
-                        aria-current={isCurrent ? 'date' : undefined}
-                        aria-pressed={isPressed ? true : undefined}
-                        key={dayDate.toString()}
-                        className={className}
-                        data-i={i}
-                        data-current-day={dayDate.getDate()}
-                    >
-                        <span className="minicalendar-day-inner">{dayDate.getDate()}</span>
-                        {hasMarker ? <span className="minicalendar-day--marker" /> : null}
-                    </button>
+                    <li key={dayDate.toString()}>
+                        <button
+                            disabled={isOutsideMinMax}
+                            aria-label={formatDay(dayDate)}
+                            aria-current={isCurrent ? 'date' : undefined}
+                            aria-pressed={isPressed ? true : undefined}
+                            className={className}
+                            data-i={i}
+                            data-current-day={dayDate.getDate()}
+                        >
+                            <span className="minicalendar-day-inner">{dayDate.getDate()}</span>
+                            {hasMarker ? <span className="minicalendar-day--marker" /> : null}
+                        </button>
+                    </li>
                 );
             })}
-        </div>
+        </ul>
     );
 };
 
