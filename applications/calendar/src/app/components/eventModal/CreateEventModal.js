@@ -33,6 +33,13 @@ const CreateEventModal = ({
         tzid
     });
 
+    // Can't use default close button in FormModal because button type reset resets selects
+    const closeButton = (
+        <Button disabled={loadingAction} onClick={onClose}>
+            {c('Action').t`Cancel`}
+        </Button>
+    );
+
     const submitButton = (
         <PrimaryButton loading={loadingAction} type="submit">
             {c('Action').t`Save`}
@@ -78,6 +85,7 @@ const CreateEventModal = ({
             loading={loadingAction}
             onSubmit={loadingAction ? noop : handleSubmit}
             submit={submit}
+            close={closeButton}
             onClose={onClose}
             {...rest}
         >
@@ -86,7 +94,6 @@ const CreateEventModal = ({
     );
 };
 
-CreateEventModal.propTypes = {
-};
+CreateEventModal.propTypes = {};
 
 export default CreateEventModal;
