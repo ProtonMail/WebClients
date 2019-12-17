@@ -1,3 +1,12 @@
+# [3.16.19] - 2019-12-17
+## Fixed
+- Upgrade button was not properly displayed for free accounts
+
+# [3.16.18] - 2019-12-12
+## Fixed
+- Two year plan was not shown as an option in some cases
+- PayPal payment method was not always saved on sign-up
+
 # [3.16.17] - 2019-12-03
 ## Fixed
 - extending some customized plans displayed an error that upgrade is not possible
