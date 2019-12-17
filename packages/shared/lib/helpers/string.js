@@ -53,6 +53,24 @@ export const capitalize = (str) => {
 };
 
 /**
+ * Given a maximum number of characters to display,
+ * truncate a string by adding omission if too long
+ * @param {String} [str]
+ * @param {Number} [charsToDisplay]
+ * @param {String} [omission]
+ * @returns {String}
+ */
+export const truncate = (str = '', charsToDisplay = 50, omission = '...') => {
+    if (str.length === 0) {
+        return str;
+    }
+    if (str.length > charsToDisplay) {
+        return str.substring(0, charsToDisplay - omission.length) + omission;
+    }
+    return str;
+};
+
+/**
  * Extract 2 first initials
  * @param {String} value
  * @retuns {String}

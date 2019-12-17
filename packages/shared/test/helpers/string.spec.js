@@ -1,4 +1,4 @@
-import { capitalize, getRandomString, getInitial, findLongestMatchingIndex } from '../../lib/helpers/string';
+import { capitalize, getRandomString, getInitial, findLongestMatchingIndex, truncate } from '../../lib/helpers/string';
 
 describe('string', () => {
     describe('getRandomString', () => {
@@ -49,6 +49,20 @@ describe('string', () => {
 
         it('should handle emoji', () => {
             expect(getInitial('🐼')).toEqual('🐼');
+        });
+    });
+
+    describe('truncate', () => {
+        it('should truncate', () => {
+            expect(truncate('', 1)).toEqual('');
+            expect(truncate('a', 1)).toEqual('a');
+            expect(truncate('ab', 1)).toEqual('...');
+            expect(truncate('abc', 1)).toEqual('...');
+            expect(truncate('abc', 3)).toEqual('abc');
+            expect(truncate('abcd', 3)).toEqual('...');
+            expect(truncate('abcd', 4)).toEqual('abcd');
+            expect(truncate('abcde', 4)).toEqual('a...');
+            expect(truncate('abcde', 8)).toEqual('abcde');
         });
     });
 });
