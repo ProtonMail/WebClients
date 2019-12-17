@@ -73,7 +73,7 @@ const PlansTable = ({
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                         {addCycleTooltip(
                             <div className="flex flex-column">
                                 <div className="mb0-5">
@@ -85,20 +85,20 @@ const PlansTable = ({
                             </div>
                         )}
                     </th>
-                    <td className="aligncenter bg-global-light">FREE</td>
-                    <td className="aligncenter bg-global-light">
+                    <td className="aligncenter bg-global-highlight">FREE</td>
+                    <td className="aligncenter bg-global-highlight">
                         <PlanPrice cycle={cycle} currency={currency} plans={plans} planName={VPNBASIC} />
                     </td>
-                    <td className="aligncenter bg-global-light">
+                    <td className="aligncenter bg-global-highlight">
                         <PlanPrice cycle={cycle} currency={currency} plans={plans} planName={VPNPLUS} />
                     </td>
-                    <td className="aligncenter bg-global-light">
+                    <td className="aligncenter bg-global-highlight">
                         <PlanPrice cycle={cycle} currency={currency} plans={plans} planName={VISIONARY} />
                     </td>
                 </tr>
 
                 <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                         <span className="mr0-5">{c('Header').t`Simultaneous connections`}</span>
                     </th>
                     <td className="aligncenter">1</td>
@@ -108,7 +108,7 @@ const PlansTable = ({
                 </tr>
 
                 <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                         <span className="mr0-5">{c('Header').t`Countries`}</span>
                     </th>
                     <td className="aligncenter">{countriesLoading ? <Loader /> : countries.free.length}</td>
@@ -118,7 +118,7 @@ const PlansTable = ({
                 </tr>
 
                 <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">{c('Header')
                         .t`Speed`}</th>
                     <td className="aligncenter">{c('Plan details').t`Medium`}</td>
                     <td className="aligncenter">{c('Plan details').t`High`}</td>
@@ -127,7 +127,7 @@ const PlansTable = ({
                 </tr>
 
                 <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                         <span className="mr0-5">{c('Header').t`P2P support (BitTorrent, etc.)`}</span>
                     </th>
                     <td className="aligncenter">
@@ -145,7 +145,7 @@ const PlansTable = ({
                 </tr>
 
                 <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                         <span className="mr0-5">{c('Header').t`Tor over VPN`}</span>
                     </th>
                     <td className="aligncenter">
@@ -163,7 +163,7 @@ const PlansTable = ({
                 </tr>
 
                 <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                         <span className="mr0-5">{c('Header').t`Secure core`}</span>
                         <Info
                             title={c('Tooltip')
@@ -186,7 +186,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                             <span className="mr0-5">{c('Header').t`Apps for Android / Linux / iOS / Windows`}</span>
                         </th>
                         <td className="aligncenter">
@@ -206,7 +206,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                             <span className="mr0-5">{c('Header').t`Advanced encryption`}</span>
                         </th>
                         <td className="aligncenter">
@@ -226,7 +226,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                             <span className="mr0-5">{c('Header').t`Kill Switch / Always-on`}</span>
                         </th>
                         <td className="aligncenter">
@@ -246,7 +246,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                             <span className="mr0-5">{c('Header').t`No logs policy`}</span>
                         </th>
                         <td className="aligncenter">
@@ -266,7 +266,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                             <span className="mr0-5">{c('Header').t`No data limits`}</span>
                         </th>
                         <td className="aligncenter">
@@ -286,7 +286,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                             <span className="mr0-5">{c('Header').t`Stream geo-blocked content`}</span>
                         </th>
                         <td className="aligncenter">
@@ -306,7 +306,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                             <span className="mr0-5">ProtonMail Visionary</span>
                             <Info title={c('Tooltip').t`Includes ProtonMail encrypted email with all features`} />
                         </th>
@@ -327,7 +327,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                             <span className="mr0-5">{c('Header').t`30-day money-back guarantee`}</span>
                         </th>
                         <td className="aligncenter" />
@@ -345,7 +345,7 @@ const PlansTable = ({
 
                 {onSelect && (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                             <SmallButton className="pm-button--link" onClick={toggle}>
                                 {state ? c('Action').t`Hide additional features` : c('Action').t`Compare all features`}
                             </SmallButton>
