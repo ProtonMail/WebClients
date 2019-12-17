@@ -5,6 +5,7 @@ import { useApi } from 'react-components';
 import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
 import { getEvent } from 'proton-shared/lib/api/calendars';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
+import { dateLocale } from 'proton-shared/lib/i18n';
 
 import notificationIcon from '../../../assets/notification.gif';
 import useGetCalendarEventRaw from '../../containers/calendar/useGetCalendarEventRaw';
@@ -83,7 +84,7 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
                         if (unmounted) {
                             return;
                         }
-                        const text = getAlarmMessage(eventRaw, new Date(), tzid);
+                        const text = getAlarmMessage(eventRaw, new Date(), tzid, { locale: dateLocale });
                         displayNotification({ text });
                     });
 

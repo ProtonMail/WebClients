@@ -3,14 +3,24 @@ import { c } from 'ttag';
 import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { toUTCDate, fromUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
 import formatUTC from 'proton-shared/lib/date-fns-utc/format';
-import { dateLocale } from 'proton-shared/lib/i18n';
 import { isSameDay, isNextDay, isSameMonth, isSameYear } from 'proton-shared/lib/date-fns-utc/index';
+import { truncate } from 'proton-shared/lib/helpers/string';
 
-export const getAlarmMessage = (component, now, tzid) => {
+/**
+ * Given a raw event, the date now and a timezone id,
+ * generate a notification message for the event
+ * @param {object} component
+ * @param {Date} now                fake UTC date
+ * @param {string} tzid
+ * @param {object} formatOptions    format options.
+ * @returns {string}
+ */
+export const getAlarmMessage = (component, now, tzid, formatOptions) => {
     const {
         dtstart,
-        summary: { value: title }
+        summary: { value }
     } = component;
+    const title = truncate(value, 100);
 
     // Determine if the event is happening in timezoned today, tomorrow, this month or this year.
     // For that, compute the UTC times of the timezoned end of today, end of month and end of year
@@ -18,7 +28,6 @@ export const getAlarmMessage = (component, now, tzid) => {
     const startDateTimezoned = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStartDate), tzid));
     const nowDateTimezoned = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(now), tzid));
 
-    const formatOptions = { locale: dateLocale };
     const formattedHour = formatUTC(startDateTimezoned, 'p', formatOptions);
 
     const isAllDay = isIcalAllDay(component);
@@ -57,9 +66,13 @@ export const getAlarmMessage = (component, now, tzid) => {
         return c('Alarm notification').t`${title} will start on ${formattedDate} at ${formattedHour}`;
     }
 
-    const formattedDate = formatUTC(startDateTimezoned, 'PPP', formatOptions);
-    if (isInFuture) {
-        return c('Alarm notification').t`${title} will start on ${formattedDate} at ${formattedHour}`;
+    if (isAllDay) {
+        const formattedDateWithoutTime = formatUTC(startDateTimezoned, 'PPPP', formatOptions);
+        return c('Alarm notification').t`${title} will start on ${formattedDateWithoutTime}`;
     }
-    return c('Alarm notification').t`${title} started on ${formattedDate} at ${formattedHour}`;
+    const formattedDateWithTime = formatUTC(startDateTimezoned, 'PPPPp', formatOptions);
+    if (isInFuture) {
+        return c('Alarm notification').t`${title} will start on ${formattedDateWithTime}`;
+    }
+    return c('Alarm notification').t`${title} started on ${formattedDateWithTime}`;
 };
