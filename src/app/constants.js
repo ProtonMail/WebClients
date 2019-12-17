@@ -207,6 +207,7 @@ export const MESSAGE_FLAGS = {
     FLAG_OPENED: 1024, // whether the message has ever been opened by the user
     FLAG_RECEIPT_SENT: 2048, // whether a read receipt has been sent in response to the message
     // For drafts only
+    FLAG_RECEIPT: 16384,
     FLAG_RECEIPT_REQUEST: 65536, // whether to request a read receipt for the message
     FLAG_PUBLIC_KEY: 131072, // whether to attach the public key
     FLAG_SIGN: 262144 // whether to sign the message

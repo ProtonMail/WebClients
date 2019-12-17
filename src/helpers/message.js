@@ -7,6 +7,7 @@ import { hasBit } from './bitHelper';
 const {
     FLAG_RECEIVED,
     FLAG_SENT,
+    FLAG_RECEIPT,
     FLAG_RECEIPT_REQUEST,
     FLAG_IMPORTED,
     FLAG_REPLIED,
@@ -34,6 +35,7 @@ const hasMimeType = (type) => ({ MIMEType } = {}) => MIMEType === type;
  */
 export const hasFlag = (flag) => ({ Flags = 0 } = {}) => hasBit(Flags, flag);
 
+export const isReadReceipt = hasFlag(FLAG_RECEIPT);
 export const isRequestReadReceipt = hasFlag(FLAG_RECEIPT_REQUEST);
 export const isImported = hasFlag(FLAG_IMPORTED);
 export const isInternal = hasFlag(FLAG_INTERNAL);
