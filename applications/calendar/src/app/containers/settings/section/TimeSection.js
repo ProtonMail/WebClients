@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
+    Info,
     SubTitle,
     Row,
     Label,
@@ -53,7 +55,7 @@ const TimeSection = ({
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
-    const primaryTimezoneValue = AutoDetectPrimaryTimezone ? timezone : PrimaryTimezone || timezone;
+    const primaryTimezoneValue = PrimaryTimezone;
     const secondaryTimezoneValue = DisplaySecondaryTimezone
         ? SecondaryTimezone || timezone
         : SecondaryTimezone || timezone;
@@ -93,12 +95,18 @@ const TimeSection = ({
                                     })
                                 )
                             }
-                        >{c('Checkbox').t`Auto-detect`}</Checkbox>
+                        >
+                            {c('Checkbox').t`Ask to update primary time zone`}
+                            <Info
+                                className="ml0-5"
+                                title={c('Tooltip')
+                                    .t`If the computer time zone does not match the current time zone preference, you will be asked to update it (at most once per day). `}
+                            />
+                        </Checkbox>
                     </div>
                     <div>
                         <TimezoneSelector
                             loading={loadingPrimaryTimeZone}
-                            disabled={!!AutoDetectPrimaryTimezone}
                             timezone={primaryTimezoneValue}
                             onChange={(PrimaryTimezone) =>
                                 withLoadingPrimaryTimeZone(handleChange({ PrimaryTimezone }))
@@ -139,6 +147,11 @@ const TimeSection = ({
             </Row>
         </>
     );
+};
+
+TimeSection.propTypes = {
+    calendarSettings: PropTypes.object,
+    keepTimezone: PropTypes.bool
 };
 
 export default TimeSection;

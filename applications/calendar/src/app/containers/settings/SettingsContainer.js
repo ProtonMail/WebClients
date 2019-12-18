@@ -6,7 +6,8 @@ import {
     Href,
     useToggle,
     useActiveBreakpoint,
-    useUser, useCalendarUserSettings
+    useUser,
+    useCalendarUserSettings
 } from 'react-components';
 import { Redirect, Route, Switch } from 'react-router';
 import { c } from 'ttag';
@@ -14,14 +15,14 @@ import { c } from 'ttag';
 import PrivateHeader from '../../components/layout/PrivateHeader';
 import GeneralPage from './SettingsGeneralPage';
 import CalendarsPage from './SettingsCalendarPage';
+import PropTypes from 'prop-types';
 
 const SettingsContainer = ({ calendars }) => {
+    const [calendarSettings] = useCalendarUserSettings();
     const mainAreaRef = useRef();
     const { state: expanded, toggle: onToggleExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
     const [{ isPaid }] = useUser();
-
-    const [calendarSettings] = useCalendarUserSettings();
 
     useEffect(() => {
         mainAreaRef.current.scrollTop = 0;
@@ -78,13 +79,13 @@ const SettingsContainer = ({ calendars }) => {
                             <Route
                                 path="/calendar/settings/calendars"
                                 render={() => {
-                                    return <CalendarsPage calendars={calendars} />
+                                    return <CalendarsPage calendars={calendars} />;
                                 }}
                             />
                             <Route
                                 path="/calendar/settings/general"
                                 render={() => {
-                                    return <GeneralPage calendarSettings={calendarSettings} />
+                                    return <GeneralPage calendarSettings={calendarSettings} />;
                                 }}
                             />
                             <Redirect to="/calendar/settings/general" />
@@ -94,6 +95,11 @@ const SettingsContainer = ({ calendars }) => {
             </div>
         </div>
     );
+};
+
+SettingsContainer.propTypes = {
+    calendars: PropTypes.array,
+    calendarSettings: PropTypes.object
 };
 
 export default SettingsContainer;

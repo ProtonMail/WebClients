@@ -22,7 +22,14 @@ const MainContainer = () => {
                 <Route
                     path="/calendar"
                     render={({ history, location }) => {
-                        return <CalendarContainer calendars={calendars} history={history} location={location} />;
+                        return (
+                            <CalendarContainer
+                                user={user}
+                                calendars={calendars}
+                                history={history}
+                                location={location}
+                            />
+                        );
                     }}
                 />
                 <Redirect to="/calendar" />

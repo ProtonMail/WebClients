@@ -1,5 +1,6 @@
 import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef } from 'react';
-import { useCalendarUserSettings, useCalendarBootstrap, useAddresses } from 'react-components';
+import PropTypes from 'prop-types';
+import { useCalendarUserSettings, useCalendarBootstrap, useAddresses, useModals } from 'react-components';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -16,6 +17,8 @@ import { getDateRange } from './helper';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
 import AlarmContainer from '../alarms/AlarmContainer';
+import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
+import { canAskTimezoneSuggestion, saveLastTimezoneSuggestion } from '../../helpers/timezoneSuggestion';
 //import { hasBit } from 'proton-shared/lib/helpers/bitset';
 //import { CALENDAR_STATUS } from 'proton-shared/lib/calendar/constants';
 
@@ -78,6 +81,10 @@ const getWeekStartsOn = ({ WeekStart = 0 } = {}) => {
     return WeekStart % 7;
 };
 
+const getAutoDetectPrimaryTimezone = ({ AutoDetectPrimaryTimezone = false } = {}) => {
+    return !!AutoDetectPrimaryTimezone;
+};
+
 const getDisplaySecondaryTimezone = ({ DisplaySecondaryTimezone } = {}) => {
     return !!DisplaySecondaryTimezone;
 };
@@ -94,10 +101,7 @@ const formatAbbreviation = (abbreviation, offset) => {
     return `GMT${formatTimezoneOffset(offset)}`;
 };
 
-export const getTzid = ({ AutoDetectPrimaryTimezone, PrimaryTimezone } = {}, defaultTimezone) => {
-    if (AutoDetectPrimaryTimezone) {
-        return defaultTimezone;
-    }
+export const getTzid = ({ PrimaryTimezone } = {}, defaultTimezone) => {
     if (PrimaryTimezone) {
         return PrimaryTimezone;
     }
@@ -143,6 +147,8 @@ const CalendarContainer = ({ calendars, history, location }) => {
     const [addresses, loadingAddresses] = useAddresses();
     const [disableCreate, setDisableCreate] = useState(false);
 
+    const { createModal } = useModals();
+
     const interactiveRef = useRef();
 
     const visibleCalendars = useMemo(() => {
@@ -185,7 +191,21 @@ const CalendarContainer = ({ calendars, history, location }) => {
 
     const [localTzid] = useState(() => getTimezone());
     const [customTzid, setCustomTzid] = useState();
-    const tzid = customTzid || getTzid(calendarSettings, localTzid);
+    const savedTzid = getTzid(calendarSettings, localTzid);
+    const tzid = customTzid || savedTzid;
+
+    useEffect(() => {
+        const hasAutoDetectPrimaryTimezone = getAutoDetectPrimaryTimezone(calendarSettings);
+        if (!hasAutoDetectPrimaryTimezone) {
+            return;
+        }
+        const localTzid = getTimezone();
+        const savedTzid = getTzid(calendarSettings, localTzid);
+        if (savedTzid !== localTzid && canAskTimezoneSuggestion()) {
+            saveLastTimezoneSuggestion();
+            createModal(<AskUpdateTimezoneModal localTzid={localTzid} />);
+        }
+    }, []);
 
     const utcNowDateInTimezone = useMemo(() => {
         return toUTCDate(convertUTCDateTimeToZone(fromUTCDate(nowDate), tzid));
@@ -365,6 +385,12 @@ const CalendarContainer = ({ calendars, history, location }) => {
             <AlarmContainer calendars={visibleCalendars} tzid={tzid} />
         </CalendarContainerView>
     );
+};
+
+CalendarContainer.propTypes = {
+    calendars: PropTypes.array,
+    history: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
 };
 
 export default CalendarContainer;
