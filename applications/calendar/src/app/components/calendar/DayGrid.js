@@ -1,7 +1,8 @@
 import React, { useMemo, useState, useRef, useLayoutEffect, useEffect } from 'react';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import PropTypes from 'prop-types';
-import { eachDayOfInterval, getWeekNumber } from 'proton-shared/lib/date-fns-utc';
+import { eachDayOfInterval } from 'proton-shared/lib/date-fns-utc';
+import { getISOWeek } from 'date-fns';
 
 import useDayGridEventLayout from './useDayGridEventLayout';
 import createDayGridMouseHandler from './interactions/dayGridMouseHandler';
@@ -114,10 +115,11 @@ const DayGrid = ({
                     {displayWeekNumbers ? (
                         <div className="flex flex-column calendar-daygrid-weeknumber-width">
                             {rows.map((days) => {
-                                const week = getWeekNumber(days[0]);
+                                const monday = days.find((date) => date.getDay() === 1);
+                                const week = getISOWeek(monday);
                                 return (
                                     <div
-                                        key={week}
+                                        key={+monday}
                                         className="flex-item-fluid flex flex-column flex relative calendar-daygrid-weeknumber"
                                     >
                                         <span className="mauto opacity-40 small">{week}</span>
