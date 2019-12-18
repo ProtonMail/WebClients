@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { PAID_MEMBER_ROLE, REMOTE, EMBEDDED } from '../../constants';
+import CONFIG from '../../config';
 
 /* @ngInject */
 function AccountController(
@@ -25,31 +26,8 @@ function AccountController(
     let promisePasswordModal;
     const { on, unsubscribe } = dispatchers();
     $scope.emailing = { announcements: false, features: false, newsletter: false, beta: false };
-    $scope.locales = [
-        { label: 'Català', key: 'ca_ES' },
-        { label: 'Čeština', key: 'cs_CZ' },
-        { label: 'Deutsch', key: 'de_DE' },
-        { label: 'English', key: 'en_US' },
-        { label: 'Español', key: 'es_ES' },
-        { label: 'Français', key: 'fr_FR' },
-        // { label: 'Bahasa Indonesia', key: 'id_ID' },
-        { label: 'Hrvatski', key: 'hr_HR' },
-        { label: 'Italiano', key: 'it_IT' },
-        { label: '日本語', key: 'ja_JP' },
-        { label: 'Dutch', key: 'nl_NL' },
-        { label: 'Polski', key: 'pl_PL' },
-        { label: 'Português', key: 'pt_PT' },
-        { label: 'Português do Brasil', key: 'pt_BR' },
-        { label: 'Pусский', key: 'ru_RU' },
-        { label: 'Română', key: 'ro_RO' },
-        { label: 'Türkçe', key: 'tr_TR' },
-        { label: 'Українська', key: 'uk_UA' },
-        { label: '简体中文', key: 'zh_CN' },
-        { label: '繁體中文', key: 'zh_TW' },
-        { label: 'Icelandic', key: 'is_IS' },
-        { label: 'Danish', key: 'da_DK' },
-        { label: 'Hungarian', key: 'hu_HU' }
-    ];
+    $scope.locales = Object.entries(CONFIG.locales).map(([key, label]) => ({ key, label }));
+
     $scope.locale = _.find($scope.locales, { key: gettextCatalog.getCurrentLanguage() }) || $scope.locales[0];
     const EMAILING_KEYS = Object.keys($scope.emailing);
 
