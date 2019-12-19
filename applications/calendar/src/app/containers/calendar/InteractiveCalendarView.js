@@ -410,7 +410,7 @@ const InteractiveCalendarView = ({
         return new Promise((resolve, reject) => {
             createModal(
                 <ConfirmModal
-                    title={c('Info').t`Discard unsaved changes?`}
+                    title={c('Info').t`Discard changes?`}
                     close={<ResetButton autoFocus={true}>{c('Action').t`Cancel`}</ResetButton>}
                     confirm={c('Action').t`Discard`}
                     onClose={reject}
