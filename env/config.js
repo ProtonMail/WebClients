@@ -23,7 +23,7 @@ const getSingleArgument = (argument) => {
     return argument;
 };
 
-const ARG_BRANCH = getSingleArgument(argv) || '';
+const ARG_BRANCH = getSingleArgument(argv.branch) || '';
 
 const isWebClient = () => {
     try {

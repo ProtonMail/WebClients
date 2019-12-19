@@ -19,6 +19,7 @@ describe('composer directive', () => {
         .factory('AppModel', AppModelService)
         .factory('mailSettingsModel', MailSettingsModel)
         .factory('dispatchers', dispatchersService)
+        .factory('hotkeys', () => ({ pause: angular.noop }))
         .directive('composer', service);
 
     beforeEach(angular.mock.module(MODULE));
