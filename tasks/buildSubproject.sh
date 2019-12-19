@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
+LOG_PATH="$(pwd)/build.log";
+MAIN_ARGS=$@;
+
+function log {
+    echo "$1" >> "$LOG_PATH";
+}
+
 function loadEnv {
     set -o allexport
     source "$1";
@@ -47,11 +54,11 @@ CALENDAR_DIST_DIR="dist/calendar";
 ARGS="$*";
 
 
-echo "[sub.build] $(date)" >> build.log;
-echo "[sub.build] $@" >> build.log;
-echo "[sub.build] api:$API" >> build.log;
-echo "[init.project] $API_FLAG" >> build.log;
-echo "[init.project] remote $ARGS" >> build.log;
+log "[sub.build] $(date)"
+log "[sub.build] MAIN_ARGS: $MAIN_ARGS"
+log "[sub.build] api:$API"
+log "[init.project] $API_FLAG"
+log "[init.project] remote $ARGS"
 
 function getRemote {
 
@@ -59,12 +66,12 @@ function getRemote {
     rm -rf "/tmp/$1" || echo true;
 
     if [[ "$1" =~ calendar ]]; then
-        echo "[clone] from $CALENDAR_GIT" >> build.log;
+        log "[clone] from $CALENDAR_GIT"
         git clone --depth 1 "$CALENDAR_GIT";
         return 0;
     fi;
 
-    echo "[clone] from git@github.com:ProtonMail/$1.git" >> build.log;
+    log "[clone] from git@github.com:ProtonMail/$1.git"
     git clone --depth 1 "git@github.com:ProtonMail/$1.git";
 }
 
@@ -75,16 +82,16 @@ function loadProject {
     fi;
 
     if [[ "$ARGS" =~ "$1" ]]; then
-        echo "[load.project] remote $2" >> build.log;
+        log "[load.project] remote $2"
         getRemote "$2";
         cd "/tmp/$2";
 
-        echo "[config.project] load from /tmp/$2" >> build.log;
+        log "[config.project] load from /tmp/$2"
         /tmp/app-config/install "/tmp/$2" --verbose
-        echo "[config.project] loaded" >> build.log;
-        cat "/tmp/$2/appConfig.json" >> build.log;
+        log "[config.project] loaded"
+        cat "/tmp/$2/appConfig.json"
     else
-        echo "[load.project] local $2" >> build.log;
+        log "[load.project] local $2"
         cd "$ROOT_DIR/$2";
     fi
 }
@@ -95,30 +102,30 @@ function addSubProject {
         # if [[ -f "./package-lock.json" ]]; then
         #     npm --no-color ci;
         # else
-            npm --no-color i --no-audit --no-package-lock;
+            npm --no-color i --no-audit --no-package-lock --silent;
         # fi;
     fi
 
-    echo "[build.project] npm run build -- $@ "--api=$API" --verbose" >> build.log;
+    log "[build.project] npm run build -- $MAIN_ARGS --verbose"
     rm -rf dist;
-    npm --no-color run build -- $@ "--api=$API" --verbose
+    npm --no-color run build -- $MAIN_ARGS --verbose
     cp -r dist/ "$WEBCLIENT_DIR/$1";
 }
 
 if [[ "$*" == *--deploy-subproject=settings* ]]; then
-    echo "[build] settings" >> build.log;
+    log "[build] settings"
     loadProject "--remote-pm-settings" "${SETTINGS_APP:-proton-mail-settings}";
     addSubProject "$SETTINGS_DIST_DIR";
 fi
 
 if [[ "$*" == *--deploy-subproject=contacts* ]]; then
-    echo "[build] contacts" >> build.log;
+    log "[build] contacts"
     loadProject "--remote-contacts" "${CONTACTS_APP:-proton-contacts}";
     addSubProject "$CONTACTS_DIST_DIR";
 fi
 
 if [[ "$*" == *--deploy-subproject=calendar* ]]; then
-    echo "[build] calendar" >> build.log;
+    log "[build] calendar"
     loadProject "--remote-calendar" "${CALENDAR_APP:-proton-calendar}";
     addSubProject "$CALENDAR_DIST_DIR";
 fi
