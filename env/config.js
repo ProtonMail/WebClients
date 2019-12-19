@@ -81,6 +81,19 @@ const isDistRelease = () => {
     return ['prod', 'beta'].includes(argv.api) || process.env.NODE_ENV === 'dist';
 };
 
+const getSingleArgument = (argument) => {
+    // Many flags creates an array, take the last one.
+    if (Array.isArray(argument)) {
+        const { length, [length - 1]: last, first } = argument;
+        return last || first;
+    }
+    return argument;
+};
+
+const getFeatureFlags = () => {
+    return getSingleArgument(argv.featureFlags) || '';
+};
+
 const getEnv = () => {
     if (isDistRelease()) {
         return argv.api || getDefaultApiTarget();
@@ -150,7 +163,8 @@ const getEnvDeploy = ({ env = process.env.NODE_ENV, config = true } = {}) => {
         articleLink: argv.article || CONFIG_DEFAULT.articleLink,
         changelogPath: CONFIG_DEFAULT.changelogPath,
         statsConfig: getStatsConfig(argv.branch),
-        sentry: sentryConfig()
+        sentry: sentryConfig(),
+        featureFlags: getFeatureFlags()
     };
 
     if (!config) {

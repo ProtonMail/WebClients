@@ -1,3 +1,5 @@
+import CONFIG from '../../config';
+
 /* @ngInject */
 const sidebarMobile = (sidebarModel, dispatchers, authentication, AppModel, userType) => ({
     replace: true,
@@ -7,9 +9,10 @@ const sidebarMobile = (sidebarModel, dispatchers, authentication, AppModel, user
         const { on, unsubscribe } = dispatchers();
 
         const setUserType = () => {
-            const { isAdmin, isFree } = userType();
+            const { isAdmin, isFree, isPaid } = userType();
             scope.isAdmin = isAdmin;
             scope.isFree = isFree;
+            scope.hasCalendar = CONFIG.featureFlags.includes('calendar') && isPaid;
         };
         setUserType();
         scope.listStates = Object.keys(sidebarModel.getStateConfig());
