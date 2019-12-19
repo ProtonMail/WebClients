@@ -30,6 +30,7 @@ const ENV_FILE = fs.existsSync('.env') ? '.env' : 'env/.env';
 require('dotenv').config({ path: ENV_FILE });
 
 const { debug, success, error, about, warn } = require('./lib/helpers/log')('proton-bundler');
+const extractArgument = require('./lib/helpers/arguments');
 const coucou = require('./lib/helpers/coucou');
 const { bash, script } = require('./lib/helpers/cli');
 const {
@@ -236,7 +237,7 @@ async function main() {
 
     // Custom local deploy for the CI
     const isCI = process.env.NODE_ENV_DIST === 'bundle-only';
-    const branch = argv.branch;
+    const branch = extractArgument(argv.branch) || '';
     const flowType = argv.flow;
     const runI18n = argv.i18n;
     const forceI18n = argv.localize;
