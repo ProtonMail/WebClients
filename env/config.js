@@ -56,7 +56,8 @@ const typeofBranch = (branch = process.env.NODE_ENV_BRANCH) => {
 };
 
 const getStatsConfig = (deployBranch = '') => {
-    const [, host = 'dev', subhost = 'a'] = deployBranch.split('-');
+    const branch = Array.isArray(deployBranch) ? deployBranch[0] : deployBranch;
+    const [, host = 'dev', subhost = 'a'] = branch.split('-');
     return extend({}, STATS_CONFIG[host], STATS_ID[subhost]) || NO_STAT_MACHINE;
 };
 
