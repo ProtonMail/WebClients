@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo, useRef } from 'react';
+import { c, msgid } from 'ttag';
 import PropTypes from 'prop-types';
 import { addMinutes, startOfDay, format, parse } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
@@ -17,7 +18,19 @@ const fromFormatted = (value, locale) => {
     return parse(value, 'p', new Date(), { locale });
 };
 
-const TimeInput = ({ onChange, value, interval = 30, min, max, ...rest }) => {
+const formatDuration = (label, minutes) => {
+    const hours = (minutes / 60).toFixed(1);
+    const hoursInt = Math.ceil(hours);
+    return hours >= 1
+        ? c('Time unit').ngettext(msgid`${hours} hour`, `${hours} hours`, hoursInt)
+        : c('Time unit').ngettext(msgid`${minutes} minutes`, `${minutes} minutes`, minutes);
+};
+
+const getMinutes = (date) => date.getHours() * 60 + date.getMinutes();
+
+const MAX_MINUTES = 24 * 60;
+
+const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = false, max, ...rest }) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor();
     const [temporaryInput, setTemporaryInput] = useState(() => toFormatted(value, dateLocale));
@@ -26,8 +39,30 @@ const TimeInput = ({ onChange, value, interval = 30, min, max, ...rest }) => {
         setTemporaryInput(toFormatted(value, dateLocale));
     }, [value]);
 
+    const base = useMemo(() => min || startOfDay(value), [min, value]);
+
+    const minMinutes = getMinutes(base);
+    const valueMinutes = getMinutes(value);
+    const normalizedMinutes = valueMinutes - minMinutes;
+
     const handleSelectDate = (newDate) => {
-        onChange(newDate);
+        const newMinutes = getMinutes(newDate);
+
+        if (valueMinutes === newMinutes) {
+            return;
+        }
+
+        const diffMinutes = newMinutes - minMinutes;
+
+        const normalizedDate = new Date(
+            base.getFullYear(),
+            base.getMonth(),
+            base.getDate(),
+            0,
+            minMinutes + (diffMinutes < 0 ? diffMinutes + MAX_MINUTES : diffMinutes)
+        );
+
+        onChange(normalizedDate);
     };
 
     const parseAndSetDate = () => {
@@ -68,16 +103,19 @@ const TimeInput = ({ onChange, value, interval = 30, min, max, ...rest }) => {
     const scrollRef = useRef();
     const listRef = useRef();
     const options = useMemo(() => {
-        const multiplier = (24 * 60) / interval;
-        const base = startOfDay(value);
-        return Array.from({ length: multiplier }, (a, i) => {
-            const value = addMinutes(base, i * interval);
+        const length = Math.floor(MAX_MINUTES / interval);
+        const minutes = Array.from({ length }, (a, i) => i * interval);
+
+        return minutes.map((minutes) => {
+            const value = addMinutes(base, minutes);
+            const label = toFormatted(value, dateLocale);
             return {
+                minutes,
                 value,
-                label: format(value, 'p', { locale: dateLocale })
+                label: displayDuration ? `${label} (${formatDuration(label, minutes)})` : label
             };
         });
-    }, []);
+    }, [normalizedMinutes, base]);
 
     const filteredOptions = useMemo(() => {
         return options.filter(({ value }) => {
@@ -119,14 +157,23 @@ const TimeInput = ({ onChange, value, interval = 30, min, max, ...rest }) => {
                 onChange={({ target: { value } }) => setTemporaryInput(value)}
                 {...rest}
             />
-            <Dropdown size="narrow" id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} autoClose={false}>
+            <Dropdown
+                size={displayDuration ? 'normal' : 'narrow'}
+                id={uid}
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+                autoClose={false}
+            >
                 <div className="dropDown-content" onMouseDown={(e) => e.preventDefault()} ref={scrollRef}>
                     <ul className="unstyled mt0 mb0" ref={listRef}>
                         {filteredOptions.map(({ label, value: otherValue }, i) => {
-                            const isSelected = label === temporaryInput;
+                            // Only highlight if the text includes the input (where 13:05 is centered but not highlighted)
+                            const isSelected = i === matchingIndex && label.includes(temporaryInput);
                             return (
-                                <li className={classnames(['pt0-5 pb0-5 p1', isSelected && 'bold'])} key={i}>
+                                <li key={i}>
                                     <button
+                                        className={classnames(['w100 pt0-5 pb0-5 p1', isSelected && 'bold'])}
                                         onClick={() => {
                                             handleSelectDate(otherValue);
                                             close();
@@ -146,6 +193,8 @@ const TimeInput = ({ onChange, value, interval = 30, min, max, ...rest }) => {
 
 TimeInput.propTypes = {
     value: PropTypes.instanceOf(Date).isRequired,
+    displayDuration: PropTypes.bool,
+    base: PropTypes.instanceOf(Date),
     min: PropTypes.instanceOf(Date),
     max: PropTypes.instanceOf(Date),
     onChange: PropTypes.func.isRequired,
