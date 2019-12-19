@@ -17,10 +17,10 @@ const getFrequencyString = (frequency, startDay) => {
         return c('Info').t`Weekly on ${startDay}`;
     }
     if (frequency === FREQUENCY.MONTHLY) {
-        return c('Info').t`Monthly on ${startDay}`;
+        return c('Info').t`Monthly`;
     }
     if (frequency === FREQUENCY.YEARLY) {
-        return c('Info').t`Yearly on ${startDay}`;
+        return c('Info').t`Yearly`;
     }
 };
 
