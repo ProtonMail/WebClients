@@ -12,17 +12,3 @@ export const getDaysInMonth = (currentDate, { weekStartsOn, weeks }) => {
     const end = endOfWeek(addWeeks(start, weeks), { weekStartsOn });
     return eachDayOfInterval({ start, end });
 };
-
-/**
- * Get the week number for a day.
- * @param {Date} currentDate
- * @returns {number}
- */
-export const getWeek = (currentDate) => {
-    const firstJanuary = new Date(currentDate.getFullYear(), 0, 1);
-    const weekNumber = Math.ceil(((currentDate - firstJanuary) / 86400000 + firstJanuary.getDay() + 1) / 7);
-    if (weekNumber > 52) {
-        return 1;
-    }
-    return weekNumber;
-};
