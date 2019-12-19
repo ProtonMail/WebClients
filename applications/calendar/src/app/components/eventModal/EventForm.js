@@ -10,31 +10,42 @@ import LocationRow from './rows/LocationRow';
 import DescriptionRow from './rows/DescriptionRow';
 import FrequencyRow from './rows/FrequencyRow';
 import TimezoneRow from './rows/TimezoneRow';
-import MoreRow from './rows/MoreRow';
 import DateTimeRow from './rows/DateTimeRow';
 import TitleRow from './rows/TitleRow';
 import { getAllDayCheck } from './eventForm/stateActions';
 
 const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, errors, model, setModel }) => {
-    const frequencyRow = model.hasMoreOptions ? (
+    const allDayRow = (
+        <Row>
+            <span className={'pm-label'}></span>
+            <div className="flex-item-fluid">
+                <AllDayCheckbox
+                    className="mb1"
+                    checked={model.isAllDay}
+                    onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck(model, isAllDay) })}
+                />
+            </div>
+        </Row>
+    );
+
+    const frequencyRow = (
         <FrequencyRow
             label={c('Label').t`Frequency`}
             value={model.frequency}
             onChange={(frequency) => setModel({ ...model, frequency })}
         />
-    ) : null;
+    );
 
-    const timezoneRows =
-        model.hasMoreOptions && !model.isAllDay ? (
-            <TimezoneRow
-                startLabel={c('Label').t`Start timezone`}
-                endLabel={c('Label').t`End timezone`}
-                start={model.start}
-                end={model.end}
-                onChangeStart={(start) => setModel({ ...model, start })}
-                onChangeEnd={(end) => setModel({ ...model, end })}
-            />
-        ) : null;
+    const timezoneRows = !model.isAllDay ? (
+        <TimezoneRow
+            startLabel={c('Label').t`Start timezone`}
+            endLabel={c('Label').t`End timezone`}
+            start={model.start}
+            end={model.end}
+            onChangeStart={(start) => setModel({ ...model, start })}
+            onChangeEnd={(end) => setModel({ ...model, end })}
+        />
+    ) : null;
 
     const calendarRow = model.calendars.length ? (
         <CalendarSelectRow
@@ -55,6 +66,7 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                 onChange={(value) => setModel({ ...model, title: value })}
                 isSubmitted={isSubmitted}
             />
+            {allDayRow}
             <DateTimeRow
                 label={c('Label').t`Time`}
                 model={model}
@@ -64,12 +76,6 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                 weekStartsOn={weekStartsOn}
                 isNarrow={isNarrow}
             />
-            <MoreRow hasMore={model.hasMoreOptions} onChange={(hasMoreOptions) => setModel({ ...model, hasMoreOptions })}>
-                <AllDayCheckbox
-                    checked={model.isAllDay}
-                    onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck(model, isAllDay) })}
-                />
-            </MoreRow>
             {frequencyRow}
             {timezoneRows}
             {calendarRow}

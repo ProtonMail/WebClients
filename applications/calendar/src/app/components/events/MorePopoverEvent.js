@@ -4,8 +4,10 @@ import FullDayEvent from './FullDayEvent';
 import PopoverHeader from './PopoverHeader';
 import PopoverContent from './PopoverContent';
 import { TYPE } from '../calendar/interactions/constants';
+import { classnames } from 'react-components';
 
 const MorePopoverEvent = ({
+    isNarrow,
     date,
     onClose,
     formatTime,
@@ -17,7 +19,11 @@ const MorePopoverEvent = ({
     targetEventData
 }) => {
     return (
-        <div style={style} className="eventpopover p1" ref={popoverRef}>
+        <div
+            style={isNarrow ? undefined : style}
+            className={classnames(['eventpopover p1', isNarrow && 'eventpopover--full-width'])}
+            ref={popoverRef}
+        >
             <PopoverHeader onClose={onClose}>
                 <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={date.getUTCDate()}>
                     {date.getUTCDate()}
@@ -54,7 +60,6 @@ const MorePopoverEvent = ({
     );
 };
 
-MorePopoverEvent.propTypes = {
-};
+MorePopoverEvent.propTypes = {};
 
 export default MorePopoverEvent;

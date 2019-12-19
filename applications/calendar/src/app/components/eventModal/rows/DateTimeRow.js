@@ -112,12 +112,13 @@ const DateTimeRow = ({
     };
 
     const startTimeInput = isAllDay ? null : (
-        <TimeInput id="startTime" value={start.time} onChange={handleChangeStartTime} />
+        <TimeInput id="startTime" className="ml0-5" value={start.time} onChange={handleChangeStartTime} />
     );
 
     const endTimeInput = isAllDay ? null : (
         <TimeInput
             id="endTime"
+            className="ml0-5"
             value={end.time}
             onChange={handleChangeEndTime}
             aria-invalid={!!endError}
@@ -129,7 +130,6 @@ const DateTimeRow = ({
     const startDateInput = (
         <DateInput
             id="startDate"
-            className="mr0-5"
             required
             value={start.date}
             onChange={handleChangeStartDate}
@@ -141,7 +141,6 @@ const DateTimeRow = ({
     const endDateInput = (
         <DateInput
             id="endDate"
-            className="mr0-5"
             required
             value={end.date}
             onChange={handleChangeEndDate}
@@ -180,15 +179,15 @@ const DateTimeRow = ({
         <Row collapseOnMobile={collapseOnMobile}>
             <Label>{label}</Label>
             <div className="flex-item-fluid">
-                <div className="flex flex-nowrap flex-items-center">
-                    <div className="flex flex-nowrap">
+                <div className="flex flex-wrap flex-items-center">
+                    <div className="flex flex-nowrap w100 mb0-5">
                         {startDateInput}
                         {startTimeInput}
                     </div>
                     <div className="aligncenter" style={{ width: '2em' }}>
                         -
                     </div>
-                    <div className="flex flex-nowrap">
+                    <div className="flex flex-nowrap w100">
                         {endDateInput}
                         {endTimeInput}
                     </div>

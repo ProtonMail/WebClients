@@ -1,5 +1,5 @@
 import React from 'react';
-import { SmallButton, PrimaryButton } from 'react-components';
+import { SmallButton, PrimaryButton, classnames } from 'react-components';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { validate } from './eventForm/state';
@@ -19,7 +19,8 @@ const CreateEventPopover = ({
     style,
     popoverRef,
     displayWeekNumbers,
-    weekStartsOn
+    weekStartsOn,
+    isNarrow
 }) => {
     const errors = validate(model);
     const { isSubmitted, loadingAction, handleSubmit } = useForm({ model, errors, onSave, onClose, isCreateEvent });
@@ -30,15 +31,15 @@ const CreateEventPopover = ({
 
     return (
         <form
-            style={style}
+            style={isNarrow ? undefined : style}
             onSubmit={(e) => {
                 e.preventDefault();
                 handleSubmit();
             }}
-            className="eventpopover p1 pm-form--iconLabels"
+            className={classnames(['eventpopover p1 pm-form--iconLabels', isNarrow && 'eventpopover--full-width'])}
             ref={popoverRef}
         >
-            <PopoverHeader onClose={onClose}/>
+            <PopoverHeader onClose={onClose} />
             <PopoverContent>
                 <div className="w95">
                     <MinimalEventForm

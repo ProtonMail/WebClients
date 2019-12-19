@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormModal, PrimaryButton, Button, useActiveBreakpoint } from 'react-components';
+import { FormModal, PrimaryButton, Button } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 
@@ -9,6 +9,7 @@ import EventForm from './EventForm';
 import { useForm } from './useForm';
 
 const CreateEventModal = ({
+    isNarrow,
     displayWeekNumbers,
     weekStartsOn,
     tzid,
@@ -20,8 +21,6 @@ const CreateEventModal = ({
     onClose,
     ...rest
 }) => {
-    const { isNarrow } = useActiveBreakpoint();
-
     const errors = validate(model);
     const { isSubmitted, loadingAction, i18n, handleDelete, handleSubmit } = useForm({
         model,

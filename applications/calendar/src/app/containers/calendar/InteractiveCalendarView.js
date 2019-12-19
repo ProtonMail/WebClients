@@ -555,6 +555,7 @@ const InteractiveCalendarView = ({
                     if (targetEvent.id === 'tmp') {
                         return (
                             <CreateEventPopover
+                                isNarrow={isNarrow}
                                 style={style}
                                 popoverRef={ref}
                                 tzid={tzid}
@@ -578,6 +579,7 @@ const InteractiveCalendarView = ({
                     }
                     return (
                         <EventPopover
+                            isNarrow={isNarrow}
                             style={style}
                             popoverRef={ref}
                             event={targetEvent}
@@ -602,6 +604,7 @@ const InteractiveCalendarView = ({
                 {({ style, ref }) => {
                     return (
                         <MorePopoverEvent
+                            isNarrow={isNarrow}
                             style={style}
                             popoverRef={ref}
                             date={targetMoreData.date}
@@ -629,6 +632,7 @@ const InteractiveCalendarView = ({
 
             {eventModalID && tmpData ? (
                 <CreateEventModal
+                    isNarrow={isNarrow}
                     displayWeekNumbers={displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
                     tzid={tzid}

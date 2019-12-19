@@ -147,6 +147,7 @@ export const getExistingEvent = ({ veventComponent, veventValarmComponent, tzid 
     return {
         ...newModel,
         isAllDay,
+        // TODO: In the latest design we are not using hasMoreOptions, nor the MoreRow component. If the design sticks, we should remove them
         hasMoreOptions: isRecurring || hasDifferingTimezone,
         ...(isAllDay
             ? {

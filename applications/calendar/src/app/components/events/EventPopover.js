@@ -1,5 +1,14 @@
 import React from 'react';
-import { SmallButton, PrimaryButton, Loader, useLoading, useNotifications, Alert, Icon } from 'react-components';
+import {
+    SmallButton,
+    PrimaryButton,
+    Loader,
+    useLoading,
+    useNotifications,
+    Alert,
+    Icon,
+    classnames
+} from 'react-components';
 import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { c } from 'ttag';
@@ -12,7 +21,7 @@ import PopoverHeader from './PopoverHeader';
 import PopoverFooter from './PopoverFooter';
 import PopoverContent from './PopoverContent';
 
-const EventPopover = ({ formatTime, onEdit, onDelete, onClose, style, popoverRef, event: targetEvent }) => {
+const EventPopover = ({ formatTime, onEdit, onDelete, onClose, style, popoverRef, event: targetEvent, isNarrow }) => {
     const { createNotification } = useNotifications();
     const [loadingAction, withLoadingAction] = useLoading();
 
@@ -44,10 +53,13 @@ const EventPopover = ({ formatTime, onEdit, onDelete, onClose, style, popoverRef
             .t`Delete`}</SmallButton>
     );
 
+    const mergedClassName = classnames(['eventpopover', isNarrow && 'eventpopover--full-width']);
+    const mergedStyle = isNarrow ? undefined : style;
+
     if (error) {
         const errorMessage = error.message || '';
         return (
-            <div style={style} className="eventpopover" ref={popoverRef}>
+            <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
                 <PopoverHeader onClose={onClose}>
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
@@ -65,14 +77,14 @@ const EventPopover = ({ formatTime, onEdit, onDelete, onClose, style, popoverRef
 
     if (isLoading) {
         return (
-            <div style={style} className="eventpopover" ref={popoverRef}>
+            <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
                 <Loader />
             </div>
         );
     }
 
     return (
-        <div style={style} className="eventpopover" ref={popoverRef}>
+        <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
             <PopoverHeader onClose={onClose}>
                 <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={model.title}>
                     <Icon name="circle" color={Calendar.Color} size={25} /> {model.title}
