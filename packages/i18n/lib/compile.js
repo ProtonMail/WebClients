@@ -17,8 +17,6 @@ async function getConfig() {
 async function run({ file, lang, key }) {
     const output = `${I18N_JSON_DIR}/${lang}.json`;
 
-    await hasDirectory(output);
-
     if (process.env.APP_KEY === 'Angular') {
         const cmd = `npx angular-gettext-cli --files ${file} --dest ${output} --compile --format json`;
         return bash(cmd);
@@ -36,6 +34,8 @@ async function main() {
     const spinner = spin('Compiles translations');
     try {
         const config = await getConfig();
+        await hasDirectory(`${I18N_JSON_DIR}/lang.json`);
+
         debug(config);
         const list = config
             .filter(({ key }) => key !== 'en')
