@@ -4,6 +4,8 @@ import { Row, Label, Field, Select } from 'react-components';
 import { c } from 'ttag';
 import Notifications from '../../components/eventModal/Notifications';
 
+import { MAX_DEFAULT_NOTIFICATIONS } from '../../constants';
+
 const EventSettingsTab = ({ model, setModel }) => {
     return (
         <>
@@ -27,6 +29,7 @@ const EventSettingsTab = ({ model, setModel }) => {
                 <div className="flex-item-fluid">
                     <Notifications
                         notifications={model.partDayNotifications}
+                        canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
                         defaultNotification={model.defaultPartDayNotification}
                         onChange={(notifications) => {
                             setModel({
@@ -42,6 +45,7 @@ const EventSettingsTab = ({ model, setModel }) => {
                 <div className="flex-item-fluid">
                     <Notifications
                         notifications={model.fullDayNotifications}
+                        canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
                         defaultNotification={model.defaultFullDayNotification}
                         onChange={(notifications) => {
                             setModel({

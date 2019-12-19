@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import NotificationInput from './inputs/NotificationInput';
 import { updateItem, removeItem, addItem } from './eventForm/state';
 
-const Notifications = ({ notifications, hasWhen, hasType, defaultNotification, onChange }) => {
+const Notifications = ({ notifications, hasWhen, hasType, canAdd = true, defaultNotification, onChange }) => {
     return (
         <div>
             {notifications.map((notification, index) => {
@@ -28,10 +28,13 @@ const Notifications = ({ notifications, hasWhen, hasType, defaultNotification, o
                     </div>
                 );
             })}
-            <div>
-                <LinkButton onClick={() => onChange(addItem(notifications, { ...defaultNotification }))}>{c('Action')
-                    .t`Add notification`}</LinkButton>
-            </div>
+            {canAdd && (
+                <div>
+                    <LinkButton onClick={() => onChange(addItem(notifications, { ...defaultNotification }))}>{c(
+                        'Action'
+                    ).t`Add notification`}</LinkButton>
+                </div>
+            )}
         </div>
     );
 };
@@ -40,6 +43,7 @@ Notifications.propTypes = {
     isAllDay: PropTypes.bool,
     hasType: PropTypes.bool,
     hasWhen: PropTypes.bool,
+    canAdd: PropTypes.bool,
     notifications: PropTypes.array,
     defaultNotification: PropTypes.object,
     onChange: PropTypes.func

@@ -80,3 +80,5 @@ export const MAX_LENGTHS = {
     DESCRIPTION: 255,
     LOCATION: 255
 };
+
+export const MAX_DEFAULT_NOTIFICATIONS = 5;
