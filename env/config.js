@@ -14,11 +14,16 @@ const {
     TOR_URL
 } = require('./config.constants');
 
-const getBranch = (branch = argv.branch) => {
-    return (Array.isArray(branch) ? branch[0] : branch) || '';
+const getSingleArgument = (argument) => {
+    // Many flags creates an array, take the last one.
+    if (Array.isArray(argument)) {
+        const { length, [length - 1]: last, first } = argument;
+        return last || first;
+    }
+    return argument;
 };
 
-const ARG_BRANCH = getBranch();
+const ARG_BRANCH = getSingleArgument(argv) || '';
 
 const isWebClient = () => {
     try {
@@ -62,7 +67,7 @@ const typeofBranch = (branch = process.env.NODE_ENV_BRANCH) => {
 };
 
 const getStatsConfig = (deployBranch = '') => {
-    const branch = Array.isArray(deployBranch) ? deployBranch[0] : deployBranch;
+    const branch = getSingleArgument(deployBranch) || '';
     const [, host = 'dev', subhost = 'a'] = branch.split('-');
     return extend({}, STATS_CONFIG[host], STATS_ID[subhost]) || NO_STAT_MACHINE;
 };
@@ -86,15 +91,6 @@ const getDefaultApiTarget = (defaultType = 'dev') => {
 
 const isDistRelease = () => {
     return ['prod', 'beta'].includes(argv.api) || process.env.NODE_ENV === 'dist';
-};
-
-const getSingleArgument = (argument) => {
-    // Many flags creates an array, take the last one.
-    if (Array.isArray(argument)) {
-        const { length, [length - 1]: last, first } = argument;
-        return last || first;
-    }
-    return argument;
 };
 
 const getFeatureFlags = () => {
