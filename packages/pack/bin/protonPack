@@ -14,13 +14,21 @@ const { getPort, getPublicPath, findPort } = require('../webpack/helpers/source'
 
 const is = (command) => argv._.includes(command);
 
-const getAppMode = () => {
-    // Many flags appMode creates an array, take the last one.
-    if (Array.isArray(argv.appMode)) {
-        const { length, [length - 1]: last, first } = argv.appMode;
-        return last || first || 'bundle';
+const getSingleArgument = (argument) => {
+    // Many flags creates an array, take the last one.
+    if (Array.isArray(argument)) {
+        const { length, [length - 1]: last, first } = argument;
+        return last || first;
     }
-    return argv.appMode || 'bundle';
+    return argument;
+};
+
+const getFeatureFlags = () => {
+    return getSingleArgument(argv.featureFlags) || '';
+};
+
+const getAppMode = () => {
+    return getSingleArgument(argv.appMode) || 'bundle';
 };
 
 const {
@@ -29,7 +37,9 @@ const {
     apiUrl,
     json: jsonConfig
 } = configAppBuilder(argv);
+
 const APP_MODE = getAppMode();
+const FEATURE_FLAGS = getFeatureFlags();
 
 async function main() {
 
@@ -52,6 +62,7 @@ async function main() {
         const CONFIG = configBuilder({
             publicPath,
             appMode: APP_MODE,
+            featureFlags: FEATURE_FLAGS,
             ...is('extract-i18n') && { flow: 'i18n' }
         });
         return compile(CONFIG);
@@ -70,7 +81,7 @@ async function main() {
             ➙ API: ${chalk.yellow(apiUrl)}
             \n
         `);
-        const CONFIG = configBuilder({ port, publicPath, appMode: APP_MODE });
+        const CONFIG = configBuilder({ port, publicPath, appMode: APP_MODE, featureFlags: FEATURE_FLAGS });
 
         const run = server(CONFIG);
         run.listen(port);

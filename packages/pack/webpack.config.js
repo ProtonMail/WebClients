@@ -11,11 +11,12 @@ const { outputPath } = require('./webpack/paths');
 const { excludeNodeModulesExcept, excludeFiles, createRegex } = require('./webpack/helpers/regex');
 const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('./webpack/constants');
 
-function main({ port, publicPath, flow, appMode }) {
+function main({ port, publicPath, flow, appMode, featureFlags }) {
     const conf = {
         isProduction: process.env.NODE_ENV === 'production',
         publicPath: publicPath || '/',
-        appMode
+        appMode,
+        featureFlags
     };
 
     const { isProduction } = conf;
