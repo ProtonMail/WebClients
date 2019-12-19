@@ -43,7 +43,7 @@ const buildRemote = require('./lib/buildRemote');
 
 const PKG = require(path.join(process.cwd(), 'package.json'));
 
-const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI18n, isRemoteBuild }) => {
+const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI18n, isRemoteBuild, featureFlags }) => {
     const { EXTERNAL_FILES = ['.htaccess'] } = customConfig;
     const { hookPreTasks, hookPostTasks, hookPostTaskClone, hookPostTaskBuild, customConfigSetup } = getCustomHooks(
         customTasks({
@@ -53,7 +53,8 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
             appMode,
             forceI18n,
             runI18n,
-            isRemoteBuild
+            isRemoteBuild,
+            featureFlags
         })
     );
 
@@ -238,13 +239,14 @@ async function main() {
     // Custom local deploy for the CI
     const isCI = process.env.NODE_ENV_DIST === 'bundle-only';
     const branch = extractArgument(argv.branch) || '';
+    const featureFlags = extractArgument(argv.featureFlags) || '';
     const flowType = argv.flow;
     const runI18n = argv.i18n;
     const forceI18n = argv.localize;
     const appMode = argv.appMode;
     const isRemoteBuild = argv.source === 'remote';
 
-    debug({ customConfig, argv }, 'configuration deploy');
+    debug({ customConfig, argv, branch }, 'configuration deploy');
 
     if (!branch && !isCI) {
         throw new Error('You must define a branch name. --branch=XXX');
@@ -260,12 +262,13 @@ async function main() {
         apiUrl,
         appMode,
         isRemoteBuild,
+        featureFlags,
         isCI,
         SENTRY: process.env.NODE_ENV_SENTRY
     });
 
     const start = moment(Date.now());
-    const listTasks = getTasks(branch, { isCI, flowType, forceI18n, appMode, runI18n, isRemoteBuild });
+    const listTasks = getTasks(branch, { isCI, flowType, forceI18n, appMode, runI18n, isRemoteBuild, featureFlags });
     const tasks = new Listr(listTasks, {
         renderer: UpdaterRenderer,
         collapse: false
