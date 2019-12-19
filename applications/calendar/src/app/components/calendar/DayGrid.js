@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useRef, useLayoutEffect, useEffect } from 'react';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import PropTypes from 'prop-types';
-import { eachDayOfInterval } from 'proton-shared/lib/date-fns-utc';
+import { eachDayOfInterval, isSameMonth } from 'proton-shared/lib/date-fns-utc';
 import { getISOWeek } from 'date-fns';
 
 import useDayGridEventLayout from './useDayGridEventLayout';
@@ -96,7 +96,9 @@ const DayGrid = ({
                             <div
                                 className="flex-item-fluid aligncenter calendar-daygrid-day big m0 p0-75 ellipsis"
                                 key={day.getUTCDate()}
-                                aria-current={day.getUTCDay() === now.getUTCDay() ? 'true' : null}
+                                aria-current={
+                                    day.getUTCDay() === now.getUTCDay() && isSameMonth(date, now) ? 'true' : null
+                                }
                             >
                                 <span className="calendar-grid-heading-day-fullname">
                                     {weekdaysLong[day.getUTCDay()]}
