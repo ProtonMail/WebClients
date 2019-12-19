@@ -184,9 +184,6 @@ const DateTimeRow = ({
                         {startDateInput}
                         {startTimeInput}
                     </div>
-                    <div className="aligncenter" style={{ width: '2em' }}>
-                        -
-                    </div>
                     <div className="flex flex-nowrap w100">
                         {endDateInput}
                         {endTimeInput}
