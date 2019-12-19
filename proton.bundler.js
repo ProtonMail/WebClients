@@ -11,7 +11,7 @@ function main(argv) {
         config: false
     });
 
-    function tasks({ branch, isCI, flowType }) {
+    function tasks({ branch, isCI, flowType, featureFlags }) {
         if (/cobalt/.test(branch) && !argv.qaforce) {
             const msg = [
                 `⛔ Do not use [${branch}], it is the QA Branch. Do not update cf wiki server dev.`,
@@ -231,8 +231,7 @@ function main(argv) {
                 {
                     title: `Build the calendar application ${suffixRemote('calendar')}`,
                     skip() {
-                        return 'Not available for now';
-                        if (argv.calendar === false) {
+                        if (argv.calendar === false || !featureFlags.includes('calendar')) {
                             return 'Flag --no-calendar inside the command.';
                         }
                     },
