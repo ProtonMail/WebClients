@@ -10,6 +10,12 @@ Official AngularJS web client for the [ProtonMail secure email service](https://
 
 We are currently working with our community to localize ProtonMail from English to most of the world's major languages. If you're interested in being part of this translation project, send us an email to contact@protonmail.com with the subject line "ProtonMail Translation Project [Your Language]" and we will offer you more information about it.
 
+
+
+>**⚠ If you use Windows plz follow this document before anything else [how to prepare Windows](https://github.com/ProtonMail/proton-shared/wiki/setup-windows)**
+
+
+
 ## Basic Installation
 
 - `npm install`
