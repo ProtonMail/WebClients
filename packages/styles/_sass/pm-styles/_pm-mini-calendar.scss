@@ -76,6 +76,7 @@ $minicalendar-bg-color-range-selection: #51555F !default;
     min-width: $minicalendar-cell-size;
     min-height: $minicalendar-cell-size;
 }
+
 .minicalendar-day[aria-current="date"]::before {
     content: attr(data-current-day);
     speak: none;
@@ -85,11 +86,16 @@ $minicalendar-bg-color-range-selection: #51555F !default;
     right: 0;
     bottom: 0;
     line-height: 2.3;  // check modifier below when no week displayed
-
     color: $white;
     font-weight: bold;
     background: $pm-primary-dark;
     border-radius: 50%;
+}
+// fix in case of range selection in responsive view
+$mini-calendar-currentDay-size: 2.5em !default;
+.minicalendar-day--range.minicalendar-day[aria-current="date"]::before {
+    left: calc(50% - #{$mini-calendar-currentDay-size/2});
+    max-width: $mini-calendar-currentDay-size;
 }
 
 .minicalendar-grid--displayWeekNumber .minicalendar-day {
@@ -137,6 +143,10 @@ $minicalendar-day-marker-size: 3px !default;
     .minicalendar-day--marker {
         background-color: $white;
     }
+}
+
+.minicalendar-day--range {
+    width: 100%;
 }
 
 .minicalendar-day--range-bound {
