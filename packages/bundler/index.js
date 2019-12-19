@@ -82,7 +82,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
 
                 const branches = process.env.QA_BRANCHES.split(',').join('|');
                 // Do not try to deploy on QA or cobalt
-                if (new RegExp(`deploy-(cobalt|${branches})`).test(branch)) {
+                if (new RegExp(`^deploy-(cobalt|${branches})$`).test(branch)) {
                     return '✋ You shall not deploy to QA';
                 }
             },
