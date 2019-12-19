@@ -27,7 +27,7 @@ function log {
 }
 
 function contains {
-    local branches=$(git ls-remote "$(git remote get-url origin)"  | grep deploy- | awk -F '-' '{print $2}');
+    local branches=$(git ls-remote "$(git remote get-url origin)"  | grep deploy- | awk 'match($0, /deploy-(.+)/, arr) { print arr[1]; }');
 
     for branch in ${branches[*]} ; do
         if [ "$branch" = "$1" ]; then
