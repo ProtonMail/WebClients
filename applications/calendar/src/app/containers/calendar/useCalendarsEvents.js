@@ -357,7 +357,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                 const searchEnd = +utcDateRange[1] + DAY_IN_MILLISECONDS;
 
                 const results = tree.search(searchStart, searchEnd).map(([, , id]) => {
-                    const { Event, isAllDay, isAllPartDay, start, end, counter } = events.get(id);
+                    const { Event, isAllDay, isAllPartDay, isRecurring, start, end, counter } = events.get(id);
 
                     const data = {
                         Event,
@@ -370,6 +370,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                         id,
                         isAllDay,
                         isAllPartDay,
+                        isRecurring,
                         start,
                         end,
                         data
@@ -378,7 +379,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
 
                 const recurringResults = getRecurringEvents(events, recurringEvents, searchStart, searchEnd)
                     .map(({ id, events: expandedEvents }) => {
-                        const { Event, isAllDay, isAllPartDay, counter } = events.get(id);
+                        const { Event, isAllDay, isAllPartDay, isRecurring, counter } = events.get(id);
 
                         const data = {
                             Event,
@@ -392,6 +393,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                                 id: `${id}-${i}`,
                                 isAllDay,
                                 isAllPartDay,
+                                isRecurring,
                                 start,
                                 end,
                                 data
@@ -402,7 +404,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
 
                 return results
                     .concat(recurringResults)
-                    .map(({ start: utcStart, end: utcEnd, isAllDay, isAllPartDay, data, id }) => {
+                    .map(({ start: utcStart, end: utcEnd, isAllDay, isAllPartDay, isRecurring, data, id }) => {
                         const start = isAllDay
                             ? utcStart
                             : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStart), tzid));
@@ -412,6 +414,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                             id,
                             isAllDay: isAllDay || isAllPartDay,
                             isAllPartDay,
+                            isRecurring,
                             start,
                             end,
                             data

@@ -7,6 +7,7 @@ export const getAllDayCheck = (oldModel, isAllDay) => {
     if (!isAllDay && isZeroHoursMinutes(oldModel.start.time) && isZeroHoursMinutes(oldModel.end.time)) {
         const {
             start: { time: startTime },
+            // TODO: bugged for 23:30 -> 00:00
             end: { time: endTime }
         } = getInitialDateTimeModel(oldModel.initialDate, oldModel.defaultEventDuration);
 

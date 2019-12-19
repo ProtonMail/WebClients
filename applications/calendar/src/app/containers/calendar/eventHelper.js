@@ -15,8 +15,8 @@ const modelToEventProperties = (oldTemporaryEvent, { start, end, isAllDay }, tzi
         oldTemporaryEvent &&
         oldTemporaryEvent.tmpData &&
         oldTemporaryEvent.tmpData.start === start &&
-            oldTemporaryEvent.tmpData.end === end &&
-            oldTemporaryEvent.tmpData.isAllDay === isAllDay
+        oldTemporaryEvent.tmpData.end === end &&
+        oldTemporaryEvent.tmpData.isAllDay === isAllDay
     ) {
         return;
     }
@@ -48,14 +48,16 @@ export const getCreateTemporaryEvent = (Calendar) => {
     };
 };
 
-export const getEditTemporaryEvent = ({ id, targetId, data }, model, tzid) => {
+export const getEditTemporaryEvent = (targetEvent, model, tzid) => {
+    const { id, targetId, data } = targetEvent;
     return {
         id: 'tmp',
         targetId: targetId || id,
         data,
         ...modelToEventProperties({}, model, tzid),
         tmpData: model,
-        tmpDataOriginal: model
+        tmpDataOriginal: model,
+        tmpOriginalTarget: targetEvent
     };
 };
 

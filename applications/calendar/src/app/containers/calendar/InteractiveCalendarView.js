@@ -364,13 +364,36 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSaveEvent = async ({ tmpData, data: { Event } }) => {
+    const handleRecurringUpdateConfirmation = () => {
+        return new Promise((resolve, reject) => {
+            const message = c('Info')
+                .t`Would you like to edit all recurring events? This event will become the starting event.`;
+            createModal(
+                <ConfirmModal
+                    confirm={c('Action').t`Yes`}
+                    title={c('Info').t`Edit recurring event`}
+                    close={<ResetButton autoFocus={true}>{c('Action').t`No`}</ResetButton>}
+                    onClose={reject}
+                    onConfirm={resolve}
+                >
+                    <Alert>{message}</Alert>
+                </ConfirmModal>
+            );
+        });
+    };
+
+    const handleSaveEvent = async ({ tmpOriginalTarget, tmpData, data: { Event, readEvent } }) => {
         const {
             calendar: { id: calendarID },
             member: { memberID, addressID }
         } = tmpData;
         const [addressKeys, calendarKeys] = await Promise.all([getAddressKeys(addressID), getCalendarKeys(calendarID)]);
+
+        const isRecurringUpdate = Event && readEvent && tmpOriginalTarget && tmpOriginalTarget.isRecurring;
+        !!isRecurringUpdate && (await handleRecurringUpdateConfirmation());
+
         const veventComponent = modelToVeventComponent(tmpData, tzid);
+
         await createOrUpdateEvent({
             Event,
             veventComponent,
@@ -397,8 +420,11 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleDeleteConfirmation = () => {
+    const handleDeleteConfirmation = (isRecurring) => {
         return new Promise((resolve, reject) => {
+            const message = isRecurring
+                ? c('Info').t`Would you like to delete all recurring events?`
+                : c('Info').t`Would you like to delete this event?`;
             createModal(
                 <ConfirmModal
                     confirm={c('Action').t`Delete`}
@@ -407,14 +433,14 @@ const InteractiveCalendarView = ({
                     onClose={reject}
                     onConfirm={resolve}
                 >
-                    <Alert>{c('Info').t`Would you like to delete this event?`}</Alert>
+                    <Alert>{message}</Alert>
                 </ConfirmModal>
             );
         });
     };
 
-    const handleDeleteEvent = async ({ CalendarID, ID: EventID }) => {
-        await handleDeleteConfirmation();
+    const handleDeleteEvent = async ({ CalendarID, ID: EventID }, isRecurring) => {
+        await handleDeleteConfirmation(isRecurring);
         await api(deleteEvent(CalendarID, EventID));
         await call();
     };
@@ -585,7 +611,7 @@ const InteractiveCalendarView = ({
                             event={targetEvent}
                             tzid={tzid}
                             formatTime={formatTime}
-                            onDelete={() => handleDeleteEvent(targetEvent.data.Event)}
+                            onDelete={() => handleDeleteEvent(targetEvent.data.Event, !!targetEvent.isRecurring)}
                             onEdit={() => {
                                 const newTemporaryModel = getUpdateModel(targetEvent.data);
                                 const newTemporaryEvent = getTemporaryEvent(
@@ -639,9 +665,20 @@ const InteractiveCalendarView = ({
                     model={tmpData}
                     setModel={handleSetTemporaryEventModel}
                     onSave={() => handleSaveEvent(temporaryEvent)}
-                    onDelete={() =>
-                        temporaryEvent.data && temporaryEvent.data.Event && handleDeleteEvent(temporaryEvent.data.Event)
-                    }
+                    onDelete={() => {
+                        if (
+                            !temporaryEvent ||
+                            !temporaryEvent.data ||
+                            !temporaryEvent.data.Event ||
+                            !temporaryEvent.tmpOriginalTarget
+                        ) {
+                            return;
+                        }
+                        return handleDeleteEvent(
+                            temporaryEvent.data.Event,
+                            !!temporaryEvent.tmpOriginalTarget.isRecurring
+                        );
+                    }}
                     onClose={({ safe = false } = {}) => {
                         if (safe) {
                             return hideModal(eventModalID);
