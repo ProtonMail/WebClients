@@ -54,9 +54,17 @@ echo "[init.project] $API_FLAG" >> build.log;
 echo "[init.project] remote $ARGS" >> build.log;
 
 function getRemote {
-    echo "[clone] from git@github.com:ProtonMail/$1.git" >> build.log;
+
     cd /tmp;
-    rm -rf "/tmp/$1";
+    rm -rf "/tmp/$1" || echo true;
+
+    if [[ "$1" =~ calendar ]]; then
+        echo "[clone] from $CALENDAR_GIT" >> build.log;
+        git clone --depth 1 "$CALENDAR_GIT";
+        return 0;
+    fi;
+
+    echo "[clone] from git@github.com:ProtonMail/$1.git" >> build.log;
     git clone --depth 1 "git@github.com:ProtonMail/$1.git";
 }
 
