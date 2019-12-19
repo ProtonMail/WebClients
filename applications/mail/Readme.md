@@ -3,6 +3,12 @@ You will need:
 - node (mini latest LTS)
 - npm (latest too, it's better)
 
+
+
+>**⚠ If you use Windows plz follow this document before anything else [how to prepare Windows](https://github.com/ProtonMail/proton-shared/wiki/setup-windows)**
+
+
+
 ## How to dev 1
 
 1. Clone this repository
