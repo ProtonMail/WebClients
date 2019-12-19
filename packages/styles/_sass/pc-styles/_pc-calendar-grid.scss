@@ -28,6 +28,9 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
         font-weight: bold;
     }
 }
+.calendar-grid-heading[aria-pressed="true"] {
+    font-weight: bold;
+}
 
 .calendar-grid-heading-day-shortname {
     display: none;
