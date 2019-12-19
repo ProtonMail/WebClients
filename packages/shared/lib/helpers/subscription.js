@@ -4,7 +4,7 @@ import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL } = PLAN_SERVICES;
-const { PLUS, VPNPLUS, VISIONARY } = PLANS;
+const { PLUS, VPNPLUS, VPNBASIC, VISIONARY } = PLANS;
 
 /**
  * Get plan from current subscription
@@ -70,6 +70,16 @@ export const hasLifetime = (subscription = {}) => {
 export const hasVisionary = (subscription = {}) => {
     const { Plans = [] } = subscription;
     return Plans.some(({ Name }) => Name === VISIONARY);
+};
+
+export const hasMailPlus = (subscription = {}) => {
+    const { Plans = [] } = subscription;
+    return Plans.some(({ Name }) => Name === PLUS);
+};
+
+export const hasVpnBasic = (subscription = {}) => {
+    const { Plans = [] } = subscription;
+    return Plans.some(({ Name }) => Name === VPNBASIC);
 };
 
 /**
