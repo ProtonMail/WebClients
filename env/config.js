@@ -14,6 +14,12 @@ const {
     TOR_URL
 } = require('./config.constants');
 
+const getBranch = (branch = argv.branch) => {
+    return (Array.isArray(branch) ? branch[0] : branch) || '';
+};
+
+const ARG_BRANCH = getBranch();
+
 const isWebClient = () => {
     try {
         const origin = execSync('git remote get-url origin');
@@ -67,7 +73,7 @@ const getDefaultApiTarget = (defaultType = 'dev') => {
     }
 
     if (process.env.NODE_ENV === 'dist') {
-        const [, type] = (argv.branch || '').match(/\w+-(beta|prod)/) || [];
+        const [, type] = ARG_BRANCH.match(/\w+-(beta|prod)/) || [];
         if (type) {
             return type;
         }
@@ -119,7 +125,7 @@ const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
  */
 const sentryConfig = (branch) => {
     if (process.env.NODE_ENV === 'dist') {
-        const env = typeofBranch(branch || argv.branch);
+        const env = typeofBranch(branch || ARG_BRANCH);
         process.env.NODE_ENV_SENTRY = env;
 
         // For production the release is the version else the hash where we ran the build
@@ -158,18 +164,18 @@ const getEnvDeploy = ({ env = process.env.NODE_ENV, config = true } = {}) => {
     const opt = {
         debug: env === 'dist' ? false : 'debug-app' in argv ? argv['debug-app'] : true,
         securedIframe: SECURED_IFRAME[argv.api],
-        apiUrl: apiUrl(argv.api, argv.branch),
+        apiUrl: apiUrl(argv.api, ARG_BRANCH),
         app_version: argv['app-version'] || CONFIG_DEFAULT.app_version,
         api_version: `${argv['api-version'] || CONFIG_DEFAULT.api_version}`,
         articleLink: argv.article || CONFIG_DEFAULT.articleLink,
         changelogPath: CONFIG_DEFAULT.changelogPath,
-        statsConfig: getStatsConfig(argv.branch),
+        statsConfig: getStatsConfig(ARG_BRANCH),
         sentry: sentryConfig(),
         featureFlags: getFeatureFlags()
     };
 
     if (!config) {
-        opt.branch = argv.branch;
+        opt.branch = ARG_BRANCH;
     }
     return opt;
 };
