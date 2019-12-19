@@ -1,14 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon, useConfig, Tooltip } from 'react-components';
+import { Icon, useConfig, useUser, Tooltip } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 
-const { PROTONMAIL, PROTONCONTACTS, PROTONMAIL_SETTINGS } = APPS;
+const { PROTONMAIL, PROTONCONTACTS, PROTONMAIL_SETTINGS, PROTONCALENDAR } = APPS;
 
 const AppsSidebar = ({ items = [] }) => {
     const { APP_NAME } = useConfig();
+    const [{ isPaid }] = useUser();
+
     const apps = [
         { appNames: [PROTONMAIL, PROTONMAIL_SETTINGS], icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
+        FEATURE_FLAGS.includes('calendar') &&
+            isPaid && {
+                appNames: [PROTONCALENDAR],
+                icon: 'protoncalendar',
+                title: 'ProtonCalendar',
+                link: '/calendar'
+            },
         { appNames: [PROTONCONTACTS], icon: 'protoncontacts', title: 'ProtonContacts', link: '/contacts' }
     ].filter(Boolean);
 
