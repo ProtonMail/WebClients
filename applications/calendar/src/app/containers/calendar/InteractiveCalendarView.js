@@ -14,7 +14,7 @@ import {
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 
-import { format } from 'proton-shared/lib/date-fns-utc';
+import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import createOrUpdateEvent from 'proton-shared/lib/calendar/integration/createOrUpdateEvent';
@@ -54,6 +54,7 @@ const getNormalizedTime = (isAllDay, initial, dateFromCalendar) => {
 const InteractiveCalendarView = ({
     view,
     isLoading,
+    isNarrow,
 
     tzid,
     primaryTimezone,
@@ -119,7 +120,10 @@ const InteractiveCalendarView = ({
         const newTemporaryEvent = getTemporaryEvent(temporaryEvent, model, tzid);
 
         // If you select a date outside of the current range.
-        const isInRange = newTemporaryEvent.start >= dateRange[0] && dateRange[1] >= newTemporaryEvent.start;
+        const newStartDay = newTemporaryEvent.start;
+        const isInRange = isNarrow
+            ? isSameDay(date, newStartDay)
+            : newStartDay >= dateRange[0] && dateRange[1] >= newStartDay;
         if (!isInRange) {
             onChangeDate(newTemporaryEvent.start);
         }
@@ -516,6 +520,7 @@ const InteractiveCalendarView = ({
         <>
             <CalendarView
                 view={view}
+                isNarrow={isNarrow}
                 isInteractionEnabled={!isLoading}
                 onMouseDown={handleMouseDown}
                 tzid={tzid}

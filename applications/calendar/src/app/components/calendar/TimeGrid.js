@@ -31,6 +31,7 @@ const defaultFormat = (utcDate) => format(utcDate, 'p');
 const TimeGrid = React.forwardRef(
     (
         {
+            isNarrow,
             now,
             date,
             dateRange: [start, end],
@@ -76,7 +77,12 @@ const TimeGrid = React.forwardRef(
 
         const timeEvents = useMemo(() => events.filter((e) => !e.isAllDay), [events]);
         const dayEvents = useMemo(() => events.filter((e) => !!e.isAllDay), [events]);
-        const daysRows = useMemo(() => [days], [days]);
+        const daysRows = useMemo(() => {
+            if (isNarrow) {
+                return [[date]];
+            }
+            return [days];
+        }, [days, isNarrow, date]);
 
         const dayEventHeight = 28;
         const numberOfRows = 3;
@@ -131,16 +137,22 @@ const TimeGrid = React.forwardRef(
                 return;
             }
 
+            const normalizedDays = isNarrow ? [date] : days;
+
+            if (!days[0]) {
+                return;
+            }
+
             if (
                 handleTimeGridMouseDown({
                     e,
                     onMouseDown,
-                    totalDays: days.length,
+                    totalDays: normalizedDays.length,
                     totalMinutes,
                     interval: 30,
                     events: timeEvents,
                     eventsPerDay,
-                    days,
+                    days: normalizedDays,
                     timeGridEl: timeGridRef.current,
                     scrollEl: scrollRef.current,
                     titleEl: titleRef.current
@@ -259,6 +271,10 @@ const TimeGrid = React.forwardRef(
                             <HourLines hours={hours} />
                             {days.map((day, dayIndex) => {
                                 const key = getKey(day);
+                                const isActiveDay = isSameDay(day, date);
+                                if (isNarrow && !isActiveDay) {
+                                    return null;
+                                }
                                 return (
                                     <div className="flex-item-fluid relative calendar-grid-gridcell h100" key={key}>
                                         <DayEvents
@@ -266,7 +282,7 @@ const TimeGrid = React.forwardRef(
                                             eventsPerDay={eventsPerDay[key]}
                                             eventsLaidOut={eventsLaidOut[key]}
                                             timeEvents={timeEvents}
-                                            dayIndex={dayIndex}
+                                            dayIndex={isNarrow ? 0 : dayIndex}
                                             targetEventData={targetEventData}
                                             targetEventRef={targetEventRef}
                                             formatTime={formatTime}

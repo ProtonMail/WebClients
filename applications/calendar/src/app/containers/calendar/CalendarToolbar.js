@@ -8,7 +8,7 @@ const CalendarToolbar = ({ dateCursorButtons, timezoneSelector, viewSelector }) 
             <span className="mlauto toolbar-separator" />
             {timezoneSelector}
             <span className="toolbar-separator notablet nomobile" />
-            {viewSelector}
+            <span className="nomobile flex flex-item-noshrink">{viewSelector}</span>
         </div>
     );
 };

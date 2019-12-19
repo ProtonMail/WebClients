@@ -19,6 +19,7 @@ const components = {
 
 const CalendarView = ({
     view,
+    isNarrow,
 
     isInteractionEnabled,
     onMouseDown,
@@ -54,6 +55,7 @@ const CalendarView = ({
     if (view === DAY || view === WEEK) {
         return (
             <TimeGrid
+                isNarrow={isNarrow}
                 tzid={tzid}
                 primaryTimezone={primaryTimezone}
                 secondaryTimezone={secondaryTimezone}

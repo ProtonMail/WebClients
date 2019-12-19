@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import {
-    AppsSidebar,
-    Sidebar,
-    StorageSpaceStatus,
-    Href,
     useToggle,
     useActiveBreakpoint,
     useUser,
-    useCalendarUserSettings
+    useCalendarUserSettings,
+    AppsSidebar,
+    Sidebar,
+    StorageSpaceStatus,
+    Href
 } from 'react-components';
 import { Redirect, Route, Switch } from 'react-router';
 import { c } from 'ttag';
@@ -20,11 +20,12 @@ import PropTypes from 'prop-types';
 const SettingsContainer = ({ calendars }) => {
     const [calendarSettings] = useCalendarUserSettings();
     const mainAreaRef = useRef();
-    const { state: expanded, toggle: onToggleExpand } = useToggle();
+    const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
     const [{ isPaid }] = useUser();
 
     useEffect(() => {
+        setExpand(false);
         mainAreaRef.current.scrollTop = 0;
     }, [location.pathname]);
 

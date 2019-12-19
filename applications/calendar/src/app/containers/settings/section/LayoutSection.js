@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
     SubTitle,
     Row,
+    Info,
     Label,
     Field,
     Checkbox,
@@ -35,7 +37,10 @@ const LayoutSection = ({ calendarSettings: { WeekStart, ViewPreference, DisplayW
         <>
             <SubTitle>{c('Title').t`Layout`}</SubTitle>
             <Row>
-                <Label htmlFor="view-select">{c('Label').t`Default view`}</Label>
+                <Label htmlFor="view-select">
+                    {c('Label').t`Default view`}{' '}
+                    <Info title={c('Info').t`Week and month views only apply to desktop.`} />
+                </Label>
                 <Field>
                     <ViewPreferenceSelector
                         id="view-select"
@@ -71,6 +76,14 @@ const LayoutSection = ({ calendarSettings: { WeekStart, ViewPreference, DisplayW
             </Row>
         </>
     );
+};
+
+LayoutSection.propTypes = {
+    calendarSettings: PropTypes.shape({
+        WeekStart: PropTypes.number,
+        ViewPreference: PropTypes.number,
+        DisplayWeekNumber: PropTypes.number
+    })
 };
 
 export default LayoutSection;

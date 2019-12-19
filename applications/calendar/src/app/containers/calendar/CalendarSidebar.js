@@ -79,14 +79,14 @@ const CalendarSidebar = ({
                     <Hamburger expanded={expanded} onToggle={onToggleExpand} />
                 </div>
             </div>
-            <div className="pl1 pr1 pb1 flex-item-noshrink">
+            <div className="nomobile pl1 pr1 pb1 flex-item-noshrink">
                 <PrimaryButton
                     className="pm-button--large bold mt0-25 w100"
                     disabled={!onCreateEvent}
                     onClick={() => onCreateEvent()}
                 >{c('Action').t`New event`}</PrimaryButton>
             </div>
-            <div className="nomobile flex-item-noshrink">{miniCalendar}</div>
+            <div className="flex-item-noshrink">{miniCalendar}</div>
             <nav className="navigation mw100 flex-item-fluid-auto flex-item-noshrink scroll-if-needed mb1">
                 <NavMenu list={list} className="mb0" />
                 {calendarsListView}

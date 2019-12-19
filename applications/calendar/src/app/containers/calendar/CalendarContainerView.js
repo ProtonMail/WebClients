@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import {
     AppsSidebar,
     classnames,
@@ -6,7 +6,6 @@ import {
     FullLoader,
     LocalizedMiniCalendar,
     StorageSpaceStatus,
-    useActiveBreakpoint,
     useToggle,
     TextLoader
 } from 'react-components';
@@ -47,8 +46,8 @@ const CalendarContainerView = ({
     setTzid,
 
     range,
-
     view,
+    isNarrow,
     utcDefaultDate,
     utcDate,
     utcDateRange,
@@ -63,8 +62,7 @@ const CalendarContainerView = ({
     children,
     containerRef
 }) => {
-    const { state: expanded, toggle: onToggleExpand } = useToggle();
-    const { isNarrow } = useActiveBreakpoint();
+    const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
 
     const localNowDate = useMemo(() => {
         return new Date(utcDefaultDate.getUTCFullYear(), utcDefaultDate.getUTCMonth(), utcDefaultDate.getUTCDate());
@@ -96,6 +94,10 @@ const CalendarContainerView = ({
     const handleClickPrev = useCallback(() => {
         onChangeDate(getDateDiff(utcDate, range, view, -1));
     }, [utcDate, range, view]);
+
+    useEffect(() => {
+        setExpand(false);
+    }, [location.pathname]);
 
     return (
         <div className="flex flex-nowrap no-scroll" ref={containerRef}>
@@ -210,6 +212,7 @@ CalendarContainerView.propTypes = {
     utcDateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
     utcDateRangeInTimezone: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
     view: PropTypes.oneOf([DAY, WEEK, MONTH, YEAR, AGENDA]),
+    isNarrow: PropTypes.bool,
     children: PropTypes.node,
     range: PropTypes.number
 };

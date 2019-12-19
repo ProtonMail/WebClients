@@ -7,7 +7,7 @@ import { VIEWS } from '../constants';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM } = VIEWS;
 
-const ViewSelector = ({ isNarrow, range, loading = false, disabled = false, view, onChange, ...rest }) => {
+const ViewSelector = ({ range, loading = false, disabled = false, view, onChange }) => {
     const options = [
         { text: c('Calendar view').t`Day`, value: DAY },
         { text: c('Calendar view').t`Week`, value: WEEK },
@@ -15,29 +15,6 @@ const ViewSelector = ({ isNarrow, range, loading = false, disabled = false, view
         // { text: c('Calendar view').t`Year`, value: YEAR },
         // { text: c('Calendar view').t`Agenda`, value: AGENDA },
     ];
-
-    if (isNarrow) {
-        return (
-            <select
-                disabled={loading || disabled}
-                className="toolbar-select flex-item-noshrink"
-                title={c('Action').t`Select calendar view`}
-                value={range ? CUSTOM : view}
-                onChange={({ target }) => onChange(+target.value)}
-                {...rest}
-            >
-                {[...options, range && { text: c('Calendar view').t`Custom`, value: CUSTOM }]
-                    .filter(Boolean)
-                    .map(({ text, value }) => {
-                        return (
-                            <option key={value} value={value}>
-                                {text}
-                            </option>
-                        );
-                    })}
-            </select>
-        );
-    }
 
     return (
         <>
@@ -62,7 +39,6 @@ const ViewSelector = ({ isNarrow, range, loading = false, disabled = false, view
 
 ViewSelector.propTypes = {
     disabled: PropTypes.bool,
-    isNarrow: PropTypes.bool,
     loading: PropTypes.bool,
     range: PropTypes.number,
     view: PropTypes.oneOf([DAY, WEEK, MONTH, YEAR, AGENDA]),

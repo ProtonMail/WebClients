@@ -1,6 +1,12 @@
 import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { useCalendarUserSettings, useCalendarBootstrap, useAddresses, useModals } from 'react-components';
+import {
+    useCalendarUserSettings,
+    useCalendarBootstrap,
+    useAddresses,
+    useActiveBreakpoint,
+    useModals
+} from 'react-components';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -146,6 +152,7 @@ const CalendarContainer = ({ calendars, history, location }) => {
     const [calendarSettings, loadingCalendarSettings] = useCalendarUserSettings();
     const [addresses, loadingAddresses] = useAddresses();
     const [disableCreate, setDisableCreate] = useState(false);
+    const { isNarrow } = useActiveBreakpoint();
 
     const { createModal } = useModals();
 
@@ -225,9 +232,9 @@ const CalendarContainer = ({ calendars, history, location }) => {
 
     const defaultView = getDefaultView(calendarSettings);
     const requestedView = customView || defaultView;
-    const view = SUPPORTED_VIEWS.includes(requestedView) ? requestedView : WEEK;
+    const view = isNarrow ? WEEK : SUPPORTED_VIEWS.includes(requestedView) ? requestedView : WEEK;
 
-    const range = getRange(view, customRange);
+    const range = isNarrow ? undefined : getRange(view, customRange);
     const weekStartsOn = getWeekStartsOn(calendarSettings);
     const displayWeekNumbers = getDisplayWeekNumbers(calendarSettings);
     const displaySecondaryTimezone = getDisplaySecondaryTimezone(calendarSettings);
@@ -346,6 +353,7 @@ const CalendarContainer = ({ calendars, history, location }) => {
             range={range}
             setCustom={setCustom}
             view={view}
+            isNarrow={isNarrow}
             utcDateRangeInTimezone={utcDateRangeInTimezone}
             utcDefaultDate={utcDefaultDate}
             utcDate={utcDate}
@@ -361,6 +369,7 @@ const CalendarContainer = ({ calendars, history, location }) => {
         >
             <InteractiveCalendarView
                 view={view}
+                isNarrow={isNarrow}
                 isLoading={isLoading}
                 tzid={tzid}
                 {...timezoneInformation}
@@ -371,7 +380,7 @@ const CalendarContainer = ({ calendars, history, location }) => {
                 date={utcDate}
                 dateRange={utcDateRange}
                 events={calendarsEvents}
-                onClickDate={handleClickDateWeekView}
+                onClickDate={isNarrow ? handleChangeDate : handleClickDateWeekView}
                 onChangeDate={handleChangeDate}
                 onInteraction={(active) => setDisableCreate(active)}
                 addresses={addresses}
