@@ -78,7 +78,7 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
                     return;
                 }
 
-                api(getEvent(CalendarID, EventID))
+                api({ ...getEvent(CalendarID, EventID), silence: true })
                     .then(({ Event }) => getEventRaw(Event))
                     .then((eventRaw) => {
                         if (unmounted) {
