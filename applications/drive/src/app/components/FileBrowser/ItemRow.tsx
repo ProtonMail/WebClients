@@ -1,5 +1,5 @@
-import React from 'react';
-import { TableRow, Checkbox, Time, Icon } from 'react-components';
+import React, { useRef } from 'react';
+import { TableRow, Checkbox, Time, Icon, useActiveBreakpoint } from 'react-components';
 import { c } from 'ttag';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { LinkType } from '../../interfaces/folder';
@@ -15,6 +15,9 @@ interface Props {
 }
 
 const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, onShiftClick }: Props) => {
+    const { isNarrow } = useActiveBreakpoint();
+    const touchStarted = useRef(false);
+
     const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
         if (e.shiftKey) {
@@ -25,7 +28,25 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
             onClick(item.LinkID);
         }
     };
-    const handleRowDoubleClick = (e: React.MouseEvent<HTMLTableRowElement> | React.TouchEvent<HTMLTableRowElement>) => {
+
+    const handleTouchStart = () => {
+        touchStarted.current = true;
+    };
+
+    const handleTouchCancel = () => {
+        if (touchStarted.current) {
+            touchStarted.current = false;
+        }
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStarted.current) {
+            onDoubleClick(item);
+        }
+        touchStarted.current = false;
+    };
+
+    const handleRowDoubleClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
         onDoubleClick(item);
     };
@@ -39,7 +60,10 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
             onMouseDown={() => document.getSelection()?.removeAllRanges()}
             onClick={handleRowClick}
             onDoubleClick={handleRowDoubleClick}
-            onTouchEnd={handleRowDoubleClick}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchCancel}
+            onTouchCancel={handleTouchCancel}
+            onTouchEnd={handleTouchEnd}
             cells={[
                 <div key="select" onClick={(e) => e.stopPropagation()} onDoubleClick={(e) => e.stopPropagation()}>
                     <Checkbox checked={isSelected} onChange={() => onToggleSelect(item.LinkID)} />
@@ -54,11 +78,13 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
                     {item.Name}
                 </span>,
                 isFolder ? c('Label').t`Folder` : c('Label').t`File`,
-                <Time key="dateModified" format="PPp">
-                    {item.Modified}
-                </Time>,
+                !isNarrow && (
+                    <Time key="dateModified" format="PPp">
+                        {item.Modified}
+                    </Time>
+                ),
                 item.Size ? humanSize(item.Size) : '-'
-            ]}
+            ].filter(Boolean)}
         />
     );
 };
