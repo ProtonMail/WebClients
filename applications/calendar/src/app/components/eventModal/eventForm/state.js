@@ -121,6 +121,7 @@ export const getInitialModel = ({
         description: '',
         frequency: FREQUENCY.ONCE,
         initialDate,
+        initialTzid: tzid,
         isAllDay,
         defaultEventDuration,
         ...notificationModel,

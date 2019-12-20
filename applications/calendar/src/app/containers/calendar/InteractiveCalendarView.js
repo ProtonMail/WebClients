@@ -319,11 +319,13 @@ const InteractiveCalendarView = ({
                     idx
                 } = payload;
 
-                const normalizedStart = getNormalizedTime(isFromAllDay, initialStart, start);
+                const normalizedStart = start;
                 const normalizedEnd =
                     action === ACTIONS.CREATE_UP
-                        ? new Date(normalizedStart.getTime() + eventDuration)
-                        : getNormalizedTime(isFromAllDay, initialEnd, end);
+                        ? isFromAllDay
+                            ? start
+                            : new Date(normalizedStart.getTime() + eventDuration)
+                        : end;
 
                 newTemporaryModel = getUpdatedDateTime(newTemporaryModel, {
                     isAllDay: isFromAllDay,
