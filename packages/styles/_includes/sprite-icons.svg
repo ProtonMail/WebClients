@@ -132,6 +132,10 @@
       <rect x="7" y="8" width="2" height="2"/>
       <rect x="10" y="8" width="2" height="2"/>
     </g>
+
+    <g id="shape-calendar-repeat">
+    <path d="M13,2V0H12V2H4V0H3V2H0V16H16V2Zm2,13H1V3H3V4H4V3h8V4h1V3h2Z"/><path d="M12.46,8.61a4.76,4.76,0,1,0-.83,3.14l-.82-.57a3.82,3.82,0,1,1,.64-2.65l-.66-.66-.71.7L12,10.49l1.92-1.92-.71-.7Z"/>
+    </g>
     
     <g id="shape-caret">
     <path d="M7.782 9.356l-4.44-4.111-.75.694 5.19 4.805 5.19-4.805-.749-.694z"/>
@@ -365,6 +369,10 @@
 
     <g id="shape-general">
     <rect x="7" y="4" width="8" height="1"/><rect x="7" y="12" width="8" height="1"/><rect x="1" y="8" width="8" height="1"/><path d="M3,6H6V3H3V4H1V5H3ZM4,4H5V5H4Z"/><path d="M3,12H1v1H3v1H6V11H3Zm1,0H5v1H4Z"/><path d="M13,7H10v3h3V9h2V8H13ZM12,9H11V8h1Z"/>
+    </g>
+
+    <g id="shape-gift">
+    <path d="M12.72,5a2,2,0,0,0-3-2.56A2.5,2.5,0,0,0,5,3.5,2.53,2.53,0,0,0,5.51,5H1V15H15V5ZM11,3a1,1,0,1,1-1,1A1,1,0,0,1,11,3ZM6,3.5A1.5,1.5,0,1,1,7.5,5,1.5,1.5,0,0,1,6,3.5ZM2,6H9V7H2Zm0,8V9H9v5Zm12,0H10V9h4Zm0-7H10V6h4Z"/><rect x="3" y="12" width="5" height="1"/><rect x="11" y="12" width="2" height="1"/
     </g>
 
     <g id="shape-github">
