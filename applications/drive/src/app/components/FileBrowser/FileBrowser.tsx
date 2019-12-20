@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableBody, Checkbox } from 'react-components';
+import { TableBody, Checkbox, useActiveBreakpoint } from 'react-components';
 import { c } from 'ttag';
 import ItemRow from './ItemRow';
 import { LinkType } from '../../interfaces/folder';
@@ -36,6 +36,8 @@ const FileBrowser = ({
     onEmptyAreaClick,
     onShiftClick
 }: Props) => {
+    const { isNarrow } = useActiveBreakpoint();
+
     if (contents && !contents.length && !loading) {
         return <EmptyFolder />;
     }
@@ -62,11 +64,11 @@ const FileBrowser = ({
                             <div className="pd-fb-table-heading-name ml0-5">{c('TableHeader').t`Name`}</div>
                         </th>
                         <th className="w15">{c('TableHeader').t`Type`}</th>
-                        <th className="w20">{c('TableHeader').t`Modified`}</th>
+                        {!isNarrow && <th className="w20">{c('TableHeader').t`Modified`}</th>}
                         <th className="w15">{c('TableHeader').t`Size`}</th>
                     </tr>
                 </thead>
-                <TableBody loading={loading} colSpan={5}>
+                <TableBody loading={loading} colSpan={isNarrow ? 4 : 5}>
                     {folderContents.map((item) => (
                         <ItemRow
                             key={item.LinkID}
