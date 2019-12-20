@@ -21,15 +21,16 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 .calendar-grid-heading[aria-current="date"] {
     color: var(--color-main-area, $pm-global-grey);
     .calendar-grid-heading-number {
-        background-color: $pm-primary;
+        background-color: $pm-primary-dark;
         color: $white;
-    }
-    .calendar-grid-heading-day {
-        font-weight: bold;
     }
 }
 .calendar-grid-heading[aria-pressed="true"] {
     font-weight: bold;
+    .calendar-grid-heading-number {
+        background-color: $pm-primary;
+        color: $white;
+    }
 }
 
 .calendar-grid-heading-day-shortname {
