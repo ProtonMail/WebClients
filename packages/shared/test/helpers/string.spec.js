@@ -50,6 +50,10 @@ describe('string', () => {
         it('should handle emoji', () => {
             expect(getInitial('🐼')).toEqual('🐼');
         });
+
+        it('should keep only character and number', () => {
+            expect(getInitial('22 - Name')).toEqual('2N');
+        });
     });
 
     describe('truncate', () => {

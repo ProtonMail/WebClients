@@ -76,7 +76,10 @@ export const truncate = (str = '', charsToDisplay = 50, omission = '...') => {
  * @retuns {String}
  */
 export const getInitial = (value = '') => {
-    const [first, second] = value.split(' ');
+    const [first = '', second = ''] = value
+        .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, '') // Remove specific punctuation
+        .replace(/\s{2,}/g, ' ') // Remove any extra spaces
+        .split(' ');
     return [first, second]
         .filter(Boolean)
         .map((letter = '') => [...letter.toUpperCase()][0]) // We use the spread operator to support Unicode characters
