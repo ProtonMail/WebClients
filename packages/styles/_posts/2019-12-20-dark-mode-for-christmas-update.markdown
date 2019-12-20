@@ -2,7 +2,7 @@
 layout: default
 title:  "v1.8.0 is here: dark mode, tons of new styles/modifiers, calendar, etc."
 intro:  "Christmas update: dark mode, tons of new styles/modifiers/helpers, calendar styles, etc."
-date:   2019-12-20 11:37:00 +0100
+date:   2019-12-20 13:37:00 +0100
 categories: update
 ---
 
