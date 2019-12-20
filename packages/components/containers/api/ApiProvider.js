@@ -17,6 +17,13 @@ import useModals from '../modals/useModals';
 import UnlockModal from '../login/UnlockModal';
 import HumanVerificationModal from './HumanVerificationModal';
 
+const getSilenced = ({ silence } = {}, code) => {
+    if (Array.isArray(silence)) {
+        return silence.includes(code);
+    }
+    return !!silence;
+};
+
 const ApiProvider = ({ config, onLogout, children, UID }) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -24,6 +31,8 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
 
     if (!apiRef.current) {
         const handleError = (e) => {
+            const { message, code } = getError(e);
+
             if (e.name === 'InactiveSession') {
                 onLogout();
                 throw e;
@@ -37,19 +46,20 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                 const text = navigator.onLine
                     ? c('Error').t`Could not connect to server.`
                     : c('Error').t`No internet connection found`;
-                createNotification({ type: 'error', text });
+                const isSilenced = getSilenced(e.config, code);
+                !isSilenced && createNotification({ type: 'error', text });
                 throw e;
             }
 
             if (e.name === 'TimeoutError') {
-                createNotification({ type: 'error', text: c('Error').t`Request timed out.` });
+                const isSilenced = getSilenced(e.config, code);
+                !isSilenced && createNotification({ type: 'error', text: c('Error').t`Request timed out.` });
                 throw e;
             }
 
-            const { message } = getError(e);
-
             if (message) {
-                createNotification({ type: 'error', text: `${message}` });
+                const isSilenced = getSilenced(e.config, code);
+                !isSilenced && createNotification({ type: 'error', text: `${message}` });
             }
 
             throw e;
