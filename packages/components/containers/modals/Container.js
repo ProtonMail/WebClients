@@ -1,27 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 
 import OverlayModal from '../../components/modal/Overlay';
 
-const ModalsContainer = ({ modals, removeModal, hideModal, location }) => {
+const ModalsContainer = ({ modals, removeModal, hideModal }) => {
     const [containerIsClosing, setContainerIsClosing] = useState(false);
-
-    useEffect(() => {
-        if (location.state && location.state.ignoreClose) {
-            return;
-        }
-        modals.forEach(({ id, content }) => {
-            if (!content) {
-                return;
-            }
-            if (content.props.disableCloseOnLocation) {
-                return;
-            }
-            content.props.onClose && content.props.onClose();
-            hideModal(id);
-        });
-    }, [location && location.pathname]);
 
     useEffect(() => {
         // Start hiding the container if the last modal wants to close
@@ -83,4 +66,4 @@ ModalsContainer.propTypes = {
     location: PropTypes.object
 };
 
-export default withRouter(ModalsContainer);
+export default ModalsContainer;
