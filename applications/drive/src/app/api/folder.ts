@@ -1,7 +1,13 @@
-// TODO: Pagination, in later sprints
-export const queryFolderChildren = (shareID: string, linkID: string) => ({
+import { FOLDER_PAGE_SIZE } from '../constants';
+
+export const queryFolderChildren = (
+    shareID: string,
+    linkID: string,
+    { Page, PageSize = FOLDER_PAGE_SIZE }: { Page: number; PageSize?: number }
+) => ({
     method: 'get',
-    url: `drive/shares/${shareID}/folders/${linkID}/children`
+    url: `drive/shares/${shareID}/folders/${linkID}/children`,
+    params: { Page, PageSize }
 });
 
 interface FolderStuff {

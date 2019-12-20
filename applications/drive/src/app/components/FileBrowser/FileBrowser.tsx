@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableBody, Checkbox, useActiveBreakpoint } from 'react-components';
+import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint } from 'react-components';
 import { c } from 'ttag';
 import ItemRow from './ItemRow';
 import { LinkType } from '../../interfaces/folder';
@@ -68,7 +68,7 @@ const FileBrowser = ({
                         <th className="w15">{c('TableHeader').t`Size`}</th>
                     </tr>
                 </thead>
-                <TableBody loading={loading} colSpan={isNarrow ? 4 : 5}>
+                <TableBody colSpan={isNarrow ? 4 : 5}>
                     {folderContents.map((item) => (
                         <ItemRow
                             key={item.LinkID}
@@ -80,6 +80,7 @@ const FileBrowser = ({
                             onClick={onItemClick}
                         />
                     ))}
+                    {loading && <TableRowBusy colSpan={5} />}
                 </TableBody>
             </table>
         </div>

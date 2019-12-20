@@ -8,6 +8,7 @@ import { UserShare, ShareBootstrap } from '../interfaces/share';
 import { CreatedDriveVolume } from '../interfaces/volume';
 import { decryptPrivateKeyArmored, splitKeys } from 'proton-shared/lib/keys/keys';
 import { decryptMessage, getMessage } from 'pmcrypto/lib/pmcrypto';
+import { useCallback } from 'react';
 
 function useDrive() {
     const api = useApi();
@@ -15,29 +16,35 @@ function useDrive() {
     const getAddresses = useGetAddresses();
     const cache = useCache();
 
-    const getUserShares = (): Promise<UserShare[]> =>
-        getPromiseValue(cache, `drive/shares`, async () => {
-            const { Shares } = await api(queryUserShares());
-            return Shares;
-        });
+    const getUserShares = useCallback(
+        (): Promise<UserShare[]> =>
+            getPromiseValue(cache, `drive/shares`, async () => {
+                const { Shares } = await api(queryUserShares());
+                return Shares;
+            }),
+        []
+    );
 
-    const getShareBootstrap = (shareId: string): Promise<{ Share: ShareBootstrap; privateKey: any }> => {
-        return getPromiseValue(cache, `drive/shares/${shareId}`, async () => {
-            const Share: ShareBootstrap = await api(queryShareBootstrap(shareId));
-            const { privateKeys, publicKeys } = splitKeys(await getAddressKeys(Share.AddressID));
+    const getShareBootstrap = useCallback(
+        (shareId: string): Promise<{ Share: ShareBootstrap; privateKey: any }> => {
+            return getPromiseValue(cache, `drive/shares/${shareId}`, async () => {
+                const Share: ShareBootstrap = await api(queryShareBootstrap(shareId));
+                const { privateKeys, publicKeys } = splitKeys(await getAddressKeys(Share.AddressID));
 
-            const { data: decryptedSharePassphrase } = await decryptMessage({
-                message: await getMessage(Share.Passphrase),
-                privateKeys,
-                publicKeys
+                const { data: decryptedSharePassphrase } = await decryptMessage({
+                    message: await getMessage(Share.Passphrase),
+                    privateKeys,
+                    publicKeys
+                });
+
+                const shareKey = await decryptPrivateKeyArmored(Share.Key, decryptedSharePassphrase);
+                return { Share, privateKey: shareKey };
             });
+        },
+        [api, cache, getAddressKeys]
+    );
 
-            const shareKey = await decryptPrivateKeyArmored(Share.Key, decryptedSharePassphrase);
-            return { Share, privateKey: shareKey };
-        });
-    };
-
-    const createVolume = async (): Promise<CreatedDriveVolume> => {
+    const createVolume = useCallback(async (): Promise<CreatedDriveVolume> => {
         const addresses = await getAddresses();
         const primaryAddress = getPrimaryAddress(addresses);
 
@@ -69,14 +76,14 @@ function useDrive() {
         cache.delete('drive/shares');
 
         return Volume;
-    };
+    }, []);
 
     /**
      * Loads drive and gets the active share bootstrap.
      * If undefined is returned, assume drive is not initialized,
      * and drive volume needs to be created before proceeding.
      */
-    const loadDrive = async () => {
+    const loadDrive = useCallback(async () => {
         const userShares = await getUserShares();
 
         if (!userShares.length) {
@@ -85,7 +92,7 @@ function useDrive() {
 
         const [{ ShareID }] = userShares; // Currently, always only one share exists
         return getShareBootstrap(ShareID);
-    };
+    }, []);
 
     return { createVolume, getUserShares, getShareBootstrap, loadDrive };
 }
