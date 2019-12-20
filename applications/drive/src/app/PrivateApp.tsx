@@ -6,6 +6,7 @@ import { UserModel, AddressesModel } from 'proton-shared/lib/models';
 import DriveContainer from './containers/DriveContainer';
 import PrivateLayout from './components/layout/PrivateLayout';
 import { DownloadProvider } from './components/downloads/DownloadProvider';
+import { openpgpConfig } from './openpgpConfig';
 
 interface Props {
     onLogout: () => void;
@@ -14,6 +15,7 @@ interface Props {
 const PrivateApp = ({ onLogout }: Props) => {
     return (
         <StandardPrivateApp
+            openpgpConfig={openpgpConfig}
             onLogout={onLogout}
             preloadModels={[UserModel, AddressesModel]}
             eventModels={[UserModel, AddressesModel]}

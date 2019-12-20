@@ -3,7 +3,6 @@ import { generateUID, useApi } from 'react-components';
 import { DriveFileBlock, DriveFile, DriveFileRevision } from '../../interfaces/file';
 import { openDownloadStream, initDownloadSW } from './download';
 import { queryFileBlock } from '../../api/files';
-import { mergeUint8Arrays } from '../../utils/array';
 import { orderBy } from 'proton-shared/lib/helpers/array';
 
 export enum DownloadState {
@@ -13,7 +12,7 @@ export enum DownloadState {
     Canceled = 'canceled'
 }
 
-type BlockTransformer = (buffer: Uint8Array) => Promise<Uint8Array>;
+type StreamTransformer = (stream: ReadableStream<Uint8Array>) => Promise<ReadableStream<Uint8Array>>;
 
 interface DownloadInfo {
     filename: string;
@@ -33,7 +32,7 @@ interface DownloadBlock {
 
 interface DownloadConfig {
     [id: string]: {
-        transform: BlockTransformer;
+        transform: StreamTransformer;
         stream: WritableStreamDefaultWriter<Uint8Array>; // Stream to service worker
     };
 }
@@ -44,11 +43,9 @@ export interface DownloadProgresses {
 
 interface DownloadProviderState {
     downloads: Download[];
-    startDownload: (info: DownloadInfo, transform: BlockTransformer) => void;
+    startDownload: (info: DownloadInfo, transform: StreamTransformer) => void;
     getDownloadsProgresses: () => DownloadProgresses;
 }
-
-const MAX_PROCESSING = 3; // Max processing blocks at once
 
 const DownloadContext = createContext<DownloadProviderState | null>(null);
 
@@ -80,26 +77,25 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         );
     };
 
-    const downloadFileBlock = async ({ downloadId, block }: DownloadBlock) => {
+    const downloadFileBlock = async (
+        { downloadId, block }: DownloadBlock,
+        { onChunkRead }: { onChunkRead: (data: Uint8Array) => Promise<void> }
+    ) => {
         const stream: ReadableStream<Uint8Array> = await api(queryFileBlock(block.URL));
-        const reader = stream.getReader();
+        const decryptedStream = await downloadConfig.current[downloadId].transform(stream);
+        const reader = decryptedStream.getReader();
 
-        const processResponse = async (
-            { done, value }: ReadableStreamReadResult<Uint8Array>,
-            chunks: Uint8Array[] = []
-        ): Promise<Uint8Array> => {
+        const processResponse = async ({ done, value }: ReadableStreamReadResult<Uint8Array>): Promise<void> => {
             if (done) {
-                return mergeUint8Arrays(chunks, progresses.current[downloadId]);
+                return;
             }
 
             progresses.current[downloadId] += value.length;
-
-            const response = await reader.read();
-            return processResponse(response, [...chunks, value]);
+            await onChunkRead(value);
+            await processResponse(await reader.read());
         };
 
-        const response = await reader.read();
-        return processResponse(response);
+        await processResponse(await reader.read());
     };
 
     const processNextInQueue = async () => {
@@ -107,33 +103,28 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
             return;
         }
 
-        const processing = blockQueue.current.slice(0, MAX_PROCESSING);
+        const processing = blockQueue.current[0];
+        const { block, downloadId } = processing;
 
-        const results = await Promise.all(
-            processing.map(async (downloadBlock) => {
-                const { block, downloadId } = downloadBlock;
-                const rawData = await downloadFileBlock(downloadBlock);
-                const data = await downloadConfig.current[downloadBlock.downloadId].transform(rawData);
-                return { block, downloadId, data };
-            })
-        );
+        const stream = downloadConfig.current[downloadId].stream;
 
-        for (const { block, data, downloadId } of results) {
-            const blockInQueue = blockQueue.current[0];
+        await downloadFileBlock(processing, {
+            async onChunkRead(value: Uint8Array) {
+                const blockInQueue = blockQueue.current[0];
 
-            if (!blockInQueue || downloadId !== blockInQueue.downloadId || block.URL !== blockInQueue.block.URL) {
-                continue; // Download is canceled already
+                if (!blockInQueue || downloadId !== blockInQueue.downloadId || block.URL !== blockInQueue.block.URL) {
+                    return; // Download is canceled already
+                }
+
+                await stream.write(value);
             }
-            blockQueue.current.shift();
+        });
 
-            const stream = downloadConfig.current[downloadId].stream;
-            await stream.write(data);
-
-            const isDownloadFinished = blockQueue.current.every((block) => downloadId !== block.downloadId);
-            if (isDownloadFinished) {
-                updateDownloadState(downloadId, DownloadState.Done);
-                stream.close();
-            }
+        blockQueue.current.shift();
+        const isDownloadFinished = blockQueue.current.every((block) => downloadId !== block.downloadId);
+        if (isDownloadFinished) {
+            updateDownloadState(downloadId, DownloadState.Done);
+            stream.close();
         }
 
         processNextInQueue();
@@ -144,7 +135,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
 
         // When download is added or changes status, update queue
         for (const { id, state, Revision } of downloads) {
-            if (blockQueue.current.length >= MAX_PROCESSING) {
+            if (blockQueue.current.length) {
                 break;
             }
 
@@ -167,7 +158,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         updateDownloadState(downloadId, DownloadState.Canceled);
     };
 
-    const startDownload = async (info: DownloadInfo, transform: BlockTransformer) => {
+    const startDownload = async (info: DownloadInfo, transform: StreamTransformer) => {
         const id = generateUID('drive-download');
         const stream = await openDownloadStream(
             {

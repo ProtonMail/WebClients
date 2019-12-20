@@ -1,13 +1,14 @@
 import { useCallback } from 'react';
 import { useApi, useCache } from 'react-components';
-import { queryFileRevision } from '../api/files';
 import { DriveFile, DriveFileRevisionResult } from '../interfaces/file';
-import { decryptMessage, getMessage } from 'pmcrypto/lib/pmcrypto';
-import useShare from './useShare';
+import { decryptMessage } from 'pmcrypto/lib/pmcrypto';
 import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
-import { mergeUint8Arrays } from '../utils/array';
-import { useDownloadProvider } from '../components/downloads/DownloadProvider';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
+import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
+import { getStreamMessage } from 'proton-shared/lib/keys/driveKeys';
+import { queryFileRevision } from '../api/files';
+import { useDownloadProvider } from '../components/downloads/DownloadProvider';
+import useShare from './useShare';
 
 function useDownload(shareId: string) {
     const api = useApi();
@@ -25,16 +26,17 @@ function useDownload(shareId: string) {
             const { File, privateKey } = await getFileMeta(linkId);
             const { Revision } = await getFileRevision(File);
             const blockKeys = deserializeUint8Array(File.ContentKeyPacket);
+            const sessionKeys = await getDecryptedSessionKey(blockKeys, privateKey);
+            const publicKeys = privateKey.toPublic();
 
-            await startDownload({ File, Revision, filename }, async (buffer: Uint8Array) => {
-                const encryptedBlock = mergeUint8Arrays([blockKeys, buffer], blockKeys.length + buffer.length);
+            await startDownload({ File, Revision, filename }, async (stream) => {
                 const { data } = await decryptMessage({
-                    message: await getMessage(encryptedBlock),
-                    privateKeys: privateKey,
-                    publicKeys: privateKey.toPublic(),
+                    message: await getStreamMessage(stream),
+                    sessionKeys,
+                    publicKeys,
+                    streaming: 'web',
                     format: 'binary'
                 });
-
                 return data;
             });
         },
