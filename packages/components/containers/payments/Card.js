@@ -8,7 +8,7 @@ import ExpInput from './ExpInput';
 import CardNumberInput from './CardNumberInput';
 
 const Card = ({ card, errors, onChange, loading = false }) => {
-    const countries = getFullList().map(({ value, label: text }) => ({ value, text }));
+    const countries = getFullList().map(({ value, label: text, disabled }) => ({ value, text, disabled }));
     const handleChange = (key) => ({ target }) => onChange(key, target.value);
 
     return (
