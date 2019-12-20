@@ -123,7 +123,8 @@ export default ({ api, eventID: initialEventID, interval = INTERVAL_EVENT_TIMER 
 
                 const result = await api({
                     ...getEvents(eventID),
-                    signal: abortController.signal
+                    signal: abortController.signal,
+                    silence: true
                 });
 
                 await Promise.all(listeners.notify(result));
