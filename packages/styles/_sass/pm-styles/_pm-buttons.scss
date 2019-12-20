@@ -42,9 +42,7 @@
   }
   &[disabled],
   &.is-disabled {
-    background-color: $pm-global-muted;
-    color: rgba( $pm-global-grey, .3 );
-    pointer-events: none;
+    @include button-disabled-state;
   }
   /* just to cancel examples  */
   &.is-active:hover {
@@ -87,10 +85,7 @@
   }
   &[disabled],
   &.is-disabled {
-    background-color: $pm-global-muted;
-    color: rgba( $pm-global-grey, .3 );
-    border-color: $pm-global-border;
-    pointer-events: none;
+    @include button-disabled-state;
   }
   /* just to cancel examples  */
   &.is-hover:hover {
@@ -120,10 +115,7 @@
   }
   &[disabled],
   &.is-disabled {
-    background-color: $pm-global-muted;
-    color: rgba( $pm-global-grey, .3 );
-    border-color: $pm-global-border;
-    pointer-events: none;
+    @include button-disabled-state;
   }
 }
 
@@ -154,10 +146,7 @@
   }
   &[disabled],
   &.is-disabled {
-    background-color: $pm-global-muted;
-    color: rgba( $pm-global-grey, .3 );
-    border-color: $pm-global-border;
-    pointer-events: none;
+    @include button-disabled-state;
   }
   /* just to cancel examples  */
   &.is-hover:hover {
@@ -187,10 +176,7 @@
   }
   &[disabled],
   &.is-disabled {
-    background-color: $pm-global-muted;
-    color: rgba( $pm-global-grey, .3 );
-    border: 1px solid $pm-global-border;
-    pointer-events: none;
+    @include button-disabled-state;
   }
 }
 
@@ -257,6 +243,23 @@
     }
   }
 }
+
+/* exception for group buttons, disabled state should keep the border */
+.pm-group-button {
+  &[disabled],
+  &.is-disabled {
+    &.pm-button {
+      border-color: $pm-global-border;
+    }
+    &.pm-button-blueborder {
+      border-color: $pm-primary;
+    }
+    &.pv-button-greenborder {
+      border-color: $pv-green;
+    }
+  }
+}
+
 
 /* aliases for buttons => different per project */
 /* primary/link/error/warning/info */
@@ -340,7 +343,6 @@
   border-color: $pm-global-warning;
   color: $pm-global-warning;
 }
-
 .pm-button--whiteborder {
   border: 1px solid $white;
 }
@@ -349,8 +351,6 @@
 .pm-button--noborder {
   border: 0;
 }
-
-
 .pm-button--currentColor {
   color: currentColor;
 }

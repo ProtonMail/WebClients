@@ -2,12 +2,21 @@
 @import "../reusable-components/design-system-config";
 
 
-@mixin button-disabled-state-dm {
-  opacity: .6;
-  background-color: $pm-global-grey;
-  color: rgba( $pm-global-muted, .6 );
-  border-color: rgba( $pm-global-muted, .6 );
+@mixin button-disabled-state (){
+  background-color: $pm-global-muted;
+  color: rgba( $pm-global-grey, .3 );
+    border-color: $pm-global-border;
   pointer-events: none;
+}
+
+@mixin button-disabled-state-dm() {
+  background-color: $pm-global-grey;
+  color: rgba( $pm-global-muted, .3 );
+  pointer-events: none;
+  border-color: rgba( $pm-global-muted, .3 );
+  & svg { 
+    fill: rgba( $pm-global-muted, .3 );
+  }
 }
 
 @mixin pm-button-dark {

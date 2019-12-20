@@ -15,6 +15,7 @@
   @include pv-button-greenborder-dark;
 }
 
+// standalone button
 .pm-button-blue,
 .pm-button.pm-button-blue,
 .pv-button-green,
@@ -37,6 +38,21 @@ a, .link,
   &[disabled],
   &.is-disabled {
     color:  rgba( $white, .5 );
+  }
+}
+
+.pm-group-button {
+  &[disabled],
+  &.is-disabled {
+    &.pm-button {
+      border-color: var(--bordercolor-input, $pm-global-border);
+    }
+    &.pm-button-blueborder {
+      border-color: $pm-primary-light;
+    }
+    &.pv-button-greenborder {
+      border-color: $pv-green-light;
+    }
   }
 }
 
