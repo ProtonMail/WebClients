@@ -13,6 +13,7 @@ const GiftCodeInput = ({ value, ...rest }) => {
             minLength={GIFT_CODE_LENGTH}
             placeholder="AAAA-BBBB-CCCC-DDDD"
             error={error}
+            value={value}
             {...rest}
         />
     );
