@@ -1,6 +1,6 @@
 import { getTargetIndex } from '../mouseHelpers/mathHelpers';
 import { getDiffTime, getNewTime } from '../mouseHelpers/dateHelpers';
-import { blockClick, findContainingParent, findUpwards } from '../mouseHelpers/domHelpers';
+import { blockClick, findContainingParent, findUpwards, createRafUpdater } from '../mouseHelpers/domHelpers';
 
 const CREATE_SENSITIVITY = 20; // In pixels
 const CREATE_STATE_INIT = -1;
@@ -23,9 +23,7 @@ const createDragCreateEvent = ({
     let result;
     let currentTargetRow;
 
-    let callback;
-
-    callback = onMouseDown({
+    const initialCallback = onMouseDown({
         action: ACTIONS.CREATE_DOWN,
         payload: {
             type: TYPE.DAYGRID,
@@ -34,9 +32,12 @@ const createDragCreateEvent = ({
     });
 
     // Not allowed, abort
-    if (!callback) {
+    if (!initialCallback) {
         return;
     }
+
+    const updater = createRafUpdater();
+    let callback = (args) => updater(() => initialCallback(args));
 
     e.preventDefault();
     e.stopPropagation();
@@ -141,9 +142,7 @@ const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, event
 
     const { start, end } = event;
 
-    let callback;
-
-    callback = onMouseDown({
+    const initialCallback = onMouseDown({
         action: ACTIONS.EVENT_DOWN,
         payload: {
             type: TYPE.DAYGRID,
@@ -152,9 +151,12 @@ const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, event
         }
     });
 
-    if (!callback) {
+    if (!initialCallback) {
         return;
     }
+
+    const updater = createRafUpdater();
+    let callback = (args) => updater(() => initialCallback(args));
 
     e.preventDefault();
     e.stopPropagation();

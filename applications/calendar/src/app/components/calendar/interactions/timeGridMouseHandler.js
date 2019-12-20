@@ -3,7 +3,7 @@ import { addMinutes } from 'proton-shared/lib/date-fns-utc';
 import { getKey } from '../splitTimeGridEventsPerDay';
 import { getRelativePosition, getTargetIndex } from '../mouseHelpers/mathHelpers';
 import { getDiffTime, getNewTime, getSnappedDate, getTargetMinutes } from '../mouseHelpers/dateHelpers';
-import { blockClick, createAutoScroll, findContainingParent } from '../mouseHelpers/domHelpers';
+import { blockClick, createAutoScroll, createRafUpdater, findContainingParent } from '../mouseHelpers/domHelpers';
 import { ACTIONS, TYPE } from './constants';
 
 const DRAG_EVENT_MOVE = 1;
@@ -58,9 +58,8 @@ const createDragCreateMouseDown = ({
     let oldMouseY = CREATE_STATE_INIT;
 
     let result;
-    let callback;
 
-    callback = onMouseDown({
+    const initialCallback = onMouseDown({
         action: ACTIONS.CREATE_DOWN,
         payload: {
             type: TYPE.TIMEGRID,
@@ -69,7 +68,7 @@ const createDragCreateMouseDown = ({
     });
 
     // Not allowed, abort
-    if (!callback) {
+    if (!initialCallback) {
         return;
     }
 
@@ -78,6 +77,9 @@ const createDragCreateMouseDown = ({
 
     const options = getAutoScrollOptions(titleEl);
     const autoScroll = createAutoScroll(scrollEl, options);
+
+    const updater = createRafUpdater();
+    let callback = (args) => updater(() => initialCallback(args));
 
     const handleMouseMove = (e) => {
         e.preventDefault();
@@ -204,9 +206,8 @@ const createDragMoveEvent = ({
     let currentTargetDate;
     let currentTargetMinutes;
     let result;
-    let callback;
 
-    callback = onMouseDown({
+    const initialCallback = onMouseDown({
         action: ACTIONS.EVENT_DOWN,
         payload: {
             type: TYPE.TIMEGRID,
@@ -216,7 +217,7 @@ const createDragMoveEvent = ({
     });
 
     // Move was not allowed, abort
-    if (!callback) {
+    if (!initialCallback) {
         return;
     }
 
@@ -225,6 +226,9 @@ const createDragMoveEvent = ({
 
     const options = getAutoScrollOptions(titleEl);
     const autoScroll = createAutoScroll(scrollEl, options);
+
+    const updater = createRafUpdater();
+    let callback = (args) => updater(() => initialCallback(args));
 
     const handleMove = (e, result, day) => {
         callback({

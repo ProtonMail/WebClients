@@ -9,9 +9,8 @@ import handleTimeGridMouseDown from './interactions/timeGridMouseHandler';
 import handleDayGridMouseDown from './interactions/dayGridMouseHandler';
 import { toPercent } from './mouseHelpers/mathHelpers';
 
-import useTimeGridEventLayout from './useTimeGridEventLayout';
 import useDayGridEventLayout from './useDayGridEventLayout';
-import { getKey, toUTCMinutes } from './splitTimeGridEventsPerDay';
+import { getKey, splitTimeGridEventsPerDay, toUTCMinutes } from './splitTimeGridEventsPerDay';
 import HourLines from './TimeGrid/HourLines';
 import HourTexts from './TimeGrid/HourTexts';
 import DayLines from './TimeGrid/DayLines';
@@ -75,8 +74,16 @@ const TimeGrid = React.forwardRef(
             return hours.map((hourDate) => formatTime(new Date(hourDate.getTime() - secondaryTimezoneOffset)));
         }, [secondaryTimezoneOffset, formatTime]);
 
-        const timeEvents = useMemo(() => events.filter((e) => !e.isAllDay), [events]);
-        const dayEvents = useMemo(() => events.filter((e) => !!e.isAllDay), [events]);
+        const [timeEvents, dayEvents] = useMemo(() => {
+            return events.reduce(
+                (acc, event) => {
+                    acc[!event.isAllDay ? 0 : 1].push(event);
+                    return acc;
+                },
+                [[], []]
+            );
+        }, [events]);
+
         const daysRows = useMemo(() => {
             if (isNarrow) {
                 return [[date]];
@@ -94,7 +101,14 @@ const TimeGrid = React.forwardRef(
         const [{ eventsInRow, eventsInRowStyles, maxRows, eventsInRowSummary }] = eventsPerRows;
         const actualRows = Math.max(Math.min(maxRows, numberOfRows + 1), 1);
 
-        const [eventsPerDay, eventsLaidOut] = useTimeGridEventLayout(timeEvents, days, totalMinutes);
+        const eventsPerDay = useMemo(() => {
+            return splitTimeGridEventsPerDay({
+                events: timeEvents,
+                min: days[0],
+                max: days[days.length - 1],
+                totalMinutes
+            });
+        }, [timeEvents, days, totalMinutes]);
 
         const nowTop = toUTCMinutes(now) / totalMinutes;
         const nowTopPercentage = toPercent(nowTop);
@@ -279,10 +293,10 @@ const TimeGrid = React.forwardRef(
                                     <div className="flex-item-fluid relative calendar-grid-gridcell h100" key={key}>
                                         <DayEvents
                                             Component={PartDayEvent}
-                                            eventsPerDay={eventsPerDay[key]}
-                                            eventsLaidOut={eventsLaidOut[key]}
-                                            timeEvents={timeEvents}
+                                            events={timeEvents}
+                                            eventsInDay={eventsPerDay[key]}
                                             dayIndex={isNarrow ? 0 : dayIndex}
+                                            totalMinutes={totalMinutes}
                                             targetEventData={targetEventData}
                                             targetEventRef={targetEventRef}
                                             formatTime={formatTime}

@@ -108,3 +108,23 @@ export const createAutoScroll = (container, { marginTop = 5, marginBottom = 5, s
         onMouseUp
     };
 };
+
+export const createRafUpdater = () => {
+    let last;
+
+    const run = () => {
+        if (last) {
+            last();
+            last = undefined;
+        }
+    };
+
+    return (cb) => {
+        const prevLast = last;
+        last = cb;
+        // If the prev raf has not been consumed, schedule it to run
+        if (!prevLast) {
+            requestAnimationFrame(run);
+        }
+    };
+};
