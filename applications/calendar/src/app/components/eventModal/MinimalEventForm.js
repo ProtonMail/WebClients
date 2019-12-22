@@ -11,7 +11,6 @@ import DateTimeRow from './rows/DateTimeRow';
 import TitleRow from './rows/TitleRow';
 import FrequencyRow from './rows/FrequencyRow';
 import { getAllDayCheck } from './eventForm/stateActions';
-import RepeatIcon from '../../../assets/RepeatIcon';
 
 const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, errors, model, setModel }) => {
     const allDayRow = (
@@ -32,7 +31,7 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
             collapseOnMobile={false}
             label={
                 <>
-                    <RepeatIcon />
+                    <Icon name="calendar-repeat" />
                     <span className="sr-only">{c('Label').t`Frequency`}</span>
                 </>
             }
