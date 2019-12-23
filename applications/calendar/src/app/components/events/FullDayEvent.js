@@ -34,7 +34,7 @@ const FullDayEvent = ({
         return formatTime(start);
     }, [start]);
 
-    const titleString = tmpData && tmpData.title || !loading && model.title || '';
+    const titleString = (tmpData && tmpData.title) || (!loading && model.title) || '';
 
     const content = (() => {
         if (error) {
@@ -45,7 +45,7 @@ const FullDayEvent = ({
             <div className="flex flex-nowrap bg-inherit">
                 <span
                     className={classnames([
-                        'flex-item-fluid flex flex-nowrap flex-items-center',
+                        'flex-item-fluid flex flex-nowrap w100 flex-items-center',
                         loading && 'calendar-skeleton-loading'
                     ])}
                 >
@@ -66,7 +66,7 @@ const FullDayEvent = ({
             <div
                 onClick={onClick}
                 className={classnames([
-                    'calendar-dayeventcell-inner alignleft inbl w100 pl0-5 pr0-5',
+                    'calendar-dayeventcell-inner alignleft flex w100 pl0-5 pr0-5',
                     !isAllDay && 'calendar-dayeventcell-inner--notAllDay'
                 ])}
                 style={eventStyle}
