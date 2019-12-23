@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { addMinutes, startOfDay, format, parse } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { findLongestMatchingIndex } from 'proton-shared/lib/helpers/string';
+import { withDecimalPrecision } from 'proton-shared/lib/helpers/math';
 
 import Input from './Input';
 import Dropdown from '../dropdown/Dropdown';
@@ -19,7 +20,7 @@ const fromFormatted = (value, locale) => {
 };
 
 const formatDuration = (label, minutes) => {
-    const hours = (minutes / 60).toFixed(1);
+    const hours = withDecimalPrecision(minutes / 60, 1);
     const hoursInt = Math.ceil(hours);
     return hours >= 1
         ? c('Time unit').ngettext(msgid`${hours} hour`, `${hours} hours`, hoursInt)
