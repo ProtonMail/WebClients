@@ -101,7 +101,7 @@ export const generateMemberAddressKey = async ({ email, primaryKey, organization
 
     const [activationToken, organizationToken] = await Promise.all([
         encryptMemberToken(memberKeyToken, primaryKey),
-        encryptMemberToken(memberKeyToken, organizationKey)
+        encryptMemberToken(orgKeyToken, organizationKey)
     ]);
 
     return {
