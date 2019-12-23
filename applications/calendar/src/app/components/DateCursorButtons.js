@@ -62,11 +62,11 @@ const DateCursorButtons = ({ view, currentDate, now, dateRange, onToday, onPrev,
             </button>
             <span className="toolbar-separator flex-item-noshrink" />
             <button type="button" className="toolbar-button flex-item-noshrink" title={previous} onClick={onPrev}>
-                <Icon name="arrow-left" className="mauto toolbar-icon" />
+                <Icon name="caret" className="mauto toolbar-icon rotateZ-90" />
                 <span className="sr-only">{previous}</span>
             </button>
             <button type="button" className="toolbar-button flex-item-noshrink" title={next} onClick={onNext}>
-                <Icon name="arrow-right" className="mauto toolbar-icon" />
+                <Icon name="caret" className="mauto toolbar-icon rotateZ-270" />
                 <span className="sr-only">{next}</span>
             </button>
             <span className="toolbar-separator flex-item-noshrink" />
