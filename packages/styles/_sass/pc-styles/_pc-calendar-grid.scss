@@ -229,7 +229,7 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
         box-sizing: border-box;
         border-radius: 2px;
         pointer-events: none;
-        border: 1px solid #fff;
+        border: 1px solid transparent; // white was creating issue on Safari Mac
     }
 }
 
