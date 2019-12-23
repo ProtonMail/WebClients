@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { error } = require('./lib/helpers/log')('proton-i18n');
+const { warn } = require('./lib/helpers/log')('proton-i18n');
 
 // Compat mode WebClient
 const ENV_FILE = process.env.TEST_ENV || (fs.existsSync('.env') ? '.env' : 'env/.env');
@@ -44,7 +44,8 @@ const getEnv = () => ({
 const getCrowdin = () => {
     if (!process.env.CROWDIN_KEY_API || !process.env.CROWDIN_FILE_NAME || !process.env.CROWDIN_PROJECT_NAME) {
         const keys = ['CROWDIN_KEY_API', 'CROWDIN_FILE_NAME', 'CROWDIN_PROJECT_NAME'].join(' - ');
-        error(new Error(`Missing one/many mandatory keys from the .env ( cf the Wiki): \n${keys}`));
+        warn(`Missing one/many mandatory keys from the .env ( cf the Wiki): \n${keys}`);
+        process.exit(0);
     }
 
     return {
