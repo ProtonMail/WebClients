@@ -72,7 +72,7 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 .calendar-grid-nowHourLine {
     z-index: 3;
     border-bottom: 2px solid $pm-primary;
-    left: -10px;
+    left: 0;
     right: -$gridcell-right-margin;
     &:before {
         content: '';
@@ -82,7 +82,7 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
         border-radius: 50%;
         background-color: $pm-primary;
         top: -0.3rem;
-        left: -0.35rem;
+        left: -0.4rem;
     }
 }
 
