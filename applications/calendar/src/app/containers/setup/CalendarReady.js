@@ -4,7 +4,7 @@ import React from 'react';
 import calendarSvg from 'design-system/assets/img/pm-images/calendar.svg';
 
 const CalendarReady = () => {
-    const supportIcon = <Icon key="support-icon" name="support1" className="alignsub" />;
+    const supportIcon = <Icon key="support-icon" name="report-bug" className="alignsub" />;
     return (
         <>
             <Alert>{c('Info')
@@ -13,7 +13,7 @@ const CalendarReady = () => {
                 <img src={calendarSvg} alt="" />
             </div>
             <Alert>{c('Info')
-                .jt`If you encounter a problem, you can reach our support team by clicking the ${supportIcon} button.`}</Alert>
+                .jt`If you encounter a problem, you can reach our support team by clicking on Profile/${supportIcon} Report a bug button.`}</Alert>
         </>
     );
 };
