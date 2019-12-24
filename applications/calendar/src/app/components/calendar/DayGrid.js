@@ -88,7 +88,7 @@ const DayGrid = ({
 
     return (
         <div className="flex-item-fluid scroll-if-needed view-column-detail is-month-view">
-            <div className="flex flex-column relative h100" ref={mainRef}>
+            <div className="calendar-daygrid flex flex-column relative h100" ref={mainRef}>
                 <div className="flex calendar-daygrid-days">
                     {displayWeekNumbers ? <div className="calendar-daygrid-weeknumber-width" /> : null}
                     {rows[0].map((day) => {
