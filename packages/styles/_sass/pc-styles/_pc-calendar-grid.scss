@@ -124,6 +124,9 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 
 
 
+.calendar-daygrid {
+    min-height: 41rem;
+}
 
 .calendar-daygrid-weeknumber {
     border-bottom: $calendar-grid-border;
