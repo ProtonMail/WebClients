@@ -13,7 +13,7 @@ const CalendarReady = () => {
                 <img src={calendarSvg} alt="" />
             </div>
             <Alert>{c('Info')
-                .jt`If you encounter a problem, you can reach our support team by clicking on Profile/${supportIcon} Report a bug button.`}</Alert>
+                .jt`If you encounter a problem, you can reach our support team by clicking on Profile/${supportIcon} Report bug button.`}</Alert>
         </>
     );
 };
