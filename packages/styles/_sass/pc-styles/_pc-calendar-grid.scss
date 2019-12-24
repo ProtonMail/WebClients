@@ -70,7 +70,7 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 }
 
 .calendar-grid-nowHourLine {
-    z-index: 3;
+    z-index: 6;
     border-bottom: 2px solid $pm-primary;
     left: 0;
     right: -$gridcell-right-margin;
