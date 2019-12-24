@@ -78,7 +78,7 @@ $conversation-icon-size: 4rem !default;
 
   // hover state of checkbox
   & + .item-icon:hover {
-    background-color: $white;
+    background-color: var(--bgcolor-input, $white);
     border-color: var(--bordercolor-input, $pm-global-border);
     & > .item-abbr {
       display: none;
