@@ -38,7 +38,7 @@
     border-radius: 50%;
     z-index: 2;
     background: currentColor;
-    border: 2px solid white;
+    border: 2px solid var(--bgcolor-main-area, white);
     pointer-events: none;
     transition: border .1s ease-out;
 }
