@@ -86,8 +86,13 @@ const EventPopover = ({ formatTime, onEdit, onDelete, onClose, style, popoverRef
     return (
         <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
             <PopoverHeader onClose={onClose}>
-                <div className="flex flex-nowrap flex-items-center">
-                    <Icon name="circle" className="mr1 mb1 flex-item-noshrink" color={Calendar.Color} size={16} />
+                <div className="flex flex-nowrap">
+                    <Icon
+                        name="circle"
+                        className="mr1 mb1 mt0-75 flex-item-noshrink"
+                        color={Calendar.Color}
+                        size={16}
+                    />
                     <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={model.title}>
                         {model.title}
                     </h1>
