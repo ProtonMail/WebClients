@@ -11,14 +11,14 @@ const AppsSidebar = ({ items = [] }) => {
 
     const apps = [
         { appNames: [PROTONMAIL, PROTONMAIL_SETTINGS], icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
+        { appNames: [PROTONCONTACTS], icon: 'protoncontacts', title: 'ProtonContacts', link: '/contacts' },
         FEATURE_FLAGS.includes('calendar') &&
             isPaid && {
                 appNames: [PROTONCALENDAR],
                 icon: 'protoncalendar',
                 title: 'ProtonCalendar',
                 link: '/calendar'
-            },
-        { appNames: [PROTONCONTACTS], icon: 'protoncontacts', title: 'ProtonContacts', link: '/contacts' }
+            }
     ].filter(Boolean);
 
     return (
