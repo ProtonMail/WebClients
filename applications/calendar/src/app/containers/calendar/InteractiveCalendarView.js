@@ -6,6 +6,7 @@ import {
     Alert,
     ConfirmModal,
     ResetButton,
+    ErrorButton,
     useApi,
     useEventManager,
     useGetAddressKeys,
@@ -423,7 +424,9 @@ const InteractiveCalendarView = ({
                     confirm={c('Action').t`Discard`}
                     onClose={reject}
                     onConfirm={resolve}
-                ></ConfirmModal>
+                >
+                    <Alert type="warning">{c('Info').t`You will lose all unsaved changes.`}</Alert>
+                </ConfirmModal>
             );
         });
     };
@@ -435,7 +438,7 @@ const InteractiveCalendarView = ({
                 : c('Info').t`Would you like to delete this event?`;
             createModal(
                 <ConfirmModal
-                    confirm={c('Action').t`Delete`}
+                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                     title={c('Info').t`Delete event`}
                     close={<ResetButton autoFocus={true}>{c('Action').t`Cancel`}</ResetButton>}
                     onClose={reject}
