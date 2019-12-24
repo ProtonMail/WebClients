@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { useApi } from 'react-components';
 import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
-import { getEvent } from 'proton-shared/lib/api/calendars';
+import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
 import { dateLocale } from 'proton-shared/lib/i18n';
 
@@ -31,7 +31,7 @@ const getFirstUnseenAlarm = (alarms = [], set = new Set()) => {
     });
 };
 
-const AlarmWatcher = ({ alarms = [], tzid }) => {
+const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
     const api = useApi();
     const getEventRaw = useGetCalendarEventRaw();
     const cacheRef = useRef();
@@ -68,6 +68,14 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
             const diff = differenceInMilliseconds(nextAlarmTime, now);
             const delay = Math.max(diff, 0);
 
+            const getEvent = () => {
+                const cachedEvent = getCachedEvent(CalendarID, EventID);
+                if (cachedEvent) {
+                    return Promise.resolve(cachedEvent);
+                }
+                return api({ ...getEventRoute(CalendarID, EventID), silence: true }).then(({ Event }) => Event);
+            };
+
             timeoutHandle = setTimeout(() => {
                 // Eagerly add the event to seen, ignore if it would fail
                 cacheRef.current.add(ID);
@@ -78,8 +86,8 @@ const AlarmWatcher = ({ alarms = [], tzid }) => {
                     return;
                 }
 
-                api({ ...getEvent(CalendarID, EventID), silence: true })
-                    .then(({ Event }) => getEventRaw(Event))
+                getEvent(CalendarID, EventID)
+                    .then((Event) => getEventRaw(Event))
                     .then((eventRaw) => {
                         if (unmounted) {
                             return;

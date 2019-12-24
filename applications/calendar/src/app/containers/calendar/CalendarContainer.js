@@ -275,7 +275,11 @@ const CalendarContainer = ({ calendars, history, location }) => {
         // Intentionally not listening to everything to only trigger URL updates when these variables change.
     }, [view, range, utcDate]);
 
-    const [calendarsEvents, loadingEvents] = useCalendarsEvents(visibleCalendars, utcDateRangeInTimezone, tzid);
+    const [calendarsEvents, loadingEvents, getCachedEvent] = useCalendarsEvents(
+        visibleCalendars,
+        utcDateRangeInTimezone,
+        tzid
+    );
 
     const setDateAndView = useCallback((newDate, newView) => {
         setCustom({ view: newView, range: undefined, date: newDate });
@@ -391,7 +395,7 @@ const CalendarContainer = ({ calendars, history, location }) => {
                 containerRef={containerRef}
                 timeGridViewRef={timeGridViewRef}
             />
-            <AlarmContainer calendars={visibleCalendars} tzid={tzid} />
+            <AlarmContainer calendars={visibleCalendars} tzid={tzid} getCachedEvent={getCachedEvent} />
         </CalendarContainerView>
     );
 };

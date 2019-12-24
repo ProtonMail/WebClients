@@ -342,6 +342,16 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
         return record;
     }, []);
 
+    const getCachedEvent = useCallback((calendarID, eventID) => {
+        if (!cacheRef.current || !cacheRef.current.calendars || !cacheRef.current.calendars[calendarID]) {
+            return;
+        }
+        const cachedEvent = cacheRef.current.calendars[calendarID].events.get(eventID);
+        if (cachedEvent && cachedEvent.Event) {
+            return cachedEvent.Event;
+        }
+    }, []);
+
     return useMemo(() => {
         const events = requestedCalendars
             .map((Calendar) => {
@@ -423,7 +433,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
             })
             .flat();
 
-        return [events, loading];
+        return [events, loading, getCachedEvent];
     }, [rerender, tzid, loading, requestedCalendars, utcDateRange]);
 };
 
