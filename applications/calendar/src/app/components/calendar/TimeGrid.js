@@ -180,7 +180,12 @@ const TimeGrid = React.forwardRef(
             if (!isInteractionEnabled) {
                 return;
             }
-            const handleMouseDown = (e) => handleMouseDownRef.current(e);
+            const handleMouseDown = (e) => {
+                if (e.button !== 0) {
+                    return;
+                }
+                handleMouseDownRef.current(e);
+            };
             document.addEventListener('mousedown', handleMouseDown, true);
             return () => {
                 document.removeEventListener('mousedown', handleMouseDown, true);

@@ -71,7 +71,12 @@ const DayGrid = ({
         if (!isInteractionEnabled) {
             return;
         }
-        const listener = (e) => handleMouseDownRef.current(e);
+        const listener = (e) => {
+            if (e.button !== 0) {
+                return;
+            }
+            handleMouseDownRef.current(e);
+        };
         document.addEventListener('mousedown', listener, true);
         return () => {
             document.removeEventListener('mousedown', listener, true);
