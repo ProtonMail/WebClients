@@ -311,27 +311,29 @@
     background-color: transparent; // to avoid heriting from other classes
   }
 }
-.pm-button--error {
+.pm-button--error,
+.pm-button.pm-button--error {
   @extend .pm-button-blue;
   background-color: $pm-global-warning;
   border-color: $pm-global-warning; 
+  &:focus,
+  &:hover,
+  &:not(div):active { // not div is here for a specificity issue for another fix
+    background-color: $pm-global-warning;
+    border-color: $pm-global-warning; 
+  }
 }
-.pm-button--error:focus,
-.pm-button--error:hover,
-.pm-button--error:not(div):active  { // not div is here for a specificity issue for another fix
-  background-color: $pm-global-warning;
-  border-color: $pm-global-warning; 
-}
-.pm-button--warning {
+.pm-button--warning,
+.pm-button.pm-button--warning {
   @extend .pm-button-blue;
   background-color: $pm-global-attention;
   border-color: $pm-global-attention; 
-}
-.pm-button--warning:focus,
-.pm-button--warning:hover,
-.pm-button--warning:not(div):active { // not div is here for a specificity issue for another fix
-  background-color: $pm-global-attention;
-  border-color: $pm-global-attention; 
+  &:focus,
+  &:hover,
+  &:not(div):active { // not div is here for a specificity issue for another fix
+    background-color: $pm-global-attention;
+    border-color: $pm-global-attention; 
+  }
 }
 .pm-button--info {
   @extend .pm-button;
