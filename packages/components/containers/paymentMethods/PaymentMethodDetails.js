@@ -8,7 +8,7 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
     const { Last4, Name, ExpMonth, ExpYear, Payer } = details;
     if (type === PAYMENT_METHOD_TYPES.CARD) {
         return (
-            <Bordered className="bg-global-light">
+            <Bordered className="bg-global-highlight">
                 <h4>
                     <code>•••• •••• •••• {Last4}</code>
                 </h4>
@@ -30,7 +30,7 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
 
     if (type === PAYMENT_METHOD_TYPES.PAYPAL) {
         return (
-            <Bordered className="bg-global-light">
+            <Bordered className="bg-global-highlight">
                 <h4>
                     <code>PayPal {Payer}</code>
                 </h4>
