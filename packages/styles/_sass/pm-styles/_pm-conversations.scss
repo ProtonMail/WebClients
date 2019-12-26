@@ -23,17 +23,22 @@
 
 .item-container,
 .item-container-row {
-  padding: em(15) em(12);
+  padding: em(7) em(12);
   border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
   background-color: var(--bgcolor-item-column-list, $pm-global-light);
-}
-.item-container-row {
-  padding: em(8) em(12);
 }
 
 .item-container,
 .item-container-row {
-  background: var(--bgcolor-item-column-list, $pm-global-light);
+  background: var(--bgcolor-item-column-list, $pm-global-muted);
+}
+
+/* with more padding, breaaaaaaathe */
+.is-spaced {
+  .item-container,
+  .item-container-row {
+    padding: em(15) em(12);
+  }
 }
 
 .item-is-selected,
@@ -44,6 +49,8 @@
 .item-container:not(.item-is-selected):not(.item-contact):not(.read):not(.active) {
   background: var(--bgcolor-toolbar, $white);
 }
+
+
 
 $conversation-icon-size: 4rem !default;
 .item-icon {
@@ -122,6 +129,9 @@ $conversation-icon-size: 4rem !default;
 
 .item-titlesender {
   line-height: 1.3;
+}
+.item-sender--smaller {
+  font-size: em(12);
 }
 
 .starbutton {

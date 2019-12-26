@@ -58,7 +58,7 @@ $pm-primary-dark       : $pm-blue-dark !default;
 // not approved colors
 $pm-input-background   : #fcfdff !default;
 $plan-logo-color       : #8ed60f !default;
-$conversation-selected-bg: #e3e7f6 !default;
+$conversation-selected-bg: rgba($pm-blue, .5) !default;
 
 // needed for darkmode
 $pm-secondary-grey     : #2e323d !default;
