@@ -27,6 +27,14 @@
   }
 }
 
+
+.pm-button.pm-button--primary {
+  &[disabled],
+  &.is-disabled {
+    @include button-disabled-state-dm;
+  }
+}
+
 .pm-button--link,
 a, .link,
 .pm-button.pm-button--link {
