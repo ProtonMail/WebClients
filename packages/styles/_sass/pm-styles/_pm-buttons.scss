@@ -345,7 +345,8 @@
   border-color: $pm-global-warning;
   color: $pm-global-warning;
 }
-.pm-button--whiteborder {
+.pm-button--whiteborder,
+.pm-button--primary.pm-button.pm-button--whiteborder {
   border: 1px solid $white;
 }
 
