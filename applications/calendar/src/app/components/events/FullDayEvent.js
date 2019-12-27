@@ -42,7 +42,7 @@ const FullDayEvent = ({
         }
 
         return (
-            <div className="flex flex-nowrap bg-inherit">
+            <div className="flex flex-nowrap w100 bg-inherit">
                 <span
                     className={classnames([
                         'flex-item-fluid flex flex-nowrap w100 flex-items-center',
