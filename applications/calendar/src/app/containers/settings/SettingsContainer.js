@@ -40,8 +40,8 @@ const SettingsContainer = ({ calendars }) => {
 
     const mobileLinks = [
         { to: '/inbox', icon: 'protonmail', external: true, current: false },
-        isPaid && { to: '/calendar', icon: 'protoncalendar', external: false, current: true },
-        { to: '/contacts', icon: 'protoncontacts', external: true, current: false }
+        { to: '/contacts', icon: 'protoncontacts', external: true, current: false },
+        isPaid && { to: '/calendar', icon: 'protoncalendar', external: false, current: true }
     ].filter(Boolean);
 
     return (
