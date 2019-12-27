@@ -156,10 +156,19 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
     border-right: $calendar-grid-border;
 }
 
-.calendar-monthgrid-day[aria-current="date"] {
-    .calendar-monthgrid-day-number {
-        background-color: $pm-primary;
-        color: $white;
+.calendar-monthgrid-day {
+    &[aria-current="date"] {
+        .calendar-monthgrid-day-number {
+            background-color: $pm-primary-dark;
+            color: $white;
+        }
+    }
+    &[aria-pressed="true"] {
+        .calendar-monthgrid-day-number {
+            background-color: $pm-primary;
+            color: $white;
+            font-weight: bold;
+        }
     }
 }
 
