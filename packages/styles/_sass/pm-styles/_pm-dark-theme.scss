@@ -105,9 +105,14 @@ select.pm-field {
   }
 }
 
-
 .searchbox-field[type="search"] {
   background-image: none;
+}
+
+.pm-toggle-label {
+  & > .pm-toggle-label-text:first-child .pm-toggle-label-img {
+     fill: $white;
+  }
 }
 
 // loading

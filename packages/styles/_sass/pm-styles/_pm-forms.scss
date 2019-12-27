@@ -225,7 +225,7 @@ textarea[required].pm-field.field-pristine:invalid {
 }
 
 
-/* toogle */
+/* toggle */
 $width: 5.5em !default;
 .pm-toggle-label {
   margin-top: .15em;
@@ -233,7 +233,7 @@ $width: 5.5em !default;
   width: $width;
   display: inline-flex;
   border: 1px solid var(--bordercolor-input, $pm-global-border);
-  background: var(--bgcolor-input, #fcfdff);
+  background: var(--bgcolor-view-column-detail, $pm-input-background);
   border-radius: 2rem;
   padding: 2px;
   position: relative;
@@ -243,7 +243,7 @@ $width: 5.5em !default;
     width: calc( #{$width/2} - 2px);
     transition: transform .25s ease, background-color .25s ease, border-color .25s linear;
     border-radius: 2rem;
-    background: var(--bgcolor-input, $pm-global-muted);
+    background: var(--bgcolor-subnav, $pm-global-muted);
     top: 2px;
     left: 0;
     bottom: 2px;
@@ -259,8 +259,10 @@ $width: 5.5em !default;
     width: #{$width/2};
     position: relative;
     z-index: 2;
-    transition: fill .1s steps(1, end);
     display: inline-flex;
+    & .pm-toggle-label-img {
+      transition: fill .1s steps(1, end);
+    }
   }
 }
 @if $rtl-option == true {
@@ -275,10 +277,21 @@ $width: 5.5em !default;
   }
 }
 
+.pm-toggle-label-img {
+  margin: auto;
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: var(--bordercolor-input, $black);
+}
+
+// checked state
 .pm-toggle-checkbox {
   @extend .invisible;
   &:checked + .pm-toggle-label {
-    & > .pm-toggle-label-text:last-child {
+    & > .pm-toggle-label-text:first-child .pm-toggle-label-img {
+      fill: var(--bordercolor-input, $black);
+    }
+    & > .pm-toggle-label-text:last-child .pm-toggle-label-img {
       fill: $white;
     }
     &::before {
@@ -327,11 +340,7 @@ $width: 5.5em !default;
     }
   }
 }
-.pm-toggle-label-img {
-  margin: auto;
-  width: 1.6rem;
-  height: 1.6rem;
-}
+
 
 .pm-toggle-label--small {
   margin-top: .25em;
