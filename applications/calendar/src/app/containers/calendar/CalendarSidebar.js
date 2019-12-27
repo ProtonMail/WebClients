@@ -98,7 +98,7 @@ const CalendarSidebar = ({
 CalendarSidebar.propTypes = {
     miniCalendar: PropTypes.node,
     calendars: PropTypes.array,
-    onCreateEvent: PropTypes.func.isRequired
+    onCreateEvent: PropTypes.func
 };
 
 export default CalendarSidebar;

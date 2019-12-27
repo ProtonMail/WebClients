@@ -9,6 +9,7 @@ import { unwrap } from 'proton-shared/lib/calendar/helper';
 import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import createIntervalTree from 'interval-tree';
+import { addDays, max } from 'proton-shared/lib/date-fns-utc';
 import useGetCalendarEventRaw from './useGetCalendarEventRaw';
 import useGetCalendarEventPersonal from './useGetCalendarEventPersonal';
 
@@ -110,10 +111,17 @@ const setEventInCache = (Event, { tree, events, recurringEvents, decryptedEvents
 
         const { dtstart, dtend } = component;
 
-        const start = propertyToUTCDate(dtstart);
-        const end = propertyToUTCDate(dtend);
-
+        const isAllDay = isIcalAllDay(component);
         const isRecurring = isIcalRecurring(component);
+
+        const start = propertyToUTCDate(dtstart);
+        const rawEnd = propertyToUTCDate(dtend);
+        const modifiedEnd = isAllDay
+            ? addDays(rawEnd, -1) // All day event range is non-inclusive
+            : rawEnd;
+        const end = max(start, modifiedEnd);
+
+        const isAllPartDay = !isAllDay && differenceInHours(end, start) >= 24;
 
         if (isRecurring) {
             if (oldEvent && !oldEvent.isRecurring) {
@@ -129,15 +137,12 @@ const setEventInCache = (Event, { tree, events, recurringEvents, decryptedEvents
             if (!oldEvent) {
                 // First time
                 tree.insert(+start, +end, EventID);
-            } else if (+start !== +oldEvent.start || +end !== oldEvent.end) {
+            } else if (+start !== +oldEvent.start || +end !== +oldEvent.end) {
                 // Interval changed
                 tree.remove(+oldEvent.start, +oldEvent.end, EventID);
                 tree.insert(+start, +end, EventID);
             }
         }
-
-        const isAllDay = isIcalAllDay(component);
-        const isAllPartDay = !isAllDay && differenceInHours(end, start) >= 24;
 
         const record = {
             Event,
@@ -251,7 +256,6 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                     events: new Map(),
                     recurringEvents: new Map(),
                     decryptedEvents: new Map(),
-                    // Replace with interval tree
                     tree: createIntervalTree(),
                     dateRanges: []
                 };

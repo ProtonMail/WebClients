@@ -1,4 +1,3 @@
-import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -6,8 +5,8 @@ import {
     toUTCDate
 } from 'proton-shared/lib/date/timezone';
 import { differenceInHours } from 'date-fns';
-import { modelToDateProperty } from '../../components/eventModal/eventForm/modelToProperties';
-import { getDateTimeState } from '../../components/eventModal/eventForm/state';
+import { max } from 'proton-shared/lib/date-fns-utc';
+import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/state';
 
 const modelToEventProperties = (oldTemporaryEvent, { start, end, isAllDay }, tzid) => {
     // If unrelevant things were changed, like title or description
@@ -21,11 +20,8 @@ const modelToEventProperties = (oldTemporaryEvent, { start, end, isAllDay }, tzi
         return;
     }
 
-    const dtstart = modelToDateProperty({ ...start, isAllDay }, tzid);
-    const dtend = modelToDateProperty({ ...end, isAllDay }, tzid);
-
-    const utcStart = propertyToUTCDate(dtstart);
-    const utcEnd = propertyToUTCDate(dtend);
+    const utcStart = getTimeInUtc(start, isAllDay);
+    const utcEnd = getTimeInUtc(end, isAllDay);
 
     const calendarStart = isAllDay ? utcStart : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStart), tzid));
     const calendarEnd = isAllDay ? utcEnd : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcEnd), tzid));
@@ -33,7 +29,7 @@ const modelToEventProperties = (oldTemporaryEvent, { start, end, isAllDay }, tzi
 
     return {
         start: calendarStart,
-        end: calendarEnd,
+        end: max(calendarStart, calendarEnd),
         isAllDay: isAllDay || isAllPartDay,
         isAllPartDay
     };

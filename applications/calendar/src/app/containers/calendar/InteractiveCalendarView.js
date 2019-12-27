@@ -394,7 +394,7 @@ const InteractiveCalendarView = ({
         const isRecurringUpdate = Event && readEvent && tmpOriginalTarget && tmpOriginalTarget.isRecurring;
         !!isRecurringUpdate && (await handleRecurringUpdateConfirmation());
 
-        const veventComponent = modelToVeventComponent(tmpData, tzid);
+        const veventComponent = modelToVeventComponent(tmpData);
 
         await createOrUpdateEvent({
             Event,

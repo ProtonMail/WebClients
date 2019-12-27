@@ -1,5 +1,6 @@
 import { withRequiredProperties } from 'proton-shared/lib/calendar/veventHelper';
 import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
+import { addDays } from 'date-fns';
 
 import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN, FREQUENCY, MAX_LENGTHS } from '../../../constants';
 import { transformBeforeAt } from '../../../helpers/notifications';
@@ -47,7 +48,7 @@ export const getValarmTrigger = ({ isAllDay, unit, when, value, at }) => {
     return isAllDay ? modifyAllDayValarm(result, at) : result;
 };
 
-export const modelToDateProperty = ({ isAllDay, date, time, tzid: specificTzid }, tzid) => {
+const modelToDateProperty = ({ date, time, tzid }, isAllDay) => {
     const dateObject = {
         year: date.getFullYear(),
         month: date.getMonth() + 1,
@@ -64,7 +65,20 @@ export const modelToDateProperty = ({ isAllDay, date, time, tzid: specificTzid }
         minutes: time.getMinutes()
     };
 
-    return getDateTimeProperty(dateTimeObject, specificTzid, tzid);
+    return getDateTimeProperty(dateTimeObject, tzid);
+};
+
+const modelToDateProperties = ({ start, end, isAllDay }) => {
+    const dtstart = modelToDateProperty(start, isAllDay);
+
+    // All day events date ranges are stored non-inclusively, so add a full day from the selected date to the end date
+    const modifiedEnd = isAllDay ? { ...end, date: addDays(end.date, 1) } : end;
+    const dtend = modelToDateProperty(modifiedEnd, isAllDay);
+
+    return {
+        dtstart,
+        dtend
+    };
 };
 
 export const modelToGeneralProperties = ({ uid, title, location, description, frequency, attendees, rest }) => {
@@ -125,28 +139,22 @@ const modelToValarmComponent = ({ type, ...rest }) => {
     };
 };
 
-const modelToValarmComponents = (notifications) => {
+const modelToValarmComponents = ({ isAllDay, fullDayNotifications, partDayNotifications }) => {
+    const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     return notifications.map((notification) => modelToValarmComponent(notification));
 };
 
-export const modelToVeventComponent = (model, tzid, oldComponent) => {
-    const { start, end, isAllDay, fullDayNotifications, partDayNotifications } = model;
-
-    const dtStartProperty = modelToDateProperty({ ...start, isAllDay }, tzid);
-    const dtEndProperty = modelToDateProperty({ ...end, isAllDay }, tzid);
-
+export const modelToVeventComponent = (model) => {
+    const dateProperties = modelToDateProperties(model);
     const generalProperties = modelToGeneralProperties(model);
-
-    const valarmComponents = modelToValarmComponents(isAllDay ? fullDayNotifications : partDayNotifications);
+    const valarmComponents = modelToValarmComponents(model);
 
     const components = [...valarmComponents];
 
     return withRequiredProperties({
-        ...oldComponent,
         component: 'vevent',
         components,
         ...generalProperties,
-        dtstart: dtStartProperty,
-        dtend: dtEndProperty
+        ...dateProperties
     });
 };

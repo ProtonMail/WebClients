@@ -173,7 +173,14 @@ export const updateItem = (array, index, newItem) => {
 };
 export const removeItem = (array, index) => array.filter((oldValue, i) => i !== index);
 
-export const getTimeInUtc = ({ date, time, tzid }) => {
+export const getTimeInUtc = ({ date, time, tzid }, isAllDay) => {
+    if (isAllDay) {
+        return toUTCDate({
+            year: date.getFullYear(),
+            month: date.getMonth() + 1,
+            day: date.getDate()
+        });
+    }
     return toUTCDate(
         convertZonedDateTimeToUTC(
             {
@@ -188,7 +195,7 @@ export const getTimeInUtc = ({ date, time, tzid }) => {
     );
 };
 
-export const validate = ({ start, end, title }) => {
+export const validate = ({ start, end, isAllDay, title }) => {
     const errors = {};
 
     const generalProperties = modelToGeneralProperties({ title });
@@ -197,8 +204,8 @@ export const validate = ({ start, end, title }) => {
         errors.title = c('Error').t`Title required`;
     }
 
-    const utcStart = getTimeInUtc(start);
-    const utcEnd = getTimeInUtc(end);
+    const utcStart = getTimeInUtc(start, isAllDay);
+    const utcEnd = getTimeInUtc(end, isAllDay);
 
     if (utcStart > utcEnd) {
         errors.end = c('Error').t`Start time must be before end time`;
