@@ -32,32 +32,16 @@ export const getDateProperty = ({ year, month, day }) => {
     return dateToProperty({ year, month, day });
 };
 
-export const getDateTimeProperty = (zonelessTime, specificTzid, tzid) => {
-    /**
-     * If no specific timezone is wanted, convert the zoneless time
-     * into the current timezone (of the calendar). Then convert
-     * the zoned time into UTC time.
-     *
-     * Disable this behavior for now, because it breaks recurring events.
-     */
-    /*
-    if (!specificTzid) {
-        const utcZonedTime = convertZonedDateTimeToUTC(zonelessTime, tzid);
-        return dateTimeToProperty({
-            ...utcZonedTime,
-            isUTC: true
-        });
-    }
-    */
+export const getDateTimeProperty = (zonelessTime, tzid) => {
     /**
      * If a specific timezone is wanted, the zoneless time is already relative
      * to the specific timezone so we can store it as-is.
      */
-    const isUTC = !!(specificTzid || '').toLowerCase().includes('utc');
+    const isUTC = !!(tzid || '').toLowerCase().includes('utc');
     return dateTimeToProperty({
         ...zonelessTime,
         isUTC,
-        tzid: isUTC ? undefined : specificTzid
+        tzid: isUTC ? undefined : tzid
     });
 };
 

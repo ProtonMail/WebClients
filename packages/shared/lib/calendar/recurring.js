@@ -2,7 +2,7 @@
 import { differenceInMinutes } from 'date-fns';
 import { getInternalDateTimeValue, internalValueToIcalValue } from './vcal';
 import { isIcalAllDay, propertyToUTCDate } from './vcalConverter';
-import { addDays, addMilliseconds, differenceInCalendarDays, MILLISECONDS_IN_MINUTE } from '../date-fns-utc';
+import { addDays, addMilliseconds, differenceInCalendarDays, max, MILLISECONDS_IN_MINUTE } from '../date-fns-utc';
 import { fromUTCDate, toUTCDate } from '../date/timezone';
 
 const YEAR_IN_MS = Date.UTC(1971, 0, 1);
@@ -20,7 +20,6 @@ const fillOccurrencesBetween = (start, end, iterator, eventDuration, internalDts
     // eslint-disable-next-line no-cond-assign
     while ((next = iterator.next())) {
         const localStart = toUTCDate(getInternalDateTimeValue(next));
-        const localEnd = addMilliseconds(localStart, eventDuration);
 
         const utcStart = propertyToUTCDate({
             value: {
@@ -35,7 +34,7 @@ const fillOccurrencesBetween = (start, end, iterator, eventDuration, internalDts
             : propertyToUTCDate({
                   value: {
                       ...internalDtstart.value,
-                      ...fromUTCDate(localEnd)
+                      ...fromUTCDate(addMilliseconds(localStart, eventDuration))
                   },
                   parameters: internalDtstart.parameters
               });
@@ -62,7 +61,11 @@ export const getOccurencesBetween = (component, start, end, cache = {}) => {
         const dtstart = internalValueToIcalValue(dtstartType, { ...internalDtstart.value, isUTC: true });
 
         const utcStart = propertyToUTCDate(internalDtstart);
-        const utcEnd = propertyToUTCDate(internalDtEnd);
+        const rawEnd = propertyToUTCDate(internalDtEnd);
+        const modifiedEnd = isAllDay
+            ? addDays(rawEnd, -1) // All day event range is non-inclusive
+            : rawEnd;
+        const utcEnd = max(utcStart, modifiedEnd);
 
         const eventDuration = isAllDay
             ? differenceInCalendarDays(utcEnd, utcStart)
