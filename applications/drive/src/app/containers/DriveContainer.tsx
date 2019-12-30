@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useModals, Loader, useLoading } from 'react-components';
 import { RouteComponentProps } from 'react-router';
 import { c } from 'ttag';
-import Drive, { DriveResource } from '../components/Drive';
+import Drive from '../components/Drive';
 import useDrive from '../hooks/useDrive';
 import { LinkType } from '../interfaces/folder';
-import OnboardingModal from '../components/OnboardingModal/OnboardingModal';
 import Page from '../components/Page';
 import StickyHeader from '../components/StickyHeader';
+import { DriveResource, useDriveResource } from '../components/DriveResourceProvider';
 
 const toLinkType = (type: string) => {
     if (type === 'folder') {
@@ -29,10 +28,9 @@ const toResource = (shareId?: string, type?: string, linkId?: string): DriveReso
 };
 
 function DriveContainer({ match, history }: RouteComponentProps<{ shareId?: string; linkId?: string; type?: string }>) {
-    const { createModal } = useModals();
-    const [loading, withLoading] = useLoading();
-    const { createVolume, loadDrive } = useDrive();
-    const [resource, setResource] = useState<DriveResource>();
+    const { loadDrive } = useDrive();
+    const [, setError] = useState();
+    const { resource, setResource } = useDriveResource();
 
     const navigateToResource = (resource: DriveResource) => {
         history.push(`/drive/${resource.shareId}/folder/${resource.linkId}`);
@@ -40,43 +38,29 @@ function DriveContainer({ match, history }: RouteComponentProps<{ shareId?: stri
 
     useEffect(() => {
         const { shareId, type, linkId } = match.params;
-        let didCancel = false;
 
         const initDrive = async () => {
-            const initResult = await loadDrive();
-
-            if (!initResult) {
-                createModal(<OnboardingModal />);
-                const { Share } = await createVolume();
-                if (!didCancel) {
-                    setResource({ shareId: Share.ID, linkId: Share.LinkID, type: LinkType.FOLDER });
-                }
-                return;
-            }
-
             const initialResource = toResource(shareId, type, linkId);
-
-            if (didCancel) {
-                return;
-            }
 
             if (initialResource) {
                 setResource(initialResource);
             } else {
+                const initResult = await loadDrive();
+
+                if (!initResult) {
+                    throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
+                }
+
                 const { Share } = initResult;
                 setResource({ shareId: Share.ShareID, linkId: Share.LinkID, type: LinkType.FOLDER });
             }
         };
 
-        withLoading(initDrive()).catch((error) =>
-            setResource(() => {
+        initDrive().catch((error) =>
+            setError(() => {
                 throw error;
             })
         );
-
-        return () => {
-            didCancel = true;
-        };
     }, [match.params]);
 
     return (
@@ -84,11 +68,7 @@ function DriveContainer({ match, history }: RouteComponentProps<{ shareId?: stri
             <StickyHeader>
                 <h3 className="mb0">{c('Title').t`My files`}</h3>
             </StickyHeader>
-            {loading ? (
-                <Loader size="medium" />
-            ) : (
-                resource && <Drive resource={resource} openResource={navigateToResource} />
-            )}
+            {resource && <Drive resource={resource} openResource={navigateToResource} />}
         </Page>
     );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { Sidebar, AppsSidebar, useToggle } from 'react-components';
 import Header from './PrivateHeader';
+import UploadButton from '../uploads/UploadButton';
 
 const getSidebar = () => {
     return [
@@ -37,7 +38,9 @@ const PrivateLayout = ({ children }: Props) => {
                         onToggleExpand={toggleHeaderExpanded}
                         list={getSidebar()}
                         mobileLinks={getMobileLinks()}
-                    />
+                    >
+                        <UploadButton />
+                    </Sidebar>
                     <main className="main flex-item-fluid">{children}</main>
                 </div>
             </div>
