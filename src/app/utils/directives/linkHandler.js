@@ -110,6 +110,7 @@ function linkHandler(
         // We only handle anchor that begins with `mailto:`
         if (src.raw.toLowerCase().startsWith('mailto:')) {
             e.preventDefault();
+            e.stopPropagation(); // Required for Safari
 
             const message = messageModel(mailUtils.mailtoParser(e.target.getAttribute('href')));
 
