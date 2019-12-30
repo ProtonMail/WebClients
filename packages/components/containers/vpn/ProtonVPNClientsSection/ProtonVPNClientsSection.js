@@ -11,7 +11,7 @@ const ProtonVPNClientsSection = () => {
                 <VPNClientCard
                     title={c('VPNClient').t`Android`}
                     icon="android"
-                    link="https://play.google.com/store/apps/details?id=com.protonvpn.android&utm_source=protonvpn.com&utm_content=dashboard"
+                    link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_source=protonvpn.com&utm_content=dashboard"
                 />
                 <VPNClientCard
                     title={c('VPNClient').t`iOS`}
