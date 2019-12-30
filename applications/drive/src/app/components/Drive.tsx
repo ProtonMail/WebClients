@@ -2,20 +2,22 @@ import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useMainArea } from 'react-components';
 import { LinkType, DriveLink } from '../interfaces/folder';
 import useShare from '../hooks/useShare';
-import useFileBrowser from './FileBrowser/useFileBrowser';
-import FileBrowser, { FileBrowserItem } from './FileBrowser/FileBrowser';
-import useDownload from '../hooks/useDownload';
-import DownloadsInfo from './downloads/DownloadsInfo/DownloadsInfo';
+import useFiles from '../hooks/useFiles';
 import useOnScrollEnd from '../hooks/useOnScrollEnd';
 import { FOLDER_PAGE_SIZE } from '../constants';
+import useFileBrowser from './FileBrowser/useFileBrowser';
+import FileBrowser, { FileBrowserItem } from './FileBrowser/FileBrowser';
+import { DriveResource } from './DriveResourceProvider';
+import { useUploadProvider, UploadState } from './uploads/UploadProvider';
+import TransfersInfo from './TransfersInfo/TransfersInfo';
 
-export type DriveResource = { shareId: string; type: LinkType; linkId: string };
 const mapLinksToChildren = (decryptedLinks: DriveLink[]): FileBrowserItem[] =>
-    decryptedLinks.map(({ LinkID, Type, Name, Modified }) => ({
+    decryptedLinks.map(({ LinkID, Type, Name, Modified, Size }) => ({
         Name,
         LinkID,
         Type,
-        Modified
+        Modified,
+        Size
     }));
 
 interface Props {
@@ -26,7 +28,8 @@ interface Props {
 function Drive({ resource, openResource }: Props) {
     const mainAreaRef = useMainArea();
     const { getFolderContents } = useShare(resource.shareId);
-    const { downloadDriveFile } = useDownload(resource.shareId);
+    const { downloadDriveFile } = useFiles(resource.shareId);
+    const { uploads } = useUploadProvider();
     const [contents, setContents] = useState<FileBrowserItem[]>();
     const [loading, setLoading] = useState(false);
     const {
@@ -42,14 +45,14 @@ function Drive({ resource, openResource }: Props) {
     const loadingPage = useRef<number | null>(null);
 
     const loadNextIncrement = useCallback(
-        async (page = 0) => {
+        async (page = 0, isReload = false) => {
             if (loadingPage.current !== null || isDoneLoading.current) {
                 return;
             }
 
             setLoading(true);
             loadingPage.current = page;
-            const decryptedLinks = await getFolderContents(resource.linkId, page, FOLDER_PAGE_SIZE);
+            const decryptedLinks = await getFolderContents(resource.linkId, page, FOLDER_PAGE_SIZE, isReload);
 
             // If resource changed while loading contents discard the result
             if (loadingPage.current === page) {
@@ -59,7 +62,9 @@ function Drive({ resource, openResource }: Props) {
                 // eslint-disable-next-line require-atomic-updates
                 isDoneLoading.current = decryptedLinks.length !== FOLDER_PAGE_SIZE;
 
-                setContents((prev = []) => [...prev, ...mapLinksToChildren(decryptedLinks)]);
+                setContents((prev = []) =>
+                    isReload ? mapLinksToChildren(decryptedLinks) : [...prev, ...mapLinksToChildren(decryptedLinks)]
+                );
                 setLoading(false);
             }
         },
@@ -93,6 +98,22 @@ function Drive({ resource, openResource }: Props) {
 
     useOnScrollEnd(handleScrollEnd, mainAreaRef);
 
+    const uploadedCount = uploads.filter(
+        ({ state, info }) =>
+            state === UploadState.Done && info.linkId === resource.linkId && info.shareId === resource.shareId
+    ).length;
+
+    useEffect(() => {
+        if (uploadedCount) {
+            loadNextIncrement(0, true);
+        }
+
+        return () => {
+            isDoneLoading.current = false;
+            loadingPage.current = null;
+        };
+    }, [uploadedCount]);
+
     const handleDoubleClick = (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
         if (item.Type === LinkType.FOLDER) {
@@ -115,7 +136,7 @@ function Drive({ resource, openResource }: Props) {
                 onToggleAllSelected={toggleAllSelected}
                 onShiftClick={selectRange}
             />
-            <DownloadsInfo />
+            <TransfersInfo />
         </>
     );
 }

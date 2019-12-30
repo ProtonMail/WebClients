@@ -1,9 +1,36 @@
+export enum FileRevisionState {
+    Draft = 0,
+    Active = 1,
+    Inactive = 2
+}
+
 export interface ActiveFileRevision {
     ID: number;
     Created: number;
     Size: number;
     Hash: string;
-    State: number;
+    State: FileRevisionState;
+}
+
+export interface CreateDriveFile {
+    Name: string;
+    Hash: string;
+    ParentLinkID: string;
+    NodePassphrase: string;
+    NodeKey: string;
+    MimeType: string;
+    Size: number;
+    ContentKeyPacket: string;
+}
+
+export interface UpdateFileRevision {
+    State: FileRevisionState;
+    BlockList: { Index: number; Token: string }[];
+}
+
+export interface DriveBlock {
+    BlockHash: string;
+    HashType: string;
 }
 
 export interface DriveFile {
@@ -21,6 +48,22 @@ export interface DriveFile {
 
 export interface DriveFileResult {
     File: DriveFile;
+}
+
+export interface FileUploadInfo {
+    ID: string;
+    RevisionID: string;
+}
+
+export interface CreateFileResult {
+    File: FileUploadInfo;
+}
+
+export interface RequestUploadResult {
+    UploadLinks: {
+        Token: string;
+        URL: string;
+    }[];
 }
 
 export interface DriveFileBlock {
