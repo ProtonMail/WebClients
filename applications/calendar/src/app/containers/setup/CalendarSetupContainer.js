@@ -26,7 +26,7 @@ const CalendarSetupContainer = ({ calendars, user: { isFree }, children }) => {
         const isNoCalendarSetup = calendars.length === 0;
 
         const getModal = () => {
-            if (isNoCalendarSetup && isFree) {
+            if (isFree) {
                 return <FreeModal />;
             }
 
