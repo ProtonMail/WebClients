@@ -18,9 +18,10 @@ import {
     Select,
     Label,
     EmailInput,
-    useApiWithoutResult,
     useNotifications,
-    useConfig
+    useConfig,
+    useLoading,
+    useApi
 } from 'react-components';
 
 import AttachScreenshot from './AttachScreenshot';
@@ -29,6 +30,8 @@ import { collectInfo, getClient } from '../../helpers/report';
 const { VPN } = CLIENT_TYPES;
 
 const BugModal = ({ onClose, username: Username = '', location, addresses = [], ...rest }) => {
+    const api = useApi();
+    const [loading, withLoading] = useLoading();
     const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
 
     const mailTitles = [
@@ -60,53 +63,59 @@ const BugModal = ({ onClose, username: Username = '', location, addresses = [], 
         { value: 'Feature request', text: c('Bug category').t`Feature request` }
     ];
 
-    const titles = CLIENT_TYPE === VPN ? vpnTitles : mailTitles;
-    const criticalEmail = CLIENT_TYPE === VPN ? 'contact@protonvpn.com' : 'security@protonmail.com';
-    const clearCacheLink =
-        CLIENT_TYPE === VPN
-            ? 'https://protonvpn.com/support/clear-browser-cache-cookies/'
-            : 'https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/';
-    const Client = getClient(CLIENT_ID);
+    const isVpn = CLIENT_TYPE === VPN;
+
+    const titles = isVpn ? vpnTitles : mailTitles;
+    const criticalEmail = isVpn ? 'contact@protonvpn.com' : 'security@protonmail.com';
+    const clearCacheLink = isVpn
+        ? 'https://protonvpn.com/support/clear-browser-cache-cookies/'
+        : 'https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/';
     const { createNotification } = useNotifications();
     const [{ Email = '' } = {}] = addresses;
     const options = titles.reduce(
         (acc, { text, value }) => {
-            acc.push({
-                text,
-                value: `[${Client}] Bug [${location.pathname}] ${value}`
-            });
+            acc.push({ text, value });
             return acc;
         },
         [{ text: c('Action to select a title for the bug report modal').t`Select`, value: '', disabled: true }]
     );
     const [model, update] = useState({
         ...collectInfo(),
-        Client,
-        ClientVersion: APP_VERSION,
-        ClientType: CLIENT_TYPE,
-        Title: CLIENT_TYPE === VPN ? options[0].value : `[V4] ${options[0].value}`,
-        Description: '',
-        Username,
-        Email
+        Title: '',
+        Description: ''
     });
     const { state: showDetails, toggle: toggleDetails } = useToggle(false);
     const [images, setImages] = useState([]);
-    const { request, loading } = useApiWithoutResult(reportBug);
     const link = <Href key="linkClearCache" url={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
     const handleChange = (key) => ({ target }) => update({ ...model, [key]: target.value });
 
     const getParameters = () => {
-        return images.reduce(
-            (acc, { name, blob }) => {
-                acc[name] = blob;
-                return acc;
-            },
-            { ...model }
-        );
+        const imageBlobs = images.reduce((acc, { name, blob }) => {
+            acc[name] = blob;
+            return acc;
+        }, {});
+
+        const Client = getClient(CLIENT_ID);
+
+        const Title = [!isVpn && '[V4]', `[${Client}] Bug [${location.pathname}]`, model.Title]
+            .filter(Boolean)
+            .join(' ');
+
+        return {
+            ...imageBlobs,
+            ...model,
+            Client,
+            ClientVersion: APP_VERSION,
+            ClientType: CLIENT_TYPE,
+            Title,
+            Username,
+            Email
+        };
     };
 
     const handleSubmit = async () => {
-        await request(getParameters(), 'form');
+        const data = getParameters();
+        await api(reportBug(data, 'form'));
         onClose();
         createNotification({ text: c('Success').t`Bug reported` });
     };
@@ -121,7 +130,7 @@ const BugModal = ({ onClose, username: Username = '', location, addresses = [], 
     return (
         <FormModal
             onClose={onClose}
-            onSubmit={handleSubmit}
+            onSubmit={() => withLoading(handleSubmit())}
             loading={loading}
             submit={c('Action').t`Submit`}
             title={c('Title').t`Report bug`}
