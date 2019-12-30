@@ -46,7 +46,7 @@
   background: var(--bgcolor-item-column-active, $conversation-selected-bg);
 }
 
-.item-container:not(.item-is-selected):not(.item-contact):not(.read):not(.active) {
+.item-container:not(.item-is-selected):not(.read):not(.active) {
   background: var(--bgcolor-toolbar, $white);
 }
 
