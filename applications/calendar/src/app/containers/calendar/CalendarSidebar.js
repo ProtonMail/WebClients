@@ -8,7 +8,9 @@ import {
     Checkbox,
     useEventManager,
     useApi,
-    useLoading
+    useLoading,
+    MobileNavServices,
+    MobileNavLink
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
@@ -68,6 +70,12 @@ const CalendarSidebar = ({
         }
     ];
 
+    const mobileLinks = [
+        { to: '/inbox', icon: 'protonmail', external: true, current: false },
+        { to: '/contacts', icon: 'protoncontacts', external: true, current: false },
+        { to: '/calendar', icon: 'protoncalendar', external: false, current: true }
+    ].filter(Boolean);
+
     return (
         <div
             className="sidebar flex flex-nowrap flex-column noprint customScrollBar-container"
@@ -91,6 +99,11 @@ const CalendarSidebar = ({
                 <NavMenu list={list} className="mb0" />
                 {calendarsListView}
             </nav>
+            <MobileNavServices>
+                {mobileLinks.map(({ to, icon, external, current }) => {
+                    return <MobileNavLink key={icon} to={to} icon={icon} external={external} current={current} />;
+                })}
+            </MobileNavServices>
         </div>
     );
 };

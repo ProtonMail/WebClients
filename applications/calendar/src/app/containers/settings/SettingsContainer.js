@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import {
     useToggle,
     useActiveBreakpoint,
-    useUser,
     useCalendarUserSettings,
     AppsSidebar,
     Sidebar,
@@ -22,7 +21,6 @@ const SettingsContainer = ({ calendars }) => {
     const mainAreaRef = useRef();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
-    const [{ isPaid }] = useUser();
 
     useEffect(() => {
         setExpand(false);
@@ -41,7 +39,7 @@ const SettingsContainer = ({ calendars }) => {
     const mobileLinks = [
         { to: '/inbox', icon: 'protonmail', external: true, current: false },
         { to: '/contacts', icon: 'protoncontacts', external: true, current: false },
-        isPaid && { to: '/calendar', icon: 'protoncalendar', external: false, current: true }
+        { to: '/calendar', icon: 'protoncalendar', external: false, current: true }
     ].filter(Boolean);
 
     return (
