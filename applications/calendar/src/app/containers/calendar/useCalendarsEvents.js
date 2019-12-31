@@ -130,12 +130,12 @@ const setEventInCache = (Event, { tree, events, recurringEvents, decryptedEvents
 
             recurringEvents.set(EventID, {});
         } else {
-            if (oldEvent && oldEvent.isRecurring) {
+            const isOldRecurring = oldEvent && oldEvent.isRecurring;
+            if (isOldRecurring) {
                 recurringEvents.delete(EventID);
             }
 
-            if (!oldEvent) {
-                // First time
+            if (!oldEvent || isOldRecurring) {
                 tree.insert(+start, +end, EventID);
             } else if (+start !== +oldEvent.start || +end !== +oldEvent.end) {
                 // Interval changed
