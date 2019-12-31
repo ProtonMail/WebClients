@@ -146,6 +146,7 @@ const DateTimeRow = ({
             onChange={handleChangeEndDate}
             aria-invalid={!!endError}
             displayWeekNumbers={displayWeekNumbers}
+            weekStartsOn={weekStartsOn}
             min={minEndDate}
         />
     );
