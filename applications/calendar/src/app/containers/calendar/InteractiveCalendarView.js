@@ -18,7 +18,7 @@ import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import createOrUpdateEvent from 'proton-shared/lib/calendar/integration/createOrUpdateEvent';
-import { deleteEvent } from 'proton-shared/lib/api/calendars';
+import { deleteEvent, updateCalendar } from 'proton-shared/lib/api/calendars';
 
 import {
     getExistingEvent,
@@ -405,6 +405,12 @@ const InteractiveCalendarView = ({
             calendarKeys,
             api
         });
+
+        const calendar = calendars.find(({ ID }) => ID === calendarID);
+        if (calendar && !calendar.Display) {
+            await api(updateCalendar(calendarID, { Display: 1 }));
+        }
+
         await call();
     };
 
