@@ -30,6 +30,7 @@ export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name ==
 export const isSafariMobile = () => ua.browser.name === 'Mobile Safari';
 export const isIE11 = () => ua.browser.name === 'IE' && ua.browser.major === '11';
 export const isEdge = () => ua.browser.name === 'Edge';
+export const isEdgeChromium = () => isEdge() && ua.engine.name === 'Blink';
 export const isFirefox = () => ua.browser.name === 'Firefox';
 export const isChrome = () => ua.browser.name === 'Chrome';
 export const isMac = () => ua.os.name === 'Mac OS';
