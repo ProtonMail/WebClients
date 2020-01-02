@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import registerServiceWorker from 'service-worker-loader!./downloadSW';
-import { isSafari, isEdge } from 'proton-shared/lib/helpers/browser';
+import { isSafari, isEdge, isEdgeChromium } from 'proton-shared/lib/helpers/browser';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 
 interface DownloadMeta {
@@ -14,7 +14,7 @@ interface DownloadMeta {
  * Edge - doesn't support ReadableStream() constructor, will support it in chromium version.
  * For them download is done in-memory using blob response.
  */
-let useBlobFallback = isSafari() || isEdge();
+let useBlobFallback = isSafari() || (isEdge() && !isEdgeChromium());
 
 function createDownloadIframe(src: string) {
     const iframe = document.createElement('iframe');
