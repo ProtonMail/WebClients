@@ -4,6 +4,15 @@ import { toPercent } from './mouseHelpers/mathHelpers';
 import { splitDayEventsInInterval } from './splitDayEventsInInterval';
 import { layout } from './layout';
 
+const getIsAllSingle = (eventsInRowSummary, start, end) => {
+    for (let i = start; i < end; ++i) {
+        if (eventsInRowSummary[i].more !== 1) {
+            return false;
+        }
+    }
+    return true;
+};
+
 const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
     return useMemo(() => {
         return rows.map((row) => {
@@ -24,9 +33,7 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
 
                 maxRows = Math.max(maxRows, eventRow + 1);
 
-                // Special case for full day event since they push the whole row down.
-                let dayIndex = start;
-                for (; dayIndex < end; ++dayIndex) {
+                for (let dayIndex = start; dayIndex < end; ++dayIndex) {
                     if (!acc[dayIndex]) {
                         acc[dayIndex] = { more: 0, events: [] };
                     }
@@ -38,27 +45,17 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
                 return acc;
             }, {});
 
-            const moreDays = Object.keys(eventsInRowSummary).reduce((acc, dayIndex) => {
-                if (eventsInRowSummary[dayIndex].more <= 0) {
-                    return acc;
-                }
-                acc.push({
-                    idx: +dayIndex,
-                    type: 'more',
-                    style: {
-                        top: `${numberOfRows * dayEventHeight}px`,
-                        left: toPercent(dayIndex / columns),
-                        height: `${dayEventHeight}px`,
-                        width: toPercent(1 / columns)
-                    }
-                });
-                return acc;
-            }, []);
-
             const eventsInRowStyles = eventsLaidOut.reduce((acc, { column: eventRow }, i) => {
                 const { start, end } = eventsInRow[i];
 
-                if (eventRow >= numberOfRows) {
+                const isAllSingle = getIsAllSingle(eventsInRowSummary, start, end);
+                if (isAllSingle) {
+                    for (let i = start; i < end; ++i) {
+                        eventsInRowSummary[i].more = 0;
+                    }
+                }
+
+                if (eventsInRowSummary[start].more > 0 && eventRow >= numberOfRows) {
                     return acc;
                 }
 
@@ -77,6 +74,23 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
                     }
                 });
 
+                return acc;
+            }, []);
+
+            const moreDays = Object.keys(eventsInRowSummary).reduce((acc, dayIndex) => {
+                if (eventsInRowSummary[dayIndex].more <= 0) {
+                    return acc;
+                }
+                acc.push({
+                    idx: +dayIndex,
+                    type: 'more',
+                    style: {
+                        top: `${numberOfRows * dayEventHeight}px`,
+                        left: toPercent(dayIndex / columns),
+                        height: `${dayEventHeight}px`,
+                        width: toPercent(1 / columns)
+                    }
+                });
                 return acc;
             }, []);
 
