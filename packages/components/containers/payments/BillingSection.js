@@ -309,7 +309,7 @@ const BillingSection = ({ permission }) => {
                         <div className="flex-autogrid-item">
                             {Cycle === MONTHLY ? (
                                 <LinkButton className="p0" onClick={handleOpenSubscriptionModal}>{c('Action')
-                                    .t`Pay annualy and save 20%!`}</LinkButton>
+                                    .t`Pay annually and save 20%!`}</LinkButton>
                             ) : null}
                         </div>
                         <div className="flex-autogrid-item bold alignright">{i18n[Cycle]}</div>
