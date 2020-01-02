@@ -5,12 +5,18 @@ export const splitDayEventsInInterval = ({ events = [], min: minDate, max: maxDa
         const startDate = startOfDay(max(start, minDate));
         const endDate = endOfDay(min(end, maxDate));
 
+        const isDisplayedMultipleDays = isAllDay || isAllPartDay;
+
         if (startDate >= endDate) {
             return acc;
         }
 
-        // For part day events, lock it into one day even if it happens to span multiple days, but not considered an all day part event.
-        const calendarDaysDifference = isAllDay || isAllPartDay ? differenceInCalendarDays(endDate, startDate) : 0;
+        // Part day events that are not displayed as all day events that start before the date range, are already displayed in a previous row.
+        if (!isDisplayedMultipleDays && startDate > start) {
+            return acc;
+        }
+
+        const calendarDaysDifference = isDisplayedMultipleDays ? differenceInCalendarDays(endDate, startDate) : 0;
         const startIndex = differenceInCalendarDays(startDate, minDate);
 
         acc.push({
