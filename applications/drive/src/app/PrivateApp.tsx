@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { ErrorBoundary, StandardPrivateApp, GenericError } from 'react-components';
+import { StandardPrivateApp } from 'react-components';
 import { UserModel, AddressesModel } from 'proton-shared/lib/models';
 
 import DriveContainer from './containers/DriveContainer';
@@ -9,6 +9,7 @@ import { DownloadProvider } from './components/downloads/DownloadProvider';
 import { openpgpConfig } from './openpgpConfig';
 import { UploadProvider } from './components/uploads/UploadProvider';
 import DriveResourceProvider from './components/DriveResourceProvider';
+import AppErrorBoundary from './components/AppErrorBoundary';
 
 interface Props {
     onLogout: () => void;
@@ -26,27 +27,12 @@ const PrivateApp = ({ onLogout }: Props) => {
                 <UploadProvider>
                     <DownloadProvider>
                         <PrivateLayout>
-                            <Route
-                                render={({ location }) => (
-                                    <ErrorBoundary
-                                        key={location.key}
-                                        component={
-                                            <div className="p2 main-area">
-                                                <GenericError />
-                                            </div>
-                                        }
-                                    >
-                                        <Switch>
-                                            <Route
-                                                path="/drive/:shareId?/:type?/:linkId?"
-                                                exact
-                                                component={DriveContainer}
-                                            />
-                                            <Redirect to="/drive" />
-                                        </Switch>
-                                    </ErrorBoundary>
-                                )}
-                            />
+                            <AppErrorBoundary>
+                                <Switch>
+                                    <Route path="/drive/:shareId?/:type?/:linkId?" exact component={DriveContainer} />
+                                    <Redirect to="/drive" />
+                                </Switch>
+                            </AppErrorBoundary>
                         </PrivateLayout>
                     </DownloadProvider>
                 </UploadProvider>

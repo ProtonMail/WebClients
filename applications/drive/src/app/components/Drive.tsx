@@ -63,7 +63,7 @@ function Drive({ resource, openResource }: Props) {
                 isDoneLoading.current = decryptedLinks.length !== FOLDER_PAGE_SIZE;
 
                 setContents((prev = []) =>
-                    isReload ? mapLinksToChildren(decryptedLinks) : [...prev, ...mapLinksToChildren(decryptedLinks)]
+                    page === 0 ? mapLinksToChildren(decryptedLinks) : [...prev, ...mapLinksToChildren(decryptedLinks)]
                 );
                 setLoading(false);
             }
