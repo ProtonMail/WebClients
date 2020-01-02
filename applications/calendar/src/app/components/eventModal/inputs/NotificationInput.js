@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Input, Select, TimeInput, classnames } from 'react-components';
 import { c, msgid } from 'ttag';
 
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, NOTIFICATION_TYPE } from '../../../constants';
+import { NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICATION_WHEN, NOTIFICATION_TYPE } from '../../../constants';
 
 const { EMAIL, DEVICE } = NOTIFICATION_TYPE;
 const { DAY, MINUTES, HOURS, WEEK } = NOTIFICATION_UNITS;
@@ -19,7 +19,8 @@ const NotificationInput = ({
 }) => {
     const isAllDayBefore = isAllDay && when === BEFORE;
 
-    const numberValue = +value || 0;
+    const maxValue = NOTIFICATION_UNITS_MAX[unit];
+    const numberValue = Math.min(+value || 0, maxValue);
 
     const notificationI18N = isAllDay
         ? {
@@ -56,6 +57,7 @@ const NotificationInput = ({
                     className="mr1"
                     step="1"
                     min="0"
+                    max={'' + maxValue}
                     value={value === '' ? '' : numberValue}
                     onInput={({ target, target: { value: newValue, validity } }) => {
                         const isClear = validity.valid;
@@ -77,6 +79,9 @@ const NotificationInput = ({
                             }
                         }
                         if (intValue < 0) {
+                            return;
+                        }
+                        if (intValue > maxValue) {
                             return;
                         }
                         target.value = intValue;
@@ -104,7 +109,8 @@ const NotificationInput = ({
                             onChange({ ...notification, value: 1, unit: newUnit });
                             return;
                         }
-                        onChange({ ...notification, unit: newUnit });
+                        const normalizedValue = Math.min(notification.value, NOTIFICATION_UNITS_MAX[newUnit]);
+                        onChange({ ...notification, value: normalizedValue, unit: newUnit });
                     }}
                 />
             </span>
