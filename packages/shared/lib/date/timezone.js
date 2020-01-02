@@ -97,6 +97,10 @@ const guessTimezone = (timezones) => {
 export const getTimezone = () => {
     const timezones = listTimeZones();
     const timezone = guessTimezone(timezones);
+    // Special case for UTC since the API calls it UTC and not Etc/UTC
+    if (timezone === 'Etc/UTC') {
+        return 'UTC';
+    }
     if (!timezone || NOT_SUPPORTED_ZONES.indexOf(timezone) !== -1) {
         return timezones[0];
     }
