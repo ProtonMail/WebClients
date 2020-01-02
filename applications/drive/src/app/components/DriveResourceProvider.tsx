@@ -6,7 +6,7 @@ import OnboardingModal from './OnboardingModal/OnboardingModal';
 
 interface DriveResourceProviderState {
     resource?: DriveResource;
-    setResource: (resource: DriveResource) => void;
+    setResource: (resource?: DriveResource) => void;
 }
 
 export type DriveResource = { shareId: string; type: LinkType; linkId: string };
