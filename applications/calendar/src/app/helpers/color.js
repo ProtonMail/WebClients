@@ -7,7 +7,7 @@ import { COLORS } from '../constants';
  * @param {String} backgroundColor
  * @returns {String} COLORS.BLACK, COLORS.WHITE
  */
-export const bestColor = (backgroundColor = '') => {
+export const getConstrastingColor = (backgroundColor = '') => {
     const colorModel = tinycolor(backgroundColor);
     return colorModel.isLight() ? COLORS.BLACK : COLORS.WHITE;
 };

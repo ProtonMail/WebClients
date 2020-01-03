@@ -14,6 +14,7 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
+import { getConstrastingColor } from '../../helpers/color';
 
 const CalendarSidebar = ({
     expanded = false,
@@ -45,7 +46,7 @@ const CalendarSidebar = ({
                     <span className="flex flex-nowrap flex-items-center">
                         <Checkbox
                             className="mr0-25 fill-currentColor flex-item-noshrink"
-                            color="white"
+                            color={getConstrastingColor(Color)}
                             backgroundColor={Color}
                             borderColor={Color}
                             checked={!!Display}

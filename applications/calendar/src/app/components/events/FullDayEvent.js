@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { Icon, classnames } from 'react-components';
 
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
-import { bestColor } from '../../helpers/color';
+import { getConstrastingColor } from '../../helpers/color';
 
 const FullDayEvent = ({
     style,
@@ -26,7 +26,7 @@ const FullDayEvent = ({
         const background = calendarColor;
         return {
             background,
-            color: bestColor(background)
+            color: getConstrastingColor(background)
         };
     }, [calendarColor, isAllDay, isSelected]);
 

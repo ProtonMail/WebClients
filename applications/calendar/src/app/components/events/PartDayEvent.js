@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { classnames, Icon } from 'react-components';
 
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
-import { bestColor } from '../../helpers/color';
+import { getConstrastingColor } from '../../helpers/color';
 
 const PartDayEvent = ({
     style,
@@ -20,11 +20,11 @@ const PartDayEvent = ({
         return {
             ...style,
             background,
-            color: bestColor(background)
+            color: getConstrastingColor(background)
         };
     }, [calendarColor, style, isAllDay, isSelected]);
 
-    const titleString = tmpData && tmpData.title || !loading && model.title || '';
+    const titleString = (tmpData && tmpData.title) || (!loading && model.title) || '';
 
     const timeString = useMemo(() => {
         const timeStart = formatTime(start);
