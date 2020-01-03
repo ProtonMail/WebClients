@@ -40,12 +40,12 @@ const CalendarsSection = ({ calendars }) => {
         await new Promise((resolve, reject) => {
             createModal(
                 <ConfirmModal
-                    title={c('Title').t`Confirm delete`}
+                    title={c('Title').t`Delete calendar`}
                     confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                     onClose={reject}
                     onConfirm={resolve}
                 >
-                    <Alert>{c('Info').t`Are you sure you want to delete this calendar?`}</Alert>
+                    <Alert type="error">{c('Info').t`Are you sure you want to delete this calendar?`}</Alert>
                 </ConfirmModal>
             );
         });

@@ -436,15 +436,16 @@ const InteractiveCalendarView = ({
             const message = isRecurring
                 ? c('Info').t`Would you like to delete all recurring events?`
                 : c('Info').t`Would you like to delete this event?`;
+            const title = isRecurring ? c('Info').t`Delete events` : c('Info').t`Delete event`;
             createModal(
                 <ConfirmModal
                     confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
-                    title={c('Info').t`Delete event`}
+                    title={title}
                     close={<ResetButton autoFocus={true}>{c('Action').t`Cancel`}</ResetButton>}
                     onClose={reject}
                     onConfirm={resolve}
                 >
-                    <Alert>{message}</Alert>
+                    <Alert type="error">{message}</Alert>
                 </ConfirmModal>
             );
         });
