@@ -47,7 +47,7 @@ const CalendarSidebar = ({
                         <Checkbox
                             className="mr0-25 fill-currentColor flex-item-noshrink"
                             color={getConstrastingColor(Color)}
-                            backgroundColor={Color}
+                            backgroundColor={Display ? Color : 'transparent'} // transparent for the disabled state
                             borderColor={Color}
                             checked={!!Display}
                             disabled={loadingAction}
