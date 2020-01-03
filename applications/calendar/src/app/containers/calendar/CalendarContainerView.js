@@ -157,6 +157,7 @@ const CalendarContainerView = ({
                                     dateCursorButtons={
                                         <DateCursorButtons
                                             view={view}
+                                            range={range}
                                             dateRange={localDateRange}
                                             currentDate={localDate}
                                             now={localNowDate}

@@ -25,8 +25,7 @@ import InteractiveCalendarView from './InteractiveCalendarView';
 import AlarmContainer from '../alarms/AlarmContainer';
 import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
 import { canAskTimezoneSuggestion, saveLastTimezoneSuggestion } from '../../helpers/timezoneSuggestion';
-//import { hasBit } from 'proton-shared/lib/helpers/bitset';
-//import { CALENDAR_STATUS } from 'proton-shared/lib/calendar/constants';
+import { getTitleDateString } from './formatHelper';
 
 const { DAY, WEEK, MONTH } = VIEWS;
 
@@ -274,6 +273,11 @@ const CalendarContainer = ({ calendars, history, location }) => {
         history.push({ pathname: newRoute });
         // Intentionally not listening to everything to only trigger URL updates when these variables change.
     }, [view, range, utcDate]);
+
+    useEffect(() => {
+        const titleDateString = getTitleDateString(view, range, utcDateRange, utcDate);
+        document.title = [titleDateString, 'ProtonCalendar'].filter(Boolean).join(' - ');
+    }, [view, range, utcDate, utcDateRange]);
 
     const [calendarsEvents, loadingEvents, getCachedEvent] = useCalendarsEvents(
         visibleCalendars,

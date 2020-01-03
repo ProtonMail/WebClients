@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Icon } from 'react-components';
-import { format, differenceInWeeks } from 'date-fns';
+import { format } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
 
 import { VIEWS } from '../constants';
@@ -17,30 +17,35 @@ const FORMATS = {
     [AGENDA]: 'MMM yyyy'
 };
 
-const DateCursorButtons = ({ view, currentDate, now, dateRange, onToday, onPrev, onNext }) => {
-    const currentRange = useMemo(() => {
-        const formatOptions = { locale: dateLocale };
-        if (view === WEEK || (view === MONTH && differenceInWeeks(dateRange[1], dateRange[0]) < 3)) {
-            if (dateRange[0].getMonth() === dateRange[1].getMonth()) {
-                const month = format(currentDate, 'MMM yyyy', formatOptions);
-                const from = format(dateRange[0], 'd', formatOptions);
-                const to = format(dateRange[1], 'd', formatOptions);
-                return `${from} - ${to} ${month}`;
-            }
-            if (dateRange[0].getFullYear() === dateRange[1].getFullYear()) {
-                const year = format(currentDate, 'yyyy', formatOptions);
-                const from = format(dateRange[0], 'd MMM', formatOptions);
-                const to = format(dateRange[1], 'd MMM', formatOptions);
-                return `${from} - ${to} ${year}`;
-            }
-            const from = format(dateRange[0], 'd MMM yyyy', formatOptions);
-            const to = format(dateRange[1], 'd MMM yyy', formatOptions);
-            return `${from} - ${to}`;
+const getDateRangeText = (view, range, currentDate, dateRange) => {
+    const formatOptions = { locale: dateLocale };
+    const [from, to] = dateRange;
+    if (view === WEEK || range > 0) {
+        if (from.getMonth() === to.getMonth()) {
+            const fromString = format(from, 'd', formatOptions);
+            const toString = format(to, 'd', formatOptions);
+            const rest = format(from, 'MMM yyyy', formatOptions);
+            return `${fromString} - ${toString} ${rest}`;
         }
-        return format(currentDate, FORMATS[view], formatOptions);
-    }, [dateRange, view]);
+        if (from.getFullYear() === to.getFullYear()) {
+            const fromString = format(from, 'd MMM', formatOptions);
+            const toString = format(to, 'd MMM', formatOptions);
+            const rest = format(from, 'yyyy', formatOptions);
+            return `${fromString} - ${toString} ${rest}`;
+        }
+        const fromString = format(from, 'd MMM yyyy', formatOptions);
+        const toString = format(to, 'd MMM yyyy', formatOptions);
+        return `${fromString} - ${toString}`;
+    }
+    return format(currentDate, FORMATS[view], formatOptions);
+};
 
-    const today = useMemo(() => {
+const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, onPrev, onNext }) => {
+    const currentRange = useMemo(() => {
+        return getDateRangeText(view, range, currentDate, dateRange);
+    }, [view, range, currentDate, currentDate, dateRange]);
+
+    const todayTitle = useMemo(() => {
         return format(now, 'PP', { locale: dateLocale });
     }, []);
 
@@ -63,7 +68,7 @@ const DateCursorButtons = ({ view, currentDate, now, dateRange, onToday, onPrev,
             <button
                 type="button"
                 className="toolbar-button color-currentColor flex-item-noshrink"
-                title={today}
+                title={todayTitle}
                 onClick={onToday}
             >
                 <Icon name="target" className="flex-item-noshrink mtauto mbauto toolbar-icon" />
@@ -86,7 +91,8 @@ const DateCursorButtons = ({ view, currentDate, now, dateRange, onToday, onPrev,
 
 DateCursorButtons.propTypes = {
     now: PropTypes.instanceOf(Date),
-    utcDate: PropTypes.instanceOf(Date),
+    range: PropTypes.number,
+    currentDate: PropTypes.instanceOf(Date),
     dateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
     onPrev: PropTypes.func,
     onNext: PropTypes.func,
