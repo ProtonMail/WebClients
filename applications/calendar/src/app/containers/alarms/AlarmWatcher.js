@@ -65,7 +65,7 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
             }
 
             const nextAlarmTime = fromUnixTime(Occurrence);
-            const nextEventTime = Occurrence * 1000 - getMillisecondsFromTriggerString(Trigger);
+            const nextEventTime = Trigger ? Occurrence * 1000 - getMillisecondsFromTriggerString(Trigger) : undefined;
             const now = Date.now();
             const diff = differenceInMilliseconds(nextAlarmTime, now);
             const delay = Math.max(diff, 0);
@@ -94,9 +94,11 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
                         if (unmounted) {
                             return;
                         }
-                        const text = getAlarmMessage(eventRaw, new Date(nextEventTime), new Date(), tzid, {
-                            locale: dateLocale
-                        });
+                        const component = eventRaw;
+                        const start = nextEventTime ? new Date(nextEventTime) : undefined;
+                        const now = new Date();
+                        const formatOptions = { locale: dateLocale };
+                        const text = getAlarmMessage({ component, start, now, tzid, formatOptions });
                         displayNotification({ text, tag: ID });
                     });
 

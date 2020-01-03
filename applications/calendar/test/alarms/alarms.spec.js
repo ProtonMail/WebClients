@@ -28,7 +28,7 @@ describe('getAlarmMessage', () => {
     test('it should display the right notification for events happening today', () => {
         const fakeUtcNow = { ...testFakeUtcDate, hours: 1 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testComponent, start, now, tzidEurope, formatOptions)).toEqual(
+        expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
             'test alarm will start at 8:00 PM'
         );
     });
@@ -36,15 +36,15 @@ describe('getAlarmMessage', () => {
     test('it should display the right notification for full-day events happening today', () => {
         const fakeUtcNow = { ...testFakeUtcDate, hours: 1 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testFulldayComponent, start, now, tzidEurope, formatOptions)).toEqual(
-            'test alarm started today'
-        );
+        expect(
+            getAlarmMessage({ component: testFulldayComponent, start, now, tzid: tzidEurope, formatOptions })
+        ).toEqual('test alarm started today');
     });
 
     test('it should display the right notification for events happening tomorrow', () => {
         const fakeUtcNow = { ...testFakeUtcDate, day: 12 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testComponent, start, now, tzidEurope, formatOptions)).toEqual(
+        expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
             'test alarm will start tomorrow at 8:00 PM'
         );
     });
@@ -52,15 +52,15 @@ describe('getAlarmMessage', () => {
     test('it should display the right notification for full-day events happening tomorrow', () => {
         const fakeUtcNow = { ...testFakeUtcDate, day: 12 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testFulldayComponent, start, now, tzidEurope, formatOptions)).toEqual(
-            'test alarm will start tomorrow'
-        );
+        expect(
+            getAlarmMessage({ component: testFulldayComponent, start, now, tzid: tzidEurope, formatOptions })
+        ).toEqual('test alarm will start tomorrow');
     });
 
     test('it should display the right notification for events happening this month', () => {
         const fakeUtcNow = { ...testFakeUtcDate, day: 5 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testComponent, start, now, tzidEurope, formatOptions)).toEqual(
+        expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
             'test alarm will start on Friday 13th at 8:00 PM'
         );
     });
@@ -68,15 +68,15 @@ describe('getAlarmMessage', () => {
     test('it should display the right notification for full-day events happening this month', () => {
         const fakeUtcNow = { ...testFakeUtcDate, day: 5 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testFulldayComponent, start, now, tzidEurope, formatOptions)).toEqual(
-            'test alarm will start on Friday 13th'
-        );
+        expect(
+            getAlarmMessage({ component: testFulldayComponent, start, now, tzid: tzidEurope, formatOptions })
+        ).toEqual('test alarm will start on Friday 13th');
     });
 
     test('it should display the right notification for events happening this year', () => {
         const fakeUtcNow = { ...testFakeUtcDate, month: 7 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testComponent, start, now, tzidEurope, formatOptions)).toEqual(
+        expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
             'test alarm will start on Friday 13th December at 8:00 PM'
         );
     });
@@ -84,15 +84,15 @@ describe('getAlarmMessage', () => {
     test('it should display the right notification for full-day events happening this year', () => {
         const fakeUtcNow = { ...testFakeUtcDate, month: 7 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testFulldayComponent, start, now, tzidEurope, formatOptions)).toEqual(
-            'test alarm will start on Friday 13th December'
-        );
+        expect(
+            getAlarmMessage({ component: testFulldayComponent, start, now, tzid: tzidEurope, formatOptions })
+        ).toEqual('test alarm will start on Friday 13th December');
     });
 
     test('it should display the right notification for events happening in future years', () => {
         const fakeUtcNow = { ...testFakeUtcDate, year: 2002 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testComponent, start, now, tzidEurope, formatOptions)).toEqual(
+        expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
             'test alarm will start on Friday, December 13th, 2019 at 8:00 PM'
         );
     });
@@ -100,15 +100,15 @@ describe('getAlarmMessage', () => {
     test('it should display the right notification for full-day events happening in future years', () => {
         const fakeUtcNow = { ...testFakeUtcDate, year: 2002 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testFulldayComponent, start, now, tzidEurope, formatOptions)).toEqual(
-            'test alarm will start on Friday, December 13th, 2019'
-        );
+        expect(
+            getAlarmMessage({ component: testFulldayComponent, start, now, tzid: tzidEurope, formatOptions })
+        ).toEqual('test alarm will start on Friday, December 13th, 2019');
     });
 
     test('it should display the right notification for events happening both this month and next year', () => {
         const fakeUtcNow = { ...testFakeUtcDate, day: 5 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testComponent, start, now, tzidEurope, formatOptions)).toEqual(
+        expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
             'test alarm will start on Friday 13th at 8:00 PM'
         );
     });
@@ -116,10 +116,10 @@ describe('getAlarmMessage', () => {
     test('it should take into account day changes due to timezone differences', () => {
         const fakeUtcNow = { ...testFakeUtcDate, hours: 10 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
-        expect(getAlarmMessage(testComponent, start, now, tzidEurope, formatOptions)).toEqual(
+        expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
             'test alarm will start at 8:00 PM'
         );
-        expect(getAlarmMessage(testComponent, start, now, tzidAsia, formatOptions)).toEqual(
+        expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidAsia, formatOptions })).toEqual(
             'test alarm will start tomorrow at 4:00 AM'
         );
     });
