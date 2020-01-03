@@ -1,6 +1,7 @@
 import ICAL from 'ical.js';
 
 import { PROPERTIES, UNIQUE } from './vcalDefinition';
+import { WEEK, DAY, HOUR, MINUTE, SECOND } from '../constants';
 
 const getIcalDateValue = (value, tzid, isDate) => {
     const icalTimezone = value.isUTC ? ICAL.Timezone.utcTimezone : ICAL.Timezone.localTimezone;
@@ -276,10 +277,42 @@ export const parse = (vcal = '') => {
     return fromIcalComponent(new ICAL.Component(ICAL.parse(vcal)));
 };
 
+/**
+ * Parse a trigger string (e.g. '-PT15M') and return an object indicating its duration
+ * @param {String} trigger
+ * @return {{ isNegative: Boolean, hours: Number, seconds: Number, weeks: Number, minutes: Number, days: Number }}
+ */
 export const fromTriggerString = (trigger = '') => {
     return getInternalDurationValue(ICAL.Duration.fromString(trigger));
 };
 
 export const toTriggerString = (value) => {
     return getIcalDurationValue(value).toString();
+};
+
+/**
+ * Transform a duration object into milliseconds
+ * @param {{ isNegative: Boolean, hours: Number, seconds: Number, weeks: Number, minutes: Number, days: Number }}
+ * @return {Number}
+ */
+const durationToMilliseconds = ({
+    isNegative = false,
+    weeks = 0,
+    days = 0,
+    hours = 0,
+    minutes = 0,
+    seconds = 0,
+    milliseconds = 0
+}) => {
+    const lapse = weeks * WEEK + days * DAY + hours * HOUR + minutes * MINUTE + seconds * SECOND + milliseconds;
+    return isNegative ? -lapse : lapse;
+};
+
+/**
+ * Parse a trigger string (e.g. '-PT15M') and return its duration in milliseconds
+ * @param trigger
+ * @return {Number}
+ */
+export const getMillisecondsFromTriggerString = (trigger = '') => {
+    return durationToMilliseconds(fromTriggerString(trigger));
 };
