@@ -48,14 +48,15 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
             const eventsInRowStyles = eventsLaidOut.reduce((acc, { column: eventRow }, i) => {
                 const { start, end } = eventsInRow[i];
 
-                const isAllSingle = getIsAllSingle(eventsInRowSummary, start, end);
+                const isHidden = eventRow >= numberOfRows;
+                const isAllSingle = isHidden && getIsAllSingle(eventsInRowSummary, start, end);
                 if (isAllSingle) {
                     for (let i = start; i < end; ++i) {
                         eventsInRowSummary[i].more = 0;
                     }
                 }
 
-                if (eventsInRowSummary[start].more > 0 && eventRow >= numberOfRows) {
+                if (eventsInRowSummary[start].more > 0 && isHidden) {
                     return acc;
                 }
 
