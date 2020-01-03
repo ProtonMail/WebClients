@@ -6,6 +6,7 @@ import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
 import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
 import { dateLocale } from 'proton-shared/lib/i18n';
+import { getMillisecondsFromTriggerString } from 'proton-shared/lib/calendar/vcal';
 
 import notificationIcon from '../../../assets/notification.gif';
 import useGetCalendarEventRaw from '../../containers/calendar/useGetCalendarEventRaw';
@@ -55,7 +56,7 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
                 cacheRef.current = new Set();
             }
 
-            const { ID, Occurrence, CalendarID, EventID } = getFirstUnseenAlarm(alarms, cacheRef.current) || {
+            const { ID, Occurrence, Trigger, CalendarID, EventID } = getFirstUnseenAlarm(alarms, cacheRef.current) || {
                 ID: 'non-existing'
             };
 
@@ -64,6 +65,7 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
             }
 
             const nextAlarmTime = fromUnixTime(Occurrence);
+            const nextEventTime = Occurrence * 1000 - getMillisecondsFromTriggerString(Trigger);
             const now = Date.now();
             const diff = differenceInMilliseconds(nextAlarmTime, now);
             const delay = Math.max(diff, 0);
@@ -92,7 +94,9 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
                         if (unmounted) {
                             return;
                         }
-                        const text = getAlarmMessage(eventRaw, new Date(), tzid, { locale: dateLocale });
+                        const text = getAlarmMessage(eventRaw, new Date(nextEventTime), new Date(), tzid, {
+                            locale: dateLocale
+                        });
                         displayNotification({ text, tag: ID });
                     });
 

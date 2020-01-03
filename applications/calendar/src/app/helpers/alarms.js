@@ -1,31 +1,30 @@
 import { c } from 'ttag';
 
-import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
 import { toUTCDate, fromUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
 import formatUTC from 'proton-shared/lib/date-fns-utc/format';
 import { isSameDay, isNextDay, isSameMonth, isSameYear } from 'proton-shared/lib/date-fns-utc/index';
 import { truncate } from 'proton-shared/lib/helpers/string';
 
 /**
- * Given a raw event, the date now and a timezone id,
+ * Given a raw event, the date when it starts, the date now and a timezone id,
  * generate a notification message for the event
  * @param {object} component
- * @param {Date} now                fake UTC date
+ * @param {Date} start
+ * @param {Date} now
  * @param {string} tzid
  * @param {object} formatOptions    format options.
  * @returns {string}
  */
-export const getAlarmMessage = (component, now, tzid, formatOptions) => {
+export const getAlarmMessage = (component, start, now, tzid, formatOptions) => {
     const {
-        dtstart,
         summary: { value }
     } = component;
     const title = truncate(value, 100);
 
     // Determine if the event is happening in timezoned today, tomorrow, this month or this year.
     // For that, compute the UTC times of the timezoned end of today, end of month and end of year
-    const utcStartDate = propertyToUTCDate(dtstart);
-    const startDateTimezoned = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStartDate), tzid));
+    const startDateTimezoned = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(start), tzid));
     const nowDateTimezoned = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(now), tzid));
 
     const formattedHour = formatUTC(startDateTimezoned, 'p', formatOptions);
