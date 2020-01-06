@@ -1,5 +1,5 @@
 const path = require('path');
-const { success } = require('./helpers/log');
+const { success, error } = require('./helpers/log');
 
 /**
  * Load the config for webpack
@@ -28,6 +28,10 @@ const loadUserConfig = (cfg) => {
         success('Found proton.config.js, extend the config');
         return config;
     } catch (e) {
+        if (e.code === 'MODULE_NOT_FOUND') {
+            return cfg;
+        }
+        error(e);
         return cfg;
     }
 };
