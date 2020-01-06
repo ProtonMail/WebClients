@@ -158,10 +158,7 @@ const CalendarContainer = ({ calendars, history, location }) => {
     const interactiveRef = useRef();
 
     const visibleCalendars = useMemo(() => {
-        return calendars
-            ? //? calendars.filter(({ Display, Status }) => !!Display && hasBit(Status, CALENDAR_STATUS.ACTIVE))
-              calendars.filter(({ Display }) => !!Display)
-            : undefined;
+        return calendars ? calendars.filter(({ Display }) => !!Display) : undefined;
     }, [calendars]);
 
     const [nowDate, setNowDate] = useState(() => new Date());
@@ -217,15 +214,25 @@ const CalendarContainer = ({ calendars, history, location }) => {
         return toUTCDate(convertUTCDateTimeToZone(fromUTCDate(nowDate), tzid));
     }, [nowDate, tzid]);
 
-    const utcDefaultDate = useMemo(() => {
-        return new Date(
-            Date.UTC(
-                utcNowDateInTimezone.getUTCFullYear(),
-                utcNowDateInTimezone.getUTCMonth(),
-                utcNowDateInTimezone.getUTCDate()
+    const utcDefaultDateRef = useRef();
+    // A ref is used to avoid falling on the cache purging of react
+    if (
+        !utcDefaultDateRef.current ||
+        (utcDefaultDateRef.current.prev !== utcNowDateInTimezone &&
+            !isSameDay(utcDefaultDateRef.current.value, utcNowDateInTimezone))
+    ) {
+        utcDefaultDateRef.current = {
+            prev: utcNowDateInTimezone,
+            value: new Date(
+                Date.UTC(
+                    utcNowDateInTimezone.getUTCFullYear(),
+                    utcNowDateInTimezone.getUTCMonth(),
+                    utcNowDateInTimezone.getUTCDate()
+                )
             )
-        );
-    }, [utcNowDateInTimezone]);
+        };
+    }
+    const utcDefaultDate = utcDefaultDateRef.current.value;
 
     const utcDate = customUtcDate || utcDefaultDate;
 
@@ -303,9 +310,10 @@ const CalendarContainer = ({ calendars, history, location }) => {
     }, []);
 
     const handleClickToday = useCallback(() => {
+        utcDefaultDateRef.current = undefined; // Purpose: Reset the minicalendar when clicking today multiple times
         setCustom({ date: utcDefaultDate });
         scrollToNow();
-    }, []);
+    }, [utcDefaultDate]);
 
     const handleChangeDate = useCallback((newDate) => {
         setCustom({ date: newDate });
