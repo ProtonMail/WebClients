@@ -106,7 +106,6 @@ function useFiles(shareId: string) {
                             queryCreateFile(shareId, {
                                 Name,
                                 MimeType,
-                                Size: blob.size,
                                 Hash,
                                 ParentLinkID,
                                 NodeKey,
