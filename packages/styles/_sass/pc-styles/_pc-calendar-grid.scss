@@ -2,7 +2,7 @@ $calendar-aside-width: 6rem !default;
 $calendar-hour-height: 4.8rem !default;
 $calendar-grid-color: $pm-global-border !default;
 $calendar-grid-border: var(--bordercolor-input, $calendar-grid-color) 1px solid !default;
-$gridcell-right-margin: 10px;
+$gridcell-right-margin: 1rem;
 $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 
 .calendar-grid-heading,
