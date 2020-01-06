@@ -19,7 +19,6 @@ export interface CreateDriveFile {
     NodePassphrase: string;
     NodeKey: string;
     MimeType: string;
-    Size: number;
     ContentKeyPacket: string;
 }
 

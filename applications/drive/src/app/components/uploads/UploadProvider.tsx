@@ -2,10 +2,11 @@ import React, { createContext, useContext, useState, useRef, useEffect } from 'r
 import { FileUploadInfo, RequestUploadResult } from '../../interfaces/file';
 import { generateUID, useApi, useGetAddresses, useGetAddressKeys } from 'react-components';
 import ChunkFileReader from './ChunkFileReader';
-import { queryRequestUpload, queryUploadFileBlock } from '../../api/files';
+import { queryRequestUpload } from '../../api/files';
 import { generateContentHash, sign } from 'proton-shared/lib/keys/driveKeys';
 import { getPrimaryAddress } from 'proton-shared/lib/helpers/address';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { upload } from './upload';
 
 export enum UploadState {
     Pending = 'pending',
@@ -53,6 +54,7 @@ interface DownloadProviderState {
     getUploadsProgresses: () => UploadProgresses;
 }
 
+// Max decrypted block size
 const CHUNK_SIZE = 4 * 1024 * 1024;
 const MAX_CHUNKS_READ = 5;
 
@@ -75,6 +77,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     };
 
     const uploadFile = async ({ id, info: { blob } }: Upload) => {
+        progresses.current[id] = 0;
         updateUploadState(id, UploadState.Progress);
 
         const info = await uploadConfig.current[id].initialize();
@@ -101,7 +104,9 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
             );
 
             for (let i = 0; i < UploadLinks.length; i++) {
-                await api(queryUploadFileBlock(UploadLinks[i].URL, encryptedChunks[i]));
+                await upload(UploadLinks[i].URL, encryptedChunks[i], (relativeIncrement) => {
+                    progresses.current[id] += chunks[i].length * relativeIncrement;
+                });
             }
 
             return UploadLinks.map(({ Token }, i) => ({
