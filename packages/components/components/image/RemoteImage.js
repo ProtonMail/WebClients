@@ -13,7 +13,7 @@ const RemoteImage = ({ src, text = c('Action').t`Load image`, ...rest }) => {
     const handleClick = () => setShowAnyways(true);
 
     if ((!loading && ShowImages & SHOW_IMAGES.REMOTE) || showAnyways) {
-        return <img src={src} referrerpolicy="no-referrer" {...rest} />;
+        return <img src={src} referrerPolicy="no-referrer" {...rest} />;
     }
     return <Button onClick={handleClick}>{text}</Button>;
 };
