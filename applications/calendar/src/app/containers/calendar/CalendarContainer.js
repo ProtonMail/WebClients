@@ -78,7 +78,7 @@ const getRange = (view, range) => {
     if (view === WEEK) {
         return max;
     }
-    return Math.min(max, 4);
+    return Math.min(max, 5);
 };
 
 const getWeekStartsOn = ({ WeekStart = 0 } = {}) => {
