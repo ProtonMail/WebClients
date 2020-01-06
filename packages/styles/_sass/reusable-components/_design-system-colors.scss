@@ -12,7 +12,7 @@
   background-color: $pm-global-light;
 }
 .bg-global-border {
-  background-color: $pm-global-border;
+  background-color: var(--bordercolor-input, $pm-global-border);
 }
 .bg-global-muted {
   background-color: $pm-global-muted;
