@@ -4,7 +4,6 @@ import { escapeSrc, unescapeSrc } from '../../../helpers/domHelper';
 /* @ngInject */
 function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) {
     const REGEXP_CID_START = /^cid:/g;
-    const testDiv = document.createElement('DIV');
 
     /**
      * Parse a message in order to
@@ -17,6 +16,7 @@ function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) 
      * @return {Promise}
      */
     const parser = async (message, { direction = 'blob', text = '', isOutside = false } = {}) => {
+        const testDiv = document.createElement('DIV');
         const content = text || message.getDecryptedBody();
 
         testDiv.innerHTML = escapeSrc(content); // We don't use embeddedUtils.getBodyParser because the content is already cleaned
