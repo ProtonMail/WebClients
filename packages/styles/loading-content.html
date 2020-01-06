@@ -131,3 +131,37 @@ section: fe-guidelines
     </div>
 </div>
 
+<h3>Other <code>progress</code> modifiers</h3>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 pt0-5">
+      <div class="aligncenter">
+
+        <progress class="progress-contact progress-contact--success w100" max="100" value="100" aria-describedby="description_progress1"></progress>
+
+        <progress class="progress-contact progress-contact--error w100" max="100" value="20" aria-describedby="description_progress2"></progress>
+
+        <progress class="progress-contact progress-contact--warning w100" max="100" value="30" aria-describedby="description_progress3"></progress>
+              
+      </div>
+
+    <ul>
+      <li>Just put <code>progress-contact--success</code>/<code>progress-contact--error</code>/<code>progress-contact--warning</code> modifiers when needed on <code>progress</code> tag.</li>
+      <li>These modifiers only provide color information, please link the progress bar with its live description using <code>aria-describedby</code>.</li>
+    </ul>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;progress 
+  class="progress-contact <strong>progress-contact--success</strong> w100"&gt;
+&lt;/progress&gt;
+…
+&lt;progress 
+  class="progress-contact <strong>progress-contact--error</strong> w100"&gt;
+&lt;/progress&gt;
+…
+&lt;progress 
+  class="progress-contact <strong>progress-contact--warning</strong> w100"&gt;
+&lt;/progress&gt;
+</code></pre>
+  </div>
+</div>

@@ -1,4 +1,7 @@
 $progress-contact-height: 6px !default;
+$progress-contact-success-color: $pm-global-success !default;
+$progress-contact-warning-color: $pm-global-attention !default;
+$progress-contact-error-color: $pm-global-warning !default;
 
 .progress-contact {
   /* Reset the default appearance */
@@ -34,4 +37,26 @@ $progress-contact-height: 6px !default;
   &::-ms-fill {
     border-color: currentColor;
   }
+}
+
+@mixin progress-color($color) {
+  color: $color;
+
+  &::-webkit-progress-value {
+    background: $color;
+  }
+
+  &::-moz-progress-bar {
+    background: $color;
+  } 
+}
+
+.progress-contact--success {
+  @include progress-color($progress-contact-success-color);
+}
+.progress-contact--warning {
+  @include progress-color($progress-contact-warning-color);
+}
+.progress-contact--error {
+  @include progress-color($progress-contact-error-color);
 }
