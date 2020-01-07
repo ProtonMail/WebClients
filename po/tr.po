@@ -4,24 +4,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: tr\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
-"PO-Revision-Date: 2019-12-04 12:20\n"
+"PO-Revision-Date: 2020-01-06 11:21\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
 msgid "contacts successfully imported."
-msgstr "kişiler başarıyla içe aktarıldı."
+msgstr "kişi başarıyla içe aktarıldı."
 
 #: ./src/app/contact/modals/contactLoaderModal.js:84
 msgctxt "1 of 2 contacts successfully merged."
 msgid "contacts successfully merged."
-msgstr "kişiler başarıyla birleştirildi."
+msgstr "kişi başarıyla birleştirildi."
 
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:24
 msgctxt "2FA setup modal"
@@ -871,7 +869,7 @@ msgstr "Düzenle"
 #: ./src/templates/filter/customFilterList.tpl.html:36
 msgctxt "Action"
 msgid "Edit sieve"
-msgstr "Eleme ayarlarını düzenle"
+msgstr "Sieve'yi düzenle"
 
 #: ./src/app/address/directives/addressBtnActions.js:5
 msgctxt "Action"
@@ -1044,7 +1042,7 @@ msgstr "Eksik anahtarları oluştur"
 #: ./src/app/blackFriday/directives/blackFriday.js:40
 msgctxt "Action"
 msgid "Get the deal"
-msgstr "Anlaşmayı yap"
+msgstr "Teklifi al"
 
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
@@ -1957,7 +1955,7 @@ msgstr "Yükleniyor"
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:59
 msgctxt "Action"
 msgid "Use a different payment method"
-msgstr "Değişik bir ödeme yöntemi seçin"
+msgstr "Farklı bir ödeme yöntemi kullan"
 
 #: ./src/templates/payment/giftCodeBtn.tpl.html:3
 msgctxt "Action"
@@ -3749,7 +3747,7 @@ msgstr "Fatura metninde çok fazla satır var (sınır: 5)"
 #: ./src/app/core/directives/signupIframe.js:35
 msgctxt "Error"
 msgid "It must contain only letters/digits or - and start with a letter/digit"
-msgstr "Yalnızca harflerden, sayılardan ve eksi işaretlerinden oluşabilir, bir harf ya da sayı ile başlamalıdır"
+msgstr "Yalnızca harflerden, rakamlardan ve eksi işaretinden oluşabilir. Bir harf ya da rakam ile başlamalıdır"
 
 #: ./src/app/composer/directives/composerEncrypt.js:13
 msgctxt "Error"
@@ -3938,7 +3936,7 @@ msgstr "Ek indirilecek ancak yine de şifrelenecek."
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:49
 msgctxt "Error"
 msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
-msgstr "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermez. Lütfen değişik bir tarayıcı kullanın ya da bir bilgisayarla oturum açın."
+msgstr "Kullandığınız tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın veya bilgisayar üzerinden giriş yapın."
 
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:27
 msgctxt "Error"
@@ -3995,7 +3993,7 @@ msgstr "İstek başarısız oldu"
 #: ./src/app/utils/directives/linkHandler.js:39
 msgctxt "Error"
 msgid "This message may some URL links that cannot be properly opened by your current browser"
-msgstr "Bu ileti var olan tarayıcınız tarafından düzgün bir şekilde açılamayan URL bağlantıları içerebilir"
+msgstr "Bu ileti, mevcut tarayıcınız tarafından düzgün görüntülenemeyen bazı URL bağlantıları içerebilir"
 
 #: ./src/app/commons/models/eo.js:10
 msgctxt "Error"
@@ -4135,7 +4133,7 @@ msgstr "Tarayıcınızda şifreli ekleri doğrudan indirmek için gereken özell
 #: ./src/app/core/directives/signupIframe.js:30
 msgctxt "Error"
 msgid "maximum length for a username is {{maxlength}} characters"
-msgstr "bir kullanıcı adının uzunluğu en fazla {{maxlength}} karakter olabilir"
+msgstr "bir kullanıcı adı için en fazla uzunluk {{maxlength}} karakterdir"
 
 #: ./src/app/address/factories/reactivateKeys.js:29
 msgctxt "Error"
@@ -4587,7 +4585,7 @@ msgstr "Önce bir kurtarma e-posta adresi eklemenizi öneririz. Aksi takdirde, b
 #: ./src/app/dashboard/factories/downgrade.js:42
 msgctxt "Info"
 msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
-msgstr "ProtonVPN için +2 bağlantı (VPN'ye daha çok aygıt bağlamana izin verir)"
+msgstr "ProtonVPN için +2 bağlantı (VPN'e daha fazla cihaz bağlamanıza izin verir)"
 
 #: ./src/app/dashboard/factories/downgrade.js:40
 msgctxt "Info"
@@ -5037,7 +5035,7 @@ msgstr "Emin misiniz? Bu geri alınamaz."
 #: ./src/app/dashboard/factories/downgrade.js:29
 msgctxt "Info"
 msgid "As an early Proton user, your account has extra features."
-msgstr "Erken bir Proton kullanıcısı olarak, hesabınız ekstra özelliklere sahiptir."
+msgstr "Proton'un eski bir kullanıcısı olarak, hesabınız ekstra özelliklere sahiptir."
 
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
@@ -5137,7 +5135,7 @@ msgstr "Gönder düğmesine tıklayarak şunlara uymayı kabul ediyorsunuz:"
 #: ./src/app/dashboard/factories/downgrade.js:34
 msgctxt "Info"
 msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
-msgstr "Ücretsiz bir plana geçerek gelecekte tekrar yükseltme yapsanız bile, bu avantajları kalıcı olarak kaybedeceksiniz."
+msgstr "Ücretsiz bir plana geçerek, gelecekte tekrar yükseltseniz bile bu avantajları kalıcı olarak kaybedersiniz."
 
 #: ./src/app/composer/controllers/composeMessage.js:140
 #: ./src/app/routes.js:413
@@ -5520,7 +5518,7 @@ msgstr "Önemli: Lütfen kurtarma kodlarını kaydettiğinizden emin olun. Aksi 
 #: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:18
 msgctxt "Info"
 msgid "In the next few weeks, ProtonMail will drop support for Internet Explorer. Download one of the modern browsers below."
-msgstr "Önümüzdeki birkaç hafta içinde ProtonMail, Internet Explorer için desteğini kesecek. Aşağıdaki modern tarayıcılardan birini indirin."
+msgstr "Önümüzdeki birkaç hafta içinde ProtonMail, Internet Explorer desteğini sonlandıracak. Aşağıdaki modern tarayıcılardan birini indirin."
 
 #: ./src/app/payment/modals/payModal.js:17
 #: ./src/app/settings/controllers/payments.js:148
@@ -5639,7 +5637,7 @@ msgctxt "Info"
 msgid "No emails for this contact"
 msgid_plural "No emails for these contacts"
 msgstr[0] "Bu kişi için e-posta adresi yok"
-msgstr[1] "Bu kişiler için e-posta adresleri yok"
+msgstr[1] "Bu kişilerin e-posta adresleri yok"
 
 #: ./src/app/filter/directives/emailBlockList.js:13
 msgctxt "Info"
@@ -5790,7 +5788,7 @@ msgstr "PayPal şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin."
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:44
 msgctxt "Info"
 msgid "Payment can take a few minutes to fully verify."
-msgstr "Ödemenin tamamen doğrulanması birkaç dakika sürebilir."
+msgstr "Ödemenin tam olarak doğrulanması birkaç dakika sürebilir."
 
 #: ./src/app/payment/directives/payInvoiceBtn.js:13
 msgctxt "Info"
@@ -5881,7 +5879,7 @@ msgstr "Lütfen eke uzun dokunun ve Yeni Sekmede Aç seçeneğini seçin."
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:53
 msgctxt "Info"
 msgid "Please try again, use a different payment method, or call your bank for assistance."
-msgstr "Lütfen tekrar deneyin, değişik bir ödeme yöntemi kullanın ya da yardım için bankanızı arayın."
+msgstr "Lütfen tekrar deneyin. Farklı bir ödeme yöntemi kullanın veya yardım için bankanızı arayın."
 
 #: ./src/app/members/services/memberActions.js:88
 msgctxt "Info"
@@ -5906,7 +5904,7 @@ msgstr "Lütfen açılmış olan yeni sekmede kartı doğrulayın."
 #: ./src/templates/payment/paypalView.tpl.html:16
 msgctxt "Info"
 msgid "Please verify your PayPal account at the new tab which was opened."
-msgstr "Yeni sayfa açıldığında lütfen PayPal hesabınızı doğrulayın."
+msgstr "Lütfen açılan yeni sekmeden PayPal hesabınızı doğrulayın."
 
 #: ./src/app/formUtils/directives/codeVerificator.js:10
 msgctxt "Info"
@@ -5972,12 +5970,12 @@ msgstr "{{fileName}} ekini kaldır"
 #: ./src/app/blackFriday/directives/blackFriday.js:26
 msgctxt "Info"
 msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
-msgstr "1 yıl sonra her yıl, yıllık {{price}} indirimli fiyata yeniler (%20 indirim)"
+msgstr "1 yıl sonra yıllık {{price}} indirimli fiyatla yenilenir (% 20 indirim)"
 
 #: ./src/app/blackFriday/directives/blackFriday.js:33
 msgctxt "Info"
 msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
-msgstr "2 yıl sonra 2 yılda bir, 2 yıllık {{price}} indirimli fiyata yeniler (%{{discount}} indirim)"
+msgstr "2 yıl sonra 2 yılda bir {{price}} indirimli 2 yıllık fiyatla yenilenir (%{{discount}} indirim)"
 
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
@@ -6042,7 +6040,7 @@ msgstr "Parolalarınızı güvenli bir yere kaydedin. Parolanızı doğru yazdı
 #: ./src/app/blackFriday/directives/blackFriday.js:42
 msgctxt "Info"
 msgid "Save {{price}}"
-msgstr "{{price}} Kaydet"
+msgstr "{{price}} tasarruf"
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6083,7 +6081,7 @@ msgstr "İmza güncellendi"
 #: ./src/templates/core/signupIframe.tpl.html:7
 msgctxt "Info"
 msgid "Something went wrong, please refresh the page in order to proceed. If you still see this error message please contact our support team."
-msgstr "Bir şeyler ters gitti, lütfen devam etmek için sayfayı yenileyin. Hâlâ bu hata iletisini görüyorsanız, lütfen destek ekibimizle iletişime geçin."
+msgstr "Bir şeyler ters gitti. Lütfen devam etmek için sayfayı yenileyin. Hala bu hata mesajını görüyorsanız lütfen destek ekibimizle iletişime geçin."
 
 #: ./src/app/members/services/memberActions.js:87
 msgctxt "Info"
@@ -6212,12 +6210,12 @@ msgstr "Şifrenizi unuttuğunuz veya kilitli kaldığınız durumlarda kullanıl
 #: ./src/templates/utils/linkWarningModal.tpl.html:25
 msgctxt "Info"
 msgid "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
-msgstr "Bu bağlantı bir eşyazım saldırısı olabilir ve Internet Explorer ve Edge tarayıcıları tarafından açılamaz. Bağlantının yasal olduğundan eminseniz, lütfen açmak için değişik bir tarayıcı kullanın."
+msgstr "Bu bağlantı bir eşyazım saldırısı olabilir ve Internet Explorer ve Edge tarayıcıları tarafından açılamaz. Bağlantının yasal olduğundan eminseniz, lütfen açmak için farklı bir tarayıcı kullanın."
 
 #: ./src/templates/utils/linkWarningModal.tpl.html:17
 msgctxt "Info"
 msgid "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it."
-msgstr "Bu bağlantı bir eşyazım saldırısı olabilir. Lütfen bunun ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
+msgstr "Bu bağlantı bir eşyazım saldırısı olabilir. Lütfen bunun ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın veya açmayın."
 
 #: ./src/templates/message/messageAutoGenerated.tpl.html:3
 msgctxt "Info"
@@ -6227,7 +6225,7 @@ msgstr "Bu ileti, önceki bir iletiye yanıt olarak otomatik olarak oluşturulur
 #: ./src/app/message/directives/unsubscribePanel.js:19
 msgctxt "Info"
 msgid "This message is from a mailing list"
-msgstr "Bu ileti bir posta listesinden"
+msgstr "Bu ileti, bir posta listesinden alınmıştır"
 
 #: ./src/templates/message/messagePublicKeyFound.tpl.html:9
 msgctxt "Info"
@@ -6254,7 +6252,7 @@ msgstr "Bu sayfa, yalnızca daha büyük çözünürlüklü cihazlarda kullanıl
 #: ./src/templates/message/messagePublicKeyPinning.tpl.html:3
 msgctxt "Info"
 msgid "This sender's public key has not been trusted yet"
-msgstr "Bu göndericinin genel anahtarına henüz güvenilmedi"
+msgstr "Bu gönderenin genel anahtarına henüz güvenilmedi"
 
 #: ./src/templates/views/appearance.tpl.html:12
 msgctxt "Info"
@@ -6295,7 +6293,7 @@ msgstr "Bu, hesabınızı ücretsiz bir hesaba indirgeyecektir. ProtonMail, bağ
 #: ./src/templates/payment/paypalView.tpl.html:32
 msgctxt "Info"
 msgid "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue."
-msgstr "Bu, PayPal'ın Proton aboneliğiniz için ödeme yapmak üzere kullanılmasını sağlayacaktır. Sizi yeni bir tarayıcı sekmesinde PayPal'a yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, devam etmek için lütfen onları devre dışı bırakın."
+msgstr "Bu, PayPal'ın Proton aboneliğiniz için ödeme yapmasını sağlar. Sizi yeni bir tarayıcı sekmesinde PayPal'a yönlendireceğiz. Herhangi bir açılır pencere engelleyicisi kullanıyorsanız, devam etmek için lütfen devre dışı bırakın."
 
 #: ./src/templates/partials/safari.attachment.warning.tpl.html:14
 #: ./src/templates/partials/safari.warning.tpl.html:14
@@ -6402,12 +6400,12 @@ msgstr "Bu içeriğin imzasının doğrulanması başarısız oldu"
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:32
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers."
-msgstr "Doğrulama yeni sekmede açılacak, lütfen herhangi bir açılır pencere engelleyiciyi kapalı tutun."
+msgstr "Doğrulama yeni bir sekme açar. Lütfen açılır pencere engelleyicilerini devre dışı bırakın."
 
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:26
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify the card will be refunded immediately."
-msgstr "Doğrulama yeni sekmede açılacaktır, lütfen açılır pencere engelleyicilerini devre dışı bırakın. <b>Ücretlendirilmeyeceksiniz</b>. Kartı doğrulamak için kullanılan herhangi bir miktar derhal geri ödenecektir."
+msgstr "Doğrulama yeni bir sekme açar, lütfen açılır pencere engelleyicilerini devre dışı bırakın. <b>Sizden ödeme alınmayacak.</b> Kartı doğrulamak için kullanılan herhangi bir miktar hemen iade edilecektir."
 
 #: ./src/templates/layout/pre.tpl.html:4
 msgctxt "Info"
@@ -6455,7 +6453,7 @@ msgstr "CSV dosyalarını Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora
 #: ./src/templates/payment/paypalView.tpl.html:40
 msgctxt "Info"
 msgid "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
-msgstr "Bu işlemi tamamlamak için sizi yeni bir tarayıcı sekmesinde PayPal'a yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, devam etmek için lütfen onları devre dışı bırakın."
+msgstr "Bu işlemi tamamlamak için sizi yeni bir tarayıcı sekmesinde PayPal'a yönlendireceğiz. Herhangi bir açılır pencere engelleyicisi kullanıyorsanız, devam etmek için lütfen devre dışı bırakın."
 
 #: ./src/app/message/directives/unsubscribePanel.js:24
 msgctxt "Info"
@@ -6495,12 +6493,12 @@ msgstr "Etkinleştirme olmadan yeni kullanıcılar oluşturamaz, mevcut kullanı
 #: ./src/templates/utils/linkWarningModal.tpl.html:12
 msgctxt "Info"
 msgid "You are about to open another browser tab and visit:"
-msgstr "Başka bir tarayıcı sekmesi açmak üzeresiniz:"
+msgstr "Başka bir tarayıcı sekmesi açmak ve ziyaret etmek üzeresiniz:"
 
 #: ./src/app/members/services/memberActions.js:54
 msgctxt "Info"
 msgid "You are about to revoke all sessions. The user will be automatically logged out of all sessions and prompted to log back in. Are you sure you want to revoke all sessions ?"
-msgstr "Tüm oturumları iptal etmek üzeresiniz. Kullanıcı, kendiliğinden tüm oturumlardan çıkacak ve tekrar oturum açması istenecek. Tüm oturumları iptal etmek istediğinizden emin misiniz?"
+msgstr "Tüm oturumları iptal etmek üzeresiniz. Kullanıcı otomatik olarak tüm oturumlardan çıkış yapar ve tekrar oturum açmanız istenir. Tüm oturumları iptal etmek istediğinizden emin misiniz?"
 
 #: ./src/templates/vpn/vpnView.tpl.html:12
 msgctxt "Info"
@@ -6600,7 +6598,7 @@ msgstr "Ödeme yöntemi olarak eklemek için PayPal hesabınızla bağlantılı 
 #: ./src/templates/payment/paypalView.tpl.html:27
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please"
-msgstr "PayPal hesabınızla bağlantılı bir kredi kartınız ya da banka hesabınız olmalıdır. PayPal hesabınız buna sahip değilse, lütfen"
+msgstr "PayPal hesabınıza bağlı bir kredi kartınızın veya banka hesabınızın olması gerekir. PayPal hesabınızda yoksa, lütfen"
 
 #: ./src/app/members/services/memberActions.js:38
 msgctxt "Info"
@@ -6622,7 +6620,7 @@ msgstr "Eki kaydetmeniz istenecek."
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:30
 msgctxt "Info"
 msgid "You will be soon redirected to your bank to verify your payment."
-msgstr "Yakında ödemenizi doğrulamak için bankanıza yönlendirileceksiniz."
+msgstr "Birazdan ödemenizi doğrulamak için bankanıza yönlendirileceksiniz."
 
 #: ./src/templates/modals/payment/modal.tpl.html:39
 msgctxt "Info"
@@ -6675,7 +6673,7 @@ msgstr "Ekleriniz güvenli ve şifreli. Ancak bunları indirmek için ekstra iş
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:20
 msgctxt "Info"
 msgid "Your bank requires 3-D Secure verification for security purposes."
-msgstr "Bankanız güvenlik gerekçesiyle 3-D Güvenli doğrulama gerektirmektedir."
+msgstr "Bankanız güvenlik gerekçesiyle 3-D Güvenlik doğrulaması gerektiriyor."
 
 #: ./src/templates/user/humanVerification.tpl.html:18
 msgctxt "Info"
@@ -7495,7 +7493,7 @@ msgstr "Çöp Kutusu"
 #: ./src/app/contact/directives/contactPublicKeyLabel.js:6
 msgctxt "Label"
 msgid "Trusted Public Keys"
-msgstr "Güvenilen Genel Anahtarlar"
+msgstr "Güvenilen Ortak Anahtarlar"
 
 #: ./src/templates/directives/contact/contactKeyPinning.tpl.html:2
 msgctxt "Label"
@@ -7515,12 +7513,12 @@ msgstr "Resim yükle"
 #: ./src/templates/views/appearance.tpl.html:109
 msgctxt "Label"
 msgid "Use conversation grouping"
-msgstr "Konuşma grubunu kullan"
+msgstr "Sohbet gruplamayı kullan"
 
 #: ./src/templates/views/appearance.tpl.html:118
 msgctxt "Label"
 msgid "Use sticky labels"
-msgstr "Yapışkan etiketler kullan"
+msgstr "Yapışkan etiketleri kullan"
 
 #: ./src/templates/modals/addAddress.tpl.html:11
 msgctxt "Label"
@@ -7758,7 +7756,7 @@ msgstr "Hafta içi günü seçin"
 #: ./src/app/contact/directives/contactPublicKeyLabel.js:5
 msgctxt "Laebel"
 msgid "Public Keys"
-msgstr "Genel Anahtarlar"
+msgstr "Ortak Anahtarlar"
 
 #: ./src/templates/payment/paymentPlanOverview.tpl.html:16
 msgctxt "Link"
@@ -8445,7 +8443,7 @@ msgstr[1] "Kullanıcı kimlikleri uyuşmuyor. {{emails}} e-postaları için bu a
 #: ./src/templates/payment/paypalView.tpl.html:4
 msgctxt "PayPal error"
 msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
-msgstr "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermez. Lütfen değişik bir tarayıcı kullanın ya da bir bilgisayarla oturum açın."
+msgstr "Kullandığınız tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın veya bilgisayar üzerinden giriş yapın."
 
 #: ./src/app/settings/controllers/payments.js:100
 msgctxt "Payment"
@@ -8863,7 +8861,7 @@ msgstr "Bu şifreyi UNUTMAYIN. Unutursanız, iletilerinize giriş yapamaz veya i
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
 msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
-msgstr "Şifrenizi güvenli bir yere kaydedin. Şifrenizi doğru yazdığınızı onaylamak için <i class=\"fa fa-eye\"></i> simgesine tıklayın."
+msgstr "Şifrenizi güvenli bir yere kaydedin. Şifrenizi doğru yazdığınızı doğrulamak için <i class=\"fa fa-eye\"></i> simgesine tıklayın."
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
 msgctxt "Reset your password"
@@ -9658,7 +9656,7 @@ msgstr "Bit"
 #: ./src/templates/blackFriday/blackFriday.tpl.html:3
 msgctxt "Title"
 msgid "Black Friday Sale"
-msgstr "Kara Cuma Satışı"
+msgstr "Kara Cuma İndirimi"
 
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
@@ -10960,7 +10958,7 @@ msgstr "Güvenlik"
 #: ./src/app/core/directives/signupIframe.js:20
 msgctxt "Title"
 msgid "Select a domain"
-msgstr "Bir alan adı seç"
+msgstr "Bir etki alanı seçin"
 
 #: ./src/templates/address/selectAddressModal.tpl.html:6
 msgctxt "Title"
@@ -11747,7 +11745,7 @@ msgstr "Şifreleme için bu tuşun kullanılması, \n"
 #: ./src/templates/views/appearance.tpl.html:119
 msgctxt "Tooltip"
 msgid "When a label is added to a message in a conversation, all future messages you send or receive will have that same label automatically applied."
-msgstr "Bir konuşmadaki bir iletiye bir etiket eklendiğinde, gönderdiğiniz ya da aldığınız tüm gelecek iletilerde aynı etiket kendiliğinden uygulanır."
+msgstr "Bir görüşmedeki bir iletiye bir etiket eklendiğinde, gelecekte göndereceğiniz veya alacağınız tüm iletilere aynı etiket otomatik olarak uygulanır."
 
 #: ./src/templates/address/addressKeysView.tpl.html:69
 msgctxt "Tooltip"
@@ -11850,7 +11848,7 @@ msgctxt "Type of item"
 msgid "contact"
 msgid_plural "contacts"
 msgstr[0] "kişi"
-msgstr[1] "kişiler"
+msgstr[1] "kişi"
 
 #: ./src/app/dnd/factories/ptDndNotification.js:15
 #: ./src/app/dnd/services/actionDnd.js:23
@@ -12382,13 +12380,13 @@ msgstr "Özel etki alanı bulunamadı"
 #: ./src/templates/views/domains.tpl.html:138
 msgctxt "domains list"
 msgid "Setup Error: Please run the"
-msgstr "Kurulum Hatası: Lütfen"
+msgstr "Kurulum Hatası: Lütfen yapılandırma"
 
 #. Setup Error: Please run the [setup wizard] to correct configuration errors
 #: ./src/templates/views/domains.tpl.html:144
 msgctxt "domains list"
 msgid "to correct configuration errors."
-msgstr "yapılandırma hatalarını düzeltmek için çalıştırın."
+msgstr "hatalarını düzeltmek için çalıştırın."
 
 #: ./src/app/labels/directives/dropdownLabels.js:8
 msgctxt "dropdown label"

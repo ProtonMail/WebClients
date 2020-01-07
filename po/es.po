@@ -4,14 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
-"PO-Revision-Date: 2019-12-05 04:20\n"
+"PO-Revision-Date: 2020-01-07 16:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -5046,7 +5044,7 @@ msgstr "Evento adjunto"
 #: ./src/templates/attachments/eventsAttachments.tpl.html:38
 msgctxt "Info"
 msgid "Attendees"
-msgstr "Asistentes"
+msgstr "Invitados"
 
 #: ./src/templates/autoresponder/autoresponder.tpl.html:3
 msgctxt "Info"

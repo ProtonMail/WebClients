@@ -4,14 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: de\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2019-12-04 18:21\n"
+"PO-Revision-Date: 2020-01-06 15:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -209,7 +207,7 @@ msgstr "Schlüssel hinzufügen"
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
-msgstr "Kategorie erstellen"
+msgstr "Kategorie hinzufügen"
 
 #: ./src/templates/address/addressKeysView.tpl.html:11
 msgctxt "Action"
@@ -2280,13 +2278,13 @@ msgstr "2-Jahres-Abo"
 #: ./src/templates/dashboard/totalRows.tpl.html:21
 msgctxt "Billing cycle for the dashboard"
 msgid "Pay annually"
-msgstr "Jährliche Zahlung"
+msgstr "Jährliche Zahlweise"
 
 #. Make sure this string is short please
 #: ./src/templates/dashboard/totalRows.tpl.html:5
 msgctxt "Billing cycle for the dashboard"
 msgid "Pay monthly"
-msgstr "Monatliche Zahlung"
+msgstr "Monatliche Zahlweise"
 
 #: ./src/app/payment/directives/bitcoinDetails.js:16
 msgctxt "Bitcoin donation"
@@ -2377,7 +2375,7 @@ msgstr "Zu Plus wechseln"
 #: ./src/app/dashboard/directives/selectPlan.js:21
 msgctxt "Button to select plan on the dashboard"
 msgid "Upgrade to Professional"
-msgstr "Auf den Professional-Tarif aktualisieren"
+msgstr "Zu Professional wechseln"
 
 #: ./src/app/dashboard/directives/selectPlan.js:26
 msgctxt "Button to select plan on the dashboard"
@@ -4631,7 +4629,7 @@ msgstr "<kbd>/</kbd> Fokussiert die <strong>Sucheingabe</strong>."
 #: ./src/templates/modals/hotkey.tpl.html:49
 msgctxt "Info"
 msgid "<kbd><i class=\"fa fa-long-arrow-down\"></i></kbd> Marks the <strong>next</strong> message/conversation."
-msgstr "<kbd><i class=\"fa fa-long-arrow-down\"></i></kbd> Markiert die <strong>nächste</strong> Nachricht/Konversation."
+msgstr "<kbd><i class=\"fa fa-long-arrow-down\"></i></kbd> Makiert die <strong>nächste</strong> Nachricht/Konversation."
 
 #: ./src/templates/modals/hotkey.tpl.html:92
 msgctxt "Info"
@@ -4651,7 +4649,7 @@ msgstr "<kbd><i class=\"fa fa-long-arrow-right\"></i></kbd> <strong>Zum Eingeben
 #: ./src/templates/modals/hotkey.tpl.html:51
 msgctxt "Info"
 msgid "<kbd><i class=\"fa fa-long-arrow-right\"></i></kbd> Unmarks the message."
-msgstr "<kbd><i class=\"fa fa-long-arrow-right\"></i></kbd> Entfernt die Markierung der Nachricht."
+msgstr "<kbd><i class=\"fa fa-long-arrow-right\"></i></kbd> Entfernt die Makierung der Nachricht."
 
 #: ./src/templates/modals/hotkey.tpl.html:86
 msgctxt "Info"
@@ -4661,7 +4659,7 @@ msgstr "<kbd><i class=\"fa fa-long-arrow-up\"></i></kbd> + <kbd><i class=\"fa fa
 #: ./src/templates/modals/hotkey.tpl.html:48
 msgctxt "Info"
 msgid "<kbd><i class=\"fa fa-long-arrow-up\"></i></kbd> Marks the <strong>previous</strong> message/conversation."
-msgstr "<kbd><i class=\"fa fa-long-arrow-up\"></i></kbd> Markiert die <strong>vorherige</strong> Nachricht/Konversation."
+msgstr "<kbd><i class=\"fa fa-long-arrow-up\"></i></kbd> Makiert die <strong>vorherige</strong> Nachricht/Konversation."
 
 #: ./src/templates/modals/hotkey.tpl.html:15
 msgctxt "Info"
@@ -4711,7 +4709,7 @@ msgstr "<kbd>Strg</kbd> + <kbd>s</kbd> <strong>speichert</strong> die Nachricht.
 #: ./src/templates/modals/hotkey.tpl.html:17
 msgctxt "Info"
 msgid "<kbd>enter</kbd> Confirms <strong>the active modal</strong>."
-msgstr "<kbd>Enter</kbd> Bestätigt <strong>den aktiven Dialog</strong>."
+msgstr "<kbd>enter</kbd> Bestätigt <strong>den aktiven Dialog</strong>."
 
 #: ./src/templates/modals/hotkey.tpl.html:54
 msgctxt "Info"
@@ -12564,7 +12562,7 @@ msgstr "Durch Zurücksetzen des Anmelde- oder Postfachkennworts wechseln Sie in 
 #: ./src/templates/settings/encryptionView.tpl.html:94
 msgctxt "settings warning"
 msgid "Address Verification is an advanced security feature. Only turn this on if you know what it does."
-msgstr "Die Adressverifizierung ist eine erweiterte Sicherheitsfunktion. Schalten Sie sie nur ein, wenn Sie wissen, was sie tut."
+msgstr "Die Adressverifizierung ist eine erweiterte Sicherheitsfunktion. Aktivieren Sie dies nur, wenn Sie wissen, was dies bedeutet."
 
 #: ./src/templates/settings/encryptionView.tpl.html:12
 msgctxt "settings warning"

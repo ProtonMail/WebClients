@@ -4,14 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: nl\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
-"PO-Revision-Date: 2019-11-28 23:22\n"
+"PO-Revision-Date: 2020-01-07 00:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -897,7 +895,7 @@ msgstr "Map leegmaken"
 #: ./src/templates/elements/advancedFilterElement.tpl.html:63
 msgctxt "Action"
 msgid "Empty label"
-msgstr "Label bewerken"
+msgstr "Leeg label"
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:36
 msgctxt "Action"
@@ -11937,7 +11935,7 @@ msgstr "Verjaardag"
 #: ./src/app/contact/factories/contactTransformLabel.js:6
 msgctxt "VCard key name"
 msgid "Calendar user address"
-msgstr "Kalender gebruikersadres"
+msgstr "E-mailadres van de agenda-eigenaar"
 
 #: ./src/app/contact/factories/contactTransformLabel.js:9
 msgctxt "VCard key name"
@@ -12124,7 +12122,7 @@ msgstr "Titel"
 #: ./src/app/contact/factories/contactTransformLabel.js:7
 msgctxt "VCard key name"
 msgid "URI for a calendar"
-msgstr "URI voor een kalender"
+msgstr "URI voor een agenda"
 
 #: ./src/app/contact/factories/contactTransformLabel.js:44
 msgctxt "VCard key name"

@@ -4,14 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: pt-BR\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
-"PO-Revision-Date: 2019-12-05 10:20\n"
+"PO-Revision-Date: 2020-01-06 11:21\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -653,7 +651,7 @@ msgstr "Configuração completa"
 #: ./src/templates/partials/sidebar.tpl.html:2
 msgctxt "Action"
 msgid "Compose"
-msgstr "Compor"
+msgstr "Escrever"
 
 #: ./src/templates/directives/contact/contactEmailDropdown.tpl.html:11
 #: ./src/templates/message/messageAddressActionMenu.tpl.html:9
@@ -5086,22 +5084,22 @@ msgstr "Abaixo estão as configurações opcionais que você pode usar para pers
 #: ./src/app/dashboard/directives/totalRows.js:24
 msgctxt "Info"
 msgid "Billed as {{amount}} /2-yr"
-msgstr "Faturado como {{amount}} /2 anos"
+msgstr "Cobrado {{amount}} /2 anos"
 
 #: ./src/app/dashboard/directives/totalRows.js:20
 msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
-msgstr "Faturado como {{amount}} /ano"
+msgstr "Cobrado {{amount}} /ano"
 
 #: ./src/app/blackFriday/directives/blackFriday.js:20
 msgctxt "Info"
 msgid "Billed as {{price}} for 1 year"
-msgstr "Faturado como {{price}} por 1 ano"
+msgstr "Cobrado {{price}} por 1 ano"
 
 #: ./src/app/blackFriday/directives/blackFriday.js:22
 msgctxt "Info"
 msgid "Billed as {{price}} for 2 years"
-msgstr "Faturado como {{price}} por 2 anos"
+msgstr "Cobrado {{price}} por 2 anos"
 
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
@@ -9674,7 +9672,7 @@ msgstr "Ponte IMAP/SMTP"
 #: ./src/templates/views/outside.message.tpl.html:31
 msgctxt "Title"
 msgid "CC"
-msgstr "Com Cópia"
+msgstr "CC"
 
 #. CC: addresses
 #: ./src/templates/directives/composer/composerInputMeta.tpl.html:20

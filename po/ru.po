@@ -4,14 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: ru\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2019-12-01 00:21\n"
+"PO-Revision-Date: 2020-01-06 11:21\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -4597,7 +4595,7 @@ msgstr "* Мы рекомендуем сначала добавить резер
 #: ./src/app/dashboard/factories/downgrade.js:42
 msgctxt "Info"
 msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
-msgstr ""
+msgstr "+2 подключения к ProtonVPN (позволяет подключать больше устройств к VPN)"
 
 #: ./src/app/dashboard/factories/downgrade.js:40
 msgctxt "Info"
@@ -5050,7 +5048,7 @@ msgstr "Вы уверены? Это действие не может быть о
 #: ./src/app/dashboard/factories/downgrade.js:29
 msgctxt "Info"
 msgid "As an early Proton user, your account has extra features."
-msgstr ""
+msgstr "Т. к. вы ранний пользователь Proton, в вашем аккаунте есть дополнительные функции."
 
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
@@ -5993,7 +5991,7 @@ msgstr "Автопродление через 1 год по сниженной �
 #: ./src/app/blackFriday/directives/blackFriday.js:33
 msgctxt "Info"
 msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
-msgstr ""
+msgstr "Обновляется после двух лет по цене со скидкой {{price}} за двухлентнюю подписку ({{discount}}% скидки)"
 
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
@@ -6611,12 +6609,12 @@ msgstr "Вы должны активировать закрытый ключ с�
 #: ./src/templates/payment/paypalView.tpl.html:36
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
-msgstr ""
+msgstr "Вы должны иметь кредитную карту или банковский счет, привязанный к Вашей учетной записи PayPal, чтобы добавить её как способ оплаты."
 
 #: ./src/templates/payment/paypalView.tpl.html:27
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please"
-msgstr ""
+msgstr "Вы должны иметь кредитную карту или банковский счет, привязанный к Вашей учетной записи PayPal. Если у Вас нет счета, пожалуйста,"
 
 #: ./src/app/members/services/memberActions.js:38
 msgctxt "Info"
@@ -9840,7 +9838,7 @@ msgstr "Подтвердить входной пароль"
 #: ./src/app/dashboard/factories/downgrade.js:26
 msgctxt "Title"
 msgid "Confirm loss of Proton bonuses"
-msgstr ""
+msgstr "Подтвердите потерю бонусов Proton"
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"

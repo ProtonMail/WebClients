@@ -4,14 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: da\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: Danish\n"
 "Language: da_DK\n"
-"PO-Revision-Date: 2019-11-28 23:21\n"
+"PO-Revision-Date: 2020-01-06 11:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -1715,7 +1713,7 @@ msgstr "Opsæt"
 #: ./src/templates/ui/navigation/navigation.tpl.html:13
 msgctxt "Action"
 msgid "Settings"
-msgstr "Indstillonger"
+msgstr "Indstillinger"
 
 #: ./src/templates/views/setup.tpl.html:67
 msgctxt "Action"
@@ -2362,12 +2360,12 @@ msgstr "Opgradér Plus"
 #: ./src/app/dashboard/directives/selectPlan.js:14
 msgctxt "Button to select plan on the dashboard"
 msgid "Update Professional"
-msgstr "Opgradér Professional"
+msgstr "Opdatér Professional"
 
 #: ./src/app/dashboard/directives/selectPlan.js:19
 msgctxt "Button to select plan on the dashboard"
 msgid "Update Visionary"
-msgstr "Opgradér Visionary"
+msgstr "Opdatér Visionary"
 
 #: ./src/app/dashboard/directives/selectPlan.js:20
 msgctxt "Button to select plan on the dashboard"
@@ -4878,7 +4876,7 @@ msgstr "Tilføj dit eget domæne til din ProtonMail-konto."
 #: ./src/templates/user/addressesSection.tpl.html:2
 msgctxt "Info"
 msgid "Add additional email addresses to your account such as username2@protonmail.com. To enable this feature, <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade to ProtonMail Plus</a>."
-msgstr "Tilføj yderligere emailadresser til din konto, som f.eks. brugernavn2@protonmail.com. For at slå denne funktion <a ui-sref=\"secured.dashboard({scroll: true})\">til, skal du opgradere til ProtonMail Plus</a>."
+msgstr "Føj yderligere e-mailadresser til din konto,.f.eks. brugernavn2@protonmail.com. For at aktivere denne funktion til, <a ui-sref=\"secured.dashboard({scroll: true})\">så opgradér til ProtonMail Plus</a>."
 
 #: ./src/templates/modals/customizeInvoice.tpl.html:20
 #: ./src/templates/modals/customizeInvoice.tpl.html:30
@@ -11789,7 +11787,7 @@ msgstr "Når notifikationer er aktiveret, modtager du en advisering i din gendan
 #: ./src/templates/autoresponder/autoresponderView.tpl.html:10
 msgctxt "Translate"
 msgid "Automatic replies is a paid feature. Please <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade</a> to a paid account to use this feature."
-msgstr "Auto-besvarlse er en betalingsfunktion. <a ui-sref=\"secured.dashboard({scroll: true})\">Opgradér</a> til en premuim-konto for at benytte denne funktion."
+msgstr "Auto-besvarlse er en betalingsfunktion. <a ui-sref=\"secured.dashboard({scroll: true})\">Opgradér</a> til en Premuim-konto for at benytte denne funktion."
 
 #: ./src/templates/authentication/loginForm.tpl.html:54
 msgctxt "Trouble logging in? Get help or try older version."

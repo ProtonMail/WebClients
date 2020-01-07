@@ -4,14 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: hr\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: Croatian\n"
 "Language: hr_HR\n"
-"PO-Revision-Date: 2019-12-04 18:23\n"
+"PO-Revision-Date: 2020-01-06 11:21\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -51,12 +49,12 @@ msgstr "Dužina"
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:10
 msgctxt "2FA setup modal"
 msgid "Manually enter this information into your two factor authentication device to set up your account."
-msgstr "Ručno unesite ove podatke u vaš uređaj za provjeru autentičnosti u dva koraka, kako biste postavili vaš račun."
+msgstr "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju."
 
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:9
 msgctxt "2FA setup modal"
 msgid "Scan this QR code with your two factor authentication device to set up your account."
-msgstr "Skenirajte ovaj QR kôd pomoću uređaja za provjeru autentičnosti u dva koraka, kako biste postavili svoj račun."
+msgstr "Skenirajte ovaj QR kôd pomoću uređaja za dvofaktorsku autentikaciju, kako biste postavili svoj račun."
 
 #: ./src/templates/user/humanVerification.tpl.html:61
 msgctxt "About human verification"
@@ -791,7 +789,7 @@ msgstr "Onemogući"
 #: ./src/templates/views/security.tpl.html:13
 msgctxt "Action"
 msgid "Disable Two-Factor Authentication"
-msgstr "Onemogući provjeru autentičnosti u dva koraka"
+msgstr "Onemogući dvofaktorsku autentikaciju"
 
 #. form option
 #. notification settings option
@@ -918,7 +916,7 @@ msgstr "Omogući"
 #: ./src/templates/views/security.tpl.html:14
 msgctxt "Action"
 msgid "Enable Two-Factor Authentication"
-msgstr "Omogući provjeru autentičnosti u dva koraka"
+msgstr "Omogući dvofaktorsku autentikaciju"
 
 #: ./src/templates/address/addressKeysView.tpl.html:98
 msgctxt "Action"
@@ -933,7 +931,7 @@ msgstr "Omogući podršku za više korisnika"
 #: ./src/templates/address/addressKeysView.tpl.html:119
 msgctxt "Action"
 msgid "Enable signature verification"
-msgstr "Omogući provjeru autentičnosti potpisa"
+msgstr "Omogući provjeru valjanosti potpisa"
 
 #. form option
 #. notification settings option
@@ -958,7 +956,7 @@ msgstr "Šifriranje"
 #: ./src/app/composer/directives/btnSendMessage.js:13
 msgctxt "Action"
 msgid "Encrypting attachments"
-msgstr "Šifrirani privitci"
+msgstr "Šifriranje privitaka"
 
 #: ./src/templates/directives/composer/composer.tpl.html:104
 #: ./src/templates/directives/composer/composer.tpl.html:93
@@ -3345,7 +3343,7 @@ msgstr "Obriši sve"
 #: ./src/app/settings/controllers/security.js:29
 msgctxt "Disable 2FA"
 msgid "Two-factor authentication disabled"
-msgstr "Onemogućena je provjera autentičnosti u dva koraka"
+msgstr "Onemogućena je dvofaktorska autentikacija"
 
 #: ./src/templates/dashboard/vpnDiscountPanel.tpl.html:3
 msgctxt "Discount displayed in the dashboard"
@@ -3435,7 +3433,7 @@ msgstr "Šifrirana zaglavlja"
 #: ./src/templates/labels/labelNameInput.tpl.html:21
 msgctxt "Error"
 msgid "A group with this name already exists."
-msgstr "Grupa s ovim imenom već postoji."
+msgstr "Grupa s ovim nazivom već postoji."
 
 #: ./src/templates/modals/customizeInvoice.tpl.html:45
 msgctxt "Error"
@@ -3638,7 +3636,7 @@ msgstr "Neuspješno učitavanje slike"
 #: ./src/app/keys/factories/decryptImportKeyModal.js:28
 msgctxt "Error"
 msgid "Incorrect decryption password"
-msgstr "Neispravna lozinka za dešifriranje"
+msgstr "Nevažeća lozinka za dešifriranje"
 
 #: ./src/templates/formUtils/cardView.tpl.html:45
 msgctxt "Error"
@@ -3673,7 +3671,7 @@ msgstr "Neispravan kôd za kupon"
 #: ./src/templates/message/trustPublicKeyTable.tpl.html:30
 msgctxt "Error"
 msgid "Invalid email"
-msgstr "Nevažeći email"
+msgstr "Nevažeća adresa e-pošte"
 
 #: ./src/app/composer/directives/composerExpiration.js:11
 msgctxt "Error"
@@ -3727,7 +3725,7 @@ msgstr "Nevežeći broj"
 #: ./src/app/members/services/membersValidator.js:50
 msgctxt "Error"
 msgid "Invalid password"
-msgstr "Neispravna lozinka"
+msgstr "Nevažeća lozinka"
 
 #: ./src/templates/views/reset-login-password.tpl.html:35
 msgctxt "Error"
@@ -3851,7 +3849,7 @@ msgstr "Molimo <a href=\"/dashboard\">nadogradite</a> na plaćeni račun za kori
 #: ./src/app/composer/directives/composerEncrypt.js:12
 msgctxt "Error"
 msgid "Please enter a password for this email."
-msgstr "Upišite lozinku za ovu e-poštu."
+msgstr "Unesite lozinku za ovu e-poštu."
 
 #: ./src/app/composer/services/validateMessage.js:40
 msgctxt "Error"
@@ -3866,7 +3864,7 @@ msgstr "Molimo unesite vašu lozinku sandučića e-pošte"
 #: ./src/app/authentication/directives/loginTwoFactorForm.js:4
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
-msgstr "Molimo unesite Vašu šifru za provjeru autentičnosti u dva koraka"
+msgstr "Molimo unesite vaš kôd dvofaktorske autentikacije"
 
 #: ./src/app/keys/services/decryptKeys.js:10
 msgctxt "Error"
@@ -3911,7 +3909,7 @@ msgstr "Registracija nije uspjela"
 #: ./src/app/composer/services/validateMessage.js:34
 msgctxt "Error"
 msgid "Some email addresses are invalid"
-msgstr "Neke od adresa e-pošte nisu ispravne"
+msgstr "Neke od adresa e-pošte su nevažeće"
 
 #: ./src/templates/views/outside.unlock.tpl.html:39
 msgctxt "Error"
@@ -5017,7 +5015,7 @@ msgstr "Jeste li sigurni da želite onemogućiti ovu adresu?"
 #: ./src/app/settings/controllers/security.js:24
 msgctxt "Info"
 msgid "Are you sure you want to disable two-factor authentication?"
-msgstr "Jeste li sigurni da želite onemogućiti provjeru autentičnosti u dva koraka?"
+msgstr "Sigurno želite onemogućiti dvofaktorsku autentikaciju?"
 
 #: ./src/app/members/services/memberActions.js:78
 msgctxt "Info"
@@ -5506,7 +5504,7 @@ msgstr "Ako izgubite vašu lozinku, nećete moći čitati poruke e-pošte."
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:11
 msgctxt "Info"
 msgid "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit 2FA code to log into your account. Each code can only be used once."
-msgstr "Ukoliko izgubite svoj uređaj za provjeru autentičnosti u dva koraka, ovi kodovi se mogu upotrijebiti umjesto 6-znamenkastog 2FA koda da bi se prijavili na vaš račun. Svaki kôd može se upotrijebiti samo jednom."
+msgstr "Ukoliko izgubite svoj uređaj za dvostruku autentikaciju, ovi kôdovi se mogu upotrijebiti umjesto 6-znamenkastog 2FA kôda da bi se prijavili na vaš račun. Svaki kôd može se upotrijebiti samo jednom."
 
 #: ./src/templates/modals/domain/spf.tpl.html:31
 msgctxt "Info"
@@ -5521,7 +5519,7 @@ msgstr "Ako želite izbrisati ovaj račun s ciljem da ga kombinirate s drugim, N
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:10
 msgctxt "Info"
 msgid "Important: Please make sure you saved the recovery codes. Otherwise you can permanently lose access to your account if you lose your 2FA device."
-msgstr "Važno: Molimo spremite kodove za oporavak. U suprotnom možete trajno izgubiti pristup računu ako izgubite svoj uređaj za provjeru autentičnosti u dva koraka (2FA)."
+msgstr "Važno: Molimo spremite kôdove za oporavak. U suprotnom možete trajno izgubiti pristup računu ako izgubite svoj uređaj za dvofaktorsku autentikaciju."
 
 #: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:18
 msgctxt "Info"
@@ -5600,7 +5598,7 @@ msgstr "Neuspjela prijava (lozinka)"
 #: ./src/templates/security/logManager.tpl.html:82
 msgctxt "Info"
 msgid "Logs include authentication attempts for all Proton services that use your ProtonMail credentials."
-msgstr "Zapisi uključuju pokušaje provjere autentičnosti za sve Proton usluge koje koriste vaše ProtonMail vjerodajnice."
+msgstr "Zapisi uključuju pokušaje autentikacije za sve Proton usluge koje koriste vaše ProtonMail vjerodajnice."
 
 #. form option
 #: ./src/templates/views/appearance.tpl.html:24
@@ -5949,7 +5947,7 @@ msgstr "ProtonMail sada podržava @pm.me adrese e-pošte (skraćeno od ProtonMai
 #: ./src/templates/modals/domain/dkim.tpl.html:14
 msgctxt "Info"
 msgid "ProtonMail supports DKIM signing for custom domains! To use DKIM authentication, please add the following TXT record into your DNS for this domain. This can typically be done in the control panel of your domain name registrar."
-msgstr "ProtonMail podržava DKIM potpisivanje za prilagođene domene! Da biste koristili DKIM provjeru autentičnosti, dodajte sljedeći TXT zapis u svoj DNS za ovu domenu. To se obično može obaviti na upravljačkoj ploči registrara domene."
+msgstr "ProtonMail podržava DKIM potpisivanje za prilagođene domene! Da biste koristili DKIM autentikaciju, dodajte sljedeći TXT zapis u svoj DNS za ovu domenu. To se obično može obaviti na upravljačkoj ploči registrara domene."
 
 #: ./src/templates/bridge/bridgePaidPanel.tpl.html:2
 msgctxt "Info"
@@ -6182,12 +6180,12 @@ msgstr "Ovaj razgovor sadrži poruke koje su u otpadu."
 #: ./src/app/message/directives/messageSpamScore.js:13
 msgctxt "Info"
 msgid "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded! {{startLink}}Learn more{{endLink}}."
-msgstr "Ova poruka e-pošte nije ispunila zahtjeve za provjeru autentičnosti svoje domene. Može biti lažna ili nepropisno proslijeđena!{{startLink}}Saznajte više{{endLink}}."
+msgstr "Ova poruka e-pošte nije prošla autentikaciju vlastite domene. Može biti lažna ili nepropisno proslijeđena!{{startLink}}Saznajte više{{endLink}}."
 
 #: ./src/app/message/directives/messageSpamScore.js:8
 msgctxt "Info"
 msgid "This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!"
-msgstr "Čini se da je ova poruka e-pošte s adrese ProtonMail, ali je došla izvan našeg sustava i nije ispunila naše zahtjeve za provjeru autentičnosti. Može biti lažna ili nepropisno proslijeđena!"
+msgstr "Ova poruka e-pošte izgleda kao da je od ProtonMail adrese, ali je došla izvan našeg sustava i nije ispunila naše zahtjeve autentikacije. Može biti lažna ili nepropisno proslijeđena!"
 
 #: ./src/app/settings/controllers/domains.js:170
 msgctxt "Info"
@@ -6537,7 +6535,7 @@ msgstr "Datoteku možete dešifrirati programom kao što je {{link}} ako imate o
 #: ./src/templates/security/logManager.tpl.html:81
 msgctxt "Info"
 msgid "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
-msgstr "Možete omogućiti zapisivanje provjera autentičnosti da biste vidjeli kada se pristupa vašem računu i s koje je IP adrese. Snimit ćemo IP adresu koja je pristupila računu i vrijeme, kao i neuspješne pokušaje."
+msgstr "Možete omogućiti zapisivanje pokušaja autentikacije da biste vidjeli kada se pristupa vašem računu i s koje je IP adrese. Snimit ćemo IP adresu koja je pristupila računu i vrijeme, kao i neuspješne pokušaje."
 
 #: ./src/templates/pmMe/pmMeView.tpl.html:15
 msgctxt "Info"
@@ -7180,7 +7178,7 @@ msgstr "Zadana PGP shema"
 #: ./src/templates/user/displayNameSignature.tpl.html:5
 msgctxt "Label"
 msgid "Display name"
-msgstr "Zaslonsko ime"
+msgstr "Zaslonski naziv"
 
 #: ./src/templates/utils/linkWarningModal.tpl.html:34
 msgctxt "Label"
@@ -7250,7 +7248,7 @@ msgstr "Unesite novu OpenVPN lozinku"
 #: ./src/templates/modals/deleteAccount.tpl.html:43
 msgctxt "Label"
 msgid "Enter two-factor passcode:"
-msgstr "Unesite šifru za provjeru autentičnosti u dva koraka:"
+msgstr "Unesite kôd dvofaktorske autentikacije:"
 
 #: ./src/templates/modals/deleteAccount.tpl.html:35
 msgctxt "Label"
@@ -7518,7 +7516,7 @@ msgstr "Pouzdani ključevi"
 #: ./src/templates/authentication/loginTwoFactorForm.tpl.html:17
 msgctxt "Label"
 msgid "Two-factor passcode"
-msgstr "Provjera autentičnosti u dva koraka"
+msgstr "Kôd dvofaktorske autentikacije"
 
 #: ./src/templates/contact/contactPhotoForm.tpl.html:17
 msgctxt "Label"
@@ -7907,12 +7905,12 @@ msgstr "Molimo unesite svoje korisničko ime i lozinku"
 #: ./src/app/authentication/directives/loginPasswordInput.js:16
 msgctxt "Login modal"
 msgid "Enter your current password:"
-msgstr "Upišite vašu trenutnu lozinku:"
+msgstr "Unesite vašu trenutnu lozinku:"
 
 #: ./src/app/authentication/directives/loginPasswordInput.js:12
 msgctxt "Login modal"
 msgid "Enter your login password:"
-msgstr "Upišite vašu lozinku:"
+msgstr "Unesite vašu lozinku:"
 
 #: ./src/app/authentication/directives/loginPasswordInput.js:11
 msgctxt "Login modal"
@@ -7986,7 +7984,7 @@ msgstr "OPASNOST"
 #: ./src/app/formUtils/directives/danger.js:5
 msgctxt "Make sure the DANGER string is translated"
 msgid "Enter the word 'DANGER' here."
-msgstr "Upišite riječ 'OPASNOST' ovdje."
+msgstr "Unesite riječ 'OPASNOST' ovdje."
 
 #: ./src/templates/contact/manageContactGroupModal.tpl.html:26
 msgctxt "Manage contact group modal"
@@ -8190,12 +8188,12 @@ msgstr "Ukoliko niste upotrebljavali 2FA, preporučujemo da najprije pročitate 
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:6
 msgctxt "Modal setup 2FA"
 msgid "Set Up Two Factor Authentication"
-msgstr "Postavite provjeru autentičnosti u dva koraka"
+msgstr "Postavite dvofaktorsku autentikaciju"
 
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:10
 msgctxt "Modal setup 2FA"
 msgid "This wizard will enable Two Factor Authentication (2FA) on your ProtonMail account. 2FA will make your ProtonMail account more secure so we recommend enabling it."
-msgstr "Ovaj čarobnjak omogućiti će provjeru autentičnosti u dva koraka (2FA) na ProtonMail računu. 2FA će vaš ProtonMail račun učiniti sigurnijim pa vam preporučujemo da opciju omogućite."
+msgstr "Ovaj čarobnjak omogućiti će dvofaktorsku autentikaciju na ProtonMail računu. Preporučamo da omogućite opciju jer će vaš Proton račun biti sigurniji."
 
 #: ./src/templates/utils/printModal.tpl.html:29
 msgctxt "Modal title"
@@ -8673,7 +8671,7 @@ msgstr "Verzija OS"
 #: ./src/templates/modals/setupOrganization.tpl.html:15
 msgctxt "Placeholder"
 msgid "Organization name"
-msgstr "Ime organizacije"
+msgstr "Naziv organizacije"
 
 #: ./src/templates/modals/setupOrganization.tpl.html:53
 msgctxt "Placeholder"
@@ -8740,7 +8738,7 @@ msgstr "Predmet"
 #: ./src/templates/modals/deleteAccount.tpl.html:44
 msgctxt "Placeholder"
 msgid "Two-factor passcode"
-msgstr "Šifra za provjeru autentičnosti u dva koraka"
+msgstr "Kôd dvofaktorske autentikacije"
 
 #: ./src/templates/command/autocompleteCommand.tpl.html:4
 msgctxt "Placeholder"
@@ -9622,7 +9620,7 @@ msgstr "Privitci"
 #: ./src/templates/security/logManager.tpl.html:11
 msgctxt "Title"
 msgid "Authentication Logs"
-msgstr "Autentifikacijski zapisi"
+msgstr "Autentikacijski zapisi"
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:28
 msgctxt "Title"
@@ -10072,7 +10070,7 @@ msgstr "Digitalni potpis je ovjeren"
 #: ./src/app/settings/controllers/security.js:23
 msgctxt "Title"
 msgid "Disable Two-Factor Authentication"
-msgstr "Onemogući provjeru autentičnosti u dva koraka"
+msgstr "Onemogući dvofaktorsku autentikaciju"
 
 #: ./src/app/address/factories/addressModel.js:44
 msgctxt "Title"
@@ -10218,7 +10216,7 @@ msgstr "Unesite lozinku ključa:"
 #: ./src/templates/modals/reactivate.tpl.html:9
 msgctxt "Title"
 msgid "Enter your login password:"
-msgstr "Upišite vašu lozinku:"
+msgstr "Unesite vašu lozinku:"
 
 #: ./src/templates/views/outside.unlock.tpl.html:38
 msgctxt "Title"
@@ -10691,7 +10689,7 @@ msgstr "Povijest organizacije"
 #: ./src/templates/organization/organizationFormName.tpl.html:7
 msgctxt "Title"
 msgid "Organization name"
-msgstr "Ime organizacije"
+msgstr "Naziv organizacije"
 
 #: ./src/templates/modals/organizationRecovery.tpl.html:6
 msgctxt "Title"
@@ -11038,7 +11036,7 @@ msgstr "Postavite lozinku za organizaciju"
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:6
 msgctxt "Title"
 msgid "Set Up Two Factor Authentication"
-msgstr "Postavite provjeru autentičnosti u dva koraka"
+msgstr "Postavite dvofaktorsku autentikaciju"
 
 #: ./src/templates/address/setupAddressModal.tpl.html:6
 msgctxt "Title"
@@ -11110,7 +11108,7 @@ msgstr "Neželjena pošta"
 #: ./src/templates/filter/spamLists.tpl.html:4
 msgctxt "Title"
 msgid "Spam Filters"
-msgstr "Filteri neželjene pošte"
+msgstr "Filtri neželjene pošte"
 
 #: ./src/app/sidebar/factories/sidebarModel.js:29
 #: ./src/app/ui/factories/pageTitlesModel.js:55
@@ -11243,12 +11241,12 @@ msgstr "Pouzdani javni ključ (Potvrda adresa)"
 #: ./src/templates/views/security.tpl.html:6
 msgctxt "Title"
 msgid "Two-Factor Authentication"
-msgstr "Provjera autentičnosti u dva koraka"
+msgstr "Dvofaktorska autentikacija"
 
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:6
 msgctxt "Title"
 msgid "Two-factor authentication enabled"
-msgstr "Omogućena je provjera autentičnosti u dva koraka"
+msgstr "Omogućena je dvofaktorska autentikacija"
 
 #: ./src/templates/invoices/invoiceList.tpl.html:8
 #: ./src/templates/modals/domain/dkim.tpl.html:20
@@ -11783,7 +11781,7 @@ msgstr "Lokalno ste dešifrirali ovaj ključ"
 #: ./src/templates/settings/encryptionView.tpl.html:48
 msgctxt "Tooltip automatically attach public key"
 msgid "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you."
-msgstr "Ovo automatski dodaje vaš javni ključ svakoj poruci koju šaljete. Primatelji mogu koristiti ovo za provjeru autentičnosti vaših poruka i slanje šifriranih poruka."
+msgstr "Ovo automatski dodaje vaš javni ključ svakoj poruci koju šaljete. Primatelji mogu koristiti ovo za autentikaciju vaših poruka i slanje šifriranih poruka."
 
 #: ./src/templates/contact/contactEncrypted.tpl.html:4
 msgctxt "Tooltip contact"
@@ -11808,7 +11806,7 @@ msgstr "Kada primite internu poruku od pošiljatelja koji nema pouzdane ključev
 #: ./src/templates/settings/encryptionView.tpl.html:30
 msgctxt "Tooltip sign external messages"
 msgid "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below."
-msgstr "Automatski potpišite sve svoje odlazne poruke kako bi korisnici mogli provjeriti autentičnost vaših poruka. To se radi u kombinaciji sa zadanom PGP shemom koja je odabrana dolje."
+msgstr "Automatski potpišite sve svoje odlazne poruke kako bi korisnici mogli izvršiti autentikaciju vaših poruka. To se radi u kombinaciji sa zadanom PGP shemom koja je odabrana dolje."
 
 #: ./src/templates/views/account.tpl.html:75
 msgctxt "Tooltip to explain daily email notifications"
@@ -11840,7 +11838,7 @@ msgstr "starije verzije"
 #: ./src/templates/authentication/loginForm.tpl.html:63
 msgctxt "Trouble logging in? Get help or try older version."
 msgid "or try"
-msgstr "ili pokušajte"
+msgstr "ili isprobajte"
 
 #: ./src/templates/payment/bitcoinView.tpl.html:17
 msgctxt "Try to reload bitcoin qrcode"
@@ -11850,12 +11848,12 @@ msgstr "Pokušajte ponovno."
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:10
 msgctxt "Two-factor code field"
 msgid "Enter two-factor passcode:"
-msgstr "Unesite šifru za provjeru autentičnosti u dva koraka:"
+msgstr "Unesite kôd dvofaktorske autentikacije:"
 
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:15
 msgctxt "Two-factor code field"
 msgid "Two-factor passcode"
-msgstr "Šifra za provjeru autentičnosti u dva koraka"
+msgstr "Kôd dvofaktorske autentikacije"
 
 #: ./src/app/elements/services/removeElement.js:25
 msgctxt "Type element"

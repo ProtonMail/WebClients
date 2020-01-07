@@ -4,14 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: pl\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2019-12-01 14:21\n"
+"PO-Revision-Date: 2020-01-07 10:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -3388,7 +3386,7 @@ msgstr "Osiągnąłeś limit domen niestandardowych. <a ui-sref=\"secured.dashbo
 #: ./src/app/payment/factories/donateModel.js:5
 msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
-msgstr "Twoje wsparcie jest niezbędne do funkcjonowania poczty ProtonMail. Dziękujemy za wsparcie prywatności w Internecie!"
+msgstr "Twoja pomoc jest niezbędna do funkcjonowania poczty ProtonMail. Dziękujemy za wsparcie prywatności w Internecie!"
 
 #: ./src/app/dashboard/factories/downgrade.js:25
 msgctxt "Downgrade account"
@@ -3874,7 +3872,7 @@ msgstr "Wpisz kod uwierzytelniania dwustopniowego"
 #: ./src/app/keys/services/decryptKeys.js:10
 msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
-msgstr "Klucz główny dla adresu {{email}} nie może być odszyfrowany. Nie będziesz w stanie odczytać lub napisać żadnej wiadomości e-mail z tego adresu"
+msgstr "Klucz główny dla adresu {{email}} nie może zostać odszyfrowany. Nie będziesz w stanie odczytać lub napisać żadnej wiadomości e-mail z tego adresu"
 
 #: ./src/app/authentication/interceptors/httpInterceptor.js:30
 msgctxt "Error"
@@ -4055,7 +4053,7 @@ msgstr "Nie wspieramy osadzonych plików SVG w podpisie"
 #: ./src/app/settings/controllers/domains.js:271
 msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
-msgstr "Nieprawidłowy kod weryfikacyjny. Upewnij się, że prawidłowo skopiowałeś kod i spróbuj ponownie. Wprowadzenie zmian może potrwać do 24 godzin."
+msgstr "Kod weryfikacyjny jest nieprawidłowy. Upewnij się, że prawidłowo skopiowałeś kod i spróbuj ponownie. Wprowadzenie zmian może potrwać do 24 godzin."
 
 #: ./src/app/core/directives/signupIframe.js:40
 msgctxt "Error"
@@ -6123,7 +6121,7 @@ msgstr "Wyślij"
 #: ./src/templates/attachments/eventsAttachments.tpl.html:14
 msgctxt "Info"
 msgid "Summary"
-msgstr "Podsumowanie"
+msgstr "Tytuł"
 
 #: ./src/templates/user/signupUserForm.tpl.html:22
 msgctxt "Info"
@@ -6495,7 +6493,7 @@ msgstr "Co sądzisz o usłudze ProtonMail w wersji 3.0?"
 #: ./src/templates/attachments/eventsAttachments.tpl.html:28
 msgctxt "Info"
 msgid "When"
-msgstr "Kiedy"
+msgstr "Data"
 
 #: ./src/app/filter/directives/emailBlockList.js:6
 msgctxt "Info"
@@ -8052,7 +8050,7 @@ msgstr "Fw:"
 #: ./src/app/message/services/messageBuilder.js:297
 msgctxt "Message"
 msgid "On {{date}}, {{name}} {{address}} wrote:"
-msgstr "W {{date}}, {{name}} {{address}} napisał(a):"
+msgstr "{{date}}, {{name}} {{address}} napisał(a):"
 
 #: ./src/app/message/services/messageBuilder.js:191
 msgctxt "Message"
@@ -11305,7 +11303,7 @@ msgstr "Ulepsz"
 #: ./src/templates/message/trustPublicKeyTable.tpl.html:8
 msgctxt "Title"
 msgid "Use for encryption"
-msgstr "Użyj do szyfrowania"
+msgstr "Używaj do szyfrowania"
 
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:18

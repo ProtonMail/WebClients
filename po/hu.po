@@ -4,14 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: hu\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: Hungarian\n"
 "Language: hu_HU\n"
-"PO-Revision-Date: 2019-11-28 23:22\n"
+"PO-Revision-Date: 2020-01-06 11:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -790,7 +788,7 @@ msgstr "Kikapcsolva"
 #: ./src/templates/views/security.tpl.html:13
 msgctxt "Action"
 msgid "Disable Two-Factor Authentication"
-msgstr "Kétlépcsős azonosítás kikapcsolása"
+msgstr "Kétlépéses hitelesítés kikapcsolása"
 
 #. form option
 #. notification settings option
@@ -917,7 +915,7 @@ msgstr "Engedélyezés"
 #: ./src/templates/views/security.tpl.html:14
 msgctxt "Action"
 msgid "Enable Two-Factor Authentication"
-msgstr "Kétlépcsős azonosítás engedélyezése"
+msgstr "Kétlépéses hitelesítés bekapcsolása"
 
 #: ./src/templates/address/addressKeysView.tpl.html:98
 msgctxt "Action"
@@ -1044,7 +1042,7 @@ msgstr "Hiányzó kulcsok generálása"
 #: ./src/app/blackFriday/directives/blackFriday.js:40
 msgctxt "Action"
 msgid "Get the deal"
-msgstr ""
+msgstr "Érdekel az ajánlat"
 
 #: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
@@ -3338,7 +3336,7 @@ msgstr "Az összes törlése"
 #: ./src/app/settings/controllers/security.js:29
 msgctxt "Disable 2FA"
 msgid "Two-factor authentication disabled"
-msgstr "Kétlépcsős azonosítás kikapcsolva"
+msgstr "Kétlépéses hitelesítés kikapcsolva"
 
 #: ./src/templates/dashboard/vpnDiscountPanel.tpl.html:3
 msgctxt "Discount displayed in the dashboard"
@@ -3353,7 +3351,7 @@ msgstr "20% kedvezmény, ha a ProtonMailt és a ProtonVPN-t is megvásárolja"
 #: ./src/templates/blackFriday/blackFriday.tpl.html:14
 msgctxt "Discount offer X% off"
 msgid "off"
-msgstr ""
+msgstr "ki"
 
 #: ./src/templates/views/domains.tpl.html:131
 msgctxt "Domain status"
@@ -3859,7 +3857,7 @@ msgstr "Kérem adja meg az e-mail jelszavát"
 #: ./src/app/authentication/directives/loginTwoFactorForm.js:4
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
-msgstr "Kérjük adja meg kétlépcsős azonosító kódját"
+msgstr "Adja meg kétlépéses kódját"
 
 #: ./src/app/keys/services/decryptKeys.js:10
 msgctxt "Error"
@@ -3934,7 +3932,7 @@ msgstr "A melléklet letöltésre kerül, de továbbra is titkosítva marad."
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:49
 msgctxt "Error"
 msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
-msgstr ""
+msgstr "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
 
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:27
 msgctxt "Error"
@@ -4583,12 +4581,12 @@ msgstr "*Javasoljuk, hogy először adjon hozzá egy helyreállítási e-mail c�
 #: ./src/app/dashboard/factories/downgrade.js:42
 msgctxt "Info"
 msgid "+2 connections for ProtonVPN (allows you to connect more devices to VPN)"
-msgstr ""
+msgstr "További 2 ProtonVPN kapcsolat (lehetővé teszi több készülék csatlakoztatását a VPN-hez)"
 
 #: ./src/app/dashboard/factories/downgrade.js:40
 msgctxt "Info"
 msgid "+5GB bonus storage"
-msgstr ""
+msgstr "+5 GB bónusz tárhely"
 
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
@@ -5006,7 +5004,7 @@ msgstr "Biztos, hogy le szeretné tiltani ezt a címet?"
 #: ./src/app/settings/controllers/security.js:24
 msgctxt "Info"
 msgid "Are you sure you want to disable two-factor authentication?"
-msgstr "Biztos, hogy le szeretné tiltani a kétlépcsős azonosítást?"
+msgstr "Biztosan ki szeretné kapcsolni a kétlépéses hitelesítést?"
 
 #: ./src/app/members/services/memberActions.js:78
 msgctxt "Info"
@@ -5032,7 +5030,7 @@ msgstr "Biztos benne? Ezt nem lehet visszavonni."
 #: ./src/app/dashboard/factories/downgrade.js:29
 msgctxt "Info"
 msgid "As an early Proton user, your account has extra features."
-msgstr ""
+msgstr "Mivel Ön korai Proton felhasználó, fiókja extra szolgáltatásokat tartalmaz."
 
 #: ./src/templates/attachments/eventsAttachments.tpl.html:5
 msgctxt "Info"
@@ -5092,17 +5090,17 @@ msgstr "Számlázva {{amount}} /évente"
 #: ./src/app/blackFriday/directives/blackFriday.js:20
 msgctxt "Info"
 msgid "Billed as {{price}} for 1 year"
-msgstr ""
+msgstr "Egy évre {{price}} számlázva"
 
 #: ./src/app/blackFriday/directives/blackFriday.js:22
 msgctxt "Info"
 msgid "Billed as {{price}} for 2 years"
-msgstr ""
+msgstr "Két évre {{price}} számlázva"
 
 #: ./src/app/filter/directives/emailBlockList.js:7
 msgctxt "Info"
 msgid "Blacklist"
-msgstr "Feketelista"
+msgstr "Tiltólista"
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:117
 msgctxt "Info"
@@ -5132,7 +5130,7 @@ msgstr "Az Elküldés megnyomásával elfogadja a"
 #: ./src/app/dashboard/factories/downgrade.js:34
 msgctxt "Info"
 msgid "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
-msgstr ""
+msgstr "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
 
 #: ./src/app/composer/controllers/composeMessage.js:140
 #: ./src/app/routes.js:413
@@ -5495,7 +5493,7 @@ msgstr "Ha elveszíti a jelszavát, nem fogja tudni elolvasni a leveleit."
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:11
 msgctxt "Info"
 msgid "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit 2FA code to log into your account. Each code can only be used once."
-msgstr "Ha elveszítené a kétlépcsős azonosításhoz használt eszközét, a bejelentkezéshez ezek a kódok használhatók a 6-számjegyű 2FA kód helyett. Minden kód csak egyszer használható."
+msgstr "Ha elveszti a kétlépéses hitelesítéshez használt eszközét, ezekkel a kódokkal jelentkezhet be fiókjába a 6 számjegyű 2FA kód helyett. Minden kód csak egyszer használható."
 
 #: ./src/templates/modals/domain/spf.tpl.html:31
 msgctxt "Info"
@@ -5967,12 +5965,12 @@ msgstr "Távolítsa el a mellékletet {{fileName}}"
 #: ./src/app/blackFriday/directives/blackFriday.js:26
 msgctxt "Info"
 msgid "Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)"
-msgstr ""
+msgstr "Egy évet követően megújul {{price}} kedvezményes éves áron (20% kedvezmény)"
 
 #: ./src/app/blackFriday/directives/blackFriday.js:33
 msgctxt "Info"
 msgid "Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)"
-msgstr ""
+msgstr "Két évet követően megújul {{price}} kedvezményes kétéves áron ({{discount}}% kedvezmény)"
 
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
@@ -6037,7 +6035,7 @@ msgstr "A jelszavait tárolja biztonságos helyen. Kattintson a <i class=\"fa fa
 #: ./src/app/blackFriday/directives/blackFriday.js:42
 msgctxt "Info"
 msgid "Save {{price}}"
-msgstr ""
+msgstr "Spóroljon {{price}}"
 
 #: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
@@ -6058,7 +6056,7 @@ msgstr "Kiválasztott csomag"
 #: ./src/templates/filter/spamLists.tpl.html:11
 msgctxt "Info"
 msgid "Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds the address to the Whitelist."
-msgstr "Itt a feladótól függő levélszemét szabályok határozhatók meg. Az Engedélyezett Listán szereplő címekről érkező levelek mindig a Beérkező levelekbe, míg a Tiltott Listán szereplők a Levélszemétbe kerülnek. Egy üzenet megjelölése levélszemétként, felveszi a feladót a Tiltott Listára. Egy üzenet megjelölése, hogy nem levélszemét, felveszi a feladót az Engedélyezett Listára."
+msgstr "Itt alkalmazhatók a küldőspecifikus levélszemét-szabályok. Az engedélyezési listás címek mindig a beérkező levelekbe, míg a tiltólistás címek mindig a levélszemétbe kerülnek. Egy üzenet megjelölése nem levélszemétként az engedélyezési listához adja azt a címet."
 
 #: ./src/templates/views/domains.tpl.html:212
 msgctxt "Info"
@@ -7231,7 +7229,7 @@ msgstr "Írja be az új ProtonVPN jelszót"
 #: ./src/templates/modals/deleteAccount.tpl.html:43
 msgctxt "Label"
 msgid "Enter two-factor passcode:"
-msgstr "Írja be a kétlépcsős jelszót:"
+msgstr "Írja be a kétlépéses kódot:"
 
 #: ./src/templates/modals/deleteAccount.tpl.html:35
 msgctxt "Label"
@@ -7499,7 +7497,7 @@ msgstr "Megbízható kulcsok"
 #: ./src/templates/authentication/loginTwoFactorForm.tpl.html:17
 msgctxt "Label"
 msgid "Two-factor passcode"
-msgstr "Kétfaktoros jelszó"
+msgstr "Kétlépéses kód"
 
 #: ./src/templates/contact/contactPhotoForm.tpl.html:17
 msgctxt "Label"
@@ -8439,7 +8437,7 @@ msgstr[1] "Felhasználó azonosító keveredés. Ez a kulcs {{emails}} címhez t
 #: ./src/templates/payment/paypalView.tpl.html:4
 msgctxt "PayPal error"
 msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
-msgstr ""
+msgstr "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
 
 #: ./src/app/settings/controllers/payments.js:100
 msgctxt "Payment"
@@ -8720,7 +8718,7 @@ msgstr "Tárgy"
 #: ./src/templates/modals/deleteAccount.tpl.html:44
 msgctxt "Placeholder"
 msgid "Two-factor passcode"
-msgstr "Kétlépcsős jelszó"
+msgstr "Kétlépéses kód"
 
 #: ./src/templates/command/autocompleteCommand.tpl.html:4
 msgctxt "Placeholder"
@@ -8805,7 +8803,7 @@ msgstr "Korlátlan küldés"
 #: ./src/templates/blackFriday/blackFriday.tpl.html:27
 msgctxt "Price offer"
 msgid "Regular price"
-msgstr ""
+msgstr "Normál ár"
 
 #: ./src/app/dashboard/directives/vpnRow.js:25
 msgctxt "ProtonVPN with X connections"
@@ -8857,7 +8855,7 @@ msgstr "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, se bejelentkezni
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
 msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
-msgstr ""
+msgstr "Jelszavát mentse el egy biztonságos helyre. Klikkeljen az <i class=\"fa fa-eye\"></i> ikonra, hogy megerősítse, helyes jelszót adott meg."
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
 msgctxt "Reset your password"
@@ -8961,7 +8959,7 @@ msgstr "bájt"
 #: ./src/templates/filter/spamListSearch.tpl.html:3
 msgctxt "Spam filtering"
 msgid "Search Whitelist and Blacklist"
-msgstr "Keresés az Engedélyezett és a Tiltott listán"
+msgstr "Engedélyezési-/tiltólista keresése"
 
 #: ./src/templates/user/storageWarningView.tpl.html:6
 msgctxt "Storage warning"
@@ -9447,7 +9445,7 @@ msgstr "Több címzett megadása"
 #: ./src/templates/filter/filterAddressModal.tpl.html:15
 msgctxt "Title"
 msgid "Add to Blacklist"
-msgstr "Hozzáadás a tiltólistához"
+msgstr "Tiltólistához adás"
 
 #: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:17
 msgctxt "Title"
@@ -9654,7 +9652,7 @@ msgstr "Bit"
 #: ./src/templates/blackFriday/blackFriday.tpl.html:3
 msgctxt "Title"
 msgid "Black Friday Sale"
-msgstr ""
+msgstr "Black Friday akció"
 
 #: ./src/app/ui/factories/pageTitlesModel.js:32
 msgctxt "Title"
@@ -9791,7 +9789,7 @@ msgstr "Bejelentkezési jelszó megerősítése"
 #: ./src/app/dashboard/factories/downgrade.js:26
 msgctxt "Title"
 msgid "Confirm loss of Proton bonuses"
-msgstr ""
+msgstr "Proton kedvezmények elvesztésének megerősítése"
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
 msgctxt "Title"
@@ -10046,7 +10044,7 @@ msgstr "Digitális aláírás ellenőrizve"
 #: ./src/app/settings/controllers/security.js:23
 msgctxt "Title"
 msgid "Disable Two-Factor Authentication"
-msgstr "Kétlépcsős azonosítás kikapcsolása"
+msgstr "Kétlépéses hitelesítés kikapcsolása"
 
 #: ./src/app/address/factories/addressModel.js:44
 msgctxt "Title"
@@ -11217,12 +11215,12 @@ msgstr "Nyilvános kulcs megbízhatóként jelölése (cím hitelesítés)"
 #: ./src/templates/views/security.tpl.html:6
 msgctxt "Title"
 msgid "Two-Factor Authentication"
-msgstr "Kétlépcsős azonosítás"
+msgstr "Kétlépéses hitelesítés"
 
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:6
 msgctxt "Title"
 msgid "Two-factor authentication enabled"
-msgstr "Kétlépcsős azonosítás bekapcsolva"
+msgstr "Kétlépéses hitelesítés bekapcsolva"
 
 #: ./src/templates/invoices/invoiceList.tpl.html:8
 #: ./src/templates/modals/domain/dkim.tpl.html:20
@@ -11242,7 +11240,7 @@ msgstr "Leiratkozik a levelezési listáról?"
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:15
 msgctxt "Title"
 msgid "Unsupported browser"
-msgstr ""
+msgstr "Nem támogatott böngésző"
 
 #: ./src/templates/modals/member.tpl.html:14
 msgctxt "Title"
@@ -11820,12 +11818,12 @@ msgstr "Próbálja újra."
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:10
 msgctxt "Two-factor code field"
 msgid "Enter two-factor passcode:"
-msgstr "Írja be a kétlépcsős jelszót:"
+msgstr "Írja be a kétlépéses kódot:"
 
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:15
 msgctxt "Two-factor code field"
 msgid "Two-factor passcode"
-msgstr "Kétlépcsős jelszó"
+msgstr "Kétlépcsős azonosító kód"
 
 #: ./src/app/elements/services/removeElement.js:25
 msgctxt "Type element"
@@ -12184,29 +12182,29 @@ msgstr "Mit gondol..."
 msgctxt "X days before the end"
 msgid "{{$count}} day"
 msgid_plural "{{$count}} days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{{$count}} nap"
+msgstr[1] "{{$count}} nap"
 
 #: ./src/app/blackFriday/directives/blackFridayCountdown.js:10
 msgctxt "X hours before the end"
 msgid "{{$count}} hour"
 msgid_plural "{{$count}} hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{{$count}} óra"
+msgstr[1] "{{$count}} óra"
 
 #: ./src/app/blackFriday/directives/blackFridayCountdown.js:13
 msgctxt "X minutes before the end"
 msgid "{{$count}} minute"
 msgid_plural "{{$count}} minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{{$count}} perc"
+msgstr[1] "{{$count}} perc"
 
 #: ./src/app/blackFriday/directives/blackFridayCountdown.js:22
 msgctxt "X seconds before the end"
 msgid "{{$count}} second"
 msgid_plural "{{$count}} seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{{$count}} másodperc"
+msgstr[1] "{{$count}} másodperc"
 
 #: ./src/templates/contact/contactNoResult.tpl.html:6
 msgctxt "You can Add contact or Import contacts"
@@ -12231,7 +12229,7 @@ msgstr "Naptár engedélyezése (hamarosan elérhető).<br />Ez eltarthat pár p
 #: ./src/templates/security/sessionLogsTable.tpl.html:33
 msgctxt "auth log entry"
 msgid "Login failure (two-factor)"
-msgstr "Bejelentkezési hiba (kétlépcsős)"
+msgstr "Sikertelen bejelentkezés (kétlépéses)"
 
 #: ./src/templates/security/sessionLogsTable.tpl.html:27
 msgctxt "auth log entry"
@@ -12241,7 +12239,7 @@ msgstr "Sikeres bejelentkezés"
 #: ./src/templates/security/sessionLogsTable.tpl.html:36
 msgctxt "auth log entry"
 msgid "Login success (two-factor)"
-msgstr "Bejelentkezés sikeres (kétlépcsős)"
+msgstr "Sikeres bejelentkezés (kétlépéses)"
 
 #: ./src/templates/security/sessionLogsTable.tpl.html:30
 msgctxt "auth log entry"
@@ -12291,7 +12289,7 @@ msgstr "Mi történt?"
 #: ./src/app/dashboard/factories/downgrade.js:27
 msgctxt "button"
 msgid "Remove bonuses"
-msgstr ""
+msgstr "Kedvezmények törlése"
 
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
@@ -12535,7 +12533,7 @@ msgstr "{{total}} {{type}} csillagozása"
 #: ./src/app/blackFriday/directives/blackFriday.js:39
 msgctxt "price"
 msgid "/mo"
-msgstr ""
+msgstr "/hó"
 
 #: ./src/app/utils/factories/printMessageModel.js:12
 msgctxt "printed message info"

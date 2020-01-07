@@ -4,14 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
-"PO-Revision-Date: 2019-12-04 12:20\n"
+"PO-Revision-Date: 2020-01-07 04:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -4016,7 +4014,7 @@ msgstr "不支持的密钥"
 #: ./src/app/composer/directives/composerSelectFrom.js:14
 msgctxt "Error"
 msgid "Upgrade to a paid plan to send from your {{email}} address"
-msgstr "升级为付费账户以使用 {{email}} 地址发送邮件"
+msgstr "开通付费账户方可使用 {{email}} 地址发送邮件"
 
 #: ./src/app/core/directives/signupIframe.js:29
 #: ./src/templates/views/reset-login-password.tpl.html:20
@@ -6519,7 +6517,7 @@ msgstr "如果您有对应的私钥，您可以使用诸如{{link}} 的软件解
 #: ./src/templates/security/logManager.tpl.html:81
 msgctxt "Info"
 msgid "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
-msgstr "您可以开启登录日志功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
+msgstr "您可以开启登录记录功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
 
 #: ./src/templates/pmMe/pmMeView.tpl.html:15
 msgctxt "Info"
@@ -12302,7 +12300,7 @@ msgstr "/"
 #: ./src/templates/views/dashboard.tpl.html:36
 msgctxt "dashboard, donation informations"
 msgid "Upgrading to a paid account is the best way to support ProtonMail, but you can also donate any amount."
-msgstr "升级为付费账户是支持 ProtonMail 的最佳方式，但您也可以自由捐款。"
+msgstr "开通付费账户是支持 ProtonMail 的最佳方式，但您也可以自由捐款。"
 
 #: ./src/templates/views/dashboard.tpl.html:37
 msgctxt "dashboard, donation informations"

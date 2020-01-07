@@ -4,14 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: protonmail\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: pt-PT\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator\n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
-"PO-Revision-Date: 2019-12-05 10:20\n"
+"PO-Revision-Date: 2020-01-06 11:21\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -902,7 +900,7 @@ msgstr "Esvaziar etiqueta"
 #: ./src/templates/elements/advancedFilterElement.tpl.html:36
 msgctxt "Action"
 msgid "Empty spam"
-msgstr "Esvaziar assédio"
+msgstr "Esvaziar spam"
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:45
 msgctxt "Action"
@@ -1086,7 +1084,7 @@ msgstr "Ocultar mensagens no lixo"
 #: ./src/templates/ui/navigation/navigationReport.tpl.html:12
 msgctxt "Action"
 msgid "I have a question"
-msgstr "Tenho uma pergunta"
+msgstr "Tenho uma dúvida"
 
 #: ./src/templates/contact/importContactModal.tpl.html:15
 #: ./src/templates/modals/generate.tpl.html:81
@@ -1239,7 +1237,7 @@ msgstr "Marcar como lido/não lido"
 #: ./src/templates/message/message.tpl.html:215
 msgctxt "Action"
 msgid "Mark as spam"
-msgstr "Marcar como assédio"
+msgstr "Marcar como spam"
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:13
 #: ./src/templates/directives/ui/readUnread.tpl.html:20
@@ -1314,7 +1312,7 @@ msgstr "Mover para a caixa de entrada"
 #: ./src/templates/ui/toolbarMobile.tpl.html:48
 msgctxt "Action"
 msgid "Move to spam"
-msgstr "Mover para o assédio"
+msgstr "Mover para o spam"
 
 #: ./src/templates/elements/moveElement.tpl.html:2
 #: ./src/templates/elements/moveElement.tpl.html:8
@@ -1376,7 +1374,7 @@ msgstr "Não"
 #: ./src/templates/ui/toolbarMobile.tpl.html:56
 msgctxt "Action"
 msgid "Not spam"
-msgstr "Não é assédio"
+msgstr "Não é spam"
 
 #: ./src/app/composer/factories/composerFromModel.js:17
 #: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:32
@@ -2195,7 +2193,7 @@ msgstr "Enviado"
 #: ./src/app/message/factories/messageActions.js:44
 msgctxt "App folder"
 msgid "Spam"
-msgstr "Assédio"
+msgstr "Spam"
 
 #: ./src/app/conversation/factories/actionConversation.js:43
 #: ./src/app/message/factories/messageActions.js:49
@@ -2316,7 +2314,7 @@ msgstr "Montante inferior ao mínimo. ({{ ::validator.amountMin / 100 }} {{::cur
 #: ./src/templates/views/appearance.tpl.html:188
 msgctxt "Bubbule info in appearance sent and drafts folders"
 msgid "Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder."
-msgstr "Definição para 'Incluir movidas' quer dizer que os rascunhos e as mensagens enviadas que foram movidas para outras pastas continuarão a ser mostradas na pasta Enviado/Rascunhos."
+msgstr "Definição para \"Incluir movidos\" quer dizer que os rascunhos e as mensagens enviadas que foram movidas para outras pastas continuarão a ser mostradas na pasta Enviado/Rascunhos."
 
 #: ./src/app/bugReport/services/bugReportApi.js:126
 msgctxt "Bug report successfully"
@@ -3367,7 +3365,7 @@ msgstr "Verifique as suas configurações de DNS."
 #: ./src/templates/views/domains.tpl.html:14
 msgctxt "Domains"
 msgid "Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade to ProtonMail Plus</a>."
-msgstr "Use seu próprio domínio com o ProtonMail e use o seu próprio endereço de email, e.g. nome@dominio.com. Para activar esta funcionalidade, <a ui-sref=\"secured.dashboard({scroll: true})\">actualize para o plano ProtonMail Plus</a>."
+msgstr "Use o seu próprio domínio com o ProtonMail e use o seu próprio endereço de email, e.g. nome@dominio.com. Para activar esta funcionalidade, <a ui-sref=\"secured.dashboard({scroll: true})\">actualize para o plano ProtonMail Plus</a>."
 
 #: ./src/templates/views/domains.tpl.html:198
 msgctxt "Domains information"
@@ -4160,7 +4158,7 @@ msgstr "Este formulário é inválido"
 #: ./src/app/contact/modals/contactLoaderModal.js:42
 msgctxt "Error during importation"
 msgid "Import failed. Please check the import file or try again."
-msgstr "Falha ao importar. Por favor verifique o ficheiro de importação ou tente novamente."
+msgstr "Falha ao importar. Por favor, verifique o ficheiro de importação ou tente novamente."
 
 #: ./src/templates/ui/dateTimePicker.tpl.html:22
 msgctxt "Error input"
@@ -4370,17 +4368,17 @@ msgstr "ou"
 #: ./src/app/filter/factories/incomingModel.js:4
 msgctxt "Filters"
 msgid "Spam Filter Added"
-msgstr "Filtro de assédio adicionado"
+msgstr "Filtro de Spam Adicionado"
 
 #: ./src/app/filter/factories/incomingModel.js:6
 msgctxt "Filters"
 msgid "Spam Filter Deleted"
-msgstr "Filtro de assédio eliminado"
+msgstr "Filtro de spam eliminado"
 
 #: ./src/app/filter/factories/incomingModel.js:5
 msgctxt "Filters"
 msgid "Spam Filter Updated"
-msgstr "Filtro de assédio actualizado"
+msgstr "Filtro de spam actualizado"
 
 #: ./src/templates/squire/squireSelectFontFamily.tpl.html:3
 msgctxt "Font"
@@ -4481,7 +4479,7 @@ msgstr "Ir para os enviados"
 #: ./src/app/utils/services/hotkeys.js:23
 msgctxt "Hotkey description"
 msgid "Go to spam"
-msgstr "Ir para o assédio"
+msgstr "Ir para o spam"
 
 #: ./src/app/utils/services/hotkeys.js:21
 msgctxt "Hotkey description"
@@ -4516,7 +4514,7 @@ msgstr "Mover para a caixa de entrada"
 #: ./src/app/utils/services/hotkeys.js:16
 msgctxt "Hotkey description"
 msgid "Move to spam"
-msgstr "Mover para o assédio"
+msgstr "Mover para o spam"
 
 #: ./src/app/utils/services/hotkeys.js:14
 msgctxt "Hotkey description"
@@ -4614,12 +4612,12 @@ msgstr "<i class = \"fa fa-info-circle\"> </i> Se recarregar a página ou <a hre
 #: ./src/templates/modals/hotkey.tpl.html:61
 msgctxt "Info"
 msgid "<kbd>*</kbd> then <kbd>a</kbd> <strong>Select all</strong> conversations."
-msgstr "<kbd>*</kbd> e depois <kbd>a</kbd> <strong>Seleccionar todas</strong> as conversas."
+msgstr "<kbd>*</kbd> + <kbd>a</kbd> <strong>Seleccionar todas</strong> as conversas."
 
 #: ./src/templates/modals/hotkey.tpl.html:62
 msgctxt "Info"
 msgid "<kbd>*</kbd> then <kbd>n</kbd> <strong>Unselect all</strong> conversations."
-msgstr "<kbd>*</kbd> e depois <kbd>n</kbd><strong>De-seleccionar todas as</strong> conversas."
+msgstr "<kbd>*</kbd> + <kbd>n</kbd><strong>De-seleccionar todas as</strong> conversas."
 
 #: ./src/templates/modals/hotkey.tpl.html:66
 msgctxt "Info"
@@ -4739,37 +4737,37 @@ msgstr "<kbd>Esc</kbd> Fecha o <strong>compositor</strong> activo."
 #: ./src/templates/modals/hotkey.tpl.html:41
 msgctxt "Info"
 msgid "<kbd>g</kbd> then <kbd>.</kbd> Goes to <strong>starred</strong>."
-msgstr "<kbd>g</kbd> e depois <kbd>.</kbd> Vai para as <strong>estreladas</strong>."
+msgstr "<kbd>g</kbd> + <kbd>.</kbd> Vai para as <strong>estreladas</strong>."
 
 #: ./src/templates/modals/hotkey.tpl.html:42
 msgctxt "Info"
 msgid "<kbd>g</kbd> then <kbd>a</kbd> Goes to <strong>archive</strong>."
-msgstr "<kbd>g</kbd> e depois <kbd>a</kbd> Vai para o <strong>arquivo</strong>."
+msgstr "<kbd>g</kbd> + <kbd>a</kbd> Vai para o <strong>arquivo</strong>."
 
 #: ./src/templates/modals/hotkey.tpl.html:39
 msgctxt "Info"
 msgid "<kbd>g</kbd> then <kbd>d</kbd> Goes to <strong>drafts</strong>."
-msgstr "<kbd>g</kbd> e depois <kbd>d</kbd> Vai para os <strong>rascunhos</strong>."
+msgstr "<kbd>g</kbd> + <kbd>d</kbd> Vai para os <strong>rascunhos</strong>."
 
 #: ./src/templates/modals/hotkey.tpl.html:38
 msgctxt "Info"
 msgid "<kbd>g</kbd> then <kbd>i</kbd> Goes to <strong>inbox</strong>."
-msgstr "<kbd>g</kbd> e depois <kbd>i</kbd> Vai para a <strong>caixa de entrada</strong>."
+msgstr "<kbd>g</kbd> + <kbd>i</kbd> Vai para a <strong>caixa de entrada</strong>."
 
 #: ./src/templates/modals/hotkey.tpl.html:40
 msgctxt "Info"
 msgid "<kbd>g</kbd> then <kbd>s</kbd> Goes to <strong>sent</strong>."
-msgstr "<kbd>g</kbd> e depois <kbd>s</kbd> Vai para os <strong>enviados</strong>."
+msgstr "<kbd>g</kbd> + <kbd>s</kbd> Vai para os <strong>enviados</strong>."
 
 #: ./src/templates/modals/hotkey.tpl.html:44
 msgctxt "Info"
 msgid "<kbd>g</kbd> then <kbd>t</kbd> Goes to <strong>trash</strong>."
-msgstr "<kbd>g</kbd> e depois <kbd>t</kbd> Vai para o <strong>lixo</strong>."
+msgstr "<kbd>g</kbd> + <kbd>t</kbd> Vai para o <strong>lixo</strong>."
 
 #: ./src/templates/modals/hotkey.tpl.html:43
 msgctxt "Info"
 msgid "<kbd>g</kbd> then <kbd>x</kbd> Goes to <strong>spam</strong>."
-msgstr "<kbd>g</kbd> e depois <kbd>x</kbd> Vai para o <strong>assédio</strong>."
+msgstr "<kbd>g</kbd> + <kbd>x</kbd> Vai para <strong>spam</strong>."
 
 #: ./src/templates/modals/hotkey.tpl.html:67
 msgctxt "Info"
@@ -4794,7 +4792,7 @@ msgstr "<kbd>r</kbd> Marca a mensagem/conversa como <strong>lida</strong>."
 #: ./src/templates/modals/hotkey.tpl.html:70
 msgctxt "Info"
 msgid "<kbd>s</kbd> Moves the message/conversation to <strong>spam</strong>."
-msgstr "<kbd>s</kbd> Move a mensagem/conversa para o <strong>assédio</strong>."
+msgstr "<kbd>s</kbd> Move a mensagem/conversa para <strong>spam</strong>."
 
 #: ./src/templates/modals/hotkey.tpl.html:75
 msgctxt "Info"
@@ -5593,7 +5591,7 @@ msgstr "Erro de início de sessão (senha)"
 #: ./src/templates/security/logManager.tpl.html:82
 msgctxt "Info"
 msgid "Logs include authentication attempts for all Proton services that use your ProtonMail credentials."
-msgstr "O registo inclui tentativas de autenticação a todos os serviços Proton que utilizem as suas credenciais ProtonMail."
+msgstr "Os diários incluem tentativas de autenticação a todos os serviços Proton que utilizem as suas credenciais ProtonMail."
 
 #. form option
 #: ./src/templates/views/appearance.tpl.html:24
@@ -5643,7 +5641,7 @@ msgstr[1] "Sem emails para estes contactos"
 #: ./src/app/filter/directives/emailBlockList.js:13
 msgctxt "Info"
 msgid "No emails in the {{ filterName }}, click {{ add }} to add addresses to the {{ filterName }}"
-msgstr "Nenhum email no {{ filterName }}, clique em {{ add }} para adicionar endereços a {{ filterName }}"
+msgstr "Nenhum email na {{ filterName }}, clique em {{ add }} para adicionar endereços à {{ filterName }}"
 
 #: ./src/templates/invoices/invoiceSection.tpl.html:62
 msgctxt "Info"
@@ -6305,7 +6303,7 @@ msgstr "Para transferir anexos no Safari:"
 #: ./src/templates/user/humanVerification.tpl.html:17
 msgctxt "Info"
 msgid "To fight spam, please verify you are human."
-msgstr "Para combater o assédio, por favor confirme que é um ser humano."
+msgstr "Para combater o spam, por favor confirme que é um ser humano."
 
 #: ./src/templates/filter/modal.tpl.html:35
 msgctxt "Info"
@@ -7165,7 +7163,7 @@ msgstr "Esquema PGP predefinido"
 #: ./src/templates/user/displayNameSignature.tpl.html:5
 msgctxt "Label"
 msgid "Display name"
-msgstr "Nome mostrado"
+msgstr "Nome a mostrar"
 
 #: ./src/templates/utils/linkWarningModal.tpl.html:34
 msgctxt "Label"
@@ -7462,12 +7460,12 @@ msgstr "Assinatura"
 #: ./src/templates/filter/modal.tpl.html:180
 msgctxt "Label"
 msgid "Spam"
-msgstr "Assédio"
+msgstr "Spam"
 
 #: ./src/templates/filter/modal.tpl.html:223
 msgctxt "Label"
 msgid "Starred"
-msgstr "Estreladas"
+msgstr "Com estrela"
 
 #: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:70
 msgctxt "Label"
@@ -7639,7 +7637,7 @@ msgstr "Formato"
 #: ./src/templates/contact/contactSchemeSelector.tpl.html:3
 msgctxt "Label for contact Scheme selector"
 msgid "Cryptographic scheme"
-msgstr "Esquema criptográfico"
+msgstr "Esquema de encriptação"
 
 #: ./src/templates/contact/contactSignToggle.tpl.html:3
 msgctxt "Label for contact Sign toggle"
@@ -8265,12 +8263,12 @@ msgstr "Enviado"
 #: ./src/app/ui/directives/noResults.js:28
 msgctxt "No results heading"
 msgid "Spam"
-msgstr "Assédio"
+msgstr "Spam"
 
 #: ./src/app/ui/directives/noResults.js:32
 msgctxt "No results heading"
 msgid "Starred"
-msgstr "Estrelada"
+msgstr "Com estrela"
 
 #: ./src/app/ui/directives/noResults.js:24
 msgctxt "No results heading"
@@ -8406,12 +8404,12 @@ msgstr "Enviado"
 #: ./src/app/search/factories/searchModel.js:11
 msgctxt "Option for search panel"
 msgid "Spam"
-msgstr "Assédio"
+msgstr "Spam"
 
 #: ./src/app/search/factories/searchModel.js:13
 msgctxt "Option for search panel"
 msgid "Starred"
-msgstr "Estreladas"
+msgstr "Com estrela"
 
 #: ./src/app/search/factories/searchModel.js:17
 msgctxt "Option for search panel"
@@ -8839,7 +8837,7 @@ msgstr "Remover protecção VPN"
 #: ./src/app/elements/services/removeElement.js:28
 msgctxt "Remove element"
 msgid "{{total}} {{item}} removed"
-msgstr "{{total}} {{item}} removido"
+msgstr "{{total}} {{item}} removidas"
 
 #: ./src/templates/views/reset-login-password.tpl.html:23
 #: ./src/templates/views/reset-login-password.tpl.html:24
@@ -8983,7 +8981,7 @@ msgstr "Atingiu 100% da sua capacidade de armazenamento. Não poderá enviar ou 
 msgctxt "Storage warning"
 msgid "You have reached {{ percentage }}% of your storage capacity. Consider freeing up some space\n"
 "                or purchasing more storage before you run out of capacity."
-msgstr "Atingiu {{ percentage }} da sua capacidade de armazenamento. Considere libertar algum espaço\n"
+msgstr "Atingiu {{ percentage }}% da sua capacidade de armazenamento. Considere libertar algum espaço\n"
 "                ou compre mais armazenamento antes de esgotar a capacidade."
 
 #: ./src/app/contact/directives/contactPublicKeys.js:29
@@ -10810,7 +10808,7 @@ msgstr "A processar..."
 #: ./src/app/payment/directives/paymentPlanOverview.js:45
 msgctxt "Title"
 msgid "Proration"
-msgstr "Cálculo proporcional"
+msgstr "Repartição"
 
 #: ./src/app/core/directives/signupIframe.js:24
 #: ./src/templates/views/setup.tpl.html:66
@@ -11083,18 +11081,18 @@ msgstr "Chave semelhante já activa!"
 #: ./src/app/ui/factories/pageTitlesModel.js:54
 msgctxt "Title"
 msgid "Spam"
-msgstr "Assédio"
+msgstr "Spam"
 
 #: ./src/templates/filter/spamLists.tpl.html:4
 msgctxt "Title"
 msgid "Spam Filters"
-msgstr "Filtros de assédio"
+msgstr "Filtros de Spam"
 
 #: ./src/app/sidebar/factories/sidebarModel.js:29
 #: ./src/app/ui/factories/pageTitlesModel.js:55
 msgctxt "Title"
 msgid "Starred"
-msgstr "Estreladas"
+msgstr "Com estrela"
 
 #: ./src/templates/search/searchForm.tpl.html:78
 msgctxt "Title"
@@ -11497,7 +11495,7 @@ msgstr "Para activar notificações na área de trabalho,"
 #: ./src/templates/elements/ptStar.tpl.html:3
 msgctxt "Toggle Star message/conversation"
 msgid "Star"
-msgstr "Estrelar"
+msgstr "Estrela"
 
 #: ./src/templates/elements/ptStar.tpl.html:2
 msgctxt "Toggle Star message/conversation"
@@ -11614,7 +11612,7 @@ msgstr "Em arquivo"
 #: ./src/app/message/directives/foldersMessage.js:14
 msgctxt "Tooltip"
 msgid "In spam"
-msgstr "No assédio"
+msgstr "No spam"
 
 #: ./src/app/message/directives/foldersMessage.js:10
 msgctxt "Tooltip"
@@ -11741,8 +11739,8 @@ msgstr "Confiar"
 msgctxt "Tooltip"
 msgid "Using this key for encryption will encrypt outgoing messages\n"
 "                       to this address with this key and set this key as the primary PGP key for this address."
-msgstr "Utilizar esta chave para encriptação, encriptará as mensagens de saída\n"
-"                       para este endereço com ela e predefini-la-á como a chave primáriaPGP para este endereço."
+msgstr "Ao utilizar esta chave para encriptação, encriptará as mensagens de saída\n"
+"                       para este endereço com ela e predefini-la-á como a chave primária PGP para este endereço."
 
 #: ./src/templates/views/appearance.tpl.html:119
 msgctxt "Tooltip"
@@ -11891,7 +11889,7 @@ msgstr "Nos enviados"
 #: ./src/app/elements/directives/foldersElement.js:39
 msgctxt "Type of label for a message/conversation"
 msgid "In spam"
-msgstr "No assédio"
+msgstr "No spam"
 
 #: ./src/app/elements/directives/foldersElement.js:35
 msgctxt "Type of label for a message/conversation"
@@ -11956,7 +11954,7 @@ msgstr "Célula"
 #: ./src/app/contact/factories/contactTransformLabel.js:45
 msgctxt "VCard key name"
 msgid "Cryptographic scheme"
-msgstr "Esquema criptográfico"
+msgstr "Esquema de encriptação"
 
 #: ./src/app/contact/factories/contactTransformLabel.js:11
 msgctxt "VCard key name"
