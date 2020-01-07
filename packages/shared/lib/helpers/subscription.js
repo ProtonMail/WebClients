@@ -114,3 +114,31 @@ export const getTotal = ({ plans = [], planIDs = {}, cycle = CYCLE.MONTHLY, serv
         return acc + Pricing[cycle] * quantity;
     }, 0);
 };
+
+/**
+ * Remove all plans concerned by a service
+ * @param {Object} planIDs
+ * @param {Array} plans
+ * @param {Integer} service
+ * @returns {Object} new planIDs
+ */
+export const removeService = (planIDs = {}, plans = [], service = PLAN_SERVICES.MAIL) => {
+    const plansMap = toMap(plans);
+    return Object.entries(planIDs).reduce((acc, [planID = '', quantity = 0]) => {
+        const { Services } = plansMap[planID];
+
+        if (!hasBit(Services, service)) {
+            acc[planID] = quantity;
+        }
+
+        return acc;
+    }, {});
+};
+
+export const getPlanIDs = (subscription = {}) => {
+    const { Plans = [] } = subscription;
+    return Plans.reduce((acc, { ID, Quantity }) => {
+        acc[ID] = Quantity;
+        return acc;
+    }, {});
+};
