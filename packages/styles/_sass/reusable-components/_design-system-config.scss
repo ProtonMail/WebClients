@@ -64,6 +64,10 @@ $conversation-selected-bg: rgba($pm-blue, .5) !default;
 $pm-secondary-grey     : #2e323d !default;
 $pm-tertiary-grey      : #505560 !default; // border input 
 
+// needed globally
+$calendar-selected-day-color: $pm-blue-light !default;
+$calendar-today-color: $pm-primary-dark !default;
+
 // colors
 $color-links           : $pm-primary !default;
 $color-hover           : $black !default;

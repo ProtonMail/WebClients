@@ -85,9 +85,10 @@ $minicalendar-bg-color-range-selection: #51555F !default;
     left: 0;
     right: 0;
     bottom: 0;
+    font-weight: bold;
     line-height: 2.3;  // check modifier below when no week displayed
     color: $white;
-    background: $pm-primary-dark;
+    background: $calendar-today-color;
     border-radius: 50%;
 }
 // fix in case of range selection in responsive view
@@ -118,8 +119,7 @@ $mini-calendar-currentDay-size: 2.5em !default;
 
 .minicalendar-day[aria-pressed=true] {
      color: $white;
-     font-weight: bold;
-     background: $pm-primary;
+     background: $calendar-selected-day-color;
      border-radius: 50%;
 }
 
