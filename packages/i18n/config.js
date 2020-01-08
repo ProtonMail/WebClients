@@ -62,7 +62,7 @@ const getCrowdin = () => {
 
     return {
         KEY_API: process.env.CROWDIN_KEY_API,
-        FILE_NAME: process.env.CROWDIN_FILE_NAME,
+        FILE_NAME: !isBetaAngularV4() ? process.env.CROWDIN_FILE_NAME : process.env.CROWDIN_FILE_NAME_V4,
         PROJECT_NAME: process.env.CROWDIN_PROJECT_NAME
     };
 };
