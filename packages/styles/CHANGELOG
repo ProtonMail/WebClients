@@ -13,7 +13,7 @@
 - fix time indicator display
 - fix display event on Safari Mac
 - update time-indicator in Calendar
-- fix `pm-button--warning`/`pm-button--error` display when used with `pm-button`*
+- fix `pm-button--warning`/`pm-button--error` display when used with `pm-button`
 - fix conversation item selector hover state
 - fix display of conversations
 - fix `pm-button--primaryborder`
@@ -23,7 +23,7 @@
 - fixed calendar selected/current day display
 - fix `fill-currentColor` in dark mode
 - fix selective/current day on mini-calendar/calendar
-
+- fix `pm-label` for credit card autogrid issue (`width` was too large for small modals)
 
 
 # [1.8.0] - 2019-12-20

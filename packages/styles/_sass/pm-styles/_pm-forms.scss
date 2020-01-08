@@ -359,6 +359,7 @@ $pm-label-width: 18em !default;
   padding-top: .5em;
   width: var(--label-width, $pm-label-width);
   padding-right: .5em;
+  max-width: 100%;
   &.pt0 {
     padding-top: 0;
   }
