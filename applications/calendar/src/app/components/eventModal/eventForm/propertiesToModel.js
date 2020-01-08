@@ -1,8 +1,8 @@
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import { addDays, max } from 'proton-shared/lib/date-fns-utc';
-import { getDateTimeState } from './state';
+import { getDateTimeState } from './time';
+import { transformBeforeAt } from './trigger';
 import { FREQUENCY, NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
-import { transformBeforeAt } from '../../../helpers/notifications';
 
 export const propertiesToModel = (component) => {
     const { uid, location, description, summary, rrule, attendee, ...rest } = component;
@@ -50,43 +50,60 @@ export const propertiesToDateTimeModel = ({ dtstart, dtend }, isAllDay, tzid) =>
     };
 };
 
-const getTriggerUnit = ({ isAllDay, weeks, hours, days, minutes }) => {
-    const getInt = (value) => parseInt(value, 10) || 0;
-    if (weeks) {
-        return [getInt(weeks), NOTIFICATION_UNITS.WEEK];
-    }
-    if (days) {
-        return [getInt(days), NOTIFICATION_UNITS.DAY];
-    }
-    // For all day notifications, the unit can not be hours or minutes.
-    if (isAllDay) {
-        return [0, NOTIFICATION_UNITS.DAY];
-    }
-    if (hours) {
-        return [getInt(hours), NOTIFICATION_UNITS.HOURS];
-    }
-    return [getInt(minutes), NOTIFICATION_UNITS.MINUTES];
-};
-
-const modifyAllDayTrigger = (result) => {
-    const { at, unit, value, when } = result;
-
+const allDayTriggerToModel = ({ type, when, weeks, days, hours, minutes }) => {
     const isNegative = when === NOTIFICATION_WHEN.BEFORE;
-    const isDays = unit === NOTIFICATION_UNITS.DAY;
 
+    const at = new Date(2000, 0, 1, hours, minutes);
     const modifiedAt = isNegative ? transformBeforeAt(at) : at;
+    const modifyNegativeDay = isNegative && (modifiedAt.getHours() > 0 || modifiedAt.getMinutes() > 0);
 
-    const hours = modifiedAt.getHours();
-    const minutes = modifiedAt.getMinutes();
-
-    const modifiedDays = isNegative && hours === 0 && minutes === 0 ? Math.max(value, 1) : value + 1;
+    const [value, unit] = (() => {
+        // Transform for example -P1W6DT10H10M into 2 weeks at...
+        if (weeks >= 0 && days === 6 && modifyNegativeDay) {
+            return [weeks + 1, NOTIFICATION_UNITS.WEEK];
+        }
+        // Otherwise, if there is something in the week, and even if there are days in the trigger, the client will truncate this into a week notification since the selector is not more advanced than that.
+        if (weeks > 0) {
+            return [weeks, NOTIFICATION_UNITS.WEEK];
+        }
+        // Finally just return it as a day notification.
+        return [days + modifyNegativeDay, NOTIFICATION_UNITS.DAY];
+    })();
 
     return {
-        ...result,
-        value: isDays ? modifiedDays : value,
-        at: modifiedAt
+        unit,
+        type,
+        when,
+        value,
+        at: modifiedAt,
+        isAllDay: true
     };
 };
+
+const partDayTriggerToModel = ({ type, when, weeks, days, hours, minutes }) => {
+    const [value, unit] = (() => {
+        if (weeks) {
+            return [weeks, NOTIFICATION_UNITS.WEEK];
+        }
+        if (days) {
+            return [days, NOTIFICATION_UNITS.DAY];
+        }
+        if (hours) {
+            return [hours, NOTIFICATION_UNITS.HOURS];
+        }
+        return [minutes, NOTIFICATION_UNITS.MINUTES];
+    })();
+
+    return {
+        unit,
+        type,
+        when,
+        value,
+        isAllDay: false
+    };
+};
+
+const getInt = (value) => parseInt(value, 10) || 0;
 
 export const triggerToModel = ({
     isAllDay,
@@ -94,22 +111,23 @@ export const triggerToModel = ({
     // eslint-disable-next-line no-unused-vars
     trigger: { weeks = 0, days = 0, hours = 0, minutes = 0, isNegative = false }
 }) => {
-    const [value, unit] = getTriggerUnit({ isAllDay, weeks, hours, days, minutes });
-
-    //const when = isNegative ? NOTIFICATION_WHEN.BEFORE : NOTIFICATION_WHEN.AFTER;
-    const when = NOTIFICATION_WHEN.BEFORE;
-
-    const result = {
-        type,
-        unit,
-        when,
-        value,
-        // Only used for all day notifications
-        at: new Date(2000, 0, 1, hours, minutes),
-        isAllDay
+    const parsedTrigger = {
+        weeks: getInt(weeks),
+        days: getInt(days),
+        hours: getInt(hours),
+        minutes: getInt(minutes)
     };
-
-    return isAllDay ? modifyAllDayTrigger(result) : result;
+    const isSameTime =
+        parsedTrigger.weeks === 0 &&
+        parsedTrigger.days === 0 &&
+        parsedTrigger.hours === 0 &&
+        parsedTrigger.minutes === 0;
+    // If it's a negative trigger, or force negative for PT0S
+    const when = isNegative || isSameTime ? NOTIFICATION_WHEN.BEFORE : NOTIFICATION_WHEN.AFTER;
+    if (isAllDay) {
+        return allDayTriggerToModel({ type, when, ...parsedTrigger });
+    }
+    return partDayTriggerToModel({ type, when, ...parsedTrigger });
 };
 
 export const propertiesToNotificationModel = ({ components = [] } = {}, isAllDay) => {

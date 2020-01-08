@@ -2,26 +2,8 @@ import { withRequiredProperties } from 'proton-shared/lib/calendar/veventHelper'
 import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { addDays } from 'date-fns';
 
+import { transformBeforeAt } from './trigger';
 import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN, FREQUENCY, MAX_LENGTHS } from '../../../constants';
-import { transformBeforeAt } from '../../../helpers/notifications';
-
-const modifyAllDayValarm = ({ isNegative, days, ...rest }, date) => {
-    const modifiedAt = isNegative ? transformBeforeAt(date) : date;
-
-    const hours = modifiedAt.getHours();
-    const minutes = modifiedAt.getMinutes();
-
-    const modifiedDays = isNegative && hours === 0 && minutes === 0 ? Math.max(days, 1) : Math.max(days, 1) - 1;
-
-    return {
-        ...rest,
-        days: modifiedDays,
-        hours,
-        minutes,
-        seconds: 0,
-        isNegative
-    };
-};
 
 const getValarmTriggerUnit = (unit) => {
     return (
@@ -34,9 +16,39 @@ const getValarmTriggerUnit = (unit) => {
     );
 };
 
-export const getValarmTrigger = ({ isAllDay, unit, when, value, at }) => {
-    const isNegative = when === NOTIFICATION_WHEN.BEFORE;
-    const result = {
+const getAllDayValarmTrigger = ({ isNegative, unit, value, at }) => {
+    const modifiedAt = isNegative ? transformBeforeAt(at) : at;
+
+    const hours = modifiedAt.getHours();
+    const minutes = modifiedAt.getMinutes();
+
+    const modifyNegativeDay = isNegative && (minutes > 0 || hours > 0);
+
+    const [weeks, days] = (() => {
+        const weeksValue = unit === NOTIFICATION_UNITS.WEEK ? value : 0;
+        const daysValue = unit === NOTIFICATION_UNITS.DAY ? value : 0;
+
+        if (modifyNegativeDay && weeksValue === 0) {
+            return [0, daysValue - 1];
+        }
+        if (modifyNegativeDay && weeksValue >= 1) {
+            return [weeksValue - 1, 6];
+        }
+        return [weeksValue, daysValue];
+    })();
+
+    return {
+        weeks: Math.max(0, weeks),
+        days: Math.max(0, days),
+        hours,
+        minutes,
+        seconds: 0,
+        isNegative
+    };
+};
+
+const getPartDayValarmTrigger = ({ isNegative, unit, value }) => {
+    return {
         weeks: 0,
         days: 0,
         hours: 0,
@@ -45,7 +57,13 @@ export const getValarmTrigger = ({ isAllDay, unit, when, value, at }) => {
         [getValarmTriggerUnit(unit)]: value,
         isNegative
     };
-    return isAllDay ? modifyAllDayValarm(result, at) : result;
+};
+
+export const getValarmTrigger = ({ isAllDay, unit, when, value, at }) => {
+    const isNegative = when === NOTIFICATION_WHEN.BEFORE;
+    return isAllDay
+        ? getAllDayValarmTrigger({ isNegative, unit, value, at })
+        : getPartDayValarmTrigger({ isNegative, unit, value });
 };
 
 const modelToDateProperty = ({ date, time, tzid }, isAllDay) => {

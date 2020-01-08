@@ -13,12 +13,6 @@ export const notificationUnitToString = (n, unit) => {
     }[unit];
 };
 
-export const transformBeforeAt = (at) => {
-    const minutes = 60 - (at.getMinutes() || 60);
-    const hours = 24 - (at.getHours() || 24) - (minutes > 0 ? 1 : 0);
-    return new Date(at.getFullYear(), at.getMonth(), at.getDate(), hours, minutes);
-};
-
 export const notificationWhenToString = (when) => {
     return when === NOTIFICATION_WHEN.BEFORE ? c('Notifications').t`before` : c('Notifications').t`after`;
 };

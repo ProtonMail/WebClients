@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
-import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
+import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
 
 import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
@@ -15,15 +15,7 @@ import { DEFAULT_EVENT_DURATION, FREQUENCY, NOTIFICATION_TYPE } from '../../../c
 import { propertiesToDateTimeModel, propertiesToModel, propertiesToNotificationModel } from './propertiesToModel';
 import { modelToGeneralProperties } from './modelToProperties';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
-
-export const getDateTimeState = (utcDate, tzid) => {
-    return {
-        // These should be local dates since the mini calendar and time input uses that.
-        date: new Date(utcDate.getUTCFullYear(), utcDate.getUTCMonth(), utcDate.getUTCDate(), 0, 0),
-        time: new Date(2000, 0, 1, utcDate.getUTCHours(), utcDate.getUTCMinutes()),
-        tzid
-    };
-};
+import { getDateTimeState, getTimeInUtc } from './time';
 
 export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
@@ -173,28 +165,6 @@ export const updateItem = (array, index, newItem) => {
 };
 export const removeItem = (array, index) => array.filter((oldValue, i) => i !== index);
 
-export const getTimeInUtc = ({ date, time, tzid }, isAllDay) => {
-    if (isAllDay) {
-        return toUTCDate({
-            year: date.getFullYear(),
-            month: date.getMonth() + 1,
-            day: date.getDate()
-        });
-    }
-    return toUTCDate(
-        convertZonedDateTimeToUTC(
-            {
-                year: date.getFullYear(),
-                month: date.getMonth() + 1,
-                day: date.getDate(),
-                hours: time.getHours(),
-                minutes: time.getMinutes()
-            },
-            tzid
-        )
-    );
-};
-
 export const validate = ({ start, end, isAllDay, title }) => {
     const errors = {};
 
@@ -235,7 +205,7 @@ export const hasEditedDateTime = ({ time, date }, { time: otherTime, date: other
 const hasEditedNotification = (notification, otherNotification) => {
     return (
         hasEdited(['type', 'unit', 'when', 'value'], notification, otherNotification) ||
-        hasEditedHourMinutes(notification.at, otherNotification.at)
+        (notification.at && otherNotification.at && hasEditedHourMinutes(notification.at, otherNotification.at))
     );
 };
 

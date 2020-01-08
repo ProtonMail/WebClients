@@ -21,12 +21,8 @@ import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import createOrUpdateEvent from 'proton-shared/lib/calendar/integration/createOrUpdateEvent';
 import { deleteEvent, updateCalendar } from 'proton-shared/lib/api/calendars';
 
-import {
-    getExistingEvent,
-    getInitialModel,
-    getTimeInUtc,
-    hasDoneChanges
-} from '../../components/eventModal/eventForm/state';
+import { getExistingEvent, getInitialModel, hasDoneChanges } from '../../components/eventModal/eventForm/state';
+import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
 import { modelToVeventComponent } from '../../components/eventModal/eventForm/modelToProperties';
 import { sortEvents, sortWithTemporaryEvent } from '../../components/calendar/layout';

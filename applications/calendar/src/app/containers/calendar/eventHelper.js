@@ -6,7 +6,7 @@ import {
 } from 'proton-shared/lib/date/timezone';
 import { differenceInHours } from 'date-fns';
 import { max } from 'proton-shared/lib/date-fns-utc';
-import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/state';
+import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
 
 const modelToEventProperties = (oldTemporaryEvent, { start, end, isAllDay }, tzid) => {
     // If unrelevant things were changed, like title or description

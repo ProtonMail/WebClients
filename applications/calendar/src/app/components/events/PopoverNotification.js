@@ -11,11 +11,11 @@ import {
 const PopoverNotification = ({ notification, formatTime }) => {
     const str = useMemo(() => {
         const { value, unit, when, at, isAllDay } = notification;
-        const modifiedAt = toUTCDate(fromLocalDate(at));
+        const modifiedAt = isAllDay ? toUTCDate(fromLocalDate(at)) : undefined;
         return [
             notificationUnitToString(value, unit),
             notificationWhenToString(when),
-            isAllDay && notificationAtToString(formatTime(modifiedAt))
+            modifiedAt && notificationAtToString(formatTime(modifiedAt))
         ]
             .filter(Boolean)
             .join(' ');

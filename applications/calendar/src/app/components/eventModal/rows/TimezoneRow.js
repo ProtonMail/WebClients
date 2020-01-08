@@ -2,7 +2,7 @@ import { Label, Row } from 'react-components';
 import React from 'react';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import TimezoneSelector from '../../TimezoneSelector';
-import { getDateTimeState, getTimeInUtc } from '../eventForm/state';
+import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
 
 const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, start, end, onChangeStart, onChangeEnd }) => {
     const getUpdatedValue = (oldValue, tzid) => {
