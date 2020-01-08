@@ -14,6 +14,19 @@ const PROTON_DEPENDENCIES = {
     shared: ['lib']
 };
 
+/**
+ * Detect the beta v4 -> we have a custom pot for this one
+ * @return {Boolean}
+ */
+const isBetaAngularV4 = () => {
+    try {
+        const { name, 'version-beta': versionBeta } = require(path.join(process.cwd(), 'package.json')); // We might use proton-i18n on top of a non node package
+        return versionBeta && name === 'protonmail-web';
+    } catch (e) {
+        return false;
+    }
+};
+
 const getFiles = () => {
     const TEMPLATE_NAME = process.env.I18N_TEMPLATE_FILE || 'template.pot';
     const I18N_EXTRACT_DIR = process.env.I18N_EXTRACT_DIR || 'po';
@@ -31,12 +44,11 @@ const getFiles = () => {
         TEMPLATE_FILE_FULL: path.join(process.cwd(), I18N_EXTRACT_DIR, TEMPLATE_NAME)
     };
 };
-
 const getEnv = () => ({
     I18N_EXTRACT_DIR: process.env.I18N_EXTRACT_DIR,
     I18N_JSON_DIR: process.env.I18N_JSON_DIR,
     CROWDIN_KEY_API: process.env.CROWDIN_KEY_API,
-    CROWDIN_FILE_NAME: process.env.CROWDIN_FILE_NAME,
+    CROWDIN_FILE_NAME: !isBetaAngularV4() ? process.env.CROWDIN_FILE_NAME : process.env.CROWDIN_FILE_NAME_V4,
     CROWDIN_PROJECT_NAME: process.env.CROWDIN_PROJECT_NAME,
     APP_KEY: process.env.APP_KEY
 });
