@@ -199,6 +199,7 @@ export enum KEY_FLAGS {
 }
 
 export enum SHOW_IMAGES {
+    NONE = 0,
     REMOTE = 1,
     EMBEDDED = 2
 }
