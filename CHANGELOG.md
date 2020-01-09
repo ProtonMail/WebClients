@@ -1,3 +1,12 @@
+# [3.16.20] - 2020-01-09
+## Fixed
+- On rare occasions an older draft was sent instead of the current one
+- Some users were randomly logged out if the tab was kept open for a long time
+- Some mail-to links did not properly work on Safari
+
+## Updated
+- New OpenPGP version
+
 # [3.16.19] - 2019-12-17
 ## Fixed
 - Upgrade button was not properly displayed for free accounts
