@@ -91,6 +91,9 @@ $minicalendar-bg-color-range-selection: #51555F !default;
     background: $calendar-today-color;
     border-radius: 50%;
 }
+.minicalendar-day[aria-current="date"][aria-pressed=true]::before {
+    background: $calendar-selected-day-color;
+}
 // fix in case of range selection in responsive view
 $mini-calendar-currentDay-size: 2.5em !default;
 .minicalendar-day--range.minicalendar-day[aria-current="date"]::before {
@@ -163,7 +166,7 @@ $minicalendar-day-marker-size: 3px !default;
 .minicalendar {
     .minicalendar-day--range-bound-begin,
     .minicalendar-day--range-bound-begin:hover,
-    .minicalendar-day--range-bound-begin:focus  {
+    .minicalendar-day--range-bound-begin:focus {
         border-top-left-radius: 40%;
         border-bottom-left-radius: 40%;
     }
