@@ -47,7 +47,7 @@ const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, 
 
     const todayTitle = useMemo(() => {
         return format(now, 'PP', { locale: dateLocale });
-    }, []);
+    }, [now, dateLocale]);
 
     const previous = {
         [DAY]: c('Action').t`Previous day`,
