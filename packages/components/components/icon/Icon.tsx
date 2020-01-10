@@ -1,6 +1,16 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types';
 import { classnames } from '../../helpers/component';
+
+export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
+    name: string;
+    alt?: string;
+    viewBox?: string;
+    className?: string;
+    fill?: string;
+    size?: number;
+    color?: string;
+    rotate?: number;
+}
 
 /**
  * Component to print svg icon
@@ -16,15 +26,15 @@ import { classnames } from '../../helpers/component';
  */
 const Icon = ({
     name,
+    alt,
+    color,
     className = '',
     viewBox = '0 0 16 16',
-    alt,
     fill = 'grey',
-    color,
     size = 16,
     rotate = 0,
     ...rest
-}) => {
+}: Props) => {
     const fillClass = fill ? `fill-global-${fill} ` : '';
     const style = {
         ...(color && { fill: color }),
@@ -46,17 +56,6 @@ const Icon = ({
             {alt ? <span className="sr-only">{alt}</span> : null}
         </>
     );
-};
-
-Icon.propTypes = {
-    alt: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    viewBox: PropTypes.string,
-    className: PropTypes.string,
-    fill: PropTypes.string,
-    size: PropTypes.number,
-    color: PropTypes.string,
-    rotate: PropTypes.number
 };
 
 export default memo(Icon);
