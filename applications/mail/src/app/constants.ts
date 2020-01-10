@@ -67,3 +67,7 @@ export const MESSAGE_FLAGS = {
     FLAG_PUBLIC_KEY: 131072, // whether to attach the public key
     FLAG_SIGN: 262144 // whether to sign the message
 };
+
+export enum ENCRYPTED_STATUS {
+    PGP_MIME = 8 // Used for attachment
+}

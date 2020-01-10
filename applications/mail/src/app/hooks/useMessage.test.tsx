@@ -7,7 +7,7 @@ import MessageProvider from '../containers/MessageProvider';
 import createCache from 'proton-shared/lib/helpers/cache';
 
 jest.mock('./useDecryptMessage', () => ({ useDecryptMessage: jest.fn() }));
-jest.mock('./useAttachments', () => ({ useTransformAttachments: jest.fn() }));
+jest.mock('./useAttachments', () => ({ useAttachmentsCache: jest.fn() }));
 
 describe('useMessage', () => {
     const ID = 'ID';

@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { c, msgid } from 'ttag';
-import { Icon } from 'react-components';
+import { Icon, useApi } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import { attachmentsSize, getAttachments } from '../../helpers/message';
+import { attachmentsSize, getAttachments } from '../../helpers/message/messages';
 import MessageAttachment from './MessageAttachment';
-import { useAttachments } from '../../hooks/useAttachments';
 import { MessageExtended } from '../../models/message';
+import { useAttachmentsCache } from '../../hooks/useAttachments';
+import { downloadAll } from '../../helpers/attachment/attachmentDownloader';
 
 interface Props {
     message: MessageExtended;
 }
 
 const MessageFooter = ({ message }: Props) => {
-    const { downloadAll } = useAttachments();
+    const cache = useAttachmentsCache();
+    const api = useApi();
     const [showLoader, setShowLoader] = useState(false);
     const [showInstant, setShowInstant] = useState(false);
 
@@ -25,7 +27,7 @@ const MessageFooter = ({ message }: Props) => {
 
     const handleDownloadAll = async () => {
         setShowLoader(true);
-        await downloadAll(message);
+        await downloadAll(message, cache, api);
         setShowLoader(false);
         setShowInstant(true);
     };

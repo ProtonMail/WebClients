@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Icon, classnames } from 'react-components';
 
 import { ELEMENT_TYPES } from '../../constants';
-import { hasAttachments } from '../../helpers/message';
+import { hasAttachments } from '../../helpers/message/messages';
 
 const ItemAttachmentIcon = ({ element = {}, type = ELEMENT_TYPES.CONVERSATION, className }) => {
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;

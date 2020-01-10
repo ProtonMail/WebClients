@@ -8,19 +8,22 @@ import { transformStylesheet } from '../helpers/transforms/transformStylesheet';
 import { transformRemote } from '../helpers/transforms/transformRemote';
 import { transformBase } from '../helpers/transforms/transformBase';
 import { useDecryptMessage } from './useDecryptMessage';
-import { useTransformAttachments } from './useAttachments';
+import { AttachmentsCache, useAttachmentsCache } from './useAttachments';
 import { MessageContext } from '../containers/MessageProvider';
 import { Message, MessageExtended } from '../models/message';
 import { getMessage, markMessageAsRead } from 'proton-shared/lib/api/messages';
 import { useApi, useEventManager } from 'react-components';
+import { MailSettings, Api } from '../models/utils';
 
-interface ComputationOption {
+export interface ComputationOption {
     action?: string;
     cache: any;
-    mailSettings: any;
+    mailSettings: MailSettings;
+    api: Api;
+    attachmentsCache: AttachmentsCache;
 }
 
-interface Computation {
+export interface Computation {
     (message: MessageExtended, options: ComputationOption):
         | Promise<Partial<MessageExtended>>
         | Partial<MessageExtended>;
@@ -40,12 +43,13 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
     const { call } = useEventManager();
     const cache = useContext(MessageContext);
     const computeCache = useMemo(() => new Map(), []);
+    const attachmentsCache = useAttachmentsCache();
     const [message, setMessage] = useState<MessageExtended>(
         cache.has(messageID) ? cache.get(messageID) : { data: inputMessage }
     );
 
     const decrypt = useDecryptMessage();
-    const transformAttachements = useTransformAttachments();
+    // const transformAttachements = useTransformAttachments();
 
     // Update message state and listen to cache for updates on the current message
     useEffect(() => {
@@ -66,7 +70,6 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
         transformWelcome,
         transformBlockquotes,
         transformStylesheet,
-        transformAttachements,
         transformRemote
     ];
 
@@ -105,7 +108,8 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
      */
     const runSingle = useCallback(
         async (message: MessageExtended, compute: Computation, action?: string) => {
-            const result = (await compute(message, { action, cache: computeCache, mailSettings })) || {};
+            const result =
+                (await compute(message, { action, cache: computeCache, mailSettings, api, attachmentsCache })) || {};
 
             if (result.document) {
                 result.content = result.document.innerHTML;
@@ -159,11 +163,7 @@ export const useMessage = (inputMessage: Message, mailSettings: any): [MessageEx
 
     const loadEmbeddedImages = useCallback(
         async (action?) => {
-            const newMessage = await run(
-                { ...message, showEmbeddedImages: true },
-                [transformEmbedded, transformAttachements] as Computation[],
-                action
-            );
+            const newMessage = await run({ ...message, showEmbeddedImages: true }, [transformEmbedded], action);
             cache.set(messageID, newMessage);
         },
         [messageID, message, run, cache]

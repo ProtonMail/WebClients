@@ -12,7 +12,7 @@ import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
 import HeaderExtra from './HeaderExtra';
 import MessageLock from '../MessageLock';
-import { isSent } from '../../../helpers/message';
+import { isSent } from '../../../helpers/message/messages';
 import HeaderRecipientsSimple from './HeaderRecipientsSimple';
 import HeaderRecipientsDetails from './HeaderRecipientsDetails';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';

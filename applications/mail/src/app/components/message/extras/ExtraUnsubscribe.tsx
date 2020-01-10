@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon, Href } from 'react-components';
 import { c } from 'ttag';
-import { getListUnsubscribe } from '../../../helpers/message';
+import { getListUnsubscribe } from '../../../helpers/message/messages';
 import { MessageExtended } from '../../../models/message';
 
 interface Props {

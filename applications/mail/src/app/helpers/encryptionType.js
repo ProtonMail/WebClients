@@ -9,7 +9,7 @@ import {
     isExternalEncrypted,
     inSigningPeriod,
     isImported
-} from './message';
+} from './message/messages';
 
 const I18N = {
     pm: [

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon, Tooltip, Href, classnames } from 'react-components';
 import { displaySignatureStatus } from '../../helpers/displaySignature';
-import { isPGPEncrypted, isInternal, isSentEncrypted, isDraft, isAuto } from '../../helpers/message';
+import { isPGPEncrypted, isInternal, isSentEncrypted, isDraft, isAuto } from '../../helpers/message/messages';
 import { getEncryptionType } from '../../helpers/encryptionType';
 import { MessageExtended } from '../../models/message';
 

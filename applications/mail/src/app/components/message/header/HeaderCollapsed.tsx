@@ -5,7 +5,7 @@ import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import { ELEMENT_TYPES } from '../../../constants';
 import MessageLock from '../MessageLock';
-import { isSent } from '../../../helpers/message';
+import { isSent } from '../../../helpers/message/messages';
 import ItemLabels from '../../list/ItemLabels';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useToggle, Loader, classnames } from 'react-components';
 
-import { hasAttachments } from '../../helpers/message';
+import { hasAttachments } from '../../helpers/message/messages';
 import { Label } from '../../models/label';
 
 import MessageBody from './MessageBody';

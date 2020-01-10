@@ -1,4 +1,4 @@
-import { getSender, getRecipients } from './message';
+import { getSender, getRecipients } from './messages';
 
 describe('message', () => {
     describe('getSender', () => {

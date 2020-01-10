@@ -1,7 +1,7 @@
 import React from 'react';
 import { classnames } from 'react-components';
 
-import { isPlainText } from '../../helpers/message';
+import { isPlainText } from '../../helpers/message/messages';
 import { MessageExtended } from '../../models/message';
 
 import './MessageBody.scss';

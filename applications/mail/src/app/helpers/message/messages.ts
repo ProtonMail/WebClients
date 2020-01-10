@@ -1,8 +1,8 @@
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 
-import { MESSAGE_FLAGS, SIGNATURE_START } from '../constants';
-import { Message } from '../models/message';
+import { MESSAGE_FLAGS, SIGNATURE_START } from '../../constants';
+import { Message } from '../../models/message';
 
 const {
     FLAG_RECEIVED,
@@ -154,8 +154,6 @@ export const getRecipients = ({ ToList = [], CCList = [], BCCList = [] }: Messag
 
 /**
  * Get date from message
- * @param {Integer} message.Time
- * @return {Date}
  */
 export const getDate = ({ Time = 0 }: Message = {}) => new Date(Time * 1000);
 

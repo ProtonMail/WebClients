@@ -2,7 +2,7 @@ import { Message } from '../../models/message';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { isCustomLabel } from '../labels';
 import { hasLabel } from '../elements';
-import { isDraft, isSentAutoReply } from '../message';
+import { isDraft, isSentAutoReply } from './messages';
 
 // Reference: Angular/src/app/message/services/findExpandableMessage.js
 

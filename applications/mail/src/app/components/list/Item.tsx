@@ -5,7 +5,7 @@ import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from 'proton-shared/lib/constants';
 
 import ItemCheckbox from './ItemCheckbox';
 import { getSenders, getRecipients } from '../../helpers/conversation';
-import { getSender, getRecipients as getMessageRecipients } from '../../helpers/message';
+import { getSender, getRecipients as getMessageRecipients } from '../../helpers/message/messages';
 import { getCurrentType, isUnread } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
