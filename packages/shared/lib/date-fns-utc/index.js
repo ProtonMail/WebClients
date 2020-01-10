@@ -59,12 +59,12 @@ export const addMonths = (date, amount) => {
     const result = new Date(+date);
     const desiredMonth = date.getUTCMonth() + amount;
     const dateWithDesiredMonth = new Date(0);
-    dateWithDesiredMonth.setUTCFullYear(date.getFullYear(), desiredMonth, 1);
+    dateWithDesiredMonth.setUTCFullYear(date.getUTCFullYear(), desiredMonth, 1);
     dateWithDesiredMonth.setUTCHours(0, 0, 0, 0);
     const daysInMonth = getDaysInMonth(dateWithDesiredMonth);
     // Set the last day of the new month
     // if the original date was the last day of the longer month
-    result.setUTCMonth(desiredMonth, Math.min(daysInMonth, date.getDate()));
+    result.setUTCMonth(desiredMonth, Math.min(daysInMonth, date.getUTCDate()));
     return result;
 };
 
