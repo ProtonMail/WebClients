@@ -135,10 +135,32 @@ export const removeService = (planIDs = {}, plans = [], service = PLAN_SERVICES.
     }, {});
 };
 
+/**
+ * Generate new configuration from plan selected
+ * @param {Object} planIDs current configuration
+ * @param {Array} plans coming from the API
+ * @param {String} planID to switch to
+ * @param {Integer} service to remove
+ * @returns {Object} new planIDs
+ */
+export const switchPlan = ({ planIDs, plans, planID, service }) => {
+    const visionaryPlan = plans.find(({ Name }) => Name === PLANS.VISIONARY);
+
+    if (planID === visionaryPlan.ID) {
+        return { [visionaryPlan.ID]: 1 };
+    }
+
+    return {
+        ...removeService(planIDs, plans, service),
+        ...(planID ? { [planID]: 1 } : {})
+    };
+};
+
 export const getPlanIDs = (subscription = {}) => {
     const { Plans = [] } = subscription;
     return Plans.reduce((acc, { ID, Quantity }) => {
-        acc[ID] = Quantity;
+        acc[ID] = acc[ID] || 0;
+        acc[ID] += Quantity;
         return acc;
     }, {});
 };
