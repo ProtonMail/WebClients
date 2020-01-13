@@ -173,6 +173,7 @@ const DayGrid = ({
                                             eventsInRow={eventsInRow}
                                             events={events}
                                             formatTime={formatTime}
+                                            days={days}
                                             now={now}
                                             row={rowIndex}
                                             targetMoreData={targetMoreData}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { isSameDay } from 'proton-shared/lib/date-fns-utc';
+import { endOfDay, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { getEvent } from '../DayGrid';
 import { TYPE } from '../interactions/constants';
 
@@ -13,6 +13,7 @@ const RowEvents = ({
     events,
 
     formatTime,
+    days,
     now,
     row,
 
@@ -58,6 +59,8 @@ const RowEvents = ({
                 formatTime={formatTime}
                 isSelected={isSelected}
                 isBeforeNow={isBeforeNow}
+                isOutsideEnd={event.end > endOfDay(days[days.length - 1])}
+                isOutsideStart={event.start < days[0]}
             />
         );
     });

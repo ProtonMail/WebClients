@@ -266,6 +266,7 @@ const TimeGrid = React.forwardRef(
                                         eventsInRow={eventsInRow}
                                         events={dayEvents}
                                         formatTime={formatTime}
+                                        days={days}
                                         now={now}
                                         row={0}
                                         targetMoreData={targetMoreData}

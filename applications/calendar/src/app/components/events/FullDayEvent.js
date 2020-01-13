@@ -11,6 +11,8 @@ const FullDayEvent = ({
     event: { start, data: { Calendar } = {}, data: targetEventData, isAllDay, isAllPartDay, tmpData },
     isSelected,
     isBeforeNow,
+    isOutsideStart,
+    isOutsideEnd,
     eventRef,
     onClick
 }) => {
@@ -59,20 +61,39 @@ const FullDayEvent = ({
         );
     })();
 
-    const isBeforeNowClassModifier = isBeforeNow ? 'calendar-dayeventcell--isBefore' : '';
-
     return (
-        <div style={style} className={classnames([className, isBeforeNowClassModifier])} data-ignore-create="1">
+        <div
+            style={style}
+            className={classnames([
+                className,
+                isBeforeNow && 'calendar-dayeventcell--isBefore',
+                isOutsideStart && 'calendar-dayeventcell--isOutsideStart',
+                isOutsideEnd && 'calendar-dayeventcell--isOutsideEnd'
+            ])}
+            data-ignore-create="1"
+        >
             <div
                 onClick={onClick}
                 className={classnames([
                     'calendar-dayeventcell-inner alignleft flex w100 pl0-5 pr0-5',
-                    !isAllDay && 'calendar-dayeventcell-inner--notAllDay'
+                    !isAllDay && 'calendar-dayeventcell-inner--notAllDay',
+                    isOutsideStart && 'calendar-dayeventcell-inner--isOutsideStart',
+                    isOutsideEnd && 'calendar-dayeventcell-inner--isOutsideEnd'
                 ])}
                 style={eventStyle}
                 ref={eventRef}
             >
+                {isOutsideStart ? (
+                    <span className="calendar-dayeventcell-inner-isOutsideStart" style={eventStyle}></span>
+                ) : (
+                    ''
+                )}
                 {content}
+                {isOutsideEnd ? (
+                    <span className="calendar-dayeventcell-inner-isOutsideEnd" style={eventStyle}></span>
+                ) : (
+                    ''
+                )}
             </div>
         </div>
     );
