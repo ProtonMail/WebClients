@@ -59,8 +59,7 @@ const Tor = () => (
 const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isUpgradeRequired }) => {
     const { request } = useApiWithoutResult(getVPNServerConfig);
 
-    const handleClickDownload = (server) => async () => {
-        const { ID, ExitCountry, Domain } = server;
+    const handleClickDownload = ({ ID, ExitCountry, Domain }) => async () => {
         const buffer = await request({
             LogicalID: category === CATEGORY.COUNTRY ? undefined : ID,
             Platform: platform,
@@ -93,7 +92,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                             <div className="inline-flex-vcenter" key="status">
                                 <LoadIndicator server={server} />
                                 {server.Tier === 2 && <PlusBadge />}
-                                {!server.Status && <ServerDown />}
+                                {server.Servers.every(({ Status }) => !Status) && <ServerDown />}
                                 {isP2PEnabled(server.Features) && <P2P />}
                                 {isTorEnabled(server.Features) && <Tor />}
                             </div>,
