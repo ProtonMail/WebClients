@@ -8,8 +8,9 @@ import { FOLDER_PAGE_SIZE } from '../constants';
 import useFileBrowser from './FileBrowser/useFileBrowser';
 import FileBrowser, { FileBrowserItem } from './FileBrowser/FileBrowser';
 import { DriveResource } from './DriveResourceProvider';
-import { useUploadProvider, UploadState } from './uploads/UploadProvider';
+import { useUploadProvider } from './uploads/UploadProvider';
 import TransfersInfo from './TransfersInfo/TransfersInfo';
+import { TransferState } from '../interfaces/transfer';
 
 const mapLinksToChildren = (decryptedLinks: DriveLink[]): FileBrowserItem[] =>
     decryptedLinks.map(({ LinkID, Type, Name, Modified, Size }) => ({
@@ -103,18 +104,17 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
 
     const uploadedCount = uploads.filter(
         ({ state, info }) =>
-            state === UploadState.Done && info.linkId === resource.linkId && info.shareId === resource.shareId
+            state === TransferState.Done && info.linkId === resource.linkId && info.shareId === resource.shareId
     ).length;
 
     useEffect(() => {
+        // Reload all folder contents after upload
         if (uploadedCount) {
-            loadNextIncrement(0, true);
-        }
-
-        return () => {
             isDoneLoading.current = false;
             loadingPage.current = null;
-        };
+
+            loadNextIncrement(0, true);
+        }
     }, [uploadedCount]);
 
     const handleDoubleClick = (item: FileBrowserItem) => {

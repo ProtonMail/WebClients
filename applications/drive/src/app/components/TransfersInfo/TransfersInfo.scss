@@ -1,9 +1,76 @@
-.pd-downloads {
+.pd-transfers {
     min-width: 320px;
     max-width: 600px;
     width: 60%;
-    border-radius: 4px 0 0 0;
     position: fixed;
     bottom: 0;
     right: 0;
+}
+
+.pd-transfers-heading {
+    border-radius: 4px 0 0 0;
+    background-color: $pm-global-altgrey;
+    color: $white;
+}
+
+.pd-transfers-headingButton {
+    position: absolute;
+    @extend .flex;
+    right: 0.5rem;
+    top: 1rem;
+    background: transparent;
+    border-radius: 1em;
+    color: $pm-global-light;
+    border: 0;
+    font-size: 2em;
+    padding: 0;
+    line-height: 1;
+    cursor: pointer;
+    fill: $pm-global-light;
+}
+
+.pd-transfers-list {
+    @extend .border-left;
+    max-height: 310px;
+    overflow-y: auto;
+    background-color: $pm-global-light;
+    transition: 0.3s ease;
+}
+
+.pd-transfers-list--minimized {
+    max-height: 0;
+    visibility: hidden;
+}
+
+.pd-transfers-listItem {
+    height: 77px;
+
+    &:not(:last-child) {
+        @extend .border-bottom;
+    }
+}
+
+.pd-transfers-listItemDetails {
+    @extend .flex-items-end;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.pd-transfers-listItemName {
+    display: flex;
+    flex: 1 1 40%;
+    overflow: hidden;
+}
+
+.pd-transfers-listItemStats {
+    @extend .flex-item-noshrink;
+    display: flex;
+    flex-grow: 1;
+}
+
+.pd-transfers-listItemStat {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    flex-grow: 1;
 }

@@ -1,16 +1,16 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
 import { generateUID, useApi } from 'react-components';
+import { createReadableStreamWrapper, ReadableStreamLike } from '@mattiasbuelens/web-streams-adapter';
+import { ReadableStream as PolyfillReadableStream } from 'web-streams-polyfill';
 import { DriveFileBlock, DriveFile, DriveFileRevision } from '../../interfaces/file';
 import { openDownloadStream, initDownloadSW } from './download';
 import { queryFileBlock } from '../../api/files';
 import { orderBy } from 'proton-shared/lib/helpers/array';
+import { TransferState, TransferProgresses } from '../../interfaces/transfer';
 
-export enum DownloadState {
-    Pending = 'pending',
-    Progress = 'progress',
-    Done = 'done',
-    Canceled = 'canceled'
-}
+const toPolyfillReadable = createReadableStreamWrapper(PolyfillReadableStream);
+
+const MAX_ACTIVE_DOWNLOADS = 3;
 
 type StreamTransformer = (stream: ReadableStream<Uint8Array>) => Promise<ReadableStream<Uint8Array>>;
 
@@ -20,14 +20,11 @@ interface DownloadInfo {
     Revision: DriveFileRevision;
 }
 
-interface Download extends DownloadInfo {
+export interface Download {
     id: string;
-    state: DownloadState;
-}
-
-interface DownloadBlock {
-    downloadId: string;
-    block: DriveFileBlock;
+    info: DownloadInfo;
+    state: TransferState;
+    startDate: Date;
 }
 
 interface DownloadConfig {
@@ -37,14 +34,11 @@ interface DownloadConfig {
     };
 }
 
-export interface DownloadProgresses {
-    [id: string]: number;
-}
-
 interface DownloadProviderState {
     downloads: Download[];
     startDownload: (info: DownloadInfo, transform: StreamTransformer) => void;
-    getDownloadsProgresses: () => DownloadProgresses;
+    getDownloadsProgresses: () => TransferProgresses;
+    clearDownloads: () => void;
 }
 
 const DownloadContext = createContext<DownloadProviderState | null>(null);
@@ -57,8 +51,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     const api = useApi();
 
     const downloadConfig = useRef<DownloadConfig>({});
-    const progresses = useRef<DownloadProgresses>({});
-    const blockQueue = useRef<DownloadBlock[]>([]);
+    const progresses = useRef<TransferProgresses>({});
 
     const [downloads, setDownloads] = useState<Download[]>([]);
 
@@ -71,91 +64,74 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         );
     }, []);
 
-    const updateDownloadState = (id: string, state: DownloadState) => {
+    const updateDownloadState = (id: string, state: TransferState) => {
         setDownloads((downloads) =>
             downloads.map((download) => (download.id === id ? { ...download, state } : download))
         );
     };
 
     const downloadFileBlock = async (
-        { downloadId, block }: DownloadBlock,
-        { onChunkRead }: { onChunkRead: (data: Uint8Array) => Promise<void> }
+        downloadId: string,
+        block: DriveFileBlock,
+        onChunkRead: (data: Uint8Array) => Promise<void>
     ) => {
-        const stream: ReadableStream<Uint8Array> = await api(queryFileBlock(block.URL));
-        const decryptedStream = await downloadConfig.current[downloadId].transform(stream);
+        const stream: ReadableStreamLike<Uint8Array> = toPolyfillReadable(await api(queryFileBlock(block.URL)));
+
+        const [encStream, decStream] = (stream as any).tee();
+
+        const decryptedStream = await downloadConfig.current[downloadId].transform(decStream);
         const reader = decryptedStream.getReader();
+        const encReader = encStream.getReader();
+
+        const processProgress = async ({ done, value }: ReadableStreamReadResult<Uint8Array>): Promise<void> => {
+            if (done) {
+                return;
+            }
+            progresses.current[downloadId] += value.length;
+            return processProgress(await encReader.read());
+        };
 
         const processResponse = async ({ done, value }: ReadableStreamReadResult<Uint8Array>): Promise<void> => {
             if (done) {
                 return;
             }
-
-            progresses.current[downloadId] += value.length;
             await onChunkRead(value);
-            await processResponse(await reader.read());
+            return processResponse(await reader.read());
         };
 
-        await processResponse(await reader.read());
+        return Promise.all([processProgress(await encReader.read()), processResponse(await reader.read())]);
     };
 
-    const processNextInQueue = async () => {
-        if (blockQueue.current.length === 0) {
-            return;
-        }
+    const downloadFile = async ({ id, info }: Download) => {
+        updateDownloadState(id, TransferState.Progress);
 
-        const processing = blockQueue.current[0];
-        const { block, downloadId } = processing;
+        const blocks: DriveFileBlock[] = orderBy(info.Revision.Blocks, 'Index');
+        const workerStream = downloadConfig.current[id].stream;
 
-        const stream = downloadConfig.current[downloadId].stream;
-
-        await downloadFileBlock(processing, {
-            async onChunkRead(value: Uint8Array) {
-                const blockInQueue = blockQueue.current[0];
-
-                if (!blockInQueue || downloadId !== blockInQueue.downloadId || block.URL !== blockInQueue.block.URL) {
-                    return; // Download is canceled already
-                }
-
-                await stream.write(value);
+        try {
+            for (const block of blocks) {
+                await downloadFileBlock(id, block, (value: Uint8Array) => workerStream.write(value));
             }
-        });
-
-        blockQueue.current.shift();
-        const isDownloadFinished = blockQueue.current.every((block) => downloadId !== block.downloadId);
-        if (isDownloadFinished) {
-            updateDownloadState(downloadId, DownloadState.Done);
-            stream.close();
+            updateDownloadState(id, TransferState.Done);
+        } catch (e) {
+            updateDownloadState(id, TransferState.Error);
         }
-
-        processNextInQueue();
+        workerStream.close();
     };
 
     useEffect(() => {
-        const isProcessingStated = blockQueue.current.length === 0;
+        const activeDownloads = downloads.filter(({ state }) => state === TransferState.Progress);
+        const nextPending = downloads.find(({ state }) => state === TransferState.Pending);
 
-        // When download is added or changes status, update queue
-        for (const { id, state, Revision } of downloads) {
-            if (blockQueue.current.length) {
-                break;
-            }
-
-            if (state === DownloadState.Pending) {
-                blockQueue.current.push(
-                    ...orderBy(Revision.Blocks, 'Index').map((block) => ({ downloadId: id, block }))
-                );
-                updateDownloadState(id, DownloadState.Progress);
-            }
-        }
-
-        if (isProcessingStated) {
-            processNextInQueue();
+        if (activeDownloads.length < MAX_ACTIVE_DOWNLOADS && nextPending) {
+            downloadFile(nextPending);
         }
     }, [downloads]);
 
     const cancelDownload = (downloadId: string) => {
-        blockQueue.current = blockQueue.current.filter((block) => block.downloadId !== downloadId);
+        // TODO: stop sending requests when implementing rejection/pause
         downloadConfig.current[downloadId].stream.close();
-        updateDownloadState(downloadId, DownloadState.Canceled);
+        updateDownloadState(downloadId, TransferState.Canceled);
     };
 
     const startDownload = async (info: DownloadInfo, transform: StreamTransformer) => {
@@ -168,29 +144,37 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
             },
             { onCancel: () => cancelDownload(id) }
         );
+
         progresses.current[id] = 0;
         downloadConfig.current[id] = {
             transform,
             stream: stream.getWriter()
         };
+
         setDownloads((downloads) => [
             ...downloads,
             {
                 id,
-                state: DownloadState.Pending,
-                ...info
+                info,
+                state: TransferState.Pending,
+                startDate: new Date()
             }
         ]);
     };
 
     const getDownloadsProgresses = () => ({ ...progresses.current });
+    const clearDownloads = () => {
+        // TODO: cancel pending downloads when implementing reject
+        setDownloads([]);
+    };
 
     return (
         <DownloadContext.Provider
             value={{
                 startDownload,
                 downloads,
-                getDownloadsProgresses
+                getDownloadsProgresses,
+                clearDownloads
             }}
         >
             {children}

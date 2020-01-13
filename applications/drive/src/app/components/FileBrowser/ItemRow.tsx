@@ -68,15 +68,17 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
                 <div key="select" onClick={(e) => e.stopPropagation()} onDoubleClick={(e) => e.stopPropagation()}>
                     <Checkbox checked={isSelected} onChange={() => onToggleSelect(item.LinkID)} />
                 </div>,
-                <span key="filename" className="flex flex-items-center">
+                <div key="filename" className="flex flex-items-center flex-nowrap">
                     <Icon
                         name={isFolder ? 'folder' : 'drafts'}
                         fill={isFolder ? 'attention' : 'altgrey'}
-                        className="mr0-5"
+                        className="mr0-5 flex-item-noshrink"
                         size={25}
                     />
-                    {item.Name}
-                </span>,
+                    <span title={item.Name} className="ellipsis">
+                        {item.Name}
+                    </span>
+                </div>,
                 isFolder ? c('Label').t`Folder` : c('Label').t`File`,
                 !isNarrow && (
                     <Time key="dateModified" format="PPp">

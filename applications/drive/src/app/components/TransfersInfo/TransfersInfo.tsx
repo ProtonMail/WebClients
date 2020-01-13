@@ -1,62 +1,128 @@
 import * as React from 'react';
-import { useDownloadProvider, DownloadState } from '../downloads/DownloadProvider';
-import { c, msgid } from 'ttag';
-import { useUploadProvider, UploadState, UploadProgresses } from '../uploads/UploadProvider';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { useDownloadProvider } from '../downloads/DownloadProvider';
+import { useUploadProvider } from '../uploads/UploadProvider';
+import Heading from './Heading';
+import Transfer, { TransferType, TransferStats } from './Transfer';
+import { useToggle, classnames } from 'react-components';
+import { TransferState } from '../../interfaces/transfer';
+
+const PROGRESS_UPDATE_INTERVAL = 500;
+const SPEED_SNAPSHOTS = 10; // How many snapshots should the speed be average of
+
+interface TransfersStats {
+    timestamp: Date;
+    stats: { [id: string]: TransferStats };
+}
 
 function TransfersInfo() {
-    const { downloads } = useDownloadProvider();
-    const { uploads, getUploadsProgresses } = useUploadProvider();
+    const { state: minimized, toggle: toggleMinimized } = useToggle();
+    const { downloads, getDownloadsProgresses, clearDownloads } = useDownloadProvider();
+    const { uploads, getUploadsProgresses, clearUploads } = useUploadProvider();
+    const [statsHistory, setStatsHistory] = React.useState<TransfersStats[]>([]);
 
-    const [progresses, setProgresses] = React.useState<UploadProgresses>({});
+    const updateStats = () => {
+        const timestamp = new Date();
+        const progresses = { ...getUploadsProgresses(), ...getDownloadsProgresses() };
+
+        setStatsHistory((prev) => {
+            const stats = Object.entries(progresses).reduce(
+                (stats, [id, progress]) => ({
+                    ...stats,
+                    [id]: {
+                        // get speed snapshot based on bytes downloaded since last update
+                        speed: prev[0]?.stats[id]
+                            ? (progresses[id] - prev[0].stats[id].progress) * (1000 / PROGRESS_UPDATE_INTERVAL)
+                            : 0,
+                        progress
+                    }
+                }),
+                {} as { [id: string]: TransferStats }
+            );
+
+            return [{ stats, timestamp }, ...prev.slice(0, SPEED_SNAPSHOTS - 1)];
+        });
+    };
 
     React.useEffect(() => {
-        const activeUploads = uploads.filter(({ state }) => state !== UploadState.Done);
+        updateStats();
 
-        if (!activeUploads.length) {
+        const activeUploads = uploads.filter(({ state }) => state !== TransferState.Done);
+        const activeDownloads = downloads.filter(({ state }) => state !== TransferState.Done);
+
+        if (!activeUploads.length && !activeDownloads.length) {
             return;
         }
 
-        const int = setInterval(() => {
-            setProgresses(getUploadsProgresses());
-        }, 500);
+        const int = setInterval(updateStats, PROGRESS_UPDATE_INTERVAL);
+
         return () => {
             clearInterval(int);
         };
-    }, [uploads]);
+    }, [uploads, downloads]);
 
-    const activeDownloads = downloads.filter(({ state }) => state !== DownloadState.Done);
-    const activeUploads = uploads.filter(({ state }) => state !== UploadState.Done);
-    const activeCount = activeDownloads.length + activeUploads.length;
+    const latestStats = statsHistory[0];
 
-    const getHeadingText = () => {
-        if (activeDownloads.length && activeUploads.length) {
-            return c('Info').ngettext(
-                msgid`Transfering ${activeCount} file`,
-                `Transfering ${activeCount} files`,
-                activeCount
-            );
-        } else if (!activeUploads.length) {
-            return c('Info').ngettext(
-                msgid`Downloading ${activeCount} file`,
-                `Downloading ${activeCount} files`,
-                activeCount
-            );
-        }
-        return c('Info').ngettext(msgid`Uploading ${activeCount} file`, `Uploading ${activeCount} files`, activeCount);
+    if (!latestStats || downloads.length + uploads.length === 0) {
+        return null;
+    }
+
+    const handleCloseClick = () => {
+        clearDownloads();
+        clearUploads();
     };
 
-    const progressText = humanSize(Object.values(progresses)[0] ?? 0);
-    const totalText = humanSize(uploads[0]?.info.blob.size ?? 0);
+    const calculateAverageSpeed = (id: string) => {
+        const sum = statsHistory.reduce((acc, { stats }) => acc + (stats[id]?.speed || 0), 0);
+        return sum / statsHistory.length;
+    };
+
+    const downloadTransfers = downloads.map((download) => ({
+        transfer: download,
+        component: (
+            <Transfer
+                key={download.id}
+                transfer={download}
+                type={TransferType.Download}
+                stats={{
+                    progress: latestStats.stats[download.id]?.progress,
+                    speed: calculateAverageSpeed(download.id)
+                }}
+            />
+        )
+    }));
+
+    const uploadTransfers = uploads.map((upload) => ({
+        transfer: upload,
+        component: (
+            <Transfer
+                key={upload.id}
+                transfer={upload}
+                type={TransferType.Upload}
+                stats={{
+                    progress: latestStats.stats[upload.id]?.progress,
+                    speed: calculateAverageSpeed(upload.id)
+                }}
+            />
+        )
+    }));
+
+    const transfers = [...downloadTransfers, ...uploadTransfers]
+        .sort((a, b) => b.transfer.startDate.getTime() - a.transfer.startDate.getTime())
+        .map(({ component }) => component);
 
     return (
-        <>
-            {activeCount > 0 && (
-                <div className="pd-downloads bg-global-altgrey color-white strong pt0-5 pb0-5 pl1 pr1">
-                    {getHeadingText()} ({progressText} / {totalText})
-                </div>
-            )}
-        </>
+        <div className="pd-transfers">
+            <Heading
+                downloads={downloads}
+                uploads={uploads}
+                minimized={minimized}
+                onToggleMinimize={toggleMinimized}
+                onClose={handleCloseClick}
+            />
+            <div className={classnames(['pd-transfers-list', minimized && 'pd-transfers-list--minimized'])}>
+                {transfers}
+            </div>
+        </div>
     );
 }
 
