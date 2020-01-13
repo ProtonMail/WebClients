@@ -251,7 +251,7 @@ const TimeGrid = React.forwardRef(
                             {displaySecondaryTimezone ? <div className="calendar-aside"></div> : null}
                             <div className="calendar-aside calendar-aside-weekNumber aligncenter"></div>
                             <div className="flex-item-fluid relative">
-                                <DayLines days={days} />
+                                <DayLines days={daysRows[0]} />
                                 <div
                                     className="calendar-time-fullday"
                                     style={{ height: actualRows * dayEventHeight + 'px' }}
@@ -266,7 +266,7 @@ const TimeGrid = React.forwardRef(
                                         eventsInRow={eventsInRow}
                                         events={dayEvents}
                                         formatTime={formatTime}
-                                        days={days}
+                                        days={daysRows[0]}
                                         now={now}
                                         row={0}
                                         targetMoreData={targetMoreData}
