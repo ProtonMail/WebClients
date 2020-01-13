@@ -9,7 +9,7 @@ msgstr ""
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
-"PO-Revision-Date: 2020-01-06 13:20\n"
+"PO-Revision-Date: 2020-01-08 13:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -6172,7 +6172,7 @@ msgstr "Aquesta conversa conté missatges esborrats."
 #: ./src/app/message/directives/messageSpamScore.js:13
 msgctxt "Info"
 msgid "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded! {{startLink}}Learn more{{endLink}}."
-msgstr "Aquest correu electrònic ha fallat els requisits d'autenticació del domini. Es pot transmetre correctament o correctament.{{startLink}}Més informació{{endLink}}."
+msgstr "Aquest correu electrònic ha incomplert els requisits d'autenticació del seu domini. Pot ser que estigui falsejat o reenviat de manera inadequada. {{startLink}}Més informació{{endLink}}."
 
 #: ./src/app/message/directives/messageSpamScore.js:8
 msgctxt "Info"

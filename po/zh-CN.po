@@ -9,7 +9,7 @@ msgstr ""
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
-"PO-Revision-Date: 2020-01-07 04:20\n"
+"PO-Revision-Date: 2020-01-12 16:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -9610,7 +9610,7 @@ msgstr "背景颜色"
 #: ./src/templates/user/signupPayForm.tpl.html:24
 msgctxt "Title"
 msgid "Billing"
-msgstr "账单"
+msgstr "计费方式"
 
 #: ./src/templates/user/signupPayForm.tpl.html:6
 msgctxt "Title"
@@ -12132,7 +12132,7 @@ msgstr "警告：您没有设置密保邮箱，一旦忘记密码，账户将无
 #: ./src/templates/modals/expirationModal.tpl.html:42
 msgctxt "Warning"
 msgid "You can also send anyway without expiration to these recipients."
-msgstr "您也可以向他们发送不自动销毁的邮件。"
+msgstr "若您仍然选择发送，上述收件人收到的邮件将不受有效期限制。"
 
 #: ./src/templates/modals/feedback.tpl.html:10
 msgctxt "Write a feedback about ProtonMail"

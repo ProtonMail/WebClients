@@ -9,7 +9,7 @@ msgstr ""
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
-"PO-Revision-Date: 2020-01-06 11:21\n"
+"PO-Revision-Date: 2020-01-09 19:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -722,7 +722,7 @@ msgstr "Etiket oluştur"
 #: ./src/templates/message/filterButton.tpl.html:4
 msgctxt "Action"
 msgid "Custom Filter"
-msgstr "Özel süzgeç"
+msgstr "Özel Filtre"
 
 #: ./src/templates/invoices/invoiceSection.tpl.html:14
 msgctxt "Action"
@@ -2775,7 +2775,7 @@ msgstr "Kişiyi önizle"
 #: ./src/templates/contact/dropdownGroups.tpl.html:9
 msgctxt "Contact group dropdown placeholder"
 msgid "Filter groups"
-msgstr "Grupları süzgeçle"
+msgstr "Grupları filtrele"
 
 #: ./src/templates/contact/contactModal.tpl.html:8
 msgctxt "Contact modal title"
@@ -4268,7 +4268,7 @@ msgstr "Ekler"
 #: ./src/templates/message/filterButton.tpl.html:8
 msgctxt "Filter message"
 msgid "Filter on:"
-msgstr "Süzgeç uygula:"
+msgstr "Filtre uygula:"
 
 #: ./src/templates/message/filterButton.tpl.html:34
 msgctxt "Filter message"
@@ -5442,12 +5442,12 @@ msgstr "Güvenlik nedeniyle, etki alanınızın sahibi olduğunuzu doğrulamamı
 #: ./src/app/filter/directives/customFilterList.js:130
 msgctxt "Info"
 msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a href=\"/dashboard\">upgrade</a> to get unlimited filters."
-msgstr "Ücretsiz ProtonMail hesapları 1 özel süzgeç ile sınırlıdır. Sınırsız süzgeç almak için lütfen <a href=\"/dashboard\">planınızı yükseltin</a>."
+msgstr "Ücretsiz ProtonMail hesapları 1 özel filtre ile sınırlıdır. Sınırsız filtre almak için lütfen <a href=\"/dashboard\">planınızı yükseltin</a>."
 
 #: ./src/templates/filter/customFilterList.tpl.html:11
 msgctxt "Info"
 msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade</a> to get unlimited filters."
-msgstr "Ücretsiz ProtonMail hesapları 1 özel süzgeç ile sınırlıdır. Sınırsız süzgeç almak için lütfen planınızı <a ui-sref=\"secured.dashboard({scroll: true})\">yükseltin</a>."
+msgstr "Ücretsiz ProtonMail hesapları 1 özel filtre ile sınırlıdır. Sınırsız filtre almak için lütfen planınızı <a ui-sref=\"secured.dashboard({scroll: true})\">yükseltin</a>."
 
 #: ./src/templates/modals/generateOrganization.tpl.html:39
 msgctxt "Info"
