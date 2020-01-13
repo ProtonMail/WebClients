@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
@@ -18,6 +18,7 @@ import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib
 import { generateMemberAddressKey } from 'proton-shared/lib/keys/organizationKeys';
 import { decryptMemberToken } from 'proton-shared/lib/keys/memberToken';
 import { decryptPrivateKeyArmored, generateAddressKey } from 'proton-shared/lib/keys/keys';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 import MissingKeysStatus, { STATUS } from './MissingKeysStatus';
@@ -39,7 +40,7 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const doneRef = useRef(false);
+    const [step, setStep] = useState('init');
     const [formattedAddresses, setFormattedAddresses] = useState(() =>
         addresses.map((address) => ({
             ...address,
@@ -128,19 +129,32 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
     };
 
     const handleSubmit = () => {
-        if (doneRef.current) {
-            return onClose();
+        if (step === 'init') {
+            withLoading(
+                (member.Self ? processSelf() : processMember())
+                    .then(() => setStep('done'))
+                    .catch(() => setStep('error'))
+            );
+        } else {
+            onClose();
         }
-        doneRef.current = true;
-
-        withLoading(member.Self ? processSelf() : processMember());
     };
+
+    const submitText = (() => {
+        if (step === 'done') {
+            return c('Action').t`Done`;
+        }
+        if (step === 'error') {
+            return c('Action').t`Close`;
+        }
+        return c('Action').t`Submit`;
+    })();
 
     return (
         <FormModal
             title={c('Title').t`Generate missing keys`}
             close={c('Action').t`Close`}
-            submit={c('Action').t`Submit`}
+            submit={submitText}
             onClose={onClose}
             onSubmit={handleSubmit}
             loading={loading}
@@ -148,7 +162,10 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
         >
             <Alert>{c('Info')
                 .t`Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.`}</Alert>
-            <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
+            <SelectEncryption
+                encryptionType={encryptionType}
+                setEncryptionType={step === 'init' ? setEncryptionType : noop}
+            />
             <Table>
                 <TableHeader
                     cells={[c('Header for addresses table').t`Address`, c('Header for addresses table').t`Status`]}
