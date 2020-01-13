@@ -68,7 +68,7 @@ class DownloadServiceWorker {
         const headers = new Headers({
             'Content-Length': `${size}`,
             'Content-Type': `${mimeType}`,
-            'Content-Disposition': 'attachment; filename=' + `"${filename}"`,
+            'Content-Disposition': 'attachment; filename=' + `"${encodeURI(filename)}"`,
             'Content-Security-Policy': "default-src 'none'",
             'X-Content-Security-Policy': "default-src 'none'",
             'X-WebKit-CSP': "default-src 'none'",
