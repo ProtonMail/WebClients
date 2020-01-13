@@ -7,6 +7,9 @@ import { LinkType } from '../interfaces/folder';
 import Page from '../components/Page';
 import StickyHeader from '../components/StickyHeader';
 import { DriveResource, useDriveResource } from '../components/DriveResourceProvider';
+import DriveToolbar from '../components/DriveToolbar';
+import useFileBrowser from '../components/FileBrowser/useFileBrowser';
+import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
 
 const toLinkType = (type: string) => {
     if (type === 'folder') {
@@ -29,8 +32,11 @@ const toResource = (shareId?: string, type?: string, linkId?: string): DriveReso
 
 function DriveContainer({ match, history }: RouteComponentProps<{ shareId?: string; linkId?: string; type?: string }>) {
     const { loadDrive } = useDrive();
-    const [, setError] = useState();
     const { resource, setResource } = useDriveResource();
+    const [, setError] = useState();
+
+    const [fileBrowserContents, setFileBrowserContents] = useState<FileBrowserItem[]>();
+    const fileBrowserControls = useFileBrowser(fileBrowserContents);
 
     const navigateToResource = (resource: DriveResource) => {
         history.push(`/drive/${resource.shareId}/folder/${resource.linkId}`);
@@ -64,11 +70,31 @@ function DriveContainer({ match, history }: RouteComponentProps<{ shareId?: stri
     }, [match.params]);
 
     return (
-        <Page title={c('Title').t`My files`} className="flex flex-column">
+        <Page
+            title={c('Title').t`My files`}
+            className="flex flex-column"
+            toolbar={
+                resource && (
+                    <DriveToolbar
+                        selectedItems={fileBrowserControls.selectedItems}
+                        resource={resource}
+                        openResource={navigateToResource}
+                    />
+                )
+            }
+        >
             <StickyHeader>
                 <h3 className="mb0">{c('Title').t`My files`}</h3>
             </StickyHeader>
-            {resource && <Drive resource={resource} openResource={navigateToResource} />}
+            {resource && (
+                <Drive
+                    setContents={setFileBrowserContents}
+                    contents={fileBrowserContents}
+                    fileBrowserControls={fileBrowserControls}
+                    resource={resource}
+                    openResource={navigateToResource}
+                />
+            )}
         </Page>
     );
 }

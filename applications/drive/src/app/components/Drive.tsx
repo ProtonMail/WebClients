@@ -23,15 +23,18 @@ const mapLinksToChildren = (decryptedLinks: DriveLink[]): FileBrowserItem[] =>
 interface Props {
     resource: DriveResource;
     openResource: (resource: DriveResource) => void;
+    fileBrowserControls: ReturnType<typeof useFileBrowser>;
+    contents?: FileBrowserItem[];
+    setContents: React.Dispatch<React.SetStateAction<FileBrowserItem[] | undefined>>;
 }
 
-function Drive({ resource, openResource }: Props) {
+function Drive({ resource, openResource, contents, setContents, fileBrowserControls }: Props) {
     const mainAreaRef = useMainArea();
     const { getFolderContents } = useShare(resource.shareId);
     const { downloadDriveFile } = useFiles(resource.shareId);
     const { uploads } = useUploadProvider();
-    const [contents, setContents] = useState<FileBrowserItem[]>();
     const [loading, setLoading] = useState(false);
+
     const {
         clearSelections,
         selectedItems,
@@ -39,7 +42,7 @@ function Drive({ resource, openResource }: Props) {
         toggleSelectItem,
         toggleAllSelected,
         selectRange
-    } = useFileBrowser(contents);
+    } = fileBrowserControls;
 
     const isDoneLoading = useRef(false);
     const loadingPage = useRef<number | null>(null);
