@@ -64,14 +64,14 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">{c('Header')
                             .t`Pricing`}</th>
-                        <td className="bg-global-light aligncenter">
+                        <td className="bg-global-highlight aligncenter">
                             <Price currency={model.currency} suffix={c('Suffix').t`/mo`}>
                                 {vpnBasicPlan.Pricing[model.cycle] / model.cycle}
                             </Price>
                         </td>
-                        <td className="bg-global-light aligncenter">
+                        <td className="bg-global-highlight aligncenter">
                             <Price currency={model.currency} suffix={c('Suffix').t`/mo`}>
                                 {vpnPlusPlan.Pricing[model.cycle] / model.cycle}
                             </Price>
