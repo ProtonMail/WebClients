@@ -60,12 +60,12 @@ const FileBrowser = ({
                                 />
                             </div>
                         </th>
-                        <th className="w50">
+                        <th>
                             <div className="pd-fb-table-heading-name ml0-5">{c('TableHeader').t`Name`}</div>
                         </th>
-                        <th className="w15">{c('TableHeader').t`Type`}</th>
+                        <th className={isNarrow ? 'w15' : 'w10'}>{c('TableHeader').t`Type`}</th>
                         {!isNarrow && <th className="w20">{c('TableHeader').t`Modified`}</th>}
-                        <th className="w15">{c('TableHeader').t`Size`}</th>
+                        <th className={isNarrow ? 'w15' : 'w10'}>{c('TableHeader').t`Size`}</th>
                     </tr>
                 </thead>
                 <TableBody colSpan={isNarrow ? 4 : 5}>
@@ -80,7 +80,7 @@ const FileBrowser = ({
                             onClick={onItemClick}
                         />
                     ))}
-                    {loading && <TableRowBusy colSpan={5} />}
+                    {loading && <TableRowBusy colSpan={isNarrow ? 4 : 5} />}
                 </TableBody>
             </table>
         </div>

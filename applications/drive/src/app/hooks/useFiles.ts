@@ -32,15 +32,15 @@ const adjustFileName = (
     uploads: Upload[],
     contents: DriveLink[],
     index = 0
-): { blob: Blob; fileName: string } => {
+): { blob: Blob; filename: string } => {
     const extensionRx = /\.[^/.]+$/g;
     const extension = file.name.match(extensionRx)?.[0] ?? '';
     const adjustedFileName = index ? `${file.name.replace(extensionRx, '')} (${index})${extension}` : file.name;
     const fileNameExists = contents.some((item) => item.Name === adjustedFileName);
-    const fileNameUploading = uploads.some((item) => item.info.fileName === adjustedFileName);
+    const fileNameUploading = uploads.some((item) => item.info.filename === adjustedFileName);
     return fileNameExists || fileNameUploading
         ? adjustFileName(file, uploads, contents, index + 1)
-        : { blob: new Blob([file], { type: file.type }), fileName: adjustedFileName };
+        : { blob: new Blob([file], { type: file.type }), filename: adjustedFileName };
 };
 
 export interface UploadFileMeta {
@@ -88,19 +88,19 @@ function useFiles(shareId: string) {
 
             // TODO: contents will have pages, need to load all pages to check.
             const contents = await getFolderContents(ParentLinkID, 0, FOLDER_PAGE_SIZE, true);
-            const { blob, fileName } = adjustFileName(file, uploads, contents);
+            const { blob, filename } = adjustFileName(file, uploads, contents);
 
             startUpload(
-                { blob, fileName, shareId, linkId: ParentLinkID },
+                { blob, filename, shareId, linkId: ParentLinkID },
                 {
                     initialize: async () => {
                         const Name = await encryptUnsigned({
-                            message: fileName,
+                            message: filename,
                             privateKey: parentKey
                         });
 
                         const MimeType = blob.type || 'application/octet-stream';
-                        const Hash = await generateLookupHash(fileName, rawPassphrase);
+                        const Hash = await generateLookupHash(filename, rawPassphrase);
 
                         const { File }: CreateFileResult = await api(
                             queryCreateFile(shareId, {

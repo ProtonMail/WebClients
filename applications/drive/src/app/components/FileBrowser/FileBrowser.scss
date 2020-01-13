@@ -1,7 +1,9 @@
+$checkbox-cell-width: calc(#{em(32)} + 1.6rem);
+
 .pd-fb-table {
     border-collapse: separate;
     border-spacing: 0;
-    table-layout: auto;
+    table-layout: fixed;
 
     th {
         text-align: left;
@@ -20,6 +22,7 @@
         border-bottom: 1px solid $pm-global-border;
         &:first-of-type {
             padding-left: em(16);
+            width: $checkbox-cell-width;
         }
     }
 }

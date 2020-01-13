@@ -2,6 +2,7 @@
 import registerServiceWorker from 'service-worker-loader!./downloadSW';
 import { isSafari, isEdge, isEdgeChromium } from 'proton-shared/lib/helpers/browser';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
+import { WritableStream } from 'web-streams-polyfill/ponyfill/es6';
 
 interface DownloadMeta {
     filename: string;

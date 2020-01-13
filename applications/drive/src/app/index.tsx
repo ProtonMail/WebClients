@@ -1,4 +1,3 @@
-import 'web-streams-polyfill';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import 'core-js/stable';
