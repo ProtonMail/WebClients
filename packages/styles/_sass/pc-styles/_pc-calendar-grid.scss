@@ -191,11 +191,11 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2) !default;
 
 // events
 $calendar-dayevent-cell-height: 28px !default; // careful when updating this (depends also on JS calculations)
+$calendar-dayevent-padding-top: 3px !default;
 .calendar-dayeventcell {
     padding-right: $gridcell-right-margin;
-    padding-top: 3px;
+    padding-top: $calendar-dayevent-padding-top;
     white-space: nowrap;
-    overflow: hidden;
     height: $calendar-dayevent-cell-height;
 }
 
@@ -208,9 +208,9 @@ $calendar-dayevent-cell-height: 28px !default; // careful when updating this (de
 $calendar-dayeventcell-hover-color: #F1F3F4 !default;
 .calendar-dayeventcell-inner {
     border-radius: 2px;
-    overflow: hidden;
     min-height: 100%;
     border: $border-event-cells;
+    position: relative;
     cursor: pointer;
     color: var(--color-main-area, $pm-global-grey);
     &:focus,
@@ -220,6 +220,39 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
 }
 .calendar-dayeventcell-inner--notAllDay {
     border: 0;
+}
+
+.calendar-dayeventcell--isOutsideStart {
+    padding-left: 1em;
+}
+.calendar-dayeventcell--isOutsideEnd {
+    padding-right: 1em;
+}
+
+.calendar-dayeventcell-inner--isOutsideStart {
+    border-left: 0;
+}
+.calendar-dayeventcell-inner--isOutsideEnd {
+    border-right: 0;
+}
+.calendar-dayeventcell-inner-isOutsideStart,
+.calendar-dayeventcell-inner-isOutsideEnd {
+    position: absolute;
+    z-index: 2;
+    top: calc(#{$calendar-dayevent-padding-top} - 0.5px); // tricky stuff
+    bottom: 0;
+    width: 18px;
+    height: 18px;
+    border: $border-event-cells;
+    clip-path: polygon(calc(100% - 2px) 1px, 100% 0, 100% 100%, 0 100%, 1px calc(100% - 2px)); // to avoid some whitespaces
+}
+.calendar-dayeventcell-inner-isOutsideStart {
+    left: -8px;
+    transform: rotate(135deg);
+}
+.calendar-dayeventcell-inner-isOutsideEnd {
+    right: -8px;
+    transform: rotate(-45deg);
 }
 
 .calendar-eventcell {
