@@ -50,8 +50,10 @@
         flex-basis: auto;
       }
     }
+    &w25         { width: 25%; }
     &w100        { width: 100%; }
-    &mw100       { max-width: 100% }
+    &mw100       { max-width: 100%; }
+    &wauto       { width: auto; }
   }
 
   /**
@@ -129,6 +131,9 @@
     &wauto {
       width: auto;
     }
+    &w25{
+      width: 25%;
+    }
     &flex-wrap {
       flex-wrap: wrap;
     }
@@ -174,7 +179,11 @@
     display: block;
     width: auto;
   }
-  
+  .ontinymobile- {
+    &wauto {
+      width: auto;
+    }
+  }
   /* margins */
   //$list-margins-tinymobile: m, mt, mr, mb, ml;
   //$list-margins-tinymobile-values: 0, 1, 2; // specify 2.5 if needed
