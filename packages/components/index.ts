@@ -96,6 +96,7 @@ export { default as VpnLogo } from './components/logo/VpnLogo';
 export { default as ToolbarSeparator } from './components/toolbar/ToolbarSeparator';
 export { default as Toolbar } from './components/toolbar/Toolbar';
 export { default as ToolbarButton } from './components/toolbar/ToolbarButton';
+export { default as ToolbarLink } from './components/toolbar/ToolbarLink';
 export { default as Paragraph } from './components/paragraph/Paragraph';
 export { default as DialogModal } from './components/modal/Dialog';
 export { default as ContentModal } from './components/modal/Content';
