@@ -6,6 +6,8 @@
 - made `bg-global-border` dark-mode friendly
 - add `progress-contact--success`/`progress-contact--error`/`progress-contact--warning` modifiers
 - add new subnav styles
+- add `w120e`, `w140e`, `w220e` helpers
+- add `ontablet-w25`, `ontablet-mw100`, `ontablet-wauto`, `onmobile-w25`, `ontinymobile-wauto` helpers
 
 ## Updated/fixes
 
@@ -26,6 +28,7 @@
 - fix selective/current day on mini-calendar/calendar
 - fix `pm-label` for credit card autogrid issue (`width` was too large for small modals)
 - fix inconsistency for mini-calendar colors (current/selected day)
+- fix display of outside modifier (calendar) 
 
 # [1.8.0] - 2019-12-20
 
