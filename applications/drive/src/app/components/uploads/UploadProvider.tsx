@@ -187,7 +187,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     );
 };
 
-export const useUploadProvider = () => {
+export const useUploadProvider = (): UploadProviderState => {
     const state = useContext(UploadContext);
     if (!state) {
         throw new Error('Trying to use uninitialized UploadProvider');

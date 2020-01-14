@@ -26,6 +26,7 @@ import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { FOLDER_PAGE_SIZE } from '../constants';
 import { useUploadProvider, Upload } from '../components/uploads/UploadProvider';
 import { DriveLink } from '../interfaces/folder';
+import { TransferState } from '../interfaces/transfer';
 
 const adjustFileName = (
     file: File,
@@ -86,9 +87,19 @@ function useFiles(shareId: string) {
             const { NodeKey, privateKey, NodePassphrase, rawPassphrase } = await generateNodeKeys(parentKey);
             const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
 
+            // Name checks only among uploads to the same parent link
+            const activeUploads = uploads.filter(
+                ({ state, info }) =>
+                    info.linkId === ParentLinkID &&
+                    info.shareId === shareId &&
+                    (state === TransferState.Done ||
+                        state === TransferState.Pending ||
+                        state === TransferState.Progress)
+            );
+
             // TODO: contents will have pages, need to load all pages to check.
             const contents = await getFolderContents(ParentLinkID, 0, FOLDER_PAGE_SIZE, true);
-            const { blob, filename } = adjustFileName(file, uploads, contents);
+            const { blob, filename } = adjustFileName(file, activeUploads, contents);
 
             startUpload(
                 { blob, filename, shareId, linkId: ParentLinkID },
