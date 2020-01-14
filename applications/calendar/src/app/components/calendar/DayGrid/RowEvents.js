@@ -59,8 +59,8 @@ const RowEvents = ({
                 formatTime={formatTime}
                 isSelected={isSelected}
                 isBeforeNow={isBeforeNow}
-                isOutsideEnd={event.end > endOfDay(days[days.length - 1])}
-                isOutsideStart={event.start < days[0]}
+                isOutsideEnd={event.isAllDay && event.end > endOfDay(days[days.length - 1])}
+                isOutsideStart={event.isAllDay && event.start < days[0]}
             />
         );
     });

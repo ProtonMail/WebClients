@@ -54,9 +54,19 @@ const FullDayEvent = ({
                     {!isAllDay ? (
                         <Icon className="mr0-25 flex-item-noshrink" size={12} name="circle" color={calendarColor} />
                     ) : null}
-                    {loading ? '' : <span className="flex-item-fluid ellipsis">{titleString}</span>}
+
+                    {isOutsideStart && !loading ? (
+                        <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-90 fill-currentColor" />
+                    ) : null}
+
+                    <span className="flex-item-fluid ellipsis">{loading ? '' : titleString}</span>
+
+                    {isAllPartDay && !loading ? <span>{timeString}</span> : null}
+
+                    {isOutsideEnd && !loading ? (
+                        <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-270 fill-currentColor" />
+                    ) : null}
                 </span>
-                {isAllPartDay ? <span className="">{timeString}</span> : null}
             </div>
         );
     })();
@@ -75,7 +85,7 @@ const FullDayEvent = ({
             <div
                 onClick={onClick}
                 className={classnames([
-                    'calendar-dayeventcell-inner alignleft flex w100 pl0-5 pr0-5',
+                    'calendar-dayeventcell-inner alignleft flex w100',
                     !isAllDay && 'calendar-dayeventcell-inner--notAllDay',
                     isOutsideStart && 'calendar-dayeventcell-inner--isOutsideStart',
                     isOutsideEnd && 'calendar-dayeventcell-inner--isOutsideEnd'
@@ -83,17 +93,7 @@ const FullDayEvent = ({
                 style={eventStyle}
                 ref={eventRef}
             >
-                {isOutsideStart ? (
-                    <span className="calendar-dayeventcell-inner-isOutsideStart" style={eventStyle}></span>
-                ) : (
-                    ''
-                )}
                 {content}
-                {isOutsideEnd ? (
-                    <span className="calendar-dayeventcell-inner-isOutsideEnd" style={eventStyle}></span>
-                ) : (
-                    ''
-                )}
             </div>
         </div>
     );
