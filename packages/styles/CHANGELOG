@@ -10,6 +10,7 @@
 - add `ontablet-w25`, `ontablet-mw100`, `ontablet-wauto`, `onmobile-w25`, `ontinymobile-wauto` helpers
 - add `--bgcolor-highlight` CSS custom property
 - added Assets section (with list of images/flags/etc.)
+- add new margin helpers
 
 ## Updated/fixes
 
@@ -31,6 +32,7 @@
 - fix `pm-label` for credit card autogrid issue (`width` was too large for small modals)
 - fix inconsistency for mini-calendar colors (current/selected day)
 - fix display of outside modifier (calendar) 
+- fix `pm-label`
 
 # [1.8.0] - 2019-12-20
 
