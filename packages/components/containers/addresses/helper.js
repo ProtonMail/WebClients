@@ -32,7 +32,7 @@ export const getPermissions = ({
         canGenerate: !HasKeys && (canGenerateMember || Self),
         canDisable: Status === ADDRESS_STATUS.STATUS_ENABLED && isAdmin && !isSpecialAddress && !isPrimaryAddress,
         canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
-        canDelete: Type === TYPE_CUSTOM_DOMAIN,
+        canDelete: Type === TYPE_CUSTOM_DOMAIN && isAdmin,
         canEdit: !!Self
     };
 };
