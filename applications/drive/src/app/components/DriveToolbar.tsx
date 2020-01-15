@@ -37,7 +37,7 @@ const DriveToolbar = ({ resource, openResource, selectedItems }: Props) => {
         <Toolbar>
             {folder?.ParentLinkID && (
                 <>
-                    <ToolbarButton onClick={handleBackClick} icon={{ name: 'caret', rotate: 90 }} />
+                    <ToolbarButton onClick={handleBackClick} icon="arrow-left" />
                     <ToolbarSeparator />
                 </>
             )}
