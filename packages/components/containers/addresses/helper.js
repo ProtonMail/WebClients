@@ -4,7 +4,7 @@ const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 const { READABLE } = MEMBER_PRIVATE;
 
 export const getStatus = ({ address: { Status, Receive, DomainID, HasKeys }, i }) => {
-    const isActive = ADDRESS_STATUS.STATUS_ENABLED && Receive === RECEIVE_ADDRESS.RECEIVE_YES;
+    const isActive = Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === RECEIVE_ADDRESS.RECEIVE_YES;
     const isDisabled = Status === ADDRESS_STATUS.STATUS_DISABLED;
     const isOrphan = DomainID === null;
     const isMissingKeys = !HasKeys;
