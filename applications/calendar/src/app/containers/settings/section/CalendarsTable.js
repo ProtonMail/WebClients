@@ -14,11 +14,11 @@ const CalendarsTable = ({ calendars, onEdit, onDelete, loading }) => {
                             text: c('Action').t`Edit`,
                             onClick: () => onEdit(calendar)
                         },
-                        calendars.length > 1 && {
+                        {
                             text: c('Action').t`Delete`,
                             onClick: () => onDelete(calendar)
                         }
-                    ].filter(Boolean);
+                    ];
 
                     return (
                         <TableRow
