@@ -13,9 +13,12 @@ const DomainName = ({ domain }) => {
     };
 
     return (
-        <>
-            {ICONS[domain.State]} {domain.DomainName}
-        </>
+        <span className="flex flex-nowrap">
+            {ICONS[domain.State]}
+            <span className="ellipsis ml0-5" title={domain.DomainName}>
+                {domain.DomainName}
+            </span>
+        </span>
     );
 };
 

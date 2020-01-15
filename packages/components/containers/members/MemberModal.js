@@ -150,7 +150,7 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
                         required
                     />
                 </Field>
-                <div className="ml1">
+                <div className="ml1 onmobile-ml0">
                     <Checkbox checked={model.private} onChange={handleChangePrivate}>{c('Label for new member')
                         .t`Private`}</Checkbox>
                 </div>
@@ -194,9 +194,11 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
                         required
                     />
                 </Field>
-                <div className="ml1 flex flex-nowrap flex-items-center">
+                <div className="ml1 onmobile-ml0 flex flex-nowrap flex-items-center">
                     {domainOptions.length === 1 ? (
-                        `@${domainOptions[0].value}`
+                        <span className="ellipsis" title={`@${domainOptions[0].value}`}>
+                            @{domainOptions[0].value}
+                        </span>
                     ) : (
                         <Select options={domainOptions} value={model.domain} onChange={handleChange('domain')} />
                     )}
