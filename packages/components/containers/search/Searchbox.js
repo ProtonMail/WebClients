@@ -29,6 +29,7 @@ const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onS
 
     return (
         <form
+            role="search"
             name="searchbox"
             className={classnames(['searchbox-container relative flex-item-centered-vert', className])}
             onSubmit={handleSubmit}
