@@ -1,11 +1,12 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
-import { FileUploadInfo, RequestUploadResult } from '../../interfaces/file';
-import { generateUID, useApi, useGetAddresses, useGetAddressKeys } from 'react-components';
-import ChunkFileReader from './ChunkFileReader';
-import { queryRequestUpload } from '../../api/files';
+import { generateUID, useApi, useGetAddresses, useGetAddressKeys, useNotifications } from 'react-components';
 import { generateContentHash, sign } from 'proton-shared/lib/keys/driveKeys';
-import { getPrimaryAddress } from 'proton-shared/lib/helpers/address';
+import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { c } from 'ttag';
+import ChunkFileReader from './ChunkFileReader';
+import { FileUploadInfo, RequestUploadResult } from '../../interfaces/file';
+import { queryRequestUpload } from '../../api/files';
 import { upload } from './upload';
 import { TransferState, TransferProgresses } from '../../interfaces/transfer';
 
@@ -62,6 +63,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     const api = useApi();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
+    const { createNotification } = useNotifications();
     const [uploads, setUploads] = useState<Upload[]>([]);
     const progresses = useRef<TransferProgresses>({});
     const uploadConfig = useRef<UploadConfig>({});
@@ -75,13 +77,14 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
         const info = await uploadConfig.current[id].initialize();
         const addresses = await getAddresses();
-        const primaryAddress = getPrimaryAddress(addresses);
+        const [activeAddress] = getActiveAddresses(addresses);
 
-        if (!primaryAddress) {
-            throw new Error('User has no primary address');
+        if (!activeAddress) {
+            createNotification({ text: c('Error').t`No valid address found`, type: 'error' });
+            throw new Error('User has no active address');
         }
 
-        const { privateKeys } = splitKeys(await getAddressKeys(primaryAddress.ID));
+        const { privateKeys } = splitKeys(await getAddressKeys(activeAddress.ID));
 
         const uploadChunks = async (chunks: Uint8Array[], startIndex: number) => {
             const encryptedChunks = await Promise.all(chunks.map((chunk) => uploadConfig.current[id].transform(chunk)));
@@ -90,7 +93,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
             const { UploadLinks }: RequestUploadResult = await api(
                 queryRequestUpload({
-                    AddressID: primaryAddress.ID,
+                    AddressID: activeAddress.ID,
                     BlockList,
                     Signature
                 })
