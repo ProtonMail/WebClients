@@ -25,6 +25,7 @@ import CalendarModal from '../../containers/settings/CalendarModal';
 import CalendarCreating from './CalendarCreating';
 import CalendarReady from './CalendarReady';
 import { setupCalendarKeys } from './resetHelper';
+import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 
 const WelcomeModal = (props) => {
     const calendarRef = useRef();
@@ -47,14 +48,14 @@ const WelcomeModal = (props) => {
     };
 
     const setup = async () => {
-        const addresses = await getAddresses();
-        if (!addresses.length) {
-            throw new Error(c('Error').t`Please create an address first.`);
+        const activeAddresses = getActiveAddresses(await getAddresses());
+        if (!activeAddresses.length) {
+            throw new Error(c('Error').t`No valid address found.`);
         }
 
-        const [{ ID: primaryAddressID, Email: primaryAddressEmail = '' }] = addresses;
+        const [{ ID: addressID, Email: addressEmail = '' }] = activeAddresses;
         const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
-            getPrimaryKey(await getAddressKeys(primaryAddressID)) || {};
+            getPrimaryKey(await getAddressKeys(addressID)) || {};
         if (!primaryAddressKey || !primaryAddressKey.isDecrypted()) {
             throw new Error(c('Error').t`Primary address key is not decrypted.`);
         }
@@ -64,7 +65,7 @@ const WelcomeModal = (props) => {
             Color: DEFAULT_CALENDAR.color,
             Description: DEFAULT_CALENDAR.description,
             Display: 1,
-            AddressID: primaryAddressID
+            AddressID: addressID
         };
 
         const { Calendar = {} } = await api(createCalendar(calendarPayload));
@@ -83,8 +84,8 @@ const WelcomeModal = (props) => {
             setupCalendarKeys({
                 api,
                 calendars: [Calendar],
-                addressID: primaryAddressID,
-                addressEmail: primaryAddressEmail,
+                addressID,
+                addressEmail,
                 privateKey: primaryAddressKey,
                 publicKey: primaryAddressPublicKey
             })

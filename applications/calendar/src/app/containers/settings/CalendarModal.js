@@ -16,7 +16,6 @@ import {
 
 import { createCalendar, updateCalendarSettings, updateCalendar } from 'proton-shared/lib/api/calendars';
 import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
-import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 
 import { DEFAULT_CALENDAR, DEFAULT_EVENT_DURATION, NOTIFICATION_TYPE } from '../../constants';
 import CalendarSettingsTab from './CalendarSettingsTab';
@@ -30,6 +29,7 @@ import {
     DEFAULT_PART_DAY_NOTIFICATIONS
 } from '../../helpers/notifications';
 import { setupCalendarKeys } from '../setup/resetHelper';
+import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 
 const validate = ({ name }) => {
     const errors = {};
@@ -71,20 +71,16 @@ const CalendarModal = ({ calendar, ...rest }) => {
 
     useEffect(() => {
         const initializeEmptyCalendar = async () => {
-            const addresses = await getAddresses();
-            const filteredAddresses = addresses.filter(({ Status }) => {
-                return Status === ADDRESS_STATUS.STATUS_ENABLED;
-            });
-
-            if (filteredAddresses.length === 0) {
+            const activeAdresses = getActiveAddresses(await getAddresses());
+            if (!activeAdresses.length) {
                 rest.onClose();
-                return createNotification({ text: c('Error').t`No valid addresses found`, type: 'error' });
+                return createNotification({ text: c('Error').t`No valid address found`, type: 'error' });
             }
 
             setModel((prev) => ({
                 ...prev,
-                addressID: filteredAddresses[0].ID,
-                addressOptions: filteredAddresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email }))
+                addressID: activeAdresses[0].ID,
+                addressOptions: activeAdresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email }))
             }));
         };
 
