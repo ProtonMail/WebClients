@@ -6,7 +6,22 @@ import Icon from '../icon/Icon';
 import NavMenu from './NavMenu';
 import { classnames } from '../../helpers/component';
 
-const NavItem = ({ type = 'link', link, isActive, text, aside, onClick, icon, list = [], color, className = '' }) => {
+const NavItem = ({
+    type = 'link',
+    ariaHiddenList,
+    ariaCurrent,
+    link,
+    isActive,
+    text,
+    aside,
+    onClick,
+    icon,
+    list = [],
+    color,
+    className = '',
+    itemClassName = 'navigation__item',
+    linkClassName = 'navigation__link'
+}) => {
     const content = (
         <span className="flex flex-nowrap w100 flex-items-center">
             {icon && (
@@ -23,21 +38,30 @@ const NavItem = ({ type = 'link', link, isActive, text, aside, onClick, icon, li
 
     if (type === 'link') {
         return (
-            <li className="navigation__item">
-                <NavLink className={classnames(['navigation__link', className])} isActive={isActive} to={link}>
+            <li className={itemClassName}>
+                <NavLink
+                    className={classnames([linkClassName, className])}
+                    isActive={isActive}
+                    to={link}
+                    aria-current={ariaCurrent}
+                >
                     {content}
                 </NavLink>
-                {list.length ? <NavMenu list={list} /> : null}
+                {list.length ? (
+                    <NavMenu ariaHidden={ariaHiddenList} list={list} listClassName="nomobile navigation__sublist" />
+                ) : null}
             </li>
         );
     }
 
     if (type === 'text') {
         return (
-            <li className="navigation__item">
-                <span className={classnames(['navigation__link', className])}>
+            <li className={itemClassName}>
+                <span className={classnames([linkClassName, className])}>
                     {content}
-                    {list.length ? <NavMenu list={list} /> : null}
+                    {list.length ? (
+                        <NavMenu ariaHidden={ariaHiddenList} list={list} listClassName="nomobile navigation__sublist" />
+                    ) : null}
                 </span>
             </li>
         );
@@ -45,11 +69,13 @@ const NavItem = ({ type = 'link', link, isActive, text, aside, onClick, icon, li
 
     if (type === 'button') {
         return (
-            <li className="navigation__item">
-                <button type="button" className={classnames(['w100 navigation__link', className])} onClick={onClick}>
+            <li className={itemClassName}>
+                <button type="button" className={classnames(['w100', linkClassName, className])} onClick={onClick}>
                     {content}
                 </button>
-                {list.length ? <NavMenu list={list} /> : null}
+                {list.length ? (
+                    <NavMenu ariaHidden={ariaHiddenList} list={list} listClassName="nomobile navigation__sublist" />
+                ) : null}
             </li>
         );
     }
@@ -58,6 +84,10 @@ const NavItem = ({ type = 'link', link, isActive, text, aside, onClick, icon, li
 };
 
 NavItem.propTypes = {
+    ariaCurrent: PropTypes.string,
+    ariaHiddenList: PropTypes.bool,
+    linkClassName: PropTypes.string,
+    itemClassName: PropTypes.string,
     isActive: PropTypes.func,
     icon: PropTypes.string,
     color: PropTypes.string,

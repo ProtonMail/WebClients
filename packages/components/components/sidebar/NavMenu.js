@@ -4,9 +4,9 @@ import { classnames } from '../../helpers/component';
 
 import NavItem from './NavItem';
 
-const NavMenu = ({ className, list = [{}] }) => {
+const NavMenu = ({ className, listClassName = 'navigation__list', list = [{}], ariaHidden }) => {
     return (
-        <ul className={classnames(['navigation__list unstyled', className])}>
+        <ul className={classnames(['unstyled', listClassName, className])} aria-hidden={ariaHidden}>
             {list.map((item, index) => (
                 <NavItem {...item} key={`${index}`} />
             ))}
@@ -15,6 +15,8 @@ const NavMenu = ({ className, list = [{}] }) => {
 };
 
 NavMenu.propTypes = {
+    ariaHidden: PropTypes.bool,
+    listClassName: PropTypes.string,
     className: PropTypes.string,
     list: PropTypes.arrayOf(PropTypes.object)
 };
