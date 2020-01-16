@@ -1,16 +1,15 @@
-import React, { HTMLAttributes } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, LinkProps } from 'react-router-dom';
 import { classnames } from '../../helpers/component';
 import Icon, { Props as IconProps } from '../icon/Icon';
 
-interface Props extends HTMLAttributes<HTMLButtonElement> {
-    to: string;
+interface Props<S> extends LinkProps<S> {
     icon: string | IconProps;
 }
 
-const ToolbarLink = ({ to, icon, className, ...rest }: Props) => {
+function ToolbarLink<S>({ icon, className, ...rest }: Props<S>) {
     return (
-        <Link to={to} className={classnames([className, 'toolbar-button'])} {...rest}>
+        <Link className={classnames([className, 'toolbar-button'])} {...rest}>
             {typeof icon === 'string' ? (
                 <Icon name={icon} className="toolbar-icon mauto" />
             ) : (
@@ -18,6 +17,6 @@ const ToolbarLink = ({ to, icon, className, ...rest }: Props) => {
             )}
         </Link>
     );
-};
+}
 
 export default ToolbarLink;
