@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import {
     SubscriptionSection,
     BillingSection,
@@ -45,7 +46,7 @@ export const getDashboardPage = () => {
     };
 };
 
-const DashboardContainer = () => {
+const DashboardContainer = ({ setActiveSection }) => {
     const api = useApi();
     const { createModal } = useModals();
     const [plans, loadingPlans] = usePlans();
@@ -87,12 +88,16 @@ const DashboardContainer = () => {
     }, [loadingPlans]);
 
     return (
-        <Page config={getDashboardPage()}>
+        <Page config={getDashboardPage()} setActiveSection={setActiveSection}>
             <PlansSection />
             <SubscriptionSection />
             <BillingSection />
         </Page>
     );
+};
+
+DashboardContainer.propTypes = {
+    setActiveSection: PropTypes.func
 };
 
 export default DashboardContainer;

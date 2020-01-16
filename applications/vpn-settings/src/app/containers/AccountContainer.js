@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
     UsernameSection,
     PasswordsSection,
@@ -50,9 +51,9 @@ export const getAccountPage = () => {
     };
 };
 
-const AccountContainer = () => {
+const AccountContainer = ({ setActiveSection }) => {
     return (
-        <Page config={getAccountPage()}>
+        <Page config={getAccountPage()} setActiveSection={setActiveSection}>
             <UsernameSection />
             <PasswordsSection />
             <TwoFactorSection />
@@ -62,6 +63,10 @@ const AccountContainer = () => {
             <DeleteSection />
         </Page>
     );
+};
+
+AccountContainer.propTypes = {
+    setActiveSection: PropTypes.func
 };
 
 export default AccountContainer;

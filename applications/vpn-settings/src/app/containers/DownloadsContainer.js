@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import Page from '../components/page/Page';
@@ -22,13 +23,17 @@ export const getDownloadsPage = () => {
     };
 };
 
-const DownloadsContainer = () => {
+const DownloadsContainer = ({ setActiveSection }) => {
     return (
-        <Page config={getDownloadsPage()}>
+        <Page config={getDownloadsPage()} setActiveSection={setActiveSection}>
             <ProtonVPNClientsSection />
             <OpenVPNConfigurationSection />
         </Page>
     );
+};
+
+DownloadsContainer.propTypes = {
+    setActiveSection: PropTypes.func
 };
 
 export default DownloadsContainer;

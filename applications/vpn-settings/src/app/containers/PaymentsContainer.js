@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { InvoicesSection, PaymentMethodsSection } from 'react-components';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
@@ -26,13 +27,17 @@ export const getPaymentsPage = () => {
     };
 };
 
-const PaymentsContainer = () => {
+const PaymentsContainer = ({ setActiveSection }) => {
     return (
-        <Page config={getPaymentsPage()}>
+        <Page config={getPaymentsPage()} setActiveSection={setActiveSection}>
             <PaymentMethodsSection />
             <InvoicesSection />
         </Page>
     );
+};
+
+PaymentsContainer.propTypes = {
+    setActiveSection: PropTypes.func
 };
 
 export default PaymentsContainer;

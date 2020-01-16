@@ -1,42 +1,41 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { c } from 'ttag';
 import { Route } from 'react-router';
-import { withRouter } from 'react-router-dom';
-import { Sidebar, MainAreaContext, useToggle, useUser } from 'react-components';
+import { withRouter, Redirect, Switch } from 'react-router-dom';
+import { Sidebar, MainAreaContext, useToggle, usePermissions, ErrorBoundary } from 'react-components';
+import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 
+import { getPages } from '../../pages';
 import PrivateHeader from './PrivateHeader';
+import DashboardContainer from '../../containers/DashboardContainer';
+import AccountContainer from '../../containers/AccountContainer';
+import DownloadsContainer from '../../containers/DownloadsContainer';
+import PaymentsContainer from '../../containers/PaymentsContainer';
 
-const PrivateLayout = ({ children, location }) => {
+const PrivateLayout = ({ location }) => {
     const mainAreaRef = useRef();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
-    const [{ canPay }] = useUser();
-    const list = [
-        canPay && {
-            icon: 'dashboard',
-            text: c('Link').t`Dashboard`,
-            link: '/dashboard'
-        },
-        {
-            icon: 'account',
-            text: c('Link').t`Account`,
-            link: '/account'
-        },
-        {
-            icon: 'download',
-            text: c('Link').t`Downloads`,
-            link: '/downloads'
-        },
-        canPay && {
-            icon: 'payments',
-            text: c('Link').t`Payments`,
-            link: '/payments'
-        }
-    ].filter(Boolean);
+    const userPermissions = usePermissions();
+    const [activeSection, setActiveSection] = useState('');
+    const list = getPages()
+        .filter(({ permissions: pagePermissions = [] }) => hasPermission(userPermissions, pagePermissions))
+        .map(({ text, route: link, icon, sections = [] }) => ({
+            text,
+            link,
+            icon,
+            ariaHiddenList: location.pathname !== link,
+            list: sections.map(({ text, id }) => ({
+                linkClassName: 'navigation__sublink',
+                itemClassName: 'navigation__subitem',
+                text,
+                link: `${link}#${id}`,
+                isActive: () => activeSection === id,
+                ariaCurrent: activeSection === id ? 'true' : undefined
+            }))
+        }));
 
     useEffect(() => {
         setExpand(false);
-
         mainAreaRef.current.scrollTop = 0;
     }, [location.pathname]);
 
@@ -48,12 +47,64 @@ const PrivateLayout = ({ children, location }) => {
                     <Route
                         path="/:path"
                         render={() => (
-                            <Sidebar url="/account" expanded={expanded} onToggleExpand={onToggleExpand} list={list} />
+                            <Sidebar
+                                url="/account"
+                                expanded={expanded}
+                                onToggleExpand={onToggleExpand}
+                                list={list}
+                                activeSection={activeSection}
+                            />
                         )}
                     />
-                    <div className="main flex-item-fluid main-area scroll-smooth-touch" ref={mainAreaRef}>
-                        <div className="flex flex-reverse">
-                            <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
+                    <div className="main flex-item-fluid main-area" ref={mainAreaRef}>
+                        <div className="flex flex-reverse h100">
+                            <MainAreaContext.Provider value={mainAreaRef}>
+                                <ErrorBoundary key={location.pathname}>
+                                    <Switch>
+                                        <Route
+                                            path="/dashboard"
+                                            exact
+                                            render={({ history }) => (
+                                                <DashboardContainer
+                                                    history={history}
+                                                    setActiveSection={setActiveSection}
+                                                />
+                                            )}
+                                        />
+                                        <Route
+                                            path="/account"
+                                            exact
+                                            render={({ history }) => (
+                                                <AccountContainer
+                                                    history={history}
+                                                    setActiveSection={setActiveSection}
+                                                />
+                                            )}
+                                        />
+                                        <Route
+                                            path="/downloads"
+                                            exact
+                                            render={({ history }) => (
+                                                <DownloadsContainer
+                                                    history={history}
+                                                    setActiveSection={setActiveSection}
+                                                />
+                                            )}
+                                        />
+                                        <Route
+                                            path="/payments"
+                                            exact
+                                            render={({ history }) => (
+                                                <PaymentsContainer
+                                                    history={history}
+                                                    setActiveSection={setActiveSection}
+                                                />
+                                            )}
+                                        />
+                                        <Redirect to="/dashboard" />
+                                    </Switch>
+                                </ErrorBoundary>
+                            </MainAreaContext.Provider>
                         </div>
                     </div>
                 </div>
@@ -63,7 +114,6 @@ const PrivateLayout = ({ children, location }) => {
 };
 
 PrivateLayout.propTypes = {
-    children: PropTypes.node.isRequired,
     location: PropTypes.object.isRequired
 };
 
