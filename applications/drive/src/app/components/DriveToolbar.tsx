@@ -3,8 +3,9 @@ import { ToolbarSeparator, Toolbar, ToolbarButton } from 'react-components';
 import { DriveResource } from './DriveResourceProvider';
 import useShare from '../hooks/useShare';
 import { FolderMeta, LinkType } from '../interfaces/folder';
-import { FileBrowserItem } from './FileBrowser/FileBrowser';
+import { FileBrowserItem, getMetaForTransfer } from './FileBrowser/FileBrowser';
 import useFiles from '../hooks/useFiles';
+import FileSaver from '../utils/FileSaver/FileSaver';
 
 interface Props {
     selectedItems: FileBrowserItem[];
@@ -30,7 +31,11 @@ const DriveToolbar = ({ resource, openResource, selectedItems }: Props) => {
     };
 
     const handleDownloadClick = () => {
-        selectedItems.forEach((item) => downloadDriveFile(item.LinkID, item.Name));
+        selectedItems.forEach(async (item) => {
+            const meta = getMetaForTransfer(item);
+            const fileStream = await downloadDriveFile(item.LinkID, meta);
+            FileSaver.saveViaDownload(fileStream, meta);
+        });
     };
 
     return (

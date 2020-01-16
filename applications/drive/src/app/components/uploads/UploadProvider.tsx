@@ -13,6 +13,7 @@ type FileInitializer = () => Promise<FileUploadInfo>;
 type BlockTransformer = (buffer: Uint8Array) => Promise<Uint8Array>;
 type UploadFinalizer = (info: FileUploadInfo, blocklist: { Index: number; Token: string }[]) => Promise<void>;
 
+// TODO: Refactor like downloads
 interface UploadInfo {
     blob: Blob;
     filename: string;
@@ -22,7 +23,7 @@ interface UploadInfo {
 
 export interface Upload {
     id: string;
-    info: UploadInfo;
+    meta: UploadInfo;
     state: TransferState;
     startDate: Date;
 }
@@ -69,7 +70,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         setUploads((uploads) => uploads.map((upload) => (upload.id === id ? { ...upload, state } : upload)));
     };
 
-    const uploadFile = async ({ id, info: { blob } }: Upload) => {
+    const uploadFile = async ({ id, meta: { blob } }: Upload) => {
         updateUploadState(id, TransferState.Progress);
 
         const info = await uploadConfig.current[id].initialize();
@@ -139,7 +140,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     }, [uploads]);
 
     const startUpload = (
-        info: UploadInfo,
+        meta: UploadInfo,
         {
             initialize,
             transform,
@@ -160,7 +161,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
             ...uploads,
             {
                 id,
-                info,
+                meta,
                 state: TransferState.Pending,
                 startDate: new Date()
             }
