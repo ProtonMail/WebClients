@@ -9,3 +9,9 @@ export enum TransferState {
 export interface TransferProgresses {
     [id: string]: number;
 }
+
+export interface TransferMeta {
+    filename: string;
+    mimeType: string;
+    size: number;
+}

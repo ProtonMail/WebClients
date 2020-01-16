@@ -6,19 +6,21 @@ import useFiles from '../hooks/useFiles';
 import useOnScrollEnd from '../hooks/useOnScrollEnd';
 import { FOLDER_PAGE_SIZE } from '../constants';
 import useFileBrowser from './FileBrowser/useFileBrowser';
-import FileBrowser, { FileBrowserItem } from './FileBrowser/FileBrowser';
+import FileBrowser, { FileBrowserItem, getMetaForTransfer } from './FileBrowser/FileBrowser';
 import { DriveResource } from './DriveResourceProvider';
 import { useUploadProvider } from './uploads/UploadProvider';
 import TransfersInfo from './TransfersInfo/TransfersInfo';
 import { TransferState } from '../interfaces/transfer';
+import FileSaver from '../utils/FileSaver/FileSaver';
 
 const mapLinksToChildren = (decryptedLinks: DriveLink[]): FileBrowserItem[] =>
-    decryptedLinks.map(({ LinkID, Type, Name, Modified, Size }) => ({
+    decryptedLinks.map(({ LinkID, Type, Name, Modified, Size, MimeType }) => ({
         Name,
         LinkID,
         Type,
         Modified,
-        Size
+        Size,
+        MimeType
     }));
 
 interface Props {
@@ -103,8 +105,8 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
     useOnScrollEnd(handleScrollEnd, mainAreaRef);
 
     const uploadedCount = uploads.filter(
-        ({ state, info }) =>
-            state === TransferState.Done && info.linkId === resource.linkId && info.shareId === resource.shareId
+        ({ state, meta }) =>
+            state === TransferState.Done && meta.linkId === resource.linkId && meta.shareId === resource.shareId
     ).length;
 
     useEffect(() => {
@@ -117,12 +119,14 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
         }
     }, [uploadedCount]);
 
-    const handleDoubleClick = (item: FileBrowserItem) => {
+    const handleDoubleClick = async (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
         if (item.Type === LinkType.FOLDER) {
             openResource({ shareId: resource.shareId, linkId: item.LinkID, type: item.Type });
         } else if (item.Type === LinkType.FILE) {
-            downloadDriveFile(item.LinkID, item.Name);
+            const meta = getMetaForTransfer(item);
+            const fileStream = await downloadDriveFile(item.LinkID, meta);
+            FileSaver.saveViaDownload(fileStream, meta);
         }
     };
 

@@ -11,7 +11,6 @@ import { decryptMessage, encryptMessage } from 'pmcrypto/lib/pmcrypto';
 import useShare from './useShare';
 import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
-import { useDownloadProvider } from '../components/downloads/DownloadProvider';
 import { queryFileRevision, queryCreateFile, queryFile, queryUpdateFileRevision } from '../api/files';
 import {
     decryptUnsigned,
@@ -26,7 +25,8 @@ import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { FOLDER_PAGE_SIZE } from '../constants';
 import { useUploadProvider, Upload } from '../components/uploads/UploadProvider';
 import { DriveLink } from '../interfaces/folder';
-import { TransferState } from '../interfaces/transfer';
+import { TransferState, TransferMeta } from '../interfaces/transfer';
+import { useDownloadProvider } from '../components/downloads/DownloadProvider';
 
 const adjustFileName = (
     file: File,
@@ -38,7 +38,7 @@ const adjustFileName = (
     const extension = file.name.match(extensionRx)?.[0] ?? '';
     const adjustedFileName = index ? `${file.name.replace(extensionRx, '')} (${index})${extension}` : file.name;
     const fileNameExists = contents.some((item) => item.Name === adjustedFileName);
-    const fileNameUploading = uploads.some((item) => item.info.filename === adjustedFileName);
+    const fileNameUploading = uploads.some((item) => item.meta.filename === adjustedFileName);
     return fileNameExists || fileNameUploading
         ? adjustFileName(file, uploads, contents, index + 1)
         : { blob: new Blob([file], { type: file.type }), filename: adjustedFileName };
@@ -52,11 +52,11 @@ function useFiles(shareId: string) {
     const api = useApi();
     const cache = useCache();
     const { getFolderMeta, getFolderContents } = useShare(shareId);
-    const { startDownload } = useDownloadProvider();
+    const { addToDownloadQueue } = useDownloadProvider();
     const { startUpload, uploads } = useUploadProvider();
 
     const getFileMeta = useCallback(
-        async (linkId: string): Promise<{ File: DriveFile; privateKey: any }> =>
+        async (linkId: string): Promise<{ File: DriveFile; privateKey: any; sessionKeys: any }> =>
             getPromiseValue(cache, `drive/shares/${shareId}/file/${linkId}`, async () => {
                 const { File }: DriveFileResult = await api(queryFile(shareId, linkId));
                 const { privateKey: parentKey } = await getFolderMeta(File.ParentLinkID);
@@ -65,8 +65,11 @@ function useFiles(shareId: string) {
                     privateKey: parentKey
                 });
                 const privateKey = await decryptPrivateKeyArmored(File.Key, decryptedFilePassphrase);
+                const blockKeys = deserializeUint8Array(File.ContentKeyPacket);
+                const sessionKeys = await getDecryptedSessionKey(blockKeys, privateKey);
                 return {
                     File,
+                    sessionKeys,
                     privateKey
                 };
             }),
@@ -89,9 +92,9 @@ function useFiles(shareId: string) {
 
             // Name checks only among uploads to the same parent link
             const activeUploads = uploads.filter(
-                ({ state, info }) =>
-                    info.linkId === ParentLinkID &&
-                    info.shareId === shareId &&
+                ({ state, meta }) =>
+                    meta.linkId === ParentLinkID &&
+                    meta.shareId === shareId &&
                     (state === TransferState.Done ||
                         state === TransferState.Pending ||
                         state === TransferState.Progress)
@@ -149,22 +152,26 @@ function useFiles(shareId: string) {
     );
 
     const downloadDriveFile = useCallback(
-        async (linkId: string, filename: string) => {
-            const { File, privateKey } = await getFileMeta(linkId);
-            const { Revision } = await getFileRevision(File);
-            const blockKeys = deserializeUint8Array(File.ContentKeyPacket);
-            const sessionKeys = await getDecryptedSessionKey(blockKeys, privateKey);
-            const publicKeys = privateKey.toPublic();
+        (linkId: string, meta: TransferMeta) => {
+            return addToDownloadQueue(meta, {
+                transform: async (stream) => {
+                    const { privateKey, sessionKeys } = await getFileMeta(linkId);
+                    const publicKeys = privateKey.toPublic();
+                    const { data } = await decryptMessage({
+                        message: await getStreamMessage(stream),
+                        sessionKeys,
+                        publicKeys,
+                        streaming: 'web',
+                        format: 'binary'
+                    });
 
-            await startDownload({ File, Revision, filename }, async (stream) => {
-                const { data } = await decryptMessage({
-                    message: await getStreamMessage(stream),
-                    sessionKeys,
-                    publicKeys,
-                    streaming: 'web',
-                    format: 'binary'
-                });
-                return data;
+                    return data;
+                },
+                onStart: async () => {
+                    const { File } = await getFileMeta(linkId);
+                    const { Revision } = await getFileRevision(File);
+                    return Revision.Blocks;
+                }
             });
         },
         [shareId]

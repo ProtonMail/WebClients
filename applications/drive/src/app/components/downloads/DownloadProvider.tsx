@@ -1,42 +1,26 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
-import { generateUID, useApi } from 'react-components';
-import { createReadableStreamWrapper, ReadableStreamLike } from '@mattiasbuelens/web-streams-adapter';
-import { ReadableStream as PolyfillReadableStream } from 'web-streams-polyfill';
-import { DriveFileBlock, DriveFile, DriveFileRevision } from '../../interfaces/file';
-import { openDownloadStream, initDownloadSW } from './download';
-import { queryFileBlock } from '../../api/files';
-import { orderBy } from 'proton-shared/lib/helpers/array';
-import { TransferState, TransferProgresses } from '../../interfaces/transfer';
-
-const toPolyfillReadable = createReadableStreamWrapper(PolyfillReadableStream);
+import { DriveFileBlock } from '../../interfaces/file';
+import { TransferState, TransferProgresses, TransferMeta } from '../../interfaces/transfer';
+import { initDownload, DownloadControls, StreamTransformer } from './download';
+import { useApi } from 'react-components';
 
 const MAX_ACTIVE_DOWNLOADS = 3;
 
-type StreamTransformer = (stream: ReadableStream<Uint8Array>) => Promise<ReadableStream<Uint8Array>>;
-
-interface DownloadInfo {
-    filename: string;
-    File: DriveFile;
-    Revision: DriveFileRevision;
+interface DownloadHandlers {
+    onStart: () => Promise<DriveFileBlock[]>;
+    transform: StreamTransformer;
 }
 
 export interface Download {
     id: string;
-    info: DownloadInfo;
+    meta: TransferMeta;
     state: TransferState;
     startDate: Date;
 }
 
-interface DownloadConfig {
-    [id: string]: {
-        transform: StreamTransformer;
-        stream: WritableStreamDefaultWriter<Uint8Array>; // Stream to service worker
-    };
-}
-
 interface DownloadProviderState {
     downloads: Download[];
-    startDownload: (info: DownloadInfo, transform: StreamTransformer) => void;
+    addToDownloadQueue: (meta: TransferMeta, handlers: DownloadHandlers) => Promise<ReadableStream<Uint8Array>>;
     getDownloadsProgresses: () => TransferProgresses;
     clearDownloads: () => void;
 }
@@ -49,20 +33,10 @@ interface UserProviderProps {
 
 export const DownloadProvider = ({ children }: UserProviderProps) => {
     const api = useApi();
-
-    const downloadConfig = useRef<DownloadConfig>({});
+    const controls = useRef<{ [id: string]: DownloadControls }>({});
     const progresses = useRef<TransferProgresses>({});
 
     const [downloads, setDownloads] = useState<Download[]>([]);
-
-    useEffect(() => {
-        initDownloadSW().catch((error) =>
-            console.error(
-                'Available download size will be limited because service worker failed to start:',
-                error.message
-            )
-        );
-    }, []);
 
     const updateDownloadState = (id: string, state: TransferState) => {
         setDownloads((downloads) =>
@@ -70,96 +44,52 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         );
     };
 
-    const downloadFileBlock = async (
-        downloadId: string,
-        block: DriveFileBlock,
-        onChunkRead: (data: Uint8Array) => Promise<void>
-    ) => {
-        const stream: ReadableStreamLike<Uint8Array> = toPolyfillReadable(await api(queryFileBlock(block.URL)));
-
-        const [encStream, decStream] = (stream as any).tee();
-
-        const decryptedStream = await downloadConfig.current[downloadId].transform(decStream);
-        const reader = decryptedStream.getReader();
-        const encReader = encStream.getReader();
-
-        const processProgress = async ({ done, value }: ReadableStreamReadResult<Uint8Array>): Promise<void> => {
-            if (done) {
-                return;
-            }
-            progresses.current[downloadId] += value.length;
-            return processProgress(await encReader.read());
-        };
-
-        const processResponse = async ({ done, value }: ReadableStreamReadResult<Uint8Array>): Promise<void> => {
-            if (done) {
-                return;
-            }
-            await onChunkRead(value);
-            return processResponse(await reader.read());
-        };
-
-        return Promise.all([processProgress(await encReader.read()), processResponse(await reader.read())]);
-    };
-
-    const downloadFile = async ({ id, info }: Download) => {
-        updateDownloadState(id, TransferState.Progress);
-
-        const blocks: DriveFileBlock[] = orderBy(info.Revision.Blocks, 'Index');
-        const workerStream = downloadConfig.current[id].stream;
-
-        try {
-            for (const block of blocks) {
-                await downloadFileBlock(id, block, (value: Uint8Array) => workerStream.write(value));
-            }
-            updateDownloadState(id, TransferState.Done);
-        } catch (e) {
-            updateDownloadState(id, TransferState.Error);
-        }
-        workerStream.close();
-    };
-
     useEffect(() => {
         const activeDownloads = downloads.filter(({ state }) => state === TransferState.Progress);
         const nextPending = downloads.find(({ state }) => state === TransferState.Pending);
 
         if (activeDownloads.length < MAX_ACTIVE_DOWNLOADS && nextPending) {
-            downloadFile(nextPending);
+            const { id } = nextPending;
+
+            updateDownloadState(id, TransferState.Progress);
+
+            controls.current[id]
+                .start(api)
+                .then(() => updateDownloadState(id, TransferState.Done))
+                .catch((err) => {
+                    console.log(err);
+                    updateDownloadState(id, TransferState.Error);
+                });
         }
     }, [downloads]);
 
-    const cancelDownload = (downloadId: string) => {
-        // TODO: stop sending requests when implementing rejection/pause
-        downloadConfig.current[downloadId].stream.close();
-        updateDownloadState(downloadId, TransferState.Canceled);
-    };
+    const addToDownloadQueue = async (meta: TransferMeta, handlers: DownloadHandlers) => {
+        return new Promise<ReadableStream<Uint8Array>>((resolve) => {
+            const { id, downloadControls } = initDownload({
+                transformBlockStream: handlers.transform,
+                onProgress(data) {
+                    progresses.current[id] += data.length;
+                },
+                onStart: async (stream) => {
+                    resolve(stream);
+                    const blocks = await handlers.onStart();
+                    return blocks;
+                }
+            });
 
-    const startDownload = async (info: DownloadInfo, transform: StreamTransformer) => {
-        const id = generateUID('drive-download');
-        const stream = await openDownloadStream(
-            {
-                filename: info.filename,
-                mimeType: info.File.MimeType,
-                size: info.Revision.Size
-            },
-            { onCancel: () => cancelDownload(id) }
-        );
+            controls.current[id] = downloadControls;
+            progresses.current[id] = 0;
 
-        progresses.current[id] = 0;
-        downloadConfig.current[id] = {
-            transform,
-            stream: stream.getWriter()
-        };
-
-        setDownloads((downloads) => [
-            ...downloads,
-            {
-                id,
-                info,
-                state: TransferState.Pending,
-                startDate: new Date()
-            }
-        ]);
+            setDownloads((downloads) => [
+                ...downloads,
+                {
+                    id,
+                    meta,
+                    state: TransferState.Pending,
+                    startDate: new Date()
+                }
+            ]);
+        });
     };
 
     const getDownloadsProgresses = () => ({ ...progresses.current });
@@ -171,7 +101,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     return (
         <DownloadContext.Provider
             value={{
-                startDownload,
+                addToDownloadQueue,
                 downloads,
                 getDownloadsProgresses,
                 clearDownloads

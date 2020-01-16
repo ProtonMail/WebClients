@@ -1,102 +1,52 @@
-// eslint-disable-next-line import/no-unresolved
-import registerServiceWorker from 'service-worker-loader!./downloadSW';
-import { isSafari, isEdge, isEdgeChromium } from 'proton-shared/lib/helpers/browser';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { WritableStream } from 'web-streams-polyfill/ponyfill/es6';
+import { generateUID } from 'react-components';
+import { orderBy } from 'proton-shared/lib/helpers/array';
+import { ReadableStream } from 'web-streams-polyfill';
+import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
+import { DriveFileBlock } from '../../interfaces/file';
+import { queryFileBlock } from '../../api/files';
+import { untilStreamEnd, ObserverStream } from '../../utils/stream';
 
-interface DownloadMeta {
-    filename: string;
-    mimeType: string;
-    size: number;
-}
-/**
- * Safari and Edge don't support returning stream as a response.
- * Safari - has everything but fails to stream a response from SW.
- * Edge - doesn't support ReadableStream() constructor, will support it in chromium version.
- * For them download is done in-memory using blob response.
- */
-let useBlobFallback = isSafari() || (isEdge() && !isEdgeChromium());
+const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
-function createDownloadIframe(src: string) {
-    const iframe = document.createElement('iframe');
-    iframe.hidden = true;
-    iframe.src = src;
-    iframe.name = 'iframe';
-    document.body.appendChild(iframe);
-    return iframe;
+export type StreamTransformer = (stream: ReadableStream<Uint8Array>) => Promise<ReadableStream<Uint8Array>>;
+
+export interface DownloadControls {
+    start: (api: (query: any) => any) => Promise<void>;
 }
 
-async function wakeUpServiceWorker() {
-    const worker = navigator.serviceWorker.controller;
+export interface DownloadCallbacks {
+    transformBlockStream: StreamTransformer;
+    onStart: (stream: ReadableStream<Uint8Array>) => Promise<DriveFileBlock[]>;
+    onProgress?: (rawData: Uint8Array) => void;
+}
 
-    if (worker) {
-        worker.postMessage({ action: 'ping' });
-    } else {
-        const url = location.href.substr(0, location.href.indexOf('/')) + '/sw/ping';
-        const res = await fetch(url);
-        const body = await res.text();
-        if (!res.ok || body !== 'pong') {
-            throw new Error('Download worker is dead');
+export const initDownload = (config: DownloadCallbacks) => {
+    const id = generateUID('drive-download');
+
+    const start = async (api: (query: any) => any) => {
+        const fileStream = new ObserverStream();
+
+        const fsWriter = fileStream.writable.getWriter();
+        const blocks = await config.onStart(fileStream.readable);
+
+        const orderedBlocks: DriveFileBlock[] = orderBy(blocks, 'Index');
+
+        for (const block of orderedBlocks) {
+            const blockStream = toPolyfillReadable(await api(queryFileBlock(block.URL))) as ReadableStream<Uint8Array>;
+
+            const progressStream = new ObserverStream(config.onProgress);
+            const rawContentStream = blockStream.pipeThrough(progressStream);
+
+            // Decrypt the file block content using streaming decryption
+            const transformedContentStream = await config.transformBlockStream(rawContentStream);
+
+            await untilStreamEnd(transformedContentStream, (value) => fsWriter.write(value));
         }
-    }
-    return worker as ServiceWorker;
-}
 
-function serviceWorkerKeepAlive() {
-    const interval = setInterval(() => {
-        wakeUpServiceWorker().catch(() => clearInterval(interval));
-    }, 10000);
-}
+        fsWriter.close();
+    };
 
-export async function initDownloadSW() {
-    if ('serviceWorker' in navigator) {
-        await registerServiceWorker({ scope: '/' });
-        serviceWorkerKeepAlive();
-    } else {
-        useBlobFallback = true;
-        throw new Error('Service workers are not supported by this browser');
-    }
-}
+    const downloadControls: DownloadControls = { start };
 
-export async function openDownloadStream(
-    { filename, mimeType, size }: DownloadMeta,
-    { onCancel }: { onCancel: () => void }
-) {
-    const chunks: Uint8Array[] = [];
-    const channel = new MessageChannel();
-
-    const stream = new WritableStream({
-        write(block: Uint8Array) {
-            if (useBlobFallback) {
-                chunks.push(block);
-                return;
-            }
-
-            channel.port1.postMessage({ action: 'download_chunk', payload: block });
-        },
-        close() {
-            if (useBlobFallback) {
-                const blob = new Blob(chunks, { type: 'application/octet-stream; charset=utf-8' });
-                downloadFile(blob, filename);
-            } else {
-                channel.port1.postMessage({ action: 'end' });
-            }
-        }
-    });
-
-    if (!useBlobFallback) {
-        const worker = await wakeUpServiceWorker();
-
-        // Channel to stream file contents through
-        channel.port1.onmessage = ({ data }) => {
-            if (data?.action === 'download_canceled') {
-                onCancel();
-            } else if (data?.action === 'download_started') {
-                createDownloadIframe(data.payload);
-            }
-        };
-        worker.postMessage({ action: 'start_download', payload: { filename, mimeType, size } }, [channel.port2]);
-    }
-
-    return stream;
-}
+    return { id, downloadControls };
+};
