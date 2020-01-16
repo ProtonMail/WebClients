@@ -1,17 +1,19 @@
-import { useGetAddressKeys, useGetAddresses, useApi, useCache } from 'react-components';
-import { getPrimaryAddress } from 'proton-shared/lib/helpers/address';
+import { useGetAddressKeys, useGetAddresses, useApi, useCache, useNotifications } from 'react-components';
 import { generateDriveBootstrap, generateNodeHashKey } from 'proton-shared/lib/keys/driveKeys';
-import { queryCreateDriveVolume } from '../api/volume';
-import { queryUserShares, queryShareBootstrap } from '../api/share';
-import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
-import { UserShare, ShareBootstrap } from '../interfaces/share';
-import { CreatedDriveVolume } from '../interfaces/volume';
 import { decryptPrivateKeyArmored, splitKeys } from 'proton-shared/lib/keys/keys';
+import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 import { decryptMessage, getMessage } from 'pmcrypto/lib/pmcrypto';
 import { useCallback } from 'react';
+import { c } from 'ttag';
+import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
+import { queryCreateDriveVolume } from '../api/volume';
+import { queryUserShares, queryShareBootstrap } from '../api/share';
+import { UserShare, ShareBootstrap } from '../interfaces/share';
+import { CreatedDriveVolume } from '../interfaces/volume';
 
 function useDrive() {
     const api = useApi();
+    const { createNotification } = useNotifications();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
     const cache = useCache();
@@ -46,13 +48,14 @@ function useDrive() {
 
     const createVolume = useCallback(async (): Promise<CreatedDriveVolume> => {
         const addresses = await getAddresses();
-        const primaryAddress = getPrimaryAddress(addresses);
+        const [activeAddress] = getActiveAddresses(addresses);
 
-        if (!primaryAddress) {
-            throw Error('User has no primary address');
+        if (!activeAddress) {
+            createNotification({ text: c('Error').t`No valid address found`, type: 'error' });
+            throw new Error('User has no active address');
         }
 
-        const AddressID = primaryAddress.ID;
+        const AddressID = activeAddress.ID;
         const [{ privateKey }] = await getAddressKeys(AddressID);
         const { bootstrap, sharePrivateKey } = await generateDriveBootstrap(privateKey);
         const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(sharePrivateKey);
