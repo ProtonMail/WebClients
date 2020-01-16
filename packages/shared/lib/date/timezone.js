@@ -30,49 +30,58 @@ export const fromUTCDate = (date) => {
     };
 };
 
-const NOT_SUPPORTED_ZONES = [
-    'America/Fort_Wayne',
-    'Asia/Rangoon',
-    'CET',
-    'CST6CDT',
-    'EET',
-    'EST',
-    'EST5EDT',
-    'Etc/GMT+1',
-    'Etc/GMT+10',
-    'Etc/GMT+11',
-    'Etc/GMT+12',
-    'Etc/GMT+2',
-    'Etc/GMT+3',
-    'Etc/GMT+4',
-    'Etc/GMT+5',
-    'Etc/GMT+6',
-    'Etc/GMT+7',
-    'Etc/GMT+8',
-    'Etc/GMT+9',
-    'Etc/GMT-0',
-    'Etc/GMT-1',
-    'Etc/GMT-10',
-    'Etc/GMT-11',
-    'Etc/GMT-12',
-    'Etc/GMT-13',
-    'Etc/GMT-14',
-    'Etc/GMT-2',
-    'Etc/GMT-3',
-    'Etc/GMT-4',
-    'Etc/GMT-5',
-    'Etc/GMT-6',
-    'Etc/GMT-7',
-    'Etc/GMT-8',
-    'Etc/GMT-9',
-    'Etc/UTC',
-    'HST',
-    'MET',
-    'MST',
-    'MST7MDT',
-    'PST8PDT',
-    'WET'
-];
+/*
+ * The list of timezones supported by FE is given by the function below listTimezones(),
+ * which returns the timezones in the 2019c iana database. That database is backward-compatible
+ * (the list of timezones keeps changing because humans keep making crazy irrational decisions).
+ * The API does not like backward-compatibility though, and they only support some of those
+ * timezones (loosely based on https://www.php.net/manual/en/timezones.php). The list of timezones
+ * recognized by FE but not supported by BE are the ones that serve as entries for the object below.
+ * The value for each entry is the supported timezone we will re-direct to
+ */
+const unsupportedTimezoneLinks = {
+    'America/Fort_Wayne': 'America/New_York',
+    'Asia/Rangoon': 'Asia/Yangon',
+    CET: 'Europe/Paris',
+    CST6CDT: 'America/Chicago',
+    EET: 'Europe/Istanbul',
+    EST: 'America/New_York',
+    EST5EDT: 'America/New_York',
+    'Etc/GMT+1': 'Atlantic/Cape_Verde',
+    'Etc/GMT+10': 'Pacific/Tahiti',
+    'Etc/GMT+11': 'Pacific/Niue',
+    'Etc/GMT+12': 'Pacific/Niue', // no canonical timezone exists for GMT+12
+    'Etc/GMT+2': 'America/Noronha',
+    'Etc/GMT+3': 'America/Sao_Paulo',
+    'Etc/GMT+4': 'America/Caracas',
+    'Etc/GMT+5': 'America/Lima',
+    'Etc/GMT+6': 'America/Managua',
+    'Etc/GMT+7': 'America/Phoenix',
+    'Etc/GMT+8': 'Pacific/Pitcairn',
+    'Etc/GMT+9': 'Pacific/Gambier',
+    'Etc/GMT-0': 'Europe/London',
+    'Etc/GMT-1': 'Europe/Paris',
+    'Etc/GMT-10': 'Australia/Brisbane',
+    'Etc/GMT-11': 'Australia/Sydney',
+    'Etc/GMT-12': 'Pacific/Auckland',
+    'Etc/GMT-13': 'Pacific/Fakaofo',
+    'Etc/GMT-14': 'Pacific/Kiritimati',
+    'Etc/GMT-2': 'Africa/Cairo',
+    'Etc/GMT-3': 'Asia/Baghdad',
+    'Etc/GMT-4': 'Asia/Dubai',
+    'Etc/GMT-5': 'Asia/Tashkent',
+    'Etc/GMT-6': 'Asia/Dhaka',
+    'Etc/GMT-7': 'Asia/Jakarta',
+    'Etc/GMT-8': 'Asia/Shanghai',
+    'Etc/GMT-9': 'Asia/Tokyo',
+    'Etc/UTC': 'Europe/London',
+    HST: 'Pacific/Honolulu',
+    MET: 'Europe/Paris',
+    MST: 'Europe/Paris',
+    MST7MDT: 'America/Denver',
+    PST8PDT: 'America/Los_Angeles',
+    WET: 'Europe/Lisbon'
+};
 
 const guessTimezone = (timezones) => {
     try {
@@ -90,23 +99,33 @@ const guessTimezone = (timezones) => {
 };
 
 /**
- * Get current timezone by using Intl
+ * Get current timezone id by using Intl
  * if not available use timezone-support lib and pick the first timezone from the current date timezone offset
- * @returns {String}
+ * @returns {String}  e.g. 'Europe/Zurich'
  */
 export const getTimezone = () => {
-    const timezones = listTimeZones();
-    const timezone = guessTimezone(timezones);
+    const ianaTimezones = listTimeZones();
+    const timezone = guessTimezone(ianaTimezones);
     // Special case for UTC since the API calls it UTC and not Etc/UTC
     if (timezone === 'Etc/UTC') {
         return 'UTC';
     }
-    if (!timezone || NOT_SUPPORTED_ZONES.indexOf(timezone) !== -1) {
-        return timezones[0];
+    // If the guessed timezone is undefined, there's not much we can do
+    if (!timezone) {
+        return ianaTimezones[0];
     }
-    return timezone;
+    // If the guessed timezone is not supported, return the linked timezone
+    return unsupportedTimezoneLinks[timezone] || timezone;
 };
 
+/**
+ * Given a date and a timezone, return an object that contains information about the
+ * UTC offset of that date in that timezone. Namely an offset abbreviation (e.g. 'CET')
+ * and the UTC offset itself in minutes
+ * @param {Date} nowDate
+ * @param {String} tzid
+ * @return {Object}     { abbreviation: String, offset: Number }
+ */
 export const getTimezoneOffset = (nowDate, tzid) => {
     return getUTCOffset(nowDate, findTimeZone(tzid));
 };
@@ -134,7 +153,7 @@ export const formatTimezoneAbbreviation = (abbreviation) => {
 };
 
 /**
- * Get a list of all IANA time zones
+ * Get a list of all IANA time zones that we support
  * @return {Array<Object>}      [{ text: 'Africa/Nairobi: UTC +03:00', value: 'Africa/Nairobi'}, ...]
  */
 export const getTimeZoneOptions = (date = new Date()) => {
@@ -142,7 +161,7 @@ export const getTimeZoneOptions = (date = new Date()) => {
         listTimeZones()
             // UTC is called Etc/UTC but the API accepts UTC
             .concat('UTC')
-            .filter((name) => NOT_SUPPORTED_ZONES.indexOf(name) === -1)
+            .filter((name) => !unsupportedTimezoneLinks[name])
             .map((name) => {
                 const { abbreviation, offset } = getUTCOffset(date, findTimeZone(name));
 
