@@ -550,3 +550,17 @@ export enum AutoReplyDuration {
 }
 
 export const ADD_CARD_MODE = 'add-card';
+export const DKIM_RSA_1024 = 0;
+export const DKIM_RSA_2048 = 1;
+export enum DKIM_KEY_STATUS {
+    ACTIVE = 0,
+    PENDING = 1,
+    RETIRED = 2,
+    DECEASED = 3
+}
+
+export enum DNS_STATUS {
+    NOT_SET = 0,
+    GOOD = 1,
+    INVALID = 2
+}
