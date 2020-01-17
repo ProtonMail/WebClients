@@ -165,6 +165,10 @@ subsection: tables
 &lt;/table&gt;
 </code></pre>
 
+<p>If you need a <code>th</code> without any default styles, use <code>pm-simple-table-row-th</code>.</p>
+
+</div>
+
 
 <div id="alternate-bg-color" class="container-section-sticky container-section-sticky--fullwidth">
   <h2>Alternate background-color for rows</h2>
@@ -247,7 +251,83 @@ subsection: tables
   </tbody>
 </table>
 
+<p class="mb0">If you need a bordered version of the previous table, use <code>pm-simple-table--bordered</code> modifier.</p>
 
+<table class="pm-simple-table pm-simple-table--alternate-bg-row pm-simple-table--bordered">
+  <caption>Invoices</caption>
+  <thead>
+      <tr>
+          <th scope="col">id</th>
+          <th scope="col">Amount</th>
+          <th scope="col">
+            Type 
+            <button type="button">
+              <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
+                <use xlink:href="#shape-info"></use>
+              </svg>
+            </button>
+          </th>
+          <th scope="col">
+            Status
+            <a>
+              <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
+                <use xlink:href="#shape-attention"></use>
+              </svg> 
+            </a>
+          </th>
+          <th scope="col">Date</th>
+          <th scope="col">Comment</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>123456</td>
+          <td>24 €</td>
+          <td>Subscription 
+            <button type="button">
+              <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
+                <use xlink:href="#shape-info"></use>
+              </svg>
+            </button>
+          </td>
+          <td><span class="badgeLabel-success">active</span> <span class="badgeLabel-blue">default</span> <span class="badgeLabel-grey">origin</span></td>
+          <td>16 Mar. 2018</td>
+          <td>Lorem ipsum</td>
+      </tr>
+      <tr>
+          <td>123456</td>
+          <td>24 €</td>
+          <td>Subscription</td>
+          <td><span class="badgeLabel-warning">disabled</span> <span class="badgeLabel-error">error</span></td>
+          <td>16 Mar. 2018</td>
+          <td>Dolor si amet</td>
+      </tr>
+      <tr>
+        <td>123456</td>
+        <td>24 €</td>
+        <td>Subscription</td>
+        <td><span class="badgeLabel-warning">disabled</span> <span class="badgeLabel-error">error</span></td>
+        <td>16 Mar. 2018</td>
+        <td>Dolor si amet</td>
+    </tr>
+    <tr>
+      <td>123456</td>
+      <td>24 €</td>
+      <td>Subscription</td>
+      <td><span class="badgeLabel-warning">disabled</span> <span class="badgeLabel-error">error</span></td>
+      <td>16 Mar. 2018</td>
+      <td>Dolor si amet</td>
+    </tr>
+    <tr>
+      <td>123456</td>
+      <td>24 €</td>
+      <td>Subscription</td>
+      <td><span class="badgeLabel-warning">disabled</span> <span class="badgeLabel-error">error</span></td>
+      <td>16 Mar. 2018</td>
+      <td>Dolor si amet</td>
+  </tr>
+  </tbody>
+</table>
 
 
 </div>

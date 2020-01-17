@@ -25,6 +25,11 @@
   }
 }
 
+// no style for this case
+.pm-simple-table-row-th {
+  font-weight: normal;
+}
+
 .pm-plans-table-row--highlighted {
   background-color: var(--bgcolor-input, $pm-global-light);
 }
@@ -33,6 +38,13 @@
 .pm-simple-table--alternate-bg-row tbody tr:nth-child(odd){
   background-color: var(--bgcolor-input, $pm-global-light);
 } 
+
+/* bordered-table */
+.pm-simple-table--bordered,
+.pm-simple-table--bordered th,
+.pm-simple-table--bordered td {
+  border: 1px solid var(--bordercolor-input, $pm-global-border);
+}
 
 .pm-simple-table--has-actions {
   td:last-child,
