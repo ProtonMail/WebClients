@@ -27,6 +27,33 @@ export const getThemeIdentifier = (theme) => {
 };
 
 /**
+ * Given a theme identifier, return true if it's the custom theme identifier, false otherwise
+ * @param {String} themeIdentifier
+ * @return {Boolean}
+ */
+export const isCustomThemeIdentifier = (themeIdentifier) => {
+    return themeIdentifier === CUSTOM_THEME.identifier;
+};
+
+/**
+ * Given a theme, return true if it's a custom one, false otherwise
+ * @param {String} theme
+ * @return {Boolean}
+ */
+export const isCustomTheme = (theme) => {
+    return isCustomThemeIdentifier(getThemeIdentifier(theme));
+};
+
+/**
+ * Given a theme, return true if it corresponds to dark mode, false otherwise
+ * @param {String} theme
+ * @return {Boolean}
+ */
+export const isDarkTheme = (theme) => {
+    return getThemeIdentifier(theme) === PROTON_THEMES.DARK.identifier;
+};
+
+/**
  * Given a theme identifier with commented code as '\/* something *\/', extract 'something'
  * @param {String} themeIdentifier      theme identifier with comment markers
  * @return {String}                     theme identifier without comment markers
