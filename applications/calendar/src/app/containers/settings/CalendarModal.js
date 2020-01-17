@@ -152,8 +152,7 @@ const CalendarModal = ({ calendar, ...rest }) => {
     const handleCreateCalendar = async (addressID, calendarPayload) => {
         const [addresses, addressKeys] = await Promise.all([getAddresses(), getAddressKeys(addressID)]);
 
-        const { Email: primaryAddressEmail = '' } = addresses.find(({ ID }) => ID === addressID) || {};
-        const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } = getPrimaryKey(addressKeys) || {};
+        const { privateKey: primaryAddressKey } = getPrimaryKey(addressKeys) || {};
         if (!primaryAddressKey || !primaryAddressKey.isDecrypted()) {
             createNotification({ text: c('Error').t`Primary address key is not decrypted.`, type: 'error' });
             return;
@@ -169,10 +168,8 @@ const CalendarModal = ({ calendar, ...rest }) => {
         await setupCalendarKeys({
             api,
             calendars: [Calendar],
-            addressID,
-            addressEmail: primaryAddressEmail,
-            privateKey: primaryAddressKey,
-            publicKey: primaryAddressPublicKey
+            addresses,
+            getAddressKeys
         });
 
         return Calendar.ID;

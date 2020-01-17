@@ -53,9 +53,8 @@ const WelcomeModal = (props) => {
             throw new Error(c('Error').t`No valid address found.`);
         }
 
-        const [{ ID: addressID, Email: addressEmail = '' }] = activeAddresses;
-        const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
-            getPrimaryKey(await getAddressKeys(addressID)) || {};
+        const [{ ID: addressID }] = activeAddresses;
+        const { privateKey: primaryAddressKey } = getPrimaryKey(await getAddressKeys(addressID)) || {};
         if (!primaryAddressKey || !primaryAddressKey.isDecrypted()) {
             throw new Error(c('Error').t`Primary address key is not decrypted.`);
         }
@@ -84,10 +83,8 @@ const WelcomeModal = (props) => {
             setupCalendarKeys({
                 api,
                 calendars: [Calendar],
-                addressID,
-                addressEmail,
-                privateKey: primaryAddressKey,
-                publicKey: primaryAddressPublicKey
+                addresses: activeAddresses,
+                getAddressKeys
             })
         ]);
 

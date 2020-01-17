@@ -12,18 +12,24 @@ import {
 } from 'proton-shared/lib/api/calendars';
 import { decryptPassphrase, generateCalendarKeyPayload, getKeysMemberMap } from 'proton-shared/lib/keys/calendarKeys';
 import { findMemberAddressWithAdminPermissions } from 'proton-shared/lib/calendar/member';
-import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 
-export const setupCalendarKeys = async ({ api, calendars, addressID, addressEmail, privateKey, publicKey }) => {
+export const setupCalendarKeys = async ({ api, calendars, getAddressKeys, addresses }) => {
     return Promise.all(
         calendars.map(async ({ ID: calendarID }) => {
             const { Members = [] } = await api(queryMembers(calendarID));
 
+            const { Member: selfMember, Address: selfAddress } = findMemberAddressWithAdminPermissions(
+                Members,
+                addresses
+            );
+            const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
+                getPrimaryKey(await getAddressKeys(selfAddress.ID)) || {};
+
             const calendarKeyPayload = await generateCalendarKeyPayload({
-                addressID,
-                privateKey,
+                addressID: selfAddress.ID,
+                privateKey: primaryAddressKey,
                 memberPublicKeys: getKeysMemberMap(Members, {
-                    [addressEmail]: publicKey
+                    [selfMember.Email]: primaryAddressPublicKey
                 })
             });
 
@@ -167,21 +173,11 @@ export const process = async ({
     }
 
     if (calendarsToSetup.length > 0) {
-        const [{ ID: primaryAddressID, Email: primaryAddressEmail = '' } = {}] = getActiveAddresses(addresses);
-        const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
-            getPrimaryKey(await getAddressKeys(primaryAddressID)) || {};
-
-        if (!primaryAddressKey || !primaryAddressKey.isDecrypted()) {
-            throw new Error(c('Error').t`Primary address key is not decrypted.`);
-        }
-
         await setupCalendarKeys({
             api,
             calendars: calendarsToSetup,
-            privateKey: primaryAddressKey,
-            publicKey: primaryAddressPublicKey,
-            addressEmail: primaryAddressEmail,
-            addressID: primaryAddressID
+            getAddressKeys,
+            addresses
         });
     }
 
