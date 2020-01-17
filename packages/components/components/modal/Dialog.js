@@ -41,6 +41,7 @@ const Dialog = ({
                     className={classnames([
                         CLASSES.MODAL,
                         isSmall && CLASSES.MODAL_SMALL,
+                        isSmall && 'pm-modal--shorterLabels',
                         isClosing && CLASSES.MODAL_OUT,
                         extraClassNames
                     ])}
