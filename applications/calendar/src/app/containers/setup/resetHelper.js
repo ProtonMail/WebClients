@@ -12,6 +12,7 @@ import {
 } from 'proton-shared/lib/api/calendars';
 import { decryptPassphrase, generateCalendarKeyPayload, getKeysMemberMap } from 'proton-shared/lib/keys/calendarKeys';
 import { findMemberAddressWithAdminPermissions } from 'proton-shared/lib/calendar/member';
+import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 
 export const setupCalendarKeys = async ({ api, calendars, addressID, addressEmail, privateKey, publicKey }) => {
     return Promise.all(
@@ -44,9 +45,7 @@ const reactivateCalendarKeys = async ({ api, ID: CalendarID, getAddressKeys, add
 
     const decryptedPrimaryPassphrase = await (() => {
         const { MemberPassphrases = [] } = Passphrases.find(({ Flags }) => Flags === 1);
-        const { Passphrase, Signature } = MemberPassphrases.find(
-            ({ MemberID }) => MemberID === selfMember.ID
-        );
+        const { Passphrase, Signature } = MemberPassphrases.find(({ MemberID }) => MemberID === selfMember.ID);
         return decryptPassphrase({
             armoredPassphrase: Passphrase,
             armoredSignature: Signature,
@@ -61,9 +60,7 @@ const reactivateCalendarKeys = async ({ api, ID: CalendarID, getAddressKeys, add
                 const { MemberPassphrases = [] } = Passphrases.find(
                     ({ ID: otherPassphraseID }) => otherPassphraseID === PassphraseID
                 );
-                const { Passphrase, Signature } = MemberPassphrases.find(
-                    ({ MemberID }) => MemberID === selfMember.ID
-                );
+                const { Passphrase, Signature } = MemberPassphrases.find(({ MemberID }) => MemberID === selfMember.ID);
                 const decryptedPassphrase = await decryptPassphrase({
                     armoredPassphrase: Passphrase,
                     armoredSignature: Signature,
@@ -170,7 +167,7 @@ export const process = async ({
     }
 
     if (calendarsToSetup.length > 0) {
-        const [{ ID: primaryAddressID, Email: primaryAddressEmail = '' }] = addresses;
+        const [{ ID: primaryAddressID, Email: primaryAddressEmail = '' } = {}] = getActiveAddresses(addresses);
         const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
             getPrimaryKey(await getAddressKeys(primaryAddressID)) || {};
 
