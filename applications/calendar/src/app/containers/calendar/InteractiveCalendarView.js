@@ -555,7 +555,7 @@ const InteractiveCalendarView = ({
             <CalendarView
                 view={view}
                 isNarrow={isNarrow}
-                isInteractionEnabled={!isLoading}
+                isInteractionEnabled={!isLoading && defaultCalendarBootstrap}
                 onMouseDown={handleMouseDown}
                 tzid={tzid}
                 primaryTimezone={primaryTimezone}

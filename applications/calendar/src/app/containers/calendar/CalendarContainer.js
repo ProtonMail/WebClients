@@ -375,7 +375,9 @@ const CalendarContainer = ({ calendars, history, location }) => {
             utcDate={utcDate}
             utcDateRange={utcDateRange}
             onCreateEvent={
-                disableCreate ? undefined : () => interactiveRef.current && interactiveRef.current.createEvent()
+                disableCreate || !defaultCalendarBootstrap
+                    ? undefined
+                    : () => interactiveRef.current && interactiveRef.current.createEvent()
             }
             onClickToday={handleClickToday}
             onChangeDate={handleChangeDate}
