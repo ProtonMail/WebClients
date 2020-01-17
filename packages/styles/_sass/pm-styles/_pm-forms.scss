@@ -200,6 +200,10 @@ textarea[required].pm-field.field-pristine:invalid {
   @extend .pm-checkbox-fakecheck;
   border-radius: 50%;
 }
+.pm-radio--onTop .pm-radio-fakeradio {
+  margin-top: .25em;
+}
+
 .pm-radio-fakeradio::before {
   content: '';
   margin: auto;
@@ -210,6 +214,7 @@ textarea[required].pm-field.field-pristine:invalid {
   transform: scale(0);
   transition: .15s transform linear;
 }
+
 .pm-radio {
   @extend .sr-only;
   &:checked + .pm-radio-fakeradio::before {
