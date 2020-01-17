@@ -40,7 +40,7 @@ const OrganizationSection = () => {
         <>
             <RestoreAdministratorPrivileges />
             <SubTitle>{c('Title').t`Organization`}</SubTitle>
-            <Alert>{c('Info').t`The name and logo will be visible to your users while they are logged in.`}</Alert>
+            <Alert>{c('Info').t`The name will be visible to your users while they are logged in.`}</Alert>
             <Row>
                 <Label>{c('Label').t`Organization name`}</Label>
                 <Field className="pt0-5">
