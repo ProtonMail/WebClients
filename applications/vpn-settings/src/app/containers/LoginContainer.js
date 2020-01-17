@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { LoginForm, Href, SimpleDropdown, DropdownMenu, SignInLayout } from 'react-components';
-import { isSubUser } from 'proton-shared/lib/user/helpers';
+import { isMember } from 'proton-shared/lib/user/helpers';
 
 const LoginContainer = ({ stopRedirect, history, onLogin }) => {
     const handleLogin = (...args) => {
@@ -11,7 +11,7 @@ const LoginContainer = ({ stopRedirect, history, onLogin }) => {
 
         const [{ User }] = args;
 
-        if (isSubUser(User)) {
+        if (isMember(User)) {
             history.push('/account');
         } else {
             history.push('/dashboard');
