@@ -10,7 +10,7 @@ import { TransferMeta } from '../../interfaces/transfer';
  * Edge - doesn't support ReadableStream() constructor, will support it in chromium version.
  * For them download is done in-memory using blob response.
  */
-export const isSupported = () => !('serviceWorker' in navigator) || isSafari() || (isEdge() && !isEdgeChromium());
+export const isUnsupported = () => !('serviceWorker' in navigator) || isSafari() || (isEdge() && !isEdgeChromium());
 
 function createDownloadIframe(src: string) {
     const iframe = document.createElement('iframe');
@@ -44,7 +44,7 @@ function serviceWorkerKeepAlive() {
 }
 
 export async function initDownloadSW() {
-    if (!isSupported()) {
+    if (!isUnsupported()) {
         throw new Error('Saving file via download is unsupported by this browser');
     }
     await registerServiceWorker({ scope: '/' });
