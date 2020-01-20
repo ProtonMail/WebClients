@@ -114,6 +114,9 @@ $modal-smaller-width: 28em !default;
   animation-fill-mode: both;
 }
 
+.pm-modal--auto {
+  width: auto;
+}
 .pm-modal--smaller {
   width: $modal-smaller-width;
 }
