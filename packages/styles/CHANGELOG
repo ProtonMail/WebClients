@@ -13,6 +13,7 @@
 - add new margin helpers
 - add `pm-simple-table--bordered` modifier (for tables)
 - add `pm-radio--onTop` modifier (alignment)
+- add `flex--noMinChildren` modifier
 
 ## Updated/fixes
 
@@ -36,6 +37,7 @@
 - fix display of outside modifier (calendar) 
 - fix `pm-label`
 - first round of updates for placeholder images
+- fix modal close button position
 
 # [1.8.0] - 2019-12-20
 

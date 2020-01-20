@@ -30,6 +30,8 @@ section: fe-guidelines
   </div>
 </div>
 
+<p>Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-height: 0</code> to the direct children. In some very super-rare cases (<code>select</code>s, etc.), this can create bugs. In these cases, you might use <code>flex--noMinChildren</code>.</p>
+
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
   <div class="w49 flex-self-vcenter">
     <div class="flex flex-row bordered-container color-global-light">
