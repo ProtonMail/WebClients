@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormModal, useEventManager, useNotifications, useApi, useLoading } from 'react-components';
+import { FormModal, useEventManager, useNotifications, useApi, useLoading, RichTextEditor } from 'react-components';
 import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
@@ -12,7 +12,6 @@ import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
 import AutoReplyFormWeekly from './AutoReplyForm/AutoReplyFormWeekly';
 import AutoReplyFormPermanent from './AutoReplyForm/AutoReplyFormPermanent';
 import DurationField from './AutoReplyForm/fields/DurationField';
-import RichTextEditor from '../../components/input/RichTextEditor';
 
 const AutoReplyModal = ({ onClose, autoresponder, ...rest }) => {
     const [loading, withLoading] = useLoading();

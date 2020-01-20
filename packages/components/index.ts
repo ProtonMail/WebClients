@@ -64,7 +64,7 @@ export { default as SimpleDropdown } from './components/dropdown/SimpleDropdown'
 export { usePopper, Popper, usePopperAnchor } from './components/popper';
 export { default as ColorSelector } from './components/color/ColorSelector';
 export { default as TimeInput } from './components/input/TimeInput';
-export { default as RichTextEditor } from './components/input/RichTextEditor';
+export { default as RichTextEditor } from './components/input/LazyRichTextEditor';
 export { default as Checkbox } from './components/input/Checkbox';
 export { default as ColorPicker } from './components/input/ColorPicker';
 export { default as useInput } from './components/input/useInput';
