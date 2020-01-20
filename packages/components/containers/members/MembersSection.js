@@ -159,7 +159,7 @@ const MembersSection = () => {
                             <TableRow
                                 key={key}
                                 cells={[
-                                    member.Name,
+                                    <span className="ellipsis mw100 inbl" key={key} title={member.Name}>{member.Name}</span>,
                                     <MemberRole key={key} member={member} />,
                                     <MemberPrivate key={key} member={member} />,
                                     <MemberAddresses key={key} member={member} addresses={memberAddresses} />,
