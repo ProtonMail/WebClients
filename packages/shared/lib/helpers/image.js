@@ -17,6 +17,15 @@ export const toImage = (url) => {
         };
         image.onerror = reject;
 
+        /**
+         * allow external images to be used in a canvas as if they were loaded
+         * from the current origin without sending any user credentials.
+         * (otherwise canvas.toDataURL in resizeImage will throw complaining that the canvas is tainted)
+         * An error will be thrown if the requested resource hasn't specified an appropriate CORS policy
+         * See https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image
+         */
+        image.crossOrigin = 'anonymous';
+        image.referrerPolicy = 'no-referrer';
         image.src = url;
     });
 };
