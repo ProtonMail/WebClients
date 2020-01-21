@@ -1,10 +1,29 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
+TAG='';
+BRANCH='';
+COMMIT='';
+OUTPUT_FILE='build/assets/version.json';
+IS_DEBUG=false;
+
+while [ ! $# -eq 0 ]; do
+  case "$1" in
+    --tag) TAG="$2"; ;;
+    --branch) BRANCH="$2"; ;;
+    --commit) COMMIT="$2"; ;;
+    --output) OUTPUT_FILE="$2"; ;;
+    --debug) IS_DEBUG=true; ;;
+  esac
+  shift
+done;
+
+OUTPUT_DIR="$(dirname "$OUTPUT_FILE")";
+
 function getVersion {
 
-    if [ -n "$1" ]; then
-        echo "$1";
+    if [ -n "$TAG" ]; then
+        echo "$TAG";
         return 0;
     fi;
 
@@ -15,34 +34,50 @@ function getVersion {
 }
 
 function getCommit {
-    [ "$1" ] && echo "$1" || git rev-parse HEAD;
+    if [ -n "$COMMIT" ]; then
+        echo "$COMMIT";
+        return 0;
+    fi;
+
+    git rev-parse HEAD;
+}
+
+function getBranch {
+    if [ -n "$BRANCH" ]; then
+        echo "$BRANCH";
+        return 0;
+    fi;
+
+    git describe --all;
 }
 
 function toJSON {
-    local tpl='{ "version": "#version", "commit": "#commit" }';
-    local commit=$(getCommit "$1");
-    local version=$(getVersion "$2");
-    echo "$tpl" | sed "s/#commit/$commit/; s/#version/$version/;"
+    local tpl='{ "version": "#version", "commit": "#commit", "branch": "#branch" }';
+    local commit=$(getCommit);
+    local version=$(getVersion);
+    local branch=$(getBranch);
+    echo "$tpl" | sed "s/#commit/$commit/; s/#version/$version/; s|#branch|$branch|;"
 }
 
-if [ -z "$3" ]; then
-    mkdir -p build/assets;
+
+if ! [ -d "$OUTPUT_DIR" ]; then
+    mkdir -p "$OUTPUT_DIR";
 fi;
 
-printf '%-20s' "[commit]";
-printf '%-20s' "$1";
+printf '%-20s' "[TAG]" "$TAG";
 echo
-printf '%-20s' "[tag]";
-printf '%-20s' "$2";
+printf '%-20s' "[BRANCH]" "$BRANCH";
 echo
-printf '%-20s' "[output]";
-printf '%-20s' "${3-build/assets/version.json}";
+printf '%-20s' "[COMMIT]" "$COMMIT";
+echo
+printf '%-20s' "[OUTPUT_FILE]" "$OUTPUT_FILE";
 echo
 
 ##
 #  Write JSON version inside assets
-#  -1: commit hash
-#  -2: version tag
-#  -3: path
-#
-toJSON "$1" "$2" > "${3-build/assets/version.json}";
+toJSON > "$OUTPUT_FILE";
+
+if $IS_DEBUG; then
+    cat "$OUTPUT_FILE";
+fi;
+

@@ -63,7 +63,6 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         : [
               {
                   title: 'Setup app config',
-                  enabled: () => !isCI,
                   task() {
                       return bash('npx proton-pack', process.argv.slice(2));
                   }
@@ -169,15 +168,19 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         {
             title: 'Generate the version info',
             task(ctx) {
-                const { tag = `v${PKG.version}`, originCommit } = ctx || {};
+                const { tag = `v${PKG.version}`, originCommit, originBranch } = ctx || {};
                 const fileName = path.join('dist', 'assets/version.json');
+                const version = PKG['version-beta'] || tag; // custom version for v4
 
-                // custom version for v4
-                if (PKG['version-beta']) {
-                    return script('createVersionJSON.sh', [originCommit, `${PKG['version-beta']}`, fileName]);
-                }
+                const args = [
+                    `--tag ${version}`,
+                    `--commit ${originCommit}`,
+                    `--branch ${originBranch}`,
+                    `--output ${fileName}`,
+                    '--debug'
+                ];
 
-                return script('createVersionJSON.sh', [originCommit, tag, fileName]);
+                return script('createVersionJSON.sh', args);
             }
         },
         {
