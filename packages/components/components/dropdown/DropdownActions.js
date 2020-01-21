@@ -47,6 +47,7 @@ const DropdownActions = ({ loading = false, disabled = false, list = [], classNa
                 className={classnames(['pm-button pm-group-button pm-button--for-icon', className])}
                 title={c('Title').t`Open actions dropdown`}
                 content=""
+                data-test-id="dropdown:open"
             >
                 <DropdownMenu>
                     {restList.map(({ text, tooltip, key = text, ...restProps }) => {

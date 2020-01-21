@@ -15,6 +15,7 @@ function NewLabelForm({ label, onChangeColor, onChangeName }) {
                         onChange={onChangeName}
                         placeholder={c('New Label form').t`Name`}
                         required
+                        data-test-id="label/folder-modal:name"
                     />
                 </Field>
             </Row>

@@ -61,11 +61,13 @@ function ActionsLabel({ label, onChange }) {
     const list = [
         {
             text: c('Action').t`Edit`,
-            onClick: handleEdit
+            onClick: handleEdit,
+            'data-test-id': 'folders/labels:item-edit'
         },
         {
             text: c('Action').t`Delete`,
-            onClick: handleRemove
+            onClick: handleRemove,
+            'data-test-id': 'folders/labels:item-delete'
         }
     ];
 

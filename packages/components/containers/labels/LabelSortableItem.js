@@ -23,9 +23,9 @@ function LabelItem({ label, onEditLabel = noop, onRemoveLabel = noop, ...rest })
                         style={{ fill: Color }}
                         className="icon-16p flex-item-noshrink mr1 mtauto mbauto"
                     />
-                    <span className="ellipsis">{Name}</span>
+                    <span className="ellipsis" data-test-id="folders/labels:item-name">{Name}</span>
                 </div>,
-                <div key="1" className="w10">
+                <div key="1" className="w10" data-test-id="folders/labels:item-notification-toggle">
                     {Exclusive === 1 ? <ToggleNotify label={label} /> : ''}
                 </div>,
                 <ActionsLabel key="2" label={label} onChange={handleChange} />

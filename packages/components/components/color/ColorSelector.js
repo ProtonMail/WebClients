@@ -23,6 +23,7 @@ const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS })
                             name="paletteColor"
                             aria-labelledby={`Color ${color}`}
                             className="ColorSelector-input-color"
+                            data-test-id={`color-selector:${color}`}
                         />
                         <div className="ColorSelector-item-mask">
                             <Icon name="on" className="mauto" fill="none" />

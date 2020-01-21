@@ -28,6 +28,7 @@ function LabelSortableList({ items, onEditLabel = noop, onRemoveLabel = noop, ..
                         label={label}
                         onEditLabel={onEditLabel}
                         onRemoveLabel={onRemoveLabel}
+                        data-test-id={`folders/labels:item-type:${label.Exclusive ? 'folder' : 'label'}`}
                     />
                 ))}
             </OrderableTableBody>
