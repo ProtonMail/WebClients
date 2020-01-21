@@ -52,11 +52,12 @@ function getBranch {
 }
 
 function toJSON {
-    local tpl='{ "version": "#version", "commit": "#commit", "branch": "#branch" }';
+    local tpl='{ "version": "#version", "commit": "#commit", "branch": "#branch", "date": "#date" }';
     local commit=$(getCommit);
     local version=$(getVersion);
     local branch=$(getBranch);
-    echo "$tpl" | sed "s/#commit/$commit/; s/#version/$version/; s|#branch|$branch|;"
+    local date="$(date '+%s')";
+    echo "$tpl" | sed "s/#commit/$commit/; s/#version/$version/; s|#branch|$branch|; s|#date|$date|;"
 }
 
 
