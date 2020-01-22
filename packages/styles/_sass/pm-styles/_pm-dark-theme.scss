@@ -145,6 +145,16 @@ summary {
 }
 
 
+.appConfigBody-darkmode {
+  .display-on-darkmode {
+    display: flex;
+  }
+  .hide-on-darkmode {
+    display: none;
+  }
+}
+
+
 
 // quick and dirty
 .fill-global-grey,
