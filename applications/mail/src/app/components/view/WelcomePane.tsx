@@ -3,7 +3,7 @@ import { useUser, useModals, LinkButton, AuthenticatedBugModal } from 'react-com
 import { c, ngettext, msgid } from 'ttag';
 import { capitalize } from 'proton-shared/lib/helpers/string';
 
-import welcomeMessageSvg from 'design-system/assets/img/shared/welcome-message.svg';
+import unreadEmailsSvg from 'design-system/assets/img/shared/unread-emails.svg';
 import { LabelCount } from '../../models/label';
 
 interface Props {
@@ -39,7 +39,7 @@ const WelcomePane = ({ labelCount }: Props) => {
                         {c('Info')
                             .jt`Having trouble sending or receiving emails? Interested in helping us improve our service? Feel free to ${reportBugButton}.`}
                     </p>
-                    <img src={welcomeMessageSvg} alt={c('Alternative text for welcome image').t`Welcome`} />
+                    <img src={unreadEmailsSvg} alt={c('Alternative text for welcome image').t`Welcome`} />
                 </>
             ) : (
                 <>

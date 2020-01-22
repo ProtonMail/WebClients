@@ -3,7 +3,6 @@ import { c } from 'ttag';
 
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import noResultSearchSvg from 'design-system/assets/img/shared/no-result-search.svg';
-import noResultFolderSvg from 'design-system/assets/img/shared/no-result-folder.svg';
 import noResultInboxSvg from 'design-system/assets/img/shared/no-result-inbox.svg';
 
 interface Props {
@@ -19,7 +18,7 @@ const EmptyView = ({ labelID }: Props) => {
         <div className="m2">
             <figure className="flex-item-fluid aligncenter p3">
                 {isSearch && <img src={noResultSearchSvg} alt={c('Search - no results').t`No results found`} />}
-                {isFolder && <img src={noResultFolderSvg} alt={c('Search - no results').t`No messages found`} />}
+                {isFolder && <img src={noResultSearchSvg} alt={c('Search - no results').t`No messages found`} />}
                 {isInbox && <img src={noResultInboxSvg} alt={c('Search - no results').t`No messages found`} />}
 
                 <figcaption className="mt2">
