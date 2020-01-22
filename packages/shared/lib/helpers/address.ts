@@ -10,3 +10,7 @@ export const getActiveAddresses = (addresses: Address[]): Address[] => {
         );
     });
 };
+
+export const hasAddresses = (addresses: Address[] | undefined): boolean => {
+    return Array.isArray(addresses) && addresses.length > 0;
+};
