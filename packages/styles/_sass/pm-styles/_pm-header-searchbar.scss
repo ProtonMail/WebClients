@@ -56,8 +56,13 @@
   }
 }
 
-.searchbox-container--reset-advanced .searchbox-advanced-search-button {
-  right: 2rem;
+.searchbox-container--reset-advanced {
+  .searchbox-field[type="search"] {
+    padding-right: 6rem;
+  }
+  [type="reset"].searchbox-advanced-search-button {
+    right: 2rem;
+  }
 }
 
 @include respond-to($breakpoint-small) { 
@@ -85,9 +90,15 @@
       right: auto;
       left: 0;
     }
-    .searchbox-container--reset-advanced .searchbox-advanced-search-button {
-      right: auto;
-      left: 2rem;
+    .searchbox-container--reset-advanced {
+      .searchbox-field[type="search"] {
+        padding-right: calc(2em + 2rem);
+        padding-left: 6rem;
+      }
+      .searchbox-advanced-search-button {
+        right: auto;
+        left: 2rem;
+      }
     }
   }
 }
