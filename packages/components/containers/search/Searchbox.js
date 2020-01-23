@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { SearchInput, Icon, classnames } from 'react-components';
 
-const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onSearch, onChange }) => {
+const Searchbox = ({ delay, className = '', advanced, placeholder = '', value = '', onSearch, onChange }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         onSearch && onSearch(value);
@@ -13,10 +13,6 @@ const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onS
         event.preventDefault();
         onChange('');
         onSearch && onSearch('');
-    };
-
-    const handleChange = (newSearch) => {
-        onChange(newSearch);
     };
 
     return (
@@ -34,8 +30,9 @@ const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onS
             <label htmlFor="global_search">
                 <span className="sr-only">{placeholder}</span>
                 <SearchInput
+                    delay={delay}
                     value={value}
-                    onChange={handleChange}
+                    onChange={onChange}
                     id="global_search"
                     placeholder={placeholder}
                     className="searchbox-field"
@@ -57,6 +54,7 @@ const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onS
 };
 
 Searchbox.propTypes = {
+    delay: PropTypes.number,
     className: PropTypes.string,
     placeholder: PropTypes.string,
     value: PropTypes.string,
