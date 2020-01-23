@@ -45,12 +45,12 @@ const Searchbox = ({ className = '', advanced, placeholder = '', value = '', onS
                 <Icon name="search" className="fill-white mauto searchbox-search-button-icon" />
                 <span className="sr-only">{c('Action').t`Search`}</span>
             </button>
-            {value.length && (
+            {value.length ? (
                 <button type="reset" className="searchbox-advanced-search-button flex">
                     <Icon name="close" className="fill-white mauto searchbox-search-button-icon" />
                     <span className="sr-only">{c('Action').t`Clear`}</span>
                 </button>
-            )}
+            ) : null}
             {advanced}
         </form>
     );
