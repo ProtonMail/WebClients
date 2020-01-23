@@ -56,6 +56,10 @@
   }
 }
 
+.searchbox-container--reset-advanced .searchbox-advanced-search-button {
+  right: 2rem;
+}
+
 @include respond-to($breakpoint-small) { 
   .searchbox-advanced-search-button {
     position: static;
@@ -80,6 +84,10 @@
     .searchbox-advanced-search-button {
       right: auto;
       left: 0;
+    }
+    .searchbox-container--reset-advanced .searchbox-advanced-search-button {
+      right: auto;
+      left: 2rem;
     }
   }
 }
