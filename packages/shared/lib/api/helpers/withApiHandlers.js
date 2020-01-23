@@ -73,10 +73,16 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
             const { status, name } = e;
 
             if (name === 'OfflineError') {
+                if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
+                    throw e;
+                }
                 return wait(OFFLINE_RETRY_DELAY).then(() => refresh(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX));
             }
 
             if (name === 'TimeoutError') {
+                if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
+                    throw e;
+                }
                 return refresh(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX);
             }
 
@@ -111,10 +117,16 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                 const { status, name } = e;
 
                 if (name === 'OfflineError') {
+                    if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
+                        return onError(e);
+                    }
                     return wait(OFFLINE_RETRY_DELAY).then(() => perform(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX));
                 }
 
                 if (name === 'TimeoutError') {
+                    if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
+                        return onError(e);
+                    }
                     return perform(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX);
                 }
 
