@@ -145,7 +145,8 @@ summary {
 }
 
 
-.appConfigBody-darkmode {
+.appConfigBody-darkmode, // for Angular
+.isDarkMode {
   .display-on-darkmode {
     display: flex;
   }
