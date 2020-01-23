@@ -44,6 +44,7 @@ const NavItem = ({
                     isActive={isActive}
                     to={link}
                     aria-current={ariaCurrent}
+                    onClick={onClick}
                 >
                     {content}
                 </NavLink>
