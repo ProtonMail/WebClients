@@ -58,6 +58,9 @@ $field-container: 26rem !default;
   &.w100 {
     width: 100%;
   }
+  &.wauto {
+    width: auto;
+  }
   &:-moz-ui-invalid { // fixes some Firefox issues with HTML5 validation
     box-shadow: none;
   }
