@@ -241,6 +241,9 @@
 .color-global-grey {
   color: $pm-global-grey;
 }
+.color-global-grey-dm {
+  color: var(--color-main-area, $pm-global-grey);
+}
 .color-global-altgrey {
   color: $pm-global-altgrey;
 }
