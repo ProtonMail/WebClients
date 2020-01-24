@@ -24,9 +24,12 @@ import { decryptPrivateKeyArmored } from 'proton-shared/lib/keys/keys';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { FOLDER_PAGE_SIZE } from '../constants';
 import { useUploadProvider, Upload } from '../components/uploads/UploadProvider';
-import { DriveLink } from '../interfaces/folder';
 import { TransferState, TransferMeta } from '../interfaces/transfer';
 import { useDownloadProvider } from '../components/downloads/DownloadProvider';
+import { initDownload, StreamTransformer } from '../components/downloads/download';
+import { streamToBuffer } from '../utils/stream';
+import { DriveLink } from '../interfaces/link';
+import { lookup } from 'mime-types';
 
 const adjustFileName = (
     file: File,
@@ -51,7 +54,7 @@ export interface UploadFileMeta {
 function useFiles(shareId: string) {
     const api = useApi();
     const cache = useCache();
-    const { getFolderMeta, getFolderContents } = useShare(shareId);
+    const { getFolderMeta, getFolderContents, decryptLink } = useShare(shareId);
     const { addToDownloadQueue } = useDownloadProvider();
     const { startUpload, uploads } = useUploadProvider();
 
@@ -68,7 +71,7 @@ function useFiles(shareId: string) {
                 const blockKeys = deserializeUint8Array(File.ContentKeyPacket);
                 const sessionKeys = await getDecryptedSessionKey(blockKeys, privateKey);
                 return {
-                    File,
+                    File: await decryptLink(File),
                     sessionKeys,
                     privateKey
                 };
@@ -113,7 +116,7 @@ function useFiles(shareId: string) {
                             privateKey: parentKey
                         });
 
-                        const MimeType = blob.type || 'application/octet-stream';
+                        const MimeType = lookup(filename) || 'application/octet-stream';
                         const Hash = await generateLookupHash(filename, rawPassphrase);
 
                         const { File }: CreateFileResult = await api(
@@ -151,33 +154,69 @@ function useFiles(shareId: string) {
         [shareId, uploads]
     );
 
+    const decryptBlockStream = (linkId: string): StreamTransformer => async (stream) => {
+        const { privateKey, sessionKeys } = await getFileMeta(linkId);
+        const publicKeys = privateKey.toPublic();
+        const { data } = await decryptMessage({
+            message: await getStreamMessage(stream),
+            sessionKeys,
+            publicKeys,
+            streaming: 'web',
+            format: 'binary'
+        });
+
+        return data;
+    };
+
+    const getFileBlocks = async (linkId: string) => {
+        const { File } = await getFileMeta(linkId);
+        const { Revision } = await getFileRevision(File);
+        return Revision.Blocks;
+    };
+
     const downloadDriveFile = useCallback(
+        async (linkId: string) => {
+            const fileStream = await new Promise<ReadableStream<Uint8Array>>((resolve) => {
+                const { downloadControls } = initDownload({
+                    transformBlockStream: decryptBlockStream(linkId),
+                    onStart: async (stream) => {
+                        resolve(stream);
+                        return getFileBlocks(linkId);
+                    }
+                });
+                downloadControls.start(api);
+            });
+
+            const buffer = await streamToBuffer(fileStream);
+
+            return buffer;
+        },
+        [shareId]
+    );
+
+    const saveFileTransferFromBuffer = async (content: Uint8Array[], meta: TransferMeta) => {
+        return addToDownloadQueue(meta, {
+            onStart: async () => content
+        });
+    };
+
+    const startFileTransfer = useCallback(
         (linkId: string, meta: TransferMeta) => {
             return addToDownloadQueue(meta, {
-                transform: async (stream) => {
-                    const { privateKey, sessionKeys } = await getFileMeta(linkId);
-                    const publicKeys = privateKey.toPublic();
-                    const { data } = await decryptMessage({
-                        message: await getStreamMessage(stream),
-                        sessionKeys,
-                        publicKeys,
-                        streaming: 'web',
-                        format: 'binary'
-                    });
-
-                    return data;
-                },
-                onStart: async () => {
-                    const { File } = await getFileMeta(linkId);
-                    const { Revision } = await getFileRevision(File);
-                    return Revision.Blocks;
-                }
+                transformBlockStream: decryptBlockStream(linkId),
+                onStart: () => getFileBlocks(linkId)
             });
         },
         [shareId]
     );
 
-    return { downloadDriveFile, uploadDriveFile };
+    return {
+        startFileTransfer,
+        uploadDriveFile,
+        downloadDriveFile,
+        getFileMeta,
+        saveFileTransferFromBuffer
+    };
 }
 
 export default useFiles;

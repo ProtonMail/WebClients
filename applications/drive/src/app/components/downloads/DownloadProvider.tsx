@@ -1,15 +1,9 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
-import { DriveFileBlock } from '../../interfaces/file';
 import { TransferState, TransferProgresses, TransferMeta } from '../../interfaces/transfer';
-import { initDownload, DownloadControls, StreamTransformer } from './download';
+import { initDownload, DownloadControls, DownloadCallbacks } from './download';
 import { useApi } from 'react-components';
 
 const MAX_ACTIVE_DOWNLOADS = 3;
-
-interface DownloadHandlers {
-    onStart: () => Promise<DriveFileBlock[]>;
-    transform: StreamTransformer;
-}
 
 export interface Download {
     id: string;
@@ -20,7 +14,7 @@ export interface Download {
 
 interface DownloadProviderState {
     downloads: Download[];
-    addToDownloadQueue: (meta: TransferMeta, handlers: DownloadHandlers) => Promise<ReadableStream<Uint8Array>>;
+    addToDownloadQueue: (meta: TransferMeta, handlers: DownloadCallbacks) => Promise<ReadableStream<Uint8Array>>;
     getDownloadsProgresses: () => TransferProgresses;
     clearDownloads: () => void;
 }
@@ -55,25 +49,35 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
 
             controls.current[id]
                 .start(api)
-                .then(() => updateDownloadState(id, TransferState.Done))
+                .then(() => {
+                    // Update download progress to 100% (for empty files, of transfer from buffer)
+                    const download = downloads.find((download) => download.id === id);
+                    if (download) {
+                        progresses.current[id] = download.meta.size;
+                    }
+                    updateDownloadState(id, TransferState.Done);
+                })
                 .catch((err) => {
-                    console.log(err);
+                    console.error(err);
                     updateDownloadState(id, TransferState.Error);
                 });
         }
     }, [downloads]);
 
-    const addToDownloadQueue = async (meta: TransferMeta, handlers: DownloadHandlers) => {
+    const addToDownloadQueue = async (
+        meta: TransferMeta,
+        { transformBlockStream, onStart, onProgress }: DownloadCallbacks
+    ) => {
         return new Promise<ReadableStream<Uint8Array>>((resolve) => {
             const { id, downloadControls } = initDownload({
-                transformBlockStream: handlers.transform,
-                onProgress(data) {
-                    progresses.current[id] += data.length;
+                transformBlockStream,
+                onProgress(bytes) {
+                    progresses.current[id] += bytes;
+                    onProgress?.(bytes);
                 },
                 onStart: async (stream) => {
                     resolve(stream);
-                    const blocks = await handlers.onStart();
-                    return blocks;
+                    return await onStart(stream);
                 }
             });
 

@@ -2,17 +2,17 @@ import React from 'react';
 import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint } from 'react-components';
 import { c } from 'ttag';
 import ItemRow from './ItemRow';
-import { LinkType } from '../../interfaces/folder';
+import { ResourceType } from '../../interfaces/folder';
 import EmptyFolder from './EmptyFolder';
-import { TransferMeta } from '../../interfaces/transfer';
 
 export interface FileBrowserItem {
     Name: string;
     LinkID: string;
-    Type: LinkType;
+    Type: ResourceType;
     Modified: number;
-    MimeType?: string;
-    Size?: number;
+    MimeType: string;
+    Size: number;
+    ParentLinkID: string;
 }
 
 interface Props {
@@ -87,13 +87,6 @@ const FileBrowser = ({
             </table>
         </div>
     );
-};
-
-export const getMetaForTransfer = (item: FileBrowserItem): TransferMeta => {
-    if (item.Size === undefined || !item.MimeType) {
-        throw new Error('File is corrupted, no size or mime type');
-    }
-    return { filename: item.Name, mimeType: item.MimeType, size: item.Size };
 };
 
 export default FileBrowser;

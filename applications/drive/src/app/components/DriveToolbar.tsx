@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { ToolbarSeparator, Toolbar, ToolbarButton } from 'react-components';
 import { DriveResource } from './DriveResourceProvider';
 import useShare from '../hooks/useShare';
-import { FolderMeta, LinkType } from '../interfaces/folder';
-import { FileBrowserItem, getMetaForTransfer } from './FileBrowser/FileBrowser';
+import { FolderMeta, ResourceType } from '../interfaces/folder';
+import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import useFiles from '../hooks/useFiles';
 import FileSaver from '../utils/FileSaver/FileSaver';
+import { getMetaForTransfer } from './Drive';
 
 interface Props {
     selectedItems: FileBrowserItem[];
@@ -15,25 +16,25 @@ interface Props {
 
 const DriveToolbar = ({ resource, openResource, selectedItems }: Props) => {
     const { getFolderMeta } = useShare(resource.shareId);
-    const { downloadDriveFile } = useFiles(resource.shareId);
+    const { startFileTransfer } = useFiles(resource.shareId);
     const [folder, setFolder] = useState<FolderMeta>();
 
     useEffect(() => {
         getFolderMeta(resource.linkId).then(({ Folder }) => setFolder(Folder));
     }, [resource.linkId]);
 
-    const onlyFilesSelected = selectedItems.every((item) => item.Type === LinkType.FILE);
+    const onlyFilesSelected = selectedItems.every((item) => item.Type === ResourceType.FILE);
 
     const handleBackClick = () => {
         if (folder?.ParentLinkID) {
-            openResource({ shareId: resource.shareId, linkId: folder.ParentLinkID, type: LinkType.FOLDER });
+            openResource({ shareId: resource.shareId, linkId: folder.ParentLinkID, type: ResourceType.FOLDER });
         }
     };
 
     const handleDownloadClick = () => {
         selectedItems.forEach(async (item) => {
             const meta = getMetaForTransfer(item);
-            const fileStream = await downloadDriveFile(item.LinkID, meta);
+            const fileStream = await startFileTransfer(item.LinkID, meta);
             FileSaver.saveViaDownload(fileStream, meta);
         });
     };

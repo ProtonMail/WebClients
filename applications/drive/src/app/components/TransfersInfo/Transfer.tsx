@@ -41,6 +41,9 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
     const isProgress = transfer.state === TransferState.Progress;
     const isError = transfer.state === TransferState.Canceled || transfer.state === TransferState.Error;
 
+    // If file size is 0, progress and file size are changed to 1/1, so that the bar is complete
+    const progress = fileSize === 0 ? 1 : stats.progress;
+
     return (
         <div className="pd-transfers-listItem pb1 pt1 ml1 mr1">
             <div className="pd-transfers-listItemDetails">
@@ -64,8 +67,8 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
             <ProgressBar
                 status={isError ? ProgressBarStatus.Error : ProgressBarStatus.Success}
                 aria-describedby={transfer.id}
-                value={stats.progress}
-                max={fileSize}
+                value={progress}
+                max={fileSize || 1}
             />
         </div>
     );

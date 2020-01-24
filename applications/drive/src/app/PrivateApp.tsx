@@ -10,6 +10,8 @@ import { openpgpConfig } from './openpgpConfig';
 import { UploadProvider } from './components/uploads/UploadProvider';
 import DriveResourceProvider from './components/DriveResourceProvider';
 import AppErrorBoundary from './components/AppErrorBoundary';
+import PreviewContainer from './containers/PreviewContainer';
+import { LinkType } from './interfaces/folder';
 
 interface Props {
     onLogout: () => void;
@@ -29,7 +31,12 @@ const PrivateApp = ({ onLogout }: Props) => {
                         <PrivateLayout>
                             <AppErrorBoundary>
                                 <Switch>
-                                    <Route path="/drive/:shareId?/:type?/:linkId?" exact component={DriveContainer} />
+                                    <Route
+                                        path={`/drive/:shareId?/${LinkType.FILE}/:linkId?`}
+                                        exact
+                                        component={PreviewContainer}
+                                    />
+                                    <Route path={`/drive/:shareId?/:type?/:linkId?`} exact component={DriveContainer} />
                                     <Redirect to="/drive" />
                                 </Switch>
                             </AppErrorBoundary>

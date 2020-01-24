@@ -5,6 +5,7 @@
     position: fixed;
     bottom: 0;
     right: 0;
+    z-index: 2;
 }
 
 .pd-transfers-heading {
@@ -30,6 +31,7 @@
 }
 
 .pd-transfers-list {
+    @extend .color-black;
     @extend .border-left;
     max-height: 310px;
     overflow-y: auto;

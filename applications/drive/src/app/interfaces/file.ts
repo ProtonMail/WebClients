@@ -42,6 +42,7 @@ export interface DriveFile {
     Passphrase: string;
     HashKey: string;
     ContentKeyPacket: string;
+    Name: string;
     ActiveRevision: ActiveFileRevision;
 }
 

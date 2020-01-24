@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Sidebar, AppsSidebar, useToggle } from 'react-components';
 import Header from './PrivateHeader';
 import UploadButton from '../uploads/UploadButton';
+import TransfersInfo from '../TransfersInfo/TransfersInfo';
 
 const getSidebar = () => {
     return [
@@ -42,6 +43,7 @@ const PrivateLayout = ({ children }: Props) => {
                         <UploadButton />
                     </Sidebar>
                     <main className="main flex-item-fluid">{children}</main>
+                    <TransfersInfo />
                 </div>
             </div>
         </div>

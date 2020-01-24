@@ -5,6 +5,7 @@ import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter
 import { DriveFileBlock } from '../../interfaces/file';
 import { queryFileBlock } from '../../api/files';
 import { untilStreamEnd, ObserverStream } from '../../utils/stream';
+import { areUint8Arrays } from '../../utils/array';
 
 const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
@@ -15,35 +16,51 @@ export interface DownloadControls {
 }
 
 export interface DownloadCallbacks {
-    transformBlockStream: StreamTransformer;
-    onStart: (stream: ReadableStream<Uint8Array>) => Promise<DriveFileBlock[]>;
-    onProgress?: (rawData: Uint8Array) => void;
+    onStart: (stream: ReadableStream<Uint8Array>) => Promise<DriveFileBlock[] | Uint8Array[]>;
+    onProgress?: (bytes: number) => void;
+    transformBlockStream?: StreamTransformer;
 }
 
-export const initDownload = (config: DownloadCallbacks) => {
+export const initDownload = ({ onStart, onProgress, transformBlockStream }: DownloadCallbacks) => {
     const id = generateUID('drive-download');
 
     const start = async (api: (query: any) => any) => {
         const fileStream = new ObserverStream();
 
         const fsWriter = fileStream.writable.getWriter();
-        const blocks = await config.onStart(fileStream.readable);
+        const blocksOrBuffer = await onStart(fileStream.readable);
 
-        const orderedBlocks: DriveFileBlock[] = orderBy(blocks, 'Index');
+        await fsWriter.ready;
+
+        // If initialized with preloaded buffer instead of blocks to download
+        if (areUint8Arrays(blocksOrBuffer)) {
+            for (const buffer of blocksOrBuffer) {
+                await fsWriter.write(buffer as Uint8Array);
+            }
+            await fsWriter.ready;
+            return fsWriter.close();
+        }
+
+        const orderedBlocks: DriveFileBlock[] = orderBy(blocksOrBuffer, 'Index');
 
         for (const block of orderedBlocks) {
             const blockStream = toPolyfillReadable(await api(queryFileBlock(block.URL))) as ReadableStream<Uint8Array>;
 
-            const progressStream = new ObserverStream(config.onProgress);
+            const progressStream = new ObserverStream((value) => onProgress?.(value.length));
             const rawContentStream = blockStream.pipeThrough(progressStream);
 
             // Decrypt the file block content using streaming decryption
-            const transformedContentStream = await config.transformBlockStream(rawContentStream);
+            const transformedContentStream = transformBlockStream
+                ? await transformBlockStream(rawContentStream)
+                : rawContentStream;
 
             await untilStreamEnd(transformedContentStream, (value) => fsWriter.write(value));
         }
 
-        fsWriter.close();
+        // Wait for stream to be flushed
+        await fsWriter.ready;
+
+        return fsWriter.close();
     };
 
     const downloadControls: DownloadControls = { start };

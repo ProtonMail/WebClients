@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect, useContext } from 'react';
-import { LinkType } from '../interfaces/folder';
+import { ResourceType } from '../interfaces/folder';
 import { useModals, useLoading, LoaderPage } from 'react-components';
 import useDrive from '../hooks/useDrive';
 import OnboardingModal from './OnboardingModal/OnboardingModal';
@@ -9,7 +9,7 @@ interface DriveResourceProviderState {
     setResource: (resource?: DriveResource) => void;
 }
 
-export type DriveResource = { shareId: string; type: LinkType; linkId: string };
+export type DriveResource = { shareId: string; type: ResourceType; linkId: string };
 
 const DriveResourceContext = createContext<DriveResourceProviderState | null>(null);
 
@@ -33,7 +33,7 @@ const DriveResourceProvider = ({ children }: Props) => {
                 const { Share } = await createVolume();
                 createModal(<OnboardingModal />);
                 if (!didCancel) {
-                    setResource({ shareId: Share.ID, linkId: Share.LinkID, type: LinkType.FOLDER });
+                    setResource({ shareId: Share.ID, linkId: Share.LinkID, type: ResourceType.FOLDER });
                 }
                 return;
             }

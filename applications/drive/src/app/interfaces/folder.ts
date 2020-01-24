@@ -1,18 +1,13 @@
+import { DriveLink } from './link';
+
 export enum LinkType {
-    FOLDER = 1,
-    FILE = 2
+    FOLDER = 'folder',
+    FILE = 'file'
 }
 
-export interface DriveLink {
-    LinkID: string;
-    ParentLinkID: string;
-    Name: string;
-    MimeType: string;
-    Hash: string;
-    Type: LinkType;
-    Created: number;
-    Modified: number;
-    Size: number;
+export enum ResourceType {
+    FOLDER = 1,
+    FILE = 2
 }
 
 export interface FolderContentsResult {
