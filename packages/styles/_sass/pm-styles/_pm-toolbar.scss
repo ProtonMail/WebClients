@@ -39,7 +39,8 @@
   padding-left: em(12, $base-font);
   padding-right: em(12, $base-font);
 }
-.toolbar-icon {
+.toolbar-icon,
+.expand-caret.toolbar-icon {
   fill: var(--fillcolor-icons, $white);
 }
 .toolbar-separator {
