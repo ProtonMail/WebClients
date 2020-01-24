@@ -53,7 +53,8 @@
 
 
 $conversation-icon-size: 4rem !default;
-.item-icon {
+.item-icon,
+.day-icon {
   width: $conversation-icon-size;
   height: $conversation-icon-size;
   font-size: 1.2rem;
@@ -117,6 +118,26 @@ $conversation-icon-size: 4rem !default;
 
   }
 }
+
+/* day checkboxes (Calendar) */
+.day-checkbox {
+  &:hover + .day-icon {
+    color: $pm-primary;
+  }
+  // checked state
+  &:checked + .day-icon {
+    background-color: $pm-primary;
+    border-color: $pm-primary;
+    color: $white;
+    & > .item-icon-fakecheck {
+      display: flex;
+      
+      animation: conversationIconIn ease .15s;
+    }
+
+  }
+}
+
 @keyframes conversationIconIn {
   0% {
     transform: scale(0);
