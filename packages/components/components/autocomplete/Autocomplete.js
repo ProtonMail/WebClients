@@ -47,7 +47,7 @@ const Autocomplete = ({
 
     const childrenCount = React.Children.count(children);
     const inputStyleModifier = childrenCount > 0 ? 'pm-field--tiny' : '';
-    const dropdownListClasses = 'bg-white w100 bordered-container m0 p0';
+    const dropdownListClasses = 'bg-white-dm w100 bordered-container m0 p0';
 
     useEffect(() => {
         const awesompleteInstance = new Awesomplete(inputRef.current, {

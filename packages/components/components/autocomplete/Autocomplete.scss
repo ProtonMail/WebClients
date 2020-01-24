@@ -1,6 +1,9 @@
+@import "~design-system/_sass/reusable-components/design-system-config";
+
 .autocomplete-input {
     flex: 1 0 15%;
     outline: none;
+    color: var(--color-input, $pm-global-grey);
 }
 
 .autocomplete-field {
