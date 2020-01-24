@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import codemirror from 'codemirror';
 import PropTypes from 'prop-types';
 import { UnControlled as CodeMirror } from 'react-codemirror2';
-import { useApi } from 'react-components';
+import { useApi, useMailSettings } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { normalize } from 'proton-shared/lib/filters/sieve';
+import { isDarkTheme } from 'proton-shared/lib/themes/helpers';
 import { FILTER_VERSION } from 'proton-shared/lib/constants';
 import { checkSieveFilter } from 'proton-shared/lib/api/filters';
 
@@ -13,6 +14,7 @@ import 'codemirror/addon/lint/lint';
 import 'codemirror/mode/sieve/sieve';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/addon/lint/lint.css';
+import 'codemirror/theme/base16-dark.css';
 
 const clean = normalize();
 
@@ -35,10 +37,30 @@ const lint = (text) => {
 
 codemirror.registerHelper('lint', 'sieve', lint);
 
-function FilterEditorSieve({ filter, onChangeBeforeLint = noop, onChange = noop }) {
-    const api = useApi();
+const defaultCodeMirrorOptions = {
+    mode: 'sieve',
+    lineNumbers: true,
+    lineWrapping: true,
+    readOnly: false,
+    fixedGutter: false,
+    spellcheck: false,
+    lint: {
+        delay: 800
+    },
+    gutters: ['CodeMirror-lint-markers'],
+    autoRefresh: true
+};
 
+const FilterEditorSieve = ({ filter, onChangeBeforeLint = noop, onChange = noop }) => {
+    const api = useApi();
+    const [{ Theme }] = useMailSettings();
+
+    const hasDarkTheme = useMemo(() => isDarkTheme(Theme), [Theme]);
     const [value, setValue] = useState(null);
+
+    const options = hasDarkTheme
+        ? { ...defaultCodeMirrorOptions, theme: 'base16-dark' }
+        : { ...defaultCodeMirrorOptions };
 
     useEffect(() => {
         /*
@@ -63,27 +85,8 @@ function FilterEditorSieve({ filter, onChangeBeforeLint = noop, onChange = noop 
         onChangeBeforeLint(clean(input));
     };
 
-    return (
-        <CodeMirror
-            className="bordered-container"
-            value={value}
-            options={{
-                mode: 'sieve',
-                lineNumbers: true,
-                lineWrapping: true,
-                readOnly: false,
-                fixedGutter: false,
-                spellcheck: false,
-                lint: {
-                    delay: 800
-                },
-                gutters: ['CodeMirror-lint-markers'],
-                autoRefresh: true
-            }}
-            onChange={handleChange}
-        />
-    );
-}
+    return <CodeMirror className="bordered-container" value={value} options={options} onChange={handleChange} />;
+};
 
 FilterEditorSieve.propTypes = {
     filter: PropTypes.object.isRequired,

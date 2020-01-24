@@ -13,7 +13,12 @@ import {
     ConfirmModal
 } from 'react-components';
 import { updateTheme } from 'proton-shared/lib/api/mailSettings';
-import { getThemeIdentifier, stripThemeIdentifier } from 'proton-shared/lib/themes/helpers';
+import {
+    getThemeIdentifier,
+    isCustomTheme,
+    isCustomThemeIdentifier,
+    stripThemeIdentifier
+} from 'proton-shared/lib/themes/helpers';
 import { DEFAULT_THEME, CUSTOM_THEME } from 'proton-shared/lib/themes/themes.js';
 
 import CustomThemeModal from './CustomThemeModal.js';
@@ -27,8 +32,8 @@ const ThemesSection = () => {
     const [{ Theme }] = useMailSettings();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
-    const themeIdentifier = getThemeIdentifier(Theme);
-    const customCSS = themeIdentifier === CUSTOM_THEME.identifier ? Theme : '';
+    const hasCustomTheme = isCustomTheme(Theme);
+    const customCSS = hasCustomTheme ? Theme : '';
 
     const themes = availableThemes.map(({ identifier, getI18NLabel, src, customizable }) => {
         const id = stripThemeIdentifier(identifier);
@@ -46,7 +51,7 @@ const ThemesSection = () => {
     };
 
     const handleChangeTheme = async (newThemeIdentifier) => {
-        if (themeIdentifier === CUSTOM_THEME.identifier) {
+        if (hasCustomTheme) {
             await new Promise((resolve, reject) => {
                 createModal(
                     <ConfirmModal
@@ -61,7 +66,7 @@ const ThemesSection = () => {
                 );
             });
         }
-        if (newThemeIdentifier === CUSTOM_THEME.identifier) {
+        if (isCustomThemeIdentifier(newThemeIdentifier)) {
             return handleOpenModal();
         }
         await api(updateTheme(newThemeIdentifier));
@@ -77,7 +82,7 @@ const ThemesSection = () => {
                 .t`Selecting another theme will override your current theme and any customization will be lost.`}</Alert>
             <ThemeCards
                 list={themes}
-                themeIdentifier={themeIdentifier}
+                themeIdentifier={getThemeIdentifier(Theme)}
                 onChange={(identifier) => withLoading(handleChangeTheme(identifier))}
                 onCustomization={handleOpenModal}
                 disabled={loading}
