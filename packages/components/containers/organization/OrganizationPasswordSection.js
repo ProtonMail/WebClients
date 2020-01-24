@@ -93,11 +93,11 @@ const OrganizationSection = () => {
                                     />
                                 )
                             }
-                            className="mr1"
+                            className="mr1 mb0-5"
                         >
                             {c('Action').t`Change password`}
                         </PrimaryButton>
-                        <PrimaryButton onClick={handleOpenOrganizationKeys} className="mr1">
+                        <PrimaryButton onClick={handleOpenOrganizationKeys} className="mr1 mb0-5">
                             {c('Action').t`Change organization keys`}
                         </PrimaryButton>
                     </>
