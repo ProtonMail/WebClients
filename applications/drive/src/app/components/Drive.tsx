@@ -1,31 +1,42 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useMainArea } from 'react-components';
-import { LinkType, DriveLink } from '../interfaces/folder';
+import { ResourceType } from '../interfaces/folder';
 import useShare from '../hooks/useShare';
 import useFiles from '../hooks/useFiles';
 import useOnScrollEnd from '../hooks/useOnScrollEnd';
 import { FOLDER_PAGE_SIZE } from '../constants';
 import useFileBrowser from './FileBrowser/useFileBrowser';
-import FileBrowser, { FileBrowserItem, getMetaForTransfer } from './FileBrowser/FileBrowser';
+import FileBrowser, { FileBrowserItem } from './FileBrowser/FileBrowser';
 import { DriveResource } from './DriveResourceProvider';
 import { useUploadProvider } from './uploads/UploadProvider';
-import TransfersInfo from './TransfersInfo/TransfersInfo';
-import { TransferState } from '../interfaces/transfer';
+import { TransferState, TransferMeta } from '../interfaces/transfer';
 import FileSaver from '../utils/FileSaver/FileSaver';
+import { isPreviewAvailable } from './FilePreview/FilePreview';
+import { DriveLink } from '../interfaces/link';
+import { DriveFile } from '../interfaces/file';
 
-const mapLinksToChildren = (decryptedLinks: DriveLink[]): FileBrowserItem[] =>
-    decryptedLinks.map(({ LinkID, Type, Name, Modified, Size, MimeType }) => ({
+export const mapLinksToChildren = (decryptedLinks: DriveLink[]): FileBrowserItem[] =>
+    decryptedLinks.map(({ LinkID, Type, Name, Modified, Size, MimeType, ParentLinkID }) => ({
         Name,
         LinkID,
         Type,
         Modified,
         Size,
-        MimeType
+        MimeType,
+        ParentLinkID
     }));
+
+export const getMetaForTransfer = (item: FileBrowserItem | DriveFile): TransferMeta => {
+    return {
+        filename: item.Name,
+        mimeType: item.MimeType,
+        size: 'ActiveRevision' in item ? item.ActiveRevision.Size : item.Size
+    };
+};
 
 interface Props {
     resource: DriveResource;
-    openResource: (resource: DriveResource) => void;
+    openResource: (resource: DriveResource, item?: FileBrowserItem) => void;
     fileBrowserControls: ReturnType<typeof useFileBrowser>;
     contents?: FileBrowserItem[];
     setContents: React.Dispatch<React.SetStateAction<FileBrowserItem[] | undefined>>;
@@ -34,7 +45,7 @@ interface Props {
 function Drive({ resource, openResource, contents, setContents, fileBrowserControls }: Props) {
     const mainAreaRef = useMainArea();
     const { getFolderContents } = useShare(resource.shareId);
-    const { downloadDriveFile } = useFiles(resource.shareId);
+    const { startFileTransfer } = useFiles(resource.shareId);
     const { uploads } = useUploadProvider();
     const [loading, setLoading] = useState(false);
 
@@ -82,11 +93,11 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
             setContents(undefined);
         }
 
-        if (resource.type === LinkType.FOLDER) {
+        if (resource.type === ResourceType.FOLDER) {
             clearSelections();
             loadNextIncrement();
         } else {
-            throw Error('Files are not supported yet');
+            throw Error('Cannot use file as a directory');
         }
 
         return () => {
@@ -121,12 +132,16 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
 
     const handleDoubleClick = async (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
-        if (item.Type === LinkType.FOLDER) {
+        if (item.Type === ResourceType.FOLDER) {
             openResource({ shareId: resource.shareId, linkId: item.LinkID, type: item.Type });
-        } else if (item.Type === LinkType.FILE) {
-            const meta = getMetaForTransfer(item);
-            const fileStream = await downloadDriveFile(item.LinkID, meta);
-            FileSaver.saveViaDownload(fileStream, meta);
+        } else if (item.Type === ResourceType.FILE) {
+            if (item.MimeType && isPreviewAvailable(item.MimeType)) {
+                openResource({ shareId: resource.shareId, linkId: item.LinkID, type: item.Type }, item);
+            } else {
+                const meta = getMetaForTransfer(item);
+                const fileStream = await startFileTransfer(item.LinkID, meta);
+                FileSaver.saveViaDownload(fileStream, meta);
+            }
         }
     };
 
@@ -143,7 +158,6 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
                 onToggleAllSelected={toggleAllSelected}
                 onShiftClick={selectRange}
             />
-            <TransfersInfo />
         </>
     );
 }

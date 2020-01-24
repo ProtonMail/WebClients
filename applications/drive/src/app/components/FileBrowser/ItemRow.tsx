@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { TableRow, Checkbox, Time, Icon, useActiveBreakpoint } from 'react-components';
 import { c } from 'ttag';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { LinkType } from '../../interfaces/folder';
+import { ResourceType } from '../../interfaces/folder';
 import { FileBrowserItem } from './FileBrowser';
 
 interface Props {
@@ -51,7 +51,7 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
         onDoubleClick(item);
     };
 
-    const isFolder = item.Type === LinkType.FOLDER;
+    const isFolder = item.Type === ResourceType.FOLDER;
     const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
 
     return (

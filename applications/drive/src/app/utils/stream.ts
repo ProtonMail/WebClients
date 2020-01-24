@@ -1,7 +1,6 @@
 import { TransformStream } from 'web-streams-polyfill';
-import { noop } from 'proton-shared/lib/helpers/function';
 
-export const untilStreamEnd = async <T>(stream: ReadableStream<T>, action: (data: T) => Promise<void>) => {
+export const untilStreamEnd = async <T>(stream: ReadableStream<T>, action?: (data: T) => Promise<void>) => {
     const reader = stream.getReader();
 
     const processResponse = async ({ done, value }: ReadableStreamReadResult<T>): Promise<any> => {
@@ -9,7 +8,7 @@ export const untilStreamEnd = async <T>(stream: ReadableStream<T>, action: (data
             return;
         }
 
-        action(value);
+        await action?.(value);
 
         return processResponse(await reader.read());
     };
@@ -26,10 +25,10 @@ export const streamToBuffer = async (stream: ReadableStream<Uint8Array>) => {
 };
 
 export class ObserverStream extends TransformStream<Uint8Array, Uint8Array> {
-    constructor(fn: (chunk: Uint8Array) => void = noop) {
+    constructor(fn?: (chunk: Uint8Array) => void) {
         super({
             transform(chunk, controller) {
-                fn(chunk);
+                fn?.(chunk);
                 controller.enqueue(chunk);
             }
         });

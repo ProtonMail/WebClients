@@ -4,8 +4,10 @@ import { useCache, useApi } from 'react-components';
 import { decryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
 import { decryptPrivateKeyArmored } from 'proton-shared/lib/keys/keys';
 import { queryFolderChildren, queryGetFolder } from '../api/folder';
-import { DriveLink, FolderMeta, FolderMetaResult, FolderContentsResult } from '../interfaces/folder';
+import { FolderMeta, FolderMetaResult, FolderContentsResult } from '../interfaces/folder';
 import useDrive from './useDrive';
+import { DriveLink } from '../interfaces/link';
+import { DriveFile } from '../interfaces/file';
 
 function useShare(shareId: string) {
     const api = useApi();
@@ -31,6 +33,15 @@ function useShare(shareId: string) {
         [shareId]
     );
 
+    const decryptLink = async <T extends DriveLink | DriveFile>({ Name, ParentLinkID, ...rest }: T) => {
+        const { privateKey } = await getFolderMeta(ParentLinkID);
+        return {
+            ...rest,
+            ParentLinkID,
+            Name: await decryptUnsigned({ armoredMessage: Name, privateKey })
+        };
+    };
+
     const getFolderContents = useCallback(
         async (linkId: string, Page: number, PageSize: number, force = false): Promise<DriveLink[]> => {
             const cacheKey = `drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`;
@@ -42,22 +53,13 @@ function useShare(shareId: string) {
                     queryFolderChildren(shareId, linkId, { Page, PageSize })
                 );
 
-                return await Promise.all(
-                    Links.map(async ({ Name, ParentLinkID, ...rest }) => {
-                        const { privateKey } = await getFolderMeta(ParentLinkID);
-                        return {
-                            ...rest,
-                            ParentLinkID,
-                            Name: await decryptUnsigned({ armoredMessage: Name, privateKey })
-                        };
-                    })
-                );
+                return await Promise.all(Links.map(decryptLink));
             });
         },
         [shareId]
     );
 
-    return { getFolderMeta, getFolderContents };
+    return { getFolderMeta, getFolderContents, decryptLink };
 }
 
 export default useShare;

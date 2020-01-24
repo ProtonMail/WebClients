@@ -1,4 +1,5 @@
 import { getRandomString } from 'proton-shared/lib/helpers/string';
+import { contentType } from 'mime-types';
 
 /**
  * Open a stream of data passed over MessageChannel.
@@ -67,7 +68,7 @@ class DownloadServiceWorker {
 
         const headers = new Headers({
             'Content-Length': `${size}`,
-            'Content-Type': `${mimeType}`,
+            'Content-Type': `${contentType(mimeType)}`,
             'Content-Disposition': 'attachment; filename=' + `"${encodeURI(filename)}"`,
             'Content-Security-Policy': "default-src 'none'",
             'X-Content-Security-Policy': "default-src 'none'",
