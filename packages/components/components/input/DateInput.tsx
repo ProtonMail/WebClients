@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { format, parse, addDays } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
 
@@ -9,16 +8,37 @@ import Dropdown from '../dropdown/Dropdown';
 import { generateUID } from '../../helpers/component';
 import LocalizedMiniCalendar from '../miniCalendar/LocalizedMiniCalendar';
 
-const toFormatted = (value, locale) => {
+const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'PP', { locale });
 };
 
-const fromFormatted = (value, locale) => {
+const fromFormatted = (value: string, locale: Locale) => {
     return parse(value, 'PP', new Date(), { locale });
 };
 
+const getTemporaryInputFromValue = (value: Date | undefined) => {
+    return value ? toFormatted(value, dateLocale) : '';
+};
+
+interface Props {
+    id?: string;
+    disabled?: boolean;
+    required?: boolean;
+    className?: string;
+    displayWeekNumbers?: boolean;
+    weekStartsOn?: number;
+    value?: Date;
+    defaultDate?: Date;
+    min?: Date;
+    max?: Date;
+    onChange: (value: Date | undefined) => void;
+    onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
+    onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+}
 const DateInput = ({
     value,
+    defaultDate,
     onChange,
     onFocus,
     onBlur,
@@ -28,18 +48,21 @@ const DateInput = ({
     min,
     max,
     ...rest
-}) => {
+}: Props) => {
     const [uid] = useState(generateUID('dropdown'));
-    const { anchorRef, isOpen, open, close } = usePopperAnchor();
+    const anchorRef = useRef<HTMLInputElement>();
+    const { isOpen, open, close } = usePopperAnchor();
 
-    const [temporaryInput, setTemporaryInput] = useState('');
-    const [showTemporary, setShowTemporary] = useState(false);
+    const [temporaryInput, setTemporaryInput] = useState<string>('');
+    const [showTemporary, setShowTemporary] = useState<boolean>(false);
 
     useEffect(() => {
-        setTemporaryInput(toFormatted(value, dateLocale));
-    }, [+value]);
+        setTemporaryInput(getTemporaryInputFromValue(value));
+    }, [value ? +value : undefined]);
 
-    const currentInput = useMemo(() => toFormatted(value, dateLocale), [value]);
+    const currentInput = useMemo(() => {
+        return value ? toFormatted(value, dateLocale) : '';
+    }, [value ? +value : undefined]);
 
     const temporaryValue = useMemo(() => {
         if (!temporaryInput) {
@@ -58,18 +81,21 @@ const DateInput = ({
         } catch (e) {}
     }, [temporaryInput]);
 
-    const actualValue = temporaryValue || value;
+    const actualDefaultDate = useMemo(() => defaultDate || new Date(), [defaultDate]);
+    const actualValue = temporaryValue || value || actualDefaultDate;
 
     const parseAndTriggerChange = () => {
+        const oldTemporaryInput = temporaryInput;
         // Before the new date is set, the input is reset to the old date in case the onChange handler rejects the change,
         // or it's an invalid date that couldn't be parsed
-        setTemporaryInput(toFormatted(value, dateLocale));
-        if (temporaryValue) {
+        setTemporaryInput(getTemporaryInputFromValue(value));
+        // Allow a valid parsed date value, or undefined to reset.
+        if (temporaryValue || !oldTemporaryInput) {
             onChange(temporaryValue);
         }
     };
 
-    const handleFocusInput = (event) => {
+    const handleFocusInput = (event: React.FocusEvent<HTMLInputElement>) => {
         onFocus && onFocus(event);
         open();
 
@@ -77,7 +103,7 @@ const DateInput = ({
         setTemporaryInput(currentInput);
     };
 
-    const handleBlurInput = (event) => {
+    const handleBlurInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         onBlur && onBlur(event);
         parseAndTriggerChange();
         close();
@@ -86,7 +112,7 @@ const DateInput = ({
         setTemporaryInput('');
     };
 
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         onKeyDown && onKeyDown(event);
         if (event.key === 'Enter') {
             parseAndTriggerChange();
@@ -100,14 +126,18 @@ const DateInput = ({
         }
     };
 
-    const handleClickDate = (newDate) => {
+    const handleClickDate = (newDate: Date) => {
         setTemporaryInput(toFormatted(newDate, dateLocale));
-        setTimeout(() => anchorRef.current && anchorRef.current.blur());
+        setTimeout(() => anchorRef.current?.blur());
     };
 
-    const handleInputChange = ({ target: { value } }) => {
+    const handleInputChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
         setTemporaryInput(value);
     };
+
+    const placeholderInLocale = useMemo(() => {
+        return dateLocale?.formatLong?.date({ width: 'medium' }) || '';
+    }, [dateLocale]);
 
     return (
         <>
@@ -119,6 +149,7 @@ const DateInput = ({
                 onKeyDown={handleKeyDown}
                 value={showTemporary ? temporaryInput : currentInput}
                 onChange={handleInputChange}
+                placeholder={placeholderInLocale}
                 {...rest}
             />
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} autoClose={false}>
@@ -133,22 +164,6 @@ const DateInput = ({
             </Dropdown>
         </>
     );
-};
-
-DateInput.propTypes = {
-    id: PropTypes.string,
-    disabled: PropTypes.bool,
-    required: PropTypes.bool,
-    className: PropTypes.string,
-    displayWeekNumbers: PropTypes.bool,
-    weekStartsOn: PropTypes.number,
-    value: PropTypes.instanceOf(Date).isRequired,
-    min: PropTypes.instanceOf(Date),
-    max: PropTypes.instanceOf(Date),
-    onChange: PropTypes.func.isRequired,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    onKeyDown: PropTypes.func
 };
 
 export default DateInput;

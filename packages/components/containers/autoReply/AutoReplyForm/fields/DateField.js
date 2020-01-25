@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isValid } from 'date-fns';
 import { Row, Label, DateInput, Field } from 'react-components';
 
 const DateField = ({ id, label, value, onChange, min, max }) => {
@@ -7,7 +8,18 @@ const DateField = ({ id, label, value, onChange, min, max }) => {
         <Row>
             <Label htmlFor={id}>{label}</Label>
             <Field>
-                <DateInput id={id} className="w100" min={min} max={max} value={value} onChange={onChange} />
+                <DateInput
+                    id={id}
+                    className="w100"
+                    min={min}
+                    max={max}
+                    value={value}
+                    onChange={(value) => {
+                        if (isValid(value)) {
+                            onChange(value);
+                        }
+                    }}
+                />
             </Field>
         </Row>
     );
