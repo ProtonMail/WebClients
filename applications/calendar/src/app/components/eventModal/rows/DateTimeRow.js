@@ -7,7 +7,7 @@ import {
     toUTCDate
 } from 'proton-shared/lib/date/timezone';
 import { MILLISECONDS_IN_MINUTE, startOfDay } from 'proton-shared/lib/date-fns-utc';
-import { addDays } from 'date-fns';
+import { addDays, isValid } from 'date-fns';
 import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
 import { c } from 'ttag';
 
@@ -70,6 +70,9 @@ const DateTimeRow = ({
     };
 
     const handleChangeStartDate = (newDate) => {
+        if (!isValid(newDate)) {
+            return;
+        }
         setModel({
             ...model,
             ...getStartChange({
@@ -101,6 +104,9 @@ const DateTimeRow = ({
     };
 
     const handleChangeEndDate = (newDate) => {
+        if (!isValid(newDate)) {
+            return;
+        }
         handleEndUpdate({
             ...end,
             date: newDate
