@@ -78,10 +78,6 @@ async function main() {
                         const task = !isWebsite ? 'upgrade' : 'upgrade-website';
                         require('./lib/commit')(task);
                     }
-                },
-                {
-                    title: 'ha que coucou',
-                    task: () => coucou.send('upgrade')
                 }
             ].filter(Boolean)
         );
