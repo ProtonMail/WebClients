@@ -12,7 +12,6 @@ const ImagePreview = ({ mimeType, contents }: Props) => {
     const [scale, setScale] = useState(1);
     const imgSrc = useMemo(() => URL.createObjectURL(new Blob(contents, { type: mimeType })), [contents, mimeType]);
 
-    const handleReset = () => setScale(1);
     const handleZoomOut = () => setScale((zoom) => (zoom ? zoom * 0.9 : 1));
     const handleZoomIn = () => setScale((zoom) => (zoom ? zoom * 1.1 : 1));
     const fitToContainer = () => {
@@ -42,7 +41,7 @@ const ImagePreview = ({ mimeType, contents }: Props) => {
                     alt="preview"
                 />
             </div>
-            <ZoomControl onReset={handleReset} scale={scale} onZoomIn={handleZoomIn} onZoomOut={handleZoomOut} />
+            <ZoomControl onReset={fitToContainer} scale={scale} onZoomIn={handleZoomIn} onZoomOut={handleZoomOut} />
         </>
     );
 };

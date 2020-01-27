@@ -11,8 +11,16 @@ const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
 export type StreamTransformer = (stream: ReadableStream<Uint8Array>) => Promise<ReadableStream<Uint8Array>>;
 
+class TransferCancel extends Error {
+    constructor(id: string) {
+        super(`Transfer ${id} canceled`);
+        this.name = 'TransferCancel';
+    }
+}
+
 export interface DownloadControls {
     start: (api: (query: any) => any) => Promise<void>;
+    cancel: () => Promise<void>;
 }
 
 export interface DownloadCallbacks {
@@ -23,11 +31,15 @@ export interface DownloadCallbacks {
 
 export const initDownload = ({ onStart, onProgress, transformBlockStream }: DownloadCallbacks) => {
     const id = generateUID('drive-download');
+    const abortController = new AbortController();
+    const fileStream = new ObserverStream();
+    const fsWriter = fileStream.writable.getWriter();
 
     const start = async (api: (query: any) => any) => {
-        const fileStream = new ObserverStream();
+        if (abortController.signal.aborted) {
+            return;
+        }
 
-        const fsWriter = fileStream.writable.getWriter();
         const blocksOrBuffer = await onStart(fileStream.readable);
 
         await fsWriter.ready;
@@ -44,7 +56,9 @@ export const initDownload = ({ onStart, onProgress, transformBlockStream }: Down
         const orderedBlocks: DriveFileBlock[] = orderBy(blocksOrBuffer, 'Index');
 
         for (const block of orderedBlocks) {
-            const blockStream = toPolyfillReadable(await api(queryFileBlock(block.URL))) as ReadableStream<Uint8Array>;
+            const blockStream = toPolyfillReadable(
+                await api({ ...queryFileBlock(block.URL), timeout: 60000, signal: abortController.signal })
+            ) as ReadableStream<Uint8Array>;
 
             const progressStream = new ObserverStream((value) => onProgress?.(value.length));
             const rawContentStream = blockStream.pipeThrough(progressStream);
@@ -54,7 +68,9 @@ export const initDownload = ({ onStart, onProgress, transformBlockStream }: Down
                 ? await transformBlockStream(rawContentStream)
                 : rawContentStream;
 
-            await untilStreamEnd(transformedContentStream, (value) => fsWriter.write(value));
+            await untilStreamEnd(transformedContentStream, (value) => {
+                return fsWriter.write(value);
+            });
         }
 
         // Wait for stream to be flushed
@@ -63,7 +79,13 @@ export const initDownload = ({ onStart, onProgress, transformBlockStream }: Down
         return fsWriter.close();
     };
 
-    const downloadControls: DownloadControls = { start };
+    const cancel = async () => {
+        abortController.abort();
+
+        fsWriter.abort(new TransferCancel(id));
+    };
+
+    const downloadControls: DownloadControls = { start, cancel };
 
     return { id, downloadControls };
 };

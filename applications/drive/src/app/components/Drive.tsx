@@ -62,14 +62,14 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
     const loadingPage = useRef<number | null>(null);
 
     const loadNextIncrement = useCallback(
-        async (page = 0, isReload = false) => {
+        async (page = 0) => {
             if (loadingPage.current !== null || isDoneLoading.current) {
                 return;
             }
 
             setLoading(true);
             loadingPage.current = page;
-            const decryptedLinks = await getFolderContents(resource.linkId, page, FOLDER_PAGE_SIZE, isReload);
+            const decryptedLinks = await getFolderContents(resource.linkId, page, FOLDER_PAGE_SIZE);
 
             // If resource changed while loading contents discard the result
             if (loadingPage.current === page) {
@@ -125,8 +125,7 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
         if (uploadedCount) {
             isDoneLoading.current = false;
             loadingPage.current = null;
-
-            loadNextIncrement(0, true);
+            loadNextIncrement(0);
         }
     }, [uploadedCount]);
 

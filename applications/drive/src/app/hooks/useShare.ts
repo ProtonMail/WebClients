@@ -42,24 +42,30 @@ function useShare(shareId: string) {
         };
     };
 
-    const getFolderContents = useCallback(
-        async (linkId: string, Page: number, PageSize: number, force = false): Promise<DriveLink[]> => {
-            const cacheKey = `drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`;
-            if (force) {
-                cache.delete(cacheKey);
-            }
-            return getPromiseValue(cache, cacheKey, async () => {
-                const { Links }: FolderContentsResult = await api(
-                    queryFolderChildren(shareId, linkId, { Page, PageSize })
-                );
-
-                return await Promise.all(Links.map(decryptLink));
-            });
+    const clearFolderContentsCache = useCallback(
+        (linkId: string, Page: number, PageSize: number) => {
+            cache.delete(`drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`);
         },
         [shareId]
     );
 
-    return { getFolderMeta, getFolderContents, decryptLink };
+    const getFolderContents = useCallback(
+        async (linkId: string, Page: number, PageSize: number): Promise<DriveLink[]> =>
+            getPromiseValue(
+                cache,
+                `drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`,
+                async () => {
+                    const { Links }: FolderContentsResult = await api(
+                        queryFolderChildren(shareId, linkId, { Page, PageSize })
+                    );
+
+                    return await Promise.all(Links.map(decryptLink));
+                }
+            ),
+        [shareId]
+    );
+
+    return { getFolderMeta, getFolderContents, decryptLink, clearFolderContentsCache };
 }
 
 export default useShare;
