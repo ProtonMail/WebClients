@@ -30,6 +30,7 @@ import { initDownload, StreamTransformer } from '../components/downloads/downloa
 import { streamToBuffer } from '../utils/stream';
 import { DriveLink } from '../interfaces/link';
 import { lookup } from 'mime-types';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 const adjustFileName = (
     file: File,
@@ -54,7 +55,7 @@ export interface UploadFileMeta {
 function useFiles(shareId: string) {
     const api = useApi();
     const cache = useCache();
-    const { getFolderMeta, getFolderContents, decryptLink } = useShare(shareId);
+    const { getFolderMeta, getFolderContents, decryptLink, clearFolderContentsCache } = useShare(shareId);
     const { addToDownloadQueue } = useDownloadProvider();
     const { startUpload, uploads } = useUploadProvider();
 
@@ -104,7 +105,8 @@ function useFiles(shareId: string) {
             );
 
             // TODO: contents will have pages, need to load all pages to check.
-            const contents = await getFolderContents(ParentLinkID, 0, FOLDER_PAGE_SIZE, true);
+            clearFolderContentsCache(ParentLinkID, 0, FOLDER_PAGE_SIZE);
+            const contents = await getFolderContents(ParentLinkID, 0, FOLDER_PAGE_SIZE);
             const { blob, filename } = adjustFileName(file, activeUploads, contents);
 
             startUpload(
@@ -147,6 +149,9 @@ function useFiles(shareId: string) {
                                 BlockList
                             })
                         );
+
+                        // TODO: clear all cached pages after upload, or only last one
+                        clearFolderContentsCache(ParentLinkID, 0, FOLDER_PAGE_SIZE);
                     }
                 }
             );
@@ -176,20 +181,28 @@ function useFiles(shareId: string) {
 
     const downloadDriveFile = useCallback(
         async (linkId: string) => {
-            const fileStream = await new Promise<ReadableStream<Uint8Array>>((resolve) => {
-                const { downloadControls } = initDownload({
-                    transformBlockStream: decryptBlockStream(linkId),
-                    onStart: async (stream) => {
-                        resolve(stream);
-                        return getFileBlocks(linkId);
-                    }
-                });
-                downloadControls.start(api);
+            let resolve: (value: Promise<Uint8Array[]>) => void = noop;
+            let reject: (reason?: any) => any = noop;
+
+            const contentsPromise = new Promise<Uint8Array[]>((res, rej) => {
+                resolve = res;
+                reject = rej;
             });
 
-            const buffer = await streamToBuffer(fileStream);
+            const { downloadControls } = initDownload({
+                transformBlockStream: decryptBlockStream(linkId),
+                onStart: async (stream) => {
+                    resolve(streamToBuffer(stream));
+                    return getFileBlocks(linkId);
+                }
+            });
 
-            return buffer;
+            downloadControls.start(api).catch(reject);
+
+            return {
+                contents: contentsPromise,
+                controls: downloadControls
+            };
         },
         [shareId]
     );

@@ -49,7 +49,7 @@ const FileBrowser = ({
 
     return (
         <div className="flex flex-item-fluid" onClick={onEmptyAreaClick}>
-            <table className="pd-fb-table w100 noborder min-w35e">
+            <table className="pd-fb-table">
                 <thead>
                     <tr>
                         <th>

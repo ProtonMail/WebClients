@@ -10,6 +10,7 @@ import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import NavigationControl from './NavigationControl';
 import { DriveLink } from '../../interfaces/link';
+import useKeyPress from '../../hooks/useKeyPress';
 
 export const isSupportedImage = (mimeType: string) =>
     [
@@ -42,6 +43,26 @@ interface Props {
 }
 
 const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onClose, onSave }: Props) => {
+    const totalAvailable = availableLinks.length;
+    const linkId = meta && ('ID' in meta ? meta.ID : meta.LinkID);
+    const currentOpenIndex = availableLinks.findIndex(({ LinkID }) => LinkID === linkId);
+
+    const handleNext = () => currentOpenIndex < totalAvailable - 1 && onOpen?.(availableLinks[currentOpenIndex + 1]);
+    const handlePrev = () => currentOpenIndex > 0 && onOpen?.(availableLinks[currentOpenIndex - 1]);
+
+    useKeyPress(
+        (e) => {
+            if (e.key === 'Escape') {
+                onClose?.();
+            } else if (currentOpenIndex !== -1 && e.key === 'ArrowLeft') {
+                handlePrev();
+            } else if (currentOpenIndex !== -1 && e.key === 'ArrowRight') {
+                handleNext();
+            }
+        },
+        [currentOpenIndex]
+    );
+
     const renderPreview = () => {
         if (!meta || !isPreviewAvailable(meta.MimeType)) {
             return <UnsupportedPreview onSave={onSave} />;
@@ -58,22 +79,20 @@ const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onC
         }
     };
 
-    const linkId = meta && ('ID' in meta ? meta.ID : meta.LinkID);
-    const totalAvailable = availableLinks.length;
-    const currentOpenIndex = availableLinks.findIndex(({ LinkID }) => LinkID === linkId);
-
-    const handleNext = (current: number) => current < totalAvailable - 1 && onOpen?.(availableLinks[current + 1]);
-    const handlePrev = (current: number) => current > 0 && onOpen?.(availableLinks[current - 1]);
-
     return (
-        <div className="pd-file-preview">
+        <div
+            onKeyPress={() => {
+                console.log('asd');
+            }}
+            className="pd-file-preview"
+        >
             <Header name={meta?.Name} onClose={onClose} onSave={onSave}>
                 {totalAvailable > 0 && onOpen && currentOpenIndex !== -1 && (
                     <NavigationControl
                         current={currentOpenIndex + 1}
                         total={totalAvailable}
-                        onPrev={() => handlePrev(currentOpenIndex)}
-                        onNext={() => handleNext(currentOpenIndex)}
+                        onPrev={handlePrev}
+                        onNext={handleNext}
                     />
                 )}
             </Header>

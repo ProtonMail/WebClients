@@ -1,6 +1,11 @@
 $checkbox-cell-width: calc(#{em(32)} + 1.6rem);
 
 .pd-fb-table {
+    @extend .mb0;
+    @extend .pb2;
+    @extend .w100;
+    @extend .noborder;
+    @extend .min-w35e;
     border-collapse: separate;
     border-spacing: 0;
     table-layout: fixed;

@@ -9,7 +9,7 @@ interface Props {
 const TextPreview = ({ contents = [] }: Props) => {
     return (
         <div className="pd-file-preview-container">
-            <pre className="pd-file-preview-text">{arrayToBinaryString(mergeUint8Arrays(contents))}</pre>
+            <div className="pd-file-preview-text">{arrayToBinaryString(mergeUint8Arrays(contents))}</div>
         </div>
     );
 };
