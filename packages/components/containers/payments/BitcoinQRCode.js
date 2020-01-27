@@ -8,7 +8,7 @@ const BitcoinQRCode = ({ amount, address, type, ...rest }) => {
 };
 
 BitcoinQRCode.propTypes = {
-    amount: PropTypes.number.isRequired,
+    amount: PropTypes.number,
     address: PropTypes.string.isRequired,
     type: PropTypes.string
 };

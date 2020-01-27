@@ -6,13 +6,17 @@ import { Copy } from 'react-components';
 const BitcoinDetails = ({ amount, address }) => {
     return (
         <figcaption>
-            <div>{c('Label').t`BTC amount`}</div>
-            <div className="flex flex-nowrap flex-items-center mb1">
-                <span className="mr1" title={amount}>
-                    {amount}
-                </span>
-                <Copy className="pm-button--small flex-item-noshrink" value={amount} />
-            </div>
+            {amount ? (
+                <>
+                    <div>{c('Label').t`BTC amount`}</div>
+                    <div className="flex flex-nowrap flex-items-center mb1">
+                        <span className="mr1" title={amount}>
+                            {amount}
+                        </span>
+                        <Copy className="pm-button--small flex-item-noshrink" value={amount} />
+                    </div>
+                </>
+            ) : null}
             <div>{c('Label').t`BTC address`}</div>
             <div className="flex flex-nowrap flex-items-center mb1">
                 <span className="mr1 ellipsis" title={address}>
@@ -25,7 +29,7 @@ const BitcoinDetails = ({ amount, address }) => {
 };
 
 BitcoinDetails.propTypes = {
-    amount: PropTypes.number.isRequired,
+    amount: PropTypes.number,
     address: PropTypes.string.isRequired
 };
 

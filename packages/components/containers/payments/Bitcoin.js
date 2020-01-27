@@ -24,7 +24,7 @@ const Bitcoin = ({ amount, currency, type }) => {
             const { AmountBitcoin, Address } = await api(createBitcoinPayment(amount, currency));
 
             setAmountBitcoin(AmountBitcoin);
-            setAddress(type === 'donation' ? BTC_DONATION_ADDRESS : Address);
+            setAddress(Address);
         } catch (error) {
             setError(true);
         }
@@ -32,7 +32,11 @@ const Bitcoin = ({ amount, currency, type }) => {
 
     useEffect(() => {
         if (amount > MIN_BITCOIN_AMOUNT) {
-            withLoading(request());
+            if (type === 'donation') {
+                setAddress(BTC_DONATION_ADDRESS);
+            } else {
+                withLoading(request());
+            }
         }
     }, [amount]);
 
@@ -45,7 +49,7 @@ const Bitcoin = ({ amount, currency, type }) => {
         return <Loader />;
     }
 
-    if (error || !amountBitcoin || !address) {
+    if (error || !address) {
         return (
             <>
                 <Alert type="error">{c('Error').t`Error connecting to the Bitcoin API.`}</Alert>
