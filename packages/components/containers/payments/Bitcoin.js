@@ -31,7 +31,7 @@ const Bitcoin = ({ amount, currency, type }) => {
     };
 
     useEffect(() => {
-        if (amount > MIN_BITCOIN_AMOUNT) {
+        if (amount >= MIN_BITCOIN_AMOUNT) {
             if (type === 'donation') {
                 setAddress(BTC_DONATION_ADDRESS);
             } else {
