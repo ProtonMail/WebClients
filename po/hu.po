@@ -9,7 +9,7 @@ msgstr ""
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
 "Language-Team: Hungarian\n"
 "Language: hu_HU\n"
-"PO-Revision-Date: 2020-01-19 20:21\n"
+"PO-Revision-Date: 2020-01-26 19:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -8855,7 +8855,7 @@ msgstr "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, se bejelentkezni
 #: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
 msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm that you have typed your password correctly."
-msgstr "Jelszavát mentse el egy biztonságos helyre. Klikkeljen az <i class=\"fa fa-eye\"></i> ikonra, hogy megerősítse, helyes jelszót adott meg."
+msgstr "A jelszavát tárolja biztonságos helyen. A <i class=\"fa fa-eye\"></i> ikonra kattintva ellenőrizze, hogy helyesen írta be a jelszót."
 
 #: ./src/templates/views/reset-login-password.tpl.html:146
 msgctxt "Reset your password"
@@ -11377,8 +11377,8 @@ msgstr "címke"
 msgctxt "Title"
 msgid "{{$count}} Address"
 msgid_plural "{{$count}} Addresses"
-msgstr[0] "{{$count}} felhasználó"
-msgstr[1] "{{$count}} felhasználó"
+msgstr[0] "{{$count}} cím"
+msgstr[1] "{{$count}} cím"
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:51
 msgctxt "Title"
