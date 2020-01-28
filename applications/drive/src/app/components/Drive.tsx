@@ -132,7 +132,7 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
     const handleDoubleClick = async (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
         if (item.Type === ResourceType.FOLDER) {
-            openResource({ shareId: resource.shareId, linkId: item.LinkID, type: item.Type });
+            openResource({ shareId: resource.shareId, linkId: item.LinkID, type: item.Type }, item);
         } else if (item.Type === ResourceType.FILE) {
             if (item.MimeType && isPreviewAvailable(item.MimeType)) {
                 openResource({ shareId: resource.shareId, linkId: item.LinkID, type: item.Type }, item);

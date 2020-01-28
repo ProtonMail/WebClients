@@ -48,8 +48,9 @@ const toResource = (shareId?: string, type?: LinkType, linkId?: string): DriveRe
 
 function DriveContainer({
     match,
-    history
-}: RouteComponentProps<{ shareId?: string; type?: LinkType; linkId?: string }>) {
+    history,
+    location
+}: RouteComponentProps<{ shareId?: string; type?: LinkType; linkId?: string }, {}, FileBrowserItem | undefined>) {
     const { loadDrive } = useDrive();
     const { resource, setResource } = useDriveResource();
     const [, setError] = useState();
@@ -98,6 +99,7 @@ function DriveContainer({
                         selectedItems={fileBrowserControls.selectedItems}
                         resource={resource}
                         openResource={navigateToResource}
+                        parentLinkID={location.state?.ParentLinkID}
                     />
                 )
             }

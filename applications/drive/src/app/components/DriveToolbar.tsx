@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ToolbarSeparator, Toolbar, ToolbarButton } from 'react-components';
 import { DriveResource } from './DriveResourceProvider';
 import useShare from '../hooks/useShare';
-import { FolderMeta, ResourceType } from '../interfaces/folder';
+import { ResourceType } from '../interfaces/folder';
 import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import useFiles from '../hooks/useFiles';
 import FileSaver from '../utils/FileSaver/FileSaver';
@@ -11,23 +11,34 @@ import { getMetaForTransfer } from './Drive';
 interface Props {
     selectedItems: FileBrowserItem[];
     resource: DriveResource;
-    openResource: (resource: DriveResource) => void;
+    openResource: (resource: DriveResource, item?: FileBrowserItem) => void;
+    parentLinkID?: string;
 }
 
-const DriveToolbar = ({ resource, openResource, selectedItems }: Props) => {
+const DriveToolbar = ({ resource, openResource, selectedItems, parentLinkID }: Props) => {
     const { getFolderMeta } = useShare(resource.shareId);
     const { startFileTransfer } = useFiles(resource.shareId);
-    const [folder, setFolder] = useState<FolderMeta>();
+    const [parentID, setParentID] = useState(parentLinkID);
 
     useEffect(() => {
-        getFolderMeta(resource.linkId).then(({ Folder }) => setFolder(Folder));
-    }, [resource.linkId]);
+        let isCanceled = false;
+
+        if (!parentLinkID) {
+            getFolderMeta(resource.linkId).then(({ Folder }) => !isCanceled && setParentID(Folder.ParentLinkID));
+        } else if (parentID !== parentLinkID) {
+            setParentID(parentLinkID);
+        }
+
+        return () => {
+            isCanceled = true;
+        };
+    }, [parentLinkID, resource.linkId]);
 
     const onlyFilesSelected = selectedItems.every((item) => item.Type === ResourceType.FILE);
 
     const handleBackClick = () => {
-        if (folder?.ParentLinkID) {
-            openResource({ shareId: resource.shareId, linkId: folder.ParentLinkID, type: ResourceType.FOLDER });
+        if (parentID) {
+            openResource({ shareId: resource.shareId, linkId: parentID, type: ResourceType.FOLDER });
         }
     };
 
@@ -41,7 +52,7 @@ const DriveToolbar = ({ resource, openResource, selectedItems }: Props) => {
 
     return (
         <Toolbar>
-            {folder?.ParentLinkID && (
+            {parentID && (
                 <>
                     <ToolbarButton onClick={handleBackClick} icon="arrow-left" />
                     <ToolbarSeparator />
