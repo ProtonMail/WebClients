@@ -1,4 +1,4 @@
-import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE } from '../constants';
+import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES } from '../constants';
 import { toMap } from './object';
 import { hasBit } from './bitset';
 
@@ -135,23 +135,54 @@ export const removeService = (planIDs = {}, plans = [], service = PLAN_SERVICES.
     }, {});
 };
 
+const getAddonQuantity = (plan = {}, used = 0, key = '', addon = {}) => {
+    if (used <= plan[key]) {
+        return 0;
+    }
+
+    return Math.ceil((used - plan[key]) / addon[key]);
+};
+
 /**
  * Generate new configuration from plan selected
  * @param {Object} planIDs current configuration
  * @param {Array} plans coming from the API
  * @param {String} planID to switch to
  * @param {Integer} service to remove
+ * @param {Object} organization current
  * @returns {Object} new planIDs
  */
-export const switchPlan = ({ planIDs, plans, planID, service }) => {
-    const visionaryPlan = plans.find(({ Name }) => Name === PLANS.VISIONARY);
+export const switchPlan = ({ planIDs, plans, planID, service, organization }) => {
+    const plansMap = toMap(plans, 'Name');
 
-    if (planID === visionaryPlan.ID) {
-        return { [visionaryPlan.ID]: 1 };
+    if (planID === plansMap[PLANS.VISIONARY].ID) {
+        return { [plansMap[PLANS.VISIONARY].ID]: 1 };
     }
+
+    const { UsedDomains = 0, UsedAddresses = 0, UsedSpace = 0, UsedVPN = 0, UsedMembers = 0 } = organization;
+    const selectedPlan = plans.find(({ ID }) => ID === planID);
 
     return {
         ...removeService(planIDs, plans, service),
+        [plansMap[ADDON_NAMES.DOMAIN].ID]: [plansMap[PLANS.PLUS].ID, plansMap[PLANS.PROFESSIONAL].ID].includes(planID)
+            ? getAddonQuantity(selectedPlan, UsedDomains, 'MaxDomains', plansMap[ADDON_NAMES.DOMAIN])
+            : 0,
+        [plansMap[ADDON_NAMES.ADDRESS].ID]: [plansMap[PLANS.PLUS].ID].includes(planID)
+            ? getAddonQuantity(selectedPlan, UsedAddresses, 'MaxAddresses', plansMap[ADDON_NAMES.ADDRESS])
+            : 0,
+        [plansMap[ADDON_NAMES.SPACE].ID]: [plansMap[PLANS.PLUS].ID].includes(planID)
+            ? getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[ADDON_NAMES.SPACE])
+            : 0,
+        [plansMap[ADDON_NAMES.VPN].ID]: [plansMap[PLANS.VPNPLUS].ID].includes(planID)
+            ? getAddonQuantity(selectedPlan, UsedVPN, 'MaxVPN', plansMap[ADDON_NAMES.VPN])
+            : 0,
+        [plansMap[ADDON_NAMES.MEMBER].ID]: [plansMap[PLANS.PROFESSIONAL].ID].includes(planID)
+            ? Math.max([
+                  getAddonQuantity(selectedPlan, UsedMembers, 'MaxMembers', plansMap[ADDON_NAMES.MEMBER]),
+                  getAddonQuantity(selectedPlan, UsedAddresses, 'MaxAddresses', plansMap[ADDON_NAMES.MEMBER]),
+                  getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[ADDON_NAMES.MEMBER])
+              ])
+            : 0,
         ...(planID ? { [planID]: 1 } : {})
     };
 };
