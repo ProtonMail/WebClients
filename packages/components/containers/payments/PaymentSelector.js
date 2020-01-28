@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Input } from 'react-components';
 import { c } from 'ttag';
+import { isNumber } from 'proton-shared/lib/helpers/validators';
 
 import CurrencySelector from './CurrencySelector';
 import AmountButton from './AmountButton';
@@ -14,6 +15,9 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount })
         onChangeAmount(value);
     };
     const handleChange = ({ target }) => {
+        if (!isNumber(target.value)) {
+            return;
+        }
         setInputValue(target.value);
         onChangeAmount(Math.floor(target.value * 100));
     };

@@ -39,8 +39,8 @@ const Bitcoin = ({ amount, currency, type }) => {
     }, [amount, currency]);
 
     if (amount < MIN_BITCOIN_AMOUNT) {
-        const i18n = (amount) => c('Info').jt`Amount below minimum. (${amount})`;
-        return <Alert type="warning">{i18n(<Price currency={currency}>{amount}</Price>)}</Alert>;
+        const i18n = (amount) => c('Info').jt`Amount below minimum (${amount}).`;
+        return <Alert type="warning">{i18n(<Price currency={currency}>{MIN_BITCOIN_AMOUNT}</Price>)}</Alert>;
     }
 
     if (loading) {

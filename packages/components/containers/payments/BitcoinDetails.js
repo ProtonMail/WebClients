@@ -13,7 +13,7 @@ const BitcoinDetails = ({ amount, address }) => {
                         <span className="mr1" title={amount}>
                             {amount}
                         </span>
-                        <Copy className="pm-button--small flex-item-noshrink" value={amount} />
+                        <Copy className="pm-button--small flex-item-noshrink" value={`${amount}`} />
                     </div>
                 </>
             ) : null}
