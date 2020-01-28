@@ -61,7 +61,13 @@ export const deletePaymentMethod = (methodID) => ({
 });
 
 export const createBitcoinPayment = (Amount, Currency) => ({
-    url: 'payments/bcinfo',
+    url: 'payments/bitcoin',
+    method: 'post',
+    data: { Amount, Currency }
+});
+
+export const createBitcoinDonation = (Amount, Currency) => ({
+    url: 'payments/bitcoin/donate',
     method: 'post',
     data: { Amount, Currency }
 });
