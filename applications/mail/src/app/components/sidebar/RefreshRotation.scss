@@ -1,0 +1,11 @@
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.location-refresh-rotate {
+    animation: rotating 0.5s linear infinite;
+}

@@ -35,7 +35,7 @@ const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, welcomeR
         }
 
         return counters.find((counter) => counter.LabelID === labelID) || { LabelID: '', Unread: 0, Total: 0 };
-    }, [conversationCounts, messageCounts]);
+    }, [labelID, conversationCounts, messageCounts]);
 
     return welcomeRef.current || checkedIDs.length > 0 ? (
         <SelectionPane labelCount={labelCount} checkedIDs={checkedIDs} onUncheckAll={onUncheckAll} />

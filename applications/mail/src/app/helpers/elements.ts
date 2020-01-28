@@ -1,10 +1,14 @@
 import { formatRelative, format } from 'date-fns';
+import { toMap } from 'proton-shared/lib/helpers/object';
 
 import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
 import { Sort } from '../models/tools';
 import { Message } from '../models/message';
 import { isConversationMode } from './mailSettings';
+import { LabelCount, Label } from '../models/label';
+import { MailSettings } from '../models/utils';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 export interface TypeParams {
     labelID?: string;
@@ -71,4 +75,22 @@ export const sort = (elements: Element[], sort: Sort, labelID: string) => {
         return sort.desc ? valueB - valueA : valueA - valueB;
     };
     return [...elements].sort((e1, e2) => compare(e1, e2));
+};
+
+export const getCounterMap = (
+    labels: Label[],
+    conversationCounters: LabelCount[],
+    messageCounters: LabelCount[],
+    mailSettings: MailSettings
+) => {
+    const labelIDs = [...Object.values(MAILBOX_LABEL_IDS), ...labels.map((label) => label.ID || '')];
+    const conversationCountersMap = toMap(conversationCounters, 'LabelID') as { [labelID: string]: LabelCount };
+    const messageCountersMap = toMap(messageCounters, 'LabelID') as { [labelID: string]: LabelCount };
+
+    return labelIDs.reduce((acc, labelID) => {
+        const conversationMode = isConversationMode(labelID, mailSettings);
+        const countersMap = conversationMode ? conversationCountersMap : messageCountersMap;
+        acc[labelID] = countersMap[labelID];
+        return acc;
+    }, {} as { [labelID: string]: LabelCount | undefined });
 };

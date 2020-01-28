@@ -1,14 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Route } from 'react-router-dom';
 import { AppsSidebar, StorageSpaceStatus, MainAreaContext, Href } from 'react-components';
 import { normalize } from 'proton-shared/lib/helpers/string';
 
 import PrivateHeader from '../header/PrivateHeader';
 import PrivateSidebar from '../sidebar/PrivateSidebar';
 
-const PrivateLayout = ({ children, location, history, labelID }) => {
+const PrivateLayout = ({ children, location, labelID }) => {
     const mainAreaRef = useRef();
     const [expanded, setExpand] = useState(false);
 
@@ -44,7 +43,7 @@ const PrivateLayout = ({ children, location, history, labelID }) => {
                     onSearch={handleSearch}
                 />
                 <div className="flex flex-nowrap">
-                    <Route path="/:path" render={() => <PrivateSidebar labelID={labelID} expanded={expanded} />} />
+                    <PrivateSidebar labelID={labelID} expanded={expanded} location={location} />
                     <div className="main flex-item-fluid scroll-smooth-touch" ref={mainAreaRef}>
                         <div className="flex-item-fluid">
                             <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
@@ -59,7 +58,6 @@ const PrivateLayout = ({ children, location, history, labelID }) => {
 PrivateLayout.propTypes = {
     children: PropTypes.node.isRequired,
     location: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired,
     labelID: PropTypes.string.isRequired
 };
 
