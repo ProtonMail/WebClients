@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Switch, Redirect, withRouter, RouteComponentProps } from 'react-router-dom';
 import { StandardPrivateApp } from 'react-components';
 import { UserModel, AddressesModel } from 'proton-shared/lib/models';
 
@@ -13,11 +13,18 @@ import AppErrorBoundary from './components/AppErrorBoundary';
 import PreviewContainer from './containers/PreviewContainer';
 import { LinkType } from './interfaces/folder';
 
-interface Props {
+interface Props extends RouteComponentProps {
     onLogout: () => void;
 }
 
-const PrivateApp = ({ onLogout }: Props) => {
+const PrivateApp = ({ onLogout, history }: Props) => {
+    useEffect(() => {
+        // Reset URL after logout
+        return () => {
+            history.push('/');
+        };
+    }, []);
+
     return (
         <StandardPrivateApp
             openpgpConfig={openpgpConfig}
@@ -48,4 +55,4 @@ const PrivateApp = ({ onLogout }: Props) => {
     );
 };
 
-export default PrivateApp;
+export default withRouter(PrivateApp);
