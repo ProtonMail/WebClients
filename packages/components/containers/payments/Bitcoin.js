@@ -36,7 +36,7 @@ const Bitcoin = ({ amount, currency, type }) => {
         if (amount >= MIN_BITCOIN_AMOUNT) {
             withLoading(request());
         }
-    }, [amount]);
+    }, [amount, currency]);
 
     if (amount < MIN_BITCOIN_AMOUNT) {
         const i18n = (amount) => c('Info').jt`Amount below minimum. (${amount})`;
