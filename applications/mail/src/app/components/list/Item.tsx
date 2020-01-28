@@ -4,14 +4,16 @@ import { getInitial } from 'proton-shared/lib/helpers/string';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from 'proton-shared/lib/constants';
 
 import ItemCheckbox from './ItemCheckbox';
-import { getSenders, getRecipients } from '../../helpers/conversation';
-import { getSender, getRecipients as getMessageRecipients } from '../../helpers/message/messages';
+import { getRecipients as getMessageRecipients, getSender, getRecipients } from '../../helpers/message/messages';
 import { getCurrentType, isUnread } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import { Label } from '../../models/label';
 import { Element } from '../../models/element';
 import { ELEMENT_TYPES } from '../../constants';
+import { getSenders } from '../../helpers/conversation';
+import { getRecipientLabel, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../helpers/addresses';
+import { ContactEmail, ContactGroup } from '../../models/contact';
 
 const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -22,17 +24,35 @@ interface Props {
     mailSettings: any;
     element: Element;
     checked?: boolean;
+    contacts: ContactEmail[];
+    contactGroups: ContactGroup[];
     onCheck: (event: ChangeEvent) => void;
-    onClick: (ID: string) => void;
+    onClick: (element: Element) => void;
 }
 
-const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked = false, onCheck, onClick }: Props) => {
+const Item = ({
+    labelID,
+    labels,
+    element,
+    elementID,
+    mailSettings = {},
+    checked = false,
+    contacts,
+    contactGroups,
+    onCheck,
+    onClick
+}: Props) => {
     const { ID = '' } = element;
     const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
     const type = getCurrentType({ mailSettings, labelID });
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
     const senders = isConversation ? getSenders(element) : [getSender(element)];
     const recipients = isConversation ? getRecipients(element) : getMessageRecipients(element);
+    const sendersLabels = senders.map(getRecipientLabel);
+    const recipientsOrGroup = recipientsToRecipientOrGroup(recipients, contactGroups);
+    const recipientsLabels = recipientsOrGroup.map((recipientOrGroup) =>
+        getRecipientOrGroupLabel(recipientOrGroup, contacts)
+    );
 
     const { ViewLayout = VIEW_LAYOUT.COLUMN } = mailSettings;
     const isColumnMode = ViewLayout === VIEW_LAYOUT.COLUMN;
@@ -45,7 +65,7 @@ const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked 
             event.stopPropagation();
             return;
         }
-        onClick(ID);
+        onClick(element);
     };
 
     return (
@@ -59,14 +79,14 @@ const Item = ({ labelID, labels, element, elementID, mailSettings = {}, checked 
             ])}
         >
             <ItemCheckbox className="mr1 item-checkbox" checked={checked} onChange={onCheck}>
-                {getInitial(displayRecipients ? recipients[0] : senders[0])}
+                {getInitial(displayRecipients ? recipientsLabels[0] : sendersLabels[0])}
             </ItemCheckbox>
             <ItemLayout
                 labels={labels}
                 element={element}
                 mailSettings={mailSettings}
                 type={type}
-                senders={(displayRecipients ? recipients : senders).join(', ')}
+                senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
                 unread={unread}
             />
         </div>

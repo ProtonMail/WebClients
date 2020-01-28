@@ -1,18 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Icon, useLoading, useApi, useEventManager, classnames } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { labelMessages, unlabelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/conversations';
 
 import { ELEMENT_TYPES } from '../../constants';
+import { Element } from '../../models/element';
+import { getLabelIds } from '../../helpers/elements';
 
-const ItemStar = ({ element = {}, type = ELEMENT_TYPES.CONVERSATION }) => {
+interface Props {
+    element?: Element;
+    type: string;
+}
+
+const ItemStar = ({ element = {}, type }: Props) => {
     const api = useApi();
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
-    const labelIDs = isConversation ? element.Labels.map(({ ID }) => ID) : element.LabelIDs;
+    const labelIDs = getLabelIds(element);
     const isStarred = labelIDs.includes(MAILBOX_LABEL_IDS.STARRED);
     const iconName = isStarred ? 'starfull' : 'star';
 
@@ -38,11 +44,6 @@ const ItemStar = ({ element = {}, type = ELEMENT_TYPES.CONVERSATION }) => {
             <Icon name={iconName} fill="" />
         </button>
     );
-};
-
-ItemStar.propTypes = {
-    type: PropTypes.oneOf([ELEMENT_TYPES.CONVERSATION, ELEMENT_TYPES.MESSAGE]).isRequired,
-    element: PropTypes.object.isRequired
 };
 
 export default ItemStar;

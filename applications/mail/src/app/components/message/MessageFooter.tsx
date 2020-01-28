@@ -27,7 +27,7 @@ const MessageFooter = ({ message }: Props) => {
 
     const handleDownloadAll = async () => {
         setShowLoader(true);
-        await downloadAll(message, cache, api);
+        await downloadAll(message, cache.data, api);
         setShowLoader(false);
         setShowInstant(true);
     };

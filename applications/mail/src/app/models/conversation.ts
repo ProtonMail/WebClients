@@ -1,5 +1,5 @@
-import { Recipient } from './message';
 import { Label } from './label';
+import { Recipient } from './address';
 
 export interface Conversation {
     ID?: string;

@@ -12,7 +12,7 @@ import {
 import { getAttachment } from '../../api/attachments';
 import { MessageExtended } from '../../models/message';
 import { Attachment } from '../../models/attachment';
-import { AttachmentsCache } from '../../hooks/useAttachments';
+import { AttachmentsDataCache } from '../../hooks/useAttachments';
 import { Api } from '../../models/utils';
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
@@ -34,7 +34,7 @@ export const decrypt = async (encryptedBinaryBuffer: ArrayBuffer, sessionKey: Se
     }
 };
 
-export const getRequest = ({ ID }: Attachment = {}, api: Api): Promise<ArrayBuffer> => {
+export const getRequest = ({ ID = '' }: Attachment = {}, api: Api): Promise<ArrayBuffer> => {
     // if (isOutside()) {
     //     const decryptedToken = eoStore.getToken();
     //     const token = $stateParams.tag;
@@ -90,7 +90,7 @@ export const getAndVerify = async (
     attachment: Attachment = {},
     message: MessageExtended = {},
     reverify = false,
-    cache: AttachmentsCache,
+    cache: AttachmentsDataCache,
     api: Api
 ): Promise<BinaryResult> => {
     let attachmentdata: BinaryResult;
@@ -119,7 +119,7 @@ export const getAndVerify = async (
 export const get = (
     attachment: Attachment = {},
     message: MessageExtended = {},
-    cache: AttachmentsCache,
+    cache: AttachmentsDataCache,
     api: Api
 ): Promise<BinaryResult> => {
     const reverify = false;
@@ -129,7 +129,7 @@ export const get = (
 export const reverify = (
     attachment: Attachment = {},
     message: MessageExtended = {},
-    cache: AttachmentsCache,
+    cache: AttachmentsDataCache,
     api: Api
 ): Promise<BinaryResult> => {
     const reverify = true;

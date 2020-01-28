@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { RouteChildrenProps } from 'react-router';
 import { Route } from 'react-router-dom';
 import { StandardPrivateApp } from 'react-components';
 
@@ -18,8 +18,15 @@ import {
 import locales from './locales';
 import PageContainer from './containers/PageContainer';
 import MessageProvider from './containers/MessageProvider';
+import ComposerContainer from './containers/ComposerContainer';
 
-const PrivateApp = ({ onLogout }) => {
+export type RouteProps = RouteChildrenProps<{ labelID: string; elementID?: string }>;
+
+interface Props {
+    onLogout: () => void;
+}
+
+const PrivateApp = ({ onLogout }: Props) => {
     return (
         <StandardPrivateApp
             onLogout={onLogout}
@@ -38,14 +45,17 @@ const PrivateApp = ({ onLogout }) => {
             ]}
         >
             <MessageProvider>
-                <Route path="/:labelID/:elementID?" component={PageContainer} />
+                <ComposerContainer>
+                    {({ onCompose }) => (
+                        <Route
+                            path="/:labelID/:elementID?"
+                            render={(routeProps: RouteProps) => <PageContainer {...routeProps} onCompose={onCompose} />}
+                        />
+                    )}
+                </ComposerContainer>
             </MessageProvider>
         </StandardPrivateApp>
     );
-};
-
-PrivateApp.propTypes = {
-    onLogout: PropTypes.func.isRequired
 };
 
 export default PrivateApp;

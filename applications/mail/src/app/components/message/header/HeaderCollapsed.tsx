@@ -5,7 +5,7 @@ import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import { ELEMENT_TYPES } from '../../../constants';
 import MessageLock from '../MessageLock';
-import { isSent } from '../../../helpers/message/messages';
+import { isSent, isDraft } from '../../../helpers/message/messages';
 import ItemLabels from '../../list/ItemLabels';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
@@ -46,8 +46,9 @@ const HeaderCollapsed = ({ message, labels, onExpand }: Props) => {
                 <MessageLock message={message} />
             </div>
             <div>
+                {isDraft(message.data) && <span className="badgeLabel-success">{c('Info').t`Draft`}</span>}
                 <ItemAttachmentIcon element={message.data} type={ELEMENT_TYPES.MESSAGE} />
-                <ItemLabels element={message.data || {}} labels={labels} type={ELEMENT_TYPES.MESSAGE} className="mr1" />
+                <ItemLabels element={message.data || {}} labels={labels} className="mr1" />
                 <ItemDate className="mr1" element={message.data || {}} mode="distance" />
                 <ItemStar element={message.data} type={ELEMENT_TYPES.MESSAGE} />
             </div>

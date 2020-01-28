@@ -22,7 +22,10 @@ describe('MailboxContainer', () => {
         mailSettings: {},
         elementID,
         location: {} as Location,
-        history: {} as History
+        history: {} as History,
+        onCompose: () => {
+            /* not empty */
+        }
     };
 
     it('should show loader instead of list when elements loading', () => {

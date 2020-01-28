@@ -123,21 +123,22 @@ export const unescapeSrc = (value = '') => value.replace(/ data-src=/g, ' src=')
 //     };
 // };
 
-export const matches = (node, selector) => (node.matches || node.msMatchesSelector).call(node, selector);
+export const matches = (element: Element, selector: string) =>
+    (element.matches || (element as any).msMatchesSelector).call(element, selector);
 
-export const wrap = (element, html) => {
+export const wrap = (element: Element, html: string) => {
     const container = document.createElement('div');
     container.innerHTML = html;
 
-    const wrapper = container.firstChild;
+    const wrapper = container.firstChild as Element;
 
     wrapper.innerHTML = element.outerHTML;
 
-    element.parentNode.insertBefore(wrapper, element);
+    element.parentNode?.insertBefore(wrapper, element);
     element.remove();
 };
 
-export const parseInDiv = (content) => {
+export const parseInDiv = (content: string) => {
     const div = document.createElement('div');
     div.innerHTML = content;
     return div;

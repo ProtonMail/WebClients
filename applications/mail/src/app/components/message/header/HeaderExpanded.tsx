@@ -1,11 +1,11 @@
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
-import { Icon, Group, ButtonGroup, useToggle } from 'react-components';
+import { Icon, Group, ButtonGroup, useToggle, useContactEmails } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
-import { ELEMENT_TYPES } from '../../../constants';
+import { ELEMENT_TYPES, MESSAGE_ACTIONS } from '../../../constants';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import MoveDropdown from '../../dropdown/MoveDropdown';
@@ -18,9 +18,12 @@ import HeaderRecipientsDetails from './HeaderRecipientsDetails';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
 import { Label } from '../../../models/label';
+import HeaderDropdown from './HeaderDropdown';
+import { OnCompose } from '../../../containers/ComposerContainer';
 
 import './MessageHeader.scss';
-import HeaderDropdown from './HeaderDropdown';
+import { ContactEmail } from '../../../models/contact';
+import { useContactGroups } from '../../../hooks/useContactGroups';
 
 interface Props {
     labels?: Label[];
@@ -30,6 +33,7 @@ interface Props {
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
     onCollapse: () => void;
+    onCompose: OnCompose;
 }
 
 const HeaderExpanded = ({
@@ -39,8 +43,11 @@ const HeaderExpanded = ({
     onLoadRemoteImages,
     onLoadEmbeddedImages,
     mailSettings,
-    onCollapse
+    onCollapse,
+    onCompose
 }: Props) => {
+    const [contacts]: [ContactEmail[]] = useContactEmails();
+    const [contactGroups] = useContactGroups();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
 
     const { Name, Address } = (message.data || {}).Sender || {};
@@ -53,6 +60,12 @@ const HeaderExpanded = ({
         }
 
         onCollapse();
+    };
+    const handleCompose = (action: MESSAGE_ACTIONS) => () => {
+        onCompose({
+            action,
+            referenceMessage: message
+        });
     };
 
     return (
@@ -75,14 +88,14 @@ const HeaderExpanded = ({
             </div>
             <div className="flex flex-nowrap flex-items-start flex-spacebetween ml1 mr1 mb0-5">
                 {showDetails ? (
-                    <HeaderRecipientsDetails message={message.data} />
+                    <HeaderRecipientsDetails message={message.data} contacts={contacts} contactGroups={contactGroups} />
                 ) : (
-                    <HeaderRecipientsSimple message={message.data} />
+                    <HeaderRecipientsSimple message={message.data} contacts={contacts} contactGroups={contactGroups} />
                 )}
                 <div>
                     <ItemAttachmentIcon element={message.data || {}} type={ELEMENT_TYPES.MESSAGE} />
                     {' ' /* This space is important to keep a small space between elements */}
-                    <ItemLabels max={4} element={message.data || {}} labels={labels} type={ELEMENT_TYPES.MESSAGE} />
+                    <ItemLabels max={4} element={message.data || {}} labels={labels} />
                     {' ' /* This space is important to keep a small space between elements */}
                     <ItemLocation message={message.data || {}} mailSettings={mailSettings} />
                     {' ' /* This space is important to keep a small space between elements */}
@@ -127,13 +140,13 @@ const HeaderExpanded = ({
                     </Group>
 
                     <Group>
-                        <ButtonGroup disabled={!messageLoaded}>
+                        <ButtonGroup disabled={!messageLoaded} onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}>
                             <Icon name="reply" />
                         </ButtonGroup>
-                        <ButtonGroup disabled={!messageLoaded}>
+                        <ButtonGroup disabled={!messageLoaded} onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}>
                             <Icon name="reply-all" />
                         </ButtonGroup>
-                        <ButtonGroup disabled={!messageLoaded}>
+                        <ButtonGroup disabled={!messageLoaded} onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}>
                             <Icon name="forward" />
                         </ButtonGroup>
                     </Group>

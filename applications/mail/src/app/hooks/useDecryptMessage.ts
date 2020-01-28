@@ -24,7 +24,7 @@ export const useDecryptMessage = () => {
             // TODO: filter out compromised addresses (if not done already)
 
             if (isMIME(message)) {
-                return decryptMimeMessage(message, privateKeys, publicKeys, attachmentsCache);
+                return decryptMimeMessage(message, privateKeys, publicKeys, attachmentsCache.data);
             }
 
             return decryptLegacyMessage(message, privateKeys, publicKeys);

@@ -1,0 +1,224 @@
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+
+.composer {
+    position: absolute;
+    bottom: 1rem;
+    z-index: 300;
+
+    height: 520px;
+    width: 600px;
+
+    background: var(--bgcolor-main-area, $white);
+    box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
+    color: var(--color-main-area, $pm-global-grey);
+}
+
+.composer-blur * {
+    opacity: 0.8;
+}
+
+.composer-title-bar {
+    width: calc(100% + 1em);
+    padding: 0.5em;
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+    margin-left: -0.5em;
+
+    background: var(--bgcolor-main-area, #3c414e);
+    color: #fff;
+}
+
+.composer-minimized .composer-title-bar {
+    margin-bottom: 0;
+}
+
+.pm-button.composer-title-bar-button {
+    padding: 0 0.5em;
+    background: unset;
+    border: unset;
+    border-radius: unset;
+
+    display: flex;
+    color: #fff;
+}
+
+.pm-button.composer-title-bar-button:hover {
+    box-shadow: unset;
+}
+
+.pm-button.composer-title-bar-button:active {
+    background: unset;
+}
+
+.composer-meta-label,
+.pm-label.composer-meta-label {
+    padding-top: 0;
+    padding-right: 1em;
+    max-width: 8em;
+    width: 15%;
+}
+
+.composer-meta-label .pm-label {
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    &:not(:first-child) {
+        margin-top: 7px;
+    }
+}
+
+.composer-meta .composer-addresses-fakefield {
+    padding: 6px 0.85em;
+    min-height: 35px;
+    max-height: 2.5em;
+    background: var(--bgcolor-input, #fcfdff);
+}
+
+.composer-addresses-container-line:not(:first-child) {
+    padding-right: 30px;
+}
+
+.composer-addresses-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 2.6rem;
+    vertical-align: middle;
+    width: 100%;
+    position: relative;
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding-top: 6px;
+    padding-bottom: 1px;
+
+    input {
+        border: none;
+        padding: 0;
+        margin-bottom: 5px;
+        min-width: 100px;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.composer-addresses-autocomplete {
+    ul {
+        position: absolute;
+        left: 0;
+        top: calc(100% + 5px);
+        z-index: 10;
+        list-style: none;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16);
+        background: var(--bgcolor-input, #fcfdff);
+        width: calc(100% - 40px);
+        margin: 0 0 0 20px;
+        padding: 0;
+    }
+
+    li {
+        cursor: pointer;
+        padding: 0.5em;
+
+        &[aria-selected='true'] {
+            background-color: rgba($pm-primary, 0.2);
+        }
+    }
+
+    .visually-hidden {
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+    }
+}
+
+.composer-addresses-item {
+    background-color: var(--bgcolor-item-column-list, #f6f7fa);
+    margin-bottom: 5px;
+    margin-right: 5px;
+    text-shadow: none;
+}
+
+.composer-addresses-item.invalid {
+    border-color: #fc2929;
+    color: #fc2929;
+}
+
+.composer-addresses-item-label {
+    border-left: 1px solid var(--bordercolor-input, #dde6ec);
+    border-right: 1px solid var(--bordercolor-input, #dde6ec);
+}
+
+.composer-addresses-item-remove {
+    background: none;
+    border: none;
+}
+
+.addresses-contacts-table {
+    th:first-child {
+        width: 35px;
+    }
+}
+
+.composer-quill {
+    height: 100%;
+    margin-bottom: 42px; // compensate for Quill strange auto sizing
+}
+
+.composer-attachments-button-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 5px; // hack to save space for the hover halo on the button
+    margin: -5px;
+
+    input[type='file'] {
+        font-size: 22px;
+        margin: 5px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    input[type='file']:hover + .pm-button,
+    input[type='file']:focus + .pm-button,
+    input[type='file']:focus-within + .pm-button {
+        color: $pm-global-grey;
+        box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+    }
+
+    input[type='file']:active + .pm-button {
+        background: radial-gradient(closest-side, $white, $pm-global-border 90%);
+        box-shadow: none;
+    }
+}
+
+// Keep minimal size when activity label is empty
+.composer-send-button {
+    min-height: 34px;
+    min-width: 39px;
+}
+
+.composer-attachments-expand {
+    overflow: auto;
+    border-top: 1px solid #dde6ec;
+}
+
+.composer-attachments-item {
+    margin-top: 10px;
+    width: 50%;
+
+    &:first-child,
+    &:nth-child(2) {
+        margin-top: 0;
+    }
+    &:nth-child(even) {
+        padding-left: 5px;
+    }
+    &:nth-child(odd) {
+        padding-right: 5px;
+    }
+}

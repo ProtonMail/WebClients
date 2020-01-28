@@ -3,20 +3,11 @@ import { useInstance, useEventManager } from 'react-components';
 import createCache from 'proton-shared/lib/helpers/cache';
 import createLRU from 'proton-shared/lib/helpers/lru';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { Message, MessageExtended } from '../models/message';
+import { MessageExtended } from '../models/message';
+import { Event } from '../models/event';
 
 interface Props {
     children: JSX.Element;
-}
-
-interface Event {
-    Messages?: MessageEvent[];
-}
-
-interface MessageEvent {
-    ID: string;
-    Action: number;
-    Message: Message;
 }
 
 export interface Cache<Key, Value> {
@@ -54,10 +45,7 @@ const MessageProvider = ({ children }: Props) => {
                 if (Action === EVENT_ACTIONS.DELETE) {
                     cache.delete(ID);
                 }
-                if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-                    console.warn('Event type UPDATE_DRAFT on Message not supported', Messages);
-                }
-                if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+                if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
                     cache.set(ID, { ...cache.get(ID), ...Message });
                 }
             }

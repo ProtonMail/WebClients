@@ -25,8 +25,10 @@ import List from '../components/list/List';
 import ConversationView from '../components/conversation/ConversationView';
 import PlaceholderView from '../components/view/PlaceholderView';
 import MessageOnlyView from '../components/message/MessageOnlyView';
-
+import { OnCompose } from './ComposerContainer';
 import { PAGE_SIZE } from '../constants';
+import { isMessage } from '../helpers/elements';
+import { isDraft } from '../helpers/message/messages';
 
 import './main-area.scss';
 
@@ -36,6 +38,7 @@ interface Props {
     elementID?: string;
     location: Location;
     history: History;
+    onCompose: OnCompose;
 }
 
 const MailboxContainer = ({
@@ -43,7 +46,8 @@ const MailboxContainer = ({
     mailSettings,
     elementID: inputElementID,
     location,
-    history
+    history,
+    onCompose
 }: Props) => {
     const columnMode = isColumnMode(mailSettings);
     const conversationMode = isConversationMode(inputLabelID, mailSettings);
@@ -106,7 +110,12 @@ const MailboxContainer = ({
         return [];
     }, [checkedIDs, elementID]);
 
-    const handleElement = (elementID: string) => history.push(setPathInUrl(location, labelID, elementID));
+    const handleElement = (element: Element) => {
+        history.push(setPathInUrl(location, labelID, element.ID));
+        if (isMessage(element) && isDraft(element)) {
+            onCompose({ existingDraft: { data: element } });
+        }
+    };
     const handleBack = () => history.push(setPathInUrl(location, labelID));
     const handlePage = (pageNumber: number) => history.push(setPageInUrl(location, pageNumber));
     const handleSort = (sort: Sort) => history.push(setSortInUrl(location, sort));
@@ -179,9 +188,14 @@ const MailboxContainer = ({
                                     labelID={labelID}
                                     mailSettings={mailSettings}
                                     conversationID={elementID}
+                                    onCompose={onCompose}
                                 />
                             ) : (
-                                <MessageOnlyView mailSettings={mailSettings} messageID={elementID} />
+                                <MessageOnlyView
+                                    mailSettings={mailSettings}
+                                    messageID={elementID}
+                                    onCompose={onCompose}
+                                />
                             )
                         ) : (
                             <PlaceholderView

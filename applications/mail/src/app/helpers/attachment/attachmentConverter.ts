@@ -3,7 +3,7 @@ import { BinaryResult } from 'pmcrypto';
 import { Message } from '../../models/message';
 import { ENCRYPTED_STATUS } from '../../constants';
 import { Attachment, AttachmentMime } from '../../models/attachment';
-import { AttachmentsCache } from '../../hooks/useAttachments';
+import { AttachmentsDataCache } from '../../hooks/useAttachments';
 
 // This prefix is really useful to distinguish 'real' attachments from pgp attachments.
 const ID_PREFIX = 'PGPAttachment';
@@ -46,7 +46,7 @@ const convertSingle = (
     parsedAttachment: AttachmentMime,
     number: number,
     verified: number,
-    cache: AttachmentsCache
+    cache: AttachmentsDataCache
 ): Attachment => {
     const ID = getId(message, parsedAttachment, number);
 
@@ -79,7 +79,7 @@ export const convert = (
     message: Message,
     attachments: AttachmentMime[],
     verified: number,
-    cache: AttachmentsCache
+    cache: AttachmentsDataCache
 ): Attachment[] => {
     return attachments.map((attachment, number) => convertSingle(message, attachment, number, verified, cache));
 };

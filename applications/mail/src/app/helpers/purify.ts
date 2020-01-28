@@ -24,12 +24,12 @@ const { LIST_PROTON_ATTR, MAP_PROTON_ATTR } = [
         return acc;
     },
     {
-        LIST_PROTON_ATTR: [],
+        LIST_PROTON_ATTR: [] as string[],
         MAP_PROTON_ATTR: Object.create(null)
     }
 );
 
-const CONFIG = {
+const CONFIG: { [key: string]: any } = {
     default: {
         ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp|data):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i, // eslint-disable-line no-useless-escape
         ADD_TAGS: ['proton-src', 'base', 'proton-svg'],
@@ -59,7 +59,7 @@ const CONFIG = {
  * @param  {String} style
  * @return {String}
  */
-const escapeURLinStyle = (style) => {
+const escapeURLinStyle = (style: string) => {
     // handle the case where the value is html encoded, e.g.:
     // background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)
 
@@ -76,7 +76,7 @@ const escapeURLinStyle = (style) => {
     return escapeFlag ? escape(escapedStyle) : escapedStyle;
 };
 
-function beforeSanitizeElements(node) {
+function beforeSanitizeElements(node: Element) {
     // We only work on elements
     if (node.nodeType !== 1) {
         return node;
@@ -85,12 +85,12 @@ function beforeSanitizeElements(node) {
     Array.from(node.attributes).forEach((type) => {
         const item = type.name;
         if (MAP_PROTON_ATTR[item]) {
-            node.setAttribute('proton-' + item, node.getAttribute(item));
+            node.setAttribute('proton-' + item, node.getAttribute(item) || '');
             node.removeAttribute(item);
         }
 
         if (item === 'style') {
-            const escaped = escapeURLinStyle(node.getAttribute('style'));
+            const escaped = escapeURLinStyle(node.getAttribute('style') || '');
             node.setAttribute('style', escaped);
         }
     });
@@ -98,7 +98,7 @@ function beforeSanitizeElements(node) {
     return node;
 }
 
-export const purifyHTMLHooks = (active) => {
+export const purifyHTMLHooks = (active: boolean) => {
     if (active) {
         return DOMPurify.addHook('beforeSanitizeElements', beforeSanitizeElements);
     }
@@ -106,10 +106,12 @@ export const purifyHTMLHooks = (active) => {
     DOMPurify.removeHook('beforeSanitizeElements');
 };
 
-const getConfig = (type) => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
-const clean = (mode) => {
+const getConfig = (type: string) => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
+
+const clean = (mode: string) => {
     const config = getConfig(mode);
-    return (input) => {
+
+    return (input: string | Node): string | Node => {
         DOMPurify.clearConfig();
         const value = DOMPurify.sanitize(input, config);
         purifyHTMLHooks(false); // Always remove the hooks
@@ -123,40 +125,32 @@ const clean = (mode) => {
 
 /**
  * Custom config only for messages
- * @param  {String} input
- * @return {String}
  */
-export const message = clean('str');
+export const message = clean('str') as (input: string) => string;
 
 /**
  * Sanitize input with a config similar than Squire + ours
- * @param  {String} input
- * @return {Document}
  */
-export const html = clean('raw');
+export const html = clean('raw') as (input: Node) => Node;
 
 /**
  * Sanitize input with a config similar than Squire + ours
- * @param  {String} input
- * @return {Document}
  */
-export const protonizer = (input, attachHooks) => {
+export const protonizer = (input: string, attachHooks: boolean): Node => {
     const process = clean('protonizer');
     purifyHTMLHooks(attachHooks);
-    return process(input);
+    return process(input) as Node;
 };
 
 /**
  * Sanitize input and returns the whole document
- * @param  {String} input
- * @return {Document}
+
  */
-export const content = clean('content');
+export const content = clean('content') as (input: string) => Node;
 
 /**
  * Default config we don't want any custom behaviour
- * @return {String}
  */
-export const input = (str) => DOMPurify.sanitize(str) + '';
+export const input = (str: string) => DOMPurify.sanitize(str, {}) + '';
 
 export const toTagUnicode = unicodeTag;

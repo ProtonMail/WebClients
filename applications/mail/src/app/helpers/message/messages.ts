@@ -1,8 +1,10 @@
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { hasBit, setBit } from 'proton-shared/lib/helpers/bitset';
+import { identity } from 'proton-shared/lib/helpers/function';
 
 import { MESSAGE_FLAGS, SIGNATURE_START } from '../../constants';
-import { Message } from '../../models/message';
+import { Message, MessageExtended } from '../../models/message';
+import { toText } from '../parserHtml';
 
 const {
     FLAG_RECEIVED,
@@ -23,14 +25,15 @@ const { PLAINTEXT, MIME } = MIME_TYPES;
 
 /**
  * Check if a message has a mime type
- * @return {function({MIMEType}): boolean}
  */
-const hasMimeType = (type: string) => ({ MIMEType }: Message = {}) => MIMEType === type;
+const hasMimeType = (type: MIME_TYPES) => ({ MIMEType }: Message = {}) => MIMEType === type;
+
+export const isMIME = hasMimeType(MIME);
+export const isPlainText = hasMimeType(PLAINTEXT);
+export const isHTML = hasMimeType(MIME_TYPES.DEFAULT);
 
 /**
  * Check if a message has a flag in the flags bitmap
- * @param {Number} flag
- * @returns {Function}
  */
 export const hasFlag = (flag: number) => ({ Flags = 0 }: Message = {}) => hasBit(Flags, flag);
 
@@ -55,40 +58,23 @@ export const isExternalEncrypted = (message: Message) => isE2E(message) && !isIn
 export const isPGPEncrypted = (message: Message = {}) => isExternal(message) && isReceived(message) && isE2E(message);
 export const inSigningPeriod = ({ Time = 0 }: Message) => Time >= SIGNATURE_START;
 
-export const isMIME = hasMimeType(MIME);
 export const isPGPInline = (message: Message) => isPGPEncrypted(message) && !isMIME(message);
 
-/**
- * Get sender from message
- * @param {Object} message.Sender
- * @return {String} Name || Address
- */
-export const getSender = ({ Sender = {} }: Message = {}) => {
-    const { Name = '', Address = '' } = Sender;
-    return Name || Address;
-};
+export const isEO = (message: Message = {}) => !!message.Password;
 
-/**
- * Get recipients list from message
- * @param {Array} message.TolList
- * @param {Array} message.BCCList
- * @param {Array} message.CCList
- * @return {Array} [Name || Address]
- */
-export const getRecipients = ({ ToList = [], CCList = [], BCCList = [] }: Message = {}) => {
-    return [...ToList, ...CCList, ...BCCList].map(({ Address, Name }) => Name || Address);
-};
+export const addReceived = (Flags = 0) => setBit(Flags, MESSAGE_FLAGS.FLAG_RECEIVED);
 
-/**
- * Extract recipients addresses from a message
- * @param {Array} message.ToList
- * @param {Array} message.CCList
- * @param {Array} message.BCCList
- * @return {Array<Object>}
- */
-// export const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => {
-//     return ToList.concat(CCList, BCCList);
-// };
+export const getSender = ({ Sender = {} }: Message = {}) => Sender;
+export const getRecipients = ({ ToList = [], CCList = [], BCCList = [] }: Message = {}) => [
+    ...ToList,
+    ...CCList,
+    ...BCCList
+];
+// export const getRecipientsLabels = (message: Message = {}) => getRecipients(message).map(getRecipientLabel);
+export const getRecipientsAddresses = (message: Message = {}) =>
+    getRecipients(message)
+        .map(({ Address }) => Address || '')
+        .filter(identity);
 
 /**
  * Extract and normalize recipients
@@ -201,8 +187,6 @@ export const hasAttachments = (message: Message = {}) => getAttachments(message)
 export const attachmentsSize = (message: Message = {}) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
 
-export const isPlainText = (message: Message = {}) => message.MIMEType === PLAINTEXT;
-
 export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
     if (!isSent({ Flags })) {
         return false;
@@ -225,4 +209,31 @@ export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
         autoReplyHeaders.some((h) => h in ParsedHeaders) ||
         autoReplyHeaderValues.some(([k, v]) => k in ParsedHeaders && ParsedHeaders[k].toLowerCase() === v)
     );
+};
+
+/**
+ * We NEVER upconvert, if the user wants html: plaintext is actually fine as well
+ */
+export const getHTML = (message: MessageExtended) => (isHTML(message.data) ? message.content : undefined);
+
+export const exportPlainText = (message: MessageExtended) => {
+    /*
+     * The replace removes any characters that are produced by the copying process (like zero width characters)
+     * See: http://www.berklix.org/help/majordomo/#quoted we want to avoid sending unnecessary quoted printable encodings
+     */
+    if (message.data?.MIMEType !== MIME_TYPES.DEFAULT) {
+        return message.content?.replace(/\u200B/g, '');
+    }
+    return toText(message.content || '', true, true).replace(/\u200B/g, '');
+};
+
+/**
+ * Generates/Gets the plaintext body from the message. If the message is not composed in plaintext, it will downconvert
+ * the html body to plaintext if downconvert is set. If downconvert is disabled it will return false.
+ */
+export const getPlainText = (message: MessageExtended, downconvert: boolean) => {
+    if (!isPlainText(message.data) && !downconvert) {
+        return undefined;
+    }
+    return exportPlainText(message);
 };

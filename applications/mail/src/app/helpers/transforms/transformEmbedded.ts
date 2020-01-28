@@ -2,11 +2,15 @@ import { SHOW_IMAGES } from 'proton-shared/lib/constants';
 import { Computation } from '../../hooks/useMessage';
 import { find } from '../embedded/embeddedFinder';
 import { mutateHTML, decrypt, prepareImages } from '../embedded/embeddedParser';
+import { MESSAGE_ACTIONS } from '../../constants';
 
-export const transformEmbedded: Computation = async (message, { attachmentsCache, api, action = '', mailSettings }) => {
-    const { ShowImages = SHOW_IMAGES.NONE } = mailSettings as { ShowImages: SHOW_IMAGES };
+export const transformEmbedded: Computation = async (message, { attachmentsCache, api, mailSettings }) => {
+    const { ShowImages = 0 } = mailSettings as { ShowImages: number };
     const show = message.showEmbeddedImages === true || ShowImages === SHOW_IMAGES.EMBEDDED;
-    const isReplyForward = /^reply|forward/.test(action);
+    const isReplyForward =
+        message.action === MESSAGE_ACTIONS.REPLY ||
+        message.action === MESSAGE_ACTIONS.REPLY_ALL ||
+        message.action === MESSAGE_ACTIONS.FORWARD;
     const isOutside = false; // TODO: const isEoReply = $state.is('eo.reply');
 
     const attachments = find(message);
@@ -25,7 +29,7 @@ export const transformEmbedded: Computation = async (message, { attachmentsCache
             mutateHTML(message, direction);
         }
     } else {
-        await decrypt(message, api, attachmentsCache);
+        await decrypt(message, api, attachmentsCache.data);
         mutateHTML(message, direction);
     }
 

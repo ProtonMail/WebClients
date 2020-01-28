@@ -6,7 +6,7 @@ import { Message, MessageExtended } from '../../models/message';
 import { convert } from '../attachment/attachmentConverter';
 import { VERIFICATION_STATUS } from '../../constants';
 import { getDate } from './messages';
-import { AttachmentsCache } from '../../hooks/useAttachments';
+import { AttachmentsDataCache } from '../../hooks/useAttachments';
 
 const getVerifiedStatus = (pmcryptoVerified: number, publicKeys: any) => {
     const signedInvalid = VERIFICATION_STATUS.SIGNED_AND_INVALID;
@@ -18,7 +18,7 @@ export const decryptMimeMessage = async (
     message: Message,
     privateKeys: any,
     publicKeys: any,
-    attachmentsCache: AttachmentsCache
+    attachmentsCache: AttachmentsDataCache
 ): Promise<MessageExtended> => {
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = (message.Sender || {}).Address;

@@ -3,13 +3,14 @@ import { useApi, useEventManager } from 'react-components';
 import { queryConversations, getConversation } from 'proton-shared/lib/api/conversations';
 import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { Conversation } from '../models/conversation';
 import { toMap } from 'proton-shared/lib/helpers/object';
+
+import { Conversation } from '../models/conversation';
 import { sort as sortElements, hasLabel } from '../helpers/elements';
-import { Message } from '../models/message';
 import { Element } from '../models/element';
 import { Page, Filter, Sort } from '../models/tools';
 import { expectedPageLength } from '../helpers/paging';
+import { ElementEvent, Event, ElementCountEvent, ConversationEvent, MessageEvent } from '../models/event';
 
 interface Options {
     conversationMode: boolean;
@@ -31,33 +32,6 @@ interface Cache {
     pages: number[];
     elements: { [ID: string]: Element };
 }
-
-interface Event {
-    Conversations?: ConversationEvent[];
-    Messages?: MessageEvent[];
-    ConversationCounts?: ElementCountEvent[];
-    MessageCounts?: ElementCountEvent[];
-}
-
-interface ConversationEvent {
-    ID: string;
-    Conversation: Conversation;
-    Action: EVENT_ACTIONS;
-}
-
-interface MessageEvent {
-    ID: string;
-    Message: Message;
-    Action: EVENT_ACTIONS;
-}
-
-interface ElementCountEvent {
-    LabelID: string;
-    Total: number;
-    Unread: number;
-}
-
-type ElementEvent = ConversationEvent | MessageEvent;
 
 const emptyCache = (page: Page, params: CacheParams): Cache => ({ params, page, elements: {}, pages: [] });
 
@@ -196,17 +170,17 @@ export const useElements = ({
                             const Element = conversationMode
                                 ? (event as ConversationEvent).Conversation
                                 : (event as MessageEvent).Message;
-                            if (Action === EVENT_ACTIONS.DELETE) {
-                                acc.toDelete.push(ID);
-                            }
-                            if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-                                console.warn('Event type UPDATE_DRAFT on Element not supported');
-                            }
-                            if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                                acc.toUpdate.push({ ID, ...Element });
-                            }
-                            if (Action === EVENT_ACTIONS.CREATE) {
-                                acc.toCreate.push(Element);
+                            switch (Action) {
+                                case EVENT_ACTIONS.DELETE:
+                                    acc.toDelete.push(ID);
+                                    break;
+                                case EVENT_ACTIONS.UPDATE_DRAFT:
+                                case EVENT_ACTIONS.UPDATE_FLAGS:
+                                    acc.toUpdate.push({ ID, ...Element });
+                                    break;
+                                case EVENT_ACTIONS.CREATE:
+                                    acc.toCreate.push(Element);
+                                    break;
                             }
                             return acc;
                         },

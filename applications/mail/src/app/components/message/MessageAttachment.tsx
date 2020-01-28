@@ -60,7 +60,7 @@ const MessageAttachment = ({ attachment, message }: Props) => {
 
     const clickHandler = async () => {
         setShowLoader(true);
-        await download(attachment, message, cache, api);
+        await download(attachment, message, cache.data, api);
         setShowLoader(false);
         setShowInstant(true);
     };

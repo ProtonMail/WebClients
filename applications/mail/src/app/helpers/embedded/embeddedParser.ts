@@ -11,7 +11,7 @@ import { wait } from 'proton-shared/lib/helpers/promise';
 import { getMessageCIDs } from './embeddedStoreCids';
 import { findEmbedded, srcToCID } from './embeddedUtils';
 import { isInlineEmbedded, isEmbedded } from '../image';
-import { AttachmentsCache } from '../../hooks/useAttachments';
+import { AttachmentsDataCache } from '../../hooks/useAttachments';
 
 const EMBEDDED_CLASSNAME = 'proton-embedded';
 
@@ -204,7 +204,7 @@ export const mutateHTML = (message: MessageExtended, direction: string) => {
     document.innerHTML = unescapeSrc(document.innerHTML);
 };
 
-export const decrypt = async (message: MessageExtended, api: Api, cache: AttachmentsCache) => {
+export const decrypt = async (message: MessageExtended, api: Api, cache: AttachmentsDataCache) => {
     const list = listInlineAttachments(message);
     const attachments = list.map(({ attachment }) => attachment);
     // const show = message.showEmbeddedImages === true || mailSettings.ShowImages & SHOW_IMAGES.EMBEDDED;

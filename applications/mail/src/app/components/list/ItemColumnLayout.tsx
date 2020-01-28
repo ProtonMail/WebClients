@@ -42,7 +42,7 @@ const ItemColumnLayout = ({ labels, element, mailSettings = {}, type, senders, u
                     <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{senders}</span>
                 </div>
                 <div className="item-icons">
-                    <ItemLabels max={4} type={type} labels={labels} element={element} />
+                    <ItemLabels max={4} labels={labels} element={element} />
                     {' ' /* This space is important to keep a small space between elements */}
                     <ItemAttachmentIcon element={element} type={type} />
                     {' ' /* This space is important to keep a small space between elements */}

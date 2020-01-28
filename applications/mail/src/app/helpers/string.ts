@@ -23,7 +23,7 @@ export const MAP_TAGS = {
     [CLOSE_TAG_AUTOCOMPLETE]: CLOSE_TAG_AUTOCOMPLETE_RAW
 };
 
-export const escape = (string) => {
+export const escape = (string: string) => {
     const UNESCAPE_HTML_REGEX = /[&<>"']/g;
     const HTML_ESCAPES = {
         '&': '&amp;',
@@ -33,10 +33,10 @@ export const escape = (string) => {
         "'": '&#39;'
     };
 
-    return string.replace(UNESCAPE_HTML_REGEX, HTML_ESCAPES);
+    return string.replace(UNESCAPE_HTML_REGEX, HTML_ESCAPES as any);
 };
 
-export const unescape = (string) => {
+export const unescape = (string: string) => {
     const ESCAPED_HTML_REGEX = /&(?:amp|lt|gt|quot|#39);/g;
     const HTML_UNESCAPES = {
         '&amp;': '&',
@@ -46,17 +46,15 @@ export const unescape = (string) => {
         '&#39;': "'"
     };
 
-    return string.replace(ESCAPED_HTML_REGEX, HTML_UNESCAPES);
+    return string.replace(ESCAPED_HTML_REGEX, HTML_UNESCAPES as any);
 };
 
 /**
  * Replace custom unicode escape for chevrons by default
  * Replace <> (for a tag) via unicode or reverse it
- * @param  {String} input
- * @param {String} mode  undefined for toUnicode, reverse for unicode -> <|>
- * @return {String}
+ * mode undefined for toUnicode, reverse for unicode -> <|>
  */
-export function unicodeTag(input = '', mode) {
+export function unicodeTag(input = '', mode: 'reverse' | undefined) {
     if (mode === 'reverse') {
         const matchTagUnicodeOpenClose = () => new RegExp(`${OPEN_TAG_AUTOCOMPLETE}|${CLOSE_TAG_AUTOCOMPLETE}`, 'ig');
 
@@ -68,48 +66,11 @@ export function unicodeTag(input = '', mode) {
 }
 
 /**
- * Transform value to be normalized (lowercase)
- * @param {String} email
- * @return {String}
- */
-export const normalizeEmail = (email = '') => email.toLowerCase();
-
-/**
- * Remove plus alias part present in the email value
- * @param {String} email containing +plus-alias
- */
-export const removeEmailAlias = (email = '') => {
-    return normalizeEmail(email)
-        .replace(/(\+[^@]*)@/, '@')
-        .replace(/[._-](?=[^@]*@)/g, '');
-};
-
-/**
- * Add plus alias part for an email
- * @param {String} email original
- * @param {String} plus part to add between + and @
- * @return {String}
- */
-export const addPlusAlias = (email = '', plus = '') => {
-    const atIndex = email.indexOf('@');
-    const plusIndex = email.indexOf('+');
-
-    if (atIndex === -1 || plusIndex > -1) {
-        return email;
-    }
-
-    const name = email.substring(0, atIndex);
-    const domain = email.substring(atIndex, email.length);
-
-    return `${name}+${plus}${domain}`;
-};
-
-/**
  * Converts the integer to a 32-bit base encoded string in 2s complement format, so that it doesn't contain a sign "-"
- * @param val int The integer to be encoded
- * @param bits int The amount of bits per character
+ * @param val The integer to be encoded
+ * @param bits The amount of bits per character
  */
-export const toUnsignedString = (val, bits) => {
+export const toUnsignedString = (val: number, bits: number) => {
     const base = 1 << bits;
     const wordCount = Math.ceil(32 / bits);
     const bottomBits = (wordCount - 1) * bits;
@@ -129,10 +90,8 @@ export const toUnsignedString = (val, bits) => {
 /**
  * Unescape a string in hex or octal encoding.
  * See https://www.w3.org/International/questions/qa-escapes#css_other for all possible cases.
- * @param {String} str
- * @returns {String} escaped string
  */
-export const unescapeCSSEncoding = (str) => {
+export const unescapeCSSEncoding = (str: string) => {
     // Regexp declared inside the function to reset its state (because of the global flag).
     // cf https://stackoverflow.com/questions/1520800/why-does-a-regexp-with-global-flag-give-wrong-results
     const UNESCAPE_CSS_ESCAPES_REGEX = /\\([0-9A-Fa-f]{1,6}) ?/g;
@@ -140,7 +99,8 @@ export const unescapeCSSEncoding = (str) => {
     const UNESCAPE_HTML_HEX_REGEX = /&#x([0-9A-Fa-f]+)(;|(?=[^\d;]))/g;
     const OTHER_ESC = /\\(.)/g;
 
-    const handleEscape = (radix) => (ignored, val) => String.fromCodePoint(Number.parseInt(val, radix));
+    const handleEscape = (radix: number) => (ignored: any, val: string) =>
+        String.fromCodePoint(Number.parseInt(val, radix));
     /*
      * basic unescaped named sequences: &amp; etcetera, lodash does not support a lot, but that is not a problem for our case.
      * Actually handling all escaped sequences would mean keeping track of a very large and ever growing amount of named sequences
@@ -161,8 +121,8 @@ export const ucFirst = (input = '') => {
 
 /**
  * Extract value between chevrons
- * @param {String} str ex: Andy <andy@pm.me>
- * @return {String} ex: andy@pm.me
+ * @param str ex: Andy <andy@pm.me>
+ * @return ex: andy@pm.me
  */
 export const extractChevrons = (str = '') => {
     const CHEVRONS_REGEX = /<([^>]+)>/g;
@@ -219,3 +179,7 @@ export function generateUID() {
 
 //     return result;
 // };
+
+export const replaceLineBreaks = (content: string) => {
+    return content.replace(/(?:\r\n|\r|\n)/g, '<br />');
+};

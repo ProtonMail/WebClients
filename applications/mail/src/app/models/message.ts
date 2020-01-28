@@ -1,13 +1,11 @@
 import { Label } from './label';
 import { Attachment } from './attachment';
-
-export interface Recipient {
-    Name?: string;
-    Address?: string;
-}
+import { MESSAGE_ACTIONS } from '../constants';
+import { Recipient } from './address';
 
 export interface Message {
     ID?: string;
+    ParentID?: string;
     Subject?: string;
     AddressID?: string;
     MIMEType?: string;
@@ -19,6 +17,7 @@ export interface Message {
     ToList?: Recipient[];
     CCList?: Recipient[];
     BCCList?: Recipient[];
+    ReplyTos?: Recipient[];
     ParsedHeaders?: { [key: string]: any };
     Attachments?: Attachment[];
     Unread?: number;
@@ -27,6 +26,11 @@ export interface Message {
     LabelIDs?: string[];
     ConversationID?: string;
     Order?: number;
+    Password?: string;
+    RightToLeft?: number;
+    PasswordHint?: string;
+    ExpirationTime?: number;
+    ExpiresIn?: number;
 }
 
 export interface MessageExtended {
@@ -42,7 +46,9 @@ export interface MessageExtended {
     showRemoteImages?: boolean;
     showEmbeddedImages?: boolean;
     numEmbedded?: number;
-    attachments?: Attachment[];
+    // attachments?: Attachment[];
     encryptedSubject?: any;
     mimetype?: string;
+    originalTo?: string;
+    action?: MESSAGE_ACTIONS;
 }

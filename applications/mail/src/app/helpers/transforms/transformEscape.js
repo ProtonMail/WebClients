@@ -89,11 +89,11 @@ function escapeSVG(input = '') {
  * Escape content for a message
  * Content can be a Document when we open a message, it's useful
  * in order to bind the base if it exists
- * @param  {String|Document} content                       Content to escape
- * @param  {String} options.action           Type of action
- * @return {Node}                            Parser
+ * @param  {MessageExtended} message         Content to escape
+ * @param  {Options} options.action           Type of action
+ * @return {MessageExtended}                            Parser
  */
-export const transformEscape = async ({ raw }, { action, cache, activeCache = true } = {}) => {
+export const transformEscape = async ({ raw, action }, { cache, activeCache = true } = {}) => {
     const value = removeBase64(raw, cache, activeCache);
     const activeHooks = action !== 'user.inject';
     return { document: purifyHTML(escapeSVG(value), activeHooks) };

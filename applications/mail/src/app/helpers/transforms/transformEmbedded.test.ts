@@ -5,6 +5,7 @@ import { MailSettings, Api } from '../../models/utils';
 import { transformEmbedded } from './transformEmbedded';
 import { prepareImages } from '../embedded/embeddedParser';
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
+import { AttachmentsCache } from '../../hooks/useAttachments';
 
 const prepareImagesMock = prepareImages as jest.Mock;
 
@@ -18,7 +19,7 @@ jest.mock('../embedded/embeddedParser', () => ({
     prepareImages: jest.fn()
 }));
 
-const attachmentsCache = new Map<string, BinaryResult>();
+const attachmentsCache = { data: new Map<string, BinaryResult>() } as AttachmentsCache;
 const api: Api = jest.fn();
 const cache: any = {};
 

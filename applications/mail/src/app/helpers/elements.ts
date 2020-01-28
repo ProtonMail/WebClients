@@ -51,9 +51,11 @@ export const isUnread = (element: Element) => {
 
 export const getLabel = ({ Labels = [] }: Element, labelID: string) => Labels.find(({ ID = '' }) => ID === labelID);
 
+export const getLabelIds = ({ Labels, LabelIDs }: Element) =>
+    Labels ? Labels.map(({ ID }) => ID || '') : LabelIDs || [];
+
 export const hasLabel = (element: Element, labelID: string) => {
-    const labelIDs = element.Labels ? element.Labels.map(({ ID }) => ID || '') : element.LabelIDs || [];
-    return labelIDs.some((ID) => labelID === ID);
+    return getLabelIds(element).some((ID) => labelID === ID);
 };
 
 export const getTime = (element: Element, labelID: string) =>

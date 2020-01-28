@@ -5,11 +5,17 @@ import { useInstance, useApi } from 'react-components';
 import { useMessage } from './useMessage';
 import MessageProvider from '../containers/MessageProvider';
 import createCache from 'proton-shared/lib/helpers/cache';
+import { wait } from 'proton-shared/lib/helpers/promise';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 jest.mock('./useDecryptMessage', () => ({ useDecryptMessage: jest.fn() }));
 jest.mock('./useAttachments', () => ({ useAttachmentsCache: jest.fn() }));
+jest.mock('./useEncryptMessage', () => ({ useEncryptMessage: jest.fn(() => (m: any) => m) }));
+jest.mock('./useSendMessage', () => ({ useSendMessage: jest.fn(() => (m: any) => m) }));
 
 describe('useMessage', () => {
+    let consoleError: any;
+
     const ID = 'ID';
 
     const api = jest.fn();
@@ -23,6 +29,15 @@ describe('useMessage', () => {
         const renderHookResult = renderHook((props: any = {}) => useMessage({ ID, ...props }, {}), { wrapper });
         return renderHookResult.result;
     };
+
+    beforeAll(() => {
+        consoleError = console.error;
+        console.error = noop;
+    });
+
+    afterAll(() => {
+        console.error = consoleError;
+    });
 
     afterEach(() => {
         [useInstance as jest.Mock, api, useApi as jest.Mock].forEach((mock) => mock.mockClear());
@@ -44,15 +59,37 @@ describe('useMessage', () => {
     });
 
     describe('message actions', () => {
-        it('should load a message with an api call', async () => {
+        it('should wait the computations to resolve the promise', async () => {
+            let resolve: (arg: any) => void = noop;
+            api.mockReturnValue(
+                new Promise((r) => {
+                    resolve = r;
+                })
+            );
+            const result = setup();
+            const promise = act(async () => {
+                await result.current[1].createDraft({});
+            });
+            expect(result.current[2].lock).toBe(true);
+            await wait(0);
+            expect(result.current[2].lock).toBe(true);
+            resolve({ Message: {} });
+            expect(result.current[2].lock).toBe(true);
+            await wait(0);
+            expect(result.current[2].lock).toBe(true);
+            await promise;
+            expect(result.current[2].lock).toBe(false);
+        });
+
+        it('should create a draft with an api call', async () => {
             const Message = {};
             api.mockResolvedValue({ Message });
-            const result = setup(createCache());
+            const result = setup();
             await act(async () => {
-                await result.current[1].load();
+                await result.current[1].createDraft({});
             });
-            expect(result.current[0].data).toBe(Message);
-            expect(result.current[0].loaded).toBe(true);
+            expect(result.current[0].data).toEqual({ ID });
+            expect(api).toHaveBeenCalled();
         });
     });
 });

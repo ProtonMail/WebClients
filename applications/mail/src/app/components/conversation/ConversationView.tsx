@@ -11,15 +11,17 @@ import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import TrashWarning from './TrashWarning';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { hasLabel } from '../../helpers/elements';
+import { OnCompose } from '../../containers/ComposerContainer';
 
 interface Props {
     labelID: string;
     conversationID: string;
     messageID?: string;
     mailSettings: any;
+    onCompose: OnCompose;
 }
 
-const ConversationView = ({ labelID, conversationID, mailSettings }: Props) => {
+const ConversationView = ({ labelID, conversationID, mailSettings, onCompose }: Props) => {
     const [labels] = useLabels();
     const [conversationData, loading] = useConversation(conversationID);
     const { state: filter, toggle: toggleFilter } = useToggle(true);
@@ -50,7 +52,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings }: Props) => {
                         {conversation.Subject}
                     </h2>
                     <div>
-                        <ItemLabels labels={labels} max={4} element={conversation} type={ELEMENT_TYPES.CONVERSATION} />
+                        <ItemLabels labels={labels} max={4} element={conversation} />
                         <ItemStar element={conversation} type={ELEMENT_TYPES.CONVERSATION} />
                     </div>
                 </div>
@@ -64,6 +66,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings }: Props) => {
                     labels={labels}
                     mailSettings={mailSettings}
                     conversationIndex={index}
+                    onCompose={onCompose}
                 />
             ))}
         </>

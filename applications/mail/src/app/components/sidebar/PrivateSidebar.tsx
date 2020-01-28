@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { c } from 'ttag';
+import { Location } from 'history';
 import {
     NavMenu,
     MainLogo,
@@ -15,18 +16,19 @@ import { SHOW_MOVED, LABEL_EXCLUSIVE, MAILBOX_LABEL_IDS } from 'proton-shared/li
 import { redirectTo } from 'proton-shared/lib/helpers/browser';
 
 import LocationAside from './LocationAside';
-import { LABEL_IDS_TO_HUMAN } from '../../constants';
-import { getCounterMap } from '../../helpers/elements';
+import { LABEL_IDS_TO_HUMAN, MESSAGE_ACTIONS } from '../../constants';
 import { Label } from '../../models/label';
-import { Location } from 'history';
+import { OnCompose } from '../../containers/ComposerContainer';
+import { getCounterMap } from '../../helpers/elements';
 
 interface Props {
     labelID: string;
     expanded?: boolean;
     location: Location;
+    onCompose: OnCompose;
 }
 
-const PrivateSidebar = ({ labelID: currentLabelID, expanded = false, location }: Props) => {
+const PrivateSidebar = ({ labelID: currentLabelID, expanded = false, location, onCompose }: Props) => {
     const [refresh, setRefresh] = useState<string>();
     const [conversationCounts, loadingConversationCounts] = useConversationCounts();
     const [messageCounts, loadingMessageCounts] = useMessageCounts();
@@ -132,13 +134,17 @@ const PrivateSidebar = ({ labelID: currentLabelID, expanded = false, location }:
         }))
     ];
 
+    const handleCompose = () => {
+        onCompose({ action: MESSAGE_ACTIONS.NEW });
+    };
+
     return (
         <div className="sidebar flex flex-column noprint" data-expanded={expanded}>
             <div className="nodesktop notablet">
                 <MainLogo url="/inbox" />
             </div>
             <div className="pl1 pr1 mb1">
-                <PrimaryButton className="w100 bold">{c('Action').t`Compose`}</PrimaryButton>
+                <PrimaryButton className="w100 bold" onClick={handleCompose}>{c('Action').t`Compose`}</PrimaryButton>
             </div>
             <nav className="navigation mw100 flex-item-fluid scroll-if-needed">
                 <NavMenu list={list} className="mt0" />

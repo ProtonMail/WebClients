@@ -1,6 +1,7 @@
 export const useApi = jest.fn();
 
 export const useEventManager = () => ({
+    call: jest.fn(),
     subscribe: jest.fn()
 });
 
