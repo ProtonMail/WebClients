@@ -13,12 +13,6 @@ const Page = ({ title, toolbar, children, className }: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (mainAreaRef.current) {
-            mainAreaRef.current.scrollTop = 0;
-        }
-    }, [location.pathname]);
-
-    useEffect(() => {
         document.title = `${title} - ProtonDrive`;
     }, [title]);
 

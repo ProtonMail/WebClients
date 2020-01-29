@@ -3,7 +3,7 @@ import useFiles from '../hooks/useFiles';
 import { RouteComponentProps } from 'react-router-dom';
 import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
 import { useLoading } from 'react-components';
-import { LinkType } from '../interfaces/folder';
+import { LinkType, ResourceType } from '../interfaces/folder';
 import FileSaver from '../utils/FileSaver/FileSaver';
 import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
 import useShare from '../hooks/useShare';
@@ -12,23 +12,25 @@ import { DriveLink } from '../interfaces/link';
 import { getMetaForTransfer } from '../components/Drive';
 import { DriveFile } from '../interfaces/file';
 import { DownloadControls } from '../components/downloads/download';
+import { useDriveResource } from '../components/DriveResourceProvider';
+
+interface PreviewHistoryState {
+    preloadedLink?: FileBrowserItem | DriveFile | DriveLink;
+}
 
 const PreviewContainer = ({
     match,
     history,
     location
-}: RouteComponentProps<
-    { shareId: string; linkId: string },
-    {},
-    FileBrowserItem | DriveLink | DriveFile | undefined
->) => {
+}: RouteComponentProps<{ shareId: string; linkId: string }, {}, PreviewHistoryState | undefined>) => {
     const { shareId, linkId } = match.params;
     const downloadControls = useRef<DownloadControls>();
 
+    const { setResource } = useDriveResource();
     const { getFolderContents } = useShare(shareId);
     const { downloadDriveFile, saveFileTransferFromBuffer, startFileTransfer, getFileMeta } = useFiles(shareId);
     const [loading, withLoading] = useLoading(true);
-    const [meta, setMeta] = useState(location.state);
+    const [meta, setMeta] = useState(location.state?.preloadedLink);
     const [contents, setContents] = useState<Uint8Array[]>();
     const [linksAvailableForPreview, setLinksAvailableForPreview] = useState<DriveLink[]>([]);
 
@@ -45,13 +47,14 @@ const PreviewContainer = ({
 
         const preloadFile = async () => {
             try {
-                const meta = location.state || (await getFileMeta(linkId)).File;
+                const meta = location.state?.preloadedLink || (await getFileMeta(linkId)).File;
 
                 if (canceled) {
                     return;
                 }
 
                 setMeta(meta);
+                setResource({ shareId, linkId: meta.ParentLinkID, type: ResourceType.FOLDER });
                 fetchLinksAvailableForPreview(meta.ParentLinkID);
                 if (isPreviewAvailable(meta.MimeType)) {
                     const { contents, controls } = await downloadDriveFile(linkId);
@@ -90,8 +93,10 @@ const PreviewContainer = ({
     }, [meta?.ParentLinkID, shareId]);
 
     const navigateToLink = useCallback(
-        (link: DriveLink) => {
-            history.push(`/drive/${shareId}/${LinkType.FILE}/${link.LinkID}`, link);
+        (preloadedLink: DriveLink) => {
+            history.push(`/drive/${shareId}/${LinkType.FILE}/${preloadedLink.LinkID}`, {
+                preloadedLink
+            });
         },
         [shareId]
     );
