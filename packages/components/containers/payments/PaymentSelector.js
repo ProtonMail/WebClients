@@ -15,7 +15,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount })
         onChangeAmount(value);
     };
     const handleChange = ({ target }) => {
-        if (!isNumber(target.value)) {
+        if (target.value && !isNumber(target.value)) {
             return;
         }
         setInputValue(target.value);
