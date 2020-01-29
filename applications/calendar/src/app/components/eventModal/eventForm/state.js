@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { isBefore } from 'date-fns';
 import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
@@ -11,7 +12,7 @@ import {
     DEFAULT_PART_DAY_NOTIFICATIONS,
     notificationsToModel
 } from '../../../helpers/notifications';
-import { DEFAULT_EVENT_DURATION, FREQUENCY, NOTIFICATION_TYPE } from '../../../constants';
+import { DEFAULT_EVENT_DURATION, END_TYPE, FREQUENCY, NOTIFICATION_TYPE } from '../../../constants';
 import { propertiesToDateTimeModel, propertiesToModel, propertiesToNotificationModel } from './propertiesToModel';
 import { modelToGeneralProperties } from './modelToProperties';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
@@ -65,6 +66,16 @@ export const getInitialDateTimeModel = (initialDate, defaultEventDuration, tzid)
     };
 };
 
+export const getInitialFrequencyModel = (startDate) => {
+    return {
+        type: FREQUENCY.ONCE,
+        frequency: FREQUENCY.WEEKLY,
+        interval: 1,
+        weekly: { days: [startDate.getDay()] },
+        ends: { type: END_TYPE.NEVER }
+    };
+};
+
 export const getInitialMemberModel = (Addresses, Members, Member, Address) => {
     const { ID: addressID } = Address;
     const { ID: memberID } = Member;
@@ -103,6 +114,7 @@ export const getInitialModel = ({
 }) => {
     const { DefaultEventDuration: defaultEventDuration = DEFAULT_EVENT_DURATION } = CalendarSettings;
     const dateTimeModel = getInitialDateTimeModel(initialDate, defaultEventDuration, tzid);
+    const frequencyModel = getInitialFrequencyModel(dateTimeModel.start.date);
     const notificationModel = getNotificationModels(CalendarSettings);
     const memberModel = getInitialMemberModel(Addresses, Members, Member, Address);
     const calendarsModel = getCalendarsModel(Calendar, Calendars);
@@ -111,11 +123,11 @@ export const getInitialModel = ({
         title: '',
         location: '',
         description: '',
-        frequency: FREQUENCY.ONCE,
         initialDate,
         initialTzid: tzid,
         isAllDay,
         defaultEventDuration,
+        frequencyModel,
         ...notificationModel,
         ...memberModel,
         ...dateTimeModel,
@@ -165,7 +177,7 @@ export const updateItem = (array, index, newItem) => {
 };
 export const removeItem = (array, index) => array.filter((oldValue, i) => i !== index);
 
-export const validate = ({ start, end, isAllDay, title }) => {
+export const validate = ({ start, end, isAllDay, title, frequencyModel }) => {
     const errors = {};
 
     const generalProperties = modelToGeneralProperties({ title });
@@ -180,7 +192,13 @@ export const validate = ({ start, end, isAllDay, title }) => {
     if (utcStart > utcEnd) {
         errors.end = c('Error').t`Start time must be before end time`;
     }
-
+    if (frequencyModel.ends.type === END_TYPE.UNTIL) {
+        if (!frequencyModel.ends.until) {
+            errors.until = c('Error').t`Ends on date cannot be empty`;
+        }
+        if (isBefore(frequencyModel.ends.until, start.date))
+            errors.until = c('Error').t`Ends on date must be after start time`;
+    }
     return errors;
 };
 

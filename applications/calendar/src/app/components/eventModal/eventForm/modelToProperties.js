@@ -1,9 +1,19 @@
 import { withRequiredProperties } from 'proton-shared/lib/calendar/veventHelper';
 import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
+import { fromLocalDate, convertZonedDateTimeToUTC } from 'proton-shared/lib/date/timezone';
+import { unique } from 'proton-shared/lib/helpers/array';
 import { addDays } from 'date-fns';
 
 import { transformBeforeAt } from './trigger';
-import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN, FREQUENCY, MAX_LENGTHS } from '../../../constants';
+import {
+    NOTIFICATION_TYPE,
+    NOTIFICATION_UNITS,
+    NOTIFICATION_WHEN,
+    FREQUENCY,
+    MAX_LENGTHS,
+    NUMBER_TO_DAY,
+    END_TYPE
+} from '../../../constants';
 
 const getValarmTriggerUnit = (unit) => {
     return (
@@ -99,6 +109,45 @@ const modelToDateProperties = ({ start, end, isAllDay }) => {
     };
 };
 
+export const modelToFrequencyProperties = ({ frequencyModel, start = {}, isAllDay }) => {
+    const { type, frequency, interval, weekly, ends } = frequencyModel;
+    const { tzid } = start;
+    const properties = {};
+
+    if ([FREQUENCY.DAILY, FREQUENCY.WEEKLY, FREQUENCY.MONTHLY, FREQUENCY.YEARLY].includes(type)) {
+        properties.rrule = { value: { freq: type } };
+    }
+    if (type === FREQUENCY.CUSTOM) {
+        properties.rrule = { value: { freq: frequency, interval } };
+        if (frequency === FREQUENCY.WEEKLY && weekly.days && weekly.days.length) {
+            // weekly.days may include repeated days (cf. function getFrequencyModelChange)
+            const weeklyDays = unique(weekly.days);
+            properties.rrule.value.byday = weeklyDays.map((day) => NUMBER_TO_DAY[day]).join(',');
+        }
+        if (ends.type === END_TYPE.AFTER_N_TIMES) {
+            properties.rrule.value.count = ends.count;
+        }
+        if (ends.type === END_TYPE.UNTIL) {
+            // According to the RFC, we should use UTC dates if and only if the event is not all-day.
+            const untilDateTime = fromLocalDate(ends.until);
+            if (isAllDay) {
+                // we should use a floating date in this case
+                properties.rrule.value.until = {
+                    year: untilDateTime.year,
+                    month: untilDateTime.month,
+                    day: untilDateTime.day
+                };
+            } else {
+                // pick end of day in the event start date timezone
+                const zonedEndOfDay = { ...untilDateTime, hours: 23, minutes: 59, seconds: 59 };
+                const utcEndOfDay = convertZonedDateTimeToUTC(zonedEndOfDay, tzid);
+                properties.rrule.value.until = { ...utcEndOfDay, isUTC: true };
+            }
+        }
+    }
+    return properties;
+};
+
 export const modelToGeneralProperties = ({ uid, title, location, description, frequency, attendees, rest }) => {
     const properties = {
         summary: { value: title.trim().slice(0, MAX_LENGTHS.TITLE) },
@@ -164,6 +213,7 @@ const modelToValarmComponents = ({ isAllDay, fullDayNotifications, partDayNotifi
 
 export const modelToVeventComponent = (model) => {
     const dateProperties = modelToDateProperties(model);
+    const frequencyProperties = modelToFrequencyProperties(model);
     const generalProperties = modelToGeneralProperties(model);
     const valarmComponents = modelToValarmComponents(model);
 
@@ -173,6 +223,7 @@ export const modelToVeventComponent = (model) => {
         component: 'vevent',
         components,
         ...generalProperties,
+        ...frequencyProperties,
         ...dateProperties
     });
 };

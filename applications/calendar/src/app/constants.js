@@ -27,6 +27,26 @@ export const VIEWS = {
     CUSTOM: 6
 };
 
+export const DAY_TO_NUMBER = {
+    SU: 0,
+    MO: 1,
+    TU: 2,
+    WE: 3,
+    TH: 4,
+    FR: 5,
+    SA: 6
+};
+
+export const NUMBER_TO_DAY = {
+    0: 'SU',
+    1: 'MO',
+    2: 'TU',
+    3: 'WE',
+    4: 'TH',
+    5: 'FR',
+    6: 'SA'
+};
+
 export const MINUTE = 60;
 export const HOUR = MINUTE * 60;
 export const DAY = HOUR * 24;
@@ -72,7 +92,36 @@ export const FREQUENCY = {
     DAILY: 'DAILY',
     WEEKLY: 'WEEKLY',
     MONTHLY: 'MONTHLY',
-    YEARLY: 'YEARLY'
+    YEARLY: 'YEARLY',
+    CUSTOM: 'CUSTOM'
+};
+
+export const FREQUENCY_INTERVALS_MAX = {
+    [FREQUENCY.WEEKLY]: 9999
+};
+
+export const FREQUENCY_COUNT_MAX = {
+    [FREQUENCY.WEEKLY]: 50
+};
+
+export const WEEKLY_TYPE = {
+    ON_DAYS: 0
+};
+
+export const MONTHLY_TYPE = {
+    ON_MONTH_DAY: 0,
+    ON_NTH_DAY: 1,
+    ON_MINUS_NTH_DAY: -1
+};
+
+export const YEARLY_TYPE = {
+    ON_YEAR_DAY: 0
+};
+
+export const END_TYPE = {
+    NEVER: 'NEVER',
+    AFTER_N_TIMES: 'COUNT',
+    UNTIL: 'UNTIL'
 };
 
 export const DEFAULT_EVENT_DURATION = 30;

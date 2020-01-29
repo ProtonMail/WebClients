@@ -21,7 +21,17 @@ import PopoverHeader from './PopoverHeader';
 import PopoverFooter from './PopoverFooter';
 import PopoverContent from './PopoverContent';
 
-const EventPopover = ({ formatTime, onEdit, onDelete, onClose, style, popoverRef, event: targetEvent, isNarrow }) => {
+const EventPopover = ({
+    formatTime,
+    onEdit,
+    onDelete,
+    onClose,
+    style,
+    popoverRef,
+    event: targetEvent,
+    tzid,
+    isNarrow
+}) => {
     const { createNotification } = useNotifications();
     const [loadingAction, withLoadingAction] = useLoading();
 
@@ -102,6 +112,7 @@ const EventPopover = ({ formatTime, onEdit, onDelete, onClose, style, popoverRef
                 <PopoverEventContent
                     Calendar={Calendar}
                     event={targetEvent}
+                    tzid={tzid}
                     model={model}
                     formatTime={formatTime}
                     tmpTitle={tmpTitle}

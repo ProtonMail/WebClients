@@ -2,14 +2,16 @@ import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import { addDays, max } from 'proton-shared/lib/date-fns-utc';
 import { getDateTimeState } from './time';
 import { transformBeforeAt } from './trigger';
-import { FREQUENCY, NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
+import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
+import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
+import { replace } from 'proton-shared/lib/helpers/array';
 
 export const propertiesToModel = (component) => {
-    const { uid, location, description, summary, rrule, attendee, ...rest } = component;
+    const { uid, location, description, summary, dtstart, rrule, attendee, ...rest } = component;
 
     return {
         uid: uid ? uid.value : undefined,
-        frequency: rrule && rrule.value ? rrule.value.freq : FREQUENCY.ONCE,
+        frequencyModel: propertiesToFrequencyModel(rrule, dtstart),
         title: summary ? summary.value : '',
         location: location ? location.value : '',
         description: description ? description.value : '',
@@ -25,6 +27,24 @@ export const propertiesToModel = (component) => {
             : [],
         rest
     };
+};
+
+export const getFrequencyModelChange = (oldStart, newStart, frequencyModel) => {
+    const oldStartDay = oldStart.date.getDay();
+    const newStartDay = newStart.date.getDay();
+    const oldDays = frequencyModel.weekly && frequencyModel.weekly.days;
+    const newDays = oldDays ? replace(oldDays, oldStartDay, newStartDay).sort() : undefined;
+    /**
+     * Notice that after replacement we may end up with repeated days in the newDays array.
+     * That would indicate that the user entered a multiple-day selection, and we want to keep track of that.
+     * Notice that if we filtered by unique days, an initial two-day selection of e.g. MO and WE (oldDays = [1,3]), with
+     * the recurring event starting on MO, would be changed into a one-day selection if the user moves
+     * the starting starting date of the event to a WE, i.e. (newDays = [3]). If the user changes her mind again and moves
+     * the starting date to a TH now, we would display a single-day selection (newDays = [4]), but from a UX
+     * perspective it makes more sense to display a two-day selection WE and TH (i.e. newDays = [4, 4])
+     */
+
+    return { ...frequencyModel, weekly: { days: newDays } };
 };
 
 const getTzid = ({ value, parameters: { type, tzid } = {} }) => {

@@ -90,6 +90,7 @@ const InteractiveCalendarView = ({
     const getAddressKeys = useGetAddressKeys();
 
     const [interactiveData, setInteractiveData] = useState();
+
     const { temporaryEvent, targetEventData, targetMoreData } = interactiveData || {};
 
     const { tmpData, tmpDataOriginal, data: { Event: tmpEvent } = {} } = temporaryEvent || {};
@@ -124,6 +125,7 @@ const InteractiveCalendarView = ({
         if (!isInRange) {
             onChangeDate(newTemporaryEvent.start);
         }
+
         setInteractiveData({
             ...interactiveData,
             temporaryEvent: newTemporaryEvent
@@ -382,6 +384,7 @@ const InteractiveCalendarView = ({
     };
 
     const handleSaveEvent = async ({ tmpOriginalTarget, tmpData, data: { Event, readEvent } }) => {
+        // TODO: add until date validation
         const {
             calendar: { id: calendarID },
             member: { memberID, addressID }
@@ -555,7 +558,7 @@ const InteractiveCalendarView = ({
             <CalendarView
                 view={view}
                 isNarrow={isNarrow}
-                isInteractionEnabled={!isLoading && defaultCalendarBootstrap}
+                isInteractionEnabled={!isLoading && !!defaultCalendarBootstrap}
                 onMouseDown={handleMouseDown}
                 tzid={tzid}
                 primaryTimezone={primaryTimezone}

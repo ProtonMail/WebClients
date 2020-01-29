@@ -7,6 +7,7 @@ import {
 import { differenceInHours } from 'date-fns';
 import { max } from 'proton-shared/lib/date-fns-utc';
 import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
+import { getFrequencyModelChange } from '../../components/eventModal/eventForm/propertiesToModel';
 
 const modelToEventProperties = (oldTemporaryEvent, { start, end, isAllDay }, tzid) => {
     // If unrelevant things were changed, like title or description
@@ -79,11 +80,14 @@ export const getUpdatedDateTime = (oldModel, { start, end, isAllDay, tzid: fromT
     // If there is a timezone, convert the fake UTC time in the timezone of the calendar to the specified timezone
     const utcStart = tzStart !== fromTzid ? getTimeInTimezone(start, fromTzid, tzStart) : start;
     const utcEnd = tzEnd !== fromTzid ? getTimeInTimezone(end, fromTzid, tzEnd) : end;
+    const newStart = getDateTimeState(utcStart, tzStart);
+    const newEnd = getDateTimeState(utcEnd, tzEnd);
 
     return {
         ...oldModel,
         isAllDay,
-        start: getDateTimeState(utcStart, tzStart),
-        end: getDateTimeState(utcEnd, tzEnd)
+        start: newStart,
+        end: newEnd,
+        frequencyModel: getFrequencyModelChange(oldModel.start, newStart, oldModel.frequencyModel)
     };
 };

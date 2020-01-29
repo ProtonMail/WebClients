@@ -16,8 +16,8 @@ import { getAllDayCheck } from './eventForm/stateActions';
 
 const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, errors, model, setModel }) => {
     const allDayRow = (
-        <Row>
-            <span className={'pm-label'}></span>
+        <Row collapseOnMobile={true}>
+            <span className="pm-label" />
             <div className="flex-item-fluid">
                 <AllDayCheckbox
                     className="mb1"
@@ -31,8 +31,13 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
     const frequencyRow = (
         <FrequencyRow
             label={c('Label').t`Frequency`}
-            value={model.frequency}
-            onChange={(frequency) => setModel({ ...model, frequency })}
+            frequencyModel={model.frequencyModel}
+            start={model.start}
+            displayWeekNumbers={displayWeekNumbers}
+            weekStartsOn={weekStartsOn}
+            error={errors.until}
+            isSubmitted={isSubmitted}
+            onChange={(frequencyModel) => setModel({ ...model, frequencyModel })}
         />
     );
 
@@ -40,10 +45,8 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
         <TimezoneRow
             startLabel={c('Label').t`Start timezone`}
             endLabel={c('Label').t`End timezone`}
-            start={model.start}
-            end={model.end}
-            onChangeStart={(start) => setModel({ ...model, start })}
-            onChangeEnd={(end) => setModel({ ...model, end })}
+            model={model}
+            setModel={setModel}
         />
     ) : null;
 
@@ -76,8 +79,8 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                 weekStartsOn={weekStartsOn}
                 isNarrow={isNarrow}
             />
-            {frequencyRow}
             {timezoneRows}
+            {frequencyRow}
             {calendarRow}
             <LocationRow
                 label={c('Label').t`Location`}
@@ -116,6 +119,8 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
 };
 
 EventForm.propTypes = {
+    isSubmitted: PropTypes.bool,
+    isNarrow: PropTypes.bool,
     model: PropTypes.object,
     errors: PropTypes.object,
     setModel: PropTypes.func,

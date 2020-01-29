@@ -1,5 +1,6 @@
-import { DateInput, Label, Row, TimeInput } from 'react-components';
 import React from 'react';
+import { c } from 'ttag';
+import { DateInput, Label, Row, TimeInput } from 'react-components';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -7,9 +8,10 @@ import {
     toUTCDate
 } from 'proton-shared/lib/date/timezone';
 import { MILLISECONDS_IN_MINUTE, startOfDay } from 'proton-shared/lib/date-fns-utc';
+
 import { addDays, isValid } from 'date-fns';
+import { getFrequencyModelChange } from '../eventForm/propertiesToModel';
 import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
-import { c } from 'ttag';
 
 const DEFAULT_MIN_TIME = new Date(Date.UTC(2000, 0, 1, 0, 0));
 
@@ -73,12 +75,11 @@ const DateTimeRow = ({
         if (!isValid(newDate)) {
             return;
         }
+        const newStart = { ...start, date: newDate };
         setModel({
             ...model,
-            ...getStartChange({
-                ...start,
-                date: newDate
-            })
+            frequencyModel: getFrequencyModelChange(start, newStart, model.frequencyModel),
+            ...getStartChange(newStart)
         });
     };
 

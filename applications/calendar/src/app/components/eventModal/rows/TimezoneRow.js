@@ -1,14 +1,28 @@
-import { Label, Row } from 'react-components';
 import React from 'react';
+import { Label, Row } from 'react-components';
+import PropTypes from 'prop-types';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from 'proton-shared/lib/date/timezone';
-import TimezoneSelector from '../../TimezoneSelector';
 import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
+import { getFrequencyModelChange } from '../eventForm/propertiesToModel';
 
-const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, start, end, onChangeStart, onChangeEnd }) => {
-    const getUpdatedValue = (oldValue, tzid) => {
-        const startUtcDate = getTimeInUtc(oldValue);
+import TimezoneSelector from '../../TimezoneSelector';
+
+const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, model, setModel }) => {
+    const handleChangeStart = (tzid) => {
+        const startUtcDate = getTimeInUtc(model.start);
         const newStartUtcDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startUtcDate), tzid));
-        return getDateTimeState(newStartUtcDate, tzid);
+        const newStart = getDateTimeState(newStartUtcDate, tzid);
+        const newFrequencyModel = getFrequencyModelChange(model.start, newStart, model.frequencyModel);
+
+        setModel({ ...model, start: newStart, frequencyModel: newFrequencyModel });
+    };
+    const handleChangeEnd = (tzid) => {
+        const endUtcDate = getTimeInUtc(model.end);
+        const newEndUtcDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(endUtcDate), tzid));
+        setModel({
+            ...model,
+            end: getDateTimeState(newEndUtcDate, tzid)
+        });
     };
 
     return (
@@ -18,8 +32,8 @@ const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, start, end, onCha
                 <div className="flex flex-nowrap flex-item-fluid">
                     <TimezoneSelector
                         id="event-start-timezone-select"
-                        timezone={start.tzid}
-                        onChange={(tzid) => onChangeStart(getUpdatedValue(start, tzid))}
+                        timezone={model.start.tzid}
+                        onChange={handleChangeStart}
                     />
                 </div>
             </Row>
@@ -28,13 +42,21 @@ const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, start, end, onCha
                 <div className="flex flex-nowrap flex-item-fluid">
                     <TimezoneSelector
                         id="event-end-timezone-select"
-                        timezone={end.tzid}
-                        onChange={(tzid) => onChangeEnd(getUpdatedValue(end, tzid))}
+                        timezone={model.end.tzid}
+                        onChange={handleChangeEnd}
                     />
                 </div>
             </Row>
         </>
     );
+};
+
+TimezoneRow.propTypes = {
+    startLabel: PropTypes.string,
+    endLabel: PropTypes.string,
+    model: PropTypes.object,
+    setModel: PropTypes.func,
+    collapseOnMobile: PropTypes.bool
 };
 
 export default TimezoneRow;

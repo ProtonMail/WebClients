@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input, Select, TimeInput, classnames } from 'react-components';
+import { Select, TimeInput, classnames } from 'react-components';
 import { c, msgid } from 'ttag';
 
 import { NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICATION_WHEN, NOTIFICATION_TYPE } from '../../../constants';
+import IntegerInput from './IntegerInput';
 
 const { EMAIL, DEVICE } = NOTIFICATION_TYPE;
 const { DAY, MINUTES, HOURS, WEEK } = NOTIFICATION_UNITS;
@@ -52,40 +53,25 @@ const NotificationInput = ({
                         onChange={({ target }) => onChange({ ...notification, type: +target.value })}
                     />
                 ) : null}
-                <Input
-                    type="number"
+                <IntegerInput
                     className="mr1"
-                    step="1"
-                    min="0"
-                    max={'' + maxValue}
+                    step={1}
+                    min={0}
+                    max={maxValue}
                     value={value === '' ? '' : numberValue}
-                    onInput={({ target, target: { value: newValue, validity } }) => {
-                        const isClear = validity.valid;
-                        // Prevent broken input on certain browsers...
-                        if (newValue === '') {
-                            const newValue = isClear ? '' : value;
-                            target.value = newValue;
-                            return onChange({ ...notification, value: newValue });
-                        }
-                        const intValue = parseInt(newValue, 10);
-                        if (isNaN(intValue)) {
-                            return;
-                        }
+                    onChange={(newValue) => {
                         if (isAllDayBefore && unit === NOTIFICATION_UNITS.DAY) {
-                            if (intValue <= 0) {
-                                target.value = 1;
+                            if (newValue <= 0) {
                                 onChange({ ...notification, value: 1 });
                                 return;
                             }
                         }
-                        if (intValue < 0) {
-                            return;
+                        onChange({ ...notification, value: newValue });
+                    }}
+                    onBlur={() => {
+                        if (value === '') {
+                            onChange({ ...notification, value: 0 });
                         }
-                        if (intValue > maxValue) {
-                            return;
-                        }
-                        target.value = intValue;
-                        onChange({ ...notification, value: intValue });
                     }}
                 />
                 <Select

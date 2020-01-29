@@ -10,13 +10,15 @@ const FrequencyInput = ({ value, onChange, ...rest }) => {
         { text: c('Option').t`Do not repeat`, value: FREQUENCY.ONCE },
         { text: c('Option').t`Every week`, value: FREQUENCY.WEEKLY },
         { text: c('Option').t`Every month`, value: FREQUENCY.MONTHLY },
-        { text: c('Option').t`Every year`, value: FREQUENCY.YEARLY }
+        { text: c('Option').t`Every year`, value: FREQUENCY.YEARLY },
+        { text: c('Option').t`Custom`, value: FREQUENCY.CUSTOM }
     ];
     return <Select value={value} options={frequencies} onChange={({ target }) => onChange(target.value)} {...rest} />;
 };
 
 FrequencyInput.propTypes = {
-    value: PropTypes.oneOf([FREQUENCY.ONCE, FREQUENCY.WEEKLY, FREQUENCY.MONTHLY, FREQUENCY.YEARLY]).isRequired,
+    value: PropTypes.oneOf([FREQUENCY.ONCE, FREQUENCY.WEEKLY, FREQUENCY.MONTHLY, FREQUENCY.YEARLY, FREQUENCY.CUSTOM])
+        .isRequired,
     onChange: PropTypes.func.isRequired
 };
 

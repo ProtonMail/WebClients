@@ -64,6 +64,7 @@ const CreateEventPopover = ({
 
 CreateEventPopover.propTypes = {
     tzid: PropTypes.string,
+    weekStartsOn: PropTypes.number,
     formatTime: PropTypes.func,
     style: PropTypes.object.isRequired,
     onClose: PropTypes.func.isRequired,

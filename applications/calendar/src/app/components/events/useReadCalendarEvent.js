@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { propertiesToModel, propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToModel';
+import {
+    propertiesToDateTimeModel,
+    propertiesToModel,
+    propertiesToNotificationModel
+} from '../eventModal/eventForm/propertiesToModel';
 import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
 
 export const useReadEvent = (value) => {
@@ -12,11 +16,16 @@ export const useReadEvent = (value) => {
                 return propertiesToNotificationModel(alarmMap[key], isAllDay);
             })
             .flat();
+        const dateTimeModel =
+            veventComponent.dtstart && veventComponent.dtend
+                ? propertiesToDateTimeModel(veventComponent, isAllDay)
+                : {};
 
         return {
             ...model,
             isAllDay,
-            notifications
+            notifications,
+            ...dateTimeModel
         };
     }, [value]);
 };

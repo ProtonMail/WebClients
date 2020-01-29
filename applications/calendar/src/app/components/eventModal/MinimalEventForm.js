@@ -14,8 +14,8 @@ import { getAllDayCheck } from './eventForm/stateActions';
 
 const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, errors, model, setModel }) => {
     const allDayRow = (
-        <Row>
-            <span className={'pm-label'}></span>
+        <Row collapseOnMobile={false}>
+            <span className="pm-label" />
             <div className="flex-item-fluid">
                 <AllDayCheckbox
                     className="mb1"
@@ -35,8 +35,13 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
                     <span className="sr-only">{c('Label').t`Frequency`}</span>
                 </>
             }
-            value={model.frequency}
-            onChange={(frequency) => setModel({ ...model, frequency })}
+            frequencyModel={model.frequencyModel}
+            start={model.start}
+            isAllDay={model.isAllDay}
+            weekStartsOn={weekStartsOn}
+            error={errors.until}
+            isSubmitted={isSubmitted}
+            onChange={(frequencyModel) => setModel({ ...model, frequencyModel })}
         />
     );
 
@@ -112,6 +117,8 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
 };
 
 MinimalEventForm.propTypes = {
+    isSubmitted: PropTypes.bool,
+    isNarrow: PropTypes.bool,
     model: PropTypes.object,
     errors: PropTypes.object,
     setModel: PropTypes.func,

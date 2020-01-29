@@ -1,32 +1,19 @@
 import React, { useMemo } from 'react';
+import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { Icon } from 'react-components';
-import { c } from 'ttag';
-import { FREQUENCY } from '../../constants';
 
 import PopoverNotification from './PopoverNotification';
 import CalendarIcon from '../calendar/CalendarIcon';
-
-const getFrequencyString = (frequency, startDay) => {
-    if (frequency === FREQUENCY.DAILY) {
-        return c('Info').t`Daily`;
-    }
-    if (frequency === FREQUENCY.WEEKLY) {
-        return c('Info').t`Weekly on ${startDay}`;
-    }
-    if (frequency === FREQUENCY.MONTHLY) {
-        return c('Info').t`Monthly`;
-    }
-    if (frequency === FREQUENCY.YEARLY) {
-        return c('Info').t`Yearly`;
-    }
-};
+import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
+import { getTimezonedFrequencyString } from '../../helpers/rrule';
 
 const PopoverEventContent = ({
     Calendar = {},
     event: { start, end, isAllDay, isAllPartDay } = {},
+    tzid,
     model,
     formatTime
 }) => {
@@ -43,9 +30,9 @@ const PopoverEventContent = ({
         return `${dateStart} - ${dateEnd}`;
     }, [start, end]);
 
-    const dayString = useMemo(() => {
-        return formatUTC(start, 'cccc', { locale: dateLocale });
-    }, [start]);
+    const [weekdays] = useMemo(() => {
+        return ['cccc'].map((format) => getFormattedWeekdays(format, { locale: dateLocale, weekStartsOn: 0 }));
+    }, [dateLocale]);
 
     const timeString = useMemo(() => {
         const timeStart = formatTime(start);
@@ -54,8 +41,13 @@ const PopoverEventContent = ({
     }, [start, end]);
 
     const frequencyString = useMemo(() => {
-        return getFrequencyString(model.frequency, dayString);
-    }, [model.frequency, dayString]);
+        return getTimezonedFrequencyString(model.frequencyModel, {
+            startTzid: model.start.tzid,
+            currentTzid: tzid,
+            weekdays,
+            locale: dateLocale
+        });
+    }, [model.frequencyModel, weekdays, start]);
 
     return (
         <>
@@ -64,14 +56,14 @@ const PopoverEventContent = ({
                 <div className="flex flex-column">
                     {!isAllDay || isAllPartDay ? <span>{timeString}</span> : null}
                     <span>{dateString}</span>
-                    {frequencyString ? (
-                        <span className="flex flex-items-center flex-nowrap">
-                            <Icon name="reload" size={12} />
-                            <span className="ml0-25 flex-item-fluid ellipsis">{frequencyString}</span>
-                        </span>
-                    ) : null}
                 </div>
             </div>
+            {frequencyString ? (
+                <div className="flex flex-nowrap mb0-5">
+                    <Icon name="reload" className="flex-item-noshrink mr1 mt0-25" />
+                    <span>{frequencyString}</span>
+                </div>
+            ) : null}
             {model.location ? (
                 <div className="flex flex-items-center flex-nowrap mb0-5">
                     <Icon title={c('Title').t`Location`} name="address" className="flex-item-noshrink mr1" />
@@ -109,6 +101,7 @@ const PopoverEventContent = ({
 PopoverEventContent.propTypes = {
     Calendar: PropTypes.object,
     event: PropTypes.object,
+    tzid: PropTypes.string,
     model: PropTypes.object,
     formatTime: PropTypes.func
 };
