@@ -329,6 +329,18 @@ $calendar-popover-width: 400px !default;
 
 
 
+@include respond-to($breakpoint-tiny) { 
+    
+    .day-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+
+}
+
+
+
+
 // fix for Safari mobile shitty way to handle vh unit
 .is-day-view::after,
 .is-week-view::after,
