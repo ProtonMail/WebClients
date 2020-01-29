@@ -173,9 +173,10 @@ export const switchPlan = ({ planIDs, plans, planID, service, organization }) =>
         [plansMap[ADDON_NAMES.SPACE].ID]: [plansMap[PLANS.PLUS].ID].includes(planID)
             ? getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[ADDON_NAMES.SPACE])
             : 0,
-        [plansMap[ADDON_NAMES.VPN].ID]: [plansMap[PLANS.VPNPLUS].ID].includes(planID)
-            ? getAddonQuantity(selectedPlan, UsedVPN, 'MaxVPN', plansMap[ADDON_NAMES.VPN])
-            : 0,
+        [plansMap[ADDON_NAMES.VPN].ID]:
+            [plansMap[PLANS.VPNPLUS].ID].includes(planID) && planIDs[plansMap[PLANS.PROFESSIONAL].ID]
+                ? getAddonQuantity(selectedPlan, UsedVPN, 'MaxVPN', plansMap[ADDON_NAMES.VPN])
+                : 0,
         [plansMap[ADDON_NAMES.MEMBER].ID]: [plansMap[PLANS.PROFESSIONAL].ID].includes(planID)
             ? Math.max([
                   getAddonQuantity(selectedPlan, UsedMembers, 'MaxMembers', plansMap[ADDON_NAMES.MEMBER]),
@@ -192,6 +193,16 @@ export const getPlanIDs = (subscription = {}) => {
     return Plans.reduce((acc, { ID, Quantity }) => {
         acc[ID] = acc[ID] || 0;
         acc[ID] += Quantity;
+        return acc;
+    }, {});
+};
+
+export const clearPlanIDs = (planIDs = {}) => {
+    return Object.entries(planIDs).reduce((acc, [planID, quantity]) => {
+        if (!quantity) {
+            return acc;
+        }
+        acc[planID] = quantity;
         return acc;
     }, {});
 };
