@@ -152,8 +152,8 @@ const useCalendarsAlarms = (calendars, lookAhead = 2 * DAY * 1000) => {
                 }
 
                 const hasCalendarInCache = !!cache[CalendarID];
-                const occurenceInMs = Occurrence > 0 ? Occurrence * 1000 : -1;
-                const isAlarmInRange = Occurrence !== -1 && occurenceInMs >= now && occurenceInMs <= end;
+                const occurrenceInMs = Occurrence > 0 ? Occurrence * 1000 : -1;
+                const isAlarmInRange = Occurrence !== -1 && occurrenceInMs >= now && occurrenceInMs <= end;
 
                 return hasCalendarInCache && isAlarmInRange;
             });
