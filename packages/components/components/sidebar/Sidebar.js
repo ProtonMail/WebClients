@@ -17,7 +17,7 @@ const Sidebar = ({ expanded = false, onToggleExpand, list = [], url = '', mobile
                 </div>
             </div>
             {children}
-            <nav className="navigation mw100 flex-item-fluid scroll-if-needed mb1">
+            <nav className="navigation mw100 flex-item-fluid scroll-if-needed customScrollBar-container mb1">
                 <NavMenu list={list} />
             </nav>
             {mobileLinks.length ? (
