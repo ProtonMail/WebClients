@@ -80,12 +80,7 @@ const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onC
     };
 
     return (
-        <div
-            onKeyPress={() => {
-                console.log('asd');
-            }}
-            className="pd-file-preview"
-        >
+        <div className="pd-file-preview">
             <Header name={meta?.Name} onClose={onClose} onSave={onSave}>
                 {totalAvailable > 0 && onOpen && currentOpenIndex !== -1 && (
                     <NavigationControl

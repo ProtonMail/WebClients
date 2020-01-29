@@ -12,7 +12,9 @@ interface Props {
 const Header = ({ name, onClose, onSave, children }: Props) => {
     return (
         <div className="flex flex-spacebetween flex-items-center p2 relative">
-            <span>{name}</span>
+            <span title={name} className="pd-file-preview-filename">
+                {name}
+            </span>
             {children}
             <div className="flex flex-items-center">
                 {onSave && (
