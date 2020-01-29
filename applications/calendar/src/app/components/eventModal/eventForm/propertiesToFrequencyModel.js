@@ -1,4 +1,12 @@
-import { FREQUENCY, WEEKLY_TYPE, MONTHLY_TYPE, YEARLY_TYPE, END_TYPE, DAY_TO_NUMBER } from '../../../constants';
+import {
+    FREQUENCY,
+    WEEKLY_TYPE,
+    MONTHLY_TYPE,
+    YEARLY_TYPE,
+    END_TYPE,
+    DAY_TO_NUMBER,
+    DAILY_TYPE
+} from '../../../constants';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { convertUTCDateTimeToZone, fromUTCDate } from 'proton-shared/lib/date/timezone';
 
@@ -61,6 +69,9 @@ export const propertiesToFrequencyModel = ({ value: frequencyProperty } = {}, { 
         type,
         frequency,
         interval: interval || 1, // INTERVAL=1 is ignored when parsing a recurring rule
+        daily: {
+            type: DAILY_TYPE.ALL_DAYS
+        },
         weekly: {
             type: WEEKLY_TYPE.ON_DAYS,
             days: weeklyDays

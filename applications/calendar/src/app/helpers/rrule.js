@@ -21,6 +21,20 @@ const getFrequencyString = (
         return c('Info').t`Yearly`;
     }
     if (type === FREQUENCY.CUSTOM) {
+        if (frequency === FREQUENCY.DAILY) {
+            const frequencyString = c('Info').ngettext(msgid`Daily`, `Every ${interval} days`, interval);
+            const durationString = (() => {
+                if (endType === END_TYPE.AFTER_N_TIMES) {
+                    return c('Info').ngettext(msgid`, ${count} time`, `, ${count} times`, count);
+                }
+                if (endType === END_TYPE.UNTIL) {
+                    const untilString = format(until, 'd MMM yyyy', { locale });
+                    return c('Info').t` until ${untilString}`;
+                }
+                return '';
+            })();
+            return frequencyString + durationString;
+        }
         if (frequency === FREQUENCY.WEEKLY) {
             const days = (() => {
                 if (weekly.days.length === 7) {
@@ -31,22 +45,22 @@ const getFrequencyString = (
                 }
                 return weekly.days.map((dayIndex) => weekdays[dayIndex]).join(', ');
             })();
-            const daysString = c('Info').ngettext(
+            const frequencyString = c('Info').ngettext(
                 msgid`Weekly on ${days}`,
                 `Every ${interval} weeks on ${days}`,
                 interval
             );
             const durationString = (() => {
                 if (endType === END_TYPE.AFTER_N_TIMES) {
-                    return c('Info').t`${count} times`;
+                    return c('Info').ngettext(msgid`; ${count} time`, `; ${count} times`, count);
                 }
                 if (endType === END_TYPE.UNTIL) {
                     const untilString = format(until, 'd MMM yyyy', { locale });
-                    return c('Info').t`until ${untilString}`;
+                    return c('Info').t`; until ${untilString}`;
                 }
                 return '';
             })();
-            return durationString ? `${daysString}; ${durationString}` : daysString;
+            return frequencyString + durationString;
         }
     }
     return '';
@@ -60,13 +74,25 @@ export const getTimezonedFrequencyString = (frequencyModel, options) => {
         ends: { type: endType }
     } = frequencyModel;
     const { startTzid, currentTzid } = options;
-    const timezoneIsNotNeeded =
-        !startTzid ||
-        (startTzid && startTzid === currentTzid) ||
-        (type === FREQUENCY.CUSTOM &&
-            frequency === FREQUENCY.WEEKLY &&
-            days.length === 7 &&
-            endType !== END_TYPE.UNTIL);
-    const timezoneString = timezoneIsNotNeeded ? '' : ` (${startTzid})`;
+
+    if (!startTzid || startTzid === currentTzid) {
+        return getFrequencyString(frequencyModel, options);
+    }
+
+    const isTimezoneStringNeeded = (() => {
+        if (frequency === FREQUENCY.DAILY) {
+            return type === FREQUENCY.CUSTOM && endType === END_TYPE.UNTIL;
+        }
+        if (frequency === FREQUENCY.WEEKLY) {
+            const isStandardWeekly = type === FREQUENCY.WEEKLY;
+            const hasCustomUntil = type === FREQUENCY.CUSTOM && endType === END_TYPE.UNTIL;
+            const hasDays = isStandardWeekly || days.length !== 7;
+
+            return isStandardWeekly || hasCustomUntil || hasDays;
+        }
+        return false;
+    })();
+    const timezoneString = isTimezoneStringNeeded ? ` (${startTzid})` : '';
+
     return getFrequencyString(frequencyModel, options) + timezoneString;
 };

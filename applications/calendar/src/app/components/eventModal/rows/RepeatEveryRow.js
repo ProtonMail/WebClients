@@ -9,6 +9,7 @@ import IntegerInput from '../inputs/IntegerInput';
 
 const RepeatEveryRow = ({ frequencyModel, onChange, collapseOnMobile }) => {
     const intervalOptions = [
+        { text: c('Option').ngettext(msgid`Day`, `Days`, frequencyModel.interval), value: FREQUENCY.DAILY },
         { text: c('Option').ngettext(msgid`Week`, `Weeks`, frequencyModel.interval), value: FREQUENCY.WEEKLY }
         // { text: c('Option').ngettext(msgid`Month`, `Months`, frequencyModel.interval), value: FREQUENCY.MONTHLY },
         // { text: c('Option').ngettext(msgid`Year`, `Years`, frequencyModel.interval), value: FREQUENCY.YEARLY }

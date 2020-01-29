@@ -119,7 +119,7 @@ export const modelToFrequencyProperties = ({ frequencyModel, start = {}, isAllDa
     }
     if (type === FREQUENCY.CUSTOM) {
         properties.rrule = { value: { freq: frequency, interval } };
-        if (frequency === FREQUENCY.WEEKLY && weekly.days && weekly.days.length) {
+        if (frequency === FREQUENCY.WEEKLY && weekly.days.length) {
             // weekly.days may include repeated days (cf. function getFrequencyModelChange)
             const weeklyDays = unique(weekly.days);
             properties.rrule.value.byday = weeklyDays.map((day) => NUMBER_TO_DAY[day]).join(',');

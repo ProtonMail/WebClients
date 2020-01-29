@@ -97,11 +97,17 @@ export const FREQUENCY = {
 };
 
 export const FREQUENCY_INTERVALS_MAX = {
+    [FREQUENCY.DAILY]: 1000,
     [FREQUENCY.WEEKLY]: 9999
 };
 
 export const FREQUENCY_COUNT_MAX = {
+    [FREQUENCY.DAILY]: 50,
     [FREQUENCY.WEEKLY]: 50
+};
+
+export const DAILY_TYPE = {
+    ALL_DAYS: 0
 };
 
 export const WEEKLY_TYPE = {
