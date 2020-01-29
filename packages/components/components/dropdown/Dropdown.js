@@ -64,7 +64,7 @@ const Dropdown = ({
             document.removeEventListener('touchstart', handleClickOutside);
             document.removeEventListener('keydown', handleKeydown);
         };
-    }, []);
+    }, [autoCloseOutside]);
 
     const contentClassName = classnames([
         'dropDown',
