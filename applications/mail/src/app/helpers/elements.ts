@@ -18,8 +18,8 @@ export interface TypeParams {
 export const getCurrentType = ({ labelID, mailSettings }: TypeParams) =>
     isConversationMode(labelID, mailSettings) ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
 
-export const isMessage = (element: Element): boolean => typeof (element as Message).ConversationID === 'string';
-export const isConversation = (element: Element): boolean => !isMessage(element);
+export const isMessage = (element: Element = {}): boolean => typeof (element as Message).ConversationID === 'string';
+export const isConversation = (element: Element = {}): boolean => !isMessage(element);
 
 export const getDate = ({ Time = 0, ContextTime = 0 }: Element = {}) => new Date((ContextTime || Time) * 1000);
 
@@ -54,7 +54,7 @@ export const getLabel = ({ Labels = [] }: Element, labelID: string) => Labels.fi
 export const getLabelIds = ({ Labels, LabelIDs }: Element) =>
     Labels ? Labels.map(({ ID }) => ID || '') : LabelIDs || [];
 
-export const hasLabel = (element: Element, labelID: string) => {
+export const hasLabel = (element: Element, labelID?: string) => {
     return getLabelIds(element).some((ID) => labelID === ID);
 };
 

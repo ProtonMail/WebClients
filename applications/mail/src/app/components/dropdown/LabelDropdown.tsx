@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useEffect } from 'react';
 import { c } from 'ttag';
 import {
     SearchInput as UntypedSearchInput,
@@ -16,25 +16,46 @@ import {
     useEventManager,
     generateUID
 } from 'react-components';
-import { LABEL_EXCLUSIVE } from 'proton-shared/lib/constants';
 import { labelMessages, unlabelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/conversations';
 import { normalize } from 'proton-shared/lib/helpers/string';
+import { LABEL_COLORS } from 'proton-shared/lib/constants';
+import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 
-import { ELEMENT_TYPES } from '../../constants';
 import { Label } from '../../models/label';
+import { Element } from '../../models/element';
+import { hasLabel, isMessage } from '../../helpers/elements';
+import { getLabelsWithoutFolders } from '../../helpers/labels';
 
 import './LabelDropdown.scss';
 
 const SearchInput = UntypedSearchInput as any;
 
-interface Props {
-    selectedIDs: string[];
-    type: string;
-    onClose: () => void;
+enum LabelState {
+    On,
+    Off,
+    Indeterminate
 }
 
-const LabelDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
+type SelectionState = { [labelID: string]: LabelState };
+
+const getInitialState = (labels: Label[] = [], elements: Element[] = []) => {
+    const result: SelectionState = {};
+    getLabelsWithoutFolders(labels).forEach(({ ID = '' }) => {
+        const count = elements.filter((element) => hasLabel(element, ID)).length;
+        result[ID] =
+            count === 0 ? LabelState.Off : count === elements.length ? LabelState.On : LabelState.Indeterminate;
+    });
+    return result;
+};
+
+interface Props {
+    elements: Element[];
+    onClose: () => void;
+    onLock: (lock: boolean) => void;
+}
+
+const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
     const [uid] = useState(generateUID('label-dropdown'));
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -45,27 +66,38 @@ const LabelDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
     const [search, updateSearch] = useState('');
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
     const [alsoArchive, updateAlsoArchive] = useState(false);
-    const [selectedLabelIDs, updateSelectedLabelIDs] = useState<{ [labelID: string]: boolean }>({}); // TODO
+    const [selectedLabelIDs, updateSelectedLabelIDs] = useState<SelectionState>({});
+
+    useEffect(() => {
+        updateSelectedLabelIDs(getInitialState(labels, elements));
+    }, [elements, labels.length]);
+
+    if (!elements || !elements.length || !labels || !labels.length) {
+        return null;
+    }
+
+    const typeIsMessage = isMessage(elements[0]);
 
     const normSearch = normalize(search);
-    const list = labels
-        .filter(({ Exclusive }) => Exclusive === LABEL_EXCLUSIVE.LABEL)
-        .filter(({ Name = '' }) => {
-            if (!search) {
-                return true;
-            }
-            const normName = normalize(Name);
-            return normName.includes(normSearch);
-        });
+    const list = getLabelsWithoutFolders(labels).filter(({ Name = '' }) => {
+        if (!search) {
+            return true;
+        }
+        const normName = normalize(Name);
+        return normName.includes(normSearch);
+    });
 
-    const handleApply = async () => {
-        const labelAction = type === ELEMENT_TYPES.MESSAGE ? labelMessages : labelConversations;
-        const unlabelAction = type === ELEMENT_TYPES.MESSAGE ? unlabelMessages : unlabelConversations;
+    const handleApply = async (selection = selectedLabelIDs) => {
+        const labelAction = typeIsMessage ? labelMessages : labelConversations;
+        const unlabelAction = typeIsMessage ? unlabelMessages : unlabelConversations;
+        const selectedIDs = elements.map((element) => element.ID || '');
+
         // TODO to improve: we call label / unlabel too much
-        const promises = list.map(({ ID: LabelID = '' }) => {
-            if (selectedLabelIDs[LabelID]) {
+        const promises = Object.keys(selection).map((LabelID) => {
+            if (selection[LabelID] === LabelState.On) {
                 return api(labelAction({ LabelID, IDs: selectedIDs }));
-            } else {
+            }
+            if (selection[LabelID] === LabelState.Off) {
                 return api(unlabelAction({ LabelID, IDs: selectedIDs }));
             }
         });
@@ -75,7 +107,16 @@ const LabelDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
         createNotification({ text: c('Success').t`Labels applied` });
     };
 
-    const handleCheck = (labelID: string) => ({ target, nativeEvent }: ChangeEvent) => {
+    const applyCheck = (labelIDs: string[], selected: boolean) => {
+        const update = labelIDs.reduce((acc, ID) => {
+            acc[ID] = selected ? LabelState.On : LabelState.Off;
+            return acc;
+        }, {} as SelectionState);
+
+        updateSelectedLabelIDs({ ...selectedLabelIDs, ...update });
+    };
+
+    const handleCheck = (labelID: string) => ({ target, nativeEvent }: ChangeEvent<HTMLInputElement>) => {
         const { shiftKey } = nativeEvent as any;
         const labelIDs = [labelID];
 
@@ -86,14 +127,24 @@ const LabelDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
         }
 
         setLastChecked(labelID);
-        const update = labelIDs.reduce((acc, ID) => {
-            acc[ID] = (target as HTMLInputElement).checked;
-            return acc;
-        }, Object.create(null));
 
-        console.log('handleCheck', selectedLabelIDs, update);
+        applyCheck(labelIDs, target.checked);
+    };
 
-        updateSelectedLabelIDs({ ...selectedLabelIDs, ...update });
+    const handleAddNewLabel = (label?: Label) => {
+        applyCheck([label?.ID || ''], true);
+    };
+
+    const handleCreate = () => {
+        onLock(true);
+        const newLabel = {
+            Name: search,
+            Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+            Exclusive: false
+        };
+        createModal(
+            <LabelModal type="label" label={newLabel} onAdd={handleAddNewLabel} onClose={() => onLock(false)} />
+        );
     };
 
     return (
@@ -101,12 +152,7 @@ const LabelDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
             <div className="flex flex-spacebetween flex-items-center mb1">
                 <label htmlFor="filter-labels" className="bold">{c('Label').t`Label as`}</label>
                 <Tooltip title={c('Title').t`Create label`}>
-                    <PrimaryButton
-                        className="pm-button--small pm-button--for-smallicon"
-                        onClick={() => {
-                            createModal(<LabelModal type="label" label={null} />);
-                        }}
-                    >
+                    <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
                         <Icon name="label" fill="light" className="flex-item-noshrink mr0-25" />+
                     </PrimaryButton>
                 </Tooltip>
@@ -142,12 +188,21 @@ const LabelDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
                                 <Checkbox
                                     className="flex-item-noshrink"
                                     id={lineId}
-                                    checked={selectedLabelIDs[ID] || false}
+                                    checked={selectedLabelIDs[ID] === LabelState.On}
+                                    indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
                                     onChange={handleCheck(ID)}
                                 />
                             </li>
                         );
                     })}
+                    {list.length === 0 && (
+                        <li
+                            key="empty"
+                            className="w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5"
+                        >
+                            {c('Info').t`No label found`}
+                        </li>
+                    )}
                 </ul>
             </div>
             <div className="mb1 flex flex-spacebetween">

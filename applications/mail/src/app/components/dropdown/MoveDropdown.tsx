@@ -13,14 +13,17 @@ import {
     useNotifications,
     useEventManager
 } from 'react-components';
-import { LABEL_EXCLUSIVE, MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, LABEL_COLORS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { labelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations } from 'proton-shared/lib/api/conversations';
+import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 
-import { ELEMENT_TYPES } from '../../constants';
 import { Label } from '../../models/label';
+import { getFolders } from '../../helpers/labels';
+import { isMessage } from '../../helpers/elements';
+import { Element } from '../../models/element';
 
 import './MoveDropdown.scss';
 
@@ -28,13 +31,15 @@ const SearchInput = UntypedSearchInput as any;
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
+type LabelWithIcon = Label & { icon?: string };
+
 interface Props {
-    selectedIDs: string[];
-    type: string;
+    elements: Element[];
     onClose: () => void;
+    onLock: (lock: boolean) => void;
 }
 
-const MoveDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
+const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const api = useApi();
@@ -43,8 +48,14 @@ const MoveDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
     const [labels = []]: [Label[]] = useLabels();
     const [search, updateSearch] = useState('');
     const normSearch = normalize(search);
-    const folders = labels
-        .filter(({ Exclusive }) => Exclusive === LABEL_EXCLUSIVE.FOLDER)
+
+    if (!elements || !elements.length || !labels || !labels.length) {
+        return null;
+    }
+
+    const typeIsMessage = isMessage(elements[0]);
+
+    const folders: LabelWithIcon[] = getFolders(labels)
         .concat(
             [
                 { ID: INBOX, Name: c('Mailbox').t`Inbox`, icon: 'inbox' },
@@ -61,12 +72,24 @@ const MoveDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
             return normName.includes(normSearch);
         });
 
-    const handleMove = async (folder: Label) => {
-        const action = type === ELEMENT_TYPES.CONVERSATION ? labelConversations : labelMessages;
-        await api(action({ LabelID: folder.ID, IDs: selectedIDs }));
+    const handleMove = async (folder?: Label) => {
+        const action = typeIsMessage ? labelMessages : labelConversations;
+        const selectedIDs = elements.map((element) => element.ID || '');
+
+        await api(action({ LabelID: folder?.ID, IDs: selectedIDs }));
         await call();
         onClose();
-        createNotification({ text: c('Success').t`Elements moved to ${folder.Name}` });
+        createNotification({ text: c('Success').t`Elements moved to ${folder?.Name}` });
+    };
+
+    const handleCreate = () => {
+        onLock(true);
+        const newLabel = {
+            Name: search,
+            Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+            Exclusive: true
+        };
+        createModal(<LabelModal type="folder" label={newLabel} onClose={() => onLock(false)} />);
     };
 
     return (
@@ -74,12 +97,7 @@ const MoveDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
             <div className="flex flex-spacebetween flex-items-center mb1">
                 <label htmlFor="filter-folders" className="bold">{c('Label').t`Move to`}</label>
                 <Tooltip title={c('Title').t`Create folder`}>
-                    <PrimaryButton
-                        className="pm-button--small pm-button--for-smallicon"
-                        onClick={() => {
-                            createModal(<LabelModal type="folder" label={null} />);
-                        }}
-                    >
+                    <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
                         <Icon name="folder" fill="light" className="flex-item-noshrink mr0-25" />+
                     </PrimaryButton>
                 </Tooltip>
@@ -104,7 +122,11 @@ const MoveDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
                                     className="w100 flex flex-nowrap flex-items-center pt0-5 pb0-5"
                                     onClick={() => withLoading(handleMove(folder))}
                                 >
-                                    <Icon name="folder" color={folder.Color} className="flex-item-noshrink mr0-5" />
+                                    <Icon
+                                        name={folder.icon || 'folder'}
+                                        color={folder.Color}
+                                        className="flex-item-noshrink mr0-5"
+                                    />
                                     <span className="ellipsis" title={folder.Name}>
                                         {folder.Name}
                                     </span>
@@ -112,6 +134,14 @@ const MoveDropdown = ({ selectedIDs = [], type, onClose }: Props) => {
                             </li>
                         );
                     })}
+                    {folders.length === 0 && (
+                        <li
+                            key="empty"
+                            className="w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5"
+                        >
+                            {c('Info').t`No folder found`}
+                        </li>
+                    )}
                 </ul>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { Icon, Group, ButtonGroup, useToggle, useContactEmails } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
@@ -20,10 +20,10 @@ import { MessageExtended } from '../../../models/message';
 import { Label } from '../../../models/label';
 import HeaderDropdown from './HeaderDropdown';
 import { OnCompose } from '../../../containers/ComposerContainer';
-
-import './MessageHeader.scss';
 import { ContactEmail } from '../../../models/contact';
 import { useContactGroups } from '../../../hooks/useContactGroups';
+
+import './MessageHeader.scss';
 
 interface Props {
     labels?: Label[];
@@ -67,6 +67,8 @@ const HeaderExpanded = ({
             referenceMessage: message
         });
     };
+
+    const elements = useMemo(() => [message.data || {}], [message]);
 
     return (
         <div className={`message-header message-header-expanded ${inOutClass}`}>
@@ -120,21 +122,13 @@ const HeaderExpanded = ({
                 <div>
                     <Group className="mr1">
                         <HeaderDropdown autoClose={false} content={<Icon name="folder" />}>
-                            {({ onClose }) => (
-                                <MoveDropdown
-                                    selectedIDs={[(message.data || {}).ID || '']}
-                                    type={ELEMENT_TYPES.MESSAGE}
-                                    onClose={onClose}
-                                />
+                            {({ onClose, onLock }) => (
+                                <MoveDropdown elements={elements} onClose={onClose} onLock={onLock} />
                             )}
                         </HeaderDropdown>
                         <HeaderDropdown autoClose={false} content={<Icon name="label" />}>
-                            {({ onClose }) => (
-                                <LabelDropdown
-                                    selectedIDs={[(message.data || {}).ID || '']}
-                                    type={ELEMENT_TYPES.MESSAGE}
-                                    onClose={onClose}
-                                />
+                            {({ onClose, onLock }) => (
+                                <LabelDropdown elements={elements} onClose={onClose} onLock={onLock} />
                             )}
                         </HeaderDropdown>
                     </Group>

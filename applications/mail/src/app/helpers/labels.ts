@@ -1,5 +1,5 @@
 import { LABEL_IDS_TO_HUMAN, LABEL_IDS_TO_I18N } from '../constants';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, LABEL_EXCLUSIVE } from 'proton-shared/lib/constants';
 import { Label } from '../models/label';
 import { toMap } from 'proton-shared/lib/helpers/object';
 
@@ -22,3 +22,9 @@ export const getLabelName = (labelID: string, labels: Label[]): string => {
 
 export const isCustomLabel = (labelID: string) =>
     !Object.values(MAILBOX_LABEL_IDS).includes(labelID as MAILBOX_LABEL_IDS);
+
+export const isFolder = ({ Exclusive = 0 }: Label = {}) => Exclusive === LABEL_EXCLUSIVE.FOLDER;
+
+export const getLabelsWithoutFolders = (labels: Label[] = []) => labels.filter((label) => !isFolder(label));
+
+export const getFolders = (labels: Label[] = []) => labels.filter((label) => isFolder(label));

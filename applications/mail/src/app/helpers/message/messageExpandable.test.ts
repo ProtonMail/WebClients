@@ -52,4 +52,10 @@ describe('messageExpandable', () => {
         ];
         expect(findMessageToExpand(labelID, messages)).toBe(messages[1]);
     });
+
+    it('should return empty for a conversation with only a draft', () => {
+        const labelID = 'custom';
+        const messages = [{ Flags: MESSAGE_FLAGS.FLAG_REPLIED }];
+        expect(findMessageToExpand(labelID, messages)).toEqual({});
+    });
 });

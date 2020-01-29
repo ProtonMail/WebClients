@@ -13,6 +13,11 @@ import { isDraft, isSentAutoReply } from './messages';
  * - if the previous isRead === 1, break the iteration
  */
 const getFirstMessageToRead = (messages: Message[]): Message => {
+    // A conversation can contains only one draft
+    if (messages.length === 0) {
+        return {};
+    }
+
     // Else we open the first message unread beginning to the end list
     let index = messages.length;
     let contains = false;
@@ -26,8 +31,8 @@ const getFirstMessageToRead = (messages: Message[]): Message => {
     }
 
     const position = contains ? index : 0;
-    // A conversation can contains only one draft
-    return messages.length ? messages[position] : messages[0];
+
+    return messages[position];
 };
 
 const getLast = (messages: Message[]): Message => {
@@ -41,6 +46,10 @@ const getLast = (messages: Message[]): Message => {
  * Find in the message to scroll and expand
  */
 export const findMessageToExpand = (labelID = '', messages: Message[] = []): Message => {
+    if (messages.length === 0) {
+        return {};
+    }
+
     if (labelID === MAILBOX_LABEL_IDS.STARRED || isCustomLabel(labelID)) {
         return getFirstMessageToRead(messages.filter((message) => hasLabel(message, labelID) && !isDraft(message)));
     }

@@ -144,6 +144,7 @@ const MailboxContainer = ({
                 labelID={labelID}
                 elementID={elementID}
                 selectedIDs={selectedIDs}
+                elements={elements}
                 mailSettings={mailSettings}
                 checkAll={checkAll}
                 onCheckAll={handleCheckAll}
