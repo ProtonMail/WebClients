@@ -1,17 +1,38 @@
 /*
  * badges/labels 
  */
-[class*="badgeLabel"] {
+[class*="badgeLabel"]:not([class*="pm-badgeLabel-"]) {
   @extend .uppercase;
   @extend .color-white;
-  @extend .inbl;
+  @extend .inline-flex;
   font-size: rem(11); // to be sure this is the same height everywhere
   padding: 0 em(2) em(1);
   line-height: 1;
   border-radius: $global-border-radius;
   border-width: 2px;
   border-style: solid; 
+  //max-width: 15em;
+}  
+
+// only for labels in conversations
+.pm-badgeLabel-container  {
+  [class*="badgeLabel"] {
+    border-radius: 1rem;
+    padding: .1rem .2rem;
+  }
 }
+.pm-badgeLabel-link,
+.pm-badgeLabel-link:active,
+.pm-badgeLabel-link:hover,
+.pm-badgeLabel-link:focus {
+  color: $white;
+  text-decoration: none;
+
+  &:not(:last-child) {
+    padding-right: .4rem;
+  }
+}
+
 .badgeLabel-success {
   @extend .bg-global-success;
   border-color: $pm-global-success;
