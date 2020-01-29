@@ -107,7 +107,7 @@ const EndsRow = ({
                         {c('Custom frequency option').ngettext(
                             msgid`Occurence`,
                             `Occurrences`,
-                            frequencyModel.ends.count
+                            frequencyModel.ends.count || 1 // Can get undefined through the input
                         )}
                     </span>
                 </div>
