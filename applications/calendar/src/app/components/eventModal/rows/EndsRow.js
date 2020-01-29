@@ -36,6 +36,8 @@ const EndsRow = ({
         onChange({ ...frequencyModel, ends: { ...frequencyModel.ends, until } });
     };
 
+    const safeCountPlural = frequencyModel.ends.count || 1; // Can get undefined through the input
+
     return (
         <>
             <Row collapseOnMobile={collapseOnMobile}>
@@ -104,11 +106,7 @@ const EndsRow = ({
                         />
                     </span>
                     <span className="mtauto mbauto">
-                        {c('Custom frequency option').ngettext(
-                            msgid`Occurence`,
-                            `Occurrences`,
-                            frequencyModel.ends.count || 1 // Can get undefined through the input
-                        )}
+                        {c('Custom frequency option').ngettext(msgid`Occurence`, `Occurrences`, safeCountPlural)}
                     </span>
                 </div>
             </Row>
