@@ -22,7 +22,7 @@ const DomainSection = ({ domain, onChange }) => {
                 <Label htmlFor="domainName">{c('Label').t`Enter your domain`}</Label>
                 <Field>
                     {domain.ID ? (
-                        <span className="mt0-5">{domainName}</span>
+                        <span className="mt0-5 flex">{domainName}</span>
                     ) : (
                         <Input
                             id="domainName"

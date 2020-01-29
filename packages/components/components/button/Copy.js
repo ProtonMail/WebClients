@@ -4,11 +4,12 @@ import { c } from 'ttag';
 import { Icon, Button, classnames, Tooltip } from 'react-components';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 
-const Copy = ({ value, className = '' }) => {
+const Copy = ({ value, className = '', onCopy }) => {
     const [copied, setCopied] = useState(false);
 
     const handleClick = () => {
         textToClipboard(value);
+        onCopy && onCopy();
 
         if (!copied) {
             setCopied(true);
@@ -26,7 +27,8 @@ const Copy = ({ value, className = '' }) => {
 
 Copy.propTypes = {
     value: PropTypes.string.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
+    onCopy: PropTypes.func
 };
 
 export default Copy;

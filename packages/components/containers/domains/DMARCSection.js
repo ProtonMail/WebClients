@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { Alert, Label, Table, TableHeader, TableBody, TableRow } from 'react-components';
 
 const DMARCSection = () => {
-    const none = <strong>p=none</strong>;
-    const address = <strong>address@yourdomain.com</strong>;
+    const none = <strong key="none">p=none</strong>;
+    const address = <strong key="address">address@yourdomain.com</strong>;
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">

@@ -10,15 +10,16 @@ const TYPES = {
     error: 'bg-global-warning'
 };
 
-const RoundedIcon = ({ className = 'inline-flex rounded50 flex-item-noshrink', type = 'success', padding = 'p0-25', ...rest }) => {
+const RoundedIcon = ({ className = '', iconClassName = 'fill-white', type = 'success', padding = 'p0-5', ...rest }) => {
     return (
-        <span className={classnames([className, padding, TYPES[type]])}>
-            <Icon {...rest} />
+        <span className={classnames(['inline-flex rounded50 flex-item-noshrink', className, padding, TYPES[type]])}>
+            <Icon size="12" className={iconClassName} {...rest} />
         </span>
     );
 };
 
 RoundedIcon.propTypes = {
+    iconClassName: PropTypes.string,
     className: PropTypes.string,
     type: PropTypes.string,
     padding: PropTypes.string
