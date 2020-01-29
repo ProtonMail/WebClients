@@ -20,6 +20,11 @@
     display: flex;
 }
 
+.pd-file-preview-filename {
+    @extend .ellipsis;
+    max-width: calc(50% - 5em);
+}
+
 .pd-file-preview-text {
     @extend .bg-white;
     @extend .color-black;
@@ -35,6 +40,6 @@
 }
 
 .pd-file-preview-image {
-    @extend .centered-absolute;
+    @extend .absolute;
     max-width: none;
 }
