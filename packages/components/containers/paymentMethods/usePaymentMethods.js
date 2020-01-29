@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { useApi, useLoading, useAuthentication } from 'react-components';
-import { BLACK_FRIDAY, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { BLACK_FRIDAY, PAYMENT_METHOD_TYPES, MIN_BITCOIN_AMOUNT } from 'proton-shared/lib/constants';
 import { isExpired } from 'proton-shared/lib/helpers/card';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 
@@ -59,10 +59,12 @@ const usePaymentMethods = ({ amount, coupon, type }) => {
     }
 
     if (!isSignup && coupon !== BLACK_FRIDAY.COUPON_CODE) {
-        options.push({
-            text: c('Payment method option').t`Pay with Bitcoin`,
-            value: 'bitcoin'
-        });
+        if (amount >= MIN_BITCOIN_AMOUNT) {
+            options.push({
+                text: c('Payment method option').t`Pay with Bitcoin`,
+                value: 'bitcoin'
+            });
+        }
 
         options.push({
             text: c('Label').t`Pay with cash`,
