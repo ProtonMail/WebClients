@@ -1,5 +1,5 @@
 import { parse } from '../../lib/calendar/vcal';
-import { getOccurencesBetween } from '../../lib/calendar/recurring';
+import { getOccurrencesBetween } from '../../lib/calendar/recurring';
 
 describe('recurring', () => {
     const component = {
@@ -25,12 +25,12 @@ describe('recurring', () => {
     };
 
     it('should not get occurrences between if it is out of range', () => {
-        const result = getOccurencesBetween(component, Date.UTC(2018, 3, 1), Date.UTC(2018, 3, 2));
+        const result = getOccurrencesBetween(component, Date.UTC(2018, 3, 1), Date.UTC(2018, 3, 2));
         expect(result).toEqual([]);
     });
 
     it('should get occurrences between a range', () => {
-        const result = getOccurencesBetween(component, Date.UTC(2019, 2, 1), Date.UTC(2019, 2, 3));
+        const result = getOccurrencesBetween(component, Date.UTC(2019, 2, 1), Date.UTC(2019, 2, 3));
 
         expect(
             result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
@@ -41,7 +41,7 @@ describe('recurring', () => {
     });
 
     it('should get occurrences between a dst range', () => {
-        const result = getOccurencesBetween(component, Date.UTC(2019, 9, 26), Date.UTC(2019, 9, 29));
+        const result = getOccurrencesBetween(component, Date.UTC(2019, 9, 26), Date.UTC(2019, 9, 29));
 
         expect(
             result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
@@ -54,15 +54,15 @@ describe('recurring', () => {
 
     it('should get cached occurrences between a range', () => {
         const cache = {};
-        const result1 = getOccurencesBetween(component, Date.UTC(2019, 2, 1), Date.UTC(2019, 2, 3), cache);
-        const result2 = getOccurencesBetween(component, Date.UTC(2019, 2, 1), Date.UTC(2019, 2, 3), cache);
+        const result1 = getOccurrencesBetween(component, Date.UTC(2019, 2, 1), Date.UTC(2019, 2, 3), cache);
+        const result2 = getOccurrencesBetween(component, Date.UTC(2019, 2, 1), Date.UTC(2019, 2, 3), cache);
         expect(result1).toEqual(result2);
     });
 
     it('should fill cache if out of range', () => {
         const cache = {};
-        const result1 = getOccurencesBetween(component, Date.UTC(2019, 2, 1), Date.UTC(2019, 2, 3), cache);
-        const result2 = getOccurencesBetween(component, Date.UTC(2031, 2, 1), Date.UTC(2031, 2, 3), cache);
+        const result1 = getOccurrencesBetween(component, Date.UTC(2019, 2, 1), Date.UTC(2019, 2, 3), cache);
+        const result2 = getOccurrencesBetween(component, Date.UTC(2031, 2, 1), Date.UTC(2031, 2, 3), cache);
         expect(
             result2.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
         ).toEqual([
@@ -79,7 +79,7 @@ DTEND;VALUE=DATE:20200130
 RRULE:FREQ=WEEKLY;BYDAY=SU,MO,TU,WE,TH,FR,SA;COUNT=3
 END:VEVENT`);
         const cache = {};
-        const result = getOccurencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
+        const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
         expect(
             result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
         ).toEqual([
@@ -97,7 +97,7 @@ DTEND;VALUE=DATE:20200130
 RRULE:FREQ=WEEKLY;BYDAY=SU,MO,TU,WE,TH,FR,SA;UNTIL=20200131
 END:VEVENT`);
         const cache = {};
-        const result = getOccurencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
+        const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
         expect(
             result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
         ).toEqual([
@@ -115,7 +115,7 @@ DTEND:20200129T133000Z
 RRULE:FREQ=WEEKLY;BYDAY=SU,MO,TU,WE,TH,FR,SA;UNTIL=20200131T235959Z
 END:VEVENT`);
         const cache = {};
-        const result = getOccurencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
+        const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
         expect(
             result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
         ).toEqual([
@@ -133,7 +133,7 @@ DTEND;TZID=Europe/Zurich:20200129T133000
 RRULE:FREQ=WEEKLY;BYDAY=SU,MO,TU,WE,TH,FR,SA;UNTIL=20200201T105959Z
 END:VEVENT`);
         const cache = {};
-        const result = getOccurencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
+        const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
         expect(
             result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
         ).toEqual([

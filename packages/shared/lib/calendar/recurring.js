@@ -71,7 +71,7 @@ const getModifiedUntilRrule = (internalRrule, startTzid) => {
     };
 };
 
-export const getOccurencesBetween = (component, start, end, cache = {}) => {
+export const getOccurrencesBetween = (component, start, end, cache = {}) => {
     const { dtstart: internalDtstart, dtend: internalDtEnd, rrule: internalRrule } = component;
 
     if (!cache.start) {
