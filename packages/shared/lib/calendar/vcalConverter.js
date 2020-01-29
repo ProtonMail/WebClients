@@ -53,6 +53,10 @@ export const isIcalAllDay = ({ dtstart, dtend }) => {
     return !!((dtstart && isIcalPropertyAllDay(dtstart)) || (dtend && isIcalPropertyAllDay(dtend)));
 };
 
+export const getPropertyTzid = ({ parameters = {} }) => {
+    return parameters.tzid;
+};
+
 /**
  * Returns a date object relative to UTC time.
  * @param {Object} value

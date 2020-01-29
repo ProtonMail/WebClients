@@ -56,10 +56,10 @@ export const move = (list = [], from, to) => {
 };
 
 /**
- * Remove an item from an array.
+ * Remove the first occurrence of an item from an array.
  * @param {Array} arr
- * @param {Object} item The item to remove
- * @returns {Array} copy of the updated array.
+ * @param {Any} item    The item to remove
+ * @returns {Array}     copy of the updated array.
  */
 export const remove = (arr, item) => {
     const i = arr.indexOf(item);
@@ -68,6 +68,23 @@ export const remove = (arr, item) => {
     }
     const result = arr.slice();
     result.splice(i, 1);
+    return result;
+};
+
+/**
+ * Replace the first occurrence of an item from an array by another item.
+ * @param {Array} arr
+ * @param {Any} item            The item to be replaced
+ * @param {Any} replacement     The replacement item
+ * @returns {Array}     copy of the updated array.
+ */
+export const replace = (arr, item, replacement) => {
+    const i = arr.indexOf(item);
+    if (i === -1) {
+        return arr;
+    }
+    const result = arr.slice();
+    result.splice(i, 1, replacement);
     return result;
 };
 

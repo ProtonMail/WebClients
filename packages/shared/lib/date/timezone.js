@@ -228,7 +228,14 @@ const findZoneTransitionIndex = ({
 
 export const convertZonedDateTimeToUTC = (dateTime, tzid, options) => {
     const timezone = findTimeZone(tzid);
-    const unixTime = Date.UTC(dateTime.year, dateTime.month - 1, dateTime.day, dateTime.hours, dateTime.minutes, 0);
+    const unixTime = Date.UTC(
+        dateTime.year,
+        dateTime.month - 1,
+        dateTime.day,
+        dateTime.hours,
+        dateTime.minutes,
+        dateTime.seconds || 0
+    );
     const idx = findZoneTransitionIndex({
         unixTime,
         untils: timezone.untils,
@@ -242,7 +249,14 @@ export const convertZonedDateTimeToUTC = (dateTime, tzid, options) => {
 
 export const convertUTCDateTimeToZone = (dateTime, tzid) => {
     const timezone = findTimeZone(tzid);
-    const unixTime = Date.UTC(dateTime.year, dateTime.month - 1, dateTime.day, dateTime.hours, dateTime.minutes, 0);
+    const unixTime = Date.UTC(
+        dateTime.year,
+        dateTime.month - 1,
+        dateTime.day,
+        dateTime.hours,
+        dateTime.minutes,
+        dateTime.seconds || 0
+    );
     const idx = findUTCTransitionIndex({
         unixTime,
         untils: timezone.untils

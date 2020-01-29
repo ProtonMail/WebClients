@@ -1,4 +1,4 @@
-import { unique, uniqueBy, move } from '../../lib/helpers/array';
+import { unique, uniqueBy, move, replace } from '../../lib/helpers/array';
 
 describe('array', () => {
     describe('unique', () => {
@@ -35,6 +35,23 @@ describe('array', () => {
             expect(move(list, -1, 0)).toEqual([5, 1, 2, 3, 4]);
             expect(move(list, 1, -2)).toEqual([1, 3, 4, 2, 5]);
             expect(move(list, -3, -4)).toEqual([1, 3, 2, 4, 5]);
+        });
+    });
+
+    describe('replace', () => {
+        it('should return a new array', () => {
+            const list = [1, 2, 3, 4, 5];
+            expect(replace(list, 2, 7) !== list).toBeTruthy();
+        });
+        it('should correctly replace elements', () => {
+            const list = [1, 2, 3, 4, 5];
+            expect(replace(list, 2, 7)).toEqual([1, 7, 3, 4, 5]);
+            expect(replace(list, 1, 2)).toEqual([2, 2, 3, 4, 5]);
+            expect(replace(list, 5, 5)).toEqual([1, 2, 3, 4, 5]);
+        });
+        it('should return the same array if no replacement can be done', () => {
+            const list = [1, 2, 3, 4, 5];
+            expect(replace(list, 0, 0)).toEqual([1, 2, 3, 4, 5]);
         });
     });
 });

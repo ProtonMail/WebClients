@@ -1,9 +1,9 @@
 /* eslint-disable no-param-reassign */
 import { differenceInMinutes } from 'date-fns';
 import { getInternalDateTimeValue, internalValueToIcalValue } from './vcal';
-import { isIcalAllDay, propertyToUTCDate } from './vcalConverter';
+import { getPropertyTzid, isIcalAllDay, propertyToUTCDate } from './vcalConverter';
 import { addDays, addMilliseconds, differenceInCalendarDays, max, MILLISECONDS_IN_MINUTE } from '../date-fns-utc';
-import { fromUTCDate, toUTCDate } from '../date/timezone';
+import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '../date/timezone';
 
 const YEAR_IN_MS = Date.UTC(1971, 0, 1);
 
@@ -50,6 +50,27 @@ const fillOccurrencesBetween = (start, end, iterator, eventDuration, internalDts
     return result;
 };
 
+/**
+ * Convert the until property of an rrule to be in the timezone of the start date
+ */
+const getModifiedUntilRrule = (internalRrule, startTzid) => {
+    if (!internalRrule || !internalRrule.value || !internalRrule.value.until || !startTzid) {
+        return internalRrule;
+    }
+    const utcUntil = toUTCDate(internalRrule.value.until);
+    const localUntil = convertUTCDateTimeToZone(fromUTCDate(utcUntil), startTzid);
+    return {
+        ...internalRrule,
+        value: {
+            ...internalRrule.value,
+            until: {
+                ...localUntil,
+                isUTC: true
+            }
+        }
+    };
+};
+
 export const getOccurencesBetween = (component, start, end, cache = {}) => {
     const { dtstart: internalDtstart, dtend: internalDtEnd, rrule: internalRrule } = component;
 
@@ -59,6 +80,8 @@ export const getOccurencesBetween = (component, start, end, cache = {}) => {
 
         // Pretend the (local) date is in UTC time to keep the absolute times.
         const dtstart = internalValueToIcalValue(dtstartType, { ...internalDtstart.value, isUTC: true });
+        // Since the local date is pretended in UTC time, the until has to be converted into a fake local UTC time too
+        const modifiedRrule = getModifiedUntilRrule(internalRrule, getPropertyTzid(internalDtstart));
 
         const utcStart = propertyToUTCDate(internalDtstart);
         const rawEnd = propertyToUTCDate(internalDtEnd);
@@ -75,11 +98,12 @@ export const getOccurencesBetween = (component, start, end, cache = {}) => {
             dtstart,
             utcStart,
             isAllDay,
-            eventDuration
+            eventDuration,
+            modifiedRrule
         };
     }
 
-    const { eventDuration, isAllDay, utcStart, dtstart } = cache.start;
+    const { eventDuration, isAllDay, utcStart, dtstart, modifiedRrule } = cache.start;
 
     // If it starts after the current end, ignore it
     if (utcStart > end) {
@@ -87,7 +111,7 @@ export const getOccurencesBetween = (component, start, end, cache = {}) => {
     }
 
     if (!cache.iteration || start < cache.iteration.interval[0] || end > cache.iteration.interval[1]) {
-        const rrule = internalValueToIcalValue('recur', internalRrule.value);
+        const rrule = internalValueToIcalValue('recur', modifiedRrule.value);
         const iterator = rrule.iterator(dtstart);
 
         const interval = [start - YEAR_IN_MS, end + YEAR_IN_MS];

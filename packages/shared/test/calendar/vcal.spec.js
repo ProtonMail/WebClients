@@ -46,12 +46,60 @@ TRIGGER:-PT15H
 END:VALARM
 END:VEVENT`;
 
-const veventRrule = `BEGIN:VEVENT
+const veventRruleWeekly1 = `BEGIN:VEVENT
 UID:7E018059-2165-4170-B32F-6936E88E61E5
 DTSTART:20190719T120000Z
 DTEND:20190719T130000Z
-RRULE:FREQ=MONTHLY;COUNT=3;UNTIL=19980404T070000Z
+RRULE:FREQ=WEEKLY;COUNT=10;INTERVAL=3;BYDAY=WE,TH
 END:VEVENT`;
+
+const veventRruleWeekly2 = `BEGIN:VEVENT
+UID:7E018059-2165-4170-B32F-6936E88E61E5
+DTSTART;VALUE=DATE:20190719
+DTEND;VALUE=DATE:20190719
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20200130
+END:VEVENT`;
+
+const veventRruleWeekly3 = `BEGIN:VEVENT
+UID:7E018059-2165-4170-B32F-6936E88E61E5
+DTSTART:20190719T120000Z
+DTEND:20190719T130000Z
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20200130T225959Z
+END:VEVENT`;
+
+const veventRruleWeekly4 = `BEGIN:VEVENT
+UID:7E018059-2165-4170-B32F-6936E88E61E5
+DTSTART;TZID=America/New_York:20190719T120000
+DTEND:20190719T130000Z
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20200130T225959Z
+END:VEVENT`;
+
+const veventsRruleWeekly = [veventRruleWeekly1, veventRruleWeekly2, veventRruleWeekly3, veventRruleWeekly4];
+
+const veventRruleMonthly1 = `BEGIN:VEVENT
+UID:7E018059-2165-4170-B32F-6936E88E61E5
+DTSTART:20190719T120000Z
+DTEND:20190719T130000Z
+RRULE:FREQ=MONTHLY;INTERVAL=2;BYMONTHDAY=13;UNTIL=20200130T230000Z
+END:VEVENT`;
+
+const veventRruleMonthly2 = `BEGIN:VEVENT
+UID:7E018059-2165-4170-B32F-6936E88E61E5
+DTSTART:20190719T120000Z
+DTEND:20190719T130000Z
+RRULE:FREQ=MONTHLY;COUNT=4;BYSETPOS=2;BYDAY=TU
+END:VEVENT`;
+
+const veventsRruleMonthly = [veventRruleMonthly1, veventRruleMonthly2];
+
+const veventRruleYearly = `BEGIN:VEVENT
+UID:7E018059-2165-4170-B32F-6936E88E61E5
+DTSTART:20190719T120000Z
+DTEND:20190719T130000Z
+RRULE:FREQ=YEARLY;BYMONTH=7;BYMONTHDAY=25
+END:VEVENT`;
+
+const veventsRruleYearly = [veventRruleYearly];
 
 describe('calendar', () => {
     it('should parse vevent', () => {
@@ -139,27 +187,152 @@ describe('calendar', () => {
     });
 
     it('should parse rrule in vevent', () => {
-        const component = parse(veventRrule);
+        const components = [...veventsRruleWeekly, ...veventsRruleMonthly, ...veventsRruleYearly].map(parse);
 
-        expect(component).toEqual({
-            component: 'vevent',
-            uid: {
-                value: '7E018059-2165-4170-B32F-6936E88E61E5'
+        expect(components).toEqual([
+            {
+                component: 'vevent',
+                uid: {
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                },
+                dtstart: {
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                },
+                dtend: {
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                },
+                rrule: {
+                    value: {
+                        freq: 'WEEKLY',
+                        count: 10,
+                        interval: 3,
+                        byday: ['WE', 'TH'],
+                        until: undefined
+                    }
+                }
             },
-            dtstart: {
-                value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+            {
+                component: 'vevent',
+                uid: {
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                },
+                dtstart: {
+                    value: { year: 2019, month: 7, day: 19 },
+                    parameters: { type: 'date' }
+                },
+                dtend: {
+                    value: { year: 2019, month: 7, day: 19 },
+                    parameters: { type: 'date' }
+                },
+                rrule: {
+                    value: {
+                        freq: 'WEEKLY',
+                        byday: 'MO',
+                        until: { year: 2020, month: 1, day: 30 }
+                    }
+                }
             },
-            dtend: {
-                value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+            {
+                component: 'vevent',
+                uid: {
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                },
+                dtstart: {
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                },
+                dtend: {
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                },
+                rrule: {
+                    value: {
+                        freq: 'WEEKLY',
+                        byday: 'MO',
+                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true }
+                    }
+                }
             },
-            rrule: {
-                value: {
-                    freq: 'MONTHLY',
-                    count: 3,
-                    until: { year: 1998, month: 4, day: 4, hours: 7, minutes: 0, seconds: 0, isUTC: true }
+            {
+                component: 'vevent',
+                uid: {
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                },
+                dtstart: {
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
+                    parameters: { tzid: 'America/New_York' }
+                },
+                dtend: {
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                },
+                rrule: {
+                    value: {
+                        freq: 'WEEKLY',
+                        byday: 'MO',
+                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true }
+                    }
+                }
+            },
+            {
+                component: 'vevent',
+                uid: {
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                },
+                dtstart: {
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                },
+                dtend: {
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                },
+                rrule: {
+                    value: {
+                        freq: 'MONTHLY',
+                        interval: 2,
+                        bymonthday: 13,
+                        until: { year: 2020, month: 1, day: 30, hours: 23, minutes: 0, seconds: 0, isUTC: true }
+                    }
+                }
+            },
+            {
+                component: 'vevent',
+                uid: {
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                },
+                dtstart: {
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                },
+                dtend: {
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                },
+                rrule: {
+                    value: {
+                        freq: 'MONTHLY',
+                        bysetpos: 2,
+                        byday: 'TU',
+                        count: 4,
+                        until: undefined
+                    }
+                }
+            },
+            {
+                component: 'vevent',
+                uid: {
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                },
+                dtstart: {
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                },
+                dtend: {
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                },
+                rrule: {
+                    value: {
+                        freq: 'YEARLY',
+                        bymonth: 7,
+                        bymonthday: 25,
+                        until: undefined
+                    }
                 }
             }
-        });
+        ]);
     });
 
     it('should parse attendees in vevent', () => {
@@ -223,8 +396,9 @@ describe('calendar', () => {
     });
 
     it('should round trip rrule in vevent', () => {
-        const result = serialize(parse(veventRrule));
-        expect(trimAll(result)).toEqual(trimAll(veventRrule));
+        const vevents = [...veventsRruleWeekly, ...veventsRruleMonthly, ...veventsRruleYearly];
+        const results = vevents.map((vevent) => serialize(parse(vevent)));
+        expect(results.map(trimAll)).toEqual(vevents.map(trimAll));
     });
 
     it('should round trip vevent', () => {

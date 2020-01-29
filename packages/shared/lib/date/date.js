@@ -18,7 +18,7 @@ import {
  */
 export const getFormattedWeekdays = (stringFormat, options) => {
     const zeroTime = new Date(0);
-    const weekdays = eachDayOfInterval({ start: startOfWeek(zeroTime), end: endOfWeek(zeroTime) });
+    const weekdays = eachDayOfInterval({ start: startOfWeek(zeroTime, options), end: endOfWeek(zeroTime, options) });
 
     return weekdays.map((day) => format(day, stringFormat, options));
 };

@@ -30,6 +30,13 @@ const getIcalDurationValue = (value) => {
     return ICAL.Duration.fromData(value);
 };
 
+const getIcalUntilValue = (value) => {
+    if (!value) {
+        return;
+    }
+    return getIcalDateValue(value, '', typeof value.hours === 'undefined');
+};
+
 export const internalValueToIcalValue = (type, value, { tzid } = {}) => {
     if (Array.isArray(value)) {
         return value;
@@ -47,7 +54,7 @@ export const internalValueToIcalValue = (type, value, { tzid } = {}) => {
         return getIcalPeriodValue(value, tzid);
     }
     if (type === 'recur') {
-        return ICAL.Recur.fromData({ ...value, until: value.until ? getIcalDateValue(value.until) : undefined });
+        return ICAL.Recur.fromData({ ...value, until: getIcalUntilValue(value.until) });
     }
     return value.toString();
 };
@@ -79,6 +86,13 @@ const getInternalDurationValue = (value) => {
         seconds: value.seconds,
         isNegative: value.isNegative
     };
+};
+
+const getInternalUntil = (value) => {
+    if (!value) {
+        return;
+    }
+    return value.icaltype === 'date' ? getInternalDateValue(value) : getInternalDateTimeValue(value);
 };
 
 /**
@@ -113,7 +127,7 @@ export const icalValueToInternalValue = (type, value) => {
     if (type === 'recur') {
         return {
             ...value.toJSON(),
-            until: value.until ? getInternalDateTimeValue(value.until) : undefined
+            until: getInternalUntil(value.until)
         };
     }
     return value.toString();
