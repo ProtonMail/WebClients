@@ -106,7 +106,7 @@ const EndsRow = ({
                         />
                     </span>
                     <span className="mtauto mbauto">
-                        {c('Custom frequency option').ngettext(msgid`Occurence`, `Occurrences`, safeCountPlural)}
+                        {c('Custom frequency option').ngettext(msgid`Occurrence`, `Occurrences`, safeCountPlural)}
                     </span>
                 </div>
             </Row>
