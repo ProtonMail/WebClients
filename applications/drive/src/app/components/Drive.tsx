@@ -89,15 +89,12 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
     );
 
     useEffect(() => {
-        if (contents) {
-            setContents(undefined);
-        }
-
         if (resource.type === ResourceType.FOLDER) {
+            if (contents) {
+                setContents(undefined);
+            }
             clearSelections();
             loadNextIncrement();
-        } else {
-            throw Error('Cannot use file as a directory');
         }
 
         return () => {
@@ -109,7 +106,6 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
     const handleScrollEnd = useCallback(() => {
         const loadedCount = contents?.length ?? 0;
         const page = loadedCount / FOLDER_PAGE_SIZE;
-
         loadNextIncrement(page);
     }, [loadNextIncrement, contents]);
 
@@ -131,11 +127,12 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
 
     const handleDoubleClick = async (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
+        const driveResource = { shareId: resource.shareId, linkId: item.LinkID, type: item.Type };
         if (item.Type === ResourceType.FOLDER) {
-            openResource({ shareId: resource.shareId, linkId: item.LinkID, type: item.Type }, item);
+            openResource(driveResource, item);
         } else if (item.Type === ResourceType.FILE) {
             if (item.MimeType && isPreviewAvailable(item.MimeType)) {
-                openResource({ shareId: resource.shareId, linkId: item.LinkID, type: item.Type }, item);
+                openResource(driveResource, item);
             } else {
                 const meta = getMetaForTransfer(item);
                 const fileStream = await startFileTransfer(item.LinkID, meta);
@@ -145,19 +142,17 @@ function Drive({ resource, openResource, contents, setContents, fileBrowserContr
     };
 
     return (
-        <>
-            <FileBrowser
-                loading={loading}
-                contents={contents}
-                selectedItems={selectedItems}
-                onItemClick={selectItem}
-                onToggleItemSelected={toggleSelectItem}
-                onItemDoubleClick={handleDoubleClick}
-                onEmptyAreaClick={clearSelections}
-                onToggleAllSelected={toggleAllSelected}
-                onShiftClick={selectRange}
-            />
-        </>
+        <FileBrowser
+            loading={loading}
+            contents={contents}
+            selectedItems={selectedItems}
+            onItemClick={selectItem}
+            onToggleItemSelected={toggleSelectItem}
+            onItemDoubleClick={handleDoubleClick}
+            onEmptyAreaClick={clearSelections}
+            onToggleAllSelected={toggleAllSelected}
+            onShiftClick={selectRange}
+        />
     );
 }
 

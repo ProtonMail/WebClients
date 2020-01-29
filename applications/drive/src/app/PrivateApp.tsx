@@ -38,14 +38,15 @@ const PrivateApp = ({ onLogout, history }: Props) => {
                         <PrivateLayout>
                             <AppErrorBoundary>
                                 <Switch>
-                                    <Route
-                                        path={`/drive/:shareId?/${LinkType.FILE}/:linkId?`}
-                                        exact
-                                        component={PreviewContainer}
-                                    />
                                     <Route path={`/drive/:shareId?/:type?/:linkId?`} exact component={DriveContainer} />
                                     <Redirect to="/drive" />
                                 </Switch>
+
+                                <Route
+                                    path={`/drive/:shareId?/${LinkType.FILE}/:linkId?`}
+                                    exact
+                                    component={PreviewContainer}
+                                />
                             </AppErrorBoundary>
                         </PrivateLayout>
                     </DownloadProvider>

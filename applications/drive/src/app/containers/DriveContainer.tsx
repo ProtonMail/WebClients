@@ -10,6 +10,7 @@ import { DriveResource, useDriveResource } from '../components/DriveResourceProv
 import DriveToolbar from '../components/DriveToolbar';
 import useFileBrowser from '../components/FileBrowser/useFileBrowser';
 import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
+import { DriveLink } from '../interfaces/link';
 
 const toResourceType = (type: LinkType) => {
     const resourceType = {
@@ -46,11 +47,15 @@ const toResource = (shareId?: string, type?: LinkType, linkId?: string): DriveRe
     throw Error('Missing parameters, should be none or shareId/type/linkId');
 };
 
+interface DriveHistoryState {
+    preloadedLink?: FileBrowserItem | DriveLink;
+}
+
 function DriveContainer({
     match,
     history,
     location
-}: RouteComponentProps<{ shareId?: string; type?: LinkType; linkId?: string }, {}, FileBrowserItem | undefined>) {
+}: RouteComponentProps<{ shareId?: string; type?: LinkType; linkId?: string }, {}, DriveHistoryState | undefined>) {
     const { loadDrive } = useDrive();
     const { resource, setResource } = useDriveResource();
     const [, setError] = useState();
@@ -59,7 +64,9 @@ function DriveContainer({
     const fileBrowserControls = useFileBrowser(fileBrowserContents);
 
     const navigateToResource = (resource: DriveResource, item?: FileBrowserItem) => {
-        history.push(`/drive/${resource.shareId}/${toLinkType(resource.type)}/${resource.linkId}`, item);
+        history.push(`/drive/${resource.shareId}/${toLinkType(resource.type)}/${resource.linkId}`, {
+            preloadedLink: item
+        });
     };
 
     useEffect(() => {
@@ -68,9 +75,9 @@ function DriveContainer({
         const initDrive = async () => {
             const initialResource = toResource(shareId, type, linkId);
 
-            if (initialResource) {
+            if (type === LinkType.FOLDER && initialResource) {
                 setResource(initialResource);
-            } else {
+            } else if (!initialResource) {
                 const initResult = await loadDrive();
 
                 if (!initResult) {
@@ -99,7 +106,7 @@ function DriveContainer({
                         selectedItems={fileBrowserControls.selectedItems}
                         resource={resource}
                         openResource={navigateToResource}
-                        parentLinkID={location.state?.ParentLinkID}
+                        parentLinkID={location.state?.preloadedLink?.ParentLinkID}
                     />
                 )
             }

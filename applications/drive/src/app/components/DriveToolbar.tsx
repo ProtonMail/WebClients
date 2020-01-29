@@ -11,7 +11,7 @@ import { getMetaForTransfer } from './Drive';
 interface Props {
     selectedItems: FileBrowserItem[];
     resource: DriveResource;
-    openResource: (resource: DriveResource, item?: FileBrowserItem) => void;
+    openResource: (resource: DriveResource) => void;
     parentLinkID?: string;
 }
 
