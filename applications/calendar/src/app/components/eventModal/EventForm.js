@@ -35,7 +35,7 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
             start={model.start}
             displayWeekNumbers={displayWeekNumbers}
             weekStartsOn={weekStartsOn}
-            error={errors.until}
+            errors={errors}
             isSubmitted={isSubmitted}
             onChange={(frequencyModel) => setModel({ ...model, frequencyModel })}
         />

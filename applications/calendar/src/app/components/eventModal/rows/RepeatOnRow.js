@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { classnames, Row } from 'react-components';
+import { Row } from 'react-components';
 
 import DayCheckbox from '../inputs/DayCheckbox';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
@@ -38,7 +38,7 @@ const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange, collapseOn
                         const dayLong = weekdaysLong[index];
                         const checked = frequencyModel.weekly.days.includes(day);
                         return (
-                            <span key={day.toString()} className={classnames([index !== 6 && 'mr0-5'])}>
+                            <span key={day.toString()}>
                                 <DayCheckbox
                                     id={dayLong}
                                     checked={checked}

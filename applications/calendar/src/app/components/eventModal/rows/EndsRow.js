@@ -1,5 +1,5 @@
 import React from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import PropTypes from 'prop-types';
 import { Row, Radio, DateInput } from 'react-components';
 import { isValid } from 'date-fns';
@@ -15,18 +15,18 @@ const EndsRow = ({
     start,
     displayWeekNumbers,
     weekStartsOn,
-    error,
+    errors,
     isSubmitted,
     onChange,
     collapseOnMobile
 }) => {
-    const maxCountValue = FREQUENCY_COUNT_MAX[frequencyModel.frequency];
-    const countValue = Math.min((frequencyModel.ends && frequencyModel.ends.count) || 2, maxCountValue);
-
     const handleChangeEndType = (type) => {
         onChange({ ...frequencyModel, ends: { ...frequencyModel.ends, type } });
     };
     const handleChangeEndCount = (count) => {
+        if (count !== '' && (count > FREQUENCY_COUNT_MAX[frequencyModel.frequency] || count < 1)) {
+            return;
+        }
         onChange({ ...frequencyModel, ends: { ...frequencyModel.ends, count } });
     };
     const handleChangeEndUntil = (until) => {
@@ -43,25 +43,29 @@ const EndsRow = ({
             </Row>
             <Row collapseOnMobile={collapseOnMobile}>
                 <div className="flex flex-nowrap flex-item-fluid">
-                    <Radio
-                        name="event-ends-radio"
-                        checked={frequencyModel.ends.type === NEVER}
-                        onChange={() => handleChangeEndType(NEVER)}
-                    >
-                        {c('Custom frequency option').t`Never`}
-                    </Radio>
+                    <span className="flex flex-item-noshrink">
+                        <Radio
+                            name="event-ends-radio"
+                            checked={frequencyModel.ends.type === NEVER}
+                            onChange={() => handleChangeEndType(NEVER)}
+                        >
+                            {c('Custom frequency option').t`Never`}
+                        </Radio>
+                    </span>
                 </div>
             </Row>
             <Row collapseOnMobile={collapseOnMobile}>
                 <div className="flex flex-nowrap flex-item-fluid">
-                    <Radio
-                        className="mr1 flex-no-wrap mtauto mbauto"
-                        name="event-ends-radio"
-                        checked={frequencyModel.ends.type === UNTIL}
-                        onChange={() => handleChangeEndType(UNTIL)}
-                    >
-                        {c('Custom frequency option').t`On`}
-                    </Radio>
+                    <span className="flex flex-item-noshrink">
+                        <Radio
+                            className="mr1 flex-nowrap mtauto mbauto"
+                            name="event-ends-radio"
+                            checked={frequencyModel.ends.type === UNTIL}
+                            onChange={() => handleChangeEndType(UNTIL)}
+                        >
+                            {c('Custom frequency option').t`On`}
+                        </Radio>
+                    </span>
                     <span>
                         <DateInput
                             value={frequencyModel.ends.until}
@@ -71,7 +75,7 @@ const EndsRow = ({
                             onFocus={() => handleChangeEndType(UNTIL)}
                             displayWeekNumbers={displayWeekNumbers}
                             weekStartsOn={weekStartsOn}
-                            aria-invalid={isSubmitted && !!error}
+                            aria-invalid={isSubmitted && !!errors.until}
                             isSubmitted={isSubmitted}
                         />
                     </span>
@@ -79,29 +83,33 @@ const EndsRow = ({
             </Row>
             <Row collapseOnMobile={collapseOnMobile}>
                 <div className="flex flex-nowrap flex-item-fluid">
-                    <Radio
-                        className="mr1 flex-no-wrap mtauto mbauto"
-                        name="event-ends-radio"
-                        checked={frequencyModel.ends.type === AFTER_N_TIMES}
-                        onChange={() => handleChangeEndType(AFTER_N_TIMES)}
-                    >
-                        {c('Custom frequency option').t`After`}
-                    </Radio>
+                    <span className="flex flex-item-noshrink">
+                        <Radio
+                            className="mr1 flex-nowrap mtauto mbauto"
+                            name="event-ends-radio"
+                            checked={frequencyModel.ends.type === AFTER_N_TIMES}
+                            onChange={() => handleChangeEndType(AFTER_N_TIMES)}
+                        >
+                            {c('Custom frequency option').t`After`}
+                        </Radio>
+                    </span>
                     <span className="mr1">
                         <IntegerInput
-                            value={frequencyModel.ends.count === '' ? '' : countValue}
-                            min="2"
-                            max={maxCountValue}
+                            value={frequencyModel.ends.count}
+                            min="1"
                             onChange={handleChangeEndCount}
                             onFocus={() => handleChangeEndType(AFTER_N_TIMES)}
-                            onBlur={() => {
-                                if (countValue === '') {
-                                    handleChangeEndCount(2);
-                                }
-                            }}
+                            aria-invalid={isSubmitted && !!errors.count}
+                            isSubmitted={isSubmitted}
                         />
                     </span>
-                    <span className="mtauto mbauto">{c('Custom frequency option').t`Occurrences`}</span>
+                    <span className="mtauto mbauto">
+                        {c('Custom frequency option').ngettext(
+                            msgid`Occurence`,
+                            `Occurrences`,
+                            frequencyModel.ends.count
+                        )}
+                    </span>
                 </div>
             </Row>
         </>
@@ -113,7 +121,7 @@ EndsRow.propTypes = {
     start: PropTypes.object,
     displayWeekNumbers: PropTypes.bool,
     weekStartsOn: PropTypes.number,
-    error: PropTypes.string,
+    errors: PropTypes.object,
     isSubmitted: PropTypes.bool,
     onChange: PropTypes.func,
     collapseOnMobile: PropTypes.bool

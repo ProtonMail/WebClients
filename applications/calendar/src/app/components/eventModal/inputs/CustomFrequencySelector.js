@@ -11,13 +11,13 @@ const CustomFrequencySelector = ({
     start,
     displayWeekNumbers,
     weekStartsOn,
-    error,
+    errors,
     onChange,
     isSubmitted,
     collapseOnMobile
 }) => {
     return (
-        <div>
+        <div className="w100">
             <RepeatEveryRow frequencyModel={frequencyModel} onChange={onChange} collapseOnMobile={collapseOnMobile} />
             {frequencyModel.frequency === FREQUENCY.WEEKLY && (
                 <RepeatOnRow
@@ -33,7 +33,7 @@ const CustomFrequencySelector = ({
                 start={start}
                 displayWeekNumbers={displayWeekNumbers}
                 weekStartsOn={weekStartsOn}
-                error={error}
+                errors={errors}
                 isSubmitted={isSubmitted}
                 onChange={onChange}
                 collapseOnMobile={collapseOnMobile}
@@ -47,7 +47,7 @@ CustomFrequencySelector.propTypes = {
     start: PropTypes.object,
     displayWeekNumbers: PropTypes.bool,
     weekStartsOn: PropTypes.number,
-    error: PropTypes.string,
+    errors: PropTypes.object,
     isSubmitted: PropTypes.bool,
     onChange: PropTypes.func.isRequired,
     collapseOnMobile: PropTypes.bool

@@ -29,7 +29,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             },
             ends: {
                 type: END_TYPE.NEVER,
-                count: undefined,
+                count: 2,
                 until: undefined
             }
         });
@@ -59,7 +59,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             },
             ends: {
                 type: END_TYPE.NEVER,
-                count: undefined,
+                count: 2,
                 until: undefined
             }
         });
@@ -89,7 +89,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             },
             ends: {
                 type: END_TYPE.NEVER,
-                count: undefined,
+                count: 2,
                 until: undefined
             }
         });
@@ -156,7 +156,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             },
             ends: {
                 type: END_TYPE.UNTIL,
-                count: undefined,
+                count: 2,
                 until: date
             }
         });
@@ -189,7 +189,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             },
             ends: {
                 type: END_TYPE.UNTIL,
-                count: undefined,
+                count: 2,
                 until: date
             }
         });

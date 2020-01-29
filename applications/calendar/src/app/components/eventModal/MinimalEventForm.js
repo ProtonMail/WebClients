@@ -39,7 +39,7 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
             start={model.start}
             isAllDay={model.isAllDay}
             weekStartsOn={weekStartsOn}
-            error={errors.until}
+            errors={errors}
             isSubmitted={isSubmitted}
             onChange={(frequencyModel) => setModel({ ...model, frequencyModel })}
         />

@@ -12,7 +12,7 @@ const FrequencyRow = ({
     start,
     displayWeekNumbers,
     weekStartsOn,
-    error,
+    errors,
     isSubmitted,
     onChange,
     collapseOnMobile
@@ -40,7 +40,7 @@ const FrequencyRow = ({
                                 start={start}
                                 displayWeekNumbers={displayWeekNumbers}
                                 weekStartsOn={weekStartsOn}
-                                error={error}
+                                errors={errors}
                                 isSubmitted={isSubmitted}
                                 onChange={onChange}
                             />
@@ -58,7 +58,7 @@ FrequencyRow.propTypes = {
     start: PropTypes.object,
     displayWeekNumbers: PropTypes.bool,
     weekStartsOn: PropTypes.number,
-    error: PropTypes.string,
+    errors: PropTypes.object,
     isSubmitted: PropTypes.bool,
     onChange: PropTypes.func,
     collapseOnMobile: PropTypes.bool

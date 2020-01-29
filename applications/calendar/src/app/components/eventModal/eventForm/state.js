@@ -72,7 +72,7 @@ export const getInitialFrequencyModel = (startDate) => {
         frequency: FREQUENCY.WEEKLY,
         interval: 1,
         weekly: { days: [startDate.getDay()] },
-        ends: { type: END_TYPE.NEVER }
+        ends: { type: END_TYPE.NEVER, count: 2 }
     };
 };
 
@@ -192,6 +192,7 @@ export const validate = ({ start, end, isAllDay, title, frequencyModel }) => {
     if (utcStart > utcEnd) {
         errors.end = c('Error').t`Start time must be before end time`;
     }
+
     if (frequencyModel.ends.type === END_TYPE.UNTIL) {
         if (!frequencyModel.ends.until) {
             errors.until = c('Error').t`Ends on date cannot be empty`;
@@ -199,6 +200,13 @@ export const validate = ({ start, end, isAllDay, title, frequencyModel }) => {
         if (isBefore(frequencyModel.ends.until, start.date))
             errors.until = c('Error').t`Ends on date must be after start time`;
     }
+
+    if (frequencyModel.ends.type === END_TYPE.AFTER_N_TIMES) {
+        if (!frequencyModel.ends.count) {
+            errors.count = c('Error').t`Number of occurrences cannot be empty`;
+        }
+    }
+
     return errors;
 };
 

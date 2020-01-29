@@ -20,7 +20,7 @@ export const propertiesToFrequencyModel = ({ value: frequencyProperty } = {}, { 
 
     const endType = (() => {
         // count and until cannot occur at the same time (see https://tools.ietf.org/html/rfc5545#page-37)
-        if (count && count > 1) {
+        if (count && count >= 1) {
             return END_TYPE.AFTER_N_TIMES;
         }
         if (until) {
@@ -73,7 +73,7 @@ export const propertiesToFrequencyModel = ({ value: frequencyProperty } = {}, { 
         },
         ends: {
             type: endType,
-            count,
+            count: count || 2,
             until: untilDate
         }
     };
