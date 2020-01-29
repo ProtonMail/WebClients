@@ -9,6 +9,14 @@ export const HOUR = 60 * MINUTE;
 export const DAY = 24 * HOUR;
 export const WEEK = 7 * DAY;
 
+// Max quantity for all addons
+export const MAX_VPN_ADDON = 496;
+export const MAX_MEMBER_ADDON = 5000;
+export const MAX_DOMAIN_PRO_ADDON = 99;
+export const MAX_DOMAIN_PLUS_ADDON = 10;
+export const MAX_ADDRESS_ADDON = 10;
+export const MAX_SPACE_ADDON = 16;
+
 export enum APPS {
     PROTONMAIL = 'proton-mail',
     PROTONMAIL_SETTINGS = 'proton-mail-settings',
