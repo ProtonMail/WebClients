@@ -97,7 +97,7 @@ export const getTimezonedFrequencyString = (frequencyModel, options) => {
         if (type === FREQUENCY.ONCE) {
             return false;
         }
-        if (frequency === FREQUENCY.DAILY) {
+        if ([FREQUENCY.DAILY, FREQUENCY.YEARLY].includes(frequency)) {
             return type === FREQUENCY.CUSTOM && endType === END_TYPE.UNTIL;
         }
         if (frequency === FREQUENCY.WEEKLY) {
