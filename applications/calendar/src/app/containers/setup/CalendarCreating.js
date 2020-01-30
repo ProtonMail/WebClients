@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { Alert, Loader } from 'react-components';
+import { Alert, FullLoader } from 'react-components';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -8,7 +8,7 @@ const CalendarCreating = () => {
         <>
             <Alert>{c('Info').t`Give us a moment while we prepare your calendar.`}</Alert>
             <div className="aligncenter">
-                <Loader size="medium" />
+                <FullLoader color="pm-primary" size="80" className="center flex"></FullLoader>
                 <p>{c('Info').t`Creating your calendar...`}</p>
             </div>
         </>
