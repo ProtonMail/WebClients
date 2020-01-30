@@ -279,9 +279,9 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
                 value: {
                     freq: 'YEARLY',
                     interval: 2,
-                    count: 2,
-                    bymonthday: 20,
-                    bymonth: 1
+                    count: 2
+                    //bymonthday: 20,
+                    //bymonth: 1
                 }
             }
         });
@@ -304,9 +304,9 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
                 value: {
                     freq: 'YEARLY',
                     interval: undefined,
-                    until: untilDateTime,
-                    bymonthday: 20,
-                    bymonth: 1
+                    until: untilDateTime
+                    //bymonthday: 20,
+                    //bymonth: 1
                 }
             }
         });
@@ -331,9 +331,9 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
                 value: {
                     freq: 'YEARLY',
                     interval: 2,
-                    until: untilDateTime,
-                    bymonthday: 20,
-                    bymonth: 1
+                    until: untilDateTime
+                    //bymonthday: 20,
+                    //bymonth: 1
                 }
             }
         });
@@ -357,9 +357,9 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
                 value: {
                     freq: 'YEARLY',
                     interval: 2,
-                    until: untilDateTime,
-                    bymonthday: 20,
-                    bymonth: 1
+                    until: untilDateTime
+                    //bymonthday: 20,
+                    //bymonth: 1
                 }
             }
         });
