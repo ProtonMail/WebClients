@@ -9,8 +9,7 @@ const getDefineObject = (publicPath, { filepath, integrity }) => {
     };
 };
 
-const transformWorkerContents = (path, contents) =>
-    contents.replace('self.window=self,importScripts("openpgp.min.js");', '');
+const transformWorkerContents = (path, contents) => contents.replace('importcripts("openpgp.min.js");', '');
 
 const transformCompatPath = ({ basename, ext, hash }) => [basename, 'compat', hash, ext].join('.');
 
