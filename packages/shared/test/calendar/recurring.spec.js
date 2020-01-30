@@ -142,4 +142,24 @@ END:VEVENT`);
             '2020-01-31T11:00:00.000Z - 2020-01-31T12:30:00.000Z'
         ]);
     });
+
+    it('should fill occurrences for an event starting on a sunday', () => {
+        const component = parse(`
+BEGIN:VEVENT
+RRULE:FREQ=WEEKLY;COUNT=4;BYDAY=SA,SU
+DTSTART;VALUE=DATE:20200126
+DTEND;VALUE=DATE:20200127
+END:VEVENT
+`);
+        const cache = {};
+        const result = getOccurencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2021, 2, 1), cache);
+        expect(
+            result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
+        ).toEqual([
+            '2020-01-26T00:00:00.000Z - 2020-01-26T00:00:00.000Z',
+            '2020-02-01T00:00:00.000Z - 2020-02-01T00:00:00.000Z',
+            '2020-02-02T00:00:00.000Z - 2020-02-02T00:00:00.000Z',
+            '2020-02-08T00:00:00.000Z - 2020-02-08T00:00:00.000Z'
+        ]);
+    });
 });
