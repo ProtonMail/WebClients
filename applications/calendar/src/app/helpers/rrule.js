@@ -80,6 +80,9 @@ export const getTimezonedFrequencyString = (frequencyModel, options) => {
     }
 
     const isTimezoneStringNeeded = (() => {
+        if (type === FREQUENCY.ONCE) {
+            return false;
+        }
         if (frequency === FREQUENCY.DAILY) {
             return type === FREQUENCY.CUSTOM && endType === END_TYPE.UNTIL;
         }

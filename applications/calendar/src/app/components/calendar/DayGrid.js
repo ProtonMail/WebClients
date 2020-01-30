@@ -16,6 +16,7 @@ export const getEvent = (idx, eventsInRow, events) => {
 };
 
 const DayGrid = ({
+    tzid,
     now,
     date,
     dateRange: [start, end],
@@ -166,6 +167,7 @@ const DayGrid = ({
                                         {...(rowIndex === 0 ? { ref: firstRowRef } : undefined)}
                                     >
                                         <RowEvents
+                                            tzid={tzid}
                                             FullDayEvent={FullDayEvent}
                                             MoreFullDayEvent={MoreFullDayEvent}
                                             eventsInRowStyles={eventsInRowStyles}

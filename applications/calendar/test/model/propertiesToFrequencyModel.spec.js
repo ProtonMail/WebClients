@@ -2,10 +2,8 @@ import { propertiesToFrequencyModel } from '../../src/app/components/eventModal/
 import { DAILY_TYPE, END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE, YEARLY_TYPE } from '../../src/app/constants';
 
 describe('frequency properties to model, daily recurring rule', () => {
-    const dtstart = {
-        value: {
-            date: new Date(2020, 0, 20)
-        }
+    const startModel = {
+        date: new Date(2020, 0, 20)
     };
     test('non-custom: single day, recurring never ends', () => {
         const rrule = {
@@ -13,7 +11,7 @@ describe('frequency properties to model, daily recurring rule', () => {
                 freq: 'DAILY'
             }
         };
-        expect(propertiesToFrequencyModel(rrule, dtstart)).toEqual({
+        expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
             type: FREQUENCY.DAILY,
             frequency: FREQUENCY.DAILY,
             interval: 1,
@@ -45,7 +43,7 @@ describe('frequency properties to model, daily recurring rule', () => {
                 interval: 3
             }
         };
-        expect(propertiesToFrequencyModel(rrule, dtstart)).toEqual({
+        expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.DAILY,
             interval: 3,
@@ -78,7 +76,7 @@ describe('frequency properties to model, daily recurring rule', () => {
                 count: 5
             }
         };
-        expect(propertiesToFrequencyModel(rrule, dtstart)).toEqual({
+        expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.DAILY,
             interval: 2,
@@ -113,11 +111,11 @@ describe('frequency properties to model, daily recurring rule', () => {
                 until: dateTime
             }
         };
-        const start = {
-            ...dtstart,
-            parameters: { tzid: 'Europe/Athens' }
+        const startAthens = {
+            ...startModel,
+            tzid: 'Europe/Athens'
         };
-        expect(propertiesToFrequencyModel(rrule, start)).toEqual({
+        expect(propertiesToFrequencyModel(rrule, startAthens)).toEqual({
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.DAILY,
             interval: 1,
@@ -153,7 +151,7 @@ describe('frequency properties to model, daily recurring rule', () => {
             }
         };
 
-        expect(propertiesToFrequencyModel(rrule, dtstart)).toEqual({
+        expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.DAILY,
             interval: 2,
@@ -180,10 +178,8 @@ describe('frequency properties to model, daily recurring rule', () => {
 });
 
 describe('frequency properties to model, weekly recurring rule', () => {
-    const dtstart = {
-        value: {
-            date: new Date(2020, 0, 20)
-        }
+    const startModel = {
+        date: new Date(2020, 0, 20)
     };
     test('non-custom: single day, recurring never ends', () => {
         const rrule = {
@@ -191,7 +187,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
                 freq: 'WEEKLY'
             }
         };
-        expect(propertiesToFrequencyModel(rrule, dtstart)).toEqual({
+        expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
             type: FREQUENCY.WEEKLY,
             frequency: FREQUENCY.WEEKLY,
             interval: 1,
@@ -224,7 +220,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
                 byday: ['SU']
             }
         };
-        expect(propertiesToFrequencyModel(rrule, dtstart)).toEqual({
+        expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.WEEKLY,
             interval: 3,
@@ -257,7 +253,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
                 byday: ['WE', 'TH']
             }
         };
-        expect(propertiesToFrequencyModel(rrule, dtstart)).toEqual({
+        expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.WEEKLY,
             interval: 3,
@@ -290,7 +286,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
                 count: 5
             }
         };
-        expect(propertiesToFrequencyModel(rrule, dtstart)).toEqual({
+        expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.WEEKLY,
             interval: 1,
@@ -326,11 +322,11 @@ describe('frequency properties to model, weekly recurring rule', () => {
                 until: dateTime
             }
         };
-        const start = {
-            ...dtstart,
-            parameters: { tzid: 'Europe/Athens' }
+        const startAthens = {
+            ...startModel,
+            tzid: 'Europe/Athens'
         };
-        expect(propertiesToFrequencyModel(rrule, start)).toEqual({
+        expect(propertiesToFrequencyModel(rrule, startAthens)).toEqual({
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.WEEKLY,
             interval: 1,
@@ -366,7 +362,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             }
         };
 
-        expect(propertiesToFrequencyModel(rrule, dtstart)).toEqual({
+        expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.WEEKLY,
             interval: 1,

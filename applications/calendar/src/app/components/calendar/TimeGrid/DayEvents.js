@@ -6,6 +6,7 @@ const MIN_DURATION = 30; // In minutes
 
 const DayEvents = ({
     Component,
+    tzid,
     now,
     events,
     eventsInDay,
@@ -60,6 +61,7 @@ const DayEvents = ({
                 eventRef={eventRef}
                 isSelected={isSelected}
                 isBeforeNow={isBeforeNow}
+                tzid={tzid}
             />
         );
     });

@@ -1,17 +1,32 @@
-import { toUTCDate } from 'proton-shared/lib/date/timezone';
-import { addDays, max } from 'proton-shared/lib/date-fns-utc';
-import { getDateTimeState } from './time';
 import { transformBeforeAt } from './trigger';
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 import { replace } from 'proton-shared/lib/helpers/array';
+import propertiesToDateTimeModel from './propertiesToDateTimeModel';
 
-export const propertiesToModel = (component) => {
-    const { uid, location, description, summary, dtstart, rrule, attendee, ...rest } = component;
+const DEFAULT_TIME = {
+    value: { year: 1970, month: 1, day: 1, hour: 0, minutes: 0 },
+    parameters: { tzid: 'UTC' }
+};
+
+export const propertiesToModel = (component, isAllDay, tzid) => {
+    const {
+        uid,
+        location,
+        description,
+        summary,
+        dtstart = DEFAULT_TIME,
+        dtend = DEFAULT_TIME,
+        rrule,
+        attendee,
+        ...rest
+    } = component;
+
+    const { start, end } = propertiesToDateTimeModel(dtstart, dtend, isAllDay, tzid);
 
     return {
         uid: uid ? uid.value : undefined,
-        frequencyModel: propertiesToFrequencyModel(rrule, dtstart),
+        frequencyModel: propertiesToFrequencyModel(rrule, start),
         title: summary ? summary.value : '',
         location: location ? location.value : '',
         description: description ? description.value : '',
@@ -25,6 +40,8 @@ export const propertiesToModel = (component) => {
                   })
               )
             : [],
+        start,
+        end,
         rest
     };
 };
@@ -45,29 +62,6 @@ export const getFrequencyModelChange = (oldStart, newStart, frequencyModel) => {
      */
 
     return { ...frequencyModel, weekly: { days: newDays } };
-};
-
-const getTzid = ({ value, parameters: { type, tzid } = {} }) => {
-    if (type === 'date') {
-        return;
-    }
-    return value.isUTC ? 'UTC' : tzid;
-};
-
-export const propertiesToDateTimeModel = ({ dtstart, dtend }, isAllDay, tzid) => {
-    const tzStart = isAllDay ? undefined : getTzid(dtstart);
-    const tzEnd = isAllDay ? undefined : getTzid(dtend);
-
-    const start = toUTCDate(dtstart.value);
-    const end = toUTCDate(dtend.value);
-    // All day events date ranges are stored non-inclusively, so remove a full day from the end date
-    const modifiedEnd = isAllDay ? addDays(end, -1) : end;
-    const safeEnd = max(start, modifiedEnd);
-
-    return {
-        start: getDateTimeState(start, tzStart || tzid),
-        end: getDateTimeState(safeEnd, tzEnd || tzid)
-    };
 };
 
 const allDayTriggerToModel = ({ type, when, weeks, days, hours, minutes }) => {

@@ -14,17 +14,16 @@ import { convertUTCDateTimeToZone, fromUTCDate } from 'proton-shared/lib/date/ti
  * Given a parsed recurrence rule in standard format,
  * parse it into the object that goes in the Event model
  * @param {Object} frequencyProperty        parsed using the parse helper in /lib/calendar/vcal
- * @param {Object} dtstart                  { value: { }, parameters: { tzid } }
+ * @param {Date} startDate
+ * @param {String} startTzid
  * @return {Object}
  */
-export const propertiesToFrequencyModel = ({ value: frequencyProperty } = {}, { value, parameters } = {}) => {
+export const propertiesToFrequencyModel = ({ value: frequencyProperty } = {}, { date: startDate, tzid: startTzid }) => {
     const { freq, count, interval, until, bysetpos, byday, bymonthday, bymonth } = frequencyProperty || {};
-    const { tzid } = parameters || {};
-    const { date: startDate } = value || {};
     const isCustom = !!(count || interval || until || bysetpos || byday || bymonthday || bymonth);
 
-    const frequency = freq || FREQUENCY.ONCE;
-    const type = isCustom ? FREQUENCY.CUSTOM : frequency;
+    const type = isCustom ? FREQUENCY.CUSTOM : freq || FREQUENCY.ONCE;
+    const frequency = freq || FREQUENCY.WEEKLY;
 
     const endType = (() => {
         // count and until cannot occur at the same time (see https://tools.ietf.org/html/rfc5545#page-37)
@@ -52,12 +51,12 @@ export const propertiesToFrequencyModel = ({ value: frequencyProperty } = {}, { 
             return new Date(year, month - 1, day);
         }
         const utcDate = propertyToUTCDate({ value: until });
-        const localDate = tzid ? convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid) : fromUTCDate(utcDate);
+        const localDate = startTzid ? convertUTCDateTimeToZone(fromUTCDate(utcDate), startTzid) : fromUTCDate(utcDate);
         return new Date(localDate.year, localDate.month - 1, localDate.day);
     })();
     const weeklyDays = (() => {
         if (!byday) {
-            return startDate ? [startDate.getDay()] : [];
+            return [startDate.getDay()];
         }
         if (Array.isArray(byday)) {
             return byday.map((DD) => DAY_TO_NUMBER[DD]);

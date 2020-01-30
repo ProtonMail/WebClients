@@ -13,7 +13,7 @@ import {
     notificationsToModel
 } from '../../../helpers/notifications';
 import { DEFAULT_EVENT_DURATION, END_TYPE, FREQUENCY, NOTIFICATION_TYPE } from '../../../constants';
-import { propertiesToDateTimeModel, propertiesToModel, propertiesToNotificationModel } from './propertiesToModel';
+import { propertiesToModel, propertiesToNotificationModel } from './propertiesToModel';
 import { modelToGeneralProperties } from './modelToProperties';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { getDateTimeState, getTimeInUtc } from './time';
@@ -139,10 +139,9 @@ export const getExistingEvent = ({ veventComponent, veventValarmComponent, tzid 
     const isAllDay = isIcalAllDay(veventComponent);
     const isRecurring = isIcalRecurring(veventComponent);
 
-    const newModel = propertiesToModel(veventComponent);
-    const newDateTime = propertiesToDateTimeModel(veventComponent, isAllDay, tzid);
+    const newModel = propertiesToModel(veventComponent, isAllDay, tzid);
 
-    const hasDifferingTimezone = newDateTime.start.tzid !== tzid || newDateTime.end.tzid !== tzid;
+    const hasDifferingTimezone = newModel.start.tzid !== tzid || newModel.end.tzid !== tzid;
 
     // Email notifications are not supported atm.
     const newNotifications = propertiesToNotificationModel(veventValarmComponent, isAllDay).filter(
@@ -160,9 +159,7 @@ export const getExistingEvent = ({ veventComponent, veventValarmComponent, tzid 
               }
             : {
                   partDayNotifications: newNotifications
-              }),
-        start: newDateTime.start,
-        end: newDateTime.end
+              })
     };
 };
 

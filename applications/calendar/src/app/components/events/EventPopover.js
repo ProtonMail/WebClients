@@ -39,7 +39,7 @@ const EventPopover = ({
     const { Calendar, Event, title: tmpTitle } = targetEventData;
 
     const [value, isLoading, error] = useReadCalendarEvent(targetEventData);
-    const model = useReadEvent(value);
+    const model = useReadEvent(value, tzid);
 
     const handleDelete = () => {
         if (!Event) {

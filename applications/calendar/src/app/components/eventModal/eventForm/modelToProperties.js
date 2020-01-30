@@ -111,18 +111,28 @@ const modelToDateProperties = ({ start, end, isAllDay }) => {
 
 export const modelToFrequencyProperties = ({ frequencyModel, start = {}, isAllDay }) => {
     const { type, frequency, interval, weekly, ends } = frequencyModel;
-    const { tzid } = start;
+    const { date: startDate, tzid } = start;
     const properties = {};
 
     if ([FREQUENCY.DAILY, FREQUENCY.WEEKLY, FREQUENCY.MONTHLY, FREQUENCY.YEARLY].includes(type)) {
         properties.rrule = { value: { freq: type } };
     }
     if (type === FREQUENCY.CUSTOM) {
-        properties.rrule = { value: { freq: frequency, interval } };
-        if (frequency === FREQUENCY.WEEKLY && weekly.days.length) {
+        properties.rrule = {
+            value: {
+                freq: frequency,
+                interval: interval === 1 ? undefined : interval
+            }
+        };
+        if (frequency === FREQUENCY.WEEKLY) {
             // weekly.days may include repeated days (cf. function getFrequencyModelChange)
             const weeklyDays = unique(weekly.days);
-            properties.rrule.value.byday = weeklyDays.map((day) => NUMBER_TO_DAY[day]).join(',');
+            if (!weeklyDays.length || !weeklyDays.includes(startDate.getDay())) {
+                throw new Error('Inconsistent weekly rrule');
+            }
+            if (weeklyDays.length > 1) {
+                properties.rrule.value.byday = weeklyDays.map((day) => NUMBER_TO_DAY[day]).join(',');
+            }
         }
         if (ends.type === END_TYPE.AFTER_N_TIMES) {
             properties.rrule.value.count = ends.count;

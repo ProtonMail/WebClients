@@ -16,6 +16,7 @@ const RowEvents = ({
     days,
     now,
     row,
+    tzid,
 
     targetMoreData,
     targetMoreRef,
@@ -30,6 +31,7 @@ const RowEvents = ({
             return (
                 <MoreFullDayEvent
                     key={`more${idx}`}
+                    tzid={tzid}
                     style={style}
                     more={eventsInRowSummary[idx].more}
                     eventRef={eventRef}
@@ -52,6 +54,7 @@ const RowEvents = ({
 
         return (
             <FullDayEvent
+                tzid={tzid}
                 event={event}
                 style={style}
                 key={event.id}

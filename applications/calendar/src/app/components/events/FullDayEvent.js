@@ -14,10 +14,11 @@ const FullDayEvent = ({
     isOutsideStart,
     isOutsideEnd,
     eventRef,
-    onClick
+    onClick,
+    tzid
 }) => {
     const [value, loading, error] = useReadCalendarEvent(targetEventData);
-    const model = useReadEvent(value);
+    const model = useReadEvent(value, tzid);
 
     const calendarColor = Calendar.Color;
 

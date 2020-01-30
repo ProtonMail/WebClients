@@ -17,8 +17,7 @@ const FrequencyRow = ({
     onChange,
     collapseOnMobile
 }) => {
-    const { type } = frequencyModel;
-    const show = type === FREQUENCY.CUSTOM;
+    const show = frequencyModel.type === FREQUENCY.CUSTOM;
 
     const handleChangeFrequencyType = (type) => onChange({ ...frequencyModel, type });
 
@@ -30,7 +29,7 @@ const FrequencyRow = ({
                     <FrequencyInput
                         className="mb1"
                         id="event-frequency-select"
-                        value={type}
+                        value={frequencyModel.type}
                         onChange={handleChangeFrequencyType}
                     />
                     {show && (

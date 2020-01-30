@@ -10,10 +10,11 @@ const PartDayEvent = ({
     event: { start, end, data: { Calendar } = {}, data: targetEventData, tmpData, isAllDay },
     isSelected,
     isBeforeNow,
-    eventRef
+    eventRef,
+    tzid
 }) => {
     const [value, loading, error] = useReadCalendarEvent(targetEventData);
-    const model = useReadEvent(value);
+    const model = useReadEvent(value, tzid);
     const calendarColor = Calendar.Color;
     const eventStyle = useMemo(() => {
         const background = calendarColor;

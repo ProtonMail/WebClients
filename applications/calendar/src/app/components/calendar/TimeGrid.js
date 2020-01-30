@@ -34,6 +34,7 @@ const TimeGrid = React.forwardRef(
             now,
             date,
             dateRange: [start, end],
+            tzid,
             displaySecondaryTimezone,
             primaryTimezone,
             secondaryTimezone,
@@ -259,6 +260,7 @@ const TimeGrid = React.forwardRef(
                                     ref={dayGridRef}
                                 >
                                     <RowEvents
+                                        tzid={tzid}
                                         FullDayEvent={FullDayEvent}
                                         MoreFullDayEvent={MoreFullDayEvent}
                                         eventsInRowStyles={eventsInRowStyles}
@@ -298,6 +300,7 @@ const TimeGrid = React.forwardRef(
                                 return (
                                     <div className="flex-item-fluid relative calendar-grid-gridcell h100" key={key}>
                                         <DayEvents
+                                            tzid={tzid}
                                             Component={PartDayEvent}
                                             events={timeEvents}
                                             eventsInDay={eventsPerDay[key]}
