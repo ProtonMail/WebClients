@@ -62,6 +62,20 @@ const getFrequencyString = (
             })();
             return frequencyString + durationString;
         }
+        if (frequency === FREQUENCY.YEARLY) {
+            const frequencyString = c('Info').ngettext(msgid`Yearly`, `Every ${interval} years`, interval);
+            const durationString = (() => {
+                if (endType === END_TYPE.AFTER_N_TIMES) {
+                    return c('Info').ngettext(msgid`, ${count} time`, `, ${count} times`, count);
+                }
+                if (endType === END_TYPE.UNTIL) {
+                    const untilString = format(until, 'd MMM yyyy', { locale });
+                    return c('Info').t` until ${untilString}`;
+                }
+                return '';
+            })();
+            return frequencyString + durationString;
+        }
     }
     return '';
 };
@@ -93,6 +107,9 @@ export const getTimezonedFrequencyString = (frequencyModel, options) => {
 
             return isStandardWeekly || hasCustomUntil || hasDays;
         }
+        // if (frequency === FREQUENCY.YEARLY) {
+        //     return true;
+        // }
         return false;
     })();
     const timezoneString = isTimezoneStringNeeded ? ` (${startTzid})` : '';

@@ -79,7 +79,7 @@ export const propertiesToFrequencyModel = ({ value: frequencyProperty } = {}, { 
             type: monthType
         },
         yearly: {
-            type: YEARLY_TYPE.ON_YEAR_DAY
+            type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
         },
         ends: {
             type: endType,

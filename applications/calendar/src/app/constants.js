@@ -98,12 +98,14 @@ export const FREQUENCY = {
 
 export const FREQUENCY_INTERVALS_MAX = {
     [FREQUENCY.DAILY]: 1000,
-    [FREQUENCY.WEEKLY]: 9999
+    [FREQUENCY.WEEKLY]: 9999,
+    [FREQUENCY.YEARLY]: 100
 };
 
 export const FREQUENCY_COUNT_MAX = {
     [FREQUENCY.DAILY]: 50,
-    [FREQUENCY.WEEKLY]: 50
+    [FREQUENCY.WEEKLY]: 50,
+    [FREQUENCY.YEARLY]: 50
 };
 
 export const DAILY_TYPE = {
@@ -116,12 +118,11 @@ export const WEEKLY_TYPE = {
 
 export const MONTHLY_TYPE = {
     ON_MONTH_DAY: 0,
-    ON_NTH_DAY: 1,
-    ON_MINUS_NTH_DAY: -1
+    ON_NTH_DAY: 1
 };
 
 export const YEARLY_TYPE = {
-    ON_YEAR_DAY: 0
+    BY_MONTH_ON_MONTH_DAY: 0
 };
 
 export const END_TYPE = {

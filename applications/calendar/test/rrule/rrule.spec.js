@@ -23,7 +23,7 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.NEVER
@@ -48,7 +48,7 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.NEVER
@@ -73,7 +73,7 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.NEVER
@@ -98,7 +98,7 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
@@ -124,7 +124,7 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.UNTIL,
@@ -150,7 +150,7 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
@@ -177,7 +177,7 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.UNTIL,
@@ -205,7 +205,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.NEVER
@@ -230,7 +230,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.NEVER
@@ -252,7 +252,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.NEVER
@@ -274,7 +274,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.NEVER
@@ -296,7 +296,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.NEVER
@@ -318,7 +318,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.NEVER
@@ -340,7 +340,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
@@ -363,7 +363,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.UNTIL,
@@ -388,7 +388,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.UNTIL,
@@ -414,7 +414,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.UNTIL,
@@ -440,7 +440,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 type: MONTHLY_TYPE.ON_MONTH_DAY
             },
             yearly: {
-                type: YEARLY_TYPE.ON_YEAR_DAY
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
             },
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
@@ -450,6 +450,191 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
         const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
         expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
             'Every 2 weeks on all days; 1 time'
+        );
+    });
+});
+
+describe('getTimezonedFrequencyString should produce the expected string for yearly recurring events', () => {
+    test('for a standard yearly recurring event', () => {
+        const frequencyModel = {
+            type: FREQUENCY.YEARLY,
+            frequency: FREQUENCY.YEARLY,
+            interval: 1,
+            daily: {
+                type: DAILY_TYPE.ALL_DAYS
+            },
+            weekly: {
+                type: WEEKLY_TYPE.ON_DAYS,
+                days: [2]
+            },
+            monthly: {
+                type: MONTHLY_TYPE.ON_MONTH_DAY
+            },
+            yearly: {
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
+            },
+            ends: {
+                type: END_TYPE.NEVER
+            }
+        };
+        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Yearly');
+    });
+
+    test('for a custom yearly recurring event that is actually standard', () => {
+        const frequencyModel = {
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.YEARLY,
+            interval: 1,
+            daily: {
+                type: DAILY_TYPE.ALL_DAYS
+            },
+            weekly: {
+                type: WEEKLY_TYPE.ON_DAYS,
+                days: [2]
+            },
+            monthly: {
+                type: MONTHLY_TYPE.ON_MONTH_DAY
+            },
+            yearly: {
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
+            },
+            ends: {
+                type: END_TYPE.NEVER
+            }
+        };
+        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Yearly');
+    });
+
+    test('for a custom yearly recurring event happening every 2 years', () => {
+        const frequencyModel = {
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.YEARLY,
+            interval: 2,
+            daily: {
+                type: DAILY_TYPE.ALL_DAYS
+            },
+            weekly: {
+                type: WEEKLY_TYPE.ON_DAYS,
+                days: [2]
+            },
+            monthly: {
+                type: MONTHLY_TYPE.ON_MONTH_DAY
+            },
+            yearly: {
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
+            },
+            ends: {
+                type: END_TYPE.NEVER
+            }
+        };
+        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 2 years');
+    });
+
+    test('for a custom yearly recurring event happening every three years, lasting 5 times', () => {
+        const frequencyModel = {
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.YEARLY,
+            interval: 3,
+            daily: {
+                type: DAILY_TYPE.ALL_DAYS
+            },
+            weekly: {
+                type: WEEKLY_TYPE.ON_DAYS,
+                days: [0, 1, 2, 3, 4, 5, 6]
+            },
+            monthly: {
+                type: MONTHLY_TYPE.ON_MONTH_DAY
+            },
+            yearly: {
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
+            },
+            ends: {
+                type: END_TYPE.AFTER_N_TIMES,
+                count: 5
+            }
+        };
+        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 3 years, 5 times');
+    });
+
+    test('for a custom yearly recurring event, until 20th February 2020', () => {
+        const frequencyModel = {
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.YEARLY,
+            interval: 1,
+            daily: {
+                type: DAILY_TYPE.ALL_DAYS
+            },
+            weekly: {
+                type: WEEKLY_TYPE.ON_DAYS,
+                days: [1, 3]
+            },
+            monthly: {
+                type: MONTHLY_TYPE.ON_MONTH_DAY
+            },
+            yearly: {
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
+            },
+            ends: {
+                type: END_TYPE.UNTIL,
+                until: new Date(2020, 1, 20)
+            }
+        };
+        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Yearly until 20 Feb 2020');
+    });
+
+    test('for a custom weekly recurring event happening every two years, lasting 1 time on a different timezone', () => {
+        const frequencyModel = {
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.YEARLY,
+            interval: 2,
+            daily: {
+                type: DAILY_TYPE.ALL_DAYS
+            },
+            weekly: {
+                type: WEEKLY_TYPE.ON_DAYS,
+                days: [2]
+            },
+            monthly: {
+                type: MONTHLY_TYPE.ON_MONTH_DAY
+            },
+            yearly: {
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
+            },
+            ends: {
+                type: END_TYPE.AFTER_N_TIMES,
+                count: 1
+            }
+        };
+        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
+        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual('Every 2 years, 1 time');
+    });
+
+    test('for a custom yearly event, until 20th February 2020 on a different timezone', () => {
+        const frequencyModel = {
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.YEARLY,
+            interval: 1,
+            daily: {
+                type: DAILY_TYPE.ALL_DAYS
+            },
+            weekly: {
+                type: WEEKLY_TYPE.ON_DAYS,
+                days: [0, 1, 2, 3, 4, 5, 6]
+            },
+            monthly: {
+                type: MONTHLY_TYPE.ON_MONTH_DAY
+            },
+            yearly: {
+                type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
+            },
+            ends: {
+                type: END_TYPE.UNTIL,
+                until: new Date(2020, 1, 20)
+            }
+        };
+        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
+        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
+            'Yearly until 20 Feb 2020 (Pacific/Tahiti)'
         );
     });
 });

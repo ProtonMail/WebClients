@@ -12,11 +12,20 @@ import {
     DEFAULT_PART_DAY_NOTIFICATIONS,
     notificationsToModel
 } from '../../../helpers/notifications';
-import { DEFAULT_EVENT_DURATION, END_TYPE, FREQUENCY, NOTIFICATION_TYPE } from '../../../constants';
 import { propertiesToModel, propertiesToNotificationModel } from './propertiesToModel';
 import { modelToGeneralProperties } from './modelToProperties';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { getDateTimeState, getTimeInUtc } from './time';
+import {
+    DAILY_TYPE,
+    DEFAULT_EVENT_DURATION,
+    END_TYPE,
+    FREQUENCY,
+    MONTHLY_TYPE,
+    NOTIFICATION_TYPE,
+    WEEKLY_TYPE,
+    YEARLY_TYPE
+} from '../../../constants';
 
 export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
@@ -71,7 +80,10 @@ export const getInitialFrequencyModel = (startDate) => {
         type: FREQUENCY.ONCE,
         frequency: FREQUENCY.WEEKLY,
         interval: 1,
-        weekly: { days: [startDate.getDay()] },
+        daily: { type: DAILY_TYPE.ALL_DAYS },
+        weekly: { type: WEEKLY_TYPE.ON_DAYS, days: [startDate.getDay()] },
+        monthly: { type: MONTHLY_TYPE.ON_MONTH_DAY },
+        yearly: { type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY },
         ends: { type: END_TYPE.NEVER, count: 2 }
     };
 };

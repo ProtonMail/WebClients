@@ -2,10 +2,10 @@ import { modelToFrequencyProperties } from '../../src/app/components/eventModal/
 import { getInitialFrequencyModel } from '../../src/app/components/eventModal/eventForm/state';
 import { END_TYPE, FREQUENCY, WEEKLY_TYPE } from '../../src/app/constants';
 
-describe('frequency model to frequency properties, daily recurring rule', () => {
-    const dummyStart = { date: new Date(2020, 0, 20), tzid: 'Europe/Athens' };
-    const dummyFrequencyModel = getInitialFrequencyModel(dummyStart.date);
+const dummyStart = { date: new Date(2020, 0, 20), tzid: 'Europe/Athens' };
+const dummyFrequencyModel = getInitialFrequencyModel(dummyStart.date);
 
+describe('frequency model to frequency properties, daily recurring rule', () => {
     test('non-custom: recurring never ends', () => {
         const frequencyModel = {
             ...dummyFrequencyModel,
@@ -119,14 +119,17 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
 });
 
 describe('frequency model to frequency properties, weekly recurring rule', () => {
-    const dummyStart = { date: new Date(2020, 0, 20), tzid: 'Europe/Athens' };
-    const dummyFrequencyModel = getInitialFrequencyModel(dummyStart.date);
-
     test('non-custom: single day, recurring never ends', () => {
         const frequencyModel = {
             ...dummyFrequencyModel,
             type: FREQUENCY.WEEKLY,
-            frequency: FREQUENCY.WEEKLY
+            frequency: FREQUENCY.WEEKLY,
+            interval: 1,
+            ends: {
+                type: END_TYPE.NEVER,
+                count: 5,
+                until: undefined
+            }
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
@@ -237,6 +240,126 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
                     freq: 'WEEKLY',
                     byday: 'MO,SA',
                     until: untilDateTime
+                }
+            }
+        });
+    });
+});
+
+describe('frequency model to frequency properties, yearly recurring rule', () => {
+    test('non-custom: recurring never ends', () => {
+        const frequencyModel = {
+            ...dummyFrequencyModel,
+            type: FREQUENCY.YEARLY,
+            frequency: FREQUENCY.YEARLY
+        };
+        expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
+            rrule: {
+                value: {
+                    freq: 'YEARLY'
+                }
+            }
+        });
+    });
+
+    test('every other year, ends after two occurrences', () => {
+        const frequencyModel = {
+            ...dummyFrequencyModel,
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.YEARLY,
+            interval: 2,
+            ends: {
+                type: END_TYPE.AFTER_N_TIMES,
+                count: 2,
+                until: undefined
+            }
+        };
+        expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
+            rrule: {
+                value: {
+                    freq: 'YEARLY',
+                    interval: 2,
+                    count: 2,
+                    bymonthday: 20,
+                    bymonth: 1
+                }
+            }
+        });
+    });
+
+    test('ends on 30th January 2020 in Europe/Athens timezone', () => {
+        const until = new Date(2020, 0, 30);
+        const untilDateTime = { year: 2020, month: 1, day: 30, hours: 21, minutes: 59, seconds: 59, isUTC: true };
+
+        const frequencyModel = {
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.YEARLY,
+            ends: {
+                type: END_TYPE.UNTIL,
+                until
+            }
+        };
+        expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
+            rrule: {
+                value: {
+                    freq: 'YEARLY',
+                    interval: undefined,
+                    until: untilDateTime,
+                    bymonthday: 20,
+                    bymonth: 1
+                }
+            }
+        });
+    });
+
+    test('every other year, ends on 30th January 2020 in Pacific/Pago_Pago timezone', () => {
+        const until = new Date(2020, 0, 30);
+        const untilDateTime = { year: 2020, month: 1, day: 31, hours: 10, minutes: 59, seconds: 59, isUTC: true };
+
+        const start = { ...dummyStart, tzid: 'Pacific/Pago_Pago' };
+        const frequencyModel = {
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.YEARLY,
+            interval: 2,
+            ends: {
+                type: END_TYPE.UNTIL,
+                until
+            }
+        };
+        expect(modelToFrequencyProperties({ start, frequencyModel })).toEqual({
+            rrule: {
+                value: {
+                    freq: 'YEARLY',
+                    interval: 2,
+                    until: untilDateTime,
+                    bymonthday: 20,
+                    bymonth: 1
+                }
+            }
+        });
+    });
+
+    test('every two days, all-day event, ends on 30th January 2020', () => {
+        const until = new Date(2020, 0, 30);
+        const untilDateTime = { year: 2020, month: 1, day: 30 };
+
+        const frequencyModel = {
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.YEARLY,
+            interval: 2,
+            ends: {
+                type: END_TYPE.UNTIL,
+                until
+            }
+        };
+        expect(modelToFrequencyProperties({ frequencyModel, isAllDay: true, start: dummyStart })).toEqual({
+            rrule: {
+                value: {
+                    freq: 'YEARLY',
+                    interval: 2,
+                    until: untilDateTime,
+                    bymonthday: 20,
+                    bymonth: 1
                 }
             }
         });
