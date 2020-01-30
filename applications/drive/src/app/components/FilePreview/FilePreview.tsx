@@ -11,6 +11,7 @@ import UnsupportedPreview from './UnsupportedPreview';
 import NavigationControl from './NavigationControl';
 import { DriveLink } from '../../interfaces/link';
 import useKeyPress from '../../hooks/useKeyPress';
+import PDFPreview from './PDFPreview';
 
 export const isSupportedImage = (mimeType: string) =>
     [
@@ -28,9 +29,11 @@ export const isSupportedImage = (mimeType: string) =>
         .includes(mimeType);
 
 export const isSupportedText = (mimeType: string) => mimeType.startsWith('text/');
+export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mimeType === 'x-pdf';
 
 // Will include more rules in the future
-export const isPreviewAvailable = (mimeType: string) => isSupportedImage(mimeType) || isSupportedText(mimeType);
+export const isPreviewAvailable = (mimeType: string) =>
+    isSupportedImage(mimeType) || isSupportedText(mimeType) || isPDF(mimeType);
 
 interface Props {
     loading: boolean;
@@ -76,6 +79,8 @@ const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onC
             return <ImagePreview contents={contents} mimeType={meta.MimeType} />;
         } else if (isSupportedText(meta.MimeType)) {
             return <TextPreview contents={contents} />;
+        } else if (isPDF(meta.MimeType)) {
+            return <PDFPreview contents={contents} filename={meta.Name} />;
         }
     };
 

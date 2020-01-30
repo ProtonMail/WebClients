@@ -59,20 +59,22 @@ const ImagePreview = ({ mimeType, contents }: Props) => {
     });
 
     useEffect(() => {
+        let src: string;
         let canceled = false;
         const blob = new Blob(contents, { type: mimeType });
         loadImage.parseMetaData(blob, ({ exif }: MetaData) => {
             if (!canceled) {
+                src = URL.createObjectURL(blob);
                 setImageData({
-                    src: URL.createObjectURL(blob),
+                    src,
                     rotation: parseRotation(exif)
                 });
             }
         });
         return () => {
             canceled = true;
-            if (imageData.src) {
-                URL.revokeObjectURL(imageData.src);
+            if (src) {
+                URL.revokeObjectURL(src);
             }
         };
     }, [contents, mimeType]);
