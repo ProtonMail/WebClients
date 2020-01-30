@@ -1,4 +1,4 @@
-import { modelToFrequencyProperties } from '../../src/app/components/eventModal/eventForm/modelToProperties';
+import modelToFrequencyProperties from '../../src/app/components/eventModal/eventForm/modelToFrequencyProperties';
 import { getInitialFrequencyModel } from '../../src/app/components/eventModal/eventForm/state';
 import { END_TYPE, FREQUENCY, WEEKLY_TYPE } from '../../src/app/constants';
 
