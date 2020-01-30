@@ -193,6 +193,10 @@ export const validate = ({ start, end, isAllDay, title, frequencyModel }) => {
         errors.end = c('Error').t`Start time must be before end time`;
     }
 
+    if (!frequencyModel.interval) {
+        errors.interval = c('Error').t`Interval cannot be empty`;
+    }
+
     if (frequencyModel.ends.type === END_TYPE.UNTIL) {
         if (!frequencyModel.ends.until) {
             errors.until = c('Error').t`Ends on date cannot be empty`;

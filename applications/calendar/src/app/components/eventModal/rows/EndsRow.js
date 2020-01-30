@@ -98,7 +98,7 @@ const EndsRow = ({
                     <span className="mr1">
                         <IntegerInput
                             value={frequencyModel.ends.count}
-                            min="1"
+                            min={1}
                             onChange={handleChangeEndCount}
                             onFocus={() => handleChangeEndType(AFTER_N_TIMES)}
                             aria-invalid={isSubmitted && !!errors.count}

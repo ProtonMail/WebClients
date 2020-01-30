@@ -7,16 +7,21 @@ import { FREQUENCY, FREQUENCY_INTERVALS_MAX } from '../../../constants';
 
 import IntegerInput from '../inputs/IntegerInput';
 
-const RepeatEveryRow = ({ frequencyModel, onChange, collapseOnMobile }) => {
+const RepeatEveryRow = ({ frequencyModel, onChange, errors, isSubmitted, collapseOnMobile }) => {
+    const safeIntervalPlural = frequencyModel.ends.interval || 1; // Can get undefined through the input
     const intervalOptions = [
-        { text: c('Option').ngettext(msgid`Day`, `Days`, frequencyModel.interval), value: FREQUENCY.DAILY },
-        { text: c('Option').ngettext(msgid`Week`, `Weeks`, frequencyModel.interval), value: FREQUENCY.WEEKLY }
-        // { text: c('Option').ngettext(msgid`Month`, `Months`, frequencyModel.interval), value: FREQUENCY.MONTHLY },
-        // { text: c('Option').ngettext(msgid`Year`, `Years`, frequencyModel.interval), value: FREQUENCY.YEARLY }
+        { text: c('Option').ngettext(msgid`Day`, `Days`, safeIntervalPlural), value: FREQUENCY.DAILY },
+        { text: c('Option').ngettext(msgid`Week`, `Weeks`, safeIntervalPlural), value: FREQUENCY.WEEKLY }
+        // { text: c('Option').ngettext(msgid`Month`, `Months`, safeIntervalPlural), value: FREQUENCY.MONTHLY },
+        // { text: c('Option').ngettext(msgid`Year`, `Years`, safeIntervalPlural), value: FREQUENCY.YEARLY }
     ];
-    const maxIntervalValue = FREQUENCY_INTERVALS_MAX[frequencyModel.type];
 
-    const handleChangeInterval = (interval) => onChange({ ...frequencyModel, interval });
+    const handleChangeInterval = (interval) => {
+        if (interval !== '' && (interval > FREQUENCY_INTERVALS_MAX[frequencyModel.frequency] || interval < 1)) {
+            return;
+        }
+        onChange({ ...frequencyModel, interval });
+    };
     const handleChangeFrequency = (frequency) => onChange({ ...frequencyModel, frequency });
 
     return (
@@ -29,14 +34,10 @@ const RepeatEveryRow = ({ frequencyModel, onChange, collapseOnMobile }) => {
                     <IntegerInput
                         className="mr1 w20"
                         min={1}
-                        max={maxIntervalValue}
                         value={frequencyModel.interval}
                         onChange={handleChangeInterval}
-                        onBlur={() => {
-                            if (frequencyModel.interval === '') {
-                                handleChangeInterval(1);
-                            }
-                        }}
+                        aria-invalid={isSubmitted && !!errors.interval}
+                        isSubmitted={isSubmitted}
                     />
                     <Select
                         id="event-custom-frequency-select"
@@ -53,6 +54,8 @@ const RepeatEveryRow = ({ frequencyModel, onChange, collapseOnMobile }) => {
 RepeatEveryRow.propTypes = {
     frequencyModel: PropTypes.object,
     onChange: PropTypes.func,
+    errors: PropTypes.object,
+    isSubmitted: PropTypes.bool,
     collapseOnMobile: PropTypes.bool
 };
 
