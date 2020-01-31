@@ -1,0 +1,25 @@
+/*
+ Tree view (subfolders, etc.)
+ */
+
+.treeview-item {
+    .treeview-item .treeview-item {
+        
+        padding-left: 3rem;
+        //border : 1px solid blue;
+    }
+
+    .treeview-item .treeview-item  .treeview-item-name {
+        //padding-left: 3rem;
+        
+        //border : 1px solid red;
+    }
+}
+
+
+@include respond-to($breakpoint-medium) { 
+    .treeview-toggle,
+    .treeview-actions {
+       width: em(100);
+    }
+}
