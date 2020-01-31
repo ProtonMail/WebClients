@@ -233,7 +233,7 @@ export { default as PaymentMethodActions } from './containers/paymentMethods/Pay
 export { default as PaymentMethodDetails } from './containers/paymentMethods/PaymentMethodDetails';
 export { default as PaymentMethodsTable } from './containers/paymentMethods/PaymentMethodsTable';
 export { default as PaymentMethodsSection } from './containers/paymentMethods/PaymentMethodsSection';
-export { default as usePaymentMethods } from './containers/paymentMethods/usePaymentMethods';
+export { default as useMethods } from './containers/paymentMethods/useMethods';
 export { default as PaymentMethodsSelect } from './containers/paymentMethods/PaymentMethodsSelect';
 export { default as ExternalPGPSettingsSection } from './containers/security/ExternalPGPSettingsSection';
 export { default as AddressVerificationSection } from './containers/security/AddressVerificationSection';
@@ -353,7 +353,7 @@ export { default as useCalendarUserSettings } from './hooks/useCalendarUserSetti
 export { default as useMembers } from './hooks/useMembers';
 export { useLabels, useFormattedLabels } from './hooks/useLabels';
 export { default as useFilters } from './hooks/useFilters';
-export { default as useMethods } from './hooks/useMethods';
+export { default as usePaymentMethods } from './hooks/usePaymentMethods';
 export { default as useForceRefresh } from './containers/forceRefresh/useForceRefresh';
 export { default as useOrganization } from './hooks/useOrganization';
 export { default as useSubscription } from './hooks/useSubscription';

@@ -7,7 +7,7 @@ import { CYCLE, PAYMENT_METHOD_TYPES, MIN_DONATION_AMOUNT, MIN_CREDIT_AMOUNT } f
 import Method from './Method';
 import toDetails from './toDetails';
 import PaymentMethodsSelect from '../paymentMethods/PaymentMethodsSelect';
-import usePaymentMethods from '../paymentMethods/usePaymentMethods';
+import useMethods from '../paymentMethods/useMethods';
 
 const { CARD, PAYPAL, CASH, BITCOIN } = PAYMENT_METHOD_TYPES;
 
@@ -26,7 +26,7 @@ const Payment = ({
     fieldClassName,
     card
 }) => {
-    const { methods, options, loading } = usePaymentMethods({ amount, coupon, type });
+    const { methods, options, loading } = useMethods({ amount, coupon, type });
 
     const handleCard = ({ card, isValid }) => {
         onValidCard(isValid);

@@ -9,7 +9,7 @@ import {
     useModals,
     useSubscription,
     useConfig,
-    useMethods
+    usePaymentMethods
 } from 'react-components';
 import { CLIENT_TYPES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
@@ -21,7 +21,7 @@ const { VPN } = CLIENT_TYPES;
 
 const PaymentMethodsSection = () => {
     const { CLIENT_TYPE } = useConfig();
-    const [paymentMethods, loadingPaymentMethods] = useMethods();
+    const [paymentMethods, loadingPaymentMethods] = usePaymentMethods();
     const [{ isManagedByMozilla } = {}, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
 

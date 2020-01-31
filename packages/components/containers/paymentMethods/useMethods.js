@@ -5,7 +5,7 @@ import { BLACK_FRIDAY, PAYMENT_METHOD_TYPES, MIN_BITCOIN_AMOUNT } from 'proton-s
 import { isExpired } from 'proton-shared/lib/helpers/card';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 
-const usePaymentMethods = ({ amount, coupon, type }) => {
+const useMethods = ({ amount, coupon, type }) => {
     const api = useApi();
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
@@ -85,4 +85,4 @@ const usePaymentMethods = ({ amount, coupon, type }) => {
     };
 };
 
-export default usePaymentMethods;
+export default useMethods;
