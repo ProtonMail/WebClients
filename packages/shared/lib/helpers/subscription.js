@@ -178,11 +178,11 @@ export const switchPlan = ({ planIDs, plans, planID, service, organization }) =>
                 ? getAddonQuantity(selectedPlan, UsedVPN, 'MaxVPN', plansMap[ADDON_NAMES.VPN])
                 : 0,
         [plansMap[ADDON_NAMES.MEMBER].ID]: [plansMap[PLANS.PROFESSIONAL].ID].includes(planID)
-            ? Math.max([
+            ? Math.max(
                   getAddonQuantity(selectedPlan, UsedMembers, 'MaxMembers', plansMap[ADDON_NAMES.MEMBER]),
                   getAddonQuantity(selectedPlan, UsedAddresses, 'MaxAddresses', plansMap[ADDON_NAMES.MEMBER]),
                   getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[ADDON_NAMES.MEMBER])
-              ])
+              )
             : 0,
         ...(planID ? { [planID]: 1 } : {})
     };
