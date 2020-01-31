@@ -1,4 +1,4 @@
-# [1.8.x] - 2019-xx-xx
+# [1.8.1] - 2019-01-31
 
 ## New
 
@@ -22,6 +22,7 @@
 - add `day-checkbox` component (for Calendar)
 - add label styles for React
 - add `mt0-5r` and `mr0-5r` helpers
+- add `w14e` class
 
 ## Updated/fixes
 
@@ -51,6 +52,7 @@
 - increased `container-section-sticky` max-width
 - fix expand caret in toolbar-button--dropdown
 - fix `day-icon` on tiny breakpoint (recurring)
+- Readme/doc update
 
 # [1.8.0] - 2019-12-20
 
