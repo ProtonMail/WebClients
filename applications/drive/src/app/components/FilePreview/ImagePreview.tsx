@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import loadImage, { MetaData, Exif } from 'blueimp-load-image';
 import ZoomControl from './ZoomControl';
+import { useElementRect } from 'react-components';
 
-const calculateImagePosition = (scale: number, image?: HTMLImageElement | null, container?: HTMLDivElement | null) => {
-    if (!image || !container) {
+const calculateImagePosition = (scale: number, image?: HTMLImageElement | null, bounds?: DOMRect) => {
+    if (!image || !bounds) {
         return { x: 0, y: 0 };
     }
 
-    const bounds = container.getBoundingClientRect();
     const width = image.naturalWidth * scale;
     const height = image.naturalHeight * scale;
 
@@ -50,8 +50,9 @@ interface Props {
 }
 
 const ImagePreview = ({ mimeType, contents }: Props) => {
-    const containerRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const containerBounds = useElementRect(containerRef);
     const [scale, setScale] = useState(0);
     const [imageData, setImageData] = useState({
         src: '',
@@ -82,11 +83,10 @@ const ImagePreview = ({ mimeType, contents }: Props) => {
     const handleZoomOut = () => setScale((zoom) => (zoom ? zoom * 0.9 : 1));
     const handleZoomIn = () => setScale((zoom) => (zoom ? zoom * 1.1 : 1));
     const fitToContainer = () => {
-        if (!imageRef.current || !containerRef.current) {
+        if (!imageRef.current || !containerBounds) {
             return;
         }
 
-        const containerBounds = containerRef.current.getBoundingClientRect();
         const heightRatio = containerBounds.height / imageRef.current.naturalHeight;
         const widthRatio = containerBounds.width / imageRef.current.naturalWidth;
 
@@ -95,7 +95,7 @@ const ImagePreview = ({ mimeType, contents }: Props) => {
         setScale(scale);
     };
 
-    const position = calculateImagePosition(scale, imageRef.current, containerRef.current);
+    const position = calculateImagePosition(scale, imageRef.current, containerBounds);
     return (
         <>
             <div ref={containerRef} className="pd-file-preview-container">
