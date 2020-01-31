@@ -59,7 +59,7 @@ const Bitcoin = ({ amount, currency, type }) => {
     return (
         <>
             <figure role="group">
-                <BitcoinQRCode className="mb1 w50 center" amount={amountBitcoin} address={address} type={type} />
+                <BitcoinQRCode className="mb1 w50 center" amount={amountBitcoin} address={address} />
                 <BitcoinDetails amount={amountBitcoin} address={address} />
             </figure>
             {type === 'invoice' ? (
