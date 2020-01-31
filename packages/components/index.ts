@@ -353,6 +353,7 @@ export { default as useCalendarUserSettings } from './hooks/useCalendarUserSetti
 export { default as useMembers } from './hooks/useMembers';
 export { useLabels, useFormattedLabels } from './hooks/useLabels';
 export { default as useFilters } from './hooks/useFilters';
+export { default as useMethods } from './hooks/useMethods';
 export { default as useForceRefresh } from './containers/forceRefresh/useForceRefresh';
 export { default as useOrganization } from './hooks/useOrganization';
 export { default as useSubscription } from './hooks/useSubscription';
