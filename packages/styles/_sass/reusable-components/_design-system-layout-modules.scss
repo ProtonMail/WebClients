@@ -294,7 +294,7 @@ $list-width-px: 50, 150, 200, 500 !default;
 }
 
 /* here you may add em widths */
-$list-width-em: 120, 140, 220, 400 !default;
+$list-width-em: 14, 120, 140, 220, 400 !default;
 // ex .w500e { width: 60em; }
 
 @each $width in $list-width-em {
