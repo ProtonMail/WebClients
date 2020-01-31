@@ -7,7 +7,7 @@ import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
 
-const PaymentMethodsTable = ({ methods, loading, fetchMethods }) => {
+const PaymentMethodsTable = ({ methods, loading }) => {
     if (!loading && !methods.length) {
         return <Alert>{c('Info').t`You have no saved payment methods.`}</Alert>;
     }
@@ -40,13 +40,7 @@ const PaymentMethodsTable = ({ methods, loading, fetchMethods }) => {
                             cells={[
                                 getMethod(method),
                                 <PaymentMethodState key={method.ID} method={method} index={index} />,
-                                <PaymentMethodActions
-                                    key={method.ID}
-                                    index={index}
-                                    methods={methods}
-                                    method={method}
-                                    onChange={fetchMethods}
-                                />
+                                <PaymentMethodActions key={method.ID} index={index} methods={methods} method={method} />
                             ]}
                         />
                     );

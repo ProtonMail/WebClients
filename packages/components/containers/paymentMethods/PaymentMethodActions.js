@@ -8,7 +8,8 @@ import {
     Alert,
     EditCardModal,
     useApi,
-    useNotifications
+    useNotifications,
+    useEventManager
 } from 'react-components';
 import { deletePaymentMethod, orderPaymentMethods } from 'proton-shared/lib/api/payments';
 import { isExpired } from 'proton-shared/lib/helpers/card';
@@ -29,15 +30,16 @@ const toCard = ({ Details = {}, Type }) => {
     return Details;
 };
 
-const PaymentMethodActions = ({ method, onChange, methods, index }) => {
+const PaymentMethodActions = ({ method, methods, index }) => {
     const card = toCard(method);
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const api = useApi();
+    const { call } = useEventManager();
 
     const deleteMethod = async () => {
         await api(deletePaymentMethod(method.ID));
-        await onChange();
+        await call();
         createNotification({ text: c('Success').t`Payment method deleted` });
     };
 
@@ -47,14 +49,14 @@ const PaymentMethodActions = ({ method, onChange, methods, index }) => {
         IDs.splice(index, 1);
         IDs.unshift(method.ID);
         await api(orderPaymentMethods(IDs));
-        await onChange();
+        await call();
         createNotification({ text: c('Success').t`Payment method updated` });
     };
 
     const list = [
         method.Type === PAYMENT_METHOD_TYPES.CARD && {
             text: c('Action').t`Edit`,
-            onClick: () => createModal(<EditCardModal card={card} onChange={onChange} />)
+            onClick: () => createModal(<EditCardModal card={card} />)
         },
         index > 0 &&
             !isExpired(method.Details) && {
@@ -80,8 +82,7 @@ const PaymentMethodActions = ({ method, onChange, methods, index }) => {
 PaymentMethodActions.propTypes = {
     method: PropTypes.object.isRequired,
     methods: PropTypes.array.isRequired,
-    index: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired
+    index: PropTypes.number.isRequired
 };
 
 export default PaymentMethodActions;

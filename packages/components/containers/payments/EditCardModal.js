@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { FormModal, useNotifications, useApi, useLoading, useModals } from 'react-components';
+import { FormModal, useNotifications, useApi, useLoading, useModals, useEventManager } from 'react-components';
 import { setPaymentMethod } from 'proton-shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES, ADD_CARD_MODE } from 'proton-shared/lib/constants';
 
@@ -10,8 +10,9 @@ import useCard from './useCard';
 import toDetails from './toDetails';
 import { handlePaymentToken } from './paymentTokenHelper';
 
-const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
+const EditCardModal = ({ card: existingCard, onClose, ...rest }) => {
     const api = useApi();
+    const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -36,7 +37,7 @@ const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
             createModal
         });
         await api(setPaymentMethod(Payment));
-        await onChange();
+        await call();
         onClose();
         createNotification({ text: c('Success').t`Payment method updated` });
     };
@@ -58,8 +59,7 @@ const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
 
 EditCardModal.propTypes = {
     card: PropTypes.object,
-    onClose: PropTypes.func,
-    onChange: PropTypes.func.isRequired
+    onClose: PropTypes.func
 };
 
 export default EditCardModal;
