@@ -21,9 +21,18 @@ interface Props {
     addressesFocusRef?: MutableRefObject<() => void>;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
+    placeholder?: string;
 }
 
-const AddressesInput = ({ id, recipients = [], onChange, addressesFocusRef, contacts, contactGroups }: Props) => {
+const AddressesInput = ({
+    id,
+    recipients = [],
+    onChange,
+    addressesFocusRef,
+    contacts,
+    contactGroups,
+    placeholder
+}: Props) => {
     const [inputModel, setInputModel] = useState('');
     const inputRef = useRef<HTMLInputElement>();
 
@@ -144,6 +153,7 @@ const AddressesInput = ({ id, recipients = [], onChange, addressesFocusRef, cont
                         onKeyDown={handleInputKey}
                         onBlur={handleBlur}
                         ref={inputRef}
+                        placeholder={placeholder}
                     />
                 </div>
             </div>

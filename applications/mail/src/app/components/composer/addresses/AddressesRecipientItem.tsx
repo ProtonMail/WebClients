@@ -58,6 +58,7 @@ const AddressesRecipientItem = ({ recipient, onChange = noop, onRemove }: Props)
                 ref={editableRef}
             />
             <button
+                type="button"
                 className="composer-addresses-item-remove inline-flex pl0-5 pr0-5 no-pointer-events-children h100"
                 onClick={onRemove}
             >

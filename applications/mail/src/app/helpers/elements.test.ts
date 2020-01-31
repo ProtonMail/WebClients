@@ -46,7 +46,8 @@ describe('elements', () => {
             const inboxCount = { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 5 };
             const sentConversationCount = { LabelID: MAILBOX_LABEL_IDS.SENT, Unread: 5 };
             const sentMessageCount = { LabelID: MAILBOX_LABEL_IDS.SENT, Unread: 10 };
-            const result = getCounterMap([], [inboxCount, sentConversationCount], [sentMessageCount], {});
+            const loc = { pathname: '', search: '', state: {}, hash: '' };
+            const result = getCounterMap([], [inboxCount, sentConversationCount], [sentMessageCount], {}, loc);
             expect(result[MAILBOX_LABEL_IDS.INBOX]?.Unread).toBe(inboxCount.Unread);
             expect(result[MAILBOX_LABEL_IDS.SENT]?.Unread).toBe(sentMessageCount.Unread);
             expect(result[MAILBOX_LABEL_IDS.STARRED]).toBeUndefined();

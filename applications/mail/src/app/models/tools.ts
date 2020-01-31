@@ -13,3 +13,14 @@ export interface Page {
     size: number;
     limit: number;
 }
+
+export interface SearchParameters {
+    address?: string;
+    from?: string;
+    to?: string;
+    keyword?: string;
+    begin?: number;
+    end?: number;
+    attachments?: number;
+    wildcard?: number;
+}

@@ -1,3 +1,4 @@
+import { Location } from 'history';
 import { formatRelative, format } from 'date-fns';
 import { toMap } from 'proton-shared/lib/helpers/object';
 
@@ -13,10 +14,11 @@ import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 export interface TypeParams {
     labelID?: string;
     mailSettings?: any;
+    location: Location;
 }
 
-export const getCurrentType = ({ labelID, mailSettings }: TypeParams) =>
-    isConversationMode(labelID, mailSettings) ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
+export const getCurrentType = ({ labelID, mailSettings, location }: TypeParams) =>
+    isConversationMode(labelID, mailSettings, location) ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
 
 export const isMessage = (element: Element = {}): boolean => typeof (element as Message).ConversationID === 'string';
 export const isConversation = (element: Element = {}): boolean => !isMessage(element);
@@ -83,14 +85,15 @@ export const getCounterMap = (
     labels: Label[],
     conversationCounters: LabelCount[],
     messageCounters: LabelCount[],
-    mailSettings: MailSettings
+    mailSettings: MailSettings,
+    location: Location
 ) => {
     const labelIDs = [...Object.values(MAILBOX_LABEL_IDS), ...labels.map((label) => label.ID || '')];
     const conversationCountersMap = toMap(conversationCounters, 'LabelID') as { [labelID: string]: LabelCount };
     const messageCountersMap = toMap(messageCounters, 'LabelID') as { [labelID: string]: LabelCount };
 
     return labelIDs.reduce((acc, labelID) => {
-        const conversationMode = isConversationMode(labelID, mailSettings);
+        const conversationMode = isConversationMode(labelID, mailSettings, location);
         const countersMap = conversationMode ? conversationCountersMap : messageCountersMap;
         acc[labelID] = countersMap[labelID];
         return acc;

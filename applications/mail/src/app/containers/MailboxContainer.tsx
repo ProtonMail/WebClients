@@ -3,7 +3,7 @@ import { Loader, classnames } from 'react-components';
 import { History, Location } from 'history';
 
 import { Element } from '../models/element';
-import { Sort, Filter, Page } from '../models/tools';
+import { Sort, Filter, Page, SearchParameters } from '../models/tools';
 
 import { useMailboxPageTitle } from '../hooks/useMailboxPageTitle';
 import { useElements } from '../hooks/useElements';
@@ -17,7 +17,8 @@ import {
     setPageInUrl,
     setSortInUrl,
     setFilterInUrl,
-    setPathInUrl
+    setPathInUrl,
+    extractSearchParameters
 } from '../helpers/mailboxUrl';
 
 import Toolbar from '../components/toolbar/Toolbar';
@@ -50,7 +51,6 @@ const MailboxContainer = ({
     onCompose
 }: Props) => {
     const columnMode = isColumnMode(mailSettings);
-    const conversationMode = isConversationMode(inputLabelID, mailSettings);
 
     // Page state is hybrid: page number is handled by the url, total computed in useElements, size and limit are constants
     // Yet, it is simpler to co-localize all these data in one object
@@ -62,7 +62,17 @@ const MailboxContainer = ({
     });
 
     const searchParams = getSearchParams(location);
-
+    const conversationMode = isConversationMode(inputLabelID, mailSettings, location);
+    const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [
+        searchParams.address,
+        searchParams.from,
+        searchParams.to,
+        searchParams.keyword,
+        searchParams.begin,
+        searchParams.end,
+        searchParams.attachments,
+        searchParams.wildcard
+    ]);
     const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
 
@@ -75,13 +85,14 @@ const MailboxContainer = ({
         labelID: inputLabelID,
         page,
         sort,
-        filter
+        filter,
+        search: searchParameters
     });
 
     useEffect(() => setPage({ ...page, page: pageFromUrl(location) }), [searchParams.page]);
     useEffect(() => setPage({ ...page, total }), [total]);
 
-    useMailboxPageTitle(labelID);
+    useMailboxPageTitle(labelID, location);
 
     const checkedIDs = useMemo(() => {
         return Object.entries(checkedElements).reduce((acc, [elementID, isChecked]) => {
@@ -141,6 +152,7 @@ const MailboxContainer = ({
     return (
         <>
             <Toolbar
+                location={location}
                 labelID={labelID}
                 elementID={elementID}
                 selectedIDs={selectedIDs}
@@ -170,6 +182,7 @@ const MailboxContainer = ({
                             </div>
                         ) : (
                             <List
+                                location={location}
                                 labelID={labelID}
                                 mailSettings={mailSettings}
                                 elementID={elementID}
@@ -200,6 +213,7 @@ const MailboxContainer = ({
                             )
                         ) : (
                             <PlaceholderView
+                                location={location}
                                 labelID={labelID}
                                 mailSettings={mailSettings}
                                 welcomeRef={welcomeRef}

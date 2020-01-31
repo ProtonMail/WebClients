@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
+import { Location } from 'history';
 
 import WelcomePane from './WelcomePane';
 import SelectionPane from './SelectionPane';
@@ -13,12 +14,20 @@ interface Props {
     onUncheckAll: () => void;
     welcomeRef: any;
     mailSettings: any;
+    location: Location;
 }
 
-const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, welcomeRef, mailSettings }: Props) => {
+const PlaceholderView = ({
+    labelID = '',
+    checkedIDs = [],
+    onUncheckAll,
+    welcomeRef,
+    mailSettings,
+    location
+}: Props) => {
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
-    const type = getCurrentType({ mailSettings, labelID });
+    const type = getCurrentType({ mailSettings, labelID, location });
 
     useEffect(
         () => () => {

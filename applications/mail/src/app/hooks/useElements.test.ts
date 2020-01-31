@@ -5,7 +5,7 @@ import { useElements } from './useElements';
 import { range } from 'proton-shared/lib/helpers/array';
 import { Element } from '../models/element';
 import { queryConversations } from 'proton-shared/lib/api/conversations';
-import { Page, Sort, Filter } from '../models/tools';
+import { Page, Sort, Filter, SearchParameters } from '../models/tools';
 
 interface SetupArgs {
     elements?: Element[];
@@ -15,6 +15,7 @@ interface SetupArgs {
     page?: Page;
     sort?: Sort;
     filter?: Filter;
+    search?: SearchParameters;
 }
 
 describe('useElements', () => {
@@ -37,13 +38,14 @@ describe('useElements', () => {
         inputLabelID = labelID,
         page = { page: 0, size: 50, limit: 50, total: elements.length },
         sort = { sort: 'Time', desc: true },
-        filter = {}
+        filter = {},
+        search = {}
     }: SetupArgs = {}) => {
         api.mockResolvedValue({ Total: page.total, Conversations: elements });
 
         if (renderHookResult === null) {
             renderHookResult = renderHook((props: any = {}) =>
-                useElements({ conversationMode, labelID: inputLabelID, page, sort, filter, ...props })
+                useElements({ conversationMode, labelID: inputLabelID, page, sort, filter, search, ...props })
             );
         } else {
             renderHookResult.rerender({ conversationMode, labelID: inputLabelID, page, sort, filter });

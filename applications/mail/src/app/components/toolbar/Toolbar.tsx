@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { Location } from 'history';
 import { Icon } from 'react-components';
 import { identity } from 'proton-shared/lib/helpers/function';
 
@@ -22,6 +23,7 @@ import { Element } from '../../models/element';
 import './Toolbar.scss';
 
 interface Props {
+    location: Location;
     loading?: boolean;
     checkAll: boolean;
     onCheckAll: () => void;
@@ -40,6 +42,7 @@ interface Props {
 }
 
 const Toolbar = ({
+    location,
     labelID = '',
     elementID,
     elements,
@@ -75,10 +78,25 @@ const Toolbar = ({
                     <BackButton onClick={onBack} />
                 )}
                 <ToolbarSeparator />
-                <ReadUnreadButtons labelID={labelID} mailSettings={mailSettings} selectedIDs={selectedIDs} />
+                <ReadUnreadButtons
+                    labelID={labelID}
+                    mailSettings={mailSettings}
+                    selectedIDs={selectedIDs}
+                    location={location}
+                />
                 <ToolbarSeparator />
-                <MoveButtons labelID={labelID} mailSettings={mailSettings} selectedIDs={selectedIDs} />
-                <DeleteButton labelID={labelID} mailSettings={mailSettings} selectedIDs={selectedIDs} />
+                <MoveButtons
+                    labelID={labelID}
+                    mailSettings={mailSettings}
+                    selectedIDs={selectedIDs}
+                    location={location}
+                />
+                <DeleteButton
+                    labelID={labelID}
+                    mailSettings={mailSettings}
+                    selectedIDs={selectedIDs}
+                    location={location}
+                />
                 <ToolbarSeparator />
                 <ToolbarDropdown
                     autoClose={false}

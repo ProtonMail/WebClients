@@ -8,7 +8,7 @@ import { toMap } from 'proton-shared/lib/helpers/object';
 import { Conversation } from '../models/conversation';
 import { sort as sortElements, hasLabel } from '../helpers/elements';
 import { Element } from '../models/element';
-import { Page, Filter, Sort } from '../models/tools';
+import { Page, Filter, Sort, SearchParameters } from '../models/tools';
 import { expectedPageLength } from '../helpers/paging';
 import { ElementEvent, Event, ElementCountEvent, ConversationEvent, MessageEvent } from '../models/event';
 
@@ -18,12 +18,21 @@ interface Options {
     page: Page;
     sort: Sort;
     filter: Filter;
+    search: SearchParameters;
 }
 
 interface CacheParams {
     labelID: string;
     sort: Sort;
     filter: Filter;
+    address?: string;
+    from?: string;
+    to?: string;
+    keyword?: string;
+    begin?: number;
+    end?: number;
+    attachments?: number;
+    wildcard?: number;
 }
 
 interface Cache {
@@ -38,6 +47,7 @@ const emptyCache = (page: Page, params: CacheParams): Cache => ({ params, page, 
 export const useElements = ({
     conversationMode,
     labelID,
+    search,
     page,
     sort,
     filter
@@ -45,7 +55,14 @@ export const useElements = ({
     const api = useApi();
     const { subscribe } = useEventManager();
     const [loading, setLoading] = useState(false);
-    const [localCache, setLocalCache] = useState<Cache>(emptyCache(page, { labelID, sort, filter }));
+    const [localCache, setLocalCache] = useState<Cache>(
+        emptyCache(page, {
+            labelID,
+            sort,
+            filter,
+            ...search
+        })
+    );
 
     // Compute the conversations list from the cache
     const elements = useMemo(() => {
@@ -67,7 +84,17 @@ export const useElements = ({
     const total = useMemo(() => localCache.page.total, [localCache.page.total]);
 
     const paramsChanged = () =>
-        labelID !== localCache.params.labelID || sort !== localCache.params.sort || filter !== localCache.params.filter;
+        labelID !== localCache.params.labelID ||
+        sort !== localCache.params.sort ||
+        filter !== localCache.params.filter ||
+        search.address !== localCache.params.address ||
+        search.from !== localCache.params.from ||
+        search.to !== localCache.params.to ||
+        search.keyword !== localCache.params.keyword ||
+        search.begin !== localCache.params.begin ||
+        search.end !== localCache.params.end ||
+        search.attachments !== localCache.params.attachments ||
+        search.wildcard !== localCache.params.wildcard;
 
     const pageCached = () => localCache.pages.includes(page.page);
 
@@ -96,20 +123,19 @@ export const useElements = ({
                 LabelID: labelID,
                 Sort: sort.sort,
                 Desc: sort.desc ? 1 : 0,
-                // Begin,
-                // End,
+                Begin: search.begin,
+                End: search.end,
                 // BeginID,
                 // EndID,
-                // Keyword,
-                // To,
-                // From,
+                Keyword: search.keyword,
+                To: search.to,
+                From: search.from,
                 // Subject,
-                // Attachments,
-                // Starred,
-                Unread: filter.Unread
-                // AddressID,
+                Attachments: search.attachments,
+                Unread: filter.Unread,
+                AddressID: search.address,
                 // ID,
-                // AutoWildcard
+                AutoWildcard: search.wildcard
             } as any)
         );
         return {
@@ -118,7 +144,15 @@ export const useElements = ({
         };
     };
 
-    const resetCache = () => setLocalCache(emptyCache(page, { labelID, sort, filter }));
+    const resetCache = () =>
+        setLocalCache(
+            emptyCache(page, {
+                labelID,
+                sort,
+                filter,
+                ...search
+            })
+        );
 
     const load = async () => {
         setLoading(true);
@@ -150,7 +184,20 @@ export const useElements = ({
     useEffect(() => {
         shouldResetCache() && resetCache();
         shouldSendRequest() && load();
-    }, [labelID, page, sort, filter]);
+    }, [
+        labelID,
+        page,
+        sort,
+        filter,
+        search.address,
+        search.from,
+        search.to,
+        search.keyword,
+        search.begin,
+        search.end,
+        search.attachments,
+        search.wildcard
+    ]);
 
     // Listen to event manager and update de cache
     useEffect(
@@ -161,8 +208,6 @@ export const useElements = ({
                     const Counts: ElementCountEvent[] = conversationMode ? ConversationCounts : MessageCounts;
 
                     const count = Counts.find((count) => count.LabelID === labelID);
-
-                    console.log('event', Elements, count);
 
                     const { toDelete, toUpdate, toCreate } = Elements.reduce(
                         (acc, event) => {

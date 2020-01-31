@@ -61,7 +61,7 @@ const MessageFooter = ({ message }: Props) => {
                 </span>
                 {numAttachments > 0 && (
                     <div>
-                        <button onClick={handleDownloadAll} className="link strong mr0-5">
+                        <button type="button" onClick={handleDownloadAll} className="link strong mr0-5">
                             {c('Download attachments').t`Download all`}
                         </button>
                         {(showInstant || showLoader) && (

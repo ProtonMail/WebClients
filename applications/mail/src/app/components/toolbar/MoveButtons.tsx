@@ -1,4 +1,5 @@
 import React from 'react';
+import { Location } from 'history';
 import { Icon, useLoading, useNotifications, useEventManager, useApi } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { labelMessages } from 'proton-shared/lib/api/messages';
@@ -15,14 +16,15 @@ interface Props {
     labelID: string;
     mailSettings: any;
     selectedIDs: string[];
+    location: Location;
 }
 
-const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [] }: Props) => {
+const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [], location }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
     const [loading, withLoading] = useLoading();
-    const type = getCurrentType({ mailSettings, labelID });
+    const type = getCurrentType({ mailSettings, labelID, location });
 
     const handleMove = async (LabelID: string) => {
         const action = type === ELEMENT_TYPES.CONVERSATION ? labelConversations : labelMessages;

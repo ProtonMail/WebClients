@@ -42,7 +42,7 @@ const PrivateSidebar = ({ labelID: currentLabelID, expanded = false, location, o
             return {};
         }
 
-        return getCounterMap(labels, conversationCounts, messageCounts, mailSettings);
+        return getCounterMap(labels, conversationCounts, messageCounts, mailSettings, location);
     }, [mailSettings, labels, conversationCounts, messageCounts]);
 
     if (loadingMailSettings || loadingLabels || loadingConversationCounts || loadingMessageCounts) {

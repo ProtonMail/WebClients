@@ -1,12 +1,14 @@
 import React, { useRef, useState, useEffect, ReactNode } from 'react';
 import { c } from 'ttag';
 import { AppsSidebar, StorageSpaceStatus, MainAreaContext, Href } from 'react-components';
-import { normalize } from 'proton-shared/lib/helpers/string';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import PrivateHeader from '../header/PrivateHeader';
 import PrivateSidebar from '../sidebar/PrivateSidebar';
 import { Location, History } from 'history';
 import { OnCompose } from '../../containers/ComposerContainer';
+import { getHumanLabelID } from '../../helpers/labels';
+import { setKeywordInUrl } from '../../helpers/mailboxUrl';
 
 interface Props {
     children: ReactNode;
@@ -20,8 +22,8 @@ const PrivateLayout = ({ children, location, history, labelID, onCompose }: Prop
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const [expanded, setExpand] = useState(false);
 
-    const handleSearch = (keyword: string) => {
-        console.log(normalize(keyword));
+    const handleSearch = (keyword = '', labelID = MAILBOX_LABEL_IDS.ALL_MAIL) => {
+        history.push(setKeywordInUrl({ ...location, pathname: `/${getHumanLabelID(labelID)}` }, keyword));
     };
 
     useEffect(() => {
@@ -48,6 +50,7 @@ const PrivateLayout = ({ children, location, history, labelID, onCompose }: Prop
             />
             <div className="content flex-item-fluid reset4print">
                 <PrivateHeader
+                    labelID={labelID}
                     location={location}
                     history={history}
                     expanded={expanded}

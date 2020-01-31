@@ -42,6 +42,7 @@ const AddressesGroupItem = ({ recipientGroup, contacts, onChange, onRemove }: Pr
                 {label}
             </span>
             <button
+                type="button"
                 className="composer-addresses-item-remove inline-flex pl0-5 pr0-5 no-pointer-events-children h100"
                 onClick={onRemove}
             >

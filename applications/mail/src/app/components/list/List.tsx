@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
+import { Location } from 'history';
 import { useLabels, useContactEmails } from 'react-components';
 
 import Item from './Item';
@@ -15,9 +16,19 @@ interface Props {
     checkedIDs?: string[];
     onCheck: (IDs?: string[], checked?: boolean) => void;
     onClick: (element: Element) => void;
+    location: Location;
 }
 
-const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs = [], onCheck, onClick }: Props) => {
+const List = ({
+    labelID,
+    elementID,
+    mailSettings = {},
+    elements = [],
+    checkedIDs = [],
+    onCheck,
+    onClick,
+    location
+}: Props) => {
     const [contacts, loadingContacts]: [ContactEmail[], boolean] = useContactEmails();
     const [contactGroups, loadingGroups] = useContactGroups();
     const [labels] = useLabels();
@@ -51,6 +62,7 @@ const List = ({ labelID, elementID, mailSettings = {}, elements = [], checkedIDs
             {elements.map((element) => {
                 return (
                     <Item
+                        location={location}
                         labels={labels}
                         labelID={labelID}
                         key={element.ID}

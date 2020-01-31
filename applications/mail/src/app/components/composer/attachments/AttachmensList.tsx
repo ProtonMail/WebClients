@@ -20,7 +20,7 @@ const AttachmentsList = ({ message, onRemove }: Props) => {
 
     return (
         <div className="flex flex-column relative w100 flex-nowrap">
-            <button className="flex flex-row flex-spacebetween w100 p0-5" onClick={toggleExpanded}>
+            <button type="button" className="flex flex-row flex-spacebetween w100 p0-5" onClick={toggleExpanded}>
                 <div>
                     <strong className="mr0-5">{size}</strong>
                     <Icon name="attach" className="mr0-5" />
@@ -40,6 +40,7 @@ const AttachmentsList = ({ message, onRemove }: Props) => {
                                 <Icon name="attach" />
                                 <span className="flex-item-fluid ellipsis pl0-5 pr0-5">{attachment.Name}</span>
                                 <button
+                                    type="button"
                                     className="inline-flex pl0-5 pr0-5 no-pointer-events-children h100"
                                     onClick={onRemove(attachment)}
                                 >

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Location } from 'history';
 import {
     Icon,
     useLoading,
@@ -25,9 +26,10 @@ interface Props {
     labelID: string;
     mailSettings: any;
     selectedIDs: string[];
+    location: Location;
 }
 
-const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }: Props) => {
+const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [], location }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
@@ -35,7 +37,7 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [] }: Pro
     const [loading, withLoading] = useLoading();
     const displayDelete = [TRASH, SPAM, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT].includes(labelID as MAILBOX_LABEL_IDS);
     const displayEmpty = ![INBOX, SENT, ALL_SENT, ARCHIVE, ALL_MAIL].includes(labelID as MAILBOX_LABEL_IDS);
-    const type = getCurrentType({ mailSettings, labelID });
+    const type = getCurrentType({ mailSettings, labelID, location });
 
     const handleDelete = async () => {
         await new Promise((resolve, reject) => {

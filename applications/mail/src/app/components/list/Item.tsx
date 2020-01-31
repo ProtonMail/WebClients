@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from 'react';
+import { Location } from 'history';
 import { classnames } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from 'proton-shared/lib/constants';
@@ -18,6 +19,7 @@ import { ContactEmail, ContactGroup } from '../../models/contact';
 const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
 interface Props {
+    location: Location;
     labels?: Label[];
     labelID: string;
     elementID?: string;
@@ -31,6 +33,7 @@ interface Props {
 }
 
 const Item = ({
+    location,
     labelID,
     labels,
     element,
@@ -44,7 +47,7 @@ const Item = ({
 }: Props) => {
     const { ID = '' } = element;
     const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
-    const type = getCurrentType({ mailSettings, labelID });
+    const type = getCurrentType({ mailSettings, labelID, location });
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
     const senders = isConversation ? getSenders(element) : [getSender(element)];
     const recipients = isConversation ? getRecipients(element) : getMessageRecipients(element);
