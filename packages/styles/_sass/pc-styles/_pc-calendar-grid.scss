@@ -341,6 +341,17 @@ $calendar-popover-width: 400px !default;
 }
 
 
+.calendar-recurringFrequencyEnd-grid {
+    display: grid;
+    grid-template-columns: minmax(6em, auto) minmax(10em, auto) 50%;
+    grid-gap: .5em;
+}
+.calendar-recurringFrequencyEnd-grid-fullLine {
+    grid-column-start: span 3;
+}
+
+
+
 
 
 @include respond-to($breakpoint-tiny) { 
@@ -348,6 +359,10 @@ $calendar-popover-width: 400px !default;
     .day-icon {
         width: 3rem;
         height: 3rem;
+    }
+
+    .calendar-recurringFrequencyEnd-grid {
+        grid-template-columns: auto auto auto;
     }
 
 }
