@@ -317,6 +317,20 @@ $calendar-popover-width: 400px !default;
     max-height: 100%;
 }
 
+// special fix for recurring frequency
+.eventpopover {
+    .noInEventPopover {
+        display: none;
+    }
+    .onpopover-flex-column {
+        flex-direction: column;
+        & > * {
+            width: 100%;
+            flex-basis: auto;
+          }
+    }
+}
+
 @keyframes eventpopoverIn {
     0% {
       opacity: 0;
