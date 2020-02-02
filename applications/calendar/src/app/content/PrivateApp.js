@@ -15,15 +15,23 @@ import {
     UserSettingsModel,
     CalendarsModel,
     CalendarUserSettingsModel,
-    AddressesModel
+    AddressesModel,
+    MailSettingsModel
 } from 'proton-shared/lib/models';
 
 import CalendarPreload from './CalendarPreload';
 import MainContainer from '../containers/calendar/MainContainer';
 
-const EVENT_MODELS = [UserModel, UserSettingsModel, CalendarsModel, CalendarUserSettingsModel, AddressesModel];
+const EVENT_MODELS = [
+    UserModel,
+    UserSettingsModel,
+    MailSettingsModel,
+    CalendarsModel,
+    CalendarUserSettingsModel,
+    AddressesModel
+];
 
-const PRELOAD_MODELS = [UserSettingsModel, UserModel, AddressesModel, CalendarsModel];
+const PRELOAD_MODELS = [UserModel, UserSettingsModel, MailSettingsModel, CalendarsModel, AddressesModel];
 
 const PrivateApp = ({ onLogout }) => {
     const [loading, setLoading] = useState(true);
