@@ -1,11 +1,12 @@
 import React, { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
-import { Icon, Group, ButtonGroup, useToggle, useContactEmails } from 'react-components';
+import { Icon, Group, ButtonGroup, useToggle, useContactEmails, useApi, useEventManager } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { unlabelMessages } from 'proton-shared/lib/api/messages';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
-import { ELEMENT_TYPES, MESSAGE_ACTIONS } from '../../../constants';
+import { MESSAGE_ACTIONS } from '../../../constants';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import MoveDropdown from '../../dropdown/MoveDropdown';
@@ -49,6 +50,8 @@ const HeaderExpanded = ({
     const [contacts]: [ContactEmail[]] = useContactEmails();
     const [contactGroups] = useContactGroups();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
+    const api = useApi();
+    const { call } = useEventManager();
 
     const { Name, Address } = (message.data || {}).Sender || {};
     const inOutClass = isSent(message.data) ? 'is-outbound' : 'is-inbound';
@@ -69,6 +72,11 @@ const HeaderExpanded = ({
     };
 
     const elements = useMemo(() => [message.data || {}], [message]);
+
+    const handleRemoveLabel = async (labelID: string) => {
+        await api(unlabelMessages({ LabelID: labelID, IDs: [message.data?.ID] }));
+        await call();
+    };
 
     return (
         <div className={`message-header message-header-expanded ${inOutClass}`}>
@@ -95,13 +103,13 @@ const HeaderExpanded = ({
                     <HeaderRecipientsSimple message={message.data} contacts={contacts} contactGroups={contactGroups} />
                 )}
                 <div>
-                    <ItemAttachmentIcon element={message.data || {}} type={ELEMENT_TYPES.MESSAGE} />
+                    <ItemAttachmentIcon element={message.data} />
                     {' ' /* This space is important to keep a small space between elements */}
-                    <ItemLabels max={4} element={message.data || {}} labels={labels} />
+                    <ItemLabels max={4} element={message.data} labels={labels} onUnlabel={handleRemoveLabel} />
                     {' ' /* This space is important to keep a small space between elements */}
-                    <ItemLocation message={message.data || {}} mailSettings={mailSettings} />
+                    <ItemLocation message={message.data} mailSettings={mailSettings} />
                     {' ' /* This space is important to keep a small space between elements */}
-                    <ItemStar element={message.data || {}} type={ELEMENT_TYPES.MESSAGE} />
+                    <ItemStar element={message.data} />
                 </div>
             </div>
             {showDetails ? (

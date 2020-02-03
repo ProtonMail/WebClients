@@ -1,9 +1,9 @@
 import React from 'react';
-import { Loader, useLabels, useToggle } from 'react-components';
+import { Loader, useLabels, useToggle, useApi, useEventManager } from 'react-components';
+import { unlabelConversations } from 'proton-shared/lib/api/conversations';
 
 import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
-import { ELEMENT_TYPES } from '../../constants';
 import NumMessages from './NumMessages';
 import ItemLabels from '../list/ItemLabels';
 import { useConversation } from '../../hooks/useConversation';
@@ -25,6 +25,8 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onCompose }: 
     const [labels] = useLabels();
     const [conversationData, loading] = useConversation(conversationID);
     const { state: filter, toggle: toggleFilter } = useToggle(true);
+    const api = useApi();
+    const { call } = useEventManager();
 
     if (loading) {
         return <Loader />;
@@ -43,6 +45,11 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onCompose }: 
 
     const initialExpand = findMessageToExpand(labelID, messagesToShow).ID;
 
+    const handleRemoveLabel = async (labelID: string) => {
+        await api(unlabelConversations({ LabelID: labelID, IDs: [conversation.ID] }));
+        await call();
+    };
+
     return (
         <>
             <header className="flex flex-column mb1">
@@ -52,8 +59,9 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onCompose }: 
                         {conversation.Subject}
                     </h2>
                     <div>
-                        <ItemLabels labels={labels} max={4} element={conversation} />
-                        <ItemStar element={conversation} type={ELEMENT_TYPES.CONVERSATION} />
+                        <ItemLabels labels={labels} max={4} element={conversation} onUnlabel={handleRemoveLabel} />
+                        {' ' /* This space is important to keep a small space between elements */}
+                        <ItemStar element={conversation} />
                     </div>
                 </div>
                 {showTrashWarning && <TrashWarning inTrash={inTrash} filter={filter} onToggle={toggleFilter} />}

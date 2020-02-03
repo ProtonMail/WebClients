@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Icon } from 'react-components';
+import { Icon, Tooltip } from 'react-components';
 import { c } from 'ttag';
 
-import { ELEMENT_TYPES } from '../../constants';
+import { Element } from '../../models/element';
 
 const EXPIRATION_INTERVAL = 1000;
 
-const ItemExpiration = ({ element }) => {
-    const { ExpirationTime } = element;
+interface Props {
+    element: Element;
+}
+
+const ItemExpiration = ({ element }: Props) => {
+    const { ExpirationTime = 0 } = element;
     const [willExpireIn, setWillExpireIn] = useState(false);
 
     useEffect(() => {
@@ -20,9 +23,7 @@ const ItemExpiration = ({ element }) => {
             }
         }, EXPIRATION_INTERVAL);
 
-        return () => {
-            clearInterval(intervalID);
-        };
+        return () => clearInterval(intervalID);
     }, []);
 
     if (!willExpireIn) {
@@ -33,12 +34,11 @@ const ItemExpiration = ({ element }) => {
     const expiration = new Date(value || Date.now()).toISOString();
     const title = c('Info').t`This message will expire in ${expiration}`;
 
-    return <Icon title={title} name="expiration" fill="warning" />;
-};
-
-ItemExpiration.propTypes = {
-    element: PropTypes.object.isRequired,
-    type: PropTypes.oneOf([ELEMENT_TYPES.CONVERSATION, ELEMENT_TYPES.MESSAGE]).isRequired
+    return (
+        <Tooltip title={title}>
+            <Icon name="expiration" fill="warning" />
+        </Tooltip>
+    );
 };
 
 export default ItemExpiration;

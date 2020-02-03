@@ -10,6 +10,8 @@ import { isConversationMode } from './mailSettings';
 import { LabelCount, Label } from '../models/label';
 import { MailSettings } from '../models/utils';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { hasAttachments as messageHasAttachments } from './message/messages';
+import { hasAttachments as conversationHasAttachments } from './conversation';
 
 export interface TypeParams {
     labelID?: string;
@@ -99,3 +101,9 @@ export const getCounterMap = (
         return acc;
     }, {} as { [labelID: string]: LabelCount | undefined });
 };
+
+export const hasAttachments = (element: Element) =>
+    isMessage(element) ? messageHasAttachments(element) : conversationHasAttachments(element);
+
+export const getLabelIDs = (element: Element) =>
+    isMessage(element) ? element.LabelIDs : element.Labels?.map(({ ID }) => ID || '');

@@ -14,4 +14,7 @@ export interface Conversation {
     Labels?: Label[];
     LabelIDs?: string[];
     Order?: number;
+    NumAttachments?: number;
+    ContextNumAttachments?: number;
+    ExpirationTime?: number;
 }

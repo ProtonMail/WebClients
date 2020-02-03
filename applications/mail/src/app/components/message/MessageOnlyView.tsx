@@ -3,7 +3,6 @@ import { useLabels } from 'react-components';
 
 import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
-import { ELEMENT_TYPES } from '../../constants';
 import ItemLabels from '../list/ItemLabels';
 import { useMessage } from '../../hooks/useMessage';
 import { OnCompose } from '../../containers/ComposerContainer';
@@ -31,7 +30,7 @@ const MessageOnlyView = ({ messageID, mailSettings, onCompose }: Props) => {
                 <h2 className="mb0">{message.data?.Subject}</h2>
                 <div>
                     <ItemLabels labels={labels} max={4} element={message.data} />
-                    <ItemStar element={message.data} type={ELEMENT_TYPES.MESSAGE} />
+                    <ItemStar element={message.data} />
                 </div>
             </header>
             <MessageView

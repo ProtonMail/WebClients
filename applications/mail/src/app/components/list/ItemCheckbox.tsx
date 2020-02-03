@@ -10,7 +10,7 @@ interface Props {
 
 const ItemCheckbox = ({ children, className, ...rest }: Props) => {
     return (
-        <label className={classnames(['relative', className])}>
+        <label className={classnames(['relative stop-propagation', className])}>
             <input type="checkbox" className="item-checkbox inner-ratio-container cursor-pointer m0" {...rest} />
             <span className="item-icon flex-item-noshrink rounded50 bg-white inline-flex">
                 <span className="mauto item-abbr">{children}</span>

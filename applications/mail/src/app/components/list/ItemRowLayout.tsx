@@ -37,14 +37,14 @@ const ItemRowLayout = ({ labels, element, mailSettings = {}, type, senders, unre
                 )}
                 <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
                 <ItemLabels max={4} labels={labels} element={element} />
-                <ItemAttachmentIcon element={element} type={type} className="ml0-5" />
+                <ItemAttachmentIcon element={element} className="ml0-5" />
             </div>
             <span className="mtauto mbauto mr1 ml1 ng-binding">{size}</span>
             <span className="mauto">
                 <ItemDate element={element} className={unread ? 'bold' : undefined} />
             </span>
             <div className="mtauto mbauto ml0-5">
-                <ItemStar element={element} type={type} />
+                <ItemStar element={element} />
             </div>
         </div>
     );

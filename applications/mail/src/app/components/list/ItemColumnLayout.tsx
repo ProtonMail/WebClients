@@ -44,9 +44,9 @@ const ItemColumnLayout = ({ labels, element, mailSettings = {}, type, senders, u
                 <div className="item-icons">
                     <ItemLabels max={4} labels={labels} element={element} />
                     {' ' /* This space is important to keep a small space between elements */}
-                    <ItemAttachmentIcon element={element} type={type} />
+                    <ItemAttachmentIcon element={element} />
                     {' ' /* This space is important to keep a small space between elements */}
-                    <ItemStar element={element} type={type} />
+                    <ItemStar element={element} />
                 </div>
             </div>
         </div>

@@ -64,7 +64,7 @@ const Item = ({
 
     const clickHandler = (event: React.MouseEvent) => {
         const target = event.target as HTMLElement;
-        if (target.classList.contains('item-checkbox') || target.closest('.item-checkbox')) {
+        if (target.closest('.stop-propagation')) {
             event.stopPropagation();
             return;
         }

@@ -1,15 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Icon } from 'react-components';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
+import { Message } from '../../models/message';
+import { MailSettings } from '../../models/utils';
 
 const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS } = MAILBOX_LABEL_IDS;
 
-const getFolders = ({ ShowMoved }) => ({
+interface FolderMap {
+    [id: string]: {
+        icon: string;
+        name: string;
+        to: string;
+    };
+}
+
+const getFolders = ({ ShowMoved }: MailSettings): FolderMap => ({
     [INBOX]: {
         icon: 'inbox',
         name: c('Mailbox').t`Inbox`,
@@ -48,7 +57,12 @@ const getFolders = ({ ShowMoved }) => ({
     }
 });
 
-const ItemLocation = ({ message, mailSettings }) => {
+interface Props {
+    message?: Message;
+    mailSettings: MailSettings;
+}
+
+const ItemLocation = ({ message = {}, mailSettings }: Props) => {
     const { LabelIDs = [] } = message;
     const folders = getFolders(mailSettings);
 
@@ -64,11 +78,6 @@ const ItemLocation = ({ message, mailSettings }) => {
             })}
         </>
     );
-};
-
-ItemLocation.propTypes = {
-    message: PropTypes.object.isRequired,
-    mailSettings: PropTypes.object.isRequired
 };
 
 export default ItemLocation;
