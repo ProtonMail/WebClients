@@ -8,7 +8,7 @@ import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 
 const Info = ({
     url,
-    title,
+    title = undefined,
     originalPlacement = 'top',
     scrollContainerClass = 'main',
     buttonClass = 'inline-flex',

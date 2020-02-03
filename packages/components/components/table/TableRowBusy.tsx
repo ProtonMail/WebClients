@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface Props {
-    colSpan: number;
+    colSpan?: number;
 }
 
 const TableRowBusy = ({ colSpan }: Props) => (

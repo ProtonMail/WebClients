@@ -3,7 +3,7 @@ import TableRowBusy from './TableRowBusy';
 
 interface Props {
     children: React.ReactNode;
-    colSpan: number;
+    colSpan?: number;
     loading?: boolean;
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { classnames } from '../../helpers/component';
 
-const Label = ({ htmlFor, className = '', children, ...rest }) => {
+const Label = ({ htmlFor = undefined, className = '', children, ...rest }) => {
     return (
         <label htmlFor={htmlFor} className={classnames(['pm-label', className])} {...rest}>
             {children}

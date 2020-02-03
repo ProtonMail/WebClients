@@ -25,7 +25,7 @@ const useApiResult = <R, F extends QueryFunction>(
     // Callback updates
     const requestAndSetResults = useCallback(
         (...args: Parameters<F>) => {
-            const promise = request(fn(...args));
+            const promise = request<R>(fn(...args));
             run(promise);
             return promise;
         },

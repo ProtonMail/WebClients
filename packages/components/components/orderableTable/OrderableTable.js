@@ -6,7 +6,7 @@ import OrderableContainer from '../orderable/OrderableContainer';
 import './OrderableTable.scss';
 import { classnames } from '../../helpers/component';
 
-const OrderableTable = ({ children = [], className = '', caption, ...props }) => (
+const OrderableTable = ({ children = [], className = '', caption = undefined, ...props }) => (
     <OrderableContainer helperClass="orderableHelper pm-simple-table" useDragHandle {...props}>
         <Table caption={caption} className={classnames(['orderableTable', className])}>
             {children}

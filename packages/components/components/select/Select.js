@@ -13,7 +13,7 @@ const Select = ({
     className = '',
     multiple = false,
     loading = false,
-    isSubmitted,
+    isSubmitted = false,
     ...rest
 }) => {
     const { handlers, statusClasses, status } = useInput({ isSubmitted, ...rest });

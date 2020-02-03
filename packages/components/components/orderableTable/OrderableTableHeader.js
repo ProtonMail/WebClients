@@ -5,7 +5,7 @@ import { TableHeader } from '../table';
 import './OrderableTableHeader.scss';
 import { classnames } from '../../helpers/component';
 
-const OrderableTableHeader = ({ cells = [], className = '', children, ...rest }) => (
+const OrderableTableHeader = ({ cells = [], className = '', children = null, ...rest }) => (
     <TableHeader
         cells={[
             null, // column for icon

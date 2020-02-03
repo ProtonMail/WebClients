@@ -1,5 +1,6 @@
+import { decryptPrivateKey } from 'pmcrypto';
 import { computeKeyPassword } from 'pm-srp';
-import { getPrimaryKeyWithSalt, decryptPrivateKeyArmored } from 'proton-shared/lib/keys/keys';
+import { getPrimaryKeyWithSalt } from 'proton-shared/lib/keys/keys';
 import { TWO_FA_FLAGS, PASSWORD_MODE } from 'proton-shared/lib/constants';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 
@@ -23,7 +24,7 @@ export const handleUnlockKey = async (User, KeySalts, rawKeyPassword) => {
 
     // Support for versions without a key salt.
     const keyPassword = KeySalt ? await computeKeyPassword(rawKeyPassword, KeySalt) : rawKeyPassword;
-    const primaryKey = await decryptPrivateKeyArmored(PrivateKey, keyPassword);
+    const primaryKey = await decryptPrivateKey(PrivateKey, keyPassword);
 
     return { primaryKey, keyPassword };
 };

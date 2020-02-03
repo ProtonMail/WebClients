@@ -83,7 +83,12 @@ const LoginForm = ({ onLogin, ignoreUnlock = false, needHelp }) => {
             userSaltResult: [{ User }, { KeySalts }]
         } = cacheRef.current;
 
-        const { keyPassword } = await handleUnlockKey(User, KeySalts, password);
+        const { keyPassword } = await handleUnlockKey(User, KeySalts, password).catch(() => ({}));
+        if (!keyPassword) {
+            const error = new Error(c('Error').t`Wrong mailbox password`);
+            error.name = 'PasswordError';
+            throw error;
+        }
 
         return finalizeLogin(keyPassword);
     };

@@ -30,7 +30,7 @@ import { generateOrganizationKeys } from 'proton-shared/lib/keys/organizationKey
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 
-const SetupOrganizationModal = ({ onClose, ...rest }) => {
+const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
     const api = useApi();
     const authentication = useAuthentication();
     const { call } = useEventManager();

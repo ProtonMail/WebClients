@@ -5,7 +5,7 @@ import { Icon } from 'react-components';
 
 import Input from './Input';
 
-const PasswordInput = ({ disabled, ...rest }) => {
+const PasswordInput = ({ disabled = false, ...rest }) => {
     const [type, setType] = useState('password');
 
     const toggle = () => {
