@@ -25,7 +25,7 @@ const transformTo = (bytes, unit, withoutUnit) => {
     return value + suffix;
 };
 
-const humanSize = (input = 0, forceUnit = false, withoutUnit = false) => {
+const humanSize = (input = 0, forceUnit = undefined, withoutUnit = false) => {
     let bytes;
 
     if (typeof input === 'number') {

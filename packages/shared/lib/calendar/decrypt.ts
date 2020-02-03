@@ -4,29 +4,24 @@ import {
     decryptSessionKey,
     getMessage,
     getSignature,
+    OpenPGPKey,
+    SessionKey,
+    VERIFICATION_STATUS,
     verifyMessage
 } from 'pmcrypto';
-import { VERIFICATION_STATUS } from 'pmcrypto/lib/constants';
 
 import { deserializeUint8Array } from '../helpers/serialization';
 import { CALENDAR_CARD_TYPE } from './constants';
 
-/**
- * @param {Uint8Array} data
- * @param {Array<PGPKey>} privateKeys
- * @returns {Promise}
- */
-export const getDecryptedSessionKey = async (data, privateKeys) => {
+export const getDecryptedSessionKey = async (data: Uint8Array, privateKeys: OpenPGPKey | OpenPGPKey[]) => {
     return decryptSessionKey({ message: await getMessage(data), privateKeys });
 };
 
-/**
- * @param {String} dataToVerify
- * @param {String} signature
- * @param {Array<PGPKey>|PGPKey} publicKeys
- * @returns {Promise}
- */
-export const verifySignedCard = async (dataToVerify, signature, publicKeys) => {
+export const verifySignedCard = async (
+    dataToVerify: string,
+    signature: string,
+    publicKeys: OpenPGPKey | OpenPGPKey[]
+) => {
     const { verified } = await verifyMessage({
         message: await createCleartextMessage(dataToVerify),
         publicKeys,
@@ -43,14 +38,12 @@ export const verifySignedCard = async (dataToVerify, signature, publicKeys) => {
     return dataToVerify;
 };
 
-/**
- * @param {Uint8Array} dataToDecrypt
- * @param {String} signature
- * @param {Array<PGPKey>|PGPKey} publicKeys
- * @param {PGPKey} sessionKey
- * @returns {Promise}
- */
-export const decryptCard = async (dataToDecrypt, signature, publicKeys, sessionKey) => {
+export const decryptCard = async (
+    dataToDecrypt: Uint8Array,
+    signature: string,
+    publicKeys: OpenPGPKey | OpenPGPKey[],
+    sessionKey: SessionKey
+) => {
     const { data: decryptedData, verified } = await decryptMessage({
         message: await getMessage(dataToDecrypt),
         publicKeys,
@@ -67,17 +60,13 @@ export const decryptCard = async (dataToDecrypt, signature, publicKeys, sessionK
     return decryptedData;
 };
 
-/**
- * @param {Object} signed
- * @param {Object} encryptedAndSigned
- * @param {Array<PGPKey>|PGPKey>} publicKeys
- * @param {PGPKey} sessionKey
- * @returns {Promise}
- */
 export const decryptAndVerifyPart = (
-    { [CALENDAR_CARD_TYPE.SIGNED]: signed, [CALENDAR_CARD_TYPE.ENCRYPTED_AND_SIGNED]: encryptedAndSigned },
-    publicKeys,
-    sessionKey
+    {
+        [CALENDAR_CARD_TYPE.SIGNED]: signed,
+        [CALENDAR_CARD_TYPE.ENCRYPTED_AND_SIGNED]: encryptedAndSigned
+    }: { [key: number]: { Data: string; Signature: string } },
+    publicKeys: OpenPGPKey | OpenPGPKey[],
+    sessionKey: SessionKey
 ) => {
     return Promise.all([
         signed && verifySignedCard(signed.Data, signed.Signature, publicKeys),

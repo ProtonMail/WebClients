@@ -16,3 +16,12 @@ export interface Address {
     Status: number;
     Type: ADDRESS_TYPE;
 }
+
+export interface AddressKey {
+    AddressID: string;
+    PrivateKey: string;
+    SignedKeyList: {
+        Data: string;
+        Signature: string;
+    };
+}

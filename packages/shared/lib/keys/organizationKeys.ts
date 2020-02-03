@@ -1,15 +1,18 @@
-import { encryptMessage, encryptPrivateKey, generateKey } from 'pmcrypto';
+import { encryptMessage, encryptPrivateKey, generateKey, OpenPGPKey } from 'pmcrypto';
+// @ts-ignore - pm-srp does not have typings, todo
 import { computeKeyPassword, generateKeySalt } from 'pm-srp';
 
 import { generateAddressKey } from './keys';
 import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';
+import { Member, EncryptionConfig, Address } from '../interfaces';
 
-/**
- * @param {String} backupPassword
- * @param {Object} organizationKey
- * @return {Promise<{backupKeySalt, backupArmoredPrivateKey}>}
- */
-export const getBackupKeyData = async ({ backupPassword, organizationKey }) => {
+export const getBackupKeyData = async ({
+    backupPassword,
+    organizationKey
+}: {
+    backupPassword: string;
+    organizationKey: OpenPGPKey;
+}) => {
     const backupKeySalt = generateKeySalt();
     const backupKeyPassword = await computeKeyPassword(backupPassword, backupKeySalt);
     const backupArmoredPrivateKey = await encryptPrivateKey(organizationKey, backupKeyPassword);
@@ -20,13 +23,16 @@ export const getBackupKeyData = async ({ backupPassword, organizationKey }) => {
     };
 };
 
-/**
- * @param {String} keyPassword
- * @param {String} backupPassword
- * @param {Object} encryptionConfig
- * @return {Promise<{privateKeyArmored, privateKey}>}
- */
-export const generateOrganizationKeys = async ({ keyPassword, backupPassword, encryptionConfig }) => {
+interface GenerateOrganizationKeysArguments {
+    keyPassword: string;
+    backupPassword: string;
+    encryptionConfig: EncryptionConfig;
+}
+export const generateOrganizationKeys = async ({
+    keyPassword,
+    backupPassword,
+    encryptionConfig
+}: GenerateOrganizationKeysArguments) => {
     const { key: privateKey, privateKeyArmored } = await generateKey({
         userIds: [{ name: 'not_for_email_use@domain.tld', email: 'not_for_email_use@domain.tld' }],
         passphrase: keyPassword,
@@ -42,29 +48,30 @@ export const generateOrganizationKeys = async ({ keyPassword, backupPassword, en
     };
 };
 
-/**
- * @param {Array} nonPrivateMembers
- * @param {Array} nonPrivateMembersAddresses
- * @param {Object} oldOrganizationKey
- * @param {Object} newOrganizationKey
- * @return {Promise<Array>}
- */
+interface ReEncryptOrganizationTokens {
+    nonPrivateMembers: Member[];
+    nonPrivateMembersAddresses: Address[][];
+    oldOrganizationKey: OpenPGPKey;
+    newOrganizationKey: OpenPGPKey;
+}
 export const reEncryptOrganizationTokens = ({
     nonPrivateMembers = [],
     nonPrivateMembersAddresses = [],
     oldOrganizationKey,
     newOrganizationKey
-}) => {
+}: ReEncryptOrganizationTokens) => {
     const newOrganizationPublicKey = newOrganizationKey.toPublic();
 
-    const getMemberTokens = ({ Keys = [] }, i) => {
+    const getMemberTokens = ({ Keys = [] }: Member, i: number) => {
         const memberKeys = nonPrivateMembersAddresses[i].reduce((acc, { Keys: AddressKeys }) => {
             return acc.concat(AddressKeys);
         }, Keys);
 
-        return memberKeys.map(async ({ ID, Token, Activation }) => {
-            // TODO: Check if Token || Activation is really neccessary.
-            const decryptedToken = await decryptMemberToken(Token || Activation, oldOrganizationKey);
+        return memberKeys.map(async ({ ID, Token }) => {
+            if (!Token) {
+                throw new Error('Missing Token');
+            }
+            const decryptedToken = await decryptMemberToken(Token, oldOrganizationKey);
             const { data } = await encryptMessage({
                 data: decryptedToken,
                 privateKeys: newOrganizationKey,
@@ -81,13 +88,23 @@ export const reEncryptOrganizationTokens = ({
 /**
  * Generate member address for non-private users.
  * It requires that the user has been set up with a primary key first.
- * @param {Object} address - The address to generate keys for.
- * @param {Object} primaryKey - The primary key of the member.
- * @param {Object} organizationKey - The organization key.
- * @param {Object} encryptionConfig - The selected encryption config.
- * @return {Promise}
+ * @param address - The address to generate keys for.
+ * @param primaryKey - The primary key of the member.
+ * @param organizationKey - The organization key.
+ * @param encryptionConfig - The selected encryption config.
  */
-export const generateMemberAddressKey = async ({ email, primaryKey, organizationKey, encryptionConfig }) => {
+interface GenerateMemberAddressKeyArguments {
+    email: string;
+    primaryKey: OpenPGPKey;
+    organizationKey: OpenPGPKey;
+    encryptionConfig: EncryptionConfig;
+}
+export const generateMemberAddressKey = async ({
+    email,
+    primaryKey,
+    organizationKey,
+    encryptionConfig
+}: GenerateMemberAddressKeyArguments) => {
     const memberKeyToken = generateMemberToken();
     const orgKeyToken = generateMemberToken();
 

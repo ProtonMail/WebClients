@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { hasBit } from '../../helpers/bitset';
-import { KEY_FLAGS } from '../../keys/calendarKeys';
+import { KeyFlags } from '../../keys/calendarKeys';
 import { readSessionKeys } from '../deserialize';
 import { splitKeys } from '../../keys/keys';
 import { createCalendarEvent } from '../serialize';
@@ -10,14 +10,14 @@ import { createEvent, updateEvent } from '../../api/calendars';
 export default async ({ Event, veventComponent, calendarID, memberID, addressKeys = [], calendarKeys = [], api }) => {
     const [{ privateKey: primaryAddressKey } = {}] = addressKeys;
 
-    if (!primaryAddressKey || !primaryAddressKey.isDecrypted()) {
+    if (!primaryAddressKey) {
         throw new Error(c('Error').t`Primary address key not found`);
     }
 
     const { privateKey: primaryCalendarKey, publicKey: publicCalendarKey } =
-        calendarKeys.find(({ Key: { Flags } }) => hasBit(Flags, KEY_FLAGS.PRIMARY)) || {};
+        calendarKeys.find(({ Key: { Flags } }) => hasBit(Flags, KeyFlags.PRIMARY)) || {};
 
-    if (!primaryCalendarKey || !primaryCalendarKey.isDecrypted()) {
+    if (!primaryCalendarKey) {
         throw new Error(c('Error').t`Primary calendar key is not decrypted`);
     }
 

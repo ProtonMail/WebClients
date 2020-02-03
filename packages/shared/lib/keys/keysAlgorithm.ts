@@ -1,10 +1,13 @@
+import { algorithmInfo } from 'pmcrypto';
+import { EncryptionConfig } from '../interfaces';
+
 const NON_ABBREVIATION_ALGS = ['elgamal'];
 const ECC_ALGS = ['ecdh', 'ecdsa', 'eddsa'];
 
 export const isRSA = (algorithmName = '') => algorithmName.toLowerCase().startsWith('rsa');
 export const isECC = (algorithmName = '') => ECC_ALGS.includes(algorithmName.toLowerCase());
 
-export const describe = ({ algorithm = '', bits, curve } = {}) => {
+export const describe = ({ algorithm = '', bits, curve }: algorithmInfo = { algorithm: '' }) => {
     const [name] = algorithm.split('_');
 
     if (isECC(name)) {
@@ -18,7 +21,7 @@ export const describe = ({ algorithm = '', bits, curve } = {}) => {
     return `${formattedName} (${bits})`;
 };
 
-export const getAlgorithmExists = (algorithmInfos = [], encryptionConfig) => {
+export const getAlgorithmExists = (algorithmInfos: algorithmInfo[] = [], encryptionConfig: EncryptionConfig) => {
     return algorithmInfos.some(({ algorithm, curve, bits }) => {
         if (isECC(algorithm)) {
             return curve === encryptionConfig.curve;

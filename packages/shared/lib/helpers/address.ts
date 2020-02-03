@@ -1,5 +1,5 @@
 import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from '../constants';
-import { Address } from '../interfaces/Address';
+import { Address } from '../interfaces';
 
 export const getActiveAddresses = (addresses: Address[]): Address[] => {
     return addresses.filter(({ Status, Receive, Send }) => {

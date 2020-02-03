@@ -42,10 +42,10 @@ export const setCookies = ({ UID, AccessToken, RefreshToken, State, RedirectURI 
     }
 });
 
-export const getInfo = (Username: string) => ({
+export const getInfo = (Username?: string) => ({
     method: 'post',
     url: 'auth/info',
-    data: { Username }
+    data: Username ? { Username } : undefined
 });
 
 export const getModulus = () => ({

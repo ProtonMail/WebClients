@@ -2,16 +2,11 @@ import { generateAddressKey } from './keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, KEY_FLAG } from '../constants';
 import { clearBit } from '../helpers/bitset';
 import { getSignature } from './getSignedKeyList';
+import { Address, EncryptionConfig, Key } from '../interfaces';
 
 const { SIGNED, ENCRYPTED, ENCRYPTED_AND_SIGNED } = KEY_FLAG;
 
-/**
- * @param {Array} Keys
- * @param {Boolean} canReceive
- * @param {String} fingerprint
- * @returns {Array}
- */
-const getResetKeys = (Keys, { canReceive, fingerprint }) => {
+const getResetKeys = (Keys: Key[], { canReceive, fingerprint }: { canReceive: boolean; fingerprint: string }) => {
     const oldKeys = Keys.map(({ Fingerprint, Flags }) => {
         return {
             // Special case for reset where it trusts the fingerprint received from the server.
@@ -32,14 +27,15 @@ const getResetKeys = (Keys, { canReceive, fingerprint }) => {
 
 /**
  * Generates a new key for each address, encrypted with the new passphrase.
- * @param {Array} addresses
- * @param {String} passphrase
- * @param {Object} encryptionConfig
  */
 export const getResetAddressesKeys = async ({
     addresses = [],
     passphrase = '',
     encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG]
+}: {
+    addresses: Address[];
+    passphrase: string;
+    encryptionConfig: EncryptionConfig;
 }) => {
     const newAddressesKeys = await Promise.all(
         addresses.map(({ Email }) => {
@@ -51,7 +47,7 @@ export const getResetAddressesKeys = async ({
             const { privateKey, privateKeyArmored } = newAddressesKeys[i];
             const data = JSON.stringify(
                 getResetKeys(Keys, {
-                    canReceive: Receive,
+                    canReceive: !!Receive,
                     fingerprint: privateKey.getFingerprint()
                 })
             );
