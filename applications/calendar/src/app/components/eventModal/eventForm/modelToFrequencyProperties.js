@@ -11,7 +11,7 @@ const modelToFrequencyProperties = ({ frequencyModel = {}, start = {}, isAllDay 
     if ([FREQUENCY.DAILY, FREQUENCY.WEEKLY, FREQUENCY.MONTHLY, FREQUENCY.YEARLY].includes(type)) {
         properties.rrule = { value: { freq: type } };
     }
-    if (type === FREQUENCY.CUSTOM) {
+    if (type === FREQUENCY.CUSTOM && frequencyModel.ends.count > 1) {
         properties.rrule = {
             value: {
                 freq: frequency,
