@@ -1,13 +1,16 @@
-import React, { FC, ReactElement } from 'react';
 import { renderHook, act } from '@testing-library/react-hooks';
-import { useInstance, useApi } from 'react-components';
-
-import { useMessage } from './useMessage';
-import MessageProvider from '../containers/MessageProvider';
-import createCache from 'proton-shared/lib/helpers/cache';
+import { useApi } from 'react-components';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { noop } from 'proton-shared/lib/helpers/function';
 
+import { useMessage } from './useMessage';
+import * as MessageProviderMock from '../containers/MessageProvider';
+
+// Needed to make TS accepts the mock exports
+const cacheMock: MessageProviderMock.MessageCache = (MessageProviderMock as any).cacheMock;
+const MessageProvider = MessageProviderMock.default;
+
+jest.mock('../containers/MessageProvider');
 jest.mock('./useDecryptMessage', () => ({ useDecryptMessage: jest.fn() }));
 jest.mock('./useAttachments', () => ({ useAttachmentsCache: jest.fn() }));
 jest.mock('./useEncryptMessage', () => ({ useEncryptMessage: jest.fn(() => (m: any) => m) }));
@@ -21,14 +24,10 @@ describe('useMessage', () => {
     const api = jest.fn();
     (useApi as jest.Mock).mockReturnValue(api);
 
-    const setup = (cache = createCache()) => {
-        (useInstance as jest.Mock).mockReturnValue(cache);
-        const wrapper = (({ children }: { children: ReactElement }) => (
-            <MessageProvider>{children}</MessageProvider>
-        )) as FC;
-        const renderHookResult = renderHook((props: any = {}) => useMessage({ ID, ...props }, {}), { wrapper });
-        return renderHookResult.result;
-    };
+    const setup = () =>
+        renderHook((props: any = {}) => useMessage({ ID, ...props }, {}), {
+            wrapper: MessageProvider
+        });
 
     beforeAll(() => {
         consoleError = console.error;
@@ -40,21 +39,21 @@ describe('useMessage', () => {
     });
 
     afterEach(() => {
-        [useInstance as jest.Mock, api, useApi as jest.Mock].forEach((mock) => mock.mockClear());
+        jest.clearAllMocks();
+        cacheMock.reset();
     });
 
     describe('message state', () => {
         it('should initialize message in cache if not existing', () => {
-            const result = setup();
-            expect(result.current[0]).toEqual({ data: { ID } });
+            const hook = setup();
+            expect(hook.result.current[0]).toEqual({ data: { ID } });
         });
 
         it('should returns message from the cache', () => {
-            const cache = createCache();
             const message = {};
-            cache.set(ID, message);
-            const result = setup(cache);
-            expect(result.current[0]).toBe(message);
+            cacheMock.set(ID, message);
+            const hook = setup();
+            expect(hook.result.current[0]).toBe(message);
         });
     });
 
@@ -66,29 +65,29 @@ describe('useMessage', () => {
                     resolve = r;
                 })
             );
-            const result = setup();
+            const hook = setup();
             const promise = act(async () => {
-                await result.current[1].createDraft({});
+                await hook.result.current[1].createDraft({});
             });
-            expect(result.current[2].lock).toBe(true);
+            expect(hook.result.current[2].lock).toBe(true);
             await wait(0);
-            expect(result.current[2].lock).toBe(true);
+            expect(hook.result.current[2].lock).toBe(true);
             resolve({ Message: {} });
-            expect(result.current[2].lock).toBe(true);
+            expect(hook.result.current[2].lock).toBe(true);
             await wait(0);
-            expect(result.current[2].lock).toBe(true);
+            expect(hook.result.current[2].lock).toBe(true);
             await promise;
-            expect(result.current[2].lock).toBe(false);
+            expect(hook.result.current[2].lock).toBe(false);
         });
 
         it('should create a draft with an api call', async () => {
             const Message = {};
             api.mockResolvedValue({ Message });
-            const result = setup();
+            const hook = setup();
             await act(async () => {
-                await result.current[1].createDraft({});
+                await hook.result.current[1].createDraft({});
             });
-            expect(result.current[0].data).toEqual({ ID });
+            expect(hook.result.current[0].data).toEqual({ ID });
             expect(api).toHaveBeenCalled();
         });
     });

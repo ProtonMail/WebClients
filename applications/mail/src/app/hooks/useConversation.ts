@@ -1,29 +1,40 @@
-import { useContext, useCallback } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { getConversation } from 'proton-shared/lib/api/conversations';
-import { useCachedModelResult, useApi } from 'react-components';
+import { useApi, useLoading } from 'react-components';
 
-import { MessageContext, Cache } from '../containers/MessageProvider';
 import { Conversation } from '../models/conversation';
 import { Message } from '../models/message';
+import { ConversationContext } from '../containers/ConversationProvider';
 
-export type ConversationCache = Cache<string, Conversation>;
-
-interface ConversationResult {
+export interface ConversationResult {
     Conversation: Conversation;
     Messages?: Message[];
 }
 
-const getKey = (ID: string) => `Conversation-${ID}`;
-
-export const useConversation = (conversationID: string): [ConversationResult, boolean, any] => {
-    // Pretty ugly "reuse" of the MessageCache
-    // TODO: either use a different cache or properly handle mix types
-    const cache = (useContext(MessageContext) as any) as ConversationCache;
+export const useConversation = (conversationID: string): [ConversationResult | undefined, boolean] => {
+    const cache = useContext(ConversationContext);
     const api = useApi();
+    const [loading, withLoading] = useLoading(true);
+    const [conversation, setConversation] = useState<ConversationResult>(cache.get(conversationID));
 
-    const miss = useCallback(() => {
-        return api(getConversation(conversationID));
+    useEffect(() => {
+        const load = async () => {
+            const result = await api(getConversation(conversationID));
+            cache.set(conversationID, result);
+        };
+
+        if (!cache.has(conversationID)) {
+            withLoading(load());
+        }
+
+        setConversation(cache.get(conversationID));
+
+        return cache.subscribe((changedId: string) => {
+            if (conversationID === changedId) {
+                setConversation(cache.get(conversationID));
+            }
+        });
     }, [conversationID, api, cache]);
 
-    return useCachedModelResult(cache as any, getKey(conversationID), miss);
+    return [conversation, !conversation || loading];
 };

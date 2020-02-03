@@ -17,8 +17,9 @@ import {
 
 import locales from './locales';
 import PageContainer from './containers/PageContainer';
-import MessageProvider from './containers/MessageProvider';
 import ComposerContainer from './containers/ComposerContainer';
+import MessageProvider from './containers/MessageProvider';
+import ConversationProvider from './containers/ConversationProvider';
 
 export type RouteProps = RouteChildrenProps<{ labelID: string; elementID?: string }>;
 
@@ -45,14 +46,18 @@ const PrivateApp = ({ onLogout }: Props) => {
             ]}
         >
             <MessageProvider>
-                <ComposerContainer>
-                    {({ onCompose }) => (
-                        <Route
-                            path="/:labelID/:elementID?"
-                            render={(routeProps: RouteProps) => <PageContainer {...routeProps} onCompose={onCompose} />}
-                        />
-                    )}
-                </ComposerContainer>
+                <ConversationProvider>
+                    <ComposerContainer>
+                        {({ onCompose }) => (
+                            <Route
+                                path="/:labelID/:elementID?"
+                                render={(routeProps: RouteProps) => (
+                                    <PageContainer {...routeProps} onCompose={onCompose} />
+                                )}
+                            />
+                        )}
+                    </ComposerContainer>
+                </ConversationProvider>
             </MessageProvider>
         </StandardPrivateApp>
     );

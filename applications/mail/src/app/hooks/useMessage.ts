@@ -1,4 +1,4 @@
-import { useContext, useEffect, useCallback, useState, useMemo } from 'react';
+import { useEffect, useCallback, useState, useMemo, useContext } from 'react';
 import { c } from 'ttag';
 import { useApi, useEventManager } from 'react-components';
 import {
@@ -20,12 +20,12 @@ import { transformRemote } from '../helpers/transforms/transformRemote';
 import { transformBase } from '../helpers/transforms/transformBase';
 import { useDecryptMessage } from './useDecryptMessage';
 import { AttachmentsCache, useAttachmentsCache } from './useAttachments';
-import { MessageContext } from '../containers/MessageProvider';
 import { Message, MessageExtended } from '../models/message';
 import { useSendMessage } from './useSendMessage';
 import { MailSettings, Api } from '../models/utils';
 import { useEncryptMessage } from './useEncryptMessage';
 import { MESSAGE_ACTIONS } from '../constants';
+import { MessageContext } from '../containers/MessageProvider';
 
 export interface ComputationOption {
     cache: any;
@@ -113,7 +113,13 @@ export const useMessage = (
 
     // Update message state and listen to cache for updates on the current message
     useEffect(() => {
-        cache.has(messageID) ? setMessage(cache.get(messageID)) : setMessage({ data: inputMessage });
+        if (cache.has(messageID)) {
+            setMessage(cache.get(messageID));
+        } else {
+            const message = { data: inputMessage };
+            cache.set(messageID, message);
+            setMessage(message);
+        }
 
         return cache.subscribe((changedMessageID) => {
             // Prevent updates on message deltion from the cache to prevent undefined message in state.

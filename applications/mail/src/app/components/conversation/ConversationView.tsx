@@ -6,7 +6,7 @@ import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
 import NumMessages from './NumMessages';
 import ItemLabels from '../list/ItemLabels';
-import { useConversation } from '../../hooks/useConversation';
+import { ConversationResult, useConversation } from '../../hooks/useConversation';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import TrashWarning from './TrashWarning';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
@@ -32,7 +32,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onCompose }: 
         return <Loader />;
     }
 
-    const { Conversation: conversation, Messages: messages = [] } = conversationData;
+    const { Conversation: conversation, Messages: messages = [] } = conversationData as ConversationResult;
 
     if (!conversation) {
         return null;
