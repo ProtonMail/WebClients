@@ -14,6 +14,7 @@ const PopoverEventContent = ({
     Calendar = {},
     event: { start, end, isAllDay, isAllPartDay } = {},
     tzid,
+    weekStartsOn,
     model,
     formatTime
 }) => {
@@ -46,6 +47,7 @@ const PopoverEventContent = ({
             startTzid: model.start.tzid,
             currentTzid: tzid,
             weekdays,
+            weekStartsOn,
             locale: dateLocale
         });
     }, [model.frequencyModel, weekdays, start]);
@@ -103,6 +105,7 @@ PopoverEventContent.propTypes = {
     Calendar: PropTypes.object,
     event: PropTypes.object,
     tzid: PropTypes.string,
+    weekStartsOn: PropTypes.number,
     model: PropTypes.object,
     formatTime: PropTypes.func
 };

@@ -65,7 +65,7 @@ const getDurationString = ({ endType, count, until, countSeparator = ',', untilS
 
 const getFrequencyString = (
     { type, frequency, interval, weekly, monthly, ends: { type: endType, until, count } },
-    { date, weekdays, locale }
+    { date, weekStartsOn, weekdays, locale }
 ) => {
     const startDay = weekdays[weekly.days[0]];
     const onDayString = date ? getOnDayString(date, monthly.type, weekdays) : '';
@@ -97,7 +97,15 @@ const getFrequencyString = (
                 if (weekly.days.length === 1) {
                     return startDay;
                 }
-                return weekly.days.map((dayIndex) => weekdays[dayIndex]).join(', ');
+                // sort weekly days depending on the day the week starts
+                const sortedWeeklyDays = weekly.days.sort((a, b) => {
+                    // shift days. Get a positive modulus
+                    const A = (a - weekStartsOn + 7) % 7;
+                    const B = (b - weekStartsOn + 7) % 7;
+                    return A - B;
+                });
+
+                return sortedWeeklyDays.map((dayIndex) => weekdays[dayIndex]).join(', ');
             })();
             const frequencyString = c('Info').ngettext(
                 msgid`Weekly on ${days}`,

@@ -30,6 +30,7 @@ const EventPopover = ({
     popoverRef,
     event: targetEvent,
     tzid,
+    weekStartsOn,
     isNarrow
 }) => {
     const { createNotification } = useNotifications();
@@ -113,6 +114,7 @@ const EventPopover = ({
                     Calendar={Calendar}
                     event={targetEvent}
                     tzid={tzid}
+                    weekStartsOn={weekStartsOn}
                     model={model}
                     formatTime={formatTime}
                     tmpTitle={tmpTitle}
@@ -136,6 +138,7 @@ EventPopover.propTypes = {
     onEdit: PropTypes.func,
     onDelete: PropTypes.func,
     event: PropTypes.object,
+    weekStartsOn: PropTypes.number,
     layout: PropTypes.object
 };
 

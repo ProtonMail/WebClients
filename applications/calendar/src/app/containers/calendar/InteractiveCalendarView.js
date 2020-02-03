@@ -621,6 +621,7 @@ const InteractiveCalendarView = ({
                             popoverRef={ref}
                             event={targetEvent}
                             tzid={tzid}
+                            weekStartsOn={weekStartsOn}
                             formatTime={formatTime}
                             onDelete={() => handleDeleteEvent(targetEvent.data.Event, !!targetEvent.isRecurring)}
                             onEdit={() => {
