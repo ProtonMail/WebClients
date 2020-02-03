@@ -42,6 +42,7 @@ const PopoverEventContent = ({
 
     const frequencyString = useMemo(() => {
         return getTimezonedFrequencyString(model.frequencyModel, {
+            date: start,
             startTzid: model.start.tzid,
             currentTzid: tzid,
             weekdays,

@@ -1,9 +1,10 @@
-import { END_TYPE, FREQUENCY, NUMBER_TO_DAY } from '../../../constants';
+import { END_TYPE, FREQUENCY, MONTHLY_TYPE, NUMBER_TO_DAY } from '../../../constants';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { convertZonedDateTimeToUTC, fromLocalDate } from 'proton-shared/lib/date/timezone';
+import { getPositiveSetpos, getNegativeSetpos } from '../../../helpers/rrule';
 
 const modelToFrequencyProperties = ({ frequencyModel = {}, start = {}, isAllDay }) => {
-    const { type, frequency, interval, weekly, ends } = frequencyModel;
+    const { type, frequency, interval, weekly, monthly, ends } = frequencyModel;
     const { date: startDate, tzid } = start;
     const properties = {};
 
@@ -25,6 +26,16 @@ const modelToFrequencyProperties = ({ frequencyModel = {}, start = {}, isAllDay 
             }
             if (weeklyDays.length > 1) {
                 properties.rrule.value.byday = weeklyDays.map((day) => NUMBER_TO_DAY[day]).join(',');
+            }
+        }
+        if (frequency === FREQUENCY.MONTHLY) {
+            if (monthly.type === MONTHLY_TYPE.ON_NTH_DAY) {
+                properties.rrule.value.byday = NUMBER_TO_DAY[startDate.getDay()];
+                properties.rrule.value.bysetpos = getPositiveSetpos(startDate);
+            }
+            if (monthly.type === MONTHLY_TYPE.ON_MINUS_NTH_DAY) {
+                properties.rrule.value.byday = NUMBER_TO_DAY[startDate.getDay()];
+                properties.rrule.value.bysetpos = getNegativeSetpos(startDate);
             }
         }
         if (frequency === FREQUENCY.YEARLY) {

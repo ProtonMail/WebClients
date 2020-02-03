@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { DateInput, Label, Row, TimeInput } from 'react-components';
+import { DateInput, Label, Row, TimeInput, classnames } from 'react-components';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -137,6 +137,7 @@ const DateTimeRow = ({
     const startDateInput = (
         <DateInput
             id="startDate"
+            className={classnames([!isAllDay && 'mr0-5'])}
             required
             value={start.date}
             onChange={handleChangeStartDate}
@@ -148,6 +149,7 @@ const DateTimeRow = ({
     const endDateInput = (
         <DateInput
             id="endDate"
+            className={classnames([!isAllDay && 'mr0-5'])}
             required
             value={end.date}
             onChange={handleChangeEndDate}

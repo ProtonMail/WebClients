@@ -118,7 +118,8 @@ export const WEEKLY_TYPE = {
 
 export const MONTHLY_TYPE = {
     ON_MONTH_DAY: 0,
-    ON_NTH_DAY: 1
+    ON_NTH_DAY: 1,
+    ON_MINUS_NTH_DAY: -1
 };
 
 export const YEARLY_TYPE = {

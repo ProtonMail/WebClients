@@ -43,8 +43,8 @@ const EndsRow = ({
             <Row collapseOnMobile={collapseOnMobile}>
                 <label htmlFor="event-ends-radio">{c('Label').t`Ends`}</label>
             </Row>
-            <Row collapseOnMobile={collapseOnMobile}>
-                <div className="flex flex-nowrap flex-item-fluid">
+            <div className="calendar-recurringFrequencyEnd-grid">
+                <div className="flex flex-nowrap flex-item-fluid calendar-recurringFrequencyEnd-grid-fullLine">
                     <span className="flex flex-item-noshrink">
                         <Radio
                             name="event-ends-radio"
@@ -55,61 +55,56 @@ const EndsRow = ({
                         </Radio>
                     </span>
                 </div>
-            </Row>
-            <Row collapseOnMobile={collapseOnMobile}>
-                <div className="flex flex-nowrap flex-item-fluid">
-                    <span className="flex flex-item-noshrink">
-                        <Radio
-                            className="mr1 flex-nowrap mtauto mbauto"
-                            name="event-ends-radio"
-                            checked={frequencyModel.ends.type === UNTIL}
-                            onChange={() => handleChangeEndType(UNTIL)}
-                        >
-                            {c('Custom frequency option').t`On`}
-                        </Radio>
-                    </span>
-                    <span>
-                        <DateInput
-                            value={frequencyModel.ends.until}
-                            min={start.date}
-                            defaultDate={start.date}
-                            onChange={handleChangeEndUntil}
-                            onFocus={() => handleChangeEndType(UNTIL)}
-                            displayWeekNumbers={displayWeekNumbers}
-                            weekStartsOn={weekStartsOn}
-                            aria-invalid={isSubmitted && !!errors.until}
-                            isSubmitted={isSubmitted}
-                        />
-                    </span>
-                </div>
-            </Row>
-            <Row collapseOnMobile={collapseOnMobile}>
-                <div className="flex flex-nowrap flex-item-fluid">
-                    <span className="flex flex-item-noshrink">
-                        <Radio
-                            className="mr1 flex-nowrap mtauto mbauto"
-                            name="event-ends-radio"
-                            checked={frequencyModel.ends.type === AFTER_N_TIMES}
-                            onChange={() => handleChangeEndType(AFTER_N_TIMES)}
-                        >
-                            {c('Custom frequency option').t`After`}
-                        </Radio>
-                    </span>
-                    <span className="mr1">
-                        <IntegerInput
-                            value={frequencyModel.ends.count}
-                            min={1}
-                            onChange={handleChangeEndCount}
-                            onFocus={() => handleChangeEndType(AFTER_N_TIMES)}
-                            aria-invalid={isSubmitted && !!errors.count}
-                            isSubmitted={isSubmitted}
-                        />
-                    </span>
-                    <span className="mtauto mbauto">
-                        {c('Custom frequency option').ngettext(msgid`Occurrence`, `Occurrences`, safeCountPlural)}
-                    </span>
-                </div>
-            </Row>
+
+                <span className="flex flex-item-noshrink">
+                    <Radio
+                        className="mr1 flex-nowrap mtauto mbauto"
+                        name="event-ends-radio"
+                        checked={frequencyModel.ends.type === UNTIL}
+                        onChange={() => handleChangeEndType(UNTIL)}
+                    >
+                        {c('Custom frequency option').t`On`}
+                    </Radio>
+                </span>
+                <span>
+                    <DateInput
+                        value={frequencyModel.ends.until}
+                        min={start.date}
+                        defaultDate={start.date}
+                        onChange={handleChangeEndUntil}
+                        onFocus={() => handleChangeEndType(UNTIL)}
+                        displayWeekNumbers={displayWeekNumbers}
+                        weekStartsOn={weekStartsOn}
+                        aria-invalid={isSubmitted && !!errors.until}
+                        isSubmitted={isSubmitted}
+                    />
+                </span>
+                <span></span>
+
+                <span className="flex flex-item-noshrink">
+                    <Radio
+                        className="mr1 flex-nowrap mtauto mbauto"
+                        name="event-ends-radio"
+                        checked={frequencyModel.ends.type === AFTER_N_TIMES}
+                        onChange={() => handleChangeEndType(AFTER_N_TIMES)}
+                    >
+                        {c('Custom frequency option').t`After`}
+                    </Radio>
+                </span>
+                <span>
+                    <IntegerInput
+                        value={frequencyModel.ends.count}
+                        min={1}
+                        onChange={handleChangeEndCount}
+                        onFocus={() => handleChangeEndType(AFTER_N_TIMES)}
+                        aria-invalid={isSubmitted && !!errors.count}
+                        isSubmitted={isSubmitted}
+                    />
+                </span>
+                <span className="mtauto mbauto">
+                    {c('Custom frequency option').ngettext(msgid`Occurrence`, `Occurrences`, safeCountPlural)}
+                </span>
+            </div>
         </>
     );
 };

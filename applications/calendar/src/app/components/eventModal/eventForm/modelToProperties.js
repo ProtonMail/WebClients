@@ -4,7 +4,13 @@ import { addDays } from 'date-fns';
 
 import { transformBeforeAt } from './trigger';
 import modelToFrequencyProperties from './modelToFrequencyProperties';
-import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN, FREQUENCY, MAX_LENGTHS } from '../../../constants';
+import {
+    NOTIFICATION_TYPE,
+    NOTIFICATION_UNITS,
+    NOTIFICATION_WHEN,
+    FREQUENCY,
+    MAX_LENGTHS
+} from '../../../constants';
 
 const getValarmTriggerUnit = (unit) => {
     return (

@@ -1,8 +1,9 @@
 import { transformBeforeAt } from './trigger';
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
-import { NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
+import { MONTHLY_TYPE, NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 import { replace } from 'proton-shared/lib/helpers/array';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
+import { getNegativeSetpos } from '../../../helpers/rrule';
 
 const DEFAULT_TIME = {
     value: { year: 1970, month: 1, day: 1, hour: 0, minutes: 0 },
@@ -47,6 +48,7 @@ export const propertiesToModel = (component, isAllDay, tzid) => {
 };
 
 export const getFrequencyModelChange = (oldStart, newStart, frequencyModel) => {
+    // change days in weekly
     const oldStartDay = oldStart.date.getDay();
     const newStartDay = newStart.date.getDay();
     const oldDays = frequencyModel.weekly && frequencyModel.weekly.days;
@@ -61,7 +63,12 @@ export const getFrequencyModelChange = (oldStart, newStart, frequencyModel) => {
      * perspective it makes more sense to display a two-day selection WE and TH (i.e. newDays = [4, 4])
      */
 
-    return { ...frequencyModel, weekly: { days: newDays } };
+    // change monthly type
+    const change =
+        frequencyModel.monthly.type === MONTHLY_TYPE.ON_MINUS_NTH_DAY && getNegativeSetpos(newStart.date) !== -1;
+    const newMonthlyType = change ? MONTHLY_TYPE.ON_NTH_DAY : frequencyModel.monthly.type;
+
+    return { ...frequencyModel, weekly: { days: newDays }, monthly: { type: newMonthlyType } };
 };
 
 const allDayTriggerToModel = ({ type, when, weeks, days, hours, minutes }) => {

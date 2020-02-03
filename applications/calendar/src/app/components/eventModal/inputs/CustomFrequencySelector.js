@@ -20,6 +20,7 @@ const CustomFrequencySelector = ({
         <div className="w100">
             <RepeatEveryRow
                 frequencyModel={frequencyModel}
+                start={start}
                 onChange={onChange}
                 errors={errors}
                 isSubmitted={isSubmitted}
