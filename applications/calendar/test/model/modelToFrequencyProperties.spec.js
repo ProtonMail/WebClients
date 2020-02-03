@@ -53,7 +53,8 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
             frequency: FREQUENCY.DAILY,
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
@@ -78,7 +79,8 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
             interval: 2,
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ start, frequencyModel })).toEqual({
@@ -102,7 +104,8 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
             interval: 2,
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart, isAllDay: true })).toEqual({
@@ -169,7 +172,8 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
             },
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
@@ -197,7 +201,8 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
             },
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ start, frequencyModel })).toEqual({
@@ -224,7 +229,8 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
             },
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart, isAllDay: true })).toEqual({
@@ -313,7 +319,8 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
             },
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
@@ -339,7 +346,8 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
             frequency: FREQUENCY.MONTHLY,
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ start, frequencyModel })).toEqual({
@@ -367,7 +375,8 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
             },
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: fourthThursdayStart, isAllDay: true })).toEqual({
@@ -432,7 +441,8 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
             frequency: FREQUENCY.YEARLY,
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
@@ -457,7 +467,8 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
             interval: 2,
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ start, frequencyModel })).toEqual({
@@ -481,7 +492,8 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
             interval: 2,
             ends: {
                 type: END_TYPE.UNTIL,
-                until
+                until,
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ frequencyModel, isAllDay: true, start: dummyStart })).toEqual({
