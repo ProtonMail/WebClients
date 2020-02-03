@@ -2,18 +2,18 @@
  Tree view (subfolders, etc.)
  */
 
+$treeview-border-width: 1px !default;
+
+
 .treeview-item {
+    
+    border-bottom : $treeview-border-width solid var(--bordercolor-input, $pm-global-border);
+    margin-bottom: -$treeview-border-width;
+
     .treeview-item .treeview-item {
-        
         padding-left: 3rem;
-        //border : 1px solid blue;
     }
 
-    .treeview-item .treeview-item  .treeview-item-name {
-        //padding-left: 3rem;
-        
-        //border : 1px solid red;
-    }
 }
 
 
