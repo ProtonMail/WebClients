@@ -15,7 +15,7 @@ import {
 } from 'react-components';
 
 import { createCalendar, updateCalendarSettings, updateCalendar } from 'proton-shared/lib/api/calendars';
-import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
+import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 
 import { DEFAULT_CALENDAR, DEFAULT_EVENT_DURATION, NOTIFICATION_TYPE } from '../../constants';
 import CalendarSettingsTab from './CalendarSettingsTab';
@@ -153,7 +153,7 @@ const CalendarModal = ({ calendar, ...rest }) => {
         const [addresses, addressKeys] = await Promise.all([getAddresses(), getAddressKeys(addressID)]);
 
         const { privateKey: primaryAddressKey } = getPrimaryKey(addressKeys) || {};
-        if (!primaryAddressKey || !primaryAddressKey.isDecrypted()) {
+        if (!primaryAddressKey) {
             createNotification({ text: c('Error').t`Primary address key is not decrypted.`, type: 'error' });
             return;
         }

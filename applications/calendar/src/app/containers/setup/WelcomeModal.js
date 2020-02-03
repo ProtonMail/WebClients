@@ -17,7 +17,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { createCalendar, updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
-import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
+import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 
 import { DEFAULT_CALENDAR, SETTINGS_TIME_FORMAT } from '../../constants';
@@ -55,7 +55,7 @@ const WelcomeModal = (props) => {
 
         const [{ ID: addressID }] = activeAddresses;
         const { privateKey: primaryAddressKey } = getPrimaryKey(await getAddressKeys(addressID)) || {};
-        if (!primaryAddressKey || !primaryAddressKey.isDecrypted()) {
+        if (!primaryAddressKey) {
             throw new Error(c('Error').t`Primary address key is not decrypted.`);
         }
 

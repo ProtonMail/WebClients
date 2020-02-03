@@ -1,6 +1,7 @@
-import { getPrimaryKey, splitKeys } from 'proton-shared/lib/keys/keys';
 import { c } from 'ttag';
-import { encryptPrivateKey, getKeys } from 'pmcrypto';
+import { decryptPrivateKey, encryptPrivateKey, getKeys } from 'pmcrypto';
+import { splitKeys } from 'proton-shared/lib/keys/keys';
+import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 import {
     getCalendarGroupReset,
     resetCalendarGroup,
@@ -73,8 +74,7 @@ const reactivateCalendarKeys = async ({ api, ID: CalendarID, getAddressKeys, add
                     privateKeys,
                     publicKeys
                 });
-                const [privateKey] = await getKeys(PrivateKey);
-                await privateKey.decrypt(decryptedPassphrase);
+                const privateKey = await decryptPrivateKey(PrivateKey, decryptedPassphrase);
                 const armoredEncryptedKey = await encryptPrivateKey(privateKey, decryptedPrimaryPassphrase);
                 await api(reactivateCalendarKey(CalendarID, KeyID, { PrivateKey: armoredEncryptedKey }));
             } catch (e) {
@@ -120,6 +120,11 @@ const resetCalendarKeys = async ({ api, calendars, getAddressKeys, addresses }) 
             );
             const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
                 getPrimaryKey(await getAddressKeys(selfAddress.ID)) || {};
+
+            if (!primaryAddressKey) {
+                throw new Error(c('Error').t`Primary address key is not decrypted.`);
+            }
+
             const { Members: MemberPublicKeys } = ResetCalendars.find(({ ID }) => ID === calendarID);
 
             const memberPublicKeyIDs = Object.keys(MemberPublicKeys);
