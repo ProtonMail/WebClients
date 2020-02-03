@@ -9,7 +9,7 @@ msgstr ""
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2020-01-26 00:20\n"
+"PO-Revision-Date: 2020-01-30 10:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -5557,7 +5557,7 @@ msgstr "Zachowaj to hasło - jeśli je zapomnisz, nie będziemy w stanie Ci pom�
 #: ./src/templates/modals/domain/dkim.tpl.html:32
 msgctxt "Info"
 msgid "Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM"
-msgstr "Utrzymuj ten rekord DNS tak długo, jak chcesz używać DKIM. Możesz zmienić jego wartość na <code>wyłączony</code>, aby wyłączyć DKIM"
+msgstr "Zachowaj ten rekord DNS tak długo, jak chcesz używać DKIM. Możesz zmienić jego wartość na <code>wyłączony</code>, aby wyłączyć DKIM"
 
 #: ./src/app/address/factories/reactivateKeys.js:22
 msgctxt "Info"

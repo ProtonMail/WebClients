@@ -9,7 +9,7 @@ msgstr ""
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
-"PO-Revision-Date: 2020-01-25 09:21\n"
+"PO-Revision-Date: 2020-01-29 19:20\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -472,12 +472,12 @@ msgstr "Yerleşimi değiştir (satırlar)"
 #: ./src/templates/views/account.tpl.html:137
 msgctxt "Action"
 msgid "Change login password"
-msgstr "Oturum açma parolasını değiştir"
+msgstr "Giriş şifresini değiştir"
 
 #: ./src/templates/views/account.tpl.html:155
 msgctxt "Action"
 msgid "Change mailbox password"
-msgstr "Posta kutusu parolasını değiştir"
+msgstr "Posta kutusu şifresini değiştir"
 
 #: ./src/templates/directives/contact/contactItem.tpl.html:149
 msgctxt "Action"
@@ -492,12 +492,12 @@ msgstr "Kuruluş anahtarlarını değiştir"
 #: ./src/app/organization/directives/organizationBtnActions.js:4
 msgctxt "Action"
 msgid "Change organization password"
-msgstr "Kuruluş parolasını değiştir"
+msgstr "Kuruluş şifresini değiştir"
 
 #: ./src/templates/views/account.tpl.html:168
 msgctxt "Action"
 msgid "Change password"
-msgstr "Parolayı değiştir"
+msgstr "Şifreyi değiştir"
 
 #: ./src/templates/formUtils/codeVerificator.tpl.html:81
 msgctxt "Action"
@@ -513,7 +513,7 @@ msgstr "Doğrulama numarasını değiştir"
 #: ./src/templates/payment/paypalView.tpl.html:41
 msgctxt "Action"
 msgid "Check out with PayPal"
-msgstr "PayPal ile öde"
+msgstr "PayPal ile ödeme yap"
 
 #: ./src/templates/contact/contactPhotoRow.tpl.html:27
 #: ./src/templates/directives/core/bugModalView.tpl.html:113
@@ -869,7 +869,7 @@ msgstr "Düzenle"
 #: ./src/templates/filter/customFilterList.tpl.html:36
 msgctxt "Action"
 msgid "Edit sieve"
-msgstr "Sieve'yi düzenle"
+msgstr "Eleme ayarlarını düzenle"
 
 #: ./src/app/address/directives/addressBtnActions.js:5
 msgctxt "Action"
@@ -1010,7 +1010,7 @@ msgstr "Klasörler / Etiketler"
 #: ./src/templates/authentication/loginUnlock.tpl.html:37
 msgctxt "Action"
 msgid "Forgot password?"
-msgstr "Parolayı mı unuttunuz?"
+msgstr "Şifrenizi mi unuttunuz?"
 
 #: ./src/app/user/directives/linkWebsite.js:6
 msgctxt "Action"
@@ -1560,7 +1560,7 @@ msgstr "Anahtarları sıfırla"
 #: ./src/templates/views/reset-login-password.tpl.html:89
 msgctxt "Action"
 msgid "Reset Password"
-msgstr "Parolayı Sıfırla"
+msgstr "Şifreyi Sıfırla"
 
 #: ./src/templates/views/reset-login-password.tpl.html:74
 msgctxt "Action"
@@ -1572,7 +1572,7 @@ msgstr "Sıfırlama kodu"
 #: ./src/templates/views/reset-login-password.tpl.html:173
 msgctxt "Action"
 msgid "Reset password"
-msgstr "Parolayı sıfırla"
+msgstr "Şifreyi sıfırla"
 
 #: ./src/templates/views/appearance.tpl.html:155
 msgctxt "Action"
@@ -3355,7 +3355,7 @@ msgstr "ProtonMail ve ProtonVPN'i alarak %20 indirim kazanın"
 #: ./src/templates/blackFriday/blackFriday.tpl.html:14
 msgctxt "Discount offer X% off"
 msgid "off"
-msgstr "kapalı"
+msgstr "indirim"
 
 #: ./src/templates/views/domains.tpl.html:131
 msgctxt "Domain status"
@@ -3633,7 +3633,7 @@ msgstr "Resim yüklenemedi"
 #: ./src/app/keys/factories/decryptImportKeyModal.js:28
 msgctxt "Error"
 msgid "Incorrect decryption password"
-msgstr "Yanlış şifre çözme parolası"
+msgstr "Yanlış çözümleme şifresi"
 
 #: ./src/templates/formUtils/cardView.tpl.html:45
 msgctxt "Error"
@@ -3722,7 +3722,7 @@ msgstr "Geçersiz numara"
 #: ./src/app/members/services/membersValidator.js:50
 msgctxt "Error"
 msgid "Invalid password"
-msgstr "Geçersiz parola"
+msgstr "Geçersiz şifre"
 
 #: ./src/templates/views/reset-login-password.tpl.html:35
 msgctxt "Error"
@@ -3752,7 +3752,7 @@ msgstr "Yalnızca harflerden, rakamlardan ve eksi işaretinden oluşabilir. Bir 
 #: ./src/app/composer/directives/composerEncrypt.js:13
 msgctxt "Error"
 msgid "Message passwords do not match."
-msgstr "İleti parolaları eşleşmiyor."
+msgstr "İleti şifreleri eşleşmiyor."
 
 #: ./src/templates/modals/setupOrganization.tpl.html:25
 #: ./src/templates/organization/organizationFormName.tpl.html:21
@@ -3779,12 +3779,12 @@ msgstr "İleti oluşturmak için anahtarları olan adres yok."
 #: ./src/app/contact/services/moveContactGroupHandler.js:25
 msgctxt "Error"
 msgid "No contact group selected"
-msgstr "Seçili kişi grubu yok"
+msgstr "Hiçbir kişi grubu seçilmedi"
 
 #: ./src/app/contact/services/moveContactGroupHandler.js:24
 msgctxt "Error"
 msgid "No contact selected"
-msgstr "Seçili kişi yok"
+msgstr "Hiçbir kişi seçilmedi"
 
 #: ./src/templates/contact/autocompleteContacts.tpl.html:19
 msgctxt "Error"
@@ -3825,12 +3825,12 @@ msgstr "Kuruluş anahtarı başarıyla değiştirildi"
 #: ./src/app/organization/services/activateOrganizationKeys.js:15
 msgctxt "Error"
 msgid "Password incorrect. Please try again"
-msgstr "Parola yanlış. Lütfen tekrar deneyin"
+msgstr "Şifre yanlış. Lütfen yeniden deneyin"
 
 #: ./src/templates/formUtils/password.tpl.html:14
 msgctxt "Error"
 msgid "Passwords do not match"
-msgstr "Parolalar eşleşmiyor"
+msgstr "Şifreler eşleşmiyor"
 
 #: ./src/app/members/services/memberSubLogin.js:16
 #: ./src/app/members/services/membersValidator.js:44
@@ -3846,7 +3846,7 @@ msgstr "Bu özelliği kullanmak için lütfen ücretli bir hesaba <a href=\"/das
 #: ./src/app/composer/directives/composerEncrypt.js:12
 msgctxt "Error"
 msgid "Please enter a password for this email."
-msgstr "Lütfen bu e-posta için bir parola girin."
+msgstr "Lütfen bu e-posta için bir şifre girin."
 
 #: ./src/app/composer/services/validateMessage.js:40
 msgctxt "Error"
@@ -3856,7 +3856,7 @@ msgstr "Lütfen en az bir alıcı girin."
 #: ./src/app/authentication/directives/loginUnlockForm.js:4
 msgctxt "Error"
 msgid "Please enter your mailbox password"
-msgstr "Lütfen posta kutusu parolanızı girin"
+msgstr "Lütfen posta kutusu şifrenizi girin"
 
 #: ./src/app/authentication/directives/loginTwoFactorForm.js:4
 msgctxt "Error"
@@ -4102,7 +4102,7 @@ msgstr "Planınızdaki tüm kullanıcıları kullandınız. Lütfen yeni bir kul
 #: ./src/app/organization/modals/setupOrganizationModal.js:26
 msgctxt "Error"
 msgid "You must add a password for the organization"
-msgstr "Kuruluş için bir parola eklemelisiniz"
+msgstr "Kuruluş için bir şifre eklemeniz gerekli"
 
 #: ./src/app/organization/factories/organizationKeysModel.js:25
 msgctxt "Error"
@@ -4138,7 +4138,7 @@ msgstr "bir kullanıcı adı için en fazla uzunluk {{maxlength}} karakterdir"
 #: ./src/app/address/factories/reactivateKeys.js:29
 msgctxt "Error"
 msgid "{{n}} keys failed to decrypt due to an incorrect password"
-msgstr "Yanlış bir parola nedeniyle {{n}} anahtarının şifresi çözülemedi"
+msgstr "Yanlış şifre nedeniyle {{n}} anahtarının şifresi çözülemedi"
 
 #: ./src/app/address/factories/reactivateKeys.js:39
 msgctxt "Error"
@@ -4238,7 +4238,7 @@ msgstr "Hiçbir görüntü seçilmedi"
 #: ./src/app/user/modals/deleteAccountModal.js:18
 msgctxt "Error reported when the delete account form is invalid"
 msgid "Invalid email address or password"
-msgstr "Geçersiz e-posta adresi veya parola"
+msgstr "Geçersiz e-posta adresi ya da şifre"
 
 #: ./src/templates/formUtils/cardView.tpl.html:6
 msgctxt "Example user"
@@ -4560,14 +4560,14 @@ msgstr "İçeri aktar"
 #: ./src/templates/modals/changePassword.tpl.html:27
 msgctxt "Info"
 msgid "* Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages."
-msgstr "* Bu parolayı ASLA unutmayın. Unutursanız giriş yapamaz veya mesajlarınızın şifresini çözemezsiniz."
+msgstr "* Bu şifreyi ASLA unutmayın. Unutursanız giriş yapamaz ya da iletilerinizin şifresini çözemezsiniz."
 
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:16
 #: ./src/templates/modals/changePassword.tpl.html:32
 #: ./src/templates/modals/setupOrganization.tpl.html:72
 msgctxt "Info"
 msgid "* Do NOT forget this password. If you forget it, you will not be able to manage your organization."
-msgstr "* Bu parolayı ASLA unutmayın. Unutursanız, kuruluşunuzu yönetmeniz mümkün olmayacaktır."
+msgstr "* Bu şifreyi ASLA unutmayın. Unutursanız, kuruluşunuzu yönetmeniz mümkün olmayacaktır."
 
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:17
 #: ./src/templates/modals/changePassword.tpl.html:28
@@ -4575,7 +4575,7 @@ msgstr "* Bu parolayı ASLA unutmayın. Unutursanız, kuruluşunuzu yönetmeniz 
 #: ./src/templates/modals/setupOrganization.tpl.html:73
 msgctxt "Info"
 msgid "* Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
-msgstr "* Parolanızı güvenli bir yere kaydedin. <i class=\"fa fa-eye\"></i> simgesine tıklayarak parolanızı doğru yazdığınızı onaylayın."
+msgstr "* Şifrenizi güvenli bir yerde saklayın. <i class=\"fa fa-eye\"></i> simgesine tıklayarak şifrenizi doğru girdiğinizi doğruyalın."
 
 #: ./src/templates/modals/changePassword.tpl.html:29
 msgctxt "Info"
@@ -4590,7 +4590,7 @@ msgstr "ProtonVPN için +2 bağlantı (VPN'e daha fazla cihaz bağlamanıza izin
 #: ./src/app/dashboard/factories/downgrade.js:40
 msgctxt "Info"
 msgid "+5GB bonus storage"
-msgstr "+5GB bonus saklama alanı"
+msgstr "+5GB bonus depolama"
 
 #: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
@@ -4929,7 +4929,7 @@ msgstr "Zaten kullanıldı"
 #: ./src/templates/views/account.tpl.html:39
 msgctxt "Info"
 msgid "Also used to reset a forgotten password."
-msgstr "Unutulan bir parolayı sıfırlamak için kullanılır."
+msgstr "Unutulan bir şifreyi sıfırlamak için de kullanılır."
 
 #: ./src/templates/message/messagePublicKeyFound.tpl.html:4
 msgctxt "Info"
@@ -5293,7 +5293,7 @@ msgstr "Masaüstü bildirimleri şu anda <strong>etkin</strong>."
 #: ./src/templates/modals/switchPasswordMode.tpl.html:65
 msgctxt "Info"
 msgid "Do NOT forget your mailbox password. If you forget it, you will not be able to decrypt your messages."
-msgstr "Posta kutusu parolanızı ASLA unutmayın. Eğer unutursanız, iletilerinizin şifresini çözemezsiniz."
+msgstr "Posta kutusu şifrenizi ASLA unutmayın. Eğer unutursanız, iletilerinizin şifresini çözemezsiniz."
 
 #: ./src/templates/search/searchForm.tpl.html:37
 msgctxt "Info"
@@ -5373,12 +5373,12 @@ msgstr "Doğrulanmış alıcıya uçtan uca şifreli"
 #: ./src/app/organization/modals/activateOrganizationModal.js:38
 msgctxt "Info"
 msgid "Enter activation passcode:"
-msgstr "Etkinleştirme parolasını girin:"
+msgstr "Etkinleştirme şifresini girin:"
 
 #: ./src/app/organization/modals/activateOrganizationModal.js:23
 msgctxt "Info"
 msgid "Enter the Organization Password to restore administrator privileges. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Learn more</a>"
-msgstr "Yönetici ayrıcalıklarını geri yüklemek için Kuruluş Parolasını girin. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Daha fazla bilgi edin</a>"
+msgstr "Yönetici ayrıcalıklarını geri yüklemek için Kuruluş Şifresini girin. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Daha fazla bilgi edin</a>"
 
 #: ./src/app/user/directives/signupPayForm.js:13
 msgctxt "Info"
@@ -5472,7 +5472,7 @@ msgstr "İşte size bildirdiğiniz e-posta dışında hiçbir şey yapmayan teme
 #: ./src/app/organization/modals/activateOrganizationModal.js:28
 msgctxt "Info"
 msgid "If another administrator changed this password, you will need to ask them for the new Organization Password."
-msgstr "Başka bir yönetici bu parolayı değiştirdiyse, onlardan yeni kuruluş parolası istemeniz gerekecektir."
+msgstr "Başka bir yönetici bu şifreyi değiştirdiyse, onlardan yeni Kuruluş Şifresini istemeniz gerekecektir."
 
 #: ./src/templates/modals/domain/mx.tpl.html:41
 msgctxt "Info"
@@ -5493,7 +5493,7 @@ msgstr "Hem SPF'yi hem de DKIM'i ayarladıysanız, DMARC, hem SPF hem de DKIM ko
 #: ./src/templates/views/setup.tpl.html:61
 msgctxt "Info"
 msgid "If you lose your password, you will not be able to read your emails."
-msgstr "Parolanızı kaybederseniz e-postalarınızı okumanız mümkün olmayacaktır."
+msgstr "Şifrenizi kaybederseniz, e-postalarınızı okuyamazsınız."
 
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:11
 msgctxt "Info"
@@ -5539,7 +5539,7 @@ msgstr "Ücretli bir ProtonMail planına abone olmak şu anda mümkün değil."
 #: ./src/templates/views/reset-login-password.tpl.html:143
 msgctxt "Info"
 msgid "Keep this password safe--it cannot be recovered."
-msgstr "Bu parolayı güvenli bir yerde tutun. Sonradan kurtarılamaz."
+msgstr "Bu şifreyi güvenli bir yerde tutun, sonradan kurtarılamayabilir."
 
 #: ./src/templates/modals/domain/dkim.tpl.html:32
 msgctxt "Info"
@@ -5587,7 +5587,7 @@ msgstr "Konum"
 #: ./src/templates/security/sessionLogsTable.tpl.html:21
 msgctxt "Info"
 msgid "Login failure (password)"
-msgstr "Oturum açma başarısız (parola)"
+msgstr "Giriş başarısız (şifre)"
 
 #: ./src/templates/security/logManager.tpl.html:82
 msgctxt "Info"
@@ -5603,7 +5603,7 @@ msgstr "Ekran kaplandı"
 #: ./src/app/composer/controllers/composeMessage.js:591
 msgctxt "Info"
 msgid "Message discarded"
-msgstr "Mesaj atıldı"
+msgstr "İleti iptal edildi"
 
 #: ./src/app/user/directives/signupPayForm.js:12
 msgctxt "Info"
@@ -5682,7 +5682,7 @@ msgstr "OpenVPN girişi güncellendi"
 #: ./src/app/vpn/factories/changeVPNPasswordModal.js:16
 msgctxt "Info"
 msgid "OpenVPN password updated"
-msgstr "OpenVPN parolası güncellendi"
+msgstr "OpenVPN şifresi güncellendi"
 
 #: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
@@ -5734,12 +5734,12 @@ msgstr "Düzenleyici"
 #: ./src/templates/modals/changePassword.tpl.html:16
 msgctxt "Info"
 msgid "Other administrators exist in your organization, you are responsible for communicating the new password to them."
-msgstr "Kuruluşunuzda başka yöneticiler var. Yeni parolaları onlara iletmekten siz sorumlusunuz."
+msgstr "Kuruluşunuzda başka yöneticiler de var. Yeni şifreleri onlara iletmekten siz sorumlusunuz."
 
 #: ./src/templates/modals/generateOrganization.tpl.html:45
 msgctxt "Info"
 msgid "Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges."
-msgstr "Kuruluşunuzda başka yöneticiler var. Tüm yönetici ayrıcalıklarını yeniden etkinleştirebilmeleri için yeni anahtar kurtarma parolasını kendilerine bildirmelisiniz."
+msgstr "Kuruluşunuzda başka yöneticiler de var. Tüm yönetici ayrıcalıklarını yeniden etkinleştirebilmeleri için yeni anahtar kurtarma şifresini onlara bildirmelisiniz."
 
 #: ./src/app/settings/directives/encryptionView.js:21
 msgctxt "Info"
@@ -5778,7 +5778,7 @@ msgstr "Ücretli kullanıcılar, Ayarlar → Adresler/Kullanıcılar bölümünd
 #: ./src/app/organization/factories/organizationModel.js:22
 msgctxt "Info"
 msgid "Password updated"
-msgstr "Parola güncellendi"
+msgstr "Şifre güncellendi"
 
 #: ./src/templates/payment/paymentForm.tpl.html:27
 msgctxt "Info"
@@ -5854,12 +5854,12 @@ msgstr "Lütfen kuruluşunuza kullanıcı eklemeden önce çoklu kullanıcı des
 #: ./src/templates/modals/organizationRecovery.tpl.html:9
 msgctxt "Info"
 msgid "Please enter your organization recovery password:"
-msgstr "Lütfen kuruluş kurtarma parolanızı girin:"
+msgstr "Lütfen kuruluş kurtarma şifrenizi girin:"
 
 #: ./src/templates/modals/member.tpl.html:117
 msgctxt "Info"
 msgid "Please give the address and temporary password to the new member so they can log in."
-msgstr "Lütfen yeni üyeye, giriş yapabilmeleri için adres ve geçici parolayı verin."
+msgstr "Lütfen adresi ve geçici şifreyi giriş yapabilmesi için yeni üyeye verin."
 
 #: ./src/app/attachments/services/attachmentDownloader.js:28
 msgctxt "Info"
@@ -5869,7 +5869,7 @@ msgstr "Lütfen eke sağ tıklayın ve Farklı Kaydet/İndir seçeneğini seçin
 #: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:21
 msgctxt "Info"
 msgid "Please select which email address or adresses to add to this group."
-msgstr "Lütfen bu gruba eklenecek e-posta adresini ya da adreslerini seçin."
+msgstr "Lütfen bu gruba eklenecek e-posta adresini ya da adresleri seçin."
 
 #: ./src/app/attachments/services/attachmentDownloader.js:23
 msgctxt "Info"
@@ -5894,12 +5894,12 @@ msgstr "Lütfen bu premium özelliği kullanmak için ücretli bir plana geçin.
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:36
 msgctxt "Info"
 msgid "Please verify payment at the new tab which was opened."
-msgstr "Lütfen açılmış olan yeni sekmede ödemeyi doğrulayın."
+msgstr "Lütfen açılan yeni sekmeden ödemeyi doğrulayın."
 
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:37
 msgctxt "Info"
 msgid "Please verify the card in the new tab which was opened."
-msgstr "Lütfen açılmış olan yeni sekmede kartı doğrulayın."
+msgstr "Lütfen açılan yeni sekmeden kartı doğrulayın."
 
 #: ./src/templates/payment/paypalView.tpl.html:16
 msgctxt "Info"
@@ -5985,7 +5985,7 @@ msgstr "Gerekli"
 #: ./src/templates/views/reset-login-password.tpl.html:5
 msgctxt "Info"
 msgid "Reset Password"
-msgstr "Parolayı Sıfırla"
+msgstr "Şifreyi Sıfırla"
 
 #. reset warning 1/3
 #: ./src/templates/views/reset-login-password.tpl.html:108
@@ -6838,7 +6838,7 @@ msgstr "Kaydediliyor"
 #: ./src/templates/message/readReceiptPanel.tpl.html:3
 msgctxt "Info display in the read receipt panel (message view)"
 msgid "The sender has requested a read receipt"
-msgstr "Gönderici bir okundu bilgisi istedi"
+msgstr "Gönderici okundu bilgisi istedi"
 
 #: ./src/templates/contact/contactMimetypeSelector.tpl.html:4
 msgctxt "Info for contact MIMEType selector"
@@ -7493,7 +7493,7 @@ msgstr "Çöp Kutusu"
 #: ./src/app/contact/directives/contactPublicKeyLabel.js:6
 msgctxt "Label"
 msgid "Trusted Public Keys"
-msgstr "Güvenilen Ortak Anahtarlar"
+msgstr "Güvenilen Genel Anahtarlar"
 
 #: ./src/templates/directives/contact/contactKeyPinning.tpl.html:2
 msgctxt "Label"
@@ -7756,7 +7756,7 @@ msgstr "Hafta içi günü seçin"
 #: ./src/app/contact/directives/contactPublicKeyLabel.js:5
 msgctxt "Laebel"
 msgid "Public Keys"
-msgstr "Ortak Anahtarlar"
+msgstr "Genel Anahtarlar"
 
 #: ./src/templates/payment/paymentPlanOverview.tpl.html:16
 msgctxt "Link"
@@ -8540,7 +8540,7 @@ msgstr "Kuruluş parolasını onayla"
 #: ./src/templates/user/usernamePassword.tpl.html:19
 msgctxt "Placeholder"
 msgid "Confirm password"
-msgstr "Parolayı onayla"
+msgstr "Şifreyi doğrula"
 
 #: ./src/templates/contact/contactAddressInput.tpl.html:22
 msgctxt "Placeholder"
@@ -9454,7 +9454,7 @@ msgstr "Kara listeye ekle"
 #: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:17
 msgctxt "Title"
 msgid "Add to Group"
-msgstr "Gruba ekle"
+msgstr "Gruba Ekle"
 
 #: ./src/templates/filter/filterAddressModal.tpl.html:14
 msgctxt "Title"
@@ -10472,7 +10472,7 @@ msgstr "Yerleşim"
 #: ./src/templates/utils/linkWarningModal.tpl.html:7
 msgctxt "Title"
 msgid "Link confirmation"
-msgstr "Bağlantının onayı"
+msgstr "Bağlantı onayı"
 
 #: ./src/templates/views/account.tpl.html:265
 msgctxt "Title"
@@ -10699,7 +10699,7 @@ msgstr "Parola"
 #: ./src/templates/composer/composerEncrypt.tpl.html:49
 msgctxt "Title"
 msgid "Password Hint"
-msgstr "Parola ipucu"
+msgstr "Şifre ipucu"
 
 #: ./src/templates/modals/pay.tpl.html:27
 msgctxt "Title"
@@ -10742,7 +10742,7 @@ msgstr "Ödeme doğrulama"
 #: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:12
 msgctxt "Title"
 msgid "Payment verification in progress"
-msgstr "Ödeme doğrulaması sürüyor"
+msgstr "Ödeme doğrulama işlemi sürüyor"
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:63
 msgctxt "Title"
@@ -11807,7 +11807,7 @@ msgstr "Yardım alın"
 #: ./src/templates/authentication/loginForm.tpl.html:65
 msgctxt "Trouble logging in? Get help or try older version."
 msgid "older version"
-msgstr "Eski Sürümü deneyin."
+msgstr "eski sürümü deneyin"
 
 #: ./src/templates/authentication/loginForm.tpl.html:63
 msgctxt "Trouble logging in? Get help or try older version."
@@ -12146,7 +12146,7 @@ msgstr "En son özellikleri denemek ister misiniz? Giriş yapın"
 #: ./src/templates/composer/composerExpiration.tpl.html:49
 msgctxt "Warning"
 msgid "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message."
-msgstr "Bu iletiyi ProtonMail'i olmayan bir kullanıcıya gönderiyorsanız, lütfen iletiniz için bir parola belirlediğinizden emin olun."
+msgstr "Bu iletiyi ProtonMail'i olmayan bir kullanıcıya gönderiyorsanız, lütfen iletiniz için bir şifre belirlediğinizden emin olun."
 
 #: ./src/templates/modals/expirationModal.tpl.html:16
 msgctxt "Warning"
