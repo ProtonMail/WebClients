@@ -3,37 +3,37 @@ import { deserializeUint8Array } from './serialization';
 
 /**
  * Convert file to encoded base 64 string
- * @param  {File} file
- * @param {Function} isValid File validator ex: valid file type
- * @return {Promise}
  */
-export const toBase64 = async (file, isValid = () => true) => {
+export const toBase64 = async (file: File, isValid: (file: File) => boolean = () => true) => {
     if (file && !isValid(file)) {
         throw new Error('Invalid file format');
     }
-
-    return new Promise((resolve, reject) => {
+    return new Promise<string>((resolve, reject) => {
         const reader = new FileReader();
-
         reader.onload = ({ target }) => {
-            resolve(target.result);
+            if (!target?.result) {
+                return reject(new Error('Invalid file'));
+            }
+            resolve(target.result as string);
         };
         reader.onerror = reject;
         reader.onabort = reject;
-
         reader.readAsDataURL(file);
     });
 };
 
 /**
  * Read the content of a blob and returns its value as a buffer
- * @param  {Blob} file
- * @return {Promise}
  */
-export const readFileAsBuffer = (file) => {
-    return new Promise((resolve, reject) => {
+export const readFileAsBuffer = (file: File) => {
+    return new Promise<ArrayBuffer>((resolve, reject) => {
         const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
+        reader.onload = ({ target }) => {
+            if (!target?.result) {
+                return reject(new Error('Invalid file'));
+            }
+            resolve(target.result as ArrayBuffer);
+        };
         reader.onerror = reject;
         reader.onabort = reject;
         reader.readAsArrayBuffer(file);
@@ -43,10 +43,8 @@ export const readFileAsBuffer = (file) => {
 /**
  * Read the content of a blob and returns its value as a string.
  * Not using readAsBinaryString because it's deprecated.
- * @param  {Blob} file
- * @return {Promise}
  */
-export const readFileAsString = async (file) => {
+export const readFileAsString = async (file: File) => {
     const arrayBuffer = await readFileAsBuffer(file);
     // eslint-disable-next-line new-cap
     return arrayToBinaryString(new Uint8Array(arrayBuffer));
@@ -55,10 +53,8 @@ export const readFileAsString = async (file) => {
 /**
  * Convert a blob url to the matching blob
  * @link https://stackoverflow.com/a/42508185
- * @param  {String} url blob://xxxx
- * @return {Promise}     Blob
  */
-export const blobURLtoBlob = (url) => {
+export const blobURLtoBlob = (url: string) => {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', url);
@@ -76,8 +72,6 @@ export const blobURLtoBlob = (url) => {
 
 /**
  * Read the base64 portion of a data url.
- * @param {String} url
- * @returns {Uint8Array}
  */
 export const readDataUrl = (url = '') => {
     const error = 'The given url is not a data url.';
@@ -96,9 +90,6 @@ export const readDataUrl = (url = '') => {
 
 /**
  * Split a filename into [name, extension]
- * @param {String} filename
- *
- * @return {Array<String>}
  */
 export const splitExtension = (filename = '') => {
     if (!filename.includes('.')) {
