@@ -24,7 +24,7 @@ const EndsRow = ({
         onChange({ ...frequencyModel, ends: { ...frequencyModel.ends, type } });
     };
     const handleChangeEndCount = (count) => {
-        if (count !== '' && (count > FREQUENCY_COUNT_MAX[frequencyModel.frequency] || count < 1)) {
+        if (count !== '' && (count > FREQUENCY_COUNT_MAX || count < 1)) {
             return;
         }
         onChange({ ...frequencyModel, ends: { ...frequencyModel.ends, count } });

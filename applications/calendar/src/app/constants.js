@@ -102,11 +102,7 @@ export const FREQUENCY_INTERVALS_MAX = {
     [FREQUENCY.YEARLY]: 100
 };
 
-export const FREQUENCY_COUNT_MAX = {
-    [FREQUENCY.DAILY]: 50,
-    [FREQUENCY.WEEKLY]: 50,
-    [FREQUENCY.YEARLY]: 50
-};
+export const FREQUENCY_COUNT_MAX = 50;
 
 export const DAILY_TYPE = {
     ALL_DAYS: 0
