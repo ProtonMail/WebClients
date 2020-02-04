@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useRef, useEffect } from 'r
 import { generateUID, useApi, useGetAddresses, useGetAddressKeys, useNotifications } from 'react-components';
 import { generateContentHash, sign } from 'proton-shared/lib/keys/driveKeys';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
+import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 import { c } from 'ttag';
 import ChunkFileReader from './ChunkFileReader';
 import { FileUploadInfo, RequestUploadResult } from '../../interfaces/file';
@@ -84,12 +84,16 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
             throw new Error('User has no active address');
         }
 
-        const { privateKeys } = splitKeys(await getAddressKeys(activeAddress.ID));
+        const { privateKey } = getPrimaryKey(await getAddressKeys(activeAddress.ID)) || {};
+        if (!privateKey) {
+            // Should never happen
+            throw new Error('Primary private key is not decrypted');
+        }
 
         const uploadChunks = async (chunks: Uint8Array[], startIndex: number) => {
             const encryptedChunks = await Promise.all(chunks.map((chunk) => uploadConfig.current[id].transform(chunk)));
             const BlockList = await Promise.all(encryptedChunks.map((chunk) => generateContentHash(chunk)));
-            const Signature = await sign(JSON.stringify(BlockList), privateKeys as any);
+            const Signature = await sign(JSON.stringify(BlockList), privateKey);
 
             const { UploadLinks }: RequestUploadResult = await api(
                 queryRequestUpload({
