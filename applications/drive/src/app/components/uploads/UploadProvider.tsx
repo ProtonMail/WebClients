@@ -117,7 +117,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
         try {
             const reader = new ChunkFileReader(blob, CHUNK_SIZE);
-            const blockTokens = [];
+            const blockTokens: { Index: number; Token: string }[] = [];
             let startIndex = 1;
 
             while (!reader.isEOF()) {
@@ -127,7 +127,8 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                     chunks.push(await reader.readNextChunk());
                 }
 
-                blockTokens.push(...(await uploadChunks(chunks, startIndex)));
+                const blocks = await uploadChunks(chunks, startIndex);
+                blockTokens.push(...blocks);
                 startIndex += MAX_CHUNKS_READ;
             }
             await uploadConfig.current[id].finalize(info, blockTokens);
