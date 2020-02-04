@@ -1,8 +1,8 @@
 import { useGetAddressKeys, useGetAddresses, useApi, useCache, useNotifications } from 'react-components';
 import { generateDriveBootstrap, generateNodeHashKey } from 'proton-shared/lib/keys/driveKeys';
-import { decryptPrivateKeyArmored, splitKeys } from 'proton-shared/lib/keys/keys';
+import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
-import { decryptMessage, getMessage } from 'pmcrypto/lib/pmcrypto';
+import { decryptPrivateKey, decryptMessage, getMessage } from 'pmcrypto';
 import { useCallback } from 'react';
 import { c } from 'ttag';
 import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
@@ -39,7 +39,7 @@ function useDrive() {
                     publicKeys
                 });
 
-                const shareKey = await decryptPrivateKeyArmored(Share.Key, decryptedSharePassphrase);
+                const shareKey = await decryptPrivateKey(Share.Key, decryptedSharePassphrase as string);
                 return { Share, privateKey: shareKey };
             });
         },

@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
 import { useCache, useApi } from 'react-components';
+import { decryptPrivateKey } from 'pmcrypto';
 import { decryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
-import { decryptPrivateKeyArmored } from 'proton-shared/lib/keys/keys';
 import { queryFolderChildren, queryGetFolder } from '../api/folder';
 import { FolderMeta, FolderMetaResult, FolderContentsResult } from '../interfaces/folder';
 import useDrive from './useDrive';
@@ -27,7 +27,7 @@ function useShare(shareId: string) {
                     armoredMessage: Folder.Passphrase,
                     privateKey: parentKey
                 });
-                const privateKey = await decryptPrivateKeyArmored(Folder.Key, decryptedFolderPassphrase);
+                const privateKey = await decryptPrivateKey(Folder.Key, decryptedFolderPassphrase);
                 return { Folder, privateKey };
             }),
         [shareId]

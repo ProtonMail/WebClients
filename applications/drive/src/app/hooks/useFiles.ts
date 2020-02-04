@@ -7,7 +7,7 @@ import {
     CreateFileResult,
     FileRevisionState
 } from '../interfaces/file';
-import { decryptMessage, encryptMessage } from 'pmcrypto/lib/pmcrypto';
+import { decryptPrivateKey, decryptMessage, encryptMessage } from 'pmcrypto';
 import useShare from './useShare';
 import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
@@ -20,7 +20,6 @@ import {
     generateLookupHash,
     getStreamMessage
 } from 'proton-shared/lib/keys/driveKeys';
-import { decryptPrivateKeyArmored } from 'proton-shared/lib/keys/keys';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { FOLDER_PAGE_SIZE } from '../constants';
 import { useUploadProvider, Upload } from '../components/uploads/UploadProvider';
@@ -68,7 +67,7 @@ function useFiles(shareId: string) {
                     armoredMessage: File.Passphrase,
                     privateKey: parentKey
                 });
-                const privateKey = await decryptPrivateKeyArmored(File.Key, decryptedFilePassphrase);
+                const privateKey = await decryptPrivateKey(File.Key, decryptedFilePassphrase);
                 const blockKeys = deserializeUint8Array(File.ContentKeyPacket);
                 const sessionKeys = await getDecryptedSessionKey(blockKeys, privateKey);
                 return {
