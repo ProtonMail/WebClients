@@ -324,6 +324,8 @@ export const LABEL_COLORS = [
 ];
 export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
 
+export const DARK_MODE_CLASS = 'isDarkMode';
+
 export enum LINK_WARNING {
     KEY = 'link_warning',
     VALUE = 'dontAsk'

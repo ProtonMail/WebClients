@@ -1,4 +1,5 @@
 import { PROTON_THEMES, CUSTOM_THEME, DEFAULT_THEME } from './themes';
+import { DARK_MODE_CLASS } from '../constants';
 
 const { protonThemeIdentifiers, protonThemes } = Object.values(PROTON_THEMES).reduce(
     (acc, { identifier, theme }) => {
@@ -84,3 +85,14 @@ export const getTheme = (themeIdentifier) => {
  * @returns {String}
  */
 export const toStyle = (themes = []) => themes.join('\n');
+
+/**
+ * Given two arguments, the second meant to be used in dark mode and the first in the other cases,
+ * pick the appropiate one depending on whether the class 'isDarkMode' is in the body or not
+ * @param {*} light
+ * @param {*} dark
+ * @return {*}
+ */
+export const getLightOrDark = (light, dark) => {
+    return document.body.classList.contains(DARK_MODE_CLASS) ? dark : light;
+};
