@@ -3,8 +3,8 @@ import { c, msgid } from 'ttag';
 import { format, getDaysInMonth } from 'date-fns';
 
 export const getPositiveSetpos = (date) => {
-    const monthDay = date.getDate();
-    return Math.floor(monthDay / 7) + 1;
+    const shiftedMonthDay = date.getDate() - 1;
+    return Math.floor(shiftedMonthDay / 7) + 1;
 };
 
 export const getNegativeSetpos = (date) => {
