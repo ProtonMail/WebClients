@@ -10,7 +10,7 @@ import SelectMonthlyType from '../inputs/SelectMonthlyType';
 
 const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted, collapseOnMobile }) => {
     const isMonthly = frequencyModel.frequency === FREQUENCY.MONTHLY;
-    const safeIntervalPlural = frequencyModel.ends.interval || 1; // Can get undefined through the input
+    const safeIntervalPlural = frequencyModel.interval || 1; // Can get undefined through the input
     const intervalOptions = [
         { text: c('Option').ngettext(msgid`Day`, `Days`, safeIntervalPlural), value: FREQUENCY.DAILY },
         { text: c('Option').ngettext(msgid`Week`, `Weeks`, safeIntervalPlural), value: FREQUENCY.WEEKLY },
