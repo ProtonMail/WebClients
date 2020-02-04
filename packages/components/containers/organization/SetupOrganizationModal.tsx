@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 import {
     FormModal,
@@ -10,7 +9,6 @@ import {
     PasswordInput,
     Alert,
     Select,
-    useStep,
     useUser,
     useOrganization,
     useApi,
@@ -19,7 +17,7 @@ import {
     useAuthentication,
     useLoading,
     useNotifications
-} from 'react-components';
+} from '../../index';
 import { GIGA } from 'proton-shared/lib/constants';
 import { range } from 'proton-shared/lib/helpers/array';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
@@ -30,7 +28,18 @@ import { generateOrganizationKeys } from 'proton-shared/lib/keys/organizationKey
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 
-const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
+enum STEPS {
+    NAME,
+    KEYS,
+    PASSWORD,
+    STORAGE,
+    VPN
+}
+
+interface Props {
+    onClose?: () => void;
+}
+const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) => {
     const api = useApi();
     const authentication = useAuthentication();
     const { call } = useEventManager();
@@ -38,10 +47,10 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
 
     const [members = []] = useMembers();
     const [loading, withLoading] = useLoading();
-    const [confirmPasswordError, setConfirmPasswordError] = useState();
+    const [confirmPasswordError, setConfirmPasswordError] = useState('');
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
     const [{ MaxSpace, MaxVPN }] = useOrganization();
-    const { step, next, previous } = useStep();
+    const [step, setStep] = useState<STEPS>(STEPS.NAME);
     const storageOptions = range(0, MaxSpace, GIGA).map((value) => ({ text: `${humanSize(value, 'GB')}`, value }));
     const vpnOptions = range(0, MaxVPN).map((value) => ({ text: value, value }));
     const [{ hasPaidVpn }] = useUser();
@@ -53,12 +62,14 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
         vpn: 3
     });
 
-    const handleChange = (key) => ({ target }) => setModel({ ...model, [key]: target.value });
+    const handleChange = (key: string) => {
+        return ({ target }: ChangeEvent<HTMLInputElement>) => setModel({ ...model, [key]: target.value });
+    };
 
     const { ID: currentMemberID } = members.find(({ Self }) => Self) || {};
 
     const { title, onSubmit, section } = (() => {
-        if (step === 0) {
+        if (step === STEPS.NAME) {
             return {
                 title: c('Title').t`Name your organization`,
                 section: (
@@ -74,12 +85,12 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
                 ),
                 async onSubmit() {
                     await api(updateOrganizationName(model.name));
-                    next();
+                    setStep(STEPS.KEYS);
                 }
             };
         }
 
-        if (step === 1) {
+        if (step === STEPS.KEYS) {
             return {
                 title: c('Title').t`Set organization keys`,
                 section: (
@@ -89,13 +100,13 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
                     </>
                 ),
-                onSubmit() {
-                    next();
+                async onSubmit() {
+                    setStep(STEPS.PASSWORD);
                 }
             };
         }
 
-        if (step === 2) {
+        if (step === STEPS.PASSWORD) {
             return {
                 title: c('Title').t`Set organization password`,
                 section: (
@@ -139,7 +150,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
                     if (model.password !== model.confirm) {
                         return setConfirmPasswordError(c('Error').t`Passwords do not match`);
                     }
-                    setConfirmPasswordError();
+                    setConfirmPasswordError('');
 
                     const {
                         privateKeyArmored,
@@ -160,12 +171,12 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
                         })
                     );
 
-                    next();
+                    setStep(STEPS.STORAGE);
                 }
             };
         }
 
-        if (step === 3) {
+        if (step === STEPS.STORAGE) {
             return {
                 title: c('Title').t`Allocate storage`,
                 section: (
@@ -188,7 +199,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
                     await api(updateQuota(currentMemberID, +model.storage));
 
                     if (hasPaidVpn) {
-                        return next();
+                        setStep(STEPS.VPN);
                     }
 
                     await call();
@@ -198,7 +209,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
             };
         }
 
-        if (step === 4) {
+        if (step === STEPS.VPN) {
             return {
                 title: c('Title').t`Allocate VPN connections`,
                 section: (
@@ -226,6 +237,8 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
                 }
             };
         }
+
+        throw new Error('Unknown step');
     })();
 
     return (
@@ -235,16 +248,14 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }) => {
             onClose={onClose}
             onSubmit={() => withLoading(onSubmit())}
             loading={loading}
-            close={step ? <Button onClick={previous}>{c('Action').t`Back`}</Button> : c('Action').t`Close`}
+            close={
+                step ? <Button onClick={() => setStep(step - 1)}>{c('Action').t`Back`}</Button> : c('Action').t`Close`
+            }
             {...rest}
         >
             {section}
         </FormModal>
     );
-};
-
-SetupOrganizationModal.propTypes = {
-    onClose: PropTypes.func
 };
 
 export default SetupOrganizationModal;
