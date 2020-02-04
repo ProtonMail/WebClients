@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { useApi, useCache } from 'react-components';
+import { ReadableStream } from 'web-streams-polyfill';
 import {
     DriveFile,
     DriveFileRevisionResult,
@@ -93,6 +94,10 @@ function useFiles(shareId: string) {
             const { NodeKey, privateKey, NodePassphrase, rawPassphrase } = await generateNodeKeys(parentKey);
             const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
 
+            if (!ContentKeyPacket) {
+                throw new Error('Could not generate ContentKeyPacket');
+            }
+
             // Name checks only among uploads to the same parent link
             const activeUploads = uploads.filter(
                 ({ state, meta }) =>
@@ -139,7 +144,7 @@ function useFiles(shareId: string) {
                             sessionKey,
                             armor: false
                         });
-                        return res.message.packets.write();
+                        return res.message.packets.write() as Uint8Array;
                     },
                     finalize: async ({ ID, RevisionID }, BlockList) => {
                         await api(
@@ -169,7 +174,7 @@ function useFiles(shareId: string) {
             format: 'binary'
         });
 
-        return data;
+        return data as ReadableStream<Uint8Array>;
     };
 
     const getFileBlocks = async (linkId: string) => {

@@ -57,6 +57,11 @@ function useDrive() {
 
         const AddressID = activeAddress.ID;
         const [{ privateKey }] = await getAddressKeys(AddressID);
+
+        if (!privateKey) {
+            throw new Error('Active address has no key');
+        }
+
         const { bootstrap, sharePrivateKey } = await generateDriveBootstrap(privateKey);
         const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(sharePrivateKey);
 

@@ -76,7 +76,7 @@ const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onC
         }
 
         if (isSupportedImage(meta.MimeType)) {
-            return <ImagePreview contents={contents} mimeType={meta.MimeType} />;
+            return <ImagePreview contents={contents} mimeType={meta.MimeType} onSave={onSave} />;
         } else if (isSupportedText(meta.MimeType)) {
             return <TextPreview contents={contents} />;
         } else if (isPDF(meta.MimeType)) {

@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import loadImage, { MetaData, Exif } from 'blueimp-load-image';
 import ZoomControl from './ZoomControl';
-import { useElementRect } from 'react-components';
+import { useElementRect, PrimaryButton } from 'react-components';
+import brokenImageSvg from './broken-image.svg';
+import { c } from 'ttag';
 
 const calculateImagePosition = (scale: number, image?: HTMLImageElement | null, bounds?: DOMRect) => {
     if (!image || !bounds) {
@@ -46,13 +48,15 @@ const parseRotation = (exifData?: Exif) => {
 
 interface Props {
     mimeType: string;
+    onSave?: () => void;
     contents?: Uint8Array[];
 }
 
-const ImagePreview = ({ mimeType, contents }: Props) => {
+const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const containerBounds = useElementRect(containerRef);
+    const [error, setError] = useState(false);
     const [scale, setScale] = useState(0);
     const [imageData, setImageData] = useState({
         src: '',
@@ -62,6 +66,11 @@ const ImagePreview = ({ mimeType, contents }: Props) => {
     useEffect(() => {
         let src: string;
         let canceled = false;
+
+        if (error) {
+            setError(false);
+        }
+
         const blob = new Blob(contents, { type: mimeType });
         loadImage.parseMetaData(blob, ({ exif }: MetaData) => {
             if (!canceled) {
@@ -95,24 +104,48 @@ const ImagePreview = ({ mimeType, contents }: Props) => {
         setScale(scale);
     };
 
+    const handleBrokenImage = () => {
+        if (!error) {
+            setError(true);
+        }
+    };
+
     const position = calculateImagePosition(scale, imageRef.current, containerBounds);
     return (
         <>
             <div ref={containerRef} className="pd-file-preview-container">
-                <img
-                    ref={imageRef}
-                    onLoad={() => fitToContainer()}
-                    style={{
-                        transform: `translate(${position.x}, ${position.y}) rotate(${imageData.rotation}deg)`,
-                        height: imageRef.current ? imageRef.current.naturalHeight * scale : undefined,
-                        width: imageRef.current ? imageRef.current.naturalWidth * scale : undefined
-                    }}
-                    className="pd-file-preview-image"
-                    src={imageData.src}
-                    alt="preview"
-                />
+                <div>
+                    {error ? (
+                        <div className="centered-absolute aligncenter">
+                            <img className="mb0-5" src={brokenImageSvg} alt={c('Info').t`Corrupted image`} />
+                            <div className="p0-25">{c('Info').t`No preview available`}</div>
+                            {onSave && (
+                                <PrimaryButton onClick={onSave} className="mt2">{c('Action')
+                                    .t`Download`}</PrimaryButton>
+                            )}
+                        </div>
+                    ) : (
+                        imageData.src && (
+                            <img
+                                ref={imageRef}
+                                onLoad={() => fitToContainer()}
+                                onError={handleBrokenImage}
+                                className="pd-file-preview-image"
+                                style={{
+                                    transform: `translate(${position.x}, ${position.y}) rotate(${imageData.rotation}deg)`,
+                                    height: imageRef.current ? imageRef.current.naturalHeight * scale : undefined,
+                                    width: imageRef.current ? imageRef.current.naturalWidth * scale : undefined
+                                }}
+                                src={imageData.src}
+                                alt={c('Info').t`Preview`}
+                            />
+                        )
+                    )}
+                </div>
             </div>
-            <ZoomControl onReset={fitToContainer} scale={scale} onZoomIn={handleZoomIn} onZoomOut={handleZoomOut} />
+            {!error && (
+                <ZoomControl onReset={fitToContainer} scale={scale} onZoomIn={handleZoomIn} onZoomOut={handleZoomOut} />
+            )}
         </>
     );
 };
