@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useMailSettings, useOrganization } from 'react-components';
 import { getThemeIdentifier, getTheme, toStyle, isDarkTheme } from 'proton-shared/lib/themes/helpers';
 import { PROTON_THEMES, DEFAULT_THEME } from 'proton-shared/lib/themes/themes';
+import { DARK_MODE_CLASS } from 'proton-shared/lib/constants';
 
 const protonThemeIdentifiers = Object.values(PROTON_THEMES).map(({ identifier }) => identifier);
-
-const DARK_MODE_CLASS = 'isDarkMode';
 
 const ThemeInjector = () => {
     const [{ Theme: userTheme = '' } = {}] = useMailSettings();
