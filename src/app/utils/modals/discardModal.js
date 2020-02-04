@@ -8,7 +8,7 @@ function discardModal(pmModal) {
             const I18N = {
                 title: gettextCatalog.getString('Warning', null, 'Confirm message'),
                 message: gettextCatalog.getString(
-                    'By cancelling, you will loose all your changes. Do you want to cancel anyway?',
+                    'By canceling, you will lose all your changes. Do you want to cancel anyway?',
                     null,
                     'Confirm message'
                 ),
