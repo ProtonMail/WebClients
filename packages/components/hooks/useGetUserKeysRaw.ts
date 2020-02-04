@@ -45,6 +45,7 @@ export const useGetUserKeysRaw = (): (() => Promise<CachedKey[]>) => {
         if (primaryKeyResult.error) {
             return [primaryKeyResult, ...restKeys.map((Key) => ({ Key, error: primaryKeyResult.error }))];
         }
-        return [primaryKeyResult, ...(await Promise.all(restKeys.map(process)))];
+        const restKeysResult = await Promise.all(restKeys.map(process));
+        return [primaryKeyResult, ...restKeysResult];
     }, [getUser]);
 };
