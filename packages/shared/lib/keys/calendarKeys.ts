@@ -27,7 +27,7 @@ export enum KeyFlags {
 
 export const generatePassphrase = () => {
     const value = getRandomValues(new Uint8Array(32));
-    return serializeUint8Array(value);
+    return serializeUint8Array(value) as string;
 };
 
 /**

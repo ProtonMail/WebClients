@@ -27,7 +27,7 @@ export const decryptMemberToken = async (token: string, privateKey: OpenPGPKey) 
  */
 export const generateMemberToken = () => {
     const value = getRandomValues(new Uint8Array(128));
-    return serializeUint8Array(value);
+    return serializeUint8Array(value) as string;
 };
 
 /**
