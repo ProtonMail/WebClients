@@ -1,0 +1,22 @@
+$themeName : 'snow' !default;
+$activeColor : #06c !default;
+$borderColor : #ccc !default;
+$backgroundColor : #fff !default;
+$inactiveColor : #444 !default;
+$shadowColor : #ddd !default;
+$textColor : #444 !default;
+
+@import 'core';
+@import 'base';
+@import 'snow/toolbar';
+@import 'snow/tooltip';
+
+.ql-snow {
+  a {
+    color: $activeColor;
+  }
+}
+
+.ql-container.ql-snow {
+  border: 1px solid $borderColor;
+}
