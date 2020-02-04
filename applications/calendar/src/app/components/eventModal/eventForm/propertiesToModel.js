@@ -3,7 +3,7 @@ import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 import { MONTHLY_TYPE, NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 import { replace } from 'proton-shared/lib/helpers/array';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
-import { getNegativeSetpos } from '../../../helpers/rrule';
+import { getPositiveSetpos, getNegativeSetpos } from '../../../helpers/rrule';
 
 const DEFAULT_TIME = {
     value: { year: 1970, month: 1, day: 1, hour: 0, minutes: 0 },
@@ -64,11 +64,19 @@ export const getFrequencyModelChange = (oldStart, newStart, frequencyModel) => {
      */
 
     // change monthly type
-    const change =
+    const changeToNthDay =
         frequencyModel.monthly.type === MONTHLY_TYPE.ON_MINUS_NTH_DAY && getNegativeSetpos(newStart.date) !== -1;
-    const newMonthlyType = change ? MONTHLY_TYPE.ON_NTH_DAY : frequencyModel.monthly.type;
+    const changeToMinusNthDay =
+        frequencyModel.monthly.type === MONTHLY_TYPE.ON_NTH_DAY && getPositiveSetpos(newStart.date) === 5;
+    const newFrequencyModel = { ...frequencyModel, weekly: { days: newDays } };
 
-    return { ...frequencyModel, weekly: { days: newDays }, monthly: { type: newMonthlyType } };
+    if (changeToNthDay) {
+        return { ...newFrequencyModel, monthly: { type: MONTHLY_TYPE.ON_NTH_DAY } };
+    }
+    if (changeToMinusNthDay) {
+        return { ...newFrequencyModel, monthly: { type: MONTHLY_TYPE.ON_MINUS_NTH_DAY } };
+    }
+    return newFrequencyModel;
 };
 
 const allDayTriggerToModel = ({ type, when, weeks, days, hours, minutes }) => {

@@ -11,10 +11,13 @@ const SelectMonthlyType = ({ id, value, date, onChange }) => {
     const weekdays = useMemo(() => {
         return getFormattedWeekdays('cccc', { locale: dateLocale, weekStartsOn: 0 });
     }, [dateLocale]);
-    const allOptions = Object.values(MONTHLY_TYPE).map((type) => {
-        const onDayString = getOnDayString(date, type, weekdays);
-        return { text: capitalize(onDayString), value: type };
-    });
+    const allOptions = useMemo(() => {
+        return Object.values(MONTHLY_TYPE).map((type) => {
+            const onDayString = getOnDayString(date, type, weekdays);
+            return { text: capitalize(onDayString), value: type };
+        });
+    }, [date, weekdays]);
+
     const isLastDay = getNegativeSetpos(date) === -1;
     const isFifthDay = getPositiveSetpos(date) === 5;
     const options = allOptions.filter(({ value }) => {
