@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import Quill from 'quill';
 
 // This style will be lazy loaded by LazyRichTextEditor
-import 'react-quill/dist/quill.snow.css';
+import 'design-system/_sass/react-styles/quill/_snow.scss';
 
 const Block = Quill.import('blots/block');
 Block.tagName = 'div';
