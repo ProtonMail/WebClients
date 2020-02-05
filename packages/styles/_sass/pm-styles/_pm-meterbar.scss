@@ -72,7 +72,7 @@ $meterbar-height: 6px !default;
   appearance: none;
   height: 1.5rem;
   background: var(--bordercolor-input, $pm-global-muted);
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 3px 6px 0 $input-shadow-color;
 
   &::-webkit-meter-bar {
     background: none; /* Required to get rid of the default background property */

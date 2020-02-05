@@ -14,7 +14,7 @@ $dropDown-narrow-width: 8em !default;
   width: $dropDown-width;
   background: var(--bgcolor-main-area, $white);
   border-radius: $global-border-radius;
-  box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 0 16px 3px $input-shadow-color;
   color: var(--color-main-area, $pm-global-grey);
 }
 

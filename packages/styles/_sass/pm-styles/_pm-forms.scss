@@ -41,7 +41,7 @@ $field-container: 26rem !default;
   &.focus,
   &:focus-within {
     background-color: var(--bgcolor-main-area, $white);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0 10px 0 $input-shadow-color;
   }
   &[aria-invalid="true"]:not(:focus),
   &[aria-invalid="true"]:not(.ng-pristine) {
@@ -171,7 +171,7 @@ textarea[required].pm-field.field-pristine:invalid {
     }
   }
   &:focus + .pm-checkbox-fakecheck {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0 10px 0 $input-shadow-color;
   }
   &[disabled] + .pm-checkbox-fakecheck,
   &:indeterminate + .pm-checkbox-fakecheck {
@@ -225,7 +225,7 @@ textarea[required].pm-field.field-pristine:invalid {
     transform: scale(1);
   }
   &:focus + .pm-radio-fakeradio {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0 10px 0 $input-shadow-color;
   }
   &[disabled] + .pm-radio-fakeradio {
     background: var(--bgcolor-disabled-checkboxes-radios, $pm-global-muted);
@@ -310,7 +310,7 @@ $width: 5.5em !default;
     }
   }
   &:focus + .pm-toggle-label {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0 10px 0 $input-shadow-color;
   }
   &[disabled] + .pm-toggle-label  {
     background: rgba($pm-global-muted, .6);

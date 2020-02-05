@@ -41,7 +41,7 @@
 }
 
 .shadow-container {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 0 20px 0 $input-shadow-color;
 }
 
 .row--orderable {
