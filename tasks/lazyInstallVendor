@@ -29,7 +29,7 @@ function testVendor {
         karma-coverage-istanbul-reporter \
         karma-junit-reporter \
         jasmine-core@3.4 \
-        puppeteer@1.17 \
+        puppeteer@2.1 \
         --no-save;
     fi
 }

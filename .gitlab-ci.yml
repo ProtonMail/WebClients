@@ -1,0 +1,8 @@
+include:
+  - project: 'web/core/proton-config'
+    ref: master
+    file: '/_templates-ci/private-angular.gitlab-ci.yml'
+
+variables:
+    APP_GIT: "$APP_GIT_CI"
+    NODE_OPTIONS: --max-old-space-size=4096
