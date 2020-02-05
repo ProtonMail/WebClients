@@ -2,8 +2,10 @@ import React from 'react';
 import { useUser, useModals, LinkButton, AuthenticatedBugModal } from 'react-components';
 import { c, ngettext, msgid } from 'ttag';
 import { capitalize } from 'proton-shared/lib/helpers/string';
+import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
-import unreadEmailsSvg from 'design-system/assets/img/shared/unread-emails.svg';
+import unreadEmailsSvgLight from 'design-system/assets/img/shared/unread-emails.svg';
+import unreadEmailsSvgDark from 'design-system/assets/img/shared/unread-emails-dark.svg';
 import { LabelCount } from '../../models/label';
 
 interface Props {
@@ -15,6 +17,7 @@ const WelcomePane = ({ labelCount }: Props) => {
     const { createModal } = useModals();
 
     const Unread = labelCount.Unread || 0;
+    const unreadEmailsSvg = getLightOrDark(unreadEmailsSvgLight, unreadEmailsSvgDark);
 
     const unreadsLabel = (
         <strong key="unreads-label">

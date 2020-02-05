@@ -2,10 +2,13 @@ import React, { useMemo } from 'react';
 import { Button, useLabels } from 'react-components';
 import { c, ngettext, msgid } from 'ttag';
 
-import conversationSingleSvg from 'design-system/assets/img/shared/selected-conversation-single.svg';
-import conversationManySvg from 'design-system/assets/img/shared/selected-conversation-many.svg';
+import conversationSingleSvgLight from 'design-system/assets/img/shared/selected-conversation-single.svg';
+import conversationSingleSvgDark from 'design-system/assets/img/shared/selected-conversation-single-dark.svg';
+import conversationManySvgLight from 'design-system/assets/img/shared/selected-conversation-many.svg';
+import conversationManySvgDark from 'design-system/assets/img/shared/selected-conversation-many-dark.svg';
 import { LabelCount } from '../../models/label';
 import { getLabelName } from '../../helpers/labels';
+import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
 interface Props {
     labelCount: LabelCount;
@@ -18,6 +21,8 @@ const SelectionPane = ({ labelCount, checkedIDs = [], onUncheckAll }: Props) => 
 
     const total = labelCount.Total || 0;
     const checkeds = checkedIDs.length;
+    const conversationSingleSvg = getLightOrDark(conversationSingleSvgLight, conversationSingleSvgDark);
+    const conversationManySvg = getLightOrDark(conversationManySvgLight, conversationManySvgDark);
 
     const labelName = useMemo(() => getLabelName(labelCount.LabelID || '', labels), [labels, labelCount]);
 

@@ -2,8 +2,11 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import noResultSearchSvg from 'design-system/assets/img/shared/no-result-search.svg';
-import noResultInboxSvg from 'design-system/assets/img/shared/no-result-inbox.svg';
+import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
+import noResultSearchSvgLight from 'design-system/assets/img/shared/no-result-search.svg';
+import noResultSearchSvgDark from 'design-system/assets/img/shared/no-result-search-dark.svg';
+import noResultInboxSvgLight from 'design-system/assets/img/shared/no-result-inbox.svg';
+import noResultInboxSvgDark from 'design-system/assets/img/shared/no-result-inbox-dark.svg';
 
 interface Props {
     labelID: string;
@@ -13,6 +16,8 @@ const EmptyView = ({ labelID }: Props) => {
     const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX;
     const isFolder = !isInbox;
     const isSearch = false; // TODO: when the search will be implemented
+    const noResultSearchSvg = getLightOrDark(noResultSearchSvgLight, noResultSearchSvgDark);
+    const noResultInboxSvg = getLightOrDark(noResultInboxSvgLight, noResultInboxSvgDark);
 
     return (
         <div className="m2">
