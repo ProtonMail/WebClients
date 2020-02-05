@@ -7,7 +7,8 @@ import {
     UserSettingsModel,
     SubscriptionModel,
     OrganizationModel,
-    AddressesModel
+    AddressesModel,
+    PaymentMethodsModel
 } from 'proton-shared/lib/models';
 
 import PrivateLayout from './components/layout/PrivateLayout';
@@ -25,6 +26,7 @@ const PrivateApp = ({ onLogout }) => {
                 MailSettingsModel,
                 UserSettingsModel,
                 SubscriptionModel,
+                PaymentMethodsModel,
                 OrganizationModel
             ]}
         >
