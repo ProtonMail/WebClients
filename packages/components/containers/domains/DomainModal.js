@@ -89,7 +89,14 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
                 name={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'on' : 'off'}
             />
         ),
-        domainAddresses.length ? <RoundedIcon className="mr0-5" key="addresses-icon" type="success" name="on" /> : null,
+        domainAddresses.length ? (
+            <RoundedIcon
+                className="mr0-5"
+                key="addresses-icon"
+                type={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'success' : 'error'}
+                name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'on' : 'off'}
+            />
+        ) : null,
         domainModel.MxState === MX_STATE.MX_STATE_DEFAULT ? null : (
             <RoundedIcon
                 className="mr0-5"
