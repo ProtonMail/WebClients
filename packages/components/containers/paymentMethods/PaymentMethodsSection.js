@@ -5,6 +5,7 @@ import {
     PrimaryButton,
     Alert,
     Block,
+    Loader,
     MozillaInfoPanel,
     useModals,
     useSubscription,
@@ -24,6 +25,15 @@ const PaymentMethodsSection = () => {
     const [paymentMethods, loadingPaymentMethods] = usePaymentMethods();
     const [{ isManagedByMozilla } = {}, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
+
+    if (loadingPaymentMethods || loadingSubscription) {
+        return (
+            <>
+                <SubTitle>{c('Title').t`Payment methods`}</SubTitle>
+                <Loader />
+            </>
+        );
+    }
 
     if (isManagedByMozilla) {
         return (
