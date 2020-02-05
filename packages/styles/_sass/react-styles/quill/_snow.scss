@@ -1,10 +1,12 @@
+@import "../../reusable-components/design-system-config";
+
 $themeName : 'snow' !default;
-$activeColor : #06c !default;
-$borderColor : #ccc !default;
-$backgroundColor : #fff !default;
-$inactiveColor : #444 !default;
-$shadowColor : #ddd !default;
-$textColor : #444 !default;
+$activeColor : $pm-primary !default;
+$borderColor : var(--bordercolor-input, $pm-global-border) !default;
+$backgroundColor : var(--bgcolor-main-area, $white) !default;
+$inactiveColor : var(--color-main-area, $pm-global-grey) !default;
+$shadowColor : $input-shadow-color !default;
+$textColor : var(--color-main-area, $pm-global-grey) !default;
 
 @import 'core';
 @import 'base';
@@ -17,6 +19,18 @@ $textColor : #444 !default;
   }
 }
 
-.ql-container.ql-snow {
-  border: 1px solid $borderColor;
+.ql-container {
+  //background-color: $backgroundColor;
+  &.ql-snow {
+    border: 1px solid $borderColor;
+  }
+}
+
+// fixes for our case
+.ql-container {
+  min-height: 12em;
+  border-radius: 0 0 $global-border-radius $global-border-radius;
+}
+.ql-toolbar {
+  border-radius: $global-border-radius $global-border-radius 0 0;
 }
