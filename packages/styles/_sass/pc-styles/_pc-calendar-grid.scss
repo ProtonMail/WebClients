@@ -329,6 +329,9 @@ $calendar-popover-width: 400px !default;
             flex-basis: auto;
           }
     }
+    .calendar-recurringFrequencyEnd-grid {
+        grid-template-columns: minmax(6em, auto) minmax(7em, auto) 1fr;
+    }
 }
 
 @keyframes eventpopoverIn {
