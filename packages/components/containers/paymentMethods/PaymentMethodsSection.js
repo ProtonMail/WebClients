@@ -22,7 +22,7 @@ const { VPN } = CLIENT_TYPES;
 
 const PaymentMethodsSection = () => {
     const { CLIENT_TYPE } = useConfig();
-    const [paymentMethods, loadingPaymentMethods] = usePaymentMethods();
+    const [paymentMethods = [], loadingPaymentMethods] = usePaymentMethods();
     const [{ isManagedByMozilla } = {}, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
 

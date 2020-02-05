@@ -39,7 +39,7 @@ const PayPalModal = (props) => {
 };
 
 PayPalModal.propTypes = {
-    onClose: PropTypes.func.isRequired
+    onClose: PropTypes.func
 };
 
 export default PayPalModal;

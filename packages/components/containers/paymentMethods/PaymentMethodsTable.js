@@ -52,8 +52,7 @@ const PaymentMethodsTable = ({ methods, loading }) => {
 
 PaymentMethodsTable.propTypes = {
     methods: PropTypes.array.isRequired,
-    loading: PropTypes.bool.isRequired,
-    fetchMethods: PropTypes.func.isRequired
+    loading: PropTypes.bool.isRequired
 };
 
 export default PaymentMethodsTable;
