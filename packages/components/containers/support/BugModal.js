@@ -103,13 +103,13 @@ const BugModal = ({ onClose, username: Username = '', location, addresses = [], 
 
         return {
             ...imageBlobs,
-            ...model,
             Client,
             ClientVersion: APP_VERSION,
             ClientType: CLIENT_TYPE,
-            Title,
             Username,
-            Email
+            Email,
+            ...model,
+            Title
         };
     };
 
