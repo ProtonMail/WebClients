@@ -2,11 +2,14 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 
-import errorImg from 'design-system/assets/img/shared/generic-error.svg';
+import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
+import errorImgLight from 'design-system/assets/img/shared/generic-error.svg';
+import errorImgDark from 'design-system/assets/img/shared/generic-error-dark.svg';
 
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 
 const GenericError = ({ className }) => {
+    const errorImg = getLightOrDark(errorImgLight, errorImgDark);
     return (
         <IllustrationPlaceholder
             className={className}
