@@ -14,6 +14,8 @@ export interface DriveLink {
     NodeKey: string;
     NodeHashKey: string;
     NodePassphrase: string;
+    NodePassphraseSignature: string;
+    SignatureAddressID: string;
 }
 
 export interface DriveLinkResult {

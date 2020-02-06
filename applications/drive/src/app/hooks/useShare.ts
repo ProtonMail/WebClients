@@ -1,21 +1,24 @@
 import { useCallback } from 'react';
 import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
 import { useCache, useApi } from 'react-components';
-import { decryptPrivateKey } from 'pmcrypto';
+import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { decryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
 import { queryFolderChildren, queryGetFolder } from '../api/folder';
 import { FolderMeta, FolderMetaResult, FolderContentsResult } from '../interfaces/folder';
 import useDrive from './useDrive';
 import { DriveLink } from '../interfaces/link';
 import { DriveFile } from '../interfaces/file';
+import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
+import useDriveCrypto from './useDriveCrypto';
 
 function useShare(shareId: string) {
     const api = useApi();
     const cache = useCache();
     const { getShareBootstrap } = useDrive();
+    const { getVerificationKeys } = useDriveCrypto();
 
     const getFolderMeta = useCallback(
-        async (linkId: string): Promise<{ Folder: FolderMeta; privateKey: any }> =>
+        async (linkId: string): Promise<{ Folder: FolderMeta; privateKey: OpenPGPKey }> =>
             getPromiseValue(cache, `drive/shares/${shareId}/folder/${linkId}`, async () => {
                 const { Folder }: FolderMetaResult = await api(queryGetFolder(shareId, linkId));
 
@@ -23,9 +26,13 @@ function useShare(shareId: string) {
                     ? await getFolderMeta(Folder.ParentLinkID)
                     : await getShareBootstrap(shareId);
 
-                const decryptedFolderPassphrase = await decryptUnsigned({
-                    armoredMessage: Folder.Passphrase,
-                    privateKey: parentKey
+                const { publicKeys } = await getVerificationKeys(Folder.SignatureAddressID);
+
+                const decryptedFolderPassphrase = await decryptPassphrase({
+                    armoredPassphrase: Folder.Passphrase,
+                    armoredSignature: Folder.PassphraseSignature,
+                    privateKeys: [parentKey],
+                    publicKeys
                 });
                 const privateKey = await decryptPrivateKey(Folder.Key, decryptedFolderPassphrase);
                 return { Folder, privateKey };

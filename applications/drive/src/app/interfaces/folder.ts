@@ -17,6 +17,8 @@ export interface FolderContentsResult {
 export interface FolderMeta {
     Name: string;
     Passphrase: string;
+    PassphraseSignature: string;
+    SignatureAddressID: string;
     Key: string;
     Hash: string;
     HashKey: string;

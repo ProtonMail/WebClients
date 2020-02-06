@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect, withRouter, RouteComponentProps } from 'react-router-dom';
-import { StandardPrivateApp } from 'react-components';
+import { StandardPrivateApp, ErrorBoundary, GenericError } from 'react-components';
 import { UserModel, AddressesModel } from 'proton-shared/lib/models';
 
 import DriveContainer from './containers/DriveContainer';
@@ -32,26 +32,32 @@ const PrivateApp = ({ onLogout, history }: Props) => {
             preloadModels={[UserModel, AddressesModel]}
             eventModels={[UserModel, AddressesModel]}
         >
-            <DriveResourceProvider>
-                <UploadProvider>
-                    <DownloadProvider>
-                        <PrivateLayout>
-                            <AppErrorBoundary>
-                                <Switch>
-                                    <Route path={`/drive/:shareId?/:type?/:linkId?`} exact component={DriveContainer} />
-                                    <Redirect to="/drive" />
-                                </Switch>
+            <ErrorBoundary component={<GenericError className="pt2 h100v" />}>
+                <DriveResourceProvider>
+                    <UploadProvider>
+                        <DownloadProvider>
+                            <PrivateLayout>
+                                <AppErrorBoundary>
+                                    <Switch>
+                                        <Route
+                                            path={`/drive/:shareId?/:type?/:linkId?`}
+                                            exact
+                                            component={DriveContainer}
+                                        />
+                                        <Redirect to="/drive" />
+                                    </Switch>
 
-                                <Route
-                                    path={`/drive/:shareId?/${LinkType.FILE}/:linkId?`}
-                                    exact
-                                    component={PreviewContainer}
-                                />
-                            </AppErrorBoundary>
-                        </PrivateLayout>
-                    </DownloadProvider>
-                </UploadProvider>
-            </DriveResourceProvider>
+                                    <Route
+                                        path={`/drive/:shareId?/${LinkType.FILE}/:linkId?`}
+                                        exact
+                                        component={PreviewContainer}
+                                    />
+                                </AppErrorBoundary>
+                            </PrivateLayout>
+                        </DownloadProvider>
+                    </UploadProvider>
+                </DriveResourceProvider>
+            </ErrorBoundary>
         </StandardPrivateApp>
     );
 };
