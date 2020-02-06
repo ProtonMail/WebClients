@@ -37,7 +37,7 @@
 /* alternate bg for rows */
 .pm-simple-table--alternate-bg-row tbody tr:nth-child(odd){
   background-color: var(--bgcolor-input, $pm-global-light);
-} 
+}
 
 /* bordered-table */
 .pm-simple-table--bordered,
@@ -54,10 +54,6 @@
 }
 
 /* simple dirty fix */
-.pm-simple-table button svg {
-  @extend .relative;
-  top: -0.25em;
-}
 .pm-simple-table a svg {
   @extend .relative;
   top: -0.15em;

@@ -10,7 +10,7 @@
 ## Updated/fixes
 
 - fix for recurring frequency in popover
-- 
+- remove dirty fix for SVGs in `button`s
 
 
 # [1.8.1] - 2019-01-31
@@ -58,7 +58,7 @@
 - fix selective/current day on mini-calendar/calendar
 - fix `pm-label` for credit card autogrid issue (`width` was too large for small modals)
 - fix inconsistency for mini-calendar colors (current/selected day)
-- fix display of outside modifier (calendar) 
+- fix display of outside modifier (calendar)
 - fix `pm-label`
 - first round of updates for placeholder images
 - fix modal close button position
@@ -216,7 +216,7 @@
 - added circle bar styles (see in dropdown to see the bigger version)
 - added storage dropdown styles
 - added `smallest` helper (~9px)
-- added some bank icons 
+- added some bank icons
 - added `flex-item-noflex` helper (`flex: 0`)
 
 ## Updated/fixes
@@ -226,7 +226,7 @@
 - updated `loadingAnimation-circle--pm-blue` class to `loadingAnimation-circle--pm-primary`
 - fixed flicker effect when tapping on modal
 - fixed a display bug on Safari for password revealer
-- added modifier `pm-field-container--address` (container for address on contacts) 
+- added modifier `pm-field-container--address` (container for address on contacts)
 - fixed vertical centering of logo/added modifier for logo without plan
 - fixed password revealer outline issue
 - removed outline on `pm-field`s
@@ -234,9 +234,9 @@
 - fixed navigation icon hover color (for blue theme)
 - fixed color image `upgrade.svg`
 - fixed `hover-same-color`/`primary-link` helpers
-- fixed `navigation__counterItem` padding 
+- fixed `navigation__counterItem` padding
 - updated badges CSS code to better fit to mail constraints
-- fixed searchbar layout 
+- fixed searchbar layout
 
 
 # [1.7.4] - 2019-09-12
@@ -301,7 +301,7 @@
 ## Updated/fixes
 
 - increased `z-index` of notifications, in order for them to be on the top of modals :)
-- added styles for “info” notification 
+- added styles for “info” notification
 - moved some styles to exceptions (only for Design System)
 - fixed `checked` state of `item-icon`
 - fixed logout dropdown display
@@ -311,7 +311,7 @@
 - removed `z-index` from active `pm-group-button`
 - fixed badge `font-size` to use rem to avoid inheritance on mail
 - fixed `padding-right` value on `navigation__link` (alignment with compose button)
-- fixed navigation icons/display 
+- fixed navigation icons/display
 - fixed star button color
 - fixed a bug for `caption` tag on Firefox
 - removed responsive adaptation for top navigation (might add it only for Mail or project that do really need it)
@@ -320,7 +320,7 @@
 - fixed password revealer
 - fixed active state for error/warning button aliases
 - update `disabled` state for buttons
-- added `max-width` to modals and fixed !*%*!!$* safari mobile bugs 
+- added `max-width` to modals and fixed !*%*!!$* safari mobile bugs
 
 
 # [1.7.2] - 2019-08-15
@@ -361,8 +361,8 @@
 
 ## New
 
-- added `dashed` and `dashed-container` containers 
-- added `language`, `timezone1`, `timezone2`, `linux`, `windows`, `alias`, `calendar`, `cc`, `check-circle`, `key`, `user-storage` icons 
+- added `dashed` and `dashed-container` containers
+- added `language`, `timezone1`, `timezone2`, `linux`, `windows`, `alias`, `calendar`, `cc`, `check-circle`, `key`, `user-storage` icons
 - added bank icon images (discover/jcb to clean up)
 - added `pm-button--noborder` modifier
 - add plan colors/classes
@@ -370,11 +370,11 @@
 - add class `mw100` on `navigation` element (fixes ellipsis bug in some cases)
 - fixed “button” active state when applied to `div` and triggered by dropdowns inside
 - updated logo
-- added react dedicated styles (and notes/documentation about them) 
+- added react dedicated styles (and notes/documentation about them)
 - added `lh-standard` class (standard `line-height`)
 - added `$list-max-width-em` feature (needed for composer)
 - added flags files in `assets/img/shared/flags`
-- added `pv-indicator` css file (and notes/documentation about `pv-styles`) 
+- added `pv-indicator` css file (and notes/documentation about `pv-styles`)
 - added `.underline-hover` helper
 
 ## Updated/fixes
@@ -427,7 +427,7 @@
 
 # [1.6.18] - 2019-06-27
 
-## New 
+## New
 
 - added `dropDown-content--wide` modifier (super large drop down, for advanced search)
 - added `break` helper
@@ -440,7 +440,7 @@
 
 # [1.6.17] - 2019-06-25
 
-## New 
+## New
 
 - added `rotateZ-90` and `rotateZ-270` helpers
 - added Sass variables for `max-width` in percentages
@@ -450,7 +450,7 @@
 
 # [1.6.16] - 2019-06-19
 
-## New 
+## New
 
 - added `progress` styles for exporting contacts
 - added `fill-currentColor` class for SVG
@@ -465,7 +465,7 @@
 
 # [1.6.15] - 2019-06-07
 
-## New 
+## New
 
 - added `border-bottom--dashed` modifier
 - added helper `underline`
@@ -491,7 +491,7 @@
 
 # [1.6.13] - 2019-06-04
 
-## New 
+## New
 
 Logout dropdown
 
@@ -585,12 +585,12 @@ Logout dropdown
 
 - fixed bug on button group with 2 buttons `last/first-of-type`
 - revamped drop down code (removed class, simplified, choosed classname more generic)
-- also moved button classes to drop down and generalised `focus-within` 
+- also moved button classes to drop down and generalised `focus-within`
 - added group button example with colors
 - fixed color management for caret
 - updated leftArrow/rightArrow to modifier classes
 
-Bonuses: 
+Bonuses:
 - added modifier `wizard-container--noTextDisplayed` for wizard (hides the current step)
 - fixed button--link modifier (background transparent
 - documentation for drop down in button groups
@@ -602,7 +602,7 @@ Bonuses:
 
 - wizard component
 - add `shadow-container` class
-- updated/standardized animations and classnames 
+- updated/standardized animations and classnames
   - update notifications/modals after discussion with @mmso
   - documentated in namespacing classes
   - added mention of modifier convention
@@ -1017,7 +1017,7 @@ Bonuses:
 
 ## New
 
-- added `.italic` class 
+- added `.italic` class
 - added SVG sprite for CSS use only (with doc)
 - added `.bold` alias for `.strong`
 - added animation on `radio`/`checkbox`
@@ -1033,7 +1033,7 @@ Bonuses:
 
 - added `input type="radio/checkbox/search"` in forms
 - added SVG sprite for CSS use only
-- added `.strong` and reset for `b` and `strong` 
+- added `.strong` and reset for `b` and `strong`
 
 ## Updated/fixes
 
