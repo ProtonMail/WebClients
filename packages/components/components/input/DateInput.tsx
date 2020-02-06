@@ -29,6 +29,7 @@ interface Props {
     weekStartsOn?: number;
     value?: Date;
     defaultDate?: Date;
+    placeholder?: string;
     min?: Date;
     max?: Date;
     onChange: (value: Date | undefined) => void;
@@ -39,6 +40,7 @@ interface Props {
 const DateInput = ({
     value,
     defaultDate,
+    placeholder,
     onChange,
     onFocus,
     onBlur,
@@ -136,8 +138,8 @@ const DateInput = ({
     };
 
     const placeholderInLocale = useMemo(() => {
-        return dateLocale?.formatLong?.date({ width: 'medium' }) || '';
-    }, [dateLocale]);
+        return toFormatted(actualDefaultDate, dateLocale);
+    }, [dateLocale, defaultDate]);
 
     return (
         <>
@@ -149,7 +151,7 @@ const DateInput = ({
                 onKeyDown={handleKeyDown}
                 value={showTemporary ? temporaryInput : currentInput}
                 onChange={handleInputChange}
-                placeholder={placeholderInLocale}
+                placeholder={placeholder !== undefined ? placeholder : placeholderInLocale}
                 {...rest}
             />
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} autoClose={false}>
