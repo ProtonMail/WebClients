@@ -14,16 +14,16 @@ import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
 import { queryFileRevision, queryCreateFile, queryFile, queryUpdateFileRevision } from '../api/files';
 import {
-    decryptUnsigned,
     generateNodeKeys,
     generateContentKeys,
     encryptUnsigned,
     generateLookupHash,
-    getStreamMessage
+    getStreamMessage,
+    generateContentHash
 } from 'proton-shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { FOLDER_PAGE_SIZE } from '../constants';
-import { useUploadProvider, Upload } from '../components/uploads/UploadProvider';
+import { useUploadProvider, Upload, BlockMeta } from '../components/uploads/UploadProvider';
 import { TransferState, TransferMeta } from '../interfaces/transfer';
 import { useDownloadProvider } from '../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../components/downloads/download';
@@ -31,6 +31,9 @@ import { streamToBuffer } from '../utils/stream';
 import { DriveLink } from '../interfaces/link';
 import { lookup } from 'mime-types';
 import { noop } from 'proton-shared/lib/helpers/function';
+import useDriveCrypto from './useDriveCrypto';
+import { binaryStringToArray } from 'proton-shared/lib/helpers/string';
+import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 
 const adjustFileName = (
     file: File,
@@ -55,6 +58,7 @@ export interface UploadFileMeta {
 function useFiles(shareId: string) {
     const api = useApi();
     const cache = useCache();
+    const { getPrimaryAddressKey, sign, getVerificationKeys } = useDriveCrypto();
     const { getFolderMeta, getFolderContents, decryptLink, clearFolderContentsCache } = useShare(shareId);
     const { addToDownloadQueue } = useDownloadProvider();
     const { startUpload, uploads } = useUploadProvider();
@@ -64,9 +68,12 @@ function useFiles(shareId: string) {
             getPromiseValue(cache, `drive/shares/${shareId}/file/${linkId}`, async () => {
                 const { File }: DriveFileResult = await api(queryFile(shareId, linkId));
                 const { privateKey: parentKey } = await getFolderMeta(File.ParentLinkID);
-                const decryptedFilePassphrase = await decryptUnsigned({
-                    armoredMessage: File.Passphrase,
-                    privateKey: parentKey
+                const { publicKeys } = await getVerificationKeys(File.SignatureAddressID);
+                const decryptedFilePassphrase = await decryptPassphrase({
+                    armoredPassphrase: File.Passphrase,
+                    armoredSignature: File.PassphraseSignature,
+                    privateKeys: [parentKey],
+                    publicKeys
                 });
                 const privateKey = await decryptPrivateKey(File.Key, decryptedFilePassphrase);
                 const blockKeys = deserializeUint8Array(File.ContentKeyPacket);
@@ -88,10 +95,38 @@ function useFiles(shareId: string) {
         [shareId]
     );
 
+    const generateRootHash = async (PreviousRootHash: string | null, blockMeta: BlockMeta[]) => {
+        const BlockHashes = blockMeta.map(({ Index, Hash }) => ({
+            Index,
+            Hash
+        }));
+        const { BlockHash: RootHash } = await generateContentHash(
+            binaryStringToArray(
+                JSON.stringify({
+                    PreviousRootHash,
+                    BlockHashes
+                })
+            )
+        );
+
+        const {
+            signature: RootHashSignature,
+            address: { ID: AuthorAddressID }
+        } = await sign(RootHash);
+        return { RootHash, RootHashSignature, AuthorAddressID };
+    };
+
     const uploadDriveFile = useCallback(
         async (ParentLinkID: string, file: File) => {
             const { privateKey: parentKey } = await getFolderMeta(ParentLinkID);
-            const { NodeKey, privateKey, NodePassphrase, rawPassphrase } = await generateNodeKeys(parentKey);
+            const { privateKey: addressKey, address } = await getPrimaryAddressKey();
+            const {
+                NodeKey,
+                privateKey,
+                NodePassphrase,
+                rawPassphrase,
+                signature: NodePassphraseSignature
+            } = await generateNodeKeys(parentKey, addressKey);
             const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
 
             if (!ContentKeyPacket) {
@@ -133,6 +168,8 @@ function useFiles(shareId: string) {
                                 ParentLinkID,
                                 NodeKey,
                                 NodePassphrase,
+                                NodePassphraseSignature,
+                                SignatureAddressID: address.ID,
                                 ContentKeyPacket
                             })
                         );
@@ -146,11 +183,16 @@ function useFiles(shareId: string) {
                         });
                         return res.message.packets.write() as Uint8Array;
                     },
-                    finalize: async ({ ID, RevisionID }, BlockList) => {
+                    finalize: async ({ ID, RevisionID }, blockMeta) => {
+                        const rootHash = await generateRootHash(null, blockMeta);
                         await api(
                             queryUpdateFileRevision(shareId, ID, RevisionID, {
                                 State: FileRevisionState.Active,
-                                BlockList
+                                BlockList: blockMeta.map(({ Index, Token }) => ({
+                                    Index,
+                                    Token
+                                })),
+                                ...rootHash
                             })
                         );
 
@@ -164,6 +206,7 @@ function useFiles(shareId: string) {
     );
 
     const decryptBlockStream = (linkId: string): StreamTransformer => async (stream) => {
+        // TODO: implement root hash validation when file updates are implemented
         const { privateKey, sessionKeys } = await getFileMeta(linkId);
         const publicKeys = privateKey.toPublic();
         const { data } = await decryptMessage({

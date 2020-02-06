@@ -1,18 +1,22 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
-import { generateUID, useApi, useGetAddresses, useGetAddressKeys, useNotifications } from 'react-components';
-import { generateContentHash, sign } from 'proton-shared/lib/keys/driveKeys';
-import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
-import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
-import { c } from 'ttag';
+import { generateUID, useApi } from 'react-components';
+import { generateContentHash } from 'proton-shared/lib/keys/driveKeys';
 import ChunkFileReader from './ChunkFileReader';
 import { FileUploadInfo, RequestUploadResult } from '../../interfaces/file';
 import { queryRequestUpload } from '../../api/files';
 import { upload } from './upload';
 import { TransferState, TransferProgresses } from '../../interfaces/transfer';
+import useDriveCrypto from '../../hooks/useDriveCrypto';
+
+export interface BlockMeta {
+    Index: number;
+    Hash: string;
+    Token: string;
+}
 
 type FileInitializer = () => Promise<FileUploadInfo>;
 type BlockTransformer = (buffer: Uint8Array) => Promise<Uint8Array>;
-type UploadFinalizer = (info: FileUploadInfo, blocklist: { Index: number; Token: string }[]) => Promise<void>;
+type UploadFinalizer = (info: FileUploadInfo, blocklist: BlockMeta[]) => Promise<void>;
 
 // TODO: Refactor like downloads
 interface UploadInfo {
@@ -61,9 +65,7 @@ interface UserProviderProps {
 
 export const UploadProvider = ({ children }: UserProviderProps) => {
     const api = useApi();
-    const getAddressKeys = useGetAddressKeys();
-    const getAddresses = useGetAddresses();
-    const { createNotification } = useNotifications();
+    const { getPrimaryAddressKey, sign } = useDriveCrypto();
     const [uploads, setUploads] = useState<Upload[]>([]);
     const progresses = useRef<TransferProgresses>({});
     const uploadConfig = useRef<UploadConfig>({});
@@ -76,30 +78,20 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         updateUploadState(id, TransferState.Progress);
 
         const info = await uploadConfig.current[id].initialize();
-        const addresses = await getAddresses();
-        const [activeAddress] = getActiveAddresses(addresses);
+        const keyInfo = await getPrimaryAddressKey();
 
-        if (!activeAddress) {
-            createNotification({ text: c('Error').t`No valid address found`, type: 'error' });
-            throw new Error('User has no active address');
-        }
-
-        const { privateKey } = getPrimaryKey(await getAddressKeys(activeAddress.ID)) || {};
-        if (!privateKey) {
-            // Should never happen
-            throw new Error('Primary private key is not decrypted');
-        }
-
-        const uploadChunks = async (chunks: Uint8Array[], startIndex: number) => {
+        const uploadChunks = async (chunks: Uint8Array[], startIndex: number): Promise<BlockMeta[]> => {
             const encryptedChunks = await Promise.all(chunks.map((chunk) => uploadConfig.current[id].transform(chunk)));
-            const BlockList = await Promise.all(encryptedChunks.map((chunk) => generateContentHash(chunk)));
-            const Signature = await sign(JSON.stringify(BlockList), privateKey);
+            const BlockList = await (await Promise.all(encryptedChunks.map((chunk) => generateContentHash(chunk)))).map(
+                ({ BlockHash }) => BlockHash
+            );
+            const { signature, address } = await sign(JSON.stringify(BlockList), keyInfo);
 
             const { UploadLinks }: RequestUploadResult = await api(
                 queryRequestUpload({
-                    AddressID: activeAddress.ID,
                     BlockList,
-                    Signature
+                    AddressID: address.ID,
+                    Signature: signature
                 })
             );
 
@@ -111,17 +103,18 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
             return UploadLinks.map(({ Token }, i) => ({
                 Index: startIndex + i,
+                Hash: BlockList[i],
                 Token
             }));
         };
 
         try {
             const reader = new ChunkFileReader(blob, CHUNK_SIZE);
-            const blockTokens: { Index: number; Token: string }[] = [];
+            const blockTokens: BlockMeta[] = [];
             let startIndex = 1;
 
             while (!reader.isEOF()) {
-                const chunks = [];
+                const chunks: Uint8Array[] = [];
 
                 while (!reader.isEOF() && chunks.length !== MAX_CHUNKS_READ) {
                     chunks.push(await reader.readNextChunk());

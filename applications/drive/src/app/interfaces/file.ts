@@ -9,6 +9,9 @@ export interface ActiveFileRevision {
     Created: number;
     Size: number;
     Hash: string;
+    RootHash: string;
+    RootHashSignature: string;
+    AuthorAddressID: string;
     State: FileRevisionState;
 }
 
@@ -17,19 +20,27 @@ export interface CreateDriveFile {
     Hash: string;
     ParentLinkID: string;
     NodePassphrase: string;
+    NodePassphraseSignature: string;
+    SignatureAddressID: string;
     NodeKey: string;
     MimeType: string;
     ContentKeyPacket: string;
 }
 
+export interface RevisionManifest {
+    PreviousRootHash: string;
+    BlockHashes: {
+        Hash: string;
+        Index: number;
+    }[];
+}
+
 export interface UpdateFileRevision {
     State: FileRevisionState;
     BlockList: { Index: number; Token: string }[];
-}
-
-export interface DriveBlock {
-    BlockHash: string;
-    HashType: string;
+    RootHash: string;
+    RootHashSignature: string;
+    AuthorAddressID: string;
 }
 
 export interface DriveFile {
@@ -40,6 +51,8 @@ export interface DriveFile {
     MimeType: string;
     Key: string;
     Passphrase: string;
+    PassphraseSignature: string;
+    SignatureAddressID: string;
     HashKey: string;
     ContentKeyPacket: string;
     Name: string;
@@ -77,6 +90,9 @@ export interface DriveFileRevision {
     Size: number;
     Hash: string;
     State: number;
+    RootHash: string;
+    RootHashSignature: string;
+    AuthorAddressID: string;
     Blocks: DriveFileBlock[];
 }
 

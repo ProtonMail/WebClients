@@ -1,4 +1,4 @@
-import { CreateDriveFile, DriveBlock, UpdateFileRevision } from '../interfaces/file';
+import { CreateDriveFile, UpdateFileRevision } from '../interfaces/file';
 
 export const queryFile = (shareId: string, linkId: string) => {
     return {
@@ -22,7 +22,7 @@ export const queryFileRevision = (shareId: string, linkId: string, revisionId: n
     };
 };
 
-export const queryRequestUpload = (data: { BlockList: DriveBlock[]; AddressID: string; Signature: string }) => {
+export const queryRequestUpload = (data: { BlockList: string[]; AddressID: string; Signature: string }) => {
     return {
         method: 'post',
         url: 'drive/blocks',

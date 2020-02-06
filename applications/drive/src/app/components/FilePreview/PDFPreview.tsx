@@ -19,8 +19,13 @@ const PDFPreview = ({ filename, contents }: Props) => {
     return (
         <>
             {url && (
-                <object data={url} className="w100 flex-item-fluid" type="application/pdf" title={filename}>
-                    <embed src={url} type="application/pdf" />
+                <object
+                    data={url}
+                    className="w100 flex flex-item-fluid flex-justify-center flex-items-center"
+                    type="application/pdf"
+                    title={filename}
+                >
+                    <embed src={url} className="flex" type="application/pdf" />
                 </object>
             )}
         </>

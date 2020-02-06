@@ -17,5 +17,6 @@ export interface ShareBootstrap {
     PermissionMask: 0;
     Key: string;
     Passphrase: string;
+    PassphraseSignature: string;
     AddressID: string;
 }
