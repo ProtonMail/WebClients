@@ -5,19 +5,69 @@
 $treeview-border-width: 1px !default;
 
 
+
 .treeview-item {
-    
+
     border-bottom : $treeview-border-width solid var(--bordercolor-input, $pm-global-border);
-    margin-bottom: -$treeview-border-width;
+	margin-bottom: -$treeview-border-width;
+
+	$arrow-size: .7rem;
+
+	&--moveTop,
+	&--moveBottom,
+	&--moveInside {
+		&::before {
+			content: '';
+			position: absolute;
+			left: -1.5rem;
+			height: 0;
+			width: 0;
+			border: $arrow-size solid transparent;
+			border-left-color: $pm-primary;
+		}
+	}
+	&--moveInside#{&}--selfGrabbed { // no primary color on the self grabbed element
+		&::before {
+			border-left-color: $pm-global-muted;
+		}
+	}
+	&--moveTop::before {
+		top: -$arrow-size;
+	}
+	&--moveBottom::before {
+		bottom: -$arrow-size;
+	}
+
+	&--moveTop::after,
+	&--moveBottom::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: $pm-primary;
+	}
+	&--moveTop::after {
+		top: 0;
+	}
+	&--moveBottom::after {
+		bottom: -1px;
+	}
+	&--moveInside {
+		background-color: var(--bgcolor-highlight, $pm-global-light);
+	}
 
     .treeview-item .treeview-item {
         padding-left: 3rem;
-    }
+	}
 
 }
 
 
-@include respond-to($breakpoint-medium) { 
+
+
+
+@include respond-to($breakpoint-medium) {
     .treeview-toggle,
     .treeview-actions {
        width: em(100);
