@@ -231,3 +231,22 @@ Proton Technologies A.G. (Switzerland)
 Email: contact@protonmail.com
 
 License: https://github.com/ProtonMail/WebClient/blob/public/LICENSE
+
+## :rocket: Create a new version (before deploy)
+
+This command will:
+
+- Manage dependencies (detect and update the lock)
+- Take care of active npm links
+- run npm version
+
+```sh
+$ npx proton-version <patch|minor|major>
+```
+> Default is patch
+
+If you want to force the update of all dependencies add the flag `--all`;
+
+By default it provides a prompt and ask you what you want to update etc.
+
+> If you have an active `npm link` it will remove it from your node_modules.
