@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { Icon, Table, TableHeader, TableBody, TableRow, DropdownActions } from 'react-components';
 
-const CalendarsTable = ({ calendars, onEdit, onDelete, loading }) => {
+const CalendarsTable = ({ calendars, onEdit, onDelete, loadingMap }) => {
     return (
         <Table>
             <TableHeader cells={[c('Header').t`Name`, c('Header').t`Actions`]} />
@@ -19,7 +19,6 @@ const CalendarsTable = ({ calendars, onEdit, onDelete, loading }) => {
                             onClick: () => onDelete(calendar)
                         }
                     ];
-
                     return (
                         <TableRow
                             key={ID}
@@ -30,7 +29,12 @@ const CalendarsTable = ({ calendars, onEdit, onDelete, loading }) => {
                                         {Name}
                                     </span>
                                 </div>,
-                                <DropdownActions className="pm-button--small" key={1} list={list} loading={loading} />
+                                <DropdownActions
+                                    className="pm-button--small"
+                                    key={1}
+                                    list={list}
+                                    loading={!!loadingMap[ID]}
+                                />
                             ]}
                         />
                     );

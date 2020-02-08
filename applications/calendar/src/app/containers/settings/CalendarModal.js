@@ -30,6 +30,8 @@ import {
 } from '../../helpers/notifications';
 import { setupCalendarKeys } from '../setup/resetHelper';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
+import { LABEL_COLORS } from 'proton-shared/lib/constants';
+import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 
 const validate = ({ name }) => {
     const errors = {};
@@ -41,7 +43,7 @@ const validate = ({ name }) => {
     return errors;
 };
 
-const CalendarModal = ({ calendar, ...rest }) => {
+const CalendarModal = ({ calendar, defaultColor = false, ...rest }) => {
     const api = useApi();
     const { call } = useEventManager();
     const getAddresses = useGetAddresses();
@@ -59,7 +61,7 @@ const CalendarModal = ({ calendar, ...rest }) => {
     const [model, setModel] = useState(() => ({
         name: '',
         description: '',
-        color: DEFAULT_CALENDAR.color,
+        color: defaultColor ? DEFAULT_CALENDAR.color : LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
         display: true,
         addressOptions: [],
         duration: DEFAULT_EVENT_DURATION,
@@ -263,6 +265,7 @@ const CalendarModal = ({ calendar, ...rest }) => {
 
 CalendarModal.propTypes = {
     calendar: PropTypes.object,
+    defaultColor: PropTypes.bool,
     members: PropTypes.arrayOf(PropTypes.object)
 };
 

@@ -105,6 +105,8 @@ export const FREQUENCY_INTERVALS_MAX = {
 
 export const FREQUENCY_COUNT_MAX = 50;
 
+export const MAX_CALENDARS_PER_USER = 10;
+
 export const DAILY_TYPE = {
     ALL_DAYS: 0
 };

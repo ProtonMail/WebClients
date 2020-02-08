@@ -44,7 +44,7 @@ const WelcomeModal = (props) => {
             return;
         }
         props.onClose();
-        createModal(<CalendarModal calendar={calendarRef.current} />);
+        createModal(<CalendarModal calendar={calendarRef.current} defaultColor={true} />);
     };
 
     const setup = async () => {

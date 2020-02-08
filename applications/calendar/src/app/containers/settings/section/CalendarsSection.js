@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
     useApi,
     useEventManager,
     useNotifications,
-    useLoading,
     SubTitle,
     PrimaryButton,
     ErrorButton,
     useModals,
-    Tooltip,
     ConfirmModal,
     Alert
 } from 'react-components';
@@ -17,13 +16,14 @@ import { c } from 'ttag';
 import CalendarsTable from './CalendarsTable';
 import CalendarModal from '../CalendarModal';
 import { removeCalendar } from 'proton-shared/lib/api/calendars';
+import { MAX_CALENDARS_PER_USER } from '../../../constants';
 
 const CalendarsSection = ({ calendars }) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
-    const [loading, withLoading] = useLoading();
+    const [loadingMap, setLoadingMap] = useState({});
 
     const handleCreate = () => {
         createModal(<CalendarModal />);
@@ -46,33 +46,33 @@ const CalendarsSection = ({ calendars }) => {
                 </ConfirmModal>
             );
         });
-        await api(removeCalendar(ID));
-        await call();
-        createNotification({ text: c('Success').t`Calendar removed` });
+        try {
+            setLoadingMap((old) => ({ ...old, [ID]: true }));
+            await api(removeCalendar(ID));
+            await call();
+            createNotification({ text: c('Success').t`Calendar removed` });
+        } finally {
+            setLoadingMap((old) => ({ ...old, [ID]: false }));
+        }
     };
 
-    const canAddCalendar = calendars.length === 0;
+    const canAddCalendar = calendars.length < MAX_CALENDARS_PER_USER;
 
     return (
         <>
             <SubTitle>{c('Title').t`Calendars`}</SubTitle>
             <div className="mb1">
-                {canAddCalendar ? (
-                    <PrimaryButton onClick={handleCreate}>{c('Action').t`Add calendar`}</PrimaryButton>
-                ) : (
-                    <Tooltip title={c('Info').t`Feature coming soon`}>
-                        <PrimaryButton disabled={true}>{c('Action').t`Add calendar`}</PrimaryButton>
-                    </Tooltip>
-                )}
+                <PrimaryButton disabled={!canAddCalendar} onClick={handleCreate}>
+                    {c('Action').t`Add calendar`}
+                </PrimaryButton>
             </div>
-            <CalendarsTable
-                calendars={calendars}
-                onDelete={(calendar) => withLoading(handleDelete(calendar))}
-                onEdit={handleEdit}
-                loading={loading}
-            />
+            <CalendarsTable calendars={calendars} onDelete={handleDelete} onEdit={handleEdit} loadingMap={loadingMap} />
         </>
     );
+};
+
+CalendarsSection.propTypes = {
+    calendars: PropTypes.array
 };
 
 export default CalendarsSection;
