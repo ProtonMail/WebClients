@@ -54,7 +54,11 @@ h6,
 .biggest {
   @include flow-other($size-biggest);
 }
- 
+
+.size-40 {
+  font-size: 4rem;
+}
+
 
 .lh100 { line-height: 1; }
 
