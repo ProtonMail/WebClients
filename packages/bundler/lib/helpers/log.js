@@ -6,13 +6,15 @@ module.exports = (scope) => {
 
     const warn = (msg) => {
         console.log();
-        console.log(`[${scope}] ${chalk.magenta('⚠')} ${chalk.magenta(msg)}.`);
+        console.log(chalk.bgMagenta(chalk.white('[warning]')), msg);
         console.log();
     };
 
     const success = (msg, { time, space = false } = {}) => {
-        const txt = chalk.green(chalk.bold('✔ '));
-        const message = [`[${scope}] `, txt, msg, time && ` (${time})`].filter(Boolean).join('');
+        const txt = chalk.bold(' ✔ ');
+        const message = [chalk.bgGreen(chalk.black(`[${scope}]`)), txt, msg, time && ` (${time})`]
+            .filter(Boolean)
+            .join('');
         space && console.log();
         console.log(message);
     };
@@ -34,9 +36,27 @@ module.exports = (scope) => {
     };
 
     const error = (e) => {
-        console.log(`[${scope}] ${(chalk.red(' ⚠'), chalk.red(e.message))}`);
-        console.log();
-        console.error(e);
+        const { outputBuild = {} } = e.context || {};
+        const hasBuildError = outputBuild.stdout || outputBuild.stderr;
+        // Better log for webpack errors
+        if (hasBuildError) {
+            console.log(chalk.bgRed(chalk.bold(chalk.white('[error]'))), 'webpack build error');
+            console.log(outputBuild.stdout);
+            console.log(outputBuild.stderr);
+        }
+
+        console.log(chalk.bgRed(chalk.bold(chalk.white('[error]'))), e.message);
+
+        // Better log for CLI commands, better than a JSON version of stdX
+        if (e.stdout || e.stderr) {
+            console.log();
+            console.log('Stdout + stderr');
+            console.log(e.stdout);
+            console.error(e.stderr);
+            process.exit(1);
+        }
+
+        !hasBuildError && console.error(e);
         process.exit(1);
     };
 

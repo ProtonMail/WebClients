@@ -155,13 +155,25 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         },
         {
             title: 'Build the application',
-            task() {
+            async task(ctx = {}) {
                 const args = process.argv.slice(2);
                 if (appMode === 'standalone') {
-                    return execa('npm', ['run', 'build:standalone', '--', ...args]);
+                    const output = await bash('npm', ['run', 'build:standalone', '--', ...args]);
+                    ctx.outputBuild = output;
+                    return true;
                 }
 
-                return execa('npm', ['run', 'build', '--', ...args]);
+                const output = await bash('npm', ['run', 'build', '--', ...args]);
+                ctx.outputBuild = output;
+                return true;
+            }
+        },
+        {
+            title: 'Check the build output content',
+            // Extract stdout from the output as webpack can throw error and still use stdout + exit code 0
+            async task(ctx = {}) {
+                await script('validateBuild.sh');
+                delete ctx.outputBuild; // clean as we won't need it anymore
             }
         },
         ...hookPostTaskBuild,
@@ -283,8 +295,8 @@ async function main() {
     const total = now.diff(start, 'seconds');
     const time = total > 60 ? moment.utc(total * 1000).format('mm:ss') : `${total}s`;
 
-    !isCI && success('App deployment done', { time });
-    isCI && success(`Build CI app to the directory: ${chalk.bold('dist')}`, { time });
+    !isCI && success('App deployment done', { time, space: true });
+    isCI && success(`Build CI app to the directory: ${chalk.bold('dist')}`, { time, space: true });
 
     if (!isCI && !argv.silentMessage) {
         return askDeploy(branch, PKG, argv);
