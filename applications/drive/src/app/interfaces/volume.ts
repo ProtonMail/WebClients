@@ -11,10 +11,12 @@ export interface CreateDriveVolume {
     VolumeMaxSpace: 1000000;
 }
 
-export interface CreatedDriveVolume {
-    ID: string;
-    Share: {
+export interface CreatedDriveVolumeResult {
+    Volume: {
         ID: string;
-        LinkID: string;
+        Share: {
+            ID: string;
+            LinkID: string;
+        };
     };
 }

@@ -1,11 +1,13 @@
-export interface UserShare {
-    ShareID: string;
-    Type: number;
-    Mask: number;
-    LinkID: string;
-    VolumeID: string;
-    CreatorID: string;
-    Flags: number;
+export interface UserShareResult {
+    Shares: {
+        ShareID: string;
+        Type: number;
+        Mask: number;
+        LinkID: string;
+        VolumeID: string;
+        CreatorID: string;
+        Flags: number;
+    }[];
 }
 
 export interface ShareBootstrap {
