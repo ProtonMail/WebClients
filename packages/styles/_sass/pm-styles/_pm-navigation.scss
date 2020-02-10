@@ -4,24 +4,26 @@
 $navigation-fillcolor-icons: #6D7178 !default;
 $padding-left-link: 2rem !default;
 
-.navigation__link {
+.navigation__link,
+.navigation__link--groupHeader {
   padding: 1.1rem 1em 1.1rem $padding-left-link;
   line-height: 1.3;
-  color:  var(--color-nav-link, $white);
+  color: var(--color-nav-link, $white);
   text-decoration: none;
   display: block;
 }
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .navigation__link {
+    .navigation__link,
+    .navigation__link--groupHeader {
       padding: .75rem $padding-left-link .75rem 1rem;
     }
   }
 }
 
 .navigation__icon {
-  fill:  var(--fillcolor-icons, $navigation-fillcolor-icons);
+  fill: var(--fillcolor-icons, $navigation-fillcolor-icons);
 }
 
 .navigation__refresh {
@@ -31,10 +33,10 @@ $padding-left-link: 2rem !default;
 .navigation__link:focus,
 .navigation__link:hover {
   background: rgba(255,255,255,.05);
-  color:  var(--color-nav-link, $pm-global-light);
+  color: var(--color-nav-link, $pm-global-light);
   text-decoration: none;
   .navigation__icon:not(.navigation__icon--expand) {
-    fill:  var(--fillcolor-icons, $white);
+    fill: var(--fillcolor-icons, $white);
   }
 }
 [aria-current="page"].navigation__link {
@@ -52,6 +54,36 @@ $padding-left-link: 2rem !default;
   }
 
 }
+
+// labels/folders sections
+.navigation__link--groupHeader-link {
+  color: var(--color-nav-link, $white);
+  .navigation__icon--expand {
+    fill: var(--fillcolor-icons, $navigation-fillcolor-icons);
+  }
+  //&:focus, // gimme focus-visible !!!!
+  &:hover {
+    color: var(--color-nav-link, $pm-global-light);
+    .navigation__icon {
+      fill: var(--fillcolor-icons, $white);
+    }
+  }
+}
+
+/* expand hover only on button + groupHeader */
+.navigation__link--groupHeader-link {
+  color: var(--fillcolor-icons, $navigation-fillcolor-icons);
+}
+.navigation__link--expand:focus,
+.navigation__link--expand:hover,
+//.navigation__link--groupHeader-link:focus,
+.navigation__link--groupHeader-link:hover {
+  .navigation__icon--expand {
+    fill: var(--fillcolor-icons, $white);
+  }
+}
+
+/* items counters */
 .navigation__counterItem {
   background: rgba($white, 0.1);
   font-size: 1.1rem;
