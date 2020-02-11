@@ -43,6 +43,13 @@ function getCommit {
 }
 
 function getBranch {
+
+    # Prevent weird branch's name on gitlab or HEAD
+    if [ -n "$CI_COMMIT_REF_NAME" ]; then
+        echo "$CI_COMMIT_REF_NAME";
+        return 0;
+    fi;
+
     if [ -n "$BRANCH" ]; then
         echo "$BRANCH";
         return 0;
@@ -51,12 +58,16 @@ function getBranch {
     git describe --all;
 }
 
+function getRelease {
+    echo "$(getBranch)-$(getVersion)-$(git log -n 1 --format=%h)";
+}
+
 function toJSON {
     local commit=$(getCommit);
     local version=$(getVersion);
     local branch=$(getBranch);
     local buildDate="$(date -u '+%FT%TZ')";
-    local release="$(git describe --long --dirty --all)";
+    local release="$(getRelease)";
 
 cat <<EOT
 {
