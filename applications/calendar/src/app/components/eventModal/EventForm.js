@@ -51,12 +51,7 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
     ) : null;
 
     const calendarRow = model.calendars.length ? (
-        <CalendarSelectRow
-            label={c('Label').t`Calendar`}
-            options={model.calendars}
-            value={model.calendar}
-            onChange={({ id, color }) => setModel({ ...model, calendar: { id, color } })}
-        />
+        <CalendarSelectRow label={c('Label').t`Calendar`} model={model} setModel={setModel} />
     ) : null;
 
     return (
@@ -100,7 +95,14 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                             notifications={model.fullDayNotifications}
                             defaultNotification={model.defaultFullDayNotification}
                             onChange={(notifications) => {
-                                setModel({ ...model, fullDayNotifications: notifications });
+                                setModel({
+                                    ...model,
+                                    fullDayNotifications: notifications,
+                                    hasModifiedNotifications: {
+                                        ...model.hasModifiedNotifications,
+                                        fullDay: true
+                                    }
+                                });
                             }}
                         />
                     ) : (
@@ -108,7 +110,14 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                             notifications={model.partDayNotifications}
                             defaultNotification={model.defaultPartDayNotification}
                             onChange={(notifications) => {
-                                setModel({ ...model, partDayNotifications: notifications });
+                                setModel({
+                                    ...model,
+                                    partDayNotifications: notifications,
+                                    hasModifiedNotifications: {
+                                        ...model.hasModifiedNotifications,
+                                        partDay: true
+                                    }
+                                });
                             }}
                         />
                     )}

@@ -7,10 +7,10 @@ const CalendarSelectRow = ({ label, collapseOnMobile, ...rest }) => {
         <Row collapseOnMobile={collapseOnMobile}>
             <Label htmlFor="event-calendar-select">{label}</Label>
             <div className="flex flex-nowrap flex-item-fluid flex-items-center">
-                <CalendarSelect id="event-calendar-select"{...rest}/>
+                <CalendarSelect id="event-calendar-select" {...rest} />
             </div>
         </Row>
-    )
+    );
 };
 
 export default CalendarSelectRow;

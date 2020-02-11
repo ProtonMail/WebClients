@@ -10,6 +10,7 @@ import {
     DEFAULT_FULL_DAY_NOTIFICATIONS,
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS,
+    getDeviceNotifications,
     notificationsToModel
 } from '../../../helpers/notifications';
 import { propertiesToModel, propertiesToNotificationModel } from './propertiesToModel';
@@ -29,17 +30,15 @@ import {
 
 export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
-    DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS
+    DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
+    hasModifiedNotifications = { partDay: false, fullDay: false }
 }) => {
     return {
         defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
-        partDayNotifications: notificationsToModel(DefaultPartDayNotifications, false).filter(
-            ({ type }) => type === NOTIFICATION_TYPE.DEVICE
-        ),
-        fullDayNotifications: notificationsToModel(DefaultFullDayNotifications, true).filter(
-            ({ type }) => type === NOTIFICATION_TYPE.DEVICE
-        )
+        partDayNotifications: getDeviceNotifications(notificationsToModel(DefaultPartDayNotifications, false)),
+        fullDayNotifications: getDeviceNotifications(notificationsToModel(DefaultFullDayNotifications, true)),
+        hasModifiedNotifications
     };
 };
 
@@ -248,7 +247,7 @@ const hasEditedNotification = (notification, otherNotification) => {
     );
 };
 
-const hasEditedNotifications = (
+export const hasEditedNotifications = (
     { isAllDay, partDayNotifications, fullDayNotifications },
     { partDayNotifications: otherPartDayNotifications, fullDayNotifications: otherFullDayNotifications }
 ) => {

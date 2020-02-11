@@ -54,9 +54,8 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
                     <span className="sr-only">{c('Label').t`Calendar`}</span>
                 </>
             }
-            options={model.calendars}
-            value={model.calendar}
-            onChange={({ id, color }) => setModel({ ...model, calendar: { id, color } })}
+            model={model}
+            setModel={setModel}
             withIcon={true}
         />
     ) : null;

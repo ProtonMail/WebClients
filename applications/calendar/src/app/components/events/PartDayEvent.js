@@ -15,7 +15,7 @@ const PartDayEvent = ({
 }) => {
     const [value, loading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value, tzid);
-    const calendarColor = Calendar.Color;
+    const calendarColor = (tmpData && tmpData.calendar.color) || Calendar.Color;
     const eventStyle = useMemo(() => {
         const background = calendarColor;
         return {

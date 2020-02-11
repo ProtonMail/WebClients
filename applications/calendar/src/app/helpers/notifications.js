@@ -63,3 +63,7 @@ export const DEFAULT_FULL_DAY_NOTIFICATIONS = [
         Trigger: '-PT15H'
     }
 ];
+
+export const getDeviceNotifications = (notifications) => {
+    return notifications.filter(({ type }) => type === NOTIFICATION_TYPE.DEVICE);
+};
