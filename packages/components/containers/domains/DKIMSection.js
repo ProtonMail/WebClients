@@ -100,8 +100,8 @@ const DKIMSection = ({ domain }) => {
                                 ) : null}
                             </div>
                             <div className="flex flex-nowrap flex-items-center">
-                                {getDNSStatusBadge(DNSState)}
-                                {DNSState === DKIM_KEY_STATUS.RETIRED ? null : getKeyStatusBadge(State)}
+                                {State === DKIM_KEY_STATUS.RETIRED ? null : getDNSStatusBadge(DNSState)}
+                                {getKeyStatusBadge(State)}
                             </div>
                         </div>
                         {DNSState === DKIM_KEY_DNS_STATUS.INVALID ? (
