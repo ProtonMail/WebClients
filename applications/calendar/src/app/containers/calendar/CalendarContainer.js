@@ -81,6 +81,11 @@ const getRange = (view, range) => {
     return Math.min(max, 5);
 };
 
+const getDefaultCalendarID = ({ DefaultCalendarID }) => {
+    // DefaultCalendarID is either null or a string
+    return DefaultCalendarID || undefined;
+};
+
 const getWeekStartsOn = ({ WeekStart = 0 } = {}) => {
     // Sunday should be 0, not 7
     return WeekStart % 7;
@@ -148,7 +153,7 @@ const customReducer = (oldState, newState) => {
 };
 
 const CalendarContainer = ({ calendars, history, location }) => {
-    const [calendarSettings, loadingCalendarSettings] = useCalendarUserSettings();
+    const [calendarUserSettings, loadingCalendarUserSettings] = useCalendarUserSettings();
     const [addresses, loadingAddresses] = useAddresses();
     const [disableCreate, setDisableCreate] = useState(false);
     const { isNarrow } = useActiveBreakpoint();
@@ -194,16 +199,16 @@ const CalendarContainer = ({ calendars, history, location }) => {
 
     const [localTzid] = useState(() => getTimezone());
     const [customTzid, setCustomTzid] = useState();
-    const savedTzid = getTzid(calendarSettings, localTzid);
+    const savedTzid = getTzid(calendarUserSettings, localTzid);
     const tzid = customTzid || savedTzid;
 
     useEffect(() => {
-        const hasAutoDetectPrimaryTimezone = getAutoDetectPrimaryTimezone(calendarSettings);
+        const hasAutoDetectPrimaryTimezone = getAutoDetectPrimaryTimezone(calendarUserSettings);
         if (!hasAutoDetectPrimaryTimezone) {
             return;
         }
         const localTzid = getTimezone();
-        const savedTzid = getTzid(calendarSettings, localTzid);
+        const savedTzid = getTzid(calendarUserSettings, localTzid);
         if (savedTzid !== localTzid && canAskTimezoneSuggestion()) {
             saveLastTimezoneSuggestion();
             createModal(<AskUpdateTimezoneModal localTzid={localTzid} />);
@@ -236,15 +241,15 @@ const CalendarContainer = ({ calendars, history, location }) => {
 
     const utcDate = customUtcDate || utcDefaultDate;
 
-    const defaultView = getDefaultView(calendarSettings);
+    const defaultView = getDefaultView(calendarUserSettings);
     const requestedView = customView || defaultView;
     const view = isNarrow ? WEEK : SUPPORTED_VIEWS.includes(requestedView) ? requestedView : WEEK;
 
     const range = isNarrow ? undefined : getRange(view, customRange);
-    const weekStartsOn = getWeekStartsOn(calendarSettings);
-    const displayWeekNumbers = getDisplayWeekNumbers(calendarSettings);
-    const displaySecondaryTimezone = getDisplaySecondaryTimezone(calendarSettings);
-    const secondaryTzid = getSecondaryTimezone(calendarSettings);
+    const weekStartsOn = getWeekStartsOn(calendarUserSettings);
+    const displayWeekNumbers = getDisplayWeekNumbers(calendarUserSettings);
+    const displaySecondaryTimezone = getDisplaySecondaryTimezone(calendarUserSettings);
+    const secondaryTzid = getSecondaryTimezone(calendarUserSettings);
 
     const utcDateRange = useMemo(() => {
         return getDateRange(utcDate, range, view, weekStartsOn);
@@ -349,14 +354,15 @@ const CalendarContainer = ({ calendars, history, location }) => {
     }, []);
     */
 
-    const defaultCalendar = calendars[0];
+    const defaultCalendarID = getDefaultCalendarID(calendarUserSettings);
+    const defaultCalendar = calendars.find(({ ID }) => ID === defaultCalendarID) || calendars[0];
     const [defaultCalendarBootstrap, loadingCalendarBootstrap] = useCalendarBootstrap(
         defaultCalendar ? defaultCalendar.ID : undefined
     );
 
     const [containerRef, setContainerRef] = useState();
 
-    const isLoading = loadingCalendarBootstrap || loadingCalendarSettings || loadingEvents || loadingAddresses;
+    const isLoading = loadingCalendarBootstrap || loadingCalendarUserSettings || loadingEvents || loadingAddresses;
 
     return (
         <CalendarContainerView
