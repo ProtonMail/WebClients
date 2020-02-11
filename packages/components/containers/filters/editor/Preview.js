@@ -91,9 +91,9 @@ function PreviewFilter({ filter }) {
                     return (
                         <Row className={className} key={i.toString()}>
                             {!i ? (
-                                <Label className="Preview-label">{operatorMap.if}</Label>
+                                <Label className="Preview-label pt0 uppercase">{operatorMap.if}</Label>
                             ) : (
-                                <Label className="Preview-label">{operatorMap[Operator.value]}</Label>
+                                <Label className="Preview-label pt0 uppercase">{operatorMap[Operator.value]}</Label>
                             )}
                             <div>
                                 <b>
@@ -103,7 +103,7 @@ function PreviewFilter({ filter }) {
                                 {Values.filter((val) => val !== null).map((val, i) => {
                                     return (
                                         <span
-                                            className="Preview-condition-value"
+                                            className="Preview-condition-value relative bg-global-highlight"
                                             data-operator={operatorMap.any}
                                             key={i.toString()}
                                         >
@@ -125,9 +125,9 @@ function PreviewFilter({ filter }) {
                     return (
                         <Row className={className} key={i.toString()}>
                             {!i ? (
-                                <Label className="Preview-label">{operatorMap.then}</Label>
+                                <Label className="Preview-label pt0 uppercase">{operatorMap.then}</Label>
                             ) : (
-                                <Label className="Preview-label">{operatorMap.all}</Label>
+                                <Label className="Preview-label pt0 uppercase">{operatorMap.all}</Label>
                             )}
                             <div>
                                 <b>{label}</b>: <PreviewActionValue value={value} icon={icon} />
