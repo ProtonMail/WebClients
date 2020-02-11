@@ -11,13 +11,17 @@ const CLASSNAMES = {
     primary: 'badgeLabel-primary'
 };
 
-const wrapTooltip = (children, title) => <Tooltip title={title}>{children}</Tooltip>;
+const wrapTooltip = (children, title, className) => (
+    <Tooltip title={title} className={className}>
+        {children}
+    </Tooltip>
+);
 
 const Badge = ({ children, type = 'default', tooltip, className = 'mr1' }) => {
-    let badge = <span className={classnames([CLASSNAMES[type], className])}>{children}</span>;
+    let badge = <span className={classnames([CLASSNAMES[type], !tooltip && className])}>{children}</span>;
 
     if (tooltip) {
-        badge = wrapTooltip(badge, tooltip);
+        badge = wrapTooltip(badge, tooltip, className);
     }
 
     return badge;
