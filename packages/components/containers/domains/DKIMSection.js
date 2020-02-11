@@ -52,7 +52,13 @@ const getKeyStatusBadge = (status) =>
 
 const getDNSStatusBadge = (status) =>
     ({
-        [DKIM_KEY_DNS_STATUS.NOT_SET]: <Badge className="flex mr1" type="error">{c('Status').t`Warning`}</Badge>,
+        [DKIM_KEY_DNS_STATUS.NOT_SET]: (
+            <Badge
+                className="flex mr1"
+                tooltip={c('Description').t`There is a problem with this record. Please check your DNS.`}
+                type="error"
+            >{c('Status').t`Warning`}</Badge>
+        ),
         [DKIM_KEY_DNS_STATUS.INVALID]: (
             <Badge
                 className="flex mr1"
