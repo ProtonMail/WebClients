@@ -15,9 +15,14 @@
       left: 0;
     }
     .dropDown-logout-text {
-      opacity: 0;
+	  opacity: 0;
     }
   }
+}
+
+.dropDown-logout-text {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .dropDown-logout-displayName {
@@ -28,7 +33,8 @@
 }
 .dropDown-logout-initials {
   border-color: var(--color-nav-link, $pm-global-border);
-  min-width: 2.7em;
+  min-width: 3em;
+  min-height: 3em;
 }
 
 @if $rtl-option == true {
