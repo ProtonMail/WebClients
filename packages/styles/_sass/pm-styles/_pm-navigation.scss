@@ -130,7 +130,7 @@ $padding-left-link: 2rem !default;
   margin-left: .7rem;
 }
 .navigation__sublink {
-  border-left: 2px solid var(--fillcolor-icons, $navigation-fillcolor-icons);
+  border-left: 2px solid $navigation-fillcolor-icons;
   display: block;
   padding: .75rem 1rem .75rem 1.5rem;
   text-decoration: none;
