@@ -121,7 +121,7 @@ $MAX_INDENT : 9 !default;
       }
     }
 
-    
+
     @for $num from 1 through $MAX_INDENT {
       li.ql-indent-#{$num} {
         counter-increment: #{'list-' + $num};
@@ -129,7 +129,7 @@ $MAX_INDENT : 9 !default;
           content: counter(#{'list-' + $num + ', ' + nth($LIST_STYLE, ($num%3)+1))}) ". ";
         }
       }
-      
+
       @if ($num < $MAX_INDENT) {
         li.ql-indent-#{$num} {
           counter-reset: #{resets(($num+1), $MAX_INDENT)};
@@ -241,7 +241,8 @@ $MAX_INDENT : 9 !default;
   }
 }
 .ql-editor.ql-blank::before {
-  color: rgba(0,0,0,0.6);
+  color: $textColor;
+  opacity: .6;
   content: attr(data-placeholder);
   font-style: italic;
   left: 15px;
