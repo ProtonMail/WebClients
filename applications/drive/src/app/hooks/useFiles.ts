@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useApi, useCache } from 'react-components';
+import { useApi, useCache, useEventManager } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import {
     DriveFile,
@@ -62,6 +62,7 @@ function useFiles(shareId: string) {
     const { getFolderMeta, getFolderContents, decryptLink, clearFolderContentsCache } = useShare(shareId);
     const { addToDownloadQueue } = useDownloadProvider();
     const { startUpload, uploads } = useUploadProvider();
+    const { call } = useEventManager();
 
     const getFileMeta = useCallback(
         async (linkId: string): Promise<{ File: DriveFile; privateKey: any; sessionKeys: any }> =>
@@ -198,6 +199,9 @@ function useFiles(shareId: string) {
 
                         // TODO: clear all cached pages after upload, or only last one
                         clearFolderContentsCache(ParentLinkID, 0, FOLDER_PAGE_SIZE);
+
+                        // Update quota metrics
+                        call();
                     }
                 }
             );
