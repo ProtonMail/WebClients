@@ -36,6 +36,11 @@ $checkbox-cell-width: calc(#{em(32)} + 1.6rem);
     padding-left: 25px;
 }
 
+.pd-fb-table-row-name {
+    @extend .ellipsis;
+    white-space: pre;
+}
+
 .pd-fb-table-row:hover,
 .pd-fb-table-row:focus {
     background-color: $pm-global-light;

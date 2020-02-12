@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import internalServerErrorSvg from 'design-system/assets/img/shared/internal-server-error.svg';
 import notFoundErrorSvg from 'design-system/assets/img/shared/page-not-found.svg';
 import noAccessErrorSvg from 'design-system/assets/img/shared/no-access-page.svg';
-import { useDriveResource } from './DriveResourceProvider';
+import { useDriveResource } from './Drive/DriveResourceProvider';
 
 interface ApiError extends Error {
     response: Response;

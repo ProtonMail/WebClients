@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { ToolbarSeparator, Toolbar, ToolbarButton } from 'react-components';
+import { ToolbarSeparator, Toolbar, ToolbarButton, useModals } from 'react-components';
 import { DriveResource } from './DriveResourceProvider';
-import useShare from '../hooks/useShare';
-import { ResourceType } from '../interfaces/folder';
-import { FileBrowserItem } from './FileBrowser/FileBrowser';
-import useFiles from '../hooks/useFiles';
-import FileSaver from '../utils/FileSaver/FileSaver';
+import useShare from '../../hooks/useShare';
+import { ResourceType } from '../../interfaces/folder';
+import useFiles from '../../hooks/useFiles';
+import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from './Drive';
+import { useDriveContent } from './DriveContentProvider';
+import CreateFolderModal from '../CreateFolderModal';
 
 interface Props {
-    selectedItems: FileBrowserItem[];
     resource: DriveResource;
     openResource: (resource: DriveResource) => void;
     parentLinkID?: string;
 }
 
-const DriveToolbar = ({ resource, openResource, selectedItems, parentLinkID }: Props) => {
+const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
+    const { createModal } = useModals();
+    const { fileBrowserControls, addToLoadQueue } = useDriveContent();
     const { getFolderMeta } = useShare(resource.shareId);
     const { startFileTransfer } = useFiles(resource.shareId);
     const [parentID, setParentID] = useState(parentLinkID);
+
+    const { selectedItems } = fileBrowserControls;
 
     useEffect(() => {
         let isCanceled = false;
@@ -50,6 +54,11 @@ const DriveToolbar = ({ resource, openResource, selectedItems, parentLinkID }: P
         });
     };
 
+    const handleCreateFolder = async () => {
+        // Reloads all folder contents after folder creation
+        await createModal(<CreateFolderModal onDone={() => addToLoadQueue(resource)} resource={resource} />);
+    };
+
     return (
         <Toolbar>
             {parentID && (
@@ -59,6 +68,7 @@ const DriveToolbar = ({ resource, openResource, selectedItems, parentLinkID }: P
                 </>
             )}
 
+            <ToolbarButton icon="folder" onClick={handleCreateFolder} />
             {onlyFilesSelected && selectedItems.length > 0 && (
                 <ToolbarButton icon="download" onClick={handleDownloadClick} />
             )}

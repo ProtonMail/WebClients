@@ -1,5 +1,5 @@
 import React, { useRef, ChangeEvent } from 'react';
-import { useDriveResource } from '../DriveResourceProvider';
+import { useDriveResource } from '../Drive/DriveResourceProvider';
 import useFiles from '../../hooks/useFiles';
 import { LargeButton } from 'react-components';
 import { c } from 'ttag';

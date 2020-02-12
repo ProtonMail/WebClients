@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { c } from 'ttag';
-import Drive from '../components/Drive';
+import Drive from '../components/Drive/Drive';
 import useDrive from '../hooks/useDrive';
 import { LinkType, ResourceType } from '../interfaces/folder';
-import Page from '../components/Page';
+import Page, { PageMainArea } from '../components/Page';
 import StickyHeader from '../components/StickyHeader';
-import { DriveResource, useDriveResource } from '../components/DriveResourceProvider';
-import DriveToolbar from '../components/DriveToolbar';
-import useFileBrowser from '../components/FileBrowser/useFileBrowser';
+import { DriveResource, useDriveResource } from '../components/Drive/DriveResourceProvider';
+import DriveContentProvider from '../components/Drive/DriveContentProvider';
+import DriveToolbar from '../components/Drive/DriveToolbar';
 import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
 import { DriveLink } from '../interfaces/link';
 
@@ -60,9 +60,6 @@ function DriveContainer({
     const { resource, setResource } = useDriveResource();
     const [, setError] = useState();
 
-    const [fileBrowserContents, setFileBrowserContents] = useState<FileBrowserItem[]>();
-    const fileBrowserControls = useFileBrowser(fileBrowserContents);
-
     const navigateToResource = (resource: DriveResource, item?: FileBrowserItem) => {
         history.push(`/drive/${resource.shareId}/${toLinkType(resource.type)}/${resource.linkId}`, {
             preloadedLink: item
@@ -97,32 +94,24 @@ function DriveContainer({
     }, [match.params]);
 
     return (
-        <Page
-            title={c('Title').t`My files`}
-            className="flex flex-column"
-            toolbar={
-                resource && (
+        <Page title={c('Title').t`My files`}>
+            <DriveContentProvider>
+                {resource && (
                     <DriveToolbar
-                        selectedItems={fileBrowserControls.selectedItems}
                         resource={resource}
                         openResource={navigateToResource}
                         parentLinkID={location.state?.preloadedLink?.ParentLinkID}
                     />
-                )
-            }
-        >
-            <StickyHeader>
-                <h3 className="mb0">{c('Title').t`My files`}</h3>
-            </StickyHeader>
-            {resource && (
-                <Drive
-                    setContents={setFileBrowserContents}
-                    contents={fileBrowserContents}
-                    fileBrowserControls={fileBrowserControls}
-                    resource={resource}
-                    openResource={navigateToResource}
-                />
-            )}
+                )}
+
+                <PageMainArea hasToolbar className="flex flex-column">
+                    <StickyHeader>
+                        <h3 className="mb0">{c('Title').t`My files`}</h3>
+                    </StickyHeader>
+
+                    {resource && <Drive resource={resource} openResource={navigateToResource} />}
+                </PageMainArea>
+            </DriveContentProvider>
         </Page>
     );
 }

@@ -9,10 +9,10 @@ import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
 import useShare from '../hooks/useShare';
 import { FOLDER_PAGE_SIZE } from '../constants';
 import { DriveLink } from '../interfaces/link';
-import { getMetaForTransfer } from '../components/Drive';
+import { getMetaForTransfer } from '../components/Drive/Drive';
 import { DriveFile } from '../interfaces/file';
 import { DownloadControls } from '../components/downloads/download';
-import { useDriveResource } from '../components/DriveResourceProvider';
+import { useDriveResource } from '../components/Drive/DriveResourceProvider';
 
 interface PreviewHistoryState {
     preloadedLink?: FileBrowserItem | DriveFile | DriveLink;
