@@ -16,11 +16,12 @@ import GeneralPage from './SettingsGeneralPage';
 import CalendarsPage from './SettingsCalendarPage';
 import PropTypes from 'prop-types';
 
-const SettingsContainer = ({ calendars }) => {
-    const [calendarSettings] = useCalendarUserSettings();
+const SettingsContainer = ({ calendars = [] }) => {
     const mainAreaRef = useRef();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
+    const [calendarUserSettings = {}, loading] = useCalendarUserSettings();
+    const defaultCalendar = calendars.find(({ ID }) => ID === calendarUserSettings.DefaultCalendarID) || calendars[0];
 
     useEffect(() => {
         setExpand(false);
@@ -78,13 +79,19 @@ const SettingsContainer = ({ calendars }) => {
                             <Route
                                 path="/calendar/settings/calendars"
                                 render={() => {
-                                    return <CalendarsPage calendars={calendars} />;
+                                    return (
+                                        <CalendarsPage
+                                            calendars={calendars}
+                                            defaultCalendarID={defaultCalendar.ID}
+                                            loading={loading}
+                                        />
+                                    );
                                 }}
                             />
                             <Route
                                 path="/calendar/settings/general"
                                 render={() => {
-                                    return <GeneralPage calendarSettings={calendarSettings} />;
+                                    return <GeneralPage calendarUserSettings={calendarUserSettings} />;
                                 }}
                             />
                             <Redirect to="/calendar/settings/general" />
@@ -97,8 +104,7 @@ const SettingsContainer = ({ calendars }) => {
 };
 
 SettingsContainer.propTypes = {
-    calendars: PropTypes.array,
-    calendarSettings: PropTypes.object
+    calendars: PropTypes.array
 };
 
 export default SettingsContainer;

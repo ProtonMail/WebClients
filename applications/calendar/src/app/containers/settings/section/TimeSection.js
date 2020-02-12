@@ -22,7 +22,7 @@ import { SETTINGS_TIME_FORMAT } from '../../../constants';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
 
 const TimeSection = ({
-    calendarSettings: {
+    calendarUserSettings: {
         AutoDetectPrimaryTimezone,
         DisplaySecondaryTimezone,
         TimeFormat,
@@ -150,7 +150,7 @@ const TimeSection = ({
 };
 
 TimeSection.propTypes = {
-    calendarSettings: PropTypes.object,
+    calendarUserSettings: PropTypes.object,
     keepTimezone: PropTypes.bool
 };
 

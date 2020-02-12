@@ -5,8 +5,8 @@ import TimeSection from './section/TimeSection';
 import LayoutSection from './section/LayoutSection';
 import { Loader } from 'react-components';
 
-const SettingsGeneralPage = ({ calendarSettings }) => {
-    if (!calendarSettings) {
+const SettingsGeneralPage = ({ calendarUserSettings }) => {
+    if (!calendarUserSettings) {
         return (
             <Main className="p2">
                 <Loader />
@@ -16,8 +16,8 @@ const SettingsGeneralPage = ({ calendarSettings }) => {
 
     return (
         <Main className="p2">
-            <TimeSection calendarSettings={calendarSettings} />
-            <LayoutSection calendarSettings={calendarSettings} />
+            <TimeSection calendarUserSettings={calendarUserSettings} />
+            <LayoutSection calendarUserSettings={calendarUserSettings} />
         </Main>
     );
 };

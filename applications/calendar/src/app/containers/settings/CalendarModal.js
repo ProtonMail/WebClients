@@ -14,7 +14,12 @@ import {
     useGetAddressKeys
 } from 'react-components';
 
-import { createCalendar, updateCalendarSettings, updateCalendar } from 'proton-shared/lib/api/calendars';
+import {
+    createCalendar,
+    updateCalendarSettings,
+    updateCalendar,
+    updateCalendarUserSettings
+} from 'proton-shared/lib/api/calendars';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 
 import { DEFAULT_CALENDAR, DEFAULT_EVENT_DURATION, NOTIFICATION_TYPE } from '../../constants';
@@ -43,7 +48,7 @@ const validate = ({ name }) => {
     return errors;
 };
 
-const CalendarModal = ({ calendar, defaultColor = false, ...rest }) => {
+const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultColor = false, ...rest }) => {
     const api = useApi();
     const { call } = useEventManager();
     const getAddresses = useGetAddresses();
@@ -203,7 +208,7 @@ const CalendarModal = ({ calendar, defaultColor = false, ...rest }) => {
             Description: formattedModel.description
         };
 
-        const actualCalendarID = calendar
+        const actualCalendarID = isEdit
             ? await handleUpdateCalendar(calendarPayload)
             : await handleCreateCalendar(formattedModel.addressID, calendarPayload);
 
@@ -221,12 +226,18 @@ const CalendarModal = ({ calendar, defaultColor = false, ...rest }) => {
             DefaultPartDayNotifications: modelToNotifications(partDayNotifications.concat(_emailPartDayNotifications))
         };
 
+        if (!defaultCalendarID && !isEdit) {
+            // When creating a calendar, create a default calendar if there was none.
+            const DefaultCalendarID = calendars.length ? calendars[0].ID : actualCalendarID;
+            await api(updateCalendarUserSettings({ DefaultCalendarID }));
+        }
+
         await api(updateCalendarSettings(actualCalendarID, calendarSettingsData));
         await call();
 
         rest.onClose();
         createNotification({
-            text: calendar ? c('Success').t`Calendar updated` : c('Success').t`Calendar created`
+            text: isEdit ? c('Success').t`Calendar updated` : c('Success').t`Calendar created`
         });
     };
 
@@ -253,7 +264,7 @@ const CalendarModal = ({ calendar, defaultColor = false, ...rest }) => {
         <FormModal
             className="pm-modal--shorterLabels w100"
             title={title}
-            submit={calendar ? c('Action').t`Update` : c('Action').t`Create`}
+            submit={isEdit ? c('Action').t`Update` : c('Action').t`Create`}
             onSubmit={() => withLoadingAction(handleSubmit())}
             loading={loadingSetup || loadingAction}
             {...rest}
@@ -265,6 +276,8 @@ const CalendarModal = ({ calendar, defaultColor = false, ...rest }) => {
 
 CalendarModal.propTypes = {
     calendar: PropTypes.object,
+    calendars: PropTypes.array,
+    defaultCalendarID: PropTypes.oneOfType([PropTypes.string, null]),
     defaultColor: PropTypes.bool,
     members: PropTypes.arrayOf(PropTypes.object)
 };

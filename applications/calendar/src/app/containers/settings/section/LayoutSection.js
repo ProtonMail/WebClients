@@ -18,7 +18,7 @@ import { updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
 import WeekStartSelector from '../WeekStartSelector';
 import ViewPreferenceSelector from '../ViewPreferenceSelector';
 
-const LayoutSection = ({ calendarSettings: { WeekStart, ViewPreference, DisplayWeekNumber } }) => {
+const LayoutSection = ({ calendarUserSettings: { WeekStart, ViewPreference, DisplayWeekNumber } }) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -79,7 +79,7 @@ const LayoutSection = ({ calendarSettings: { WeekStart, ViewPreference, DisplayW
 };
 
 LayoutSection.propTypes = {
-    calendarSettings: PropTypes.shape({
+    calendarUserSettings: PropTypes.shape({
         WeekStart: PropTypes.number,
         ViewPreference: PropTypes.number,
         DisplayWeekNumber: PropTypes.number

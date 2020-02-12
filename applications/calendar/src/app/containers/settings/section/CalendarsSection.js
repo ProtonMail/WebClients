@@ -15,10 +15,10 @@ import { c } from 'ttag';
 
 import CalendarsTable from './CalendarsTable';
 import CalendarModal from '../CalendarModal';
-import { removeCalendar } from 'proton-shared/lib/api/calendars';
+import { updateCalendarUserSettings, removeCalendar } from 'proton-shared/lib/api/calendars';
 import { MAX_CALENDARS_PER_USER } from '../../../constants';
 
-const CalendarsSection = ({ calendars }) => {
+const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -26,11 +26,22 @@ const CalendarsSection = ({ calendars }) => {
     const [loadingMap, setLoadingMap] = useState({});
 
     const handleCreate = () => {
-        createModal(<CalendarModal />);
+        createModal(<CalendarModal calendars={calendars} defaultCalendarID={defaultCalendarID} />);
     };
 
     const handleEdit = (calendar) => {
         createModal(<CalendarModal calendar={calendar} />);
+    };
+
+    const handleSetDefault = async (calendarID) => {
+        try {
+            setLoadingMap((old) => ({ ...old, [calendarID]: true }));
+            await api(updateCalendarUserSettings({ DefaultCalendarID: calendarID }));
+            await call();
+            createNotification({ text: c('Success').t`Default calendar updated` });
+        } finally {
+            setLoadingMap((old) => ({ ...old, [calendarID]: false }));
+        }
     };
 
     const handleDelete = async ({ ID }) => {
@@ -62,17 +73,26 @@ const CalendarsSection = ({ calendars }) => {
         <>
             <SubTitle>{c('Title').t`Calendars`}</SubTitle>
             <div className="mb1">
-                <PrimaryButton disabled={!canAddCalendar} onClick={handleCreate}>
+                <PrimaryButton disabled={!canAddCalendar || disabled} onClick={handleCreate}>
                     {c('Action').t`Add calendar`}
                 </PrimaryButton>
             </div>
-            <CalendarsTable calendars={calendars} onDelete={handleDelete} onEdit={handleEdit} loadingMap={loadingMap} />
+            <CalendarsTable
+                calendars={calendars}
+                defaultCalendarID={defaultCalendarID}
+                onEdit={handleEdit}
+                onSetDefault={handleSetDefault}
+                onDelete={handleDelete}
+                disabled={disabled}
+                loadingMap={loadingMap}
+            />
         </>
     );
 };
 
 CalendarsSection.propTypes = {
-    calendars: PropTypes.array
+    calendars: PropTypes.array,
+    defaultCalendarID: PropTypes.oneOfType([PropTypes.string, null])
 };
 
 export default CalendarsSection;
