@@ -117,6 +117,11 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
             <RoundedIcon
                 className="mr0-5"
                 key="dkim-icon"
+                title={
+                    domainModel.DkimState === DKIM_STATE.DKIM_STATE_GOOD
+                        ? c('Tooltip').t`Your DKIM signing is working.`
+                        : c('Tooltip').t`There is a problem with your DKIM setup. Please check below.`
+                }
                 type={domainModel.DkimState === DKIM_STATE.DKIM_STATE_GOOD ? 'success' : 'error'}
                 name={domainModel.DkimState === DKIM_STATE.DKIM_STATE_GOOD ? 'on' : 'off'}
             />
