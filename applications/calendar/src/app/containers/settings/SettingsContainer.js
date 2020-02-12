@@ -21,7 +21,8 @@ const SettingsContainer = ({ calendars = [] }) => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
     const [calendarUserSettings = {}, loading] = useCalendarUserSettings();
-    const defaultCalendar = calendars.find(({ ID }) => ID === calendarUserSettings.DefaultCalendarID) || calendars[0];
+    const defaultCalendar =
+        calendars.find(({ ID }) => ID === calendarUserSettings.DefaultCalendarID) || calendars[0] || {};
 
     useEffect(() => {
         setExpand(false);

@@ -33,18 +33,21 @@ const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
         createModal(<CalendarModal calendar={calendar} />);
     };
 
-    const handleSetDefault = async (calendarID) => {
+    const handleSetDefault = async (calendarID, silent = false) => {
         try {
             setLoadingMap((old) => ({ ...old, [calendarID]: true }));
             await api(updateCalendarUserSettings({ DefaultCalendarID: calendarID }));
             await call();
-            createNotification({ text: c('Success').t`Default calendar updated` });
+            !silent && createNotification({ text: c('Success').t`Default calendar updated` });
         } finally {
             setLoadingMap((old) => ({ ...old, [calendarID]: false }));
         }
     };
 
     const handleDelete = async ({ ID }) => {
+        const deleteDefaultCalendar = ID === defaultCalendarID;
+        const firstRemainingCalendar = calendars.find(({ ID: calendarID }) => calendarID !== ID);
+
         await new Promise((resolve, reject) => {
             createModal(
                 <ConfirmModal
@@ -54,11 +57,19 @@ const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
                     onConfirm={resolve}
                 >
                     <Alert type="error">{c('Info').t`Are you sure you want to delete this calendar?`}</Alert>
+                    {deleteDefaultCalendar && firstRemainingCalendar && (
+                        <Alert type="warning">{c('Info')
+                            .t`${firstRemainingCalendar.Name} will be set as default calendar.`}</Alert>
+                    )}
                 </ConfirmModal>
             );
         });
         try {
             setLoadingMap((old) => ({ ...old, [ID]: true }));
+            if (deleteDefaultCalendar) {
+                const newDefaultCalendarID = (firstRemainingCalendar && firstRemainingCalendar.ID) || null;
+                await handleSetDefault(newDefaultCalendarID, true);
+            }
             await api(removeCalendar(ID));
             await call();
             createNotification({ text: c('Success').t`Calendar removed` });
@@ -92,7 +103,8 @@ const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
 
 CalendarsSection.propTypes = {
     calendars: PropTypes.array,
-    defaultCalendarID: PropTypes.oneOfType([PropTypes.string, null])
+    defaultCalendarID: PropTypes.oneOfType([PropTypes.string, null]),
+    disabled: PropTypes.bool
 };
 
 export default CalendarsSection;
