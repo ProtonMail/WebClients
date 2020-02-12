@@ -1,8 +1,8 @@
 import React, { useState, createContext, useEffect, useContext } from 'react';
-import { ResourceType } from '../interfaces/folder';
+import { ResourceType } from '../../interfaces/folder';
 import { useModals, useLoading, LoaderPage } from 'react-components';
-import useDrive from '../hooks/useDrive';
-import OnboardingModal from './OnboardingModal/OnboardingModal';
+import useDrive from '../../hooks/useDrive';
+import OnboardingModal from '../OnboardingModal/OnboardingModal';
 
 interface DriveResourceProviderState {
     resource?: DriveResource;
@@ -17,6 +17,10 @@ interface Props {
     children: React.ReactNode;
 }
 
+/**
+ * Manages drive initialization (starting onboarding).
+ * Stores open folder shareId and linkID for easy access.
+ */
 const DriveResourceProvider = ({ children }: Props) => {
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading(true);

@@ -3,7 +3,6 @@ import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint } from 'react-co
 import { c } from 'ttag';
 import ItemRow from './ItemRow';
 import { ResourceType } from '../../interfaces/folder';
-import EmptyFolder from './EmptyFolder';
 
 export interface FileBrowserItem {
     Name: string;
@@ -17,7 +16,7 @@ export interface FileBrowserItem {
 
 interface Props {
     loading?: boolean;
-    contents?: FileBrowserItem[];
+    contents: FileBrowserItem[];
     selectedItems: FileBrowserItem[];
     onToggleItemSelected: (item: string) => void;
     onItemClick: (item: string) => void;
@@ -40,12 +39,7 @@ const FileBrowser = ({
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
-    if (contents && !contents.length && !loading) {
-        return <EmptyFolder />;
-    }
-
-    const folderContents = contents ?? [];
-    const allSelected = !!folderContents.length && folderContents.length === selectedItems.length;
+    const allSelected = !!contents.length && contents.length === selectedItems.length;
 
     return (
         <div className="flex flex-item-fluid" onClick={onEmptyAreaClick}>
@@ -56,7 +50,7 @@ const FileBrowser = ({
                             <div key="select-all" onClick={(e) => e.stopPropagation()}>
                                 <Checkbox
                                     readOnly
-                                    disabled={!folderContents.length}
+                                    disabled={!contents.length}
                                     checked={allSelected}
                                     onChange={onToggleAllSelected}
                                 />
@@ -71,7 +65,7 @@ const FileBrowser = ({
                     </tr>
                 </thead>
                 <TableBody colSpan={isNarrow ? 4 : 5}>
-                    {folderContents.map((item) => (
+                    {contents.map((item) => (
                         <ItemRow
                             key={item.LinkID}
                             item={item}

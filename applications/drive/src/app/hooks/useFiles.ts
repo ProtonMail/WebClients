@@ -44,8 +44,9 @@ const adjustFileName = (
     const extensionRx = /\.[^/.]+$/g;
     const extension = file.name.match(extensionRx)?.[0] ?? '';
     const adjustedFileName = index ? `${file.name.replace(extensionRx, '')} (${index})${extension}` : file.name;
-    const fileNameExists = contents.some((item) => item.Name === adjustedFileName);
-    const fileNameUploading = uploads.some((item) => item.meta.filename === adjustedFileName);
+    const lowercaseName = adjustedFileName.toLowerCase();
+    const fileNameExists = contents.some((item) => item.Name.toLowerCase() === lowercaseName);
+    const fileNameUploading = uploads.some((item) => item.meta.filename.toLowerCase() === lowercaseName);
     return fileNameExists || fileNameUploading
         ? adjustFileName(file, uploads, contents, index + 1)
         : { blob: new Blob([file], { type: file.type }), filename: adjustedFileName };
@@ -119,15 +120,16 @@ function useFiles(shareId: string) {
 
     const uploadDriveFile = useCallback(
         async (ParentLinkID: string, file: File) => {
-            const { privateKey: parentKey } = await getFolderMeta(ParentLinkID);
-            const { privateKey: addressKey, address } = await getPrimaryAddressKey();
-            const {
-                NodeKey,
-                privateKey,
-                NodePassphrase,
-                rawPassphrase,
-                signature: NodePassphraseSignature
-            } = await generateNodeKeys(parentKey, addressKey);
+            const [{ privateKey: parentKey, hashKey }, { privateKey: addressKey, address }] = await Promise.all([
+                getFolderMeta(ParentLinkID),
+                getPrimaryAddressKey()
+            ]);
+
+            const { NodeKey, privateKey, NodePassphrase, signature: NodePassphraseSignature } = await generateNodeKeys(
+                parentKey,
+                addressKey
+            );
+
             const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
 
             if (!ContentKeyPacket) {
@@ -153,13 +155,15 @@ function useFiles(shareId: string) {
                 { blob, filename, shareId, linkId: ParentLinkID },
                 {
                     initialize: async () => {
-                        const Name = await encryptUnsigned({
-                            message: filename,
-                            privateKey: parentKey
-                        });
+                        const [Hash, Name] = await Promise.all([
+                            generateLookupHash(filename.toLowerCase(), hashKey),
+                            encryptUnsigned({
+                                message: filename,
+                                privateKey: parentKey
+                            })
+                        ]);
 
                         const MimeType = lookup(filename) || 'application/octet-stream';
-                        const Hash = await generateLookupHash(filename, rawPassphrase);
 
                         const { File }: CreateFileResult = await api(
                             queryCreateFile(shareId, {

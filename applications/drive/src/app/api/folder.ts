@@ -1,4 +1,5 @@
 import { FOLDER_PAGE_SIZE } from '../constants';
+import { CreateNewFolder } from '../interfaces/folder';
 
 export const queryFolderChildren = (
     shareID: string,
@@ -13,4 +14,10 @@ export const queryFolderChildren = (
 export const queryGetFolder = (ShareID: string, LinkID: string) => ({
     method: 'get',
     url: `drive/shares/${ShareID}/folders/${LinkID}`
+});
+
+export const queryCreateFolder = (shareID: string, data: CreateNewFolder) => ({
+    method: 'post',
+    url: `drive/shares/${shareID}/folders`,
+    data
 });

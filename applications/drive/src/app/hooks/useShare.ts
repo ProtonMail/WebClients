@@ -1,8 +1,14 @@
 import { useCallback } from 'react';
 import { useApi } from 'react-components';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-import { decryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
-import { queryFolderChildren, queryGetFolder } from '../api/folder';
+import {
+    decryptUnsigned,
+    generateNodeHashKey,
+    generateNodeKeys,
+    encryptUnsigned,
+    generateLookupHash
+} from 'proton-shared/lib/keys/driveKeys';
+import { queryFolderChildren, queryGetFolder, queryCreateFolder } from '../api/folder';
 import { FolderMeta, FolderMetaResult, FolderContentsResult } from '../interfaces/folder';
 import useDrive from './useDrive';
 import { DriveLink } from '../interfaces/link';
@@ -10,15 +16,16 @@ import { DriveFile } from '../interfaces/file';
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 import useDriveCrypto from './useDriveCrypto';
 import useCachedResponse from './useCachedResponse';
+import { FOLDER_PAGE_SIZE } from '../constants';
 
 function useShare(shareId: string) {
     const api = useApi();
     const { cache, getCachedResponse } = useCachedResponse();
     const { getShareBootstrap } = useDrive();
-    const { getVerificationKeys } = useDriveCrypto();
+    const { getVerificationKeys, getPrimaryAddressKey } = useDriveCrypto();
 
     const getFolderMeta = useCallback(
-        (linkId: string): Promise<{ Folder: FolderMeta; privateKey: OpenPGPKey }> =>
+        (linkId: string): Promise<{ Folder: FolderMeta; privateKey: OpenPGPKey; hashKey: string }> =>
             getCachedResponse(`drive/shares/${shareId}/folder/${linkId}`, async () => {
                 const { Folder } = await api<FolderMetaResult>(queryGetFolder(shareId, linkId));
 
@@ -34,8 +41,16 @@ function useShare(shareId: string) {
                     privateKeys: [parentKey],
                     publicKeys
                 });
-                const privateKey = await decryptPrivateKey(Folder.Key, decryptedFolderPassphrase);
-                return { Folder, privateKey };
+
+                const [decryptedHashKey, privateKey] = await Promise.all([
+                    decryptUnsigned({
+                        armoredMessage: Folder.HashKey,
+                        privateKey: parentKey
+                    }),
+                    decryptPrivateKey(Folder.Key, decryptedFolderPassphrase)
+                ]);
+
+                return { Folder, privateKey, hashKey: decryptedHashKey };
             }),
         [shareId]
     );
@@ -68,7 +83,48 @@ function useShare(shareId: string) {
         [shareId]
     );
 
-    return { getFolderMeta, getFolderContents, decryptLink, clearFolderContentsCache };
+    const createNewFolder = async (ParentLinkID: string, name: string) => {
+        // Name Hash is generated from LC, for case-insensitive duplicate detection
+        const lowerCaseName = name.toLowerCase();
+
+        const [{ privateKey: parentKey, hashKey }, { privateKey: addressKey, address }] = await Promise.all([
+            getFolderMeta(ParentLinkID),
+            getPrimaryAddressKey()
+        ]);
+
+        const [
+            Hash,
+            { NodeHashKey: NodeHashKey },
+            { NodeKey, NodePassphrase, signature: NodePassphraseSignature },
+            encryptedName
+        ] = await Promise.all([
+            generateLookupHash(lowerCaseName, hashKey),
+            generateNodeHashKey(parentKey),
+            generateNodeKeys(parentKey, addressKey),
+            encryptUnsigned({
+                message: name,
+                privateKey: parentKey
+            })
+        ]);
+
+        await api(
+            queryCreateFolder(shareId, {
+                Hash,
+                NodeHashKey,
+                Name: encryptedName,
+                NodeKey,
+                NodePassphrase,
+                NodePassphraseSignature,
+                SignatureAddressID: address.ID,
+                ParentLinkID
+            })
+        );
+
+        // TODO: clear all cached pages after folder creation, or only last one
+        clearFolderContentsCache(ParentLinkID, 0, FOLDER_PAGE_SIZE);
+    };
+
+    return { getFolderMeta, getFolderContents, decryptLink, createNewFolder, clearFolderContentsCache };
 }
 
 export default useShare;

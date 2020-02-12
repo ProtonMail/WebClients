@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FileBrowserItem } from './FileBrowser';
 
-const useFileBrowser = (folderChildren: FileBrowserItem[] = []) => {
+const useFileBrowser = (folderChildren: FileBrowserItem[]) => {
     const [selectedItemIds, setSelectedItems] = useState<string[]>([]);
 
     const toggleSelectItem = (id: string) => {
@@ -13,18 +13,12 @@ const useFileBrowser = (folderChildren: FileBrowserItem[] = []) => {
     };
 
     const toggleAllSelected = () => {
-        if (folderChildren) {
-            setSelectedItems((ids) =>
-                ids.length === folderChildren.length ? [] : folderChildren.map(({ LinkID }) => LinkID)
-            );
-        }
+        setSelectedItems((ids) =>
+            ids.length === folderChildren.length ? [] : folderChildren.map(({ LinkID }) => LinkID)
+        );
     };
 
     const selectRange = (selectedItem: string) => {
-        if (!folderChildren) {
-            return;
-        }
-
         // range between item matching selectedItem and lastSelected
         let matchConditions = selectedItemIds[0] ? [selectedItem, selectedItemIds[0]] : [selectedItem];
         const selected = [];

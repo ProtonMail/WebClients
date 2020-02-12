@@ -75,7 +75,7 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
                         className="mr0-5 flex-item-noshrink"
                         size={25}
                     />
-                    <span title={item.Name} className="ellipsis">
+                    <span title={item.Name} className="pd-fb-table-row-name">
                         {item.Name}
                     </span>
                 </div>,
