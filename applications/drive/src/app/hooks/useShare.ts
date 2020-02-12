@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
-import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
-import { useCache, useApi } from 'react-components';
+import { useApi } from 'react-components';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { decryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
 import { queryFolderChildren, queryGetFolder } from '../api/folder';
@@ -10,17 +9,18 @@ import { DriveLink } from '../interfaces/link';
 import { DriveFile } from '../interfaces/file';
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 import useDriveCrypto from './useDriveCrypto';
+import useCachedResponse from './useCachedResponse';
 
 function useShare(shareId: string) {
     const api = useApi();
-    const cache = useCache();
+    const { cache, getCachedResponse } = useCachedResponse();
     const { getShareBootstrap } = useDrive();
     const { getVerificationKeys } = useDriveCrypto();
 
     const getFolderMeta = useCallback(
-        async (linkId: string): Promise<{ Folder: FolderMeta; privateKey: OpenPGPKey }> =>
-            getPromiseValue(cache, `drive/shares/${shareId}/folder/${linkId}`, async () => {
-                const { Folder }: FolderMetaResult = await api(queryGetFolder(shareId, linkId));
+        (linkId: string): Promise<{ Folder: FolderMeta; privateKey: OpenPGPKey }> =>
+            getCachedResponse(`drive/shares/${shareId}/folder/${linkId}`, async () => {
+                const { Folder } = await api<FolderMetaResult>(queryGetFolder(shareId, linkId));
 
                 const { privateKey: parentKey } = Folder.ParentLinkID
                     ? await getFolderMeta(Folder.ParentLinkID)
@@ -58,17 +58,13 @@ function useShare(shareId: string) {
 
     const getFolderContents = useCallback(
         async (linkId: string, Page: number, PageSize: number): Promise<DriveLink[]> =>
-            getPromiseValue(
-                cache,
-                `drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`,
-                async () => {
-                    const { Links }: FolderContentsResult = await api(
-                        queryFolderChildren(shareId, linkId, { Page, PageSize })
-                    );
+            getCachedResponse(`drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`, async () => {
+                const { Links } = await api<FolderContentsResult>(
+                    queryFolderChildren(shareId, linkId, { Page, PageSize })
+                );
 
-                    return await Promise.all(Links.map(decryptLink));
-                }
-            ),
+                return await Promise.all(Links.map(decryptLink));
+            }),
         [shareId]
     );
 

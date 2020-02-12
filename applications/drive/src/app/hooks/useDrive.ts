@@ -1,33 +1,33 @@
-import { useGetAddressKeys, useApi, useCache } from 'react-components';
+import { useGetAddressKeys, useApi } from 'react-components';
 import { generateDriveBootstrap, generateNodeHashKey } from 'proton-shared/lib/keys/driveKeys';
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
-import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import { decryptPrivateKey } from 'pmcrypto';
 import { useCallback } from 'react';
-import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
 import { queryCreateDriveVolume } from '../api/volume';
 import { queryUserShares, queryShareBootstrap } from '../api/share';
-import { UserShare, ShareBootstrap } from '../interfaces/share';
-import { CreatedDriveVolume } from '../interfaces/volume';
+import { UserShareResult, ShareBootstrap } from '../interfaces/share';
+import { CreatedDriveVolumeResult } from '../interfaces/volume';
 import useDriveCrypto from './useDriveCrypto';
+import useCachedResponse from './useCachedResponse';
 
 function useDrive() {
     const api = useApi();
+    const { cache, getCachedResponse } = useCachedResponse();
     const { getPrimaryAddressKey, getVerificationKeys } = useDriveCrypto();
     const getAddressKeys = useGetAddressKeys();
-    const cache = useCache();
 
     const getUserShares = useCallback(
-        (): Promise<UserShare[]> =>
-            getPromiseValue(cache, `drive/shares`, async () => {
-                const { Shares } = await api(queryUserShares());
+        () =>
+            getCachedResponse(`drive/shares`, async () => {
+                const { Shares } = await api<UserShareResult>(queryUserShares());
                 return Shares;
             }),
         []
     );
 
     const getShareBootstrap = useCallback(
-        (shareId: string): Promise<{ Share: ShareBootstrap; privateKey: OpenPGPKey }> => {
-            return getPromiseValue(cache, `drive/shares/${shareId}`, async () => {
+        (shareId: string) => {
+            return getCachedResponse(`drive/shares/${shareId}`, async () => {
                 const Share: ShareBootstrap = await api(queryShareBootstrap(shareId));
 
                 const { privateKeys, publicKeys } = await getVerificationKeys(Share.AddressID);
@@ -42,15 +42,15 @@ function useDrive() {
                 return { Share, privateKey: shareKey };
             });
         },
-        [api, cache, getAddressKeys]
+        [api, getAddressKeys]
     );
 
-    const createVolume = useCallback(async (): Promise<CreatedDriveVolume> => {
+    const createVolume = useCallback(async () => {
         const { address, privateKey } = await getPrimaryAddressKey();
         const { bootstrap, sharePrivateKey } = await generateDriveBootstrap(privateKey);
         const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(sharePrivateKey);
 
-        const { Volume } = await api(
+        const { Volume } = await api<CreatedDriveVolumeResult>(
             queryCreateDriveVolume({
                 AddressID: address.ID,
                 VolumeName: 'MainVolume',
@@ -64,7 +64,7 @@ function useDrive() {
         cache.delete('drive/shares');
 
         return Volume;
-    }, []);
+    }, [cache]);
 
     /**
      * Loads drive and gets the active share bootstrap.

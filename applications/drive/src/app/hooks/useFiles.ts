@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useApi, useCache, useEventManager } from 'react-components';
+import { useApi, useEventManager } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import {
     DriveFile,
@@ -10,7 +10,6 @@ import {
 } from '../interfaces/file';
 import { decryptPrivateKey, decryptMessage, encryptMessage } from 'pmcrypto';
 import useShare from './useShare';
-import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
 import { queryFileRevision, queryCreateFile, queryFile, queryUpdateFileRevision } from '../api/files';
 import {
@@ -34,6 +33,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import useDriveCrypto from './useDriveCrypto';
 import { binaryStringToArray } from 'proton-shared/lib/helpers/string';
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
+import useCachedResponse from './useCachedResponse';
 
 const adjustFileName = (
     file: File,
@@ -57,7 +57,7 @@ export interface UploadFileMeta {
 
 function useFiles(shareId: string) {
     const api = useApi();
-    const cache = useCache();
+    const { getCachedResponse } = useCachedResponse();
     const { getPrimaryAddressKey, sign, getVerificationKeys } = useDriveCrypto();
     const { getFolderMeta, getFolderContents, decryptLink, clearFolderContentsCache } = useShare(shareId);
     const { addToDownloadQueue } = useDownloadProvider();
@@ -65,9 +65,9 @@ function useFiles(shareId: string) {
     const { call } = useEventManager();
 
     const getFileMeta = useCallback(
-        async (linkId: string): Promise<{ File: DriveFile; privateKey: any; sessionKeys: any }> =>
-            getPromiseValue(cache, `drive/shares/${shareId}/file/${linkId}`, async () => {
-                const { File }: DriveFileResult = await api(queryFile(shareId, linkId));
+        async (linkId: string) =>
+            getCachedResponse(`drive/shares/${shareId}/file/${linkId}`, async () => {
+                const { File } = await api<DriveFileResult>(queryFile(shareId, linkId));
                 const { privateKey: parentKey } = await getFolderMeta(File.ParentLinkID);
                 const { publicKeys } = await getVerificationKeys(File.SignatureAddressID);
                 const decryptedFilePassphrase = await decryptPassphrase({
@@ -89,9 +89,9 @@ function useFiles(shareId: string) {
     );
 
     const getFileRevision = useCallback(
-        async ({ ID, ActiveRevision }: DriveFile): Promise<DriveFileRevisionResult> =>
-            getPromiseValue(cache, `drive/shares/${shareId}/file/${ID}/${ActiveRevision.ID}`, () =>
-                api(queryFileRevision(shareId, ID, ActiveRevision.ID))
+        async ({ ID, ActiveRevision }: DriveFile) =>
+            getCachedResponse(`drive/shares/${shareId}/file/${ID}/${ActiveRevision.ID}`, () =>
+                api<DriveFileRevisionResult>(queryFileRevision(shareId, ID, ActiveRevision.ID))
             ),
         [shareId]
     );
