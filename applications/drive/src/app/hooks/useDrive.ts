@@ -47,8 +47,8 @@ function useDrive() {
 
     const createVolume = useCallback(async () => {
         const { address, privateKey } = await getPrimaryAddressKey();
-        const { bootstrap, sharePrivateKey } = await generateDriveBootstrap(privateKey);
-        const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(sharePrivateKey);
+        const { bootstrap, folderPrivateKey } = await generateDriveBootstrap(privateKey);
+        const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey);
 
         const { Volume } = await api<CreatedDriveVolumeResult>(
             queryCreateDriveVolume({
