@@ -139,6 +139,7 @@ export const COLORS = {
 };
 
 export const MAX_LENGTHS = {
+    CALENDAR_NAME: 100,
     TITLE: 255,
     DESCRIPTION: 255,
     LOCATION: 255

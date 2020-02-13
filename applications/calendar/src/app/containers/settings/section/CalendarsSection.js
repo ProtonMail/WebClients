@@ -33,12 +33,12 @@ const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
         createModal(<CalendarModal calendar={calendar} />);
     };
 
-    const handleSetDefault = async (calendarID, silent = false) => {
+    const handleSetDefault = async (calendarID) => {
         try {
             setLoadingMap((old) => ({ ...old, [calendarID]: true }));
             await api(updateCalendarUserSettings({ DefaultCalendarID: calendarID }));
             await call();
-            !silent && createNotification({ text: c('Success').t`Default calendar updated` });
+            createNotification({ text: c('Success').t`Default calendar updated` });
         } finally {
             setLoadingMap((old) => ({ ...old, [calendarID]: false }));
         }
@@ -47,8 +47,18 @@ const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
     const handleDelete = async ({ ID }) => {
         const deleteDefaultCalendar = ID === defaultCalendarID;
         const firstRemainingCalendar = calendars.find(({ ID: calendarID }) => calendarID !== ID);
+        const newDefaultCalendarID = (firstRemainingCalendar && firstRemainingCalendar.ID) || null;
 
         await new Promise((resolve, reject) => {
+            // Truncate the name of the potential new default calendar to fit it in the confirmModal.
+            // Truncation length is picked to roughly match length of the other alert
+            const calendarName = firstRemainingCalendar ? (
+                <span key="calendar-name" className="break">
+                    {firstRemainingCalendar.Name}
+                </span>
+            ) : (
+                ''
+            );
             createModal(
                 <ConfirmModal
                     title={c('Title').t`Delete calendar`}
@@ -58,23 +68,21 @@ const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
                 >
                     <Alert type="error">{c('Info').t`Are you sure you want to delete this calendar?`}</Alert>
                     {deleteDefaultCalendar && firstRemainingCalendar && (
-                        <Alert type="warning">{c('Info')
-                            .t`${firstRemainingCalendar.Name} will be set as default calendar.`}</Alert>
+                        <Alert type="warning">{c('Info').jt`${calendarName} will be set as default calendar.`}</Alert>
                     )}
                 </ConfirmModal>
             );
         });
         try {
-            setLoadingMap((old) => ({ ...old, [ID]: true }));
-            if (deleteDefaultCalendar) {
-                const newDefaultCalendarID = (firstRemainingCalendar && firstRemainingCalendar.ID) || null;
-                await handleSetDefault(newDefaultCalendarID, true);
-            }
+            setLoadingMap((old) => ({ ...old, [newDefaultCalendarID]: true, [ID]: true }));
             await api(removeCalendar(ID));
+            if (deleteDefaultCalendar) {
+                await api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
+            }
             await call();
             createNotification({ text: c('Success').t`Calendar removed` });
         } finally {
-            setLoadingMap((old) => ({ ...old, [ID]: false }));
+            setLoadingMap((old) => ({ ...old, [newDefaultCalendarID]: false, [ID]: false }));
         }
     };
 

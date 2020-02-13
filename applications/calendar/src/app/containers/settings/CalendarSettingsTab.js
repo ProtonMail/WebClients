@@ -19,6 +19,7 @@ const CalendarSettingsTab = ({ isSubmitted, errors, model, setModel }) => {
                         id="calendar-name-input"
                         value={model.name}
                         error={errors.name}
+                        maxLength={MAX_LENGTHS.CALENDAR_NAME}
                         isSubmitted={isSubmitted}
                         placeholder={c('Placeholder').t`Add a calendar name`}
                         onChange={({ target }) => setModel({ ...model, name: target.value })}
