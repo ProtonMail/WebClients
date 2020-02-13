@@ -78,10 +78,7 @@ const CalendarSidebar = ({
     ].filter(Boolean);
 
     return (
-        <div
-            className="sidebar flex flex-nowrap flex-column noprint customScrollBar-container"
-            data-expanded={expanded}
-        >
+        <div className="sidebar flex flex-nowrap flex-column noprint" data-expanded={expanded}>
             <div className="nodesktop notablet flex-item-noshrink">
                 <div className="flex flex-spacebetween flex-items-center">
                     <MainLogo url={url} />
@@ -95,11 +92,13 @@ const CalendarSidebar = ({
                     onClick={() => onCreateEvent()}
                 >{c('Action').t`New event`}</PrimaryButton>
             </div>
-            <div className="flex-item-noshrink">{miniCalendar}</div>
-            <nav className="navigation mw100 flex-item-fluid-auto flex-item-noshrink scroll-if-needed mb1">
-                <NavMenu list={list} className="mb0" />
-                {calendarsListView}
-            </nav>
+            <div className="flex-item-fluid flex-nowrap flex flex-column scroll-if-needed customScrollBar-container pb1">
+                <div className="flex-item-noshrink">{miniCalendar}</div>
+                <nav className="navigation mw100 flex-item-fluid-auto">
+                    <NavMenu list={list} className="mb0" />
+                    {calendarsListView}
+                </nav>
+            </div>
             <MobileNavServices>
                 {mobileLinks.map(({ to, icon, external, current }) => {
                     return <MobileNavLink key={icon} to={to} icon={icon} external={external} current={current} />;
