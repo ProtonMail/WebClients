@@ -152,7 +152,7 @@ DTEND;VALUE=DATE:20200127
 END:VEVENT
 `);
         const cache = {};
-        const result = getOccurencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2021, 2, 1), cache);
+        const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2021, 2, 1), cache);
         expect(
             result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
         ).toEqual([
