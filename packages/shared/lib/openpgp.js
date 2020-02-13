@@ -55,9 +55,15 @@ let promise;
 
 /**
  * Get the openpgp init promise singleton
- * @return {Promise}
  */
 export const loadOpenPGP = (openpgpConfig) => {
     // eslint-disable-next-line no-return-assign
     return promise || (promise = init(openpgpConfig));
+};
+
+export const destroyOpenPGP = () => {
+    promise = undefined;
+    if (window.openpgp) {
+        return window.openpgp.destroyWorker();
+    }
 };
