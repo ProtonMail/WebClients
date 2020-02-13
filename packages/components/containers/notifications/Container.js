@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import Notification from './Notification';
 
 const NotificationsContainer = ({ notifications, removeNotification, hideNotification }) => {
-    const list = notifications.map(({ id, type, text, isClosing }) => {
+    const list = notifications.map(({ id, type, text, isClosing, disableAutoClose }) => {
         return (
             <Notification
                 key={id}
                 isClosing={isClosing}
                 type={type}
-                onClick={() => hideNotification(id)}
+                onClick={disableAutoClose ? undefined : () => hideNotification(id)}
                 onExit={() => removeNotification(id)}
             >
                 {text}

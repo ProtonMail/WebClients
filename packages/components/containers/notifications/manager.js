@@ -19,6 +19,12 @@ export default (setNotifications) => {
     };
 
     const hideNotification = (id) => {
+        // If the page is hidden, don't hide the notification with an animation because they get stacked.
+        // This is to solve e.g. offline notifications appearing when the page is hidden, and when you focus
+        // the tab again, they would be visible for the animation out even if they happened a while ago.
+        if (document.hidden) {
+            return removeNotification(id);
+        }
         return setNotifications((oldNotifications) => {
             return oldNotifications.map((oldNotification) => {
                 if (oldNotification.id !== id) {
@@ -40,9 +46,7 @@ export default (setNotifications) => {
             idx = 0;
         }
 
-        intervalIds[id] = expiration === -1 ? -1 : setTimeout(() => hideNotification(id), expiration);
-
-        return setNotifications((oldNotifications) => {
+        setNotifications((oldNotifications) => {
             return [
                 ...oldNotifications,
                 {
@@ -54,6 +58,10 @@ export default (setNotifications) => {
                 }
             ];
         });
+
+        intervalIds[id] = expiration === -1 ? -1 : setTimeout(() => hideNotification(id), expiration);
+
+        return id;
     };
 
     const clearNotifications = () => {
