@@ -50,8 +50,6 @@ const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
         const newDefaultCalendarID = (firstRemainingCalendar && firstRemainingCalendar.ID) || null;
 
         await new Promise((resolve, reject) => {
-            // Truncate the name of the potential new default calendar to fit it in the confirmModal.
-            // Truncation length is picked to roughly match length of the other alert
             const calendarName = firstRemainingCalendar ? (
                 <span key="calendar-name" className="break">
                     {firstRemainingCalendar.Name}
