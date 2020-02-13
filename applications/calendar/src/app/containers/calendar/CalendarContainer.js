@@ -81,7 +81,7 @@ const getRange = (view, range) => {
     return Math.min(max, 5);
 };
 
-const getDefaultCalendarID = ({ DefaultCalendarID }) => {
+const getDefaultCalendarID = ({ DefaultCalendarID } = {}) => {
     // DefaultCalendarID is either null or a string
     return DefaultCalendarID || undefined;
 };
