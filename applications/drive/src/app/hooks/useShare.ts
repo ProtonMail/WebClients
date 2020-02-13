@@ -42,14 +42,15 @@ function useShare(shareId: string) {
                     publicKeys
                 });
 
-                const [Name, decryptedHashKey, privateKey] = await Promise.all([
+                const [Name, privateKey] = await Promise.all([
                     Folder.Name && decryptUnsigned({ armoredMessage: Folder.Name, privateKey: parentKey }),
-                    decryptUnsigned({
-                        armoredMessage: Folder.HashKey,
-                        privateKey: parentKey
-                    }),
                     decryptPrivateKey(Folder.Key, decryptedFolderPassphrase)
                 ]);
+
+                const decryptedHashKey = await decryptUnsigned({
+                    armoredMessage: Folder.HashKey,
+                    privateKey
+                });
 
                 return {
                     Folder: {
@@ -102,18 +103,18 @@ function useShare(shareId: string) {
 
         const [
             Hash,
-            { NodeHashKey: NodeHashKey },
-            { NodeKey, NodePassphrase, signature: NodePassphraseSignature },
+            { NodeKey, NodePassphrase, privateKey, signature: NodePassphraseSignature },
             encryptedName
         ] = await Promise.all([
             generateLookupHash(lowerCaseName, hashKey),
-            generateNodeHashKey(parentKey),
             generateNodeKeys(parentKey, addressKey),
             encryptUnsigned({
                 message: name,
                 privateKey: parentKey
             })
         ]);
+
+        const { NodeHashKey: NodeHashKey } = await generateNodeHashKey(privateKey);
 
         await api(
             queryCreateFolder(shareId, {
