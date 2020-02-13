@@ -18,6 +18,8 @@ import ApiProvider from '../api/ApiProvider';
 import CacheProvider from '../cache/Provider';
 import AuthenticationProvider from '../authentication/Provider';
 import RightToLeftProvider from '../rightToLeft/Provider';
+import { setTmpEventID } from './loadEventID';
+import clearKeyCache from './clearKeyCache';
 
 /** @type any */
 const ProtonApp = ({ config, children }) => {
@@ -45,7 +47,8 @@ const ProtonApp = ({ config, children }) => {
                 value: formatUser(User),
                 status: STATUS.RESOLVED
             });
-        cache.set('tmp', { eventID: EventID });
+
+        setTmpEventID(cache, EventID);
 
         cacheRef.current = cache;
 
@@ -57,6 +60,7 @@ const ProtonApp = ({ config, children }) => {
         authentication.setPassword();
 
         tempDataRef.current = {};
+        clearKeyCache(cacheRef.current);
         cacheRef.current.reset();
         cacheRef.current = createCache();
 

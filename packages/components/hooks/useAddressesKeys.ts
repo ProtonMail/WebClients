@@ -5,7 +5,6 @@ import { useGetAddresses } from './useAddresses';
 import useCachedModelResult from './useCachedModelResult';
 import { useGetAddressKeys } from './useGetAddressKeys';
 
-export const CACHE_KEY = 'ADDRESS_KEYS';
 export const KEY = 'ADDRESSES_KEYS';
 
 export const useGetAddressesKeys = (): (() => Promise<{ [key: string]: CachedKey[] }>) => {

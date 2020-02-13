@@ -16,11 +16,7 @@ const StandardPublicApp = ({ locales = {}, openpgpConfig, children }) => {
             await Promise.all([
                 loadOpenPGP(openpgpConfig),
                 loadLocale({
-                    ...getClosestMatches({
-                        locale: browserLocale,
-                        browserLocale,
-                        locales
-                    }),
+                    ...getClosestMatches({ locale: browserLocale, browserLocale, locales }),
                     locales
                 })
             ]);

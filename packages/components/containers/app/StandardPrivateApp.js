@@ -1,16 +1,26 @@
-import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { EventManagerProvider, ModalsChildren, ThemeInjector } from 'react-components';
+import React, { useState, useRef, useEffect } from 'react';
+import { EventManagerProvider, ModalsChildren, ThemeInjector } from '../../index';
+import { UserModel, UserSettingsModel } from 'proton-shared/lib/models';
+import { unique } from 'proton-shared/lib/helpers/array';
+import loadLocale from 'proton-shared/lib/i18n/loadLocale';
+import { getClosestMatches, getBrowserLocale } from 'proton-shared/lib/i18n/helper';
+import createEventManager from 'proton-shared/lib/eventManager/eventManager';
+import { loadModels } from 'proton-shared/lib/models/helper';
+import { destroyOpenPGP, loadOpenPGP } from 'proton-shared/lib/openpgp';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 import EventModelListener from '../eventManager/EventModelListener';
 import EventNotices from '../eventManager/EventNotices';
 import LoaderPage from './LoaderPage';
-import StandardPreload from './StandardPreload';
 import ForceRefreshProvider from '../forceRefresh/Provider';
+import { useApi, useCache } from '../../index';
+import loadEventID from './loadEventID';
 
 const StandardPrivateApp = ({
     locales = {},
     onLogout,
+    onInit = noop,
+    fallback,
     openpgpConfig,
     preloadModels = [],
     eventModels = [],
@@ -18,22 +28,41 @@ const StandardPrivateApp = ({
 }) => {
     const [loading, setLoading] = useState(true);
     const eventManagerRef = useRef();
+    const api = useApi();
+    const cache = useCache();
+
+    useEffect(() => {
+        const eventManagerPromise = loadEventID(api, cache).then((eventID) => {
+            eventManagerRef.current = createEventManager({ api, eventID });
+        });
+
+        const modelsPromise = loadModels(unique([UserSettingsModel, UserModel, ...preloadModels]), { api, cache }).then(
+            (userSettings) => {
+                return loadLocale({
+                    ...getClosestMatches({ locale: userSettings.Locale, browserLocale: getBrowserLocale(), locales }),
+                    locales
+                });
+            }
+        );
+
+        Promise.all([onInit(), eventManagerPromise, modelsPromise, loadOpenPGP(openpgpConfig)])
+            .then(() => {
+                setLoading(false);
+            })
+            .catch(() => {
+                onLogout();
+            });
+
+        return () => {
+            destroyOpenPGP();
+        };
+    }, []);
 
     if (loading) {
         return (
             <>
-                <StandardPreload
-                    openpgpConfig={openpgpConfig}
-                    locales={locales}
-                    preloadModels={preloadModels}
-                    onSuccess={(ev) => {
-                        eventManagerRef.current = ev;
-                        setLoading(false);
-                    }}
-                    onError={onLogout}
-                />
                 <ModalsChildren />
-                <LoaderPage />
+                {fallback || <LoaderPage />}
             </>
         );
     }
@@ -47,15 +76,6 @@ const StandardPrivateApp = ({
             <ForceRefreshProvider>{children}</ForceRefreshProvider>
         </EventManagerProvider>
     );
-};
-
-StandardPrivateApp.propTypes = {
-    onLogout: PropTypes.func.isRequired,
-    children: PropTypes.node.isRequired,
-    locales: PropTypes.object,
-    openpgpConfig: PropTypes.object,
-    preloadModels: PropTypes.array,
-    eventModels: PropTypes.array
 };
 
 export default StandardPrivateApp;
