@@ -25,12 +25,12 @@ $scrollbar-thumb-height: 40px !default;
   border: 0;
   border-radius: #{$scrollbar-width/2};
 }
-::-webkit-scrollbar-thumb:vertical {
+.customScrollBar-container::-webkit-scrollbar-thumb:vertical {
   height: $scrollbar-thumb-height;
   background-color: $scrollbar-thumb-color;
   border-radius: #{$scrollbar-width/2};
 }
-::-webkit-scrollbar-thumb:horizontal {
+.customScrollBar-container::-webkit-scrollbar-thumb:horizontal {
   height: $scrollbar-width/2;
   background-color: $scrollbar-thumb-color;
   border-radius: #{$scrollbar-width/2};
