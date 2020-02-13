@@ -42,7 +42,8 @@ function useShare(shareId: string) {
                     publicKeys
                 });
 
-                const [decryptedHashKey, privateKey] = await Promise.all([
+                const [Name, decryptedHashKey, privateKey] = await Promise.all([
+                    Folder.Name && decryptUnsigned({ armoredMessage: Folder.Name, privateKey: parentKey }),
                     decryptUnsigned({
                         armoredMessage: Folder.HashKey,
                         privateKey: parentKey
@@ -50,7 +51,14 @@ function useShare(shareId: string) {
                     decryptPrivateKey(Folder.Key, decryptedFolderPassphrase)
                 ]);
 
-                return { Folder, privateKey, hashKey: decryptedHashKey };
+                return {
+                    Folder: {
+                        ...Folder,
+                        Name
+                    },
+                    privateKey,
+                    hashKey: decryptedHashKey
+                };
             }),
         [shareId]
     );
