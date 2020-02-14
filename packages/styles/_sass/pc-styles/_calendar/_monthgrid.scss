@@ -1,0 +1,24 @@
+.calendar-monthgrid {
+
+	&-day {
+		color: var(--color-main-area, $pm-global-grey);
+
+		&-number {
+			display: inline-flex;
+			width: 1.75em;
+			height: 1.75em;
+			border-radius: 50%;
+		}
+
+		&[aria-current="date"] &-number {
+			background-color: $calendar-today-color;
+			color: $white;
+			font-weight: bold;
+		}
+
+		&[aria-pressed="true"] &-number {
+			background-color: $calendar-selected-day-color;
+			color: $white;
+		}
+	}
+}

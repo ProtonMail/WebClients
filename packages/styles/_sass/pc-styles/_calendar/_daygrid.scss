@@ -1,0 +1,36 @@
+.calendar-daygrid {
+	min-height: 41rem;
+
+	&-weeknumber {
+		border-bottom: $calendar-grid-border;
+		border-right: $calendar-grid-border;
+		background-color: var(--bgcolor-subnav, $pm-global-light);
+
+		&-width {
+			width: 2.5rem;
+		}
+	}
+
+	&-row,
+	&-days {
+		border-bottom: $calendar-grid-border;
+	}
+
+	&-day {
+		&[aria-current=true] {
+			font-weight: bold;
+		}
+	}
+
+	&-columns {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	&-column {
+		border-right: $calendar-grid-border;
+	}
+}
