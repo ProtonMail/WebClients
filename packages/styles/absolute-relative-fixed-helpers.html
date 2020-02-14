@@ -1,0 +1,58 @@
+---
+layout: default
+lang: en
+pageId: absolute-relative-fixed-helpers
+title: Absolute/fixed/relative helpers
+description: Absolute/fixed/relative helpers
+keywords: helpers, typographic, CSS
+section: fe-guidelines
+---
+
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="relative"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>position: relative</code> to element.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="fixed"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>position: fixed</code> to element.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="absolute"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>position: absolute</code> to element + <code>z-index: 1</code>.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="centered-absolute"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Centers absolute-positionned element via <code>top: 50%; left: 50%; transform: translate(-50%, -50%);</code>.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="top-right"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>top: 0; right: 0;</code> to absolute-positionned element.
+  </div>
+</div>
+
+<p>In case of, there are helpers on mobile like <code>onmobile-static</code> which can cancel fixed/absolute positionning.</p>

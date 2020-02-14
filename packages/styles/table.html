@@ -5,7 +5,7 @@ pageId: table
 title: Tables
 description: The design of tables used in Proton products.
 keywords: table, styles, rules
-section: design
+section: components
 subsection: tables
 ---
 
@@ -19,7 +19,7 @@ subsection: tables
             <th scope="col">id</th>
             <th scope="col">Amount</th>
             <th scope="col">
-              Type 
+              Type
               <button type="button">
                 <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                   <use xlink:href="#shape-info"></use>
@@ -31,7 +31,7 @@ subsection: tables
               <a>
                 <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                   <use xlink:href="#shape-attention"></use>
-                </svg> 
+                </svg>
               </a>
             </th>
             <th scope="col">Date</th>
@@ -42,7 +42,7 @@ subsection: tables
         <tr>
             <td>123456</td>
             <td>24 €</td>
-            <td>Subscription 
+            <td>Subscription
               <button type="button">
                 <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                   <use xlink:href="#shape-info"></use>
@@ -65,7 +65,7 @@ subsection: tables
 </table>
 
 <p>
-  Design rule: you may use small buttons/toggle/etc. in tables. <br> 
+  Design rule: you may use small buttons/toggle/etc. in tables. <br>
   (for Status styles, have a look at <a href="status-labels.html">Status section</a>)
 </p>
 
@@ -79,7 +79,7 @@ subsection: tables
           <th scope="col">id</th>
           <th scope="col">Amount</th>
           <th scope="col">
-            Type 
+            Type
             <button type="button">
               <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                 <use xlink:href="#shape-info"></use>
@@ -91,7 +91,7 @@ subsection: tables
             <a>
               <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                 <use xlink:href="#shape-attention"></use>
-              </svg> 
+              </svg>
             </a>
           </th>
           <th scope="col">Date</th>
@@ -102,7 +102,7 @@ subsection: tables
       <tr>
           <td>123456</td>
           <td>24 €</td>
-          <td>Subscription 
+          <td>Subscription
             <button type="button">
               <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                 <use xlink:href="#shape-info"></use>
@@ -182,7 +182,7 @@ subsection: tables
           <th scope="col">id</th>
           <th scope="col">Amount</th>
           <th scope="col">
-            Type 
+            Type
             <button type="button">
               <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                 <use xlink:href="#shape-info"></use>
@@ -194,7 +194,7 @@ subsection: tables
             <a>
               <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                 <use xlink:href="#shape-attention"></use>
-              </svg> 
+              </svg>
             </a>
           </th>
           <th scope="col">Date</th>
@@ -205,7 +205,7 @@ subsection: tables
       <tr>
           <td>123456</td>
           <td>24 €</td>
-          <td>Subscription 
+          <td>Subscription
             <button type="button">
               <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                 <use xlink:href="#shape-info"></use>
@@ -260,7 +260,7 @@ subsection: tables
           <th scope="col">id</th>
           <th scope="col">Amount</th>
           <th scope="col">
-            Type 
+            Type
             <button type="button">
               <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                 <use xlink:href="#shape-info"></use>
@@ -272,7 +272,7 @@ subsection: tables
             <a>
               <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                 <use xlink:href="#shape-attention"></use>
-              </svg> 
+              </svg>
             </a>
           </th>
           <th scope="col">Date</th>
@@ -283,7 +283,7 @@ subsection: tables
       <tr>
           <td>123456</td>
           <td>24 €</td>
-          <td>Subscription 
+          <td>Subscription
             <button type="button">
               <svg viewBox="0 0 16 16" class="icon-16p fill-pm-blue" role="img" focusable="false">
                 <use xlink:href="#shape-info"></use>
@@ -374,11 +374,11 @@ subsection: tables
 
 <ul>
   <li>Use <code>pm-plans-table</code> class on <code>table</code>.</li>
-  <li>To highlight the 2nd plan: 
+  <li>To highlight the 2nd plan:
     <ul>
       <li>use class <code>pm-table--highlight</code> and specify <code>data-plan-number="2"</code> attribute on <code>table</code> tag</li>
       <li>and specify the text in <code>data-highlight=""</code> attribute on first line, on each <code>th</code>.</li>
-    </ul> 
+    </ul>
   </li>
   <li>For the first cell of lines, use <code>th scope="row"</code> and <code>pm-simple-table-row</code> class applied to it.</li>
   <li>If there are more than 4 plans, remember to update <code>$nb-plans-max</code> Sass variable.</li>

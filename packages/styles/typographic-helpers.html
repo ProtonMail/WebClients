@@ -1,0 +1,159 @@
+---
+layout: default
+lang: en
+pageId: typographic-helpers
+title: Typographic helpers
+description: Typographic helpers in CSS
+keywords: helpers, typographic, CSS
+section: fe-guidelines
+---
+
+
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="ellipsis"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <span class="ellipsis inbl mw100p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor lectus eu massa fermentum scelerisque. Praesent vitae massa vel nulla sodales consectetur in vitae urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span><br>
+    To be used with <code>mw100</code> and <code>inbl</code> (or with flexbox helpers).<br><br>
+    If you need a multiline ellipsis, use <code>ellipsis-four-lines</code> helper.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="uppercase"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      Applies a <code>text-transform: uppercase</code> to element: <span class="uppercase">Lorem ipsum dolor</span>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="capitalize"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      Applies a <code>text-transform: capitalize</code> to element: <span class="capitalize">Lorem ipsum dolor</span>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="strong"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+&lt;span <strong>class="bold"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      <span class="strong">if you need to be bold</span> without using <code>strong</code> tag. <code>bold</code> class is an alias for this.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="italic"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      <span class="italic">if you need to be italic</span> without using <code>em</code> or <code>i</code> tag
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="lh-standard"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      Applies standard <code>line-height</code> (defined with Sass variable <code>$l-h</code> in <code>design-system-config</code>) to element. This helps to fix some issues caused by vertical rythm formulas (if you want to reduce <code>line-height</code>, you may use <code>lh100</code>, but use it wisely, it may create issues with user-generated content).
+  </div>
+</div>
+
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="cut"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      Applies basic hyphenation to text
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="break"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      Applies only <code>word-wrap: break-word;</code> to element (when hyphenation is not needed)
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="nodecoration"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      Applies <code>text-decoration: none</code> to element
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="underline"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      Applies <code>text-decoration: underline</code> to element
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="underline-hover"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      Applies <code>text-decoration: underline</code> to element only when hovered/focused.
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;p <strong>class="alignright"</strong>&gt;Right-aligned text.&lt;/p&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <p class="alignright">Right-aligned text</p>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;p <strong>class="aligncenter"</strong>&gt;Centered-aligned text.&lt;/p&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <p class="aligncenter">Centered-aligned text</p>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;p <strong>class="alignleft"</strong>&gt;Left-aligned text.&lt;/p&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <p class="alignleft">Left-aligned text</p>
+  </div>
+</div>
+<p>Other text alignment helpers: <code>aligntop</code>,<code>alignbottom</code>, <code>alignmiddle</code> may be used (<code>alignsub</code> and <code>alignbaseline</code> are also available).</p></p>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;p&gt;Example of &lt;button <strong>class="link alignbaseline"</strong>&gt;why alignbaseline is useful&lt;/button&gt;…&lt;/p&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <p class="alignleft">Example of <button type="button" class="link alignbaseline">why <code>alignbaseline</code> is useful</button> (fixes some alignments)</p>
+  </div>
+</div>
+
+<p>These helpers may be prefixed by <code>ontablet-/onmobile-</code> to apply them only for tablets/mobiles. <code>alignsub</code> is also available.</p>
+

@@ -1,0 +1,93 @@
+---
+layout: default
+lang: en
+pageId: misc-table-square-ratio-helpers
+title: CSS table/square-ratio helpers
+description: CSS table/square-ratio helpers classes
+keywords: helpers, float, margin, table-layout, padding, inline-block
+section: fe-guidelines
+---
+
+
+
+<h2>Table-design using CSS</h2>
+
+<pre class=" language-css"><code>/* table-design in CSS */
+<strong>.row</strong> {
+  display: table;
+  table-layout: fixed;
+}
+<strong>.inline-row</strong> {
+  display: inline-table;
+  table-layout: fixed;
+}
+.line {
+  display: table-row;
+}
+<strong>.col</strong> {
+  display: table-cell;
+  vertical-align: top;
+}
+<strong>.col-noalign</strong> {
+  display: table-cell;
+}</code></pre>
+
+<div class="row w100 mt2 mb2">
+  <div class="col alignbottom w30 bg-pm-blue-light color-global-light">
+    alignbottom
+  </div>
+  <div class="col w5"></div>
+  <div class="col w30 bg-pm-blue-light color-global-light">
+    Content b<br />
+    longer
+  </div>
+  <div class="col w5"></div>
+  <div class="col w30 bg-pm-blue-light color-global-light">
+    Content c<br />
+    much<br />
+    longer
+  </div>
+</div>
+
+<pre class=" language-css"><code><strong>.aligntop</strong> {
+  vertical-align: top;
+}
+<strong>.alignbottom</strong> {
+  vertical-align: bottom;
+}
+<strong>.alignmiddle</strong> {
+  vertical-align: middle;
+}</code></pre>
+
+<p>These vertical alignment also work for simple texts (<code>alignsub</code> and <code>alignbaseline</code> are also available).</p>
+
+
+
+
+<h2>Square and ratio helpers</h2>
+
+<p>For some components/special cases (responsive <code>iframe</code>, making a responsive square shape, etc.), we have to use the “padding-hack” technique, which is basically:</p>
+
+<ul>
+  <li>A container uses padding-hack to get the desired ratio</li>
+  <li>And content inside is positionned in absolute and takes all available space.</li>
+</ul>
+
+<div class="mod mb2">
+  <div class="left bordered-container w20">
+    <div class="ratio-container-square">
+      <div class="inner-ratio-container p1">
+        Some content in a square box with <code>ratio-container-square</code> class.
+      </div>
+    </div>
+  </div>
+  <div class="right bordered-container w30">
+    <div class="ratio-container-16-9">
+      <div class="inner-ratio-container p1">
+        Some content in a 16/9 ratio box with <code>ratio-container-16-9</code> class.
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>This is a bit hacky, better not using it often.</p>

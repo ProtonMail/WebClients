@@ -1,138 +1,204 @@
     <nav class="navigation mw100 flex-item-fluid scroll-if-needed customScrollBar-container js-navigation">
-              
+
         <p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Design</p>
-        <ul class="navigation__list mt0 unstyled js-to_expand{% if page.section == 'design' %} is-opened{% endif %}">
-          <li class="navigation__item">
-            <a href="/colors/" class="navigation__link"{% if page.pageId == 'colors' %} aria-current="page"{% endif %}>
+        <ul class="navigation__sublist mt0 unstyled js-to_expand{% if page.section == 'design' %} is-opened{% endif %}">
+          <li class="navigation__subitem">
+            <a href="/colors/" class="navigation__sublink"{% if page.pageId == 'colors' %} aria-current="page"{% endif %}>
               Colors
             </a>
           </li>
-          <li class="navigation__item">
-            <a href="/typography/" class="navigation__link"{% if page.pageId == 'typography' %} aria-current="page"{% endif %}>
+          <li class="navigation__subitem">
+            <a href="/typography/" class="navigation__sublink"{% if page.pageId == 'typography' %} aria-current="page"{% endif %}>
               Typography
             </a>
           </li>
-          <li class="navigation__item">
-            <a href="/buttons/" class="navigation__link"{% if page.pageId == 'buttons' %} aria-current="page"{% endif %}>
-              Buttons
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/table/" class="navigation__link"{% if page.pageId == 'table' %} aria-current="page"{% endif %}>
-              Tables
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/containers/" class="navigation__link"{% if page.pageId == 'containers' %} aria-current="page"{% endif %}>
-              Containers
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/badges/" class="navigation__link"{% if page.pageId == 'badges' %} aria-current="page"{% endif %}>
-              Badges
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/forms/" class="navigation__link"{% if page.pageId == 'forms' %} aria-current="page"{% endif %}>
-              Forms
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/notifications/" class="navigation__link"{% if page.pageId == 'notifications' %} aria-current="page"{% endif %}>
-              Notifications
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/icons/" class="navigation__link"{% if page.pageId == 'icons' %} aria-current="page"{% endif %}>
+          <li class="navigation__subitem">
+            <a href="/icons/" class="navigation__sublink"{% if page.pageId == 'icons' %} aria-current="page"{% endif %}>
               Icons
             </a>
           </li>
-          <li class="navigation__item">
-            <a href="/modals/" class="navigation__link"{% if page.pageId == 'modals' %} aria-current="page"{% endif %}>
-              Modals
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/drop-down/" class="navigation__link"{% if page.pageId == 'drop-down' %} aria-current="page"{% endif %}>
-              Drop downs
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/tooltips/" class="navigation__link"{% if page.pageId == 'tooltips' %} aria-current="page"{% endif %}>
-              Tooltips
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/conversations/" class="navigation__link"{% if page.pageId == 'conversations' %} aria-current="page"{% endif %}>
-              Conversations (WIP)
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/login/" class="navigation__link"{% if page.pageId == 'login' %} aria-current="page"{% endif %}>
-              Login (no nav)
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/themes/" class="navigation__link"{% if page.pageId == 'themes' %} aria-current="page"{% endif %}>
+          <li class="navigation__subitem">
+            <a href="/themes/" class="navigation__sublink"{% if page.pageId == 'themes' %} aria-current="page"{% endif %}>
               Themes
             </a>
           </li>
-          <li class="navigation__item">
-            <a href="/assets-images/" class="navigation__link"{% if page.pageId == 'assets-images' %} aria-current="page"{% endif %}>
-              Assets
-            </a>
-          </li>
+		</ul>
 
+		<p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Page mockups</p>
+		<ul class="navigation__sublist mt0 unstyled js-to_expand{% if page.section == 'mockups' %} is-opened{% endif %}">
+			<li class="navigation__subitem">
+				<a href="/conversations/" class="navigation__sublink"{% if page.pageId == 'conversations' %} aria-current="page"{% endif %}>
+				Conversations (WIP)
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/login/" class="navigation__sublink"{% if page.pageId == 'login' %} aria-current="page"{% endif %}>
+				Login (no nav)
+				</a>
+			</li>
+		</ul>
 
-        </ul>
-        
-        <p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Front-end Guidelines</p>
-        <ul class="navigation__list mt0 unstyled js-to_expand{% if page.section == 'fe-guidelines' %} is-opened{% endif %}">
-          <li class="navigation__item">
-            <a href="/how-to-use-design-system/" class="navigation__link"{% if page.pageId == 'how-to-use-design-system' %} aria-current="page"{% endif %}>
-              How to use the Design System
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/sass-variables/" class="navigation__link"{% if page.pageId == 'sass-variables' %} aria-current="page"{% endif %}>
-              Sass/CSS variables
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/namespacing-classes/" class="navigation__link"{% if page.pageId == 'namespacing-classes' %} aria-current="page"{% endif %}>
-              Namespacing classes
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/dos-dont/" class="navigation__link"{% if page.pageId == 'dos-dont' %} aria-current="page"{% endif %}>
-              DOs/DONTs
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/helpers/" class="navigation__link"{% if page.pageId == 'helpers' %} aria-current="page"{% endif %}>
-              Helpers available
-            </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/flexbox-helpers/" class="navigation__link"{% if page.pageId == 'flexbox-helpers' %} aria-current="page"{% endif %}>
+		<p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Components</p>
+		<ul class="navigation__sublist mt0 unstyled js-to_expand{% if page.section == 'components' %} is-opened{% endif %}">
+			<li class="navigation__subitem">
+				<a href="/buttons/" class="navigation__sublink"{% if page.pageId == 'buttons' %} aria-current="page"{% endif %}>
+					Buttons
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/table/" class="navigation__sublink"{% if page.pageId == 'table' %} aria-current="page"{% endif %}>
+					Tables
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/containers/" class="navigation__sublink"{% if page.pageId == 'containers' %} aria-current="page"{% endif %}>
+					Containers
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/badges/" class="navigation__sublink"{% if page.pageId == 'badges' %} aria-current="page"{% endif %}>
+					Badges
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/forms/" class="navigation__sublink"{% if page.pageId == 'forms' %} aria-current="page"{% endif %}>
+					Forms
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/notifications/" class="navigation__sublink"{% if page.pageId == 'notifications' %} aria-current="page"{% endif %}>
+					Notifications
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/modals/" class="navigation__sublink"{% if page.pageId == 'modals' %} aria-current="page"{% endif %}>
+					Modals
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/drop-down/" class="navigation__sublink"{% if page.pageId == 'drop-down' %} aria-current="page"{% endif %}>
+					Drop downs
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/tooltips/" class="navigation__sublink"{% if page.pageId == 'tooltips' %} aria-current="page"{% endif %}>
+					Tooltips
+				</a>
+			</li>
+		</ul>
+
+		<p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Front-end Conventions</p>
+		<ul class="navigation__sublist mt0 unstyled js-to_expand{% if page.section == 'fe-conventions' %} is-opened{% endif %}">
+			<li class="navigation__subitem">
+				<a href="/how-to-use-design-system/" class="navigation__sublink"{% if page.pageId == 'how-to-use-design-system' %} aria-current="page"{% endif %}>
+				  How to use the Design System
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/sass-variables/" class="navigation__sublink"{% if page.pageId == 'sass-variables' %} aria-current="page"{% endif %}>
+				Sass/CSS variables
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/namespacing-classes/" class="navigation__sublink"{% if page.pageId == 'namespacing-classes' %} aria-current="page"{% endif %}>
+				Namespacing classes
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/dos-dont/" class="navigation__sublink"{% if page.pageId == 'dos-dont' %} aria-current="page"{% endif %}>
+				DOs/DONTs
+				</a>
+			</li>
+		</ul>
+
+        <p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Front-end Helpers</p>
+        <ul class="navigation__sublist mt0 unstyled js-to_expand{% if page.section == 'fe-guidelines' %} is-opened{% endif %}">
+          <li class="navigation__subitem">
+            <a href="/flexbox-helpers/" class="navigation__sublink"{% if page.pageId == 'flexbox-helpers' %} aria-current="page"{% endif %}>
               Flexbox helpers
             </a>
-            </li>
-          <li class="navigation__item">
-            <a href="/positionning-helpers/" class="navigation__link"{% if page.pageId == 'positionning-helpers' %} aria-current="page"{% endif %}>
-              Positionning helpers
+		  </li>
+          <li class="navigation__subitem">
+            <a href="/margin-padding-helpers/" class="navigation__sublink"{% if page.pageId == 'margin-padding-helpers' %} aria-current="page"{% endif %}>
+              Margin/padding helpers
+            </a>
+		  </li>
+		  <li class="navigation__subitem">
+            <a href="/float-inlineblock-helpers/" class="navigation__sublink"{% if page.pageId == 'float-inlineblock-helpers' %} aria-current="page"{% endif %}>
+				Float/inline-block helpers
+            </a>
+		  </li>
+		  <li class="navigation__subitem">
+            <a href="/absolute-relative-fixed-helpers/" class="navigation__sublink"{% if page.pageId == 'absolute-relative-fixed-helpers' %} aria-current="page"{% endif %}>
+				Absolute/fixed/relative helpers
+            </a>
+		  </li>
+          <li class="navigation__subitem">
+            <a href="/misc-table-square-ratio-helpers/" class="navigation__sublink"{% if page.pageId == 'misc-table-square-ratio-helpers' %} aria-current="page"{% endif %}>
+              Misc: CSS table/square-ratio helpers
+            </a>
+		  </li>
+
+          <li class="navigation__subitem">
+            <a href="/typographic-helpers/" class="navigation__sublink"{% if page.pageId == 'typographic-helpers' %} aria-current="page"{% endif %}>
+			   Typographic helpers
+            </a>
+		  </li>
+          <li class="navigation__subitem">
+            <a href="/hiding-disabling-helpers/" class="navigation__sublink"{% if page.pageId == 'hiding-disabling-helpers' %} aria-current="page"{% endif %}>
+				Hiding/disabling helpers
+            </a>
+		  </li>
+          <li class="navigation__subitem">
+            <a href="/sizing-helpers/" class="navigation__sublink"{% if page.pageId == 'sizing-helpers' %} aria-current="page"{% endif %}>
+				Sizing helpers
+            </a>
+		  </li>
+          <li class="navigation__subitem">
+            <a href="/scroll-helpers/" class="navigation__sublink"{% if page.pageId == 'scroll-helpers' %} aria-current="page"{% endif %}>
+				Scroll helpers
+            </a>
+		  </li>
+          <li class="navigation__subitem">
+            <a href="/cursor-helpers/" class="navigation__sublink"{% if page.pageId == 'cursor-helpers' %} aria-current="page"{% endif %}>
+				Cursor helpers
+            </a>
+		  </li>
+          <li class="navigation__subitem">
+            <a href="/transform-helpers/" class="navigation__sublink"{% if page.pageId == 'transform-helpers' %} aria-current="page"{% endif %}>
+				Transform helpers
+            </a>
+		  </li>
+          <li class="navigation__subitem">
+            <a href="/border-outline-radiuses-helpers/" class="navigation__sublink"{% if page.pageId == 'border-outline-radiuses-helpers' %} aria-current="page"{% endif %}>
+				Borders/outline/radiuses helpers
             </a>
           </li>
-          <li class="navigation__item">
-            <a href="/loading-content/" class="navigation__link"{% if page.pageId == 'loading-content' %} aria-current="page"{% endif %}>
-              Loading content
+          <li class="navigation__subitem">
+            <a href="/misc-helpers/" class="navigation__sublink"{% if page.pageId == 'misc-helpers' %} aria-current="page"{% endif %}>
+				Misc - lists, click/tap zone, print, dark mode
             </a>
-          </li>
-          <li class="navigation__item">
-            <a href="/right-to-left/" class="navigation__link"{% if page.pageId == 'right-to-left' %} aria-current="page"{% endif %}>
-              Right to left
-            </a>
-          </li>
-        </ul>
-      
+		  </li>
+		</ul>
+
+		<p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">MISC</p>
+		<ul class="navigation__sublist mt0 unstyled js-to_expand{% if page.section == 'misc' %} is-opened{% endif %}">
+			<li class="navigation__subitem">
+				<a href="/loading-content/" class="navigation__sublink"{% if page.pageId == 'loading-content' %} aria-current="page"{% endif %}>
+				Loading content
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/right-to-left/" class="navigation__sublink"{% if page.pageId == 'right-to-left' %} aria-current="page"{% endif %}>
+				Right to left
+				</a>
+			</li>
+			<li class="navigation__subitem">
+				<a href="/assets-images/" class="navigation__sublink"{% if page.pageId == 'assets-images' %} aria-current="page"{% endif %}>
+				Assets
+				</a>
+			</li>
+		</ul>
+
       </nav>
+

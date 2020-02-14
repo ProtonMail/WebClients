@@ -38,6 +38,14 @@
   font-weight: bold;
 }
 
+
+.navigation__sublink {
+	&[aria-current="page"] {
+	  border-left: 2px solid var(--color-nav-active, $pm-primary);
+	  font-weight: bold;
+	}
+}
+
 /* This is the opened state */
 .animated-expandmore__to_expand {
   display: block;
@@ -49,7 +57,8 @@
   max-height: 48em;
   visibility: visible;
   transition-delay: 0s;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 /* This is the hidden state */
 [data-hidden=true].animated-expandmore__to_expand {
@@ -147,10 +156,10 @@
     right: 0;
     bottom: 0;
     z-index: 666;
-    animation: highlight 2s 3 linear; 
+    animation: highlight 2s 3 linear;
     background-color: $pm-global-warning;
   }
-  
+
 }
 @keyframes highlight {
   0% { opacity: .8; }

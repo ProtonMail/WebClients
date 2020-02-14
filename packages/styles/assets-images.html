@@ -5,45 +5,45 @@ pageId: assets-images
 title: Collections of images
 description: Some images libraries we have
 keywords: images, svg
-section: design
+section: misc
 ---
 
 <h2>Flags (4x3, also exist in 1x1)</h2>
 
-{% for image in site.static_files %} 
+{% for image in site.static_files %}
   {% if image.path contains 'img/shared/flags/4x3' %}
   <img src="{{ site.baseurl }}{{ image.path }}" alt="" class="mr0-5 mb0-5" width="40" />
-  {% endif %} 
+  {% endif %}
 {% endfor %}
 
 <h2 class="mt1">Flags <code>ios</code></h2>
 
-{% for image in site.static_files %} 
+{% for image in site.static_files %}
   {% if image.path contains 'img/shared/flags/ios' %}
   <img src="{{ site.baseurl }}{{ image.path }}" alt="" class="mr0-5 mb0-5" width="40" />
-  {% endif %} 
+  {% endif %}
 {% endfor %}
 
 <h2 class="mt1">Folder <code>bank-icons</code></h2>
 
-{% for image in site.static_files %} 
+{% for image in site.static_files %}
   {% if image.path contains 'img/shared/bank-icons' %}
   <img src="{{ site.baseurl }}{{ image.path }}" alt="" class="mr0-5 mb0-5" width="40" />
-  {% endif %} 
+  {% endif %}
 {% endfor %}
 
 <h2 class="mt1">Folder <code>pm-images</code></h2>
 
-{% for image in site.static_files %} 
+{% for image in site.static_files %}
   {% if image.path contains 'img/pm-images' %}
   <img src="{{ site.baseurl }}{{ image.path }}" alt="" class="mr0-5 mb0-5" width="40" />
-  {% endif %} 
+  {% endif %}
 {% endfor %}
 
 <h2 class="mt1">Folder <code>pv-images</code></h2>
 
-{% for image in site.static_files %} 
+{% for image in site.static_files %}
   {% if image.path contains 'img/pv-images' %}
   <img src="{{ site.baseurl }}{{ image.path }}" alt="" class="mr0-5 mb0-5" width="40" />
-  {% endif %} 
+  {% endif %}
 {% endfor %}

@@ -5,7 +5,7 @@ pageId: loading-content
 title: Loading content (WIP)
 description: Using aria-busy to show some loading content.
 keywords: loading, content, aria-busy, examples
-section: fe-guidelines
+section: misc
 ---
 
 <h2>SVG-inlined versions:</h2>
@@ -44,7 +44,7 @@ section: fe-guidelines
 
 <button class="js-activate-loading pm-button" type="button">Toggle loading on div</button>
 <div class="square-color bordered-container mb2 mt0-5">
-  
+
 </div>
 
 <h2>On a <code>button</code></h2>
@@ -103,13 +103,13 @@ section: fe-guidelines
           </svg>
 
             <progress class="progress-contact w100" max="100" value="0" aria-describedby="description_progress"></progress>
-        
+
             <p aria-atomic="true" aria-live="polite" id="description_progress">Decrypting contacts: <span class="js-fakeprogress">0</span>%</p>
-        
+
             <p><button type="button" class="pm-button js-reset-progress">Reset</button></p>
-        
+
         </div>
-  
+
       <ul>
         <li>Just update the <code>value</code> attribute of the progress bar and the text explaining the action in progress.</li>
         <li>Please do note the <code>aria-atomic="true" aria-live="polite"</code> on the container describing the current progress (helps to vocalize correctly the description).</li>
@@ -118,11 +118,11 @@ section: fe-guidelines
       </ul>
     </div>
     <div class="w49 aligncenter flex-self-vcenter">
-      <pre class=" language-markup"><code>&lt;progress 
-  class="<strong>progress-contact w100</strong>" 
+      <pre class=" language-markup"><code>&lt;progress
+  class="<strong>progress-contact w100</strong>"
   <strong>aria-describedby="description_progress"</strong>&gt;
 &lt;/progress&gt;
-&lt;p 
+&lt;p
   <strong>aria-atomic="true" aria-live="polite"</strong>
   <strong>id="description_progress"</strong>&gt;
   Decrypting contacts: 0%
@@ -142,7 +142,7 @@ section: fe-guidelines
         <progress class="progress-contact progress-contact--error w100" max="100" value="20" aria-describedby="description_progress2"></progress>
 
         <progress class="progress-contact progress-contact--warning w100" max="100" value="30" aria-describedby="description_progress3"></progress>
-              
+
       </div>
 
     <ul>
@@ -151,15 +151,15 @@ section: fe-guidelines
     </ul>
   </div>
   <div class="w49 aligncenter flex-self-vcenter">
-    <pre class=" language-markup"><code>&lt;progress 
+    <pre class=" language-markup"><code>&lt;progress
   class="progress-contact <strong>progress-contact--success</strong> w100"&gt;
 &lt;/progress&gt;
 …
-&lt;progress 
+&lt;progress
   class="progress-contact <strong>progress-contact--error</strong> w100"&gt;
 &lt;/progress&gt;
 …
-&lt;progress 
+&lt;progress
   class="progress-contact <strong>progress-contact--warning</strong> w100"&gt;
 &lt;/progress&gt;
 </code></pre>

@@ -5,7 +5,7 @@ pageId: how-to-use-design-system
 title: How to use the Design System
 description: Some general rules about how to use the Design System
 keywords: structure, design system, proton
-section: fe-guidelines
+section: fe-conventions
 ---
 
 <p>The Proton Design System is splitted into 2 sections:</p>
@@ -34,7 +34,7 @@ section: fe-guidelines
         {% assign links = "/helpers/|/badges/|/containers/|/notifications/|/table/|/table/#plans-table|/modals/|/buttons/|/forms/|/drop-down/|/|/loading-content/|/loading-content/|/containers/|/containers/|/containers/|/conversations/|/tooltips/|/themes/|null|null|/containers/#wizard/|/sass-variables/|null|/loading-content/|/containers/|/containers/#tabs|/drop-down/|null|null|null|null|null|null|/sass-variables/|/settings/" | split: '|' %}
         {% assign linksDesc = "cursors|badges|containers|notifications|tables|tables (plans)|modals|buttons|forms|drop downs|on each page on the left bottom|loading content|in Loading content section|containers|breadcrumb domain|information panels|conversations|tooltips|config for themes|blue theme|light theme|in containers|example on Sass variables page|example on the top|in Loading content section|containers|in containers|in drop downs|search bar on top|nav on top|on the left|the toolbar|tree view React component|on the left|example on Sass variables page|settings" | split: '|' %}
         {% for file in sassFiles %}
-        <li><strong>_{{ file }}.scss</strong>: 
+        <li><strong>_{{ file }}.scss</strong>:
           {% if links[forloop.index0] != 'null' %}<a href="{{ links[forloop.index0] }}">{% endif %}
             see {{ linksDesc[forloop.index0] }}
           {% if links[forloop.index0] != 'null' %}</a>{% endif %}
