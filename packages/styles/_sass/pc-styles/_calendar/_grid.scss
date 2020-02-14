@@ -1,0 +1,103 @@
+.calendar-grid {
+
+	&-heading {
+		color: var(--color-main-area, $pm-global-grey);
+
+		&-number {
+			display: inline-flex;
+			width: 1.75em;
+			height: 1.75em;
+			border-radius: 50%;
+		}
+
+		&[aria-current="date"] {
+			color: var(--color-main-area, $pm-global-grey);
+			font-weight: bold;
+		}
+
+		&[aria-current="date"] &-number {
+			background-color: $pm-primary-dark;
+			color: $white;
+		}
+
+		&[aria-pressed="true"] &-number {
+			background-color: $calendar-selected-day-color;
+			color: $white;
+		}
+
+		&-day-shortname {
+			display: none;
+		}
+	}
+
+	&-gridcells {
+		border-bottom: $calendar-grid-border;
+	}
+
+	&-dayLine,
+	&-hourLine,
+	&-gridcell {
+		&::after {
+			content: '';
+			position: absolute;
+			pointer-events: none;
+		}
+	}
+
+	&-dayLine {
+		&::after {
+			height: 100%;
+			margin-left: -1px;
+			border-left: $calendar-grid-border;
+		}
+	}
+
+	&-hourLine {
+		height: $calendar-hour-height;
+
+		&::after {
+			width: 100%;
+			margin-top: -1px;
+			border-bottom: $calendar-grid-border;
+		}
+	}
+
+	&-gridcell {
+		margin-right: $gridcell-right-margin;
+
+		&::after {
+			border-left: $calendar-grid-border;
+			height: 100%;
+			margin-left: -1px;
+		}
+
+	}
+
+	&-nowHourLine {
+		z-index: 6;
+		left: 0;
+		right: -$gridcell-right-margin;
+		border-bottom: 2px solid var(--bgcolor-calendar-now-indicator, $pm-global-warning);
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: -0.3rem;
+			left: -0.4rem;
+			width: .7rem;
+			height: .7rem;
+			border-radius: 50%;
+			background-color: var(--bgcolor-calendar-now-indicator, $pm-global-warning);
+		}
+	}
+
+	&-timeBlock {
+		height: $calendar-hour-height;
+	}
+
+	&-timeText {
+		top: -1rem;
+		font-size: 1rem;
+	}
+
+}
