@@ -1,3 +1,7 @@
+# [3.16.21] - 2020-02-17
+## Fixed
+- Add support for DKIM rotation
+
 # [3.16.20] - 2020-01-09
 ## Fixed
 - On rare occasions an older draft was sent instead of the current one
