@@ -40,7 +40,7 @@ const PrivateApp = ({ onLogout }) => {
             onLogout={onLogout}
             locales={{} /* todo */}
             onInit={async () => {
-                const calendars = await loadModels([CalendarsModel], { api, cache });
+                const [calendars] = await loadModels([CalendarsModel], { api, cache });
                 if (calendars && calendars.length) {
                     // The calendar user settings can only be fetched if calendars have been setup.
                     const [{ TimeFormat }] = await loadModels([CalendarUserSettingsModel], { api, cache });
