@@ -41,6 +41,12 @@ export const updateLogAuth = (LogAuth) => ({
     data: { LogAuth }
 });
 
+export const updateDensity = (Density) => ({
+    url: 'settings/density',
+    method: 'put',
+    data: { Density }
+});
+
 export const updateEmail = (data) => ({
     url: 'settings/email',
     method: 'put',

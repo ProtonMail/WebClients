@@ -573,3 +573,8 @@ export enum DKIM_KEY_DNS_STATUS {
     GOOD = 1,
     INVALID = 2
 }
+
+export enum DENSITY {
+    COMFORTABLE = 0,
+    COMPACT = 1
+}
