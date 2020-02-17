@@ -8,7 +8,7 @@ function dkimModal(dispatchers, pmModal) {
         /* @ngInject */
         controller: function(params) {
             const { dispatcher } = dispatchers(['domainModal']);
-            const { Keys = [] } = params.domains || {};
+            const { Keys = [] } = params.domain || {};
 
             this.domain = params.domain;
             this.domainKeys = Keys.filter(({ State }) => [ACTIVE, PENDING].includes(State));
