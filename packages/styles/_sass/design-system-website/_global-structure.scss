@@ -4,7 +4,7 @@ body {
 }
 /* === page === */
 .content {
-  background-image: -webkit-linear-gradient(top, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) ); 
+  background-image: -webkit-linear-gradient(top, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
   background-image: linear-gradient(to bottom, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
   /*display: grid;
   grid-template-areas:
@@ -66,7 +66,7 @@ body {
 .main {
   border-radius: 4px 4px 0 0;
   margin-right: 20px;
-  z-index: 1; // in case of drop shadow  
+  z-index: 1; // in case of drop shadow
   box-shadow: var(--boxshadow-main, none);
 }
 @if $rtl-option == true {
@@ -86,7 +86,7 @@ body {
   max-height: calc(100vh - #{$header-height} );
   overflow: auto;
   border-radius: 4px 4px 0 0;
-  
+
   &.no-scroll {
     overflow: hidden;
   }
@@ -104,13 +104,24 @@ body {
 }
 
 // only for Safari mobile shitty way to handle vh unit
+$height-for-tablet: 5em !default;
+$height-for-mobile: 8em !default;
 .main-area--paddingFix {
-  padding-bottom: 5em;
+  padding-bottom: $height-for-tablet;
 }
-@include respond-to($breakpoint-small) { 
+.main-area-content--paddingFix::after {
+	content:'';
+	display: flex;
+	width: 100%;
+	height: $height-for-tablet;
+}
+@include respond-to($breakpoint-small) {
   .main-area--paddingFix {
-    padding-bottom: 8em; 
+    padding-bottom: $height-for-mobile;
     // thanks Apple for the fixed toolbar at the bottom
+  }
+  .main-area-content--paddingFix::after {
+	height: $height-for-mobile;
   }
 }
 
