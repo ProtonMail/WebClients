@@ -3,7 +3,7 @@
  */
 
 $treeview-border-width: 1px !default;
-
+$treeview-indentation-margin: 3rem !default;
 
 
 .treeview-item {
@@ -11,19 +11,36 @@ $treeview-border-width: 1px !default;
     border-bottom : $treeview-border-width solid var(--bordercolor-input, $pm-global-border);
 	margin-bottom: -$treeview-border-width;
 
-	$arrow-size: .7rem;
+	$arrow-width: .9rem !default;
+	$arrow-height: .7rem !default;
+	$circle-size: .8rem !default;
 
+	&--moveInside,
 	&--moveTop,
-	&--moveBottom,
-	&--moveInside {
+	&--moveBottom {
 		&::before {
 			content: '';
 			position: absolute;
-			left: -1.5rem;
+		}
+	}
+	&--moveInside {
+		&::before {
+			left: -$arrow-width;
 			height: 0;
 			width: 0;
-			border: $arrow-size solid transparent;
+			border: $arrow-height solid transparent;
 			border-left-color: $pm-primary;
+			border-left-width: $arrow-width;
+		}
+	}
+	&--moveTop,
+	&--moveBottom {
+		&::before {
+			left: -#{$circle-size/2};
+			height: $circle-size;
+			width: $circle-size;
+			border-radius: 50%;
+			background: $pm-primary;
 		}
 	}
 	&--moveInside#{&}--selfGrabbed { // no primary color on the self grabbed element
@@ -32,10 +49,10 @@ $treeview-border-width: 1px !default;
 		}
 	}
 	&--moveTop::before {
-		top: -$arrow-size;
+		top: -#{$circle-size/2};
 	}
 	&--moveBottom::before {
-		bottom: -$arrow-size;
+		bottom: -#{$circle-size/2};
 	}
 
 	&--moveTop::after,
@@ -58,7 +75,23 @@ $treeview-border-width: 1px !default;
 	}
 
     .treeview-item .treeview-item {
-        padding-left: 3rem;
+		padding-left: $treeview-indentation-margin;
+		&.treeview-item--moveInside {
+			background: linear-gradient(to right, transparent 0, transparent #{$treeview-indentation-margin}, var(--bgcolor-highlight, $pm-global-light) #{$treeview-indentation-margin});
+			&::before {
+				left: calc(-#{$arrow-width} + #{$treeview-indentation-margin});
+			}
+		}
+		&.treeview-item--moveTop,
+		&.treeview-item--moveBottom {
+			&::before {
+				left: calc(-#{$circle-size/2} + #{$treeview-indentation-margin});
+			}
+		}
+		&--moveTop::after,
+		&--moveBottom::after {
+			left: #{$treeview-indentation-margin};
+		}
 	}
 
 }
