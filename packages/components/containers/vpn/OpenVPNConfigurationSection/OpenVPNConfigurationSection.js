@@ -86,7 +86,10 @@ const OpenVPNConfigurationSection = () => {
     const countryServers = groupWith(
         (a, b) => a.ExitCountry === b.ExitCountry,
         allServers.filter(({ Tier }) => Tier === 1)
-    ).map((groups) => minBy(({ Load }) => Number(Load), groups));
+    ).map((groups) => ({
+        ...minBy(({ Load }) => Number(Load), groups),
+        Servers: groups.reduce((acc, { Servers = [] }) => (acc.push(...Servers), acc), [])
+    }));
 
     const isUpgradeRequiredForSecureCore = () => !userVPN || !hasPaidVpn || isBasicVPN;
     const isUpgradeRequiredForCountries = () => !userVPN || !hasPaidVpn;
