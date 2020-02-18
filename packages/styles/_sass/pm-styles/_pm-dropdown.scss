@@ -19,7 +19,7 @@ $dropDown-narrow-width: 8em !default;
   transform: scale(1,1);
   visibility: visible;
   transition-delay: 0s;
-  width: $dropDown-width; 
+  width: $dropDown-width;
   background: var(--bgcolor-main-area, $white);
   border-radius: $global-border-radius;
   box-shadow: 0 0 16px 3px $input-shadow-color;
@@ -75,7 +75,7 @@ $dropDown-narrow-width: 8em !default;
   max-height: 30vh;
   padding: 0; // no padding for the drop shadow :-\
   margin: 0 0 0 1em;
-  
+
   background: var(--bgcolor-main-area, $white) no-repeat;
   background-image: radial-gradient(farthest-side at 50% 0,var(--bordercolor-input, #acb0bf),transparent),radial-gradient(farthest-side at 50% 100%,var(--bordercolor-input, #acb0bf),transparent);
   background-position: 50% 0, 0 100%;
@@ -124,7 +124,7 @@ $dropDown-narrow-width: 8em !default;
 .dropDown-content::before {
   content: '';
   position: absolute;
-  top: -2rem; 
+  top: -2rem;
   left: calc(50% - 1rem);
   width: 1rem;
   height: 1rem;
@@ -173,8 +173,15 @@ $dropDown-narrow-width: 8em !default;
   }
 }
 
-.dropDown-link {
+.dropDown-link,
+.dropDown-link:focus,
+.dropDown-link:hover,
+.dropDown-link:active {
   color: currentColor;
+}
+.dropDown-item:focus-within,
+.dropDown-item:hover {
+  background-color: var(--bgcolor-input, $pm-global-light);
 }
 
 
