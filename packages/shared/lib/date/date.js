@@ -10,7 +10,7 @@ import {
 } from 'date-fns';
 
 /**
- * Get a list with the names of the days of the week according to current locale
+ * Get a list with the names of the days of the week according to current locale, where Sunday is the start of the week.
  * @param {String} stringFormat
  * @param {Object} options
  *
@@ -18,7 +18,7 @@ import {
  */
 export const getFormattedWeekdays = (stringFormat, options) => {
     const zeroTime = new Date(0);
-    const weekdays = eachDayOfInterval({ start: startOfWeek(zeroTime, options), end: endOfWeek(zeroTime, options) });
+    const weekdays = eachDayOfInterval({ start: startOfWeek(zeroTime), end: endOfWeek(zeroTime) });
 
     return weekdays.map((day) => format(day, stringFormat, options));
 };
