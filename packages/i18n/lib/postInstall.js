@@ -13,7 +13,8 @@ async function main() {
 
     const commands = [
         `rm -rf ${OUTPUT_CLONE} || echo`,
-        `git clone ${I18N_DEPENDENCY_REPO} --depth 1 --branch ${I18N_DEPENDENCY_BRANCH} ${OUTPUT_CLONE}`
+        `git clone ${I18N_DEPENDENCY_REPO} --depth 1 --branch ${I18N_DEPENDENCY_BRANCH} ${OUTPUT_CLONE}`,
+        `rm -rf ${path.join(OUTPUT_CLONE, '.git')}`
     ].join(' && ');
     await bash(commands);
     success(`added translations inside ${OUTPUT_CLONE}`);
