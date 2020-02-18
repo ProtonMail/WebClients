@@ -15,6 +15,7 @@ import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 
 import MainContainer from '../containers/calendar/MainContainer';
 import { SETTINGS_TIME_FORMAT } from '../constants';
+import locales from '../locales';
 
 const EVENT_MODELS = [
     UserModel,
@@ -38,7 +39,7 @@ const PrivateApp = ({ onLogout }) => {
     return (
         <StandardPrivateApp
             onLogout={onLogout}
-            locales={{} /* todo */}
+            locales={locales}
             onInit={async () => {
                 const [calendars] = await loadModels([CalendarsModel], { api, cache });
                 if (calendars && calendars.length) {
