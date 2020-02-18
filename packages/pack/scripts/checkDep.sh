@@ -6,9 +6,7 @@ ERRORS=();
 function log {
     if [[ "$1" = *"warn"* ]]; then
       echo
-      echo -e "\e[00;35m--------- ⚠ WARNING ⚠ ---------\e[00m";
-      echo -e "$2"
-      echo
+      echo -e "\e[00;35mWARNING\e[00m $2"
     fi
     if [[ "$1" = *"error"* ]]; then
       echo -e "\e[00;31m$2\e[00m";
@@ -58,6 +56,14 @@ function checkDep {
         ERRORS+=("$1 \n    [local]: $local\n    [latest]: $remote");
     fi;
 }
+
+if ! [ -d 'node_modules/proton-translations' ]; then
+    log 'warn' 'directory proton-translations not found, create a mock'
+    log 'info' 'If you need translations inside your application, you need to add the hook inside package.json:'
+    log 'info' '"postinstall": "proton-i18n post-install" to fix this issue';
+    echo
+    mkdir -p 'node_modules/proton-translations' || echo
+fi;
 
 # Run only the check every 1 hour to prevent limit rate API
 isRunnable;

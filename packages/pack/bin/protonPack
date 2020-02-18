@@ -48,7 +48,7 @@ async function main() {
         debug(appConfig, 'app config');
         await fs.writeFile(appConfigPath, appConfig);
         success(`generated ${appConfigPath}`);
-        await script('checkDep.sh');
+        await script('checkDep.sh', [], 'inherit');
     }
 
     if (is('print-config')) {
