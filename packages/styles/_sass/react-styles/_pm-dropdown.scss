@@ -173,6 +173,7 @@ $dropDown-narrow-width: 8em !default;
 .dropDown-link:hover,
 .dropDown-link:active {
   color: currentColor;
+  text-decoration: none;
 }
 .dropDown-item:focus-within,
 .dropDown-item:hover {
