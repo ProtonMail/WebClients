@@ -18,6 +18,7 @@ const SearchDropdown = ({
     onSearch,
     placeholder = c('Placeholder').t`Search`,
     content = <Icon name="search" />,
+    originalPlacement,
     ...rest
 }) => {
     const [uid] = useState(generateUID('search-dropdown'));
@@ -44,7 +45,14 @@ const SearchDropdown = ({
             <DropdownButton {...rest} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle}>
                 {content}
             </DropdownButton>
-            <Dropdown id={uid} autoClose={false} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+            <Dropdown
+                id={uid}
+                autoClose={false}
+                originalPlacement={originalPlacement}
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+            >
                 <form className="p1" name="search-dropdown" onSubmit={handleSubmit}>
                     <div className="mb1">
                         <SearchInput
@@ -56,7 +64,8 @@ const SearchDropdown = ({
                         />
                     </div>
                     <div className="flex flex-nowrap">
-                        <ResetButton className="w50" onClick={handleReset}>{c('Action').t`Clear`}</ResetButton>
+                        <ResetButton disabled={!search} className="w50" onClick={handleReset}>{c('Action')
+                            .t`Clear`}</ResetButton>
                         <PrimaryButton className="w50 ml1" type="submit">{c('Action').t`Search`}</PrimaryButton>
                     </div>
                 </form>
@@ -69,6 +78,7 @@ SearchDropdown.propTypes = {
     content: PropTypes.node,
     search: PropTypes.string,
     onSearch: PropTypes.func,
+    originalPlacement: PropTypes.string,
     placeholder: PropTypes.string
 };
 
