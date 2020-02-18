@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+
 const { warn } = require('./lib/helpers/log')('proton-i18n');
 
 // Compat mode WebClient
@@ -12,6 +13,19 @@ const PROTON_DEPENDENCIES = {
     ),
     reactComponents: ['{co*,helpers}'],
     shared: ['lib']
+};
+
+/**
+ * Detect the beta v4 -> we have a custom pot for this one
+ * @return {Boolean}
+ */
+const isWebClientLegacy = () => {
+    try {
+        const { name } = require(path.join(process.cwd(), 'package.json')); // We might use proton-i18n on top of a non node package
+        return name === 'protonmail-web';
+    } catch (e) {
+        return false;
+    }
 };
 
 /**
@@ -45,6 +59,10 @@ const getFiles = () => {
     };
 };
 const getEnv = () => ({
+    I18N_DEPENDENCY_REPO: process.env.I18N_DEPENDENCY_REPO,
+    I18N_DEPENDENCY_BRANCH: !isBetaAngularV4()
+        ? process.env.I18N_DEPENDENCY_BRANCH
+        : process.env.I18N_DEPENDENCY_BRANCH_V4,
     I18N_EXTRACT_DIR: process.env.I18N_EXTRACT_DIR,
     I18N_JSON_DIR: process.env.I18N_JSON_DIR,
     CROWDIN_KEY_API: process.env.CROWDIN_KEY_API,
@@ -69,6 +87,7 @@ const getCrowdin = () => {
 
 module.exports = {
     getEnv,
+    isWebClientLegacy,
     getCrowdin,
     getFiles,
     ENV_FILE,

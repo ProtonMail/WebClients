@@ -31,60 +31,6 @@ async function upload() {
     return { success, type: 'update' };
 }
 
-async function checkStatusExport() {
-    const { stdout = '' } = await curl(getURL('export-status', 'json'));
-    debug(stdout, 'Check status export');
-    return JSON.parse(stdout);
-}
-
-async function createExport() {
-    const request = curl(getURL('export'));
-
-    // In can take a lot of time
-    setTimeout(() => {
-        console.log('Cancel request');
-        request.cancel();
-    }, 5000);
-
-    try {
-        await request;
-    } catch (error) {
-        if (!error.isCanceled) {
-            throw error;
-        }
-    }
-}
-
-async function download() {
-    const { stdout } = await curl(getURL('download/all.zip'), {}, { encoding: null });
-    return stdout;
-}
-
-async function getStatus() {
-    const { stdout = '' } = await curl(getURL('status', 'json'));
-    debug(stdout, 'get status ouput');
-    return JSON.parse(stdout);
-}
-
-async function getTopMember() {
-    const { stdout = '' } = await curl(getURL('reports/top-members/export', 'format=csv&json'));
-    debug(stdout, 'hash export top-members');
-    const { hash, success } = JSON.parse(stdout);
-
-    if (success) {
-        const { stdout } = await curl(getURL('reports/top-members/download', `hash=${hash}`));
-        debug(stdout, 'CSV export top-members');
-        return stdout;
-    }
-
-    warn('export top-members is not available for now');
-}
-
 module.exports = {
-    upload,
-    download,
-    getStatus,
-    createExport,
-    getTopMember,
-    checkStatusExport
+    upload
 };

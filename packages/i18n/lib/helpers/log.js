@@ -1,65 +1,71 @@
 const argv = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
-const ora = require('ora');
+
+const IS_VERBOSE = argv.v || argv.verbose;
 
 module.exports = (scope) => {
     const warn = (msg) => {
         console.log();
-        console.log(`[${scope}] ${chalk.magenta('⚠')} ${chalk.magenta(msg)}.`);
+        console.log(chalk.bgMagenta(chalk.white('[warning]')), msg);
         console.log();
     };
 
     const success = (msg, { time, space = false } = {}) => {
-        const txt = chalk.green(chalk.bold('✔ '));
-        const message = [`[${scope}] `, txt, msg, time && `(${time})`].filter(Boolean).join('');
+        const txt = chalk.bold(' ✔ ');
+        const message = [chalk.bgGreen(chalk.black(`[${scope}]`)), txt, msg, time && ` (${time})`]
+            .filter(Boolean)
+            .join('');
         space && console.log();
         console.log(message);
     };
 
-    const title = (msg) => {
-        console.log('~', chalk.bgYellow(chalk.black(msg)), '~');
-        console.log();
-    };
-
-    const json = (data, output, extraLine = true) => {
+    const json = (data, output, noSpace) => {
         // only output for a command
         if (output) {
             return console.log(JSON.stringify(data, null, 2));
         }
-
-        extraLine && console.log();
-        console.log(`[${scope}]`, JSON.stringify(data, null, 2));
+        !noSpace && console.log();
+        !noSpace && console.log(`[${scope}]`, JSON.stringify(data, null, 2));
+        noSpace && console.log(JSON.stringify(data, null, 2));
         console.log();
     };
 
     const error = (e) => {
-        console.log(`[${scope}] ${(chalk.red(' ⚠'), chalk.red(e.message))}`);
-        console.log();
-        console.error(e);
+        console.log(chalk.bgRed(chalk.bold(chalk.white('[error]'))), e.message);
+
+        // Better log for CLI commands, better than a JSON version of stdX
+        if (e.stdout || e.stderr) {
+            console.log();
+            console.log('Stdout + stderr');
+            console.log(e.stdout);
+            console.error(e.stderr);
+            process.exit(1);
+        }
+
         process.exit(1);
     };
 
-    const spin = (text) => ora(text).start();
-
     function debug(item, message = 'debug') {
-        if (!(argv.v || argv.verbose)) {
+        if (!IS_VERBOSE) {
             return;
         }
-        if (Array.isArray(item) || typeof item === 'object') {
+
+        if (item instanceof Error) {
             console.log(`[${scope}]`, message);
-            return json(item, false, false);
+            error(item);
         }
 
+        if (Array.isArray(item) || typeof item === 'object') {
+            console.log(`[${scope}]`, message);
+            return json(item, false, true);
+        }
         console.log(`[${scope}] ${message} \n`, item);
     }
 
     return {
         success,
         debug,
-        title,
         error,
-        json,
-        warn,
-        spin
+        warn
     };
 };

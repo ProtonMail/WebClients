@@ -1,41 +1,18 @@
 Usage: $ proton-i18n <command>
 Available commands:
-  - [blue]crowdin[/blue]
-      To update, download etc. translations (--help to get more details)
+  - [blue]post-install[/blue]
+      To install locales as a dependency
 
-  - [blue]validate[/blue] [blue]<type>[/blue]
+  - [blue]crowdin[/blue]
+      To send new translations to crowdin
+
+  - [blue]validate[/blue] [yellow]<type>[/yellow]
       To validate the translations, check if we have contexts
         - type: default (default) validate we don't have missing context
         - type: lint-functions check if we use the right format for ttag
 
-  - [blue]extract[/blue] [blue]<type>[/blue]
+  - [blue]extract[/blue] [yellow]<type>[/yellow]
       Extract all translations from the projet
       - type: default (app) extract translations from the app and reactComponents + shared
       - type: reactComponents extract only translations from react-components
       - type: shared extract only translations from proton-shared
-
-  - [blue]list[/blue] [blue]<type>[/blue]
-      List all translations available
-        - type: default (default) write them inside a file po/lang.json
-        - type: show print JSON inside the console
-
-  - [blue]compile[/blue]
-      Compile all translations from the dir ./po to a JSON inside src/i18n/<lang>.json
-
-  - [blue]commit[/blue] [blue]<type>[/blue]
-      Commit translations
-      - type: update commit new extracted translations
-      - type: upgrade commit new translations (po, json)
-
-  - [blue]upgrade[/blue] [blue]<flag>[/blue]
-      Upgrade translations inside your app from the latest version available on crowdin.
-      It will:
-        - Get list of translations available
-        - Upgrade our translations with ones from crowdin
-        - Store a cache of translations available in the app
-        - Export translations as JSON
-        - Commit everything
-
-      - flag: default none, it will auto fetch latest translations (proton-i18n crowdin --list --type --limit=95)
-      - flag: --custom it will use your version of the file
-      - flag: --limit-i18n Custom limit to extract the list of translations available. Default 90.

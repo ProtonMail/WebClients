@@ -1,12 +1,14 @@
+const { getFiles, PROTON_DEPENDENCIES, isWebClientLegacy } = require('../config');
 const { success, debug } = require('./helpers/log')('proton-i18n');
 const { hasDirectory } = require('./helpers/file');
 const { script, bash } = require('./helpers/cli');
-const { getFiles, PROTON_DEPENDENCIES } = require('../config');
 
 const { TEMPLATE_FILE } = getFiles();
 
 async function extractor(app = 'app') {
-    if (process.env.APP_KEY === 'Angular') {
+    debug(app, 'type of extraction');
+
+    if (isWebClientLegacy()) {
         const cmd = `npx angular-gettext-cli --files './src/+(app|templates)/**/**/*.+(js|html)' --dest ${TEMPLATE_FILE} --attributes "placeholder-translate","title-translate","pt-tooltip-translate","translate"`;
         debug(cmd);
         return bash(cmd);

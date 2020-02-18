@@ -2,13 +2,19 @@ const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
 
-const { success, spin, debug } = require('./helpers/log')('proton-i18n');
-const { bash } = require('./helpers/cli');
+const { success, debug } = require('./helpers/log')('proton-i18n');
+const { getFiles, isWebClientLegacy } = require('../config');
+const { script } = require('./helpers/cli');
 
+const { TEMPLATE_FILE } = getFiles();
 const isLint = process.argv.includes('--lint');
 
+/**
+ * Parse pot file and find translations without a context
+ * @param  {Buffer} Raw text input
+ */
 function findNoContext(doc) {
-    if (process.env.APP_KEY === 'Angular') {
+    if (isWebClientLegacy()) {
         return _.filter(doc.toString().split(/^\s*\n/gm), (str) => {
             return !str.includes('msgctxt') && !str.includes('Project-Id-Version');
         });
@@ -21,33 +27,19 @@ function findNoContext(doc) {
     });
 }
 
-/**
- * Validate the code to check if we use the correct format when
- * we write ttag translations.
- * @param  {String} arg path to lint
- */
-async function validateFunctionFormat(arg = '') {
-    const cmd = path.resolve(__dirname, '..', 'scripts/lint.sh');
-    try {
-        await bash(`${cmd} ${arg}`);
-    } catch (e) {
-        console.log(e.message);
-        process.exit(1);
-    }
-}
-
 function main(mode, { dir } = {}) {
+    /*
+     * Validate the code to check if we use the correct format when we write ttag translations.
+     */
     if (mode === 'lint-functions') {
         debug(`[lint-functions] validtion path: ${dir}`);
-        return validateFunctionFormat(dir);
+        return script('lint.sh', [dir]);
     }
 
-    const spinner = spin('Parsing translations');
-    const doc = fs.readFileSync(path.resolve(process.cwd(), 'po/template.pot'));
+    const doc = fs.readFileSync(path.resolve(process.cwd(), TEMPLATE_FILE));
     const translations = findNoContext(doc);
     const total = translations.length;
     const word = total > 1 ? 'translations' : 'translation';
-    spinner.stop();
 
     if (!isLint && !total) {
         success('All translations have a context, good job !');
