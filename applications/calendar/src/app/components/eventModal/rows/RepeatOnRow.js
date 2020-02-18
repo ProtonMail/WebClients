@@ -7,10 +7,12 @@ import DayCheckbox from '../inputs/DayCheckbox';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { dateLocale } from 'proton-shared/lib/i18n';
 
+const DAYS = Array.from({ length: 7 }, (a, i) => i);
+
 const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange, collapseOnMobile }) => {
     const [weekdaysLong, weekdaysAbbreviations] = useMemo(() => {
-        return ['cccc', 'ccccc'].map((format) => getFormattedWeekdays(format, { locale: dateLocale, weekStartsOn }));
-    }, [dateLocale, weekStartsOn]);
+        return ['cccc', 'ccccc'].map((format) => getFormattedWeekdays(format, { locale: dateLocale }));
+    }, [dateLocale]);
     const currentDay = start.date.getDay();
 
     const handleToggleDay = (day) => {
@@ -33,9 +35,10 @@ const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange, collapseOn
             </Row>
             <Row>
                 <div className="flex flex-nowrap flex-item-fluid">
-                    {weekdaysAbbreviations.map((dayAbbreviation, index) => {
-                        const day = (index + weekStartsOn) % 7;
-                        const dayLong = weekdaysLong[index];
+                    {DAYS.map((dayIndex) => {
+                        const day = (dayIndex + weekStartsOn) % 7;
+                        const dayLong = weekdaysLong[day];
+                        const dayAbbreviation = weekdaysAbbreviations[day];
                         const checked = frequencyModel.weekly.days.includes(day);
                         return (
                             <span key={day.toString()}>

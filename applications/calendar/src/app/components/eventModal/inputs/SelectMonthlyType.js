@@ -9,7 +9,7 @@ import { MONTHLY_TYPE } from '../../../constants';
 
 const SelectMonthlyType = ({ id, value, date, onChange }) => {
     const weekdays = useMemo(() => {
-        return getFormattedWeekdays('cccc', { locale: dateLocale, weekStartsOn: 0 });
+        return getFormattedWeekdays('cccc', { locale: dateLocale });
     }, [dateLocale]);
     const allOptions = useMemo(() => {
         return Object.values(MONTHLY_TYPE).map((type) => {

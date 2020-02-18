@@ -32,7 +32,7 @@ const PopoverEventContent = ({
     }, [start, end]);
 
     const [weekdays] = useMemo(() => {
-        return ['cccc'].map((format) => getFormattedWeekdays(format, { locale: dateLocale, weekStartsOn: 0 }));
+        return ['cccc'].map((format) => getFormattedWeekdays(format, { locale: dateLocale }));
     }, [dateLocale]);
 
     const timeString = useMemo(() => {
