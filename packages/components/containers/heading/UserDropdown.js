@@ -88,7 +88,7 @@ const UserDropdown = ({ ...rest }) => {
                                     className="w100 flex flex-nowrap dropDown-link nodecoration pt0-5 pb0-5"
                                     href="/settings"
                                 >
-                                    <Icon className="mt0-25 mr0-5 fill-currentColor" name="settings" />
+                                    <Icon className="mt0-25 mr0-5 fill-currentColor" name="settings-master" />
                                     {c('Action').t`Settings`}
                                 </a>
                             )}
