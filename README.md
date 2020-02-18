@@ -24,7 +24,7 @@ We are currently working with our community to localize ProtonMail from English 
 > To run the app without babel `npm run start:raw`
 
 ### dependencies
-  - Node.js >= v8
+  - Node.js >= v12 (LTS)
   - npm 6
   - git
 
@@ -111,14 +111,6 @@ Each `deploy-<NAME>` will be available at `<NAME>.protonmail.com`.
 ```sh
 npm run i18n:extract
 ```
-
-> We build i18n when we create a build for beta or prod
-
-```sh
-npm run i18n:build
-```
-
-It will do everything you need. Import new translations first for a better result ;)
 
 ## Release notes
 

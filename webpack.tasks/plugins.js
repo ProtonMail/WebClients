@@ -59,7 +59,7 @@ const list = [
             to: 'assets/fonts',
             flatten: true
         })),
-        { from: 'src/i18n', to: 'i18n' },
+        { from: 'node_modules/proton-translations', to: 'i18n' },
         { from: CONFIG.externalFiles.formgenerator, to: 'form' },
         { from: 'src/assets', to: 'assets' }
     ]),
