@@ -4,7 +4,7 @@ const { success } = require('./helpers/log')('proton-i18n');
 /**
  * Update latest translations to crowdin
  */
-async function udpate() {
+async function update() {
     const { success: isSuccess, type } = await apiCrowdin.upload();
 
     if (isSuccess && type === 'update') {
@@ -16,4 +16,4 @@ async function udpate() {
     }
 }
 
-module.exports = { udpate };
+module.exports = { update };
