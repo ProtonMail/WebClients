@@ -37,7 +37,7 @@ const StandardPrivateApp = ({
         });
 
         const modelsPromise = loadModels(unique([UserSettingsModel, UserModel, ...preloadModels]), { api, cache }).then(
-            (userSettings) => {
+            ([userSettings]) => {
                 return loadLocale({
                     ...getClosestMatches({ locale: userSettings.Locale, browserLocale: getBrowserLocale(), locales }),
                     locales
