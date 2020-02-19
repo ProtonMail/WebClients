@@ -23,6 +23,9 @@
 .border-bottom--dashed {
   border-bottom-style: dashed;
 }
+.border-bottom--currentColor {
+  border-bottom-color: currentColor;
+}
 .border-top {
   border-top: 1px solid var(--bordercolor-input, $pm-global-border);
 }
