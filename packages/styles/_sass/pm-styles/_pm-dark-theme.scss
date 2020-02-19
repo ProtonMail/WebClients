@@ -158,8 +158,10 @@ summary {
 
 
 // quick and dirty
-.fill-global-grey,
-.fill-black { fill: $white; } // dirty, I know
+.fill-global-grey:not(.fill-pm-blue),
+.fill-global-grey:not(.fill-primary),
+.fill-black:not(.fill-pm-blue),
+.fill-black:not(.fill-primary) { fill: $white; } // dirty, I know
 
 .fill-currentColor { fill: currentColor; } // to avoid some issues
 
