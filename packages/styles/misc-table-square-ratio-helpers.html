@@ -66,22 +66,45 @@ section: fe-guidelines
 
 <h2>Square and ratio helpers</h2>
 
-<p>For some components/special cases (responsive <code>iframe</code>, making a responsive square shape, etc.), we have to use the “padding-hack” technique, which is basically:</p>
+<p>For some components/special cases (responsive <code>iframe</code>, making a responsive square shape, responsive typography with SVG, etc.), we have to use the “padding-hack” technique, which is basically:</p>
 
-<ul>
-  <li>A container uses padding-hack to get the desired ratio</li>
-  <li>And content inside is positionned in absolute and takes all available space.</li>
-</ul>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <ul>
+		<li>A container uses padding-hack to get the desired ratio</li>
+		<li>And content inside is positionned in absolute and takes all available space.</li>
+	  </ul>
+  </div>
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;div class="ratio-container-square"&gt;
+  &lt;div class="inner-ratio-container p1"&gt;
+    Some content in a square box with ratio-container-square class.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
 
-<div class="mod mb2">
-  <div class="left bordered-container w20">
+
+
+<div class="flex flex-spacebetween flex-items-center mb2">
+  <div class="bordered-container w20">
     <div class="ratio-container-square">
       <div class="inner-ratio-container p1">
         Some content in a square box with <code>ratio-container-square</code> class.
       </div>
     </div>
   </div>
-  <div class="right bordered-container w30">
+
+  <div class="bordered-container w30">
+    <div class="ratio-container-5-1">
+      <div class="inner-ratio-container p1">
+        Some content in a box with <code>ratio-container-5-1</code> class.
+      </div>
+    </div>
+  </div>
+
+  <div class="bordered-container w30">
     <div class="ratio-container-16-9">
       <div class="inner-ratio-container p1">
         Some content in a 16/9 ratio box with <code>ratio-container-16-9</code> class.
