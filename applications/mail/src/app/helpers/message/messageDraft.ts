@@ -13,6 +13,7 @@ import { insertSignature } from './messageSignature';
 import { formatFullDate } from '../date';
 import { recipientToInput } from '../addresses';
 import { isSent, isSentAndReceived } from './messages';
+import { getDate } from '../elements';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -126,9 +127,10 @@ export const handleActions = (
  * Generate blockquote of the referenced message to the content of the new mail
  */
 const generateBlockquote = (referenceMessage: MessageExtended) => {
-    const date = formatFullDate(referenceMessage.data?.Time);
+    const date = formatFullDate(getDate(referenceMessage.data));
     const sender = recipientToInput(referenceMessage.data?.Sender);
     const previously = c('Message').t`On ${date}, ${sender} wrote:`;
+
     // TODO
     // const newContent =
     //     referenceMessage.data?.MIMEType === MIME_TYPES.PLAINTEXT ? textToHtmlMail.parse(content) : content;
