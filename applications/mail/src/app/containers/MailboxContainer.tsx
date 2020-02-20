@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Loader, classnames } from 'react-components';
 import { History, Location } from 'history';
 
@@ -78,7 +78,6 @@ const MailboxContainer = ({
 
     const [checkedElements, setCheckedElements] = useState(Object.create(null));
     const [checkAll, setCheckAll] = useState(false);
-    const welcomeRef = useRef(false);
 
     const [labelID, elements, loading, total] = useElements({
         conversationMode,
@@ -216,7 +215,6 @@ const MailboxContainer = ({
                                 location={location}
                                 labelID={labelID}
                                 mailSettings={mailSettings}
-                                welcomeRef={welcomeRef}
                                 checkedIDs={checkedIDs}
                                 onUncheckAll={handleUncheckAll}
                             />

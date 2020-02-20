@@ -1,40 +1,28 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { Location } from 'history';
+import { useConversationCounts, useMessageCounts } from 'react-components';
 
 import WelcomePane from './WelcomePane';
 import SelectionPane from './SelectionPane';
 import { ELEMENT_TYPES } from '../../constants';
-import { useConversationCounts, useMessageCounts } from 'react-components';
 import { getCurrentType } from '../../helpers/elements';
 import { LabelCount } from '../../models/label';
+import { useWelcomeFlag } from '../../hooks/useWelcomeFlag';
 
 interface Props {
     labelID: string;
     checkedIDs?: string[];
     onUncheckAll: () => void;
-    welcomeRef: any;
     mailSettings: any;
     location: Location;
 }
 
-const PlaceholderView = ({
-    labelID = '',
-    checkedIDs = [],
-    onUncheckAll,
-    welcomeRef,
-    mailSettings,
-    location
-}: Props) => {
+const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, mailSettings, location }: Props) => {
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
     const type = getCurrentType({ mailSettings, labelID, location });
 
-    useEffect(
-        () => () => {
-            welcomeRef.current = true;
-        },
-        []
-    );
+    const welcomeFlag = useWelcomeFlag([labelID, checkedIDs]);
 
     const labelCount: LabelCount = useMemo(() => {
         const counters = type === ELEMENT_TYPES.CONVERSATION ? conversationCounts : messageCounts;
@@ -46,10 +34,10 @@ const PlaceholderView = ({
         return counters.find((counter) => counter.LabelID === labelID) || { LabelID: '', Unread: 0, Total: 0 };
     }, [labelID, conversationCounts, messageCounts]);
 
-    return welcomeRef.current || checkedIDs.length > 0 ? (
-        <SelectionPane labelCount={labelCount} checkedIDs={checkedIDs} onUncheckAll={onUncheckAll} />
-    ) : (
+    return welcomeFlag ? (
         <WelcomePane labelCount={labelCount} />
+    ) : (
+        <SelectionPane labelCount={labelCount} checkedIDs={checkedIDs} onUncheckAll={onUncheckAll} />
     );
 };
 
