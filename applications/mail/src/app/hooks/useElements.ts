@@ -105,6 +105,8 @@ export const useElements = ({
 
     const pageCached = () => localCache.pages.includes(page.page);
 
+    const pageChanged = () => localCache.page.page !== page.page;
+
     const pageIsConsecutive = () =>
         localCache.pages.some((p) => p === page.page || p === page.page - 1 || p === page.page + 1);
 
@@ -113,6 +115,15 @@ export const useElements = ({
     const shouldResetCache = () => !loading && (paramsChanged() || !pageIsConsecutive());
 
     const shouldSendRequest = () => !loading && (shouldResetCache() || !pageCached() || !isExpectedLength());
+
+    const shouldUpdatePage = () => pageChanged() && pageCached();
+
+    const updatePage = () => {
+        setLocalCache({
+            ...localCache,
+            page: { ...localCache.page, page: page.page }
+        });
+    };
 
     const queryElement = async (elementID: string): Promise<Element> => {
         const query = conversationMode ? getConversation : getMessage;
@@ -191,6 +202,7 @@ export const useElements = ({
     useEffect(() => {
         shouldResetCache() && resetCache();
         shouldSendRequest() && load();
+        shouldUpdatePage() && updatePage();
     }, [
         labelID,
         page,
