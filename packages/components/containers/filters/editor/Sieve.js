@@ -35,7 +35,9 @@ const lint = (text) => {
     return lint ? lint(clean(text)) : [];
 };
 
-codemirror.registerHelper('lint', 'sieve', lint);
+if (typeof window !== 'undefined') {
+    codemirror.registerHelper('lint', 'sieve', lint);
+}
 
 const defaultCodeMirrorOptions = {
     mode: 'sieve',

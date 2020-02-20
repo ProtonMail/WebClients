@@ -29,21 +29,22 @@ const hasSessionStorage = () => {
     }
 };
 
+const isSSR = typeof window === 'undefined';
 // Locale is not loaded here so no translations
 const compats = [
     {
         name: 'Cookies',
-        valid: hasCookies(),
+        valid: isSSR || hasCookies(),
         text: 'Please enable cookies in your browser.'
     },
     {
         name: 'Storage',
-        valid: hasSessionStorage(),
+        valid: isSSR || hasSessionStorage(),
         text: 'Please enable sessionStorage in your browser.'
     },
     {
         name: 'PRNG',
-        valid: isGoodPrngAvailable(),
+        valid: isSSR || isGoodPrngAvailable(),
         text: 'Please update to a modern browser with support for PRNG.'
     }
 ];

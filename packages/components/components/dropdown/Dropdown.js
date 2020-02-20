@@ -91,7 +91,7 @@ const Dropdown = ({
 };
 
 Dropdown.propTypes = {
-    anchorRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+    anchorRef: PropTypes.shape({ current: PropTypes.any }),
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
     onClose: PropTypes.func,
