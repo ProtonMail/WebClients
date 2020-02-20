@@ -26,6 +26,8 @@ section: misc
 
 <h2 class="mt1">Folder <code>bank-icons</code></h2>
 
+<p>Some logos have a dark-mode version.</p>
+
 {% for image in site.static_files %}
   {% if image.path contains 'img/shared/bank-icons' %}
   <img src="{{ site.baseurl }}{{ image.path }}" alt="" class="mr0-5 mb0-5" width="40" />
