@@ -4,6 +4,7 @@ import { classnames } from '../../helpers/component';
 import { usePopper, Popper } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { ALL_PLACEMENTS } from '../popper/utils';
 
 /** @type any */
 const Dropdown = ({
@@ -11,6 +12,7 @@ const Dropdown = ({
     children,
     className,
     originalPlacement = 'bottom',
+    availablePlacements = ALL_PLACEMENTS,
     onClose = noop,
     isOpen = false,
     size = 'normal',
@@ -26,6 +28,7 @@ const Dropdown = ({
     const popperRef = useRef();
     const { placement, position } = usePopper(popperRef, anchorRef, isOpen, {
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
+        availablePlacements,
         offset: 20,
         scrollContainerClass: 'main'
     });
@@ -94,6 +97,7 @@ Dropdown.propTypes = {
     onClose: PropTypes.func,
     isOpen: PropTypes.bool,
     originalPlacement: PropTypes.string,
+    availablePlacements: PropTypes.arrayOf(PropTypes.oneOf(ALL_PLACEMENTS)),
     size: PropTypes.oneOf(['normal', 'narrow', 'wide', 'auto']),
     autoClose: PropTypes.bool,
     autoCloseOutside: PropTypes.bool
