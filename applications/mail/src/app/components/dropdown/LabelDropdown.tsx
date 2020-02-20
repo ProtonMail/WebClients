@@ -91,13 +91,13 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
         const labelAction = typeIsMessage ? labelMessages : labelConversations;
         const unlabelAction = typeIsMessage ? unlabelMessages : unlabelConversations;
         const selectedIDs = elements.map((element) => element.ID || '');
+        const initialState = getInitialState(labels, elements);
 
-        // TODO to improve: we call label / unlabel too much
         const promises = Object.keys(selection).map((LabelID) => {
-            if (selection[LabelID] === LabelState.On) {
+            if (selection[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
                 return api(labelAction({ LabelID, IDs: selectedIDs }));
             }
-            if (selection[LabelID] === LabelState.Off) {
+            if (selection[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
                 return api(unlabelAction({ LabelID, IDs: selectedIDs }));
             }
         });

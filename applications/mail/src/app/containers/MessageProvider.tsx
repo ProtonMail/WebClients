@@ -3,12 +3,11 @@ import { useInstance, useEventManager } from 'react-components';
 import createCache from 'proton-shared/lib/helpers/cache';
 import createLRU from 'proton-shared/lib/helpers/lru';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { diff } from 'proton-shared/lib/helpers/array';
-import { omit } from 'proton-shared/lib/helpers/object';
 
-import { Event } from '../models/eventManager';
+import { Event } from '../models/event';
 import { Cache } from '../models/utils';
 import { MessageExtended } from '../models/message';
+import { parseLabelIDsInEvent } from '../helpers/elements';
 
 export type MessageCache = Cache<string, MessageExtended>;
 
@@ -43,18 +42,13 @@ const messageListener = (cache: MessageCache) => ({ Messages }: Event) => {
         }
         if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
             const currentValue = cache.get(ID);
-            const messageEventData = Message;
 
-            const LabelIDs = diff(currentValue.data?.LabelIDs || [], messageEventData.LabelIDsRemoved || []).concat(
-                messageEventData.LabelIDsAdded
-            );
-            const MessageToUpdate = omit(Message, ['LabelIDsRemoved', 'LabelIDsAdded']);
+            const MessageToUpdate = parseLabelIDsInEvent(currentValue.data, Message);
 
             cache.set(ID, {
                 ...currentValue,
                 data: {
                     ...currentValue.data,
-                    LabelIDs,
                     ...MessageToUpdate
                 }
             });

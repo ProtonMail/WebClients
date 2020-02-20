@@ -6,11 +6,18 @@ import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
 
 import { Conversation } from '../models/conversation';
-import { sort as sortElements, hasLabel } from '../helpers/elements';
+import { sort as sortElements, hasLabel, parseLabelIDsInEvent } from '../helpers/elements';
 import { Element } from '../models/element';
 import { Page, Filter, Sort, SearchParameters } from '../models/tools';
 import { expectedPageLength } from '../helpers/paging';
-import { ElementEvent, Event, ElementCountEvent, ConversationEvent, MessageEvent } from '../models/event';
+import {
+    ElementEvent,
+    Event,
+    ElementCountEvent,
+    ConversationEvent,
+    MessageEvent,
+    LabelIDsChanges
+} from '../models/event';
 
 interface Options {
     conversationMode: boolean;
@@ -229,13 +236,21 @@ export const useElements = ({
                             }
                             return acc;
                         },
-                        { toDelete: [] as string[], toUpdate: [] as Element[], toCreate: [] as Element[] }
+                        {
+                            toDelete: [] as string[],
+                            toUpdate: [] as (Element & LabelIDsChanges)[],
+                            toCreate: [] as (Element & LabelIDsChanges)[]
+                        }
                     );
 
                     const toUpdateCompleted = await Promise.all(
                         toUpdate.map(async (element) => {
                             const elementID = element.ID || '';
                             const existingElement = localCache.elements[elementID];
+
+                            if (existingElement) {
+                                element = parseLabelIDsInEvent(existingElement, element);
+                            }
 
                             return existingElement ? { ...existingElement, ...element } : queryElement(elementID);
                         })

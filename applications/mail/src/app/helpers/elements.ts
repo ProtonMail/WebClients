@@ -1,6 +1,6 @@
 import { Location } from 'history';
 import { formatRelative, format } from 'date-fns';
-import { toMap } from 'proton-shared/lib/helpers/object';
+import { toMap, omit } from 'proton-shared/lib/helpers/object';
 
 import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
@@ -12,6 +12,8 @@ import { MailSettings } from '../models/utils';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { hasAttachments as messageHasAttachments } from './message/messages';
 import { hasAttachments as conversationHasAttachments } from './conversation';
+import { diff } from 'proton-shared/lib/helpers/array';
+import { LabelIDsChanges } from '../models/event';
 
 export interface TypeParams {
     labelID?: string;
@@ -107,3 +109,11 @@ export const hasAttachments = (element: Element) =>
 
 export const getLabelIDs = (element: Element) =>
     isMessage(element) ? element.LabelIDs : element.Labels?.map(({ ID }) => ID || '');
+
+/**
+ * Starting from the element LabelIDs list, add and remove labels from an event manager event
+ */
+export const parseLabelIDsInEvent = (element: Element = {}, changes: Element & LabelIDsChanges): Element => {
+    const LabelIDs = diff(element.LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded);
+    return { ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']), LabelIDs };
+};

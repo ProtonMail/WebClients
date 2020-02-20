@@ -3,13 +3,13 @@ import { useInstance, useEventManager, useApi } from 'react-components';
 import createCache from 'proton-shared/lib/helpers/cache';
 import createLRU from 'proton-shared/lib/helpers/lru';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { omit } from 'proton-shared/lib/helpers/object';
 
-import { Event } from '../models/eventManager';
+import { Event } from '../models/event';
 import { Cache } from '../models/utils';
 import { ConversationResult } from '../hooks/useConversation';
 import { Api } from 'proton-shared/lib/interfaces';
 import { getConversation } from 'proton-shared/lib/api/conversations';
+import { parseLabelIDsInEvent } from '../helpers/elements';
 
 export type ConversationCache = Cache<string, ConversationResult>;
 
@@ -52,10 +52,7 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
                 const currentValue = cache.get(ID);
 
                 cache.set(ID, {
-                    Conversation: {
-                        ...currentValue.Conversation,
-                        ...omit(Conversation, ['LabelIDsRemoved', 'LabelIDsAdded'])
-                    },
+                    Conversation: parseLabelIDsInEvent(currentValue.Conversation, Conversation),
                     Messages: currentValue.Messages
                 });
 
