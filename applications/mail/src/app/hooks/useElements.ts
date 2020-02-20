@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { useApi, useEventManager } from 'react-components';
 import { queryConversations, getConversation } from 'proton-shared/lib/api/conversations';
 import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages';
@@ -18,6 +18,7 @@ import {
     MessageEvent,
     LabelIDsChanges
 } from '../models/event';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 interface Options {
     conversationMode: boolean;
@@ -51,6 +52,23 @@ interface Cache {
 
 const emptyCache = (page: Page, params: CacheParams): Cache => ({ params, page, elements: {}, pages: [] });
 
+/**
+ * Listen to event manager once but allow the handler to be updated in time
+ */
+const useSubscribeEventManager = (handler: (event: any) => void) => {
+    const { subscribe } = useEventManager();
+    const handlerRef = useRef<(event: any) => void>(noop);
+
+    useEffect(() => {
+        handlerRef.current = handler;
+    }, [handler]);
+
+    useEffect(() => {
+        const actualHandler = (event: any) => handlerRef.current(event);
+        return subscribe(actualHandler);
+    }, []);
+};
+
 export const useElements = ({
     conversationMode,
     labelID,
@@ -60,7 +78,6 @@ export const useElements = ({
     filter
 }: Options): [string, Conversation[], boolean, number] => {
     const api = useApi();
-    const { subscribe } = useEventManager();
     const [loading, setLoading] = useState(false);
     const [localCache, setLocalCache] = useState<Cache>(
         emptyCache(page, {
@@ -219,84 +236,77 @@ export const useElements = ({
     ]);
 
     // Listen to event manager and update de cache
-    useEffect(
-        () => {
-            return subscribe(
-                async ({ Conversations = [], Messages = [], ConversationCounts = [], MessageCounts = [] }: Event) => {
-                    const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
-                    const Counts: ElementCountEvent[] = conversationMode ? ConversationCounts : MessageCounts;
+    useSubscribeEventManager(
+        async ({ Conversations = [], Messages = [], ConversationCounts = [], MessageCounts = [] }: Event) => {
+            const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
+            const Counts: ElementCountEvent[] = conversationMode ? ConversationCounts : MessageCounts;
 
-                    const count = Counts.find((count) => count.LabelID === labelID);
+            const count = Counts.find((count) => count.LabelID === labelID);
 
-                    const { toDelete, toUpdate, toCreate } = Elements.reduce(
-                        (acc, event) => {
-                            const { ID, Action } = event;
-                            const Element = conversationMode
-                                ? (event as ConversationEvent).Conversation
-                                : (event as MessageEvent).Message;
-                            switch (Action) {
-                                case EVENT_ACTIONS.DELETE:
-                                    acc.toDelete.push(ID);
-                                    break;
-                                case EVENT_ACTIONS.UPDATE_DRAFT:
-                                case EVENT_ACTIONS.UPDATE_FLAGS:
-                                    acc.toUpdate.push({ ID, ...Element });
-                                    break;
-                                case EVENT_ACTIONS.CREATE:
-                                    acc.toCreate.push(Element);
-                                    break;
-                            }
-                            return acc;
-                        },
-                        {
-                            toDelete: [] as string[],
-                            toUpdate: [] as (Element & LabelIDsChanges)[],
-                            toCreate: [] as (Element & LabelIDsChanges)[]
-                        }
-                    );
-
-                    const toUpdateCompleted = await Promise.all(
-                        toUpdate.map(async (element) => {
-                            const elementID = element.ID || '';
-                            const existingElement = localCache.elements[elementID];
-
-                            if (existingElement) {
-                                element = parseLabelIDsInEvent(existingElement, element);
-                            }
-
-                            return existingElement ? { ...existingElement, ...element } : queryElement(elementID);
-                        })
-                    );
-
-                    setLocalCache((localCache) => {
-                        const newReplacements: { [ID: string]: Element } = {};
-
-                        [...toCreate, ...toUpdateCompleted].forEach((element) => {
-                            newReplacements[element.ID || ''] = element;
-                        });
-                        const newElements = {
-                            ...localCache.elements,
-                            ...newReplacements
-                        };
-                        toDelete.forEach((elementID) => {
-                            delete newElements[elementID];
-                        });
-
-                        return {
-                            ...localCache,
-                            elements: newElements,
-                            page: {
-                                ...localCache.page,
-                                total: count ? count.Total : localCache.page.total
-                            }
-                        };
-                    });
+            const { toDelete, toUpdate, toCreate } = Elements.reduce(
+                (acc, event) => {
+                    const { ID, Action } = event;
+                    const Element = conversationMode
+                        ? (event as ConversationEvent).Conversation
+                        : (event as MessageEvent).Message;
+                    switch (Action) {
+                        case EVENT_ACTIONS.DELETE:
+                            acc.toDelete.push(ID);
+                            break;
+                        case EVENT_ACTIONS.UPDATE_DRAFT:
+                        case EVENT_ACTIONS.UPDATE_FLAGS:
+                            acc.toUpdate.push({ ID, ...Element });
+                            break;
+                        case EVENT_ACTIONS.CREATE:
+                            acc.toCreate.push(Element);
+                            break;
+                    }
+                    return acc;
+                },
+                {
+                    toDelete: [] as string[],
+                    toUpdate: [] as (Element & LabelIDsChanges)[],
+                    toCreate: [] as (Element & LabelIDsChanges)[]
                 }
             );
-        },
-        // Having the cache in dependency will subscribe / unsubscribe to the eventmanager many times
-        // But it's mandatory for the function to have the reference of the current localCache
-        [localCache]
+
+            const toUpdateCompleted = await Promise.all(
+                toUpdate.map(async (element) => {
+                    const elementID = element.ID || '';
+                    const existingElement = localCache.elements[elementID];
+
+                    if (existingElement) {
+                        element = parseLabelIDsInEvent(existingElement, element);
+                    }
+
+                    return existingElement ? { ...existingElement, ...element } : queryElement(elementID);
+                })
+            );
+
+            setLocalCache((localCache) => {
+                const newReplacements: { [ID: string]: Element } = {};
+
+                [...toCreate, ...toUpdateCompleted].forEach((element) => {
+                    newReplacements[element.ID || ''] = element;
+                });
+                const newElements = {
+                    ...localCache.elements,
+                    ...newReplacements
+                };
+                toDelete.forEach((elementID) => {
+                    delete newElements[elementID];
+                });
+
+                return {
+                    ...localCache,
+                    elements: newElements,
+                    page: {
+                        ...localCache.page,
+                        total: count ? count.Total : localCache.page.total
+                    }
+                };
+            });
+        }
     );
 
     return [localCache.params.labelID, elements, loading, localCache.page.total];

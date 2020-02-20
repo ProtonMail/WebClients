@@ -144,7 +144,7 @@ export const useMessage = (
         async ({ data: message = {} }: MessageExtended) => {
             const markAsRead = async () => {
                 await api(markMessageAsRead([message.ID || '']));
-                call();
+                await call();
             };
 
             if (message.Unread) {
@@ -160,7 +160,7 @@ export const useMessage = (
     const create = useCallback(
         async (message: MessageExtended = {}) => {
             const newMessage = await createMessage(message, api);
-            call();
+            await call();
             return { data: mergeSavedMessage(message.data, newMessage) };
         },
         [api]
@@ -169,7 +169,7 @@ export const useMessage = (
     const update = useCallback(
         async (message: MessageExtended = {}) => {
             const newMessage = await updateMessage(message, api);
-            call();
+            await call();
             return { data: mergeSavedMessage(message.data, newMessage) };
         },
         [api]
@@ -178,7 +178,7 @@ export const useMessage = (
     const deleteRequest = useCallback(
         async (message: MessageExtended = {}) => {
             await api(deleteMessages([message.data?.ID]));
-            call();
+            await call();
             return {};
         },
         [api]
