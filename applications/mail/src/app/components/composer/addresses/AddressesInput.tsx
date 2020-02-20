@@ -18,7 +18,7 @@ interface Props {
     id: string;
     recipients?: Recipient[];
     onChange: (value: Recipient[]) => void;
-    addressesFocusRef?: MutableRefObject<() => void>;
+    inputFocusRef?: MutableRefObject<() => void>;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
     placeholder?: string;
@@ -28,7 +28,7 @@ const AddressesInput = ({
     id,
     recipients = [],
     onChange,
-    addressesFocusRef,
+    inputFocusRef,
     contacts,
     contactGroups,
     placeholder
@@ -44,8 +44,8 @@ const AddressesInput = ({
     };
 
     useEffect(() => {
-        if (addressesFocusRef) {
-            addressesFocusRef.current = inputRef.current?.focus.bind(inputRef.current) || noop;
+        if (inputFocusRef) {
+            inputFocusRef.current = inputRef.current?.focus.bind(inputRef.current) || noop;
         }
     }, []);
 

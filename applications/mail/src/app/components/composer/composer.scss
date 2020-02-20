@@ -161,12 +161,43 @@
     }
 }
 
-.composer-quill {
-    height: 100%;
+.editor {
+    border: 1px solid #dde6ec;
 }
 
-.composer-quill .ql-container {
-    border-top: none;
+.editor-toolbar {
+    border-bottom: 1px solid #dde6ec;
+}
+
+.editor .editor-toolbar-button {
+    border: none;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.editor-toolbar-separator {
+    border-left: 1px solid #dde6ec;
+}
+
+.editor-toolbar-dropdown {
+    ul {
+        margin: 0;
+    }
+
+    button {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    button:disabled {
+        background-color: $pm-global-muted;
+    }
+}
+
+.editor-toolbar-dropdown .ColorSelector-item {
+    height: 2.8rem;
+    width: 2.8rem;
+    margin: 0 0.2rem 0.2rem 0;
 }
 
 .composer-editor-embedded {

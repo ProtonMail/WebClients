@@ -1,22 +1,14 @@
 import React, { MutableRefObject, useRef, useEffect, useState } from 'react';
-import ReactQuill from 'react-quill';
-import Quill, { DeltaStatic } from 'quill';
-import Delta from 'quill-delta';
-
-import { generateUID } from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
 
 import EditorToolbar from './EditorToolbar';
 import { EmbeddedMap } from '../../../models/message';
-
-import '../../../helpers/quill/quillSetup';
-
-import 'react-quill/dist/quill.snow.css';
+import EditorSquire from './EditorSquire';
+import { SquireType } from '../../../helpers/squire/squireConfig';
+import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
+import { Button } from 'react-components';
+import { insertImage } from '../../../helpers/squire/squireActions';
 
 export type InsertRef = MutableRefObject<((embeddeds: EmbeddedMap) => void) | undefined>;
-
-// Strangely types from quill and quill-delta are incompatible
-const convertDelta = (delta: Delta): DeltaStatic => (delta as any) as DeltaStatic;
 
 interface Props {
     document?: Element;
@@ -28,75 +20,60 @@ interface Props {
 }
 
 const Editor = ({ document, onChange, onFocus, onAddAttachments, contentFocusRef, contentInsertRef }: Props) => {
-    const [uid] = useState(generateUID('quill'));
-    const [content, setContent] = useState('');
-    const reactQuillRef = useRef<ReactQuill>(null);
+    const [editorReady, setEditorReady] = useState(false);
+    const [documentReady, setDocumentReady] = useState(false);
+    const [focusWhenReady, setFocusWhenReady] = useState(false);
+    const [blockquoteExpanded, setBlockquoteExpanded] = useState(true);
+    const [blockquoteSaved, setBlockquoteSaved] = useState('');
 
-    const toolbarId = `quill-${uid}-toolbar`;
-    const getQuill = () => reactQuillRef.current?.getEditor() as Quill;
+    const squireRef = useRef<SquireType>(null) as MutableRefObject<SquireType>;
 
     useEffect(() => {
-        contentFocusRef.current = reactQuillRef.current?.focus || noop;
+        contentFocusRef.current = () => setFocusWhenReady(true);
     }, []);
 
     useEffect(() => {
-        // Only force Quill content at startup
-        // Server can never modify editor content after that
-        if (!content && document?.innerHTML) {
-            setContent(document?.innerHTML);
+        if (document?.innerHTML) {
+            setDocumentReady(true);
         }
     }, [document?.innerHTML]);
 
-    const getSelection = () => {
-        const quill = getQuill();
-        const { index, length } = quill.getSelection(true);
-        return quill.getText(index, length);
+    // Initialize Squire content at (and only) startup
+    useEffect(() => {
+        if (editorReady && documentReady) {
+            const [content, blockquote] = locateBlockquote(document);
+            setBlockquoteSaved(blockquote);
+            setBlockquoteExpanded(blockquote === '');
+            squireRef.current?.setHTML(content);
+            contentFocusRef.current = squireRef.current?.focus;
+            if (focusWhenReady) {
+                squireRef.current?.focus();
+            }
+        }
+    }, [editorReady, documentReady]);
+
+    const handleReady = () => {
+        setEditorReady(true);
     };
 
-    const handleChange = (content: string, delta: any, source: string) => {
-        setContent(content);
-        if (source === 'user') {
+    const handleInput = (content: string) => {
+        if (!blockquoteExpanded) {
+            onChange(content + blockquoteSaved);
+        } else {
             onChange(content);
         }
     };
 
-    const handleAddLink = (url: string, label: string) => {
-        const quill = getQuill();
-        const range = quill.getSelection(true);
-
-        const delta = new Delta()
-            .retain(range.index)
-            .delete(range.length)
-            .insert(label, { link: url });
-
-        quill.updateContents(convertDelta(delta), 'user');
-    };
-
-    const handleAddImageUrl = (url: string) => {
-        const quill = getQuill();
-        const range = quill.getSelection(true);
-
-        const delta = new Delta()
-            .retain(range.index)
-            .delete(range.length)
-            .insert({ image: url });
-
-        quill.updateContents(convertDelta(delta), 'user');
-        quill.setSelection(range.index + 1, 0, 'silent');
+    const handleShowBlockquote = () => {
+        setBlockquoteExpanded(true);
+        const content = squireRef.current.getHTML();
+        squireRef.current.setHTML(content + blockquoteSaved);
     };
 
     const handleInsertEmbedded = async (embeddeds: EmbeddedMap) => {
-        const quill = getQuill();
-        const range = quill.getSelection(true);
-
-        const delta = new Delta().retain(range.index).delete(range.length);
-
         embeddeds.forEach((info, cid) => {
-            delta.insert({ image: info.url }, { cid, alt: info.attachment.Name });
+            insertImage(squireRef.current, info.url || '', { 'data-embedded-img': cid, alt: info.attachment.Name });
         });
-
-        quill.updateContents(convertDelta(delta), 'user');
-        quill.setSelection(range.index + 1, 0, 'silent');
     };
 
     useEffect(() => {
@@ -104,24 +81,17 @@ const Editor = ({ document, onChange, onFocus, onAddAttachments, contentFocusRef
     }, []);
 
     return (
-        <>
-            <EditorToolbar
-                id={toolbarId}
-                getSelection={getSelection}
-                onAddLink={handleAddLink}
-                onAddImageUrl={handleAddImageUrl}
-                onAddAttachments={onAddAttachments}
-            />
-            <ReactQuill
-                className="composer-quill w100 flex-item-fluid"
-                modules={{ toolbar: `#${toolbarId}` }}
-                value={content}
-                readOnly={!content}
-                onChange={handleChange}
-                onFocus={onFocus}
-                ref={reactQuillRef}
-            />
-        </>
+        <div className="editor w100 h100 rounded flex flex-column">
+            <EditorToolbar squireRef={squireRef} editorReady={editorReady} onAddAttachments={onAddAttachments} />
+            <EditorSquire ref={squireRef} onFocus={onFocus} onReady={handleReady} onInput={handleInput} />
+            {!blockquoteExpanded && (
+                <div className="m0-5">
+                    <Button className="pm-button--small" onClick={handleShowBlockquote}>
+                        ...
+                    </Button>
+                </div>
+            )}
+        </div>
     );
 };
 

@@ -9,19 +9,22 @@
         table-layout: auto;
     }
 
-    // blockquote {
-    //     @extend [class*='block-info'], [class*='block-info-standard'], .block-info-standard;
-    // }
+    pre code {
+        white-space: pre-wrap;
+        background-color: transparent;
+    }
+
+    blockquote {
+        padding: 0.2em 1.2em;
+        border-color: #657ee4;
+        border-left-width: 3px;
+        border-left-style: solid;
+    }
 }
 
 .bodyDecrypted.plain {
     white-space: pre-wrap;
     font-family: monospace;
-}
-
-.bodyDecrypted pre code {
-    white-space: pre-wrap;
-    background-color: transparent;
 }
 
 /* Also exist inside squireEditor.js */

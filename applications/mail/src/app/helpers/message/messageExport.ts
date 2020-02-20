@@ -44,7 +44,8 @@ export const createMessage = async (message: MessageExtended, api: Api): Promise
     const { Message: updatedMessage } = await api(
         createDraft({
             Action: message.action !== MESSAGE_ACTIONS.NEW ? message.action : undefined,
-            Message: { ...message.data, Body }
+            Message: { ...message.data, Body },
+            ParentID: message.ParentID
         } as any)
     );
 

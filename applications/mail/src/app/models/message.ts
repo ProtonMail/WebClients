@@ -18,7 +18,6 @@ export type EmbeddedMap = Map<string, EmbeddedInfo>;
 
 export interface Message {
     ID?: string;
-    ParentID?: string;
     Subject?: string;
     AddressID?: string;
     MIMEType?: string;
@@ -118,6 +117,11 @@ export interface MessageExtended {
      * Action flags for draft messages
      */
     action?: MESSAGE_ACTIONS;
+
+    /**
+     * Action flags for draft messages
+     */
+    ParentID?: string;
 
     /**
      * Embedded images mapped by CID list

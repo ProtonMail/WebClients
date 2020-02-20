@@ -203,7 +203,7 @@ describe('messageDraft', () => {
         it('should add ParentID when not a copy', () => {
             notNewActions.forEach((action) => {
                 const result = createNewDraft(action, { data: message }, mailSettings, addresses);
-                expect(result.data?.ParentID).toBe(ID);
+                expect(result.ParentID).toBe(ID);
             });
         });
 

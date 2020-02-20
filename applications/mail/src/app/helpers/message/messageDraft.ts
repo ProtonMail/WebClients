@@ -16,6 +16,7 @@ import { isSent, isSentAndReceived } from './messages';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
+export const ORIGINAL_MESSAGE = `‐‐‐‐‐‐‐ Original Message ‐‐‐‐‐‐‐`;
 export const RE_PREFIX = c('Message').t`Re:`;
 export const FW_PREFIX = c('Message').t`Fw:`;
 
@@ -135,11 +136,13 @@ const generateBlockquote = (referenceMessage: MessageExtended) => {
     // newContent = prepareContent(content, referenceMessage, ['*'], action);
     // const newContent = referenceMessage.content;
 
-    return `‐‐‐‐‐‐‐ Original Message ‐‐‐‐‐‐‐<br>
+    return `<div class="protonmail_quote">
+        ${ORIGINAL_MESSAGE}<br>
         ${previously}<br>
         <blockquote class="protonmail_quote" type="cite">
             ${referenceMessage.document?.innerHTML}
-        </blockquote><br>`;
+        </blockquote><br>
+    </div>`;
 };
 
 export const createNewDraft = (
@@ -205,9 +208,9 @@ export const createNewDraft = (
             Flags,
             Sender,
             AddressID,
-            ParentID,
             Unread: 0
         },
+        ParentID,
         decryptedBody,
         action,
         originalTo,

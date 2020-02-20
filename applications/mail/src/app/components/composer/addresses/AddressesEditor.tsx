@@ -15,7 +15,7 @@ interface Props {
     onChange: (message: MessageExtended) => void;
     expanded: boolean;
     toggleExpanded: () => void;
-    addressesFocusRef: MutableRefObject<() => void>;
+    inputFocusRef: MutableRefObject<() => void>;
 }
 
 const AddressesEditor = ({
@@ -25,7 +25,7 @@ const AddressesEditor = ({
     onChange,
     expanded,
     toggleExpanded,
-    addressesFocusRef
+    inputFocusRef
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
     const { createModal } = useModals();
@@ -74,7 +74,7 @@ const AddressesEditor = ({
                         id={`to-${uid}`}
                         recipients={message.data?.ToList}
                         onChange={handleChange('ToList')}
-                        addressesFocusRef={addressesFocusRef}
+                        inputFocusRef={inputFocusRef}
                         contacts={contacts}
                         contactGroups={contactGroups}
                     />

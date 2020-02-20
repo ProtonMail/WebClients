@@ -9,7 +9,6 @@ import { transformEscape } from '../helpers/transforms/transformEscape';
 import { transformLinks } from '../helpers/transforms/transformLinks';
 import { transformEmbedded } from '../helpers/transforms/transformEmbedded';
 import { transformWelcome } from '../helpers/transforms/transformWelcome';
-import { transformBlockquotes } from '../helpers/transforms/transformBlockquotes';
 import { transformStylesheet } from '../helpers/transforms/transformStylesheet';
 import { transformRemote } from '../helpers/transforms/transformRemote';
 import { transformBase } from '../helpers/transforms/transformBase';
@@ -78,7 +77,6 @@ export const mergeMessages = (messageState: MessageExtended, messageModel: Messa
 export const mergeSavedMessage = (messageSaved: Message = {}, messageReturned: Message) => ({
     ...messageSaved,
     ID: messageReturned.ID,
-    ParentID: messageReturned.ParentID,
     Time: messageReturned.Time,
     ContextTime: messageReturned.ContextTime,
     ConversationID: messageReturned.ConversationID
@@ -192,7 +190,6 @@ export const useMessage = (
         transformLinks,
         transformEmbedded,
         transformWelcome,
-        transformBlockquotes,
         transformStylesheet,
         transformRemote
     ] as Computation[];

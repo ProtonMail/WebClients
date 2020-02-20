@@ -1,38 +1,35 @@
 import React, { useState, ChangeEvent } from 'react';
 import { FormModal, Label, Input, Alert, Row, Field, Radio, Href, PrimaryButton } from 'react-components';
 import { c } from 'ttag';
-
-enum LINK_TYPES {
-    LINK = 'link',
-    MAIL = 'mail',
-    PHONE = 'phone'
-}
+import { LINK_TYPES } from '../../../constants';
+import { linkToType } from '../../../helpers/url';
+import { LinkData } from '../../../helpers/squire/squireConfig';
 
 const LABEL_DETAILS = {
-    [LINK_TYPES.LINK]: c('Info').t`To what URL should this link go?`,
-    [LINK_TYPES.MAIL]: c('Info').t`To what email address should this link?`,
+    [LINK_TYPES.WEB]: c('Info').t`To what URL should this link go?`,
+    [LINK_TYPES.EMAIL]: c('Info').t`To what email address should this link?`,
     [LINK_TYPES.PHONE]: c('Info').t`To what phone number should this link?`
 };
 
 const PLACEHOLDERS = {
-    [LINK_TYPES.LINK]: c('Placeholder').t`Add a web address`,
-    [LINK_TYPES.MAIL]: c('Placeholder').t`Add an email address`,
+    [LINK_TYPES.WEB]: c('Placeholder').t`Add a web address`,
+    [LINK_TYPES.EMAIL]: c('Placeholder').t`Add an email address`,
     [LINK_TYPES.PHONE]: c('Placeholder').t`Add a phone address`
 };
 
 const getActualUrl = (url: string, type: LINK_TYPES) =>
-    type === LINK_TYPES.LINK ? url : type === LINK_TYPES.MAIL ? `mailto:${url}` : `tel:${url}`;
+    type === LINK_TYPES.WEB ? url : type === LINK_TYPES.EMAIL ? `mailto:${url}` : `tel:${url}`;
 
 interface Props {
-    inputLabel: string;
-    onSubmit: (url: string, label: string) => void;
+    inputLink: LinkData;
+    onSubmit: (link: LinkData) => void;
     onClose?: () => void;
 }
 
-const EditorLinkModal = ({ inputLabel, onSubmit, onClose, ...rest }: Props) => {
-    const [url, setUrl] = useState('');
-    const [label, setLabel] = useState(inputLabel);
-    const [type, setType] = useState(LINK_TYPES.LINK);
+const EditorLinkModal = ({ inputLink, onSubmit, onClose, ...rest }: Props) => {
+    const [url, setUrl] = useState(inputLink.link);
+    const [label, setLabel] = useState(inputLink.title);
+    const [type, setType] = useState(linkToType(inputLink.link) || LINK_TYPES.WEB);
 
     const handleUrlChange = (event: ChangeEvent<HTMLInputElement>) => {
         setUrl(event.target.value);
@@ -42,7 +39,7 @@ const EditorLinkModal = ({ inputLabel, onSubmit, onClose, ...rest }: Props) => {
     };
 
     const handleSubmit = () => {
-        onSubmit(getActualUrl(url, type), label);
+        onSubmit({ link: getActualUrl(url, type), title: label });
         onClose?.();
     };
 
@@ -103,8 +100,8 @@ const EditorLinkModal = ({ inputLabel, onSubmit, onClose, ...rest }: Props) => {
                     id="link-modal-type-link"
                     name="link-modal-type"
                     className="mr1"
-                    checked={type === LINK_TYPES.LINK}
-                    onChange={() => setType(LINK_TYPES.LINK)}
+                    checked={type === LINK_TYPES.WEB}
+                    onChange={() => setType(LINK_TYPES.WEB)}
                 >
                     {c('Info').t`Web address`}
                 </Radio>
@@ -112,8 +109,8 @@ const EditorLinkModal = ({ inputLabel, onSubmit, onClose, ...rest }: Props) => {
                     id="link-modal-type-mail"
                     name="link-modal-type"
                     className="mr1"
-                    checked={type === LINK_TYPES.MAIL}
-                    onChange={() => setType(LINK_TYPES.MAIL)}
+                    checked={type === LINK_TYPES.EMAIL}
+                    onChange={() => setType(LINK_TYPES.EMAIL)}
                 >
                     {c('Info').t`Email address`}
                 </Radio>

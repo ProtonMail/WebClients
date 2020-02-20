@@ -150,7 +150,6 @@ const Composer = ({
         [saveDraft]
     );
     const handleChange = (message: MessageExtended) => {
-        console.log('change', message);
         const newModelMessage = mergeMessages(modelMessage, message);
         setModelMessage(newModelMessage);
         autoSave(newModelMessage);

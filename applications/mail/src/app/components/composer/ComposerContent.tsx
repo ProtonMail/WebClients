@@ -60,7 +60,6 @@ const ComposerContent = ({
      */
     const handleHover = (hover: boolean) =>
         onlyFiles((event) => {
-            console.log('hover', hover);
             setFileHover(hover);
             event.stopPropagation();
         });

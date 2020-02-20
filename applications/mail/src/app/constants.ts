@@ -80,3 +80,9 @@ export enum MESSAGE_ACTIONS {
     REPLY_ALL = 1,
     FORWARD = 2
 }
+
+export enum LINK_TYPES {
+    WEB = 'web',
+    EMAIL = 'email',
+    PHONE = 'phone'
+}
