@@ -50,6 +50,8 @@ const ToolbarDropdown = ({
             <Dropdown
                 id={uid}
                 size={size}
+                originalPlacement="bottom"
+                availablePlacements={['bottom']}
                 autoClose={autoClose}
                 autoCloseOutside={!lock}
                 isOpen={isOpen}

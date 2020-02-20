@@ -26,6 +26,8 @@ const HeaderDropdown = ({ content, children, autoClose, ...rest }: Props) => {
             </DropdownButton>
             <Dropdown
                 id={uid}
+                originalPlacement="bottom"
+                availablePlacements={['bottom', 'top']}
                 autoClose={autoClose}
                 autoCloseOutside={!lock}
                 isOpen={isOpen}
