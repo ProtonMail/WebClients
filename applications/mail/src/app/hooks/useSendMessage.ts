@@ -1,7 +1,14 @@
 import { useCallback } from 'react';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { sendMessage, updateDraft } from 'proton-shared/lib/api/messages';
-import { useMailSettings, useAddresses, useGetPublicKeys, useGetAddressKeys, useApi } from 'react-components';
+import {
+    useMailSettings,
+    useAddresses,
+    useGetPublicKeys,
+    useGetAddressKeys,
+    useApi,
+    useEventManager
+} from 'react-components';
 
 import { MessageExtended } from '../models/message';
 import { getRecipientsAddresses } from '../helpers/message/messages';
@@ -23,6 +30,7 @@ export const useSendMessage = () => {
     const getAddressKeys = useGetAddressKeys();
     const api = useApi();
     const attachmentCache = useAttachmentCache();
+    const { call } = useEventManager();
 
     return useCallback(
         async (inputMessage: MessageExtended) => {
@@ -43,12 +51,10 @@ export const useSendMessage = () => {
                 data: Message
             };
 
-            // TODO: Prepare embedded
             const emails = getRecipientsAddresses(message.data);
             // TODO: handleAttachmentSigs
 
             const uniqueEmails = unique(emails);
-            // eslint-disable-next-line
             const sendPrefs = await getSendPreferences(
                 uniqueEmails,
                 message.data || {},
@@ -59,19 +65,21 @@ export const useSendMessage = () => {
             );
             // todo regression testing: https://github.com/ProtonMail/Angular/issues/5088
 
-            console.log('sendPrefs', inputMessage, message, sendPrefs);
+            // console.log('sendPrefs', inputMessage, message, sendPrefs);
 
             let packages = await generateTopPackages(message, sendPrefs, attachmentCache, api);
             packages = await attachSubPackages(packages, message, emails, sendPrefs);
             packages = await encryptPackages(message, packages, getAddressKeys);
 
-            console.log('packages', packages);
+            // console.log('packages', packages);
 
             // TODO: Implement retry system
             // const suppress = retry ? [API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED] : [];
             // try {
             const { Sent } = await api(sendMessage(message.data?.ID, { Packages: packages } as any));
-            console.log('Sent', Sent);
+            await call();
+
+            // console.log('Sent', Sent);
             return { data: Sent };
             // } catch (e) {
             //     if (retry && e.data.Code === API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED) {
