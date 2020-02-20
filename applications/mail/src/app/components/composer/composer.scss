@@ -163,7 +163,27 @@
 
 .composer-quill {
     height: 100%;
-    margin-bottom: 42px; // compensate for Quill strange auto sizing
+}
+
+.composer-quill .ql-container {
+    border-top: none;
+}
+
+.composer-editor-embedded {
+    overflow: hidden;
+    z-index: 15000; // ask Embedding should always be on top of the toolbar!
+    background: var(--bgcolor-main-area, #f5f5f5);
+    color: var(--color-main-area, #505061);
+    text-align: center;
+
+    // TODO: Add the image icon in background
+}
+
+.composer-editor-dropzone {
+    background: var(--bgcolor-main-area, #f5f5f5);
+    color: var(--color-main-area, #505061);
+
+    // TODO: Something more sexy? :)
 }
 
 .composer-attachments-button-wrapper {

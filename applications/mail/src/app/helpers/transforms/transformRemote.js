@@ -1,6 +1,7 @@
 import { flow, filter, reduce } from 'lodash/fp';
 
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
+import { isDraft } from '../message/messages';
 
 const WHITELIST = ['notify@protonmail.com'];
 
@@ -78,7 +79,8 @@ export const transformRemote = (
     const regex = new RegExp(REGEXP_FIXER, 'g');
     const showImages =
         inputShowImages ||
-        !!(mailSettings.ShowImages & SHOW_IMAGES.REMOTE || WHITELIST.includes(message.Sender.Address));
+        !!(mailSettings.ShowImages & SHOW_IMAGES.REMOTE || WHITELIST.includes(message.Sender.Address)) ||
+        isDraft(message);
     const content = document.innerHTML;
     const hasImages = regex.test(content);
 

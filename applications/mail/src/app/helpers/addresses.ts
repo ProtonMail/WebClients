@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 import { REGEX_EMAIL } from 'proton-shared/lib/constants';
 
-import { Address, Recipient, RecipientGroup, RecipientOrGroup } from '../models/address';
-import { Key } from '../models/key';
+import { Recipient, RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Message } from '../models/message';
 import { ContactEmail, ContactGroup } from '../models/contact';
 import { getContactsOfGroup } from './contacts';
+import { Address, Key } from 'proton-shared/lib/interfaces';
 
 export const REGEX_RECIPIENT = /(.*)\s*<([^>]*)>/;
 
@@ -155,7 +155,7 @@ export const getAddressFromPlusAlias = (addresses: Address[], email = ''): Addre
     const plusPart = email.substring(plusIndex + 1, atIndex);
 
     // Returns an address where the Email is build to respect the exising capitalization and add the plus part
-    return { ...address, Email: addPlusAlias(address?.Email, plusPart) };
+    return { ...(address as Address), Email: addPlusAlias(address?.Email, plusPart) };
 };
 
 /**

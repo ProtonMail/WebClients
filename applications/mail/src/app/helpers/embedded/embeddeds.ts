@@ -1,24 +1,21 @@
 import mimemessage from 'mimemessage';
 
-import { ucFirst } from '../string';
+import { ucFirst, toUnsignedString } from '../string';
 import { Attachment } from '../../models/attachment';
-import { transformEscape } from '../transforms/transformEscape';
+import { escape } from '../transforms/transformEscape';
+import { hash } from '../string';
+import { EmbeddedInfo } from '../../models/message';
+
+const urlCreator = () => window.URL || window.webkitURL;
+
+export const embeddableTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
 
 export const REGEXP_CID_START = /^cid:/g;
 
 /**
  * Flush the container HTML and return the container
  */
-export const getBodyParser = (content = '', activeCache = false) => {
-    return transformEscape(
-        { raw: content, action: '' },
-        {
-            activeCache,
-            isDocument: false,
-            cache: {}
-        }
-    );
-};
+export const getBodyParser = (content = '') => escape(content);
 
 /**
  * Removes enclosing quotes ("", '', &lt;&gt;) from a string
@@ -33,7 +30,7 @@ const trimQuotes = (input: string) => {
     return value;
 };
 
-export const readCID = (Headers: any = {}) => {
+export const readCID = ({ Headers = {} }: Attachment = {}) => {
     if (Headers['content-id']) {
         return trimQuotes(Headers['content-id']);
     }
@@ -44,37 +41,6 @@ export const readCID = (Headers: any = {}) => {
     }
 
     return '';
-};
-
-/**
- * Find embedded element in div
- */
-export const findEmbedded = (cid: string, document: Element) => {
-    // If cid is an empty string, it can give a false positive
-    if (!cid) {
-        return [];
-    }
-    const selector = [
-        `img[src="${cid}"]`,
-        `img[src="cid:${cid}"]`,
-        `img[data-embedded-img="${cid}"]`,
-        `img[data-embedded-img="cid:${cid}"]`,
-        `img[data-src="cid:${cid}"]`,
-        `img[proton-src="cid:${cid}"]`
-    ];
-    return [...document.querySelectorAll(selector.join(', '))];
-};
-
-/**
- * Extract embedded attachment from body
- */
-export const extractEmbedded = (attachments: Attachment[] = [], document: Element) => {
-    return attachments.filter(({ Headers = {} }) => {
-        const cid = readCID(Headers);
-        const nodes = findEmbedded(cid, document);
-
-        return nodes.length;
-    });
 };
 
 /**
@@ -108,9 +74,39 @@ export const getAttachementName = (Headers: { [key: string]: string } = {}) => {
 };
 
 /**
+ * Generate CID from input and email
+ */
+export const generateCid = (input: string, email: string) => {
+    const hashValue = toUnsignedString(hash(input), 4);
+    const domain = email.split('@')[1];
+    return `${hashValue}@${domain}`;
+};
+
+/**
  * Get the url for an embedded image
  */
 export const srcToCID = (node: Element) => {
     const attribute = node.getAttribute('data-embedded-img') || '';
     return attribute.replace(REGEXP_CID_START, '');
+};
+
+export const isContentLocation = ({ Headers = {} }: Attachment = {}) =>
+    typeof Headers['content-location'] !== 'undefined' && typeof Headers['content-id'] === 'undefined';
+
+/**
+ * Create a Blob and its URL for an attachment
+ */
+export const createBlob = (attachment: Attachment, data: Uint8Array) => {
+    const blob = new Blob([data], { type: attachment.MIMEType });
+    return urlCreator().createObjectURL(blob);
+};
+
+export const createEmbeddedMap = (...args: any[]) => new Map<string, EmbeddedInfo>(...args);
+
+export const isEmbeddable = (fileType: string) => embeddableTypes.includes(fileType);
+
+export const isEmbeddedLocal = ({
+    Headers: { 'content-disposition': disposition, embedded } = {}
+}: Attachment = {}) => {
+    return disposition === 'inline' || Number(embedded) === 1;
 };

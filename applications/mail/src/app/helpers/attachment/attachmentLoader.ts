@@ -5,21 +5,21 @@ import {
     decryptMessage,
     decryptSessionKey,
     getMessage,
-    SessionKey,
-    BinaryResult
+    SessionKey
 } from 'pmcrypto';
+import { DecryptResult } from 'openpgp';
+import { Api } from 'proton-shared/lib/interfaces';
 
 import { getAttachment } from '../../api/attachments';
 import { MessageExtended } from '../../models/message';
 import { Attachment } from '../../models/attachment';
-import { AttachmentsDataCache } from '../../hooks/useAttachments';
-import { Api } from '../../models/utils';
+import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
 
 // TODO: Handle isOutside()
 
-export const decrypt = async (encryptedBinaryBuffer: ArrayBuffer, sessionKey: SessionKey): Promise<BinaryResult> => {
+export const decrypt = async (encryptedBinaryBuffer: ArrayBuffer, sessionKey: SessionKey): Promise<DecryptResult> => {
     const encryptedBinary = new Uint8Array(encryptedBinaryBuffer);
 
     try {
@@ -27,7 +27,7 @@ export const decrypt = async (encryptedBinaryBuffer: ArrayBuffer, sessionKey: Se
             message: await getMessage(encryptedBinary),
             sessionKeys: [sessionKey],
             format: 'binary'
-        }) as BinaryResult;
+        });
     } catch (err) {
         console.error(err);
         throw err;
@@ -71,7 +71,7 @@ export const getDecryptedAttachment = async (
     attachment: Attachment,
     message: MessageExtended,
     api: Api
-): Promise<BinaryResult> => {
+): Promise<DecryptResult> => {
     const encryptedBinary = await getRequest(attachment, api);
     try {
         const sessionKey = await getSessionKey(attachment, message);
@@ -90,10 +90,10 @@ export const getAndVerify = async (
     attachment: Attachment = {},
     message: MessageExtended = {},
     reverify = false,
-    cache: AttachmentsDataCache,
+    cache: AttachmentsCache,
     api: Api
-): Promise<BinaryResult> => {
-    let attachmentdata: BinaryResult;
+): Promise<DecryptResult> => {
+    let attachmentdata: DecryptResult;
 
     const attachmentID = attachment.ID || '';
 
@@ -102,7 +102,7 @@ export const getAndVerify = async (
     }
 
     if (cache.has(attachmentID)) {
-        attachmentdata = cache.get(attachmentID) as BinaryResult;
+        attachmentdata = cache.get(attachmentID) as DecryptResult;
     } else {
         attachmentdata = await getDecryptedAttachment(attachment, message, api);
 
@@ -119,9 +119,9 @@ export const getAndVerify = async (
 export const get = (
     attachment: Attachment = {},
     message: MessageExtended = {},
-    cache: AttachmentsDataCache,
+    cache: AttachmentsCache,
     api: Api
-): Promise<BinaryResult> => {
+): Promise<DecryptResult> => {
     const reverify = false;
     return getAndVerify(attachment, message, reverify, cache, api);
 };
@@ -129,9 +129,9 @@ export const get = (
 export const reverify = (
     attachment: Attachment = {},
     message: MessageExtended = {},
-    cache: AttachmentsDataCache,
+    cache: AttachmentsCache,
     api: Api
-): Promise<BinaryResult> => {
+): Promise<DecryptResult> => {
     const reverify = true;
     return getAndVerify(attachment, message, reverify, cache, api);
 };

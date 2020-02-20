@@ -62,7 +62,7 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createModal } = useModals();
-    const [labels = []]: [Label[]] = useLabels();
+    const [labels = []] = useLabels() as [Label[], boolean, Error];
     const [search, updateSearch] = useState('');
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
     const [alsoArchive, updateAlsoArchive] = useState(false);
@@ -143,7 +143,7 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
             Exclusive: false
         };
         createModal(
-            <LabelModal type="label" label={newLabel} onAdd={handleAddNewLabel} onClose={() => onLock(false)} />
+            <LabelModal type="label" label={newLabel} onAdd={handleAddNewLabel as any} onClose={() => onLock(false)} />
         );
     };
 

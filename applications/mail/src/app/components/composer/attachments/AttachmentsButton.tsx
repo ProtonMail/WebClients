@@ -1,11 +1,12 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, ReactNode } from 'react';
 import { Button } from 'react-components';
 
 interface Props {
     onAddAttachments: (files: File[]) => void;
+    children?: ReactNode;
 }
 
-const AttachmentsButton = ({ onAddAttachments }: Props) => {
+const AttachmentsButton = ({ onAddAttachments, children }: Props) => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const input = event.target;
         if (input.files) {
@@ -17,7 +18,9 @@ const AttachmentsButton = ({ onAddAttachments }: Props) => {
     return (
         <div className="composer-attachments-button-wrapper">
             <input type="file" multiple onChange={handleChange} />
-            <Button icon="attach" />
+            <Button type="button" icon={!children && 'attach'}>
+                {children}
+            </Button>
         </div>
     );
 };

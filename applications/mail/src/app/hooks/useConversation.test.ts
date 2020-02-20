@@ -1,12 +1,11 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { useConversation } from './useConversation';
-import * as ConversationProviderMock from '../containers/ConversationProvider';
+import * as ConversationProvider from '../containers/ConversationProvider';
 import * as ReactComponents from 'react-components';
 import { wait } from 'proton-shared/lib/helpers/promise';
 
 // Needed to make TS accepts the mock exports
-const cacheMock: ConversationProviderMock.ConversationCache = (ConversationProviderMock as any).cacheMock;
-const ConversationProvider = ConversationProviderMock.default;
+const cacheMock: ConversationProvider.ConversationCache = (ConversationProvider as any).cacheMock;
 const api: jest.Mock = (ReactComponents as any).api;
 
 jest.mock('../containers/ConversationProvider');
@@ -14,10 +13,7 @@ jest.mock('../containers/ConversationProvider');
 describe('useConversation', () => {
     const ID = 'ID';
 
-    const setup = (argId?: string) =>
-        renderHook((rerenderId?: string) => useConversation(rerenderId || argId || ID), {
-            wrapper: ConversationProvider
-        });
+    const setup = (argId?: string) => renderHook((rerenderId?: string) => useConversation(rerenderId || argId || ID));
 
     afterEach(() => {
         jest.clearAllMocks();

@@ -1,8 +1,9 @@
-import { getSendPreferences } from './sendPreferences';
 import { RECIPIENT_TYPE } from 'proton-shared/lib/constants';
-import { Address } from '../../models/address';
+import { Address, Key } from 'proton-shared/lib/interfaces';
+
+import { getSendPreferences } from './sendPreferences';
 import { ContactEmail } from '../../models/contact';
-import { KeyData, Key } from '../../models/key';
+import { KeyData } from '../../models/key';
 
 const ownEmail = 'own@test.com';
 const email1 = 'test1@test.com';
@@ -12,7 +13,7 @@ const i = 4;
 const emailCacheBuster = () => `test${i}@test.com`;
 const message = {};
 const mailSettings = {};
-const ownAddress = { ID: 'own', Email: ownEmail, DisplayName: 'Own', Receive: 1 };
+const ownAddress = { ID: 'own', Email: ownEmail, DisplayName: 'Own', Receive: 1 } as Address;
 const addresses: Address[] = [ownAddress];
 const contactCache = new Map<string, ContactEmail>();
 const getPublicKeys = jest.fn(async () => ({} as KeyData));

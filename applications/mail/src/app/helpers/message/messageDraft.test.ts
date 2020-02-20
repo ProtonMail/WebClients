@@ -1,8 +1,9 @@
+import { Address } from 'proton-shared/lib/interfaces';
+
 import { formatSubject, handleActions, RE_PREFIX, FW_PREFIX, createNewDraft } from './messageDraft';
 import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 import { insertSignature } from './messageSignature';
 import { findSender } from '../addresses';
-import { Address } from '../../models/address';
 
 jest.mock('./messageSignature', () => ({
     insertSignature: jest.fn()
@@ -234,7 +235,7 @@ describe('messageDraft', () => {
         });
 
         it('should use values from findSender', () => {
-            const address: Address = { ID, Email: 'Email', DisplayName: 'DisplayName' };
+            const address: Partial<Address> = { ID, Email: 'Email', DisplayName: 'DisplayName' };
             (findSender as jest.Mock).mockReturnValue(address);
             const result = createNewDraft(action, { data: message }, mailSettings, addresses);
             expect(result.data?.AddressID).toBe(ID);

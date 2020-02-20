@@ -1,10 +1,10 @@
-import { useEffect, useContext, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getConversation } from 'proton-shared/lib/api/conversations';
 import { useApi, useLoading } from 'react-components';
 
 import { Conversation } from '../models/conversation';
 import { Message } from '../models/message';
-import { ConversationContext } from '../containers/ConversationProvider';
+import { useConversationCache } from '../containers/ConversationProvider';
 
 export interface ConversationResult {
     Conversation: Conversation;
@@ -12,14 +12,14 @@ export interface ConversationResult {
 }
 
 export const useConversation = (conversationID: string): [ConversationResult | undefined, boolean] => {
-    const cache = useContext(ConversationContext);
+    const cache = useConversationCache();
     const api = useApi();
     const [loading, withLoading] = useLoading(true);
     const [conversation, setConversation] = useState<ConversationResult>(cache.get(conversationID));
 
     useEffect(() => {
         const load = async () => {
-            const result = await api(getConversation(conversationID));
+            const result = (await api(getConversation(conversationID))) as ConversationResult;
             cache.set(conversationID, result);
         };
 

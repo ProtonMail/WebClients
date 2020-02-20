@@ -1,55 +1,55 @@
-import { MessageExtended, Message } from '../../models/message';
-import { extractEmbedded, getAttachementName, REGEXP_CID_START } from '../embedded/embeddedUtils';
-import { addMessageCID, getMessageCIDs } from './embeddedStoreCids';
+import { MessageExtended, EmbeddedMap } from '../../models/message';
+import { REGEXP_CID_START, readCID, createEmbeddedMap } from './embeddeds';
 import { Attachment } from '../../models/attachment';
+import { getAttachments } from '../message/messages';
 
-export const getAttachment = (message: Message = {}, src = '') => {
+export const getAttachment = (cids?: EmbeddedMap, src = '') => {
     const cid = src.replace(REGEXP_CID_START, '');
-    return getMessageCIDs(message)[cid] || {};
-};
-
-export const find = (message: MessageExtended) => {
-    const list = (message.data || {}).Attachments || [];
-
-    if (!list.length || !message.document) {
-        return [];
-    }
-
-    const embeddedAttachments = extractEmbedded(list, message.document);
-
-    embeddedAttachments.forEach((attachment) => {
-        addMessageCID(message.data || {}, attachment);
-    });
-
-    return embeddedAttachments;
+    return cids?.get(cid);
 };
 
 /**
- * Find all attachements inline
+ * Find embedded element in div
  */
-export const listInlineAttachments = (message: MessageExtended) => {
-    const list = (message.data || {}).Attachments || [];
-    const MAP_CID = getMessageCIDs(message.data);
+export const findEmbedded = (cid: string, document: Element) => {
+    // If cid is an empty string, it can give a false positive
+    if (!cid) {
+        return [];
+    }
+    const selector = [
+        `img[src="${cid}"]`,
+        `img[src="cid:${cid}"]`,
+        `img[data-embedded-img="${cid}"]`,
+        `img[data-embedded-img="cid:${cid}"]`,
+        `img[data-src="cid:${cid}"]`,
+        `img[proton-src="cid:${cid}"]`
+    ];
+    return [...document.querySelectorAll(selector.join(', '))];
+};
 
-    return Object.keys(MAP_CID).reduce((acc, cid) => {
-        // Extract current attachement content-id
-        const contentId = ((MAP_CID[cid] || {}).Headers || {})['content-id'];
-        const contentName = getAttachementName(MAP_CID[cid].Headers);
+/**
+ * Extract embedded attachment from body
+ */
+export const extractEmbedded = (attachments: Attachment[] = [], document: Element) => {
+    return attachments.filter((attachment) => {
+        const cid = readCID(attachment);
+        const nodes = findEmbedded(cid, document);
 
-        // Find the matching attachement
-        const attachment = list.find(({ Headers = {}, Name = '' } = {}) => {
-            if (Headers['content-id']) {
-                return Headers['content-id'] === contentId;
-            }
+        return nodes.length;
+    });
+};
 
-            if (Headers['content-location']) {
-                return Name === contentName;
-            }
+/**
+ * Find embedded images in the document and return a map based on the CID
+ */
+export const find = (message: MessageExtended = {}, document: Element) => {
+    const attachements = getAttachments(message.data);
 
-            return false;
-        });
+    if (!attachements.length || !document) {
+        return createEmbeddedMap();
+    }
 
-        attachment && acc.push({ cid, attachment });
-        return acc;
-    }, [] as { cid: string; attachment: Attachment }[]);
+    const embeddedAttachments = extractEmbedded(attachements, document);
+
+    return createEmbeddedMap(embeddedAttachments.map((attachment) => [readCID(attachment), { attachment }]));
 };

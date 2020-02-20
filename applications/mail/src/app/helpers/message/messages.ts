@@ -214,7 +214,8 @@ export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
 /**
  * We NEVER upconvert, if the user wants html: plaintext is actually fine as well
  */
-export const getHTML = (message: MessageExtended) => (isHTML(message.data) ? message.content : undefined);
+export const getOutHTML = (message: MessageExtended) =>
+    isHTML(message.data) ? message.document?.innerHTML : undefined;
 
 export const exportPlainText = (message: MessageExtended) => {
     /*
@@ -222,9 +223,9 @@ export const exportPlainText = (message: MessageExtended) => {
      * See: http://www.berklix.org/help/majordomo/#quoted we want to avoid sending unnecessary quoted printable encodings
      */
     if (message.data?.MIMEType !== MIME_TYPES.DEFAULT) {
-        return message.content?.replace(/\u200B/g, '');
+        return message.document?.innerHTML.replace(/\u200B/g, '');
     }
-    return toText(message.content || '', true, true).replace(/\u200B/g, '');
+    return toText(message.document?.innerHTML || '', true, true).replace(/\u200B/g, '');
 };
 
 /**

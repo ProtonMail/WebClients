@@ -1,13 +1,12 @@
 import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
+import { Api } from 'proton-shared/lib/interfaces';
+import { OpenPGPKey } from 'pmcrypto';
 
 import { MessageExtended } from '../../models/message';
 import { MapPreference } from './sendPreferences';
-
 import { constructMime } from './sendMimeBuilder';
-import { addReceived, getPlainText, getHTML } from '../message/messages';
-import { PmcryptoKey } from 'pmcrypto';
-import { AttachmentsDataCache } from '../../hooks/useAttachments';
-import { Api } from '../../models/utils';
+import { addReceived, getPlainText, getOutHTML } from '../message/messages';
+import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 // Reference: Angular/src/app/composer/services/encryptMessage.js
 // Reference: Angular/src/app/composer/services/generateTopPackages.js
@@ -30,7 +29,7 @@ export interface Package {
     BodyKey?: any;
     BodyKeyPacket?: string;
     Type?: PACKAGE_TYPE;
-    PublicKey?: PmcryptoKey;
+    PublicKey?: OpenPGPKey;
     AttachmentKeys?: { [AttachmentID: string]: { Key: string; Algorithm: string } };
     AttachmentKeyPackets?: { [AttachmentID: string]: string };
 }
@@ -39,11 +38,7 @@ export interface Package {
  * Generates the mime top-level packages, which include all attachments in the body.
  * Build the multipart/alternate MIME entity containing both the HTML and plain text entities.
  */
-const generateMimePackage = async (
-    message: MessageExtended,
-    cache: AttachmentsDataCache,
-    api: Api
-): Promise<Package> => ({
+const generateMimePackage = async (message: MessageExtended, cache: AttachmentsCache, api: Api): Promise<Package> => ({
     Flags: addReceived(message.data?.Flags),
     Addresses: {},
     MIMEType: MIME,
@@ -61,7 +56,7 @@ const generateHTMLPackage = async (message: MessageExtended): Promise<Package> =
     Flags: addReceived(message.data?.Flags),
     Addresses: {},
     MIMEType: DEFAULT,
-    Body: getHTML(message)
+    Body: getOutHTML(message)
 });
 
 /**
@@ -72,7 +67,7 @@ const generateHTMLPackage = async (message: MessageExtended): Promise<Package> =
 export const generateTopPackages = async (
     message: MessageExtended,
     sendPrefs: MapPreference,
-    cache: AttachmentsDataCache,
+    cache: AttachmentsCache,
     api: Api
 ): Promise<Packages> => {
     const packagesStatus: PackageStatus = Object.values(sendPrefs).reduce(

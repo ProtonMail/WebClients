@@ -1,22 +1,34 @@
-import { prepareImages, mutateHTML } from './embeddedParser';
+import { prepareImages, mutateHTMLBlob, mutateHTMLCid } from './embeddedParser';
 import { Message } from '../../models/message';
+import { Attachment } from '../../models/attachment';
 import { parseInDiv } from '../dom';
+import { createEmbeddedMap } from './embeddeds';
 
 jest.mock('./embeddedFinder', () => ({
     getAttachment: jest.fn((message: Message, src: string) => {
         if (src === 'cid:embedded.jpg') {
-            return { Name: 'embedded name' };
+            return { attachment: { Name: 'embedded name' } };
         }
+    }),
+    findEmbedded: jest.fn((cid: string, document: Element) => {
+        return [...document.querySelectorAll(`img[proton-src="cid:${cid}"]`)];
     })
 }));
 
-jest.mock('./embeddedStoreCids', () => ({
-    getMessageCIDs: jest.fn(() => ({ '-9e96b583@protonmail.com': {} }))
-}));
+// jest.mock('./embeddedStoreCids', () => ({
+//     getMessageCIDs: jest.fn(() => ({ '-9e96b583@protonmail.com': {} }))
+// }));
 
-jest.mock('./embeddedStoreBlobs', () => ({
-    getBlob: jest.fn(() => ({ url: '123-234' }))
-}));
+// jest.mock('./embeddedStoreBlobs', () => ({
+//     getBlob: jest.fn(() => ({ url: '123-234' }))
+// }));
+
+const cid = '-9e96b583@protonmail.com';
+const url = '123-234';
+const attachment = { Name: 'embedded name' } as Attachment;
+
+const embeddeds = createEmbeddedMap();
+embeddeds.set(cid, { attachment, url });
 
 describe('embeddedParser', () => {
     describe('prepareImages', () => {
@@ -84,13 +96,13 @@ describe('embeddedParser', () => {
         });
     });
 
-    describe('mutateHTML', () => {
+    describe('mutateHTMLBlob', () => {
         // Reference: Angular/test/specs/attachments/embeddedParser.spec.js
 
-        const setup = (html: string, direction = 'blob') => {
-            const message = { document: parseInDiv(html) };
-            mutateHTML(message, direction);
-            return message.document;
+        const setup = (html: string) => {
+            const document = parseInDiv(html);
+            mutateHTMLBlob(embeddeds, document);
+            return document;
         };
 
         it('should parse embedded images and set src', async () => {
@@ -107,18 +119,28 @@ describe('embeddedParser', () => {
             expect(document.innerHTML).toMatchSnapshot();
         });
 
-        it('should always transform proton-src to src on direction cid', async () => {
-            const document = setup(
-                '<img class="proton-embedded" proton-src="cid:-9e96b583@protonmail.com" alt="embedded.jpg">',
-                'cid'
-            );
-            expect(document.innerHTML).toMatchSnapshot();
-        });
-
         it('should remove data-src when they are escaped with proton', async () => {
             const document = setup(
                 '<img class="proton-embedded" proton-src="cid:-9e96b583@protonmail.com" data-src="cid:-9e96b583@protonmail.com" alt="embedded.jpg">'
             );
+            expect(document.innerHTML).toMatchSnapshot();
+        });
+    });
+
+    describe('mutateHTMLCid', () => {
+        // Reference: Angular/test/specs/attachments/embeddedParser.spec.js
+
+        const setup = (html: string) => {
+            const document = parseInDiv(html);
+            mutateHTMLCid(embeddeds, document);
+            return document;
+        };
+
+        it('should always transform proton-src to src on direction cid', async () => {
+            const document = setup(
+                '<img class="proton-embedded" proton-src="cid:-9e96b583@protonmail.com" alt="embedded.jpg">'
+            );
+
             expect(document.innerHTML).toMatchSnapshot();
         });
     });

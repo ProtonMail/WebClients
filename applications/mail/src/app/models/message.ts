@@ -1,7 +1,20 @@
+import { OpenPGPKey } from 'pmcrypto';
+
 import { Label } from './label';
 import { Attachment } from './attachment';
-import { MESSAGE_ACTIONS } from '../constants';
+import { MESSAGE_ACTIONS, VERIFICATION_STATUS } from '../constants';
 import { Recipient } from './address';
+
+export interface EmbeddedInfo {
+    attachment: Attachment;
+    url?: string;
+}
+
+/**
+ * Message attachments limited to the embedded images
+ * Mapped by the CID of the embedded attachment
+ */
+export type EmbeddedMap = Map<string, EmbeddedInfo>;
 
 export interface Message {
     ID?: string;
@@ -34,21 +47,80 @@ export interface Message {
 }
 
 export interface MessageExtended {
+    /**
+     * Message object from the server
+     */
     data?: Message;
-    raw?: string;
+
+    /**
+     * Content of data.body decrypted
+     */
+    decryptedBody?: string;
+
+    /**
+     * Document representing the message body
+     * Processed to be rendered to the user
+     */
     document?: Element;
-    content?: string;
-    verified?: number;
-    publicKeys?: any[];
-    privateKeys?: any[];
-    loaded?: boolean;
+
+    /**
+     * Cryptography signatures verification status flag
+     */
+    verified?: VERIFICATION_STATUS;
+
+    /**
+     * Cryptography public keys to use for both encryption and decryption
+     */
+    publicKeys?: OpenPGPKey[];
+
+    /**
+     * Cryptography prviate keys to use for both encryption and decryption
+     */
+    privateKeys?: OpenPGPKey[];
+
+    /**
+     * Initialization status of the message
+     * undefined: not started
+     * false: in progress
+     * true: done
+     */
     initialized?: boolean;
+
+    /**
+     * Show remote message in rendered message
+     * undefined: check user mail settings
+     * false: no
+     * true: yes
+     */
     showRemoteImages?: boolean;
+
+    /**
+     * Show remote message in rendered message
+     * undefined: check user mail settings
+     * false: no
+     * true: yes
+     */
     showEmbeddedImages?: boolean;
-    numEmbedded?: number;
-    // attachments?: Attachment[];
+
+    /**
+     * Encrypted subject
+     */
     encryptedSubject?: any;
-    mimetype?: string;
+
+    // mimetype?: string;
+
+    /**
+     * Original "To" address
+     */
     originalTo?: string;
+
+    /**
+     * Action flags for draft messages
+     */
     action?: MESSAGE_ACTIONS;
+
+    /**
+     * Embedded images mapped by CID list
+     */
+    embeddeds?: EmbeddedMap;
 }

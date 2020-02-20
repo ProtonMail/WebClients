@@ -1,10 +1,10 @@
 import React, { useState, ChangeEvent, MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { Label, Select, Input, generateUID } from 'react-components';
+import { Address } from 'proton-shared/lib/interfaces';
 
 import ComposerAddresses from './addresses/Addresses';
 import { MessageExtended } from '../../models/message';
-import { Address } from '../../models/address';
 import { getFromAdresses } from '../../helpers/addresses';
 
 interface Props {

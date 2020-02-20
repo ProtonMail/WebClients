@@ -45,7 +45,7 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createModal } = useModals();
-    const [labels = []]: [Label[]] = useLabels();
+    const [labels = []] = useLabels() as [Label[], boolean, Error];
     const [search, updateSearch] = useState('');
     const normSearch = normalize(search);
 

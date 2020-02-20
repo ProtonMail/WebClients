@@ -47,7 +47,7 @@ const HeaderExpanded = ({
     onCollapse,
     onCompose
 }: Props) => {
-    const [contacts]: [ContactEmail[]] = useContactEmails();
+    const [contacts] = useContactEmails() as [ContactEmail[], boolean, Error];
     const [contactGroups] = useContactGroups();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const api = useApi();

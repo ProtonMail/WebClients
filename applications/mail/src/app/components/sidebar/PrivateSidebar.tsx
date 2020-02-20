@@ -33,7 +33,7 @@ const PrivateSidebar = ({ labelID: currentLabelID, expanded = false, location, o
     const [conversationCounts, loadingConversationCounts] = useConversationCounts();
     const [messageCounts, loadingMessageCounts] = useMessageCounts();
     const [mailSettings, loadingMailSettings] = useMailSettings();
-    const [labels, loadingLabels]: [Label[], boolean] = useLabels();
+    const [labels, loadingLabels] = useLabels() as [Label[], boolean, Error];
     const { call } = useEventManager();
     const { ShowMoved } = mailSettings || {};
 

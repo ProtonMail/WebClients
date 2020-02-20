@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { unique } from 'proton-shared/lib/helpers/array';
-import { sendMessage } from 'proton-shared/lib/api/messages';
+import { sendMessage, updateDraft } from 'proton-shared/lib/api/messages';
 import { useMailSettings, useAddresses, useGetPublicKeys, useGetAddressKeys, useApi } from 'react-components';
 
 import { MessageExtended } from '../models/message';
@@ -10,7 +10,8 @@ import { getSendPreferences } from '../helpers/send/sendPreferences';
 import { generateTopPackages } from '../helpers/send/sendTopPackages';
 import { attachSubPackages } from '../helpers/send/sendSubPackages';
 import { encryptPackages } from '../helpers/send/sendEncrypt';
-import { useAttachmentsCache } from './useAttachments';
+import { prepareExport, encryptBody } from '../helpers/message/messageExport';
+import { useAttachmentCache } from '../containers/AttachmentProvider';
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
 
@@ -21,10 +22,27 @@ export const useSendMessage = () => {
     const getPublicKeys = useGetPublicKeys();
     const getAddressKeys = useGetAddressKeys();
     const api = useApi();
-    const { data } = useAttachmentsCache();
+    const attachmentCache = useAttachmentCache();
 
     return useCallback(
-        async (message: MessageExtended) => {
+        async (inputMessage: MessageExtended) => {
+            // Prepare and save draft
+            const document = prepareExport(inputMessage);
+            const Body = await encryptBody(
+                document?.innerHTML || '',
+                inputMessage.publicKeys,
+                inputMessage.privateKeys
+            );
+
+            const { Message } = await api(updateDraft(inputMessage.data?.ID, { ...inputMessage.data, Body }));
+
+            // Processed message representing what we send
+            const message: MessageExtended = {
+                ...inputMessage,
+                document: document,
+                data: Message
+            };
+
             // TODO: Prepare embedded
             const emails = getRecipientsAddresses(message.data);
             // TODO: handleAttachmentSigs
@@ -41,39 +59,13 @@ export const useSendMessage = () => {
             );
             // todo regression testing: https://github.com/ProtonMail/Angular/issues/5088
 
-            console.log('sendPrefs', sendPrefs);
+            console.log('sendPrefs', inputMessage, message, sendPrefs);
 
-            let packages = await generateTopPackages(message, sendPrefs, data, api);
+            let packages = await generateTopPackages(message, sendPrefs, attachmentCache, api);
             packages = await attachSubPackages(packages, message, emails, sendPrefs);
             packages = await encryptPackages(message, packages, getAddressKeys);
 
             console.log('packages', packages);
-
-            // return;
-
-            // Old code save the draft here
-            // New one should have saved it just before
-            // TODO: Do I miss something?
-            //
-            // /*
-            //  * we do not re-encrypt the draft body if the packages contain the draft body: the generatePackages call will have
-            //  * generated the body correctly (otherwise it breaks deduplication)
-            //  */
-            // const encrypt = !packages.map(({ MIMEType }) => MIMEType).includes(message.MIMEType);
-            // // save the draft with the re-encrypted body
-            // await postMessage(message, { loader: false, encrypt });
-
-            // TODO: Restore that with attachments management
-            // // wait on the signature promise after the encrypt, so it can be done in parallel with the encryption
-            // // which is better for performance.
-            // await attachmentUpdates;
-            // message.encrypting = false;
-            // dispatchMessageAction(message);
-
-            // TODO: Define if this risk exist in the new architecture
-            // // Avoid to have SAVE and SEND request in the same time
-            // // Make sure to keep that just before the send message API request
-            // await composerRequestModel.chain(message);
 
             // TODO: Implement retry system
             // const suppress = retry ? [API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED] : [];

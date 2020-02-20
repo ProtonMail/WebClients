@@ -6,18 +6,19 @@ import {
     generateSessionKey,
     encryptSessionKey,
     SessionKey,
-    PmcryptoKey
+    OpenPGPKey
 } from 'pmcrypto';
+import { enums } from 'openpgp';
 
 import { identity } from 'proton-shared/lib/helpers/function';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
+import { CachedKey } from 'proton-shared/lib/interfaces';
 
 import { MessageExtended, Message } from '../../models/message';
 import { Packages, Package } from './sendTopPackages';
 import { getAttachments } from '../message/messages';
 import { getSessionKey } from '../attachment/attachmentLoader';
-import { AddressKeys } from '../../models/key';
 import { arrayToBase64 } from '../base64';
 import { PACKAGE_TYPE, MIME_TYPES } from 'proton-shared/lib/constants';
 import { AES256 } from '../../constants';
@@ -43,7 +44,7 @@ const encryptKeyPacket = async ({
     passwords = []
 }: {
     sessionKeys?: SessionKey[];
-    publicKeys?: PmcryptoKey[];
+    publicKeys?: OpenPGPKey[];
     passwords?: string[];
 }) =>
     Promise.all(
@@ -78,7 +79,7 @@ const encryptAttachmentKeys = async (pack: Package, message: MessageExtended, at
         const keys = await encryptKeyPacket({
             sessionKeys: attachmentKeys.map(({ SessionKey }) => SessionKey),
             passwords: isEo ? [message.data?.Password || ''] : undefined,
-            publicKeys: isEo ? undefined : [address.PublicKey as PmcryptoKey]
+            publicKeys: isEo ? undefined : [address.PublicKey as OpenPGPKey]
         });
 
         const AttachmentKeyPackets: { [AttachmentID: string]: string } = {};
@@ -109,9 +110,11 @@ const generateSessionKeyHelper = async (): Promise<SessionKey> => ({
  * Encrypt the body in the given package. Should only be used if the package body differs from message body
  * (i.e. the draft body)
  */
-const encryptBodyPackage = async (pack: Package, ownKeys: AddressKeys[], publicKeys: PmcryptoKey[]) => {
+const encryptBodyPackage = async (pack: Package, ownKeys: CachedKey[], publicKeys: OpenPGPKey[]) => {
     const { privateKeys } = splitKeys(ownKeys) as any;
     const cleanPublicKeys = publicKeys.filter(identity);
+
+    console.log('encryptBodyPackage', pack);
 
     const { data, sessionKey } = await encryptMessage({
         data: pack.Body || '',
@@ -119,7 +122,7 @@ const encryptBodyPackage = async (pack: Package, ownKeys: AddressKeys[], publicK
         sessionKey: cleanPublicKeys.length ? undefined : await generateSessionKeyHelper(),
         privateKeys,
         returnSessionKey: true,
-        compression: true
+        compression: enums.compression.zip
     });
 
     const { asymmetric: keys, encrypted } = await splitMessage(data);
@@ -133,8 +136,8 @@ const encryptBodyPackage = async (pack: Package, ownKeys: AddressKeys[], publicK
  */
 const encryptDraftBodyPackage = async (
     pack: Package,
-    ownKeys: AddressKeys[],
-    publicKeys: PmcryptoKey[],
+    ownKeys: CachedKey[],
+    publicKeys: OpenPGPKey[],
     message: MessageExtended
 ) => {
     // TODO: Do the change is equivalent?
@@ -149,7 +152,7 @@ const encryptDraftBodyPackage = async (
         publicKeys: cleanPublicKeys,
         privateKeys,
         returnSessionKey: true,
-        compression: true
+        compression: enums.compression.zip
     });
 
     const packets = await splitMessage(data);
@@ -171,10 +174,10 @@ const encryptDraftBodyPackage = async (
  * Encrypts the body of the package and then overwrites the body in the package and adds the encrypted session keys
  * to the subpackages. If we send clear message the unencrypted session key is added to the (top-level) package too.
  */
-const encryptBody = async (pack: Package, ownKeys: AddressKeys[], message: MessageExtended): Promise<void> => {
+const encryptBody = async (pack: Package, ownKeys: CachedKey[], message: MessageExtended): Promise<void> => {
     const addressKeys = Object.keys(pack.Addresses || {});
     const addresses = Object.values(pack.Addresses || {});
-    const publicKeysList = addresses.map(({ PublicKey }) => PublicKey as PmcryptoKey);
+    const publicKeysList = addresses.map(({ PublicKey }) => PublicKey as OpenPGPKey);
     /*
      * Special case: reuse the encryption packet from the draft, this allows us to do deduplication on the back-end.
      * In fact, this will be the most common case.
@@ -219,7 +222,7 @@ const encryptBody = async (pack: Package, ownKeys: AddressKeys[], message: Messa
 const encryptPackage = async (
     pack: Package,
     message: MessageExtended,
-    ownKeys: AddressKeys[],
+    ownKeys: CachedKey[],
     attachmentKeys: AttachmentKeys[]
 ): Promise<Package> => {
     await Promise.all([encryptBody(pack, ownKeys, message), encryptAttachmentKeys(pack, message, attachmentKeys)]);
@@ -243,10 +246,10 @@ const getAttachmentKeys = async (message: MessageExtended): Promise<AttachmentKe
 export const encryptPackages = async (
     message: MessageExtended,
     packages: Packages,
-    getAddressKeys: (addressID?: string) => Promise<AddressKeys[]>
+    getAddressKeys: (addressID: string) => Promise<CachedKey[]>
 ): Promise<Packages> => {
     const attachmentKeys = await getAttachmentKeys(message);
-    const ownKeys = await getAddressKeys(message.data?.AddressID); // Original code: message.From.ID, don't know of From property
+    const ownKeys = await getAddressKeys(message.data?.AddressID || ''); // Original code: message.From.ID, don't know of From property
     const packageList = Object.values(packages) as Package[];
     await Promise.all(packageList.map((pack) => encryptPackage(pack, message, ownKeys, attachmentKeys)));
 

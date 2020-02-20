@@ -6,15 +6,15 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { attachmentsSize, getAttachments } from '../../helpers/message/messages';
 import MessageAttachment from './MessageAttachment';
 import { MessageExtended } from '../../models/message';
-import { useAttachmentsCache } from '../../hooks/useAttachments';
 import { downloadAll } from '../../helpers/attachment/attachmentDownloader';
+import { useAttachmentCache } from '../../containers/AttachmentProvider';
 
 interface Props {
     message: MessageExtended;
 }
 
 const MessageFooter = ({ message }: Props) => {
-    const cache = useAttachmentsCache();
+    const cache = useAttachmentCache();
     const api = useApi();
     const [showLoader, setShowLoader] = useState(false);
     const [showInstant, setShowInstant] = useState(false);
@@ -22,12 +22,12 @@ const MessageFooter = ({ message }: Props) => {
     const humanAttachmentsSize = humanSize(attachmentsSize(message.data));
     const attachments = getAttachments(message.data);
     const numAttachments = attachments.length;
-    const numEmbedded = message.numEmbedded || 0;
+    const numEmbedded = message.embeddeds?.size || 0;
     const numPureAttachments = numAttachments - numEmbedded;
 
     const handleDownloadAll = async () => {
         setShowLoader(true);
-        await downloadAll(message, cache.data, api);
+        await downloadAll(message, cache, api);
         setShowLoader(false);
         setShowInstant(true);
     };

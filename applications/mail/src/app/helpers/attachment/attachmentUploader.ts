@@ -1,13 +1,16 @@
 import { c } from 'ttag';
-import { encryptMessage, splitMessage, PmcryptoKey } from 'pmcrypto';
+import { encryptMessage, splitMessage, OpenPGPKey } from 'pmcrypto';
+import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { Api } from 'proton-shared/lib/interfaces';
 
 import { MessageExtended } from '../../models/message';
-import { Api, Binary } from '../../models/utils';
 import { getAttachments } from '../message/messages';
 import { readFileAsBuffer } from '../file';
 import { uploadAttachment } from '../../api/attachments';
-import { isEmbeddable } from './attachments';
 import { Attachment } from '../../models/attachment';
+import { generateCid, readCID, createBlob, createEmbeddedMap, isEmbeddable } from '../embedded/embeddeds';
+import { generateUID } from '../string';
+import { Computation } from '../../hooks/useMessage';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
 
@@ -18,15 +21,31 @@ export enum ATTACHMENT_ACTION {
     INLINE = 'inline'
 }
 
+interface Packets {
+    Filename: string;
+    MIMEType: MIME_TYPES;
+    FileSize: number;
+    Inline: boolean;
+    signature?: Uint8Array;
+    Preview: Uint8Array;
+    keys: Uint8Array;
+    data: Uint8Array;
+}
+
+export interface UploadResult {
+    attachment: Attachment;
+    packets: Packets;
+}
+
 const encrypt = async (
-    data: Binary,
+    data: Uint8Array,
     { name, type, size }: File = {} as File,
     inline: boolean,
-    publicKeys: PmcryptoKey[],
-    privateKeys: PmcryptoKey[]
-) => {
+    publicKeys: OpenPGPKey[],
+    privateKeys: OpenPGPKey[]
+): Promise<Packets> => {
     const { message, signature } = await encryptMessage({
-        filename: name,
+        // filename: name,
         armor: false,
         detached: true,
         data,
@@ -38,10 +57,10 @@ const encrypt = async (
 
     return {
         Filename: name,
-        MIMEType: type,
+        MIMEType: type as MIME_TYPES,
         FileSize: size,
         Inline: inline,
-        signature: signature ? signature.packets.write() : undefined,
+        signature: signature ? (signature.packets.write() as Uint8Array) : undefined,
         Preview: data,
         keys: asymmetric[0],
         data: encrypted[0]
@@ -51,7 +70,7 @@ const encrypt = async (
 /**
  * Read the file locally, and encrypt it. return the encrypted file.
  */
-const encryptFile = async (file: File, inline: boolean, pubKeys: PmcryptoKey[], privKey: PmcryptoKey[]) => {
+const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], privKey: OpenPGPKey[]) => {
     if (!file) {
         throw new TypeError(c('Error').t`You did not provide a file.`);
     }
@@ -66,27 +85,17 @@ const encryptFile = async (file: File, inline: boolean, pubKeys: PmcryptoKey[], 
 /**
  * Add a new attachment, upload it to the server
  */
-const uploadFile = async (file: File, message: MessageExtended, inline: boolean, api: Api, total = 1, cid = '') => {
+const uploadFile = async (
+    file: File,
+    message: MessageExtended,
+    inline: boolean,
+    api: Api,
+    cid = ''
+): Promise<UploadResult> => {
     const titleImage = c('Title').t`Image`;
 
-    const tempPacket = {
-        filename: file.name || `${titleImage} ${getAttachments(message.data).length + 1}`,
-        uploading: true,
-        Size: file.size,
-        ContentID: cid
-    };
-
-    // TODO
-    // force update the embedded counter
-    // if (file.inline) {
-    //     message.NumEmbedded++;
-    //     // CID doesn't exist when the user add an attachment
-    //     tempPacket.ContentID = cid || embedded.generateCid(file.upload.uuid, message.From.Email);
-    //     tempPacket.Inline = 1;
-    // }
-
-    // const privateKeys = keysModel.getPrivateKeys(message.AddressID);
-    // message.attachmentsToggle = true;
+    const filename = file.name || `${titleImage} ${getAttachments(message.data).length + 1}`;
+    const ContentID = inline ? cid || generateCid(generateUID(), message.data?.Sender?.Address || '') : '';
 
     const publicKeys = message.publicKeys && message.publicKeys.length > 0 ? [message.publicKeys[0]] : [];
 
@@ -94,9 +103,9 @@ const uploadFile = async (file: File, message: MessageExtended, inline: boolean,
 
     const { Attachment } = await (api(
         uploadAttachment({
-            Filename: packets.Filename || tempPacket.filename,
+            Filename: packets.Filename || filename,
             MessageID: message.data?.ID || '',
-            ContentID: tempPacket.ContentID,
+            ContentID,
             MIMEType: packets.MIMEType,
             KeyPackets: new Blob([packets.keys] as any),
             DataPacket: new Blob([packets.data] as any),
@@ -104,19 +113,12 @@ const uploadFile = async (file: File, message: MessageExtended, inline: boolean,
         })
     ) as UploadQueryResult);
 
-    console.log('result', total, Attachment);
-
     // TODO
     // if (isAborted) {
     //     return;
     // }
 
-    // Extract content-id even if there are no headers
-    // const contentId = `${(Attachment.Headers || {})['content-id'] || ''}`;
-    // const newCid = contentId.replace(/[<>]+/g, '');
-
-    // return { attachment, sessionKey, packets, cid: newCid, REQUEST_ID };
-    return Attachment;
+    return { attachment: Attachment, packets };
 };
 
 /**
@@ -127,55 +129,35 @@ export const upload = async (
     message: MessageExtended = {},
     action = ATTACHMENT_ACTION.ATTACHMENT,
     api: Api,
-    // triggerEvent = true,
     cid = ''
 ) => {
-    const uploads = await Promise.all(
+    return await Promise.all(
         files.map((file) => {
             const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;
-            return uploadFile(file, message, inline, api, files.length, cid);
+            return uploadFile(file, message, inline, api, cid);
         })
     );
+};
 
-    // message.uploading = promises.length;
-    // message.encryptingAttachment = true;
-    // dispatchMessageAction(message);
+export const getUpdateAttachmentsComputation = (
+    uploads: UploadResult[],
+    action = ATTACHMENT_ACTION.ATTACHMENT
+): Computation => (message: MessageExtended) => {
+    // New attachment list
+    const newAttachments = uploads.map((upload) => upload.attachment);
+    const attachments = [...getAttachments(message.data), ...newAttachments];
 
-    // const cleanUploads = uploads.filter(Boolean) as {
-    //     attachment: Attachment;
-    //     sessionKey: any;
-    //     packets: any;
-    //     cid: string;
-    //     REQUEST_ID: string;
-    // }[]; // will be undefined for aborted request
+    // Update embeddeds map if embedded attachments
+    const embeddeds = message.embeddeds || createEmbeddedMap();
 
-    // message.uploading = 0;
-    // message.encryptingAttachment = false;
-    // dispatchMessageAction(message);
+    if (action === ATTACHMENT_ACTION.INLINE) {
+        uploads.forEach((upload) =>
+            embeddeds.set(readCID(upload.attachment), {
+                attachment: upload.attachment,
+                url: createBlob(upload.attachment, upload.packets.Preview)
+            })
+        );
+    }
 
-    // TODO: Embedded
-    // Create embedded and replace theses files from the upload list
-    // const embeddedMap = addEmbedded(upload, message);
-    // return _.map(upload, (config) => {
-    //     return embeddedMap[config.attachment.ID] || config;
-    // });
-
-    // .then((upload) => {
-    //     message.addAttachments(upload.map(({ attachment }) => attachment));
-    //     updateMapAttachments(upload);
-
-    //     if (triggerEvent && upload.length) {
-    //         dispatch('upload.success', { upload, message, messageID: message.ID });
-    //     }
-    //     return upload;
-    // }).catch((err) => {
-    //     dispatchMessageAction(message);
-    //     throw err;
-    // });
-
-    // TODO
-    // const promise = composerRequestModel.add(message, callback);
-    // networkActivityTracker.track(promise);
-
-    return uploads;
+    return { data: { ...message.data, Attachments: attachments }, embeddeds };
 };

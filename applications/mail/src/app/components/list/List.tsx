@@ -29,7 +29,7 @@ const List = ({
     onClick,
     location
 }: Props) => {
-    const [contacts, loadingContacts]: [ContactEmail[], boolean] = useContactEmails();
+    const [contacts, loadingContacts] = useContactEmails() as [ContactEmail[], boolean, Error];
     const [contactGroups, loadingGroups] = useContactGroups();
     const [labels] = useLabels();
     const [lastChecked, setLastChecked] = useState(); // Store ID of the last element ID checked

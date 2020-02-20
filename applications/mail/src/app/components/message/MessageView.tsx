@@ -58,7 +58,7 @@ const MessageView = ({
         if (draft && message.data?.Subject === undefined) {
             load();
         }
-    }, [message, loaded, expanded]);
+    }, [draft, loaded, expanded]);
 
     const handleLoadRemoteImages = async () => {
         await loadRemoteImages();

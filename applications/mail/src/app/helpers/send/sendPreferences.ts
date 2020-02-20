@@ -1,14 +1,14 @@
-import { getKeys, decodeBase64, binaryStringToArray, getFingerprint, isExpiredKey, PmcryptoKey } from 'pmcrypto';
+import { getKeys, decodeBase64, binaryStringToArray, getFingerprint, isExpiredKey, OpenPGPKey } from 'pmcrypto';
 
 import { unique } from 'proton-shared/lib/helpers/array';
 import { PACKAGE_TYPE, RECIPIENT_TYPE, MIME_TYPES, KEY_FLAGS } from 'proton-shared/lib/constants';
+import { Key, Address } from 'proton-shared/lib/interfaces';
 
 import { Message } from '../../models/message';
 import { isEO, isSign } from '../message/messages';
 import { normalizeEmail } from '../addresses';
-import { Address } from '../../models/address';
 import { getByEmail, isOwnAddress, isFallbackAddress } from '../addresses';
-import { KeyData, Key } from '../../models/key';
+import { KeyData } from '../../models/key';
 import { findEmailInCache } from '../contacts';
 import { ContactEmailCache, ContactEmail } from '../../models/contact';
 import { base64ToArray } from '../base64';
@@ -19,7 +19,7 @@ export interface SendPreference {
     encrypt: boolean;
     sign: boolean;
     mimetype: MIME_TYPES;
-    publickeys: PmcryptoKey[];
+    publickeys: OpenPGPKey[];
     primaryPinned: boolean;
     scheme: PACKAGE_TYPE;
     pinned: boolean;
@@ -197,7 +197,7 @@ const extractInfo = async (
                 return getKeys(a).then(([k]) => isExpiredKey(k).then((isExpired: boolean) => (isExpired ? null : [k])));
             })
     );
-    const keyObjects = (keyObjs.filter((k) => k !== null) as unknown) as PmcryptoKey[];
+    const keyObjects = (keyObjs.filter((k) => k !== null) as unknown) as OpenPGPKey[];
 
     const publickeys = keyObjects.length && primaryPinned ? [keyObjects[0]] : pmKey;
     const warnings = Warnings;

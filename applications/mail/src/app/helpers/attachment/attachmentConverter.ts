@@ -1,9 +1,9 @@
-import { BinaryResult } from 'pmcrypto';
+import { DecryptResult } from 'openpgp';
 
 import { Message } from '../../models/message';
 import { ENCRYPTED_STATUS } from '../../constants';
 import { Attachment, AttachmentMime } from '../../models/attachment';
-import { AttachmentsDataCache } from '../../hooks/useAttachments';
+import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 // This prefix is really useful to distinguish 'real' attachments from pgp attachments.
 const ID_PREFIX = 'PGPAttachment';
@@ -46,7 +46,7 @@ const convertSingle = (
     parsedAttachment: AttachmentMime,
     number: number,
     verified: number,
-    cache: AttachmentsDataCache
+    cache: AttachmentsCache
 ): Attachment => {
     const ID = getId(message, parsedAttachment, number);
 
@@ -61,7 +61,7 @@ const convertSingle = (
         Encrypted: ENCRYPTED_STATUS.PGP_MIME
     };
 
-    const attachmentData: BinaryResult = {
+    const attachmentData: DecryptResult = {
         data: parsedAttachment.content,
         filename: '',
         signatures: []
@@ -76,10 +76,10 @@ const convertSingle = (
  * Converts the parsedAttachment coming from mailparser to an attachment linked to the message provided.
  */
 export const convert = (
-    message: Message,
+    message: Message = {},
     attachments: AttachmentMime[],
     verified: number,
-    cache: AttachmentsDataCache
+    cache: AttachmentsCache
 ): Attachment[] => {
     return attachments.map((attachment, number) => convertSingle(message, attachment, number, verified, cache));
 };

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { Icon, classnames, useApi } from 'react-components';
 import { MessageExtended } from '../../models/message';
-import { isEmbeddedLocal } from '../../helpers/attachment/attachments';
 import { Attachment } from '../../models/attachment';
 import { download } from '../../helpers/attachment/attachmentDownloader';
-import { useAttachmentsCache } from '../../hooks/useAttachments';
+import { useAttachmentCache } from '../../containers/AttachmentProvider';
+import { isEmbeddedLocal } from '../../helpers/embedded/embeddeds';
 
 // Reference: Angular/src/templates/attachments/attachmentElement.tpl.html
 
@@ -41,7 +41,7 @@ interface Props {
 }
 
 const MessageAttachment = ({ attachment, message }: Props) => {
-    const cache = useAttachmentsCache();
+    const cache = useAttachmentCache();
     const api = useApi();
     const [showLoader, setShowLoader] = useState(false);
     const [showInstant, setShowInstant] = useState(false);
@@ -60,7 +60,7 @@ const MessageAttachment = ({ attachment, message }: Props) => {
 
     const clickHandler = async () => {
         setShowLoader(true);
-        await download(attachment, message, cache.data, api);
+        await download(attachment, message, cache, api);
         setShowLoader(false);
         setShowInstant(true);
     };

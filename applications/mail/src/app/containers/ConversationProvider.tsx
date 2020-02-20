@@ -1,4 +1,4 @@
-import React, { useEffect, createContext, ReactNode } from 'react';
+import React, { useEffect, createContext, ReactNode, useContext } from 'react';
 import { useInstance, useEventManager } from 'react-components';
 import createCache from 'proton-shared/lib/helpers/cache';
 import createLRU from 'proton-shared/lib/helpers/lru';
@@ -12,9 +12,14 @@ import { ConversationResult } from '../hooks/useConversation';
 export type ConversationCache = Cache<string, ConversationResult>;
 
 /**
- * Context to use to get a reference on the conversation cache
+ * Conversation context containing the Conversation cache
  */
-export const ConversationContext = createContext<ConversationCache>(null as any);
+const ConversationContext = createContext<ConversationCache>(null as any);
+
+/**
+ * Hook returning the Conversation cache
+ */
+export const useConversationCache = () => useContext(ConversationContext);
 
 /**
  * Event management logic for conversations
@@ -49,14 +54,10 @@ const conversationListener = (cache: ConversationCache) => ({ Conversations }: E
     }
 };
 
-interface Props {
-    children?: ReactNode;
-}
-
 /**
  * Provider for the message cache and listen to event manager for updates
  */
-const ConversationProvider = ({ children }: Props) => {
+const ConversationProvider = ({ children }: { children?: ReactNode }) => {
     const { subscribe } = useEventManager();
 
     const cache: ConversationCache = useInstance(() => {

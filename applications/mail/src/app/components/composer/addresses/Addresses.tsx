@@ -16,7 +16,7 @@ interface Props {
 }
 
 const Addresses = ({ message, onChange, addressesBlurRef, addressesFocusRef }: Props) => {
-    const [contacts, loadingContacts]: [ContactEmail[], boolean] = useContactEmails();
+    const [contacts, loadingContacts] = useContactEmails() as [ContactEmail[], boolean, Error];
     const [contactGroups, loadingContactGroups] = useContactGroups();
 
     // Summary of selected addresses or addresses editor

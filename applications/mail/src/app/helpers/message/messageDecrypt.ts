@@ -1,12 +1,11 @@
 import { decryptMIMEMessage, decryptMessageLegacy } from 'pmcrypto';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
-import { Message, MessageExtended } from '../../models/message';
+import { MessageExtended } from '../../models/message';
 import { convert } from '../attachment/attachmentConverter';
 import { VERIFICATION_STATUS } from '../../constants';
-import { getDate } from './messages';
-import { AttachmentsDataCache } from '../../hooks/useAttachments';
+import { getDate, getSender } from './messages';
+import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 const getVerifiedStatus = (pmcryptoVerified: number, publicKeys: any) => {
     const signedInvalid = VERIFICATION_STATUS.SIGNED_AND_INVALID;
@@ -15,47 +14,49 @@ const getVerifiedStatus = (pmcryptoVerified: number, publicKeys: any) => {
 };
 
 export const decryptMimeMessage = async (
-    message: Message,
-    privateKeys: any,
-    publicKeys: any,
-    attachmentsCache: AttachmentsDataCache
+    message: MessageExtended,
+    attachmentsCache: AttachmentsCache
 ): Promise<MessageExtended> => {
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
-    const sender = (message.Sender || {}).Address;
+    const sender = getSender(message.data)?.Address;
 
     const result = await decryptMIMEMessage({
-        message: message.Body,
-        messageDate: getDate(message),
-        privateKeys,
-        publicKeys,
+        message: message.data?.Body,
+        messageDate: getDate(message.data),
+        privateKeys: message.privateKeys,
+        publicKeys: message.publicKeys,
         headerFilename,
         sender
     });
 
-    const { body = c('Message empty').t`Message content if empty`, mimetype = MIME_TYPES.PLAINTEXT } =
-        (await result.getBody()) || {};
+    const {
+        body = c('Message empty').t`Message content if empty`
+        // , mimetype = MIME_TYPES.PLAINTEXT
+    } = (await result.getBody()) || {};
 
-    const verified = getVerifiedStatus(await result.verify(), publicKeys);
+    const verified = getVerifiedStatus(await result.verify(), message.publicKeys);
 
-    const attachments = convert(message, await result.getAttachments(), verified, attachmentsCache);
+    const attachments = convert(message.data, await result.getAttachments(), verified, attachmentsCache);
     const encryptedSubject = await result.getEncryptedSubject();
 
-    return { raw: body, data: { ...message, Attachments: attachments }, verified, encryptedSubject, mimetype };
+    return {
+        decryptedBody: body,
+        data: { ...message, Attachments: attachments },
+        verified,
+        encryptedSubject
+        // mimetype
+    };
 };
 
-export const decryptLegacyMessage = async (
-    message: Message,
-    privateKeys: any,
-    publicKeys: any
-): Promise<MessageExtended> => {
+export const decryptLegacyMessage = async (message: MessageExtended): Promise<MessageExtended> => {
     const { data, verified: pmcryptoVerified = VERIFICATION_STATUS.NOT_SIGNED } = (await decryptMessageLegacy({
-        message: message.Body,
-        messageDate: getDate(message),
-        privateKeys,
-        publicKeys
+        message: message.data?.Body,
+        messageDate: getDate(message.data),
+        privateKeys: message.privateKeys,
+        publicKeys: message.publicKeys
     })) as any;
 
-    const verified = getVerifiedStatus(pmcryptoVerified, publicKeys);
+    const verified = getVerifiedStatus(pmcryptoVerified, message.publicKeys);
 
-    return { raw: data, verified, publicKeys, privateKeys };
+    return { decryptedBody: data, verified };
 };

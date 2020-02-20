@@ -41,13 +41,13 @@ export const LABEL_IDS_TO_I18N = {
 
 export const SIGNATURE_START = 1546300800; // January 1, 2019
 
-export const VERIFICATION_STATUS = {
-    NOT_VERIFIED: -1,
-    NOT_SIGNED: 0,
-    SIGNED_AND_VALID: 1,
-    SIGNED_AND_INVALID: 2,
-    SIGNED_NO_PUB_KEY: 3
-};
+export enum VERIFICATION_STATUS {
+    NOT_VERIFIED = -1,
+    NOT_SIGNED = 0,
+    SIGNED_AND_VALID = 1,
+    SIGNED_AND_INVALID = 2,
+    SIGNED_NO_PUB_KEY = 3
+}
 
 export const MESSAGE_FLAGS = {
     FLAG_RECEIVED: 1, // whether a message is received

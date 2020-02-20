@@ -10,8 +10,8 @@ export const useMailboxPageTitle = (labelID: string, location: Location) => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [labels, loadingLabels] = useLabels();
     const [user, loadingUser] = useUser();
-    const [conversationCounts, loadingConversationCounts] = useConversationCounts() as [LabelCount[], boolean];
-    const [messageCounts, loadingMessageCounts] = useMessageCounts() as [LabelCount[], boolean];
+    const [conversationCounts, loadingConversationCounts] = useConversationCounts() as [LabelCount[], boolean, Error];
+    const [messageCounts, loadingMessageCounts] = useMessageCounts() as [LabelCount[], boolean, Error];
     const loadings = [loadingMailSettings, loadingLabels, loadingUser, loadingConversationCounts, loadingMessageCounts];
 
     useEffect(() => {

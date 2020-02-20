@@ -183,3 +183,11 @@ export function generateUID() {
 export const replaceLineBreaks = (content: string) => {
     return content.replace(/(?:\r\n|\r|\n)/g, '<br />');
 };
+
+/**
+ * Generate a hash
+ */
+export const hash = (str = '') => {
+    // bitwise or with 0 ( | 0) makes sure we are using integer arithmetic and not floating point arithmetic
+    return str.split('').reduce((prevHash, currVal) => (prevHash * 31 + currVal.charCodeAt(0)) | 0, 0);
+};

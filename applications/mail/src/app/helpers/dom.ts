@@ -1,3 +1,5 @@
+import { DragEvent } from 'react';
+
 // const JUICE_OPTIONS = {
 //     applyAttributesTableElements: false
 // };
@@ -143,3 +145,5 @@ export const parseInDiv = (content: string) => {
     div.innerHTML = content;
     return div;
 };
+
+export const isDragFile = (event: DragEvent) => event.dataTransfer?.types.includes('Files');

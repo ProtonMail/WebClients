@@ -1,16 +1,16 @@
 import JSZip from 'jszip';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
+import { Api } from 'proton-shared/lib/interfaces';
 
 import { MessageExtended, Message } from '../../models/message';
 import { Attachment } from '../../models/attachment';
 import { getAndVerify } from './attachmentLoader';
-import { AttachmentsDataCache } from '../../hooks/useAttachments';
-import { Api, Binary } from '../../models/utils';
+import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 interface Download {
     attachment: Attachment;
-    data: Binary;
+    data: Uint8Array;
     isError?: boolean;
 }
 
@@ -20,14 +20,14 @@ interface Download {
 const formatDownload = async (
     attachment: Attachment,
     message: MessageExtended,
-    cache: AttachmentsDataCache,
+    cache: AttachmentsCache,
     api: Api
 ): Promise<Download> => {
     try {
         const { data } = await getAndVerify(attachment, message, false, cache, api);
         return {
             attachment,
-            data: data as Binary
+            data: data as Uint8Array
         };
     } catch (e) {
         // If the decryption fails we download the encrypted version
@@ -67,7 +67,7 @@ const generateDownload = async (download: Download /*, message: MessageExtended*
 export const download = async (
     attachment: Attachment,
     message: MessageExtended,
-    cache: AttachmentsDataCache,
+    cache: AttachmentsCache,
     api: Api
 ): Promise<void> => {
     const download = await formatDownload(attachment, message, cache, api);
@@ -86,11 +86,7 @@ export const download = async (
  * The attachment's Name is not unique we need a unique name in order to make the zip.
  * The lib doesn't allow duplicates
  */
-const formatDownloadAll = async (
-    message: MessageExtended,
-    cache: AttachmentsDataCache,
-    api: Api
-): Promise<Download[]> => {
+const formatDownloadAll = async (message: MessageExtended, cache: AttachmentsCache, api: Api): Promise<Download[]> => {
     const { Attachments = [] } = message.data || {};
     const { list }: { list: Attachment[] } = Attachments.reduce(
         (acc: any, att) => {
@@ -117,11 +113,7 @@ const getZipAttachmentName = (message: Message = {}) => `Attachments-${message.S
 /**
  * Download all attachments as a zipfile
  */
-export const downloadAll = async (
-    message: MessageExtended = {},
-    cache: AttachmentsDataCache,
-    api: Api
-): Promise<void> => {
+export const downloadAll = async (message: MessageExtended = {}, cache: AttachmentsCache, api: Api): Promise<void> => {
     const list = await formatDownloadAll(message, cache, api);
 
     // TODO: uncomment

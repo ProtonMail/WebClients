@@ -2,4 +2,4 @@ import { getInstance } from '../../../__mocks__/cache';
 
 export const cacheMock = getInstance();
 
-export const useMessageCache = () => cacheMock;
+export const useBase64Cache = () => cacheMock;

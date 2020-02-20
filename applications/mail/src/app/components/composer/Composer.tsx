@@ -1,6 +1,8 @@
 import React, { useState, useEffect, CSSProperties, useRef, useCallback } from 'react';
 import { classnames, useToggle, useWindowSize, useNotifications, useApi } from 'react-components';
 import { c } from 'ttag';
+import { Address } from 'proton-shared/lib/interfaces';
+import { noop, debounce } from 'proton-shared/lib/helpers/function';
 
 import { MessageExtended } from '../../models/message';
 import ComposerTitleBar from './ComposerTitleBar';
@@ -8,7 +10,6 @@ import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
 import ComposerActions from './ComposerActions';
 import { useMessage } from '../../hooks/useMessage';
-import { Address } from '../../models/address';
 import {
     COMPOSER_GUTTER,
     COMPOSER_VERTICAL_GUTTER,
@@ -17,11 +18,12 @@ import {
     COMPOSER_HEIGHT,
     COMPOSER_SWITCH_MODE
 } from '../../containers/ComposerContainer';
-import { noop, debounce } from 'proton-shared/lib/helpers/function';
-import { getRecipients } from '../../helpers/message/messages';
+import { getRecipients, getAttachments } from '../../helpers/message/messages';
 import { upload, ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
 import { Attachment } from '../../models/attachment';
 import { removeAttachment } from '../../api/attachments';
+import { createEmbeddedMap, readCID, isEmbeddable } from '../../helpers/embedded/embeddeds';
+import { InsertRef } from './editor/Editor';
 
 /**
  * Create a new MessageExtended with props from both m1 and m2
@@ -84,9 +86,10 @@ const Composer = ({
     const { state: maximized, toggle: toggleMaximized } = useToggle(false);
     const [opening, setOpening] = useState(true); // Needed to force focus only at first time
     const [modelMessage, setModelMessage] = useState<MessageExtended>(inputMessage);
+    const [pendingFiles, setPendingFiles] = useState<File[]>();
     const [
         syncedMessage,
-        { initialize, createDraft, saveDraft, send, deleteDraft },
+        { initialize, createDraft, saveDraft, send, deleteDraft, udateAttachments },
         { lock: syncLock, current: syncActivity }
     ] = useMessage(inputMessage.data, mailSettings);
     const [width, height] = useWindowSize();
@@ -97,6 +100,9 @@ const Composer = ({
     const addressesFocusRef = useRef<() => void>(noop);
     const contentFocusRef = useRef<() => void>(noop);
 
+    // Get a ref on the editor to trigger insertion of embedded images
+    const contentInsertRef: InsertRef = useRef();
+
     useEffect(() => {
         if (!syncLock && !syncedMessage.data?.ID) {
             createDraft(inputMessage);
@@ -106,8 +112,8 @@ const Composer = ({
             initialize();
         }
 
-        if (modelMessage.content === undefined) {
-            setModelMessage({ ...modelMessage, content: syncedMessage.content });
+        if (modelMessage.document === undefined) {
+            setModelMessage({ ...modelMessage, data: syncedMessage.data, document: syncedMessage.document });
         }
 
         onChange(syncedMessage);
@@ -149,19 +155,52 @@ const Composer = ({
         setModelMessage(newModelMessage);
         autoSave(newModelMessage);
     };
+    const handleChangeContent = (content: string) => {
+        if (!modelMessage.document) {
+            return;
+        }
+        modelMessage.document.innerHTML = content;
+        setModelMessage({ ...modelMessage });
+        autoSave(modelMessage);
+    };
     const save = async (messageToSave = modelMessage) => {
         await saveDraft(messageToSave);
         createNotification({ text: c('Info').t`Message saved` });
     };
-    const handleAddAttachments = async (files: File[]) => {
-        const attachments = await upload(files, modelMessage, ATTACHMENT_ACTION.ATTACHMENT, api);
-        if (attachments) {
-            const Attachments = [...(modelMessage.data?.Attachments || []), ...attachments];
+
+    const handleAddAttachmentsEnd = async (action: ATTACHMENT_ACTION, files = pendingFiles) => {
+        setPendingFiles(undefined);
+
+        const uploads = await upload(files, syncedMessage, action, api);
+
+        if (uploads.length) {
+            const updatedMessage = await udateAttachments(uploads, action);
+            const Attachments = getAttachments(updatedMessage.data);
             const newModelMessage = mergeMessages(modelMessage, { data: { Attachments } });
             setModelMessage(newModelMessage);
-            save(modelMessage);
+
+            if (action == ATTACHMENT_ACTION.INLINE) {
+                contentInsertRef.current?.(
+                    createEmbeddedMap(
+                        uploads.map((upload) => {
+                            const cid = readCID(upload.attachment);
+                            return [cid, updatedMessage.embeddeds?.get(cid)];
+                        })
+                    )
+                );
+            }
         }
     };
+    const handleAddAttachmentsStart = async (files: File[]) => {
+        const embeddable = files.every((file) => isEmbeddable(file.type));
+
+        if (embeddable) {
+            setPendingFiles(files);
+        } else {
+            handleAddAttachmentsEnd(ATTACHMENT_ACTION.ATTACHMENT, files);
+        }
+    };
+
     const handleRemoveAttachment = (attachment: Attachment) => async () => {
         await api(removeAttachment(attachment.ID || '', modelMessage.data?.ID || ''));
         const Attachments = modelMessage.data?.Attachments?.filter((a: Attachment) => a.ID !== attachment.ID);
@@ -225,16 +264,21 @@ const Composer = ({
                     />
                     <ComposerContent
                         message={modelMessage}
-                        onChange={handleChange}
+                        onChange={handleChangeContent}
                         onFocus={addressesBlurRef.current}
+                        onAddAttachments={handleAddAttachmentsStart}
                         onRemoveAttachment={handleRemoveAttachment}
+                        pendingFiles={pendingFiles}
+                        onCancelEmbedded={() => setPendingFiles(undefined)}
+                        onSelectEmbedded={handleAddAttachmentsEnd}
                         contentFocusRef={contentFocusRef}
+                        contentInsertRef={contentInsertRef}
                     />
                     <ComposerActions
                         message={modelMessage}
                         lock={syncLock}
                         activity={syncActivity}
-                        onAddAttachments={handleAddAttachments}
+                        onAddAttachments={handleAddAttachmentsStart}
                         onSave={handleSave}
                         onSend={handleSend}
                         onDelete={handleDelete}

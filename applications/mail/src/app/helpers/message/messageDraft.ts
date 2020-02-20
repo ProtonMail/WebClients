@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 import { setBit } from 'proton-shared/lib/helpers/bitset';
+import { unique } from 'proton-shared/lib/helpers/array';
+import { Address } from 'proton-shared/lib/interfaces';
 
 import { Message, MessageExtended } from '../../models/message';
-import { Address, Recipient } from '../../models/address';
+import { Recipient } from '../../models/address';
 import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 import { MailSettings } from '../../models/utils';
 import { findSender } from '../addresses';
@@ -11,7 +13,6 @@ import { insertSignature } from './messageSignature';
 import { formatFullDate } from '../date';
 import { recipientToInput } from '../addresses';
 import { isSent, isSentAndReceived } from './messages';
-import { unique } from 'proton-shared/lib/helpers/array';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -132,12 +133,12 @@ const generateBlockquote = (referenceMessage: MessageExtended) => {
     //     referenceMessage.data?.MIMEType === MIME_TYPES.PLAINTEXT ? textToHtmlMail.parse(content) : content;
     // TODO: To check... Should use transformations from useMessage
     // newContent = prepareContent(content, referenceMessage, ['*'], action);
-    const newContent = referenceMessage.content;
+    // const newContent = referenceMessage.content;
 
     return `‐‐‐‐‐‐‐ Original Message ‐‐‐‐‐‐‐<br>
         ${previously}<br>
         <blockquote class="protonmail_quote" type="cite">
-            ${newContent}
+            ${referenceMessage.document?.innerHTML}
         </blockquote><br>`;
 };
 
@@ -162,12 +163,12 @@ export const createNewDraft = (
 
     const originalTo = referenceMessage.originalTo;
 
-    const senderAddress = findSender(addresses, referenceMessage.data) || {};
+    const senderAddress = findSender(addresses, referenceMessage.data);
 
-    const AddressID = senderAddress.ID; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
+    const AddressID = senderAddress?.ID; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
     const Sender = {
-        Name: senderAddress.DisplayName,
-        Address: senderAddress.Email
+        Name: senderAddress?.DisplayName,
+        Address: senderAddress?.Email
     };
 
     // TODO: Understand the purpose here
@@ -183,11 +184,11 @@ export const createNewDraft = (
 
     const Attachments: Attachment[] = [];
 
-    let content = action === MESSAGE_ACTIONS.NEW ? '' : generateBlockquote(referenceMessage);
+    let decryptedBody = action === MESSAGE_ACTIONS.NEW ? '' : generateBlockquote(referenceMessage);
 
     const ParentID = action === MESSAGE_ACTIONS.NEW ? undefined : referenceMessage.data?.ID;
 
-    content = insertSignature(content, senderAddress.Signature, action, mailSettings);
+    decryptedBody = insertSignature(decryptedBody, senderAddress?.Signature, action, mailSettings);
 
     return {
         data: {
@@ -207,7 +208,7 @@ export const createNewDraft = (
             ParentID,
             Unread: 0
         },
-        content,
+        decryptedBody,
         action,
         originalTo,
         initialized: true

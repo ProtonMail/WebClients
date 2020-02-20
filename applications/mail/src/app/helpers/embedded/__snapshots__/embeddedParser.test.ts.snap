@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`embeddedParser mutateHTML should always transform proton-src to src on direction cid 1`] = `"<img class=\\"proton-embedded\\" proton-src=\\"cid:-9e96b583@protonmail.com\\" alt=\\"embedded.jpg\\" src=\\"cid:-9e96b583@protonmail.com\\">"`;
+exports[`embeddedParser mutateHTMLBlob should not parse embedded images and set src on proton-src 1`] = `"<img class=\\"proton-embedded\\" proton-src=\\"cid:-9e96b583@protonmail.com\\" alt=\\"embedded.jpg\\">"`;
 
-exports[`embeddedParser mutateHTML should not parse embedded images and set src on proton-src 1`] = `"<img class=\\"proton-embedded\\" proton-src=\\"cid:-9e96b583@protonmail.com\\" alt=\\"embedded.jpg\\">"`;
+exports[`embeddedParser mutateHTMLBlob should parse embedded images and set src 1`] = `"<img class=\\"proton-embedded\\" src=\\"cid:-9e96b583@protonmail.com\\" alt=\\"embedded.jpg\\">"`;
 
-exports[`embeddedParser mutateHTML should parse embedded images and set src 1`] = `"<img class=\\"proton-embedded\\" alt=\\"embedded.jpg\\" src=\\"123-234\\" data-embedded-img=\\"-9e96b583@protonmail.com\\">"`;
+exports[`embeddedParser mutateHTMLBlob should remove data-src when they are escaped with proton 1`] = `"<img class=\\"proton-embedded\\" proton-src=\\"cid:-9e96b583@protonmail.com\\" alt=\\"embedded.jpg\\">"`;
 
-exports[`embeddedParser mutateHTML should remove data-src when they are escaped with proton 1`] = `"<img class=\\"proton-embedded\\" proton-src=\\"cid:-9e96b583@protonmail.com\\" alt=\\"embedded.jpg\\">"`;
+exports[`embeddedParser mutateHTMLCid should always transform proton-src to src on direction cid 1`] = `"<img class=\\"proton-embedded\\" proton-src=\\"cid:-9e96b583@protonmail.com\\" alt=\\"embedded.jpg\\" src=\\"cid:-9e96b583@protonmail.com\\">"`;

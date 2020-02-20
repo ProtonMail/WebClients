@@ -1,4 +1,4 @@
-import DOMPurify from 'dompurify';
+import DOMPurify, { Config } from 'dompurify';
 
 import { unicodeTag, unescapeCSSEncoding, escape } from './string';
 
@@ -106,14 +106,14 @@ export const purifyHTMLHooks = (active: boolean) => {
     DOMPurify.removeHook('beforeSanitizeElements');
 };
 
-const getConfig = (type: string) => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
+const getConfig = (type: string): Config => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
 
 const clean = (mode: string) => {
     const config = getConfig(mode);
 
-    return (input: string | Node): string | Node => {
+    return (input: string | Node): string | Element => {
         DOMPurify.clearConfig();
-        const value = DOMPurify.sanitize(input, config);
+        const value = DOMPurify.sanitize(input, config) as string | Element;
         purifyHTMLHooks(false); // Always remove the hooks
         if (mode === 'str') {
             // When trusted types is available, DOMPurify returns a trustedHTML object and not a string, force cast it.
@@ -131,15 +131,15 @@ export const message = clean('str') as (input: string) => string;
 /**
  * Sanitize input with a config similar than Squire + ours
  */
-export const html = clean('raw') as (input: Node) => Node;
+export const html = clean('raw') as (input: Node) => Element;
 
 /**
  * Sanitize input with a config similar than Squire + ours
  */
-export const protonizer = (input: string, attachHooks: boolean): Node => {
+export const protonizer = (input: string, attachHooks: boolean): Element => {
     const process = clean('protonizer');
     purifyHTMLHooks(attachHooks);
-    return process(input) as Node;
+    return process(input) as Element;
 };
 
 /**

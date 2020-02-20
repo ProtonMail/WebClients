@@ -1,43 +1,30 @@
-import { MessageExtended } from '../../models/message';
+import { wait } from 'proton-shared/lib/helpers/promise';
+import { Api } from 'proton-shared/lib/interfaces';
+
+import { MessageExtended, EmbeddedMap } from '../../models/message';
 import { escapeSrc, unescapeSrc, wrap } from '../dom';
-import { Api } from '../../models/utils';
 import { ENCRYPTED_STATUS } from '../../constants';
-import { listInlineAttachments, getAttachment } from './embeddedFinder';
-import { hasBlob, store, getBlob, BlobInfo } from './embeddedStoreBlobs';
+import { getAttachment, findEmbedded } from './embeddedFinder';
 import { get } from '../attachment/attachmentLoader';
 import { Attachment } from '../../models/attachment';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { getMessageCIDs } from './embeddedStoreCids';
-import { findEmbedded, srcToCID } from './embeddedUtils';
+import { createBlob } from './embeddeds';
 import { isInlineEmbedded, isEmbedded } from '../image';
-import { AttachmentsDataCache } from '../../hooks/useAttachments';
+import { AttachmentsCache } from '../../containers/AttachmentProvider';
+import { isDraft } from '../message/messages';
 
 const EMBEDDED_CLASSNAME = 'proton-embedded';
 
 const wrapImage = (img: Element) => wrap(img, '<div class="image loading"></div>');
 
 /**
- * Get the url for an embedded image
- */
-export const getUrl = (node: Element) => {
-    // If it's an inline embedded img, just return the src because that contains the img data.
-    const src = node.getAttribute('data-embedded-img') || '';
-    if (isInlineEmbedded(src)) {
-        return src;
-    }
-    const cid = srcToCID(node);
-    const { url = '' } = getBlob(cid);
-    return url;
-};
-
-/**
  * Prepare embedded images in the document
  */
-export const prepareImages = (message: MessageExtended, show: boolean, isReplyForward: boolean, isOutside: boolean) => {
+export const prepareImages = (message: MessageExtended, show: boolean, isReplyForward: boolean, isOutside = false) => {
     if (!message.document) {
         return;
     }
+
+    const draft = isDraft(message.data);
 
     let showEmbedded = message.showEmbeddedImages;
 
@@ -46,7 +33,7 @@ export const prepareImages = (message: MessageExtended, show: boolean, isReplyFo
     images.forEach((image) => {
         const src = image.getAttribute('proton-src') || undefined;
         image.setAttribute('referrerPolicy', 'no-referrer');
-        const attachment = getAttachment(message.data, src);
+        const info = getAttachment(message.embeddeds, src);
 
         if (!image.classList.contains(EMBEDDED_CLASSNAME)) {
             image.classList.add(EMBEDDED_CLASSNAME);
@@ -57,7 +44,7 @@ export const prepareImages = (message: MessageExtended, show: boolean, isReplyFo
         }
 
         // check if the attachment exist before processing
-        if (!(attachment && Object.keys(attachment).length > 0)) {
+        if (!(info && Object.keys(info).length > 0)) {
             /**
              * If the attachment does not exist and the proton-src attribute
              * starts with cid:, it's an embedded image that does not exist in the list of attachments,
@@ -85,15 +72,15 @@ export const prepareImages = (message: MessageExtended, show: boolean, isReplyFo
             // Auto load image inside a reply draft
             if (isReplyForward) {
                 // `getUrl` may return undefined here because the embedded attachments have not yet been decrypted and put in the blob store.
-                const url = getUrl(image);
+                // const url = getUrl(cache, image);
                 // only set it if it is defined, otherwise the unescapeSrc will add two src=""
-                url && image.setAttribute('src', url);
+                info?.url && image.setAttribute('src', info.url);
                 return;
             }
 
             // We don't need to add it outside
             if (!isOutside) {
-                !image.parentElement.classList.contains('loading') && wrapImage(image);
+                !draft && !image.parentElement.classList.contains('loading') && wrapImage(image);
                 image.removeAttribute('src');
             }
             return;
@@ -102,8 +89,8 @@ export const prepareImages = (message: MessageExtended, show: boolean, isReplyFo
         showEmbedded = false;
 
         // Inline embedded images does not have an attachment.
-        if (attachment) {
-            image.setAttribute('alt', attachment.Name || '');
+        if (info) {
+            image.setAttribute('alt', info.attachment.Name || '');
         }
     });
 
@@ -135,7 +122,7 @@ const triggerSigVerification = (
     message: MessageExtended,
     attachments: Attachment[],
     api: Api,
-    cache: Map<string, any>
+    cache: AttachmentsCache
 ) => {
     /*
      * launch and forget: we don't need to do anything with the result
@@ -157,75 +144,75 @@ const triggerSigVerification = (
  * NET::ERR_UNKNOWN_URL_SCHEME because src="cid:xxxx" is not valid HTML
  * This function expects the content to be properly unescaped later.
  */
-const actionDirection: { [key: string]: (nodes: Element[], cid: string, url: string) => void } = {
-    blob(nodes: Element[], cid: string, url: string) {
-        nodes.forEach((node) => {
-            // Always remove the `data-` src attribute set by the cid function, otherwise it can get displayed if the user does not auto load embedded images.
-            node.removeAttribute('data-src');
-            if (node.getAttribute('proton-src')) {
-                return;
-            }
-            node.setAttribute('data-src', url);
-            node.setAttribute('data-embedded-img', cid);
-            node.classList.add(EMBEDDED_CLASSNAME);
-        });
-    },
-    cid(nodes: Element[], cid: string) {
-        nodes.forEach((node) => {
-            node.removeAttribute('data-embedded-img');
-            node.removeAttribute('src');
-            node.setAttribute('data-src', `cid:${cid}`);
-        });
+const mutateHTML = (
+    embeddeds: EmbeddedMap | undefined,
+    document: Element | undefined,
+    callback: (elements: Element[], cid: string) => void
+) => {
+    if (!embeddeds || !document) {
+        return;
     }
+
+    document.innerHTML = escapeSrc(document.innerHTML);
+    embeddeds.forEach((_, cid) => callback(findEmbedded(cid, document), cid));
+    document.innerHTML = unescapeSrc(document.innerHTML);
 };
 
 /**
  * Parse the content to inject the generated blob src
  */
-export const mutateHTML = (message: MessageExtended, direction: string) => {
-    if (!message.document) {
-        return;
-    }
-
-    const document = message.document;
-
-    document.innerHTML = escapeSrc(document.innerHTML);
-
-    Object.keys(getMessageCIDs(message.data)).forEach((cid) => {
-        const nodes = findEmbedded(cid, document);
-
-        if (nodes.length) {
-            const { url = '' } = getBlob(cid);
-
-            (actionDirection[direction] || noop)(nodes, cid, url);
-        }
+export const mutateHTMLBlob = (embeddeds: EmbeddedMap | undefined, document: Element | undefined) => {
+    mutateHTML(embeddeds, document, (elements, cid) => {
+        const { url = '' } = embeddeds?.get(cid) || {};
+        elements.forEach((element) => {
+            // Always remove the `data-` src attribute set by the cid function, otherwise it can get displayed if the user does not auto load embedded images.
+            element.removeAttribute('data-src');
+            if (element.getAttribute('proton-src')) {
+                return;
+            }
+            element.setAttribute('data-src', url);
+            element.setAttribute('data-embedded-img', cid);
+            element.classList.add(EMBEDDED_CLASSNAME);
+        });
     });
-
-    document.innerHTML = unescapeSrc(document.innerHTML);
 };
 
-export const decrypt = async (message: MessageExtended, api: Api, cache: AttachmentsDataCache) => {
-    const list = listInlineAttachments(message);
-    const attachments = list.map(({ attachment }) => attachment);
+/**
+ * Parse the content to inject the cid
+ */
+export const mutateHTMLCid = (embeddeds: EmbeddedMap | undefined, document: Element | undefined) => {
+    mutateHTML(embeddeds, document, (elements, cid) =>
+        elements.forEach((element) => {
+            element.removeAttribute('data-embedded-img');
+            element.removeAttribute('src');
+            element.setAttribute('data-src', `cid:${cid}`);
+        })
+    );
+};
+
+export const decrypt = async (message: MessageExtended, api: Api, cache: AttachmentsCache) => {
     // const show = message.showEmbeddedImages === true || mailSettings.ShowImages & SHOW_IMAGES.EMBEDDED;
     // const sigList = show ? list : list.filter(({ attachment }) => cache.has(attachment.ID));
 
     // For a draft if we close it before the end of the attachment upload, there are no keyPackets
     // pgp attachments do not have keypackets.
 
-    const promises = list
-        .filter(({ attachment }) => attachment.KeyPackets || attachment.Encrypted === ENCRYPTED_STATUS.PGP_MIME)
-        .filter(({ cid }) => !hasBlob(cid))
-        .map(async ({ cid, attachment }) => {
-            const storeAttachement = store(message.data, cid);
-            const buffer = await get(attachment, message, cache, api);
-            return storeAttachement(buffer.data, attachment.MIMEType);
+    const infos = [...(message.embeddeds?.values() || [])];
+
+    const promises = infos
+        .filter((info) => info.attachment.KeyPackets || info.attachment.Encrypted === ENCRYPTED_STATUS.PGP_MIME)
+        .filter((info) => !info.url)
+        .map(async (info) => {
+            const buffer = await get(info.attachment, message, cache, api);
+            info.url = createBlob(info.attachment, buffer.data as Uint8Array);
         });
+
+    const attachments = infos.map((info) => info.attachment);
 
     if (!promises.length) {
         // all cid was already stored, we can resolve
         triggerSigVerification(message, attachments, api, cache);
-        return {};
+        return;
     }
 
     await Promise.all(promises);
@@ -233,8 +220,4 @@ export const decrypt = async (message: MessageExtended, api: Api, cache: Attachm
     // We need to trigger on the original list not after filtering: after filter they are just stored
     // somewhere else
     triggerSigVerification(message, attachments, api, cache);
-    return list.reduce((acc, { cid }) => {
-        acc[cid] = getBlob(cid);
-        return acc;
-    }, {} as { [cid: string]: BlobInfo });
 };

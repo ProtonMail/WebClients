@@ -10,12 +10,12 @@ interface Props {
     message: MessageExtended;
 }
 
-const MessageBody = ({ message: { content = '', data: message = {} } }: Props) => {
+const MessageBody = ({ message: { document, data: message = {} } }: Props) => {
     const plain = isPlainText(message);
     return (
         <div
             className={classnames(['message-content bodyDecrypted', plain && 'plain'])}
-            dangerouslySetInnerHTML={{ __html: content }}
+            dangerouslySetInnerHTML={{ __html: document?.innerHTML || '' }}
         />
     );
 };

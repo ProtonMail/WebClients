@@ -1,5 +1,3 @@
-import { Binary } from './utils';
-
 export interface Attachment {
     ID?: string;
     Name?: string;
@@ -15,7 +13,7 @@ export interface Attachment {
 
 export interface AttachmentMime {
     checksum?: string;
-    content: Binary;
+    content: Uint8Array;
     contentDisposition?: string;
     contentId?: string;
     contentType?: string;

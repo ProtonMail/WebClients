@@ -1,4 +1,4 @@
-import React, { useEffect, createContext, ReactNode } from 'react';
+import React, { useEffect, createContext, ReactNode, useContext } from 'react';
 import { useInstance, useEventManager } from 'react-components';
 import createCache from 'proton-shared/lib/helpers/cache';
 import createLRU from 'proton-shared/lib/helpers/lru';
@@ -13,9 +13,14 @@ import { MessageExtended } from '../models/message';
 export type MessageCache = Cache<string, MessageExtended>;
 
 /**
- * Context to use to get a reference on the message cache
+ * Message context containing the Message cache
  */
-export const MessageContext = createContext<MessageCache>(null as any);
+const MessageContext = createContext<MessageCache>(null as any);
+
+/**
+ * Hook returning the Message cache
+ */
+export const useMessageCache = () => useContext(MessageContext);
 
 /**
  * Event management logic for messages
@@ -57,14 +62,10 @@ const messageListener = (cache: MessageCache) => ({ Messages }: Event) => {
     }
 };
 
-interface Props {
-    children?: ReactNode;
-}
-
 /**
  * Provider for the message cache and listen to event manager for updates
  */
-const MessageProvider = ({ children }: Props) => {
+const MessageProvider = ({ children }: { children?: ReactNode }) => {
     const { subscribe } = useEventManager();
 
     const cache: MessageCache = useInstance(() => {
