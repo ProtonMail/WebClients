@@ -93,6 +93,9 @@
 .fill-global-light {
   fill: $pm-global-light;
 }
+.fill-global-highlight {
+  fill: var(--bgcolor-highlight, $pm-global-light);
+}
 .fill-global-border {
   fill: $pm-global-border;
 }
@@ -130,6 +133,9 @@
 
 .fill-white {
   fill: $white;
+}
+.fill-white-dm {
+  fill: var(--bgcolor-main-area, $white);
 }
 .fill-black {
   fill: $black;
