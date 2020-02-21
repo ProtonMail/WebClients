@@ -8,6 +8,7 @@ import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from './Drive';
 import { useDriveContent } from './DriveContentProvider';
 import CreateFolderModal from '../CreateFolderModal';
+import { c } from 'ttag';
 
 interface Props {
     resource: DriveResource;
@@ -63,14 +64,14 @@ const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
         <Toolbar>
             {parentID && (
                 <>
-                    <ToolbarButton onClick={handleBackClick} icon="arrow-left" />
+                    <ToolbarButton title={c('Action').t`Back`} onClick={handleBackClick} icon="arrow-left" />
                     <ToolbarSeparator />
                 </>
             )}
 
-            <ToolbarButton icon="folder" onClick={handleCreateFolder} />
+            <ToolbarButton title={c('Action').t`New folder`} icon="folder" onClick={handleCreateFolder} />
             {onlyFilesSelected && selectedItems.length > 0 && (
-                <ToolbarButton icon="download" onClick={handleDownloadClick} />
+                <ToolbarButton title={c('Action').t`Download`} icon="download" onClick={handleDownloadClick} />
             )}
         </Toolbar>
     );

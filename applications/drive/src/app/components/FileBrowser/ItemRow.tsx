@@ -29,7 +29,8 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
         }
     };
 
-    const handleTouchStart = () => {
+    const handleTouchStart = (e: React.TouchEvent<HTMLTableRowElement>) => {
+        e.stopPropagation();
         touchStarted.current = true;
     };
 
@@ -65,7 +66,12 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
             onTouchCancel={handleTouchCancel}
             onTouchEnd={handleTouchEnd}
             cells={[
-                <div key="select" onClick={(e) => e.stopPropagation()} onDoubleClick={(e) => e.stopPropagation()}>
+                <div
+                    key="select"
+                    onClick={(e) => e.stopPropagation()}
+                    onTouchStart={(e) => e.stopPropagation()}
+                    onDoubleClick={(e) => e.stopPropagation()}
+                >
                     <Checkbox checked={isSelected} onChange={() => onToggleSelect(item.LinkID)} />
                 </div>,
                 <div key="filename" className="flex flex-items-center flex-nowrap">
