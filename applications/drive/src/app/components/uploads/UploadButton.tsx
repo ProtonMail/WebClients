@@ -15,23 +15,24 @@ const UploadButton = () => {
         }
 
         fileInput.current.value = '';
-
         fileInput.current.click();
     };
 
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
+        const files = e.target.files;
 
-        if (!resource || !file) {
+        if (!resource || !files) {
             return;
         }
 
-        uploadDriveFile(resource.linkId, file);
+        for (let i = 0; i < files.length; i++) {
+            uploadDriveFile(resource.linkId, files[i]);
+        }
     };
 
     return (
         <>
-            <input type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
+            <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
             <LargeButton
                 className="pm-button--primary ml1 mr1 mt0-25 strong"
                 disabled={!resource?.shareId}
