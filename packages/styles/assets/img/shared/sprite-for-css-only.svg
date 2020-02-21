@@ -32,16 +32,16 @@ transform: rotateY(180deg);
 }
 .low-opacity {
 opacity: .3;
-}</style> 
+}</style>
 
-  <symbol id="symbol-search"> 
+  <symbol id="symbol-search">
   <path d="M9.6,8.89a4.47,4.47,0,0,0,1-2.83,4.56,4.56,0,1,0-4.56,4.56,4.47,4.47,0,0,0,2.83-1l4.26,4.25.7-.7Zm-3.54.73A3.56,3.56,0,1,1,9.62,6.06,3.57,3.57,0,0,1,6.06,9.62Z"></path>
-  </symbol> 
+  </symbol>
 
   <!-- careful, this one is used by breadcrumb domain -->
-  <symbol id="symbol-caret"> 
+  <symbol id="symbol-caret">
   <path d="M7.782 9.356l-4.44-4.111-.75.694 5.19 4.805 5.19-4.805-.749-.694z"/>
-  </symbol> 
+  </symbol>
 
   <symbol id="symbol-dash">
   <rect x="2" y="7" width="10" height="1" />
@@ -54,28 +54,28 @@ opacity: .3;
   <symbol id="symbol-arrow-right">
   <polygon points="9.02 2.31 8.31 3.02 12.79 7.5 2 7.5 2 8.5 12.79 8.5 8.31 12.98 9.02 13.69 14.71 8 9.02 2.31" />
   </symbol>
-  
-  
-  <use id="css-search" xlink:href="#symbol-search" class="black" />
-  <use id="css-search-rtl" xlink:href="#symbol-search" class="black mirror" />
-  <use id="css-search-white" xlink:href="#symbol-search" class="white" />
-  <use id="css-search-white-rtl" xlink:href="#symbol-search" class="white mirror" />
-  <use id="css-search-black" xlink:href="#symbol-search" class="black" />
-  <use id="css-search-black-rtl" xlink:href="#symbol-search" class="black mirror" />
-  <use id="css-caret" xlink:href="#symbol-caret" class="black" />
-  <use id="css-caret-white" xlink:href="#symbol-caret" class="white" />
-  <use id="css-caret-close" xlink:href="#symbol-caret" class="black rotated-180" />
-  <use id="css-caret-close-white" xlink:href="#symbol-caret" class="white rotated-180" />
-  <use id="css-greater" xlink:href="#symbol-caret" class="black rotated-right" />
-  <use id="css-lesser" xlink:href="#symbol-caret" class="black rotated-left" />
-  <use id="css-dash" xlink:href="#symbol-dash" class="black low-opacity" />
-  <use id="css-dash-white" xlink:href="#symbol-dash" class="white low-opacity" />
-  <use id="css-on" xlink:href="#symbol-on" class="white" />
-  <use id="css-check" xlink:href="#symbol-on" class="success" />
-  <use id="css-minus" xlink:href="#symbol-dash" class="black" />
-  <use id="css-arrow-right" xlink:href="#symbol-arrow-right" class="black" />
-  <use id="css-arrow-right-dm" xlink:href="#symbol-arrow-right" class="white" />
-  <use id="css-arrow-left" xlink:href="#symbol-arrow-right" class="black mirror" />
-  <use id="css-arrow-left-dm" xlink:href="#symbol-arrow-right" class="white mirror" />
+
+
+  <use id="css-search" href="#symbol-search" class="black" />
+  <use id="css-search-rtl" href="#symbol-search" class="black mirror" />
+  <use id="css-search-white" href="#symbol-search" class="white" />
+  <use id="css-search-white-rtl" href="#symbol-search" class="white mirror" />
+  <use id="css-search-black" href="#symbol-search" class="black" />
+  <use id="css-search-black-rtl" href="#symbol-search" class="black mirror" />
+  <use id="css-caret" href="#symbol-caret" class="black" />
+  <use id="css-caret-white" href="#symbol-caret" class="white" />
+  <use id="css-caret-close" href="#symbol-caret" class="black rotated-180" />
+  <use id="css-caret-close-white" href="#symbol-caret" class="white rotated-180" />
+  <use id="css-greater" href="#symbol-caret" class="black rotated-right" />
+  <use id="css-lesser" href="#symbol-caret" class="black rotated-left" />
+  <use id="css-dash" href="#symbol-dash" class="black low-opacity" />
+  <use id="css-dash-white" href="#symbol-dash" class="white low-opacity" />
+  <use id="css-on" href="#symbol-on" class="white" />
+  <use id="css-check" href="#symbol-on" class="success" />
+  <use id="css-minus" href="#symbol-dash" class="black" />
+  <use id="css-arrow-right" href="#symbol-arrow-right" class="black" />
+  <use id="css-arrow-right-dm" href="#symbol-arrow-right" class="white" />
+  <use id="css-arrow-left" href="#symbol-arrow-right" class="black mirror" />
+  <use id="css-arrow-left-dm" href="#symbol-arrow-right" class="white mirror" />
 
 </svg>
