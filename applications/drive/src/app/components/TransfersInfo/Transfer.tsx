@@ -52,7 +52,7 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
                 ) : (
                     <img className="mr1 flex-item-noshrink" src={uploadSvg} alt={c('Info').t`Upload`} />
                 )}
-                <Icon name="drafts" fill="altgrey" className="mr0-5 flex-item-noshrink" size={25} />
+                <Icon name="drafts" className="mr0-5 flex-item-noshrink color-global-altgrey" size={25} />
                 <div className="pd-transfers-listItemName">
                     <span className="ellipsis" title={transfer.meta.filename}>
                         {transfer.meta.filename}

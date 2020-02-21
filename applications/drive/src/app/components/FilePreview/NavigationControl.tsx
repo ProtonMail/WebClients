@@ -21,7 +21,7 @@ const NavigationControl = ({ current, total, onNext, onPrev }: Props) => {
                 title={c('Action').t`Previous`}
                 className={classnames(['flex p0-25 color-white', isPrevDisabled && 'opacity-50'])}
             >
-                <Icon className="fill-currentColor" name="caret" rotate={90} size={16} />
+                <Icon name="caret" rotate={90} size={16} />
             </button>
             <span className="ml0-5 mr0-5">
                 <span>{current}</span>
@@ -34,7 +34,7 @@ const NavigationControl = ({ current, total, onNext, onPrev }: Props) => {
                 title={c('Action').t`Next`}
                 className={classnames(['flex p0-25 color-white', isNextDisabled && 'opacity-50'])}
             >
-                <Icon className="fill-currentColor" name="caret" rotate={-90} size={16} />
+                <Icon name="caret" rotate={-90} size={16} />
             </button>
         </div>
     );

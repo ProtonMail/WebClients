@@ -71,8 +71,9 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
                 <div key="filename" className="flex flex-items-center flex-nowrap">
                     <Icon
                         name={isFolder ? 'folder' : 'drafts'}
-                        fill={isFolder ? 'attention' : 'altgrey'}
-                        className="mr0-5 flex-item-noshrink"
+                        className={`mr0-5 flex-item-noshrink ${
+                            isFolder ? 'color-global-attention' : 'color-global-altgrey'
+                        }`}
                         size={25}
                     />
                     <span title={item.Name} className="pd-fb-table-row-name">

@@ -45,9 +45,7 @@ const TransferStateIndicator = ({ transfer: { id, state }, percentageDone }: Pro
             aria-live="polite"
             id={id}
         >
-            {statusInfo.icon && (
-                <Icon name={statusInfo.icon} className="mr0-25 flex-item-noshrink fill-currentColor" fill="error" />
-            )}
+            {statusInfo.icon && <Icon name={statusInfo.icon} className="mr0-25 flex-item-noshrink" />}
             {statusInfo.text}
         </strong>
     );
