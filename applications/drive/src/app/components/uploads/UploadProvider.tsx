@@ -80,18 +80,27 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         const info = await uploadConfig.current[id].initialize();
         const keyInfo = await getPrimaryAddressKey();
 
-        const uploadChunks = async (chunks: Uint8Array[], startIndex: number): Promise<BlockMeta[]> => {
+        const uploadChunks = async (
+            chunks: Uint8Array[],
+            startIndex: number,
+            info: FileUploadInfo
+        ): Promise<BlockMeta[]> => {
             const encryptedChunks = await Promise.all(chunks.map((chunk) => uploadConfig.current[id].transform(chunk)));
-            const BlockList = await (await Promise.all(encryptedChunks.map((chunk) => generateContentHash(chunk)))).map(
-                ({ BlockHash }) => BlockHash
+            const BlockList = await Promise.all(
+                encryptedChunks.map(async (chunk, i) => ({
+                    Hash: (await generateContentHash(chunk)).BlockHash,
+                    Size: chunk.byteLength,
+                    Index: startIndex + i
+                }))
             );
             const { signature, address } = await sign(JSON.stringify(BlockList), keyInfo);
 
-            const { UploadLinks }: RequestUploadResult = await api(
+            const { UploadLinks } = await api<RequestUploadResult>(
                 queryRequestUpload({
                     BlockList,
                     AddressID: address.ID,
-                    Signature: signature
+                    Signature: signature,
+                    ...info
                 })
             );
 
@@ -102,8 +111,8 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
             }
 
             return UploadLinks.map(({ Token }, i) => ({
-                Index: startIndex + i,
-                Hash: BlockList[i],
+                Index: BlockList[i].Index,
+                Hash: BlockList[i].Hash,
                 Token
             }));
         };
@@ -120,7 +129,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                     chunks.push(await reader.readNextChunk());
                 }
 
-                const blocks = await uploadChunks(chunks, startIndex);
+                const blocks = await uploadChunks(chunks, startIndex, info);
                 blockTokens.push(...blocks);
                 startIndex += MAX_CHUNKS_READ;
             }
