@@ -24,7 +24,7 @@ interface Props {
 const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => {
     const [step, setStep] = useState(STEPS.SELECT_ENCRYPTION);
     const [encryptionType, setEncryptionType] = useState<ENCRYPTION_TYPES>(DEFAULT_ENCRYPTION_CONFIG);
-    const [newKeyFingerprint, setNewKeyFingerprint] = useState();
+    const [newKeyFingerprint, setNewKeyFingerprint] = useState<string>();
 
     const handleProcess = () => {
         onAdd(ENCRYPTION_CONFIGS[encryptionType])
