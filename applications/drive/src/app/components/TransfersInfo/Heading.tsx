@@ -88,7 +88,7 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
                     aria-expanded={!minimized}
                     title={minimizeTitle}
                 >
-                    <Icon className={classnames(['fill-currentColor', minimized && 'rotateX-180'])} name="caret" />
+                    <Icon className={classnames([minimized && 'rotateX-180'])} name="caret" />
                     <span className="sr-only">{minimizeTitle}</span>
                 </button>
 
@@ -98,7 +98,7 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
                     onClick={onClose}
                     title={closeTitle}
                 >
-                    <Icon className="fill-currentColor" name="off" size={12} />
+                    <Icon name="off" size={12} />
                     <span className="sr-only">{closeTitle}</span>
                 </button>
             </div>

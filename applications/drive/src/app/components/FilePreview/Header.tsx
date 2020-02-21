@@ -19,12 +19,12 @@ const Header = ({ name, onClose, onSave, children }: Props) => {
             <div className="flex flex-items-center">
                 {onSave && (
                     <button title={c('Action').t`Download`} onClick={onSave} className="color-global-light ml1-5">
-                        <Icon className="fill-currentColor" name="download" size={20} />
+                        <Icon name="download" size={20} />
                     </button>
                 )}
                 {onClose && (
                     <button title={c('Action').t`Close`} onClick={onClose} className="color-global-light ml1-5">
-                        <Icon className="fill-currentColor" name="off" size={20} />
+                        <Icon name="off" size={20} />
                     </button>
                 )}
             </div>
