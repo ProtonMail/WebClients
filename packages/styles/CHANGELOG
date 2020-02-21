@@ -15,7 +15,8 @@
 - add `border-bottom--currentColor` helper
 - add dark-mode friendly bank logos/icons
 - add `fill-white-dm` and `fill-global-highlight` aliases (dark mode)
-- Refactor `<Icon/>` fill
+- refactor `<Icon/>` fill
+- set default color of labels, buttons, inputs and selects to `currentColor`
 
 ## Updated/fixes
 
