@@ -32,7 +32,7 @@ const List = ({
     const [contacts, loadingContacts] = useContactEmails() as [ContactEmail[], boolean, Error];
     const [contactGroups, loadingGroups] = useContactGroups();
     const [labels] = useLabels();
-    const [lastChecked, setLastChecked] = useState(); // Store ID of the last element ID checked
+    const [lastChecked, setLastChecked] = useState<string>(); // Store ID of the last element ID checked
 
     if (loadingContacts || loadingGroups) {
         return null;
