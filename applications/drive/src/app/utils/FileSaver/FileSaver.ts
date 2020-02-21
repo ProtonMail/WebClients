@@ -2,6 +2,7 @@ import { openDownloadStream, initDownloadSW } from './download';
 import { TransferMeta } from '../../interfaces/transfer';
 import { streamToBuffer } from '../stream';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
+import { ReadableStream } from 'web-streams-polyfill';
 
 class FileSaver {
     private useBlobFallback = false;
@@ -19,7 +20,7 @@ class FileSaver {
         }
 
         try {
-            const saveStream = await openDownloadStream(meta, { onCancel: () => stream.cancel() });
+            const saveStream = await openDownloadStream(meta, { onCancel: () => stream.cancel('user canceled') });
             return stream.pipeTo(saveStream, { preventCancel: true });
         } catch (err) {
             console.error('Failed to save file via download, falling back to in-memory download:', err);

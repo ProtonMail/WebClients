@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect, withRouter, RouteComponentProps } from 'react-router-dom';
-import { StandardPrivateApp, ErrorBoundary, GenericError } from 'react-components';
+import { StandardPrivateApp, ErrorBoundary, GenericError, LoaderPage } from 'react-components';
 import { UserModel, AddressesModel } from 'proton-shared/lib/models';
 
 import DriveContainer from './containers/DriveContainer';
@@ -31,6 +31,7 @@ const PrivateApp = ({ onLogout, history }: Props) => {
             onLogout={onLogout}
             preloadModels={[UserModel, AddressesModel]}
             eventModels={[UserModel, AddressesModel]}
+            fallback={<LoaderPage />}
         >
             <ErrorBoundary component={<GenericError className="pt2 h100v" />}>
                 <DriveResourceProvider>

@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useRef, useEffect } from 'r
 import { TransferState, TransferProgresses, TransferMeta } from '../../interfaces/transfer';
 import { initDownload, DownloadControls, DownloadCallbacks } from './download';
 import { useApi } from 'react-components';
+import { ReadableStream } from 'web-streams-polyfill';
 
 const MAX_ACTIVE_DOWNLOADS = 3;
 

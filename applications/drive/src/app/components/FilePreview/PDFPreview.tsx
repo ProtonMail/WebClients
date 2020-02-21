@@ -4,7 +4,7 @@ interface Props {
     contents?: Uint8Array[];
 }
 const PDFPreview = ({ filename, contents }: Props) => {
-    const [url, setUrl] = useState();
+    const [url, setUrl] = useState<string>();
 
     useEffect(() => {
         const newUrl = URL.createObjectURL(new Blob(contents, { type: 'application/pdf' }));
