@@ -110,7 +110,7 @@ if (!isDistRelease) {
     list.push(
         new AutoDllPlugin({
             inject: true, // will inject the DLL bundles to index.html
-            filename: '[name]_[hash].js'
+            filename: '[name]_[contenthash].js'
         })
     );
 }
