@@ -389,7 +389,12 @@ const InteractiveCalendarView = ({
             calendar: { id: calendarID },
             member: { memberID, addressID }
         } = tmpData;
-        const [addressKeys, calendarKeys] = await Promise.all([getAddressKeys(addressID), getCalendarKeys(calendarID)]);
+        const oldCalendarID = !!Event && Event.CalendarID !== calendarID ? Event.CalendarID : undefined;
+        const [addressKeys, oldCalendarKeys, newCalendarKeys] = await Promise.all([
+            getAddressKeys(addressID),
+            oldCalendarID ? getCalendarKeys(oldCalendarID) : undefined,
+            getCalendarKeys(calendarID)
+        ]);
 
         const isRecurringUpdate = Event && readEvent && tmpOriginalTarget && tmpOriginalTarget.isRecurring;
         !!isRecurringUpdate && (await handleRecurringUpdateConfirmation());
@@ -402,7 +407,8 @@ const InteractiveCalendarView = ({
             memberID,
             calendarID,
             addressKeys,
-            calendarKeys,
+            oldCalendarKeys: oldCalendarKeys || newCalendarKeys,
+            calendarKeys: newCalendarKeys,
             api
         });
 
