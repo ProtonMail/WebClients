@@ -97,7 +97,7 @@ const ComposerContainer = ({ children }: Props) => {
 
         const { composeExisting, composeNew } = getComposeArgs(composeArgs);
 
-        console.log('compose', composeExisting, composeNew);
+        // console.log('compose', composeExisting, composeNew);
 
         if (composeExisting) {
             const { existingDraft } = composeExisting;

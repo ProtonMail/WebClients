@@ -85,6 +85,7 @@ const Composer = ({
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
     const { state: maximized, toggle: toggleMaximized } = useToggle(false);
     const [opening, setOpening] = useState(true); // Needed to force focus only at first time
+    const [closing, setClosing] = useState(false); // Needed to keep component alive while saving/deleting on close
     const [modelMessage, setModelMessage] = useState<MessageExtended>(inputMessage);
     const [pendingFiles, setPendingFiles] = useState<File[]>();
     const [
@@ -216,9 +217,10 @@ const Composer = ({
         onClose();
     };
     const handleDelete = async () => {
-        onClose();
+        setClosing(true);
         await deleteDraft();
         createNotification({ text: c('Info').t`Message discarded` });
+        onClose();
     };
     const handleClick = async () => {
         if (minimized) {
@@ -227,9 +229,14 @@ const Composer = ({
         onFocus();
     };
     const handleClose = async () => {
-        onClose();
+        setClosing(true);
         await save();
+        onClose();
     };
+
+    if (closing) {
+        return null;
+    }
 
     const style = computeStyle(inputStyle, minimized, maximized, width, height);
 
