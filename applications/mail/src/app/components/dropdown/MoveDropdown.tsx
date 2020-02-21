@@ -98,7 +98,7 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
                 <label htmlFor="filter-folders" className="bold">{c('Label').t`Move to`}</label>
                 <Tooltip title={c('Title').t`Create folder`}>
                     <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
-                        <Icon name="folder" fill="light" className="flex-item-noshrink mr0-25" />+
+                        <Icon name="folder" className="flex-item-noshrink mr0-25" />+
                     </PrimaryButton>
                 </Tooltip>
             </div>

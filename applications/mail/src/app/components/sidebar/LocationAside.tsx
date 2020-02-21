@@ -18,8 +18,10 @@ const LocationAside = ({ labelID, counterMap, currentLabelID, refreshLabelID }: 
         <>
             {labelID === currentLabelID && (
                 <Icon
-                    className={classnames(['mr0-5', labelID === refreshLabelID && 'location-refresh-rotate'])}
-                    fill="light"
+                    className={classnames([
+                        'mr0-5 color-global-light',
+                        labelID === refreshLabelID && 'location-refresh-rotate'
+                    ])}
                     name="reload"
                 />
             )}

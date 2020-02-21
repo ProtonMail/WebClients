@@ -36,7 +36,7 @@ const ItemExpiration = ({ element }: Props) => {
 
     return (
         <Tooltip title={title}>
-            <Icon name="expiration" fill="warning" />
+            <Icon name="expiration" className="color-global-warning" />
         </Tooltip>
     );
 };

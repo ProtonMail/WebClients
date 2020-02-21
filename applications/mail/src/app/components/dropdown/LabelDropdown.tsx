@@ -153,7 +153,7 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
                 <label htmlFor="filter-labels" className="bold">{c('Label').t`Label as`}</label>
                 <Tooltip title={c('Title').t`Create label`}>
                     <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
-                        <Icon name="label" fill="light" className="flex-item-noshrink mr0-25" />+
+                        <Icon name="label" className="flex-item-noshrink mr0-25" />+
                     </PrimaryButton>
                 </Tooltip>
             </div>

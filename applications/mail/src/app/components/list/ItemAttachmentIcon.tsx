@@ -14,7 +14,7 @@ const ItemAttachmentIcon = ({ element = {}, className }: Props) => {
         return null;
     }
 
-    return <Icon name="attach" fill="" className={classnames(['fill-global-success', className])} />;
+    return <Icon name="attach" className={classnames(['color-global-success', className])} />;
 };
 
 export default ItemAttachmentIcon;

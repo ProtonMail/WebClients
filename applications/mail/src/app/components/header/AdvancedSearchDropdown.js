@@ -160,7 +160,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
     return (
         <>
             <DropdownButton
-                className="searchbox-advanced-search-button"
+                className="searchbox-advanced-search-button color-white"
                 buttonRef={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
@@ -168,7 +168,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
             >
                 <Icon
                     name="caret"
-                    className={classnames(['fill-white searchbox-advanced-search-icon', isOpen && 'rotateX-180'])}
+                    className={classnames(['searchbox-advanced-search-icon', isOpen && 'rotateX-180'])}
                 />
             </DropdownButton>
             <Dropdown

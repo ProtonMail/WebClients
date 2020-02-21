@@ -43,7 +43,7 @@ const MessageLock = ({ message, className: inputClassName }: Props) => {
     return (
         <Tooltip title={tooltip} className="inbl">
             <Href className={className} href={href}>
-                <Icon name={icon} className="fill-currentColor" />
+                <Icon name={icon} />
             </Href>
         </Tooltip>
     );
