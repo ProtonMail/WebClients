@@ -82,8 +82,8 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags }) => {
         ),
 
         new MiniCssExtractPlugin({
-            filename: isProduction ? '[name].[hash:8].css' : '[name].css',
-            chunkFilename: isProduction ? '[id].[hash:8].css' : '[id].css'
+            filename: isProduction ? '[name].[contenthash:8].css' : '[name].css',
+            chunkFilename: isProduction ? '[id].[contenthash:8].css' : '[id].css'
         }),
 
         new HtmlWebpackPlugin({
