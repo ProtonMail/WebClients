@@ -50,7 +50,7 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
             collapseOnMobile={false}
             label={
                 <>
-                    <Icon name="calendar" style={{ fill: model.calendar.color }} />
+                    <Icon name="calendar" color={model.calendar.color} />
                     <span className="sr-only">{c('Label').t`Calendar`}</span>
                 </>
             }
@@ -66,7 +66,7 @@ const MinimalEventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStart
                 collapseOnMobile={false}
                 label={
                     <>
-                        <Icon name="circle" style={{ fill: model.calendar.color }} />
+                        <Icon name="circle" color={model.calendar.color} />
                         <span className="sr-only">{c('Label').t`Title`}</span>
                     </>
                 }

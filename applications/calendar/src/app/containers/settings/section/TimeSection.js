@@ -98,7 +98,7 @@ const TimeSection = ({
                         >
                             {c('Checkbox').t`Ask to update primary time zone`}
                             <Info
-                                className="ml0-5"
+                                className="ml0-5 color-primary"
                                 title={c('Tooltip')
                                     .t`If the computer time zone does not match the current time zone preference, you will be asked to update it (at most once per day). `}
                             />

@@ -41,7 +41,7 @@ const FullDayEvent = ({
 
     const content = (() => {
         if (error) {
-            return <Icon name="lock" className="fill-currentColor" />;
+            return <Icon name="lock" />;
         }
 
         return (
@@ -57,7 +57,7 @@ const FullDayEvent = ({
                     ) : null}
 
                     {isOutsideStart && !loading ? (
-                        <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-90 fill-currentColor" />
+                        <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-90" />
                     ) : null}
 
                     <span className="flex-item-fluid ellipsis">{loading ? '' : titleString}</span>
@@ -65,7 +65,7 @@ const FullDayEvent = ({
                     {isAllPartDay && !loading ? <span>{timeString}</span> : null}
 
                     {isOutsideEnd && !loading ? (
-                        <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-270 fill-currentColor" />
+                        <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-270" />
                     ) : null}
                 </span>
             </div>

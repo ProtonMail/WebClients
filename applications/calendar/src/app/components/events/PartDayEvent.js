@@ -38,7 +38,7 @@ const PartDayEvent = ({
 
     const content = (() => {
         if (error) {
-            return <Icon name="lock" className="fill-currentColor" />;
+            return <Icon name="lock" />;
         }
 
         return (

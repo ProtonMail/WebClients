@@ -45,7 +45,7 @@ const CalendarSidebar = ({
                 <div className="navigation__link" key={ID}>
                     <span className="flex flex-nowrap flex-items-center">
                         <Checkbox
-                            className="mr0-25 fill-currentColor flex-item-noshrink"
+                            className="mr0-25 flex-item-noshrink"
                             color={getConstrastingColor(Color)}
                             backgroundColor={Display ? Color : 'transparent'} // transparent for the disabled state
                             borderColor={Color}
