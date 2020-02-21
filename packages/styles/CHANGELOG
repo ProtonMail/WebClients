@@ -15,6 +15,7 @@
 - add `border-bottom--currentColor` helper
 - add dark-mode friendly bank logos/icons
 - add `fill-white-dm` and `fill-global-highlight` aliases (dark mode)
+- Refactor `<Icon/>` fill
 
 ## Updated/fixes
 
@@ -28,6 +29,8 @@
 - fix `--paddingFix` stuff (for iOS/VPN settings)
 - fix `tree-view` stuff
 - add hover state for `dropDown-item`
+- fixed dark mode stuf
+- fixed Angular star issue
 
 
 # [1.8.1] - 2019-01-31
