@@ -64,12 +64,16 @@ export interface DriveFileResult {
 }
 
 export interface FileUploadInfo {
-    ID: string;
+    LinkID: string;
+    ShareID: string;
     RevisionID: string;
 }
 
 export interface CreateFileResult {
-    File: FileUploadInfo;
+    File: {
+        ID: string;
+        RevisionID: string;
+    };
 }
 
 export interface RequestUploadResult {

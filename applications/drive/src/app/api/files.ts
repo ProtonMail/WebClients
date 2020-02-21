@@ -22,7 +22,14 @@ export const queryFileRevision = (shareId: string, linkId: string, revisionId: n
     };
 };
 
-export const queryRequestUpload = (data: { BlockList: string[]; AddressID: string; Signature: string }) => {
+export const queryRequestUpload = (data: {
+    BlockList: { Hash: string; Size: number; Index: number }[];
+    AddressID: string;
+    Signature: string;
+    ShareID: string;
+    LinkID: string;
+    RevisionID: string;
+}) => {
     return {
         method: 'post',
         url: 'drive/blocks',

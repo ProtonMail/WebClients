@@ -165,7 +165,7 @@ function useFiles(shareId: string) {
 
                         const MimeType = lookup(filename) || 'application/octet-stream';
 
-                        const { File }: CreateFileResult = await api(
+                        const { File } = await api<CreateFileResult>(
                             queryCreateFile(shareId, {
                                 Name,
                                 MimeType,
@@ -178,7 +178,12 @@ function useFiles(shareId: string) {
                                 ContentKeyPacket
                             })
                         );
-                        return File;
+
+                        return {
+                            LinkID: File.ID,
+                            RevisionID: File.RevisionID,
+                            ShareID: shareId
+                        };
                     },
                     transform: async (data) => {
                         const res = await encryptMessage({
@@ -188,10 +193,10 @@ function useFiles(shareId: string) {
                         });
                         return res.message.packets.write() as Uint8Array;
                     },
-                    finalize: async ({ ID, RevisionID }, blockMeta) => {
+                    finalize: async ({ LinkID, RevisionID }, blockMeta) => {
                         const rootHash = await generateRootHash(null, blockMeta);
                         await api(
-                            queryUpdateFileRevision(shareId, ID, RevisionID, {
+                            queryUpdateFileRevision(shareId, LinkID, RevisionID, {
                                 State: FileRevisionState.Active,
                                 BlockList: blockMeta.map(({ Index, Token }) => ({
                                     Index,
