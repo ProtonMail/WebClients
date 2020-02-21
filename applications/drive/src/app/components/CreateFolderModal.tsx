@@ -23,12 +23,12 @@ const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
     const handleSubmit = async () => {
         const name = folderName.trim();
         await createNewFolder(resource.linkId, name);
-        const nameElement = (
+        const notificationText = (
             <span key="name" style={{ whiteSpace: 'pre' }}>
-                &quot;{name}&quot;
+                {c('Success').t`"${name}" created successfully`}
             </span>
         );
-        createNotification({ text: c('Success').jt`${nameElement} created successfully` });
+        createNotification({ text: notificationText });
         onClose?.();
         onDone?.();
     };
