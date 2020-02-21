@@ -24,6 +24,9 @@ const SignupState = {
     MobileRedirection: 'mobile-redirection'
 };
 
+const BRAVE_COOKIE = '1397';
+const BESTDEAL_COOKIE = 'bestdeal';
+
 // TODO: Flexible urls and plans for reuse between project
 const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
     const searchParams = new URLSearchParams(history.location.search);
@@ -45,7 +48,7 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
 
     const redirectToMobile = (from || historyState.from) === 'mobile';
     const availablePlans =
-        checkCookie('offer', 'bestdeal') && !redirectToMobile
+        (checkCookie('offer', BESTDEAL_COOKIE) || checkCookie('offer', BRAVE_COOKIE)) && !redirectToMobile
             ? BEST_DEAL_PLANS
             : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
 
