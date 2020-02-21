@@ -137,6 +137,12 @@ export const updateEvent = (calendarID, eventID, data) => ({
     data
 });
 
+export const addSharedEvent = (calendarID, data) => ({
+    url: `calendars/${calendarID}/shared/events`,
+    method: 'post',
+    data
+});
+
 export const deleteEvent = (calendarID, eventID) => ({
     url: `calendars/${calendarID}/events/${eventID}`,
     method: 'delete'

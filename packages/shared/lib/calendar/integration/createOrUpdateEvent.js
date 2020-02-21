@@ -2,48 +2,72 @@ import { c } from 'ttag';
 
 import { hasBit } from '../../helpers/bitset';
 import { KeyFlags } from '../../keys/calendarKeys';
+import getPrimaryKey from '../../keys/getPrimaryKey';
 import { readSessionKeys } from '../deserialize';
 import { splitKeys } from '../../keys/keys';
 import { createCalendarEvent } from '../serialize';
-import { createEvent, updateEvent } from '../../api/calendars';
+import { addSharedEvent, createEvent, updateEvent } from '../../api/calendars';
 
-export default async ({ Event, veventComponent, calendarID, memberID, addressKeys = [], calendarKeys = [], api }) => {
-    const [{ privateKey: primaryAddressKey } = {}] = addressKeys;
+export default async ({
+    Event,
+    veventComponent,
+    calendarID,
+    memberID,
+    addressKeys = [],
+    oldCalendarKeys = [],
+    calendarKeys = [],
+    api
+}) => {
+    const primaryAddressKey = getPrimaryKey(addressKeys);
+    const primaryPrivateAddressKey = primaryAddressKey ? primaryAddressKey.privateKey : undefined;
 
-    if (!primaryAddressKey) {
-        throw new Error(c('Error').t`Primary address key not found`);
+    if (!primaryPrivateAddressKey) {
+        throw new Error(c('Error').t`Primary private address key not found`);
     }
 
-    const { privateKey: primaryCalendarKey, publicKey: publicCalendarKey } =
+    const { privateKey: primaryPrivateCalendarKey, publicKey: publicCalendarKey } =
         calendarKeys.find(({ Key: { Flags } }) => hasBit(Flags, KeyFlags.PRIMARY)) || {};
 
-    if (!primaryCalendarKey) {
-        throw new Error(c('Error').t`Primary calendar key is not decrypted`);
+    if (!primaryPrivateCalendarKey) {
+        throw new Error(c('Error').t`Primary private calendar key is not decrypted`);
     }
 
-    // If there is an event (update) and the calendar was not changed.
-    const [sharedSessionKey, calendarSessionKey] =
-        Event && calendarID === Event.CalendarID
-            ? await readSessionKeys(Event, splitKeys(calendarKeys).privateKeys)
-            : [];
+    // If there is no event
+    const [sharedSessionKey, calendarSessionKey] = Event
+        ? await readSessionKeys(Event, splitKeys(oldCalendarKeys).privateKeys)
+        : [];
+    const switchCalendar = !!Event && Event.CalendarID !== calendarID;
 
     const data = await createCalendarEvent({
         eventComponent: veventComponent,
-        privateKey: primaryCalendarKey,
+        privateKey: primaryPrivateCalendarKey,
         publicKey: publicCalendarKey,
-        signingKey: primaryAddressKey,
+        signingKey: primaryPrivateAddressKey,
         sharedSessionKey,
-        calendarSessionKey
+        calendarSessionKey,
+        switchCalendar
     });
 
-    if (Event && calendarID === Event.CalendarID) {
-        await api(
-            updateEvent(Event.CalendarID, Event.ID, {
-                ...data,
-                MemberID: memberID,
-                Permissions: 3 // TODO what?
-            })
-        );
+    if (Event) {
+        if (switchCalendar) {
+            await api(
+                addSharedEvent(calendarID, {
+                    ...data,
+                    UID: veventComponent.uid.value,
+                    Overwrite: 1,
+                    MemberID: memberID,
+                    Permissions: 3 // TODO what?
+                })
+            );
+        } else {
+            await api(
+                updateEvent(Event.CalendarID, Event.ID, {
+                    ...data,
+                    MemberID: memberID,
+                    Permissions: 3 // TODO what?
+                })
+            );
+        }
     } else {
         await api(
             createEvent(calendarID, {

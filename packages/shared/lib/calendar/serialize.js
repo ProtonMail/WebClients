@@ -110,7 +110,8 @@ export const createCalendarEvent = async ({
     publicKey,
     signingKey,
     sharedSessionKey: oldSharedSessionKey,
-    calendarSessionKey: oldCalendarSessionKey
+    calendarSessionKey: oldCalendarSessionKey,
+    switchCalendar = false
 }) => {
     const { sharedPart, calendarPart, personalPart, attendeesPart } = getParts(eventComponent);
 
@@ -134,8 +135,8 @@ export const createCalendarEvent = async ({
         !oldCalendarSessionKey && calendarSessionKey
             ? getEncryptedSessionKey(calendarSessionKey, privateKey)
             : undefined,
-        // If there was no old shared session key, it's the first time the event is being created, so encrypt it.
-        !oldSharedSessionKey ? getEncryptedSessionKey(sharedSessionKey, privateKey) : undefined,
+        // If we're updating an event (but not switching calendar), no need to encrypt again the session key.
+        oldSharedSessionKey && !switchCalendar ? undefined : getEncryptedSessionKey(sharedSessionKey, privateKey),
         encryptAndSignPart(sharedPart, signingKey, sharedSessionKey),
         encryptAndSignPart(calendarPart, signingKey, calendarSessionKey),
         signCard(personalPart[SIGNED], signingKey),
