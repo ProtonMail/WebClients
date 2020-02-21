@@ -10,7 +10,7 @@ const LinkItem = ({ route, text, permission }) => {
             <span className="mr0-5">{text}</span>
             {permission ? null : (
                 <Tooltip title={c('Tag').t`Premium feature`}>
-                    <Icon name="starfull" fill="attention" />
+                    <Icon name="starfull" className="color-global-attention" />
                 </Tooltip>
             )}
         </Link>

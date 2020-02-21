@@ -53,7 +53,7 @@ const SupportDropdown = ({ className, content }) => {
                             // eslint-disable-next-line react/jsx-no-target-blank
                             target="_blank"
                         >
-                            <Icon className="mt0-25 mr0-5 fill-currentColor" name="what-is-this" />
+                            <Icon className="mt0-25 mr0-5" name="what-is-this" />
                             {c('Action').t`I have a question`}
                         </a>
                     </li>
@@ -63,7 +63,7 @@ const SupportDropdown = ({ className, content }) => {
                             className="w100 flex underline-hover pt0-5 pb0-5 alignleft"
                             onClick={handleBugReportClick}
                         >
-                            <Icon className="mt0-25 mr0-5 fill-currentColor" name="report-bug" />
+                            <Icon className="mt0-25 mr0-5" name="report-bug" />
                             {c('Action').t`Report bug`}
                         </button>
                     </li>

@@ -34,7 +34,7 @@ function LabelActions({ selection = [], labels = [], onChange = noop }) {
                 {selectedItems.map(({ Color, Name }, i) => {
                     return (
                         <li key={Name} className="flex flex-nowrap flex-items-center mb0-5">
-                            <Icon name="label" style={{ fill: Color }} className="flex-item-noshrink mr1" alt={Name} />
+                            <Icon name="label" color={Color} className="flex-item-noshrink mr1" alt={Name} />
                             <span title={Name} className="ellipsis">
                                 {Name}
                             </span>

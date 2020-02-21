@@ -16,7 +16,7 @@ function PreviewActionValue({ value, icon }) {
                 className="Preview-action-value relative bg-global-highlight inline-flex flex-items-centered"
                 key={i.toString()}
             >
-                <Icon name={icon} style={{ fill: Color }} className="mauto" /> <span className="ml0-5">{Name}</span>
+                <Icon name={icon} color={Color} className="mauto" /> <span className="ml0-5">{Name}</span>
             </span>
         );
     });

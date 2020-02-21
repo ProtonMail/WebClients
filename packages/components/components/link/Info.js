@@ -47,7 +47,7 @@ const Info = ({
                 aria-describedby={uid}
                 type="button"
             >
-                <Icon className="icon-16p fill-primary" name="info" {...rest} />
+                <Icon className="icon-16p color-primary" name="info" {...rest} />
             </button>
             {title ? (
                 <Popper

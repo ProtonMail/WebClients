@@ -35,7 +35,7 @@ const AppsSidebar = ({ items = [] }) => {
                                     disabled={isCurrent}
                                     aria-current={isCurrent}
                                 >
-                                    <Icon name={icon} className="aside-linkIcon mauto fill-global-light" />
+                                    <Icon name={icon} className="aside-linkIcon mauto" />
                                 </a>
                             </Tooltip>
                         </li>

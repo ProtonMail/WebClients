@@ -12,7 +12,7 @@ const TYPES = {
 
 const RoundedIcon = ({
     className = '',
-    iconClassName = 'fill-white',
+    iconClassName = 'color-white',
     type = 'success',
     padding = 'p0-5',
     title,

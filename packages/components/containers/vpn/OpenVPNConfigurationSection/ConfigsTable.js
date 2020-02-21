@@ -37,7 +37,7 @@ const ServerDown = () => (
     <span className="ml0-5">
         <Tooltip title={c('Info').t`Server is currently down`}>
             <div className="flex inline-flex-vcenter">
-                <Icon fill="warning" size={20} name="attention" />
+                <Icon className="color-global-warning" size={20} name="attention" />
             </div>
         </Tooltip>
     </span>

@@ -80,7 +80,7 @@ const UserDropdown = ({ ...rest }) => {
                                     to="/settings"
                                     className="w100 flex flex-nowrap dropDown-link nodecoration pt0-5 pb0-5"
                                 >
-                                    <Icon className="mt0-25 mr0-5 fill-currentColor" name="settings" />
+                                    <Icon className="mt0-25 mr0-5" name="settings" />
                                     {c('Action').t`Settings`}
                                 </Link>
                             ) : (
@@ -88,7 +88,7 @@ const UserDropdown = ({ ...rest }) => {
                                     className="w100 flex flex-nowrap dropDown-link nodecoration pt0-5 pb0-5"
                                     href="/settings"
                                 >
-                                    <Icon className="mt0-25 mr0-5 fill-currentColor" name="settings-master" />
+                                    <Icon className="mt0-25 mr0-5" name="settings-master" />
                                     {c('Action').t`Settings`}
                                 </a>
                             )}
@@ -105,7 +105,7 @@ const UserDropdown = ({ ...rest }) => {
                             // eslint-disable-next-line react/jsx-no-target-blank
                             target="_blank"
                         >
-                            <Icon className="mt0-25 mr0-5 fill-currentColor" name="what-is-this" />
+                            <Icon className="mt0-25 mr0-5" name="what-is-this" />
                             {c('Action').t`I have a question`}
                         </a>
                     </li>
@@ -115,7 +115,7 @@ const UserDropdown = ({ ...rest }) => {
                             className="w100 flex underline-hover dropDown-link pt0-5 pb0-5 alignleft"
                             onClick={handleBugReportClick}
                         >
-                            <Icon className="mt0-25 mr0-5 fill-currentColor" name="report-bug" />
+                            <Icon className="mt0-25 mr0-5" name="report-bug" />
                             {c('Action').t`Report bug`}
                         </button>
                     </li>
@@ -126,7 +126,7 @@ const UserDropdown = ({ ...rest }) => {
                             // eslint-disable-next-line react/jsx-no-target-blank
                             target="_blank"
                         >
-                            <Icon className="mt0-25 mr0-5 fill-currentColor" name="shop" />
+                            <Icon className="mt0-25 mr0-5" name="shop" />
                             {c('Action').t`Proton shop`}
                         </a>
                     </li>
@@ -136,7 +136,7 @@ const UserDropdown = ({ ...rest }) => {
                             className="w100 flex underline-hover dropDown-link pt0-5 pb0-5 alignleft"
                             onClick={handleSupportUsClick}
                         >
-                            <Icon className="mt0-25 mr0-5 fill-currentColor" name="donate" />
+                            <Icon className="mt0-25 mr0-5" name="donate" />
                             {c('Action').t`Support us`}
                         </button>
                     </li>

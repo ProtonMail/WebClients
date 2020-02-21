@@ -20,10 +20,12 @@ function LabelItem({ label, onEditLabel = noop, onRemoveLabel = noop, ...rest })
                 <div key="0" className="flex flex-nowrap">
                     <Icon
                         name={Exclusive ? 'folder' : 'label'}
-                        style={{ fill: Color }}
+                        color={Color}
                         className="icon-16p flex-item-noshrink mr1 mtauto mbauto"
                     />
-                    <span className="ellipsis" data-test-id="folders/labels:item-name">{Name}</span>
+                    <span className="ellipsis" data-test-id="folders/labels:item-name">
+                        {Name}
+                    </span>
                 </div>,
                 <div key="1" className="w10" data-test-id="folders/labels:item-notification-toggle">
                     {Exclusive === 1 ? <ToggleNotify label={label} /> : ''}

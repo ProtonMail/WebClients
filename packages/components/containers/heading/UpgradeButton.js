@@ -9,7 +9,7 @@ const UpgradeButton = ({ className, external = false }) => {
     if (external) {
         return (
             <a href="/settings/subscription" className={className}>
-                <Icon name="upgrade-to-paid" className="topnav-icon mr0-5 flex-item-centered-vert fill-white" />
+                <Icon name="upgrade-to-paid" className="topnav-icon mr0-5 flex-item-centered-vert" />
                 <span className="navigation-title topnav-linkText">{c('Link').t`Upgrade`}</span>
             </a>
         );
@@ -17,7 +17,7 @@ const UpgradeButton = ({ className, external = false }) => {
 
     return (
         <Link to="/settings/subscription" className={className}>
-            <Icon name="upgrade-to-paid" className="topnav-icon mr0-5 flex-item-centered-vert fill-white" />
+            <Icon name="upgrade-to-paid" className="topnav-icon mr0-5 flex-item-centered-vert" />
             <span className="navigation-title topnav-linkText">{c('Link').t`Upgrade`}</span>
         </Link>
     );

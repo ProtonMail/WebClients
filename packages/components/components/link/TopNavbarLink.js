@@ -4,7 +4,7 @@ import { Icon, Href } from 'react-components';
 import { Link } from 'react-router-dom';
 
 const TopNavbarLink = ({ to, external = false, icon, text, ...rest }) => {
-    const iconComponent = <Icon className="topnav-icon mr0-5 flex-item-centered-vert fill-white" name={icon} />;
+    const iconComponent = <Icon className="topnav-icon mr0-5 flex-item-centered-vert" name={icon} />;
 
     if (external) {
         return (

@@ -24,7 +24,7 @@ const UpgradeModal = ({ plans, onUpgrade, ...rest }) => {
             <div className="bg-global-altgrey color-white">
                 <div className="flex flex-justify-end pt0-5 pr0-5 pb1">
                     <button className="inline-flex" type="reset">
-                        <Icon name="close" fill="light" />
+                        <Icon name="close" />
                         <span className="sr-only">{c('Action').t`Close`}</span>
                     </button>
                 </div>

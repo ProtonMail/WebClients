@@ -46,7 +46,7 @@ const Checkbox = ({
                 className="pm-checkbox-fakecheck"
                 style={{ borderColor: borderColor, background: backgroundColor, color }}
             >
-                <Icon className="pm-checkbox-fakecheck-img" name="on" color={color} fill={color ? '' : undefined} />
+                <Icon className="pm-checkbox-fakecheck-img" name="on" color={color} />
             </span>
             {children}
         </label>

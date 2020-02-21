@@ -5,7 +5,7 @@ import Button from './Button';
 import { classnames } from '../../helpers/component';
 
 const WarningButton = ({ children, className = '', icon, ...rest }) => {
-    const buttonIcon = typeof icon === 'string' ? <Icon name={icon} fill="light" /> : icon;
+    const buttonIcon = typeof icon === 'string' ? <Icon name={icon} /> : icon;
 
     return (
         <Button icon={buttonIcon} className={classnames(['pm-button--warning', className])} {...rest}>
