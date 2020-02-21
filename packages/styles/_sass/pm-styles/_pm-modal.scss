@@ -142,16 +142,13 @@ $modal-smaller-width: 28em !default;
   top: .5rem;
   background: transparent;
   border-radius: 1em;
-  color: $pm-global-grey;
   border: 0;
   font-size: 2em;
   padding: 0;
   line-height: 1;
   cursor: pointer;
 }
-.pm-modalClose-icon {
-  fill: $pm-global-grey;
-}
+
 // not defined, left this in case of
 // .pm-modalClose:focus,
 // .pm-modalClose:hover,
@@ -201,7 +198,7 @@ $modal-smaller-width: 28em !default;
   padding: 0 rem(30);
 
   background: var(--bgcolor-main-area, $white) no-repeat;
-  background-image: radial-gradient(farthest-side at 50% 0,var(--bordercolor-input, #acb0bf),transparent),radial-gradient(farthest-side at 50% 100%,var(--bordercolor-input, #acb0bf),transparent); 
+  background-image: radial-gradient(farthest-side at 50% 0,var(--bordercolor-input, #acb0bf),transparent),radial-gradient(farthest-side at 50% 100%,var(--bordercolor-input, #acb0bf),transparent);
   background-position: 50% 0, 0 100%;
   background-size: calc(100% - 20px) 3px;
 }
