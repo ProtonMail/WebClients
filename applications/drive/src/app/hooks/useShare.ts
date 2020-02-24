@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useApi } from 'react-components';
-import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import { decryptPrivateKey, OpenPGPKey, SessionKey } from 'pmcrypto';
 import {
     decryptUnsigned,
     generateNodeHashKey,
@@ -17,16 +17,22 @@ import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 import useDriveCrypto from './useDriveCrypto';
 import useCachedResponse from './useCachedResponse';
 import { FOLDER_PAGE_SIZE } from '../constants';
+import { queryRenameLink } from '../api/share';
+import { lookup } from 'mime-types';
+
+const folderChildrenCacheKey = (shareId: string, linkId: string, Page: number, PageSize: number) =>
+    `drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`;
+const folderMetaCacheKey = (shareId: string, linkId: string) => `drive/shares/${shareId}/folder/${linkId}`;
 
 function useShare(shareId: string) {
     const api = useApi();
-    const { cache, getCachedResponse } = useCachedResponse();
+    const { cache, getCachedResponse, updateCachedResponse } = useCachedResponse();
     const { getShareBootstrap } = useDrive();
     const { getVerificationKeys, getPrimaryAddressKey } = useDriveCrypto();
 
     const getFolderMeta = useCallback(
         (linkId: string): Promise<{ Folder: FolderMeta; privateKey: OpenPGPKey; hashKey: string }> =>
-            getCachedResponse(`drive/shares/${shareId}/folder/${linkId}`, async () => {
+            getCachedResponse(folderMetaCacheKey(shareId, linkId), async () => {
                 const { Folder } = await api<FolderMetaResult>(queryGetFolder(shareId, linkId));
 
                 const { privateKey: parentKey } = Folder.ParentLinkID
@@ -75,14 +81,14 @@ function useShare(shareId: string) {
 
     const clearFolderContentsCache = useCallback(
         (linkId: string, Page: number, PageSize: number) => {
-            cache.delete(`drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`);
+            cache.delete(folderChildrenCacheKey(shareId, linkId, Page, PageSize));
         },
         [shareId]
     );
 
     const getFolderContents = useCallback(
         async (linkId: string, Page: number, PageSize: number): Promise<DriveLink[]> =>
-            getCachedResponse(`drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`, async () => {
+            getCachedResponse(folderChildrenCacheKey(shareId, linkId, Page, PageSize), async () => {
                 const { Links } = await api<FolderContentsResult>(
                     queryFolderChildren(shareId, linkId, { Page, PageSize })
                 );
@@ -133,7 +139,62 @@ function useShare(shareId: string) {
         clearFolderContentsCache(ParentLinkID, 0, FOLDER_PAGE_SIZE);
     };
 
-    return { getFolderMeta, getFolderContents, decryptLink, createNewFolder, clearFolderContentsCache };
+    const renameLink = async (linkId: string, newName: string, parentLinkID: string) => {
+        const lowerCaseName = newName.toLowerCase();
+        const MimeType = lookup(newName) || 'application/octet-stream';
+
+        const { privateKey: parentKey, hashKey } = await getFolderMeta(parentLinkID);
+        const [Hash, encryptedName] = await Promise.all([
+            generateLookupHash(lowerCaseName, hashKey),
+            encryptUnsigned({
+                message: newName,
+                privateKey: parentKey
+            })
+        ]);
+
+        await api(
+            queryRenameLink(shareId, linkId, {
+                Name: encryptedName,
+                MimeType,
+                Hash
+            })
+        );
+
+        // Update file meta
+        updateCachedResponse(
+            `drive/shares/${shareId}/file/${linkId}`,
+            (value: { File: DriveFile; sessionKeys?: SessionKey; privateKey: OpenPGPKey }) => {
+                return { ...value, File: { ...value.File, Hash, MimeType, Name: newName } };
+            }
+        );
+
+        // Update folder meta
+        updateCachedResponse(
+            folderMetaCacheKey(shareId, linkId),
+            (value: { Folder: FolderMeta; hashKey: string; privateKey: OpenPGPKey }) => {
+                return { ...value, Folder: { ...value.Folder, Hash, Name: newName } };
+            }
+        );
+
+        // Update folder children
+        // TODO: mutate cache for same page that the folder is in
+        updateCachedResponse(
+            folderChildrenCacheKey(shareId, parentLinkID, 0, FOLDER_PAGE_SIZE),
+            (value: DriveLink[]) => {
+                const index = value.findIndex((link) => link.LinkID === linkId);
+                if (index !== -1) {
+                    return [
+                        ...value.slice(0, index),
+                        { ...value[index], Hash, Name: newName },
+                        ...value.slice(index + 1)
+                    ];
+                }
+                return value;
+            }
+        );
+    };
+
+    return { getFolderMeta, getFolderContents, decryptLink, createNewFolder, clearFolderContentsCache, renameLink };
 }
 
 export default useShare;

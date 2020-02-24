@@ -20,7 +20,15 @@ const useCachedResponse = () => {
         });
     };
 
-    return { cache, getCachedResponse };
+    const updateCachedResponse = <V>(key: string, updater: (value: V) => V) => {
+        if (cache.has(key)) {
+            const { value, ...rest } = cache.get(key);
+            cache.set(key, { ...rest, value: updater(value) });
+        }
+        return;
+    };
+
+    return { cache, getCachedResponse, updateCachedResponse };
 };
 
 export default useCachedResponse;
