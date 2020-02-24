@@ -15,7 +15,7 @@ const PlanPrice = ({ plan, cycle, currency }) => {
     );
     const totalBilledText =
         cycle === CYCLE.MONTHLY ? (
-            <Price key="billed-price" currency={currency} suffix={c('Suffix').t`monthly`}>
+            <Price key="billed-price" currency={currency} suffix={c('Suffix').t`/monthly`}>
                 {plan.price.totalMonthly}
             </Price>
         ) : (
@@ -37,7 +37,9 @@ const PlanPrice = ({ plan, cycle, currency }) => {
             <div className="mb0-5">{c('PlanPrice').jt`${totalMonthlyPriceText} / mo`}</div>
 
             <div>
-                <div className="opacity-50">{c('PlanPrice').jt`Billed as ${totalBilledText}`}</div>
+                {[CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle) ? (
+                    <div className="opacity-50">{c('PlanPrice').jt`Billed as ${totalBilledText}`}</div>
+                ) : null}
                 {discount > 0 && <div className="bold color-primary">{c('PlanPrice').jt`SAVE ${discountText}`}</div>}
             </div>
         </div>
