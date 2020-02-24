@@ -146,3 +146,9 @@ export const MAX_LENGTHS = {
 };
 
 export const MAX_DEFAULT_NOTIFICATIONS = 5;
+
+export const RECURRING_DELETE_TYPES = {
+    ALL: 1,
+    FUTURE: 2,
+    SINGLE: 3
+};

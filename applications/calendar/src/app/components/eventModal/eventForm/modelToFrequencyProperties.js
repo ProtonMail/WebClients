@@ -3,6 +3,22 @@ import { unique } from 'proton-shared/lib/helpers/array';
 import { convertZonedDateTimeToUTC, fromLocalDate } from 'proton-shared/lib/date/timezone';
 import { getPositiveSetpos, getNegativeSetpos } from '../../../helpers/rrule';
 
+export const getUntilProperty = (untilDateTime, isAllDay, tzid) => {
+    // According to the RFC, we should use UTC dates if and only if the event is not all-day.
+    if (isAllDay) {
+        // we should use a floating date in this case
+        return {
+            year: untilDateTime.year,
+            month: untilDateTime.month,
+            day: untilDateTime.day
+        };
+    }
+    // Pick end of day in the event start date timezone
+    const zonedEndOfDay = { ...untilDateTime, hours: 23, minutes: 59, seconds: 59 };
+    const utcEndOfDay = convertZonedDateTimeToUTC(zonedEndOfDay, tzid);
+    return { ...utcEndOfDay, isUTC: true };
+};
+
 const modelToFrequencyProperties = ({ frequencyModel = {}, start = {}, isAllDay }) => {
     const { type, frequency, interval, weekly, monthly, ends } = frequencyModel;
     const { date: startDate, tzid } = start;
@@ -46,21 +62,7 @@ const modelToFrequencyProperties = ({ frequencyModel = {}, start = {}, isAllDay 
             properties.rrule.value.count = ends.count;
         }
         if (ends.type === END_TYPE.UNTIL) {
-            // According to the RFC, we should use UTC dates if and only if the event is not all-day.
-            const untilDateTime = fromLocalDate(ends.until);
-            if (isAllDay) {
-                // we should use a floating date in this case
-                properties.rrule.value.until = {
-                    year: untilDateTime.year,
-                    month: untilDateTime.month,
-                    day: untilDateTime.day
-                };
-            } else {
-                // pick end of day in the event start date timezone
-                const zonedEndOfDay = { ...untilDateTime, hours: 23, minutes: 59, seconds: 59 };
-                const utcEndOfDay = convertZonedDateTimeToUTC(zonedEndOfDay, tzid);
-                properties.rrule.value.until = { ...utcEndOfDay, isUTC: true };
-            }
+            properties.rrule.value.until = getUntilProperty(fromLocalDate(ends.until), isAllDay, tzid);
         }
     }
     return properties;

@@ -2,17 +2,7 @@ import { c } from 'ttag';
 import { Prompt } from 'react-router';
 import { noop } from 'proton-shared/lib/helpers/function';
 import React, { useImperativeHandle, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import {
-    Alert,
-    ConfirmModal,
-    ResetButton,
-    ErrorButton,
-    useApi,
-    useEventManager,
-    useGetAddressKeys,
-    useGetCalendarKeys,
-    useModals
-} from 'react-components';
+import { useApi, useEventManager, useGetAddressKeys, useGetCalendarKeys, useModals } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
@@ -20,6 +10,7 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import createOrUpdateEvent from 'proton-shared/lib/calendar/integration/createOrUpdateEvent';
 import { deleteEvent, updateCalendar } from 'proton-shared/lib/api/calendars';
+import { omit } from 'proton-shared/lib/helpers/object';
 
 import { getExistingEvent, getInitialModel, hasDoneChanges } from '../../components/eventModal/eventForm/state';
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
@@ -37,6 +28,14 @@ import { getCreateTemporaryEvent, getEditTemporaryEvent, getTemporaryEvent, getU
 import CalendarView from './CalendarView';
 import useUnload from '../../hooks/useUnload';
 import { findUpwards } from '../../components/calendar/mouseHelpers/domHelpers';
+import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
+import DeleteConfirmModal from './confirmationModals/DeleteConfirmModal';
+import DeleteRecurringConfirmModal from './confirmationModals/DeleteRecurringConfirmModal';
+import EditRecurringConfirmation from './confirmationModals/EditRecurringConfirmation';
+import { RECURRING_DELETE_TYPES } from '../../constants';
+import deleteSingleRecurrence from './recurrence/deleteSingleRecurrence';
+import getMemberAndAddress from './getMemberAndAddress';
+import deleteFutureRecurrence from './recurrence/deleteFutureRecurrence';
 
 const getNormalizedTime = (isAllDay, initial, dateFromCalendar) => {
     if (!isAllDay) {
@@ -170,13 +169,9 @@ const InteractiveCalendarView = ({
     const getUpdateModel = ({ Calendar, Event, readEvent }) => {
         const initialDate = getInitialDate();
 
-        const calendarBootstrap = readCalendarBootstrap(Calendar.ID);
-        const { Members = [], CalendarSettings } = calendarBootstrap;
-        const [Member = {}] = Members;
-        const Address = addresses.find(({ Email }) => Member.Email === Email);
-        if (!Member || !Address) {
-            return;
-        }
+        const { Members = [], CalendarSettings } = readCalendarBootstrap(Calendar.ID);
+        const { Member, Address } = getMemberAndAddress(addresses, Members, Event.Author);
+
         const createResult = getInitialModel({
             initialDate,
             CalendarSettings,
@@ -367,39 +362,17 @@ const InteractiveCalendarView = ({
 
     const handleRecurringUpdateConfirmation = () => {
         return new Promise((resolve, reject) => {
-            const message = c('Info')
-                .t`Would you like to edit all recurring events? This event will become the starting event.`;
-            createModal(
-                <ConfirmModal
-                    confirm={c('Action').t`Yes`}
-                    title={c('Info').t`Edit recurring event`}
-                    close={<ResetButton autoFocus={true}>{c('Action').t`No`}</ResetButton>}
-                    onClose={reject}
-                    onConfirm={resolve}
-                >
-                    <Alert>{message}</Alert>
-                </ConfirmModal>
-            );
+            createModal(<EditRecurringConfirmation onClose={reject} onConfirm={resolve} />);
         });
     };
 
-    const handleSaveEvent = async ({ tmpOriginalTarget, tmpData, data: { Event, readEvent } }) => {
-        // TODO: add until date validation
-        const {
-            calendar: { id: calendarID },
-            member: { memberID, addressID }
-        } = tmpData;
+    const handleSaveEventHelper = async ({ Event, veventComponent, calendarID, addressID, memberID }) => {
         const oldCalendarID = !!Event && Event.CalendarID !== calendarID ? Event.CalendarID : undefined;
-        const [addressKeys, oldCalendarKeys, newCalendarKeys] = await Promise.all([
+        const [addressKeys, newCalendarKeys, oldCalendarKeys] = await Promise.all([
             getAddressKeys(addressID),
-            oldCalendarID ? getCalendarKeys(oldCalendarID) : undefined,
-            getCalendarKeys(calendarID)
+            getCalendarKeys(calendarID),
+            oldCalendarID ? getCalendarKeys(oldCalendarID) : undefined
         ]);
-
-        const isRecurringUpdate = Event && readEvent && tmpOriginalTarget && tmpOriginalTarget.isRecurring;
-        !!isRecurringUpdate && (await handleRecurringUpdateConfirmation());
-
-        const veventComponent = modelToVeventComponent(tmpData);
 
         await createOrUpdateEvent({
             Event,
@@ -420,46 +393,94 @@ const InteractiveCalendarView = ({
         await call();
     };
 
+    const handleSaveEvent = async ({ tmpOriginalTarget, tmpData, data: { Event, readEvent } }) => {
+        const {
+            calendar: { id: calendarID },
+            member: { memberID, addressID }
+        } = tmpData;
+
+        const isRecurringUpdate = Event && readEvent && tmpOriginalTarget && tmpOriginalTarget.isRecurring;
+        !!isRecurringUpdate && (await handleRecurringUpdateConfirmation());
+
+        // All updates will remove any existing exdates since they would be more complicated to normalize
+        const veventComponent = omit(modelToVeventComponent(tmpData), ['exdate']);
+
+        return handleSaveEventHelper({
+            Event,
+            veventComponent,
+            calendarID,
+            memberID,
+            addressID
+        });
+    };
+
     const handleCloseConfirmation = () => {
         return new Promise((resolve, reject) => {
-            createModal(
-                <ConfirmModal
-                    title={c('Info').t`Discard changes?`}
-                    close={<ResetButton autoFocus={true}>{c('Action').t`Cancel`}</ResetButton>}
-                    confirm={c('Action').t`Discard`}
-                    onClose={reject}
-                    onConfirm={resolve}
-                >
-                    <Alert type="warning">{c('Info').t`You will lose all unsaved changes.`}</Alert>
-                </ConfirmModal>
-            );
+            createModal(<CloseConfirmationModal onClose={reject} onConfirm={resolve} />);
         });
     };
 
-    const handleDeleteConfirmation = (isRecurring) => {
+    const handleDeleteConfirmation = () => {
         return new Promise((resolve, reject) => {
-            const message = isRecurring
-                ? c('Info').t`Would you like to delete all recurring events?`
-                : c('Info').t`Would you like to delete this event?`;
-            const title = isRecurring ? c('Info').t`Delete events` : c('Info').t`Delete event`;
+            createModal(<DeleteConfirmModal onClose={reject} onConfirm={resolve} />);
+        });
+    };
+
+    const handleDeleteRecurringConfirmation = (isFirstOccurrence) => {
+        return new Promise((resolve, reject) => {
             createModal(
-                <ConfirmModal
-                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
-                    title={title}
-                    close={<ResetButton autoFocus={true}>{c('Action').t`Cancel`}</ResetButton>}
+                <DeleteRecurringConfirmModal
+                    isFirstOccurrence={isFirstOccurrence}
                     onClose={reject}
                     onConfirm={resolve}
-                >
-                    <Alert type="error">{message}</Alert>
-                </ConfirmModal>
+                />
             );
         });
     };
 
-    const handleDeleteEvent = async ({ CalendarID, ID: EventID }, isRecurring) => {
-        await handleDeleteConfirmation(isRecurring);
-        await api(deleteEvent(CalendarID, EventID));
-        await call();
+    const handleDeleteEvent = async (
+        { CalendarID, ID: EventID },
+        { isRecurring, recurrence, data: { readEvent, Calendar, Event } }
+    ) => {
+        if (isRecurring && recurrence && !recurrence.isSingleOccurrence) {
+            const deleteType = await handleDeleteRecurringConfirmation(recurrence.occurrenceNumber === 1);
+
+            if (deleteType === RECURRING_DELETE_TYPES.SINGLE || deleteType === RECURRING_DELETE_TYPES.FUTURE) {
+                const calendarBootstrap = readCalendarBootstrap(Calendar.ID);
+                const { Member, Address } = getMemberAndAddress(addresses, calendarBootstrap.Members, Event.Author);
+                const [[veventComponent, personalMap] = [], promise, error] = readEvent(Calendar.ID, Event.ID);
+                if (!veventComponent || !personalMap || promise || error) {
+                    return;
+                }
+
+                const updatedVeventComponent =
+                    deleteType === RECURRING_DELETE_TYPES.SINGLE
+                        ? deleteSingleRecurrence(veventComponent, recurrence.localStart)
+                        : deleteFutureRecurrence(veventComponent, recurrence.localStart);
+
+                const componentWithValarm = {
+                    ...updatedVeventComponent,
+                    components: personalMap[Member.ID]
+                };
+
+                await handleSaveEventHelper({
+                    Event,
+                    veventComponent: componentWithValarm,
+                    calendarID: Calendar.ID,
+                    addressID: Address.ID,
+                    memberID: Member.ID
+                });
+            }
+
+            if (deleteType === RECURRING_DELETE_TYPES.ALL) {
+                await api(deleteEvent(CalendarID, EventID));
+                await call();
+            }
+        } else {
+            await handleDeleteConfirmation();
+            await api(deleteEvent(CalendarID, EventID));
+            await call();
+        }
     };
 
     const safeCloseTemporaryEventAndPopover = () => {
@@ -629,7 +650,7 @@ const InteractiveCalendarView = ({
                             tzid={tzid}
                             weekStartsOn={weekStartsOn}
                             formatTime={formatTime}
-                            onDelete={() => handleDeleteEvent(targetEvent.data.Event, !!targetEvent.isRecurring)}
+                            onDelete={() => handleDeleteEvent(targetEvent.data.Event, targetEvent)}
                             onEdit={() => {
                                 const newTemporaryModel = getUpdateModel(targetEvent.data);
                                 const newTemporaryEvent = getTemporaryEvent(
@@ -692,10 +713,7 @@ const InteractiveCalendarView = ({
                         ) {
                             return;
                         }
-                        return handleDeleteEvent(
-                            temporaryEvent.data.Event,
-                            !!temporaryEvent.tmpOriginalTarget.isRecurring
-                        );
+                        return handleDeleteEvent(temporaryEvent.data.Event, temporaryEvent.tmpOriginalTarget);
                     }}
                     onClose={({ safe = false } = {}) => {
                         if (safe) {

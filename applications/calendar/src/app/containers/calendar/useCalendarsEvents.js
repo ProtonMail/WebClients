@@ -3,7 +3,7 @@ import { useApi, useEventManager } from 'react-components';
 import { queryEvents } from 'proton-shared/lib/api/calendars';
 import { differenceInHours, getUnixTime } from 'date-fns';
 import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
-import { isIcalRecurring, getOccurrencesBetween } from 'proton-shared/lib/calendar/recurring';
+import { isIcalRecurring, getOccurrencesBetween, getIsMoreThanOccurrence } from 'proton-shared/lib/calendar/recurring';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { unwrap } from 'proton-shared/lib/calendar/helper';
 import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
@@ -63,12 +63,17 @@ const getRecurringEvents = (events, recurringEvents, searchStart, searchEnd) => 
         const recurringEventCache = recurringEvents.get(id);
 
         const utcIntervals = getOccurrencesBetween(component, searchStart, searchEnd, recurringEventCache);
+        const isSingleOccurrence = !getIsMoreThanOccurrence(component, 1, recurringEventCache);
 
         if (!utcIntervals.length) {
             continue;
         }
 
-        result.push({ id, events: utcIntervals });
+        result.push({
+            id,
+            events: utcIntervals,
+            isSingleOccurrence
+        });
     }
     return result;
 };
@@ -114,14 +119,14 @@ const setEventInCache = (Event, { tree, events, recurringEvents, decryptedEvents
         const isAllDay = isIcalAllDay(component);
         const isRecurring = isIcalRecurring(component);
 
-        const start = propertyToUTCDate(dtstart);
+        const utcStart = propertyToUTCDate(dtstart);
         const rawEnd = propertyToUTCDate(dtend);
         const modifiedEnd = isAllDay
             ? addDays(rawEnd, -1) // All day event range is non-inclusive
             : rawEnd;
-        const end = max(start, modifiedEnd);
+        const utcEnd = max(utcStart, modifiedEnd);
 
-        const isAllPartDay = !isAllDay && differenceInHours(end, start) >= 24;
+        const isAllPartDay = !isAllDay && differenceInHours(utcEnd, utcStart) >= 24;
 
         if (isRecurring) {
             if (oldEvent && !oldEvent.isRecurring) {
@@ -136,11 +141,11 @@ const setEventInCache = (Event, { tree, events, recurringEvents, decryptedEvents
             }
 
             if (!oldEvent || isOldRecurring) {
-                tree.insert(+start, +end, EventID);
-            } else if (+start !== +oldEvent.start || +end !== +oldEvent.end) {
+                tree.insert(+utcStart, +utcEnd, EventID);
+            } else if (+utcStart !== +oldEvent.start || +utcEnd !== +oldEvent.end) {
                 // Interval changed
                 tree.remove(+oldEvent.start, +oldEvent.end, EventID);
-                tree.insert(+start, +end, EventID);
+                tree.insert(+utcStart, +utcEnd, EventID);
             }
         }
 
@@ -152,8 +157,8 @@ const setEventInCache = (Event, { tree, events, recurringEvents, decryptedEvents
             isAllDay,
             isAllPartDay,
 
-            start,
-            end,
+            start: utcStart,
+            end: utcEnd,
 
             counter: ((oldEvent && oldEvent.counter) || 0) + 1
         };
@@ -392,7 +397,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                 });
 
                 const recurringResults = getRecurringEvents(events, recurringEvents, searchStart, searchEnd)
-                    .map(({ id, events: expandedEvents }) => {
+                    .map(({ id, events: expandedEvents, isSingleOccurrence }) => {
                         const { Event, isAllDay, isAllPartDay, isRecurring, counter } = events.get(id);
 
                         const data = {
@@ -402,14 +407,21 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                             counter
                         };
 
-                        return expandedEvents.map(([start, end], i) => {
+                        return expandedEvents.map(({ utcStart, utcEnd, localStart, localEnd, occurrenceNumber }) => {
+                            const recurrence = {
+                                occurrenceNumber,
+                                localStart,
+                                localEnd,
+                                isSingleOccurrence
+                            };
                             return {
-                                id: `${id}-${i}`,
+                                id: `${id}-${occurrenceNumber}`,
                                 isAllDay,
                                 isAllPartDay,
                                 isRecurring,
-                                start,
-                                end,
+                                start: utcStart,
+                                end: utcEnd,
+                                recurrence,
                                 data
                             };
                         });
@@ -418,22 +430,36 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
 
                 return results
                     .concat(recurringResults)
-                    .map(({ start: utcStart, end: utcEnd, isAllDay, isAllPartDay, isRecurring, data, id }) => {
-                        const start = isAllDay
-                            ? utcStart
-                            : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStart), tzid));
-                        const end = isAllDay ? utcEnd : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcEnd), tzid));
-
-                        return {
-                            id,
-                            isAllDay: isAllDay || isAllPartDay,
+                    .map(
+                        ({
+                            start: utcStart,
+                            end: utcEnd,
+                            isAllDay,
                             isAllPartDay,
                             isRecurring,
-                            start,
-                            end,
-                            data
-                        };
-                    });
+                            recurrence,
+                            data,
+                            id
+                        }) => {
+                            const start = isAllDay
+                                ? utcStart
+                                : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStart), tzid));
+                            const end = isAllDay
+                                ? utcEnd
+                                : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcEnd), tzid));
+
+                            return {
+                                id,
+                                isAllDay: isAllDay || isAllPartDay,
+                                isAllPartDay,
+                                isRecurring,
+                                recurrence,
+                                start,
+                                end,
+                                data
+                            };
+                        }
+                    );
             })
             .flat();
 
