@@ -22,35 +22,24 @@ import {
 } from 'proton-shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { FOLDER_PAGE_SIZE } from '../constants';
-import { useUploadProvider, Upload, BlockMeta } from '../components/uploads/UploadProvider';
-import { TransferState, TransferMeta } from '../interfaces/transfer';
+import { useUploadProvider, BlockMeta } from '../components/uploads/UploadProvider';
+import { TransferMeta } from '../interfaces/transfer';
 import { useDownloadProvider } from '../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../components/downloads/download';
 import { streamToBuffer } from '../utils/stream';
-import { DriveLink } from '../interfaces/link';
+import { HashCheckResult } from '../interfaces/link';
 import { lookup } from 'mime-types';
 import { noop } from 'proton-shared/lib/helpers/function';
 import useDriveCrypto from './useDriveCrypto';
 import { binaryStringToArray } from 'proton-shared/lib/helpers/string';
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 import useCachedResponse from './useCachedResponse';
+import { range } from 'proton-shared/lib/helpers/array';
+import { queryCheckAvailableHashes } from '../api/link';
+import { splitExtension } from 'proton-shared/lib/helpers/file';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
-const adjustFileName = (
-    file: File,
-    uploads: Upload[],
-    contents: DriveLink[],
-    index = 0
-): { blob: Blob; filename: string } => {
-    const extensionRx = /\.[^/.]+$/g;
-    const extension = file.name.match(extensionRx)?.[0] ?? '';
-    const adjustedFileName = index ? `${file.name.replace(extensionRx, '')} (${index})${extension}` : file.name;
-    const lowercaseName = adjustedFileName.toLowerCase();
-    const fileNameExists = contents.some((item) => item.Name.toLowerCase() === lowercaseName);
-    const fileNameUploading = uploads.some((item) => item.meta.filename.toLowerCase() === lowercaseName);
-    return fileNameExists || fileNameUploading
-        ? adjustFileName(file, uploads, contents, index + 1)
-        : { blob: new Blob([file], { type: file.type }), filename: adjustedFileName };
-};
+const HASH_CHECK_AMOUNT = 10;
 
 export interface UploadFileMeta {
     Name: string;
@@ -60,7 +49,7 @@ function useFiles(shareId: string) {
     const api = useApi();
     const { getCachedResponse } = useCachedResponse();
     const { getPrimaryAddressKey, sign, getVerificationKeys } = useDriveCrypto();
-    const { getFolderMeta, getFolderContents, decryptLink, clearFolderContentsCache } = useShare(shareId);
+    const { getFolderMeta, decryptLink, clearFolderContentsCache } = useShare(shareId);
     const { addToDownloadQueue } = useDownloadProvider();
     const { startUpload, uploads } = useUploadProvider();
     const { call } = useEventManager();
@@ -88,6 +77,55 @@ function useFiles(shareId: string) {
             }),
         [shareId]
     );
+
+    const findAvailableName = async (
+        parentLinkID: string,
+        filename: string,
+        start = 0
+    ): Promise<{ filename: string; hash: string }> => {
+        const { hashKey } = await getFolderMeta(parentLinkID);
+        const [namePart, extension] = splitExtension(filename);
+
+        const adjustName = (i: number) => {
+            if (i === 0) {
+                return filename;
+            }
+
+            if (!namePart) {
+                return [`.${extension}`, `(${i})`].filter(isTruthy).join(' ');
+            }
+
+            const newNamePart = [namePart, `(${i})`].filter(isTruthy).join(' ');
+            return extension ? [newNamePart, extension].join('.') : newNamePart;
+        };
+
+        const hashesToCheck = await Promise.all(
+            range(start, start + HASH_CHECK_AMOUNT).map(async (i) => {
+                const adjustedFileName = adjustName(i);
+                return {
+                    filename: adjustedFileName,
+                    hash: await generateLookupHash(adjustedFileName.toLowerCase(), hashKey)
+                };
+            })
+        );
+
+        const Hashes = hashesToCheck.map(({ hash }) => hash);
+        const { AvailableHashes } = await api<HashCheckResult>(
+            queryCheckAvailableHashes(shareId, parentLinkID, { Hashes })
+        );
+
+        if (!AvailableHashes.length) {
+            return findAvailableName(parentLinkID, filename, start + HASH_CHECK_AMOUNT);
+        }
+
+        const availableName = hashesToCheck.find(({ hash }) => hash === AvailableHashes[0]);
+
+        if (!availableName) {
+            throw new Error('Backend returned unexpected hash');
+        }
+
+        return availableName;
+    };
 
     const getFileRevision = useCallback(
         async ({ ID, ActiveRevision }: DriveFile) =>
@@ -120,7 +158,7 @@ function useFiles(shareId: string) {
 
     const uploadDriveFile = useCallback(
         async (ParentLinkID: string, file: File) => {
-            const [{ privateKey: parentKey, hashKey }, { privateKey: addressKey, address }] = await Promise.all([
+            const [{ privateKey: parentKey }, { privateKey: addressKey, address }] = await Promise.all([
                 getFolderMeta(ParentLinkID),
                 getPrimaryAddressKey()
             ]);
@@ -136,32 +174,18 @@ function useFiles(shareId: string) {
                 throw new Error('Could not generate ContentKeyPacket');
             }
 
-            // Name checks only among uploads to the same parent link
-            const activeUploads = uploads.filter(
-                ({ state, meta }) =>
-                    meta.linkId === ParentLinkID &&
-                    meta.shareId === shareId &&
-                    (state === TransferState.Done ||
-                        state === TransferState.Pending ||
-                        state === TransferState.Progress)
-            );
-
-            // TODO: contents will have pages, need to load all pages to check.
-            clearFolderContentsCache(ParentLinkID, 0, FOLDER_PAGE_SIZE);
-            const contents = await getFolderContents(ParentLinkID, 0, FOLDER_PAGE_SIZE);
-            const { blob, filename } = adjustFileName(file, activeUploads, contents);
+            // TODO: create initially with original name, rename after check is done
+            const { filename, hash: Hash } = await findAvailableName(ParentLinkID, file.name);
+            const blob = new Blob([file], { type: file.type });
 
             startUpload(
                 { blob, filename, shareId, linkId: ParentLinkID },
                 {
                     initialize: async () => {
-                        const [Hash, Name] = await Promise.all([
-                            generateLookupHash(filename.toLowerCase(), hashKey),
-                            encryptUnsigned({
-                                message: filename,
-                                privateKey: parentKey
-                            })
-                        ]);
+                        const Name = await encryptUnsigned({
+                            message: filename,
+                            privateKey: parentKey
+                        });
 
                         const MimeType = lookup(filename) || 'application/octet-stream';
 
