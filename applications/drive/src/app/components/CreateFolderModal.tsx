@@ -43,14 +43,14 @@ const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
             loading={loading}
             onSubmit={() => withLoading(handleSubmit())}
             title={c('Title').t`Create a new folder`}
-            submit={c('Action').t`Submit`}
+            submit={c('Action').t`Create`}
             {...rest}
         >
             <Row className="p1 pl2">
                 <Label>{c('Label').t`Folder name`}</Label>
                 <Field>
                     <Input
-                        id="file-name"
+                        id="folder-name"
                         autoFocus
                         value={folderName}
                         placeholder={c('Placeholder').t`New folder`}

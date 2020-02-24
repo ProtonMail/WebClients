@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ToolbarSeparator, Toolbar, ToolbarButton, useModals } from 'react-components';
+import { c } from 'ttag';
 import { DriveResource } from './DriveResourceProvider';
 import useShare from '../../hooks/useShare';
 import { ResourceType } from '../../interfaces/folder';
@@ -8,7 +9,7 @@ import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from './Drive';
 import { useDriveContent } from './DriveContentProvider';
 import CreateFolderModal from '../CreateFolderModal';
-import { c } from 'ttag';
+import RenameModal from '../RenameModal';
 
 interface Props {
     resource: DriveResource;
@@ -55,21 +56,35 @@ const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
         });
     };
 
-    const handleCreateFolder = async () => {
+    const handleCreateFolder = () => {
         // Reloads all folder contents after folder creation
-        await createModal(<CreateFolderModal onDone={() => addToLoadQueue(resource)} resource={resource} />);
+        createModal(<CreateFolderModal onDone={() => addToLoadQueue(resource)} resource={resource} />);
+    };
+
+    const handleRename = () => {
+        createModal(
+            <RenameModal onDone={() => addToLoadQueue(resource)} item={selectedItems[0]} shareId={resource.shareId} />
+        );
     };
 
     return (
         <Toolbar>
-            {parentID && (
+            {
                 <>
-                    <ToolbarButton title={c('Action').t`Back`} onClick={handleBackClick} icon="arrow-left" />
+                    <ToolbarButton
+                        disabled={!parentID}
+                        title={c('Action').t`Back`}
+                        onClick={handleBackClick}
+                        icon="arrow-left"
+                    />
                     <ToolbarSeparator />
                 </>
-            )}
+            }
 
-            <ToolbarButton title={c('Action').t`New folder`} icon="folder" onClick={handleCreateFolder} />
+            <ToolbarButton icon="folder" title={c('Action').t`New Folder`} onClick={handleCreateFolder} />
+            {selectedItems.length === 1 && (
+                <ToolbarButton title={c('Action').t`Rename`} icon="pen" onClick={handleRename} />
+            )}
             {onlyFilesSelected && selectedItems.length > 0 && (
                 <ToolbarButton title={c('Action').t`Download`} icon="download" onClick={handleDownloadClick} />
             )}

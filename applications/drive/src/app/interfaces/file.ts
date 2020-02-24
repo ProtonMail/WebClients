@@ -56,6 +56,7 @@ export interface DriveFile {
     HashKey: string;
     ContentKeyPacket: string;
     Name: string;
+    Hash: string;
     ActiveRevision: ActiveFileRevision;
 }
 
