@@ -151,7 +151,7 @@ const getProperty = (name, { value, parameters }) => {
 
     const type = specificType || property.type;
 
-    if (property.isMultiValue) {
+    if (property.isMultiValue && Array.isArray(value)) {
         property.setValues(value.map((val) => internalValueToIcalValue(type, val, restParameters)));
     } else {
         property.setValue(internalValueToIcalValue(type, value, restParameters));
@@ -260,7 +260,14 @@ const fromIcalProperties = (properties = []) => {
             acc[name] = [];
         }
 
-        acc[name].push(propertyAsObject);
+        // Exdate can be both an array and multivalue, force it to only be an array
+        if (name === 'exdate') {
+            const normalizedValues = values.map((value) => ({ ...propertyAsObject, value }));
+
+            acc[name] = acc[name].concat(normalizedValues);
+        } else {
+            acc[name].push(propertyAsObject);
+        }
 
         return acc;
     }, {});

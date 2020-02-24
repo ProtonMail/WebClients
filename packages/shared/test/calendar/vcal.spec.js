@@ -683,6 +683,32 @@ describe('calendar', () => {
         expect(trimAll(result)).toEqual(trimAll(allDayVevent));
     });
 
+    it('should normalize exdate', () => {
+        const veventWithExdate = `BEGIN:VEVENT
+RRULE:FREQ=DAILY;COUNT=6
+DTSTART;TZID=Europe/Zurich:20200309T043000
+DTEND;TZID=Europe/Zurich:20200309T063000
+EXDATE:19960402T010000Z,19960403T010000Z,19960404T010000Z
+EXDATE;TZID=Europe/Zurich:20200311T043000
+EXDATE;TZID=Europe/Zurich:20200313T043000
+EXDATE;VALUE=DATE:20200311
+END:VEVENT
+`;
+        const normalizedVevent = `BEGIN:VEVENT
+RRULE:FREQ=DAILY;COUNT=6
+DTSTART;TZID=Europe/Zurich:20200309T043000
+DTEND;TZID=Europe/Zurich:20200309T063000
+EXDATE:19960402T010000Z
+EXDATE:19960403T010000Z
+EXDATE:19960404T010000Z
+EXDATE;TZID=Europe/Zurich:20200311T043000
+EXDATE;TZID=Europe/Zurich:20200313T043000
+EXDATE;VALUE=DATE:20200311
+END:VEVENT`;
+        const result = serialize(parse(veventWithExdate));
+        expect(trimAll(result)).toEqual(trimAll(normalizedVevent));
+    });
+
     it('should parse trigger string', () => {
         expect(fromTriggerString('-PT30M')).toEqual({
             weeks: 0,

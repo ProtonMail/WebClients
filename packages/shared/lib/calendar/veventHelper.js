@@ -5,7 +5,7 @@ import { fromInternalAttendee } from './attendees';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR } = CALENDAR_CARD_TYPE;
 
-export const SHARED_SIGNED_FIELDS = ['uid', 'dtstamp', 'dtstart', 'dtend', 'rrule', 'transp', 'vtimezone'];
+export const SHARED_SIGNED_FIELDS = ['uid', 'dtstamp', 'dtstart', 'dtend', 'rrule', 'exdate', 'transp', 'vtimezone'];
 export const SHARED_ENCRYPTED_FIELDS = ['uid', 'dtstamp', 'created', 'description', 'summary', 'location'];
 
 export const CALENDAR_SIGNED_FIELDS = ['uid', 'dtstamp'];

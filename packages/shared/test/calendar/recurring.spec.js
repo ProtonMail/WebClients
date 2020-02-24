@@ -1,6 +1,24 @@
 import { parse } from '../../lib/calendar/vcal';
 import { getOccurrencesBetween } from '../../lib/calendar/recurring';
 
+const stringifyResult = (result) => {
+    return result.map(({ utcStart, utcEnd, occurrenceNumber }) => {
+        return `${utcStart.toISOString()} - ${utcEnd.toISOString()} | ${occurrenceNumber}`;
+    });
+};
+
+const stringifyResultFull = (result) => {
+    return result.map(({ localStart, localEnd, utcStart, utcEnd, occurrenceNumber }) => {
+        return `${localStart.toISOString()} - ${localEnd.toISOString()} | ${utcStart.toISOString()} - ${utcEnd.toISOString()} | ${occurrenceNumber}`;
+    });
+};
+
+const stringifyResultSimple = (result) => {
+    return result.map(({ utcStart, utcEnd }) => {
+        return `${utcStart.toISOString()} - ${utcEnd.toISOString()}`;
+    });
+};
+
 describe('recurring', () => {
     const component = {
         dtstart: {
@@ -29,26 +47,33 @@ describe('recurring', () => {
         expect(result).toEqual([]);
     });
 
+    it('should get initial occurrences between a range', () => {
+        const result = getOccurrencesBetween(component, Date.UTC(2018, 1, 1), Date.UTC(2019, 1, 3));
+
+        expect(stringifyResult(result)).toEqual([
+            '2019-01-30T01:30:00.000Z - 2019-01-30T02:30:00.000Z | 1',
+            '2019-01-31T01:30:00.000Z - 2019-01-31T02:30:00.000Z | 2',
+            '2019-02-01T01:30:00.000Z - 2019-02-01T02:30:00.000Z | 3',
+            '2019-02-02T01:30:00.000Z - 2019-02-02T02:30:00.000Z | 4'
+        ]);
+    });
+
     it('should get occurrences between a range', () => {
         const result = getOccurrencesBetween(component, Date.UTC(2019, 2, 1), Date.UTC(2019, 2, 3));
 
-        expect(
-            result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
-        ).toEqual([
-            '2019-03-01T01:30:00.000Z - 2019-03-01T02:30:00.000Z',
-            '2019-03-02T01:30:00.000Z - 2019-03-02T02:30:00.000Z'
+        expect(stringifyResult(result)).toEqual([
+            '2019-03-01T01:30:00.000Z - 2019-03-01T02:30:00.000Z | 31',
+            '2019-03-02T01:30:00.000Z - 2019-03-02T02:30:00.000Z | 32'
         ]);
     });
 
     it('should get occurrences between a dst range', () => {
         const result = getOccurrencesBetween(component, Date.UTC(2019, 9, 26), Date.UTC(2019, 9, 29));
 
-        expect(
-            result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
-        ).toEqual([
-            '2019-10-26T00:30:00.000Z - 2019-10-26T01:30:00.000Z',
-            '2019-10-27T01:30:00.000Z - 2019-10-27T02:30:00.000Z',
-            '2019-10-28T01:30:00.000Z - 2019-10-28T02:30:00.000Z'
+        expect(stringifyResultFull(result)).toEqual([
+            '2019-10-26T02:30:00.000Z - 2019-10-26T03:30:00.000Z | 2019-10-26T00:30:00.000Z - 2019-10-26T01:30:00.000Z | 270',
+            '2019-10-27T02:30:00.000Z - 2019-10-27T03:30:00.000Z | 2019-10-27T01:30:00.000Z - 2019-10-27T02:30:00.000Z | 271',
+            '2019-10-28T02:30:00.000Z - 2019-10-28T03:30:00.000Z | 2019-10-28T01:30:00.000Z - 2019-10-28T02:30:00.000Z | 272'
         ]);
     });
 
@@ -63,11 +88,9 @@ describe('recurring', () => {
         const cache = {};
         const result1 = getOccurrencesBetween(component, Date.UTC(2019, 2, 1), Date.UTC(2019, 2, 3), cache);
         const result2 = getOccurrencesBetween(component, Date.UTC(2031, 2, 1), Date.UTC(2031, 2, 3), cache);
-        expect(
-            result2.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
-        ).toEqual([
-            '2031-03-01T01:30:00.000Z - 2031-03-01T02:30:00.000Z',
-            '2031-03-02T01:30:00.000Z - 2031-03-02T02:30:00.000Z'
+        expect(stringifyResult(result2)).toEqual([
+            '2031-03-01T01:30:00.000Z - 2031-03-01T02:30:00.000Z | 4414',
+            '2031-03-02T01:30:00.000Z - 2031-03-02T02:30:00.000Z | 4415'
         ]);
     });
 
@@ -80,9 +103,7 @@ RRULE:FREQ=WEEKLY;BYDAY=SU,MO,TU,WE,TH,FR,SA;COUNT=3
 END:VEVENT`);
         const cache = {};
         const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
-        expect(
-            result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
-        ).toEqual([
+        expect(stringifyResultSimple(result)).toEqual([
             '2020-01-29T00:00:00.000Z - 2020-01-29T00:00:00.000Z',
             '2020-01-30T00:00:00.000Z - 2020-01-30T00:00:00.000Z',
             '2020-01-31T00:00:00.000Z - 2020-01-31T00:00:00.000Z'
@@ -98,9 +119,7 @@ RRULE:FREQ=WEEKLY;BYDAY=SU,MO,TU,WE,TH,FR,SA;UNTIL=20200131
 END:VEVENT`);
         const cache = {};
         const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
-        expect(
-            result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
-        ).toEqual([
+        expect(stringifyResultSimple(result)).toEqual([
             '2020-01-29T00:00:00.000Z - 2020-01-29T00:00:00.000Z',
             '2020-01-30T00:00:00.000Z - 2020-01-30T00:00:00.000Z',
             '2020-01-31T00:00:00.000Z - 2020-01-31T00:00:00.000Z'
@@ -116,9 +135,7 @@ RRULE:FREQ=WEEKLY;BYDAY=SU,MO,TU,WE,TH,FR,SA;UNTIL=20200131T235959Z
 END:VEVENT`);
         const cache = {};
         const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
-        expect(
-            result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
-        ).toEqual([
+        expect(stringifyResultSimple(result)).toEqual([
             '2020-01-29T13:00:00.000Z - 2020-01-29T13:30:00.000Z',
             '2020-01-30T13:00:00.000Z - 2020-01-30T13:30:00.000Z',
             '2020-01-31T13:00:00.000Z - 2020-01-31T13:30:00.000Z'
@@ -134,9 +151,7 @@ RRULE:FREQ=WEEKLY;BYDAY=SU,MO,TU,WE,TH,FR,SA;UNTIL=20200201T105959Z
 END:VEVENT`);
         const cache = {};
         const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
-        expect(
-            result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
-        ).toEqual([
+        expect(stringifyResultSimple(result)).toEqual([
             '2020-01-29T11:00:00.000Z - 2020-01-29T12:30:00.000Z',
             '2020-01-30T11:00:00.000Z - 2020-01-30T12:30:00.000Z',
             '2020-01-31T11:00:00.000Z - 2020-01-31T12:30:00.000Z'
@@ -153,13 +168,71 @@ END:VEVENT
 `);
         const cache = {};
         const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2021, 2, 1), cache);
-        expect(
-            result.map(([start, end]) => `${new Date(start).toISOString()} - ${new Date(end).toISOString()}`)
-        ).toEqual([
+        expect(stringifyResultSimple(result)).toEqual([
             '2020-01-26T00:00:00.000Z - 2020-01-26T00:00:00.000Z',
             '2020-02-01T00:00:00.000Z - 2020-02-01T00:00:00.000Z',
             '2020-02-02T00:00:00.000Z - 2020-02-02T00:00:00.000Z',
             '2020-02-08T00:00:00.000Z - 2020-02-08T00:00:00.000Z'
+        ]);
+    });
+
+    it('should fill occurrences for an event with an exdate', () => {
+        const component = parse(`
+BEGIN:VEVENT
+RRULE:FREQ=DAILY;COUNT=6
+DTSTART;TZID=Europe/Zurich:20200309T043000
+DTEND;TZID=Europe/Zurich:20200309T063000
+EXDATE;TZID=Europe/Zurich:20200311T043000
+EXDATE;TZID=Europe/Zurich:20200313T043000
+END:VEVENT
+`);
+        const cache = {};
+        const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2021, 4, 1), cache);
+        expect(stringifyResult(result)).toEqual([
+            '2020-03-09T03:30:00.000Z - 2020-03-09T05:30:00.000Z | 1',
+            '2020-03-10T03:30:00.000Z - 2020-03-10T05:30:00.000Z | 2',
+            '2020-03-12T03:30:00.000Z - 2020-03-12T05:30:00.000Z | 4',
+            '2020-03-14T03:30:00.000Z - 2020-03-14T05:30:00.000Z | 6'
+        ]);
+    });
+
+    it('should fill occurrences for an all day event with an exdate', () => {
+        const component = parse(`
+BEGIN:VEVENT
+RRULE:FREQ=DAILY;COUNT=6
+DTSTART;VALUE=DATE:20200201
+DTEND;VALUE=DATE:20200202
+EXDATE;VALUE=DATE:20200201
+EXDATE;VALUE=DATE:20200202
+EXDATE;VALUE=DATE:20200203
+END:VEVENT
+`);
+        const cache = {};
+        const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2021, 4, 1), cache);
+        expect(stringifyResultSimple(result)).toEqual([
+            '2020-02-04T00:00:00.000Z - 2020-02-04T00:00:00.000Z',
+            '2020-02-05T00:00:00.000Z - 2020-02-05T00:00:00.000Z',
+            '2020-02-06T00:00:00.000Z - 2020-02-06T00:00:00.000Z'
+        ]);
+    });
+
+    it('should fill occurrences for a UTC date with an exdate', () => {
+        const component = parse(`
+BEGIN:VEVENT
+RRULE:FREQ=DAILY;COUNT=6
+DTSTART:20200201T030000Z
+DTEND:20200201T040000Z
+EXDATE:20200202T030000Z
+EXDATE:20200203T030000Z
+EXDATE:20200204T030000Z
+END:VEVENT
+`);
+        const cache = {};
+        const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2021, 4, 1), cache);
+        expect(stringifyResultSimple(result)).toEqual([
+            '2020-02-01T03:00:00.000Z - 2020-02-01T04:00:00.000Z',
+            '2020-02-05T03:00:00.000Z - 2020-02-05T04:00:00.000Z',
+            '2020-02-06T03:00:00.000Z - 2020-02-06T04:00:00.000Z'
         ]);
     });
 });
