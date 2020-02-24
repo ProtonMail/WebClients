@@ -74,16 +74,12 @@ $dropDown-narrow-width: 8em !default;
   min-height: 4em;
   max-height: 30vh;
   padding: 0; // no padding for the drop shadow :-\
-  margin: 0 0 0 1em;
+  margin: 0;
 
   background: var(--bgcolor-main-area, $white) no-repeat;
   background-image: radial-gradient(farthest-side at 50% 0,var(--bordercolor-input, #acb0bf),transparent),radial-gradient(farthest-side at 50% 100%,var(--bordercolor-input, #acb0bf),transparent);
   background-position: 50% 0, 0 100%;
   background-size: calc(100% - 20px) 3px;
-
-  > * {
-    margin-right: .5em;
-  }
 
 }
 .dropDown-contentInner {
@@ -184,7 +180,9 @@ $dropDown-narrow-width: 8em !default;
 .dropDown-item:hover {
   background-color: var(--bgcolor-input, $pm-global-light);
 }
-
+.dropDown-item {
+	padding-left: 1em;
+}
 
 /* border on items */
 .dropDown-item + .dropDown-item {
