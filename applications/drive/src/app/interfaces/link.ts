@@ -21,3 +21,7 @@ export interface DriveLink {
 export interface DriveLinkResult {
     Link: DriveLink;
 }
+
+export interface HashCheckResult {
+    AvailableHashes: string[];
+}
