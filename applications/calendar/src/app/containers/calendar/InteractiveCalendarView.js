@@ -460,9 +460,10 @@ const InteractiveCalendarView = ({
                         ? deleteSingleRecurrence(veventComponent, recurrence.localStart)
                         : deleteFutureRecurrence(veventComponent, recurrence.localStart);
 
+                const { components: valarmComponents = [] } = personalMap[Member.ID] || {};
                 const componentWithValarm = {
                     ...updatedVeventComponent,
-                    components: personalMap[Member.ID]
+                    components: valarmComponents
                 };
 
                 await handleSaveEventHelper({
