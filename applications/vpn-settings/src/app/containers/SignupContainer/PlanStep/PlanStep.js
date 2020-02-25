@@ -79,9 +79,9 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
                     .t`View full plan comparison`}</LinkButton>
             </div>
             <div className="mt2 aligncenter">
-                <span>{c('Info').jt`All plans support: ${supportedOS}`}</span>
-                <span className="ml2 mr2 bordered" />
-                <span>{c('Info').t`30-days money back guarantee`}</span>
+                <span className="automobile">{c('Info').jt`All plans support: ${supportedOS}`}</span>
+                <span className="ml2 mr2 bordered nomobile" />
+                <span className="automobile">{c('Info').t`30-days money back guarantee`}</span>
             </div>
         </>
     );
