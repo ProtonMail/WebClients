@@ -4,10 +4,10 @@ const chalk = require('chalk');
 const IS_VERBOSE = argv.v || argv.verbose;
 
 module.exports = (scope) => {
-    const warn = (msg) => {
-        console.log();
+    const warn = (msg, addSpaces = true) => {
+        addSpaces && console.log();
         console.log(chalk.bgMagenta(chalk.white('[warning]')), msg);
-        console.log();
+        addSpaces && console.log();
     };
 
     const success = (msg, { time, space = false } = {}) => {
