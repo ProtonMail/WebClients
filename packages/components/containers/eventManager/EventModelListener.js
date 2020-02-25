@@ -70,6 +70,18 @@ const EventModelListener = ({ models }) => {
                 cache.delete(ADDRESSES_KEYS_CACHE);
             }
 
+            // The API some times does not send the user model when used space changes...
+            if (data.UsedSpace !== undefined) {
+                const oldUserRecord = cache.get(UserModel.key);
+                cache.set(UserModel.key, {
+                    ...oldUserRecord,
+                    value: {
+                        ...oldUserRecord.value,
+                        UsedSpace: data.UsedSpace
+                    }
+                });
+            }
+
             if (data) {
                 updateCalendarObject(data, cache.get(CALENDAR_BOOTSTRAP_CACHE), cache.get(CALENDAR_KEYS_CACHE));
             }
