@@ -61,7 +61,7 @@ const RenameModal = ({ shareId, item, onClose, onDone, ...rest }: Props) => {
             loading={loading}
             onSubmit={() => withLoading(handleSubmit())}
             title={isFolder ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
-            submit={c('Action').t`Create`}
+            submit={c('Action').t`Rename`}
             {...rest}
         >
             <Row className="p1 pl2">
