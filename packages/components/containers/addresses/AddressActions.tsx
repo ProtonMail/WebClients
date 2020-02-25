@@ -65,7 +65,7 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
             createModal(
                 <ConfirmModal onConfirm={resolve} onClose={reject}>
                     <Alert type="warning">{c('Warning')
-                        .t`By disabling this address, you will no longer be able to send or receive emails using this address. Are you sure you want to disable this address?`}</Alert>
+                        .t`By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?`}</Alert>
                 </ConfirmModal>
             );
         });
