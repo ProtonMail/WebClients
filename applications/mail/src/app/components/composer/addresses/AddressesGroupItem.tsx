@@ -33,7 +33,7 @@ const AddressesGroupItem = ({ recipientGroup, contacts, onChange, onRemove }: Pr
     return (
         <div className="composer-addresses-item bordered-container flex flex-items-center flex-nowrap flex-row mw80 stop-propagation">
             <span className="inline-flex pl0-5 pr0-5 no-pointer-events-children h100">
-                <Icon name="contacts-groups" size={12} className="mauto" />
+                <Icon name="contacts-groups" size={12} color={recipientGroup?.group?.Color} className="mauto" />
             </span>
             <span
                 className="composer-addresses-item-label mtauto mbauto pl0-5 ellipsis pr0-5"
