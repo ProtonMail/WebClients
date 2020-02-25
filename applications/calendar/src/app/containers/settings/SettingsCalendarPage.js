@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 import CalendarsSection from './section/CalendarsSection';
 import Main from '../../components/Main';
 
-const SettingsCalendarPage = ({ calendars, defaultCalendarID, loading }) => {
+const SettingsCalendarPage = ({ calendars, calendarUserSettings, loading }) => {
     return (
         <Main className="p2">
-            <CalendarsSection calendars={calendars} defaultCalendarID={defaultCalendarID} disabled={loading} />
+            <CalendarsSection calendars={calendars} calendarUserSettings={calendarUserSettings} disabled={loading} />
         </Main>
     );
 };
 
 SettingsCalendarPage.propTypes = {
     calendars: PropTypes.array,
-    defaultCalendarID: PropTypes.oneOfType([PropTypes.string, null]),
+    calendarUserSettings: PropTypes.object,
     loading: PropTypes.bool
 };
 

@@ -11,6 +11,7 @@ import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import createOrUpdateEvent from 'proton-shared/lib/calendar/integration/createOrUpdateEvent';
 import { deleteEvent, updateCalendar } from 'proton-shared/lib/api/calendars';
 import { omit } from 'proton-shared/lib/helpers/object';
+import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 
 import { getExistingEvent, getInitialModel, hasDoneChanges } from '../../components/eventModal/eventForm/state';
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
@@ -70,7 +71,7 @@ const InteractiveCalendarView = ({
     onChangeDate,
     onInteraction,
 
-    calendars,
+    activeCalendars,
     addresses,
     defaultCalendar,
     defaultCalendarBootstrap,
@@ -156,7 +157,7 @@ const InteractiveCalendarView = ({
             initialDate,
             CalendarSettings,
             Calendar: defaultCalendar,
-            Calendars: calendars,
+            Calendars: activeCalendars,
             Addresses: addresses,
             Members,
             Member,
@@ -176,7 +177,7 @@ const InteractiveCalendarView = ({
             initialDate,
             CalendarSettings,
             Calendar,
-            Calendars: calendars,
+            Calendars: activeCalendars,
             Addresses: addresses,
             Members,
             Member,
@@ -208,16 +209,17 @@ const InteractiveCalendarView = ({
                 return;
             }
 
-            let isAllowed = true;
+            const targetCalendar = (event && event.data && event.data.Calendar) || undefined;
 
-            if (!isAllowed) {
+            const isAllowedToTouchEvent = true;
+            let isAllowedToMoveEvent = getIsCalendarProbablyActive(targetCalendar);
+
+            if (!isAllowedToTouchEvent) {
                 return;
             }
 
             let newTemporaryModel = temporaryEvent && event.id === 'tmp' ? temporaryEvent.tmpData : undefined;
-
             let newTemporaryEvent = temporaryEvent && event.id === 'tmp' ? temporaryEvent : undefined;
-
             let initialModel = newTemporaryModel;
 
             return ({ action, payload }) => {
@@ -231,14 +233,14 @@ const InteractiveCalendarView = ({
                     return;
                 }
 
-                if (!isAllowed) {
+                if (!isAllowedToMoveEvent) {
                     return;
                 }
 
                 if (!newTemporaryModel) {
                     newTemporaryModel = getUpdateModel(event.data);
                     if (!newTemporaryModel) {
-                        isAllowed = false;
+                        isAllowedToMoveEvent = false;
                         return;
                     }
                     initialModel = newTemporaryModel;
@@ -385,7 +387,7 @@ const InteractiveCalendarView = ({
             api
         });
 
-        const calendar = calendars.find(({ ID }) => ID === calendarID);
+        const calendar = activeCalendars.find(({ ID }) => ID === calendarID);
         if (calendar && !calendar.Display) {
             await api(updateCalendar(calendarID, { Display: 1 }));
         }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
     useApi,
+    useAddresses,
     useEventManager,
     useNotifications,
     SubTitle,
@@ -17,13 +18,21 @@ import CalendarsTable from './CalendarsTable';
 import CalendarModal from '../CalendarModal';
 import { updateCalendarUserSettings, removeCalendar } from 'proton-shared/lib/api/calendars';
 import { MAX_CALENDARS_PER_USER } from '../../../constants';
+import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
+import { getProbablyActiveCalendars, getDefaultCalendar } from 'proton-shared/lib/calendar/calendar';
 
-const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
+const CalendarsSection = ({ calendars = [], calendarUserSettings = {}, disabled }) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const [loadingMap, setLoadingMap] = useState({});
+    const [addresses, loadingAddresses] = useAddresses();
+
+    const activeAddresses = getActiveAddresses(addresses);
+    const activeCalendars = getProbablyActiveCalendars(calendars);
+    const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
+    const defaultCalendarID = defaultCalendar ? defaultCalendar.ID : undefined;
 
     const handleCreate = () => {
         createModal(<CalendarModal calendars={calendars} defaultCalendarID={defaultCalendarID} />);
@@ -46,7 +55,7 @@ const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
 
     const handleDelete = async ({ ID }) => {
         const deleteDefaultCalendar = ID === defaultCalendarID;
-        const firstRemainingCalendar = calendars.find(({ ID: calendarID }) => calendarID !== ID);
+        const firstRemainingCalendar = activeCalendars.find(({ ID: calendarID }) => calendarID !== ID);
         const newDefaultCalendarID = (firstRemainingCalendar && firstRemainingCalendar.ID) || null;
 
         await new Promise((resolve, reject) => {
@@ -84,7 +93,7 @@ const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
         }
     };
 
-    const canAddCalendar = calendars.length < MAX_CALENDARS_PER_USER;
+    const canAddCalendar = !loadingAddresses && activeAddresses.length > 0 && calendars.length < MAX_CALENDARS_PER_USER;
 
     return (
         <>
@@ -109,7 +118,7 @@ const CalendarsSection = ({ calendars, defaultCalendarID, disabled }) => {
 
 CalendarsSection.propTypes = {
     calendars: PropTypes.array,
-    defaultCalendarID: PropTypes.oneOfType([PropTypes.string, null]),
+    calendarUserSettings: PropTypes.object,
     disabled: PropTypes.bool
 };
 

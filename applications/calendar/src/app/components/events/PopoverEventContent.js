@@ -3,15 +3,17 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { Icon } from 'react-components';
+import { Icon, Info } from 'react-components';
 
 import PopoverNotification from './PopoverNotification';
 import CalendarIcon from '../calendar/CalendarIcon';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { getTimezonedFrequencyString } from '../../helpers/rrule';
+import { truncate } from 'proton-shared/lib/helpers/string';
 
 const PopoverEventContent = ({
     Calendar = {},
+    isCalendarDisabled,
     event: { start, end, isAllDay, isAllPartDay } = {},
     tzid,
     weekStartsOn,
@@ -52,6 +54,21 @@ const PopoverEventContent = ({
         });
     }, [model.frequencyModel, weekdays, start]);
 
+    const calendarString = useMemo(() => {
+        if (isCalendarDisabled) {
+            const truncatedCalendarName = truncate(calendarName, 32);
+            const disabledText = <span className="italic">({c('Disabled calendar').t`Disabled`})</span>;
+            const tooltipText = c('Disabled calendar')
+                .t`The event belongs to a disabled calendar and you cannot modify it. Please enable your email address again to enable the calendar.`;
+            return (
+                <>
+                    {truncatedCalendarName} {disabledText} <Info title={tooltipText} />
+                </>
+            );
+        }
+        return calendarName;
+    }, [calendarName, isCalendarDisabled]);
+
     return (
         <>
             <div className="flex flex-nowrap mb0-5">
@@ -73,11 +90,11 @@ const PopoverEventContent = ({
                     <span className="break">{model.location}</span>
                 </div>
             ) : null}
-            {calendarName ? (
+            {calendarString ? (
                 <div className="flex flex-items-center flex-nowrap mb0-5">
                     <CalendarIcon color={Color} className="flex-item-noshrink mr1" />
                     <span className="ellipsis" title={calendarName}>
-                        {calendarName}
+                        {calendarString}
                     </span>
                 </div>
             ) : null}
@@ -103,6 +120,7 @@ const PopoverEventContent = ({
 
 PopoverEventContent.propTypes = {
     Calendar: PropTypes.object,
+    isCalendarDisabled: PropTypes.bool,
     event: PropTypes.object,
     tzid: PropTypes.string,
     weekStartsOn: PropTypes.number,

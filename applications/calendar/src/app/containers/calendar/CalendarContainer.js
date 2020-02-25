@@ -26,6 +26,11 @@ import AlarmContainer from '../alarms/AlarmContainer';
 import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
 import { canAskTimezoneSuggestion, saveLastTimezoneSuggestion } from '../../helpers/timezoneSuggestion';
 import { getTitleDateString } from './formatHelper';
+import {
+    getDefaultCalendar,
+    getIsCalendarDisabled,
+    getProbablyActiveCalendars
+} from 'proton-shared/lib/calendar/calendar';
 
 const { DAY, WEEK, MONTH } = VIEWS;
 
@@ -152,7 +157,7 @@ const customReducer = (oldState, newState) => {
     return oldState;
 };
 
-const CalendarContainer = ({ calendars, history, location }) => {
+const CalendarContainer = ({ calendars = [], history, location }) => {
     const [calendarUserSettings, loadingCalendarUserSettings] = useCalendarUserSettings();
     const [addresses, loadingAddresses] = useAddresses();
     const [disableCreate, setDisableCreate] = useState(false);
@@ -162,8 +167,12 @@ const CalendarContainer = ({ calendars, history, location }) => {
 
     const interactiveRef = useRef();
 
-    const visibleCalendars = useMemo(() => {
-        return calendars ? calendars.filter(({ Display }) => !!Display) : undefined;
+    const [activeCalendars, disabledCalendars, visibleCalendars] = useMemo(() => {
+        return [
+            getProbablyActiveCalendars(calendars),
+            calendars.filter((calendar) => getIsCalendarDisabled(calendar)),
+            calendars.filter(({ Display }) => !!Display)
+        ];
     }, [calendars]);
 
     const [nowDate, setNowDate] = useState(() => new Date());
@@ -344,18 +353,10 @@ const CalendarContainer = ({ calendars, history, location }) => {
         setDateAndView(newDate, DAY);
     }, []);
 
-    /*
-    const handleClickDateYearView = useCallback((newDate) => {
-        setDateAndView(newDate, WEEK);
-    }, []);
-
-    const handleClickDateAgendaView = useCallback((newDate) => {
-        setDateAndView(newDate, WEEK);
-    }, []);
-    */
-
-    const defaultCalendarID = getDefaultCalendarID(calendarUserSettings);
-    const defaultCalendar = calendars.find(({ ID }) => ID === defaultCalendarID) || calendars[0];
+    const defaultCalendarSettingsID = getDefaultCalendarID(calendarUserSettings);
+    const defaultCalendar = useMemo(() => {
+        return getDefaultCalendar(activeCalendars, defaultCalendarSettingsID);
+    }, [defaultCalendarSettingsID, activeCalendars]);
     const [defaultCalendarBootstrap, loadingCalendarBootstrap] = useCalendarBootstrap(
         defaultCalendar ? defaultCalendar.ID : undefined
     );
@@ -366,7 +367,8 @@ const CalendarContainer = ({ calendars, history, location }) => {
 
     return (
         <CalendarContainerView
-            calendars={calendars}
+            activeCalendars={activeCalendars}
+            disabledCalendars={disabledCalendars}
             isLoading={isLoading}
             displayWeekNumbers={displayWeekNumbers}
             weekStartsOn={weekStartsOn}
@@ -408,7 +410,7 @@ const CalendarContainer = ({ calendars, history, location }) => {
                 onChangeDate={handleChangeDate}
                 onInteraction={(active) => setDisableCreate(active)}
                 addresses={addresses}
-                calendars={calendars}
+                activeCalendars={activeCalendars}
                 defaultCalendar={defaultCalendar}
                 defaultCalendarBootstrap={defaultCalendarBootstrap}
                 interactiveRef={interactiveRef}

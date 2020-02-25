@@ -5,7 +5,6 @@ import {
     Hamburger,
     NavMenu,
     PrimaryButton,
-    Checkbox,
     useEventManager,
     useApi,
     useLoading,
@@ -14,13 +13,14 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
-import { getConstrastingColor } from '../../helpers/color';
+import CalendarSidebarList from './CalendarSidebarList';
 
 const CalendarSidebar = ({
     expanded = false,
     onToggleExpand,
     url = '',
-    calendars = [],
+    activeCalendars = [],
+    disabledCalendars = [],
     miniCalendar,
     onCreateEvent
 }) => {
@@ -28,48 +28,10 @@ const CalendarSidebar = ({
     const api = useApi();
     const [loadingAction, withLoadingAction] = useLoading();
 
-    const handleVisibility = async (calendarID, checked) => {
+    const handleChangeVisibility = async (calendarID, checked) => {
         await api(updateCalendar(calendarID, { Display: +checked }));
         await call();
     };
-
-    const calendarsListView = (() => {
-        if (!Array.isArray(calendars)) {
-            return null;
-        }
-        if (calendars.length === 0) {
-            return null;
-        }
-        return calendars.map(({ ID, Name, Display, Color }, i) => {
-            return (
-                <div className="navigation__link" key={ID}>
-                    <span className="flex flex-nowrap flex-items-center">
-                        <Checkbox
-                            className="mr0-25 flex-item-noshrink"
-                            color={getConstrastingColor(Color)}
-                            backgroundColor={Display ? Color : 'transparent'} // transparent for the disabled state
-                            borderColor={Color}
-                            checked={!!Display}
-                            disabled={loadingAction}
-                            aria-describedby={`calendar-${i}`}
-                            onChange={({ target: { checked } }) => withLoadingAction(handleVisibility(ID, checked))}
-                        />
-                        <span className="ellipsis mw100" id={`calendar-${i}`} title={Name}>
-                            {Name}
-                        </span>
-                    </span>
-                </div>
-            );
-        });
-    })();
-
-    const list = [
-        {
-            icon: 'general',
-            text: c('Header').t`Calendars`,
-            link: '/calendar/settings/calendars'
-        }
-    ];
 
     const mobileLinks = [
         { to: '/inbox', icon: 'protonmail', external: true, current: false },
@@ -95,8 +57,43 @@ const CalendarSidebar = ({
             <div className="flex-item-fluid flex-nowrap flex flex-column scroll-if-needed customScrollBar-container pb1">
                 <div className="flex-item-noshrink">{miniCalendar}</div>
                 <nav className="navigation mw100 flex-item-fluid-auto">
-                    <NavMenu list={list} className="mb0" />
-                    {calendarsListView}
+                    <NavMenu
+                        list={[
+                            {
+                                icon: 'general',
+                                text: c('Header').t`Calendars`,
+                                link: '/calendar/settings/calendars'
+                            }
+                        ]}
+                        className="mb0"
+                    />
+                    <CalendarSidebarList
+                        calendars={activeCalendars}
+                        onChangeVisibility={(calendarID, value) =>
+                            withLoadingAction(handleChangeVisibility(calendarID, value))
+                        }
+                        loading={loadingAction}
+                    />
+                    {disabledCalendars.length ? (
+                        <>
+                            <NavMenu
+                                list={[
+                                    {
+                                        text: c('Header').t`Disabled calendars`,
+                                        link: '/calendar/settings/calendars'
+                                    }
+                                ]}
+                                className="mb0"
+                            />
+                            <CalendarSidebarList
+                                calendars={disabledCalendars}
+                                onChangeVisibility={(calendarID, value) =>
+                                    withLoadingAction(handleChangeVisibility(calendarID, value))
+                                }
+                                loading={loadingAction}
+                            />
+                        </>
+                    ) : null}
                 </nav>
             </div>
             <MobileNavServices>

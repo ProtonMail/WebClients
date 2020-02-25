@@ -21,8 +21,6 @@ const SettingsContainer = ({ calendars = [] }) => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
     const [calendarUserSettings = {}, loading] = useCalendarUserSettings();
-    const defaultCalendar =
-        calendars.find(({ ID }) => ID === calendarUserSettings.DefaultCalendarID) || calendars[0] || {};
 
     useEffect(() => {
         setExpand(false);
@@ -83,7 +81,7 @@ const SettingsContainer = ({ calendars = [] }) => {
                                     return (
                                         <CalendarsPage
                                             calendars={calendars}
-                                            defaultCalendarID={defaultCalendar.ID}
+                                            calendarUserSettings={calendarUserSettings}
                                             loading={loading}
                                         />
                                     );

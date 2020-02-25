@@ -11,6 +11,7 @@ import {
 } from 'react-components';
 import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { c } from 'ttag';
 
 import { getI18N } from '../eventModal/eventForm/i18n';
@@ -38,6 +39,8 @@ const EventPopover = ({
 
     const targetEventData = (targetEvent && targetEvent.data) || {};
     const { Calendar, Event, title: tmpTitle } = targetEventData;
+
+    const isCalendarDisabled = getIsCalendarDisabled(Calendar);
 
     const [value, isLoading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value, tzid);
@@ -112,6 +115,7 @@ const EventPopover = ({
             <PopoverContent>
                 <PopoverEventContent
                     Calendar={Calendar}
+                    isCalendarDisabled={isCalendarDisabled}
                     event={targetEvent}
                     tzid={tzid}
                     weekStartsOn={weekStartsOn}
@@ -122,7 +126,11 @@ const EventPopover = ({
             </PopoverContent>
             <PopoverFooter>
                 {deleteButton}
-                <PrimaryButton className="pm-button--small" onClick={handleEdit} disabled={loadingAction}>
+                <PrimaryButton
+                    className="pm-button--small"
+                    onClick={handleEdit}
+                    disabled={loadingAction || isCalendarDisabled}
+                >
                     {c('Action').t`Edit`}
                 </PrimaryButton>
             </PopoverFooter>

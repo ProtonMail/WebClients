@@ -35,7 +35,8 @@ const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
 const localToUtcDate = (date) => new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
 
 const CalendarContainerView = ({
-    calendars = [],
+    activeCalendars = [],
+    disabledCalendars = [],
     isLoading = false,
     isBlurred = false,
 
@@ -142,7 +143,8 @@ const CalendarContainerView = ({
                                 displayedOnDarkBackground={true}
                             />
                         }
-                        calendars={calendars}
+                        activeCalendars={activeCalendars}
+                        disabledCalendars={disabledCalendars}
                     />
                     {isLoading ? (
                         <div className="calendar-loader-container aligncenter p1">
@@ -197,7 +199,8 @@ const CalendarContainerView = ({
 };
 
 CalendarContainerView.propTypes = {
-    calendars: PropTypes.array,
+    activeCalendars: PropTypes.array,
+    disabledCalendars: PropTypes.array,
     isLoading: PropTypes.bool,
     isBlurred: PropTypes.bool,
     displayWeekNumbers: PropTypes.bool,

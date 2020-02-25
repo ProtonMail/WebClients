@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Icon, Table, TableHeader, TableBody, TableRow, DropdownActions, Badge } from 'react-components';
+import { getIsCalendarDisabled, getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 
 const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, onDelete, disabled, loadingMap }) => {
     return (
@@ -9,20 +10,27 @@ const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, on
             <TableBody>
                 {(calendars || []).map((calendar) => {
                     const { ID, Name, Color } = calendar;
+
+                    const isDisabled = getIsCalendarDisabled(calendar);
+                    const isActive = getIsCalendarProbablyActive(calendar);
+                    const isDefault = ID === defaultCalendarID;
+
                     const list = [
                         {
                             text: c('Action').t`Edit`,
                             onClick: () => onEdit(calendar)
                         },
-                        ID !== defaultCalendarID && {
-                            text: c('Action').t`Set as default`,
-                            onClick: () => onSetDefault(ID)
-                        },
+                        !isDisabled &&
+                            !isDefault && {
+                                text: c('Action').t`Set as default`,
+                                onClick: () => onSetDefault(ID)
+                            },
                         {
                             text: c('Action').t`Delete`,
                             onClick: () => onDelete(calendar)
                         }
                     ].filter(Boolean);
+
                     return (
                         <TableRow
                             key={ID}
@@ -34,7 +42,9 @@ const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, on
                                     </span>
                                 </div>,
                                 <div key="status">
-                                    {ID === defaultCalendarID && <Badge>{c('Key badge').t`Default`}</Badge>}
+                                    {isDefault && <Badge type="primary">{c('Calendar status').t`Default`}</Badge>}
+                                    {isActive && <Badge type="success">{c('Calendar status').t`Active`}</Badge>}
+                                    {isDisabled && <Badge type="warning">{c('Calendar status').t`Disabled`}</Badge>}
                                 </div>,
                                 <DropdownActions
                                     className="pm-button--small"
