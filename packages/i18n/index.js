@@ -3,7 +3,7 @@
 const argv = require('minimist')(process.argv.slice(2));
 
 const CONFIG = require('./config');
-const { error, debug } = require('./lib/helpers/log')('proton-i18n');
+const { error, debug, json } = require('./lib/helpers/log')('proton-i18n');
 const renderHelp = require('./lib/helpers/help');
 
 const is = (command) => argv._.includes(command);
@@ -14,6 +14,11 @@ async function main() {
     if (is('post-install')) {
         await require('./lib/postInstall')();
     }
+
+    if (is('config')) {
+        return json(CONFIG.getEnv(), true);
+    }
+
     if (is('crowdin')) {
         await require('./lib/crowdin').update();
     }

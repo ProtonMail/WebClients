@@ -64,6 +64,7 @@ module.exports = (scope) => {
 
     return {
         success,
+        json,
         debug,
         error,
         warn
