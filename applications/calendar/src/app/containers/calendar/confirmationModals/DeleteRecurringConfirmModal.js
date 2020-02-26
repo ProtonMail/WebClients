@@ -3,17 +3,17 @@ import { Alert, ConfirmModal, ErrorButton, Radio, ResetButton, Row } from 'react
 import React, { useState } from 'react';
 import { RECURRING_DELETE_TYPES } from '../../../constants';
 
-const SelectDeleteType = ({ isFirstOccurrence, type, setType }) => {
+const SelectDeleteType = ({ hasDeleteAll, type, setType }) => {
     const radios = [
         {
             label: c('Option').t`This event`,
             value: RECURRING_DELETE_TYPES.SINGLE
         },
-        isFirstOccurrence && {
+        hasDeleteAll && {
             label: c('Option').t`All events`,
             value: RECURRING_DELETE_TYPES.ALL
         },
-        !isFirstOccurrence && {
+        !hasDeleteAll && {
             label: c('Option').t`This and future events`,
             value: RECURRING_DELETE_TYPES.FUTURE
         }
@@ -35,7 +35,7 @@ const SelectDeleteType = ({ isFirstOccurrence, type, setType }) => {
     );
 };
 
-const DeleteRecurringConfirmModal = ({ isFirstOccurrence, onConfirm, ...rest }) => {
+const DeleteRecurringConfirmModal = ({ hasDeleteAll, onConfirm, ...rest }) => {
     const [type, setType] = useState(RECURRING_DELETE_TYPES.SINGLE);
     const title = c('Info').t`Delete recurring event`;
     const message = c('Info').t`Which event would you like to delete?`;
@@ -49,7 +49,7 @@ const DeleteRecurringConfirmModal = ({ isFirstOccurrence, onConfirm, ...rest }) 
             onConfirm={() => onConfirm(type)}
         >
             <Alert type="error">{message}</Alert>
-            <SelectDeleteType isFirstOccurrence={isFirstOccurrence} type={type} setType={setType} />
+            <SelectDeleteType hasDeleteAll={hasDeleteAll} type={type} setType={setType} />
         </ConfirmModal>
     );
 };

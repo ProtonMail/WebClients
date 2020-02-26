@@ -11,7 +11,8 @@ import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import createOrUpdateEvent from 'proton-shared/lib/calendar/integration/createOrUpdateEvent';
 import { deleteEvent, updateCalendar } from 'proton-shared/lib/api/calendars';
 import { omit } from 'proton-shared/lib/helpers/object';
-import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
+import { getIsCalendarDisabled, getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
+import { getIsMoreThanOccurrence } from 'proton-shared/lib/calendar/recurring';
 
 import { getExistingEvent, getInitialModel, hasDoneChanges } from '../../components/eventModal/eventForm/state';
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
@@ -432,14 +433,10 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleDeleteRecurringConfirmation = (isFirstOccurrence) => {
+    const handleDeleteRecurringConfirmation = (hasDeleteAll) => {
         return new Promise((resolve, reject) => {
             createModal(
-                <DeleteRecurringConfirmModal
-                    isFirstOccurrence={isFirstOccurrence}
-                    onClose={reject}
-                    onConfirm={resolve}
-                />
+                <DeleteRecurringConfirmModal hasDeleteAll={hasDeleteAll} onClose={reject} onConfirm={resolve} />
             );
         });
     };
@@ -448,17 +445,32 @@ const InteractiveCalendarView = ({
         { CalendarID, ID: EventID },
         { isRecurring, recurrence, data: { readEvent, Calendar, Event } }
     ) => {
-        if (isRecurring && recurrence && !recurrence.isSingleOccurrence) {
-            const deleteType = await handleDeleteRecurringConfirmation(recurrence.occurrenceNumber === 1);
+        const handleDeleteAll = async () => {
+            await api(deleteEvent(CalendarID, EventID));
+            await call();
+        };
+
+        if (isRecurring && recurrence && !recurrence.isSingleOccurrence && !getIsCalendarDisabled(Calendar)) {
+            const calendarBootstrap = readCalendarBootstrap(Calendar.ID);
+            const { Member, Address } = getMemberAndAddress(addresses, calendarBootstrap.Members, Event.Author);
+            const [[veventComponent, personalMap] = [], promise, error] = readEvent(Calendar.ID, Event.ID);
+            if (!veventComponent || !personalMap || promise || error) {
+                return;
+            }
+            // Dry-run delete this and future recurrences
+            const veventFutureDeleted = deleteFutureRecurrence(
+                veventComponent,
+                recurrence.localStart,
+                recurrence.occurrenceNumber
+            );
+            // If we would end up with at least 1 occurrence, the delete this and future option is allowed
+            const isDeleteThisAndFutureAllowed = getIsMoreThanOccurrence(veventFutureDeleted, 0);
+
+            const deleteType = await handleDeleteRecurringConfirmation(
+                !isDeleteThisAndFutureAllowed || recurrence.occurrenceNumber === 1
+            );
 
             if (deleteType === RECURRING_DELETE_TYPES.SINGLE || deleteType === RECURRING_DELETE_TYPES.FUTURE) {
-                const calendarBootstrap = readCalendarBootstrap(Calendar.ID);
-                const { Member, Address } = getMemberAndAddress(addresses, calendarBootstrap.Members, Event.Author);
-                const [[veventComponent, personalMap] = [], promise, error] = readEvent(Calendar.ID, Event.ID);
-                if (!veventComponent || !personalMap || promise || error) {
-                    return;
-                }
-
                 const updatedVeventComponent =
                     deleteType === RECURRING_DELETE_TYPES.SINGLE
                         ? deleteSingleRecurrence(veventComponent, recurrence.localStart, recurrence.occurrenceNumber)
@@ -480,14 +492,14 @@ const InteractiveCalendarView = ({
             }
 
             if (deleteType === RECURRING_DELETE_TYPES.ALL) {
-                await api(deleteEvent(CalendarID, EventID));
-                await call();
+                await handleDeleteAll();
             }
-        } else {
-            await handleDeleteConfirmation();
-            await api(deleteEvent(CalendarID, EventID));
-            await call();
+
+            return;
         }
+
+        await handleDeleteConfirmation();
+        await handleDeleteAll();
     };
 
     const safeCloseTemporaryEventAndPopover = () => {
