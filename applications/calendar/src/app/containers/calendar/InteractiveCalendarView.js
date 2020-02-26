@@ -457,8 +457,8 @@ const InteractiveCalendarView = ({
 
                 const updatedVeventComponent =
                     deleteType === RECURRING_DELETE_TYPES.SINGLE
-                        ? deleteSingleRecurrence(veventComponent, recurrence.localStart)
-                        : deleteFutureRecurrence(veventComponent, recurrence.localStart);
+                        ? deleteSingleRecurrence(veventComponent, recurrence.localStart, recurrence.occurrenceNumber)
+                        : deleteFutureRecurrence(veventComponent, recurrence.localStart, recurrence.occurrenceNumber);
 
                 const { components: valarmComponents = [] } = personalMap[Member.ID] || {};
                 const componentWithValarm = {
