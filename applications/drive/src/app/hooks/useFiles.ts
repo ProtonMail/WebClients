@@ -41,10 +41,6 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 const HASH_CHECK_AMOUNT = 10;
 
-export interface UploadFileMeta {
-    Name: string;
-}
-
 function useFiles(shareId: string) {
     const api = useApi();
     const { getCachedResponse } = useCachedResponse();
@@ -178,37 +174,38 @@ function useFiles(shareId: string) {
             const { filename, hash: Hash } = await findAvailableName(ParentLinkID, file.name);
             const blob = new Blob([file], { type: file.type });
 
+            const Name = await encryptUnsigned({
+                message: filename,
+                privateKey: parentKey
+            });
+
+            const MimeType = lookup(filename) || 'application/octet-stream';
+
+            const { File } = await api<CreateFileResult>(
+                queryCreateFile(shareId, {
+                    Name,
+                    MimeType,
+                    Hash,
+                    ParentLinkID,
+                    NodeKey,
+                    NodePassphrase,
+                    NodePassphraseSignature,
+                    SignatureAddressID: address.ID,
+                    ContentKeyPacket
+                })
+            );
+
             startUpload(
-                { blob, filename, shareId, linkId: ParentLinkID },
                 {
-                    initialize: async () => {
-                        const Name = await encryptUnsigned({
-                            message: filename,
-                            privateKey: parentKey
-                        });
-
-                        const MimeType = lookup(filename) || 'application/octet-stream';
-
-                        const { File } = await api<CreateFileResult>(
-                            queryCreateFile(shareId, {
-                                Name,
-                                MimeType,
-                                Hash,
-                                ParentLinkID,
-                                NodeKey,
-                                NodePassphrase,
-                                NodePassphraseSignature,
-                                SignatureAddressID: address.ID,
-                                ContentKeyPacket
-                            })
-                        );
-
-                        return {
-                            LinkID: File.ID,
-                            RevisionID: File.RevisionID,
-                            ShareID: shareId
-                        };
-                    },
+                    blob,
+                    filename
+                },
+                {
+                    LinkID: File.ID,
+                    RevisionID: File.RevisionID,
+                    ShareID: shareId
+                },
+                {
                     transform: async (data) => {
                         const res = await encryptMessage({
                             data,
