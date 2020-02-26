@@ -9,14 +9,22 @@ import conversationManySvgDark from 'design-system/assets/img/shared/selected-co
 import { LabelCount } from '../../models/label';
 import { getLabelName } from '../../helpers/labels';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
+import { isConversationMode } from '../../helpers/mailSettings';
+import { MailSettings } from '../../models/utils';
+import { Location } from 'history';
 
 interface Props {
+    labelID: string;
+    mailSettings: MailSettings;
+    location: Location;
     labelCount: LabelCount;
     checkedIDs?: string[];
     onUncheckAll: () => void;
 }
 
-const SelectionPane = ({ labelCount, checkedIDs = [], onUncheckAll }: Props) => {
+const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs = [], onUncheckAll }: Props) => {
+    const conversationMode = isConversationMode(labelID, mailSettings, location);
+
     const [labels] = useLabels();
 
     const total = labelCount.Total || 0;
@@ -26,22 +34,22 @@ const SelectionPane = ({ labelCount, checkedIDs = [], onUncheckAll }: Props) => 
 
     const labelName = useMemo(() => getLabelName(labelCount.LabelID || '', labels), [labels, labelCount]);
 
+    const count = checkeds ? checkeds : total;
+
+    const strongText = conversationMode ? (
+        <strong>{ngettext(msgid`${count} conversation`, `${count} conversations`, count)}</strong>
+    ) : (
+        <strong>{ngettext(msgid`${count} email`, `${count} emails`, count)}</strong>
+    );
+
+    const text = checkeds
+        ? c('Info').jt`You selected ${strongText} from this folder`
+        : c('Info').jt`You have ${strongText} stored in this folder`;
+
     return (
         <div className="flex-item-fluid aligncenter p3">
             {checkeds === 0 && labelName && <h3 className="bold">{labelName}</h3>}
-            <p className="mb2">
-                {checkeds === 0
-                    ? ngettext(
-                          msgid`You have ${total} stored in this folder`,
-                          `You have ${total} stored in this folder`,
-                          total
-                      )
-                    : ngettext(
-                          msgid`You selected ${checkeds} element from this folder`,
-                          `You selected ${checkeds} elements from this folder`,
-                          checkeds
-                      )}
-            </p>
+            <p className="mb2">{text}</p>
             <div className="mb2">
                 <img
                     src={checkeds > 1 ? conversationManySvg : conversationSingleSvg}

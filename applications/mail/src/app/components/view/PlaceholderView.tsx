@@ -8,12 +8,13 @@ import { ELEMENT_TYPES } from '../../constants';
 import { getCurrentType } from '../../helpers/elements';
 import { LabelCount } from '../../models/label';
 import { useWelcomeFlag } from '../../hooks/useWelcomeFlag';
+import { MailSettings } from '../../models/utils';
 
 interface Props {
     labelID: string;
     checkedIDs?: string[];
     onUncheckAll: () => void;
-    mailSettings: any;
+    mailSettings: MailSettings;
     location: Location;
 }
 
@@ -35,9 +36,16 @@ const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, mailSett
     }, [labelID, conversationCounts, messageCounts]);
 
     return welcomeFlag ? (
-        <WelcomePane labelCount={labelCount} />
+        <WelcomePane mailSettings={mailSettings} location={location} labelCount={labelCount} />
     ) : (
-        <SelectionPane labelCount={labelCount} checkedIDs={checkedIDs} onUncheckAll={onUncheckAll} />
+        <SelectionPane
+            labelID={labelID}
+            mailSettings={mailSettings}
+            location={location}
+            labelCount={labelCount}
+            checkedIDs={checkedIDs}
+            onUncheckAll={onUncheckAll}
+        />
     );
 };
 

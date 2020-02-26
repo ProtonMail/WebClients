@@ -1,25 +1,38 @@
 import React from 'react';
 import { useUser, useModals, LinkButton, AuthenticatedBugModal } from 'react-components';
 import { c, ngettext, msgid } from 'ttag';
+import { Location } from 'history';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { capitalize } from 'proton-shared/lib/helpers/string';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
 import unreadEmailsSvgLight from 'design-system/assets/img/shared/unread-emails.svg';
 import unreadEmailsSvgDark from 'design-system/assets/img/shared/unread-emails-dark.svg';
 import { LabelCount } from '../../models/label';
+import { MailSettings } from '../../models/utils';
+
+import { isConversationMode } from '../../helpers/mailSettings';
 
 interface Props {
+    mailSettings: MailSettings;
+    location: Location;
     labelCount: LabelCount;
 }
 
-const WelcomePane = ({ labelCount }: Props) => {
+const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
+    const conversationMode = isConversationMode(MAILBOX_LABEL_IDS.INBOX, mailSettings, location);
+
     const [user] = useUser();
     const { createModal } = useModals();
 
     const Unread = labelCount.Unread || 0;
     const unreadEmailsSvg = getLightOrDark(unreadEmailsSvgLight, unreadEmailsSvgDark);
 
-    const unreadsLabel = (
+    const unreadsLabel = conversationMode ? (
+        <strong key="unreads-label">
+            {ngettext(msgid`${Unread} unread conversation`, `${Unread} unread conversations`, Unread)}
+        </strong>
+    ) : (
         <strong key="unreads-label">
             {ngettext(msgid`${Unread} unread email`, `${Unread} unread emails`, Unread)}
         </strong>
@@ -35,7 +48,7 @@ const WelcomePane = ({ labelCount }: Props) => {
             <h1>
                 {user.DisplayName ? c('Title').t`Welcome, ${capitalize(user.DisplayName)}!` : c('Title').t`Welcome`}
             </h1>
-            {Unread ? <p>{c('Info').jt`You have ${unreadsLabel} in this folder`}</p> : null}
+            {Unread ? <p>{c('Info').jt`You have ${unreadsLabel} in your inbox.`}</p> : null}
             {user.hasPaidMail ? (
                 <>
                     <p className="mw40e center mb2">
