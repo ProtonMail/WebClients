@@ -284,6 +284,10 @@ const InteractiveCalendarView = ({
         }
 
         if (originalAction === ACTIONS.CREATE_DOWN) {
+            if (!defaultCalendarBootstrap) {
+                return;
+            }
+
             const { type } = originalPayload;
             const isFromAllDay = type === TYPE.DAYGRID;
 
@@ -588,7 +592,7 @@ const InteractiveCalendarView = ({
             <CalendarView
                 view={view}
                 isNarrow={isNarrow}
-                isInteractionEnabled={!isLoading && !!defaultCalendarBootstrap}
+                isInteractionEnabled={!isLoading}
                 onMouseDown={handleMouseDown}
                 tzid={tzid}
                 primaryTimezone={primaryTimezone}
