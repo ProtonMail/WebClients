@@ -15,3 +15,10 @@ export interface TransferMeta {
     mimeType: string;
     size: number;
 }
+
+export class TransferCancel extends Error {
+    constructor(id: string) {
+        super(`Transfer ${id} canceled`);
+        this.name = 'TransferCancel';
+    }
+}

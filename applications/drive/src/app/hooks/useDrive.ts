@@ -56,7 +56,7 @@ function useDrive() {
                 VolumeName: 'MainVolume',
                 ShareName: 'MainShare',
                 FolderHashKey,
-                VolumeMaxSpace: 1000000, // TODO: this will be controlled dynamically
+                VolumeMaxSpace: 1000000000, // TODO: this will be controlled dynamically
                 ...bootstrap
             })
         );

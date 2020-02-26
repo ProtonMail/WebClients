@@ -6,12 +6,19 @@ import {
     DriveFileRevisionResult,
     DriveFileResult,
     CreateFileResult,
-    FileRevisionState
+    FileRevisionState,
+    RequestUploadResult
 } from '../interfaces/file';
 import { decryptPrivateKey, decryptMessage, encryptMessage } from 'pmcrypto';
 import useShare from './useShare';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
-import { queryFileRevision, queryCreateFile, queryFile, queryUpdateFileRevision } from '../api/files';
+import {
+    queryFileRevision,
+    queryCreateFile,
+    queryFile,
+    queryUpdateFileRevision,
+    queryRequestUpload
+} from '../api/files';
 import {
     generateNodeKeys,
     generateContentKeys,
@@ -47,7 +54,7 @@ function useFiles(shareId: string) {
     const { getPrimaryAddressKey, sign, getVerificationKeys } = useDriveCrypto();
     const { getFolderMeta, decryptLink, clearFolderContentsCache } = useShare(shareId);
     const { addToDownloadQueue } = useDownloadProvider();
-    const { startUpload, uploads } = useUploadProvider();
+    const { addToUploadQueue, uploads } = useUploadProvider();
     const { call } = useEventManager();
 
     const getFileMeta = useCallback(
@@ -154,14 +161,14 @@ function useFiles(shareId: string) {
 
     const uploadDriveFile = useCallback(
         async (ParentLinkID: string, file: File) => {
-            const [{ privateKey: parentKey }, { privateKey: addressKey, address }] = await Promise.all([
+            const [{ privateKey: parentKey }, addressKeyInfo] = await Promise.all([
                 getFolderMeta(ParentLinkID),
                 getPrimaryAddressKey()
             ]);
 
             const { NodeKey, privateKey, NodePassphrase, signature: NodePassphraseSignature } = await generateNodeKeys(
                 parentKey,
-                addressKey
+                addressKeyInfo.privateKey
             );
 
             const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
@@ -190,17 +197,20 @@ function useFiles(shareId: string) {
                     NodeKey,
                     NodePassphrase,
                     NodePassphraseSignature,
-                    SignatureAddressID: address.ID,
+                    SignatureAddressID: addressKeyInfo.address.ID,
                     ContentKeyPacket
                 })
             );
 
-            startUpload(
+            addToUploadQueue(
                 {
-                    blob,
+                    size: blob.size,
+                    mimeType: MimeType,
                     filename
                 },
                 {
+                    blob,
+                    ParentLinkID,
                     LinkID: File.ID,
                     RevisionID: File.RevisionID,
                     ShareID: shareId
@@ -214,10 +224,25 @@ function useFiles(shareId: string) {
                         });
                         return res.message.packets.write() as Uint8Array;
                     },
-                    finalize: async ({ LinkID, RevisionID }, blockMeta) => {
+                    requestUpload: async (BlockList) => {
+                        const { signature, address } = await sign(JSON.stringify(BlockList), addressKeyInfo);
+
+                        const { UploadLinks } = await api<RequestUploadResult>(
+                            queryRequestUpload({
+                                BlockList,
+                                AddressID: address.ID,
+                                Signature: signature,
+                                LinkID: File.ID,
+                                RevisionID: File.RevisionID,
+                                ShareID: shareId
+                            })
+                        );
+                        return UploadLinks;
+                    },
+                    finalize: async (blockMeta) => {
                         const rootHash = await generateRootHash(null, blockMeta);
                         await api(
-                            queryUpdateFileRevision(shareId, LinkID, RevisionID, {
+                            queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
                                 State: FileRevisionState.Active,
                                 BlockList: blockMeta.map(({ Index, Token }) => ({
                                     Index,
