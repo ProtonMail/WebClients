@@ -51,7 +51,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                 throw e;
             }
 
-            if (e.name === 'CancelUnlock') {
+            if (e.name === 'CancelUnlock' || e.name === 'AbortError') {
                 throw e;
             }
 
