@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const argv = require('minimist')(process.argv.slice(2));
+
 const { warn } = require('./lib/helpers/log')('proton-i18n');
 
 // Compat mode WebClient
@@ -68,6 +70,7 @@ const getEnv = () => ({
     CROWDIN_KEY_API: process.env.CROWDIN_KEY_API,
     CROWDIN_FILE_NAME: !isBetaAngularV4() ? process.env.CROWDIN_FILE_NAME : process.env.CROWDIN_FILE_NAME_V4,
     CROWDIN_PROJECT_NAME: process.env.CROWDIN_PROJECT_NAME,
+    IS_DRY_RUN: argv['dry-run'],
     APP_KEY: process.env.APP_KEY
 });
 
