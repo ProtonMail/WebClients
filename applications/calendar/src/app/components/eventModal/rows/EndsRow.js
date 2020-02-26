@@ -10,6 +10,9 @@ import IntegerInput from '../inputs/IntegerInput';
 
 const { NEVER, UNTIL, AFTER_N_TIMES } = END_TYPE;
 
+export const UNTIL_ID = 'event-occurrence-until';
+export const COUNT_ID = 'event-occurrence-count';
+
 const EndsRow = ({
     frequencyModel,
     start,
@@ -47,7 +50,7 @@ const EndsRow = ({
                 <div className="flex flex-nowrap flex-item-fluid calendar-recurringFrequencyEnd-grid-fullLine">
                     <span className="flex flex-item-noshrink">
                         <Radio
-                            name="event-ends-radio"
+                            id="event-ends-radio-never"
                             checked={frequencyModel.ends.type === NEVER}
                             onChange={() => handleChangeEndType(NEVER)}
                         >
@@ -58,8 +61,8 @@ const EndsRow = ({
 
                 <span className="flex flex-item-noshrink">
                     <Radio
+                        id="event-ends-radio-until"
                         className="mr1 flex-nowrap mtauto mbauto"
-                        name="event-ends-radio"
                         checked={frequencyModel.ends.type === UNTIL}
                         onChange={() => handleChangeEndType(UNTIL)}
                     >
@@ -68,6 +71,7 @@ const EndsRow = ({
                 </span>
                 <span>
                     <DateInput
+                        id={UNTIL_ID}
                         value={frequencyModel.ends.until}
                         min={start.date}
                         defaultDate={start.date}
@@ -83,8 +87,8 @@ const EndsRow = ({
 
                 <span className="flex flex-item-noshrink">
                     <Radio
+                        id="event-ends-radio-count"
                         className="mr1 flex-nowrap mtauto mbauto"
-                        name="event-ends-radio"
                         checked={frequencyModel.ends.type === AFTER_N_TIMES}
                         onChange={() => handleChangeEndType(AFTER_N_TIMES)}
                     >
@@ -93,6 +97,7 @@ const EndsRow = ({
                 </span>
                 <span>
                     <IntegerInput
+                        id={COUNT_ID}
                         value={frequencyModel.ends.count}
                         min={1}
                         onChange={handleChangeEndCount}

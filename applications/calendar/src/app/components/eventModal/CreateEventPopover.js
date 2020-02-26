@@ -1,5 +1,5 @@
-import React from 'react';
-import { SmallButton, PrimaryButton, classnames } from 'react-components';
+import React, { useRef } from 'react';
+import { useCombinedRefs, SmallButton, PrimaryButton, classnames } from 'react-components';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { validate } from './eventForm/state';
@@ -23,7 +23,15 @@ const CreateEventPopover = ({
     isNarrow
 }) => {
     const errors = validate(model);
-    const { isSubmitted, loadingAction, handleSubmit } = useForm({ model, errors, onSave, onClose, isCreateEvent });
+    const formRef = useRef();
+    const { isSubmitted, loadingAction, handleSubmit } = useForm({
+        formEl: formRef.current,
+        model,
+        errors,
+        onSave,
+        onClose,
+        isCreateEvent
+    });
 
     const handleMore = () => {
         onEdit(model);
@@ -37,7 +45,7 @@ const CreateEventPopover = ({
                 handleSubmit();
             }}
             className={classnames(['eventpopover p1 pm-form--iconLabels', isNarrow && 'eventpopover--full-width'])}
-            ref={popoverRef}
+            ref={useCombinedRefs(formRef, popoverRef)}
         >
             <PopoverHeader onClose={onClose} />
             <PopoverContent>

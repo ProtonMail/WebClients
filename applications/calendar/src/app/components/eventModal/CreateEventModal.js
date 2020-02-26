@@ -23,6 +23,7 @@ const CreateEventModal = ({
 }) => {
     const errors = validate(model);
     const { isSubmitted, loadingAction, i18n, handleDelete, handleSubmit } = useForm({
+        formEl: document.body, // Annyoing to get a ref, mostly fine to use this
         model,
         errors,
         onSave,
