@@ -29,7 +29,7 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
     }
 
     return fetch(url, config)
-        .catch(() => {
+        .catch((e) => {
             if (isTimeout) {
                 throw createApiError({
                     name: 'TimeoutError',
@@ -37,6 +37,11 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
                     config
                 });
             }
+
+            if (e.name === 'AbortError') {
+                throw e;
+            }
+
             // Assume any other error is offline error.
             throw createApiError({
                 name: 'OfflineError',
