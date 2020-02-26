@@ -6,21 +6,16 @@ import { DriveFileBlock } from '../../interfaces/file';
 import { queryFileBlock } from '../../api/files';
 import { untilStreamEnd, ObserverStream } from '../../utils/stream';
 import { areUint8Arrays } from '../../utils/array';
+import { Api } from 'proton-shared/lib/interfaces';
+import { TransferCancel } from '../../interfaces/transfer';
 
 const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
 export type StreamTransformer = (stream: ReadableStream<Uint8Array>) => Promise<ReadableStream<Uint8Array>>;
 
-class TransferCancel extends Error {
-    constructor(id: string) {
-        super(`Transfer ${id} canceled`);
-        this.name = 'TransferCancel';
-    }
-}
-
 export interface DownloadControls {
     start: (api: (query: any) => any) => Promise<void>;
-    cancel: () => Promise<void>;
+    cancel: () => void;
 }
 
 export interface DownloadCallbacks {
@@ -35,7 +30,7 @@ export const initDownload = ({ onStart, onProgress, transformBlockStream }: Down
     const fileStream = new ObserverStream();
     const fsWriter = fileStream.writable.getWriter();
 
-    const start = async (api: (query: any) => any) => {
+    const start = async (api: Api) => {
         if (abortController.signal.aborted) {
             return;
         }
@@ -79,7 +74,7 @@ export const initDownload = ({ onStart, onProgress, transformBlockStream }: Down
         return fsWriter.close();
     };
 
-    const cancel = async () => {
+    const cancel = () => {
         abortController.abort();
 
         fsWriter.abort(new TransferCancel(id));

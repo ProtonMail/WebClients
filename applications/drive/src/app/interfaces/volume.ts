@@ -8,7 +8,7 @@ export interface CreateDriveVolume {
     FolderPassphrase: string;
     FolderKey: string;
     FolderHashKey: string;
-    VolumeMaxSpace: 1000000;
+    VolumeMaxSpace: number;
 }
 
 export interface CreatedDriveVolumeResult {

@@ -185,7 +185,7 @@ function useShare(shareId: string) {
                 if (index !== -1) {
                     return [
                         ...value.slice(0, index),
-                        { ...value[index], Hash, Name: newName },
+                        { ...value[index], Hash, MimeType, Name: newName },
                         ...value.slice(index + 1)
                     ];
                 }

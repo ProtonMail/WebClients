@@ -35,7 +35,7 @@ type Props = (DownloadProps | UploadProps) & {
 };
 
 const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) => {
-    const fileSize = 'blob' in transfer.meta ? transfer.meta.blob.size : transfer.meta.size;
+    const fileSize = transfer.meta.size;
     const percentageDone = fileSize ? Math.floor(100 * (stats.progress / fileSize)) : 100;
 
     const isProgress = transfer.state === TransferState.Progress;

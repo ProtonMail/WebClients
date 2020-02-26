@@ -64,12 +64,6 @@ export interface DriveFileResult {
     File: DriveFile;
 }
 
-export interface FileUploadInfo {
-    LinkID: string;
-    ShareID: string;
-    RevisionID: string;
-}
-
 export interface CreateFileResult {
     File: {
         ID: string;
@@ -77,11 +71,13 @@ export interface CreateFileResult {
     };
 }
 
+export interface UploadLink {
+    Token: string;
+    URL: string;
+}
+
 export interface RequestUploadResult {
-    UploadLinks: {
-        Token: string;
-        URL: string;
-    }[];
+    UploadLinks: UploadLink[];
 }
 
 export interface DriveFileBlock {
