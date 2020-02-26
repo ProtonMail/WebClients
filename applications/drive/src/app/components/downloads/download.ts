@@ -32,7 +32,7 @@ export const initDownload = ({ onStart, onProgress, transformBlockStream }: Down
 
     const start = async (api: Api) => {
         if (abortController.signal.aborted) {
-            return;
+            throw new TransferCancel(id);
         }
 
         const blocksOrBuffer = await onStart(fileStream.readable);
