@@ -33,7 +33,7 @@ const FullDayEvent = ({
         };
     }, [calendarColor, isAllDay, isSelected]);
 
-    const timeString = useMemo(() => {
+    const startTimeString = useMemo(() => {
         return formatTime(start);
     }, [start]);
 
@@ -60,9 +60,15 @@ const FullDayEvent = ({
                         <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-90" />
                     ) : null}
 
-                    <span className="flex-item-fluid ellipsis">{loading ? '' : titleString}</span>
-
-                    {isAllPartDay && !loading ? <span>{timeString}</span> : null}
+                    <span className="flex-item-fluid ellipsis">
+                        {loading ? (
+                            ''
+                        ) : (
+                            <>
+                                {!isAllDay || isAllPartDay ? startTimeString : null} {titleString}
+                            </>
+                        )}
+                    </span>
 
                     {isOutsideEnd && !loading ? (
                         <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-270" />
