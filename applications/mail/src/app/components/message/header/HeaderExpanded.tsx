@@ -93,7 +93,7 @@ const HeaderExpanded = ({
                     <MessageLock message={message} className="stop-propagation" />
                 </div>
                 <div>
-                    <ItemDate element={message.data || {}} mode="distance" />
+                    <ItemDate element={message.data || {}} />
                 </div>
             </div>
             <div className="flex flex-nowrap flex-items-start flex-spacebetween ml1 mr1 mb0-5">

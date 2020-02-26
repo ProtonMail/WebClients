@@ -48,7 +48,7 @@ const HeaderCollapsed = ({ message, labels, onExpand }: Props) => {
                 {isDraft(message.data) && <span className="badgeLabel-success">{c('Info').t`Draft`}</span>}
                 <ItemAttachmentIcon element={message.data} />
                 <ItemLabels element={message.data} labels={labels} className="mr1" />
-                <ItemDate className="mr1" element={message.data} mode="distance" />
+                <ItemDate className="mr1" element={message.data} />
                 <ItemStar element={message.data} />
             </div>
         </div>

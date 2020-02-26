@@ -1,7 +1,19 @@
-import { format, formatDistanceToNow as dateFnsFormatDistanceToNow, isToday } from 'date-fns';
+import { format, formatDistanceToNow as dateFnsFormatDistanceToNow, isToday, isYesterday, isThisWeek } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
+import { c } from 'ttag';
 
-export const formatSimpleDate = (date: Date) => format(date, isToday(date) ? 'p' : 'PP', { locale: dateLocale });
+export const formatSimpleDate = (date: Date) => {
+    if (isToday(date)) {
+        return format(date, 'p', { locale: dateLocale });
+    }
+    if (isYesterday(date)) {
+        return c('Time').t`Yesterday`;
+    }
+    if (isThisWeek(date)) {
+        return format(date, 'EEEE', { locale: dateLocale });
+    }
+    return format(date, 'PP', { locale: dateLocale });
+};
 
 export const formatFullDate = (date: Date) => format(date, 'PPPPp', { locale: dateLocale });
 
