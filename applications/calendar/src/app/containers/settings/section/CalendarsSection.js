@@ -19,7 +19,11 @@ import CalendarModal from '../CalendarModal';
 import { updateCalendarUserSettings, removeCalendar } from 'proton-shared/lib/api/calendars';
 import { MAX_CALENDARS_PER_USER } from '../../../constants';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
-import { getProbablyActiveCalendars, getDefaultCalendar } from 'proton-shared/lib/calendar/calendar';
+import {
+    getProbablyActiveCalendars,
+    getDefaultCalendar,
+    getIsCalendarDisabled
+} from 'proton-shared/lib/calendar/calendar';
 
 const CalendarsSection = ({ calendars = [], calendarUserSettings = {}, disabled }) => {
     const api = useApi();
@@ -33,6 +37,7 @@ const CalendarsSection = ({ calendars = [], calendarUserSettings = {}, disabled 
     const activeCalendars = getProbablyActiveCalendars(calendars);
     const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
     const defaultCalendarID = defaultCalendar ? defaultCalendar.ID : undefined;
+    const hasDisabledCalendar = calendars.some(getIsCalendarDisabled);
 
     const handleCreate = () => {
         createModal(<CalendarModal calendars={calendars} defaultCalendarID={defaultCalendarID} />);
@@ -103,6 +108,12 @@ const CalendarsSection = ({ calendars = [], calendarUserSettings = {}, disabled 
                     {c('Action').t`Add calendar`}
                 </PrimaryButton>
             </div>
+            {hasDisabledCalendar ? (
+                <Alert>
+                    {c('Disabled calendar')
+                        .t`A calendar is marked as disabled when it is linked to a disabled e-mail address. You can still access your disabled calendar and view events in read-only mode or delete them. You can enable the calendar by re-enabling the e-mail address.`}
+                </Alert>
+            ) : null}
             <CalendarsTable
                 calendars={calendars}
                 defaultCalendarID={defaultCalendarID}
