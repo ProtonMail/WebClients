@@ -14,28 +14,25 @@ export interface BlockMeta {
     Token: string;
 }
 
-type FileInitializer = () => Promise<FileUploadInfo>;
 type BlockTransformer = (buffer: Uint8Array) => Promise<Uint8Array>;
 type UploadFinalizer = (info: FileUploadInfo, blocklist: BlockMeta[]) => Promise<void>;
 
 // TODO: Refactor like downloads
-interface UploadInfo {
+interface UploadMeta {
     blob: Blob;
     filename: string;
-    shareId: string;
-    linkId: string;
 }
 
 export interface Upload {
     id: string;
-    meta: UploadInfo;
+    meta: UploadMeta;
+    info: FileUploadInfo;
     state: TransferState;
     startDate: Date;
 }
 
 interface UploadConfig {
     [id: string]: {
-        initialize: FileInitializer;
         transform: BlockTransformer;
         finalize: UploadFinalizer;
         reader: FileReader;
@@ -45,8 +42,9 @@ interface UploadConfig {
 interface UploadProviderState {
     uploads: Upload[];
     startUpload: (
-        info: UploadInfo,
-        handlers: { initialize: FileInitializer; transform: BlockTransformer; finalize: UploadFinalizer }
+        info: UploadMeta,
+        uploadInfo: FileUploadInfo,
+        handlers: { transform: BlockTransformer; finalize: UploadFinalizer }
     ) => void;
     getUploadsProgresses: () => TransferProgresses;
     clearUploads: () => void;
@@ -74,10 +72,9 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         setUploads((uploads) => uploads.map((upload) => (upload.id === id ? { ...upload, state } : upload)));
     };
 
-    const uploadFile = async ({ id, meta: { blob } }: Upload) => {
+    const uploadFile = async ({ id, meta: { blob }, info }: Upload) => {
         updateUploadState(id, TransferState.Progress);
 
-        const info = await uploadConfig.current[id].initialize();
         const keyInfo = await getPrimaryAddressKey();
 
         const uploadChunks = async (
@@ -150,18 +147,14 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     }, [uploads]);
 
     const startUpload = (
-        meta: UploadInfo,
-        {
-            initialize,
-            transform,
-            finalize
-        }: { initialize: FileInitializer; transform: BlockTransformer; finalize: UploadFinalizer }
+        meta: UploadMeta,
+        info: FileUploadInfo,
+        { transform, finalize }: { transform: BlockTransformer; finalize: UploadFinalizer }
     ) => {
         const id = generateUID('drive-upload');
 
         progresses.current[id] = 0;
         uploadConfig.current[id] = {
-            initialize,
             transform,
             finalize,
             reader: new FileReader()
@@ -172,6 +165,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
             {
                 id,
                 meta,
+                info,
                 state: TransferState.Pending,
                 startDate: new Date()
             }
