@@ -50,7 +50,7 @@ interface MessageActions {
     saveDraft: (message: MessageExtended) => Promise<void>;
     send: (message: MessageExtended) => Promise<void>;
     deleteDraft: () => Promise<void>;
-    udateAttachments: (uploads: UploadResult[], action: ATTACHMENT_ACTION) => Promise<MessageExtended>;
+    updateAttachments: (uploads: UploadResult[], action: ATTACHMENT_ACTION) => Promise<MessageExtended>;
 }
 
 interface MessageActivity {
@@ -302,7 +302,7 @@ export const useMessage = (
         await run(message, [deleteRequest], () => cache.delete(messageID));
     }, [message, run, cache]);
 
-    const udateAttachments = useCallback(
+    const updateAttachments = useCallback(
         async (uploads: UploadResult[], action = ATTACHMENT_ACTION.ATTACHMENT) => {
             const computation = getUpdateAttachmentsComputation(uploads, action);
             return await run(message, [computation]);
@@ -321,7 +321,7 @@ export const useMessage = (
             saveDraft,
             send,
             deleteDraft,
-            udateAttachments
+            updateAttachments
         },
         messageActivity
     ];

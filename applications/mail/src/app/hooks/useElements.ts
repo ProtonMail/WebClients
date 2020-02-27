@@ -1,5 +1,5 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
-import { useApi, useEventManager } from 'react-components';
+import { useState, useEffect, useMemo } from 'react';
+import { useApi } from 'react-components';
 import { queryConversations, getConversation } from 'proton-shared/lib/api/conversations';
 import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
@@ -18,7 +18,7 @@ import {
     MessageEvent,
     LabelIDsChanges
 } from '../models/event';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { useSubscribeEventManager } from './useHandler';
 
 interface Options {
     conversationMode: boolean;
@@ -52,22 +52,22 @@ interface Cache {
 
 const emptyCache = (page: Page, params: CacheParams): Cache => ({ params, page, elements: {}, pages: [] });
 
-/**
- * Listen to event manager once but allow the handler to be updated in time
- */
-const useSubscribeEventManager = (handler: (event: any) => void) => {
-    const { subscribe } = useEventManager();
-    const handlerRef = useRef<(event: any) => void>(noop);
+// /**
+//  * Listen to event manager once but allow the handler to be updated in time
+//  */
+// const useSubscribeEventManager = (handler: (event: any) => void) => {
+//     const { subscribe } = useEventManager();
+//     const handlerRef = useRef<(event: any) => void>(noop);
 
-    useEffect(() => {
-        handlerRef.current = handler;
-    }, [handler]);
+//     useEffect(() => {
+//         handlerRef.current = handler;
+//     }, [handler]);
 
-    useEffect(() => {
-        const actualHandler = (event: any) => handlerRef.current(event);
-        return subscribe(actualHandler);
-    }, []);
-};
+//     useEffect(() => {
+//         const actualHandler = (event: any) => handlerRef.current(event);
+//         return subscribe(actualHandler);
+//     }, []);
+// };
 
 export const useElements = ({
     conversationMode,

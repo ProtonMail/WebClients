@@ -1,3 +1,5 @@
+import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
+
 import { getElement } from '../dom';
 import {
     SquireType,
@@ -11,7 +13,7 @@ import {
     DEFAULT_FONT_SIZE,
     FONT_SIZES
 } from './squireConfig';
-import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
+import { isEmbeddable } from '../embedded/embeddeds';
 
 const testPresenceInSelection = (squire: SquireType, format: string, validation: RegExp) =>
     validation.test(squire.getPath()) || squire.hasFormat(format);
@@ -201,4 +203,20 @@ export const setTextDirectionWithoutFocus = (squire: SquireType, direction: RIGH
             block.removeAttribute('dir');
         }
     }, true);
+};
+
+/**
+ * Handler for squire paste event
+ * Deals with pasting images
+ */
+export const pasteFileHandler = (onAddEmbeddedImages: (files: File[]) => void) => (event: ClipboardEvent) => {
+    const clipboardData = event.clipboardData;
+    // Edge needs items as files is undefined
+    const files = Array.from(clipboardData?.files || ((clipboardData?.items as any) as FileList) || []);
+
+    const embeddable = files.every((file) => isEmbeddable(file.type));
+
+    if (embeddable) {
+        onAddEmbeddedImages(files);
+    }
 };

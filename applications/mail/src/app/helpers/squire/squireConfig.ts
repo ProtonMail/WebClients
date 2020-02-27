@@ -124,8 +124,7 @@ export const setSquireRef = (ref: Ref<SquireType>, squire: Squire) =>
 
 export const SQUIRE_CONFIG = {
     sanitizeToDOMFragment(html: string, isPaste: boolean, self: any) {
-        // eslint-disable-next-line no-underscore-dangle
-        const doc = self._doc;
+        const doc = self._doc as Document;
         // Use proton's instance of DOMPurify to allow proton-src attributes to be displayed in squire.
         const frag = html ? content(html) : null;
         return frag ? doc.importNode(frag, true) : doc.createDocumentFragment();
@@ -229,4 +228,32 @@ export const insertCustomStyle = (document: Document) => {
     head.appendChild(style);
 
     (document.childNodes[0] as Element).className = IFRAME_CLASS;
+};
+
+const wrapInsertHTML = (squire: any) => {
+    const ghost = squire.insertHTML;
+    squire.insertHTML = async (html: string, isPaste: boolean) => {
+        if (isPaste) {
+            try {
+                const fragment = SQUIRE_CONFIG.sanitizeToDOMFragment(html, isPaste, squire);
+                const { firstElementChild: first, lastElementChild: last } = (fragment as any) as ParentNode;
+
+                // Check if it is just one image being pasted.
+                // If so, block normal insertion because it will be added as embedded image.
+                if (first && first === last && first.tagName === 'IMG') {
+                    return;
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        ghost.call(squire, html, isPaste);
+    };
+};
+
+export const initSquire = (document: Document): Squire => {
+    insertCustomStyle(document);
+    const squire = new Squire(document, SQUIRE_CONFIG);
+    wrapInsertHTML(squire);
+    return squire;
 };

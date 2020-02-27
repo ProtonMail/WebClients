@@ -3,8 +3,8 @@ import Awesomplete from 'awesomplete';
 
 import { contactToInput } from '../../../helpers/addresses';
 import { ContactEmail, ContactGroup, ContactOrGroup } from '../../../models/contact';
-import useEventListener from '../../../hooks/useEventListener';
 import { Recipient } from '../../../models/address';
+import { useEventListener } from '../../../hooks/useHandler';
 
 interface Props {
     inputRef: MutableRefObject<HTMLInputElement | undefined>;

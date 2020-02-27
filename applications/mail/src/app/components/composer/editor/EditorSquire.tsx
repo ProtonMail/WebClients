@@ -1,18 +1,14 @@
 import React, { useRef, useState, useEffect, forwardRef, Ref } from 'react';
-import Squire from 'squire-rte';
 
-import {
-    insertCustomStyle,
-    SQUIRE_CONFIG,
-    SquireType,
-    getSquireRef,
-    setSquireRef
-} from '../../../helpers/squire/squireConfig';
+import { SquireType, getSquireRef, setSquireRef, initSquire } from '../../../helpers/squire/squireConfig';
+import { useHandler } from '../../../hooks/useHandler';
+import { pasteFileHandler } from '../../../helpers/squire/squireActions';
 
 interface Props {
     onReady: () => void;
     onFocus: () => void;
     onInput: (value: string) => void;
+    onAddEmbeddedImages: (files: File[]) => void;
 }
 
 /**
@@ -21,7 +17,7 @@ interface Props {
  * There is issues when trying to synchronize input value to the current content of the editor
  * Uncontrolled components is prefered in this case
  */
-const EditorSquire = forwardRef(({ onReady, onFocus, onInput }: Props, ref: Ref<SquireType>) => {
+const EditorSquire = forwardRef(({ onReady, onFocus, onInput, onAddEmbeddedImages }: Props, ref: Ref<SquireType>) => {
     const [iframeReady, setIframeReady] = useState(false);
     const [squireReady, setSquireReady] = useState(false);
     const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -44,30 +40,31 @@ const EditorSquire = forwardRef(({ onReady, onFocus, onInput }: Props, ref: Ref<
     useEffect(() => {
         if (iframeReady && !squireReady) {
             const iframeDoc = iframeRef.current?.contentWindow?.document as Document;
-            insertCustomStyle(iframeDoc);
-            const squire = new Squire(iframeDoc, SQUIRE_CONFIG);
+            const squire = initSquire(iframeDoc);
             setSquireRef(ref, squire);
             setSquireReady(true);
             onReady();
         }
     }, [iframeReady]);
 
+    const handleFocus = useHandler(onFocus);
+    const handleInput = useHandler(() => onInput(getSquireRef(ref).getHTML()));
+    const handlePaste = useHandler(pasteFileHandler(onAddEmbeddedImages));
+
     useEffect(() => {
         if (squireReady) {
             const squire = getSquireRef(ref);
 
-            const handleInput = () => {
-                onInput(squire.getHTML());
-            };
-
-            squire.addEventListener('focus', onFocus);
+            squire.addEventListener('focus', handleFocus);
             squire.addEventListener('input', handleInput);
+            squire.addEventListener('paste', handlePaste);
             return () => {
-                squire.removeEventListener('focus', onFocus);
+                squire.removeEventListener('focus', handleFocus);
                 squire.removeEventListener('input', handleInput);
+                squire.removeEventListener('paste', handlePaste);
             };
         }
-    }, [squireReady, onInput, onFocus]);
+    }, [squireReady]);
 
     return (
         <div className="editor-squire-wrapper fill w100 scroll-if-needed flex-item-fluid rounded">

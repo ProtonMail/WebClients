@@ -19,7 +19,7 @@ const AttachmentsList = ({ message, onRemove }: Props) => {
     const size = humanSize(attachmentsSize(message));
 
     return (
-        <div className="flex flex-column relative w100 flex-nowrap">
+        <div className="composer-attachments-list flex flex-column relative w100 flex-nowrap">
             <button type="button" className="flex flex-row flex-spacebetween w100 p0-5" onClick={toggleExpanded}>
                 <div>
                     <strong className="mr0-5">{size}</strong>

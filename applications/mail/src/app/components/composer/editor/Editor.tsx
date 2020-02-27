@@ -11,6 +11,7 @@ import { isPlainText as testIsPlainText } from '../../../helpers/message/message
 import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
 import { setTextAreaCursorStart } from '../../../helpers/dom';
 import { getContent } from '../../../helpers/message/messageContent';
+import { useHandler } from '../../../hooks/useHandler';
 
 export type InsertRef = MutableRefObject<((embeddeds: EmbeddedMap) => void) | undefined>;
 
@@ -23,6 +24,7 @@ interface Props {
     onChangeContent: (content: string) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
+    onAddEmbeddedImages: (files: File[]) => void;
     contentFocusRef: MutableRefObject<() => void>;
     contentInsertRef: InsertRef;
 }
@@ -35,6 +37,7 @@ const Editor = ({
     onChangeContent,
     onFocus,
     onAddAttachments,
+    onAddEmbeddedImages,
     contentFocusRef,
     contentInsertRef
 }: Props) => {
@@ -106,11 +109,11 @@ const Editor = ({
         squireRef.current.setHTML(content + blockquoteSaved);
     };
 
-    const handleInsertEmbedded = async (embeddeds: EmbeddedMap) => {
+    const handleInsertEmbedded = useHandler(async (embeddeds: EmbeddedMap) => {
         embeddeds.forEach((info, cid) => {
             insertImage(squireRef.current, info.url || '', { 'data-embedded-img': cid, alt: info.attachment.Name });
         });
-    };
+    });
 
     const handlePlainTextChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
         onChangeContent(event.target.value);
@@ -137,7 +140,13 @@ const Editor = ({
                 />
             ) : (
                 <>
-                    <EditorSquire ref={squireRef} onFocus={onFocus} onReady={handleReady} onInput={handleInput} />
+                    <EditorSquire
+                        ref={squireRef}
+                        onFocus={onFocus}
+                        onReady={handleReady}
+                        onInput={handleInput}
+                        onAddEmbeddedImages={onAddEmbeddedImages}
+                    />
                     {!blockquoteExpanded && (
                         <div className="m0-5">
                             <Button className="pm-button--small" onClick={handleShowBlockquote}>

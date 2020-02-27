@@ -3,6 +3,7 @@ import { classnames, useToggle, useWindowSize, useNotifications, useApi } from '
 import { c } from 'ttag';
 import { Address } from 'proton-shared/lib/interfaces';
 import { noop, debounce } from 'proton-shared/lib/helpers/function';
+import { wait } from 'proton-shared/lib/helpers/promise';
 
 import { MessageExtended } from '../../models/message';
 import ComposerTitleBar from './ComposerTitleBar';
@@ -113,7 +114,7 @@ const Composer = ({
     // Synced with server version of the edited message
     const [
         syncedMessage,
-        { initialize, createDraft, saveDraft, send, deleteDraft, udateAttachments },
+        { initialize, createDraft, saveDraft, send, deleteDraft, updateAttachments },
         { lock: syncLock, current: syncActivity }
     ] = useMessage(inputMessage.data, mailSettings);
 
@@ -189,27 +190,31 @@ const Composer = ({
 
     const handleAddAttachmentsEnd = async (action: ATTACHMENT_ACTION, files = pendingFiles) => {
         setPendingFiles(undefined);
-
         const uploads = await upload(files, syncedMessage, action, api);
 
         if (uploads.length) {
-            const updatedMessage = await udateAttachments(uploads, action);
+            const updatedMessage = await updateAttachments(uploads, action);
             const Attachments = getAttachments(updatedMessage.data);
             const newModelMessage = mergeMessages(modelMessage, { data: { Attachments } });
             setModelMessage(newModelMessage);
 
             if (action == ATTACHMENT_ACTION.INLINE) {
-                contentInsertRef.current?.(
-                    createEmbeddedMap(
-                        uploads.map((upload) => {
-                            const cid = readCID(upload.attachment);
-                            return [cid, updatedMessage.embeddeds?.get(cid)];
-                        })
-                    )
+                // Needed to wait for the setModelMessage to be applied before inserting the image in the editor
+                // Insertion will trigger a change and update the model which has to be updated
+                await wait(0);
+
+                const newEmbeddeds = createEmbeddedMap(
+                    uploads.map((upload) => {
+                        const cid = readCID(upload.attachment);
+                        return [cid, updatedMessage.embeddeds?.get(cid)];
+                    })
                 );
+
+                contentInsertRef.current?.(newEmbeddeds);
             }
         }
     };
+    const handleAddEmbeddedImages = async (files: File[]) => handleAddAttachmentsEnd(ATTACHMENT_ACTION.INLINE, files);
     const handleAddAttachmentsStart = async (files: File[]) => {
         const embeddable = files.every((file) => isEmbeddable(file.type));
 
@@ -296,6 +301,7 @@ const Composer = ({
                         onChangeContent={handleChangeContent}
                         onFocus={addressesBlurRef.current}
                         onAddAttachments={handleAddAttachmentsStart}
+                        onAddEmbeddedImages={handleAddEmbeddedImages}
                         onRemoveAttachment={handleRemoveAttachment}
                         pendingFiles={pendingFiles}
                         onCancelEmbedded={() => setPendingFiles(undefined)}

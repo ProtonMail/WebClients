@@ -4,7 +4,7 @@ import { classnames } from 'react-components';
 
 import { MessageExtended } from '../../models/message';
 import { getAttachments } from '../../helpers/message/messages';
-import AttachmentsList from './attachments/AttachmensList';
+import AttachmentsList from './attachments/AttachmentsList';
 import { Attachment } from '../../models/attachment';
 import Editor, { InsertRef } from './editor/Editor';
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
@@ -21,6 +21,7 @@ interface Props {
     onChangeContent: (content: string) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
+    onAddEmbeddedImages: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => () => void;
     pendingFiles?: File[];
     onCancelEmbedded: () => void;
@@ -37,6 +38,7 @@ const ComposerContent = ({
     onChangeContent,
     onFocus,
     onAddAttachments,
+    onAddEmbeddedImages,
     onRemoveAttachment,
     pendingFiles,
     onCancelEmbedded,
@@ -87,6 +89,7 @@ const ComposerContent = ({
                     onChangeContent={onChangeContent}
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}
+                    onAddEmbeddedImages={onAddEmbeddedImages}
                     contentFocusRef={contentFocusRef}
                     contentInsertRef={contentInsertRef}
                 />
