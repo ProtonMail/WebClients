@@ -39,7 +39,10 @@ const LayoutSection = ({ calendarUserSettings: { WeekStart, ViewPreference, Disp
             <Row>
                 <Label htmlFor="view-select">
                     {c('Label').t`Default view`}{' '}
-                    <Info title={c('Info').t`Week and month views only apply to desktop.`} />
+                    <Info
+                        buttonClass="ml0-5 inline-flex"
+                        title={c('Info').t`Week and month views only apply to desktop.`}
+                    />
                 </Label>
                 <Field>
                     <ViewPreferenceSelector
