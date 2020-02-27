@@ -49,6 +49,13 @@ const PreviewContainer = ({
             try {
                 const meta = location.state?.preloadedLink || (await getFileMeta(linkId)).File;
 
+                // Clear history state, so fresh data is requested on reloads
+                if (location.state?.preloadedLink) {
+                    const state = { ...location.state };
+                    delete state.preloadedLink;
+                    history.replace({ ...location, state });
+                }
+
                 if (canceled) {
                     return;
                 }
@@ -84,7 +91,7 @@ const PreviewContainer = ({
             downloadControls.current?.cancel();
             downloadControls.current = undefined;
         };
-    }, [location.state, getFileMeta, downloadDriveFile]);
+    }, [getFileMeta, downloadDriveFile]);
 
     const navigateToParent = useCallback(() => {
         if (meta?.ParentLinkID) {
