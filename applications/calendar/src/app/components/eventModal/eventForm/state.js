@@ -247,23 +247,21 @@ const hasEditedNotification = (notification, otherNotification) => {
     );
 };
 
-export const hasEditedNotifications = (
-    { isAllDay, partDayNotifications, fullDayNotifications },
-    { partDayNotifications: otherPartDayNotifications, fullDayNotifications: otherFullDayNotifications }
-) => {
-    const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
-    const otherNotifications = isAllDay ? otherFullDayNotifications : otherPartDayNotifications;
-
+export const hasEditedNotifications = (notifications, otherNotifications) => {
     return (
         notifications.length !== otherNotifications.length ||
         notifications.some((notification, i) => hasEditedNotification(notification, otherNotifications[i]))
     );
 };
 
+const getNotifications = ({ isAllDay, partDayNotifications, fullDayNotifications }) => {
+    return isAllDay ? fullDayNotifications : partDayNotifications;
+};
+
 export const hasDoneChanges = (model, otherModel, isEditMode) => {
     return (
         hasEdited(keys, model, otherModel) ||
-        hasEditedNotifications(model, otherModel) ||
+        hasEditedNotifications(getNotifications(model), getNotifications(otherModel)) ||
         hasEditedTimezone(model.start, otherModel.start) ||
         hasEditedTimezone(model.end, otherModel.end) ||
         (isEditMode &&

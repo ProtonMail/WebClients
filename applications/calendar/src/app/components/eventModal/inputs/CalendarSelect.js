@@ -19,15 +19,17 @@ const CalendarSelect = ({ withIcon, model, setModel, ...rest }) => {
         // grab default settings for the old calendar
         const {
             CalendarSettings: {
-                DefaultPartDayNotifications: oldDefaultPartDayNotifications,
-                DefaultFullDayNotifications: oldDefaultFullDayNotifications
+                DefaultPartDayNotifications: oldDefaultPartDayNotificationsSettings,
+                DefaultFullDayNotifications: oldDefaultFullDayNotificationsSettings
             }
         } = await getCalendarBootstrap(id);
-        // filter out email default notifications (they don't go into the model)
-        const defaultNotifications = {
-            partDayNotifications: getDeviceNotifications(notificationsToModel(oldDefaultPartDayNotifications, false)),
-            fullDayNotifications: getDeviceNotifications(notificationsToModel(oldDefaultFullDayNotifications, true))
-        };
+
+        const oldDefaultPartDayNotifications = getDeviceNotifications(
+            notificationsToModel(oldDefaultPartDayNotificationsSettings, false)
+        );
+        const oldDefaultFullDayNotifications = getDeviceNotifications(
+            notificationsToModel(oldDefaultFullDayNotificationsSettings, true)
+        );
 
         // grab members and default settings for the new calendar
         const {
@@ -39,6 +41,7 @@ const CalendarSelect = ({ withIcon, model, setModel, ...rest }) => {
             }
         } = await getCalendarBootstrap(newId);
         const Addresses = await getAddresses();
+
         const [Member = {}] = Members;
         const Address = Addresses.find(({ Email }) => Member.Email === Email);
         if (!Member || !Address) {
@@ -50,21 +53,18 @@ const CalendarSelect = ({ withIcon, model, setModel, ...rest }) => {
         const newDefaultFullDayNotifications = getDeviceNotifications(
             notificationsToModel(DefaultFullDayNotifications, true)
         );
-        const newDefaultNotifications = {
-            partDayNotifications: getDeviceNotifications(notificationsToModel(DefaultPartDayNotifications, false)),
-            fullDayNotifications: getDeviceNotifications(notificationsToModel(DefaultFullDayNotifications, true))
-        };
 
         const partDayNotifications =
-            hasEditedNotifications({ isAllDay: false, ...defaultNotifications }, newDefaultNotifications) &&
-            !model.hasModifiedNotifications.partDay
-                ? newDefaultPartDayNotifications
-                : model.partDayNotifications;
+            hasEditedNotifications(oldDefaultPartDayNotifications, model.partDayNotifications) ||
+            model.hasModifiedNotifications.partDay
+                ? model.partDayNotifications
+                : newDefaultPartDayNotifications;
+
         const fullDayNotifications =
-            hasEditedNotifications({ isAllDay: true, ...defaultNotifications }, newDefaultNotifications) &&
-            !model.hasModifiedNotifications.fullDay
-                ? newDefaultFullDayNotifications
-                : model.fullDayNotifications;
+            hasEditedNotifications(oldDefaultFullDayNotifications, model.fullDayNotifications) ||
+            model.hasModifiedNotifications.fullDay
+                ? model.fullDayNotifications
+                : newDefaultFullDayNotifications;
 
         setModel({
             ...model,
