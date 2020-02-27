@@ -4,7 +4,6 @@ import './vendorHelpers/jquery.loader';
 
 import 'jquery.payment/lib/jquery.payment';
 import 'autofill-event/src/autofill-event';
-import 'ua-parser-js/src/ua-parser';
 
 import 'angular/angular';
 import 'angular-cookies/angular-cookies';

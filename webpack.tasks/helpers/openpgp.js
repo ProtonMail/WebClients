@@ -4,8 +4,7 @@ const transformFile = require('./files');
 
 const getDefineObject = ({ filepath, integrity }) => ({ filepath, integrity });
 
-const transformWorkerContents = (path, contents) =>
-    contents.replace('self.window=self,importScripts("openpgp.min.js");', '');
+const transformWorkerContents = (path, contents) => contents.replace('importScripts("openpgp.min.js");', '');
 
 const transformCompatPath = ({ basename, ext, hash }) => [basename, 'compat', hash, ext].join('.');
 

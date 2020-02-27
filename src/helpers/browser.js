@@ -1,3 +1,6 @@
+import '../app/vendorHelpers/jquery.loader';
+import 'ua-parser-js/src/ua-parser';
+
 export const hasSessionStorage = () => {
     const mod = 'modernizr';
     try {
@@ -140,7 +143,10 @@ const loadScriptHelper = ({ path, integrity }, cb) => {
     if (integrity) {
         script.integrity = integrity;
     }
-    script.onload = (e) => cb(e);
+    script.onload = (e) => {
+        cb(e);
+        script.remove();
+    };
     script.onerror = (e) => cb(undefined, e);
 
     document.head.appendChild(script);

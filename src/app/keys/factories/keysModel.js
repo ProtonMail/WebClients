@@ -234,6 +234,13 @@ function keysModel(dispatchers) {
     };
 
     on('logout', () => {
+        Object.entries(CACHE).forEach(([, keys = {}]) => {
+            Object.entries(keys).forEach(([, { pkg } = {}]) => {
+                if (pkg) {
+                    pkg.clearPrivateParams();
+                }
+            });
+        });
         clear();
     });
 

@@ -1,6 +1,7 @@
 import { decryptPrivateKey } from 'pmcrypto';
 import loginWithFallback from 'proton-shared/lib/authentication/loginWithFallback';
 import { getAuthHeaders } from './authApi';
+import { destroyOpenpgp, loadOpenpgp } from '../../loadOpenpgp';
 
 /* @ngInject */
 function authentication(
@@ -177,6 +178,10 @@ function authentication(
 
         clearData() {
             try {
+                destroyOpenpgp();
+                // Ignore the promise from loadOpenpgp since it would be annoying to handle better
+                // In the best case it should be fast since it's cached, and it would only have an impact if the user logs in before it's fully loaded.
+                loadOpenpgp();
                 // Reset $http server
                 $http.defaults.headers.common['x-pm-session'] = undefined;
                 $http.defaults.headers.common.Authorization = undefined;
