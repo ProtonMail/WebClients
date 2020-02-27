@@ -1,5 +1,5 @@
 import React, { MutableRefObject, useRef, useEffect, useState, ChangeEvent } from 'react';
-import { Button } from 'react-components';
+import { Button, classnames } from 'react-components';
 
 import EditorToolbar from './EditorToolbar';
 import { EmbeddedMap, MessageExtended } from '../../../models/message';
@@ -16,6 +16,9 @@ export type InsertRef = MutableRefObject<((embeddeds: EmbeddedMap) => void) | un
 
 interface Props {
     message: MessageExtended;
+    document?: Element;
+    disabled: boolean;
+    onReady: () => void;
     onChange: (message: MessageExtended) => void;
     onChangeContent: (content: string) => void;
     onFocus: () => void;
@@ -26,6 +29,8 @@ interface Props {
 
 const Editor = ({
     message,
+    disabled,
+    onReady,
     onChange,
     onChangeContent,
     onFocus,
@@ -37,16 +42,11 @@ const Editor = ({
 
     const [editorReady, setEditorReady] = useState(false);
     const [documentReady, setDocumentReady] = useState(false);
-    const [focusWhenReady, setFocusWhenReady] = useState(false);
     const [blockquoteExpanded, setBlockquoteExpanded] = useState(true);
     const [blockquoteSaved, setBlockquoteSaved] = useState('');
 
     const squireRef = useRef<SquireType>(null) as MutableRefObject<SquireType>;
     const textareaRef = useRef<HTMLTextAreaElement>(null);
-
-    useEffect(() => {
-        contentFocusRef.current = () => setFocusWhenReady(true);
-    }, []);
 
     useEffect(() => {
         if (message.document?.innerHTML) {
@@ -67,10 +67,7 @@ const Editor = ({
                     textareaRef.current.value = content;
                     setTextAreaCursorStart(textareaRef.current);
 
-                    contentFocusRef.current = textareaRef.current?.focus;
-                    if (focusWhenReady) {
-                        textareaRef.current?.focus();
-                    }
+                    contentFocusRef.current = textareaRef.current?.focus.bind(squireRef.current);
                 }
             } else {
                 if (editorReady) {
@@ -84,12 +81,10 @@ const Editor = ({
                         message.data?.RightToLeft?.valueOf() || RIGHT_TO_LEFT.OFF
                     );
 
-                    contentFocusRef.current = squireRef.current?.focus;
-                    if (focusWhenReady) {
-                        squireRef.current?.focus();
-                    }
+                    contentFocusRef.current = squireRef.current?.focus.bind(squireRef.current);
                 }
             }
+            onReady();
         }
     }, [editorReady, documentReady, isPlainText]);
 
@@ -126,7 +121,7 @@ const Editor = ({
     }, []);
 
     return (
-        <div className="editor w100 h100 rounded flex flex-column flex-nowrap">
+        <div className={classnames(['editor w100 h100 rounded flex flex-column', disabled && 'editor--disabled'])}>
             <EditorToolbar
                 message={message}
                 squireRef={squireRef}

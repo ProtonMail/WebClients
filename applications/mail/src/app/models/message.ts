@@ -47,6 +47,12 @@ export interface Message {
 
 export interface MessageExtended {
     /**
+     * ID used only on the frontend
+     * Needed to keep a unique id on a message even if it's created in session without a server ID
+     */
+    localID?: string;
+
+    /**
      * Message object from the server
      */
     data?: Message;

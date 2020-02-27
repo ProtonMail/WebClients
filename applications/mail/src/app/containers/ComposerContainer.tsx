@@ -1,6 +1,6 @@
 import React, { ReactNode, useState, CSSProperties } from 'react';
 import { c } from 'ttag';
-import { useMailSettings, useAddresses, useWindowSize, useNotifications } from 'react-components';
+import { useMailSettings, useAddresses, useWindowSize, useNotifications, generateUID } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 
 import { MessageExtended } from '../models/message';
@@ -109,6 +109,7 @@ const ComposerContainer = ({ children }: Props) => {
             }
 
             setMessages([...messages, existingDraft]);
+            existingDraft.localID = existingDraft.data?.ID;
             setFocusedMessage(existingDraft);
             return;
         }
@@ -116,12 +117,14 @@ const ComposerContainer = ({ children }: Props) => {
         if (composeNew) {
             const { action, referenceMessage } = composeNew;
             const newMessage = createDraft(action, referenceMessage);
+            newMessage.localID = generateUID('draft');
             setMessages([...messages, newMessage]);
             setFocusedMessage(newMessage);
         }
     };
     const handleChange = (oldMessage: MessageExtended) => (newMessage: MessageExtended) => {
         const newMessages = [...messages];
+        newMessage.localID = oldMessage.localID;
         newMessages[newMessages.indexOf(oldMessage)] = newMessage;
         setMessages(newMessages);
         if (oldMessage === focusedMessage) {
@@ -147,7 +150,7 @@ const ComposerContainer = ({ children }: Props) => {
             <div className="composer-container">
                 {messages.map((message, i) => (
                     <Composer
-                        key={message.data?.ID || i}
+                        key={message.localID}
                         style={computeStyle(i, message === focusedMessage, rightPositions, height)}
                         message={message}
                         focus={message === focusedMessage}

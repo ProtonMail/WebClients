@@ -200,6 +200,17 @@
     margin: 0 0.2rem 0.2rem 0;
 }
 
+.editor--disabled::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #eeee;
+    border-radius: 3px;
+}
+
 .composer-editor-embedded {
     overflow: hidden;
     z-index: 15000; // ask Embedding should always be on top of the toolbar!

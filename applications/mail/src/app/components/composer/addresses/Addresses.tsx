@@ -10,12 +10,13 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 interface Props {
     message: MessageExtended;
+    disabled: boolean;
     onChange: (message: MessageExtended) => void;
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
 }
 
-const Addresses = ({ message, onChange, addressesBlurRef, addressesFocusRef }: Props) => {
+const Addresses = ({ message, disabled, onChange, addressesBlurRef, addressesFocusRef }: Props) => {
     const [contacts, loadingContacts] = useContactEmails() as [ContactEmail[], boolean, Error];
     const [contactGroups, loadingContactGroups] = useContactGroups();
     const inputFocusRef = useRef<() => void>(noop);
@@ -39,6 +40,10 @@ const Addresses = ({ message, onChange, addressesBlurRef, addressesFocusRef }: P
     }
 
     const handleFocus = () => {
+        if (disabled) {
+            return false;
+        }
+
         setEditor(true);
         setExpanded(true);
         setTimeout(() => addressesFocusRef.current());

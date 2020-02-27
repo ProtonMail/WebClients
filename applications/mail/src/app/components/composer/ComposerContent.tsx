@@ -15,6 +15,8 @@ import 'react-quill/dist/quill.snow.css';
 
 interface Props {
     message: MessageExtended;
+    disabled: boolean;
+    onEditorReady: () => void;
     onChange: (message: MessageExtended) => void;
     onChangeContent: (content: string) => void;
     onFocus: () => void;
@@ -29,6 +31,8 @@ interface Props {
 
 const ComposerContent = ({
     message,
+    disabled,
+    onEditorReady,
     onChange,
     onChangeContent,
     onFocus,
@@ -76,6 +80,9 @@ const ComposerContent = ({
             <div className={classnames(['flex-item-fluid w100 flex flex-column flex-nowrap relative'])}>
                 <Editor
                     message={message}
+                    document={message.document}
+                    disabled={disabled}
+                    onReady={onEditorReady}
                     onChange={onChange}
                     onChangeContent={onChangeContent}
                     onFocus={onFocus}

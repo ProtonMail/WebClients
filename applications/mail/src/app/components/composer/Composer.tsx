@@ -83,19 +83,39 @@ const Composer = ({
     onClose
 }: Props) => {
     const api = useApi();
+    const [width, height] = useWindowSize();
+    const { createNotification } = useNotifications();
+
+    // Minimized status of the composer
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
+
+    // Maximized status of the composer
     const { state: maximized, toggle: toggleMaximized } = useToggle(false);
-    const [opening, setOpening] = useState(true); // Needed to force focus only at first time
-    const [closing, setClosing] = useState(false); // Needed to keep component alive while saving/deleting on close
+
+    // Indicates that the composer is in its initial opening
+    // Needed to be able to force focus only at first time
+    const [opening, setOpening] = useState(true);
+
+    // Indicates that the composer is being closed
+    // Needed to keep component alive while saving/deleting on close
+    const [closing, setClosing] = useState(false);
+
+    // Indicates that the composer is open but the edited message is not yet ready
+    // Needed to prevent edition while data is not ready
+    const [editorReady, setEditorReady] = useState(false);
+
+    // Model value of the edited message in the composer
     const [modelMessage, setModelMessage] = useState<MessageExtended>(inputMessage);
+
+    // Pending upload files
     const [pendingFiles, setPendingFiles] = useState<File[]>();
+
+    // Synced with server version of the edited message
     const [
         syncedMessage,
         { initialize, createDraft, saveDraft, send, deleteDraft, udateAttachments },
         { lock: syncLock, current: syncActivity }
     ] = useMessage(inputMessage.data, mailSettings);
-    const [width, height] = useWindowSize();
-    const { createNotification } = useNotifications();
 
     // Manage focus from the container yet keeping logic in each component
     const addressesBlurRef = useRef<() => void>(noop);
@@ -132,7 +152,7 @@ const Composer = ({
 
     // Manage focus at opening
     useEffect(() => {
-        if (!opening) {
+        if (!opening || !editorReady) {
             return;
         }
         setTimeout(() => {
@@ -143,7 +163,7 @@ const Composer = ({
             }
         });
         setOpening(false);
-    }, [syncedMessage]);
+    }, [editorReady]);
 
     const autoSave = useCallback(
         debounce(async (message: MessageExtended) => {
@@ -263,12 +283,15 @@ const Composer = ({
                     <ComposerMeta
                         message={modelMessage}
                         addresses={addresses}
+                        disabled={!editorReady}
                         onChange={handleChange}
                         addressesBlurRef={addressesBlurRef}
                         addressesFocusRef={addressesFocusRef}
                     />
                     <ComposerContent
                         message={modelMessage}
+                        disabled={!editorReady}
+                        onEditorReady={() => setEditorReady(true)}
                         onChange={handleChange}
                         onChangeContent={handleChangeContent}
                         onFocus={addressesBlurRef.current}
@@ -282,7 +305,7 @@ const Composer = ({
                     />
                     <ComposerActions
                         message={modelMessage}
-                        lock={syncLock}
+                        lock={syncLock || !editorReady}
                         activity={syncActivity}
                         onAddAttachments={handleAddAttachmentsStart}
                         onSave={handleSave}

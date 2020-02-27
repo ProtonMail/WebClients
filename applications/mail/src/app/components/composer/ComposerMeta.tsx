@@ -10,12 +10,13 @@ import { getFromAdresses } from '../../helpers/addresses';
 interface Props {
     message: MessageExtended;
     addresses: Address[];
+    disabled: boolean;
     onChange: (message: MessageExtended) => void;
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
 }
 
-const ComposerMeta = ({ message, addresses, onChange, addressesBlurRef, addressesFocusRef }: Props) => {
+const ComposerMeta = ({ message, addresses, disabled, onChange, addressesBlurRef, addressesFocusRef }: Props) => {
     const [uid] = useState(generateUID('composer'));
 
     const addressesOptions = getFromAdresses(addresses, message.originalTo).map((address: Address) => ({
@@ -46,12 +47,14 @@ const ComposerMeta = ({ message, addresses, onChange, addressesBlurRef, addresse
                     id={`from-${uid}`}
                     options={addressesOptions}
                     value={message.data?.AddressID}
+                    disabled={disabled}
                     onChange={handleFromChange}
                     onFocus={addressesBlurRef.current}
                 ></Select>
             </div>
             <ComposerAddresses
                 message={message}
+                disabled={disabled}
                 onChange={onChange}
                 addressesBlurRef={addressesBlurRef}
                 addressesFocusRef={addressesFocusRef}
@@ -64,6 +67,7 @@ const ComposerMeta = ({ message, addresses, onChange, addressesBlurRef, addresse
                     id={`subject-${uid}`}
                     value={message.data?.Subject}
                     placeholder={c('Placeholder').t`Subject`}
+                    disabled={disabled}
                     onChange={handleSubjectChange}
                     onFocus={addressesBlurRef.current}
                 />
