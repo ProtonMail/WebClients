@@ -17,7 +17,10 @@ const loadScriptHelper = ({ path, integrity }, cb) => {
     if (integrity) {
         script.integrity = integrity;
     }
-    script.onload = (e) => cb(e);
+    script.onload = (e) => {
+        cb(e);
+        script.remove();
+    };
     script.onerror = (e) => cb(undefined, e);
 
     document.head.appendChild(script);
@@ -29,7 +32,7 @@ export const loadScript = (path, integrity) => {
             if (error) {
                 return reject(error);
             }
-            return resolve();
+            return resolve(event);
         });
     });
 };

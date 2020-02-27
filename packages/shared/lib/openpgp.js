@@ -1,5 +1,7 @@
 import { hasModulesSupport, getOS } from './helpers/browser';
-import { initMain, initWorker } from './helpers/setupPmcrypto';
+import { initScript, initWorker, setOpenpgp } from './helpers/setupPmcrypto';
+
+let promise;
 
 const dl = ({ filepath, integrity }) => {
     const options = {
@@ -38,7 +40,9 @@ export const init = async (openpgpConfig) => {
     const workerPromise = dl(worker).catch(() => dl(worker));
 
     const openpgpContents = await openpgpPromise;
-    await initMain(openpgpContents, elliptic, openpgpConfig);
+    await initScript(openpgpContents);
+
+    setOpenpgp(window.openpgp, elliptic, openpgpConfig);
 
     // Compat browsers do not support the worker.
     if (isCompat || isUnsupportedWorker()) {
@@ -50,8 +54,6 @@ export const init = async (openpgpConfig) => {
         initWorker(openpgpContents, result);
     });
 };
-
-let promise;
 
 /**
  * Get the openpgp init promise singleton
