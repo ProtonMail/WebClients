@@ -111,7 +111,7 @@ const CalendarsSection = ({ calendars = [], calendarUserSettings = {}, disabled 
             {hasDisabledCalendar ? (
                 <Alert>
                     {c('Disabled calendar')
-                        .t`A calendar is marked as disabled when it is linked to a disabled email address. You can still access your disabled calendar and view events in read-only mode or delete them. You can enable the calendar by re-enabling the e-mail address.`}
+                        .t`A calendar is marked as disabled when it is linked to a disabled email address. You can still access your disabled calendar and view events in read-only mode or delete them. You can enable the calendar by re-enabling the email address.`}
                 </Alert>
             ) : null}
             <CalendarsTable

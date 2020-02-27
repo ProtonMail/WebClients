@@ -9,7 +9,8 @@ import {
     useApi,
     useLoading,
     MobileNavServices,
-    MobileNavLink
+    MobileNavLink,
+    Info
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
@@ -79,7 +80,16 @@ const CalendarSidebar = ({
                             <NavMenu
                                 list={[
                                     {
-                                        text: c('Header').t`Disabled calendars`,
+                                        text: (
+                                            <>
+                                                {c('Header').t`Disabled calendars`}
+                                                <Info
+                                                    buttonClass="ml0-5 inline-flex"
+                                                    title={c('Disabled calendars')
+                                                        .t`Disabled calendars are linked to disabled email addresses. You can still access your disabled calendar, view its events and delete them.`}
+                                                />
+                                            </>
+                                        ),
                                         link: '/calendar/settings/calendars'
                                     }
                                 ]}
