@@ -24,6 +24,7 @@ import { Attachment } from '../../models/attachment';
 import { removeAttachment } from '../../api/attachments';
 import { createEmbeddedMap, readCID, isEmbeddable } from '../../helpers/embedded/embeddeds';
 import { InsertRef } from './editor/Editor';
+import { setContent } from '../../helpers/message/messageContent';
 
 /**
  * Create a new MessageExtended with props from both m1 and m2
@@ -156,12 +157,10 @@ const Composer = ({
         autoSave(newModelMessage);
     };
     const handleChangeContent = (content: string) => {
-        if (!modelMessage.document) {
-            return;
-        }
-        modelMessage.document.innerHTML = content;
-        setModelMessage({ ...modelMessage });
-        autoSave(modelMessage);
+        setContent(modelMessage, content);
+        const newModelMessage = { ...modelMessage };
+        setModelMessage(newModelMessage);
+        autoSave(newModelMessage);
     };
     const save = async (messageToSave = modelMessage) => {
         await saveDraft(messageToSave);
@@ -270,7 +269,8 @@ const Composer = ({
                     />
                     <ComposerContent
                         message={modelMessage}
-                        onChange={handleChangeContent}
+                        onChange={handleChange}
+                        onChangeContent={handleChangeContent}
                         onFocus={addressesBlurRef.current}
                         onAddAttachments={handleAddAttachmentsStart}
                         onRemoveAttachment={handleRemoveAttachment}

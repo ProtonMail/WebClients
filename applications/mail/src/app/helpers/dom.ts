@@ -150,3 +150,12 @@ export const parseInDiv = (content: string) => {
 };
 
 export const isDragFile = (event: DragEvent) => event.dataTransfer?.types.includes('Files');
+
+/**
+ * Move the textarea cursor to the front.
+ */
+export const setTextAreaCursorStart = (textarea: HTMLTextAreaElement) => {
+    textarea.selectionStart = 0;
+    textarea.selectionEnd = 0;
+    textarea.scrollTop = 0;
+};

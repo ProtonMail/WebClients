@@ -15,7 +15,8 @@ import 'react-quill/dist/quill.snow.css';
 
 interface Props {
     message: MessageExtended;
-    onChange: (content: string) => void;
+    onChange: (message: MessageExtended) => void;
+    onChangeContent: (content: string) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => () => void;
@@ -29,6 +30,7 @@ interface Props {
 const ComposerContent = ({
     message,
     onChange,
+    onChangeContent,
     onFocus,
     onAddAttachments,
     onRemoveAttachment,
@@ -73,8 +75,9 @@ const ComposerContent = ({
         >
             <div className={classnames(['flex-item-fluid w100 flex flex-column flex-nowrap relative'])}>
                 <Editor
-                    document={message.document}
+                    message={message}
                     onChange={onChange}
+                    onChangeContent={onChangeContent}
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}
                     contentFocusRef={contentFocusRef}

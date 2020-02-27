@@ -1,10 +1,9 @@
 import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { hasBit, setBit } from 'proton-shared/lib/helpers/bitset';
+import { hasBit, setBit, toggleBit } from 'proton-shared/lib/helpers/bitset';
 import { identity } from 'proton-shared/lib/helpers/function';
 
 import { MESSAGE_FLAGS, SIGNATURE_START } from '../../constants';
-import { Message, MessageExtended } from '../../models/message';
-import { toText } from '../parserHtml';
+import { Message } from '../../models/message';
 
 const {
     FLAG_RECEIVED,
@@ -36,6 +35,10 @@ export const isHTML = hasMimeType(MIME_TYPES.DEFAULT);
  * Check if a message has a flag in the flags bitmap
  */
 export const hasFlag = (flag: number) => ({ Flags = 0 }: Message = {}) => hasBit(Flags, flag);
+
+export const setFlag = (flag: number) => (message: Message = {}) => setBit(message.Flags, flag) as number;
+
+export const toggleFlag = (flag: number) => (message: Message = {}) => toggleBit(message.Flags, flag) as number;
 
 export const isRequestReadReceipt = hasFlag(FLAG_RECEIPT_REQUEST);
 export const isImported = hasFlag(FLAG_IMPORTED);
@@ -209,32 +212,4 @@ export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
         autoReplyHeaders.some((h) => h in ParsedHeaders) ||
         autoReplyHeaderValues.some(([k, v]) => k in ParsedHeaders && ParsedHeaders[k].toLowerCase() === v)
     );
-};
-
-/**
- * We NEVER upconvert, if the user wants html: plaintext is actually fine as well
- */
-export const getOutHTML = (message: MessageExtended) =>
-    isHTML(message.data) ? message.document?.innerHTML : undefined;
-
-export const exportPlainText = (message: MessageExtended) => {
-    /*
-     * The replace removes any characters that are produced by the copying process (like zero width characters)
-     * See: http://www.berklix.org/help/majordomo/#quoted we want to avoid sending unnecessary quoted printable encodings
-     */
-    if (message.data?.MIMEType !== MIME_TYPES.DEFAULT) {
-        return message.document?.innerHTML.replace(/\u200B/g, '');
-    }
-    return toText(message.document?.innerHTML || '', true, true).replace(/\u200B/g, '');
-};
-
-/**
- * Generates/Gets the plaintext body from the message. If the message is not composed in plaintext, it will downconvert
- * the html body to plaintext if downconvert is set. If downconvert is disabled it will return false.
- */
-export const getPlainText = (message: MessageExtended, downconvert: boolean) => {
-    if (!isPlainText(message.data) && !downconvert) {
-        return undefined;
-    }
-    return exportPlainText(message);
 };

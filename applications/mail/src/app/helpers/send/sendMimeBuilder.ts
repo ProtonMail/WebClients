@@ -5,11 +5,12 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 
 import { MessageExtended, EmbeddedMap } from '../../models/message';
-import { getPlainText, getOutHTML, getAttachments } from '../message/messages';
+import { getAttachments } from '../message/messages';
 import { Attachment } from '../../models/attachment';
 import { get } from '../attachment/attachmentLoader';
 import { readCID } from '../embedded/embeddeds';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
+import { getPlainText, getDocumentContent } from '../message/messageContent';
 
 // Reference: Angular/src/app/composer/services/mimeMessageBuilder.js
 
@@ -174,7 +175,7 @@ export const constructMime = async (
     // }
 
     const plaintext = getPlainText(message, downconvert);
-    const html = message.data?.MIMEType === MIME_TYPES.DEFAULT ? getOutHTML(message) : undefined;
+    const html = message.data?.MIMEType === MIME_TYPES.DEFAULT ? getDocumentContent(message.document) : undefined;
     const attachments = await fetchMimeDependencies(message, cache, api);
     const embeddeds = message.embeddeds || new Map();
 

@@ -1,25 +1,40 @@
-import React, { MutableRefObject, useRef, useEffect, useState } from 'react';
+import React, { MutableRefObject, useRef, useEffect, useState, ChangeEvent } from 'react';
+import { Button } from 'react-components';
 
 import EditorToolbar from './EditorToolbar';
-import { EmbeddedMap } from '../../../models/message';
+import { EmbeddedMap, MessageExtended } from '../../../models/message';
 import EditorSquire from './EditorSquire';
 import { SquireType } from '../../../helpers/squire/squireConfig';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
-import { Button } from 'react-components';
-import { insertImage } from '../../../helpers/squire/squireActions';
+import { insertImage, setTextDirectionWithoutFocus } from '../../../helpers/squire/squireActions';
+import { isPlainText as testIsPlainText } from '../../../helpers/message/messages';
+import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
+import { setTextAreaCursorStart } from '../../../helpers/dom';
+import { getContent } from '../../../helpers/message/messageContent';
 
 export type InsertRef = MutableRefObject<((embeddeds: EmbeddedMap) => void) | undefined>;
 
 interface Props {
-    document?: Element;
-    onChange: (content: string) => void;
+    message: MessageExtended;
+    onChange: (message: MessageExtended) => void;
+    onChangeContent: (content: string) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
     contentFocusRef: MutableRefObject<() => void>;
     contentInsertRef: InsertRef;
 }
 
-const Editor = ({ document, onChange, onFocus, onAddAttachments, contentFocusRef, contentInsertRef }: Props) => {
+const Editor = ({
+    message,
+    onChange,
+    onChangeContent,
+    onFocus,
+    onAddAttachments,
+    contentFocusRef,
+    contentInsertRef
+}: Props) => {
+    const isPlainText = testIsPlainText(message.data);
+
     const [editorReady, setEditorReady] = useState(false);
     const [documentReady, setDocumentReady] = useState(false);
     const [focusWhenReady, setFocusWhenReady] = useState(false);
@@ -27,30 +42,56 @@ const Editor = ({ document, onChange, onFocus, onAddAttachments, contentFocusRef
     const [blockquoteSaved, setBlockquoteSaved] = useState('');
 
     const squireRef = useRef<SquireType>(null) as MutableRefObject<SquireType>;
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     useEffect(() => {
         contentFocusRef.current = () => setFocusWhenReady(true);
     }, []);
 
     useEffect(() => {
-        if (document?.innerHTML) {
+        if (message.document?.innerHTML) {
             setDocumentReady(true);
         }
-    }, [document?.innerHTML]);
+    }, [message.document?.innerHTML]);
 
-    // Initialize Squire content at (and only) startup
+    // Initialize Squire (or textarea) content at (and only) startup
     useEffect(() => {
-        if (editorReady && documentReady) {
-            const [content, blockquote] = locateBlockquote(document);
-            setBlockquoteSaved(blockquote);
-            setBlockquoteExpanded(blockquote === '');
-            squireRef.current?.setHTML(content);
-            contentFocusRef.current = squireRef.current?.focus;
-            if (focusWhenReady) {
-                squireRef.current?.focus();
+        if (isPlainText) {
+            setEditorReady(false);
+        }
+
+        if (documentReady) {
+            if (isPlainText) {
+                if (textareaRef.current) {
+                    const content = getContent(message);
+                    textareaRef.current.value = content;
+                    setTextAreaCursorStart(textareaRef.current);
+
+                    contentFocusRef.current = textareaRef.current?.focus;
+                    if (focusWhenReady) {
+                        textareaRef.current?.focus();
+                    }
+                }
+            } else {
+                if (editorReady) {
+                    const [content, blockquote] = locateBlockquote(message.document);
+                    setBlockquoteSaved(blockquote);
+                    setBlockquoteExpanded(blockquote === '');
+
+                    squireRef.current?.setHTML(content);
+                    setTextDirectionWithoutFocus(
+                        squireRef.current,
+                        message.data?.RightToLeft?.valueOf() || RIGHT_TO_LEFT.OFF
+                    );
+
+                    contentFocusRef.current = squireRef.current?.focus;
+                    if (focusWhenReady) {
+                        squireRef.current?.focus();
+                    }
+                }
             }
         }
-    }, [editorReady, documentReady]);
+    }, [editorReady, documentReady, isPlainText]);
 
     const handleReady = () => {
         setEditorReady(true);
@@ -58,9 +99,9 @@ const Editor = ({ document, onChange, onFocus, onAddAttachments, contentFocusRef
 
     const handleInput = (content: string) => {
         if (!blockquoteExpanded) {
-            onChange(content + blockquoteSaved);
+            onChangeContent(content + blockquoteSaved);
         } else {
-            onChange(content);
+            onChangeContent(content);
         }
     };
 
@@ -76,20 +117,40 @@ const Editor = ({ document, onChange, onFocus, onAddAttachments, contentFocusRef
         });
     };
 
+    const handlePlainTextChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+        onChangeContent(event.target.value);
+    };
+
     useEffect(() => {
         contentInsertRef.current = handleInsertEmbedded;
     }, []);
 
     return (
-        <div className="editor w100 h100 rounded flex flex-column">
-            <EditorToolbar squireRef={squireRef} editorReady={editorReady} onAddAttachments={onAddAttachments} />
-            <EditorSquire ref={squireRef} onFocus={onFocus} onReady={handleReady} onInput={handleInput} />
-            {!blockquoteExpanded && (
-                <div className="m0-5">
-                    <Button className="pm-button--small" onClick={handleShowBlockquote}>
-                        ...
-                    </Button>
-                </div>
+        <div className="editor w100 h100 rounded flex flex-column flex-nowrap">
+            <EditorToolbar
+                message={message}
+                squireRef={squireRef}
+                editorReady={editorReady}
+                onChange={onChange}
+                onAddAttachments={onAddAttachments}
+            />
+            {isPlainText ? (
+                <textarea
+                    className="w100 h100 pt1 pb1 pl0-5 pr0-5"
+                    ref={textareaRef}
+                    onChange={handlePlainTextChange}
+                />
+            ) : (
+                <>
+                    <EditorSquire ref={squireRef} onFocus={onFocus} onReady={handleReady} onInput={handleInput} />
+                    {!blockquoteExpanded && (
+                        <div className="m0-5">
+                            <Button className="pm-button--small" onClick={handleShowBlockquote}>
+                                ...
+                            </Button>
+                        </div>
+                    )}
+                </>
             )}
         </div>
     );

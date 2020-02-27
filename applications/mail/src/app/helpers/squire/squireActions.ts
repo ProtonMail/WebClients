@@ -11,6 +11,7 @@ import {
     DEFAULT_FONT_SIZE,
     FONT_SIZES
 } from './squireConfig';
+import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
 
 const testPresenceInSelection = (squire: SquireType, format: string, validation: RegExp) =>
     validation.test(squire.getPath()) || squire.hasFormat(format);
@@ -173,4 +174,31 @@ export const insertImage = (
 
     squire.focus();
     squire.insertImage(url, attributes);
+};
+
+const rightToLeftToString = (rtl: RIGHT_TO_LEFT) => {
+    switch (rtl) {
+        case RIGHT_TO_LEFT.ON:
+            return 'rtl';
+        case RIGHT_TO_LEFT.OFF:
+            return 'ltr';
+    }
+};
+
+export const setTextDirection = (squire: SquireType, direction: RIGHT_TO_LEFT) => {
+    squire.setTextDirection(rightToLeftToString(direction));
+};
+
+/**
+ * The default text direction function sets focus to the editor, which breaks the
+ * custom focus used by the composer when setting the default text direction to be RTL
+ */
+export const setTextDirectionWithoutFocus = (squire: SquireType, direction: RIGHT_TO_LEFT) => {
+    squire.forEachBlock((block) => {
+        if (direction) {
+            block.setAttribute('dir', rightToLeftToString(direction));
+        } else {
+            block.removeAttribute('dir');
+        }
+    }, true);
 };

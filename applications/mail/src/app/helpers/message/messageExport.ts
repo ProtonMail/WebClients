@@ -7,8 +7,10 @@ import { MessageExtended, Message } from '../../models/message';
 import { mutateHTMLCid } from '../embedded/embeddedParser';
 import { find } from '../embedded/embeddedFinder';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { isPlainText } from './messages';
+import { getDocumentContent, getContent, getPlainTextContent } from './messageContent';
 
-export const prepareExport = (message: MessageExtended) => {
+const prepareExport = (message: MessageExtended) => {
     if (!message.document) {
         return;
     }
@@ -21,7 +23,7 @@ export const prepareExport = (message: MessageExtended) => {
     return document;
 };
 
-export const encryptBody = async (content: string, publicKeys?: OpenPGPKey[], privateKeys?: OpenPGPKey[]) => {
+const encryptBody = async (content: string, publicKeys?: OpenPGPKey[], privateKeys?: OpenPGPKey[]) => {
     const { data } = await encryptMessage({
         data: content,
         publicKeys: [publicKeys?.[0]] as OpenPGPKey[],
@@ -34,12 +36,15 @@ export const encryptBody = async (content: string, publicKeys?: OpenPGPKey[], pr
 };
 
 export const prepareAndEncryptBody = async (message: MessageExtended) => {
-    const document = prepareExport(message);
-    return encryptBody(document?.innerHTML || '', message.publicKeys, message.privateKeys);
+    const plainText = isPlainText(message.data);
+    const document = plainText ? undefined : prepareExport(message);
+    const content = plainText ? getPlainTextContent(message) : getDocumentContent(document);
+    const encrypted = await encryptBody(getContent(message), message.publicKeys, message.privateKeys);
+    return { document, content, encrypted };
 };
 
 export const createMessage = async (message: MessageExtended, api: Api): Promise<Message> => {
-    const Body = await prepareAndEncryptBody(message);
+    const { encrypted: Body } = await prepareAndEncryptBody(message);
 
     const { Message: updatedMessage } = await api(
         createDraft({
@@ -53,7 +58,7 @@ export const createMessage = async (message: MessageExtended, api: Api): Promise
 };
 
 export const updateMessage = async (message: MessageExtended, api: Api): Promise<Message> => {
-    const Body = await prepareAndEncryptBody(message);
+    const { encrypted: Body } = await prepareAndEncryptBody(message);
 
     const { Message: updatedMessage } = await api(updateDraft(message.data?.ID, { ...message.data, Body }));
 

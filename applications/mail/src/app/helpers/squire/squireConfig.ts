@@ -91,6 +91,8 @@ export interface SquireType {
     setTextColour: (color: string) => void;
     setHighlightColour: (color: string) => void;
     setTextAlignment: (alignment: string) => void;
+    setTextDirection: (direction?: string) => void;
+    forEachBlock: (callback: (block: Element) => void, mutates: boolean) => void;
     focus: () => void;
     bold: () => void;
     removeBold: () => void;

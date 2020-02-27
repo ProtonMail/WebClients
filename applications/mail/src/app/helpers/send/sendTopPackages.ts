@@ -5,8 +5,9 @@ import { OpenPGPKey } from 'pmcrypto';
 import { MessageExtended } from '../../models/message';
 import { MapPreference } from './sendPreferences';
 import { constructMime } from './sendMimeBuilder';
-import { addReceived, getPlainText, getOutHTML } from '../message/messages';
+import { addReceived } from '../message/messages';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
+import { getContent, getPlainText } from '../message/messageContent';
 
 // Reference: Angular/src/app/composer/services/encryptMessage.js
 // Reference: Angular/src/app/composer/services/generateTopPackages.js
@@ -56,7 +57,8 @@ const generateHTMLPackage = async (message: MessageExtended): Promise<Package> =
     Flags: addReceived(message.data?.Flags),
     Addresses: {},
     MIMEType: DEFAULT,
-    Body: getOutHTML(message)
+    // We NEVER upconvert, if the user wants html: plaintext is actually fine as well
+    Body: getContent(message)
 });
 
 /**

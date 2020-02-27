@@ -12,8 +12,9 @@ import { Attachment } from '../../models/attachment';
 import { insertSignature } from './messageSignature';
 import { formatFullDate } from '../date';
 import { recipientToInput } from '../addresses';
-import { isSent, isSentAndReceived } from './messages';
 import { getDate } from '../elements';
+import { isSent, isSentAndReceived } from './messages';
+import { getContent } from './messageContent';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -142,7 +143,7 @@ const generateBlockquote = (referenceMessage: MessageExtended) => {
         ${ORIGINAL_MESSAGE}<br>
         ${previously}<br>
         <blockquote class="protonmail_quote" type="cite">
-            ${referenceMessage.document?.innerHTML}
+            ${getContent(referenceMessage)}
         </blockquote><br>
     </div>`;
 };

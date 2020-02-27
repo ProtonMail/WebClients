@@ -64,7 +64,7 @@ const getClassNamesSignature = (signature: string, protonSignature: string) => {
 /**
  * Generate the template for a signature and clean it
  */
-const templateBuilder = (signature = '', mailSettings: MailSettings, isReply = false, noSpace = false) => {
+export const templateBuilder = (signature = '', mailSettings: MailSettings, isReply = false, noSpace = false) => {
     const protonSignature = getProtonSignature(mailSettings);
     const { userClass, protonClass, containerClass } = getClassNamesSignature(signature, protonSignature);
     const space = getSpaces(signature, protonSignature, isReply);

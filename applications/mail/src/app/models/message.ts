@@ -63,6 +63,11 @@ export interface MessageExtended {
     document?: Element;
 
     /**
+     * Mail content when in plaintext mode
+     */
+    plainText?: string;
+
+    /**
      * Cryptography signatures verification status flag
      */
     verified?: VERIFICATION_STATUS;

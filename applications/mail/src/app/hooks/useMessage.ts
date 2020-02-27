@@ -26,6 +26,7 @@ import {
     UploadResult
 } from '../helpers/attachment/attachmentUploader';
 import { useMessageCache } from '../containers/MessageProvider';
+import { setContent, getContent } from '../helpers/message/messageContent';
 
 export interface ComputationOption {
     mailSettings: MailSettings;
@@ -62,7 +63,7 @@ interface MessageActivity {
  */
 export const mergeMessages = (messageState: MessageExtended, messageModel: MessageExtended) => {
     if (messageState.document) {
-        messageState.document.innerHTML = messageModel.document?.innerHTML || '';
+        setContent(messageState, getContent(messageModel));
     }
     const message = {
         ...messageState,

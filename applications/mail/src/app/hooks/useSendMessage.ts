@@ -17,7 +17,7 @@ import { getSendPreferences } from '../helpers/send/sendPreferences';
 import { generateTopPackages } from '../helpers/send/sendTopPackages';
 import { attachSubPackages } from '../helpers/send/sendSubPackages';
 import { encryptPackages } from '../helpers/send/sendEncrypt';
-import { prepareExport, encryptBody } from '../helpers/message/messageExport';
+import { prepareAndEncryptBody } from '../helpers/message/messageExport';
 import { useAttachmentCache } from '../containers/AttachmentProvider';
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
@@ -35,19 +35,13 @@ export const useSendMessage = () => {
     return useCallback(
         async (inputMessage: MessageExtended) => {
             // Prepare and save draft
-            const document = prepareExport(inputMessage);
-            const Body = await encryptBody(
-                document?.innerHTML || '',
-                inputMessage.publicKeys,
-                inputMessage.privateKeys
-            );
-
+            const { document, encrypted: Body } = await prepareAndEncryptBody(inputMessage);
             const { Message } = await api(updateDraft(inputMessage.data?.ID, { ...inputMessage.data, Body }));
 
             // Processed message representing what we send
             const message: MessageExtended = {
                 ...inputMessage,
-                document: document,
+                document,
                 data: Message
             };
 
