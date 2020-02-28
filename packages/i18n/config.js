@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-
 const argv = require('minimist')(process.argv.slice(2));
 
 const { warn } = require('./lib/helpers/log')('proton-i18n');
@@ -8,6 +7,15 @@ const { warn } = require('./lib/helpers/log')('proton-i18n');
 // Compat mode WebClient
 const ENV_FILE = process.env.TEST_ENV || (fs.existsSync('.env') ? '.env' : 'env/.env');
 require('dotenv').config({ path: ENV_FILE });
+
+const getPackageApp = () => {
+    try {
+        // We might use proton-i18n on top of a non node package
+        return require(path.join(process.cwd(), 'package.json'));
+    } catch (e) {
+        return {};
+    }
+};
 
 const PROTON_DEPENDENCIES = {
     app: ['src/app'].concat(
@@ -22,12 +30,8 @@ const PROTON_DEPENDENCIES = {
  * @return {Boolean}
  */
 const isWebClientLegacy = () => {
-    try {
-        const { name } = require(path.join(process.cwd(), 'package.json')); // We might use proton-i18n on top of a non node package
-        return name === 'protonmail-web';
-    } catch (e) {
-        return false;
-    }
+    const { name } = getPackageApp();
+    return name === 'protonmail-web';
 };
 
 /**
@@ -35,13 +39,11 @@ const isWebClientLegacy = () => {
  * @return {Boolean}
  */
 const isBetaAngularV4 = () => {
-    try {
-        const { name, 'version-beta': versionBeta } = require(path.join(process.cwd(), 'package.json')); // We might use proton-i18n on top of a non node package
-        return versionBeta && name === 'protonmail-web';
-    } catch (e) {
-        return false;
-    }
+    const { name, 'version-beta': versionBeta } = getPackageApp();
+    return versionBeta && name === 'protonmail-web';
 };
+
+const isClientV4 = () => isBetaAngularV4() || !isWebClientLegacy();
 
 const getFiles = () => {
     const TEMPLATE_NAME = process.env.I18N_TEMPLATE_FILE || 'template.pot';
@@ -91,8 +93,11 @@ const getCrowdin = () => {
 module.exports = {
     getEnv,
     isWebClientLegacy,
+    isBetaAngularV4,
+    isClientV4,
     getCrowdin,
     getFiles,
+    getPackageApp,
     ENV_FILE,
     PROTON_DEPENDENCIES
 };

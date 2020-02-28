@@ -8,7 +8,7 @@ const bash = (cli, args = [], stdio) => {
 };
 
 const curl = (url, optCurl = {}, opt = {}) => {
-    const options = [];
+    const options = Array.isArray(optCurl) ? optCurl : [];
 
     if (optCurl.file) {
         const { input, output } = optCurl.file;

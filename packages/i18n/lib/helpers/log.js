@@ -10,6 +10,12 @@ module.exports = (scope) => {
         addSpaces && console.log();
     };
 
+    const info = (msg, addSpaces = true) => {
+        addSpaces && console.log();
+        console.log(chalk.bgGrey('[info]'), msg);
+        addSpaces && console.log();
+    };
+
     const success = (msg, { time, space = false } = {}) => {
         const txt = chalk.bold(' ✔ ');
         const message = [chalk.bgGreen(chalk.black(`[${scope}]`)), txt, msg, time && ` (${time})`]
@@ -67,6 +73,7 @@ module.exports = (scope) => {
         json,
         debug,
         error,
+        info,
         warn
     };
 };
