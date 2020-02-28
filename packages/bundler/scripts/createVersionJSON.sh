@@ -61,6 +61,9 @@ function getBranch {
 function getRelease {
     echo "$(getBranch)-$(getVersion)-$(git log -n 1 --format=%h)";
 }
+function getLocales {
+    cat node_modules/proton-translations/.version;
+}
 
 function toJSON {
     local commit=$(getCommit);
@@ -68,6 +71,7 @@ function toJSON {
     local branch=$(getBranch);
     local buildDate="$(date -u '+%FT%TZ')";
     local release="$(getRelease)";
+    local locales="$(getLocales)";
 
 cat <<EOT
 {
@@ -75,7 +79,8 @@ cat <<EOT
     "commit": "${commit}",
     "branch": "${branch}",
     "buildDate": "${buildDate}",
-    "release": "${release}"
+    "release": "${release}",
+    "locales": "${locales}"
 }
 EOT
 }
