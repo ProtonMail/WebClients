@@ -95,6 +95,7 @@ async function main() {
     const commands = [
         `rm -rf ${OUTPUT_CLONE} || echo`,
         `git clone ${I18N_DEPENDENCY_REPO} --depth 1 --branch ${I18N_DEPENDENCY_BRANCH} ${OUTPUT_CLONE}`,
+        `cd ${OUTPUT_CLONE} && git log --format="%H" -n 1 > .version && cd -`,
         `rm -rf ${path.join(OUTPUT_CLONE, '.git')}`
     ].join(' && ');
     await bash(commands);
