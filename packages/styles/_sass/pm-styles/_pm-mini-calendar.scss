@@ -35,9 +35,6 @@ $minicalendar-bg-color-range-selection: #51555F !default;
 .minicalendar-day {
     color: var(--color-main-area, $minicalendar-day-color);
 }
-.minicalendar-icon {
-    fill: $minicalendar-day-color;
-}
 .minicalendar-days {
     user-select: none;
 }
@@ -114,9 +111,6 @@ $mini-calendar-currentDay-size: 2.5em !default;
         &:hover {
             background: rgba($minicalendar-bg-color-range-selection, .8);
         }
-    }
-    .minicalendar-icon {
-        fill: $minicalendar-day-color-on-dark-background;
     }
 }
 
