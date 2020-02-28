@@ -37,9 +37,9 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const count = checkeds ? checkeds : total;
 
     const strongText = conversationMode ? (
-        <strong>{ngettext(msgid`${count} conversation`, `${count} conversations`, count)}</strong>
+        <strong key="conversation">{ngettext(msgid`${count} conversation`, `${count} conversations`, count)}</strong>
     ) : (
-        <strong>{ngettext(msgid`${count} email`, `${count} emails`, count)}</strong>
+        <strong key="email">{ngettext(msgid`${count} email`, `${count} emails`, count)}</strong>
     );
 
     const text = checkeds

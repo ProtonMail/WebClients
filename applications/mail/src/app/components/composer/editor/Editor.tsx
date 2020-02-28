@@ -134,7 +134,7 @@ const Editor = ({
             />
             {isPlainText ? (
                 <textarea
-                    className="w100 h100 pt1 pb1 pl0-5 pr0-5"
+                    className="w100 h100 flex-item-fluid pt1 pb1 pl0-5 pr0-5"
                     ref={textareaRef}
                     onChange={handlePlainTextChange}
                 />
