@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
-const usePopperAnchor = () => {
-    const anchorRef = useRef();
+const usePopperAnchor = <T extends HTMLElement>() => {
+    const anchorRef = useRef<T>(null);
     const [isOpen, setOpen] = useState(false);
 
     const open = () => setOpen(true);
