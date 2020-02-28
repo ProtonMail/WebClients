@@ -1,5 +1,5 @@
 import { hasModulesSupport, getOS } from '../helpers/browser';
-import { initMain, initWorker } from './setupPmcrypto';
+import { initScript, initWorker, setOpenpgp } from './setupPmcrypto';
 
 // eslint-disable-next-line no-undef
 const { main, compat, worker, elliptic } = PM_OPENPGP;
@@ -31,7 +31,8 @@ export const loadOpenpgp = async () => {
     const workerPromise = dl(worker).catch(() => dl(worker));
 
     const openpgpContents = await openpgpPromise;
-    await initMain(openpgpContents, elliptic);
+    await initScript(openpgpContents);
+    setOpenpgp(window.openpgp, elliptic);
 
     // Compat browsers do not support the worker.
     if (isCompat || isUnsupportedWorker()) {
