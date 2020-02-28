@@ -91,7 +91,7 @@ const PreviewContainer = ({
             downloadControls.current?.cancel();
             downloadControls.current = undefined;
         };
-    }, [getFileMeta, downloadDriveFile]);
+    }, [linkId, getFileMeta, downloadDriveFile]);
 
     const navigateToParent = useCallback(() => {
         if (meta?.ParentLinkID) {
