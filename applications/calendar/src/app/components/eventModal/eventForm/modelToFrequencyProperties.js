@@ -22,16 +22,25 @@ export const getUntilProperty = (untilDateTime, isAllDay, tzid) => {
 const modelToFrequencyProperties = ({ frequencyModel = {}, start = {}, isAllDay }) => {
     const { type, frequency, interval, weekly, monthly, ends } = frequencyModel;
     const { date: startDate, tzid } = start;
-    const properties = {};
 
     if ([FREQUENCY.DAILY, FREQUENCY.WEEKLY, FREQUENCY.MONTHLY, FREQUENCY.YEARLY].includes(type)) {
-        properties.rrule = { value: { freq: type } };
+        return {
+            rrule: {
+                value: { freq: type }
+            }
+        };
     }
-    if (type === FREQUENCY.CUSTOM && frequencyModel.ends.count > 1) {
-        properties.rrule = {
-            value: {
-                freq: frequency,
-                interval: interval === 1 ? undefined : interval
+
+    if (type === FREQUENCY.CUSTOM) {
+        if (ends.type === END_TYPE.AFTER_N_TIMES && ends.count <= 1) {
+            return;
+        }
+        const properties = {
+            rrule: {
+                value: {
+                    freq: frequency,
+                    interval: interval === 1 ? undefined : interval
+                }
             }
         };
         if (frequency === FREQUENCY.WEEKLY) {
@@ -64,8 +73,8 @@ const modelToFrequencyProperties = ({ frequencyModel = {}, start = {}, isAllDay 
         if (ends.type === END_TYPE.UNTIL) {
             properties.rrule.value.until = getUntilProperty(fromLocalDate(ends.until), isAllDay, tzid);
         }
+        return properties;
     }
-    return properties;
 };
 
 export default modelToFrequencyProperties;

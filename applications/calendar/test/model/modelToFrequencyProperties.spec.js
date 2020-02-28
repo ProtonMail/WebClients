@@ -21,6 +21,37 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
         });
     });
 
+    test('count 1 with other end type', () => {
+        const frequencyModel = {
+            ...dummyFrequencyModel,
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.DAILY,
+            interval: 2,
+            ends: {
+                type: END_TYPE.UNTIL,
+                count: 1,
+                until: new Date(2020, 0, 30)
+            }
+        };
+        expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
+            rrule: {
+                value: {
+                    freq: 'DAILY',
+                    interval: 2,
+                    until: {
+                        year: 2020,
+                        month: 1,
+                        day: 30,
+                        hours: 21,
+                        minutes: 59,
+                        seconds: 59,
+                        isUTC: true
+                    }
+                }
+            }
+        });
+    });
+
     test('every two days, ends after two occurrences', () => {
         const frequencyModel = {
             ...dummyFrequencyModel,

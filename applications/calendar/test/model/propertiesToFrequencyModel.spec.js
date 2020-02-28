@@ -282,7 +282,6 @@ describe('frequency properties to model, monthly recurring rule', () => {
                 bysetpos: -1
             }
         };
-        console.log(getInitialFrequencyModel(lastMondayStart.date).weekly);
         expect(propertiesToFrequencyModel(rrule, lastMondayStart)).toEqual({
             ...getInitialFrequencyModel(lastMondayStart.date),
             type: FREQUENCY.CUSTOM,
