@@ -3,7 +3,7 @@ import { useApi, useEventManager } from 'react-components';
 import { queryEvents } from 'proton-shared/lib/api/calendars';
 import { differenceInHours, getUnixTime } from 'date-fns';
 import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
-import { isIcalRecurring, getOccurrencesBetween, getIsMoreThanOccurrence } from 'proton-shared/lib/calendar/recurring';
+import { isIcalRecurring, getOccurrencesBetween, getOccurrences } from 'proton-shared/lib/calendar/recurring';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { unwrap } from 'proton-shared/lib/calendar/helper';
 import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
@@ -63,7 +63,7 @@ const getRecurringEvents = (events, recurringEvents, searchStart, searchEnd) => 
         const recurringEventCache = recurringEvents.get(id);
 
         const utcIntervals = getOccurrencesBetween(component, searchStart, searchEnd, recurringEventCache);
-        const isSingleOccurrence = !getIsMoreThanOccurrence(component, 1, recurringEventCache);
+        const isSingleOccurrence = getOccurrences(component, 2, recurringEventCache).length === 1;
 
         if (!utcIntervals.length) {
             continue;

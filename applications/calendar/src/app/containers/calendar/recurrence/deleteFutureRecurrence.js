@@ -1,19 +1,26 @@
 import { getPropertyTzid, isIcalPropertyAllDay } from 'proton-shared/lib/calendar/vcalConverter';
 import { fromUTCDate } from 'proton-shared/lib/date/timezone';
 import { addDays } from 'proton-shared/lib/date-fns-utc';
+import { omit } from 'proton-shared/lib/helpers/object';
 import { getUntilProperty } from '../../../components/eventModal/eventForm/modelToFrequencyProperties';
 
 const deleteFutureRecurrence = (component, localStartToExclude, occurrenceNumber) => {
     const { dtstart, rrule } = component;
 
     if (rrule.value.count) {
+        const newCount = occurrenceNumber - 1;
+
+        if (newCount <= 1) {
+            return omit(component, ['rrule']);
+        }
+
         return {
             ...component,
             rrule: {
                 ...rrule,
                 value: {
                     ...rrule.value,
-                    count: occurrenceNumber - 1
+                    count: newCount
                 }
             }
         };

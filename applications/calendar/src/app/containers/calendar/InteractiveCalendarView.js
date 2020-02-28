@@ -12,7 +12,7 @@ import createOrUpdateEvent from 'proton-shared/lib/calendar/integration/createOr
 import { deleteEvent, updateCalendar } from 'proton-shared/lib/api/calendars';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { getIsCalendarDisabled, getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
-import { getIsMoreThanOccurrence } from 'proton-shared/lib/calendar/recurring';
+import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
 
 import { getExistingEvent, getInitialModel, hasDoneChanges } from '../../components/eventModal/eventForm/state';
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
@@ -464,7 +464,7 @@ const InteractiveCalendarView = ({
                 recurrence.occurrenceNumber
             );
             // If we would end up with at least 1 occurrence, the delete this and future option is allowed
-            const isDeleteThisAndFutureAllowed = getIsMoreThanOccurrence(veventFutureDeleted, 0);
+            const isDeleteThisAndFutureAllowed = getOccurrences(veventFutureDeleted, 2).length >= 1;
 
             const deleteType = await handleDeleteRecurringConfirmation(
                 !isDeleteThisAndFutureAllowed || recurrence.occurrenceNumber === 1
