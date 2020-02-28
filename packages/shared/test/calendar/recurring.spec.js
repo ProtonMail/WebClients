@@ -1,5 +1,5 @@
 import { parse } from '../../lib/calendar/vcal';
-import { getOccurrencesBetween } from '../../lib/calendar/recurring';
+import { getOccurrences, getOccurrencesBetween } from '../../lib/calendar/recurring';
 
 const stringifyResult = (result) => {
     return result.map(({ utcStart, utcEnd, occurrenceNumber }) => {
@@ -214,6 +214,30 @@ END:VEVENT
             '2020-02-05T00:00:00.000Z - 2020-02-05T00:00:00.000Z',
             '2020-02-06T00:00:00.000Z - 2020-02-06T00:00:00.000Z'
         ]);
+    });
+
+    it('should not fill occurrences for an event without rrule', () => {
+        const component = parse(`
+BEGIN:VEVENT
+DTSTART:20200201T030000Z
+DTEND:20200201T040000Z
+END:VEVENT
+`);
+        const cache = {};
+        const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2021, 4, 1), cache);
+        expect(stringifyResultSimple(result)).toEqual(['2020-02-01T03:00:00.000Z - 2020-02-01T04:00:00.000Z']);
+    });
+
+    it('should fill one occurrence without rrule', () => {
+        const component = parse(`
+BEGIN:VEVENT
+DTSTART:20200201T030000Z
+DTEND:20200201T040000Z
+END:VEVENT
+`);
+        expect(getOccurrences(component, 0).length).toBe(0);
+        expect(getOccurrences(component, 1).length).toBe(1);
+        expect(getOccurrences(component, 2).length).toBe(1);
     });
 
     it('should fill occurrences for a UTC date with an exdate', () => {

@@ -14,6 +14,15 @@ export const isIcalRecurring = ({ rrule }) => {
 
 const isInInterval = (a1, a2, b1, b2) => a1 <= b2 && a2 >= b1;
 
+// Special case for when attempting to use occurrences when an rrule does not exist.
+// Fake an rrule so that the iteration goes through at least once
+const DEFAULT_RRULE = {
+    value: {
+        freq: 'DAILY',
+        count: 1
+    }
+};
+
 const fillOccurrencesBetween = ({
     interval: [start, end],
     iterator,
@@ -101,6 +110,7 @@ const getOccurrenceSetup = (component) => {
     const dtstart = internalValueToIcalValue(dtstartType, { ...internalDtstart.value, isUTC: true });
     // Since the local date is pretended in UTC time, the until has to be converted into a fake local UTC time too
     const modifiedRrule = getModifiedUntilRrule(internalRrule, getPropertyTzid(internalDtstart));
+    const safeRrule = modifiedRrule || DEFAULT_RRULE;
 
     const utcStart = propertyToUTCDate(internalDtstart);
     const rawEnd = propertyToUTCDate(internalDtEnd);
@@ -118,34 +128,39 @@ const getOccurrenceSetup = (component) => {
         utcStart,
         isAllDay,
         eventDuration,
-        modifiedRrule,
+        modifiedRrule: safeRrule,
         exdateMap: createExdateMap(internalExdate)
     };
 };
 
-export const getIsMoreThanOccurrence = (component, n = 1, cache = {}) => {
+export const getOccurrences = (component, max = 1, cache = {}) => {
+    if (max <= 0) {
+        return [];
+    }
+
     if (!cache.start) {
         cache.start = getOccurrenceSetup(component);
     }
+
     const { dtstart, modifiedRrule, exdateMap } = cache.start;
 
     const rrule = internalValueToIcalValue('recur', modifiedRrule.value);
     const iterator = rrule.iterator(dtstart);
+    const result = [];
 
     let next;
-    let count = 0;
     // eslint-disable-next-line no-cond-assign
     while ((next = iterator.next())) {
         const localStart = toUTCDate(getInternalDateTimeValue(next));
         if (exdateMap[+localStart]) {
             continue;
         }
-        count++;
-        if (count > n) {
+        if (result.length >= max) {
             break;
         }
+        result.push(localStart);
     }
-    return count > n;
+    return result;
 };
 
 export const getOccurrencesBetween = (component, start, end, cache = {}) => {
