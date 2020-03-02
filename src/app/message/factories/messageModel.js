@@ -122,8 +122,10 @@ function messageModel(
                 if (!inSigningPeriod(this) && isSentEncrypted(this) && !isImported(this)) {
                     return encType[0];
                 }
-
-                return encType[this.verified];
+                const verificationErrorMessage = this.verificationErrorMessage
+                    ? `: ${this.verificationErrorMessage}`
+                    : '';
+                return encType[this.verified] + verificationErrorMessage;
             }
 
             return encType[0];
@@ -272,6 +274,7 @@ function messageModel(
                 this.MIMEType = mimetype;
 
                 const pmcryptoVerified = await result.verify();
+                const errors = await result.errors();
 
                 const verified =
                     !publicKeys.length && pmcryptoVerified === VERIFICATION_STATUS.SIGNED_AND_INVALID
@@ -281,7 +284,7 @@ function messageModel(
                 const attachments = attachmentConverter(this, await result.getAttachments(), verified);
                 const encryptedSubject = await result.getEncryptedSubject();
 
-                return { message: body, attachments, verified, encryptedSubject };
+                return { message: body, attachments, verified, encryptedSubject, errors };
             } catch (e) {
                 this.MIMEParsingFailed = true;
                 return { message, attachments: [], verified: 0 };
@@ -330,7 +333,7 @@ function messageModel(
                         messageDate: getDate(this),
                         privateKeys,
                         publicKeys: pubKeys
-                    }).then(({ data, verified: pmcryptoVerified = VERIFICATION_STATUS.NOT_SIGNED }) => {
+                    }).then(({ data, verified: pmcryptoVerified = VERIFICATION_STATUS.NOT_SIGNED, errors }) => {
                         this.decryptedMIME = data;
                         this.decrypting = false;
                         this.hasError = false;
@@ -340,8 +343,17 @@ function messageModel(
                         const verified =
                             !list.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
 
-                        return { message: data, attachments: [], verified };
+                        return { message: data, attachments: [], verified, errors };
                     });
+                })
+                .then((result) => {
+                    this.verificationErrorMessage =
+                        result.errors &&
+                        result.errors
+                            .map(({ message }) => message)
+                            .filter(Boolean)
+                            .join('; ');
+                    return result;
                 })
                 .catch((error) => {
                     this.networkError = error.status === -1;
