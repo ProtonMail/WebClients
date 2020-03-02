@@ -276,7 +276,7 @@ export const useMessage = (
 
     const createDraft = useCallback(
         async (message: MessageExtended) => {
-            await run(message, [transformEscape, keys, create] as Computation[], (newMessage: MessageExtended) => {
+            await run(message, [keys, create] as Computation[], (newMessage: MessageExtended) => {
                 cache.set(newMessage.data?.ID || '', newMessage);
                 setMessageID(newMessage.data?.ID || '');
             });

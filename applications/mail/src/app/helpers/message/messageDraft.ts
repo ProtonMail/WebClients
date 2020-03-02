@@ -3,7 +3,7 @@ import { setBit } from 'proton-shared/lib/helpers/bitset';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { Address } from 'proton-shared/lib/interfaces';
 
-import { Message, MessageExtended } from '../../models/message';
+import { Message, MessageExtended, EmbeddedMap } from '../../models/message';
 import { Recipient } from '../../models/address';
 import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 import { MailSettings } from '../../models/utils';
@@ -15,6 +15,8 @@ import { recipientToInput } from '../addresses';
 import { getDate } from '../elements';
 import { isSent, isSentAndReceived } from './messages';
 import { getContent } from './messageContent';
+import { EmbeddedInfo } from '../../models/message';
+import { parseInDiv } from '../dom';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -177,24 +179,19 @@ export const createNewDraft = (
         Address: senderAddress?.Email
     };
 
-    // TODO: Understand the purpose here
-    // newMsg.Body = currentMsg.Body; // We use the existing Body to speed up the draft request logic
-
-    // TODO: Handle attachments
-    // /* add inline images as attachments */
-    // const attachments = pickAttachements(currentMsg, action);
-    // newMsg.NumEmbedded = 0;
-
-    // newMsg.Attachments = pgpMimeAttachments.clean(attachments);
-    // newMsg.pgpMimeAttachments = pgpMimeAttachments.filter(attachments);
-
+    const embeddeds: EmbeddedMap = new Map<string, EmbeddedInfo>();
     const Attachments: Attachment[] = [];
 
-    let decryptedBody = action === MESSAGE_ACTIONS.NEW ? '' : generateBlockquote(referenceMessage);
+    referenceMessage.embeddeds?.forEach((value, key) => {
+        embeddeds.set(key, value);
+        Attachments.push(value.attachment);
+    });
 
     const ParentID = action === MESSAGE_ACTIONS.NEW ? undefined : referenceMessage.data?.ID;
 
-    decryptedBody = insertSignature(decryptedBody, senderAddress?.Signature, action, mailSettings);
+    let content = action === MESSAGE_ACTIONS.NEW ? '' : generateBlockquote(referenceMessage);
+    content = insertSignature(content, senderAddress?.Signature, action, mailSettings);
+    const document = parseInDiv(content);
 
     return {
         data: {
@@ -214,9 +211,10 @@ export const createNewDraft = (
             Unread: 0
         },
         ParentID,
-        decryptedBody,
+        document,
         action,
         originalTo,
-        initialized: true
+        initialized: true,
+        embeddeds
     };
 };

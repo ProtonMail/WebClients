@@ -1,4 +1,4 @@
-import { encryptMessage, OpenPGPKey } from 'pmcrypto';
+import { encryptSessionKey, encryptMessage, OpenPGPKey, encodeBase64, arrayToBinaryString } from 'pmcrypto';
 import { enums } from 'openpgp';
 import { createDraft, updateDraft } from 'proton-shared/lib/api/messages';
 import { Api } from 'proton-shared/lib/interfaces';
@@ -7,8 +7,9 @@ import { MessageExtended, Message } from '../../models/message';
 import { mutateHTMLCid } from '../embedded/embeddedParser';
 import { find } from '../embedded/embeddedFinder';
 import { MESSAGE_ACTIONS } from '../../constants';
-import { isPlainText } from './messages';
+import { isPlainText, getAttachments } from './messages';
 import { getDocumentContent, getContent, getPlainTextContent } from './messageContent';
+import { getSessionKey } from '../attachment/attachmentLoader';
 
 const prepareExport = (message: MessageExtended) => {
     if (!message.document) {
@@ -43,14 +44,40 @@ export const prepareAndEncryptBody = async (message: MessageExtended) => {
     return { document, content, encrypted };
 };
 
+const encryptAttachmentKeyPackets = async (message: MessageExtended, passwords = []) => {
+    const packets: { [key: string]: string } = {};
+    const Attachments = getAttachments(message.data);
+
+    await Promise.all(
+        Attachments.filter(({ ID = '' }) => ID.indexOf('PGPAttachment')).map(async (attachment) => {
+            const sessionKey = await getSessionKey(attachment, message);
+
+            const result = await encryptSessionKey({
+                data: sessionKey.data,
+                algorithm: sessionKey.algorithm,
+                publicKeys: message.publicKeys,
+                passwords
+            });
+
+            packets[attachment.ID || ''] = encodeBase64(
+                arrayToBinaryString(result.message.packets.write() as Uint8Array)
+            );
+        })
+    );
+
+    return packets;
+};
+
 export const createMessage = async (message: MessageExtended, api: Api): Promise<Message> => {
     const { encrypted: Body } = await prepareAndEncryptBody(message);
+    const AttachmentKeyPackets = await encryptAttachmentKeyPackets(message);
 
     const { Message: updatedMessage } = await api(
         createDraft({
             Action: message.action !== MESSAGE_ACTIONS.NEW ? message.action : undefined,
             Message: { ...message.data, Body },
-            ParentID: message.ParentID
+            ParentID: message.ParentID,
+            AttachmentKeyPackets
         } as any)
     );
 
