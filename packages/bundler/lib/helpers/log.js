@@ -5,9 +5,9 @@ module.exports = (scope) => {
     const IS_VERBOSE = argv.v || argv.verbose;
 
     const warn = (msg) => {
-        console.log();
+        console.log('');
         console.log(chalk.bgMagenta(chalk.white('[warning]')), msg);
-        console.log();
+        console.log('');
     };
 
     const success = (msg, { time, space = false } = {}) => {
@@ -15,13 +15,13 @@ module.exports = (scope) => {
         const message = [chalk.bgGreen(chalk.black(`[${scope}]`)), txt, msg, time && ` (${time})`]
             .filter(Boolean)
             .join('');
-        space && console.log();
+        space && console.log('');
         console.log(message);
     };
 
     const title = (msg) => {
         console.log('~', chalk.bgYellow(chalk.black(msg)), '~');
-        console.log();
+        console.log('');
     };
 
     const json = (data, output, noSpace) => {
@@ -29,10 +29,10 @@ module.exports = (scope) => {
         if (output) {
             return console.log(JSON.stringify(data, null, 2));
         }
-        !noSpace && console.log();
+        !noSpace && console.log('');
         !noSpace && console.log(`[${scope}]`, JSON.stringify(data, null, 2));
         noSpace && console.log(JSON.stringify(data, null, 2));
-        console.log();
+        console.log('');
     };
 
     const error = (e) => {
@@ -49,7 +49,7 @@ module.exports = (scope) => {
 
         // Better log for CLI commands, better than a JSON version of stdX
         if (e.stdout || e.stderr) {
-            console.log();
+            console.log('');
             console.log('Stdout + stderr');
             console.log(e.stdout);
             console.error(e.stderr);

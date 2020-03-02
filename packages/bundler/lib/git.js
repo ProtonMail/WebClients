@@ -3,9 +3,11 @@ const os = require('os');
 const { bash, script } = require('./helpers/cli');
 const { debug, IS_VERBOSE } = require('./helpers/log')('proton-bundler');
 
+const OUTPUT_CLONE = 'dist-deploy';
+
 async function push(branch, { tag = 'v0.0.0', originCommit, originBranch }) {
     // can't use await bash, it doesn't keep the context for next commands :/
-    const cmd = ['cd dist'];
+    const cmd = [`cd ${OUTPUT_CLONE}`];
     const message = /-prod-/.test(branch) ? `New Release ${tag}` : 'New Release';
     const description = `Based on the commit ${originCommit} on the branch ${originBranch}`;
 
@@ -35,8 +37,8 @@ async function pull(branch, force, fromCi) {
         await bash(`git remote set-url origin ${process.env.GIT_REMOTE_URL_CI}`);
     }
 
-    await bash(`git clone "$(git remote get-url origin)" --depth 1 --branch ${branch} dist`);
-    await bash('cd dist && rm -rf *');
+    await bash(`git clone "$(git remote get-url origin)" --depth 1 --branch ${branch} ${OUTPUT_CLONE}`);
+    await bash(`cd ${OUTPUT_CLONE} && rm -rf *`);
 
     if (IS_VERBOSE) {
         const { stdout } = await bash('git remote show origin');

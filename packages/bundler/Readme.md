@@ -2,30 +2,35 @@
 
 CLI tools to bundle Proton web clients for deploys.
 
-Default tasks:
-- Save dependencies (_update package-lock.json when we deploy a QA version or release_) cf `--default-branch`
-- Clear previous dist dir
-- Lint app before bundler (_we can disable this via_ `--no-lint`) [How to setup](https://github.com/ProtonMail/proton-bundler#Lint-the-app)
-- Setup config for the app
-- Extract current git env (_origin branch,tag,commit_)
-- Pull deploy branch to the dist dir
-- Copy htaccess
-- [beta/prod] Upgrade translations inside the app (_json files_) [How to setup](https://github.com/ProtonMail/proton-bundler#Sync-i18n)
-- Build the app [How to setup](https://github.com/ProtonMail/proton-bundler#Build-the-app)
-- Add a file assets/version.json ex: `{ "version": "v3.16.9", "commit": "1899d63792d8528edc9c3ff68a865b7299f190e5" }` 
-- Push to the deploy branch
-- Upgrade crowdin with latest translations from the app [How to setup](https://github.com/ProtonMail/proton-bundler#Sync-i18n)
+There are 3 modes:
+
+1. bundle (_default_): we create a bundle from the app with everything
+2. bundle+deploy: same but we also deploy to a branch (_requirements_: `--branch=X` `--git`)
+3. deploy: we take an existing directory `dist` and we deploy it to `--branch` (_requirements_: `--branch=X` `--only-git`)
+
+We create during the bundle, a file `version.json` available inside `dist/assets/version.json`
+ex:
+```json
+{
+    "version": "v3.16.21",
+    "commit": "fcdc2d2168b69b63688e87acb52d53f30879a674",
+    "branch": "mail-version",
+    "buildDate": "2020-02-19T10:51:58Z",
+    "release": "mail-version-v3.16.21-fcdc2d216"
+    "locales": "a88cabca8bca8fff8acc88ddde0009cd398763c"
+}
+```
 
 ## How to install ?
 
 ```sh
-$ npm i -D github:ProtonMail/proton-bundler.git#semver:^1.0.0
+$ npm i -D github:ProtonMail/proton-bundler.git#semver:^2.0.0
 ``` 
 
 ## Commands
 
 ```sh
-$ proton-bundler [action:optional] <--api> <--branch> <--flow> <--i18n> <--appMode> <--default-branch>
+$ proton-bundler [action:optional] <--api> <--branch> <--flow> <--appMode> <--default-branch>
 ``` 
 
 ### Actions
@@ -42,13 +47,12 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--i18n> <--appMo
 - `--api`: Typeof branch to deploy (dev/beta/build/etc.)
 - `--flow`: Type of flow (_Usefull only for WebClient_)
 - `--custom`: Custom text to display when we call log-commits` (_inside the message to send_)
-- `--localize`: To force the upgrade i18n task inside the app during any deploy (default only for prod/beta if not ci and not with --no-i18n)
 - `--no-lint`: Ignore lint task on deploy
-- `--no-i18n`: Ignore i18n tasks on deploy
 - `--appMode`: Type of bundle for the app (ex: standalone is an option for protonmail-settings)
 - `--silentMessage`: No messages sent if dev/prod/beta dist
 - `--default-branch`: Default master, What's the default branch on your repository (usually master, usefull for the package-lock update)
-- `--url`: URL for the issues inside the changelog. _Only for changelog_ (default package.json bugs.url)
+- `--git`: At the end of the bundle we're going to commit and deploy to the branch `--branch`
+- `--only-git`: We commit and deploy and existing directory `dist` to the branch `--branch`
 
 
 ## How to configure
@@ -64,11 +68,6 @@ You must have `$ npm run lint` available inside your app
 #### Build the app
 
 You must have `$ npm run build` available inside your app
-
-#### Sync i18n (to ignore --no-i18n)
-
-You must have `$ npm run i18n:getlatest` available inside your app.
-You must have `$ npm run i18n:upgrade` available inside your app.
 
 ### Documentation
 
@@ -99,10 +98,7 @@ deployConfig:
 
 - `branch: <String>` ~ branch's name
 - `appMode: <String>` ~ Type of app we build, standalone or bundle (default)
-- `isCI: <Boolean>`
 - `flowType: <String>` ~ Type of deploy ('single', or 'many')
-- `forceI18n: <Boolean>` ~ Force run the i18n task
-- `runI18n: <Boolean>` ~ Should we run the i18n tasks ?
 - `isRemoteBuild: <Boolean>` ~ Is it the deploy of a remote build ?
 
 We have a context available for tasks inside ( _hookPostTasks, hookPostTaskClone, hookPostTaskBuild_ ):

@@ -36,9 +36,8 @@ const defaultCustom = {
  * deployConfig:
  *     - branch: branch's name
  *     - appMode: Type of app we build, standalone or bundle (default)
- *     - isCI: Boolean
+ *     -
  *     - flowType: Type of deploy ('single', or 'many')
- *     - forceI18n: Boolean
  *     - EXTERNAL_FILES: List of assets to copy before the build
  *
  * context:
