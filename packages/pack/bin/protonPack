@@ -9,7 +9,6 @@ const localIp = require('my-local-ip');
 const configBuilder = require('../cli/config');
 const configAppBuilder = require('../cli/configApp');
 const { json, debug, success } = require('../cli/helpers/log');
-const { script } = require('../cli/helpers/cli');
 const { getPort, getPublicPath, findPort } = require('../webpack/helpers/source');
 
 const is = (command) => argv._.includes(command);
@@ -48,7 +47,6 @@ async function main() {
         debug(appConfig, 'app config');
         await fs.writeFile(appConfigPath, appConfig);
         success(`generated ${appConfigPath}`);
-        await script('checkDep.sh', [], 'inherit');
     }
 
     if (is('print-config')) {
