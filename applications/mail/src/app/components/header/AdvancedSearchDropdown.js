@@ -176,6 +176,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                 originalPlacement="bottom-right"
                 size="wide"
                 autoClose={false}
+                autoCloseOutside={false}
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={close}
