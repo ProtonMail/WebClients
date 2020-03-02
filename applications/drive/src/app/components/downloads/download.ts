@@ -25,7 +25,7 @@ export interface DownloadCallbacks {
 }
 
 export const initDownload = ({ onStart, onProgress, transformBlockStream }: DownloadCallbacks) => {
-    const id = generateUID('drive-download');
+    const id = generateUID('drive-transfers');
     const abortController = new AbortController();
     const fileStream = new ObserverStream();
     const fsWriter = fileStream.writable.getWriter();
