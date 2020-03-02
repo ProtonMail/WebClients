@@ -166,24 +166,24 @@ export const switchPlan = ({ planIDs, plans, planID, service, organization }) =>
         ...removeService(planIDs, plans, service),
         [plansMap[ADDON_NAMES.DOMAIN].ID]: [plansMap[PLANS.PLUS].ID, plansMap[PLANS.PROFESSIONAL].ID].includes(planID)
             ? getAddonQuantity(selectedPlan, UsedDomains, 'MaxDomains', plansMap[ADDON_NAMES.DOMAIN])
-            : 0,
+            : planIDs[plansMap[ADDON_NAMES.DOMAIN].ID] || 0,
         [plansMap[ADDON_NAMES.ADDRESS].ID]: [plansMap[PLANS.PLUS].ID].includes(planID)
             ? getAddonQuantity(selectedPlan, UsedAddresses, 'MaxAddresses', plansMap[ADDON_NAMES.ADDRESS])
-            : 0,
+            : planIDs[plansMap[ADDON_NAMES.ADDRESS].ID] || 0,
         [plansMap[ADDON_NAMES.SPACE].ID]: [plansMap[PLANS.PLUS].ID].includes(planID)
             ? getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[ADDON_NAMES.SPACE])
-            : 0,
+            : planIDs[plansMap[ADDON_NAMES.SPACE].ID] || 0,
         [plansMap[ADDON_NAMES.VPN].ID]:
             [plansMap[PLANS.VPNPLUS].ID].includes(planID) && planIDs[plansMap[PLANS.PROFESSIONAL].ID]
                 ? getAddonQuantity(selectedPlan, UsedVPN, 'MaxVPN', plansMap[ADDON_NAMES.VPN])
-                : 0,
+                : planIDs[plansMap[ADDON_NAMES.VPN].ID] || 0,
         [plansMap[ADDON_NAMES.MEMBER].ID]: [plansMap[PLANS.PROFESSIONAL].ID].includes(planID)
             ? Math.max(
                   getAddonQuantity(selectedPlan, UsedMembers, 'MaxMembers', plansMap[ADDON_NAMES.MEMBER]),
                   getAddonQuantity(selectedPlan, UsedAddresses, 'MaxAddresses', plansMap[ADDON_NAMES.MEMBER]),
                   getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[ADDON_NAMES.MEMBER])
               )
-            : 0,
+            : planIDs[plansMap[ADDON_NAMES.MEMBER].ID] || 0,
         ...(planID ? { [planID]: 1 } : {})
     };
 };
