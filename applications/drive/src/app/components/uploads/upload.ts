@@ -4,10 +4,12 @@ import { generateContentHash } from 'proton-shared/lib/keys/driveKeys';
 import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
 import { TransferCancel } from '../../interfaces/transfer';
+import runInQueue from '../../utils/runInQueue';
 
 // Max decrypted block size
 const CHUNK_SIZE = 4 * 1024 * 1024;
-const MAX_CHUNKS_READ = 5;
+const MAX_CHUNKS_READ = 10;
+const MAX_THREADS_PER_UPLOAD = 3;
 
 type BlockList = {
     Hash: string;
@@ -39,7 +41,7 @@ export async function upload(
 ) {
     const xhr = new XMLHttpRequest();
 
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
         let lastLoaded = 0;
 
         if (signal) {
@@ -53,7 +55,7 @@ export async function upload(
             onProgress((e.loaded - lastLoaded) / e.total);
             lastLoaded = e.loaded;
         };
-        xhr.onload = resolve;
+        xhr.onload = () => resolve();
         xhr.upload.onerror = reject;
         xhr.onerror = reject;
         xhr.open('put', url);
@@ -63,10 +65,10 @@ export async function upload(
 }
 
 export function initUpload({ requestUpload, transform, onProgress, finalize }: UploadCallbacks) {
-    const id = generateUID('drive-download');
+    const id = generateUID('drive-transfers');
     const abortController = new AbortController();
 
-    const uploadChunks = async (chunks: Uint8Array[], info: UploadInfo, startIndex: number): Promise<BlockMeta[]> => {
+    const uploadChunks = async (chunks: Uint8Array[], startIndex: number): Promise<BlockMeta[]> => {
         const encryptedChunks = await Promise.all(chunks.map(transform));
         const BlockList = await Promise.all(
             encryptedChunks.map(async (chunk, i) => ({
@@ -81,18 +83,19 @@ export function initUpload({ requestUpload, transform, onProgress, finalize }: U
         }
 
         const UploadLinks = await requestUpload(BlockList);
-
-        for (let i = 0; i < UploadLinks.length; i++) {
-            await upload(
+        const blockUploaders = UploadLinks.map(({ URL }, i) => () =>
+            upload(
                 id,
-                UploadLinks[i].URL,
+                URL,
                 encryptedChunks[i],
                 (relativeIncrement) => {
                     onProgress?.(Math.ceil(chunks[i].length * relativeIncrement));
                 },
                 abortController.signal
-            );
-        }
+            )
+        );
+
+        await runInQueue(blockUploaders, MAX_THREADS_PER_UPLOAD);
 
         return UploadLinks.map(({ Token }, i) => ({
             Index: BlockList[i].Index,
@@ -101,12 +104,12 @@ export function initUpload({ requestUpload, transform, onProgress, finalize }: U
         }));
     };
 
-    const start = async (info: UploadInfo) => {
+    const start = async ({ blob }: UploadInfo) => {
         if (abortController.signal.aborted) {
             return;
         }
 
-        const reader = new ChunkFileReader(info.blob, CHUNK_SIZE);
+        const reader = new ChunkFileReader(blob, CHUNK_SIZE);
         const blockTokens: BlockMeta[] = [];
         let startIndex = 1;
 
@@ -117,7 +120,7 @@ export function initUpload({ requestUpload, transform, onProgress, finalize }: U
                 chunks.push(await reader.readNextChunk());
             }
 
-            const blocks = await uploadChunks(chunks, info, startIndex);
+            const blocks = await uploadChunks(chunks, startIndex);
             blockTokens.push(...blocks);
             startIndex += MAX_CHUNKS_READ;
         }
