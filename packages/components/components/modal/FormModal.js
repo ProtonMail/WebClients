@@ -10,6 +10,7 @@ import {
     PrimaryButton
 } from 'react-components';
 import { c } from 'ttag';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 /** @type any */
 const Modal = ({
@@ -85,7 +86,7 @@ function DemoModal({ onAdd, ...rest }) {
                     {title}
                 </HeaderModal>
             ) : null}
-            <ContentModal onSubmit={onSubmit} onReset={onClose} noValidate={noValidate}>
+            <ContentModal onSubmit={rest.isClosing ? noop : onSubmit} onReset={onClose} noValidate={noValidate}>
                 <InnerModal>{children}</InnerModal>
                 {getFooter()}
             </ContentModal>
