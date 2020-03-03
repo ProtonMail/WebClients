@@ -28,11 +28,7 @@ const StickyHeader = ({ children }: Props) => {
         };
     }, [mainAreaRef.current]);
 
-    return (
-        <div className={classnames(['sticky-title', topClass])}>
-            <div className="pl0-25 pt0-5 pb0-5 pr0-25">{children}</div>
-        </div>
-    );
+    return <div className={classnames(['w100 sticky-title', topClass])}>{children}</div>;
 };
 
 export default StickyHeader;
