@@ -10,7 +10,7 @@ import { c } from 'ttag';
 
 export const DEFAULT_THEME = {
     getI18NLabel() {
-        return c('Theme').t`Default theme`;
+        return c('Theme').t`Default mode`;
     },
     identifier: '/* default-theme */',
     src: themeDarkSvg,
@@ -20,7 +20,7 @@ export const DEFAULT_THEME = {
 
 export const CUSTOM_THEME = {
     getI18NLabel() {
-        return c('Theme').t`Custom theme`;
+        return c('Theme').t`Custom mode`;
     },
     identifier: '/* custom-theme */',
     src: themeTestSvg,
@@ -48,7 +48,7 @@ export const PROTON_THEMES = {
     },
     DARK: {
         getI18NLabel() {
-            return c('Theme').t`Dark theme`;
+            return c('Theme').t`Dark mode`;
         },
         identifier: '/* dark-mode */',
         src: themeDarkmodeSvg,
