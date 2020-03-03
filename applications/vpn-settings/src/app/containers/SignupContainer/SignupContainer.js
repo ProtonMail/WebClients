@@ -212,7 +212,7 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
 
                     {isLoading || creatingAccount ? (
                         <div className="aligncenter mt2">
-                            <FullLoader color="pm-primary" size={200} />
+                            <FullLoader className="color-primary" size={200} />
                             <TextLoader>
                                 {isLoading ? c('Info').t`Loading` : c('Info').t`Creating your account`}
                             </TextLoader>
