@@ -76,8 +76,7 @@ const MailboxContainer = ({
     const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
 
-    const [checkedElements, setCheckedElements] = useState(Object.create(null));
-    const [checkAll, setCheckAll] = useState(false);
+    const [checkedElements, setCheckedElements] = useState<{ [ID: string]: boolean }>({});
 
     const [labelID, elements, loading, total] = useElements({
         conversationMode,
@@ -131,22 +130,21 @@ const MailboxContainer = ({
     const handleSort = (sort: Sort) => history.push(setSortInUrl(location, sort));
     const handleFilter = (filter: Filter) => history.push(setFilterInUrl(location, filter));
 
-    const handleCheck = (IDs: string[] = [], checked = false) => {
-        const update = IDs.reduce((acc, contactID) => {
-            acc[contactID] = checked;
-            return acc;
-        }, Object.create(null));
-        setCheckedElements({ ...checkedElements, ...update });
-        setCheckAll(checked && IDs.length === elements.length);
-    };
-
-    const handleCheckAll = (checked = false) =>
-        handleCheck(
-            elements.map(({ ID = '' }: Element) => ID),
-            checked
+    /**
+     * Put *IDs* to *checked* state
+     * Uncheck others id *replace* is true
+     */
+    const handleCheck = (IDs: string[], checked: boolean, replace: boolean) =>
+        setCheckedElements(
+            elements.reduce((acc, { ID = '' }) => {
+                const wasChecked = checkedElements[ID];
+                const toCheck = IDs.includes(ID);
+                acc[ID] = toCheck ? checked : replace ? !checked : wasChecked;
+                return acc;
+            }, {} as { [ID: string]: boolean })
         );
 
-    const handleUncheckAll = () => handleCheckAll(false);
+    const handleUncheckAll = () => handleCheck([], true, true);
 
     return (
         <>
@@ -157,8 +155,7 @@ const MailboxContainer = ({
                 selectedIDs={selectedIDs}
                 elements={elements}
                 mailSettings={mailSettings}
-                checkAll={checkAll}
-                onCheckAll={handleCheckAll}
+                onCheck={handleCheck}
                 page={page}
                 onPage={handlePage}
                 sort={sort}

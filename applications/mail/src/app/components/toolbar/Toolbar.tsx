@@ -25,8 +25,7 @@ import './Toolbar.scss';
 interface Props {
     location: Location;
     loading?: boolean;
-    checkAll: boolean;
-    onCheckAll: () => void;
+    onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     labelID: string;
     elementID?: string;
     elements: Element[];
@@ -46,8 +45,7 @@ const Toolbar = ({
     labelID = '',
     elementID,
     elements,
-    checkAll,
-    onCheckAll,
+    onCheck,
     mailSettings = {},
     selectedIDs = [],
     loading = false,
@@ -73,7 +71,7 @@ const Toolbar = ({
         <nav className="toolbar flex noprint flex-spacebetween">
             <div className="flex">
                 {columnMode || !elementID ? (
-                    <SelectAll checked={checkAll} onCheck={onCheckAll} loading={loading} />
+                    <SelectAll elements={elements} selectedIDs={selectedIDs} onCheck={onCheck} loading={loading} />
                 ) : (
                     <BackButton onClick={onBack} />
                 )}

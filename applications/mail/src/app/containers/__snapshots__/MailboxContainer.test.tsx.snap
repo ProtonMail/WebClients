@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MailboxContainer should show list when elements finish loading 1`] = `
+exports[`MailboxContainer Snapshots should show list when elements finish loading 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -93,7 +93,7 @@ Object {
 }
 `;
 
-exports[`MailboxContainer should show loader instead of list when elements loading 1`] = `
+exports[`MailboxContainer Snapshots should show loader instead of list when elements loading 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

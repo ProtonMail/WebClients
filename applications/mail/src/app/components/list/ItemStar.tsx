@@ -5,7 +5,7 @@ import { labelMessages, unlabelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/conversations';
 
 import { Element } from '../../models/element';
-import { isConversation as isConversationTest, getLabelIDs } from '../../helpers/elements';
+import { isConversation as isConversationTest, isStarred as testIsStarred } from '../../helpers/elements';
 
 interface Props {
     element?: Element;
@@ -16,8 +16,7 @@ const ItemStar = ({ element = {} }: Props) => {
     const isConversation = isConversationTest(element);
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
-    const labelIDs = getLabelIDs(element);
-    const isStarred = labelIDs?.includes(MAILBOX_LABEL_IDS.STARRED);
+    const isStarred = testIsStarred(element);
     const iconName = isStarred ? 'starfull' : 'star';
 
     const handleClick = async () => {

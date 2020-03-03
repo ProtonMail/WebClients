@@ -14,7 +14,7 @@ interface Props {
     mailSettings: any;
     elements?: Element[];
     checkedIDs?: string[];
-    onCheck: (IDs?: string[], checked?: boolean) => void;
+    onCheck: (ID: string[], checked: boolean, replace: boolean) => void;
     onClick: (element: Element) => void;
     location: Location;
 }
@@ -52,7 +52,7 @@ const List = ({
         }
 
         setLastChecked(elementID);
-        onCheck(elementIDs, target.checked);
+        onCheck(elementIDs, target.checked, false);
     };
 
     return elements.length === 0 ? (

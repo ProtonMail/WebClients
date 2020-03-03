@@ -57,12 +57,14 @@ export const isUnread = (element: Element) => {
 
 export const getLabel = ({ Labels = [] }: Element, labelID: string) => Labels.find(({ ID = '' }) => ID === labelID);
 
-export const getLabelIds = ({ Labels, LabelIDs }: Element) =>
-    Labels ? Labels.map(({ ID }) => ID || '') : LabelIDs || [];
+export const getLabelIDs = (element: Element) =>
+    isMessage(element) ? element.LabelIDs || [] : element.Labels?.map(({ ID }) => ID || '') || [];
 
 export const hasLabel = (element: Element, labelID?: string) => {
-    return getLabelIds(element).some((ID) => labelID === ID);
+    return getLabelIDs(element).some((ID) => labelID === ID);
 };
+
+export const isStarred = (element: Element) => getLabelIDs(element).includes(MAILBOX_LABEL_IDS.STARRED);
 
 export const getTime = (element: Element, labelID: string) =>
     element.ContextTime || element.Time || (getLabel(element, labelID) || {}).ContextTime || 0;
@@ -106,9 +108,6 @@ export const getCounterMap = (
 
 export const hasAttachments = (element: Element) =>
     isMessage(element) ? messageHasAttachments(element) : conversationHasAttachments(element);
-
-export const getLabelIDs = (element: Element) =>
-    isMessage(element) ? element.LabelIDs : element.Labels?.map(({ ID }) => ID || '');
 
 /**
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
