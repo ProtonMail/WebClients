@@ -1,0 +1,30 @@
+.pd-breadcrumbs {
+    @extend .flex-nowrap;
+    @extend .flex-items-center;
+    @extend .pt0-25;
+    @extend .pb0-25;
+    display: flex;
+}
+
+.pd-breadcrumb-button {
+    @extend .p0-25;
+    @extend .m0;
+    @extend .ellipsis;
+    white-space: pre;
+}
+
+.pd-breadcrumb {
+    @extend .flex-nowrap;
+    display: flex;
+    flex: 0 1 auto;
+    min-width: 1.5em;
+}
+
+.pd-breadcrumb--active {
+    flex: 1 1 auto;
+    min-width: auto;
+
+    .pd-breadcrumb-button {
+        @extend .strong;
+    }
+}
