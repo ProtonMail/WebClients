@@ -86,7 +86,11 @@ function DemoModal({ onAdd, ...rest }) {
                     {title}
                 </HeaderModal>
             ) : null}
-            <ContentModal onSubmit={rest.isClosing ? noop : onSubmit} onReset={onClose} noValidate={noValidate}>
+            <ContentModal
+                onSubmit={rest.isClosing || loading ? noop : onSubmit}
+                onReset={onClose}
+                noValidate={noValidate}
+            >
                 <InnerModal>{children}</InnerModal>
                 {getFooter()}
             </ContentModal>
