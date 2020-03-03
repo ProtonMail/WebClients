@@ -52,7 +52,7 @@ export const getOnDayString = (date, monthlyType, weekdays) => {
     return c('Info').t`on day ${monthday}`;
 };
 
-const getDurationString = ({ endType, count, until, countSeparator = ',', untilSeparator = '' }, locale) => {
+const getDurationString = ({ endType, count, until, countSeparator = ',', untilSeparator = ',' }, locale) => {
     if (endType === END_TYPE.AFTER_N_TIMES) {
         return c('Info').ngettext(msgid`${countSeparator} ${count} time`, `${countSeparator} ${count} times`, count);
     }
@@ -112,10 +112,7 @@ const getFrequencyString = (
                 `Every ${interval} weeks on ${days}`,
                 interval
             );
-            const durationString = getDurationString(
-                { endType, count, until, locale, countSeparator: ';', untilSeparator: ';' },
-                locale
-            );
+            const durationString = getDurationString({ endType, count, until, locale }, locale);
 
             return frequencyString + durationString;
         }
@@ -123,10 +120,7 @@ const getFrequencyString = (
             const intervalString = c('Info').ngettext(msgid`Monthly`, `Every ${interval} months`, interval);
             const onDayString = getOnDayString(date, monthly.type, weekdays);
             const frequencyString = `${intervalString} ${onDayString}`;
-            const durationString = getDurationString(
-                { endType, count, until, locale, countSeparator: ',', untilSeparator: ',' },
-                locale
-            );
+            const durationString = getDurationString({ endType, count, until, locale }, locale);
 
             return frequencyString + durationString;
         }

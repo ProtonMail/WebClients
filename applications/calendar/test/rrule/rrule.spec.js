@@ -63,7 +63,7 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
                 until: new Date(2020, 1, 20)
             }
         };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Daily until 20 Feb 2020');
+        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Daily, until 20 Feb 2020');
     });
 
     test('for a custom weekly recurring event happening every two days, lasting 1 time on a different timezone', () => {
@@ -93,7 +93,7 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
         };
         const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
         expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Daily until 20 Feb 2020 (Pacific/Tahiti)'
+            'Daily, until 20 Feb 2020 (Pacific/Tahiti)'
         );
     });
 });
@@ -198,7 +198,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
                 count: 5
             }
         };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 3 weeks on all days; 5 times');
+        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 3 weeks on all days, 5 times');
     });
 
     test('for a custom weekly recurring event happening on Monday and Wednesday, until 20th February 2020', () => {
@@ -216,7 +216,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
             }
         };
         expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual(
-            'Weekly on Monday, Wednesday; until 20 Feb 2020'
+            'Weekly on Monday, Wednesday, until 20 Feb 2020'
         );
     });
 
@@ -236,7 +236,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
         };
         const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
         expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Weekly on Tuesday; until 20 Feb 2020 (Pacific/Tahiti)'
+            'Weekly on Tuesday, until 20 Feb 2020 (Pacific/Tahiti)'
         );
     });
 
@@ -257,11 +257,11 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
         };
         const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
         expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Every 2 weeks on all days; until 20 Feb 2020 (Pacific/Tahiti)'
+            'Every 2 weeks on all days, until 20 Feb 2020 (Pacific/Tahiti)'
         );
     });
 
-    test('for a custom weekly recurring event happening every 2 weeks on all days, 1 time on a different timezone', () => {
+    test('for a custom weekly recurring event happening every 2 weeks on all days, 2 times on a different timezone', () => {
         const frequencyModel = {
             ...dummyFrequencyModel,
             type: FREQUENCY.CUSTOM,
@@ -273,12 +273,12 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
             },
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 1
+                count: 2
             }
         };
         const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
         expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Every 2 weeks on all days; 1 time'
+            'Every 2 weeks on all days, 2 times'
         );
     });
 });
@@ -485,7 +485,7 @@ describe('getTimezonedFrequencyString should produce the expected string for yea
                 until: new Date(2020, 1, 20)
             }
         };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Yearly until 20 Feb 2020');
+        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Yearly, until 20 Feb 2020');
     });
 
     test('for a custom weekly recurring event happening every two years, lasting 1 time on a different timezone', () => {
@@ -496,11 +496,11 @@ describe('getTimezonedFrequencyString should produce the expected string for yea
             interval: 2,
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 1
+                count: 2
             }
         };
         const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual('Every 2 years, 1 time');
+        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual('Every 2 years, 2 times');
     });
 
     test('for a custom yearly event, until 20th February 2020 on a different timezone', () => {
@@ -515,7 +515,7 @@ describe('getTimezonedFrequencyString should produce the expected string for yea
         };
         const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
         expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Yearly until 20 Feb 2020 (Pacific/Tahiti)'
+            'Yearly, until 20 Feb 2020 (Pacific/Tahiti)'
         );
     });
 });
