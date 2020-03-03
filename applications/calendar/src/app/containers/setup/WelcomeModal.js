@@ -50,7 +50,7 @@ const WelcomeModal = (props) => {
     const setup = async () => {
         const activeAddresses = getActiveAddresses(await getAddresses());
         if (!activeAddresses.length) {
-            throw new Error(c('Error').t`No valid address found.`);
+            throw new Error(c('Error').t`No valid address found`);
         }
 
         const [{ ID: addressID }] = activeAddresses;
