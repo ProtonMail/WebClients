@@ -90,11 +90,18 @@ function main({ api = 'dev' }) {
         clientId: ENV_CONFIG.app.clientId || 'WebMail',
         appName: ENV_CONFIG.app.appName || ENV_CONFIG.pkg.name || 'protonmail',
         version: ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || '3.16.20',
+        locales: LOCALES,
+        secureUrl,
         apiUrl
     };
 
     const firstApi = apiKeys[0]; // api config merging for sentry NOT allowed
     const { SENTRY_RELEASE = '', SENTRY_DSN = '' } = prepareSentry(ENV_CONFIG, json, firstApi);
+
+    json.sentry = {
+        release: SENTRY_RELEASE,
+        dsn: SENTRY_DSN
+    };
 
     const config = dedent`
     export const CLIENT_ID = '${json.clientId}';
