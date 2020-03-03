@@ -94,7 +94,7 @@ const LayoutsSection = () => {
                 .t`Choose the look and feel of your mailbox.`}</Alert>
             <Row>
                 <Label htmlFor="composerMode">
-                    <span className="mr0-5">{c('Label').t`Default Composer`}</span>
+                    <span className="mr0-5">{c('Label').t`Default composer`}</span>
                     <Info
                         url="https://protonmail.com/support/knowledge-base/composer/"
                         title={c('Tooltip')
@@ -110,7 +110,7 @@ const LayoutsSection = () => {
             </Row>
             <Row>
                 <Label htmlFor="layoutMode">
-                    <span className="mr0-5">{c('Label').t`Default Inbox`}</span>
+                    <span className="mr0-5">{c('Label').t`Default inbox`}</span>
                     <Info
                         url="https://protonmail.com/support/knowledge-base/change-inbox-layout/"
                         title={c('Tooltip')
