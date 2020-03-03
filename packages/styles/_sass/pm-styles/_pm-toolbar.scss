@@ -62,6 +62,16 @@
 .toolbar-select option {
   color: $black; // for Chrome bug
 }
+.isDarkMode {
+	.toolbar-select {
+		background-color: var(--bgcolor-toolbar, $pm-global-altgrey);
+		option {
+			color: $pm-global-light; // for Chrome bug
+		}
+
+	}
+}
+
 
 
 @include respond-to($breakpoint-small) {
