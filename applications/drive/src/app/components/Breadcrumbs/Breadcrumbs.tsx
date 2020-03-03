@@ -18,25 +18,35 @@ const Breadcrumbs = ({ resource, preloaded, openResource }: Props) => {
     const { getFolderMeta } = useShare(resource.shareId);
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([]);
 
-    const getBreadcrumbs = async (linkId: string): Promise<BreadcrumbInfo[]> => {
-        const meta = preloaded?.LinkID === linkId ? preloaded : (await getFolderMeta(linkId)).Folder;
+    useEffect(() => {
+        const getBreadcrumbs = async (linkId: string): Promise<BreadcrumbInfo[]> => {
+            const meta = preloaded?.LinkID === linkId ? preloaded : (await getFolderMeta(linkId)).Folder;
 
-        const breadcrumb = {
-            name: !meta.ParentLinkID ? c('Title').t`My files` : meta.Name,
-            resource: { shareId: resource.shareId, linkId, type: ResourceType.FOLDER }
+            const breadcrumb = {
+                name: !meta.ParentLinkID ? c('Title').t`My files` : meta.Name,
+                resource: { shareId: resource.shareId, linkId, type: ResourceType.FOLDER }
+            };
+
+            if (!meta.ParentLinkID) {
+                return [breadcrumb];
+            }
+
+            const previous = await getBreadcrumbs(meta.ParentLinkID);
+
+            return [...previous, breadcrumb];
         };
 
-        if (!meta.ParentLinkID) {
-            return [breadcrumb];
-        }
+        let canceled = false;
 
-        const previous = await getBreadcrumbs(meta.ParentLinkID);
+        getBreadcrumbs(resource.linkId).then((result) => {
+            if (!canceled) {
+                setBreadcrumbs(result);
+            }
+        });
 
-        return [...previous, breadcrumb];
-    };
-
-    useEffect(() => {
-        getBreadcrumbs(resource.linkId).then((result) => setBreadcrumbs(result));
+        return () => {
+            canceled = true;
+        };
     }, [getFolderMeta, resource.linkId]);
 
     return (
