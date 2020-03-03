@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { RadioCard } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { c } from 'ttag';
 
 const ThemeCard = ({
     label,
@@ -21,7 +22,7 @@ const ThemeCard = ({
         <>
             <br />
             <span className="link" onClick={handleClick}>
-                Customize
+                {c('Action').t`Customize`}
             </span>
         </>
     ) : (

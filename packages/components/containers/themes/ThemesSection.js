@@ -43,7 +43,7 @@ const ThemesSection = () => {
     const handleSaveCustomTheme = async (customCSSInput) => {
         await api(updateTheme(customCSSInput));
         await call();
-        createNotification({ text: c('Success').t`Custom theme saved` });
+        createNotification({ text: c('Success').t`Custom mode saved` });
     };
 
     const handleOpenModal = () => {
@@ -56,12 +56,12 @@ const ThemesSection = () => {
                 createModal(
                     <ConfirmModal
                         submit={c('Action').t`Apply`}
-                        title={c('Title').t`Change theme`}
+                        title={c('Title').t`Change mode`}
                         onConfirm={resolve}
                         onClose={reject}
                     >
                         <Alert type="warning">{c('Warning')
-                            .t`This action will erase your current custom theme. Are you sure you want to apply this new theme?`}</Alert>
+                            .t`This action will erase your current custom mode. Are you sure you want to apply this new mode?`}</Alert>
                     </ConfirmModal>
                 );
             });
@@ -79,7 +79,7 @@ const ThemesSection = () => {
             <SubTitle>{c('Title').t`Themes`}</SubTitle>
             <Alert>{c('Info').t`Choose the look and feel of your mailbox.`}</Alert>
             <Alert type="warning">{c('Info')
-                .t`Selecting another theme will override your current theme and any customization will be lost.`}</Alert>
+                .t`Selecting another mode will override your current mode and any customization will be lost.`}</Alert>
             <ThemeCards
                 list={themes}
                 themeIdentifier={getThemeIdentifier(Theme)}
