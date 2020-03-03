@@ -86,8 +86,8 @@ const AddressesInput = ({
     };
 
     const handleInputKey = (event: KeyboardEvent) => {
-        // Enter or Tab
-        if ((event.keyCode === 13 || event.keyCode === 9) && inputModel.length !== 0) {
+        // Enter or Tab or `;`
+        if ((event.keyCode === 13 || event.keyCode === 9 || event.keyCode === 59) && inputModel.length !== 0) {
             confirmInput();
             event.preventDefault(); // Prevent tab to switch field
         }
