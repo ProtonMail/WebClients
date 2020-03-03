@@ -3,6 +3,7 @@
     @extend .flex-items-center;
     @extend .pt0-25;
     @extend .pb0-25;
+    min-height: 2.5em;
     display: flex;
 }
 
