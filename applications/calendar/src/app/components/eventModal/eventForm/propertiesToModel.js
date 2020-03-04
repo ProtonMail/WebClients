@@ -4,6 +4,7 @@ import { MONTHLY_TYPE, NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN 
 import { replace } from 'proton-shared/lib/helpers/array';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
 import { getPositiveSetpos, getNegativeSetpos } from '../../../helpers/rrule';
+import ensureValidEndTime from './ensureValidEndTime';
 
 const DEFAULT_TIME = {
     value: { year: 1970, month: 1, day: 1, hour: 0, minutes: 0 },
@@ -23,7 +24,7 @@ export const propertiesToModel = (component, isAllDay, tzid) => {
         ...rest
     } = component;
 
-    const { start, end } = propertiesToDateTimeModel(dtstart, dtend, isAllDay, tzid);
+    const { start, end } = ensureValidEndTime(propertiesToDateTimeModel(dtstart, dtend, isAllDay, tzid));
 
     return {
         uid: uid ? uid.value : undefined,
