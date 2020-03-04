@@ -11,7 +11,9 @@ import {
     SimpleTabs,
     useGetCalendarBootstrap,
     useGetAddresses,
-    useGetAddressKeys
+    useGetAddressKeys,
+    useCache,
+    GenericError
 } from 'react-components';
 
 import {
@@ -22,35 +24,25 @@ import {
 } from 'proton-shared/lib/api/calendars';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 
-import { DEFAULT_CALENDAR, DEFAULT_EVENT_DURATION, NOTIFICATION_TYPE } from '../../constants';
 import CalendarSettingsTab from './CalendarSettingsTab';
 import EventSettingsTab from './EventSettingsTab';
-import {
-    notificationsToModel,
-    modelToNotifications,
-    DEFAULT_FULL_DAY_NOTIFICATION,
-    DEFAULT_FULL_DAY_NOTIFICATIONS,
-    DEFAULT_PART_DAY_NOTIFICATION,
-    DEFAULT_PART_DAY_NOTIFICATIONS
-} from '../../helpers/notifications';
 import { setupCalendarKeys } from '../setup/resetHelper';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
-import { LABEL_COLORS } from 'proton-shared/lib/constants';
-import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
-
-const validate = ({ name }) => {
-    const errors = {};
-
-    if (!name) {
-        errors.name = c('Error').t`Name required`;
-    }
-
-    return errors;
-};
+import { noop } from 'proton-shared/lib/helpers/function';
+import { loadModels } from 'proton-shared/lib/models/helper';
+import { CalendarsModel } from 'proton-shared/lib/models';
+import {
+    getCalendarModel,
+    getCalendarPayload,
+    getCalendarSettingsPayload,
+    getDefaultModel,
+    validate
+} from './calendarModalState';
 
 const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultColor = false, ...rest }) => {
     const api = useApi();
     const { call } = useEventManager();
+    const cache = useCache();
     const getAddresses = useGetAddresses();
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddressKeys = useGetAddressKeys();
@@ -58,29 +50,17 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
     const [loadingAction, withLoadingAction] = useLoading();
     const { createNotification } = useNotifications();
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [error, setError] = useState(false);
 
     const isEdit = !!calendar;
 
-    const title = isEdit ? c('Title').t`Update calendar` : c('Title').t`Create calendar`;
-
-    const [model, setModel] = useState(() => ({
-        name: '',
-        description: '',
-        color: defaultColor ? DEFAULT_CALENDAR.color : LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
-        display: true,
-        addressOptions: [],
-        duration: DEFAULT_EVENT_DURATION,
-        defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
-        defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
-        partDayNotifications: notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false),
-        fullDayNotifications: notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true)
-    }));
+    const [model, setModel] = useState(() => getDefaultModel(defaultColor));
 
     useEffect(() => {
         const initializeEmptyCalendar = async () => {
             const activeAdresses = getActiveAddresses(await getAddresses());
             if (!activeAdresses.length) {
-                rest.onClose();
+                setError(true);
                 return createNotification({ text: c('Error').t`No valid address found`, type: 'error' });
             }
 
@@ -92,57 +72,22 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
         };
 
         const initializeCalendar = async () => {
-            const [{ Members, CalendarSettings }, addresses] = await Promise.all([
+            const [{ Members, CalendarSettings }, Addresses] = await Promise.all([
                 getCalendarBootstrap(calendar.ID),
                 getAddresses()
             ]);
 
             const [{ Email: memberEmail } = {}] = Members;
-            const { ID: addressID } = addresses.find(({ Email }) => memberEmail === Email) || {};
+            const { ID: AddressID } = Addresses.find(({ Email }) => memberEmail === Email) || {};
 
-            if (!addressID) {
-                rest.onClose();
-                return createNotification({ text: c('Error').t`Member address not found`, type: 'error' });
+            if (!AddressID) {
+                setError(true);
+                return createNotification({ text: c('Error').t`No valid address found`, type: 'error' });
             }
-
-            const {
-                DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
-                DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
-                DefaultEventDuration = DEFAULT_EVENT_DURATION
-            } = CalendarSettings;
-
-            const partDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
-            const fullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
-
-            // Filter out any email notifications because they are currently not supported.
-            const devicePartDayNotifications = partDayNotifications.filter(
-                ({ type }) => type === NOTIFICATION_TYPE.DEVICE
-            );
-            const deviceFullDayNotifications = fullDayNotifications.filter(
-                ({ type }) => type === NOTIFICATION_TYPE.DEVICE
-            );
-
-            const emailPartDayNotifications = partDayNotifications.filter(
-                ({ type }) => type === NOTIFICATION_TYPE.EMAIL
-            );
-            const emailFullDayNotifications = fullDayNotifications.filter(
-                ({ type }) => type === NOTIFICATION_TYPE.EMAIL
-            );
 
             setModel((prev) => ({
                 ...prev,
-                calendarID: calendar.ID,
-                name: calendar.Name,
-                display: calendar.Display,
-                description: calendar.Description,
-                color: calendar.Color,
-                addressID,
-                addressOptions: addresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
-                duration: DefaultEventDuration,
-                partDayNotifications: devicePartDayNotifications,
-                fullDayNotifications: deviceFullDayNotifications,
-                _emailPartDayNotifications: emailPartDayNotifications,
-                _emailFullDayNotifications: emailFullDayNotifications
+                ...getCalendarModel({ Calendar: calendar, CalendarSettings, Addresses, AddressID })
             }));
         };
 
@@ -150,8 +95,7 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
 
         withLoading(
             promise.catch(() => {
-                // Just close if it failed to load.
-                rest.onClose();
+                setError(true);
             })
         );
     }, []);
@@ -162,7 +106,8 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
         const { privateKey: primaryAddressKey } = getPrimaryKey(addressKeys) || {};
         if (!primaryAddressKey) {
             createNotification({ text: c('Error').t`Primary address key is not decrypted.`, type: 'error' });
-            return;
+            setError(true);
+            throw new Error('Missing primary key');
         }
 
         const { Calendar = {} } = await api(
@@ -178,6 +123,9 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
             addresses,
             getAddressKeys
         });
+
+        // Refresh the calendar model in order to ensure flags are correct
+        await loadModels([CalendarsModel], { api, cache, useCache: false });
 
         return Calendar.ID;
     };
@@ -195,36 +143,11 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
 
     const errors = validate(formattedModel);
 
-    const handleSubmit = async () => {
-        setIsSubmitted(true);
-        if (Object.keys(errors).length > 0) {
-            return;
-        }
-
-        const calendarPayload = {
-            Name: formattedModel.name,
-            Color: formattedModel.color,
-            Display: +formattedModel.display,
-            Description: formattedModel.description
-        };
-
+    const handleProcessCalendar = async () => {
+        const calendarPayload = getCalendarPayload(formattedModel);
         const actualCalendarID = isEdit
             ? await handleUpdateCalendar(calendarPayload)
             : await handleCreateCalendar(formattedModel.addressID, calendarPayload);
-
-        const {
-            duration,
-            fullDayNotifications,
-            partDayNotifications,
-            _emailPartDayNotifications = [],
-            _emailFullDayNotifications = []
-        } = formattedModel;
-
-        const calendarSettingsData = {
-            DefaultEventDuration: +duration,
-            DefaultFullDayNotifications: modelToNotifications(fullDayNotifications.concat(_emailFullDayNotifications)),
-            DefaultPartDayNotifications: modelToNotifications(partDayNotifications.concat(_emailPartDayNotifications))
-        };
 
         if (!defaultCalendarID && !isEdit) {
             // When creating a calendar, create a default calendar if there was none.
@@ -232,44 +155,83 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
             await api(updateCalendarUserSettings({ DefaultCalendarID }));
         }
 
-        await api(updateCalendarSettings(actualCalendarID, calendarSettingsData));
+        await api(updateCalendarSettings(actualCalendarID, getCalendarSettingsPayload(formattedModel)));
         await call();
-
-        rest.onClose();
-        createNotification({
-            text: isEdit ? c('Success').t`Calendar updated` : c('Success').t`Calendar created`
-        });
     };
 
-    const tabs = [
-        {
-            title: c('Header').t`Calendar settings`,
-            content: (
-                <CalendarSettingsTab
-                    isSubmitted={isSubmitted}
-                    errors={errors}
-                    model={model}
-                    setModel={setModel}
-                    onClose={rest.onClose}
-                />
-            )
-        },
-        {
-            title: c('Header').t`Event settings`,
-            content: <EventSettingsTab isSubmitted={isSubmitted} errors={errors} model={model} setModel={setModel} />
+    const { section, ...modalProps } = (() => {
+        if (error) {
+            return {
+                title: c('Title').t`Error`,
+                submit: c('Action').t`Close`,
+                hasClose: false,
+                section: <GenericError />,
+                onSubmit() {
+                    window.location.reload();
+                }
+            };
         }
-    ];
+
+        const tabs = [
+            {
+                title: c('Header').t`Calendar settings`,
+                content: (
+                    <CalendarSettingsTab
+                        isSubmitted={isSubmitted}
+                        errors={errors}
+                        model={model}
+                        setModel={setModel}
+                        onClose={rest.onClose}
+                    />
+                )
+            },
+            {
+                title: c('Header').t`Event settings`,
+                content: (
+                    <EventSettingsTab isSubmitted={isSubmitted} errors={errors} model={model} setModel={setModel} />
+                )
+            }
+        ];
+
+        return {
+            title: isEdit ? c('Title').t`Update calendar` : c('Title').t`Create calendar`,
+            submit: isEdit ? c('Action').t`Update` : c('Action').t`Create`,
+            close: c('Action').t`Cancel`,
+            loading: loadingSetup || loadingAction,
+            section: loadingSetup ? <Loader /> : <SimpleTabs tabs={tabs} />,
+            hasClose: true,
+            onSubmit: () => {
+                setIsSubmitted(true);
+                if (Object.keys(errors).length > 0) {
+                    return;
+                }
+                withLoadingAction(handleProcessCalendar())
+                    .then(() => {
+                        rest.onClose();
+                        createNotification({
+                            text: isEdit ? c('Success').t`Calendar updated` : c('Success').t`Calendar created`
+                        });
+                    })
+                    .catch(() => {
+                        setError(true);
+                    });
+            }
+        };
+    })();
 
     return (
         <FormModal
+            title={''}
             className="pm-modal--shorterLabels w100"
-            title={title}
-            submit={isEdit ? c('Action').t`Update` : c('Action').t`Create`}
-            onSubmit={() => withLoadingAction(handleSubmit())}
-            loading={loadingSetup || loadingAction}
+            close={null}
+            onClose={noop}
+            onSubmit={noop}
+            submit={c('Action').t`Continue`}
+            hasClose={false}
+            {...modalProps}
             {...rest}
         >
-            {loadingSetup ? <Loader /> : <SimpleTabs tabs={tabs} />}
+            {section}
         </FormModal>
     );
 };

@@ -9,7 +9,8 @@ import {
     useGetAddressKeys,
     GenericError,
     Loader,
-    useLoading
+    useLoading,
+    useCache
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { CALENDAR_FLAGS } from 'proton-shared/lib/calendar/constants';
@@ -29,6 +30,7 @@ const STEPS = {
 
 const ResetModal = ({ onClose, calendars, ...rest }) => {
     const api = useApi();
+    const cache = useCache();
     const { call } = useEventManager();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
@@ -74,6 +76,7 @@ const ResetModal = ({ onClose, calendars, ...rest }) => {
         return withLoading(
             process({
                 api,
+                cache,
                 call,
                 getAddressKeys,
                 getAddresses,

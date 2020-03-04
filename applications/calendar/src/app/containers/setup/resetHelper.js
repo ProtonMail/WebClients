@@ -13,6 +13,8 @@ import {
 } from 'proton-shared/lib/api/calendars';
 import { decryptPassphrase, generateCalendarKeyPayload, getKeysMemberMap } from 'proton-shared/lib/keys/calendarKeys';
 import { findMemberAddressWithAdminPermissions } from 'proton-shared/lib/calendar/member';
+import { loadModels } from 'proton-shared/lib/models/helper';
+import { CalendarsModel } from 'proton-shared/lib/models';
 
 export const setupCalendarKeys = async ({ api, calendars, getAddressKeys, addresses }) => {
     return Promise.all(
@@ -165,6 +167,7 @@ const resetCalendarKeys = async ({ api, calendars, getAddressKeys, addresses }) 
 
 export const process = async ({
     api,
+    cache,
     call,
     getAddresses,
     getAddressKeys,
@@ -205,4 +208,6 @@ export const process = async ({
     }
 
     await call();
+    // Refresh the calendar model to be able to get the new flags since it's not updated through the event manager
+    await loadModels([CalendarsModel], { api, cache, useCache: false });
 };
