@@ -59,9 +59,13 @@ const CalendarsSection = ({ calendars = [], calendarUserSettings = {}, disabled 
     };
 
     const handleDelete = async ({ ID }) => {
-        const deleteDefaultCalendar = ID === defaultCalendarID;
+        const isDeleteDefaultCalendar = ID === defaultCalendarID;
         const firstRemainingCalendar = activeCalendars.find(({ ID: calendarID }) => calendarID !== ID);
-        const newDefaultCalendarID = (firstRemainingCalendar && firstRemainingCalendar.ID) || null;
+
+        // If deleting the default calendar, the new calendar to make default is either the first active calendar or null if there is none.
+        const newDefaultCalendarID = isDeleteDefaultCalendar
+            ? (firstRemainingCalendar && firstRemainingCalendar.ID) || null
+            : undefined;
 
         await new Promise((resolve, reject) => {
             const calendarName = firstRemainingCalendar ? (
@@ -79,7 +83,7 @@ const CalendarsSection = ({ calendars = [], calendarUserSettings = {}, disabled 
                     onConfirm={resolve}
                 >
                     <Alert type="error">{c('Info').t`Are you sure you want to delete this calendar?`}</Alert>
-                    {deleteDefaultCalendar && firstRemainingCalendar && (
+                    {isDeleteDefaultCalendar && firstRemainingCalendar && (
                         <Alert type="warning">{c('Info').jt`${calendarName} will be set as default calendar.`}</Alert>
                     )}
                 </ConfirmModal>
@@ -88,7 +92,8 @@ const CalendarsSection = ({ calendars = [], calendarUserSettings = {}, disabled 
         try {
             setLoadingMap((old) => ({ ...old, [newDefaultCalendarID]: true, [ID]: true }));
             await api(removeCalendar(ID));
-            if (deleteDefaultCalendar) {
+            // null is a valid default calendar id
+            if (newDefaultCalendarID !== undefined) {
                 await api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
             }
             await call();
