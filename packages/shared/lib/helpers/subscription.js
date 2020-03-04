@@ -1,10 +1,11 @@
-import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES } from '../constants';
-import { toMap } from './object';
+import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES, MAX_DOMAIN_PLUS_ADDON } from '../constants';
+import { toMap, omit } from './object';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL } = PLAN_SERVICES;
-const { PLUS, VPNPLUS, VPNBASIC, VISIONARY } = PLANS;
+const { PLUS, VPNPLUS, VPNBASIC, VISIONARY, PROFESSIONAL } = PLANS;
+const { VPN, SPACE, MEMBER, ADDRESS, DOMAIN } = ADDON_NAMES;
 
 /**
  * Get plan from current subscription
@@ -153,39 +154,92 @@ const getAddonQuantity = (plan = {}, used = 0, key = '', addon = {}) => {
  * @returns {Object} new planIDs
  */
 export const switchPlan = ({ planIDs, plans, planID, service, organization }) => {
+    // Handle FREE VPN and FREE Mail
+    if (typeof planID === 'undefined') {
+        return removeService(planIDs, plans, service);
+    }
+
     const plansMap = toMap(plans, 'Name');
 
-    if (planID === plansMap[PLANS.VISIONARY].ID) {
-        return { [plansMap[PLANS.VISIONARY].ID]: 1 };
+    if (planID === plansMap[VISIONARY].ID) {
+        return { [plansMap[VISIONARY].ID]: 1 };
     }
 
     const { UsedDomains = 0, UsedAddresses = 0, UsedSpace = 0, UsedVPN = 0, UsedMembers = 0 } = organization;
     const selectedPlan = plans.find(({ ID }) => ID === planID);
 
-    return {
-        ...removeService(planIDs, plans, service),
-        [plansMap[ADDON_NAMES.DOMAIN].ID]: [plansMap[PLANS.PLUS].ID, plansMap[PLANS.PROFESSIONAL].ID].includes(planID)
-            ? getAddonQuantity(selectedPlan, UsedDomains, 'MaxDomains', plansMap[ADDON_NAMES.DOMAIN])
-            : planIDs[plansMap[ADDON_NAMES.DOMAIN].ID] || 0,
-        [plansMap[ADDON_NAMES.ADDRESS].ID]: [plansMap[PLANS.PLUS].ID].includes(planID)
-            ? getAddonQuantity(selectedPlan, UsedAddresses, 'MaxAddresses', plansMap[ADDON_NAMES.ADDRESS])
-            : planIDs[plansMap[ADDON_NAMES.ADDRESS].ID] || 0,
-        [plansMap[ADDON_NAMES.SPACE].ID]: [plansMap[PLANS.PLUS].ID].includes(planID)
-            ? getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[ADDON_NAMES.SPACE])
-            : planIDs[plansMap[ADDON_NAMES.SPACE].ID] || 0,
-        [plansMap[ADDON_NAMES.VPN].ID]:
-            [plansMap[PLANS.VPNPLUS].ID].includes(planID) && planIDs[plansMap[PLANS.PROFESSIONAL].ID]
-                ? getAddonQuantity(selectedPlan, UsedVPN, 'MaxVPN', plansMap[ADDON_NAMES.VPN])
-                : planIDs[plansMap[ADDON_NAMES.VPN].ID] || 0,
-        [plansMap[ADDON_NAMES.MEMBER].ID]: [plansMap[PLANS.PROFESSIONAL].ID].includes(planID)
-            ? Math.max(
-                  getAddonQuantity(selectedPlan, UsedMembers, 'MaxMembers', plansMap[ADDON_NAMES.MEMBER]),
-                  getAddonQuantity(selectedPlan, UsedAddresses, 'MaxAddresses', plansMap[ADDON_NAMES.MEMBER]),
-                  getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[ADDON_NAMES.MEMBER])
-              )
-            : planIDs[plansMap[ADDON_NAMES.MEMBER].ID] || 0,
-        ...(planID ? { [planID]: 1 } : {})
+    const transferDomains = (from, to) => {
+        const domains = plansMap[from].MaxDomains - plansMap[to].MaxDomains + (planIDs[plansMap[DOMAIN].ID] || 0);
+        if (domains < 0) {
+            return 0;
+        }
+        const plusLimit = MAX_DOMAIN_PLUS_ADDON - plansMap[PLUS].MaxDomains;
+        if (domains > plusLimit) {
+            return plusLimit;
+        }
+        return domains;
     };
+
+    if (plansMap[PLUS].ID === planID) {
+        return {
+            ...omit(planIDs, [
+                plansMap[PLUS].ID,
+                plansMap[PROFESSIONAL].ID,
+                plansMap[VISIONARY].ID,
+                plansMap[MEMBER].ID
+            ]),
+            [plansMap[DOMAIN].ID]:
+                transferDomains(PROFESSIONAL, PLUS) ||
+                getAddonQuantity(selectedPlan, UsedDomains, 'MaxDomains', plansMap[DOMAIN]) ||
+                0,
+            [plansMap[ADDRESS].ID]:
+                getAddonQuantity(selectedPlan, UsedAddresses, 'MaxAddresses', plansMap[ADDRESS]) || 0,
+            [plansMap[SPACE].ID]: getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[SPACE]) || 0,
+            [planID]: 1
+        };
+    }
+
+    if (plansMap[PROFESSIONAL].ID === planID) {
+        return {
+            ...omit(planIDs, [
+                plansMap[PLUS].ID,
+                plansMap[PROFESSIONAL].ID,
+                plansMap[VISIONARY].ID,
+                plansMap[ADDRESS].ID,
+                plansMap[SPACE].ID
+            ]),
+            [plansMap[MEMBER].ID]:
+                Math.max(
+                    getAddonQuantity(selectedPlan, UsedMembers, 'MaxMembers', plansMap[MEMBER]),
+                    getAddonQuantity(selectedPlan, UsedAddresses, 'MaxAddresses', plansMap[MEMBER]),
+                    getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[MEMBER])
+                ) || 0,
+            [plansMap[DOMAIN].ID]:
+                transferDomains(PLUS, PROFESSIONAL) ||
+                getAddonQuantity(selectedPlan, UsedDomains, 'MaxDomains', plansMap[DOMAIN]) ||
+                0,
+            [planID]: 1
+        };
+    }
+
+    if (plansMap[VPNBASIC].ID === planID) {
+        return {
+            ...omit(planIDs, [plansMap[VPNBASIC].ID, plansMap[VPNPLUS].ID, plansMap[VISIONARY].ID, plansMap[VPN].ID]),
+            [planID]: 1
+        };
+    }
+
+    if (plansMap[VPNPLUS].ID === planID) {
+        return {
+            ...omit(planIDs, [plansMap[VPNBASIC].ID, plansMap[VPNPLUS].ID, plansMap[VISIONARY].ID]),
+            [plansMap[VPN].ID]: planIDs[plansMap[PROFESSIONAL].ID]
+                ? getAddonQuantity(selectedPlan, UsedVPN, 'MaxVPN', plansMap[VPN])
+                : 0,
+            [planID]: 1
+        };
+    }
+
+    return {};
 };
 
 export const getPlanIDs = (subscription = {}) => {
