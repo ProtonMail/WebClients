@@ -11,7 +11,7 @@ import { UploadProvider } from './components/uploads/UploadProvider';
 import DriveResourceProvider from './components/Drive/DriveResourceProvider';
 import AppErrorBoundary from './components/AppErrorBoundary';
 import PreviewContainer from './containers/PreviewContainer';
-import { LinkType } from './interfaces/folder';
+import { ResourceURLType } from './constants';
 
 interface Props extends RouteComponentProps {
     onLogout: () => void;
@@ -49,7 +49,7 @@ const PrivateApp = ({ onLogout, history }: Props) => {
                                     </Switch>
 
                                     <Route
-                                        path={`/drive/:shareId?/${LinkType.FILE}/:linkId?`}
+                                        path={`/drive/:shareId?/${ResourceURLType.FILE}/:linkId?`}
                                         exact
                                         component={PreviewContainer}
                                     />

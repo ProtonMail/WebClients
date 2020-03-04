@@ -5,3 +5,8 @@ export const queryCheckAvailableHashes = (shareId: string, linkId: string, data:
         data
     };
 };
+
+export const queryGetLink = (ShareID: string, LinkID: string) => ({
+    method: 'get',
+    url: `drive/shares/${ShareID}/links/${LinkID}`
+});

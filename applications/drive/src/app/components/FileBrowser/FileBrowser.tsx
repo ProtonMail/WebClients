@@ -2,7 +2,7 @@ import React from 'react';
 import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint } from 'react-components';
 import { c } from 'ttag';
 import ItemRow from './ItemRow';
-import { ResourceType } from '../../interfaces/folder';
+import { ResourceType } from '../../interfaces/link';
 
 export interface FileBrowserItem {
     Name: string;

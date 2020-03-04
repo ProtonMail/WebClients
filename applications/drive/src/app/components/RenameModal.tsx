@@ -3,8 +3,8 @@ import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } fro
 import { c } from 'ttag';
 import useShare from '../hooks/useShare';
 import { FileBrowserItem } from './FileBrowser/FileBrowser';
-import { ResourceType } from '../interfaces/folder';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
+import { ResourceType } from '../interfaces/link';
 
 interface Props {
     onClose?: () => void;

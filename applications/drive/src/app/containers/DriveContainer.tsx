@@ -3,20 +3,20 @@ import { RouteComponentProps } from 'react-router';
 import { c } from 'ttag';
 import Drive from '../components/Drive/Drive';
 import useDrive from '../hooks/useDrive';
-import { LinkType, ResourceType } from '../interfaces/folder';
 import Page, { PageMainArea } from '../components/Page';
 import StickyHeader from '../components/StickyHeader';
 import { DriveResource, useDriveResource } from '../components/Drive/DriveResourceProvider';
 import DriveContentProvider from '../components/Drive/DriveContentProvider';
 import DriveToolbar from '../components/Drive/DriveToolbar';
 import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
-import { DriveLink } from '../interfaces/link';
+import { LinkMeta, ResourceType } from '../interfaces/link';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
+import { ResourceURLType } from '../constants';
 
-const toResourceType = (type: LinkType) => {
+const toResourceType = (type: ResourceURLType) => {
     const resourceType = {
-        [LinkType.FILE]: ResourceType.FILE,
-        [LinkType.FOLDER]: ResourceType.FOLDER
+        [ResourceURLType.FILE]: ResourceType.FILE,
+        [ResourceURLType.FOLDER]: ResourceType.FOLDER
     }[type];
 
     if (!resourceType) {
@@ -28,8 +28,8 @@ const toResourceType = (type: LinkType) => {
 
 const toLinkType = (type: ResourceType) => {
     const linkType = {
-        [ResourceType.FILE]: LinkType.FILE,
-        [ResourceType.FOLDER]: LinkType.FOLDER
+        [ResourceType.FILE]: ResourceURLType.FILE,
+        [ResourceType.FOLDER]: ResourceURLType.FOLDER
     }[type];
 
     if (!linkType) {
@@ -39,7 +39,7 @@ const toLinkType = (type: ResourceType) => {
     return linkType;
 };
 
-const toResource = (shareId?: string, type?: LinkType, linkId?: string): DriveResource | undefined => {
+const toResource = (shareId?: string, type?: ResourceURLType, linkId?: string): DriveResource | undefined => {
     if (shareId && type && linkId) {
         return { shareId, type: toResourceType(type), linkId };
     } else if (!shareId && !type && !linkId) {
@@ -49,14 +49,18 @@ const toResource = (shareId?: string, type?: LinkType, linkId?: string): DriveRe
 };
 
 interface DriveHistoryState {
-    preloadedLink?: FileBrowserItem | DriveLink;
+    preloadedLink?: FileBrowserItem | LinkMeta;
 }
 
 function DriveContainer({
     match,
     history,
     location
-}: RouteComponentProps<{ shareId?: string; type?: LinkType; linkId?: string }, {}, DriveHistoryState | undefined>) {
+}: RouteComponentProps<
+    { shareId?: string; type?: ResourceURLType; linkId?: string },
+    {},
+    DriveHistoryState | undefined
+>) {
     const { loadDrive } = useDrive();
     const { resource, setResource } = useDriveResource();
     const [, setError] = useState();
@@ -73,7 +77,7 @@ function DriveContainer({
         const initDrive = async () => {
             const initialResource = toResource(shareId, type, linkId);
 
-            if (type === LinkType.FOLDER && initialResource) {
+            if (type === ResourceURLType.FOLDER && initialResource) {
                 setResource(initialResource);
             } else if (!initialResource) {
                 const initResult = await loadDrive();

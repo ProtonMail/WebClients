@@ -3,19 +3,17 @@ import useFiles from '../hooks/useFiles';
 import { RouteComponentProps } from 'react-router-dom';
 import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
 import { useLoading } from 'react-components';
-import { LinkType, ResourceType } from '../interfaces/folder';
 import FileSaver from '../utils/FileSaver/FileSaver';
 import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
 import useShare from '../hooks/useShare';
-import { FOLDER_PAGE_SIZE } from '../constants';
-import { DriveLink } from '../interfaces/link';
+import { FOLDER_PAGE_SIZE, ResourceURLType } from '../constants';
+import { LinkMeta, ResourceType, LinkShortMeta } from '../interfaces/link';
 import { getMetaForTransfer } from '../components/Drive/Drive';
-import { DriveFile } from '../interfaces/file';
 import { DownloadControls } from '../components/downloads/download';
 import { useDriveResource } from '../components/Drive/DriveResourceProvider';
 
 interface PreviewHistoryState {
-    preloadedLink?: FileBrowserItem | DriveFile | DriveLink;
+    preloadedLink?: FileBrowserItem | LinkMeta;
 }
 
 const PreviewContainer = ({
@@ -32,7 +30,7 @@ const PreviewContainer = ({
     const [loading, withLoading] = useLoading(true);
     const [meta, setMeta] = useState(location.state?.preloadedLink);
     const [contents, setContents] = useState<Uint8Array[]>();
-    const [linksAvailableForPreview, setLinksAvailableForPreview] = useState<DriveLink[]>([]);
+    const [linksAvailableForPreview, setLinksAvailableForPreview] = useState<LinkShortMeta[]>([]);
 
     useEffect(() => {
         let canceled = false;
@@ -95,13 +93,13 @@ const PreviewContainer = ({
 
     const navigateToParent = useCallback(() => {
         if (meta?.ParentLinkID) {
-            history.push(`/drive/${shareId}/${LinkType.FOLDER}/${meta.ParentLinkID}`);
+            history.push(`/drive/${shareId}/${ResourceURLType.FOLDER}/${meta.ParentLinkID}`);
         }
     }, [meta?.ParentLinkID, shareId]);
 
     const navigateToLink = useCallback(
-        (preloadedLink: DriveLink) => {
-            history.push(`/drive/${shareId}/${LinkType.FILE}/${preloadedLink.LinkID}`, {
+        (preloadedLink: LinkShortMeta) => {
+            history.push(`/drive/${shareId}/${ResourceURLType.FILE}/${preloadedLink.LinkID}`, {
                 preloadedLink
             });
         },

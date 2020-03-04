@@ -3,7 +3,7 @@ export const queryUserShares = () => ({
     url: 'drive/shares'
 });
 
-export const queryShareBootstrap = (shareID: string) => ({
+export const queryShareMeta = (shareID: string) => ({
     method: `get`,
     url: `drive/shares/${shareID}`
 });

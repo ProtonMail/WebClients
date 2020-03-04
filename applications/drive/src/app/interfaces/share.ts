@@ -10,7 +10,7 @@ export interface UserShareResult {
     }[];
 }
 
-export interface ShareBootstrap {
+export interface ShareMeta {
     ShareID: string;
     Type: number;
     VolumeID: string;
