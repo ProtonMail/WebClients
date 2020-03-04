@@ -427,9 +427,9 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleDeleteConfirmation = () => {
+    const handleDeleteConfirmation = (title, message) => {
         return new Promise((resolve, reject) => {
-            createModal(<DeleteConfirmModal onClose={reject} onConfirm={resolve} />);
+            createModal(<DeleteConfirmModal title={title} message={message} onClose={reject} onConfirm={resolve} />);
         });
     };
 
@@ -450,11 +450,25 @@ const InteractiveCalendarView = ({
             await call();
         };
 
-        if (isRecurring && recurrence && !recurrence.isSingleOccurrence && !getIsCalendarDisabled(Calendar)) {
+        if (isRecurring && recurrence && !recurrence.isSingleOccurrence) {
+            const customTitle = c('Info').t`Delete events`;
+            const customMessage = c('Info').t`Would you like to delete all the events in the series?`;
+
+            if (getIsCalendarDisabled(Calendar)) {
+                await handleDeleteConfirmation(customTitle, customMessage);
+                await handleDeleteAll();
+                return;
+            }
             const calendarBootstrap = readCalendarBootstrap(Calendar.ID);
             const { Member, Address } = getMemberAndAddress(addresses, calendarBootstrap.Members, Event.Author);
             const [[veventComponent, personalMap] = [], promise, error] = readEvent(Calendar.ID, Event.ID);
-            if (!veventComponent || !personalMap || promise || error) {
+            if (error) {
+                // allow to delete recurring event even if there are read errors
+                await handleDeleteConfirmation(customTitle, customMessage);
+                await handleDeleteAll();
+                return;
+            }
+            if (!veventComponent || !personalMap || promise) {
                 return;
             }
             // Dry-run delete this and future recurrences
