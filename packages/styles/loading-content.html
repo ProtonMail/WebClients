@@ -8,24 +8,47 @@ keywords: loading, content, aria-busy, examples
 section: misc
 ---
 
-<h2>SVG-inlined versions:</h2>
+<h2>SVG-inlined versions</h2>
 
-<svg xmlns="http://www.w3.org/2000/svg" class="loadingAnimation" viewBox="0 0 200 200" width="200" height="200" >
-  <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit1" />
-  <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit2" />
-</svg>
+<p>We strongly encourage to use the default version of the loader, but in smaller case, we need to embold circle strokes to make the animation more visible: <code>.is-bold</code> for medium size, <code>.is-xbold</code> for small size.</p>
 
-<svg xmlns="http://www.w3.org/2000/svg" class="loadingAnimation" viewBox="0 0 200 200" width="80" height="80" >
-  <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit1" />
-  <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit2" />
-</svg>
-
-<p>Smaller version adapted (with smaller <code>stroke-width</code>):</p>
-
-<svg xmlns="http://www.w3.org/2000/svg" class="loadingAnimation loadingAnimation--smaller" viewBox="0 0 20 20" width="20" height="20">
-  <circle cx="10" cy="10" r="8" class="loadingAnimation-circle loadingAnimation-circle--smaller loadingAnimation-orbit1--smaller" />
-  <circle cx="10" cy="10" r="8" class="loadingAnimation-circle loadingAnimation-circle--smaller loadingAnimation-orbit2--smaller" />
-</svg>
+<table class="pm-simple-table--bordered border-collapse aligncenter">
+	<thead>
+		<tr>
+			<th scope="col">Flag</th>
+			<th scope="col">Preview</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Default, without flag</td>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg" class="loadingAnimation" viewBox="0 0 200 200" width="200" height="200" >
+					<circle cx="100" cy="100" r="80" class="loadingAnimation-circle" />
+					<circle cx="100" cy="100" r="80" class="loadingAnimation-circle" />
+				</svg>
+			</td>
+		</tr>
+		<tr>
+			<td><code>.is-bold</code></td>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg" class="loadingAnimation is-bold" viewBox="0 0 200 200" width="80" height="80" >
+					<circle cx="100" cy="100" r="80" class="loadingAnimation-circle" />
+					<circle cx="100" cy="100" r="80" class="loadingAnimation-circle" />
+				</svg>
+			</td>
+		</tr>
+		<tr>
+			<td><code>.is-xbold</code></td>
+			<td>
+				<svg xmlns="http://www.w3.org/2000/svg" class="loadingAnimation is-xbold" viewBox="0 0 200 200" width="20" height="20">
+					<circle cx="100" cy="100" r="80" class="loadingAnimation-circle" />
+					<circle cx="100" cy="100" r="80" class="loadingAnimation-circle" />
+				</svg>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 <h2>Standalone images</h2>
 
