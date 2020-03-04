@@ -1,6 +1,6 @@
 import { Page } from '../models/tools';
 
-export const pageCount = (page: Page) => Math.ceil(page.total / page.size);
+export const pageCount = (page: Page) => Math.ceil(page.total / page.size) || 0;
 
 export const expectedPageLength = (page: Page) => {
     if (page.total === 0) {

@@ -96,6 +96,7 @@ export const useElements = ({
             params: { labelID, sort },
             page
         } = localCache;
+
         const minPage = localCache.pages.reduce((acc, page) => (page < acc ? page : acc), localCache.pages[0]);
         const startIndex = (page.page - minPage) * page.size;
         const endIndex = startIndex + page.size;
@@ -173,6 +174,7 @@ export const useElements = ({
                 AutoWildcard: search.wildcard
             } as any)
         )) as any;
+
         return {
             Total: result.Total,
             Elements: conversationMode ? result.Conversations : result.Messages
