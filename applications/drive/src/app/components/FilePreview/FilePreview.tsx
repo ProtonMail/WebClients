@@ -3,13 +3,12 @@ import { isSafari } from 'proton-shared/lib/helpers/browser';
 import { c } from 'ttag';
 import Header from './Header';
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
-import { DriveFile } from '../../interfaces/file';
 import ImagePreview from './ImagePreview';
 import PreviewLoader from './PreviewLoader';
 import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import NavigationControl from './NavigationControl';
-import { DriveLink } from '../../interfaces/link';
+import { LinkShortMeta } from '../../interfaces/link';
 import useKeyPress from '../../hooks/useKeyPress';
 import PDFPreview from './PDFPreview';
 
@@ -37,17 +36,17 @@ export const isPreviewAvailable = (mimeType: string) =>
 
 interface Props {
     loading: boolean;
-    meta?: DriveFile | DriveLink | FileBrowserItem;
+    meta?: LinkShortMeta | FileBrowserItem;
     contents?: Uint8Array[];
     onClose?: () => void;
     onSave?: () => void;
-    availableLinks?: DriveLink[];
-    onOpen?: (link: DriveLink) => void;
+    availableLinks?: LinkShortMeta[];
+    onOpen?: (link: LinkShortMeta) => void;
 }
 
 const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onClose, onSave }: Props) => {
     const totalAvailable = availableLinks.length;
-    const linkId = meta && ('ID' in meta ? meta.ID : meta.LinkID);
+    const linkId = meta?.LinkID;
     const currentOpenIndex = availableLinks.findIndex(({ LinkID }) => LinkID === linkId);
 
     const handleNext = () => currentOpenIndex < totalAvailable - 1 && onOpen?.(availableLinks[currentOpenIndex + 1]);

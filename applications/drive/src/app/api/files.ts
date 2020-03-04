@@ -1,12 +1,5 @@
 import { CreateDriveFile, UpdateFileRevision } from '../interfaces/file';
 
-export const queryFile = (shareId: string, linkId: string) => {
-    return {
-        method: 'get',
-        url: `drive/shares/${shareId}/files/${linkId}`
-    };
-};
-
 export const queryCreateFile = (shareId: string, data: CreateDriveFile) => {
     return {
         method: 'post',

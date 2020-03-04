@@ -6,13 +6,14 @@ import { sign as signMessage } from 'proton-shared/lib/keys/driveKeys';
 import { Address } from 'proton-shared/lib/interfaces/Address';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { OpenPGPKey } from 'pmcrypto';
+import { useCallback } from 'react';
 
 function useDriveCrypto() {
     const { createNotification } = useNotifications();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
 
-    const getPrimaryAddressKey = async () => {
+    const getPrimaryAddressKey = useCallback(async () => {
         const addresses = await getAddresses();
         const [activeAddress] = getActiveAddresses(addresses);
 
@@ -29,17 +30,23 @@ function useDriveCrypto() {
         }
 
         return { privateKey, publicKey, address: activeAddress };
-    };
+    }, [getAddresses]);
 
-    const getVerificationKeys = async (addressId: string) => {
-        return splitKeys(await getAddressKeys(addressId));
-    };
+    const getVerificationKeys = useCallback(
+        async (addressId: string) => {
+            return splitKeys(await getAddressKeys(addressId));
+        },
+        [getAddressKeys]
+    );
 
-    const sign = async (payload: string, keys?: { privateKey: OpenPGPKey; address: Address }) => {
-        const { privateKey, address } = keys || (await getPrimaryAddressKey());
-        const signature = await signMessage(payload, [privateKey]);
-        return { signature, address };
-    };
+    const sign = useCallback(
+        async (payload: string, keys?: { privateKey: OpenPGPKey; address: Address }) => {
+            const { privateKey, address } = keys || (await getPrimaryAddressKey());
+            const signature = await signMessage(payload, [privateKey]);
+            return { signature, address };
+        },
+        [getPrimaryAddressKey]
+    );
 
     return { getPrimaryAddressKey, getVerificationKeys, sign };
 }

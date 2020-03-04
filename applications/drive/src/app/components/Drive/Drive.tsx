@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useMainArea } from 'react-components';
-import { ResourceType } from '../../interfaces/folder';
+import { ResourceType } from '../../interfaces/link';
 import useFiles from '../../hooks/useFiles';
 import useOnScrollEnd from '../../hooks/useOnScrollEnd';
 import { FOLDER_PAGE_SIZE } from '../../constants';
@@ -9,15 +9,15 @@ import { DriveResource } from './DriveResourceProvider';
 import { TransferMeta } from '../../interfaces/transfer';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { isPreviewAvailable } from '../FilePreview/FilePreview';
-import { DriveFile } from '../../interfaces/file';
 import { useDriveContent } from './DriveContentProvider';
 import EmptyFolder from '../FileBrowser/EmptyFolder';
+import { LinkMeta } from '../../interfaces/link';
 
-export const getMetaForTransfer = (item: FileBrowserItem | DriveFile): TransferMeta => {
+export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
     return {
         filename: item.Name,
         mimeType: item.MimeType,
-        size: 'ActiveRevision' in item ? item.ActiveRevision.Size : item.Size
+        size: item.Size
     };
 };
 

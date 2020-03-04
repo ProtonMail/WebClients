@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { TableRow, Checkbox, Time, Icon, useActiveBreakpoint } from 'react-components';
 import { c } from 'ttag';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { ResourceType } from '../../interfaces/folder';
+import { ResourceType } from '../../interfaces/link';
 import { FileBrowserItem } from './FileBrowser';
 
 interface Props {

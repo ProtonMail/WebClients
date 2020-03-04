@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect, useContext } from 'react';
-import { ResourceType } from '../../interfaces/folder';
+import { ResourceType } from '../../interfaces/link';
 import { useModals, useLoading, LoaderPage } from 'react-components';
 import useDrive from '../../hooks/useDrive';
 import OnboardingModal from '../OnboardingModal/OnboardingModal';

@@ -4,17 +4,6 @@ export enum FileRevisionState {
     Inactive = 2
 }
 
-export interface ActiveFileRevision {
-    ID: number;
-    Created: number;
-    Size: number;
-    Hash: string;
-    RootHash: string;
-    RootHashSignature: string;
-    AuthorAddressID: string;
-    State: FileRevisionState;
-}
-
 export interface CreateDriveFile {
     Name: string;
     Hash: string;
@@ -41,27 +30,6 @@ export interface UpdateFileRevision {
     RootHash: string;
     RootHashSignature: string;
     AuthorAddressID: string;
-}
-
-export interface DriveFile {
-    ID: string;
-    ParentLinkID: string;
-    Attributes: number;
-    Permissions: number;
-    MimeType: string;
-    Key: string;
-    Passphrase: string;
-    PassphraseSignature: string;
-    SignatureAddressID: string;
-    HashKey: string;
-    ContentKeyPacket: string;
-    Name: string;
-    Hash: string;
-    ActiveRevision: ActiveFileRevision;
-}
-
-export interface DriveFileResult {
-    File: DriveFile;
 }
 
 export interface CreateFileResult {

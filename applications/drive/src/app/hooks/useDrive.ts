@@ -1,14 +1,14 @@
-import { useGetAddressKeys, useApi } from 'react-components';
-import { generateDriveBootstrap, generateNodeHashKey } from 'proton-shared/lib/keys/driveKeys';
-import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
-import { decryptPrivateKey } from 'pmcrypto';
+import { useApi, useGetAddressKeys } from 'react-components';
 import { useCallback } from 'react';
-import { queryCreateDriveVolume } from '../api/volume';
-import { queryUserShares, queryShareBootstrap } from '../api/share';
-import { UserShareResult, ShareBootstrap } from '../interfaces/share';
-import { CreatedDriveVolumeResult } from '../interfaces/volume';
-import useDriveCrypto from './useDriveCrypto';
+import { decryptPrivateKey } from 'pmcrypto';
+import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 import useCachedResponse from './useCachedResponse';
+import useDriveCrypto from './useDriveCrypto';
+import { queryUserShares, queryShareMeta } from '../api/share';
+import { ShareMeta, UserShareResult } from '../interfaces/share';
+import { queryCreateDriveVolume } from '../api/volume';
+import { CreatedDriveVolumeResult } from '../interfaces/volume';
+import { generateDriveBootstrap, generateNodeHashKey } from 'proton-shared/lib/keys/driveKeys';
 
 function useDrive() {
     const api = useApi();
@@ -22,13 +22,13 @@ function useDrive() {
                 const { Shares } = await api<UserShareResult>(queryUserShares());
                 return Shares;
             }),
-        []
+        [api, getCachedResponse]
     );
 
-    const getShareBootstrap = useCallback(
+    const fetchShareMeta = useCallback(
         (shareId: string) => {
             return getCachedResponse(`drive/shares/${shareId}`, async () => {
-                const Share: ShareBootstrap = await api(queryShareBootstrap(shareId));
+                const Share = await api<ShareMeta>(queryShareMeta(shareId));
 
                 const { privateKeys, publicKeys } = await getVerificationKeys(Share.AddressID);
                 const decryptedSharePassphrase = await decryptPassphrase({
@@ -39,10 +39,15 @@ function useDrive() {
                 });
 
                 const shareKey = await decryptPrivateKey(Share.Key, decryptedSharePassphrase as string);
-                return { Share, privateKey: shareKey };
+                return {
+                    Share,
+                    keys: {
+                        privateKey: shareKey
+                    }
+                };
             });
         },
-        [api, getAddressKeys]
+        [api, getAddressKeys, getVerificationKeys, getCachedResponse]
     );
 
     const createVolume = useCallback(async () => {
@@ -64,7 +69,7 @@ function useDrive() {
         cache.delete('drive/shares');
 
         return Volume;
-    }, [cache]);
+    }, [api, cache]);
 
     /**
      * Loads drive and gets the active share bootstrap.
@@ -79,10 +84,10 @@ function useDrive() {
         }
 
         const [{ ShareID }] = userShares; // Currently, always only one share exists
-        return getShareBootstrap(ShareID);
-    }, []);
+        return fetchShareMeta(ShareID);
+    }, [getUserShares, fetchShareMeta]);
 
-    return { createVolume, getUserShares, getShareBootstrap, loadDrive };
+    return { createVolume, getUserShares, fetchShareMeta, loadDrive };
 }
 
 export default useDrive;

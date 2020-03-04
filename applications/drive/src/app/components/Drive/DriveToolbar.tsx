@@ -3,7 +3,7 @@ import { ToolbarSeparator, Toolbar, ToolbarButton, useModals } from 'react-compo
 import { c } from 'ttag';
 import { DriveResource } from './DriveResourceProvider';
 import useShare from '../../hooks/useShare';
-import { ResourceType } from '../../interfaces/folder';
+import { ResourceType } from '../../interfaces/link';
 import useFiles from '../../hooks/useFiles';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from './Drive';

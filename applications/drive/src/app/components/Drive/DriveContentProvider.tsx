@@ -1,10 +1,9 @@
 import React, { useState, createContext, useEffect, useContext, useRef } from 'react';
-import { ResourceType } from '../../interfaces/folder';
+import { ResourceType, LinkShortMeta } from '../../interfaces/link';
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import useShare from '../../hooks/useShare';
 import { DriveResource, useDriveResource } from './DriveResourceProvider';
 import useFileBrowser from '../FileBrowser/useFileBrowser';
-import { DriveLink } from '../../interfaces/link';
 import { FOLDER_PAGE_SIZE } from '../../constants';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import { TransferState } from '../../interfaces/transfer';
@@ -12,7 +11,7 @@ import { TransferState } from '../../interfaces/transfer';
 const isSameResource = (a: DriveResource, b: DriveResource) =>
     a.type === b.type && a.shareId === b.shareId && a.linkId === b.linkId;
 
-export const mapLinksToChildren = (decryptedLinks: DriveLink[]): FileBrowserItem[] =>
+export const mapLinksToChildren = (decryptedLinks: LinkShortMeta[]): FileBrowserItem[] =>
     decryptedLinks.map(({ LinkID, Type, Name, Modified, Size, MimeType, ParentLinkID }) => ({
         Name,
         LinkID,

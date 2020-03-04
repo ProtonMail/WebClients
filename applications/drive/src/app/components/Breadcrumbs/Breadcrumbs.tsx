@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useShare from '../../hooks/useShare';
 import { DriveResource } from '../Drive/DriveResourceProvider';
-import { ResourceType } from '../../interfaces/folder';
+import { ResourceType } from '../../interfaces/link';
 import { c } from 'ttag';
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import Breadcrumb from './Breadcrumb';

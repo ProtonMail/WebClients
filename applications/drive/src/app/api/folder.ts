@@ -11,11 +11,6 @@ export const queryFolderChildren = (
     params: { Page, PageSize }
 });
 
-export const queryGetFolder = (ShareID: string, LinkID: string) => ({
-    method: 'get',
-    url: `drive/shares/${ShareID}/folders/${LinkID}`
-});
-
 export const queryCreateFolder = (shareID: string, data: CreateNewFolder) => ({
     method: 'post',
     url: `drive/shares/${shareID}/folders`,
