@@ -81,9 +81,9 @@ const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
                 </>
             }
 
-            <ToolbarButton icon="folder" title={c('Action').t`New Folder`} onClick={handleCreateFolder} />
+            <ToolbarButton icon="folder-new" title={c('Action').t`New Folder`} onClick={handleCreateFolder} />
             {selectedItems.length === 1 && (
-                <ToolbarButton title={c('Action').t`Rename`} icon="pen" onClick={handleRename} />
+                <ToolbarButton title={c('Action').t`Rename`} icon="file-edit" onClick={handleRename} />
             )}
             {onlyFilesSelected && selectedItems.length > 0 && (
                 <ToolbarButton title={c('Action').t`Download`} icon="download" onClick={handleDownloadClick} />
