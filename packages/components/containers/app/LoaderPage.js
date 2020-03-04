@@ -6,12 +6,12 @@ import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
 const { VPN } = CLIENT_TYPES;
 
-const LoaderPage = ({ text, color = 'global-light' }) => {
+const LoaderPage = ({ text, loaderClassName = 'color-global-light' }) => {
     const { CLIENT_TYPE } = useConfig();
     const appName = CLIENT_TYPE === VPN ? 'ProtonVPN' : 'ProtonMail';
     return (
         <div className="centered-absolute aligncenter">
-            <FullLoader color={color} size={200} />
+            <FullLoader className={loaderClassName} size={200} />
             <TextLoader>{text || c('Info').t`Loading ${appName}`}</TextLoader>
         </div>
     );
@@ -19,7 +19,7 @@ const LoaderPage = ({ text, color = 'global-light' }) => {
 
 LoaderPage.propTypes = {
     text: PropTypes.string,
-    color: PropTypes.string
+    loaderClassName: PropTypes.string
 };
 
 export default LoaderPage;

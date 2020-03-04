@@ -10,44 +10,22 @@ interface Props {
 }
 const FullLoader = ({ size = 50, color, className }: Props) => {
     const isSmall = size < 50;
-
-    const diameter = isSmall ? 10 : 100;
-    const radius = isSmall ? 8 : 80;
-    const viewBox = isSmall ? '0 0 20 20' : '0 0 200 200';
+    const isMedium = size >= 50 && size < 150;
 
     return (
         <>
             <svg
-                className={classnames(['loadingAnimation', className])}
-                viewBox={viewBox}
+                className={classnames(['loadingAnimation', isSmall && 'is-xbold', isMedium && 'is-bold', className])}
+                style={color ? { color } : undefined}
+                viewBox="0 0 200 200"
                 width={size}
                 height={size}
                 role="img"
                 aria-hidden="true"
                 focusable="false"
             >
-                <circle
-                    cx={diameter}
-                    cy={diameter}
-                    r={radius}
-                    className={classnames([
-                        'loadingAnimation-circle',
-                        isSmall ? 'loadingAnimation-orbit1--smaller' : 'loadingAnimation-orbit1',
-                        isSmall && 'loadingAnimation-circle--smaller',
-                        color && `loadingAnimation-circle--${color}`
-                    ])}
-                />
-                <circle
-                    cx={diameter}
-                    cy={diameter}
-                    r={radius}
-                    className={classnames([
-                        'loadingAnimation-circle',
-                        isSmall ? 'loadingAnimation-orbit2--smaller' : 'loadingAnimation-orbit2',
-                        isSmall && 'loadingAnimation-circle--smaller',
-                        color && `loadingAnimation-circle--${color}`
-                    ])}
-                />
+                <circle cx="100" cy="100" r="80" className="loadingAnimation-circle" />
+                <circle cx="100" cy="100" r="80" className="loadingAnimation-circle" />
             </svg>
             <span className="sr-only">{c('Info').t`Loading`}</span>
         </>
