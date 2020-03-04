@@ -148,7 +148,7 @@ const CalendarContainerView = ({
                     />
                     {isLoading ? (
                         <div className="calendar-loader-container aligncenter p1">
-                            <FullLoader color="global-light" size={60} />
+                            <FullLoader size={60} />
                             <TextLoader className="m0">{c('Info').t`Loading events`}</TextLoader>
                         </div>
                     ) : null}

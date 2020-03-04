@@ -8,7 +8,7 @@ const CalendarCreating = () => {
         <>
             <Alert>{c('Info').t`Give us a moment while we prepare your calendar.`}</Alert>
             <div className="aligncenter">
-                <FullLoader color="pm-primary" size="80" className="center flex"></FullLoader>
+                <FullLoader size={80} className="center flex color-primary" />
                 <p>{c('Info').t`Creating your calendar...`}</p>
             </div>
         </>

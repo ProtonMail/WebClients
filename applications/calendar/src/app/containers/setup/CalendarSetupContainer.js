@@ -65,7 +65,7 @@ const CalendarSetupContainer = ({ calendars, user: { isFree }, children }) => {
                 onCreateEvent={noop}
                 onClickToday={noop}
                 onChangeView={noop}
-                tzid={'Europe/Zurich'}
+                tzid="Europe/Zurich"
                 setTzid={noop}
                 setCustom={noop}
             >
