@@ -73,7 +73,13 @@ function DemoModal({ onAdd, ...rest }) {
 
         return (
             <FooterModal>
-                {typeof close === 'string' ? <ResetButton disabled={loading}>{close}</ResetButton> : close}
+                {typeof close === 'string' ? (
+                    <ResetButton disabled={loading} autoFocus={true}>
+                        {close}
+                    </ResetButton>
+                ) : (
+                    close
+                )}
                 {submitBtn}
             </FooterModal>
         );

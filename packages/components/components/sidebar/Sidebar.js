@@ -7,7 +7,7 @@ import MobileNavLink from './MobileNavLink';
 import MainLogo from '../logo/MainLogo';
 import Hamburger from './Hamburger';
 
-const Sidebar = ({ expanded = false, onToggleExpand, list = [], url = '', mobileLinks = [], children }) => {
+const Sidebar = ({ expanded = false, onToggleExpand, list = [], url = '', mobileLinks = [], children, version }) => {
     return (
         <div className="sidebar flex flex-column noprint" data-expanded={expanded}>
             <div className="nodesktop notablet flex-item-noshrink">
@@ -20,6 +20,7 @@ const Sidebar = ({ expanded = false, onToggleExpand, list = [], url = '', mobile
             <nav className="navigation mw100 flex-item-fluid scroll-if-needed customScrollBar-container mb1">
                 <NavMenu list={list} />
             </nav>
+            {version}
             {mobileLinks.length ? (
                 <MobileNavServices>
                     {mobileLinks.map(({ to, icon, external, current }) => {
@@ -37,7 +38,8 @@ Sidebar.propTypes = {
     url: PropTypes.string.isRequired,
     expanded: PropTypes.bool,
     onToggleExpand: PropTypes.func,
-    children: PropTypes.node
+    children: PropTypes.node,
+    version: PropTypes.node
 };
 
 export default Sidebar;

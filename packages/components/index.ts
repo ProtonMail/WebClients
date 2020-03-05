@@ -330,6 +330,8 @@ export { default as FiltersSection } from './containers/filters/FiltersSection';
 export { default as AddFilterModal } from './containers/filters/AddFilterModal';
 export { default as AddEmailToListModal } from './containers/filters/AddEmailToListModal';
 export { default as StorageSpaceStatus } from './containers/sidebar/StorageSpaceStatus';
+export { default as AppVersion } from './components/version/AppVersion';
+export { default as ChangelogModal } from './components/version/ChangelogModal';
 
 export { default as OpenVPNConfigurationSection } from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNClientsSection/ProtonVPNClientsSection';
