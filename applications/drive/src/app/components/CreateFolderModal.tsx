@@ -16,12 +16,23 @@ const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const { createNewFolder } = useShare(resource.shareId);
 
+    const formatFolderName = (name: string) => {
+        return name.trim();
+    };
+
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         setFolderName(target.value);
     };
 
     const handleSubmit = async () => {
-        const name = folderName.trim();
+        const name = formatFolderName(folderName);
+
+        setFolderName(name);
+
+        if (!name) {
+            return;
+        }
+
         await createNewFolder(resource.linkId, name);
         const notificationText = (
             <span key="name" style={{ whiteSpace: 'pre' }}>
@@ -34,7 +45,7 @@ const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
     };
 
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
-        setFolderName(target.value.trim());
+        setFolderName(formatFolderName(target.value));
     };
 
     return (

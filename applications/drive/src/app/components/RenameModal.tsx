@@ -20,6 +20,10 @@ const RenameModal = ({ shareId, item, onClose, onDone, ...rest }: Props) => {
     const { renameLink } = useShare(shareId);
     const [autofocusDone, setAutofocusDone] = useState(false);
 
+    const formatName = (name: string) => {
+        return name.trim();
+    };
+
     const selectNamePart = (e: FocusEvent<HTMLInputElement>) => {
         if (autofocusDone) {
             return;
@@ -37,7 +41,13 @@ const RenameModal = ({ shareId, item, onClose, onDone, ...rest }: Props) => {
     };
 
     const handleSubmit = async () => {
-        const formattedName = name.trim();
+        const formattedName = formatName(name);
+        setName(formattedName);
+
+        if (!formattedName) {
+            return;
+        }
+
         await renameLink(item.LinkID, formattedName, item.ParentLinkID);
         const nameElement = (
             <span key="name" style={{ whiteSpace: 'pre' }}>
@@ -50,7 +60,7 @@ const RenameModal = ({ shareId, item, onClose, onDone, ...rest }: Props) => {
     };
 
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
-        setName(target.value.trim());
+        setName(formatName(target.value));
     };
 
     const isFolder = item.Type === ResourceType.FOLDER;
