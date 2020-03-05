@@ -1,12 +1,12 @@
 const path = require('path');
 const tar = require('tar');
 
-const { success, warn, info } = require('./helpers/log')('proton-i18n');
+const { success, warn, info, debug } = require('./helpers/log')('proton-i18n');
 const { bash, curl } = require('./helpers/cli');
 const { hasDirectory } = require('./helpers/file');
 const { getPackageApp, getEnv, isClientV4, isBetaAngularV4 } = require('../config');
 
-const { name: APP_NAME } = getPackageApp();
+const { name: APP_NAME, config: { publicPathFlag } = {} } = getPackageApp();
 const { I18N_DEPENDENCY_REPO, I18N_DEPENDENCY_BRANCH } = getEnv();
 const OUTPUT_CLONE = path.join('node_modules', 'proton-translations');
 
@@ -22,6 +22,15 @@ const COMPAT_HASHES_MAP = {
     'proton-mail-settings': 'c21c22834aed6a56240ab329b50aefad5fa653da'
 };
 
+const getAppEnvInfo = () => {
+    if (isBetaAngularV4()) {
+        return { compatAppName: `${APP_NAME}-v4` };
+    }
+
+    const [, scopeUrl = ''] = publicPathFlag.split('=');
+    return { compatAppName: APP_NAME, scopeUrl };
+};
+
 /**
  * Get deployed config for a project
  * we look for the version.json so we can extract the correct HASH
@@ -29,11 +38,14 @@ const COMPAT_HASHES_MAP = {
  */
 const getConfigApp = () => {
     const versionUrl = 'https://mail.protonmail.com/assets/version.json';
-    if (isClientV4()) {
-        const compatAppName = isBetaAngularV4() ? `${APP_NAME}-v4` : APP_NAME;
-        return { compatAppName, versionUrl: versionUrl.replace('mail.', 'beta.') };
+
+    if (!isClientV4()) {
+        return { compatAppName: APP_NAME, versionUrl };
     }
-    return { compatAppName: APP_NAME, versionUrl };
+
+    const { scopeUrl, compatAppName } = getAppEnvInfo();
+    const newUrl = scopeUrl ? versionUrl.replace('/assets', `${scopeUrl}assets`) : versionUrl;
+    return { compatAppName, versionUrl: newUrl.replace('mail.', 'beta.') };
 };
 
 /**
@@ -50,6 +62,8 @@ async function getDeployedLocales() {
         let hasError = false;
 
         const { compatAppName, versionUrl } = getConfigApp();
+
+        debug({ compatAppName, versionUrl }, 'app config version');
 
         const { stdout } = await curl(versionUrl);
         const { locales = COMPAT_HASHES_MAP[compatAppName], buildDate, version } = JSON.parse(stdout || '');
