@@ -24,7 +24,11 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted, 
         }
         onChange({ ...frequencyModel, interval });
     };
-    const handleChangeFrequency = (frequency) => onChange({ ...frequencyModel, frequency });
+    const handleChangeFrequency = (frequency) => {
+        const newMaxInterval = FREQUENCY_INTERVALS_MAX[frequency];
+        const interval = Math.min(frequencyModel.interval, newMaxInterval);
+        onChange({ ...frequencyModel, frequency, interval });
+    };
     const handleChangeMonthlyType = (type) => onChange({ ...frequencyModel, monthly: { type: +type } });
 
     return (
