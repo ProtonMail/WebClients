@@ -15,6 +15,10 @@ const env = require('../env/config');
 const PATH_CONFIG = path.resolve('./src/app/config.js');
 const CONFIG = env.getConfig();
 
+if (env.argv['print-config']) {
+    return console.log(`${JSON.stringify(CONFIG, null, 2)}`);
+}
+
 fs.writeFileSync(PATH_CONFIG, `export default ${JSON.stringify(CONFIG, null, 4)};`);
 /**
  * Fuck you webpack

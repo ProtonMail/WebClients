@@ -22,7 +22,6 @@ import ui from './ui/index';
 import user from './user/index';
 import utils from './utils/index';
 
-import CONFIG from './config';
 import routes from './routes';
 
 window.moment = timezone;
@@ -30,120 +29,129 @@ window.moment = timezone;
 const templates = require.context('../templates', true, /\.html$/);
 templates.keys().forEach(templates);
 
-angular
-    .module('proton', [
-        'gettext',
-        'cgNotify',
-        'ngCookies',
-        'ngMessages',
-        'ngSanitize',
-        'ui.router',
-        'templates-app',
-        paginator,
-        authentication,
-        browserSupport,
-        bugReport,
-        commons,
-        core,
-        domains,
-        formUtils,
-        keys,
-        members,
-        organization,
-        outside,
-        payment,
-        settings,
-        ui,
-        user,
-        utils,
-        routes
-    ])
-    .config((notificationProvider) => {
-        notificationProvider.template(require('../templates/notifications/base.tpl.html'));
-    })
-    .run((
-        logoutManager, // Keep the logoutManager here to lunch it
-        AppModel,
-        tools,
-        lazyLoader
-    ) => {
-        FastClick.attach(document.body);
+function main(CONFIG) {
+    angular
+        .module('proton', [
+            'gettext',
+            'cgNotify',
+            'ngCookies',
+            'ngMessages',
+            'ngSanitize',
+            'ui.router',
+            'templates-app',
+            paginator,
+            authentication,
+            browserSupport,
+            bugReport,
+            commons,
+            core,
+            domains,
+            formUtils,
+            keys,
+            members,
+            organization,
+            outside,
+            payment,
+            settings,
+            ui,
+            user,
+            utils,
+            routes
+        ])
+        .config((notificationProvider) => {
+            notificationProvider.template(require('../templates/notifications/base.tpl.html'));
+        })
+        .run(
+            (
+                logoutManager, // Keep the logoutManager here to lunch it
+                AppModel,
+                tools,
+                lazyLoader
+            ) => {
+                FastClick.attach(document.body);
 
-        lazyLoader.app();
+                lazyLoader.app();
 
-        // Manage responsive changes
-        window.addEventListener('resize', _.debounce(tools.mobileResponsive, 50));
-        window.addEventListener('orientationchange', tools.mobileResponsive);
-        tools.mobileResponsive();
+                // Manage responsive changes
+                window.addEventListener('resize', _.debounce(tools.mobileResponsive, 50));
+                window.addEventListener('orientationchange', tools.mobileResponsive);
+                tools.mobileResponsive();
 
-        AppModel.set('showWelcome', true);
+                AppModel.set('showWelcome', true);
 
-        // SVG Polyfill for IE11 @todo lazy load
-        svg4everybody();
-    })
+                // SVG Polyfill for IE11 @todo lazy load
+                svg4everybody();
+            }
+        )
 
-    .config(($httpProvider) => {
-        // Http Interceptor to check auth failures for xhr requests
-        $httpProvider.interceptors.push('serverTimeInterceptor');
-        $httpProvider.interceptors.push('httpInterceptor');
-        $httpProvider.interceptors.push('formatResponseInterceptor');
-        $httpProvider.defaults.headers.common['x-pm-appversion'] = 'Web_' + CONFIG.app_version;
-        $httpProvider.defaults.headers.common['x-pm-apiversion'] = CONFIG.api_version;
-        $httpProvider.defaults.headers.common.Accept = 'application/vnd.protonmail.v1+json';
-        $httpProvider.defaults.withCredentials = true;
+        .config(($httpProvider) => {
+            // Http Interceptor to check auth failures for xhr requests
+            $httpProvider.interceptors.push('serverTimeInterceptor');
+            $httpProvider.interceptors.push('httpInterceptor');
+            $httpProvider.interceptors.push('formatResponseInterceptor');
+            $httpProvider.defaults.headers.common['x-pm-appversion'] = 'Web_' + CONFIG.app_version;
+            $httpProvider.defaults.headers.common['x-pm-apiversion'] = CONFIG.api_version;
+            $httpProvider.defaults.headers.common.Accept = 'application/vnd.protonmail.v1+json';
+            $httpProvider.defaults.withCredentials = true;
 
-        // initialize get if not there
-        if (angular.isUndefined($httpProvider.defaults.headers.get)) {
-            $httpProvider.defaults.headers.get = {};
-        }
-
-        // disable IE ajax request caching (don't use If-Modified-Since)
-        $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
-        $httpProvider.defaults.headers.get.Pragma = 'no-cache';
-    })
-    .run(($state, authentication, $log, dispatchers, networkActivityTracker, AppModel) => {
-        const { dispatcher, on } = dispatchers(['tooltip']);
-
-        on('$stateChangeStart', (event, toState) => {
-            const isLogin = toState.name === 'login';
-            const isSub = toState.name === 'login.sub';
-            const isUpgrade = toState.name === 'upgrade';
-            const isSupport = toState.name.includes('support');
-            const isAccount = toState.name === 'account';
-            const isSignup = toState.name === 'signup' || toState.name === 'pre-invite';
-            const isOutside = toState.name.includes('eo');
-            const isReset = toState.name.includes('reset');
-            const isPgp = toState.name === 'pgp';
-
-            if (isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPgp) {
-                return; // no need to redirect
+            // initialize get if not there
+            if (angular.isUndefined($httpProvider.defaults.headers.get)) {
+                $httpProvider.defaults.headers.get = {};
             }
 
-            // now, redirect only not authenticated
-            if (!authentication.isLoggedIn()) {
-                event.preventDefault();
-                $state.go('login', undefined, { reload: true });
-            }
+            // disable IE ajax request caching (don't use If-Modified-Since)
+            $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+            $httpProvider.defaults.headers.get.Pragma = 'no-cache';
+        })
+        .run(($state, authentication, $log, dispatchers, networkActivityTracker, AppModel) => {
+            const { dispatcher, on } = dispatchers(['tooltip']);
+
+            on('$stateChangeStart', (event, toState) => {
+                const isLogin = toState.name === 'login';
+                const isSub = toState.name === 'login.sub';
+                const isUpgrade = toState.name === 'upgrade';
+                const isSupport = toState.name.includes('support');
+                const isAccount = toState.name === 'account';
+                const isSignup = toState.name === 'signup' || toState.name === 'pre-invite';
+                const isOutside = toState.name.includes('eo');
+                const isReset = toState.name.includes('reset');
+                const isPgp = toState.name === 'pgp';
+
+                if (isLogin || isSub || isSupport || isAccount || isSignup) {
+                    return; // no need to redirect
+                }
+
+                if (isOutside || isUpgrade || isReset || isPgp) {
+                    return; // no need to redirect
+                }
+
+                // now, redirect only not authenticated
+                if (!authentication.isLoggedIn()) {
+                    event.preventDefault();
+                    $state.go('login', undefined, { reload: true });
+                }
+            });
+
+            on('$stateChangeSuccess', () => {
+                // Hide requestTimeout
+                AppModel.set('requestTimeout', false);
+
+                // Hide all the tooltip
+                dispatcher.tooltip('hideAll');
+
+                // Close navbar on mobile
+                $('.navbar-toggle').click();
+                $('#loading_pm, #pm_slow, #pm_slow2').remove();
+            });
+        })
+        .run((consoleMessage) => consoleMessage())
+        .config(($logProvider, $compileProvider, $qProvider) => {
+            const debugInfo = CONFIG.debug || false;
+            $logProvider.debugEnabled(debugInfo);
+            $compileProvider.debugInfoEnabled(debugInfo);
+            $qProvider.errorOnUnhandledRejections(debugInfo);
         });
 
-        on('$stateChangeSuccess', () => {
-            // Hide requestTimeout
-            AppModel.set('requestTimeout', false);
-
-            // Hide all the tooltip
-            dispatcher.tooltip('hideAll');
-
-            // Close navbar on mobile
-            $('.navbar-toggle').click();
-            $('#loading_pm, #pm_slow, #pm_slow2').remove();
-        });
-    })
-    .run((consoleMessage) => consoleMessage())
-    .config(($logProvider, $compileProvider, $qProvider) => {
-        const debugInfo = CONFIG.debug || false;
-        $logProvider.debugEnabled(debugInfo);
-        $compileProvider.debugInfoEnabled(debugInfo);
-        $qProvider.errorOnUnhandledRejections(debugInfo);
-    });
-
-export default () => angular.bootstrap(document, ['proton']);
+    angular.bootstrap(document, ['proton']);
+}
+export default main;

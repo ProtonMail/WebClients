@@ -184,8 +184,7 @@
     "create": "appComponent",
     "create:test": "appComponent --test",
     "cypress:open": "./tasks/lazyInstallVendor e2e && cypress open",
-    "bundle": "./node_modules/proton-bundler/scripts/createVersionJSON.sh && cross-env NODE_ENV=dev tasks/setupConfig.js",
-    "postbundle": "cross-env NODE_ENV=dist proton-bundler",
+    "bundle": "cross-env NODE_ENV=dist proton-bundler",
     "check-types": "echo 123",
     "i18n:validate": "echo 123",
     "i18n:validate:context": "proton-i18n extract && npm run i18n:check -- --debug"

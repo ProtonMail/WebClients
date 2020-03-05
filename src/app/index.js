@@ -5,11 +5,12 @@ import { check, redirect } from '../helpers/compat';
 
 import '../sass/app.scss';
 import { loadOpenpgp } from './loadOpenpgp';
+import CONFIG from './config';
 
 (async () => {
     if (!check()) {
         return redirect();
     }
     const [app] = await Promise.all([import('./app'), loadOpenpgp()]);
-    app.default();
+    app.default(CONFIG);
 })();
