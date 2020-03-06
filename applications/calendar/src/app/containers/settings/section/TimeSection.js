@@ -102,7 +102,7 @@ const TimeSection = ({
                                 <Info
                                     buttonClass="ml0-5 inline-flex"
                                     title={c('Tooltip')
-                                        .t`If the computer time zone does not match the current time zone preference, you will be asked to update it (at most once per day). `}
+                                        .t`If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day). `}
                                 />
                             </span>
                         </Checkbox>

@@ -36,7 +36,7 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, ...rest }) => {
             {...rest}
         >
             {c('')
-                .jt`Your computer time zone seems to have changed to ${timezone}. Do you want to update your time zone preference?`}
+                .jt`Your system time zone seems to have changed to ${timezone}. Do you want to update your time zone preference?`}
         </FormModal>
     );
 };
