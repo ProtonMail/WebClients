@@ -8,12 +8,15 @@ function main {
         echo "we have a cache"
     fi;
 
-    if [ ! -d "src/i18n" ]; then
-        mkdir 'src/i18n';
+    # Inside the CI we have a cache
+    if [ -z "$CI_PROJECT_DIR" ]; then
+        rm -rf ./dist;
+        npm run build;
+    else
+        mkdir dist
+        tar xzf webapp-bundle.tar.gz -C dist;
     fi;
 
-    rm -rf ./dist;
-    npm run build;
 
     for file in $(find ./dist/ -type f -name "*.js.map");
     do
