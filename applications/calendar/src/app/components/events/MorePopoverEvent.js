@@ -16,7 +16,8 @@ const MorePopoverEvent = ({
     popoverRef,
     onClickEvent,
     targetEventRef,
-    targetEventData
+    targetEventData,
+    tzid
 }) => {
     return (
         <div
@@ -51,6 +52,7 @@ const MorePopoverEvent = ({
                             key={event.id}
                             className="calendar-dayeventcell w100 alignleft"
                             isSelected={isSelected}
+                            tzid={tzid}
                             {...props}
                         />
                     );

@@ -16,6 +16,7 @@ const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, model, setModel }
 
         setModel({ ...model, start: newStart, frequencyModel: newFrequencyModel });
     };
+
     const handleChangeEnd = (tzid) => {
         const endUtcDate = getTimeInUtc(model.end);
         const newEndUtcDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(endUtcDate), tzid));

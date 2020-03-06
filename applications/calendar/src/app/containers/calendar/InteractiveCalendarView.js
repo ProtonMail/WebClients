@@ -702,6 +702,7 @@ const InteractiveCalendarView = ({
                 {({ style, ref }) => {
                     return (
                         <MorePopoverEvent
+                            tzid={tzid}
                             isNarrow={isNarrow}
                             style={style}
                             popoverRef={ref}
