@@ -386,4 +386,8 @@ export { default as AppsSidebar } from './containers/app/AppsSidebar';
 export { default as TopNavbar } from './containers/app/TopNavbar';
 export { default as LoaderPage } from './containers/app/LoaderPage';
 
+export { default as SidebarMenu } from './components/sidebar/SidebarMenu';
+export { default as SidebarItem } from './components/sidebar/SidebarItem';
+export { default as SidebarItemContent } from './components/sidebar/SidebarItemContent';
+
 export * from './helpers/component';
