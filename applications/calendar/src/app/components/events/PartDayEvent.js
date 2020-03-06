@@ -34,7 +34,7 @@ const PartDayEvent = ({
     }, [start, end]);
 
     const isLessThanOneHour = end - start < 3600000;
-    const shouldHideTime = isLessThanOneHour && titleString;
+    const shouldHideTime = loading || (isLessThanOneHour && titleString);
 
     const content = (() => {
         if (error) {
