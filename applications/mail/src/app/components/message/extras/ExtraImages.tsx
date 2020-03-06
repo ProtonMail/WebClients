@@ -20,7 +20,7 @@ const ExtraImages = ({
     }
 
     return (
-        <div className="bg-white rounded bordered-container p0-5 mb0-5 flex flex-nowrap">
+        <div className="bg-white-dm rounded bordered-container p0-5 mb0-5 flex flex-nowrap">
             <Icon name="insert-image" className="mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">
                 {type === 'remote'
