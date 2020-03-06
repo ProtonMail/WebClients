@@ -51,7 +51,9 @@ const LOCALES = (() => {
     try {
         return require(path.join(process.cwd(), 'node_modules', 'proton-translations', 'config', 'locales.json'));
     } catch (e) {
-        warn('No po/locales.json available yet');
+        if (!process.argv.includes('print-config')) {
+            warn('No po/locales.json available yet');
+        }
         return {};
     }
 })();
