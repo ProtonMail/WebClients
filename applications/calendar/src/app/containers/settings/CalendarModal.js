@@ -39,7 +39,13 @@ import {
     validate
 } from './calendarModalState';
 
-const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultColor = false, ...rest }) => {
+const CalendarModal = ({
+    calendar: initialCalendar,
+    calendars = [],
+    defaultCalendarID,
+    defaultColor = false,
+    ...rest
+}) => {
     const api = useApi();
     const { call } = useEventManager();
     const cache = useCache();
@@ -49,11 +55,10 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
     const [loadingSetup, withLoading] = useLoading(true);
     const [loadingAction, withLoadingAction] = useLoading();
     const { createNotification } = useNotifications();
+
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState(false);
-
-    const isEdit = !!calendar;
-
+    const [calendar, setCalendar] = useState(initialCalendar);
     const [model, setModel] = useState(() => getDefaultModel(defaultColor));
 
     useEffect(() => {
@@ -73,7 +78,7 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
 
         const initializeCalendar = async () => {
             const [{ Members, CalendarSettings }, Addresses] = await Promise.all([
-                getCalendarBootstrap(calendar.ID),
+                getCalendarBootstrap(initialCalendar.ID),
                 getAddresses()
             ]);
 
@@ -87,11 +92,11 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
 
             setModel((prev) => ({
                 ...prev,
-                ...getCalendarModel({ Calendar: calendar, CalendarSettings, Addresses, AddressID })
+                ...getCalendarModel({ Calendar: initialCalendar, CalendarSettings, Addresses, AddressID })
             }));
         };
 
-        const promise = calendar ? initializeCalendar() : initializeEmptyCalendar();
+        const promise = initialCalendar ? initializeCalendar() : initializeEmptyCalendar();
 
         withLoading(
             promise.catch(() => {
@@ -100,7 +105,7 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
         );
     }, []);
 
-    const handleCreateCalendar = async (addressID, calendarPayload) => {
+    const handleCreateCalendar = async (addressID, calendarPayload, calendarSettingsPayload) => {
         const [addresses, addressKeys] = await Promise.all([getAddresses(), getAddressKeys(addressID)]);
 
         const { privateKey: primaryAddressKey } = getPrimaryKey(addressKeys) || {};
@@ -110,7 +115,7 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
             throw new Error('Missing primary key');
         }
 
-        const { Calendar = {} } = await api(
+        const { Calendar, Calendar: { ID: newCalendarID } = {} } = await api(
             createCalendar({
                 ...calendarPayload,
                 AddressID: addressID
@@ -122,17 +127,50 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
             calendars: [Calendar],
             addresses,
             getAddressKeys
+        }).catch((e) => {
+            // Hard failure if the keys fail to setup. Force the user to reload.
+            setError(true);
+            throw e;
         });
+
+        // Set the calendar in case one of the following calls fails so that it ends up in the update function after this.
+        setCalendar(Calendar);
+
+        await Promise.all([
+            api(updateCalendarSettings(newCalendarID, calendarSettingsPayload)),
+            (() => {
+                if (defaultCalendarID) {
+                    return;
+                }
+                const newDefaultCalendarID = calendars.length ? calendars[0].ID : newCalendarID;
+                return api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
+            })()
+        ]);
 
         // Refresh the calendar model in order to ensure flags are correct
         await loadModels([CalendarsModel], { api, cache, useCache: false });
+        await call();
 
-        return Calendar.ID;
+        rest.onClose();
+
+        createNotification({ text: c('Success').t`Calendar created` });
     };
 
-    const handleUpdateCalendar = async (calendarPayload) => {
-        await api(updateCalendar(calendar.ID, calendarPayload));
-        return calendar.ID;
+    const handleUpdateCalendar = async (calendar, calendarPayload, calendarSettingsPayload) => {
+        await Promise.all([
+            api(updateCalendar(calendar.ID, calendarPayload)),
+            api(updateCalendarSettings(calendar.ID, calendarSettingsPayload))
+        ]);
+        // Case: Calendar has been created, and keys have been setup, but one of the calendar settings call failed in the creation.
+        // Here we are in create -> edit mode. So we have to fetch the calendar model again.
+        if (!initialCalendar) {
+            await loadModels([CalendarsModel], { api, cache, useCache: false });
+        }
+        await call();
+
+        rest.onClose();
+
+        createNotification({ text: c('Success').t`Calendar updated` });
     };
 
     const formattedModel = {
@@ -145,18 +183,11 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
 
     const handleProcessCalendar = async () => {
         const calendarPayload = getCalendarPayload(formattedModel);
-        const actualCalendarID = isEdit
-            ? await handleUpdateCalendar(calendarPayload)
-            : await handleCreateCalendar(formattedModel.addressID, calendarPayload);
-
-        if (!defaultCalendarID && !isEdit) {
-            // When creating a calendar, create a default calendar if there was none.
-            const DefaultCalendarID = calendars.length ? calendars[0].ID : actualCalendarID;
-            await api(updateCalendarUserSettings({ DefaultCalendarID }));
+        const calendarSettingsPayload = getCalendarSettingsPayload(formattedModel);
+        if (calendar) {
+            return handleUpdateCalendar(calendar, calendarPayload, calendarSettingsPayload);
         }
-
-        await api(updateCalendarSettings(actualCalendarID, getCalendarSettingsPayload(formattedModel)));
-        await call();
+        return handleCreateCalendar(formattedModel.addressID, calendarPayload, calendarSettingsPayload);
     };
 
     const { section, ...modalProps } = (() => {
@@ -193,6 +224,7 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
             }
         ];
 
+        const isEdit = !!initialCalendar;
         return {
             title: isEdit ? c('Title').t`Update calendar` : c('Title').t`Create calendar`,
             submit: isEdit ? c('Action').t`Update` : c('Action').t`Create`,
@@ -205,16 +237,7 @@ const CalendarModal = ({ calendar, calendars = [], defaultCalendarID, defaultCol
                 if (Object.keys(errors).length > 0) {
                     return;
                 }
-                withLoadingAction(handleProcessCalendar())
-                    .then(() => {
-                        rest.onClose();
-                        createNotification({
-                            text: isEdit ? c('Success').t`Calendar updated` : c('Success').t`Calendar created`
-                        });
-                    })
-                    .catch(() => {
-                        setError(true);
-                    });
+                withLoadingAction(handleProcessCalendar());
             }
         };
     })();

@@ -16,6 +16,8 @@ export const validate = ({ name }) => {
 
     if (!name) {
         errors.name = c('Error').t`Name required`;
+    } else if (name.length < 3) {
+        errors.name = c('Error').t`Name must be at least 3 characters`;
     }
 
     return errors;
