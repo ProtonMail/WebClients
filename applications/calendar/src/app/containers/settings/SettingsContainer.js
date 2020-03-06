@@ -15,6 +15,7 @@ import PrivateHeader from '../../components/layout/PrivateHeader';
 import GeneralPage from './SettingsGeneralPage';
 import CalendarsPage from './SettingsCalendarPage';
 import PropTypes from 'prop-types';
+import CalendarSidebarVersion from '../calendar/CalendarSidebarVersion';
 
 const SettingsContainer = ({ calendars = [] }) => {
     const mainAreaRef = useRef();
@@ -72,6 +73,7 @@ const SettingsContainer = ({ calendars = [] }) => {
                         expanded={expanded}
                         onToggleExpand={onToggleExpand}
                         mobileLinks={mobileLinks}
+                        version={<CalendarSidebarVersion />}
                     />
                     <div className="main flex-item-fluid main-area main-area--paddingFix" ref={mainAreaRef}>
                         <Switch>

@@ -15,6 +15,8 @@
 ## Fixed
 - Design fix on Safari and for responsive displays
 
+___
+
 # Beta launch [4.0.0-beta.0] - 2019-12-30
 
 Release of ProtonCalendar on Beta https://protonmail.com/blog/protoncalendar-beta-announcement/ 

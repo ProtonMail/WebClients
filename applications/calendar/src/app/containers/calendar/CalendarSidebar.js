@@ -15,6 +15,7 @@ import {
 import { c } from 'ttag';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
 import CalendarSidebarList from './CalendarSidebarList';
+import CalendarSidebarVersion from './CalendarSidebarVersion';
 
 const CalendarSidebar = ({
     expanded = false,
@@ -106,6 +107,7 @@ const CalendarSidebar = ({
                     ) : null}
                 </nav>
             </div>
+            <CalendarSidebarVersion />
             <MobileNavServices>
                 {mobileLinks.map(({ to, icon, external, current }) => {
                     return <MobileNavLink key={icon} to={to} icon={icon} external={external} current={current} />;
