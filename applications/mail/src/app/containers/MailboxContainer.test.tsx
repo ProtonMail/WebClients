@@ -1,75 +1,63 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
-import { render } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import { Location, History } from 'history';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import MailboxContainer from './MailboxContainer';
-import { useElements as useElementsSource } from '../hooks/useElements';
-import * as ToolbarSource from '../components/toolbar/Toolbar';
+import { render, addApiMock, clearAll } from '../helpers/test/helper';
 
-const useElements = useElementsSource as jest.Mock;
-const Toolbar = (ToolbarSource as any) as {
-    props: { selectedIDs: string[]; onCheck: (IDs: string[], checked: boolean, replace: boolean) => void };
+const props = {
+    labelID: 'labelID',
+    mailSettings: {},
+    elementID: undefined,
+    location: {} as Location,
+    history: {} as History,
+    onCompose: jest.fn()
 };
 
-jest.mock('../components/list/List', () => () => 'List');
-jest.mock('../components/conversation/ConversationView', () => () => 'ConversationView');
-jest.mock('../components/message/MessageOnlyView', () => () => 'MessageOnlyView');
-jest.mock('../components/toolbar/Toolbar');
-jest.mock('../components/view/PlaceholderView', () => () => 'PlaceholderView');
-
-jest.mock('../hooks/useMailboxPageTitle', () => ({ useMailboxPageTitle: jest.fn() }));
-jest.mock('../hooks/useElements', () => ({ useElements: jest.fn() }));
+const conversationsResult = {
+    Total: 2,
+    Conversations: [
+        { ID: '1', Labels: [{ ID: props.labelID }] },
+        { ID: '2', Labels: [{ ID: props.labelID }] }
+    ]
+};
 
 describe('MailboxContainer', () => {
-    const labelID = 'labelID';
-    const elementID = 'elementID';
-    const emptyProps = {
-        labelID,
-        mailSettings: {},
-        elementID,
-        location: {} as Location,
-        history: {} as History,
-        onCompose: noop
-    };
-    const elements = [{ ID: '0' }, { ID: '1' }, { ID: '2' }, { ID: '3' }, { ID: '4' }];
+    afterEach(() => clearAll());
 
-    afterEach(() => {
-        jest.clearAllMocks();
+    it('should show loader instead of list when elements loading', async () => {
+        addApiMock('conversations', () => new Promise(noop));
+
+        const { container } = await render(<MailboxContainer {...props} />);
+
+        const loader = container.querySelector('.items-column-list [alt="Loading"]') as Element;
+
+        expect(loader).toBeDefined();
     });
 
-    describe('Snapshots', () => {
-        it('should show loader instead of list when elements loading', () => {
-            useElements.mockReturnValue([labelID, [], true, jest.fn()]);
-            const result = render(<MailboxContainer {...emptyProps} />);
-            expect(result).toMatchSnapshot();
-        });
+    it('should show list when elements finish loading', async () => {
+        addApiMock('conversations', () => conversationsResult);
 
-        it('should show list when elements finish loading', () => {
-            useElements.mockReturnValue([labelID, [], false, jest.fn()]);
-            const result = render(<MailboxContainer {...emptyProps} />);
-            expect(result).toMatchSnapshot();
-        });
+        const { container } = await render(<MailboxContainer {...props} />);
+
+        const items = container.querySelectorAll('.items-column-list .item-container') as NodeList;
+
+        expect(items.length === conversationsResult.Conversations.length).toBeDefined();
     });
 
-    describe('Selections', () => {
-        it('should select the right elements for replace false', () => {
-            useElements.mockReturnValue([labelID, elements, false, jest.fn()]);
-            render(<MailboxContainer {...emptyProps} />);
-            act(() => Toolbar.props.onCheck(['1'], true, false));
-            expect(Toolbar.props.selectedIDs).toEqual(['1']);
-            act(() => Toolbar.props.onCheck(['2'], true, false));
-            expect(Toolbar.props.selectedIDs).toEqual(['1', '2']);
-        });
+    it('should select all', async () => {
+        addApiMock('conversations', () => conversationsResult);
 
-        it('should select the right elements for replace true', () => {
-            useElements.mockReturnValue([labelID, elements, false, jest.fn()]);
-            render(<MailboxContainer {...emptyProps} />);
-            act(() => Toolbar.props.onCheck(['1'], true, true));
-            expect(Toolbar.props.selectedIDs).toEqual(['1']);
-            act(() => Toolbar.props.onCheck(['2'], true, true));
-            expect(Toolbar.props.selectedIDs).toEqual(['2']);
-        });
+        const { container } = await render(<MailboxContainer {...props} />);
+
+        const checkAll = container.querySelector('.toolbar .pm-checkbox') as Element;
+        fireEvent.click(checkAll);
+
+        const allChecks = container.querySelectorAll('input.item-checkbox') as NodeListOf<HTMLInputElement>;
+        expect(allChecks.length > 0).toBe(true);
+
+        const checked = [...allChecks].every((oneCheck) => oneCheck.checked);
+        expect(checked).toBe(true);
     });
 });
