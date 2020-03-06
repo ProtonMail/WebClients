@@ -36,16 +36,16 @@ const StandardPrivateApp = ({
             eventManagerRef.current = createEventManager({ api, eventID });
         });
 
-        const modelsPromise = loadModels(unique([UserSettingsModel, UserModel, ...preloadModels]), { api, cache }).then(
-            ([userSettings]) => {
+        const modelsPromise = loadModels(unique([UserSettingsModel, UserModel, ...preloadModels]), { api, cache })
+            .then(([userSettings]) => {
                 return loadLocale({
                     ...getClosestMatches({ locale: userSettings.Locale, browserLocale: getBrowserLocale(), locales }),
                     locales
                 });
-            }
-        );
+            })
+            .then(() => onInit()); // onInit has to happen after locales have been loaded to allow applications to override it
 
-        Promise.all([onInit(), eventManagerPromise, modelsPromise, loadOpenPGP(openpgpConfig)])
+        Promise.all([eventManagerPromise, modelsPromise, loadOpenPGP(openpgpConfig)])
             .then(() => {
                 setLoading(false);
             })
