@@ -5,7 +5,6 @@ module.exports = {
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$': 'react-components/__mocks__/fileMock.js',
         '\\.(css|scss|less)$': 'react-components/__mocks__/styleMock.js',
-        pmcrypto: 'react-components/__mocks__/pmcrypto.js',
         'sieve.js': 'react-components/__mocks__/sieve.js'
     }
 };

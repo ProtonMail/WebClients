@@ -7,12 +7,14 @@ import '@testing-library/jest-dom/extend-expect';
 // These modules uses require.context which is a Webpack feature which can't work in Jest
 jest.mock('proton-shared/lib/i18n/dateFnLocales.js', () => ({}));
 jest.mock('react-components/containers/payments/CardNumberInput.js', () => ({}));
+jest.mock('react-components/containers/paymentMethods/PaymentMethodDetails.js', () => ({}));
 jest.mock('react-components/containers/vpn/OpenVPNConfigurationSection/Country.js', () => ({}));
 
 // Globally mocked react-components modules
 jest.mock('react-components/containers/eventManager/useEventManager.js', () => () => {
     return {
-        subscribe: jest.fn()
+        subscribe: jest.fn(),
+        call: jest.fn()
     };
 });
 
