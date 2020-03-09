@@ -1,4 +1,4 @@
- 
+
 /*
  * Buttons
  */
@@ -30,7 +30,7 @@
   &:hover,
   &:focus,
   &:focus-within,
-  &.is-hover { 
+  &.is-hover {
     color: $pm-global-grey;
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
   }
@@ -189,10 +189,10 @@
 
 /* modifiers */
 .pm-button--large {
-  padding: em(10) em(20) em(9); // design want 42px height 
+  padding: em(10) em(20) em(9); // design want 42px height
 }
 .pm-button--small {
-  padding: em(1) em(12) em(2); // design want 26px height 
+  padding: em(1) em(12) em(2); // design want 26px height
 }
 
 .pm-button--for-icon {
@@ -310,29 +310,32 @@
     text-decoration: none;
     background-color: transparent; // to avoid heriting from other classes
   }
+  &.nodecoration {
+	  text-decoration: none;
+  }
 }
 .pm-button--error,
 .pm-button.pm-button--error {
   @extend .pm-button-blue;
   background-color: $pm-global-warning;
-  border-color: $pm-global-warning; 
+  border-color: $pm-global-warning;
   &:focus,
   &:hover,
   &:not(div):active { // not div is here for a specificity issue for another fix
     background-color: $pm-global-warning;
-    border-color: $pm-global-warning; 
+    border-color: $pm-global-warning;
   }
 }
 .pm-button--warning,
 .pm-button.pm-button--warning {
   @extend .pm-button-blue;
   background-color: $pm-global-attention;
-  border-color: $pm-global-attention; 
+  border-color: $pm-global-attention;
   &:focus,
   &:hover,
   &:not(div):active { // not div is here for a specificity issue for another fix
     background-color: $pm-global-attention;
-    border-color: $pm-global-attention; 
+    border-color: $pm-global-attention;
   }
 }
 .pm-button--info {
