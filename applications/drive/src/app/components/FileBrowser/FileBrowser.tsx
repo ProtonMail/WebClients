@@ -37,7 +37,7 @@ const FileBrowser = ({
     onEmptyAreaClick,
     onShiftClick
 }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { isDesktop } = useActiveBreakpoint();
 
     const allSelected = !!contents.length && contents.length === selectedItems.length;
 
@@ -59,12 +59,12 @@ const FileBrowser = ({
                         <th>
                             <div className="pd-fb-table-heading-name ml0-5">{c('TableHeader').t`Name`}</div>
                         </th>
-                        <th className={isNarrow ? 'w15' : 'w10'}>{c('TableHeader').t`Type`}</th>
-                        {!isNarrow && <th className="w20">{c('TableHeader').t`Modified`}</th>}
-                        <th className={isNarrow ? 'w15' : 'w10'}>{c('TableHeader').t`Size`}</th>
+                        <th className={isDesktop ? 'w10' : 'w15'}>{c('TableHeader').t`Type`}</th>
+                        {isDesktop && <th className="w20">{c('TableHeader').t`Modified`}</th>}
+                        <th className={isDesktop ? 'w10' : 'w15'}>{c('TableHeader').t`Size`}</th>
                     </tr>
                 </thead>
-                <TableBody colSpan={isNarrow ? 4 : 5}>
+                <TableBody colSpan={isDesktop ? 5 : 4}>
                     {contents.map((item) => (
                         <ItemRow
                             key={item.LinkID}
@@ -76,7 +76,7 @@ const FileBrowser = ({
                             onClick={onItemClick}
                         />
                     ))}
-                    {loading && <TableRowBusy colSpan={isNarrow ? 4 : 5} />}
+                    {loading && <TableRowBusy colSpan={isDesktop ? 5 : 4} />}
                 </TableBody>
             </table>
         </div>

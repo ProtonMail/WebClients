@@ -1,23 +1,20 @@
 import React from 'react';
-import { classnames, Icon } from 'react-components';
+import { classnames } from 'react-components';
 
 interface Props {
     children: string;
     onClick: () => void;
-    current?: boolean;
+    active?: boolean;
 }
 
-const Breadcrumb = ({ onClick, children, current }: Props) => {
+const Breadcrumb = React.forwardRef<HTMLLIElement, Props>(({ children, onClick, active }, ref) => {
     return (
-        <>
-            <div className={classnames(['pd-breadcrumb', current && 'pd-breadcrumb--active'])}>
-                <button title={children} onClick={onClick} className="pd-breadcrumb-button">
-                    {children}
-                </button>
-            </div>
-            {!current && <Icon size={12} className="opacity-50 flex-item-noshrink" name="caret" rotate={270} />}
-        </>
+        <li ref={ref} className={classnames(['pd-breadcrumb', active && 'pd-breadcrumb--active'])}>
+            <button title={children} onClick={onClick} className="pd-breadcrumb-button">
+                {children}
+            </button>
+        </li>
     );
-};
+});
 
 export default Breadcrumb;

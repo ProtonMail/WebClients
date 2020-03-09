@@ -10,8 +10,8 @@ import DriveContentProvider from '../components/Drive/DriveContentProvider';
 import DriveToolbar from '../components/Drive/DriveToolbar';
 import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
 import { LinkMeta, ResourceType } from '../interfaces/link';
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 import { ResourceURLType } from '../constants';
+import DriveBreadcrumbs from '../components/DriveBreadcrumbs';
 
 const toResourceType = (type: ResourceURLType) => {
     const resourceType = {
@@ -112,7 +112,7 @@ function DriveContainer({
                 <PageMainArea hasToolbar className="flex flex-column">
                     <StickyHeader>
                         {resource && (
-                            <Breadcrumbs
+                            <DriveBreadcrumbs
                                 openResource={navigateToResource}
                                 preloaded={location.state?.preloadedLink}
                                 resource={resource}
