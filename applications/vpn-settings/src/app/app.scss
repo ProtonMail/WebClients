@@ -19,6 +19,7 @@ $color-links: $pm-primary;
 @import '~design-system/_sass/pv-styles/pv-plan-card';
 @import './containers/RedeemContainer.scss';
 @import '~react-components/containers/payments/subscription/BlackFridayModal.scss';
+@import '~react-components/containers/payments/subscription/SubscriptionTable.scss';
 
 // stuff for responsive
 @import '~design-system/_sass/reusable-components/design-system-responsive';

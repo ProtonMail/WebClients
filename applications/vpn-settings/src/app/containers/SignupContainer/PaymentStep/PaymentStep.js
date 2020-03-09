@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Payment, usePayment, PrimaryButton, Field, Row, useLoading, SubTitle, useCard } from 'react-components';
+import { Alert, Payment, usePayment, PrimaryButton, Field, Row, useLoading, SubTitle } from 'react-components';
 import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 
@@ -8,8 +8,13 @@ import LoginPanel from '../LoginPanel';
 
 const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
     const [loading, withLoading] = useLoading();
-    const { method, setMethod, parameters, canPay, setParameters, setCardValidity } = usePayment();
-    const card = useCard();
+    const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
+        amount: paymentAmount,
+        currency: model.currency,
+        onPay(params) {
+            withLoading(onPay(model, params));
+        }
+    });
 
     return (
         <div className="pt2 mb2">
@@ -18,18 +23,17 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                 <div>
                     <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss laws`}</Alert>
                     <Payment
-                        card={card}
+                        fieldClassName="auto flex-item-fluid-auto"
                         type="signup"
                         method={method}
                         amount={paymentAmount}
-                        cycle={model.cycle}
                         currency={model.currency}
-                        parameters={parameters}
-                        onParameters={setParameters}
+                        card={card}
                         onMethod={setMethod}
-                        onValidCard={setCardValidity}
-                        onPay={(params) => withLoading(onPay(model, params))}
-                        fieldClassName="auto flex-item-fluid-auto"
+                        onCard={setCard}
+                        errors={errors}
+                        paypal={paypal}
+                        paypalCredit={paypalCredit}
                     >
                         {method === PAYMENT_METHOD_TYPES.CARD && (
                             <Field>

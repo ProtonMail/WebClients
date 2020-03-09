@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router';
 import { withRouter, Redirect, Switch } from 'react-router-dom';
-import { Sidebar, MainAreaContext, useToggle, usePermissions, ErrorBoundary } from 'react-components';
+import { Sidebar, MainAreaContext, useToggle, usePermissions, useUser, ErrorBoundary } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 
 import { getPages } from '../../pages';
@@ -13,11 +13,12 @@ import DownloadsContainer from '../../containers/DownloadsContainer';
 import PaymentsContainer from '../../containers/PaymentsContainer';
 
 const PrivateLayout = ({ location }) => {
+    const [user] = useUser();
     const mainAreaRef = useRef();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const userPermissions = usePermissions();
     const [activeSection, setActiveSection] = useState('');
-    const list = getPages()
+    const list = getPages(user)
         .filter(({ permissions: pagePermissions = [] }) => hasPermission(userPermissions, pagePermissions))
         .map(({ text, route: link, icon, sections = [] }) => ({
             text,

@@ -1,34 +1,21 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    SubscriptionSection,
-    BillingSection,
-    useModals,
-    VPNBlackFridayModal,
-    usePlans,
-    SubscriptionModal,
-    useSubscription,
-    useBlackFriday,
-    useUser,
-    useApi
-} from 'react-components';
-import { checkLastCancelledSubscription } from 'react-components/containers/payments/subscription/helpers';
+import { PlansSection, SubscriptionSection, BillingSection, useUser } from 'react-components';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 import Page from '../components/page/Page';
-import PlansSection from '../components/sections/plans/PlansSection';
 
 const { UPGRADER, PAID } = PERMISSIONS;
 
-export const getDashboardPage = () => {
+export const getDashboardPage = (user = {}) => {
     return {
         text: c('Title').t`Dashboard`,
         route: '/dashboard',
         icon: 'dashboard',
         permissions: [UPGRADER],
         sections: [
-            {
+            !user.hasPaidVpn && {
                 text: c('Title').t`Plans`,
                 id: 'plans'
             },
@@ -42,53 +29,28 @@ export const getDashboardPage = () => {
                 id: 'billing',
                 permissions: [PAID]
             }
-        ]
+        ].filter(Boolean)
     };
 };
 
 const DashboardContainer = ({ setActiveSection }) => {
-    const api = useApi();
-    const { createModal } = useModals();
-    const [plans, loadingPlans] = usePlans();
-    const [subscription] = useSubscription();
-    const isBlackFriday = useBlackFriday();
-    const checked = useRef(false);
-    const [user] = useUser();
+    const [user, loadingUser] = useUser();
 
-    const handleSelect = ({ planIDs = [], cycle, currency, couponCode }) => {
-        const plansMap = planIDs.reduce((acc, planID) => {
-            const { Name } = plans.find(({ ID }) => ID === planID);
-            acc[Name] = 1;
-            return acc;
-        }, Object.create(null));
+    if (loadingUser) {
+        return null;
+    }
 
-        createModal(
-            <SubscriptionModal
-                plansMap={plansMap}
-                customize={false}
-                subscription={subscription}
-                cycle={cycle}
-                currency={currency}
-                coupon={couponCode}
-            />
+    if (user.hasPaidVpn) {
+        return (
+            <Page config={getDashboardPage(user)} setActiveSection={setActiveSection}>
+                <SubscriptionSection />
+                <BillingSection />
+            </Page>
         );
-    };
-
-    const check = async () => {
-        if (await checkLastCancelledSubscription(api)) {
-            createModal(<VPNBlackFridayModal plans={plans} onSelect={handleSelect} />);
-        }
-    };
-
-    useEffect(() => {
-        if (Array.isArray(plans) && !checked.current && user.isFree && isBlackFriday) {
-            check();
-            checked.current = true;
-        }
-    }, [loadingPlans]);
+    }
 
     return (
-        <Page config={getDashboardPage()} setActiveSection={setActiveSection}>
+        <Page config={getDashboardPage(user)} setActiveSection={setActiveSection}>
             <PlansSection />
             <SubscriptionSection />
             <BillingSection />
