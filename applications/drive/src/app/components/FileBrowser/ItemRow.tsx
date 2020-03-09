@@ -15,7 +15,7 @@ interface Props {
 }
 
 const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, onShiftClick }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { isDesktop } = useActiveBreakpoint();
     const touchStarted = useRef(false);
 
     const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
@@ -87,7 +87,7 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
                     </span>
                 </div>,
                 isFolder ? c('Label').t`Folder` : c('Label').t`File`,
-                !isNarrow && (
+                isDesktop && (
                     <Time key="dateModified" format="PPp">
                         {item.Modified}
                     </Time>

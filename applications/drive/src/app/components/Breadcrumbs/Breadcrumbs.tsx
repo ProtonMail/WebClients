@@ -1,66 +1,72 @@
-import React, { useEffect, useState } from 'react';
-import useShare from '../../hooks/useShare';
-import { DriveResource } from '../Drive/DriveResourceProvider';
-import { ResourceType } from '../../interfaces/link';
-import { c } from 'ttag';
-import { FileBrowserItem } from '../FileBrowser/FileBrowser';
+import React, { useMemo } from 'react';
 import Breadcrumb from './Breadcrumb';
+import { useActiveBreakpoint, Icon } from 'react-components';
+import GroupedBreadcrumb from './GroupedBreadcrumb';
 
-type BreadcrumbInfo = { name: string; resource: DriveResource };
+export interface BreadcrumbInfo {
+    name: string;
+    key: string | number;
+    onClick: () => void;
+}
+type GroupedBreadcrumbs = (BreadcrumbInfo | BreadcrumbInfo[])[];
 
 interface Props {
-    resource: DriveResource;
-    openResource: (resource: DriveResource) => void;
-    preloaded?: FileBrowserItem;
+    breadcrumbs: BreadcrumbInfo[];
 }
 
-const Breadcrumbs = ({ resource, preloaded, openResource }: Props) => {
-    const { getFolderMeta } = useShare(resource.shareId);
-    const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([]);
+const Breadcrumbs = ({ breadcrumbs }: Props) => {
+    const { isTinyMobile, isDesktop } = useActiveBreakpoint();
 
-    useEffect(() => {
-        const getBreadcrumbs = async (linkId: string): Promise<BreadcrumbInfo[]> => {
-            const meta = preloaded?.LinkID === linkId ? preloaded : (await getFolderMeta(linkId)).Folder;
+    const groupedBreadcrumbs = useMemo(
+        () =>
+            breadcrumbs.reduce((grouped, breadcrumb, i, arr) => {
+                // In wider spaces, first breadcrumb is always visible
+                if (!isTinyMobile && i === 0) {
+                    return [breadcrumb];
+                }
 
-            const breadcrumb = {
-                name: !meta.ParentLinkID ? c('Title').t`My files` : meta.Name,
-                resource: { shareId: resource.shareId, linkId, type: ResourceType.FOLDER }
-            };
+                const secondToLast = arr.length - 2;
+                const last = arr.length - 1;
 
-            if (!meta.ParentLinkID) {
-                return [breadcrumb];
-            }
+                // Last is always visible, on larger screens also second to last
+                if (i === last || (isDesktop && i === secondToLast)) {
+                    return [...grouped, breadcrumb];
+                }
 
-            const previous = await getBreadcrumbs(meta.ParentLinkID);
+                const lastGrouped = grouped.length - 1;
+                const group = grouped[lastGrouped];
 
-            return [...previous, breadcrumb];
-        };
-
-        let canceled = false;
-
-        getBreadcrumbs(resource.linkId).then((result) => {
-            if (!canceled) {
-                setBreadcrumbs(result);
-            }
-        });
-
-        return () => {
-            canceled = true;
-        };
-    }, [getFolderMeta, resource.linkId]);
+                // All others are grouped (shown as dropdown)
+                return group instanceof Array
+                    ? [...grouped.slice(0, lastGrouped), [...group, breadcrumb]]
+                    : [...grouped, [breadcrumb]];
+            }, [] as GroupedBreadcrumbs),
+        [breadcrumbs, isTinyMobile, isDesktop]
+    );
 
     return (
-        <div className="pd-breadcrumbs">
-            {breadcrumbs.map(({ name, resource }, i) => (
-                <Breadcrumb
-                    key={`${resource.shareId}_${resource.linkId}`}
-                    onClick={() => openResource(resource)}
-                    current={i === breadcrumbs.length - 1}
-                >
-                    {name}
-                </Breadcrumb>
-            ))}
-        </div>
+        <ul className="pd-breadcrumbs">
+            {groupedBreadcrumbs.map((group, i, arr) => {
+                const breadcrumb = group instanceof Array ? group[0] : group;
+                const isLast = i === arr.length - 1;
+
+                // Don't group single breadcrumbs, that would look stupid
+                return (
+                    <>
+                        {group instanceof Array && group.length > 1 ? (
+                            <GroupedBreadcrumb key={`group_${i}`} breadcrumbs={group} />
+                        ) : (
+                            <Breadcrumb key={breadcrumb.key} onClick={breadcrumb.onClick} active={isLast}>
+                                {breadcrumb.name}
+                            </Breadcrumb>
+                        )}
+                        {!isLast && (
+                            <Icon size={12} className="opacity-50 flex-item-noshrink" name="caret" rotate={270} />
+                        )}
+                    </>
+                );
+            })}
+        </ul>
     );
 };
 
