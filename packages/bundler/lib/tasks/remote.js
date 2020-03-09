@@ -1,7 +1,9 @@
+const { getPackage } = require('../config');
 const { script } = require('../helpers/cli');
 const buildRemote = require('../buildRemote');
 
-async function main(PKG) {
+async function main() {
+    const PKG = getPackage();
     /*
         If we build from the remote repository we need to:
             - clone the repository inside /tmp

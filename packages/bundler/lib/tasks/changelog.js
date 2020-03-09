@@ -1,8 +1,10 @@
 const coucou = require('../helpers/coucou');
+const { getPackage } = require('../config');
 const { generateChangelog } = require('../git');
 const { debug, warn } = require('../helpers/log')('proton-bundler');
 
-function main(argv, PKG) {
+function main(argv) {
+    const PKG = getPackage();
     const { branch, mode, api } = argv;
     const url = argv.url || (PKG.bugs || {}).url;
     const isV4 = mode === 'v4';

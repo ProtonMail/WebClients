@@ -1,3 +1,4 @@
+const path = require('path');
 const { bash } = require('./helpers/cli');
 const extractArgument = require('./helpers/arguments');
 const {
@@ -5,6 +6,8 @@ const {
     getCustomHooks
 } = require('./custom');
 const { debug, about } = require('./helpers/log')('proton-bundler');
+
+const PKG = require(path.join(process.cwd(), 'package.json'));
 
 function getHooks() {
     return { customTasks, getCustomHooks };
@@ -73,9 +76,22 @@ async function get(argv) {
     };
 }
 
+/**
+ * Detect the old WebClient Angular
+ * @return {Boolean}
+ */
+const isWebClientLegacy = () => {
+    const { name } = PKG;
+    return name === 'protonmail-web';
+};
+
+const getPackage = () => PKG;
+
 module.exports = {
     get,
     getHooks,
     getAPIUrl,
-    getExternalFiles
+    getPackage,
+    getExternalFiles,
+    isWebClientLegacy
 };

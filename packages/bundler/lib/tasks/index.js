@@ -1,12 +1,12 @@
-const { getHooks } = require('../config');
+const { getHooks, getPackage } = require('../config');
 const bundleProcess = require('./bundle');
 const deployProcess = require('./deploy');
 
 function getTasks({
-    PKG,
     argv,
     config: { branch, flowType = 'single', appMode, isRemoteBuild, featureFlags, isDeployGit, isOnlyDeployGit }
 }) {
+    const PKG = getPackage();
     const { getCustomHooks, customTasks } = getHooks();
     const { hookPreTasks, hookPostTasks, hookPostTaskClone, hookPostTaskBuild, customConfigSetup } = getCustomHooks(
         customTasks({

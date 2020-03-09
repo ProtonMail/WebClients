@@ -1,10 +1,12 @@
 const { logCommits } = require('./git');
+const { getPackage } = require('./config');
 const coucou = require('./helpers/coucou');
 const { bash, script } = require('./helpers/cli');
 const { debug } = require('./helpers/log')('proton-bundler');
 
-async function main(branch = '', PKG, { flow, website }) {
+async function main(branch = '', { flow, website }) {
     try {
+        const PKG = getPackage();
         const canContact =
             /deploy-(beta|prod|old|tor|dev)/.test(branch) || (website && /deploy-(beta|prod|dev|a|b)/.test(branch));
 
