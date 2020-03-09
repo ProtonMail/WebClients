@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
+export const MAX_EXPIRATION_TIME = 672; // hours
 export const PAGE_SIZE = 50;
 
 export const ELEMENT_TYPES = {

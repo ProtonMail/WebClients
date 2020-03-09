@@ -26,6 +26,14 @@ import { removeAttachment } from '../../api/attachments';
 import { createEmbeddedMap, readCID, isEmbeddable } from '../../helpers/embedded/embeddeds';
 import { InsertRef } from './editor/Editor';
 import { setContent } from '../../helpers/message/messageContent';
+import ComposerPasswordModal from './ComposerPasswordModal';
+import ComposerExpirationModal from './ComposerExpirationModal';
+
+enum ComposerInnerModal {
+    None,
+    Password,
+    Expiration
+}
 
 /**
  * Create a new MessageExtended with props from both m1 and m2
@@ -104,6 +112,9 @@ const Composer = ({
     // Indicates that the composer is open but the edited message is not yet ready
     // Needed to prevent edition while data is not ready
     const [editorReady, setEditorReady] = useState(false);
+
+    // Flag representing the presence of an inner modal on the composer
+    const [innerModal, setInnerModal] = useState(ComposerInnerModal.None);
 
     // Model value of the edited message in the composer
     const [modelMessage, setModelMessage] = useState<MessageExtended>(inputMessage);
@@ -224,13 +235,21 @@ const Composer = ({
             handleAddAttachmentsEnd(ATTACHMENT_ACTION.ATTACHMENT, files);
         }
     };
-
     const handleRemoveAttachment = (attachment: Attachment) => async () => {
         await api(removeAttachment(attachment.ID || '', modelMessage.data?.ID || ''));
         const Attachments = modelMessage.data?.Attachments?.filter((a: Attachment) => a.ID !== attachment.ID);
         const newModelMessage = mergeMessages(modelMessage, { data: { Attachments } });
         setModelMessage(newModelMessage);
         save(modelMessage);
+    };
+    const handlePassword = () => {
+        setInnerModal(ComposerInnerModal.Password);
+    };
+    const handleExpiration = () => {
+        setInnerModal(ComposerInnerModal.Expiration);
+    };
+    const handleCloseInnerModal = () => {
+        setInnerModal(ComposerInnerModal.None);
     };
     const handleSave = async () => {
         await save();
@@ -284,41 +303,65 @@ const Composer = ({
                 onClose={handleClose}
             />
             {!minimized && (
-                <>
-                    <ComposerMeta
-                        message={modelMessage}
-                        addresses={addresses}
-                        disabled={!editorReady}
-                        onChange={handleChange}
-                        addressesBlurRef={addressesBlurRef}
-                        addressesFocusRef={addressesFocusRef}
-                    />
-                    <ComposerContent
-                        message={modelMessage}
-                        disabled={!editorReady}
-                        onEditorReady={() => setEditorReady(true)}
-                        onChange={handleChange}
-                        onChangeContent={handleChangeContent}
-                        onFocus={addressesBlurRef.current}
-                        onAddAttachments={handleAddAttachmentsStart}
-                        onAddEmbeddedImages={handleAddEmbeddedImages}
-                        onRemoveAttachment={handleRemoveAttachment}
-                        pendingFiles={pendingFiles}
-                        onCancelEmbedded={() => setPendingFiles(undefined)}
-                        onSelectEmbedded={handleAddAttachmentsEnd}
-                        contentFocusRef={contentFocusRef}
-                        contentInsertRef={contentInsertRef}
-                    />
-                    <ComposerActions
-                        message={modelMessage}
-                        lock={syncLock || !editorReady}
-                        activity={syncActivity}
-                        onAddAttachments={handleAddAttachmentsStart}
-                        onSave={handleSave}
-                        onSend={handleSend}
-                        onDelete={handleDelete}
-                    />
-                </>
+                <div className="flex flex-column flex-item-fluid relative">
+                    {innerModal === ComposerInnerModal.Password && (
+                        <ComposerPasswordModal
+                            message={modelMessage.data}
+                            onClose={handleCloseInnerModal}
+                            onChange={handleChange}
+                        />
+                    )}
+                    {innerModal === ComposerInnerModal.Expiration && (
+                        <ComposerExpirationModal
+                            message={modelMessage.data}
+                            onClose={handleCloseInnerModal}
+                            onChange={handleChange}
+                        />
+                    )}
+                    <div
+                        className={classnames([
+                            'flex-column flex-item-fluid',
+                            // Only hide the editor not to unload it each time a modal is on top
+                            innerModal === ComposerInnerModal.None ? 'flex' : 'hidden'
+                        ])}
+                    >
+                        <ComposerMeta
+                            message={modelMessage}
+                            addresses={addresses}
+                            disabled={!editorReady}
+                            onChange={handleChange}
+                            addressesBlurRef={addressesBlurRef}
+                            addressesFocusRef={addressesFocusRef}
+                        />
+                        <ComposerContent
+                            message={modelMessage}
+                            disabled={!editorReady}
+                            onEditorReady={() => setEditorReady(true)}
+                            onChange={handleChange}
+                            onChangeContent={handleChangeContent}
+                            onFocus={addressesBlurRef.current}
+                            onAddAttachments={handleAddAttachmentsStart}
+                            onAddEmbeddedImages={handleAddEmbeddedImages}
+                            onRemoveAttachment={handleRemoveAttachment}
+                            pendingFiles={pendingFiles}
+                            onCancelEmbedded={() => setPendingFiles(undefined)}
+                            onSelectEmbedded={handleAddAttachmentsEnd}
+                            contentFocusRef={contentFocusRef}
+                            contentInsertRef={contentInsertRef}
+                        />
+                        <ComposerActions
+                            message={modelMessage}
+                            lock={syncLock || !editorReady}
+                            activity={syncActivity}
+                            onAddAttachments={handleAddAttachmentsStart}
+                            onExpiration={handleExpiration}
+                            onPassword={handlePassword}
+                            onSave={handleSave}
+                            onSend={handleSend}
+                            onDelete={handleDelete}
+                        />
+                    </div>
+                </div>
             )}
         </div>
     );

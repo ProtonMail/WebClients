@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Button, useModals, ConfirmModal, Alert } from 'react-components';
+import { Button, useModals, ConfirmModal, Alert, classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { formatSimpleDate } from '../../helpers/date';
@@ -8,12 +8,16 @@ import { MessageExtended } from '../../models/message';
 import { getDate } from '../../helpers/elements';
 import AttachmentsButton from './attachments/AttachmentsButton';
 import { useSlowChanges } from '../../hooks/useSlowChanges';
+import { hasFlag } from '../../helpers/message/messages';
+import { MESSAGE_FLAGS } from '../../constants';
 
 interface Props {
     message: MessageExtended;
     lock: boolean;
     activity: string;
     onAddAttachments: (files: File[]) => void;
+    onPassword: () => void;
+    onExpiration: () => void;
     onSave: () => Promise<void>;
     onSend: () => Promise<void>;
     onDelete: () => Promise<void>;
@@ -23,10 +27,12 @@ const ComposerActions = ({
     message,
     lock,
     activity: activityInput,
+    onAddAttachments,
+    onPassword,
+    onExpiration,
     onSave,
     onSend,
-    onDelete,
-    onAddAttachments
+    onDelete
 }: Props) => {
     const { createModal } = useModals();
     const activity = useSlowChanges(activityInput);
@@ -51,12 +57,25 @@ const ComposerActions = ({
         }
     }
 
+    const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) || message.data?.Password;
+    const isExpiration = !!message.data?.ExpiresIn;
+
     return (
         <footer className="composer-actions flex flex-row flex-spacebetween w100">
             <div className="flex">
-                <AttachmentsButton onAddAttachments={onAddAttachments} />
-                <Button icon="expiration" className="ml0-5" />
-                <Button icon="lock" className="ml0-5" />
+                <AttachmentsButton disabled={lock} onAddAttachments={onAddAttachments} />
+                <Button
+                    icon="expiration"
+                    className={classnames(['ml0-5', isExpiration && 'pm-button-blueborder'])}
+                    onClick={onExpiration}
+                    disabled={lock}
+                />
+                <Button
+                    icon="lock"
+                    className={classnames(['ml0-5', isPassword && 'pm-button-blueborder'])}
+                    onClick={onPassword}
+                    disabled={lock}
+                />
             </div>
             <div className="flex-self-vcenter">
                 <span>{dateMessage}</span>
