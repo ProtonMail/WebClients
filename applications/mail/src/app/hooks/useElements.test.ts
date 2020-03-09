@@ -1,11 +1,11 @@
-import { useApi } from 'react-components';
-import { renderHook, RenderHookResult } from '@testing-library/react-hooks';
+import { RenderHookResult } from '@testing-library/react-hooks';
+import { queryConversations } from 'proton-shared/lib/api/conversations';
+import { range } from 'proton-shared/lib/helpers/array';
 
 import { useElements } from './useElements';
-import { range } from 'proton-shared/lib/helpers/array';
 import { Element } from '../models/element';
-import { queryConversations } from 'proton-shared/lib/api/conversations';
 import { Page, Sort, Filter, SearchParameters } from '../models/tools';
+import { renderHook, clearAll, addApiMock, api } from '../helpers/test/helper';
 
 interface SetupArgs {
     elements?: Element[];
@@ -27,9 +27,6 @@ describe('useElements', () => {
     const getElements = (count: number, label = labelID): Element[] =>
         range(0, count).map((i) => ({ ID: `id${i}`, Labels: [{ ID: label, ContextTime: i }], LabelIDs: [label] }));
 
-    const api = jest.fn();
-    (useApi as jest.Mock).mockReturnValue(api);
-
     let renderHookResult: RenderHookResult<any, any> | null = null;
 
     const setup = async ({
@@ -41,7 +38,7 @@ describe('useElements', () => {
         filter = {},
         search = {}
     }: SetupArgs = {}) => {
-        api.mockResolvedValue({ Total: page.total, Conversations: elements });
+        addApiMock('conversations', () => ({ Total: page.total, Conversations: elements }));
 
         if (renderHookResult === null) {
             renderHookResult = renderHook((props: any = {}) =>
@@ -57,7 +54,8 @@ describe('useElements', () => {
 
     afterEach(() => {
         renderHookResult = null;
-        [(useApi as jest.Mock, api)].forEach((mock) => mock.mockClear());
+        // [(useApi as jest.Mock, api)].forEach((mock) => mock.mockClear());
+        clearAll();
     });
 
     describe('elements memo', () => {

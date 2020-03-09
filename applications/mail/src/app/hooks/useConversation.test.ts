@@ -1,12 +1,12 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act } from '@testing-library/react-hooks';
+import { wait } from 'proton-shared/lib/helpers/promise';
+
 import { useConversation } from './useConversation';
 import * as ConversationProvider from '../containers/ConversationProvider';
-import * as ReactComponents from 'react-components';
-import { wait } from 'proton-shared/lib/helpers/promise';
+import { renderHook, clearAll, addApiMock } from '../helpers/test/helper';
 
 // Needed to make TS accepts the mock exports
 const cacheMock: ConversationProvider.ConversationCache = (ConversationProvider as any).cacheMock;
-const api: jest.Mock = (ReactComponents as any).api;
 
 jest.mock('../containers/ConversationProvider');
 
@@ -18,6 +18,7 @@ describe('useConversation', () => {
     afterEach(() => {
         jest.clearAllMocks();
         cacheMock.reset();
+        clearAll();
     });
 
     it('should return cache value', () => {
@@ -40,7 +41,7 @@ describe('useConversation', () => {
 
     it('should lauch api request when needed', async () => {
         const response = { Conversation: {} };
-        api.mockResolvedValue(response);
+        addApiMock('conversations/ID', () => response);
         const hook = setup();
         expect(hook.result.current[0]).toBe(undefined);
         await act(async () => await wait(0));

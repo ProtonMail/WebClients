@@ -17,11 +17,3 @@ jest.mock('react-components/containers/eventManager/useEventManager.js', () => (
         call: jest.fn()
     };
 });
-
-// Prevent to load OpenPGP which doesn't work anyway (because of asm.js)
-jest.mock('proton-shared/lib/helpers/setupPmcrypto.js', () => {
-    return {
-        initMain: jest.fn(),
-        initWorker: jest.fn()
-    };
-});

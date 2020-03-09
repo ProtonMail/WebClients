@@ -1,4 +1,4 @@
-import { getInstance } from '../../../__mocks__/cache';
+import { getInstance } from '../../helpers/test/cache';
 
 export const cacheMock = getInstance();
 
