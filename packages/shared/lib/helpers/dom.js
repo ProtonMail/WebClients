@@ -1,15 +1,3 @@
-export const attachOnUnload = (cb) => {
-    if (window.addEventListener) {
-        return window.addEventListener('unload', cb, false);
-    }
-
-    if (window.attachEvent) {
-        return window.attachEvent('onunload', cb);
-    }
-
-    throw new Error('No method for adding event listeners!');
-};
-
 const loadScriptHelper = ({ path, integrity }, cb) => {
     const script = document.createElement('script');
 
