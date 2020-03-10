@@ -124,7 +124,7 @@ function writeEnv {
 
     local newVersion='';
     local newEnv="$(grep -vE 'APP_ENV' dist/.env)";
-    local newAppEnv="APP_ENV=$1";
+    local newAppEnv="APP_ENV=${1/+proxy}";
 
     if [ "$1" = 'prod' ]; then
         newEnv="$(grep -vE 'APP_CURRENT_VERSION|APP_ENV' dist/.env)";
