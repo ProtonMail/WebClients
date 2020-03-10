@@ -11,9 +11,10 @@ const MEDIUM_HEIGHT = '80';
 
 interface Props {
     size?: 'small' | 'medium' | 'big';
+    className?: string;
 }
 
-const Loader = ({ size = 'small' }: Props) => {
+const Loader = ({ size = 'small', className = 'center flex mb2 mt2' }: Props) => {
     const loadingSvg = getLightOrDark(loadingSvgLight, loadingSvgDark);
     const loadingSmallerSvg = getLightOrDark(loadingSmallerSvgLight, loadingSmallerSvgDark);
     const IMAGES = {
@@ -23,7 +24,7 @@ const Loader = ({ size = 'small' }: Props) => {
     };
 
     return (
-        <div className="center flex mb2 mt2">
+        <div className={className}>
             <img
                 className="mauto"
                 src={IMAGES[size]}

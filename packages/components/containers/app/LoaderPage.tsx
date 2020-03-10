@@ -1,12 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { FullLoader, TextLoader, useConfig } from 'react-components';
 import { c } from 'ttag';
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+import useConfig from '../config/useConfig';
+import FullLoader from '../../components/loader/FullLoader';
+import TextLoader from '../../components/loader/TextLoader';
 
 const { VPN } = CLIENT_TYPES;
 
-const LoaderPage = ({ text, loaderClassName = 'color-global-light' }) => {
+interface Props {
+    text?: string;
+    loaderClassName?: string;
+}
+
+const LoaderPage = ({ text, loaderClassName = 'color-global-light' }: Props) => {
     const { CLIENT_TYPE } = useConfig();
     const appName = CLIENT_TYPE === VPN ? 'ProtonVPN' : 'ProtonMail';
     return (
@@ -15,11 +21,6 @@ const LoaderPage = ({ text, loaderClassName = 'color-global-light' }) => {
             <TextLoader>{text || c('Info').t`Loading ${appName}`}</TextLoader>
         </div>
     );
-};
-
-LoaderPage.propTypes = {
-    text: PropTypes.string,
-    loaderClassName: PropTypes.string
 };
 
 export default LoaderPage;
