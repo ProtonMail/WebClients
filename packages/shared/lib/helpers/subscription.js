@@ -169,7 +169,9 @@ export const switchPlan = ({ planIDs, plans, planID, service, organization }) =>
     const selectedPlan = plans.find(({ ID }) => ID === planID);
 
     const transferDomains = (from, to) => {
-        const domains = plansMap[from].MaxDomains - plansMap[to].MaxDomains + (planIDs[plansMap[DOMAIN].ID] || 0);
+        const domains = planIDs[plansMap[DOMAIN].ID]
+            ? plansMap[from].MaxDomains - plansMap[to].MaxDomains + planIDs[plansMap[DOMAIN].ID]
+            : 0;
         if (domains < 0) {
             return 0;
         }
