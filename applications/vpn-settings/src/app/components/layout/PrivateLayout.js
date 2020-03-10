@@ -2,7 +2,15 @@ import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router';
 import { withRouter, Redirect, Switch } from 'react-router-dom';
-import { Sidebar, MainAreaContext, useToggle, usePermissions, useUser, ErrorBoundary } from 'react-components';
+import {
+    Sidebar,
+    MainAreaContext,
+    useToggle,
+    usePermissions,
+    useUser,
+    ErrorBoundary,
+    AppVersion
+} from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 
 import { getPages } from '../../pages';
@@ -54,6 +62,7 @@ const PrivateLayout = ({ location }) => {
                                 onToggleExpand={onToggleExpand}
                                 list={list}
                                 activeSection={activeSection}
+                                version={<AppVersion appName="ProtonVPN" />}
                             />
                         )}
                     />
