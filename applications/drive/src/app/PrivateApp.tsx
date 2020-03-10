@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Route, Switch, Redirect, withRouter, RouteComponentProps } from 'react-router-dom';
 import { StandardPrivateApp, ErrorBoundary, GenericError, LoaderPage } from 'react-components';
 import { UserModel, AddressesModel } from 'proton-shared/lib/models';
+import { c } from 'ttag';
 
 import DriveContainer from './containers/DriveContainer';
 import PrivateLayout from './components/layout/PrivateLayout';
@@ -31,7 +32,7 @@ const PrivateApp = ({ onLogout, history }: Props) => {
             onLogout={onLogout}
             preloadModels={[UserModel, AddressesModel]}
             eventModels={[UserModel, AddressesModel]}
-            fallback={<LoaderPage />}
+            fallback={<LoaderPage text={c('Info').t`Loading ProtonDrive`} />}
         >
             <ErrorBoundary component={<GenericError className="pt2 h100v" />}>
                 <DriveResourceProvider>

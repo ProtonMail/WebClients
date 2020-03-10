@@ -1,4 +1,5 @@
 import React, { useState, createContext, useEffect, useContext } from 'react';
+import { c } from 'ttag';
 import { ResourceType } from '../../interfaces/link';
 import { useModals, useLoading, LoaderPage } from 'react-components';
 import useDrive from '../../hooks/useDrive';
@@ -57,7 +58,7 @@ const DriveResourceProvider = ({ children }: Props) => {
     return (
         <>
             {loading ? (
-                <LoaderPage />
+                <LoaderPage text={c('Info').t`Loading ProtonDrive`} />
             ) : (
                 <DriveResourceContext.Provider value={{ resource, setResource }}>
                     {children}

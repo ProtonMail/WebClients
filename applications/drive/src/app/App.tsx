@@ -9,12 +9,13 @@ import PublicApp from './PublicApp';
 
 import './app.scss';
 import { redirectTo } from 'proton-shared/lib/helpers/browser';
+import { c } from 'ttag';
 
 sentry(config);
 
 const Redirect = () => {
     redirectTo();
-    return <LoaderPage />;
+    return <LoaderPage text={c('Info').t`Loading ProtonDrive`} />;
 };
 
 const Setup = () => {

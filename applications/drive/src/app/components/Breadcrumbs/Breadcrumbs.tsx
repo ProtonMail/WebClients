@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, Fragment } from 'react';
 import Breadcrumb from './Breadcrumb';
 import { useActiveBreakpoint, Icon } from 'react-components';
 import GroupedBreadcrumb from './GroupedBreadcrumb';
@@ -52,18 +52,18 @@ const Breadcrumbs = ({ breadcrumbs }: Props) => {
 
                 // Don't group single breadcrumbs, that would look stupid
                 return (
-                    <>
+                    <Fragment key={breadcrumb.key}>
                         {group instanceof Array && group.length > 1 ? (
-                            <GroupedBreadcrumb key={`group_${i}`} breadcrumbs={group} />
+                            <GroupedBreadcrumb breadcrumbs={group} />
                         ) : (
-                            <Breadcrumb key={breadcrumb.key} onClick={breadcrumb.onClick} active={isLast}>
+                            <Breadcrumb onClick={breadcrumb.onClick} active={isLast}>
                                 {breadcrumb.name}
                             </Breadcrumb>
                         )}
                         {!isLast && (
                             <Icon size={12} className="opacity-50 flex-item-noshrink" name="caret" rotate={270} />
                         )}
-                    </>
+                    </Fragment>
                 );
             })}
         </ul>
