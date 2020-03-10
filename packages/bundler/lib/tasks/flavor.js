@@ -12,11 +12,11 @@ const SOURCE_FILE_INDEX = "find dist -maxdepth 1 -type f -name 'index*.js'";
  * @param  {Array} flags flags used to bundle
  * @return {Object}       app's config
  */
-async function getNewConfig(flags = process.argv.slice(3), api) {
+async function getNewConfig(api, flags = process.argv.slice(3)) {
     if (isWebClientLegacy()) {
         const { stdout = '' } = await bash('./tasks/setupConfig.js', [
             '--print-config',
-            `--branch deploy-${api}`,
+            `--branch deploy-${api.replace('+proxy', '')}`,
             ...flags
         ]);
         debug(stdout, 'stdout config angular');
@@ -37,16 +37,16 @@ function sed(rule, files) {
     return bash(`sed -i '${rule}' "$(${files})"`);
 }
 
-async function writeNewConfig() {
+async function writeNewConfig(api) {
     const {
         sentry: { dsn: currentSentryDSN },
         secureUrl: currentSecureURL
-    } = await getNewConfig(['--api proxy']);
+    } = await getNewConfig(api, ['--api proxy']);
     const {
         apiUrl,
         sentry: { dsn: newSentryDSN },
         secureUrl: newSecureURL
-    } = await getNewConfig();
+    } = await getNewConfig(api);
 
     if (isWebClientLegacy()) {
         await sed(`s#apiUrl:"/api"#apiUrl:"${apiUrl}"#;`, SOURCE_FILE_INDEX);
@@ -82,7 +82,7 @@ async function main({ api }) {
     await bash('cp -r dist distProd');
     info('made a copy of the current dist');
 
-    await writeNewConfig();
+    await writeNewConfig(api);
 
     const { stdout } = await script('manageSRI.sh write-html');
     info('update new index.html');
