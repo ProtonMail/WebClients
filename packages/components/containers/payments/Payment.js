@@ -1,45 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Label, Row, Field, Alert, Price } from 'react-components';
-import { CYCLE, PAYMENT_METHOD_TYPES, MIN_DONATION_AMOUNT, MIN_CREDIT_AMOUNT } from 'proton-shared/lib/constants';
+import { classnames, Radio, Icon, Row, Alert, Price, Loader, useMethods } from 'react-components';
+import {
+    PAYMENT_METHOD_TYPES,
+    MIN_DONATION_AMOUNT,
+    MIN_CREDIT_AMOUNT,
+    DEFAULT_CURRENCY,
+    CURRENCIES
+} from 'proton-shared/lib/constants';
 
 import Method from './Method';
-import toDetails from './toDetails';
-import PaymentMethodsSelect from '../paymentMethods/PaymentMethodsSelect';
-import useMethods from '../paymentMethods/useMethods';
-
-const { CARD, PAYPAL, CASH, BITCOIN } = PAYMENT_METHOD_TYPES;
 
 const Payment = ({
     children,
     type,
-    amount,
-    currency,
-    coupon,
-    cycle,
-    onParameters,
+    amount = 0,
+    currency = DEFAULT_CURRENCY,
+    coupon = '',
+    paypal,
+    paypalCredit,
     method,
     onMethod,
-    onValidCard,
-    onPay,
-    fieldClassName,
-    card
+    card,
+    onCard,
+    errors
 }) => {
     const { methods, options, loading } = useMethods({ amount, coupon, type });
+    const lastCustomMethod = [...options]
+        .reverse()
+        .find(
+            ({ value }) =>
+                ![
+                    PAYMENT_METHOD_TYPES.CARD,
+                    PAYMENT_METHOD_TYPES.PAYPAL,
+                    PAYMENT_METHOD_TYPES.CASH,
+                    PAYMENT_METHOD_TYPES.BITCOIN
+                ].includes(value)
+        );
 
-    const handleCard = ({ card, isValid }) => {
-        onValidCard(isValid);
-        isValid && onParameters({ Payment: { Type: CARD, Details: toDetails(card) } });
-    };
-
-    const handleChangeMethod = (newMethod) => {
-        onMethod(newMethod);
-
-        if (![CARD, PAYPAL, CASH, BITCOIN].includes(newMethod)) {
-            onParameters({ PaymentMethodID: newMethod });
-        }
-    };
+    useEffect(() => {
+        const { value } = options.find(({ disabled }) => !disabled);
+        onMethod(value);
+    }, [methods.length]);
 
     if (type === 'donation' && amount < MIN_DONATION_AMOUNT) {
         const price = (
@@ -68,35 +71,56 @@ const Payment = ({
         return <Alert type="error">{c('Error').jt`The minimum payment we accept is ${price}`}</Alert>;
     }
 
+    if (loading) {
+        return <Loader />;
+    }
+
     return (
         <>
-            <Row>
-                <Label>{c('Label').t`Payment method`}</Label>
-                <Field className={fieldClassName}>
-                    <div className="mb1">
-                        <PaymentMethodsSelect
+            <Row className="payment-container">
+                <div className="pm-label payment-left">
+                    <label className="mb0-5 bl">{c('Label').t`Select a method`}</label>
+                    {options.map(({ text, value, disabled, icon }) => {
+                        return (
+                            <label
+                                htmlFor={value}
+                                key={value}
+                                className={classnames([
+                                    'pt0-5 pb0-5 flex flex-nowrap flex-items-center',
+                                    lastCustomMethod && lastCustomMethod.value === value && 'border-bottom'
+                                ])}
+                            >
+                                <Radio
+                                    disabled={loading || disabled}
+                                    className="mr0-5"
+                                    id={value}
+                                    checked={value === method}
+                                    onChange={() => onMethod(value)}
+                                />
+                                <Icon className="mr0-5" name={icon} />
+                                <span>{text}</span>
+                            </label>
+                        );
+                    })}
+                </div>
+                <div className="pm-field-container payment-right">
+                    <div className="mw37e">
+                        <Method
                             loading={loading}
-                            cycle={cycle}
-                            method={method}
-                            methods={options}
+                            paypal={paypal}
+                            paypalCredit={paypalCredit}
                             amount={amount}
+                            currency={currency}
+                            onCard={onCard}
+                            card={card}
                             type={type}
-                            onChange={handleChangeMethod}
+                            method={method}
+                            methods={methods}
+                            errors={errors}
                         />
+                        {children}
                     </div>
-                    <Method
-                        loading={loading}
-                        amount={amount}
-                        currency={currency}
-                        onCard={handleCard}
-                        onPayPal={onPay}
-                        card={card}
-                        type={type}
-                        method={method}
-                        methods={methods}
-                    />
-                    {children}
-                </Field>
+                </div>
             </Row>
         </>
     );
@@ -107,16 +131,15 @@ Payment.propTypes = {
     type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit']),
     amount: PropTypes.number.isRequired,
     coupon: PropTypes.string,
-    currency: PropTypes.oneOf(['EUR', 'CHF', 'USD']),
+    currency: PropTypes.oneOf(CURRENCIES),
     parameters: PropTypes.object,
     card: PropTypes.object,
-    onParameters: PropTypes.func,
+    onCard: PropTypes.func,
     method: PropTypes.string,
     onMethod: PropTypes.func,
-    onValidCard: PropTypes.func,
-    cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS]),
-    onPay: PropTypes.func,
-    fieldClassName: PropTypes.string
+    errors: PropTypes.object,
+    paypal: PropTypes.object,
+    paypalCredit: PropTypes.object
 };
 
 export default Payment;

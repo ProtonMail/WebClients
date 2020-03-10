@@ -84,7 +84,7 @@ const PaymentDetails = ({ check, model, onChange }) => {
                     {state ? (
                         <GiftCodeForm model={model} onChange={onChange} />
                     ) : (
-                        <SmallButton className="pm-button--link" onClick={toggle}>{c('Action')
+                        <SmallButton className="pm-button--link" icon="gift" onClick={toggle}>{c('Action')
                             .t`Add gift code`}</SmallButton>
                     )}
                 </div>

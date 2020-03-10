@@ -3,12 +3,17 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { Label, FormModal, Row, Field, Alert, useNotifications, useApi, useLoading, useModals } from 'react-components';
 import { donate } from 'proton-shared/lib/api/payments';
-import { DEFAULT_CURRENCY, DEFAULT_DONATION_AMOUNT } from 'proton-shared/lib/constants';
+import {
+    DEFAULT_CURRENCY,
+    DEFAULT_DONATION_AMOUNT,
+    PAYMENT_METHOD_TYPES,
+    MIN_DONATION_AMOUNT
+} from 'proton-shared/lib/constants';
 
 import PaymentSelector from './PaymentSelector';
 import Payment from './Payment';
 import usePayment from './usePayment';
-import useCard from './useCard';
+import PayPalButton from './PayPalButton';
 import { handlePaymentToken } from './paymentTokenHelper';
 
 const DonateModal = ({ ...rest }) => {
@@ -17,11 +22,9 @@ const DonateModal = ({ ...rest }) => {
     const { createNotification } = useNotifications();
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
     const [amount, setAmount] = useState(DEFAULT_DONATION_AMOUNT);
-    const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
     const { createModal } = useModals();
-    const card = useCard();
 
-    const handleSubmit = async (params = parameters) => {
+    const handleSubmit = async (params) => {
         const requestBody = await handlePaymentToken({
             params: { ...params, Amount: amount, Currency: currency },
             api,
@@ -35,12 +38,28 @@ const DonateModal = ({ ...rest }) => {
         });
     };
 
+    const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
+        amount,
+        currency,
+        onPay: handleSubmit
+    });
+
+    const submit =
+        amount >= MIN_DONATION_AMOUNT ? (
+            method === PAYMENT_METHOD_TYPES.PAYPAL ? (
+                <PayPalButton paypal={paypal} className="pm-button--primary" amount={amount}>{c('Action')
+                    .t`Continue`}</PayPalButton>
+            ) : canPay ? (
+                c('Action').t`Donate`
+            ) : null
+        ) : null;
+
     return (
         <FormModal
-            onSubmit={() => withLoading(handleSubmit())}
+            onSubmit={() => withLoading(handleSubmit(parameters))}
             loading={loading}
             title={c('Title').t`Make a donation`}
-            submit={canPay && c('Action').t`Donate`}
+            submit={submit}
             {...rest}
         >
             <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
@@ -60,12 +79,12 @@ const DonateModal = ({ ...rest }) => {
                 method={method}
                 amount={amount}
                 currency={currency}
-                parameters={parameters}
                 card={card}
-                onParameters={setParameters}
                 onMethod={setMethod}
-                onValidCard={setCardValidity}
-                onPay={handleSubmit}
+                onCard={setCard}
+                errors={errors}
+                paypal={paypal}
+                paypalCredit={paypalCredit}
             />
         </FormModal>
     );

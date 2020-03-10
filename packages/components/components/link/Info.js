@@ -11,7 +11,7 @@ const Info = ({
     title = undefined,
     originalPlacement = 'top',
     scrollContainerClass = 'main',
-    buttonClass = 'inline-flex',
+    buttonClass = 'inline-flex color-currentColor',
     ...rest
 }) => {
     const [uid] = useState(generateUID('tooltip'));

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { c } from 'ttag';
 import { Input, Icon } from 'react-components';
 import creditCardType from 'credit-card-type';
+import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { isNumber } from 'proton-shared/lib/helpers/validators';
 
 const banks = require.context('design-system/assets/img/shared/bank-icons', true, /.svg$/);
@@ -14,10 +14,14 @@ const banksMap = banks.keys().reduce((acc, key) => {
 
 const getBankSvg = (type = '') => {
     const key = `./cc-${type}.svg`;
+    const keyDark = `./cc-${type}-dark.svg`;
     if (!banksMap[key]) {
         return;
     }
-    return banksMap[key]().default;
+    const ligthLogo = banksMap[key]().default;
+    const darkLogo = !banksMap[keyDark] ? ligthLogo : banksMap[keyDark]().default;
+
+    return getLightOrDark(ligthLogo, darkLogo);
 };
 
 const isValidNumber = (v) => !v || isNumber(v);
@@ -45,7 +49,7 @@ const CardNumberInput = ({ value, onChange, errors = [], ...rest }) => {
         <Input
             autoComplete="cc-number"
             name="cardnumber"
-            placeholder={c('Placeholder').t`Card number`}
+            placeholder="0000 0000 0000 0000"
             maxLength={23}
             errors={errors}
             onChange={handleChange}

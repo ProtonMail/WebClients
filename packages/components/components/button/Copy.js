@@ -30,8 +30,9 @@ const Copy = ({ value, className = '', onCopy }) => {
 
     return (
         <Button onClick={handleClick} className={classnames([className, copied && 'copied'])}>
-            <Tooltip title={copied ? c('Label').t`Copied` : c('Label').t`Copy`}>
+            <Tooltip className="flex" title={copied ? c('Label').t`Copied` : c('Label').t`Copy`}>
                 <Icon name="clipboard" />
+                <span className="sr-only">{copied ? c('Label').t`Copied` : c('Label').t`Copy`}</span>
             </Tooltip>
         </Button>
     );

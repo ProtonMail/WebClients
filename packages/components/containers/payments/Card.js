@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Block, Input, Select } from 'react-components';
+import { Label, Block, Input, Select } from 'react-components';
 
 import { getFullList } from '../../helpers/countries';
 import ExpInput from './ExpInput';
@@ -14,19 +14,23 @@ const Card = ({ card, errors, onChange, loading = false }) => {
     return (
         <>
             <Block>
+                <Label className="mb0-5 bl" htmlFor="ccname">{c('Label').t`Name on card`}</Label>
                 <Input
                     autoComplete="cc-name"
+                    id="ccname"
                     name="ccname"
                     value={card.fullname}
                     onChange={handleChange('fullname')}
-                    placeholder={c('Placeholder').t`Full name`}
+                    placeholder="Thomas Anderson"
                     error={errors.fullname}
                     disabled={loading}
                     required
                 />
             </Block>
             <Block>
+                <Label className="mb0-5 bl" htmlFor="ccnumber">{c('Label').t`Card number`}</Label>
                 <CardNumberInput
+                    id="ccnumber"
                     value={card.number}
                     onChange={(value) => onChange('number', value)}
                     error={errors.number}
@@ -36,8 +40,10 @@ const Card = ({ card, errors, onChange, loading = false }) => {
             </Block>
             <div className="flex-autogrid">
                 <div className="flex-autogrid-item ">
+                    <Label className="mb0-5 bl" htmlFor="exp">{c('Label').t`Expiry date`}</Label>
                     <ExpInput
-                        month={card.month}
+                         id="exp"
+                         month={card.month}
                         year={card.year}
                         error={errors.month}
                         disabled={loading}
@@ -49,12 +55,14 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                     />
                 </div>
                 <div className="flex-autogrid-item">
+                    <Label className="mb0-5 bl" htmlFor="cvc">{c('Label').t`Security code`}</Label>
                     <Input
                         autoComplete="cc-csc"
+                        id="cvc"
                         name="cvc"
                         value={card.cvc}
                         onChange={handleChange('cvc')}
-                        placeholder={c('Placeholder, make it short').t`Security code`}
+                        placeholder="000"
                         error={errors.cvc}
                         disabled={loading}
                         required
@@ -63,16 +71,23 @@ const Card = ({ card, errors, onChange, loading = false }) => {
             </div>
             <div className="flex-autogrid">
                 <div className="flex-autogrid-item">
+                    <Label className="mb0-5 bl" htmlFor="country">{c('Label').t`Country`}</Label>
                     <Select
+                        id="country"
                         value={card.country}
                         onChange={handleChange('country')}
                         options={countries}
                         disabled={loading}
                         autoComplete="country"
+                        title={c('Label').t`Select your country`}
                     />
                 </div>
                 <div className="flex-autogrid-item">
+                    <Label className="mb0-5 bl" htmlFor="postalcode">
+                        {card.country === 'US' ? c('Label').t`ZIP` : c('Label').t`Postal code`}
+                    </Label>
                     <Input
+                        id="postalcode"
                         autoComplete="postal-code"
                         value={card.zip}
                         onChange={handleChange('zip')}

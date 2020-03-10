@@ -1,0 +1,76 @@
+.subscriptionTable-plan[data-current-plan="true"] {
+    border-left: 2px solid $pm-primary;
+    border-right: 2px solid $pm-primary;
+    border-bottom: 2px solid $pm-primary;
+    background-color: var(--bgcolor-input, $pm-global-light);
+}
+
+.subscriptionTable-currentPlan-container {
+    background-color: $pm-primary;
+    color: $white;
+    position: absolute;
+    top: -21px;
+    left: -2px;
+    right: -2px;
+    border-radius: $global-border-radius $global-border-radius 0 0;
+}
+
+.subscriptionTable-header {
+    min-height: 22rem;
+}
+
+.subscriptionTable-description,
+.subscriptionTable-footer {
+    min-height: 7rem;
+}
+
+.subscriptionTable-image-container {
+    height: 10rem;
+}
+
+.subscriptionPrices-monthly,
+.subscriptionPlan-customize {
+    .amount,
+    .currency  {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+}
+.subscriptionPlan-customize {
+    .prefix {
+        margin-left: auto;
+    }
+    .price {
+        font-size: 1.4rem;
+        line-height: 1;
+    }
+    .amount,
+    .currency,
+    .prefix,
+    .subscriptionPlan-customize-included  {
+        font-size: 2.2rem;
+    }
+}
+
+.subscriptionTable-feature {
+    word-break: break-word;
+}
+@supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+    .subscriptionTable-feature {
+        word-break: normal;
+        @include vendor-prefix(hyphens, auto, webkit ms);
+    }
+}
+
+.subscriptionTable-mostPopular {
+    position: absolute;
+    top: .5rem;
+    left: 0;
+    right: 0;
+}
+
+.subscriptionCheckout-container {
+    position: sticky;
+    top: 1em;
+}

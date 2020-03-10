@@ -13,7 +13,7 @@ const Rows = ({ subscription, user }) => {
 
     return (
         <>
-            <div className="flex-autogrid onmobile-flex-column w100 mb1">
+            <div className="flex-autogrid onmobile-flex-column flex-items-center w100 mb1">
                 <div className="flex-autogrid-item">ProtonMail plan</div>
                 <div className="flex-autogrid-item bold capitalize">
                     {user.hasPaidMail ? mailPlan.Name : c('Plan').t`Free`}

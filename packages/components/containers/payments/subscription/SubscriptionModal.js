@@ -53,14 +53,14 @@ const SubscriptionModal = ({
     const api = useApi();
     const { createModal } = useModals();
     const [loading, setLoading] = useState(false);
-    const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
+    const { method, setMethod, parameters, canPay, setCardValidity } = usePayment();
     const { createNotification } = useNotifications();
     const [check, setCheck] = useState({});
     const [plans] = usePlans();
     const [model, setModel] = useState({ cycle, currency, coupon, plansMap });
     const { call } = useEventManager();
     const { step, next, previous, goTo } = useStep(initialStep);
-    const card = useCard();
+    const [card, setCard, errors] = useCard();
 
     const callCheck = async (m = model) => {
         try {
@@ -224,12 +224,12 @@ const SubscriptionModal = ({
                         cycle={model.cycle}
                         currency={model.currency}
                         coupon={model.coupon}
-                        parameters={parameters}
                         card={card}
-                        onParameters={setParameters}
                         onMethod={setMethod}
                         onValidCard={setCardValidity}
                         onPay={handleSubmit}
+                        onCard={setCard}
+                        errors={errors}
                     />
                 </>
             ),

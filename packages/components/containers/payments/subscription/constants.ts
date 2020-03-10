@@ -1,0 +1,7 @@
+export enum SUBSCRIPTION_STEPS {
+    NETWORK_ERROR = -1,
+    CUSTOMIZATION = 0,
+    PAYMENT = 1,
+    UPGRADE = 2,
+    THANKS = 3
+}

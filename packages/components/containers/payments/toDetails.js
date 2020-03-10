@@ -3,9 +3,11 @@ const formatYear = (year) => {
     return `${pre}${year}`;
 };
 
+const clear = (v) => String(v).trim();
+
 const toDetails = ({ number, month: ExpMonth, year, cvc: CVC, fullname, zip: ZIP, country: Country }) => {
     return {
-        Name: String(fullname).trim(),
+        Name: clear(fullname),
         Number: String(number).replace(/\s+/g, ''),
         ExpMonth,
         ExpYear: formatYear(year),

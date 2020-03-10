@@ -94,7 +94,7 @@ const SubscriptionDetails = ({ model, plans, check, onChange }) => {
             {model.coupon ? (
                 <>
                     <div className="flex flex-spacebetween mb1 pb1 border-bottom">
-                        <div className="bold">{c('Label').t`Sub-total`}</div>
+                        <div className="bold">{c('Label').t`Subtotal`}</div>
                         <div className="bold">
                             <PlanPrice amount={subTotal} cycle={CYCLE.MONTHLY} currency={model.currency} />
                         </div>

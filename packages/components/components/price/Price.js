@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import humanPrice from 'proton-shared/lib/helpers/humanPrice';
+
 import { classnames } from '../../helpers/component';
 
 const CURRENCIES = {
@@ -8,17 +10,18 @@ const CURRENCIES = {
     CHF: 'CHF'
 };
 
-const Price = ({ children: amount = 0, currency = '', className = '', divisor = 100, suffix = '' }) => {
-    const fixedValue = Number(amount / divisor).toFixed(2);
-    const value = fixedValue.replace('.00', '').replace('-', '');
+const Price = ({ children: amount = 0, currency = '', className = '', divisor = 100, suffix = '', prefix = '' }) => {
+    const value = humanPrice(amount, divisor);
     const c = <span className="currency">{CURRENCIES[currency] || currency}</span>;
     const p = amount < 0 ? <span className="prefix">-</span> : null;
     const v = <span className="amount">{value}</span>;
-    const s = suffix ? <span className="suffix">{suffix}</span> : null;
+    const s = suffix ? <span className="suffix ml0-25">{suffix}</span> : null;
+    const pr = prefix ? <span className="prefix">{prefix}</span> : null;
 
     if (currency === 'USD') {
         return (
-            <span className={classnames(['price', className])} data-currency={currency}>
+            <span className={classnames(['price flex-item-noshrink inline-flex', className])} data-currency={currency}>
+                {pr}
                 {p}
                 {c}
                 {v}
@@ -28,7 +31,8 @@ const Price = ({ children: amount = 0, currency = '', className = '', divisor = 
     }
 
     return (
-        <span className={classnames(['price', className])} data-currency={currency}>
+        <span className={classnames(['price flex-item-noshrink inline-flex', className])} data-currency={currency}>
+            {pr}
             {p}
             {v}
             {currency ? <> {c}</> : null}
@@ -42,7 +46,8 @@ Price.propTypes = {
     children: PropTypes.number,
     className: PropTypes.string,
     divisor: PropTypes.number,
-    suffix: PropTypes.string
+    suffix: PropTypes.string,
+    prefix: PropTypes.string
 };
 
 export default Price;

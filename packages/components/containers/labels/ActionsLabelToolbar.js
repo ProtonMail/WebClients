@@ -18,7 +18,8 @@ function ActionsLabelToolbar({ onAdd = noop }) {
             <PrimaryButton onClick={handleClickAdd('folder')} className="mr1" data-test-id="folders/labels:addFolder">
                 {c('Action').t`Add folder`}
             </PrimaryButton>
-            <PrimaryButton onClick={handleClickAdd('label')} data-test-id="folders/labels:addLabel">{c('Action').t`Add label`}</PrimaryButton>
+            <PrimaryButton onClick={handleClickAdd('label')} data-test-id="folders/labels:addLabel">{c('Action')
+                .t`Add label`}</PrimaryButton>
         </>
     );
 }

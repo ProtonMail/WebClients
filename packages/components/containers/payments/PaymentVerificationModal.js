@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
     FormModal,
@@ -7,7 +7,6 @@ import {
     Button,
     ResetButton,
     useNotifications,
-    useApi,
     PrimaryButton,
     DoNotWindowOpenAlertError
 } from 'react-components';
@@ -16,7 +15,7 @@ import errorSvg from 'design-system/assets/img/pm-images/error.svg';
 import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
 
-import { toParams, process } from './paymentTokenHelper';
+import { toParams } from './paymentTokenHelper';
 import PaymentVerificationImage from './PaymentVerificationImage';
 
 const STEPS = {
@@ -32,14 +31,16 @@ const PROCESSING_DELAY = 5000;
 const PaymentVerificationModal = ({
     params,
     token,
-    approvalURL,
-    returnHost,
     onSubmit,
     payment = {},
     mode,
+    type = PAYMENT_METHOD_TYPES.CARD,
+    onProcess,
+    initialProcess,
     ...rest
 }) => {
     const isAddCard = mode === ADD_CARD_MODE;
+    const isPayPal = [PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT].includes(type);
     const TITLES = {
         [STEPS.DO_NOT_WINDOW_OPEN]: c('Title').t`Unsupported browser`,
         [STEPS.REDIRECT]: isAddCard ? c('Title').t`Card verification` : c('Title').t`Payment verification`,
@@ -47,38 +48,31 @@ const PaymentVerificationModal = ({
         [STEPS.REDIRECTED]: isAddCard
             ? c('Title').t`Card verification in progress`
             : c('Title').t`Payment verification in progress`,
-        [STEPS.FAIL]: c('Title').t`3-D Secure verification failed`
+        [STEPS.FAIL]: isPayPal ? c('Title').t`PayPal verification failed` : c('Title').t`3-D Secure verification failed`
     };
     const [step, setStep] = useState(() => (doNotWindowOpen() ? STEPS.DO_NOT_WINDOW_OPEN : STEPS.REDIRECT));
     const [error, setError] = useState({});
-    const api = useApi();
     const { createNotification } = useNotifications();
     const abortRef = useRef();
+    const timeoutRef = useRef();
 
     const handleCancel = () => {
         abortRef.current && abortRef.current.abort();
         rest.onClose();
     };
 
-    const handleSubmit = async () => {
-        let timeoutID;
+    const handleSubmit = async ({ abort, promise }) => {
         try {
             setStep(STEPS.REDIRECTING);
-            timeoutID = setTimeout(() => {
+            timeoutRef.current = setTimeout(() => {
                 setStep(STEPS.REDIRECTED);
             }, PROCESSING_DELAY);
-            abortRef.current = new AbortController();
-            await process({
-                Token: token,
-                api,
-                ReturnHost: returnHost,
-                ApprovalURL: approvalURL,
-                signal: abortRef.current.signal
-            });
-            onSubmit(toParams(params, token, PAYMENT_METHOD_TYPES.CARD));
+            abortRef.current = abort;
+            await promise;
+            onSubmit(toParams(params, token, type));
             rest.onClose();
         } catch (error) {
-            clearTimeout(timeoutID);
+            clearTimeout(timeoutRef.current);
             setStep(STEPS.FAIL);
             // if not coming from API error
             if (error.message && !error.config) {
@@ -88,10 +82,16 @@ const PaymentVerificationModal = ({
         }
     };
 
+    useEffect(() => {
+        if (initialProcess) {
+            handleSubmit(initialProcess);
+        }
+    }, []);
+
     return (
         <FormModal
             title={TITLES[step]}
-            onSubmit={handleSubmit}
+            onSubmit={() => handleSubmit(onProcess())}
             onClose={handleCancel}
             small={true}
             hasClose={false}
@@ -112,7 +112,7 @@ const PaymentVerificationModal = ({
                             <p className="aligncenter">{c('Info')
                                 .t`Your bank requires 3-D Secure verification for security purposes.`}</p>
                             <p className="aligncenter">
-                                <PaymentVerificationImage payment={payment} />
+                                <PaymentVerificationImage payment={payment} type={type} />
                             </p>
                             <Alert>
                                 {isAddCard
@@ -124,8 +124,11 @@ const PaymentVerificationModal = ({
                     ),
                     [STEPS.REDIRECTING]: (
                         <>
-                            <p className="aligncenter">{c('Info')
-                                .t`You will be soon redirected to your bank to verify your payment.`}</p>
+                            <p className="aligncenter">
+                                {isPayPal
+                                    ? c('Info').t`You will soon be redirected to PayPal to verify your payment.`
+                                    : c('Info').t`You will be soon redirected to your bank to verify your payment.`}
+                            </p>
                             <Loader />
                             <Alert>{c('Info')
                                 .t`Verification will open a new tab, please disable any popup blockers.`}</Alert>
@@ -134,7 +137,7 @@ const PaymentVerificationModal = ({
                     [STEPS.REDIRECTED]: (
                         <>
                             <p className="aligncenter">
-                                {isAddCard
+                                {isAddCard && !isPayPal
                                     ? c('Info').t`Please verify the card in the new tab which was opened.`
                                     : c('Info').t`Please verify payment at the new tab which was opened.`}
                             </p>
@@ -143,7 +146,7 @@ const PaymentVerificationModal = ({
                                 <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                             </p>
                             <Alert>
-                                {isAddCard
+                                {isAddCard && isPayPal
                                     ? c('Info').t`Verification can take a few minutes.`
                                     : c('Info').t`Payment can take a few minutes to fully verify.`}
                             </Alert>
@@ -157,8 +160,13 @@ const PaymentVerificationModal = ({
                     ),
                     [STEPS.FAIL]: (
                         <div className="aligncenter">
-                            <p>{c('Info')
-                                .t`Please try again, use a different payment method, or call your bank for assistance.`}</p>
+                            <p>
+                                {isPayPal
+                                    ? c('Info')
+                                          .t`Please try again, use a different payment method, or contact PayPal for assistance.`
+                                    : c('Info')
+                                          .t`Please try again, use a different payment method, or call your bank for assistance.`}
+                            </p>
                             <img src={errorSvg} alt={c('Title').t`Error`} />
                             {error.tryAgain ? (
                                 <p>
@@ -184,11 +192,12 @@ PaymentVerificationModal.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     onClose: PropTypes.func.isRequired,
     token: PropTypes.string.isRequired,
-    approvalURL: PropTypes.string.isRequired,
-    returnHost: PropTypes.string.isRequired,
     params: PropTypes.object,
     payment: PropTypes.object,
-    mode: PropTypes.string
+    mode: PropTypes.string,
+    type: PropTypes.string,
+    onProcess: PropTypes.func.isRequired,
+    initialProcess: PropTypes.object
 };
 
 export default PaymentVerificationModal;

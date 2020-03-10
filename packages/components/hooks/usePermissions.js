@@ -12,12 +12,12 @@ const ROLES = {
 
 const usePermissions = () => {
     const permissions = [];
-    const [{ Role, isPaid, hasPaidMail, hasPaidVpn }] = useUser();
+    const [{ Role, isPaid, hasPaidMail, hasPaidVpn, canPay }] = useUser();
     const [{ MaxMembers = 0 } = {}] = useOrganization();
 
     permissions.push(ROLES[Role]);
 
-    if ([FREE_ROLE, ADMIN_ROLE].includes(Role)) {
+    if (canPay) {
         permissions.push(UPGRADER);
     }
 

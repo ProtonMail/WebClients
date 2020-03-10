@@ -1,37 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PrimaryButton, GiftCodeInput, useNotifications } from 'react-components';
+import { PrimaryButton, GiftCodeInput } from 'react-components';
 import { isValid } from 'proton-shared/lib/helpers/giftCode';
 
-const GiftCodeForm = ({ onChange, model }) => {
-    const { createNotification } = useNotifications();
-    const [gift, setGift] = useState(model.gift || '');
-    const handleChange = ({ target }) => setGift(target.value);
-
-    const handleClick = () => {
-        if (!isValid(gift)) {
-            createNotification({ text: c('Error').t`Invalid gift code`, type: 'error' });
-            return;
+const GiftCodeForm = ({ code, loading, disabled, onChange, onSubmit }) => {
+    const handleEnter = (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            onSubmit();
         }
-        onChange({ ...model, gift }, true);
     };
-
     return (
-        <div className="flex">
-            <div className="mr1">
-                <GiftCodeInput value={gift} onChange={handleChange} />
+        <div className="flex flex-nowrap flex-items-center flex-items-start">
+            <div className="pr1 flex-item-fluid">
+                <GiftCodeInput
+                    value={code}
+                    onChange={({ target }) => onChange(target.value)}
+                    onKeyPress={handleEnter}
+                />
             </div>
-            <div>
-                <PrimaryButton onClick={handleClick}>{c('Action').t`Apply`}</PrimaryButton>
-            </div>
+            <PrimaryButton
+                title={c('Title').t`Apply gift code`}
+                loading={loading}
+                disabled={disabled || !isValid(code)}
+                onClick={onSubmit}
+            >{c('Action').t`Apply`}</PrimaryButton>
         </div>
     );
 };
 
 GiftCodeForm.propTypes = {
     onChange: PropTypes.func.isRequired,
-    model: PropTypes.object.isRequired
+    onSubmit: PropTypes.func,
+    loading: PropTypes.bool,
+    disabled: PropTypes.bool,
+    code: PropTypes.string
 };
 
 export default GiftCodeForm;

@@ -11,7 +11,7 @@ const GiftCodeInput = ({ value, ...rest }) => {
         <Input
             maxLength={GIFT_CODE_LENGTH}
             minLength={GIFT_CODE_LENGTH}
-            placeholder="AAAA-BBBB-CCCC-DDDD"
+            placeholder={c('Placeholder').t`Gift code`}
             error={error}
             value={value}
             {...rest}

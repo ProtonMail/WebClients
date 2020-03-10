@@ -4,7 +4,8 @@ import { c } from 'ttag';
 import {
     Alert,
     SubTitle,
-    SmallButton,
+    LinkButton,
+    Href,
     Loader,
     MozillaInfoPanel,
     Progress,
@@ -17,9 +18,12 @@ import {
 import { PLAN_NAMES } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { identity } from 'proton-shared/lib/helpers/function';
+import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 
-import { formatPlans, toPlanNames } from './helpers';
-import SubscriptionModal from './SubscriptionModal';
+import { formatPlans } from './helpers';
+import UpsellSubscription from './UpsellSubscription';
+import NewSubscriptionModal from './NewSubscriptionModal';
+import UnsubscribeButton from './UnsubscribeButton';
 
 const AddonRow = ({ label, used, max, format = identity }) => {
     return (
@@ -45,11 +49,12 @@ AddonRow.propTypes = {
 };
 
 const SubscriptionSection = ({ permission }) => {
-    const [{ hasPaidMail, hasPaidVpn }] = useUser();
-    const [addresses = [], loadingAddresses] = useAddresses();
+    const [{ hasPaidMail, hasPaidVpn, isPaid }] = useUser();
+    const [addresses, loadingAddresses] = useAddresses();
     const [subscription, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
     const [organization, loadingOrganization] = useOrganization();
+    const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
 
     const subTitle = <SubTitle>{c('Title').t`Subscription`}</SubTitle>;
 
@@ -100,9 +105,8 @@ const SubscriptionSection = ({ permission }) => {
 
     const handleModal = () => {
         createModal(
-            <SubscriptionModal
-                subscription={subscription}
-                plansMap={toPlanNames(subscription.Plans)}
+            <NewSubscriptionModal
+                planIDs={getPlanIDs(subscription)}
                 coupon={CouponCode || undefined} // CouponCode can equal null
                 currency={Currency}
                 cycle={Cycle}
@@ -118,42 +122,43 @@ const SubscriptionSection = ({ permission }) => {
             used: UsedSpace,
             max: MaxSpace,
             humanSize,
-            format: (v) => humanSize(v, 'GB')
+            format: (v) => humanSize(v)
         },
         hasPaidMail && { label: c('Label').t`Custom domains`, used: UsedDomains, max: MaxDomains },
         mailPlanName === 'visionary' && { label: c('Label').t`VPN connections`, max: MaxVPN }
     ].filter(Boolean);
 
-    const vpnAddons = [hasPaidVpn && { label: c('Label').t`VPN connections`, max: MaxVPN }].filter(Boolean);
+    const vpnAddons = [
+        hasPaidVpn
+            ? { label: c('Label').t`VPN connections`, max: MaxVPN }
+            : { label: c('Label').t`VPN connections`, max: 1 }
+    ];
 
     return (
         <>
             {subTitle}
             <Alert>{c('Info')
-                .t`To manage your subscription, customize your current plan or select another one from the plan's table.`}</Alert>
-            <div className="shadow-container">
-                <div className="border-bottom pt1 pl1 pr1 relative">
-                    {hasPaidMail && mailPlanName !== 'visionary' ? (
-                        <SmallButton
-                            className="pm-button--primary absolute"
-                            style={{ right: '2em', top: '1em' }}
-                            onClick={handleModal}
-                        >
-                            {c('Action').t`Customize`}
-                        </SmallButton>
-                    ) : null}
-                    <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                .t`To manage your subscription, including billing frequency and currency, or to switch to another plan, click on Manage subscription.`}</Alert>
+            <div className="shadow-container mb1">
+                <div className="border-bottom pt1 pl1 pr1">
+                    <div className="flex-autogrid flex-items-center onmobile-flex-column w100 mb1">
                         <div className="flex-autogrid-item">ProtonMail plan</div>
                         <div className="flex-autogrid-item">
                             <strong>
-                                {hasPaidMail
-                                    ? PLAN_NAMES[mailPlanName]
-                                    : addresses.length
-                                    ? c('Plan').t`Free`
-                                    : c('Info').t`Not activated`}
+                                {hasPaidMail ? (
+                                    PLAN_NAMES[mailPlanName]
+                                ) : hasAddresses ? (
+                                    c('Plan').t`Free`
+                                ) : (
+                                    <Href url="https://mail.protonmail.com/login">{c('Info').t`Not activated`}</Href>
+                                )}
                             </strong>
                         </div>
-                        <div className="flex-autogrid-item" />
+                        <div className="flex-autogrid-item">
+                            {hasAddresses || mailPlanName === 'visionary' ? (
+                                <LinkButton onClick={handleModal}>{c('Action').t`Manage subscription`}</LinkButton>
+                            ) : null}
+                        </div>
                     </div>
                     {mailAddons.map((props, index) => (
                         <AddonRow key={index} {...props} />
@@ -166,14 +171,23 @@ const SubscriptionSection = ({ permission }) => {
                             <div className="flex-autogrid-item">
                                 <strong>{hasPaidVpn ? PLAN_NAMES[vpnPlanName] : c('Plan').t`Free`}</strong>
                             </div>
-                            <div className="flex-autogrid-item" />
+                            <div className="flex-autogrid-item">
+                                <LinkButton onClick={handleModal}>{c('Action').t`Manage subscription`}</LinkButton>
+                            </div>
                         </div>
                         {vpnAddons.map((props, index) => (
                             <AddonRow key={index} {...props} />
                         ))}
                     </div>
                 )}
+                {isPaid ? (
+                    <div className="pl1 pr1 pt0-5 pb0-5">
+                        <UnsubscribeButton className="pm-button--link pm-button--redborder">{c('Action')
+                            .t`Cancel subscription`}</UnsubscribeButton>
+                    </div>
+                ) : null}
             </div>
+            <UpsellSubscription />
         </>
     );
 };

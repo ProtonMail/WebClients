@@ -15,13 +15,19 @@ import {
     useLoading
 } from 'react-components';
 import { buyCredit } from 'proton-shared/lib/api/payments';
-import { DEFAULT_CURRENCY, DEFAULT_CREDITS_AMOUNT, CLIENT_TYPES, MIN_CREDIT_AMOUNT } from 'proton-shared/lib/constants';
+import {
+    DEFAULT_CURRENCY,
+    DEFAULT_CREDITS_AMOUNT,
+    CLIENT_TYPES,
+    MIN_CREDIT_AMOUNT,
+    PAYMENT_METHOD_TYPES
+} from 'proton-shared/lib/constants';
 
 import PaymentSelector from './PaymentSelector';
 import Payment from './Payment';
 import usePayment from './usePayment';
-import useCard from './useCard';
 import { handlePaymentToken } from './paymentTokenHelper';
+import PayPalButton from './PayPalButton';
 
 const getCurrenciesI18N = () => ({
     EUR: c('Monetary unit').t`Euro`,
@@ -36,17 +42,14 @@ const CreditsModal = (props) => {
     const { CLIENT_TYPE } = useConfig();
     const { call } = useEventManager();
     const { createModal } = useModals();
-    const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
     const [amount, setAmount] = useState(DEFAULT_CREDITS_AMOUNT);
-    const card = useCard();
-
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
 
-    const handleSubmit = async (params = parameters) => {
+    const handleSubmit = async (params) => {
         const requestBody = await handlePaymentToken({
             params: { ...params, Amount: amount, Currency: currency },
             api,
@@ -58,12 +61,27 @@ const CreditsModal = (props) => {
         createNotification({ text: c('Success').t`Credits added` });
     };
 
+    const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
+        amount,
+        currency,
+        onPay: handleSubmit
+    });
+    const submit =
+        amount >= MIN_CREDIT_AMOUNT ? (
+            method === PAYMENT_METHOD_TYPES.PAYPAL ? (
+                <PayPalButton paypal={paypal} className="pm-button--primary" amount={amount}>{c('Action')
+                    .t`Continue`}</PayPalButton>
+            ) : canPay ? (
+                c('Action').t`Top up`
+            ) : null
+        ) : null;
+
     return (
         <FormModal
             type="small"
-            onSubmit={() => withLoading(handleSubmit())}
+            onSubmit={() => withLoading(handleSubmit(parameters))}
             loading={loading}
-            submit={canPay && amount >= MIN_CREDIT_AMOUNT && c('Action').t`Top up`}
+            submit={submit}
             close={c('Action').t`Close`}
             title={c('Title').t`Add credits`}
             {...props}
@@ -93,12 +111,12 @@ const CreditsModal = (props) => {
                 method={method}
                 amount={amount}
                 currency={currency}
-                parameters={parameters}
                 card={card}
-                onParameters={setParameters}
                 onMethod={setMethod}
-                onValidCard={setCardValidity}
-                onPay={handleSubmit}
+                onCard={setCard}
+                errors={errors}
+                paypal={paypal}
+                paypalCredit={paypalCredit}
             />
         </FormModal>
     );

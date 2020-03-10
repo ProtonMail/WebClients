@@ -9,12 +9,7 @@ const useCard = (initialCard = getDefaultCard()) => {
     const errors = getErrors(card);
     const isValid = !Object.keys(errors).length;
 
-    return {
-        card,
-        updateCard,
-        errors,
-        isValid
-    };
+    return [card, updateCard, errors, isValid];
 };
 
 export default useCard;

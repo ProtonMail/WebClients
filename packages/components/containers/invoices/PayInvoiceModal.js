@@ -18,19 +18,16 @@ import { toPrice } from 'proton-shared/lib/helpers/string';
 
 import Payment from '../payments/Payment';
 import usePayment from '../payments/usePayment';
-import useCard from '../payments/useCard';
 import { handlePaymentToken } from '../payments/paymentTokenHelper';
 
 const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
     const api = useApi();
-    const card = useCard();
     const { result = {}, loading: loadingCheck } = useApiResult(() => checkInvoice(invoice.ID), []);
     const { AmountDue, Amount, Currency, Credit } = result;
-    const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
 
-    const handleSubmit = async (params = parameters) => {
+    const handleSubmit = async (params) => {
         const requestBody = await handlePaymentToken({
             params: { ...params, Amount: AmountDue, Currency },
             api,
@@ -41,10 +38,16 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
         rest.onClose();
     };
 
+    const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
+        amount: AmountDue,
+        currency: Currency,
+        onPay: handleSubmit
+    });
+
     return (
         <FormModal
             small
-            onSubmit={() => withLoading(handleSubmit())}
+            onSubmit={() => withLoading(handleSubmit(parameters))}
             loading={loading}
             close={c('Action').t`Close`}
             submit={canPay && c('Action').t`Pay`}
@@ -87,12 +90,12 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
                             method={method}
                             amount={AmountDue}
                             currency={Currency}
-                            parameters={parameters}
                             card={card}
-                            onParameters={setParameters}
                             onMethod={setMethod}
-                            onValidCard={setCardValidity}
-                            onPay={handleSubmit}
+                            onCard={setCard}
+                            errors={errors}
+                            paypal={paypal}
+                            paypalCredit={paypalCredit}
                         />
                     ) : null}
                 </>

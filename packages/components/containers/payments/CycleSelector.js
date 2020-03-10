@@ -17,7 +17,9 @@ const CycleSelector = ({
     ...rest
 }) => {
     const handleChange = ({ target }) => onSelect(+target.value);
-    return <Select value={cycle} options={options} onChange={handleChange} {...rest} />;
+    return (
+        <Select title={c('Title').t`Billing cycle`} value={cycle} options={options} onChange={handleChange} {...rest} />
+    );
 };
 
 CycleSelector.propTypes = {

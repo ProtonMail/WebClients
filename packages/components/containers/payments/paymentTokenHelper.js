@@ -92,9 +92,13 @@ export const process = ({ Token, api, ApprovalURL, ReturnHost, signal }) => {
 
             if (tab.closed) {
                 reset();
-                const error = new Error(c('Error').t`Tab closed`);
-                error.tryAgain = true;
-                return reject(error);
+                return pull({ Token, api, signal })
+                    .then(resolve)
+                    .catch(() => {
+                        const error = new Error(c('Error').t`Tab closed`);
+                        error.tryAgain = true;
+                        return reject(error);
+                    });
             }
 
             await wait(DELAY_LISTENING);
@@ -186,11 +190,22 @@ export const handlePaymentToken = async ({ params, api, createModal, mode }) => 
                 mode={mode}
                 payment={Payment}
                 params={params}
-                returnHost={ReturnHost}
-                approvalURL={ApprovalURL}
                 token={Token}
                 onSubmit={resolve}
                 onClose={reject}
+                onProcess={() => {
+                    const abort = new AbortController();
+                    return {
+                        promise: process({
+                            Token,
+                            api,
+                            ReturnHost,
+                            ApprovalURL,
+                            signal: abort.signal
+                        }),
+                        abort
+                    };
+                }}
             />
         );
     });
