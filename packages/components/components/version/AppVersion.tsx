@@ -3,7 +3,12 @@ import { useConfig, useModals } from 'react-components';
 
 import ChangelogModal from './ChangelogModal';
 
-const AppVersion = ({ appName, changelog }) => {
+interface Props {
+    appName: string;
+    changelog?: string;
+}
+
+const AppVersion = ({ appName, changelog }: Props) => {
     const { APP_VERSION, DATE_VERSION } = useConfig();
     const { createModal } = useModals();
 
