@@ -48,7 +48,7 @@ async function get(argv) {
         throw new Error('You must define a branch name. --branch=XXX');
     }
 
-    const apiUrl = await getAPIUrl();
+    const apiUrl = !PKG.name.includes('-Static') ? await getAPIUrl() : '';
 
     process.env.NODE_ENV_BRANCH = branch;
     process.env.NODE_ENV_API = apiUrl;
