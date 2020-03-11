@@ -47,16 +47,8 @@ async function pull(branch, force, fromCi) {
 }
 
 async function getConfig() {
-    const { stdout: branch } = await bash('git rev-parse --abbrev-ref HEAD');
-    const { stdout: commit } = await bash('git rev-parse HEAD');
-
-    try {
-        const { stdout: tag } = await bash('git describe --abbrev=0');
-        return { branch, commit, tag };
-    } catch (e) {
-        // If no tag it crashes
-        return { branch, commit };
-    }
+    const { stdout = '' } = await script('git.sh');
+    return JSON.parse(stdout);
 }
 
 async function logCommits(branch = '', flowType, isWebsite) {

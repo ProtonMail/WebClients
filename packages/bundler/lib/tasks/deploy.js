@@ -1,6 +1,8 @@
 const del = require('del');
 const { bash, script } = require('../helpers/cli');
 const { pull, push } = require('../git');
+const { readCurrentRelease } = require('../config');
+const { debug } = require('../helpers/log')('proton-bundler');
 
 function main({ branch, argv, hookPostTaskClone }) {
     const list = [
@@ -41,6 +43,16 @@ function main({ branch, argv, hookPostTaskClone }) {
             task: () => pull(branch, argv.forceFetch, argv.fromCi)
         },
         ...hookPostTaskClone,
+        {
+            title: 'Read information about the release',
+            task(ctx) {
+                const { version, commit, branch } = readCurrentRelease();
+                ctx.originCommit = commit;
+                ctx.originBranch = branch;
+                ctx.tag = version;
+                debug(ctx, 'release env bundle');
+            }
+        },
         {
             title: 'Sync bundle into dist-deploy directory before we push',
             async task() {

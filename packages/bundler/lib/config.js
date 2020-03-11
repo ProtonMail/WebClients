@@ -55,13 +55,15 @@ async function get(argv) {
 
     about({
         branch,
-        apiUrl,
-        appMode,
-        isRemoteBuild,
-        featureFlags,
         isOnlyDeployGit,
         isDeployGit,
-        SENTRY: process.env.NODE_ENV_SENTRY
+        ...(!isOnlyDeployGit && {
+            appMode,
+            apiUrl,
+            isRemoteBuild,
+            featureFlags,
+            SENTRY: process.env.NODE_ENV_SENTRY
+        })
     });
 
     return {
@@ -87,11 +89,16 @@ const isWebClientLegacy = () => {
 
 const getPackage = () => PKG;
 
+const readCurrentRelease = () => {
+    return require(path.join(process.cwd(), 'dist', 'assets', 'version.json'));
+};
+
 module.exports = {
     get,
     getHooks,
     getAPIUrl,
     getPackage,
     getExternalFiles,
-    isWebClientLegacy
+    isWebClientLegacy,
+    readCurrentRelease
 };
