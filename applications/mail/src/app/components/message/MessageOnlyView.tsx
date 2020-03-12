@@ -18,7 +18,7 @@ const MessageOnlyView = ({ messageID, mailSettings, onCompose }: Props) => {
 
     // There is only reading on the message here, no actions
     // MessageView will be in charge to trigger all messages actions
-    const [message] = useMessage({ ID: messageID }, mailSettings);
+    const [message] = useMessage({ localID: messageID, data: { ID: messageID } }, mailSettings);
 
     if (!message.data) {
         return null;

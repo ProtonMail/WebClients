@@ -124,7 +124,6 @@ const ComposerContainer = ({ children }: Props) => {
     };
     const handleChange = (oldMessage: MessageExtended) => (newMessage: MessageExtended) => {
         const newMessages = [...messages];
-        newMessage.localID = oldMessage.localID;
         newMessages[newMessages.indexOf(oldMessage)] = newMessage;
         setMessages(newMessages);
         if (oldMessage === focusedMessage) {

@@ -1,6 +1,6 @@
 import { useCache, useMailSettings, useAddresses } from 'react-components';
 
-import { createNewDraft } from '../helpers/message/messageDraft';
+import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
 import { MESSAGE_ACTIONS } from '../constants';
 import { useEffect, useCallback } from 'react';
 import { MessageExtended } from '../models/message';
@@ -26,7 +26,7 @@ export const useDraft = () => {
     const createDraft = useCallback(
         (action: MESSAGE_ACTIONS, referenceMessage: MessageExtended = {}) => {
             if (action === MESSAGE_ACTIONS.NEW && cache.has(CACHE_KEY)) {
-                return cache.get(CACHE_KEY) as MessageExtended;
+                return cloneDraft(cache.get(CACHE_KEY) as MessageExtended);
             } else {
                 return createNewDraft(action, referenceMessage, mailSettings, addresses);
             }

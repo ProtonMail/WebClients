@@ -84,7 +84,7 @@ export const mergeSavedMessage = (messageSaved: Message = {}, messageReturned: M
 });
 
 export const useMessage = (
-    inputMessage: Message = {},
+    inputMessage: MessageExtended = {},
     mailSettings: any
 ): [MessageExtended, MessageActions, MessageActivity] => {
     const api = useApi();
@@ -93,41 +93,34 @@ export const useMessage = (
     const base64Cache = useBase64Cache();
     const attachmentsCache = useAttachmentCache();
 
-    // messageID change ONLY when a draft is created
-    const [messageID, setMessageID] = useState(inputMessage.ID || '');
-    const [message, setMessage] = useState<MessageExtended>(
-        cache.has(messageID) ? cache.get(messageID) : { data: inputMessage }
-    );
+    // Main subject of the hook
+    // Will be updated based on an effect listening on the event manager
+    const [message, setMessage] = useState<MessageExtended>(inputMessage);
+
     const [messageActivity, setMessageActivity] = useState<MessageActivity>({ lock: false, current: '' });
 
     const keys = useMessageKeys();
     const decrypt = useDecryptMessage();
     const sendMessage = useSendMessage();
 
-    // Update messageID if component is reused for another message
-    useEffect(() => {
-        if (!!inputMessage.ID && inputMessage.ID !== messageID) {
-            setMessageID(inputMessage.ID);
-        }
-    }, [inputMessage]);
-
     // Update message state and listen to cache for updates on the current message
     useEffect(() => {
-        if (cache.has(messageID)) {
-            setMessage(cache.get(messageID));
+        const localID = inputMessage.localID || '';
+
+        if (cache.has(localID)) {
+            setMessage(cache.get(localID));
         } else {
-            const message = { data: inputMessage };
-            cache.set(messageID, message);
-            setMessage(message);
+            cache.set(localID, inputMessage);
+            setMessage(inputMessage);
         }
 
         return cache.subscribe((changedMessageID) => {
             // Prevent updates on message deltion from the cache to prevent undefined message in state.
-            if (changedMessageID === messageID && cache.has(messageID)) {
-                setMessage(cache.get(messageID));
+            if (changedMessageID === localID && cache.has(localID)) {
+                setMessage(cache.get(localID));
             }
         });
-    }, [messageID, cache]);
+    }, [inputMessage.localID, cache]); // The hook can be re-used for a different message
 
     const loadData = useCallback(
         async ({ data: message = {} }: MessageExtended) => {
@@ -225,7 +218,7 @@ export const useMessage = (
     type CacheUpdate = (newMessage: MessageExtended) => Promise<void> | void;
 
     const simpleUpdateCache: CacheUpdate = (newMessage: MessageExtended) => {
-        cache.set(messageID, newMessage);
+        cache.set(newMessage.localID || '', newMessage);
     };
 
     /**
@@ -257,29 +250,27 @@ export const useMessage = (
 
     const load = useCallback(async () => {
         await run(message, [loadData]);
-    }, [messageID, message, run, cache]);
+    }, [message, run, cache]);
 
     const initialize = useCallback(async () => {
-        cache.set(messageID, { ...message, initialized: false });
-        await run(message, [loadData, keys, decrypt, markAsRead, ...transforms], (newMessage: MessageExtended) =>
-            cache.set(messageID, { ...newMessage, initialized: true })
-        );
-    }, [messageID, message, run, cache]);
+        const localID = message.localID || '';
+        cache.set(localID, { ...message, initialized: false });
+        await run(message, [loadData, keys, decrypt, markAsRead, ...transforms], (newMessage: MessageExtended) => {
+            cache.set(localID, { ...newMessage, initialized: true });
+        });
+    }, [message, run, cache]);
 
     const loadRemoteImages = useCallback(async () => {
         await run({ ...message, showRemoteImages: true }, [transformRemote as Computation]);
-    }, [messageID, message, message, run, cache]);
+    }, [message, message, run, cache]);
 
     const loadEmbeddedImages = useCallback(async () => {
         await run({ ...message, showEmbeddedImages: true }, [transformEmbedded]);
-    }, [messageID, message, run, cache]);
+    }, [message, run, cache]);
 
     const createDraft = useCallback(
         async (message: MessageExtended) => {
-            await run(message, [keys, create] as Computation[], (newMessage: MessageExtended) => {
-                cache.set(newMessage.data?.ID || '', newMessage);
-                setMessageID(newMessage.data?.ID || '');
-            });
+            await run(message, [keys, create] as Computation[]);
         },
         [message, run, cache]
     );
@@ -299,7 +290,7 @@ export const useMessage = (
     );
 
     const deleteDraft = useCallback(async () => {
-        await run(message, [deleteRequest], () => cache.delete(messageID));
+        await run(message, [deleteRequest], () => cache.delete(message.localID || ''));
     }, [message, run, cache]);
 
     const updateAttachments = useCallback(

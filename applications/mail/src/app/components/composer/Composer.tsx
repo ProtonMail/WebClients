@@ -28,6 +28,7 @@ import { InsertRef } from './editor/Editor';
 import { setContent } from '../../helpers/message/messageContent';
 import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
+import { useHandler } from '../../hooks/useHandler';
 
 enum ComposerInnerModal {
     None,
@@ -89,7 +90,7 @@ const Composer = ({
     addresses,
     onFocus,
     onChange,
-    onClose
+    onClose: inputOnClose
 }: Props) => {
     const api = useApi();
     const [width, height] = useWindowSize();
@@ -127,7 +128,7 @@ const Composer = ({
         syncedMessage,
         { initialize, createDraft, saveDraft, send, deleteDraft, updateAttachments },
         { lock: syncLock, current: syncActivity }
-    ] = useMessage(inputMessage.data, mailSettings);
+    ] = useMessage(inputMessage, mailSettings);
 
     // Manage focus from the container yet keeping logic in each component
     const addressesBlurRef = useRef<() => void>(noop);
@@ -136,6 +137,10 @@ const Composer = ({
 
     // Get a ref on the editor to trigger insertion of embedded images
     const contentInsertRef: InsertRef = useRef();
+
+    // onClose handler can be called in a async handler
+    // Input onClose ref can change in the meantime
+    const onClose = useHandler(inputOnClose);
 
     useEffect(() => {
         if (!syncLock && !syncedMessage.data?.ID) {
@@ -276,6 +281,10 @@ const Composer = ({
         await save();
         onClose();
     };
+    const handleContentFocus = () => {
+        addressesBlurRef.current();
+        onFocus(); // Events on the main div will not fire because/ the editor is in an iframe
+    };
 
     if (closing) {
         return null;
@@ -339,7 +348,7 @@ const Composer = ({
                             onEditorReady={() => setEditorReady(true)}
                             onChange={handleChange}
                             onChangeContent={handleChangeContent}
-                            onFocus={addressesBlurRef.current}
+                            onFocus={handleContentFocus}
                             onAddAttachments={handleAddAttachmentsStart}
                             onAddEmbeddedImages={handleAddEmbeddedImages}
                             onRemoveAttachment={handleRemoveAttachment}

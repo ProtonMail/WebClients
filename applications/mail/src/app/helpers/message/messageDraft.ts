@@ -218,3 +218,11 @@ export const createNewDraft = (
         embeddeds
     };
 };
+
+export const cloneDraft = (draft: MessageExtended): MessageExtended => {
+    return {
+        ...draft,
+        data: { ...draft.data },
+        document: draft.document?.cloneNode(true) as Element
+    };
+};

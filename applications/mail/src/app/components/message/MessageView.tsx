@@ -33,7 +33,7 @@ const MessageView = ({
     const { state: expanded, set: setExpanded } = useToggle(initialExpand && !draft);
     const elementRef = useRef<HTMLElement>(null);
     const [message, { load, initialize, loadRemoteImages, loadEmbeddedImages }] = useMessage(
-        inputMessage,
+        { localID: inputMessage.ID, data: inputMessage },
         mailSettings
     );
 
