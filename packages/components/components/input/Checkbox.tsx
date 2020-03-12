@@ -8,6 +8,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
     borderColor?: string;
     color?: string;
     indeterminate?: boolean;
+    labelOnClick?: (event: React.MouseEvent<HTMLLabelElement, MouseEvent>) => void;
 }
 
 const Checkbox = ({
@@ -21,6 +22,7 @@ const Checkbox = ({
     backgroundColor,
     borderColor,
     children,
+    labelOnClick,
     ...rest
 }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -32,7 +34,7 @@ const Checkbox = ({
     }, [indeterminate]);
 
     return (
-        <label htmlFor={id} className={classnames(['inline-flex', className])}>
+        <label htmlFor={id} className={classnames(['inline-flex', className])} onClick={labelOnClick}>
             <input
                 ref={inputRef}
                 disabled={disabled || loading}
