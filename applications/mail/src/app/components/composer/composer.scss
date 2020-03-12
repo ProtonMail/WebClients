@@ -24,36 +24,35 @@
     margin-bottom: 0.5em;
     margin-left: -0.5em;
 
-    background: var(--bgcolor-main-area, #3c414e);
-    color: #fff;
+    background: var(--bgcolor-main-area, $pm-global-altgrey);
+    color: $white;
 }
 
-.composer-minimized .composer-title-bar {
-    margin-bottom: 0;
+.composer-minimized {
+    bottom: 0;
+    .composer-title-bar {
+        margin-bottom: 0;
+    }
 }
 
 .pm-button.composer-title-bar-button {
-    padding: 0 0.5em;
+    padding: 0 .5em;
     background: unset;
     border: unset;
     border-radius: unset;
 
     display: flex;
-    color: #fff;
+    color: $white;
 }
 
-.pm-button.composer-title-bar-button:hover {
+.pm-button.composer-title-bar-button:hover,
+.pm-button.composer-title-bar-button:active {
     box-shadow: unset;
 }
 
-.pm-button.composer-title-bar-button:active {
-    background: unset;
-}
 
 .composer-meta-label,
 .pm-label.composer-meta-label {
-    padding-top: 0;
-    padding-right: 1em;
     max-width: 8em;
     width: 15%;
 }
@@ -71,7 +70,10 @@
     padding: 6px 0.85em;
     min-height: 35px;
     max-height: 2.5em;
-    background: var(--bgcolor-input, #fcfdff);
+    background: var(--bgcolor-input, $pm-input-background);
+}
+.composer-addresses-fakefield-inner {
+    max-width: calc(100% - 5em);
 }
 
 .composer-addresses-container-line:not(:first-child) {
@@ -112,7 +114,7 @@
         z-index: 10;
         list-style: none;
         box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16);
-        background: var(--bgcolor-input, #fcfdff);
+        background: var(--bgcolor-input, $pm-input-background);
         width: calc(100% - 40px);
         margin: 0 0 0 20px;
         padding: 0;
@@ -141,18 +143,25 @@
 }
 
 .composer-addresses-item.invalid {
-    border-color: #fc2929;
-    color: #fc2929;
+    border-color: $pm-global-warning;
+    color: $pm-global-warning;
 }
 
-.composer-addresses-item-label {
-    border-left: 1px solid var(--bordercolor-input, #dde6ec);
-    border-right: 1px solid var(--bordercolor-input, #dde6ec);
+.composer-addresses-item-label,
+.composer-addresses-item-icon {
+    border-right: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
-.composer-addresses-item-remove {
-    background: none;
-    border: none;
+// .composer-addresses-item-remove {
+//     background: none;
+//     border: none;
+// }
+
+.composer-addresses-ccbcc {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1em;
 }
 
 .addresses-contacts-table {
@@ -162,21 +171,24 @@
 }
 
 .editor {
-    border: 1px solid #dde6ec;
+    border: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
 .editor-toolbar {
-    border-bottom: 1px solid #dde6ec;
+    border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
 .editor .editor-toolbar-button {
-    border: none;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding: .3em .5em;
+    &:focus,
+    &:hover,
+    &[aria-pressed="true"] {
+        background-color: var(--bordercolor-input, $pm-global-border);
+    }
 }
 
 .editor-toolbar-separator {
-    border-left: 1px solid #dde6ec;
+    border-left: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
 .editor-toolbar-dropdown {
@@ -185,8 +197,8 @@
     }
 
     button {
-        padding-left: 0.5em;
-        padding-right: 0.5em;
+        padding-left: .5em;
+        padding-right: .5em;
     }
 
     button:disabled {
@@ -197,7 +209,7 @@
 .editor-toolbar-dropdown .ColorSelector-item {
     height: 2.8rem;
     width: 2.8rem;
-    margin: 0 0.2rem 0.2rem 0;
+    margin: 0 .2rem .2rem 0;
 }
 
 .editor--disabled::after {
@@ -228,6 +240,24 @@
     // TODO: Something more sexy? :)
 }
 
+
+.editor-toolbar-button {
+    padding: .5em;
+    > span {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        > .mr0-5 {
+            flex: 1 1 0px;
+            text-align: left;
+            display: inline-flex;
+        }
+    }
+}
+
+
 .composer-attachments-button-wrapper {
     position: relative;
     overflow: hidden;
@@ -236,7 +266,7 @@
     margin: -5px;
 
     input[type='file'] {
-        font-size: 22px;
+        font-size: 2.2rem;
         margin: 5px;
         position: absolute;
         left: 0;
@@ -266,7 +296,7 @@
 
 .composer-attachments-expand {
     overflow: auto;
-    border-top: 1px solid #dde6ec;
+    border-top: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
 .composer-attachments-item {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Icon, Button, classnames } from 'react-components';
+import { Icon, classnames } from 'react-components';
 
 import { MessageExtended } from '../../models/message';
 
@@ -12,9 +12,13 @@ interface ButtonProps {
 
 const TitleBarButton = ({ onClick, iconName, className = '' }: ButtonProps) => {
     return (
-        <Button className={classnames(['composer-title-bar-button', className])} onClick={onClick}>
-            <Icon className="mauto" name={iconName} color="currentColor" />
-        </Button>
+        <button
+            type="button"
+            className={classnames(['composer-title-bar-button flex pl0-5 pr0-5', className])}
+            onClick={onClick}
+        >
+            <Icon className="mauto" name={iconName} />
+        </button>
     );
 };
 

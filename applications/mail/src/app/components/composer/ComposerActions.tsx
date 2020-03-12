@@ -61,7 +61,7 @@ const ComposerActions = ({
     const isExpiration = !!message.data?.ExpiresIn;
 
     return (
-        <footer className="composer-actions flex flex-row flex-spacebetween w100">
+        <footer className="composer-actions flex flex-row flex-spacebetween w100 pr0-5">
             <div className="flex">
                 <AttachmentsButton disabled={lock} onAddAttachments={onAddAttachments} />
                 <Button

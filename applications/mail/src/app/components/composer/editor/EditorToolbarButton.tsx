@@ -15,7 +15,7 @@ const EditorToolbarButton = ({ children, loading = false, disabled = false, clas
         <button
             type="button"
             disabled={disabled || loading}
-            className={classnames(['pm-button pm-button--small pm-button--for-icon editor-toolbar-button', className])}
+            className={classnames(['editor-toolbar-button m0 flex', className])}
             {...rest}
         >
             {children}

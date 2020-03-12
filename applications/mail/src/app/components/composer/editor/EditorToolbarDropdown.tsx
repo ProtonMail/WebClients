@@ -45,10 +45,7 @@ const EditorToolbarDropdown = ({
                 hasCaret={true}
                 disabled={disabled}
                 caretClassName="editor-toolbar-icon"
-                className={classnames([
-                    'flex-item-noshrink editor-toolbar-button editor-toolbar-button--dropdown',
-                    className
-                ])}
+                className={classnames(['editor-toolbar-button editor-toolbar-button--dropdown', className])}
                 {...rest}
             >
                 {content}

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { c } from 'ttag';
-import { Label, Button } from 'react-components';
+import { Label, LinkButton } from 'react-components';
 
 import { MessageExtended } from '../../../models/message';
 import { Recipient, recipientTypes } from '../../../models/address';
@@ -16,39 +16,37 @@ interface Props {
 
 const AddressesSummary = ({ message: { data = {} }, contacts, contactGroups, onFocus }: Props) => {
     return (
-        <div className="flex flex-row flex-nowrap flex-items-center pl0-5 mb0-5" onClick={onFocus}>
-            <Label htmlFor={null} className="composer-meta-label color-pm-blue">
+        <div className="flex flex-row flex-nowrap flex-items-center pl0-5 pr0-5 mb0-5" onClick={onFocus}>
+            <Label htmlFor={null} className="composer-meta-label pr0-5 pt0">
                 {c('Title').t`To`}
             </Label>
-            <div className="flex flex-row flex-item-fluid w100">
-                <span className="flex-item-fluid bordered-container flex composer-addresses-fakefield">
-                    <span className="ellipsis mw100">
-                        {recipientTypes.map((type) => {
-                            const recipients: Recipient[] = data[type] || [];
-                            if (recipients.length === 0) {
-                                return null;
-                            }
-                            const recipientOrGroups = recipientsToRecipientOrGroup(recipients, contactGroups);
-                            return (
-                                <Fragment key={type}>
-                                    {type === 'CCList' && (
-                                        <span className="mr0-5 color-pm-blue">{c('Title').t`CC`}:</span>
-                                    )}
-                                    {type === 'BCCList' && (
-                                        <span className="mr0-5 color-pm-blue">{c('Title').t`BCC`}:</span>
-                                    )}
-                                    {recipientOrGroups.map((recipientOrGroup, i) => (
-                                        <span key={i} className="mr0-5">
-                                            {getRecipientOrGroupLabel(recipientOrGroup, contacts)}
-                                            {i !== recipientOrGroups.length - 1 && ','}
-                                        </span>
-                                    ))}
-                                </Fragment>
-                            );
-                        })}
-                    </span>
+            <div className="bordered-container flex composer-addresses-fakefield flex-row flex-item-fluid w100 relative">
+                <span className="ellipsis mw100 composer-addresses-fakefield-inner">
+                    {recipientTypes.map((type) => {
+                        const recipients: Recipient[] = data[type] || [];
+                        if (recipients.length === 0) {
+                            return null;
+                        }
+                        const recipientOrGroups = recipientsToRecipientOrGroup(recipients, contactGroups);
+                        return (
+                            <Fragment key={type}>
+                                {type === 'CCList' && <span className="mr0-5 color-primary">{c('Title').t`CC`}:</span>}
+                                {type === 'BCCList' && (
+                                    <span className="mr0-5 color-primary">{c('Title').t`BCC`}:</span>
+                                )}
+                                {recipientOrGroups.map((recipientOrGroup, i) => (
+                                    <span key={i} className="mr0-5">
+                                        {getRecipientOrGroupLabel(recipientOrGroup, contacts)}
+                                        {i !== recipientOrGroups.length - 1 && ','}
+                                    </span>
+                                ))}
+                            </Fragment>
+                        );
+                    })}
                 </span>
-                <Button icon="caret" className="pm-button--link ml0-5 mr0-5 " />
+                <LinkButton className="composer-addresses-ccbcc nodecoration strong">
+                    {c('Action').t`CC, BCC`}
+                </LinkButton>
             </div>
         </div>
     );

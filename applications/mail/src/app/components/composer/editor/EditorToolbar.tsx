@@ -1,4 +1,4 @@
-import React, { MutableRefObject } from 'react';
+import React, { MutableRefObject, useEffect, useState } from 'react';
 import { useModals, Icon } from 'react-components';
 
 import EditorImageModal from './EditorImageModal';
@@ -13,7 +13,9 @@ import {
     toggleUnderline,
     toggleOrderedList,
     toggleUnorderedList,
-    toggleBlockquote
+    toggleBlockquote,
+    listenToCursor,
+    getPathInfo
 } from '../../../helpers/squire/squireActions';
 import EditorToolbarButton from './EditorToolbarButton';
 import EditorToolbarSeparator from './EditorToolbarSeparator';
@@ -24,6 +26,7 @@ import EditorToolbarAlignmentDropdown from './EditorToolbarAlignmentDropdown';
 import EditorToolbarMoreDropdown from './EditorToolbarMoreDropdown';
 import { MessageExtended } from '../../../models/message';
 import { isPlainText as testIsPlainText } from '../../../helpers/message/messages';
+import { useHandler } from '../../../hooks/useHandler';
 
 interface Props {
     message: MessageExtended;
@@ -34,9 +37,15 @@ interface Props {
 }
 
 const EditorToolbar = ({ message, squireRef, editorReady, onChange, onAddAttachments }: Props) => {
+    const [squireInfos, setSquireInfos] = useState<{ [test: string]: boolean }>({});
+
     const { createModal } = useModals();
 
     const isPlainText = testIsPlainText(message.data);
+
+    const handleCursor = useHandler(() => setSquireInfos(getPathInfo(squireRef.current)), { debounce: 500 });
+
+    useEffect(() => listenToCursor(squireRef.current, handleCursor), [editorReady]);
 
     const handleBold = () => toggleBold(squireRef.current);
     const handleItalic = () => toggleItalic(squireRef.current);
@@ -67,7 +76,7 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onAddAttachm
     };
 
     return (
-        <div className="editor-toolbar flex">
+        <div className="editor-toolbar flex ">
             {isPlainText ? (
                 <div className="flex-item-fluid" />
             ) : (
@@ -78,37 +87,37 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onAddAttachm
                     <EditorToolbarSeparator />
                     <EditorToolbarFontColorsDropdown squireRef={squireRef} editorReady={editorReady} />
                     <EditorToolbarSeparator />
-                    <EditorToolbarButton onClick={handleBold}>
-                        <Icon name="text-bold" />
+                    <EditorToolbarButton onClick={handleBold} aria-pressed={squireInfos.bold}>
+                        <Icon name="text-bold" className="mauto" />
                     </EditorToolbarButton>
-                    <EditorToolbarButton onClick={handleItalic}>
-                        <Icon name="text-italic" />
+                    <EditorToolbarButton onClick={handleItalic} aria-pressed={squireInfos.italic}>
+                        <Icon name="text-italic" className="mauto" />
                     </EditorToolbarButton>
-                    <EditorToolbarButton onClick={handleUnderline}>
-                        <Icon name="text-underline" />
-                    </EditorToolbarButton>
-                    <EditorToolbarSeparator />
-                    <EditorToolbarAlignmentDropdown squireRef={squireRef} />
-                    <EditorToolbarSeparator />
-                    <EditorToolbarButton onClick={handleUnorderedList}>
-                        <Icon name="bullet-points" />
-                    </EditorToolbarButton>
-                    <EditorToolbarButton onClick={handleOrderedList}>
-                        <Icon name="ordered-list" />
+                    <EditorToolbarButton onClick={handleUnderline} aria-pressed={squireInfos.underline}>
+                        <Icon name="text-underline" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarSeparator />
-                    <EditorToolbarButton onClick={handleBlockquote}>
-                        <Icon name="text-quote" />
+                    <EditorToolbarAlignmentDropdown squireRef={squireRef} pathInfos={squireInfos} />
+                    <EditorToolbarSeparator />
+                    <EditorToolbarButton onClick={handleUnorderedList} aria-pressed={squireInfos.unorderedList}>
+                        <Icon name="bullet-points" className="mauto" />
+                    </EditorToolbarButton>
+                    <EditorToolbarButton onClick={handleOrderedList} aria-pressed={squireInfos.orderedList}>
+                        <Icon name="ordered-list" className="mauto" />
+                    </EditorToolbarButton>
+                    <EditorToolbarSeparator />
+                    <EditorToolbarButton onClick={handleBlockquote} aria-pressed={squireInfos.blockquote}>
+                        <Icon name="text-quote" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarSeparator />
                     <EditorToolbarButton onClick={handleLink}>
-                        <Icon name="link" />
+                        <Icon name="link" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarButton onClick={handleImage}>
-                        <Icon name="file-image" />
+                        <Icon name="file-image" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarButton onClick={handleClearFormatting}>
-                        <Icon name="remove-text-formatting" />
+                        <Icon name="remove-text-formatting" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarSeparator />
                 </>

@@ -14,9 +14,10 @@ enum ALIGNMENT {
 
 interface Props {
     squireRef: MutableRefObject<SquireType>;
+    pathInfos: { [pathInfo: string]: boolean };
 }
 
-const EditorToolbarAlignmentDropdown = ({ squireRef }: Props) => {
+const EditorToolbarAlignmentDropdown = ({ squireRef, pathInfos }: Props) => {
     const handleClick = (alignment: ALIGNMENT) => () => {
         squireRef.current.setTextAlignment(alignment);
     };
@@ -24,16 +25,32 @@ const EditorToolbarAlignmentDropdown = ({ squireRef }: Props) => {
     return (
         <EditorToolbarDropdown size="narrow" content={<Icon name="text-align-left" />}>
             <DropdownMenu>
-                <DropdownMenuButton className="alignleft" onClick={handleClick(ALIGNMENT.Left)}>
+                <DropdownMenuButton
+                    className="alignleft"
+                    aria-pressed={pathInfos.alignLeft}
+                    onClick={handleClick(ALIGNMENT.Left)}
+                >
                     <Icon name="text-align-left" /> {c('Info').t`Align left`}
                 </DropdownMenuButton>
-                <DropdownMenuButton className="alignleft" onClick={handleClick(ALIGNMENT.Center)}>
+                <DropdownMenuButton
+                    className="alignleft"
+                    aria-pressed={pathInfos.alignCenter}
+                    onClick={handleClick(ALIGNMENT.Center)}
+                >
                     <Icon name="text-center" /> {c('Info').t`Center`}
                 </DropdownMenuButton>
-                <DropdownMenuButton className="alignleft" onClick={handleClick(ALIGNMENT.Right)}>
+                <DropdownMenuButton
+                    className="alignleft"
+                    aria-pressed={pathInfos.alignRight}
+                    onClick={handleClick(ALIGNMENT.Right)}
+                >
                     <Icon name="text-align-right" /> {c('Info').t`Align right`}
                 </DropdownMenuButton>
-                <DropdownMenuButton className="alignleft" onClick={handleClick(ALIGNMENT.Justify)}>
+                <DropdownMenuButton
+                    className="alignleft"
+                    aria-pressed={pathInfos.alignJustify}
+                    onClick={handleClick(ALIGNMENT.Justify)}
+                >
                     <Icon name="text-justify" /> {c('Info').t`Justify`}
                 </DropdownMenuButton>
             </DropdownMenu>

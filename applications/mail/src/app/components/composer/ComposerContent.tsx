@@ -74,7 +74,7 @@ const ComposerContent = ({
 
     return (
         <section
-            className="flex-item-fluid w100 mb0-5 flex flex-column flex-nowrap relative"
+            className="flex-item-fluid w100 mb0-5 flex flex-column flex-nowrap relative pr0-5"
             onDrop={handleDrop}
             onDragEnter={handleHover(true)}
             onDragOver={(event) => event.preventDefault()}

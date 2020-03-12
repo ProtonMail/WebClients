@@ -1,10 +1,9 @@
 import React, { useState, MutableRefObject } from 'react';
 import { c } from 'ttag';
-import { Label, generateUID, Button, Tooltip, classnames, useModals } from 'react-components';
+import { Label, generateUID, Tooltip, LinkButton } from 'react-components';
 
 import { MessageExtended } from '../../../models/message';
 import AddressesInput from './AddressesInput';
-import AddressesContactsModal from './AddressesContactsModal';
 import { ContactEmail, ContactGroup } from '../../../models/contact';
 import { RecipientType, Recipient } from '../../../models/address';
 
@@ -28,87 +27,79 @@ const AddressesEditor = ({
     inputFocusRef
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
-    const { createModal } = useModals();
+    // const { createModal } = useModals();
 
     const handleChange = (type: RecipientType) => (value: Recipient[]) => {
         onChange({ data: { [type]: value } });
     };
 
-    const handleContactModal = (type: RecipientType) => async () => {
-        const recipients = await new Promise((resolve) => {
-            createModal(
-                <AddressesContactsModal inputValue={message.data?.[type]} allContacts={contacts} onSubmit={resolve} />
-            );
-        });
+    // const handleContactModal = (type: RecipientType) => async () => {
+    //     const recipients = await new Promise((resolve) => {
+    //         createModal(
+    //             <AddressesContactsModal inputValue={message.data?.[type]} allContacts={contacts} onSubmit={resolve} />
+    //         );
+    //     });
 
-        onChange({ data: { [type]: recipients } });
-    };
+    //     onChange({ data: { [type]: recipients } });
+    // };
 
     return (
-        <div className="flex flex-row flex-nowrap flex-items-start pl0-5 mb0-5">
-            <div className="flex flex-column composer-meta-label">
-                <Label htmlFor={`to-${uid}`}>
+        <div className="flex flex-column flex-nowrap flex-items-start pl0-5 pr0-5 mb0-5">
+            <div className="flex flex-row w100 mb0-5 relative">
+                <Label htmlFor={`to-${uid}`} className="composer-meta-label">
                     <Tooltip title={c('Title').t`Add contacts`}>
-                        <a onClick={handleContactModal('ToList')}>{c('Title').t`To`}</a>
+                        {/* <a onClick={handleContactModal('ToList')}>{c('Title').t`To`}</a> */}
+                        {c('Label').t`To`}
                     </Tooltip>
                 </Label>
-                {expanded && (
-                    <>
-                        <Label htmlFor={`cc-${uid}`}>
-                            <Tooltip title={c('Title').t`Add contacts`}>
-                                <a onClick={handleContactModal('CCList')}>{c('Title').t`CC`}</a>
-                            </Tooltip>
-                        </Label>
-                        <Label htmlFor={`bcc-${uid}`}>
-                            <Tooltip title={c('Title').t`Add contacts`}>
-                                <a onClick={handleContactModal('BCCList')}>{c('Title').t`BCC`}</a>
-                            </Tooltip>
-                        </Label>
-                    </>
+                <AddressesInput
+                    id={`to-${uid}`}
+                    recipients={message.data?.ToList}
+                    onChange={handleChange('ToList')}
+                    inputFocusRef={inputFocusRef}
+                    contacts={contacts}
+                    contactGroups={contactGroups}
+                />
+                {!expanded && (
+                    <LinkButton className="composer-addresses-ccbcc nodecoration strong" onClick={toggleExpanded}>
+                        {c('Action').t`CC, BCC`}
+                    </LinkButton>
                 )}
             </div>
-
-            <div className="flex flex-column flex-item-fluid w100">
-                <div className="flex flex-row w100 composer-addresses-container-line">
-                    <AddressesInput
-                        id={`to-${uid}`}
-                        recipients={message.data?.ToList}
-                        onChange={handleChange('ToList')}
-                        inputFocusRef={inputFocusRef}
-                        contacts={contacts}
-                        contactGroups={contactGroups}
-                    />
-                    <Tooltip originalPlacement="left" title={c('Title').t`CC BCC`}>
-                        <Button
-                            icon="caret"
-                            className={classnames(['pm-button--link ml0-5 mr0-5', expanded && 'rotateX-180'])}
-                            onClick={toggleExpanded}
+            {expanded && (
+                <>
+                    <div className="flex flex-row w100 mb0-5">
+                        <Label htmlFor={`cc-${uid}`} className="composer-meta-label">
+                            <Tooltip title={c('Title').t`Add contacts`}>
+                                {/* <a onClick={handleContactModal('CCList')}>{c('Title').t`CC`}</a> */}
+                                {c('Label').t`CC`}
+                            </Tooltip>
+                        </Label>
+                        <AddressesInput
+                            id={`cc-${uid}`}
+                            recipients={message.data?.CCList}
+                            onChange={handleChange('CCList')}
+                            contacts={contacts}
+                            contactGroups={contactGroups}
                         />
-                    </Tooltip>
-                </div>
-                {expanded && (
-                    <>
-                        <div className="flex flex-row w100 mt0-5 composer-addresses-container-line">
-                            <AddressesInput
-                                id={`cc-${uid}`}
-                                recipients={message.data?.CCList}
-                                onChange={handleChange('CCList')}
-                                contacts={contacts}
-                                contactGroups={contactGroups}
-                            />
-                        </div>
-                        <div className="flex flex-row w100 mt0-5 composer-addresses-container-line">
-                            <AddressesInput
-                                id={`bcc-${uid}`}
-                                recipients={message.data?.BCCList}
-                                onChange={handleChange('BCCList')}
-                                contacts={contacts}
-                                contactGroups={contactGroups}
-                            />
-                        </div>
-                    </>
-                )}
-            </div>
+                    </div>
+                    <div className="flex flex-row w100">
+                        <Label htmlFor={`bcc-${uid}`} className="composer-meta-label">
+                            <Tooltip title={c('Title').t`Add contacts`}>
+                                {/* <a onClick={handleContactModal('BCCList')}>{c('Title').t`BCC`}</a> */}
+                                {c('Label').t`BCC`}
+                            </Tooltip>
+                        </Label>
+                        <AddressesInput
+                            id={`bcc-${uid}`}
+                            recipients={message.data?.BCCList}
+                            onChange={handleChange('BCCList')}
+                            contacts={contacts}
+                            contactGroups={contactGroups}
+                        />
+                    </div>
+                </>
+            )}
         </div>
     );
 };

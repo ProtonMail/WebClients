@@ -1,5 +1,6 @@
 import { useRef, useEffect, RefObject, useMemo } from 'react';
 import { useEventManager } from 'react-components';
+import { debounce } from 'proton-shared/lib/helpers/function';
 
 export type Handler = (arg?: any) => void;
 
@@ -7,14 +8,22 @@ export type Handler = (arg?: any) => void;
  * Create a stable reference of handler
  * But will always run the updated version of the handler in argument
  */
-export const useHandler = (handler: Handler) => {
+export const useHandler = (handler: Handler, options: { debounce?: number } = {}) => {
     const handlerRef = useRef(handler);
 
     useEffect(() => {
         handlerRef.current = handler;
     }, [handler]);
 
-    const actualHandler = useMemo(() => (arg?: any) => handlerRef.current(arg), []);
+    const actualHandler = useMemo(() => {
+        const handler = (arg?: any) => handlerRef.current(arg);
+
+        if (options.debounce && options.debounce > 0) {
+            return debounce(handler, options.debounce);
+        }
+
+        return handler;
+    }, []);
 
     return actualHandler;
 };

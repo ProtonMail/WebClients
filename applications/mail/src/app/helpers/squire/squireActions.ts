@@ -15,6 +15,22 @@ import {
 } from './squireConfig';
 import { isEmbeddable } from '../embedded/embeddeds';
 
+const pathInfoTests: { [type: string]: RegExp } = {
+    blockquote: /^blockquote$/,
+    italic: /^i$/,
+    underline: /^u$/,
+    bold: /^b$/,
+    unorderedList: /^ul$/,
+    orderedList: /^ol$/,
+    listElement: /^li$/,
+    alignCenter: /\.align-center/,
+    alignLeft: /\.align-left/,
+    alignRight: /\.align-right/,
+    alignJustify: /\.align-justify/
+};
+
+const REGEX_DIRECTION = /\[(dir=(rtl|ltr))]/g;
+
 const testPresenceInSelection = (squire: SquireType, format: string, validation: RegExp) =>
     validation.test(squire.getPath()) || squire.hasFormat(format);
 
@@ -58,6 +74,13 @@ const rgbToHex = (rgb = '', defaultValue: string) => {
 };
 
 /**
+ * Strip away the direction attribute from a squire path
+ */
+const stripDirectionAttribute = (path = '') => {
+    return path.replace(REGEX_DIRECTION, '');
+};
+
+/**
  * Run the callback at any cursor change in Squire
  * Returns an unsubscribe functions meant to be the return value of a useEffect
  */
@@ -68,11 +91,13 @@ export const listenToCursor = (squire: SquireType | undefined, callback: () => v
 
     squire.addEventListener('click', callback);
     squire.addEventListener('keyup', callback);
+    squire.addEventListener('pathChange', callback);
     callback();
 
     return () => {
         squire.removeEventListener('click', callback);
         squire.removeEventListener('keyup', callback);
+        squire.removeEventListener('pathChange', callback);
     };
 };
 
@@ -82,6 +107,16 @@ export const toggleUnderline = toggleFormat('u', />U\b/, 'underline', 'removeUnd
 export const toggleOrderedList = toggleList(true);
 export const toggleUnorderedList = toggleList(false);
 export const toggleBlockquote = toggleFormat('blockquote', />BLOCKQUOTE\b/, 'increaseQuoteLevel', 'decreaseQuoteLevel');
+
+export const getPathInfo = (squire: SquireType) => {
+    const path = stripDirectionAttribute(squire.getPath());
+    const pathList = path.toLowerCase().split('>');
+
+    return Object.keys(pathInfoTests).reduce((acc, test) => {
+        acc[test] = pathList.some((path) => pathInfoTests[test].test(path));
+        return acc;
+    }, {} as { [test: string]: boolean });
+};
 
 export const getFontLabel = (font: FONT_FACE) => Object.entries(FONT_FACE).find(([, value]) => value === font)?.[0];
 

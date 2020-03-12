@@ -1,4 +1,5 @@
 import React from 'react';
+import { c } from 'ttag';
 import { Icon, useModals } from 'react-components';
 
 import { ContactEmail } from '../../../models/contact';
@@ -32,7 +33,7 @@ const AddressesGroupItem = ({ recipientGroup, contacts, onChange, onRemove }: Pr
 
     return (
         <div className="composer-addresses-item bordered-container flex flex-items-center flex-nowrap flex-row mw80 stop-propagation">
-            <span className="inline-flex pl0-5 pr0-5 no-pointer-events-children h100">
+            <span className="inline-flex composer-addresses-item-icon pl0-5 pr0-5 no-pointer-events-children h100">
                 <Icon name="contacts-groups" size={12} color={recipientGroup?.group?.Color} className="mauto" />
             </span>
             <span
@@ -47,6 +48,7 @@ const AddressesGroupItem = ({ recipientGroup, contacts, onChange, onRemove }: Pr
                 onClick={onRemove}
             >
                 <Icon name="off" size={12} className="mauto" />
+                <span className="sr-only">{c('Action').t`Remove`}</span>
             </button>
         </div>
     );

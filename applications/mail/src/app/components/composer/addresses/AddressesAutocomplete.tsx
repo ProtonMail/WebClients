@@ -80,7 +80,7 @@ const AddressesAutocomplete = ({ inputRef, contacts, contactGroups, onSelect, cu
     });
 
     return (
-        <div className="composer-addresses-autocomplete flex-item-fluid relative" ref={containerRef}>
+        <div className="composer-addresses-autocomplete w100 flex-item-fluid relative" ref={containerRef}>
             {children}
         </div>
     );
