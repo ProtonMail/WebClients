@@ -578,3 +578,15 @@ export enum DENSITY {
     COMFORTABLE = 0,
     COMPACT = 1
 }
+
+export enum ICS_METHODS {
+    REQUEST = 'REQUEST',
+    REPLY = 'REPLY',
+    CANCEL = 'CANCEL'
+}
+
+export enum ICS_EVENT_STATUS {
+    TENTATIVE = 'TENTATIVE',
+    CONFIRMED = 'CONFIRMED',
+    CANCELLED = 'CANCELLED'
+}
