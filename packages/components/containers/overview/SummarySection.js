@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { USER_ROLES } from 'proton-shared/lib/constants';
+import { USER_ROLES, PLANS } from 'proton-shared/lib/constants';
 
 const { MEMBER_ROLE, ADMIN_ROLE } = USER_ROLES;
 
@@ -22,15 +22,17 @@ const Rows = ({ subscription, user }) => {
                     <Link to="/settings/subscription">{c('Link').t`Manage`}</Link>
                 </div>
             </div>
-            <div className="flex-autogrid onmobile-flex-column w100">
-                <div className="flex-autogrid-item">ProtonVPN plan</div>
-                <div className="flex-autogrid-item bold capitalize">
-                    {user.hasPaidVpn ? vpnPlan.Name : c('Plan').t`Free`}
+            {mailPlan.Name === PLANS.VISIONARY ? null : (
+                <div className="flex-autogrid onmobile-flex-column w100">
+                    <div className="flex-autogrid-item">ProtonVPN plan</div>
+                    <div className="flex-autogrid-item bold capitalize">
+                        {user.hasPaidVpn ? vpnPlan.Name : c('Plan').t`Free`}
+                    </div>
+                    <div className="flex-autogrid-item alignright">
+                        <Link to="/settings/subscription">{c('Link').t`Manage`}</Link>
+                    </div>
                 </div>
-                <div className="flex-autogrid-item alignright">
-                    <Link to="/settings/subscription">{c('Link').t`Manage`}</Link>
-                </div>
-            </div>
+            )}
         </>
     );
 };
