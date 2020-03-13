@@ -62,12 +62,12 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
                         </text>
                     </svg>
                 </div>
-                <div className="flex flex-nowrap flex-spacebetween">
-                    <div>
+                <div className="flex flex-nowrap mw100">
+                    <div className="flex-item-fluid">
                         <span className="color-global-grey-dm bl mb0-5 opacity-40">{c('Label').t`Card holder`}</span>
-                        <span className="bigger mt0 mb0">{Name}</span>
+                        <span className="bigger mt0 mb0 inbl ellipsis mw100">{Name}</span>
                     </div>
-                    <div className="alignright">
+                    <div className="alignright flex-item-noshrink pl1">
                         <span className="color-global-grey-dm bl mb0-5 opacity-40">{c('Label').t`Expires`}</span>
                         <span className="bigger mt0 mb0">
                             {ExpMonth}/{ExpYear}
