@@ -67,7 +67,7 @@ const ComposerPasswordModal = ({ message = {}, onClose, onChange }: Props) => {
                 </Href>
             </Alert>
             <div className="flex flex-nowrap mb1">
-                <Label htmlFor={`composer-password-${uid}`} className="bold">{c('Info').t`Message Password`}</Label>
+                <Label htmlFor={`composer-password-${uid}`}>{c('Info').t`Message Password`}</Label>
                 <div className="flex-item-fluid">
                     <Input
                         id={`composer-password-${uid}`}
@@ -76,12 +76,12 @@ const ComposerPasswordModal = ({ message = {}, onClose, onChange }: Props) => {
                         required
                         value={password}
                         onChange={handleChange(setPassword)}
+                        placeholder={c('Placeholder').t`Password`}
                     />
                 </div>
             </div>
             <div className="flex flex-nowrap mb1">
-                <Label htmlFor={`composer-password-verif-${uid}`} className="bold">{c('Info')
-                    .t`Confirm Password`}</Label>
+                <Label htmlFor={`composer-password-verif-${uid}`}>{c('Info').t`Confirm Password`}</Label>
                 <div className="flex-item-fluid">
                     <Input
                         id={`composer-password-verif-${uid}`}
@@ -90,6 +90,7 @@ const ComposerPasswordModal = ({ message = {}, onClose, onChange }: Props) => {
                         required
                         value={passwordVerif}
                         onChange={handleChange(setPasswordVerif)}
+                        placeholder={c('Placeholder').t`Confirm Password`}
                     />
                 </div>
             </div>
@@ -102,6 +103,7 @@ const ComposerPasswordModal = ({ message = {}, onClose, onChange }: Props) => {
                         autoComplete="off"
                         value={passwordHint}
                         onChange={handleChange(setPasswordHint)}
+                        placeholder={c('Placeholder').t`Hint`}
                     />
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { Alert, Href, generateUID, useNotifications } from 'react-components';
+import { Alert, Href, generateUID, useNotifications, Label } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 
 import { Message, MessageExtended } from '../../models/message';
@@ -12,14 +12,12 @@ const initValues = ({ ExpiresIn = 0 }: Message = {}) => {
     const deltaDays = Math.floor(deltaHours / 24);
 
     return {
-        weeks: Math.floor(deltaDays / 7),
         days: deltaDays % 7,
         hours: deltaHours % 24
     };
 };
 
-const computeHours = ({ weeks, days, hours }: { weeks: number; days: number; hours: number }) =>
-    hours + (days + weeks * 7) * 24;
+const computeHours = ({ days, hours }: { days: number; hours: number }) => hours + days * 24;
 
 const optionRange = (size: number) =>
     range(0, size).map((value) => (
@@ -39,12 +37,11 @@ const ComposerExpirationModal = ({ message = {}, onClose, onChange }: Props) => 
 
     const values = initValues(message);
 
-    const [weeks, setWeeks] = useState(values.weeks);
     const [days, setDays] = useState(values.days);
     const [hours, setHours] = useState(values.hours);
     const { createNotification } = useNotifications();
 
-    const valueInHours = computeHours({ weeks, days, hours });
+    const valueInHours = computeHours({ days, hours });
 
     const handleChange = (setter: (value: number) => void) => (event: ChangeEvent<HTMLSelectElement>) => {
         setter(Number(event.target.value));
@@ -86,24 +83,16 @@ const ComposerExpirationModal = ({ message = {}, onClose, onChange }: Props) => 
                 <br />
                 <Href url="https://protonmail.com/support/knowledge-base/expiration/">{c('Info').t`Learn more`}</Href>
             </Alert>
-            <p className="bold">{c('Info').t`This message will expire in`}</p>
-            <div className="flex flex-nowrap flex-row flex-justify-center flex-items-center mb1">
-                <select
-                    id={`composer-expiration-weeks-${uid}`}
-                    className="pm-field mr0-25"
-                    value={weeks}
-                    onChange={handleChange(setWeeks)}
-                >
-                    {optionRange(5)}
-                </select>
-                <label htmlFor={`composer-expiration-weeks-${uid}`} className="mr0-5">{c('Info').t`Weeks`}</label>
+            <div className="flex flex-nowrap mt2 flex-items-center">
+                <Label>{c('Info').t`This message will expire in`}</Label>
                 <select
                     id={`composer-expiration-days-${uid}`}
                     className="pm-field mr0-25"
                     value={days}
                     onChange={handleChange(setDays)}
+                    placeholder={c('Info').t`Days`}
                 >
-                    {optionRange(7)}
+                    {optionRange(7 * 4)}
                 </select>
                 <label htmlFor={`composer-expiration-days-${uid}`} className="mr0-5">{c('Info').t`Days`}</label>
                 <select
