@@ -42,6 +42,11 @@ function getCommit {
     git rev-parse HEAD;
 }
 
+function getVersionDep {
+    local fromLockSelector=".dependencies.\"$1\".version";
+    jq -r "$fromLockSelector" package-lock.json | awk -F '#' '{print $2}' || echo '';
+}
+
 function getBranch {
 
     # Prevent weird branch's name on gitlab or HEAD
@@ -72,6 +77,9 @@ function toJSON {
     local buildDate="$(date -u '+%FT%TZ')";
     local release="$(getRelease)";
     local locales="$(getLocales)";
+    local depReactComponents="$(getVersionDep 'react-components')";
+    local depProtonShared="$(getVersionDep 'proton-shared')";
+    local depPmcrypto="$(getVersionDep 'pmcrypto')";
 
 cat <<EOT
 {
@@ -80,7 +88,12 @@ cat <<EOT
     "branch": "${branch}",
     "buildDate": "${buildDate}",
     "release": "${release}",
-    "locales": "${locales}"
+    "locales": "${locales}",
+    "dependencies": {
+        "react-components": "${depReactComponents}",
+        "proton-shared": "${depProtonShared}",
+        "pmcrypto": "${depPmcrypto}"
+    }
 }
 EOT
 }
