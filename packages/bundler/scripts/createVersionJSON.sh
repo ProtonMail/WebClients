@@ -43,8 +43,8 @@ function getCommit {
 }
 
 function getVersionDep {
-    local fromLockSelector=".dependencies.\"$1\".version";
-    jq -r "$fromLockSelector" package-lock.json | awk -F '#' '{print $2}' || echo '';
+    # sadly jq is not available everywhere, nor gawk
+    grep -E "version.+$1#" package-lock.json | awk -F '#' '{print $2}' | sed 's/",//' || echo '';
 }
 
 function getBranch {
