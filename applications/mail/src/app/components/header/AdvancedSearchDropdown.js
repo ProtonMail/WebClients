@@ -66,11 +66,11 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
     const [addresses, loadingAddresses] = useAddresses();
     const [model, updateModel] = useState(DEFAULT_MODEL);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event, reset) => {
         event.preventDefault(); // necessary to not run a basic submission
         event.stopPropagation(); // necessary to not submit normal search from header
 
-        const { labelID, address, begin, end, wildcard, from, to, attachments } = model;
+        const { labelID, address, begin, end, wildcard, from, to, attachments } = reset ? DEFAULT_MODEL : model;
 
         history.push(
             changeSearchParams(
@@ -79,7 +79,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                     pathname: `/${getHumanLabelID(labelID)}`
                 },
                 {
-                    keyword: keywordToString(fullInput),
+                    keyword: reset ? UNDEFINED : keywordToString(fullInput),
                     address: address === ALL_ADDRESSES ? UNDEFINED : address,
                     from: from.length ? formatRecipients(from) : UNDEFINED,
                     to: to.length ? formatRecipients(to) : UNDEFINED,
@@ -94,21 +94,11 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
         close();
     };
 
-    const handleReset = (event) => {
-        event.preventDefault();
-        close();
-    };
+    const handleReset = (event) => handleSubmit(event, true);
 
     useEffect(() => {
         if (isOpen) {
             updateModel(() => {
-                if (!fullInput) {
-                    return {
-                        ...DEFAULT_MODEL,
-                        labelID
-                    };
-                }
-
                 const { address, attachments, wildcard, from, to, begin, end } = extractSearchParameters(location);
 
                 return {
