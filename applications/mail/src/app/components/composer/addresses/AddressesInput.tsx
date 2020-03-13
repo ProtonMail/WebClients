@@ -124,7 +124,7 @@ const AddressesInput = ({
             currentValue={recipients}
         >
             <div
-                className="composer-addresses-container flex-item-fluid bordered-container pl1-25 pr1-25"
+                className="composer-addresses-container pm-field flex-item-fluid bordered-container pl1-25 pr1-25"
                 onClick={handleClick}
             >
                 {recipientsOrGroups.map((recipientsOrGroup, i) =>
@@ -145,7 +145,7 @@ const AddressesInput = ({
                         />
                     )
                 )}
-                <div className="flex-item-fluid">
+                <div className="flex-item-fluid flex flex-items-center">
                     <Input
                         id={id}
                         value={inputModel}

@@ -59,7 +59,7 @@ const AddressesRecipientItem = ({ recipient, onChange = noop, onRemove }: Props)
             />
             <button
                 type="button"
-                className="composer-addresses-item-remove inline-flex pl0-5 pr0-5 no-pointer-events-children h100"
+                className="composer-addresses-item-remove flex-item-noshrink inline-flex pl0-5 pr0-5 no-pointer-events-children h100"
                 onClick={onRemove}
             >
                 <Icon name="off" size={12} className="mauto" />

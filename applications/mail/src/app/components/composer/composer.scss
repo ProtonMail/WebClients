@@ -94,11 +94,11 @@
     padding-top: 6px;
     padding-bottom: 1px;
 
-    input {
+    .pm-field {
         border: none;
         padding: 0;
-        margin-bottom: 5px;
-        min-width: 100px;
+        min-width: 10rem;
+        background: inherit;
 
         &:focus {
             box-shadow: none;
@@ -145,6 +145,10 @@
 .composer-addresses-item.invalid {
     border-color: $pm-global-warning;
     color: $pm-global-warning;
+
+    .composer-addresses-item-label {
+        border-right-color: currentColor;
+    }
 }
 
 .composer-addresses-item-label,
@@ -152,10 +156,6 @@
     border-right: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
-// .composer-addresses-item-remove {
-//     background: none;
-//     border: none;
-// }
 
 .composer-addresses-ccbcc {
     position: absolute;
