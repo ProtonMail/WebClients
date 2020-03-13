@@ -70,7 +70,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
         event.preventDefault(); // necessary to not run a basic submission
         event.stopPropagation(); // necessary to not submit normal search from header
 
-        const { labelID, address, start, end, wildcard, from, to, attachments } = model;
+        const { labelID, address, begin, end, wildcard, from, to, attachments } = model;
 
         history.push(
             changeSearchParams(
@@ -83,7 +83,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                     address: address === ALL_ADDRESSES ? UNDEFINED : address,
                     from: from.length ? formatRecipients(from) : UNDEFINED,
                     to: to.length ? formatRecipients(to) : UNDEFINED,
-                    start: start ? getUnixTime(start) : UNDEFINED,
+                    begin: begin ? getUnixTime(begin) : UNDEFINED,
                     end: end ? getUnixTime(end) : UNDEFINED,
                     attachments,
                     wildcard
@@ -109,7 +109,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                     };
                 }
 
-                const { address, attachments, wildcard, from, to, start, end } = extractSearchParameters(location);
+                const { address, attachments, wildcard, from, to, begin, end } = extractSearchParameters(location);
 
                 return {
                     ...DEFAULT_MODEL,
@@ -119,7 +119,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                     wildcard,
                     from: getRecipients(from),
                     to: getRecipients(to),
-                    start: start ? fromUnixTime(start) : UNDEFINED,
+                    begin: begin ? fromUnixTime(begin) : UNDEFINED,
                     end: end ? fromUnixTime(end) : UNDEFINED
                 };
             });
@@ -244,14 +244,14 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                         </div>
                     </div>
                     <div className="mb1 flex flex-nowrap onmobile-flex-column">
-                        <Label className="advancedSearch-label" htmlFor="start-date">{c('Label').t`Between`}</Label>
+                        <Label className="advancedSearch-label" htmlFor="begin-date">{c('Label').t`Between`}</Label>
                         <div className="flex-item-fluid">
                             <DateInput
                                 placeholder={c('Placeholder').t`Start date`}
-                                id="start-date"
-                                value={model.start}
-                                onChange={(start) =>
-                                    (!model.end || isBefore(start, model.end)) && updateModel({ ...model, start })
+                                id="begin-date"
+                                value={model.begin}
+                                onChange={(begin) =>
+                                    (!model.end || isBefore(begin, model.end)) && updateModel({ ...model, begin })
                                 }
                             />
                         </div>
@@ -264,7 +264,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                                 id="end-date"
                                 value={model.end}
                                 onChange={(end) =>
-                                    (!model.start || isAfter(end, model.start)) && updateModel({ ...model, end })
+                                    (!model.begin || isAfter(end, model.begin)) && updateModel({ ...model, end })
                                 }
                             />
                         </div>
