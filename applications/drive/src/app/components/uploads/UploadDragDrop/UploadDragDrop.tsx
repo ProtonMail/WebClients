@@ -1,10 +1,10 @@
 import React, { ReactNode, createRef, useState, useEffect } from 'react';
 import { c } from 'ttag';
 
+import dragdropImageSvg from 'design-system/assets/img/pd-images/drag-and-drop.svg';
+
 import { useDriveResource } from '../../Drive/DriveResourceProvider';
 import useFiles from '../../../hooks/useFiles';
-
-import dragdropImageSvg from './drag-drop-image.svg';
 
 interface UploadDragDropProps {
     children: ReactNode;
