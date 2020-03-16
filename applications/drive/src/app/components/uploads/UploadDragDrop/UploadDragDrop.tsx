@@ -1,5 +1,6 @@
 import React, { ReactNode, createRef, useState, useEffect } from 'react';
 import { c } from 'ttag';
+
 import { useDriveResource } from '../../Drive/DriveResourceProvider';
 import useFiles from '../../../hooks/useFiles';
 
@@ -26,12 +27,12 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
         };
 
         dragOverEvents.forEach((eventName) => {
-            dropAreaRef.current?.addEventListener(eventName, handleDragOver, false);
+            dropAreaRef.current?.addEventListener(eventName, handleDragOver);
         });
 
         return () => {
             dragOverEvents.forEach((eventName) => {
-                dropAreaRef.current?.removeEventListener(eventName, handleDragOver, false);
+                dropAreaRef.current?.removeEventListener(eventName, handleDragOver);
             });
         };
     }, []);
@@ -60,19 +61,19 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
         };
 
         dragDropEvents.forEach((eventName) => {
-            overlayRef.current?.addEventListener(eventName, preventDefault, false);
+            overlayRef.current?.addEventListener(eventName, preventDefault);
         });
 
-        overlayRef.current?.addEventListener('dragleave', handleDragLeave, false);
-        overlayRef.current?.addEventListener('drop', handleOnDrop, false);
+        overlayRef.current?.addEventListener('dragleave', handleDragLeave);
+        overlayRef.current?.addEventListener('drop', handleOnDrop);
 
         return () => {
             dragDropEvents.forEach((eventName) => {
-                overlayRef.current?.removeEventListener(eventName, preventDefault, false);
+                overlayRef.current?.removeEventListener(eventName, preventDefault);
             });
 
-            overlayRef.current?.removeEventListener('dragleave', handleDragLeave, false);
-            overlayRef.current?.removeEventListener('drop', handleOnDrop, false);
+            overlayRef.current?.removeEventListener('dragleave', handleDragLeave);
+            overlayRef.current?.removeEventListener('drop', handleOnDrop);
         };
     }, [overlayIsVisible]);
 
