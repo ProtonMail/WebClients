@@ -12,6 +12,7 @@ import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
 import { LinkMeta, ResourceType } from '../interfaces/link';
 import { ResourceURLType } from '../constants';
 import DriveBreadcrumbs from '../components/DriveBreadcrumbs';
+import UploadDragDrop from '../components/uploads/UploadDragDrop/UploadDragDrop';
 
 const toResourceType = (type: ResourceURLType) => {
     const resourceType = {
@@ -108,20 +109,21 @@ function DriveContainer({
                         parentLinkID={location.state?.preloadedLink?.ParentLinkID}
                     />
                 )}
+                <UploadDragDrop>
+                    <PageMainArea hasToolbar className="flex flex-column">
+                        <StickyHeader>
+                            {resource && (
+                                <DriveBreadcrumbs
+                                    openResource={navigateToResource}
+                                    preloaded={location.state?.preloadedLink}
+                                    resource={resource}
+                                />
+                            )}
+                        </StickyHeader>
 
-                <PageMainArea hasToolbar className="flex flex-column">
-                    <StickyHeader>
-                        {resource && (
-                            <DriveBreadcrumbs
-                                openResource={navigateToResource}
-                                preloaded={location.state?.preloadedLink}
-                                resource={resource}
-                            />
-                        )}
-                    </StickyHeader>
-
-                    {resource && <Drive resource={resource} openResource={navigateToResource} />}
-                </PageMainArea>
+                        {resource && <Drive resource={resource} openResource={navigateToResource} />}
+                    </PageMainArea>
+                </UploadDragDrop>
             </DriveContentProvider>
         </Page>
     );
