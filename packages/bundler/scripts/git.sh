@@ -12,7 +12,7 @@ function getBranchCommit {
 }
 
 function getTag {
-  git describe --abbrev=0 || ''
+  git describe --tags --abbrev=0 || ''
 }
 
 function main {
