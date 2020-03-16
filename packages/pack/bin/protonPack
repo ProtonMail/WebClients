@@ -9,7 +9,7 @@ const localIp = require('my-local-ip');
 
 const configBuilder = require('../cli/config');
 const configAppBuilder = require('../cli/configApp');
-const { json, debug, success } = require('../cli/helpers/log');
+const { json, debug, success, error } = require('../cli/helpers/log');
 const { hasDirectory } = require('../cli/helpers/file');
 const { getPort, getPublicPath, findPort } = require('../webpack/helpers/source');
 
@@ -32,17 +32,18 @@ const getAppMode = () => {
     return getSingleArgument(argv.appMode) || 'bundle';
 };
 
-const {
-    config: appConfig,
-    path: appConfigPath,
-    apiUrl,
-    json: jsonConfig
-} = configAppBuilder(argv);
-
-const APP_MODE = getAppMode();
-const FEATURE_FLAGS = getFeatureFlags();
 
 async function main() {
+
+    const {
+        config: appConfig,
+        path: appConfigPath,
+        apiUrl,
+        json: jsonConfig
+    } = configAppBuilder(argv);
+
+    const APP_MODE = getAppMode();
+    const FEATURE_FLAGS = getFeatureFlags();
 
     // For any task BUT init we need to create a custom config for the app
     if (!is('init') && !is('help') && !is('print-config')) {
@@ -123,4 +124,4 @@ async function main() {
     }
 }
 
-main();
+main().catch(error);

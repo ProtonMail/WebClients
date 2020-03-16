@@ -16,7 +16,7 @@ const getBuildCommit = () => {
  * @param  {String} options.prod Sentry DSN URL
  * @return {String}
  */
-const getSentryDSN = ({ prod }) => {
+const getSentryDSN = ({ prod = '' }) => {
     if (prod.includes('@sentry')) {
         return prod;
     }
