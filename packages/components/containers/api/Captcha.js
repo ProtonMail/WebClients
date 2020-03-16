@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { useConfig } from 'react-components';
 import { getHost } from 'proton-shared/lib/helpers/url';
 import { createUrl } from 'proton-shared/lib/fetch/helpers';
+import { isURL } from 'proton-shared/lib/helpers/validators';
 
 const Captcha = ({ token, onSubmit }) => {
     const [style, setStyle] = useState();
     const { API_URL } = useConfig();
     const client = 'web';
-    const host = getHost(API_URL);
+    const host = isURL(API_URL) ? getHost(API_URL) : window.location.host;
     const url = createUrl('https://secure.protonmail.com/captcha/captcha.html', { token, client, host });
     const src = url.toString();
 
