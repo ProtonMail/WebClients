@@ -1,7 +1,7 @@
 const os = require('os');
 
 const { bash, script } = require('./helpers/cli');
-const { debug, IS_VERBOSE } = require('./helpers/log')('proton-bundler');
+const { debug } = require('./helpers/log')('proton-bundler');
 
 const OUTPUT_CLONE = 'dist-deploy';
 
@@ -40,7 +40,7 @@ async function pull(branch, force, fromCi) {
     await bash(`git clone "$(git remote get-url origin)" --depth 1 --branch ${branch} ${OUTPUT_CLONE}`);
     await bash(`cd ${OUTPUT_CLONE} && rm -rf *`);
 
-    if (IS_VERBOSE) {
+    if (process.env.IS_DEBUG_PROTON_BUNDLER === 'true') {
         const { stdout } = await bash('git remote show origin');
         debug(stdout);
     }
@@ -48,7 +48,9 @@ async function pull(branch, force, fromCi) {
 
 async function getConfig() {
     const { stdout = '' } = await script('git.sh');
-    return JSON.parse(stdout);
+
+    // Filter empty keys
+    return Object.entries(JSON.parse(stdout)).reduce((acc, [key, value]) => (value && (acc[key] = value), acc), {});
 }
 
 async function logCommits(branch = '', flowType, isWebsite) {
