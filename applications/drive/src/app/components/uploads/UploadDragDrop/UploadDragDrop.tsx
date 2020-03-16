@@ -82,11 +82,11 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
             <div ref={dropAreaRef}>{children}</div>
             {overlayIsVisible && (
                 <div ref={overlayRef} className={'pd-drag-drop'}>
-                    <div className="pd-drag-drop-infobox">
-                        <img className="image" src={dragdropImageSvg} alt="" />
-                        <div className="title">{c('Title').t`Drop to upload`}</div>
-                        <div className="text">{c('Info').t`Your file will be encrypted and then saved.`}</div>
-                    </div>
+                    <section className="pd-drag-drop-infobox p2">
+                        <img className="pd-drag-drop-image" src={dragdropImageSvg} alt="" aria-hidden="true" />
+                        <h2 className="bold m0">{c('Title').t`Drop to upload`}</h2>
+                        <p className="m0">{c('Info').t`Your file will be encrypted and then saved.`}</p>
+                    </section>
                 </div>
             )}
         </>
