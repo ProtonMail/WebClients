@@ -15,6 +15,7 @@ import LoaderPage from './LoaderPage';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import { useApi, useCache } from '../../index';
 import loadEventID from './loadEventID';
+import StandardLoadError from './StandardLoadError';
 
 const StandardPrivateApp = ({
     locales = {},
@@ -27,6 +28,7 @@ const StandardPrivateApp = ({
     children
 }) => {
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
     const eventManagerRef = useRef();
     const api = useApi();
     const cache = useCache();
@@ -49,14 +51,21 @@ const StandardPrivateApp = ({
             .then(() => {
                 setLoading(false);
             })
-            .catch(() => {
-                onLogout();
+            .catch((e) => {
+                if (e.name === 'InactiveSession') {
+                    return onLogout();
+                }
+                setError(true);
             });
 
         return () => {
             destroyOpenPGP();
         };
     }, []);
+
+    if (error) {
+        return <StandardLoadError />;
+    }
 
     if (loading) {
         return (
