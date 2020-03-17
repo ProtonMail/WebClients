@@ -95,7 +95,10 @@ export function initUpload({ requestUpload, transform, onProgress, finalize }: U
             )
         );
 
-        await runInQueue(blockUploaders, MAX_THREADS_PER_UPLOAD);
+        await runInQueue(blockUploaders, MAX_THREADS_PER_UPLOAD).catch((e) => {
+            abortController.abort();
+            return e;
+        });
 
         return UploadLinks.map(({ Token }, i) => ({
             Index: BlockList[i].Index,

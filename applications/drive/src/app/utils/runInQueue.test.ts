@@ -19,7 +19,7 @@ describe('runInQueue', () => {
                 return Promise.resolve(3);
             }
         ];
-        const results = await runInQueue(executors);
+        const results = await runInQueue(executors, 1);
         expect(results).toEqual([1, 2, 3]);
         expect(first).toBeTruthy();
         expect(second).toBeTruthy();
@@ -44,7 +44,7 @@ describe('runInQueue', () => {
         const executors = [() => first.promise, () => second.promise, () => third.promise];
 
         second.run();
-        const resultsPromise = runInQueue(executors);
+        const resultsPromise = runInQueue(executors, 1);
         third.run();
         first.run();
 

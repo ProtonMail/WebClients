@@ -11,10 +11,13 @@ function createDownloadStream(port: MessagePort) {
     return new ReadableStream({
         start(controller: ReadableStreamDefaultController) {
             port.onmessage = ({ data }) => {
-                if (data?.action === 'end') {
-                    return controller.close();
-                } else if (data?.action === 'download_chunk') {
-                    controller.enqueue(data?.payload);
+                switch (data?.action) {
+                    case 'end':
+                        return controller.close();
+                    case 'download_chunk':
+                        return controller.enqueue(data?.payload);
+                    case 'abort':
+                        return controller.error(data?.reason);
                 }
             };
         },

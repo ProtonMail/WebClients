@@ -1,12 +1,14 @@
-async function runInQueue<T>(queue: (() => Promise<T>)[], maxProcessing = 1): Promise<T[]> {
+async function runInQueue<T>(queue: ((index: number) => Promise<T>)[], maxProcessing: number): Promise<T[]> {
     const results: T[] = [];
+    let resultIndex = 0;
 
     const runNext = (): Promise<any> => {
         const executor = queue.shift();
-        const index = results.length;
+        const index = resultIndex;
+        resultIndex += 1;
 
         if (executor) {
-            return executor().then((result) => {
+            return executor(index).then((result) => {
                 results[index] = result;
                 return runNext();
             });

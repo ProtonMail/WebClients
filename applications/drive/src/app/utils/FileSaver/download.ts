@@ -59,6 +59,9 @@ export async function openDownloadStream(meta: TransferMeta, { onCancel }: { onC
         },
         close() {
             channel.port1.postMessage({ action: 'end' });
+        },
+        abort(reason) {
+            channel.port1.postMessage({ action: 'abort', reason });
         }
     });
 
