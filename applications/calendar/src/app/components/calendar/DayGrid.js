@@ -95,7 +95,7 @@ const DayGrid = ({
     return (
         <div className="flex-item-fluid scroll-if-needed view-column-detail is-month-view">
             <div className="calendar-daygrid flex flex-column relative h100" ref={mainRef}>
-                <div className="flex calendar-daygrid-days">
+                <div data-test-id="calendar-month-view:week-header" className="flex calendar-daygrid-days">
                     {displayWeekNumbers ? <div className="calendar-daygrid-weeknumber-width" /> : null}
                     {rows[0].map((day) => {
                         return (
@@ -142,10 +142,14 @@ const DayGrid = ({
                             const { eventsInRow, eventsInRowStyles, eventsInRowSummary } = eventsPerRows[rowIndex];
                             return (
                                 <div key={rowIndex} className="flex-item-fluid flex flex-column h100 w100 relative">
-                                    <div className="flex calendar-daygrid-columns no-pointer-events">
+                                    <div
+                                        data-test-id="calendar-month-view:week-row"
+                                        className="flex calendar-daygrid-columns no-pointer-events"
+                                    >
                                         {days.map((day) => {
                                             return (
                                                 <div
+                                                    data-test-id="calendar-month-view:day-cell"
                                                     className="flex-item-fluid calendar-daygrid-column"
                                                     key={day.getUTCDate()}
                                                 />

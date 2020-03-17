@@ -10,7 +10,7 @@ const CalendarSidebarList = ({ calendars = [], loading = false, onChangeVisibili
     return calendars.map(({ ID, Name, Display, Color }, i) => {
         return (
             <div className="navigation__link" key={ID}>
-                <span className="flex flex-nowrap flex-items-center">
+                <span data-test-id="calendar-sidebar:user-calendars" className="flex flex-nowrap flex-items-center">
                     <Checkbox
                         className="mr0-25 flex-item-noshrink"
                         color={getConstrastingColor(Color)}

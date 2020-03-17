@@ -61,8 +61,17 @@ const CreateEventPopover = ({
                 </div>
             </PopoverContent>
             <PopoverFooter>
-                <SmallButton className="mr1" onClick={handleMore}>{c('Action').t`More options`}</SmallButton>
-                <PrimaryButton type="submit" className="pm-button--small" loading={loadingAction}>
+                <SmallButton
+                    data-test-id="create-event-popover:more-event-options"
+                    className="mr1"
+                    onClick={handleMore}
+                >{c('Action').t`More options`}</SmallButton>
+                <PrimaryButton
+                    data-test-id="create-event-popover:save"
+                    type="submit"
+                    className="pm-button--small"
+                    loading={loadingAction}
+                >
                     {c('Action').t`Save`}
                 </PrimaryButton>
             </PopoverFooter>

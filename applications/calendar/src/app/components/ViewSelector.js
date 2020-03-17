@@ -7,7 +7,7 @@ import { VIEWS } from '../constants';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM } = VIEWS;
 
-const ViewSelector = ({ range, loading = false, disabled = false, view, onChange }) => {
+const ViewSelector = ({ range, loading = false, disabled = false, view, onChange, ...rest }) => {
     const options = [
         { text: c('Calendar view').t`Day`, value: DAY },
         { text: c('Calendar view').t`Week`, value: WEEK },
@@ -28,6 +28,7 @@ const ViewSelector = ({ range, loading = false, disabled = false, view, onChange
                         className={classnames(['toolbar-button color-currentColor', v === view && 'is-active'])}
                         aria-pressed={v === view ? true : undefined}
                         onClick={() => onChange(value)}
+                        {...rest}
                     >
                         <span className="mauto">{text}</span>
                     </button>

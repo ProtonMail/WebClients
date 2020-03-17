@@ -54,6 +54,7 @@ const NotificationInput = ({
                     />
                 ) : null}
                 <IntegerInput
+                    data-test-id="notification-time-input"
                     className="mr1"
                     step={1}
                     min={0}
@@ -75,6 +76,7 @@ const NotificationInput = ({
                     }}
                 />
                 <Select
+                    data-test-id="notification-time-dropdown"
                     className={classnames(['mr1', isAllDay && 'onmobile-mr0'])}
                     value={unit}
                     options={[
@@ -100,7 +102,7 @@ const NotificationInput = ({
                     }}
                 />
             </span>
-            <span className="flex flex-nowrap flex-items-center">
+            <span data-test-id="notification-time-before-at" className="flex flex-nowrap flex-items-center">
                 {hasWhen ? (
                     <Select
                         className="mr1 flex-item-noshrink pr0-5"

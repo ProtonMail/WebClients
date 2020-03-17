@@ -170,6 +170,7 @@ const CalendarContainerView = ({
                                     }
                                     viewSelector={
                                         <ViewSelector
+                                            data-test-id="calendar-view:view-options"
                                             isNarrow={isNarrow}
                                             view={view}
                                             range={range}
@@ -178,6 +179,7 @@ const CalendarContainerView = ({
                                     }
                                     timezoneSelector={
                                         <TimezoneSelector
+                                            data-test-id="calendar-view:time-zone-dropdown"
                                             className="toolbar-select nomobile notablet"
                                             date={utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate}
                                             timezone={tzid}
@@ -185,7 +187,7 @@ const CalendarContainerView = ({
                                         />
                                     }
                                 />
-                                <div className="flex main-area--withToolbar">
+                                <div data-test-id="calendar-view:events-area" className="flex main-area--withToolbar">
                                     {children}
                                     <div className="w50p nomobile hidden" />
                                 </div>

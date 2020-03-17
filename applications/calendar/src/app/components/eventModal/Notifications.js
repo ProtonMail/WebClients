@@ -21,6 +21,7 @@ const Notifications = ({ notifications, hasWhen, hasType, canAdd = true, default
                             onChange={(newNotification) => onChange(updateItem(notifications, index, newNotification))}
                         />
                         <LinkButton
+                            data-test-id="delete-notification"
                             className="flex-item-noshrink ml0-5"
                             title={c('Action').t`Remove notification`}
                             onClick={() => onChange(removeItem(notifications, index))}
@@ -30,9 +31,10 @@ const Notifications = ({ notifications, hasWhen, hasType, canAdd = true, default
             })}
             {canAdd && (
                 <div>
-                    <LinkButton onClick={() => onChange(addItem(notifications, { ...defaultNotification }))}>{c(
-                        'Action'
-                    ).t`Add notification`}</LinkButton>
+                    <LinkButton
+                        data-test-id="add-notification"
+                        onClick={() => onChange(addItem(notifications, { ...defaultNotification }))}
+                    >{c('Action').t`Add notification`}</LinkButton>
                 </div>
             )}
         </div>

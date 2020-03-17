@@ -44,6 +44,7 @@ const PartDayEvent = ({
         return (
             <>
                 <div
+                    data-test-id="calendar-day-week-view:part-day-event"
                     className={classnames([
                         'ellipsis calendar-eventcell-title',
                         loading && 'calendar-skeleton-loading'

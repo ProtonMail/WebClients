@@ -51,6 +51,7 @@ const CalendarSidebar = ({
             </div>
             <div className="nomobile pl1 pr1 pb1 flex-item-noshrink">
                 <PrimaryButton
+                    data-test-id="calendar-view:new-event-button"
                     className="pm-button--large bold mt0-25 w100"
                     disabled={!onCreateEvent}
                     onClick={() => onCreateEvent()}
@@ -58,7 +59,10 @@ const CalendarSidebar = ({
             </div>
             <div className="flex-item-fluid flex-nowrap flex flex-column scroll-if-needed customScrollBar-container pb1">
                 <div className="flex-item-noshrink">{miniCalendar}</div>
-                <nav className="navigation mw100 flex-item-fluid-auto">
+                <nav
+                    data-test-id="calendar-sidebar:calendars-list-area"
+                    className="navigation mw100 flex-item-fluid-auto"
+                >
                     <NavMenu
                         list={[
                             {

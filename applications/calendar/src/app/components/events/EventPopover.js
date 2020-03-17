@@ -63,8 +63,14 @@ const EventPopover = ({
     };
 
     const deleteButton = (
-        <SmallButton onClick={loadingAction ? noop : handleDelete} loading={loadingAction} className="mr1">{c('Action')
-            .t`Delete`}</SmallButton>
+        <SmallButton
+            data-test-id="event-popover:delete"
+            onClick={loadingAction ? noop : handleDelete}
+            loading={loadingAction}
+            className="mr1"
+        >
+            {c('Action').t`Delete`}
+        </SmallButton>
     );
 
     const mergedClassName = classnames(['eventpopover', isNarrow && 'eventpopover--full-width']);
@@ -127,6 +133,7 @@ const EventPopover = ({
             <PopoverFooter>
                 {deleteButton}
                 <PrimaryButton
+                    data-test-id="event-popover:edit"
                     className="pm-button--small"
                     onClick={handleEdit}
                     disabled={loadingAction || isCalendarDisabled}

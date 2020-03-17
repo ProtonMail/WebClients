@@ -25,7 +25,12 @@ const SelectDeleteType = ({ hasDeleteAll, type, setType }) => {
                 const id = i.toString();
                 return (
                     <Row key={i}>
-                        <Radio id={id} checked={value === type} onChange={() => setType(value)}>
+                        <Radio
+                            data-test-id="delete-recurring-popover:delete-option-radio"
+                            id={id}
+                            checked={value === type}
+                            onChange={() => setType(value)}
+                        >
                             <span className="flex-item-fluid">{label}</span>
                         </Radio>
                     </Row>

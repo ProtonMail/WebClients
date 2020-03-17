@@ -41,7 +41,7 @@ const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, on
                                         {Name}
                                     </span>
                                 </div>,
-                                <div key="status">
+                                <div data-test-id="calendar-settings-page:calendar-status" key="status">
                                     {isDefault && <Badge type="primary">{c('Calendar status').t`Default`}</Badge>}
                                     {isActive && <Badge type="success">{c('Calendar status').t`Active`}</Badge>}
                                     {isDisabled && <Badge type="warning">{c('Calendar status').t`Disabled`}</Badge>}

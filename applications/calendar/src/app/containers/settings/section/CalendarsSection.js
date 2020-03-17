@@ -109,7 +109,11 @@ const CalendarsSection = ({ calendars = [], calendarUserSettings = {}, disabled 
         <>
             <SubTitle>{c('Title').t`Calendars`}</SubTitle>
             <div className="mb1">
-                <PrimaryButton disabled={!canAddCalendar || disabled} onClick={handleCreate}>
+                <PrimaryButton
+                    data-test-id="calendar-setting-page:add-calendar"
+                    disabled={!canAddCalendar || disabled}
+                    onClick={handleCreate}
+                >
                     {c('Action').t`Add calendar`}
                 </PrimaryButton>
             </div>

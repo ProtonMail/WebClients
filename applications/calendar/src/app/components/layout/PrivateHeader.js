@@ -22,6 +22,7 @@ const PrivateHeader = ({ title, url, inSettings, onCreateEvent, expanded, onTogg
                 {hasPaidMail || isNarrow ? null : <UpgradeButton external={true} />}
                 {isNarrow && !inSettings ? null : (
                     <TopNavbarLink
+                        data-test-id="calendar-view:calendar-icon-top-bar"
                         className="nomobile"
                         to={url}
                         icon="calendar"
@@ -31,6 +32,7 @@ const PrivateHeader = ({ title, url, inSettings, onCreateEvent, expanded, onTogg
                 )}
                 {isNarrow && inSettings ? null : (
                     <TopNavbarLink
+                        data-test-id="calendar-view:general-calendar-settings-icon"
                         to={`${url}/settings/general`}
                         icon="settings-master"
                         text={c('Title').t`Settings`}

@@ -228,7 +228,10 @@ const TimeGrid = React.forwardRef(
                             !scrollTop && 'sticky-title--onTop'
                         ])}
                     >
-                        <div className="flex calendar-first-row-heading">
+                        <div
+                            data-test-id="calendar-day-week-view:week-header"
+                            className="flex calendar-first-row-heading"
+                        >
                             {displaySecondaryTimezone ? (
                                 <div className="calendar-aside aligncenter flex flex-column flex-justify-end">
                                     <div className="calendar-secondary-timezone-cell calendar-secondary-timezone-cell--header">
@@ -298,7 +301,11 @@ const TimeGrid = React.forwardRef(
                                     return null;
                                 }
                                 return (
-                                    <div className="flex-item-fluid relative calendar-grid-gridcell h100" key={key}>
+                                    <div
+                                        data-test-id="calendar-week-day-view:weekday-column"
+                                        className="flex-item-fluid relative calendar-grid-gridcell h100"
+                                        key={key}
+                                    >
                                         <DayEvents
                                             tzid={tzid}
                                             Component={PartDayEvent}

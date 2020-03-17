@@ -13,6 +13,7 @@ const EventSettingsTab = ({ model, setModel }) => {
                 <Label>{c('Label').t`Default event duration`}</Label>
                 <Field>
                     <Select
+                        data-test-id="create-calendar/event-settings:event-duration"
                         value={model.duration}
                         options={[
                             { text: c('Duration').t`30 minutes`, value: 30 },
@@ -26,7 +27,7 @@ const EventSettingsTab = ({ model, setModel }) => {
             </Row>
             <Row>
                 <Label>{c('Label').t`Default notifications`}</Label>
-                <div className="flex-item-fluid">
+                <div data-test-id="create-calendar/event-settings:default-notification" className="flex-item-fluid">
                     <Notifications
                         notifications={model.partDayNotifications}
                         canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
@@ -42,7 +43,10 @@ const EventSettingsTab = ({ model, setModel }) => {
             </Row>
             <Row>
                 <Label>{c('Label').t`Default full day notifications`}</Label>
-                <div className="flex-item-fluid">
+                <div
+                    data-test-id="create-calendar/event-settings:default-full-day-notification"
+                    className="flex-item-fluid"
+                >
                     <Notifications
                         notifications={model.fullDayNotifications}
                         canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}

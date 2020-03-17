@@ -33,6 +33,7 @@ const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, model, setModel }
                 <div className="flex flex-nowrap flex-item-fluid">
                     <TimezoneSelector
                         id="event-start-timezone-select"
+                        data-test-id="create-event-modal/start:time-zone-dropdown"
                         timezone={model.start.tzid}
                         onChange={handleChangeStart}
                     />
@@ -43,6 +44,7 @@ const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, model, setModel }
                 <div className="flex flex-nowrap flex-item-fluid">
                     <TimezoneSelector
                         id="event-end-timezone-select"
+                        data-test-id="create-event-modal/end:time-zone-dropdown"
                         timezone={model.end.tzid}
                         onChange={handleChangeEnd}
                     />

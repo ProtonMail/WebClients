@@ -60,7 +60,7 @@ const FullDayEvent = ({
                         <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-90" />
                     ) : null}
 
-                    <span className="flex-item-fluid ellipsis">
+                    <span data-test-id="calendar-view:all-day-event" className="flex-item-fluid ellipsis">
                         {loading ? (
                             ''
                         ) : (

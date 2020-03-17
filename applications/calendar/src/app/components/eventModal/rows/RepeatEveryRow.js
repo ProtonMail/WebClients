@@ -41,6 +41,7 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted, 
                     <div className="flex flex-nowrap onmobile-w100 flex-item-fluid mb0-5">
                         <div className="flex-item-fluid">
                             <IntegerInput
+                                data-test-id="event-modal/custom-frequency/interval:input"
                                 min={1}
                                 value={frequencyModel.interval}
                                 onChange={handleChangeInterval}
@@ -52,6 +53,7 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted, 
                         <div className="flex-item-fluid">
                             <Select
                                 id="event-custom-frequency-select"
+                                data-test-id="event-modal/custom-frequency/interval:frequency"
                                 value={frequencyModel.frequency}
                                 options={intervalOptions}
                                 onChange={({ target }) => handleChangeFrequency(target.value)}

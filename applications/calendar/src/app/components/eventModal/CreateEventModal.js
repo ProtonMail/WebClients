@@ -35,13 +35,13 @@ const CreateEventModal = ({
 
     // Can't use default close button in FormModal because button type reset resets selects
     const closeButton = (
-        <Button disabled={loadingAction} onClick={onClose}>
+        <Button data-test-id="event-creation-modal:cancel-event-creation" disabled={loadingAction} onClick={onClose}>
             {c('Action').t`Cancel`}
         </Button>
     );
 
     const submitButton = (
-        <PrimaryButton loading={loadingAction} type="submit">
+        <PrimaryButton data-test-id="create-event-modal:save" loading={loadingAction} type="submit">
             {c('Action').t`Save`}
         </PrimaryButton>
     );

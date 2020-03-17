@@ -109,6 +109,7 @@ const TimeSection = ({
                     </div>
                     <div>
                         <TimezoneSelector
+                            data-test-id="settings/general/primary-time-zone:dropdown"
                             loading={loadingPrimaryTimeZone}
                             timezone={primaryTimezoneValue}
                             onChange={(PrimaryTimezone) =>
@@ -138,6 +139,7 @@ const TimeSection = ({
                     </div>
                     <div>
                         <TimezoneSelector
+                            data-test-id="settings/general/secondary-time-zone:dropdown"
                             loading={loadingSecondaryTimeZone}
                             disabled={!DisplaySecondaryTimezone}
                             timezone={secondaryTimezoneValue}

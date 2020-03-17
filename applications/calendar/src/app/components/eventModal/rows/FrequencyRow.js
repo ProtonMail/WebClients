@@ -29,6 +29,7 @@ const FrequencyRow = ({
                     <FrequencyInput
                         className="mb1"
                         id="event-frequency-select"
+                        data-test-id="event-modal/frequency:select"
                         value={frequencyModel.type}
                         onChange={handleChangeFrequencyType}
                     />
