@@ -16,12 +16,15 @@ import { ELEMENT_TYPES } from '../../constants';
 import { getSenders } from '../../helpers/conversation';
 import { getRecipientLabel, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../helpers/addresses';
 import { ContactEmail } from '../../models/contact';
+import { isCustomFolder } from '../../helpers/labels';
+import { Folder } from 'proton-shared/lib/interfaces/Folder';
 
 const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
 interface Props {
     location: Location;
     labels?: Label[];
+    folders?: Folder[];
     labelID: string;
     elementID?: string;
     mailSettings: any;
@@ -39,6 +42,7 @@ const Item = ({
     location,
     labelID,
     labels,
+    folders,
     element,
     elementID,
     mailSettings = {},
@@ -56,6 +60,10 @@ const Item = ({
     const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
     const type = getCurrentType({ mailSettings, labelID, location });
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
+    const showIcon =
+        labelID === MAILBOX_LABEL_IDS.ALL_MAIL ||
+        labelID === MAILBOX_LABEL_IDS.STARRED ||
+        isCustomFolder(labelID, folders);
     const senders = isConversation ? getSenders(element) : [getSender(element)];
     const recipients = isConversation ? getRecipients(element) : getMessageRecipients(element);
     const sendersLabels = senders.map(getRecipientLabel);
@@ -110,6 +118,7 @@ const Item = ({
                 element={element}
                 mailSettings={mailSettings}
                 type={type}
+                showIcon={showIcon}
                 senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
                 unread={unread}
             />

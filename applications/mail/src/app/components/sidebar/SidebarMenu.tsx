@@ -54,33 +54,60 @@ const SidebarMenu = ({ labelID: currentLabelID, location }: Props) => {
         currentLabelID,
         labelID,
         isConversation,
-        isFolder: false,
         count: counterMap[labelID]
     });
 
     return (
         <CommonSidebarMenu className="mt0">
-            <SidebarItem {...getCommonProps(MAILBOX_LABEL_IDS.INBOX)} icon="inbox" text={c('Link').t`Inbox`} />
+            <SidebarItem
+                {...getCommonProps(MAILBOX_LABEL_IDS.INBOX)}
+                icon="inbox"
+                text={c('Link').t`Inbox`}
+                isFolder={true}
+            />
             <SidebarItem
                 {...getCommonProps(
                     ShowMoved & SHOW_MOVED.DRAFTS ? MAILBOX_LABEL_IDS.ALL_DRAFTS : MAILBOX_LABEL_IDS.DRAFTS
                 )}
                 icon="drafts"
                 text={c('Link').t`Drafts`}
+                isFolder={true}
             />
             <SidebarItem
                 {...getCommonProps(ShowMoved & SHOW_MOVED.SENT ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT)}
                 icon="sent"
                 text={c('Link').t`Sent`}
+                isFolder={true}
             />
-            <SidebarItem {...getCommonProps(MAILBOX_LABEL_IDS.STARRED)} icon="star" text={c('Link').t`Starred`} />
-            <SidebarItem {...getCommonProps(MAILBOX_LABEL_IDS.ARCHIVE)} icon="archive" text={c('Link').t`Archive`} />
-            <SidebarItem {...getCommonProps(MAILBOX_LABEL_IDS.SPAM)} icon="spam" text={c('Link').t`Spam`} />
-            <SidebarItem {...getCommonProps(MAILBOX_LABEL_IDS.TRASH)} icon="trash" text={c('Link').t`Trash`} />
+            <SidebarItem
+                {...getCommonProps(MAILBOX_LABEL_IDS.STARRED)}
+                icon="star"
+                text={c('Link').t`Starred`}
+                isFolder={false}
+            />
+            <SidebarItem
+                {...getCommonProps(MAILBOX_LABEL_IDS.ARCHIVE)}
+                icon="archive"
+                text={c('Link').t`Archive`}
+                isFolder={true}
+            />
+            <SidebarItem
+                {...getCommonProps(MAILBOX_LABEL_IDS.SPAM)}
+                icon="spam"
+                text={c('Link').t`Spam`}
+                isFolder={true}
+            />
+            <SidebarItem
+                {...getCommonProps(MAILBOX_LABEL_IDS.TRASH)}
+                icon="trash"
+                text={c('Link').t`Trash`}
+                isFolder={true}
+            />
             <SidebarItem
                 {...getCommonProps(MAILBOX_LABEL_IDS.ALL_MAIL)}
                 icon="all-emails"
                 text={c('Link').t`All mail`}
+                isFolder={true}
             />
             <SidebarGroupHeader
                 toggled={displayFolders}

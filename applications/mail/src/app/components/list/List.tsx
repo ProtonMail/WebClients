@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, DragEvent } from 'react';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
-import { useLabels, useContactEmails, useContactGroups } from 'react-components';
+import { useLabels, useContactEmails, useContactGroups, useFolders } from 'react-components';
 
 import Item from './Item';
 import { Element } from '../../models/element';
@@ -36,6 +36,7 @@ const List = ({
     const [contacts = [], loadingContacts] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [contactGroups = [], loadingGroups] = useContactGroups();
     const [labels] = useLabels();
+    const [folders] = useFolders();
     const [lastChecked, setLastChecked] = useState<string>(); // Store ID of the last element ID checked
     const [dragElement, setDragElement] = useState<HTMLDivElement>();
     const [savedCheck, setSavedCheck] = useState<string[]>();
@@ -91,13 +92,19 @@ const List = ({
         setDragElement(dragElement);
     };
 
-    const handleDragEnd = () => {
+    const handleDragEnd = (event: DragEvent) => {
         if (dragElement) {
             document.body.removeChild(dragElement);
             setDragElement(undefined);
         }
+        const action = event.dataTransfer.dropEffect;
+        if (action !== 'none') {
+            onCheck([], true, true);
+        }
         if (savedCheck) {
-            onCheck(savedCheck, true, true);
+            if (action === 'none') {
+                onCheck(savedCheck, true, true);
+            }
             setSavedCheck(undefined);
         }
     };
@@ -111,6 +118,7 @@ const List = ({
                     <Item
                         location={location}
                         labels={labels}
+                        folders={folders}
                         labelID={labelID}
                         key={element.ID}
                         elementID={elementID}

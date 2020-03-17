@@ -3,7 +3,6 @@ import { c, msgid } from 'ttag';
 import { useApi, useNotifications, useEventManager } from 'react-components';
 import { labelMessages, unlabelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/conversations';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 export const useApplyLabels = () => {
@@ -45,25 +44,28 @@ export const useMoveToFolder = () => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
-    const moveToFolder = useCallback(async (isMessage: boolean, elementIDs: string[], folder?: Folder) => {
-        const action = isMessage ? labelMessages : labelConversations;
+    const moveToFolder = useCallback(
+        async (isMessage: boolean, elementIDs: string[], folderID: string, folderName: string) => {
+            const action = isMessage ? labelMessages : labelConversations;
 
-        await api(action({ LabelID: folder?.ID, IDs: elementIDs }));
-        await call();
-        createNotification({
-            text: isMessage
-                ? c('Success').ngettext(
-                      msgid`Message moved to ${folder?.Name}`,
-                      `Messages moved to ${folder?.Name}`,
-                      elementIDs.length
-                  )
-                : c('Success').ngettext(
-                      msgid`Conversation moved to ${folder?.Name}`,
-                      `Conversations moved to ${folder?.Name}`,
-                      elementIDs.length
-                  )
-        });
-    }, []);
+            await api(action({ LabelID: folderID, IDs: elementIDs }));
+            await call();
+            createNotification({
+                text: isMessage
+                    ? c('Success').ngettext(
+                          msgid`Message moved to ${folderName}`,
+                          `Messages moved to ${folderName}`,
+                          elementIDs.length
+                      )
+                    : c('Success').ngettext(
+                          msgid`Conversation moved to ${folderName}`,
+                          `Conversations moved to ${folderName}`,
+                          elementIDs.length
+                      )
+            });
+        },
+        []
+    );
 
     return moveToFolder;
 };

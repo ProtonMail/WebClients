@@ -5,7 +5,7 @@ import { useState, DragEvent } from 'react';
  * Takes an optional filter function to accept only specific drag content
  * Returns the flag and the handlers to pass to the element you want to drag on
  */
-export const useDragOver = (dragFilter: (event: DragEvent) => boolean = () => true) => {
+export const useDragOver = (dragFilter: (event: DragEvent) => boolean = () => true, dropEffect = 'move') => {
     const [dragOver, setDragOver] = useState(0);
 
     const handleDragEnter = (event: DragEvent) => {
@@ -22,6 +22,7 @@ export const useDragOver = (dragFilter: (event: DragEvent) => boolean = () => tr
     };
     const handleDragOver = (event: DragEvent) => {
         if (dragFilter(event)) {
+            event.dataTransfer.dropEffect = dropEffect;
             event.preventDefault();
         }
     };

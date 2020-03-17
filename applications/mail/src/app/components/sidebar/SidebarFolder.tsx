@@ -20,7 +20,8 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, isConversation
             labelID={folder.ID}
             isFolder={true}
             isConversation={isConversation}
-            text={
+            text={folder.Name}
+            content={
                 <div className="flex flex-nowrap" data-level={level}>
                     <Icon
                         className="mr0-5 navigation__icon flex-item-noshrink"

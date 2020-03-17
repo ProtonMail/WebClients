@@ -16,11 +16,12 @@ interface Props {
     element: Element;
     mailSettings: any;
     type: string;
+    showIcon: boolean;
     senders: string;
     unread: boolean;
 }
 
-const ItemColumnLayout = ({ labels, element, mailSettings = {}, type, senders, unread }: Props) => {
+const ItemColumnLayout = ({ labels, element, mailSettings = {}, type, showIcon, senders, unread }: Props) => {
     const { Subject } = element;
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
 
@@ -28,10 +29,9 @@ const ItemColumnLayout = ({ labels, element, mailSettings = {}, type, senders, u
         <div className="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
             <div className="flex">
                 <div className="flex-item-fluid flex w0 pr1">
-                    {isConversation ? (
+                    {showIcon && <ItemLocation message={element} mailSettings={mailSettings} />}
+                    {isConversation && (
                         <NumMessages className={classnames(['mr0-25', unread && 'bold'])} conversation={element} />
-                    ) : (
-                        <ItemLocation message={element} mailSettings={mailSettings} />
                     )}
                     <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
                 </div>

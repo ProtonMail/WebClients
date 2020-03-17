@@ -17,11 +17,12 @@ interface Props {
     element: Element;
     mailSettings: any;
     type: string;
+    showIcon: boolean;
     senders: string;
     unread: boolean;
 }
 
-const ItemRowLayout = ({ labels, element, mailSettings = {}, type, senders, unread }: Props) => {
+const ItemRowLayout = ({ labels, element, mailSettings = {}, type, showIcon, senders, unread }: Props) => {
     const { Subject, Size } = element;
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
     const size = humanSize(Size);
@@ -30,10 +31,9 @@ const ItemRowLayout = ({ labels, element, mailSettings = {}, type, senders, unre
         <div className="flex-item-fluid flex flex-nowrap flex-row flex-spacebetween item-titlesender">
             <div className={classnames(['w20 flex mauto pr1', unread && 'bold'])}>{senders}</div>
             <div className="flex-item-fluid flex mauto">
-                {isConversation ? (
+                {showIcon && <ItemLocation message={element} mailSettings={mailSettings} />}
+                {isConversation && (
                     <NumMessages className={classnames(['mr0-25', unread && 'bold'])} conversation={element} />
-                ) : (
-                    <ItemLocation message={element} mailSettings={mailSettings} />
                 )}
                 <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
                 <ItemLabels max={4} labels={labels} element={element} />
