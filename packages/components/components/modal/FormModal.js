@@ -26,6 +26,7 @@ const Modal = ({
     hasSubmit = true,
     hasClose = true,
     noValidate = false,
+    autoFocusClose = true,
     // Destructure these options so they are not passed to the DOM.
     // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
     disableCloseOnLocation,
@@ -74,7 +75,7 @@ function DemoModal({ onAdd, ...rest }) {
         return (
             <FooterModal>
                 {typeof close === 'string' ? (
-                    <ResetButton disabled={loading} autoFocus={true}>
+                    <ResetButton disabled={loading} autoFocus={autoFocusClose}>
                         {close}
                     </ResetButton>
                 ) : (
@@ -119,6 +120,7 @@ Modal.propTypes = {
     background: PropTypes.bool,
     hasSubmit: PropTypes.bool,
     hasClose: PropTypes.bool,
+    autoFocusClose: PropTypes.bool,
     disableCloseOnLocation: PropTypes.bool,
     disableCloseOnOnEscape: PropTypes.bool
 };
