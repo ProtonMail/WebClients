@@ -101,7 +101,7 @@ const CalendarContainerView = ({
     }, [location.pathname]);
 
     return (
-        <div className="flex flex-nowrap no-scroll" ref={containerRef}>
+        <div className={classnames(['flex flex-nowrap no-scroll', isBlurred && 'filter-blur'])} ref={containerRef}>
             <AppsSidebar
                 items={[
                     <StorageSpaceStatus
@@ -114,7 +114,7 @@ const CalendarContainerView = ({
                     />
                 ]}
             />
-            <div className={classnames(['content flex-item-fluid reset4print', isBlurred && 'filter-blur'])}>
+            <div className="content flex-item-fluid reset4print">
                 <PrivateHeader
                     url="/calendar"
                     inSettings={false}
