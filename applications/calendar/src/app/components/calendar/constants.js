@@ -7,3 +7,5 @@ export const TYPES = {
 };
 
 export const MORE_BITS = 0b1111;
+
+export const DAY_EVENT_HEIGHT = 28; // in px

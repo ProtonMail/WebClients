@@ -3,6 +3,7 @@ import { classnames, Icon } from 'react-components';
 
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 import { getConstrastingColor } from '../../helpers/color';
+import { getEventErrorMessage, getEventLoadingMessage } from './error';
 
 const PartDayEvent = ({
     style,
@@ -15,17 +16,38 @@ const PartDayEvent = ({
 }) => {
     const [value, loading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value, tzid);
+
     const calendarColor = (tmpData && tmpData.calendar.color) || Calendar.Color;
+    const safeTitle = (tmpData && tmpData.title) || model.title || '';
+
     const eventStyle = useMemo(() => {
         const background = calendarColor;
         return {
             ...style,
-            background,
-            color: getConstrastingColor(background)
+            '--background': background,
+            '--foreground': getConstrastingColor(background)
         };
     }, [calendarColor, style, isAllDay, isSelected]);
 
-    const titleString = (tmpData && tmpData.title) || (!loading && model.title) || '';
+    const titleString = (() => {
+        if (error) {
+            return '';
+        }
+        if (loading) {
+            return '…';
+        }
+        return safeTitle;
+    })();
+
+    const expandableTitleString = (() => {
+        if (error) {
+            return getEventErrorMessage(error);
+        }
+        if (loading) {
+            return getEventLoadingMessage();
+        }
+        return titleString;
+    })();
 
     const timeString = useMemo(() => {
         const timeStart = formatTime(start);
@@ -38,18 +60,12 @@ const PartDayEvent = ({
 
     const content = (() => {
         if (error) {
-            return <Icon name="lock" />;
+            return <Icon name="lock" className="calendar-eventcell-lock-icon" />;
         }
 
         return (
             <>
-                <div
-                    data-test-id="calendar-day-week-view:part-day-event"
-                    className={classnames([
-                        'ellipsis calendar-eventcell-title',
-                        loading && 'calendar-skeleton-loading'
-                    ])}
-                >
+                <div data-test-id="calendar-day-week-view:part-day-event" className="ellipsis calendar-eventcell-title">
                     {titleString}
                 </div>
                 <div className={classnames(['ellipsis calendar-eventcell-timestring', shouldHideTime && 'hidden'])}>
@@ -64,8 +80,13 @@ const PartDayEvent = ({
     return (
         <div
             style={eventStyle}
-            className={classnames(['calendar-eventcell no-scroll pl0-5 pr0-5', isBeforeNowClassModifier])}
+            className={classnames([
+                'calendar-eventcell no-scroll pl0-5 pr0-5',
+                !loading && 'calendar-eventcell--isLoaded',
+                isBeforeNowClassModifier
+            ])}
             ref={eventRef}
+            title={expandableTitleString}
         >
             {content}
         </div>

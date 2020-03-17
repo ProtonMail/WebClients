@@ -70,7 +70,7 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
                     style: {
                         top: `${top * dayEventHeight}px`,
                         left: toPercent(left),
-                        height: `${dayEventHeight}px`,
+                        '--height': `${dayEventHeight}px`,
                         width: toPercent(width)
                     }
                 });

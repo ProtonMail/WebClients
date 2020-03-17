@@ -9,6 +9,7 @@ import createDayGridMouseHandler from './interactions/dayGridMouseHandler';
 import { useRect } from '../../hooks/useRect';
 import RowEvents from './DayGrid/RowEvents';
 import DayButtons from './DayGrid/DayButtons';
+import { DAY_EVENT_HEIGHT } from './constants';
 
 export const getEvent = (idx, eventsInRow, events) => {
     const { idx: eventIdx } = eventsInRow[idx];
@@ -41,7 +42,7 @@ const DayGrid = ({
     const [numberOfRows, setNumberOfRows] = useState(0);
 
     const daysInWeek = 7;
-    const dayEventHeight = 28; // in px
+    const dayEventHeight = DAY_EVENT_HEIGHT;
 
     const rows = useMemo(() => {
         return chunk(eachDayOfInterval(start, end), daysInWeek);

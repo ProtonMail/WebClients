@@ -1,10 +1,11 @@
 import React from 'react';
+import { classnames } from 'react-components';
 
 import FullDayEvent from './FullDayEvent';
 import PopoverHeader from './PopoverHeader';
 import PopoverContent from './PopoverContent';
 import { TYPE } from '../calendar/interactions/constants';
-import { classnames } from 'react-components';
+import { DAY_EVENT_HEIGHT } from '../calendar/constants';
 
 const MorePopoverEvent = ({
     isNarrow,
@@ -33,7 +34,10 @@ const MorePopoverEvent = ({
             <PopoverContent>
                 {events.map((event) => {
                     const props = {
-                        onClick: () => onClickEvent({ id: event.id, idx: date.getUTCDate(), type: TYPE.MORE })
+                        onClick: () => onClickEvent({ id: event.id, idx: date.getUTCDate(), type: TYPE.MORE }),
+                        style: {
+                            '--height': `${DAY_EVENT_HEIGHT}px`
+                        }
                     };
                     const isSelected = targetEventData && targetEventData.id === event.id;
                     const isThisSelected =

@@ -3,6 +3,7 @@ import { Icon, classnames } from 'react-components';
 
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 import { getConstrastingColor } from '../../helpers/color';
+import { getEventErrorMessage, getEventLoadingMessage } from './error';
 
 const FullDayEvent = ({
     style,
@@ -21,62 +22,62 @@ const FullDayEvent = ({
     const model = useReadEvent(value, tzid);
 
     const calendarColor = (tmpData && tmpData.calendar.color) || Calendar.Color;
+    const safeTitle = (tmpData && tmpData.title) || model.title || '';
 
     const eventStyle = useMemo(() => {
-        if (!isAllDay) {
-            return {};
-        }
         const background = calendarColor;
         return {
-            background,
-            color: getConstrastingColor(background)
+            '--background': background,
+            '--foreground': getConstrastingColor(background)
         };
     }, [calendarColor, isAllDay, isSelected]);
 
     const startTimeString = useMemo(() => {
-        return formatTime(start);
-    }, [start]);
-
-    const titleString = (tmpData && tmpData.title) || (!loading && model.title) || '';
-
-    const content = (() => {
-        if (error) {
-            return <Icon name="lock" />;
+        if (start && (!isAllDay || isAllPartDay)) {
+            return formatTime(start);
         }
+    }, [start, isAllPartDay, isAllDay, formatTime]);
 
-        return (
-            <div className="flex flex-nowrap w100 bg-inherit">
-                <span
-                    className={classnames([
-                        'flex-item-fluid flex flex-nowrap w100 flex-items-center',
-                        loading && 'calendar-skeleton-loading'
-                    ])}
-                >
-                    {!isAllDay ? (
-                        <Icon className="mr0-25 flex-item-noshrink" size={12} name="circle" color={calendarColor} />
-                    ) : null}
-
-                    {isOutsideStart && !loading ? (
-                        <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-90" />
-                    ) : null}
-
-                    <span data-test-id="calendar-view:all-day-event" className="flex-item-fluid ellipsis">
-                        {loading ? (
-                            ''
-                        ) : (
-                            <>
-                                {!isAllDay || isAllPartDay ? startTimeString : null} {titleString}
-                            </>
-                        )}
-                    </span>
-
-                    {isOutsideEnd && !loading ? (
-                        <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-270" />
-                    ) : null}
-                </span>
-            </div>
-        );
+    const titleString = (() => {
+        if (error) {
+            return '';
+        }
+        if (loading) {
+            return '…';
+        }
+        if (startTimeString) {
+            return `${startTimeString} ${safeTitle}`;
+        }
+        return safeTitle;
     })();
+
+    const expandableTitleString = (() => {
+        if (error) {
+            return getEventErrorMessage(error);
+        }
+        if (loading) {
+            return getEventLoadingMessage();
+        }
+        return safeTitle;
+    })();
+
+    const content = (
+        <div className="flex flex-nowrap flex-item-fluid flex-items-center">
+            {!isAllDay ? (
+                <Icon className="mr0-25 flex-item-noshrink calendar-dayeventcell-circle" size={12} name="circle" />
+            ) : null}
+
+            {isOutsideStart ? <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-90" /> : null}
+
+            {error ? <Icon name="lock" className="calendar-dayeventcell-lock-icon" /> : null}
+
+            <span data-test-id="calendar-view:all-day-event" className="flex-item-fluid ellipsis">
+                {titleString}
+            </span>
+
+            {isOutsideEnd ? <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-270" /> : null}
+        </div>
+    );
 
     return (
         <div
@@ -91,11 +92,13 @@ const FullDayEvent = ({
         >
             <div
                 onClick={onClick}
+                title={expandableTitleString}
                 className={classnames([
-                    'calendar-dayeventcell-inner alignleft flex w100',
-                    !isAllDay && 'calendar-dayeventcell-inner--notAllDay',
+                    'calendar-dayeventcell-inner alignleft flex',
+                    !isAllDay && 'calendar-dayeventcell-inner--isNotAllDay',
                     isOutsideStart && 'calendar-dayeventcell-inner--isOutsideStart',
-                    isOutsideEnd && 'calendar-dayeventcell-inner--isOutsideEnd'
+                    isOutsideEnd && 'calendar-dayeventcell-inner--isOutsideEnd',
+                    !loading && 'calendar-dayeventcell-inner--isLoaded'
                 ])}
                 style={eventStyle}
                 ref={eventRef}

@@ -21,6 +21,7 @@ import PopoverEventContent from './PopoverEventContent';
 import PopoverHeader from './PopoverHeader';
 import PopoverFooter from './PopoverFooter';
 import PopoverContent from './PopoverContent';
+import { getEventErrorMessage } from './error';
 
 const EventPopover = ({
     formatTime,
@@ -77,18 +78,13 @@ const EventPopover = ({
     const mergedStyle = isNarrow ? undefined : style;
 
     if (error) {
-        const errorMessage = error.message || '';
         return (
             <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
                 <PopoverHeader onClose={onClose}>
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
                 <PopoverContent>
-                    <Alert type="error">
-                        {errorMessage.includes('decrypt')
-                            ? c('Error').t`Decryption error: Decryption of this event's content failed.`
-                            : c('Error').t`Error: ${errorMessage}`}
-                    </Alert>
+                    <Alert type="error">{getEventErrorMessage(error)}</Alert>
                 </PopoverContent>
                 <footer>{deleteButton}</footer>
             </div>
