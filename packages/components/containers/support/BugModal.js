@@ -193,15 +193,17 @@ const BugModal = ({ onClose, username: Username = '', location, addresses = [], 
                     <span className="mr0-5">{c('Label, make it short please').t`Attach screenshot(s)`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/screenshot-reporting-bugs/" />
                 </Label>
-                <Field>
+                <Field className="inline-flex">
                     <AttachScreenshot id="Attachments" onUpload={setImages} onReset={() => setImages([])} />
                 </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`System information`}</Label>
-                <Button onClick={toggleDetails}>
-                    {showDetails ? c('Action').t`Hide info` : c('Action').t`Show info`}
-                </Button>
+                <Field className="inline-flex">
+                    <Button onClick={toggleDetails}>
+                        {showDetails ? c('Action').t`Hide info` : c('Action').t`Show info`}
+                    </Button>
+                </Field>
             </Row>
             {showDetails ? (
                 <>
