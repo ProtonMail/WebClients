@@ -50,13 +50,15 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
         const handleOnDrop = (e: any) => {
             handleDragLeave();
 
-            const files = e.dataTransfer.files.filter((f: any) => !!f.type);
+            const files = e.dataTransfer!.files;
             if (!resource || !files) {
                 return;
             }
 
             for (let i = 0; i < files.length; i++) {
-                uploadDriveFile(resource.linkId, files[i]);
+                if (files[i].type) {
+                    uploadDriveFile(resource.linkId, files[i]);
+                }
             }
         };
 
