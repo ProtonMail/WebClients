@@ -4,8 +4,8 @@
 /**
  * medium/tablet breakpoint
  */
-@include respond-to($breakpoint-medium) { 
-   
+@include respond-to($breakpoint-medium) {
+
   /**
    * layout/modules
    */
@@ -15,14 +15,14 @@
 
   /* hide unnecessary elements */
   .notablet { display: none; }
-  
+
   /* linearization of floating content/table-layout */
   .autotablet {
     float: none;
     display: block;
     width: auto;
   }
-  
+
   /* margins */
   $list-margins-tablet: m, mt, mr, mb, ml;
   $list-margins-tablet-values: 0, 1, 2; // specify 2.5 if needed
@@ -34,7 +34,7 @@
   $list-paddings-tablet-values: 0, 1, 2; // specify 2.5 if needed
 
   @include padding-generator($list-paddings-tablet, $list-paddings-tablet-values, "ontablet-");
-  
+
   /* text aligns */
   .ontablet- {
     &alignleft   { text-align: left; }
@@ -69,7 +69,7 @@
 /**
  * small/mobile breakpoint
  */
-@include respond-to($breakpoint-small) { 
+@include respond-to($breakpoint-small) {
 
   /**
    * layout/modules
@@ -87,19 +87,19 @@
     display: block;
     width: auto;
   }
-  
+
   /* margins */
   $list-margins-mobile: m, mt, mr, mb, ml;
   $list-margins-mobile-values: 0, 0.5, 1, 2; // specify 2.5 if needed
 
   @include margin-generator($list-margins-mobile, $list-margins-mobile-values, "onmobile-");
-  
+
   /* paddings */
   $list-paddings-mobile: p, pt, pr, pb, pl;
   $list-paddings-mobile-values: 0, 1, 2; // specify 2.5 if needed
 
   @include padding-generator($list-paddings-mobile, $list-paddings-mobile-values, "onmobile-");
-  
+
   /* text aligns */
   .onmobile- {
     &alignleft   { text-align: left; }
@@ -127,7 +127,7 @@
       & > * {
         align-self: center;
       }
-    }
+	}
     &wauto {
       width: auto;
     }
@@ -147,7 +147,7 @@
       position: static;
     }
   }
-  
+
 
   /**
    * global structure adaptation (page / skip links / header / main content / footer)
@@ -161,7 +161,7 @@
 /**
  * tiny/small mobile breakpoint
  */
-@include respond-to($breakpoint-tiny) { 
+@include respond-to($breakpoint-tiny) {
 
   /**
    * layout/modules
@@ -182,19 +182,32 @@
   .ontinymobile- {
     &wauto {
       width: auto;
+	}
+	&flex-self-start {
+		align-self: flex-start;
+	}
+	&flex-column {
+      flex-direction: column;
+      & > * {
+        width: 100%;
+        flex-basis: auto;
+      }
     }
   }
   /* margins */
   //$list-margins-tinymobile: m, mt, mr, mb, ml;
   //$list-margins-tinymobile-values: 0, 1, 2; // specify 2.5 if needed
 
-  //@include margin-generator($list-margins-tinymobile, $list-margins-tinymobile-values, "ontinymobile-");
+  $list-margins-tinymobile: m, mt, mr, mb, ml;
+  $list-margins-tinymobile-values: 1;
+
+  @include margin-generator($list-margins-tinymobile, $list-margins-tinymobile-values, "ontinymobile-");
 
   /* paddings */
   //$list-paddings-tinymobile: p, pt, pr, pb, pl;
   //$list-paddings-tinymobile-values: 0, 1, 2; // specify 2.5 if needed
 
-  //@include padding-generator($list-paddings-tinymobile, $list-paddings-tinymobile-values, "ontinymobile-");  
+  //@include padding-generator($list-paddings-tinymobile, $list-paddings-tinymobile-values, "ontinymobile-");
 
   /**
    * global structure adaptation (page / skip links / header / main content / footer)
