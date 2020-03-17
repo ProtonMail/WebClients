@@ -54,30 +54,28 @@ const SelectAll = ({ loading, disabled, elements, selectedIDs, onCheck }: Props)
                 content=""
             >
                 {() => (
-                    <div className="ml0-5 mr0-5">
-                        <DropdownMenu>
-                            <DropdownMenuButton className="alignleft" onClick={handleAll(true)}>
-                                <Icon name="show-all-emails" className="mr0-5" />
-                                {c('Action').t`Select all`}
-                            </DropdownMenuButton>
-                            <DropdownMenuButton className="alignleft" onClick={handleRead(false)}>
-                                <Icon name="unread" className="mr0-5" />
-                                {c('Action').t`All unread`}
-                            </DropdownMenuButton>
-                            <DropdownMenuButton className="alignleft" onClick={handleRead(true)}>
-                                <Icon name="read" className="mr0-5" />
-                                {c('Action').t`All read`}
-                            </DropdownMenuButton>
-                            <DropdownMenuButton className="alignleft" onClick={handleStarred(false)}>
-                                <Icon name="star" className="mr0-5" />
-                                {c('Action').t`All unstarred`}
-                            </DropdownMenuButton>
-                            <DropdownMenuButton className="alignleft" onClick={handleStarred(true)}>
-                                <Icon name="starfull" className="mr0-5" />
-                                {c('Action').t`All starred`}
-                            </DropdownMenuButton>
-                        </DropdownMenu>
-                    </div>
+                    <DropdownMenu>
+                        <DropdownMenuButton className="alignleft" onClick={handleAll(true)}>
+                            <Icon name="selectall" className="mr0-5" />
+                            {c('Action').t`Select All`}
+                        </DropdownMenuButton>
+                        <DropdownMenuButton className="alignleft" onClick={handleRead(true)}>
+                            <Icon name="read" className="mr0-5" />
+                            {c('Action').t`All Read`}
+                        </DropdownMenuButton>
+                        <DropdownMenuButton className="alignleft" onClick={handleRead(false)}>
+                            <Icon name="unread" className="mr0-5" />
+                            {c('Action').t`All Unread`}
+                        </DropdownMenuButton>
+                        <DropdownMenuButton className="alignleft" onClick={handleStarred(true)}>
+                            <Icon name="starfull" className="mr0-5" />
+                            {c('Action').t`All Starred`}
+                        </DropdownMenuButton>
+                        <DropdownMenuButton className="alignleft" onClick={handleStarred(false)}>
+                            <Icon name="star" className="mr0-5" />
+                            {c('Action').t`All Unstarred`}
+                        </DropdownMenuButton>
+                    </DropdownMenu>
                 )}
             </ToolbarDropdown>
         </>
