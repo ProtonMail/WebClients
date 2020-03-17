@@ -56,7 +56,9 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
             }
 
             for (let i = 0; i < files.length; i++) {
-                uploadDriveFile(resource.linkId, files[i]);
+                if (!!files[i].type) {
+                    uploadDriveFile(resource.linkId, files[i]);
+                }
             }
         };
 
