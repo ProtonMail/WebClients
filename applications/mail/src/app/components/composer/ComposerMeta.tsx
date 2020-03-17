@@ -40,7 +40,7 @@ const ComposerMeta = ({ message, addresses, disabled, onChange, addressesBlurRef
     return (
         <div className="composer-meta w100">
             <div className="flex flex-row flex-nowrap flex-items-center pl0-5 pr0-5 mb0-5">
-                <Label htmlFor={`from-${uid}`} className="composer-meta-label">
+                <Label htmlFor={`from-${uid}`} className="composer-meta-label bold">
                     {c('Info').t`From`}
                 </Label>
                 <Select
@@ -60,7 +60,7 @@ const ComposerMeta = ({ message, addresses, disabled, onChange, addressesBlurRef
                 addressesFocusRef={addressesFocusRef}
             />
             <div className="flex flex-row flex-nowrap flex-items-center pl0-5 pr0-5 mb0-5">
-                <Label htmlFor={`subject-${uid}`} className="composer-meta-label pt0">
+                <Label htmlFor={`subject-${uid}`} className="composer-meta-label pt0 bold">
                     {c('Info').t`Subject`}
                 </Label>
                 <Input

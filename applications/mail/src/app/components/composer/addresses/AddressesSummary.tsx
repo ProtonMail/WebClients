@@ -17,7 +17,7 @@ interface Props {
 const AddressesSummary = ({ message: { data = {} }, contacts, contactGroups, onFocus }: Props) => {
     return (
         <div className="flex flex-row flex-nowrap flex-items-center pl0-5 pr0-5 mb0-5" onClick={onFocus}>
-            <Label htmlFor={null} className="composer-meta-label pr0-5 pt0">
+            <Label htmlFor={null} className="composer-meta-label pr0-5 pt0 bold">
                 {c('Title').t`To`}
             </Label>
             <div className="bordered-container flex composer-addresses-fakefield flex-row flex-item-fluid w100 relative">

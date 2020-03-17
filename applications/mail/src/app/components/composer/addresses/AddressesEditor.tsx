@@ -1,6 +1,6 @@
 import React, { useState, MutableRefObject } from 'react';
 import { c } from 'ttag';
-import { Label, generateUID, Tooltip, LinkButton } from 'react-components';
+import { Label, generateUID, LinkButton } from 'react-components';
 
 import { MessageExtended } from '../../../models/message';
 import AddressesInput from './AddressesInput';
@@ -46,11 +46,11 @@ const AddressesEditor = ({
     return (
         <div className="flex flex-column flex-nowrap flex-items-start pl0-5 pr0-5 mb0-5">
             <div className="flex flex-row w100 mb0-5 relative">
-                <Label htmlFor={`to-${uid}`} className="composer-meta-label">
-                    <Tooltip title={c('Title').t`Add contacts`}>
-                        {/* <a onClick={handleContactModal('ToList')}>{c('Title').t`To`}</a> */}
-                        {c('Label').t`To`}
-                    </Tooltip>
+                <Label htmlFor={`to-${uid}`} className="composer-meta-label bold">
+                    {/* <Tooltip title={c('Title').t`Add contacts`}> */}
+                    {/* <a onClick={handleContactModal('ToList')}>{c('Title').t`To`}</a> */}
+                    {c('Label').t`To`}
+                    {/* </Tooltip> */}
                 </Label>
                 <AddressesInput
                     id={`to-${uid}`}
@@ -69,11 +69,11 @@ const AddressesEditor = ({
             {expanded && (
                 <>
                     <div className="flex flex-row w100 mb0-5">
-                        <Label htmlFor={`cc-${uid}`} className="composer-meta-label">
-                            <Tooltip title={c('Title').t`Add contacts`}>
-                                {/* <a onClick={handleContactModal('CCList')}>{c('Title').t`CC`}</a> */}
-                                {c('Label').t`CC`}
-                            </Tooltip>
+                        <Label htmlFor={`cc-${uid}`} className="composer-meta-label bold">
+                            {/* <Tooltip title={c('Title').t`Add contacts`}> */}
+                            {/* <a onClick={handleContactModal('CCList')}>{c('Title').t`CC`}</a> */}
+                            {c('Label').t`CC`}
+                            {/* </Tooltip> */}
                         </Label>
                         <AddressesInput
                             id={`cc-${uid}`}
@@ -84,11 +84,11 @@ const AddressesEditor = ({
                         />
                     </div>
                     <div className="flex flex-row w100">
-                        <Label htmlFor={`bcc-${uid}`} className="composer-meta-label">
-                            <Tooltip title={c('Title').t`Add contacts`}>
-                                {/* <a onClick={handleContactModal('BCCList')}>{c('Title').t`BCC`}</a> */}
-                                {c('Label').t`BCC`}
-                            </Tooltip>
+                        <Label htmlFor={`bcc-${uid}`} className="composer-meta-label bold">
+                            {/* <Tooltip title={c('Title').t`Add contacts`}> */}
+                            {/* <a onClick={handleContactModal('BCCList')}>{c('Title').t`BCC`}</a> */}
+                            {c('Label').t`BCC`}
+                            {/* </Tooltip> */}
                         </Label>
                         <AddressesInput
                             id={`bcc-${uid}`}
