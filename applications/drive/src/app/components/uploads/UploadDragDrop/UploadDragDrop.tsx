@@ -38,7 +38,7 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
     }, []);
 
     useEffect(() => {
-        const preventDefault = (e: any) => {
+        const preventDefault = (e: Event) => {
             e.preventDefault();
             e.stopPropagation();
         };
@@ -47,16 +47,18 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
             setOverlayIsVisible(false);
         };
 
-        const handleOnDrop = (e: any) => {
+        const handleOnDrop = (e: DragEvent) => {
             handleDragLeave();
 
-            const files = e.dataTransfer.files;
+            const files = e.dataTransfer?.files;
             if (!resource || !files) {
                 return;
             }
 
             for (let i = 0; i < files.length; i++) {
-                uploadDriveFile(resource.linkId, files[i]);
+                if (files[i].type) {
+                    uploadDriveFile(resource.linkId, files[i]);
+                }
             }
         };
 
