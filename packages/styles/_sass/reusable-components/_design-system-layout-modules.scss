@@ -349,6 +349,16 @@ $list-min-width-em: 3, 5, 35 !default;
   }
 }
 
+
+$list-min-height-em: 16 !default;
+
+@each $min-height in $list-min-height-em {
+  .min-h#{$min-height}e {
+    min-height: #{$min-height}em;
+  }
+}
+
+
 .h100 {
   height: 100%;
 }
