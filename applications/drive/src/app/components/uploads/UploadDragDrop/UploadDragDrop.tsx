@@ -38,6 +38,8 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
     }, []);
 
     useEffect(() => {
+        const megabiteSize = 1048576;
+
         const preventDefault = (e: Event) => {
             e.preventDefault();
             e.stopPropagation();
@@ -47,7 +49,24 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
             setOverlayIsVisible(false);
         };
 
-        const handleOnDrop = (e: DragEvent) => {
+        const isFile = async (blob: Blob): Promise<boolean> => {
+            return new Promise((resolve) => {
+                if (blob.size > megabiteSize) {
+                    resolve(true);
+                }
+
+                const reader = new FileReader();
+                reader.onload = function() {
+                    resolve(true);
+                };
+                reader.onerror = function() {
+                    resolve(false);
+                };
+                reader.readAsArrayBuffer(blob);
+            });
+        };
+
+        const handleOnDrop = async (e: DragEvent) => {
             handleDragLeave();
 
             const files = e.dataTransfer?.files;
@@ -56,7 +75,7 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
             }
 
             for (let i = 0; i < files.length; i++) {
-                if (files[i].type) {
+                if (await isFile(files[i])) {
                     uploadDriveFile(resource.linkId, files[i]);
                 }
             }
