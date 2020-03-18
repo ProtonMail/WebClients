@@ -51,7 +51,15 @@ const AddressesInput = ({
 
     const handleInputChange = (event: ChangeEvent) => {
         const input = event.target as HTMLInputElement;
-        setInputModel(input.value);
+        const value = input.value;
+        const values = value.split(';');
+
+        if (values.length > 1) {
+            onChange([...recipients, ...values.slice(0, -1).map(inputToRecipient)]);
+            setInputModel(values[values.length - 1]);
+        } else {
+            setInputModel(input.value);
+        }
     };
 
     const handleBlur = () => {
@@ -86,13 +94,11 @@ const AddressesInput = ({
     };
 
     const handleInputKey = (event: KeyboardEvent) => {
-        // Enter or Tab or `;`
-        if ((event.keyCode === 13 || event.keyCode === 9 || event.keyCode === 59) && inputModel.length !== 0) {
+        if ((event.key === 'Enter' || event.key === 'Tab') && inputModel.length !== 0) {
             confirmInput();
             event.preventDefault(); // Prevent tab to switch field
         }
-        // Backspace
-        if (event.keyCode === 8 && inputModel.length === 0 && recipientsOrGroups.length > 0) {
+        if (event.key === 'Backspace' && inputModel.length === 0 && recipientsOrGroups.length > 0) {
             const last = recipientsOrGroups[recipientsOrGroups.length - 1];
             if (last.recipient) {
                 handleRecipientRemove(last.recipient)();
@@ -154,6 +160,7 @@ const AddressesInput = ({
                         onBlur={handleBlur}
                         ref={inputRef}
                         placeholder={placeholder}
+                        data-testid="composer-addresses-input"
                     />
                 </div>
             </div>

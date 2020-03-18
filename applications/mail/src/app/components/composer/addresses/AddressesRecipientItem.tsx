@@ -47,6 +47,7 @@ const AddressesRecipientItem = ({ recipient, onChange = noop, onRemove }: Props)
                 'composer-addresses-item bordered-container flex flex-items-center flex-nowrap flex-row mw80 stop-propagation',
                 !valid && 'invalid'
             ])}
+            data-testid="composer-addresses-item"
         >
             {/* TODO: Icon lock */}
             <span
