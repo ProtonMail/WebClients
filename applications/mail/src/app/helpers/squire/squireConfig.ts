@@ -108,8 +108,8 @@ export interface SquireType {
     makeLink: (link: string, attributes?: { [key: string]: string | undefined }) => void;
     insertImage: (url: string, attributes?: { [key: string]: string | undefined }) => void;
     removeAllFormatting: () => void;
-    addEventListener: (type: string, handler: (event: Event) => void) => void;
-    removeEventListener: (type: string, handler: (event: Event) => void) => void;
+    addEventListener: <E extends Event>(type: string, handler: (event: E) => void) => void;
+    removeEventListener: <E extends Event>(type: string, handler: (event: E) => void) => void;
     fireEvent: (type: string, event?: Event) => void;
 }
 

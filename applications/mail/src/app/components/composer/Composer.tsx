@@ -1,5 +1,5 @@
 import React, { useState, useEffect, CSSProperties, useRef, useCallback } from 'react';
-import { classnames, useToggle, useWindowSize, useNotifications, useApi } from 'react-components';
+import { classnames, useToggle, useWindowSize, useNotifications, useApi, useAuthentication } from 'react-components';
 import { c } from 'ttag';
 import { Address } from 'proton-shared/lib/interfaces';
 import { noop, debounce } from 'proton-shared/lib/helpers/function';
@@ -20,7 +20,7 @@ import {
     COMPOSER_SWITCH_MODE
 } from '../../containers/ComposerContainer';
 import { getRecipients, getAttachments } from '../../helpers/message/messages';
-import { upload, ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
+import { upload, ATTACHMENT_ACTION, UploadResult } from '../../helpers/attachment/attachmentUploader';
 import { Attachment } from '../../models/attachment';
 import { removeAttachment } from '../../api/attachments';
 import { createEmbeddedMap, readCID, isEmbeddable } from '../../helpers/embedded/embeddeds';
@@ -29,11 +29,19 @@ import { setContent } from '../../helpers/message/messageContent';
 import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
 import { useHandler } from '../../hooks/useHandler';
+import { isPlainText } from '../../helpers/message/messages';
+import { MailSettings } from '../../models/utils';
+import { Upload } from '../../helpers/upload';
 
 enum ComposerInnerModal {
     None,
     Password,
     Expiration
+}
+
+export interface PendingUpload {
+    file: File;
+    upload: Upload<UploadResult>;
 }
 
 /**
@@ -75,7 +83,7 @@ interface Props {
     style?: CSSProperties;
     focus: boolean;
     message?: MessageExtended;
-    mailSettings: any;
+    mailSettings: MailSettings;
     addresses: Address[];
     onFocus: () => void;
     onChange: (message: MessageExtended) => void;
@@ -95,6 +103,7 @@ const Composer = ({
     const api = useApi();
     const [width, height] = useWindowSize();
     const { createNotification } = useNotifications();
+    const auth = useAuthentication();
 
     // Minimized status of the composer
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
@@ -120,8 +129,11 @@ const Composer = ({
     // Model value of the edited message in the composer
     const [modelMessage, setModelMessage] = useState<MessageExtended>(inputMessage);
 
-    // Pending upload files
+    // Pending files to upload
     const [pendingFiles, setPendingFiles] = useState<File[]>();
+
+    // Pending uploads
+    const [pendingUploads, setPendingUploads] = useState<PendingUpload[]>();
 
     // Synced with server version of the edited message
     const [
@@ -204,40 +216,52 @@ const Composer = ({
         createNotification({ text: c('Info').t`Message saved` });
     };
 
-    const handleAddAttachmentsEnd = async (action: ATTACHMENT_ACTION, files = pendingFiles) => {
-        setPendingFiles(undefined);
-        const uploads = await upload(files, syncedMessage, action, api);
-
-        if (uploads.length) {
-            const updatedMessage = await updateAttachments(uploads, action);
-            const Attachments = getAttachments(updatedMessage.data);
-            const newModelMessage = mergeMessages(modelMessage, { data: { Attachments } });
-            setModelMessage(newModelMessage);
-
-            if (action == ATTACHMENT_ACTION.INLINE) {
-                // Needed to wait for the setModelMessage to be applied before inserting the image in the editor
-                // Insertion will trigger a change and update the model which has to be updated
-                await wait(0);
-
-                const newEmbeddeds = createEmbeddedMap(
-                    uploads.map((upload) => {
-                        const cid = readCID(upload.attachment);
-                        return [cid, updatedMessage.embeddeds?.get(cid)];
-                    })
-                );
-
-                contentInsertRef.current?.(newEmbeddeds);
-            }
-        }
+    const removePendingUpload = (pendingUpload: PendingUpload) => {
+        const newPendingUploads = pendingUploads?.filter((aPendingUpload) => aPendingUpload !== pendingUpload);
+        setPendingUploads(newPendingUploads);
     };
-    const handleAddEmbeddedImages = async (files: File[]) => handleAddAttachmentsEnd(ATTACHMENT_ACTION.INLINE, files);
+    const handleAddAttachmentEnd = useHandler(async (action: ATTACHMENT_ACTION, pendingUpload: PendingUpload) => {
+        removePendingUpload(pendingUpload);
+
+        const uploadResult = await pendingUpload.upload.resultPromise; // should be instant
+        const updatedMessage = await updateAttachments([uploadResult], action);
+        const Attachments = getAttachments(updatedMessage.data);
+
+        const newModelMessage = mergeMessages(modelMessage, { data: { Attachments } });
+        setModelMessage(newModelMessage);
+
+        if (action == ATTACHMENT_ACTION.INLINE) {
+            // Needed to wait for the setModelMessage to be applied before inserting the image in the editor
+            // Insertion will trigger a change and update the model which has to be updated
+            await wait(0);
+
+            const cid = readCID(uploadResult.attachment);
+            const newEmbeddeds = createEmbeddedMap([[cid, updatedMessage.embeddeds?.get(cid)]]);
+
+            contentInsertRef.current?.(newEmbeddeds);
+        }
+    });
+    const handleAddAttachmentsUpload = async (action: ATTACHMENT_ACTION, files = pendingFiles || []) => {
+        setPendingFiles(undefined);
+
+        const uploads = upload(files, syncedMessage, action, auth.UID);
+        const pendingUploads = files?.map((file, i) => ({ file, upload: uploads[i] }));
+        setPendingUploads(pendingUploads);
+
+        pendingUploads.forEach((pendingUpload) => {
+            pendingUpload.upload.resultPromise.then(() => handleAddAttachmentEnd(action, pendingUpload));
+        });
+    };
+    const handleAddEmbeddedImages = async (files: File[]) =>
+        handleAddAttachmentsUpload(ATTACHMENT_ACTION.INLINE, files);
     const handleAddAttachmentsStart = async (files: File[]) => {
         const embeddable = files.every((file) => isEmbeddable(file.type));
+        const plainText = isPlainText(modelMessage.data);
 
-        if (embeddable) {
+        if (!plainText && embeddable) {
             setPendingFiles(files);
         } else {
-            handleAddAttachmentsEnd(ATTACHMENT_ACTION.ATTACHMENT, files);
+            handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
         }
     };
     const handleRemoveAttachment = (attachment: Attachment) => async () => {
@@ -246,6 +270,10 @@ const Composer = ({
         const newModelMessage = mergeMessages(modelMessage, { data: { Attachments } });
         setModelMessage(newModelMessage);
         save(modelMessage);
+    };
+    const handleRemoveUpload = (pendingUpload: PendingUpload) => () => {
+        pendingUpload.upload.abort();
+        removePendingUpload(pendingUpload);
     };
     const handlePassword = () => {
         setInnerModal(ComposerInnerModal.Password);
@@ -352,9 +380,11 @@ const Composer = ({
                             onAddAttachments={handleAddAttachmentsStart}
                             onAddEmbeddedImages={handleAddEmbeddedImages}
                             onRemoveAttachment={handleRemoveAttachment}
+                            onRemoveUpload={handleRemoveUpload}
                             pendingFiles={pendingFiles}
+                            pendingUploads={pendingUploads}
                             onCancelEmbedded={() => setPendingFiles(undefined)}
-                            onSelectEmbedded={handleAddAttachmentsEnd}
+                            onSelectEmbedded={handleAddAttachmentsUpload}
                             contentFocusRef={contentFocusRef}
                             contentInsertRef={contentInsertRef}
                         />

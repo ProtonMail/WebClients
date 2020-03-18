@@ -40,6 +40,7 @@ const EditorSquire = forwardRef(({ onReady, onFocus, onInput, onAddEmbeddedImage
     useEffect(() => {
         if (iframeReady && !squireReady) {
             const iframeDoc = iframeRef.current?.contentWindow?.document as Document;
+
             const squire = initSquire(iframeDoc);
             setSquireRef(ref, squire);
             setSquireReady(true);

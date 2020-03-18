@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 import { encryptMessage, splitMessage, OpenPGPKey } from 'pmcrypto';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { Api } from 'proton-shared/lib/interfaces';
 
 import { MessageExtended } from '../../models/message';
 import { getAttachments } from '../message/messages';
@@ -11,6 +10,7 @@ import { Attachment } from '../../models/attachment';
 import { generateCid, readCID, createBlob, createEmbeddedMap, isEmbeddable } from '../embedded/embeddeds';
 import { generateUID } from '../string';
 import { Computation } from '../../hooks/useMessage';
+import { Upload, upload as uploadHelper, RequestParams } from '../upload';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
 
@@ -85,13 +85,13 @@ const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], p
 /**
  * Add a new attachment, upload it to the server
  */
-const uploadFile = async (
+const uploadFile = (
     file: File,
     message: MessageExtended,
     inline: boolean,
-    api: Api,
+    uid: string,
     cid = ''
-): Promise<UploadResult> => {
+): Upload<UploadResult> => {
     const titleImage = c('Title').t`Image`;
 
     const filename = file.name || `${titleImage} ${getAttachments(message.data).length + 1}`;
@@ -99,10 +99,12 @@ const uploadFile = async (
 
     const publicKeys = message.publicKeys && message.publicKeys.length > 0 ? [message.publicKeys[0]] : [];
 
-    const packets = await encryptFile(file, inline, publicKeys, message.privateKeys || []);
+    let packets: Packets;
 
-    const { Attachment } = await (api(
-        uploadAttachment({
+    const getParams = async () => {
+        packets = await encryptFile(file, inline, publicKeys, message.privateKeys || []);
+
+        return uploadAttachment({
             Filename: packets.Filename || filename,
             MessageID: message.data?.ID || '',
             ContentID,
@@ -110,35 +112,42 @@ const uploadFile = async (
             KeyPackets: new Blob([packets.keys] as any),
             DataPacket: new Blob([packets.data] as any),
             Signature: packets.signature ? new Blob([packets.signature] as any) : undefined
-        })
-    ) as UploadQueryResult);
+        }) as RequestParams;
+    };
 
-    // TODO
-    // if (isAborted) {
-    //     return;
-    // }
+    const upload = uploadHelper(uid, getParams()) as Upload<UploadQueryResult>;
 
-    return { attachment: Attachment, packets };
+    const attachPackets = async () => {
+        const result = await upload.resultPromise;
+        return { attachment: result.Attachment, packets };
+    };
+
+    return {
+        ...upload,
+        resultPromise: attachPackets()
+    };
 };
 
 /**
  * Upload a list of attachments [...File]
  */
-export const upload = async (
+export const upload = (
     files: File[] = [],
     message: MessageExtended = {},
     action = ATTACHMENT_ACTION.ATTACHMENT,
-    api: Api,
+    uid: string,
     cid = ''
-) => {
-    return await Promise.all(
-        files.map((file) => {
-            const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;
-            return uploadFile(file, message, inline, api, cid);
-        })
-    );
+): Upload<UploadResult>[] => {
+    return files.map((file) => {
+        const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;
+        return uploadFile(file, message, inline, uid, cid);
+    });
 };
 
+/**
+ * Returns a `useMessage` computation to modify the message to include the newly uploaded files
+ * Deals with the attachment action (attachment or embedded)
+ */
 export const getUpdateAttachmentsComputation = (
     uploads: UploadResult[],
     action = ATTACHMENT_ACTION.ATTACHMENT

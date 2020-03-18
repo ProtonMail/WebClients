@@ -72,11 +72,16 @@ const TestProvider = ({ children }: Props) => {
     );
 };
 
+/**
+ * Small helper to wait for asynchronous work to be executed
+ * Should be avoided as much as possible, but often convenient
+ */
+export const tick = () => act(() => wait(0));
+
 export const render = async (component: JSX.Element): Promise<RenderResult> => {
     minimalCache();
     const result = originalRender(<TestProvider>{component}</TestProvider>);
-    // Should not be necessary, would be better not to use it, but fails without
-    await act(() => wait(0));
+    await tick(); // Should not be necessary, would be better not to use it, but fails without
     return result;
 };
 

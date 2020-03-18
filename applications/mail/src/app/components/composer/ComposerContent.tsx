@@ -12,6 +12,7 @@ import EditorEmbeddedModal from './editor/EditorEmbeddedModal';
 import { isDragFile } from '../../helpers/dom';
 
 import 'react-quill/dist/quill.snow.css';
+import { PendingUpload } from './Composer';
 
 interface Props {
     message: MessageExtended;
@@ -23,7 +24,9 @@ interface Props {
     onAddAttachments: (files: File[]) => void;
     onAddEmbeddedImages: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => () => void;
+    onRemoveUpload: (pendingUpload: PendingUpload) => () => void;
     pendingFiles?: File[];
+    pendingUploads?: PendingUpload[];
     onCancelEmbedded: () => void;
     onSelectEmbedded: (action: ATTACHMENT_ACTION) => void;
     contentFocusRef: MutableRefObject<() => void>;
@@ -40,7 +43,9 @@ const ComposerContent = ({
     onAddAttachments,
     onAddEmbeddedImages,
     onRemoveAttachment,
+    onRemoveUpload,
     pendingFiles,
+    pendingUploads,
     onCancelEmbedded,
     onSelectEmbedded,
     contentFocusRef,
@@ -49,6 +54,7 @@ const ComposerContent = ({
     const [fileHover, setFileHover] = useState(false);
 
     const attachments = getAttachments(message.data);
+    const showAttachements = attachments.length + (pendingUploads?.length || 0) > 0;
 
     const onlyFiles = (eventHandler: DragEventHandler) => (event: DragEvent) => {
         if (isDragFile(event)) {
@@ -97,7 +103,14 @@ const ComposerContent = ({
                     <EditorEmbeddedModal files={pendingFiles} onClose={onCancelEmbedded} onSelect={onSelectEmbedded} />
                 )}
             </div>
-            {attachments.length > 0 && <AttachmentsList message={message.data} onRemove={onRemoveAttachment} />}
+            {showAttachements && (
+                <AttachmentsList
+                    message={message}
+                    pendingUploads={pendingUploads}
+                    onRemoveAttachment={onRemoveAttachment}
+                    onRemoveUpload={onRemoveUpload}
+                />
+            )}
             {fileHover && (
                 <div
                     onDragLeave={handleHover(false)}
