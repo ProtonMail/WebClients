@@ -55,6 +55,7 @@ const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
             onSubmit={() => withLoading(handleSubmit())}
             title={c('Title').t`Create a new folder`}
             submit={c('Action').t`Create`}
+            autoFocusClose={false}
             {...rest}
         >
             <Row className="p1 pl2">
