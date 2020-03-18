@@ -49,8 +49,8 @@ section: fe-conventions
   </li>
   <li><strong>react-styles</strong>: these are dedicated styles for some react components (separated because of special needs incompatible between Design System website/React/Angular).
     <ul>
-    {% assign sassFiles = "pm-dropdown#pm-tooltip#snow" | split: '#' %}
-    {% assign sassDescription = "Drop downs#Tooltips#Snow theme for Quill" | split: '#' %}
+    {% assign sassFiles = "pm-dropdown#pm-tooltip#snow#react-intl-tel-input" | split: '#' %}
+    {% assign sassDescription = "Drop downs#Tooltips#Snow theme for Quill#Files for React Intl Tel input" | split: '#' %}
     {% for file in sassFiles %}
     <li><strong>_{{ file }}.scss</strong>: {{ sassDescription[forloop.index0] }}</li>
     {% endfor %}

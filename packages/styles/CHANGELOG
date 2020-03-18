@@ -23,7 +23,7 @@
 - new animation for Calendar event loading
 - drag and drop image for Drive
 - add `min-h16e` helper (`min-height` in em helper)
-- increase dropdown width on default and narrow states, for time options
+- add `react-intl-tel-input` styles
 
 
 ## Updated/fixes
@@ -44,6 +44,7 @@
 - fix arrow colors (mini-calendar)
 - add exception for `pm-button--link` and `nodecoration`
 - fix import/export icons
+- increase dropdown width on default and narrow states, for time options
 
 
 # [1.8.1] - 2019-01-31
