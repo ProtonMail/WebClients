@@ -1,29 +1,32 @@
 .calendar-dayeventcell {
-	height: 28px; // careful when updating this (depends also on JS calculations)
-	padding-right: $gridcell-right-margin;
-	padding-top: 3px;
+	height: var(--height);
+	padding-right: $calendar-gridcell-margin;
+	padding-top: $calendar-gridcell-gutter;
 	white-space: nowrap;
 
 	&-inner {
 		position: relative;
 		min-height: 100%;
-		padding: 0 0.5em;
-		border: $border-event-cells;
-		border-radius: 2px;
-		color: var(--color-main-area, $pm-global-grey);
+		padding: 0 .5em;
+		background-color: $calendar-event-loading-color;
+		border: $calendar-event-border;
+		border-radius: $calendar-event-border-radius;
+		color: $black;
 		cursor: pointer;
 
-		&:hover,
-		&:focus {
-			background-color: var(--bgcolor-input, #F1F3F4);
-		}
+		&#{&}--isNotAllDay,
+		&--isLoaded#{&}--isNotAllDay {
+			background: none;
+			border: none;
+			color: inherit;
 
-		&--notAllDay {
-			border: 0;
+			&:hover,
+			&:focus {
+				background-color: var(--bgcolor-input, #F1F3F4);
+			}
 		}
 	}
 
-	&--isOutsideStart,
 	&-inner--isOutsideStart {
 		padding-left: 0;
 	}
@@ -32,30 +35,24 @@
 	&-inner--isOutsideEnd {
 		padding-right: 0;
 	}
+
+	&-circle {
+		color: $calendar-event-loading-color;
+	}
+
+	&-inner--isLoaded &-circle {
+		color: var(--background);
+	}
 }
 
 .calendar-eventcell {
 	position: absolute;
 	z-index: 5;
-	border: $border-event-cells;
+	border: $calendar-event-border;
 	border-radius: 2px;
-	background: #0074D9;
+	background: $calendar-event-loading-color;
 	color: $black;
 	cursor: pointer;
-	transition: opacity .5s ease;
-
-	&::after {
-		content: '';
-		position: absolute;
-		top: -1px;
-		left: -1px;
-		width: calc(100% + 2px);
-		height: calc(100% + 2px);
-		box-sizing: border-box;
-		border: 1px solid transparent; // white was creating issue on Safari Mac
-		border-radius: 2px;
-		pointer-events: none;
-	}
 
 	@include respond-to($breakpoint-small) {
 		&-title,
@@ -65,7 +62,34 @@
 	}
 }
 
+.calendar-dayeventcell,
+.calendar-eventcell {
+	--opacity: 1;
+}
+
 .calendar-dayeventcell--isBefore,
 .calendar-eventcell--isBefore {
-	opacity: .7;
+	--opacity: .6;
+}
+
+.calendar-dayeventcell-inner,
+.calendar-eventcell {
+	opacity: var(--opacity);
+	transition: opacity .5s ease-out, background-color .15s ease-in-out;
+	animation: loadingEvent 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) infinite alternate;
+
+	&--isLoaded {
+		background-color: var(--background);
+		color: var(--foreground);
+		animation: none;
+	}
+}
+
+@keyframes loadingEvent {
+	from {
+		opacity: var(--opacity);
+	}
+	to {
+		opacity: calc(var(--opacity) - .4);
+	}
 }

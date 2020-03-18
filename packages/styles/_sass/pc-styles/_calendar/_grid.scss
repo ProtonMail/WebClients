@@ -63,7 +63,7 @@
 	}
 
 	&-gridcell {
-		margin-right: $gridcell-right-margin;
+		margin-right: $calendar-gridcell-margin;
 
 		&::after {
 			border-left: $calendar-grid-border;
@@ -76,7 +76,7 @@
 	&-nowHourLine {
 		z-index: 6;
 		left: 0;
-		right: -$gridcell-right-margin;
+		right: -$calendar-gridcell-margin;
 		border-bottom: 2px solid var(--bgcolor-calendar-now-indicator, $pm-global-warning);
 
 		&::before {
