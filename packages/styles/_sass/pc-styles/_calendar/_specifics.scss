@@ -1,6 +1,6 @@
 .calendar-fullday-row {
 	border-bottom: $calendar-grid-border;
-	padding-bottom: 3px;
+	padding-bottom: $calendar-gridcell-gutter;
 }
 
 .calendar-first-row-heading {

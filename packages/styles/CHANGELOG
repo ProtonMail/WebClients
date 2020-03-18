@@ -20,6 +20,9 @@
 - added `shape-file-edit`, `shape-file-upload`, `shape-folder-new`, `shape-folder-upload` icons
 - loader animation rework for less blury effect and more customization / random feeling
 - added new responsive helpers: `ontinymobile-flex-self-start`/`ontinymobile-flex-column` and `ontinymobile-m1/mt1/mr1/mb1/ml1`
+- new animation for Calendar event loading
+- drag and drop image for Drive
+
 
 ## Updated/fixes
 
@@ -38,6 +41,7 @@
 - fixed `.toolbar-select` issue in Dark Mode
 - fix arrow colors (mini-calendar)
 - add exception for `pm-button--link` and `nodecoration`
+- fix import/export icons
 
 
 # [1.8.1] - 2019-01-31
