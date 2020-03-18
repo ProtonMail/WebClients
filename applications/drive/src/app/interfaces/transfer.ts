@@ -1,4 +1,5 @@
 export enum TransferState {
+    Initializing = 'initializing',
     Pending = 'pending',
     Progress = 'progress',
     Done = 'done',

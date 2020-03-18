@@ -19,14 +19,18 @@ export interface UploadInfo {
 export interface Upload {
     id: string;
     meta: TransferMeta;
-    info: UploadInfo;
+    info?: UploadInfo;
     state: TransferState;
     startDate: Date;
 }
 
 interface UploadProviderState {
     uploads: Upload[];
-    addToUploadQueue: (meta: TransferMeta, info: UploadInfo, callbacks: UploadCallbacks) => void;
+    addToUploadQueue: (
+        file: File,
+        metadataPromise: Promise<{ meta: TransferMeta; info: UploadInfo }>,
+        callbacks: UploadCallbacks
+    ) => void;
     getUploadsProgresses: () => TransferProgresses;
     clearUploads: () => void;
 }
@@ -44,9 +48,11 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     const controls = useRef<{ [id: string]: UploadControls }>({});
     const progresses = useRef<TransferProgresses>({});
 
-    const updateUploadState = (id: string, state: TransferState) => {
-        setUploads((uploads) => uploads.map((upload) => (upload.id === id ? { ...upload, state } : upload)));
+    const updateUploadByID = (id: string, data: Partial<Upload>) => {
+        setUploads((uploads) => uploads.map((upload) => (upload.id === id ? { ...upload, ...data } : upload)));
     };
+
+    const updateUploadState = (id: string, state: TransferState) => updateUploadByID(id, { state });
 
     useEffect(() => {
         const activeUploads = uploads.filter(({ state }) => state === TransferState.Progress);
@@ -54,6 +60,13 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
         if (activeUploads.length < MAX_ACTIVE_UPLOADS && nextPending) {
             const { id, info } = nextPending;
+
+            if (!info) {
+                // Should never happen really
+                console.error('Pending upload has no upload info');
+                updateUploadState(id, TransferState.Error);
+                return;
+            }
 
             updateUploadState(id, TransferState.Progress);
 
@@ -74,7 +87,11 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         }
     }, [uploads]);
 
-    const addToUploadQueue = (meta: TransferMeta, info: UploadInfo, callbacks: UploadCallbacks) => {
+    const addToUploadQueue = async (
+        file: File,
+        metadataPromise: Promise<{ meta: TransferMeta; info: UploadInfo }>,
+        callbacks: UploadCallbacks
+    ) => {
         const { id, uploadControls } = initUpload({
             ...callbacks,
             onProgress: (bytes) => {
@@ -90,12 +107,23 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
             ...uploads,
             {
                 id,
-                meta,
-                info,
-                state: TransferState.Pending,
+                meta: {
+                    filename: file.name,
+                    mimeType: file.type,
+                    size: file.size
+                },
+                state: TransferState.Initializing,
                 startDate: new Date()
             }
         ]);
+
+        const { meta, info } = await metadataPromise;
+
+        updateUploadByID(id, {
+            meta,
+            info,
+            state: TransferState.Pending
+        });
     };
 
     const getUploadsProgresses = () => ({ ...progresses.current });

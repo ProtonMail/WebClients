@@ -16,14 +16,11 @@ type BlockList = {
     Size: number;
     Index: number;
 }[];
-type RequestUpload = (blockList: BlockList) => Promise<UploadLink[]>;
-type BlockTransformer = (buffer: Uint8Array) => Promise<Uint8Array>;
-type UploadFinalizer = (blocklist: BlockMeta[]) => Promise<void>;
 
 export interface UploadCallbacks {
-    transform: BlockTransformer;
-    requestUpload: RequestUpload;
-    finalize: UploadFinalizer;
+    transform: (buffer: Uint8Array) => Promise<Uint8Array>;
+    requestUpload: (blockList: BlockList) => Promise<UploadLink[]>;
+    finalize: (blocklist: BlockMeta[]) => Promise<void>;
     onProgress?: (bytes: number) => void;
 }
 
