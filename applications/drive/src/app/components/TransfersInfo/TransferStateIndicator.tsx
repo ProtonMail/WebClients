@@ -14,6 +14,9 @@ const TransferStateIndicator = ({ transfer: { id, state }, percentageDone }: Pro
     const isSuccess = state === TransferState.Done;
     const isError = state === TransferState.Canceled || state === TransferState.Error;
     const statusInfo = {
+        [TransferState.Initializing]: {
+            text: c('Info').t`Initializing`
+        },
         [TransferState.Pending]: {
             text: c('Info').t`Queued`
         },

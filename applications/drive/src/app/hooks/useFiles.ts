@@ -142,62 +142,80 @@ function useFiles(shareId: string) {
 
     const uploadDriveFile = useCallback(
         async (ParentLinkID: string, file: File) => {
-            const [{ keys: parentKeys }, addressKeyInfo] = await Promise.all([
-                getFolderMeta(ParentLinkID),
-                getPrimaryAddressKey()
-            ]);
+            const setupPromise = (async () => {
+                const [{ keys: parentKeys }, addressKeyInfo] = await Promise.all([
+                    getFolderMeta(ParentLinkID),
+                    getPrimaryAddressKey()
+                ]);
 
-            const { NodeKey, privateKey, NodePassphrase, signature: NodePassphraseSignature } = await generateNodeKeys(
-                parentKeys.privateKey,
-                addressKeyInfo.privateKey
-            );
+                const {
+                    NodeKey,
+                    privateKey,
+                    NodePassphrase,
+                    signature: NodePassphraseSignature
+                } = await generateNodeKeys(parentKeys.privateKey, addressKeyInfo.privateKey);
 
-            const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
+                const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
 
-            if (!ContentKeyPacket) {
-                throw new Error('Could not generate ContentKeyPacket');
-            }
+                if (!ContentKeyPacket) {
+                    throw new Error('Could not generate ContentKeyPacket');
+                }
 
-            // TODO: create initially with original name, rename after check is done
-            const { filename, hash: Hash } = await findAvailableName(ParentLinkID, file.name);
-            const blob = new Blob([file], { type: file.type });
+                const { filename, hash: Hash } = await findAvailableName(ParentLinkID, file.name);
+                const blob = new Blob([file], { type: file.type });
 
-            const Name = await encryptUnsigned({
-                message: filename,
-                privateKey: parentKeys.privateKey
-            });
+                const Name = await encryptUnsigned({
+                    message: filename,
+                    privateKey: parentKeys.privateKey
+                });
 
-            const MimeType = lookup(filename) || 'application/octet-stream';
+                const MimeType = lookup(filename) || 'application/octet-stream';
 
-            const { File } = await api<CreateFileResult>(
-                queryCreateFile(shareId, {
+                const { File } = await api<CreateFileResult>(
+                    queryCreateFile(shareId, {
+                        Name,
+                        MimeType,
+                        Hash,
+                        ParentLinkID,
+                        NodeKey,
+                        NodePassphrase,
+                        NodePassphraseSignature,
+                        SignatureAddressID: addressKeyInfo.address.ID,
+                        ContentKeyPacket
+                    })
+                );
+
+                return {
+                    File,
+                    blob,
                     Name,
                     MimeType,
-                    Hash,
-                    ParentLinkID,
-                    NodeKey,
-                    NodePassphrase,
-                    NodePassphraseSignature,
-                    SignatureAddressID: addressKeyInfo.address.ID,
-                    ContentKeyPacket
-                })
-            );
+                    sessionKey,
+                    filename,
+                    addressKeyInfo
+                };
+            })();
 
             addToUploadQueue(
-                {
-                    size: blob.size,
-                    mimeType: MimeType,
-                    filename
-                },
-                {
-                    blob,
-                    ParentLinkID,
-                    LinkID: File.ID,
-                    RevisionID: File.RevisionID,
-                    ShareID: shareId
-                },
+                file,
+                setupPromise.then(({ blob, MimeType, File, filename }) => ({
+                    meta: {
+                        size: blob.size,
+                        mimeType: MimeType,
+                        filename
+                    },
+                    info: {
+                        blob,
+                        ParentLinkID,
+                        LinkID: File.ID,
+                        RevisionID: File.RevisionID,
+                        ShareID: shareId
+                    }
+                })),
                 {
                     transform: async (data) => {
+                        const { sessionKey } = await setupPromise;
+
                         const res = await encryptMessage({
                             data,
                             sessionKey,
@@ -206,6 +224,7 @@ function useFiles(shareId: string) {
                         return res.message.packets.write() as Uint8Array;
                     },
                     requestUpload: async (BlockList) => {
+                        const { File, addressKeyInfo } = await setupPromise;
                         const { signature, address } = await sign(JSON.stringify(BlockList), addressKeyInfo);
 
                         const { UploadLinks } = await api<RequestUploadResult>(
@@ -221,7 +240,10 @@ function useFiles(shareId: string) {
                         return UploadLinks;
                     },
                     finalize: async (blockMeta) => {
-                        const rootHash = await generateRootHash(null, blockMeta);
+                        const [{ File }, rootHash] = await Promise.all([
+                            setupPromise,
+                            generateRootHash(null, blockMeta)
+                        ]);
                         await api(
                             queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
                                 State: FileRevisionState.Active,

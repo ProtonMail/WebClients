@@ -1,7 +1,7 @@
 import React from 'react';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { c } from 'ttag';
-import { Icon } from 'react-components';
+import { Icon, classnames, Loader } from 'react-components';
 import { Download } from '../downloads/DownloadProvider';
 import { Upload } from '../uploads/UploadProvider';
 import ProgressBar, { ProgressBarStatus } from './ProgressBar';
@@ -40,6 +40,8 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
 
     const isProgress = transfer.state === TransferState.Progress;
     const isError = transfer.state === TransferState.Canceled || transfer.state === TransferState.Error;
+    const isInitializing = transfer.state === TransferState.Initializing;
+    const isCanceled = transfer.state === TransferState.Canceled;
 
     // If file size is 0, progress and file size are changed to 1/1, so that the bar is complete
     const progress = fileSize === 0 ? 1 : stats.progress;
@@ -52,9 +54,16 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
                 ) : (
                     <img className="mr1 flex-item-noshrink" src={uploadSvg} alt={c('Info').t`Upload`} />
                 )}
-                <Icon name="drafts" className="mr0-5 flex-item-noshrink color-global-altgrey" size={25} />
+                {isInitializing ? (
+                    <Loader className="mr0-5" />
+                ) : (
+                    <Icon name="drafts" className="mr0-5 flex-item-noshrink color-global-altgrey" size={25} />
+                )}
                 <div className="pd-transfers-listItemName">
-                    <span className="ellipsis" title={transfer.meta.filename}>
+                    <span
+                        className={classnames(['ellipsis', isInitializing && 'opacity-50'])}
+                        title={transfer.meta.filename}
+                    >
                         {transfer.meta.filename}
                     </span>
                 </div>
@@ -65,7 +74,7 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
                 </div>
             </div>
             <ProgressBar
-                status={isError ? ProgressBarStatus.Error : ProgressBarStatus.Success}
+                status={isError || isCanceled ? ProgressBarStatus.Error : ProgressBarStatus.Success}
                 aria-describedby={transfer.id}
                 value={progress}
                 max={fileSize || 1}

@@ -46,7 +46,7 @@ const DriveContentProviderInner = ({ children, resource }: { children: React.Rea
 
     const uploadedCount = uploads.filter(
         ({ state, info }) =>
-            state === TransferState.Done && info.ParentLinkID === resource.linkId && info.ShareID === resource.shareId
+            state === TransferState.Done && info?.ParentLinkID === resource.linkId && info?.ShareID === resource.shareId
     ).length;
 
     const loadNextInQueue = async (): Promise<void> => {
