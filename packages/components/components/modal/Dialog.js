@@ -5,12 +5,14 @@ import { classnames } from '../../helpers/component';
 
 const CLASSES = {
     MODAL: 'pm-modal',
+    MODAL_IN: 'pm-modalIn',
     MODAL_OUT: 'pm-modalOut',
     MODAL_SMALL: 'pm-modal--smaller'
 };
 
 /** @type any */
 const Dialog = ({
+    onEnter,
     onExit,
     small: isSmall = false,
     isClosing = false,
@@ -27,6 +29,9 @@ const Dialog = ({
     const handleAnimationEnd = ({ animationName }) => {
         if (animationName === CLASSES.MODAL_OUT && isClosing) {
             onExit && onExit();
+        }
+        if (animationName === CLASSES.MODAL_IN && !isClosing) {
+            onEnter && onEnter();
         }
     };
 
@@ -56,6 +61,7 @@ const Dialog = ({
 };
 
 Dialog.propTypes = {
+    onEnter: PropTypes.func,
     onExit: PropTypes.func.isRequired,
     onClose: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
