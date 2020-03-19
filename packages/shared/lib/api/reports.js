@@ -19,8 +19,8 @@ export const reportCSPViolation = (cspReport) => ({
     data: { 'csp-report': cspReport }
 });
 
-export const reportPishing = ({ MessageID, MIMEType, Body }) => ({
+export const reportPhishing = ({ MessageID, MIMEType, Body }) => ({
     method: 'post',
-    url: 'reports/pishing',
+    url: 'reports/phishing',
     data: { MessageID, MIMEType, Body }
 });
