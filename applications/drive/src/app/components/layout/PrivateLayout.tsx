@@ -4,6 +4,7 @@ import { Sidebar, AppsSidebar, useToggle, StorageSpaceStatus, Href } from 'react
 import Header from './PrivateHeader';
 import UploadButton from '../uploads/UploadButton';
 import TransfersInfo from '../TransfersInfo/TransfersInfo';
+import UploadDragDrop from '../uploads/UploadDragDrop/UploadDragDrop';
 
 const getSidebar = () => {
     return [
@@ -28,7 +29,7 @@ const PrivateLayout = ({ children }: Props) => {
     const { state: isHeaderExpanded, toggle: toggleHeaderExpanded } = useToggle();
 
     return (
-        <div className="flex flex-nowrap no-scroll">
+        <UploadDragDrop className="flex flex-nowrap no-scroll">
             <AppsSidebar
                 items={[
                     <StorageSpaceStatus
@@ -57,7 +58,7 @@ const PrivateLayout = ({ children }: Props) => {
                     <TransfersInfo />
                 </div>
             </div>
-        </div>
+        </UploadDragDrop>
     );
 };
 

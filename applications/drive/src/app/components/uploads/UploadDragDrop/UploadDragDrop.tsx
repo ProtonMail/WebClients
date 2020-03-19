@@ -8,9 +8,10 @@ import useFiles from '../../../hooks/useFiles';
 
 interface UploadDragDropProps {
     children: ReactNode;
+    className?: string;
 }
 
-const UploadDragDrop = ({ children }: UploadDragDropProps) => {
+const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
     const dropAreaRef = createRef<HTMLDivElement>();
     const overlayRef = createRef<HTMLDivElement>();
 
@@ -38,7 +39,7 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
     }, []);
 
     useEffect(() => {
-        const megabiteSize = 1048576;
+        const megabyteSize = 1048576;
 
         const preventDefault = (e: Event) => {
             e.preventDefault();
@@ -51,7 +52,7 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
 
         const isFile = async (blob: Blob): Promise<boolean> => {
             return new Promise((resolve) => {
-                if (blob.size > megabiteSize) {
+                if (blob.size > megabyteSize) {
                     resolve(true);
                 }
 
@@ -99,8 +100,8 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
     }, [overlayIsVisible]);
 
     return (
-        <>
-            <div ref={dropAreaRef}>{children}</div>
+        <div ref={dropAreaRef} className={className}>
+            {children}
             {overlayIsVisible && (
                 <div ref={overlayRef} className={'pd-drag-drop'}>
                     <section className="pd-drag-drop-infobox p2">
@@ -110,7 +111,7 @@ const UploadDragDrop = ({ children }: UploadDragDropProps) => {
                     </section>
                 </div>
             )}
-        </>
+        </div>
     );
 };
 
