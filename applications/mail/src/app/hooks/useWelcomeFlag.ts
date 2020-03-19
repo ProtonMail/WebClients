@@ -1,6 +1,5 @@
 import { useMemo, useEffect, DependencyList } from 'react';
-
-const SESSION_KEY = 'proton:welcome';
+import { useUser } from 'react-components';
 
 // TODO: Export this function in proton-shared and use it
 const hasSessionStorage = () => {
@@ -17,12 +16,15 @@ const hasSessionStorage = () => {
  * Session detection is based on browser sessionStorage time to live
  */
 export const useWelcomeFlag = (deps: DependencyList) => {
+    const [user] = useUser();
+    const key = `proton:welcome:${user.ID}`;
+
     useEffect(() => {
         if (!hasSessionStorage()) {
             return;
         }
 
-        window.sessionStorage.setItem(SESSION_KEY, 'true');
+        window.sessionStorage.setItem(key, 'true');
     }, []);
 
     return useMemo(() => {
@@ -30,6 +32,6 @@ export const useWelcomeFlag = (deps: DependencyList) => {
             return false;
         }
 
-        return !window.sessionStorage.getItem(SESSION_KEY);
+        return !window.sessionStorage.getItem(key);
     }, deps);
 };

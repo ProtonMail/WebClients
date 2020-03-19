@@ -1,5 +1,5 @@
 import React from 'react';
-import { useUser, useModals, LinkButton, AuthenticatedBugModal } from 'react-components';
+import { useUser, useModals, InlineLinkButton, AuthenticatedBugModal, Href } from 'react-components';
 import { c, ngettext, msgid } from 'ttag';
 import { Location } from 'history';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
@@ -8,6 +8,9 @@ import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
 import unreadEmailsSvgLight from 'design-system/assets/img/shared/unread-emails.svg';
 import unreadEmailsSvgDark from 'design-system/assets/img/shared/unread-emails-dark.svg';
+import storageSvg from 'design-system/assets/img/shared/welcome/storage.svg';
+import mailSvg from 'design-system/assets/img/shared/welcome/custom.svg';
+import customSvg from 'design-system/assets/img/shared/welcome/custom.svg';
 import { LabelCount } from '../../models/label';
 import { MailSettings } from '../../models/utils';
 
@@ -34,19 +37,21 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
         </strong>
     ) : (
         <strong key="unreads-label">
-            {ngettext(msgid`${Unread} unread email`, `${Unread} unread emails`, Unread)}
+            {ngettext(msgid`${Unread} unread message`, `${Unread} unread messages`, Unread)}
         </strong>
     );
 
     const reportBugButton = (
-        <LinkButton key="report-bug-btn" onClick={() => createModal(<AuthenticatedBugModal />)}>{c('Action')
-            .t`report a bug`}</LinkButton>
+        <InlineLinkButton key="report-bug-btn" onClick={() => createModal(<AuthenticatedBugModal />)}>{c('Action')
+            .t`report a bug`}</InlineLinkButton>
     );
 
+    const startingPrice = <strong key="starting-price">$4/month</strong>;
+
     return (
-        <div className="flex-item-fluid aligncenter p3">
+        <div className="flex-item-fluid aligncenter p2">
             <h1>
-                {user.DisplayName ? c('Title').t`Welcome, ${capitalize(user.DisplayName)}!` : c('Title').t`Welcome`}
+                {user.DisplayName ? c('Title').t`Welcome, ${capitalize(user.DisplayName)}!` : c('Title').t`Welcome!`}
             </h1>
             {Unread ? <p>{c('Info').jt`You have ${unreadsLabel} in your inbox.`}</p> : null}
             {user.hasPaidMail ? (
@@ -60,7 +65,36 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
             ) : (
                 <>
                     <p>{c('Info')
-                        .t`Upgrade to a paid plan starting from $4/month only and get additional storage capacity and more addresses with ProtonMail Plus.`}</p>
+                        .jt`Upgrade to a paid plan starting from ${startingPrice} only and get additional storage capacity and more addresses with ProtonMail Plus.`}</p>
+                    <div className="flex flex-nowrap mw50e center mt2">
+                        <div className="bordered-container flex-item-fluid flex flex-column aligncenter p1 mr2">
+                            <img className="mb1" src={storageSvg} alt={c('Alt').t`Storage`} />
+                            <p className="mt0 mb1 bold">{c('Info').t`5GB Storage`}</p>
+                            <p className="mt0 mb1">{c('Info')
+                                .t`Get enough storage space to hold on your history of precious communications.`}</p>
+                            <Href url="/settings/subscription" href="_self" className="pm-button--primary mtauto">{c(
+                                'Action'
+                            ).t`Upgrade`}</Href>
+                        </div>
+                        <div className="bordered-container flex-item-fluid flex flex-column aligncenter p1 mr2">
+                            <img className="mb1" src={mailSvg} alt={c('Alt').t`Mail`} />
+                            <p className="mt0 mb1 bold">{c('Info').t`5 Email Addresses`}</p>
+                            <p className="mt0 mb1">{c('Info')
+                                .t`Set up to 5 email addresses and use them as you deem fit.`}</p>
+                            <Href url="/settings/subscription" href="_self" className="pm-button--primary mtauto">{c(
+                                'Action'
+                            ).t`Upgrade`}</Href>
+                        </div>
+                        <div className="bordered-container flex-item-fluid flex flex-column aligncenter p1">
+                            <img className="mb1" src={customSvg} alt={c('Alt').t`Customization`} />
+                            <p className="mt0 mb1 bold">{c('Info').t`Customization`}</p>
+                            <p className="mt0 mb1">{c('Info')
+                                .t`Folders, Labels, Auto-reply and more ways to tweak ProtonMail to match the way you work.`}</p>
+                            <Href url="/settings/subscription" href="_self" className="pm-button--primary mtauto">{c(
+                                'Action'
+                            ).t`Upgrade`}</Href>
+                        </div>
+                    </div>
                 </>
             )}
         </div>
