@@ -15,7 +15,7 @@ import { MINUTE } from '../../constants';
 
 const MIN_CUTOFF = -MINUTE * 1000;
 
-const displayNotification = ({ title = c('Title').t`Calendar alarm`, text, ...rest }) => {
+export const displayNotification = ({ title = c('Title').t`Calendar alarm`, text, ...rest }) => {
     return create(title, {
         body: text,
         icon: notificationIcon,
