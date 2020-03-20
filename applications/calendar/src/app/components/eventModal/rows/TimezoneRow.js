@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Label, Row } from 'react-components';
 import PropTypes from 'prop-types';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from 'proton-shared/lib/date/timezone';
-import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
+import { getDateTime, getDateTimeState, getTimeInUtc } from '../eventForm/time';
 import { getFrequencyModelChange } from '../eventForm/propertiesToModel';
 
 import TimezoneSelector from '../../TimezoneSelector';
@@ -14,17 +14,25 @@ const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, model, setModel }
         const newStart = getDateTimeState(newStartUtcDate, tzid);
         const newFrequencyModel = getFrequencyModelChange(model.start, newStart, model.frequencyModel);
 
-        setModel({ ...model, start: newStart, frequencyModel: newFrequencyModel });
+        setModel({
+            ...model,
+            start: newStart,
+            frequencyModel: newFrequencyModel
+        });
     };
 
     const handleChangeEnd = (tzid) => {
         const endUtcDate = getTimeInUtc(model.end);
         const newEndUtcDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(endUtcDate), tzid));
+
         setModel({
             ...model,
             end: getDateTimeState(newEndUtcDate, tzid)
         });
     };
+
+    const startDateTime = useMemo(() => getDateTime(model.start), [model.start]);
+    const endDateTime = useMemo(() => getDateTime(model.end), [model.end]);
 
     return (
         <>
@@ -36,6 +44,7 @@ const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, model, setModel }
                         data-test-id="create-event-modal/start:time-zone-dropdown"
                         timezone={model.start.tzid}
                         onChange={handleChangeStart}
+                        date={startDateTime}
                     />
                 </div>
             </Row>
@@ -47,6 +56,7 @@ const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, model, setModel }
                         data-test-id="create-event-modal/end:time-zone-dropdown"
                         timezone={model.end.tzid}
                         onChange={handleChangeEnd}
+                        date={endDateTime}
                     />
                 </div>
             </Row>

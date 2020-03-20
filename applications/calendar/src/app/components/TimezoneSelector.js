@@ -13,7 +13,12 @@ const TimezoneSelector = ({
     ...rest
 }) => {
     const timezoneOptions = useMemo(() => {
-        return getTimeZoneOptions(date || new Date());
+        const options = getTimeZoneOptions(date || new Date());
+        return options.map(({ text, value, key }) => (
+            <option key={key} value={value}>
+                {text}
+            </option>
+        ));
     }, [date]);
 
     return (
@@ -27,13 +32,7 @@ const TimezoneSelector = ({
             }}
             {...rest}
         >
-            {timezoneOptions.map(({ text, value, key }) => {
-                return (
-                    <option key={key} value={value}>
-                        {text}
-                    </option>
-                );
-            })}
+            {timezoneOptions}
         </select>
     );
 };
@@ -48,4 +47,4 @@ TimezoneSelector.propTypes = {
     loading: PropTypes.bool
 };
 
-export default React.memo(TimezoneSelector);
+export default TimezoneSelector;

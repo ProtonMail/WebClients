@@ -10,6 +10,10 @@ export const getDateTimeState = (utcDate, tzid) => {
     };
 };
 
+export const getDateTime = ({ date, time }) => {
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate(), time.getHours(), time.getMinutes());
+};
+
 export const getTimeInUtc = ({ date, time, tzid }, isAllDay) => {
     if (isAllDay) {
         return toUTCDate({
