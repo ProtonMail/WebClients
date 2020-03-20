@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { generateUID, classnames } from '../../helpers/component';
@@ -17,19 +17,27 @@ const TextArea = (props) => {
         isSubmitted,
         ...rest
     } = props;
+    const textAreaRef = useRef();
     const { rows, updateTextArea } = useAutoGrow({ maxRows, minRows, autoGrow });
     const { handlers, statusClasses, status } = useInput({
         ...props,
         isSubmitted,
         onChange(e) {
             if (updateTextArea) {
-                updateTextArea(e);
+                updateTextArea(e.target);
             }
             if (onChange) {
                 onChange(e);
             }
         }
     });
+
+    useEffect(() => {
+        if (updateTextArea && textAreaRef.current) {
+            updateTextArea(textAreaRef.current);
+        }
+    }, [updateTextArea]);
+
     const [uid] = useState(generateUID('textarea'));
 
     const hasError = error && (status.isDirty || isSubmitted);
@@ -37,6 +45,7 @@ const TextArea = (props) => {
     return (
         <>
             <textarea
+                ref={textAreaRef}
                 rows={rows}
                 className={classnames(['pm-field w100', className, statusClasses])}
                 aria-invalid={hasError}

@@ -1,28 +1,29 @@
 import { useState, useCallback } from 'react';
 
+const getTextAreaRows = ({ el, minRows, maxRows }) => {
+    const textAreaLineHeight = +getComputedStyle(el).lineHeight.replace('px', '');
+
+    const previousRows = el.rows;
+
+    // Reset rows so we can calculate calculate currentRows correctly
+    el.rows = minRows;
+
+    const currentRows = Math.min(maxRows, Math.max(minRows, ~~(el.scrollHeight / textAreaLineHeight)));
+
+    // Set rows attribute directly because React won't update it as it stayed the same
+    if (currentRows === previousRows) {
+        el.rows = currentRows;
+    }
+
+    return currentRows;
+};
+
 const useAutoGrow = ({ maxRows = 5, minRows = 1, autoGrow = false }) => {
     const [rows, setRows] = useState(minRows);
 
     const updateTextArea = useCallback(
-        (event) => {
-            const textAreaLineHeight = +getComputedStyle(event.target).lineHeight.replace('px', '');
-
-            const previousRows = event.target.rows;
-
-            // Reset rows so we can calculate calculate currentRows correctly
-            event.target.rows = minRows;
-
-            const currentRows = Math.min(
-                maxRows,
-                Math.max(minRows, ~~(event.target.scrollHeight / textAreaLineHeight))
-            );
-
-            // Set rows attribute directly because React won't update it as it stayed the same
-            if (currentRows === previousRows) {
-                event.target.rows = currentRows;
-            }
-
-            setRows(currentRows);
+        (el) => {
+            setRows(getTextAreaRows({ el, minRows, maxRows }));
         },
         [minRows, maxRows]
     );
