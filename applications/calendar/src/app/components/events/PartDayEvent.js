@@ -60,7 +60,12 @@ const PartDayEvent = ({
 
     const content = (() => {
         if (error) {
-            return <Icon name="lock" className="calendar-eventcell-lock-icon" />;
+            return (
+                <div className="flex flex-nowrap flex-items-center">
+                    <Icon name="lock" className="calendar-eventcell-lock-icon" />
+                    <span className="flex-item-fluid ellipsis">&nbsp;</span>
+                </div>
+            );
         }
 
         return (
