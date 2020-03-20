@@ -63,7 +63,7 @@ sub {
   table {
     &:last-child {
       margin-bottom: 0;
-    } 
+    }
   }
 }
 
@@ -168,13 +168,13 @@ abbr[title] {
 
 .ellipsis {
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 .ellipsis-four-lines {
   display: -webkit-box;
   -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;  
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
@@ -195,4 +195,8 @@ b, strong, .strong, .bold {
 
 .no-outline {
   outline: 0;
+}
+
+.pre-wrap {
+	white-space: pre-wrap;
 }
