@@ -16,6 +16,7 @@ import useGetCalendarEventPersonal from './useGetCalendarEventPersonal';
 const { DELETE, CREATE, UPDATE } = EVENT_ACTIONS;
 
 const DAY_IN_MILLISECONDS = 86400000;
+const MAX_FETCH_ITERATIONS = 10;
 
 const parseNextPaginationStart = ({ SharedEvents = [] }) => {
     try {
@@ -37,20 +38,21 @@ const getPaginatedEvents = async (api, calendarID, dateRange, tzid) => {
     const PageSize = 100;
 
     const params = {
-        Start: getUnixTime(dateRange[0]),
         End: getUnixTime(dateRange[1]),
         Timezone: tzid,
         PageSize,
         Page: 0
     };
 
-    let lastStart = params.Start;
+    let lastStart = getUnixTime(dateRange[0]);
+    let iterations = 0;
 
-    while (lastStart) {
+    while (lastStart !== undefined && iterations < MAX_FETCH_ITERATIONS) {
         const { Events } = await api(queryEvents(calendarID, { ...params, Start: lastStart }));
         const lastEvent = Events.length > 0 ? Events[Events.length - 1] : undefined;
         results = results.concat(Events);
         lastStart = Events.length === PageSize && lastEvent ? parseNextPaginationStart(lastEvent) : undefined;
+        iterations++;
     }
 
     return results;
