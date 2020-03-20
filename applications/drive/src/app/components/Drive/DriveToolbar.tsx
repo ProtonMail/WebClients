@@ -10,6 +10,7 @@ import { getMetaForTransfer } from './Drive';
 import { useDriveContent } from './DriveContentProvider';
 import CreateFolderModal from '../CreateFolderModal';
 import RenameModal from '../RenameModal';
+import DetailsModal from '../DetailsModal';
 
 interface Props {
     resource: DriveResource;
@@ -67,6 +68,10 @@ const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
         );
     };
 
+    const handleDetailsClick = () => {
+        createModal(<DetailsModal item={selectedItems[0]} resource={resource} />);
+    };
+
     return (
         <Toolbar>
             {
@@ -83,7 +88,10 @@ const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
 
             <ToolbarButton icon="folder-new" title={c('Action').t`New Folder`} onClick={handleCreateFolder} />
             {selectedItems.length === 1 && (
-                <ToolbarButton title={c('Action').t`Rename`} icon="file-edit" onClick={handleRename} />
+                <>
+                    <ToolbarButton title={c('Action').t`Rename`} icon="file-edit" onClick={handleRename} />
+                    <ToolbarButton title={c('Action').t`Details`} icon="info" onClick={handleDetailsClick} />
+                </>
             )}
             {onlyFilesSelected && selectedItems.length > 0 && (
                 <ToolbarButton title={c('Action').t`Download`} icon="download" onClick={handleDownloadClick} />
