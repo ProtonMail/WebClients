@@ -706,6 +706,7 @@ const InteractiveCalendarView = ({
                             isNarrow={isNarrow}
                             style={style}
                             popoverRef={ref}
+                            now={now}
                             date={targetMoreData.date}
                             events={targetMoreData.events}
                             targetEventRef={setTargetEventRef}

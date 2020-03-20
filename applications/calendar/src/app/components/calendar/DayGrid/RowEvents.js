@@ -24,6 +24,9 @@ const RowEvents = ({
     targetEventRef,
     targetEventData
 }) => {
+    const startWindow = days[0];
+    const lastWindow = endOfDay(days[days.length - 1]);
+
     return eventsInRowStyles.map(({ idx, type, style }) => {
         if (type === 'more') {
             const isSelected = targetMoreData && idx === targetMoreData.idx && row === targetMoreData.row;
@@ -62,8 +65,8 @@ const RowEvents = ({
                 formatTime={formatTime}
                 isSelected={isSelected}
                 isBeforeNow={isBeforeNow}
-                isOutsideEnd={event.isAllDay && event.end > endOfDay(days[days.length - 1])}
-                isOutsideStart={event.isAllDay && event.start < days[0]}
+                isOutsideEnd={event.isAllDay && event.end > lastWindow}
+                isOutsideStart={event.isAllDay && event.start < startWindow}
             />
         );
     });

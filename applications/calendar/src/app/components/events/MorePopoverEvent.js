@@ -1,5 +1,6 @@
 import React from 'react';
 import { classnames } from 'react-components';
+import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 
 import FullDayEvent from './FullDayEvent';
 import PopoverHeader from './PopoverHeader';
@@ -10,6 +11,7 @@ import { DAY_EVENT_HEIGHT } from '../calendar/constants';
 const MorePopoverEvent = ({
     isNarrow,
     date,
+    now,
     onClose,
     formatTime,
     style,
@@ -49,6 +51,9 @@ const MorePopoverEvent = ({
                     if (isThisSelected) {
                         props.eventRef = targetEventRef;
                     }
+
+                    const isBeforeNow = now > event.end && !isSameDay(now, event.end);
+
                     return (
                         <FullDayEvent
                             formatTime={formatTime}
@@ -57,6 +62,7 @@ const MorePopoverEvent = ({
                             className="calendar-dayeventcell w100 alignleft"
                             isSelected={isSelected}
                             tzid={tzid}
+                            isBeforeNow={isBeforeNow}
                             {...props}
                         />
                     );
