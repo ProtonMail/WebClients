@@ -6,7 +6,7 @@ import { Upload } from '../uploads/UploadProvider';
 import { TransferState } from '../../interfaces/transfer';
 
 const isTransferActive = ({ state }: Upload | Download) =>
-    state === TransferState.Pending || state === TransferState.Progress;
+    state === TransferState.Pending || state === TransferState.Progress || TransferState.Initializing;
 const isTransferFailed = ({ state }: Upload | Download) => state === TransferState.Error;
 
 interface Props {
