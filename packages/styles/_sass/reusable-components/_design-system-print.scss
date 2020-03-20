@@ -25,6 +25,14 @@
     display: block;
   }
 
+  .is-printed-version {
+	.pm-modalContainer,
+	.pm-modal,
+	.pm-modalContentInner {
+		@extend .reset4print;
+	}
+  }
+
   body {
     padding: .5em;
     overflow: auto;
@@ -34,12 +42,22 @@
   .noprint {
     display: none;
   }
-  
+  .is-printed-version {
+	.app-root,
+	.pm-modalOverlay,
+	.pm-modalHeader,
+	.pm-modalFooter,
+	.pm-modalContentInnerTopShadow,
+	.pm-modalContentInnerBottomShadow {
+		@extend .noprint;
+	}
+  }
+
   /* display specific elements for print */
   .onprint {
     display: block;
   }
-  
+
   /* avoid problematic page break */
   blockquote, ul, ol {
     page-break-inside: avoid;
