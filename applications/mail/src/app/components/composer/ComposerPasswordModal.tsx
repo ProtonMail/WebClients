@@ -57,7 +57,12 @@ const ComposerPasswordModal = ({ message = {}, onClose, onChange }: Props) => {
     const disabled = password === '' || passwordVerif === '';
 
     return (
-        <ComposerInnerModal disabled={disabled} onSubmit={handleSubmit} onCancel={handleCancel}>
+        <ComposerInnerModal
+            title={c('Info').t`Encrypt for non-ProtonMail users`}
+            disabled={disabled}
+            onSubmit={handleSubmit}
+            onCancel={handleCancel}
+        >
             <Alert>
                 {c('Info')
                     .t`Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.`}

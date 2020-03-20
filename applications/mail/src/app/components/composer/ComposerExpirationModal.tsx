@@ -12,7 +12,7 @@ const initValues = ({ ExpiresIn = 0 }: Message = {}) => {
     const deltaDays = Math.floor(deltaHours / 24);
 
     return {
-        days: deltaDays % 7,
+        days: deltaDays,
         hours: deltaHours % 24
     };
 };
@@ -76,7 +76,12 @@ const ComposerExpirationModal = ({ message = {}, onClose, onChange }: Props) => 
     const disabled = valueInHours === 0 || isNaN(valueInHours);
 
     return (
-        <ComposerInnerModal disabled={disabled} onSubmit={handleSubmit} onCancel={handleCancel}>
+        <ComposerInnerModal
+            title={c('Info').t`Expiration Time`}
+            disabled={disabled}
+            onSubmit={handleSubmit}
+            onCancel={handleCancel}
+        >
             <Alert>
                 {c('Info')
                     .t`If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.`}
