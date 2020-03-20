@@ -21,6 +21,8 @@ const PopoverEventContent = ({
     formatTime
 }) => {
     const { Name: calendarName, Color } = Calendar;
+    const trimmedLocation = typeof model.location === 'string' ? model.location.trim() : '';
+    const trimmedDescription = typeof model.description === 'string' ? model.description.trim() : '';
 
     const dateString = useMemo(() => {
         const dateStart = formatUTC(start, 'PP', { locale: dateLocale });
@@ -84,10 +86,10 @@ const PopoverEventContent = ({
                     <span>{frequencyString}</span>
                 </div>
             ) : null}
-            {model.location ? (
+            {trimmedLocation ? (
                 <div className="flex flex-items-center flex-nowrap mb0-5">
                     <Icon title={c('Title').t`Location`} name="address" className="flex-item-noshrink mr1" />
-                    <span className="break">{model.location}</span>
+                    <span className="break">{trimmedLocation}</span>
                 </div>
             ) : null}
             {calendarString ? (
@@ -98,10 +100,10 @@ const PopoverEventContent = ({
                     </span>
                 </div>
             ) : null}
-            {model.description ? (
+            {trimmedDescription ? (
                 <div className="flex flex-nowrap mb0-5">
                     <Icon title={c('Title').t`Description`} name="note" className="flex-item-noshrink mr1 mt0-25" />
-                    <p className="break mt0 mb0 pre-wrap">{model.description}</p>
+                    <p className="break mt0 mb0 pre-wrap">{trimmedDescription}</p>
                 </div>
             ) : null}
             {model.notifications && Array.isArray(model.notifications) && model.notifications.length ? (
