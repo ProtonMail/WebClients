@@ -101,7 +101,7 @@ const PopoverEventContent = ({
             {model.description ? (
                 <div className="flex flex-nowrap mb0-5">
                     <Icon title={c('Title').t`Description`} name="note" className="flex-item-noshrink mr1 mt0-25" />
-                    <p className="break mt0 mb0">{model.description}</p>
+                    <p className="break mt0 mb0 pre-wrap">{model.description}</p>
                 </div>
             ) : null}
             {model.notifications && Array.isArray(model.notifications) && model.notifications.length ? (
