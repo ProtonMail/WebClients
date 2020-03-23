@@ -388,6 +388,13 @@ const InteractiveCalendarView = ({
 
         if (originalAction === ACTIONS.MORE_DOWN) {
             const { idx, row, events, date } = originalPayload;
+
+            // If there is any temporary event, don't allow to open the more popover so that
+            // 1) this event is not shown in more, and 2) the confirmation modal is shown
+            if (temporaryEvent) {
+                return;
+            }
+
             return ({ action }) => {
                 if (action === ACTIONS.MORE_UP) {
                     setInteractiveData({
@@ -554,8 +561,19 @@ const InteractiveCalendarView = ({
         await handleDeleteAll();
     };
 
-    const safeCloseTemporaryEventAndPopover = () => {
+    const closeAllPopovers = () => {
         setInteractiveData();
+    };
+
+    const handleCloseMorePopover = closeAllPopovers;
+
+    const handleCloseEventPopover = () => {
+        // If both a more popover and an event is open, first close the event
+        if (interactiveData && interactiveData.targetMoreData && interactiveData.targetEventData) {
+            setInteractiveData(omit(interactiveData, ['targetEventData']));
+            return;
+        }
+        closeAllPopovers();
     };
 
     const handleConfirmDeleteTemporary = ({ ask = false } = {}) => {
@@ -584,11 +602,6 @@ const InteractiveCalendarView = ({
     };
 
     useImperativeHandle(interactiveRef, () => ({
-        closePopover: () => {
-            handleConfirmDeleteTemporary({ ask: true })
-                .then(safeCloseTemporaryEventAndPopover)
-                .catch(noop);
-        },
         createEvent: () => {
             handleCreateEvent();
         }
@@ -607,7 +620,7 @@ const InteractiveCalendarView = ({
     const autoCloseRef = useRef();
     autoCloseRef.current = ({ ask }) => {
         handleConfirmDeleteTemporary({ ask })
-            .then(safeCloseTemporaryEventAndPopover)
+            .then(closeAllPopovers)
             .catch(noop);
     };
 
@@ -702,10 +715,10 @@ const InteractiveCalendarView = ({
                                 onEdit={() => handleEditEvent(temporaryEvent)}
                                 onClose={({ safe = false } = {}) => {
                                     if (safe) {
-                                        return safeCloseTemporaryEventAndPopover();
+                                        return closeAllPopovers();
                                     }
                                     handleConfirmDeleteTemporary({ ask: true })
-                                        .then(safeCloseTemporaryEventAndPopover)
+                                        .then(closeAllPopovers)
                                         .catch(noop);
                                 }}
                                 isCreateEvent={isCreatingEvent}
@@ -731,7 +744,7 @@ const InteractiveCalendarView = ({
                                 );
                                 handleEditEvent(newTemporaryEvent);
                             }}
-                            onClose={safeCloseTemporaryEventAndPopover}
+                            onClose={handleCloseEventPopover}
                         />
                     );
                 }}
@@ -751,7 +764,7 @@ const InteractiveCalendarView = ({
                             targetEventData={targetEventData}
                             formatTime={formatTime}
                             onClickEvent={handleClickEvent}
-                            onClose={safeCloseTemporaryEventAndPopover}
+                            onClose={handleCloseMorePopover}
                         />
                     );
                 }}
@@ -760,7 +773,7 @@ const InteractiveCalendarView = ({
                 message={(location) => {
                     if (isInTemporaryBlocking && location.pathname.includes('settings')) {
                         handleConfirmDeleteTemporary({ ask: true })
-                            .then(safeCloseTemporaryEventAndPopover)
+                            .then(closeAllPopovers)
                             .catch(noop);
                         return false;
                     }
@@ -799,7 +812,7 @@ const InteractiveCalendarView = ({
                     onExit={() => {
                         removeModal(eventModalID);
                         setEventModalID();
-                        safeCloseTemporaryEventAndPopover();
+                        closeAllPopovers();
                     }}
                     isCreateEvent={isCreatingEvent}
                     {...getModal(eventModalID)}

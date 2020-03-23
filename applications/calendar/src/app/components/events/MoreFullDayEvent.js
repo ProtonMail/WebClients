@@ -1,10 +1,10 @@
 import React from 'react';
 
+// NOTE: Can not be a button to satisfy auto close, and to be the same as the normal events
 const MoreFullDayEvent = ({ style, more, eventRef }) => {
     return (
         <div style={style} className="calendar-dayeventcell absolute">
-            <button
-                type="button"
+            <div
                 className="
                     calendar-dayeventcell-inner
                     calendar-dayeventcell-inner--isNotAllDay
@@ -21,7 +21,7 @@ const MoreFullDayEvent = ({ style, more, eventRef }) => {
                 <span data-test-id="calendar-view:more-events-collapsed" className="mtauto mbauto">
                     {more} more
                 </span>
-            </button>
+            </div>
         </div>
     );
 };
