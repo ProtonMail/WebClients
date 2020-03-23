@@ -52,7 +52,7 @@ const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
         setFolderName(formatFolderName(target.value));
     };
 
-    const validationError = validateLinkName(name);
+    const validationError = validateLinkName(folderName);
 
     return (
         <FormModal
