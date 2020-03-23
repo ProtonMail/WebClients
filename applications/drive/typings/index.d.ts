@@ -3,6 +3,11 @@ declare module '*.svg' {
     export default src;
 }
 
+declare module '*.png' {
+    const src: string;
+    export default src;
+}
+
 declare module 'service-worker-loader!*' {
     const register: import('service-worker-loader/types').ServiceWorkerRegister;
     const ServiceWorkerNoSupportError: import('service-worker-loader/types').ServiceWorkerNoSupportError;
