@@ -309,10 +309,6 @@ const CalendarContainer = ({ calendars = [], history, location }) => {
         tzid
     );
 
-    const setDateAndView = useCallback((newDate, newView) => {
-        setCustom({ view: newView, range: undefined, date: newDate });
-    }, []);
-
     const scrollToNow = useCallback(() => {
         setTimeout(() => {
             if (timeGridViewRef.current) {
@@ -359,7 +355,10 @@ const CalendarContainer = ({ calendars = [], history, location }) => {
     }, []);
 
     const handleClickDateWeekView = useCallback((newDate) => {
-        setDateAndView(newDate, DAY);
+        if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {
+            return;
+        }
+        setCustom({ view: DAY, range: undefined, date: newDate });
     }, []);
 
     const defaultCalendarSettingsID = getDefaultCalendarID(calendarUserSettings);
@@ -384,7 +383,6 @@ const CalendarContainer = ({ calendars = [], history, location }) => {
             tzid={tzid}
             setTzid={setCustomTzid}
             range={range}
-            setCustom={setCustom}
             view={view}
             isNarrow={isNarrow}
             utcDateRangeInTimezone={utcDateRangeInTimezone}

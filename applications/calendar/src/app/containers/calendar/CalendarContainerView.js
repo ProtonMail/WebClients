@@ -211,7 +211,6 @@ CalendarContainerView.propTypes = {
     weekStartsOn: PropTypes.number,
     tzid: PropTypes.string,
     setTzid: PropTypes.func,
-    setCustom: PropTypes.func,
     onCreateEvent: PropTypes.func,
     onClickToday: PropTypes.func,
     onChangeView: PropTypes.func,
