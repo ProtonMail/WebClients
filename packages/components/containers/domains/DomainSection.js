@@ -19,7 +19,7 @@ const DomainSection = ({ domain, onChange }) => {
                 {c('Label for adding a new custom domain').t`Add a domain that you own to your ProtonMail account.`}
             </Alert>
             <Row>
-                <Label htmlFor="domainName">{c('Label').t`Enter your domain`}</Label>
+                <Label htmlFor="domainName">{c('Label').t`Domain name`}</Label>
                 <Field>
                     {domain.ID ? (
                         <span className="mt0-5 flex">{domainName}</span>
