@@ -158,7 +158,7 @@ export const MINIMUM_DATE_UTC = new Date(
     Date.UTC(MINIMUM_DATE.getFullYear(), MINIMUM_DATE.getMonth(), MINIMUM_DATE.getDate())
 );
 
-export const MAXIMUM_DATE = new Date(9999, 11, 31);
+export const MAXIMUM_DATE = new Date(2037, 11, 31);
 export const MAXIMUM_DATE_UTC = new Date(
     Date.UTC(MAXIMUM_DATE.getFullYear(), MAXIMUM_DATE.getMonth(), MAXIMUM_DATE.getDate())
 );
