@@ -1,10 +1,13 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Label, Table, TableHeader, TableBody, TableRow } from 'react-components';
+import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy, useNotifications } from 'react-components';
 
 const DMARCSection = () => {
     const none = <strong key="none">p=none</strong>;
     const address = <strong key="address">address@yourdomain.com</strong>;
+    const valueToCopy = 'v=DMARC1; p=none; rua=mailto:address@yourdomain.com';
+    const { createNotification } = useNotifications();
+    const handleCopy = () => createNotification({ text: c('Success').t`DMARC value copied to clipboard!` });
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
@@ -21,7 +24,22 @@ const DMARCSection = () => {
                     ]}
                 />
                 <TableBody>
-                    <TableRow cells={['TXT', '_dmarc', 'v=DMARC1; p=none; rua=mailto:address@yourdomain.com']} />
+                    <TableRow
+                        cells={[
+                            <code key="txt">TXT</code>,
+                            <code key="dmarc">_dmarc</code>,
+                            <div className="flex flex-nowrap flex-items-center" key="value">
+                                <Copy
+                                    onCopy={handleCopy}
+                                    className="flex-item-noshrink pm-button--small mr0-5"
+                                    value={valueToCopy}
+                                />{' '}
+                                <code className="ellipsis" title={valueToCopy}>
+                                    {valueToCopy}
+                                </code>
+                            </div>
+                        ]}
+                    />
                 </TableBody>
             </Table>
             <Alert>

@@ -1,10 +1,13 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Label, Table, TableHeader, TableBody, TableRow } from 'react-components';
+import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy, useNotifications } from 'react-components';
 
 const SPFSection = () => {
+    const { createNotification } = useNotifications();
+    const handleCopy = () => createNotification({ text: c('Success').t`SPF value copied to clipboard!` });
     const spf = <code>include:_spf.protonmail.ch</code>;
     const spfValue = <code>v=spf1</code>;
+    const valueToCopy = 'v=spf1 include:_spf.protonmail.ch mx ~all';
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
@@ -22,7 +25,22 @@ const SPFSection = () => {
                     ]}
                 />
                 <TableBody>
-                    <TableRow cells={['TXT', '@', 'v=spf1 include:_spf.protonmail.ch mx ~all']} />
+                    <TableRow
+                        cells={[
+                            <code key="txt">TXT</code>,
+                            <code key="at">@</code>,
+                            <div className="flex flex-nowrap flex-items-center" key="value">
+                                <Copy
+                                    onCopy={handleCopy}
+                                    className="flex-item-noshrink pm-button--small mr0-5"
+                                    value={valueToCopy}
+                                />{' '}
+                                <code className="ellipsis" title={valueToCopy}>
+                                    {valueToCopy}
+                                </code>
+                            </div>
+                        ]}
+                    />
                 </TableBody>
             </Table>
             <Alert>{c('Info')
