@@ -3,6 +3,7 @@ import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } fro
 import { c } from 'ttag';
 import { DriveResource } from './Drive/DriveResourceProvider';
 import useShare from '../hooks/useShare';
+import { validateLinkName } from '../utils/validation';
 
 interface Props {
     onClose?: () => void;
@@ -26,14 +27,17 @@ const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
 
     const handleSubmit = async () => {
         const name = formatFolderName(folderName);
-
         setFolderName(name);
 
-        if (!name) {
-            return;
+        try {
+            await createNewFolder(resource.linkId, name);
+        } catch (e) {
+            if (e.name === 'ValidationError') {
+                createNotification({ text: e.message, type: 'error' });
+            }
+            throw e;
         }
 
-        await createNewFolder(resource.linkId, name);
         const notificationText = (
             <span key="name" style={{ whiteSpace: 'pre' }}>
                 {c('Success').t`"${name}" created successfully`}
@@ -47,6 +51,8 @@ const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
         setFolderName(formatFolderName(target.value));
     };
+
+    const validationError = validateLinkName(name);
 
     return (
         <FormModal
@@ -68,6 +74,7 @@ const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
                         placeholder={c('Placeholder').t`New folder`}
                         onChange={handleChange}
                         onBlur={handleBlur}
+                        error={validationError}
                         required
                     />
                 </Field>
