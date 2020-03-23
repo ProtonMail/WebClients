@@ -22,6 +22,7 @@ import { lookup } from 'mime-types';
 import { queryGetLink } from '../api/link';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
+import { validateLinkName, ValidationError } from '../utils/validation';
 
 const folderChildrenCacheKey = (shareId: string, linkId: string, Page: number, PageSize: number) =>
     `drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`;
@@ -160,6 +161,11 @@ function useShare(shareId: string) {
         async (ParentLinkID: string, name: string) => {
             // Name Hash is generated from LC, for case-insensitive duplicate detection
             const lowerCaseName = name.toLowerCase();
+            const error = validateLinkName(lowerCaseName);
+
+            if (error) {
+                throw new ValidationError(error);
+            }
 
             const [{ keys: parentKeys }, { privateKey: addressKey, address }] = await Promise.all([
                 getFolderMeta(ParentLinkID),
@@ -202,6 +208,12 @@ function useShare(shareId: string) {
 
     const renameLink = useCallback(
         async (linkId: string, newName: string, parentLinkID: string) => {
+            const error = validateLinkName(newName);
+
+            if (error) {
+                throw new ValidationError(error);
+            }
+
             const lowerCaseName = newName.toLowerCase();
             const MimeType = lookup(newName) || 'application/octet-stream';
 

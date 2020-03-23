@@ -30,6 +30,7 @@ import { queryCheckAvailableHashes } from '../api/link';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { ResourceType } from '../interfaces/link';
+import { ValidationError, validateLinkName } from '../utils/validation';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -143,6 +144,12 @@ function useFiles(shareId: string) {
     const uploadDriveFile = useCallback(
         async (ParentLinkID: string, file: File) => {
             const setupPromise = (async () => {
+                const error = validateLinkName(file.name);
+
+                if (error) {
+                    throw new ValidationError(error);
+                }
+
                 const [{ keys: parentKeys }, addressKeyInfo] = await Promise.all([
                     getFolderMeta(ParentLinkID),
                     getPrimaryAddressKey()

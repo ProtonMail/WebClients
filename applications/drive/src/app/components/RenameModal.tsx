@@ -5,6 +5,7 @@ import useShare from '../hooks/useShare';
 import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { ResourceType } from '../interfaces/link';
+import { validateLinkName } from '../utils/validation';
 
 interface Props {
     onClose?: () => void;
@@ -30,7 +31,7 @@ const RenameModal = ({ shareId, item, onClose, onDone, ...rest }: Props) => {
         }
         setAutofocusDone(true);
         const [namePart] = splitExtension(item.Name);
-        if (!namePart) {
+        if (!namePart || item.Type === ResourceType.FOLDER) {
             return e.target.select();
         }
         e.target.setSelectionRange(0, namePart.length);
@@ -44,11 +45,15 @@ const RenameModal = ({ shareId, item, onClose, onDone, ...rest }: Props) => {
         const formattedName = formatName(name);
         setName(formattedName);
 
-        if (!formattedName) {
-            return;
+        try {
+            await renameLink(item.LinkID, formattedName, item.ParentLinkID);
+        } catch (e) {
+            if (e.name === 'ValidationError') {
+                createNotification({ text: e.message, type: 'error' });
+            }
+            throw e;
         }
 
-        await renameLink(item.LinkID, formattedName, item.ParentLinkID);
         const nameElement = (
             <span key="name" style={{ whiteSpace: 'pre' }}>
                 &quot;{formattedName}&quot;
@@ -64,6 +69,7 @@ const RenameModal = ({ shareId, item, onClose, onDone, ...rest }: Props) => {
     };
 
     const isFolder = item.Type === ResourceType.FOLDER;
+    const validationError = validateLinkName(name);
 
     return (
         <FormModal
@@ -86,6 +92,7 @@ const RenameModal = ({ shareId, item, onClose, onDone, ...rest }: Props) => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         onFocus={selectNamePart}
+                        error={validationError}
                         required
                     />
                 </Field>
