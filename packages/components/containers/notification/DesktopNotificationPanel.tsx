@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
-import { Field, Badge, SmallButton } from 'react-components';
-import { create, request, isEnabled } from 'proton-shared/lib/helpers/desktopNotification';
+import { Badge, Field, SmallButton } from '../../index';
+import { create, getStatus, request, Status } from 'proton-shared/lib/helpers/desktopNotification';
 
 const testDefaultNotification = () => {
     return create(c('Info').t`You have a new email`, {
@@ -15,12 +14,12 @@ const testDefaultNotification = () => {
 };
 
 const DesktopNotificationPanel = ({ onTest = testDefaultNotification }) => {
-    const [status, setStatus] = useState(isEnabled());
+    const [status, setStatus] = useState<Status>(getStatus());
 
     const handleEnable = () => {
         request(
-            () => setStatus(true),
-            () => setStatus(false)
+            () => setStatus(getStatus()),
+            () => setStatus(getStatus())
         );
     };
 
@@ -29,15 +28,15 @@ const DesktopNotificationPanel = ({ onTest = testDefaultNotification }) => {
             <Field className="pt0-5">
                 <div className="mb1">{c('Info').t`Desktop notifications are currently`}</div>
                 <div>
-                    {status ? (
+                    {status === Status.GRANTED ? (
                         <SmallButton onClick={onTest}>{c('Action').t`Send test notification`}</SmallButton>
-                    ) : (
+                    ) : status === Status.DEFAULT ? (
                         <SmallButton onClick={handleEnable}>{c('Action').t`Enable desktop notification`}</SmallButton>
-                    )}
+                    ) : null}
                 </div>
             </Field>
             <div className="ml1 pt0-5">
-                {status ? (
+                {status === Status.GRANTED ? (
                     <Badge type="success">{c('Desktop notification status').t`Enabled`}</Badge>
                 ) : (
                     <Badge type="error">{c('Desktop notification status').t`Disabled`}</Badge>
@@ -45,10 +44,6 @@ const DesktopNotificationPanel = ({ onTest = testDefaultNotification }) => {
             </div>
         </>
     );
-};
-
-DesktopNotificationPanel.propTypes = {
-    onTest: PropTypes.func
 };
 
 export default DesktopNotificationPanel;
