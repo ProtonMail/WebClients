@@ -24,7 +24,7 @@ const AddressesSection = ({ domainAddresses, onRedirect }) => {
     return (
         <>
             <Alert>{c('Info for domain modal')
-                .t`Please add addresses to send and receive email with this domain.`}</Alert>
+                .t`Addresses must be connected to an user account. Click Add user to add a new user account with its own login and inbox that you can connect addresses to.`}</Alert>
             <Block>
                 <PrimaryButton className="mr1" onClick={() => onRedirect('/settings/addresses')}>{c('Action')
                     .t`Add address`}</PrimaryButton>
