@@ -590,3 +590,5 @@ export enum ICS_EVENT_STATUS {
     CONFIRMED = 'CONFIRMED',
     CANCELLED = 'CANCELLED'
 }
+
+export const COLLAPSE_MENU_KEY = 'collapse-menu';
