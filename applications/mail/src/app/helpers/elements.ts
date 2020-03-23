@@ -114,6 +114,6 @@ export const hasAttachments = (element: Element) =>
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
  */
 export const parseLabelIDsInEvent = (element: Element = {}, changes: Element & LabelIDsChanges): Element => {
-    const LabelIDs = diff(element.LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded);
+    const LabelIDs = diff(element.LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || []);
     return { ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']), LabelIDs };
 };

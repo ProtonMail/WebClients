@@ -1,6 +1,6 @@
 import { Message } from '../../models/message';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { isCustomLabel } from '../labels';
+import { isCustomLabelOrFolder } from '../labels';
 import { hasLabel } from '../elements';
 import { isDraft, isSentAutoReply } from './messages';
 
@@ -50,7 +50,7 @@ export const findMessageToExpand = (labelID = '', messages: Message[] = []): Mes
         return {};
     }
 
-    if (labelID === MAILBOX_LABEL_IDS.STARRED || isCustomLabel(labelID)) {
+    if (labelID === MAILBOX_LABEL_IDS.STARRED || isCustomLabelOrFolder(labelID)) {
         return getFirstMessageToRead(messages.filter((message) => hasLabel(message, labelID) && !isDraft(message)));
     }
 

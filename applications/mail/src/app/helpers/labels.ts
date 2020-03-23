@@ -47,10 +47,12 @@ export const getLabelName = (labelID: string, labels: Label[] = [], folders: Fol
     return labelID;
 };
 
-export const isCustomLabel = (labelID: string) =>
+export const isCustomLabelOrFolder = (labelID: string) =>
     !Object.values(MAILBOX_LABEL_IDS).includes(labelID as MAILBOX_LABEL_IDS);
 
 export const isAlwaysMessageLabels = (labelID: string) => alwaysMessageLabels.includes(labelID as MAILBOX_LABEL_IDS);
+
+export const isCustomLabel = (labelID: string, labels: Label[] = []) => labels.some((label) => label.ID === labelID);
 
 export const isCustomFolder = (labelID: string, folders: Folder[] = []) =>
     folders.some((folder) => folder.ID === labelID);

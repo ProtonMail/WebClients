@@ -9,7 +9,9 @@ import { LABEL_IDS_TO_HUMAN, DRAG_ELEMENT_KEY } from '../../constants';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { useDragOver } from '../../hooks/useDragOver';
 
-const { ALL_MAIL, STARRED, TRASH, SPAM } = MAILBOX_LABEL_IDS;
+const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
+
+const noDrop: string[] = [ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT];
 
 interface Props {
     currentLabelID: string;
@@ -41,13 +43,8 @@ const SidebarItem = ({
     const [dragOver, dragProps] = useDragOver(
         (event: DragEvent) =>
             event.dataTransfer.types.includes(DRAG_ELEMENT_KEY) &&
-            // Full negation, easier to read
-            !(
-                labelID === ALL_MAIL || // Never on all mail
-                currentLabelID === labelID || // Never on current label
-                // No starred to trash or spam
-                (currentLabelID === STARRED && (labelID === TRASH || labelID === SPAM))
-            ),
+            currentLabelID !== labelID && // Never on current label
+            !noDrop.includes(labelID), // Some destinations has no sense
         isFolder ? 'move' : 'link'
     );
 
@@ -71,6 +68,7 @@ const SidebarItem = ({
     };
 
     const handleDrop = (event: DragEvent) => {
+        dragProps.onDrop();
         const elementIDs = JSON.parse(event.dataTransfer.getData(DRAG_ELEMENT_KEY)) as string[];
         if (isFolder) {
             moveToFolder(!isConversation, elementIDs, labelID, text);
@@ -86,8 +84,8 @@ const SidebarItem = ({
                 aria-current={ariaCurrent}
                 to={link}
                 onClick={handleClick}
-                onDrop={handleDrop}
                 {...dragProps}
+                onDrop={handleDrop}
             >
                 <SidebarItemContent
                     icon={icon}

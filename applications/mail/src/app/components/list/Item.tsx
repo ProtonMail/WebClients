@@ -16,15 +16,13 @@ import { ELEMENT_TYPES } from '../../constants';
 import { getSenders } from '../../helpers/conversation';
 import { getRecipientLabel, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../helpers/addresses';
 import { ContactEmail } from '../../models/contact';
-import { isCustomFolder } from '../../helpers/labels';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
+import { isCustomLabel } from '../../helpers/labels';
 
 const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
 interface Props {
     location: Location;
     labels?: Label[];
-    folders?: Folder[];
     labelID: string;
     elementID?: string;
     mailSettings: any;
@@ -42,7 +40,6 @@ const Item = ({
     location,
     labelID,
     labels,
-    folders,
     element,
     elementID,
     mailSettings = {},
@@ -63,7 +60,7 @@ const Item = ({
     const showIcon =
         labelID === MAILBOX_LABEL_IDS.ALL_MAIL ||
         labelID === MAILBOX_LABEL_IDS.STARRED ||
-        isCustomFolder(labelID, folders);
+        isCustomLabel(labelID, labels);
     const senders = isConversation ? getSenders(element) : [getSender(element)];
     const recipients = isConversation ? getRecipients(element) : getMessageRecipients(element);
     const sendersLabels = senders.map(getRecipientLabel);

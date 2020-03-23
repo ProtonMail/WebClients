@@ -1,11 +1,22 @@
-import { useState, DragEvent } from 'react';
+import { useState, DragEventHandler, DragEvent } from 'react';
 
 /**
  * Hooks to manage a dragOver flag
  * Takes an optional filter function to accept only specific drag content
  * Returns the flag and the handlers to pass to the element you want to drag on
  */
-export const useDragOver = (dragFilter: (event: DragEvent) => boolean = () => true, dropEffect = 'move') => {
+export const useDragOver = (
+    dragFilter: (event: DragEvent) => boolean = () => true,
+    dropEffect = 'move'
+): [
+    boolean,
+    {
+        onDragEnter: DragEventHandler;
+        onDragLeave: DragEventHandler;
+        onDragOver: DragEventHandler;
+        onDrop: () => void;
+    }
+] => {
     const [dragOver, setDragOver] = useState(0);
 
     const handleDragEnter = (event: DragEvent) => {
@@ -27,5 +38,12 @@ export const useDragOver = (dragFilter: (event: DragEvent) => boolean = () => tr
         }
     };
 
-    return [dragOver > 0, { onDragEnter: handleDragEnter, onDragLeave: handleDragLeave, onDragOver: handleDragOver }];
+    const handleDrop = () => {
+        setDragOver(0);
+    };
+
+    return [
+        dragOver > 0,
+        { onDragEnter: handleDragEnter, onDragLeave: handleDragLeave, onDragOver: handleDragOver, onDrop: handleDrop }
+    ];
 };
