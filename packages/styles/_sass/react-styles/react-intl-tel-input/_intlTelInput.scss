@@ -290,7 +290,9 @@ $mobilePopupMargin: 3rem;
   .country-list {
     max-height: 100%;
     width: 100%;
-    -webkit-overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
+	background-color: var(--bgcolor-main-area, $white);
+	color: var(--color-main-area, $pm-global-grey);
     .country {
       padding: 10px 10px;
       // increase line height because dropdown copy is v likely to overflow on mobile and when it does it needs to be well spaced
