@@ -71,44 +71,47 @@ const PopoverEventContent = ({
         return calendarName;
     }, [calendarName, isCalendarDisabled]);
 
+    const wrapClassName = 'flex flex-nowrap mb0-5';
+    const iconClassName = 'flex-item-noshrink mr1 mt0-25';
+
     return (
         <>
-            <div className="flex flex-nowrap mb0-5">
-                <Icon name="clock" className="flex-item-noshrink mr1 mt0-25" />
+            <div className={wrapClassName}>
+                <Icon name="clock" className={iconClassName} />
                 <div className="flex flex-column">
                     {!isAllDay || isAllPartDay ? <span>{timeString}</span> : null}
                     <span>{dateString}</span>
                 </div>
             </div>
             {frequencyString ? (
-                <div className="flex flex-nowrap mb0-5">
-                    <Icon name="reload" className="flex-item-noshrink mr1 mt0-25" />
+                <div className={wrapClassName}>
+                    <Icon name="reload" className={iconClassName} />
                     <span>{frequencyString}</span>
                 </div>
             ) : null}
             {trimmedLocation ? (
-                <div className="flex flex-items-center flex-nowrap mb0-5">
-                    <Icon title={c('Title').t`Location`} name="address" className="flex-item-noshrink mr1" />
+                <div className={wrapClassName}>
+                    <Icon title={c('Title').t`Location`} name="address" className={iconClassName} />
                     <span className="break">{trimmedLocation}</span>
                 </div>
             ) : null}
             {calendarString ? (
-                <div className="flex flex-items-center flex-nowrap mb0-5">
-                    <CalendarIcon color={Color} className="flex-item-noshrink mr1" />
+                <div className={wrapClassName}>
+                    <CalendarIcon color={Color} className={iconClassName} />
                     <span className="ellipsis" title={calendarName}>
                         {calendarString}
                     </span>
                 </div>
             ) : null}
             {trimmedDescription ? (
-                <div className="flex flex-nowrap mb0-5">
-                    <Icon title={c('Title').t`Description`} name="note" className="flex-item-noshrink mr1 mt0-25" />
+                <div className={wrapClassName}>
+                    <Icon title={c('Title').t`Description`} name="note" className={iconClassName} />
                     <p className="break mt0 mb0 pre-wrap">{trimmedDescription}</p>
                 </div>
             ) : null}
             {model.notifications && Array.isArray(model.notifications) && model.notifications.length ? (
-                <div className="flex flex-nowrap mb0-5">
-                    <Icon name="notifications-enabled" className="flex-item-noshrink mr1 mt0-25" />
+                <div className={wrapClassName}>
+                    <Icon name="notifications-enabled" className={iconClassName} />
                     <div className="flex flex-column">
                         {model.notifications.map((notification, i) => {
                             return <PopoverNotification key={i} notification={notification} formatTime={formatTime} />;
