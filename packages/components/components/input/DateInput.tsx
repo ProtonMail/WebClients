@@ -20,6 +20,9 @@ const getTemporaryInputFromValue = (value: Date | undefined) => {
     return value ? toFormatted(value, dateLocale) : '';
 };
 
+const DEFAULT_MIN = new Date(1900, 0, 1);
+const DEFAULT_MAX = new Date(2200, 0, 1);
+
 interface Props {
     id?: string;
     disabled?: boolean;
@@ -47,8 +50,8 @@ const DateInput = ({
     onKeyDown,
     displayWeekNumbers,
     weekStartsOn,
-    min,
-    max,
+    min = DEFAULT_MIN,
+    max = DEFAULT_MAX,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -72,7 +75,7 @@ const DateInput = ({
         }
         try {
             const newDate = fromFormatted(temporaryInput, dateLocale);
-            if (newDate.getFullYear() < 1900 || newDate.getFullYear() > 2200) {
+            if (newDate < min || newDate > max) {
                 return;
             }
             if (isNaN(+newDate)) {
