@@ -4,13 +4,6 @@ const { bash } = require('./cli');
 
 async function send(data, { env, mode = 'deploy', api }) {
     const requests = {
-        deploy() {
-            if (!process.env.DEPLOY_MESSAGES_HOOK) {
-                return { warning: 'No deploy hook available' };
-            }
-
-            return { text: dedent`${data}`, url: process.env.DEPLOY_MESSAGES_HOOK };
-        },
         changelog() {
             if (!process.env.CHANGELOG_QA_HOOK) {
                 return { warning: 'No changelog hook available' };

@@ -38,7 +38,6 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--appMode> <--de
 :warning: Default no action to bundle the app
 
 - `hosts` : to create new deploy targets (branch) on a repository
-- `log-commits` : Send a message with log commits (arg: branch flow)
 - `changelog` : Generate a changelog based on a deploy-branch
 
 ### flags
@@ -46,10 +45,8 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--appMode> <--de
 - `--branch`: **Mandatory** ex: deploy-settings 
 - `--api`: Typeof branch to deploy (dev/beta/build/etc.)
 - `--flow`: Type of flow (_Usefull only for WebClient_)
-- `--custom`: Custom text to display when we call log-commits` (_inside the message to send_)
 - `--no-lint`: Ignore lint task on deploy
 - `--appMode`: Type of bundle for the app (ex: standalone is an option for protonmail-settings)
-- `--silentMessage`: No messages sent if dev/prod/beta dist
 - `--default-branch`: Default master, What's the default branch on your repository (usually master, usefull for the package-lock update)
 - `--git`: At the end of the bundle we're going to commit and deploy to the branch `--branch`
 - `--only-git`: We commit and deploy and existing directory `dist` to the branch `--branch`

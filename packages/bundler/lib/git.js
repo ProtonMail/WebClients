@@ -53,19 +53,6 @@ async function getConfig() {
     return Object.entries(JSON.parse(stdout)).reduce((acc, [key, value]) => (value && (acc[key] = value), acc), {});
 }
 
-async function logCommits(branch = '', flowType, isWebsite) {
-    const [, target] = branch.match(/-(prod|beta|dev|old|tor)/) || [];
-
-    if (!target) {
-        return;
-    }
-    const args = [flowType === 'many' ? '' : target];
-    isWebsite && args.push('--website');
-
-    // Keep log active.
-    return script('logcommits.sh', args).then(({ stdout }) => stdout);
-}
-
 async function generateChangelog(branch, issueURL, isV4) {
     if (isV4) {
         return script('logcommits.sh', ['changelog-v4']).then(({ stdout }) => console.log(stdout) || stdout);
@@ -77,7 +64,6 @@ async function generateChangelog(branch, issueURL, isV4) {
 
 module.exports = {
     getConfig,
-    logCommits,
     generateChangelog,
     push,
     pull

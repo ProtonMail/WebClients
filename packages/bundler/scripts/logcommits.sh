@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-function logCommit {
-    local branch=$(echo "$1" | awk -F "origin/" '{print $2}');
-    local commit=$(git rev-parse "$1");
-    printf '%-20s' "${commit:0:8}---${branch/deploy-/}";
-    echo
-}
-
 function printLine {
     local issueURL="$2";
 
@@ -166,48 +159,3 @@ if [ "$1" = 'changelog-v4' ]; then
     changelogV4;
     exit;
 fi;
-
-if [[ "${1}" =~ (dev|beta|old|tor) ]]; then
-    for branch in $(git branch -a);
-    do
-        if [[ ${branch} =~ origin/deploy-$1 ]]; then
-            logCommit "$branch";
-        fi;
-    done;
-    exit;
-fi
-
-
-if [ "$1" = 'prod' ]; then
-
-    IS_WEBSITE=false;
-
-    while [ ! $# -eq 0 ]; do
-      case "$1" in
-        --website) IS_WEBSITE=true; ;;
-      esac
-      shift
-    done;
-
-    for branch in $(git branch -a);
-    do
-        if [ $IS_WEBSITE = false ] && [[ ${branch} =~ origin/deploy-prod ]]; then
-            logCommit "$branch";
-        fi;
-
-        # ¯\_(ツ)_/¯ https://www.youtube.com/watch?v=d7RWIcOcHgg
-        if [ $IS_WEBSITE = true ] && [[ ${branch} =~ origin/deploy-(a|b|prod) ]]; then
-            logCommit "$branch";
-        fi;
-    done;
-    exit;
-fi
-
-if [ -z "$1" ]; then
-    for branch in $(git branch -a);
-    do
-        if [[ ${branch} =~ origin/deploy(-prod-|-beta|-tor|-dev) ]]; then
-            logCommit "$branch";
-        fi;
-    done;
-fi
