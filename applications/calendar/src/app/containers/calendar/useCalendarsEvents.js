@@ -38,13 +38,14 @@ const getPaginatedEvents = async (api, calendarID, dateRange, tzid) => {
     const PageSize = 100;
 
     const params = {
-        End: getUnixTime(dateRange[1]),
+        // Special case, not using our boundaries, since the API does not accept negative values.
+        End: Math.max(0, getUnixTime(dateRange[1])),
         Timezone: tzid,
         PageSize,
         Page: 0
     };
 
-    let lastStart = getUnixTime(dateRange[0]);
+    let lastStart = Math.max(0, getUnixTime(dateRange[0]));
     let iterations = 0;
 
     while (lastStart !== undefined && iterations < MAX_FETCH_ITERATIONS) {

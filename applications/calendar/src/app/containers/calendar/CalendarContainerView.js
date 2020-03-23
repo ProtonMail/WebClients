@@ -21,7 +21,7 @@ import DateCursorButtons from '../../components/DateCursorButtons';
 import ViewSelector from '../../components/ViewSelector';
 import TimezoneSelector from '../../components/TimezoneSelector';
 
-import { VIEWS } from '../../constants';
+import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '../../constants';
 import { fromUTCDate, toLocalDate } from 'proton-shared/lib/date/timezone';
 import { getDateDiff } from './helper';
 
@@ -133,6 +133,8 @@ const CalendarContainerView = ({
                         onCreateEvent={onCreateEvent}
                         miniCalendar={
                             <LocalizedMiniCalendar
+                                min={MINIMUM_DATE}
+                                max={MAXIMUM_DATE}
                                 onSelectDateRange={handleSelectDateRange}
                                 onSelectDate={handleClickLocalDate}
                                 date={localDate}

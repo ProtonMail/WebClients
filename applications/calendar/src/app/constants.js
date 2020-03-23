@@ -152,3 +152,13 @@ export const RECURRING_DELETE_TYPES = {
     FUTURE: 2,
     SINGLE: 3
 };
+
+export const MINIMUM_DATE = new Date(1970, 0, 1);
+export const MINIMUM_DATE_UTC = new Date(
+    Date.UTC(MINIMUM_DATE.getFullYear(), MINIMUM_DATE.getMonth(), MINIMUM_DATE.getDate())
+);
+
+export const MAXIMUM_DATE = new Date(9999, 11, 31);
+export const MAXIMUM_DATE_UTC = new Date(
+    Date.UTC(MAXIMUM_DATE.getFullYear(), MAXIMUM_DATE.getMonth(), MAXIMUM_DATE.getDate())
+);

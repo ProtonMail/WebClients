@@ -12,6 +12,7 @@ import { MILLISECONDS_IN_MINUTE, startOfDay } from 'proton-shared/lib/date-fns-u
 import { addDays, isValid } from 'date-fns';
 import { getFrequencyModelChange } from '../eventForm/propertiesToModel';
 import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
+import { MAXIMUM_DATE, MINIMUM_DATE } from '../../../constants';
 
 const DEFAULT_MIN_TIME = new Date(Date.UTC(2000, 0, 1, 0, 0));
 
@@ -143,6 +144,8 @@ const DateTimeRow = ({
             onChange={handleChangeStartDate}
             displayWeekNumbers={displayWeekNumbers}
             weekStartsOn={weekStartsOn}
+            min={MINIMUM_DATE}
+            max={MAXIMUM_DATE}
         />
     );
 
@@ -157,6 +160,7 @@ const DateTimeRow = ({
             displayWeekNumbers={displayWeekNumbers}
             weekStartsOn={weekStartsOn}
             min={minEndDate}
+            max={MAXIMUM_DATE}
         />
     );
 

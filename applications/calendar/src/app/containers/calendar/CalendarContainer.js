@@ -17,7 +17,7 @@ import {
     getTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
 import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
-import { VIEWS, SETTINGS_VIEW } from '../../constants';
+import { VIEWS, SETTINGS_VIEW, MINIMUM_DATE_UTC, MAXIMUM_DATE_UTC } from '../../constants';
 import useCalendarsEvents from './useCalendarsEvents';
 import { getDateRange } from './helper';
 import CalendarContainerView from './CalendarContainerView';
@@ -70,8 +70,12 @@ const getUrlDate = (urlYear, urlMonth, urlDay) => {
     const year = parseInt(urlYear, 10);
     const month = parseInt(urlMonth, 10);
     const day = parseInt(urlDay, 10);
-    if (year >= 0 && year < 9999 && month >= 1 && month <= 12 && day >= 1 && day <= 31) {
-        return new Date(Date.UTC(year, month - 1, day));
+
+    if (year >= 0 && year <= 9999 && month >= 1 && month <= 12 && day >= 1 && day <= 31) {
+        const wantedDate = new Date(Date.UTC(year, month - 1, day));
+        if (wantedDate >= MINIMUM_DATE_UTC && wantedDate <= MAXIMUM_DATE_UTC) {
+            return wantedDate;
+        }
     }
 };
 
@@ -166,6 +170,7 @@ const CalendarContainer = ({ calendars = [], history, location }) => {
     const { createModal } = useModals();
 
     const interactiveRef = useRef();
+    const timeGridViewRef = useRef();
 
     const [activeCalendars, disabledCalendars, visibleCalendars] = useMemo(() => {
         return [
@@ -176,8 +181,6 @@ const CalendarContainer = ({ calendars = [], history, location }) => {
     }, [calendars]);
 
     const [nowDate, setNowDate] = useState(() => new Date());
-
-    const timeGridViewRef = useRef();
 
     useEffect(() => {
         const handle = setInterval(() => setNowDate(new Date()), 30000);
@@ -330,10 +333,16 @@ const CalendarContainer = ({ calendars = [], history, location }) => {
     }, [utcDefaultDate]);
 
     const handleChangeDate = useCallback((newDate) => {
+        if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {
+            return;
+        }
         setCustom({ date: newDate });
     }, []);
 
     const handleChangeDateRange = useCallback((newDate, numberOfDays) => {
+        if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {
+            return;
+        }
         if (numberOfDays >= 7) {
             setCustom({
                 view: MONTH,

@@ -2,7 +2,14 @@ import { c } from 'ttag';
 import { Prompt } from 'react-router';
 import { noop } from 'proton-shared/lib/helpers/function';
 import React, { useImperativeHandle, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useApi, useEventManager, useGetAddressKeys, useGetCalendarKeys, useModals } from 'react-components';
+import {
+    useApi,
+    useEventManager,
+    useGetAddressKeys,
+    useGetCalendarKeys,
+    useModals,
+    useNotifications
+} from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
@@ -34,7 +41,7 @@ import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
 import DeleteConfirmModal from './confirmationModals/DeleteConfirmModal';
 import DeleteRecurringConfirmModal from './confirmationModals/DeleteRecurringConfirmModal';
 import EditRecurringConfirmation from './confirmationModals/EditRecurringConfirmation';
-import { RECURRING_DELETE_TYPES } from '../../constants';
+import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, RECURRING_DELETE_TYPES } from '../../constants';
 import deleteSingleRecurrence from './recurrence/deleteSingleRecurrence';
 import getMemberAndAddress from './getMemberAndAddress';
 import deleteFutureRecurrence from './recurrence/deleteFutureRecurrence';
@@ -84,6 +91,7 @@ const InteractiveCalendarView = ({
     const api = useApi();
     const { call } = useEventManager();
     const { createModal, getModal, hideModal, removeModal } = useModals();
+    const { createNotification } = useNotifications();
 
     const [eventModalID, setEventModalID] = useState();
     const readCalendarBootstrap = useReadCalendarBootstrap();
@@ -255,6 +263,21 @@ const InteractiveCalendarView = ({
                     result: { start, end }
                 } = payload;
 
+                const isBeforeMinBoundary = start < MINIMUM_DATE_UTC;
+                const isAfterMaxBoundary = end > MAXIMUM_DATE_UTC;
+                const isOutOfBounds = isBeforeMinBoundary || isAfterMaxBoundary;
+                if (isOutOfBounds && action === ACTIONS.EVENT_MOVE_UP) {
+                    const minDateString = format(MINIMUM_DATE_UTC, 'P');
+                    const maxDateString = format(MAXIMUM_DATE_UTC, 'P');
+                    createNotification({
+                        text: c('Error')
+                            .t`It is only possible to move events between ${minDateString} - ${maxDateString}`,
+                        type: 'error'
+                    });
+                    setInteractiveData();
+                    return;
+                }
+
                 const { start: initialStart, end: initialEnd } = initialModel;
 
                 const normalizedStart = getNormalizedTime(newTemporaryModel.isAllDay, initialStart, start);
@@ -319,6 +342,21 @@ const InteractiveCalendarView = ({
                     result: { start, end },
                     idx
                 } = payload;
+
+                const isBeforeMinBoundary = start < MINIMUM_DATE_UTC;
+                const isAfterMaxBoundary = end > MAXIMUM_DATE_UTC;
+                const isOutOfBounds = isBeforeMinBoundary || isAfterMaxBoundary;
+                if (isOutOfBounds && (action === ACTIONS.CREATE_UP || action === ACTIONS.CREATE_MOVE_UP)) {
+                    const minDateString = format(MINIMUM_DATE_UTC, 'P');
+                    const maxDateString = format(MAXIMUM_DATE_UTC, 'P');
+                    createNotification({
+                        text: c('Error')
+                            .t`It is only possible to create events between ${minDateString} - ${maxDateString}`,
+                        type: 'error'
+                    });
+                    setInteractiveData();
+                    return;
+                }
 
                 const normalizedStart = start;
                 const normalizedEnd =
