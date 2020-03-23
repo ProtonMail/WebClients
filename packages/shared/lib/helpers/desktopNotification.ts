@@ -2,26 +2,33 @@ import Push from 'push.js';
 
 import { noop } from './function';
 
-/**
- * To find out whether or not Push has permission to show notifications
- * @returns {Boolean}
- */
-export const isEnabled = () => Push.Permission.has();
+export enum Status {
+    DENIED = 'denied',
+    DEFAULT = 'default',
+    GRANTED = 'granted'
+}
 
-/**
- * Clear all open notifications
- */
+export const getStatus = (): Status => {
+    const permission = Push.Permission.get();
+    switch (permission) {
+        case Status.DENIED:
+            return Status.DENIED;
+        case Status.GRANTED:
+            return Status.GRANTED;
+        default:
+            return Status.DEFAULT;
+    }
+};
+
+export const isEnabled = (): boolean => Push.Permission.has();
+
 export const clear = () => Push.clear();
 
-/**
- * Request notification permission
- * @param {Function} onGranted
- * @param {Function} onDenied
- */
-export const request = (onGranted = noop, onDenied = noop) => {
+export const request = (onGranted: () => void = noop, onDenied: () => void = noop) => {
     try {
         Push.Permission.request(onGranted, onDenied);
     } catch (err) {
+        onDenied();
         /**
          * Hotfix to fix requesting the permission on non-promisified requests.
          * TypeError: undefined is not an object (evaluating 'this._win.Notification.requestPermission().then')
@@ -32,9 +39,8 @@ export const request = (onGranted = noop, onDenied = noop) => {
 
 /**
  * Create a desktop notification
- * @param {String} title
- * @param {Object} params https://pushjs.org/docs/options
- * @returns {Promise(notification)} notification.close();
+ * @param title
+ * @param params https://pushjs.org/docs/options
  */
 export const create = async (title = '', params = {}) => {
     if (!isEnabled()) {
