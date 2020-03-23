@@ -4,8 +4,8 @@ import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy, useNotific
 
 const DMARCSection = () => {
     const none = <strong key="none">p=none</strong>;
-    const address = <strong key="address">address@yourdomain.com</strong>;
-    const valueToCopy = 'v=DMARC1; p=none; rua=mailto:address@yourdomain.com';
+    const address = <strong key="address">address@example.com</strong>;
+    const valueToCopy = 'v=DMARC1; p=none; rua=mailto:address@example.com';
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`DMARC value copied to clipboard!` });
     return (
