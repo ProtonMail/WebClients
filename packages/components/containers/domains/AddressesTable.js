@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { useMembers, Table, TableHeader, TableBody, TableRow, Info } from 'react-components';
+import { Table, TableHeader, TableBody, TableRow, Info } from 'react-components';
 
 import AddressStatus from './AddressStatus';
 import AddressCatchAll from './AddressCatchAll';
 
 const AddressesTable = ({ domain, domainAddresses }) => {
     const [addresses, setAddresses] = useState(() => domainAddresses);
-    const [members, loadingMembers] = useMembers();
-
-    const getMemberName = (memberID) => {
-        const { Name = '' } = (members || []).find(({ ID }) => memberID === ID) || {};
-        return Name;
-    };
 
     const handleChange = ({ ID }) => (newValue) => {
         setAddresses(
@@ -31,7 +25,6 @@ const AddressesTable = ({ domain, domainAddresses }) => {
             <TableHeader
                 cells={[
                     c('Title header for addresses domain table').t`Address`,
-                    c('Title header for addresses domain table').t`Name`,
                     c('Title header for addresses domain table').t`Status`,
                     <>
                         {c('Title header for addresses domain table').t`Catch all`}
@@ -39,7 +32,7 @@ const AddressesTable = ({ domain, domainAddresses }) => {
                     </>
                 ]}
             />
-            <TableBody loading={loadingMembers} colSpan={4}>
+            <TableBody colSpan={4}>
                 {addresses.map((address) => {
                     const key = address.ID;
                     return (
@@ -49,7 +42,6 @@ const AddressesTable = ({ domain, domainAddresses }) => {
                                 <div key={key} className="ellipsis" title={address.Email}>
                                     {address.Email}
                                 </div>,
-                                getMemberName(address.MemberID),
                                 <AddressStatus key={key} address={address} />,
                                 <AddressCatchAll
                                     key={key}
