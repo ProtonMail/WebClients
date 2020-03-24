@@ -1,12 +1,12 @@
 import React, { MutableRefObject } from 'react';
-import { DropdownMenu, DropdownMenuButton, Icon, useMailSettings, useAddresses } from 'react-components';
+import { DropdownMenu, DropdownMenuButton, Icon, useMailSettings, useAddresses, classnames } from 'react-components';
 import { c } from 'ttag';
 import { RIGHT_TO_LEFT, MIME_TYPES } from 'proton-shared/lib/constants';
 import { Address } from 'proton-shared/lib/interfaces';
 
 import EditorToolbarDropdown from './EditorToolbarDropdown';
 import { MessageExtended } from '../../../models/message';
-import { hasFlag, toggleFlag, setFlag, isPlainText as testIsPlainText } from '../../../helpers/message/messages';
+import { hasFlag, isPlainText as testIsPlainText } from '../../../helpers/message/messages';
 import { MESSAGE_FLAGS } from '../../../constants';
 import { SquireType } from '../../../helpers/squire/squireConfig';
 import { setTextDirection } from '../../../helpers/squire/squireActions';
@@ -22,9 +22,10 @@ interface Props {
     message: MessageExtended;
     squireRef: MutableRefObject<SquireType>;
     onChange: (message: MessageExtended) => void;
+    onChangeFlag: (changes: Map<number, boolean>) => void;
 }
 
-const EditorToolbarMoreDropdown = ({ message, squireRef, onChange }: Props) => {
+const EditorToolbarMoreDropdown = ({ message, squireRef, onChange, onChangeFlag }: Props) => {
     const [mailSettings] = useMailSettings() as [MailSettings, boolean, Error];
     const [addresses] = useAddresses() as [Address[], boolean, Error];
 
@@ -64,52 +65,62 @@ const EditorToolbarMoreDropdown = ({ message, squireRef, onChange }: Props) => {
         }
     };
 
-    const handleToggleSign = () => onChange({ data: { Flags: toggleFlag(MESSAGE_FLAGS.FLAG_SIGN)(message.data) } });
+    const handleToggleSign = () => onChangeFlag(new Map([[FLAG_SIGN, !isSign]]));
 
-    const handleTogglePublicKey = () => {
-        let Flags = toggleFlag(FLAG_PUBLIC_KEY)(message.data);
-
-        if (hasFlag(FLAG_PUBLIC_KEY)({ Flags })) {
-            Flags = setFlag(FLAG_SIGN)({ Flags });
+    const handleTogglePublicKey = async () => {
+        const changes = new Map([[FLAG_PUBLIC_KEY, !isAttachPublicKey]]);
+        if (!isAttachPublicKey) {
+            changes.set(FLAG_SIGN, true);
         }
-
-        onChange({ data: { Flags } });
+        onChangeFlag(changes);
     };
 
-    const handleToggleReceiptRequest = () =>
-        onChange({
-            data: { Flags: toggleFlag(FLAG_RECEIPT_REQUEST)(message.data) }
-        });
+    const handleToggleReceiptRequest = () => onChangeFlag(new Map([[FLAG_RECEIPT_REQUEST, !isReceiptRequest]]));
 
     return (
         <EditorToolbarDropdown>
-            <DropdownMenu>
-                {!isPlainText && (
-                    <>
-                        <DropdownMenuButton className="alignleft" onClick={handleChangeDirection(RIGHT_TO_LEFT.OFF)}>
-                            <Icon name="on" className={getClassname(!isRtl)} /> {c('Info').t`Left to Right`}
-                        </DropdownMenuButton>
-                        <DropdownMenuButton className="alignleft" onClick={handleChangeDirection(RIGHT_TO_LEFT.ON)}>
-                            <Icon name="on" className={getClassname(isRtl)} /> {c('Info').t`Right to Left`}
-                        </DropdownMenuButton>
-                    </>
-                )}
-                <>
-                    <DropdownMenuButton className="alignleft" onClick={handleChangePlainText(false)}>
-                        <Icon name="on" className={getClassname(!isPlainText)} /> {c('Info').t`Normal`}
+            <DropdownMenu className="editor-toolbar-more-menu">
+                {!isPlainText && [
+                    // Fragment breaks the DropdownMenu flow, an array works
+                    <DropdownMenuButton
+                        key={1}
+                        className="alignleft flex flex-nowrap"
+                        onClick={handleChangeDirection(RIGHT_TO_LEFT.OFF)}
+                    >
+                        <Icon name="on" className={classnames(['mt0-25', getClassname(!isRtl)])} />
+                        <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Left to Right`}</span>
+                    </DropdownMenuButton>,
+                    <DropdownMenuButton
+                        key={2}
+                        className="alignleft flex flex-nowrap"
+                        onClick={handleChangeDirection(RIGHT_TO_LEFT.ON)}
+                    >
+                        <Icon name="on" className={classnames(['mt0-25', getClassname(isRtl)])} />
+                        <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Right to Left`}</span>
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="alignleft" onClick={handleChangePlainText(true)}>
-                        <Icon name="on" className={getClassname(isPlainText)} /> {c('Info').t`Plain text`}
-                    </DropdownMenuButton>
-                </>
-                <DropdownMenuButton className="alignleft" onClick={handleToggleSign}>
-                    <Icon name="on" className={getClassname(isSign)} /> {c('Info').t`Sign message`}
+                ]}
+                <DropdownMenuButton
+                    className="alignleft flex flex-nowrap noborder-bottom"
+                    onClick={handleChangePlainText(false)}
+                >
+                    <Icon name="on" className={classnames(['mt0-25', getClassname(!isPlainText)])} />
+                    <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Normal`}</span>
                 </DropdownMenuButton>
-                <DropdownMenuButton className="alignleft" onClick={handleTogglePublicKey}>
-                    <Icon name="on" className={getClassname(isAttachPublicKey)} /> {c('Info').t`Attach Public Key`}
+                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleChangePlainText(true)}>
+                    <Icon name="on" className={classnames(['mt0-25', getClassname(isPlainText)])} />
+                    <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Plain text`}</span>
                 </DropdownMenuButton>
-                <DropdownMenuButton className="alignleft" onClick={handleToggleReceiptRequest}>
-                    <Icon name="on" className={getClassname(isReceiptRequest)} /> {c('Info').t`Request Read Receipt`}
+                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleToggleSign}>
+                    <Icon name="on" className={classnames(['mt0-25', getClassname(isSign)])} />
+                    <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Sign message`}</span>
+                </DropdownMenuButton>
+                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleTogglePublicKey}>
+                    <Icon name="on" className={classnames(['mt0-25', getClassname(isAttachPublicKey)])} />
+                    <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Attach Public Key`}</span>
+                </DropdownMenuButton>
+                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleToggleReceiptRequest}>
+                    <Icon name="on" className={classnames(['mt0-25', getClassname(isReceiptRequest)])} />
+                    <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Request Read Receipt`}</span>
                 </DropdownMenuButton>
             </DropdownMenu>
         </EditorToolbarDropdown>

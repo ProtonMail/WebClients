@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { Address } from 'proton-shared/lib/interfaces';
 import { noop, debounce } from 'proton-shared/lib/helpers/function';
 import { wait } from 'proton-shared/lib/helpers/promise';
+import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 
 import { MessageExtended } from '../../models/message';
 import ComposerTitleBar from './ComposerTitleBar';
@@ -211,6 +212,14 @@ const Composer = ({
         setModelMessage(newModelMessage);
         autoSave(newModelMessage);
     };
+    const handleChangeFlag = (changes: Map<number, boolean>) => {
+        let Flags = modelMessage.data?.Flags || 0;
+        changes.forEach((isAdd, flag) => {
+            const action = isAdd ? setBit : clearBit;
+            Flags = action(Flags, flag);
+        });
+        handleChange({ data: { Flags } });
+    };
     const save = async (messageToSave = modelMessage) => {
         await saveDraft(messageToSave);
         createNotification({ text: c('Info').t`Message saved` });
@@ -376,6 +385,7 @@ const Composer = ({
                             onEditorReady={() => setEditorReady(true)}
                             onChange={handleChange}
                             onChangeContent={handleChangeContent}
+                            onChangeFlag={handleChangeFlag}
                             onFocus={handleContentFocus}
                             onAddAttachments={handleAddAttachmentsStart}
                             onAddEmbeddedImages={handleAddEmbeddedImages}

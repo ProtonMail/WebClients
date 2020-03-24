@@ -20,6 +20,7 @@ interface Props {
     onEditorReady: () => void;
     onChange: (message: MessageExtended) => void;
     onChangeContent: (content: string) => void;
+    onChangeFlag: (changes: Map<number, boolean>) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
     onAddEmbeddedImages: (files: File[]) => void;
@@ -39,6 +40,7 @@ const ComposerContent = ({
     onEditorReady,
     onChange,
     onChangeContent,
+    onChangeFlag,
     onFocus,
     onAddAttachments,
     onAddEmbeddedImages,
@@ -93,6 +95,7 @@ const ComposerContent = ({
                     onReady={onEditorReady}
                     onChange={onChange}
                     onChangeContent={onChangeContent}
+                    onChangeFlag={onChangeFlag}
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}
                     onAddEmbeddedImages={onAddEmbeddedImages}

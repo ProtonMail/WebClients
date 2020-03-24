@@ -36,7 +36,7 @@
 }
 
 .pm-button.composer-title-bar-button {
-    padding: 0 .5em;
+    padding: 0 0.5em;
     background: unset;
     border: unset;
     border-radius: unset;
@@ -49,7 +49,6 @@
 .pm-button.composer-title-bar-button:active {
     box-shadow: unset;
 }
-
 
 .composer-meta-label,
 .pm-label.composer-meta-label {
@@ -156,7 +155,6 @@
     border-right: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
-
 .composer-addresses-ccbcc {
     position: absolute;
     top: 0;
@@ -172,21 +170,23 @@
 
 .editor {
     border: 1px solid var(--bordercolor-input, $pm-global-border);
+    textarea {
+        color: currentColor;
+    }
+    .editor-toolbar-button {
+        padding: 0.3em 0.5em;
+        min-height: 2.1em;
+        &:focus,
+        &:hover,
+        &[aria-pressed='true'] {
+            background-color: var(--bordercolor-input, $pm-global-border);
+        }
+    }
 }
 
 .editor-toolbar {
     border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 }
-
-.editor .editor-toolbar-button {
-    padding: .3em .5em;
-    &:focus,
-    &:hover,
-    &[aria-pressed="true"] {
-        background-color: var(--bordercolor-input, $pm-global-border);
-    }
-}
-
 .editor-toolbar-separator {
     border-left: 1px solid var(--bordercolor-input, $pm-global-border);
 }
@@ -223,6 +223,19 @@
     border-radius: 3px;
 }
 
+/**
+ * Definitely a hacky workaround
+ * But react-components doesn't allow (yet) to add classes on the li element of a DropdownMenu
+ */
+.editor-toolbar-more-menu {
+    li:nth-child(2) {
+        border-top: none;
+    }
+    li:nth-child(4) {
+        border-top: none;
+    }
+}
+
 .composer-editor-embedded {
     overflow: hidden;
     z-index: 15000; // ask Embedding should always be on top of the toolbar!
@@ -240,9 +253,8 @@
     // TODO: Something more sexy? :)
 }
 
-
 .editor-toolbar-button {
-    padding: .5em;
+    padding: 0.5em;
     > span {
         margin-left: 0;
         margin-right: 0;
@@ -256,7 +268,6 @@
         }
     }
 }
-
 
 .composer-attachments-button-wrapper {
     position: relative;

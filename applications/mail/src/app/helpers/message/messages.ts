@@ -1,5 +1,5 @@
 import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { hasBit, setBit, toggleBit } from 'proton-shared/lib/helpers/bitset';
+import { hasBit, setBit, clearBit, toggleBit } from 'proton-shared/lib/helpers/bitset';
 import { identity } from 'proton-shared/lib/helpers/function';
 
 import { MESSAGE_FLAGS, SIGNATURE_START } from '../../constants';
@@ -35,9 +35,8 @@ export const isHTML = hasMimeType(MIME_TYPES.DEFAULT);
  * Check if a message has a flag in the flags bitmap
  */
 export const hasFlag = (flag: number) => ({ Flags = 0 }: Message = {}) => hasBit(Flags, flag);
-
 export const setFlag = (flag: number) => (message: Message = {}) => setBit(message.Flags, flag) as number;
-
+export const clearFlag = (flag: number) => (message: Message = {}) => clearBit(message.Flags, flag) as number;
 export const toggleFlag = (flag: number) => (message: Message = {}) => toggleBit(message.Flags, flag) as number;
 
 export const isRequestReadReceipt = hasFlag(FLAG_RECEIPT_REQUEST);

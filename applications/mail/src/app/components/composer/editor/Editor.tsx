@@ -22,6 +22,7 @@ interface Props {
     onReady: () => void;
     onChange: (message: MessageExtended) => void;
     onChangeContent: (content: string) => void;
+    onChangeFlag: (changes: Map<number, boolean>) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
     onAddEmbeddedImages: (files: File[]) => void;
@@ -35,6 +36,7 @@ const Editor = ({
     onReady,
     onChange,
     onChangeContent,
+    onChangeFlag,
     onFocus,
     onAddAttachments,
     onAddEmbeddedImages,
@@ -130,6 +132,7 @@ const Editor = ({
                 squireRef={squireRef}
                 editorReady={editorReady}
                 onChange={onChange}
+                onChangeFlag={onChangeFlag}
                 onAddAttachments={onAddAttachments}
             />
             {isPlainText ? (

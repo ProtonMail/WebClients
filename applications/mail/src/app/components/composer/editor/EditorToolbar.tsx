@@ -33,10 +33,11 @@ interface Props {
     squireRef: MutableRefObject<SquireType>;
     editorReady: boolean;
     onChange: (message: MessageExtended) => void;
+    onChangeFlag: (changes: Map<number, boolean>) => void;
     onAddAttachments: (files: File[]) => void;
 }
 
-const EditorToolbar = ({ message, squireRef, editorReady, onChange, onAddAttachments }: Props) => {
+const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag, onAddAttachments }: Props) => {
     const [squireInfos, setSquireInfos] = useState<{ [test: string]: boolean }>({});
 
     const { createModal } = useModals();
@@ -122,7 +123,12 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onAddAttachm
                     <EditorToolbarSeparator />
                 </>
             )}
-            <EditorToolbarMoreDropdown message={message} squireRef={squireRef} onChange={onChange} />
+            <EditorToolbarMoreDropdown
+                message={message}
+                squireRef={squireRef}
+                onChange={onChange}
+                onChangeFlag={onChangeFlag}
+            />
         </div>
     );
 };
