@@ -11,13 +11,11 @@ const DomainAddresses = ({ domainAddresses }) => {
         </div>
     ));
 
-    const title = domainAddresses.map(({ Email }) => Email).join(', ');
     const n = list.length;
 
     return (
         <>
             <SimpleDropdown
-                title={title}
                 className="pm-button--link"
                 content={c('Info').ngettext(msgid`${n} address`, `${n} addresses`, n)}
             >
