@@ -1,17 +1,21 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Alert, Button, PrimaryButton, Block } from 'react-components';
+import { Alert, PrimaryButton, Block } from 'react-components';
 
 const AddressesSection = ({ onRedirect }) => {
     return (
         <>
             <Alert>{c('Info for domain modal')
-                .t`Addresses must be connected to an user account. Click Add user to add a new user account with its own login and inbox that you can connect addresses to.`}</Alert>
+                .t`If you have a subscription plan with multi-user support, you can add users to your domain by clicking on the button below.`}</Alert>
             <Block>
-                <PrimaryButton className="mr1" onClick={() => onRedirect('/settings/addresses')}>{c('Action')
+                <PrimaryButton onClick={() => onRedirect('/settings/members')}>{c('Action').t`Add user`}</PrimaryButton>
+            </Block>
+            <Alert>{c('Info for domain modal')
+                .t`Already have all the users you need? Click on the button below to add addresses to your users. More addresses can be purchased by customizing your plan from the subscription section.`}</Alert>
+            <Block>
+                <PrimaryButton onClick={() => onRedirect('/settings/addresses')}>{c('Action')
                     .t`Add address`}</PrimaryButton>
-                <Button onClick={() => onRedirect('/settings/members')}>{c('Action').t`Add user`}</Button>
             </Block>
         </>
     );
