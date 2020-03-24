@@ -42,7 +42,7 @@ export const validateLinkName = (name: string) => {
     }
 
     if (reservedCharacters.test(name)) {
-        return c('Validation Error').t`Name must not contain special characters: <>:"\\/?*`;
+        return c('Validation Error').t`Name must not contain special characters: <>:"\\/|?*`;
     }
 
     if (reservedNames.includes(name.toUpperCase())) {
@@ -51,6 +51,10 @@ export const validateLinkName = (name: string) => {
 
     if (name.length > 255) {
         return c('Validation Error').t`Name must be ${MAX_NAME_LENGTH} characters long at most`;
+    }
+
+    if (name.startsWith('.')) {
+        return c('Validation Error').t`Name must not begin with a period`;
     }
 
     if (name.endsWith('.')) {
