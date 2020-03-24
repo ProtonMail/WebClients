@@ -89,14 +89,6 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
                 name={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'on' : 'off'}
             />
         ),
-        domainAddresses.length ? (
-            <RoundedIcon
-                className="mr0-5"
-                key="addresses-icon"
-                type={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'success' : 'error'}
-                name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'on' : 'off'}
-            />
-        ) : null,
         domainModel.MxState === MX_STATE.MX_STATE_DEFAULT ? null : (
             <RoundedIcon
                 className="mr0-5"
@@ -133,7 +125,15 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
                 type={domainModel.DmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'success' : 'error'}
                 name={domainModel.DmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'on' : 'off'}
             />
-        )
+        ),
+        domainAddresses.length ? (
+            <RoundedIcon
+                className="mr0-5"
+                key="addresses-icon"
+                type={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'success' : 'error'}
+                name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'on' : 'off'}
+            />
+        ) : null
     ];
 
     const { section, ...modalProps } = (() => {
