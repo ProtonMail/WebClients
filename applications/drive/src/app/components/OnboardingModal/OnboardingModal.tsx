@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { DialogModal, HeaderModal, InnerModal, FooterModal, Button, PrimaryButton } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { c } from 'ttag';
@@ -22,8 +22,20 @@ interface Step {
 const OnboardingModal = ({ modalTitleID = 'modalTitle', onClose = noop, ...rest }: Props) => {
     const [currentStep, setCurrentStep] = useState(0);
 
+    // Workaround to fix modal flickering, while re-rendering content.
+    useMemo(
+        () =>
+            [welcomeImage, feedbackImage].map((src: string) => {
+                const image = new Image();
+                image.src = src;
+                return image;
+            }),
+        []
+    );
+
     const betaText = <strong key="title">{c('BetaText').t`ProtonDrive Beta`}</strong>;
     const defaultHeader = c('Title').jt`Welcome to ${betaText}!`;
+
     const steps: Step[] = [
         {
             image: welcomeImage,
