@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Row, Radio, DateInput } from 'react-components';
 import { isValid } from 'date-fns';
 
-import { END_TYPE, FREQUENCY_COUNT_MAX } from '../../../constants';
+import { END_TYPE, FREQUENCY_COUNT_MAX, MAXIMUM_DATE } from '../../../constants';
 
 import IntegerInput from '../inputs/IntegerInput';
 
@@ -81,6 +81,7 @@ const EndsRow = ({
                         weekStartsOn={weekStartsOn}
                         aria-invalid={isSubmitted && !!errors.until}
                         isSubmitted={isSubmitted}
+                        max={MAXIMUM_DATE}
                     />
                 </span>
                 <span></span>
