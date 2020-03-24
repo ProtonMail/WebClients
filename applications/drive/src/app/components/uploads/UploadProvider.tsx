@@ -117,7 +117,10 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
             }
         ]);
 
-        const { meta, info } = await metadataPromise;
+        const { meta, info } = await metadataPromise.catch((err) => {
+            updateUploadState(id, TransferState.Error);
+            throw err;
+        });
 
         updateUploadByID(id, {
             meta,
