@@ -32,10 +32,11 @@ const DomainActions = ({ domain, domainAddresses }) => {
             text: c('Action').t`Edit`,
             onClick: () => createModal(<DomainModal domain={domain} domainAddresses={domainAddresses} />)
         },
-        {
-            text: c('Action').t`Set catch-all`,
-            onClick: () => createModal(<CatchAllModal domain={domain} domainAddresses={domainAddresses} />)
-        },
+        Array.isArray(domainAddresses) &&
+            domainAddresses.length && {
+                text: c('Action').t`Set catch-all`,
+                onClick: () => createModal(<CatchAllModal domain={domain} domainAddresses={domainAddresses} />)
+            },
         {
             text: c('Action').t`Delete`,
             onClick: () => {
@@ -46,7 +47,7 @@ const DomainActions = ({ domain, domainAddresses }) => {
                 );
             }
         }
-    ];
+    ].filter(Boolean);
 
     return <DropdownActions className="pm-button--small" list={list} />;
 };
