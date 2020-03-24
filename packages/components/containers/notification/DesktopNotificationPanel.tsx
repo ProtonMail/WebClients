@@ -26,7 +26,14 @@ const DesktopNotificationPanel = ({ onTest = testDefaultNotification }) => {
     return (
         <>
             <Field className="pt0-5">
-                <div className="mb1">{c('Info').t`Desktop notifications are currently`}</div>
+                <div className="mb1">
+                    <span className="mr0-5">{c('Info').t`Desktop notifications are currently`}</span>
+                    {status === Status.GRANTED ? (
+                        <Badge type="success" className="m0">{c('Desktop notification status').t`Enabled`}</Badge>
+                    ) : (
+                        <Badge type="error" className="m0">{c('Desktop notification status').t`Disabled`}</Badge>
+                    )}
+                </div>
                 <div>
                     {status === Status.GRANTED ? (
                         <SmallButton onClick={onTest}>{c('Action').t`Send test notification`}</SmallButton>
@@ -35,13 +42,6 @@ const DesktopNotificationPanel = ({ onTest = testDefaultNotification }) => {
                     ) : null}
                 </div>
             </Field>
-            <div className="ml1 pt0-5">
-                {status === Status.GRANTED ? (
-                    <Badge type="success">{c('Desktop notification status').t`Enabled`}</Badge>
-                ) : (
-                    <Badge type="error">{c('Desktop notification status').t`Disabled`}</Badge>
-                )}
-            </div>
         </>
     );
 };
