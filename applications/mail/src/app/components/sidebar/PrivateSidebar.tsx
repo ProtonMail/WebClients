@@ -100,7 +100,7 @@ const PrivateSidebar = ({ labelID: currentLabelID, expanded = false, location, o
         {
             icon: 'archive',
             text: c('Link').t`Archive`,
-            ...getItemParams(MAILBOX_LABEL_IDS.STARRED)
+            ...getItemParams(MAILBOX_LABEL_IDS.ARCHIVE)
         },
         {
             icon: 'spam',
