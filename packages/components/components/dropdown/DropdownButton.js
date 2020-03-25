@@ -9,7 +9,7 @@ const DropdownButton = ({
     hasCaret = false,
     isOpen,
     children,
-    caretClassName,
+    caretClassName = '',
     disabled = false,
     loading = false,
     ...rest

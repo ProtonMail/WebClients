@@ -31,6 +31,7 @@ const getMinutes = (date) => date.getHours() * 60 + date.getMinutes();
 
 const MAX_MINUTES = 24 * 60;
 
+/** @type any **/
 const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = false, max, ...rest }) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor();

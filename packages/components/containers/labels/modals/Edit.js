@@ -62,7 +62,7 @@ function EditLabelModal({ label, mode = 'create', onEdit = noop, onAdd = noop, .
 
     const handleSubmit = () => withLoading(ACTIONS[mode](model));
 
-    const handleChangeColor = (Color) => () => {
+    const handleChangeColor = (Color) => {
         setModel({
             ...model,
             Color

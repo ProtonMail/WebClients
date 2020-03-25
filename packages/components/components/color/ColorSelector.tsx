@@ -1,12 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Icon, Input } from 'react-components';
+import { Icon, Input } from '../../index';
 import { LABEL_COLORS } from 'proton-shared/lib/constants';
 
 import './ColorSelector.scss';
 import { classnames } from '../../helpers/component';
 
-const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS }) => {
+interface Props {
+    selected: string;
+    onChange: (color: string) => void;
+    className?: string;
+    colors?: string[];
+}
+
+const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS }: Props) => {
     return (
         <ul className={classnames(['ColorSelector-container unstyled', className])}>
             {colors.map((color, i) => {
@@ -18,7 +24,7 @@ const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS })
                     >
                         <Input
                             type="radio"
-                            onChange={onChange(color)}
+                            onChange={() => onChange(color)}
                             value={color}
                             name="paletteColor"
                             aria-labelledby={`Color ${color}`}
@@ -33,13 +39,6 @@ const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS })
             })}
         </ul>
     );
-};
-
-ColorSelector.propTypes = {
-    colors: PropTypes.array,
-    selected: PropTypes.string,
-    className: PropTypes.string,
-    onChange: PropTypes.func.isRequired
 };
 
 export default ColorSelector;

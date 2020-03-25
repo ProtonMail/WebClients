@@ -6,6 +6,7 @@ import Icon from '../icon/Icon';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 
+/** @type any **/
 const Info = ({
     url,
     title = undefined,

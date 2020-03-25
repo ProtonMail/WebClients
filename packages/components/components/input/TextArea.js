@@ -6,6 +6,7 @@ import useAutoGrow from '../../hooks/useAutoGrow';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 
+/** @type any **/
 const TextArea = (props) => {
     const {
         className = '',
