@@ -1,19 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Icon } from 'react-components';
+import Icon from '../icon/Icon';
 
-const FloatingButton = ({ icon, title, ...rest }) => {
+interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+    icon: string;
+    title?: string;
+}
+const FloatingButton = ({ icon, title, ...rest }: Props) => {
     return (
         <button type="button" className="compose-fab pm-button--primary flex" {...rest}>
             <Icon size={25} className="mauto" name={icon} />
             {title ? <span className="sr-only">{title}</span> : null}
         </button>
     );
-};
-
-FloatingButton.propTypes = {
-    icon: PropTypes.string.isRequired,
-    title: PropTypes.string
 };
 
 export default FloatingButton;
