@@ -1,6 +1,5 @@
-import { useLoading, useNotifications } from 'react-components';
+import { useLoading } from 'react-components';
 import { useState } from 'react';
-import { getI18N } from './eventForm/i18n';
 import { TITLE_INPUT_ID } from './rows/TitleRow';
 import { COUNT_ID, UNTIL_ID } from './rows/EndsRow';
 
@@ -31,39 +30,25 @@ const handleValidation = (errors, formEl) => {
     return false;
 };
 
-export const useForm = ({ formEl, model, errors, onSave, onClose, onDelete, isCreateEvent }) => {
-    const { createNotification } = useNotifications();
-
+export const useForm = ({ formEl, model, errors, onSave, onDelete }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [loadingAction, withLoadingAction] = useLoading();
-    const i18n = getI18N('event');
 
     const handleSubmit = () => {
         setIsSubmitted(true);
         if (handleValidation(errors, formEl)) {
             return;
         }
-        const run = async () => {
-            await onSave(model);
-            createNotification({ text: isCreateEvent ? i18n.created : i18n.updated });
-            onClose({ safe: true });
-        };
-        withLoadingAction(run());
+        withLoadingAction(onSave(model));
     };
 
     const handleDelete = () => {
-        const run = async () => {
-            await onDelete();
-            createNotification({ text: i18n.deleted });
-            onClose({ safe: true });
-        };
-        withLoadingAction(run());
+        withLoadingAction(onDelete());
     };
 
     return {
         isSubmitted,
         loadingAction,
-        i18n,
         handleDelete,
         handleSubmit
     };

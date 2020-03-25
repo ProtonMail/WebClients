@@ -12,7 +12,6 @@ const CreateEventModal = ({
     isNarrow,
     displayWeekNumbers,
     weekStartsOn,
-    tzid,
     isCreateEvent,
     model,
     setModel,
@@ -22,15 +21,12 @@ const CreateEventModal = ({
     ...rest
 }) => {
     const errors = validate(model);
-    const { isSubmitted, loadingAction, i18n, handleDelete, handleSubmit } = useForm({
+    const { isSubmitted, loadingAction, handleDelete, handleSubmit } = useForm({
         formEl: document.body, // Annyoing to get a ref, mostly fine to use this
         model,
         errors,
         onSave,
-        onClose,
-        onDelete,
-        isCreateEvent,
-        tzid
+        onDelete
     });
 
     // Can't use default close button in FormModal because button type reset resets selects
@@ -78,10 +74,12 @@ const CreateEventModal = ({
         );
     })();
 
+    const title = isCreateEvent ? c('Title').t`Create new event` : c('Title').t`Edit event`;
+
     return (
         <FormModal
             className="pm-modal--shorterLabels"
-            title={isCreateEvent ? i18n.create : i18n.update}
+            title={title}
             loading={loadingAction}
             onSubmit={loadingAction ? noop : handleSubmit}
             submit={submit}

@@ -1,20 +1,10 @@
 import React from 'react';
-import {
-    SmallButton,
-    PrimaryButton,
-    Loader,
-    useLoading,
-    useNotifications,
-    Alert,
-    Icon,
-    classnames
-} from 'react-components';
+import { SmallButton, PrimaryButton, Loader, useLoading, Alert, Icon, classnames } from 'react-components';
 import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { c } from 'ttag';
 
-import { getI18N } from '../eventModal/eventForm/i18n';
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 
 import PopoverEventContent from './PopoverEventContent';
@@ -35,7 +25,6 @@ const EventPopover = ({
     weekStartsOn,
     isNarrow
 }) => {
-    const { createNotification } = useNotifications();
     const [loadingAction, withLoadingAction] = useLoading();
 
     const targetEventData = (targetEvent && targetEvent.data) || {};
@@ -50,13 +39,7 @@ const EventPopover = ({
         if (!Event) {
             return;
         }
-        const run = async () => {
-            await onDelete(Event);
-            onClose();
-            const i18n = getI18N('event');
-            createNotification({ text: i18n.deleted });
-        };
-        withLoadingAction(run());
+        withLoadingAction(onDelete(Event));
     };
 
     const handleEdit = () => {

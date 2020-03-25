@@ -45,6 +45,7 @@ import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, RECURRING_DELETE_TYPES } from '../.
 import deleteSingleRecurrence from './recurrence/deleteSingleRecurrence';
 import getMemberAndAddress from './getMemberAndAddress';
 import deleteFutureRecurrence from './recurrence/deleteFutureRecurrence';
+import { getEventDeletedText, getEventSavedText } from '../../components/eventModal/eventForm/i18n';
 
 const getNormalizedTime = (isAllDay, initial, dateFromCalendar) => {
     if (!isAllDay) {
@@ -457,13 +458,15 @@ const InteractiveCalendarView = ({
         // All updates will remove any existing exdates since they would be more complicated to normalize
         const veventComponent = omit(modelToVeventComponent(tmpData), ['exdate']);
 
-        return handleSaveEventHelper({
+        await handleSaveEventHelper({
             Event,
             veventComponent,
             calendarID,
             memberID,
             addressID
         });
+
+        createNotification({ text: getEventSavedText(!Event) });
     };
 
     const handleCloseConfirmation = () => {
@@ -493,6 +496,7 @@ const InteractiveCalendarView = ({
         const handleDeleteAll = async () => {
             await api(deleteEvent(CalendarID, EventID));
             await call();
+            createNotification({ text: getEventDeletedText() });
         };
 
         if (isRecurring && recurrence && !recurrence.isSingleOccurrence) {
@@ -514,7 +518,7 @@ const InteractiveCalendarView = ({
                 return;
             }
             if (!veventComponent || !personalMap || promise) {
-                return;
+                throw new Error('Event not ready');
             }
             // Dry-run delete this and future recurrences
             const veventFutureDeleted = deleteFutureRecurrence(
@@ -548,13 +552,16 @@ const InteractiveCalendarView = ({
                     addressID: Address.ID,
                     memberID: Member.ID
                 });
+                createNotification({ text: getEventDeletedText() });
+                return;
             }
 
             if (deleteType === RECURRING_DELETE_TYPES.ALL) {
                 await handleDeleteAll();
+                return;
             }
 
-            return;
+            throw new Error('Invalid type');
         }
 
         await handleDeleteConfirmation();
@@ -711,13 +718,14 @@ const InteractiveCalendarView = ({
                                 displayWeekNumbers={displayWeekNumbers}
                                 weekStartsOn={weekStartsOn}
                                 setModel={handleSetTemporaryEventModel}
-                                onSave={() => handleSaveEvent(temporaryEvent)}
+                                onSave={() => {
+                                    return handleSaveEvent(temporaryEvent)
+                                        .then(closeAllPopovers)
+                                        .catch(noop);
+                                }}
                                 onEdit={() => handleEditEvent(temporaryEvent)}
-                                onClose={({ safe = false } = {}) => {
-                                    if (safe) {
-                                        return closeAllPopovers();
-                                    }
-                                    handleConfirmDeleteTemporary({ ask: true })
+                                onClose={() => {
+                                    return handleConfirmDeleteTemporary({ ask: true })
                                         .then(closeAllPopovers)
                                         .catch(noop);
                                 }}
@@ -734,7 +742,14 @@ const InteractiveCalendarView = ({
                             tzid={tzid}
                             weekStartsOn={weekStartsOn}
                             formatTime={formatTime}
-                            onDelete={() => handleDeleteEvent(targetEvent.data.Event, targetEvent)}
+                            onDelete={() => {
+                                return (
+                                    handleDeleteEvent(targetEvent.data.Event, targetEvent)
+                                        // Also close the more popover to avoid this event showing there
+                                        .then(closeAllPopovers)
+                                        .catch(noop)
+                                );
+                            }}
                             onEdit={() => {
                                 const newTemporaryModel = getUpdateModel(targetEvent.data);
                                 const newTemporaryEvent = getTemporaryEvent(
@@ -742,7 +757,7 @@ const InteractiveCalendarView = ({
                                     newTemporaryModel,
                                     tzid
                                 );
-                                handleEditEvent(newTemporaryEvent);
+                                return handleEditEvent(newTemporaryEvent);
                             }}
                             onClose={handleCloseEventPopover}
                         />
@@ -789,7 +804,11 @@ const InteractiveCalendarView = ({
                     tzid={tzid}
                     model={tmpData}
                     setModel={handleSetTemporaryEventModel}
-                    onSave={() => handleSaveEvent(temporaryEvent)}
+                    onSave={() => {
+                        return handleSaveEvent(temporaryEvent)
+                            .then(() => hideModal(eventModalID))
+                            .catch(noop);
+                    }}
                     onDelete={() => {
                         if (
                             !temporaryEvent ||
@@ -799,13 +818,12 @@ const InteractiveCalendarView = ({
                         ) {
                             return;
                         }
-                        return handleDeleteEvent(temporaryEvent.data.Event, temporaryEvent.tmpOriginalTarget);
+                        return handleDeleteEvent(temporaryEvent.data.Event, temporaryEvent.tmpOriginalTarget)
+                            .then(() => hideModal(eventModalID))
+                            .catch(noop);
                     }}
-                    onClose={({ safe = false } = {}) => {
-                        if (safe) {
-                            return hideModal(eventModalID);
-                        }
-                        handleConfirmDeleteTemporary({ ask: true })
+                    onClose={() => {
+                        return handleConfirmDeleteTemporary({ ask: true })
                             .then(() => hideModal(eventModalID))
                             .catch(noop);
                     }}

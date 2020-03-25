@@ -14,7 +14,6 @@ const CreateEventPopover = ({
     setModel,
     onSave,
     onEdit,
-    isCreateEvent,
     onClose,
     style,
     popoverRef,
@@ -28,9 +27,7 @@ const CreateEventPopover = ({
         formEl: formRef.current,
         model,
         errors,
-        onSave,
-        onClose,
-        isCreateEvent
+        onSave
     });
 
     const handleMore = () => {
