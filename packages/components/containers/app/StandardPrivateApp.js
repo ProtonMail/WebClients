@@ -17,6 +17,7 @@ import { useApi, useCache } from '../../index';
 import loadEventID from './loadEventID';
 import StandardLoadError from './StandardLoadError';
 
+/** @type any **/
 const StandardPrivateApp = ({
     locales = {},
     onLogout,
