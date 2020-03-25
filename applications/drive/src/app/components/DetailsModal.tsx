@@ -65,9 +65,9 @@ const DetailsModal = ({ resource, item, onClose, ...rest }: Props) => {
     const extractFieldValue = (field: string, item: FileBrowserItem) => {
         switch (field) {
             case 'Name':
-                return item.Name;
+                return <span title={item.Name}>{item.Name}</span>;
             case 'Uploaded by':
-                return Name;
+                return <span title={Name}>{Name}</span>;
             case 'Location':
                 return <span title={location}>{location}</span>;
             case 'Modified':
@@ -77,7 +77,7 @@ const DetailsModal = ({ resource, item, onClose, ...rest }: Props) => {
                     </Time>
                 );
             case 'Extension':
-                return item.MimeType;
+                return <span title={item.MimeType}>{item.MimeType}</span>;
             case 'Size':
                 return humanSize(item.Size);
             default:
