@@ -35,7 +35,7 @@ export default ({ xhr, UID, API_URL, APP_VERSION, CLIENT_ID, CLIENT_SECRET, API_
         const dataWithClientSecret =
             CLIENT_SECRET && data && ADD_CLIENT_SECRET.includes(url) ? { ...data, ClientSecret: CLIENT_SECRET } : data;
         return xhr({
-            url: `${API_URL}/${url}`,
+            url: /^https?:\/\//.test(url) ? url : `${API_URL}/${url}`,
             data: dataWithClientSecret,
             headers: {
                 ...defaultHeaders,
