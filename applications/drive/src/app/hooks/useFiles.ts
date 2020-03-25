@@ -173,7 +173,7 @@ function useFiles(shareId: string) {
 
                 const Name = await encryptUnsigned({
                     message: filename,
-                    privateKey: parentKeys.privateKey
+                    publicKey: parentKeys.privateKey.toPublic()
                 });
 
                 const MimeType = lookup(filename) || 'application/octet-stream';

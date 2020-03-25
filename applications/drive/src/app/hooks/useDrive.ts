@@ -38,7 +38,7 @@ function useDrive() {
                     publicKeys
                 });
 
-                const shareKey = await decryptPrivateKey(Share.Key, decryptedSharePassphrase as string);
+                const shareKey = await decryptPrivateKey(Share.Key, decryptedSharePassphrase);
                 return {
                     Share,
                     keys: {
@@ -53,7 +53,7 @@ function useDrive() {
     const createVolume = useCallback(async () => {
         const { address, privateKey } = await getPrimaryAddressKey();
         const { bootstrap, folderPrivateKey } = await generateDriveBootstrap(privateKey);
-        const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey);
+        const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey.toPublic());
 
         const { Volume } = await api<CreatedDriveVolumeResult>(
             queryCreateDriveVolume({
