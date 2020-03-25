@@ -1,6 +1,5 @@
 import React, { useMemo, useRef, useState, useCallback, useImperativeHandle, useLayoutEffect, useEffect } from 'react';
 import { eachDayOfInterval, format } from 'proton-shared/lib/date-fns-utc';
-import PropTypes from 'prop-types';
 import { classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
@@ -27,6 +26,7 @@ const totalMinutes = 24 * 60;
 
 const defaultFormat = (utcDate) => format(utcDate, 'p');
 
+/** @type any */
 const TimeGrid = React.forwardRef(
     (
         {
@@ -335,18 +335,5 @@ const TimeGrid = React.forwardRef(
         );
     }
 );
-
-TimeGrid.propTypes = {
-    children: PropTypes.func,
-    onCreateEvent: PropTypes.func,
-    onEditEvent: PropTypes.func,
-    onClickDate: PropTypes.func,
-    isInteractionEnabled: PropTypes.bool,
-    defaultEventDuration: PropTypes.number,
-    events: PropTypes.array,
-    dateRange: PropTypes.array,
-    now: PropTypes.instanceOf(Date),
-    scrollRef: PropTypes.object
-};
 
 export default TimeGrid;

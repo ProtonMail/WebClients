@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
-import { propertiesToModel, propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToModel';
+import { propertiesToModel } from '../eventModal/eventForm/propertiesToModel';
+import { propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToNotificationModel';
 
 export const useReadEvent = (value, tzid) => {
     return useMemo(() => {

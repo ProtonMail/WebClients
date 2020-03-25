@@ -5,15 +5,7 @@ import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
 
 import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
-import {
-    DEFAULT_FULL_DAY_NOTIFICATION,
-    DEFAULT_FULL_DAY_NOTIFICATIONS,
-    DEFAULT_PART_DAY_NOTIFICATION,
-    DEFAULT_PART_DAY_NOTIFICATIONS,
-    getDeviceNotifications,
-    notificationsToModel
-} from '../../../helpers/notifications';
-import { propertiesToModel, propertiesToNotificationModel } from './propertiesToModel';
+import { propertiesToModel } from './propertiesToModel';
 import { modelToGeneralProperties } from './modelToProperties';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { getDateTimeState, getTimeInUtc } from './time';
@@ -23,10 +15,15 @@ import {
     END_TYPE,
     FREQUENCY,
     MONTHLY_TYPE,
-    NOTIFICATION_TYPE,
     WEEKLY_TYPE,
     YEARLY_TYPE
 } from '../../../constants';
+import { DEFAULT_FULL_DAY_NOTIFICATIONS, DEFAULT_PART_DAY_NOTIFICATIONS } from '../../../settingsConstants';
+import { DEFAULT_FULL_DAY_NOTIFICATION, DEFAULT_PART_DAY_NOTIFICATION } from '../../../modelConstants';
+import { getDeviceNotifications } from './notificationModel';
+import { notificationsToModel } from '../../../helpers/notificationsToModel';
+import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
+import { propertiesToNotificationModel } from './propertiesToNotificationModel';
 
 export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
@@ -156,7 +153,7 @@ export const getExistingEvent = ({ veventComponent, veventValarmComponent, tzid 
 
     // Email notifications are not supported atm.
     const newNotifications = propertiesToNotificationModel(veventValarmComponent, isAllDay).filter(
-        ({ type }) => type === NOTIFICATION_TYPE.DEVICE
+        ({ type }) => type === SETTINGS_NOTIFICATION_TYPE.DEVICE
     );
 
     return {

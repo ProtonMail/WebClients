@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { Input } from 'react-components';
 
 interface Props {
+    className?: string;
     value: number | string;
-    onChange: (value: number | string) => {};
+    onBlur: (blur: ChangeEvent<HTMLInputElement>) => void;
+    onChange: (value: number | string) => void;
     max?: number;
     min?: number;
     step?: number;
@@ -28,7 +30,7 @@ const IntegerInput = ({ value, onChange, max, min, step, ...rest }: Props) => {
             min={minStr}
             max={maxStr}
             value={value === '' || isNaN(intValue) ? '' : intValue}
-            onInput={({ target, target: { value: newValue, validity } }: React.ChangeEvent<HTMLInputElement>) => {
+            onInput={({ target, target: { value: newValue, validity } }: ChangeEvent<HTMLInputElement>) => {
                 const isClear = validity.valid;
                 // Prevent broken input on certain browsers since it allows to enter other characters than integer numbers
                 if (newValue === '') {

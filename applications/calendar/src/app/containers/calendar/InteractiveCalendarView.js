@@ -43,9 +43,9 @@ import DeleteRecurringConfirmModal from './confirmationModals/DeleteRecurringCon
 import EditRecurringConfirmation from './confirmationModals/EditRecurringConfirmation';
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, RECURRING_DELETE_TYPES } from '../../constants';
 import deleteSingleRecurrence from './recurrence/deleteSingleRecurrence';
-import getMemberAndAddress from './getMemberAndAddress';
 import deleteFutureRecurrence from './recurrence/deleteFutureRecurrence';
 import { getEventDeletedText, getEventSavedText } from '../../components/eventModal/eventForm/i18n';
+import getMemberAndAddress from '../../helpers/getMemberAndAddress';
 
 const getNormalizedTime = (isAllDay, initial, dateFromCalendar) => {
     if (!isAllDay) {

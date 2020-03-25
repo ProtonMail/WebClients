@@ -12,9 +12,9 @@ import {
 } from 'proton-shared/lib/models';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
+import { SETTINGS_TIME_FORMAT } from 'proton-shared/lib/interfaces/calendar';
 
 import MainContainer from '../containers/calendar/MainContainer';
-import { SETTINGS_TIME_FORMAT } from '../constants';
 import locales from '../locales';
 
 const EVENT_MODELS = [

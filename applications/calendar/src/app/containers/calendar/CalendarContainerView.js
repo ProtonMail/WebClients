@@ -39,9 +39,8 @@ const CalendarContainerView = ({
     disabledCalendars = [],
     isLoading = false,
     isBlurred = false,
-
-    displayWeekNumbers,
-    weekStartsOn,
+    displayWeekNumbers = false,
+    weekStartsOn = 0,
 
     tzid,
     setTzid,

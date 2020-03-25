@@ -1,12 +1,6 @@
 import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-import {
-    useCalendarUserSettings,
-    useCalendarBootstrap,
-    useAddresses,
-    useActiveBreakpoint,
-    useModals
-} from 'react-components';
+import { useCalendarBootstrap, useAddresses, useActiveBreakpoint, useModals } from 'react-components';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -17,7 +11,8 @@ import {
     getTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
 import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
-import { VIEWS, SETTINGS_VIEW, MINIMUM_DATE_UTC, MAXIMUM_DATE_UTC } from '../../constants';
+import { SETTINGS_VIEW } from 'proton-shared/lib/interfaces/calendar';
+import { VIEWS, MINIMUM_DATE_UTC, MAXIMUM_DATE_UTC } from '../../constants';
 import useCalendarsEvents from './useCalendarsEvents';
 import { getDateRange } from './helper';
 import CalendarContainerView from './CalendarContainerView';
@@ -161,8 +156,8 @@ const customReducer = (oldState, newState) => {
     return oldState;
 };
 
-const CalendarContainer = ({ calendars = [], history, location }) => {
-    const [calendarUserSettings, loadingCalendarUserSettings] = useCalendarUserSettings();
+/** @type any **/
+const CalendarContainer = ({ calendars, calendarUserSettings, history, location }) => {
     const [addresses, loadingAddresses] = useAddresses();
     const [disableCreate, setDisableCreate] = useState(false);
     const { isNarrow } = useActiveBreakpoint();
@@ -371,7 +366,7 @@ const CalendarContainer = ({ calendars = [], history, location }) => {
 
     const [containerRef, setContainerRef] = useState();
 
-    const isLoading = loadingCalendarBootstrap || loadingCalendarUserSettings || loadingEvents || loadingAddresses;
+    const isLoading = loadingCalendarBootstrap || loadingEvents || loadingAddresses;
 
     return (
         <CalendarContainerView

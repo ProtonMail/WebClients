@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useLoading, useGetCalendarBootstrap, Select, useGetAddresses } from 'react-components';
 import CalendarIcon from '../../calendar/CalendarIcon';
-import { getDeviceNotifications, notificationsToModel } from '../../../helpers/notifications';
+import { notificationsToModel } from '../../../helpers/notificationsToModel';
 import { getInitialMemberModel, hasEditedNotifications } from '../eventForm/state';
+import { getDeviceNotifications } from '../eventForm/notificationModel';
 
 const CalendarSelect = ({ withIcon, model, setModel, ...rest }) => {
     const [loading, withLoading] = useLoading();
