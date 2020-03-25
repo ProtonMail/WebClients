@@ -66,7 +66,7 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
         expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Daily, until 20 Feb 2020');
     });
 
-    test('for a custom weekly recurring event happening every two days, lasting 1 time on a different timezone', () => {
+    test('for a custom weekly recurring event happening every two days, lasting 2 times on a different timezone', () => {
         const frequencyModel = {
             ...dummyFrequencyModel,
             type: FREQUENCY.CUSTOM,
@@ -74,11 +74,11 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
             interval: 2,
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 1
+                count: 2
             }
         };
         const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual('Every 2 days, 1 time');
+        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual('Every 2 days, 2 times');
     });
 
     test('for a custom daily event, until 20th February 2020 on a different timezone', () => {
