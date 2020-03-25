@@ -31,8 +31,6 @@ const DetailsModal = ({ resource, item, onClose, ...rest }: Props) => {
     const [{ Name }] = useUser();
     const [location, setLocation] = useState('');
 
-    const modalTitleID = 'details-modal';
-
     useEffect(() => {
         const getLocationItems = async (linkId: string): Promise<string[]> => {
             const meta = (await getFolderMeta(linkId)).Folder;
@@ -46,10 +44,9 @@ const DetailsModal = ({ resource, item, onClose, ...rest }: Props) => {
 
         let canceled = false;
 
-        getLocationItems(resource.linkId).then((locationItems) => {
+        getLocationItems(resource.linkId).then((items) => {
             if (!canceled) {
-                const location = `\\${locationItems.join('\\')}`;
-                setLocation(location);
+                setLocation(`\\${items.join('\\')}`);
             }
         });
 
@@ -58,10 +55,12 @@ const DetailsModal = ({ resource, item, onClose, ...rest }: Props) => {
         };
     }, [getFolderMeta, resource.linkId]);
 
+    const modalTitleID = 'details-modal';
     const isFolder = item.Type === ResourceType.FOLDER;
     const folderFields = ['Name', 'Uploaded by', 'Location', 'Modified'];
     const fileFields = [...folderFields, 'Extension', 'Size'];
     const fieldsToRender = isFolder ? folderFields : fileFields;
+    const title = isFolder ? c('Title').t`Folder Details` : c('Title').t`File Details`;
 
     const extractFieldValue = (field: string, item: FileBrowserItem) => {
         switch (field) {
@@ -70,7 +69,7 @@ const DetailsModal = ({ resource, item, onClose, ...rest }: Props) => {
             case 'Uploaded by':
                 return Name;
             case 'Location':
-                return location;
+                return <span title={location}>{location}</span>;
             case 'Modified':
                 return (
                     <Time key="dateModified" format="PPp">
@@ -87,17 +86,16 @@ const DetailsModal = ({ resource, item, onClose, ...rest }: Props) => {
     };
 
     const rows = fieldsToRender.map((field) => {
+        const fieldValue = extractFieldValue(field, item);
         return (
             <Row key={field}>
                 <Label>{c('Label').t`${field}`}</Label>
-                <Field>
-                    <b>{extractFieldValue(field, item)}</b>
+                <Field className="ellipsis">
+                    <b>{fieldValue}</b>
                 </Field>
             </Row>
         );
     });
-
-    const title = isFolder ? c('Title').t`Folder Details` : c('Title').t`File Details`;
 
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
