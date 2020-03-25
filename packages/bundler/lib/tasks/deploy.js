@@ -63,6 +63,12 @@ function main({ branch, argv, hookPostTaskClone }) {
         {
             title: `Push dist to ${branch}`,
             task: (ctx) => push(branch, ctx)
+        },
+        {
+            title: 'Clear all the things !',
+            async task() {
+                await del(['dist-deploy'], { dryRun: false });
+            }
         }
     ];
 
