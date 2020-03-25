@@ -181,11 +181,11 @@ function useShare(shareId: string) {
                 generateNodeKeys(parentKeys.privateKey, addressKey),
                 encryptUnsigned({
                     message: name,
-                    privateKey: parentKeys.privateKey
+                    publicKey: parentKeys.privateKey.toPublic()
                 })
             ]);
 
-            const { NodeHashKey: NodeHashKey } = await generateNodeHashKey(privateKey);
+            const { NodeHashKey: NodeHashKey } = await generateNodeHashKey(privateKey.toPublic());
 
             await api(
                 queryCreateFolder(shareId, {
@@ -222,7 +222,7 @@ function useShare(shareId: string) {
                 generateLookupHash(lowerCaseName, parentKeys.hashKey),
                 encryptUnsigned({
                     message: newName,
-                    privateKey: parentKeys.privateKey
+                    publicKey: parentKeys.privateKey.toPublic()
                 })
             ]);
 
