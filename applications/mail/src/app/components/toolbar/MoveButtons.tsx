@@ -50,6 +50,7 @@ const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [], locati
                     loading={loading}
                     title={c('Action').t`Move to trash`}
                     onClick={() => withLoading(handleMove(TRASH))}
+                    disabled={!selectedIDs.length}
                 >
                     <Icon className="toolbar-icon mauto" name="trash" />
                 </ToolbarButton>
@@ -59,6 +60,7 @@ const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [], locati
                     loading={loading}
                     title={c('Action').t`Move to inbox`}
                     onClick={() => withLoading(handleMove(INBOX))}
+                    disabled={!selectedIDs.length}
                 >
                     <Icon className="toolbar-icon mauto" name="inbox" />
                 </ToolbarButton>
@@ -68,6 +70,7 @@ const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [], locati
                     loading={loading}
                     title={c('Action').t`Move to archive`}
                     onClick={() => withLoading(handleMove(ARCHIVE))}
+                    disabled={!selectedIDs.length}
                 >
                     <Icon className="toolbar-icon mauto" name="archive" />
                 </ToolbarButton>
@@ -77,6 +80,7 @@ const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [], locati
                     loading={loading}
                     title={c('Action').t`Move to spam`}
                     onClick={() => withLoading(handleMove(SPAM))}
+                    disabled={!selectedIDs.length}
                 >
                     <Icon className="toolbar-icon mauto" name="spam" />
                 </ToolbarButton>

@@ -91,6 +91,7 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [], locat
                     loading={loading}
                     title={c('Action').t`Delete`}
                     onClick={() => withLoading(handleDelete())}
+                    disabled={!selectedIDs.length}
                 >
                     <Icon className="toolbar-icon mauto" name="delete" />
                 </ToolbarButton>
@@ -100,6 +101,7 @@ const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [], locat
                     loading={loading}
                     title={c('Action').t`Empty folder`}
                     onClick={() => withLoading(handleEmpty())}
+                    disabled={!selectedIDs.length}
                 >
                     <Icon className="toolbar-icon mauto" name="empty-folder" />
                 </ToolbarButton>
