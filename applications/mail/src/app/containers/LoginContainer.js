@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { LoginForm, Href, SimpleDropdown, DropdownMenu, SignInLayout } from 'react-components';
 
-const LoginContainer = ({ stopRedirect, history, onLogin }) => {
+const LoginContainer = ({ stopRedirect, history, location, onLogin }) => {
     const handleLogin = (...args) => {
         stopRedirect();
-        history.push('/inbox');
+        if (location.state.from) {
+            history.push(location.state.from);
+        } else {
+            history.push('/inbox');
+        }
         onLogin(...args);
     };
     return (
