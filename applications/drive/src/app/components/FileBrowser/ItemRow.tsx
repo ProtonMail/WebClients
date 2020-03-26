@@ -10,8 +10,8 @@ interface Props {
     selectedItems: FileBrowserItem[];
     onToggleSelect: (item: string) => void;
     onClick: (item: string) => void;
-    onDoubleClick: (item: FileBrowserItem) => void;
     onShiftClick: (item: string) => void;
+    onDoubleClick?: (item: FileBrowserItem) => void;
 }
 
 const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, onShiftClick }: Props) => {
@@ -42,14 +42,14 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
 
     const handleTouchEnd = () => {
         if (touchStarted.current) {
-            onDoubleClick(item);
+            onDoubleClick?.(item);
         }
         touchStarted.current = false;
     };
 
     const handleRowDoubleClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
-        onDoubleClick(item);
+        onDoubleClick?.(item);
     };
 
     const isFolder = item.Type === ResourceType.FOLDER;

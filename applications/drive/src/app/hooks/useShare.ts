@@ -28,7 +28,7 @@ export const folderChildrenCacheKey = (shareId: string, linkId: string, Page: nu
     `drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`;
 const linkMetaCacheKey = (shareId: string, linkId: string) => `drive/shares/${shareId}/folder/${linkId}`;
 
-interface FolderLinkMetaResult {
+export interface FolderLinkMetaResult {
     Link: FolderLinkMeta;
     keys: {
         privateKey: OpenPGPKey;
@@ -50,60 +50,67 @@ function useShare(shareId: string) {
     const { fetchShareMeta } = useDrive();
     const { getVerificationKeys, getPrimaryAddressKey } = useDriveCrypto();
 
-    const getLinkMeta = useCallback(
-        (linkId: string): Promise<FolderLinkMetaResult | FileLinkMetaResult> =>
-            getCachedResponse(linkMetaCacheKey(shareId, linkId), async () => {
-                const { Link } = await api<LinkMetaResult>(queryGetLink(shareId, linkId));
+    const decryptLinkMeta = useCallback(
+        async (Link: LinkMeta, getParentMeta: (parentLinkID: string) => Promise<FolderLinkMetaResult>) => {
+            const [{ keys: parentKeys }, { publicKeys }] = await Promise.all([
+                Link.ParentLinkID ? await getParentMeta(Link.ParentLinkID) : await fetchShareMeta(shareId),
+                getVerificationKeys(Link.SignatureAddressID)
+            ]);
 
-                const [{ keys: parentKeys }, { publicKeys }] = await Promise.all([
-                    Link.ParentLinkID ? await getLinkMeta(Link.ParentLinkID) : await fetchShareMeta(shareId),
-                    getVerificationKeys(Link.SignatureAddressID)
-                ]);
+            const decryptedLinkPassphrase = await decryptPassphrase({
+                armoredPassphrase: Link.NodePassphrase,
+                armoredSignature: Link.NodePassphraseSignature,
+                privateKeys: [parentKeys.privateKey],
+                publicKeys
+            });
 
-                const decryptedLinkPassphrase = await decryptPassphrase({
-                    armoredPassphrase: Link.NodePassphrase,
-                    armoredSignature: Link.NodePassphraseSignature,
-                    privateKeys: [parentKeys.privateKey],
-                    publicKeys
+            const [Name, privateKey] = await Promise.all([
+                decryptUnsigned({ armoredMessage: Link.Name, privateKey: parentKeys.privateKey }),
+                decryptPrivateKey(Link.NodeKey, decryptedLinkPassphrase)
+            ]);
+
+            const meta = {
+                ...Link,
+                Name
+            };
+
+            if (isFolderLinkMeta(meta)) {
+                const decryptedHashKey = await decryptUnsigned({
+                    armoredMessage: meta.FolderProperties.NodeHashKey,
+                    privateKey
                 });
-
-                const [Name, privateKey] = await Promise.all([
-                    decryptUnsigned({ armoredMessage: Link.Name, privateKey: parentKeys.privateKey }),
-                    decryptPrivateKey(Link.NodeKey, decryptedLinkPassphrase)
-                ]);
-
-                const meta = {
-                    ...Link,
-                    Name
-                };
-
-                if (isFolderLinkMeta(meta)) {
-                    const decryptedHashKey = await decryptUnsigned({
-                        armoredMessage: meta.FolderProperties.NodeHashKey,
-                        privateKey
-                    });
-
-                    return {
-                        Link: meta,
-                        keys: {
-                            privateKey,
-                            hashKey: decryptedHashKey
-                        }
-                    };
-                }
-
-                const blockKeys = deserializeUint8Array(meta.FileProperties.ContentKeyPacket);
-                const sessionKeys = await getDecryptedSessionKey(blockKeys, privateKey);
 
                 return {
                     Link: meta,
                     keys: {
                         privateKey,
-                        sessionKeys
+                        hashKey: decryptedHashKey
                     }
                 };
+            }
+
+            const blockKeys = deserializeUint8Array(meta.FileProperties.ContentKeyPacket);
+            const sessionKeys = await getDecryptedSessionKey(blockKeys, privateKey);
+
+            return {
+                Link: meta,
+                keys: {
+                    privateKey,
+                    sessionKeys
+                }
+            };
+        },
+        [shareId, getVerificationKeys, fetchShareMeta]
+    );
+
+    const getLinkMeta = useCallback(
+        (linkId: string): Promise<FolderLinkMetaResult | FileLinkMetaResult> =>
+            getCachedResponse(linkMetaCacheKey(shareId, linkId), async () => {
+                const { Link } = await api<LinkMetaResult>(queryGetLink(shareId, linkId));
+                // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                return decryptLinkMeta(Link, getFolderMeta);
             }),
-        [shareId, api, getCachedResponse, getVerificationKeys, fetchShareMeta]
+        [api, shareId, getCachedResponse, decryptLinkMeta]
     );
 
     const getFolderMeta = useCallback(
@@ -121,9 +128,12 @@ function useShare(shareId: string) {
         [getLinkMeta]
     );
 
-    const decryptLink = useCallback(
-        async <T extends LinkMeta>({ Name, ParentLinkID, ...rest }: T) => {
-            const { keys } = await getFolderMeta(ParentLinkID);
+    const decryptChildLink = useCallback(
+        async <T extends LinkMeta>(
+            { Name, ParentLinkID, ...rest }: T,
+            getParentMeta: (parentLinkID: string) => Promise<FolderLinkMetaResult> = getFolderMeta
+        ) => {
+            const { keys } = await getParentMeta(ParentLinkID);
             return {
                 ...rest,
                 ParentLinkID,
@@ -147,9 +157,9 @@ function useShare(shareId: string) {
                     queryFolderChildren(shareId, linkId, { Page, PageSize })
                 );
 
-                return await Promise.all(Links.map(decryptLink));
+                return Promise.all(Links.map((link) => decryptChildLink(link)));
             }),
-        [api, shareId, getCachedResponse, decryptLink]
+        [api, shareId, getCachedResponse, decryptChildLink]
     );
 
     const createNewFolder = useCallback(
@@ -258,7 +268,8 @@ function useShare(shareId: string) {
         getFolderMeta,
         getLinkMeta,
         getFolderContents,
-        decryptLink,
+        decryptLinkMeta,
+        decryptChildLink,
         createNewFolder,
         clearFolderContentsCache,
         renameLink
