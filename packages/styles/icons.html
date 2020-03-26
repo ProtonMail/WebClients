@@ -33,7 +33,11 @@ subsection: icons
 
   <p>Warning: <code>shape-lock-check</code>, <code>shape-lock-warning</code> have color inside. The <code>fill-</code> classes applied to them <strong>will not change</strong> the part already colored.</p>
 
-  <h3>Special cases (bank icons), with a “native” viewbox of 16×16</h3>
+</div>
+
+<div id="icon-bank-icon" class="container-section-sticky container-section-sticky--fullwidth">
+
+  <h3 class="mt2">Special cases (bank icons), with a “native” viewbox of 16×16</h3>
 
   <p>These ones have their own styles, so they should be used as simple classic images. you may specify <code>width</code> attribute on <code>img</code> tag if you want to display them larger:</p>
 
@@ -46,11 +50,30 @@ subsection: icons
       {% endfor %}
   </ul>
 
+</div>
+
+<div id="icon-locks-icon" class="container-section-sticky container-section-sticky--fullwidth">
+
+  <h3 class="mt2">Lock icons (<code>viewbox</code> 18×18)</h3>
+
+  {% assign listLocksIcons = "locks-check#locks-closed#locks-signed#locks-warning#locks-open-check#locks-open-signed#locks-open-warning" | split: '#' %}
+
+  <div class="flex mb2">
+  {% for icon in listLocksIcons %}
+	<div class="w200p aligncenter p1">
+		<svg viewBox="0 0 18 18" class="icon-18p fill-global-grey " role="img" focusable="false">
+		<use xlink:href="#shape-{{ icon }}"></use>
+		</svg>
+		<code class="bl mt0-5">#shape-{{ icon }}</code>
+	</div>
+  {% endfor %}
+  </div>
+
   <h3>Other viewboxes</h3>
 
   {% assign listIcons = "" | split: '#' %}
 
-  <p>Please document here icons with other native viewboxes. For the moment, there is no used (except in tests).</p>
+  <p>Please document here icons with other native viewboxes.</p>
 
   <!-- <div class="flex mb2">
     {% for icon in listIcons %}
