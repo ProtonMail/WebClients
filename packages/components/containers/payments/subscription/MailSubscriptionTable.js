@@ -117,7 +117,7 @@ const MailSubscriptionTable = ({
             imageSrc: professionalPlanSvg,
             description: c('Description').t`For large organizations and businesses`,
             features: [
-                { icon: 'arrow-right', content: c('Feature').t`1 - 5000 user *` },
+                { icon: 'arrow-right', content: c('Feature').t`1 - 5000 user(s) *` },
                 { icon: 'arrow-right', content: c('Feature').t`5 GB storage per user *` },
                 { icon: 'arrow-right', content: c('Feature').t`5 addresses per user *` },
                 { icon: 'arrow-right', content: c('Feature').t`Supports 2 domains *` },
