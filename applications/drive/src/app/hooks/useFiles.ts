@@ -51,12 +51,7 @@ function useFiles(shareId: string) {
                 throw new Error(`Invalid link metadata, expected File (${ResourceType.FILE}), got ${result.Link.Type}`);
             }
 
-            const { Link: File, ...rest } = result as FileLinkMetaResult;
-
-            return {
-                File,
-                ...rest
-            };
+            return result as FileLinkMetaResult;
         },
         [shareId, getLinkMeta]
     );
@@ -292,8 +287,8 @@ function useFiles(shareId: string) {
     };
 
     const getFileBlocks = async (linkId: string) => {
-        const { File } = await getFileMeta(linkId);
-        const { Revision } = await getFileRevision(File);
+        const { Link } = await getFileMeta(linkId);
+        const { Revision } = await getFileRevision(Link);
         return Revision.Blocks;
     };
 
