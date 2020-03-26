@@ -3,3 +3,4 @@ declare module '*.svg' {
     export default src;
 }
 
+declare const PL_IS_STANDALONE: boolean;

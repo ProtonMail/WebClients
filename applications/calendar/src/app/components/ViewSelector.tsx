@@ -1,13 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { classnames } from 'react-components';
 import { c } from 'ttag';
 
 import { VIEWS } from '../constants';
 
-const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM } = VIEWS;
+const { DAY, WEEK, MONTH, CUSTOM } = VIEWS;
 
-const ViewSelector = ({ range, loading = false, disabled = false, view, onChange, ...rest }) => {
+interface Props {
+    range: number;
+    loading?: boolean;
+    disabled?: boolean;
+    view: VIEWS;
+    onChange: (value: VIEWS) => void;
+}
+const ViewSelector = ({ range, loading = false, disabled = false, view, onChange, ...rest }: Props) => {
     const options = [
         { text: c('Calendar view').t`Day`, value: DAY },
         { text: c('Calendar view').t`Week`, value: WEEK },
@@ -36,14 +42,6 @@ const ViewSelector = ({ range, loading = false, disabled = false, view, onChange
             })}
         </>
     );
-};
-
-ViewSelector.propTypes = {
-    disabled: PropTypes.bool,
-    loading: PropTypes.bool,
-    range: PropTypes.number,
-    view: PropTypes.oneOf([DAY, WEEK, MONTH, YEAR, AGENDA]),
-    onChange: PropTypes.func
 };
 
 export default ViewSelector;

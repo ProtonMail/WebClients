@@ -1,46 +1,25 @@
 import React, { useMemo } from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Icon } from 'react-components';
 import { format } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
 
 import { VIEWS } from '../constants';
+import getDateRangeText from './getDateRangeText';
 
-const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
+const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM } = VIEWS;
 
-const FORMATS = {
-    [DAY]: 'PP',
-    [WEEK]: 'PP',
-    [MONTH]: 'MMM yyyy',
-    [YEAR]: 'yyyy',
-    [AGENDA]: 'MMM yyyy'
-};
-
-const getDateRangeText = (view, range, currentDate, dateRange) => {
-    const formatOptions = { locale: dateLocale };
-    const [from, to] = dateRange;
-    if (view === WEEK || range > 0) {
-        if (from.getMonth() === to.getMonth()) {
-            const fromString = format(from, 'd', formatOptions);
-            const toString = format(to, 'd', formatOptions);
-            const rest = format(from, 'MMM yyyy', formatOptions);
-            return `${fromString} - ${toString} ${rest}`;
-        }
-        if (from.getFullYear() === to.getFullYear()) {
-            const fromString = format(from, 'd MMM', formatOptions);
-            const toString = format(to, 'd MMM', formatOptions);
-            const rest = format(from, 'yyyy', formatOptions);
-            return `${fromString} - ${toString} ${rest}`;
-        }
-        const fromString = format(from, 'd MMM yyyy', formatOptions);
-        const toString = format(to, 'd MMM yyyy', formatOptions);
-        return `${fromString} - ${toString}`;
-    }
-    return format(currentDate, FORMATS[view], formatOptions);
-};
-
-const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, onPrev, onNext }) => {
+interface Props {
+    view: VIEWS;
+    range: number;
+    currentDate: Date;
+    now: Date;
+    dateRange: [Date, Date];
+    onToday: () => void;
+    onPrev: () => void;
+    onNext: () => void;
+}
+const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, onPrev, onNext }: Props) => {
     const currentRange = useMemo(() => {
         return getDateRangeText(view, range, currentDate, dateRange);
     }, [view, range, currentDate, currentDate, dateRange]);
@@ -53,6 +32,8 @@ const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, 
         [DAY]: c('Action').t`Previous day`,
         [WEEK]: c('Action').t`Previous week`,
         [MONTH]: c('Action').t`Previous month`,
+        [AGENDA]: c('Action').t`Previous month`,
+        [CUSTOM]: c('Action').t`Previous month`,
         [YEAR]: c('Action').t`Previous year`
     }[view];
 
@@ -60,6 +41,8 @@ const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, 
         [DAY]: c('Action').t`Next day`,
         [WEEK]: c('Action').t`Next week`,
         [MONTH]: c('Action').t`Next month`,
+        [AGENDA]: c('Action').t`Next month`,
+        [CUSTOM]: c('Action').t`Next month`,
         [YEAR]: c('Action').t`Next year`
     }[view];
 
@@ -100,18 +83,6 @@ const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, 
             <span className="pl1 pr0-5 mtauto mbauto">{currentRange}</span>
         </>
     );
-};
-
-DateCursorButtons.propTypes = {
-    now: PropTypes.instanceOf(Date),
-    range: PropTypes.number,
-    currentDate: PropTypes.instanceOf(Date),
-    dateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
-    onPrev: PropTypes.func,
-    onNext: PropTypes.func,
-    onToday: PropTypes.func,
-    customRange: PropTypes.number,
-    view: PropTypes.oneOf([DAY, WEEK, MONTH, YEAR, AGENDA])
 };
 
 export default DateCursorButtons;

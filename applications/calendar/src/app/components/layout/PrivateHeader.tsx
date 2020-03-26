@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
     MainLogo,
     UpgradeButton,
@@ -11,7 +10,17 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 
-const PrivateHeader = ({ title, url, inSettings, onCreateEvent, expanded, onToggleExpand, isNarrow }) => {
+interface Props {
+    title: string;
+    url: string;
+    inSettings: boolean;
+    onCreateEvent?: () => void;
+    expanded: boolean;
+    onToggleExpand: () => void;
+    isNarrow: boolean;
+}
+
+const PrivateHeader = ({ title, url, inSettings, onCreateEvent, expanded, onToggleExpand, isNarrow }: Props) => {
     const [{ hasPaidMail }] = useUser();
     return (
         <header className="header flex flex-nowrap reset4print">
@@ -45,16 +54,6 @@ const PrivateHeader = ({ title, url, inSettings, onCreateEvent, expanded, onTogg
             ) : null}
         </header>
     );
-};
-
-PrivateHeader.propTypes = {
-    isNarrow: PropTypes.bool,
-    expanded: PropTypes.bool,
-    onToggleExpand: PropTypes.func,
-    onCreateEvent: PropTypes.func,
-    inSettings: PropTypes.bool,
-    url: PropTypes.string,
-    title: PropTypes.string
 };
 
 export default PrivateHeader;

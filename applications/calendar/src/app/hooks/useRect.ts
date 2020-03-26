@@ -1,19 +1,19 @@
 import { useLayoutEffect, useState } from 'react';
-import observeRect from './observeRect';
+import observeRect, { Rect } from './observeRect';
 
-export function useRect(nodeRef, observe = true, once = false, dependency) {
-    const [rect, setRect] = useState();
+export function useRect(nodeRef: HTMLElement, observe = true, once = false, dependency: any) {
+    const [rect, setRect] = useState<Rect | undefined>(undefined);
 
     useLayoutEffect(() => {
         if (!nodeRef || !observe) {
-            setRect();
+            setRect(undefined);
             return;
         }
 
         if (once) {
             let onceState = false;
 
-            const stop = observeRect(nodeRef, (rect) => {
+            const stop = observeRect(nodeRef, (rect: Rect) => {
                 if (!onceState) {
                     onceState = true;
                     stop();
@@ -25,7 +25,7 @@ export function useRect(nodeRef, observe = true, once = false, dependency) {
         }
 
         return observeRect(nodeRef, (rect) => {
-            setRect(rect)
+            setRect(rect);
         });
     }, [nodeRef, observe, once, dependency]);
 

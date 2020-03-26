@@ -51,7 +51,7 @@ export const getCalendarModel = ({
         name: Calendar.Name,
         display: !!Calendar.Display,
         description: Calendar.Description,
-        color: Calendar.Color,
+        color: (Calendar.Color || '').toLowerCase(),
         addressID: AddressID,
         addressOptions: Addresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
         duration: DefaultEventDuration,

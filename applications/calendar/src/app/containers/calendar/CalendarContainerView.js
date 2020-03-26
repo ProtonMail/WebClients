@@ -23,7 +23,7 @@ import TimezoneSelector from '../../components/TimezoneSelector';
 
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '../../constants';
 import { fromUTCDate, toLocalDate } from 'proton-shared/lib/date/timezone';
-import { getDateDiff } from './helper';
+import getDateDiff from './getDateDiff';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
 

@@ -130,7 +130,7 @@ const NotificationInput = ({
                 ) : (
                     <span className="flex-item-noshrink pr0-5">{notificationI18N[when].toLowerCase()}</span>
                 )}
-                {isAllDay ? <TimeInput value={at} onChange={(at: Date) => onChange({ ...notification, at })} /> : null}
+                {isAllDay && at ? <TimeInput value={at} onChange={(at) => onChange({ ...notification, at })} /> : null}
             </span>
         </div>
     );

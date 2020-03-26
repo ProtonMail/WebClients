@@ -14,13 +14,13 @@ import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-ut
 import { SETTINGS_VIEW } from 'proton-shared/lib/interfaces/calendar';
 import { VIEWS, MINIMUM_DATE_UTC, MAXIMUM_DATE_UTC } from '../../constants';
 import useCalendarsEvents from './useCalendarsEvents';
-import { getDateRange } from './helper';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
 import AlarmContainer from '../alarms/AlarmContainer';
 import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
 import { canAskTimezoneSuggestion, saveLastTimezoneSuggestion } from '../../helpers/timezoneSuggestion';
-import { getTitleDateString } from './formatHelper';
+import getDateRange from './getDateRange';
+import getTitleDateString from './getTitleDateString';
 import {
     getDefaultCalendar,
     getIsCalendarDisabled,

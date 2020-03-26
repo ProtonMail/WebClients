@@ -1,14 +1,25 @@
-const props = ["width", "height", "top", "right", "bottom", "left"];
+export interface Rect {
+    width: number;
+    height: number;
+    top: number;
+    right: number;
+    bottom: number;
+    left: number;
+}
 
-const rectChanged = (a = {}, b = {}) => props.some(prop => a[prop] !== b[prop]);
+type Callback = (rect: Rect) => void;
+
+const props = ['width', 'height', 'top', 'right', 'bottom', 'left'];
+
+const rectChanged = (a: any = {}, b: any = {}) => props.some((prop) => a[prop] !== b[prop]);
 
 const observedNodes = new Map();
-let rafId;
+let rafId = 0;
 
 const run = () => {
     observedNodes.forEach((state) => {
         if (state.hasRectChanged) {
-            state.callbacks.forEach(cb => cb(state.rect));
+            state.callbacks.forEach((cb: Callback) => cb(state.rect));
             state.hasRectChanged = false;
         }
     });
@@ -26,7 +37,7 @@ const run = () => {
     rafId = requestAnimationFrame(run);
 };
 
-export default (node, cb) => {
+export default (node: HTMLElement, cb: Callback) => {
     const wasEmpty = observedNodes.size === 0;
 
     if (observedNodes.has(node)) {
@@ -61,5 +72,5 @@ export default (node, cb) => {
         if (!observedNodes.size) {
             cancelAnimationFrame(rafId);
         }
-    }
+    };
 };

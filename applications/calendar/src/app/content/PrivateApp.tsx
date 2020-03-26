@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { StandardPrivateApp, ErrorBoundary, LoaderPage, useApi, useCache } from 'react-components';
 import { c } from 'ttag';
 import {
@@ -28,7 +27,10 @@ const EVENT_MODELS = [
 
 const PRELOAD_MODELS = [UserModel, UserSettingsModel, MailSettingsModel, AddressesModel];
 
-const PrivateApp = ({ onLogout }) => {
+interface Props {
+    onLogout: () => void;
+}
+const PrivateApp = ({ onLogout }: Props) => {
     const api = useApi();
     const cache = useCache();
 
@@ -57,10 +59,6 @@ const PrivateApp = ({ onLogout }) => {
             </ErrorBoundary>
         </StandardPrivateApp>
     );
-};
-
-PrivateApp.propTypes = {
-    onLogout: PropTypes.func.isRequired
 };
 
 export default PrivateApp;

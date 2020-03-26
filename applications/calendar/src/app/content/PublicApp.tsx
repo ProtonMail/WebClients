@@ -1,10 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { StandardPublicApp, LoginForm } from 'react-components';
 import locales from '../locales';
 
-const PublicApp = ({ onLogin }) => {
+interface Props {
+    onLogin: () => void;
+}
+const PublicApp = ({ onLogin }: Props) => {
     return (
         <StandardPublicApp locales={locales}>
             <Switch>
@@ -12,10 +14,6 @@ const PublicApp = ({ onLogin }) => {
             </Switch>
         </StandardPublicApp>
     );
-};
-
-PublicApp.propTypes = {
-    onLogin: PropTypes.func.isRequired
 };
 
 export default PublicApp;
