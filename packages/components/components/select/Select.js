@@ -5,6 +5,16 @@ import { generateUID, classnames } from '../../helpers/component';
 import useInput from '../input/useInput';
 import ErrorZone from '../text/ErrorZone';
 
+const DEFAULT_GROUP = 'GROUP';
+
+const buildOptions = (options = []) => {
+    return options.map(({ text, ...rest }, index) => (
+        <option key={index.toString()} {...rest}>
+            {text}
+        </option>
+    ));
+};
+
 /** @type any */
 const Select = ({
     options,
@@ -18,8 +28,8 @@ const Select = ({
 }) => {
     const { handlers, statusClasses, status } = useInput({ isSubmitted, ...rest });
     const [uid] = useState(generateUID('select'));
-
     const hasError = error && (status.isDirty || isSubmitted);
+    const hasGroup = options.some(({ group }) => group);
 
     return (
         <>
@@ -31,11 +41,22 @@ const Select = ({
                 {...rest}
                 {...handlers}
             >
-                {options.map(({ text, ...rest }, index) => (
-                    <option key={index.toString()} {...rest}>
-                        {text}
-                    </option>
-                ))}
+                {hasGroup
+                    ? Object.entries(
+                          options.reduce((acc, option) => {
+                              const { group = DEFAULT_GROUP } = option;
+                              acc[group] = acc[group] || [];
+                              acc[group].push(option);
+                              return acc;
+                          }, {})
+                      ).map(([group, options], index) => {
+                          return (
+                              <optgroup key={index.toString()} label={group}>
+                                  {buildOptions(options)}
+                              </optgroup>
+                          );
+                      })
+                    : buildOptions(options)}
             </select>
             <ErrorZone id={uid}>{hasError ? error : ''}</ErrorZone>
         </>
@@ -51,7 +72,13 @@ Select.propTypes = {
     onChange: PropTypes.func,
     onBlur: PropTypes.func,
     onFocus: PropTypes.func,
-    options: PropTypes.arrayOf(PropTypes.object),
+    options: PropTypes.arrayOf(
+        PropTypes.shape({
+            value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+            text: PropTypes.string,
+            group: PropTypes.string
+        })
+    ),
     multiple: PropTypes.bool,
     className: PropTypes.string
 };

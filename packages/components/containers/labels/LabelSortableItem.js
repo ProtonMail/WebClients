@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { OrderableTableRow, Icon } from 'react-components';
 
-import ToggleNotify from './ToggleNotify';
 import ActionsLabel from './ActionsLabel';
 
 function LabelItem({ label, onEditLabel = noop, onRemoveLabel = noop, ...rest }) {
-    const { Name, Color, Exclusive } = label;
+    const { Name, Color } = label;
 
     const handleChange = (type, label) => {
         type === 'update' && onEditLabel(label);
@@ -19,16 +18,13 @@ function LabelItem({ label, onEditLabel = noop, onRemoveLabel = noop, ...rest })
             cells={[
                 <div key="0" className="flex flex-nowrap">
                     <Icon
-                        name={Exclusive ? 'folder' : 'label'}
-                        color={Color}
+                        name="label"
+                        style={{ fill: Color }}
                         className="icon-16p flex-item-noshrink mr1 mtauto mbauto"
                     />
-                    <span className="ellipsis" data-test-id="folders/labels:item-name">
+                    <span className="ellipsis" title={Name} data-test-id="folders/labels:item-name">
                         {Name}
                     </span>
-                </div>,
-                <div key="1" className="w10" data-test-id="folders/labels:item-notification-toggle">
-                    {Exclusive === 1 ? <ToggleNotify label={label} /> : ''}
                 </div>,
                 <ActionsLabel key="2" label={label} onChange={handleChange} />
             ]}

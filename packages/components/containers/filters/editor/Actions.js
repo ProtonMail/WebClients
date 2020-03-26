@@ -1,44 +1,64 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Loader, Label, Field, Select, Row, useFormattedLabels, ErrorZone } from 'react-components';
+import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
+import { Loader, Label, Field, Select, Row, useLabels, useFolders, ErrorZone } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { toMap } from 'proton-shared/lib/helpers/object';
 
 import LabelActions from './LabelActions';
 import AutoReplyAction from './AutoReplyAction';
 
+const formatOption = ({ Path, Name }, level = 0) => ({
+    value: Path,
+    text: formatFolderName(level, Name, ' ∙ '),
+    group: c('Option group').t`Custom folders`
+});
+
+const reducer = (acc = [], folder, level = 0) => {
+    acc.push(formatOption(folder, level));
+
+    if (Array.isArray(folder.subfolders)) {
+        folder.subfolders.forEach((folder) => reducer(acc, folder, level + 1));
+    }
+
+    return acc;
+};
+
 function ActionsEditor({ filter, onChange = noop, errors = {} }) {
     const { Actions } = filter.Simple;
-    const [labelModel = [], loading] = useFormattedLabels();
-
-    const labels = labelModel.getLabels();
-    const folders = labelModel.getFolders().map(({ Name }) => ({
-        text: c('Filter Actions').t`Move to ${Name}`,
-        value: Name
-    }));
+    const [labels, loadingLabels] = useLabels();
+    const [folders = [], loadingFolders] = useFolders();
+    const labelsMap = toMap(labels, 'Path');
+    const treeview = buildTreeview(folders);
 
     const MOVE_TO = [
         {
+            group: c('Option group').t`Action`,
             text: c('Filter Actions').t`Move to ...`,
             value: ''
         },
         {
-            text: c('Filter Actions').t`Move to archive`,
+            group: c('Option group').t`Default folders`,
+            text: c('Filter Actions').t`Archive`,
             value: 'archive'
         },
         {
-            text: c('Filter Actions').t`Move to inbox`,
+            group: c('Option group').t`Default folders`,
+            text: c('Filter Actions').t`Inbox`,
             value: 'inbox'
         },
         {
-            text: c('Filter Actions').t`Move to spam`,
+            group: c('Option group').t`Default folders`,
+            text: c('Filter Actions').t`Spam`,
             value: 'spam'
         },
         {
-            text: c('Filter Actions').t`Move to trash`,
+            group: c('Option group').t`Default folders`,
+            text: c('Filter Actions').t`Trash`,
             value: 'trash'
         }
-    ].concat(folders);
+    ].concat(treeview.reduce((acc, folder) => reducer(acc, folder), []));
 
     const MARK_AS = [
         {
@@ -83,8 +103,7 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
         }
 
         if (mode === 'moveTo') {
-            const MAP = labelModel.getLabelsMap();
-            const key = Actions.FileInto.find((path) => !MAP[path]);
+            const key = Actions.FileInto.find((path) => !labelsMap[path]);
             if (key) {
                 return key;
             }
@@ -92,9 +111,8 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
     };
 
     const getSelectedLabels = () => {
-        const MAP = labelModel.getLabelsMap();
         const { Labels = [], FileInto } = Actions;
-        const toLabel = (path) => MAP[path];
+        const toLabel = (path) => labelsMap[path];
         const list = FileInto.filter(toLabel);
         return [...new Set(Labels.concat(list))].map(toLabel);
     };
@@ -113,7 +131,7 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
                 <Label htmlFor="actions">{c('New Label form').t`Actions`}</Label>
                 <Field>
                     <div className="mb1">
-                        {loading ? (
+                        {loadingLabels ? (
                             <Loader />
                         ) : (
                             <LabelActions
@@ -124,7 +142,7 @@ function ActionsEditor({ filter, onChange = noop, errors = {} }) {
                         )}
                     </div>
                     <div className="mb1">
-                        {loading ? (
+                        {loadingFolders ? (
                             <Loader />
                         ) : (
                             <Select

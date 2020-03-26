@@ -1,13 +1,14 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Alert, Row, Label, useFormattedLabels } from 'react-components';
+import { Alert, Row, Label, useLabels } from 'react-components';
+import { toMap } from 'proton-shared/lib/helpers/object';
 
 import PreviewActionValue from './PreviewActionValue';
 import './Preview.css';
 import { classnames } from '../../../helpers/component';
 
-const formatActions = (actions, labelsModel) => {
+const formatActions = (actions, labelsMap) => {
     const getMarkLabel = ({ Starred, Read }) => {
         if (Starred) {
             return c('Filter preview').t`starred`;
@@ -37,11 +38,10 @@ const formatActions = (actions, labelsModel) => {
         }
 
         if (key === 'FileInto') {
-            const map = labelsModel.getLabelsMap();
             const { folder, labels } = actions[key].concat(actions.Labels || []).reduce(
                 (acc, name) => {
-                    map[name] && acc.labels.push(map[name]);
-                    !map[name] && (acc.folder = name);
+                    labelsMap[name] && acc.labels.push(labelsMap[name]);
+                    !labelsMap[name] && (acc.folder = name);
                     return acc;
                 },
                 { folder: '', labels: [] }
@@ -67,7 +67,8 @@ const formatActions = (actions, labelsModel) => {
 };
 
 function PreviewFilter({ filter }) {
-    const [labelsModel] = useFormattedLabels();
+    const [labels] = useLabels();
+    const labelsMap = toMap(labels, 'Path');
 
     const operatorMap = {
         then: c('Filter Preview').t`then`,
@@ -120,7 +121,7 @@ function PreviewFilter({ filter }) {
             <div className="Preview-row">
                 <b>{c('Filter preview').t`Actions`}:</b>
 
-                {formatActions(Actions, labelsModel).map(({ label, value, icon }, i) => {
+                {formatActions(Actions, labelsMap).map(({ label, value, icon }, i) => {
                     const className = classnames(['Preview-condition', !i && 'mt1']);
                     return (
                         <Row className={className} key={i.toString()}>
