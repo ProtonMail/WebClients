@@ -3,7 +3,7 @@ import { Label, Row } from 'react-components';
 import PropTypes from 'prop-types';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { getDateTime, getDateTimeState, getTimeInUtc } from '../eventForm/time';
-import { getFrequencyModelChange } from '../eventForm/propertiesToModel';
+import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 
 import TimezoneSelector from '../../TimezoneSelector';
 

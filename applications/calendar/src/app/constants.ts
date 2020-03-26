@@ -6,22 +6,23 @@ export const DEFAULT_CALENDAR = {
 
 export enum VIEWS {
     DAY = 1,
-    WEEK = 2,
-    MONTH = 3,
-    YEAR = 4,
-    AGENDA = 5,
-    CUSTOM = 6
+    WEEK,
+    MONTH,
+    YEAR,
+    AGENDA,
+    CUSTOM
 }
 
-export const DAY_TO_NUMBER = {
-    SU: 0,
-    MO: 1,
-    TU: 2,
-    WE: 3,
-    TH: 4,
-    FR: 5,
-    SA: 6
-};
+export enum DAY_TO_NUMBER {
+    SU = 0,
+    MO,
+    TU,
+    WE,
+    TH,
+    FR,
+    SA
+}
+export type DAY_TO_NUMBER_KEYS = keyof typeof DAY_TO_NUMBER;
 
 export const NUMBER_TO_DAY = {
     0: 'SU',
@@ -57,14 +58,14 @@ export const NOTIFICATION_UNITS_MAX = {
     [NOTIFICATION_UNITS.MINUTES]: 10000
 };
 
-export const FREQUENCY = {
-    ONCE: 'ONCE',
-    DAILY: 'DAILY',
-    WEEKLY: 'WEEKLY',
-    MONTHLY: 'MONTHLY',
-    YEARLY: 'YEARLY',
-    CUSTOM: 'CUSTOM'
-};
+export enum FREQUENCY {
+    ONCE = 'ONCE',
+    DAILY = 'DAILY',
+    WEEKLY = 'WEEKLY',
+    MONTHLY = 'MONTHLY',
+    YEARLY = 'YEARLY',
+    CUSTOM = 'CUSTOM'
+}
 
 export const FREQUENCY_INTERVALS_MAX = {
     [FREQUENCY.DAILY]: 1000,
@@ -77,29 +78,29 @@ export const FREQUENCY_COUNT_MAX = 50;
 
 export const MAX_CALENDARS_PER_USER = 10;
 
-export const DAILY_TYPE = {
-    ALL_DAYS: 0
-};
+export enum DAILY_TYPE {
+    ALL_DAYS = 0
+}
 
-export const WEEKLY_TYPE = {
-    ON_DAYS: 0
-};
+export enum WEEKLY_TYPE {
+    ON_DAYS = 0
+}
 
-export const MONTHLY_TYPE = {
-    ON_MONTH_DAY: 0,
-    ON_NTH_DAY: 1,
-    ON_MINUS_NTH_DAY: -1
-};
+export enum MONTHLY_TYPE {
+    ON_MONTH_DAY = 0,
+    ON_NTH_DAY = 1,
+    ON_MINUS_NTH_DAY = -1
+}
 
-export const YEARLY_TYPE = {
-    BY_MONTH_ON_MONTH_DAY: 0
-};
+export enum YEARLY_TYPE {
+    BY_MONTH_ON_MONTH_DAY = 0
+}
 
-export const END_TYPE = {
-    NEVER: 'NEVER',
-    AFTER_N_TIMES: 'COUNT',
-    UNTIL: 'UNTIL'
-};
+export enum END_TYPE {
+    NEVER = 'NEVER',
+    AFTER_N_TIMES = 'COUNT',
+    UNTIL = 'UNTIL'
+}
 
 export const DEFAULT_EVENT_DURATION = 30;
 

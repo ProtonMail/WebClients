@@ -7,7 +7,7 @@ import {
 import { differenceInHours } from 'date-fns';
 import { max } from 'proton-shared/lib/date-fns-utc';
 import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
-import { getFrequencyModelChange } from '../../components/eventModal/eventForm/propertiesToModel';
+import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
 
 const modelToEventProperties = (oldTemporaryEvent, { start, end, isAllDay }, tzid) => {
     // If unrelevant things were changed, like title or description

@@ -10,7 +10,7 @@ import {
 import { MILLISECONDS_IN_MINUTE, startOfDay } from 'proton-shared/lib/date-fns-utc';
 
 import { addDays, isValid } from 'date-fns';
-import { getFrequencyModelChange } from '../eventForm/propertiesToModel';
+import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
 import { MAXIMUM_DATE, MINIMUM_DATE } from '../../../constants';
 

@@ -1,15 +1,21 @@
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import { addDays } from 'proton-shared/lib/date-fns-utc';
 import { getDateTimeState } from './time';
+import { VcalDateOrDateTimeProperty } from '../../../interfaces/VcalModel';
 
-const getTzid = ({ value, parameters: { type, tzid } = {} }) => {
-    if (type === 'date') {
+const getTzid = ({ value, parameters }: VcalDateOrDateTimeProperty) => {
+    if (parameters.type === 'date') {
         return;
     }
-    return value.isUTC ? 'UTC' : tzid;
+    return value.isUTC ? 'UTC' : parameters.tzid;
 };
 
-const propertiesToDateTimeModel = (dtstart, dtend, isAllDay, tzid) => {
+const propertiesToDateTimeModel = (
+    dtstart: VcalDateOrDateTimeProperty,
+    dtend: VcalDateOrDateTimeProperty,
+    isAllDay: boolean,
+    tzid: string
+) => {
     const localStart = toUTCDate(dtstart.value);
     const localEnd = toUTCDate(dtend.value);
 

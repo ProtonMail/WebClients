@@ -1,8 +1,8 @@
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 import { transformBeforeAt } from './trigger';
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
-import { Trigger } from '../../../interfaces/Trigger';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
+import { VcalTriggerValue } from '../../../interfaces/VcalModel';
 
 const getInt = (value: any) => parseInt(value, 10) || 0;
 
@@ -71,7 +71,7 @@ const partDayTriggerToModel = ({ type, when, weeks, days, hours, minutes }: Trig
 interface TriggerToModel {
     isAllDay: boolean;
     type: SETTINGS_NOTIFICATION_TYPE;
-    trigger: Trigger;
+    trigger: Partial<VcalTriggerValue>;
 }
 
 export const triggerToModel = ({
