@@ -3,35 +3,46 @@ import {
     LabelModal,
     SearchInput as UntypedSearchInput,
     Icon,
-    useLabels,
+    useFolders,
     useModals,
     PrimaryButton,
-    classnames,
+    Mark,
     Tooltip,
-    useLoading,
-    useApi,
-    useNotifications,
-    useEventManager
+    useLoading
 } from 'react-components';
-import { MAILBOX_LABEL_IDS, LABEL_COLORS } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { normalize } from 'proton-shared/lib/helpers/string';
-import { labelMessages } from 'proton-shared/lib/api/messages';
-import { labelConversations } from 'proton-shared/lib/api/conversations';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
+import { buildTreeview } from 'proton-shared/lib/helpers/folder';
+import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 
-import { Label } from '../../models/label';
-import { getFolders } from '../../helpers/labels';
-import { isMessage } from '../../helpers/elements';
+import { isMessage as testIsMessage } from '../../helpers/elements';
 import { Element } from '../../models/element';
 
+type FolderItem = Folder & { icon: string; level: number };
+
 import './MoveDropdown.scss';
+import { useMoveToFolder } from '../../hooks/useApplyLabels';
 
 const SearchInput = UntypedSearchInput as any;
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
-type LabelWithIcon = Label & { icon?: string };
+const folderReducer = (acc: FolderItem[], folder: FolderWithSubFolders, level = 0): FolderItem[] => {
+    acc.push({
+        ...folder,
+        Name: folder.Name,
+        icon: folder.subfolders?.length ? 'parent-folder' : 'folder',
+        level
+    });
+
+    if (Array.isArray(folder.subfolders)) {
+        folder.subfolders.forEach((folder: FolderWithSubFolders) => folderReducer(acc, folder, level + 1));
+    }
+
+    return acc;
+};
 
 interface Props {
     elements: Element[];
@@ -40,31 +51,28 @@ interface Props {
 }
 
 const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
-    const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const api = useApi();
-    const { call } = useEventManager();
     const { createModal } = useModals();
-    const [labels = []] = useLabels() as [Label[], boolean, Error];
+    const [folders = [], loadingFolders] = useFolders();
     const [search, updateSearch] = useState('');
     const normSearch = normalize(search);
+    const moveToFolder = useMoveToFolder();
 
-    if (!elements || !elements.length || !labels || !labels.length) {
+    if (!elements || !elements.length || loadingFolders || !Array.isArray(folders)) {
         return null;
     }
 
-    const typeIsMessage = isMessage(elements[0]);
+    const treeview = buildTreeview(folders);
 
-    const folders: LabelWithIcon[] = getFolders(labels)
-        .concat(
-            [
-                { ID: INBOX, Name: c('Mailbox').t`Inbox`, icon: 'inbox' },
-                { ID: ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive' },
-                { ID: SPAM, Name: c('Mailbox').t`Spam`, icon: 'spam' },
-                { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' }
-            ].filter(Boolean)
-        )
-        .filter(({ Name = '' }) => {
+    const list = treeview
+        .reduce((acc: FolderItem[], folder: Folder) => folderReducer(acc, folder), [])
+        .concat([
+            { ID: INBOX, Name: c('Mailbox').t`Inbox`, icon: 'inbox' },
+            { ID: ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive' },
+            { ID: SPAM, Name: c('Mailbox').t`Spam`, icon: 'spam' },
+            { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' }
+        ])
+        .filter(({ Name = '' }: { Name: string }) => {
             if (!search) {
                 return true;
             }
@@ -72,14 +80,11 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
             return normName.includes(normSearch);
         });
 
-    const handleMove = async (folder?: Label) => {
-        const action = typeIsMessage ? labelMessages : labelConversations;
-        const selectedIDs = elements.map((element) => element.ID || '');
-
-        await api(action({ LabelID: folder?.ID, IDs: selectedIDs }));
-        await call();
+    const handleMove = async (folder?: Folder) => {
+        const isMessage = testIsMessage(elements[0]);
+        const elementIDs = elements.map((element) => element.ID || '');
+        await moveToFolder(isMessage, elementIDs, folder);
         onClose();
-        createNotification({ text: c('Success').t`Elements moved to ${folder?.Name}` });
     };
 
     const handleCreate = () => {
@@ -87,14 +92,15 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
         const newLabel = {
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
-            Exclusive: true
+            ParentID: ROOT_FOLDER,
+            Type: LABEL_TYPE.MESSAGE_FOLDER
         };
-        createModal(<LabelModal type="folder" label={newLabel} onClose={() => onLock(false)} />);
+        createModal(<LabelModal label={newLabel} onClose={() => onLock(false)} />);
     };
 
     return (
-        <div className="p1">
-            <div className="flex flex-spacebetween flex-items-center mb1">
+        <div>
+            <div className="flex flex-spacebetween flex-items-center m1">
                 <label htmlFor="filter-folders" className="bold">{c('Label').t`Move to`}</label>
                 <Tooltip title={c('Title').t`Create folder`}>
                     <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
@@ -102,7 +108,7 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
                     </PrimaryButton>
                 </Tooltip>
             </div>
-            <div className="mb1">
+            <div className="m1">
                 <SearchInput
                     autoFocus={true}
                     value={search}
@@ -111,34 +117,32 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
                     placeholder={c('Placeholder').t`Filter folders`}
                 />
             </div>
-            <div className="scroll-if-needed scroll-smooth-touch moveDropdown-list-container">
+            <div className="scroll-if-needed customScrollBar-container scroll-smooth-touch moveDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
-                    {folders.map((folder, index) => {
+                    {list.map((folder: FolderItem) => {
                         return (
-                            <li key={folder.ID} className={classnames([index < folders.length - 1 && 'border-bottom'])}>
+                            <li key={folder.ID} className="dropDown-item pl1 pr1">
                                 <button
+                                    data-level={folder.level}
                                     type="button"
                                     disabled={loading}
-                                    className="w100 flex flex-nowrap flex-items-center pt0-5 pb0-5"
+                                    className="dropDown-link w100 flex flex-nowrap flex-items-center pt0-5 pb0-5"
                                     onClick={() => withLoading(handleMove(folder))}
                                 >
-                                    <Icon
-                                        name={folder.icon || 'folder'}
-                                        color={folder.Color}
-                                        className="flex-item-noshrink mr0-5"
-                                    />
+                                    <Icon name={folder.icon || 'folder'} className="flex-item-noshrink mr0-5" />
                                     <span className="ellipsis" title={folder.Name}>
-                                        {folder.Name}
+                                        <Mark value={search}>{folder.Name}</Mark>
                                     </span>
                                 </button>
                             </li>
                         );
                     })}
-                    {folders.length === 0 && (
+                    {list.length === 0 && (
                         <li
                             key="empty"
-                            className="w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5"
+                            className="w100 flex flex-nowrap flex-items-center pt0-5 pb0-5 pl1 pr1 border-top"
                         >
+                            <Icon name="attention" className="mr0-5" />
                             {c('Info').t`No folder found`}
                         </li>
                     )}

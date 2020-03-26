@@ -1,4 +1,5 @@
-import { Label } from './label';
+import { Label } from 'proton-shared/lib/interfaces/Label';
+
 import { Recipient } from './address';
 
 export interface Conversation {

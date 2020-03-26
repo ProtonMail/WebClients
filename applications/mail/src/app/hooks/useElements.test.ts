@@ -1,6 +1,7 @@
 import { RenderHookResult } from '@testing-library/react-hooks';
-import { queryConversations } from 'proton-shared/lib/api/conversations';
 import { range } from 'proton-shared/lib/helpers/array';
+import { Label } from 'proton-shared/lib/interfaces/Label';
+import { queryConversations } from 'proton-shared/lib/api/conversations';
 
 import { useElements } from './useElements';
 import { Element } from '../models/element';
@@ -20,12 +21,20 @@ interface SetupArgs {
 
 describe('useElements', () => {
     const labelID = 'labelID';
-    const element1 = { ID: 'id1', Labels: [{ ID: labelID, ContextTime: 1 }], LabelIDs: [labelID], Size: 20 };
-    const element2 = { ID: 'id2', Labels: [{ ID: labelID, ContextTime: 2 }], LabelIDs: [labelID], Size: 10 };
-    const element3 = { ID: 'id3', Labels: [{ ID: 'otherLabelID', ContextTime: 3 }], LabelIDs: ['otherLabelID'] };
+    const element1 = { ID: 'id1', Labels: [{ ID: labelID, ContextTime: 1 }], LabelIDs: [labelID], Size: 20 } as Element;
+    const element2 = { ID: 'id2', Labels: [{ ID: labelID, ContextTime: 2 }], LabelIDs: [labelID], Size: 10 } as Element;
+    const element3 = {
+        ID: 'id3',
+        Labels: [{ ID: 'otherLabelID', ContextTime: 3 }],
+        LabelIDs: ['otherLabelID']
+    } as Element;
 
     const getElements = (count: number, label = labelID): Element[] =>
-        range(0, count).map((i) => ({ ID: `id${i}`, Labels: [{ ID: label, ContextTime: i }], LabelIDs: [label] }));
+        range(0, count).map((i) => ({
+            ID: `id${i}`,
+            Labels: [{ ID: label, ContextTime: i }] as Label[],
+            LabelIDs: [label]
+        }));
 
     let renderHookResult: RenderHookResult<any, any> | null = null;
 

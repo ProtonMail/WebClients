@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { useToggle, Loader, classnames } from 'react-components';
+import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import { hasAttachments, isDraft } from '../../helpers/message/messages';
-import { Label } from '../../models/label';
 import MessageBody from './MessageBody';
 import HeaderCollapsed from './header/HeaderCollapsed';
 import HeaderExpanded from './header/HeaderExpanded';

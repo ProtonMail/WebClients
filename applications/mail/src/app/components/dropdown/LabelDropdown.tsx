@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import {
     SearchInput as UntypedSearchInput,
     Icon,
+    Mark,
     useLabels,
     useModals,
     PrimaryButton,
@@ -10,22 +11,17 @@ import {
     classnames,
     Tooltip,
     useLoading,
-    useApi,
-    useNotifications,
     Checkbox,
-    useEventManager,
     generateUID
 } from 'react-components';
-import { labelMessages, unlabelMessages } from 'proton-shared/lib/api/messages';
-import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/conversations';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { LABEL_COLORS } from 'proton-shared/lib/constants';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
+import { Label } from 'proton-shared/lib/interfaces/Label';
 
-import { Label } from '../../models/label';
 import { Element } from '../../models/element';
-import { hasLabel, isMessage } from '../../helpers/elements';
-import { getLabelsWithoutFolders } from '../../helpers/labels';
+import { hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
+import { useApplyLabels } from '../../hooks/useApplyLabels';
 
 import './LabelDropdown.scss';
 
@@ -41,7 +37,7 @@ type SelectionState = { [labelID: string]: LabelState };
 
 const getInitialState = (labels: Label[] = [], elements: Element[] = []) => {
     const result: SelectionState = {};
-    getLabelsWithoutFolders(labels).forEach(({ ID = '' }) => {
+    labels.forEach(({ ID = '' }) => {
         const count = elements.filter((element) => hasLabel(element, ID)).length;
         result[ID] =
             count === 0 ? LabelState.Off : count === elements.length ? LabelState.On : LabelState.Indeterminate;
@@ -57,16 +53,14 @@ interface Props {
 
 const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
     const [uid] = useState(generateUID('label-dropdown'));
-    const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const api = useApi();
-    const { call } = useEventManager();
     const { createModal } = useModals();
-    const [labels = []] = useLabels() as [Label[], boolean, Error];
+    const [labels = []] = useLabels();
     const [search, updateSearch] = useState('');
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
     const [alsoArchive, updateAlsoArchive] = useState(false);
     const [selectedLabelIDs, updateSelectedLabelIDs] = useState<SelectionState>({});
+    const applyLabels = useApplyLabels();
 
     useEffect(() => {
         updateSelectedLabelIDs(getInitialState(labels, elements));
@@ -76,10 +70,8 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
         return null;
     }
 
-    const typeIsMessage = isMessage(elements[0]);
-
     const normSearch = normalize(search);
-    const list = getLabelsWithoutFolders(labels).filter(({ Name = '' }) => {
+    const list = labels.filter(({ Name = '' }) => {
         if (!search) {
             return true;
         }
@@ -88,23 +80,20 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
     });
 
     const handleApply = async (selection = selectedLabelIDs) => {
-        const labelAction = typeIsMessage ? labelMessages : labelConversations;
-        const unlabelAction = typeIsMessage ? unlabelMessages : unlabelConversations;
-        const selectedIDs = elements.map((element) => element.ID || '');
+        const isMessage = testIsMessage(elements[0]);
+        const elementIDs = elements.map((element) => element.ID || '');
         const initialState = getInitialState(labels, elements);
-
-        const promises = Object.keys(selection).map((LabelID) => {
+        const changes = Object.keys(selection).reduce((acc, LabelID) => {
             if (selection[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
-                return api(labelAction({ LabelID, IDs: selectedIDs }));
+                acc[LabelID] = true;
             }
             if (selection[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
-                return api(unlabelAction({ LabelID, IDs: selectedIDs }));
+                acc[LabelID] = false;
             }
-        });
-        await Promise.all(promises);
-        await call();
+            return acc;
+        }, {} as { [labelID: string]: boolean });
+        await applyLabels(isMessage, elementIDs, changes);
         onClose();
-        createNotification({ text: c('Success').t`Labels applied` });
     };
 
     const applyCheck = (labelIDs: string[], selected: boolean) => {
@@ -148,8 +137,8 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
     };
 
     return (
-        <div className="p1">
-            <div className="flex flex-spacebetween flex-items-center mb1">
+        <div>
+            <div className="flex flex-spacebetween flex-items-center m1">
                 <label htmlFor="filter-labels" className="bold">{c('Label').t`Label as`}</label>
                 <Tooltip title={c('Title').t`Create label`}>
                     <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
@@ -157,7 +146,7 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
                     </PrimaryButton>
                 </Tooltip>
             </div>
-            <div className="mb1">
+            <div className="m1">
                 <SearchInput
                     autoFocus={true}
                     value={search}
@@ -166,7 +155,7 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
                     placeholder={c('Placeholder').t`Filter labels`}
                 />
             </div>
-            <div className="scroll-if-needed scroll-smooth-touch mb1 labelDropdown-list-container">
+            <div className="scroll-if-needed customScrollBar-container scroll-smooth-touch mb1 labelDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
                     {list.map(({ ID = '', Name = '', Color = '' }, index) => {
                         // The dropdown is several times in the view, native html ids has to be different each time
@@ -175,14 +164,14 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
                             <li
                                 key={lineId}
                                 className={classnames([
-                                    'w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5',
+                                    'w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5 pl1',
                                     index < list.length - 1 && 'border-bottom'
                                 ])}
                             >
                                 <div className="flex flex-nowrap flex-spacebetween flex-items-center">
                                     <Icon name="label" color={Color} className="flex-item-noshrink mr0-5" />
                                     <label htmlFor={lineId} title={Name} className="ellipsis">
-                                        {Name}
+                                        <Mark value={search}>{Name}</Mark>
                                     </label>
                                 </div>
                                 <Checkbox
@@ -198,14 +187,14 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
                     {list.length === 0 && (
                         <li
                             key="empty"
-                            className="w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5"
+                            className="w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5 pl1 pr1 border-top border-bottom"
                         >
                             {c('Info').t`No label found`}
                         </li>
                     )}
                 </ul>
             </div>
-            <div className="mb1 flex flex-spacebetween">
+            <div className="mt1 mb1 ml1 mr0-75 flex flex-spacebetween">
                 <label htmlFor="alsoArchive">{c('Label').t`Also archive`}</label>
                 <Checkbox
                     id="alsoArchive"
@@ -213,7 +202,7 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
                     onChange={({ target }) => updateAlsoArchive(target.checked)}
                 />
             </div>
-            <div>
+            <div className="p1">
                 <PrimaryButton className="w100" loading={loading} onClick={() => withLoading(handleApply())}>
                     {c('Action').t`Apply`}
                 </PrimaryButton>

@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 import { REGEX_EMAIL } from 'proton-shared/lib/constants';
+import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
 
 import { Recipient, RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Message } from '../models/message';
-import { ContactEmail, ContactGroup } from '../models/contact';
+import { ContactEmail } from '../models/contact';
 import { getContactsOfGroup } from './contacts';
 import { Address, Key } from 'proton-shared/lib/interfaces';
 

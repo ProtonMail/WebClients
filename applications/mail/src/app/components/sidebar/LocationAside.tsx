@@ -1,31 +1,27 @@
 import React from 'react';
-import { LabelCount } from '../../models/label';
 import { Icon, classnames } from 'react-components';
+import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 
 import './RefreshRotation.scss';
 
 interface Props {
-    labelID: string;
-    counterMap: { [labelID: string]: LabelCount | undefined };
-    currentLabelID: string;
-    refreshLabelID?: string;
+    count?: LabelCount;
+    active?: boolean;
+    refreshing?: boolean;
 }
 
-const LocationAside = ({ labelID, counterMap, currentLabelID, refreshLabelID }: Props) => {
-    const unread = counterMap[labelID]?.Unread;
-
+const LocationAside = ({ count, active = false, refreshing = false }: Props) => {
     return (
         <>
-            {labelID === currentLabelID && (
+            {active && (
                 <Icon
-                    className={classnames([
-                        'mr0-5 color-global-light',
-                        labelID === refreshLabelID && 'location-refresh-rotate'
-                    ])}
+                    className={classnames(['mr0-5 color-global-light', refreshing && 'location-refresh-rotate'])}
                     name="reload"
                 />
             )}
-            {unread ? <span className="navigation__counterItem flex-item-noshrink rounded">{unread}</span> : null}
+            {count?.Unread ? (
+                <span className="navigation__counterItem flex-item-noshrink rounded">{count.Unread}</span>
+            ) : null}
         </>
     );
 };

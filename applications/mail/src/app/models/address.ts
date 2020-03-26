@@ -1,4 +1,4 @@
-import { ContactGroup } from './contact';
+import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
 
 export type RecipientType = 'ToList' | 'CCList' | 'BCCList';
 export const recipientTypes: RecipientType[] = ['ToList', 'CCList', 'BCCList'];

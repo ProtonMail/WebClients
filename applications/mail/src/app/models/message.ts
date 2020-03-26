@@ -1,6 +1,7 @@
 import { OpenPGPKey } from 'pmcrypto';
 
-import { Label } from './label';
+import { Label } from 'proton-shared/lib/interfaces/Label';
+
 import { Attachment } from './attachment';
 import { MESSAGE_ACTIONS, VERIFICATION_STATUS } from '../constants';
 import { Recipient } from './address';

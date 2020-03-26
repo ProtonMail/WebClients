@@ -4,7 +4,7 @@ import { Icon, useLoading, useNotifications, useEventManager, useApi } from 'rea
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { labelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations } from 'proton-shared/lib/api/conversations';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
 import { getCurrentType } from '../../helpers/elements';
@@ -25,12 +25,17 @@ const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [], locati
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const type = getCurrentType({ mailSettings, labelID, location });
+    const isTypeMessage = type === ELEMENT_TYPES.MESSAGE;
 
     const handleMove = async (LabelID: string) => {
-        const action = type === ELEMENT_TYPES.CONVERSATION ? labelConversations : labelMessages;
+        const action = isTypeMessage ? labelMessages : labelConversations;
         await api(action({ LabelID, IDs: selectedIDs }));
         await call();
-        createNotification({ text: c('Success').t`Elements moved` });
+        createNotification({
+            text: isTypeMessage
+                ? c('Success').ngettext(msgid`Message moved`, `Messages moved`, selectedIDs.length)
+                : c('Success').ngettext(msgid`Conversation moved`, `Conversations moved`, selectedIDs.length)
+        });
     };
 
     const displayTrash = ![DRAFTS, ALL_DRAFTS, TRASH].includes(labelID as MAILBOX_LABEL_IDS);

@@ -87,3 +87,5 @@ export enum LINK_TYPES {
     EMAIL = 'email',
     PHONE = 'phone'
 }
+
+export const DRAG_ELEMENT_KEY = 'drag-element';

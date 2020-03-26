@@ -1,6 +1,7 @@
 import React, { useState, useEffect, ChangeEvent, MutableRefObject, useRef, MouseEvent } from 'react';
 import { Input } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
 
 import AddressesRecipientItem from './AddressesRecipientItem';
 import {
@@ -9,7 +10,7 @@ import {
     recipientsWithoutGroup,
     recipientsToRecipientOrGroup
 } from '../../../helpers/addresses';
-import { ContactEmail, ContactGroup, ContactOrGroup } from '../../../models/contact';
+import { ContactEmail, ContactOrGroup } from '../../../models/contact';
 import AddressesAutocomplete from './AddressesAutocomplete';
 import AddressesGroupItem from './AddressesGroupItem';
 import { RecipientGroup, Recipient } from '../../../models/address';

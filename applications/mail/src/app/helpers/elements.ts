@@ -1,18 +1,19 @@
 import { Location } from 'history';
 import { formatRelative, format } from 'date-fns';
 import { toMap, omit } from 'proton-shared/lib/helpers/object';
+import { Label, LabelCount } from 'proton-shared/lib/interfaces/Label';
+import { diff } from 'proton-shared/lib/helpers/array';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
 import { Sort } from '../models/tools';
 import { Message } from '../models/message';
 import { isConversationMode } from './mailSettings';
-import { LabelCount, Label } from '../models/label';
 import { MailSettings } from '../models/utils';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { hasAttachments as messageHasAttachments } from './message/messages';
 import { hasAttachments as conversationHasAttachments } from './conversation';
-import { diff } from 'proton-shared/lib/helpers/array';
+
 import { LabelIDsChanges } from '../models/event';
 
 export interface TypeParams {

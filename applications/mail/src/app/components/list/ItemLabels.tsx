@@ -1,15 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Icon, classnames } from 'react-components';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { orderBy } from 'proton-shared/lib/helpers/array';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { Link } from 'react-router-dom';
-import { Icon, classnames } from 'react-components';
+import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import { c } from 'ttag';
-import { Label } from '../../models/label';
 import { Element } from '../../models/element';
 import { getLabelIDs } from '../../helpers/elements';
-import { getLabelsWithoutFolders } from '../../helpers/labels';
 
 interface Props {
     element?: Element;
@@ -21,9 +20,9 @@ interface Props {
 
 const ItemLabels = ({ element = {}, onUnlabel = noop, max = 99, labels = [], className = '' }: Props) => {
     const labelIDs = getLabelIDs(element) || [];
-    const labelsMap = toMap(getLabelsWithoutFolders(labels)) as { [labelID: string]: Label };
-    const labelsObjects: Label[] = labelIDs.map((ID) => labelsMap[ID]).filter(Boolean);
-    const labelsSorted: Label[] = orderBy(labelsObjects, 'Order');
+    const labelsMap = toMap(labels);
+    const labelsObjects = labelIDs.map((ID) => labelsMap[ID]).filter(Boolean) as Label[];
+    const labelsSorted = orderBy(labelsObjects, 'Order') as Label[];
     const labelsToShow = labelsSorted.slice(0, max);
 
     return (

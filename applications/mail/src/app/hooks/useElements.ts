@@ -145,13 +145,13 @@ export const useElements = ({
 
     const queryElement = async (elementID: string): Promise<Element> => {
         const query = conversationMode ? getConversation : getMessage;
-        const result = (await api(query(elementID))) as any;
+        const result: any = await api(query(elementID));
         return conversationMode ? result.Conversation : result.Message;
     };
 
     const queryElements = async (): Promise<{ Total: number; Elements: Element[] }> => {
         const query = conversationMode ? queryConversations : queryMessageMetadata;
-        const result = (await api(
+        const result: any = await api(
             query({
                 Page: page.page,
                 PageSize: page.size,
@@ -173,7 +173,7 @@ export const useElements = ({
                 // ID,
                 AutoWildcard: search.wildcard
             } as any)
-        )) as any;
+        );
 
         return {
             Total: result.Total,

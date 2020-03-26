@@ -1,20 +1,21 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, MouseEvent, DragEvent, useState } from 'react';
 import { Location } from 'history';
 import { classnames } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from 'proton-shared/lib/constants';
+import { Label } from 'proton-shared/lib/interfaces/Label';
+import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
 
 import ItemCheckbox from './ItemCheckbox';
 import { getRecipients as getMessageRecipients, getSender, getRecipients } from '../../helpers/message/messages';
 import { getCurrentType, isUnread } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
-import { Label } from '../../models/label';
 import { Element } from '../../models/element';
 import { ELEMENT_TYPES } from '../../constants';
 import { getSenders } from '../../helpers/conversation';
 import { getRecipientLabel, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../helpers/addresses';
-import { ContactEmail, ContactGroup } from '../../models/contact';
+import { ContactEmail } from '../../models/contact';
 
 const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -30,6 +31,8 @@ interface Props {
     contactGroups: ContactGroup[];
     onCheck: (event: ChangeEvent) => void;
     onClick: (element: Element) => void;
+    onDragStart: (event: DragEvent) => void;
+    onDragEnd: (event: DragEvent) => void;
 }
 
 const Item = ({
@@ -43,8 +46,12 @@ const Item = ({
     contacts,
     contactGroups,
     onCheck,
-    onClick
+    onClick,
+    onDragStart,
+    onDragEnd
 }: Props) => {
+    const [dragging, setDragging] = useState(false);
+
     const { ID = '' } = element;
     const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
     const type = getCurrentType({ mailSettings, labelID, location });
@@ -62,7 +69,7 @@ const Item = ({
     const ItemLayout = isColumnMode ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element);
 
-    const clickHandler = (event: React.MouseEvent) => {
+    const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
         if (target.closest('.stop-propagation')) {
             event.stopPropagation();
@@ -71,14 +78,28 @@ const Item = ({
         onClick(element);
     };
 
+    const handleDragStart = (event: DragEvent) => {
+        setDragging(true);
+        onDragStart(event);
+    };
+
+    const handleDragEnd = (event: DragEvent) => {
+        setDragging(false);
+        onDragEnd(event);
+    };
+
     return (
         <div
-            onClick={clickHandler}
+            onClick={handleClick}
+            draggable
+            onDragStart={handleDragStart}
+            onDragEnd={handleDragEnd}
             className={classnames([
                 'flex flex-nowrap cursor-pointer',
                 isColumnMode ? 'item-container' : 'item-container-row',
                 elementID === ID && 'item-is-selected',
-                !unread && 'read'
+                !unread && 'read',
+                dragging && 'item-dragging'
             ])}
         >
             <ItemCheckbox className="mr1 item-checkbox" checked={checked} onChange={onCheck}>

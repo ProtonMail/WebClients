@@ -1,8 +1,9 @@
 import React, { useState, useEffect, MutableRefObject, useRef, ReactNode } from 'react';
 import Awesomplete from 'awesomplete';
+import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
 
 import { contactToInput } from '../../../helpers/addresses';
-import { ContactEmail, ContactGroup, ContactOrGroup } from '../../../models/contact';
+import { ContactEmail, ContactOrGroup } from '../../../models/contact';
 import { Recipient } from '../../../models/address';
 import { useEventListener } from '../../../hooks/useHandler';
 

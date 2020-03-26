@@ -16,23 +16,25 @@ import {
     Label,
     Select,
     useLabels,
+    useFolders,
     useAddresses,
     useContactEmails,
     useMailSettings,
     Loader
 } from 'react-components';
-import { MAILBOX_LABEL_IDS, LABEL_EXCLUSIVE, SHOW_MOVED } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { getUnixTime, fromUnixTime, isBefore, isAfter } from 'date-fns';
 import { isEmail } from 'proton-shared/lib/helpers/validators';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
+import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
 
 import { changeSearchParams } from '../../helpers/url';
 import { getHumanLabelID } from '../../helpers/labels';
 import AddressesInput from '../composer/addresses/AddressesInput';
+import { extractSearchParameters, keywordToString } from '../../helpers/mailboxUrl';
 
 import './AdvancedSearchDropdown.scss';
-import { extractSearchParameters, keywordToString } from '../../helpers/mailboxUrl';
 
 const UNDEFINED = undefined;
 const AUTO_WILDCARD = undefined;
@@ -57,11 +59,26 @@ const getRecipients = (value = '') =>
         .map((Address) => ({ Address }));
 const formatRecipients = (recipients = []) => recipients.map(({ Address }) => Address).join(',');
 
+const folderReducer = (acc = [], folder = {}, level = 0) => {
+    acc.push({
+        text: formatFolderName(level, folder.Name, ' ∙ '),
+        value: folder.ID,
+        group: c('Group').t`Custom folders`
+    });
+
+    if (Array.isArray(folder.subfolders)) {
+        folder.subfolders.forEach((folder) => folderReducer(acc, folder, level + 1));
+    }
+
+    return acc;
+};
+
 const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, history }) => {
     const [uid] = useState(generateUID('advanced-search-dropdown'));
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
     const [labels, loadingLabels] = useLabels();
+    const [folders, loadingFolders] = useFolders();
     const [contactEmails, loadingContactEmails] = useContactEmails();
     const [addresses, loadingAddresses] = useAddresses();
     const [model, updateModel] = useState(DEFAULT_MODEL);
@@ -99,6 +116,13 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
     useEffect(() => {
         if (isOpen) {
             updateModel(() => {
+                if (!fullInput) {
+                    return {
+                        ...DEFAULT_MODEL,
+                        labelID
+                    };
+                }
+
                 const { address, attachments, wildcard, from, to, begin, end } = extractSearchParameters(location);
 
                 return {
@@ -116,32 +140,31 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
         }
     }, [isOpen]);
 
-    if (loadingLabels || loadingAddresses || loadingContactEmails || loadingMailSettings) {
+    if (loadingLabels || loadingFolders || loadingAddresses || loadingContactEmails || loadingMailSettings) {
         return <Loader />;
     }
 
+    const treeview = buildTreeview(folders);
+
     const labelIDOptions = [
-        { value: ALL_MAIL, text: c('Mailbox').t`All` },
-        { value: INBOX, text: c('Mailbox').t`Inbox` },
+        { value: ALL_MAIL, text: c('Mailbox').t`All`, group: c('Group').t`Default folders` },
+        { value: INBOX, text: c('Mailbox').t`Inbox`, group: c('Group').t`Default folders` },
         {
             value: hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS,
-            text: c('Mailbox').t`Drafts`
+            text: c('Mailbox').t`Drafts`,
+            group: c('Group').t`Default folders`
         },
-        { value: hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT) ? ALL_SENT : SENT, text: c('Mailbox').t`Sent` },
-        { value: ARCHIVE, text: c('Mailbox').t`Archive` },
-        { value: SPAM, text: c('Mailbox').t`Spam` },
-        { value: TRASH, text: c('Mailbox').t`Trash` }
+        {
+            value: hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT) ? ALL_SENT : SENT,
+            text: c('Mailbox').t`Sent`,
+            group: c('Group').t`Default folders`
+        },
+        { value: ARCHIVE, text: c('Mailbox').t`Archive`, group: c('Group').t`Default folders` },
+        { value: SPAM, text: c('Mailbox').t`Spam`, group: c('Group').t`Default folders` },
+        { value: TRASH, text: c('Mailbox').t`Trash`, group: c('Group').t`Default folders` }
     ]
-        .concat(
-            labels
-                .filter(({ Exclusive }) => Exclusive === LABEL_EXCLUSIVE.FOLDER)
-                .map(({ ID: value, Name: text }) => ({ value, text }))
-        )
-        .concat(
-            labels
-                .filter(({ Exclusive }) => Exclusive === LABEL_EXCLUSIVE.LABEL)
-                .map(({ ID: value, Name: text }) => ({ value, text }))
-        );
+        .concat(treeview.reduce((acc, folder) => folderReducer(acc, folder), []))
+        .concat(labels.map(({ ID: value, Name: text }) => ({ value, text, group: c('Group').t`Labels` })));
 
     const addressOptions = [{ value: ALL_ADDRESSES, text: c('Option').t`All` }].concat(
         addresses.map(({ ID: value, Email: text }) => ({ value, text }))

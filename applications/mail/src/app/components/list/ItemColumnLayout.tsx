@@ -1,5 +1,6 @@
 import React from 'react';
 import { classnames } from 'react-components';
+import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import ItemStar from './ItemStar';
 import { ELEMENT_TYPES } from '../../constants';
@@ -8,7 +9,6 @@ import ItemAttachmentIcon from './ItemAttachmentIcon';
 import ItemLocation from './ItemLocation';
 import ItemDate from './ItemDate';
 import NumMessages from '../conversation/NumMessages';
-import { Label } from '../../models/label';
 import { Element } from '../../models/element';
 
 interface Props {

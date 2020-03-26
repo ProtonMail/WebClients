@@ -14,7 +14,7 @@ interface Props {
 }
 
 const MessageOnlyView = ({ messageID, mailSettings, onCompose }: Props) => {
-    const [labels] = useLabels();
+    const [labels = []] = useLabels();
 
     // There is only reading on the message here, no actions
     // MessageView will be in charge to trigger all messages actions

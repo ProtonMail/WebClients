@@ -22,7 +22,7 @@ interface Props {
 }
 
 const ConversationView = ({ labelID, conversationID, mailSettings, onCompose }: Props) => {
-    const [labels] = useLabels();
+    const [labels = []] = useLabels();
     const [conversationData, loading] = useConversation(conversationID);
     const { state: filter, toggle: toggleFilter } = useToggle(true);
     const api = useApi();

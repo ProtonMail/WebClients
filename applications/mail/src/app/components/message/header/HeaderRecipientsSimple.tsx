@@ -1,9 +1,11 @@
 import React from 'react';
 import { c } from 'ttag';
+import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
+
 import { Message } from '../../../models/message';
 import { getRecipients } from '../../../helpers/message/messages';
 import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
-import { ContactGroup, ContactEmail } from '../../../models/contact';
+import { ContactEmail } from '../../../models/contact';
 
 interface Props {
     message?: Message;

@@ -1,11 +1,10 @@
 import React, { MutableRefObject, useEffect, useRef } from 'react';
-import { useToggle, useContactEmails } from 'react-components';
+import { useToggle, useContactEmails, useContactGroups } from 'react-components';
 
 import { MessageExtended } from '../../../models/message';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 import { ContactEmail } from '../../../models/contact';
-import { useContactGroups } from '../../../hooks/useContactGroups';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 interface Props {
@@ -17,8 +16,8 @@ interface Props {
 }
 
 const Addresses = ({ message, disabled, onChange, addressesBlurRef, addressesFocusRef }: Props) => {
-    const [contacts, loadingContacts] = useContactEmails() as [ContactEmail[], boolean, Error];
-    const [contactGroups, loadingContactGroups] = useContactGroups();
+    const [contacts = [], loadingContacts] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
+    const [contactGroups = [], loadingContactGroups] = useContactGroups();
     const inputFocusRef = useRef<() => void>(noop);
 
     // Summary of selected addresses or addresses editor

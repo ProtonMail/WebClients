@@ -1,8 +1,18 @@
 import React, { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
-import { Icon, Group, ButtonGroup, useToggle, useContactEmails, useApi, useEventManager } from 'react-components';
+import {
+    Icon,
+    Group,
+    ButtonGroup,
+    useToggle,
+    useContactEmails,
+    useContactGroups,
+    useApi,
+    useEventManager
+} from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { unlabelMessages } from 'proton-shared/lib/api/messages';
+import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
@@ -18,11 +28,9 @@ import HeaderRecipientsSimple from './HeaderRecipientsSimple';
 import HeaderRecipientsDetails from './HeaderRecipientsDetails';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
-import { Label } from '../../../models/label';
 import HeaderDropdown from './HeaderDropdown';
 import { OnCompose } from '../../../containers/ComposerContainer';
 import { ContactEmail } from '../../../models/contact';
-import { useContactGroups } from '../../../hooks/useContactGroups';
 
 import './MessageHeader.scss';
 
@@ -47,8 +55,8 @@ const HeaderExpanded = ({
     onCollapse,
     onCompose
 }: Props) => {
-    const [contacts] = useContactEmails() as [ContactEmail[], boolean, Error];
-    const [contactGroups] = useContactGroups();
+    const [contacts = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
+    const [contactGroups = []] = useContactGroups();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const api = useApi();
     const { call } = useEventManager();

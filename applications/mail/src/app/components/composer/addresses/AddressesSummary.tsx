@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
 import { c } from 'ttag';
 import { Label, LinkButton } from 'react-components';
+import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
 
 import { MessageExtended } from '../../../models/message';
 import { Recipient, recipientTypes } from '../../../models/address';
 import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
-import { ContactEmail, ContactGroup } from '../../../models/contact';
+import { ContactEmail } from '../../../models/contact';
 
 interface Props {
     message: MessageExtended;

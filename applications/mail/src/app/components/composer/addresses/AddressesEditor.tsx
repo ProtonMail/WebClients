@@ -1,10 +1,12 @@
 import React, { useState, MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { Label, generateUID, LinkButton } from 'react-components';
+import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
+
 
 import { MessageExtended } from '../../../models/message';
 import AddressesInput from './AddressesInput';
-import { ContactEmail, ContactGroup } from '../../../models/contact';
+import { ContactEmail } from '../../../models/contact';
 import { RecipientType, Recipient } from '../../../models/address';
 
 interface Props {

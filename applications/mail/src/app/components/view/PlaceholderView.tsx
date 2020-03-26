@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react';
 import { Location } from 'history';
 import { useConversationCounts, useMessageCounts } from 'react-components';
+import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 
 import WelcomePane from './WelcomePane';
 import SelectionPane from './SelectionPane';
 import { ELEMENT_TYPES } from '../../constants';
 import { getCurrentType } from '../../helpers/elements';
-import { LabelCount } from '../../models/label';
 import { useWelcomeFlag } from '../../hooks/useWelcomeFlag';
 import { MailSettings } from '../../models/utils';
 

@@ -12,6 +12,6 @@
     }
 
     button:disabled {
-        background-color: $pm-global-muted;
+        opacity: .5
     }
 }

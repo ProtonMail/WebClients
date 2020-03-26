@@ -1,17 +1,18 @@
 import React, { useMemo } from 'react';
-import { Button, useLabels } from 'react-components';
+import { Button, useLabels, useFolders } from 'react-components';
 import { c, ngettext, msgid } from 'ttag';
+import { Location } from 'history';
 
+import { LabelCount } from 'proton-shared/lib/interfaces/Label';
+import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import conversationSingleSvgLight from 'design-system/assets/img/shared/selected-conversation-single.svg';
 import conversationSingleSvgDark from 'design-system/assets/img/shared/selected-conversation-single-dark.svg';
 import conversationManySvgLight from 'design-system/assets/img/shared/selected-conversation-many.svg';
 import conversationManySvgDark from 'design-system/assets/img/shared/selected-conversation-many-dark.svg';
-import { LabelCount } from '../../models/label';
+
 import { getLabelName } from '../../helpers/labels';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { MailSettings } from '../../models/utils';
-import { Location } from 'history';
 
 interface Props {
     labelID: string;
@@ -26,13 +27,18 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
     const [labels] = useLabels();
+    const [folders] = useFolders();
 
     const total = labelCount.Total || 0;
     const checkeds = checkedIDs.length;
     const conversationSingleSvg = getLightOrDark(conversationSingleSvgLight, conversationSingleSvgDark);
     const conversationManySvg = getLightOrDark(conversationManySvgLight, conversationManySvgDark);
 
-    const labelName = useMemo(() => getLabelName(labelCount.LabelID || '', labels), [labels, labelCount]);
+    const labelName = useMemo(() => getLabelName(labelCount.LabelID || '', labels, folders), [
+        labels,
+        folders,
+        labelCount
+    ]);
 
     const count = checkeds ? checkeds : total;
 

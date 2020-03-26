@@ -1,5 +1,6 @@
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
+import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
@@ -8,7 +9,6 @@ import { isSent, isDraft } from '../../../helpers/message/messages';
 import ItemLabels from '../../list/ItemLabels';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
-import { Label } from '../../../models/label';
 
 interface Props {
     message: MessageExtended;

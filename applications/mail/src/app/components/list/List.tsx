@@ -1,12 +1,16 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, DragEvent } from 'react';
+import { c, msgid } from 'ttag';
 import { Location } from 'history';
-import { useLabels, useContactEmails } from 'react-components';
+import { useLabels, useContactEmails, useContactGroups } from 'react-components';
 
 import Item from './Item';
 import { Element } from '../../models/element';
 import EmptyView from '../view/EmptyView';
 import { ContactEmail } from '../../models/contact';
-import { useContactGroups } from '../../hooks/useContactGroups';
+import { DRAG_ELEMENT_KEY } from '../../constants';
+import { isMessage as testIsMessage } from '../../helpers/elements';
+
+import './Drag.scss';
 
 interface Props {
     labelID: string;
@@ -29,10 +33,12 @@ const List = ({
     onClick,
     location
 }: Props) => {
-    const [contacts, loadingContacts] = useContactEmails() as [ContactEmail[], boolean, Error];
-    const [contactGroups, loadingGroups] = useContactGroups();
+    const [contacts = [], loadingContacts] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
+    const [contactGroups = [], loadingGroups] = useContactGroups();
     const [labels] = useLabels();
     const [lastChecked, setLastChecked] = useState<string>(); // Store ID of the last element ID checked
+    const [dragElement, setDragElement] = useState<HTMLDivElement>();
+    const [savedCheck, setSavedCheck] = useState<string[]>();
 
     if (loadingContacts || loadingGroups) {
         return null;
@@ -55,6 +61,47 @@ const List = ({
         onCheck(elementIDs, target.checked, false);
     };
 
+    const handleDragStart = (element: Element) => (event: DragEvent) => {
+        const elementID = element.ID || '';
+        const dragInSelection = checkedIDs.includes(elementID);
+        const selection = dragInSelection ? checkedIDs : [elementID];
+
+        if (!dragInSelection) {
+            setSavedCheck(checkedIDs);
+            onCheck(selection, true, true);
+        }
+
+        const isMessage = testIsMessage(element);
+        const dragElement = document.createElement('div');
+        dragElement.innerHTML = isMessage
+            ? c('Success').ngettext(
+                  msgid`Move ${selection.length} message`,
+                  `Move ${selection.length} messages`,
+                  selection.length
+              )
+            : c('Success').ngettext(
+                  msgid`Move ${selection.length} conversation`,
+                  `Move ${selection.length} conversations`,
+                  selection.length
+              );
+        dragElement.className = 'drag-element p1 bordered-container rounded';
+        document.body.appendChild(dragElement);
+        event.dataTransfer.setDragImage(dragElement, 0, 0);
+        event.dataTransfer.setData(DRAG_ELEMENT_KEY, JSON.stringify(selection));
+        setDragElement(dragElement);
+    };
+
+    const handleDragEnd = () => {
+        if (dragElement) {
+            document.body.removeChild(dragElement);
+            setDragElement(undefined);
+        }
+        if (savedCheck) {
+            onCheck(savedCheck, true, true);
+            setSavedCheck(undefined);
+        }
+    };
+
     return elements.length === 0 ? (
         <EmptyView labelID={labelID} />
     ) : (
@@ -74,6 +121,8 @@ const List = ({
                         onCheck={handleCheck(element.ID || '')}
                         onClick={onClick}
                         mailSettings={mailSettings}
+                        onDragStart={handleDragStart(element)}
+                        onDragEnd={handleDragEnd}
                     />
                 );
             })}
