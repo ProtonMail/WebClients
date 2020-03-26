@@ -298,6 +298,9 @@ export { default as IdentitySection } from './containers/addresses/IdentitySecti
 export { default as AutoReplySection } from './containers/autoReply/AutoReplySection';
 export { default as IllustrationPlaceholder } from './containers/illustration/IllustrationPlaceholder';
 export { default as GenericError } from './containers/error/GenericError';
+export { default as InternalServerError } from './containers/error/InternalServerError';
+export { default as NotFoundError } from './containers/error/NotFoundError';
+export { default as AccessDeniedError } from './containers/error/AccessDeniedError';
 export { default as useStep } from './hooks/useStep';
 export { default as useApiWithoutResult } from './hooks/useApiWithoutResult';
 export { default as useEventManager } from './containers/eventManager/useEventManager';
