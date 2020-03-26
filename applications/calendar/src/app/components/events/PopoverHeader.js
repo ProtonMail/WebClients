@@ -7,7 +7,7 @@ const PopoverHeader = ({ children, onClose }) => {
             {children}
             <PopoverCloseButton onClose={onClose} />
         </header>
-    )
+    );
 };
 
 export default PopoverHeader;

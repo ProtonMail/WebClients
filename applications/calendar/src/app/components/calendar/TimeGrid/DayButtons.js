@@ -19,10 +19,7 @@ const DayButtons = ({ days, now, date, onClickDate, weekdaysLong }) => {
                 <span className="calendar-grid-heading-day ellipsis bl mt0 mb0 big">
                     <span className="calendar-grid-heading-day-fullname">{weekdaysLong[day.getUTCDay()]}</span>
 
-                    <span
-                        className="calendar-grid-heading-day-shortname nodesktop notablet"
-                        aria-hidden="true"
-                    >
+                    <span className="calendar-grid-heading-day-shortname nodesktop notablet" aria-hidden="true">
                         {weekdaysLong[day.getUTCDay()][0]}
                     </span>
                 </span>

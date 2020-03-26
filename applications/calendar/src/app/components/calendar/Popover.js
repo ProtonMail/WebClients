@@ -3,18 +3,16 @@ import ReactDOM from 'react-dom';
 
 import { useRect } from '../../hooks/useRect';
 
-const Popover = ({
-    targetRef,
-    containerRef,
-    children,
-    isOpen,
-    once = false,
-    when
-}) => {
+const Popover = ({ targetRef, containerRef, children, isOpen, once = false, when }) => {
     const [popoverRef, setPopoverRef] = useState();
 
     const containerRect = useRect(containerRef, isOpen);
-    const targetRect = useRect(targetRef, isOpen, once, useMemo(() => [when, containerRect], [when, containerRect]));
+    const targetRect = useRect(
+        targetRef,
+        isOpen,
+        once,
+        useMemo(() => [when, containerRect], [when, containerRect])
+    );
     const popoverRect = useRect(popoverRef, isOpen);
 
     const value = useMemo(() => {
@@ -25,17 +23,17 @@ const Popover = ({
         const { width: containerWidth, height: containerHeight } = containerRect;
         const { width: popoverWidth, height: popoverHeight } = popoverRect || { width: 0, height: 0 };
 
-        const alignCenterStyle = (() => {
-            const top = containerHeight / 2 - popoverHeight / 2 ;
+        const alignCenterStyle = () => {
+            const top = containerHeight / 2 - popoverHeight / 2;
             const left = containerWidth / 2 - popoverWidth / 2;
 
             return {
                 top,
                 left
             };
-        });
+        };
 
-        const alignTargetStyle = (({ left: targetLeft, top: targetTop, width: targetWidth }) => {
+        const alignTargetStyle = ({ left: targetLeft, top: targetTop, width: targetWidth }) => {
             const diffOverflowY = targetTop + popoverHeight - containerHeight;
 
             const top = diffOverflowY >= 0 ? targetTop - diffOverflowY : Math.max(targetTop, 0);
@@ -58,7 +56,7 @@ const Popover = ({
                 top,
                 left
             };
-        });
+        };
 
         const style = (() => {
             if (!popoverRect) {
@@ -77,7 +75,7 @@ const Popover = ({
             ref: setPopoverRef,
             style: {
                 top: Math.round(style.top),
-                left: Math.round(style.left),
+                left: Math.round(style.left)
             }
         };
     }, [popoverRef, targetRef, containerRef, containerRect, popoverRect, targetRect]);

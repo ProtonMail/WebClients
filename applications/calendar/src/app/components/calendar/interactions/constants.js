@@ -14,8 +14,8 @@ export const ACTIONS = {
     EVENT_DOWN: 5,
     EVENT_MOVE: 6,
     EVENT_MOVE_UP: 7,
-    EVENT_UP:  8,
-    MORE_DOWN:  9,
+    EVENT_UP: 8,
+    MORE_DOWN: 9,
     MORE_UP: 10
 };
 
@@ -24,4 +24,3 @@ export const TYPE = {
     TIMEGRID: 1,
     MORE: 2
 };
-

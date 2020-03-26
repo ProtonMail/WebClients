@@ -16,9 +16,7 @@ const TaskForm = ({ model, setModel }) => {
                 onChange={(frequency) => setModel({ ...model, frequency })}
             />
             <Row>
-                <AllDayCheckbox
-                    checked={model.isAllDay}
-                    onChange={(isAllDay) => setModel({ ...model, isAllDay })} />
+                <AllDayCheckbox checked={model.isAllDay} onChange={(isAllDay) => setModel({ ...model, isAllDay })} />
             </Row>
             <DescriptionRow
                 label={c('Label').t`Description`}

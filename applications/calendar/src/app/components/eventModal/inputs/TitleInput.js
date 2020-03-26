@@ -18,7 +18,7 @@ const TitleInput = ({ onChange, type = 'event', isSubmitted, ...rest }) => {
             isSubmitted={isSubmitted}
             {...rest}
         />
-    )
+    );
 };
 
 export default TitleInput;
