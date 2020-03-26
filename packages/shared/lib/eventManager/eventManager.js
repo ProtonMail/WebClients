@@ -7,12 +7,15 @@ const FIBONACCI = [1, 1, 2, 3, 5, 8];
 
 /**
  * Create the event manager process.
- * @param {function} api - Function to call the API.
- * @param {String} initialEventID - Initial event ID to begin from
- * @param {Number} interval - Maximum interval time to wait between each call
- * @return {{call, setEventID, stop, start, reset}}
+ *
+ *    `api` - Function to call the API.
+ *    `initialEventID` - Initial event ID to begin from.
+ *    `interval` - Maximum interval time to wait between each call.
+ *    `query` - Event polling endpoint override.
+ *
+ * @param {{ api: Function, initialEventID: String, interval?: Number, query?: Function }} config
  */
-export default ({ api, eventID: initialEventID, interval = INTERVAL_EVENT_TIMER }) => {
+export default ({ api, eventID: initialEventID, interval = INTERVAL_EVENT_TIMER, query = getEvents }) => {
     const listeners = createListeners();
 
     if (!initialEventID) {
@@ -122,7 +125,7 @@ export default ({ api, eventID: initialEventID, interval = INTERVAL_EVENT_TIMER 
                 }
 
                 const result = await api({
-                    ...getEvents(eventID),
+                    ...query(eventID),
                     signal: abortController.signal,
                     silence: true
                 });
