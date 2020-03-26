@@ -1,6 +1,5 @@
 export { AddressesModel } from './addressesModel';
 export { ContactEmailsModel } from './contactEmailsModel';
-export { ContactGroupsModel } from './contactGroupsModel';
 export { ContactsModel } from './contactsModel';
 export { DomainsModel } from './domainsModel';
 export { FiltersModel } from './filtersModel';

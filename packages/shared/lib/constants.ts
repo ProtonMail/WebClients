@@ -592,3 +592,4 @@ export enum ICS_EVENT_STATUS {
 }
 
 export const COLLAPSE_MENU_KEY = 'collapse-menu';
+export const ROOT_FOLDER = 0;

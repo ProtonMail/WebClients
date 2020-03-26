@@ -1,46 +1,19 @@
-import { getLabels } from '../api/labels';
+import { getLabels, getFolders, getContactGroup } from '../api/labels';
 import updateCollection from '../helpers/updateCollection';
-import { LABEL_EXCLUSIVE } from '../constants';
 
-export const getLabelsModel = (api) => {
-    return api(getLabels()).then(({ Labels }) => Labels);
+const extractLabels = ({ Labels = [] }) => Labels;
+
+export const getLabelsModel = async (api) => {
+    const [labels = [], folders = [], contactGroups = []] = await Promise.all([
+        api(getLabels()).then(extractLabels),
+        api(getFolders()).then(extractLabels),
+        api(getContactGroup()).then(extractLabels)
+    ]);
+    return [...labels, ...folders, ...contactGroups];
 };
 
 export const LabelsModel = {
     key: 'Labels',
     get: getLabelsModel,
-    update: (model, events) => updateCollection({ model, events, item: ({ Label }) => Label })
+    update: (model, events) => updateCollection({ model, events, item: ({ Label }) => Label, merge: (a, b) => b })
 };
-
-const defaultMap = (label) => ({ key: label.Path, value: label });
-
-export function factory(list = [], { formatMapLabel = defaultMap, formatMapFolder = defaultMap } = {}) {
-    const { folders, labels, mapLabels, mapFolders } = list.reduce(
-        (acc, label) => {
-            if (label.Exclusive === LABEL_EXCLUSIVE.LABEL) {
-                const { key, value } = formatMapLabel(label);
-                acc.mapLabels[key] = value;
-                acc.labels.push(label);
-                return acc;
-            }
-
-            const { key, value } = formatMapFolder(label);
-            acc.mapFolders[key] = value;
-            acc.folders.push(label);
-            return acc;
-        },
-        { folders: [], labels: [], mapLabels: Object.create(null), mapFolders: Object.create(null) }
-    );
-
-    const getFolders = () => folders;
-    const getLabels = () => labels;
-    const getLabelsMap = () => mapLabels;
-    const getFoldersMap = () => mapFolders;
-
-    return {
-        getLabels,
-        getFolders,
-        getLabelsMap,
-        getFoldersMap
-    };
-}

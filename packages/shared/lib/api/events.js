@@ -1,9 +1,9 @@
 export const getLatestID = () => ({
-    url: 'events/latest',
+    url: 'v4/events/latest',
     method: 'get'
 });
 
 export const getEvents = (eventID) => ({
-    url: `events/${eventID}`,
+    url: `v4/events/${eventID}`,
     method: 'get'
 });
