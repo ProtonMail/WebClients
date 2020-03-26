@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { ReactNode, Ref, useCallback, useEffect, useMemo } from 'react';
 import {
     AppsSidebar,
     classnames,
@@ -11,7 +11,6 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
-import PropTypes from 'prop-types';
 
 import PrivateHeader from '../../components/layout/PrivateHeader';
 import CalendarSidebar from './CalendarSidebar';
@@ -24,30 +23,51 @@ import TimezoneSelector from '../../components/TimezoneSelector';
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '../../constants';
 import { fromUTCDate, toLocalDate } from 'proton-shared/lib/date/timezone';
 import getDateDiff from './getDateDiff';
-
-const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
- * @param date
- * @returns {Date}
  */
-const localToUtcDate = (date) => new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+const localToUtcDate = (date: Date) => new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
 
+interface Props {
+    activeCalendars?: Calendar[];
+    disabledCalendars?: Calendar[];
+    isLoading?: boolean;
+    isNarrow?: boolean;
+    isBlurred?: boolean;
+    displayWeekNumbers?: boolean;
+    weekStartsOn?: number;
+    tzid: string;
+    setTzid: (tzid: string) => void;
+    range?: number;
+    children: ReactNode;
+    view: VIEWS;
+    utcDefaultDate: Date;
+    utcDate: Date;
+    utcDateRange: Date[];
+    utcDateRangeInTimezone?: Date[];
+    onCreateEvent: () => void;
+    onClickToday: () => void;
+    onChangeView: (view: VIEWS) => void;
+    onChangeDate: (date: Date) => void;
+    onChangeDateRange: (date: Date, range: number) => void;
+    containerRef: Ref<HTMLDivElement>;
+}
 const CalendarContainerView = ({
     activeCalendars = [],
     disabledCalendars = [],
     isLoading = false,
     isBlurred = false,
+    isNarrow = false,
     displayWeekNumbers = false,
     weekStartsOn = 0,
 
     tzid,
     setTzid,
 
-    range,
+    range = 0,
     view,
-    isNarrow,
     utcDefaultDate,
     utcDate,
     utcDateRange,
@@ -61,7 +81,7 @@ const CalendarContainerView = ({
 
     children,
     containerRef
-}) => {
+}: Props) => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
 
     const localNowDate = useMemo(() => {
@@ -127,8 +147,6 @@ const CalendarContainerView = ({
                     <CalendarSidebar
                         expanded={expanded}
                         onToggleExpand={onToggleExpand}
-                        title={c('Title').t`Calendar`}
-                        loading={isLoading}
                         onCreateEvent={onCreateEvent}
                         miniCalendar={
                             <LocalizedMiniCalendar
@@ -139,7 +157,7 @@ const CalendarContainerView = ({
                                 date={localDate}
                                 now={localNowDate}
                                 displayWeekNumbers={displayWeekNumbers}
-                                dateRange={range >= 0 ? localDateRange : undefined}
+                                dateRange={range > 0 ? localDateRange : undefined}
                                 weekStartsOn={weekStartsOn}
                                 displayedOnDarkBackground={true}
                             />
@@ -172,7 +190,6 @@ const CalendarContainerView = ({
                                     viewSelector={
                                         <ViewSelector
                                             data-test-id="calendar-view:view-options"
-                                            isNarrow={isNarrow}
                                             view={view}
                                             range={range}
                                             onChange={onChangeView}
@@ -199,28 +216,6 @@ const CalendarContainerView = ({
             </div>
         </div>
     );
-};
-
-CalendarContainerView.propTypes = {
-    activeCalendars: PropTypes.array,
-    disabledCalendars: PropTypes.array,
-    isLoading: PropTypes.bool,
-    isBlurred: PropTypes.bool,
-    displayWeekNumbers: PropTypes.bool,
-    weekStartsOn: PropTypes.number,
-    tzid: PropTypes.string,
-    setTzid: PropTypes.func,
-    onCreateEvent: PropTypes.func,
-    onClickToday: PropTypes.func,
-    onChangeView: PropTypes.func,
-    utcDefaultDate: PropTypes.instanceOf(Date),
-    utcDate: PropTypes.instanceOf(Date),
-    utcDateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
-    utcDateRangeInTimezone: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
-    view: PropTypes.oneOf([DAY, WEEK, MONTH, YEAR, AGENDA]),
-    isNarrow: PropTypes.bool,
-    children: PropTypes.node,
-    range: PropTypes.number
 };
 
 export default CalendarContainerView;

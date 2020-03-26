@@ -1,7 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactNode } from 'react';
 
-const CalendarToolbar = ({ dateCursorButtons, timezoneSelector, viewSelector }) => {
+interface Props {
+    dateCursorButtons: ReactNode;
+    timezoneSelector: ReactNode;
+    viewSelector: ReactNode;
+}
+
+const CalendarToolbar = ({ dateCursorButtons, timezoneSelector, viewSelector }: Props) => {
     return (
         <div className="toolbar flex flex-nowrap noprint no-scroll">
             {dateCursorButtons}
@@ -11,13 +16,6 @@ const CalendarToolbar = ({ dateCursorButtons, timezoneSelector, viewSelector }) 
             <span className="nomobile flex flex-item-noshrink">{viewSelector}</span>
         </div>
     );
-};
-
-CalendarToolbar.propTypes = {
-    dateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
-    dateCursorButtons: PropTypes.node.isRequired,
-    timezoneSelector: PropTypes.node.isRequired,
-    viewSelector: PropTypes.node.isRequired
 };
 
 export default CalendarToolbar;

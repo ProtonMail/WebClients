@@ -14,7 +14,7 @@ interface Props {
     range: number;
     currentDate: Date;
     now: Date;
-    dateRange: [Date, Date];
+    dateRange: Date[];
     onToday: () => void;
     onPrev: () => void;
     onNext: () => void;

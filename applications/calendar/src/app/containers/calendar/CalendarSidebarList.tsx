@@ -2,12 +2,18 @@ import React from 'react';
 import { Checkbox } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getConstrastingColor } from '../../helpers/color';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 
-const CalendarSidebarList = ({ calendars = [], loading = false, onChangeVisibility = noop }) => {
+interface Props {
+    calendars?: Calendar[];
+    loading?: boolean;
+    onChangeVisibility: (id: string, checked: boolean) => void;
+}
+const CalendarSidebarList = ({ calendars = [], loading = false, onChangeVisibility = noop }: Props) => {
     if (calendars.length === 0) {
         return null;
     }
-    return calendars.map(({ ID, Name, Display, Color }, i) => {
+    const result = calendars.map(({ ID, Name, Display, Color }, i) => {
         return (
             <div className="navigation__link" key={ID}>
                 <span data-test-id="calendar-sidebar:user-calendars" className="flex flex-nowrap flex-items-center">
@@ -28,6 +34,8 @@ const CalendarSidebarList = ({ calendars = [], loading = false, onChangeVisibili
             </div>
         );
     });
+
+    return <>{result}</>;
 };
 
 export default CalendarSidebarList;

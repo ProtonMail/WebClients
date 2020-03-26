@@ -13,7 +13,7 @@ const FORMATS = {
     [CUSTOM]: 'PP'
 };
 
-const getDateRangeText = (view: VIEWS, range: number, currentDate: Date, dateRange: [Date, Date]) => {
+const getDateRangeText = (view: VIEWS, range: number, currentDate: Date, dateRange: Date[]) => {
     const formatOptions = { locale: dateLocale };
     const [from, to] = dateRange;
 

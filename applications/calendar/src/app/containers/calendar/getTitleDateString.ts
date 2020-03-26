@@ -2,7 +2,7 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import { format } from 'proton-shared/lib/date-fns-utc';
 import { VIEWS } from '../../constants';
 
-const getTitleDateString = (view: VIEWS, range: number, utcDateRange: [Date, Date], utcDate: Date) => {
+const getTitleDateString = (view: VIEWS, range: number, utcDateRange: Date[], utcDate: Date) => {
     const formatOptions = { locale: dateLocale };
 
     if (view === VIEWS.DAY) {

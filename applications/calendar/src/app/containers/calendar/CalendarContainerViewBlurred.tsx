@@ -10,13 +10,12 @@ const CalendarContainerViewBlurred = () => {
 
     const now = new Date();
     const dateRange = [startOfWeek(now), endOfWeek(now)];
-    const containerRef = useRef();
+    const containerRef = useRef<HTMLDivElement>(null);
 
     return (
         <CalendarContainerView
             view={VIEWS.WEEK}
             isBlurred={true}
-            isNarrow={false}
             utcDate={now}
             utcDefaultDate={now}
             utcDateRange={dateRange}

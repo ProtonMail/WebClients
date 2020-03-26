@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactNode } from 'react';
 import {
     MainLogo,
     Hamburger,
@@ -16,6 +15,17 @@ import { c } from 'ttag';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
 import CalendarSidebarList from './CalendarSidebarList';
 import CalendarSidebarVersion from './CalendarSidebarVersion';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+
+interface Props {
+    expanded?: boolean;
+    onToggleExpand: () => void;
+    url?: string;
+    activeCalendars: Calendar[];
+    disabledCalendars: Calendar[];
+    miniCalendar: ReactNode;
+    onCreateEvent: () => void;
+}
 
 const CalendarSidebar = ({
     expanded = false,
@@ -25,12 +35,12 @@ const CalendarSidebar = ({
     disabledCalendars = [],
     miniCalendar,
     onCreateEvent
-}) => {
+}: Props) => {
     const { call } = useEventManager();
     const api = useApi();
     const [loadingAction, withLoadingAction] = useLoading();
 
-    const handleChangeVisibility = async (calendarID, checked) => {
+    const handleChangeVisibility = async (calendarID: string, checked: boolean) => {
         await api(updateCalendar(calendarID, { Display: +checked }));
         await call();
     };
@@ -119,12 +129,6 @@ const CalendarSidebar = ({
             </MobileNavServices>
         </div>
     );
-};
-
-CalendarSidebar.propTypes = {
-    miniCalendar: PropTypes.node,
-    calendars: PropTypes.array,
-    onCreateEvent: PropTypes.func
 };
 
 export default CalendarSidebar;

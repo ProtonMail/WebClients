@@ -19,12 +19,12 @@ const getDateRange = (date: Date, range: number, view: VIEWS, weekStartsOn: numb
         case VIEWS.DAY:
             return [startOfDay(date), endOfDay(date)];
         case VIEWS.WEEK:
-            if (range >= 0) {
+            if (range > 0) {
                 return [startOfDay(date), endOfDay(addDays(date, range))];
             }
             return [startOfWeek(date, opts), endOfWeek(date, opts)];
         case VIEWS.MONTH:
-            if (range >= 0) {
+            if (range > 0) {
                 return [startOfWeek(date, opts), endOfWeek(addWeeks(date, range), opts)];
             }
             return [startOfWeek(startOfMonth(date), opts), endOfWeek(endOfMonth(date), opts)];
