@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { c } from 'ttag';
+import { Toolbar } from 'react-components';
 import Drive from '../components/Drive/Drive';
 import useDrive from '../hooks/useDrive';
 import Page, { PageMainArea } from '../components/Page';
@@ -98,15 +99,18 @@ function DriveContainer({
         );
     }, [match.params]);
 
+    // TODO: change toolbar props to optional children in react-components
     return (
         <Page title={c('Title').t`My files`}>
             <DriveContentProvider>
-                {resource && (
+                {resource ? (
                     <DriveToolbar
                         resource={resource}
                         openResource={navigateToResource}
                         parentLinkID={location.state?.preloadedLink?.ParentLinkID}
                     />
+                ) : (
+                    <Toolbar>{null}</Toolbar>
                 )}
                 <PageMainArea hasToolbar className="flex flex-column">
                     <StickyHeader>

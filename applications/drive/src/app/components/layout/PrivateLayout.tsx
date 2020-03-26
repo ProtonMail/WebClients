@@ -12,6 +12,11 @@ const getSidebar = () => {
             text: c('Link').t`My files`,
             link: '/drive',
             icon: 'inbox'
+        },
+        {
+            text: c('Link').t`Trash`,
+            link: '/trash',
+            icon: 'trash'
         }
     ];
 };

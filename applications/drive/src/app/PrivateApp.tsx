@@ -13,6 +13,7 @@ import DriveResourceProvider from './components/Drive/DriveResourceProvider';
 import AppErrorBoundary from './components/AppErrorBoundary';
 import PreviewContainer from './containers/PreviewContainer';
 import { ResourceURLType } from './constants';
+import TrashContainer from './containers/TrashContainer';
 
 interface Props extends RouteComponentProps {
     onLogout: () => void;
@@ -41,6 +42,7 @@ const PrivateApp = ({ onLogout, history }: Props) => {
                             <PrivateLayout>
                                 <AppErrorBoundary>
                                     <Switch>
+                                        <Route path="/trash/:shareId?" exact component={TrashContainer} />
                                         <Route
                                             path={`/drive/:shareId?/:type?/:linkId?`}
                                             exact
