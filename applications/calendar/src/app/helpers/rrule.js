@@ -407,7 +407,7 @@ const getCustomMonthlyString = ({ interval, monthly, ends: { type: endType, unti
         const dateString = format(until, 'd MMM yyyy', { locale });
         return c('Monthly recurring event, frequency').ngettext(
             msgid`Monthly ${onDayString}, until ${dateString}`,
-            `Every ${interval} months, until ${dateString}`,
+            `Every ${interval} months ${onDayString}, until ${dateString}`,
             interval
         );
     }
