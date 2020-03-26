@@ -24,7 +24,7 @@ import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { validateLinkName, ValidationError } from '../utils/validation';
 
-const folderChildrenCacheKey = (shareId: string, linkId: string, Page: number, PageSize: number) =>
+export const folderChildrenCacheKey = (shareId: string, linkId: string, Page: number, PageSize: number) =>
     `drive/shares/${shareId}/folder/${linkId}/children?${Page}&${PageSize}`;
 const linkMetaCacheKey = (shareId: string, linkId: string) => `drive/shares/${shareId}/folder/${linkId}`;
 
@@ -116,12 +116,7 @@ function useShare(shareId: string) {
                 );
             }
 
-            const { Link: Folder, ...rest } = result as FolderLinkMetaResult;
-
-            return {
-                Folder,
-                ...rest
-            };
+            return result as FolderLinkMetaResult;
         },
         [getLinkMeta]
     );

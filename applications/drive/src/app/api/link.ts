@@ -10,3 +10,8 @@ export const queryGetLink = (ShareID: string, LinkID: string) => ({
     method: 'get',
     url: `drive/shares/${ShareID}/links/${LinkID}`
 });
+
+export const queryTrashLink = (ShareID: string, LinkID: string) => ({
+    method: 'delete',
+    url: `drive/shares/${ShareID}/links/${LinkID}`
+});

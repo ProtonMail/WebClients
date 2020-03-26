@@ -18,7 +18,7 @@ const DriveBreadcrumbs = ({ resource, preloaded, openResource }: Props) => {
 
     useEffect(() => {
         const getBreadcrumbs = async (linkId: string): Promise<BreadcrumbInfo[]> => {
-            const meta = preloaded?.LinkID === linkId ? preloaded : (await getFolderMeta(linkId)).Folder;
+            const meta = preloaded?.LinkID === linkId ? preloaded : (await getFolderMeta(linkId)).Link;
 
             const breadcrumb: BreadcrumbInfo = {
                 key: linkId,

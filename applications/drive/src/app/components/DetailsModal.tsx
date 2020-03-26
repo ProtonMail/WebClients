@@ -33,13 +33,13 @@ const DetailsModal = ({ resource, item, onClose, ...rest }: Props) => {
 
     useEffect(() => {
         const getLocationItems = async (linkId: string): Promise<string[]> => {
-            const meta = (await getFolderMeta(linkId)).Folder;
-            if (!meta.ParentLinkID) {
+            const { Link } = await getFolderMeta(linkId);
+            if (!Link.ParentLinkID) {
                 return [c('Title').t`My files`];
             }
-            const previous = await getLocationItems(meta.ParentLinkID);
+            const previous = await getLocationItems(Link.ParentLinkID);
 
-            return [...previous, meta.Name];
+            return [...previous, Link.Name];
         };
 
         let canceled = false;

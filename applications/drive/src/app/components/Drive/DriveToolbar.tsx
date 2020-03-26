@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { ToolbarSeparator, Toolbar, ToolbarButton, useModals } from 'react-components';
-import { c } from 'ttag';
+import { ToolbarSeparator, Toolbar, ToolbarButton, useModals, useNotifications } from 'react-components';
+import { c, msgid } from 'ttag';
 import { DriveResource } from './DriveResourceProvider';
 import useShare from '../../hooks/useShare';
 import { ResourceType } from '../../interfaces/link';
@@ -11,6 +11,7 @@ import { useDriveContent } from './DriveContentProvider';
 import CreateFolderModal from '../CreateFolderModal';
 import RenameModal from '../RenameModal';
 import DetailsModal from '../DetailsModal';
+import useTrash from '../../hooks/useTrash';
 
 interface Props {
     resource: DriveResource;
@@ -20,9 +21,11 @@ interface Props {
 
 const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
     const { createModal } = useModals();
+    const { createNotification } = useNotifications();
     const { fileBrowserControls, addToLoadQueue } = useDriveContent();
     const { getFolderMeta } = useShare(resource.shareId);
     const { startFileTransfer } = useFiles(resource.shareId);
+    const { trashLink } = useTrash(resource.shareId);
     const [parentID, setParentID] = useState(parentLinkID);
 
     const { selectedItems } = fileBrowserControls;
@@ -31,7 +34,7 @@ const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
         let isCanceled = false;
 
         if (!parentLinkID) {
-            getFolderMeta(resource.linkId).then(({ Folder }) => !isCanceled && setParentID(Folder.ParentLinkID));
+            getFolderMeta(resource.linkId).then(({ Link }) => !isCanceled && setParentID(Link.ParentLinkID));
         } else if (parentID !== parentLinkID) {
             setParentID(parentLinkID);
         }
@@ -72,6 +75,40 @@ const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
         createModal(<DetailsModal item={selectedItems[0]} resource={resource} />);
     };
 
+    const handleDeleteClick = async () => {
+        const toTrash = selectedItems;
+        await Promise.all(toTrash.map((item) => trashLink(item.LinkID, item.ParentLinkID)));
+
+        const allFiles = toTrash.every(({ Type }) => Type === ResourceType.FILE);
+        const allFolders = toTrash.every(({ Type }) => Type === ResourceType.FOLDER);
+
+        const notificationTexts = {
+            allFiles: c('Notification').ngettext(
+                msgid`"${toTrash[0].Name}" moved to Trash`,
+                `${toTrash.length} files moved to Trash`,
+                toTrash.length
+            ),
+            allFolders: c('Notification').ngettext(
+                msgid`"${toTrash[0].Name}" moved to Trash`,
+                `${toTrash.length} folders moved to Trash`,
+                toTrash.length
+            ),
+            mixed: c('Notification').ngettext(
+                msgid`"${toTrash[0].Name}" moved to Trash`,
+                `${toTrash.length} items moved to Trash`,
+                toTrash.length
+            )
+        };
+
+        const notificationText =
+            (allFiles && notificationTexts.allFiles) ||
+            (allFolders && notificationTexts.allFolders) ||
+            notificationTexts.mixed;
+
+        createNotification({ text: notificationText });
+        addToLoadQueue(resource);
+    };
+
     return (
         <Toolbar>
             {
@@ -95,6 +132,12 @@ const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
             )}
             {onlyFilesSelected && selectedItems.length > 0 && (
                 <ToolbarButton title={c('Action').t`Download`} icon="download" onClick={handleDownloadClick} />
+            )}
+            {selectedItems.length > 0 && (
+                <>
+                    <ToolbarSeparator />
+                    <ToolbarButton title={c('Action').t`Move to trash`} icon="trash" onClick={handleDeleteClick} />
+                </>
             )}
         </Toolbar>
     );

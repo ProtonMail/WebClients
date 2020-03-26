@@ -45,7 +45,7 @@ const PreviewContainer = ({
 
         const preloadFile = async () => {
             try {
-                const meta = location.state?.preloadedLink || (await getFileMeta(linkId)).File;
+                const meta = location.state?.preloadedLink || (await getFileMeta(linkId)).Link;
 
                 // Clear history state, so fresh data is requested on reloads
                 if (location.state?.preloadedLink) {
