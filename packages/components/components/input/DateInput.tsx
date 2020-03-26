@@ -33,7 +33,6 @@ interface Props {
     value?: Date;
     placeholder?: string;
     defaultDate?: Date;
-    placeholder?: string;
     min?: Date;
     max?: Date;
     onChange: (value: Date | undefined) => void;
