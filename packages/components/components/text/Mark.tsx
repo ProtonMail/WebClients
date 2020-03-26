@@ -1,8 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactNode } from 'react';
 
-const Mark = React.memo(({ children, value }) => {
-    if (!value) {
+interface Props {
+    children: ReactNode;
+    value?: string;
+}
+
+const Mark = ({ children, value }: Props) => {
+    if (!value || typeof children !== 'string') {
         return children;
     }
 
@@ -13,7 +17,7 @@ const Mark = React.memo(({ children, value }) => {
         return children;
     }
 
-    return splitted.reduce((acc, v, index) => {
+    return splitted.reduce((acc: ReactNode[], v, index) => {
         acc.push(v);
         if (index < splitted.length - 1) {
             const currentLength = acc.join('').length;
@@ -22,11 +26,6 @@ const Mark = React.memo(({ children, value }) => {
         }
         return acc;
     }, []);
-});
-
-Mark.propTypes = {
-    children: PropTypes.string.isRequired,
-    value: PropTypes.string
 };
 
 export default Mark;
