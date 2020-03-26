@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useMemo, useRef } from 'react';
+import React, { useEffect, useState, useMemo, useRef, ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
-import PropTypes from 'prop-types';
 import { addMinutes, startOfDay, format, parse } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { findLongestMatchingIndex } from 'proton-shared/lib/helpers/string';
@@ -11,15 +10,15 @@ import Dropdown from '../dropdown/Dropdown';
 import { usePopperAnchor } from '../popper';
 import { classnames, generateUID } from '../../helpers/component';
 
-const toFormatted = (value, locale) => {
+const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'p', { locale });
 };
 
-const fromFormatted = (value, locale) => {
+const fromFormatted = (value: string, locale: Locale) => {
     return parse(value, 'p', new Date(), { locale });
 };
 
-const formatDuration = (label, minutes) => {
+const formatDuration = (label: string, minutes: number) => {
     const hours = withDecimalPrecision(minutes / 60, 1);
     const hoursInt = Math.ceil(hours);
     return hours >= 1
@@ -27,12 +26,21 @@ const formatDuration = (label, minutes) => {
         : c('Time unit').ngettext(msgid`${minutes} minutes`, `${minutes} minutes`, minutes);
 };
 
-const getMinutes = (date) => date.getHours() * 60 + date.getMinutes();
+const getMinutes = (date: Date) => date.getHours() * 60 + date.getMinutes();
 
 const MAX_MINUTES = 24 * 60;
 
-/** @type any **/
-const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = false, max, ...rest }) => {
+interface Props {
+    value: Date;
+    displayDuration?: boolean;
+    base?: Date;
+    min?: Date;
+    max?: Date;
+    onChange: (date: Date) => void;
+    interval?: number;
+}
+
+const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = false, max, ...rest }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor();
     const [temporaryInput, setTemporaryInput] = useState(() => toFormatted(value, dateLocale));
@@ -47,7 +55,7 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
     const valueMinutes = getMinutes(value);
     const normalizedMinutes = valueMinutes - minMinutes;
 
-    const handleSelectDate = (newDate) => {
+    const handleSelectDate = (newDate: Date) => {
         const newMinutes = getMinutes(newDate);
 
         if (valueMinutes === newMinutes) {
@@ -67,7 +75,7 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
         onChange(normalizedDate);
     };
 
-    const parseAndSetDate = () => {
+    const parseAndSetDate = (temporaryInput: string) => {
         try {
             const newDate = fromFormatted(temporaryInput, dateLocale);
             const newDateTime = +newDate;
@@ -85,7 +93,7 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
         close();
     };
 
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
         const { key } = event;
         if (key === 'Enter') {
             parseAndSetDate(temporaryInput);
@@ -102,8 +110,9 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
         }
     };
 
-    const scrollRef = useRef();
-    const listRef = useRef();
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const listRef = useRef<HTMLUListElement>(null);
+
     const options = useMemo(() => {
         const length = Math.floor(MAX_MINUTES / interval);
         const minutes = Array.from({ length }, (a, i) => i * interval);
@@ -139,7 +148,10 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
         if (!isOpen) {
             return;
         }
-        const matchingEl = listRef.current.children[matchingIndex];
+        if (!listRef.current || !scrollRef.current || matchingIndex === undefined) {
+            return;
+        }
+        const matchingEl = listRef.current.children[matchingIndex] as HTMLLIElement;
         if (matchingEl) {
             scrollRef.current.scrollTop =
                 matchingEl.offsetTop - (scrollRef.current.clientHeight - matchingEl.clientHeight) / 2;
@@ -156,7 +168,7 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
                 onKeyDown={handleKeyDown}
                 onClick={() => open()}
                 value={temporaryInput}
-                onChange={({ target: { value } }) => setTemporaryInput(value)}
+                onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setTemporaryInput(value)}
                 {...rest}
             />
             <Dropdown
@@ -191,16 +203,6 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
             </Dropdown>
         </>
     );
-};
-
-TimeInput.propTypes = {
-    value: PropTypes.instanceOf(Date).isRequired,
-    displayDuration: PropTypes.bool,
-    base: PropTypes.instanceOf(Date),
-    min: PropTypes.instanceOf(Date),
-    max: PropTypes.instanceOf(Date),
-    onChange: PropTypes.func.isRequired,
-    interval: PropTypes.number
 };
 
 export default TimeInput;
