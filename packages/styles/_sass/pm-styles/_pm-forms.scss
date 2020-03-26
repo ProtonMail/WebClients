@@ -1,7 +1,9 @@
 /* input design */
+.placeholder,
 ::placeholder {
   color: var(--color-input, rgba($pm-global-grey, .65));
   font-style: italic;
+  opacity: .6;
 }
 
 // fix "autofill state"
@@ -417,18 +419,18 @@ $pm-label-icon-width: 2em !default;
 .pm-modalContainer .pm-field-container--full {
   width: calc(100% - var(--label-width, #{$pm-label-width}));
 }
-@include respond-to(1360) { 
+@include respond-to(1360) {
   .pm-modalContainer .pm-field-container--full {
       width: $field-container;
   }
 }
-@include respond-to(830) { 
+@include respond-to(830) {
   .pm-modalContainer .pm-field-container--full {
       width: calc(100% - var(--label-width, #{$pm-label-width}));
   }
 }
 
-@include respond-to($breakpoint-small) { 
+@include respond-to($breakpoint-small) {
   .pm-modalContainer .pm-field-container--full {
       width: 100%;
   }
