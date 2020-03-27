@@ -150,3 +150,13 @@ export const shallowEqual = <T>(a: T[], b: T[]) => {
     }
     return true;
 };
+
+export const compare = (a: any, b: any) => {
+    if (a > b) {
+        return 1;
+    }
+    if (a < b) {
+        return -1;
+    }
+    return 0;
+};
