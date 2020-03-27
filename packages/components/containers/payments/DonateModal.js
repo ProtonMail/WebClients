@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Label, FormModal, Row, Field, Alert, useNotifications, useApi, useLoading, useModals } from 'react-components';
+import { FormModal, useNotifications, useApi, useLoading, useModals } from 'react-components';
 import { donate } from 'proton-shared/lib/api/payments';
 import {
     DEFAULT_CURRENCY,
@@ -10,7 +10,9 @@ import {
     MIN_DONATION_AMOUNT
 } from 'proton-shared/lib/constants';
 
-import PaymentSelector from './PaymentSelector';
+import './DonateModal.scss';
+import PaymentInfo from './PaymentInfo';
+import AmountRow from './AmountRow';
 import Payment from './Payment';
 import usePayment from './usePayment';
 import PayPalButton from './PayPalButton';
@@ -56,24 +58,14 @@ const DonateModal = ({ ...rest }) => {
 
     return (
         <FormModal
+            className="donate-modal"
             onSubmit={() => withLoading(handleSubmit(parameters))}
             loading={loading}
             title={c('Title').t`Make a donation`}
             submit={submit}
             {...rest}
         >
-            <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
-            <Row>
-                <Label>{c('Label').t`Amount`}</Label>
-                <Field>
-                    <PaymentSelector
-                        amount={amount}
-                        onChangeAmount={setAmount}
-                        currency={currency}
-                        onChangeCurrency={setCurrency}
-                    />
-                </Field>
-            </Row>
+            <PaymentInfo method={method} />
             <Payment
                 type="donation"
                 method={method}
@@ -85,6 +77,13 @@ const DonateModal = ({ ...rest }) => {
                 errors={errors}
                 paypal={paypal}
                 paypalCredit={paypalCredit}
+            />
+            <AmountRow
+                method={method}
+                amount={amount}
+                onChangeAmount={setAmount}
+                currency={currency}
+                onChangeCurrency={setCurrency}
             />
         </FormModal>
     );

@@ -201,6 +201,8 @@ export { default as BitcoinDetails } from './containers/payments/BitcoinDetails'
 export { default as PaymentVerificationModal } from './containers/payments/PaymentVerificationModal';
 export { default as Method } from './containers/payments/Method';
 export { default as PaymentSelector } from './containers/payments/PaymentSelector';
+export { default as AmountRow } from './containers/payments/AmountRow';
+export { default as PaymentInfo } from './containers/payments/PaymentInfo';
 export { default as EditCardModal } from './containers/payments/EditCardModal';
 export { default as usePayment } from './containers/payments/usePayment';
 export { default as getDefaultCard } from './containers/payments/getDefaultCard';

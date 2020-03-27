@@ -1,0 +1,14 @@
+@import '~design-system/_sass/reusable-components/design-system-config';
+
+.credits-modal .pm-field-container.payment-right {
+    width: 70%;
+}
+
+@include respond-to($breakpoint-small) {
+
+    .credits-modal .pm-label.payment-left,
+    .credits-modal .pm-field-container.payment-right {
+        width: 100%;
+    }
+
+}

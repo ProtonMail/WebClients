@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import {
-    Label,
     FormModal,
-    Row,
-    Field,
     Alert,
+    PaymentInfo,
+    AmountRow,
     useNotifications,
     useEventManager,
     useConfig,
@@ -23,7 +22,6 @@ import {
     PAYMENT_METHOD_TYPES
 } from 'proton-shared/lib/constants';
 
-import PaymentSelector from './PaymentSelector';
 import Payment from './Payment';
 import usePayment from './usePayment';
 import { handlePaymentToken } from './paymentTokenHelper';
@@ -78,6 +76,7 @@ const CreditsModal = (props) => {
 
     return (
         <FormModal
+            className="credits-modal"
             type="small"
             onSubmit={() => withLoading(handleSubmit(parameters))}
             loading={loading}
@@ -86,7 +85,7 @@ const CreditsModal = (props) => {
             title={c('Title').t`Add credits`}
             {...props}
         >
-            <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
+            <PaymentInfo method={method} />
             <Alert
                 learnMore={
                     CLIENT_TYPE === VPN
@@ -95,17 +94,6 @@ const CreditsModal = (props) => {
                 }
             >{c('Info')
                 .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}</Alert>
-            <Row>
-                <Label>{c('Label').t`Amount`}</Label>
-                <Field>
-                    <PaymentSelector
-                        amount={amount}
-                        onChangeAmount={setAmount}
-                        currency={currency}
-                        onChangeCurrency={setCurrency}
-                    />
-                </Field>
-            </Row>
             <Payment
                 type="credit"
                 method={method}
@@ -117,6 +105,13 @@ const CreditsModal = (props) => {
                 errors={errors}
                 paypal={paypal}
                 paypalCredit={paypalCredit}
+            />
+            <AmountRow
+                method={method}
+                amount={amount}
+                onChangeAmount={setAmount}
+                currency={currency}
+                onChangeCurrency={setCurrency}
             />
         </FormModal>
     );
