@@ -7,8 +7,9 @@ import { LoginForm, Href, SimpleDropdown, DropdownMenu, SignInLayout } from 'rea
 const LoginContainer = ({ stopRedirect, history, location, onLogin }) => {
     const handleLogin = (...args) => {
         stopRedirect();
-        if (location.state.from) {
-            history.push(location.state.from);
+        const { from } = location.state || {};
+        if (from && from.pathname !== '/login') {
+            history.push(from);
         } else {
             history.push('/inbox');
         }
