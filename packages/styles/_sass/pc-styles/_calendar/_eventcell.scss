@@ -1,3 +1,7 @@
+/*
+  Full day event
+*/
+
 .calendar-dayeventcell {
 	height: var(--height);
 	padding-right: $calendar-gridcell-margin;
@@ -14,8 +18,8 @@
 		color: $black;
 		cursor: pointer;
 
-		&#{&}--isNotAllDay,
-		&--isLoaded#{&}--isNotAllDay {
+		&--isNotAllDay#{&},
+		&--isNotAllDay#{&}--isLoaded {
 			background: none;
 			border: none;
 			color: inherit;
@@ -27,12 +31,12 @@
 		}
 	}
 
-	&-inner--isOutsideStart {
+	&--isOutsideStart &-inner {
 		padding-left: 0;
 	}
 
 	&--isOutsideEnd,
-	&-inner--isOutsideEnd {
+	&--isOutsideEnd &-inner {
 		padding-right: 0;
 	}
 
@@ -45,11 +49,16 @@
 	}
 }
 
+
+/*
+  Part day event
+*/
+
 .calendar-eventcell {
 	position: absolute;
 	z-index: 5;
 	border: $calendar-event-border;
-	border-radius: 2px;
+	border-radius: $calendar-event-border-radius;
 	background: $calendar-event-loading-color;
 	color: $black;
 	cursor: pointer;
@@ -62,26 +71,37 @@
 	}
 }
 
+
+/*
+  Appearance factorization
+*/
+
 .calendar-dayeventcell,
 .calendar-eventcell {
 	--opacity: 1;
-}
 
-.calendar-dayeventcell--isBefore,
-.calendar-eventcell--isBefore {
-	--opacity: .6;
+	&--isBefore {
+		--opacity: .6;
+	}
 }
 
 .calendar-dayeventcell-inner,
 .calendar-eventcell {
 	opacity: var(--opacity);
-	transition: opacity .5s ease-out, background-color .15s ease-in-out;
+	transition: all 50ms ease-out, opacity .5s ease-out, background-color .15s ease-in-out;
 	animation: loadingEvent 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) infinite alternate;
 
 	&--isLoaded {
 		background-color: var(--background);
 		color: var(--foreground);
 		animation: none;
+	}
+
+	&--isSelected {
+		z-index: 6;
+		border-color: $calendar-event-selected-border-color;
+		box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .25);
+		filter: brightness(105%);
 	}
 }
 
