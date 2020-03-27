@@ -67,3 +67,8 @@ export const revokeSession = (UID: string | number) => ({
     method: 'delete',
     url: `auth/sessions/${UID}`
 });
+
+export const queryScopes = () => ({
+    method: 'get',
+    url: 'auth/scopes'
+});
