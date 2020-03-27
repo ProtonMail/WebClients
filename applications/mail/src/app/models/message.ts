@@ -33,6 +33,7 @@ export interface Message {
     PasswordHint?: string;
     ExpirationTime?: number;
     ExpiresIn?: number;
+    SpamScore?: number;
 }
 
 export interface MessageAction<T = void> {
