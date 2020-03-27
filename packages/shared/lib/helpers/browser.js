@@ -106,3 +106,25 @@ export const redirectTo = (url = '') => document.location.replace(`${document.lo
  * @returns {Boolean}
  */
 export const requireDirectAction = () => isSafari() || isFirefox() || isEdge();
+
+/**
+ * Open an URL inside a new tab/window and remove the referrer
+ * @links { https://mathiasbynens.github.io/rel-noopener/}
+ * @param  {String} url
+ * @return {void}
+ */
+export const openNewTab = (url) => {
+    if (isIE11() || isFirefox()) {
+        const win = window.open();
+        win.opener = null;
+        win.location = url;
+        return;
+    }
+    const anchor = document.createElement('A');
+
+    anchor.setAttribute('rel', 'noreferrer nofollow noopener');
+    anchor.setAttribute('target', '_blank');
+    anchor.href = url;
+
+    return anchor.click();
+};
