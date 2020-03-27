@@ -29,7 +29,7 @@ const optionRange = (size: number) =>
 interface Props {
     message?: Message;
     onClose: () => void;
-    onChange: (message: MessageExtended) => void;
+    onChange: (message: Partial<MessageExtended>) => void;
 }
 
 const ComposerExpirationModal = ({ message = {}, onClose, onChange }: Props) => {

@@ -4,8 +4,10 @@ import { clearAll, render } from '../../../helpers/test/helper';
 import AttachmentsList from './AttachmentsList';
 import { EmbeddedInfo, EmbeddedMap } from '../../../models/message';
 
+const localID = 'localID';
+
 const props = {
-    message: {},
+    message: { localID },
     onRemoveAttachment: jest.fn(),
     onRemoveUpload: jest.fn()
 };
@@ -18,7 +20,7 @@ describe('AttachmentsList', () => {
     afterEach(() => clearAll());
 
     it('should show attachments count', async () => {
-        const message = { data: { Attachments: [normalAttachment] } };
+        const message = { localID, data: { Attachments: [normalAttachment] } };
         const { getByText } = await render(<AttachmentsList {...props} message={message} />);
         getByText(/1 file attached/);
     });
@@ -26,7 +28,7 @@ describe('AttachmentsList', () => {
     it('should show embedded count', async () => {
         const embeddedInfo: EmbeddedInfo = { attachment: embeddedAttachment, url: 'url' };
         const embeddeds: EmbeddedMap = new Map<string, EmbeddedInfo>([[cid, embeddedInfo]]);
-        const message = { embeddeds, data: { Attachments: [embeddedAttachment] } };
+        const message = { localID, embeddeds, data: { Attachments: [embeddedAttachment] } };
         const { getByText } = await render(<AttachmentsList {...props} message={message} />);
         getByText(/1 embedded image/);
     });
@@ -34,7 +36,7 @@ describe('AttachmentsList', () => {
     it('should show attachments count and embedded count', async () => {
         const embeddedInfo: EmbeddedInfo = { attachment: embeddedAttachment, url: 'url' };
         const embeddeds: EmbeddedMap = new Map<string, EmbeddedInfo>([[cid, embeddedInfo]]);
-        const message = { embeddeds, data: { Attachments: [normalAttachment, embeddedAttachment] } };
+        const message = { localID, embeddeds, data: { Attachments: [normalAttachment, embeddedAttachment] } };
         const { getByText } = await render(<AttachmentsList {...props} message={message} />);
         getByText(/1 file attached/);
         getByText(/1 embedded image/);

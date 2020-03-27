@@ -2,33 +2,29 @@ import { matches } from '../dom';
 
 const PROTOCOLS = ['ftp://', 'http://', 'https://', 'xmpp:', 'tel:', 'callto:'];
 const ALL_PROTOCOLS = PROTOCOLS.concat(['mailto:']);
-const MAP = PROTOCOLS.reduce((acc, key) => ((acc[key] = true), acc), {});
+const MAP = PROTOCOLS.reduce((acc, key) => ((acc[key] = true), acc), {} as { [key: string]: boolean });
 const EXCLUDE_ANCHORS = ':not([href=""]):not([href^="#"])';
 
-const getNormalizedHref = (link) => {
-    return link
-        .getAttribute('href')
-        .trim()
-        .toLowerCase();
+const getNormalizedHref = (link: HTMLLinkElement) => {
+    return (link.getAttribute('href') || '').trim().toLowerCase();
 };
 
-const linkUsesProtocols = (link) => ALL_PROTOCOLS.some((proto) => getNormalizedHref(link).startsWith(proto));
+const linkUsesProtocols = (link: HTMLLinkElement) =>
+    ALL_PROTOCOLS.some((proto) => getNormalizedHref(link).startsWith(proto));
 
-const isEmptyAnchor = (link) => {
+const isEmptyAnchor = (link: HTMLLinkElement) => {
     const href = getNormalizedHref(link);
     return href === '' || MAP[href];
 };
 
-const noReferrerInfo = (link) => {
+const noReferrerInfo = (link: HTMLLinkElement) => {
     link.setAttribute('rel', 'noreferrer nofollow noopener');
 };
 
 /**
  * make links open in a new tab
- * @param  {Array} links Collection of links
- * @return {Array}       links
  */
-const httpInNewTab = (link) => {
+const httpInNewTab = (link: HTMLLinkElement) => {
     if (matches(link, EXCLUDE_ANCHORS)) {
         const href = link.getAttribute('href') || '';
         const hasHTTP = href.indexOf('http') === 0;
@@ -43,10 +39,8 @@ const httpInNewTab = (link) => {
 /**
  * turn these relative links into absolute links
  * (example.com/a -> http://example.com)
- * @param  {Array} links Collection of links
- * @return {Array}       links
  */
-const sanitizeRelativeHttpLinks = (link) => {
+const sanitizeRelativeHttpLinks = (link: HTMLLinkElement) => {
     if (matches(link, EXCLUDE_ANCHORS) && !linkUsesProtocols(link) && link.nodeName === 'A') {
         // link.href is the absolute value of the link: mail.protonmail.com is prepended, use getAttribute
         const url = link.getAttribute('href');
@@ -59,12 +53,12 @@ const sanitizeRelativeHttpLinks = (link) => {
  * Anchors will work on the whole protonmail page, so we need to disable them
  * opening them in a new tab will just open a empty page.
  */
-const disableAnchors = (link) => {
+const disableAnchors = (link: HTMLLinkElement) => {
     isEmptyAnchor(link) && (link.style.pointerEvents = 'none');
 };
 
-export const transformLinks = ({ document }) => {
-    const links = [...document.querySelectorAll('[href]')];
+export const transformLinks = (document: Element) => {
+    const links = [...document.querySelectorAll('[href]')] as HTMLLinkElement[];
 
     links.forEach((link) => {
         httpInNewTab(link);
@@ -72,6 +66,4 @@ export const transformLinks = ({ document }) => {
         sanitizeRelativeHttpLinks(link);
         disableAnchors(link);
     });
-
-    return { document };
 };

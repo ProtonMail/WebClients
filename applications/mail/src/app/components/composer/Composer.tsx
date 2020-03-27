@@ -1,8 +1,8 @@
-import React, { useState, useEffect, CSSProperties, useRef, useCallback } from 'react';
+import React, { useState, useEffect, CSSProperties, useRef } from 'react';
 import { classnames, useToggle, useWindowSize, useNotifications, useApi, useAuthentication } from 'react-components';
 import { c } from 'ttag';
 import { Address } from 'proton-shared/lib/interfaces';
-import { noop, debounce } from 'proton-shared/lib/helpers/function';
+import { noop } from 'proton-shared/lib/helpers/function';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 
@@ -11,7 +11,6 @@ import ComposerTitleBar from './ComposerTitleBar';
 import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
 import ComposerActions from './ComposerActions';
-import { useMessage } from '../../hooks/useMessage';
 import {
     COMPOSER_GUTTER,
     COMPOSER_VERTICAL_GUTTER,
@@ -31,8 +30,11 @@ import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
 import { useHandler } from '../../hooks/useHandler';
 import { isPlainText } from '../../helpers/message/messages';
-import { MailSettings } from '../../models/utils';
 import { Upload } from '../../helpers/upload';
+import { useMessage } from '../../hooks/useMessage';
+import { useInitializeMessage } from '../../hooks/useMessageReadActions';
+import { useCreateDraft, useSaveDraft, useDeleteDraft, useUpdateAttachments } from '../../hooks/useMessageWriteActions';
+import { useSendMessage } from '../../hooks/useSendMessage';
 
 enum ComposerInnerModal {
     None,
@@ -50,7 +52,7 @@ export interface PendingUpload {
  * Almost a standard deep merge but simplified with specific needs
  * m2 props will override those from m1
  */
-const mergeMessages = (m1: MessageExtended, m2: MessageExtended): MessageExtended => ({
+const mergeMessages = (m1: MessageExtended, m2: Partial<MessageExtended>): MessageExtended => ({
     ...m1,
     ...m2,
     data: { ...m1.data, ...m2.data }
@@ -83,24 +85,13 @@ const computeStyle = (
 interface Props {
     style?: CSSProperties;
     focus: boolean;
-    message?: MessageExtended;
-    mailSettings: MailSettings;
+    messageID: string;
     addresses: Address[];
     onFocus: () => void;
-    onChange: (message: MessageExtended) => void;
     onClose: () => void;
 }
 
-const Composer = ({
-    style: inputStyle = {},
-    focus,
-    message: inputMessage = {},
-    mailSettings,
-    addresses,
-    onFocus,
-    onChange,
-    onClose: inputOnClose
-}: Props) => {
+const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus, onClose: inputOnClose }: Props) => {
     const api = useApi();
     const [width, height] = useWindowSize();
     const { createNotification } = useNotifications();
@@ -128,7 +119,12 @@ const Composer = ({
     const [innerModal, setInnerModal] = useState(ComposerInnerModal.None);
 
     // Model value of the edited message in the composer
-    const [modelMessage, setModelMessage] = useState<MessageExtended>(inputMessage);
+    const [modelMessage, setModelMessage] = useState<MessageExtended>({
+        localID: messageID,
+        data: {
+            Subject: '' // Needed fot the subject input controlled field
+        }
+    });
 
     // Pending files to upload
     const [pendingFiles, setPendingFiles] = useState<File[]>();
@@ -137,11 +133,18 @@ const Composer = ({
     const [pendingUploads, setPendingUploads] = useState<PendingUpload[]>();
 
     // Synced with server version of the edited message
-    const [
-        syncedMessage,
-        { initialize, createDraft, saveDraft, send, deleteDraft, updateAttachments },
-        { lock: syncLock, current: syncActivity }
-    ] = useMessage(inputMessage, mailSettings);
+    const { message: syncedMessage, addAction } = useMessage(messageID);
+
+    // All message actions
+    const initialize = useInitializeMessage(syncedMessage.localID);
+    const createDraft = useCreateDraft();
+    const saveDraft = useSaveDraft();
+    const sendMessage = useSendMessage();
+    const deleteDraft = useDeleteDraft(syncedMessage);
+    const updateAttachments = useUpdateAttachments(syncedMessage);
+
+    const syncLock = syncedMessage.actionStatus !== undefined;
+    const syncActivity = syncedMessage.actionStatus || '';
 
     // Manage focus from the container yet keeping logic in each component
     const addressesBlurRef = useRef<() => void>(noop);
@@ -157,18 +160,16 @@ const Composer = ({
 
     useEffect(() => {
         if (!syncLock && !syncedMessage.data?.ID) {
-            createDraft(inputMessage);
+            addAction(() => createDraft(syncedMessage));
         }
 
         if (!syncLock && syncedMessage.data?.ID && typeof syncedMessage.initialized === 'undefined') {
-            initialize();
+            addAction(initialize);
         }
 
         if (modelMessage.document === undefined) {
             setModelMessage({ ...modelMessage, data: syncedMessage.data, document: syncedMessage.document });
         }
-
-        onChange(syncedMessage);
     }, [syncLock, syncedMessage]);
 
     useEffect(() => {
@@ -195,13 +196,14 @@ const Composer = ({
         setOpening(false);
     }, [editorReady]);
 
-    const autoSave = useCallback(
-        debounce(async (message: MessageExtended) => {
-            await saveDraft(message);
-        }, 2000),
-        [saveDraft]
+    const autoSave = useHandler(
+        (message: MessageExtended) => {
+            addAction(() => saveDraft(message));
+        },
+        { debounce: 2000 }
     );
-    const handleChange = (message: MessageExtended) => {
+
+    const handleChange = (message: Partial<MessageExtended>) => {
         const newModelMessage = mergeMessages(modelMessage, message);
         setModelMessage(newModelMessage);
         autoSave(newModelMessage);
@@ -233,7 +235,7 @@ const Composer = ({
         removePendingUpload(pendingUpload);
 
         const uploadResult = await pendingUpload.upload.resultPromise; // should be instant
-        const updatedMessage = await updateAttachments([uploadResult], action);
+        const updatedMessage = await addAction(() => updateAttachments([uploadResult], action));
         const Attachments = getAttachments(updatedMessage.data);
 
         const newModelMessage = mergeMessages(modelMessage, { data: { Attachments } });
@@ -297,13 +299,13 @@ const Composer = ({
         await save();
     };
     const handleSend = async () => {
-        await send(modelMessage);
+        await addAction(() => sendMessage(syncedMessage));
         createNotification({ text: c('Success').t`Message sent` });
         onClose();
     };
     const handleDelete = async () => {
         setClosing(true);
-        await deleteDraft();
+        await addAction(deleteDraft);
         createNotification({ text: c('Info').t`Message discarded` });
         onClose();
     };

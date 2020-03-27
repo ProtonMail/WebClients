@@ -42,7 +42,7 @@ export const extractEmbedded = (attachments: Attachment[] = [], document: Elemen
 /**
  * Find embedded images in the document and return a map based on the CID
  */
-export const find = (message: MessageExtended = {}, document: Element) => {
+export const find = (message: MessageExtended, document: Element) => {
     const attachements = getAttachments(message.data);
 
     if (!attachements.length || !document) {

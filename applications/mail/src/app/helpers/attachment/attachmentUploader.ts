@@ -7,9 +7,8 @@ import { getAttachments } from '../message/messages';
 import { readFileAsBuffer } from '../file';
 import { uploadAttachment } from '../../api/attachments';
 import { Attachment } from '../../models/attachment';
-import { generateCid, readCID, createBlob, createEmbeddedMap, isEmbeddable } from '../embedded/embeddeds';
+import { generateCid, isEmbeddable } from '../embedded/embeddeds';
 import { generateUID } from '../string';
-import { Computation } from '../../hooks/useMessage';
 import { Upload, upload as uploadHelper, RequestParams } from '../upload';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
@@ -133,7 +132,7 @@ const uploadFile = (
  */
 export const upload = (
     files: File[] = [],
-    message: MessageExtended = {},
+    message: MessageExtended,
     action = ATTACHMENT_ACTION.ATTACHMENT,
     uid: string,
     cid = ''
@@ -142,31 +141,4 @@ export const upload = (
         const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;
         return uploadFile(file, message, inline, uid, cid);
     });
-};
-
-/**
- * Returns a `useMessage` computation to modify the message to include the newly uploaded files
- * Deals with the attachment action (attachment or embedded)
- */
-export const getUpdateAttachmentsComputation = (
-    uploads: UploadResult[],
-    action = ATTACHMENT_ACTION.ATTACHMENT
-): Computation => (message: MessageExtended) => {
-    // New attachment list
-    const newAttachments = uploads.map((upload) => upload.attachment);
-    const attachments = [...getAttachments(message.data), ...newAttachments];
-
-    // Update embeddeds map if embedded attachments
-    const embeddeds = message.embeddeds || createEmbeddedMap();
-
-    if (action === ATTACHMENT_ACTION.INLINE) {
-        uploads.forEach((upload) =>
-            embeddeds.set(readCID(upload.attachment), {
-                attachment: upload.attachment,
-                url: createBlob(upload.attachment, upload.packets.Preview)
-            })
-        );
-    }
-
-    return { data: { ...message.data, Attachments: attachments }, embeddeds };
 };

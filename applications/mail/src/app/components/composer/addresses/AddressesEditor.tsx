@@ -13,7 +13,7 @@ interface Props {
     message: MessageExtended;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
-    onChange: (message: MessageExtended) => void;
+    onChange: (message: Partial<MessageExtended>) => void;
     expanded: boolean;
     toggleExpanded: () => void;
     inputFocusRef: MutableRefObject<() => void>;

@@ -2,7 +2,7 @@ import mimemessage from 'mimemessage';
 
 import { ucFirst, toUnsignedString } from '../string';
 import { Attachment } from '../../models/attachment';
-import { escape } from '../transforms/transformEscape';
+import { transformEscape } from '../transforms/transformEscape';
 import { hash } from '../string';
 import { EmbeddedInfo } from '../../models/message';
 
@@ -15,7 +15,7 @@ export const REGEXP_CID_START = /^cid:/g;
 /**
  * Flush the container HTML and return the container
  */
-export const getBodyParser = (content = '') => escape(content);
+export const getBodyParser = (content = '') => transformEscape(content);
 
 /**
  * Removes enclosing quotes ("", '', &lt;&gt;) from a string

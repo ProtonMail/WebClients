@@ -88,7 +88,7 @@ export const getDecryptedAttachment = async (
 
 export const getAndVerify = async (
     attachment: Attachment = {},
-    message: MessageExtended = {},
+    message: MessageExtended,
     reverify = false,
     cache: AttachmentsCache,
     api: Api
@@ -118,7 +118,7 @@ export const getAndVerify = async (
 
 export const get = (
     attachment: Attachment = {},
-    message: MessageExtended = {},
+    message: MessageExtended,
     cache: AttachmentsCache,
     api: Api
 ): Promise<DecryptResult> => {
@@ -128,7 +128,7 @@ export const get = (
 
 export const reverify = (
     attachment: Attachment = {},
-    message: MessageExtended = {},
+    message: MessageExtended,
     cache: AttachmentsCache,
     api: Api
 ): Promise<DecryptResult> => {

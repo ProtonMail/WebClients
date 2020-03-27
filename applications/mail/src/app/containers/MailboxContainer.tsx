@@ -122,7 +122,7 @@ const MailboxContainer = ({
     const handleElement = (element: Element) => {
         history.push(setPathInUrl(location, labelID, element.ID));
         if (isMessage(element) && isDraft(element)) {
-            onCompose({ existingDraft: { data: element } });
+            onCompose({ existingDraft: { localID: element.ID as string, data: element } });
         }
     };
     const handleBack = () => history.push(setPathInUrl(location, labelID));

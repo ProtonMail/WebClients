@@ -52,23 +52,6 @@ interface Cache {
 
 const emptyCache = (page: Page, params: CacheParams): Cache => ({ params, page, elements: {}, pages: [] });
 
-// /**
-//  * Listen to event manager once but allow the handler to be updated in time
-//  */
-// const useSubscribeEventManager = (handler: (event: any) => void) => {
-//     const { subscribe } = useEventManager();
-//     const handlerRef = useRef<(event: any) => void>(noop);
-
-//     useEffect(() => {
-//         handlerRef.current = handler;
-//     }, [handler]);
-
-//     useEffect(() => {
-//         const actualHandler = (event: any) => handlerRef.current(event);
-//         return subscribe(actualHandler);
-//     }, []);
-// };
-
 export const useElements = ({
     conversationMode,
     labelID,

@@ -31,7 +31,7 @@ interface Props {
     onClose: () => void;
 }
 
-const ComposerTitleBar = ({ message = {}, minimized, maximized, toggleMinimized, toggleMaximized, onClose }: Props) => {
+const ComposerTitleBar = ({ message, minimized, maximized, toggleMinimized, toggleMaximized, onClose }: Props) => {
     const title = message.data?.Subject || c('Title').t`New message`;
 
     return (

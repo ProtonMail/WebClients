@@ -19,6 +19,7 @@ import { attachSubPackages } from '../helpers/send/sendSubPackages';
 import { encryptPackages } from '../helpers/send/sendEncrypt';
 import { prepareAndEncryptBody } from '../helpers/message/messageExport';
 import { useAttachmentCache } from '../containers/AttachmentProvider';
+import { updateMessageCache, useMessageCache } from '../containers/MessageProvider';
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
 
@@ -31,6 +32,7 @@ export const useSendMessage = () => {
     const api = useApi();
     const attachmentCache = useAttachmentCache();
     const { call } = useEventManager();
+    const messageCache = useMessageCache();
 
     return useCallback(
         async (inputMessage: MessageExtended) => {
@@ -74,7 +76,10 @@ export const useSendMessage = () => {
             await call();
 
             // console.log('Sent', Sent);
-            return { data: Sent };
+            // return { data: Sent };
+
+            updateMessageCache(messageCache, inputMessage.localID, { data: Sent });
+
             // } catch (e) {
             //     if (retry && e.data.Code === API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED) {
             //         sendPreferences.clearCache();

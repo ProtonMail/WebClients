@@ -9,9 +9,9 @@ const ELEMENTS = [
     }
 ];
 
-const getBaseURL = (base) => {
+const getBaseURL = (base: HTMLBaseElement) => {
     // Make sure base has trailing slash
-    const baseUrl = base.getAttribute('href');
+    const baseUrl = base.getAttribute('href') || '';
     if (baseUrl.substr(-1, 1) !== '/') {
         return `${baseUrl}/`;
     }
@@ -20,10 +20,10 @@ const getBaseURL = (base) => {
 
 /**
  * Append base url to any href/src if we need to
- * @param  {Node} html HTML document from DOMPurify
- * @return {Node}      Dom based
+ * @param   html HTML document from DOMPurify
+ * @return      Dom based
  */
-export const transformBase = ({ document }) => {
+export const transformBase = (document: Element) => {
     const base = document.querySelector('base');
 
     if (!base || !base.getAttribute('href')) {
@@ -33,7 +33,7 @@ export const transformBase = ({ document }) => {
     // Make sure base has trailing slash
     const BASE_URL = getBaseURL(base);
 
-    const bindAttribute = (node, key, value = '') => {
+    const bindAttribute = (node: Element, key: string, value = '') => {
         if (!value.startsWith('http')) {
             node.setAttribute(key, BASE_URL + value);
         }
@@ -55,6 +55,4 @@ export const transformBase = ({ document }) => {
             ptValue && bindAttribute(el, keyproton, ptValue);
         });
     });
-
-    return { document };
 };

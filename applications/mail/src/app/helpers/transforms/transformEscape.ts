@@ -2,7 +2,6 @@ import { uniqID } from '../string';
 import { protonizer as purifyHTML } from '../purify';
 import { parseInDiv } from '../dom';
 
-import { Computation } from '../../hooks/useMessage';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 
 /*
@@ -86,19 +85,10 @@ const escapeSVG = (input = '') => input.replace(REGEXP_SVG_BREAK, '$1proton-$2')
  * in order to bind the base if it exists
  * @param message Message to escape
  * @param action Type of action
- * @return
  */
-export const escape = (content = '', cache?: Base64Cache) => {
+export const transformEscape = (content = '', cache?: Base64Cache) => {
     const value = removeBase64(content, cache);
     const activeHooks = true; // action !== 'user.inject';
     const document = purifyHTML(escapeSVG(value), activeHooks) as Element;
     return document;
-};
-
-/**
- * Computation form of the escape content for a message
- */
-export const transformEscape: Computation = ({ decryptedBody }, { base64Cache }) => {
-    const document = escape(decryptedBody || '', base64Cache);
-    return { document };
 };

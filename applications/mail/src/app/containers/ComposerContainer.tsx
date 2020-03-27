@@ -1,6 +1,6 @@
 import React, { ReactNode, useState, CSSProperties } from 'react';
 import { c } from 'ttag';
-import { useMailSettings, useAddresses, useWindowSize, useNotifications, generateUID } from 'react-components';
+import { useAddresses, useWindowSize, useNotifications } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 
 import { MessageExtended } from '../models/message';
@@ -71,23 +71,22 @@ interface Props {
 }
 
 const ComposerContainer = ({ children }: Props) => {
-    const [mailSettings, loadingSettings] = useMailSettings();
     const [addresses, loadingAddresses] = useAddresses();
 
     // Handling simple Message would have been simpler
     // But in order to create new drafts from here, MessageExtended was mandatory
-    const [messages, setMessages] = useState<MessageExtended[]>([]);
-    const [focusedMessage, setFocusedMessage] = useState<MessageExtended | undefined>();
+    const [messageIDs, setMessageIDs] = useState<string[]>([]);
+    const [focusedMessageID, setFocusedMessageID] = useState<string | undefined>();
     const [width, height] = useWindowSize();
     const { createNotification } = useNotifications();
     const createDraft = useDraft();
 
-    if (loadingSettings || loadingAddresses) {
+    if (loadingAddresses) {
         return null;
     }
 
     const handleCompose = (composeArgs: ComposeArgs) => {
-        if (messages.length >= 3) {
+        if (messageIDs.length >= 3) {
             createNotification({
                 type: 'error',
                 text: c('Error').t`Maximum composer reached`
@@ -102,62 +101,60 @@ const ComposerContainer = ({ children }: Props) => {
         if (composeExisting) {
             const { existingDraft } = composeExisting;
 
-            const existingMessage = messages.find((m) => m.data?.ID === existingDraft.data?.ID);
-            if (existingMessage) {
-                setFocusedMessage(existingMessage);
+            const existingMessageID = messageIDs.find((id) => id === existingDraft.localID);
+            if (existingMessageID) {
+                setFocusedMessageID(existingMessageID);
                 return;
             }
 
-            setMessages([...messages, existingDraft]);
-            existingDraft.localID = existingDraft.data?.ID;
-            setFocusedMessage(existingDraft);
+            setMessageIDs([...messageIDs, existingDraft.localID]);
+            // existingDraft.localID = existingDraft.data?.ID;
+            setFocusedMessageID(existingDraft.localID);
             return;
         }
 
         if (composeNew) {
             const { action, referenceMessage } = composeNew;
-            const newMessage = createDraft(action, referenceMessage);
-            newMessage.localID = generateUID('draft');
-            setMessages([...messages, newMessage]);
-            setFocusedMessage(newMessage);
+            const newMessageID = createDraft(action, referenceMessage);
+            // newMessage.localID = generateUID('draft');
+            setMessageIDs([...messageIDs, newMessageID]);
+            setFocusedMessageID(newMessageID);
         }
     };
-    const handleChange = (oldMessage: MessageExtended) => (newMessage: MessageExtended) => {
-        const newMessages = [...messages];
-        newMessages[newMessages.indexOf(oldMessage)] = newMessage;
-        setMessages(newMessages);
-        if (oldMessage === focusedMessage) {
-            setFocusedMessage(newMessage);
+    // const handleChange = (oldMessage: MessageExtended) => (newMessage: MessageExtended) => {
+    //     const newMessages = [...messages];
+    //     newMessages[newMessages.indexOf(oldMessage)] = newMessage;
+    //     setMessages(newMessages);
+    //     if (oldMessage === focusedMessage) {
+    //         setFocusedMessage(newMessage);
+    //     }
+    // };
+    const handleClose = (messageID: string) => () => {
+        const newMessageIDs = messageIDs.filter((id) => id !== messageID);
+        setMessageIDs(newMessageIDs);
+        if (newMessageIDs.length > 0) {
+            setFocusedMessageID(newMessageIDs[0]);
         }
     };
-    const handleClose = (message: MessageExtended) => () => {
-        const newMessages = messages.filter((m) => m !== message);
-        setMessages(newMessages);
-        if (newMessages.length > 0) {
-            setFocusedMessage(newMessages[0]);
-        }
-    };
-    const handleFocus = (message: MessageExtended) => () => {
-        setFocusedMessage(message);
+    const handleFocus = (messageID: string) => () => {
+        setFocusedMessageID(messageID);
     };
 
-    const rightPositions = computeRightPositions(messages.length, width);
+    const rightPositions = computeRightPositions(messageIDs.length, width);
 
     return (
         <>
             {children({ onCompose: handleCompose })}
             <div className="composer-container">
-                {messages.map((message, i) => (
+                {messageIDs.map((messageID, i) => (
                     <Composer
-                        key={message.localID}
-                        style={computeStyle(i, message === focusedMessage, rightPositions, height)}
-                        message={message}
-                        focus={message === focusedMessage}
-                        mailSettings={mailSettings}
+                        key={messageID}
+                        style={computeStyle(i, messageID === focusedMessageID, rightPositions, height)}
+                        messageID={messageID}
+                        focus={messageID === focusedMessageID}
                         addresses={addresses}
-                        onFocus={handleFocus(message)}
-                        onChange={handleChange(message)}
-                        onClose={handleClose(message)}
+                        onFocus={handleFocus(messageID)}
+                        onClose={handleClose(messageID)}
                     />
                 ))}
             </div>

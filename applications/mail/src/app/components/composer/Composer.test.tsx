@@ -1,14 +1,8 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
 
-import { clearAll, render, tick } from '../../helpers/test/helper';
+import { clearAll, render, tick, messageCache } from '../../helpers/test/helper';
 import Composer from './Composer';
-import * as MessageProviderMock from '../../containers/MessageProvider';
-
-// Needed to make TS accepts the mock exports
-const cacheMock: MessageProviderMock.MessageCache = (MessageProviderMock as any).cacheMock;
-
-jest.mock('../../containers/MessageProvider');
 
 const ID = 'ID';
 
@@ -37,9 +31,9 @@ describe('Composer', () => {
             }
         };
 
-        cacheMock.set(ID, message);
+        messageCache.set(ID, message);
 
-        const { getByTestId, getByText, queryByText } = await render(<Composer {...props} message={message} />);
+        const { getByTestId, getByText, queryByText } = await render(<Composer {...props} messageID={ID} />);
 
         const inputAttachment = getByTestId('composer-attachments-button') as HTMLInputElement;
 

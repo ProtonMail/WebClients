@@ -49,7 +49,7 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
                 console.warn('Event type UPDATE_DRAFT on Conversation not supported', Conversations);
             }
             if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                const currentValue = cache.get(ID);
+                const currentValue = cache.get(ID) as ConversationResult;
 
                 cache.set(ID, {
                     Conversation: parseLabelIDsInEvent(currentValue.Conversation, Conversation),
@@ -64,16 +64,23 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
     };
 };
 
+interface Props {
+    children?: ReactNode;
+    cache?: ConversationCache; // Only for testing purposes
+}
+
 /**
  * Provider for the message cache and listen to event manager for updates
  */
-const ConversationProvider = ({ children }: { children?: ReactNode }) => {
+const ConversationProvider = ({ children, cache: testCache }: Props) => {
     const { subscribe } = useEventManager();
     const api = useApi();
 
-    const cache: ConversationCache = useInstance(() => {
+    const realCache: ConversationCache = useInstance(() => {
         return createCache(createLRU({ max: 50 } as any));
     });
+
+    const cache = testCache || realCache;
 
     useEffect(() => subscribe(conversationListener(cache, api)), []);
 

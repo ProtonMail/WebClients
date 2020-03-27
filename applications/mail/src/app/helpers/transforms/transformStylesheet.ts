@@ -1,5 +1,5 @@
-export const transformStylesheet = ({ document }) => {
-    const firstElement = document.firstElementChild;
+export const transformStylesheet = (document: Element) => {
+    const firstElement = document.firstElementChild as HTMLElement | null;
 
     /**
      * Some emails from ex: tripit contains a position absolute on the container
@@ -10,5 +10,4 @@ export const transformStylesheet = ({ document }) => {
     if (firstElement && /absolute/.test(firstElement.style.position)) {
         firstElement.style.position = 'inherit';
     }
-    return { document };
 };

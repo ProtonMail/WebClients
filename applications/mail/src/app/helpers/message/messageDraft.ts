@@ -13,10 +13,11 @@ import { insertSignature } from './messageSignature';
 import { formatFullDate } from '../date';
 import { recipientToInput } from '../addresses';
 import { getDate } from '../elements';
-import { isSent, isSentAndReceived } from './messages';
+import { isSent, isSentAndReceived, getOriginalTo } from './messages';
 import { getContent } from './messageContent';
 import { EmbeddedInfo } from '../../models/message';
 import { parseInDiv } from '../dom';
+import { generateUID } from 'react-components';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -41,7 +42,7 @@ const newCopy = (
     {
         data: { Subject = '', ToList = [], CCList = [], BCCList = [] } = {},
         encryptedSubject = ''
-    }: MessageExtended = {},
+    }: Partial<MessageExtended> = {},
     useEncrypted = false
 ): Message => {
     return {
@@ -55,7 +56,7 @@ const newCopy = (
 /**
  * Format and build a reply
  */
-const reply = (referenceMessage: MessageExtended = {}, useEncrypted = false): Message => {
+const reply = (referenceMessage: Partial<MessageExtended> = {}, useEncrypted = false): Message => {
     const Subject = formatSubject(
         useEncrypted ? referenceMessage.encryptedSubject : referenceMessage.data?.Subject,
         RE_PREFIX
@@ -74,7 +75,11 @@ const reply = (referenceMessage: MessageExtended = {}, useEncrypted = false): Me
 /**
  * Format and build a replyAll
  */
-const replyAll = (referenceMessage: MessageExtended = {}, useEncrypted = false, addresses: Address[]): Message => {
+const replyAll = (
+    referenceMessage: Partial<MessageExtended> = {},
+    useEncrypted = false,
+    addresses: Address[]
+): Message => {
     const { data = {}, encryptedSubject = '' } = referenceMessage;
 
     const Subject = formatSubject(useEncrypted ? encryptedSubject : data.Subject, RE_PREFIX);
@@ -98,7 +103,10 @@ const replyAll = (referenceMessage: MessageExtended = {}, useEncrypted = false, 
 /**
  * Format and build a forward
  */
-const forward = ({ data = {}, encryptedSubject = '' }: MessageExtended = {}, useEncrypted = false): Message => {
+const forward = (
+    { data = {}, encryptedSubject = '' }: Partial<MessageExtended> = {},
+    useEncrypted = false
+): Message => {
     const Subject = formatSubject(useEncrypted ? encryptedSubject : data.Subject, FW_PREFIX);
 
     return { Subject, ToList: [] };
@@ -106,12 +114,12 @@ const forward = ({ data = {}, encryptedSubject = '' }: MessageExtended = {}, use
 
 export const handleActions = (
     action: MESSAGE_ACTIONS,
-    referenceMessage: MessageExtended = {},
+    referenceMessage: Partial<MessageExtended> = {},
     addresses: Address[] = []
 ): Message => {
     // TODO: I would prefere manage a confirm modal from elsewhere
     // const useEncrypted = !!referenceMessage.encryptedSubject && (await promptEncryptedSubject(currentMsg));
-    const useEncrypted = !!referenceMessage.encryptedSubject;
+    const useEncrypted = !!referenceMessage?.encryptedSubject;
 
     switch (action) {
         case MESSAGE_ACTIONS.NEW:
@@ -129,9 +137,9 @@ export const handleActions = (
 /**
  * Generate blockquote of the referenced message to the content of the new mail
  */
-const generateBlockquote = (referenceMessage: MessageExtended) => {
-    const date = formatFullDate(getDate(referenceMessage.data));
-    const sender = recipientToInput(referenceMessage.data?.Sender);
+const generateBlockquote = (referenceMessage: Partial<MessageExtended>) => {
+    const date = formatFullDate(getDate(referenceMessage?.data));
+    const sender = recipientToInput(referenceMessage?.data?.Sender);
     const previously = c('Message').t`On ${date}, ${sender} wrote:`;
 
     // TODO
@@ -145,18 +153,18 @@ const generateBlockquote = (referenceMessage: MessageExtended) => {
         ${ORIGINAL_MESSAGE}<br>
         ${previously}<br>
         <blockquote class="protonmail_quote" type="cite">
-            ${getContent(referenceMessage)}
+            ${getContent(referenceMessage || {})}
         </blockquote><br>
     </div>`;
 };
 
 export const createNewDraft = (
     action: MESSAGE_ACTIONS,
-    referenceMessage: MessageExtended = {},
+    referenceMessage: Partial<MessageExtended> | undefined,
     mailSettings: MailSettings,
     addresses: Address[]
 ): MessageExtended => {
-    const MIMEType = referenceMessage.data?.MIMEType || mailSettings.DraftMIMEType;
+    const MIMEType = referenceMessage?.data?.MIMEType || mailSettings.DraftMIMEType;
     const RightToLeft = mailSettings.RightToLeft;
 
     let Flags = 0;
@@ -169,9 +177,9 @@ export const createNewDraft = (
 
     const { Subject, ToList = [], CCList = [], BCCList = [] } = handleActions(action, referenceMessage, addresses);
 
-    const originalTo = referenceMessage.originalTo;
+    const originalTo = getOriginalTo(referenceMessage?.data);
 
-    const senderAddress = findSender(addresses, referenceMessage.data);
+    const senderAddress = findSender(addresses, referenceMessage?.data);
 
     const AddressID = senderAddress?.ID; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
     const Sender = {
@@ -182,18 +190,19 @@ export const createNewDraft = (
     const embeddeds: EmbeddedMap = new Map<string, EmbeddedInfo>();
     const Attachments: Attachment[] = [];
 
-    referenceMessage.embeddeds?.forEach((value, key) => {
+    referenceMessage?.embeddeds?.forEach((value, key) => {
         embeddeds.set(key, value);
         Attachments.push(value.attachment);
     });
 
-    const ParentID = action === MESSAGE_ACTIONS.NEW ? undefined : referenceMessage.data?.ID;
+    const ParentID = action === MESSAGE_ACTIONS.NEW ? undefined : referenceMessage?.data?.ID;
 
-    let content = action === MESSAGE_ACTIONS.NEW ? '' : generateBlockquote(referenceMessage);
+    let content = action === MESSAGE_ACTIONS.NEW ? '' : generateBlockquote(referenceMessage || {});
     content = insertSignature(content, senderAddress?.Signature, action, mailSettings);
     const document = parseInDiv(content);
 
     return {
+        localID: generateUID('draft'),
         data: {
             ToList,
             CCList,

@@ -10,7 +10,7 @@ import { MESSAGE_FLAGS } from '../../constants';
 interface Props {
     message?: Message;
     onClose: () => void;
-    onChange: (message: MessageExtended) => void;
+    onChange: (message: Partial<MessageExtended>) => void;
 }
 
 const ComposerPasswordModal = ({ message = {}, onClose, onChange }: Props) => {

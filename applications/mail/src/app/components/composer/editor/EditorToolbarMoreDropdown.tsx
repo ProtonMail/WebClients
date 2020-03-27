@@ -21,7 +21,7 @@ const getClassname = (status: boolean) => (status ? undefined : 'nonvisible');
 interface Props {
     message: MessageExtended;
     squireRef: MutableRefObject<SquireType>;
-    onChange: (message: MessageExtended) => void;
+    onChange: (message: Partial<MessageExtended>) => void;
     onChangeFlag: (changes: Map<number, boolean>) => void;
 }
 

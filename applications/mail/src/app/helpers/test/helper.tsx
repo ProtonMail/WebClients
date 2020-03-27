@@ -7,6 +7,8 @@ import createCache from 'proton-shared/lib/helpers/cache';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { STATUS } from 'proton-shared/lib/models/cache';
 import AuthenticationProvider from 'react-components/containers/authentication/Provider';
+import MessageProvider, { MessageCache } from '../../containers/MessageProvider';
+import ConversationProvider, { ConversationCache } from '../../containers/ConversationProvider';
 
 type ApiMock = {
     [url: string]: (...arg: any[]) => any;
@@ -37,6 +39,8 @@ export const clearApiMocks = () => {
 };
 
 export const cache = createCache();
+export const messageCache = createCache() as MessageCache;
+export const conversationCache = createCache() as ConversationCache;
 
 export const addToCache = (key: string, value: any) => {
     cache.set(key, { status: STATUS.RESOLVED, value });
@@ -52,6 +56,8 @@ export const minimalCache = () => {
 export const clearAll = () => {
     clearApiMocks();
     clearCache();
+    messageCache.reset();
+    conversationCache.reset();
 };
 
 interface Props {
@@ -64,7 +70,11 @@ const TestProvider = ({ children }: Props) => {
             <NotificationsProvider>
                 <ModalsProvider>
                     <AuthenticationProvider store={authentication}>
-                        <CacheProvider cache={cache}>{children}</CacheProvider>
+                        <CacheProvider cache={cache}>
+                            <MessageProvider cache={messageCache}>
+                                <ConversationProvider cache={conversationCache}>{children}</ConversationProvider>
+                            </MessageProvider>
+                        </CacheProvider>
                     </AuthenticationProvider>
                 </ModalsProvider>
             </NotificationsProvider>

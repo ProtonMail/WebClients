@@ -9,7 +9,7 @@ import { Address } from 'proton-shared/lib/interfaces';
 import { textToHtml } from '../textToHtml';
 import { parseInDiv } from '../dom';
 
-export const getPlainTextContent = (message: MessageExtended) => {
+export const getPlainTextContent = (message: Partial<MessageExtended>) => {
     return message.plainText || '';
 };
 
@@ -21,7 +21,7 @@ export const getDocumentContent = (document: Element | undefined) => {
 /**
  * Get current processed message document html content
  */
-export const getContent = (message: MessageExtended) => {
+export const getContent = (message: Partial<MessageExtended>) => {
     if (isPlainText(message.data)) {
         return getPlainTextContent(message);
     }

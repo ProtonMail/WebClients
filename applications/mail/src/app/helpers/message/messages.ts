@@ -3,7 +3,8 @@ import { hasBit, setBit, clearBit, toggleBit } from 'proton-shared/lib/helpers/b
 import { identity } from 'proton-shared/lib/helpers/function';
 
 import { MESSAGE_FLAGS, SIGNATURE_START } from '../../constants';
-import { Message } from '../../models/message';
+import { Message, MessageExtended } from '../../models/message';
+import { setContent, getContent } from './messageContent';
 
 const {
     FLAG_RECEIVED,
@@ -176,11 +177,15 @@ export const getParsedHeaders = (message: Message, parameter: string) => {
     return ParsedHeaders;
 };
 
-export const getListUnsubscribe = (message: Message) => {
+export const getOriginalTo = (message: Message = {}) => {
+    return getParsedHeaders(message, 'X-Original-To') || '';
+};
+
+export const getListUnsubscribe = (message: Message = {}) => {
     return getParsedHeaders(message, 'List-Unsubscribe') || '';
 };
 
-export const getListUnsubscribePost = (message: Message) => {
+export const getListUnsubscribePost = (message: Message = {}) => {
     return getParsedHeaders(message, 'List-Unsubscribe-Post') || '';
 };
 
@@ -211,4 +216,19 @@ export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
         autoReplyHeaders.some((h) => h in ParsedHeaders) ||
         autoReplyHeaderValues.some(([k, v]) => k in ParsedHeaders && ParsedHeaders[k].toLowerCase() === v)
     );
+};
+
+/**
+ * Apply updates from the message model to the message in state
+ */
+export const mergeMessages = (messageState: MessageExtended, messageModel: Partial<MessageExtended>) => {
+    if (messageState.document) {
+        setContent(messageState, getContent(messageModel));
+    }
+    const message = {
+        ...messageState,
+        ...messageModel,
+        data: { ...messageState.data, ...messageModel.data }
+    };
+    return message;
 };

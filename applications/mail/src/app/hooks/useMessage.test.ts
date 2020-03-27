@@ -1,23 +1,14 @@
-import { act } from '@testing-library/react-hooks';
-import { wait } from 'proton-shared/lib/helpers/promise';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { useMessage } from './useMessage';
-import * as MessageProviderMock from '../containers/MessageProvider';
-import { renderHook, clearAll, addApiMock } from '../helpers/test/helper';
-
-// Needed to make TS accepts the mock exports
-const cacheMock: MessageProviderMock.MessageCache = (MessageProviderMock as any).cacheMock;
-
-jest.mock('../containers/MessageProvider');
+import { renderHook, clearAll, messageCache, tick } from '../helpers/test/helper';
 
 describe('useMessage', () => {
     let consoleError: any;
 
     const ID = 'ID';
 
-    const setup = (props: any = {}) =>
-        renderHook(() => useMessage({ localID: ID, ...props, data: { ID, ...props.data } }, {}));
+    const setup = (localID: string) => renderHook((id = localID) => useMessage(id));
 
     beforeAll(() => {
         consoleError = console.error;
@@ -30,69 +21,56 @@ describe('useMessage', () => {
 
     afterEach(() => {
         jest.clearAllMocks();
-        cacheMock.reset();
         clearAll();
     });
 
     describe('message state', () => {
         it('should initialize message in cache if not existing', () => {
-            const hook = setup();
-            expect(hook.result.current[0]).toEqual({ localID: ID, data: { ID } });
+            const hook = setup(ID);
+            expect(hook.result.current.message).toEqual({ localID: ID });
         });
 
         it('should returns message from the cache', () => {
-            const message = {};
-            cacheMock.set(ID, message);
-            const hook = setup();
-            expect(hook.result.current[0]).toBe(message);
+            const message = { localID: ID, data: {} };
+            messageCache.set(ID, message);
+            const hook = setup(ID);
+            expect(hook.result.current.message).toBe(message);
         });
     });
 
     describe('message actions', () => {
-        it('should wait the computations to resolve the promise', async () => {
-            let resolve: (arg: any) => void = noop;
-            addApiMock(
-                'messages',
-                () =>
-                    new Promise((r) => {
-                        resolve = r;
-                    })
-            );
-            const hook = setup();
-            const promise = act(async () => {
-                await hook.result.current[1].createDraft({});
-            });
-            expect(hook.result.current[2].lock).toBe(true);
-            await wait(0);
-            expect(hook.result.current[2].lock).toBe(true);
-            resolve({ Message: {} });
-            expect(hook.result.current[2].lock).toBe(true);
-            await promise;
-            expect(hook.result.current[2].lock).toBe(false);
-        });
+        it('should add the action to the queue', async () => {
+            let resolve: () => void = noop;
+            const action = () =>
+                new Promise((r) => {
+                    resolve = r;
+                });
 
-        it('should create a draft with the appropriate helper', async () => {
-            addApiMock('messages', () => ({ Message: { ID } }));
-            const hook = setup();
-            await act(async () => {
-                await hook.result.current[1].createDraft({});
-            });
-            expect(hook.result.current[0].data).toEqual({ ID });
+            const hook = setup(ID);
+            hook.result.current.addAction(action);
+
+            expect(hook.result.current.message?.actionStatus).not.toBeUndefined();
+            expect(hook.result.current.message?.actionQueue?.length).toBe(0);
+
+            resolve();
+            await tick();
+
+            expect(hook.result.current.message?.actionStatus).toBeUndefined();
         });
     });
 
     describe('cache id management', () => {
         it('should handle new draft with no id', async () => {
             const localID = 'localID';
-            addApiMock('messages', () => ({ Message: { ID } }));
 
-            const hook = setup({ localID, data: { ID: undefined } });
-            expect(hook.result.current[0].localID).toBe(localID);
-            await act(async () => {
-                await hook.result.current[1].createDraft(hook.result.current[0]);
-            });
-            expect(hook.result.current[0].localID).toBe(localID);
-            expect(hook.result.current[0].data.ID).toBe(ID);
+            const hook = setup(localID);
+            expect(hook.result.current.message.localID).toBe(localID);
+            expect(hook.result.current.message.data).toBeUndefined();
+
+            messageCache.set(localID, { localID, data: { ID } });
+
+            expect(hook.result.current.message.localID).toBe(localID);
+            expect(hook.result.current.message.data.ID).toBe(ID);
         });
 
         it('should handle several new draft with no id', async () => {
@@ -100,40 +78,43 @@ describe('useMessage', () => {
             const localID2 = 'localID2';
             const ID1 = 'ID1';
             const ID2 = 'ID2';
-            addApiMock('messages', () => ({ Message: { ID: ID1 } }));
 
-            const hook1 = setup({ localID: localID1, data: { ID: undefined } });
-            const hook2 = setup({ localID: localID2, data: { ID: undefined } });
-            expect(hook2.result.current[0].localID).toBe(localID2);
-            await act(async () => {
-                await hook1.result.current[1].createDraft(hook1.result.current[0]);
-            });
-            expect(hook1.result.current[0].localID).toBe(localID1);
-            expect(hook2.result.current[0].localID).toBe(localID2);
-            expect(hook1.result.current[0].data.ID).toBe(ID1);
-            expect(hook2.result.current[0].data.ID).toBe(undefined);
+            const hook1 = setup(localID1);
+            const hook2 = setup(localID2);
 
-            addApiMock('messages', () => ({ Message: { ID: ID2 } }));
-            await act(async () => {
-                await hook2.result.current[1].createDraft(hook2.result.current[0]);
-            });
-            expect(hook1.result.current[0].localID).toBe(localID1);
-            expect(hook2.result.current[0].localID).toBe(localID2);
-            expect(hook1.result.current[0].data.ID).toBe(ID1);
-            expect(hook2.result.current[0].data.ID).toBe(ID2);
+            expect(hook1.result.current.message.localID).toBe(localID1);
+            expect(hook2.result.current.message.localID).toBe(localID2);
+
+            messageCache.set(localID1, { localID: localID1, data: { ID: ID1 } });
+
+            expect(hook1.result.current.message.localID).toBe(localID1);
+            expect(hook2.result.current.message.localID).toBe(localID2);
+            expect(hook1.result.current.message.data.ID).toBe(ID1);
+            expect(hook2.result.current.message.data).toBeUndefined();
+
+            messageCache.set(localID2, { localID: localID2, data: { ID: ID2 } });
+
+            expect(hook1.result.current.message.localID).toBe(localID1);
+            expect(hook2.result.current.message.localID).toBe(localID2);
+            expect(hook1.result.current.message.data.ID).toBe(ID1);
+            expect(hook2.result.current.message.data.ID).toBe(ID2);
         });
 
         it('should handle switching of message', () => {
             const ID1 = 'ID1';
             const ID2 = 'ID2';
-            let hook = setup({ localID: ID1, data: { ID: ID1, testFlag: 1 } });
-            expect(hook.result.current[0].data.testFlag).toBe(1);
-            hook = setup({ localID: ID2, data: { ID: ID2, testFlag: 2 } });
-            expect(hook.result.current[0].data.testFlag).toBe(2);
-            hook = setup({ localID: ID1 });
-            expect(hook.result.current[0].data.testFlag).toBe(1);
-            hook = setup({ localID: ID2 });
-            expect(hook.result.current[0].data.testFlag).toBe(2);
+
+            messageCache.set(ID1, { localID: ID1, data: { ID: ID1, testFlag: 1 } as any });
+            messageCache.set(ID2, { localID: ID2, data: { ID: ID2, testFlag: 2 } as any });
+
+            const hook = setup(ID1);
+            expect(hook.result.current.message.data.testFlag).toBe(1);
+            hook.rerender(ID2);
+            expect(hook.result.current.message.data.testFlag).toBe(2);
+            hook.rerender(ID1);
+            expect(hook.result.current.message.data.testFlag).toBe(1);
+            hook.rerender(ID2);
+            expect(hook.result.current.message.data.testFlag).toBe(2);
         });
     });
 });

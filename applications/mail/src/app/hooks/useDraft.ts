@@ -1,9 +1,10 @@
-import { useCache, useMailSettings, useAddresses } from 'react-components';
+import { useCache, useMailSettings, useAddresses, generateUID } from 'react-components';
 
 import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
 import { MESSAGE_ACTIONS } from '../constants';
 import { useEffect, useCallback } from 'react';
 import { MessageExtended } from '../models/message';
+import { useMessageCache } from '../containers/MessageProvider';
 
 const CACHE_KEY = 'Draft';
 
@@ -15,6 +16,7 @@ export const useDraft = () => {
     const cache = useCache();
     const [mailSettings, loadingSettings] = useMailSettings();
     const [addresses, loadingAddresses] = useAddresses();
+    const messageCache = useMessageCache();
 
     useEffect(() => {
         if (!loadingSettings && !loadingAddresses) {
@@ -24,14 +26,20 @@ export const useDraft = () => {
     }, [cache, mailSettings, addresses]);
 
     const createDraft = useCallback(
-        (action: MESSAGE_ACTIONS, referenceMessage: MessageExtended = {}) => {
+        (action: MESSAGE_ACTIONS, referenceMessage?: MessageExtended) => {
+            let message: MessageExtended;
+
             if (action === MESSAGE_ACTIONS.NEW && cache.has(CACHE_KEY)) {
-                return cloneDraft(cache.get(CACHE_KEY) as MessageExtended);
+                message = cloneDraft(cache.get(CACHE_KEY) as MessageExtended);
             } else {
-                return createNewDraft(action, referenceMessage, mailSettings, addresses);
+                message = createNewDraft(action, referenceMessage, mailSettings, addresses);
             }
+
+            message.localID = generateUID('draft');
+            messageCache.set(message.localID, message);
+            return message.localID;
         },
-        [cache, mailSettings, addresses]
+        [cache, mailSettings, addresses, messageCache]
     );
 
     return createDraft;

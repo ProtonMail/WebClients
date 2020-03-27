@@ -7,7 +7,6 @@ import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
 import { getDate } from '../../helpers/elements';
 import AttachmentsButton from './attachments/AttachmentsButton';
-import { useSlowChanges } from '../../hooks/useSlowChanges';
 import { hasFlag } from '../../helpers/message/messages';
 import { MESSAGE_FLAGS } from '../../constants';
 
@@ -26,7 +25,7 @@ interface Props {
 const ComposerActions = ({
     message,
     lock,
-    activity: activityInput,
+    activity,
     onAddAttachments,
     onPassword,
     onExpiration,
@@ -35,7 +34,6 @@ const ComposerActions = ({
     onDelete
 }: Props) => {
     const { createModal } = useModals();
-    const activity = useSlowChanges(activityInput);
 
     const handleDelete = () => {
         return createModal(

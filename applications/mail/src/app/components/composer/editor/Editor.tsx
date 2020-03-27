@@ -20,7 +20,7 @@ interface Props {
     document?: Element;
     disabled: boolean;
     onReady: () => void;
-    onChange: (message: MessageExtended) => void;
+    onChange: (message: Partial<MessageExtended>) => void;
     onChangeContent: (content: string) => void;
     onChangeFlag: (changes: Map<number, boolean>) => void;
     onFocus: () => void;

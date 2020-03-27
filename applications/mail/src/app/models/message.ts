@@ -6,17 +6,6 @@ import { Attachment } from './attachment';
 import { MESSAGE_ACTIONS, VERIFICATION_STATUS } from '../constants';
 import { Recipient } from './address';
 
-export interface EmbeddedInfo {
-    attachment: Attachment;
-    url?: string;
-}
-
-/**
- * Message attachments limited to the embedded images
- * Mapped by the CID of the embedded attachment
- */
-export type EmbeddedMap = Map<string, EmbeddedInfo>;
-
 export interface Message {
     ID?: string;
     Subject?: string;
@@ -46,12 +35,39 @@ export interface Message {
     ExpiresIn?: number;
 }
 
+export interface MessageAction<T = void> {
+    (): Promise<T>;
+}
+
+// export type MessageAction = (...args: any[]) => Promise<void>;
+
+export interface EmbeddedInfo {
+    attachment: Attachment;
+    url?: string;
+}
+
+/**
+ * Message attachments limited to the embedded images
+ * Mapped by the CID of the embedded attachment
+ */
+export type EmbeddedMap = Map<string, EmbeddedInfo>;
+
 export interface MessageExtended {
     /**
      * ID used only on the frontend
      * Needed to keep a unique id on a message even if it's created in session without a server ID
      */
-    localID?: string;
+    localID: string;
+
+    /**
+     * List of pending actions on the message
+     */
+    actionQueue?: MessageAction[];
+
+    /**
+     * Current (i18n) label to describe what's hapenning on the message
+     */
+    actionStatus?: string;
 
     /**
      * Message object from the server

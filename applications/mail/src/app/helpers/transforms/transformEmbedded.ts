@@ -1,11 +1,19 @@
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
-import { Computation } from '../../hooks/useMessage';
 import { find } from '../embedded/embeddedFinder';
 import { mutateHTMLBlob, decrypt, prepareImages } from '../embedded/embeddedParser';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { isDraft } from '../message/messages';
+import { MessageExtended } from '../../models/message';
+import { AttachmentsCache } from '../../containers/AttachmentProvider';
+import { Api } from 'proton-shared/lib/interfaces';
+import { MailSettings } from '../../models/utils';
 
-export const transformEmbedded: Computation = async (message, { attachmentsCache, api, mailSettings }) => {
+export const transformEmbedded = async (
+    message: MessageExtended,
+    attachmentsCache: AttachmentsCache,
+    api: Api,
+    mailSettings: MailSettings
+) => {
     const { ShowImages = 0 } = mailSettings as { ShowImages: number };
     const show = message.showEmbeddedImages === true || ShowImages === SHOW_IMAGES.EMBEDDED || isDraft(message.data);
     const isReplyForward =
@@ -32,5 +40,5 @@ export const transformEmbedded: Computation = async (message, { attachmentsCache
         mutateHTMLBlob(message.embeddeds, message.document);
     }
 
-    return { document: message.document, showEmbeddedImages, embeddeds: message.embeddeds };
+    return { showEmbeddedImages, embeddeds: message.embeddeds };
 };

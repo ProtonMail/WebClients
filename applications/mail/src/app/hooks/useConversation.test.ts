@@ -2,13 +2,7 @@ import { act } from '@testing-library/react-hooks';
 import { wait } from 'proton-shared/lib/helpers/promise';
 
 import { useConversation } from './useConversation';
-import * as ConversationProvider from '../containers/ConversationProvider';
-import { renderHook, clearAll, addApiMock } from '../helpers/test/helper';
-
-// Needed to make TS accepts the mock exports
-const cacheMock: ConversationProvider.ConversationCache = (ConversationProvider as any).cacheMock;
-
-jest.mock('../containers/ConversationProvider');
+import { renderHook, clearAll, addApiMock, conversationCache } from '../helpers/test/helper';
 
 describe('useConversation', () => {
     const ID = 'ID';
@@ -17,25 +11,24 @@ describe('useConversation', () => {
 
     afterEach(() => {
         jest.clearAllMocks();
-        cacheMock.reset();
         clearAll();
     });
 
     it('should return cache value', () => {
         const reference = { Conversation: {} };
-        cacheMock.set(ID, reference);
+        conversationCache.set(ID, reference);
         const hook = setup();
         expect(hook.result.current[0]).toBe(reference);
     });
 
     it('should update value if cache is updated', async () => {
         const reference1 = { Conversation: {} };
-        cacheMock.set(ID, reference1);
+        conversationCache.set(ID, reference1);
         const hook = setup();
         expect(hook.result.current[0]).toBe(reference1);
 
         const reference2 = { Conversation: {} };
-        await act(async () => cacheMock.set(ID, reference2));
+        await act(async () => conversationCache.set(ID, reference2));
         expect(hook.result.current[0]).toBe(reference2);
     });
 
@@ -52,8 +45,8 @@ describe('useConversation', () => {
         const ID2 = 'ID2';
         const reference1 = { Conversation: {} };
         const reference2 = { Conversation: {} };
-        cacheMock.set(ID, reference1);
-        cacheMock.set(ID2, reference2);
+        conversationCache.set(ID, reference1);
+        conversationCache.set(ID2, reference2);
         const hook = setup();
         expect(hook.result.current[0]).toBe(reference1);
         hook.rerender(ID2);

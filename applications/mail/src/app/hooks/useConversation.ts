@@ -15,7 +15,7 @@ export const useConversation = (conversationID: string): [ConversationResult | u
     const cache = useConversationCache();
     const api = useApi();
     const [loading, withLoading] = useLoading(true);
-    const [conversation, setConversation] = useState<ConversationResult>(cache.get(conversationID));
+    const [conversation, setConversation] = useState<ConversationResult | undefined>(cache.get(conversationID));
 
     useEffect(() => {
         const load = async () => {

@@ -10,6 +10,12 @@ import MessageFooter from './MessageFooter';
 import { Message } from '../../models/message';
 import { useMessage } from '../../hooks/useMessage';
 import { OnCompose } from '../../containers/ComposerContainer';
+import {
+    useInitializeMessage,
+    useLoadMessage,
+    useLoadRemoteImages,
+    useLoadEmbeddedImages
+} from '../../hooks/useMessageReadActions';
 
 interface Props {
     labels: Label[];
@@ -32,16 +38,21 @@ const MessageView = ({
 
     const { state: expanded, set: setExpanded } = useToggle(initialExpand && !draft);
     const elementRef = useRef<HTMLElement>(null);
-    const [message, { load, initialize, loadRemoteImages, loadEmbeddedImages }] = useMessage(
-        { localID: inputMessage.ID, data: inputMessage },
-        mailSettings
-    );
 
-    const loaded = !!message?.initialized;
+    const localID = inputMessage.ID || '';
+
+    const { message, addAction } = useMessage(localID);
+    const load = useLoadMessage(inputMessage);
+    const initialize = useInitializeMessage(localID);
+    const loadRemoteImages = useLoadRemoteImages(localID);
+    const loadEmbeddedImages = useLoadEmbeddedImages(localID);
+
+    const messageLoaded = !!message.data?.Subject;
+    const bodyLoaded = !!message.initialized;
 
     const prepareMessage = async () => {
         if (typeof message?.initialized === 'undefined') {
-            await initialize();
+            await addAction(initialize);
         }
 
         // Don't scroll if it's the first message of the conversation and only on the first automatic expand
@@ -51,21 +62,25 @@ const MessageView = ({
     };
 
     useEffect(() => {
-        if (!draft && !loaded && expanded) {
+        if (message.data?.Subject === undefined) {
+            addAction(load);
+        }
+
+        if (!draft && !bodyLoaded && expanded) {
             prepareMessage();
         }
+    }, [draft, bodyLoaded, expanded]);
 
-        if (draft && message.data?.Subject === undefined) {
-            load();
-        }
-    }, [draft, loaded, expanded]);
+    if (!messageLoaded) {
+        return null;
+    }
 
     const handleLoadRemoteImages = async () => {
-        await loadRemoteImages();
+        await addAction(loadRemoteImages);
     };
 
     const handleLoadEmbeddedImages = async () => {
-        await loadEmbeddedImages();
+        await addAction(loadEmbeddedImages);
     };
 
     const handleExpand = (value: boolean) => () => {
@@ -82,7 +97,7 @@ const MessageView = ({
                 <>
                     <HeaderExpanded
                         message={message}
-                        messageLoaded={loaded}
+                        messageLoaded={bodyLoaded}
                         onLoadRemoteImages={handleLoadRemoteImages}
                         onLoadEmbeddedImages={handleLoadEmbeddedImages}
                         labels={labels}
@@ -90,7 +105,7 @@ const MessageView = ({
                         onCollapse={handleExpand(false)}
                         onCompose={onCompose}
                     />
-                    {loaded ? (
+                    {bodyLoaded ? (
                         <>
                             <MessageBody message={message} />
                             {hasAttachments(message.data) ? <MessageFooter message={message} /> : null}

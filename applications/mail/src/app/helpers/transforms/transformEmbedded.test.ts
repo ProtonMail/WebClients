@@ -1,4 +1,3 @@
-import { Api } from 'proton-shared/lib/interfaces';
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
 import createCache from 'proton-shared/lib/helpers/cache';
 
@@ -6,9 +5,9 @@ import { MessageExtended } from '../../models/message';
 import { MailSettings } from '../../models/utils';
 import { transformEmbedded } from './transformEmbedded';
 import { prepareImages } from '../embedded/embeddedParser';
-import { Base64Cache } from '../../hooks/useBase64Cache';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MESSAGE_FLAGS } from '../../constants';
+import { api } from '../test/helper';
 
 const prepareImagesMock = prepareImages as jest.Mock;
 
@@ -23,17 +22,17 @@ jest.mock('../embedded/embeddedParser', () => ({
 }));
 
 const attachmentsCache = createCache() as AttachmentsCache;
-const api: Api = jest.fn();
-const base64Cache: Base64Cache = createCache();
 
 const data = { Flags: MESSAGE_FLAGS.FLAG_RECEIVED }; // Not a draft
+
+const localID = 'localID';
 
 describe('transformEmbedded', () => {
     describe('show', () => {
         // Reference: Angular/test/specs/message/services/transformEmbedded.spec.js
 
-        const setup = async (message: MessageExtended = {}, mailSettings: MailSettings = {}) => {
-            await transformEmbedded(message, { mailSettings, attachmentsCache, api, base64Cache });
+        const setup = async (message: Partial<MessageExtended> = {}, mailSettings: MailSettings = {}) => {
+            await transformEmbedded({ localID, ...message }, attachmentsCache, api, mailSettings);
             return prepareImagesMock.mock.calls[0][1] as boolean;
         };
 

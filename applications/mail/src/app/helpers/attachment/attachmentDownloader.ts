@@ -113,7 +113,7 @@ const getZipAttachmentName = (message: Message = {}) => `Attachments-${message.S
 /**
  * Download all attachments as a zipfile
  */
-export const downloadAll = async (message: MessageExtended = {}, cache: AttachmentsCache, api: Api): Promise<void> => {
+export const downloadAll = async (message: MessageExtended, cache: AttachmentsCache, api: Api): Promise<void> => {
     const list = await formatDownloadAll(message, cache, api);
 
     // TODO: uncomment

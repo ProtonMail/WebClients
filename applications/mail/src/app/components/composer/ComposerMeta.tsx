@@ -11,7 +11,7 @@ interface Props {
     message: MessageExtended;
     addresses: Address[];
     disabled: boolean;
-    onChange: (message: MessageExtended) => void;
+    onChange: (message: Partial<MessageExtended>) => void;
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
 }

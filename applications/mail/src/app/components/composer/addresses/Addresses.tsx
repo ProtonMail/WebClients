@@ -10,7 +10,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 interface Props {
     message: MessageExtended;
     disabled: boolean;
-    onChange: (message: MessageExtended) => void;
+    onChange: (message: Partial<MessageExtended>) => void;
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
 }

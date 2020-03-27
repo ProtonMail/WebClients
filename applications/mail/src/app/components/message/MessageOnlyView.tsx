@@ -4,8 +4,8 @@ import { useLabels } from 'react-components';
 import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
 import ItemLabels from '../list/ItemLabels';
-import { useMessage } from '../../hooks/useMessage';
 import { OnCompose } from '../../containers/ComposerContainer';
+import { useMessage } from '../../hooks/useMessage';
 
 interface Props {
     messageID: string;
@@ -18,23 +18,22 @@ const MessageOnlyView = ({ messageID, mailSettings, onCompose }: Props) => {
 
     // There is only reading on the message here, no actions
     // MessageView will be in charge to trigger all messages actions
-    const [message] = useMessage({ localID: messageID, data: { ID: messageID } }, mailSettings);
+    const { message } = useMessage(messageID);
 
-    if (!message.data) {
-        return null;
-    }
+    // Message content could be undefined
+    const data = message.data || { ID: messageID };
 
     return (
         <>
             <header className="flex flex-nowrap flex-spacebetween flex-items-center mb1">
-                <h2 className="mb0">{message.data?.Subject}</h2>
+                <h2 className="mb0">{data?.Subject}</h2>
                 <div>
-                    <ItemLabels labels={labels} max={4} element={message.data} />
-                    <ItemStar element={message.data} />
+                    <ItemLabels labels={labels} max={4} element={data} />
+                    <ItemStar element={data} />
                 </div>
             </header>
             <MessageView
-                message={message.data}
+                message={data}
                 initialExpand={true}
                 labels={labels}
                 mailSettings={mailSettings}

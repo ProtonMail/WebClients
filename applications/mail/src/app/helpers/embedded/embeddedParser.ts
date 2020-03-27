@@ -19,7 +19,12 @@ const wrapImage = (img: Element) => wrap(img, '<div class="image loading"></div>
 /**
  * Prepare embedded images in the document
  */
-export const prepareImages = (message: MessageExtended, show: boolean, isReplyForward: boolean, isOutside = false) => {
+export const prepareImages = (
+    message: Partial<MessageExtended>,
+    show: boolean,
+    isReplyForward: boolean,
+    isOutside = false
+) => {
     if (!message.document) {
         return;
     }
