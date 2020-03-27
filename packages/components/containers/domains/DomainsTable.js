@@ -8,7 +8,7 @@ import DomainActions from './DomainActions';
 import DomainName from './DomainName';
 import DomainAddresses from './DomainAddresses';
 
-const DomainsTable = ({ domains = [], domainsAddressesMap = {} }) => {
+const DomainsTable = ({ domains = [], domainsAddressesMap = {}, loading = false }) => {
     return (
         <Table className="pm-simple-table--has-actions">
             <TableHeader
@@ -19,7 +19,7 @@ const DomainsTable = ({ domains = [], domainsAddressesMap = {} }) => {
                     c('Header for addresses table').t`Actions`
                 ]}
             />
-            <TableBody>
+            <TableBody loading={loading} colSpan={4}>
                 {domains.map((domain) => {
                     const domainAddresses = domainsAddressesMap[domain.ID] || [];
                     return (
@@ -41,7 +41,8 @@ const DomainsTable = ({ domains = [], domainsAddressesMap = {} }) => {
 
 DomainsTable.propTypes = {
     domains: PropTypes.array,
-    domainsAddressesMap: PropTypes.object
+    domainsAddressesMap: PropTypes.object,
+    loading: PropTypes.bool
 };
 
 export default DomainsTable;

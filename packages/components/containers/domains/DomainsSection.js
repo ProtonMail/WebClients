@@ -56,8 +56,12 @@ const DomainsSection = () => {
                     'Action'
                 ).t`Refresh status`}</Button>
             </Block>
-            {loadingDomains || loadingDomainsAddressesMap || !Array.isArray(domains) ? null : (
-                <DomainsTable domains={domains} domainsAddressesMap={domainsAddressesMap} />
+            {!loadingDomains && !loadingDomainsAddressesMap && !domains.length ? null : (
+                <DomainsTable
+                    domains={domains}
+                    domainsAddressesMap={domainsAddressesMap}
+                    loading={loadingDomains || loadingDomainsAddressesMap}
+                />
             )}
             <Block className="opacity-50">
                 {UsedDomains} / {MaxDomains} {c('Info').ngettext(msgid`domain used`, `domains used`, UsedDomains)}
