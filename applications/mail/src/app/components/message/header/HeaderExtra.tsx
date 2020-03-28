@@ -2,6 +2,7 @@ import React from 'react';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import ExtraSpamScore from '../extras/ExtraSpamScore';
+import ExtraExpirationTime from '../extras/ExtraExpirationTime';
 import { MessageExtended } from '../../../models/message';
 
 interface Props {
@@ -13,7 +14,7 @@ interface Props {
 const HeaderExtra = ({ message, onLoadRemoteImages, onLoadEmbeddedImages }: Props) => {
     return (
         <section className="ml1 mr1 mt0-5">
-            {/* TODO: ExpirationTime */}
+            <ExtraExpirationTime message={message} />
             <ExtraSpamScore message={message} />
             {/* TODO: MIMEParsingFailed */}
             {/* TODO: hasError */}
