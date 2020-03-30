@@ -1,13 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Icon, useConfig, Tooltip, Link } from 'react-components';
+import React, { useState, useEffect } from 'react';
+import { ReactNodeArray } from 'prop-types';
 import { APPS } from 'proton-shared/lib/constants';
+import { useUserScopes, hasScope, USER_SCOPES } from '../../hooks/useUserScopes';
+import useConfig from '../config/useConfig';
+import Tooltip from '../../components/tooltip/Tooltip';
+import Link from '../../components/link/Link';
+import Icon from '../../components/icon/Icon';
 
-const { PROTONMAIL, PROTONCONTACTS, PROTONMAIL_SETTINGS, PROTONCALENDAR } = APPS;
+const { PROTONMAIL, PROTONCONTACTS, PROTONMAIL_SETTINGS, PROTONCALENDAR, PROTONDRIVE } = APPS;
 
-const AppsSidebar = ({ items = [] }) => {
+interface Props {
+    items: ReactNodeArray;
+}
+
+const AppsSidebar = ({ items = [] }: Props) => {
     const { APP_NAME } = useConfig();
-    const apps = [
+    const [userScopes, loadingUserScopes] = useUserScopes();
+
+    const driveApp = {
+        appNames: [PROTONDRIVE],
+        icon: 'protondrive',
+        title: 'ProtonDrive',
+        link: '/drive'
+    };
+    const initialApps = [
         { appNames: [PROTONMAIL, PROTONMAIL_SETTINGS], icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
         { appNames: [PROTONCONTACTS], icon: 'protoncontacts', title: 'ProtonContacts', link: '/contacts' },
         {
@@ -17,6 +33,14 @@ const AppsSidebar = ({ items = [] }) => {
             link: '/calendar'
         }
     ].filter(Boolean);
+
+    const [apps, setApps] = useState(initialApps);
+
+    useEffect(() => {
+        if (!loadingUserScopes && hasScope(userScopes, USER_SCOPES.DRIVE)) {
+            setApps([...apps, driveApp].filter(Boolean));
+        }
+    }, [userScopes, loadingUserScopes]);
 
     return (
         <aside className="aside noprint nomobile" id="aside-bar">
@@ -48,10 +72,6 @@ const AppsSidebar = ({ items = [] }) => {
             </ul>
         </aside>
     );
-};
-
-AppsSidebar.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.node)
 };
 
 export default AppsSidebar;

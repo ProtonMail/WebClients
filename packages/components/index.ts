@@ -392,12 +392,14 @@ export { default as useVPNCountries } from './hooks/useVPNCountries';
 export { default as useMessageCounts } from './hooks/useMessageCounts';
 export { default as useConversationCounts } from './hooks/useConversationCounts';
 export { default as useCombinedRefs } from './hooks/useCombinedRefs';
+export { useUserScopes, hasScope, USER_SCOPES } from './hooks/useUserScopes';
 
 export { default as ErrorBoundary } from './containers/app/ErrorBoundary';
 export { default as ProtonApp } from './containers/app/ProtonApp';
 export { default as StandardPrivateApp } from './containers/app/StandardPrivateApp';
 export { default as StandardPublicApp } from './containers/app/StandardPublicApp';
 export { default as AppsSidebar } from './containers/app/AppsSidebar';
+export { default as MobileAppsLinks } from './components/sidebar/MobileAppsLinks';
 export { default as TopNavbar } from './containers/app/TopNavbar';
 export { default as LoaderPage } from './containers/app/LoaderPage';
 
