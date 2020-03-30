@@ -80,15 +80,14 @@ const PartDayEvent = ({
         );
     })();
 
-    const isBeforeNowClassModifier = isBeforeNow ? 'calendar-eventcell--isBefore' : '';
-
     return (
         <div
             style={eventStyle}
             className={classnames([
                 'calendar-eventcell no-scroll pl0-5 pr0-5',
                 !loading && 'calendar-eventcell--isLoaded',
-                isBeforeNowClassModifier
+                isBeforeNow && 'calendar-eventcell--isBefore',
+                isSelected && 'calendar-eventcell--isSelected'
             ])}
             ref={eventRef}
             title={expandableTitleString}

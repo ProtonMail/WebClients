@@ -96,9 +96,8 @@ const FullDayEvent = ({
                 className={classnames([
                     'calendar-dayeventcell-inner alignleft flex',
                     !isAllDay && 'calendar-dayeventcell-inner--isNotAllDay',
-                    isOutsideStart && 'calendar-dayeventcell-inner--isOutsideStart',
-                    isOutsideEnd && 'calendar-dayeventcell-inner--isOutsideEnd',
-                    !loading && 'calendar-dayeventcell-inner--isLoaded'
+                    !loading && 'calendar-dayeventcell-inner--isLoaded',
+                    isSelected && 'calendar-dayeventcell-inner--isSelected'
                 ])}
                 style={eventStyle}
                 ref={eventRef}
