@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS, USER_SCOPES } from 'proton-shared/lib/constants';
+import { hasScope } from 'proton-shared/lib/helpers/scope';
 
-import { useUserScopes, hasScope, USER_SCOPES } from '../../hooks/useUserScopes';
 import useConfig from '../../containers/config/useConfig';
 import MobileNavServices from './MobileNavServices';
 import MobileNavLink from './MobileNavLink';
+import { useUserScopes } from '../../hooks/useUserScopes';
 
 const { PROTONMAIL, PROTONCONTACTS, PROTONMAIL_SETTINGS, PROTONCALENDAR, PROTONDRIVE } = APPS;
 

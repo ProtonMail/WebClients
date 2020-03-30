@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { ReactNodeArray } from 'prop-types';
-import { APPS } from 'proton-shared/lib/constants';
-import { useUserScopes, hasScope, USER_SCOPES } from '../../hooks/useUserScopes';
+
+import { APPS, USER_SCOPES } from 'proton-shared/lib/constants';
+import { hasScope } from 'proton-shared/lib/helpers/scope';
+
+import { useUserScopes } from '../../hooks/useUserScopes';
 import useConfig from '../config/useConfig';
 import Tooltip from '../../components/tooltip/Tooltip';
 import Link from '../../components/link/Link';
