@@ -599,3 +599,7 @@ export enum SPAM_SCORE {
 
 export const COLLAPSE_MENU_KEY = 'collapse-menu';
 export const ROOT_FOLDER = 0;
+
+export const USER_SCOPES = {
+    DRIVE: 68719476736
+};
