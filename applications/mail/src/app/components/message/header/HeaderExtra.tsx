@@ -2,6 +2,7 @@ import React from 'react';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import ExtraSpamScore from '../extras/ExtraSpamScore';
+import ExtraReadReceipt from '../extras/ExtraReadReceipt';
 import ExtraExpirationTime from '../extras/ExtraExpirationTime';
 import { MessageExtended } from '../../../models/message';
 
@@ -19,7 +20,7 @@ const HeaderExtra = ({ message, onLoadRemoteImages, onLoadEmbeddedImages }: Prop
             {/* TODO: MIMEParsingFailed */}
             {/* TODO: hasError */}
             <ExtraUnsubscribe message={message} />
-            {/* TODO: requireReadReceiptConfirmation */}
+            <ExtraReadReceipt message={message} />
             {/* TODO: isAutoReply */}
             {/* TODO: attachedPublicKey */}
             {/* TODO: promptKeyPinning */}

@@ -10,6 +10,7 @@ const {
     FLAG_RECEIVED,
     FLAG_SENT,
     FLAG_RECEIPT_REQUEST,
+    FLAG_RECEIPT_SENT,
     FLAG_IMPORTED,
     FLAG_REPLIED,
     FLAG_REPLIEDALL,
@@ -41,6 +42,7 @@ export const clearFlag = (flag: number) => (message: Message = {}) => clearBit(m
 export const toggleFlag = (flag: number) => (message: Message = {}) => toggleBit(message.Flags, flag) as number;
 
 export const isRequestReadReceipt = hasFlag(FLAG_RECEIPT_REQUEST);
+export const isReadReceiptSent = hasFlag(FLAG_RECEIPT_SENT | FLAG_SENT);
 export const isImported = hasFlag(FLAG_IMPORTED);
 export const isInternal = hasFlag(FLAG_INTERNAL);
 export const isExternal = (message: Message) => !isInternal(message);
@@ -179,6 +181,22 @@ export const getParsedHeaders = (message: Message, parameter: string) => {
 
 export const getOriginalTo = (message: Message = {}) => {
     return getParsedHeaders(message, 'X-Original-To') || '';
+};
+
+export const requireReadReceipt = (message: Message = {}) => {
+    const dispositionNotificationTo = getParsedHeaders(message, 'Disposition-Notification-To') || ''; // ex: Andy <andy@pm.me>
+
+    if (!dispositionNotificationTo) {
+        return false;
+    }
+
+    if (isReadReceiptSent(message)) {
+        // Read receipt already sent to this message
+        // or message sent
+        return false;
+    }
+
+    return true;
 };
 
 export const getListUnsubscribe = (message: Message = {}) => {
