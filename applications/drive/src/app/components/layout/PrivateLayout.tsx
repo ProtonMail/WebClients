@@ -21,11 +21,6 @@ const getSidebar = () => {
     ];
 };
 
-const getMobileLinks = () => [
-    { to: '/inbox', icon: 'protonmail', external: true, current: false },
-    { to: '/contacts', icon: 'protoncontacts', external: false, current: true }
-];
-
 interface Props {
     children: React.ReactNode;
 }
@@ -55,7 +50,6 @@ const PrivateLayout = ({ children }: Props) => {
                         expanded={isHeaderExpanded}
                         onToggleExpand={toggleHeaderExpanded}
                         list={getSidebar()}
-                        mobileLinks={getMobileLinks()}
                     >
                         <UploadButton />
                     </Sidebar>
