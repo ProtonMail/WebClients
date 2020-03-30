@@ -13,7 +13,7 @@ const FIBONACCI = [1, 1, 2, 3, 5, 8];
  *    `interval` - Maximum interval time to wait between each call.
  *    `query` - Event polling endpoint override.
  *
- * @param {{ api: Function, initialEventID: String, interval?: Number, query?: Function }} config
+ * @param {{ api: Function, eventID: String, interval?: Number, query?: Function }} config
  */
 export default ({ api, eventID: initialEventID, interval = INTERVAL_EVENT_TIMER, query = getEvents }) => {
     const listeners = createListeners();
