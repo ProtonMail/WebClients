@@ -11,7 +11,6 @@ import {
 } from 'date-fns';
 
 import { MessageExtended } from '../../../models/message';
-import {} from 'date-fns/esm';
 
 interface Props {
     message: MessageExtended;

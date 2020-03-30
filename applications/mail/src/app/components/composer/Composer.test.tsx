@@ -27,7 +27,8 @@ describe('Composer', () => {
             initialized: true,
             data: {
                 ID,
-                MIMEType: 'text/plain'
+                MIMEType: 'text/plain',
+                Subject: ''
             }
         };
 
