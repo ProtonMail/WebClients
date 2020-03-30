@@ -32,7 +32,7 @@ const AddressesGroupItem = ({ recipientGroup, contacts, onChange, onRemove }: Pr
     };
 
     return (
-        <div className="composer-addresses-item bordered-container flex flex-items-center flex-nowrap flex-row mw80 stop-propagation">
+        <div className="composer-addresses-item mb0-5 mr0-5 bordered-container flex flex-items-center flex-nowrap flex-row mw80 stop-propagation">
             <span className="inline-flex composer-addresses-item-icon pl0-5 pr0-5 no-pointer-events-children h100">
                 <Icon name="contacts-groups" size={12} color={recipientGroup?.group?.Color} className="mauto" />
             </span>
@@ -46,6 +46,7 @@ const AddressesGroupItem = ({ recipientGroup, contacts, onChange, onRemove }: Pr
                 type="button"
                 className="composer-addresses-item-remove inline-flex pl0-5 pr0-5 no-pointer-events-children h100"
                 onClick={onRemove}
+                title={c('Action').t`Remove`}
             >
                 <Icon name="off" size={12} className="mauto" />
                 <span className="sr-only">{c('Action').t`Remove`}</span>

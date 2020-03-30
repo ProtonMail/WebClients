@@ -1,4 +1,5 @@
 import React, { SyntheticEvent, useState, useEffect, useRef } from 'react';
+import { c } from 'ttag';
 import { Icon, classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
@@ -44,7 +45,7 @@ const AddressesRecipientItem = ({ recipient, onChange = noop, onRemove }: Props)
     return (
         <div
             className={classnames([
-                'composer-addresses-item bordered-container flex flex-items-center flex-nowrap flex-row mw80 stop-propagation',
+                'composer-addresses-item bordered-container mb0-5 mr0-5 flex flex-items-center flex-nowrap flex-row mw80 stop-propagation',
                 !valid && 'invalid'
             ])}
             data-testid="composer-addresses-item"
@@ -62,8 +63,10 @@ const AddressesRecipientItem = ({ recipient, onChange = noop, onRemove }: Props)
                 type="button"
                 className="composer-addresses-item-remove flex-item-noshrink inline-flex pl0-5 pr0-5 no-pointer-events-children h100"
                 onClick={onRemove}
+                title={c('Action').t`Remove`}
             >
                 <Icon name="off" size={12} className="mauto" />
+                <span className="sr-only">{c('Action').t`Remove`}</span>
             </button>
         </div>
     );

@@ -11,7 +11,7 @@ import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
 import EditorEmbeddedModal from './editor/EditorEmbeddedModal';
 import { isDragFile } from '../../helpers/dom';
 
-import 'react-quill/dist/quill.snow.css';
+import 'design-system/_sass/react-styles/quill/_snow.scss';
 import { PendingUpload } from './Composer';
 
 interface Props {
@@ -82,12 +82,15 @@ const ComposerContent = ({
 
     return (
         <section
-            className="flex-item-fluid w100 mb0-5 flex flex-column flex-nowrap relative pr0-5"
+            className={classnames([
+                'flex-item-fluid w100 mb0-5 flex flex-column flex-nowrap relative pr0-5',
+                attachments?.length > 0 && 'composer-content--has-attachments'
+            ])}
             onDrop={handleDrop}
             onDragEnter={handleHover(true)}
             onDragOver={(event) => event.preventDefault()}
         >
-            <div className={classnames(['flex-item-fluid w100 flex flex-column flex-nowrap relative'])}>
+            <div className="flex-item-fluid w100 flex flex-column flex-nowrap relative">
                 <Editor
                     message={message}
                     document={message.document}

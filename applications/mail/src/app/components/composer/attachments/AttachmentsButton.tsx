@@ -17,9 +17,14 @@ const AttachmentsButton = ({ onAddAttachments, children, disabled }: Props) => {
     };
 
     return (
-        <div className="composer-attachments-button-wrapper">
+        <div className="composer-attachments-button-wrapper flex">
             <input type="file" multiple onChange={handleChange} data-testid="composer-attachments-button" />
-            <Button type="button" icon={!children && 'attach'} disabled={disabled}>
+            <Button
+                type="button"
+                className="inline-flex flex-items-center"
+                icon={!children && 'attach'}
+                disabled={disabled}
+            >
                 {children}
             </Button>
         </div>

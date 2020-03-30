@@ -351,7 +351,7 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
                 onClose={handleClose}
             />
             {!minimized && (
-                <div className="flex flex-column flex-item-fluid relative">
+                <div className="flex flex-column flex-item-fluid relative mw100">
                     {innerModal === ComposerInnerModal.Password && (
                         <ComposerPasswordModal
                             message={modelMessage.data}
@@ -368,7 +368,7 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
                     )}
                     <div
                         className={classnames([
-                            'flex-column flex-item-fluid',
+                            'flex-column flex-item-fluid mw100',
                             // Only hide the editor not to unload it each time a modal is on top
                             innerModal === ComposerInnerModal.None ? 'flex' : 'hidden'
                         ])}

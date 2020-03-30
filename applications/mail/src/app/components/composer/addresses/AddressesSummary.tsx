@@ -5,6 +5,7 @@ import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
 
 import { MessageExtended } from '../../../models/message';
 import { Recipient, recipientTypes } from '../../../models/address';
+import { getRecipients } from '../../../helpers/message/messages';
 import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
 import { ContactEmail } from '../../../models/contact';
 
@@ -21,8 +22,11 @@ const AddressesSummary = ({ message: { data = {} }, contacts, contactGroups, onF
             <Label htmlFor={null} className="composer-meta-label pr0-5 pt0 bold">
                 {c('Title').t`To`}
             </Label>
-            <div className="bordered-container flex composer-addresses-fakefield flex-row flex-item-fluid w100 relative">
-                <span className="ellipsis mw100 composer-addresses-fakefield-inner">
+            <div className="pm-field flex composer-addresses-fakefield flex-row flex-item-fluid w100 relative">
+                <span className="ellipsis composer-addresses-fakefield-inner">
+                    {getRecipients(data).length === 0 ? (
+                        <span className="placeholder">{c('Placeholder').t`Email address`}</span>
+                    ) : null}
                     {recipientTypes.map((type) => {
                         const recipients: Recipient[] = data[type] || [];
                         if (recipients.length === 0) {

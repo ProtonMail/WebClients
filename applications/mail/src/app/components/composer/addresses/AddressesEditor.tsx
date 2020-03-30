@@ -61,6 +61,7 @@ const AddressesEditor = ({
                     inputFocusRef={inputFocusRef}
                     contacts={contacts}
                     contactGroups={contactGroups}
+                    placeholder={c('Placeholder').t`Email address`}
                 />
                 {!expanded && (
                     <LinkButton className="composer-addresses-ccbcc nodecoration strong" onClick={toggleExpanded}>
@@ -83,6 +84,7 @@ const AddressesEditor = ({
                             onChange={handleChange('CCList')}
                             contacts={contacts}
                             contactGroups={contactGroups}
+                            placeholder={c('Placeholder').t`Email address`}
                         />
                     </div>
                     <div className="flex flex-row w100">
@@ -98,6 +100,7 @@ const AddressesEditor = ({
                             onChange={handleChange('BCCList')}
                             contacts={contacts}
                             contactGroups={contactGroups}
+                            placeholder={c('Placeholder').t`Email address`}
                         />
                     </div>
                 </>

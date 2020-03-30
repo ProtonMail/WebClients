@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Icon } from 'react-components';
+import { c } from 'ttag';
+import { Icon, classnames } from 'react-components';
 
 import { Attachment } from '../../../models/attachment';
 import { PendingUpload } from '../Composer';
@@ -13,25 +14,33 @@ interface Props {
 const AttachmentItem = ({ name, progression = 0, onRemove }: Props) => {
     const blue = '#657ee4';
     const value = Math.round(progression * 100);
-    const background =
-        progression === undefined
-            ? 'none'
-            : `linear-gradient(to right, ${blue} 0%,  ${blue} ${value}%, transparent ${value}%)`;
+    const progressionHappening = progression !== 0;
+    const backgroundImage =
+        progression === 0 ? 'none' : `linear-gradient(to right, ${blue} 0%,  ${blue} ${value}%, transparent ${value}%)`;
 
     return (
         <div className="composer-attachments-item">
             <div
-                style={{ background }}
-                className="flex flex-spacebetween bordered-container p0-25 flex-nowrap flex-items-center pm_button bg-white-dm p0"
+                style={{ backgroundImage }}
+                className={classnames([
+                    'bg-white-dm flex bordered-container flex-nowrap flex-items-center pm_button p0',
+                    progressionHappening && 'composer-attachments-item--uploadInProgress'
+                ])}
             >
-                <Icon name="attach" />
-                <span className="flex-item-fluid ellipsis pl0-5 pr0-5">{name}</span>
+                <span className="p0-5 border-right flex flex-item-noshrink composer-attachments-item-typeIcon">
+                    <Icon name="attach" size={12} className="mauto" />
+                </span>
+                <span className="flex-item-fluid mtauto mbauto ellipsis pl0-5 pr0-5" title={name}>
+                    {name}
+                </span>
                 <button
                     type="button"
-                    className="inline-flex pl0-5 pr0-5 no-pointer-events-children h100"
+                    className="inline-flex p0-5 no-pointer-events-children h100 flex-item-noshrink border-left composer-attachments-item-deleteButton"
                     onClick={onRemove}
+                    title={c('Action').t`Remove`}
                 >
                     <Icon name="off" size={12} />
+                    <span className="sr-only">{c('Action').t`Remove`}</span>
                 </button>
             </div>
         </div>

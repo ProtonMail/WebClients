@@ -31,7 +31,7 @@ const AttachmentsList = ({ message, pendingUploads = [], onRemoveAttachment, onR
     const pureAttachments = diff(attachments, embeddedAttachments);
 
     return (
-        <div className="composer-attachments-list flex flex-column relative w100 flex-nowrap">
+        <div className="composer-attachments-list bg-global-highlight flex flex-column relative w100 flex-nowrap">
             <button type="button" className="flex flex-row flex-spacebetween w100 p0-5" onClick={toggleExpanded}>
                 <div>
                     <strong className="mr0-5">{size}</strong>

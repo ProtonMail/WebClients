@@ -152,7 +152,7 @@ const AddressesInput = ({
                         />
                     )
                 )}
-                <div className="flex-item-fluid flex flex-items-center">
+                <div className="flex-item-fluid flex flex-items-center composer-addresses-input-container">
                     <Input
                         id={id}
                         value={inputModel}

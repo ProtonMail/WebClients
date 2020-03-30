@@ -66,10 +66,8 @@
 }
 
 .composer-meta .composer-addresses-fakefield {
-    padding: 6px 0.85em;
-    min-height: 35px;
+    min-height: 3.5rem;
     max-height: 2.5em;
-    background: var(--bgcolor-input, $pm-input-background);
 }
 .composer-addresses-fakefield-inner {
     max-width: calc(100% - 5em);
@@ -121,10 +119,14 @@
 
     li {
         cursor: pointer;
-        padding: 0.5em;
+        padding: .5em;
 
         &[aria-selected='true'] {
             background-color: rgba($pm-primary, 0.2);
+        }
+
+        &:hover {
+            background-color: var(--bordercolor-input, $autocomplete-bg-color-hover);
         }
     }
 
@@ -135,10 +137,11 @@
 }
 
 .composer-addresses-item {
-    background-color: var(--bgcolor-item-column-list, #f6f7fa);
-    margin-bottom: 5px;
-    margin-right: 5px;
+    background-color: var(--bgcolor-item-column-list, $pm-global-light);
     text-shadow: none;
+    + .composer-addresses-input-container {
+        margin: 0 .5em .5em 0;
+    }
 }
 
 .composer-addresses-item.invalid {
@@ -202,7 +205,7 @@
     }
 
     button:disabled {
-        background-color: $pm-global-muted;
+        opacity: .5;
     }
 }
 
@@ -238,10 +241,26 @@
 
 .composer-editor-embedded {
     overflow: hidden;
-    z-index: 15000; // ask Embedding should always be on top of the toolbar!
-    background: var(--bgcolor-main-area, #f5f5f5);
-    color: var(--color-main-area, #505061);
+    z-index: 1500; // ask Embedding should always be on top of the toolbar!
+    //background: var(--bgcolor-main-area, #f5f5f5);
+    color: var(--color-main-area, $pm-global-grey);
     text-align: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($white, .5);
+        backdrop-filter: blur(3px);
+    }
+
+    .pm-modal {
+        z-index: 667;
+    }
 
     // TODO: Add the image icon in background
 }
@@ -301,17 +320,32 @@
 
 // Keep minimal size when activity label is empty
 .composer-send-button {
-    min-height: 34px;
-    min-width: 39px;
+    min-height: 3.4rem;
+    min-width: 4rem;
 }
 
+
+.composer-content--has-attachments {
+    .editor {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
 .composer-attachments-expand {
     overflow: auto;
     border-top: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
+.composer-attachments-list {
+    border-left: 1px solid var(--bordercolor-input, $pm-global-border);
+    border-right: 1px solid var(--bordercolor-input, $pm-global-border);
+    border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+    border-bottom-left-radius: $global-border-radius;
+    border-bottom-right-radius: $global-border-radius;
+}
+
 .composer-attachments-item {
-    margin-top: 10px;
+    margin-top: .5em;
     width: 50%;
 
     &:first-child,
@@ -319,10 +353,17 @@
         margin-top: 0;
     }
     &:nth-child(even) {
-        padding-left: 5px;
+        padding-left: .5em;
     }
     &:nth-child(odd) {
-        padding-right: 5px;
+        padding-right: .5em;
+    }
+
+    &--uploadInProgress  {
+        .composer-attachments-item-typeIcon,
+        .composer-attachments-item-deleteButton {
+            border: 0;
+        }
     }
 }
 

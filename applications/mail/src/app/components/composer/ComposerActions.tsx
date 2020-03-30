@@ -64,23 +64,47 @@ const ComposerActions = ({
                 <AttachmentsButton disabled={lock} onAddAttachments={onAddAttachments} />
                 <Button
                     icon="expiration"
-                    className={classnames(['ml0-5', isExpiration && 'pm-button-blueborder'])}
+                    className={classnames([
+                        'ml0-5 inline-flex flex-items-center pm-button--for-icon',
+                        isExpiration && 'pm-button-blueborder'
+                    ])}
                     onClick={onExpiration}
                     disabled={lock}
-                />
+                >
+                    <span className="sr-only">{c('Action').t`Expiration time`}</span>
+                </Button>
                 <Button
                     icon="lock"
-                    className={classnames(['ml0-5', isPassword && 'pm-button-blueborder'])}
+                    className={classnames([
+                        'ml0-5 inline-flex flex-items-center pm-button--for-icon',
+                        isPassword && 'pm-button-blueborder'
+                    ])}
                     onClick={onPassword}
                     disabled={lock}
-                />
+                >
+                    <span className="sr-only">{c('Action').t`Encryption`}</span>
+                </Button>
             </div>
-            <div className="flex-self-vcenter">
-                <span>{dateMessage}</span>
-                <Button className="ml1" icon="trash" disabled={lock} onClick={handleDelete} />{' '}
-                <Button icon="save" disabled={lock} onClick={onSave} />{' '}
+            <div className="flex flex-self-vcenter">
+                <span className="mr0-5 mtauto mbauto">{dateMessage}</span>
+                <Button
+                    className="mr0-5 inline-flex flex-items-center pm-button--for-icon"
+                    icon="trash"
+                    disabled={lock}
+                    onClick={handleDelete}
+                >
+                    <span className="sr-only">{c('Action').t`Delete draft`}</span>
+                </Button>
+                <Button
+                    className="mr0-5 inline-flex flex-items-center pm-button--for-icon"
+                    icon="save"
+                    disabled={lock}
+                    onClick={onSave}
+                >
+                    <span className="sr-only">{c('Action').t`Save`}</span>
+                </Button>
                 <Button className="pm-button-blue composer-send-button" loading={lock} onClick={onSend}>
-                    {lock ? activity : c('Action').t`Send`}
+                    <span className="pl1 pr1">{lock ? activity : c('Action').t`Send`}</span>
                 </Button>
             </div>
         </footer>
