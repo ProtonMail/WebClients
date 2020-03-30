@@ -21,6 +21,7 @@ import { generateUID } from 'react-components';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
+export const DRAFT_ID_PREFIX = 'draft';
 export const ORIGINAL_MESSAGE = `‐‐‐‐‐‐‐ Original Message ‐‐‐‐‐‐‐`;
 export const RE_PREFIX = c('Message').t`Re:`;
 export const FW_PREFIX = c('Message').t`Fw:`;
@@ -202,7 +203,7 @@ export const createNewDraft = (
     const document = parseInDiv(content);
 
     return {
-        localID: generateUID('draft'),
+        localID: generateUID(DRAFT_ID_PREFIX),
         data: {
             ToList,
             CCList,
@@ -235,3 +236,5 @@ export const cloneDraft = (draft: MessageExtended): MessageExtended => {
         document: draft.document?.cloneNode(true) as Element
     };
 };
+
+export const isNewDraft = (localID: string) => localID.startsWith(DRAFT_ID_PREFIX);

@@ -35,6 +35,7 @@ import { useMessage } from '../../hooks/useMessage';
 import { useInitializeMessage } from '../../hooks/useMessageReadActions';
 import { useCreateDraft, useSaveDraft, useDeleteDraft, useUpdateAttachments } from '../../hooks/useMessageWriteActions';
 import { useSendMessage } from '../../hooks/useSendMessage';
+import { isNewDraft } from '../../helpers/message/messageDraft';
 
 enum ComposerInnerModal {
     None,
@@ -159,16 +160,24 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
     const onClose = useHandler(inputOnClose);
 
     useEffect(() => {
-        if (!syncLock && !syncedMessage.data?.ID) {
+        if (!syncLock && !syncedMessage.data?.ID && isNewDraft(syncedMessage.localID)) {
             addAction(() => createDraft(syncedMessage));
         }
 
-        if (!syncLock && syncedMessage.data?.ID && typeof syncedMessage.initialized === 'undefined') {
+        if (
+            !syncLock &&
+            (syncedMessage.data?.ID || (!syncedMessage.data?.ID && !isNewDraft(syncedMessage.localID))) &&
+            syncedMessage.initialized === undefined
+        ) {
             addAction(initialize);
         }
 
         if (modelMessage.document === undefined) {
-            setModelMessage({ ...modelMessage, data: syncedMessage.data, document: syncedMessage.document });
+            setModelMessage({
+                ...modelMessage,
+                data: { ...modelMessage.data, ...syncedMessage.data },
+                document: syncedMessage.document
+            });
         }
     }, [syncLock, syncedMessage]);
 
