@@ -54,7 +54,7 @@ const PrivateApp = ({ onLogout }: Props) => {
                         <ComposerContainer>
                             {({ onCompose }) => (
                                 <Route
-                                    path="/:labelID/:elementID?"
+                                    path="/:labelID?/:elementID?"
                                     render={(routeProps: RouteProps) => (
                                         <PageContainer {...routeProps} onCompose={onCompose} />
                                     )}
