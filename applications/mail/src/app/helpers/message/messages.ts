@@ -23,6 +23,7 @@ const {
 } = MESSAGE_FLAGS;
 
 const { PLAINTEXT, MIME } = MIME_TYPES;
+const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
 
 /**
  * Check if a message has a mime type
@@ -212,6 +213,11 @@ export const hasAttachments = (message: Message = {}) => getAttachments(message)
 export const attachmentsSize = (message: Message = {}) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
 
+export const isAutoReply = (message: Message = {}) => {
+    const { ParsedHeaders = {} } = message;
+    return AUTOREPLY_HEADERS.some((h) => h in ParsedHeaders);
+};
+
 export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
     if (!isSent({ Flags })) {
         return false;
@@ -221,7 +227,6 @@ export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
         return true;
     }
 
-    const autoReplyHeaders = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
     const autoReplyHeaderValues = [
         ['Auto-Submitted', 'auto-replied'],
         ['Precedence', 'auto_reply'],
@@ -231,7 +236,7 @@ export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
     // These headers are not always available. But we should check them to support
     // outlook / mail autoresponses.
     return (
-        autoReplyHeaders.some((h) => h in ParsedHeaders) ||
+        AUTOREPLY_HEADERS.some((h) => h in ParsedHeaders) ||
         autoReplyHeaderValues.some(([k, v]) => k in ParsedHeaders && ParsedHeaders[k].toLowerCase() === v)
     );
 };
