@@ -591,5 +591,11 @@ export enum ICS_EVENT_STATUS {
     CANCELLED = 'CANCELLED'
 }
 
+export enum SPAM_SCORE {
+    PM_SPOOFED = 100,
+    DMARC_FAILED = 101,
+    PHISHING = 102
+}
+
 export const COLLAPSE_MENU_KEY = 'collapse-menu';
 export const ROOT_FOLDER = 0;
