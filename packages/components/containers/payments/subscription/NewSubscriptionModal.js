@@ -187,7 +187,7 @@ const NewSubscriptionModal = ({
         const params = await handlePaymentToken({
             params: {
                 Amount: checkResult.AmountDue,
-                Currency: checkResult.Currency,
+                Currency: model.currency,
                 ...parameters
             },
             createModal,
