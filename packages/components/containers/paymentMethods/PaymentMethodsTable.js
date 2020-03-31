@@ -24,6 +24,8 @@ const PaymentMethodsTable = ({ methods, loading }) => {
         }
     };
 
+    const orderedMethods = orderBy(methods, 'Order');
+
     return (
         <Table className="pm-simple-table--has-actions">
             <TableHeader
@@ -34,14 +36,19 @@ const PaymentMethodsTable = ({ methods, loading }) => {
                 ]}
             />
             <TableBody loading={loading} colSpan={5}>
-                {orderBy(methods, 'Order').map((method, index) => {
+                {orderedMethods.map((method, index) => {
                     return (
                         <TableRow
                             key={method.ID}
                             cells={[
                                 getMethod(method),
                                 <PaymentMethodState key={method.ID} method={method} index={index} />,
-                                <PaymentMethodActions key={method.ID} index={index} methods={methods} method={method} />
+                                <PaymentMethodActions
+                                    key={method.ID}
+                                    index={index}
+                                    methods={orderedMethods}
+                                    method={method}
+                                />
                             ]}
                         />
                     );
