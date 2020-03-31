@@ -56,7 +56,7 @@ const getRecipients = (value = '') =>
     value
         .split(',')
         .filter(isEmail)
-        .map((Address) => ({ Address }));
+        .map((Address) => ({ Address, Name: '' }));
 const formatRecipients = (recipients = []) => recipients.map(({ Address }) => Address).join(',');
 
 const folderReducer = (acc = [], folder = {}, level = 0) => {
