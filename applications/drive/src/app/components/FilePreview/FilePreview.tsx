@@ -2,13 +2,12 @@ import React from 'react';
 import { isSafari } from 'proton-shared/lib/helpers/browser';
 import { c } from 'ttag';
 import Header from './Header';
-import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import ImagePreview from './ImagePreview';
 import PreviewLoader from './PreviewLoader';
 import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import NavigationControl from './NavigationControl';
-import { LinkShortMeta } from '../../interfaces/link';
+import { LinkMeta } from '../../interfaces/link';
 import useKeyPress from '../../hooks/useKeyPress';
 import PDFPreview from './PDFPreview';
 
@@ -36,12 +35,12 @@ export const isPreviewAvailable = (mimeType: string) =>
 
 interface Props {
     loading: boolean;
-    meta?: LinkShortMeta | FileBrowserItem;
+    meta?: LinkMeta;
     contents?: Uint8Array[];
     onClose?: () => void;
     onSave?: () => void;
-    availableLinks?: LinkShortMeta[];
-    onOpen?: (link: LinkShortMeta) => void;
+    availableLinks?: LinkMeta[];
+    onOpen?: (link: LinkMeta) => void;
 }
 
 const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onClose, onSave }: Props) => {
@@ -99,4 +98,5 @@ const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onC
         </div>
     );
 };
+
 export default FilePreview;

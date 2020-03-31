@@ -1,21 +1,17 @@
 import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
-import { DriveResource } from './Drive/DriveResourceProvider';
-import useShare from '../hooks/useShare';
 import { validateLinkName } from '../utils/validation';
 
 interface Props {
     onClose?: () => void;
-    onDone?: () => void;
-    resource: DriveResource;
+    createNewFolder: (name: string) => Promise<void>;
 }
 
-const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
+const CreateFolderModal = ({ onClose, createNewFolder, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
-    const { createNewFolder } = useShare(resource.shareId);
 
     const formatFolderName = (name: string) => {
         return name.trim();
@@ -30,7 +26,7 @@ const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
         setFolderName(name);
 
         try {
-            await createNewFolder(resource.linkId, name);
+            await createNewFolder(name);
         } catch (e) {
             if (e.name === 'ValidationError') {
                 createNotification({ text: e.message, type: 'error' });
@@ -45,7 +41,6 @@ const CreateFolderModal = ({ resource, onClose, onDone, ...rest }: Props) => {
         );
         createNotification({ text: notificationText });
         onClose?.();
-        onDone?.();
     };
 
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {

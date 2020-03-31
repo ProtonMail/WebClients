@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { ToolbarSeparator, Toolbar, ToolbarButton, useModals, useNotifications } from 'react-components';
 import { c, msgid } from 'ttag';
 import { DriveResource } from './DriveResourceProvider';
-import useShare from '../../hooks/useShare';
 import { ResourceType } from '../../interfaces/link';
 import useFiles from '../../hooks/useFiles';
 import FileSaver from '../../utils/FileSaver/FileSaver';
@@ -12,72 +11,79 @@ import CreateFolderModal from '../CreateFolderModal';
 import RenameModal from '../RenameModal';
 import DetailsModal from '../DetailsModal';
 import useTrash from '../../hooks/useTrash';
+import useDrive from '../../hooks/useDrive';
+import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 
 interface Props {
     resource: DriveResource;
     openResource: (resource: DriveResource) => void;
-    parentLinkID?: string;
 }
 
-const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
+const DriveToolbar = ({ resource, openResource }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
-    const { fileBrowserControls, addToLoadQueue } = useDriveContent();
-    const { getFolderMeta } = useShare(resource.shareId);
-    const { startFileTransfer } = useFiles(resource.shareId);
-    const { trashLink } = useTrash(resource.shareId);
-    const [parentID, setParentID] = useState(parentLinkID);
+    const { fileBrowserControls } = useDriveContent();
+    const { getLinkMeta, createNewFolder, renameLink, events } = useDrive();
+    const { startFileTransfer } = useFiles();
+    const { trashLink } = useTrash();
+    const cache = useDriveCache();
 
+    const ParentLinkID = cache.get.linkMeta(resource.shareId, resource.linkId)?.ParentLinkID;
     const { selectedItems } = fileBrowserControls;
 
     useEffect(() => {
-        let isCanceled = false;
-
-        if (!parentLinkID) {
-            getFolderMeta(resource.linkId).then(({ Link }) => !isCanceled && setParentID(Link.ParentLinkID));
-        } else if (parentID !== parentLinkID) {
-            setParentID(parentLinkID);
+        if (!ParentLinkID) {
+            getLinkMeta(resource.shareId, resource.linkId);
         }
-
-        return () => {
-            isCanceled = true;
-        };
-    }, [parentLinkID, resource.linkId]);
+    }, [resource.shareId, resource.linkId, ParentLinkID]);
 
     const onlyFilesSelected = selectedItems.every((item) => item.Type === ResourceType.FILE);
 
     const handleBackClick = () => {
-        if (parentID) {
-            openResource({ shareId: resource.shareId, linkId: parentID, type: ResourceType.FOLDER });
+        if (ParentLinkID) {
+            openResource({ shareId: resource.shareId, linkId: ParentLinkID, type: ResourceType.FOLDER });
         }
     };
 
     const handleDownloadClick = () => {
         selectedItems.forEach(async (item) => {
             const meta = getMetaForTransfer(item);
-            const fileStream = await startFileTransfer(item.LinkID, meta);
+            const fileStream = await startFileTransfer(resource.shareId, item.LinkID, meta);
             FileSaver.saveViaDownload(fileStream, meta);
         });
     };
 
-    const handleCreateFolder = () => {
-        // Reloads all folder contents after folder creation
-        createModal(<CreateFolderModal onDone={() => addToLoadQueue(resource)} resource={resource} />);
+    const handleCreateFolder = async () => {
+        createModal(
+            <CreateFolderModal
+                createNewFolder={async (name) => {
+                    await createNewFolder(resource.shareId, resource.linkId, name);
+                    events.call(resource.shareId);
+                }}
+            />
+        );
     };
 
     const handleRename = () => {
+        const item = selectedItems[0];
         createModal(
-            <RenameModal onDone={() => addToLoadQueue(resource)} item={selectedItems[0]} shareId={resource.shareId} />
+            <RenameModal
+                item={item}
+                renameLink={async (name) => {
+                    await renameLink(resource.shareId, item.LinkID, item.ParentLinkID, name);
+                    events.call(resource.shareId);
+                }}
+            />
         );
     };
 
     const handleDetailsClick = () => {
-        createModal(<DetailsModal item={selectedItems[0]} resource={resource} />);
+        createModal(<DetailsModal item={selectedItems[0]} resource={resource} getLinkMeta={getLinkMeta} />);
     };
 
     const handleDeleteClick = async () => {
         const toTrash = selectedItems;
-        await Promise.all(toTrash.map((item) => trashLink(item.LinkID, item.ParentLinkID)));
+        await Promise.all(toTrash.map((item) => trashLink(resource.shareId, item.LinkID)));
 
         const allFiles = toTrash.every(({ Type }) => Type === ResourceType.FILE);
         const allFolders = toTrash.every(({ Type }) => Type === ResourceType.FOLDER);
@@ -106,7 +112,7 @@ const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
             notificationTexts.mixed;
 
         createNotification({ text: notificationText });
-        addToLoadQueue(resource);
+        await events.call(resource.shareId);
     };
 
     return (
@@ -114,7 +120,7 @@ const DriveToolbar = ({ resource, openResource, parentLinkID }: Props) => {
             {
                 <>
                     <ToolbarButton
-                        disabled={!parentID}
+                        disabled={!ParentLinkID}
                         title={c('Action').t`Back`}
                         onClick={handleBackClick}
                         icon="arrow-left"

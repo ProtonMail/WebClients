@@ -3,7 +3,6 @@ import { useMainArea } from 'react-components';
 import { ResourceType } from '../../interfaces/link';
 import useFiles from '../../hooks/useFiles';
 import useOnScrollEnd from '../../hooks/useOnScrollEnd';
-import { FOLDER_PAGE_SIZE } from '../../constants';
 import FileBrowser, { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import { DriveResource } from './DriveResourceProvider';
 import { TransferMeta } from '../../interfaces/transfer';
@@ -12,6 +11,7 @@ import { isPreviewAvailable } from '../FilePreview/FilePreview';
 import { useDriveContent } from './DriveContentProvider';
 import EmptyFolder from '../FileBrowser/EmptyFolder';
 import { LinkMeta } from '../../interfaces/link';
+import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 
 export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
     return {
@@ -28,8 +28,9 @@ interface Props {
 
 function Drive({ resource, openResource }: Props) {
     const mainAreaRef = useMainArea();
-    const { startFileTransfer } = useFiles(resource.shareId);
-    const { addToLoadQueue, fileBrowserControls, loading, contents } = useDriveContent();
+    const { startFileTransfer } = useFiles();
+    const cache = useDriveCache();
+    const { loadNextPage, fileBrowserControls, loading, contents, complete } = useDriveContent();
 
     const {
         clearSelections,
@@ -41,13 +42,13 @@ function Drive({ resource, openResource }: Props) {
     } = fileBrowserControls;
 
     const handleScrollEnd = useCallback(() => {
-        if (loading || contents.done) {
-            return;
+        const listed = cache.get.listedChildLinks(resource.shareId, resource.linkId);
+
+        // Only load on scroll if there are already items loaded from backend
+        if (listed?.length && !complete) {
+            loadNextPage();
         }
-        const loadedCount = contents.items.length;
-        const page = loadedCount / FOLDER_PAGE_SIZE;
-        addToLoadQueue(resource, page);
-    }, [contents, loading]);
+    }, [contents]);
 
     useOnScrollEnd(handleScrollEnd, mainAreaRef, 0.9);
 
@@ -61,18 +62,18 @@ function Drive({ resource, openResource }: Props) {
                 openResource(driveResource, item);
             } else {
                 const meta = getMetaForTransfer(item);
-                const fileStream = await startFileTransfer(item.LinkID, meta);
+                const fileStream = await startFileTransfer(resource.shareId, item.LinkID, meta);
                 FileSaver.saveViaDownload(fileStream, meta);
             }
         }
     };
 
-    return contents.done && !contents.items.length && !loading ? (
+    return complete && !contents.length && !loading ? (
         <EmptyFolder />
     ) : (
         <FileBrowser
             loading={loading}
-            contents={contents.items}
+            contents={contents}
             selectedItems={selectedItems}
             onItemClick={selectItem}
             onToggleItemSelected={toggleSelectItem}

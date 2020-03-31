@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { c } from 'ttag';
 import { Toolbar } from 'react-components';
 import Drive from '../components/Drive/Drive';
-import useDrive from '../hooks/useDrive';
 import Page, { PageMainArea } from '../components/Page';
 import StickyHeader from '../components/StickyHeader';
 import { DriveResource, useDriveResource } from '../components/Drive/DriveResourceProvider';
 import DriveContentProvider from '../components/Drive/DriveContentProvider';
 import DriveToolbar from '../components/Drive/DriveToolbar';
 import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
-import { LinkMeta, ResourceType } from '../interfaces/link';
+import { ResourceType } from '../interfaces/link';
 import { ResourceURLType } from '../constants';
 import DriveBreadcrumbs from '../components/DriveBreadcrumbs';
+import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 
 const toResourceType = (type: ResourceURLType) => {
     const resourceType = {
@@ -49,22 +49,12 @@ const toResource = (shareId?: string, type?: ResourceURLType, linkId?: string): 
     throw Error('Missing parameters, should be none or shareId/type/linkId');
 };
 
-interface DriveHistoryState {
-    preloadedLink?: FileBrowserItem | LinkMeta;
-}
-
 function DriveContainer({
     match,
-    history,
-    location
-}: RouteComponentProps<
-    { shareId?: string; type?: ResourceURLType; linkId?: string },
-    {},
-    DriveHistoryState | undefined
->) {
-    const { loadDrive } = useDrive();
+    history
+}: RouteComponentProps<{ shareId?: string; type?: ResourceURLType; linkId?: string }>) {
+    const cache = useDriveCache();
     const { resource, setResource } = useDriveResource();
-    const [, setError] = useState();
 
     const navigateToResource = (resource: DriveResource, item?: FileBrowserItem) => {
         history.push(`/drive/${resource.shareId}/${toLinkType(resource.type)}/${resource.linkId}`, {
@@ -75,28 +65,19 @@ function DriveContainer({
     useEffect(() => {
         const { shareId, type, linkId } = match.params;
 
-        const initDrive = async () => {
-            const initialResource = toResource(shareId, type, linkId);
+        const initialResource = toResource(shareId, type, linkId);
 
-            if (type === ResourceURLType.FOLDER && initialResource) {
-                setResource(initialResource);
-            } else if (!initialResource) {
-                const initResult = await loadDrive();
+        if (type === ResourceURLType.FOLDER && initialResource) {
+            setResource(initialResource);
+        } else if (!initialResource) {
+            const meta = cache.get.defaultShareMeta();
 
-                if (!initResult) {
-                    throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
-                }
-
-                const { Share } = initResult;
-                setResource({ shareId: Share.ShareID, linkId: Share.LinkID, type: ResourceType.FOLDER });
+            if (!meta) {
+                throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
             }
-        };
 
-        initDrive().catch((error) =>
-            setError(() => {
-                throw error;
-            })
-        );
+            setResource({ shareId: meta.ShareID, linkId: meta.LinkID, type: ResourceType.FOLDER });
+        }
     }, [match.params]);
 
     // TODO: change toolbar props to optional children in react-components
@@ -104,23 +85,13 @@ function DriveContainer({
         <Page title={c('Title').t`My files`}>
             <DriveContentProvider>
                 {resource ? (
-                    <DriveToolbar
-                        resource={resource}
-                        openResource={navigateToResource}
-                        parentLinkID={location.state?.preloadedLink?.ParentLinkID}
-                    />
+                    <DriveToolbar resource={resource} openResource={navigateToResource} />
                 ) : (
                     <Toolbar>{null}</Toolbar>
                 )}
                 <PageMainArea hasToolbar className="flex flex-column">
                     <StickyHeader>
-                        {resource && (
-                            <DriveBreadcrumbs
-                                openResource={navigateToResource}
-                                preloaded={location.state?.preloadedLink}
-                                resource={resource}
-                            />
-                        )}
+                        {resource && <DriveBreadcrumbs openResource={navigateToResource} resource={resource} />}
                     </StickyHeader>
 
                     {resource && <Drive resource={resource} openResource={navigateToResource} />}

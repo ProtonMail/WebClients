@@ -6,6 +6,16 @@ export enum ResourceType {
 }
 interface FileProperties {
     ContentKeyPacket: string;
+    ActiveRevision: {
+        ID: number;
+        Created: number;
+        Size: number;
+        Hash: string;
+        RootHash: string;
+        RootHashSignature: string;
+        AuthorAddressID: string;
+        State: FileRevisionState;
+    } | null;
 }
 
 interface FolderProperties {
@@ -33,25 +43,10 @@ interface DriveLink {
     FolderProperties: FolderProperties | null;
 }
 
-export interface FileLinkShortMeta extends DriveLink {
+export interface FileLinkMeta extends DriveLink {
     Type: ResourceType.FILE;
     FileProperties: FileProperties;
     FolderProperties: null;
-}
-
-export interface FileLinkMeta extends FileLinkShortMeta {
-    FileProperties: FileProperties & {
-        ActiveRevision: {
-            ID: number;
-            Created: number;
-            Size: number;
-            Hash: string;
-            RootHash: string;
-            RootHashSignature: string;
-            AuthorAddressID: string;
-            State: FileRevisionState;
-        };
-    };
 }
 
 export interface FolderLinkMeta extends DriveLink {
@@ -61,11 +56,8 @@ export interface FolderLinkMeta extends DriveLink {
 }
 
 export type LinkMeta = FileLinkMeta | FolderLinkMeta;
-export type LinkShortMeta = FolderLinkMeta | FileLinkShortMeta;
 
-export const isFolderLinkMeta = (link: LinkMeta | LinkShortMeta): link is FolderLinkMeta =>
-    link.Type === ResourceType.FOLDER;
-export const isFileLinkMeta = (link: LinkMeta): link is FileLinkMeta => link.Type === ResourceType.FILE;
+export const isFolderLinkMeta = (link: LinkMeta): link is FolderLinkMeta => link.Type === ResourceType.FOLDER;
 
 export interface LinkMetaResult {
     Link: LinkMeta;

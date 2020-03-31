@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
-import useShare from '../hooks/useShare';
 import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { ResourceType } from '../interfaces/link';
@@ -9,16 +8,14 @@ import { validateLinkName } from '../utils/validation';
 
 interface Props {
     onClose?: () => void;
-    onDone?: () => void;
     item: FileBrowserItem;
-    shareId: string;
+    renameLink: (name: string) => Promise<void>;
 }
 
-const RenameModal = ({ shareId, item, onClose, onDone, ...rest }: Props) => {
+const RenameModal = ({ renameLink, item, onClose, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const [name, setName] = useState(item.Name);
     const [loading, withLoading] = useLoading();
-    const { renameLink } = useShare(shareId);
     const [autofocusDone, setAutofocusDone] = useState(false);
 
     const formatName = (name: string) => {
@@ -46,7 +43,7 @@ const RenameModal = ({ shareId, item, onClose, onDone, ...rest }: Props) => {
         setName(formattedName);
 
         try {
-            await renameLink(item.LinkID, formattedName, item.ParentLinkID);
+            await renameLink(formattedName);
         } catch (e) {
             if (e.name === 'ValidationError') {
                 createNotification({ text: e.message, type: 'error' });
@@ -61,7 +58,6 @@ const RenameModal = ({ shareId, item, onClose, onDone, ...rest }: Props) => {
         );
         createNotification({ text: c('Success').jt`${nameElement} renamed successfully` });
         onClose?.();
-        onDone?.();
     };
 
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {

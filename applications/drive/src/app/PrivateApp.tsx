@@ -14,6 +14,8 @@ import AppErrorBoundary from './components/AppErrorBoundary';
 import PreviewContainer from './containers/PreviewContainer';
 import { ResourceURLType } from './constants';
 import TrashContainer from './containers/TrashContainer';
+import DriveCacheProvider from './components/DriveCache/DriveCacheProvider';
+import DriveEventManagerProvider from './components/DriveEventManager/DriveEventManagerProvider';
 
 interface Props extends RouteComponentProps {
     onLogout: () => void;
@@ -36,31 +38,35 @@ const PrivateApp = ({ onLogout, history }: Props) => {
             fallback={<LoaderPage text={c('Info').t`Loading ProtonDrive`} />}
         >
             <ErrorBoundary component={<GenericError className="pt2 h100v" />}>
-                <DriveResourceProvider>
-                    <UploadProvider>
-                        <DownloadProvider>
-                            <PrivateLayout>
-                                <AppErrorBoundary>
-                                    <Switch>
-                                        <Route path="/trash/:shareId?" exact component={TrashContainer} />
-                                        <Route
-                                            path={`/drive/:shareId?/:type?/:linkId?`}
-                                            exact
-                                            component={DriveContainer}
-                                        />
-                                        <Redirect to="/drive" />
-                                    </Switch>
+                <DriveEventManagerProvider>
+                    <DriveCacheProvider>
+                        <DriveResourceProvider>
+                            <UploadProvider>
+                                <DownloadProvider>
+                                    <PrivateLayout>
+                                        <AppErrorBoundary>
+                                            <Switch>
+                                                <Route
+                                                    path={`/drive/:shareId?/:type?/:linkId?`}
+                                                    exact
+                                                    component={DriveContainer}
+                                                />
+                                                <Route path="/trash/:shareId?" exact component={TrashContainer} />
+                                                <Redirect to="/drive" />
+                                            </Switch>
 
-                                    <Route
-                                        path={`/drive/:shareId?/${ResourceURLType.FILE}/:linkId?`}
-                                        exact
-                                        component={PreviewContainer}
-                                    />
-                                </AppErrorBoundary>
-                            </PrivateLayout>
-                        </DownloadProvider>
-                    </UploadProvider>
-                </DriveResourceProvider>
+                                            <Route
+                                                path={`/drive/:shareId?/${ResourceURLType.FILE}/:linkId?`}
+                                                exact
+                                                component={PreviewContainer}
+                                            />
+                                        </AppErrorBoundary>
+                                    </PrivateLayout>
+                                </DownloadProvider>
+                            </UploadProvider>
+                        </DriveResourceProvider>
+                    </DriveCacheProvider>
+                </DriveEventManagerProvider>
             </ErrorBoundary>
         </StandardPrivateApp>
     );

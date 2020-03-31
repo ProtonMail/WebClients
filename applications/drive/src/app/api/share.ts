@@ -28,3 +28,13 @@ export const queryTrashList = (
     url: `drive/shares/${shareID}/trash`,
     params: { Page, PageSize }
 });
+
+export const queryEvents = (shareID: string, eventID: string) => ({
+    url: `drive/shares/${shareID}/events/${eventID}`,
+    method: 'get'
+});
+
+export const queryLatestEvents = (shareID: string) => ({
+    url: `drive/shares/${shareID}/events/latest`,
+    method: 'get'
+});

@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import useShare from '../hooks/useShare';
 import { DriveResource } from './Drive/DriveResourceProvider';
 import { ResourceType } from '../interfaces/link';
 import { c } from 'ttag';
-import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import Breadcrumbs, { BreadcrumbInfo } from './Breadcrumbs/Breadcrumbs';
+import useDrive from '../hooks/useDrive';
 
 interface Props {
     resource: DriveResource;
     openResource: (resource: DriveResource) => void;
-    preloaded?: FileBrowserItem;
 }
 
-const DriveBreadcrumbs = ({ resource, preloaded, openResource }: Props) => {
-    const { getFolderMeta } = useShare(resource.shareId);
+const DriveBreadcrumbs = ({ resource, openResource }: Props) => {
+    const { getLinkMeta } = useDrive();
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([]);
 
     useEffect(() => {
         const getBreadcrumbs = async (linkId: string): Promise<BreadcrumbInfo[]> => {
-            const meta = preloaded?.LinkID === linkId ? preloaded : (await getFolderMeta(linkId)).Link;
+            const meta = await getLinkMeta(resource.shareId, linkId);
 
             const breadcrumb: BreadcrumbInfo = {
                 key: linkId,
@@ -46,7 +44,7 @@ const DriveBreadcrumbs = ({ resource, preloaded, openResource }: Props) => {
         return () => {
             canceled = true;
         };
-    }, [getFolderMeta, resource.linkId]);
+    }, [resource.shareId, resource.linkId]);
 
     return <Breadcrumbs breadcrumbs={breadcrumbs} />;
 };

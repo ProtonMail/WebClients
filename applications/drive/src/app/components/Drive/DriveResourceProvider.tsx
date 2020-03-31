@@ -1,15 +1,15 @@
 import React, { useState, createContext, useEffect, useContext } from 'react';
 import { c } from 'ttag';
 import { ResourceType } from '../../interfaces/link';
-import { useModals, useLoading, LoaderPage } from 'react-components';
+import { useLoading, LoaderPage } from 'react-components';
 import useDrive from '../../hooks/useDrive';
-import OnboardingModal from '../OnboardingModal/OnboardingModal';
 
 interface DriveResourceProviderState {
     resource?: DriveResource;
     setResource: (resource?: DriveResource) => void;
 }
 
+// TODO: remove type, should alway be folder
 export type DriveResource = { shareId: string; type: ResourceType; linkId: string };
 
 const DriveResourceContext = createContext<DriveResourceProviderState | null>(null);
@@ -23,49 +23,23 @@ interface Props {
  * Stores open folder shareId and linkID for easy access.
  */
 const DriveResourceProvider = ({ children }: Props) => {
-    const { createModal } = useModals();
     const [loading, withLoading] = useLoading(true);
-    const { createVolume, loadDrive } = useDrive();
+    const { initDrive } = useDrive();
     const [resource, setResource] = useState<DriveResource>();
 
     useEffect(() => {
-        let didCancel = false;
-
-        const initDrive = async () => {
-            const initResult = await loadDrive();
-
-            if (!initResult) {
-                const { Share } = await createVolume();
-                createModal(<OnboardingModal />);
-                if (!didCancel) {
-                    setResource({ shareId: Share.ID, linkId: Share.LinkID, type: ResourceType.FOLDER });
-                }
-                return;
-            }
-        };
-
         withLoading(initDrive()).catch((error) =>
             setResource(() => {
                 throw error;
             })
         );
-
-        return () => {
-            didCancel = true;
-        };
     }, []);
 
-    return (
-        <>
-            {loading ? (
-                <LoaderPage text={c('Info').t`Loading ProtonDrive`} />
-            ) : (
-                <DriveResourceContext.Provider value={{ resource, setResource }}>
-                    {children}
-                </DriveResourceContext.Provider>
-            )}
-        </>
-    );
+    if (loading) {
+        return <LoaderPage text={c('Info').t`Loading ProtonDrive`} />;
+    }
+
+    return <DriveResourceContext.Provider value={{ resource, setResource }}>{children}</DriveResourceContext.Provider>;
 };
 
 export const useDriveResource = () => {

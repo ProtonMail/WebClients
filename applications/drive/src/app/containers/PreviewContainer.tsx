@@ -4,65 +4,44 @@ import { RouteComponentProps } from 'react-router-dom';
 import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
 import { useLoading } from 'react-components';
 import FileSaver from '../utils/FileSaver/FileSaver';
-import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
-import useShare from '../hooks/useShare';
-import { FOLDER_PAGE_SIZE, ResourceURLType } from '../constants';
-import { LinkMeta, ResourceType, LinkShortMeta } from '../interfaces/link';
+import { ResourceURLType } from '../constants';
+import { LinkMeta, ResourceType } from '../interfaces/link';
 import { getMetaForTransfer } from '../components/Drive/Drive';
 import { DownloadControls } from '../components/downloads/download';
 import { useDriveResource } from '../components/Drive/DriveResourceProvider';
+import useDrive from '../hooks/useDrive';
+import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 
-interface PreviewHistoryState {
-    preloadedLink?: FileBrowserItem | LinkMeta;
-}
-
-const PreviewContainer = ({
-    match,
-    history,
-    location
-}: RouteComponentProps<{ shareId: string; linkId: string }, {}, PreviewHistoryState | undefined>) => {
+const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
     const downloadControls = useRef<DownloadControls>();
 
     const { setResource } = useDriveResource();
-    const { getFolderContents } = useShare(shareId);
-    const { downloadDriveFile, saveFileTransferFromBuffer, startFileTransfer, getFileMeta } = useFiles(shareId);
+    const cache = useDriveCache();
+    const { getLinkMeta } = useDrive();
+    const { downloadDriveFile, saveFileTransferFromBuffer, startFileTransfer } = useFiles();
     const [loading, withLoading] = useLoading(true);
-    const [meta, setMeta] = useState(location.state?.preloadedLink);
     const [contents, setContents] = useState<Uint8Array[]>();
-    const [linksAvailableForPreview, setLinksAvailableForPreview] = useState<LinkShortMeta[]>([]);
+    const [, setError] = useState();
+
+    const meta = cache.get.linkMeta(shareId, linkId);
+    const links = (meta && cache.get.childLinkMetas(shareId, meta.ParentLinkID)) || [];
+    const linksAvailableForPreview = links.filter(({ MimeType }) => isPreviewAvailable(MimeType));
 
     useEffect(() => {
         let canceled = false;
 
-        const fetchLinksAvailableForPreview = async (ParentLinkID: string) => {
-            const links = await getFolderContents(ParentLinkID, 0, FOLDER_PAGE_SIZE); // TODO: fetch all pages when implemented
-
-            if (!canceled) {
-                setLinksAvailableForPreview(links.filter(({ MimeType }) => isPreviewAvailable(MimeType)));
-            }
-        };
-
         const preloadFile = async () => {
             try {
-                const meta = location.state?.preloadedLink || (await getFileMeta(linkId)).Link;
-
-                // Clear history state, so fresh data is requested on reloads
-                if (location.state?.preloadedLink) {
-                    const state = { ...location.state };
-                    delete state.preloadedLink;
-                    history.replace({ ...location, state });
-                }
+                const { ParentLinkID, MimeType } = meta ?? (await getLinkMeta(shareId, linkId));
 
                 if (canceled) {
                     return;
                 }
 
-                setMeta(meta);
-                setResource({ shareId, linkId: meta.ParentLinkID, type: ResourceType.FOLDER });
-                fetchLinksAvailableForPreview(meta.ParentLinkID);
-                if (isPreviewAvailable(meta.MimeType)) {
-                    const { contents, controls } = await downloadDriveFile(linkId);
+                setResource({ shareId, linkId: ParentLinkID, type: ResourceType.FOLDER });
+                if (isPreviewAvailable(MimeType)) {
+                    const { contents, controls } = await downloadDriveFile(shareId, linkId);
                     downloadControls.current = controls;
                     setContents(await contents);
                 } else {
@@ -71,7 +50,7 @@ const PreviewContainer = ({
                 }
             } catch (err) {
                 if (err.name !== 'AbortError' && err.name !== 'TransferCancel') {
-                    setContents(() => {
+                    setError(() => {
                         throw err;
                     });
                 }
@@ -89,7 +68,7 @@ const PreviewContainer = ({
             downloadControls.current?.cancel();
             downloadControls.current = undefined;
         };
-    }, [linkId, getFileMeta, downloadDriveFile]);
+    }, [shareId, linkId]);
 
     const navigateToParent = useCallback(() => {
         if (meta?.ParentLinkID) {
@@ -98,10 +77,8 @@ const PreviewContainer = ({
     }, [meta?.ParentLinkID, shareId]);
 
     const navigateToLink = useCallback(
-        (preloadedLink: LinkShortMeta) => {
-            history.push(`/drive/${shareId}/${ResourceURLType.FILE}/${preloadedLink.LinkID}`, {
-                preloadedLink
-            });
+        ({ LinkID }: LinkMeta) => {
+            history.push(`/drive/${shareId}/${ResourceURLType.FILE}/${LinkID}`);
         },
         [shareId]
     );
@@ -114,10 +91,10 @@ const PreviewContainer = ({
         const transferMeta = getMetaForTransfer(meta);
         const fileStream = await (contents
             ? saveFileTransferFromBuffer(contents, transferMeta)
-            : startFileTransfer(linkId, transferMeta));
+            : startFileTransfer(shareId, linkId, transferMeta));
 
         FileSaver.saveViaDownload(fileStream, transferMeta);
-    }, [meta, contents, linkId]);
+    }, [meta, contents, shareId, linkId]);
 
     return (
         <FilePreview
