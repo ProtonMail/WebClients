@@ -19,12 +19,13 @@ const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
     const { uploadDriveFile } = useFiles(resource?.shareId ?? '');
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
 
+    const overlayEnabled = !!resource?.shareId;
     const dragOverEvents = ['dragenter', 'dragover'];
     const dragDropEvents = [...dragOverEvents, 'dragend', 'dragleave', 'drag', 'drop'];
 
     useEffect(() => {
         const handleDragOver = () => {
-            setOverlayIsVisible(true);
+            setOverlayIsVisible(overlayEnabled);
         };
 
         dragOverEvents.forEach((eventName) => {
@@ -36,7 +37,7 @@ const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
                 dropAreaRef.current?.removeEventListener(eventName, handleDragOver);
             });
         };
-    }, []);
+    }, [overlayEnabled]);
 
     useEffect(() => {
         const megabyteSize = 1048576;
@@ -102,7 +103,7 @@ const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
     return (
         <div ref={dropAreaRef} className={className}>
             {children}
-            {overlayIsVisible && (
+            {overlayEnabled && overlayIsVisible && (
                 <div ref={overlayRef} className={'pd-drag-drop'}>
                     <section className="pd-drag-drop-infobox p2">
                         <img className="pd-drag-drop-image" src={dragdropImageSvg} alt="" aria-hidden="true" />
