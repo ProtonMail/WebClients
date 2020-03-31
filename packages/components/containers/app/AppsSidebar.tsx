@@ -41,7 +41,7 @@ const AppsSidebar = ({ items = [] }: Props) => {
 
     useEffect(() => {
         if (!loadingUserScopes && hasScope(userScopes, USER_SCOPES.DRIVE)) {
-            setApps([...apps, driveApp].filter(Boolean));
+            setApps([...initialApps, driveApp].filter(Boolean));
         }
     }, [userScopes, loadingUserScopes]);
 

@@ -25,7 +25,7 @@ const MobileAppsLinks = () => {
 
     useEffect(() => {
         if (!loadingUserScopes && hasScope(userScopes, USER_SCOPES.DRIVE)) {
-            setLinks([...links, driveLink]);
+            setLinks([...initalLinks, driveLink]);
         }
     }, [userScopes, loadingUserScopes]);
 
