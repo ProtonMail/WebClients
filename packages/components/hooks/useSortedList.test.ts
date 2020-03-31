@@ -38,14 +38,26 @@ describe('useSortedList hook', () => {
     });
 
     it('should change sort key and set direction to ascending for another key', () => {
-        const list = [{ t: 2, k: 'c' }, { t: 3, k: 'b' }, { t: 1, k: 'a' }];
+        const list = [
+            { t: 2, k: 'c' },
+            { t: 3, k: 'b' },
+            { t: 1, k: 'a' }
+        ];
         const { result } = renderHook(() => useSortedList(list, { key: 't', direction: SORT_DIRECTION.ASC }));
-        expect(result.current.sortedList).toEqual([{ t: 1, k: 'a' }, { t: 2, k: 'c' }, { t: 3, k: 'b' }]);
+        expect(result.current.sortedList).toEqual([
+            { t: 1, k: 'a' },
+            { t: 2, k: 'c' },
+            { t: 3, k: 'b' }
+        ]);
         expect(result.current.sortConfig).toEqual({ key: 't', direction: SORT_DIRECTION.ASC });
 
         act(() => result.current.toggleSort('k'));
 
-        expect(result.current.sortedList).toEqual([{ t: 1, k: 'a' }, { t: 3, k: 'b' }, { t: 2, k: 'c' }]);
+        expect(result.current.sortedList).toEqual([
+            { t: 1, k: 'a' },
+            { t: 3, k: 'b' },
+            { t: 2, k: 'c' }
+        ]);
         expect(result.current.sortConfig).toEqual({ key: 'k', direction: SORT_DIRECTION.ASC });
     });
 });
