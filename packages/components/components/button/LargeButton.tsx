@@ -1,20 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import Button from './Button';
+import Button, { Props as ButtonProps } from './Button';
 import { classnames } from '../../helpers/component';
 
-const LargeButton = ({ children, className = '', ...rest }) => {
+const LargeButton = ({ children, className = '', ...rest }: ButtonProps) => {
     return (
         <Button className={classnames(['pm-button--large', className])} {...rest}>
             {children}
         </Button>
     );
-};
-
-LargeButton.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string
 };
 
 export default LargeButton;

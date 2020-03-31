@@ -1,14 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { classnames } from '../../helpers/component';
 
-const Group = ({ children, className = '' }) => (
+interface Props {
+    children: React.ReactNode;
+    className?: string;
+}
+
+const Group = ({ children, className = '' }: Props) => (
     <div className={classnames(['pm-group-buttons', className])}>{children}</div>
 );
-
-Group.propTypes = {
-    children: PropTypes.node.isRequired,
-    className: PropTypes.string
-};
 
 export default Group;

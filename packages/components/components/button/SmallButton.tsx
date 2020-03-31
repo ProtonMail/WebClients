@@ -1,20 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import Button from './Button';
+import Button, { Props as ButtonProps } from './Button';
 import { classnames } from '../../helpers/component';
 
-const SmallButton = ({ children, className = '', ...rest }) => {
+const SmallButton = ({ children, className = '', ...rest }: ButtonProps) => {
     return (
         <Button className={classnames(['pm-button--small', className])} {...rest}>
             {children}
         </Button>
     );
-};
-
-SmallButton.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string
 };
 
 export default SmallButton;

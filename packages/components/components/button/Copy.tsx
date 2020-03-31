@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Icon, Button, classnames, Tooltip } from 'react-components';
+import { Icon, Button, classnames, Tooltip } from '../../index';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 
-const Copy = ({ value, className = '', onCopy }) => {
+interface Props {
+    value: string;
+    className?: string;
+    onCopy?: () => void;
+}
+
+const Copy = ({ value, className = '', onCopy }: Props) => {
     const [copied, setCopied] = useState(false);
-    const timeoutRef = useRef();
+    const timeoutRef = useRef<number>();
 
     const handleClick = () => {
         textToClipboard(value);
@@ -14,7 +19,7 @@ const Copy = ({ value, className = '', onCopy }) => {
 
         if (!copied) {
             setCopied(true);
-            timeoutRef.current = setTimeout(() => {
+            timeoutRef.current = window.setTimeout(() => {
                 setCopied(false);
             }, 2000);
         }
@@ -36,12 +41,6 @@ const Copy = ({ value, className = '', onCopy }) => {
             </Tooltip>
         </Button>
     );
-};
-
-Copy.propTypes = {
-    value: PropTypes.string.isRequired,
-    className: PropTypes.string,
-    onCopy: PropTypes.func
 };
 
 export default Copy;

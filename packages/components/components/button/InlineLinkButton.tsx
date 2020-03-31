@@ -1,18 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { classnames } from '../../helpers/component';
 
-const InlineLinkButton = ({ children, className = '', ...rest }) => {
+type Props = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+
+const InlineLinkButton = ({ children, className = '', ...rest }: Props) => {
     return (
         <button type="button" role="button" className={classnames(['link alignbaseline', className])} {...rest}>
             {children}
         </button>
     );
-};
-
-InlineLinkButton.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string
 };
 
 export default InlineLinkButton;
