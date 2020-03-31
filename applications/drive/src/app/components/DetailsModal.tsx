@@ -12,34 +12,34 @@ import {
     PrimaryButton
 } from 'react-components';
 import { c } from 'ttag';
-
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { FileBrowserItem } from './FileBrowser/FileBrowser';
-import { ResourceType } from '../interfaces/link';
+import { ResourceType, LinkMeta } from '../interfaces/link';
 import { DriveResource } from './Drive/DriveResourceProvider';
-import useShare from '../hooks/useShare';
 
 interface Props {
     item: FileBrowserItem;
     resource: DriveResource;
+    getLinkMeta: (shareId: string, linkId: string) => Promise<LinkMeta>;
     onClose?: () => void;
 }
 
-const DetailsModal = ({ resource, item, onClose, ...rest }: Props) => {
-    const { getFolderMeta } = useShare(resource.shareId);
+const DetailsModal = ({ resource, getLinkMeta, item, onClose, ...rest }: Props) => {
     const [{ Name }] = useUser();
     const [location, setLocation] = useState('');
 
     useEffect(() => {
         const getLocationItems = async (linkId: string): Promise<string[]> => {
-            const { Link } = await getFolderMeta(linkId);
-            if (!Link.ParentLinkID) {
+            const { ParentLinkID, Name } = await getLinkMeta(resource.shareId, linkId);
+
+            if (!ParentLinkID) {
                 return [c('Title').t`My files`];
             }
-            const previous = await getLocationItems(Link.ParentLinkID);
 
-            return [...previous, Link.Name];
+            const previous = await getLocationItems(ParentLinkID);
+
+            return [...previous, Name];
         };
 
         let canceled = false;
@@ -53,7 +53,7 @@ const DetailsModal = ({ resource, item, onClose, ...rest }: Props) => {
         return () => {
             canceled = true;
         };
-    }, [getFolderMeta, resource.linkId]);
+    }, [resource.shareId, resource.linkId]);
 
     const modalTitleID = 'details-modal';
     const isFolder = item.Type === ResourceType.FOLDER;

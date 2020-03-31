@@ -7,7 +7,7 @@ import { c } from 'ttag';
 const UploadButton = () => {
     const fileInput = useRef<HTMLInputElement>(null);
     const { resource } = useDriveResource();
-    const { uploadDriveFile } = useFiles(resource?.shareId ?? '');
+    const { uploadDriveFile } = useFiles();
 
     const handleClick = () => {
         if (!resource || !fileInput.current) {
@@ -26,7 +26,7 @@ const UploadButton = () => {
         }
 
         for (let i = 0; i < files.length; i++) {
-            uploadDriveFile(resource.linkId, files[i]);
+            uploadDriveFile(resource.shareId, resource.linkId, files[i]);
         }
     };
 

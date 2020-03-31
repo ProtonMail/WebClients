@@ -1,55 +1,38 @@
-import { useCallback } from 'react';
-import { useApi } from 'react-components';
-import { FOLDER_PAGE_SIZE } from '../constants';
 import { queryTrashList } from '../api/share';
 import { queryTrashLink } from '../api/link';
 import { LinkMeta, FolderLinkMeta } from '../interfaces/link';
-import useShare, { folderChildrenCacheKey, FolderLinkMetaResult } from './useShare';
-import useCachedResponse from './useCachedResponse';
+import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
+import useDrive from './useDrive';
+import useDebouncedPromise from './useDebouncedPromise';
 
-const trashCacheKey = (shareId: string, Page: number, PageSize: number) =>
-    `drive/shares/${shareId}/trash?${Page}&${PageSize}`;
+function useTrash() {
+    const debouncedRequest = useDebouncedPromise();
+    const cache = useDriveCache();
+    const { getLinkKeys, decryptLink, getShareKeys } = useDrive();
 
-function useTrash(shareId: string) {
-    const api = useApi();
-    const { cache, getCachedResponse, updateCachedResponse } = useCachedResponse();
-    const { decryptLinkMeta, decryptChildLink } = useShare(shareId);
+    const fetchTrash = async (shareId: string, Page: number, PageSize: number) => {
+        const { Links, Parents } = await debouncedRequest<{
+            Links: LinkMeta[];
+            Parents: { [id: string]: FolderLinkMeta };
+        }>(queryTrashList(shareId, { Page, PageSize }));
 
-    const clearTrashCache = useCallback(
-        (Page: number, PageSize: number) => {
-            cache.delete(trashCacheKey(shareId, Page, PageSize));
-        },
-        [cache, shareId]
-    );
+        const decryptedLinks = await Promise.all(
+            Links.map(async (meta) => {
+                const { privateKey } = meta.ParentLinkID
+                    ? await getLinkKeys(shareId, meta.ParentLinkID, async (id) => Parents[id])
+                    : await getShareKeys(shareId);
 
-    const fetchTrash = useCallback(
-        (Page: number, PageSize: number) =>
-            getCachedResponse(trashCacheKey(shareId, Page, PageSize), async () => {
-                const { Links, Parents } = await api<{ Links: LinkMeta[]; Parents: { [id: string]: FolderLinkMeta } }>(
-                    queryTrashList(shareId, { Page, PageSize })
-                );
-
-                const getParentLink = (parentLinkId: string) =>
-                    decryptLinkMeta(Parents[parentLinkId], getParentLink) as Promise<FolderLinkMetaResult>;
-
-                return Promise.all(Links.map((link) => decryptChildLink(link, getParentLink)));
-            }),
-        [shareId]
-    );
-
-    const trashLink = async (linkId: string, parentLinkId: string) => {
-        await api(queryTrashLink(shareId, linkId));
-
-        // TODO: clear actual pages the file is in
-        clearTrashCache(0, FOLDER_PAGE_SIZE);
-
-        // TODO: clear actual pages the file is in (and handle edge cases) or just wait for events
-        updateCachedResponse(
-            folderChildrenCacheKey(shareId, parentLinkId, 0, FOLDER_PAGE_SIZE),
-            (value: LinkMeta[]) => {
-                return value.filter((link) => link.LinkID !== linkId);
-            }
+                return decryptLink(meta, privateKey);
+            })
         );
+
+        cache.set.trashLinkMetas(decryptedLinks, shareId, Links.length < PageSize ? 'complete' : 'incremental');
+
+        return decryptedLinks;
+    };
+
+    const trashLink = async (shareId: string, linkId: string) => {
+        return debouncedRequest(queryTrashLink(shareId, linkId));
     };
 
     return {
