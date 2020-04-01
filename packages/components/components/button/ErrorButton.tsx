@@ -1,9 +1,10 @@
 import React from 'react';
 import Button, { Props as ButtonProps } from './Button';
+import { classnames } from '../../helpers/component';
 
-const ErrorButton = ({ children, ...rest }: ButtonProps) => {
+const ErrorButton = ({ children, className, ...rest }: ButtonProps) => {
     return (
-        <Button className="pm-button--error" {...rest}>
+        <Button className={classnames(['pm-button--error', className])} {...rest}>
             {children}
         </Button>
     );
