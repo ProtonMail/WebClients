@@ -4,4 +4,4 @@
 /assets/js/main_{{ site.time | date: "%s" }}.js /assets/js/main.js 200
 
 
-https://design-system-beta.netlify.com/ https://design-system.protontech.ch/ 301!
+https://design-system-beta.netlify.com/* https://design-system.protontech.ch/:splat 301!
