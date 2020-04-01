@@ -6,21 +6,42 @@ import { Alert, Loader, useUser, useAddresses } from 'react-components';
 import PmMeButton from './PmMeButton';
 
 const PmMePanel = () => {
-    const [{ isAdmin }] = useUser();
+    const [{ canPay, hasPaidMail }] = useUser();
     const [addresses, loading] = useAddresses();
 
     if (loading) {
         return <Loader />;
     }
 
-    if (isAdmin) {
+    if (canPay) {
         const hasPremium = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
+
         if (!hasPremium) {
+            if (hasPaidMail) {
+                return (
+                    <>
+                        <Alert learnMore="https://protonmail.com/support/knowledge-base/pm-me-addresses/">{c('Info')
+                            .t`ProtonMail supports @pm.me email addresses (short for ProtonMail me or Private Message me). Once activate, you can send and receive emails using your @pm.me address and create additional @pm.me addresses by navigating to the addresses section.`}</Alert>
+                        <PmMeButton />
+                    </>
+                );
+            }
+
             return (
                 <>
                     <Alert learnMore="https://protonmail.com/support/knowledge-base/pm-me-addresses/">{c('Info')
-                        .t`ProtonMail now supports @pm.me email addresses (short for ProtonMail me or Private Message me). Paid users can add other @pm.me addresses.`}</Alert>
+                        .t`ProtonMail supports @pm.me email addresses (short for ProtonMail me or Private Message me). Once activated, you can receive emails to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.`}</Alert>
                     <PmMeButton />
+                </>
+            );
+        }
+
+        if (hasPaidMail) {
+            return (
+                <>
+                    <Alert learnMore="https://protonmail.com/support/knowledge-base/pm-me-addresses/">{c('Info')
+                        .t`ProtonMail supports @pm.me email addresses (short for ProtonMail me or Private Message me). You can now send and receive emails using your @pm.me address and create additional @pm.me addresses by navigating to the addresses section.`}</Alert>
+                    <Alert type="success">{c('Info').t`The short domain @pm.me is active on your account.`}</Alert>
                 </>
             );
         }
@@ -28,7 +49,7 @@ const PmMePanel = () => {
         return (
             <>
                 <Alert learnMore="https://protonmail.com/support/knowledge-base/pm-me-addresses/">{c('Info')
-                    .t`You can now also receive and send messages from your @pm.me address (short for ProtonMail me or Private Message me).`}</Alert>
+                    .t`You can now receive messages from your @pm.me address (short for ProtonMail me or Private Message me). Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.`}</Alert>
                 <Alert type="success">{c('Info').t`The short domain @pm.me is active on your account.`}</Alert>
             </>
         );
