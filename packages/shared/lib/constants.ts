@@ -597,6 +597,14 @@ export enum ICS_PARTICIPANT_ROLE {
     NON = 'NON-PARTICIPANT' // Indicates a participant who is copied for information purposes only
 }
 
+export enum ICS_PARTICIPANT_STATUS {
+    NEEDS_ACTION = 'NEEDS-ACTION',
+    ACCEPTED = 'ACCEPTED',
+    DECLINED = 'DECLINED',
+    TENTATIVE = 'TENTATIVE',
+    DELEGATED = 'DELEGATED'
+}
+
 export enum SPAM_SCORE {
     PM_SPOOFED = 100,
     DMARC_FAILED = 101,
