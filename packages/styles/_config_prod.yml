@@ -16,9 +16,9 @@
 title: ProtonMail Design System
 email: nico.hoffmann@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Design System for ProtonMail Web application
+  Design System for ProtonMail Web applications
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://design-system-beta.netlify.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://design-system.protontech.ch" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ProtonMail
 github_username:  ProtonMail
 environment: 'prod'
@@ -35,7 +35,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-include: 
+include:
   - ".well-known"
   - "_headers"
   - "_redirects"
