@@ -591,6 +591,12 @@ export enum ICS_EVENT_STATUS {
     CANCELLED = 'CANCELLED'
 }
 
+export enum ICS_PARTICIPANT_ROLE {
+    REQUIRED = 'REQ-PARTICIPANT', // Indicates a participant whose participation is required
+    OPTIONAL = 'OPT-PARTICIPANT', // Indicates a participant whose participation is optional
+    NON = 'NON-PARTICIPANT' // Indicates a participant who is copied for information purposes only
+}
+
 export enum SPAM_SCORE {
     PM_SPOOFED = 100,
     DMARC_FAILED = 101,
