@@ -7,6 +7,7 @@
 }
 .items-column-list-inner {
 	border-right: 1px solid var(--bordercolor-input, $pm-global-border);
+	min-height: 100%;
 }
 .items-column-list--mobile {
   width: 100%;
