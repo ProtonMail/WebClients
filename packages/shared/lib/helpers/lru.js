@@ -48,6 +48,9 @@ const createLRU = ({ max, onDispose }) => {
         clear: () => {
             cache = new Map();
             oldCache = new Map();
+        },
+        [Symbol.iterator]() {
+            return cache[Symbol.iterator]();
         }
     };
 };
