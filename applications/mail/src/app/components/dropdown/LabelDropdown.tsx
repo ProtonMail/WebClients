@@ -55,7 +55,7 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
     const [uid] = useState(generateUID('label-dropdown'));
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
-    const [labels = []] = useLabels();
+    const [labels = [], labelsLoading] = useLabels();
     const [search, updateSearch] = useState('');
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
     const [alsoArchive, updateAlsoArchive] = useState(false);
@@ -66,7 +66,7 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
         updateSelectedLabelIDs(getInitialState(labels, elements));
     }, [elements, labels.length]);
 
-    if (!elements || !elements.length || !labels || !labels.length) {
+    if (!elements || !elements.length || labelsLoading) {
         return null;
     }
 
