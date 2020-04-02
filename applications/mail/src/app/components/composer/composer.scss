@@ -115,11 +115,14 @@
         width: calc(100% - 40px);
         margin: 0 0 0 20px;
         padding: 0;
+
+        max-height: 40rem;
+        overflow-y: auto;
     }
 
     li {
         cursor: pointer;
-        padding: .5em;
+        padding: 0.5em;
 
         &[aria-selected='true'] {
             background-color: rgba($pm-primary, 0.2);
@@ -140,7 +143,7 @@
     background-color: var(--bgcolor-item-column-list, $pm-global-light);
     text-shadow: none;
     + .composer-addresses-input-container {
-        margin: 0 .5em .5em 0;
+        margin: 0 0.5em 0.5em 0;
     }
 }
 
@@ -200,19 +203,19 @@
     }
 
     button {
-        padding-left: .5em;
-        padding-right: .5em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
 
     button:disabled {
-        opacity: .5;
+        opacity: 0.5;
     }
 }
 
 .editor-toolbar-dropdown .ColorSelector-item {
     height: 2.8rem;
     width: 2.8rem;
-    margin: 0 .2rem .2rem 0;
+    margin: 0 0.2rem 0.2rem 0;
 }
 
 .editor--disabled::after {
@@ -254,7 +257,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba($white, .5);
+        background-color: rgba($white, 0.5);
         backdrop-filter: blur(3px);
     }
 
@@ -324,7 +327,6 @@
     min-width: 4rem;
 }
 
-
 .composer-content--has-attachments {
     .editor {
         border-bottom-left-radius: 0;
@@ -345,7 +347,7 @@
 }
 
 .composer-attachments-item {
-    margin-top: .5em;
+    margin-top: 0.5em;
     width: 50%;
 
     &:first-child,
@@ -353,13 +355,13 @@
         margin-top: 0;
     }
     &:nth-child(even) {
-        padding-left: .5em;
+        padding-left: 0.5em;
     }
     &:nth-child(odd) {
-        padding-right: .5em;
+        padding-right: 0.5em;
     }
 
-    &--uploadInProgress  {
+    &--uploadInProgress {
         .composer-attachments-item-typeIcon,
         .composer-attachments-item-deleteButton {
             border: 0;

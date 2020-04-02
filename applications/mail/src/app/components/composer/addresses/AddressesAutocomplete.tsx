@@ -25,6 +25,7 @@ const AddressesAutocomplete = ({ inputRef, contacts, contactGroups, onSelect, cu
             {
                 container: () => containerRef.current as HTMLElement,
                 minChars: 0,
+                maxItems: Infinity,
                 autoFirst: true
             } as Awesomplete.Options
         );
