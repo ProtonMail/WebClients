@@ -293,6 +293,16 @@ $list-width-px: 50, 150, 200, 500 !default;
   }
 }
 
+/* here you may add rem widths */
+$list-width-rem: 33 !default; // say 33
+// ex .w500p { width: 500px; }
+
+@each $width in $list-width-rem {
+  .w#{$width}r {
+    width: #{$width}rem;
+  }
+}
+
 /* here you may add em widths */
 $list-width-em: 14, 120, 140, 220, 400 !default;
 // ex .w500e { width: 60em; }
