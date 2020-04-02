@@ -140,6 +140,7 @@ const Editor = ({
                 <textarea
                     className="w100 h100 flex-item-fluid pt1 pb1 pl0-5 pr0-5"
                     ref={textareaRef}
+                    onFocus={onFocus}
                     onChange={handlePlainTextChange}
                     placeholder={c('Placeholder').t`Write your message`}
                 />
