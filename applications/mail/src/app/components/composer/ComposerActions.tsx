@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { Button, useModals, ConfirmModal, Alert, classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -7,8 +7,7 @@ import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
 import { getDate } from '../../helpers/elements';
 import AttachmentsButton from './attachments/AttachmentsButton';
-
-import { hasFlag } from '../../helpers/message/messages';
+import { hasFlag, getAttachments } from '../../helpers/message/messages';
 import { MESSAGE_FLAGS } from '../../constants';
 
 interface Props {
@@ -21,6 +20,7 @@ interface Props {
     onSave: () => Promise<void>;
     onSend: () => Promise<void>;
     onDelete: () => Promise<void>;
+    addressesBlurRef: MutableRefObject<() => void>;
 }
 
 const ComposerActions = ({
@@ -32,7 +32,8 @@ const ComposerActions = ({
     onExpiration,
     onSave,
     onSend,
-    onDelete
+    onDelete,
+    addressesBlurRef
 }: Props) => {
     const { createModal } = useModals();
 
@@ -56,13 +57,21 @@ const ComposerActions = ({
         }
     }
 
-    const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) || message.data?.Password;
+    const isAttachments = getAttachments(message.data).length > 0;
+    const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && message.data?.Password;
     const isExpiration = !!message.data?.ExpiresIn;
 
     return (
-        <footer className="composer-actions flex flex-row flex-spacebetween w100 pr0-5">
+        <footer
+            className="composer-actions flex flex-row flex-spacebetween w100 pr0-5"
+            onClick={addressesBlurRef.current}
+        >
             <div className="flex">
-                <AttachmentsButton disabled={lock} onAddAttachments={onAddAttachments} />
+                <AttachmentsButton
+                    className={classnames([isAttachments && 'pm-button-blueborder'])}
+                    disabled={lock}
+                    onAddAttachments={onAddAttachments}
+                />
                 <Button
                     icon="expiration"
                     className={classnames([

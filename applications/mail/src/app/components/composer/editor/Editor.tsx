@@ -13,8 +13,15 @@ import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
 import { setTextAreaCursorStart } from '../../../helpers/dom';
 import { getContent } from '../../../helpers/message/messageContent';
 import { useHandler } from '../../../hooks/useHandler';
+import { removeEmbeddedHTML } from '../../../helpers/embedded/embeddedParser';
+import { Attachment } from '../../../models/attachment';
 
-export type InsertRef = MutableRefObject<((embeddeds: EmbeddedMap) => void) | undefined>;
+interface ExternalEditorActions {
+    insertEmbedded: (embeddeds: EmbeddedMap) => void;
+    removeEmbedded: (attachments: Attachment[]) => void;
+}
+
+export type EditorActionsRef = MutableRefObject<ExternalEditorActions | undefined>;
 
 interface Props {
     message: MessageExtended;
@@ -27,8 +34,9 @@ interface Props {
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
     onAddEmbeddedImages: (files: File[]) => void;
+    onRemoveAttachment: (attachment: Attachment) => () => void;
     contentFocusRef: MutableRefObject<() => void>;
-    contentInsertRef: InsertRef;
+    editorActionsRef: EditorActionsRef;
 }
 
 const Editor = ({
@@ -41,8 +49,9 @@ const Editor = ({
     onFocus,
     onAddAttachments,
     onAddEmbeddedImages,
+    onRemoveAttachment,
     contentFocusRef,
-    contentInsertRef
+    editorActionsRef
 }: Props) => {
     const isPlainText = testIsPlainText(message.data);
 
@@ -118,12 +127,22 @@ const Editor = ({
         });
     });
 
+    const handleRemoveEmbedded = useHandler(async (attachments: Attachment[]) => {
+        const document = (squireRef.current.getDocument() as any) as Element;
+        attachments.forEach((attachment) => {
+            removeEmbeddedHTML(document, attachment);
+        });
+    });
+
     const handlePlainTextChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
         onChangeContent(event.target.value);
     };
 
     useEffect(() => {
-        contentInsertRef.current = handleInsertEmbedded;
+        editorActionsRef.current = {
+            insertEmbedded: handleInsertEmbedded,
+            removeEmbedded: handleRemoveEmbedded
+        };
     }, []);
 
     return (
@@ -148,10 +167,12 @@ const Editor = ({
                 <>
                     <EditorSquire
                         ref={squireRef}
+                        message={message}
                         onFocus={onFocus}
                         onReady={handleReady}
                         onInput={handleInput}
                         onAddEmbeddedImages={onAddEmbeddedImages}
+                        onRemoveAttachment={onRemoveAttachment}
                     />
                     {!blockquoteExpanded && (
                         <div className="m0-5">

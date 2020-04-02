@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { c, msgid } from 'ttag';
 import { Icon, useToggle } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { diff } from 'proton-shared/lib/helpers/array';
 
 import { MessageExtended } from '../../../models/message';
 import { attachmentsSize, getAttachments } from '../../../helpers/message/messages';
 import { Attachment } from '../../../models/attachment';
-import { diff } from 'proton-shared/lib/helpers/array';
-import { PendingUpload } from '../Composer';
+import { PendingUpload } from '../../../hooks/useAttachments';
 import { AttachmentItemNormal, AttachmentItemPending } from './AttachmentItem';
 
 interface Props {
@@ -17,7 +17,10 @@ interface Props {
     onRemoveUpload: (pendingUpload: PendingUpload) => () => void;
 }
 
-const AttachmentsList = ({ message, pendingUploads = [], onRemoveAttachment, onRemoveUpload }: Props) => {
+// Needed to keep a stable ref to an empty array for the useEffect ref check
+const emptyUploads = [] as PendingUpload[];
+
+const AttachmentsList = ({ message, pendingUploads = emptyUploads, onRemoveAttachment, onRemoveUpload }: Props) => {
     const { state: expanded, toggle: toggleExpanded, set: setExpanded } = useToggle(false);
 
     useEffect(() => {
@@ -25,7 +28,8 @@ const AttachmentsList = ({ message, pendingUploads = [], onRemoveAttachment, onR
     }, [pendingUploads]);
 
     const attachments = getAttachments(message.data);
-    const size = humanSize(attachmentsSize(message.data));
+    const size = attachmentsSize(message.data);
+    const sizeLabel = humanSize(size);
 
     const embeddedAttachments = [...(message.embeddeds?.values() || [])].map(({ attachment }) => attachment);
     const pureAttachments = diff(attachments, embeddedAttachments);
@@ -34,7 +38,7 @@ const AttachmentsList = ({ message, pendingUploads = [], onRemoveAttachment, onR
         <div className="composer-attachments-list bg-global-highlight flex flex-column relative w100 flex-nowrap">
             <button type="button" className="flex flex-row flex-spacebetween w100 p0-5" onClick={toggleExpanded}>
                 <div>
-                    <strong className="mr0-5">{size}</strong>
+                    {size !== 0 && <strong className="mr0-5">{sizeLabel}</strong>}
                     {pureAttachments.length > 0 && (
                         <span className="mr0-5">
                             <Icon name="attach" className="mr0-5" />

@@ -9,7 +9,7 @@ import { MessageExtended, Message } from '../../models/message';
 import { mutateHTMLCid } from '../embedded/embeddedParser';
 import { find } from '../embedded/embeddedFinder';
 import { isPlainText, getAttachments } from './messages';
-import { getDocumentContent, getContent, getPlainTextContent } from './messageContent';
+import { getDocumentContent, getPlainTextContent } from './messageContent';
 import { getSessionKey } from '../attachment/attachmentLoader';
 import { wait } from 'proton-shared/lib/helpers/promise';
 
@@ -42,7 +42,7 @@ export const prepareAndEncryptBody = async (message: MessageExtended) => {
     const plainText = isPlainText(message.data);
     const document = plainText ? undefined : prepareExport(message);
     const content = plainText ? getPlainTextContent(message) : getDocumentContent(document);
-    const encrypted = await encryptBody(getContent(message), message.publicKeys, message.privateKeys);
+    const encrypted = await encryptBody(content, message.publicKeys, message.privateKeys);
     return { document, content, encrypted };
 };
 

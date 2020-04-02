@@ -12,6 +12,7 @@ import { transformRemote } from '../helpers/transforms/transformRemote';
 import { useMessageCache, updateMessageCache } from '../containers/MessageProvider';
 import { getMessage } from 'proton-shared/lib/api/messages';
 import { prepareMailDocument } from '../helpers/transforms/transforms';
+import { getContent } from '../helpers/message/messageContent';
 
 export const useLoadMessage = (inputMessage: Message) => {
     const api = useApi();
@@ -73,6 +74,8 @@ export const useInitializeMessage = (localID: string) => {
         );
 
         const data = Attachments ? { ...message.data, Attachments } : message.data;
+
+        console.log('init', getContent({ document }), decryptedBody);
 
         updateMessageCache(messageCache, localID, {
             data,

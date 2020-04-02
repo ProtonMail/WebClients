@@ -7,7 +7,7 @@ import { ENCRYPTED_STATUS } from '../../constants';
 import { getAttachment, findEmbedded } from './embeddedFinder';
 import { get } from '../attachment/attachmentLoader';
 import { Attachment } from '../../models/attachment';
-import { createBlob } from './embeddeds';
+import { createBlob, readCID } from './embeddeds';
 import { isInlineEmbedded, isEmbedded } from '../image';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { isDraft } from '../message/messages';
@@ -100,6 +100,17 @@ export const prepareImages = (
     });
 
     return showEmbedded;
+};
+
+/**
+ * Remove an embedded attachment from the document
+ */
+export const removeEmbeddedHTML = (document: Element, attachment: Attachment) => {
+    const cid = readCID(attachment);
+    const nodes = document.querySelectorAll(
+        `img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`
+    );
+    [...nodes].map((node) => node.remove());
 };
 
 /**

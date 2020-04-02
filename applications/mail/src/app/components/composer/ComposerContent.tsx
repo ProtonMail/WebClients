@@ -6,13 +6,13 @@ import { MessageExtended } from '../../models/message';
 import { getAttachments } from '../../helpers/message/messages';
 import AttachmentsList from './attachments/AttachmentsList';
 import { Attachment } from '../../models/attachment';
-import Editor, { InsertRef } from './editor/Editor';
+import Editor, { EditorActionsRef } from './editor/Editor';
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
 import EditorEmbeddedModal from './editor/EditorEmbeddedModal';
 import { isDragFile } from '../../helpers/dom';
+import { PendingUpload } from '../../hooks/useAttachments';
 
 import 'design-system/_sass/react-styles/quill/_snow.scss';
-import { PendingUpload } from './Composer';
 
 interface Props {
     message: MessageExtended;
@@ -24,14 +24,14 @@ interface Props {
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
     onAddEmbeddedImages: (files: File[]) => void;
+    onCancelAddAttachment: () => void;
     onRemoveAttachment: (attachment: Attachment) => () => void;
     onRemoveUpload: (pendingUpload: PendingUpload) => () => void;
     pendingFiles?: File[];
     pendingUploads?: PendingUpload[];
-    onCancelEmbedded: () => void;
     onSelectEmbedded: (action: ATTACHMENT_ACTION) => void;
     contentFocusRef: MutableRefObject<() => void>;
-    contentInsertRef: InsertRef;
+    editorActionsRef: EditorActionsRef;
 }
 
 const ComposerContent = ({
@@ -44,14 +44,14 @@ const ComposerContent = ({
     onFocus,
     onAddAttachments,
     onAddEmbeddedImages,
+    onCancelAddAttachment,
     onRemoveAttachment,
     onRemoveUpload,
     pendingFiles,
     pendingUploads,
-    onCancelEmbedded,
     onSelectEmbedded,
     contentFocusRef,
-    contentInsertRef
+    editorActionsRef
 }: Props) => {
     const [fileHover, setFileHover] = useState(false);
 
@@ -102,11 +102,16 @@ const ComposerContent = ({
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}
                     onAddEmbeddedImages={onAddEmbeddedImages}
+                    onRemoveAttachment={onRemoveAttachment}
                     contentFocusRef={contentFocusRef}
-                    contentInsertRef={contentInsertRef}
+                    editorActionsRef={editorActionsRef}
                 />
                 {pendingFiles && (
-                    <EditorEmbeddedModal files={pendingFiles} onClose={onCancelEmbedded} onSelect={onSelectEmbedded} />
+                    <EditorEmbeddedModal
+                        files={pendingFiles}
+                        onClose={onCancelAddAttachment}
+                        onSelect={onSelectEmbedded}
+                    />
                 )}
             </div>
             {showAttachements && (

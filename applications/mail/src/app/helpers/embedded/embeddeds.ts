@@ -4,7 +4,8 @@ import { ucFirst, toUnsignedString } from '../string';
 import { Attachment } from '../../models/attachment';
 import { transformEscape } from '../transforms/transformEscape';
 import { hash } from '../string';
-import { EmbeddedInfo } from '../../models/message';
+import { EmbeddedInfo, EmbeddedMap } from '../../models/message';
+import { UploadResult } from '../attachment/attachmentUploader';
 
 const urlCreator = () => window.URL || window.webkitURL;
 
@@ -102,6 +103,17 @@ export const createBlob = (attachment: Attachment, data: Uint8Array) => {
 };
 
 export const createEmbeddedMap = (...args: any[]) => new Map<string, EmbeddedInfo>(...args);
+
+export const createEmbeddedInfo = (upload: UploadResult) => ({
+    attachment: upload.attachment,
+    url: createBlob(upload.attachment, upload.packets.Preview)
+});
+
+export const cloneEmbedddedMap = (source: EmbeddedMap | undefined) => {
+    const result = createEmbeddedMap();
+    source?.forEach((info, cid) => result.set(cid, info));
+    return result;
+};
 
 export const isEmbeddable = (fileType: string) => embeddableTypes.includes(fileType);
 

@@ -105,7 +105,6 @@ export const getAndVerify = async (
         attachmentdata = cache.get(attachmentID) as DecryptResult;
     } else {
         attachmentdata = await getDecryptedAttachment(attachment, message, api);
-
         if (reverify) {
             // await verify(attachment, newAttachment, message, signatures, signatureCache));
         }

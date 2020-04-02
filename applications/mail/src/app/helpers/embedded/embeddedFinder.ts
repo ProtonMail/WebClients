@@ -53,3 +53,13 @@ export const find = (message: MessageExtended, document: Element) => {
 
     return createEmbeddedMap(embeddedAttachments.map((attachment) => [readCID(attachment), { attachment }]));
 };
+
+/**
+ * Find CIDs in content diff from the editor to detect embedded deletion
+ * (with compat mode for old embedded)
+ */
+export const findCIDsInContent = (content: string) =>
+    (content.match(/(rel=("([^"]|"")*"))|(data-embedded-img=("([^"]|"")*"))/g) || [])
+        .filter((key) => key !== 'rel="noreferrer nofollow noopener"') // we don't care about links
+        .map((key) => key.replace(/rel="|data-embedded-img="/, ''))
+        .map((key) => key.slice(0, -1));

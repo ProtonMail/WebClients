@@ -1,17 +1,8 @@
 import React, { useState, useEffect, CSSProperties, useRef } from 'react';
-import {
-    classnames,
-    useToggle,
-    useWindowSize,
-    useNotifications,
-    useApi,
-    useMailSettings,
-    useAuthentication
-} from 'react-components';
+import { classnames, useToggle, useWindowSize, useNotifications, useMailSettings } from 'react-components';
 import { c } from 'ttag';
 import { Address } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { wait } from 'proton-shared/lib/helpers/promise';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 
 import { MapSendPreferences } from '../../helpers/message/sendPreferences';
@@ -28,23 +19,18 @@ import {
     COMPOSER_HEIGHT,
     COMPOSER_SWITCH_MODE
 } from '../../containers/ComposerContainer';
-import { getRecipients, getAttachments } from '../../helpers/message/messages';
-import { upload, ATTACHMENT_ACTION, UploadResult } from '../../helpers/attachment/attachmentUploader';
-import { Attachment } from '../../models/attachment';
-import { removeAttachment } from '../../api/attachments';
-import { createEmbeddedMap, readCID, isEmbeddable } from '../../helpers/embedded/embeddeds';
-import { InsertRef } from './editor/Editor';
+import { getRecipients, mergeMessages } from '../../helpers/message/messages';
+import { EditorActionsRef } from './editor/Editor';
 import { setContent } from '../../helpers/message/messageContent';
 import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
 import { useHandler } from '../../hooks/useHandler';
-import { isPlainText } from '../../helpers/message/messages';
-import { Upload } from '../../helpers/upload';
 import { useMessage } from '../../hooks/useMessage';
 import { useInitializeMessage } from '../../hooks/useMessageReadActions';
-import { useCreateDraft, useSaveDraft, useDeleteDraft, useUpdateAttachments } from '../../hooks/useMessageWriteActions';
+import { useCreateDraft, useSaveDraft, useDeleteDraft } from '../../hooks/useMessageWriteActions';
 import { useSendMessage } from '../../hooks/useSendMessage';
 import { isNewDraft } from '../../helpers/message/messageDraft';
+import { useAttachments } from '../../hooks/useAttachments';
 
 enum ComposerInnerModal {
     None,
@@ -52,21 +38,9 @@ enum ComposerInnerModal {
     Expiration
 }
 
-export interface PendingUpload {
-    file: File;
-    upload: Upload<UploadResult>;
+export interface MessageChange {
+    (message: Partial<MessageExtended> | ((message: MessageExtended) => Partial<MessageExtended>)): void;
 }
-
-/**
- * Create a new MessageExtended with props from both m1 and m2
- * Almost a standard deep merge but simplified with specific needs
- * m2 props will override those from m1
- */
-const mergeMessages = (m1: MessageExtended, m2: Partial<MessageExtended>): MessageExtended => ({
-    ...m1,
-    ...m2,
-    data: { ...m1.data, ...m2.data }
-});
 
 const computeStyle = (
     inputStyle: CSSProperties,
@@ -102,11 +76,9 @@ interface Props {
 }
 
 const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus, onClose: inputOnClose }: Props) => {
-    const api = useApi();
     const [mailSettings] = useMailSettings();
     const [width, height] = useWindowSize();
     const { createNotification } = useNotifications();
-    const auth = useAuthentication();
 
     // Minimized status of the composer
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
@@ -137,12 +109,6 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
         }
     });
 
-    // Pending files to upload
-    const [pendingFiles, setPendingFiles] = useState<File[]>();
-
-    // Pending uploads
-    const [pendingUploads, setPendingUploads] = useState<PendingUpload[]>();
-
     // Map of send preferences for each recipient
     const [mapSendPrefs, setMapSendPrefs] = useState<MapSendPreferences>({});
 
@@ -155,7 +121,6 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
     const saveDraft = useSaveDraft();
     const sendMessage = useSendMessage();
     const deleteDraft = useDeleteDraft(syncedMessage);
-    const updateAttachments = useUpdateAttachments(syncedMessage);
 
     const syncLock = syncedMessage.actionStatus !== undefined;
     const syncActivity = syncedMessage.actionStatus || '';
@@ -166,7 +131,7 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
     const contentFocusRef = useRef<() => void>(noop);
 
     // Get a ref on the editor to trigger insertion of embedded images
-    const contentInsertRef: InsertRef = useRef();
+    const editorActionsRef: EditorActionsRef = useRef();
 
     // onClose handler can be called in a async handler
     // Input onClose ref can change in the meantime
@@ -185,14 +150,15 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
             addAction(initialize);
         }
 
-        if (modelMessage.document === undefined) {
+        if (modelMessage.document === undefined || modelMessage.data?.ID !== syncedMessage.data?.ID) {
             setModelMessage({
+                ...syncedMessage,
                 ...modelMessage,
-                data: { ...modelMessage.data, ...syncedMessage.data },
+                data: { ...syncedMessage.data, ...modelMessage.data },
                 document: syncedMessage.document
             });
         }
-    }, [syncLock, syncedMessage]);
+    }, [syncLock, syncedMessage.document, syncedMessage.data?.ID]);
 
     useEffect(() => {
         if (!maximized && height - COMPOSER_VERTICAL_GUTTER - HEADER_HEIGHT < COMPOSER_HEIGHT - COMPOSER_SWITCH_MODE) {
@@ -225,17 +191,27 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
         { debounce: 2000 }
     );
 
-    const handleChange = (message: Partial<MessageExtended>) => {
-        const newModelMessage = mergeMessages(modelMessage, message);
-        setModelMessage(newModelMessage);
-        autoSave(newModelMessage);
+    const handleChange: MessageChange = (message) => {
+        if (message instanceof Function) {
+            setModelMessage((modelMessage) => {
+                const newModelMessage = mergeMessages(modelMessage, message(modelMessage));
+                autoSave(newModelMessage);
+                return newModelMessage;
+            });
+        } else {
+            const newModelMessage = mergeMessages(modelMessage, message);
+            setModelMessage(newModelMessage);
+            autoSave(newModelMessage);
+        }
     };
+
     const handleChangeContent = (content: string) => {
         setContent(modelMessage, content);
         const newModelMessage = { ...modelMessage };
         setModelMessage(newModelMessage);
         autoSave(newModelMessage);
     };
+
     const handleChangeFlag = (changes: Map<number, boolean>) => {
         let Flags = modelMessage.data?.Flags || 0;
         changes.forEach((isAdd, flag) => {
@@ -244,69 +220,21 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
         });
         handleChange({ data: { Flags } });
     };
+
+    const {
+        pendingFiles,
+        pendingUploads,
+        handleAddAttachmentsStart,
+        handleAddEmbeddedImages,
+        handleAddAttachmentsUpload,
+        handleCancelAddAttachment,
+        handleRemoveAttachment,
+        handleRemoveUpload
+    } = useAttachments(modelMessage, handleChange, editorActionsRef);
+
     const save = async (messageToSave = modelMessage) => {
-        await saveDraft(messageToSave);
+        await addAction(() => saveDraft(messageToSave));
         createNotification({ text: c('Info').t`Message saved` });
-    };
-
-    const removePendingUpload = (pendingUpload: PendingUpload) => {
-        const newPendingUploads = pendingUploads?.filter((aPendingUpload) => aPendingUpload !== pendingUpload);
-        setPendingUploads(newPendingUploads);
-    };
-    const handleAddAttachmentEnd = useHandler(async (action: ATTACHMENT_ACTION, pendingUpload: PendingUpload) => {
-        removePendingUpload(pendingUpload);
-
-        const uploadResult = await pendingUpload.upload.resultPromise; // should be instant
-        const updatedMessage = await addAction(() => updateAttachments([uploadResult], action));
-        const Attachments = getAttachments(updatedMessage.data);
-
-        const newModelMessage = mergeMessages(modelMessage, { data: { Attachments } });
-        setModelMessage(newModelMessage);
-
-        if (action == ATTACHMENT_ACTION.INLINE) {
-            // Needed to wait for the setModelMessage to be applied before inserting the image in the editor
-            // Insertion will trigger a change and update the model which has to be updated
-            await wait(0);
-
-            const cid = readCID(uploadResult.attachment);
-            const newEmbeddeds = createEmbeddedMap([[cid, updatedMessage.embeddeds?.get(cid)]]);
-
-            contentInsertRef.current?.(newEmbeddeds);
-        }
-    });
-    const handleAddAttachmentsUpload = async (action: ATTACHMENT_ACTION, files = pendingFiles || []) => {
-        setPendingFiles(undefined);
-
-        const uploads = upload(files, syncedMessage, action, auth.UID);
-        const pendingUploads = files?.map((file, i) => ({ file, upload: uploads[i] }));
-        setPendingUploads(pendingUploads);
-
-        pendingUploads.forEach((pendingUpload) => {
-            pendingUpload.upload.resultPromise.then(() => handleAddAttachmentEnd(action, pendingUpload));
-        });
-    };
-    const handleAddEmbeddedImages = async (files: File[]) =>
-        handleAddAttachmentsUpload(ATTACHMENT_ACTION.INLINE, files);
-    const handleAddAttachmentsStart = async (files: File[]) => {
-        const embeddable = files.every((file) => isEmbeddable(file.type));
-        const plainText = isPlainText(modelMessage.data);
-
-        if (!plainText && embeddable) {
-            setPendingFiles(files);
-        } else {
-            handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
-        }
-    };
-    const handleRemoveAttachment = (attachment: Attachment) => async () => {
-        await api(removeAttachment(attachment.ID || '', modelMessage.data?.ID || ''));
-        const Attachments = modelMessage.data?.Attachments?.filter((a: Attachment) => a.ID !== attachment.ID);
-        const newModelMessage = mergeMessages(modelMessage, { data: { Attachments } });
-        setModelMessage(newModelMessage);
-        save(modelMessage);
-    };
-    const handleRemoveUpload = (pendingUpload: PendingUpload) => () => {
-        pendingUpload.upload.abort();
-        removePendingUpload(pendingUpload);
     };
     const handlePassword = () => {
         setInnerModal(ComposerInnerModal.Password);
@@ -416,14 +344,14 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
                             onFocus={handleContentFocus}
                             onAddAttachments={handleAddAttachmentsStart}
                             onAddEmbeddedImages={handleAddEmbeddedImages}
+                            onCancelAddAttachment={handleCancelAddAttachment}
                             onRemoveAttachment={handleRemoveAttachment}
                             onRemoveUpload={handleRemoveUpload}
                             pendingFiles={pendingFiles}
                             pendingUploads={pendingUploads}
-                            onCancelEmbedded={() => setPendingFiles(undefined)}
                             onSelectEmbedded={handleAddAttachmentsUpload}
                             contentFocusRef={contentFocusRef}
-                            contentInsertRef={contentInsertRef}
+                            editorActionsRef={editorActionsRef}
                         />
                         <ComposerActions
                             message={modelMessage}
@@ -435,6 +363,7 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
                             onSave={handleSave}
                             onSend={handleSend}
                             onDelete={handleDelete}
+                            addressesBlurRef={addressesBlurRef}
                         />
                     </div>
                 </div>

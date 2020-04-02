@@ -3,12 +3,10 @@ import { useApi, useEventManager } from 'react-components';
 
 import { MessageExtended, Message } from '../models/message';
 import { useMessageKeys } from './useMessageKeys';
-import { getAttachments, mergeMessages } from '../helpers/message/messages';
+import { mergeMessages } from '../helpers/message/messages';
 import { useMessageCache, updateMessageCache, updateMessageStatus, MessageCache } from '../containers/MessageProvider';
 import { createMessage, updateMessage } from '../helpers/message/messageExport';
 import { deleteMessages } from 'proton-shared/lib/api/messages';
-import { UploadResult, ATTACHMENT_ACTION } from '../helpers/attachment/attachmentUploader';
-import { createEmbeddedMap, readCID, createBlob } from '../helpers/embedded/embeddeds';
 
 /**
  * Only takes technical stuff from the updated message
@@ -70,31 +68,4 @@ export const useDeleteDraft = (message: MessageExtended) => {
         messageCache.delete(message.localID || '');
         await call();
     }, [message]);
-};
-
-export const useUpdateAttachments = (message: MessageExtended) => {
-    const messageCache = useMessageCache();
-
-    return useCallback(
-        async (uploads: UploadResult[], action = ATTACHMENT_ACTION.ATTACHMENT) => {
-            // New attachment list
-            const newAttachments = uploads.map((upload) => upload.attachment);
-            const Attachments = [...getAttachments(message.data), ...newAttachments];
-
-            // Update embeddeds map if embedded attachments
-            const embeddeds = message.embeddeds || createEmbeddedMap();
-
-            if (action === ATTACHMENT_ACTION.INLINE) {
-                uploads.forEach((upload) =>
-                    embeddeds.set(readCID(upload.attachment), {
-                        attachment: upload.attachment,
-                        url: createBlob(upload.attachment, upload.packets.Preview)
-                    })
-                );
-            }
-
-            return updateMessageCache(messageCache, message.localID, { data: { Attachments }, embeddeds });
-        },
-        [message]
-    );
 };

@@ -10,6 +10,7 @@ import { Attachment } from '../../models/attachment';
 import { generateCid, isEmbeddable } from '../embedded/embeddeds';
 import { generateProtonWebUID } from 'proton-shared/lib/helpers/uid';
 import { Upload, upload as uploadHelper, RequestParams } from '../upload';
+import { ATTACHMENT_MAX_SIZE } from '../../constants';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
 
@@ -141,4 +142,14 @@ export const upload = (
         const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;
         return uploadFile(file, message, inline, uid, cid);
     });
+};
+
+/**
+ * Is current attachments plus eventual files to upload will exceed the max size
+ */
+export const isSizeExceeded = (message: MessageExtended, files: File[] = []) => {
+    const attachments = getAttachments(message.data);
+    const attachmentsSize = attachments.reduce((acc, attachment) => acc + (attachment.Size || 0), 0);
+    const filesSize = files.reduce((acc, file) => acc + (file.size || 0), 0);
+    return attachmentsSize + filesSize > ATTACHMENT_MAX_SIZE;
 };

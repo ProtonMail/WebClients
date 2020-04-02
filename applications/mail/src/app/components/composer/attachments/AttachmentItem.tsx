@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, classnames } from 'react-components';
 
 import { Attachment } from '../../../models/attachment';
-import { PendingUpload } from '../Composer';
+import { PendingUpload } from '../../../hooks/useAttachments';
 
 interface Props {
     name: string;
