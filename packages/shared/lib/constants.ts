@@ -136,12 +136,10 @@ export enum SPF_STATE {
 }
 
 export enum DKIM_STATE {
-    DKIM_STATE_DEFAULT = 0, // 0 is default, no dkim record
-    DKIM_STATE_ONE = 1, // 1 is found entries but format wrong
-    DKIM_STATE_MULT = 2, // 2 is multiple dkim records, no good
-    DKIM_STATE_CHECK = 3, // 3 is proper entry, but did not check or did not match DB's public key
-    DKIM_STATE_GOOD = 4, // 4 is proper entry and matches DB's public key, good!
-    DKIM_STATE_OFF = 5 // 5 is User wants to stop signing with dkim
+    DKIM_STATE_DEFAULT = 0,
+    DKIM_STATE_ERROR = 3,
+    DKIM_STATE_GOOD = 4,
+    DKIM_STATE_WARNING = 6
 }
 
 export enum DMARC_STATE {
