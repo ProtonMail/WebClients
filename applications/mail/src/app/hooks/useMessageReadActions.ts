@@ -65,7 +65,7 @@ export const useInitializeMessage = (localID: string) => {
         await markAsRead(message, api, call);
 
         const { document, showRemoteImages, showEmbeddedImages, embeddeds } = await prepareMailDocument(
-            { ...message, decryptedBody },
+            { ...message, decryptedBody, publicKeys, privateKeys },
             base64Cache,
             attachmentsCache,
             api,
