@@ -114,8 +114,6 @@ const encryptBodyPackage = async (pack: Package, ownKeys: CachedKey[], publicKey
     const { privateKeys } = splitKeys(ownKeys) as any;
     const cleanPublicKeys = publicKeys.filter(identity);
 
-    console.log('encryptBodyPackage', pack);
-
     const { data, sessionKey } = await encryptMessage({
         data: pack.Body || '',
         publicKeys: cleanPublicKeys,
