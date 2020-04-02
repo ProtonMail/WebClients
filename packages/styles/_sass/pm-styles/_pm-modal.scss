@@ -131,6 +131,12 @@ $modal-smaller-width: 28em !default;
   max-height: $modal-full-dimension;
   margin: 1%;
 }
+.pm-modal--heightAuto {
+	height: auto;
+	max-height: $modal-full-dimension;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
 
 
 
