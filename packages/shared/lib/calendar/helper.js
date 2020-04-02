@@ -1,14 +1,10 @@
+import { randomHexString4 as s4 } from '../helpers/uid';
+
 /**
  * Generates a calendar UID of the form 'proton-calendar-uuid'
  * @return {String}
  */
 export const generateUID = () => {
-    const s4 = () => {
-        return Math.floor((1 + Math.random()) * 0x10000)
-            .toString(16)
-            .substring(1);
-    };
-
     return `proton-calendar-${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
 };
 
