@@ -13,7 +13,7 @@ import {
     useModals,
     useNotifications,
     usePremiumDomains
-} from 'react-components';
+} from '../../index';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 
 const PmMeButton = () => {

@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { getPublicKeysEmailHelper } from 'proton-shared/lib/api/helpers/publicKeys';
+import getPublicKeysEmailHelper from 'proton-shared/lib/api/helpers/getPublicKeysEmailHelper';
 import useCache from '../containers/cache/useCache';
 import { getPromiseValue } from './useCachedModelResult';
 import useApi from '../containers/api/useApi';

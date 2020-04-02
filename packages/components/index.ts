@@ -378,6 +378,7 @@ export { useUserKeys, useGetUserKeys } from './hooks/useUserKeys';
 export { useAddressesKeys, useGetAddressesKeys } from './hooks/useAddressesKeys';
 export { useGetAddressKeys } from './hooks/useGetAddressKeys';
 export { useGetPublicKeys } from './hooks/useGetPublicKeys';
+export { default as useGetEncryptionPreferences } from './hooks/useGetEncryptionPreferences';
 export {
     useCalendarBootstrap,
     useReadCalendarBootstrap,

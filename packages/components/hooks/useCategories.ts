@@ -3,7 +3,7 @@ import { LabelsModel } from 'proton-shared/lib/models/labelsModel';
 import { LABEL_TYPE } from 'proton-shared/lib/constants';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { Label } from 'proton-shared/lib/interfaces/Label';
-import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
+import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
 import createUseModelHook from './helpers/createModelHook';
 

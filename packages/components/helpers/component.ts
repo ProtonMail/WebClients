@@ -1,3 +1,5 @@
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+
 let current = 0;
 
 export const generateUID = (prefix: string) => `${prefix || 'id'}-${current++}`;
@@ -8,7 +10,7 @@ export const fakeEvent = <T>(value: T) => ({ target: { value } });
  */
 export const classnames = (classNames: (string | boolean | null | undefined)[] = []) => {
     return classNames
-        .filter(Boolean)
+        .filter(isTruthy)
         .join(' ')
         .trim();
 };
