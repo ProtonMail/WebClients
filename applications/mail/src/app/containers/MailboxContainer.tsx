@@ -172,22 +172,24 @@ const MailboxContainer = ({
             >
                 {(columnMode || !elementID) && (
                     <div className="items-column-list scroll-if-needed scroll-smooth-touch">
-                        {loading ? (
-                            <div className="flex flex-justify-center h100">
-                                <Loader />
-                            </div>
-                        ) : (
-                            <List
-                                location={location}
-                                labelID={labelID}
-                                mailSettings={mailSettings}
-                                elementID={elementID}
-                                elements={elements}
-                                checkedIDs={checkedIDs}
-                                onCheck={handleCheck}
-                                onClick={handleElement}
-                            />
-                        )}
+                        <div className="items-column-list-inner">
+                            {loading ? (
+                                <div className="flex flex-justify-center h100">
+                                    <Loader />
+                                </div>
+                            ) : (
+                                <List
+                                    location={location}
+                                    labelID={labelID}
+                                    mailSettings={mailSettings}
+                                    elementID={elementID}
+                                    elements={elements}
+                                    checkedIDs={checkedIDs}
+                                    onCheck={handleCheck}
+                                    onClick={handleElement}
+                                />
+                            )}
+                        </div>
                     </div>
                 )}
                 {(columnMode || elementID) && (
