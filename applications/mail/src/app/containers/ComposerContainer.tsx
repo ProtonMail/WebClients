@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { useAddresses, useWindowSize, useNotifications } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 
-import { MessageExtended } from '../models/message';
 import Composer from '../components/composer/Composer';
 import { MESSAGE_ACTIONS } from '../constants';
+import { MessageExtended } from '../models/message';
 import { useDraft } from '../hooks/useDraft';
 
 import '../components/composer/composer.scss';

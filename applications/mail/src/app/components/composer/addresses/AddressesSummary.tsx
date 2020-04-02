@@ -1,22 +1,23 @@
 import React, { Fragment } from 'react';
 import { c } from 'ttag';
 import { Label, LinkButton } from 'react-components';
-import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
 
 import { MessageExtended } from '../../../models/message';
 import { Recipient, recipientTypes } from '../../../models/address';
 import { getRecipients } from '../../../helpers/message/messages';
 import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
-import { ContactEmail } from '../../../models/contact';
+import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import EncryptionStatusIcon, { MapStatusIcon } from '../../message/EncryptionStatusIcon';
 
 interface Props {
     message: MessageExtended;
+    mapSendIcons: MapStatusIcon;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
     onFocus: () => void;
 }
 
-const AddressesSummary = ({ message: { data = {} }, contacts, contactGroups, onFocus }: Props) => {
+const AddressesSummary = ({ message: { data = {} }, mapSendIcons, contacts, contactGroups, onFocus }: Props) => {
     return (
         <div className="flex flex-row flex-nowrap flex-items-center pl0-5 pr0-5 mb0-5" onClick={onFocus}>
             <Label htmlFor={null} className="composer-meta-label pr0-5 pt0 bold">
@@ -39,12 +40,20 @@ const AddressesSummary = ({ message: { data = {} }, contacts, contactGroups, onF
                                 {type === 'BCCList' && (
                                     <span className="mr0-5 color-primary">{c('Title').t`BCC`}:</span>
                                 )}
-                                {recipientOrGroups.map((recipientOrGroup, i) => (
-                                    <span key={i} className="mr0-5">
-                                        {getRecipientOrGroupLabel(recipientOrGroup, contacts)}
-                                        {i !== recipientOrGroups.length - 1 && ','}
-                                    </span>
-                                ))}
+                                {recipientOrGroups.map((recipientOrGroup, i) => {
+                                    const sendIcon = recipientOrGroup.recipient
+                                        ? mapSendIcons[recipientOrGroup.recipient.Address as string]
+                                        : undefined;
+                                    return (
+                                        <span key={i} className="mr0-5">
+                                            <span>
+                                                {sendIcon && <EncryptionStatusIcon {...sendIcon} />}
+                                                {getRecipientOrGroupLabel(recipientOrGroup, contacts)}
+                                            </span>
+                                            {i !== recipientOrGroups.length - 1 && ','}
+                                        </span>
+                                    );
+                                })}
                             </Fragment>
                         );
                     })}

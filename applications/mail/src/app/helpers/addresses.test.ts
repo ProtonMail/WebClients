@@ -3,7 +3,7 @@ import { Address } from 'proton-shared/lib/interfaces';
 
 import { findSender, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from './addresses';
 import { Recipient } from '../models/address';
-import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
+import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
 jest.mock('./contacts', () => ({
     getContactsOfGroup: jest.fn((arg: any[]) => arg.map(() => ({})))
@@ -14,7 +14,7 @@ const recipient2: Recipient = { Name: 'recipient2', Address: 'address2' };
 const recipient3: Recipient = { Name: 'recipient3', Address: 'address3', Group: 'Group1' };
 const recipient4: Recipient = { Name: 'recipient4', Address: 'address4', Group: 'Group1' };
 const recipient5: Recipient = { Name: 'recipient5', Address: 'address5', Group: 'Group2' };
-const group1: ContactGroup = { ID: 'GroupID1', Name: 'GroupName1', Path: 'Group1' } as ContactGroup;
+const group1 = { ID: 'GroupID1', Name: 'GroupName1', Path: 'Group1' } as ContactGroup;
 
 describe('addresses', () => {
     describe('findSender', () => {
@@ -102,7 +102,7 @@ describe('addresses', () => {
         it('should compute group size with contact list', () => {
             const result = getRecipientOrGroupLabel(
                 { group: { group: group1, recipients: [recipient3, recipient4] } },
-                range(0, 8).map(() => ({}))
+                range(0, 8).map(() => ({})) as ContactEmail[]
             );
             expect(result).toEqual('GroupName1 (2/8 Members)');
         });

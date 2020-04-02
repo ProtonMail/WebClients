@@ -1,8 +1,8 @@
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
 import createCache from 'proton-shared/lib/helpers/cache';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { MessageExtended } from '../../models/message';
-import { MailSettings } from '../../models/utils';
 import { transformEmbedded } from './transformEmbedded';
 import { prepareImages } from '../embedded/embeddedParser';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
@@ -31,8 +31,8 @@ describe('transformEmbedded', () => {
     describe('show', () => {
         // Reference: Angular/test/specs/message/services/transformEmbedded.spec.js
 
-        const setup = async (message: Partial<MessageExtended> = {}, mailSettings: MailSettings = {}) => {
-            await transformEmbedded({ localID, ...message }, attachmentsCache, api, mailSettings);
+        const setup = async (message: Partial<MessageExtended> = {}, mailSettings: Partial<MailSettings> = {}) => {
+            await transformEmbedded({ localID, ...message }, attachmentsCache, api, mailSettings as MailSettings);
             return prepareImagesMock.mock.calls[0][1] as boolean;
         };
 

@@ -1,9 +1,9 @@
 import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { isPlainText } from './messages';
 import { MessageExtended } from '../../models/message';
 import { toText } from '../parserHtml';
-import { MailSettings } from '../../models/utils';
 import { findSender } from '../addresses';
 import { Address } from 'proton-shared/lib/interfaces';
 import { textToHtml } from '../textToHtml';

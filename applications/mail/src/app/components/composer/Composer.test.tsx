@@ -1,3 +1,5 @@
+import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
 
@@ -11,7 +13,7 @@ const png = new File([], 'file.png', { type: 'image/png' });
 const props = {
     focus: true,
     message: {},
-    mailSettings: {},
+    mailSettings: {} as MailSettings,
     addresses: [],
     onFocus: jest.fn(),
     onChange: jest.fn(),
@@ -27,7 +29,7 @@ describe('Composer', () => {
             initialized: true,
             data: {
                 ID,
-                MIMEType: 'text/plain',
+                MIMEType: 'text/plain' as MIME_TYPES,
                 Subject: ''
             }
         };

@@ -1,11 +1,20 @@
 import React, { useState, useEffect, CSSProperties, useRef } from 'react';
-import { classnames, useToggle, useWindowSize, useNotifications, useApi, useAuthentication } from 'react-components';
+import {
+    classnames,
+    useToggle,
+    useWindowSize,
+    useNotifications,
+    useApi,
+    useMailSettings,
+    useAuthentication
+} from 'react-components';
 import { c } from 'ttag';
 import { Address } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 
+import { MapSendPreferences } from '../../helpers/message/sendPreferences';
 import { MessageExtended } from '../../models/message';
 import ComposerTitleBar from './ComposerTitleBar';
 import ComposerMeta from './ComposerMeta';
@@ -94,6 +103,7 @@ interface Props {
 
 const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus, onClose: inputOnClose }: Props) => {
     const api = useApi();
+    const [mailSettings] = useMailSettings();
     const [width, height] = useWindowSize();
     const { createNotification } = useNotifications();
     const auth = useAuthentication();
@@ -132,6 +142,9 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
 
     // Pending uploads
     const [pendingUploads, setPendingUploads] = useState<PendingUpload[]>();
+
+    // Map of send preferences for each recipient
+    const [mapSendPrefs, setMapSendPrefs] = useState<MapSendPreferences>({});
 
     // Synced with server version of the edited message
     const { message: syncedMessage, addAction } = useMessage(messageID);
@@ -385,6 +398,9 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
                         <ComposerMeta
                             message={modelMessage}
                             addresses={addresses}
+                            mailSettings={mailSettings}
+                            mapSendPrefs={mapSendPrefs}
+                            setMapSendPrefs={setMapSendPrefs}
                             disabled={!editorReady}
                             onChange={handleChange}
                             addressesBlurRef={addressesBlurRef}

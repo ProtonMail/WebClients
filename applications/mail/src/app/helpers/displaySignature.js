@@ -1,6 +1,5 @@
+import { isAuto, isImported, inSigningPeriod } from '../helpers/message/messages';
 import { VERIFICATION_STATUS } from '../constants';
-
-import { isAuto, isImported, inSigningPeriod } from './message/messages';
 
 const { SIGNED_AND_INVALID, SIGNED_AND_VALID, NOT_SIGNED } = VERIFICATION_STATUS;
 

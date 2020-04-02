@@ -1,12 +1,12 @@
+import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { setBit } from 'proton-shared/lib/helpers/bitset';
 import { unique } from 'proton-shared/lib/helpers/array';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 
 import { Message, MessageExtended, EmbeddedMap } from '../../models/message';
 import { Recipient } from '../../models/address';
 import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
-import { MailSettings } from '../../models/utils';
 import { findSender } from '../addresses';
 import { Attachment } from '../../models/attachment';
 import { insertSignature } from './messageSignature';
@@ -165,7 +165,7 @@ export const createNewDraft = (
     mailSettings: MailSettings,
     addresses: Address[]
 ): MessageExtended => {
-    const MIMEType = referenceMessage?.data?.MIMEType || mailSettings.DraftMIMEType;
+    const MIMEType = referenceMessage?.data?.MIMEType || ((mailSettings.DraftMIMEType as unknown) as MIME_TYPES);
     const RightToLeft = mailSettings.RightToLeft;
 
     let Flags = 0;
@@ -183,10 +183,7 @@ export const createNewDraft = (
     const senderAddress = findSender(addresses, referenceMessage?.data);
 
     const AddressID = senderAddress?.ID; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
-    const Sender = {
-        Name: senderAddress?.DisplayName,
-        Address: senderAddress?.Email
-    };
+    const Sender = senderAddress ? { Name: senderAddress.DisplayName, Address: senderAddress.Email } : undefined;
 
     const embeddeds: EmbeddedMap = new Map<string, EmbeddedInfo>();
     const Attachments: Attachment[] = [];

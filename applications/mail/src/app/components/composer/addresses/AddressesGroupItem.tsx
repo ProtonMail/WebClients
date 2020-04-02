@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { Icon, useModals } from 'react-components';
 
-import { ContactEmail } from '../../../models/contact';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import AddressesGroupModal from './AddressesGroupModal';
 import { getRecipientGroupLabel } from '../../../helpers/addresses';
 import { RecipientGroup } from '../../../models/address';

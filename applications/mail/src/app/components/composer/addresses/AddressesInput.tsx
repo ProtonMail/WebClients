@@ -1,8 +1,21 @@
-import React, { useState, useEffect, ChangeEvent, MutableRefObject, useRef, MouseEvent } from 'react';
+import React, {
+    useState,
+    useEffect,
+    ChangeEvent,
+    MutableRefObject,
+    useRef,
+    MouseEvent,
+    Dispatch,
+    SetStateAction
+} from 'react';
 import { Input } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
+import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
+import { MapSendPreferences } from '../../../helpers/message/sendPreferences';
+import { MessageExtended } from '../../../models/message';
+import { ContactEmail, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
+import { MapStatusIcon } from '../../message/EncryptionStatusIcon';
 import AddressesRecipientItem from './AddressesRecipientItem';
 import {
     inputToRecipient,
@@ -10,7 +23,6 @@ import {
     recipientsWithoutGroup,
     recipientsToRecipientOrGroup
 } from '../../../helpers/addresses';
-import { ContactEmail, ContactOrGroup } from '../../../models/contact';
 import AddressesAutocomplete from './AddressesAutocomplete';
 import AddressesGroupItem from './AddressesGroupItem';
 import { RecipientGroup, Recipient } from '../../../models/address';
@@ -18,20 +30,30 @@ import { RecipientGroup, Recipient } from '../../../models/address';
 interface Props {
     id: string;
     recipients?: Recipient[];
-    onChange: (value: Recipient[]) => void;
-    inputFocusRef?: MutableRefObject<() => void>;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
+    message: MessageExtended;
+    mapSendPrefs: MapSendPreferences;
+    mapSendIcons: MapStatusIcon;
+    setMapSendPrefs: Dispatch<SetStateAction<MapSendPreferences>>;
+    setMapSendIcons: Dispatch<SetStateAction<MapStatusIcon>>;
+    onChange: (value: Partial<Recipient>[]) => void;
+    inputFocusRef?: MutableRefObject<() => void>;
     placeholder?: string;
 }
 
 const AddressesInput = ({
     id,
     recipients = [],
-    onChange,
-    inputFocusRef,
     contacts,
     contactGroups,
+    message,
+    mapSendPrefs,
+    mapSendIcons,
+    setMapSendPrefs,
+    setMapSendIcons,
+    onChange,
+    inputFocusRef,
     placeholder
 }: Props) => {
     const [inputModel, setInputModel] = useState('');
@@ -138,7 +160,12 @@ const AddressesInput = ({
                     recipientsOrGroup.recipient ? (
                         <AddressesRecipientItem
                             key={i}
-                            recipient={recipientsOrGroup.recipient}
+                            recipient={recipientsOrGroup.recipient as Required<Pick<Recipient, 'Address'>>}
+                            message={message}
+                            mapSendPrefs={mapSendPrefs}
+                            mapSendIcons={mapSendIcons}
+                            setMapSendPrefs={setMapSendPrefs}
+                            setMapSendIcons={setMapSendIcons}
                             onChange={handleRecipientChange(recipientsOrGroup.recipient)}
                             onRemove={handleRecipientRemove(recipientsOrGroup.recipient)}
                         />

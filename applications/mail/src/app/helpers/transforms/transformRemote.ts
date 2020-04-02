@@ -1,6 +1,6 @@
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
 import { isDraft } from '../message/messages';
-import { MailSettings } from '../../models/utils';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import { MessageExtended } from '../../models/message';
 import { getContent, setContent } from '../message/messageContent';
 

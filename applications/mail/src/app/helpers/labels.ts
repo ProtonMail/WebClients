@@ -4,7 +4,7 @@ import { toMap } from 'proton-shared/lib/helpers/object';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 
-import { MailSettings } from '../models/utils';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import { LABEL_IDS_TO_HUMAN, LABEL_IDS_TO_I18N } from '../constants';
 
 const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS } = MAILBOX_LABEL_IDS;

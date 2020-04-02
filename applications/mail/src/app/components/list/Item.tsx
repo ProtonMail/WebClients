@@ -4,7 +4,7 @@ import { classnames } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from 'proton-shared/lib/constants';
 import { Label } from 'proton-shared/lib/interfaces/Label';
-import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
+import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
 import ItemCheckbox from './ItemCheckbox';
 import { getRecipients as getMessageRecipients, getSender, getRecipients } from '../../helpers/message/messages';
@@ -15,7 +15,6 @@ import { Element } from '../../models/element';
 import { ELEMENT_TYPES } from '../../constants';
 import { getSenders } from '../../helpers/conversation';
 import { getRecipientLabel, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../helpers/addresses';
-import { ContactEmail } from '../../models/contact';
 import { isCustomLabel } from '../../helpers/labels';
 
 const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;

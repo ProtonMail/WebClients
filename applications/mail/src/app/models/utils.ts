@@ -1,5 +1,3 @@
-export type MailSettings = { [key: string]: any };
-
 export interface Cache<Key, Value> {
     has: (key: Key) => boolean;
     get: (key: Key) => Value | undefined;

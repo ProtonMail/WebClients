@@ -8,7 +8,7 @@ import { readFileAsBuffer } from '../file';
 import { uploadAttachment } from '../../api/attachments';
 import { Attachment } from '../../models/attachment';
 import { generateCid, isEmbeddable } from '../embedded/embeddeds';
-import { generateUID } from '../string';
+import { generateProtonWebUID } from 'proton-shared/lib/helpers/uid';
 import { Upload, upload as uploadHelper, RequestParams } from '../upload';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
@@ -94,7 +94,7 @@ const uploadFile = (
     const titleImage = c('Title').t`Image`;
 
     const filename = file.name || `${titleImage} ${getAttachments(message.data).length + 1}`;
-    const ContentID = inline ? cid || generateCid(generateUID(), message.data?.Sender?.Address || '') : '';
+    const ContentID = inline ? cid || generateCid(generateProtonWebUID(), message.data?.Sender?.Address || '') : '';
 
     const publicKeys = message.publicKeys && message.publicKeys.length > 0 ? [message.publicKeys[0]] : [];
 

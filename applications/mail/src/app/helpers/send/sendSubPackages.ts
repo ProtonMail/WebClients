@@ -2,7 +2,7 @@ import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 
 import { Package, Packages } from './sendTopPackages';
 import { MessageExtended, Message } from '../../models/message';
-import { MapPreference, SendPreference } from './sendPreferences';
+import { MapSendPreferences, SendPreferences } from '../message/sendPreferences';
 import { isEO, getAttachments } from '../message/messages';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
@@ -13,9 +13,9 @@ export const SEND_MIME = 32; // TODO update proton-shared constant
 /**
  * Package for a ProtonMail user.
  */
-const sendPM = async ({ publickeys }: SendPreference, message: Message = {}) => ({
+const sendPM = async ({ publicKeys }: Pick<SendPreferences, 'publicKeys'>, message: Message = {}) => ({
     Type: SEND_PM,
-    PublicKey: publickeys.length ? publickeys[0] : undefined,
+    PublicKey: (publicKeys?.length && publicKeys[0]) || undefined,
     Signature: getAttachments(message).every(({ Signature }) => Signature)
 });
 
@@ -56,11 +56,11 @@ const sendPMEncryptedOutside = async (message: Message = {}) => {
 /**
  * Package for a PGP/MIME user.
  */
-const sendPGPMime = async ({ publickeys, sign, encrypt }: SendPreference) => {
+const sendPGPMime = async ({ encrypt, sign, publicKeys }: Pick<SendPreferences, 'encrypt' | 'sign' | 'publicKeys'>) => {
     if (encrypt) {
         return {
             Type: SEND_PGP_MIME,
-            PublicKey: publickeys.length ? publickeys[0] : undefined
+            PublicKey: (publicKeys?.length && publicKeys[0]) || undefined
         };
     }
 
@@ -74,11 +74,14 @@ const sendPGPMime = async ({ publickeys, sign, encrypt }: SendPreference) => {
 /**
  * Package for a PGP/Inline user.
  */
-const sendPGPInline = async ({ publickeys, sign, encrypt }: SendPreference, message: Message = {}) => {
+const sendPGPInline = async (
+    { encrypt, sign, publicKeys }: Pick<SendPreferences, 'encrypt' | 'sign' | 'publicKeys'>,
+    message: Message = {}
+) => {
     if (encrypt) {
         return {
             Type: SEND_PGP_INLINE,
-            PublicKey: publickeys.length ? publickeys[0] : undefined,
+            PublicKey: (publicKeys?.length && publicKeys[0]) || undefined,
             Signature: getAttachments(message).every(({ Signature }) => Signature)
         };
     }
@@ -103,7 +106,7 @@ export const attachSubPackages = async (
     packages: Packages,
     message: MessageExtended,
     emails: string[],
-    sendPrefs: MapPreference
+    mapSendPrefs: MapSendPreferences
 ): Promise<Packages> => {
     const bindPackageSet = async (promise: Promise<Package>, email: string, type: MIME_TYPES) => {
         const pack = await promise;
@@ -121,21 +124,21 @@ export const attachSubPackages = async (
     };
 
     const promises = emails.map((email: string) => {
-        const info = sendPrefs[email];
+        const { encrypt, sign, pgpScheme, mimetype, publicKeys } = mapSendPrefs[email];
 
-        const mimeType = info.mimetype === null ? message.data?.MIMEType : info.mimetype;
+        const mimeType = mimetype === null ? message.data?.MIMEType : mimetype;
         const packageType = mimeType === 'text/html' ? DEFAULT : PLAINTEXT;
 
-        switch (info.scheme) {
+        switch (pgpScheme) {
             case SEND_PM:
-                return bindPackageSet(sendPM(info, message.data), email, packageType);
+                return bindPackageSet(sendPM({ publicKeys }, message.data), email, packageType);
             case SEND_PGP_MIME:
-                if (!info.sign && !info.encrypt) {
+                if (!sign && !encrypt) {
                     return bindPackageSet(sendClear(), email, DEFAULT);
                 }
-                return bindPackageSet(sendPGPMime(info), email, MIME);
+                return bindPackageSet(sendPGPMime({ encrypt, sign, publicKeys }), email, MIME);
             case SEND_PGP_INLINE:
-                return bindPackageSet(sendPGPInline(info, message.data), email, PLAINTEXT);
+                return bindPackageSet(sendPGPInline({ encrypt, sign, publicKeys }, message.data), email, PLAINTEXT);
             case SEND_EO:
             case SEND_CLEAR:
                 // Encrypted for outside (EO)

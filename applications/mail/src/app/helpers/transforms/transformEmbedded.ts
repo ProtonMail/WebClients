@@ -5,8 +5,7 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import { isDraft } from '../message/messages';
 import { MessageExtended } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { Api } from 'proton-shared/lib/interfaces';
-import { MailSettings } from '../../models/utils';
+import { Api, MailSettings } from 'proton-shared/lib/interfaces';
 
 export const transformEmbedded = async (
     message: MessageExtended,

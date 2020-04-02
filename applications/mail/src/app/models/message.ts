@@ -1,6 +1,7 @@
 import { OpenPGPKey } from 'pmcrypto';
 
 import { Label } from 'proton-shared/lib/interfaces/Label';
+import { MIME_TYPES } from 'proton-shared/lib/constants';
 
 import { Attachment } from './attachment';
 import { MESSAGE_ACTIONS, VERIFICATION_STATUS } from '../constants';
@@ -10,7 +11,7 @@ export interface Message {
     ID?: string;
     Subject?: string;
     AddressID?: string;
-    MIMEType?: string;
+    MIMEType?: MIME_TYPES;
     Body?: any;
     Flags?: number;
     Time?: number;

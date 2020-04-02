@@ -1,5 +1,6 @@
 module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
+    moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
     transformIgnorePatterns: ['node_modules/(?!(proton-shared|react-components)/)'],
     moduleNameMapper: {

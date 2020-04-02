@@ -2,6 +2,7 @@ import React from 'react';
 import { useUser, useModals, InlineLinkButton, AuthenticatedBugModal, Href } from 'react-components';
 import { c, ngettext, msgid } from 'ttag';
 import { Location } from 'history';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { capitalize } from 'proton-shared/lib/helpers/string';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
@@ -11,7 +12,7 @@ import unreadEmailsSvgDark from 'design-system/assets/img/shared/unread-emails-d
 import storageSvg from 'design-system/assets/img/shared/welcome/storage.svg';
 import mailSvg from 'design-system/assets/img/shared/welcome/custom.svg';
 import customSvg from 'design-system/assets/img/shared/welcome/custom.svg';
-import { MailSettings } from '../../models/utils';
+
 import { isConversationMode } from '../../helpers/mailSettings';
 
 interface Props {

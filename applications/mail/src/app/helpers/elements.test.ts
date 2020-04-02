@@ -1,3 +1,4 @@
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import { isConversation, isMessage, sort, getCounterMap } from './elements';
 import { Conversation } from '../models/conversation';
 import { Message } from '../models/message';
@@ -47,7 +48,13 @@ describe('elements', () => {
             const sentConversationCount = { LabelID: MAILBOX_LABEL_IDS.SENT, Unread: 5 };
             const sentMessageCount = { LabelID: MAILBOX_LABEL_IDS.SENT, Unread: 10 };
             const loc = { pathname: '', search: '', state: {}, hash: '' };
-            const result = getCounterMap([], [inboxCount, sentConversationCount], [sentMessageCount], {}, loc);
+            const result = getCounterMap(
+                [],
+                [inboxCount, sentConversationCount],
+                [sentMessageCount],
+                {} as MailSettings,
+                loc
+            );
             expect(result[MAILBOX_LABEL_IDS.INBOX]?.Unread).toBe(inboxCount.Unread);
             expect(result[MAILBOX_LABEL_IDS.SENT]?.Unread).toBe(sentMessageCount.Unread);
             expect(result[MAILBOX_LABEL_IDS.STARRED]).toBeUndefined();

@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 import {
     Table,
@@ -9,7 +9,10 @@ import {
     FormModal,
     SearchInput as SearchInputUntyped
 } from 'react-components';
-import { ContactEmail } from '../../../models/contact';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { MapSendPreferences } from '../../../helpers/message/sendPreferences';
+import { MessageExtended } from '../../../models/message';
+import { MapStatusIcon } from '../../message/EncryptionStatusIcon';
 import AddressesRecipientItem from './AddressesRecipientItem';
 import { Recipient } from '../../../models/address';
 
@@ -18,11 +21,27 @@ const SearchInput = SearchInputUntyped as any;
 interface Props {
     inputValue?: Recipient[];
     allContacts?: ContactEmail[];
+    message: MessageExtended;
+    mapSendPrefs: MapSendPreferences;
+    mapSendIcons: MapStatusIcon;
+    setMapSendPrefs: Dispatch<SetStateAction<MapSendPreferences>>;
+    setMapSendIcons: Dispatch<SetStateAction<MapStatusIcon>>;
     onClose?: () => void;
     onSubmit: (recipients: Recipient[]) => void;
 }
 
-const AddressesContactsModal = ({ onSubmit, onClose, inputValue = [], allContacts = [], ...rest }: Props) => {
+const AddressesContactsModal = ({
+    message,
+    mapSendPrefs,
+    mapSendIcons,
+    setMapSendPrefs,
+    setMapSendIcons,
+    onSubmit,
+    onClose,
+    inputValue = [],
+    allContacts = [],
+    ...rest
+}: Props) => {
     const [value, setValue] = useState(inputValue);
     const [contacts, setContacts] = useState<ContactEmail[]>(allContacts);
 
@@ -87,7 +106,16 @@ const AddressesContactsModal = ({ onSubmit, onClose, inputValue = [], allContact
             {value.length > 0 && (
                 <div className="composer-addresses-container flex-item-fluid bordered-container pl1-25 pr1-25">
                     {value.map((recipient, i) => (
-                        <AddressesRecipientItem key={i} recipient={recipient} onRemove={handleRemove(recipient)} />
+                        <AddressesRecipientItem
+                            key={i}
+                            recipient={recipient as Required<Pick<Recipient, 'Address'>>}
+                            message={message}
+                            mapSendPrefs={mapSendPrefs}
+                            mapSendIcons={mapSendIcons}
+                            setMapSendPrefs={setMapSendPrefs}
+                            setMapSendIcons={setMapSendIcons}
+                            onRemove={handleRemove(recipient)}
+                        />
                     ))}
                 </div>
             )}

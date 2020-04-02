@@ -1,11 +1,12 @@
 import { PM_SIGNATURE } from 'proton-shared/lib/constants';
+import { MailSettings } from 'proton-shared/lib/interfaces';
+import { MESSAGE_ACTIONS } from '../../constants';
 import {
     insertSignature,
     CLASSNAME_SIGNATURE_CONTAINER,
     CLASSNAME_SIGNATURE_USER,
     CLASSNAME_SIGNATURE_EMPTY
 } from './messageSignature';
-import { MESSAGE_ACTIONS } from '../../constants';
 
 import * as string from '../string';
 import * as purify from '../purify';
@@ -18,7 +19,7 @@ const { message } = purify;
 
 const content = '<p>test</p>';
 const signature = '<strong>signature</strong>';
-const mailSettings = { PMSignature: 0 };
+const mailSettings = { PMSignature: 0 } as MailSettings;
 
 describe('signature', () => {
     afterEach(() => {
@@ -118,7 +119,7 @@ describe('signature', () => {
                                     content,
                                     userSignature ? signature : '',
                                     action,
-                                    { PMSignature: protonSignature ? 1 : 0 },
+                                    { PMSignature: protonSignature ? 1 : 0 } as MailSettings,
                                     isAfter
                                 );
                                 expect(result).toMatchSnapshot();

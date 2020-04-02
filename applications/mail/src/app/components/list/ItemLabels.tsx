@@ -1,3 +1,4 @@
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, classnames } from 'react-components';
@@ -21,7 +22,7 @@ interface Props {
 const ItemLabels = ({ element = {}, onUnlabel = noop, max = 99, labels = [], className = '' }: Props) => {
     const labelIDs = getLabelIDs(element) || [];
     const labelsMap = toMap(labels);
-    const labelsObjects = labelIDs.map((ID) => labelsMap[ID]).filter(Boolean) as Label[];
+    const labelsObjects = labelIDs.map((ID) => labelsMap[ID]).filter(isTruthy);
     const labelsSorted = orderBy(labelsObjects, 'Order') as Label[];
     const labelsToShow = labelsSorted.slice(0, max);
 

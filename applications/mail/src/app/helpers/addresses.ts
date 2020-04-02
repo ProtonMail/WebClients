@@ -1,14 +1,13 @@
 import { c } from 'ttag';
-import { REGEX_EMAIL } from 'proton-shared/lib/constants';
-import { ContactGroup } from 'proton-shared/lib/interfaces/ContactGroup';
 
+import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { Recipient, RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Message } from '../models/message';
-import { ContactEmail } from '../models/contact';
 import { getContactsOfGroup } from './contacts';
 import { Address, Key } from 'proton-shared/lib/interfaces';
+import { REGEX_EMAIL } from 'proton-shared/lib/constants';
 
-export const REGEX_RECIPIENT = /(.*)\s*<([^>]*)>/;
+export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
 
 export const validateAddress = (address = '') => REGEX_EMAIL.test(address);
 
@@ -77,7 +76,7 @@ export const inputToRecipient = (input: string): Recipient => {
     };
 };
 
-export const recipientToInput = (recipient: Recipient = {}): string => {
+export const recipientToInput = (recipient: Partial<Recipient> = {}): string => {
     if (recipient.Address && recipient.Name && recipient.Address !== recipient.Name) {
         return `${recipient.Name} <${recipient.Address}>`;
     }
@@ -89,13 +88,14 @@ export const recipientToInput = (recipient: Recipient = {}): string => {
     return `${recipient.Name} ${recipient.Address}`;
 };
 
-export const contactToRecipient = (contact: ContactEmail = {}, groupPath?: string): Recipient => ({
+export const contactToRecipient = (contact: Partial<ContactEmail> = {}, groupPath?: string): Partial<Recipient> => ({
     Name: contact.Name,
     Address: contact.Email,
     Group: groupPath
 });
 
-export const contactToInput = (contact: ContactEmail = {}): string => recipientToInput(contactToRecipient(contact));
+export const contactToInput = (contact: Partial<ContactEmail> = {}): string =>
+    recipientToInput(contactToRecipient(contact));
 
 export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: string) =>
     recipients.filter((recipient) => recipient.Group !== groupPath);
@@ -114,7 +114,7 @@ export const getRecipientOrGroupLabel = ({ recipient, group }: RecipientOrGroup,
         : getRecipientGroupLabel(group, getContactsOfGroup(allContacts, group?.group?.ID).length);
 
 export const recipientsToRecipientOrGroup = (recipients: Recipient[], groups: ContactGroup[]) =>
-    recipients.reduce((acc, value) => {
+    recipients.reduce<RecipientOrGroup[]>((acc, value) => {
         if (value.Group) {
             const existingGroup = acc.find((recipientsOrGroup) => recipientsOrGroup.group?.group?.Path === value.Group);
             if (existingGroup) {
@@ -131,7 +131,7 @@ export const recipientsToRecipientOrGroup = (recipients: Recipient[], groups: Co
             acc.push({ recipient: value });
         }
         return acc;
-    }, [] as RecipientOrGroup[]);
+    }, []);
 
 /**
  * Detect if the email address is a valid plus alias and returns the address model appropriate

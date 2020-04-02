@@ -2,10 +2,10 @@ import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { Alert, Href, Label, Input, generateUID, useNotifications } from 'react-components';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
+import { MESSAGE_FLAGS } from '../../constants';
 
 import { Message, MessageExtended } from '../../models/message';
 import ComposerInnerModal from './ComposerInnerModal';
-import { MESSAGE_FLAGS } from '../../constants';
 
 interface Props {
     message?: Message;

@@ -1,7 +1,7 @@
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import { PM_SIGNATURE } from 'proton-shared/lib/constants';
-
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MailSettings } from '../../models/utils';
+
 import { dedentTpl } from '../dedent';
 import { replaceLineBreaks } from '../string';
 import { message } from '../purify';

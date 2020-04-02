@@ -1,7 +1,8 @@
-import React, { useState, ChangeEvent, MutableRefObject } from 'react';
+import React, { useState, ChangeEvent, MutableRefObject, SetStateAction, Dispatch } from 'react';
 import { c } from 'ttag';
 import { Label, Select, Input, generateUID } from 'react-components';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, MailSettings } from 'proton-shared/lib/interfaces';
+import { MapSendPreferences } from '../../helpers/message/sendPreferences';
 
 import ComposerAddresses from './addresses/Addresses';
 import { MessageExtended } from '../../models/message';
@@ -10,13 +11,25 @@ import { getFromAdresses } from '../../helpers/addresses';
 interface Props {
     message: MessageExtended;
     addresses: Address[];
+    mailSettings: MailSettings;
+    mapSendPrefs: MapSendPreferences;
+    setMapSendPrefs: Dispatch<SetStateAction<MapSendPreferences>>;
     disabled: boolean;
     onChange: (message: Partial<MessageExtended>) => void;
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
 }
 
-const ComposerMeta = ({ message, addresses, disabled, onChange, addressesBlurRef, addressesFocusRef }: Props) => {
+const ComposerMeta = ({
+    message,
+    addresses,
+    mapSendPrefs,
+    setMapSendPrefs,
+    disabled,
+    onChange,
+    addressesBlurRef,
+    addressesFocusRef
+}: Props) => {
     const [uid] = useState(generateUID('composer'));
 
     const addressesOptions = getFromAdresses(addresses, message.originalTo).map((address: Address) => ({
@@ -28,7 +41,7 @@ const ComposerMeta = ({ message, addresses, disabled, onChange, addressesBlurRef
         const select = event.target as HTMLSelectElement;
         const AddressID = select.value;
         const address = addresses.find((address: Address) => address.ID === AddressID);
-        const Sender = { Name: address?.DisplayName, Address: address?.Email };
+        const Sender = address ? { Name: address.DisplayName, Address: address.Email } : undefined;
         onChange({ data: { AddressID, Sender } });
     };
 
@@ -54,6 +67,8 @@ const ComposerMeta = ({ message, addresses, disabled, onChange, addressesBlurRef
             </div>
             <ComposerAddresses
                 message={message}
+                mapSendPrefs={mapSendPrefs}
+                setMapSendPrefs={setMapSendPrefs}
                 disabled={disabled}
                 onChange={onChange}
                 addressesBlurRef={addressesBlurRef}

@@ -1,19 +1,13 @@
 import { useCallback } from 'react';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { sendMessage, updateDraft } from 'proton-shared/lib/api/messages';
-import {
-    useMailSettings,
-    useAddresses,
-    useGetPublicKeys,
-    useGetAddressKeys,
-    useApi,
-    useEventManager
-} from 'react-components';
+import { useGetAddressKeys, useApi, useEventManager, useGetEncryptionPreferences } from 'react-components';
+import { SendPreferences } from '../helpers/message/sendPreferences';
 
 import { MessageExtended } from '../models/message';
 import { getRecipientsAddresses } from '../helpers/message/messages';
 
-import { getSendPreferences } from '../helpers/send/sendPreferences';
+import getSendPreferences from '../helpers/message/getSendPreferences';
 import { generateTopPackages } from '../helpers/send/sendTopPackages';
 import { attachSubPackages } from '../helpers/send/sendSubPackages';
 import { encryptPackages } from '../helpers/send/sendEncrypt';
@@ -24,12 +18,10 @@ import { updateMessageCache, useMessageCache } from '../containers/MessageProvid
 // Reference: Angular/src/app/composer/services/sendMessage.js
 
 export const useSendMessage = () => {
-    const [mailSettings] = useMailSettings();
-    const [addresses] = useAddresses();
     const cache = new Map(); // TODO
-    const getPublicKeys = useGetPublicKeys();
-    const getAddressKeys = useGetAddressKeys();
     const api = useApi();
+    const getEncryptionPreferences = useGetEncryptionPreferences();
+    const getAddressKeys = useGetAddressKeys();
     const attachmentCache = useAttachmentCache();
     const { call } = useEventManager();
     const messageCache = useMessageCache();
@@ -51,20 +43,18 @@ export const useSendMessage = () => {
             // TODO: handleAttachmentSigs
 
             const uniqueEmails = unique(emails);
-            const sendPrefs = await getSendPreferences(
-                uniqueEmails,
-                message.data || {},
-                mailSettings,
-                addresses,
-                cache,
-                getPublicKeys
-            );
-            // todo regression testing: https://github.com/ProtonMail/Angular/issues/5088
+            const mapSendPrefs: { [email: string]: SendPreferences } = {};
+            for (const emailAddress of uniqueEmails) {
+                const encryptionPreferences = await getEncryptionPreferences(emailAddress);
+                mapSendPrefs[emailAddress] = getSendPreferences(encryptionPreferences, message.data);
+            }
+            // TODO
+            // if (sendPreferences !== oldSendPreferences) {
+            //     // check what is going on. Show modal if encryption downgrade
+            // }
 
-            // console.log('sendPrefs', inputMessage, message, sendPrefs);
-
-            let packages = await generateTopPackages(message, sendPrefs, attachmentCache, api);
-            packages = await attachSubPackages(packages, message, emails, sendPrefs);
+            let packages = await generateTopPackages(message, mapSendPrefs, attachmentCache, api);
+            packages = await attachSubPackages(packages, message, emails, mapSendPrefs);
             packages = await encryptPackages(message, packages, getAddressKeys);
 
             // console.log('packages', packages);
@@ -90,6 +80,6 @@ export const useSendMessage = () => {
             //     throw e;
             // }
         },
-        [mailSettings, addresses, cache, getPublicKeys]
+        [cache]
     );
 };

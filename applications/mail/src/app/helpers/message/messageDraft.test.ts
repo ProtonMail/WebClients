@@ -1,7 +1,7 @@
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, MailSettings } from 'proton-shared/lib/interfaces';
+import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 
 import { formatSubject, handleActions, RE_PREFIX, FW_PREFIX, createNewDraft } from './messageDraft';
-import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 import { insertSignature } from './messageSignature';
 import { findSender } from '../addresses';
 
@@ -35,7 +35,7 @@ const message = {
 const allActions = [MESSAGE_ACTIONS.NEW, MESSAGE_ACTIONS.REPLY, MESSAGE_ACTIONS.REPLY_ALL, MESSAGE_ACTIONS.FORWARD];
 const notNewActions = [MESSAGE_ACTIONS.REPLY, MESSAGE_ACTIONS.REPLY_ALL, MESSAGE_ACTIONS.FORWARD];
 const action = MESSAGE_ACTIONS.NEW;
-const mailSettings = {};
+const mailSettings = {} as MailSettings;
 const addresses: Address[] = [];
 
 describe('messageDraft', () => {

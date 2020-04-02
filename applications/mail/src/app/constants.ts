@@ -1,5 +1,5 @@
-import { c } from 'ttag';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { c } from 'ttag';
 
 export const MAX_EXPIRATION_TIME = 672; // hours
 export const PAGE_SIZE = 50;
@@ -40,16 +40,19 @@ export const LABEL_IDS_TO_I18N = {
     [MAILBOX_LABEL_IDS.STARRED]: c('Link').t`Starred`
 };
 
-export const SIGNATURE_START = 1546300800; // January 1, 2019
-
-export enum VERIFICATION_STATUS {
-    NOT_VERIFIED = -1,
-    NOT_SIGNED = 0,
-    SIGNED_AND_VALID = 1,
-    SIGNED_AND_INVALID = 2,
-    SIGNED_NO_PUB_KEY = 3
+export enum ENCRYPTED_STATUS {
+    PGP_MIME = 8 // Used for attachment
 }
 
+export const AES256 = 'aes256';
+
+export enum LINK_TYPES {
+    WEB = 'web',
+    EMAIL = 'email',
+    PHONE = 'phone'
+}
+
+export const SIGNATURE_START = 1546300800; // January 1, 2019
 export const MESSAGE_FLAGS = {
     FLAG_RECEIVED: 1, // whether a message is received
     FLAG_SENT: 2, // whether a message is sent
@@ -69,23 +72,19 @@ export const MESSAGE_FLAGS = {
     FLAG_SIGN: 262144 // whether to sign the message
 };
 
-export enum ENCRYPTED_STATUS {
-    PGP_MIME = 8 // Used for attachment
+export enum VERIFICATION_STATUS {
+    NOT_VERIFIED = -1,
+    NOT_SIGNED = 0,
+    SIGNED_AND_VALID = 1,
+    SIGNED_AND_INVALID = 2,
+    SIGNED_NO_PUB_KEY = 3
 }
-
-export const AES256 = 'aes256';
 
 export enum MESSAGE_ACTIONS {
     NEW = -1,
     REPLY = 0,
     REPLY_ALL = 1,
     FORWARD = 2
-}
-
-export enum LINK_TYPES {
-    WEB = 'web',
-    EMAIL = 'email',
-    PHONE = 'phone'
 }
 
 export const DRAG_ELEMENT_KEY = 'drag-element';

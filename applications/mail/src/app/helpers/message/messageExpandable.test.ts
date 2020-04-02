@@ -1,6 +1,6 @@
+import { MESSAGE_FLAGS } from '../../constants';
 import { findMessageToExpand } from './messageExpandable';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { MESSAGE_FLAGS } from '../../constants';
 
 describe('messageExpandable', () => {
     it('should return last message if not a custom label and all are reads', () => {

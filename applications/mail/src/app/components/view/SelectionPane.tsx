@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { Button, useLabels, useFolders } from 'react-components';
 import { c, ngettext, msgid } from 'ttag';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import { Location } from 'history';
 
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
@@ -12,7 +13,6 @@ import conversationManySvgDark from 'design-system/assets/img/shared/selected-co
 
 import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
-import { MailSettings } from '../../models/utils';
 
 interface Props {
     labelID: string;

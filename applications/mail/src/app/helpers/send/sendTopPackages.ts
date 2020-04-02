@@ -3,7 +3,7 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { OpenPGPKey } from 'pmcrypto';
 
 import { MessageExtended } from '../../models/message';
-import { MapPreference } from './sendPreferences';
+import { MapSendPreferences } from '../message/sendPreferences';
 import { constructMime } from './sendMimeBuilder';
 import { addReceived } from '../message/messages';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
@@ -68,18 +68,18 @@ const generateHTMLPackage = async (message: MessageExtended): Promise<Package> =
  */
 export const generateTopPackages = async (
     message: MessageExtended,
-    sendPrefs: MapPreference,
+    mapSendPrefs: MapSendPreferences,
     cache: AttachmentsCache,
     api: Api
 ): Promise<Packages> => {
-    const packagesStatus: PackageStatus = Object.values(sendPrefs).reduce(
-        (packages, info) => ({
-            [PLAINTEXT]: packages[PLAINTEXT] || info.mimetype === MIME_TYPES.PLAINTEXT,
+    const packagesStatus: PackageStatus = Object.values(mapSendPrefs).reduce(
+        (packages, { encrypt, sign, pgpScheme, mimetype }) => ({
+            [PLAINTEXT]: packages[PLAINTEXT] || mimetype === MIME_TYPES.PLAINTEXT,
             [DEFAULT]:
                 packages[DEFAULT] ||
-                info.mimetype === DEFAULT ||
-                (info.scheme === PACKAGE_TYPE.SEND_PGP_MIME && !info.encrypt && !info.sign),
-            [MIME]: packages[MIME] || (info.scheme === PACKAGE_TYPE.SEND_PGP_MIME && (info.encrypt || info.sign))
+                mimetype === DEFAULT ||
+                (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && !encrypt && !sign),
+            [MIME]: packages[MIME] || (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && (encrypt || sign))
         }),
         {
             [PLAINTEXT]: false,

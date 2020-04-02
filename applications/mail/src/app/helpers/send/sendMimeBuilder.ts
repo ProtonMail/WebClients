@@ -1,8 +1,8 @@
 import mimemessage from 'mimemessage';
 import { arrayToBinaryString } from 'pmcrypto';
 import { DecryptResult } from 'openpgp';
-import { Api } from 'proton-shared/lib/interfaces';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { Api } from 'proton-shared/lib/interfaces';
 
 import { MessageExtended, EmbeddedMap } from '../../models/message';
 import { getAttachments } from '../message/messages';

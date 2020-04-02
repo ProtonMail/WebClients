@@ -7,6 +7,7 @@ import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
 import { getDate } from '../../helpers/elements';
 import AttachmentsButton from './attachments/AttachmentsButton';
+
 import { hasFlag } from '../../helpers/message/messages';
 import { MESSAGE_FLAGS } from '../../constants';
 

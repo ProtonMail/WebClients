@@ -20,7 +20,7 @@ import { Packages, Package } from './sendTopPackages';
 import { getAttachments } from '../message/messages';
 import { getSessionKey } from '../attachment/attachmentLoader';
 import { arrayToBase64 } from '../base64';
-import { PACKAGE_TYPE, MIME_TYPES } from 'proton-shared/lib/constants';
+import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 import { AES256 } from '../../constants';
 import { SEND_MIME } from './sendSubPackages';
 import { Attachment } from '../../models/attachment';

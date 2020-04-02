@@ -30,7 +30,7 @@ import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
 import HeaderDropdown from './HeaderDropdown';
 import { OnCompose } from '../../../containers/ComposerContainer';
-import { ContactEmail } from '../../../models/contact';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
 import './MessageHeader.scss';
 

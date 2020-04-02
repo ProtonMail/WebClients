@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, useFolders } from 'react-components';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { Message } from '../../models/message';
-import { MailSettings } from '../../models/utils';
 import { getStandardFolders } from '../../helpers/labels';
 import { getLabelIDs } from '../../helpers/elements';
 import { toMap } from 'proton-shared/lib/helpers/object';

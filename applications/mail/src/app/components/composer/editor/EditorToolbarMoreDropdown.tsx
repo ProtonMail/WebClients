@@ -1,17 +1,16 @@
 import React, { MutableRefObject } from 'react';
 import { DropdownMenu, DropdownMenuButton, Icon, useMailSettings, useAddresses, classnames } from 'react-components';
 import { c } from 'ttag';
-import { RIGHT_TO_LEFT, MIME_TYPES } from 'proton-shared/lib/constants';
-import { Address } from 'proton-shared/lib/interfaces';
+import { MIME_TYPES, RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
+import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 
 import EditorToolbarDropdown from './EditorToolbarDropdown';
 import { MessageExtended } from '../../../models/message';
 import { hasFlag, isPlainText as testIsPlainText } from '../../../helpers/message/messages';
-import { MESSAGE_FLAGS } from '../../../constants';
 import { SquireType } from '../../../helpers/squire/squireConfig';
 import { setTextDirection } from '../../../helpers/squire/squireActions';
 import { createEmbeddedMap } from '../../../helpers/embedded/embeddeds';
-import { MailSettings } from '../../../models/utils';
+import { MESSAGE_FLAGS } from '../../../constants';
 import { exportPlainText, plainTextToHTML, setDocumentContent } from '../../../helpers/message/messageContent';
 
 const { FLAG_SIGN, FLAG_PUBLIC_KEY, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;

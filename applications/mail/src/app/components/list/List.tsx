@@ -6,7 +6,7 @@ import { useLabels, useContactEmails, useContactGroups } from 'react-components'
 import Item from './Item';
 import { Element } from '../../models/element';
 import EmptyView from '../view/EmptyView';
-import { ContactEmail } from '../../models/contact';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { DRAG_ELEMENT_KEY } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 

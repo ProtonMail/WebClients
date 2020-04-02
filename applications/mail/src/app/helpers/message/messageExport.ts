@@ -3,11 +3,11 @@ import { enums } from 'openpgp';
 import { c } from 'ttag';
 import { createDraft, updateDraft } from 'proton-shared/lib/api/messages';
 import { Api } from 'proton-shared/lib/interfaces';
+import { MESSAGE_ACTIONS } from '../../constants';
 
 import { MessageExtended, Message } from '../../models/message';
 import { mutateHTMLCid } from '../embedded/embeddedParser';
 import { find } from '../embedded/embeddedFinder';
-import { MESSAGE_ACTIONS } from '../../constants';
 import { isPlainText, getAttachments } from './messages';
 import { getDocumentContent, getContent, getPlainTextContent } from './messageContent';
 import { getSessionKey } from '../attachment/attachmentLoader';

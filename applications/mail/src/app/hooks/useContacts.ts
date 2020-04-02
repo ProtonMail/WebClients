@@ -1,6 +1,6 @@
 // TODO
 
-// Reference Angular/src/app/contact/services/contact.js
+// Reference Angular/src/app/contact/services/Contact.ts
 // Reference Angular/src/app/contact/factories/contactEmails.js
 // Reference proton-contacts/src/app/components/ContactEmailSettingsModal.js
 
