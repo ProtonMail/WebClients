@@ -26,18 +26,35 @@ import SessionAction from './SessionAction';
 
 const getClientsI18N = () => ({
     Web: c('Badge').t`ProtonMail for web`,
-    WebSettings: c('Badge').t`ProtonMail settings for web`,
-    iOS: c('Badge').t`ProtonMail for iOS`,
-    Android: c('Badge').t`ProtonMail for Android`,
+    VPN: c('Badge').t`ProtonVPN for Windows`,
+    WebVPN: c('Badge').t`ProtonVPN for web`,
+    Admin: c('Badge').t`Admin`,
     ImportExport: c('Badge').t`ProtonMail import-export`,
     Bridge: c('Badge').t`ProtonMail Bridge`,
-    WebVPN: c('Badge').t`ProtonVPN for web`,
-    VPN: c('Badge').t`ProtonVPN for Windows`,
-    macOSVPN: c('Badge').t`ProtonVPN for macOS`,
+    iOS: c('Badge').t`ProtonMail for iOS`,
+    Android: c('Badge').t`ProtonMail for Android`,
+    WebMail: c('Badge').t`ProtonMail for web`,
+    WebMailSettings: c('Badge').t`ProtonMail settings for web`,
+    WebContacts: c('Badge').t`ProtonContacts for web`,
+    WebVPNSettings: c('Badge').t`ProtonVPN settings for web`,
+    WebCalendar: c('Badge').t`ProtonCalendar for web`,
+    WebDrive: c('Badge').t`ProtonDrive for web`,
+    // WebWallet: c('Badge').t`ProtonWallet for web`,
+    WebAdmin: c('Badge').t`Admin`,
+    iOSMail: c('Badge').t`ProtonMail for iOS`,
     iOSVPN: c('Badge').t`ProtonVPN for iOS`,
+    iOSCalendar: c('Badge').t`ProtonCalendar for iOS`,
+    AndroidMail: c('Badge').t`ProtonMail for Android`,
     AndroidVPN: c('Badge').t`ProtonVPN for Android`,
-    Admin: c('Badge').t`Admin`,
-    WebVPNSettings: c('Badge').t`ProtonVPN settings for web`
+    AndroidCalendar: c('Badge').t`ProtonCalendar for Android`,
+    WindowsVPN: c('Badge').t`ProtonVPN for Windows`,
+    WindowsImportExport: c('Badge').t`ProtonMail import-export for Windows`,
+    WindowsBridge: c('Badge').t`ProtonMail Bridge for Windows`,
+    macOSVPN: c('Badge').t`ProtonVPN for macOS`,
+    macOSImportExport: c('Badge').t`ProtonMail import-export for macOS`,
+    macOSBridge: c('Badge').t`ProtonMail Bridge for macOS`,
+    LinuxImportExport: c('Badge').t`ProtonMail import-export for Linux`,
+    LinuxBridge: c('Badge').t`ProtonMail Bridge for Linux`
 });
 
 const SessionsSection = () => {
