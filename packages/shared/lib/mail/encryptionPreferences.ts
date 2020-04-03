@@ -14,7 +14,7 @@ enum EncryptionPreferencesFailureTypes {
     EXTERNAL_USER_NO_VALID_PINNED_KEY = 6
 }
 
-interface EncryptionPreferencesFailure {
+export interface EncryptionPreferencesFailure {
     type: EncryptionPreferencesFailureTypes;
     error: Error;
 }
