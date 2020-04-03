@@ -97,11 +97,13 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
             </Alert>
             <Row>
                 <Label>{c('Label').t`User`}</Label>
-                <Field className="strong">{member.Name}</Field>
+                <Field className="flex-item-fluid-auto">
+                    <strong>{member.Name}</strong>
+                </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`Address`}</Label>
-                <Field>
+                <Field className="flex-item-fluid-auto">
                     <div className="flex-autogrid">
                         <div className="flex-autogrid-item pb0">
                             <Input
@@ -119,7 +121,7 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
             </Row>
             <Row>
                 <Label>{c('Label').t`Display name`}</Label>
-                <Field>
+                <Field className="flex-item-fluid-auto">
                     <Input
                         value={model.name}
                         placeholder={c('Placeholder').t`Choose display name`}
