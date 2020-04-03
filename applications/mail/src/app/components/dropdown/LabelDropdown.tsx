@@ -15,7 +15,7 @@ import {
     generateUID
 } from 'react-components';
 import { normalize } from 'proton-shared/lib/helpers/string';
-import { LABEL_COLORS } from 'proton-shared/lib/constants';
+import { LABEL_COLORS, LABEL_TYPE } from 'proton-shared/lib/constants';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
@@ -126,20 +126,23 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
 
     const handleCreate = () => {
         onLock(true);
-        const newLabel = {
+        const newLabel: Partial<Label> = {
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
-            Exclusive: false
+            Type: LABEL_TYPE.MESSAGE_LABEL
         };
-        createModal(
-            <LabelModal type="label" label={newLabel} onAdd={handleAddNewLabel as any} onClose={() => onLock(false)} />
-        );
+        createModal(<LabelModal label={newLabel} onAdd={handleAddNewLabel as any} onClose={() => onLock(false)} />);
     };
+
+    // The dropdown is several times in the view, native html ids has to be different each time
+    const searchInputID = `${uid}-search`;
+    const archiveCheckID = `${uid}-archive`;
+    const labelCheckID = (ID: string) => `${uid}-${ID}`;
 
     return (
         <div>
             <div className="flex flex-spacebetween flex-items-center m1">
-                <label htmlFor="filter-labels" className="bold">{c('Label').t`Label as`}</label>
+                <label htmlFor={searchInputID} className="bold">{c('Label').t`Label as`}</label>
                 <Tooltip title={c('Title').t`Create label`}>
                     <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
                         <Icon name="label" className="flex-item-noshrink mr0-25" />+
@@ -151,39 +154,35 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
                     autoFocus={true}
                     value={search}
                     onChange={updateSearch}
-                    id="filter-labels"
+                    id={searchInputID}
                     placeholder={c('Placeholder').t`Filter labels`}
                 />
             </div>
             <div className="scroll-if-needed customScrollBar-container scroll-smooth-touch mb1 labelDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
-                    {list.map(({ ID = '', Name = '', Color = '' }, index) => {
-                        // The dropdown is several times in the view, native html ids has to be different each time
-                        const lineId = `${uid}-${ID}`;
-                        return (
-                            <li
-                                key={lineId}
-                                className={classnames([
-                                    'w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5 pl1',
-                                    index < list.length - 1 && 'border-bottom'
-                                ])}
-                            >
-                                <div className="flex flex-nowrap flex-spacebetween flex-items-center">
-                                    <Icon name="label" color={Color} className="flex-item-noshrink mr0-5" />
-                                    <label htmlFor={lineId} title={Name} className="ellipsis">
-                                        <Mark value={search}>{Name}</Mark>
-                                    </label>
-                                </div>
-                                <Checkbox
-                                    className="flex-item-noshrink"
-                                    id={lineId}
-                                    checked={selectedLabelIDs[ID] === LabelState.On}
-                                    indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
-                                    onChange={handleCheck(ID)}
-                                />
-                            </li>
-                        );
-                    })}
+                    {list.map(({ ID = '', Name = '', Color = '' }, index) => (
+                        <li
+                            key={ID}
+                            className={classnames([
+                                'w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5 pl1',
+                                index < list.length - 1 && 'border-bottom'
+                            ])}
+                        >
+                            <div className="flex flex-nowrap flex-spacebetween flex-items-center">
+                                <Icon name="label" color={Color} className="flex-item-noshrink mr0-5" />
+                                <label htmlFor={labelCheckID(ID)} title={Name} className="ellipsis">
+                                    <Mark value={search}>{Name}</Mark>
+                                </label>
+                            </div>
+                            <Checkbox
+                                className="flex-item-noshrink"
+                                id={labelCheckID(ID)}
+                                checked={selectedLabelIDs[ID] === LabelState.On}
+                                indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
+                                onChange={handleCheck(ID)}
+                            />
+                        </li>
+                    ))}
                     {list.length === 0 && (
                         <li
                             key="empty"
@@ -195,9 +194,9 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
                 </ul>
             </div>
             <div className="mt1 mb1 ml1 mr0-75 flex flex-spacebetween">
-                <label htmlFor="alsoArchive">{c('Label').t`Also archive`}</label>
+                <label htmlFor={archiveCheckID}>{c('Label').t`Also archive`}</label>
                 <Checkbox
-                    id="alsoArchive"
+                    id={archiveCheckID}
                     checked={alsoArchive}
                     onChange={({ target }) => updateAlsoArchive(target.checked)}
                 />

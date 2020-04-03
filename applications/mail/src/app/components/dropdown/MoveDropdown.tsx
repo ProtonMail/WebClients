@@ -8,7 +8,8 @@ import {
     PrimaryButton,
     Mark,
     Tooltip,
-    useLoading
+    useLoading,
+    generateUID
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
@@ -51,6 +52,8 @@ interface Props {
 }
 
 const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
+    const [uid] = useState(generateUID('move-dropdown'));
+
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
     const [folders = [], loadingFolders] = useFolders();
@@ -89,19 +92,22 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
 
     const handleCreate = () => {
         onLock(true);
-        const newLabel = {
+        const newLabel: Partial<Folder> = {
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
-            ParentID: ROOT_FOLDER,
+            ParentID: String(ROOT_FOLDER),
             Type: LABEL_TYPE.MESSAGE_FOLDER
         };
         createModal(<LabelModal label={newLabel} onClose={() => onLock(false)} />);
     };
 
+    // The dropdown is several times in the view, native html ids has to be different each time
+    const searchInputID = `${uid}-search`;
+
     return (
         <div>
             <div className="flex flex-spacebetween flex-items-center m1">
-                <label htmlFor="filter-folders" className="bold">{c('Label').t`Move to`}</label>
+                <label htmlFor={searchInputID} className="bold">{c('Label').t`Move to`}</label>
                 <Tooltip title={c('Title').t`Create folder`}>
                     <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
                         <Icon name="folder" className="flex-item-noshrink mr0-25" />+
@@ -113,7 +119,7 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
                     autoFocus={true}
                     value={search}
                     onChange={updateSearch}
-                    id="filter-folders"
+                    id={searchInputID}
                     placeholder={c('Placeholder').t`Filter folders`}
                 />
             </div>
