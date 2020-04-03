@@ -93,8 +93,6 @@ const messageCacheListener = (cache: MessageCache) => async (changedMessageID: s
         const actionStatus = c('Info').t`Processing`;
         const [action, ...rest] = message.actionQueue || [];
 
-        // console.log('trigger action on', changedMessageID, rest);
-
         cache.set(changedMessageID, { ...message, actionStatus, actionQueue: rest });
 
         await action();

@@ -21,8 +21,6 @@ export const authentication = {
 };
 
 export const api = jest.fn<Promise<any>, any>(async (args: any) => {
-    // console.log('mocked api', ...args);
-
     if (apiMocks[args.url]) {
         return apiMocks[args.url](args);
     }

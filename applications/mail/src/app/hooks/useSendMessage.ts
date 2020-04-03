@@ -40,7 +40,7 @@ export const useSendMessage = () => {
             };
 
             const emails = getRecipientsAddresses(message.data);
-            // TODO: handleAttachmentSigs
+            // TODO: handleAttachmentSigs ?
 
             const uniqueEmails = unique(emails);
             const mapSendPrefs: { [email: string]: SendPreferences } = {};
@@ -57,16 +57,11 @@ export const useSendMessage = () => {
             packages = await attachSubPackages(packages, message, emails, mapSendPrefs);
             packages = await encryptPackages(message, packages, getAddressKeys);
 
-            // console.log('packages', packages);
-
             // TODO: Implement retry system
             // const suppress = retry ? [API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED] : [];
             // try {
             const { Sent } = await api(sendMessage(message.data?.ID, { Packages: packages } as any));
             await call();
-
-            // console.log('Sent', Sent);
-            // return { data: Sent };
 
             updateMessageCache(messageCache, inputMessage.localID, { data: Sent });
 

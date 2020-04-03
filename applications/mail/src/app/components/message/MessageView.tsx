@@ -52,7 +52,6 @@ const MessageView = ({
 
     const prepareMessage = async () => {
         if (typeof message?.initialized === 'undefined') {
-            console.log('MessageView initialize');
             await addAction(initialize);
         }
 
