@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, CSSProperties } from 'react';
+import React, { ReactNode, useState, CSSProperties, useEffect } from 'react';
 import { c } from 'ttag';
 import { useAddresses, useWindowSize, useNotifications } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
@@ -9,6 +9,8 @@ import { MessageExtended } from '../models/message';
 import { useDraft } from '../hooks/useDraft';
 
 import '../components/composer/composer.scss';
+import { useMessageCache } from './MessageProvider';
+import { useHandler } from '../hooks/useHandler';
 
 export const COMPOSER_WIDTH = 600;
 export const COMPOSER_HEIGHT = 520;
@@ -73,13 +75,29 @@ interface Props {
 const ComposerContainer = ({ children }: Props) => {
     const [addresses, loadingAddresses] = useAddresses();
 
-    // Handling simple Message would have been simpler
-    // But in order to create new drafts from here, MessageExtended was mandatory
     const [messageIDs, setMessageIDs] = useState<string[]>([]);
-    const [focusedMessageID, setFocusedMessageID] = useState<string | undefined>();
+    const [focusedMessageID, setFocusedMessageID] = useState<string>();
     const [width, height] = useWindowSize();
     const { createNotification } = useNotifications();
     const createDraft = useDraft();
+    const messageCache = useMessageCache();
+
+    const handleClose = (messageID: string) => () => {
+        const newMessageIDs = messageIDs.filter((id) => id !== messageID);
+        setMessageIDs(newMessageIDs);
+        if (newMessageIDs.length > 0) {
+            setFocusedMessageID(newMessageIDs[0]);
+        }
+    };
+
+    // Automatically close draft which has been deleted (could happen through the message list)
+    const messageDeletionListener = useHandler((changedMessageID: string) => {
+        if (messageIDs.includes(changedMessageID) && !messageCache.has(changedMessageID)) {
+            handleClose(changedMessageID)();
+        }
+    });
+
+    useEffect(() => messageCache.subscribe(messageDeletionListener), [messageCache]);
 
     if (loadingAddresses) {
         return null;
@@ -96,8 +114,6 @@ const ComposerContainer = ({ children }: Props) => {
 
         const { composeExisting, composeNew } = getComposeArgs(composeArgs);
 
-        // console.log('compose', composeExisting, composeNew);
-
         if (composeExisting) {
             const { existingDraft } = composeExisting;
 
@@ -108,7 +124,6 @@ const ComposerContainer = ({ children }: Props) => {
             }
 
             setMessageIDs([...messageIDs, existingDraft.localID]);
-            // existingDraft.localID = existingDraft.data?.ID;
             setFocusedMessageID(existingDraft.localID);
             return;
         }
@@ -116,26 +131,11 @@ const ComposerContainer = ({ children }: Props) => {
         if (composeNew) {
             const { action, referenceMessage } = composeNew;
             const newMessageID = createDraft(action, referenceMessage);
-            // newMessage.localID = generateUID('draft');
             setMessageIDs([...messageIDs, newMessageID]);
             setFocusedMessageID(newMessageID);
         }
     };
-    // const handleChange = (oldMessage: MessageExtended) => (newMessage: MessageExtended) => {
-    //     const newMessages = [...messages];
-    //     newMessages[newMessages.indexOf(oldMessage)] = newMessage;
-    //     setMessages(newMessages);
-    //     if (oldMessage === focusedMessage) {
-    //         setFocusedMessage(newMessage);
-    //     }
-    // };
-    const handleClose = (messageID: string) => () => {
-        const newMessageIDs = messageIDs.filter((id) => id !== messageID);
-        setMessageIDs(newMessageIDs);
-        if (newMessageIDs.length > 0) {
-            setFocusedMessageID(newMessageIDs[0]);
-        }
-    };
+
     const handleFocus = (messageID: string) => () => {
         setFocusedMessageID(messageID);
     };

@@ -1,8 +1,9 @@
-export interface Cache<Key, Value> {
-    has: (key: Key) => boolean;
-    get: (key: Key) => Value | undefined;
-    set: (key: Key, value: Value) => void;
-    delete: (key: Key) => void;
-    subscribe: (handler: (key: Key) => void) => () => void;
+export interface Cache<Value> {
+    has: (key: string) => boolean;
+    get: (key: string) => Value | undefined;
+    set: (key: string, value: Value) => void;
+    toObject: () => { [key: string]: Value | undefined };
+    delete: (key: string) => void;
+    subscribe: (handler: (key: string) => void) => () => void;
     reset: () => void;
 }

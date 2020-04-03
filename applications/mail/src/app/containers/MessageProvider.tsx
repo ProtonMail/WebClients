@@ -10,8 +10,9 @@ import { Cache } from '../models/utils';
 import { MessageExtended } from '../models/message';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { mergeMessages } from '../helpers/message/messages';
+import { DRAFT_ID_PREFIX } from '../helpers/message/messageDraft';
 
-export type MessageCache = Cache<string, MessageExtended>;
+export type MessageCache = Cache<MessageExtended>;
 
 /**
  * Message context containing the Message cache
@@ -60,22 +61,33 @@ const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
     }
 
     for (const { ID, Action, Message } of Messages) {
+        let localID = ID;
+
         // Ignore updates for non-fetched messages.
-        if (!cache.has(ID)) {
-            continue;
+        if (!cache.has(localID)) {
+            // Search in cache for new draft with this ID
+            const newDraftLocalID = Object.keys(cache.toObject())
+                .filter((key) => key.startsWith(DRAFT_ID_PREFIX))
+                .find((key) => cache.get(key)?.data?.ID === ID);
+
+            if (newDraftLocalID) {
+                localID = newDraftLocalID;
+            } else {
+                continue;
+            }
         }
         if (Action === EVENT_ACTIONS.DELETE) {
-            cache.delete(ID);
+            cache.delete(localID);
         }
         if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
             console.warn('Event type UPDATE_DRAFT on Message not supported', Messages);
         }
         if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-            const currentValue = cache.get(ID) as MessageExtended;
+            const currentValue = cache.get(localID) as MessageExtended;
 
             const MessageToUpdate = parseLabelIDsInEvent(currentValue.data, Message);
 
-            cache.set(ID, {
+            cache.set(localID, {
                 ...currentValue,
                 data: {
                     ...currentValue.data,

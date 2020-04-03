@@ -5,7 +5,7 @@ import { Cache } from '../models/utils';
 
 const CACHE_KEY = 'Base64';
 
-export type Base64Cache = Cache<string, string>;
+export type Base64Cache = Cache<string>;
 
 export const useBase64Cache = (): Base64Cache => {
     const globalCache = useCache();

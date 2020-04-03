@@ -12,7 +12,7 @@ export interface BlobInfo {
     attachment: Attachment;
 }
 
-export type AttachmentsCache = Cache<string, DecryptResult>;
+export type AttachmentsCache = Cache<DecryptResult>;
 
 /**
  * Attachment context containing the Attachment cache

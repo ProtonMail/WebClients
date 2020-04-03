@@ -11,7 +11,7 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { getConversation } from 'proton-shared/lib/api/conversations';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 
-export type ConversationCache = Cache<string, ConversationResult>;
+export type ConversationCache = Cache<ConversationResult>;
 
 /**
  * Conversation context containing the Conversation cache
