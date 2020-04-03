@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Icon } from 'react-components';
 import { c } from 'ttag';
-import {
-    fromUnixTime,
-    isAfter,
-    differenceInDays,
-    differenceInHours,
-    differenceInMinutes,
-    differenceInSeconds
-} from 'date-fns';
+import { fromUnixTime, isAfter, differenceInSeconds } from 'date-fns';
 
 import { MessageExtended } from '../../../models/message';
 
@@ -17,20 +10,32 @@ interface Props {
 }
 
 const formatDelay = (nowDate: Date, expirationDate: Date): string => {
+    let delta = differenceInSeconds(expirationDate, nowDate);
+    const days = Math.floor(delta / 86400);
+    delta -= days * 86400;
+    const hours = Math.floor(delta / 3600) % 24;
+    delta -= hours * 3600;
+    const minutes = Math.floor(delta / 60) % 60;
+    delta -= minutes * 60;
+    const seconds = delta % 60;
     return [
-        { diff: differenceInDays(expirationDate, nowDate), unit: c('Time unit').t`day`, units: c('Time unit').t`days` },
         {
-            diff: differenceInHours(expirationDate, nowDate),
+            diff: days,
+            unit: c('Time unit').t`day`,
+            units: c('Time unit').t`days`
+        },
+        {
+            diff: hours,
             unit: c('Time unit').t`hour`,
             units: c('Time unit').t`hours`
         },
         {
-            diff: differenceInMinutes(expirationDate, nowDate),
+            diff: minutes,
             unit: c('Time unit').t`minute`,
             units: c('Time unit').t`minutes`
         },
         {
-            diff: differenceInSeconds(expirationDate, nowDate),
+            diff: seconds,
             unit: c('Time unit').t`second`,
             units: c('Time unit').t`seconds`
         }
