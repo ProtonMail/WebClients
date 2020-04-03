@@ -21,6 +21,7 @@ import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
+import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import HeaderExtra from './HeaderExtra';
 import MessageLock from '../MessageLock';
 import { isSent } from '../../../helpers/message/messages';
@@ -137,12 +138,27 @@ const HeaderExpanded = ({
                 </a>
                 <div>
                     <Group className="mr1">
-                        <HeaderDropdown autoClose={false} content={<Icon name="folder" />}>
+                        <HeaderDropdown
+                            autoClose={false}
+                            content={<Icon name="filter" />}
+                            className="pm-button pm-group-button pm-button--for-icon"
+                        >
+                            {() => <CustomFilterDropdown message={message.data || {}} />}
+                        </HeaderDropdown>
+                        <HeaderDropdown
+                            autoClose={false}
+                            content={<Icon name="folder" />}
+                            className="pm-button pm-group-button pm-button--for-icon"
+                        >
                             {({ onClose, onLock }) => (
                                 <MoveDropdown elements={elements} onClose={onClose} onLock={onLock} />
                             )}
                         </HeaderDropdown>
-                        <HeaderDropdown autoClose={false} content={<Icon name="label" />}>
+                        <HeaderDropdown
+                            autoClose={false}
+                            content={<Icon name="label" />}
+                            className="pm-button pm-group-button pm-button--for-icon"
+                        >
                             {({ onClose, onLock }) => (
                                 <LabelDropdown elements={elements} onClose={onClose} onLock={onLock} />
                             )}
