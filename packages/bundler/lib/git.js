@@ -38,7 +38,7 @@ async function pull(branch, force, fromCi) {
     }
 
     await bash(`git clone "$(git remote get-url origin)" --depth 1 --branch ${branch} ${OUTPUT_CLONE}`);
-    await bash(`cd ${OUTPUT_CLONE} && rm -rf *`);
+    await bash(`cd ${OUTPUT_CLONE} && git rm -rf .`);
 
     if (process.env.IS_DEBUG_PROTON_BUNDLER === 'true') {
         const { stdout } = await bash('git remote show origin');
