@@ -593,7 +593,10 @@ export enum DENSITY {
 export enum ICS_METHODS {
     REQUEST = 'REQUEST',
     REPLY = 'REPLY',
-    CANCEL = 'CANCEL'
+    CANCEL = 'CANCEL',
+    DECLINECOUNTER = 'DECLINECOUNTER',
+    REFRESH = 'REFRESH',
+    COUNTER = 'COUNTER'
 }
 
 export enum ICS_EVENT_STATUS {
