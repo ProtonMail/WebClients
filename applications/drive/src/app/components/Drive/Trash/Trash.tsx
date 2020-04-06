@@ -24,6 +24,7 @@ function Trash({ loading, complete, contents, fileBrowserControls }: Props) {
         <EmptyFolder />
     ) : (
         <FileBrowser
+            isTrash
             loading={loading}
             contents={contents}
             selectedItems={selectedItems}
