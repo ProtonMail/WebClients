@@ -89,8 +89,23 @@ const API_TARGETS = {
 
 const SECURE_URL = ENV_CONFIG.secure;
 
+/**
+ * Yargs creates an array if you gives many flags
+ * Ensure to take only the last one
+ * @param  {String|Array} api
+ * @return {String}
+ */
+const getApi = (api) => {
+    if (!Array.isArray(api)) {
+        return api;
+    }
+
+    const { length, [length - 1]: latest } = api.filter(Boolean);
+    return latest;
+};
+
 function main({ api = 'dev' }) {
-    const apiKeys = api.split('+');
+    const apiKeys = getApi(api).split('+');
     const apiUrl = apiKeys.reduce((apiUrl, apiKey) => API_TARGETS[apiKey] || apiUrl, API_TARGETS.prod);
     const secureUrl = apiKeys.reduce((apiUrl, apiKey) => SECURE_URL[apiKey] || apiUrl, SECURE_URL.prod);
 
