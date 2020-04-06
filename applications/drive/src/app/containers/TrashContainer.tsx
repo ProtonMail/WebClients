@@ -1,30 +1,71 @@
 import React, { useEffect, useState } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
+import { c } from 'ttag';
+
+import { useLoading, useSortedList } from 'react-components';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+
 import Page, { PageMainArea } from '../components/Page';
 import DriveContentProvider, { mapLinksToChildren } from '../components/Drive/DriveContentProvider';
-import { c } from 'ttag';
 import TrashToolbar from '../components/Drive/Trash/TrashToolbar';
 import StickyHeader from '../components/StickyHeader';
 import Trash from '../components/Drive/Trash/Trash';
-import { RouteComponentProps } from 'react-router-dom';
 import { useDriveResource } from '../components/Drive/DriveResourceProvider';
 import useFileBrowser from '../components/FileBrowser/useFileBrowser';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import useTrash from '../hooks/useTrash';
-import { useLoading, useSortedList } from 'react-components';
+import useDrive from '../hooks/useDrive';
 import { FOLDER_PAGE_SIZE } from '../constants';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { FileBrowserItem } from '../components/FileBrowser/FileBrowser';
+import { LinkMeta } from '../interfaces/link';
 
 const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) => {
+    const { getLinkMeta } = useDrive();
     const { setResource } = useDriveResource();
     const cache = useDriveCache();
     const { fetchTrash } = useTrash();
     const [shareId, setShareId] = useState(() => match.params.shareId);
     const trashLinks = shareId ? cache.get.shareTrashMetas(shareId) : [];
-    const contents = mapLinksToChildren(trashLinks);
+    const [contents, setContents] = useState<FileBrowserItem[]>([]);
     const { sortedList } = useSortedList(contents, { key: 'Modified', direction: SORT_DIRECTION.ASC });
     const fileBrowserControls = useFileBrowser(sortedList);
     const [loading, withLoading] = useLoading();
     const [, setError] = useState();
+
+    // TODO: Investigate cache, why trashLinks mutates a lot to array with same values.
+    useEffect(() => {
+        const getLocationItems = async (shareId: string, linkId: string): Promise<string[]> => {
+            const { ParentLinkID, Name } = await getLinkMeta(shareId, linkId);
+            if (!ParentLinkID) {
+                return [c('Title').t`My files`];
+            }
+
+            const previous = await getLocationItems(shareId, ParentLinkID);
+            return [...previous, Name];
+        };
+
+        const handleLocations = (shareId: string, links: LinkMeta[]) => {
+            // Todo: Consider dependin on contents, after fixing strange trashLinks mutations.
+            const contents = mapLinksToChildren(links);
+            const promiseList = contents.map((link: FileBrowserItem) =>
+                getLocationItems(shareId, link.ParentLinkID).then((items: string[]) => {
+                    const Location = `\\${items.join('\\')}`;
+                    return { ...link, Location };
+                })
+            );
+            Promise.all(promiseList).then(setContents);
+        };
+
+        let canceled = false;
+
+        if (trashLinks.length > 0 && shareId && !canceled) {
+            handleLocations(shareId, trashLinks);
+        }
+
+        return () => {
+            canceled = true;
+        };
+    }, [trashLinks.length]);
 
     // TODO: request more than one page of links with pagination and infinite scroll
     useEffect(() => {

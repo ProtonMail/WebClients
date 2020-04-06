@@ -19,4 +19,9 @@ declare module 'service-worker-loader!*' {
     export { ServiceWorkerNoSupportError, scriptUrl };
 }
 
+declare module 'ical.js' {
+    const value: any;
+    export default value;
+}
+
 declare const PL_IS_STANDALONE: boolean;

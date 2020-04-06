@@ -12,12 +12,14 @@ export interface FileBrowserItem {
     MimeType: string;
     Size: number;
     ParentLinkID: string;
+    Location?: string;
 }
 
 interface Props {
     loading?: boolean;
     contents: FileBrowserItem[];
     selectedItems: FileBrowserItem[];
+    isTrash?: boolean;
     onToggleItemSelected: (item: string) => void;
     onItemClick: (item: string) => void;
     onItemDoubleClick?: (item: FileBrowserItem) => void;
@@ -30,6 +32,7 @@ const FileBrowser = ({
     loading,
     contents,
     selectedItems,
+    isTrash = false,
     onToggleItemSelected,
     onToggleAllSelected,
     onItemClick,
@@ -40,6 +43,7 @@ const FileBrowser = ({
     const { isDesktop } = useActiveBreakpoint();
 
     const allSelected = !!contents.length && contents.length === selectedItems.length;
+    const modifiedHeader = isTrash ? c('TableHeader').t`Deleted` : c('TableHeader').t`Modified`;
 
     return (
         <div className="flex flex-item-fluid" onClick={onEmptyAreaClick}>
@@ -59,8 +63,9 @@ const FileBrowser = ({
                         <th>
                             <div className="pd-fb-table-heading-name ml0-5">{c('TableHeader').t`Name`}</div>
                         </th>
+                        {isTrash && <th className="w25">{c('TableHeader').t`Location`}</th>}
                         <th className={isDesktop ? 'w10' : 'w15'}>{c('TableHeader').t`Type`}</th>
-                        {isDesktop && <th className="w20">{c('TableHeader').t`Modified`}</th>}
+                        {isDesktop && <th className="w20">{modifiedHeader}</th>}
                         <th className={isDesktop ? 'w10' : 'w15'}>{c('TableHeader').t`Size`}</th>
                     </tr>
                 </thead>
