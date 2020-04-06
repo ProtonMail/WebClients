@@ -15,3 +15,13 @@ export const queryTrashLink = (ShareID: string, LinkID: string) => ({
     method: 'delete',
     url: `drive/shares/${ShareID}/links/${LinkID}`
 });
+
+export const queryRestoreLink = (ShareID: string, LinkID: string) => ({
+    method: 'put',
+    url: `drive/shares/${ShareID}/trash/${LinkID}`
+});
+
+export const queryDeleteLink = (ShareID: string, LinkID: string) => ({
+    method: 'delete',
+    url: `drive/shares/${ShareID}/trash/${LinkID}`
+});

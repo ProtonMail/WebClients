@@ -58,7 +58,7 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
 
         let canceled = false;
 
-        if (trashLinks.length > 0 && shareId && !canceled) {
+        if (shareId && !canceled) {
             handleLocations(shareId, trashLinks);
         }
 
@@ -99,7 +99,7 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
     return (
         <Page title={c('Title').t`My files`}>
             <DriveContentProvider>
-                <TrashToolbar />
+                <TrashToolbar shareId={shareId} fileBrowserControls={fileBrowserControls} />
                 <PageMainArea hasToolbar className="flex flex-column">
                     <StickyHeader>
                         <div className="pt0-5 pb0-5 pl0-25 pr0-25 strong">{c('Info').t`Trash`}</div>
