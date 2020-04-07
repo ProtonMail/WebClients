@@ -6,7 +6,12 @@ import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 
 import EditorToolbarDropdown from './EditorToolbarDropdown';
 import { MessageExtended } from '../../../models/message';
-import { hasFlag, isPlainText as testIsPlainText } from '../../../helpers/message/messages';
+import {
+    isPlainText as testIsPlainText,
+    isSign as testIsSign,
+    isAttachPublicKey as testIsAttachPublicKey,
+    isRequestReadReceipt as testIsRequestReadReceipt
+} from '../../../helpers/message/messages';
 import { SquireType } from '../../../helpers/squire/squireConfig';
 import { setTextDirection } from '../../../helpers/squire/squireActions';
 import { createEmbeddedMap } from '../../../helpers/embedded/embeddeds';
@@ -30,9 +35,9 @@ const EditorToolbarMoreDropdown = ({ message, squireRef, onChange, onChangeFlag 
 
     const isRtl = !!message.data?.RightToLeft;
     const isPlainText = testIsPlainText(message.data);
-    const isSign = (hasFlag(FLAG_SIGN)(message.data) as any) as boolean; // Shame on TS
-    const isAttachPublicKey = (hasFlag(FLAG_PUBLIC_KEY)(message.data) as any) as boolean; // Shame on TS
-    const isReceiptRequest = (hasFlag(FLAG_RECEIPT_REQUEST)(message.data) as any) as boolean; // Shame on TS
+    const isSign = testIsSign(message.data);
+    const isAttachPublicKey = testIsAttachPublicKey(message.data);
+    const isReceiptRequest = testIsRequestReadReceipt(message.data);
 
     const handleChangeDirection = (RightToLeft: RIGHT_TO_LEFT) => () => {
         onChange({ data: { RightToLeft } });

@@ -1,11 +1,17 @@
 import { useCallback } from 'react';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { sendMessage, updateDraft } from 'proton-shared/lib/api/messages';
-import { useGetAddressKeys, useApi, useEventManager, useGetEncryptionPreferences } from 'react-components';
+import {
+    useGetAddressKeys,
+    useApi,
+    useEventManager,
+    useGetEncryptionPreferences,
+    useAuthentication
+} from 'react-components';
 import { SendPreferences } from '../helpers/message/sendPreferences';
 
 import { MessageExtended } from '../models/message';
-import { getRecipientsAddresses } from '../helpers/message/messages';
+import { getRecipientsAddresses, isAttachPublicKey } from '../helpers/message/messages';
 
 import getSendPreferences from '../helpers/message/getSendPreferences';
 import { generateTopPackages } from '../helpers/send/sendTopPackages';
@@ -14,6 +20,8 @@ import { encryptPackages } from '../helpers/send/sendEncrypt';
 import { prepareAndEncryptBody } from '../helpers/message/messageExport';
 import { useAttachmentCache } from '../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../containers/MessageProvider';
+import { attachPublicKey } from '../helpers/message/messageAttachPublicKey';
+import { Attachment } from '../models/attachment';
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
 
@@ -25,6 +33,7 @@ export const useSendMessage = () => {
     const attachmentCache = useAttachmentCache();
     const { call } = useEventManager();
     const messageCache = useMessageCache();
+    const auth = useAuthentication();
 
     return useCallback(
         async (inputMessage: MessageExtended) => {
@@ -32,11 +41,15 @@ export const useSendMessage = () => {
             const { document, encrypted: Body } = await prepareAndEncryptBody(inputMessage);
             const { Message } = await api(updateDraft(inputMessage.data?.ID, { ...inputMessage.data, Body }));
 
+            const Attachments: Attachment[] = isAttachPublicKey(Message)
+                ? await attachPublicKey({ ...inputMessage, data: Message }, auth.UID)
+                : Message.Attachments;
+
             // Processed message representing what we send
             const message: MessageExtended = {
                 ...inputMessage,
                 document,
-                data: Message
+                data: { ...Message, Attachments }
             };
 
             const emails = getRecipientsAddresses(message.data);
