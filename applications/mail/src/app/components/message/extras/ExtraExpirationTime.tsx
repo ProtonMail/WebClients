@@ -56,16 +56,19 @@ const ExtraExpirationTime = ({ message }: Props) => {
     useEffect(() => {
         if (ExpirationTime) {
             const expirationDate = fromUnixTime(ExpirationTime);
-            const intervalID: NodeJS.Timeout = setInterval(() => {
+            const callback = () => {
                 const nowDate = new Date();
 
                 if (isAfter(nowDate, expirationDate)) {
                     setDelayMessage(c('Info').t`This message is expired!`);
-                    return clearInterval(intervalID);
+                    return;
                 }
 
                 setDelayMessage(c('Info').t`This message will expire in ${formatDelay(nowDate, expirationDate)}`);
-            }, 1000);
+            };
+            const intervalID: NodeJS.Timeout = setInterval(callback, 1000);
+
+            callback();
 
             return () => {
                 clearInterval(intervalID);
