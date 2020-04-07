@@ -1,7 +1,7 @@
 import React from 'react';
 import FileBrowser, { FileBrowserItem } from '../../FileBrowser/FileBrowser';
 import useFileBrowser from '../../FileBrowser/useFileBrowser';
-import EmptyFolder from '../../FileBrowser/EmptyFolder';
+import EmptyTrash from '../../FileBrowser/EmptyTrash';
 
 interface Props {
     loading: boolean;
@@ -21,7 +21,7 @@ function Trash({ loading, complete, contents, fileBrowserControls }: Props) {
     } = fileBrowserControls;
 
     return complete && !contents.length && !loading ? (
-        <EmptyFolder />
+        <EmptyTrash />
     ) : (
         <FileBrowser
             isTrash
