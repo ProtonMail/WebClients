@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c, msgid } from 'ttag';
-import { Icon, useApi } from 'react-components';
+import { Icon, useApi, classnames } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { attachmentsSize, getAttachments } from '../../helpers/message/messages';
@@ -11,9 +11,16 @@ import { useAttachmentCache } from '../../containers/AttachmentProvider';
 
 interface Props {
     message: MessageExtended;
+
+    /**
+     * Needed for print message
+     * true: (default) show download all button, clickable attachment
+     * false: no buttons, only static content
+     */
+    showActions?: boolean;
 }
 
-const MessageFooter = ({ message }: Props) => {
+const MessageFooter = ({ message, showActions = true }: Props) => {
     const cache = useAttachmentCache();
     const api = useApi();
     const [showLoader, setShowLoader] = useState(false);
@@ -33,7 +40,7 @@ const MessageFooter = ({ message }: Props) => {
     };
 
     return (
-        <div className="message-attachments">
+        <div className={classnames(['message-attachments', !showActions && 'no-pointer-events'])}>
             <div className="flex flex-spacebetween mb1">
                 <span className="title">
                     <strong className="listAttachments-title-size mr0-5">{humanAttachmentsSize}</strong>
@@ -59,7 +66,7 @@ const MessageFooter = ({ message }: Props) => {
                         </span>
                     )}
                 </span>
-                {numAttachments > 0 && (
+                {showActions && numAttachments > 0 && (
                     <div>
                         <button type="button" onClick={handleDownloadAll} className="link strong mr0-5">
                             {c('Download attachments').t`Download all`}

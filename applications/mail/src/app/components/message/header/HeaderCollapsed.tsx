@@ -9,6 +9,8 @@ import { isSent, isDraft } from '../../../helpers/message/messages';
 import ItemLabels from '../../list/ItemLabels';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
+import { isUnread } from '../../../helpers/elements';
+import { classnames } from 'react-components';
 
 interface Props {
     message: MessageExtended;
@@ -29,11 +31,16 @@ const HeaderCollapsed = ({ message, labels, onExpand }: Props) => {
         onExpand();
     };
 
-    const inOutClass = isSent(message.data) ? 'is-outbound' : 'is-inbound';
+    const sent = isSent(message.data);
+    const unread = isUnread(message.data);
 
     return (
         <div
-            className={`message-header message-header-collapsed flex flex-nowrap flex-items-center flex-spacebetween cursor-pointer ${inOutClass}`}
+            className={classnames([
+                'message-header message-header-collapsed flex flex-nowrap flex-items-center flex-spacebetween cursor-pointer',
+                sent ? 'is-outbound' : 'is-inbound',
+                unread && 'unread'
+            ])}
             onClick={handleClick}
         >
             <div>

@@ -21,6 +21,7 @@ export interface Message {
     CCList?: Recipient[];
     BCCList?: Recipient[];
     ReplyTos?: Recipient[];
+    Header?: string;
     ParsedHeaders?: { [key: string]: any };
     Attachments?: Attachment[];
     Unread?: number;

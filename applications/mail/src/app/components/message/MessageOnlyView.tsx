@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLabels } from 'react-components';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
@@ -9,11 +10,12 @@ import { useMessage } from '../../hooks/useMessage';
 
 interface Props {
     messageID: string;
-    mailSettings: any;
+    mailSettings: MailSettings;
+    onBack: () => void;
     onCompose: OnCompose;
 }
 
-const MessageOnlyView = ({ messageID, mailSettings, onCompose }: Props) => {
+const MessageOnlyView = ({ messageID, mailSettings, onBack, onCompose }: Props) => {
     const [labels = []] = useLabels();
 
     // There is only reading on the message here, no actions
@@ -37,6 +39,7 @@ const MessageOnlyView = ({ messageID, mailSettings, onCompose }: Props) => {
                 initialExpand={true}
                 labels={labels}
                 mailSettings={mailSettings}
+                onBack={onBack}
                 onCompose={onCompose}
             />
         </>

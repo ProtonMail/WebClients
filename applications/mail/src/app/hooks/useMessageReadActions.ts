@@ -31,6 +31,18 @@ export const useLoadMessage = (inputMessage: Message) => {
     }, [inputMessage]);
 };
 
+export const useMarkAsRead = (localID: string) => {
+    const api = useApi();
+    const messageCache = useMessageCache();
+    const { call } = useEventManager();
+
+    return useCallback(async () => {
+        const messageFromCache = messageCache.get(localID) as MessageExtended;
+        const message = await markAsRead(messageFromCache, api, call);
+        updateMessageCache(messageCache, localID, message);
+    }, [localID]);
+};
+
 export const useInitializeMessage = (localID: string) => {
     const api = useApi();
     const messageCache = useMessageCache();

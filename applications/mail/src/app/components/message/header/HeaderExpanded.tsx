@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import {
     Icon,
     Group,
-    ButtonGroup,
     useToggle,
     useContactEmails,
     useContactGroups,
+    ButtonGroup as OriginalButtonGroup,
     useApi,
     useEventManager
 } from 'react-components';
@@ -34,27 +34,45 @@ import { OnCompose } from '../../../containers/ComposerContainer';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
 import './MessageHeader.scss';
+import HeaderMoreDropdown from './HeaderMoreDropdown';
+
+// Hacky override of the typing
+const ButtonGroup = OriginalButtonGroup as ({
+    children,
+    className,
+    ...rest
+}: {
+    [x: string]: any;
+    children?: any;
+    className?: string | undefined;
+}) => JSX.Element;
 
 interface Props {
     labels?: Label[];
     mailSettings: any;
     message: MessageExtended;
     messageLoaded: boolean;
+    sourceMode: boolean;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
     onCollapse: () => void;
+    onBack: () => void;
     onCompose: OnCompose;
+    onSourceMode: (sourceMode: boolean) => void;
 }
 
 const HeaderExpanded = ({
     labels,
     message,
     messageLoaded,
+    sourceMode,
     onLoadRemoteImages,
     onLoadEmbeddedImages,
     mailSettings,
     onCollapse,
-    onCompose
+    onBack,
+    onCompose,
+    onSourceMode
 }: Props) => {
     const [contacts = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [contactGroups = []] = useContactGroups();
@@ -163,23 +181,42 @@ const HeaderExpanded = ({
                                 <LabelDropdown elements={elements} onClose={onClose} onLock={onLock} />
                             )}
                         </HeaderDropdown>
+                        <HeaderDropdown className="pm-button pm-button--for-icon pm-group-button" autoClose={true}>
+                            {({ onClose }) => (
+                                <HeaderMoreDropdown
+                                    message={message}
+                                    sourceMode={sourceMode}
+                                    onClose={onClose}
+                                    onBack={onBack}
+                                    onCollapse={onCollapse}
+                                    onSourceMode={onSourceMode}
+                                />
+                            )}
+                        </HeaderDropdown>
                     </Group>
 
                     <Group>
-                        <ButtonGroup disabled={!messageLoaded} onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}>
-                            <Icon name="reply" />
-                        </ButtonGroup>
-                        <ButtonGroup disabled={!messageLoaded} onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}>
-                            <Icon name="reply-all" />
-                        </ButtonGroup>
-                        <ButtonGroup disabled={!messageLoaded} onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}>
-                            <Icon name="forward" />
-                        </ButtonGroup>
+                        <ButtonGroup
+                            disabled={!messageLoaded}
+                            icon="reply"
+                            onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
+                        />
+                        <ButtonGroup
+                            disabled={!messageLoaded}
+                            icon="reply-all"
+                            onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
+                        />
+                        <ButtonGroup
+                            disabled={!messageLoaded}
+                            icon="forward"
+                            onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
+                        />
                     </Group>
                 </div>
             </div>
             <HeaderExtra
                 message={message}
+                sourceMode={sourceMode}
                 onLoadRemoteImages={onLoadRemoteImages}
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
             />

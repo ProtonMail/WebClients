@@ -9,9 +9,16 @@ import './MessageBody.scss';
 
 interface Props {
     message: MessageExtended;
+
+    /**
+     * Needed for print message
+     * true: (default) show button and collapse blockquote (if one founded)
+     * false: don't show button, show full content
+     */
+    showBlockquote?: boolean;
 }
 
-const MessageBody = ({ message: { document, data: message = {} } }: Props) => {
+const MessageBody = ({ message: { document, data: message = {} }, showBlockquote = true }: Props) => {
     const { state: expand, toggle } = useToggle();
 
     const plain = isPlainText(message);
@@ -20,8 +27,8 @@ const MessageBody = ({ message: { document, data: message = {} } }: Props) => {
 
     return (
         <div className={classnames(['message-content bodyDecrypted', plain && 'plain'])}>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-            {blockquote !== '' && (
+            <div dangerouslySetInnerHTML={{ __html: showBlockquote ? content : content + blockquote }} />
+            {showBlockquote && blockquote !== '' && (
                 <>
                     <Button className="pm-button--small m0-5" onClick={toggle}>
                         ...

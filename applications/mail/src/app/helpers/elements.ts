@@ -46,7 +46,7 @@ export const getReadableFullTime = ({ Time = 0, ContextTime = 0 }: Element = {})
     return format(date, 'Ppp');
 };
 
-export const isUnread = (element: Element) => {
+export const isUnread = (element: Element = {}) => {
     if ('NumUnread' in element) {
         return element.NumUnread !== 0;
     }

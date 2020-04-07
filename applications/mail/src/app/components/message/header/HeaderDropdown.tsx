@@ -21,7 +21,7 @@ const HeaderDropdown = ({ content, children, autoClose, ...rest }: Props) => {
 
     return (
         <>
-            <DropdownButton {...rest} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle}>
+            <DropdownButton {...rest} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret={true}>
                 {content}
             </DropdownButton>
             <Dropdown

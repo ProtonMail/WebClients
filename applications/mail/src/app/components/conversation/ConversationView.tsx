@@ -18,10 +18,11 @@ interface Props {
     conversationID: string;
     messageID?: string;
     mailSettings: any;
+    onBack: () => void;
     onCompose: OnCompose;
 }
 
-const ConversationView = ({ labelID, conversationID, mailSettings, onCompose }: Props) => {
+const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCompose }: Props) => {
     const [labels = []] = useLabels();
     const [conversationData, loading] = useConversation(conversationID);
     const { state: filter, toggle: toggleFilter } = useToggle(true);
@@ -74,6 +75,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onCompose }: 
                     labels={labels}
                     mailSettings={mailSettings}
                     conversationIndex={index}
+                    onBack={onBack}
                     onCompose={onCompose}
                 />
             ))}

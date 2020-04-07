@@ -9,11 +9,12 @@ import { MessageExtended } from '../../../models/message';
 
 interface Props {
     message: MessageExtended;
+    sourceMode: boolean;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
 }
 
-const HeaderExtra = ({ message, onLoadRemoteImages, onLoadEmbeddedImages }: Props) => {
+const HeaderExtra = ({ message, sourceMode, onLoadRemoteImages, onLoadEmbeddedImages }: Props) => {
     return (
         <section className="ml1 mr1 mt0-5">
             <ExtraExpirationTime message={message} />
@@ -26,8 +27,8 @@ const HeaderExtra = ({ message, onLoadRemoteImages, onLoadEmbeddedImages }: Prop
             {/* TODO: attachedPublicKey */}
             {/* TODO: promptKeyPinning */}
             {/* TODO: askResign */}
-            <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />
-            <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />
+            {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
+            {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}
         </section>
     );
 };

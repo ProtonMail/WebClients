@@ -200,12 +200,14 @@ const MailboxContainer = ({
                                     labelID={labelID}
                                     mailSettings={mailSettings}
                                     conversationID={elementID}
+                                    onBack={handleBack}
                                     onCompose={onCompose}
                                 />
                             ) : (
                                 <MessageOnlyView
                                     mailSettings={mailSettings}
                                     messageID={elementID}
+                                    onBack={handleBack}
                                     onCompose={onCompose}
                                 />
                             )

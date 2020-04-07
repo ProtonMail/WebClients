@@ -12,6 +12,10 @@ import { isPlainText, getAttachments } from './messages';
 import { getDocumentContent, getPlainTextContent } from './messageContent';
 import { getSessionKey } from '../attachment/attachmentLoader';
 import { wait } from 'proton-shared/lib/helpers/promise';
+import { constructMime } from '../send/sendMimeBuilder';
+import { splitMail, combineHeaders } from '../mail';
+import { AttachmentsCache } from '../../containers/AttachmentProvider';
+import { parseInDiv } from '../../helpers/dom';
 
 const prepareExport = (message: MessageExtended) => {
     if (!message.document) {
@@ -102,4 +106,18 @@ export const updateMessage = async (
     await wait(2000);
     const { Message: updatedMessage } = await api(updateDraft(message.data?.ID, { ...message.data, Body }));
     return updatedMessage;
+};
+
+/**
+ * Prepare a message a blob to download
+ * Use mime format, don't encrypt,
+ */
+export const exportBlob = async (message: MessageExtended, attachmentsCache: AttachmentsCache, api: Api) => {
+    const document = parseInDiv(message.decryptedBody || '');
+    const mimeMessage = await constructMime({ ...message, document }, attachmentsCache, api);
+    const { body, headers: mimeHeaders } = splitMail(mimeMessage);
+    const headers = await combineHeaders(message.data?.Header || '', mimeHeaders);
+    return new Blob([`${headers}\r\n${body}`], {
+        type: 'data:text/plain;charset=utf-8;'
+    });
 };

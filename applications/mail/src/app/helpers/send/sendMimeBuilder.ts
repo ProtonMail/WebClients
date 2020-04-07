@@ -71,9 +71,6 @@ const buildEmbeddedHtml = (html: string | undefined, attachments: AttachmentData
         body: html
     });
 
-    if (attachments && attachments.length > 0) {
-        console.log('attachments in mime message ignored as not supported yet', attachments);
-    }
     // Attachments
     const inlineAttachments = getEnbeddedAttachments(attachments, embeddeds);
     const attachmentEntities = buildAttachments(inlineAttachments);

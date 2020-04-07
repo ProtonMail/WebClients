@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { useToggle, Loader, classnames } from 'react-components';
+import React, { useEffect, useRef, useState } from 'react';
+import { Loader, classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import { hasAttachments, isDraft } from '../../helpers/message/messages';
@@ -14,8 +14,10 @@ import {
     useInitializeMessage,
     useLoadMessage,
     useLoadRemoteImages,
-    useLoadEmbeddedImages
+    useLoadEmbeddedImages,
+    useMarkAsRead
 } from '../../hooks/useMessageReadActions';
+import { isUnread } from '../../helpers/elements';
 
 interface Props {
     labels: Label[];
@@ -23,6 +25,7 @@ interface Props {
     mailSettings: any;
     initialExpand?: boolean;
     conversationIndex?: number;
+    onBack: () => void;
     onCompose: OnCompose;
 }
 
@@ -32,11 +35,15 @@ const MessageView = ({
     mailSettings,
     initialExpand = true,
     conversationIndex = 0,
+    onBack,
     onCompose
 }: Props) => {
     const draft = isDraft(inputMessage);
 
-    const { state: expanded, set: setExpanded } = useToggle(initialExpand && !draft);
+    const [expanded, setExpanded] = useState(initialExpand && !draft);
+
+    const [sourceMode, setSourceMode] = useState(false);
+
     const elementRef = useRef<HTMLElement>(null);
 
     const localID = inputMessage.ID || '';
@@ -46,9 +53,11 @@ const MessageView = ({
     const initialize = useInitializeMessage(localID);
     const loadRemoteImages = useLoadRemoteImages(localID);
     const loadEmbeddedImages = useLoadEmbeddedImages(localID);
+    const markAsRead = useMarkAsRead(localID);
 
     const messageLoaded = !!message.data?.Subject;
     const bodyLoaded = !!message.initialized;
+    const unread = isUnread(message.data);
 
     const prepareMessage = async () => {
         if (typeof message?.initialized === 'undefined') {
@@ -68,6 +77,11 @@ const MessageView = ({
 
         if (!draft && !bodyLoaded && expanded) {
             prepareMessage();
+        }
+
+        // This particular combination can appear when a message is loaded then marked as unread
+        if (!draft && bodyLoaded && unread && expanded) {
+            addAction(markAsRead);
         }
     }, [draft, bodyLoaded, expanded]);
 
@@ -98,16 +112,23 @@ const MessageView = ({
                     <HeaderExpanded
                         message={message}
                         messageLoaded={bodyLoaded}
+                        sourceMode={sourceMode}
                         onLoadRemoteImages={handleLoadRemoteImages}
                         onLoadEmbeddedImages={handleLoadEmbeddedImages}
                         labels={labels}
                         mailSettings={mailSettings}
                         onCollapse={handleExpand(false)}
+                        onBack={onBack}
                         onCompose={onCompose}
+                        onSourceMode={setSourceMode}
                     />
                     {bodyLoaded ? (
                         <>
-                            <MessageBody message={message} />
+                            {sourceMode ? (
+                                <pre className="ml1 mr1">{message.decryptedBody}</pre>
+                            ) : (
+                                <MessageBody message={message} />
+                            )}
                             {hasAttachments(message.data) ? <MessageFooter message={message} /> : null}
                         </>
                     ) : (

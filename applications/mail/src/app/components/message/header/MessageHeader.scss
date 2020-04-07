@@ -1,3 +1,14 @@
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+
+.message-header.unread {
+    background: var(--bordercolor-input, $white);
+
+    &.is-inbound::before,
+    &.is-outbound::before {
+        background: var(--bordercolor-input, $white);
+    }
+}
+
 .message-header.message-header-expanded {
     padding: 0;
 }

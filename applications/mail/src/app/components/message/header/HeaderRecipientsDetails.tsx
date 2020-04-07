@@ -6,6 +6,7 @@ import { Recipient } from '../../../models/address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { recipientsToRecipientOrGroup, getRecipientLabel, getRecipientGroupLabel } from '../../../helpers/addresses';
 import { getContactsOfGroup } from '../../../helpers/contacts';
+import RecipientItem from './HeaderRecipientItem';
 
 interface Props {
     message?: Message;
@@ -49,28 +50,19 @@ const HeaderRecipientsDetails = ({ message = {}, contacts, contactGroups }: Prop
     return (
         <div className="flex flex-column">
             {ToList.length > 0 && (
-                <span className="flex">
-                    <span className="opacity-50 container-to">{c('Label').t`To:`}</span>
-                    <span className="flex-self-vcenter mr1">
-                        <RecipientsList list={ToList} contacts={contacts} contactGroups={contactGroups} />
-                    </span>
-                </span>
+                <RecipientItem label={c('Label').t`To:`}>
+                    <RecipientsList list={ToList} contacts={contacts} contactGroups={contactGroups} />
+                </RecipientItem>
             )}
             {CCList.length > 0 && (
-                <span className="flex">
-                    <span className="opacity-50 container-to">{c('Label').t`CC:`}</span>
-                    <span className="flex-self-vcenter mr1">
-                        <RecipientsList list={CCList} contacts={contacts} contactGroups={contactGroups} />
-                    </span>
-                </span>
+                <RecipientItem label={c('Label').t`CC:`}>
+                    <RecipientsList list={CCList} contacts={contacts} contactGroups={contactGroups} />
+                </RecipientItem>
             )}
             {BCCList.length > 0 && (
-                <span className="flex">
-                    <span className="opacity-50 container-to">{c('Label').t`BCC:`}</span>
-                    <span className="flex-self-vcenter mr1">
-                        <RecipientsList list={BCCList} contacts={contacts} contactGroups={contactGroups} />
-                    </span>
-                </span>
+                <RecipientItem label={c('Label').t`BCC:`}>
+                    <RecipientsList list={BCCList} contacts={contacts} contactGroups={contactGroups} />
+                </RecipientItem>
             )}
         </div>
     );
