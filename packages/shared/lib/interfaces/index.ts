@@ -10,6 +10,7 @@ export * from './Member';
 export * from './Organization';
 export * from './SignedKeyList';
 export * from './User';
+export * from './UserSettings';
 
 export interface EncryptionConfig {
     curve?: string;

@@ -1,3 +1,5 @@
+import { DENSITY } from '../constants';
+
 export interface UserSettings {
     Email: {
         Value: string;
@@ -31,4 +33,5 @@ export interface UserSettings {
     Locale: string;
     LogAuth: number;
     InvoiceText: number;
+    Density: DENSITY;
 }
