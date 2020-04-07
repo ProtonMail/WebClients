@@ -29,6 +29,15 @@ const PROTON_DEPENDENCIES = {
  * Detect the beta v4 -> we have a custom pot for this one
  * @return {Boolean}
  */
+const isWebsite = () => {
+    const { name } = getPackageApp();
+    return /-static$/i.test(name);
+};
+
+/**
+ * Detect the beta v4 -> we have a custom pot for this one
+ * @return {Boolean}
+ */
 const isWebClientLegacy = () => {
     const { name } = getPackageApp();
     return name === 'protonmail-web';
@@ -92,6 +101,7 @@ const getCrowdin = () => {
 
 module.exports = {
     getEnv,
+    isWebsite,
     isWebClientLegacy,
     isBetaAngularV4,
     isClientV4,

@@ -72,8 +72,9 @@
     "implicit-arrow-linebreak": "off",
     "no-await-in-loop": "off",
     "no-restricted-globals": ["error", "event"],
-    "no-restricted-syntax": ["error", "WithStatement"]
-
+    "no-restricted-syntax": ["error", "WithStatement"],
+    "template-curly-spacing": "off",
+    "no-template-curly-in-string": "off"
   },
   "overrides": [
     {

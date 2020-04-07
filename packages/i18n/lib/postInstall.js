@@ -4,7 +4,8 @@ const tar = require('tar');
 const { success, warn, info, debug } = require('./helpers/log')('proton-i18n');
 const { bash, curl } = require('./helpers/cli');
 const { hasDirectory } = require('./helpers/file');
-const { getPackageApp, getEnv, isClientV4, isBetaAngularV4 } = require('../config');
+const websiteLocaleFormator = require('./formators/website');
+const { getPackageApp, getEnv, isClientV4, isBetaAngularV4, isWebsite } = require('../config');
 
 const { name: APP_NAME, config: { publicPathFlag } = {} } = getPackageApp();
 const { I18N_DEPENDENCY_REPO, I18N_DEPENDENCY_BRANCH } = getEnv();
@@ -92,6 +93,15 @@ async function getDeployedLocales() {
     }
 }
 
+/**
+ * We can "extend" the locales, ex for a branch as we might be more up-to-date than
+ * default locales
+ * @return {Promise}
+ */
+async function formatCustom() {
+    isWebsite() && (await websiteLocaleFormator(OUTPUT_CLONE));
+}
+
 async function main() {
     if (!I18N_DEPENDENCY_REPO || !I18N_DEPENDENCY_BRANCH) {
         const warningSpaces = false;
@@ -112,8 +122,11 @@ async function main() {
         `cd ${OUTPUT_CLONE} && git log --format="%H" -n 1 > .version && cd -`,
         `rm -rf ${path.join(OUTPUT_CLONE, '.git')}`
     ].join(' && ');
+
     await bash(commands);
     success(`added translations inside ${OUTPUT_CLONE}`);
+
+    return formatCustom();
 }
 
 module.exports = main;

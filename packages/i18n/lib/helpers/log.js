@@ -47,6 +47,7 @@ module.exports = (scope) => {
             console.error(e.stderr);
             process.exit(1);
         }
+        console.error(e);
 
         process.exit(1);
     };
