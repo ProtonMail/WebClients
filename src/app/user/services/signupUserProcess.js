@@ -30,7 +30,11 @@ function signupUserProcess(
             const { data = {} } = e;
 
             // Failed Human verification
-            if (data.Code === API_CUSTOM_ERROR_CODES.USER_CREATE_TOKEN_INVALID) {
+            if (
+                [API_CUSTOM_ERROR_CODES.USER_CREATE_TOKEN_INVALID, API_CUSTOM_ERROR_CODES.ALREADY_EXISTS].includes(
+                    data.Code
+                )
+            ) {
                 dispatch('creating', { value: false });
                 dispatch('chech.humanity', { value: true });
             }
