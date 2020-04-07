@@ -28,7 +28,8 @@
   .is-printed-version {
 	.pm-modalContainer,
 	.pm-modal,
-	.pm-modalContentInner {
+	.pm-modalContentInner,
+	.pm-modalContent {
 		@extend .reset4print;
 	}
   }
