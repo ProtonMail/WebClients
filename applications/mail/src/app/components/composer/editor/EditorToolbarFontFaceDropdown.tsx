@@ -28,8 +28,12 @@ const EditorToolbarFontFaceDropdown = ({ squireRef, editorReady }: Props) => {
 
     return (
         <EditorToolbarDropdown
-            className="flex-item-fluid composer-toolbar-fontDropDown alignright flex w100"
-            content={<span style={{ fontFamily: value.toString() }}>{getFontLabel(value)}</span>}
+            className="composer-toolbar-fontDropDown alignright flex"
+            content={
+                <span className="ellipsis mw100" style={{ fontFamily: value.toString() }}>
+                    {getFontLabel(value)}
+                </span>
+            }
         >
             <DropdownMenu>
                 {Object.values(FONT_FACE).map((font) => (

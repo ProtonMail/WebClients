@@ -77,8 +77,8 @@ const EditorToolbarMoreDropdown = ({ message, squireRef, onChange, onChangeFlag 
     const handleToggleReceiptRequest = () => onChangeFlag(new Map([[FLAG_RECEIPT_REQUEST, !isReceiptRequest]]));
 
     return (
-        <EditorToolbarDropdown>
-            <DropdownMenu className="editor-toolbar-more-menu">
+        <EditorToolbarDropdown className="mlauto">
+            <DropdownMenu className="editor-toolbar-more-menu flex-item-noshrink">
                 {!isPlainText && [
                     // Fragment breaks the DropdownMenu flow, an array works
                     <DropdownMenuButton

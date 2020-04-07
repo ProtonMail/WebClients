@@ -188,6 +188,15 @@
             background-color: var(--bordercolor-input, $pm-global-border);
         }
     }
+    .composer-toolbar-fontDropDown {
+        flex-shrink: 1;
+        > span {
+            display: flex;
+            > * {
+                min-width: 0;
+            }
+        }
+    }
 }
 
 .editor-toolbar {
@@ -290,6 +299,7 @@
         }
     }
 }
+
 
 .composer-attachments-button-wrapper {
     position: relative;

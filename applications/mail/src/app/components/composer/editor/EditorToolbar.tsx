@@ -77,47 +77,83 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag
     };
 
     return (
-        <div className="editor-toolbar flex ">
+        <div className="editor-toolbar flex flex-nowrap">
             {isPlainText ? (
                 <div className="flex-item-fluid" />
             ) : (
                 <>
                     <EditorToolbarFontFaceDropdown squireRef={squireRef} editorReady={editorReady} />
                     <EditorToolbarSeparator />
-                    <EditorToolbarFontSizeDropdown squireRef={squireRef} editorReady={editorReady} />
+                    <EditorToolbarFontSizeDropdown
+                        squireRef={squireRef}
+                        editorReady={editorReady}
+                        className="flex-item-noshrink"
+                    />
                     <EditorToolbarSeparator />
-                    <EditorToolbarFontColorsDropdown squireRef={squireRef} editorReady={editorReady} />
+                    <EditorToolbarFontColorsDropdown
+                        squireRef={squireRef}
+                        editorReady={editorReady}
+                        className="flex-item-noshrink"
+                    />
                     <EditorToolbarSeparator />
-                    <EditorToolbarButton onClick={handleBold} aria-pressed={squireInfos.bold}>
+                    <EditorToolbarButton
+                        onClick={handleBold}
+                        aria-pressed={squireInfos.bold}
+                        className="flex-item-noshrink"
+                    >
                         <Icon name="text-bold" className="mauto" />
                     </EditorToolbarButton>
-                    <EditorToolbarButton onClick={handleItalic} aria-pressed={squireInfos.italic}>
+                    <EditorToolbarButton
+                        onClick={handleItalic}
+                        aria-pressed={squireInfos.italic}
+                        className="flex-item-noshrink"
+                    >
                         <Icon name="text-italic" className="mauto" />
                     </EditorToolbarButton>
-                    <EditorToolbarButton onClick={handleUnderline} aria-pressed={squireInfos.underline}>
+                    <EditorToolbarButton
+                        onClick={handleUnderline}
+                        aria-pressed={squireInfos.underline}
+                        className="flex-item-noshrink"
+                    >
                         <Icon name="text-underline" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarSeparator />
-                    <EditorToolbarAlignmentDropdown squireRef={squireRef} pathInfos={squireInfos} />
+                    <EditorToolbarAlignmentDropdown
+                        squireRef={squireRef}
+                        pathInfos={squireInfos}
+                        className="flex-item-noshrink"
+                    />
                     <EditorToolbarSeparator />
-                    <EditorToolbarButton onClick={handleUnorderedList} aria-pressed={squireInfos.unorderedList}>
+                    <EditorToolbarButton
+                        onClick={handleUnorderedList}
+                        aria-pressed={squireInfos.unorderedList}
+                        className="flex-item-noshrink"
+                    >
                         <Icon name="bullet-points" className="mauto" />
                     </EditorToolbarButton>
-                    <EditorToolbarButton onClick={handleOrderedList} aria-pressed={squireInfos.orderedList}>
+                    <EditorToolbarButton
+                        onClick={handleOrderedList}
+                        aria-pressed={squireInfos.orderedList}
+                        className="flex-item-noshrink"
+                    >
                         <Icon name="ordered-list" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarSeparator />
-                    <EditorToolbarButton onClick={handleBlockquote} aria-pressed={squireInfos.blockquote}>
+                    <EditorToolbarButton
+                        onClick={handleBlockquote}
+                        aria-pressed={squireInfos.blockquote}
+                        className="flex-item-noshrink"
+                    >
                         <Icon name="text-quote" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarSeparator />
-                    <EditorToolbarButton onClick={handleLink}>
+                    <EditorToolbarButton onClick={handleLink} className="flex-item-noshrink">
                         <Icon name="link" className="mauto" />
                     </EditorToolbarButton>
-                    <EditorToolbarButton onClick={handleImage}>
+                    <EditorToolbarButton onClick={handleImage} className="flex-item-noshrink">
                         <Icon name="file-image" className="mauto" />
                     </EditorToolbarButton>
-                    <EditorToolbarButton onClick={handleClearFormatting}>
+                    <EditorToolbarButton onClick={handleClearFormatting} className="flex-item-noshrink">
                         <Icon name="remove-text-formatting" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarSeparator />
