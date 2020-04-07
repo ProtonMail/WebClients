@@ -164,6 +164,10 @@ textarea[required].pm-field.field-pristine:invalid {
   height: 1.6rem;
   margin: auto .5rem auto 0;
 }
+.item-icon-compact .pm-checkbox-fakecheck {
+  margin: auto;
+  background: var(--bgcolor-input, $white);
+}
 .pm-checkbox-fakecheck-img {
   margin: auto;
   width: 1rem;

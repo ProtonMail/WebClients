@@ -9,276 +9,354 @@ section: mockups
 ---
 
 <div class="flex flex-nowrap">
-  <div class="items-column-list scroll-if-needed scroll-smooth-touch">
+  <div class="items-column-list scroll-if-needed customScrollBar-container scroll-smooth-touch" id="js-list-messages">
   <div class="items-column-list-inner">
-
-    <label class="item-container flex read">
-        <input type="checkbox" class="item-checkbox sr-only">
-        <span class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5">
-          <span class="mauto item-abbr">AY</span>
-          <span class="item-icon-fakecheck mauto">
-            <svg viewBox="0 0 16 16" class="icon-20p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
-              <use xlink:href="#shape-on"></use>
-            </svg>
-          </span>
-        </span>
+	<div class="item-container flex flex-items-center read">
+		<div class="is-hidden-when-compact relative">
+			<input type="checkbox" class="item-checkbox sr-only" id="id_1">
+			<label class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5" for="id_1">
+			  <span class="mauto item-abbr">AY</span>
+			  <span class="item-icon-fakecheck mauto">
+				<svg viewBox="0 0 16 16" class="icon-16p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
+				  <use xlink:href="#shape-on"></use>
+				</svg>
+			  </span>
+			</label>
+		</div>
+		<div class="is-shown-when-compact relative">
+			<label for="id_1bis" class="flex mr1-5 item-icon-compact">
+				<input type="checkbox" class="pm-checkbox" id="id_1bis">
+				<span class="pm-checkbox-fakecheck  mauto">
+					<svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
+						<use xlink:href="#shape-on"></use>
+					</svg>
+				</span>
+			</label>
+		</div>
         <div class="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
-          <div class="flex">
-            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">Meetup Ring blah blah</span></div>
-            <div class="item-date flex-item-noshrink">Apr. 08 2018</div>
+          <div class="flex flex-items-center item-firstline">
+            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">Bilbo, Frodo</span></div>
+			<div class="item-date flex-item-noshrink">Apr. 08 2018</div>
+			<button class="starbutton relative ml0-5 js-starbutton">
+				<svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+					<use xlink:href="#shape-star"></use>
+				  </svg>
+			   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+				<use xlink:href="#shape-starfull"></use>
+			  </svg>
+			</button>
           </div>
-          <div class="flex mw100">
-            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis item-sender--smaller">Bilbo, Frodo</span></div>
-              <div class="item-icons">
-                <svg viewBox="0 0 16 16" class="icon-16p fill-global-success" role="img" focusable="false">
-                  <use xlink:href="#shape-attach"></use>
-                </svg>
-                <button class="starbutton relative js-starbutton">
-                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
-                        <use xlink:href="#shape-star"></use>
-                      </svg>
-                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
-                    <use xlink:href="#shape-starfull"></use>
-                  </svg>
-                </button>
-              </div>
+          <div class="flex mw100 item-secondline">
+            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis item-sender--smaller">Meetup Ring blah blah</span></div>
+			<svg viewBox="0 0 16 16" class="icon-16p color-global-success" role="img" focusable="false">
+				<use xlink:href="#shape-attach"></use>
+			</svg>
           </div>
         </div>
-    </label>
-    <label class="item-container flex read">
-        <input type="checkbox" class="item-checkbox sr-only">
-        <span class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5">
-          <span class="mauto item-abbr">SA</span>
-          <span class="item-icon-fakecheck mauto">
-            <svg viewBox="0 0 16 16" class="icon-20p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
-              <use xlink:href="#shape-on"></use>
-            </svg>
-          </span>
-        </span>
+    </div>
+    <div class="item-container flex flex-items-center read">
+		<div class="is-hidden-when-compact relative">
+			<input type="checkbox" class="item-checkbox sr-only" id="id_2">
+			<label class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5" for="id_2">
+			  <span class="mauto item-abbr">SA</span>
+			  <span class="item-icon-fakecheck mauto">
+				<svg viewBox="0 0 16 16" class="icon-16p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
+				  <use xlink:href="#shape-on"></use>
+				</svg>
+			  </span>
+			</label>
+		</div>
+		<div class="is-shown-when-compact relative">
+			<label for="id_2bis" class="flex mr1-5 item-icon-compact">
+				<input type="checkbox" class="pm-checkbox" id="id_2bis">
+				<span class="pm-checkbox-fakecheck  mauto">
+					<svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
+						<use xlink:href="#shape-on"></use>
+					</svg>
+				</span>
+			</label>
+		</div>
         <div class="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
-          <div class="flex">
-            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">Palantir specs</span></div>
-            <div class="item-date flex-item-noshrink">Apr. 08 2018</div>
+          <div class="flex flex-items-center item-firstline">
+            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">Saruman</span></div>
+			<div class="item-date flex-item-noshrink">Apr. 08 2018</div>
+			<button class="starbutton relative ml0-5 starbutton--is-starred js-starbutton">
+				<svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+					<use xlink:href="#shape-star"></use>
+				  </svg>
+			   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+				<use xlink:href="#shape-starfull"></use>
+			  </svg>
+			</button>
           </div>
-          <div class="flex mw100">
-            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis item-sender--smaller">Saruman</span></div>
-              <div class="item-icons">
-                <span class="badgeLabel-success">ToDo</span>
-                <svg viewBox="0 0 16 16" class="icon-16p fill-global-warning" role="img" focusable="false">
-                  <use xlink:href="#shape-expiration"></use>
-                </svg>
-                <svg viewBox="0 0 16 16" class="icon-16p fill-global-success" role="img" focusable="false">
-                  <use xlink:href="#shape-attach"></use>
-                </svg>
-                <button class="starbutton relative starbutton--is-starred js-starbutton">
-                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
-                        <use xlink:href="#shape-star"></use>
-                      </svg>
-                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
-                    <use xlink:href="#shape-starfull"></use>
-                  </svg>
-                </button>
-              </div>
+          <div class="flex flex-items-center item-secondline mw100">
+			<svg viewBox="0 0 16 16" class="icon-12p color-global-warning" role="img" focusable="false">
+				<use xlink:href="#shape-expiration"></use>
+			</svg>
+            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis item-sender--smaller">Palantir specs</span></div>
+			<span class="badgeLabel-success">ToDo</span>
+			<svg viewBox="0 0 16 16" class="icon-16p ml0-5 color-global-success" role="img" focusable="false">
+			  <use xlink:href="#shape-attach"></use>
+			</svg>
           </div>
         </div>
-    </label>
-    <label class="item-container flex">
-        <input type="checkbox" class="item-checkbox sr-only">
-        <span class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5">
-          <span class="mauto item-abbr">SA</span>
-          <span class="item-icon-fakecheck mauto">
-            <svg viewBox="0 0 16 16" class="icon-20p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
-              <use xlink:href="#shape-on"></use>
-            </svg>
-          </span>
-        </span>
+    </div>
+    <div class="item-container flex flex-items-center">
+		<div class="is-hidden-when-compact relative">
+			<input type="checkbox" class="item-checkbox sr-only" id="id_3">
+			<label class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5" for="id_3">
+			  <span class="mauto item-abbr">SA</span>
+			  <span class="item-icon-fakecheck mauto">
+				<svg viewBox="0 0 16 16" class="icon-16p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
+				  <use xlink:href="#shape-on"></use>
+				</svg>
+			  </span>
+			</label>
+		</div>
+		<div class="is-shown-when-compact relative">
+			<label for="id_3bis" class="flex mr1-5 item-icon-compact">
+				<input type="checkbox" class="pm-checkbox" id="id_3bis">
+				<span class="pm-checkbox-fakecheck  mauto">
+					<svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
+						<use xlink:href="#shape-on"></use>
+					</svg>
+				</span>
+			</label>
+		</div>
         <div class="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
-          <div class="flex">
-            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis bold">Helm meetup</span></div>
-            <div class="item-date flex-item-noshrink">Apr. 06 2018</div>
+          <div class="flex flex-items-center item-firstline">
+            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis bold">Saruman</span></div>
+			<div class="item-date flex-item-noshrink bold">Apr. 06 2018</div>
+			<button class="starbutton relative inline-flex ml0-5 starbutton--is-stared js-starbutton">
+				<svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+					<use xlink:href="#shape-star"></use>
+				  </svg>
+			   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+				<use xlink:href="#shape-starfull"></use>
+			  </svg>
+			</button>
           </div>
-          <div class="flex mw100">
-            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis bold item-sender--smaller">Saruman</span></div>
-              <div class="item-icons">
-                <svg viewBox="0 0 16 16" class="icon-16p fill-global-success" role="img" focusable="false">
-                  <use xlink:href="#shape-attach"></use>
-                </svg>
-                <button class="starbutton relative starbutton--is-stared js-starbutton">
-                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
-                        <use xlink:href="#shape-star"></use>
-                      </svg>
-                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
-                    <use xlink:href="#shape-starfull"></use>
-                  </svg>
-                </button>
-              </div>
+          <div class="flex flex-items-center item-secondline mw100">
+            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis bold item-sender--smaller">Helm meetup</span></div>
+			<svg viewBox="0 0 16 16" class="icon-16p ml0-5 color-global-success" role="img" focusable="false">
+				<use xlink:href="#shape-attach"></use>
+			</svg>
           </div>
         </div>
-    </label>
-    <label class="item-container flex">
-        <input type="checkbox" class="item-checkbox sr-only">
-        <span class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5">
-          <span class="mauto item-abbr">SA</span>
-          <span class="item-icon-fakecheck mauto">
-            <svg viewBox="0 0 16 16" class="icon-20p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
-              <use xlink:href="#shape-on"></use>
-            </svg>
-          </span>
-        </span>
+    </div>
+    <div class="item-container flex flex-items-center">
+		<div class="is-hidden-when-compact relative">
+			<input type="checkbox" class="item-checkbox sr-only" id="id_4">
+			<label class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5" for="id_4">
+			  <span class="mauto item-abbr">SA</span>
+			  <span class="item-icon-fakecheck mauto">
+				<svg viewBox="0 0 16 16" class="icon-16p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
+				  <use xlink:href="#shape-on"></use>
+				</svg>
+			  </span>
+			</label>
+		</div>
+		<div class="is-shown-when-compact relative">
+			<label for="id_4bis" class="flex mr1-5 item-icon-compact">
+				<input type="checkbox" class="pm-checkbox" id="id_4bis">
+				<span class="pm-checkbox-fakecheck  mauto">
+					<svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
+						<use xlink:href="#shape-on"></use>
+					</svg>
+				</span>
+			</label>
+		</div>
         <div class="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
-          <div class="flex">
-            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis bold">Tr. Spec for huruk-haïs</span></div>
-            <div class="item-date flex-item-noshrink">Apr. 05 2018</div>
+          <div class="flex flex-items-center item-firstline">
+            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis bold">Saruman, Sauron, Morgot</span></div>
+			<div class="item-date flex-item-noshrink bold">Apr. 05 2018</div>
+			<button class="starbutton relative inline-flex ml0-5 starbutton--is-stared js-starbutton">
+				<svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+					<use xlink:href="#shape-star"></use>
+				  </svg>
+			   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+				<use xlink:href="#shape-starfull"></use>
+			  </svg>
+			</button>
           </div>
-          <div class="flex mw100">
-            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis bold item-sender--smaller">Saruman, Sauron, Morgot</span></div>
-              <div class="item-icons">
-                <svg viewBox="0 0 16 16" class="icon-16p fill-global-success" role="img" focusable="false">
-                  <use xlink:href="#shape-attach"></use>
-                </svg>
-                <button class="starbutton relative starbutton--is-stared js-starbutton">
-                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
-                        <use xlink:href="#shape-star"></use>
-                      </svg>
-                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
-                    <use xlink:href="#shape-starfull"></use>
-                  </svg>
-                </button>
-              </div>
+          <div class="flex flex-items-center item-secondline mw100">
+            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis bold item-sender--smaller">Tr. Spec for huruk-haïs</span></div>
           </div>
         </div>
-    </label>
-    <label class="item-container flex read">
-        <input type="checkbox" class="item-checkbox sr-only">
-        <span class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5">
-          <span class="mauto item-abbr">GA</span>
-          <span class="item-icon-fakecheck mauto">
-            <svg viewBox="0 0 16 16" class="icon-20p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
-              <use xlink:href="#shape-on"></use>
-            </svg>
-          </span>
-        </span>
+    </div>
+    <div class="item-container flex flex-items-center read">
+		<div class="is-hidden-when-compact relative">
+			<input type="checkbox" class="item-checkbox sr-only" id="id_5">
+			<label class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5" for="id_5">
+			  <span class="mauto item-abbr">GA</span>
+			  <span class="item-icon-fakecheck mauto">
+				<svg viewBox="0 0 16 16" class="icon-16p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
+				  <use xlink:href="#shape-on"></use>
+				</svg>
+			  </span>
+			</label>
+		</div>
+		<div class="is-shown-when-compact relative">
+			<label for="id_5bis" class="flex mr1-5 item-icon-compact">
+				<input type="checkbox" class="pm-checkbox" id="id_5bis">
+				<span class="pm-checkbox-fakecheck  mauto">
+					<svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
+						<use xlink:href="#shape-on"></use>
+					</svg>
+				</span>
+			</label>
+		</div>
         <div class="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
-          <div class="flex">
-            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">Tr. Gondor, Arnor </span></div>
-            <div class="item-date flex-item-noshrink">Apr. 04 1213</div>
+          <div class="flex flex-items-center item-firstline">
+            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">GrandPa, Ellessar, Aragorn </span></div>
+			<div class="item-date flex-item-noshrink">Apr. 04 1213</div>
+			<button class="starbutton relative inline-flex ml0-5 starbutton--is-stared js-starbutton">
+				<svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+					<use xlink:href="#shape-star"></use>
+				  </svg>
+			   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+				<use xlink:href="#shape-starfull"></use>
+			  </svg>
+			</button>
           </div>
-          <div class="flex mw100">
-            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis item-sender--smaller">GrandPa, Ellessar, Aragorn</span></div>
-              <div class="item-icons">
-                <span class="badgeLabel-warning">Complicated</span>
-                <button class="starbutton relative starbutton--is-stared js-starbutton">
-                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
-                        <use xlink:href="#shape-star"></use>
-                      </svg>
-                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
-                    <use xlink:href="#shape-starfull"></use>
-                  </svg>
-                </button>
-              </div>
+          <div class="flex flex-items-center item-secondline mw100">
+            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis item-sender--smaller">Tr. Gondor, Arnor</span></div>
+            <span class="badgeLabel-warning">Complicated</span>
           </div>
         </div>
-    </label>
-    <label class="item-container flex read flex-nowrap">
-        <input type="checkbox" class="item-checkbox sr-only">
-        <span class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5">
-          <span class="mauto item-abbr"><img src="/assets/img/design-system-website/meow.jpg" alt="MEOW" class="w100 rounded50"></span>
-          <span class="item-icon-fakecheck mauto">
-            <svg viewBox="0 0 16 16" class="icon-20p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
-              <use xlink:href="#shape-on"></use>
-            </svg>
-          </span>
-        </span>
+    </div>
+    <div class="item-container flex flex-items-center read flex-nowrap">
+		<div class="is-hidden-when-compact relative">
+			<input type="checkbox" class="item-checkbox sr-only" id="id_6">
+			<label class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5" for="id_6">
+			  <span class="mauto item-abbr"><img src="/assets/img/design-system-website/meow.jpg" alt="MEOW" class="w100 rounded50"></span>
+			  <span class="item-icon-fakecheck mauto">
+				<svg viewBox="0 0 16 16" class="icon-16p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
+				  <use xlink:href="#shape-on"></use>
+				</svg>
+			  </span>
+			</label>
+		</div>
+		<div class="is-shown-when-compact relative">
+			<label for="id_6bis" class="flex mr1-5 item-icon-compact">
+				<input type="checkbox" class="pm-checkbox" id="id_6bis">
+				<span class="pm-checkbox-fakecheck  mauto">
+					<svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
+						<use xlink:href="#shape-on"></use>
+					</svg>
+				</span>
+			</label>
+		</div>
         <div class="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
-          <div class="flex">
-            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">A very loooooooooooooooooooong subject, for example Silmarillion story, blablablabla </span></div>
-            <div class="item-date flex-item-noshrink">Apr. 01 1000</div>
+          <div class="flex flex-items-center item-firstline">
+            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">Test </span></div>
+			<div class="item-date flex-item-noshrink">Apr. 01 1000</div>
+			<button class="starbutton relative inline-flex ml0-5 starbutton--is-stared js-starbutton">
+				<svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+					<use xlink:href="#shape-star"></use>
+				  </svg>
+			   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+				<use xlink:href="#shape-starfull"></use>
+			  </svg>
+			</button>
           </div>
-          <div class="flex mw100">
-            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis item-sender--smaller">Test</span></div>
-              <div class="item-icons">
-
-                <button class="starbutton relative starbutton--is-stared js-starbutton">
-                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
-                        <use xlink:href="#shape-star"></use>
-                      </svg>
-                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
-                    <use xlink:href="#shape-starfull"></use>
-                  </svg>
-                </button>
-              </div>
+          <div class="flex flex-items-center item-secondline mw100">
+            <div class="flex-item-fluid flex pr1"><span class="inbl mw100 ellipsis item-sender--smaller">A very loooooooooooooooooooong subject, for example Silmarillion story, blablablabla</span></div>
           </div>
         </div>
-    </label>
-    <label for="id_field_osef" class="item-container item-is-selected flex read flex-nowrap">
-        <input type="checkbox" class="item-checkbox sr-only" checked id="id_field_osef">
-        <span class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5">
-          <span class="mauto item-abbr">JT</span>
-          <span class="item-icon-fakecheck mauto">
-            <svg viewBox="0 0 16 16" class="icon-20p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
-              <use xlink:href="#shape-on"></use>
-            </svg>
-          </span>
-        </span>
+    </div>
+    <div for="id_field_osef" class="item-container item-is-selected flex flex-items-center read flex-nowrap">
+		<div class="is-hidden-when-compact relative">
+			<input type="checkbox" class="item-checkbox sr-only" id="id_7">
+			<label class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5" for="id_7">
+			  <span class="mauto item-abbr">JT</span>
+			  <span class="item-icon-fakecheck mauto">
+				<svg viewBox="0 0 16 16" class="icon-16p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
+				  <use xlink:href="#shape-on"></use>
+				</svg>
+			  </span>
+			</label>
+		</div>
+		<div class="is-shown-when-compact relative">
+			<label for="id_7bis" class="flex mr1-5 item-icon-compact">
+				<input type="checkbox" class="pm-checkbox" checked id="id_7bis">
+				<span class="pm-checkbox-fakecheck mauto">
+					<svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
+						<use xlink:href="#shape-on"></use>
+					</svg>
+				</span>
+			</label>
+		</div>
         <div class="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
-          <div class="flex">
-            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">Love story</span></div>
-            <div class="item-date flex-item-noshrink">Apr. 01 999</div>
+          <div class="flex flex-items-center item-firstline">
+            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">Luthien, Beren and all their friends, looong topic to see ellipsis, lorem dolor ipsum dolor si frodon</span></div>
+			<div class="item-date flex-item-noshrink">Apr. 01 999</div>
+			<button class="starbutton relative inline-flex ml0-5 starbutton--is-stared js-starbutton">
+				<svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+					<use xlink:href="#shape-star"></use>
+				  </svg>
+			   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+				<use xlink:href="#shape-starfull"></use>
+			  </svg>
+			</button>
           </div>
-          <div class="flex mw100">
-            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis item-sender--smaller">Luthien, Beren and all their friends, looong topic to see ellipsis, lorem dolor ipsum dolor si frodon</span></div>
-              <div class="item-icons">
-
-                <button class="starbutton relative starbutton--is-stared js-starbutton">
-                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
-                        <use xlink:href="#shape-star"></use>
-                      </svg>
-                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
-                    <use xlink:href="#shape-starfull"></use>
-                  </svg>
-                </button>
-              </div>
+          <div class="flex flex-items-center item-secondline mw100">
+            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis item-sender--smaller">Love story</span></div>
           </div>
         </div>
-      </label>
-    {% for i in (1..10) %}
-    <label class="item-container flex read">
-        <input type="checkbox" class="item-checkbox sr-only">
-        <span class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5">
-          <span class="mauto item-abbr">PM</span>
-          <span class="item-icon-fakecheck mauto">
-            <svg viewBox="0 0 16 16" class="icon-20p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
-              <use xlink:href="#shape-on"></use>
-            </svg>
-          </span>
-        </span>
+      </div>
+    {% for i in (8..16) %}
+    <div class="item-container flex flex-items-center read">
+		<div class="is-hidden-when-compact relative">
+			<input type="checkbox" class="item-checkbox sr-only" id="id_{{ i }}">
+			<label class="item-icon flex-item-noshrink rounded50 inline-flex mr1-5" for="id_{{ i }}">
+			  <span class="mauto item-abbr">PM</span>
+			  <span class="item-icon-fakecheck mauto">
+				<svg viewBox="0 0 16 16" class="icon-16p item-icon-fakecheck-icon mauto " aria-hidden="true" role="img" focusable="false">
+				  <use xlink:href="#shape-on"></use>
+				</svg>
+			  </span>
+			</label>
+		</div>
+		<div class="is-shown-when-compact relative">
+			<label for="id_{{ i }}bis" class="flex mr1-5 item-icon-compact">
+				<input type="checkbox" class="pm-checkbox" id="id_{{ i }}bis">
+				<span class="pm-checkbox-fakecheck mauto">
+					<svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
+						<use xlink:href="#shape-on"></use>
+					</svg>
+				</span>
+			</label>
+		</div>
         <div class="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
-          <div class="flex">
-            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">Another for scrolling</span></div>
-            <div class="item-date flex-item-noshrink">Apr. 08 998</div>
+          <div class="flex flex-items-center item-firstline">
+            <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis">But she's dead? (french joke, sorry)</span></div>
+			<div class="item-date flex-item-noshrink">Apr. 08 998</div>
+			<button class="starbutton relative inline-flex ml0-5 js-starbutton">
+				<svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+					<use xlink:href="#shape-star"></use>
+					</svg>
+				<svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+				<use xlink:href="#shape-starfull"></use>
+				</svg>
+			</button>
           </div>
-          <div class="flex mw100">
-              <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis"></span></div>
-              <div class="item-icons">
-                <svg viewBox="0 0 16 16" class="icon-16p fill-global-success" role="img" focusable="false">
-                  <use xlink:href="#shape-attach"></use>
-                </svg>
-                <button class="starbutton relative js-starbutton">
-                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
-                        <use xlink:href="#shape-star"></use>
-                      </svg>
-                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
-                    <use xlink:href="#shape-starfull"></use>
-                  </svg>
-                </button>
-              </div>
+          <div class="flex flex-items-center item-secondline mw100">
+			  <div class="flex-item-fluid flex w0 pr1"><span class="inbl mw100 ellipsis item-sender--smaller">About Adele</span></div>
+			  <svg viewBox="0 0 16 16"  class="icon-16p ml0-5 color-global-success" role="img" focusable="false">
+				  <use xlink:href="#shape-attach"></use>
+			  </svg>
           </div>
         </div>
-    </label>
+    </div>
     {% endfor %}
-   </div>
   </div>
-  <div class="view-column-detail p2 flex-item-fluid scroll-if-needed">
+  </div>
+  <div class="view-column-detail p2 flex-item-fluid customScrollBar-container scroll-if-needed scroll-smooth-touch">
+
+
+	<button class="js-toggle-message-view pm-button mb2">Toggle in condensed view</button>
+
     <h2>Collapsed</h2>
 
     <div class="message-container">
@@ -307,9 +385,10 @@ section: mockups
         </div>
 
       </div>
-    </div>
+	</div>
 
-    <h2 class="mt1">Expanded</h2>
+	<h2 class="mt1">Expanded</h2>
+
 
     <div class="message-container is-opened">
       <div class="message-header is-inbound">
@@ -430,7 +509,7 @@ section: mockups
               </button>
               <button class="pm-button pm-button--for-icon pm-group-button">
                 <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false">
-                  <use xlink:href="#shape-label"></use>
+                  <use xlink:href="#shape-div"></use>
                 </svg>
               </button>
               <button class="pm-button pm-button--for-icon pm-group-button">
@@ -549,7 +628,7 @@ section: mockups
               </button>
               <button class="pm-button pm-button--for-icon pm-group-button">
                 <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false">
-                  <use xlink:href="#shape-label"></use>
+                  <use xlink:href="#shape-div"></use>
                 </svg>
               </button>
               <button class="pm-button pm-button--for-icon pm-group-button">
