@@ -142,7 +142,7 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
             {selectedItems.length > 0 && (
                 <>
                     <ToolbarSeparator />
-                    <ToolbarButton title={c('Action').t`Move to trash`} icon="trash" onClick={handleDeleteClick} />
+                    <ToolbarButton title={c('Action').t`Move to Trash`} icon="trash" onClick={handleDeleteClick} />
                 </>
             )}
         </Toolbar>
