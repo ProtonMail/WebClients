@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { c } from 'ttag';
+
 import {
     Row,
     Label,
@@ -11,7 +13,6 @@ import {
     FooterModal,
     PrimaryButton
 } from 'react-components';
-import { c } from 'ttag';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { FileBrowserItem } from './FileBrowser/FileBrowser';

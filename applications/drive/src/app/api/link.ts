@@ -25,3 +25,8 @@ export const queryDeleteLink = (ShareID: string, LinkID: string) => ({
     method: 'delete',
     url: `drive/shares/${ShareID}/trash/${LinkID}`
 });
+
+export const queryEmptyTrashOfShare = (ShareID: string) => ({
+    method: 'delete',
+    url: `/drive/shares/${ShareID}/trash`
+});
