@@ -107,7 +107,11 @@ const messageCacheListener = (cache: MessageCache) => async (changedMessageID: s
 
         cache.set(changedMessageID, { ...message, actionStatus, actionQueue: rest });
 
-        await action();
+        try {
+            await action();
+        } catch (error) {
+            console.error('Message action has failed', error);
+        }
 
         // Message has changed since first read in the cache
         message = cache.get(changedMessageID) as MessageExtended;
