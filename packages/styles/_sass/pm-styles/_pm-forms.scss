@@ -96,7 +96,12 @@ select.pm-field {
   &::-ms-expand {
     display: none;
   }
+  > optgroup {
+	background-color: var(--bgcolor-highlight, $pm-global-light);
+  }
 }
+
+
 
 /* firefox bug */
 textarea[required].pm-field.field-pristine:invalid {
