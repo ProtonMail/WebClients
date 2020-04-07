@@ -94,6 +94,10 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
     // Needed to keep component alive while saving/deleting on close
     const [closing, setClosing] = useState(false);
 
+    // Indicates that the composer is sending the message
+    // Some behavior has to change, example, stop auto saving
+    const [sending, setSending] = useState(false);
+
     // Indicates that the composer is open but the edited message is not yet ready
     // Needed to prevent edition while data is not ready
     const [editorReady, setEditorReady] = useState(false);
@@ -186,7 +190,9 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
 
     const autoSave = useHandler(
         (message: MessageExtended) => {
-            addAction(() => saveDraft(message));
+            if (!sending) {
+                addAction(() => saveDraft(message));
+            }
         },
         { debounce: 2000 }
     );
@@ -249,7 +255,8 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
         await save();
     };
     const handleSend = async () => {
-        await addAction(() => sendMessage(syncedMessage));
+        setSending(true);
+        await addAction(() => sendMessage(modelMessage));
         createNotification({ text: c('Success').t`Message sent` });
         onClose();
     };
