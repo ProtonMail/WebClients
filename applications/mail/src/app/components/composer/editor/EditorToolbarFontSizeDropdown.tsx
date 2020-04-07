@@ -8,9 +8,10 @@ import { listenToCursor, getFontSizeAtCursor } from '../../../helpers/squire/squ
 interface Props {
     squireRef: MutableRefObject<SquireType>;
     editorReady: boolean;
+    className?: string;
 }
 
-const EditorToolbarFontSizeDropdown = ({ squireRef, editorReady }: Props) => {
+const EditorToolbarFontSizeDropdown = ({ squireRef, editorReady, className }: Props) => {
     const [value, setValue] = useState(14);
 
     useEffect(
@@ -27,7 +28,7 @@ const EditorToolbarFontSizeDropdown = ({ squireRef, editorReady }: Props) => {
     };
 
     return (
-        <EditorToolbarDropdown size="narrow" content={value}>
+        <EditorToolbarDropdown size="narrow" content={value} className={className}>
             <DropdownMenu>
                 {Object.values(FONT_SIZES).map((size) => (
                     <DropdownMenuButton

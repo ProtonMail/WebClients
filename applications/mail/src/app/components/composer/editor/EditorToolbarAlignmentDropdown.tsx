@@ -15,15 +15,16 @@ enum ALIGNMENT {
 interface Props {
     squireRef: MutableRefObject<SquireType>;
     pathInfos: { [pathInfo: string]: boolean };
+    className?: string;
 }
 
-const EditorToolbarAlignmentDropdown = ({ squireRef, pathInfos }: Props) => {
+const EditorToolbarAlignmentDropdown = ({ squireRef, pathInfos, className }: Props) => {
     const handleClick = (alignment: ALIGNMENT) => () => {
         squireRef.current.setTextAlignment(alignment);
     };
 
     return (
-        <EditorToolbarDropdown size="narrow" content={<Icon name="text-align-left" />}>
+        <EditorToolbarDropdown size="narrow" content={<Icon name="text-align-left" />} className={className}>
             <DropdownMenu>
                 <DropdownMenuButton
                     className="alignleft flex flex-nowrap"

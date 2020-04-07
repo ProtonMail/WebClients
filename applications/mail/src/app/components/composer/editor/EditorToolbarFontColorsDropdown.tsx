@@ -9,9 +9,10 @@ import EditorToolbarDropdown from './EditorToolbarDropdown';
 interface Props {
     squireRef: MutableRefObject<SquireType>;
     editorReady: boolean;
+    className?: string;
 }
 
-const EditorToolbarFontColorsDropdown = ({ squireRef }: Props) => {
+const EditorToolbarFontColorsDropdown = ({ squireRef, className }: Props) => {
     const [fontColor, setFontColor] = useState(DEFAULT_FONT_COLOR);
     const [bgColor, setBgColor] = useState(DEFAULT_BACKGROUND);
 
@@ -32,7 +33,12 @@ const EditorToolbarFontColorsDropdown = ({ squireRef }: Props) => {
     };
 
     return (
-        <EditorToolbarDropdown onOpen={handleOpen} size="wide" content={<Icon name="font-color" />}>
+        <EditorToolbarDropdown
+            onOpen={handleOpen}
+            size="wide"
+            content={<Icon name="font-color" />}
+            className={className}
+        >
             <div className="flex flex-row flex-nowrap">
                 <div className="flex flex-column m0-5">
                     <p className="m0 mb0-5">{c('Info').t`Text color`}</p>
