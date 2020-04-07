@@ -187,11 +187,11 @@ export const getOriginalTo = (message: Message = {}) => {
 export const requireReadReceipt = (message: Message = {}) => {
     const dispositionNotificationTo = getParsedHeaders(message, 'Disposition-Notification-To') || ''; // ex: Andy <andy@pm.me>
 
-    if (!dispositionNotificationTo || isReadReceiptSent(message)) {
+    if (!dispositionNotificationTo || isReadReceiptSent(message) || isSent(message)) {
         return false;
     }
 
-    return isRequestReadReceipt(message);
+    return true;
 };
 
 export const getListUnsubscribe = (message: Message = {}) => {
