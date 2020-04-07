@@ -227,11 +227,11 @@ function addressModel(
                 confirm() {
                     confirmModal.deactivate();
                     const promise = disableFirst(address)
-                        .then(() => Promise.all([eventManager.call(), Address.remove(address.ID)]))
+                        .then(() => Address.remove(address.ID))
+                        .then(eventManager.call)
                         .then(() => {
                             notification.success(I18N.SUCCESS_REMOVE);
-                        })
-                        .then(eventManager.call);
+                        });
 
                     networkActivityTracker.track(promise);
                 },
