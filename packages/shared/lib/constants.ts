@@ -260,7 +260,8 @@ export enum RIGHT_TO_LEFT {
 }
 
 export enum ORGANIZATION_FLAGS {
-    LOYAL = 1
+    LOYAL = 1,
+    COVID = 2
 }
 
 export const LOYAL_BONUS_STORAGE = 5 * GIGA;
