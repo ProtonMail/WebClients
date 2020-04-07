@@ -267,6 +267,10 @@ export enum ORGANIZATION_FLAGS {
 export const LOYAL_BONUS_STORAGE = 5 * GIGA;
 export const LOYAL_BONUS_CONNECTION = 2;
 
+export const COVID_PLUS_BONUS_STORAGE = 5 * GIGA;
+export const COVID_PROFESSIONAL_BONUS_STORAGE = 5 * GIGA;
+export const COVID_VISIONARY_BONUS_STORAGE = 10 * GIGA;
+
 export const DEFAULT_CYCLE = 12;
 
 export enum CYCLE {
