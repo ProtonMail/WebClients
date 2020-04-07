@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react';
-import { ErrorBoundary, useMailSettings, Loader, useEventManager, useLabels, useFolders } from 'react-components';
+import { ErrorBoundary, useMailSettings, useUserSettings, Loader, useEventManager, useLabels, useFolders } from 'react-components';
 import { Redirect } from 'react-router-dom';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
@@ -18,6 +18,7 @@ interface Props extends RouteProps {
 
 const PageContainer = ({ match, location, history, onCompose }: Props) => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
+    const [userSettings, loadingUserSettings] = useUserSettings();
     const { subscribe } = useEventManager();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
@@ -45,11 +46,12 @@ const PageContainer = ({ match, location, history, onCompose }: Props) => {
     return (
         <PrivateLayout labelID={labelID} location={location} history={history} onCompose={onCompose}>
             <ErrorBoundary>
-                {loadingMailSettings ? (
+                {loadingMailSettings || loadingUserSettings ? (
                     <Loader />
                 ) : (
                     <MailboxContainer
                         labelID={labelID}
+                        userSettings={userSettings}
                         mailSettings={mailSettings}
                         elementID={elementID}
                         location={location}

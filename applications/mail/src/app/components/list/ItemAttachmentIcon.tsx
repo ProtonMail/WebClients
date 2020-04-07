@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, classnames } from 'react-components';
+import { Icon } from 'react-components';
 
 import { hasAttachments } from '../../helpers/elements';
 import { Element } from '../../models/element';
@@ -14,7 +14,7 @@ const ItemAttachmentIcon = ({ element = {}, className }: Props) => {
         return null;
     }
 
-    return <Icon name="attach" className={classnames(['color-global-success', className])} />;
+    return <Icon name="attach" className={className} />;
 };
 
 export default ItemAttachmentIcon;

@@ -1,6 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Loader, classnames } from 'react-components';
 import { History, Location } from 'history';
+import { DENSITY } from 'proton-shared/lib/constants';
+import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 
 import { Element } from '../models/element';
 import { Sort, Filter, Page, SearchParameters } from '../models/tools';
@@ -35,7 +37,8 @@ import './main-area.scss';
 
 interface Props {
     labelID: string;
-    mailSettings: any;
+    userSettings: UserSettings;
+    mailSettings: MailSettings;
     elementID?: string;
     location: Location;
     history: History;
@@ -44,6 +47,7 @@ interface Props {
 
 const MailboxContainer = ({
     labelID: inputLabelID,
+    userSettings,
     mailSettings,
     elementID: inputElementID,
     location,
@@ -61,6 +65,7 @@ const MailboxContainer = ({
         limit: PAGE_SIZE
     });
 
+    const isCompactView = userSettings.Density === DENSITY.COMPACT;
     const searchParams = getSearchParams(location);
     const conversationMode = isConversationMode(inputLabelID, mailSettings, location);
     const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [
@@ -171,7 +176,12 @@ const MailboxContainer = ({
                 ])}
             >
                 {(columnMode || !elementID) && (
-                    <div className="items-column-list scroll-if-needed scroll-smooth-touch">
+                    <div
+                        className={classnames([
+                            'items-column-list scroll-if-needed scroll-smooth-touch',
+                            isCompactView && 'is-compact'
+                        ])}
+                    >
                         <div className="items-column-list-inner">
                             {loading ? (
                                 <div className="flex flex-justify-center h100">
@@ -187,6 +197,7 @@ const MailboxContainer = ({
                                     checkedIDs={checkedIDs}
                                     onCheck={handleCheck}
                                     onClick={handleElement}
+                                    userSettings={userSettings}
                                 />
                             )}
                         </div>

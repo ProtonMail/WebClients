@@ -27,26 +27,30 @@ const ItemColumnLayout = ({ labels, element, mailSettings = {}, type, showIcon, 
 
     return (
         <div className="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
-            <div className="flex">
-                <div className="flex-item-fluid flex w0 pr1">
-                    {showIcon && <ItemLocation message={element} mailSettings={mailSettings} />}
-                    {isConversation && (
-                        <NumMessages className={classnames(['mr0-25', unread && 'bold'])} conversation={element} />
-                    )}
-                    <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
-                </div>
-                <ItemDate element={element} className={unread ? 'bold' : undefined} />
-            </div>
-            <div className="flex">
+            <div className="flex flex-items-center item-firstline">
                 <div className="flex-item-fluid flex pr1">
                     <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{senders}</span>
                 </div>
-                <div className="item-icons">
-                    <ItemLabels max={4} labels={labels} element={element} />
-                    {' ' /* This space is important to keep a small space between elements */}
-                    <ItemAttachmentIcon element={element} />
-                    {' ' /* This space is important to keep a small space between elements */}
+                <ItemDate element={element} className={classnames([unread && 'bold'])} />
+                <span className="ml0-5 flex">
                     <ItemStar element={element} />
+                </span>
+            </div>
+            <div className="flex flex-items-center item-secondline mw100">
+                <div className="flex-item-fluid flex w0 pr1 flex-nowrap item-sender--smaller">
+                    {/* add expiration icon, in red, 12px */}
+                    {showIcon && <ItemLocation message={element} mailSettings={mailSettings} />}
+                    {isConversation && (
+                        <NumMessages
+                            className={classnames(['mr0-25 flex-item-noshrink', unread && 'bold'])}
+                            conversation={element}
+                        />
+                    )}
+                    <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
+                </div>
+                <div className="item-icons ml0-5">
+                    <ItemLabels max={4} labels={labels} element={element} />
+                    <ItemAttachmentIcon element={element} className="ml0-5" />
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, DragEvent } from 'react';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
 import { useLabels, useContactEmails, useContactGroups } from 'react-components';
+import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 
 import Item from './Item';
 import { Element } from '../../models/element';
@@ -15,7 +16,8 @@ import './Drag.scss';
 interface Props {
     labelID: string;
     elementID?: string;
-    mailSettings: any;
+    userSettings: UserSettings;
+    mailSettings: MailSettings;
     elements?: Element[];
     checkedIDs?: string[];
     onCheck: (ID: string[], checked: boolean, replace: boolean) => void;
@@ -26,7 +28,8 @@ interface Props {
 const List = ({
     labelID,
     elementID,
-    mailSettings = {},
+    userSettings,
+    mailSettings,
     elements = [],
     checkedIDs = [],
     onCheck,
@@ -126,6 +129,7 @@ const List = ({
                         contactGroups={contactGroups}
                         onCheck={handleCheck(element.ID || '')}
                         onClick={onClick}
+                        userSettings={userSettings}
                         mailSettings={mailSettings}
                         onDragStart={handleDragStart(element)}
                         onDragEnd={handleDragEnd}

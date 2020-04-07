@@ -9,6 +9,7 @@ import { render, addApiMock, clearAll } from '../helpers/test/helper';
 const props = {
     labelID: 'labelID',
     mailSettings: {},
+    userSettings: {},
     elementID: undefined,
     location: {} as Location,
     history: {} as History,

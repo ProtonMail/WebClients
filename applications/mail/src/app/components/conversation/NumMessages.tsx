@@ -14,7 +14,7 @@ const NumMessages = ({ conversation, className }: Props) => {
         return null;
     }
 
-    return <span className={className}>({NumMessages})</span>;
+    return <span className={className}>[{NumMessages}]</span>;
 };
 
 export default NumMessages;

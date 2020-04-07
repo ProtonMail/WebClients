@@ -1,10 +1,11 @@
 import React, { ChangeEvent, MouseEvent, DragEvent, useState } from 'react';
 import { Location } from 'history';
-import { classnames } from 'react-components';
+import { classnames, Checkbox } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
-import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, VIEW_LAYOUT, DENSITY } from 'proton-shared/lib/constants';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 
 import ItemCheckbox from './ItemCheckbox';
 import { getRecipients as getMessageRecipients, getSender, getRecipients } from '../../helpers/message/messages';
@@ -24,7 +25,8 @@ interface Props {
     labels?: Label[];
     labelID: string;
     elementID?: string;
-    mailSettings: any;
+    userSettings: UserSettings;
+    mailSettings: MailSettings;
     element: Element;
     checked?: boolean;
     contacts: ContactEmail[];
@@ -41,7 +43,8 @@ const Item = ({
     labels,
     element,
     elementID,
-    mailSettings = {},
+    userSettings,
+    mailSettings,
     checked = false,
     contacts,
     contactGroups,
@@ -55,6 +58,7 @@ const Item = ({
     const { ID = '' } = element;
     const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
     const type = getCurrentType({ mailSettings, labelID, location });
+    const isCompactView = userSettings.Density === DENSITY.COMPACT;
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
     const showIcon =
         labelID === MAILBOX_LABEL_IDS.ALL_MAIL ||
@@ -92,6 +96,14 @@ const Item = ({
         onDragEnd(event);
     };
 
+    const itemCheckboxType = isCompactView ? (
+        <Checkbox className="item-icon-compact mr1" checked={checked} onChange={onCheck} />
+    ) : (
+        <ItemCheckbox className="mr1 item-checkbox" checked={checked} onChange={onCheck}>
+            {getInitial(displayRecipients ? recipientsLabels[0] : sendersLabels[0])}
+        </ItemCheckbox>
+    );
+
     return (
         <div
             onClick={handleClick}
@@ -99,16 +111,14 @@ const Item = ({
             onDragStart={handleDragStart}
             onDragEnd={handleDragEnd}
             className={classnames([
-                'flex flex-nowrap cursor-pointer',
+                'flex flex-nowrap flex-items-center cursor-pointer',
                 isColumnMode ? 'item-container' : 'item-container-row',
                 elementID === ID && 'item-is-selected',
                 !unread && 'read',
                 dragging && 'item-dragging'
             ])}
         >
-            <ItemCheckbox className="mr1 item-checkbox" checked={checked} onChange={onCheck}>
-                {getInitial(displayRecipients ? recipientsLabels[0] : sendersLabels[0])}
-            </ItemCheckbox>
+            {itemCheckboxType}
             <ItemLayout
                 labels={labels}
                 element={element}
