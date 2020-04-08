@@ -1,23 +1,5 @@
 /* links */
-/* remember focus */
-a,
-.link {
-  color: $color-links;
-  cursor: pointer;
 
-  &:focus,
-  &:hover,
-  &:active {
-    color: $color-hover;
-    text-decoration: underline;
-  }
-}
-/* avoid border on images in links + fix border image IE */
-a:link img,
-a:visited img,
-img {
-  border-style: none;
-}
 .nodecoration {
   text-decoration: none;
 }

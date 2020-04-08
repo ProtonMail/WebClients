@@ -22,6 +22,7 @@
 - fixed redirections for Netlify update: https://community.netlify.com/t/changed-behavior-in-redirects/10084
 - hotfix print version on Firefox
 - fixed `optgroup` styling in dark mode
+- moved link reset styles to reset (to avoid color bug in Mail button/links)
 
 
 # [1.8.2] - 2019-03-19
