@@ -5,11 +5,12 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import MailboxContainer from './MailboxContainer';
 import { render, addApiMock, clearAll } from '../helpers/test/helper';
+import { UserSettings, MailSettings } from 'proton-shared/lib/interfaces';
 
 const props = {
     labelID: 'labelID',
-    mailSettings: {},
-    userSettings: {},
+    mailSettings: {} as MailSettings,
+    userSettings: {} as UserSettings,
     elementID: undefined,
     location: {} as Location,
     history: {} as History,
