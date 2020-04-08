@@ -114,9 +114,10 @@ export const updateMessage = async (
  */
 export const exportBlob = async (message: MessageExtended, attachmentsCache: AttachmentsCache, api: Api) => {
     const document = parseInDiv(message.decryptedBody || '');
-    const mimeMessage = await constructMime({ ...message, document }, attachmentsCache, api);
+    const mimeMessage = await constructMime({ ...message, document }, attachmentsCache, api, false);
     const { body, headers: mimeHeaders } = splitMail(mimeMessage);
     const headers = await combineHeaders(message.data?.Header || '', mimeHeaders);
+
     return new Blob([`${headers}\r\n${body}`], {
         type: 'data:text/plain;charset=utf-8;'
     });

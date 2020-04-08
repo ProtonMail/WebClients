@@ -166,13 +166,8 @@ export const constructMime = async (
     api: Api,
     downconvert = true
 ) => {
-    // TODO: ?
-    // if (message.isMIME() && message.decryptedMIME) {
-    //     return message.decryptedMIME;
-    // }
-
     const plaintext = getPlainText(message, downconvert);
-    const html = message.data?.MIMEType === MIME_TYPES.DEFAULT ? getDocumentContent(message.document) : undefined;
+    const html = message.data?.MIMEType !== MIME_TYPES.PLAINTEXT ? getDocumentContent(message.document) : undefined;
     const attachments = await fetchMimeDependencies(message, cache, api);
     const embeddeds = message.embeddeds || new Map();
 
