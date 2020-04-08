@@ -29,7 +29,7 @@ function main({ branch, argv, hookPostTaskClone }) {
                     return '✋ You shall not deploy to QA';
                 }
             },
-            enabled: () => !/dev|beta|prod|tor|old/.test(branch),
+            enabled: () => !/^(dev|beta|prod|tor|old)$|prod-/.test(branch.replace('deploy-', '')),
             async task() {
                 // For the CI to force SSH
                 if (process.env.GIT_REMOTE_URL_CI && argv.fromCi) {
