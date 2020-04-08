@@ -66,7 +66,7 @@ const ExtraExpirationTime = ({ message }: Props) => {
 
                 setDelayMessage(c('Info').t`This message will expire in ${formatDelay(nowDate, expirationDate)}`);
             };
-            const intervalID: NodeJS.Timeout = setInterval(callback, 1000);
+            const intervalID = window.setInterval(callback, 1000);
 
             callback();
 
@@ -74,7 +74,7 @@ const ExtraExpirationTime = ({ message }: Props) => {
                 clearInterval(intervalID);
             };
         }
-    }, []);
+    }, [ExpirationTime]);
 
     if (!ExpirationTime) {
         return null;
