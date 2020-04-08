@@ -254,8 +254,8 @@ export const getPlanIDs = (subscription = {}) => {
 };
 
 export const clearPlanIDs = (planIDs = {}) => {
-    return Object.entries(planIDs).reduce((acc, [planID, quantity]) => {
-        if (!quantity) {
+    return Object.entries(planIDs).reduce((acc, [planID, quantity = 0]) => {
+        if (quantity <= 0) {
             return acc;
         }
         acc[planID] = quantity;
