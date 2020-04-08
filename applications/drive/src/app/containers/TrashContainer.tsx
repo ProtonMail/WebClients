@@ -97,7 +97,7 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
     const completed = !!shareId && cache.get.trashComplete(shareId);
 
     return (
-        <Page title={c('Title').t`My files`}>
+        <Page title={c('Title').t`Trash`}>
             <DriveContentProvider>
                 <TrashToolbar shareId={shareId} fileBrowserControls={fileBrowserControls} />
                 <PageMainArea hasToolbar className="flex flex-column">
