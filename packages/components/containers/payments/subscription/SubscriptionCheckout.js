@@ -1,30 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
-import {
-    CurrencySelector,
-    CycleSelector,
-    Loader,
-    Price,
-    useOrganization,
-    useConfig,
-    classnames,
-    Info
-} from 'react-components';
-import { isLoyal } from 'proton-shared/lib/helpers/organization';
+import { CurrencySelector, CycleSelector, Price, useConfig, classnames, Info } from 'react-components';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { orderBy } from 'proton-shared/lib/helpers/array';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import {
-    CLIENT_TYPES,
-    PLAN_SERVICES,
-    PLAN_TYPES,
-    CYCLE,
-    LOYAL_BONUS_STORAGE,
-    LOYAL_BONUS_CONNECTION,
-    PLANS,
-    ADDON_NAMES
-} from 'proton-shared/lib/constants';
+import { CLIENT_TYPES, PLAN_SERVICES, PLAN_TYPES, CYCLE, PLANS, ADDON_NAMES } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { getSubTotal } from './helpers';
@@ -57,8 +38,6 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
     const memberAddon = plans.find(({ Name }) => Name === ADDON_NAMES.MEMBER);
     const vpnAddon = plans.find(({ Name }) => Name === ADDON_NAMES.VPN);
     const { CLIENT_TYPE } = useConfig();
-    const [organization, loadingOrganization] = useOrganization();
-    const loyal = isLoyal(organization);
     const subTotal =
         getSubTotal({
             cycle: model.cycle,
@@ -83,12 +62,6 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
         ({ Type, Services }) => Type === PLAN_TYPES.PLAN && hasBit(Services, PLAN_SERVICES.VPN)
     );
     const hasVisionary = collection.some(({ Name }) => Name === PLANS.VISIONARY);
-
-    if (loadingOrganization) {
-        return <Loader />;
-    }
-
-    const loyalBonusStorage = humanSize(LOYAL_BONUS_STORAGE, 'GB');
 
     const getTitle = (planName, quantity) => {
         const addresses = quantity * addressAddon.MaxAddresses;
@@ -163,20 +136,6 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                                 currency={model.currency}
                             />
                         )}
-                        {loyal && (
-                            <CheckoutRow
-                                title={c('Info').t`+ ${loyalBonusStorage} bonus storage`}
-                                amount={0}
-                                currency={model.currency}
-                            />
-                        )}
-                        {hasVisionary && loyal && (
-                            <CheckoutRow
-                                title={c('Info').t`+ ${LOYAL_BONUS_CONNECTION} bonus connections`}
-                                amount={0}
-                                currency={model.currency}
-                            />
-                        )}
                     </div>
                     {hasVisionary ? null : (
                         <div className="border-top border-top--dashed pt0-5">
@@ -186,13 +145,6 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                                 <CheckoutRow
                                     className="bold"
                                     title={c('Info').t`ProtonVPN Free`}
-                                    amount={0}
-                                    currency={model.currency}
-                                />
-                            )}
-                            {loyal && (
-                                <CheckoutRow
-                                    title={c('Info').t`+ ${LOYAL_BONUS_CONNECTION} bonus connections`}
                                     amount={0}
                                     currency={model.currency}
                                 />
