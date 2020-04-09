@@ -14,7 +14,7 @@ export interface ConversationResult {
 export const useConversation = (conversationID: string): [ConversationResult | undefined, boolean] => {
     const cache = useConversationCache();
     const api = useApi();
-    const [loading, withLoading] = useLoading(true);
+    const [loading, withLoading] = useLoading(!cache.has(conversationID));
     const [conversation, setConversation] = useState<ConversationResult | undefined>(cache.get(conversationID));
 
     useEffect(() => {
