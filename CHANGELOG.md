@@ -1,3 +1,16 @@
+# [3.16.23] - 2020-04-09
+## Fixed
+- SMS and Email verification bugs during sign up
+- Translations bugs
+- Disable address bug
+
+## Updated
+- COVID-19 campaign bonus added
+
+# [3.16.22] - 2020-03-10
+## Updated
+- New OpenPGP version
+
 # [3.16.21] - 2020-02-17
 ## Fixed
 - Add support for DKIM rotation
