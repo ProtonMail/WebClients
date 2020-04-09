@@ -59,10 +59,10 @@ export const getMessage = (messageID) => ({
     url: `messages/${messageID}`
 });
 
-export const sendMessage = (messageID, { ExpirationTime, AutoSaveContacts, Packages }) => ({
+export const sendMessage = (messageID, { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages }) => ({
     method: 'post',
     url: `messages/${messageID}`,
-    data: { ExpirationTime, AutoSaveContacts, Packages }
+    data: { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages }
 });
 
 export const createDraft = ({ Message, ParentID, Action, AttachmentKeyPackets }) => ({
