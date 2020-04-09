@@ -20,7 +20,7 @@ const EmptyView = ({ labelID }: Props) => {
     const noResultInboxSvg = getLightOrDark(noResultInboxSvgLight, noResultInboxSvgDark);
 
     return (
-        <div className="m2">
+        <div className="mauto p1">
             <figure className="flex-item-fluid aligncenter p3">
                 {isSearch && <img src={noResultSearchSvg} alt={c('Search - no results').t`No results found`} />}
                 {isFolder && <img src={noResultSearchSvg} alt={c('Search - no results').t`No messages found`} />}
