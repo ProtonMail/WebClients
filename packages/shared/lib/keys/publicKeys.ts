@@ -122,6 +122,19 @@ export const getKeyVerificationOnlyStatus = (publicKey: OpenPGPKey, config: ApiK
 };
 
 /**
+ * Check if a public key is valid for sending according to the information stored in a public key model
+ * We rely only on the fingerprint of the key to do this check
+ */
+export const getIsValidForSending = (fingerprint: string, publicKeyModel: PublicKeyModel): boolean => {
+    const { verifyOnlyFingerprints, revokedFingerprints, expiredFingerprints } = publicKeyModel;
+    return (
+        !verifyOnlyFingerprints.has(fingerprint) &&
+        !revokedFingerprints.has(fingerprint) &&
+        !expiredFingerprints.has(fingerprint)
+    );
+};
+
+/**
  * For a given email address and its corresponding public keys (retrieved from the API and/or the corresponding vCard),
  * construct the public key model taking into account the user preferences in mailSettings.
  * The public key model contains information about public keys that one can use for sending email to an email address

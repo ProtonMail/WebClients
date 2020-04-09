@@ -2,7 +2,7 @@ import ICAL from 'ical.js';
 import { readFileAsString } from '../helpers/file';
 import isTruthy from '../helpers/isTruthy';
 import { ContactProperties, ContactProperty } from '../interfaces/contacts/Contact';
-import { hasPref, sortByPref } from './properties';
+import { addPref, hasPref, sortByPref } from './properties';
 import { getValue } from './property';
 
 export const ONE_OR_MORE_MUST_BE_PRESENT = '1*';
@@ -55,7 +55,7 @@ export const parse = (vcard: string = ''): ContactProperties => {
     const comp = new ICAL.Component(ICAL.parse(vcard));
     const properties = comp.getAllProperties() as any[];
 
-    return properties
+    const sortedProperties = properties
         .reduce<ContactProperty[]>((acc, property) => {
             const splitProperty = property.name.split('.');
             const field = splitProperty[1] ? splitProperty[1] : splitProperty[0];
@@ -83,6 +83,8 @@ export const parse = (vcard: string = ''): ContactProperties => {
             return acc;
         }, [])
         .sort(sortByPref);
+    // make sure properties that require a pref have a pref
+    return addPref(sortedProperties);
 };
 
 /**

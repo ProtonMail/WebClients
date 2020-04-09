@@ -50,7 +50,7 @@ export const sanitizeProperties = (properties: ContactProperties = []): ContactP
 };
 
 /**
- * Add `pref` to email, adr, tel to save order
+ * Add `pref` to email, adr, tel, key to save order
  */
 export const addPref = (properties: ContactProperties = []): ContactProperties => {
     const prefs = FIELDS_WITH_PREF.reduce((acc, field) => {

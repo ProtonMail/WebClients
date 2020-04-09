@@ -1,3 +1,4 @@
+import { OpenPGPKey } from 'pmcrypto';
 import { CONTACT_CARD_TYPE } from '../../constants';
 
 export interface ContactEmail {
@@ -27,6 +28,12 @@ export interface Contact {
     ContactEmails: ContactEmail[];
     LabelIDs: string[];
     Cards: ContactCard[];
+}
+
+export interface ContactWithBePinnedPublicKey {
+    contactID: string;
+    emailAddress: string;
+    bePinnedPublicKey: OpenPGPKey;
 }
 
 export interface ContactGroup {

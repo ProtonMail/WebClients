@@ -12,11 +12,11 @@ export const toBitMap = (o: { [key: string]: boolean } = {}): number =>
  * @param keys ex: ['announcements', 'features', 'newsletter', 'beta']
  * @returns ex: { announcements: true, features: false, newsletter: false, beta: false }
  */
-export const fromBitmap = (value: number, keys: string[] = []): { [key: string]: boolean | undefined } =>
-    keys.reduce((acc, key, index) => {
+export const fromBitmap = (value: number, keys: string[] = []) =>
+    keys.reduce<{ [key: string]: boolean }>((acc, key, index) => {
         acc[key] = !!(value & (1 << index));
         return acc;
-    }, {} as any);
+    }, {});
 
 /**
  * This method creates an object composed of the own and inherited enumerable property paths of object that are not omitted.
@@ -24,10 +24,13 @@ export const fromBitmap = (value: number, keys: string[] = []): { [key: string]:
  * @param properties Properties to omit.
  * @retuns Returns a new object.
  */
-export const omit = <T extends object, K extends keyof T>(model: T, properties: K[] = []): Omit<T, K> =>
-    Object.entries(model)
-        .filter(([key]) => !properties.includes(key as K))
-        .reduce((obj, [key, val]) => Object.assign(obj, { [key]: val }), {} as any);
+export const omit = <T extends object, K extends keyof T>(model: T, properties: K[] = []): Omit<T, K> => {
+    const result = { ...model };
+    for (let i = 0; i < properties.length; ++i) {
+        delete result[properties[i]];
+    }
+    return result;
+};
 
 /**
  * Review of omit function
@@ -35,13 +38,17 @@ export const omit = <T extends object, K extends keyof T>(model: T, properties: 
  * @param properties Properties to keep.
  * @return Returns a new object.
  */
-export const pick = <T extends object, K extends keyof T>(model: T, properties: K[] = []): Pick<T, K> =>
-    Object.entries(model)
-        .filter(([key]) => properties.includes(key as K))
-        .reduce((obj, [key, val]) => Object.assign(obj, { [key]: val }), {} as any);
+export const pick = <T extends object, K extends keyof T>(model: T, properties: K[] = []) => {
+    const result: Pick<T, K> = {} as any;
+    for (let i = 0; i < properties.length; ++i) {
+        const key = properties[i];
+        result[key] = model[key];
+    }
+    return result;
+};
 
 /**
- * Compare 2 objects but not deeply
+ * Compare two objects but not deeply
  */
 export const isEquivalent = (a: { [key: string]: any }, b: { [key: string]: any }) => {
     const aProps = Object.getOwnPropertyNames(a);
@@ -68,8 +75,11 @@ export const isEquivalent = (a: { [key: string]: any }, b: { [key: string]: any 
 export const toMap = <T extends { [key: string]: any }, K extends keyof T>(
     collection: T[] = [],
     key: K = 'ID' as K
-): { [key in T[K]]: T | undefined } =>
-    collection.reduce((acc, item) => {
-        acc[item[key]] = item;
-        return acc;
-    }, {} as any);
+) => {
+    const result: { [key in T[K]]: T } = {} as any;
+    for (let i = 0; i < collection.length; i++) {
+        const item = collection[i];
+        result[item[key]] = item;
+    }
+    return result;
+};

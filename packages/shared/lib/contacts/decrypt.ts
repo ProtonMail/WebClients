@@ -1,7 +1,7 @@
 import { getMessage, decryptMessage, getSignature, verifyMessage, createCleartextMessage } from 'pmcrypto';
 import { c } from 'ttag';
 import { KeyPairs } from '../interfaces';
-import { Contact, ContactProperties } from '../interfaces/contacts/Contact';
+import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts/Contact';
 import { merge, parse } from './vcard';
 import { sanitizeProperties } from './properties';
 
@@ -11,11 +11,6 @@ import { CRYPTO_PROCESSING_TYPES } from './constants';
 const { SUCCESS, SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
 
 const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_CARD_TYPE;
-
-interface ContactCryptoData {
-    Data: string;
-    Signature?: string;
-}
 
 export interface CryptoProcessingError {
     type: Exclude<CRYPTO_PROCESSING_TYPES, CRYPTO_PROCESSING_TYPES.SUCCESS>;
@@ -28,8 +23,8 @@ interface ContactClearTextData {
     error?: Error;
 }
 
-const decrypt = async (
-    { Data }: ContactCryptoData,
+export const decrypt = async (
+    { Data }: ContactCard,
     { privateKeys }: Pick<KeyPairs, 'privateKeys'>
 ): Promise<ContactClearTextData> => {
     let message;
@@ -47,8 +42,8 @@ const decrypt = async (
     }
 };
 
-const signed = async (
-    { Data, Signature = '' }: ContactCryptoData,
+export const readSigned = async (
+    { Data, Signature = '' }: ContactCard,
     { publicKeys }: Pick<KeyPairs, 'publicKeys'>
 ): Promise<ContactClearTextData> => {
     try {
@@ -71,8 +66,8 @@ const signed = async (
     }
 };
 
-const decryptSigned = async (
-    { Data, Signature }: ContactCryptoData,
+export const decryptSigned = async (
+    { Data, Signature }: ContactCard,
     { publicKeys, privateKeys }: KeyPairs
 ): Promise<ContactClearTextData> => {
     try {
@@ -98,11 +93,11 @@ const decryptSigned = async (
     }
 };
 
-const clearText = ({ Data }: ContactCryptoData): ContactClearTextData => ({ type: SUCCESS, data: Data });
+const clearText = ({ Data }: ContactCard): ContactClearTextData => ({ type: SUCCESS, data: Data });
 
 const ACTIONS: { [index: number]: any } = {
     [ENCRYPTED_AND_SIGNED]: decryptSigned,
-    [SIGNED]: signed,
+    [SIGNED]: readSigned,
     [ENCRYPTED]: decrypt,
     [CLEAR_TEXT]: clearText
 };

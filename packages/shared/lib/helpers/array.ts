@@ -1,3 +1,6 @@
+/**
+ * Build an array with a numeric range, specified by a start, an end, and a step
+ */
 export const range = (start = 0, end = 1, step = 1) => {
     const result = [];
     for (let index = start; index < end; index += step) {
@@ -6,16 +9,22 @@ export const range = (start = 0, end = 1, step = 1) => {
     return result;
 };
 
+/**
+ * Divide an array into sub-arrays of a fixed chunk size
+ */
 export const chunk = <T>(list: T[] = [], size = 1) => {
-    return list.reduce((res, item, index) => {
+    return list.reduce<T[][]>((res, item, index) => {
         if (index % size === 0) {
             res.push([]);
         }
         res[res.length - 1].push(item);
         return res;
-    }, [] as T[][]);
+    }, []);
 };
 
+/**
+ * Extract the elements from an array that are unique according to a comparator function
+ */
 export const uniqueBy = <T>(array: T[], comparator: (t: T) => any) => {
     const seen = new Set();
     return array.filter((value) => {
@@ -44,10 +53,7 @@ export const move = <T>(list: T[] = [], from: number, to: number) => {
 };
 
 /**
- * Remove the first occurrence of an item from an array.
- * @param arr
- * @param item    The item to remove
- * @returns copy of the updated array.
+ * Remove the first occurrence of an item from an array. Return a copy of the updated array
  */
 export const remove = <T>(arr: T[], item: T) => {
     const i = arr.indexOf(item);
@@ -60,11 +66,7 @@ export const remove = <T>(arr: T[], item: T) => {
 };
 
 /**
- * Replace the first occurrence of an item from an array by another item.
- * @param arr
- * @param item            The item to be replaced
- * @param replacement     The replacement item
- * @returns copy of the updated array.
+ * Replace the first occurrence of an item from an array by another item. Return a copy of the updated array
  */
 export const replace = <T>(arr: T[], item: T, replacement: T) => {
     const i = arr.indexOf(item);
@@ -78,16 +80,12 @@ export const replace = <T>(arr: T[], item: T, replacement: T) => {
 
 /**
  * Returns difference of two array of strings
- * @param {Array} arr1
- * @param {Array} arr2
- * @returns {Array} diff
  */
 export const diff = <T>(arr1: T[], arr2: T[]) => arr1.filter((a) => !arr2.includes(a));
 
 /**
- * Groups elements in an array by a provided comparison function. E.g. `[1, 1, 2, 3, 3] => [[1, 1], [2], [3, 3]]`
- * @param compare fn whose result tells if elements belong to the same group
- * @param arr
+ * Groups elements in an array by a provided comparison function.
+ * E.g. `[1, 1, 2, 3, 3] => [[1, 1], [2], [3, 3]]`
  */
 export const groupWith = <T>(compare: (a: T, b: T) => boolean, arr: T[] = []) => {
     const { groups } = arr.reduce(
@@ -111,9 +109,8 @@ export const groupWith = <T>(compare: (a: T, b: T) => boolean, arr: T[] = []) =>
 };
 
 /**
- * Returns the item that has minimum value as determined by fn property selector function. E.g.: `minBy(({ a }) => a, [{a: 4}, {a: 2}, {a: 5}])` returns `{a: 2}`
- * @param fn object property selector
- * @param arr array to search in
+ * Returns the item that has minimum value as determined by fn property selector function.
+ * E.g.: `minBy(({ a }) => a, [{a: 4}, {a: 2}, {a: 5}])` returns `{a: 2}`
  */
 export const minBy = <T>(fn: (a: T) => any, arr: T[] = []) => {
     return arr.reduce((min, item) => {
@@ -123,9 +120,6 @@ export const minBy = <T>(fn: (a: T) => any, arr: T[] = []) => {
 
 /**
  * Order collection of object by a specific key
- * @param collection
- * @param key
- * @returns new collection
  */
 export const orderBy = <T, K extends keyof T>(collection: T[] = [], key: K) => {
     return collection.slice().sort((a, b) => {
@@ -139,6 +133,9 @@ export const orderBy = <T, K extends keyof T>(collection: T[] = [], key: K) => {
     });
 };
 
+/**
+ * Determine if two arrays are shallowy equal (i.e. they have the same length and the same elements)
+ */
 export const shallowEqual = <T>(a: T[], b: T[]) => {
     if (a.length !== b.length) {
         return false;
@@ -151,6 +148,9 @@ export const shallowEqual = <T>(a: T[], b: T[]) => {
     return true;
 };
 
+/**
+ * Basic comparator function that transforms order via >,< into the numeric order that sorting functions typically require
+ */
 export const compare = (a: any, b: any) => {
     if (a > b) {
         return 1;

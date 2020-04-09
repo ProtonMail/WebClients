@@ -99,12 +99,8 @@ interface VcardPublicKey {
 
 /**
  * Transform a key into a vCard property
- * @param {} publicKey      A PGP key
- * @param {String} group
- * @param {Number} index
- * @returns { field, pref, value, group }
  */
-export const toKeyProperty = ({ publicKey, group, index }: VcardPublicKey): Partial<ContactProperty> => ({
+export const toKeyProperty = ({ publicKey, group, index }: VcardPublicKey): ContactProperty => ({
     field: 'key',
     value: `data:application/pgp-keys;base64,${encodeBase64(
         arrayToBinaryString(publicKey.toPacketlist().write() as Uint8Array)
