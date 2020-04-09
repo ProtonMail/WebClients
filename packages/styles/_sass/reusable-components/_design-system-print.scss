@@ -60,7 +60,7 @@
   }
 
   /* avoid problematic page break */
-  blockquote, ul, ol {
+  ul, ol {
     page-break-inside: avoid;
   }
   h1, h2, h3, caption {
