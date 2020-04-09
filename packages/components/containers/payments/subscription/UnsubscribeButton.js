@@ -10,18 +10,19 @@ import {
     useLoading,
     useModals,
     useEventManager,
-    useOrganization
+    useOrganization,
+    useSubscription
 } from 'react-components';
 import { c } from 'ttag';
 import { deleteSubscription } from 'proton-shared/lib/api/payments';
-
-import { isLoyal } from 'proton-shared/lib/helpers/organization';
+import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
 
 const DOWNGRADING_ID = 'downgrading-notification';
 
 const UnsubscribeButton = ({ className, children }) => {
     const [user] = useUser();
     const [organization] = useOrganization();
+    const [subscription] = useSubscription();
     const { createNotification, hideNotification } = useNotifications();
     const { createModal } = useModals();
     const api = useApi();
@@ -53,9 +54,17 @@ const UnsubscribeButton = ({ className, children }) => {
             createModal(<DowngradeModal onConfirm={resolve} onClose={reject} />);
         });
 
-        if (isLoyal(organization)) {
+        if (isLoyal(organization) || hasCovid(organization)) {
             await new Promise((resolve, reject) => {
-                createModal(<LossLoyaltyModal user={user} onConfirm={resolve} onClose={reject} />);
+                createModal(
+                    <LossLoyaltyModal
+                        organization={organization}
+                        subscription={subscription}
+                        user={user}
+                        onConfirm={resolve}
+                        onClose={reject}
+                    />
+                );
             });
         }
 

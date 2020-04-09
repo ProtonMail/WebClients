@@ -22,7 +22,7 @@ import {
 } from 'react-components';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE, CURRENCIES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
-import { isLoyal } from 'proton-shared/lib/helpers/organization';
+import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
 import { clearPlanIDs, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 
 import { SUBSCRIPTION_STEPS } from './constants';
@@ -92,9 +92,17 @@ const NewSubscriptionModal = ({
     };
 
     const handleUnsubscribe = async () => {
-        if (isLoyal(organization)) {
+        if (isLoyal(organization) || hasCovid(organization)) {
             await new Promise((resolve, reject) => {
-                createModal(<LossLoyaltyModal user={user} onConfirm={resolve} onClose={reject} />);
+                createModal(
+                    <LossLoyaltyModal
+                        subscription={subscription}
+                        organization={organization}
+                        user={user}
+                        onConfirm={resolve}
+                        onClose={reject}
+                    />
+                );
             });
         }
         await api(deleteSubscription());

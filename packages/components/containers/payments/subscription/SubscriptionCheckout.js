@@ -88,7 +88,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
         return <Loader />;
     }
 
-    const bonusStorage = humanSize(LOYAL_BONUS_STORAGE, 'GB');
+    const loyalBonusStorage = humanSize(LOYAL_BONUS_STORAGE, 'GB');
 
     const getTitle = (planName, quantity) => {
         const addresses = quantity * addressAddon.MaxAddresses;
@@ -165,7 +165,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                         )}
                         {loyal && (
                             <CheckoutRow
-                                title={c('Info').t`+ ${bonusStorage} bonus storage`}
+                                title={c('Info').t`+ ${loyalBonusStorage} bonus storage`}
                                 amount={0}
                                 currency={model.currency}
                             />

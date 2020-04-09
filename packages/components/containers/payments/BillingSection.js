@@ -1,8 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
-import { PLAN_NAMES, CYCLE, LOYAL_BONUS_STORAGE, LOYAL_BONUS_CONNECTION } from 'proton-shared/lib/constants';
-import { isLoyal } from 'proton-shared/lib/helpers/organization';
+import {
+    PLAN_NAMES,
+    CYCLE,
+    LOYAL_BONUS_STORAGE,
+    LOYAL_BONUS_CONNECTION,
+    COVID_PLUS_BONUS_STORAGE,
+    PLANS,
+    COVID_PROFESSIONAL_BONUS_STORAGE,
+    COVID_VISIONARY_BONUS_STORAGE
+} from 'proton-shared/lib/constants';
+import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
 import { unique } from 'proton-shared/lib/helpers/array';
 import {
     Alert,
@@ -37,6 +46,12 @@ const getCyclesI18N = () => ({
     [YEARLY]: c('Billing cycle').t`Yearly`,
     [TWO_YEARS]: c('Billing cycle').t`2-year`
 });
+
+const COVID_STORAGE = {
+    [PLANS.PLUS]: COVID_PLUS_BONUS_STORAGE,
+    [PLANS.PROFESSIONAL]: COVID_PROFESSIONAL_BONUS_STORAGE,
+    [PLANS.VISIONARY]: COVID_VISIONARY_BONUS_STORAGE
+};
 
 const BillingSection = ({ permission }) => {
     const i18n = getCyclesI18N();
@@ -115,6 +130,7 @@ const BillingSection = ({ permission }) => {
     }, 0);
     const discount = Amount / Cycle - subTotal;
     const loyal = isLoyal(organization);
+    const covid = hasCovid(organization);
 
     return (
         <>
@@ -225,6 +241,23 @@ const BillingSection = ({ permission }) => {
                                 </div>
                                 <div className="flex-autogrid-item bold nomobile">
                                     +{humanSize(LOYAL_BONUS_STORAGE)}
+                                </div>
+                                <div className="flex-autogrid-item bold alignright">
+                                    <PlanPrice amount={0} currency={Currency} cycle={MONTHLY} />
+                                </div>
+                            </div>
+                        ) : null}
+                        {covid ? (
+                            <div className="flex-autogrid w100 mb1">
+                                <div className="flex-autogrid-item">
+                                    {c('Label').t`Bonus storage`}
+                                    <div className="hidden automobile bold">
+                                        +{humanSize(COVID_STORAGE[mailPlan.Name])}
+                                    </div>
+                                </div>
+                                <div className="flex-autogrid-item bold nomobile">
+                                    +{humanSize(COVID_STORAGE[mailPlan.Name])}{' '}
+                                    {mailPlan.Name === PLANS.PROFESSIONAL ? c('Unit').t`per user` : ''}
                                 </div>
                                 <div className="flex-autogrid-item bold alignright">
                                     <PlanPrice amount={0} currency={Currency} cycle={MONTHLY} />
