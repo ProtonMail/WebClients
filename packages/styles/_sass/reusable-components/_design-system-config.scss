@@ -21,7 +21,8 @@ $size-biggest          : 20 !default;
 
 // fonts
 $font-family           : -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif !default;
-
+$font-family-monospace : SFMono-Regular,Consolas,"Liberation Mono","Menlo",monospace,monospace !default;
+// explanation for double monospace http://code.iamkate.com/html-and-css/fixing-browsers-broken-monospace-font-handling/
 
 // project colors
 $pm-global-grey        : #262a33 !default;
