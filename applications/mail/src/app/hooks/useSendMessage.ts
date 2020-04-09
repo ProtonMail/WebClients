@@ -73,7 +73,9 @@ export const useSendMessage = () => {
             // TODO: Implement retry system
             // const suppress = retry ? [API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED] : [];
             // try {
-            const { Sent } = await api(sendMessage(message.data?.ID, { Packages: packages } as any));
+            const { Sent } = await api(
+                sendMessage(message.data?.ID, { Packages: packages, ExpiresIn: message.expiresIn } as any)
+            );
             await call();
 
             updateMessageCache(messageCache, inputMessage.localID, { data: Sent });

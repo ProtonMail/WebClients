@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import { Alert, Href, generateUID, useNotifications, Label } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 
-import { Message, MessageExtended } from '../../models/message';
+import { MessageExtended } from '../../models/message';
 import ComposerInnerModal from './ComposerInnerModal';
 import { MAX_EXPIRATION_TIME } from '../../constants';
 
-const initValues = ({ ExpiresIn = 0 }: Message = {}) => {
-    const deltaHours = ExpiresIn / 3600;
+const initValues = ({ expiresIn = 0 }: Partial<MessageExtended> = {}) => {
+    const deltaHours = expiresIn / 3600;
     const deltaDays = Math.floor(deltaHours / 24);
 
     return {
@@ -27,12 +27,12 @@ const optionRange = (size: number) =>
     ));
 
 interface Props {
-    message?: Message;
+    message?: MessageExtended;
     onClose: () => void;
     onChange: (message: Partial<MessageExtended>) => void;
 }
 
-const ComposerExpirationModal = ({ message = {}, onClose, onChange }: Props) => {
+const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
     const [uid] = useState(generateUID('password-modal'));
 
     const values = initValues(message);
@@ -64,12 +64,12 @@ const ComposerExpirationModal = ({ message = {}, onClose, onChange }: Props) => 
             return;
         }
 
-        onChange({ data: { ExpiresIn: valueInHours * 3600 } });
+        onChange({ expiresIn: valueInHours * 3600 });
         onClose();
     };
 
     const handleCancel = () => {
-        onChange({ data: { ExpiresIn: undefined } });
+        onChange({ expiresIn: undefined });
         onClose();
     };
 

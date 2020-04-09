@@ -318,7 +318,7 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
                     )}
                     {innerModal === ComposerInnerModal.Expiration && (
                         <ComposerExpirationModal
-                            message={modelMessage.data}
+                            message={modelMessage}
                             onClose={handleCloseInnerModal}
                             onChange={handleChange}
                         />

@@ -59,7 +59,7 @@ const ComposerActions = ({
 
     const isAttachments = getAttachments(message.data).length > 0;
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && message.data?.Password;
-    const isExpiration = !!message.data?.ExpiresIn;
+    const isExpiration = !!message.expiresIn;
 
     return (
         <footer

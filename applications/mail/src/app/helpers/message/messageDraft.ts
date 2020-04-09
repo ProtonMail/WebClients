@@ -207,8 +207,6 @@ export const createNewDraft = (
             BCCList,
             Subject,
             PasswordHint: '',
-            ExpirationTime: 0,
-            ExpiresIn: 0,
             Attachments,
             MIMEType,
             RightToLeft,
@@ -220,6 +218,7 @@ export const createNewDraft = (
         ParentID,
         document,
         action,
+        expiresIn: 0,
         originalTo,
         initialized: true,
         embeddeds

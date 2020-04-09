@@ -34,7 +34,6 @@ export interface Message {
     RightToLeft?: number;
     PasswordHint?: string;
     ExpirationTime?: number;
-    ExpiresIn?: number;
     SpamScore?: number;
 }
 
@@ -137,7 +136,10 @@ export interface MessageExtended {
      */
     encryptedSubject?: any;
 
-    // mimetype?: string;
+    /**
+     * Expiration offset in seconds from time of delivery
+     */
+    expiresIn?: number;
 
     /**
      * Original "To" address
