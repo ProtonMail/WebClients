@@ -313,6 +313,9 @@
   &.nodecoration {
 	  text-decoration: none;
   }
+  &.pm-button--currentColor {
+	  color: currentColor;
+  }
 }
 .pm-button--error,
 .pm-button.pm-button--error {
