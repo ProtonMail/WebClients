@@ -2,19 +2,22 @@
  * containers
  */
 .bordered,
-.bordered-container {
+.bordered-container,
+.dashed,
+.dashed-container {
   border: 1px solid var(--bordercolor-input, $pm-global-border);
 }
-.bordered-container {
+.bordered-container,
+.dashed-container {
   border-radius: $global-border-radius;
+}
+.bordered-container--error {
+  border-color: $pm-global-warning;
 }
 
 .dashed,
 .dashed-container {
-  border: 1px dashed var(--bordercolor-input, $pm-global-border);
-}
-.dashed-container {
-  border-radius: $global-border-radius;
+  border-style: dashed;
 }
 
 .border-bottom {
