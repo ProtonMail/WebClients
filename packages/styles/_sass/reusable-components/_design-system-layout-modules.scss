@@ -351,10 +351,11 @@ $list-max-width-em: 8, 15, 37, 40, 50 !default;
   }
 }
 
-$list-min-width-em: 3, 5, 35 !default;
+$list-min-width-em: 1.4, 3, 5, 35 !default;
 
 @each $min-width in $list-min-width-em {
-  .min-w#{$min-width}e {
+  $fragment-class: str-replace(inspect($min-width), '.', '-'); // inspect to convert to string
+  .min-w#{$fragment-class}e {
     min-width: #{$min-width}em;
   }
 }
