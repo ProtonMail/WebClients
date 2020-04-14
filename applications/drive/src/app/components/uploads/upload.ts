@@ -55,7 +55,7 @@ export async function upload(
         xhr.onload = () => resolve();
         xhr.upload.onerror = reject;
         xhr.onerror = reject;
-        xhr.open('put', url);
+        xhr.open('post', url);
         xhr.setRequestHeader('Content-Type', 'application/x-binary');
         xhr.send(new Blob([content]));
     });
