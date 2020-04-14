@@ -54,7 +54,7 @@ export const modelToGeneralProperties = ({ uid, title, location, description, fr
     }
 
     if (description) {
-        properties.description = { value: description.slice(0, MAX_LENGTHS.DESCRIPTION) };
+        properties.description = { value: description.slice(0, MAX_LENGTHS.EVENT_DESCRIPTION) };
     }
 
     if (frequency && frequency !== FREQUENCY.ONCE) {

@@ -86,7 +86,7 @@ const CalendarSettingsTab = ({ isSubmitted, errors, model, setModel }: Props) =>
                         onChange={({ target }: ChangeEvent<HTMLTextAreaElement>) =>
                             setModel({ ...model, description: target.value })
                         }
-                        maxLength={MAX_LENGTHS.DESCRIPTION}
+                        maxLength={MAX_LENGTHS.CALENDAR_DESCRIPTION}
                         error={errors.description}
                         isSubmitted={isSubmitted}
                     />

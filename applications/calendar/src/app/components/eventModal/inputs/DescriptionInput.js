@@ -11,7 +11,7 @@ const DescriptionInput = ({ onChange, ...rest }) => {
             autoGrow={true}
             placeholder={c('Placeholder').t`Add a description`}
             onChange={({ target }) => onChange(target.value)}
-            maxLength={MAX_LENGTHS.DESCRIPTION}
+            maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
             {...rest}
         />
     );
