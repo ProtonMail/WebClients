@@ -74,7 +74,10 @@ export const useSendMessage = () => {
             // const suppress = retry ? [API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED] : [];
             // try {
             const { Sent } = await api(
-                sendMessage(message.data?.ID, { Packages: packages, ExpiresIn: message.expiresIn } as any)
+                sendMessage(message.data?.ID, {
+                    Packages: packages,
+                    ExpiresIn: message.expiresIn === 0 ? undefined : message.expiresIn
+                } as any)
             );
             await call();
 
