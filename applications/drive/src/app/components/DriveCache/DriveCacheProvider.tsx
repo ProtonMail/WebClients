@@ -249,7 +249,7 @@ const useDriveCacheState = () => {
                 const parent = cacheRef.current[shareId].links[parentLinkId];
                 const trash = cacheRef.current[shareId].trash;
 
-                if (isCachedFolderLink(parent)) {
+                if (parent && isCachedFolderLink(parent)) {
                     parent.children.list = parent.children.list.filter((id) => meta.LinkID !== id);
                     parent.children.unlisted = parent.children.unlisted.filter((id) => meta.LinkID !== id);
                 }

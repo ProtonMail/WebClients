@@ -44,6 +44,7 @@ const FileBrowser = ({
 
     const allSelected = !!contents.length && contents.length === selectedItems.length;
     const modifiedHeader = isTrash ? c('TableHeader').t`Deleted` : c('TableHeader').t`Modified`;
+    const colSpan = 4 + Number(isDesktop) + Number(isTrash);
 
     return (
         <div className="flex flex-item-fluid" onClick={onEmptyAreaClick}>
@@ -69,7 +70,7 @@ const FileBrowser = ({
                         <th className={isDesktop ? 'w10' : 'w15'}>{c('TableHeader').t`Size`}</th>
                     </tr>
                 </thead>
-                <TableBody colSpan={isDesktop ? 5 : 4}>
+                <TableBody colSpan={colSpan}>
                     {contents.map((item) => (
                         <ItemRow
                             key={item.LinkID}
@@ -81,7 +82,7 @@ const FileBrowser = ({
                             onClick={onItemClick}
                         />
                     ))}
-                    {loading && <TableRowBusy colSpan={isDesktop ? 5 : 4} />}
+                    {loading && <TableRowBusy colSpan={colSpan} />}
                 </TableBody>
             </table>
         </div>

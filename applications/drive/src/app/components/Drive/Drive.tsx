@@ -11,7 +11,6 @@ import { isPreviewAvailable } from '../FilePreview/FilePreview';
 import { useDriveContent } from './DriveContentProvider';
 import EmptyFolder from '../FileBrowser/EmptyFolder';
 import { LinkMeta } from '../../interfaces/link';
-import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 
 export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
     return {
@@ -29,8 +28,7 @@ interface Props {
 function Drive({ resource, openResource }: Props) {
     const mainAreaRef = useMainArea();
     const { startFileTransfer } = useFiles();
-    const cache = useDriveCache();
-    const { loadNextPage, fileBrowserControls, loading, contents, complete } = useDriveContent();
+    const { loadNextPage, fileBrowserControls, loading, contents, complete, initialized } = useDriveContent();
 
     const {
         clearSelections,
@@ -42,13 +40,11 @@ function Drive({ resource, openResource }: Props) {
     } = fileBrowserControls;
 
     const handleScrollEnd = useCallback(() => {
-        const listed = cache.get.listedChildLinks(resource.shareId, resource.linkId);
-
-        // Only load on scroll if there are already items loaded from backend
-        if (listed?.length && !complete) {
+        // Only load on scroll after initial load from backend
+        if (initialized && !complete) {
             loadNextPage();
         }
-    }, [contents]);
+    }, [initialized, complete]);
 
     useOnScrollEnd(handleScrollEnd, mainAreaRef, 0.9);
 

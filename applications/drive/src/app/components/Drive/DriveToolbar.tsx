@@ -1,18 +1,22 @@
 import React, { useEffect } from 'react';
-import { ToolbarSeparator, Toolbar, ToolbarButton, useModals, useNotifications } from 'react-components';
 import { c, msgid } from 'ttag';
-import { DriveResource } from './DriveResourceProvider';
-import { ResourceType } from '../../interfaces/link';
-import useFiles from '../../hooks/useFiles';
-import FileSaver from '../../utils/FileSaver/FileSaver';
+
+import { ToolbarSeparator, Toolbar, ToolbarButton, useModals, useNotifications } from 'react-components';
+
 import { getMetaForTransfer } from './Drive';
+import { DriveResource } from './DriveResourceProvider';
 import { useDriveContent } from './DriveContentProvider';
-import CreateFolderModal from '../CreateFolderModal';
-import RenameModal from '../RenameModal';
-import DetailsModal from '../DetailsModal';
+import useFiles from '../../hooks/useFiles';
 import useTrash from '../../hooks/useTrash';
 import useDrive from '../../hooks/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
+import { FileBrowserItem } from '../FileBrowser/FileBrowser';
+import CreateFolderModal from '../CreateFolderModal';
+import RenameModal from '../RenameModal';
+import DetailsModal from '../DetailsModal';
+import { ResourceType } from '../../interfaces/link';
+import FileSaver from '../../utils/FileSaver/FileSaver';
+import { getNotificationTextForItemList, takeActionForAllItems } from './helpers';
 
 interface Props {
     resource: DriveResource;
@@ -25,7 +29,7 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
     const { fileBrowserControls } = useDriveContent();
     const { getLinkMeta, createNewFolder, renameLink, events } = useDrive();
     const { startFileTransfer } = useFiles();
-    const { trashLink } = useTrash();
+    const { trashLink, restoreLink } = useTrash();
     const cache = useDriveCache();
 
     const ParentLinkID = cache.get.linkMeta(resource.shareId, resource.linkId)?.ParentLinkID;
@@ -83,35 +87,73 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
 
     const handleDeleteClick = async () => {
         const toTrash = selectedItems;
-        await Promise.all(toTrash.map((item) => trashLink(resource.shareId, item.LinkID)));
+        const trashedLinks = await takeActionForAllItems(toTrash, (item: FileBrowserItem) =>
+            trashLink(resource.shareId, item.LinkID)
+        );
 
-        const allFiles = toTrash.every(({ Type }) => Type === ResourceType.FILE);
-        const allFolders = toTrash.every(({ Type }) => Type === ResourceType.FOLDER);
+        const trashedLinksCount = trashedLinks.length;
+        if (!trashedLinksCount) {
+            return;
+        }
 
-        const notificationTexts = {
+        const undoAction = async () => {
+            const restoredLinks = await takeActionForAllItems(toTrash, (item: FileBrowserItem) =>
+                restoreLink(resource.shareId, item.LinkID)
+            );
+
+            const restoredItemsCount = restoredLinks.length;
+            if (!restoredItemsCount) {
+                return;
+            }
+
+            const [{ Name: firstItemName }] = restoredLinks;
+            const notificationMessages = {
+                allFiles: c('Notification').ngettext(
+                    msgid`"${firstItemName}" restored from Trash.`,
+                    `${restoredItemsCount} files restored from Trash.`,
+                    restoredItemsCount
+                ),
+                allFolders: c('Notification').ngettext(
+                    msgid`"${firstItemName}" restored from Trash.`,
+                    `${restoredItemsCount} folders restored from Trash.`,
+                    restoredItemsCount
+                ),
+                mixed: c('Notification').ngettext(
+                    msgid`"${firstItemName}" restored from Trash.`,
+                    `${restoredItemsCount} items restored from Trash.`,
+                    restoredItemsCount
+                )
+            };
+
+            const notificationText = getNotificationTextForItemList(restoredLinks, notificationMessages);
+            createNotification({ text: notificationText });
+            await events.call(resource.shareId);
+        };
+
+        const [{ Name: firstItemName }] = trashedLinks;
+        const notificationMessages = {
             allFiles: c('Notification').ngettext(
-                msgid`"${toTrash[0].Name}" moved to Trash`,
-                `${toTrash.length} files moved to Trash`,
-                toTrash.length
+                msgid`"${firstItemName}" moved to Trash.`,
+                `${trashedLinksCount} files moved to Trash.`,
+                trashedLinksCount
             ),
             allFolders: c('Notification').ngettext(
-                msgid`"${toTrash[0].Name}" moved to Trash`,
-                `${toTrash.length} folders moved to Trash`,
-                toTrash.length
+                msgid`"${firstItemName}" moved to Trash.`,
+                `${trashedLinksCount} folders moved to Trash.`,
+                trashedLinksCount
             ),
             mixed: c('Notification').ngettext(
-                msgid`"${toTrash[0].Name}" moved to Trash`,
-                `${toTrash.length} items moved to Trash`,
-                toTrash.length
+                msgid`"${firstItemName}" moved to Trash.`,
+                `${trashedLinksCount} items moved to Trash.`,
+                trashedLinksCount
             )
         };
 
-        const notificationText =
-            (allFiles && notificationTexts.allFiles) ||
-            (allFolders && notificationTexts.allFolders) ||
-            notificationTexts.mixed;
-
-        createNotification({ text: notificationText });
+        const movedToTrashText = getNotificationTextForItemList(trashedLinks, notificationMessages, undoAction);
+        createNotification({
+            type: 'success',
+            text: movedToTrashText
+        });
         await events.call(resource.shareId);
     };
 
