@@ -6,9 +6,10 @@ import { Toolbar, ToolbarButton, useNotifications, useModals, Alert } from 'reac
 import useDrive from '../../../hooks/useDrive';
 import useFileBrowser from '../../FileBrowser/useFileBrowser';
 import useTrash from '../../../hooks/useTrash';
-import { ResourceType } from '../../../interfaces/link';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import ConfirmDeleteModal from '../../ConfirmDeleteModal';
+import { FileBrowserItem } from '../../FileBrowser/FileBrowser';
+import { getNotificationTextForItemList, takeActionForAllItems } from '../helpers';
 
 interface Props {
     shareId?: string;
@@ -24,65 +25,6 @@ const TrashToolbar = ({ shareId, fileBrowserControls }: Props) => {
     const trashItems = shareId ? cache.get.shareTrashMetas(shareId) : [];
     const { selectedItems } = fileBrowserControls;
 
-    const handleActionForSelectedItems = async (
-        message: string,
-        action: (shareId: string, linkId: string) => Promise<unknown>
-    ) => {
-        const toTakeAction = selectedItems;
-        const [{ Name: firstItemName }] = toTakeAction;
-
-        if (shareId) {
-            const results = await Promise.all(
-                toTakeAction.map((item) =>
-                    action(shareId, item.LinkID).then(
-                        () => ({ state: 'resolved' }),
-                        () => ({ state: 'rejected' })
-                    )
-                )
-            );
-
-            const resolvedCount = results.filter((p) => p.state === 'resolved').length;
-
-            if (resolvedCount > 0) {
-                const allFiles = toTakeAction.every(({ Type }) => Type === ResourceType.FILE);
-                const allFolders = toTakeAction.every(({ Type }) => Type === ResourceType.FOLDER);
-                const notificationTexts = {
-                    allFiles: c('Notification').ngettext(
-                        msgid`"${firstItemName}" ${message}`,
-                        `${resolvedCount} files ${message}`,
-                        resolvedCount
-                    ),
-                    allFolders: c('Notification').ngettext(
-                        msgid`"${firstItemName}" ${message}`,
-                        `${resolvedCount} folders ${message}`,
-                        resolvedCount
-                    ),
-                    mixed: c('Notification').ngettext(
-                        msgid`"${firstItemName}" ${message}`,
-                        `${resolvedCount} items ${message}`,
-                        resolvedCount
-                    )
-                };
-
-                const notificationText =
-                    (allFiles && notificationTexts.allFiles) ||
-                    (allFolders && notificationTexts.allFolders) ||
-                    notificationTexts.mixed;
-
-                createNotification({ text: notificationText });
-                await events.call(shareId);
-            }
-        }
-    };
-
-    const handleEmptyTrash = async (shareId: string) => {
-        await emptyTrash(shareId);
-
-        const notificationText = c('Notification').t`All the items are permanently deleted from Trash.`;
-        createNotification({ text: notificationText });
-        events.call(shareId);
-    };
-
     const openConfirmModal = (title: string, confirm: string, message: string, onConfirm: () => void) => {
         const content = (
             <>
@@ -91,35 +33,115 @@ const TrashToolbar = ({ shareId, fileBrowserControls }: Props) => {
                 {c('Info').t`You cannot undo this action.`}
             </>
         );
+
         createModal(
-            <ConfirmDeleteModal
-                title={c('Title').t`${title}`}
-                confirm={c('Action').t`${confirm}`}
-                onConfirm={onConfirm}
-            >
+            <ConfirmDeleteModal title={title} confirm={confirm} onConfirm={onConfirm}>
                 <Alert type="error">{content}</Alert>
             </ConfirmDeleteModal>
         );
     };
 
     const handleRestoreClick = async () => {
-        handleActionForSelectedItems('restored from Trash', restoreLink);
+        if (!shareId) {
+            return;
+        }
+
+        const toRestore = selectedItems;
+        const restoredItems = await takeActionForAllItems(toRestore, (item: FileBrowserItem) =>
+            restoreLink(shareId, item.LinkID)
+        );
+
+        const restoredItemsCount = restoredItems.length;
+        if (!restoredItemsCount) {
+            return;
+        }
+
+        const [{ Name: firstItemName }] = restoredItems;
+        const notificationMessages = {
+            allFiles: c('Notification').ngettext(
+                msgid`"${firstItemName}" restored from Trash.`,
+                `${restoredItemsCount} files restored from Trash.`,
+                restoredItemsCount
+            ),
+            allFolders: c('Notification').ngettext(
+                msgid`"${firstItemName}" restored from Trash.`,
+                `${restoredItemsCount} folders restored from Trash.`,
+                restoredItemsCount
+            ),
+            mixed: c('Notification').ngettext(
+                msgid`"${firstItemName}" restored from Trash.`,
+                `${restoredItemsCount} items restored from Trash.`,
+                restoredItemsCount
+            )
+        };
+
+        const notificationText = getNotificationTextForItemList(restoredItems, notificationMessages);
+        createNotification({ text: notificationText });
+        await events.call(shareId);
     };
 
-    const handleDeleteClick = async () => {
-        if (shareId) {
-            const message = 'permanently delete selected item(s) from Trash';
-            openConfirmModal('Delete Permanently', 'Delete Permanently', message, () =>
-                handleActionForSelectedItems('deleted from Trash', deleteLink)
+    const handleDeleteClick = () => {
+        if (!shareId) {
+            return;
+        }
+
+        const toDelete = selectedItems;
+
+        const title = c('Title').t`Delete Permanently`;
+        const confirm = c('Action').t`Delete Permanently`;
+        const message = c('Info').t`permanently delete selected item(s) from Trash`;
+
+        openConfirmModal(title, confirm, message, async () => {
+            const deletedItems = await takeActionForAllItems(toDelete, (item: FileBrowserItem) =>
+                deleteLink(shareId, item.LinkID)
             );
-        }
+
+            const deletedItemsCount = deletedItems.length;
+            if (!deletedItemsCount) {
+                return;
+            }
+
+            const [{ Name: firstItemName }] = deletedItems;
+            const notificationMessages = {
+                allFiles: c('Notification').ngettext(
+                    msgid`"${firstItemName}" deleted permanently from Trash.`,
+                    `${deletedItemsCount} files deleted permanently from Trash.`,
+                    deletedItemsCount
+                ),
+                allFolders: c('Notification').ngettext(
+                    msgid`"${firstItemName}" deleted permanently from Trash.`,
+                    `${deletedItemsCount} folders deleted permanently from Trash.`,
+                    deletedItemsCount
+                ),
+                mixed: c('Notification').ngettext(
+                    msgid`"${firstItemName}" deleted permanently from Trash.`,
+                    `${deletedItemsCount} items deleted permanently from Trash.`,
+                    deletedItemsCount
+                )
+            };
+
+            const notificationText = getNotificationTextForItemList(deletedItems, notificationMessages);
+            createNotification({ text: notificationText });
+            await events.call(shareId);
+        });
     };
 
-    const handleEmptyTrashClick = async () => {
-        if (shareId) {
-            const message = 'empty Trash and permanently delete all the items';
-            openConfirmModal('Empty Trash', 'Empty Trash', message, () => handleEmptyTrash(shareId));
+    const handleEmptyTrashClick = () => {
+        if (!shareId) {
+            return;
         }
+
+        const title = c('Title').t`Empty Trash`;
+        const confirm = c('Action').t`Empty Trash`;
+        const message = c('Info').t`empty Trash and permanently delete all the items`;
+
+        openConfirmModal(title, confirm, message, async () => {
+            await emptyTrash(shareId);
+
+            const notificationText = c('Notification').t`All the items are permanently deleted from Trash.`;
+            createNotification({ text: notificationText });
+            events.call(shareId);
+        });
     };
 
     return (

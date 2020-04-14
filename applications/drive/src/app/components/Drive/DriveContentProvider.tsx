@@ -22,6 +22,7 @@ interface DriveContentProviderState {
     loadNextPage: () => void;
     fileBrowserControls: ReturnType<typeof useFileBrowser>;
     loading: boolean;
+    initialized: boolean;
     complete?: boolean;
 }
 
@@ -30,6 +31,7 @@ const DriveContentContext = createContext<DriveContentProviderState | null>(null
 const DriveContentProviderInner = ({ children, resource }: { children: React.ReactNode; resource: DriveResource }) => {
     const cache = useDriveCache();
     const { fetchNextFolderContents } = useDrive();
+    const [initialized, setInitialized] = useState(false);
     const [loading, setLoading] = useState(false);
     const [, setError] = useState();
 
@@ -53,6 +55,7 @@ const DriveContentProviderInner = ({ children, resource }: { children: React.Rea
             await fetchNextFolderContents(resource.shareId, resource.linkId);
             if (!signal?.aborted) {
                 setLoading(false);
+                setInitialized(true);
             }
         } catch (e) {
             const children = cache.get.childLinks(resource.shareId, resource.linkId);
@@ -97,7 +100,8 @@ const DriveContentProviderInner = ({ children, resource }: { children: React.Rea
                 fileBrowserControls,
                 loadNextPage,
                 contents,
-                complete
+                complete,
+                initialized
             }}
         >
             {children}
