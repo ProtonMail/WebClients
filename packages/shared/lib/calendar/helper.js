@@ -1,11 +1,16 @@
-import { randomHexString4 as s4 } from '../helpers/uid';
+import getRandomValues from 'get-random-values';
+import { encodeBase64, arrayToBinaryString } from 'pmcrypto';
 
 /**
  * Generates a calendar UID of the form 'proton-calendar-uuid'
  * @return {String}
  */
 export const generateUID = () => {
-    return `proton-calendar-${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
+    // by convention we generate 21 bytes of random data
+    const randomBytes = getRandomValues(new Uint8Array(21));
+    const base64String = encodeBase64(arrayToBinaryString(randomBytes));
+    // and we encode them in base 64
+    return `${base64String}@proton.me`;
 };
 
 /**
