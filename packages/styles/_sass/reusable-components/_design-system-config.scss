@@ -387,7 +387,7 @@ $conversations-column-width: 35% !default;  // used also to align search bar on 
   }
 
   @else if $query-type == "min" {
-     @media (min-width: em($breakpoint, $root-default-font-size)) {
+     @media (min-width: em($breakpoint + 1, $root-default-font-size)) {
       @content;
     }
   }

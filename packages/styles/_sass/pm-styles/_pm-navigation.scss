@@ -96,11 +96,13 @@ $padding-left-link: 2rem !default;
 
 
 /* Sub folders */
-[data-level="1"] {
-  padding-left: 1em;
-}
-[data-level="2"] {
-  padding-left: 2em;
+.navigation__item {
+  [data-level="1"] {
+    padding-left: 1em;
+  }
+  [data-level="2"] {
+    padding-left: 2em;
+  }
 }
 
 

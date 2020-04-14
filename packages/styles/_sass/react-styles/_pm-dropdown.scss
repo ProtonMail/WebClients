@@ -1,186 +1,354 @@
-$dropDown-width: 230px !default;
-$dropDown-wide-width: 450px !default;
-$dropDown-narrow-width: 9em !default;
-
 .dropDown {
-  position: fixed;
-  z-index: 666;
-  display: block;
-  opacity: 1;
-  transition: visibility 0s ease, transform 0.15s ease, opacity 0.15s ease;
-  transform: scale(1, 1);
-  visibility: visible;
-  transition-delay: 0s;
-  width: $dropDown-width;
-  background: var(--bgcolor-main-area, $white);
-  border-radius: $global-border-radius;
-  box-shadow: 0 0 16px 3px $input-shadow-color;
-  color: var(--color-main-area, $pm-global-grey);
+	position: fixed;
+	z-index: 666;
+	color: var(--color-main-area, $pm-global-grey);
+	animation: .15s ease-out both;
+
+	@include respond-to($breakpoint-small, 'max') {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		padding: 15% 25%;
+		overflow: hidden;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba(black, .4);
+		animation-name: dropdownInSmall;
+
+		@keyframes dropdownInSmall {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
+		// Out animation
+		&.is-dropdownOut {
+			animation-name: dropdownOutSmall;
+
+			@keyframes dropdownOutSmall {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	@include respond-to($breakpoint-tiny, 'max') {
+		padding: 15%;
+	}
+
+	@include respond-to($breakpoint-small, 'min') {
+		top: calc(var(--top) * 1px);
+		left: calc(var(--left) * 1px);
+		transform: scale(1);
+		border-radius: $global-border-radius;
+		box-shadow: 0 0 1.5rem .3rem $input-shadow-color;
+		background: var(--bgcolor-main-area, $white);
+		animation-name: dropdownInLarge;
+
+		@keyframes dropdownInLarge {
+			from {
+				transform: scale(.75);
+				opacity: 0;
+			}
+			to {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+
+		// Out animation
+		&.is-dropdownOut {
+			animation-name: dropdownOutLarge;
+
+			@keyframes dropdownOutLarge {
+				from {
+					transform: scale(1);
+					opacity: 1;
+				}
+				to {
+					transform: scale(.75);
+					opacity: 0;
+				}
+			}
+		}
+
+		// Transform origins regarding dropDown position
+		@each $position, $origin in (
+			(top         , bottom center),
+			(top-left    , bottom left),
+			(top-right   , bottom right),
+			(bottom      , top center),
+			(bottom-left , top left),
+			(bottom-right, top right),
+			(left        , right center),
+			(left-bottom , right bottom),
+			(left-top    , right top),
+			(right       , left center),
+			(right-bottom, left bottom),
+			(right-top   , left top)
+		) {
+			&--#{$position} {
+				transform-origin: $origin;
+			}
+		}
+	}
+
+	/* Backdrop button, meant to override 'autoClose' option on mobile */
+	&-backdrop {
+		@include respond-to($breakpoint-small, 'max') {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			border: none;
+			outline: none;
+			background: none;
+		}
+
+		@include respond-to($breakpoint-small, 'min') {
+			display: none;
+		}
+	}
+
+	/* Scrollable insides of the dropdown */
+	&-content {
+		min-height: 1em; overflow: auto;
+		border-radius: $global-border-radius;
+		background: var(--bgcolor-main-area, $white) no-repeat;
+		background-image:
+			radial-gradient(
+				farthest-side at 50% 0,
+				rgba(black, .25),
+				transparent
+			),
+			radial-gradient(
+				farthest-side at 50% 100%,
+				rgba(black, .25),
+				transparent
+			);
+		background-position: 50% 0, 0 100%;
+		background-size: calc(100% - 2rem) .3rem;
+
+		@include respond-to($breakpoint-small, 'max') {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			box-shadow: 0 0 5rem 0 rgba(black, .3);
+			transition: transform .1s ease-out;
+		}
+
+		@include respond-to($breakpoint-small, 'min') {
+			&#{&}--noMaxSize {
+				min-width: 1.5em;
+			}
+
+			&:not(#{&}--noMaxSize) {
+				min-width: 10em;
+				max-width: 20em;
+				max-height: 20em;
+			}
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			position: relative;
+			z-index: 1;
+			display: block;
+			height: .3rem;
+			background: var(--bgcolor-main-area, $white);
+		}
+
+		button {
+			color: currentColor;
+		}
+	}
+
+	@include respond-to($breakpoint-small, 'max') {
+		&-content {
+			animation: dropdownContentScaleIn .15s ease-out both;
+
+			@keyframes dropdownContentScaleIn {
+				from {
+					transform: scale(.8);
+				}
+				to {
+					transform: scale(1);
+				}
+			}
+		}
+
+		&.is-dropdownOut &-content {
+			animation-name: dropdownContentScaleOut;
+
+			@keyframes dropdownContentScaleOut {
+				from {
+					transform: scale(1);
+				}
+				to {
+					transform: scale(.8);
+				}
+			}
+		}
+	}
+
+	&-item {
+		&-link {
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				color: currentColor;
+				text-decoration: none;
+			}
+		}
+
+		&-button,
+		&-link {
+			&:hover,
+			&:focus {
+				background-color: var(--bgcolor-input, $pm-global-light);
+				color: $pm-primary;
+			}
+
+			&[disabled],
+			&.is-disabled {
+				@include button-disabled-state;
+				border: none;
+			}
+		}
+
+		& &--isSelected { // Specificity -_-v
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: $pm-primary;
+				color: $white;
+				pointer-events: none;
+			}
+		}
+	}
+
+	/* Border between items */
+	&-item + &-item {
+		border-top: 1px solid var(--bordercolor-input, $pm-global-border);
+	}
+
+
+	/* Arrow for wide screens */
+	@include respond-to($breakpoint-small, 'min') {
+
+		&::before {
+			--size: 1.5rem;
+			--offset: #{2.12rem - 1.5rem}; // Pythagore powa for middle line alignement!
+
+			content: '';
+			position: absolute;
+			z-index: -1;
+			width: var(--size);
+			height: var(--size);
+			transform: rotate(45deg);
+			background-color: var(--bgcolor-main-area, $white);
+		}
+
+		&--top,
+		&--top-left,
+		&--top-right {
+			&::before {
+				bottom: calc(var(--size) / -2);
+			}
+		}
+		&--bottom,
+		&--bottom-left,
+		&--bottom-right {
+			&::before {
+				top: calc(var(--size) / -2);
+			}
+		}
+		&--left,
+		&--left-top,
+		&--left-bottom {
+			&::before {
+				right: calc(var(--size) / -2);
+			}
+		}
+		&--right,
+		&--right-top,
+		&--right-bottom {
+			&::before {
+				left: calc(var(--size) / -2);
+			}
+		}
+
+		&--top,
+		&--bottom {
+			&::before {
+				left: calc(50% - (var(--size) / 2));
+			}
+		}
+		&--top-left,
+		&--bottom-left {
+			&::before {
+				left: 1rem;
+			}
+		}
+		&--top-right,
+		&--bottom-right {
+			&::before {
+				right: 1rem;
+			}
+		}
+
+		&--left,
+		&--right {
+			&::before {
+				top: calc(50% - (var(--size) / 2));
+			}
+		}
+		&--left-top,
+		&--right-top {
+			&::before {
+				top: var(--offset);
+			}
+		}
+		&--left-bottom,
+		&--right-bottom {
+			&::before {
+				bottom: var(--offset);
+			}
+		}
+	}
 }
 
-.dropDown--narrow {
-  width: $dropDown-narrow-width;
-}
-.dropDown--wide {
-  width: $dropDown-wide-width;
-}
 
-.dropDown--auto {
-  width: auto;
-}
-
-.dropDown--top {
-  transform-origin: bottom center;
-}
-.dropDown--top-left {
-  transform-origin: bottom left;
-}
-.dropDown--top-right {
-  transform-origin: bottom right;
-}
-.dropDown--bottom {
-  transform-origin: top center;
-}
-.dropDown--bottom-left {
-  transform-origin: top left;
-}
-.dropDown--bottom-right {
-  transform-origin: top right;
-}
-.dropDown--left {
-  transform-origin: right center;
-}
-.dropDown--left-bottom {
-  transform-origin: right bottom;
-}
-.dropDown--left-top {
-  transform-origin: right top;
-}
-.dropDown--right {
-  transform-origin: left center;
-}
-.dropDown--right-bottom {
-  transform-origin: left bottom;
-}
-.dropDown--right-top {
-  transform-origin: left top;
-}
-
-/* hidden dropdown state */
-[hidden].dropDown {
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0, 0);
-  transition-delay: 0.15s, 0s, 0s;
-}
-
-/* arrow on top of dropdown */
-.dropDown::before {
-  content: "";
-  position: absolute;
-  width: 1rem;
-  height: 1rem;
-  border: 1rem solid transparent;
-}
-
-.dropDown--top::before,
-.dropDown--top-left::before,
-.dropDown--top-right::before {
-  top: 100%;
-  border-top: 1rem solid var(--bgcolor-main-area, $white);
-}
-.dropDown--bottom::before,
-.dropDown--bottom-left::before,
-.dropDown--bottom-right::before {
-  top: -2rem;
-  border-bottom: 1rem solid var(--bgcolor-main-area, $white);
-}
-.dropDown--left::before,
-.dropDown--left-top::before,
-.dropDown--left-bottom::before {
-  left: 100%;
-  border-left: 1rem solid var(--bgcolor-main-area, $white);
-}
-.dropDown--right::before,
-.dropDown--right-top::before,
-.dropDown--right-bottom::before {
-  left: -2rem;
-  border-right: 1rem solid var(--bgcolor-main-area, $white);
-}
-
-.dropDown--top::before,
-.dropDown--bottom::before {
-  left: calc(50% - 1rem);
-}
-.dropDown--top-left::before,
-.dropDown--bottom-left::before {
-  left: 1rem;
-}
-.dropDown--top-right::before,
-.dropDown--bottom-right::before {
-  left: auto;
-  right: 1rem;
-}
-
-.dropDown--left::before,
-.dropDown--right::before {
-  top: calc(50% - 1rem);
-}
-.dropDown--left-top::before,
-.dropDown--right-top::before {
-  top: 1rem;
-}
-.dropDown--left-bottom::before,
-.dropDown--right-bottom::before {
-  top: auto;
-  bottom: 1rem;
-}
-
-/* scrollable insides of the dropdown */
-.dropDown-content {
-  overflow: auto;
-  max-height: 30vh;
-  border-radius: $global-border-radius;
-  background: var(--bgcolor-main-area, $white) no-repeat;
-  background-image: radial-gradient(
-      farthest-side at 50% 0,
-      #acb0bf,
-      transparent
-    ),
-    radial-gradient(farthest-side at 50% 100%, #acb0bf, transparent);
-  background-position: 50% 0, 0 100%;
-  background-size: calc(100% - 20px) 3px;
-}
-.dropDown-content {
-  &::before,
-  &::after {
-    content: "";
-    position: relative;
-    display: block;
-    z-index: 1;
-    background: var(--bgcolor-main-area, $white);
-    height: 10px;
-  }
-
-  button {
-    color: currentColor;
-  }
-}
-
-.dropDown-link,
-.dropDown-link:focus,
-.dropDown-link:hover,
-.dropDown-link:active {
-  color: currentColor;
-  text-decoration: none;
-}
-.dropDown-item:focus-within,
-.dropDown-item:hover {
-  background-color: var(--bgcolor-input, $pm-global-light);
-}
-
-/* border on items */
-.dropDown-item + .dropDown-item {
-  border-top: 1px solid var(--bordercolor-input, $pm-global-border);
+/* TODO: REMOVE THIS!! */
+/* TODO: REMOVE THIS!! */
+/* TODO: REMOVE THIS!! */
+.isDarkMode .dropDown-item {
+	&-button,
+	&-link {
+		&[disabled],
+		&.is-disabled {
+			@include button-disabled-state-dm;
+			border: none;
+		}
+	}
 }
