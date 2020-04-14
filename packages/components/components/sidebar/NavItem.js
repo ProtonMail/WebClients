@@ -14,6 +14,7 @@ const NavItem = ({
     isActive,
     text,
     aside,
+    disabled,
     onClick,
     icon,
     list = [],
@@ -71,7 +72,12 @@ const NavItem = ({
     if (type === 'button') {
         return (
             <li className={itemClassName}>
-                <button type="button" className={classnames(['w100', linkClassName, className])} onClick={onClick}>
+                <button
+                    type="button"
+                    className={classnames(['w100', linkClassName, className])}
+                    disabled={disabled}
+                    onClick={onClick}
+                >
                     {content}
                 </button>
                 {list.length ? (
@@ -92,6 +98,7 @@ NavItem.propTypes = {
     isActive: PropTypes.func,
     icon: PropTypes.string,
     color: PropTypes.string,
+    disabled: PropTypes.bool,
     onClick: PropTypes.func,
     type: PropTypes.oneOf(['link', 'button', 'text']),
     link: PropTypes.string,
