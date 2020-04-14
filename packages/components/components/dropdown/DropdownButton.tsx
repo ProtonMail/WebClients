@@ -1,19 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { classnames } from '../../index';
 import DropdownCaret from './DropdownCaret';
-import { classnames } from 'react-components';
+
+export interface Props
+    extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+    loading?: boolean;
+    buttonRef?: React.Ref<HTMLButtonElement>;
+    icon?: React.ReactNode;
+    caretClassName?: string;
+    hasCaret?: boolean;
+    isOpen?: boolean;
+    children?: React.ReactNode;
+    className?: string;
+    disabled?: boolean;
+}
 
 const DropdownButton = ({
+    children,
     buttonRef,
     className = 'pm-button',
     hasCaret = false,
-    isOpen,
-    children,
+    isOpen = false,
     caretClassName = '',
     disabled = false,
     loading = false,
     ...rest
-}) => {
+}: Props) => {
     return (
         <button
             ref={buttonRef}
@@ -25,22 +37,11 @@ const DropdownButton = ({
             {...rest}
         >
             <span className="mauto">
-                <span className={classnames([hasCaret && children && 'mr0-5'])}>{children}</span>
+                <span className={classnames([hasCaret && children ? 'mr0-5' : undefined])}>{children}</span>
                 {hasCaret && <DropdownCaret className={caretClassName} isOpen={isOpen} />}
             </span>
         </button>
     );
-};
-
-DropdownButton.propTypes = {
-    buttonRef: PropTypes.object,
-    caretClassName: PropTypes.string,
-    hasCaret: PropTypes.bool,
-    isOpen: PropTypes.bool,
-    children: PropTypes.node,
-    className: PropTypes.string,
-    disabled: PropTypes.bool,
-    loading: PropTypes.bool
 };
 
 export default DropdownButton;

@@ -8,7 +8,9 @@ import { withDecimalPrecision } from 'proton-shared/lib/helpers/math';
 import Input from './Input';
 import Dropdown from '../dropdown/Dropdown';
 import { usePopperAnchor } from '../popper';
-import { classnames, generateUID } from '../../helpers/component';
+import { generateUID } from '../../helpers/component';
+import DropdownMenu from '../dropdown/DropdownMenu';
+import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 
 const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'p', { locale });
@@ -42,7 +44,7 @@ interface Props {
 
 const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = false, max, ...rest }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
-    const { anchorRef, isOpen, open, close } = usePopperAnchor();
+    const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLInputElement>();
     const [temporaryInput, setTemporaryInput] = useState(() => toFormatted(value, dateLocale));
 
     useEffect(() => {
@@ -144,7 +146,7 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
         return idx === -1 ? undefined : idx;
     }, [filteredOptions, temporaryInput]);
 
-    useEffect(() => {
+    const scrollToSelection = () => {
         if (!isOpen) {
             return;
         }
@@ -156,7 +158,16 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
             scrollRef.current.scrollTop =
                 matchingEl.offsetTop - (scrollRef.current.clientHeight - matchingEl.clientHeight) / 2;
         }
-    }, [matchingIndex, isOpen]);
+    };
+
+    useEffect(() => {
+        // RAF needed due to our portal behavior in dropdown
+        requestAnimationFrame(scrollToSelection);
+    }, [isOpen]);
+
+    useEffect(() => {
+        scrollToSelection();
+    }, [matchingIndex]);
 
     return (
         <>
@@ -172,34 +183,38 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
                 {...rest}
             />
             <Dropdown
-                size={displayDuration ? 'normal' : 'narrow'}
                 id={uid}
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={close}
                 autoClose={false}
+                autoCloseOutside={false}
+                contentProps={{
+                    onMouseDown: (event: React.MouseEvent<HTMLDivElement>) => {
+                        // Prevent default to stop the input getting blurred.
+                        event.preventDefault();
+                    },
+                    ref: scrollRef
+                }}
             >
-                <div className="dropDown-content" onMouseDown={(e) => e.preventDefault()} ref={scrollRef}>
-                    <ul className="unstyled mt0 mb0" ref={listRef}>
-                        {filteredOptions.map(({ label, value: otherValue }, i) => {
-                            // Only highlight if the text includes the input (where 13:05 is centered but not highlighted)
-                            const isSelected = i === matchingIndex && label.includes(temporaryInput);
-                            return (
-                                <li key={i}>
-                                    <button
-                                        className={classnames(['w100 pt0-5 pb0-5 p1', isSelected && 'bold'])}
-                                        onClick={() => {
-                                            handleSelectDate(otherValue);
-                                            close();
-                                        }}
-                                    >
-                                        {label}
-                                    </button>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
+                <DropdownMenu listRef={listRef}>
+                    {filteredOptions.map(({ label, value: otherValue }, i) => {
+                        // Only highlight if the text includes the input (where 13:05 is centered but not highlighted)
+                        const isSelected = i === matchingIndex && label.includes(temporaryInput);
+                        return (
+                            <DropdownMenuButton
+                                key={i}
+                                isSelected={isSelected}
+                                onClick={() => {
+                                    handleSelectDate(otherValue);
+                                    close();
+                                }}
+                            >
+                                {label}
+                            </DropdownMenuButton>
+                        );
+                    })}
+                </DropdownMenu>
             </Dropdown>
         </>
     );

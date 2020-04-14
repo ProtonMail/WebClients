@@ -1,12 +1,17 @@
-import React, { useRef, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
 import { generateUID, classnames } from '../../helpers/component';
 import Icon from '../icon/Icon';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 
-/** @type any **/
+interface Props {
+    originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
+    url?: string;
+    title?: string;
+    buttonClass?: string;
+    scrollContainerClass?: string;
+}
 const Info = ({
     url,
     title = undefined,
@@ -14,7 +19,7 @@ const Info = ({
     scrollContainerClass = 'main',
     buttonClass = 'inline-flex color-currentColor',
     ...rest
-}) => {
+}: Props) => {
     const [uid] = useState(generateUID('tooltip'));
 
     const { isRTL } = useRightToLeft();
@@ -22,14 +27,17 @@ const Info = ({
         ? originalPlacement.replace('right', 'left')
         : originalPlacement.replace('left', 'right');
 
-    const popperRef = useRef();
-    const { anchorRef, open, close, isOpen } = usePopperAnchor();
-    const { position, placement } = usePopper(popperRef, anchorRef, isOpen, {
+    const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
+    const { anchorRef, open, close, isOpen } = usePopperAnchor<HTMLButtonElement>();
+    const { position, placement } = usePopper({
+        popperEl,
+        anchorEl: anchorRef?.current,
+        isOpen,
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
         scrollContainerClass
     });
 
-    const handleClick = (event) => {
+    const handleClick = (event: React.MouseEvent) => {
         event.preventDefault();
         url && window.open(url);
     };
@@ -37,7 +45,7 @@ const Info = ({
     return (
         <>
             <button
-                tabIndex="-1"
+                tabIndex={-1}
                 className={buttonClass}
                 onClick={handleClick}
                 ref={anchorRef}
@@ -50,12 +58,12 @@ const Info = ({
             >
                 <Icon className="icon-16p color-primary" name="info" {...rest} />
             </button>
-            {title ? (
+            {title && isOpen ? (
                 <Popper
-                    ref={popperRef}
+                    divRef={setPopperEl}
                     id={uid}
                     isOpen={isOpen}
-                    position={position}
+                    style={position}
                     className={classnames(['tooltip', `tooltip--${placement}`])}
                 >
                     {title}
@@ -63,14 +71,6 @@ const Info = ({
             ) : null}
         </>
     );
-};
-
-Info.propTypes = {
-    originalPlacement: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-    url: PropTypes.string,
-    title: PropTypes.node,
-    scrollContainerClass: PropTypes.string,
-    buttonClass: PropTypes.string
 };
 
 export default Info;

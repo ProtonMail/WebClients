@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { format, parse, addDays } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
 
@@ -55,8 +55,7 @@ const DateInput = ({
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
-    const anchorRef = useRef<HTMLInputElement>();
-    const { isOpen, open, close } = usePopperAnchor();
+    const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLInputElement>();
 
     const [temporaryInput, setTemporaryInput] = useState<string>('');
     const [showTemporary, setShowTemporary] = useState<boolean>(false);

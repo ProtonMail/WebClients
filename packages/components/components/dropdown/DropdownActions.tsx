@@ -1,14 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Info, Button, Group, ButtonGroup } from 'react-components';
 import { c } from 'ttag';
+import { Info, Button, Group, ButtonGroup } from '../../index';
 
 import DropdownMenu from './DropdownMenu';
 import DropdownMenuButton from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
 import { classnames } from '../../helpers/component';
 
-const wrapTooltip = (text, tooltip) => {
+const wrapTooltip = (text: string, tooltip?: string) => {
     if (!tooltip) {
         return text;
     }
@@ -20,7 +19,21 @@ const wrapTooltip = (text, tooltip) => {
     );
 };
 
-const DropdownActions = ({ loading = false, disabled = false, list = [], className = '' }) => {
+interface DropdownActionProps {
+    key?: string;
+    text: string;
+    tooltip?: string;
+    onClick?: () => void;
+}
+
+interface Props {
+    loading?: boolean;
+    disabled?: boolean;
+    list?: DropdownActionProps[];
+    className?: string;
+}
+
+const DropdownActions = ({ loading = false, disabled = false, list = [], className = '' }: Props) => {
     if (!list.length) {
         return null;
     }
@@ -61,18 +74,6 @@ const DropdownActions = ({ loading = false, disabled = false, list = [], classNa
             </SimpleDropdown>
         </Group>
     );
-};
-
-const DropdownActionPropTypes = {
-    text: PropTypes.string,
-    onClick: PropTypes.func
-};
-
-DropdownActions.propTypes = {
-    list: PropTypes.arrayOf(PropTypes.shape(DropdownActionPropTypes)).isRequired,
-    disabled: PropTypes.bool,
-    loading: PropTypes.bool,
-    className: PropTypes.string
 };
 
 export default DropdownActions;

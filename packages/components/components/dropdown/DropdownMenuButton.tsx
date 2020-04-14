@@ -3,14 +3,19 @@ import { classnames } from '../../helpers/component';
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     loading?: boolean;
+    isSelected?: boolean;
 }
 
-const DropdownMenuButton = ({ className = '', disabled, loading, children, ...rest }: Props) => {
+const DropdownMenuButton = ({ className = '', isSelected, disabled, loading, children, ...rest }: Props) => {
     return (
         <button
             type="button"
             disabled={disabled || loading}
-            className={classnames(['w100 pt0-5 pb0-5', className])}
+            className={classnames([
+                'dropDown-item-button w100 pr1 pl1 pt0-5 pb0-5',
+                isSelected && 'dropDown-item--isSelected',
+                className
+            ])}
             {...rest}
         >
             {children}

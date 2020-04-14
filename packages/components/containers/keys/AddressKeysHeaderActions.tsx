@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Block, DropdownActions } from '../../';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 interface Props {
     onAddKey?: () => void;
@@ -18,7 +19,7 @@ const AddressKeysHeaderActions = ({ onAddKey, onImportKey, onExportPublic, onExp
             text: c('Action').t`Import key`,
             onClick: onImportKey
         }
-    ].filter(Boolean);
+    ].filter(isTruthy);
 
     const exportActions = [
         onExportPublic && {
@@ -29,7 +30,7 @@ const AddressKeysHeaderActions = ({ onAddKey, onImportKey, onExportPublic, onExp
             text: c('Address action').t`Export private key`,
             onClick: onExportPrivate
         }
-    ].filter(Boolean);
+    ].filter(isTruthy);
 
     if (!exportActions.length && !createActions.length) {
         return null;

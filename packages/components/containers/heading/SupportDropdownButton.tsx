@@ -1,9 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Icon, DropdownCaret } from 'react-components';
+import React, { Ref } from 'react';
 import { c } from 'ttag';
+import { Icon, DropdownCaret } from '../../';
 
-const SupportDropdownButton = ({ content = c('Header').t`Support`, className, isOpen, buttonRef, ...rest }) => {
+interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+    content?: string;
+    className?: string;
+    isOpen?: boolean;
+    buttonRef?: Ref<HTMLButtonElement>;
+}
+
+const SupportDropdownButton = ({ content = c('Header').t`Support`, className, isOpen, buttonRef, ...rest }: Props) => {
     return (
         <button type="button" className={className} aria-expanded={isOpen} ref={buttonRef} {...rest}>
             <Icon name="support1" className="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert" />
@@ -11,13 +17,6 @@ const SupportDropdownButton = ({ content = c('Header').t`Support`, className, is
             <DropdownCaret isOpen={isOpen} className="expand-caret topnav-icon mtauto mbauto" />
         </button>
     );
-};
-
-SupportDropdownButton.propTypes = {
-    content: PropTypes.string,
-    className: PropTypes.string,
-    isOpen: PropTypes.bool,
-    buttonRef: PropTypes.object
 };
 
 export default SupportDropdownButton;

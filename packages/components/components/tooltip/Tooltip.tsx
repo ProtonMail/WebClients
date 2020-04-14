@@ -1,10 +1,17 @@
-import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { generateUID, classnames } from '../../helpers/component';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 
-const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerClass = 'main', className }) => {
+interface Props {
+    children: React.ReactNode;
+    title?: string;
+    originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
+    scrollContainerClass?: string;
+    className?: string;
+}
+
+const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerClass = 'main', className }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
 
     const { isRTL } = useRightToLeft();
@@ -12,9 +19,12 @@ const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerCl
         ? originalPlacement.replace('right', 'left')
         : originalPlacement.replace('left', 'right');
 
-    const popperRef = useRef();
-    const { anchorRef, open, close, isOpen } = usePopperAnchor();
-    const { position, placement } = usePopper(popperRef, anchorRef, isOpen, {
+    const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
+    const { anchorRef, open, close, isOpen } = usePopperAnchor<HTMLSpanElement>();
+    const { position, placement } = usePopper({
+        popperEl,
+        anchorEl: anchorRef.current,
+        isOpen,
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
         scrollContainerClass
     });
@@ -33,24 +43,16 @@ const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerCl
                 {children}
             </span>
             <Popper
-                ref={popperRef}
+                divRef={setPopperEl}
                 id={uid}
                 isOpen={isOpen}
-                position={position}
+                style={position}
                 className={classnames(['tooltip', `tooltip--${placement}`])}
             >
                 {title}
             </Popper>
         </>
     );
-};
-
-Tooltip.propTypes = {
-    originalPlacement: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-    title: PropTypes.node.isRequired,
-    children: PropTypes.node.isRequired,
-    scrollContainerClass: PropTypes.string,
-    className: PropTypes.string
 };
 
 export default Tooltip;

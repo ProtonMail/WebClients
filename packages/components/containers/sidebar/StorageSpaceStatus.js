@@ -51,39 +51,38 @@ const StorageSpaceStatus = ({ upgradeButton }) => {
             <Dropdown
                 id={uid}
                 isOpen={isOpen}
+                noMaxSize={true}
                 anchorRef={anchorRef}
                 onClose={close}
                 originalPlacement="right-bottom"
                 size="auto"
             >
-                <div className="dropDown-content">
-                    <div className="absolute top-right mt0-5r mr0-5r">
-                        <button type="button" className="flex flex-items-center" title={c('Action').t`Close`}>
-                            <Icon name="close" />
-                            <span className="sr-only">{c('Action').t`Close`}</span>
-                        </button>
+                <div className="absolute top-right mt0-5r mr0-5r">
+                    <button type="button" className="flex flex-items-center" title={c('Action').t`Close`}>
+                        <Icon name="close" />
+                        <span className="sr-only">{c('Action').t`Close`}</span>
+                    </button>
+                </div>
+                <div className="flex p1">
+                    <div className="pr1 flex flex-items-center">
+                        <div className="relative">
+                            <CircularProgress
+                                progress={usedPercent}
+                                size={100}
+                                className={classnames(['circle-chart__background--bigger', color])}
+                            />
+                            <span className="centered-absolute">{usedPercent}%</span>
+                        </div>
                     </div>
-                    <div className="flex p1">
-                        <div className="pr1 flex flex-items-center">
-                            <div className="relative">
-                                <CircularProgress
-                                    progress={usedPercent}
-                                    size={100}
-                                    className={classnames(['circle-chart__background--bigger', color])}
-                                />
-                                <span className="centered-absolute">{usedPercent}%</span>
-                            </div>
+                    <div className="w150p">
+                        <b className="flex">{c('Title').t`Storage`}</b>
+                        <small>{c('Info').jt`${usedSpaceFormatted} of ${maxSpaceFormatted} used`}</small>
+                        <div className="mb1">
+                            <span className="opacity-50 small">
+                                {c('Info').t`Your storage space is shared across all Proton products.`}
+                            </span>
                         </div>
-                        <div className="w150p">
-                            <b className="flex">{c('Title').t`Storage`}</b>
-                            <small>{c('Info').jt`${usedSpaceFormatted} of ${maxSpaceFormatted} used`}</small>
-                            <div className="mb1">
-                                <span className="opacity-50 small">
-                                    {c('Info').t`Your storage space is shared across all Proton products.`}
-                                </span>
-                            </div>
-                            {loadingSubscription ? <Loader /> : canUpgradeStorage ? upgradeButton : null}
-                        </div>
+                        {loadingSubscription ? <Loader /> : canUpgradeStorage ? upgradeButton : null}
                     </div>
                 </div>
             </Dropdown>

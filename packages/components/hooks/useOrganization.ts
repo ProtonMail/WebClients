@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { Organization as tsOrganizationModel } from 'proton-shared/lib/interfaces';
 import { FREE_ORGANIZATION } from 'proton-shared/lib/constants';
 import { OrganizationModel } from 'proton-shared/lib/models/organizationModel';
 import { UserModel } from 'proton-shared/lib/models/userModel';
@@ -7,7 +8,7 @@ import useCachedModelResult from './useCachedModelResult';
 import useApi from '../containers/api/useApi';
 import useCache from '../containers/cache/useCache';
 
-const useOrganization = () => {
+const useOrganization = (): [tsOrganizationModel, boolean, Error] => {
     const cache = useCache();
     const api = useApi();
 
