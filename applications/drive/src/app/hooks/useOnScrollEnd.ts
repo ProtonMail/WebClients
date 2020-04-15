@@ -4,7 +4,12 @@ import { useElementRect } from 'react-components';
 const isScrollEnd = (target: HTMLElement | null, offsetRatio: number) =>
     target && target.scrollHeight - target.scrollTop <= target.clientHeight / offsetRatio;
 
-function useOnScrollEnd(callback: () => void, targetRef: MutableRefObject<HTMLElement | null>, offsetRatio = 1) {
+function useOnScrollEnd(
+    callback: () => void,
+    targetRef: MutableRefObject<HTMLElement | null>,
+    offsetRatio = 1,
+    deps: React.DependencyList = []
+) {
     const boundingBox = useElementRect(targetRef);
 
     useEffect(() => {
@@ -13,11 +18,6 @@ function useOnScrollEnd(callback: () => void, targetRef: MutableRefObject<HTMLEl
                 callback();
             }
         };
-
-        // If initially at the end or no scrollbar execute callback
-        if (isScrollEnd(targetRef.current, offsetRatio)) {
-            callback();
-        }
 
         if (targetRef.current) {
             targetRef.current.addEventListener('scroll', handleScroll);
@@ -28,7 +28,14 @@ function useOnScrollEnd(callback: () => void, targetRef: MutableRefObject<HTMLEl
                 targetRef.current.removeEventListener('scroll', handleScroll);
             }
         };
-    }, [targetRef.current, callback, boundingBox]);
+    }, [targetRef.current, callback]);
+
+    useEffect(() => {
+        // If initially at the end or no scrollbar execute callback
+        if (isScrollEnd(targetRef.current, offsetRatio)) {
+            callback();
+        }
+    }, [callback, boundingBox, targetRef.current, ...deps]);
 }
 
 export default useOnScrollEnd;

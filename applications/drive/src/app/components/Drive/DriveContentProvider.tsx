@@ -54,12 +54,18 @@ const DriveContentProviderInner = ({ children, resource }: { children: React.Rea
         try {
             await fetchNextFolderContents(resource.shareId, resource.linkId);
             if (!signal?.aborted) {
+                contentLoading.current = false;
                 setLoading(false);
                 setInitialized(true);
             }
         } catch (e) {
             const children = cache.get.childLinks(resource.shareId, resource.linkId);
 
+            if (signal?.aborted) {
+                return;
+            }
+
+            contentLoading.current = false;
             if (!children?.length) {
                 setError(() => {
                     throw e;
@@ -67,10 +73,6 @@ const DriveContentProviderInner = ({ children, resource }: { children: React.Rea
             } else if (!signal?.aborted) {
                 setLoading(false);
             }
-        }
-
-        if (!signal?.aborted) {
-            contentLoading.current = false;
         }
     }, [resource.shareId, resource.linkId]);
 
