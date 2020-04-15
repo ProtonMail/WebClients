@@ -4,8 +4,8 @@ import Input, { Props as InputProps } from './Input';
 interface Props extends Omit<InputProps, 'onChange' | 'value' | 'min' | 'max'> {
     max?: number;
     min?: number;
-    value: number | string;
-    onChange: (value: number | string) => void;
+    value: number | undefined;
+    onChange: (value: number | undefined) => void;
     step?: number;
 }
 
@@ -23,16 +23,17 @@ const IntegerInput = ({ value, onChange, max, min, step, ...rest }: Props) => {
 
     return (
         <Input
+            type="number"
             step={stepStr}
             min={minStr}
             max={maxStr}
-            value={value === '' || isNaN(intValue) ? '' : intValue}
+            value={value === null || isNaN(intValue) ? '' : intValue}
             onInput={({ target, target: { value: newValue, validity } }: ChangeEvent<HTMLInputElement>) => {
                 const isClear = validity.valid;
                 // Prevent broken input on certain browsers since it allows to enter other characters than integer numbers
                 if (newValue === '') {
-                    const emptyOrOldValue = isClear ? '' : value;
-                    target.value = '' + emptyOrOldValue;
+                    const emptyOrOldValue = isClear ? undefined : value;
+                    target.value = '' + (emptyOrOldValue || '');
                     return onChange(emptyOrOldValue);
                 }
                 const newIntValue = parseInt(newValue, 10);
