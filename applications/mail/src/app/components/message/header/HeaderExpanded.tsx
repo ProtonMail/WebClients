@@ -48,6 +48,7 @@ const ButtonGroup = OriginalButtonGroup as ({
 }) => JSX.Element;
 
 interface Props {
+    labelID: string;
     labels?: Label[];
     mailSettings: any;
     message: MessageExtended;
@@ -62,6 +63,7 @@ interface Props {
 }
 
 const HeaderExpanded = ({
+    labelID,
     labels,
     message,
     messageLoaded,
@@ -172,7 +174,7 @@ const HeaderExpanded = ({
                             dropDownClassName="moveDropdown"
                         >
                             {({ onClose, onLock }) => (
-                                <MoveDropdown elements={elements} onClose={onClose} onLock={onLock} />
+                                <MoveDropdown labelID={labelID} elements={elements} onClose={onClose} onLock={onLock} />
                             )}
                         </HeaderDropdown>
                         <HeaderDropdown

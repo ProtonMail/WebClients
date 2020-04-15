@@ -9,13 +9,14 @@ import { OnCompose } from '../../containers/ComposerContainer';
 import { useMessage } from '../../hooks/useMessage';
 
 interface Props {
+    labelID: string;
     messageID: string;
     mailSettings: MailSettings;
     onBack: () => void;
     onCompose: OnCompose;
 }
 
-const MessageOnlyView = ({ messageID, mailSettings, onBack, onCompose }: Props) => {
+const MessageOnlyView = ({ labelID, messageID, mailSettings, onBack, onCompose }: Props) => {
     const [labels = []] = useLabels();
 
     // There is only reading on the message here, no actions
@@ -35,6 +36,7 @@ const MessageOnlyView = ({ messageID, mailSettings, onBack, onCompose }: Props) 
                 </div>
             </header>
             <MessageView
+                labelID={labelID}
                 message={data}
                 initialExpand={true}
                 labels={labels}

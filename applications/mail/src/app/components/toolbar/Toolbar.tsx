@@ -104,7 +104,7 @@ const Toolbar = ({
                     dropDownClassName="moveDropdown"
                 >
                     {({ onClose, onLock }) => (
-                        <MoveDropdown elements={selectedElements} onClose={onClose} onLock={onLock} />
+                        <MoveDropdown labelID={labelID} elements={selectedElements} onClose={onClose} onLock={onLock} />
                     )}
                 </ToolbarDropdown>
                 <ToolbarDropdown

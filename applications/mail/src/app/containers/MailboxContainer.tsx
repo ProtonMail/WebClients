@@ -94,6 +94,7 @@ const MailboxContainer = ({
 
     useEffect(() => setPage({ ...page, page: pageFromUrl(location) }), [searchParams.page]);
     useEffect(() => setPage({ ...page, total }), [total]);
+    useEffect(() => setCheckedElements({}), [labelID]);
 
     useMailboxPageTitle(labelID, location);
 
@@ -216,6 +217,7 @@ const MailboxContainer = ({
                                 />
                             ) : (
                                 <MessageOnlyView
+                                    labelID={labelID}
                                     mailSettings={mailSettings}
                                     messageID={elementID}
                                     onBack={handleBack}

@@ -20,6 +20,7 @@ import {
 import { isUnread } from '../../helpers/elements';
 
 interface Props {
+    labelID: string;
     labels: Label[];
     message: Message;
     mailSettings: any;
@@ -30,6 +31,7 @@ interface Props {
 }
 
 const MessageView = ({
+    labelID,
     labels = [],
     message: inputMessage,
     mailSettings,
@@ -110,6 +112,7 @@ const MessageView = ({
             {expanded ? (
                 <>
                     <HeaderExpanded
+                        labelID={labelID}
                         message={message}
                         messageLoaded={bodyLoaded}
                         sourceMode={sourceMode}

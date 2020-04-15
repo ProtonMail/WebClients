@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, DragEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent, DragEvent } from 'react';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
 import { useLabels, useContactEmails, useContactGroups } from 'react-components';
@@ -41,7 +41,19 @@ const List = ({
     const [labels] = useLabels();
     const [lastChecked, setLastChecked] = useState<string>(); // Store ID of the last element ID checked
     const [dragElement, setDragElement] = useState<HTMLDivElement>();
+    const [draggedIDs, setDraggedIDs] = useState<string[]>([]);
     const [savedCheck, setSavedCheck] = useState<string[]>();
+
+    useEffect(() => {
+        setDraggedIDs([]);
+
+        // Reset checkedIds
+        const filteredCheckedIDs = checkedIDs.filter((id) => elements.some((elm) => elm.ID === id));
+
+        if (filteredCheckedIDs !== checkedIDs) {
+            onCheck(filteredCheckedIDs, true, true);
+        }
+    }, [elements]);
 
     if (loadingContacts || loadingGroups) {
         return null;
@@ -69,9 +81,11 @@ const List = ({
         const dragInSelection = checkedIDs.includes(elementID);
         const selection = dragInSelection ? checkedIDs : [elementID];
 
+        setDraggedIDs(selection);
+        setSavedCheck(checkedIDs);
+
         if (!dragInSelection) {
-            setSavedCheck(checkedIDs);
-            onCheck(selection, true, true);
+            onCheck([], true, true);
         }
 
         const isMessage = testIsMessage(element);
@@ -100,13 +114,17 @@ const List = ({
             setDragElement(undefined);
         }
         const action = event.dataTransfer.dropEffect;
-        if (action !== 'none') {
-            onCheck([], true, true);
+
+        if (action === 'none') {
+            setDraggedIDs([]);
         }
+
         if (savedCheck) {
-            if (action === 'none') {
+            if (action === 'none' || action === 'label') {
                 onCheck(savedCheck, true, true);
-            }
+            } /* else {
+                onCheck([], true, true);
+            } */
             setSavedCheck(undefined);
         }
     };
@@ -133,6 +151,7 @@ const List = ({
                         mailSettings={mailSettings}
                         onDragStart={handleDragStart(element)}
                         onDragEnd={handleDragEnd}
+                        dragged={draggedIDs.includes(element.ID || '')}
                     />
                 );
             })}

@@ -47,11 +47,12 @@ const folderReducer = (acc: FolderItem[], folder: FolderWithSubFolders, level = 
 
 interface Props {
     elements: Element[];
+    labelID: string;
     onClose: () => void;
     onLock: (lock: boolean) => void;
 }
 
-const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
+const MoveDropdown = ({ elements, labelID, onClose, onLock }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
 
     const [loading, withLoading] = useLoading();
@@ -86,7 +87,7 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
     const handleMove = async (folder?: Folder) => {
         const isMessage = testIsMessage(elements[0]);
         const elementIDs = elements.map((element) => element.ID || '');
-        await moveToFolder(isMessage, elementIDs, folder?.ID || '', folder?.Name || '');
+        await moveToFolder(isMessage, elementIDs, folder?.ID || '', folder?.Name || '', labelID);
         onClose();
     };
 

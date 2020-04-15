@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent, DragEvent, useState } from 'react';
+import React, { ChangeEvent, MouseEvent, DragEvent } from 'react';
 import { Location } from 'history';
 import { classnames, Checkbox } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
@@ -35,6 +35,7 @@ interface Props {
     onClick: (element: Element) => void;
     onDragStart: (event: DragEvent) => void;
     onDragEnd: (event: DragEvent) => void;
+    dragged: boolean;
 }
 
 const Item = ({
@@ -51,10 +52,9 @@ const Item = ({
     onCheck,
     onClick,
     onDragStart,
-    onDragEnd
+    onDragEnd,
+    dragged
 }: Props) => {
-    const [dragging, setDragging] = useState(false);
-
     const { ID = '' } = element;
     const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
     const type = getCurrentType({ mailSettings, labelID, location });
@@ -87,12 +87,10 @@ const Item = ({
     };
 
     const handleDragStart = (event: DragEvent) => {
-        setDragging(true);
         onDragStart(event);
     };
 
     const handleDragEnd = (event: DragEvent) => {
-        setDragging(false);
         onDragEnd(event);
     };
 
@@ -115,7 +113,7 @@ const Item = ({
                 isColumnMode ? 'item-container' : 'item-container-row',
                 elementID === ID && 'item-is-selected',
                 !unread && 'read',
-                dragging && 'item-dragging'
+                dragged && 'item-dragging'
             ])}
         >
             {itemCheckboxType}

@@ -71,7 +71,7 @@ const SidebarItem = ({
         dragProps.onDrop();
         const elementIDs = JSON.parse(event.dataTransfer.getData(DRAG_ELEMENT_KEY)) as string[];
         if (isFolder) {
-            moveToFolder(!isConversation, elementIDs, labelID, text);
+            moveToFolder(!isConversation, elementIDs, labelID, text, currentLabelID);
         } else {
             applyLabel(!isConversation, elementIDs, { [labelID]: true });
         }
