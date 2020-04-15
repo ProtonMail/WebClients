@@ -46,7 +46,8 @@ function Drive({ resource, openResource }: Props) {
         }
     }, [initialized, complete, loadNextPage]);
 
-    useOnScrollEnd(handleScrollEnd, mainAreaRef, 0.9);
+    // On content change, check scroll end (does not rebind listeners)
+    useOnScrollEnd(handleScrollEnd, mainAreaRef, 0.9, [contents]);
 
     const handleDoubleClick = async (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
