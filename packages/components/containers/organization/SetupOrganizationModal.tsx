@@ -63,7 +63,8 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
     });
 
     const handleChange = (key: string) => {
-        return ({ target }: ChangeEvent<HTMLInputElement>) => setModel({ ...model, [key]: target.value });
+        return ({ target }: ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+            setModel({ ...model, [key]: target.value });
     };
 
     const { ID: currentMemberID } = members.find(({ Self }) => Self) || {};

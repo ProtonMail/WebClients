@@ -5,7 +5,7 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import { findLongestMatchingIndex } from 'proton-shared/lib/helpers/string';
 import { withDecimalPrecision } from 'proton-shared/lib/helpers/math';
 
-import Input from './Input';
+import Input, { Props as InputProps } from './Input';
 import Dropdown from '../dropdown/Dropdown';
 import { usePopperAnchor } from '../popper';
 import { generateUID } from '../../helpers/component';
@@ -32,13 +32,13 @@ const getMinutes = (date: Date) => date.getHours() * 60 + date.getMinutes();
 
 const MAX_MINUTES = 24 * 60;
 
-interface Props {
+interface Props extends Omit<InputProps, 'onChange' | 'min' | 'max' | 'value'> {
     value: Date;
-    displayDuration?: boolean;
-    base?: Date;
     min?: Date;
     max?: Date;
     onChange: (date: Date) => void;
+    displayDuration?: boolean;
+    base?: Date;
     interval?: number;
 }
 
@@ -95,7 +95,7 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
         close();
     };
 
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         const { key } = event;
         if (key === 'Enter') {
             parseAndSetDate(temporaryInput);

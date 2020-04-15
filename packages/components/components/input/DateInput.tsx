@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { format, parse, addDays } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
 
-import Input from './Input';
+import Input, { Props as InputProps } from './Input';
 import { usePopperAnchor } from '../popper';
 import Dropdown from '../dropdown/Dropdown';
 import { generateUID } from '../../helpers/component';
@@ -23,11 +23,7 @@ const getTemporaryInputFromValue = (value: Date | undefined) => {
 const DEFAULT_MIN = new Date(1900, 0, 1);
 const DEFAULT_MAX = new Date(2200, 0, 1);
 
-interface Props {
-    id?: string;
-    disabled?: boolean;
-    required?: boolean;
-    className?: string;
+interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
     displayWeekNumbers?: boolean;
     weekStartsOn?: number;
     value?: Date;
@@ -36,9 +32,6 @@ interface Props {
     min?: Date;
     max?: Date;
     onChange: (value: Date | undefined) => void;
-    onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
-    onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 const DateInput = ({
     value,
@@ -107,7 +100,7 @@ const DateInput = ({
         setTemporaryInput(currentInput);
     };
 
-    const handleBlurInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleBlurInput = (event: React.FocusEvent<HTMLInputElement>) => {
         onBlur && onBlur(event);
         parseAndTriggerChange();
         close();

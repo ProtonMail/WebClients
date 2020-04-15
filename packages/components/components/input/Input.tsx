@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { KeyboardEventHandler, Ref, useState } from 'react';
 import { c } from 'ttag';
 
 import { generateUID, classnames } from '../../helpers/component';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 
-/** @type any */
-const Input = React.forwardRef(
+export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+    ref?: Ref<HTMLInputElement>; // override ref so that LegacyRef isn't used
+    icon?: React.ReactElement;
+    error?: string;
+    errorZoneClassName?: string;
+    autoComplete?: string;
+    className?: string;
+    onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
+    isSubmitted?: boolean;
+    loading?: boolean;
+}
+
+const Input = React.forwardRef<HTMLInputElement, Props>(
     (
         {
             icon,
@@ -27,13 +37,13 @@ const Input = React.forwardRef(
         },
         ref
     ) => {
-        const { handlers, statusClasses, status } = useInput({ onPressEnter, isSubmitted, ...rest });
+        const { handlers, statusClasses, status } = useInput<HTMLInputElement>({ onPressEnter, ...rest });
         const [uid] = useState(generateUID('input'));
         const errorZone = required && !value && !error ? c('Error').t`This field is required` : error;
 
-        const hasError = errorZone && (status.isDirty || isSubmitted);
+        const hasError = errorZone && status.isDirty ? true : isSubmitted || false;
 
-        const addIconWrapper = (child) => {
+        const addIconWrapper = (child: React.ReactNode) => {
             if (!icon) {
                 return child;
             }
@@ -84,30 +94,5 @@ const Input = React.forwardRef(
         );
     }
 );
-
-Input.propTypes = {
-    icon: PropTypes.node,
-    error: PropTypes.string,
-    errorZoneClassName: PropTypes.string,
-    autoComplete: PropTypes.string,
-    autoFocus: PropTypes.bool,
-    className: PropTypes.string,
-    disabled: PropTypes.bool,
-    loading: PropTypes.bool,
-    isSubmitted: PropTypes.bool,
-    id: PropTypes.string,
-    name: PropTypes.string,
-    onBlur: PropTypes.func,
-    onChange: PropTypes.func,
-    onFocus: PropTypes.func,
-    onKeyDown: PropTypes.func,
-    onKeyUp: PropTypes.func,
-    onPressEnter: PropTypes.func,
-    placeholder: PropTypes.string,
-    readOnly: PropTypes.bool,
-    required: PropTypes.bool,
-    type: PropTypes.string,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool])
-};
 
 export default Input;
