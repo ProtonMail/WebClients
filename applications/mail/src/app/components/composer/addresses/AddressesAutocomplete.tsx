@@ -7,7 +7,7 @@ import { Recipient } from '../../../models/address';
 import { useEventListener } from '../../../hooks/useHandler';
 
 interface Props {
-    inputRef: MutableRefObject<HTMLInputElement | undefined>;
+    inputRef: MutableRefObject<HTMLInputElement | null>;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
     children: ReactNode;

@@ -57,7 +57,7 @@ const AddressesInput = ({
     placeholder
 }: Props) => {
     const [inputModel, setInputModel] = useState('');
-    const inputRef = useRef<HTMLInputElement>();
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const recipientsOrGroups = recipientsToRecipientOrGroup(recipients, contactGroups);
 
@@ -116,7 +116,7 @@ const AddressesInput = ({
         onChange(recipientsWithoutGroup(recipients, toRemove?.group?.Path));
     };
 
-    const handleInputKey = (event: KeyboardEvent) => {
+    const handleInputKey = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if ((event.key === 'Enter' || event.key === 'Tab') && inputModel.length !== 0) {
             confirmInput();
             event.preventDefault(); // Prevent tab to switch field
