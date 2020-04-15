@@ -81,9 +81,10 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
         }
 
         const loadedItems = cache.get.trashChildLinks(shareId);
+        const complete = cache.get.trashComplete(shareId);
 
         // TODO: request more than one page of links with pagination and infinite scroll
-        if (!loadedItems.length) {
+        if (!loadedItems.length && !complete) {
             withLoading(fetchTrash(shareId, 0, FOLDER_PAGE_SIZE)).catch((e) =>
                 setError(() => {
                     throw e;
@@ -94,8 +95,6 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
         setShareId(shareId);
     }, [match.params.shareId]);
 
-    const completed = !!shareId && cache.get.trashComplete(shareId);
-
     return (
         <Page title={c('Title').t`Trash`}>
             <TrashToolbar shareId={shareId} fileBrowserControls={fileBrowserControls} />
@@ -103,12 +102,14 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
                 <StickyHeader>
                     <div className="pt0-5 pb0-5 pl0-25 pr0-25 strong">{c('Info').t`Trash`}</div>
                 </StickyHeader>
-                <Trash
-                    loading={loading}
-                    complete={completed}
-                    fileBrowserControls={fileBrowserControls}
-                    contents={sortedList}
-                />
+                {shareId && (
+                    <Trash
+                        loading={loading}
+                        complete={cache.get.trashComplete(shareId)}
+                        fileBrowserControls={fileBrowserControls}
+                        contents={sortedList}
+                    />
+                )}
             </PageMainArea>
         </Page>
     );
