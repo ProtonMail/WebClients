@@ -206,6 +206,12 @@
     border-left: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
+.editor-squire-wrapper {
+    .placeholder {
+        margin-top: 1.2em;
+    }
+}
+
 .editor-toolbar-dropdown {
     ul {
         margin: 0;

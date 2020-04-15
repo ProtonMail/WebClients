@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect, forwardRef, Ref } from 'react';
+import { c } from 'ttag';
 
 import { SquireType, getSquireRef, setSquireRef, initSquire } from '../../../helpers/squire/squireConfig';
 import { useHandler } from '../../../hooks/useHandler';
@@ -7,6 +8,8 @@ import { findCIDsInContent } from '../../../helpers/embedded/embeddedFinder';
 import { diff } from 'proton-shared/lib/helpers/array';
 import { Attachment } from '../../../models/attachment';
 import { MessageExtended } from '../../../models/message';
+import { getDocumentContent } from '../../../helpers/message/messageContent';
+import { isHTMLEmpty } from '../../../helpers/dom';
 
 interface Props {
     message: MessageExtended;
@@ -97,8 +100,14 @@ const EditorSquire = forwardRef(
             }
         }, [squireReady]);
 
+        const isContentEmpty = isHTMLEmpty(getDocumentContent(message.document));
+
         return (
-            <div className="editor-squire-wrapper fill w100 scroll-if-needed flex-item-fluid rounded">
+            <div className="editor-squire-wrapper fill w100 scroll-if-needed flex-item-fluid rounded relative">
+                {isContentEmpty && (
+                    <div className="absolute ml1 no-pointer-events placeholder">{c('Placeholder')
+                        .t`Write your message`}</div>
+                )}
                 <iframe ref={iframeRef} frameBorder="0" className="w100 h100 squireIframe"></iframe>
             </div>
         );

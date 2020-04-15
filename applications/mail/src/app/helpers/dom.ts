@@ -159,3 +159,8 @@ export const setTextAreaCursorStart = (textarea: HTMLTextAreaElement) => {
     textarea.selectionEnd = 0;
     textarea.scrollTop = 0;
 };
+
+/**
+ * Check if a HTML content is considered empty
+ */
+export const isHTMLEmpty = (html: string) => !html || html === '<div><br /></div>' || html === '<div><br></div>';

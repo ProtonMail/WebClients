@@ -5,7 +5,7 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import { dedentTpl } from '../dedent';
 import { replaceLineBreaks } from '../string';
 import { message } from '../purify';
-import { parseInDiv } from '../dom';
+import { parseInDiv, isHTMLEmpty } from '../dom';
 
 export const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
 export const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
@@ -16,12 +16,6 @@ export const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
  * Preformat the protonMail signature
  */
 const getProtonSignature = (mailSettings: MailSettings) => (mailSettings.PMSignature === 0 ? '' : PM_SIGNATURE);
-
-/**
- * Check if the signature is empty for a user
- */
-const isEmptyUserSignature = (signature: string) =>
-    !signature || signature === '<div><br /></div>' || signature === '<div><br></div>';
 
 /**
  * Generate a space tag, it can be hidden from the UX via a className
@@ -39,7 +33,7 @@ const createSpace = (className = '') => {
  *     user + proton signature: 2 spaces + addressSignature + 1 space + protonSignature
  */
 const getSpaces = (signature: string, protonSignature: string, isReply = false) => {
-    const isUserEmpty = isEmptyUserSignature(signature);
+    const isUserEmpty = isHTMLEmpty(signature);
     const isEmptySignature = isUserEmpty && !protonSignature;
     return {
         start: isEmptySignature ? createSpace() : createSpace() + createSpace(),
@@ -52,7 +46,7 @@ const getSpaces = (signature: string, protonSignature: string, isReply = false) 
  * Generate a map of classNames used for the signature template
  */
 const getClassNamesSignature = (signature: string, protonSignature: string) => {
-    const isUserEmpty = isEmptyUserSignature(signature);
+    const isUserEmpty = isHTMLEmpty(signature);
     const isProtonEmpty = !protonSignature;
     return {
         userClass: isUserEmpty ? CLASSNAME_SIGNATURE_EMPTY : '',
