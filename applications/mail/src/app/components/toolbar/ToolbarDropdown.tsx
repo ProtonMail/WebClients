@@ -10,10 +10,11 @@ interface Props {
     autoClose?: boolean;
     title?: string;
     className?: string;
+    dropDownClassName?: string;
     content?: ReactNode;
     children: (props: LockableDropdownProps) => ReactNode;
     disabled?: boolean;
-    size?: string;
+    noMaxSize?: boolean;
     [rest: string]: any;
 }
 
@@ -21,16 +22,17 @@ const ToolbarDropdown = ({
     title,
     content,
     className,
+    dropDownClassName,
     children,
     autoClose = true,
     disabled = false,
-    size = 'normal',
+    noMaxSize = false,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const [lock, setLock] = useState(false);
 
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
         <>
@@ -49,15 +51,14 @@ const ToolbarDropdown = ({
             </DropdownButton>
             <Dropdown
                 id={uid}
-                size={size}
                 originalPlacement="bottom"
-                availablePlacements={['bottom']}
                 autoClose={autoClose}
                 autoCloseOutside={!lock}
                 isOpen={isOpen}
+                noMaxSize={noMaxSize}
                 anchorRef={anchorRef}
                 onClose={close}
-                className="toolbar-dropdown"
+                className={classnames(['toolbar-dropdown', dropDownClassName])}
             >
                 {children({ onClose: close, onLock: setLock })}
             </Dropdown>

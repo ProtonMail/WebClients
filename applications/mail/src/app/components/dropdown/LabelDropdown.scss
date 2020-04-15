@@ -1,3 +1,17 @@
-.labelDropdown-list-container {
-    max-height: 30vh;
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+
+.labelDropdown {
+    .dropDown-content {
+        @include respond-to($breakpoint-small, 'max') {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+    }
+
+    &-list-container {
+        @include respond-to($breakpoint-small, 'min') {
+            max-width: 20em;
+            max-height: 12em;
+        }
+    }
 }

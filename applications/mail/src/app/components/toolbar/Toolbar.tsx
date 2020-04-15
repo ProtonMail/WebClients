@@ -98,8 +98,10 @@ const Toolbar = ({
                 <ToolbarSeparator />
                 <ToolbarDropdown
                     autoClose={false}
+                    noMaxSize={true}
                     disabled={!selectedIDs.length}
                     content={<Icon className="toolbar-icon" name="folder" />}
+                    dropDownClassName="moveDropdown"
                 >
                     {({ onClose, onLock }) => (
                         <MoveDropdown elements={selectedElements} onClose={onClose} onLock={onLock} />
@@ -107,8 +109,10 @@ const Toolbar = ({
                 </ToolbarDropdown>
                 <ToolbarDropdown
                     autoClose={false}
+                    noMaxSize={true}
                     disabled={!selectedIDs.length}
                     content={<Icon className="toolbar-icon" name="label" />}
+                    dropDownClassName="labelDropdown"
                 >
                     {({ onClose, onLock }) => (
                         <LabelDropdown elements={selectedElements} onClose={onClose} onLock={onLock} />

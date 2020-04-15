@@ -8,8 +8,8 @@ interface Props {
     content?: ReactNode;
     children: ReactNode;
     onOpen?: () => void;
+    noMaxSize?: boolean;
     disabled?: boolean;
-    size?: string;
     [rest: string]: any;
 }
 
@@ -19,14 +19,14 @@ const EditorToolbarDropdown = ({
     className,
     children,
     onOpen,
+    noMaxSize,
     autoClose = true,
     disabled = false,
-    size = 'normal',
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
 
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const handleClick = () => {
         if (!isOpen) {
@@ -52,10 +52,10 @@ const EditorToolbarDropdown = ({
             </DropdownButton>
             <Dropdown
                 id={uid}
-                size={size}
                 autoClose={autoClose}
                 autoCloseOutside={autoClose}
                 isOpen={isOpen}
+                noMaxSize={noMaxSize}
                 anchorRef={anchorRef}
                 onClose={close}
                 className="editor-toolbar-dropdown"

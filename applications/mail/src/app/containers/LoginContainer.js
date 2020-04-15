@@ -23,20 +23,34 @@ const LoginContainer = ({ stopRedirect, history, location, onLogin }) => {
                 needHelp={
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="pm-button--link">
                         <DropdownMenu>
-                            <div className="inbl w100 pt0-5 pb0-5 ellipsis">
-                                <Link to="/reset-password">{c('Link').t`Reset password`}</Link>
-                            </div>
-                            <div className="inbl w100 pt0-5 pb0-5 ellipsis">
-                                <Link to="/forgot-username">{c('Link').t`Forgot username?`}</Link>
-                            </div>
-                            <div className="inbl w100 pt0-5 pb0-5 ellipsis">
-                                <Href url="https://protonmail.com/support/knowledge-base/common-login-problems/">{c(
-                                    'Link'
-                                ).t`Common login problems`}</Href>
-                            </div>
-                            <div className="inbl w100 pt0-5 pb0-5 ellipsis">
-                                <Href url="https://protonmail.com/support/">{c('Link').t`Contact support`}</Href>
-                            </div>
+                            <ul className="unstyled mt0 mb0">
+                                <li className="dropDown-item">
+                                    <Link className="dropDown-item-link bl pt0-5 pb0-5 pl1 pr1" to="/reset-password">
+                                        {c('Link').t`Reset password`}
+                                    </Link>
+                                </li>
+                                <li className="dropDown-item">
+                                    <Link className="dropDown-item-link bl pt0-5 pb0-5 pl1 pr1" to="/forgot-username">
+                                        {c('Link').t`Forgot username?`}
+                                    </Link>
+                                </li>
+                                <li className="dropDown-item">
+                                    <Href
+                                        className="dropDown-item-link bl pt0-5 pb0-5 pl1 pr1"
+                                        url="https://protonmail.com/support/knowledge-base/common-login-problems/"
+                                    >
+                                        {c('Link').t`Common login problems`}
+                                    </Href>
+                                </li>
+                                <li className="dropDown-item">
+                                    <Href
+                                        className="dropDown-item-link bl pt0-5 pb0-5 pl1 pr1"
+                                        url="https://protonmail.com/support/"
+                                    >
+                                        {c('Link').t`Contact support`}
+                                    </Href>
+                                </li>
+                            </ul>
                         </DropdownMenu>
                     </SimpleDropdown>
                 }

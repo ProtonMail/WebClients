@@ -1,3 +1,7 @@
-.pm-label.advancedSearch-label {
-    width: 150px;
+.advancedSearch {
+    max-width: 30em;
+
+    &-label.pm-label {
+        width: 11em;
+    }
 }

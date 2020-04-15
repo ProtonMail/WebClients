@@ -105,8 +105,8 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
     const searchInputID = `${uid}-search`;
 
     return (
-        <div>
-            <div className="flex flex-spacebetween flex-items-center m1">
+        <>
+            <div className="flex flex-spacebetween flex-items-center m1 mb0">
                 <label htmlFor={searchInputID} className="bold">{c('Label').t`Move to`}</label>
                 <Tooltip title={c('Title').t`Create folder`}>
                     <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
@@ -114,7 +114,7 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
                     </PrimaryButton>
                 </Tooltip>
             </div>
-            <div className="m1">
+            <div className="m1 mb0">
                 <SearchInput
                     autoFocus={true}
                     value={search}
@@ -123,16 +123,16 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
                     placeholder={c('Placeholder').t`Filter folders`}
                 />
             </div>
-            <div className="scroll-if-needed customScrollBar-container scroll-smooth-touch moveDropdown-list-container">
+            <div className="scroll-if-needed customScrollBar-container scroll-smooth-touch mt1 moveDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
                     {list.map((folder: FolderItem) => {
                         return (
-                            <li key={folder.ID} className="dropDown-item pl1 pr1">
+                            <li key={folder.ID} className="dropDown-item">
                                 <button
                                     data-level={folder.level}
                                     type="button"
                                     disabled={loading}
-                                    className="dropDown-link w100 flex flex-nowrap flex-items-center pt0-5 pb0-5"
+                                    className="dropDown-item-button w100 flex flex-nowrap flex-items-center pl1 pr1 pt0-5 pb0-5"
                                     onClick={() => withLoading(handleMove(folder))}
                                 >
                                     <Icon name={folder.icon || 'folder'} className="flex-item-noshrink mr0-5" />
@@ -154,7 +154,7 @@ const MoveDropdown = ({ elements, onClose, onLock }: Props) => {
                     )}
                 </ul>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -191,10 +191,16 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                 autoClose={false}
                 autoCloseOutside={false}
                 isOpen={isOpen}
+                noMaxSize={true}
                 anchorRef={anchorRef}
                 onClose={close}
             >
-                <form name="advanced-search" className="p1" onSubmit={handleSubmit} onReset={handleReset}>
+                <form
+                    name="advanced-search"
+                    className="advancedSearch p1"
+                    onSubmit={handleSubmit}
+                    onReset={handleReset}
+                >
                     <div className="mb1 flex flex-nowrap onmobile-flex-column">
                         <Label className="advancedSearch-label" htmlFor="exact-match">{c('Label')
                             .t`Exact match`}</Label>

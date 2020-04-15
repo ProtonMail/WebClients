@@ -35,7 +35,7 @@ const EditorToolbarFontColorsDropdown = ({ squireRef, className }: Props) => {
     return (
         <EditorToolbarDropdown
             onOpen={handleOpen}
-            size="wide"
+            noMaxSize={true}
             content={<Icon name="font-color" />}
             className={className}
         >

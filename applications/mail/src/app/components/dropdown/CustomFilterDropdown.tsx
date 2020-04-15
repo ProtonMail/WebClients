@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AddFilterModal, useModals, PrimaryButton, classnames, Checkbox } from 'react-components';
+import { AddFilterModal, useModals, PrimaryButton, Checkbox } from 'react-components';
 import { c } from 'ttag';
 
 import { newFilter } from 'proton-shared/lib/filters/factory';
@@ -118,43 +118,34 @@ const CustomFilterDropdown = ({ message }: Props) => {
     };
 
     return (
-        <div>
-            <div className="flex flex-spacebetween flex-items-center mt0-5 ml1 mr1">
-                <strong className="p0-5">{c('CustomFilter').t`Filter on`}</strong>
+        <>
+            <div className="m1">
+                <span className="bold">{c('CustomFilter').t`Filter on`}</span>
             </div>
-            <div>
-                <ul className="unstyled mt0 mb0 pl1 pr1">
-                    {FILTER_TYPES.map((filterType: FilterType, index: number) => (
-                        <li
-                            key={filterType.value}
-                            className={classnames([
-                                'w100 flex flex-nowrap flex-items-center p0-5',
-                                index < FILTER_TYPES.length - 1 && 'border-bottom'
-                            ])}
-                        >
-                            <label
-                                htmlFor={filterType.value}
-                                title={filterType.label}
-                                className="flex flex-item-fluid flex-items-center ellipsis"
-                            >
-                                {filterType.label}
-                            </label>
-                            <Checkbox
-                                className="flex-item-noshrink"
-                                id={filterType.value}
-                                checked={filtersState[filterType.value]}
-                                onChange={() => toggleFilterType(filterType.value)}
-                            />
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <div className="p1">
+            <ul className="unstyled mt1 mb1">
+                {FILTER_TYPES.map((filterType: FilterType) => (
+                    <li
+                        key={filterType.value}
+                        className="dropDown-item w100 flex flex-nowrap flex-items-center p0-5 pl1 pr1"
+                    >
+                        <Checkbox
+                            className="flex-item-noshrink"
+                            id={filterType.value}
+                            checked={filtersState[filterType.value]}
+                            onChange={() => toggleFilterType(filterType.value)}
+                        />
+                        <label htmlFor={filterType.value} title={filterType.label} className="flex-item-fluid ellipsis">
+                            {filterType.label}
+                        </label>
+                    </li>
+                ))}
+            </ul>
+            <div className="m1">
                 <PrimaryButton className="w100" onClick={handleNext}>
                     {c('CustomFilter').t`Next`}
                 </PrimaryButton>
             </div>
-        </div>
+        </>
     );
 };
 

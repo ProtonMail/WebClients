@@ -160,13 +160,16 @@ const HeaderExpanded = ({
                             autoClose={false}
                             content={<Icon name="filter" />}
                             className="pm-button pm-group-button pm-button--for-icon"
+                            dropDownClassName="customFilterDropdown"
                         >
                             {() => <CustomFilterDropdown message={message.data || {}} />}
                         </HeaderDropdown>
                         <HeaderDropdown
                             autoClose={false}
+                            noMaxSize={true}
                             content={<Icon name="folder" />}
                             className="pm-button pm-group-button pm-button--for-icon"
+                            dropDownClassName="moveDropdown"
                         >
                             {({ onClose, onLock }) => (
                                 <MoveDropdown elements={elements} onClose={onClose} onLock={onLock} />
@@ -174,8 +177,10 @@ const HeaderExpanded = ({
                         </HeaderDropdown>
                         <HeaderDropdown
                             autoClose={false}
+                            noMaxSize={true}
                             content={<Icon name="label" />}
                             className="pm-button pm-group-button pm-button--for-icon"
+                            dropDownClassName="labelDropdown"
                         >
                             {({ onClose, onLock }) => (
                                 <LabelDropdown elements={elements} onClose={onClose} onLock={onLock} />

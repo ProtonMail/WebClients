@@ -8,7 +8,6 @@ import {
     useModals,
     PrimaryButton,
     LabelModal,
-    classnames,
     Tooltip,
     useLoading,
     Checkbox,
@@ -140,8 +139,8 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
     const labelCheckID = (ID: string) => `${uid}-${ID}`;
 
     return (
-        <div>
-            <div className="flex flex-spacebetween flex-items-center m1">
+        <>
+            <div className="flex flex-spacebetween flex-items-center m1 mb0">
                 <label htmlFor={searchInputID} className="bold">{c('Label').t`Label as`}</label>
                 <Tooltip title={c('Title').t`Create label`}>
                     <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
@@ -149,7 +148,7 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
                     </PrimaryButton>
                 </Tooltip>
             </div>
-            <div className="m1">
+            <div className="m1 mb0">
                 <SearchInput
                     autoFocus={true}
                     value={search}
@@ -158,22 +157,13 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
                     placeholder={c('Placeholder').t`Filter labels`}
                 />
             </div>
-            <div className="scroll-if-needed customScrollBar-container scroll-smooth-touch mb1 labelDropdown-list-container">
+            <div className="scroll-if-needed scroll-smooth-touch mt1 labelDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
-                    {list.map(({ ID = '', Name = '', Color = '' }, index) => (
+                    {list.map(({ ID = '', Name = '', Color = '' }) => (
                         <li
                             key={ID}
-                            className={classnames([
-                                'w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5 pl1',
-                                index < list.length - 1 && 'border-bottom'
-                            ])}
+                            className="dropDown-item w100 flex flex-nowrap flex-items-center pt0-5 pb0-5 pl1 pr1"
                         >
-                            <div className="flex flex-nowrap flex-spacebetween flex-items-center">
-                                <Icon name="label" color={Color} className="flex-item-noshrink mr0-5" />
-                                <label htmlFor={labelCheckID(ID)} title={Name} className="ellipsis">
-                                    <Mark value={search}>{Name}</Mark>
-                                </label>
-                            </div>
                             <Checkbox
                                 className="flex-item-noshrink"
                                 id={labelCheckID(ID)}
@@ -181,32 +171,41 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
                                 indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
                                 onChange={handleCheck(ID)}
                             />
+                            <label
+                                htmlFor={labelCheckID(ID)}
+                                title={Name}
+                                className="flex flex-nowrap flex-items-center flex-item-fluid"
+                            >
+                                <Icon name="label" color={Color} className="flex-item-noshrink mr0-5" />
+                                <span className="ellipsis">
+                                    <Mark value={search}>{Name}</Mark>
+                                </span>
+                            </label>
                         </li>
                     ))}
                     {list.length === 0 && (
-                        <li
-                            key="empty"
-                            className="w100 flex flex-nowrap flex-spacebetween flex-items-center pt0-5 pb0-5 pl1 pr1 border-top border-bottom"
-                        >
+                        <li key="empty" className="dropDown-item w100 pt0-5 pb0-5 pl1 pr1">
                             {c('Info').t`No label found`}
                         </li>
                     )}
                 </ul>
             </div>
-            <div className="mt1 mb1 ml1 mr0-75 flex flex-spacebetween">
-                <label htmlFor={archiveCheckID}>{c('Label').t`Also archive`}</label>
+            <div className="flex m1 mb0">
                 <Checkbox
                     id={archiveCheckID}
                     checked={alsoArchive}
                     onChange={({ target }) => updateAlsoArchive(target.checked)}
                 />
+                <label htmlFor={archiveCheckID} className="flex-item-fluid">
+                    {c('Label').t`Also archive`}
+                </label>
             </div>
-            <div className="p1">
+            <div className="m1">
                 <PrimaryButton className="w100" loading={loading} onClick={() => withLoading(handleApply())}>
                     {c('Action').t`Apply`}
                 </PrimaryButton>
             </div>
-        </div>
+        </>
     );
 };
 

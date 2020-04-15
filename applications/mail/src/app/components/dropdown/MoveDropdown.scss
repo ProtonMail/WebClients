@@ -1,3 +1,21 @@
-.moveDropdown-list-container {
-    max-height: 30vh;
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+
+.moveDropdown {
+    .dropDown-content {
+        @include respond-to($breakpoint-small, 'max') {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+    }
+
+    &-list-container {
+        @include respond-to($breakpoint-small, 'min') {
+            max-width: 20em;
+            max-height: 15em;
+        }
+
+        [data-level='1'] {
+            padding-left: 2em;
+        }
+    }
 }
