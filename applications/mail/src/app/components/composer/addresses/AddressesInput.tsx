@@ -12,10 +12,9 @@ import { Input } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
-import { MapSendPreferences } from '../../../helpers/message/sendPreferences';
+import { MapSendInfo } from '../../../models/crypto';
 import { MessageExtended } from '../../../models/message';
 import { ContactEmail, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
-import { MapStatusIcon } from '../../message/EncryptionStatusIcon';
 import AddressesRecipientItem from './AddressesRecipientItem';
 import {
     inputToRecipient,
@@ -27,16 +26,18 @@ import AddressesAutocomplete from './AddressesAutocomplete';
 import AddressesGroupItem from './AddressesGroupItem';
 import { RecipientGroup, Recipient } from '../../../models/address';
 
+export interface MessageSendInfo {
+    message: MessageExtended;
+    mapSendInfo: MapSendInfo;
+    setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>;
+}
+
 interface Props {
     id: string;
     recipients?: Recipient[];
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
-    message: MessageExtended;
-    mapSendPrefs: MapSendPreferences;
-    mapSendIcons: MapStatusIcon;
-    setMapSendPrefs: Dispatch<SetStateAction<MapSendPreferences>>;
-    setMapSendIcons: Dispatch<SetStateAction<MapStatusIcon>>;
+    messageSendInfo?: MessageSendInfo;
     onChange: (value: Partial<Recipient>[]) => void;
     inputFocusRef?: MutableRefObject<() => void>;
     placeholder?: string;
@@ -47,11 +48,7 @@ const AddressesInput = ({
     recipients = [],
     contacts,
     contactGroups,
-    message,
-    mapSendPrefs,
-    mapSendIcons,
-    setMapSendPrefs,
-    setMapSendIcons,
+    messageSendInfo,
     onChange,
     inputFocusRef,
     placeholder
@@ -160,19 +157,18 @@ const AddressesInput = ({
                     recipientsOrGroup.recipient ? (
                         <AddressesRecipientItem
                             key={i}
-                            recipient={recipientsOrGroup.recipient as Required<Pick<Recipient, 'Address'>>}
-                            message={message}
-                            mapSendPrefs={mapSendPrefs}
-                            mapSendIcons={mapSendIcons}
-                            setMapSendPrefs={setMapSendPrefs}
-                            setMapSendIcons={setMapSendIcons}
+                            recipient={
+                                recipientsOrGroup.recipient as Required<Pick<Recipient, 'Address' | 'ContactID'>>
+                            }
+                            messageSendInfo={messageSendInfo}
                             onChange={handleRecipientChange(recipientsOrGroup.recipient)}
                             onRemove={handleRecipientRemove(recipientsOrGroup.recipient)}
                         />
                     ) : (
                         <AddressesGroupItem
                             key={i}
-                            recipientGroup={recipientsOrGroup.group}
+                            recipientGroup={recipientsOrGroup.group as RecipientGroup}
+                            messageSendInfo={messageSendInfo}
                             contacts={contacts}
                             onChange={handleGroupChange(recipientsOrGroup.group)}
                             onRemove={handleGroupRemove(recipientsOrGroup.group)}

@@ -1,24 +1,7 @@
-import { OpenPGPKey } from 'pmcrypto';
 import { MIME_TYPES, PACKAGE_TYPE, PGP_SCHEMES } from 'proton-shared/lib/constants';
 import { EncryptionPreferences } from 'proton-shared/lib/mail/encryptionPreferences';
 import { Message } from '../../models/message';
 import { isEO } from './messages';
-
-export interface SendPreferences {
-    encrypt: boolean;
-    sign: boolean;
-    pgpScheme: PACKAGE_TYPE;
-    mimetype: MIME_TYPES;
-    publicKeys?: OpenPGPKey[];
-    isPublicKeyPinned?: boolean;
-    hasApiKeys: boolean;
-    hasPinnedKeys: boolean;
-    warnings?: any[];
-}
-
-export interface MapSendPreferences {
-    [email: string]: SendPreferences;
-}
 
 const { SEND_PM, SEND_EO, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE_TYPE;
 

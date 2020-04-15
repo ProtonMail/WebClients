@@ -1,13 +1,15 @@
 import { PACKAGE_TYPE } from 'proton-shared/lib/constants';
-import { StatusIcon, StatusIconFills } from '../../components/message/EncryptionStatusIcon';
-import { SendPreferences } from '../message/sendPreferences';
+import { SendPreferences, StatusIcon, StatusIconFills } from '../../models/crypto';
 
 const { SEND_PM, SEND_EO, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE_TYPE;
 
-const { PLAIN, CHECKMARK, SIGN, WARNING } = StatusIconFills;
+const { PLAIN, CHECKMARK, SIGN, WARNING, FAIL } = StatusIconFills;
 
 export const getStatusIcon = (sendPreferences: SendPreferences): StatusIcon | undefined => {
-    const { encrypt, pgpScheme, isPublicKeyPinned, warnings } = sendPreferences;
+    const { encrypt, pgpScheme, isPublicKeyPinned, warnings, failure } = sendPreferences;
+    if (failure) {
+        return { colorClassName: 'color-global-warning', isEncrypted: false, fill: FAIL, text: failure.error.message };
+    }
     if (pgpScheme === SEND_PM) {
         const result = { colorClassName: 'color-pm-blue', isEncrypted: true };
         if (warnings && warnings.length) {
@@ -50,6 +52,9 @@ export const getStatusIconName = ({ isEncrypted, fill }: Pick<Partial<StatusIcon
     }
     if (fill === WARNING) {
         return 'locks-warning';
+    }
+    if (fill === FAIL) {
+        return 'circle';
     }
     return '';
 };

@@ -6,6 +6,7 @@ export const recipientTypes: RecipientType[] = ['ToList', 'CCList', 'BCCList'];
 export interface Recipient {
     Name?: string;
     Address?: string;
+    ContactID?: string;
     Group?: string;
 }
 

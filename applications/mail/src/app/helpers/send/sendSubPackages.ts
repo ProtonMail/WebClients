@@ -1,8 +1,8 @@
 import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
+import { MapSendPreferences, SendPreferences } from '../../models/crypto';
 
 import { Package, Packages } from './sendTopPackages';
 import { MessageExtended, Message } from '../../models/message';
-import { MapSendPreferences, SendPreferences } from '../message/sendPreferences';
 import { isEO, getAttachments } from '../message/messages';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;

@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent, MutableRefObject, SetStateAction, Dispatc
 import { c } from 'ttag';
 import { Label, Select, Input, generateUID } from 'react-components';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
-import { MapSendPreferences } from '../../helpers/message/sendPreferences';
+import { MapSendInfo } from '../../models/crypto';
 
 import ComposerAddresses from './addresses/Addresses';
 import { MessageExtended } from '../../models/message';
@@ -12,8 +12,8 @@ interface Props {
     message: MessageExtended;
     addresses: Address[];
     mailSettings: MailSettings;
-    mapSendPrefs: MapSendPreferences;
-    setMapSendPrefs: Dispatch<SetStateAction<MapSendPreferences>>;
+    mapSendInfo: MapSendInfo;
+    setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>;
     disabled: boolean;
     onChange: (message: Partial<MessageExtended>) => void;
     addressesBlurRef: MutableRefObject<() => void>;
@@ -23,8 +23,8 @@ interface Props {
 const ComposerMeta = ({
     message,
     addresses,
-    mapSendPrefs,
-    setMapSendPrefs,
+    mapSendInfo,
+    setMapSendInfo,
     disabled,
     onChange,
     addressesBlurRef,
@@ -67,8 +67,8 @@ const ComposerMeta = ({
             </div>
             <ComposerAddresses
                 message={message}
-                mapSendPrefs={mapSendPrefs}
-                setMapSendPrefs={setMapSendPrefs}
+                mapSendInfo={mapSendInfo}
+                setMapSendInfo={setMapSendInfo}
                 disabled={disabled}
                 onChange={onChange}
                 addressesBlurRef={addressesBlurRef}

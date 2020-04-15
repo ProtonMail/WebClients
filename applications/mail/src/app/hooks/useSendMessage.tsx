@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { sendMessage, updateDraft } from 'proton-shared/lib/api/messages';
 import {
@@ -6,9 +6,12 @@ import {
     useApi,
     useEventManager,
     useGetEncryptionPreferences,
-    useAuthentication
+    useAuthentication,
+    useModals
 } from 'react-components';
-import { SendPreferences } from '../helpers/message/sendPreferences';
+import SendWithErrorsModal from '../components/composer/addresses/SendWithErrorsModal';
+import { removeMessageRecipients, uniqueMessageRecipients } from '../helpers/message/cleanMessage';
+import { SendPreferences } from '../models/crypto';
 
 import { MessageExtended } from '../models/message';
 import { getRecipientsAddresses, isAttachPublicKey } from '../helpers/message/messages';
@@ -28,6 +31,7 @@ import { Attachment } from '../models/attachment';
 export const useSendMessage = () => {
     const cache = new Map(); // TODO
     const api = useApi();
+    const { createModal } = useModals();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getAddressKeys = useGetAddressKeys();
     const attachmentCache = useAttachmentCache();
@@ -36,31 +40,66 @@ export const useSendMessage = () => {
     const auth = useAuthentication();
 
     return useCallback(
-        async (inputMessage: MessageExtended) => {
-            // Prepare and save draft
-            const { document, encrypted: Body } = await prepareAndEncryptBody(inputMessage);
-            const { Message } = await api(updateDraft(inputMessage.data?.ID, { ...inputMessage.data, Body }));
+        async (inputMessage: MessageExtended & Required<Pick<MessageExtended, 'data'>>) => {
+            // remove duplicate emails
+            const uniqueInputMessage = {
+                ...inputMessage,
+                data: uniqueMessageRecipients(inputMessage.data)
+            };
+            // Get send preferences and ask to remove email with errors
+            const emails = unique(getRecipientsAddresses(uniqueInputMessage.data));
+            const mapSendPrefs: { [email: string]: SendPreferences } = {};
+            await Promise.all(
+                emails.map(async (emailAddress) => {
+                    const encryptionPreferences = await getEncryptionPreferences(emailAddress);
+                    mapSendPrefs[emailAddress] = getSendPreferences(encryptionPreferences, inputMessage.data);
+                })
+            );
+            const emailsWithErrors = emails.filter((emailAddress) => !!mapSendPrefs[emailAddress].failure);
+            if (emailsWithErrors.length) {
+                const mapErrors = emailsWithErrors.reduce<{ [key: string]: Error }>((acc, email) => {
+                    acc[email] = mapSendPrefs[email].failure?.error as Error;
+                    return acc;
+                }, {});
+                await new Promise((resolve, reject) => {
+                    const handleSendAnyway = () => {
+                        for (const email of emailsWithErrors) {
+                            const indexOfEmail = emails.findIndex((emailAddress) => emailAddress === email);
+                            emails.splice(indexOfEmail, 1);
+                            delete mapSendPrefs[email];
+                        }
+                        resolve();
+                    };
+                    createModal(
+                        <SendWithErrorsModal
+                            mapErrors={mapErrors}
+                            cannotSend={emailsWithErrors.length === emails.length}
+                            onSubmit={handleSendAnyway}
+                            onClose={reject}
+                        />
+                    );
+                });
+            }
 
+            // Prepare and save draft
+            const cleanInputMessage = {
+                ...inputMessage,
+                data: removeMessageRecipients(uniqueInputMessage.data, emailsWithErrors)
+            };
+            const { document, encrypted: Body } = await prepareAndEncryptBody(cleanInputMessage);
+            const { Message } = await api(updateDraft(cleanInputMessage.data?.ID, { ...cleanInputMessage.data, Body }));
             const Attachments: Attachment[] = isAttachPublicKey(Message)
                 ? await attachPublicKey({ ...inputMessage, data: Message }, auth.UID)
                 : Message.Attachments;
-
             // Processed message representing what we send
             const message: MessageExtended = {
-                ...inputMessage,
+                ...cleanInputMessage,
                 document,
                 data: { ...Message, Attachments }
             };
 
-            const emails = getRecipientsAddresses(message.data);
             // TODO: handleAttachmentSigs ?
 
-            const uniqueEmails = unique(emails);
-            const mapSendPrefs: { [email: string]: SendPreferences } = {};
-            for (const emailAddress of uniqueEmails) {
-                const encryptionPreferences = await getEncryptionPreferences(emailAddress);
-                mapSendPrefs[emailAddress] = getSendPreferences(encryptionPreferences, message.data);
-            }
             // TODO
             // if (sendPreferences !== oldSendPreferences) {
             //     // check what is going on. Show modal if encryption downgrade

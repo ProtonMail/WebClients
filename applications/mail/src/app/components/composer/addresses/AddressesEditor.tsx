@@ -2,10 +2,9 @@ import React, { useState, MutableRefObject, Dispatch, SetStateAction } from 'rea
 import { c } from 'ttag';
 import { Label, generateUID, LinkButton } from 'react-components';
 
-import { MapSendPreferences } from '../../../helpers/message/sendPreferences';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { MapSendInfo } from '../../../models/crypto';
 import { MessageExtended } from '../../../models/message';
-import { MapStatusIcon } from '../../message/EncryptionStatusIcon';
 import AddressesInput from './AddressesInput';
 import { RecipientType, Recipient } from '../../../models/address';
 
@@ -13,10 +12,8 @@ interface Props {
     message: MessageExtended;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
-    mapSendPrefs: MapSendPreferences;
-    mapSendIcons: MapStatusIcon;
-    setMapSendPrefs: Dispatch<SetStateAction<MapSendPreferences>>;
-    setMapSendIcons: Dispatch<SetStateAction<MapStatusIcon>>;
+    mapSendInfo: MapSendInfo;
+    setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>;
     onChange: (message: Partial<MessageExtended>) => void;
     expanded: boolean;
     toggleExpanded: () => void;
@@ -27,10 +24,8 @@ const AddressesEditor = ({
     message,
     contacts,
     contactGroups,
-    mapSendPrefs,
-    mapSendIcons,
-    setMapSendPrefs,
-    setMapSendIcons,
+    mapSendInfo,
+    setMapSendInfo,
     onChange,
     expanded,
     toggleExpanded,
@@ -38,6 +33,7 @@ const AddressesEditor = ({
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
     // const { createModal } = useModals();
+    const messageSendInfo = { message, mapSendInfo, setMapSendInfo };
 
     const handleChange = (type: RecipientType) => (value: Partial<Recipient>[]) => {
         onChange({ data: { [type]: value } });
@@ -46,10 +42,17 @@ const AddressesEditor = ({
     // const handleContactModal = (type: RecipientType) => async () => {
     //     const recipients = await new Promise((resolve) => {
     //         createModal(
-    //             <AddressesContactsModal inputValue={message.data?.[type]} allContacts={contacts} onSubmit={resolve} />
+    //             <AddressesContactsModal
+    //                 message={message}
+    //                 inputValue={message.data?.[type]}
+    //                 allContacts={contacts}
+    //                 mapSendInfo={mapSendInfo}
+    //                 setMapSendInfo={setMapSendInfo}
+    //                 onSubmit={resolve}
+    //             />
     //         );
     //     });
-
+    //
     //     onChange({ data: { [type]: recipients } });
     // };
 
@@ -65,13 +68,9 @@ const AddressesEditor = ({
                 <AddressesInput
                     id={`to-${uid}`}
                     recipients={message.data?.ToList}
-                    message={message}
+                    messageSendInfo={messageSendInfo}
                     contacts={contacts}
                     contactGroups={contactGroups}
-                    mapSendPrefs={mapSendPrefs}
-                    mapSendIcons={mapSendIcons}
-                    setMapSendPrefs={setMapSendPrefs}
-                    setMapSendIcons={setMapSendIcons}
                     onChange={handleChange('ToList')}
                     inputFocusRef={inputFocusRef}
                     placeholder={c('Placeholder').t`Email address`}
@@ -94,11 +93,7 @@ const AddressesEditor = ({
                         <AddressesInput
                             id={`cc-${uid}`}
                             recipients={message.data?.CCList}
-                            message={message}
-                            mapSendPrefs={mapSendPrefs}
-                            mapSendIcons={mapSendIcons}
-                            setMapSendPrefs={setMapSendPrefs}
-                            setMapSendIcons={setMapSendIcons}
+                            messageSendInfo={messageSendInfo}
                             onChange={handleChange('CCList')}
                             contacts={contacts}
                             contactGroups={contactGroups}
@@ -115,11 +110,7 @@ const AddressesEditor = ({
                         <AddressesInput
                             id={`bcc-${uid}`}
                             recipients={message.data?.BCCList}
-                            message={message}
-                            mapSendPrefs={mapSendPrefs}
-                            mapSendIcons={mapSendIcons}
-                            setMapSendPrefs={setMapSendPrefs}
-                            setMapSendIcons={setMapSendIcons}
+                            messageSendInfo={messageSendInfo}
                             onChange={handleChange('BCCList')}
                             contacts={contacts}
                             contactGroups={contactGroups}

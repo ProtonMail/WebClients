@@ -1,18 +1,17 @@
-import React, { Dispatch, MutableRefObject, SetStateAction, useState, useEffect, useRef } from 'react';
+import React, { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef } from 'react';
 import { useToggle, useContactEmails, useContactGroups } from 'react-components';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { MapSendPreferences } from '../../../helpers/message/sendPreferences';
+import { MapSendInfo } from '../../../models/crypto';
 
 import { MessageExtended } from '../../../models/message';
-import { MapStatusIcon } from '../../message/EncryptionStatusIcon';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 
 interface Props {
     message: MessageExtended;
-    mapSendPrefs: MapSendPreferences;
-    setMapSendPrefs: Dispatch<SetStateAction<MapSendPreferences>>;
+    mapSendInfo: MapSendInfo;
+    setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>;
     disabled: boolean;
     onChange: (message: Partial<MessageExtended>) => void;
     addressesBlurRef: MutableRefObject<() => void>;
@@ -21,8 +20,8 @@ interface Props {
 
 const Addresses = ({
     message,
-    mapSendPrefs,
-    setMapSendPrefs,
+    mapSendInfo,
+    setMapSendInfo,
     disabled,
     onChange,
     addressesBlurRef,
@@ -31,7 +30,6 @@ const Addresses = ({
     const [contacts = [], loadingContacts] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
     const inputFocusRef = useRef<() => void>(noop);
-    const [mapSendIcons, setMapSendIcons] = useState<MapStatusIcon>({});
 
     // Summary of selected addresses or addresses editor
     const { state: editor, set: setEditor } = useToggle(false);
@@ -66,10 +64,8 @@ const Addresses = ({
             message={message}
             contacts={contacts}
             contactGroups={contactGroups}
-            mapSendPrefs={mapSendPrefs}
-            mapSendIcons={mapSendIcons}
-            setMapSendPrefs={setMapSendPrefs}
-            setMapSendIcons={setMapSendIcons}
+            mapSendInfo={mapSendInfo}
+            setMapSendInfo={setMapSendInfo}
             onChange={onChange}
             expanded={expanded}
             toggleExpanded={toggleExpanded}
@@ -78,7 +74,7 @@ const Addresses = ({
     ) : (
         <AddressesSummary
             message={message}
-            mapSendIcons={mapSendIcons}
+            mapSendInfo={mapSendInfo}
             contacts={contacts}
             contactGroups={contactGroups}
             onFocus={handleFocus}

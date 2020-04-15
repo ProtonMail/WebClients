@@ -1,14 +1,24 @@
 import { EncryptionPreferences } from 'proton-shared/lib/mail/encryptionPreferences';
+import { SendPreferences } from '../../models/crypto';
 import { Message } from '../../models/message';
 import { isSign } from './messages';
-import { getMimeType, getPGPScheme, SendPreferences } from './sendPreferences';
+import { getMimeType, getPGPScheme } from './sendPreferences';
 
 /**
  * Get the send preferences for sending a message based on the encryption preferences
  * for sending to an email address, and the message preferences.
  */
 const getSendPreferences = (encryptionPreferences: EncryptionPreferences, message?: Message): SendPreferences => {
-    const { encrypt, sign, publicKey, isPublicKeyPinned, hasApiKeys, hasPinnedKeys, warnings } = encryptionPreferences;
+    const {
+        encrypt,
+        sign,
+        publicKey,
+        isPublicKeyPinned,
+        hasApiKeys,
+        hasPinnedKeys,
+        warnings,
+        failure
+    } = encryptionPreferences;
     // override sign if necessary
     // (i.e. when the contact sign preference is false and the user toggles "Sign" on the composer)
     const newSign = sign || isSign(message);
@@ -26,7 +36,8 @@ const getSendPreferences = (encryptionPreferences: EncryptionPreferences, messag
         isPublicKeyPinned,
         hasApiKeys,
         hasPinnedKeys,
-        warnings
+        warnings,
+        failure
     };
 };
 

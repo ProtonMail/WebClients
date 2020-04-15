@@ -91,6 +91,7 @@ export const recipientToInput = (recipient: Partial<Recipient> = {}): string => 
 export const contactToRecipient = (contact: Partial<ContactEmail> = {}, groupPath?: string): Partial<Recipient> => ({
     Name: contact.Name,
     Address: contact.Email,
+    ContactID: contact.ContactID,
     Group: groupPath
 });
 

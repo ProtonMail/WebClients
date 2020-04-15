@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, Dispatch, SetStateAction } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import {
     Table,
@@ -10,9 +10,7 @@ import {
     SearchInput as SearchInputUntyped
 } from 'react-components';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { MapSendPreferences } from '../../../helpers/message/sendPreferences';
-import { MessageExtended } from '../../../models/message';
-import { MapStatusIcon } from '../../message/EncryptionStatusIcon';
+import { MessageSendInfo } from './AddressesInput';
 import AddressesRecipientItem from './AddressesRecipientItem';
 import { Recipient } from '../../../models/address';
 
@@ -21,24 +19,16 @@ const SearchInput = SearchInputUntyped as any;
 interface Props {
     inputValue?: Recipient[];
     allContacts?: ContactEmail[];
-    message: MessageExtended;
-    mapSendPrefs: MapSendPreferences;
-    mapSendIcons: MapStatusIcon;
-    setMapSendPrefs: Dispatch<SetStateAction<MapSendPreferences>>;
-    setMapSendIcons: Dispatch<SetStateAction<MapStatusIcon>>;
+    messageSendInfo: MessageSendInfo;
     onClose?: () => void;
     onSubmit: (recipients: Recipient[]) => void;
 }
 
 const AddressesContactsModal = ({
-    message,
-    mapSendPrefs,
-    mapSendIcons,
-    setMapSendPrefs,
-    setMapSendIcons,
+    messageSendInfo,
+    inputValue = [],
     onSubmit,
     onClose,
-    inputValue = [],
     allContacts = [],
     ...rest
 }: Props) => {
@@ -108,12 +98,8 @@ const AddressesContactsModal = ({
                     {value.map((recipient, i) => (
                         <AddressesRecipientItem
                             key={i}
-                            recipient={recipient as Required<Pick<Recipient, 'Address'>>}
-                            message={message}
-                            mapSendPrefs={mapSendPrefs}
-                            mapSendIcons={mapSendIcons}
-                            setMapSendPrefs={setMapSendPrefs}
-                            setMapSendIcons={setMapSendIcons}
+                            recipient={recipient as Required<Pick<Recipient, 'Address' | 'ContactID'>>}
+                            messageSendInfo={messageSendInfo}
                             onRemove={handleRemove(recipient)}
                         />
                     ))}

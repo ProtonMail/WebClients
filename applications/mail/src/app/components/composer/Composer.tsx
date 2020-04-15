@@ -5,7 +5,7 @@ import { Address } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 
-import { MapSendPreferences } from '../../helpers/message/sendPreferences';
+import { MapSendInfo } from '../../models/crypto';
 import { MessageExtended } from '../../models/message';
 import ComposerTitleBar from './ComposerTitleBar';
 import ComposerMeta from './ComposerMeta';
@@ -113,8 +113,8 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
         }
     });
 
-    // Map of send preferences for each recipient
-    const [mapSendPrefs, setMapSendPrefs] = useState<MapSendPreferences>({});
+    // Map of send preferences and send icons for each recipient
+    const [mapSendInfo, setMapSendInfo] = useState<MapSendInfo>({});
 
     // Synced with server version of the edited message
     const { message: syncedMessage, addAction } = useMessage(messageID);
@@ -256,7 +256,7 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
     };
     const handleSend = async () => {
         setSending(true);
-        await addAction(() => sendMessage(modelMessage));
+        await addAction(() => sendMessage(modelMessage as MessageExtended & Required<Pick<MessageExtended, 'data'>>));
         createNotification({ text: c('Success').t`Message sent` });
         onClose();
     };
@@ -334,8 +334,8 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
                             message={modelMessage}
                             addresses={addresses}
                             mailSettings={mailSettings}
-                            mapSendPrefs={mapSendPrefs}
-                            setMapSendPrefs={setMapSendPrefs}
+                            mapSendInfo={mapSendInfo}
+                            setMapSendInfo={setMapSendInfo}
                             disabled={!editorReady}
                             onChange={handleChange}
                             addressesBlurRef={addressesBlurRef}

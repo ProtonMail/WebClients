@@ -74,7 +74,7 @@
 }
 
 .composer-addresses-container-line:not(:first-child) {
-    padding-right: 30px;
+    padding-right: 3rem;
 }
 
 .composer-addresses-container {
@@ -90,6 +90,12 @@
 
     padding-top: 6px;
     padding-bottom: 1px;
+
+    &::after { // trick to keep space in case of loooooooong email with scroll and last one
+        content: '';
+        width: 100%;
+        height: .1rem;
+    }
 
     .pm-field {
         border: none;

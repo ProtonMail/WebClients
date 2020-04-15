@@ -1,9 +1,9 @@
 import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 import { Api } from 'proton-shared/lib/interfaces';
 import { OpenPGPKey } from 'pmcrypto';
+import { MapSendPreferences } from '../../models/crypto';
 
 import { MessageExtended } from '../../models/message';
-import { MapSendPreferences } from '../message/sendPreferences';
 import { constructMime } from './sendMimeBuilder';
 import { addReceived } from '../message/messages';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
