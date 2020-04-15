@@ -21,8 +21,7 @@ interface Props {
     selectedItems: FileBrowserItem[];
     isTrash?: boolean;
     onToggleItemSelected: (item: string) => void;
-    onItemClick: (item: string) => void;
-    onItemDoubleClick?: (item: FileBrowserItem) => void;
+    onItemClick?: (item: FileBrowserItem) => void;
     onShiftClick: (item: string) => void;
     onEmptyAreaClick: () => void;
     onToggleAllSelected: () => void;
@@ -36,7 +35,6 @@ const FileBrowser = ({
     onToggleItemSelected,
     onToggleAllSelected,
     onItemClick,
-    onItemDoubleClick,
     onEmptyAreaClick,
     onShiftClick
 }: Props) => {
@@ -77,7 +75,6 @@ const FileBrowser = ({
                             item={item}
                             selectedItems={selectedItems}
                             onToggleSelect={onToggleItemSelected}
-                            onDoubleClick={onItemDoubleClick}
                             onShiftClick={onShiftClick}
                             onClick={onItemClick}
                         />
