@@ -4,7 +4,7 @@ export const identity = (value: any) => value;
 export const debounce = <A extends any[]>(func: (...args: A) => void, wait: number, isImmediate?: boolean) => {
     let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
-    return function executedFunction(this: any, ...args: A) {
+    function debouncedFunction(this: any, ...args: A) {
         const later = () => {
             timeoutId = undefined;
             if (!isImmediate) {
@@ -23,7 +23,16 @@ export const debounce = <A extends any[]>(func: (...args: A) => void, wait: numb
         if (shouldCallNow) {
             func.apply(this, args);
         }
+    }
+
+    debouncedFunction.abort = () => {
+        if (timeoutId !== undefined) {
+            clearTimeout(timeoutId);
+            timeoutId = undefined;
+        }
     };
+
+    return debouncedFunction;
 };
 
 export const throttle = <A extends any[]>(func: (...args: A) => void, ms = 50, context = window) => {
