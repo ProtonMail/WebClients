@@ -59,18 +59,18 @@ const TrashToolbar = ({ shareId, fileBrowserControls }: Props) => {
         const [{ Name: firstItemName }] = restoredItems;
         const notificationMessages = {
             allFiles: c('Notification').ngettext(
-                msgid`"${firstItemName}" restored from Trash.`,
-                `${restoredItemsCount} files restored from Trash.`,
+                msgid`"${firstItemName}" restored from Trash`,
+                `${restoredItemsCount} files restored from Trash`,
                 restoredItemsCount
             ),
             allFolders: c('Notification').ngettext(
-                msgid`"${firstItemName}" restored from Trash.`,
-                `${restoredItemsCount} folders restored from Trash.`,
+                msgid`"${firstItemName}" restored from Trash`,
+                `${restoredItemsCount} folders restored from Trash`,
                 restoredItemsCount
             ),
             mixed: c('Notification').ngettext(
-                msgid`"${firstItemName}" restored from Trash.`,
-                `${restoredItemsCount} items restored from Trash.`,
+                msgid`"${firstItemName}" restored from Trash`,
+                `${restoredItemsCount} items restored from Trash`,
                 restoredItemsCount
             )
         };
@@ -104,18 +104,18 @@ const TrashToolbar = ({ shareId, fileBrowserControls }: Props) => {
             const [{ Name: firstItemName }] = deletedItems;
             const notificationMessages = {
                 allFiles: c('Notification').ngettext(
-                    msgid`"${firstItemName}" deleted permanently from Trash.`,
-                    `${deletedItemsCount} files deleted permanently from Trash.`,
+                    msgid`"${firstItemName}" deleted permanently from Trash`,
+                    `${deletedItemsCount} files deleted permanently from Trash`,
                     deletedItemsCount
                 ),
                 allFolders: c('Notification').ngettext(
-                    msgid`"${firstItemName}" deleted permanently from Trash.`,
-                    `${deletedItemsCount} folders deleted permanently from Trash.`,
+                    msgid`"${firstItemName}" deleted permanently from Trash`,
+                    `${deletedItemsCount} folders deleted permanently from Trash`,
                     deletedItemsCount
                 ),
                 mixed: c('Notification').ngettext(
-                    msgid`"${firstItemName}" deleted permanently from Trash.`,
-                    `${deletedItemsCount} items deleted permanently from Trash.`,
+                    msgid`"${firstItemName}" deleted permanently from Trash`,
+                    `${deletedItemsCount} items deleted permanently from Trash`,
                     deletedItemsCount
                 )
             };
@@ -138,7 +138,7 @@ const TrashToolbar = ({ shareId, fileBrowserControls }: Props) => {
         openConfirmModal(title, confirm, message, async () => {
             await emptyTrash(shareId);
 
-            const notificationText = c('Notification').t`All the items are permanently deleted from Trash.`;
+            const notificationText = c('Notification').t`All the items are permanently deleted from Trash`;
             createNotification({ text: notificationText });
             events.call(shareId);
         });
