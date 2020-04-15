@@ -114,6 +114,10 @@ const useDriveCacheState = () => {
         return undefined;
     };
 
+    const getTrashChildLinks = (shareId: string) => {
+        return cacheRef.current[shareId].trash.list;
+    };
+
     const setChildLinkMetas = (
         metas: LinkMeta[],
         shareId: string,
@@ -135,7 +139,10 @@ const useDriveCacheState = () => {
                     ...linkIds.filter((id) => !existing.includes(id))
                 ];
             } else {
-                parent.children.list = [...parent.children.list, ...linkIds];
+                parent.children.list = [
+                    ...parent.children.list,
+                    ...linkIds.filter((id) => !parent.children.list.includes(id))
+                ];
                 parent.children.unlisted = parent.children.unlisted.filter((id) => !linkIds.includes(id));
                 parent.children.complete = method === 'complete' ?? parent.children.complete;
             }
@@ -161,7 +168,7 @@ const useDriveCacheState = () => {
         if (method === 'unlisted') {
             trash.unlisted = [...trash.unlisted, ...linkIds.filter((id) => !existing.includes(id))];
         } else {
-            trash.list = [...trash.list, ...linkIds];
+            trash.list = [...trash.list, ...linkIds.filter((id) => !trash.list.includes(id))];
             trash.unlisted = trash.unlisted.filter((id) => !linkIds.includes(id));
             trash.complete = method === 'complete' ?? trash.complete;
         }
@@ -209,7 +216,7 @@ const useDriveCacheState = () => {
         return links?.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
     };
 
-    const getShareTrashMetas = (shareId: string) => {
+    const getTrashMetas = (shareId: string) => {
         const links = getTrashLinks(shareId);
         return links.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
     };
@@ -276,8 +283,9 @@ const useDriveCacheState = () => {
             emptyShares: setEmptyShares
         },
         get: {
-            shareTrashMetas: getShareTrashMetas,
+            trashMetas: getTrashMetas,
             trashComplete: getTrashComplete,
+            trashChildLinks: getTrashChildLinks,
             defaultShareMeta: getDefaultShareMeta,
             childrenComplete: getChildrenComplete,
             childLinkMetas: getChildLinkMetas,

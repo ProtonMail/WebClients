@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect, useContext, useRef } from 'react';
+import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
 import { ResourceType, LinkMeta } from '../../interfaces/link';
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import { DriveResource, useDriveResource } from './DriveResourceProvider';
@@ -41,7 +41,7 @@ const DriveContentProviderInner = ({ children, resource }: { children: React.Rea
     const abortSignal = useRef<AbortSignal>();
     const contentLoading = useRef(false);
 
-    const loadNextPage = async (): Promise<void> => {
+    const loadNextPage = useCallback(async (): Promise<void> => {
         if (contentLoading.current || complete) {
             return;
         }
@@ -72,7 +72,7 @@ const DriveContentProviderInner = ({ children, resource }: { children: React.Rea
         if (!signal?.aborted) {
             contentLoading.current = false;
         }
-    };
+    }, [resource.shareId, resource.linkId]);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -85,13 +85,15 @@ const DriveContentProviderInner = ({ children, resource }: { children: React.Rea
                 setLoading(false);
             }
 
-            loadNextPage();
+            if (!cache.get.listedChildLinks(resource.shareId, resource.linkId)?.length) {
+                loadNextPage();
+            }
         }
         return () => {
             contentLoading.current = false;
             abortController.abort();
         };
-    }, [resource.shareId, resource.type, resource.linkId]);
+    }, [loadNextPage, resource.type]);
 
     return (
         <DriveContentContext.Provider

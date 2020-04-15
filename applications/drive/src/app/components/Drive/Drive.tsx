@@ -44,7 +44,7 @@ function Drive({ resource, openResource }: Props) {
         if (initialized && !complete) {
             loadNextPage();
         }
-    }, [initialized, complete]);
+    }, [initialized, complete, loadNextPage]);
 
     useOnScrollEnd(handleScrollEnd, mainAreaRef, 0.9);
 

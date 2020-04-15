@@ -6,7 +6,7 @@ import { useLoading, useSortedList } from 'react-components';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 import Page, { PageMainArea } from '../components/Page';
-import DriveContentProvider, { mapLinksToChildren } from '../components/Drive/DriveContentProvider';
+import { mapLinksToChildren } from '../components/Drive/DriveContentProvider';
 import TrashToolbar from '../components/Drive/Trash/TrashToolbar';
 import StickyHeader from '../components/StickyHeader';
 import Trash from '../components/Drive/Trash/Trash';
@@ -25,7 +25,7 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
     const cache = useDriveCache();
     const { fetchTrash } = useTrash();
     const [shareId, setShareId] = useState(() => match.params.shareId);
-    const trashLinks = shareId ? cache.get.shareTrashMetas(shareId) : [];
+    const trashLinks = shareId ? cache.get.trashMetas(shareId) : [];
     const [contents, setContents] = useState<FileBrowserItem[]>([]);
     const { sortedList } = useSortedList(contents, { key: 'Modified', direction: SORT_DIRECTION.ASC });
     const fileBrowserControls = useFileBrowser(sortedList);
@@ -67,7 +67,6 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
         };
     }, [trashLinks.length]);
 
-    // TODO: request more than one page of links with pagination and infinite scroll
     useEffect(() => {
         setResource(undefined);
 
@@ -81,9 +80,10 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
             shareId = meta.ShareID;
         }
 
-        const complete = cache.get.trashComplete(shareId);
+        const loadedItems = cache.get.trashChildLinks(shareId);
 
-        if (!complete) {
+        // TODO: request more than one page of links with pagination and infinite scroll
+        if (!loadedItems.length) {
             withLoading(fetchTrash(shareId, 0, FOLDER_PAGE_SIZE)).catch((e) =>
                 setError(() => {
                     throw e;
@@ -98,20 +98,18 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
 
     return (
         <Page title={c('Title').t`Trash`}>
-            <DriveContentProvider>
-                <TrashToolbar shareId={shareId} fileBrowserControls={fileBrowserControls} />
-                <PageMainArea hasToolbar className="flex flex-column">
-                    <StickyHeader>
-                        <div className="pt0-5 pb0-5 pl0-25 pr0-25 strong">{c('Info').t`Trash`}</div>
-                    </StickyHeader>
-                    <Trash
-                        loading={loading}
-                        complete={completed}
-                        fileBrowserControls={fileBrowserControls}
-                        contents={sortedList}
-                    />
-                </PageMainArea>
-            </DriveContentProvider>
+            <TrashToolbar shareId={shareId} fileBrowserControls={fileBrowserControls} />
+            <PageMainArea hasToolbar className="flex flex-column">
+                <StickyHeader>
+                    <div className="pt0-5 pb0-5 pl0-25 pr0-25 strong">{c('Info').t`Trash`}</div>
+                </StickyHeader>
+                <Trash
+                    loading={loading}
+                    complete={completed}
+                    fileBrowserControls={fileBrowserControls}
+                    contents={sortedList}
+                />
+            </PageMainArea>
         </Page>
     );
 };
