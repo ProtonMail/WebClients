@@ -22,7 +22,8 @@ export const getNotificationTextForItemList = (
     if (undoAction) {
         return (
             <>
-                {notificationText}{' '}
+                {notificationText}
+                {'. '}
                 <LinkButton
                     className="alignbaseline nodecoration bold pm-button--currentColor"
                     onClick={() => undoAction()}

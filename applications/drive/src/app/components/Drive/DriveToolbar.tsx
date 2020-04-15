@@ -109,18 +109,18 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
             const [{ Name: firstItemName }] = restoredLinks;
             const notificationMessages = {
                 allFiles: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash.`,
-                    `${restoredItemsCount} files restored from Trash.`,
+                    msgid`"${firstItemName}" restored from Trash`,
+                    `${restoredItemsCount} files restored from Trash`,
                     restoredItemsCount
                 ),
                 allFolders: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash.`,
-                    `${restoredItemsCount} folders restored from Trash.`,
+                    msgid`"${firstItemName}" restored from Trash`,
+                    `${restoredItemsCount} folders restored from Trash`,
                     restoredItemsCount
                 ),
                 mixed: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash.`,
-                    `${restoredItemsCount} items restored from Trash.`,
+                    msgid`"${firstItemName}" restored from Trash`,
+                    `${restoredItemsCount} items restored from Trash`,
                     restoredItemsCount
                 )
             };
@@ -133,18 +133,18 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
         const [{ Name: firstItemName }] = trashedLinks;
         const notificationMessages = {
             allFiles: c('Notification').ngettext(
-                msgid`"${firstItemName}" moved to Trash.`,
-                `${trashedLinksCount} files moved to Trash.`,
+                msgid`"${firstItemName}" moved to Trash`,
+                `${trashedLinksCount} files moved to Trash`,
                 trashedLinksCount
             ),
             allFolders: c('Notification').ngettext(
-                msgid`"${firstItemName}" moved to Trash.`,
-                `${trashedLinksCount} folders moved to Trash.`,
+                msgid`"${firstItemName}" moved to Trash`,
+                `${trashedLinksCount} folders moved to Trash`,
                 trashedLinksCount
             ),
             mixed: c('Notification').ngettext(
-                msgid`"${firstItemName}" moved to Trash.`,
-                `${trashedLinksCount} items moved to Trash.`,
+                msgid`"${firstItemName}" moved to Trash`,
+                `${trashedLinksCount} items moved to Trash`,
                 trashedLinksCount
             )
         };
