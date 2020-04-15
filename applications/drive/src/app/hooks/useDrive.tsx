@@ -53,6 +53,8 @@ function useDrive() {
             })
         );
 
+        cache.set.emptyShares([Volume.Share.ID]);
+
         return Volume;
     };
 

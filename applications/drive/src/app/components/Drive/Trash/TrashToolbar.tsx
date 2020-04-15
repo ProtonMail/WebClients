@@ -22,7 +22,7 @@ const TrashToolbar = ({ shareId, fileBrowserControls }: Props) => {
     const { events } = useDrive();
     const { restoreLink, deleteLink, emptyTrash } = useTrash();
     const cache = useDriveCache();
-    const trashItems = shareId ? cache.get.shareTrashMetas(shareId) : [];
+    const trashItems = shareId ? cache.get.trashMetas(shareId) : [];
     const { selectedItems } = fileBrowserControls;
 
     const openConfirmModal = (title: string, confirm: string, message: string, onConfirm: () => void) => {
