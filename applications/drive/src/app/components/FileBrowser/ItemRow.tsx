@@ -9,12 +9,11 @@ interface Props {
     item: FileBrowserItem;
     selectedItems: FileBrowserItem[];
     onToggleSelect: (item: string) => void;
-    onClick: (item: string) => void;
     onShiftClick: (item: string) => void;
-    onDoubleClick?: (item: FileBrowserItem) => void;
+    onClick?: (item: FileBrowserItem) => void;
 }
 
-const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, onShiftClick }: Props) => {
+const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onShiftClick }: Props) => {
     const { isDesktop } = useActiveBreakpoint();
     const touchStarted = useRef(false);
 
@@ -25,7 +24,7 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
         } else if (e.ctrlKey || e.metaKey) {
             onToggleSelect(item.LinkID);
         } else {
-            onClick(item.LinkID);
+            onClick?.(item);
         }
     };
 
@@ -42,25 +41,15 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
 
     const handleTouchEnd = () => {
         if (touchStarted.current) {
-            onDoubleClick?.(item);
+            onClick?.(item);
         }
         touchStarted.current = false;
-    };
-
-    const handleRowDoubleClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
-        e.stopPropagation();
-        onDoubleClick?.(item);
     };
 
     const isFolder = item.Type === ResourceType.FOLDER;
     const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
     const cells = [
-        <div
-            key="select"
-            onClick={(e) => e.stopPropagation()}
-            onTouchStart={(e) => e.stopPropagation()}
-            onDoubleClick={(e) => e.stopPropagation()}
-        >
+        <div key="select" onClick={(e) => e.stopPropagation()} onTouchStart={(e) => e.stopPropagation()}>
             <Checkbox checked={isSelected} onChange={() => onToggleSelect(item.LinkID)} />
         </div>,
         <div key="filename" className="flex flex-items-center flex-nowrap">
@@ -92,7 +81,6 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onDoubleClick, 
             className="pd-fb-table-row"
             onMouseDown={() => document.getSelection()?.removeAllRanges()}
             onClick={handleRowClick}
-            onDoubleClick={handleRowDoubleClick}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchCancel}
             onTouchCancel={handleTouchCancel}

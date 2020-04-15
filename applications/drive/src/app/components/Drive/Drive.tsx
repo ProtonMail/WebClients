@@ -30,14 +30,7 @@ function Drive({ resource, openResource }: Props) {
     const { startFileTransfer } = useFiles();
     const { loadNextPage, fileBrowserControls, loading, contents, complete, initialized } = useDriveContent();
 
-    const {
-        clearSelections,
-        selectedItems,
-        selectItem,
-        toggleSelectItem,
-        toggleAllSelected,
-        selectRange
-    } = fileBrowserControls;
+    const { clearSelections, selectedItems, toggleSelectItem, toggleAllSelected, selectRange } = fileBrowserControls;
 
     const handleScrollEnd = useCallback(() => {
         // Only load on scroll after initial load from backend
@@ -49,7 +42,7 @@ function Drive({ resource, openResource }: Props) {
     // On content change, check scroll end (does not rebind listeners)
     useOnScrollEnd(handleScrollEnd, mainAreaRef, 0.9, [contents]);
 
-    const handleDoubleClick = async (item: FileBrowserItem) => {
+    const handleClick = async (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
         const driveResource = { shareId: resource.shareId, linkId: item.LinkID, type: item.Type };
         if (item.Type === ResourceType.FOLDER) {
@@ -72,9 +65,8 @@ function Drive({ resource, openResource }: Props) {
             loading={loading}
             contents={contents}
             selectedItems={selectedItems}
-            onItemClick={selectItem}
+            onItemClick={handleClick}
             onToggleItemSelected={toggleSelectItem}
-            onItemDoubleClick={handleDoubleClick}
             onEmptyAreaClick={clearSelections}
             onToggleAllSelected={toggleAllSelected}
             onShiftClick={selectRange}

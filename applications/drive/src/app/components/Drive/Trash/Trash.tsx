@@ -11,14 +11,7 @@ interface Props {
 }
 
 function Trash({ loading, complete, contents, fileBrowserControls }: Props) {
-    const {
-        clearSelections,
-        selectedItems,
-        selectItem,
-        toggleSelectItem,
-        toggleAllSelected,
-        selectRange
-    } = fileBrowserControls;
+    const { clearSelections, selectedItems, toggleSelectItem, toggleAllSelected, selectRange } = fileBrowserControls;
 
     return complete && !contents.length && !loading ? (
         <EmptyTrash />
@@ -28,7 +21,6 @@ function Trash({ loading, complete, contents, fileBrowserControls }: Props) {
             loading={loading}
             contents={contents}
             selectedItems={selectedItems}
-            onItemClick={selectItem}
             onToggleItemSelected={toggleSelectItem}
             onEmptyAreaClick={clearSelections}
             onToggleAllSelected={toggleAllSelected}
