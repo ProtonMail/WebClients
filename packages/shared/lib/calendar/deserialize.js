@@ -12,10 +12,6 @@ export const readSessionKey = (KeyPacket, privateKeys) => {
 
 /**
  * Read the session keys.
- * @param {String} SharedKeyPacket
- * @param {String} CalendarKeyPacket
- * @param {Array<PGPKey>|PGPKey} privateKeys - The private keys of the calendar
- * @returns {Promise}
  */
 export const readSessionKeys = ({ SharedKeyPacket, CalendarKeyPacket }, privateKeys) => {
     return Promise.all([

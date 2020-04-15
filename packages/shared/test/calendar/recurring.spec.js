@@ -19,6 +19,12 @@ const stringifyResultSimple = (result) => {
     });
 };
 
+const stringifyLocalResultSimple = (result) => {
+    return result.map(({ localStart, occurrenceNumber }) => {
+        return `${localStart.toISOString()} - ${occurrenceNumber}`;
+    });
+};
+
 describe('recurring', () => {
     const component = {
         dtstart: {
@@ -235,9 +241,28 @@ DTSTART:20200201T030000Z
 DTEND:20200201T040000Z
 END:VEVENT
 `);
-        expect(getOccurrences(component, 0).length).toBe(0);
-        expect(getOccurrences(component, 1).length).toBe(1);
-        expect(getOccurrences(component, 2).length).toBe(1);
+        expect(getOccurrences({ component, maxCount: 0 }).length).toBe(0);
+        expect(getOccurrences({ component, maxCount: 1 }).length).toBe(1);
+        expect(getOccurrences({ component, maxCount: 2 }).length).toBe(1);
+    });
+
+    it('should fill occurrences with max start', () => {
+        const component = parse(`
+BEGIN:VEVENT
+DTSTART:20200201T030000Z
+DTEND:20200201T040000Z
+RRULE:FREQ=DAILY;COUNT=6
+END:VEVENT
+`);
+        expect(
+            stringifyLocalResultSimple(
+                getOccurrences({
+                    component,
+                    maxCount: 999,
+                    maxStart: new Date(Date.UTC(2020, 1, 4))
+                })
+            )
+        ).toEqual(['2020-02-01T03:00:00.000Z - 1', '2020-02-02T03:00:00.000Z - 2', '2020-02-03T03:00:00.000Z - 3']);
     });
 
     it('should fill occurrences for a UTC date with an exdate', () => {

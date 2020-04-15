@@ -1,3 +1,7 @@
+import { Member } from './Member';
+import { Passphrase } from './Passphrase';
+import { Key } from './Key';
+
 export interface Calendar {
     ID: string;
     Name: string;
@@ -62,4 +66,11 @@ export interface CalendarSettings {
     DefaultEventDuration: number;
     DefaultPartDayNotifications: CalendarNotificationSettings[];
     DefaultFullDayNotifications: CalendarNotificationSettings[];
+}
+
+export interface CalendarBootstrap {
+    Keys: Key[];
+    Passphrase: Passphrase;
+    Members: Member[];
+    CalendarSettings: CalendarSettings;
 }

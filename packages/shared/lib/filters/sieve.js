@@ -1,5 +1,5 @@
-import _ from 'lodash';
 import Sieve from 'sieve.js';
+import isDeepEqual from '../helpers/isDeepEqual';
 
 /**
  * Template for Sieve scripts.
@@ -29,7 +29,7 @@ export const computeFromTree = (filter) => {
     const simple = Sieve.fromTree(filter.Tree);
     const fromSimple = Sieve.toTree(simple, filter.Version).filter(ignoreComment);
     const original = filter.Tree.filter(ignoreComment);
-    return _.isEqual(fromSimple, original) && simple;
+    return isDeepEqual(fromSimple, original) && simple;
 };
 
 /**

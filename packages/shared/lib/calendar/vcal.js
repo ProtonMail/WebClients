@@ -54,7 +54,11 @@ export const internalValueToIcalValue = (type, value, { tzid } = {}) => {
         return getIcalPeriodValue(value, tzid);
     }
     if (type === 'recur') {
-        return ICAL.Recur.fromData({ ...value, until: getIcalUntilValue(value.until) });
+        if (!value.until) {
+            return ICAL.Recur.fromData(value);
+        }
+        const until = getIcalUntilValue(value.until);
+        return ICAL.Recur.fromData({ ...value, until });
     }
     return value.toString();
 };
@@ -125,10 +129,14 @@ export const icalValueToInternalValue = (type, value) => {
         };
     }
     if (type === 'recur') {
-        return {
-            ...value.toJSON(),
-            until: getInternalUntil(value.until)
+        const result = {
+            ...value.toJSON()
         };
+        const until = getInternalUntil(value.until);
+        if (until) {
+            result.until = until;
+        }
+        return result;
     }
     return value.toString();
 };

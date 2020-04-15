@@ -8,8 +8,18 @@ import { createExdateMap } from './exdate';
 
 const YEAR_IN_MS = Date.UTC(1971, 0, 1);
 
+/**
+ * @param {{ rrule?: any }} config
+ */
 export const isIcalRecurring = ({ rrule }) => {
     return !!rrule;
+};
+
+/**
+ * @param {{ recurrence-id?: any }} config
+ */
+export const getIcalRecurrenceId = ({ 'recurrence-id': recurrenceId }) => {
+    return recurrenceId;
 };
 
 const isInInterval = (a1, a2, b1, b2) => a1 <= b2 && a2 >= b1;
@@ -133,8 +143,8 @@ const getOccurrenceSetup = (component) => {
     };
 };
 
-export const getOccurrences = (component, max = 1, cache = {}) => {
-    if (max <= 0) {
+export const getOccurrences = ({ component, maxStart = new Date(9999, 0, 1), maxCount = 1, cache = {} }) => {
+    if (maxCount <= 0) {
         return [];
     }
 
@@ -142,7 +152,7 @@ export const getOccurrences = (component, max = 1, cache = {}) => {
         cache.start = getOccurrenceSetup(component);
     }
 
-    const { dtstart, modifiedRrule, exdateMap } = cache.start;
+    const { eventDuration, isAllDay, dtstart, modifiedRrule, exdateMap } = cache.start;
 
     const rrule = internalValueToIcalValue('recur', modifiedRrule.value);
     const iterator = rrule.iterator(dtstart);
@@ -155,10 +165,15 @@ export const getOccurrences = (component, max = 1, cache = {}) => {
         if (exdateMap[+localStart]) {
             continue;
         }
-        if (result.length >= max) {
+        if (result.length >= maxCount || localStart >= maxStart) {
             break;
         }
-        result.push(localStart);
+        const localEnd = isAllDay ? addDays(localStart, eventDuration) : addMilliseconds(localStart, eventDuration);
+        result.push({
+            localStart,
+            localEnd,
+            occurrenceNumber: iterator.occurrence_number
+        });
     }
     return result;
 };

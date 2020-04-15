@@ -9,6 +9,7 @@ export const PROPERTIES = {
     description: UNIQUE,
     geo: UNIQUE,
     'last-mod': UNIQUE,
+    'recurrence-id': UNIQUE,
     location: UNIQUE,
     organizer: UNIQUE,
     priority: UNIQUE,

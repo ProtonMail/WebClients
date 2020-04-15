@@ -17,6 +17,14 @@ DTEND;VALUE=DATE:20190813
 SUMMARY:text
 END:VEVENT`;
 
+const veventWithRecurrenceId = `BEGIN:VEVENT
+UID:9E018059-2165-4170-B32F-6936E88E61E5
+RECURRENCE-ID;TZID=Europe/Zurich:20200311T100000
+DTSTART;TZID=Europe/Zurich:20200311T100000
+DTEND;TZID=Europe/Zurich:20200312T100000
+SUMMARY:text
+END:VEVENT`;
+
 const veventWithAttendees = `BEGIN:VEVENT
 UID:7E018059-2165-4170-B32F-6936E88E61E5
 DTSTART;VALUE=DATE:20190812
@@ -226,6 +234,20 @@ describe('calendar', () => {
         });
     });
 
+    it('should parse vevent with recurrence id', () => {
+        const { dtstart, 'recurrence-id': recurrenceId } = parse(veventWithRecurrenceId);
+
+        expect(recurrenceId).toEqual({
+            value: { year: 2020, month: 3, day: 11, hours: 10, minutes: 0, seconds: 0, isUTC: false },
+            parameters: { tzid: 'Europe/Zurich' }
+        });
+
+        expect(dtstart).toEqual({
+            value: { year: 2020, month: 3, day: 11, hours: 10, minutes: 0, seconds: 0, isUTC: false },
+            parameters: { tzid: 'Europe/Zurich' }
+        });
+    });
+
     it('should parse valarm in vevent', () => {
         const component = parse(valarmInVevent);
 
@@ -270,8 +292,7 @@ describe('calendar', () => {
                     value: {
                         freq: 'DAILY',
                         count: 10,
-                        interval: 3,
-                        until: undefined
+                        interval: 3
                     }
                 }
             },
@@ -355,8 +376,7 @@ describe('calendar', () => {
                         freq: 'WEEKLY',
                         count: 10,
                         interval: 3,
-                        byday: ['WE', 'TH'],
-                        until: undefined
+                        byday: ['WE', 'TH']
                     }
                 }
             },
@@ -463,8 +483,7 @@ describe('calendar', () => {
                         freq: 'MONTHLY',
                         bysetpos: 2,
                         byday: 'TU',
-                        count: 4,
-                        until: undefined
+                        count: 4
                     }
                 }
             },
@@ -533,8 +552,7 @@ describe('calendar', () => {
                         freq: 'YEARLY',
                         bymonth: 7,
                         bymonthday: 25,
-                        count: 4,
-                        until: undefined
+                        count: 4
                     }
                 }
             },
@@ -671,6 +689,11 @@ describe('calendar', () => {
     it('should round trip vevent', () => {
         const result = serialize(parse(vevent));
         expect(trimAll(result)).toEqual(trimAll(vevent));
+    });
+
+    it('should round trip vevent with recurrence-id', () => {
+        const result = serialize(parse(veventWithRecurrenceId));
+        expect(trimAll(result)).toEqual(trimAll(veventWithRecurrenceId));
     });
 
     it('should round trip vevent with attendees', () => {

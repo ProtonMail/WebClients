@@ -1,6 +1,6 @@
 import { convertZonedDateTimeToUTC, toUTCDate } from '../date/timezone';
 
-export const dateToProperty = ({ year, month = 1, day = 1 }) => {
+export const dateToProperty = ({ year = 1, month = 1, day = 1 }) => {
     // All day date properties are always floating time
     return {
         value: { year, month, day },
@@ -9,7 +9,7 @@ export const dateToProperty = ({ year, month = 1, day = 1 }) => {
 };
 
 export const dateTimeToProperty = ({
-    year,
+    year = 1,
     month = 1,
     day = 1,
     hours = 0,
@@ -45,6 +45,7 @@ export const getDateTimeProperty = (zonelessTime, tzid) => {
     });
 };
 
+/** @type any */
 export const isIcalPropertyAllDay = ({ parameters }) => {
     return parameters ? parameters.type === 'date' : false;
 };

@@ -125,8 +125,14 @@ export const getEvent = (calendarID, eventID) => ({
     method: 'get'
 });
 
+export const getEventByUID = (params) => ({
+    url: 'calendars/events',
+    method: 'get',
+    params
+});
+
 export const getEventHistory = (calendarID, eventID, params) => ({
-    url: `calendars/${calendarID}/events/${eventID}/history`,
+    url: `calendars/events/${eventID}/history`,
     method: 'get',
     params
 });
@@ -213,4 +219,10 @@ export const queryCalendarAlarms = (calendarID, params) => ({
 export const getCalendarAlarm = (calendarID, alarmID) => ({
     url: `calendars/${calendarID}/alarms/${alarmID}`,
     method: 'get'
+});
+
+export const syncMultipleEvents = (calendarID, data) => ({
+    url: `calendars/${calendarID}/events/sync`,
+    method: 'put',
+    data
 });
