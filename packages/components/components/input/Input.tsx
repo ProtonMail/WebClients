@@ -41,7 +41,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
         const [uid] = useState(generateUID('input'));
         const errorZone = required && !value && !error ? c('Error').t`This field is required` : error;
 
-        const hasError = errorZone && status.isDirty ? true : isSubmitted || false;
+        const hasError = !!(errorZone && (status.isDirty || isSubmitted));
 
         const addIconWrapper = (child: React.ReactNode) => {
             if (!icon) {
