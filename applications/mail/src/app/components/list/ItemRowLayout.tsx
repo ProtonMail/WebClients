@@ -1,4 +1,5 @@
 import React from 'react';
+import { c } from 'ttag';
 import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
@@ -20,16 +21,28 @@ interface Props {
     showIcon: boolean;
     senders: string;
     unread: boolean;
+    displayRecipients: boolean;
 }
 
-const ItemRowLayout = ({ labels, element, mailSettings = {}, type, showIcon, senders, unread }: Props) => {
+const ItemRowLayout = ({
+    labels,
+    element,
+    mailSettings = {},
+    type,
+    showIcon,
+    senders,
+    unread,
+    displayRecipients
+}: Props) => {
     const { Subject, Size } = element;
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
     const size = humanSize(Size);
 
     return (
         <div className="flex-item-fluid flex flex-nowrap flex-row flex-spacebetween item-titlesender">
-            <div className={classnames(['w20 flex mauto pr1', unread && 'bold'])}>{senders}</div>
+            <div className={classnames(['w20 flex mauto pr1', unread && 'bold'])}>
+                {displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
+            </div>
             <div className="flex-item-fluid flex mauto">
                 {showIcon && <ItemLocation message={element} mailSettings={mailSettings} />}
                 {isConversation && (
@@ -37,7 +50,7 @@ const ItemRowLayout = ({ labels, element, mailSettings = {}, type, showIcon, sen
                 )}
                 <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
                 <ItemLabels max={4} labels={labels} element={element} />
-                <ItemAttachmentIcon element={element} className="ml0-5" />
+                <ItemAttachmentIcon element={element} className="ml0-5 flex-self-vcenter" />
             </div>
             <span className="mtauto mbauto mr1 ml1 ng-binding">{size}</span>
             <span className="mauto">

@@ -24,6 +24,7 @@ export interface Message {
     Header?: string;
     ParsedHeaders?: { [key: string]: any };
     Attachments?: Attachment[];
+    NumAttachments?: number;
     Unread?: number;
     Size?: number;
     Labels?: Label[];

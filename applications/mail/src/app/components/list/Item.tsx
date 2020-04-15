@@ -125,6 +125,7 @@ const Item = ({
                 showIcon={showIcon}
                 senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
                 unread={unread}
+                displayRecipients={displayRecipients}
             />
         </div>
     );

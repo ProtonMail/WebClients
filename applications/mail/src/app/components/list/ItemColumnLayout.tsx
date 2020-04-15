@@ -1,4 +1,5 @@
 import React from 'react';
+import { c } from 'ttag';
 import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
@@ -19,9 +20,19 @@ interface Props {
     showIcon: boolean;
     senders: string;
     unread: boolean;
+    displayRecipients: boolean;
 }
 
-const ItemColumnLayout = ({ labels, element, mailSettings = {}, type, showIcon, senders, unread }: Props) => {
+const ItemColumnLayout = ({
+    labels,
+    element,
+    mailSettings = {},
+    type,
+    showIcon,
+    senders,
+    unread,
+    displayRecipients
+}: Props) => {
     const { Subject } = element;
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
 
@@ -29,7 +40,9 @@ const ItemColumnLayout = ({ labels, element, mailSettings = {}, type, showIcon, 
         <div className="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
             <div className="flex flex-items-center item-firstline">
                 <div className="flex-item-fluid flex pr1">
-                    <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{senders}</span>
+                    <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>
+                        {displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
+                    </span>
                 </div>
                 <ItemDate element={element} className={classnames([unread && 'bold'])} />
                 <span className="ml0-5 flex">
@@ -50,7 +63,7 @@ const ItemColumnLayout = ({ labels, element, mailSettings = {}, type, showIcon, 
                 </div>
                 <div className="item-icons ml0-5">
                     <ItemLabels max={4} labels={labels} element={element} />
-                    <ItemAttachmentIcon element={element} className="ml0-5" />
+                    <ItemAttachmentIcon element={element} className="ml0-5 flex-self-vcenter" />
                 </div>
             </div>
         </div>
