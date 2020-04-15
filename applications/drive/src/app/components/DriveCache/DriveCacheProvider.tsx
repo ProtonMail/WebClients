@@ -247,7 +247,7 @@ const useDriveCacheState = () => {
         setRerender((old) => ++old);
     };
 
-    const deleteLinks = (shareId: string, linkIds: string[], softDelete = false) => {
+    const deleteLinks = (shareId: string, linkIds: string[], softDelete = false, rerender = true) => {
         linkIds.forEach((id) => {
             const meta = getLinkMeta(shareId, id);
 
@@ -265,11 +265,20 @@ const useDriveCacheState = () => {
                 trash.unlisted = trash.unlisted.filter((id) => meta.LinkID !== id);
 
                 if (!softDelete) {
+                    const links = cacheRef.current[shareId].links;
+                    const childrenIds = Object.keys(links).filter(
+                        (key) => links[key].meta.ParentLinkID === meta.LinkID
+                    );
+                    deleteLinks(shareId, childrenIds, false, false);
+
                     delete cacheRef.current[shareId].links[meta.LinkID];
                 }
             }
         });
-        setRerender((old) => ++old);
+
+        if (rerender) {
+            setRerender((old) => ++old);
+        }
     };
 
     return {
