@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers/component';
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
     loading?: boolean;
     backgroundColor?: string;
     borderColor?: string;
