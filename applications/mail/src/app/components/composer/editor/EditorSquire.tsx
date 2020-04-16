@@ -81,7 +81,7 @@ const EditorSquire = forwardRef(
         const handleFocus = useHandler(() => {
             onFocus();
             // A bit artificial but will trigger "autoCloseOutside" from all dropdowns
-            document.dispatchEvent(new Event('mousedown'));
+            document.dispatchEvent(new CustomEvent('dropdownclose'));
         });
         const handleInput = useHandler(() => {
             checkImageDeletion();
