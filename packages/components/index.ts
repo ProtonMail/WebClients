@@ -18,6 +18,8 @@ export { default as DoNotWindowOpenAlertError } from './components/alert/DoNotWi
 export { default as Icon } from './components/icon/Icon';
 export { default as RoundedIcon } from './components/icon/RoundedIcon';
 export { default as Icons } from './components/icon/Icons';
+export { default as MimeIcons } from './components/icon/MimeIcons';
+export { default as MimeIcon } from './components/icon/MimeIcon';
 export { default as useToggle } from './components/toggle/useToggle';
 export { default as Toggle } from './components/toggle/Toggle';
 export { default as Badge } from './components/badge/Badge';

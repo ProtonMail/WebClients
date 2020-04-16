@@ -37,7 +37,7 @@ const Icon = ({ name, alt, color, className = '', viewBox = '0 0 16 16', size = 
                 focusable="false"
                 {...rest}
             >
-                <use xlinkHref={`#shape-${name}`} />
+                <use xlinkHref={name.startsWith('#') ? name : `#shape-${name}`} />
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
         </>
