@@ -215,6 +215,65 @@ section: fe-guidelines
 
 <p>Additional class: <code>flex-nowrap</code> applies <code>flex-wrap: nowrap;</code> to element (to avoid children wrap to the line).</p>
 
+<h2 id="vertical-centering-flex">Vertical centering done easily</h2>
+
+<p>For all <code>flex</code> children:</p>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex flex-items-center bordered-container color-global-light">
+      <div class="bg-pm-blue-light p2">div</div>
+      <span class="bg-pm-blue p1">span</span>
+      <em class="bg-pm-blue-dark p0-5">em</em>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div class="flex <strong>flex-items-center</strong>"&gt;
+  &lt;div&gt;div&lt;/div&gt;
+  &lt;span&gt;span&lt;/span&gt;
+  &lt;em&gt;em&lt;/em&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+<p>For an element/block:</p>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex bordered-container color-global-light vertical-centering-ftw">
+		<div class="bg-pm-blue-light p0-5 mauto">div with <strong>mauto class</strong> (margin: auto)</div>
+	</div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div class="<strong>flex</strong>"&gt;
+  &lt;div class="<strong>mauto</strong>"&gt;
+	div with &lt;strong&gt;mauto class&lt;/strong&gt; (margin: auto)
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+<p>For an element only (<code>span</code> in this case):</p>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex bordered-container color-global-light">
+      <div class="bg-pm-blue-light p2">div</div>
+      <span class="bg-pm-blue flex-self-vcenter p1">span</span>
+      <em class="bg-pm-blue-dark p2">em</em>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div class="<strong>flex</strong>"&gt;
+  &lt;div&gt;div&lt;/div&gt;
+  &lt;span class="<strong>flex-self-vcenter</strong>"&gt;span&lt;/span&gt;
+  &lt;em&gt;em&lt;/em&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
 
 
 <h2>Items size and behaviour</h2>
@@ -238,8 +297,8 @@ section: fe-guidelines
   </div>
 </div>
 
-<p><code>flex-item-fluid</code> applies <code>flex: 1 1 0px</code> to the element.</p> 
-<p><code>flex-item-fluid-auto</code> applies <code>flex: 1 1 auto</code> to the element.</p> 
+<p><code>flex-item-fluid</code> applies <code>flex: 1 1 0px</code> to the element.</p>
+<p><code>flex-item-fluid-auto</code> applies <code>flex: 1 1 auto</code> to the element.</p>
 
 <p>If you need an element that <strong>does not shrink</strong>, you may use <code>flex-item-noshrink</code> (applies <code>flex-shrink: 0</code>).<br>
 If you need an element that <strong>does not grow</strong>, you may use <code>flex-item-nogrow</code> (applies <code>flex-grow: 0</code>).<br>
