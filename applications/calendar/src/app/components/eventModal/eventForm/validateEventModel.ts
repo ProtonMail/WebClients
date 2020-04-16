@@ -1,7 +1,7 @@
 import { modelToGeneralProperties } from './modelToProperties';
 import { c } from 'ttag';
 import { getTimeInUtc } from './time';
-import { END_TYPE } from '../../../constants';
+import { END_TYPE, FREQUENCY } from '../../../constants';
 import { isBefore } from 'date-fns';
 import { EventModel, EventModelErrors } from '../../../interfaces/EventModel';
 
@@ -21,22 +21,24 @@ const validateEventModel = ({ start, end, isAllDay, title, frequencyModel }: Eve
         errors.end = c('Error').t`Start time must be before end time`;
     }
 
-    if (!frequencyModel.interval) {
-        errors.interval = c('Error').t`Interval cannot be empty`;
-    }
-
-    if (frequencyModel.ends.type === END_TYPE.UNTIL) {
-        if (!frequencyModel.ends.until) {
-            errors.until = c('Error').t`Ends on date cannot be empty`;
+    if (frequencyModel.type === FREQUENCY.CUSTOM) {
+        if (!frequencyModel.interval) {
+            errors.interval = c('Error').t`Interval cannot be empty`;
         }
-        if (frequencyModel.ends.until && isBefore(frequencyModel.ends.until, start.date)) {
-            errors.until = c('Error').t`Ends on date must be after start time`;
-        }
-    }
 
-    if (frequencyModel.ends.type === END_TYPE.AFTER_N_TIMES) {
-        if (!frequencyModel.ends.count) {
-            errors.count = c('Error').t`Number of occurrences cannot be empty`;
+        if (frequencyModel.ends.type === END_TYPE.UNTIL) {
+            if (!frequencyModel.ends.until) {
+                errors.until = c('Error').t`Ends on date cannot be empty`;
+            }
+            if (frequencyModel.ends.until && isBefore(frequencyModel.ends.until, start.date)) {
+                errors.until = c('Error').t`Ends on date must be after start time`;
+            }
+        }
+
+        if (frequencyModel.ends.type === END_TYPE.AFTER_N_TIMES) {
+            if (!frequencyModel.ends.count) {
+                errors.count = c('Error').t`Number of occurrences cannot be empty`;
+            }
         }
     }
 
