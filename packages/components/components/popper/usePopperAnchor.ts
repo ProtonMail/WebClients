@@ -14,7 +14,7 @@ const usePopperAnchor = <T extends HTMLElement>() => {
 
     const toggle = useCallback(() => {
         return isOpen ? close() : open();
-    }, []);
+    }, [isOpen]);
 
     return { anchorRef, isOpen, toggle, open, close };
 };
