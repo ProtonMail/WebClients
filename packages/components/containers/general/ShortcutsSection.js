@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { SubTitle, Row, Label, Field, useMailSettings, useModals, SmallButton } from 'react-components';
+import { SubTitle, Row, Label, Field, useMailSettings, useModals, SmallButton, ShortcutsModal } from 'react-components';
 
 import ShortcutsToggle from './ShortcutsToggle';
-import ShortcutsModal from './ShortcutsModal';
 
 const ShortcutsSection = () => {
     const [mailSettings] = useMailSettings();

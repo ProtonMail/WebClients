@@ -298,6 +298,7 @@ export { default as SearchSection } from './containers/search/SearchSection';
 export { default as Searchbox } from './containers/search/Searchbox';
 export { default as SearchDropdown } from './containers/search/SearchDropdown';
 export { default as ShortcutsSection } from './containers/general/ShortcutsSection';
+export { default as ShortcutsModal } from './containers/general/ShortcutsModal.js';
 export { default as PmMeSection } from './containers/addresses/PmMeSection';
 export { default as IdentitySection } from './containers/addresses/IdentitySection';
 export { default as AutoReplySection } from './containers/autoReply/AutoReplySection';
