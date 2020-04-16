@@ -55,10 +55,10 @@ ul, ol { padding-left: 2em; }
 @if $root-equiv-10-px == true {
   /* base font size at 10px */
   html {
-    font-size: 62.5%;
-    /* IE9-IE11 math fixing. See https://connect.microsoft.com/IE/feedback/details/816709/ */
-    /* Thanks to @guardian, @victorbritopro, @eQRoeil & Knacss */
-    font-size: calc(1em * 0.625);
+	font-size: 62.5%;
+	@if ( $use-ie-calc-font-fallback == true ){
+		font-size: calc(1em * 0.625);
+	}
   }
 }
 body {

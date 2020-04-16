@@ -126,6 +126,7 @@ $root-default-font-size: 16 !default;
 
 // others
 $use-reset-button      : true !default;
+$use-ie-calc-font-fallback: false !default;
 $use-old-ie-fallbacks  : true !default;
 
 // default config for webpack, can be overriden by "global config" in styles-pm.scss
