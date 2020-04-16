@@ -32,7 +32,6 @@ import { MessageExtended } from '../../../models/message';
 import HeaderDropdown from './HeaderDropdown';
 import { OnCompose } from '../../../containers/ComposerContainer';
 
-import './MessageHeader.scss';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
 
 // Hacky override of the typing
