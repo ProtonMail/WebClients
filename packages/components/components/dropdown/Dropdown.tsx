@@ -87,10 +87,12 @@ const Dropdown = ({
             onClose();
         };
 
+        document.addEventListener('dropdownclose', onClose);
         document.addEventListener('click', handleClickOutside);
         document.addEventListener('keydown', handleKeydown);
 
         return () => {
+            document.removeEventListener('dropdownclose', onClose);
             document.removeEventListener('click', handleClickOutside);
             document.removeEventListener('keydown', handleKeydown);
         };
