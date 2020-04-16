@@ -1,8 +1,8 @@
 import { Table, TableBody, TableHeader, TableRow } from 'react-components';
 import React from 'react';
 import { c } from 'ttag';
-import CalendarIcon from '../../components/calendar/CalendarIcon';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import CalendarIcon from '../../components/CalendarIcon';
 
 const CalendarTableRow = ({ Name, Color }: Calendar) => {
     return (

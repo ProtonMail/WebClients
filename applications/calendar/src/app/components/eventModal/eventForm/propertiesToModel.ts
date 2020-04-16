@@ -1,6 +1,5 @@
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
-import { EventModel } from '../../../interfaces/EventModel';
 import { VcalVeventComponent } from '../../../interfaces/VcalModel';
 
 const DEFAULT_TIME = {
@@ -8,7 +7,7 @@ const DEFAULT_TIME = {
     parameters: { tzid: 'UTC' }
 };
 
-export const propertiesToModel = (component: VcalVeventComponent, isAllDay: boolean, tzid: string): EventModel => {
+export const propertiesToModel = (component: VcalVeventComponent, isAllDay: boolean, tzid: string) => {
     const {
         uid,
         location,

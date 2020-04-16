@@ -298,7 +298,7 @@ const CalendarContainer = ({ calendars, calendarUserSettings, history, location 
         document.title = [titleDateString, 'ProtonCalendar'].filter(Boolean).join(' - ');
     }, [view, range, utcDate, utcDateRange]);
 
-    const [calendarsEvents, loadingEvents, getCachedEvent] = useCalendarsEvents(
+    const [calendarsEvents, loadingEvents, getCachedEvent, getDecryptedEvent] = useCalendarsEvents(
         visibleCalendars,
         utcDateRangeInTimezone,
         tzid
@@ -404,6 +404,7 @@ const CalendarContainer = ({ calendars, calendarUserSettings, history, location 
                 displayWeekNumbers={displayWeekNumbers}
                 displaySecondaryTimezone={displaySecondaryTimezone}
                 weekStartsOn={weekStartsOn}
+                getDecryptedEvent={getDecryptedEvent}
                 now={utcNowDateInTimezone}
                 date={utcDate}
                 dateRange={utcDateRange}

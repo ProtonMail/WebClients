@@ -5,7 +5,7 @@ export interface NotificationModel {
     unit: NOTIFICATION_UNITS;
     type: SETTINGS_NOTIFICATION_TYPE;
     when: NOTIFICATION_WHEN;
-    value: number | string;
+    value?: number;
     at?: Date;
     isAllDay: boolean;
 }

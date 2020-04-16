@@ -1,10 +1,10 @@
 import React, { ChangeEvent } from 'react';
-import { classnames, Select, TimeInput } from 'react-components';
+import { classnames, Select, TimeInput, IntegerInput } from 'react-components';
 import { c, msgid } from 'ttag';
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICATION_WHEN } from '../../../constants';
-import IntegerInput from './IntegerInput';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
 
 const { EMAIL, DEVICE } = SETTINGS_NOTIFICATION_TYPE;
@@ -30,7 +30,8 @@ const NotificationInput = ({
     const isAllDayBefore = isAllDay && when === BEFORE;
 
     const maxValue = NOTIFICATION_UNITS_MAX[unit];
-    const numberValue = Math.min(+value || 0, maxValue);
+    const numberValue = value !== undefined ? Math.min(value, maxValue) : undefined;
+    const safeNumberValue = numberValue || 0;
 
     const notificationI18N = isAllDay
         ? {
@@ -70,10 +71,10 @@ const NotificationInput = ({
                     step={1}
                     min={0}
                     max={maxValue}
-                    value={value === '' ? '' : numberValue}
+                    value={numberValue}
                     onChange={(newValue) => {
                         if (isAllDayBefore && unit === NOTIFICATION_UNITS.DAY) {
-                            if (newValue <= 0) {
+                            if (newValue && newValue <= 0) {
                                 onChange({ ...notification, value: 1 });
                                 return;
                             }
@@ -81,7 +82,7 @@ const NotificationInput = ({
                         onChange({ ...notification, value: newValue });
                     }}
                     onBlur={() => {
-                        if (value === '') {
+                        if (!value) {
                             onChange({ ...notification, value: 0 });
                         }
                     }}
@@ -92,23 +93,23 @@ const NotificationInput = ({
                     value={unit}
                     options={[
                         !isAllDay && {
-                            text: c('Time unit').ngettext(msgid`Minute`, `Minutes`, numberValue),
+                            text: c('Time unit').ngettext(msgid`Minute`, `Minutes`, safeNumberValue),
                             value: MINUTES
                         },
                         !isAllDay && {
-                            text: c('Time unit').ngettext(msgid`Hour`, `Hours`, numberValue),
+                            text: c('Time unit').ngettext(msgid`Hour`, `Hours`, safeNumberValue),
                             value: HOURS
                         },
-                        { text: c('Time unit').ngettext(msgid`Day`, `Days`, numberValue), value: DAY },
-                        { text: c('Time unit').ngettext(msgid`Week`, `Weeks`, numberValue), value: WEEK }
-                    ].filter(Boolean)}
+                        { text: c('Time unit').ngettext(msgid`Day`, `Days`, safeNumberValue), value: DAY },
+                        { text: c('Time unit').ngettext(msgid`Week`, `Weeks`, safeNumberValue), value: WEEK }
+                    ].filter(isTruthy)}
                     onChange={({ target }: ChangeEvent<HTMLSelectElement>) => {
                         const newUnit = +target.value as NOTIFICATION_UNITS;
                         if (isAllDay && newUnit === DAY && value === 0 && when === BEFORE) {
                             onChange({ ...notification, value: 1, unit: newUnit });
                             return;
                         }
-                        const normalizedValue = Math.min(+notification.value, NOTIFICATION_UNITS_MAX[newUnit]);
+                        const normalizedValue = Math.min(notification.value || 0, NOTIFICATION_UNITS_MAX[newUnit]);
                         onChange({ ...notification, value: normalizedValue, unit: newUnit });
                     }}
                 />

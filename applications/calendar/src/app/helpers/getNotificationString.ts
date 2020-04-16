@@ -4,7 +4,7 @@ import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../constants';
 import { NotificationModel } from '../interfaces/NotificationModel';
 
 const getNotificationString = (notification: NotificationModel, formatTime: (date: Date) => string) => {
-    const { value, unit, when, at, isAllDay } = notification;
+    const { value = 0, unit, when, at, isAllDay } = notification;
 
     if (!isAllDay || !at) {
         if (when === NOTIFICATION_WHEN.BEFORE) {

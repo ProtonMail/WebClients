@@ -2,7 +2,11 @@ import React, { ChangeEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { getTimeZoneOptions } from 'proton-shared/lib/date/timezone';
 
-interface Props {
+interface Props
+    extends Omit<
+        React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>,
+        'onChange'
+    > {
     timezone?: string;
     onChange: (tzid: string) => void;
     className?: string;

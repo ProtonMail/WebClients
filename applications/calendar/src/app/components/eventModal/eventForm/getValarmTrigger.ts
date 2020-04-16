@@ -16,12 +16,12 @@ const getValarmTriggerUnit = (unit: NOTIFICATION_UNITS) => {
 const getAllDayValarmTrigger = ({
     isNegative,
     unit,
-    value,
+    value = 0,
     at
 }: {
     isNegative: boolean;
     unit: NOTIFICATION_UNITS;
-    value: number | string;
+    value?: number;
     at: Date;
 }) => {
     const modifiedAt = isNegative ? transformBeforeAt(at) : at;
@@ -32,8 +32,8 @@ const getAllDayValarmTrigger = ({
     const modifyNegativeDay = isNegative && (minutes > 0 || hours > 0);
 
     const [weeks, days] = (() => {
-        const weeksValue = unit === NOTIFICATION_UNITS.WEEK ? +value : 0;
-        const daysValue = unit === NOTIFICATION_UNITS.DAY ? +value : 0;
+        const weeksValue = unit === NOTIFICATION_UNITS.WEEK ? value : 0;
+        const daysValue = unit === NOTIFICATION_UNITS.DAY ? value : 0;
 
         if (modifyNegativeDay && weeksValue === 0) {
             return [0, daysValue - 1];
@@ -57,11 +57,11 @@ const getAllDayValarmTrigger = ({
 const getPartDayValarmTrigger = ({
     isNegative,
     unit,
-    value
+    value = 0
 }: {
     isNegative: boolean;
     unit: NOTIFICATION_UNITS;
-    value: number | string;
+    value?: number;
 }) => {
     return {
         weeks: 0,

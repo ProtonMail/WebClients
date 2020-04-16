@@ -32,7 +32,7 @@ export const NUMBER_TO_DAY = {
     4: 'TH',
     5: 'FR',
     6: 'SA'
-};
+} as { [key: number]: string };
 
 export const MINUTE = 60;
 export const HOUR = MINUTE * 60;
@@ -68,10 +68,12 @@ export enum FREQUENCY {
 }
 
 export const FREQUENCY_INTERVALS_MAX = {
+    [FREQUENCY.ONCE]: 1000,
     [FREQUENCY.DAILY]: 1000,
     [FREQUENCY.WEEKLY]: 5000,
     [FREQUENCY.MONTHLY]: 1000,
-    [FREQUENCY.YEARLY]: 100
+    [FREQUENCY.YEARLY]: 100,
+    [FREQUENCY.CUSTOM]: 1000
 };
 
 export const FREQUENCY_COUNT_MAX = 50;
@@ -119,11 +121,22 @@ export const MAX_LENGTHS = {
 
 export const MAX_DEFAULT_NOTIFICATIONS = 5;
 
-export const RECURRING_DELETE_TYPES = {
-    ALL: 1,
-    FUTURE: 2,
-    SINGLE: 3
-};
+export enum SAVE_CONFIRMATION_TYPES {
+    SINGLE = 1,
+    RECURRING
+}
+
+export enum DELETE_CONFIRMATION_TYPES {
+    SINGLE = 1,
+    RECURRING,
+    ALL_RECURRING
+}
+
+export enum RECURRING_TYPES {
+    ALL = 1,
+    FUTURE,
+    SINGLE
+}
 
 export const MINIMUM_DATE = new Date(1970, 0, 1);
 export const MINIMUM_DATE_UTC = new Date(

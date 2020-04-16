@@ -211,7 +211,7 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
             rrule: {
                 value: {
                     freq: 'WEEKLY',
-                    byday: 'MO,SA',
+                    byday: ['MO', 'SA'],
                     until: untilDateTime
                 }
             }
@@ -240,7 +240,7 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
             rrule: {
                 value: {
                     freq: 'WEEKLY',
-                    byday: 'MO,SA',
+                    byday: ['MO', 'SA'],
                     until: untilDateTime
                 }
             }
@@ -268,7 +268,7 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
             rrule: {
                 value: {
                     freq: 'WEEKLY',
-                    byday: 'MO,SA',
+                    byday: ['MO', 'SA'],
                     until: untilDateTime
                 }
             }
@@ -448,8 +448,7 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
             interval: 2,
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 2,
-                until: undefined
+                count: 2
             }
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({

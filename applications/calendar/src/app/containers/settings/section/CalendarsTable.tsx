@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Icon, Table, TableHeader, TableBody, TableRow, DropdownActions, Badge } from 'react-components';
 import { getIsCalendarDisabled, getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 interface Props {
     calendars: Calendar[];
@@ -38,7 +39,7 @@ const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, on
                             text: c('Action').t`Delete`,
                             onClick: () => onDelete(calendar)
                         }
-                    ].filter(Boolean);
+                    ].filter(isTruthy);
 
                     return (
                         <TableRow

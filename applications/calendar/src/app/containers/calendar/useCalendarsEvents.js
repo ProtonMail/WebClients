@@ -1,176 +1,22 @@
 import { useRef, useEffect, useState, useMemo, useCallback } from 'react';
 import { useApi, useEventManager } from 'react-components';
-import { queryEvents } from 'proton-shared/lib/api/calendars';
-import { differenceInHours, getUnixTime } from 'date-fns';
 import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
-import { isIcalRecurring, getOccurrencesBetween, getOccurrences } from 'proton-shared/lib/calendar/recurring';
-import { parse } from 'proton-shared/lib/calendar/vcal';
-import { unwrap } from 'proton-shared/lib/calendar/helper';
-import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import createIntervalTree from 'interval-tree';
-import { addDays, max } from 'proton-shared/lib/date-fns-utc';
 import useGetCalendarEventRaw from './useGetCalendarEventRaw';
 import useGetCalendarEventPersonal from './useGetCalendarEventPersonal';
+import { removeEventFromCache, setEventInCache } from './cache/cache';
+import getPaginatedEvents from './getPaginatedEvents';
+import { getRecurringEvents } from './cache/getRecurringEvents';
 
 const { DELETE, CREATE, UPDATE } = EVENT_ACTIONS;
 
 const DAY_IN_MILLISECONDS = 86400000;
-const MAX_FETCH_ITERATIONS = 10;
-
-const parseNextPaginationStart = ({ SharedEvents = [] }) => {
-    try {
-        const { Data = '' } = SharedEvents.find(({ Type }) => Type === 2);
-        const component = parse(unwrap(Data));
-        if (component.component !== 'vevent') {
-            return undefined;
-        }
-        const { dtstart } = component;
-        return getUnixTime(propertyToUTCDate(dtstart));
-    } catch (e) {
-        return undefined;
-    }
-};
-
-const getPaginatedEvents = async (api, calendarID, dateRange, tzid) => {
-    let results = [];
-
-    const PageSize = 100;
-
-    const params = {
-        // Special case, not using our boundaries, since the API does not accept negative values.
-        End: Math.max(0, getUnixTime(dateRange[1])),
-        Timezone: tzid,
-        PageSize,
-        Page: 0
-    };
-
-    let lastStart = Math.max(0, getUnixTime(dateRange[0]));
-    let iterations = 0;
-
-    while (lastStart !== undefined && iterations < MAX_FETCH_ITERATIONS) {
-        const { Events } = await api(queryEvents(calendarID, { ...params, Start: lastStart }));
-        const lastEvent = Events.length > 0 ? Events[Events.length - 1] : undefined;
-        results = results.concat(Events);
-        lastStart = Events.length === PageSize && lastEvent ? parseNextPaginationStart(lastEvent) : undefined;
-        iterations++;
-    }
-
-    return results;
-};
-
-const getRecurringEvents = (events, recurringEvents, searchStart, searchEnd) => {
-    const result = [];
-    for (const id of recurringEvents.keys()) {
-        const { component } = events.get(id);
-        const recurringEventCache = recurringEvents.get(id);
-
-        const utcIntervals = getOccurrencesBetween(component, searchStart, searchEnd, recurringEventCache);
-        const isSingleOccurrence = getOccurrences(component, 2, recurringEventCache).length === 1;
-
-        if (!utcIntervals.length) {
-            continue;
-        }
-
-        result.push({
-            id,
-            events: utcIntervals,
-            isSingleOccurrence
-        });
-    }
-    return result;
-};
 
 const contains = (range, otherRanges) => {
     return otherRanges.some((otherRange) => {
         return otherRange && otherRange[1] >= range[1] && otherRange[0] <= range[0];
     });
-};
-
-const removeEventFromCache = (EventID, { tree, events, decryptedEvents, recurringEvents }) => {
-    const oldEvent = events.get(EventID);
-    if (oldEvent) {
-        tree.remove(+oldEvent.start, +oldEvent.end, EventID);
-    }
-    recurringEvents.delete(EventID);
-    events.delete(EventID);
-    decryptedEvents.delete(EventID);
-};
-
-const setEventInCache = (Event, { tree, events, recurringEvents, decryptedEvents, isInitialFetch }) => {
-    try {
-        const { ID: EventID, SharedEvents } = Event;
-
-        const oldEvent = events.get(EventID);
-        /**
-         * Since the event could already have been fetched, we don't need to re-set this event.
-         * We are only interested in updating the event if it's an update from the event manager.
-         */
-        if (oldEvent && isInitialFetch) {
-            return;
-        }
-
-        const { Data = '' } = SharedEvents.find(({ Type }) => Type === 2);
-        const component = parse(unwrap(Data));
-
-        if (component.component !== 'vevent') {
-            return;
-        }
-
-        const { dtstart, dtend } = component;
-
-        const isAllDay = isIcalAllDay(component);
-        const isRecurring = isIcalRecurring(component);
-
-        const utcStart = propertyToUTCDate(dtstart);
-        const rawEnd = propertyToUTCDate(dtend);
-        const modifiedEnd = isAllDay
-            ? addDays(rawEnd, -1) // All day event range is non-inclusive
-            : rawEnd;
-        const utcEnd = max(utcStart, modifiedEnd);
-
-        const isAllPartDay = !isAllDay && differenceInHours(utcEnd, utcStart) >= 24;
-
-        if (isRecurring) {
-            if (oldEvent && !oldEvent.isRecurring) {
-                tree.remove(+oldEvent.start, +oldEvent.end, EventID);
-            }
-
-            recurringEvents.set(EventID, {});
-        } else {
-            const isOldRecurring = oldEvent && oldEvent.isRecurring;
-            if (isOldRecurring) {
-                recurringEvents.delete(EventID);
-            }
-
-            if (!oldEvent || isOldRecurring) {
-                tree.insert(+utcStart, +utcEnd, EventID);
-            } else if (+utcStart !== +oldEvent.start || +utcEnd !== +oldEvent.end) {
-                // Interval changed
-                tree.remove(+oldEvent.start, +oldEvent.end, EventID);
-                tree.insert(+utcStart, +utcEnd, EventID);
-            }
-        }
-
-        const record = {
-            Event,
-            component,
-
-            isRecurring,
-            isAllDay,
-            isAllPartDay,
-
-            start: utcStart,
-            end: utcEnd,
-
-            counter: ((oldEvent && oldEvent.counter) || 0) + 1
-        };
-
-        events.set(EventID, record);
-        decryptedEvents.delete(EventID);
-    } catch (e) {
-        console.error(e);
-    }
 };
 
 /**
@@ -322,23 +168,26 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
         });
     }, [requestedCalendars, utcDateRange]);
 
+    const getDecryptedEvent = (Event) => {
+        return Promise.all([getEventRaw(Event), getEventPersonal(Event)]);
+    };
+
     const readEvent = useCallback((CalendarID, EventID) => {
         if (!cacheRef.current || !cacheRef.current.calendars[CalendarID]) {
-            return [new Error('Non-existing event')];
+            return [undefined, undefined, new Error('Non-existing event')];
         }
 
         const { decryptedEvents, events } = cacheRef.current.calendars[CalendarID];
-        const { Event } = events.get(EventID);
-
-        if (!events.has(EventID)) {
-            return [new Error('Non-existing event')];
-        }
-
         if (decryptedEvents.has(EventID)) {
             return decryptedEvents.get(EventID);
         }
 
-        const promise = Promise.all([getEventRaw(Event), getEventPersonal(Event)])
+        if (!events.has(EventID)) {
+            return [undefined, undefined, new Error('Non-existing event')];
+        }
+        const { Event: cachedEvent } = events.get(EventID);
+
+        const promise = getDecryptedEvent(cachedEvent)
             .then((result) => {
                 return [result, undefined, undefined];
             })
@@ -372,7 +221,15 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                     return [];
                 }
 
-                const { tree, events, recurringEvents } = cacheRef.current.calendars[ID];
+                const { tree, events, recurringEvents, dateRanges: calendarDateRanges } = cacheRef.current.calendars[
+                    ID
+                ];
+
+                // If this date range is not contained in the result, we don't return anything because we can't trust the recurring events
+                // until we have complete data fetched for this range because of single editions
+                if (!contains(utcDateRange, calendarDateRanges)) {
+                    return [];
+                }
 
                 // Add a day in both ranges to not miss events due to tz since they are stored in UTC time
                 const searchStart = +utcDateRange[0] - DAY_IN_MILLISECONDS;
@@ -400,7 +257,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                 });
 
                 const recurringResults = getRecurringEvents(events, recurringEvents, searchStart, searchEnd)
-                    .map(({ id, events: expandedEvents, isSingleOccurrence }) => {
+                    .map(({ id, eventOccurrences, isSingleOccurrence }) => {
                         const { Event, isAllDay, isAllPartDay, isRecurring, counter } = events.get(id);
 
                         const data = {
@@ -410,7 +267,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                             counter
                         };
 
-                        return expandedEvents.map(({ utcStart, utcEnd, localStart, localEnd, occurrenceNumber }) => {
+                        return eventOccurrences.map(({ utcStart, utcEnd, localStart, localEnd, occurrenceNumber }) => {
                             const recurrence = {
                                 occurrenceNumber,
                                 localStart,
@@ -424,8 +281,10 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                                 isRecurring,
                                 start: utcStart,
                                 end: utcEnd,
-                                recurrence,
-                                data
+                                data: {
+                                    ...data,
+                                    recurrence
+                                }
                             };
                         });
                     })
@@ -433,40 +292,26 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
 
                 return results
                     .concat(recurringResults)
-                    .map(
-                        ({
-                            start: utcStart,
-                            end: utcEnd,
-                            isAllDay,
+                    .map(({ start: utcStart, end: utcEnd, isAllDay, isAllPartDay, isRecurring, data, id }) => {
+                        const start = isAllDay
+                            ? utcStart
+                            : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStart), tzid));
+                        const end = isAllDay ? utcEnd : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcEnd), tzid));
+
+                        return {
+                            id,
+                            isAllDay: isAllDay || isAllPartDay,
                             isAllPartDay,
                             isRecurring,
-                            recurrence,
-                            data,
-                            id
-                        }) => {
-                            const start = isAllDay
-                                ? utcStart
-                                : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStart), tzid));
-                            const end = isAllDay
-                                ? utcEnd
-                                : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcEnd), tzid));
-
-                            return {
-                                id,
-                                isAllDay: isAllDay || isAllPartDay,
-                                isAllPartDay,
-                                isRecurring,
-                                recurrence,
-                                start,
-                                end,
-                                data
-                            };
-                        }
-                    );
+                            start,
+                            end,
+                            data
+                        };
+                    });
             })
             .flat();
 
-        return [events, loading, getCachedEvent];
+        return [events, loading, getCachedEvent, getDecryptedEvent];
     }, [rerender, tzid, loading, requestedCalendars, utcDateRange]);
 };
 

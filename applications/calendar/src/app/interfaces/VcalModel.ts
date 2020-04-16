@@ -1,6 +1,10 @@
-import { FREQUENCY } from '../constants';
+export type VcalByDayValues = 'SU' | 'MO' | 'TU' | 'WE' | 'TH' | 'FR' | 'SA';
 
-export type VcalByDayValue = 'SU' | 'MO' | 'TU' | 'WE' | 'TH' | 'FR' | 'SA';
+export interface VcalDateValue {
+    year: number;
+    month: number;
+    day: number;
+}
 
 export interface VcalDateTimeValue {
     year: number;
@@ -12,37 +16,40 @@ export interface VcalDateTimeValue {
     isUTC: boolean;
 }
 
-export interface VcalDateProperty {
-    parameters: {
-        type: 'date';
-    };
-    value: VcalDateTimeValue;
-}
+export type VcalDateOrDateTimeValue = VcalDateValue | VcalDateTimeValue;
 
 export interface VcalDateTimeProperty {
-    parameters: {
+    parameters?: {
         type?: 'date-time';
         tzid?: string;
     };
     value: VcalDateTimeValue;
 }
 
+export interface VcalDateProperty {
+    parameters: {
+        type: 'date';
+    };
+    value: VcalDateValue;
+}
+
 export type VcalDateOrDateTimeProperty = VcalDateProperty | VcalDateTimeProperty;
 
-export interface VcalFrequencyValue {
-    freq: FREQUENCY;
+export type VcalRruleFreqValue = 'DAILY' | 'WEEKLY' | 'MONTHLY' | 'YEARLY' | undefined | string;
+export interface VcalRrulePropertyValue {
+    freq: VcalRruleFreqValue;
     count?: number;
     interval?: number;
-    until?: VcalDateTimeValue;
+    until?: VcalDateOrDateTimeValue;
     bysetpos?: number;
-    byday?: VcalByDayValue | VcalByDayValue[];
+    byday?: VcalByDayValues | VcalByDayValues[];
     bymonthday?: number | number[];
     bymonth?: number | number[];
 }
 
-export interface VcalFrequencyProperty {
-    value: VcalFrequencyValue;
-}
+export type VcalRruleProperty = {
+    value: VcalRrulePropertyValue;
+};
 
 export interface VcalTriggerValue {
     weeks: number;
@@ -73,17 +80,19 @@ export interface VcalStringProperty {
 }
 
 // todo
-export type VcalRruleProperty = any;
 export type VcalAttendeeProperty = any;
 
 export interface VcalVeventComponent {
     component: 'vevent';
+    components?: VcalValarmComponent[]; // Not complete. Can be other components.
     uid: VcalUidProperty;
-    location: VcalStringProperty;
-    description: VcalStringProperty;
-    summary: VcalStringProperty;
+    'recurrence-id'?: VcalDateTimeProperty;
+    location?: VcalStringProperty;
+    description?: VcalStringProperty;
+    summary?: VcalStringProperty;
     dtstart: VcalDateOrDateTimeProperty;
     dtend: VcalDateOrDateTimeProperty;
-    rrule: VcalRruleProperty;
-    attendee: VcalAttendeeProperty[];
+    rrule?: VcalRruleProperty;
+    attendee?: VcalAttendeeProperty[];
+    exdate?: VcalDateOrDateTimeProperty[];
 }

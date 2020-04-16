@@ -8,4 +8,9 @@ declare module '*.md' {
     export default value;
 }
 
+declare module 'ical.js' {
+    const value: any;
+    export default value;
+}
+
 declare const PL_IS_STANDALONE: boolean;

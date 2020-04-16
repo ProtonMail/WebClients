@@ -1,9 +1,7 @@
-import { isNextDay, isSameDay, isSameMonth, isSameYear } from 'proton-shared/lib/date-fns-utc/index';
+import { isNextDay, isSameDay, isSameMonth, isSameYear, format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { c } from 'ttag';
-import formatUTC from 'proton-shared/lib/date-fns-utc/format';
 
 interface Arguments {
-    formattedHour: string;
     isAllDay: boolean;
     title: string;
     startDateTimezoned: Date;

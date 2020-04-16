@@ -1,15 +1,15 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { Icon, Info } from 'react-components';
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { Icon, Info } from 'react-components';
+import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
+import { truncate } from 'proton-shared/lib/helpers/string';
 
 import PopoverNotification from './PopoverNotification';
-import CalendarIcon from '../calendar/CalendarIcon';
-import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
+import CalendarIcon from '../CalendarIcon';
 import { getTimezonedFrequencyString } from '../../helpers/rrule';
-import { truncate } from 'proton-shared/lib/helpers/string';
 
 const PopoverEventContent = ({
     Calendar = {},

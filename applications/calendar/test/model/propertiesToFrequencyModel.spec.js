@@ -174,8 +174,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             },
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 5,
-                until: undefined
+                count: 5
             }
         });
     });
@@ -265,8 +264,7 @@ describe('frequency properties to model, monthly recurring rule', () => {
             ...dummyFrequencyModel,
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.MONTHLY,
-            interval: 3,
-            until: undefined
+            interval: 3
         });
     });
 
@@ -291,8 +289,7 @@ describe('frequency properties to model, monthly recurring rule', () => {
             },
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 5,
-                until: undefined
+                count: 5
             }
         });
     });
@@ -316,8 +313,7 @@ describe('frequency properties to model, monthly recurring rule', () => {
             interval: 2,
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 2,
-                until: undefined
+                count: 2
             }
         });
     });
@@ -431,8 +427,7 @@ describe('frequency properties to model, yearly recurring rule', () => {
             interval: 2,
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 5,
-                until: undefined
+                count: 5
             }
         });
     });
