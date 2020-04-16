@@ -6,7 +6,7 @@ import { MapSendInfo, StatusIconFills } from '../../../models/crypto';
 import { MessageExtended } from '../../../models/message';
 import { Recipient, recipientTypes } from '../../../models/address';
 import { getRecipients } from '../../../helpers/message/messages';
-import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
+import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel, validateAddress } from '../../../helpers/addresses';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 
@@ -42,8 +42,10 @@ const AddressesSummary = ({ message: { data = {} }, mapSendInfo, contacts, conta
                                     <span className="mr0-5 inline-flex color-primary">{c('Title').t`BCC`}:</span>
                                 )}
                                 {recipientOrGroups.map((recipientOrGroup, i) => {
-                                    const icon = mapSendInfo[recipientOrGroup.recipient?.Address as string]?.sendIcon;
-                                    const cannotSend = icon?.fill === StatusIconFills.FAIL;
+                                    const Address = recipientOrGroup.recipient?.Address as string;
+                                    const valid = validateAddress(Address);
+                                    const icon = mapSendInfo[Address]?.sendIcon;
+                                    const cannotSend = !valid || icon?.fill === StatusIconFills.FAIL;
                                     return (
                                         <span
                                             key={i}

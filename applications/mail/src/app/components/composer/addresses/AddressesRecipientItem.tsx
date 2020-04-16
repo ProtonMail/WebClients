@@ -68,7 +68,7 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
 
     useEffect(() => {
         const updateRecipientIcon = async (): Promise<void> => {
-            if (!emailAddress || icon || !messageSendInfo || !!messageSendInfo.mapSendInfo[emailAddress]) {
+            if (!emailAddress || !valid || icon || !messageSendInfo || !!messageSendInfo.mapSendInfo[emailAddress]) {
                 return;
             }
             const { message, setMapSendInfo } = messageSendInfo;
