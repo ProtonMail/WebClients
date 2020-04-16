@@ -7,6 +7,7 @@ import ImportKeysList from './ImportKeysList';
 import SelectKeyFiles from '../shared/SelectKeyFiles';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
 import { ImportKey, OnProcessArguments, Status } from './interface';
+import { FileInputHandle } from '../../../components/input/FileInput';
 
 enum STEPS {
     WARNING = 1,
@@ -23,7 +24,7 @@ interface Props {
 const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
-    const selectRef = useRef<HTMLInputElement>(null);
+    const selectRef = useRef<FileInputHandle>(null);
 
     const [step, setStep] = useState<STEPS>(STEPS.WARNING);
     const [keys, setKeys] = useState<ImportKey[]>([]);

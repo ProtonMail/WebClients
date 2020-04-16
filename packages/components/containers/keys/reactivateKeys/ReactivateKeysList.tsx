@@ -7,6 +7,7 @@ import SelectKeyFiles from '../shared/SelectKeyFiles';
 import KeysStatus from '../KeysStatus';
 import { Status, ReactivateKeys, ReactivateKey } from './interface';
 import { OpenPGPKey } from 'pmcrypto';
+import { FileInputHandle } from '../../../components/input/FileInput';
 
 const getKeyStatusError = (error: any) => {
     return {
@@ -40,7 +41,7 @@ interface Props {
 }
 const ReactivateKeysList = ({ loading = false, allKeys, onUpload }: Props) => {
     const inactiveKeyRef = useRef<ReactivateKey>();
-    const selectRef = useRef<HTMLSelectElement>();
+    const selectRef = useRef<FileInputHandle>(null);
 
     const isUpload = !!onUpload;
 
