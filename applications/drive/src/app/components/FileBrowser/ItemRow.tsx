@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
-import { TableRow, Checkbox, Time, Icon, useActiveBreakpoint } from 'react-components';
+import { TableRow, Checkbox, Time, useActiveBreakpoint } from 'react-components';
 import { c } from 'ttag';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { ResourceType } from '../../interfaces/link';
 import { FileBrowserItem } from './FileBrowser';
+import MimeIcon from '../FileIcon';
 
 interface Props {
     item: FileBrowserItem;
@@ -53,11 +54,7 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onShiftClick }:
             <Checkbox checked={isSelected} onChange={() => onToggleSelect(item.LinkID)} />
         </div>,
         <div key="filename" className="flex flex-items-center flex-nowrap">
-            <Icon
-                name={isFolder ? 'folder' : 'drafts'}
-                className={`mr0-5 flex-item-noshrink ${isFolder ? 'color-global-attention' : 'color-global-altgrey'}`}
-                size={25}
-            />
+            <MimeIcon mimeType={item.MimeType} />
             <span title={item.Name} className="pd-fb-table-row-name">
                 {item.Name}
             </span>
