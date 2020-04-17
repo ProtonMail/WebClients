@@ -42,8 +42,6 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
         }
     }, [resource.shareId, resource.linkId, ParentLinkID]);
 
-    const onlyFilesSelected = selectedItems.every((item) => item.Type === ResourceType.FILE);
-
     const handleBackClick = () => {
         if (ParentLinkID) {
             openResource({ shareId: resource.shareId, linkId: ParentLinkID, type: ResourceType.FOLDER });
@@ -158,41 +156,59 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
         await events.call(resource.shareId);
     };
 
+    const renderSelectionActions = () => {
+        if (!selectedItems.length) {
+            return <ToolbarButton icon="folder-new" title={c('Action').t`New Folder`} onClick={handleCreateFolder} />;
+        }
+
+        const isMultiSelect = selectedItems.length > 1;
+        const hasFoldersSelected = selectedItems.some((item) => item.Type === ResourceType.FOLDER);
+
+        return (
+            <>
+                <ToolbarButton
+                    disabled={hasFoldersSelected}
+                    title={c('Action').t`Download`}
+                    icon="download"
+                    onClick={handleDownloadClick}
+                />
+                <ToolbarButton
+                    disabled={isMultiSelect}
+                    title={c('Action').t`Rename`}
+                    icon="file-edit"
+                    onClick={handleRename}
+                />
+                <ToolbarButton
+                    disabled={isMultiSelect}
+                    title={c('Action').t`Details`}
+                    icon="info"
+                    onClick={handleDetailsClick}
+                />
+
+                <ToolbarSeparator />
+
+                <ToolbarButton
+                    disabled={moveToTrashLoading}
+                    title={c('Action').t`Move to Trash`}
+                    icon="trash"
+                    onClick={() => withMoveToTrashLoading(moveToTrash())}
+                />
+            </>
+        );
+    };
+
     return (
         <Toolbar>
-            {
-                <>
-                    <ToolbarButton
-                        disabled={!ParentLinkID}
-                        title={c('Action').t`Back`}
-                        onClick={handleBackClick}
-                        icon="arrow-left"
-                    />
-                    <ToolbarSeparator />
-                </>
-            }
+            <ToolbarButton
+                disabled={!ParentLinkID}
+                title={c('Action').t`Back`}
+                onClick={handleBackClick}
+                icon="arrow-left"
+            />
 
-            <ToolbarButton icon="folder-new" title={c('Action').t`New Folder`} onClick={handleCreateFolder} />
-            {selectedItems.length === 1 && (
-                <>
-                    <ToolbarButton title={c('Action').t`Rename`} icon="file-edit" onClick={handleRename} />
-                    <ToolbarButton title={c('Action').t`Details`} icon="info" onClick={handleDetailsClick} />
-                </>
-            )}
-            {onlyFilesSelected && selectedItems.length > 0 && (
-                <ToolbarButton title={c('Action').t`Download`} icon="download" onClick={handleDownloadClick} />
-            )}
-            {selectedItems.length > 0 && (
-                <>
-                    <ToolbarSeparator />
-                    <ToolbarButton
-                        disabled={moveToTrashLoading}
-                        title={c('Action').t`Move to Trash`}
-                        icon="trash"
-                        onClick={() => withMoveToTrashLoading(moveToTrash())}
-                    />
-                </>
-            )}
+            <ToolbarSeparator />
+
+            {renderSelectionActions()}
         </Toolbar>
     );
 };
