@@ -304,13 +304,12 @@ $list-width-rem: 33 !default; // say 33
 }
 
 /* here you may add em widths */
-$list-width-em: 6, 14, 32, 120, 140, 220, 400 !default;
-// ex .w500e { width: 60em; }
+$list-width-em: 6, 8, 10, 12, 14, 16 !default;
+// ex .w16e { width: 16em; }
 
 @each $width in $list-width-em {
-  $size_em: em($width);
   .w#{$width}e {
-    width: $size_em;
+	width: #{$width}em;
   }
 }
 
