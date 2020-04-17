@@ -54,7 +54,7 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onShiftClick }:
             <Checkbox checked={isSelected} onChange={() => onToggleSelect(item.LinkID)} />
         </div>,
         <div key="filename" className="flex flex-items-center flex-nowrap">
-            <MimeIcon mimeType={item.MimeType} />
+            <MimeIcon mimeType={item.Type === ResourceType.FOLDER ? 'Folder' : item.MimeType} />
             <span title={item.Name} className="pd-fb-table-row-name">
                 {item.Name}
             </span>

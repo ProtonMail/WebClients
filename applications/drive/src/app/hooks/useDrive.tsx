@@ -14,7 +14,7 @@ import {
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
-import { LinkMetaResult, isFolderLinkMeta, LinkChildrenResult, LinkMeta } from '../interfaces/link';
+import { LinkMetaResult, isFolderLinkMeta, LinkChildrenResult, LinkMeta, ResourceType } from '../interfaces/link';
 import { queryGetLink } from '../api/link';
 import { queryFolderChildren, queryCreateFolder } from '../api/folder';
 import { FOLDER_PAGE_SIZE, EVENT_TYPES } from '../constants';
@@ -224,7 +224,13 @@ function useDrive() {
         cache.set.childLinkMetas(decryptedLinks, shareId, linkId, Links.length < PageSize ? 'complete' : 'incremental');
     };
 
-    const renameLink = async (shareId: string, linkId: string, parentLinkID: string, newName: string) => {
+    const renameLink = async (
+        shareId: string,
+        linkId: string,
+        parentLinkID: string,
+        newName: string,
+        type: ResourceType
+    ) => {
         const error = validateLinkName(newName);
 
         if (error) {
@@ -232,7 +238,7 @@ function useDrive() {
         }
 
         const lowerCaseName = newName.toLowerCase();
-        const MimeType = lookup(newName) || 'application/octet-stream';
+        const MimeType = type === ResourceType.FOLDER ? 'Folder' : lookup(newName) || 'application/octet-stream';
 
         const parentKeys = await getLinkKeys(shareId, parentLinkID);
 
