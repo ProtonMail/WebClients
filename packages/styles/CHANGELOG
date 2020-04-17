@@ -17,6 +17,7 @@
 - drop down rework!
 - added `$use-ie-calc-font-fallback` Sass variable to remove IE11 font-reset fix
 - added some examples for vertical centering with flex 🎉
+- added group button for primary colors
 
 
 ## Updated/fixes
@@ -31,6 +32,7 @@
 - fixed blockquote print version (allowed page-break inside, for Mail)
 - fixed harmonization between Chrome/Firefox for monospace-d elements
 - hotfixed `pm-button--currentColor` with `pm-button--link`
+- fix em width helper
 
 
 # [1.8.2] - 2019-03-19

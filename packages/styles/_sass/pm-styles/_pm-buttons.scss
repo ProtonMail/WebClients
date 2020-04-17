@@ -222,6 +222,7 @@
 .pm-group-button:active {
   position: relative;
 }
+
 .pm-group-buttons > .pm-group-button:first-child {
   border-radius: $global-border-radius 0 0 $global-border-radius;
   border-left-width: 1px;
@@ -242,6 +243,18 @@
       border-left-width: 1px;
     }
   }
+}
+
+/* special case for group button with primary colors */
+.pm-group-buttons > .pm-group-button.pm-button--primary {
+	border-color: $pm-primary;
+	border-left-width: 0;
+	&:first-child {
+		border-left-width: 1px;
+	}
+	&:not(:last-child) {
+		border-right-color: var(--bgcolor-main-area, $white);
+	}
 }
 
 /* exception for group buttons, disabled state should keep the border */
