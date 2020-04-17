@@ -74,7 +74,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
                         .t`You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.`}</Alert>
                 </>
             ) : null}
-            {!paypal.loading && type === 'donation' ? (
+            {!paypal.loading && ['donation', 'human-verification'].includes(type) ? (
                 <>
                     <Alert>
                         {c('Info')
@@ -90,7 +90,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
 };
 
 PayPalView.propTypes = {
-    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'update']),
+    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'update', 'human-verification']),
     amount: PropTypes.number.isRequired,
     currency: PropTypes.string.isRequired,
     onPay: PropTypes.func,

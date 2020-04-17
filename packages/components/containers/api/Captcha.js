@@ -46,7 +46,7 @@ const Captcha = ({ token, onSubmit }) => {
         };
     }, []);
 
-    return <iframe src={src} style={style} sandbox="allow-scripts allow-same-origin allow-popups" />;
+    return <iframe className="w100" src={src} style={style} sandbox="allow-scripts allow-same-origin allow-popups" />;
 };
 
 Captcha.propTypes = {
