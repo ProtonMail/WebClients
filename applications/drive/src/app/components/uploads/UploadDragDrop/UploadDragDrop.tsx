@@ -16,7 +16,7 @@ const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
     const overlayRef = createRef<HTMLDivElement>();
 
     const { resource } = useDriveResource();
-    const { uploadDriveFile } = useFiles();
+    const { uploadDriveFiles } = useFiles();
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
 
     const overlayEnabled = !!resource?.shareId;
@@ -76,11 +76,14 @@ const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
                 return;
             }
 
+            const filesToUpload = [];
             for (let i = 0; i < files.length; i++) {
                 if (await isFile(files[i])) {
-                    uploadDriveFile(resource.shareId, resource.linkId, files[i]);
+                    filesToUpload.push(files[i]);
                 }
             }
+
+            uploadDriveFiles(resource.shareId, resource.linkId, filesToUpload);
         };
 
         dragDropEvents.forEach((eventName) => {
