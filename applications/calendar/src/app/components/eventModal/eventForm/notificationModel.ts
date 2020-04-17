@@ -1,8 +1,8 @@
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
-import { transformBeforeAt } from './trigger';
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
+import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
 import { VcalTriggerValue } from '../../../interfaces/VcalModel';
+import { transformBeforeAt } from './trigger';
 
 const getInt = (value: any) => parseInt(value, 10) || 0;
 
@@ -86,13 +86,7 @@ export const triggerToModel = ({
         hours: getInt(hours),
         minutes: getInt(minutes)
     };
-    const isSameTime =
-        parsedTrigger.weeks === 0 &&
-        parsedTrigger.days === 0 &&
-        parsedTrigger.hours === 0 &&
-        parsedTrigger.minutes === 0;
-    // If it's a negative trigger, or force negative for PT0S
-    const when = isNegative || isSameTime ? NOTIFICATION_WHEN.BEFORE : NOTIFICATION_WHEN.AFTER;
+    const when = isNegative ? NOTIFICATION_WHEN.BEFORE : NOTIFICATION_WHEN.AFTER;
     if (isAllDay) {
         return allDayTriggerToModel({ type, when, ...parsedTrigger });
     }

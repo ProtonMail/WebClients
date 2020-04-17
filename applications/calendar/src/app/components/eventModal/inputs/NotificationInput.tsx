@@ -1,15 +1,24 @@
 import React, { ChangeEvent } from 'react';
-import { classnames, Select, TimeInput, IntegerInput } from 'react-components';
-import { c, msgid } from 'ttag';
+import { classnames, IntegerInput, Select, TimeInput } from 'react-components';
+import { c } from 'ttag';
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
-import { NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICATION_WHEN } from '../../../constants';
+import { NOTIFICATION_UNITS_MAX } from '../../../constants';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
+import {
+    getDaysAfter,
+    getDaysBefore,
+    getHoursAfter,
+    getHoursBefore,
+    getMinutesAfter,
+    getMinutesBefore,
+    getSameDay,
+    getSameTime,
+    getWeeksAfter,
+    getWeeksBefore
+} from './notificationOptions';
 
 const { EMAIL, DEVICE } = SETTINGS_NOTIFICATION_TYPE;
-const { DAY, MINUTES, HOURS, WEEK } = NOTIFICATION_UNITS;
-const { BEFORE, AFTER } = NOTIFICATION_WHEN;
 
 interface Props {
     className?: string;
@@ -19,29 +28,39 @@ interface Props {
     onChange: (model: NotificationModel) => void;
 }
 
+const getWhenOptions = (isAllDay: boolean, value = 0) => {
+    if (isAllDay) {
+        return [getSameDay(), getDaysBefore(value), getDaysAfter(value), getWeeksBefore(value), getWeeksAfter(value)];
+    }
+
+    return [
+        getSameTime(),
+        getMinutesBefore(value),
+        getMinutesAfter(value),
+        getHoursBefore(value),
+        getHoursAfter(value),
+        getDaysBefore(value),
+        getDaysAfter(value)
+    ];
+};
+
 const NotificationInput = ({
     className,
     notification,
     notification: { isAllDay, type, when, value, at, unit },
-    hasWhen = false,
     hasType = false,
     onChange
 }: Props) => {
-    const isAllDayBefore = isAllDay && when === BEFORE;
+    const safeValue = value === undefined ? 1 : value;
 
-    const maxValue = NOTIFICATION_UNITS_MAX[unit];
-    const numberValue = value !== undefined ? Math.min(value, maxValue) : undefined;
-    const safeNumberValue = numberValue || 0;
+    const options = getWhenOptions(isAllDay, safeValue);
+    const textOptions = options.map((option, i) => ({ text: option.text, value: i }));
+    const closestOption = options.findIndex((option) => {
+        return option.value === safeValue && option.unit === unit && option.when === when;
+    });
+    const optionsValue = closestOption === -1 ? 0 : closestOption;
 
-    const notificationI18N = isAllDay
-        ? {
-              [BEFORE]: c('Event trigger').t`Before at`,
-              [AFTER]: c('Event trigger').t`After at`
-          }
-        : {
-              [BEFORE]: c('Event trigger').t`Before`,
-              [AFTER]: c('Event trigger').t`After`
-          };
+    const hasValueInput = value === undefined || value > 0;
 
     return (
         <div
@@ -51,7 +70,12 @@ const NotificationInput = ({
                 isAllDay && 'onmobile-flex-column'
             ])}
         >
-            <span className={classnames(['flex flex-nowrap flex-items-center', isAllDay && 'onmobile-mb0-5'])}>
+            <span
+                className={classnames([
+                    'flex flex-nowrap flex-items-center flex-item-fluid',
+                    isAllDay && 'onmobile-mb0-5'
+                ])}
+            >
                 {hasType ? (
                     <Select
                         className="mr1"
@@ -65,74 +89,52 @@ const NotificationInput = ({
                         }
                     />
                 ) : null}
-                <IntegerInput
-                    data-test-id="notification-time-input"
-                    className="mr1"
-                    step={1}
-                    min={0}
-                    max={maxValue}
-                    value={numberValue}
-                    onChange={(newValue) => {
-                        if (isAllDayBefore && unit === NOTIFICATION_UNITS.DAY) {
-                            if (newValue && newValue <= 0) {
-                                onChange({ ...notification, value: 1 });
-                                return;
-                            }
-                        }
-                        onChange({ ...notification, value: newValue });
-                    }}
-                    onBlur={() => {
-                        if (!value) {
-                            onChange({ ...notification, value: 0 });
-                        }
-                    }}
-                />
+                {hasValueInput ? (
+                    <span className="relative w6e mr1 flex-item-noshrink">
+                        <IntegerInput
+                            data-test-id="notification-time-input"
+                            step={1}
+                            min={0}
+                            max={NOTIFICATION_UNITS_MAX[unit]}
+                            value={value}
+                            onChange={(newValue) => {
+                                if (newValue !== undefined && newValue === 0) {
+                                    return;
+                                }
+                                onChange({ ...notification, value: newValue });
+                            }}
+                            onBlur={() => {
+                                if (!value) {
+                                    onChange({ ...notification, value: 1 });
+                                }
+                            }}
+                        />
+                    </span>
+                ) : null}
                 <Select
                     data-test-id="notification-time-dropdown"
-                    className={classnames(['mr1', isAllDay && 'onmobile-mr0'])}
-                    value={unit}
-                    options={[
-                        !isAllDay && {
-                            text: c('Time unit').ngettext(msgid`Minute`, `Minutes`, safeNumberValue),
-                            value: MINUTES
-                        },
-                        !isAllDay && {
-                            text: c('Time unit').ngettext(msgid`Hour`, `Hours`, safeNumberValue),
-                            value: HOURS
-                        },
-                        { text: c('Time unit').ngettext(msgid`Day`, `Days`, safeNumberValue), value: DAY },
-                        { text: c('Time unit').ngettext(msgid`Week`, `Weeks`, safeNumberValue), value: WEEK }
-                    ].filter(isTruthy)}
+                    className={classnames([isAllDay && 'mr1 onmobile-mr0'])}
+                    value={optionsValue}
+                    options={textOptions}
                     onChange={({ target }: ChangeEvent<HTMLSelectElement>) => {
-                        const newUnit = +target.value as NOTIFICATION_UNITS;
-                        if (isAllDay && newUnit === DAY && value === 0 && when === BEFORE) {
-                            onChange({ ...notification, value: 1, unit: newUnit });
+                        const optionIndex = +target.value;
+                        const option = options[optionIndex];
+                        if (!option) {
                             return;
                         }
-                        const normalizedValue = Math.min(notification.value || 0, NOTIFICATION_UNITS_MAX[newUnit]);
-                        onChange({ ...notification, value: normalizedValue, unit: newUnit });
+                        onChange({
+                            ...notification,
+                            ...option
+                        });
                     }}
                 />
             </span>
-            <span data-test-id="notification-time-before-at" className="flex flex-nowrap flex-items-center">
-                {hasWhen ? (
-                    <Select
-                        className="mr1 flex-item-noshrink pr0-5"
-                        value={when}
-                        options={[
-                            { text: notificationI18N[BEFORE], value: NOTIFICATION_WHEN.BEFORE },
-                            { text: notificationI18N[AFTER], value: NOTIFICATION_WHEN.AFTER }
-                        ]}
-                        onChange={({ target }: ChangeEvent<HTMLSelectElement>) => {
-                            const when = target.value as NOTIFICATION_WHEN;
-                            onChange({ ...notification, when });
-                        }}
-                    />
-                ) : (
-                    <span className="flex-item-noshrink pr0-5">{notificationI18N[when].toLowerCase()}</span>
-                )}
-                {isAllDay && at ? <TimeInput value={at} onChange={(at) => onChange({ ...notification, at })} /> : null}
-            </span>
+            {isAllDay && at ? (
+                <span className="flex flex-nowrap flex-items-center w30">
+                    <span className="flex-item-noshrink">{c('').t`at`}</span>
+                    <TimeInput className="ml1" value={at} onChange={(at) => onChange({ ...notification, at })} />
+                </span>
+            ) : null}
         </div>
     );
 };

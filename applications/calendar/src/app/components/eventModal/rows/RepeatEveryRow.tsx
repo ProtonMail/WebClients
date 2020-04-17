@@ -50,7 +50,7 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted, 
             <Row>
                 <div className="flex flex-wrap flex-item-fluid onmobile-flex-column onpopover-flex-column">
                     <div className="flex flex-nowrap onmobile-w100 flex-item-fluid mb0-5">
-                        <div className="flex-item-fluid">
+                        <div className="w6e">
                             <IntegerInput
                                 data-test-id="event-modal/custom-frequency/interval:input"
                                 min={1}
@@ -65,7 +65,7 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted, 
                                 isSubmitted={isSubmitted}
                             />
                         </div>
-                        <div className="w14e" />
+                        <div className="mr1" />
                         <div className="flex-item-fluid">
                             <Select
                                 id="event-custom-frequency-select"
@@ -80,7 +80,7 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted, 
                     </div>
                     {isMonthly && (
                         <div className="flex flex-item-fluid onmobile-w100 mb0-5">
-                            <div className="w14e nomobile noInEventPopover" />
+                            <div className="mr1 nomobile noInEventPopover" />
                             <div className="flex flex-item-fluid">
                                 <SelectMonthlyType
                                     id="event-custom-monthly-select"

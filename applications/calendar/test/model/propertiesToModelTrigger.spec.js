@@ -8,7 +8,7 @@ const { WEEK, DAY, HOURS, MINUTES } = NOTIFICATION_UNITS;
 const { AFTER, BEFORE } = NOTIFICATION_WHEN;
 
 describe('properties to model positive trigger', () => {
-    test('part day 0 defaults to negative', () => {
+    test('part day 0', () => {
         expect(
             triggerToModel({
                 isAllDay: false,
@@ -20,7 +20,7 @@ describe('properties to model positive trigger', () => {
             value: 0,
             unit: MINUTES,
             type: DEVICE,
-            when: BEFORE
+            when: AFTER
         });
     });
 

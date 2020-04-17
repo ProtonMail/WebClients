@@ -61,17 +61,15 @@ const CreateEventPopover = ({
         >
             <PopoverHeader onClose={onClose} />
             <PopoverContent>
-                <div className="w95">
-                    <MinimalEventForm
-                        isNarrow={isNarrow}
-                        displayWeekNumbers={displayWeekNumbers}
-                        weekStartsOn={weekStartsOn}
-                        isSubmitted={isSubmitted}
-                        errors={errors}
-                        model={model}
-                        setModel={setModel}
-                    />
-                </div>
+                <MinimalEventForm
+                    isNarrow={isNarrow}
+                    displayWeekNumbers={displayWeekNumbers}
+                    weekStartsOn={weekStartsOn}
+                    isSubmitted={isSubmitted}
+                    errors={errors}
+                    model={model}
+                    setModel={setModel}
+                />
             </PopoverContent>
             <PopoverFooter>
                 <SmallButton

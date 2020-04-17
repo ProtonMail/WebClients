@@ -38,7 +38,7 @@ describe('getAlarmMessage', () => {
         const now = toUTCDate(convertUTCDateTimeToZone(fakeUtcNow, tzidEurope));
         expect(
             getAlarmMessage({ component: testFulldayComponent, start, now, tzid: tzidEurope, formatOptions })
-        ).toEqual('test alarm started today');
+        ).toEqual('test alarm starts today');
     });
 
     test('it should display the right notification for events happening tomorrow', () => {

@@ -15,7 +15,7 @@ const getAlarmMessageText = ({ title, isAllDay, startDateTimezoned, nowDateTimez
 
     if (isSameDay(nowDateTimezoned, startDateTimezoned)) {
         if (isAllDay) {
-            return c('Alarm notification').t`${title} started today`;
+            return c('Alarm notification').t`${title} starts today`;
         }
         if (isInFuture) {
             return c('Alarm notification').t`${title} will start at ${formattedHour}`;

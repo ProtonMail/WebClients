@@ -1,5 +1,5 @@
-import { c, msgid } from 'ttag';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
+import { c, msgid } from 'ttag';
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../constants';
 import { NotificationModel } from '../interfaces/NotificationModel';
 
@@ -7,6 +7,10 @@ const getNotificationString = (notification: NotificationModel, formatTime: (dat
     const { value = 0, unit, when, at, isAllDay } = notification;
 
     if (!isAllDay || !at) {
+        if (value === 0) {
+            return c('Notifications').t`At the same time`;
+        }
+
         if (when === NOTIFICATION_WHEN.BEFORE) {
             if (unit === NOTIFICATION_UNITS.MINUTES) {
                 return c('Notifications').ngettext(msgid`${value} minute before`, `${value} minutes before`, value);
@@ -40,6 +44,10 @@ const getNotificationString = (notification: NotificationModel, formatTime: (dat
 
     const modifiedAt = toUTCDate(fromLocalDate(at));
     const time = formatTime(modifiedAt);
+
+    if (value === 0) {
+        return c('Notifications').t`On the same day at ${time}`;
+    }
 
     if (when === NOTIFICATION_WHEN.BEFORE) {
         if (unit === NOTIFICATION_UNITS.MINUTES) {
