@@ -74,7 +74,7 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
             <RenameModal
                 item={item}
                 renameLink={async (name) => {
-                    await renameLink(resource.shareId, item.LinkID, item.ParentLinkID, name);
+                    await renameLink(resource.shareId, item.LinkID, item.ParentLinkID, name, item.Type);
                     events.call(resource.shareId);
                 }}
             />
