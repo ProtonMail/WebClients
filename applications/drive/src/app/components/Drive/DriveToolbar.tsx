@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { c, msgid } from 'ttag';
 
-import { ToolbarSeparator, Toolbar, ToolbarButton, useModals, useNotifications } from 'react-components';
+import { ToolbarSeparator, Toolbar, ToolbarButton, useModals, useNotifications, useLoading } from 'react-components';
 
 import { getMetaForTransfer } from './Drive';
 import { DriveResource } from './DriveResourceProvider';
@@ -30,6 +30,7 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
     const { getLinkMeta, createNewFolder, renameLink, events } = useDrive();
     const { startFileTransfer } = useFiles();
     const { trashLink, restoreLink } = useTrash();
+    const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
     const cache = useDriveCache();
 
     const ParentLinkID = cache.get.linkMeta(resource.shareId, resource.linkId)?.ParentLinkID;
@@ -85,7 +86,7 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
         createModal(<DetailsModal item={selectedItems[0]} resource={resource} getLinkMeta={getLinkMeta} />);
     };
 
-    const handleDeleteClick = async () => {
+    const moveToTrash = async () => {
         const toTrash = selectedItems;
         const trashedLinks = await takeActionForAllItems(toTrash, (item: FileBrowserItem) =>
             trashLink(resource.shareId, item.LinkID)
@@ -184,7 +185,12 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
             {selectedItems.length > 0 && (
                 <>
                     <ToolbarSeparator />
-                    <ToolbarButton title={c('Action').t`Move to Trash`} icon="trash" onClick={handleDeleteClick} />
+                    <ToolbarButton
+                        disabled={moveToTrashLoading}
+                        title={c('Action').t`Move to Trash`}
+                        icon="trash"
+                        onClick={() => withMoveToTrashLoading(moveToTrash())}
+                    />
                 </>
             )}
         </Toolbar>

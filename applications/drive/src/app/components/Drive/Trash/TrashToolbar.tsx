@@ -1,7 +1,7 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
 
-import { Toolbar, ToolbarButton, useNotifications, useModals, Alert } from 'react-components';
+import { Toolbar, ToolbarButton, useNotifications, useModals, Alert, useLoading } from 'react-components';
 
 import useDrive from '../../../hooks/useDrive';
 import useFileBrowser from '../../FileBrowser/useFileBrowser';
@@ -21,6 +21,7 @@ const TrashToolbar = ({ shareId, fileBrowserControls }: Props) => {
     const { createNotification } = useNotifications();
     const { events } = useDrive();
     const { restoreLink, deleteLink, emptyTrash } = useTrash();
+    const [restoreLoading, withRestoreLoading] = useLoading();
     const cache = useDriveCache();
     const trashItems = shareId ? cache.get.trashMetas(shareId) : [];
     const { selectedItems } = fileBrowserControls;
@@ -41,7 +42,7 @@ const TrashToolbar = ({ shareId, fileBrowserControls }: Props) => {
         );
     };
 
-    const handleRestoreClick = async () => {
+    const restoreFromTrash = async () => {
         if (!shareId) {
             return;
         }
@@ -149,10 +150,10 @@ const TrashToolbar = ({ shareId, fileBrowserControls }: Props) => {
             {
                 <>
                     <ToolbarButton
-                        disabled={!selectedItems.length}
+                        disabled={!selectedItems.length || restoreLoading}
                         title={c('Action').t`Restore from Trash`}
                         icon="calendar-repeat"
-                        onClick={handleRestoreClick}
+                        onClick={() => withRestoreLoading(restoreFromTrash())}
                     />
                     <ToolbarButton
                         disabled={!selectedItems.length}
