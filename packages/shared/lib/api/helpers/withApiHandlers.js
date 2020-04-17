@@ -161,21 +161,22 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                 const { code } = getError(e);
 
                 if (code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED) {
-                    const { Details: { Token: token, VerifyMethods: methods = [] } = {} } = e.data || {};
+                    const {
+                        Details: { HumanVerificationToken: captchaToken, HumanVerificationMethods: methods = [] } = {}
+                    } = e.data || {};
 
-                    return onVerification({ token, methods }).then(({ token: Token, method: TokenType }) => {
-                        const hasParams = ['get', 'delete'].includes(options.method.toLowerCase());
-                        const key = hasParams ? 'params' : 'data';
-
+                    const onVerify = ({ token, tokenType }) => {
                         return call({
                             ...options,
-                            [key]: {
-                                ...options[key],
-                                Token,
-                                TokenType
+                            headers: {
+                                ...options.headers,
+                                'x-pm-human-verification-token': token,
+                                'x-pm-human-verification-token-type': tokenType
                             }
                         });
-                    });
+                    };
+
+                    return onVerification({ token: captchaToken, methods, onVerify });
                 }
 
                 return onError(e);
