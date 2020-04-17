@@ -1,8 +1,10 @@
 import { useCallback } from 'react';
-import { useApi, useEventManager, useCache } from 'react-components';
+import { useApi, useEventManager, useCache, useUser, useNotifications } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import { DriveFileRevisionResult, CreateFileResult, FileRevisionState, RequestUploadResult } from '../interfaces/file';
 import { decryptMessage, encryptMessage } from 'pmcrypto';
+import { c } from 'ttag';
+import { lookup } from 'mime-types';
 import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../api/files';
 import {
     generateNodeKeys,
@@ -12,23 +14,23 @@ import {
     getStreamMessage,
     generateContentHash
 } from 'proton-shared/lib/keys/driveKeys';
+import { binaryStringToArray } from 'proton-shared/lib/helpers/string';
+import { range } from 'proton-shared/lib/helpers/array';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { splitExtension } from 'proton-shared/lib/helpers/file';
+import { noop } from 'proton-shared/lib/helpers/function';
+import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
 import { useUploadProvider, BlockMeta } from '../components/uploads/UploadProvider';
-import { TransferMeta } from '../interfaces/transfer';
+import { TransferMeta, TransferState } from '../interfaces/transfer';
 import { useDownloadProvider } from '../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../components/downloads/download';
 import { streamToBuffer } from '../utils/stream';
 import { HashCheckResult, ResourceType } from '../interfaces/link';
-import { lookup } from 'mime-types';
-import { noop } from 'proton-shared/lib/helpers/function';
-import useDriveCrypto from './useDriveCrypto';
-import { binaryStringToArray } from 'proton-shared/lib/helpers/string';
-import { range } from 'proton-shared/lib/helpers/array';
 import { queryCheckAvailableHashes } from '../api/link';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { ValidationError, validateLinkName } from '../utils/validation';
+import useDriveCrypto from './useDriveCrypto';
 import useDrive from './useDrive';
-import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
 import useDebouncedPromise from './useDebouncedPromise';
 
 const HASH_CHECK_AMOUNT = 10;
@@ -37,10 +39,12 @@ function useFiles() {
     const api = useApi();
     const debouncedRequest = useDebouncedPromise();
     const cache = useCache();
+    const { createNotification } = useNotifications();
     const { getPrimaryAddressKey, sign } = useDriveCrypto();
     const { getLinkMeta, getLinkKeys, events } = useDrive();
     const { addToDownloadQueue } = useDownloadProvider();
-    const { addToUploadQueue } = useUploadProvider();
+    const { addToUploadQueue, uploads, getUploadsProgresses } = useUploadProvider();
+    const [{ MaxSpace, UsedSpace }] = useUser();
     const { call } = useEventManager();
 
     const findAvailableName = async (
@@ -245,6 +249,45 @@ function useFiles() {
         );
     };
 
+    const checkHasEnoughSpace = async (files: FileList | File[]) => {
+        const calculateTotalRemainingBytes = () => {
+            const progresses = getUploadsProgresses();
+            return uploads.reduce(
+                (sum, upload) =>
+                    upload.info &&
+                    [TransferState.Initializing, TransferState.Pending, TransferState.Progress].includes(upload.state)
+                        ? sum + upload.info.blob.size - progresses[upload.id]
+                        : sum,
+                0
+            );
+        };
+
+        let totalFileListSize = 0;
+        for (let i = 0; i < files.length; i++) {
+            totalFileListSize += files[i].size;
+        }
+
+        const remaining = calculateTotalRemainingBytes();
+        await call();
+        const result = MaxSpace > UsedSpace + remaining + totalFileListSize;
+        return { result, total: totalFileListSize };
+    };
+
+    const uploadDriveFiles = async (shareId: string, ParentLinkID: string, files: FileList | File[]) => {
+        const { result, total } = await checkHasEnoughSpace(files);
+        const formattedRemaining = humanSize(total);
+        if (!result) {
+            createNotification({
+                text: c('Notification').t`Not enough space to upload ${formattedRemaining}`,
+                type: 'error'
+            });
+            throw new Error('Insufficient storage left');
+        }
+        for (let i = 0; i < files.length; i++) {
+            uploadDriveFile(shareId, ParentLinkID, files[i]);
+        }
+    };
+
     const decryptBlockStream = (shareId: string, linkId: string): StreamTransformer => async (stream) => {
         // TODO: implement root hash validation when file updates are implemented
         const keys = await getLinkKeys(shareId, linkId);
@@ -328,6 +371,7 @@ function useFiles() {
     return {
         startFileTransfer,
         uploadDriveFile,
+        uploadDriveFiles,
         downloadDriveFile,
         saveFileTransferFromBuffer
     };
