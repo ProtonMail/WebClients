@@ -2,7 +2,6 @@ import React from 'react';
 import { Icon, Input } from '../../index';
 import { LABEL_COLORS } from 'proton-shared/lib/constants';
 
-import './ColorSelector.scss';
 import { classnames } from '../../helpers/component';
 
 interface Props {
