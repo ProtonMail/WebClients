@@ -75,6 +75,10 @@ $field-container: 26rem !default;
       display: none;
     }
   }
+
+  &[type="number"] {
+      padding-right: .25em;
+  }
 }
 @if $rtl-option == true {
   [dir="rtl"] {
