@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, SyntheticEvent } from 'react';
 import { isSafari } from 'proton-shared/lib/helpers/browser';
 import { c } from 'ttag';
 import Header from './Header';
@@ -82,8 +82,15 @@ const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onC
         }
     };
 
+    const preventEventPropagation = useCallback((e: SyntheticEvent) => e.stopPropagation(), []);
+
     return (
-        <div className="pd-file-preview">
+        <div
+            className="pd-file-preview"
+            onDragEnter={preventEventPropagation}
+            onDragOver={preventEventPropagation}
+            onDrop={preventEventPropagation}
+        >
             <Header name={meta?.Name} onClose={onClose} onSave={onSave}>
                 {totalAvailable > 0 && onOpen && currentOpenIndex !== -1 && (
                     <NavigationControl

@@ -1,4 +1,4 @@
-import React, { ReactNode, createRef, useState, useEffect } from 'react';
+import React, { ReactNode, useState, useCallback, SyntheticEvent } from 'react';
 import { c } from 'ttag';
 
 import dragdropImageSvg from 'design-system/assets/img/pd-images/drag-and-drop.svg';
@@ -6,70 +6,51 @@ import dragdropImageSvg from 'design-system/assets/img/pd-images/drag-and-drop.s
 import { useDriveResource } from '../../Drive/DriveResourceProvider';
 import useFiles from '../../../hooks/useFiles';
 
+const MEGABYTE_SIZE = 1048576;
+
+const isFile = async (blob: Blob): Promise<boolean> => {
+    return new Promise((resolve) => {
+        if (blob.size > MEGABYTE_SIZE) {
+            resolve(true);
+        }
+
+        const reader = new FileReader();
+        reader.onload = function() {
+            resolve(true);
+        };
+        reader.onerror = function() {
+            resolve(false);
+        };
+        reader.readAsArrayBuffer(blob);
+    });
+};
+
 interface UploadDragDropProps {
     children: ReactNode;
     className?: string;
 }
 
 const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
-    const dropAreaRef = createRef<HTMLDivElement>();
-    const overlayRef = createRef<HTMLDivElement>();
-
     const { resource } = useDriveResource();
     const { uploadDriveFiles } = useFiles();
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
 
     const overlayEnabled = !!resource?.shareId;
-    const dragOverEvents = ['dragenter', 'dragover'];
-    const dragDropEvents = [...dragOverEvents, 'dragend', 'dragleave', 'drag', 'drop'];
 
-    useEffect(() => {
-        const handleDragOver = () => {
+    const handleDragOver = useCallback(() => {
+        if (overlayIsVisible !== overlayEnabled) {
             setOverlayIsVisible(overlayEnabled);
-        };
-
-        dragOverEvents.forEach((eventName) => {
-            dropAreaRef.current?.addEventListener(eventName, handleDragOver);
-        });
-
-        return () => {
-            dragOverEvents.forEach((eventName) => {
-                dropAreaRef.current?.removeEventListener(eventName, handleDragOver);
-            });
-        };
+        }
     }, [overlayEnabled]);
 
-    useEffect(() => {
-        const megabyteSize = 1048576;
+    const handleDragLeave = useCallback(() => {
+        setOverlayIsVisible(false);
+    }, [overlayIsVisible]);
 
-        const preventDefault = (e: Event) => {
+    const handleDrop = useCallback(
+        async (e: React.DragEvent<HTMLDivElement>) => {
             e.preventDefault();
-            e.stopPropagation();
-        };
-
-        const handleDragLeave = () => {
             setOverlayIsVisible(false);
-        };
-
-        const isFile = async (blob: Blob): Promise<boolean> => {
-            return new Promise((resolve) => {
-                if (blob.size > megabyteSize) {
-                    resolve(true);
-                }
-
-                const reader = new FileReader();
-                reader.onload = function() {
-                    resolve(true);
-                };
-                reader.onerror = function() {
-                    resolve(false);
-                };
-                reader.readAsArrayBuffer(blob);
-            });
-        };
-
-        const handleOnDrop = async (e: DragEvent) => {
-            handleDragLeave();
 
             const files = e.dataTransfer?.files;
             if (!resource || !files) {
@@ -84,30 +65,27 @@ const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
             }
 
             uploadDriveFiles(resource.shareId, resource.linkId, filesToUpload);
-        };
+        },
+        [overlayIsVisible]
+    );
 
-        dragDropEvents.forEach((eventName) => {
-            overlayRef.current?.addEventListener(eventName, preventDefault);
-        });
-
-        overlayRef.current?.addEventListener('dragleave', handleDragLeave);
-        overlayRef.current?.addEventListener('drop', handleOnDrop);
-
-        return () => {
-            dragDropEvents.forEach((eventName) => {
-                overlayRef.current?.removeEventListener(eventName, preventDefault);
-            });
-
-            overlayRef.current?.removeEventListener('dragleave', handleDragLeave);
-            overlayRef.current?.removeEventListener('drop', handleOnDrop);
-        };
-    }, [overlayIsVisible]);
+    const preventDefaultEvent = useCallback((e: SyntheticEvent) => e.preventDefault(), []);
 
     return (
-        <div ref={dropAreaRef} className={className}>
+        <div
+            className={className}
+            onDragEnter={handleDragOver}
+            onDragOver={handleDragOver}
+            onDrop={preventDefaultEvent}
+        >
             {children}
             {overlayEnabled && overlayIsVisible && (
-                <div ref={overlayRef} className={'pd-drag-drop'}>
+                <div
+                    className="pd-drag-drop"
+                    onDragLeave={handleDragLeave}
+                    onDragOver={preventDefaultEvent}
+                    onDrop={handleDrop}
+                >
                     <section className="pd-drag-drop-infobox p2">
                         <img className="pd-drag-drop-image" src={dragdropImageSvg} alt="" aria-hidden="true" />
                         <h2 className="bold m0">{c('Title').t`Drop to upload`}</h2>
