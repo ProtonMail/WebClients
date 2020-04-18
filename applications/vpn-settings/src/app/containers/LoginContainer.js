@@ -27,19 +27,17 @@ const LoginContainer = ({ stopRedirect, history, onLogin }) => {
                 needHelp={
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="pm-button--link">
                         <DropdownMenu>
-                            <div className="inbl w100 pt0-5 pb0-5 ellipsis">
-                                <Link to="/reset-password">{c('Link').t`Reset password`}</Link>
-                            </div>
-                            <div className="inbl w100 pt0-5 pb0-5 ellipsis">
-                                <Link to="/forgot-username">{c('Link').t`Forgot username?`}</Link>
-                            </div>
-                            <div className="inbl w100 pt0-5 pb0-5 ellipsis">
-                                <Href url="https://protonvpn.com/support/login-problems/">{c('Link')
-                                    .t`Common login problems`}</Href>
-                            </div>
-                            <div className="inbl w100 pt0-5 pb0-5 ellipsis">
-                                <Href url="https://protonvpn.com/support/">{c('Link').t`Contact support`}</Href>
-                            </div>
+                            <Link to="/reset-password" className="pr1 pl1 pt0-5 pb0-5 bl alignleft">{c('Link')
+                                .t`Reset password`}</Link>
+                            <Link to="/forgot-username" className="pr1 pl1 pt0-5 pb0-5 bl alignleft">{c('Link')
+                                .t`Forgot username?`}</Link>
+                            <Href
+                                url="https://protonvpn.com/support/login-problems/"
+                                className="pr1 pl1 pt0-5 pb0-5 bl alignleft"
+                            >{c('Link').t`Common login problems`}</Href>
+                            <Href url="https://protonvpn.com/support/" className="pr1 pl1 pt0-5 pb0-5 bl alignleft">{c(
+                                'Link'
+                            ).t`Contact support`}</Href>
                         </DropdownMenu>
                     </SimpleDropdown>
                 }
