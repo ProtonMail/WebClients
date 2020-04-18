@@ -15,7 +15,6 @@ const useMethods = ({ amount, coupon, type }) => {
     const isPaypalAmountValid = amount >= MIN_PAYPAL_AMOUNT;
     const isInvoice = type === 'invoice';
     const isSignup = type === 'signup';
-    const isHumanVerification = type === 'human-verification';
     const alreadyHavePayPal = methods.some(({ Type }) => Type === PAYMENT_METHOD_TYPES.PAYPAL);
 
     const getMethod = (type, { Brand = '', Last4 = '', Payer = '' }) => {
@@ -77,7 +76,7 @@ const useMethods = ({ amount, coupon, type }) => {
         });
     }
 
-    if (!isSignup && !isHumanVerification && coupon !== BLACK_FRIDAY.COUPON_CODE && amount >= MIN_BITCOIN_AMOUNT) {
+    if (!isSignup && coupon !== BLACK_FRIDAY.COUPON_CODE && amount >= MIN_BITCOIN_AMOUNT) {
         options.push({
             icon: 'payments-type-bt',
             text: c('Payment method option').t`Bitcoin`,
@@ -85,7 +84,7 @@ const useMethods = ({ amount, coupon, type }) => {
         });
     }
 
-    if (!isSignup && !isHumanVerification && coupon !== BLACK_FRIDAY.COUPON_CODE) {
+    if (!isSignup && coupon !== BLACK_FRIDAY.COUPON_CODE) {
         options.push({
             icon: 'payments-type-cash',
             text: c('Label').t`Cash`,

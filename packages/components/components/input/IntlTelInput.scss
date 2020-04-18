@@ -1,0 +1,16 @@
+@import "~design-system/_sass/reusable-components/design-system-config";
+
+// Remove selected flag background when dropdown is active
+.intl-tel-input.allow-dropdown .flag-container:hover .selected-flag {
+    background-color: transparent;
+}
+// Apply the background if user hovers the flag directly
+.intl-tel-input.allow-dropdown .flag-container .selected-flag:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.intl-tel-input .country-list .country.highlight::before {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.intl-tel-input .country-list .country-name {
+    color: $pm-global-grey;
+}

@@ -120,14 +120,13 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
             });
         };
 
-        const handleVerification = ({ token, methods, onVerify }) => {
+        const handleVerification = ({ token, methods }) => {
             return new Promise((resolve, reject) => {
                 createModal(
                     <HumanVerificationModal
                         token={token}
                         methods={methods}
                         onClose={() => reject(CancelVerificationError())}
-                        onVerify={onVerify}
                         onSuccess={resolve}
                     />
                 );

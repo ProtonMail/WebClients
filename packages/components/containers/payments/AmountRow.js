@@ -5,7 +5,7 @@ import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 const AmountRow = ({ method, amount, onChangeAmount, currency, onChangeCurrency }) => {
-    if ([PAYMENT_METHOD_TYPES.CASH].includes(method)) {
+    if ([PAYMENT_METHOD_TYPES.BITCOIN, PAYMENT_METHOD_TYPES.CASH].includes(method)) {
         return null;
     }
 

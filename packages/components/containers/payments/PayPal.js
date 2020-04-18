@@ -82,7 +82,7 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     if (type === 'payment' && Amount < MIN_PAYPAL_AMOUNT) {
         return (
             <Alert type="error">
-                {c('Error').t`Amount below minimum.`} {`(${(<Price currency={Currency}>{MIN_PAYPAL_AMOUNT}</Price>)})`}
+                {c('Error').t`Amount below minimum.`} {`(${<Price currency={Currency}>{MIN_PAYPAL_AMOUNT}</Price>})`}
             </Alert>
         );
     }
@@ -169,7 +169,7 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
                         .t`You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.`}</Alert>
                 </>
             ) : null}
-            {!loadingVerification && ['donation', 'human-verification'].includes(type) ? (
+            {!loadingVerification && type === 'donation' ? (
                 <>
                     <Alert>
                         {c('Info')
@@ -188,7 +188,7 @@ PayPal.propTypes = {
     amount: PropTypes.number.isRequired,
     currency: PropTypes.string.isRequired,
     onPay: PropTypes.func.isRequired,
-    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'update', 'human-verification'])
+    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'update'])
 };
 
 export default PayPal;
