@@ -128,7 +128,8 @@ $mobilePopupMargin: 3rem;
   .country-list {
     position: absolute;
     // popup so render above everything else
-    z-index: 2;
+	z-index: 2;
+	background: var(--bgcolor-main-area, $white);
 
     // override default list styles
     list-style: none;
