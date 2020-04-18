@@ -210,6 +210,7 @@ export { default as usePayment } from './containers/payments/usePayment';
 export { default as getDefaultCard } from './containers/payments/getDefaultCard';
 export { default as DonateModal } from './containers/payments/DonateModal';
 export { default as PayPal } from './containers/payments/PayPal';
+export { default as PayPalButton } from './containers/payments/PayPalButton';
 export { default as Details } from './components/container/Details';
 export { default as Summary } from './components/container/Summary';
 export { default as AuthModal } from './containers/password/AuthModal';
