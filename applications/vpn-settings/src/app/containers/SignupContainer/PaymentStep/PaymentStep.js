@@ -1,6 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Payment, usePayment, PrimaryButton, Field, Row, useLoading, SubTitle } from 'react-components';
+import {
+    Alert,
+    Payment,
+    usePayment,
+    PrimaryButton,
+    Field,
+    Row,
+    useLoading,
+    SubTitle,
+    PayPalButton
+} from 'react-components';
 import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 
@@ -49,6 +59,13 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                                         )
                                     }
                                 >{c('Action').t`Confirm payment`}</PrimaryButton>
+                            </Field>
+                        )}
+                        {method === PAYMENT_METHOD_TYPES.PAYPAL && (
+                            <Field>
+                                <PayPalButton paypal={paypal} className="pm-button--primary" amount={paymentAmount}>{c(
+                                    'Action'
+                                ).t`Continue`}</PayPalButton>
                             </Field>
                         )}
                     </Payment>
