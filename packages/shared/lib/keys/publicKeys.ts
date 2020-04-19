@@ -193,7 +193,7 @@ export const getPublicKeyModel = async ({
         scheme,
         mimeType: isExternalPGPInline ? DRAFT_MIME_TYPES.PLAINTEXT : mimeType,
         emailAddress,
-        publicKeys: { api: orderedApiKeys, pinned: orderedPinnedKeys },
+        publicKeys: { apiKeys: orderedApiKeys, pinnedKeys: orderedPinnedKeys },
         trustedFingerprints,
         expiredFingerprints,
         revokedFingerprints,

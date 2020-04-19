@@ -70,7 +70,7 @@ export interface PublicKeyConfigs {
 
 export interface PublicKeyModel {
     emailAddress: string;
-    publicKeys: { api: OpenPGPKey[]; pinned: OpenPGPKey[] };
+    publicKeys: { apiKeys: OpenPGPKey[]; pinnedKeys: OpenPGPKey[] };
     encrypt: boolean;
     sign: boolean;
     mimeType: DRAFT_MIME_TYPES;
