@@ -5,16 +5,19 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { ResourceType } from '../../interfaces/link';
 import { FileBrowserItem } from './FileBrowser';
 import MimeIcon from '../FileIcon';
+import LocationCell from './LocationCell';
 
 interface Props {
     item: FileBrowserItem;
+    shareId: string;
     selectedItems: FileBrowserItem[];
     onToggleSelect: (item: string) => void;
     onShiftClick: (item: string) => void;
     onClick?: (item: FileBrowserItem) => void;
+    showLocation?: boolean;
 }
 
-const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onShiftClick }: Props) => {
+const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShiftClick, showLocation }: Props) => {
     const { isDesktop } = useActiveBreakpoint();
     const touchStarted = useRef(false);
 
@@ -59,11 +62,7 @@ const ItemRow = ({ item, selectedItems, onToggleSelect, onClick, onShiftClick }:
                 {item.Name}
             </span>
         </div>,
-        item.Location && (
-            <div key="location" className="ellipsis">
-                <span title={item.Location}>{item.Location}</span>
-            </div>
-        ),
+        showLocation && <LocationCell shareId={shareId} item={item} />,
         isFolder ? c('Label').t`Folder` : c('Label').t`File`,
         isDesktop && (
             <Time key="dateModified" format="PPp">

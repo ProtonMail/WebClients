@@ -62,6 +62,7 @@ function Drive({ resource, openResource }: Props) {
         <EmptyFolder />
     ) : (
         <FileBrowser
+            shareId={resource.shareId}
             loading={loading}
             contents={contents}
             selectedItems={selectedItems}

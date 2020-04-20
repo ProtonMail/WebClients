@@ -1,23 +1,38 @@
-import React from 'react';
-import FileBrowser, { FileBrowserItem } from '../../FileBrowser/FileBrowser';
-import useFileBrowser from '../../FileBrowser/useFileBrowser';
+import React, { useCallback } from 'react';
+
+import { useMainArea } from 'react-components';
+
+import FileBrowser from '../../FileBrowser/FileBrowser';
 import EmptyTrash from '../../FileBrowser/EmptyTrash';
+import useOnScrollEnd from '../../../hooks/useOnScrollEnd';
+import { useTrashContent } from './TrashContentProvider';
 
 interface Props {
-    loading: boolean;
-    complete: boolean;
-    contents: FileBrowserItem[];
-    fileBrowserControls: ReturnType<typeof useFileBrowser>;
+    shareId: string;
 }
 
-function Trash({ loading, complete, contents, fileBrowserControls }: Props) {
+function Trash({ shareId }: Props) {
+    const mainAreaRef = useMainArea();
+    const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls } = useTrashContent();
+
     const { clearSelections, selectedItems, toggleSelectItem, toggleAllSelected, selectRange } = fileBrowserControls;
+
+    const handleScrollEnd = useCallback(() => {
+        // Only load on scroll after initial load from backend
+        if (initialized && !complete) {
+            loadNextPage();
+        }
+    }, [initialized, complete, loadNextPage]);
+
+    // On content change, check scroll end (does not rebind listeners)
+    useOnScrollEnd(handleScrollEnd, mainAreaRef, 0.9, [contents]);
 
     return complete && !contents.length && !loading ? (
         <EmptyTrash />
     ) : (
         <FileBrowser
             isTrash
+            shareId={shareId}
             loading={loading}
             contents={contents}
             selectedItems={selectedItems}
