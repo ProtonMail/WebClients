@@ -1,5 +1,5 @@
 /*
- * badges/labels 
+ * badges/labels
  */
 [class*="badgeLabel"]:not([class*="pm-badgeLabel-"]) {
   @extend .uppercase;
@@ -10,15 +10,16 @@
   line-height: 1;
   border-radius: $global-border-radius;
   border-width: 2px;
-  border-style: solid; 
+  border-style: solid;
   //max-width: 15em;
-}  
+}
 
 // only for labels in conversations
 .pm-badgeLabel-container  {
   [class*="badgeLabel"] {
     border-radius: 1rem;
-    padding: .1rem .2rem;
+	padding: .1rem .2rem;
+	max-width: 15rem;
   }
 }
 .pm-badgeLabel-link,
