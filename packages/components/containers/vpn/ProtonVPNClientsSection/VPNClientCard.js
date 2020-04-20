@@ -7,7 +7,7 @@ const VPNClientCard = ({ title, link, icon }) => {
     return (
         <Bordered className="ml0-5 mr0-5 aligncenter relative">
             <div>
-                <Icon size={25} name={icon} />
+                <Icon size={24} name={icon} />
             </div>
             <Block>{title}</Block>
             <Href url={link} className="pm-button increase-surface-click">

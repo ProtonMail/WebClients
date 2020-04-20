@@ -8,7 +8,7 @@ interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLB
 const FloatingButton = ({ icon, title, ...rest }: Props) => {
     return (
         <button type="button" className="compose-fab pm-button--primary flex" {...rest}>
-            <Icon size={25} className="mauto" name={icon} />
+            <Icon size={24} className="mauto" name={icon} />
             {title ? <span className="sr-only">{title}</span> : null}
         </button>
     );

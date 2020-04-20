@@ -12,7 +12,7 @@ const FeaturesList = ({ features = [] }) => {
                 const key = `${index}`;
                 return (
                     <li key={key} className="aligncenter flex-item-fluid pl1 pr1">
-                        <Icon name="check-circle" size={25} className="color-primary" />
+                        <Icon name="check-circle" size={24} className="color-primary" />
                         <span className="bl">{text}</span>
                     </li>
                 );
