@@ -55,7 +55,7 @@ const TrashContentProvider = ({ children, shareId }: { children: React.ReactNode
     const contentLoading = useRef(false);
 
     const loadNextPage = useCallback(async () => {
-        if (!shareId || contentLoading.current || (complete && initialized)) {
+        if (!shareId || contentLoading.current || complete) {
             return;
         }
 
