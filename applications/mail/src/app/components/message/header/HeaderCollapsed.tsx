@@ -4,22 +4,33 @@ import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
-import MessageLock from '../MessageLock';
-import { isSent, isDraft } from '../../../helpers/message/messages';
+import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import ItemLabels from '../../list/ItemLabels';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
-import { MessageExtended } from '../../../models/message';
-import { isUnread } from '../../../helpers/elements';
+import { Message } from '../../../models/message';
 import { classnames } from 'react-components';
+import { MessageViewIcons } from '../MessageView';
 
 interface Props {
-    message: MessageExtended;
+    message?: Message;
+    messageViewIcons?: MessageViewIcons;
+    isSentMessage: boolean;
+    isUnreadMessage: boolean;
+    isDraftMessage: boolean;
     labels: Label[];
     onExpand: () => void;
 }
 
-const HeaderCollapsed = ({ message, labels, onExpand }: Props) => {
-    const { Name, Address } = (message.data || {}).Sender || {};
+const HeaderCollapsed = ({
+    message,
+    messageViewIcons,
+    isSentMessage,
+    isUnreadMessage,
+    isDraftMessage,
+    labels,
+    onExpand
+}: Props) => {
+    const { Name, Address } = message?.Sender || {};
 
     const handleClick = (event: MouseEvent) => {
         const target = event.target as HTMLElement;
@@ -31,32 +42,35 @@ const HeaderCollapsed = ({ message, labels, onExpand }: Props) => {
         onExpand();
     };
 
-    const sent = isSent(message.data);
-    const unread = isUnread(message.data);
+    const icon = messageViewIcons?.globalIcon;
 
     return (
         <div
             className={classnames([
                 'message-header message-header-collapsed flex flex-nowrap flex-items-center flex-spacebetween cursor-pointer',
-                sent ? 'is-outbound' : 'is-inbound',
-                unread && 'unread'
+                isSentMessage ? 'is-outbound' : 'is-inbound',
+                isUnreadMessage && 'unread'
             ])}
             onClick={handleClick}
         >
-            <div>
+            <div className="flex flex-items-center">
                 <span className="mr0-5">{c('Label').t`From:`}</span>
                 <span className="bold mr0-5" title={Name}>
                     {Name}
                 </span>
                 <i title={Address}>&lt;{Address}&gt;</i>
-                <MessageLock message={message} />
+                {icon && (
+                    <span className="flex pl0-25 pr0-25 flex-item-noshrink">
+                        <EncryptionStatusIcon {...icon} />
+                    </span>
+                )}
             </div>
             <div>
-                {isDraft(message.data) && <span className="badgeLabel-success">{c('Info').t`Draft`}</span>}
-                <ItemAttachmentIcon element={message.data} />
-                <ItemLabels element={message.data} labels={labels} className="mr1" />
-                <ItemDate className="mr1" element={message.data} />
-                <ItemStar element={message.data} />
+                {isDraftMessage && <span className="badgeLabel-success">{c('Info').t`Draft`}</span>}
+                <ItemAttachmentIcon element={message} />
+                <ItemLabels element={message} labels={labels} className="mr1" />
+                <ItemDate className="mr1" element={message} />
+                <ItemStar element={message} />
             </div>
         </div>
     );

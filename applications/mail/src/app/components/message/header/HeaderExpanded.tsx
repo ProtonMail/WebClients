@@ -1,4 +1,4 @@
-import React, { MouseEvent, useMemo } from 'react';
+import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
 import {
     Icon,
@@ -22,9 +22,9 @@ import ItemLocation from '../../list/ItemLocation';
 import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
+import EncryptionStatusIcon from '../EncryptionStatusIcon';
+import { MessageViewIcons } from '../MessageView';
 import HeaderExtra from './HeaderExtra';
-import MessageLock from '../MessageLock';
-import { isSent } from '../../../helpers/message/messages';
 import HeaderRecipientsSimple from './HeaderRecipientsSimple';
 import HeaderRecipientsDetails from './HeaderRecipientsDetails';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
@@ -52,6 +52,8 @@ interface Props {
     labels?: Label[];
     mailSettings: any;
     message: MessageExtended;
+    messageViewIcons?: MessageViewIcons;
+    isSentMessage: boolean;
     messageLoaded: boolean;
     sourceMode: boolean;
     onLoadRemoteImages: () => void;
@@ -66,6 +68,8 @@ const HeaderExpanded = ({
     labelID,
     labels,
     message,
+    messageViewIcons,
+    isSentMessage,
     messageLoaded,
     sourceMode,
     onLoadRemoteImages,
@@ -83,7 +87,9 @@ const HeaderExpanded = ({
     const { call } = useEventManager();
 
     const { Name, Address } = (message.data || {}).Sender || {};
-    const inOutClass = isSent(message.data) ? 'is-outbound' : 'is-inbound';
+    const elements = [message.data || {}];
+    const inOutClass = isSentMessage ? 'is-outbound' : 'is-inbound';
+    const icon = messageViewIcons?.globalIcon;
 
     const handleClick = (event: MouseEvent) => {
         if ((event.target as HTMLElement).closest('.stop-propagation')) {
@@ -100,8 +106,6 @@ const HeaderExpanded = ({
         });
     };
 
-    const elements = useMemo(() => [message.data || {}], [message]);
-
     const handleRemoveLabel = async (labelID: string) => {
         await api(unlabelMessages({ LabelID: labelID, IDs: [message.data?.ID] }));
         await call();
@@ -113,13 +117,17 @@ const HeaderExpanded = ({
                 className="flex flex-nowrap flex-items-center flex-spacebetween pt1 pl1 pr1 pb0-5 cursor-pointer"
                 onClick={handleClick}
             >
-                <div>
+                <div className="flex flex-items-center">
                     <span className="mr0-5">{c('Label').t`From:`}</span>
                     <span className="bold mr0-5" title={Name}>
                         {Name}
                     </span>
                     <i title={Address}>&lt;{Address}&gt;</i>
-                    <MessageLock message={message} className="stop-propagation" />
+                    {icon && (
+                        <span className="flex pl0-25 pr0-25 flex-item-noshrink">
+                            <EncryptionStatusIcon {...icon} />
+                        </span>
+                    )}
                 </div>
                 <div>
                     <ItemDate element={message.data || {}} />
@@ -127,7 +135,12 @@ const HeaderExpanded = ({
             </div>
             <div className="flex flex-nowrap flex-items-start flex-spacebetween ml1 mr1 mb0-5">
                 {showDetails ? (
-                    <HeaderRecipientsDetails message={message.data} contacts={contacts} contactGroups={contactGroups} />
+                    <HeaderRecipientsDetails
+                        message={message.data}
+                        mapStatusIcons={messageViewIcons?.mapStatusIcon}
+                        contacts={contacts}
+                        contactGroups={contactGroups}
+                    />
                 ) : (
                     <HeaderRecipientsSimple message={message.data} contacts={contacts} contactGroups={contactGroups} />
                 )}

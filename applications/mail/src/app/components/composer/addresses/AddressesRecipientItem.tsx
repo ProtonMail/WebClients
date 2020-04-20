@@ -7,7 +7,7 @@ import { omit } from 'proton-shared/lib/helpers/object';
 import { noop } from 'proton-shared/lib/helpers/function';
 import getSendPreferences from '../../../helpers/message/getSendPreferences';
 import { validateAddress, recipientToInput, inputToRecipient } from '../../../helpers/addresses';
-import { getStatusIcon } from '../../../helpers/send/icon';
+import { getSendStatusIcon } from '../../../helpers/send/icon';
 
 import { Recipient } from '../../../models/address';
 import { StatusIconFills } from '../../../models/crypto';
@@ -95,7 +95,7 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
                 });
                 return await updateRecipientIcon();
             }
-            const sendIcon = getStatusIcon(sendPreferences);
+            const sendIcon = getSendStatusIcon(sendPreferences);
             setMapSendInfo((mapSendInfo) => ({ ...mapSendInfo, [emailAddress]: { sendPreferences, sendIcon } }));
             return;
         };

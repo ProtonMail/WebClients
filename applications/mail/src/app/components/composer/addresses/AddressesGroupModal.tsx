@@ -20,7 +20,7 @@ import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryp
 import { ContactEmail, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
 import { contactToInput } from '../../../helpers/addresses';
 import getSendPreferences from '../../../helpers/message/getSendPreferences';
-import { getStatusIcon } from '../../../helpers/send/icon';
+import { getSendStatusIcon } from '../../../helpers/send/icon';
 import { RecipientGroup } from '../../../models/address';
 import { StatusIconFills } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
@@ -101,7 +101,7 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
             const { message, setMapSendInfo } = messageSendInfo;
             const encryptionPreferences = await getEncryptionPreferences(emailAddress);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data || {});
-            const sendIcon = getStatusIcon(sendPreferences);
+            const sendIcon = getSendStatusIcon(sendPreferences);
             !signal.aborted &&
                 setMapSendInfo((mapSendInfo) => ({ ...mapSendInfo, [emailAddress]: { sendPreferences, sendIcon } }));
             !signal.aborted && setMapLoading((loadingMap) => ({ ...loadingMap, [emailAddress]: false }));

@@ -1,8 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Loader, classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
-import { hasAttachments, isDraft } from '../../helpers/message/messages';
+import { hasAttachments, isDraft, isSent } from '../../helpers/message/messages';
+import { getMapEmailHeaders, getSentStatusIcon } from '../../helpers/send/icon';
+import { MapStatusIcons, StatusIcon } from '../../models/crypto';
 import MessageBody from './MessageBody';
 import HeaderCollapsed from './header/HeaderCollapsed';
 import HeaderExpanded from './header/HeaderExpanded';
@@ -18,6 +20,11 @@ import {
     useMarkAsRead
 } from '../../hooks/useMessageReadActions';
 import { isUnread } from '../../helpers/elements';
+
+export interface MessageViewIcons {
+    globalIcon?: StatusIcon;
+    mapStatusIcon?: MapStatusIcons;
+}
 
 interface Props {
     labelID: string;
@@ -59,7 +66,25 @@ const MessageView = ({
 
     const messageLoaded = !!message.data?.Subject;
     const bodyLoaded = !!message.initialized;
+    const sent = isSent(message.data);
     const unread = isUnread(message.data);
+
+    const messageViewIcons = useMemo<MessageViewIcons | undefined>(() => {
+        if (!message.data?.ParsedHeaders) {
+            return;
+        }
+        if (sent) {
+            const mapAuthentication = getMapEmailHeaders(message.data.ParsedHeaders['X-Pm-Recipient-Authentication']);
+            const mapEncryption = getMapEmailHeaders(message.data.ParsedHeaders['X-Pm-Recipient-Encryption']);
+            const globalIcon = getSentStatusIcon({ mapAuthentication, mapEncryption });
+            const mapStatusIcon = Object.keys(mapAuthentication).reduce<MapStatusIcons>((acc, emailAddress) => {
+                acc[emailAddress] = getSentStatusIcon({ mapAuthentication, mapEncryption, emailAddress });
+                return acc;
+            }, {});
+            return { globalIcon, mapStatusIcon };
+        }
+        return;
+    }, [message.data]);
 
     const prepareMessage = async () => {
         if (typeof message?.initialized === 'undefined') {
@@ -114,7 +139,9 @@ const MessageView = ({
                     <HeaderExpanded
                         labelID={labelID}
                         message={message}
+                        messageViewIcons={messageViewIcons}
                         messageLoaded={bodyLoaded}
+                        isSentMessage={sent}
                         sourceMode={sourceMode}
                         onLoadRemoteImages={handleLoadRemoteImages}
                         onLoadEmbeddedImages={handleLoadEmbeddedImages}
@@ -139,7 +166,15 @@ const MessageView = ({
                     )}
                 </>
             ) : (
-                <HeaderCollapsed message={message} labels={labels} onExpand={handleExpand(true)} />
+                <HeaderCollapsed
+                    message={message.data}
+                    messageViewIcons={messageViewIcons}
+                    isSentMessage={sent}
+                    isUnreadMessage={unread}
+                    isDraftMessage={draft}
+                    labels={labels}
+                    onExpand={handleExpand(true)}
+                />
             )}
         </article>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Href, Icon, Loader, Tooltip } from 'react-components';
-import { getStatusIconHref, getStatusIconName } from '../../helpers/send/icon';
+import { getSendIconHref, getStatusIconName } from '../../helpers/send/icon';
 import { StatusIcon } from '../../models/crypto';
 
 interface Props extends Partial<StatusIcon> {
@@ -15,7 +15,7 @@ const EncryptionStatusIcon = ({ colorClassName, isEncrypted, fill, text, loading
         return <Loader className="icon-18p mauto flex" />;
     }
 
-    const href = getStatusIconHref({ isEncrypted, fill });
+    const href = getSendIconHref({ isEncrypted, fill });
     const iconName = getStatusIconName({ isEncrypted, fill });
 
     return (

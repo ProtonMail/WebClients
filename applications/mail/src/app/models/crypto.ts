@@ -34,7 +34,7 @@ export interface StatusIcon {
     text: string;
 }
 
-export interface MapStatusIcon {
+export interface MapStatusIcons {
     [key: string]: StatusIcon | undefined;
 }
 
