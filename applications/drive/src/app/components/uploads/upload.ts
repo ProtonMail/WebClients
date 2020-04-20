@@ -5,9 +5,9 @@ import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
 import { TransferCancel } from '../../interfaces/transfer';
 import runInQueue from '../../utils/runInQueue';
+import { FILE_CHUNK_SIZE } from '../../constants';
 
 // Max decrypted block size
-const CHUNK_SIZE = 4 * 1024 * 1024;
 const MAX_CHUNKS_READ = 10;
 const MAX_THREADS_PER_UPLOAD = 3;
 
@@ -109,7 +109,7 @@ export function initUpload({ requestUpload, transform, onProgress, finalize }: U
             return;
         }
 
-        const reader = new ChunkFileReader(blob, CHUNK_SIZE);
+        const reader = new ChunkFileReader(blob, FILE_CHUNK_SIZE);
         const blockTokens: BlockMeta[] = [];
         let startIndex = 1;
 

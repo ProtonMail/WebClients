@@ -1,7 +1,15 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
 
-import { Toolbar, ToolbarButton, useNotifications, useModals, Alert, useLoading } from 'react-components';
+import {
+    Toolbar,
+    ToolbarButton,
+    useNotifications,
+    useModals,
+    Alert,
+    useLoading,
+    useEventManager
+} from 'react-components';
 
 import useDrive from '../../../hooks/useDrive';
 import useTrash from '../../../hooks/useTrash';
@@ -23,7 +31,7 @@ const TrashToolbar = ({ shareId }: Props) => {
     const [restoreLoading, withRestoreLoading] = useLoading();
     const cache = useDriveCache();
     const { fileBrowserControls } = useTrashContent();
-
+    const { call } = useEventManager();
     const { selectedItems } = fileBrowserControls;
     const trashItems = shareId ? cache.get.trashMetas(shareId) : [];
 
@@ -124,7 +132,7 @@ const TrashToolbar = ({ shareId }: Props) => {
 
             const notificationText = getNotificationTextForItemList(deletedItems, notificationMessages);
             createNotification({ text: notificationText });
-            await events.call(shareId);
+            await Promise.allSettled([events.call(shareId), call()]);
         });
     };
 
