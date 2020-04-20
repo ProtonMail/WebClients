@@ -32,6 +32,7 @@ import { ValidationError, validateLinkName } from '../utils/validation';
 import useDriveCrypto from './useDriveCrypto';
 import useDrive from './useDrive';
 import useDebouncedPromise from './useDebouncedPromise';
+import { FILE_CHUNK_SIZE } from '../constants';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -250,16 +251,16 @@ function useFiles() {
     };
 
     const checkHasEnoughSpace = async (files: FileList | File[]) => {
-        const calculateTotalRemainingBytes = () => {
+        const calculateRemainingUploadBytes = () => {
             const progresses = getUploadsProgresses();
-            return uploads.reduce(
-                (sum, upload) =>
-                    upload.info &&
-                    [TransferState.Initializing, TransferState.Pending, TransferState.Progress].includes(upload.state)
-                        ? sum + upload.meta.size - progresses[upload.id]
-                        : sum,
-                0
-            );
+            return uploads.reduce((sum, upload) => {
+                const uploadedChunksSize = progresses[upload.id] - (progresses[upload.id] % FILE_CHUNK_SIZE);
+                return [TransferState.Initializing, TransferState.Pending, TransferState.Progress].includes(
+                    upload.state
+                )
+                    ? sum + upload.meta.size - uploadedChunksSize
+                    : sum;
+            }, 0);
         };
 
         let totalFileListSize = 0;
@@ -267,7 +268,7 @@ function useFiles() {
             totalFileListSize += files[i].size;
         }
 
-        const remaining = calculateTotalRemainingBytes();
+        const remaining = calculateRemainingUploadBytes();
         await call();
         const result = MaxSpace > UsedSpace + remaining + totalFileListSize;
         return { result, total: totalFileListSize };

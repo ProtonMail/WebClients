@@ -52,17 +52,21 @@ const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
             e.preventDefault();
             setOverlayIsVisible(false);
 
-            const files = e.dataTransfer?.files;
-            if (!resource || !files) {
+            const filesList = e.dataTransfer?.files;
+            if (!resource || !filesList) {
                 return;
             }
 
-            const filesToUpload = [];
-            for (let i = 0; i < files.length; i++) {
-                if (await isFile(files[i])) {
-                    filesToUpload.push(files[i]);
-                }
+            const actualFiles: Promise<boolean>[] = [];
+            for (let i = 0; i < filesList.length; i++) {
+                actualFiles.push(isFile(filesList[i]));
             }
+
+            const filesToUpload = (await Promise.allSettled(actualFiles)).reduce(
+                (files, result, i) =>
+                    result.status === 'fulfilled' && result.value ? [...files, filesList[i]] : files,
+                [] as File[]
+            );
 
             uploadDriveFiles(resource.shareId, resource.linkId, filesToUpload);
         },

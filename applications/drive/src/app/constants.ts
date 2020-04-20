@@ -1,4 +1,5 @@
 export const FOLDER_PAGE_SIZE = 150;
+export const FILE_CHUNK_SIZE = 4 * 1024 * 1024;
 
 export enum ResourceURLType {
     FOLDER = 'folder',
