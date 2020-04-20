@@ -44,7 +44,7 @@ const ItemLabels = ({ element = {}, onUnlabel = noop, max = 99, labels = [], cla
                 >
                     <Link
                         to={`/${ID}`}
-                        className="pm-badgeLabel-link color-white nodecoration"
+                        className="pm-badgeLabel-link ellipsis color-white nodecoration"
                         title={c('Action').t`Display emails labelled with ${Name}`}
                     >
                         {Name}
