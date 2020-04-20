@@ -17,6 +17,7 @@ export interface FileBrowserItem {
 
 interface Props {
     loading?: boolean;
+    shareId: string;
     contents: FileBrowserItem[];
     selectedItems: FileBrowserItem[];
     isTrash?: boolean;
@@ -30,6 +31,7 @@ interface Props {
 const FileBrowser = ({
     loading,
     contents,
+    shareId,
     selectedItems,
     isTrash = false,
     onToggleItemSelected,
@@ -73,10 +75,12 @@ const FileBrowser = ({
                         <ItemRow
                             key={item.LinkID}
                             item={item}
+                            shareId={shareId}
                             selectedItems={selectedItems}
                             onToggleSelect={onToggleItemSelected}
                             onShiftClick={onShiftClick}
                             onClick={onItemClick}
+                            showLocation={isTrash}
                         />
                     ))}
                     {loading && <TableRowBusy colSpan={colSpan} />}

@@ -4,6 +4,7 @@ import { LinkMeta, FolderLinkMeta } from '../interfaces/link';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import useDrive from './useDrive';
 import useDebouncedPromise from './useDebouncedPromise';
+import { FOLDER_PAGE_SIZE } from '../constants';
 
 function useTrash() {
     const debouncedRequest = useDebouncedPromise();
@@ -31,6 +32,14 @@ function useTrash() {
         return decryptedLinks;
     };
 
+    const fetchNextPage = async (shareId: string) => {
+        const loadedItems = cache.get.trashChildLinks(shareId) || [];
+        const PageSize = FOLDER_PAGE_SIZE;
+        const Page = Math.floor(loadedItems.length / PageSize);
+
+        await fetchTrash(shareId, Page, PageSize);
+    };
+
     const trashLink = async (shareId: string, linkId: string) => {
         return debouncedRequest(queryTrashLink(shareId, linkId));
     };
@@ -48,7 +57,7 @@ function useTrash() {
     };
 
     return {
-        fetchTrash,
+        fetchNextPage,
         trashLink,
         restoreLink,
         deleteLink,

@@ -4,27 +4,28 @@ import { c, msgid } from 'ttag';
 import { Toolbar, ToolbarButton, useNotifications, useModals, Alert, useLoading } from 'react-components';
 
 import useDrive from '../../../hooks/useDrive';
-import useFileBrowser from '../../FileBrowser/useFileBrowser';
 import useTrash from '../../../hooks/useTrash';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import ConfirmDeleteModal from '../../ConfirmDeleteModal';
 import { FileBrowserItem } from '../../FileBrowser/FileBrowser';
 import { getNotificationTextForItemList, takeActionForAllItems } from '../helpers';
+import { useTrashContent } from './TrashContentProvider';
 
 interface Props {
     shareId?: string;
-    fileBrowserControls: ReturnType<typeof useFileBrowser>;
 }
 
-const TrashToolbar = ({ shareId, fileBrowserControls }: Props) => {
+const TrashToolbar = ({ shareId }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { events } = useDrive();
     const { restoreLink, deleteLink, emptyTrash } = useTrash();
     const [restoreLoading, withRestoreLoading] = useLoading();
     const cache = useDriveCache();
-    const trashItems = shareId ? cache.get.trashMetas(shareId) : [];
+    const { fileBrowserControls } = useTrashContent();
+
     const { selectedItems } = fileBrowserControls;
+    const trashItems = shareId ? cache.get.trashMetas(shareId) : [];
 
     const openConfirmModal = (title: string, confirm: string, message: string, onConfirm: () => void) => {
         const content = (
