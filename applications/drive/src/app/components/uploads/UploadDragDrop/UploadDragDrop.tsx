@@ -8,8 +8,8 @@ import useFiles from '../../../hooks/useFiles';
 
 const MEGABYTE_SIZE = 1048576;
 
-const isFile = async (blob: Blob): Promise<boolean> => {
-    return new Promise((resolve) => {
+const isFile = async (blob: File) => {
+    return new Promise<boolean>((resolve) => {
         if (blob.size > MEGABYTE_SIZE) {
             resolve(true);
         }

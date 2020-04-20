@@ -256,7 +256,7 @@ function useFiles() {
                 (sum, upload) =>
                     upload.info &&
                     [TransferState.Initializing, TransferState.Pending, TransferState.Progress].includes(upload.state)
-                        ? sum + upload.info.blob.size - progresses[upload.id]
+                        ? sum + upload.meta.size - progresses[upload.id]
                         : sum,
                 0
             );
