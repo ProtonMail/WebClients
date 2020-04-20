@@ -27,17 +27,34 @@ const LoginContainer = ({ stopRedirect, history, onLogin }) => {
                 needHelp={
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="pm-button--link">
                         <DropdownMenu>
-                            <Link to="/reset-password" className="pr1 pl1 pt0-5 pb0-5 bl alignleft">{c('Link')
-                                .t`Reset password`}</Link>
-                            <Link to="/forgot-username" className="pr1 pl1 pt0-5 pb0-5 bl alignleft">{c('Link')
-                                .t`Forgot username?`}</Link>
-                            <Href
-                                url="https://protonvpn.com/support/login-problems/"
-                                className="pr1 pl1 pt0-5 pb0-5 bl alignleft"
-                            >{c('Link').t`Common login problems`}</Href>
-                            <Href url="https://protonvpn.com/support/" className="pr1 pl1 pt0-5 pb0-5 bl alignleft">{c(
-                                'Link'
-                            ).t`Contact support`}</Href>
+                            <ul className="unstyled mt0 mb0">
+                                <li className="dropDown-item">
+                                    <Link to="/reset-password" className="dropDown-item-link bl pt0-5 pb0-5 pl1 pr1">
+                                        {c('Link').t`Reset password`}
+                                    </Link>
+                                </li>
+                                <li className="dropDown-item">
+                                    <Link to="/forgot-username" className="dropDown-item-link bl pt0-5 pb0-5 pl1 pr1">
+                                        {c('Link').t`Forgot username?`}
+                                    </Link>
+                                </li>
+                                <li className="dropDown-item">
+                                    <Href
+                                        url="https://protonvpn.com/support/login-problems/"
+                                        className="dropDown-item-link bl pt0-5 pb0-5 pl1 pr1"
+                                    >
+                                        {c('Link').t`Common login problems`}
+                                    </Href>
+                                </li>
+                                <li className="dropDown-item">
+                                    <Href
+                                        url="https://protonvpn.com/support/"
+                                        className="dropDown-item-link bl pt0-5 pb0-5 pl1 pr1"
+                                    >
+                                        {c('Link').t`Contact support`}
+                                    </Href>
+                                </li>
+                            </ul>
                         </DropdownMenu>
                     </SimpleDropdown>
                 }
