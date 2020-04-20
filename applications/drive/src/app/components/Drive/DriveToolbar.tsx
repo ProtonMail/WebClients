@@ -4,7 +4,6 @@ import { c, msgid } from 'ttag';
 import { ToolbarSeparator, Toolbar, ToolbarButton, useModals, useNotifications, useLoading } from 'react-components';
 
 import { getMetaForTransfer } from './Drive';
-import { DriveResource } from './DriveResourceProvider';
 import { useDriveContent } from './DriveContentProvider';
 import useFiles from '../../hooks/useFiles';
 import useTrash from '../../hooks/useTrash';
@@ -14,16 +13,17 @@ import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import CreateFolderModal from '../CreateFolderModal';
 import RenameModal from '../RenameModal';
 import DetailsModal from '../DetailsModal';
-import { ResourceType } from '../../interfaces/link';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getNotificationTextForItemList, takeActionForAllItems } from './helpers';
+import { DriveFolder } from './DriveFolderProvider';
+import { LinkType } from '../../interfaces/link';
 
 interface Props {
-    resource: DriveResource;
-    openResource: (resource: DriveResource) => void;
+    activeFolder: DriveFolder;
+    openLink: (shareId: string, linkId: string, type: LinkType) => void;
 }
 
-const DriveToolbar = ({ resource, openResource }: Props) => {
+const DriveToolbar = ({ activeFolder, openLink }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { fileBrowserControls } = useDriveContent();
@@ -33,25 +33,27 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
     const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
     const cache = useDriveCache();
 
-    const ParentLinkID = cache.get.linkMeta(resource.shareId, resource.linkId)?.ParentLinkID;
+    const { linkId, shareId } = activeFolder;
+
+    const ParentLinkID = cache.get.linkMeta(shareId, linkId)?.ParentLinkID;
     const { selectedItems } = fileBrowserControls;
 
     useEffect(() => {
         if (!ParentLinkID) {
-            getLinkMeta(resource.shareId, resource.linkId);
+            getLinkMeta(shareId, linkId);
         }
-    }, [resource.shareId, resource.linkId, ParentLinkID]);
+    }, [shareId, linkId, ParentLinkID]);
 
     const handleBackClick = () => {
         if (ParentLinkID) {
-            openResource({ shareId: resource.shareId, linkId: ParentLinkID, type: ResourceType.FOLDER });
+            openLink(shareId, ParentLinkID, LinkType.FOLDER);
         }
     };
 
     const handleDownloadClick = () => {
         selectedItems.forEach(async (item) => {
             const meta = getMetaForTransfer(item);
-            const fileStream = await startFileTransfer(resource.shareId, item.LinkID, meta);
+            const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
             FileSaver.saveViaDownload(fileStream, meta);
         });
     };
@@ -60,8 +62,8 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
         createModal(
             <CreateFolderModal
                 createNewFolder={async (name) => {
-                    await createNewFolder(resource.shareId, resource.linkId, name);
-                    events.call(resource.shareId);
+                    await createNewFolder(shareId, linkId, name);
+                    events.call(shareId);
                 }}
             />
         );
@@ -73,21 +75,21 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
             <RenameModal
                 item={item}
                 renameLink={async (name) => {
-                    await renameLink(resource.shareId, item.LinkID, item.ParentLinkID, name, item.Type);
-                    events.call(resource.shareId);
+                    await renameLink(shareId, item.LinkID, item.ParentLinkID, name, item.Type);
+                    events.call(shareId);
                 }}
             />
         );
     };
 
     const handleDetailsClick = () => {
-        createModal(<DetailsModal item={selectedItems[0]} resource={resource} getLinkMeta={getLinkMeta} />);
+        createModal(<DetailsModal item={selectedItems[0]} activeFolder={activeFolder} getLinkMeta={getLinkMeta} />);
     };
 
     const moveToTrash = async () => {
         const toTrash = selectedItems;
         const trashedLinks = await takeActionForAllItems(toTrash, (item: FileBrowserItem) =>
-            trashLink(resource.shareId, item.LinkID)
+            trashLink(shareId, item.LinkID)
         );
 
         const trashedLinksCount = trashedLinks.length;
@@ -97,7 +99,7 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
 
         const undoAction = async () => {
             const restoredLinks = await takeActionForAllItems(toTrash, (item: FileBrowserItem) =>
-                restoreLink(resource.shareId, item.LinkID)
+                restoreLink(shareId, item.LinkID)
             );
 
             const restoredItemsCount = restoredLinks.length;
@@ -126,7 +128,7 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
 
             const notificationText = getNotificationTextForItemList(restoredLinks, notificationMessages);
             createNotification({ text: notificationText });
-            await events.call(resource.shareId);
+            await events.call(shareId);
         };
 
         const [{ Name: firstItemName }] = trashedLinks;
@@ -153,7 +155,7 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
             type: 'success',
             text: movedToTrashText
         });
-        await events.call(resource.shareId);
+        await events.call(shareId);
     };
 
     const renderSelectionActions = () => {
@@ -162,7 +164,7 @@ const DriveToolbar = ({ resource, openResource }: Props) => {
         }
 
         const isMultiSelect = selectedItems.length > 1;
-        const hasFoldersSelected = selectedItems.some((item) => item.Type === ResourceType.FOLDER);
+        const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
 
         return (
             <>

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { LinkButton } from 'react-components';
 
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
-import { ResourceType } from '../../interfaces/link';
+import { LinkType } from '../../interfaces/link';
 
 export const getNotificationTextForItemList = (
     itemList: FileBrowserItem[],
@@ -15,8 +15,8 @@ export const getNotificationTextForItemList = (
     },
     undoAction?: () => void
 ) => {
-    const allFiles = itemList.every(({ Type }) => Type === ResourceType.FILE);
-    const allFolders = itemList.every(({ Type }) => Type === ResourceType.FOLDER);
+    const allFiles = itemList.every(({ Type }) => Type === LinkType.FILE);
+    const allFolders = itemList.every(({ Type }) => Type === LinkType.FOLDER);
     const notificationText = (allFiles && messages.allFiles) || (allFolders && messages.allFolders) || messages.mixed;
 
     if (undoAction) {

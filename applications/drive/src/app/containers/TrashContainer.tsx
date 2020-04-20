@@ -6,17 +6,17 @@ import Page, { PageMainArea } from '../components/Page';
 import TrashToolbar from '../components/Drive/Trash/TrashToolbar';
 import StickyHeader from '../components/StickyHeader';
 import Trash from '../components/Drive/Trash/Trash';
-import { useDriveResource } from '../components/Drive/DriveResourceProvider';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import TrashContentProvider from '../components/Drive/Trash/TrashContentProvider';
+import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
 
 const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) => {
-    const { setResource } = useDriveResource();
+    const { setFolder } = useDriveActiveFolder();
     const cache = useDriveCache();
     const [shareId, setShareId] = useState(() => match.params.shareId);
 
     useEffect(() => {
-        setResource(undefined);
+        setFolder(undefined);
 
         let shareId = match.params.shareId;
 

@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { DriveResource } from './Drive/DriveResourceProvider';
-import { ResourceType } from '../interfaces/link';
+import { DriveFolder } from './Drive/DriveFolderProvider';
 import { c } from 'ttag';
 import Breadcrumbs, { BreadcrumbInfo } from './Breadcrumbs/Breadcrumbs';
 import useDrive from '../hooks/useDrive';
+import { LinkType } from '../interfaces/link';
 
 interface Props {
-    resource: DriveResource;
-    openResource: (resource: DriveResource) => void;
+    activeFolder: DriveFolder;
+    openLink: (shareId: string, linkId: string, type: LinkType) => void;
 }
 
-const DriveBreadcrumbs = ({ resource, openResource }: Props) => {
+const DriveBreadcrumbs = ({ activeFolder, openLink }: Props) => {
     const { getLinkMeta } = useDrive();
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([]);
 
     useEffect(() => {
         const getBreadcrumbs = async (linkId: string): Promise<BreadcrumbInfo[]> => {
-            const meta = await getLinkMeta(resource.shareId, linkId);
+            const meta = await getLinkMeta(activeFolder.shareId, linkId);
 
             const breadcrumb: BreadcrumbInfo = {
                 key: linkId,
                 name: !meta.ParentLinkID ? c('Title').t`My files` : meta.Name,
-                onClick: () => openResource({ shareId: resource.shareId, linkId, type: ResourceType.FOLDER })
+                onClick: () => openLink(activeFolder.shareId, linkId, LinkType.FOLDER)
             };
 
             if (!meta.ParentLinkID) {
@@ -35,7 +35,7 @@ const DriveBreadcrumbs = ({ resource, openResource }: Props) => {
 
         let canceled = false;
 
-        getBreadcrumbs(resource.linkId).then((result) => {
+        getBreadcrumbs(activeFolder.linkId).then((result) => {
             if (!canceled) {
                 setBreadcrumbs(result);
             }
@@ -44,7 +44,7 @@ const DriveBreadcrumbs = ({ resource, openResource }: Props) => {
         return () => {
             canceled = true;
         };
-    }, [resource.shareId, resource.linkId]);
+    }, [activeFolder.shareId, activeFolder.linkId]);
 
     return <Breadcrumbs breadcrumbs={breadcrumbs} />;
 };

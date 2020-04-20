@@ -26,7 +26,7 @@ import { TransferMeta, TransferState } from '../interfaces/transfer';
 import { useDownloadProvider } from '../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../components/downloads/download';
 import { streamToBuffer } from '../utils/stream';
-import { HashCheckResult, ResourceType } from '../interfaces/link';
+import { HashCheckResult, LinkType } from '../interfaces/link';
 import { queryCheckAvailableHashes } from '../api/link';
 import { ValidationError, validateLinkName } from '../utils/validation';
 import useDriveCrypto from './useDriveCrypto';
@@ -318,7 +318,7 @@ function useFiles() {
         const revision = fileMeta.FileProperties?.ActiveRevision;
 
         if (!revision) {
-            throw new Error(`Invalid link metadata, expected File (${ResourceType.FILE}), got ${fileMeta.Type}`);
+            throw new Error(`Invalid link metadata, expected File (${LinkType.FILE}), got ${fileMeta.Type}`);
         }
 
         return getPromiseValue(cache, `drive/revision/${shareId}/${linkId}/${revision.ID}`, () =>

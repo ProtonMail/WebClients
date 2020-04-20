@@ -4,19 +4,19 @@ import { RouteComponentProps } from 'react-router-dom';
 import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
 import { useLoading } from 'react-components';
 import FileSaver from '../utils/FileSaver/FileSaver';
-import { ResourceURLType } from '../constants';
-import { LinkMeta, ResourceType } from '../interfaces/link';
+import { LinkURLType } from '../constants';
+import { LinkMeta } from '../interfaces/link';
 import { getMetaForTransfer } from '../components/Drive/Drive';
 import { DownloadControls } from '../components/downloads/download';
-import { useDriveResource } from '../components/Drive/DriveResourceProvider';
 import useDrive from '../hooks/useDrive';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
+import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
 
 const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
     const downloadControls = useRef<DownloadControls>();
 
-    const { setResource } = useDriveResource();
+    const { setFolder } = useDriveActiveFolder();
     const cache = useDriveCache();
     const { getLinkMeta } = useDrive();
     const { downloadDriveFile, saveFileTransferFromBuffer, startFileTransfer } = useFiles();
@@ -39,7 +39,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
                     return;
                 }
 
-                setResource({ shareId, linkId: ParentLinkID, type: ResourceType.FOLDER });
+                setFolder({ shareId, linkId: ParentLinkID });
                 if (isPreviewAvailable(MimeType)) {
                     const { contents, controls } = await downloadDriveFile(shareId, linkId);
                     downloadControls.current = controls;
@@ -72,13 +72,13 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
     const navigateToParent = useCallback(() => {
         if (meta?.ParentLinkID) {
-            history.push(`/drive/${shareId}/${ResourceURLType.FOLDER}/${meta.ParentLinkID}`);
+            history.push(`/drive/${shareId}/${LinkURLType.FOLDER}/${meta.ParentLinkID}`);
         }
     }, [meta?.ParentLinkID, shareId]);
 
     const navigateToLink = useCallback(
         ({ LinkID }: LinkMeta) => {
-            history.push(`/drive/${shareId}/${ResourceURLType.FILE}/${LinkID}`);
+            history.push(`/drive/${shareId}/${LinkURLType.FILE}/${LinkID}`);
         },
         [shareId]
     );

@@ -3,8 +3,8 @@ import { c } from 'ttag';
 
 import dragdropImageSvg from 'design-system/assets/img/pd-images/drag-and-drop.svg';
 
-import { useDriveResource } from '../../Drive/DriveResourceProvider';
 import useFiles from '../../../hooks/useFiles';
+import { useDriveActiveFolder } from '../../Drive/DriveFolderProvider';
 
 const MEGABYTE_SIZE = 1048576;
 
@@ -31,11 +31,11 @@ interface UploadDragDropProps {
 }
 
 const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
-    const { resource } = useDriveResource();
+    const { folder } = useDriveActiveFolder();
     const { uploadDriveFiles } = useFiles();
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
 
-    const overlayEnabled = !!resource?.shareId;
+    const overlayEnabled = !!folder?.shareId;
 
     const handleDragOver = useCallback(() => {
         if (overlayIsVisible !== overlayEnabled) {
@@ -53,7 +53,7 @@ const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
             setOverlayIsVisible(false);
 
             const filesList = e.dataTransfer?.files;
-            if (!resource || !filesList) {
+            if (!folder || !filesList) {
                 return;
             }
 
@@ -68,7 +68,7 @@ const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
                 [] as File[]
             );
 
-            uploadDriveFiles(resource.shareId, resource.linkId, filesToUpload);
+            uploadDriveFiles(folder.shareId, folder.linkId, filesToUpload);
         },
         [overlayIsVisible]
     );

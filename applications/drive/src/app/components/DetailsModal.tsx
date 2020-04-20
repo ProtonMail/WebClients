@@ -16,23 +16,23 @@ import {
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { FileBrowserItem } from './FileBrowser/FileBrowser';
-import { ResourceType, LinkMeta } from '../interfaces/link';
-import { DriveResource } from './Drive/DriveResourceProvider';
+import { LinkMeta, LinkType } from '../interfaces/link';
+import { DriveFolder } from './Drive/DriveFolderProvider';
 
 interface Props {
     item: FileBrowserItem;
-    resource: DriveResource;
+    activeFolder: DriveFolder;
     getLinkMeta: (shareId: string, linkId: string) => Promise<LinkMeta>;
     onClose?: () => void;
 }
 
-const DetailsModal = ({ resource, getLinkMeta, item, onClose, ...rest }: Props) => {
+const DetailsModal = ({ activeFolder, getLinkMeta, item, onClose, ...rest }: Props) => {
     const [{ Name }] = useUser();
     const [location, setLocation] = useState('');
 
     useEffect(() => {
         const getLocationItems = async (linkId: string): Promise<string[]> => {
-            const { ParentLinkID, Name } = await getLinkMeta(resource.shareId, linkId);
+            const { ParentLinkID, Name } = await getLinkMeta(activeFolder.shareId, linkId);
 
             if (!ParentLinkID) {
                 return [c('Title').t`My files`];
@@ -45,7 +45,7 @@ const DetailsModal = ({ resource, getLinkMeta, item, onClose, ...rest }: Props) 
 
         let canceled = false;
 
-        getLocationItems(resource.linkId).then((items) => {
+        getLocationItems(activeFolder.linkId).then((items) => {
             if (!canceled) {
                 setLocation(`\\${items.join('\\')}`);
             }
@@ -54,10 +54,10 @@ const DetailsModal = ({ resource, getLinkMeta, item, onClose, ...rest }: Props) 
         return () => {
             canceled = true;
         };
-    }, [resource.shareId, resource.linkId]);
+    }, [activeFolder.shareId, activeFolder.linkId]);
 
     const modalTitleID = 'details-modal';
-    const isFolder = item.Type === ResourceType.FOLDER;
+    const isFolder = item.Type === LinkType.FOLDER;
     const folderFields = ['Name', 'Uploaded by', 'Location', 'Modified'];
     const fileFields = [...folderFields, 'Extension', 'Size'];
     const fieldsToRender = isFolder ? folderFields : fileFields;
