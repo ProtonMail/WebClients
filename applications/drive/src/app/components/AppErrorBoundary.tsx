@@ -8,7 +8,7 @@ import {
     AccessDeniedError
 } from 'react-components';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { useDriveResource } from './Drive/DriveResourceProvider';
+import { useDriveActiveFolder } from './Drive/DriveFolderProvider';
 
 interface ApiError extends Error {
     response: Response;
@@ -19,7 +19,7 @@ interface Props extends RouteComponentProps {
 }
 
 const AppErrorBoundary = ({ children, location }: Props) => {
-    const { setResource } = useDriveResource();
+    const { setFolder } = useDriveActiveFolder();
     const [state, setState] = useState<{ id: string; error?: Error }>({
         id: generateUID('error-boundary')
     });
@@ -32,7 +32,7 @@ const AppErrorBoundary = ({ children, location }: Props) => {
 
     const handleError = (error: Error) => {
         setState((prev) => ({ ...prev, error }));
-        setResource(undefined);
+        setFolder(undefined);
     };
 
     const renderError = () => {

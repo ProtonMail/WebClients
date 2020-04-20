@@ -1,16 +1,15 @@
 import React, { useCallback } from 'react';
 import { useMainArea } from 'react-components';
-import { ResourceType } from '../../interfaces/link';
 import useFiles from '../../hooks/useFiles';
 import useOnScrollEnd from '../../hooks/useOnScrollEnd';
 import FileBrowser, { FileBrowserItem } from '../FileBrowser/FileBrowser';
-import { DriveResource } from './DriveResourceProvider';
+import { DriveFolder } from './DriveFolderProvider';
 import { TransferMeta } from '../../interfaces/transfer';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { isPreviewAvailable } from '../FilePreview/FilePreview';
 import { useDriveContent } from './DriveContentProvider';
 import EmptyFolder from '../FileBrowser/EmptyFolder';
-import { LinkMeta } from '../../interfaces/link';
+import { LinkMeta, LinkType } from '../../interfaces/link';
 
 export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
     return {
@@ -21,11 +20,11 @@ export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMe
 };
 
 interface Props {
-    resource: DriveResource;
-    openResource: (resource: DriveResource, item?: FileBrowserItem) => void;
+    activeFolder: DriveFolder;
+    openLink: (shareId: string, linkId: string, type: LinkType) => void;
 }
 
-function Drive({ resource, openResource }: Props) {
+function Drive({ activeFolder, openLink }: Props) {
     const mainAreaRef = useMainArea();
     const { startFileTransfer } = useFiles();
     const { loadNextPage, fileBrowserControls, loading, contents, complete, initialized } = useDriveContent();
@@ -44,15 +43,16 @@ function Drive({ resource, openResource }: Props) {
 
     const handleClick = async (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
-        const driveResource = { shareId: resource.shareId, linkId: item.LinkID, type: item.Type };
-        if (item.Type === ResourceType.FOLDER) {
-            openResource(driveResource, item);
-        } else if (item.Type === ResourceType.FILE) {
+        const { shareId } = activeFolder;
+
+        if (item.Type === LinkType.FOLDER) {
+            openLink(shareId, item.LinkID, item.Type);
+        } else if (item.Type === LinkType.FILE) {
             if (item.MimeType && isPreviewAvailable(item.MimeType)) {
-                openResource(driveResource, item);
+                openLink(shareId, item.LinkID, item.Type);
             } else {
                 const meta = getMetaForTransfer(item);
-                const fileStream = await startFileTransfer(resource.shareId, item.LinkID, meta);
+                const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
                 FileSaver.saveViaDownload(fileStream, meta);
             }
         }
@@ -62,7 +62,7 @@ function Drive({ resource, openResource }: Props) {
         <EmptyFolder />
     ) : (
         <FileBrowser
-            shareId={resource.shareId}
+            shareId={activeFolder.shareId}
             loading={loading}
             contents={contents}
             selectedItems={selectedItems}

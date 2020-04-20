@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { TableRow, Checkbox, Time, useActiveBreakpoint } from 'react-components';
 import { c } from 'ttag';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { ResourceType } from '../../interfaces/link';
+import { LinkType } from '../../interfaces/link';
 import { FileBrowserItem } from './FileBrowser';
 import MimeIcon from '../FileIcon';
 import LocationCell from './LocationCell';
@@ -50,14 +50,14 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
         touchStarted.current = false;
     };
 
-    const isFolder = item.Type === ResourceType.FOLDER;
+    const isFolder = item.Type === LinkType.FOLDER;
     const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
     const cells = [
         <div key="select" onClick={(e) => e.stopPropagation()} onTouchStart={(e) => e.stopPropagation()}>
             <Checkbox checked={isSelected} onChange={() => onToggleSelect(item.LinkID)} />
         </div>,
         <div key="filename" className="flex flex-items-center flex-nowrap">
-            <MimeIcon mimeType={item.Type === ResourceType.FOLDER ? 'Folder' : item.MimeType} />
+            <MimeIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MimeType} />
             <span title={item.Name} className="pd-fb-table-row-name">
                 {item.Name}
             </span>

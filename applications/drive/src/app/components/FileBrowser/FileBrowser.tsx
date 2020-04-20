@@ -2,12 +2,12 @@ import React from 'react';
 import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint } from 'react-components';
 import { c } from 'ttag';
 import ItemRow from './ItemRow';
-import { ResourceType } from '../../interfaces/link';
+import { LinkType } from '../../interfaces/link';
 
 export interface FileBrowserItem {
     Name: string;
     LinkID: string;
-    Type: ResourceType;
+    Type: LinkType;
     Modified: number;
     MimeType: string;
     Size: number;

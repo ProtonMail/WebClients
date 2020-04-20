@@ -1,10 +1,10 @@
 import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
-import { ResourceType, LinkMeta } from '../../interfaces/link';
+import { LinkMeta } from '../../interfaces/link';
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
-import { DriveResource, useDriveResource } from './DriveResourceProvider';
 import useFileBrowser from '../FileBrowser/useFileBrowser';
 import useDrive from '../../hooks/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
+import { useDriveActiveFolder, DriveFolder } from './DriveFolderProvider';
 
 export const mapLinksToChildren = (decryptedLinks: LinkMeta[]): FileBrowserItem[] => {
     return decryptedLinks.map(({ LinkID, Type, Name, Modified, Size, MimeType, ParentLinkID }) => ({
@@ -28,15 +28,21 @@ interface DriveContentProviderState {
 
 const DriveContentContext = createContext<DriveContentProviderState | null>(null);
 
-const DriveContentProviderInner = ({ children, resource }: { children: React.ReactNode; resource: DriveResource }) => {
+const DriveContentProviderInner = ({
+    children,
+    activeFolder: { linkId, shareId }
+}: {
+    children: React.ReactNode;
+    activeFolder: DriveFolder;
+}) => {
     const cache = useDriveCache();
     const { fetchNextFolderContents } = useDrive();
     const [initialized, setInitialized] = useState(false);
     const [loading, setLoading] = useState(false);
     const [, setError] = useState();
 
-    const contents = mapLinksToChildren(cache.get.childLinkMetas(resource.shareId, resource.linkId) || []);
-    const complete = cache.get.childrenComplete(resource.shareId, resource.linkId);
+    const contents = mapLinksToChildren(cache.get.childLinkMetas(shareId, linkId) || []);
+    const complete = cache.get.childrenComplete(shareId, linkId);
     const fileBrowserControls = useFileBrowser(contents);
     const abortSignal = useRef<AbortSignal>();
     const contentLoading = useRef(false);
@@ -52,14 +58,14 @@ const DriveContentProviderInner = ({ children, resource }: { children: React.Rea
         const signal = abortSignal.current;
 
         try {
-            await fetchNextFolderContents(resource.shareId, resource.linkId);
+            await fetchNextFolderContents(shareId, linkId);
             if (!signal?.aborted) {
                 contentLoading.current = false;
                 setLoading(false);
                 setInitialized(true);
             }
         } catch (e) {
-            const children = cache.get.childLinks(resource.shareId, resource.linkId);
+            const children = cache.get.childLinks(shareId, linkId);
 
             if (signal?.aborted) {
                 return;
@@ -74,28 +80,27 @@ const DriveContentProviderInner = ({ children, resource }: { children: React.Rea
                 setLoading(false);
             }
         }
-    }, [resource.shareId, resource.linkId]);
+    }, [shareId, linkId]);
 
     useEffect(() => {
         const abortController = new AbortController();
 
-        if (resource.type === ResourceType.FOLDER) {
-            abortSignal.current = abortController.signal;
-            fileBrowserControls.clearSelections();
+        abortSignal.current = abortController.signal;
+        fileBrowserControls.clearSelections();
 
-            if (loading) {
-                setLoading(false);
-            }
-
-            if (!cache.get.listedChildLinks(resource.shareId, resource.linkId)?.length) {
-                loadNextPage();
-            }
+        if (loading) {
+            setLoading(false);
         }
+
+        if (!cache.get.listedChildLinks(shareId, linkId)?.length) {
+            loadNextPage();
+        }
+
         return () => {
             contentLoading.current = false;
             abortController.abort();
         };
-    }, [loadNextPage, resource.type]);
+    }, [loadNextPage]);
 
     return (
         <DriveContentContext.Provider
@@ -119,10 +124,10 @@ const DriveContentProviderInner = ({ children, resource }: { children: React.Rea
  * Exposes functions to (re)load open folder contents.
  */
 const DriveContentProvider = ({ children }: { children: React.ReactNode }) => {
-    const { resource } = useDriveResource();
+    const { folder } = useDriveActiveFolder();
 
-    return resource ? (
-        <DriveContentProviderInner resource={resource}>{children}</DriveContentProviderInner>
+    return folder ? (
+        <DriveContentProviderInner activeFolder={folder}>{children}</DriveContentProviderInner>
     ) : (
         <>{children}</>
     );

@@ -3,7 +3,7 @@ import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } fro
 import { c } from 'ttag';
 import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
-import { ResourceType } from '../interfaces/link';
+import { LinkType } from '../interfaces/link';
 import { validateLinkName } from '../utils/validation';
 
 interface Props {
@@ -28,7 +28,7 @@ const RenameModal = ({ renameLink, item, onClose, ...rest }: Props) => {
         }
         setAutofocusDone(true);
         const [namePart] = splitExtension(item.Name);
-        if (!namePart || item.Type === ResourceType.FOLDER) {
+        if (!namePart || item.Type === LinkType.FOLDER) {
             return e.target.select();
         }
         e.target.setSelectionRange(0, namePart.length);
@@ -64,7 +64,7 @@ const RenameModal = ({ renameLink, item, onClose, ...rest }: Props) => {
         setName(formatName(target.value));
     };
 
-    const isFolder = item.Type === ResourceType.FOLDER;
+    const isFolder = item.Type === LinkType.FOLDER;
     const validationError = validateLinkName(name);
 
     return (

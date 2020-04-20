@@ -9,10 +9,10 @@ import PrivateLayout from './components/layout/PrivateLayout';
 import { DownloadProvider } from './components/downloads/DownloadProvider';
 import { openpgpConfig } from './openpgpConfig';
 import { UploadProvider } from './components/uploads/UploadProvider';
-import DriveResourceProvider from './components/Drive/DriveResourceProvider';
+import DriveFolderProvider from './components/Drive/DriveFolderProvider';
 import AppErrorBoundary from './components/AppErrorBoundary';
 import PreviewContainer from './containers/PreviewContainer';
-import { ResourceURLType } from './constants';
+import { LinkURLType } from './constants';
 import TrashContainer from './containers/TrashContainer';
 import DriveCacheProvider from './components/DriveCache/DriveCacheProvider';
 import DriveEventManagerProvider from './components/DriveEventManager/DriveEventManagerProvider';
@@ -40,7 +40,7 @@ const PrivateApp = ({ onLogout, history }: Props) => {
             <ErrorBoundary component={<GenericError className="pt2 h100v" />}>
                 <DriveEventManagerProvider>
                     <DriveCacheProvider>
-                        <DriveResourceProvider>
+                        <DriveFolderProvider>
                             <UploadProvider>
                                 <DownloadProvider>
                                     <PrivateLayout>
@@ -56,7 +56,7 @@ const PrivateApp = ({ onLogout, history }: Props) => {
                                             </Switch>
 
                                             <Route
-                                                path={`/drive/:shareId?/${ResourceURLType.FILE}/:linkId?`}
+                                                path={`/drive/:shareId?/${LinkURLType.FILE}/:linkId?`}
                                                 exact
                                                 component={PreviewContainer}
                                             />
@@ -64,7 +64,7 @@ const PrivateApp = ({ onLogout, history }: Props) => {
                                     </PrivateLayout>
                                 </DownloadProvider>
                             </UploadProvider>
-                        </DriveResourceProvider>
+                        </DriveFolderProvider>
                     </DriveCacheProvider>
                 </DriveEventManagerProvider>
             </ErrorBoundary>

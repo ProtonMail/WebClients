@@ -1,6 +1,6 @@
 import { FileRevisionState } from './file';
 
-export enum ResourceType {
+export enum LinkType {
     FOLDER = 1,
     FILE = 2
 }
@@ -25,7 +25,7 @@ interface FolderProperties {
 interface DriveLink {
     LinkID: string;
     ParentLinkID: string;
-    Type: ResourceType;
+    Type: LinkType;
     Name: string;
     Size: number;
     MimeType: string;
@@ -44,20 +44,20 @@ interface DriveLink {
 }
 
 export interface FileLinkMeta extends DriveLink {
-    Type: ResourceType.FILE;
+    Type: LinkType.FILE;
     FileProperties: FileProperties;
     FolderProperties: null;
 }
 
 export interface FolderLinkMeta extends DriveLink {
-    Type: ResourceType.FOLDER;
+    Type: LinkType.FOLDER;
     FolderProperties: FolderProperties;
     FileProperties: null;
 }
 
 export type LinkMeta = FileLinkMeta | FolderLinkMeta;
 
-export const isFolderLinkMeta = (link: LinkMeta): link is FolderLinkMeta => link.Type === ResourceType.FOLDER;
+export const isFolderLinkMeta = (link: LinkMeta): link is FolderLinkMeta => link.Type === LinkType.FOLDER;
 
 export interface LinkMetaResult {
     Link: LinkMeta;

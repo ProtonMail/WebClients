@@ -1,4 +1,4 @@
-import { ResourceType } from './link';
+import { LinkType } from './link';
 
 export interface UserShareResult {
     Shares: {
@@ -6,7 +6,7 @@ export interface UserShareResult {
         Type: number;
         Mask: number;
         LinkID: string;
-        LinkType: ResourceType;
+        LinkType: LinkType;
         VolumeID: string;
         CreatorID: string;
         PermissionMask: 0;
@@ -20,7 +20,7 @@ export interface ShareMeta {
     Type: number;
     VolumeID: string;
     LinkID: string;
-    LinkType: ResourceType;
+    LinkType: LinkType;
     CreatorID: string;
     PermissionMask: 0;
     Flags: number;
