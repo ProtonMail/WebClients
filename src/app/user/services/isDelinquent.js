@@ -21,6 +21,10 @@ function isDelinquent($state, gettextCatalog, notification, authentication, tran
      * @param  {String} message Error notification
      */
     const error = (state = 'secured.payments', message = I18N.ERROR_ADMIN) => {
+        if (!authentication.user.Keys.length) {
+            return $state.go('login.setup');
+        }
+
         $state.go(state).then(() => {
             /**
              * Show the notification once all the promises has been resolved.

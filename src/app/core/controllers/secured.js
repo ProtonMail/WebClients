@@ -7,6 +7,7 @@ function SecuredController(
     addressWithoutKeysManager,
     AppModel,
     authentication,
+    isDelinquent,
     cacheCounters,
     contactCache,
     desktopNotifications,
@@ -52,8 +53,10 @@ function SecuredController(
     hotkeys.init(mailSettingsModel.get('Hotkeys') === 1);
 
     eventManager.initialize();
-    // Initialize counters for conversation (total and unread)
-    cacheCounters.query();
+    if (!isDelinquent()) {
+        // Initialize counters for conversation (total and unread)
+        cacheCounters.query();
+    }
     // Preload the contact list
     !$state.includes('secured.contacts') && contactCache.load();
     addressWithoutKeysManager.manage().catch(_.noop);
