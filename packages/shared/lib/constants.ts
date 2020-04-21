@@ -636,8 +636,3 @@ export const ROOT_FOLDER = 0;
 export const USER_SCOPES = {
     DRIVE: 68719476736
 };
-
-export const HOTKEYS = {
-    KEY_QUESTION_MARK: 191,
-    KEY_ESC: 27
-};
