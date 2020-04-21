@@ -40,7 +40,9 @@ const getWhenOptions = (isAllDay: boolean, value = 0) => {
         getHoursBefore(value),
         getHoursAfter(value),
         getDaysBefore(value),
-        getDaysAfter(value)
+        getDaysAfter(value),
+        getWeeksBefore(value),
+        getWeeksAfter(value)
     ];
 };
 
@@ -131,7 +133,7 @@ const NotificationInput = ({
             </span>
             {isAllDay && at ? (
                 <span className="flex flex-nowrap flex-items-center w30">
-                    <span className="flex-item-noshrink">{c('').t`at`}</span>
+                    <span className="flex-item-noshrink">{c('Notification time input').t`at`}</span>
                     <TimeInput
                         data-test-id="notification-time-at"
                         className="ml1"
