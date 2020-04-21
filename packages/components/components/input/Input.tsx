@@ -39,7 +39,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
     ) => {
         const { handlers, statusClasses, status } = useInput<HTMLInputElement>({ onPressEnter, ...rest });
         const [uid] = useState(generateUID('input'));
-        const errorZone = required && !value && !error ? c('Error').t`This field is required` : error;
+        const errorZone = required && !value && value !== 0 && !error ? c('Error').t`This field is required` : error;
 
         const hasError = !!(errorZone && (status.isDirty || isSubmitted));
 
