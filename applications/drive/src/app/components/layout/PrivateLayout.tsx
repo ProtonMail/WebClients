@@ -52,8 +52,10 @@ const PrivateLayout = ({ children }: Props) => {
                     >
                         <UploadButton />
                     </Sidebar>
-                    <main className="main flex-item-fluid">{children}</main>
-                    <TransfersInfo />
+                    <main className="main flex-item-fluid">
+                        {children}
+                        <TransfersInfo />
+                    </main>
                 </div>
             </div>
         </div>

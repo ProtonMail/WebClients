@@ -79,7 +79,7 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
 
     return (
         <div className="pd-transfers-heading pt0-5 pb0-5 pl1 pr0-5 flex flex-spacebetween flex-items-center">
-            <span className="strong flex">{getHeadingText()}</span>
+            <span className="flex">{getHeadingText()}</span>
 
             <div className="flex">
                 <button

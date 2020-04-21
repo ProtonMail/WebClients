@@ -111,7 +111,7 @@ function TransfersInfo() {
         .map(({ component }) => component);
 
     return (
-        <div className="pd-transfers">
+        <div className={classnames(['pd-transfers', minimized && 'pd-transfers--minimized'])}>
             <Heading
                 downloads={downloads}
                 uploads={uploads}
