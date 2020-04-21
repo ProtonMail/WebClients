@@ -13,6 +13,10 @@ export const getEventDeletedText = () => {
     return c('Success').t`Event deleted`;
 };
 
+export const getRecurringEventCreatedText = () => {
+    return c('Success').t`Events created`;
+};
+
 export const getRecurringEventUpdatedText = (saveType: RECURRING_TYPES) => {
     if (saveType === RECURRING_TYPES.SINGLE) {
         return getEventUpdatedText();
