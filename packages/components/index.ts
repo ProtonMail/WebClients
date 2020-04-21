@@ -323,6 +323,7 @@ export { default as useAsync } from './hooks/useAsync';
 export { default as useLoading } from './hooks/useLoading';
 export { default as usePlans } from './hooks/usePlans';
 export { default as usePermissions } from './hooks/usePermissions';
+export { default as useHotkeys } from './hooks/useHotkeys';
 export { classnames } from './helpers/component';
 export { generateUID } from './helpers/component';
 
