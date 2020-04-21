@@ -32,6 +32,7 @@ interface UploadProviderState {
         callbacks: UploadCallbacks
     ) => void;
     getUploadsProgresses: () => TransferProgresses;
+    getUploadsImmediate: () => Upload[];
     clearUploads: () => void;
 }
 
@@ -44,12 +45,38 @@ interface UserProviderProps {
 }
 
 export const UploadProvider = ({ children }: UserProviderProps) => {
+    // Keeping ref in case we need to immediatelly get uploads without waiting for rerender
+    const uploadsRef = useRef<Upload[]>([]);
     const [uploads, setUploads] = useState<Upload[]>([]);
     const controls = useRef<{ [id: string]: UploadControls }>({});
     const progresses = useRef<TransferProgresses>({});
 
     const updateUploadByID = (id: string, data: Partial<Upload>) => {
-        setUploads((uploads) => uploads.map((upload) => (upload.id === id ? { ...upload, ...data } : upload)));
+        uploadsRef.current = uploadsRef.current.map((upload) => (upload.id === id ? { ...upload, ...data } : upload));
+        setUploads(uploadsRef.current);
+    };
+
+    const addNewUpload = (id: string, file: File) => {
+        uploadsRef.current = [
+            ...uploadsRef.current,
+            {
+                id,
+                meta: {
+                    filename: file.name,
+                    mimeType: file.type,
+                    size: file.size
+                },
+                state: TransferState.Initializing,
+                startDate: new Date()
+            }
+        ];
+        setUploads(uploadsRef.current);
+    };
+
+    const clearUploads = () => {
+        // TODO: cancel pending downloads when implementing reject
+        uploadsRef.current = [];
+        setUploads(uploadsRef.current);
     };
 
     const updateUploadState = (id: string, state: TransferState) => updateUploadByID(id, { state });
@@ -103,19 +130,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         controls.current[id] = uploadControls;
         progresses.current[id] = 0;
 
-        setUploads((uploads) => [
-            ...uploads,
-            {
-                id,
-                meta: {
-                    filename: file.name,
-                    mimeType: file.type,
-                    size: file.size
-                },
-                state: TransferState.Initializing,
-                startDate: new Date()
-            }
-        ]);
+        addNewUpload(id, file);
 
         const { meta, info } = await metadataPromise.catch((err) => {
             updateUploadState(id, TransferState.Error);
@@ -130,15 +145,16 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     };
 
     const getUploadsProgresses = () => ({ ...progresses.current });
-    const clearUploads = () => {
-        // TODO: cancel pending downloads when implementing reject
-        setUploads([]);
+
+    const getUploadsImmediate = () => {
+        return uploadsRef.current;
     };
 
     return (
         <UploadContext.Provider
             value={{
                 uploads,
+                getUploadsImmediate,
                 addToUploadQueue,
                 getUploadsProgresses,
                 clearUploads

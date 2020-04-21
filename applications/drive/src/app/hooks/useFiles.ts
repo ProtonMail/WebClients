@@ -33,18 +33,20 @@ import useDriveCrypto from './useDriveCrypto';
 import useDrive from './useDrive';
 import useDebouncedPromise from './useDebouncedPromise';
 import { FILE_CHUNK_SIZE } from '../constants';
+import useQueuedFunction from './useQueuedFunction';
 
 const HASH_CHECK_AMOUNT = 10;
 
 function useFiles() {
     const api = useApi();
     const debouncedRequest = useDebouncedPromise();
+    const queuedFunction = useQueuedFunction();
     const cache = useCache();
     const { createNotification } = useNotifications();
     const { getPrimaryAddressKey, sign } = useDriveCrypto();
     const { getLinkMeta, getLinkKeys, events } = useDrive();
     const { addToDownloadQueue } = useDownloadProvider();
-    const { addToUploadQueue, uploads, getUploadsProgresses } = useUploadProvider();
+    const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses } = useUploadProvider();
     const [{ MaxSpace, UsedSpace }] = useUser();
     const { call } = useEventManager();
 
@@ -252,6 +254,7 @@ function useFiles() {
 
     const checkHasEnoughSpace = async (files: FileList | File[]) => {
         const calculateRemainingUploadBytes = () => {
+            const uploads = getUploadsImmediate();
             const progresses = getUploadsProgresses();
             return uploads.reduce((sum, upload) => {
                 const uploadedChunksSize = progresses[upload.id] - (progresses[upload.id] % FILE_CHUNK_SIZE);
@@ -274,20 +277,24 @@ function useFiles() {
         return { result, total: totalFileListSize };
     };
 
-    const uploadDriveFiles = async (shareId: string, ParentLinkID: string, files: FileList | File[]) => {
-        const { result, total } = await checkHasEnoughSpace(files);
-        const formattedRemaining = humanSize(total);
-        if (!result) {
-            createNotification({
-                text: c('Notification').t`Not enough space to upload ${formattedRemaining}`,
-                type: 'error'
-            });
-            throw new Error('Insufficient storage left');
+    const uploadDriveFiles = queuedFunction(
+        'uploadDriveFiles',
+        async (shareId: string, ParentLinkID: string, files: FileList | File[]) => {
+            const { result, total } = await checkHasEnoughSpace(files);
+            const formattedRemaining = humanSize(total);
+            if (!result) {
+                createNotification({
+                    text: c('Notification').t`Not enough space to upload ${formattedRemaining}`,
+                    type: 'error'
+                });
+                throw new Error('Insufficient storage left');
+            }
+
+            for (let i = 0; i < files.length; i++) {
+                uploadDriveFile(shareId, ParentLinkID, files[i]);
+            }
         }
-        for (let i = 0; i < files.length; i++) {
-            uploadDriveFile(shareId, ParentLinkID, files[i]);
-        }
-    };
+    );
 
     const decryptBlockStream = (shareId: string, linkId: string): StreamTransformer => async (stream) => {
         // TODO: implement root hash validation when file updates are implemented
