@@ -16,7 +16,7 @@ import useTrash from '../../../hooks/useTrash';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import ConfirmDeleteModal from '../../ConfirmDeleteModal';
 import { FileBrowserItem } from '../../FileBrowser/FileBrowser';
-import { getNotificationTextForItemList, takeActionForAllItems } from '../helpers';
+import { getNotificationTextForItemList, takeActionForAll } from '../helpers';
 import { useTrashContent } from './TrashContentProvider';
 
 interface Props {
@@ -27,7 +27,7 @@ const TrashToolbar = ({ shareId }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { events } = useDrive();
-    const { restoreLink, deleteLink, emptyTrash } = useTrash();
+    const { restoreLink, deleteLinks, emptyTrash } = useTrash();
     const [restoreLoading, withRestoreLoading] = useLoading();
     const cache = useDriveCache();
     const { fileBrowserControls } = useTrashContent();
@@ -57,7 +57,7 @@ const TrashToolbar = ({ shareId }: Props) => {
         }
 
         const toRestore = selectedItems;
-        const restoredItems = await takeActionForAllItems(toRestore, (item: FileBrowserItem) =>
+        const restoredItems = await takeActionForAll(toRestore, (item: FileBrowserItem) =>
             restoreLink(shareId, item.LinkID)
         );
 
@@ -102,16 +102,17 @@ const TrashToolbar = ({ shareId }: Props) => {
         const message = c('Info').t`permanently delete selected item(s) from Trash`;
 
         openConfirmModal(title, confirm, message, async () => {
-            const deletedItems = await takeActionForAllItems(toDelete, (item: FileBrowserItem) =>
-                deleteLink(shareId, item.LinkID)
+            await deleteLinks(
+                shareId,
+                toDelete.map(({ LinkID }) => LinkID)
             );
 
-            const deletedItemsCount = deletedItems.length;
+            const deletedItemsCount = toDelete.length;
             if (!deletedItemsCount) {
                 return;
             }
 
-            const [{ Name: firstItemName }] = deletedItems;
+            const [{ Name: firstItemName }] = toDelete;
             const notificationMessages = {
                 allFiles: c('Notification').ngettext(
                     msgid`"${firstItemName}" deleted permanently from Trash`,
@@ -130,7 +131,7 @@ const TrashToolbar = ({ shareId }: Props) => {
                 )
             };
 
-            const notificationText = getNotificationTextForItemList(deletedItems, notificationMessages);
+            const notificationText = getNotificationTextForItemList(toDelete, notificationMessages);
             createNotification({ text: notificationText });
             await Promise.allSettled([events.call(shareId), call()]);
         });

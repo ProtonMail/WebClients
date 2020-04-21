@@ -1,5 +1,5 @@
 import { queryTrashList } from '../api/share';
-import { queryTrashLink, queryRestoreLink, queryDeleteLink, queryEmptyTrashOfShare } from '../api/link';
+import { queryTrashLinks, queryRestoreLink, queryEmptyTrashOfShare, queryDeleteLinks } from '../api/link';
 import { LinkMeta, FolderLinkMeta } from '../interfaces/link';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import useDrive from './useDrive';
@@ -40,16 +40,16 @@ function useTrash() {
         await fetchTrash(shareId, Page, PageSize);
     };
 
-    const trashLink = async (shareId: string, linkId: string) => {
-        return debouncedRequest(queryTrashLink(shareId, linkId));
+    const trashLinks = async (shareId: string, parentLinkID: string, linkIds: string[]) => {
+        return debouncedRequest(queryTrashLinks(shareId, parentLinkID, linkIds));
     };
 
     const restoreLink = async (shareId: string, linkId: string) => {
         return debouncedRequest(queryRestoreLink(shareId, linkId));
     };
 
-    const deleteLink = async (shareId: string, linkId: string) => {
-        return debouncedRequest(queryDeleteLink(shareId, linkId));
+    const deleteLinks = async (shareId: string, linkIds: string[]) => {
+        return debouncedRequest(queryDeleteLinks(shareId, linkIds));
     };
 
     const emptyTrash = async (shareId: string) => {
@@ -58,9 +58,9 @@ function useTrash() {
 
     return {
         fetchNextPage,
-        trashLink,
+        trashLinks,
         restoreLink,
-        deleteLink,
+        deleteLinks,
         emptyTrash
     };
 }
