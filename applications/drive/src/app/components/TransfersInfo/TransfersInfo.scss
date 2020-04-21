@@ -3,9 +3,15 @@
     max-width: 600px;
     width: 60%;
     position: fixed;
-    bottom: 0;
+    bottom: 1rem;
+    margin-right: inherit;
     right: 0;
-    z-index: 2;
+    z-index: 12;
+
+    &--minimized {
+        bottom: 0.25rem;
+        transition: 0.3s ease;
+    }
 }
 
 .pd-transfers-heading {
@@ -33,6 +39,7 @@
 .pd-transfers-list {
     @extend .color-black;
     @extend .border-left;
+    @extend .border-bottom;
     max-height: 310px;
     overflow-y: auto;
     background-color: $pm-global-light;
