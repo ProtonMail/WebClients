@@ -78,27 +78,26 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
     const closeTitle = c('Action').t`Close transfers`;
 
     return (
-        <div className="pd-transfers-heading pt0-5 pb0-5 pl1 pr1 flex flex-spacebetween flex-items-center">
+        <div className="pd-transfers-heading pt0-5 pb0-5 pl1 pr0-5 flex flex-spacebetween flex-items-center">
             <span className="strong flex">{getHeadingText()}</span>
 
             <div className="flex">
                 <button
-                    className="color-global-light"
+                    className="pl0-5 pr0-5 color-global-light"
                     onClick={onToggleMinimize}
                     aria-expanded={!minimized}
                     title={minimizeTitle}
                 >
-                    <Icon className={classnames([minimized && 'rotateX-180'])} name="caret" />
+                    <Icon className={classnames([minimized && 'rotateX-180'])} name="minimize" />
                     <span className="sr-only">{minimizeTitle}</span>
                 </button>
-
                 <button
                     disabled={activeUploads.length > 0 || activeDownloads.length > 0}
-                    className="color-global-light ml0-5"
+                    className="pl0-5 pr0-5 color-global-light"
                     onClick={onClose}
                     title={closeTitle}
                 >
-                    <Icon name="off" size={12} />
+                    <Icon name="off" />
                     <span className="sr-only">{closeTitle}</span>
                 </button>
             </div>
