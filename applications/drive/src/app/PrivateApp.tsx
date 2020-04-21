@@ -16,18 +16,21 @@ import { LinkURLType } from './constants';
 import TrashContainer from './containers/TrashContainer';
 import DriveCacheProvider from './components/DriveCache/DriveCacheProvider';
 import DriveEventManagerProvider from './components/DriveEventManager/DriveEventManagerProvider';
+import UploadDragDrop from './components/uploads/UploadDragDrop/UploadDragDrop';
 
 interface Props extends RouteComponentProps {
     onLogout: () => void;
 }
 
-const PrivateApp = ({ onLogout, history }: Props) => {
+const PrivateApp = ({ onLogout, history, location }: Props) => {
     useEffect(() => {
         // Reset URL after logout
         return () => {
             history.push('/');
         };
     }, []);
+
+    const isPreview = location.pathname.includes(LinkURLType.FILE);
 
     return (
         <StandardPrivateApp
@@ -43,25 +46,27 @@ const PrivateApp = ({ onLogout, history }: Props) => {
                         <DriveFolderProvider>
                             <UploadProvider>
                                 <DownloadProvider>
-                                    <PrivateLayout>
-                                        <AppErrorBoundary>
-                                            <Switch>
-                                                <Route
-                                                    path={`/drive/:shareId?/:type?/:linkId?`}
-                                                    exact
-                                                    component={DriveContainer}
-                                                />
-                                                <Route path="/trash/:shareId?" exact component={TrashContainer} />
-                                                <Redirect to="/drive" />
-                                            </Switch>
+                                    <UploadDragDrop disabled={isPreview}>
+                                        <PrivateLayout>
+                                            <AppErrorBoundary>
+                                                <Switch>
+                                                    <Route
+                                                        path={`/drive/:shareId?/:type?/:linkId?`}
+                                                        exact
+                                                        component={DriveContainer}
+                                                    />
+                                                    <Route path="/trash/:shareId?" exact component={TrashContainer} />
+                                                    <Redirect to="/drive" />
+                                                </Switch>
 
-                                            <Route
-                                                path={`/drive/:shareId?/${LinkURLType.FILE}/:linkId?`}
-                                                exact
-                                                component={PreviewContainer}
-                                            />
-                                        </AppErrorBoundary>
-                                    </PrivateLayout>
+                                                <Route
+                                                    path={`/drive/:shareId?/${LinkURLType.FILE}/:linkId?`}
+                                                    exact
+                                                    component={PreviewContainer}
+                                                />
+                                            </AppErrorBoundary>
+                                        </PrivateLayout>
+                                    </UploadDragDrop>
                                 </DownloadProvider>
                             </UploadProvider>
                         </DriveFolderProvider>

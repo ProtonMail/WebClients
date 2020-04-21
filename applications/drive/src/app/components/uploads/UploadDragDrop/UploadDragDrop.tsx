@@ -27,15 +27,16 @@ const isFile = async (blob: File) => {
 
 interface UploadDragDropProps {
     children: ReactNode;
+    disabled?: boolean;
     className?: string;
 }
 
-const UploadDragDrop = ({ children, className }: UploadDragDropProps) => {
+const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) => {
     const { folder } = useDriveActiveFolder();
     const { uploadDriveFiles } = useFiles();
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
 
-    const overlayEnabled = !!folder?.shareId;
+    const overlayEnabled = !!folder?.shareId && !disabled;
 
     const handleDragOver = useCallback(() => {
         if (overlayIsVisible !== overlayEnabled) {
