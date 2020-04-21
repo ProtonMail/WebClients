@@ -20,18 +20,17 @@ export const getAlarmMessage = ({ component, start, now, tzid, formatOptions }: 
     const title = truncate(summary?.value, 100);
     const utcStartDate = start || propertyToUTCDate(dtstart);
 
-    // Determine if the event is happening in timezoned today, tomorrow, this month or this year.
-    // For that, compute the UTC times of the timezoned end of today, end of month and end of year
-    const startDateTimezoned = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStartDate), tzid));
-    const nowDateTimezoned = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(now), tzid));
-
+    // To determine if the event is happening in timezoned today, tomorrow, this month or this year,
+    // we pass fake UTC dates to the getAlarmMessage helper
+    const startFakeUTCDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStartDate), tzid));
+    const nowFakeUTCDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(now), tzid));
     const isAllDay = isIcalAllDay(component);
 
     return getAlarmMessageText({
         title,
         isAllDay,
-        startDateTimezoned,
-        nowDateTimezoned,
+        startFakeUTCDate,
+        nowFakeUTCDate,
         formatOptions
     });
 };

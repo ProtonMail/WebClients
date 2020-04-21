@@ -132,7 +132,12 @@ const NotificationInput = ({
             {isAllDay && at ? (
                 <span className="flex flex-nowrap flex-items-center w30">
                     <span className="flex-item-noshrink">{c('').t`at`}</span>
-                    <TimeInput className="ml1" value={at} onChange={(at) => onChange({ ...notification, at })} />
+                    <TimeInput
+                        data-test-id="notification-time-at"
+                        className="ml1"
+                        value={at}
+                        onChange={(at) => onChange({ ...notification, at })}
+                    />
                 </span>
             ) : null}
         </div>

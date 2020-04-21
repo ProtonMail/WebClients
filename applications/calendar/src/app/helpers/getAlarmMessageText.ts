@@ -4,42 +4,76 @@ import { c } from 'ttag';
 interface Arguments {
     isAllDay: boolean;
     title: string;
-    startDateTimezoned: Date;
-    nowDateTimezoned: Date;
+    startFakeUTCDate: Date;
+    nowFakeUTCDate: Date;
     formatOptions: any;
 }
-const getAlarmMessageText = ({ title, isAllDay, startDateTimezoned, nowDateTimezoned, formatOptions }: Arguments) => {
-    const formattedHour = formatUTC(startDateTimezoned, 'p', formatOptions);
+const getAlarmMessageText = ({ title, isAllDay, startFakeUTCDate, nowFakeUTCDate, formatOptions }: Arguments) => {
+    const formattedHour = formatUTC(startFakeUTCDate, 'p', formatOptions);
+    const isInFuture = startFakeUTCDate >= nowFakeUTCDate;
 
-    const isInFuture = startDateTimezoned >= nowDateTimezoned;
+    if (!isInFuture) {
+        if (isSameDay(nowFakeUTCDate, startFakeUTCDate)) {
+            if (isAllDay) {
+                return c('Alarm notification').t`${title} starts today`;
+            }
+            return c('Alarm notification').t`${title} started at ${formattedHour}`;
+        }
+        if (isNextDay(startFakeUTCDate, nowFakeUTCDate)) {
+            if (isAllDay) {
+                return c('Alarm notification').t`${title} started yesterday`;
+            }
+            return c('Alarm notification').t`${title} started yesterday at ${formattedHour}`;
+        }
 
-    if (isSameDay(nowDateTimezoned, startDateTimezoned)) {
+        if (isSameMonth(nowFakeUTCDate, startFakeUTCDate)) {
+            const formattedDate = formatUTC(startFakeUTCDate, 'eeee do', formatOptions);
+            if (isAllDay) {
+                return c('Alarm notification').t`${title} started on ${formattedDate}`;
+            }
+            return c('Alarm notification').t`${title} started on ${formattedDate} at ${formattedHour}`;
+        }
+
+        if (isSameYear(nowFakeUTCDate, startFakeUTCDate)) {
+            const formattedDate = formatUTC(startFakeUTCDate, 'eeee do MMMM', formatOptions);
+            if (isAllDay) {
+                return c('Alarm notification').t`${title} started on ${formattedDate}`;
+            }
+            return c('Alarm notification').t`${title} started on ${formattedDate} at ${formattedHour}`;
+        }
+
+        if (isAllDay) {
+            const formattedDateWithoutTime = formatUTC(startFakeUTCDate, 'PPPP', formatOptions);
+            return c('Alarm notification').t`${title} started on ${formattedDateWithoutTime}`;
+        }
+        const formattedDateWithTime = formatUTC(startFakeUTCDate, 'PPPPp', formatOptions);
+        return c('Alarm notification').t`${title} started on ${formattedDateWithTime}`;
+    }
+
+    if (isSameDay(nowFakeUTCDate, startFakeUTCDate)) {
         if (isAllDay) {
             return c('Alarm notification').t`${title} starts today`;
         }
-        if (isInFuture) {
-            return c('Alarm notification').t`${title} will start at ${formattedHour}`;
-        }
-        return c('Alarm notification').t`${title} started at ${formattedHour}`;
+        return c('Alarm notification').t`${title} will start at ${formattedHour}`;
     }
 
-    if (isNextDay(nowDateTimezoned, startDateTimezoned)) {
+    if (isNextDay(nowFakeUTCDate, startFakeUTCDate)) {
         if (isAllDay) {
             return c('Alarm notification').t`${title} will start tomorrow`;
         }
         return c('Alarm notification').t`${title} will start tomorrow at ${formattedHour}`;
     }
 
-    if (isSameMonth(nowDateTimezoned, startDateTimezoned)) {
-        const formattedDate = formatUTC(startDateTimezoned, 'eeee do', formatOptions);
+    if (isSameMonth(nowFakeUTCDate, startFakeUTCDate)) {
+        const formattedDate = formatUTC(startFakeUTCDate, 'eeee do', formatOptions);
         if (isAllDay) {
             return c('Alarm notification').t`${title} will start on ${formattedDate}`;
         }
         return c('Alarm notification').t`${title} will start on ${formattedDate} at ${formattedHour}`;
     }
 
-    if (isSameYear(nowDateTimezoned, startDateTimezoned)) {
-        const formattedDate = formatUTC(startDateTimezoned, 'eeee do MMMM', formatOptions);
+    if (isSameYear(nowFakeUTCDate, startFakeUTCDate)) {
+        const formattedDate = formatUTC(startFakeUTCDate, 'eeee do MMMM', formatOptions);
         if (isAllDay) {
             return c('Alarm notification').t`${title} will start on ${formattedDate}`;
         }
@@ -47,16 +81,12 @@ const getAlarmMessageText = ({ title, isAllDay, startDateTimezoned, nowDateTimez
     }
 
     if (isAllDay) {
-        const formattedDateWithoutTime = formatUTC(startDateTimezoned, 'PPPP', formatOptions);
+        const formattedDateWithoutTime = formatUTC(startFakeUTCDate, 'PPPP', formatOptions);
         return c('Alarm notification').t`${title} will start on ${formattedDateWithoutTime}`;
     }
 
-    const formattedDateWithTime = formatUTC(startDateTimezoned, 'PPPPp', formatOptions);
-    if (isInFuture) {
-        return c('Alarm notification').t`${title} will start on ${formattedDateWithTime}`;
-    }
-
-    return c('Alarm notification').t`${title} started on ${formattedDateWithTime}`;
+    const formattedDateWithTime = formatUTC(startFakeUTCDate, 'PPPPp', formatOptions);
+    return c('Alarm notification').t`${title} will start on ${formattedDateWithTime}`;
 };
 
 export default getAlarmMessageText;
