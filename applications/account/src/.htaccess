@@ -1,0 +1,36 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect nothing to app
+RewriteRule ^$ /index.html [NC,L]
+
+# Hide .git stuff
+RewriteRule ^.*?\.git.* /index.html [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+RewriteRule ^(.*) /index.html [NC,L]
+
+# Error pages
+ErrorDocument 403   /assets/errors/403.html
+
+<Files ~ "(index.html|version.json)">
+    FileETag None
+    Header unset ETag
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</Files>
+
+<IfModule mod_mime.c>
+  AddType application/font-woff2 .woff2
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilter INCLUDES;DEFLATE svg
+</IfModule>
