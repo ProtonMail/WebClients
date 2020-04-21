@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-RUN apk add --update openssl jq
+RUN apk add --update openssl
 RUN mkdir -p /etc/proton/ && \
     openssl req \
     -new -newkey rsa:2048 -days 3650 -nodes -x509 \
