@@ -11,18 +11,20 @@ export const queryGetLink = (ShareID: string, LinkID: string) => ({
     url: `drive/shares/${ShareID}/links/${LinkID}`
 });
 
-export const queryTrashLink = (ShareID: string, LinkID: string) => ({
-    method: 'delete',
-    url: `drive/shares/${ShareID}/links/${LinkID}`
+export const queryTrashLinks = (ShareID: string, ParentLinkID: string, LinkIDs: string[], Force = 0) => ({
+    method: 'post',
+    url: `drive/shares/${ShareID}/folders/${ParentLinkID}/delete_multiple`,
+    data: { LinkIDs, Force }
+});
+
+export const queryDeleteLinks = (ShareID: string, LinkIDs: string[]) => ({
+    method: 'post',
+    url: `drive/shares/${ShareID}/trash/delete_multiple`,
+    data: { LinkIDs }
 });
 
 export const queryRestoreLink = (ShareID: string, LinkID: string) => ({
     method: 'put',
-    url: `drive/shares/${ShareID}/trash/${LinkID}`
-});
-
-export const queryDeleteLink = (ShareID: string, LinkID: string) => ({
-    method: 'delete',
     url: `drive/shares/${ShareID}/trash/${LinkID}`
 });
 

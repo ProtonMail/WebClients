@@ -9,12 +9,11 @@ import useFiles from '../../hooks/useFiles';
 import useTrash from '../../hooks/useTrash';
 import useDrive from '../../hooks/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
-import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import CreateFolderModal from '../CreateFolderModal';
 import RenameModal from '../RenameModal';
 import DetailsModal from '../DetailsModal';
 import FileSaver from '../../utils/FileSaver/FileSaver';
-import { getNotificationTextForItemList, takeActionForAllItems } from './helpers';
+import { getNotificationTextForItemList, takeActionForAll } from './helpers';
 import { DriveFolder } from './DriveFolderProvider';
 import { LinkType } from '../../interfaces/link';
 
@@ -29,7 +28,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
     const { fileBrowserControls } = useDriveContent();
     const { getLinkMeta, createNewFolder, renameLink, events } = useDrive();
     const { startFileTransfer } = useFiles();
-    const { trashLink, restoreLink } = useTrash();
+    const { trashLinks, restoreLink } = useTrash();
     const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
     const cache = useDriveCache();
 
@@ -88,19 +87,16 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
     const moveToTrash = async () => {
         const toTrash = selectedItems;
-        const trashedLinks = await takeActionForAllItems(toTrash, (item: FileBrowserItem) =>
-            trashLink(shareId, item.LinkID)
+        await trashLinks(
+            shareId,
+            linkId,
+            toTrash.map(({ LinkID }) => LinkID)
         );
 
-        const trashedLinksCount = trashedLinks.length;
-        if (!trashedLinksCount) {
-            return;
-        }
+        const trashedLinksCount = toTrash.length;
 
         const undoAction = async () => {
-            const restoredLinks = await takeActionForAllItems(toTrash, (item: FileBrowserItem) =>
-                restoreLink(shareId, item.LinkID)
-            );
+            const restoredLinks = await takeActionForAll(toTrash, (item) => restoreLink(shareId, item.LinkID));
 
             const restoredItemsCount = restoredLinks.length;
             if (!restoredItemsCount) {
@@ -131,7 +127,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
             await events.call(shareId);
         };
 
-        const [{ Name: firstItemName }] = trashedLinks;
+        const [{ Name: firstItemName }] = toTrash;
         const notificationMessages = {
             allFiles: c('Notification').ngettext(
                 msgid`"${firstItemName}" moved to Trash`,
@@ -150,7 +146,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
             )
         };
 
-        const movedToTrashText = getNotificationTextForItemList(trashedLinks, notificationMessages, undoAction);
+        const movedToTrashText = getNotificationTextForItemList(toTrash, notificationMessages, undoAction);
         createNotification({
             type: 'success',
             text: movedToTrashText

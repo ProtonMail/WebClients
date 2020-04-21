@@ -37,11 +37,8 @@ export const getNotificationTextForItemList = (
     return notificationText;
 };
 
-export const takeActionForAllItems = async (
-    toTakeAction: FileBrowserItem[],
-    action: (item: FileBrowserItem) => Promise<unknown>
-) => {
-    const processedItems: FileBrowserItem[] = [];
+export async function takeActionForAll<T>(toTakeAction: T[], action: (item: T) => Promise<any>) {
+    const processedItems: T[] = [];
     const results = await Promise.allSettled(toTakeAction.map((item) => action(item)));
 
     results.forEach((p, index) => {
@@ -51,4 +48,4 @@ export const takeActionForAllItems = async (
     });
 
     return processedItems;
-};
+}
