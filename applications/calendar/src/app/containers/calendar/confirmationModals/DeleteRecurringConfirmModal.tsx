@@ -9,6 +9,18 @@ interface Props {
     onConfirm: (type: RECURRING_TYPES) => void;
 }
 
+const getAlertText = (types: RECURRING_TYPES[]) => {
+    if (types.length === 1) {
+        if (types[0] === RECURRING_TYPES.SINGLE) {
+            return c('Info').t`Would you like to delete this event?`;
+        }
+        if (types[0] === RECURRING_TYPES.ALL) {
+            return c('Info').t`Would you like to delete all the events in the series?`;
+        }
+    }
+    return c('Info').t`Which event would you like to delete?`;
+};
+
 const DeleteRecurringConfirmModal = ({ types, onConfirm, ...rest }: Props) => {
     const [type, setType] = useState(types[0]);
 
@@ -20,13 +32,15 @@ const DeleteRecurringConfirmModal = ({ types, onConfirm, ...rest }: Props) => {
             {...rest}
             onConfirm={() => onConfirm(type)}
         >
-            <Alert type="error">{c('Info').t`Which event would you like to delete?`}</Alert>
-            <SelectRecurringType
-                types={types}
-                type={type}
-                setType={setType}
-                data-test-id="delete-recurring-popover:delete-option-radio"
-            />
+            <Alert type="error">{getAlertText(types)}</Alert>
+            {types.length > 1 ? (
+                <SelectRecurringType
+                    types={types}
+                    type={type}
+                    setType={setType}
+                    data-test-id="delete-recurring-popover:delete-option-radio"
+                />
+            ) : null}
         </ConfirmModal>
     );
 };

@@ -9,6 +9,18 @@ interface Props {
     onConfirm: (type: RECURRING_TYPES) => void;
 }
 
+const getAlertText = (types: RECURRING_TYPES[]) => {
+    if (types.length === 1) {
+        if (types[0] === RECURRING_TYPES.SINGLE) {
+            return c('Info').t`Would you like to update this event?`;
+        }
+        if (types[0] === RECURRING_TYPES.ALL) {
+            return c('Info').t`Would you like to update all the events in the series?`;
+        }
+    }
+    return c('Info').t`Which event would you like to update?`;
+};
+
 const EditRecurringConfirmModal = ({ types, onConfirm, ...rest }: Props) => {
     const [type, setType] = useState(types[0]);
 
@@ -20,13 +32,15 @@ const EditRecurringConfirmModal = ({ types, onConfirm, ...rest }: Props) => {
             {...rest}
             onConfirm={() => onConfirm(type)}
         >
-            <Alert type="info">{c('Info').t`Which event would you like to update?`}</Alert>
-            <SelectRecurringType
-                types={types}
-                type={type}
-                setType={setType}
-                data-test-id="update-recurring-popover:update-option-radio"
-            />
+            <Alert type="info">{getAlertText(types)}</Alert>
+            {types.length > 1 ? (
+                <SelectRecurringType
+                    types={types}
+                    type={type}
+                    setType={setType}
+                    data-test-id="update-recurring-popover:update-option-radio"
+                />
+            ) : null}
         </ConfirmModal>
     );
 };
