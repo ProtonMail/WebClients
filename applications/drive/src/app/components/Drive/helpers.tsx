@@ -36,16 +36,3 @@ export const getNotificationTextForItemList = (
 
     return notificationText;
 };
-
-export async function takeActionForAll<T>(toTakeAction: T[], action: (item: T) => Promise<any>) {
-    const processedItems: T[] = [];
-    const results = await Promise.allSettled(toTakeAction.map((item) => action(item)));
-
-    results.forEach((p, index) => {
-        if (p.status === 'fulfilled') {
-            processedItems.push(toTakeAction[index]);
-        }
-    });
-
-    return processedItems;
-}

@@ -1,10 +1,11 @@
 import { queryTrashList } from '../api/share';
-import { queryTrashLinks, queryRestoreLink, queryEmptyTrashOfShare, queryDeleteLinks } from '../api/link';
+import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteLinks } from '../api/link';
 import { LinkMeta, FolderLinkMeta } from '../interfaces/link';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import useDrive from './useDrive';
 import useDebouncedPromise from './useDebouncedPromise';
 import { FOLDER_PAGE_SIZE } from '../constants';
+import { RestoreFromTrashResult } from '../interfaces/restore';
 
 function useTrash() {
     const debouncedRequest = useDebouncedPromise();
@@ -44,8 +45,8 @@ function useTrash() {
         return debouncedRequest(queryTrashLinks(shareId, parentLinkID, linkIds));
     };
 
-    const restoreLink = async (shareId: string, linkId: string) => {
-        return debouncedRequest(queryRestoreLink(shareId, linkId));
+    const restoreLinks = async (shareId: string, linkIds: string[]): Promise<RestoreFromTrashResult> => {
+        return debouncedRequest(queryRestoreLinks(shareId, linkIds));
     };
 
     const deleteLinks = async (shareId: string, linkIds: string[]) => {
@@ -59,7 +60,7 @@ function useTrash() {
     return {
         fetchNextPage,
         trashLinks,
-        restoreLink,
+        restoreLinks,
         deleteLinks,
         emptyTrash
     };
