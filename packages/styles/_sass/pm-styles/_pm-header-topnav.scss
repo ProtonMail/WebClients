@@ -8,7 +8,7 @@
   &[aria-current="true"] {
     color: var(--color-nav-active, $pm-primary);
     text-decoration: none;
-    
+
     > .topnav-icon {
       fill: var(--color-nav-active, $pm-primary);
     }
@@ -23,11 +23,11 @@
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .topnav-list { 
+    .topnav-list {
       margin-left: 0;
       margin-right: 1em;
     }
-    .topnav-icon { 
+    .topnav-icon {
       margin-right: 0;
       margin-left: .5em;
     }
@@ -94,7 +94,7 @@
 
 @include respond-to($breakpoint-small) {
   .topnav-icon {
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
   }
 }
