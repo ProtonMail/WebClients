@@ -23,9 +23,10 @@ export const queryDeleteLinks = (ShareID: string, LinkIDs: string[]) => ({
     data: { LinkIDs }
 });
 
-export const queryRestoreLink = (ShareID: string, LinkID: string) => ({
+export const queryRestoreLinks = (ShareID: string, LinkIDs: string[]) => ({
     method: 'put',
-    url: `drive/shares/${ShareID}/trash/${LinkID}`
+    url: `drive/shares/${ShareID}/trash/restore_multiple`,
+    data: { LinkIDs }
 });
 
 export const queryEmptyTrashOfShare = (ShareID: string) => ({

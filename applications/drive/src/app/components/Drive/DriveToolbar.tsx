@@ -13,7 +13,7 @@ import CreateFolderModal from '../CreateFolderModal';
 import RenameModal from '../RenameModal';
 import DetailsModal from '../DetailsModal';
 import FileSaver from '../../utils/FileSaver/FileSaver';
-import { getNotificationTextForItemList, takeActionForAll } from './helpers';
+import { getNotificationTextForItemList } from './helpers';
 import { DriveFolder } from './DriveFolderProvider';
 import { LinkType } from '../../interfaces/link';
 
@@ -28,7 +28,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
     const { fileBrowserControls } = useDriveContent();
     const { getLinkMeta, createNewFolder, renameLink, events } = useDrive();
     const { startFileTransfer } = useFiles();
-    const { trashLinks, restoreLink } = useTrash();
+    const { trashLinks, restoreLinks } = useTrash();
     const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
     const cache = useDriveCache();
 
@@ -94,40 +94,37 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
         );
 
         const trashedLinksCount = toTrash.length;
+        const [{ Name: firstItemName }] = toTrash;
 
         const undoAction = async () => {
-            const restoredLinks = await takeActionForAll(toTrash, (item) => restoreLink(shareId, item.LinkID));
+            await restoreLinks(
+                shareId,
+                toTrash.map(({ LinkID }) => LinkID)
+            );
 
-            const restoredItemsCount = restoredLinks.length;
-            if (!restoredItemsCount) {
-                return;
-            }
-
-            const [{ Name: firstItemName }] = restoredLinks;
             const notificationMessages = {
                 allFiles: c('Notification').ngettext(
                     msgid`"${firstItemName}" restored from Trash`,
-                    `${restoredItemsCount} files restored from Trash`,
-                    restoredItemsCount
+                    `${trashedLinksCount} files restored from Trash`,
+                    trashedLinksCount
                 ),
                 allFolders: c('Notification').ngettext(
                     msgid`"${firstItemName}" restored from Trash`,
-                    `${restoredItemsCount} folders restored from Trash`,
-                    restoredItemsCount
+                    `${trashedLinksCount} folders restored from Trash`,
+                    trashedLinksCount
                 ),
                 mixed: c('Notification').ngettext(
                     msgid`"${firstItemName}" restored from Trash`,
-                    `${restoredItemsCount} items restored from Trash`,
-                    restoredItemsCount
+                    `${trashedLinksCount} items restored from Trash`,
+                    trashedLinksCount
                 )
             };
 
-            const notificationText = getNotificationTextForItemList(restoredLinks, notificationMessages);
+            const notificationText = getNotificationTextForItemList(toTrash, notificationMessages);
             createNotification({ text: notificationText });
             await events.call(shareId);
         };
 
-        const [{ Name: firstItemName }] = toTrash;
         const notificationMessages = {
             allFiles: c('Notification').ngettext(
                 msgid`"${firstItemName}" moved to Trash`,
