@@ -37,15 +37,15 @@ const TrashContentContext = createContext<TrashContentProviderState | null>(null
  * Stores file browser controls.
  * Exposes functions to (re)load trash contents.
  */
-const TrashContentProvider = ({ children, shareId }: { children: React.ReactNode; shareId?: string }) => {
+const TrashContentProvider = ({ children, shareId }: { children: React.ReactNode; shareId: string }) => {
     const cache = useDriveCache();
     const { fetchNextPage } = useTrash();
     const [initialized, setInitialized] = useState(false);
     const [loading, setLoading] = useState(false);
     const [, setError] = useState();
 
-    const trashLinks = shareId ? cache.get.trashMetas(shareId) : [];
-    const complete = shareId ? cache.get.trashComplete(shareId) : false;
+    const trashLinks = cache.get.trashMetas(shareId);
+    const complete = cache.get.trashComplete(shareId);
     const { sortedList } = useSortedList(mapLinksToChildren(trashLinks), {
         key: 'Modified',
         direction: SORT_DIRECTION.ASC
@@ -55,7 +55,7 @@ const TrashContentProvider = ({ children, shareId }: { children: React.ReactNode
     const contentLoading = useRef(false);
 
     const loadNextPage = useCallback(async () => {
-        if (!shareId || contentLoading.current || complete) {
+        if (contentLoading.current || complete) {
             return;
         }
 

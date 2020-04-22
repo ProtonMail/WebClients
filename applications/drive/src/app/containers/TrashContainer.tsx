@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { c } from 'ttag';
 
@@ -13,23 +13,17 @@ import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
 const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) => {
     const { setFolder } = useDriveActiveFolder();
     const cache = useDriveCache();
-    const [shareId, setShareId] = useState(() => match.params.shareId);
+    const shareId = useMemo(() => {
+        const shareId = match.params.shareId || cache.get.defaultShareMeta()?.ShareID;
+        if (!shareId) {
+            throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
+        }
+        return shareId;
+    }, [match.params.shareId]);
 
     useEffect(() => {
         setFolder(undefined);
-
-        let shareId = match.params.shareId;
-
-        if (!shareId) {
-            const meta = cache.get.defaultShareMeta();
-            if (!meta) {
-                throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
-            }
-            shareId = meta.ShareID;
-        }
-
-        setShareId(shareId);
-    }, [match.params.shareId]);
+    }, []);
 
     return (
         <Page title={c('Title').t`Trash`}>
