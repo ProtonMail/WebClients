@@ -7,10 +7,8 @@ import {
     DropdownButton,
     Dropdown,
     Icon,
-    Href,
     DateInput,
     Radio,
-    Toggle,
     Button,
     PrimaryButton,
     Label,
@@ -39,7 +37,6 @@ import './AdvancedSearchDropdown.scss';
 const UNDEFINED = undefined;
 const AUTO_WILDCARD = undefined;
 const ALL_ADDRESSES = 'all';
-const NO_WILDCARD = 0;
 const NO_ATTACHMENTS = 0;
 const WITH_ATTACHMENTS = 1;
 const { INBOX, TRASH, SPAM, ARCHIVE, ALL_MAIL, ALL_SENT, SENT, ALL_DRAFTS, DRAFTS } = MAILBOX_LABEL_IDS;
@@ -194,21 +191,6 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                     onSubmit={handleSubmit}
                     onReset={handleReset}
                 >
-                    <div className="mb1 flex flex-nowrap onmobile-flex-column">
-                        <Label className="advancedSearch-label" htmlFor="exact-match">{c('Label')
-                            .t`Exact match`}</Label>
-                        <div className="flex-item-fluid flex flex-items-center flex-spacebetween">
-                            <Toggle
-                                id="exact-match"
-                                checked={model.wildcard === AUTO_WILDCARD}
-                                onChange={({ target }) =>
-                                    updateModel({ ...model, wildcard: target.checked ? AUTO_WILDCARD : NO_WILDCARD })
-                                }
-                            />
-                            <Href url="https://protonmail.com/support/knowledge-base/search/">{c('Link')
-                                .t`Learn more`}</Href>
-                        </div>
-                    </div>
                     <div className="mb1 flex flex-nowrap onmobile-flex-column">
                         <Label className="advancedSearch-label" htmlFor="labelID">{c('Label').t`Location`}</Label>
                         <Select
