@@ -83,7 +83,7 @@ const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay }: EventMo
         if (ends.type === END_TYPE.AFTER_N_TIMES) {
             rrule.value.count = ends.count;
         }
-        if (ends.type === END_TYPE.UNTIL) {
+        if (ends.type === END_TYPE.UNTIL && ends.until) {
             rrule.value.until = getUntilProperty(fromLocalDate(ends.until), isAllDay, tzid);
         }
         return {

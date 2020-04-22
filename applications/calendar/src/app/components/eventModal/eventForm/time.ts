@@ -30,7 +30,8 @@ export const getTimeInUtc = ({ date, time, tzid }: DateTimeModel, isAllDay: bool
                 month: date.getMonth() + 1,
                 day: date.getDate(),
                 hours: time.getHours(),
-                minutes: time.getMinutes()
+                minutes: time.getMinutes(),
+                seconds: 0
             },
             tzid
         )

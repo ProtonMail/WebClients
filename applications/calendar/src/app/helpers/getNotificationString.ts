@@ -40,6 +40,8 @@ const getNotificationString = (notification: NotificationModel, formatTime: (dat
                 return c('Notifications').ngettext(msgid`${value} week after`, `${value} weeks after`, value);
             }
         }
+
+        return c('Notifications').t`Unknown`;
     }
 
     const modifiedAt = toUTCDate(fromLocalDate(at));

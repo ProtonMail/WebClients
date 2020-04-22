@@ -40,6 +40,10 @@ export const getSafeRruleCount = (rrule: VcalRruleProperty, newCount: number) =>
 export const getSafeRruleUntil = (rrule: VcalRruleProperty, component: VcalVeventComponent) => {
     const { dtstart } = component;
 
+    if (!rrule.value.until) {
+        throw new Error('Until required');
+    }
+
     const originalUntilDateTime = toUTCDate(rrule.value.until);
     const newStartTime = propertyToUTCDate(dtstart);
 
