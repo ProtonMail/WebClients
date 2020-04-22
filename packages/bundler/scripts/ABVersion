@@ -1,0 +1,108 @@
+#!/usr/bin/env node
+
+const util = require('util');
+const path = require('path');
+const readline = require('readline');
+const exec = util.promisify(require('child_process').exec);
+
+const semver = require('semver');
+
+const identity = (a) => a;
+
+/**
+ * Validate user input
+ *   type: type     A/B testing version
+ *   type: version  Semver version
+ * @param  {String} type  type/version
+ * @param  {String} value UserInput value
+ */
+function validInput(type, value) {
+    if (type === 'type' && !/^(a|b|c)$/i.test(value)) {
+        throw new Error('Invalid input value. It must be either a or b or c');
+    }
+
+    if (type === 'version' && !/major|minor|patch|premajor|preminor|prepatch|prerelease/.test(value)) {
+        throw new Error(
+            'Invalid input value. We expect major | minor | patch | premajor | preminor | prepatch | prerelease'
+        );
+    }
+}
+
+/**
+ * Prompt a quesiton to the user, we return a promise with the answer
+ * @param  {String} question
+ * @param  {String} question
+ * @return {Promise<Boolean>}  Kill on CTRL-C
+ */
+async function question(question, fomatOutput = identity) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    try {
+        const answer = await new Promise((resolve, reject) => {
+            rl.question(question, (answer = '') => {
+                resolve(fomatOutput(answer));
+                rl.close();
+            });
+
+            rl.on('close', () => reject());
+        });
+        return answer;
+    } catch (e) {
+        // Osef of ctrl+c
+        throw new Error((e || {}).message || 'STOP');
+    }
+}
+
+async function main() {
+    const { version } = require(path.join(process.cwd(), 'package.json'));
+    const [
+        arg1 = 'patch',
+        arg2 = await question('Which version you wan to create? [a/b/c default:a]:', (answer) => {
+            // default press enter = empty string
+            const value = answer.trim() || 'a';
+            return value;
+        })
+    ] = process.argv.slice(2);
+
+    validInput('version', arg1);
+    validInput('type', arg2);
+
+    const newVersion = `v${semver.inc(version, arg1)}-${arg2}`;
+
+    if (!semver.valid(newVersion)) {
+        throw new Error(`Invalid version ${newVersion}`);
+    }
+
+    const confirmCreation = await question(`Confirm new tag ${newVersion} [Yy/Nn]:`, (answer) => {
+        // default press enter = empty string
+        const value = (answer.trim() || 'y').toLowerCase();
+        return value === 'y';
+    });
+
+    if (!confirmCreation) {
+        return;
+    }
+
+    console.log('[run] create new tag', newVersion);
+
+    const { stdout, stderr } = await exec(`git tag ${newVersion} && git push origin ${newVersion} && echo 'OKAY'`);
+
+    if (/OKAY/.test(stdout)) {
+        return console.log('[run] new tag available', newVersion);
+    }
+
+    if (stderr) {
+        throw new Error(stderr);
+    }
+}
+
+main().catch((e) => {
+    console.log('');
+    if (e.message !== 'STOP') {
+        console.error(`🔴 ${e.toString()}`);
+    }
+    console.log('');
+});
