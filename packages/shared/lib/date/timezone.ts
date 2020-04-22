@@ -1,13 +1,18 @@
 import { listTimeZones, findTimeZone, getZonedTime, getUTCOffset } from 'timezone-support';
 import { DateTime } from '../interfaces/calendar/Date';
 
-/** @type any */
-export const toLocalDate = ({ year = 0, month = 1, day = 0, hours = 0, minutes = 0, seconds = 0 }) => {
+export const toLocalDate = ({
+    year = 0,
+    month = 1,
+    day = 0,
+    hours = 0,
+    minutes = 0,
+    seconds = 0
+}: Partial<DateTime>) => {
     return new Date(year, month - 1, day, hours, minutes, seconds);
 };
 
-/** @type any */
-export const toUTCDate = ({ year = 0, month = 1, day = 0, hours = 0, minutes = 0, seconds = 0 }) => {
+export const toUTCDate = ({ year = 0, month = 1, day = 0, hours = 0, minutes = 0, seconds = 0 }: Partial<DateTime>) => {
     return new Date(Date.UTC(year, month - 1, day, hours, minutes, seconds));
 };
 
