@@ -92,7 +92,7 @@ const DriveContentProviderInner = ({
             setLoading(false);
         }
 
-        if (!cache.get.listedChildLinks(shareId, linkId)?.length) {
+        if (!initialized || !cache.get.listedChildLinks(shareId, linkId)?.length) {
             loadNextPage();
         }
 
