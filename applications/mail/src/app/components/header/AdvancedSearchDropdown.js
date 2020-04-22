@@ -87,13 +87,13 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
         event.preventDefault(); // necessary to not run a basic submission
         event.stopPropagation(); // necessary to not submit normal search from header
 
-        const { labelID, address, begin, end, wildcard, from, to, attachments } = reset ? DEFAULT_MODEL : model;
+        const { address, begin, end, wildcard, from, to, attachments } = reset ? DEFAULT_MODEL : model;
 
         history.push(
             changeSearchParams(
                 {
                     ...location,
-                    pathname: `/${getHumanLabelID(labelID)}`
+                    pathname: `/${getHumanLabelID(model.labelID)}`
                 },
                 {
                     keyword: reset ? UNDEFINED : keywordToString(fullInput),
@@ -116,13 +116,6 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
     useEffect(() => {
         if (isOpen) {
             updateModel(() => {
-                if (!fullInput) {
-                    return {
-                        ...DEFAULT_MODEL,
-                        labelID
-                    };
-                }
-
                 const { address, attachments, wildcard, from, to, begin, end } = extractSearchParameters(location);
 
                 return {

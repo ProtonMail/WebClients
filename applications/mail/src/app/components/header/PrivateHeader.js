@@ -27,7 +27,7 @@ const PrivateHeader = ({ labelID, location, history, expanded, onToggleExpand, o
             <Searchbox
                 delay={0}
                 placeholder={c('Placeholder').t`Search messages`}
-                onSearch={onSearch}
+                onSearch={(keyword) => onSearch(keyword, keyword ? undefined : labelID)}
                 onChange={updateValue}
                 value={value}
                 advanced={
