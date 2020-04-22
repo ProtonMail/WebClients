@@ -99,7 +99,7 @@ const TrashContentProvider = ({ children, shareId }: { children: React.ReactNode
             setLoading(false);
         }
 
-        if (!trashLinks.length) {
+        if (!initialized || !trashLinks.length) {
             loadNextPage();
         }
 
@@ -107,7 +107,7 @@ const TrashContentProvider = ({ children, shareId }: { children: React.ReactNode
             contentLoading.current = false;
             abortController.abort();
         };
-    }, [loadNextPage, shareId]);
+    }, [loadNextPage]);
 
     return (
         <TrashContentContext.Provider

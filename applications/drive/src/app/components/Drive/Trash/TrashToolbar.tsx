@@ -97,8 +97,8 @@ const TrashToolbar = ({ shareId }: Props) => {
 
         const toDelete = selectedItems;
 
-        const title = c('Title').t`Delete Permanently`;
-        const confirm = c('Action').t`Delete Permanently`;
+        const title = c('Title').t`Delete permanently`;
+        const confirm = c('Action').t`Delete permanently`;
         const message = c('Info').t`permanently delete selected item(s) from Trash`;
 
         openConfirmModal(title, confirm, message, async () => {
@@ -167,7 +167,7 @@ const TrashToolbar = ({ shareId }: Props) => {
                     />
                     <ToolbarButton
                         disabled={!selectedItems.length}
-                        title={c('Action').t`Delete Permanently`}
+                        title={c('Action').t`Delete permanently`}
                         icon="trash"
                         onClick={handleDeleteClick}
                     />
