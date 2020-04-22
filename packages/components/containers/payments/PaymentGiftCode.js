@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useToggle, Icon, LinkButton, Button } from 'react-components';
-import { isValid } from 'proton-shared/lib/helpers/giftCode';
 import { c } from 'ttag';
 
 import GiftCodeForm from './subscription/GiftCodeForm';
@@ -45,7 +44,7 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }) => {
 
     if (state) {
         const handleSubmit = () => {
-            if (!isValid(code)) {
+            if (!code) {
                 return;
             }
 

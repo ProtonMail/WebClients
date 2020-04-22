@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PrimaryButton, GiftCodeInput } from 'react-components';
-import { isValid } from 'proton-shared/lib/helpers/giftCode';
+import { PrimaryButton, Input } from 'react-components';
 
 const GiftCodeForm = ({ code, loading, disabled, onChange, onSubmit }) => {
     const handleEnter = (event) => {
@@ -14,8 +13,9 @@ const GiftCodeForm = ({ code, loading, disabled, onChange, onSubmit }) => {
     return (
         <div className="flex flex-nowrap flex-items-center flex-items-start">
             <div className="pr1 flex-item-fluid">
-                <GiftCodeInput
+                <Input
                     value={code}
+                    placeholder={c('Placeholder').t`Gift code`}
                     onChange={({ target }) => onChange(target.value)}
                     onKeyPress={handleEnter}
                 />
@@ -23,7 +23,7 @@ const GiftCodeForm = ({ code, loading, disabled, onChange, onSubmit }) => {
             <PrimaryButton
                 title={c('Title').t`Apply gift code`}
                 loading={loading}
-                disabled={disabled || !isValid(code)}
+                disabled={disabled || !code}
                 onClick={onSubmit}
             >{c('Action').t`Apply`}</PrimaryButton>
         </div>
