@@ -10,7 +10,13 @@ interface Arguments {
 }
 const getAlarmMessageText = ({ title, isAllDay, startFakeUTCDate, nowFakeUTCDate, formatOptions }: Arguments) => {
     const formattedHour = formatUTC(startFakeUTCDate, 'p', formatOptions);
-    const isInFuture = startFakeUTCDate >= nowFakeUTCDate;
+    // because of browser timer imprecisions, allow for a 1 minute margin to determine simultaneity
+    const isNow = Math.abs(+startFakeUTCDate - +nowFakeUTCDate) <= 30 * 1000;
+    const isInFuture = startFakeUTCDate > nowFakeUTCDate;
+
+    if (isNow) {
+        return c('Alarm notification').t`${title} starts now`;
+    }
 
     if (!isInFuture) {
         if (isSameDay(nowFakeUTCDate, startFakeUTCDate)) {
