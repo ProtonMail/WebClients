@@ -10,7 +10,7 @@ import { VcalVeventComponent } from '../interfaces/VcalModel';
  */
 interface Arguments {
     component: VcalVeventComponent;
-    start: Date;
+    start?: Date;
     now: Date;
     tzid: string;
     formatOptions: any;

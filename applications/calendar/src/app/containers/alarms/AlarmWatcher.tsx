@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { useApi } from 'react-components';
 import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
@@ -7,6 +6,7 @@ import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { getMillisecondsFromTriggerString } from 'proton-shared/lib/calendar/vcal';
+import { CalendarAlarm, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 
 import notificationIcon from '../../../assets/notification.gif';
 import useGetCalendarEventRaw from '../../containers/calendar/useGetCalendarEventRaw';
@@ -15,7 +15,7 @@ import { MINUTE } from '../../constants';
 
 const MIN_CUTOFF = -MINUTE * 1000;
 
-export const displayNotification = ({ title = c('Title').t`Calendar alarm`, text, ...rest }) => {
+export const displayNotification = ({ title = c('Title').t`Calendar alarm`, text = '', ...rest }) => {
     return create(title, {
         body: text,
         icon: notificationIcon,
@@ -26,16 +26,21 @@ export const displayNotification = ({ title = c('Title').t`Calendar alarm`, text
     });
 };
 
-const getFirstUnseenAlarm = (alarms = [], set = new Set()) => {
+const getFirstUnseenAlarm = (alarms: CalendarAlarm[] = [], set: Set<string>) => {
     return alarms.find(({ ID }) => {
         return !set.has(ID);
     });
 };
 
-const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
+interface Props {
+    alarms: CalendarAlarm[];
+    tzid: string;
+    getCachedEvent: (calendarID: string, eventID: string) => Promise<CalendarEvent>;
+}
+const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }: Props) => {
     const api = useApi();
     const getEventRaw = useGetCalendarEventRaw();
-    const cacheRef = useRef();
+    const cacheRef = useRef<Set<string>>();
 
     // temporary code for standalone app
     useEffect(() => {
@@ -45,8 +50,8 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
     }, []);
 
     useEffect(() => {
-        let timeoutHandle;
-        let unmounted;
+        let timeoutHandle = 0;
+        let unmounted = false;
 
         const run = () => {
             if (unmounted) {
@@ -56,13 +61,12 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
                 cacheRef.current = new Set();
             }
 
-            const { ID, Occurrence, Trigger, CalendarID, EventID } = getFirstUnseenAlarm(alarms, cacheRef.current) || {
-                ID: 'non-existing'
-            };
-
-            if (ID === 'non-existing') {
+            const firstUnseenAlarm = getFirstUnseenAlarm(alarms, cacheRef.current);
+            if (!firstUnseenAlarm) {
                 return;
             }
+
+            const { ID, Occurrence, Trigger, CalendarID, EventID } = firstUnseenAlarm;
 
             const nextAlarmTime = fromUnixTime(Occurrence);
             const nextEventTime = Trigger ? Occurrence * 1000 - getMillisecondsFromTriggerString(Trigger) : undefined;
@@ -75,20 +79,25 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
                 if (cachedEvent) {
                     return Promise.resolve(cachedEvent);
                 }
-                return api({ ...getEventRoute(CalendarID, EventID), silence: true }).then(({ Event }) => Event);
+                return api<{ Event: CalendarEvent }>({ ...getEventRoute(CalendarID, EventID), silence: true }).then(
+                    ({ Event }) => Event
+                );
             };
 
-            timeoutHandle = setTimeout(() => {
+            timeoutHandle = window.setTimeout(() => {
+                if (unmounted || !cacheRef.current) {
+                    return;
+                }
                 // Eagerly add the event to seen, ignore if it would fail
                 cacheRef.current.add(ID);
 
                 // Ignore the event if it's in the past after the cutoff
                 if (diff < MIN_CUTOFF) {
-                    setTimeout(run, 0);
+                    window.setTimeout(run, 0);
                     return;
                 }
 
-                getEvent(CalendarID, EventID)
+                getEvent()
                     .then((Event) => getEventRaw(Event))
                     .then((eventRaw) => {
                         if (unmounted) {
@@ -102,7 +111,7 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
                         displayNotification({ text, tag: ID });
                     });
 
-                setTimeout(run, 0);
+                window.setTimeout(run, 0);
             }, delay);
         };
 
@@ -111,17 +120,12 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }) => {
         return () => {
             unmounted = true;
             if (timeoutHandle) {
-                clearTimeout(timeoutHandle);
+                window.clearTimeout(timeoutHandle);
             }
         };
     }, [alarms, tzid, getEventRaw]);
 
     return null;
-};
-
-AlarmWatcher.propTypes = {
-    alarms: PropTypes.array,
-    tzid: PropTypes.string.isRequired
 };
 
 export default AlarmWatcher;
