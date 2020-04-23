@@ -4,10 +4,31 @@ const util = require('util');
 const path = require('path');
 const readline = require('readline');
 const exec = util.promisify(require('child_process').exec);
+const { promises: fs, constants: FS_CONSTANTS } = require('fs');
 
 const semver = require('semver');
 
 const identity = (a) => a;
+const booleanAnswerCb = (defaultValue = 'y') => (answer) => {
+    // default press enter = empty string
+    const value = (answer.trim() || defaultValue).toLowerCase();
+    return value === defaultValue;
+};
+
+/**
+ * Check if a file exist,
+ * @param  {String}  filePath              Path to a file
+ * @param  {Boolean} isFull                We already give a full file path
+ * @return {void}
+ */
+async function hasFile(file, isFull) {
+    const filePath = isFull ? file : path.join(process.cwd(), file);
+    try {
+        await fs.access(filePath, FS_CONSTANTS.F_OK | FS_CONSTANTS.W_OK);
+    } catch (e) {
+        throw new Error(`You must have the file [${path.basename(filePath)}] to be able to tag`);
+    }
+}
 
 /**
  * Validate user input
@@ -34,7 +55,7 @@ function validInput(type, value) {
  * @param  {String} question
  * @return {Promise<Boolean>}  Kill on CTRL-C
  */
-async function question(question, fomatOutput = identity) {
+async function question(question, fomatOutput = booleanAnswerCb()) {
     const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout
@@ -56,31 +77,77 @@ async function question(question, fomatOutput = identity) {
     }
 }
 
-async function main() {
-    const { version } = require(path.join(process.cwd(), 'package.json'));
-    const [
-        arg1 = 'patch',
-        arg2 = await question('Which version you wan to create? [a/b/c default:a]:', (answer) => {
+async function execCommand(cmd, successCb = identity) {
+    const { stdout, stderr } = await exec(`${cmd} && echo 'OKAY'`);
+
+    if (/OKAY/.test(stdout)) {
+        return successCb((stdout.split('OKAY')[0] || '').trim());
+    }
+
+    if (stderr) {
+        throw new Error(stderr);
+    }
+}
+async function validateCurrentBranch() {
+    const output = await execCommand('git rev-parse --abbrev-ref HEAD');
+    if (output === 'develop') {
+        throw new Error('You must tag only from master. Merge develop inside master then tag');
+    }
+}
+
+/**
+ * Write a new version to package.json + lockfile (FS + GIT)
+ * @param  {String} newVersion new tag
+ * @return {void}
+ */
+async function writeVersion(newVersion) {
+    const rawVersion = newVersion.replace('v', '');
+
+    for (const file of ['package.json', 'package-lock.json']) {
+        const filePath = path.join(process.cwd(), file);
+        const buffer = (await fs.readFile(filePath)).toString();
+        const pkg = JSON.parse(buffer);
+        pkg.version = rawVersion;
+        await fs.writeFile(filePath, JSON.stringify(pkg, null, 4));
+        console.log(`[run] write new version ${newVersion} to ${file}`);
+    }
+
+    await execCommand(
+        [
+            'git add package.json package-lock.json',
+            `git commit -m '${rawVersion}'`,
+            'git push origin "$(git rev-parse --abbrev-ref HEAD)"',
+            `git tag ${newVersion}`,
+            `git push origin ${newVersion}`
+        ].join(' && ')
+    );
+
+    console.log('[run] new version available', newVersion);
+}
+
+async function flowStandard(newVersion) {
+    await writeVersion(newVersion);
+    process.exit(0);
+}
+
+async function flowAB({ arg1, arg2: input }, version) {
+    const arg2 =
+        input ||
+        (await question('Which version you want to create? [a/b/c default:a]:', (answer) => {
             // default press enter = empty string
             const value = answer.trim() || 'a';
             return value;
-        })
-    ] = process.argv.slice(2);
+        }));
 
-    validInput('version', arg1);
     validInput('type', arg2);
 
-    const newVersion = `v${semver.inc(version, arg1)}-${arg2}`;
+    const newVersion = `${semver.inc(version, arg1)}+${arg2}`;
 
     if (!semver.valid(newVersion)) {
         throw new Error(`Invalid version ${newVersion}`);
     }
 
-    const confirmCreation = await question(`Confirm new tag ${newVersion} [Yy/Nn]:`, (answer) => {
-        // default press enter = empty string
-        const value = (answer.trim() || 'y').toLowerCase();
-        return value === 'y';
-    });
+    const confirmCreation = await question(`Confirm new tag ${newVersion} [Yy/Nn]:`);
 
     if (!confirmCreation) {
         return;
@@ -88,21 +155,44 @@ async function main() {
 
     console.log('[run] create new tag', newVersion);
 
-    const { stdout, stderr } = await exec(`git tag ${newVersion} && git push origin ${newVersion} && echo 'OKAY'`);
+    await writeVersion(newVersion);
+    process.exit(0);
+}
 
-    if (/OKAY/.test(stdout)) {
-        return console.log('[run] new tag available', newVersion);
+async function main() {
+    await hasFile('package-lock.json');
+    const [arg1 = 'patch', arg2] = process.argv.slice(2);
+
+    validInput('version', arg1);
+
+    const isStandardVersion = arg2 ? false : await question(
+        'Do you want to create AB testing version [Yy/Nn default: n]:',
+        booleanAnswerCb('n')
+    );
+
+    const { version } = require(path.join(process.cwd(), 'package.json'));
+
+    if (!isStandardVersion) {
+        return flowAB({ arg1, arg2 }, version);
     }
 
-    if (stderr) {
-        throw new Error(stderr);
+    // We can tag AB testing frm anybranch but not a standard tag which must be from master
+    await validateCurrentBranch();
+
+    const newVersion = `v${semver.inc(version, arg1)}`;
+
+    if (!semver.valid(newVersion)) {
+        throw new Error(`Invalid version ${newVersion}`);
     }
+
+    return flowStandard(newVersion);
 }
 
 main().catch((e) => {
-    console.log('');
     if (e.message !== 'STOP') {
+        console.log('');
         console.error(`🔴 ${e.toString()}`);
+        process.exit(1);
+        console.log('');
     }
-    console.log('');
 });
