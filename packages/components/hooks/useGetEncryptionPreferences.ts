@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useAddresses, useApi, useGetAddressKeys, useMailSettings, useUserKeys } from '../index';
+import { useAddresses, useApi, useGetAddressKeys, useGetUserKeys, useMailSettings } from '../index';
 import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
 import getPublicKeysEmailHelper from 'proton-shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { getPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
@@ -14,12 +14,10 @@ import { splitKeys } from 'proton-shared/lib/keys/keys';
  */
 const useGetEncryptionPreferences = () => {
     const api = useApi();
-    const [userKeysList, loadingUserKeys] = useUserKeys();
+    const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
-
-    const { publicKeys } = splitKeys(userKeysList);
 
     return useCallback(
         async (emailAddress: string) => {
@@ -35,6 +33,7 @@ const useGetEncryptionPreferences = () => {
                 apiKeysConfig = { Keys: [], publicKeys: [] };
                 pinnedKeysConfig = { pinnedKeys: [] };
             } else {
+                const { publicKeys } = splitKeys(await getUserKeys());
                 [apiKeysConfig, pinnedKeysConfig] = await Promise.all([
                     getPublicKeysEmailHelper(api, emailAddress),
                     getPublicKeysVcardHelper(api, emailAddress, publicKeys)
@@ -48,7 +47,7 @@ const useGetEncryptionPreferences = () => {
             });
             return extractEncryptionPreferences(publicKeyModel, selfSend);
         },
-        [api, getAddressKeys, mailSettings, addresses, loadingUserKeys]
+        [api, getAddressKeys, mailSettings, addresses]
     );
 };
 
