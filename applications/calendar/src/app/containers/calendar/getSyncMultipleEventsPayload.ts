@@ -87,6 +87,10 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
         const isUpdateEvent = !!Event;
         const isSwitchCalendar = isUpdateEvent && oldCalendarID !== calendarID;
 
+        if (isSwitchCalendar) {
+            throw new Error('Can currently not change calendar with the sync operation');
+        }
+
         const newCalendarKeys = calendarKeysMap[calendarID];
         const oldCalendarKeys = isSwitchCalendar && oldCalendarID ? calendarKeysMap[oldCalendarID] : undefined;
         const addressKeys = addressKeysMap[addressID];

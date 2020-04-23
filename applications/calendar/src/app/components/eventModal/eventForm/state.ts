@@ -212,7 +212,7 @@ export const getExistingEvent = ({ veventComponent, veventValarmComponent, tzid 
         // TODO: In the latest design we are not using hasMoreOptions, nor the MoreRow component. If the design sticks, we should remove them
         hasMoreOptions: isRecurring || hasDifferingTimezone,
         hasFrequencyRow: !recurrenceId,
-        hasCalendarRow: !recurrenceId,
+        hasCalendarRow: !isRecurring && !recurrenceId,
         ...(isAllDay
             ? {
                   fullDayNotifications: newNotifications
