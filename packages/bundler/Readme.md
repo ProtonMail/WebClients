@@ -10,7 +10,7 @@ There are 3 modes:
 
 We create during the bundle, a file `version.json` available inside `dist/assets/version.json`
 ex:
-```json
+```jsonc
 {
     "version": "v3.16.21",
     "commit": "fcdc2d2168b69b63688e87acb52d53f30879a674",
