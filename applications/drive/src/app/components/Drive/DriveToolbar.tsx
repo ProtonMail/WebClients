@@ -16,6 +16,7 @@ import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getNotificationTextForItemList } from './helpers';
 import { DriveFolder } from './DriveFolderProvider';
 import { LinkType } from '../../interfaces/link';
+import { isPreviewAvailable } from '../FilePreview/FilePreview';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -47,6 +48,13 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
         if (ParentLinkID) {
             openLink(shareId, ParentLinkID, LinkType.FOLDER);
         }
+    };
+
+    const handlePreview = () => {
+        const item = selectedItems[0];
+        const { shareId } = activeFolder;
+
+        openLink(shareId, item.LinkID, item.Type);
     };
 
     const handleDownloadClick = () => {
@@ -158,9 +166,20 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
         const isMultiSelect = selectedItems.length > 1;
         const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
+        const isPreviewDisabled =
+            isMultiSelect ||
+            hasFoldersSelected ||
+            !selectedItems[0].MimeType ||
+            !isPreviewAvailable(selectedItems[0].MimeType);
 
         return (
             <>
+                <ToolbarButton
+                    disabled={isPreviewDisabled}
+                    title={c('Action').t`Preview`}
+                    icon="read"
+                    onClick={handlePreview}
+                />
                 <ToolbarButton
                     disabled={hasFoldersSelected}
                     title={c('Action').t`Download`}
