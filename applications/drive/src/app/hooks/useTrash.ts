@@ -21,7 +21,10 @@ function useTrash() {
         const decryptedLinks = await Promise.all(
             Links.map(async (meta) => {
                 const { privateKey } = meta.ParentLinkID
-                    ? await getLinkKeys(shareId, meta.ParentLinkID, async (id) => Parents[id])
+                    ? await getLinkKeys(shareId, meta.ParentLinkID, {
+                          fetchLinkMeta: async (id) => Parents[id],
+                          preventRerenders: true
+                      })
                     : await getShareKeys(shareId);
 
                 return decryptLink(meta, privateKey);

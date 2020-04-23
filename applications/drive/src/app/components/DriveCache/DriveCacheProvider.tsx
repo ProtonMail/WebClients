@@ -58,7 +58,7 @@ const useDriveCacheState = () => {
     const cacheRef = useRef<DriveCacheState>({});
     const [, setRerender] = useState(0);
 
-    const setLinkMeta = (metas: LinkMeta | LinkMeta[], shareId: string) => {
+    const setLinkMeta = (metas: LinkMeta | LinkMeta[], shareId: string, rerender = true) => {
         const links = cacheRef.current[shareId].links;
         const linkMetas = Array.isArray(metas) ? metas : [metas];
 
@@ -86,7 +86,9 @@ const useDriveCacheState = () => {
             links
         };
 
-        setRerender((old) => ++old);
+        if (rerender) {
+            setRerender((old) => ++old);
+        }
     };
 
     const getChildLinks = (shareId: string, linkId: string) => {

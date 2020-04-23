@@ -135,7 +135,10 @@ function useDrive() {
     const getLinkKeys = async (
         shareId: string,
         linkId: string,
-        fetchLinkMeta?: (linkId: string) => Promise<LinkMeta>
+        config: {
+            fetchLinkMeta?: (linkId: string) => Promise<LinkMeta>;
+            preventRerenders?: boolean;
+        } = {}
     ): Promise<LinkKeys> => {
         const cachedKeys = cache.get.linkKeys(shareId, linkId);
 
@@ -144,12 +147,10 @@ function useDrive() {
         }
 
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        const meta = await getLinkMeta(shareId, linkId, fetchLinkMeta);
+        const meta = await getLinkMeta(shareId, linkId, config);
 
         const [{ privateKey: parentKey }, { publicKeys }] = await Promise.all([
-            meta.ParentLinkID
-                ? await getLinkKeys(shareId, meta.ParentLinkID, fetchLinkMeta)
-                : await getShareKeys(shareId),
+            meta.ParentLinkID ? await getLinkKeys(shareId, meta.ParentLinkID, config) : await getShareKeys(shareId),
             getVerificationKeys(meta.SignatureAddressID)
         ]);
 
@@ -187,25 +188,28 @@ function useDrive() {
     const getLinkMeta = async (
         shareId: string,
         linkId: string,
-        fetchLinkMeta?: (id: string) => Promise<LinkMeta>,
-        skipCache = false
+        config: {
+            fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
+            preventRerenders?: boolean;
+            skipCache?: boolean;
+        } = {}
     ): Promise<LinkMeta> => {
         const cachedMeta = cache.get.linkMeta(shareId, linkId);
 
-        if (!skipCache && cachedMeta) {
+        if (!config.skipCache && cachedMeta) {
             return cachedMeta;
         }
 
-        const Link = fetchLinkMeta
-            ? await fetchLinkMeta(linkId)
+        const Link = config.fetchLinkMeta
+            ? await config.fetchLinkMeta(linkId)
             : (await debouncedRequest<LinkMetaResult>(queryGetLink(shareId, linkId))).Link;
 
         const { privateKey } = Link.ParentLinkID
-            ? await getLinkKeys(shareId, Link.ParentLinkID, fetchLinkMeta)
+            ? await getLinkKeys(shareId, Link.ParentLinkID, config)
             : await getShareKeys(shareId);
 
         const meta = await decryptLink(Link, privateKey);
-        cache.set.linkMeta(meta, shareId);
+        cache.set.linkMeta(meta, shareId, !config.preventRerenders);
         return meta;
     };
 
