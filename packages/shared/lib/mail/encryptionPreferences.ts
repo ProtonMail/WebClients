@@ -31,6 +31,7 @@ export interface EncryptionPreferences {
     isInternal: boolean;
     hasApiKeys: boolean;
     hasPinnedKeys: boolean;
+    isContactSignatureVerified: boolean;
     warnings?: string[];
     failure?: EncryptionPreferencesFailure;
 }

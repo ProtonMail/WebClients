@@ -1,4 +1,11 @@
-import { getMessage, decryptMessage, getSignature, verifyMessage, createCleartextMessage } from 'pmcrypto';
+import {
+    getMessage,
+    decryptMessage,
+    getSignature,
+    verifyMessage,
+    createCleartextMessage,
+    VERIFICATION_STATUS
+} from 'pmcrypto';
 import { c } from 'ttag';
 import { KeyPairs } from '../interfaces';
 import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts/Contact';
@@ -20,6 +27,12 @@ export interface CryptoProcessingError {
 interface ContactClearTextData {
     type: CRYPTO_PROCESSING_TYPES;
     data?: string;
+    error?: Error;
+}
+
+interface ContactSignedData {
+    type: CRYPTO_PROCESSING_TYPES.SUCCESS | CRYPTO_PROCESSING_TYPES.SIGNATURE_NOT_VERIFIED;
+    data: string;
     error?: Error;
 }
 
@@ -45,7 +58,7 @@ export const decrypt = async (
 export const readSigned = async (
     { Data, Signature = '' }: ContactCard,
     { publicKeys }: Pick<KeyPairs, 'publicKeys'>
-): Promise<ContactClearTextData> => {
+): Promise<ContactSignedData> => {
     try {
         if (!Signature) {
             throw new Error(c('Error').t`Missing signature`);
@@ -57,12 +70,16 @@ export const readSigned = async (
             signature
         });
 
-        if (verified !== 1) {
-            return { data: Data, type: SIGNATURE_NOT_VERIFIED, error: new Error(c('Error').t`Signature not verified`) };
+        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+            return {
+                data: Data,
+                type: SIGNATURE_NOT_VERIFIED,
+                error: new Error(c('Error').t`Contact signature not verified`)
+            };
         }
         return { type: SUCCESS, data: Data };
     } catch (error) {
-        return { type: SIGNATURE_NOT_VERIFIED, error };
+        return { type: SIGNATURE_NOT_VERIFIED, data: Data, error };
     }
 };
 

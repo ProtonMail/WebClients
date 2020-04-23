@@ -7,6 +7,11 @@ import { readSigned } from './decrypt';
 import { toKeyProperty } from './keyProperties';
 import { parse, toICAL } from './vcard';
 
+/**
+ * Pin a public key in a contact. Give to it the highest preference
+ * Public keys need to be passed to check signature validity of signed contact cards
+ * Private keys (typically only the primary one) need to be passed to sign the new contact card with the new pinned key
+ */
 interface Params {
     contactCards: ContactCard[];
     emailAddress: string;
@@ -14,12 +19,6 @@ interface Params {
     publicKeys: OpenPGPKey[];
     privateKeys: OpenPGPKey[];
 }
-
-/**
- * Pin a public key in a contact. Give to it the highest preference
- * Public keys need to be passed to check signature validity of signed contact cards
- * Private keys (typically only the primary one) need to be passed to sign the new contact card with the new pinned key
- */
 export const pinKey = async ({
     contactCards,
     emailAddress,

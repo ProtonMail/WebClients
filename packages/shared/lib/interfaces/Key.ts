@@ -59,6 +59,7 @@ export interface PinnedKeysConfig {
     scheme?: PGP_SCHEMES;
     mimeType?: MimeTypeVcard;
     error?: Error;
+    isContactSignatureVerified?: boolean;
 }
 
 export interface PublicKeyConfigs {
