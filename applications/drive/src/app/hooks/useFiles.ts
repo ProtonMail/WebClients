@@ -319,7 +319,7 @@ function useFiles() {
         let fileMeta = await getLinkMeta(shareId, linkId);
 
         if (!fileMeta.FileProperties?.ActiveRevision) {
-            fileMeta = await getLinkMeta(shareId, linkId, undefined, true);
+            fileMeta = await getLinkMeta(shareId, linkId, { skipCache: true });
         }
 
         const revision = fileMeta.FileProperties?.ActiveRevision;
