@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useApi, useEventManager, useCache, useUser, useNotifications } from 'react-components';
+import { useApi, useEventManager, useUser, useNotifications } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import { DriveFileRevisionResult, CreateFileResult, FileRevisionState, RequestUploadResult } from '../interfaces/file';
 import { decryptMessage, encryptMessage } from 'pmcrypto';
@@ -20,7 +20,6 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { getPromiseValue } from 'react-components/hooks/useCachedModelResult';
 import { useUploadProvider, BlockMeta } from '../components/uploads/UploadProvider';
 import { TransferMeta, TransferState } from '../interfaces/transfer';
 import { useDownloadProvider } from '../components/downloads/DownloadProvider';
@@ -41,7 +40,6 @@ function useFiles() {
     const api = useApi();
     const debouncedRequest = useDebouncedPromise();
     const queuedFunction = useQueuedFunction();
-    const cache = useCache();
     const { createNotification } = useNotifications();
     const { getPrimaryAddressKey, sign } = useDriveCrypto();
     const { getLinkMeta, getLinkKeys, events } = useDrive();
@@ -328,9 +326,7 @@ function useFiles() {
             throw new Error(`Invalid link metadata, expected File (${LinkType.FILE}), got ${fileMeta.Type}`);
         }
 
-        return getPromiseValue(cache, `drive/revision/${shareId}/${linkId}/${revision.ID}`, () =>
-            debouncedRequest<DriveFileRevisionResult>(queryFileRevision(shareId, linkId, revision.ID))
-        );
+        return debouncedRequest<DriveFileRevisionResult>(queryFileRevision(shareId, linkId, revision.ID));
     };
 
     const getFileBlocks = async (shareId: string, linkId: string) => {
