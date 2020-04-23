@@ -5,11 +5,12 @@ $arrow-width: 0.5em;
 .tooltip {
   position: fixed;
   z-index: 666;
-  width: $tooltip-width;
+  min-width: $arrow-width;
+  max-width: $tooltip-width;
   border-radius: $global-border-radius;
   background: $black;
   color: $pm-global-light;
-  padding: 0.5em;
+  padding: .5em .75em;
   text-align: center;
 }
 
