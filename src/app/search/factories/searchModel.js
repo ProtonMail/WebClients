@@ -127,7 +127,7 @@ function searchModel(addressesModel, gettextCatalog, labelsModel, translator) {
             from: model.from,
             keyword: model.keyword,
             wildcard: isNaN(wildcard) ? undefined : wildcard,
-            attachments: isNaN(attachments) ? undefined : attachments,
+            attachments: isNaN(attachments) || attachments === 2 ? undefined : attachments,
             address: (model.address || {}).ID,
             label: model.label || getLabel(model.folder),
             ...date
