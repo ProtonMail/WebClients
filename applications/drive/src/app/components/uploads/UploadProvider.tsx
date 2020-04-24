@@ -34,6 +34,7 @@ interface UploadProviderState {
     getUploadsProgresses: () => TransferProgresses;
     getUploadsImmediate: () => Upload[];
     clearUploads: () => void;
+    removeUpload: (id: string) => void;
 }
 
 const MAX_ACTIVE_UPLOADS = 3;
@@ -74,7 +75,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     };
 
     const clearUploads = () => {
-        // TODO: cancel pending downloads when implementing reject
+        // TODO: cancel pending uploads when implementing reject
         uploadsRef.current = [];
         setUploads(uploadsRef.current);
     };
@@ -150,6 +151,10 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         return uploadsRef.current;
     };
 
+    const removeUpload = (id: string) => {
+        setUploads((uploads) => uploads.filter((upload) => upload.id !== id));
+    };
+
     return (
         <UploadContext.Provider
             value={{
@@ -157,7 +162,8 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                 getUploadsImmediate,
                 addToUploadQueue,
                 getUploadsProgresses,
-                clearUploads
+                clearUploads,
+                removeUpload
             }}
         >
             {children}

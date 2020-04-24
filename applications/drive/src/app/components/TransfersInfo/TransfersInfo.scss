@@ -73,6 +73,7 @@
 
 .pd-transfers-listItemStats {
     @extend .flex-item-noshrink;
+    @extend .flex-items-center;
     display: flex;
     flex-grow: 1;
 }

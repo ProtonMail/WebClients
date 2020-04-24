@@ -368,7 +368,7 @@ function useFiles() {
     const startFileTransfer = (shareId: string, linkId: string, meta: TransferMeta) => {
         return addToDownloadQueue(meta, {
             transformBlockStream: decryptBlockStream(shareId, linkId),
-            onStart: () => getFileBlocks(shareId, linkId)
+            onStart: async () => getFileBlocks(shareId, linkId)
         });
     };
 
