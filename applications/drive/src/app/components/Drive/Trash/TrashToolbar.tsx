@@ -19,6 +19,7 @@ import { getNotificationTextForItemList } from '../helpers';
 import { useTrashContent } from './TrashContentProvider';
 import { RestoreFromTrashResult, RestoreResponse, RESTORE_STATUS_CODE } from '../../../interfaces/restore';
 import { FileBrowserItem } from '../../FileBrowser/FileBrowser';
+import { LinkType } from '../../../interfaces/link';
 
 interface Props {
     shareId: string;
@@ -64,14 +65,15 @@ const TrashToolbar = ({ shareId }: Props) => {
         const alreadyExistingItems: FileBrowserItem[] = [];
         const otherErrors: string[] = [];
         result.Responses.forEach((r: { Response: RestoreResponse }, index: number) => {
-            if (r.Response.Error) {
-                if (r.Response.Code === RESTORE_STATUS_CODE.ALREADY_EXISTS) {
-                    alreadyExistingItems.push(toRestore[index]);
-                } else {
-                    otherErrors.push(r.Response.Error);
-                }
-            } else {
+            if (!r.Response.Error) {
                 restoredItems.push(toRestore[index]);
+                return;
+            }
+
+            if (r.Response.Code === RESTORE_STATUS_CODE.ALREADY_EXISTS) {
+                alreadyExistingItems.push(toRestore[index]);
+            } else {
+                otherErrors.push(r.Response.Error);
             }
         });
 
@@ -100,30 +102,13 @@ const TrashToolbar = ({ shareId }: Props) => {
             createNotification({ text: notificationText, type: 'success' });
         }
 
-        const alreadyExistingItemsCount = alreadyExistingItems.length;
-        if (alreadyExistingItemsCount) {
-            const [{ Name: firstItemName }] = alreadyExistingItems;
-            const notificationMessages = {
-                allFiles: c('Notification').ngettext(
-                    msgid`A file with the name "${firstItemName}" already exists in current folder`,
-                    `${alreadyExistingItemsCount} files with same names already exists in current folder`,
-                    alreadyExistingItemsCount
-                ),
-                allFolders: c('Notification').ngettext(
-                    msgid`A folder with the name "${firstItemName}" already exists in current folder`,
-                    `${alreadyExistingItemsCount} folders with same names already exists in current folder`,
-                    alreadyExistingItemsCount
-                ),
-                mixed: c('Notification').ngettext(
-                    msgid`An item with the name "${firstItemName}" already exists in current folder`,
-                    `${alreadyExistingItemsCount} items with same names already exists in current folder`,
-                    alreadyExistingItemsCount
-                )
-            };
-
-            const notificationText = getNotificationTextForItemList(toRestore, notificationMessages);
+        alreadyExistingItems.forEach((item) => {
+            const notificationText =
+                item.Type === LinkType.FILE
+                    ? c('Notification').t`A file with the name "${item.Name}" already exists in current folder`
+                    : c('Notification').t`A folder with the name "${item.Name}" already exists in current folder`;
             createNotification({ text: notificationText, type: 'error' });
-        }
+        });
 
         otherErrors.forEach((error) => {
             createNotification({ text: error, type: 'error' });
