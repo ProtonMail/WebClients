@@ -5,11 +5,11 @@ import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
-const PayPalButton = ({ amount, children, className, paypal }) => {
+const PayPalButton = ({ amount, type, children, className, paypal }) => {
     const [retry, setRetry] = useState(false);
     const { createNotification } = useNotifications();
 
-    if (amount < MIN_PAYPAL_AMOUNT) {
+    if (amount < MIN_PAYPAL_AMOUNT && type !== 'invoice') {
         return null;
     }
 
@@ -53,6 +53,7 @@ const PayPalButton = ({ amount, children, className, paypal }) => {
 };
 
 PayPalButton.propTypes = {
+    type: PropTypes.string,
     className: PropTypes.string,
     amount: PropTypes.number.isRequired,
     children: PropTypes.node.isRequired,

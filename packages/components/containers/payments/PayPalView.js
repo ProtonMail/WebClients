@@ -31,6 +31,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
 
     const clickHere = (
         <PayPalButton
+            type={type}
             className="pm-button--link alignbaseline p0"
             key="click-here"
             paypal={paypalCredit}

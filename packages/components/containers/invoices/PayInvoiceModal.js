@@ -49,8 +49,9 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
     const submit =
         AmountDue > 0 ? (
             method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-                <PayPalButton paypal={paypal} className="pm-button--primary" amount={AmountDue}>{c('Action')
-                    .t`Continue`}</PayPalButton>
+                <PayPalButton paypal={paypal} type="invoice" className="pm-button--primary" amount={AmountDue}>{c(
+                    'Action'
+                ).t`Continue`}</PayPalButton>
             ) : canPay ? (
                 c('Action').t`Pay`
             ) : null
