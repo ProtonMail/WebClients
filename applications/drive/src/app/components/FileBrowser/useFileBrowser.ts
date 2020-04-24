@@ -1,8 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FileBrowserItem } from './FileBrowser';
 
 const useFileBrowser = (folderChildren: FileBrowserItem[]) => {
     const [selectedItemIds, setSelectedItems] = useState<string[]>([]);
+
+    useEffect(() => {
+        const isItemInFolder = (itemId: string) => folderChildren.some((item) => item.LinkID === itemId);
+        const selected = selectedItemIds.filter(isItemInFolder);
+        // If selected items were removed from children, remove them from selected as well
+        if (selectedItemIds.length !== selected.length) {
+            setSelectedItems(selected);
+        }
+    }, [folderChildren]);
 
     const toggleSelectItem = (id: string) => {
         setSelectedItems((ids) => {
