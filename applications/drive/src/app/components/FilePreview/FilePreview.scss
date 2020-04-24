@@ -21,7 +21,6 @@
 }
 
 .pd-file-preview-filename {
-    @extend .ellipsis;
     max-width: calc(50% - 5em);
 }
 

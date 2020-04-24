@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { c } from 'ttag';
-import { Icon, classnames, Loader } from 'react-components';
+import { classnames, Loader } from 'react-components';
 import { Download } from '../downloads/DownloadProvider';
 import { Upload } from '../uploads/UploadProvider';
 import ProgressBar, { ProgressBarStatus } from './ProgressBar';
@@ -10,6 +10,7 @@ import downloadSvg from './download.svg';
 import { TransferState } from '../../interfaces/transfer';
 import TransferStateIndicator from './TransferStateIndicator';
 import TransferControls from './TransferControls';
+import FileIcon from '../FileIcon';
 
 export enum TransferType {
     Download = 'download',
@@ -63,11 +64,7 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
                 ) : (
                     <img className="mr1 flex-item-noshrink" src={uploadSvg} alt={c('Info').t`Upload`} />
                 )}
-                {isInitializing ? (
-                    <Loader className="mr0-5" />
-                ) : (
-                    <Icon name="drafts" className="mr0-5 flex-item-noshrink color-global-altgrey" size={24} />
-                )}
+                {isInitializing ? <Loader className="mr0-5" /> : <FileIcon mimeType={transfer.meta.mimeType} />}
                 <div className="pd-transfers-listItemName">
                     <span
                         className={classnames(['ellipsis', isInitializing && 'opacity-50'])}

@@ -1,20 +1,23 @@
 import React from 'react';
 import { Icon } from 'react-components';
 import { c } from 'ttag';
+import FileIcon from '../FileIcon';
 
 interface Props {
     name?: string;
+    mimeType?: string;
     onClose?: () => void;
     onSave?: () => void;
     children?: React.ReactNode;
 }
 
-const Header = ({ name, onClose, onSave, children }: Props) => {
+const Header = ({ mimeType, name, onClose, onSave, children }: Props) => {
     return (
         <div className="flex flex-spacebetween flex-items-center p2 relative">
-            <span title={name} className="pd-file-preview-filename">
-                {name}
-            </span>
+            <div title={name} className="pd-file-preview-filename flex flex-items-center flex-nowrap">
+                {mimeType && <FileIcon mimeType={mimeType} />}
+                <span className="ellipsis">{name}</span>
+            </div>
             {children}
             <div className="flex flex-items-center">
                 {onSave && (
