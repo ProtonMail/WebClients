@@ -3,10 +3,8 @@ import { toBase64 } from './file';
 
 /**
  * Convert url to Image
- * @param  {String} url
- * @return {Object}
  */
-export const toImage = (url) => {
+export const toImage = (url: string): Promise<HTMLImageElement> => {
     return new Promise((resolve, reject) => {
         if (!url) {
             return reject(new Error('url required'));
@@ -30,17 +28,36 @@ export const toImage = (url) => {
     });
 };
 
+interface IResizeImageProps {
+    /**
+     * Base64 representation of image to be resized.
+     */
+    original: string;
+    /**
+     * Maximum amount of pixels for the width of the resized image.
+     */
+    maxWidth?: number;
+    /**
+     * Maximum amount of pixels for the height of the resized image.
+     */
+    maxHeight?: number;
+    /**
+     * Mime type of the resulting resized image.
+     */
+    finalMimeType?: string;
+    /**
+     * A Number between 0 and 1 indicating image quality if the requested type is image/jpeg or image/webp.
+     */
+    encoderOptions?: number;
+    /**
+     * If both maxHeight and maxWidth are specified, pick the smaller resize factor.
+     */
+    bigResize?: boolean;
+}
+
 /**
  * Resizes a picture to a maximum height/width (preserving height/width ratio). When both dimensions are specified,
  * two resizes are possible: we pick the one with the bigger resize factor (so that both max dimensions are respected in the resized image)
- * @param {String} original Base64 representation of image to be resized.
- * @param {Number} maxWidth Maximum amount of pixels for the width of the resized image.
- * @param {Number} maxHeight Maximum amount of pixels for the height of the resized image
- * @param {String} finalMimeType Mime type of the resulting resized image.
- * @param {Number} encoderOptions A Number between 0 and 1 indicating image quality if the requested type is image/jpeg or image/webp
- * @param {Boolean} bigResize If both maxHeight and maxWidth are specified, pick the smaller resize factor
- * @return {Promise} receives base64 string of resized image.
- *
  * @dev If maxWidth or maxHeight are equal to zero, the corresponding dimension is ignored
  */
 export const resizeImage = async ({
@@ -49,11 +66,12 @@ export const resizeImage = async ({
     maxHeight = 0,
     finalMimeType = 'image/jpeg',
     encoderOptions = 1,
-    bigResize = false
-}) => {
+    bigResize = false,
+}: IResizeImageProps) => {
     const image = await toImage(original);
     // Resize the image
     let { width, height } = image;
+
     const canvas = document.createElement('canvas');
     const [widthRatio, heightRatio] = [maxWidth && width / maxWidth, maxHeight && height / maxHeight].map(Number);
 
@@ -73,15 +91,13 @@ export const resizeImage = async ({
 
     canvas.width = width;
     canvas.height = height;
-    canvas.getContext('2d').drawImage(image, 0, 0, width, height);
+    canvas.getContext('2d')?.drawImage(image, 0, 0, width, height);
 
     return canvas.toDataURL(finalMimeType, encoderOptions);
 };
 
 /**
  * Extract the mime and base64 str from a base64 image.
- * @param {String} str
- * @returns {Promise} {mime, base64}
  */
 const extractBase64Image = (str = '') => {
     const [mimeInfo = '', base64 = ''] = (str || '').split(',');
@@ -91,10 +107,8 @@ const extractBase64Image = (str = '') => {
 
 /**
  * Convert a base 64 str to an uint8 array.
- * @param base64str
- * @returns {Uint8Array}
  */
-const toUint8Array = (base64str) => {
+const toUint8Array = (base64str: string) => {
     const bstr = atob(base64str);
     let n = bstr.length;
     const u8arr = new Uint8Array(n);
@@ -106,41 +120,31 @@ const toUint8Array = (base64str) => {
 
 /**
  * Convert a data URL to a Blob Object
- * @param {String} base64str
- * @param {String} filename
- * @return {Object}
  */
-export const toFile = (base64str, filename = 'file') => {
+export const toFile = (base64str: string, filename = 'file') => {
     const { base64, mime } = extractBase64Image(base64str);
     return new File([toUint8Array(base64)], filename, { type: mime });
 };
 
 /**
  * Convert a data URL to a Blob Object
- * @param  {String} base64str
- * @return {Blob}
  */
-export const toBlob = (base64str) => {
+export const toBlob = (base64str: string) => {
     const { base64, mime } = extractBase64Image(base64str);
     return new Blob([toUint8Array(base64)], { type: mime });
 };
 
 /**
  * Down size image to reach the max size limit
- * @param  {String} base64str
- * @param  {Number} maxSize in bytes
- * @param  {String} mimeType
- * @param  {Number} encoderOptions
- * @return {Promise}
  */
-export const downSize = async (base64str, maxSize, mimeType = 'image/jpeg', encoderOptions = 1) => {
-    const process = async (source, maxWidth, maxHeight) => {
+export const downSize = async (base64str: string, maxSize: number, mimeType = 'image/jpeg', encoderOptions = 1) => {
+    const process = async (source: string, maxWidth: number, maxHeight: number): Promise<string> => {
         const resized = await resizeImage({
             original: source,
             maxWidth,
             maxHeight,
             finalMimeType: mimeType,
-            encoderOptions
+            encoderOptions,
         });
         const { size } = new Blob([resized]);
 
@@ -157,33 +161,24 @@ export const downSize = async (base64str, maxSize, mimeType = 'image/jpeg', enco
 
 /**
  * Returns true if the URL is an inline embedded image.
- * @param {String} src
- * @returns {boolean}
  */
 export const isInlineEmbedded = (src = '') => src.startsWith('data:');
 
 /**
  * Returns true if the URL is an embedded image.
- * @param {String} src
- * @returns {boolean}
  */
 export const isEmbedded = (src = '') => src.startsWith('cid:');
 
 /**
  * Resize image file
- * @param {File} fileImage
- * @param {Number} maxSize in bytes
- * @returns {Promise<String>} Base64
  */
-export const resize = async (fileImage, maxSize) => {
+export const resize = async (fileImage: File, maxSize: number) => {
     const base64str = await toBase64(fileImage);
     return downSize(base64str, maxSize, fileImage.type);
 };
 
 /**
  * Prepare image source to be display
- * @param {String} value
- * @return {String}
  */
 export const formatImage = (value = '') => {
     if (!value) {
