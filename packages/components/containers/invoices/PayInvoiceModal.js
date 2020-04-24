@@ -8,6 +8,7 @@ import {
     Label,
     Field,
     Price,
+    PayPalButton,
     useApiResult,
     useModals,
     useApi,
@@ -15,6 +16,7 @@ import {
 } from 'react-components';
 import { checkInvoice, payInvoice } from 'proton-shared/lib/api/payments';
 import { toPrice } from 'proton-shared/lib/helpers/string';
+import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
 import Payment from '../payments/Payment';
 import usePayment from '../payments/usePayment';
@@ -44,13 +46,22 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
         onPay: handleSubmit
     });
 
+    const submit =
+        AmountDue > 0 ? (
+            method === PAYMENT_METHOD_TYPES.PAYPAL ? (
+                <PayPalButton paypal={paypal} className="pm-button--primary" amount={AmountDue}>{c('Action')
+                    .t`Continue`}</PayPalButton>
+            ) : canPay ? (
+                c('Action').t`Pay`
+            ) : null
+        ) : null;
+
     return (
         <FormModal
-            small
             onSubmit={() => withLoading(handleSubmit(parameters))}
             loading={loading}
             close={c('Action').t`Close`}
-            submit={canPay && c('Action').t`Pay`}
+            submit={submit}
             title={c('Title').t`Pay invoice`}
             {...rest}
         >
