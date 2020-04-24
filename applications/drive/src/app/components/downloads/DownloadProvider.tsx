@@ -18,6 +18,8 @@ interface DownloadProviderState {
     addToDownloadQueue: (meta: TransferMeta, handlers: DownloadCallbacks) => Promise<ReadableStream<Uint8Array>>;
     getDownloadsProgresses: () => TransferProgresses;
     clearDownloads: () => void;
+    cancelDownload: (id: string) => void;
+    removeDownload: (id: string) => void;
 }
 
 const DownloadContext = createContext<DownloadProviderState | null>(null);
@@ -35,7 +37,13 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
 
     const updateDownloadState = (id: string, state: TransferState) => {
         setDownloads((downloads) =>
-            downloads.map((download) => (download.id === id ? { ...download, state } : download))
+            downloads.map((download) =>
+                download.id === id &&
+                download.state !== state &&
+                (download.state !== TransferState.Canceled || state !== TransferState.Error)
+                    ? { ...download, state }
+                    : download
+            )
         );
     };
 
@@ -59,8 +67,12 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                     updateDownloadState(id, TransferState.Done);
                 })
                 .catch((err) => {
-                    console.error(err);
-                    updateDownloadState(id, TransferState.Error);
+                    if (err.name === 'TransferCancel' || err.name === 'AbortError') {
+                        updateDownloadState(id, TransferState.Canceled);
+                    } else {
+                        updateDownloadState(id, TransferState.Error);
+                        throw err;
+                    }
                 });
         }
     }, [downloads]);
@@ -76,9 +88,9 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                     progresses.current[id] += bytes;
                     onProgress?.(bytes);
                 },
-                onStart: async (stream) => {
+                onStart: (stream) => {
                     resolve(stream);
-                    return await onStart(stream);
+                    return onStart(stream);
                 }
             });
 
@@ -98,9 +110,19 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     };
 
     const getDownloadsProgresses = () => ({ ...progresses.current });
+
     const clearDownloads = () => {
         // TODO: cancel pending downloads when implementing reject
         setDownloads([]);
+    };
+
+    const cancelDownload = (id: string) => {
+        updateDownloadState(id, TransferState.Canceled);
+        return controls.current[id].cancel();
+    };
+
+    const removeDownload = (id: string) => {
+        setDownloads((downloads) => downloads.filter((download) => download.id !== id));
     };
 
     return (
@@ -109,7 +131,9 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                 addToDownloadQueue,
                 downloads,
                 getDownloadsProgresses,
-                clearDownloads
+                clearDownloads,
+                cancelDownload,
+                removeDownload
             }}
         >
             {children}

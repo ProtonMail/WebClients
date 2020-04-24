@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { c } from 'ttag';
 import { Icon, classnames, Loader } from 'react-components';
@@ -9,6 +9,7 @@ import uploadSvg from './upload.svg';
 import downloadSvg from './download.svg';
 import { TransferState } from '../../interfaces/transfer';
 import TransferStateIndicator from './TransferStateIndicator';
+import TransferControls from './TransferControls';
 
 export enum TransferType {
     Download = 'download',
@@ -35,19 +36,27 @@ type Props = (DownloadProps | UploadProps) & {
 };
 
 const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) => {
+    const [controlsVisible, setControlsVisible] = useState(false);
     const fileSize = transfer.meta.size;
     const percentageDone = fileSize ? Math.floor(100 * (stats.progress / fileSize)) : 100;
 
     const isProgress = transfer.state === TransferState.Progress;
     const isError = transfer.state === TransferState.Canceled || transfer.state === TransferState.Error;
+    const isDone = transfer.state === TransferState.Done;
     const isInitializing = transfer.state === TransferState.Initializing;
     const isCanceled = transfer.state === TransferState.Canceled;
 
     // If file size is 0, progress and file size are changed to 1/1, so that the bar is complete
     const progress = fileSize === 0 ? 1 : stats.progress;
+    const speed = humanSize(stats.speed);
+    const showControls = controlsVisible && (type === TransferType.Download || isError || isDone);
 
     return (
-        <div className="pd-transfers-listItem pb1 pt1 ml1 mr1">
+        <div
+            className="pd-transfers-listItem pb1 pt1 ml1 mr1"
+            onMouseEnter={() => setControlsVisible(true)}
+            onMouseLeave={() => setControlsVisible(false)}
+        >
             <div className="pd-transfers-listItemDetails">
                 {type === TransferType.Download ? (
                     <img className="mr1 flex-item-noshrink" src={downloadSvg} alt={c('Info').t`Download`} />
@@ -69,8 +78,12 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
                 </div>
                 <div className="pd-transfers-listItemStats">
                     <span className="pd-transfers-listItemStat ml0-5">{humanSize(fileSize)}</span>
-                    {isProgress && <span className="pd-transfers-listItemStat ml0-5">{humanSize(stats.speed)}/s</span>}
-                    <TransferStateIndicator transfer={transfer} percentageDone={percentageDone} />
+                    {isProgress && <span className="pd-transfers-listItemStat ml0-5">{c('Info').t`${speed}/s`}</span>}
+                    {showControls ? (
+                        <TransferControls transfer={transfer} type={type} />
+                    ) : (
+                        <TransferStateIndicator transfer={transfer} percentageDone={percentageDone} />
+                    )}
                 </div>
             </div>
             <ProgressBar
