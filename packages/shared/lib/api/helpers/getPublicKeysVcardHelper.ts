@@ -28,16 +28,16 @@ const getPublicKeysVcardHelper = async (
         // pick the first contact with the desired email. The API returns them ordered by decreasing priority already
         const { Contact } = await api<{ Contact: Contact }>(getContact(ContactEmails[0].ContactID));
         // all the info we need is in the signed part
-        const signedCard = Contact.Cards.find(
-            ({ Type, Data }) => Type === CONTACT_CARD_TYPE.SIGNED && Data.includes(Email)
-        );
+        const signedCard = Contact.Cards.find(({ Type, Data }) => Type === CONTACT_CARD_TYPE.SIGNED);
         if (!signedCard) {
             throw new Error('Contact lacks signed card');
         }
         const { type, data: signedVcard } = await readSigned(signedCard, { publicKeys });
         const isContactSignatureVerified = type === CRYPTO_PROCESSING_TYPES.SUCCESS;
         const properties = parse(signedVcard);
-        const emailProperty = properties.find(({ field, value }) => field === 'email' && value === Email);
+        const emailProperty = properties.find(
+            ({ field, value }) => field === 'email' && (value as string).toLowerCase() === Email.toLowerCase()
+        );
         if (!emailProperty || !emailProperty.group) {
             throw new Error('Invalid vcard');
         }
