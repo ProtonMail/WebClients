@@ -45,7 +45,8 @@ const extractEncryptionPreferencesOwnAddress = (
         emailAddress,
         scheme,
         mimeType,
-        pgpAddressDisabled
+        pgpAddressDisabled,
+        isContactSignatureVerified
     } = publicKeyModel;
     const { address, publicKey } = selfSend;
     const hasApiKeys = !!address.HasKeys;
@@ -59,7 +60,8 @@ const extractEncryptionPreferencesOwnAddress = (
         apiKeys,
         pinnedKeys: [],
         hasApiKeys,
-        hasPinnedKeys: false
+        hasPinnedKeys: false,
+        isContactSignatureVerified
     };
     if (!canAddressReceive) {
         return {
@@ -98,7 +100,8 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         publicKeys: { apiKeys, pinnedKeys },
         scheme,
         mimeType,
-        trustedFingerprints
+        trustedFingerprints,
+        isContactSignatureVerified
     } = publicKeyModel;
     const hasApiKeys = !!apiKeys.length;
     const hasPinnedKeys = !!pinnedKeys.length;
@@ -111,7 +114,8 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         pinnedKeys,
         isInternal: true,
         hasApiKeys,
-        hasPinnedKeys
+        hasPinnedKeys,
+        isContactSignatureVerified
     };
     if (!hasApiKeys) {
         return {
@@ -164,7 +168,8 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         publicKeys: { apiKeys, pinnedKeys },
         scheme,
         mimeType,
-        trustedFingerprints
+        trustedFingerprints,
+        isContactSignatureVerified
     } = publicKeyModel;
     const hasApiKeys = true;
     const hasPinnedKeys = !!pinnedKeys.length;
@@ -177,7 +182,8 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         pinnedKeys,
         isInternal: false,
         hasApiKeys,
-        hasPinnedKeys
+        hasPinnedKeys,
+        isContactSignatureVerified
     };
     // WKD keys are ordered in terms of user preference. The primary key (first in the list) will be used for sending
     const [primaryKey] = apiKeys;
@@ -222,7 +228,8 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         encrypt,
         sign,
         scheme,
-        mimeType
+        mimeType,
+        isContactSignatureVerified
     } = publicKeyModel;
     const hasPinnedKeys = !!pinnedKeys.length;
     const result = {
@@ -234,7 +241,8 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         pinnedKeys,
         isInternal: false,
         hasApiKeys: false,
-        hasPinnedKeys
+        hasPinnedKeys,
+        isContactSignatureVerified
     };
     if (!hasPinnedKeys) {
         return result;

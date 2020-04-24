@@ -18,13 +18,12 @@ const getPublicKeysVcardHelper = async (
     Email: string,
     publicKeys: OpenPGPKey[]
 ): Promise<PinnedKeysConfig> => {
-    const defaultConfig: PinnedKeysConfig = { pinnedKeys: [] };
     try {
         const { ContactEmails = [] } = await api<{ ContactEmails: ContactEmail[] }>(
             queryContactEmails({ Email } as any)
         );
         if (!ContactEmails.length) {
-            return defaultConfig;
+            return { pinnedKeys: [], isContactSignatureVerified: false };
         }
         // pick the first contact with the desired email. The API returns them ordered by decreasing priority already
         const { Contact } = await api<{ Contact: Contact }>(getContact(ContactEmails[0].ContactID));
@@ -42,9 +41,9 @@ const getPublicKeysVcardHelper = async (
         if (!emailProperty || !emailProperty.group) {
             throw new Error('Invalid vcard');
         }
-        return { ...getKeyInfoFromProperties(properties, emailProperty.group), isContactSignatureVerified };
+        return { ...(await getKeyInfoFromProperties(properties, emailProperty.group)), isContactSignatureVerified };
     } catch (error) {
-        return { pinnedKeys: [], error };
+        return { pinnedKeys: [], isContactSignatureVerified: false, error };
     }
 };
 

@@ -78,7 +78,8 @@ describe('extractEncryptionPreferences for an internal user', () => {
         isPGPInternal: true,
         isPGPExternalWithWKDKeys: false,
         isPGPExternalWithoutWKDKeys: false,
-        pgpAddressDisabled: false
+        pgpAddressDisabled: false,
+        isContactSignatureVerified: true
     };
 
     it('should extract the primary API key when there are no pinned keys', () => {
@@ -104,7 +105,8 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isInternal: true,
             hasApiKeys: true,
             hasPinnedKeys: false,
-            warnings: []
+            warnings: [],
+            isContactSignatureVerified: true
         });
     });
 
@@ -132,7 +134,8 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isInternal: true,
             hasApiKeys: true,
             hasPinnedKeys: true,
-            warnings: []
+            warnings: [],
+            isContactSignatureVerified: true
         });
     });
 
@@ -221,7 +224,8 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         isPGPInternal: false,
         isPGPExternalWithWKDKeys: true,
         isPGPExternalWithoutWKDKeys: false,
-        pgpAddressDisabled: false
+        pgpAddressDisabled: false,
+        isContactSignatureVerified: true
     };
 
     it('should extract the primary API key when there are no pinned keys', () => {
@@ -247,7 +251,8 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             isInternal: false,
             hasApiKeys: true,
             hasPinnedKeys: false,
-            warnings: []
+            warnings: [],
+            isContactSignatureVerified: true
         });
     });
 
@@ -275,7 +280,8 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             isInternal: false,
             hasApiKeys: true,
             hasPinnedKeys: true,
-            warnings: []
+            warnings: [],
+            isContactSignatureVerified: true
         });
     });
 
@@ -345,7 +351,8 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         isPGPInternal: false,
         isPGPExternalWithWKDKeys: false,
         isPGPExternalWithoutWKDKeys: true,
-        pgpAddressDisabled: false
+        pgpAddressDisabled: false,
+        isContactSignatureVerified: true
     };
 
     it('should pick no key when there are no pinned keys', () => {
@@ -360,7 +367,8 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             pinnedKeys: [],
             isInternal: false,
             hasApiKeys: false,
-            hasPinnedKeys: false
+            hasPinnedKeys: false,
+            isContactSignatureVerified: true
         });
     });
 
@@ -386,7 +394,8 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isInternal: false,
             hasApiKeys: false,
             hasPinnedKeys: true,
-            warnings: []
+            warnings: [],
+            isContactSignatureVerified: true
         });
     });
 
@@ -432,7 +441,8 @@ describe('extractEncryptionPreferences for an own address', () => {
         isPGPInternal: true,
         isPGPExternalWithWKDKeys: false,
         isPGPExternalWithoutWKDKeys: false,
-        pgpAddressDisabled: false
+        pgpAddressDisabled: false,
+        isContactSignatureVerified: true
     };
 
     it('should not pick the public key from the keys in selfSend.address', () => {
@@ -457,7 +467,8 @@ describe('extractEncryptionPreferences for an own address', () => {
             isInternal: true,
             hasApiKeys: true,
             hasPinnedKeys: false,
-            warnings: []
+            warnings: [],
+            isContactSignatureVerified: true
         });
     });
 

@@ -151,7 +151,8 @@ export const getPublicKeyModel = async ({
         mimeType: vcardMimeType,
         encrypt: vcardEncrypt,
         scheme: vcardScheme,
-        sign: vcardSign
+        sign: vcardSign,
+        isContactSignatureVerified
     } = pinnedKeysConfig;
     const trustedFingerprints = new Set<string>();
     const expiredFingerprints = new Set<string>();
@@ -202,6 +203,7 @@ export const getPublicKeyModel = async ({
         isPGPInternal: isInternalUser,
         isPGPExternalWithWKDKeys: isExternalUser && !!apiKeys.length,
         isPGPExternalWithoutWKDKeys: isExternalUser && !apiKeys.length,
-        pgpAddressDisabled: isDisabledUser(apiKeysConfig)
+        pgpAddressDisabled: isDisabledUser(apiKeysConfig),
+        isContactSignatureVerified
     };
 };
