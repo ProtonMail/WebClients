@@ -6,8 +6,8 @@ interface Props {
     className?: string;
 }
 
-const MimeIcon = ({ name, className }: Props) => {
-    return <Icon name={`#mime-${name}`} className={className} size={24} viewBox="0 0 24 24" />;
+const MimeIcon = ({ name, className, ...rest }: Props) => {
+    return <Icon name={`#mime-${name}`} className={className} size={24} viewBox="0 0 24 24" {...rest} />;
 };
 
 export default MimeIcon;
