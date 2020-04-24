@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { Icon, Button, FileInput, useNotifications } from 'react-components';
+
 import { toBlob, resize } from 'proton-shared/lib/helpers/image';
 import { MAX_SIZE_SCREENSHOT } from 'proton-shared/lib/constants';
-import PropTypes from 'prop-types';
+import useNotifications from '../notifications/useNotifications';
+import Icon from '../../components/icon/Icon';
+import FileInput from '../../components/input/FileInput';
+import { Button } from '../../components/button';
 
-const AttachScreenshot = ({ id, onUpload, onReset }) => {
+interface Props {
+    id: string;
+    onUpload: (setImages: any) => void;
+    onReset: () => void;
+}
+
+const AttachScreenshot = ({ id, onUpload, onReset }: Props) => {
     const [attached, setAttached] = useState(false);
     const { createNotification } = useNotifications();
 
@@ -14,8 +23,8 @@ const AttachScreenshot = ({ id, onUpload, onReset }) => {
         onReset();
     };
 
-    const handleChange = async ({ target }) => {
-        const images = [...target.files].filter(({ type }) => /^image\//i.test(type));
+    const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
+        const images = target.files ? [...target.files].filter(({ type }) => /^image\//i.test(type)) : [];
 
         if (!images.length) {
             return createNotification({
@@ -53,12 +62,6 @@ const AttachScreenshot = ({ id, onUpload, onReset }) => {
         <FileInput className="flex" multiple accept="image/*" id={id} onChange={handleChange}>{c('Action')
             .t`Add screenshot(s)`}</FileInput>
     );
-};
-
-AttachScreenshot.propTypes = {
-    id: PropTypes.string,
-    onUpload: PropTypes.func.isRequired,
-    onReset: PropTypes.func.isRequired
 };
 
 export default AttachScreenshot;
