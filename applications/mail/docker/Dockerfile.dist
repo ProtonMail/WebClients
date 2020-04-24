@@ -11,7 +11,7 @@ RUN mkdir -p /etc/proton/ && \
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint
 COPY docker/nginxd-default.conf /etc/nginx/conf.d/default.conf.template
 
-COPY dist/ /usr/share/nginx/html/
+ADD webapp-bundle.tar.gz /usr/share/nginx/html/
 
 ENTRYPOINT ["entrypoint"]
 CMD ["nginx", "-g", "daemon off;"]

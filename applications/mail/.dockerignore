@@ -1,7 +1,8 @@
 .git/
 node_modules/
 .npm/
-*.tar.gz
-/dist/.htaccess
 /src/
 /po/
+
+# dist files come directly from webapp-bundle.tar.gz
+/dist/
