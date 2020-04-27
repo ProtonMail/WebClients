@@ -1,5 +1,4 @@
 /* eslint-disable no-param-reassign */
-import { differenceInMinutes } from 'date-fns';
 import { getInternalDateTimeValue, internalValueToIcalValue } from './vcal';
 import { getPropertyTzid, isIcalAllDay, propertyToUTCDate } from './vcalConverter';
 import { addDays, addMilliseconds, differenceInCalendarDays, max, MILLISECONDS_IN_MINUTE } from '../date-fns-utc';
@@ -38,6 +37,7 @@ const fillOccurrencesBetween = ({
     iterator,
     eventDuration,
     originalDtstart,
+    originalDtend,
     isAllDay,
     exdateMap
 }) => {
@@ -66,10 +66,10 @@ const fillOccurrencesBetween = ({
             ? localEnd
             : propertyToUTCDate({
                   value: {
-                      ...originalDtstart.value,
+                      ...originalDtend.value,
                       ...fromUTCDate(localEnd)
                   },
-                  parameters: originalDtstart.parameters
+                  parameters: originalDtend.parameters
               });
 
         if (utcStart > end) {
@@ -123,15 +123,22 @@ const getOccurrenceSetup = (component) => {
     const safeRrule = modifiedRrule || DEFAULT_RRULE;
 
     const utcStart = propertyToUTCDate(internalDtstart);
-    const rawEnd = propertyToUTCDate(internalDtEnd);
-    const modifiedEnd = isAllDay
-        ? addDays(rawEnd, -1) // All day event range is non-inclusive
-        : rawEnd;
-    const utcEnd = max(utcStart, modifiedEnd);
+    let eventDuration;
 
-    const eventDuration = isAllDay
-        ? differenceInCalendarDays(utcEnd, utcStart)
-        : differenceInMinutes(utcEnd, utcStart) * MILLISECONDS_IN_MINUTE;
+    if (isAllDay) {
+        const rawEnd = propertyToUTCDate(internalDtEnd);
+        // Non-inclusive end...
+        const modifiedEnd = addDays(rawEnd, -1);
+        const utcEnd = max(utcStart, modifiedEnd);
+
+        eventDuration = differenceInCalendarDays(utcEnd, utcStart);
+    } else {
+        const localStart = toUTCDate(internalDtstart.value);
+        const localEnd = toUTCDate(internalDtEnd.value);
+        const safeEnd = max(localStart, localEnd);
+
+        eventDuration = +safeEnd - +localStart;
+    }
 
     return {
         dtstart,
@@ -183,7 +190,7 @@ export const getOccurrencesBetween = (component, start, end, cache = {}) => {
         cache.start = getOccurrenceSetup(component);
     }
 
-    const { dtstart: originalDtstart } = component;
+    const { dtstart: originalDtstart, dtend: originalDtend } = component;
 
     const { eventDuration, isAllDay, utcStart, dtstart, modifiedRrule, exdateMap } = cache.start;
 
@@ -204,6 +211,7 @@ export const getOccurrencesBetween = (component, start, end, cache = {}) => {
                 iterator,
                 eventDuration,
                 originalDtstart,
+                originalDtend,
                 isAllDay,
                 exdateMap
             });
