@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
     LabelModal,
-    SearchInput as UntypedSearchInput,
+    SearchInput,
     Icon,
     useFolders,
     useModals,
@@ -25,8 +25,6 @@ type FolderItem = Folder & { icon: string; level: number };
 
 import './MoveDropdown.scss';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
-
-const SearchInput = UntypedSearchInput as any;
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 

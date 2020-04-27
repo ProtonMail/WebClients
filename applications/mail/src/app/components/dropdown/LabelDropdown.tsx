@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, useEffect } from 'react';
 import { c } from 'ttag';
 import {
-    SearchInput as UntypedSearchInput,
+    SearchInput,
     Icon,
     Mark,
     useLabels,
@@ -23,8 +23,6 @@ import { hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
 import { useApplyLabels } from '../../hooks/useApplyLabels';
 
 import './LabelDropdown.scss';
-
-const SearchInput = UntypedSearchInput as any;
 
 enum LabelState {
     On,

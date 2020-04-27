@@ -1,20 +1,10 @@
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import {
-    Table,
-    TableHeader,
-    Checkbox,
-    TableRow,
-    TableBody,
-    FormModal,
-    SearchInput as SearchInputUntyped
-} from 'react-components';
+import { Table, TableHeader, Checkbox, TableRow, TableBody, FormModal, SearchInput } from 'react-components';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { MessageSendInfo } from './AddressesInput';
 import AddressesRecipientItem from './AddressesRecipientItem';
 import { Recipient } from '../../../models/address';
-
-const SearchInput = SearchInputUntyped as any;
 
 interface Props {
     inputValue?: Recipient[];
