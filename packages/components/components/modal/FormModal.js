@@ -35,7 +35,7 @@ const Modal = ({
     ...rest
 }) => {
     // Because we will forget
-    if (!['isClosing', 'isBehind', 'onExit'].every((key) => rest[key])) {
+    if (!['isClosing', 'isBehind', 'onExit'].every((key) => rest.hasOwnProperty.call(rest, key))) {
         console.warn(`You must pass props to <FormModal ...rest>,
 These props contains mandatory keys from the hook.
 Ex: onClose
