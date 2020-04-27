@@ -22,7 +22,7 @@ const getIcalPeriodValue = (value, tzid) => {
         // periods must be of date-time
         start: value.start ? getIcalDateValue(value.start, tzid, false) : undefined,
         end: value.end ? getIcalDateValue(value.end, tzid, false) : undefined,
-        duration: value.duration ? ICAL.Duration.fromData(value) : undefined
+        duration: value.duration ? ICAL.Duration.fromData(value.duration) : undefined
     });
 };
 
@@ -122,11 +122,17 @@ export const icalValueToInternalValue = (type, value) => {
         return getInternalDurationValue(value);
     }
     if (type === 'period') {
-        return {
-            start: getInternalDateValue(value.start),
-            end: getInternalDateValue(value.end),
-            duration: getInternalDurationValue(value.duration)
-        };
+        const result = {};
+        if (value.start) {
+            result.start = getInternalDateTimeValue(value.start);
+        }
+        if (value.end) {
+            result.end = getInternalDateTimeValue(value.end);
+        }
+        if (value.duration) {
+            result.duration = getInternalDurationValue(value.duration);
+        }
+        return result;
     }
     if (type === 'recur') {
         const result = {

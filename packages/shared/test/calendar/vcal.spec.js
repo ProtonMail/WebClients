@@ -174,6 +174,28 @@ END:VEVENT`;
 
 const veventsRruleYearly = [veventRruleYearly1, veventRruleYearly2, veventRruleYearly3, veventRruleYearly4];
 
+const vfreebusy = `BEGIN:VFREEBUSY
+UID:19970901T095957Z-76A912@example.com
+ORGANIZER:mailto:jane_doe@example.com
+ATTENDEE:mailto:john_public@example.com
+DTSTAMP:19970901T100000Z
+FREEBUSY:19971015T050000Z/PT8H30M,19971015T160000Z/PT5H30M,19971015T223000Z/PT6H30M
+URL:http://example.com/pub/busy/jpublic-01.ifb
+COMMENT:This iCalendar file contains busy time information for the next three months.
+END:VFREEBUSY`;
+
+const vfreebusy2 = `BEGIN:VFREEBUSY
+UID:19970901T115957Z-76A912@example.com
+DTSTAMP:19970901T120000Z
+ORGANIZER:jsmith@example.com
+DTSTART:19980313T141711Z
+DTEND:19980410T141711Z
+FREEBUSY:19980314T233000Z/19980315T003000Z
+FREEBUSY:19980316T153000Z/19980316T163000Z
+FREEBUSY:19980318T030000Z/19980318T040000Z
+URL:http://www.example.com/calendar/busytime/jsmith.ifb
+END:VFREEBUSY`;
+
 describe('calendar', () => {
     it('should parse vevent', () => {
         const result = parse(vevent);
@@ -221,6 +243,166 @@ describe('calendar', () => {
             },
             description: {
                 value: 'asd'
+            }
+        });
+    });
+
+    it('should parse vfreebusy2', () => {
+        expect(parse(vfreebusy2)).toEqual({
+            component: 'vfreebusy',
+            uid: {
+                value: '19970901T115957Z-76A912@example.com'
+            },
+            dtstamp: {
+                value: { year: 1997, month: 9, day: 1, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+            },
+            organizer: {
+                value: 'jsmith@example.com'
+            },
+            dtstart: {
+                value: {
+                    year: 1998,
+                    month: 3,
+                    day: 13,
+                    hours: 14,
+                    minutes: 17,
+                    seconds: 11,
+                    isUTC: true
+                }
+            },
+            dtend: {
+                value: {
+                    year: 1998,
+                    month: 4,
+                    day: 10,
+                    hours: 14,
+                    minutes: 17,
+                    seconds: 11,
+                    isUTC: true
+                }
+            },
+            freebusy: [
+                {
+                    value: [
+                        {
+                            start: {
+                                year: 1998,
+                                month: 3,
+                                day: 14,
+                                hours: 23,
+                                minutes: 30,
+                                seconds: 0,
+                                isUTC: true
+                            },
+                            end: {
+                                year: 1998,
+                                month: 3,
+                                day: 15,
+                                hours: 0,
+                                minutes: 30,
+                                seconds: 0,
+                                isUTC: true
+                            }
+                        }
+                    ]
+                },
+                {
+                    value: [
+                        {
+                            start: {
+                                year: 1998,
+                                month: 3,
+                                day: 16,
+                                hours: 15,
+                                minutes: 30,
+                                seconds: 0,
+                                isUTC: true
+                            },
+                            end: {
+                                year: 1998,
+                                month: 3,
+                                day: 16,
+                                hours: 16,
+                                minutes: 30,
+                                seconds: 0,
+                                isUTC: true
+                            }
+                        }
+                    ]
+                },
+                {
+                    value: [
+                        {
+                            start: {
+                                year: 1998,
+                                month: 3,
+                                day: 18,
+                                hours: 3,
+                                minutes: 0,
+                                seconds: 0,
+                                isUTC: true
+                            },
+                            end: {
+                                year: 1998,
+                                month: 3,
+                                day: 18,
+                                hours: 4,
+                                minutes: 0,
+                                seconds: 0,
+                                isUTC: true
+                            }
+                        }
+                    ]
+                }
+            ],
+            url: {
+                value: 'http://www.example.com/calendar/busytime/jsmith.ifb'
+            }
+        });
+    });
+
+    it('should parse vfreebusy', () => {
+        expect(parse(vfreebusy)).toEqual({
+            component: 'vfreebusy',
+            uid: {
+                value: '19970901T095957Z-76A912@example.com'
+            },
+            dtstamp: {
+                value: { year: 1997, month: 9, day: 1, hours: 10, minutes: 0, seconds: 0, isUTC: true }
+            },
+            organizer: {
+                value: 'mailto:jane_doe@example.com'
+            },
+            attendee: [
+                {
+                    value: 'mailto:john_public@example.com'
+                }
+            ],
+            freebusy: [
+                {
+                    value: [
+                        {
+                            start: { year: 1997, month: 10, day: 15, hours: 5, minutes: 0, seconds: 0, isUTC: true },
+                            duration: { weeks: 0, days: 0, hours: 8, minutes: 30, seconds: 0, isNegative: false }
+                        },
+                        {
+                            start: { year: 1997, month: 10, day: 15, hours: 16, minutes: 0, seconds: 0, isUTC: true },
+                            duration: { weeks: 0, days: 0, hours: 5, minutes: 30, seconds: 0, isNegative: false }
+                        },
+                        {
+                            start: { year: 1997, month: 10, day: 15, hours: 22, minutes: 30, seconds: 0, isUTC: true },
+                            duration: { weeks: 0, days: 0, hours: 6, minutes: 30, seconds: 0, isNegative: false }
+                        }
+                    ]
+                }
+            ],
+            comment: [
+                {
+                    value: 'This iCalendar file contains busy time information for the next three months.'
+                }
+            ],
+            url: {
+                value: 'http://example.com/pub/busy/jpublic-01.ifb'
             }
         });
     });
@@ -673,11 +855,21 @@ describe('calendar', () => {
         });
     });
 
-    const trimAll = (str) => str.replace(/\r?\n|\r/g, '');
+    const trimAll = (str) => str.replace(/\r?\n ?|\r/g, '');
 
     it('should round trip valarm in vevent', () => {
         const result = serialize(parse(valarmInVevent));
         expect(trimAll(result)).toEqual(trimAll(valarmInVevent));
+    });
+
+    it('should round trip vfreebusy', () => {
+        const result = serialize(parse(vfreebusy));
+        expect(trimAll(result)).toEqual(trimAll(vfreebusy));
+    });
+
+    it('should round trip vfreebusy2', () => {
+        const result = serialize(parse(vfreebusy2));
+        expect(trimAll(result)).toEqual(trimAll(vfreebusy2));
     });
 
     it('should round trip rrule in vevent', () => {
