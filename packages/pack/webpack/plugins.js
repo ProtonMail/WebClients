@@ -62,12 +62,14 @@ const PRODUCTION_PLUGINS = [
     })
 ];
 
-module.exports = ({ isProduction, publicPath, appMode, featureFlags }) => {
+module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI }) => {
     const { main, worker, elliptic, compat, definition } = transformOpenpgpFiles(
         OPENPGP_FILES,
         publicPath,
         isProduction
     );
+
+    console.log('writeSRI', writeSRI);
 
     return [
         ...(isProduction
@@ -97,10 +99,14 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags }) => {
             ...logoConfig
         }),
 
-        new SriPlugin({
-            hashFuncNames: ['sha384'],
-            enabled: isProduction
-        }),
+        ...(writeSRI
+            ? [
+                  new SriPlugin({
+                      hashFuncNames: ['sha384'],
+                      enabled: isProduction
+                  })
+              ]
+            : []),
 
         new webpack.DefinePlugin({
             PM_OPENPGP: JSON.stringify(definition),
@@ -118,5 +124,5 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags }) => {
         }),
 
         ...(isProduction ? PRODUCTION_PLUGINS : [])
-    ];
+    ].filter(Boolean);
 };

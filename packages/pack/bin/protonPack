@@ -4,7 +4,13 @@ const fs = require('fs').promises;
 const path = require('path');
 const chalk = require('chalk');
 const dedent = require('dedent');
-const argv = require('minimist')(process.argv.slice(2));
+const argv = require('minimist')(process.argv.slice(2), {
+    string: ['appMode', 'featureFlags'],
+    boolean: ['sri'],
+    default: {
+        sri: true
+    }
+});
 const localIp = require('my-local-ip');
 
 const configBuilder = require('../cli/config');
@@ -44,6 +50,7 @@ async function main() {
 
     const APP_MODE = getAppMode();
     const FEATURE_FLAGS = getFeatureFlags();
+    const WRITE_SRI = argv.sri;
 
     // For any task BUT init we need to create a custom config for the app
     if (!is('init') && !is('help') && !is('print-config')) {
@@ -64,6 +71,7 @@ async function main() {
             publicPath,
             appMode: APP_MODE,
             featureFlags: FEATURE_FLAGS,
+            writeSRI: WRITE_SRI,
             ...is('extract-i18n') && { flow: 'i18n' }
         });
         return compile(CONFIG);
