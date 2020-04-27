@@ -1,6 +1,6 @@
 import { useGetCalendarKeys, useGetAddressKeys } from 'react-components';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
-import { VcalVeventComponent } from '../../interfaces/VcalModel';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { CachedKey } from 'proton-shared/lib/interfaces';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { syncMultipleEvents as syncMultipleEventsRoute } from 'proton-shared/lib/api/calendars';

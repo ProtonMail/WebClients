@@ -9,6 +9,7 @@ import { getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import updateSingleRecurrence from '../recurrence/updateSingleRecurrence';
 import updateAllRecurrence from '../recurrence/updateAllRecurrence';
+import { UpdateAllPossibilities } from './getUpdateAllPossibilities';
 
 interface SaveRecurringArguments {
     type: RECURRING_TYPES;
@@ -17,12 +18,13 @@ interface SaveRecurringArguments {
     oldEventData: EventOldData;
     newEventData: EventNewData;
     recurrence: CalendarEventRecurring;
+    updateAllPossibilities: UpdateAllPossibilities;
 }
 
 const getSaveRecurringEventActions = ({
     type,
     recurrences,
-    oldEventData: { Event: oldEvent, veventComponent: oldVeventComponent },
+    oldEventData: { Event: oldEvent },
     originalEventData: {
         Event: originalEvent,
         calendarID: originalCalendarID,
@@ -36,13 +38,10 @@ const getSaveRecurringEventActions = ({
         memberID: newMemberID,
         veventComponent: newVeventComponent
     },
-    recurrence
+    recurrence,
+    updateAllPossibilities
 }: SaveRecurringArguments) => {
     const isSingleEdit = oldEvent.ID !== originalEvent.ID;
-
-    if (!oldVeventComponent) {
-        throw new Error('Can not update without the old event');
-    }
 
     if (type === RECURRING_TYPES.SINGLE) {
         if (isSingleEdit) {
@@ -61,10 +60,6 @@ const getSaveRecurringEventActions = ({
                     operations: [updateOperation]
                 }
             ];
-        }
-
-        if (!originalVeventComponent) {
-            throw new Error('Can not update single occurrence without the original event');
         }
 
         const createOperation = {
@@ -90,10 +85,6 @@ const getSaveRecurringEventActions = ({
     }
 
     if (type === RECURRING_TYPES.FUTURE) {
-        if (!originalVeventComponent) {
-            throw new Error('Can not update future recurrences without the original event');
-        }
-
         // Any single edits in the recurrence chain.
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
 
@@ -146,10 +137,6 @@ const getSaveRecurringEventActions = ({
     }
 
     if (type === RECURRING_TYPES.ALL) {
-        if (!originalVeventComponent) {
-            throw new Error('Can not update all recurrences without the original event');
-        }
-
         // Any single edits in the recurrence chain.
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
 
@@ -164,12 +151,13 @@ const getSaveRecurringEventActions = ({
             type: SyncOperationTypes.UPDATE,
             data: {
                 Event: originalEvent,
-                veventComponent: updateAllRecurrence(
-                    newVeventComponent,
-                    originalVeventComponent,
+                veventComponent: updateAllRecurrence({
+                    component: newVeventComponent,
+                    originalComponent: originalVeventComponent,
                     recurrence,
+                    mode: updateAllPossibilities,
                     isSingleEdit
-                )
+                })
             }
         };
 

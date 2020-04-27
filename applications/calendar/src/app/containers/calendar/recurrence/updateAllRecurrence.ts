@@ -1,8 +1,10 @@
 import { omit } from 'proton-shared/lib/helpers/object';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
-import { VcalVeventComponent } from '../../../interfaces/VcalModel';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { getSafeRruleUntil } from './helper';
+import { getStartDateTimeMerged, getEndDateTimeMerged } from './getDateTimeMerged';
+import { UpdateAllPossibilities } from '../eventActions/getUpdateAllPossibilities';
 
 const getComponentWithUpdatedRrule = (
     component: VcalVeventComponent,
@@ -44,12 +46,14 @@ const getComponentWithUpdatedRrule = (
     };
 };
 
-const updateAllRecurrence = (
-    component: VcalVeventComponent,
-    originalComponent: VcalVeventComponent,
-    recurrence: CalendarEventRecurring,
-    isSingleEdit: boolean
-) => {
+interface Arguments {
+    component: VcalVeventComponent;
+    originalComponent: VcalVeventComponent;
+    recurrence: CalendarEventRecurring;
+    mode: UpdateAllPossibilities;
+    isSingleEdit: boolean;
+}
+const updateAllRecurrence = ({ component, originalComponent, recurrence, mode, isSingleEdit }: Arguments) => {
     // Have to set the old UID (this won't be necessary until we merge chains)
     const veventWithOldUID = {
         ...component,
@@ -59,24 +63,23 @@ const updateAllRecurrence = (
     // Strip any RECURRENCE-ID when updating all events
     delete veventWithOldUID['recurrence-id'];
 
-    /*
-    if (isKeepSingleEdits) {
+    if (mode === UpdateAllPossibilities.KEEP_SINGLE_EDITS) {
+        // Copy over the exdates
         veventWithOldUID.exdate = originalComponent.exdate;
         // If single edits are to be kept, the start time can not change, shouldn't get here if not but just to be sure
         veventWithOldUID.dtstart = originalComponent.dtstart;
-        // TODO: What if the end time was changed though?
-        // TODO: merge new end time with old end time
-        veventWithOldUID.dtend = originalComponent.dtend;
-    } else if (isKeepOriginalStartDate) {
+        veventWithOldUID.dtend = getEndDateTimeMerged(component.dtstart, component.dtend, veventWithOldUID.dtstart);
+    } else if (mode === UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME) {
         delete veventWithOldUID.exdate;
-        // merge start time with original start date
-        // merge end time with original end date
-        veventWithOldUID.dtstart = originalComponent.dtstart;
-        veventWithOldUID.dtend = originalComponent.dtend;
+
+        const mergedDtstart = getStartDateTimeMerged(component.dtstart, originalComponent.dtstart);
+        const mergedDtend = getEndDateTimeMerged(component.dtstart, component.dtend, mergedDtstart);
+
+        veventWithOldUID.dtstart = mergedDtstart;
+        veventWithOldUID.dtend = mergedDtend;
     } else {
         delete veventWithOldUID.exdate;
     }
-     */
 
     return getComponentWithUpdatedRrule(veventWithOldUID, originalComponent, recurrence, isSingleEdit);
 };

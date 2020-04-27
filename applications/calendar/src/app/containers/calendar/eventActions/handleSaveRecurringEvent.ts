@@ -3,14 +3,15 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
+import { updateCalendar } from 'proton-shared/lib/api/calendars';
 import { RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from '../../../constants';
 import getSaveRecurringEventActions from './getSaveRecurringEventActions';
 import getSyncMultipleEventsPayload from '../getSyncMultipleEventsPayload';
 import { getRecurringEventUpdatedText } from '../../../components/eventModal/eventForm/i18n';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import { EventOldData, EventNewData } from '../../../interfaces/EventData';
+import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import { getHasFutureOption } from './recurringHelper';
-import { updateCalendar } from 'proton-shared/lib/api/calendars';
+import getUpdateAllPossibilities from './getUpdateAllPossibilities';
 
 interface Arguments {
     originalEventData: EventOldData;
@@ -48,6 +49,11 @@ const handleSaveRecurringEvent = async ({
     calendars
 }: Arguments) => {
     const isFutureAllowed = getHasFutureOption(originalEventData.veventComponent, recurrence);
+    const updateAllPossibilities = getUpdateAllPossibilities(
+        oldEventData.veventComponent,
+        newEventData.veventComponent,
+        recurrence
+    );
 
     const saveTypes = canOnlySaveAll
         ? [RECURRING_TYPES.ALL]
@@ -58,13 +64,20 @@ const handleSaveRecurringEvent = async ({
         data: saveTypes
     });
 
+    if (saveType === RECURRING_TYPES.ALL || saveType === RECURRING_TYPES.FUTURE) {
+        await onSaveConfirmation({
+            type: SAVE_CONFIRMATION_TYPES.RECURRING_MATCH_WARNING
+        });
+    }
+
     const multiActions = await getSaveRecurringEventActions({
         type: saveType,
         recurrences,
         originalEventData,
         oldEventData,
         newEventData,
-        recurrence
+        recurrence,
+        updateAllPossibilities
     });
 
     await Promise.all(

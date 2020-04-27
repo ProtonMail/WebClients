@@ -1,5 +1,5 @@
-import { getInitialDateTimeModel } from './state';
 import { addDays, isSameDay } from 'proton-shared/lib/date-fns-utc';
+import { getInitialDateTimeModel } from './state';
 import { EventModel } from '../../../interfaces/EventModel';
 
 const isZeroHoursMinutes = (date: Date) => date.getHours() === 0 && date.getMinutes() === 0;

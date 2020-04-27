@@ -1,6 +1,14 @@
 import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { getIcalRecurrenceId, isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
+import { Address as tsAddress } from 'proton-shared/lib/interfaces';
+import {
+    Calendar as tsCalendar,
+    CalendarSettings as tsCalendarSettings,
+    Member as tsMember,
+    SETTINGS_NOTIFICATION_TYPE
+} from 'proton-shared/lib/interfaces/calendar';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
 import { propertiesToModel } from './propertiesToModel';
@@ -18,16 +26,8 @@ import { DEFAULT_FULL_DAY_NOTIFICATIONS, DEFAULT_PART_DAY_NOTIFICATIONS } from '
 import { DEFAULT_FULL_DAY_NOTIFICATION, DEFAULT_PART_DAY_NOTIFICATION } from '../../../modelConstants';
 import { getDeviceNotifications } from './notificationModel';
 import { notificationsToModel } from '../../../helpers/notificationsToModel';
-import {
-    Calendar as tsCalendar,
-    CalendarSettings as tsCalendarSettings,
-    Member as tsMember,
-    SETTINGS_NOTIFICATION_TYPE
-} from 'proton-shared/lib/interfaces/calendar';
-import { Address as tsAddress } from 'proton-shared/lib/interfaces';
 import { propertiesToNotificationModel } from './propertiesToNotificationModel';
 import { EventModel, FrequencyModel } from '../../../interfaces/EventModel';
-import { VcalVeventComponent } from '../../../interfaces/VcalModel';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 export const getNotificationModels = ({

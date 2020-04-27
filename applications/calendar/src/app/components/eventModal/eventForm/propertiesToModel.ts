@@ -1,6 +1,6 @@
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
-import { VcalVeventComponent } from '../../../interfaces/VcalModel';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 const DEFAULT_TIME = {
     value: { year: 1970, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: true },

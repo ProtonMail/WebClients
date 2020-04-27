@@ -3,7 +3,11 @@ import { unique } from 'proton-shared/lib/helpers/array';
 import { convertZonedDateTimeToUTC, fromLocalDate } from 'proton-shared/lib/date/timezone';
 import { getPositiveSetpos, getNegativeSetpos } from '../../../helpers/rrule';
 import { EventModel } from '../../../interfaces/EventModel';
-import { VcalByDayValues, VcalDateOrDateTimeValue, VcalRruleProperty } from '../../../interfaces/VcalModel';
+import {
+    VcalByDayValues,
+    VcalDateOrDateTimeValue,
+    VcalRruleProperty
+} from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 export interface UntilDateArgument {
     year: number;

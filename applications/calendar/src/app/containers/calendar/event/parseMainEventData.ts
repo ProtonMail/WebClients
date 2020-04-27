@@ -1,7 +1,7 @@
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { unwrap } from 'proton-shared/lib/calendar/helper';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
-import { VcalVeventComponent } from '../../../interfaces/VcalModel';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 const parseMainEventData = ({ SharedEvents = [] }: CalendarEvent): VcalVeventComponent | undefined => {
     try {

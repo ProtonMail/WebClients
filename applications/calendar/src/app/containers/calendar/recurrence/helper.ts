@@ -13,7 +13,7 @@ import {
     VcalDateTimeProperty,
     VcalRruleProperty,
     VcalVeventComponent
-} from '../../../interfaces/VcalModel';
+} from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getUntilProperty } from '../../../components/eventModal/eventForm/modelToFrequencyProperties';
 
 export const toExdate = (dateObject: DateTimeValue, isAllDay: boolean, tzid = 'UTC'): VcalDateOrDateTimeProperty => {

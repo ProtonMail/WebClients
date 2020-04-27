@@ -1,6 +1,6 @@
 import { getIcalRecurrenceId } from 'proton-shared/lib/calendar/recurring';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
-import { VcalVeventComponent } from '../../../interfaces/VcalModel';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 export const getRecurrenceId = (component: VcalVeventComponent) => {
     const rawRecurrenceId = getIcalRecurrenceId(component);

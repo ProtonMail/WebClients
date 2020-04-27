@@ -1,7 +1,7 @@
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
-import { VcalTriggerValue } from '../../../interfaces/VcalModel';
+import { VcalTriggerValue } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { transformBeforeAt } from './trigger';
 
 const getInt = (value: any) => parseInt(value, 10) || 0;

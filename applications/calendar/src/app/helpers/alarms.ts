@@ -2,7 +2,7 @@ import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcal
 import { toUTCDate, fromUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import getAlarmMessageText from './getAlarmMessageText';
-import { VcalVeventComponent } from '../interfaces/VcalModel';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 /**
  * Given a raw event, (optionally) its starting date, the date now and a timezone id,

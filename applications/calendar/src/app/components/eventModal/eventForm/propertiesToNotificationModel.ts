@@ -1,6 +1,6 @@
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
 import { triggerToModel } from './notificationModel';
-import { VcalValarmComponent, VcalVeventComponent } from '../../../interfaces/VcalModel';
+import { VcalValarmComponent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 export const propertiesToNotificationModel = (
     { components = [] }: Partial<VcalVeventComponent> = {},

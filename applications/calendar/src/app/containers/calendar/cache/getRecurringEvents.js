@@ -8,12 +8,11 @@ export const getRecurringEvents = (events, recurringEvents, searchStart, searchE
 
         // If just a recurrence-id was received, without a link to any parent
         if (!parentEventID) {
-            return result;
+            continue;
         }
 
         if (!events.has(parentEventID)) {
-            //debugger;
-            return result;
+            continue;
         }
 
         const { component } = events.get(parentEventID);

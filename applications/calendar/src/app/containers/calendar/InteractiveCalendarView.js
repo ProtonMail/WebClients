@@ -43,6 +43,7 @@ import { omit } from 'proton-shared/lib/helpers/object';
 import handleSaveEventHelper from './eventActions/handleSaveEvent';
 import handleDeleteEventHelper from './eventActions/handleDeleteEvent';
 import { getHasDoneChanges } from '../../components/eventModal/eventForm/getHasEdited';
+import RecurringMatchWarning from './confirmationModals/RecurringMatchWarning';
 
 const getNormalizedTime = (isAllDay, initial, dateFromCalendar) => {
     if (!isAllDay) {
@@ -422,8 +423,12 @@ const InteractiveCalendarView = ({
     const handleSaveConfirmation = ({ type, data }) => {
         return new Promise((resolve, reject) => {
             if (type === SAVE_CONFIRMATION_TYPES.RECURRING) {
-                createModal(<EditRecurringConfirmModal types={data} onClose={reject} onConfirm={resolve} />);
+                return createModal(<EditRecurringConfirmModal types={data} onClose={reject} onConfirm={resolve} />);
             }
+            if (type === SAVE_CONFIRMATION_TYPES.RECURRING_MATCH_WARNING) {
+                return createModal(<RecurringMatchWarning onClose={reject} onConfirm={resolve} />);
+            }
+            return reject(new Error('Unknown type'));
         });
     };
 
@@ -432,12 +437,10 @@ const InteractiveCalendarView = ({
             if (type === DELETE_CONFIRMATION_TYPES.SINGLE) {
                 return createModal(<DeleteConfirmModal onClose={reject} onConfirm={resolve} />);
             }
-
             if (type === DELETE_CONFIRMATION_TYPES.RECURRING) {
                 return createModal(<DeleteRecurringConfirmModal types={data} onClose={reject} onConfirm={resolve} />);
             }
-
-            return reject('Unknown type');
+            return reject(new Error('Unknown type'));
         });
     };
 

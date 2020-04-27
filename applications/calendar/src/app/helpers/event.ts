@@ -1,4 +1,4 @@
-import { VcalVeventComponent } from '../interfaces/VcalModel';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { EventPersonalMap } from '../interfaces/EventPersonalMap';
 
 interface GetComponentArguments {

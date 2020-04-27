@@ -6,7 +6,7 @@ import modelToFrequencyProperties from './modelToFrequencyProperties';
 import { MAX_LENGTHS } from '../../../constants';
 import { modelToValarmComponent } from './modelToValarm';
 import { DateTimeModel, EventModel } from '../../../interfaces/EventModel';
-import { VcalVeventComponent } from '../../../interfaces/VcalModel';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 const modelToDateProperty = ({ date, time, tzid }: DateTimeModel, isAllDay: boolean) => {
     const dateObject = {
@@ -22,7 +22,8 @@ const modelToDateProperty = ({ date, time, tzid }: DateTimeModel, isAllDay: bool
     const dateTimeObject = {
         ...dateObject,
         hours: time.getHours(),
-        minutes: time.getMinutes()
+        minutes: time.getMinutes(),
+        seconds: 0
     };
 
     return getDateTimeProperty(dateTimeObject, tzid);

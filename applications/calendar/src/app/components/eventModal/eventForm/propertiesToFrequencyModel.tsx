@@ -16,7 +16,7 @@ import {
     VcalDateTimeValue,
     VcalRruleFreqValue,
     VcalRruleProperty
-} from '../../../interfaces/VcalModel';
+} from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 const getEndType = (count?: number, until?: VcalDateOrDateTimeValue) => {
     // count and until cannot occur at the same time (see https://tools.ietf.org/html/rfc5545#page-37)
@@ -40,13 +40,12 @@ const getUntilDate = (until?: VcalDateOrDateTimeValue, startTzid?: string) => {
     if (!until) {
         return undefined;
     }
-    if (!(until as VcalDateTimeValue).isUTC) {
-        // this will only occur for all-day events
+    if (!(until as VcalDateTimeValue).isUTC || !startTzid) {
         const { year, month, day } = until;
         return new Date(year, month - 1, day);
     }
-    const utcDate = propertyToUTCDate({ value: until });
-    const localDate = startTzid ? convertUTCDateTimeToZone(fromUTCDate(utcDate), startTzid) : fromUTCDate(utcDate);
+    const utcDate = propertyToUTCDate({ value: until as VcalDateTimeValue });
+    const localDate = convertUTCDateTimeToZone(fromUTCDate(utcDate), startTzid);
     return new Date(localDate.year, localDate.month - 1, localDate.day);
 };
 

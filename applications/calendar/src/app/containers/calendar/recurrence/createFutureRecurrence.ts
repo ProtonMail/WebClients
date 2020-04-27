@@ -1,6 +1,6 @@
 import { omit } from 'proton-shared/lib/helpers/object';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
-import { VcalVeventComponent } from '../../../interfaces/VcalModel';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { getSafeRruleCount, getSafeRruleUntil } from './helper';
 
