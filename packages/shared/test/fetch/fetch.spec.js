@@ -11,7 +11,9 @@ class FormDataMock {
 }
 
 const headersMock = {
-    get: () => {}
+    get: () => {
+        return undefined;
+    }
 };
 
 describe('fetch', () => {

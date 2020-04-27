@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore - pm-srp does not have typings, todo
 import { getSrp, getRandomSrpVerifier } from 'pm-srp';
 

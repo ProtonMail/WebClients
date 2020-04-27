@@ -78,7 +78,9 @@ export const checkStatus = (response, config) => {
 
     return response
         .json()
-        .catch(() => {})
+        .catch(() => {
+            return {};
+        })
         .then((data) => {
             throw createApiError({ name: 'StatusCodeError', response, data, config });
         });

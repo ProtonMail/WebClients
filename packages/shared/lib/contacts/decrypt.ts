@@ -8,7 +8,7 @@ import {
 } from 'pmcrypto';
 import { c } from 'ttag';
 import { KeyPairs } from '../interfaces';
-import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts/Contact';
+import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts';
 import { merge, parse } from './vcard';
 import { sanitizeProperties } from './properties';
 
@@ -93,6 +93,7 @@ export const decryptSigned = async (
         }
         const [message, signature] = await Promise.all([getMessage(Data), getSignature(Signature)]);
         const { data, verified } = await decryptMessage({
+            // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
             // @ts-ignore
             message,
             privateKeys,

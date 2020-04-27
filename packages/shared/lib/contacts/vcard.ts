@@ -1,7 +1,7 @@
 import ICAL from 'ical.js';
 import { readFileAsString } from '../helpers/file';
 import isTruthy from '../helpers/isTruthy';
-import { ContactProperties, ContactProperty } from '../interfaces/contacts/Contact';
+import { ContactProperties, ContactProperty } from '../interfaces/contacts';
 import { addPref, hasPref, sortByPref } from './properties';
 import { getValue } from './property';
 
@@ -51,7 +51,7 @@ export const isCustomField = (field = '') => field.startsWith('x-');
 /**
  * Parse vCard string and return contact properties model as an array
  */
-export const parse = (vcard: string = ''): ContactProperties => {
+export const parse = (vcard = ''): ContactProperties => {
     const comp = new ICAL.Component(ICAL.parse(vcard));
     const properties = comp.getAllProperties() as any[];
 
@@ -132,7 +132,7 @@ export const merge = (contacts: ContactProperties[] = []): ContactProperties => 
 /**
  * Basic test for the validity of a vCard file read as a string
  */
-const isValid = (vcf: string = ''): boolean => {
+const isValid = (vcf = ''): boolean => {
     const regexMatchBegin = vcf.match(/BEGIN:VCARD/g);
     const regexMatchEnd = vcf.match(/END:VCARD/g);
     if (!regexMatchBegin || !regexMatchEnd) {
@@ -155,7 +155,7 @@ export const readVcf = async (file: File): Promise<string> => {
 /**
  * Extract array of vcards from a string containing several vcards
  */
-export const extractVcards = (vcf: string = ''): string[] => {
+export const extractVcards = (vcf = ''): string[] => {
     const vcards = vcf.split('END:VCARD');
     vcards.pop();
     return vcards.map((vcard) => vcard.trim() + '\r\nEND:VCARD');

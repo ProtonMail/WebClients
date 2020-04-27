@@ -28,7 +28,7 @@ export const toImage = (url: string): Promise<HTMLImageElement> => {
     });
 };
 
-interface IResizeImageProps {
+interface ResizeImageProps {
     /**
      * Base64 representation of image to be resized.
      */
@@ -66,8 +66,8 @@ export const resizeImage = async ({
     maxHeight = 0,
     finalMimeType = 'image/jpeg',
     encoderOptions = 1,
-    bigResize = false,
-}: IResizeImageProps) => {
+    bigResize = false
+}: ResizeImageProps) => {
     const image = await toImage(original);
     // Resize the image
     let { width, height } = image;
@@ -91,6 +91,7 @@ export const resizeImage = async ({
 
     canvas.width = width;
     canvas.height = height;
+    // eslint-disable-next-line no-unused-expressions
     canvas.getContext('2d')?.drawImage(image, 0, 0, width, height);
 
     return canvas.toDataURL(finalMimeType, encoderOptions);
@@ -144,7 +145,7 @@ export const downSize = async (base64str: string, maxSize: number, mimeType = 'i
             maxWidth,
             maxHeight,
             finalMimeType: mimeType,
-            encoderOptions,
+            encoderOptions
         });
         const { size } = new Blob([resized]);
 

@@ -88,7 +88,7 @@ export const diff = <T>(arr1: T[], arr2: T[]) => arr1.filter((a) => !arr2.includ
  * E.g. `[1, 1, 2, 3, 3] => [[1, 1], [2], [3, 3]]`
  */
 export const groupWith = <T>(compare: (a: T, b: T) => boolean, arr: T[] = []) => {
-    const { groups } = arr.reduce(
+    const { groups } = arr.reduce<{ groups: T[][]; remaining: T[] }>(
         (acc, a) => {
             const { groups, remaining } = acc;
             const group = remaining.filter((b) => compare(a, b));
@@ -101,10 +101,8 @@ export const groupWith = <T>(compare: (a: T, b: T) => boolean, arr: T[] = []) =>
 
             return acc;
         },
-        // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
-        { groups: [], remaining: arr } as { groups: T[][]; remaining: T[] }
+        { groups: [], remaining: arr }
     );
-
     return groups;
 };
 

@@ -90,6 +90,7 @@ export const arrayToBinaryString = (bytes: Uint8Array): string => {
     const j = bytes.length;
     const result = [];
     for (let i = 0; i < j; i += bs) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
         // eslint-disable-next-line prefer-spread
         result.push(String.fromCharCode.apply(String, buffer.subarray(i, i + bs < j ? i + bs : j)));

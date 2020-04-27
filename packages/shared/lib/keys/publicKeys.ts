@@ -103,6 +103,7 @@ export const getKeyEncryptStatus = async (
     // notice there are different expiration times depending on the use of the key.
     const expirationTime = await publicKey.getExpirationTime('encrypt');
     const isExpired = !(creationTime <= now && now <= expirationTime);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore ; OpenPGP types not up-to-date
     const isRevoked = await publicKey.isRevoked(null, null, timestamp);
     return { isExpired, isRevoked };

@@ -1,4 +1,5 @@
 import { encryptMessage, encryptPrivateKey, generateKey, OpenPGPKey } from 'pmcrypto';
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore - pm-srp does not have typings, todo
 import { computeKeyPassword, generateKeySalt } from 'pm-srp';
 
