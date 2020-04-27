@@ -174,7 +174,7 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                                 Token,
                                 TokenType
                             }
-                        });
+                        }).catch(onError);
                     });
                 }
 
