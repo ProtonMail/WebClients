@@ -19,7 +19,6 @@ import { getNotificationTextForItemList } from '../helpers';
 import { useTrashContent } from './TrashContentProvider';
 import { RestoreFromTrashResult, RestoreResponse, RESTORE_STATUS_CODE } from '../../../interfaces/restore';
 import { FileBrowserItem } from '../../FileBrowser/FileBrowser';
-import { LinkType } from '../../../interfaces/link';
 
 interface Props {
     shareId: string;
@@ -103,10 +102,8 @@ const TrashToolbar = ({ shareId }: Props) => {
         }
 
         alreadyExistingItems.forEach((item) => {
-            const notificationText =
-                item.Type === LinkType.FILE
-                    ? c('Notification').t`A file with the name "${item.Name}" already exists in current folder`
-                    : c('Notification').t`A folder with the name "${item.Name}" already exists in current folder`;
+            const notificationText = c('Notification')
+                .t`An item with the name "${item.Name}" already exists in the current folder`;
             createNotification({ text: notificationText, type: 'error' });
         });
 
