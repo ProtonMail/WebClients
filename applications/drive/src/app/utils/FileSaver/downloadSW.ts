@@ -1,4 +1,3 @@
-import { getRandomString } from 'proton-shared/lib/helpers/string';
 import { contentType } from 'mime-types';
 
 /**
@@ -90,8 +89,8 @@ class DownloadServiceWorker {
             return;
         }
 
-        const downloadUrl = (self as any).registration.scope + `sw/${getRandomString(32)}`;
         const { filename, mimeType, size } = event.data.payload;
+        const downloadUrl = encodeURI((self as any).registration.scope + `sw/${Math.random()}/` + filename);
 
         const port = event.ports[0];
 
