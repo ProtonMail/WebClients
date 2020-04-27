@@ -134,3 +134,21 @@ summary {
   border: 0;
   cursor: pointer;
 }
+
+
+
+/* welcome boxes in a 2 column design */
+$breakpoint-2-columns: 1180 !default;
+@include respond-to($breakpoint-2-columns) {
+    .boxes-placeholder-container {
+       flex-direction: column;
+       > * {
+           margin-bottom: 1em;
+           width: 100%;
+           flex-basis: auto;
+       }
+	}
+	.boxes-placeholder-button {
+		margin-top: 0;
+	}
+}

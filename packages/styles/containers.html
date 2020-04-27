@@ -60,8 +60,8 @@ subsection: containers
         tabindex="0" aria-selected="false"&gt;A tab&lt;/a&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
-  &lt;div id="tab1" className="tabs-tabcontent" <strong>role="tabpanel"</strong> aria-labelledby="label_tab1"&gt;…&lt;/div&gt;
-  &lt;div <strong>id="tab2"</strong> className="tabs-tabcontent" role="tabpanel" <strong>aria-labelledby="label_tab2"</strong>&gt;…&lt;/div&gt;
+  &lt;div id="tab1" class="tabs-tabcontent" <strong>role="tabpanel"</strong> aria-labelledby="label_tab1"&gt;…&lt;/div&gt;
+  &lt;div <strong>id="tab2"</strong> class="tabs-tabcontent" role="tabpanel" <strong>aria-labelledby="label_tab2"</strong>&gt;…&lt;/div&gt;
   …
 &lt;/div&gt;
       </code></pre>
@@ -583,6 +583,54 @@ subsection: containers
 
 </div>
 
+
+
+<div id="home-placeholder" class="container-section-sticky container-section-sticky--fullwidth">
+
+	<h2>Welcome placeholders (home)</h2>
+
+	<p>These boxes are set up to be integrated in a 2 columns content (Mail/Contact home). They will be stacked vertically around <code>$breakpoint-2-columns</code> value (~1180px default).</p>
+
+	<div class="flex flex-nowrap onmobile-flex-column boxes-placeholder-container mw50e">
+		<div class="bordered-container flex-item-fluid mr1 onmobile-mr0 onmobile-mb1 p1 aligncenter flex-noMinChildren flex-column">
+			<div class="flex-item-fluid">
+				<img src="/assets/img/pm-images/contact-import.svg" alt="" class="mb1" />
+				<div class="bold">Cool title</div>
+				<p>Cool information text that explains the cool title</p>
+			</div>
+			<div class="flex-item-noshrink mt1 boxes-placeholder-button">
+				<button class="pm-button--primary">A button</button>
+			</div>
+		</div>
+		<div class="bordered-container flex-item-fluid mr1 onmobile-mr0 onmobile-mb1 p1 aligncenter flex-noMinChildren flex-column">
+			<div class="flex-item-fluid">
+				<img src="/assets/img/pm-images/contact-import.svg" alt="" class="mb1" />
+				<div class="bold">Another cool info</div>
+				<p>Cool trick text that explains the cool info, briefly</p>
+			</div>
+			<div class="flex-item-noshrink mt1 boxes-placeholder-button">
+				<button class="pm-button--primary">Another button</button>
+			</div>
+		</div>
+		<div class="bordered-container flex-item-fluid mr1 onmobile-mr0 onmobile-mb1 p1 aligncenter flex-noMinChildren flex-column">
+			<div class="flex-item-fluid">
+				<img src="/assets/img/pm-images/contact-import.svg" alt="" class="mb1" />
+				<div class="bold">Cool cool cool</div>
+				<p>This is so cool that we put a third cool box with another text inside</p>
+			</div>
+			<div class="flex-item-noshrink mt1 boxes-placeholder-button">
+				<button class="pm-button--primary">A button</button>
+			</div>
+		</div>
+	</div>
+	<pre class=" language-markup"><code>&lt;div class="flex flex-nowrap boxes-placeholder-container mw50e"&gt;
+  &lt;div class="bordered-container …"&gt;…&lt;/div&gt;
+  &lt;div class="bordered-container …"&gt;…&lt;/div&gt;
+  &lt;div class="bordered-container …"&gt;…&lt;/div&gt;
+&lt;/div&gt;
+	  </code></pre>
+
+</div>
 
 <div id="details-summary" class="container-section-sticky container-section-sticky--fullwidth">
 
