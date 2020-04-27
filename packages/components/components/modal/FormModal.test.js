@@ -9,7 +9,7 @@ describe('Modal component', () => {
 
     it('should render the modal content', () => {
         const { container } = render(
-            <FormModal title="Title" onExit={() => {}} onClose={mockOnClose}>
+            <FormModal title="Title" onClose={mockOnClose}>
                 {content}
             </FormModal>
         );

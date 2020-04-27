@@ -62,6 +62,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
 
         if (first.privateKey.isDecrypted()) {
             first.privateKey
+                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
                 // @ts-ignore - validate does not exist in the openpgp typings, todo
                 .validate()
                 .then(() => {

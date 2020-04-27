@@ -56,6 +56,7 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
         }
 
         const { Address } = await api(
+            // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
             // @ts-ignore - TODO better typings
             createAddress({
                 MemberID: member.ID,

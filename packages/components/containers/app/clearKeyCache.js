@@ -15,7 +15,7 @@ export default (cache) => {
     clearCachedKeys(userKeysCache ? userKeysCache.value : []);
     if (addressesKeysCache && addressesKeysCache.value) {
         const addressIDs = Object.keys(addressesKeysCache.value);
-        for (let addressID of addressIDs) {
+        for (const addressID of addressIDs) {
             clearCachedKeys(addressesKeysCache.value[addressID]);
         }
     }

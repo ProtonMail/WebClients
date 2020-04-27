@@ -28,6 +28,7 @@ const useDisplayKeys = ({ keys, User, Address, loadingKeyID }: Props) => {
                 User,
                 Address,
                 Key,
+                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
                 // @ts-ignore - openpgp typings are incorrect for getAlgorithmInfo, todo
                 algorithmInfo,
                 fingerprint,

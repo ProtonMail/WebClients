@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { withRouter } from 'react-router';
+import { RouteComponentProps } from 'react-router-dom';
 import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import {
     useMembers,
@@ -23,15 +24,11 @@ import { getStatus } from './helper';
 import AddressActions from './AddressActions';
 import AddressesWithUser from './AddressesWithUser';
 
-const AddressesWithMembers = ({
-    match,
-    user,
-    organization
-}: {
-    match: any;
+interface Props extends RouteComponentProps<{ memberID: string }> {
     user: UserModel;
     organization: Organization;
-}) => {
+}
+const AddressesWithMembers = ({ match, user, organization }: Props) => {
     const { createModal } = useModals();
     const [members, loadingMembers] = useMembers();
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
@@ -59,7 +56,11 @@ const AddressesWithMembers = ({
     }, [members, memberIndex]);
 
     if (loadingMembers || memberIndex === -1 || (loadingMemberAddresses && !memberAddressesMap)) {
-        return <Loader />;
+        return (
+            <>
+                <Loader />
+            </>
+        );
     }
 
     const handleAddAddress = (member: Member) => {
@@ -124,5 +125,4 @@ const AddressesWithMembers = ({
     );
 };
 
-// @ts-ignore - TODO better typings
 export default withRouter(AddressesWithMembers);

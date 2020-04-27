@@ -137,7 +137,6 @@ const MembersSection = () => {
                 <div>
                     <SearchInput
                         onChange={handleSearch}
-                        // @ts-ignore - Todo fix searchinput
                         placeholder={c('Placeholder').t`Search users`}
                         delay={500}
                         value={keywords}

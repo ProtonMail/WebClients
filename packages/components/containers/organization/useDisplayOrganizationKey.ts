@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { OpenPGPKey, getKeys } from 'pmcrypto';
+import { OpenPGPKey, getKeys, algorithmInfo as tsAlgorithmInfo } from 'pmcrypto';
 import { describe } from 'proton-shared/lib/keys/keysAlgorithm';
 import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
 
@@ -22,11 +22,10 @@ const useDisplayOrganizationKey = (organizationKey?: OrganizationKey) => {
     }, [organizationKey]);
 
     return useMemo(() => {
-        const algorithmInfo = parsedKey?.getAlgorithmInfo() ?? { algorithm: '' };
+        const algorithmInfo = (parsedKey?.getAlgorithmInfo() as tsAlgorithmInfo) ?? { algorithm: '' };
         const fingerprint = parsedKey?.getFingerprint() ?? '';
         const isDecrypted = parsedKey?.isDecrypted() ?? false;
         return {
-            // @ts-ignore
             algorithm: describe(algorithmInfo),
             fingerprint,
             isDecrypted
