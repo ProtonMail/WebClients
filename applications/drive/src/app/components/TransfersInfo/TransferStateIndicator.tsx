@@ -40,7 +40,7 @@ const TransferStateIndicator = ({ transfer: { id, state }, percentageDone }: Pro
     return (
         <strong
             className={classnames([
-                'pd-transfers-listItemStat flex-justify-end flex-items-center ml0-5',
+                'pd-transfers-listItemTransferStateIndicator flex-item-fluid flex flex-nowrap flex-justify-end flex-items-center',
                 isSuccess && 'color-global-success',
                 isError && 'color-global-warning'
             ])}

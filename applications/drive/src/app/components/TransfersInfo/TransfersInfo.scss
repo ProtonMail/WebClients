@@ -1,86 +1,118 @@
 .pd-transfers {
-    min-width: 320px;
-    max-width: 600px;
-    width: 60%;
     position: fixed;
-    bottom: 1rem;
-    margin-right: inherit;
     right: 0;
+    bottom: 0;
     z-index: 12;
+    box-shadow: 0 0 1.5rem .3rem rgba(0, 0, 0, 0.16);
+    color: var(--color-main-area, $pm-global-grey);
+    transition: .15s cubic-bezier(0.22, 1, 0.36, 1);
 
-    &--minimized {
-        bottom: 0.25rem;
-        transition: 0.3s ease;
+    @include respond-to($breakpoint-small, 'max') {
+        left: 0;
+        bottom: 0;
     }
-}
 
-.pd-transfers-heading {
-    border-radius: 4px 0 0 0;
-    background-color: $pm-global-altgrey;
-    color: $white;
-}
-
-.pd-transfers-headingButton {
-    position: absolute;
-    @extend .flex;
-    right: 0.5rem;
-    top: 1rem;
-    background: transparent;
-    border-radius: 1em;
-    color: $pm-global-light;
-    border: 0;
-    font-size: 2em;
-    padding: 0;
-    line-height: 1;
-    cursor: pointer;
-    fill: $pm-global-light;
-}
-
-.pd-transfers-list {
-    @extend .color-black;
-    @extend .border-left;
-    @extend .border-bottom;
-    max-height: 310px;
-    overflow-y: auto;
-    background-color: $pm-global-light;
-    transition: 0.3s ease;
-}
-
-.pd-transfers-list--minimized {
-    max-height: 0;
-    visibility: hidden;
-}
-
-.pd-transfers-listItem {
-    height: 77px;
-
-    &:not(:last-child) {
-        @extend .border-bottom;
+    @include respond-to($breakpoint-small, 'min') {
+        width: 60%;
+        max-width: 43em;
+        margin-right: inherit;
     }
-}
 
-.pd-transfers-listItemDetails {
-    @extend .flex-items-end;
-    display: flex;
-    flex-wrap: nowrap;
-}
+    &-heading {
+        background: var(--bgcolor-main-area, $pm-global-altgrey);
 
-.pd-transfers-listItemName {
-    display: flex;
-    flex: 1 1 40%;
-    overflow: hidden;
-}
+        @include respond-to($breakpoint-small, 'min') {
+            border-radius: $global-border-radius $global-border-radius 0 0;
+        }
+    }
 
-.pd-transfers-listItemStats {
-    @extend .flex-item-noshrink;
-    @extend .flex-items-center;
-    display: flex;
-    flex-grow: 1;
-}
+    &-headingTooltip {
+        align-self: stretch;
+        justify-content: stretch;
+        align-items: stretch;
 
-.pd-transfers-listItemStat {
-    display: flex;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    flex-grow: 1;
+        &--isDisabled {
+            pointer-events: none;
+        }
+    }
+
+    &-headingButton {
+        &:hover,
+        &:focus {
+            background-color: rgba(white, .05);
+        }
+        &[disabled] {
+            opacity: .25;
+            pointer-events: none;
+        }
+    }
+
+    &-list {
+        max-height: 22em; // 4x listItem
+        overflow-y: auto;
+        background-color: var(--bgcolor-input, $pm-global-light);
+        transition: inherit;
+
+        @include respond-to(640, 'height') {
+            max-height: 35vh;
+        }
+    }
+
+    &--minimized &-list {
+        max-height: 0;
+        visibility: hidden;
+    }
+
+    &-listItem {
+        height: 5.5em; // To avoid height blinking on status changing
+
+        &:not(:last-child) {
+            @extend .border-bottom;
+        }
+    }
+
+    &-listItemTypeIcon {
+        opacity: .5;
+    }
+
+    &-listItemStats {
+        position: relative; // For controls in hidden state
+
+        @include respond-to($breakpoint-tiny, 'min') {
+            width: 16em;
+        }
+    }
+
+    &-listItemStat {
+        width: 6em; // Magic number, based on value 999.99_MB/s
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+    }
+
+    &-listItemTransferStateIndicator {
+        @include respond-to($breakpoint-tiny, 'max') {
+            margin-left: 1em;
+        }
+    }
+
+    &-controls {
+        position: absolute;
+        right: 0;
+        opacity: 0;
+    }
+
+    &--hasControls:hover &-controls,
+    &--hasControls &-controls:focus-within {
+        position: static;
+        opacity: 1;
+    }
+
+    &--hasControls:hover &-listItemTransferStateIndicator,
+    &--hasControls &-controls:focus-within + &-listItemTransferStateIndicator {
+        display: none;
+    }
+
+    &-controls &-controlButton {
+        padding: .25em;
+    }
 }
