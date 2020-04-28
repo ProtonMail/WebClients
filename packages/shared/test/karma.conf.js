@@ -38,7 +38,13 @@ module.exports = (config) => {
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browsers: ['ChromeHeadless'],
+        customLaunchers: {
+          ChromeHeadlessCI: {
+            base: 'ChromeHeadless',
+            flags: ['--no-sandbox']
+          }
+        },
+        browsers: ['ChromeHeadlessCI'],
         singleRun: true,
         concurrency: Infinity
     });
