@@ -66,7 +66,7 @@ const UpsellSubscription = () => {
             hasAddresses && {
                 title: c('Title').t`Upgrade to ProtonMail Professional`,
                 description: c('Title')
-                    .t`Ugrade to ProtonMail Professional to get multi-user support. This allows you to use ProtonMail host email for your organization and provide separate logins for each user. Professional also comes with priority support.`,
+                    .t`Upgrade to ProtonMail Professional to get multi-user support. This allows you to use ProtonMail host email for your organization and provide separate logins for each user. Professional also comes with priority support.`,
                 upgradeButton: (
                     <PrimaryButton
                         className="pm-button--small flex-item-noshrink"
