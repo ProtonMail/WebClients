@@ -1,6 +1,6 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Icon, classnames } from 'react-components';
+import { Icon, Tooltip, classnames } from 'react-components';
 import { Download } from '../downloads/DownloadProvider';
 import { Upload } from '../uploads/UploadProvider';
 import { TransferState } from '../../interfaces/transfer';
@@ -74,33 +74,43 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
         return headingText;
     };
 
-    const minimizeTitle = c('Action').t`Minimize transfers`;
+    const minMaxTitle = minimized ? c('Action').t`Maximize transfers` : c('Action').t`Minimize transfers`;
     const closeTitle = c('Action').t`Close transfers`;
 
     return (
-        <div className="pd-transfers-heading pt0-5 pb0-5 pl1 pr0-5 flex flex-spacebetween flex-items-center">
-            <span className="flex">{getHeadingText()}</span>
-
-            <div className="flex">
+        <div className="pd-transfers-heading flex flex-items-center flex-nowrap pl0-5 pr0-5 color-global-light">
+            <div className="flex-item-fluid p0-5" onClick={minimized ? onToggleMinimize : undefined}>
+                {getHeadingText()}
+            </div>
+            <Tooltip title={minMaxTitle} className="pd-transfers-headingTooltip flex-item-noshrink flex">
                 <button
-                    className="pl0-5 pr0-5 color-global-light"
+                    type="button"
+                    className="pd-transfers-headingButton p0-5 flex"
                     onClick={onToggleMinimize}
                     aria-expanded={!minimized}
-                    title={minimizeTitle}
                 >
                     <Icon className={classnames([minimized && 'rotateX-180'])} name="minimize" />
-                    <span className="sr-only">{minimizeTitle}</span>
+                    <span className="sr-only">{minMaxTitle}</span>
                 </button>
+            </Tooltip>
+            <Tooltip
+                title={closeTitle}
+                className={classnames([
+                    'pd-transfers-headingTooltip flex-item-noshrink flex',
+                    (activeUploads.length > 0 || activeDownloads.length > 0) &&
+                        'pd-transfers-headingTooltip--isDisabled'
+                ])}
+            >
                 <button
+                    type="button"
                     disabled={activeUploads.length > 0 || activeDownloads.length > 0}
-                    className="pl0-5 pr0-5 color-global-light"
+                    className="pd-transfers-headingButton flex p0-5"
                     onClick={onClose}
-                    title={closeTitle}
                 >
                     <Icon name="off" />
                     <span className="sr-only">{closeTitle}</span>
                 </button>
-            </div>
+            </Tooltip>
         </div>
     );
 };

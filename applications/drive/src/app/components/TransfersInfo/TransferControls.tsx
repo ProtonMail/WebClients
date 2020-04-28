@@ -36,14 +36,16 @@ function TransferControls({ transfer, type }: Props) {
     };
 
     return (
-        <button
-            type="button"
-            onClick={handleClick}
-            className="h100 inline-flex rounded50 flex-item-noshrink p0-25 bg-black opacity-50"
-            title={isFinished ? c('Action').t`Remove` : c('Action').t`Cancel`}
-        >
-            <Icon size={12} className="color-white" name="off" />
-        </button>
+        <span className="pd-transfers-controls flex-item-fluid flex flex-nowrap flex-justify-end">
+            <button
+                type="button"
+                onClick={handleClick}
+                className="pd-transfers-controlButton pm-button--info pm-button--for-icon rounded50 flex-item-noshrink flex"
+                title={isFinished ? c('Action').t`Remove from this list` : c('Action').t`Cancel transfer`}
+            >
+                <Icon size={12} name="off" />
+            </button>
+        </span>
     );
 }
 

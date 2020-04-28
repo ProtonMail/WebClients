@@ -6,7 +6,7 @@ interface Props {
     mimeType: string;
 }
 
-const FileIcon = ({ mimeType }: Props) => {
+const FileIcon = ({ mimeType, ...rest }: Props) => {
     let name = mimeType === 'Folder' ? 'folder' : 'default';
 
     if (isSupportedImage(mimeType)) {
@@ -21,7 +21,7 @@ const FileIcon = ({ mimeType }: Props) => {
         name = 'text';
     }
 
-    return <MimeIcon name={name} className="flex-item-noshrink mr0-5" />;
+    return <MimeIcon name={name} className="flex-item-noshrink mr0-5" {...rest} />;
 };
 
 export default FileIcon;
