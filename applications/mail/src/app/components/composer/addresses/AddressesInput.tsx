@@ -144,6 +144,8 @@ const AddressesInput = ({
     return (
         <AddressesAutocomplete
             inputRef={inputRef}
+            // Chrome ignores autocomplete="off" and Awesome lib forces autocomplete to "off" after instance
+            autoComplete="no"
             contacts={contacts}
             contactGroups={contactGroups}
             onSelect={handleAutocompleteSelect}

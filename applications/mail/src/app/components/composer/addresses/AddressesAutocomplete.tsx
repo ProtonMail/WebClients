@@ -13,9 +13,18 @@ interface Props {
     children: ReactNode;
     onSelect: (value: ContactOrGroup) => void;
     currentValue: Recipient[];
+    autoComplete?: string;
 }
 
-const AddressesAutocomplete = ({ inputRef, contacts, contactGroups, onSelect, currentValue, children }: Props) => {
+const AddressesAutocomplete = ({
+    inputRef,
+    autoComplete,
+    contacts,
+    contactGroups,
+    onSelect,
+    currentValue,
+    children
+}: Props) => {
     const [awesomplete, setAwesomplete] = useState<Awesomplete>();
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -30,6 +39,10 @@ const AddressesAutocomplete = ({ inputRef, contacts, contactGroups, onSelect, cu
             } as Awesomplete.Options
         );
         setAwesomplete(awesompleteInstance);
+
+        if (autoComplete) {
+            inputRef.current?.setAttribute('autocomplete', autoComplete);
+        }
 
         return () => awesompleteInstance.destroy();
     }, []);
