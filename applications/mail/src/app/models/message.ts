@@ -96,15 +96,35 @@ export interface MessageExtended {
     /**
      * Cryptography signatures verification status flag
      */
-    verified?: VERIFICATION_STATUS;
+    verificationStatus?: VERIFICATION_STATUS;
 
     /**
-     * Cryptography public keys to use for both encryption and decryption
+     * Signature verification errors, if any
+     */
+    verificationErrors?: Error[];
+
+    /**
+     * User public keys (used for encrypting drafts and attachments)
      */
     publicKeys?: OpenPGPKey[];
 
     /**
-     * Cryptography prviate keys to use for both encryption and decryption
+     * Pinned public keys of the sender, if any
+     */
+    senderPinnedKeys?: OpenPGPKey[];
+
+    /**
+     * If the sender is in the list of contacts, whether its contact signature has been verified
+     */
+    senderVerified?: boolean;
+
+    /**
+     * If the message is signed, the public key that verifies the signature
+     */
+    signingPublicKey?: OpenPGPKey;
+
+    /**
+     * User private keys (used for decryption)
      */
     privateKeys?: OpenPGPKey[];
 

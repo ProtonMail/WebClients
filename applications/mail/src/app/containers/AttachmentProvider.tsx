@@ -1,10 +1,10 @@
 import React, { createContext, ReactNode, useContext } from 'react';
 import { useInstance } from 'react-components';
-import { DecryptResult } from 'openpgp';
 import createCache from 'proton-shared/lib/helpers/cache';
 import createLRU from 'proton-shared/lib/helpers/lru';
 import { Cache } from '../models/utils';
 import { Attachment } from '../models/attachment';
+import { DecryptResultPmcrypto } from 'pmcrypto';
 
 export interface BlobInfo {
     url: string;
@@ -12,7 +12,7 @@ export interface BlobInfo {
     attachment: Attachment;
 }
 
-export type AttachmentsCache = Cache<DecryptResult>;
+export type AttachmentsCache = Cache<DecryptResultPmcrypto>;
 
 /**
  * Attachment context containing the Attachment cache

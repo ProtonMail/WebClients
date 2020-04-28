@@ -1,4 +1,4 @@
-import { decryptMIMEMessage, decryptMessageLegacy, OpenPGPKey } from 'pmcrypto';
+import { decryptMIMEMessage, decryptMessageLegacy, OpenPGPKey, OpenPGPSignature } from 'pmcrypto';
 import { c } from 'ttag';
 
 import { Message } from '../../models/message';
@@ -8,11 +8,7 @@ import { getDate, getSender, isMIME } from './messages';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { Attachment } from '../../models/attachment';
 
-const getVerifiedStatus = (pmcryptoVerified: number, publicKeys: any) => {
-    const signedInvalid = VERIFICATION_STATUS.SIGNED_AND_INVALID;
-    const signedPubkey = VERIFICATION_STATUS.SIGNED_NO_PUB_KEY;
-    return !publicKeys.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
-};
+const { NOT_SIGNED } = VERIFICATION_STATUS;
 
 const decryptMimeMessage = async (
     message: Message,
@@ -37,7 +33,9 @@ const decryptMimeMessage = async (
         // , mimetype = MIME_TYPES.PLAINTEXT
     } = (await result.getBody()) || {};
 
-    const verified = getVerifiedStatus(await result.verify(), publicKeys);
+    const verified = await result.verify();
+    const errors = await result.errors();
+    const [signature] = result.signatures;
 
     const Attachments = convert(message, await result.getAttachments(), verified, attachmentsCache);
     const encryptedSubject = await result.getEncryptedSubject();
@@ -46,22 +44,27 @@ const decryptMimeMessage = async (
         decryptedBody,
         Attachments,
         verified,
-        encryptedSubject
+        encryptedSubject,
+        errors,
+        signature
         // mimetype
     };
 };
 
 const decryptLegacyMessage = async (message: Message, publicKeys: OpenPGPKey[], privateKeys: OpenPGPKey[]) => {
-    const { data, verified: pmcryptoVerified = VERIFICATION_STATUS.NOT_SIGNED } = (await decryptMessageLegacy({
+    const {
+        data,
+        signatures: [signature],
+        verified = NOT_SIGNED,
+        errors
+    } = (await decryptMessageLegacy({
         message: message?.Body,
         messageDate: getDate(message),
         privateKeys: privateKeys,
         publicKeys: publicKeys
     })) as any;
 
-    const verified = getVerifiedStatus(pmcryptoVerified, publicKeys);
-
-    return { decryptedBody: data, verified };
+    return { decryptedBody: data, verified, signature, errors };
 };
 
 export const decryptMessage = async (
@@ -72,8 +75,10 @@ export const decryptMessage = async (
 ): Promise<{
     decryptedBody: string;
     Attachments?: Attachment[];
-    verified?: number;
+    verified?: VERIFICATION_STATUS;
     encryptedSubject?: string;
+    errors?: Error[];
+    signature?: OpenPGPSignature;
 }> => {
     if (isMIME(message)) {
         return decryptMimeMessage(message, publicKeys, privateKeys, attachmentsCache);

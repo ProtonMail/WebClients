@@ -1,9 +1,8 @@
-import { DecryptResult } from 'openpgp';
-
-import { Message } from '../../models/message';
+import { DecryptResultPmcrypto, VERIFICATION_STATUS } from 'pmcrypto';
 import { ENCRYPTED_STATUS } from '../../constants';
-import { Attachment, AttachmentMime } from '../../models/attachment';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
+import { Attachment, AttachmentMime } from '../../models/attachment';
+import { Message } from '../../models/message';
 
 // This prefix is really useful to distinguish 'real' attachments from pgp attachments.
 const ID_PREFIX = 'PGPAttachment';
@@ -61,10 +60,11 @@ const convertSingle = (
         Encrypted: ENCRYPTED_STATUS.PGP_MIME
     };
 
-    const attachmentData: DecryptResult = {
+    const attachmentData: DecryptResultPmcrypto = {
         data: parsedAttachment.content,
         filename: '',
-        signatures: []
+        signatures: [],
+        verified: VERIFICATION_STATUS.NOT_SIGNED
     };
 
     cache.set(ID, attachmentData /*, verified*/);

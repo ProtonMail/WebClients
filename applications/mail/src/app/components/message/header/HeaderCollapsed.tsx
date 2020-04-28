@@ -1,4 +1,5 @@
 import React, { MouseEvent } from 'react';
+import { classnames } from 'react-components';
 import { c } from 'ttag';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
@@ -8,8 +9,7 @@ import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import ItemLabels from '../../list/ItemLabels';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { Message } from '../../../models/message';
-import { classnames } from 'react-components';
-import { MessageViewIcons } from '../MessageView';
+import { MessageViewIcons } from '../../../helpers/message/icon';
 
 interface Props {
     message?: Message;

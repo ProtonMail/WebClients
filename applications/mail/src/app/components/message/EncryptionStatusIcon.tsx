@@ -1,6 +1,6 @@
 import React from 'react';
 import { Href, Icon, Loader, Tooltip } from 'react-components';
-import { getSendIconHref, getStatusIconName } from '../../helpers/send/icon';
+import { getSendIconHref, getStatusIconName } from '../../helpers/message/icon';
 import { StatusIcon } from '../../models/crypto';
 
 interface Props extends Partial<StatusIcon> {

@@ -1,6 +1,5 @@
 import mimemessage from 'mimemessage';
-import { arrayToBinaryString } from 'pmcrypto';
-import { DecryptResult } from 'openpgp';
+import { arrayToBinaryString, DecryptResultPmcrypto } from 'pmcrypto';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { Api } from 'proton-shared/lib/interfaces';
 
@@ -16,7 +15,7 @@ import { getPlainText, getDocumentContent } from '../message/messageContent';
 
 interface AttachmentData {
     attachment: Attachment;
-    data: DecryptResult;
+    data: DecryptResultPmcrypto;
 }
 
 /**

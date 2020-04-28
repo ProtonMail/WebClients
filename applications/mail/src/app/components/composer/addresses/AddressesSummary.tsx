@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { c } from 'ttag';
 import { Label, LinkButton, classnames } from 'react-components';
-import { MapSendInfo, StatusIconFills } from '../../../models/crypto';
+import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
 
 import { MessageExtended } from '../../../models/message';
 import { Recipient, recipientTypes } from '../../../models/address';
@@ -45,7 +45,7 @@ const AddressesSummary = ({ message: { data = {} }, mapSendInfo, contacts, conta
                                     const Address = recipientOrGroup.recipient?.Address as string;
                                     const valid = validateAddress(Address);
                                     const icon = mapSendInfo[Address]?.sendIcon;
-                                    const cannotSend = !valid || icon?.fill === StatusIconFills.FAIL;
+                                    const cannotSend = !valid || icon?.fill === STATUS_ICONS_FILLS.FAIL;
                                     return (
                                         <span
                                             key={i}

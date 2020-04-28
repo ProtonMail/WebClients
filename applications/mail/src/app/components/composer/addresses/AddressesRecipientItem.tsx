@@ -7,10 +7,10 @@ import { omit } from 'proton-shared/lib/helpers/object';
 import { noop } from 'proton-shared/lib/helpers/function';
 import getSendPreferences from '../../../helpers/message/getSendPreferences';
 import { validateAddress, recipientToInput, inputToRecipient } from '../../../helpers/addresses';
-import { getSendStatusIcon } from '../../../helpers/send/icon';
+import { getSendStatusIcon } from '../../../helpers/message/icon';
 
 import { Recipient } from '../../../models/address';
-import { StatusIconFills } from '../../../models/crypto';
+import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import { MessageSendInfo } from './AddressesInput';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
@@ -37,7 +37,7 @@ const validate = (emailAddress?: string | null): boolean => {
 const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, onRemove, ...rest }: Props) => {
     const emailAddress = recipient.Address;
     const icon = messageSendInfo?.mapSendInfo[emailAddress]?.sendIcon;
-    const cannotSend = icon?.fill === StatusIconFills.FAIL;
+    const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL;
 
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const { createModal } = useModals();
@@ -80,7 +80,7 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
                         {
                             contactID: recipient.ContactID,
                             emailAddress,
-                            bePinnedPublicKey: encryptionPreferences.publicKey as OpenPGPKey
+                            bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey
                         }
                     ];
                     createModal(

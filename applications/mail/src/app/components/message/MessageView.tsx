@@ -3,8 +3,7 @@ import { Loader, classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import { hasAttachments, isDraft, isSent } from '../../helpers/message/messages';
-import { getMapEmailHeaders, getSentStatusIcon } from '../../helpers/send/icon';
-import { MapStatusIcons, StatusIcon } from '../../models/crypto';
+import { getSentStatusIconInfo, getReceivedStatusIcon, MessageViewIcons } from '../../helpers/message/icon';
 import MessageBody from './MessageBody';
 import HeaderCollapsed from './header/HeaderCollapsed';
 import HeaderExpanded from './header/HeaderExpanded';
@@ -17,14 +16,10 @@ import {
     useLoadMessage,
     useLoadRemoteImages,
     useLoadEmbeddedImages,
-    useMarkAsRead
+    useMarkAsRead,
+    useTrustSigningPublicKey
 } from '../../hooks/useMessageReadActions';
 import { isUnread } from '../../helpers/elements';
-
-export interface MessageViewIcons {
-    globalIcon?: StatusIcon;
-    mapStatusIcon?: MapStatusIcons;
-}
 
 interface Props {
     labelID: string;
@@ -60,6 +55,7 @@ const MessageView = ({
     const { message, addAction } = useMessage(localID);
     const load = useLoadMessage(inputMessage);
     const initialize = useInitializeMessage(localID);
+    const trustSigningPublicKey = useTrustSigningPublicKey(localID);
     const loadRemoteImages = useLoadRemoteImages(localID);
     const loadEmbeddedImages = useLoadEmbeddedImages(localID);
     const markAsRead = useMarkAsRead(localID);
@@ -70,21 +66,12 @@ const MessageView = ({
     const unread = isUnread(message.data);
 
     const messageViewIcons = useMemo<MessageViewIcons | undefined>(() => {
-        if (!message.data?.ParsedHeaders) {
-            return;
-        }
         if (sent) {
-            const mapAuthentication = getMapEmailHeaders(message.data.ParsedHeaders['X-Pm-Recipient-Authentication']);
-            const mapEncryption = getMapEmailHeaders(message.data.ParsedHeaders['X-Pm-Recipient-Encryption']);
-            const globalIcon = getSentStatusIcon({ mapAuthentication, mapEncryption });
-            const mapStatusIcon = Object.keys(mapAuthentication).reduce<MapStatusIcons>((acc, emailAddress) => {
-                acc[emailAddress] = getSentStatusIcon({ mapAuthentication, mapEncryption, emailAddress });
-                return acc;
-            }, {});
-            return { globalIcon, mapStatusIcon };
+            return getSentStatusIconInfo(message);
         }
-        return;
-    }, [message.data]);
+        // else it's a received message
+        return { globalIcon: getReceivedStatusIcon(message) };
+    }, [message]);
 
     const prepareMessage = async () => {
         if (typeof message?.initialized === 'undefined') {
@@ -116,6 +103,10 @@ const MessageView = ({
         return null;
     }
 
+    const handleTrustSigningPublicKey = async () => {
+        await addAction(trustSigningPublicKey);
+    };
+
     const handleLoadRemoteImages = async () => {
         await addAction(loadRemoteImages);
     };
@@ -143,6 +134,7 @@ const MessageView = ({
                         messageLoaded={bodyLoaded}
                         isSentMessage={sent}
                         sourceMode={sourceMode}
+                        onTrustKey={handleTrustSigningPublicKey}
                         onLoadRemoteImages={handleLoadRemoteImages}
                         onLoadEmbeddedImages={handleLoadEmbeddedImages}
                         labels={labels}

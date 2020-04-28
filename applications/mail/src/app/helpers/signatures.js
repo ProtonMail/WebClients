@@ -6,7 +6,6 @@ import { VERIFICATION_STATUS } from '../constants';
 
 /* @ngInject */
 // function SignatureVerifier(dispatchers, addressesModel, publicKeyStore) {
-const { NOT_VERIFIED, NOT_SIGNED, SIGNED_AND_INVALID, SIGNED_NO_PUB_KEY, SIGNED_AND_VALID } = VERIFICATION_STATUS;
 // const { dispatcher } = dispatchers(['attachmentVerified']);
 
 /**
@@ -41,12 +40,21 @@ const { NOT_VERIFIED, NOT_SIGNED, SIGNED_AND_INVALID, SIGNED_NO_PUB_KEY, SIGNED_
 //     return publicKeyStore.get([email], true).then(({ [email]: list }) => list);
 // };
 
+const { SIGNED_AND_VALID, SIGNED_AND_INVALID, NOT_VERIFIED, NOT_SIGNED, SIGNED_NO_PUB_KEY } = VERIFICATION_STATUS;
+
+export const getVerificationStatus = (verified, pinnedKeys) => {
+    if (verified === SIGNED_AND_INVALID && !pinnedKeys.length) {
+        return SIGNED_NO_PUB_KEY;
+    }
+    return verified;
+};
+
 /**
  * Retrieve the verification status from the cache.
  * @param {String} Attachment.ID
  * @returns {*}
  */
-export const getVerificationStatus = ({ ID = '' }, cache) => {
+export const getVerificationStatusFromCache = ({ ID = '' }, cache) => {
     // Instead of || because VERIFICATION_STATUS can be 0.
     return cache.has(ID) ? cache.get(ID) : NOT_VERIFIED;
 };

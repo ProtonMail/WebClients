@@ -13,7 +13,7 @@ import {
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { unlabelMessages } from 'proton-shared/lib/api/messages';
 import { Label } from 'proton-shared/lib/interfaces/Label';
-
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import { MESSAGE_ACTIONS } from '../../../constants';
@@ -23,7 +23,7 @@ import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
-import { MessageViewIcons } from '../MessageView';
+import { MessageViewIcons } from '../../../helpers/message/icon';
 import HeaderExtra from './HeaderExtra';
 import HeaderRecipientsSimple from './HeaderRecipientsSimple';
 import HeaderRecipientsDetails from './HeaderRecipientsDetails';
@@ -31,7 +31,6 @@ import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
 import HeaderDropdown from './HeaderDropdown';
 import { OnCompose } from '../../../containers/ComposerContainer';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
 import './MessageHeader.scss';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
@@ -56,6 +55,7 @@ interface Props {
     isSentMessage: boolean;
     messageLoaded: boolean;
     sourceMode: boolean;
+    onTrustKey: () => void;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
     onCollapse: () => void;
@@ -72,6 +72,7 @@ const HeaderExpanded = ({
     isSentMessage,
     messageLoaded,
     sourceMode,
+    onTrustKey,
     onLoadRemoteImages,
     onLoadEmbeddedImages,
     mailSettings,
@@ -237,6 +238,7 @@ const HeaderExpanded = ({
             <HeaderExtra
                 message={message}
                 sourceMode={sourceMode}
+                onTrustKey={onTrustKey}
                 onLoadRemoteImages={onLoadRemoteImages}
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
             />

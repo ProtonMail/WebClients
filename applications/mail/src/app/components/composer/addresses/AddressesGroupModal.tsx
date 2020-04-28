@@ -20,9 +20,9 @@ import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryp
 import { ContactEmail, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
 import { contactToInput } from '../../../helpers/addresses';
 import getSendPreferences from '../../../helpers/message/getSendPreferences';
-import { getSendStatusIcon } from '../../../helpers/send/icon';
+import { getSendStatusIcon } from '../../../helpers/message/icon';
 import { RecipientGroup } from '../../../models/address';
-import { StatusIconFills } from '../../../models/crypto';
+import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { MessageSendInfo } from './AddressesInput';
 import AskForKeyPinningModal from './AskForKeyPinningModal';
@@ -109,7 +109,7 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
                 return {
                     contactID,
                     emailAddress,
-                    bePinnedPublicKey: encryptionPreferences.publicKey as OpenPGPKey
+                    bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey
                 };
             }
             return;
@@ -160,7 +160,7 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
                     const id = `${uid}-${contact.ID}`;
                     const icon = messageSendInfo?.mapSendInfo[contact.Email]?.sendIcon;
                     const loading = mapLoading[contact.Email];
-                    const cannotSend = icon?.fill === StatusIconFills.FAIL;
+                    const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL;
                     return (
                         <li key={contact.ID} className="mb0-5">
                             <Checkbox id={id} checked={isChecked(contact)} onChange={handleChange(contact)} />

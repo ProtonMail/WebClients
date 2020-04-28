@@ -1,17 +1,20 @@
 import { useCallback } from 'react';
-import { useApi, useEventManager, useMailSettings } from 'react-components';
-
-import { MessageExtended, Message } from '../models/message';
-import { loadMessage, markAsRead } from '../helpers/message/messageRead';
-import { useMessageKeys } from './useMessageKeys';
-import { decryptMessage } from '../helpers/message/messageDecrypt';
+import { useApi, useEventManager, useGetEncryptionPreferences, useMailSettings } from 'react-components';
+import { getMessage } from 'proton-shared/lib/api/messages';
+import { getMatchingKey } from 'pmcrypto/lib/key/utils';
+import { VERIFICATION_STATUS } from '../constants';
 import { useAttachmentCache } from '../containers/AttachmentProvider';
-import { useBase64Cache } from './useBase64Cache';
+import { updateMessageCache, useMessageCache } from '../containers/MessageProvider';
+import { decryptMessage } from '../helpers/message/messageDecrypt';
+import { loadMessage, markAsRead } from '../helpers/message/messageRead';
+import { getVerificationStatus } from '../helpers/signatures';
 import { transformEmbedded } from '../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../helpers/transforms/transformRemote';
-import { useMessageCache, updateMessageCache } from '../containers/MessageProvider';
-import { getMessage } from 'proton-shared/lib/api/messages';
 import { prepareMailDocument } from '../helpers/transforms/transforms';
+
+import { Message, MessageExtended } from '../models/message';
+import { useBase64Cache } from './useBase64Cache';
+import { useMessageKeys } from './useMessageKeys';
 
 export const useLoadMessage = (inputMessage: Message) => {
     const api = useApi();
@@ -51,6 +54,7 @@ export const useInitializeMessage = (localID: string) => {
     const { call } = useEventManager();
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
+    const getEncryptionPreferences = useGetEncryptionPreferences();
 
     return useCallback(async () => {
         // Cache entry will be (at least) initialized by the queue system
@@ -64,20 +68,31 @@ export const useInitializeMessage = (localID: string) => {
         updateMessageCache(messageCache, localID, { initialized: false });
 
         const message = await loadMessage(messageFromCache, api);
+        const { apiKeys, pinnedKeys, isContactSignatureVerified } = await getEncryptionPreferences(
+            message.data.Sender?.Address
+        );
+        const allSenderPublicKeys = [...pinnedKeys, ...apiKeys];
 
         const { publicKeys, privateKeys } = await getKeys(message);
 
-        const { decryptedBody, Attachments, verified, encryptedSubject } = await decryptMessage(
-            message.data,
-            publicKeys,
-            privateKeys,
-            attachmentsCache
-        );
+        // To verify the signature of the message, we just need to take into account pinned keys
+        // API keys could always be forged by the server to verify the signature
+        const {
+            decryptedBody,
+            Attachments,
+            verified,
+            errors: verificationErrors,
+            encryptedSubject,
+            signature
+        } = await decryptMessage(message.data, pinnedKeys, privateKeys, attachmentsCache);
+        const signed = verified !== VERIFICATION_STATUS.NOT_SIGNED;
+        const signingPublicKey = signed && signature ? await getMatchingKey(signature, allSenderPublicKeys) : undefined;
+        const verificationStatus = getVerificationStatus(verified, pinnedKeys);
 
         await markAsRead(message, api, call);
 
         const { document, showRemoteImages, showEmbeddedImages, embeddeds } = await prepareMailDocument(
-            { ...message, decryptedBody, publicKeys, privateKeys },
+            { ...message, decryptedBody, publicKeys: pinnedKeys, privateKeys },
             base64Cache,
             attachmentsCache,
             api,
@@ -89,15 +104,29 @@ export const useInitializeMessage = (localID: string) => {
         updateMessageCache(messageCache, localID, {
             data,
             document,
+            senderPinnedKeys: pinnedKeys,
+            signingPublicKey,
+            senderVerified: isContactSignatureVerified,
             publicKeys,
             privateKeys,
             decryptedBody,
-            verified,
+            verificationStatus,
+            verificationErrors,
             encryptedSubject,
             showEmbeddedImages,
             showRemoteImages,
             embeddeds,
             initialized: true
+        });
+    }, [localID]);
+};
+
+export const useTrustSigningPublicKey = (localID: string) => {
+    const messageCache = useMessageCache();
+
+    return useCallback(async () => {
+        updateMessageCache(messageCache, localID, {
+            verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID
         });
     }, [localID]);
 };
