@@ -93,7 +93,7 @@ const handleSaveEvent = async ({
 
     const oldEventData = getEditEventData({
         Event: oldEvent,
-        eventResult: readEvent(oldEvent.CalendarID, oldEvent.ID)[0],
+        eventResult: readEvent(oldEvent.CalendarID, oldEvent.ID)?.[0],
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEvent.Author)
     });
 

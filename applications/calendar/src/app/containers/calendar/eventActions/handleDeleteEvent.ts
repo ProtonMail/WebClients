@@ -14,7 +14,6 @@ import { getOriginalEvent } from './recurringHelper';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { EventPersonalMap } from '../../../interfaces/EventPersonalMap';
-import { c } from 'ttag';
 
 interface Arguments {
     targetEvent: any;
@@ -57,7 +56,7 @@ const handleDeleteEvent = async ({
 
     const oldEventData = getEditEventData({
         Event: oldEvent,
-        eventResult: readEvent(oldCalendar.ID, oldEvent.ID)[0],
+        eventResult: readEvent(oldEvent.CalendarID, oldEvent.ID)?.[0],
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEvent.Author)
     });
 
@@ -77,19 +76,12 @@ const handleDeleteEvent = async ({
     const recurrences = await getAllEventsByUID(api, oldEventData.uid);
 
     const originalEvent = getOriginalEvent(recurrences);
-    const originalEventResult = originalEvent ? await getDecryptedEvent(originalEvent).catch(noop) : undefined;
-    if (!originalEvent || !originalEventResult?.[0]) {
-        createNotification({
-            text: c('Recurring update').t`Cannot delete a recurring event without the original event`,
-            type: 'error'
-        });
-        throw new Error('Original event not found');
-    }
-
     let originalEventData = oldEventData;
 
     // If this is a single edit, get the original event data
-    if (originalEvent.ID !== oldEvent.ID) {
+    if (originalEvent && originalEvent.ID !== oldEvent.ID) {
+        const originalEventResult = await getDecryptedEvent(originalEvent).catch(noop);
+
         originalEventData = getEditEventData({
             Event: originalEvent,
             eventResult: originalEventResult,
@@ -106,6 +98,7 @@ const handleDeleteEvent = async ({
         oldEventData,
 
         canOnlyDeleteAll:
+            !originalEventData.veventComponent ||
             !oldEventData.veventComponent ||
             !!getIsCalendarDisabled(oldCalendar) ||
             actualRecurrence.isSingleOccurrence,

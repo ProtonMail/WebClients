@@ -7,8 +7,8 @@ import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { getDeleteRecurringEventActions } from './getDeleteRecurringEventActions';
 import getSyncMultipleEventsPayload from '../getSyncMultipleEventsPayload';
 import { getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
-import { EventOldData } from '../../../interfaces/EventData';
 import { getHasFutureOption } from './recurringHelper';
+import { EventOldData } from '../../../interfaces/EventData';
 
 interface Arguments {
     originalEventData: EventOldData;
@@ -40,11 +40,14 @@ const handleDeleteRecurringEvent = async ({
     getAddressKeys,
     getCalendarKeys
 }: Arguments) => {
-    const isFutureAllowed = getHasFutureOption(originalEventData.veventComponent, recurrence);
-
-    const deleteTypes = canOnlyDeleteAll
-        ? [RECURRING_TYPES.ALL]
-        : [RECURRING_TYPES.SINGLE, isFutureAllowed && RECURRING_TYPES.FUTURE, RECURRING_TYPES.ALL].filter(isTruthy);
+    const deleteTypes =
+        canOnlyDeleteAll || !originalEventData.veventComponent
+            ? [RECURRING_TYPES.ALL]
+            : [
+                  RECURRING_TYPES.SINGLE,
+                  getHasFutureOption(originalEventData.veventComponent, recurrence) && RECURRING_TYPES.FUTURE,
+                  RECURRING_TYPES.ALL
+              ].filter(isTruthy);
 
     const deleteType = await onDeleteConfirmation({
         type: DELETE_CONFIRMATION_TYPES.RECURRING,

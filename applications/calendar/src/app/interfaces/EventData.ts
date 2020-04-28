@@ -15,5 +15,5 @@ export interface EventOldData extends EventTargetData {
     Event: CalendarEvent;
     uid: string;
     mainVeventComponent: VcalVeventComponent;
-    veventComponent: VcalVeventComponent;
+    veventComponent?: VcalVeventComponent;
 }

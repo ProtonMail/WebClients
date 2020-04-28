@@ -43,6 +43,10 @@ const getSaveRecurringEventActions = ({
 }: SaveRecurringArguments) => {
     const isSingleEdit = oldEvent.ID !== originalEvent.ID;
 
+    if (!originalVeventComponent) {
+        throw new Error('Original component neeed');
+    }
+
     if (type === RECURRING_TYPES.SINGLE) {
         if (isSingleEdit) {
             const updateOperation = {

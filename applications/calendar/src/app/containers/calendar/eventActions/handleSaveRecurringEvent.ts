@@ -48,9 +48,9 @@ const handleSaveRecurringEvent = async ({
     getCalendarKeys,
     calendars
 }: Arguments) => {
-    const isFutureAllowed = getHasFutureOption(originalEventData.veventComponent, recurrence);
+    const isFutureAllowed = getHasFutureOption(originalEventData.mainVeventComponent, recurrence);
     const updateAllPossibilities = getUpdateAllPossibilities(
-        oldEventData.veventComponent,
+        oldEventData.mainVeventComponent,
         newEventData.veventComponent,
         recurrence
     );
