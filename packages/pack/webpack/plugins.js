@@ -69,8 +69,6 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
         isProduction
     );
 
-    console.log('writeSRI', writeSRI);
-
     return [
         ...(isProduction
             ? [new webpack.HashedModuleIdsPlugin()]
