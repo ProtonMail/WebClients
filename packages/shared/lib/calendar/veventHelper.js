@@ -13,19 +13,19 @@ export const SHARED_SIGNED_FIELDS = [
     'recurrence-id',
     'rrule',
     'exdate',
-    'transp',
+    'sequence',
     'vtimezone'
 ];
 export const SHARED_ENCRYPTED_FIELDS = ['uid', 'dtstamp', 'created', 'description', 'summary', 'location'];
 
-export const CALENDAR_SIGNED_FIELDS = ['uid', 'dtstamp'];
+export const CALENDAR_SIGNED_FIELDS = ['uid', 'dtstamp', 'status', 'transp'];
 export const CALENDAR_ENCRYPTED_FIELDS = ['uid', 'dtstamp', 'comment'];
 
 export const USER_SIGNED_FIELDS = ['uid', 'dtstamp'];
 export const USER_ENCRYPTED_FIELDS = [];
 
 export const ATTENDEES_SIGNED_FIELDS = [];
-export const ATTENDEES_ENCRYPTED_FIELDS = ['uid', 'attendee'];
+export const ATTENDEES_ENCRYPTED_FIELDS = ['uid', 'attendee', 'organizer'];
 
 const REQUIRED_SET = new Set(['uid', 'dtstamp']);
 

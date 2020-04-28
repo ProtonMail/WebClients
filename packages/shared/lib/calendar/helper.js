@@ -61,10 +61,8 @@ export const hasMoreThan = (set, properties = {}) => {
 };
 
 export const wrap = (res) => {
-    return `BEGIN:VCALENDAR
-VERSION:2.0
-${res}
-END:VCALENDAR`;
+    // Wrap in CRLF according to the rfc
+    return `BEGIN:VCALENDAR\r\nVERSION:2.0\r\n${res}\r\nEND:VCALENDAR`;
 };
 
 export const unwrap = (res) => {

@@ -3,6 +3,7 @@ import { createCalendarEvent } from '../../lib/calendar/serialize';
 import { readCalendarEvent, readPersonalPart, readSessionKeys } from '../../lib/calendar/deserialize';
 import { DecryptableKey, DecryptableKey2 } from '../keys/keys.data';
 import { unwrap, wrap } from '../../lib/calendar/helper';
+import { toCRLF } from './veventHelper.spec';
 
 const veventComponent = {
     component: 'vevent',
@@ -146,10 +147,12 @@ describe('calendar encryption', () => {
 
 describe('wrapping', () => {
     it('should add wrapping', () => {
-        expect(wrap('asd')).toEqual(`BEGIN:VCALENDAR
+        expect(wrap('asd')).toEqual(
+            toCRLF(`BEGIN:VCALENDAR
 VERSION:2.0
 asd
-END:VCALENDAR`);
+END:VCALENDAR`)
+        );
     });
     it('should remove wrapping', () => {
         expect(unwrap(wrap('BEGIN:VEVENT asd END:VEVENT'))).toEqual('BEGIN:VEVENT asd END:VEVENT');
