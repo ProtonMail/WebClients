@@ -284,4 +284,20 @@ END:VEVENT
             '2020-02-06T03:00:00.000Z - 2020-02-06T04:00:00.000Z'
         ]);
     });
+
+    it('should fill occurrences with an end date in another timezone', () => {
+        const component = parse(`
+BEGIN:VEVENT
+RRULE:FREQ=DAILY;COUNT=2;INTERVAL=60
+DTSTART;TZID=Europe/Zurich:20200901T080000
+DTEND:20200901T060000Z
+END:VEVENT
+`);
+        const cache = {};
+        const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2021, 4, 1), cache);
+        expect(stringifyResultFull(result)).toEqual([
+            '2020-09-01T08:00:00.000Z - 2020-09-01T06:00:00.000Z | 2020-09-01T06:00:00.000Z - 2020-09-01T06:00:00.000Z | 1',
+            '2020-10-31T08:00:00.000Z - 2020-10-31T07:00:00.000Z | 2020-10-31T07:00:00.000Z - 2020-10-31T07:00:00.000Z | 2'
+        ]);
+    });
 });

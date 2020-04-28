@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import { getInternalDateTimeValue, internalValueToIcalValue } from './vcal';
-import { getPropertyTzid, isIcalAllDay, propertyToUTCDate } from './vcalConverter';
+import { getDateTimeProperty, getPropertyTzid, isIcalAllDay, propertyToUTCDate } from './vcalConverter';
 import { addDays, addMilliseconds, differenceInCalendarDays, max, MILLISECONDS_IN_MINUTE } from '../date-fns-utc';
-import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '../date/timezone';
+import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
 import { createExdateMap } from './exdate';
 
 const YEAR_IN_MS = Date.UTC(1971, 0, 1);
@@ -44,33 +44,33 @@ const fillOccurrencesBetween = ({
     const result = [];
     let next;
 
+    const startTzid = getPropertyTzid(originalDtstart);
+    const endTzid = getPropertyTzid(originalDtend);
+
     // eslint-disable-next-line no-cond-assign
     while ((next = iterator.next())) {
         const localStart = toUTCDate(getInternalDateTimeValue(next));
         if (exdateMap[+localStart]) {
             continue;
         }
-        const localEnd = isAllDay ? addDays(localStart, eventDuration) : addMilliseconds(localStart, eventDuration);
 
-        const utcStart = isAllDay
-            ? localStart
-            : propertyToUTCDate({
-                  value: {
-                      ...originalDtstart.value,
-                      ...fromUTCDate(localStart)
-                  },
-                  parameters: originalDtstart.parameters
-              });
+        let localEnd;
+        let utcStart;
+        let utcEnd;
 
-        const utcEnd = isAllDay
-            ? localEnd
-            : propertyToUTCDate({
-                  value: {
-                      ...originalDtend.value,
-                      ...fromUTCDate(localEnd)
-                  },
-                  parameters: originalDtend.parameters
-              });
+        if (isAllDay) {
+            localEnd = addDays(localStart, eventDuration);
+            utcStart = localStart;
+            utcEnd = localEnd;
+        } else {
+            const endInStartTimezone = addMilliseconds(localStart, eventDuration);
+
+            const endInUTC = convertZonedDateTimeToUTC(fromUTCDate(endInStartTimezone), startTzid);
+            localEnd = toUTCDate(convertUTCDateTimeToZone(endInUTC, endTzid));
+
+            utcStart = toUTCDate(convertZonedDateTimeToUTC(fromUTCDate(localStart), startTzid));
+            utcEnd = toUTCDate(endInUTC);
+        }
 
         if (utcStart > end) {
             break;
@@ -133,11 +133,10 @@ const getOccurrenceSetup = (component) => {
 
         eventDuration = differenceInCalendarDays(utcEnd, utcStart);
     } else {
-        const localStart = toUTCDate(internalDtstart.value);
-        const localEnd = toUTCDate(internalDtEnd.value);
-        const safeEnd = max(localStart, localEnd);
+        const utcStart = propertyToUTCDate(internalDtstart);
+        const utcEnd = propertyToUTCDate(internalDtEnd);
 
-        eventDuration = +safeEnd - +localStart;
+        eventDuration = max(+utcEnd - +utcStart, 0);
     }
 
     return {
