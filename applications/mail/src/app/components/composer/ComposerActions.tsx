@@ -5,15 +5,19 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
-import { getDate } from '../../helpers/elements';
+
 import AttachmentsButton from './attachments/AttachmentsButton';
 import { hasFlag, getAttachments } from '../../helpers/message/messages';
 import { MESSAGE_FLAGS } from '../../constants';
 
 interface Props {
     message: MessageExtended;
+    date: Date;
     lock: boolean;
-    activity: string;
+    sending: boolean;
+    closing: boolean;
+    syncInProgress: boolean;
+    syncStatus: string;
     onAddAttachments: (files: File[]) => void;
     onPassword: () => void;
     onExpiration: () => void;
@@ -25,8 +29,12 @@ interface Props {
 
 const ComposerActions = ({
     message,
+    date,
     lock,
-    activity,
+    sending,
+    closing,
+    syncInProgress,
+    syncStatus,
     onAddAttachments,
     onPassword,
     onExpiration,
@@ -45,21 +53,29 @@ const ComposerActions = ({
         );
     };
 
-    let dateMessage = '';
-
-    if (lock) {
-        dateMessage = c('Action').t`Saving`;
-    } else {
-        const date = getDate(message.data);
-        if (date.getTime() !== 0) {
-            const dateString = formatSimpleDate(date);
-            dateMessage = c('Info').t`Saved at ${dateString}`;
-        }
-    }
-
     const isAttachments = getAttachments(message.data).length > 0;
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && message.data?.Password;
     const isExpiration = !!message.expiresIn;
+
+    let dateMessage = '';
+    if (syncInProgress) {
+        dateMessage = c('Action').t`Saving`;
+    } else {
+        if (date.getTime() !== 0) {
+            const dateString = formatSimpleDate(date);
+            dateMessage = c('Info').t`Saved at ${dateString}`;
+        } else {
+            dateMessage = c('Action').t`Not saved`;
+        }
+    }
+
+    let buttonSendLabel = c('Action').t`Send`;
+    if (sending) {
+        buttonSendLabel = syncStatus;
+    }
+    if (closing) {
+        buttonSendLabel = c('Action').t`Saving`;
+    }
 
     return (
         <footer
@@ -109,12 +125,12 @@ const ComposerActions = ({
                     className="mr0-5 inline-flex flex-items-center pm-button--for-icon"
                     icon="save"
                     disabled={lock}
-                    onClick={onSave}
+                    onClick={() => onSave()}
                 >
                     <span className="sr-only">{c('Action').t`Save`}</span>
                 </Button>
                 <Button className="pm-button-blue composer-send-button" loading={lock} onClick={onSend}>
-                    <span className="pl1 pr1">{lock ? activity : c('Action').t`Send`}</span>
+                    <span className="pl1 pr1">{buttonSendLabel}</span>
                 </Button>
             </div>
         </footer>

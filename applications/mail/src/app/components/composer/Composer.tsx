@@ -31,6 +31,7 @@ import { useCreateDraft, useSaveDraft, useDeleteDraft } from '../../hooks/useMes
 import { useSendMessage } from '../../hooks/useSendMessage';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { useAttachments } from '../../hooks/useAttachments';
+import { getDate } from '../../helpers/elements';
 
 enum ComposerInnerModal {
     None,
@@ -98,6 +99,10 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
     // Some behavior has to change, example, stop auto saving
     const [sending, setSending] = useState(false);
 
+    // Indicates that the composer is saving the message
+    // Not background auto-save, only user manually using the save button
+    const [manualSaving, setManualSaving] = useState(false);
+
     // Indicates that the composer is open but the edited message is not yet ready
     // Needed to prevent edition while data is not ready
     const [editorReady, setEditorReady] = useState(false);
@@ -126,8 +131,10 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
     const sendMessage = useSendMessage();
     const deleteDraft = useDeleteDraft(syncedMessage);
 
-    const syncLock = syncedMessage.actionStatus !== undefined;
-    const syncActivity = syncedMessage.actionStatus || '';
+    // Computed composer status
+    const syncInProgress = syncedMessage.actionStatus !== undefined;
+    const syncStatus = syncedMessage.actionStatus || '';
+    const actionBarLocked = !editorReady || manualSaving || sending || closing;
 
     // Manage focus from the container yet keeping logic in each component
     const addressesBlurRef = useRef<() => void>(noop);
@@ -142,12 +149,8 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
     const onClose = useHandler(inputOnClose);
 
     useEffect(() => {
-        if (!syncLock && !syncedMessage.data?.ID && isNewDraft(syncedMessage.localID)) {
-            addAction(() => createDraft(syncedMessage));
-        }
-
         if (
-            !syncLock &&
+            !syncInProgress &&
             (syncedMessage.data?.ID || (!syncedMessage.data?.ID && !isNewDraft(syncedMessage.localID))) &&
             syncedMessage.initialized === undefined
         ) {
@@ -162,7 +165,7 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
                 document: syncedMessage.document
             });
         }
-    }, [syncLock, syncedMessage.document, syncedMessage.data?.ID]);
+    }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID]);
 
     useEffect(() => {
         if (!maximized && height - COMPOSER_VERTICAL_GUTTER - HEADER_HEIGHT < COMPOSER_HEIGHT - COMPOSER_SWITCH_MODE) {
@@ -188,14 +191,19 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
         setOpening(false);
     }, [editorReady]);
 
-    const autoSave = useHandler(
-        (message: MessageExtended) => {
-            if (!sending) {
-                addAction(() => saveDraft(message));
-            }
-        },
-        { debounce: 2000 }
-    );
+    const actualSave = (message: MessageExtended) => {
+        if (message.data?.ID) {
+            return addAction(() => saveDraft(message));
+        }
+        return addAction(() => createDraft(message));
+    };
+
+    const autoSave = useHandler(actualSave, { debounce: 2000 });
+
+    // Initial save action intended to create the draft on the server
+    useEffect(() => {
+        autoSave(syncedMessage);
+    }, []);
 
     const handleChange: MessageChange = (message) => {
         if (message instanceof Function) {
@@ -238,10 +246,6 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
         handleRemoveUpload
     } = useAttachments(modelMessage, handleChange, editorActionsRef);
 
-    const save = async (messageToSave = modelMessage) => {
-        await addAction(() => saveDraft(messageToSave));
-        createNotification({ text: c('Info').t`Message saved` });
-    };
     const handlePassword = () => {
         setInnerModal(ComposerInnerModal.Password);
     };
@@ -251,21 +255,41 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
     const handleCloseInnerModal = () => {
         setInnerModal(ComposerInnerModal.None);
     };
-    const handleSave = async () => {
-        await save();
+
+    const handleManualSave = async (messageToSave = modelMessage) => {
+        setManualSaving(true);
+        autoSave.abort?.();
+        try {
+            await actualSave(messageToSave);
+            createNotification({ text: c('Info').t`Message saved` });
+        } finally {
+            setManualSaving(false);
+        }
     };
     const handleSend = async () => {
         setSending(true);
-        await addAction(() => sendMessage(modelMessage as MessageExtended & Required<Pick<MessageExtended, 'data'>>));
-        createNotification({ text: c('Success').t`Message sent` });
-        onClose();
+        autoSave.abort?.();
+        try {
+            await addAction(() =>
+                sendMessage(modelMessage as MessageExtended & Required<Pick<MessageExtended, 'data'>>)
+            );
+            createNotification({ text: c('Success').t`Message sent` });
+            onClose();
+        } catch {
+            setSending(false);
+        }
     };
     const handleDelete = async () => {
         setClosing(true);
-        await addAction(deleteDraft);
-        createNotification({ text: c('Info').t`Message discarded` });
-        onClose();
+        autoSave.abort?.();
+        try {
+            await addAction(deleteDraft);
+            createNotification({ text: c('Info').t`Message discarded` });
+        } finally {
+            onClose();
+        }
     };
+
     const handleClick = async () => {
         if (minimized) {
             toggleMinimized();
@@ -274,17 +298,16 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
     };
     const handleClose = async () => {
         setClosing(true);
-        await save();
-        onClose();
+        try {
+            await handleManualSave();
+        } finally {
+            onClose();
+        }
     };
     const handleContentFocus = () => {
         addressesBlurRef.current();
         onFocus(); // Events on the main div will not fire because/ the editor is in an iframe
     };
-
-    if (closing) {
-        return null;
-    }
 
     const style = computeStyle(inputStyle, minimized, maximized, width, height);
 
@@ -362,12 +385,16 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
                         />
                         <ComposerActions
                             message={modelMessage}
-                            lock={syncLock || !editorReady}
-                            activity={syncActivity}
+                            date={getDate(syncedMessage.data)}
+                            lock={actionBarLocked}
+                            sending={sending}
+                            closing={closing}
+                            syncInProgress={syncInProgress}
+                            syncStatus={syncStatus}
                             onAddAttachments={handleAddAttachmentsStart}
                             onExpiration={handleExpiration}
                             onPassword={handlePassword}
-                            onSave={handleSave}
+                            onSave={handleManualSave}
                             onSend={handleSend}
                             onDelete={handleDelete}
                             addressesBlurRef={addressesBlurRef}

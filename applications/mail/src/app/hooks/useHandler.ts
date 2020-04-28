@@ -4,11 +4,13 @@ import { debounce } from 'proton-shared/lib/helpers/function';
 
 export type Handler = (...args: any[]) => void;
 
+export type Abortable = { abort?: () => void };
+
 /**
  * Create a stable reference of handler
  * But will always run the updated version of the handler in argument
  */
-export const useHandler = <T extends Handler>(handler: T, options: { debounce?: number } = {}): T => {
+export const useHandler = <T extends Handler>(handler: T, options: { debounce?: number } = {}): T & Abortable => {
     const handlerRef = useRef(handler);
 
     useEffect(() => {
@@ -23,9 +25,9 @@ export const useHandler = <T extends Handler>(handler: T, options: { debounce?: 
         }
 
         return handler;
-    }, []);
+    }, []) as T & Abortable;
 
-    return actualHandler as T;
+    return actualHandler;
 };
 
 /**

@@ -33,8 +33,15 @@ export const useMessage: UseMessage = (localID: string) => {
     }, [localID, cache]); // The hook can be re-used for a different message
 
     const addAction = <T>(action: MessageAction<T>) => {
-        return new Promise<T>((resolve) => {
-            const wrapper = async () => resolve(await action());
+        return new Promise<T>((resolve, reject) => {
+            const wrapper = async () => {
+                try {
+                    resolve(await action());
+                } catch (error) {
+                    reject(error);
+                }
+            };
+
             const messageFromCache = cache.get(localID) as MessageExtended;
             const actionQueue = [...(messageFromCache?.actionQueue || []), wrapper];
             cache.set(localID, { ...messageFromCache, actionQueue });
