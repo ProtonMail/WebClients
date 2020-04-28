@@ -29,6 +29,12 @@ td[aria-busy="true"] {
   }
 }
 
+svg[aria-busy="true"] {
+	& > * {
+		visibility: hidden;
+	}
+}
+
 .progressive[aria-busy="true"] {
   position: relative;
   background-image: none;
