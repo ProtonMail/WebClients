@@ -37,7 +37,8 @@
 - hotfixed `pm-button--currentColor` with `pm-button--link`
 - fix em width helper
 - fix labels max-width
-
+- fixed contrast colour for email in dark mode (added `--bgcolor-unread-item-column-list` CSS custom property)
+- fixed loading state for SVG icons
 
 # [1.8.2] - 2019-03-19
 
