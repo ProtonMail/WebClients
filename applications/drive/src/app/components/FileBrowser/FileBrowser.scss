@@ -24,6 +24,7 @@ $checkbox-cell-width: calc(#{em(32)} + 1.6rem);
 
     td,
     th {
+        position: relative;
         border-bottom: 1px solid $pm-global-border;
         &:first-of-type {
             padding-left: em(16);

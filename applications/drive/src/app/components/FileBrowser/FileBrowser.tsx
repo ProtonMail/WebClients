@@ -52,9 +52,10 @@ const FileBrowser = ({
                 <thead>
                     <tr>
                         <th>
-                            <div key="select-all" onClick={(e) => e.stopPropagation()}>
+                            <div key="select-all" className="flex" onClick={(e) => e.stopPropagation()}>
                                 <Checkbox
                                     readOnly
+                                    className="increase-surface-click"
                                     disabled={!contents.length}
                                     checked={allSelected}
                                     onChange={onToggleAllSelected}

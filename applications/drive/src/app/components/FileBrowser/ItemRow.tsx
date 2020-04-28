@@ -53,8 +53,17 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
     const isFolder = item.Type === LinkType.FOLDER;
     const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
     const cells = [
-        <div key="select" onClick={(e) => e.stopPropagation()} onTouchStart={(e) => e.stopPropagation()}>
-            <Checkbox checked={isSelected} onChange={() => onToggleSelect(item.LinkID)} />
+        <div
+            key="select"
+            className="flex"
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={(e) => e.stopPropagation()}
+        >
+            <Checkbox
+                className="increase-surface-click"
+                checked={isSelected}
+                onChange={() => onToggleSelect(item.LinkID)}
+            />
         </div>,
         <div key="filename" className="flex flex-items-center flex-nowrap">
             <MimeIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MimeType} />
