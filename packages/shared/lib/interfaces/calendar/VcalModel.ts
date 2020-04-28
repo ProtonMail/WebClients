@@ -45,6 +45,12 @@ export interface VcalRrulePropertyValue {
     byday?: VcalByDayValues | VcalByDayValues[];
     bymonthday?: number | number[];
     bymonth?: number | number[];
+    bysecond?: number | number[];
+    byminute?: number | number[];
+    byhour?: number | number[];
+    byyearday?: number | number[];
+    byweekno?: number | number[];
+    wkst?: number;
 }
 
 export interface VcalRruleProperty {
@@ -64,6 +70,10 @@ export interface VcalUidProperty {
     value: string;
 }
 
+export interface VcalGeoProperty {
+    value: number[];
+}
+
 export interface VcalValarmComponent {
     component: 'valarm';
     uid?: VcalUidProperty;
@@ -79,6 +89,19 @@ export interface VcalStringProperty {
     value: string;
 }
 
+export interface VcalStringArrayProperty {
+    value: string[];
+}
+
+export interface VcalNumberProperty {
+    value: number;
+}
+
+export interface VcalStringWithParamsProperty {
+    value: string;
+    params?: { [key: string]: string };
+}
+
 // todo
 export type VcalAttendeeProperty = any;
 
@@ -86,13 +109,65 @@ export interface VcalVeventComponent {
     component: 'vevent';
     components?: VcalValarmComponent[]; // Not complete. Can be other components.
     uid: VcalUidProperty;
-    'recurrence-id'?: VcalDateTimeProperty;
-    location?: VcalStringProperty;
-    description?: VcalStringProperty;
-    summary?: VcalStringProperty;
+    dtstamp: VcalDateTimeProperty;
     dtstart: VcalDateOrDateTimeProperty;
     dtend: VcalDateOrDateTimeProperty;
     rrule?: VcalRruleProperty;
-    attendee?: VcalAttendeeProperty[];
+    'recurrence-id'?: VcalDateTimeProperty;
     exdate?: VcalDateOrDateTimeProperty[];
+    organizer?: VcalStringWithParamsProperty;
+    attendee?: VcalAttendeeProperty[];
+    description?: VcalStringProperty;
+    summary?: VcalStringProperty;
+    location?: VcalStringProperty;
+    geo?: VcalGeoProperty;
+    class?: VcalStringProperty;
+    priority?: VcalNumberProperty;
+    sequence?: VcalNumberProperty;
+    status?: VcalStringProperty;
+    created?: VcalDateTimeProperty;
+    'last-modified'?: VcalDateTimeProperty;
+    transp?: VcalStringProperty;
+    url?: VcalStringProperty;
+    attach?: VcalStringWithParamsProperty[];
+    categories?: VcalStringWithParamsProperty[];
+    comment?: VcalStringWithParamsProperty[];
+    contact?: VcalStringWithParamsProperty[];
+    'request-status'?: VcalStringArrayProperty[];
+    'related-to'?: VcalStringWithParamsProperty[];
+    resources?: VcalStringWithParamsProperty[];
+    rdate?: VcalDateTimeProperty[];
+}
+
+export interface VcalVtodoComponent {
+    component: 'vtodo';
+    components?: VcalValarmComponent[]; // Not complete. Can be other components.
+    uid: VcalUidProperty;
+}
+
+export interface VcalVjournalComponent {
+    component: 'vjournal';
+    components?: VcalValarmComponent[]; // Not complete. Can be other components.
+    uid: VcalUidProperty;
+}
+
+export interface VcalVfreebusyComponent {
+    component: 'vfreebusy';
+    components?: VcalValarmComponent[]; // Not complete. Can be other components.
+    uid: VcalUidProperty;
+}
+
+export type VcalCalendarComponent =
+    | VcalVeventComponent
+    | VcalVtodoComponent
+    | VcalVjournalComponent
+    | VcalVfreebusyComponent;
+
+export interface VcalVcalendar {
+    component: string;
+    components?: VcalCalendarComponent[];
+    prodid: VcalStringProperty;
+    version: VcalStringProperty;
+    calscale?: VcalStringProperty[];
+    method?: VcalStringProperty;
 }
