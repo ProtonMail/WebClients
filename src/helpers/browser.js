@@ -162,3 +162,20 @@ export const loadScript = (path, integrity) => {
         });
     });
 };
+
+/**
+ * Monkey-patch broken atob in IE11 as OpenPGP.js v4.10 requires it
+ * Maybe for more browsers
+ */
+export function patchAtob() {
+    try {
+        window.atob(' ');
+    } catch (e) {
+        /* eslint-disable wrap-iife */
+        window.atob = (function(atob) {
+            return function(string) {
+                return atob(String(string).replace(/[\t\n\f\r ]+/g, ''));
+            };
+        })(window.atob);
+    }
+}
