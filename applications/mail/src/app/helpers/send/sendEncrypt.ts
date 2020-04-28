@@ -247,7 +247,7 @@ export const encryptPackages = async (
     getAddressKeys: (addressID: string) => Promise<CachedKey[]>
 ): Promise<Packages> => {
     const attachmentKeys = await getAttachmentKeys(message);
-    const ownKeys = await getAddressKeys(message.data?.AddressID || ''); // Original code: message.From.ID, don't know of From property
+    const ownKeys = await getAddressKeys(message.data?.AddressID || '');
     const packageList = Object.values(packages) as Package[];
     await Promise.all(packageList.map((pack) => encryptPackage(pack, message, ownKeys, attachmentKeys)));
 

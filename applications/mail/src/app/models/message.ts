@@ -181,4 +181,9 @@ export interface MessageExtended {
      * Embedded images mapped by CID list
      */
     embeddeds?: EmbeddedMap;
+
+    /**
+     * Unsubscribed flag
+     */
+    unsubscribed?: boolean;
 }
