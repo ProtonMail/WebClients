@@ -7,7 +7,9 @@ import { TransferState } from '../../interfaces/transfer';
 
 const isTransferActive = ({ state }: Upload | Download) =>
     state === TransferState.Pending || state === TransferState.Progress || state === TransferState.Initializing;
+const isTransferDone = ({ state }: Upload | Download) => state === TransferState.Done;
 const isTransferFailed = ({ state }: Upload | Download) => state === TransferState.Error;
+const isTransferCanceled = ({ state }: Upload | Download) => state === TransferState.Canceled;
 
 interface Props {
     downloads: Download[];
@@ -18,15 +20,19 @@ interface Props {
 }
 
 const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = false }: Props) => {
+    const transfers = [...downloads, ...uploads];
     const activeUploads = uploads.filter(isTransferActive);
     const activeDownloads = downloads.filter(isTransferActive);
-    const failedTransfers = downloads.filter(isTransferFailed);
+    const doneTransfers = transfers.filter(isTransferDone);
+    const failedTransfers = transfers.filter(isTransferFailed);
+    const canceledTransfers = transfers.filter(isTransferCanceled);
 
     const getHeadingText = () => {
         let headingText = '';
-        const transferCount = uploads.length + downloads.length;
         const activeCount = activeUploads.length + activeDownloads.length;
         const errorCount = failedTransfers.length;
+        const canceledCount = canceledTransfers.length;
+        const doneCount = doneTransfers.length;
 
         if (uploads.length && downloads.length) {
             headingText =
@@ -37,9 +43,9 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
                           activeCount
                       )
                     : c('Info').ngettext(
-                          msgid`Transferred ${transferCount} file`,
-                          `Transferred ${transferCount} files`,
-                          transferCount
+                          msgid`Transferred ${doneCount} file`,
+                          `Transferred ${doneCount} files`,
+                          doneCount
                       );
         } else if (downloads.length) {
             headingText = activeDownloads.length
@@ -48,11 +54,7 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
                       `Downloading ${activeCount} files`,
                       activeCount
                   )
-                : c('Info').ngettext(
-                      msgid`Downloaded ${transferCount} file`,
-                      `Downloaded ${transferCount} files`,
-                      transferCount
-                  );
+                : c('Info').ngettext(msgid`Downloaded ${doneCount} file`, `Downloaded ${doneCount} files`, doneCount);
         } else {
             headingText = activeUploads.length
                 ? c('Info').ngettext(
@@ -60,15 +62,15 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
                       `Uploading ${activeCount} files`,
                       activeCount
                   )
-                : c('Info').ngettext(
-                      msgid`Uploaded ${transferCount} file`,
-                      `Uploaded ${transferCount} files`,
-                      transferCount
-                  );
+                : c('Info').ngettext(msgid`Uploaded ${doneCount} file`, `Uploaded ${doneCount} files`, doneCount);
+        }
+
+        if (canceledCount) {
+            headingText += `, ${c('Info').t`${canceledCount} canceled`}`;
         }
 
         if (errorCount) {
-            headingText += ` (${c('Info').ngettext(msgid`${errorCount} error`, `${errorCount} errors`, errorCount)})`;
+            headingText += `, ${c('Info').ngettext(msgid`${errorCount} error`, `${errorCount} errors`, errorCount)}`;
         }
 
         return headingText;
