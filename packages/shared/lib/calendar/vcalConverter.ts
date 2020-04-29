@@ -4,8 +4,11 @@ import {
     VcalDateOrDateTimeProperty,
     VcalDateProperty,
     VcalDateTimeProperty,
+    VcalDaysKeys,
+    VcalDays,
     VcalVeventComponent
 } from '../interfaces/calendar/VcalModel';
+import { mod } from '../helpers/math';
 
 export const dateToProperty = ({
     year = 1,
@@ -74,4 +77,15 @@ export const propertyToUTCDate = (property: VcalDateOrDateTimeProperty) => {
     }
     // For dates with a timezone, convert the relative date time to UTC time
     return toUTCDate(convertZonedDateTimeToUTC(property.value, property.parameters.tzid));
+};
+
+export const dayToNumericDay = (day: VcalDaysKeys): VcalDays | undefined => {
+    return VcalDays[day];
+};
+
+export const numericDayToDay = (number: VcalDays): VcalDaysKeys => {
+    if (number in VcalDays) {
+        return VcalDays[number] as VcalDaysKeys;
+    }
+    return VcalDays[mod(number, 7)] as VcalDaysKeys;
 };

@@ -1,4 +1,14 @@
-export type VcalByDayValues = 'SU' | 'MO' | 'TU' | 'WE' | 'TH' | 'FR' | 'SA';
+export enum VcalDays {
+    SU,
+    MO,
+    TU,
+    WE,
+    TH,
+    FR,
+    SA
+}
+
+export type VcalDaysKeys = keyof typeof VcalDays;
 
 export interface VcalDateValue {
     year: number;
@@ -42,7 +52,7 @@ export interface VcalRrulePropertyValue {
     interval?: number;
     until?: VcalDateOrDateTimeValue;
     bysetpos?: number;
-    byday?: VcalByDayValues | VcalByDayValues[];
+    byday?: VcalDaysKeys | VcalDaysKeys[];
     bymonthday?: number | number[];
     bymonth?: number | number[];
     bysecond?: number | number[];
@@ -50,7 +60,7 @@ export interface VcalRrulePropertyValue {
     byhour?: number | number[];
     byyearday?: number | number[];
     byweekno?: number | number[];
-    wkst?: number;
+    wkst?: VcalDaysKeys;
 }
 
 export interface VcalRruleProperty {

@@ -1,4 +1,4 @@
-import { clamp, withDecimalPrecision } from '../../lib/helpers/math';
+import { clamp, mod, withDecimalPrecision } from '../../lib/helpers/math';
 
 describe('math', () => {
     describe('withDecimalPrecision', () => {
@@ -29,6 +29,20 @@ describe('math', () => {
             expect(clamp(1, 1, 10)).toBe(1);
             expect(clamp(2, 1, 10)).toBe(2);
             expect(clamp(20, 1, 10)).toBe(10);
+        });
+    });
+
+    describe('mod', () => {
+        it('should return a positive remainder', () => {
+            expect(mod(-4, 3)).toEqual(2);
+            expect(mod(-3, 3)).toEqual(0);
+            expect(mod(-2, 3)).toEqual(1);
+            expect(mod(-1, 3)).toEqual(2);
+            expect(mod(0, 3)).toEqual(0);
+            expect(mod(1, 3)).toEqual(1);
+            expect(mod(2, 3)).toEqual(2);
+            expect(mod(3, 3)).toEqual(0);
+            expect(mod(4, 3)).toEqual(1);
         });
     });
 });

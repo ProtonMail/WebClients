@@ -15,3 +15,6 @@ export const withDecimalPrecision = (x: number, n: number) => {
 };
 
 export const clamp = (value: number, min: number, max: number) => Math.min(Math.max(min, value), max);
+
+// Modulo with negative number support
+export const mod = (n: number, m: number) => ((n % m) + m) % m;
