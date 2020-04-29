@@ -16,9 +16,11 @@ import { RECURRING_TYPES } from '../../../constants';
 import { EventPersonalMap } from '../../../interfaces/EventPersonalMap';
 import handleSaveSingleEvent from './handleSaveSingleEvent';
 import handleSaveRecurringEvent from './handleSaveRecurringEvent';
+import withVeventRruleWkst from './rruleWkst';
 
 interface Arguments {
-    temporaryEvent: any;
+    temporaryEvent: any; // todo
+    weekStartsOn: number;
 
     addresses: Address[];
     calendars: Calendar[];
@@ -36,6 +38,7 @@ interface Arguments {
 
 const handleSaveEvent = async ({
     temporaryEvent,
+    weekStartsOn,
 
     addresses,
     calendars,
@@ -63,7 +66,7 @@ const handleSaveEvent = async ({
 
     // All updates will remove any existing exdates since they would be more complicated to normalize
     const modelVeventComponent = modelToVeventComponent(tmpData) as VcalVeventComponent;
-    const newVeventComponent = omit(modelVeventComponent, ['exdate']);
+    const newVeventComponent = withVeventRruleWkst(omit(modelVeventComponent, ['exdate']), weekStartsOn);
 
     const newEventData = {
         veventComponent: newVeventComponent,

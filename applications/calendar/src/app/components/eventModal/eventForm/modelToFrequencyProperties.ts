@@ -1,13 +1,10 @@
-import { END_TYPE, FREQUENCY, MONTHLY_TYPE, NUMBER_TO_DAY } from '../../../constants';
+import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../../../constants';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { convertZonedDateTimeToUTC, fromLocalDate } from 'proton-shared/lib/date/timezone';
 import { getPositiveSetpos, getNegativeSetpos } from '../../../helpers/rrule';
 import { EventModel } from '../../../interfaces/EventModel';
-import {
-    VcalByDayValues,
-    VcalDateOrDateTimeValue,
-    VcalRruleProperty
-} from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { VcalDateOrDateTimeValue, VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { numericDayToDay } from 'proton-shared/lib/calendar/vcalConverter';
 
 export interface UntilDateArgument {
     year: number;
@@ -67,16 +64,16 @@ const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay }: EventMo
                 throw new Error('Inconsistent weekly rrule');
             }
             if (weeklyDays.length > 1) {
-                rrule.value.byday = weeklyDays.map((day) => NUMBER_TO_DAY[day] as VcalByDayValues);
+                rrule.value.byday = weeklyDays.map(numericDayToDay);
             }
         }
         if (frequency === FREQUENCY.MONTHLY) {
             if (monthly.type === MONTHLY_TYPE.ON_NTH_DAY) {
-                rrule.value.byday = NUMBER_TO_DAY[startDate.getDay()] as VcalByDayValues;
+                rrule.value.byday = numericDayToDay(startDate.getDay());
                 rrule.value.bysetpos = getPositiveSetpos(startDate);
             }
             if (monthly.type === MONTHLY_TYPE.ON_MINUS_NTH_DAY) {
-                rrule.value.byday = NUMBER_TO_DAY[startDate.getDay()] as VcalByDayValues;
+                rrule.value.byday = numericDayToDay(startDate.getDay());
                 rrule.value.bysetpos = getNegativeSetpos(startDate);
             }
         }

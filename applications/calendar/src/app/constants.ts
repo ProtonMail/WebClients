@@ -13,27 +13,6 @@ export enum VIEWS {
     CUSTOM
 }
 
-export enum DAY_TO_NUMBER {
-    SU = 0,
-    MO,
-    TU,
-    WE,
-    TH,
-    FR,
-    SA
-}
-export type DAY_TO_NUMBER_KEYS = keyof typeof DAY_TO_NUMBER;
-
-export const NUMBER_TO_DAY = {
-    0: 'SU',
-    1: 'MO',
-    2: 'TU',
-    3: 'WE',
-    4: 'TH',
-    5: 'FR',
-    6: 'SA'
-} as { [key: number]: string };
-
 export const MINUTE = 60;
 export const HOUR = MINUTE * 60;
 export const DAY = HOUR * 24;

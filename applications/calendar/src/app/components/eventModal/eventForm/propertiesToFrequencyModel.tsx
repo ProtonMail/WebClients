@@ -1,22 +1,16 @@
-import {
-    DAILY_TYPE,
-    DAY_TO_NUMBER,
-    DAY_TO_NUMBER_KEYS,
-    END_TYPE,
-    FREQUENCY,
-    MONTHLY_TYPE,
-    WEEKLY_TYPE,
-    YEARLY_TYPE
-} from '../../../constants';
-import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import { DAILY_TYPE, END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE, YEARLY_TYPE } from '../../../constants';
+import { dayToNumericDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { convertUTCDateTimeToZone, fromUTCDate } from 'proton-shared/lib/date/timezone';
 import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
 import {
+    VcalDaysKeys,
     VcalDateOrDateTimeValue,
     VcalDateTimeValue,
     VcalRruleFreqValue,
     VcalRruleProperty
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { unique } from 'proton-shared/lib/helpers/array';
 
 const getEndType = (count?: number, until?: VcalDateOrDateTimeValue) => {
     // count and until cannot occur at the same time (see https://tools.ietf.org/html/rfc5545#page-37)
@@ -29,7 +23,7 @@ const getEndType = (count?: number, until?: VcalDateOrDateTimeValue) => {
     return END_TYPE.NEVER;
 };
 
-const getMonthType = (bysetpos?: number, byday?: DAY_TO_NUMBER_KEYS | DAY_TO_NUMBER_KEYS[]) => {
+const getMonthType = (bysetpos?: number, byday?: VcalDaysKeys | VcalDaysKeys[]) => {
     if (bysetpos && byday) {
         return bysetpos > 0 ? MONTHLY_TYPE.ON_NTH_DAY : MONTHLY_TYPE.ON_MINUS_NTH_DAY;
     }
@@ -49,7 +43,7 @@ const getUntilDate = (until?: VcalDateOrDateTimeValue, startTzid?: string) => {
     return new Date(localDate.year, localDate.month - 1, localDate.day);
 };
 
-const getWeeklyDays = (startDate: Date, byday?: DAY_TO_NUMBER_KEYS | DAY_TO_NUMBER_KEYS[]) => {
+const getWeeklyDays = (startDate: Date, byday?: VcalDaysKeys | VcalDaysKeys[]) => {
     const DEFAULT = [startDate.getDay()];
 
     if (!byday) {
@@ -57,10 +51,9 @@ const getWeeklyDays = (startDate: Date, byday?: DAY_TO_NUMBER_KEYS | DAY_TO_NUMB
     }
 
     const bydayArray = Array.isArray(byday) ? byday : [byday];
-    if (bydayArray.some((DD) => DAY_TO_NUMBER[DD] === undefined)) {
-        return DEFAULT;
-    }
-    return bydayArray.map((DD) => DAY_TO_NUMBER[DD]);
+    const bydayArraySafe = bydayArray.map(dayToNumericDay).filter(isTruthy);
+    // Ensure the start date is included in the list
+    return unique([...DEFAULT].concat(bydayArraySafe));
 };
 
 const getSafeFrequency = (freq: VcalRruleFreqValue): FREQUENCY | undefined => {

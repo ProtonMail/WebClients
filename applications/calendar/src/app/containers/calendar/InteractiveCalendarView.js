@@ -487,6 +487,7 @@ const InteractiveCalendarView = ({
     const handleSaveEvent = async (temporaryEvent) => {
         return handleSaveEventHelper({
             temporaryEvent,
+            weekStartsOn,
 
             addresses,
             calendars: activeCalendars,
