@@ -2,6 +2,7 @@ import React, { MouseEvent } from 'react';
 import { classnames } from 'react-components';
 import { c } from 'ttag';
 import { Label } from 'proton-shared/lib/interfaces/Label';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
@@ -10,9 +11,11 @@ import ItemLabels from '../../list/ItemLabels';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { Message } from '../../../models/message';
 import { MessageViewIcons } from '../../../helpers/message/icon';
+import ItemLocation from '../../list/ItemLocation';
 
 interface Props {
     message?: Message;
+    mailSettings: MailSettings;
     messageViewIcons?: MessageViewIcons;
     isSentMessage: boolean;
     isUnreadMessage: boolean;
@@ -23,6 +26,7 @@ interface Props {
 
 const HeaderCollapsed = ({
     message,
+    mailSettings,
     messageViewIcons,
     isSentMessage,
     isUnreadMessage,
@@ -69,6 +73,9 @@ const HeaderCollapsed = ({
                 {isDraftMessage && <span className="badgeLabel-success">{c('Info').t`Draft`}</span>}
                 <ItemAttachmentIcon element={message} />
                 <ItemLabels element={message} labels={labels} className="mr1" />
+                <span className="mr1">
+                    <ItemLocation message={message} mailSettings={mailSettings} />
+                </span>
                 <ItemDate className="mr1" element={message} />
                 <ItemStar element={message} />
             </div>

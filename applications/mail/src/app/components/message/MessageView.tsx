@@ -160,6 +160,7 @@ const MessageView = ({
             ) : (
                 <HeaderCollapsed
                     message={message.data}
+                    mailSettings={mailSettings}
                     messageViewIcons={messageViewIcons}
                     isSentMessage={sent}
                     isUnreadMessage={unread}
