@@ -245,6 +245,7 @@ export const mergeMessages = (messageState: MessageExtended, messageModel: Parti
     return {
         ...messageState,
         ...messageModel,
-        data: { ...messageState.data, ...messageModel.data }
+        data: { ...messageState.data, ...messageModel.data },
+        errors: { ...messageState.errors, ...messageModel.errors }
     };
 };

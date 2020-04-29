@@ -1,7 +1,7 @@
 import { decryptMIMEMessage, decryptMessageLegacy, OpenPGPKey, OpenPGPSignature } from 'pmcrypto';
 import { c } from 'ttag';
 
-import { Message } from '../../models/message';
+import { Message, MessageErrors } from '../../models/message';
 import { convert } from '../attachment/attachmentConverter';
 import { VERIFICATION_STATUS } from '../../constants';
 import { getDate, getSender, isMIME } from './messages';
@@ -19,23 +19,33 @@ const decryptMimeMessage = async (
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
 
-    const result = await decryptMIMEMessage({
-        message: message?.Body,
-        messageDate: getDate(message),
-        privateKeys: privateKeys,
-        publicKeys: publicKeys,
-        headerFilename,
-        sender
-    });
+    let result;
 
-    const {
-        body: decryptedBody = c('Message empty').t`Message content if empty`
-        // , mimetype = MIME_TYPES.PLAINTEXT
-    } = (await result.getBody()) || {};
+    try {
+        result = await decryptMIMEMessage({
+            message: message?.Body,
+            messageDate: getDate(message),
+            privateKeys: privateKeys,
+            publicKeys: publicKeys,
+            headerFilename,
+            sender
+        });
+    } catch (error) {
+        return {
+            decryptedBody: '',
+            Attachments: [],
+            verified: 0,
+            errors: {
+                decryption: [error]
+            }
+        };
+    }
+
+    const { body: decryptedBody = c('Message empty').t`Message content if empty` } = (await result.getBody()) || {};
 
     const verified = await result.verify();
     const errors = await result.errors();
-    const [signature] = result.signatures;
+    const [signature] = (result as any).signatures;
 
     const Attachments = convert(message, await result.getAttachments(), verified, attachmentsCache);
     const encryptedSubject = await result.getEncryptedSubject();
@@ -45,26 +55,39 @@ const decryptMimeMessage = async (
         Attachments,
         verified,
         encryptedSubject,
-        errors,
+        verificationErrors: errors,
         signature
-        // mimetype
     };
 };
 
 const decryptLegacyMessage = async (message: Message, publicKeys: OpenPGPKey[], privateKeys: OpenPGPKey[]) => {
+    let result: any;
+
+    try {
+        result = await decryptMessageLegacy({
+            message: message?.Body,
+            messageDate: getDate(message),
+            privateKeys: privateKeys,
+            publicKeys: publicKeys
+        });
+    } catch (error) {
+        return {
+            decryptedBody: '',
+            verified: 0,
+            errors: {
+                decryption: error
+            }
+        };
+    }
+
     const {
         data,
-        signatures: [signature],
         verified = NOT_SIGNED,
+        signatures: [signature],
         errors
-    } = (await decryptMessageLegacy({
-        message: message?.Body,
-        messageDate: getDate(message),
-        privateKeys: privateKeys,
-        publicKeys: publicKeys
-    })) as any;
+    } = result;
 
-    return { decryptedBody: data, verified, signature, errors };
+    return { decryptedBody: data, verified, signature, verificationErrors: errors };
 };
 
 export const decryptMessage = async (
@@ -75,10 +98,11 @@ export const decryptMessage = async (
 ): Promise<{
     decryptedBody: string;
     Attachments?: Attachment[];
-    verified?: VERIFICATION_STATUS;
+    verified: VERIFICATION_STATUS;
     encryptedSubject?: string;
-    errors?: Error[];
     signature?: OpenPGPSignature;
+    errors?: MessageErrors;
+    verificationErrors?: Error[];
 }> => {
     if (isMIME(message)) {
         return decryptMimeMessage(message, publicKeys, privateKeys, attachmentsCache);

@@ -42,11 +42,15 @@ export interface MessageAction<T = void> {
     (): Promise<T>;
 }
 
-// export type MessageAction = (...args: any[]) => Promise<void>;
-
 export interface EmbeddedInfo {
     attachment: Attachment;
     url?: string;
+}
+
+export interface MessageErrors {
+    network?: Error[];
+    decryption?: Error[];
+    common?: Error[];
 }
 
 /**
@@ -186,4 +190,9 @@ export interface MessageExtended {
      * Unsubscribed flag
      */
     unsubscribed?: boolean;
+
+    /**
+     * All kind of errors that appears during message processing
+     */
+    errors?: MessageErrors;
 }

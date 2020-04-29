@@ -2,19 +2,20 @@ import { useCallback } from 'react';
 import { useApi, useEventManager, useGetEncryptionPreferences, useMailSettings } from 'react-components';
 import { getMessage } from 'proton-shared/lib/api/messages';
 import { getMatchingKey } from 'pmcrypto/lib/key/utils';
+
 import { VERIFICATION_STATUS } from '../constants';
+import { MessageExtended, Message, MessageErrors } from '../models/message';
+import { loadMessage, markAsRead } from '../helpers/message/messageRead';
+import { useMessageKeys } from './useMessageKeys';
+import { decryptMessage } from '../helpers/message/messageDecrypt';
 import { useAttachmentCache } from '../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../containers/MessageProvider';
-import { decryptMessage } from '../helpers/message/messageDecrypt';
-import { loadMessage, markAsRead } from '../helpers/message/messageRead';
 import { getVerificationStatus } from '../helpers/signatures';
 import { transformEmbedded } from '../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../helpers/transforms/transformRemote';
 import { prepareMailDocument } from '../helpers/transforms/transforms';
-
-import { Message, MessageExtended } from '../models/message';
+import { isApiError } from '../helpers/errors';
 import { useBase64Cache } from './useBase64Cache';
-import { useMessageKeys } from './useMessageKeys';
 
 export const useLoadMessage = (inputMessage: Message) => {
     const api = useApi();
@@ -28,7 +29,6 @@ export const useLoadMessage = (inputMessage: Message) => {
         // If the Body is already there, no need to send a request
         if (!messageFromCache.data?.Body) {
             const { Message: message } = await api(getMessage(messageFromCache.data?.ID));
-            // return { data: Message as Message };
             updateMessageCache(messageCache, localID, { data: message as Message });
         }
     }, [inputMessage]);
@@ -67,57 +67,88 @@ export const useInitializeMessage = (localID: string) => {
 
         updateMessageCache(messageCache, localID, { initialized: false });
 
-        const message = await loadMessage(messageFromCache, api);
-        const { apiKeys, pinnedKeys, isContactSignatureVerified } = await getEncryptionPreferences(
-            message.data.Sender?.Address
-        );
-        const allSenderPublicKeys = [...pinnedKeys, ...apiKeys];
+        const errors: MessageErrors = {};
 
-        const { publicKeys, privateKeys } = await getKeys(message);
-
-        // To verify the signature of the message, we just need to take into account pinned keys
-        // API keys could always be forged by the server to verify the signature
-        const {
-            decryptedBody,
-            Attachments,
-            verified,
-            errors: verificationErrors,
-            encryptedSubject,
-            signature
-        } = await decryptMessage(message.data, pinnedKeys, privateKeys, attachmentsCache);
-        const signed = verified !== VERIFICATION_STATUS.NOT_SIGNED;
-        const signingPublicKey = signed && signature ? await getMatchingKey(signature, allSenderPublicKeys) : undefined;
-        const verificationStatus = getVerificationStatus(verified, pinnedKeys);
-
-        await markAsRead(message, api, call);
-
-        const { document, showRemoteImages, showEmbeddedImages, embeddeds } = await prepareMailDocument(
-            { ...message, decryptedBody, publicKeys: pinnedKeys, privateKeys },
-            base64Cache,
-            attachmentsCache,
-            api,
-            mailSettings
-        );
-
-        const data = Attachments ? { ...message.data, Attachments } : message.data;
-
-        updateMessageCache(messageCache, localID, {
-            data,
-            document,
-            senderPinnedKeys: pinnedKeys,
+        let message,
+            encryptionPreferences,
+            userKeys,
+            decryption,
             signingPublicKey,
-            senderVerified: isContactSignatureVerified,
-            publicKeys,
-            privateKeys,
-            decryptedBody,
             verificationStatus,
-            verificationErrors,
-            encryptedSubject,
-            showEmbeddedImages,
-            showRemoteImages,
-            embeddeds,
-            initialized: true
-        });
+            preparation,
+            data;
+
+        try {
+            message = await loadMessage(messageFromCache, api);
+            // const { apiKeys, pinnedKeys, isContactSignatureVerified } = await getEncryptionPreferences(
+            encryptionPreferences = await getEncryptionPreferences(message.data.Sender?.Address);
+
+            const allSenderPublicKeys = [...encryptionPreferences.pinnedKeys, ...encryptionPreferences.apiKeys];
+
+            userKeys = await getKeys(message);
+
+            // To verify the signature of the message, we just need to take into account pinned keys
+            // API keys could always be forged by the server to verify the signature
+            decryption = await decryptMessage(
+                message.data,
+                encryptionPreferences.pinnedKeys,
+                userKeys.privateKeys,
+                attachmentsCache
+            );
+
+            if (decryption.errors) {
+                Object.assign(errors, decryption.errors);
+            }
+
+            const signed = decryption.verified !== VERIFICATION_STATUS.NOT_SIGNED;
+            signingPublicKey =
+                signed && decryption.signature
+                    ? await getMatchingKey(decryption.signature, allSenderPublicKeys)
+                    : undefined;
+            verificationStatus = getVerificationStatus(decryption.verified, encryptionPreferences.pinnedKeys);
+
+            await markAsRead(message, api, call);
+
+            preparation = await prepareMailDocument(
+                {
+                    ...message,
+                    decryptedBody: decryption.decryptedBody,
+                    publicKeys: encryptionPreferences.pinnedKeys,
+                    privateKeys: userKeys.privateKeys
+                },
+                base64Cache,
+                attachmentsCache,
+                api,
+                mailSettings
+            );
+
+            data = decryption.Attachments ? { ...message.data, Attachments: decryption.Attachments } : message.data;
+        } catch (error) {
+            if (isApiError(error)) {
+                errors.network = error;
+            } else {
+                errors.common = error;
+            }
+        } finally {
+            updateMessageCache(messageCache, localID, {
+                data,
+                document: preparation?.document,
+                senderPinnedKeys: encryptionPreferences?.pinnedKeys,
+                signingPublicKey,
+                senderVerified: encryptionPreferences?.isContactSignatureVerified,
+                publicKeys: userKeys?.publicKeys,
+                privateKeys: userKeys?.privateKeys,
+                decryptedBody: decryption?.decryptedBody,
+                verificationStatus,
+                verificationErrors: decryption?.verificationErrors,
+                encryptedSubject: decryption?.encryptedSubject,
+                showEmbeddedImages: preparation?.showEmbeddedImages,
+                showRemoteImages: preparation?.showRemoteImages,
+                embeddeds: preparation?.embeddeds,
+                errors,
+                initialized: true
+            });
+        }
     }, [localID]);
 };
 
@@ -168,5 +199,15 @@ export const useLoadEmbeddedImages = (localID: string) => {
             embeddeds,
             showEmbeddedImages: true
         });
+    }, [localID]);
+};
+
+export const useReloadMessage = (localID: string) => {
+    const messageCache = useMessageCache();
+    const initializeMessage = useInitializeMessage(localID);
+
+    return useCallback(async () => {
+        messageCache.set(localID, { localID });
+        await initializeMessage();
     }, [localID]);
 };
