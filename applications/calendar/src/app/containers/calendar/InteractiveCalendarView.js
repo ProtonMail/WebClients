@@ -17,7 +17,7 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 
-import { getExistingEvent, getInitialModel, getRecurrenceEvent } from '../../components/eventModal/eventForm/state';
+import { getExistingEvent, getInitialModel } from '../../components/eventModal/eventForm/state';
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
 import { sortEvents, sortWithTemporaryEvent } from '../../components/calendar/layout';
@@ -44,6 +44,7 @@ import handleSaveEventHelper from './eventActions/handleSaveEvent';
 import handleDeleteEventHelper from './eventActions/handleDeleteEvent';
 import { getHasDoneChanges } from '../../components/eventModal/eventForm/getHasEdited';
 import RecurringMatchWarning from './confirmationModals/RecurringMatchWarning';
+import withOccurrenceEvent from './eventActions/occurrenceEvent';
 
 const getNormalizedTime = (isAllDay, initial, dateFromCalendar) => {
     if (!isAllDay) {
@@ -198,16 +199,17 @@ const InteractiveCalendarView = ({
         if (!veventComponent || !personalMap || promise || error) {
             return;
         }
+        const originalOrOccurrenceEvent = recurrence
+            ? withOccurrenceEvent(veventComponent, recurrence)
+            : veventComponent;
         const eventResult = getExistingEvent({
-            veventComponent,
+            veventComponent: originalOrOccurrenceEvent,
             veventValarmComponent: personalMap[Member.ID],
             tzid
         });
-        const recurrenceResult = recurrence ? getRecurrenceEvent(eventResult, recurrence) : undefined;
         return {
             ...createResult,
-            ...eventResult,
-            ...recurrenceResult
+            ...eventResult
         };
     };
 

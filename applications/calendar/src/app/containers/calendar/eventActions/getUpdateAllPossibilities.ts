@@ -3,6 +3,7 @@ import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import getHasBrokenRrule from './rruleBroken';
 
 export enum UpdateAllPossibilities {
     KEEP_SINGLE_EDITS,
@@ -11,6 +12,7 @@ export enum UpdateAllPossibilities {
 }
 
 const getUpdateAllPossibilities = (
+    originalVeventComponent: VcalVeventComponent,
     oldVeventComponent: VcalVeventComponent,
     newVeventComponent: VcalVeventComponent,
     recurrence: CalendarEventRecurring
@@ -32,10 +34,14 @@ const getUpdateAllPossibilities = (
         //return UpdateAllPossibilities.KEEP_SINGLE_EDITS;
     }
     */
-    const localStartDate = toUTCDate(oldStartProperty.value);
-    const localEndDate = toUTCDate(newStartProperty.value);
+    const oldLocalStartDate = toUTCDate(oldStartProperty.value);
+    const newLocalStartDate = toUTCDate(newStartProperty.value);
+    const originalLocalStartDate = toUTCDate(originalVeventComponent.dtstart.value);
 
-    if (isSameDay(localStartDate, localEndDate)) {
+    if (
+        isSameDay(oldLocalStartDate, newLocalStartDate) &&
+        !getHasBrokenRrule(originalLocalStartDate, newVeventComponent.rrule)
+    ) {
         return UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME;
     }
 

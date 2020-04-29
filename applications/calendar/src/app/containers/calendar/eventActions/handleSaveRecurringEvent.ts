@@ -50,6 +50,7 @@ const handleSaveRecurringEvent = async ({
 }: Arguments) => {
     const isFutureAllowed = getHasFutureOption(originalEventData.mainVeventComponent, recurrence);
     const updateAllPossibilities = getUpdateAllPossibilities(
+        originalEventData.mainVeventComponent,
         oldEventData.mainVeventComponent,
         newEventData.veventComponent,
         recurrence

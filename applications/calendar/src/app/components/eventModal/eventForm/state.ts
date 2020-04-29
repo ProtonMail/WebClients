@@ -28,7 +28,6 @@ import { getDeviceNotifications } from './notificationModel';
 import { notificationsToModel } from '../../../helpers/notificationsToModel';
 import { propertiesToNotificationModel } from './propertiesToNotificationModel';
 import { EventModel, FrequencyModel } from '../../../interfaces/EventModel';
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
@@ -164,26 +163,6 @@ export const getInitialModel = ({
         ...memberModel,
         ...dateTimeModel,
         ...calendarsModel
-    };
-};
-
-export const getRecurrenceEvent = (
-    { start, end /*, frequencyModel*/ }: EventModel,
-    { localStart, localEnd /*, occurrenceNumber*/ }: CalendarEventRecurring
-) => {
-    return {
-        start: getDateTimeState(localStart, start.tzid),
-        end: getDateTimeState(localEnd, end.tzid)
-        /*
-        frequencyModel: {
-            ...frequencyModel,
-            ends: {
-                ...frequencyModel.ends,
-                // When editing "this and future" events, update the count
-                count: Math.max(frequencyModel.ends.count - (occurrenceNumber - 1), 1)
-            }
-        }
-         */
     };
 };
 

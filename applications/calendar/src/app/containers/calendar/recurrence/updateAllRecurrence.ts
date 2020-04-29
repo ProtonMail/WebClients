@@ -69,7 +69,11 @@ const updateAllRecurrence = ({ component, originalComponent, recurrence, mode, i
         // If single edits are to be kept, the start time can not change, shouldn't get here if not but just to be sure
         veventWithOldUID.dtstart = originalComponent.dtstart;
         veventWithOldUID.dtend = getEndDateTimeMerged(component.dtstart, component.dtend, veventWithOldUID.dtstart);
-    } else if (mode === UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME) {
+
+        return veventWithOldUID;
+    }
+
+    if (mode === UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME) {
         delete veventWithOldUID.exdate;
 
         const mergedDtstart = getStartDateTimeMerged(component.dtstart, originalComponent.dtstart);
@@ -77,9 +81,11 @@ const updateAllRecurrence = ({ component, originalComponent, recurrence, mode, i
 
         veventWithOldUID.dtstart = mergedDtstart;
         veventWithOldUID.dtend = mergedDtend;
-    } else {
-        delete veventWithOldUID.exdate;
+
+        return veventWithOldUID;
     }
+
+    delete veventWithOldUID.exdate;
 
     return getComponentWithUpdatedRrule(veventWithOldUID, originalComponent, recurrence, isSingleEdit);
 };
