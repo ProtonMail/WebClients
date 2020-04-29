@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { Icon, useLoading, useApi, useEventManager, classnames } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { labelMessages, unlabelMessages } from 'proton-shared/lib/api/messages';
@@ -19,7 +19,9 @@ const ItemStar = ({ element = {} }: Props) => {
     const isStarred = testIsStarred(element);
     const iconName = isStarred ? 'starfull' : 'star';
 
-    const handleClick = async () => {
+    const handleClick = async (e: MouseEvent) => {
+        e.stopPropagation();
+
         const action = isConversation
             ? isStarred
                 ? unlabelConversations
@@ -36,7 +38,7 @@ const ItemStar = ({ element = {} }: Props) => {
             disabled={loading}
             type="button"
             className={classnames(['starbutton item-star inline-flex', isStarred && 'starbutton--is-starred'])}
-            onClick={() => withLoading(handleClick())}
+            onClick={(e) => withLoading(handleClick(e))}
         >
             <Icon name={iconName} />
         </button>
