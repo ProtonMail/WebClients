@@ -141,7 +141,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             value: {
                 freq: 'WEEKLY',
                 interval: 3,
-                byday: ['WE', 'TH']
+                byday: ['MO', 'WE']
             }
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
@@ -151,7 +151,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             interval: 3,
             weekly: {
                 type: WEEKLY_TYPE.ON_DAYS,
-                days: [3, 4]
+                days: [1, 3]
             }
         });
     });

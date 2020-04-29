@@ -7,9 +7,9 @@ import {
     VcalDateOrDateTimeValue,
     VcalDateTimeValue,
     VcalRruleFreqValue,
-    VcalRruleProperty
+    VcalRruleProperty,
+    VcalDays
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { unique } from 'proton-shared/lib/helpers/array';
 
 const getEndType = (count?: number, until?: VcalDateOrDateTimeValue) => {
@@ -51,7 +51,7 @@ const getWeeklyDays = (startDate: Date, byday?: VcalDaysKeys | VcalDaysKeys[]) =
     }
 
     const bydayArray = Array.isArray(byday) ? byday : [byday];
-    const bydayArraySafe = bydayArray.map(dayToNumericDay).filter(isTruthy);
+    const bydayArraySafe = bydayArray.map(dayToNumericDay).filter((value): value is VcalDays => value !== undefined);
     // Ensure the start date is included in the list
     return unique([...DEFAULT].concat(bydayArraySafe));
 };
