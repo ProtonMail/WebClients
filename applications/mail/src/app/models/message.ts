@@ -128,7 +128,7 @@ export interface MessageExtended {
     signingPublicKey?: OpenPGPKey;
 
     /**
-     * User private keys (used for decryption)
+     * Address private keys of the user (used for decryption)
      */
     privateKeys?: OpenPGPKey[];
 
