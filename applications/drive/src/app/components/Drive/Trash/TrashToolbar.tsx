@@ -8,7 +8,8 @@ import {
     useModals,
     Alert,
     useLoading,
-    useEventManager
+    useEventManager,
+    ToolbarSeparator
 } from 'react-components';
 
 import useDrive from '../../../hooks/useDrive';
@@ -181,6 +182,7 @@ const TrashToolbar = ({ shareId }: Props) => {
                         icon="calendar-repeat"
                         onClick={() => withRestoreLoading(restoreFromTrash())}
                     />
+                    <ToolbarSeparator />
                     <ToolbarButton
                         disabled={!selectedItems.length}
                         title={c('Action').t`Delete permanently`}
