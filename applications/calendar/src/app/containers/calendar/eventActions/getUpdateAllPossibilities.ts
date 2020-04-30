@@ -1,9 +1,9 @@
 import { getDateOrDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { VcalRruleProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import getHasBrokenRrule from './rruleBroken';
+import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 
 export enum UpdateAllPossibilities {
     KEEP_SINGLE_EDITS,
@@ -11,13 +11,23 @@ export enum UpdateAllPossibilities {
     USE_NEW_START_DATE
 }
 
+const getHasChangedRrule = (oldRrule: VcalRruleProperty, newRrule?: VcalRruleProperty) => {
+    if (!newRrule) {
+        return true;
+    }
+    return !isDeepEqual(oldRrule, newRrule);
+};
+
 const getUpdateAllPossibilities = (
     originalVeventComponent: VcalVeventComponent,
     oldVeventComponent: VcalVeventComponent,
     newVeventComponent: VcalVeventComponent,
     recurrence: CalendarEventRecurring
 ) => {
-    const oldStartProperty = getDateOrDateTimeProperty(oldVeventComponent.dtstart, recurrence.localStart);
+    // If editing a single edit, we can use the dtstart as is...
+    const oldStartProperty = oldVeventComponent['recurrence-id']
+        ? oldVeventComponent.dtstart
+        : getDateOrDateTimeProperty(oldVeventComponent.dtstart, recurrence.localStart);
     const newStartProperty = newVeventComponent.dtstart;
     /*
     const oldIsAllDay = isIcalPropertyAllDay(oldStartProperty);
@@ -36,11 +46,11 @@ const getUpdateAllPossibilities = (
     */
     const oldLocalStartDate = toUTCDate(oldStartProperty.value);
     const newLocalStartDate = toUTCDate(newStartProperty.value);
-    const originalLocalStartDate = toUTCDate(originalVeventComponent.dtstart.value);
 
     if (
         isSameDay(oldLocalStartDate, newLocalStartDate) &&
-        !getHasBrokenRrule(originalLocalStartDate, newVeventComponent.rrule)
+        originalVeventComponent.rrule &&
+        !getHasChangedRrule(originalVeventComponent.rrule, newVeventComponent.rrule)
     ) {
         return UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME;
     }

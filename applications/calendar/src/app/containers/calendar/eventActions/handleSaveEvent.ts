@@ -137,6 +137,11 @@ const handleSaveEvent = async ({
         recurrence ||
         getSingleEditRecurringData(originalEventData.mainVeventComponent, oldEventData.mainVeventComponent);
 
+    // Warning: Single edits do not have the RRULE currently. Mutate the model directly with the old RRULE.
+    if (newVeventComponent['recurrence-id']) {
+        newVeventComponent.rrule = originalEventData.mainVeventComponent.rrule;
+    }
+
     return handleSaveRecurringEvent({
         originalEventData,
         oldEventData,

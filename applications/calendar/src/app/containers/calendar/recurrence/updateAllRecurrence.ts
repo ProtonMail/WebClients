@@ -1,59 +1,46 @@
 import { omit } from 'proton-shared/lib/helpers/object';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { getSafeRruleUntil } from './helper';
 import { getStartDateTimeMerged, getEndDateTimeMerged } from './getDateTimeMerged';
 import { UpdateAllPossibilities } from '../eventActions/getUpdateAllPossibilities';
 
-const getComponentWithUpdatedRrule = (
-    component: VcalVeventComponent,
-    originalComponent: VcalVeventComponent,
-    recurrence: CalendarEventRecurring,
-    isSingleEdit: boolean
-) => {
-    const { rrule: originalRrule } = originalComponent;
-
-    if (!originalRrule) {
-        throw new Error('Edit without an original event with recurring events');
-    }
-
-    // If this update is based on a future edit, there is no RRULE, so it will be based on the original.
-    // If it's not, it'll take the "new" RRULE
-    const newRrule = isSingleEdit ? originalRrule : component.rrule;
+const getComponentWithUpdatedRrule = (component: VcalVeventComponent) => {
+    const { rrule } = component;
+    const { rrule: originalRrule } = component;
 
     // If the user has edited the RRULE, we'll use that.
-    if (!isDeepEqual(newRrule, originalRrule)) {
-        if (!newRrule) {
+    if (!rrule || !isDeepEqual(rrule, originalRrule)) {
+        if (!rrule) {
             return omit(component, ['rrule']);
         }
         return {
             ...component,
-            rrule: newRrule
+            rrule
         };
     }
 
-    if (originalRrule.value.until) {
+    // Otherwise it's using the original rrule and we'll set a safer until value just in case the event got moved
+    if (rrule.value.until) {
         return {
             ...component,
-            rrule: getSafeRruleUntil(originalRrule, component)
+            rrule: getSafeRruleUntil(rrule, component)
         };
     }
 
     return {
         ...component,
-        rrule: newRrule
+        rrule
     };
 };
 
 interface Arguments {
     component: VcalVeventComponent;
     originalComponent: VcalVeventComponent;
-    recurrence: CalendarEventRecurring;
     mode: UpdateAllPossibilities;
     isSingleEdit: boolean;
 }
-const updateAllRecurrence = ({ component, originalComponent, recurrence, mode, isSingleEdit }: Arguments) => {
+const updateAllRecurrence = ({ component, originalComponent, mode }: Arguments) => {
     // Have to set the old UID (this won't be necessary until we merge chains)
     const veventWithOldUID = {
         ...component,
@@ -69,11 +56,13 @@ const updateAllRecurrence = ({ component, originalComponent, recurrence, mode, i
         // If single edits are to be kept, the start time can not change, shouldn't get here if not but just to be sure
         veventWithOldUID.dtstart = originalComponent.dtstart;
         veventWithOldUID.dtend = getEndDateTimeMerged(component.dtstart, component.dtend, veventWithOldUID.dtstart);
+        veventWithOldUID.rrule = originalComponent.rrule;
 
         return veventWithOldUID;
     }
 
     if (mode === UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME) {
+        // Time changed so remove the exdate
         delete veventWithOldUID.exdate;
 
         const mergedDtstart = getStartDateTimeMerged(component.dtstart, originalComponent.dtstart);
@@ -81,13 +70,15 @@ const updateAllRecurrence = ({ component, originalComponent, recurrence, mode, i
 
         veventWithOldUID.dtstart = mergedDtstart;
         veventWithOldUID.dtend = mergedDtend;
+        veventWithOldUID.rrule = originalComponent.rrule;
 
         return veventWithOldUID;
     }
 
     delete veventWithOldUID.exdate;
 
-    return getComponentWithUpdatedRrule(veventWithOldUID, originalComponent, recurrence, isSingleEdit);
+    // Date has changed here
+    return getComponentWithUpdatedRrule(veventWithOldUID);
 };
 
 export default updateAllRecurrence;

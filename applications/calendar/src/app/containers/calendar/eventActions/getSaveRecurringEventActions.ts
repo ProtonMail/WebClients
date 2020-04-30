@@ -121,12 +121,7 @@ const getSaveRecurringEventActions = ({
             type: SyncOperationTypes.CREATE,
             data: {
                 Event: undefined,
-                veventComponent: createFutureRecurrence(
-                    newVeventComponent,
-                    originalVeventComponent,
-                    recurrence,
-                    isSingleEdit
-                )
+                veventComponent: createFutureRecurrence(newVeventComponent, originalVeventComponent, recurrence)
             }
         };
 
@@ -158,7 +153,6 @@ const getSaveRecurringEventActions = ({
                 veventComponent: updateAllRecurrence({
                     component: newVeventComponent,
                     originalComponent: originalVeventComponent,
-                    recurrence,
                     mode: updateAllPossibilities,
                     isSingleEdit
                 })

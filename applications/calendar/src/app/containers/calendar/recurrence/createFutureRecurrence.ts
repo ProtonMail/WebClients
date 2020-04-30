@@ -17,20 +17,17 @@ const getRecurrenceOffsetID = (date: Date) => {
 const getComponentWithUpdatedRrule = (
     component: VcalVeventComponent,
     originalComponent: VcalVeventComponent,
-    recurrence: CalendarEventRecurring,
-    isSingleEdit: boolean
+    recurrence: CalendarEventRecurring
 ): VcalVeventComponent => {
     const { rrule: originalRrule } = originalComponent;
+    const { rrule: newRrule } = component;
 
     if (!originalRrule) {
         throw new Error('Original RRULE undefined');
     }
 
-    // If this update is based on a future edit, there is no RRULE, so it will be based on the original.
-    const newRrule = isSingleEdit ? originalRrule : component.rrule;
-
     // If the user has edited the RRULE, we'll use that.
-    if (!isDeepEqual(newRrule, originalRrule)) {
+    if (!newRrule || !isDeepEqual(newRrule, originalRrule)) {
         if (!newRrule) {
             return omit(component, ['rrule']);
         }
@@ -77,8 +74,7 @@ export const getFutureRecurrenceUID = (oldUID: string, localStart: Date) => {
 const createFutureRecurrence = (
     component: VcalVeventComponent,
     originalComponent: VcalVeventComponent,
-    recurrence: CalendarEventRecurring,
-    isSingleEdit: boolean
+    recurrence: CalendarEventRecurring
 ) => {
     const veventWithNewUID = {
         ...component,
@@ -87,7 +83,7 @@ const createFutureRecurrence = (
 
     const veventStripped = omit(veventWithNewUID, ['recurrence-id', 'exdate']);
 
-    return getComponentWithUpdatedRrule(veventStripped, originalComponent, recurrence, isSingleEdit);
+    return getComponentWithUpdatedRrule(veventStripped, originalComponent, recurrence);
 };
 
 export default createFutureRecurrence;
