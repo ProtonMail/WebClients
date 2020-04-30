@@ -63,44 +63,6 @@ describe('icon', () => {
             });
         });
 
-        it('should return a blue lock with warning sign when sending to internal users without pinned keys with warnings', () => {
-            const sendPreferences = {
-                encrypt: true,
-                sign: true,
-                pgpScheme: PACKAGE_TYPE.SEND_PM,
-                mimetype: MIME_TYPES.DEFAULT,
-                hasApiKeys: true,
-                hasPinnedKeys: false,
-                isPublicKeyPinned: false,
-                warnings: ['warning test 1', 'warning test 2']
-            };
-            expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-pm-blue',
-                isEncrypted: true,
-                fill: STATUS_ICONS_FILLS.WARNING,
-                text: 'warning test 1; warning test 2'
-            });
-        });
-
-        it('should return a blue lock with warning sign when sending to internal users with pinned keys with warnings', () => {
-            const sendPreferences = {
-                encrypt: true,
-                sign: true,
-                pgpScheme: PACKAGE_TYPE.SEND_PM,
-                mimetype: MIME_TYPES.DEFAULT,
-                hasApiKeys: true,
-                hasPinnedKeys: true,
-                isPublicKeyPinned: true,
-                warnings: ['warning test 1', 'warning test 2']
-            };
-            expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-pm-blue',
-                isEncrypted: true,
-                fill: STATUS_ICONS_FILLS.WARNING,
-                text: 'warning test 1; warning test 2'
-            });
-        });
-
         it('should return a green plain lock when sending to WKD users without pinned keys', () => {
             const sendPreferences = {
                 encrypt: true,
@@ -174,7 +136,7 @@ describe('icon', () => {
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.WARNING,
-                text: 'warning test 1; warning test 2'
+                text: "End-to-end encrypted. Recipient's key validation failed: warning test 1; warning test 2"
             });
         });
 
@@ -193,7 +155,7 @@ describe('icon', () => {
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.WARNING,
-                text: 'warning test 1; warning test 2'
+                text: "End-to-end encrypted. Recipient's key validation failed: warning test 1; warning test 2"
             });
         });
 
@@ -265,7 +227,7 @@ describe('icon', () => {
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.WARNING,
-                text: 'warning test 1; warning test 2'
+                text: "PGP-encrypted. Recipient's key validation failed: warning test 1; warning test 2"
             });
         });
 

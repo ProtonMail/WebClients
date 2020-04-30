@@ -46,15 +46,15 @@ const getMapEmailHeaders = (headers: string): { [key: string]: X_PM_HEADERS } =>
 
 export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon | undefined => {
     const { encrypt, pgpScheme, hasApiKeys, isPublicKeyPinned, warnings, failure } = sendPreferences;
-    const warningsText = warnings?.join('; ');
+    const validationErrorsMessage = warnings?.join('; ');
+    const warningsText = validationErrorsMessage
+        ? c('Key validation warning').t`Recipient's key validation failed: ${validationErrorsMessage}`
+        : undefined;
     if (failure) {
         return { colorClassName: 'color-global-warning', isEncrypted: false, fill: FAIL, text: failure.error.message };
     }
     if (pgpScheme === SEND_PM) {
         const result = { colorClassName: 'color-pm-blue', isEncrypted: true };
-        if (warningsText) {
-            return { ...result, fill: WARNING, text: warningsText };
-        }
         if (isPublicKeyPinned) {
             return {
                 ...result,
@@ -76,7 +76,18 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
         // sign must be true to fall in here
         const result = { colorClassName: 'color-global-success', isEncrypted: encrypt };
         if (warningsText) {
-            return { ...result, fill: WARNING, text: warningsText };
+            if (hasApiKeys) {
+                return {
+                    ...result,
+                    fill: WARNING,
+                    text: c('Composer email icon').t`End-to-end encrypted. ${warningsText}`
+                };
+            }
+            return {
+                ...result,
+                fill: WARNING,
+                text: c('Composer email icon').t`PGP-encrypted. ${warningsText}`
+            };
         }
         if (encrypt) {
             if (isPublicKeyPinned) {
@@ -280,7 +291,7 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
     if (origin === INTERNAL) {
         const result = { colorClassName: 'color-pm-blue', isEncrypted: true };
         if (encryption === END_TO_END) {
-            const verificationErrorsmessage = message.verificationErrors
+            const verificationErrorsMessage = message.verificationErrors
                 ?.map(({ message }) => message)
                 .filter(Boolean)
                 .join('; ');
@@ -289,9 +300,9 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
                 if (verificationStatus === NOT_SIGNED && expectSigned) {
                     return c('Signature verification warning').t`Sender could not be verified: Message not signed`;
                 }
-                if (verificationErrorsmessage) {
+                if (verificationErrorsMessage) {
                     return c('Signature verification warning')
-                        .t`Sender verification failed: ${verificationErrorsmessage}`;
+                        .t`Sender verification failed: ${verificationErrorsMessage}`;
                 }
                 return undefined;
             })();
@@ -341,13 +352,13 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
     if (origin === EXTERNAL) {
         if (encryption === END_TO_END) {
             const result = { colorClassName: 'color-global-success', isEncrypted: true };
-            const verificationErrorsmessage = message.verificationErrors
+            const verificationErrorsMessage = message.verificationErrors
                 ?.map(({ message }) => message)
                 .filter(Boolean)
                 .join('; ');
-            const warningsText = verificationErrorsmessage
+            const warningsText = verificationErrorsMessage
                 ? c('Signature verification warning')
-                      .t`PGP-encrypted message. Sender verification failed: ${verificationErrorsmessage}`
+                      .t`PGP-encrypted message. Sender verification failed: ${verificationErrorsMessage}`
                 : undefined;
 
             if (warningsText) {
@@ -387,13 +398,13 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
             }
 
             const result = { colorClassName: 'color-global-success', isEncrypted: false };
-            const verificationErrorsmessage = message.verificationErrors
+            const verificationErrorsMessage = message.verificationErrors
                 ?.map(({ message }) => message)
                 .filter(Boolean)
                 .join('; ');
-            const warningsText = verificationErrorsmessage
+            const warningsText = verificationErrorsMessage
                 ? c('Signature verification warning')
-                      .t`PGP-signed message. Sender verification failed: ${verificationErrorsmessage}`
+                      .t`PGP-signed message. Sender verification failed: ${verificationErrorsMessage}`
                 : undefined;
 
             if (warningsText) {
