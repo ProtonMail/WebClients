@@ -89,9 +89,15 @@ export interface MessageExtended {
     data?: Message;
 
     /**
-     * Content of data.body decrypted
+     * Decrypted message body content
      */
     decryptedBody?: string;
+
+    /**
+     * Decrypted subject
+     * Only used in rare situations where the message is sent by an external system which encrypt even the subject
+     */
+    decryptedSubject?: string;
 
     /**
      * Document representing the message body
@@ -162,11 +168,6 @@ export interface MessageExtended {
      * true: yes
      */
     showEmbeddedImages?: boolean;
-
-    /**
-     * Encrypted subject
-     */
-    encryptedSubject?: any;
 
     /**
      * Expiration offset in seconds from time of delivery

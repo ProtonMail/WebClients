@@ -48,13 +48,13 @@ const decryptMimeMessage = async (
     const [signature] = (result as any).signatures;
 
     const Attachments = convert(message, await result.getAttachments(), verified, attachmentsCache);
-    const encryptedSubject = await result.getEncryptedSubject();
+    const decryptedSubject = await result.getEncryptedSubject();
 
     return {
         decryptedBody,
         Attachments,
         verified,
-        encryptedSubject,
+        decryptedSubject,
         verificationErrors: errors,
         signature
     };
@@ -99,7 +99,7 @@ export const decryptMessage = async (
     decryptedBody: string;
     Attachments?: Attachment[];
     verified: VERIFICATION_STATUS;
-    encryptedSubject?: string;
+    decryptedSubject?: string;
     signature?: OpenPGPSignature;
     errors?: MessageErrors;
     verificationErrors?: Error[];

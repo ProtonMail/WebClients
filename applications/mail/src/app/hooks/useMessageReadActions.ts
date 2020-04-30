@@ -141,7 +141,7 @@ export const useInitializeMessage = (localID: string) => {
                 decryptedBody: decryption?.decryptedBody,
                 verificationStatus,
                 verificationErrors: decryption?.verificationErrors,
-                encryptedSubject: decryption?.encryptedSubject,
+                decryptedSubject: decryption?.decryptedSubject,
                 showEmbeddedImages: preparation?.showEmbeddedImages,
                 showRemoteImages: preparation?.showRemoteImages,
                 embeddeds: preparation?.embeddeds,

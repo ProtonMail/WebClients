@@ -9,6 +9,7 @@ import ExtraPinSigningKey from '../extras/ExtraPinSigningKey';
 import ExtraAttachedKey from '../extras/ExtraAttachedKey';
 import { MessageExtended } from '../../../models/message';
 import ExtraErrors from '../extras/ExtraErrors';
+import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
 
 interface Props {
     message: MessageExtended;
@@ -22,6 +23,7 @@ const HeaderExtra = ({ message, sourceMode, onTrustKey, onLoadRemoteImages, onLo
     return (
         <section className="message-header-extra mt0-5 border-top pt0-5">
             <ExtraExpirationTime message={message} />
+            <ExtraDecryptedSubject message={message} />
             <ExtraSpamScore message={message} />
             <ExtraErrors message={message} />
             <ExtraUnsubscribe message={message} />

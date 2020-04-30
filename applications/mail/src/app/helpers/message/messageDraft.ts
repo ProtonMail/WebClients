@@ -48,12 +48,12 @@ export const formatSubject = (subject = '', prefix = '') => {
 const newCopy = (
     {
         data: { Subject = '', ToList = [], CCList = [], BCCList = [] } = {},
-        encryptedSubject = ''
+        decryptedSubject = ''
     }: PartialMessageExtended = {},
     useEncrypted = false
 ): Partial<Message> => {
     return {
-        Subject: useEncrypted ? encryptedSubject : Subject,
+        Subject: useEncrypted ? decryptedSubject : Subject,
         ToList,
         CCList,
         BCCList
@@ -65,7 +65,7 @@ const newCopy = (
  */
 const reply = (referenceMessage: PartialMessageExtended, useEncrypted = false): Partial<Message> => {
     const Subject = formatSubject(
-        useEncrypted ? referenceMessage.encryptedSubject : referenceMessage.data?.Subject,
+        useEncrypted ? referenceMessage.decryptedSubject : referenceMessage.data?.Subject,
         RE_PREFIX
     );
     const ToList =
@@ -87,9 +87,9 @@ const replyAll = (
     useEncrypted = false,
     addresses: Address[]
 ): Partial<Message> => {
-    const { data = {}, encryptedSubject = '' } = referenceMessage;
+    const { data = {}, decryptedSubject = '' } = referenceMessage;
 
-    const Subject = formatSubject(useEncrypted ? encryptedSubject : data.Subject, RE_PREFIX);
+    const Subject = formatSubject(useEncrypted ? decryptedSubject : data.Subject, RE_PREFIX);
 
     if (isSent(referenceMessage.data) || isSentAndReceived(referenceMessage.data)) {
         return { Subject, ToList: data.ToList, CCList: data.CCList, BCCList: data.BCCList };
@@ -111,10 +111,10 @@ const replyAll = (
  * Format and build a forward
  */
 const forward = (
-    { data = {}, encryptedSubject = '' }: PartialMessageExtended,
+    { data = {}, decryptedSubject = '' }: PartialMessageExtended,
     useEncrypted = false
 ): Partial<Message> => {
-    const Subject = formatSubject(useEncrypted ? encryptedSubject : data.Subject, FW_PREFIX);
+    const Subject = formatSubject(useEncrypted ? decryptedSubject : data.Subject, FW_PREFIX);
 
     return { Subject, ToList: [] };
 };
@@ -126,7 +126,7 @@ export const handleActions = (
 ): Partial<Message> => {
     // TODO: I would prefere manage a confirm modal from elsewhere
     // const useEncrypted = !!referenceMessage.encryptedSubject && (await promptEncryptedSubject(currentMsg));
-    const useEncrypted = !!referenceMessage?.encryptedSubject;
+    const useEncrypted = !!referenceMessage?.decryptedSubject;
 
     switch (action) {
         case MESSAGE_ACTIONS.NEW:
