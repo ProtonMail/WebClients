@@ -5,7 +5,7 @@ import { MIME_TYPES, RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 
 import EditorToolbarDropdown from './EditorToolbarDropdown';
-import { MessageExtended } from '../../../models/message';
+import { MessageExtended, PartialMessageExtended } from '../../../models/message';
 import {
     isPlainText as testIsPlainText,
     isSign as testIsSign,
@@ -25,7 +25,7 @@ const getClassname = (status: boolean) => (status ? undefined : 'nonvisible');
 interface Props {
     message: MessageExtended;
     squireRef: MutableRefObject<SquireType>;
-    onChange: (message: Partial<MessageExtended>) => void;
+    onChange: (message: PartialMessageExtended) => void;
     onChangeFlag: (changes: Map<number, boolean>) => void;
 }
 

@@ -5,7 +5,7 @@ import { range } from 'proton-shared/lib/helpers/array';
 
 import Composer from '../components/composer/Composer';
 import { MESSAGE_ACTIONS } from '../constants';
-import { MessageExtended } from '../models/message';
+import { MessageExtended, PartialMessageExtended } from '../models/message';
 import { useDraft } from '../hooks/useDraft';
 
 import '../components/composer/composer.scss';
@@ -48,7 +48,7 @@ export interface ComposeExisting {
 
 export interface ComposeNew {
     action: MESSAGE_ACTIONS;
-    referenceMessage?: Partial<MessageExtended>;
+    referenceMessage?: PartialMessageExtended;
 }
 
 export type ComposeArgs = ComposeExisting | ComposeNew;

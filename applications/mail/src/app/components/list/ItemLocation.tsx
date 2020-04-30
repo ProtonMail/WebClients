@@ -10,7 +10,7 @@ interface Props {
     mailSettings: MailSettings;
 }
 
-const ItemLocation = ({ message = {}, mailSettings }: Props) => {
+const ItemLocation = ({ message, mailSettings }: Props) => {
     const [customFolders = []] = useFolders();
     const infos = getCurrentFolders(message, customFolders, mailSettings);
 

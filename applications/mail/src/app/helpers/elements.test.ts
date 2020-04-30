@@ -13,7 +13,7 @@ describe('elements', () => {
         });
 
         it('should return message when there is a conversationID', () => {
-            const element: Message = { ConversationID: 'something' };
+            const element = { ConversationID: 'something' } as Message;
             expect(isConversation(element)).toBe(false);
             expect(isMessage(element)).toBe(true);
         });

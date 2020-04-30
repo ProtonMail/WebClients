@@ -29,7 +29,7 @@ import HeaderExtra from './HeaderExtra';
 import HeaderRecipientsSimple from './HeaderRecipientsSimple';
 import HeaderRecipientsDetails from './HeaderRecipientsDetails';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
-import { MessageExtended } from '../../../models/message';
+import { MessageExtended, Message } from '../../../models/message';
 import HeaderDropdown from './HeaderDropdown';
 import { OnCompose } from '../../../containers/ComposerContainer';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
@@ -218,7 +218,7 @@ const HeaderExpanded = ({
                             className="pm-button pm-group-button pm-button--for-icon"
                             dropDownClassName="customFilterDropdown"
                         >
-                            {() => <CustomFilterDropdown message={message.data || {}} />}
+                            {() => <CustomFilterDropdown message={message.data as Message} />}
                         </HeaderDropdown>
                         <HeaderDropdown
                             autoClose={false}

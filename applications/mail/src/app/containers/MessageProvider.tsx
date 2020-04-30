@@ -7,7 +7,7 @@ import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 
 import { Event } from '../models/event';
 import { Cache } from '../models/utils';
-import { MessageExtended } from '../models/message';
+import { MessageExtended, PartialMessageExtended } from '../models/message';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { mergeMessages } from '../helpers/message/messages';
 import { DRAFT_ID_PREFIX } from '../helpers/message/messageDraft';
@@ -30,7 +30,7 @@ export const useMessageCache = () => useContext(MessageContext);
 export const updateMessageCache = (
     messageCache: MessageCache,
     localID: string,
-    data: Partial<MessageExtended>
+    data: PartialMessageExtended
 ): MessageExtended => {
     const existingMessage = messageCache.get(localID) as MessageExtended;
     const newMessage = mergeMessages(existingMessage, data);
@@ -85,15 +85,17 @@ const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
         if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
             const currentValue = cache.get(localID) as MessageExtended;
 
-            const MessageToUpdate = parseLabelIDsInEvent(currentValue.data, Message);
+            if (currentValue.data) {
+                const MessageToUpdate = parseLabelIDsInEvent(currentValue.data, Message);
 
-            cache.set(localID, {
-                ...currentValue,
-                data: {
-                    ...currentValue.data,
-                    ...MessageToUpdate
-                }
-            });
+                cache.set(localID, {
+                    ...currentValue,
+                    data: {
+                        ...currentValue.data,
+                        ...MessageToUpdate
+                    }
+                });
+            }
         }
     }
 };

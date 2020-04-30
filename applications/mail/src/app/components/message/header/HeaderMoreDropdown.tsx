@@ -19,10 +19,10 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { reportPhishing } from 'proton-shared/lib/api/reports';
 
-import { MessageExtended } from '../../../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
 import { useAttachmentCache } from '../../../containers/AttachmentProvider';
-import { getTime } from '../../../helpers/elements';
+import { getDate } from '../../../helpers/elements';
 import { formatFileNameDate } from '../../../helpers/date';
 import MessagePrintModal from '../modals/MessagePrintModal';
 import { exportBlob } from '../../../helpers/message/messageExport';
@@ -94,14 +94,14 @@ const HeaderMoreDropdown = ({ message, messageLoaded, sourceMode, onBack, onColl
     const handleExport = async () => {
         // Angular/src/app/message/directives/actionMessage.js
         const { Subject = '' } = message.data || {};
-        const time = formatFileNameDate(new Date(getTime(message.data || {}, '')));
+        const time = formatFileNameDate(getDate(message.data));
         const blob = await exportBlob(message, attachmentsCache, api);
         const filename = `${Subject} ${time}.eml`;
         downloadFile(blob, filename);
     };
 
     const handlePrint = async () => {
-        createModal(<MessagePrintModal message={message} />);
+        createModal(<MessagePrintModal message={message as MessageExtendedWithData} />);
     };
 
     const messageLabelIDs = message.data?.LabelIDs || [];

@@ -2,7 +2,7 @@ import { SHOW_IMAGES } from 'proton-shared/lib/constants';
 import createCache from 'proton-shared/lib/helpers/cache';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, Message } from '../../models/message';
 import { transformEmbedded } from './transformEmbedded';
 import { prepareImages } from '../embedded/embeddedParser';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
@@ -23,7 +23,7 @@ jest.mock('../embedded/embeddedParser', () => ({
 
 const attachmentsCache = createCache() as AttachmentsCache;
 
-const data = { Flags: MESSAGE_FLAGS.FLAG_RECEIVED }; // Not a draft
+const data = { Flags: MESSAGE_FLAGS.FLAG_RECEIVED } as Message; // Not a draft
 
 const localID = 'localID';
 

@@ -106,7 +106,7 @@ export const getStandardFolders = (): FolderMap => ({
 });
 
 export const getCurrentFolders = (
-    message: Message,
+    message: Message | undefined,
     customFoldersList: Folder[],
     mailSettings: MailSettings
 ): FolderInfo[] => {

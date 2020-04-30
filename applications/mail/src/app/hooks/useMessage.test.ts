@@ -2,6 +2,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import { useMessage } from './useMessage';
 import { renderHook, clearAll, messageCache, tick } from '../helpers/test/helper';
+import { MessageExtended, Message } from '../models/message';
 
 describe('useMessage', () => {
     let consoleError: any;
@@ -31,7 +32,7 @@ describe('useMessage', () => {
         });
 
         it('should returns message from the cache', () => {
-            const message = { localID: ID, data: {} };
+            const message = { localID: ID, data: {} } as MessageExtended;
             messageCache.set(ID, message);
             const hook = setup(ID);
             expect(hook.result.current.message).toBe(message);
@@ -67,7 +68,7 @@ describe('useMessage', () => {
             expect(hook.result.current.message.localID).toBe(localID);
             expect(hook.result.current.message.data).toBeUndefined();
 
-            messageCache.set(localID, { localID, data: { ID } });
+            messageCache.set(localID, { localID, data: { ID } as Message });
 
             expect(hook.result.current.message.localID).toBe(localID);
             expect(hook.result.current.message.data.ID).toBe(ID);
@@ -85,14 +86,14 @@ describe('useMessage', () => {
             expect(hook1.result.current.message.localID).toBe(localID1);
             expect(hook2.result.current.message.localID).toBe(localID2);
 
-            messageCache.set(localID1, { localID: localID1, data: { ID: ID1 } });
+            messageCache.set(localID1, { localID: localID1, data: { ID: ID1 } as Message });
 
             expect(hook1.result.current.message.localID).toBe(localID1);
             expect(hook2.result.current.message.localID).toBe(localID2);
             expect(hook1.result.current.message.data.ID).toBe(ID1);
             expect(hook2.result.current.message.data).toBeUndefined();
 
-            messageCache.set(localID2, { localID: localID2, data: { ID: ID2 } });
+            messageCache.set(localID2, { localID: localID2, data: { ID: ID2 } as Message });
 
             expect(hook1.result.current.message.localID).toBe(localID1);
             expect(hook2.result.current.message.localID).toBe(localID2);

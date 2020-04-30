@@ -4,6 +4,7 @@ import { Address } from 'proton-shared/lib/interfaces';
 import { findSender, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from './addresses';
 import { Recipient } from '../models/address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { Message } from '../models/message';
 
 jest.mock('./contacts', () => ({
     getContactsOfGroup: jest.fn((arg: any[]) => arg.map(() => ({})))
@@ -24,20 +25,23 @@ describe('addresses', () => {
         });
 
         it('should return empty for no addresses', () => {
-            const result = findSender([], { AddressID: '1' });
+            const result = findSender([], { AddressID: '1' } as Message);
             expect(result).toBe(undefined);
         });
 
         it('should return empty if no match', () => {
-            const result = findSender([{ Status: 2 }] as Address[], { AddressID: '1' });
+            const result = findSender([{ Status: 2 }] as Address[], { AddressID: '1' } as Message);
             expect(result).toBe(undefined);
         });
 
         it('should return first if addresses valid but no match', () => {
             const first = { Status: 1, Order: 1, ID: '2' };
-            const result = findSender([{ Status: 2 }, first, { Status: 1, Order: 2, ID: '3' }] as Address[], {
-                AddressID: '1'
-            });
+            const result = findSender(
+                [{ Status: 2 }, first, { Status: 1, Order: 2, ID: '3' }] as Address[],
+                {
+                    AddressID: '1'
+                } as Message
+            );
             expect(result).toBe(first);
         });
 
@@ -47,16 +51,19 @@ describe('addresses', () => {
                 [{ Status: 2, Order: 0, ID: '1' }, first, { Status: 1, Order: 2, ID: '3' }] as Address[],
                 {
                     AddressID: '1'
-                }
+                } as Message
             );
             expect(result).toEqual(first);
         });
 
         it('should return the match over order', () => {
             const match = { Status: 1, Order: 2, ID: '1' };
-            const result = findSender([{ Status: 2 }, match, { Status: 1, Order: 1, ID: '2' }] as Address[], {
-                AddressID: '1'
-            });
+            const result = findSender(
+                [{ Status: 2 }, match, { Status: 1, Order: 1, ID: '2' }] as Address[],
+                {
+                    AddressID: '1'
+                } as Message
+            );
             expect(result).toBe(match);
         });
     });

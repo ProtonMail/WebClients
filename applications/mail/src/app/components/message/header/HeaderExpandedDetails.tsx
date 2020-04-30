@@ -35,7 +35,7 @@ const HeaderExpandedDetails = ({ labels, message, messageViewIcons, mailSettings
 
     const icon = messageViewIcons?.globalIcon;
 
-    const folders = getCurrentFolders(message.data || {}, customFolders, mailSettings);
+    const folders = getCurrentFolders(message.data, customFolders, mailSettings);
     const locationText = folders.map((folder) => folder.name).join(', ');
 
     const sizeText = humanSize(getSize(message.data || {}));

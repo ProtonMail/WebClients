@@ -4,7 +4,13 @@ import { setBit } from 'proton-shared/lib/helpers/bitset';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 
-import { Message, MessageExtended, EmbeddedMap } from '../../models/message';
+import {
+    Message,
+    MessageExtended,
+    EmbeddedMap,
+    MessageExtendedWithData,
+    PartialMessageExtended
+} from '../../models/message';
 import { Recipient } from '../../models/address';
 import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 import { findSender } from '../addresses';
@@ -43,9 +49,9 @@ const newCopy = (
     {
         data: { Subject = '', ToList = [], CCList = [], BCCList = [] } = {},
         encryptedSubject = ''
-    }: Partial<MessageExtended> = {},
+    }: PartialMessageExtended = {},
     useEncrypted = false
-): Message => {
+): Partial<Message> => {
     return {
         Subject: useEncrypted ? encryptedSubject : Subject,
         ToList,
@@ -57,7 +63,7 @@ const newCopy = (
 /**
  * Format and build a reply
  */
-const reply = (referenceMessage: Partial<MessageExtended> = {}, useEncrypted = false): Message => {
+const reply = (referenceMessage: PartialMessageExtended, useEncrypted = false): Partial<Message> => {
     const Subject = formatSubject(
         useEncrypted ? referenceMessage.encryptedSubject : referenceMessage.data?.Subject,
         RE_PREFIX
@@ -77,10 +83,10 @@ const reply = (referenceMessage: Partial<MessageExtended> = {}, useEncrypted = f
  * Format and build a replyAll
  */
 const replyAll = (
-    referenceMessage: Partial<MessageExtended> = {},
+    referenceMessage: PartialMessageExtended,
     useEncrypted = false,
     addresses: Address[]
-): Message => {
+): Partial<Message> => {
     const { data = {}, encryptedSubject = '' } = referenceMessage;
 
     const Subject = formatSubject(useEncrypted ? encryptedSubject : data.Subject, RE_PREFIX);
@@ -105,9 +111,9 @@ const replyAll = (
  * Format and build a forward
  */
 const forward = (
-    { data = {}, encryptedSubject = '' }: Partial<MessageExtended> = {},
+    { data = {}, encryptedSubject = '' }: PartialMessageExtended,
     useEncrypted = false
-): Message => {
+): Partial<Message> => {
     const Subject = formatSubject(useEncrypted ? encryptedSubject : data.Subject, FW_PREFIX);
 
     return { Subject, ToList: [] };
@@ -117,7 +123,7 @@ export const handleActions = (
     action: MESSAGE_ACTIONS,
     referenceMessage: Partial<MessageExtended> = {},
     addresses: Address[] = []
-): Message => {
+): Partial<Message> => {
     // TODO: I would prefere manage a confirm modal from elsewhere
     // const useEncrypted = !!referenceMessage.encryptedSubject && (await promptEncryptedSubject(currentMsg));
     const useEncrypted = !!referenceMessage?.encryptedSubject;
@@ -161,10 +167,10 @@ const generateBlockquote = (referenceMessage: Partial<MessageExtended>) => {
 
 export const createNewDraft = (
     action: MESSAGE_ACTIONS,
-    referenceMessage: Partial<MessageExtended> | undefined,
+    referenceMessage: PartialMessageExtended | undefined,
     mailSettings: MailSettings,
     addresses: Address[]
-): MessageExtended => {
+): PartialMessageExtended => {
     const MIMEType = referenceMessage?.data?.MIMEType || ((mailSettings.DraftMIMEType as unknown) as MIME_TYPES);
     const RightToLeft = mailSettings.RightToLeft;
 
@@ -176,14 +182,14 @@ export const createNewDraft = (
         Flags = setBit(Flags, MESSAGE_FLAGS.FLAG_SIGN);
     }
 
-    const { Subject, ToList = [], CCList = [], BCCList = [] } = handleActions(action, referenceMessage, addresses);
+    const { Subject = '', ToList = [], CCList = [], BCCList = [] } = handleActions(action, referenceMessage, addresses);
 
     const originalTo = getOriginalTo(referenceMessage?.data);
 
     const senderAddress = findSender(addresses, referenceMessage?.data);
 
-    const AddressID = senderAddress?.ID; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
-    const Sender = senderAddress ? { Name: senderAddress.DisplayName, Address: senderAddress.Email } : undefined;
+    const AddressID = senderAddress?.ID || ''; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
+    const Sender = senderAddress ? { Name: senderAddress.DisplayName, Address: senderAddress.Email } : {};
 
     const embeddeds: EmbeddedMap = new Map<string, EmbeddedInfo>();
     const Attachments: Attachment[] = [];
@@ -225,7 +231,7 @@ export const createNewDraft = (
     };
 };
 
-export const cloneDraft = (draft: MessageExtended): MessageExtended => {
+export const cloneDraft = (draft: MessageExtendedWithData): MessageExtendedWithData => {
     return {
         ...draft,
         data: { ...draft.data },

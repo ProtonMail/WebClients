@@ -3,7 +3,7 @@ import { FormModal, useContactEmails, useContactGroups } from 'react-components'
 import { c } from 'ttag';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
-import { MessageExtended } from '../../../models/message';
+import { MessageExtendedWithData } from '../../../models/message';
 import MessageBody from '../MessageBody';
 import HeaderRecipientsDetails from '../header/HeaderRecipientsDetails';
 import ItemDate from '../../list/ItemDate';
@@ -16,7 +16,7 @@ import './MessagePrint.scss';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageExtendedWithData;
     onClose?: () => void;
 }
 
@@ -50,7 +50,7 @@ const MessagePrintModal = ({ message, onClose, ...rest }: Props) => {
                 <div className="message-print-header pb1 mb1">
                     <h2 className="message-print-subject bold pb0-5 mb0-5">{message.data?.Subject}</h2>
                     <HeaderRecipientType label={c('Label').t`From:`}>
-                        {getRecipientLabel(sender)} <span className="opacity-50">&lt;{sender.Address}&gt;</span>
+                        {getRecipientLabel(sender)} <span className="opacity-50">&lt;{sender?.Address}&gt;</span>
                     </HeaderRecipientType>
                     <HeaderRecipientsDetails
                         message={message.data}

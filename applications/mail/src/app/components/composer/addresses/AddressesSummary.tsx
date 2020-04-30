@@ -18,7 +18,7 @@ interface Props {
     onFocus: () => void;
 }
 
-const AddressesSummary = ({ message: { data = {} }, mapSendInfo, contacts, contactGroups, onFocus }: Props) => {
+const AddressesSummary = ({ message: { data }, mapSendInfo, contacts, contactGroups, onFocus }: Props) => {
     return (
         <div className="flex flex-row flex-nowrap flex-items-center pl0-5 pr0-5 mb0-5" onClick={onFocus}>
             <Label htmlFor={null} className="composer-meta-label pr0-5 pt0 bold">
@@ -30,7 +30,7 @@ const AddressesSummary = ({ message: { data = {} }, mapSendInfo, contacts, conta
                         <span className="placeholder">{c('Placeholder').t`Email address`}</span>
                     ) : null}
                     {recipientTypes.map((type) => {
-                        const recipients: Recipient[] = data[type] || [];
+                        const recipients: Recipient[] = data?.[type] || [];
                         if (recipients.length === 0) {
                             return null;
                         }

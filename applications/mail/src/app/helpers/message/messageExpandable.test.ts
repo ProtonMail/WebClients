@@ -1,6 +1,7 @@
 import { MESSAGE_FLAGS } from '../../constants';
 import { findMessageToExpand } from './messageExpandable';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { Message } from '../../models/message';
 
 describe('messageExpandable', () => {
     it('should return last message if not a custom label and all are reads', () => {
@@ -9,7 +10,7 @@ describe('messageExpandable', () => {
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, Unread: 0 },
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, Unread: 0 },
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, Unread: 0 }
-        ];
+        ] as Message[];
         expect(findMessageToExpand(labelID, messages)).toBe(messages[2]);
     });
 
@@ -19,7 +20,7 @@ describe('messageExpandable', () => {
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, Unread: 0 },
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, Unread: 1 },
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, Unread: 1 }
-        ];
+        ] as Message[];
         expect(findMessageToExpand(labelID, messages)).toBe(messages[1]);
     });
 
@@ -29,7 +30,7 @@ describe('messageExpandable', () => {
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, Unread: 0 },
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, LabelIDs: [labelID], Unread: 1 },
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, LabelIDs: [labelID], Unread: 1 }
-        ];
+        ] as Message[];
         expect(findMessageToExpand(labelID, messages)).toBe(messages[1]);
     });
 
@@ -39,7 +40,7 @@ describe('messageExpandable', () => {
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, Unread: 0 },
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, LabelIDs: [labelID], Unread: 1 },
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED, LabelIDs: [labelID], Unread: 1 }
-        ];
+        ] as Message[];
         expect(findMessageToExpand(labelID, messages)).toBe(messages[1]);
     });
 
@@ -49,13 +50,13 @@ describe('messageExpandable', () => {
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_REPLIED }, // draft
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_REPLIED }, // draft
             { ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_RECEIVED } // not draft
-        ];
+        ] as Message[];
         expect(findMessageToExpand(labelID, messages)).toBe(messages[1]);
     });
 
     it('should return empty for a conversation with only a draft', () => {
         const labelID = 'custom';
-        const messages = [{ ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_REPLIED }];
+        const messages = [{ ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_REPLIED }] as Message[];
         expect(findMessageToExpand(labelID, messages)).toEqual({});
     });
 });

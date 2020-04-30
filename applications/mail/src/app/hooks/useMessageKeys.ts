@@ -3,10 +3,10 @@ import { OpenPGPKey } from 'pmcrypto';
 import { useGetAddressKeys, useGetUserKeys } from 'react-components';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 
-import { MessageExtended } from '../models/message';
+import { MessageExtendedWithData } from '../models/message';
 
 type UseMessageKeys = () => (
-    message: MessageExtended
+    message: MessageExtendedWithData
 ) => Promise<{ publicKeys: OpenPGPKey[]; privateKeys: OpenPGPKey[] }>;
 
 /**
@@ -18,10 +18,10 @@ export const useMessageKeys: UseMessageKeys = () => {
 
     return useCallback(
         async ({
-            data: message = {},
+            data: message,
             publicKeys: existingPublicKeys,
             privateKeys: existingPrivateKeys
-        }: MessageExtended) => {
+        }: MessageExtendedWithData) => {
             if (existingPublicKeys !== undefined && existingPrivateKeys !== undefined) {
                 return { publicKeys: existingPublicKeys, privateKeys: existingPrivateKeys };
             }

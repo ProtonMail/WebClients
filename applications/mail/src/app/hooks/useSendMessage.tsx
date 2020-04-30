@@ -13,7 +13,7 @@ import SendWithErrorsModal from '../components/composer/addresses/SendWithErrors
 import { removeMessageRecipients, uniqueMessageRecipients } from '../helpers/message/cleanMessage';
 import { SendPreferences } from '../models/crypto';
 
-import { MessageExtended } from '../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../models/message';
 import { getRecipientsAddresses, isAttachPublicKey } from '../helpers/message/messages';
 
 import getSendPreferences from '../helpers/message/getSendPreferences';
@@ -91,8 +91,9 @@ export const useSendMessage = () => {
             const Attachments: Attachment[] = isAttachPublicKey(Message)
                 ? await attachPublicKey({ ...inputMessage, data: Message }, auth.UID)
                 : Message.Attachments;
+
             // Processed message representing what we send
-            const message: MessageExtended = {
+            const message: MessageExtendedWithData = {
                 ...cleanInputMessage,
                 document,
                 data: { ...Message, Attachments }

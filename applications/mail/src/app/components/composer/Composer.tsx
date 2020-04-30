@@ -6,7 +6,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 
 import { MapSendInfo } from '../../models/crypto';
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, Message, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import ComposerTitleBar from './ComposerTitleBar';
 import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
@@ -40,7 +40,7 @@ enum ComposerInnerModal {
 }
 
 export interface MessageChange {
-    (message: Partial<MessageExtended> | ((message: MessageExtended) => Partial<MessageExtended>)): void;
+    (message: PartialMessageExtended | ((message: MessageExtended) => PartialMessageExtended)): void;
 }
 
 const computeStyle = (
@@ -112,10 +112,7 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
 
     // Model value of the edited message in the composer
     const [modelMessage, setModelMessage] = useState<MessageExtended>({
-        localID: messageID,
-        data: {
-            Subject: '' // Needed fot the subject input controlled field
-        }
+        localID: messageID
     });
 
     // Map of send preferences and send icons for each recipient
@@ -161,7 +158,7 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
             setModelMessage({
                 ...syncedMessage,
                 ...modelMessage,
-                data: { ...syncedMessage.data, ...modelMessage.data },
+                data: { ...syncedMessage.data, ...modelMessage.data } as Message,
                 document: syncedMessage.document
             });
         }
@@ -193,9 +190,9 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
 
     const actualSave = (message: MessageExtended) => {
         if (message.data?.ID) {
-            return addAction(() => saveDraft(message));
+            return addAction(() => saveDraft(message as MessageExtendedWithData));
         }
-        return addAction(() => createDraft(message));
+        return addAction(() => createDraft(message as MessageExtendedWithData));
     };
 
     const autoSave = useHandler(actualSave, { debounce: 2000 });

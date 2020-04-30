@@ -76,7 +76,7 @@ const convertSingle = (
  * Converts the parsedAttachment coming from mailparser to an attachment linked to the message provided.
  */
 export const convert = (
-    message: Message = {},
+    message: Message,
     attachments: AttachmentMime[],
     verified: number,
     cache: AttachmentsCache

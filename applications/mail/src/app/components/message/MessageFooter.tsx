@@ -5,7 +5,7 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { attachmentsSize, getAttachments, getNumAttachmentByType } from '../../helpers/message/messages';
 import MessageAttachment from './MessageAttachment';
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { downloadAll } from '../../helpers/attachment/attachmentDownloader';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 
@@ -34,7 +34,7 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
 
     const handleDownloadAll = async () => {
         setShowLoader(true);
-        await downloadAll(message, cache, api);
+        await downloadAll(message as MessageExtendedWithData, cache, api);
         setShowLoader(false);
         setShowInstant(true);
     };

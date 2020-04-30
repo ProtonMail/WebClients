@@ -2,7 +2,7 @@ import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 import { MapSendPreferences, SendPreferences } from '../../models/crypto';
 
 import { Package, Packages } from './sendTopPackages';
-import { MessageExtended, Message } from '../../models/message';
+import { Message, MessageExtendedWithData } from '../../models/message';
 import { isEO, getAttachments } from '../message/messages';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
@@ -13,7 +13,7 @@ export const SEND_MIME = 32; // TODO update proton-shared constant
 /**
  * Package for a ProtonMail user.
  */
-const sendPM = async ({ publicKeys }: Pick<SendPreferences, 'publicKeys'>, message: Message = {}) => ({
+const sendPM = async ({ publicKeys }: Pick<SendPreferences, 'publicKeys'>, message: Message) => ({
     Type: SEND_PM,
     PublicKey: (publicKeys?.length && publicKeys[0]) || undefined,
     Signature: getAttachments(message).every(({ Signature }) => Signature)
@@ -22,7 +22,7 @@ const sendPM = async ({ publicKeys }: Pick<SendPreferences, 'publicKeys'>, messa
 /**
  * Package for a outside user using ProtonMail encryption
  */
-const sendPMEncryptedOutside = async (message: Message = {}) => {
+const sendPMEncryptedOutside = async (message: Message) => {
     console.warn('Unsuported yet', message);
 
     // TODO
@@ -76,7 +76,7 @@ const sendPGPMime = async ({ encrypt, sign, publicKeys }: Pick<SendPreferences, 
  */
 const sendPGPInline = async (
     { encrypt, sign, publicKeys }: Pick<SendPreferences, 'encrypt' | 'sign' | 'publicKeys'>,
-    message: Message = {}
+    message: Message
 ) => {
     if (encrypt) {
         return {
@@ -104,7 +104,7 @@ const sendClear = async () => ({ Type: SEND_CLEAR, Signature: 0 });
  */
 export const attachSubPackages = async (
     packages: Packages,
-    message: MessageExtended,
+    message: MessageExtendedWithData,
     emails: string[],
     mapSendPrefs: MapSendPreferences
 ): Promise<Packages> => {

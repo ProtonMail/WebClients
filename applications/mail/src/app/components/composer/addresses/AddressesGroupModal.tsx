@@ -100,7 +100,7 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
             }
             const { message, setMapSendInfo } = messageSendInfo;
             const encryptionPreferences = await getEncryptionPreferences(emailAddress);
-            const sendPreferences = getSendPreferences(encryptionPreferences, message.data || {});
+            const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
             const sendIcon = getSendStatusIcon(sendPreferences);
             !signal.aborted &&
                 setMapSendInfo((mapSendInfo) => ({ ...mapSendInfo, [emailAddress]: { sendPreferences, sendIcon } }));

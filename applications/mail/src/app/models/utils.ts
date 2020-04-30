@@ -7,3 +7,6 @@ export interface Cache<Value> {
     subscribe: (handler: (key: string) => void) => () => void;
     reset: () => void;
 }
+
+export type RequireOnly<T, Keys extends keyof T> = Partial<T> & Required<Pick<T, Keys>>;
+export type RequireSome<T, Keys extends keyof T> = T & Required<Pick<T, Keys>>;

@@ -3,7 +3,7 @@ import { useCache, useMailSettings, useAddresses, generateUID } from 'react-comp
 import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
 import { MESSAGE_ACTIONS } from '../constants';
 import { useEffect, useCallback } from 'react';
-import { MessageExtended } from '../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../models/message';
 import { useMessageCache } from '../containers/MessageProvider';
 
 const CACHE_KEY = 'Draft';
@@ -30,9 +30,10 @@ export const useDraft = () => {
             let message: MessageExtended;
 
             if (action === MESSAGE_ACTIONS.NEW && cache.has(CACHE_KEY) && referenceMessage === undefined) {
-                message = cloneDraft(cache.get(CACHE_KEY) as MessageExtended);
+                message = cloneDraft(cache.get(CACHE_KEY) as MessageExtendedWithData);
             } else {
-                message = createNewDraft(action, referenceMessage, mailSettings, addresses);
+                // This cast is quite dangerous but hard to remove
+                message = createNewDraft(action, referenceMessage, mailSettings, addresses) as MessageExtended;
             }
 
             message.localID = generateUID('draft');

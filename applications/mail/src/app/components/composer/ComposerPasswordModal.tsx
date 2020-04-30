@@ -4,20 +4,20 @@ import { Alert, Href, Label, Input, generateUID, useNotifications } from 'react-
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 import { MESSAGE_FLAGS } from '../../constants';
 
-import { Message, MessageExtended } from '../../models/message';
+import { Message, PartialMessageExtended } from '../../models/message';
 import ComposerInnerModal from './ComposerInnerModal';
 
 interface Props {
     message?: Message;
     onClose: () => void;
-    onChange: (message: Partial<MessageExtended>) => void;
+    onChange: (message: PartialMessageExtended) => void;
 }
 
-const ComposerPasswordModal = ({ message = {}, onClose, onChange }: Props) => {
+const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
     const [uid] = useState(generateUID('password-modal'));
-    const [password, setPassword] = useState(message.Password || '');
-    const [passwordVerif, setPasswordVerif] = useState(message.Password || '');
-    const [passwordHint, setPasswordHint] = useState(message.PasswordHint || '');
+    const [password, setPassword] = useState(message?.Password || '');
+    const [passwordVerif, setPasswordVerif] = useState(message?.Password || '');
+    const [passwordHint, setPasswordHint] = useState(message?.PasswordHint || '');
     const { createNotification } = useNotifications();
 
     const handleChange = (setter: (value: string) => void) => (event: ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +35,7 @@ const ComposerPasswordModal = ({ message = {}, onClose, onChange }: Props) => {
 
         onChange({
             data: {
-                Flags: setBit(message.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
+                Flags: setBit(message?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
                 Password: password,
                 PasswordHint: passwordHint
             }
@@ -46,7 +46,7 @@ const ComposerPasswordModal = ({ message = {}, onClose, onChange }: Props) => {
     const handleCancel = () => {
         onChange({
             data: {
-                Flags: clearBit(message.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
+                Flags: clearBit(message?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
                 Password: undefined,
                 PasswordHint: undefined
             }

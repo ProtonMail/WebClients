@@ -18,7 +18,7 @@ import { openNewTab } from 'proton-shared/lib/helpers/browser';
 import performRequest from 'proton-shared/lib/fetch/fetch';
 
 import { getListUnsubscribe, getListUnsubscribePost, getOriginalTo } from '../../../helpers/message/messages';
-import { MessageExtended } from '../../../models/message';
+import { MessageExtended, PartialMessageExtended } from '../../../models/message';
 import { useMessage } from '../../../hooks/useMessage';
 import { useSendMessage } from '../../../hooks/useSendMessage';
 import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
@@ -79,7 +79,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                     search
                 } as Location);
 
-                const inputMessage: MessageExtended = {
+                const inputMessage: PartialMessageExtended = {
                     ParentID: message.data?.ID,
                     localID: generateUID('unsubscribe'),
                     plainText: body,

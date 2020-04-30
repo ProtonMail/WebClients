@@ -1,41 +1,48 @@
 import { OpenPGPKey } from 'pmcrypto';
-
-import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 
 import { Attachment } from './attachment';
 import { MESSAGE_ACTIONS, VERIFICATION_STATUS } from '../constants';
 import { Recipient } from './address';
+import { RequireSome } from './utils';
 
 export interface Message {
-    ID?: string;
-    Subject?: string;
-    AddressID?: string;
-    MIMEType?: MIME_TYPES;
-    Body?: any;
-    Flags?: number;
-    Time?: number;
-    ContextTime?: number;
-    Sender?: Recipient;
-    ToList?: Recipient[];
-    CCList?: Recipient[];
-    BCCList?: Recipient[];
-    ReplyTos?: Recipient[];
-    Header?: string;
-    ParsedHeaders?: { [key: string]: any };
-    Attachments?: Attachment[];
-    NumAttachments?: number;
-    Unread?: number;
-    Size?: number;
-    Labels?: Label[];
-    LabelIDs?: string[];
-    ConversationID?: string;
-    Order?: number;
-    Password?: string;
-    RightToLeft?: number;
-    PasswordHint?: string;
+    ID: string;
+    Order: number;
+    ConversationID: string;
+    Subject: string;
+    Unread: number;
+    Sender: Recipient;
+    SenderAddress: string;
+    SenderName: string;
+    Flags: number;
+    Type: number;
+    IsEncrypted: number;
+    IsReplied: number;
+    IsRepliedAll: number;
+    IsForwarded: number;
+    ToList: Recipient[];
+    CCList: Recipient[];
+    BCCList: Recipient[];
+    Time: number;
+    Size: number;
+    NumAttachments: number;
     ExpirationTime?: number;
     SpamScore?: number;
+    AddressID: string;
+    ExternalID: string;
+    Body: any;
+    MIMEType: MIME_TYPES;
+    Header: string;
+    ParsedHeaders: { [key: string]: any };
+    ReplyTo: Recipient;
+    ReplyTos: Recipient[];
+    Attachments: Attachment[];
+    LabelIDs: string[];
+
+    Password?: string;
+    PasswordHint?: string;
+    RightToLeft?: number;
 }
 
 export interface MessageAction<T = void> {
@@ -196,3 +203,13 @@ export interface MessageExtended {
      */
     errors?: MessageErrors;
 }
+
+/**
+ * Common helper to have a MessageExtended with the data props required
+ */
+export type MessageExtendedWithData = RequireSome<MessageExtended, 'data'>;
+
+/**
+ * Common helper to have a partial MessageExtended including a Partial Message
+ */
+export type PartialMessageExtended = Partial<Omit<MessageExtended, 'data'> & { data: Partial<Message> }>;

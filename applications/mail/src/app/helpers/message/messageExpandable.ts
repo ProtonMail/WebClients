@@ -12,10 +12,10 @@ import { isDraft, isSentAutoReply } from './messages';
  * - check if the previous item is read
  * - if the previous isRead === 1, break the iteration
  */
-const getFirstMessageToRead = (messages: Message[]): Message => {
+const getFirstMessageToRead = (messages: Message[]): Message | undefined => {
     // A conversation can contains only one draft
     if (messages.length === 0) {
-        return {};
+        return;
     }
 
     // Else we open the first message unread beginning to the end list
@@ -35,9 +35,9 @@ const getFirstMessageToRead = (messages: Message[]): Message => {
     return messages[position];
 };
 
-const getLast = (messages: Message[]): Message => {
+const getLast = (messages: Message[]): Message | undefined => {
     if (messages.length === 0) {
-        return {};
+        return;
     }
     return messages[messages.length - 1];
 };
@@ -45,9 +45,9 @@ const getLast = (messages: Message[]): Message => {
 /**
  * Find in the message to scroll and expand
  */
-export const findMessageToExpand = (labelID = '', messages: Message[] = []): Message => {
+export const findMessageToExpand = (labelID = '', messages: Message[] = []): Message | undefined => {
     if (messages.length === 0) {
-        return {};
+        return;
     }
 
     if (labelID === MAILBOX_LABEL_IDS.STARRED || isCustomLabelOrFolder(labelID)) {

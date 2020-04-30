@@ -12,7 +12,7 @@ interface Props {
     contactGroups: ContactGroup[];
 }
 
-const HeaderRecipientsSimple = ({ message = {}, contacts, contactGroups }: Props) => {
+const HeaderRecipientsSimple = ({ message, contacts, contactGroups }: Props) => {
     const recipients = getRecipients(message);
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients, contactGroups);
 

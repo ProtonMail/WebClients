@@ -4,6 +4,7 @@ import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 import { formatSubject, handleActions, RE_PREFIX, FW_PREFIX, createNewDraft } from './messageDraft';
 import { insertSignature } from './messageSignature';
 import { findSender } from '../addresses';
+import { MessageExtendedWithData } from '../../models/message';
 
 jest.mock('./messageSignature', () => ({
     insertSignature: jest.fn()
@@ -84,7 +85,7 @@ describe('messageDraft', () => {
                     CCList: [recipient2],
                     BCCList: [recipient3]
                 }
-            });
+            } as MessageExtendedWithData);
             expect(result.Subject).toEqual(Subject);
             expect(result.ToList).toEqual([recipient1]);
             expect(result.CCList).toEqual([recipient2]);
@@ -97,7 +98,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_RECEIVED
                 }
-            });
+            } as MessageExtendedWithData);
 
             expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.ToList).toEqual([recipient4]);
@@ -109,7 +110,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_SENT
                 }
-            });
+            } as MessageExtendedWithData);
 
             expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.ToList).toEqual([recipient1]);
@@ -121,7 +122,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_SENT | MESSAGE_FLAGS.FLAG_RECEIVED
                 }
-            });
+            } as MessageExtendedWithData);
 
             expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.ToList).toEqual([recipient1]);
@@ -133,7 +134,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_RECEIVED
                 }
-            });
+            } as MessageExtendedWithData);
 
             expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.ToList).toEqual([recipient4]);
@@ -147,7 +148,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_SENT
                 }
-            });
+            } as MessageExtendedWithData);
 
             expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.ToList).toEqual([recipient1]);
@@ -161,7 +162,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_SENT | MESSAGE_FLAGS.FLAG_RECEIVED
                 }
-            });
+            } as MessageExtendedWithData);
 
             expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.ToList).toEqual([recipient1]);
@@ -170,7 +171,7 @@ describe('messageDraft', () => {
         });
 
         it('should prepare a forward', () => {
-            const result = handleActions(MESSAGE_ACTIONS.FORWARD, { data: message });
+            const result = handleActions(MESSAGE_ACTIONS.FORWARD, { data: message } as MessageExtendedWithData);
 
             expect(result.Subject).toEqual(`${FW_PREFIX} ${Subject}`);
             expect(result.ToList).toEqual([]);
@@ -181,7 +182,7 @@ describe('messageDraft', () => {
 
     describe('createNewDraft', () => {
         it('should use insertSignature', () => {
-            createNewDraft(action, { data: message }, mailSettings, addresses);
+            createNewDraft(action, { data: message } as MessageExtendedWithData, mailSettings, addresses);
             expect(insertSignature).toHaveBeenCalledWith('', undefined, action, mailSettings);
         });
 
@@ -196,20 +197,30 @@ describe('messageDraft', () => {
         // });
 
         it('should load the sender', () => {
-            createNewDraft(action, { data: message }, mailSettings, addresses);
+            createNewDraft(action, { data: message } as MessageExtendedWithData, mailSettings, addresses);
             expect(findSender).toHaveBeenCalledWith(addresses, message);
         });
 
         it('should add ParentID when not a copy', () => {
             notNewActions.forEach((action) => {
-                const result = createNewDraft(action, { data: message }, mailSettings, addresses);
+                const result = createNewDraft(
+                    action,
+                    { data: message } as MessageExtendedWithData,
+                    mailSettings,
+                    addresses
+                );
                 expect(result.ParentID).toBe(ID);
             });
         });
 
         it('should set a value to recipient lists', () => {
             allActions.forEach((action) => {
-                const result = createNewDraft(action, { data: message }, mailSettings, addresses);
+                const result = createNewDraft(
+                    action,
+                    { data: message } as MessageExtendedWithData,
+                    mailSettings,
+                    addresses
+                );
                 expect(result.data?.ToList?.length).toBeDefined();
                 expect(result.data?.CCList?.length).toBeDefined();
                 expect(result.data?.BCCList?.length).toBeDefined();
@@ -224,7 +235,7 @@ describe('messageDraft', () => {
         it('should use values from handleActions', () => {
             const result = createNewDraft(
                 MESSAGE_ACTIONS.REPLY_ALL,
-                { data: { ...message, Flags: MESSAGE_FLAGS.FLAG_RECEIVED } },
+                { data: { ...message, Flags: MESSAGE_FLAGS.FLAG_RECEIVED } } as MessageExtendedWithData,
                 mailSettings,
                 addresses
             );
@@ -237,7 +248,12 @@ describe('messageDraft', () => {
         it('should use values from findSender', () => {
             const address: Partial<Address> = { ID, Email: 'Email', DisplayName: 'DisplayName' };
             (findSender as jest.Mock).mockReturnValue(address);
-            const result = createNewDraft(action, { data: message }, mailSettings, addresses);
+            const result = createNewDraft(
+                action,
+                { data: message } as MessageExtendedWithData,
+                mailSettings,
+                addresses
+            );
             expect(result.data?.AddressID).toBe(ID);
             expect(result.data?.Sender?.Address).toBe(address.Email);
             expect(result.data?.Sender?.Name).toBe(address.DisplayName);

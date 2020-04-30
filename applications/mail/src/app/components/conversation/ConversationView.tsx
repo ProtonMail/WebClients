@@ -47,7 +47,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
     const showTrashWarning = filteredMessages.length !== messages.length;
     const numParticipants = getNumParticipants(conversation);
 
-    const initialExpand = findMessageToExpand(labelID, messagesToShow).ID;
+    const initialExpand = findMessageToExpand(labelID, messagesToShow)?.ID;
 
     const handleRemoveLabel = async (labelID: string) => {
         await api(unlabelConversations({ LabelID: labelID, IDs: [conversation.ID] }));

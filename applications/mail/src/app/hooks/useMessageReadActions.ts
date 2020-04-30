@@ -4,7 +4,7 @@ import { getMessage } from 'proton-shared/lib/api/messages';
 import { getMatchingKey } from 'pmcrypto/lib/key/utils';
 
 import { VERIFICATION_STATUS } from '../constants';
-import { MessageExtended, Message, MessageErrors } from '../models/message';
+import { MessageExtended, Message, MessageErrors, MessageExtendedWithData } from '../models/message';
 import { loadMessage, markAsRead } from '../helpers/message/messageRead';
 import { useMessageKeys } from './useMessageKeys';
 import { decryptMessage } from '../helpers/message/messageDecrypt';
@@ -40,7 +40,7 @@ export const useMarkAsRead = (localID: string) => {
     const { call } = useEventManager();
 
     return useCallback(async () => {
-        const messageFromCache = messageCache.get(localID) as MessageExtended;
+        const messageFromCache = messageCache.get(localID) as MessageExtendedWithData;
         const message = await markAsRead(messageFromCache, api, call);
         updateMessageCache(messageCache, localID, message);
     }, [localID]);
@@ -62,7 +62,7 @@ export const useInitializeMessage = (localID: string) => {
 
         // If the message is not yet loaded at all, the localID is the message ID
         if (!messageFromCache || !messageFromCache.data) {
-            messageFromCache.data = { ID: localID };
+            messageFromCache.data = { ID: localID } as Message;
         }
 
         updateMessageCache(messageCache, localID, { initialized: false });
@@ -81,7 +81,7 @@ export const useInitializeMessage = (localID: string) => {
         try {
             message = await loadMessage(messageFromCache, api);
             // const { apiKeys, pinnedKeys, isContactSignatureVerified } = await getEncryptionPreferences(
-            encryptionPreferences = await getEncryptionPreferences(message.data.Sender?.Address);
+            encryptionPreferences = await getEncryptionPreferences(message.data.Sender.Address as string);
 
             const allSenderPublicKeys = [...encryptionPreferences.pinnedKeys, ...encryptionPreferences.apiKeys];
 

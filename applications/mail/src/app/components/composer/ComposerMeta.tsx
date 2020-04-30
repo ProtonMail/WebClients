@@ -7,6 +7,7 @@ import { MapSendInfo } from '../../models/crypto';
 import ComposerAddresses from './addresses/Addresses';
 import { MessageExtended } from '../../models/message';
 import { getFromAdresses } from '../../helpers/addresses';
+import { MessageChange } from './Composer';
 
 interface Props {
     message: MessageExtended;
@@ -15,7 +16,7 @@ interface Props {
     mapSendInfo: MapSendInfo;
     setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>;
     disabled: boolean;
-    onChange: (message: Partial<MessageExtended>) => void;
+    onChange: MessageChange;
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
 }
@@ -80,7 +81,7 @@ const ComposerMeta = ({
                 </Label>
                 <Input
                     id={`subject-${uid}`}
-                    value={message.data?.Subject}
+                    value={message.data?.Subject || ''}
                     placeholder={c('Placeholder').t`Subject`}
                     disabled={disabled}
                     onChange={handleSubjectChange}

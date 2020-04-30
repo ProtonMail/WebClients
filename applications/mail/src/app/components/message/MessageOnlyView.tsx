@@ -9,6 +9,7 @@ import ItemLabels from '../list/ItemLabels';
 import { OnCompose } from '../../containers/ComposerContainer';
 import { useMessage } from '../../hooks/useMessage';
 import { getNumParticipants } from '../../helpers/addresses';
+import { Message } from '../../models/message';
 
 interface Props {
     labelID: string;
@@ -26,7 +27,7 @@ const MessageOnlyView = ({ labelID, messageID, mailSettings, onBack, onCompose }
     const { message } = useMessage(messageID);
 
     // Message content could be undefined
-    const data = message.data || { ID: messageID };
+    const data = message.data || ({ ID: messageID } as Message);
     const numParticipants = getNumParticipants(data);
 
     return (

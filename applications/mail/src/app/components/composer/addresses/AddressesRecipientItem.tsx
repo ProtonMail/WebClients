@@ -73,7 +73,7 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
             }
             const { message, setMapSendInfo } = messageSendInfo;
             const encryptionPreferences = await getEncryptionPreferences(emailAddress);
-            const sendPreferences = getSendPreferences(encryptionPreferences, message.data || {});
+            const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
             if (primaryKeyNotPinnedFailureTypes.includes(sendPreferences.failure?.type)) {
                 await new Promise((resolve, reject) => {
                     const contacts = [

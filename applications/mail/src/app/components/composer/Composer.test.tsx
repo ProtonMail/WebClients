@@ -5,6 +5,7 @@ import { fireEvent } from '@testing-library/react';
 
 import { clearAll, render, tick, messageCache } from '../../helpers/test/helper';
 import Composer from './Composer';
+import { MessageExtended } from '../../models/message';
 
 const ID = 'ID';
 
@@ -32,7 +33,7 @@ describe('Composer', () => {
                 MIMEType: 'text/plain' as MIME_TYPES,
                 Subject: ''
             }
-        };
+        } as MessageExtended;
 
         messageCache.set(ID, message);
 

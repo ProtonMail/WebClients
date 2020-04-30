@@ -2,7 +2,7 @@ import React from 'react';
 
 import { clearAll, render } from '../../../helpers/test/helper';
 import AttachmentsList from './AttachmentsList';
-import { EmbeddedInfo, EmbeddedMap } from '../../../models/message';
+import { EmbeddedInfo, EmbeddedMap, MessageExtended } from '../../../models/message';
 
 const localID = 'localID';
 
@@ -20,7 +20,7 @@ describe('AttachmentsList', () => {
     afterEach(() => clearAll());
 
     it('should show attachments count', async () => {
-        const message = { localID, data: { Attachments: [normalAttachment] } };
+        const message = { localID, data: { Attachments: [normalAttachment] } } as MessageExtended;
         const { getByText } = await render(<AttachmentsList {...props} message={message} />);
         getByText(/1 file attached/);
     });
@@ -28,7 +28,7 @@ describe('AttachmentsList', () => {
     it('should show embedded count', async () => {
         const embeddedInfo: EmbeddedInfo = { attachment: embeddedAttachment, url: 'url' };
         const embeddeds: EmbeddedMap = new Map<string, EmbeddedInfo>([[cid, embeddedInfo]]);
-        const message = { localID, embeddeds, data: { Attachments: [embeddedAttachment] } };
+        const message = ({ localID, embeddeds, data: { Attachments: [embeddedAttachment] } } as any) as MessageExtended;
         const { getByText } = await render(<AttachmentsList {...props} message={message} />);
         getByText(/1 embedded image/);
     });
@@ -36,7 +36,11 @@ describe('AttachmentsList', () => {
     it('should show attachments count and embedded count', async () => {
         const embeddedInfo: EmbeddedInfo = { attachment: embeddedAttachment, url: 'url' };
         const embeddeds: EmbeddedMap = new Map<string, EmbeddedInfo>([[cid, embeddedInfo]]);
-        const message = { localID, embeddeds, data: { Attachments: [normalAttachment, embeddedAttachment] } };
+        const message = ({
+            localID,
+            embeddeds,
+            data: { Attachments: [normalAttachment, embeddedAttachment] }
+        } as any) as MessageExtended;
         const { getByText } = await render(<AttachmentsList {...props} message={message} />);
         getByText(/1 file attached/);
         getByText(/1 embedded image/);

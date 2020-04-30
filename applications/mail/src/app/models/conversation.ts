@@ -8,6 +8,7 @@ export interface Conversation {
     Size?: number;
     Time?: number;
     ContextTime?: number;
+    NumUnread?: number;
     NumMessages?: number;
     Senders?: Recipient[];
     Recipients?: Recipient[];

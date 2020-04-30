@@ -10,8 +10,8 @@ interface Props {
     onClose?: () => void;
 }
 
-const MessageHeadersModal = ({ message = {}, onClose, ...rest }: Props) => {
-    const content = `${message.Header}\n\r${message.Body}`;
+const MessageHeadersModal = ({ message, onClose, ...rest }: Props) => {
+    const content = `${message?.Header}\n\r${message?.Body}`;
 
     const handleDownload = () => {
         const blob = new Blob([content], { type: 'data:text/plain;charset=utf-8;' });

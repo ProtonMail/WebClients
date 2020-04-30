@@ -105,7 +105,8 @@ export const contactToInput = (contact: Partial<ContactEmail> = {}): string =>
 export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: string) =>
     recipients.filter((recipient) => recipient.Group !== groupPath);
 
-export const getRecipientLabel = ({ Address, Name }: Recipient) => {
+export const getRecipientLabel = (recipient?: Recipient) => {
+    const { Name, Address } = recipient || {};
     if (!Name || Name === Address) {
         return Address?.substring(0, Address.indexOf('@'));
     }
@@ -194,13 +195,13 @@ export const getFromAdresses = (addresses: Address[], originalTo = '') => {
 /**
  * Find the current sender for a message
  */
-export const findSender = (addresses: Address[] = [], { AddressID = '' }: Message = {}): Address | undefined => {
+export const findSender = (addresses: Address[] = [], message?: Partial<Message>): Address | undefined => {
     const enabledAddresses = addresses
         .filter((address) => address.Status === 1)
         .sort((a1, a2) => (a1.Order || 0) - (a2.Order || 0));
 
-    if (AddressID) {
-        const originalAddress = enabledAddresses.find((address) => address.ID === AddressID);
+    if (message?.AddressID) {
+        const originalAddress = enabledAddresses.find((address) => address.ID === message?.AddressID);
         if (originalAddress) {
             return originalAddress;
         }

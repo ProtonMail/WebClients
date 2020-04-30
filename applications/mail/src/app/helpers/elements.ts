@@ -15,6 +15,7 @@ import { hasAttachments as messageHasAttachments } from './message/messages';
 import { hasAttachments as conversationHasAttachments } from './conversation';
 
 import { LabelIDsChanges } from '../models/event';
+import { Conversation } from '../models/conversation';
 
 export interface TypeParams {
     labelID?: string;
@@ -28,28 +29,36 @@ export const getCurrentType = ({ labelID, mailSettings, location }: TypeParams) 
 export const isMessage = (element: Element = {}): boolean => typeof (element as Message).ConversationID === 'string';
 export const isConversation = (element: Element = {}): boolean => !isMessage(element);
 
-export const getDate = ({ Time = 0, ContextTime = 0 }: Element = {}) => new Date((ContextTime || Time) * 1000);
+export const getDate = (element?: Element, labelID?: string) => {
+    let time;
+
+    if (isMessage(element)) {
+        time = element?.Time;
+    } else {
+        const conversation = element as Conversation;
+        if (conversation.ContextTime) {
+            time = conversation.ContextTime;
+        } else {
+            time = conversation.Labels?.find((label) => label.ID === labelID)?.ContextTime;
+        }
+    }
+
+    return new Date((time || 0) * 1000);
+};
 
 /**
  * Get readable time to display from message / conversation
- * @param {Integer} element.Time
- * @return {String} Jan 17, 2016
+ * @param element.Time
+ * @return Jan 17, 2016
  */
-export const getReadableTime = ({ Time = 0, ContextTime = 0 }: Element = {}) => {
-    const date = new Date((ContextTime || Time) * 1000);
-    const now = new Date();
-    return formatRelative(date, now);
-};
+export const getReadableTime = (element: Element = {}) => formatRelative(getDate(element), new Date());
 
-export const getReadableFullTime = ({ Time = 0, ContextTime = 0 }: Element = {}) => {
-    const date = new Date((ContextTime || Time) * 1000);
-    return format(date, 'Ppp');
-};
+export const getReadableFullTime = (element: Element = {}) => format(getDate(element), 'Ppp');
 
 export const isUnread = (element: Element = {}) => {
     if ('ContextNumUnread' in element) {
         // Conversation
-        return element.ContextNumUnread !== 0;
+        return (element as Conversation).ContextNumUnread !== 0;
     }
     if ('Unread' in element) {
         // Message
@@ -58,10 +67,8 @@ export const isUnread = (element: Element = {}) => {
     return false;
 };
 
-export const getLabel = ({ Labels = [] }: Element, labelID: string) => Labels.find(({ ID = '' }) => ID === labelID);
-
-export const getLabelIDs = (element: Element) =>
-    isMessage(element) ? element.LabelIDs || [] : element.Labels?.map(({ ID }) => ID || '') || [];
+export const getLabelIDs = (element?: Element) =>
+    isMessage(element) ? element?.LabelIDs || [] : (element as Conversation).Labels?.map(({ ID }) => ID || '') || [];
 
 export const hasLabel = (element: Element, labelID?: string) => {
     return getLabelIDs(element).some((ID) => labelID === ID);
@@ -69,16 +76,13 @@ export const hasLabel = (element: Element, labelID?: string) => {
 
 export const isStarred = (element: Element) => getLabelIDs(element).includes(MAILBOX_LABEL_IDS.STARRED);
 
-export const getTime = (element: Element, labelID: string) =>
-    element.ContextTime || element.Time || (getLabel(element, labelID) || {}).ContextTime || 0;
-
 export const getSize = ({ Size = 0 }: Element) => Size;
 
 export const sort = (elements: Element[], sort: Sort, labelID: string) => {
     const getValue = {
-        Time: getTime,
+        Time: getDate,
         Size: getSize
-    }[sort.sort];
+    }[sort.sort] as any;
     const compare = (a: Element, b: Element) => {
         const valueA = getValue(a, labelID);
         const valueB = getValue(b, labelID);
@@ -110,12 +114,12 @@ export const getCounterMap = (
 };
 
 export const hasAttachments = (element: Element) =>
-    isMessage(element) ? messageHasAttachments(element) : conversationHasAttachments(element);
+    isMessage(element) ? messageHasAttachments(element as Message) : conversationHasAttachments(element);
 
 /**
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
  */
-export const parseLabelIDsInEvent = (element: Element = {}, changes: Element & LabelIDsChanges): Element => {
+export const parseLabelIDsInEvent = (element: Element, changes: Element & LabelIDsChanges): Element => {
     const LabelIDs = diff(element.LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || []);
-    return { ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']), LabelIDs };
+    return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']), LabelIDs };
 };

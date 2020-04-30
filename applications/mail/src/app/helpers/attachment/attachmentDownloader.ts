@@ -3,7 +3,7 @@ import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { Api } from 'proton-shared/lib/interfaces';
 
-import { MessageExtended, Message } from '../../models/message';
+import { MessageExtended, Message, MessageExtendedWithData } from '../../models/message';
 import { Attachment } from '../../models/attachment';
 import { getAndVerify } from './attachmentLoader';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
@@ -108,12 +108,16 @@ const formatDownloadAll = async (message: MessageExtended, cache: AttachmentsCac
     return Promise.all(list.map((att) => formatDownload(att, message, cache, api)));
 };
 
-const getZipAttachmentName = (message: Message = {}) => `Attachments-${message.Subject}.zip`;
+const getZipAttachmentName = (message: Message) => `Attachments-${message.Subject}.zip`;
 
 /**
  * Download all attachments as a zipfile
  */
-export const downloadAll = async (message: MessageExtended, cache: AttachmentsCache, api: Api): Promise<void> => {
+export const downloadAll = async (
+    message: MessageExtendedWithData,
+    cache: AttachmentsCache,
+    api: Api
+): Promise<void> => {
     const list = await formatDownloadAll(message, cache, api);
 
     // TODO: uncomment

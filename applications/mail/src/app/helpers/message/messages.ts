@@ -28,7 +28,7 @@ const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', '
 /**
  * Check if a message has a mime type
  */
-const hasMimeType = (type: MIME_TYPES) => ({ MIMEType }: Message = {}) => MIMEType === type;
+const hasMimeType = (type: MIME_TYPES) => (message?: Message) => message?.MIMEType === type;
 
 export const isMIME = hasMimeType(MIME);
 export const isPlainText = hasMimeType(PLAINTEXT);
@@ -37,10 +37,10 @@ export const isHTML = hasMimeType(MIME_TYPES.DEFAULT);
 /**
  * Check if a message has a flag in the flags bitmap
  */
-export const hasFlag = (flag: number) => ({ Flags = 0 }: Message = {}) => hasBit(Flags, flag);
-export const setFlag = (flag: number) => (message: Message = {}) => setBit(message.Flags, flag) as number;
-export const clearFlag = (flag: number) => (message: Message = {}) => clearBit(message.Flags, flag) as number;
-export const toggleFlag = (flag: number) => (message: Message = {}) => toggleBit(message.Flags, flag) as number;
+export const hasFlag = (flag: number) => (message?: Partial<Message>) => hasBit(message?.Flags, flag);
+export const setFlag = (flag: number) => (message?: Partial<Message>) => setBit(message?.Flags, flag);
+export const clearFlag = (flag: number) => (message?: Partial<Message>) => clearBit(message?.Flags, flag);
+export const toggleFlag = (flag: number) => (message?: Partial<Message>) => toggleBit(message?.Flags, flag);
 
 export const isRequestReadReceipt = hasFlag(FLAG_RECEIPT_REQUEST);
 export const isReadReceiptSent = hasFlag(FLAG_RECEIPT_SENT);
@@ -54,30 +54,30 @@ export const isReplied = hasFlag(FLAG_REPLIED);
 export const isRepliedAll = hasFlag(FLAG_REPLIEDALL);
 export const isForwarded = hasFlag(FLAG_FORWARDED);
 export const isSentAndReceived = hasFlag(FLAG_SENT | FLAG_RECEIVED);
-export const isDraft = (message: Message = {}) => !isSent(message) && !isReceived(message);
+export const isDraft = (message?: Partial<Message>) => !isSent(message) && !isReceived(message);
 export const isE2E = hasFlag(FLAG_E2E);
 export const isSentEncrypted = hasFlag(FLAG_E2E | FLAG_SENT);
 export const isInternalEncrypted = hasFlag(FLAG_E2E | FLAG_INTERNAL);
 export const isSign = hasFlag(FLAG_SIGN);
 export const isAttachPublicKey = hasFlag(FLAG_PUBLIC_KEY);
 export const isExternalEncrypted = (message: Message) => isE2E(message) && !isInternal(message);
-export const isPGPEncrypted = (message: Message = {}) => isExternal(message) && isReceived(message) && isE2E(message);
+export const isPGPEncrypted = (message: Message) => isExternal(message) && isReceived(message) && isE2E(message);
 export const inSigningPeriod = ({ Time = 0 }: Message) => Time >= Math.max(SIGNATURE_START.USER, SIGNATURE_START.BULK);
 
 export const isPGPInline = (message: Message) => isPGPEncrypted(message) && !isMIME(message);
 
-export const isEO = (message: Message = {}) => !!message.Password;
+export const isEO = (message?: Message) => !!message?.Password;
 
 export const addReceived = (Flags = 0) => setBit(Flags, MESSAGE_FLAGS.FLAG_RECEIVED);
 
-export const getSender = ({ Sender = {} }: Message = {}) => Sender;
-export const getRecipients = ({ ToList = [], CCList = [], BCCList = [] }: Message = {}) => [
-    ...ToList,
-    ...CCList,
-    ...BCCList
-];
+export const getSender = (message?: Message) => message?.Sender;
+
+export const getRecipients = (message?: Message) => {
+    const { ToList = [], CCList = [], BCCList = [] } = message || {};
+    return [...ToList, ...CCList, ...BCCList];
+};
 // export const getRecipientsLabels = (message: Message = {}) => getRecipients(message).map(getRecipientLabel);
-export const getRecipientsAddresses = (message: Message = {}) =>
+export const getRecipientsAddresses = (message: Message) =>
     getRecipients(message)
         .map(({ Address }) => Address || '')
         .filter(identity);
@@ -147,7 +147,7 @@ export const getRecipientsAddresses = (message: Message = {}) =>
 /**
  * Get date from message
  */
-export const getDate = ({ Time = 0 }: Message = {}) => new Date(Time * 1000);
+export const getDate = ({ Time = 0 }: Message) => new Date(Time * 1000);
 
 /**
  * Check if these all messages shared the same sender (by email address)
@@ -170,8 +170,8 @@ export const getDate = ({ Time = 0 }: Message = {}) => new Date(Time * 1000);
 //     );
 // };
 
-export const getParsedHeaders = (message: Message, parameter: string) => {
-    const { ParsedHeaders = {} } = message;
+export const getParsedHeaders = (message: Partial<Message> | undefined, parameter: string) => {
+    const { ParsedHeaders = {} } = message || {};
 
     if (parameter) {
         return ParsedHeaders[parameter];
@@ -180,11 +180,11 @@ export const getParsedHeaders = (message: Message, parameter: string) => {
     return ParsedHeaders;
 };
 
-export const getOriginalTo = (message: Message = {}) => {
+export const getOriginalTo = (message?: Partial<Message>) => {
     return getParsedHeaders(message, 'X-Original-To') || '';
 };
 
-export const requireReadReceipt = (message: Message = {}) => {
+export const requireReadReceipt = (message?: Message) => {
     const dispositionNotificationTo = getParsedHeaders(message, 'Disposition-Notification-To') || ''; // ex: Andy <andy@pm.me>
 
     if (!dispositionNotificationTo || isReadReceiptSent(message) || isSent(message)) {
@@ -194,17 +194,17 @@ export const requireReadReceipt = (message: Message = {}) => {
     return true;
 };
 
-export const getListUnsubscribe = (message: Message = {}) => {
+export const getListUnsubscribe = (message?: Message) => {
     return getParsedHeaders(message, 'List-Unsubscribe') || '';
 };
 
-export const getListUnsubscribePost = (message: Message = {}) => {
+export const getListUnsubscribePost = (message?: Message) => {
     return getParsedHeaders(message, 'List-Unsubscribe-Post') || '';
 };
 
-export const getAttachments = (message: Message = {}) => message.Attachments || [];
-export const hasAttachments = (message: Message = {}) => message.NumAttachments && message.NumAttachments > 0;
-export const attachmentsSize = (message: Message = {}) =>
+export const getAttachments = (message?: Message) => message?.Attachments || [];
+export const hasAttachments = (message?: Message) => message?.NumAttachments && message?.NumAttachments > 0;
+export const attachmentsSize = (message?: Message) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
 export const getNumAttachmentByType = (message: MessageExtended): [number, number] => {
     const attachments = getAttachments(message.data);
@@ -214,8 +214,8 @@ export const getNumAttachmentByType = (message: MessageExtended): [number, numbe
     return [numPureAttachments, numEmbedded];
 };
 
-export const isAutoReply = (message: Message = {}) => {
-    const { ParsedHeaders = {} } = message;
+export const isAutoReply = (message?: Message) => {
+    const ParsedHeaders = message?.ParsedHeaders || {};
     return AUTOREPLY_HEADERS.some((h) => h in ParsedHeaders);
 };
 
@@ -245,14 +245,17 @@ export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
 /**
  * Apply updates from the message model to the message in state
  */
-export const mergeMessages = (messageState: MessageExtended, messageModel: Partial<MessageExtended>) => {
+export const mergeMessages = (
+    messageState: MessageExtended,
+    messageModel: Partial<MessageExtended>
+): MessageExtended => {
     if (messageState.document && messageModel.document) {
         setContent(messageState, getContent(messageModel));
     }
     return {
         ...messageState,
         ...messageModel,
-        data: { ...messageState.data, ...messageModel.data },
+        data: { ...messageState.data, ...messageModel.data } as Message,
         errors: { ...messageState.errors, ...messageModel.errors }
     };
 };

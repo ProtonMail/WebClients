@@ -34,6 +34,7 @@ import { isMessage } from '../helpers/elements';
 import { isDraft } from '../helpers/message/messages';
 
 import './main-area.scss';
+import { Message } from '../models/message';
 
 interface Props {
     labelID: string;
@@ -128,7 +129,7 @@ const MailboxContainer = ({
     const handleElement = (element: Element) => {
         history.push(setPathInUrl(location, labelID, element.ID));
         if (isMessage(element) && isDraft(element)) {
-            onCompose({ existingDraft: { localID: element.ID as string, data: element } });
+            onCompose({ existingDraft: { localID: element.ID as string, data: element as Message } });
         }
     };
     const handleBack = () => history.push(setPathInUrl(location, labelID));

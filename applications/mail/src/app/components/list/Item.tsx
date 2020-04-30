@@ -8,15 +8,16 @@ import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contact
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 
 import ItemCheckbox from './ItemCheckbox';
-import { getRecipients as getMessageRecipients, getSender, getRecipients } from '../../helpers/message/messages';
+import { getRecipients as getMessageRecipients, getSender } from '../../helpers/message/messages';
 import { getCurrentType, isUnread } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import { Element } from '../../models/element';
 import { ELEMENT_TYPES } from '../../constants';
-import { getSenders } from '../../helpers/conversation';
+import { getSenders, getRecipients as getConversationRecipients } from '../../helpers/conversation';
 import { getRecipientLabel, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../helpers/addresses';
 import { isCustomLabel } from '../../helpers/labels';
+import { Message } from '../../models/message';
 
 const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -64,8 +65,8 @@ const Item = ({
         labelID === MAILBOX_LABEL_IDS.ALL_MAIL ||
         labelID === MAILBOX_LABEL_IDS.STARRED ||
         isCustomLabel(labelID, labels);
-    const senders = isConversation ? getSenders(element) : [getSender(element)];
-    const recipients = isConversation ? getRecipients(element) : getMessageRecipients(element);
+    const senders = isConversation ? getSenders(element) : [getSender(element as Message)];
+    const recipients = isConversation ? getConversationRecipients(element) : getMessageRecipients(element as Message);
     const sendersLabels = senders.map(getRecipientLabel);
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients, contactGroups);
     const recipientsLabels = recipientsOrGroup.map((recipientOrGroup) =>

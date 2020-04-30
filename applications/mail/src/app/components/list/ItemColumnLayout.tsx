@@ -11,6 +11,7 @@ import ItemLocation from './ItemLocation';
 import ItemDate from './ItemDate';
 import NumMessages from '../conversation/NumMessages';
 import { Element } from '../../models/element';
+import { Message } from '../../models/message';
 
 interface Props {
     labels?: Label[];
@@ -52,7 +53,7 @@ const ItemColumnLayout = ({
             <div className="flex flex-items-center item-secondline mw100">
                 <div className="flex-item-fluid flex w0 pr1 flex-nowrap item-sender--smaller">
                     {/* add expiration icon, in red, 12px */}
-                    {showIcon && <ItemLocation message={element} mailSettings={mailSettings} />}
+                    {showIcon && <ItemLocation message={element as Message} mailSettings={mailSettings} />}
                     {isConversation && (
                         <NumMessages
                             className={classnames(['mr0-25 flex-item-noshrink', unread && 'bold'])}

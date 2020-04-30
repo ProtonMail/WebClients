@@ -18,7 +18,7 @@ interface Props {
     showBlockquote?: boolean;
 }
 
-const MessageBody = ({ message: { document, data: message = {} }, showBlockquote = true }: Props) => {
+const MessageBody = ({ message: { document, data: message }, showBlockquote = true }: Props) => {
     const { state: expand, toggle } = useToggle();
 
     const plain = isPlainText(message);
