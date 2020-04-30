@@ -57,6 +57,11 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         setUploads(uploadsRef.current);
     };
 
+    const removeUpload = (id: string) => {
+        uploadsRef.current = uploadsRef.current.filter((upload) => upload.id !== id);
+        setUploads(uploadsRef.current);
+    };
+
     const addNewUpload = (id: string, file: File) => {
         uploadsRef.current = [
             ...uploadsRef.current,
@@ -149,10 +154,6 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
     const getUploadsImmediate = () => {
         return uploadsRef.current;
-    };
-
-    const removeUpload = (id: string) => {
-        setUploads((uploads) => uploads.filter((upload) => upload.id !== id));
     };
 
     return (
