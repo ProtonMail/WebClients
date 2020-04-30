@@ -73,7 +73,7 @@ const handleDeleteEvent = async ({
         });
     }
 
-    const recurrences = await getAllEventsByUID(api, oldEventData.uid);
+    const recurrences = await getAllEventsByUID(api, oldEventData.uid, oldEventData.calendarID);
 
     const originalEvent = getOriginalEvent(recurrences);
     let originalEventData = oldEventData;

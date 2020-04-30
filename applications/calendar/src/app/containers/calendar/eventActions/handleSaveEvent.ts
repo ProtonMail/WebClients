@@ -115,7 +115,7 @@ const handleSaveEvent = async ({
         });
     }
 
-    const recurrences = await getAllEventsByUID(api, oldEventData.uid);
+    const recurrences = await getAllEventsByUID(api, oldEventData.uid, oldEventData.calendarID);
 
     const originalEvent = getOriginalEvent(recurrences);
     const originalEventResult = originalEvent ? await getDecryptedEvent(originalEvent).catch(noop) : undefined;

@@ -3,12 +3,12 @@ import { Api } from 'proton-shared/lib/interfaces';
 import paginatedFetch from 'proton-shared/lib/api/helpers/paginatedFetch';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 
-const getAllEventsByUID = async (api: Api, UID: string) => {
+const getAllEventsByUID = async (api: Api, UID: string, CalendarID: string) => {
     return paginatedFetch(api, async (PageNumber, PageSize) => {
         const { Events = [] } = await api<{ Events: CalendarEvent[] }>(
             getEventByUIDRoute({ UID, PageSize, PageNumber })
         );
-        return Events;
+        return Events.filter((event) => event.CalendarID === CalendarID);
     });
 };
 
