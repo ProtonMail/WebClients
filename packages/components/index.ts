@@ -355,6 +355,7 @@ export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonV
 
 export { default as usePayPal } from './hooks/usePayPal';
 export { useUser, useGetUser } from './hooks/useUser';
+export { default as useDelinquent } from './hooks/useDelinquent';
 export { default as useUserVPN } from './hooks/useUserVPN';
 export { default as useBlackFriday } from './hooks/useBlackFriday';
 export { default as useCachedModelResult } from './hooks/useCachedModelResult';
