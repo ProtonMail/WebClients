@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  web:
+    build:
+      context: .
+    environment:
+      API_ENDPOINT: 'https://protontech.dev/api/'
+    ports:
+      - 80:80
+      - 443:443
