@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect, ReactNode } from 'react';
 import { c } from 'ttag';
-import { AppsSidebar, StorageSpaceStatus, MainAreaContext, Href } from 'react-components';
+import { AppsSidebar, StorageSpaceStatus, MainAreaContext, Href, useDelinquent } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import PrivateHeader from '../header/PrivateHeader';
@@ -21,6 +21,7 @@ interface Props {
 const PrivateLayout = ({ children, location, history, labelID, onCompose }: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const [expanded, setExpand] = useState(false);
+    useDelinquent();
 
     const handleSearch = (keyword = '', labelID = MAILBOX_LABEL_IDS.ALL_MAIL) => {
         history.push(setKeywordInUrl({ ...location, pathname: `/${getHumanLabelID(labelID)}` }, keyword));
