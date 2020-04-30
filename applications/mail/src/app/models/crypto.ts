@@ -11,7 +11,7 @@ export interface SendPreferences {
     isPublicKeyPinned?: boolean;
     hasApiKeys: boolean;
     hasPinnedKeys: boolean;
-    warnings?: any[];
+    warnings?: string[];
     failure?: EncryptionPreferencesFailure;
 }
 

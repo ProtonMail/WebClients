@@ -45,7 +45,7 @@ const getMapEmailHeaders = (headers: string): { [key: string]: X_PM_HEADERS } =>
 };
 
 export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon | undefined => {
-    const { encrypt, pgpScheme, isPublicKeyPinned, warnings, failure } = sendPreferences;
+    const { encrypt, pgpScheme, hasApiKeys, isPublicKeyPinned, warnings, failure } = sendPreferences;
     const warningsText = warnings?.join('; ');
     if (failure) {
         return { colorClassName: 'color-global-warning', isEncrypted: false, fill: FAIL, text: failure.error.message };
@@ -78,24 +78,28 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
         if (warningsText) {
             return { ...result, fill: WARNING, text: warningsText };
         }
-        if (isPublicKeyPinned) {
-            return {
-                ...result,
-                fill: CHECKMARK,
-                text: c('Composer email icon').t`PGP-encrypted to verified recipient`
-            };
-        }
         if (encrypt) {
-            return { ...result, fill: SIGN, text: c('Composer email icon').t`PGP-encrypted and signed` };
+            if (isPublicKeyPinned) {
+                if (hasApiKeys) {
+                    return {
+                        ...result,
+                        fill: CHECKMARK,
+                        text: c('Composer email icon').t`End-to-end encrypted to verified recipient`
+                    };
+                }
+                return {
+                    ...result,
+                    fill: CHECKMARK,
+                    text: c('Composer email icon').t`PGP-encrypted to verified recipient`
+                };
+            }
+            if (hasApiKeys) {
+                return { ...result, fill: PLAIN, text: c('Composer email icon').t`End-to-end encrypted` };
+            }
+            return { ...result, fill: SIGN, text: c('Composer email icon').t`PGP-encrypted` };
         }
         return { ...result, fill: SIGN, text: c('Composer email icon').t`PGP-signed` };
     }
-    return {
-        colorClassName: 'color-global-grey',
-        isEncrypted: true,
-        fill: PLAIN,
-        text: c('Sent email icon').t`Stored with zero-access encryption`
-    };
 };
 
 interface Params {
