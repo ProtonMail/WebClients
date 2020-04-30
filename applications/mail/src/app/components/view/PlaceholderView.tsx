@@ -23,7 +23,7 @@ const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, mailSett
     const [messageCounts] = useMessageCounts();
     const type = getCurrentType({ mailSettings, labelID, location });
 
-    const welcomeFlag = useWelcomeFlag([labelID, checkedIDs]);
+    const welcomeFlag = useWelcomeFlag([labelID, checkedIDs.length]);
 
     const labelCount: LabelCount = useMemo(() => {
         const counters = type === ELEMENT_TYPES.CONVERSATION ? conversationCounts : messageCounts;

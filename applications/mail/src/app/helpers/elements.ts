@@ -47,10 +47,12 @@ export const getReadableFullTime = ({ Time = 0, ContextTime = 0 }: Element = {})
 };
 
 export const isUnread = (element: Element = {}) => {
-    if ('NumUnread' in element) {
-        return element.NumUnread !== 0;
+    if ('ContextNumUnread' in element) {
+        // Conversation
+        return element.ContextNumUnread !== 0;
     }
     if ('Unread' in element) {
+        // Message
         return element.Unread !== 0;
     }
     return false;
