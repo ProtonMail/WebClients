@@ -5,8 +5,8 @@ import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
 import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { getMillisecondsFromTriggerString } from 'proton-shared/lib/calendar/vcal';
 import { CalendarAlarm, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import { getNextEventTime } from '../../helpers/alarms';
 
 import notificationIcon from '../../../assets/notification.gif';
 import useGetCalendarEventRaw from '../../containers/calendar/useGetCalendarEventRaw';
@@ -69,7 +69,6 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }: Props) => {
             const { ID, Occurrence, Trigger, CalendarID, EventID } = firstUnseenAlarm;
 
             const nextAlarmTime = fromUnixTime(Occurrence);
-            const nextEventTime = Trigger ? Occurrence * 1000 - getMillisecondsFromTriggerString(Trigger) : undefined;
             const now = Date.now();
             const diff = differenceInMilliseconds(nextAlarmTime, now);
             const delay = Math.max(diff, 0);
@@ -104,7 +103,8 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }: Props) => {
                             return;
                         }
                         const component = eventRaw;
-                        const start = nextEventTime ? new Date(nextEventTime) : undefined;
+                        // compute event start time based on trigger, as we cannot rely on dtstart for recurring events
+                        const start = new Date(getNextEventTime({ Occurrence, Trigger, tzid }));
                         const now = new Date();
                         const formatOptions = { locale: dateLocale };
                         const text = getAlarmMessage({ component, start, now, tzid, formatOptions });
