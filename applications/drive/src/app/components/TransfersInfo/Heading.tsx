@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { c, msgid } from 'ttag';
 import { Icon, Tooltip, classnames } from 'react-components';
 import { Download } from '../downloads/DownloadProvider';
@@ -20,6 +20,7 @@ interface Props {
 }
 
 const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = false }: Props) => {
+    const minimizeRef = useRef<HTMLButtonElement>(null);
     const transfers = [...downloads, ...uploads];
     const activeUploads = uploads.filter(isTransferActive);
     const activeDownloads = downloads.filter(isTransferActive);
@@ -86,9 +87,13 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
             </div>
             <Tooltip title={minMaxTitle} className="pd-transfers-headingTooltip flex-item-noshrink flex">
                 <button
+                    ref={minimizeRef}
                     type="button"
                     className="pd-transfers-headingButton p0-5 flex"
-                    onClick={onToggleMinimize}
+                    onClick={() => {
+                        minimizeRef.current?.blur();
+                        onToggleMinimize();
+                    }}
                     aria-expanded={!minimized}
                 >
                     <Icon className={classnames([minimized && 'rotateX-180'])} name="minimize" />
