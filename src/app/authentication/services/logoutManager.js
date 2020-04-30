@@ -4,7 +4,7 @@ function logoutManager(authentication, dispatchers, eventManager) {
 
     on('$stateChangeSuccess', (e, state) => {
         const currentState = state.name;
-        const specialStates = ['login.setup'];
+        const specialStates = ['login.setup', 'login.down'];
 
         if (currentState.indexOf('secured') === -1 && specialStates.indexOf(currentState) === -1) {
             // Stop event manager request

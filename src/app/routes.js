@@ -62,7 +62,7 @@ export default angular
                         templateUrl: require('../templates/layout/login.tpl.html')
                     },
                     'panel@login': {
-                        template: '<login-container/>'
+                        template: '<login-container></login-container>'
                     }
                 },
                 resolve: {
@@ -96,11 +96,19 @@ export default angular
                 }
             })
 
+            .state('login.down', {
+                views: {
+                    'panel@login': {
+                        template: '<account-load-error></account-load-error>'
+                    }
+                }
+            })
+
             .state('login.sub', {
                 url: '/sub',
                 views: {
                     'panel@login': {
-                        template: '<login-sub-container/>'
+                        template: '<login-sub-container></login-sub-container>'
                     }
                 }
             })

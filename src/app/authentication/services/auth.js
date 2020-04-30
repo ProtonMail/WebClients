@@ -102,7 +102,17 @@ function authentication(
             return user;
         } catch (error) {
             // If initializing the sessions fails from login or from f5 refresh, redirect to login.
-            $state.go('login', undefined, { reload: true });
+            if (error && error.status === 401) {
+                $state.go('login', undefined, { reload: true });
+            } else {
+                // If we are not refreshing from inside. e.g. coming from login or signup. Logout and redirect to login.
+                if ($state.current.name.includes('login')) {
+                    $state.go('login', undefined, { reload: true });
+                } else {
+                    $state.go('login.down', undefined, { location: false });
+                }
+                console.error(error);
+            }
             throw error;
         }
     };

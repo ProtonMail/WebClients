@@ -4,17 +4,17 @@
         data-username="username"
         data-on-submit="onSubmitLogin"
         data-loading="loading"
-    />
+    ></login-form>
     <login-two-factor-form
         ng-if="show === 'TOTP'"
         data-on-submit="onSubmitTotp"
         data-loading="loading"
-    />
+    ></login-two-factor-form>
     <login-unlock-form
         ng-if="show === 'UNLOCK'"
         data-on-submit="onSubmitUnlock"
         data-loading="loading"
-    />
+    ></login-unlock-form>
     <login-spinner
         ng-if="show === 'DECRYPTING'"></login-spinner>
 </div>
