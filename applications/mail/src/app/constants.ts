@@ -53,7 +53,11 @@ export enum LINK_TYPES {
     PHONE = 'phone'
 }
 
-export const SIGNATURE_START = 1546300800; // January 1, 2019
+// Protonmail enforces signing outgoing messages since January 1, 2019. It does not sign bulk messages yet
+export const SIGNATURE_START = {
+    USER: 1546300800,
+    BULK: Infinity
+};
 export const MESSAGE_FLAGS = {
     FLAG_RECEIVED: 1, // whether a message is received
     FLAG_SENT: 2, // whether a message is sent

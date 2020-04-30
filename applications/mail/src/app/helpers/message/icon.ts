@@ -326,7 +326,11 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
             return { ...result, fill: PLAIN, text: c('Received email icon').t`End-to-end encrypted message` };
         }
         if (encryption === ON_DELIVERY) {
-            return { ...result, fill: PLAIN, text: c('Received email icon').t`Stored with zero-access encryption` };
+            return {
+                ...result,
+                fill: PLAIN,
+                text: c('Received email icon').t`Sent by Protonmail with zero-access encryption`
+            };
         }
     }
 
