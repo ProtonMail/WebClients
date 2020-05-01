@@ -48,9 +48,10 @@ interface Params {
     tzid: string;
 }
 export const getNextEventTime = ({ Occurrence, Trigger, tzid }: Params) => {
-    const eventTime = Occurrence * 1000 - getMillisecondsFromTriggerString(Trigger);
-    const offsetAlarmTime = getTimezoneOffset(new Date(Occurrence * 1000), tzid).offset;
-    const offsetEventTime = getTimezoneOffset(new Date(eventTime * 1000), tzid).offset;
+    const alarmTime = Occurrence * 1000;
+    const eventTime = alarmTime - getMillisecondsFromTriggerString(Trigger);
+    const offsetAlarmTime = getTimezoneOffset(new Date(alarmTime), tzid).offset;
+    const offsetEventTime = getTimezoneOffset(new Date(eventTime), tzid).offset;
     const offsetDifference = offsetAlarmTime - offsetEventTime;
     // correct eventTime in case we jumped across an odd number of DST changes
     return eventTime - offsetDifference * MINUTE * 1000;
