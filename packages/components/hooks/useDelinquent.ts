@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { c } from 'ttag';
-import { useUser, useNotifications } from 'react-components';
+import { useUser, useNotifications } from '../index';
 
 const useDelinquent = () => {
     const [user] = useUser();
