@@ -96,9 +96,10 @@ export const process = ({ Token, paymentApi, ReturnHost, ApprovalURL }) => {
     });
 };
 
-export const toParams = (params, Token) => {
+export const toParams = ({ Amount, Currency }, Token) => {
     return {
-        ...params,
+        Amount,
+        Currency,
         Payment: {
             Type: 'token',
             Details: {
