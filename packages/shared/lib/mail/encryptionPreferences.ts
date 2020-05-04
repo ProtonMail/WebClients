@@ -90,7 +90,7 @@ const extractEncryptionPreferencesOwnAddress = (
             }
         };
     }
-    const warnings = getEmailMismatchWarning(publicKey, emailAddress);
+    const warnings = getEmailMismatchWarning(publicKey, emailAddress, true);
     return { ...result, sendKey: publicKey, isSendKeyPinned: false, warnings };
 };
 
@@ -140,7 +140,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         };
     }
     if (!hasPinnedKeys) {
-        const warnings = getEmailMismatchWarning(primaryKey, emailAddress);
+        const warnings = getEmailMismatchWarning(primaryKey, emailAddress, true);
         return { ...result, sendKey: primaryKey, isSendKeyPinned: false, warnings };
     }
     // if there are pinned keys, make sure the primary API key is trusted and valid for sending
@@ -158,7 +158,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
     }
     // return the pinned key, not the API one
     const [sendKey] = pinnedKeys;
-    const warnings = getEmailMismatchWarning(sendKey, emailAddress);
+    const warnings = getEmailMismatchWarning(sendKey, emailAddress, true);
     return { ...result, sendKey, isSendKeyPinned: true, warnings };
 };
 
@@ -199,7 +199,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         };
     }
     if (!hasPinnedKeys) {
-        const warnings = getEmailMismatchWarning(primaryKey, emailAddress);
+        const warnings = getEmailMismatchWarning(primaryKey, emailAddress, false);
         return { ...result, sendKey: primaryKey, isSendKeyPinned: false, warnings };
     }
     // if there are pinned keys, make sure the primary API key is trusted and valid for sending
@@ -217,7 +217,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
     }
     // return the pinned key, not the API one
     const [sendKey] = pinnedKeys;
-    const warnings = getEmailMismatchWarning(sendKey, emailAddress);
+    const warnings = getEmailMismatchWarning(sendKey, emailAddress, false);
     return { ...result, sendKey, isSendKeyPinned: true, warnings };
 };
 
@@ -258,7 +258,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
             }
         };
     }
-    const warnings = getEmailMismatchWarning(sendKey, emailAddress);
+    const warnings = getEmailMismatchWarning(sendKey, emailAddress, false);
     return { ...result, sendKey, isSendKeyPinned: true, warnings };
 };
 

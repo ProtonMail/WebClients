@@ -31,8 +31,9 @@ export interface Contact {
 }
 
 export interface ContactWithBePinnedPublicKey {
-    contactID: string;
+    contactID?: string;
     emailAddress: string;
+    isInternal: boolean;
     bePinnedPublicKey: OpenPGPKey;
 }
 
