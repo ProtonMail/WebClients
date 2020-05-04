@@ -1,7 +1,7 @@
 FROM httpd:alpine
 
 RUN apk add --update openssl
-RUN mkdir -p /etc/proton/ && \
+RUN mkdir -p /etc/ssl/proton/ && \
     openssl req \
     -new -newkey rsa:2048 -days 3650 -nodes -x509 \
     -subj "/C=CH/ST=State/L=City/O=Organization/OU=whoami/CN=localhost" \
@@ -18,7 +18,8 @@ RUN sed -i \
         -e 's/^#\(LoadModule .*mod_rewrite.so\)/\1/' \
         -e 's/^#\(LoadModule .*mod_unique_id.so\)/\1/' \
         -e 's/^#\(LoadModule .*mod_substitute.so\)/\1/' \
-        conf/httpd.conf
+        conf/httpd.conf && \
+    mkdir -p /var/log/httpd/
 RUN echo 'Include conf/extra/custom.conf' >> conf/httpd.conf
 
 COPY httpd/custom.conf conf/extra/
