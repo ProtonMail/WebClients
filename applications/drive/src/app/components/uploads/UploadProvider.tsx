@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
 import { initUpload, UploadCallbacks, UploadControls } from './upload';
 import { TransferState, TransferProgresses, TransferMeta } from '../../interfaces/transfer';
+import { useNotifications } from 'react-components';
 
 export interface BlockMeta {
     Index: number;
@@ -48,6 +49,7 @@ interface UserProviderProps {
 export const UploadProvider = ({ children }: UserProviderProps) => {
     // Keeping ref in case we need to immediatelly get uploads without waiting for rerender
     const uploadsRef = useRef<Upload[]>([]);
+    const { createNotification } = useNotifications();
     const [uploads, setUploads] = useState<Upload[]>([]);
     const controls = useRef<{ [id: string]: UploadControls }>({});
     const progresses = useRef<TransferProgresses>({});
@@ -138,16 +140,24 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
         addNewUpload(id, file);
 
-        const { meta, info } = await metadataPromise.catch((err) => {
-            updateUploadState(id, TransferState.Error);
-            throw err;
-        });
+        try {
+            const { meta, info } = await metadataPromise;
 
-        updateUploadByID(id, {
-            meta,
-            info,
-            state: TransferState.Pending
-        });
+            updateUploadByID(id, {
+                meta,
+                info,
+                state: TransferState.Pending
+            });
+        } catch (err) {
+            updateUploadState(id, TransferState.Error);
+
+            if (err.name === 'ValidationError') {
+                createNotification({
+                    text: err.message,
+                    type: 'error'
+                });
+            }
+        }
     };
 
     const getUploadsProgresses = () => ({ ...progresses.current });
