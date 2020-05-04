@@ -58,6 +58,10 @@ const usePayment = ({ amount, currency, onPay }) => {
     };
 
     useEffect(() => {
+        if (!method) {
+            return;
+        }
+
         if (![CARD, PAYPAL, CASH, BITCOIN].includes(method)) {
             setParameters({ PaymentMethodID: method });
         }
