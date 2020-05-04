@@ -10,6 +10,7 @@ export { default as TableHeader } from './components/table/TableHeader';
 export { default as TableCell } from './components/table/TableCell';
 export { default as TableFooter } from './components/table/TableFooter';
 export { default as TableCellBusy } from './components/table/TableCellBusy';
+export { default as TableRowSticky } from './components/table/TableRowSticky';
 export { default as Select } from './components/select/Select';
 export { default as Breadcrumb } from './components/breadcrumb/Breadcrumb';
 export { default as Wizard } from './components/wizard/Wizard';
