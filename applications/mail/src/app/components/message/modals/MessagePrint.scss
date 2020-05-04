@@ -1,8 +1,23 @@
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+
 .message-print-subject {
     font-size: 2rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--bordercolor-input, $black);
 }
 
 .message-print-header {
-    border-bottom: 1px solid var(--bordercolor-input, #dde6ec);
+    border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+}
+
+.is-printed-version {
+    .item-icon,
+    .container-to.container-to--item {
+        display: none;
+    }
+    .item-date {
+        font-size: 1em;
+    }
+    .opacity-50 {
+        opacity: 1;
+    }
 }

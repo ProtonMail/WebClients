@@ -206,6 +206,13 @@ export const getAttachments = (message: Message = {}) => message.Attachments || 
 export const hasAttachments = (message: Message = {}) => message.NumAttachments && message.NumAttachments > 0;
 export const attachmentsSize = (message: Message = {}) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
+export const getNumAttachmentByType = (message: MessageExtended): [number, number] => {
+    const attachments = getAttachments(message.data);
+    const numAttachments = attachments.length;
+    const numEmbedded = message.embeddeds?.size || 0;
+    const numPureAttachments = numAttachments - numEmbedded;
+    return [numPureAttachments, numEmbedded];
+};
 
 export const isAutoReply = (message: Message = {}) => {
     const { ParsedHeaders = {} } = message;

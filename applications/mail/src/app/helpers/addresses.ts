@@ -6,6 +6,10 @@ import { Message } from '../models/message';
 import { getContactsOfGroup } from './contacts';
 import { Address, Key } from 'proton-shared/lib/interfaces';
 import { REGEX_EMAIL } from 'proton-shared/lib/constants';
+import { unique } from 'proton-shared/lib/helpers/array';
+import { isMessage } from './elements';
+import { Element } from '../models/element';
+import { Conversation } from '../models/conversation';
 
 export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
 
@@ -101,7 +105,15 @@ export const contactToInput = (contact: Partial<ContactEmail> = {}): string =>
 export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: string) =>
     recipients.filter((recipient) => recipient.Group !== groupPath);
 
-export const getRecipientLabel = ({ Address, Name }: Recipient) => Name || Address || '';
+export const getRecipientLabel = ({ Address, Name }: Recipient) => {
+    if (!Name || Name === Address) {
+        return Address?.substring(0, Address.indexOf('@'));
+    }
+    if (Name) {
+        return Name;
+    }
+    return '';
+};
 
 export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contactsInGroup = 0) => {
     const count = recipientGroup?.recipients.length;
@@ -195,4 +207,18 @@ export const findSender = (addresses: Address[] = [], { AddressID = '' }: Messag
     }
 
     return enabledAddresses[0];
+};
+
+export const getNumParticipants = (element: Element) => {
+    let recipients: Recipient[] = [];
+
+    if (isMessage(element)) {
+        const { ToList = [], CCList = [], BCCList = [], Sender = {} } = element as Message;
+        recipients = [...ToList, ...CCList, ...BCCList, Sender];
+    } else {
+        const { Senders = [], Recipients = [] } = element as Conversation;
+        recipients = [...Recipients, ...Senders];
+    }
+
+    return unique(recipients.map(({ Address }: Recipient) => removeEmailAlias(Address))).length;
 };

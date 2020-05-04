@@ -69,19 +69,19 @@ const MessageAttachment = ({ attachment, message }: Props) => {
     const showInner = !single && !showLoader && !showInstant;
 
     return (
-        <li className="mr1 mb1">
+        <li className="mr0-5 mt0-5">
             <a
                 className="message-attachment inline-flex flex-nowrap mw100 pm-button listAttachments-item relative no-pointer-events-children"
                 title={`${attachment.Name} ${humanAttachmentSize}`}
                 onClick={clickHandler}
             >
-                <span className="flex flex-item-noshrink message-attachmentIcon relative flex">
+                <span className="flex flex-item-noshrink message-attachmentIcon relative flex p0-5">
                     <Icon name={icon} size={20} className={classNames} aria-busy={showLoader} />
                     {showInner && <Icon name="key" className="file-inner-icon mauto" />}
                 </span>
-                <span className="inbl ellipsis flex flex-column message-attachmentInfo">
-                    <span className="bl ellipsis mw100">{attachment.Name}</span>
-                    <span className="bl message-attachmentSize">{humanAttachmentSize}</span>
+                <span className="flex flex-items-center message-attachmentInfo">
+                    <span className="ellipsis mw100">{attachment.Name}</span>
+                    <span className="message-attachmentSize mtauto mbauto ml0-5">{humanAttachmentSize}</span>
                 </span>
             </a>
         </li>

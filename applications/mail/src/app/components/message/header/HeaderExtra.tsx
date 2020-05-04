@@ -20,7 +20,7 @@ interface Props {
 
 const HeaderExtra = ({ message, sourceMode, onTrustKey, onLoadRemoteImages, onLoadEmbeddedImages }: Props) => {
     return (
-        <section className="ml1 mr1 mt0-5">
+        <section className="message-header-extra mt0-5 border-top pt0-5">
             <ExtraExpirationTime message={message} />
             <ExtraSpamScore message={message} />
             <ExtraErrors message={message} />

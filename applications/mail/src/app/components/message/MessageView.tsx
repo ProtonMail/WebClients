@@ -124,7 +124,7 @@ const MessageView = ({
     };
 
     return (
-        <article ref={elementRef} className={classnames(['message-container mb2', expanded && 'is-opened'])}>
+        <article ref={elementRef} className={classnames(['message-container m0-5 mb1', expanded && 'is-opened'])}>
             {expanded ? (
                 <>
                     <HeaderExpanded
@@ -159,14 +159,14 @@ const MessageView = ({
                 </>
             ) : (
                 <HeaderCollapsed
-                    message={message.data}
-                    mailSettings={mailSettings}
+                    message={message}
                     messageViewIcons={messageViewIcons}
+                    mailSettings={mailSettings}
                     isSentMessage={sent}
                     isUnreadMessage={unread}
                     isDraftMessage={draft}
-                    labels={labels}
                     onExpand={handleExpand(true)}
+                    onCompose={onCompose}
                 />
             )}
         </article>

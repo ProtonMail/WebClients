@@ -26,10 +26,10 @@ export const useDraft = () => {
     }, [cache, mailSettings, addresses]);
 
     const createDraft = useCallback(
-        (action: MESSAGE_ACTIONS, referenceMessage?: MessageExtended) => {
+        (action: MESSAGE_ACTIONS, referenceMessage?: Partial<MessageExtended>) => {
             let message: MessageExtended;
 
-            if (action === MESSAGE_ACTIONS.NEW && cache.has(CACHE_KEY)) {
+            if (action === MESSAGE_ACTIONS.NEW && cache.has(CACHE_KEY) && referenceMessage === undefined) {
                 message = cloneDraft(cache.get(CACHE_KEY) as MessageExtended);
             } else {
                 message = createNewDraft(action, referenceMessage, mailSettings, addresses);

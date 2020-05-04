@@ -10,9 +10,10 @@ import ItemDate from '../../list/ItemDate';
 import MessageFooter from '../MessageFooter';
 import { hasAttachments, getSender } from '../../../helpers/message/messages';
 import { getRecipientLabel } from '../../../helpers/addresses';
-import RecipientItem from '../header/HeaderRecipientItem';
+import HeaderRecipientType from '../header/HeaderRecipientType';
 
 import './MessagePrint.scss';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 interface Props {
     message: MessageExtended;
@@ -48,13 +49,18 @@ const MessagePrintModal = ({ message, onClose, ...rest }: Props) => {
             <div className="message-print">
                 <div className="message-print-header pb1 mb1">
                     <h2 className="message-print-subject bold pb0-5 mb0-5">{message.data?.Subject}</h2>
-                    <RecipientItem label={c('Label').t`From:`}>
+                    <HeaderRecipientType label={c('Label').t`From:`}>
                         {getRecipientLabel(sender)} <span className="opacity-50">&lt;{sender.Address}&gt;</span>
-                    </RecipientItem>
-                    <HeaderRecipientsDetails message={message.data} contacts={contacts} contactGroups={contactGroups} />
-                    <RecipientItem label={c('Label').t`Date:`}>
+                    </HeaderRecipientType>
+                    <HeaderRecipientsDetails
+                        message={message.data}
+                        contacts={contacts}
+                        contactGroups={contactGroups}
+                        onCompose={noop}
+                    />
+                    <HeaderRecipientType label={c('Label').t`Date:`}>
                         <ItemDate element={message.data} mode="full" />
-                    </RecipientItem>
+                    </HeaderRecipientType>
                 </div>
                 <MessageBody message={message} showBlockquote={false} />
                 {hasAttachments(message.data) ? <MessageFooter message={message} showActions={false} /> : null}

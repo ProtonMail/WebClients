@@ -1,20 +1,26 @@
 import { c } from 'ttag';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 
 import { LABEL_IDS_TO_HUMAN, LABEL_IDS_TO_I18N } from '../constants';
+import { Message } from '../models/message';
+import { getLabelIDs } from './elements';
+import { hasBit } from 'proton-shared/lib/helpers/bitset';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 
 const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
+interface FolderInfo {
+    icon: string;
+    name: string;
+    to: string;
+    color?: string;
+}
+
 interface FolderMap {
-    [id: string]: {
-        icon: string;
-        name: string;
-        to: string;
-        color?: string;
-    };
+    [id: string]: FolderInfo;
 }
 
 const alwaysMessageLabels = [
@@ -98,3 +104,38 @@ export const getStandardFolders = (): FolderMap => ({
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_DRAFTS]}`
     }
 });
+
+export const getCurrentFolders = (
+    message: Message,
+    customFoldersList: Folder[],
+    mailSettings: MailSettings
+): FolderInfo[] => {
+    const { ShowMoved } = mailSettings;
+    const labelIDs = getLabelIDs(message);
+    const standardFolders = getStandardFolders();
+    const customFolders = toMap(customFoldersList, 'ID');
+
+    return labelIDs
+        .filter((labelID) => {
+            if ([SENT, ALL_SENT].includes(labelID as MAILBOX_LABEL_IDS)) {
+                return (hasBit(ShowMoved, SHOW_MOVED.SENT) ? ALL_SENT : SENT) === labelID;
+            }
+            if ([DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS)) {
+                return (hasBit(ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS) === labelID;
+            }
+            return true;
+        })
+        .filter((labelID) => standardFolders[labelID] || customFolders[labelID])
+        .map((labelID) => {
+            if (standardFolders[labelID]) {
+                return standardFolders[labelID];
+            }
+            const folder = customFolders[labelID];
+            return {
+                icon: 'folder',
+                name: folder?.Name,
+                to: `/${folder?.ID}`,
+                color: folder?.Color
+            };
+        });
+};

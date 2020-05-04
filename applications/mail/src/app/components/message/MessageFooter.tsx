@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { Icon, useApi, classnames } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import { attachmentsSize, getAttachments } from '../../helpers/message/messages';
+import { attachmentsSize, getAttachments, getNumAttachmentByType } from '../../helpers/message/messages';
 import MessageAttachment from './MessageAttachment';
 import { MessageExtended } from '../../models/message';
 import { downloadAll } from '../../helpers/attachment/attachmentDownloader';
@@ -27,10 +27,10 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
     const [showInstant, setShowInstant] = useState(false);
 
     const humanAttachmentsSize = humanSize(attachmentsSize(message.data));
+
     const attachments = getAttachments(message.data);
-    const numAttachments = attachments.length;
-    const numEmbedded = message.embeddeds?.size || 0;
-    const numPureAttachments = numAttachments - numEmbedded;
+    const [numPureAttachments, numEmbedded] = getNumAttachmentByType(message);
+    const numAttachments = numPureAttachments + numEmbedded;
 
     const handleDownloadAll = async () => {
         setShowLoader(true);
@@ -40,12 +40,19 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
     };
 
     return (
-        <div className={classnames(['message-attachments', !showActions && 'no-pointer-events'])}>
-            <div className="flex flex-spacebetween mb1">
-                <span className="title">
-                    <strong className="listAttachments-title-size mr0-5">{humanAttachmentsSize}</strong>
+        <div
+            className={classnames([
+                'message-attachments border-top m0-5 pt0-5 pl0-5 pr0-5',
+                !showActions && 'no-pointer-events'
+            ])}
+        >
+            <div className="flex flex-spacebetween mb0">
+                <span className="title inline-flex flex-items-center">
+                    <strong className="listAttachments-title-size inline-flex flex-items-center mr0-5">
+                        {humanAttachmentsSize}
+                    </strong>
                     {numPureAttachments > 0 && (
-                        <span className="listAttachments-title-files mr0-5">
+                        <span className="listAttachments-title-files inline-flex flex-items-center mr0-5">
                             <Icon name="attach" className="mr0-5" />
                             {c('Info').ngettext(
                                 msgid`${numPureAttachments} file attached`,
@@ -55,7 +62,7 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
                         </span>
                     )}
                     {numEmbedded > 0 && (
-                        <span className="listAttachments-title-embedded mr0-5">
+                        <span className="listAttachments-title-embedded inline-flex flex-items-center mr0-5">
                             {/* TODO: color="pm-blue" */}
                             <Icon name="file-image" className="mr0-5" />
                             {c('Info').ngettext(
@@ -78,7 +85,7 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
                 )}
             </div>
 
-            <ul className="listAttachments-list unstyled flex mb0">
+            <ul className="listAttachments-list unstyled flex mt0 mb0">
                 {attachments.map((attachment) => (
                     <MessageAttachment key={attachment.ID} attachment={attachment} message={message} />
                 ))}

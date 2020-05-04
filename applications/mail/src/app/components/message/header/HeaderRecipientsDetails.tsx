@@ -5,16 +5,17 @@ import { MapStatusIcons } from '../../../models/crypto';
 import { Message } from '../../../models/message';
 import { Recipient } from '../../../models/address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { recipientsToRecipientOrGroup, getRecipientLabel, getRecipientGroupLabel } from '../../../helpers/addresses';
-import { getContactsOfGroup } from '../../../helpers/contacts';
-import EncryptionStatusIcon from '../EncryptionStatusIcon';
-import RecipientItem from './HeaderRecipientItem';
+import { recipientsToRecipientOrGroup } from '../../../helpers/addresses';
+import HeaderRecipientType from './HeaderRecipientType';
+import HeaderRecipientItem from './HeaderRecipientItem';
+import { OnCompose } from '../../../containers/ComposerContainer';
 
 interface Props {
     message?: Message;
     mapStatusIcons?: MapStatusIcons;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
+    onCompose: OnCompose;
 }
 
 interface ListProps {
@@ -22,77 +23,64 @@ interface ListProps {
     mapStatusIcons?: MapStatusIcons;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
+    onCompose: OnCompose;
 }
 
-const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups }: ListProps) => {
+const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups, onCompose }: ListProps) => {
     const recipientsOrGroup = recipientsToRecipientOrGroup(list, contactGroups);
 
     return (
-        <span className="flex-self-vcenter flex flex-column">
-            {recipientsOrGroup.map((recipientOrGroup, index) => {
-                if (recipientOrGroup.recipient) {
-                    const icon = mapStatusIcons
-                        ? mapStatusIcons[recipientOrGroup.recipient.Address as string]
-                        : undefined;
-                    return (
-                        <span className="flex flex-items-center" key={index}>
-                            {getRecipientLabel(recipientOrGroup.recipient)}{' '}
-                            <span className="opacity-50">&lt;{recipientOrGroup.recipient.Address}&gt;</span>{' '}
-                            {icon && (
-                                <span className="flex pl0-25 pr0-25 flex-item-noshrink">
-                                    <EncryptionStatusIcon {...icon} />
-                                </span>
-                            )}
-                        </span>
-                    );
-                }
-                return (
-                    <span key={index}>
-                        {getRecipientGroupLabel(
-                            recipientOrGroup?.group,
-                            getContactsOfGroup(contacts, recipientOrGroup?.group?.group?.ID).length
-                        )}
-                    </span>
-                );
-            })}
-        </span>
+        <>
+            {recipientsOrGroup.map((recipientOrGroup, index) => (
+                <HeaderRecipientItem
+                    key={index}
+                    recipientOrGroup={recipientOrGroup}
+                    mapStatusIcons={mapStatusIcons}
+                    contacts={contacts}
+                    onCompose={onCompose}
+                />
+            ))}
+        </>
     );
 };
 
-const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGroups }: Props) => {
+const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGroups, onCompose }: Props) => {
     const { ToList = [], CCList = [], BCCList = [] } = message || {};
 
     return (
         <div className="flex flex-column">
             {ToList.length > 0 && (
-                <RecipientItem label={c('Label').t`To:`}>
+                <HeaderRecipientType label={c('Label').t`To:`}>
                     <RecipientsList
                         list={ToList}
                         mapStatusIcons={mapStatusIcons}
                         contacts={contacts}
                         contactGroups={contactGroups}
+                        onCompose={onCompose}
                     />
-                </RecipientItem>
+                </HeaderRecipientType>
             )}
             {CCList.length > 0 && (
-                <RecipientItem label={c('Label').t`CC:`}>
+                <HeaderRecipientType label={c('Label').t`CC:`}>
                     <RecipientsList
                         list={CCList}
                         mapStatusIcons={mapStatusIcons}
                         contacts={contacts}
                         contactGroups={contactGroups}
+                        onCompose={onCompose}
                     />
-                </RecipientItem>
+                </HeaderRecipientType>
             )}
             {BCCList.length > 0 && (
-                <RecipientItem label={c('Label').t`BCC:`}>
+                <HeaderRecipientType label={c('Label').t`BCC:`}>
                     <RecipientsList
                         list={BCCList}
                         mapStatusIcons={mapStatusIcons}
                         contacts={contacts}
                         contactGroups={contactGroups}
+                        onCompose={onCompose}
                     />
-                </RecipientItem>
+                </HeaderRecipientType>
             )}
         </div>
     );

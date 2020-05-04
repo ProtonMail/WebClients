@@ -17,13 +17,14 @@ const HeaderRecipientsSimple = ({ message = {}, contacts, contactGroups }: Props
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients, contactGroups);
 
     return (
-        <div className="flex">
-            <span className="opacity-50 flex-self-vcenter container-to">{c('Label').t`To:`}</span>
-            <span className="flex-self-vcenter mr1">
+        <div className="flex flex-nowrap">
+            <span className="flex-self-vcenter container-to pl0-5">{c('Label').t`To:`}</span>
+            <span className="flex-self-vcenter mr0-5 ellipsis">
                 {recipientsOrGroup.map((recipientOrGroup, index) => {
                     const label = getRecipientOrGroupLabel(recipientOrGroup, contacts);
+
                     return (
-                        <span key={index} className="mr0-5" title={label}>
+                        <span key={index} className="inline-flex mr0-5" title={label}>
                             {label}
                             {index < recipientsOrGroup.length - 1 && ','}
                         </span>

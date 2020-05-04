@@ -155,7 +155,7 @@ export const getSentStatusIcon = ({
             };
         }
         return {
-            colorClassName: 'color-global-grey',
+            colorClassName: 'color-global-grey-dm',
             isEncrypted: true,
             fill: PLAIN,
             text: c('Sent email icon').t`Stored with zero-access encryption`
@@ -169,7 +169,7 @@ export const getSentStatusIcon = ({
             return;
         }
         return {
-            colorClassName: 'color-global-grey',
+            colorClassName: 'color-global-grey-dm',
             isEncrypted: true,
             fill: PLAIN,
             text: c('Sent email icon').t`Stored with zero-access encryption`
@@ -258,7 +258,7 @@ export const getSentStatusIcon = ({
         }
     }
     return {
-        colorClassName: 'color-global-grey',
+        colorClassName: 'color-global-grey-dm',
         isEncrypted: true,
         fill: PLAIN,
         text: c('Sent email icon').t`Stored with zero-access encryption`
@@ -390,7 +390,7 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
         if (encryption === ON_DELIVERY) {
             if (verificationStatus === NOT_SIGNED) {
                 return {
-                    colorClassName: 'color-global-grey',
+                    colorClassName: 'color-global-grey-dm',
                     isEncrypted: false,
                     fill: PLAIN,
                     text: c('Received email icon').t`Stored with zero-access encryption`
@@ -428,7 +428,7 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
     }
 
     return {
-        colorClassName: 'color-global-grey',
+        colorClassName: 'color-global-grey-dm',
         isEncrypted: false,
         fill: PLAIN,
         text: c('Received email icon').t`Stored with zero-access encryption`

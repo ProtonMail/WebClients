@@ -1,44 +1,40 @@
 import React, { MouseEvent } from 'react';
-import { classnames } from 'react-components';
 import { c } from 'ttag';
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { classnames } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
-import EncryptionStatusIcon from '../EncryptionStatusIcon';
-import ItemLabels from '../../list/ItemLabels';
-import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
-import { Message } from '../../../models/message';
-import { MessageViewIcons } from '../../../helpers/message/icon';
+import { isDraft, hasAttachments } from '../../../helpers/message/messages';
 import ItemLocation from '../../list/ItemLocation';
+import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
+import { MessageViewIcons } from '../../../helpers/message/icon';
+import { MessageExtended } from '../../../models/message';
+import HeaderRecipientItem from './HeaderRecipientItem';
+import { OnCompose } from '../../../containers/ComposerContainer';
 
 interface Props {
-    message?: Message;
-    mailSettings: MailSettings;
+    message: MessageExtended;
     messageViewIcons?: MessageViewIcons;
+    mailSettings: MailSettings;
     isSentMessage: boolean;
     isUnreadMessage: boolean;
     isDraftMessage: boolean;
-    labels: Label[];
     onExpand: () => void;
+    onCompose: OnCompose;
 }
 
 const HeaderCollapsed = ({
     message,
-    mailSettings,
     messageViewIcons,
+    mailSettings,
     isSentMessage,
     isUnreadMessage,
-    isDraftMessage,
-    labels,
-    onExpand
+    onExpand,
+    onCompose
 }: Props) => {
-    const { Name, Address } = message?.Sender || {};
-
     const handleClick = (event: MouseEvent) => {
-        const target = event.target as HTMLElement;
-        if (target.classList.contains('item-star') || target.closest('.item-star')) {
+        if ((event.target as HTMLElement).closest('.stop-propagation')) {
             event.stopPropagation();
             return;
         }
@@ -46,38 +42,39 @@ const HeaderCollapsed = ({
         onExpand();
     };
 
-    const icon = messageViewIcons?.globalIcon;
+    const isDraftMessage = isDraft(message.data);
 
     return (
         <div
             className={classnames([
-                'message-header message-header-collapsed flex flex-nowrap flex-items-center flex-spacebetween cursor-pointer',
+                'message-header message-header-collapsed flex flex-nowrap flex-items-center cursor-pointer',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 isUnreadMessage && 'unread'
             ])}
             onClick={handleClick}
         >
-            <div className="flex flex-items-center">
-                <span className="mr0-5">{c('Label').t`From:`}</span>
-                <span className="bold mr0-5" title={Name}>
-                    {Name}
-                </span>
-                <i title={Address}>&lt;{Address}&gt;</i>
-                {icon && (
-                    <span className="flex pl0-25 pr0-25 flex-item-noshrink">
-                        <EncryptionStatusIcon {...icon} />
+            <div className="flex flex-item-fluid flex-nowrap pr0-5">
+                <HeaderRecipientItem
+                    recipientOrGroup={{ recipient: message.data?.Sender }}
+                    globalIcon={messageViewIcons?.globalIcon}
+                    showAddress={false}
+                    onCompose={onCompose}
+                />
+            </div>
+            <div className="flex flex-items-center flex-item-noshrink">
+                {isDraftMessage && <span className="badgeLabel-success">{c('Info').t`Draft`}</span>}
+                {!!hasAttachments(message.data) && (
+                    <span className="ml0-5 inline-flex">
+                        <ItemAttachmentIcon element={message.data} className="mauto" />
                     </span>
                 )}
-            </div>
-            <div>
-                {isDraftMessage && <span className="badgeLabel-success">{c('Info').t`Draft`}</span>}
-                <ItemAttachmentIcon element={message} />
-                <ItemLabels element={message} labels={labels} className="mr1" />
-                <span className="mr1">
-                    <ItemLocation message={message} mailSettings={mailSettings} />
+                <span className="ml0-5 inline-flex">
+                    <ItemLocation message={message.data} mailSettings={mailSettings} />
                 </span>
-                <ItemDate className="mr1" element={message} />
-                <ItemStar element={message} />
+                <ItemDate className="ml0-5" element={message.data || {}} />
+                <span className="ml0-5 inline-flex">
+                    <ItemStar element={message.data} />
+                </span>
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
 import {
+    classnames,
     Icon,
     Group,
     useToggle,
@@ -10,10 +11,11 @@ import {
     useApi,
     useEventManager
 } from 'react-components';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { unlabelMessages } from 'proton-shared/lib/api/messages';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { MailSettings } from 'proton-shared/lib/interfaces';
+
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import { MESSAGE_ACTIONS } from '../../../constants';
@@ -22,7 +24,6 @@ import ItemLocation from '../../list/ItemLocation';
 import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
-import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import HeaderExtra from './HeaderExtra';
 import HeaderRecipientsSimple from './HeaderRecipientsSimple';
@@ -31,8 +32,12 @@ import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
 import HeaderDropdown from './HeaderDropdown';
 import { OnCompose } from '../../../containers/ComposerContainer';
-
 import HeaderMoreDropdown from './HeaderMoreDropdown';
+import HeaderExpandedDetails from './HeaderExpandedDetails';
+import HeaderRecipientType from './HeaderRecipientType';
+import HeaderRecipientItem from './HeaderRecipientItem';
+
+import './MessageHeader.scss';
 
 // Hacky override of the typing
 const ButtonGroup = OriginalButtonGroup as ({
@@ -48,7 +53,7 @@ const ButtonGroup = OriginalButtonGroup as ({
 interface Props {
     labelID: string;
     labels?: Label[];
-    mailSettings: any;
+    mailSettings: MailSettings;
     message: MessageExtended;
     messageViewIcons?: MessageViewIcons;
     isSentMessage: boolean;
@@ -86,10 +91,7 @@ const HeaderExpanded = ({
     const api = useApi();
     const { call } = useEventManager();
 
-    const { Name, Address } = (message.data || {}).Sender || {};
     const elements = [message.data || {}];
-    const inOutClass = isSentMessage ? 'is-outbound' : 'is-inbound';
-    const icon = messageViewIcons?.globalIcon;
 
     const handleClick = (event: MouseEvent) => {
         if ((event.target as HTMLElement).closest('.stop-propagation')) {
@@ -111,65 +113,104 @@ const HeaderExpanded = ({
         await call();
     };
 
+    const from = (
+        <HeaderRecipientItem
+            recipientOrGroup={{ recipient: message.data?.Sender }}
+            globalIcon={messageViewIcons?.globalIcon}
+            contacts={contacts}
+            onCompose={onCompose}
+        />
+    );
+
     return (
-        <div className={`message-header message-header-expanded ${inOutClass}`}>
-            <div
-                className="flex flex-nowrap flex-items-center flex-spacebetween pt1 pl1 pr1 pb0-5 cursor-pointer"
-                onClick={handleClick}
-            >
-                <div className="flex flex-items-center">
-                    <span className="mr0-5">{c('Label').t`From:`}</span>
-                    <span className="bold mr0-5" title={Name}>
-                        {Name}
-                    </span>
-                    <i title={Address}>&lt;{Address}&gt;</i>
-                    {icon && (
-                        <span className="flex pl0-25 pr0-25 flex-item-noshrink">
-                            <EncryptionStatusIcon {...icon} />
-                        </span>
+        <div
+            className={classnames([
+                'message-header message-header-expanded',
+                showDetails && 'message-header--showDetails',
+                isSentMessage ? 'is-outbound' : 'is-inbound'
+            ])}
+        >
+            <div className="flex flex-nowrap flex-items-center cursor-pointer" onClick={handleClick}>
+                <span className="flex flex-item-fluid">
+                    {showDetails ? (
+                        <HeaderRecipientType label={c('Label').t`From:`} className="flex flex-nowrap pr0-5">
+                            {from}
+                        </HeaderRecipientType>
+                    ) : (
+                        <div className="flex flex-nowrap pr0-5">{from}</div>
                     )}
-                </div>
-                <div>
-                    <ItemDate element={message.data || {}} />
+                </span>
+                <div className="flex-item-noshrink flex">
+                    {showDetails ? null : (
+                        <>
+                            <span className="ml0-5 inline-flex">
+                                <ItemLocation message={message.data} mailSettings={mailSettings} />
+                            </span>
+                            <ItemDate className="ml0-5" element={message.data || {}} />
+                        </>
+                    )}
+                    <span className="ml0-5 inline-flex">
+                        <ItemStar element={message.data} />
+                    </span>
                 </div>
             </div>
-            <div className="flex flex-nowrap flex-items-start flex-spacebetween ml1 mr1 mb0-5">
-                {showDetails ? (
-                    <HeaderRecipientsDetails
-                        message={message.data}
-                        mapStatusIcons={messageViewIcons?.mapStatusIcon}
-                        contacts={contacts}
-                        contactGroups={contactGroups}
-                    />
-                ) : (
-                    <HeaderRecipientsSimple message={message.data} contacts={contacts} contactGroups={contactGroups} />
+            <div className={classnames(['flex flex-nowrap flex-items-start mb0-5', !showDetails && 'mt0-5'])}>
+                <div className="flex-item-fluid flex flex-nowrap pr1">
+                    {showDetails ? (
+                        <HeaderRecipientsDetails
+                            message={message.data}
+                            mapStatusIcons={messageViewIcons?.mapStatusIcon}
+                            contacts={contacts}
+                            contactGroups={contactGroups}
+                            onCompose={onCompose}
+                        />
+                    ) : (
+                        <HeaderRecipientsSimple
+                            message={message.data}
+                            contacts={contacts}
+                            contactGroups={contactGroups}
+                        />
+                    )}
+                    <a onClick={toggleDetails} className="bold message-show-hide-link pb0-25 flex-item-noshrink">
+                        {showDetails ? c('Action').t`Hide details` : c('Action').t`Show details`}
+                    </a>
+                </div>
+                {!showDetails && (
+                    <div className="flex-item-noshrink">
+                        <ItemAttachmentIcon element={message.data} />
+                        <ItemLabels max={4} element={message.data} labels={labels} onUnlabel={handleRemoveLabel} />
+                    </div>
                 )}
-                <div>
-                    <ItemAttachmentIcon element={message.data} />
-                    {' ' /* This space is important to keep a small space between elements */}
-                    <ItemLabels max={4} element={message.data} labels={labels} onUnlabel={handleRemoveLabel} />
-                    {' ' /* This space is important to keep a small space between elements */}
-                    <ItemLocation message={message.data} mailSettings={mailSettings} />
-                    {' ' /* This space is important to keep a small space between elements */}
-                    <ItemStar element={message.data} />
-                </div>
             </div>
-            {showDetails ? (
-                <>
-                    <div className="ml1 mr1 mb0-5">
-                        <span className="mr0-5">{c('Label').t`Size:`}</span>
-                        <span>{humanSize((message.data || {}).Size || 0)}</span>
-                    </div>
-                    <div className="ml1 mr1 mb0-5">
-                        <ItemDate element={message.data || {}} mode="full" />
-                    </div>
-                </>
-            ) : null}
-            <div className="flex flex-spacebetween ml1 mr1 mb1 flex-nowrap">
-                <a onClick={toggleDetails} className="bold flex-self-vcenter">
-                    {showDetails ? c('Action').t`Hide details` : c('Action').t`Show details`}
-                </a>
-                <div>
+
+            {showDetails && (
+                <HeaderExpandedDetails
+                    message={message}
+                    messageViewIcons={messageViewIcons}
+                    labels={labels}
+                    mailSettings={mailSettings}
+                />
+            )}
+
+            <HeaderExtra
+                message={message}
+                sourceMode={sourceMode}
+                onTrustKey={onTrustKey}
+                onLoadRemoteImages={onLoadRemoteImages}
+                onLoadEmbeddedImages={onLoadEmbeddedImages}
+            />
+
+            <div className="pt0-5 flex flex-spacebetween border-top">
+                <div className="flex flex-nowrap">
+                    <HeaderMoreDropdown
+                        message={message}
+                        messageLoaded={messageLoaded}
+                        sourceMode={sourceMode}
+                        onBack={onBack}
+                        onCollapse={onCollapse}
+                        onSourceMode={onSourceMode}
+                    />
+
                     <Group className="mr1">
                         <HeaderDropdown
                             autoClose={false}
@@ -201,46 +242,30 @@ const HeaderExpanded = ({
                                 <LabelDropdown elements={elements} onClose={onClose} onLock={onLock} />
                             )}
                         </HeaderDropdown>
-                        <HeaderDropdown className="pm-button pm-button--for-icon pm-group-button" autoClose={true}>
-                            {({ onClose }) => (
-                                <HeaderMoreDropdown
-                                    message={message}
-                                    sourceMode={sourceMode}
-                                    onClose={onClose}
-                                    onBack={onBack}
-                                    onCollapse={onCollapse}
-                                    onSourceMode={onSourceMode}
-                                />
-                            )}
-                        </HeaderDropdown>
-                    </Group>
-
-                    <Group>
-                        <ButtonGroup
-                            disabled={!messageLoaded}
-                            icon="reply"
-                            onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
-                        />
-                        <ButtonGroup
-                            disabled={!messageLoaded}
-                            icon="reply-all"
-                            onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
-                        />
-                        <ButtonGroup
-                            disabled={!messageLoaded}
-                            icon="forward"
-                            onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
-                        />
                     </Group>
                 </div>
+
+                <Group>
+                    <ButtonGroup
+                        disabled={!messageLoaded}
+                        icon="reply"
+                        className="pm-button--primary"
+                        onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
+                    />
+                    <ButtonGroup
+                        disabled={!messageLoaded}
+                        icon="reply-all"
+                        className="pm-button--primary"
+                        onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
+                    />
+                    <ButtonGroup
+                        disabled={!messageLoaded}
+                        icon="forward"
+                        className="pm-button--primary"
+                        onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
+                    />
+                </Group>
             </div>
-            <HeaderExtra
-                message={message}
-                sourceMode={sourceMode}
-                onTrustKey={onTrustKey}
-                onLoadRemoteImages={onLoadRemoteImages}
-                onLoadEmbeddedImages={onLoadEmbeddedImages}
-            />
         </div>
     );
 };

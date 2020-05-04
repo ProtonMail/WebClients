@@ -1,5 +1,6 @@
 import React from 'react';
-import { Loader, useLabels, useToggle, useApi, useEventManager } from 'react-components';
+import { c } from 'ttag';
+import { Loader, useLabels, useToggle, useApi, useEventManager, Icon } from 'react-components';
 import { unlabelConversations } from 'proton-shared/lib/api/conversations';
 
 import MessageView from '../message/MessageView';
@@ -12,6 +13,7 @@ import TrashWarning from './TrashWarning';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { hasLabel } from '../../helpers/elements';
 import { OnCompose } from '../../containers/ComposerContainer';
+import { getNumParticipants } from '../../helpers/addresses';
 
 interface Props {
     labelID: string;
@@ -43,6 +45,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
     const filteredMessages = messages.filter((message) => inTrash === hasLabel(message, MAILBOX_LABEL_IDS.TRASH));
     const messagesToShow = filter ? filteredMessages : messages;
     const showTrashWarning = filteredMessages.length !== messages.length;
+    const numParticipants = getNumParticipants(conversation);
 
     const initialExpand = findMessageToExpand(labelID, messagesToShow).ID;
 
@@ -53,33 +56,49 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
 
     return (
         <>
-            <header className="flex flex-column mb1">
-                <div className="flex flex-nowrap flex-spacebetween flex-items-center mb1">
-                    <h2 className="mb0">
+            <header className="border-bottom mw100 message-conversation-summary p0-5 pb1 flex-item-noshrink">
+                <div className="flex flex-nowrap mb1">
+                    <h2 className="mb0 h3 ellipsis lh-standard flex-item-fluid pr1" title={conversation.Subject}>
                         <NumMessages className="mr0-25" conversation={conversation} />
                         {conversation.Subject}
                     </h2>
-                    <div>
-                        <ItemLabels labels={labels} max={4} element={conversation} onUnlabel={handleRemoveLabel} />
-                        {' ' /* This space is important to keep a small space between elements */}
+                    <div className="flex-item-noshrink pt0-25">
                         <ItemStar element={conversation} />
                     </div>
                 </div>
+                <div className="flex flex-nowrap">
+                    <div className="flex-item-fluid flex flex-items-center pr1">
+                        <span className="mr1 flex flex-items-center flex-item-noshrink">
+                            <Icon name="email-address" alt={c('label').t`Number of messages:`} />
+                            <span className="ml0-25">{conversation.NumMessages}</span>
+                        </span>
+                        <span className="mr1 flex flex-items-center flex-item-noshrink">
+                            <Icon name="contact" alt={c('label').t`Number of participants:`} />
+                            <span className="ml0-25">{numParticipants}</span>
+                        </span>
+                    </div>
+                    <div className="flex-item-noshrink">
+                        <ItemLabels labels={labels} max={4} element={conversation} onUnlabel={handleRemoveLabel} />
+                    </div>
+                </div>
+
                 {showTrashWarning && <TrashWarning inTrash={inTrash} filter={filter} onToggle={toggleFilter} />}
             </header>
-            {messagesToShow.map((message, index) => (
-                <MessageView
-                    labelID={labelID}
-                    key={message.ID}
-                    message={message}
-                    initialExpand={message.ID === initialExpand}
-                    labels={labels}
-                    mailSettings={mailSettings}
-                    conversationIndex={index}
-                    onBack={onBack}
-                    onCompose={onCompose}
-                />
-            ))}
+            <div className="scroll-if-needed flex-item-fluid pt0-5 mw100">
+                {messagesToShow.map((message, index) => (
+                    <MessageView
+                        labelID={labelID}
+                        key={message.ID}
+                        message={message}
+                        initialExpand={message.ID === initialExpand}
+                        labels={labels}
+                        mailSettings={mailSettings}
+                        conversationIndex={index}
+                        onBack={onBack}
+                        onCompose={onCompose}
+                    />
+                ))}
+            </div>
         </>
     );
 };

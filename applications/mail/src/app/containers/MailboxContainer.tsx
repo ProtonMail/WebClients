@@ -205,7 +205,7 @@ const MailboxContainer = ({
                     </div>
                 )}
                 {(columnMode || elementID) && (
-                    <section className="view-column-detail p2 flex-item-fluid scroll-if-needed">
+                    <section className="view-column-detail flex flex-column flex-item-fluid no-scroll">
                         {elementID ? (
                             conversationMode ? (
                                 <ConversationView

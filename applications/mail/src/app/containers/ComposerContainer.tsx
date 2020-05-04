@@ -48,7 +48,7 @@ export interface ComposeExisting {
 
 export interface ComposeNew {
     action: MESSAGE_ACTIONS;
-    referenceMessage?: MessageExtended;
+    referenceMessage?: Partial<MessageExtended>;
 }
 
 export type ComposeArgs = ComposeExisting | ComposeNew;

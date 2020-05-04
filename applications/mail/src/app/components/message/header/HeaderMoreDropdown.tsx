@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { c } from 'ttag';
 import {
     Icon,
@@ -9,49 +9,55 @@ import {
     useNotifications,
     useModals,
     ConfirmModal,
-    Alert
+    Alert,
+    Group,
+    ButtonGroup
 } from 'react-components';
 import { labelMessages, markMessageAsUnread } from 'proton-shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
+import downloadFile from 'proton-shared/lib/helpers/downloadFile';
+import { reportPhishing } from 'proton-shared/lib/api/reports';
 
 import { MessageExtended } from '../../../models/message';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
-import { reportPhishing } from 'proton-shared/lib/api/reports';
 import { useAttachmentCache } from '../../../containers/AttachmentProvider';
 import { getTime } from '../../../helpers/elements';
 import { formatFileNameDate } from '../../../helpers/date';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import MessagePrintModal from '../modals/MessagePrintModal';
 import { exportBlob } from '../../../helpers/message/messageExport';
+import HeaderDropdown from './HeaderDropdown';
+import { useMoveToFolder } from '../../../hooks/useApplyLabels';
+import { getStandardFolders } from '../../../helpers/labels';
+
+const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
 interface Props {
     message: MessageExtended;
+    messageLoaded: boolean;
     sourceMode: boolean;
-    onClose: () => void;
     onBack: () => void;
     onCollapse: () => void;
     onSourceMode: (sourceMode: boolean) => void;
 }
 
-const HeaderMoreDropdown = ({ message, sourceMode, onClose, onBack, onCollapse, onSourceMode }: Props) => {
+const HeaderMoreDropdown = ({ message, messageLoaded, sourceMode, onBack, onCollapse, onSourceMode }: Props) => {
     const api = useApi();
     const attachmentsCache = useAttachmentCache();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
+    const closeDropdown = useRef<() => void>();
+    const moveToFolder = useMoveToFolder();
 
-    // Don't bother too much on this
-    // A better / generic action is coming in feat/sub-folders
-    const handleMove = (labelID: string) => async () => {
-        onClose();
-        await api(labelMessages({ LabelID: labelID, IDs: [message.data?.ID] }));
-        await call();
-        createNotification({ text: c('Success').t`Message moved` });
+    const handleMove = (folderID: string, fromFolderID: string) => async () => {
+        closeDropdown.current?.();
+        const folderName = getStandardFolders()[folderID].name;
+        moveToFolder(true, [message.data?.ID || ''], folderID, folderName, fromFolderID);
     };
 
     const handleUnread = async () => {
-        onClose();
+        closeDropdown.current?.();
         await api(markMessageAsUnread([message.data?.ID]));
         await call();
         onCollapse();
@@ -66,7 +72,7 @@ const HeaderMoreDropdown = ({ message, sourceMode, onClose, onBack, onCollapse, 
                 Body: message.decryptedBody
             })
         );
-        await api(labelMessages({ LabelID: MAILBOX_LABEL_IDS.SPAM, IDs: [message.data?.ID] }));
+        await api(labelMessages({ LabelID: SPAM, IDs: [message.data?.ID] }));
         await call();
         createNotification({ text: c('Success').t`Phishing reported` });
         onBack();
@@ -99,77 +105,83 @@ const HeaderMoreDropdown = ({ message, sourceMode, onClose, onBack, onCollapse, 
     };
 
     const messageLabelIDs = message.data?.LabelIDs || [];
-    const isSpam = messageLabelIDs.indexOf(MAILBOX_LABEL_IDS.SPAM) > -1;
-    const isInInbox = messageLabelIDs.indexOf(MAILBOX_LABEL_IDS.INBOX) > -1;
-    const isInTrash = messageLabelIDs.indexOf(MAILBOX_LABEL_IDS.TRASH) > -1;
+    const isSpam = messageLabelIDs.includes(SPAM);
+    const isInInbox = messageLabelIDs.includes(INBOX);
+    const isInTrash = messageLabelIDs.includes(TRASH);
 
     return (
-        <DropdownMenu>
-            {!isInInbox && (
-                <DropdownMenuButton
-                    className="alignleft flex flex-nowrap flex-nowrap"
-                    onClick={handleMove(MAILBOX_LABEL_IDS.INBOX)}
-                >
-                    <Icon name="inbox" className="mr0-5 mt0-25" />
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Move to inbox`}</span>
-                </DropdownMenuButton>
-            )}
-            {!isInTrash && (
-                <DropdownMenuButton
-                    className="alignleft flex flex-nowrap"
-                    onClick={handleMove(MAILBOX_LABEL_IDS.TRASH)}
-                >
-                    <Icon name="trash" className="mr0-5 mt0-25" />
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Move to trash`}</span>
-                </DropdownMenuButton>
-            )}
-            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleUnread}>
-                <Icon name="unread" className="mr0-5 mt0-25" />
-                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Mark as unread`}</span>
-            </DropdownMenuButton>
-            {isSpam ? (
-                <DropdownMenuButton
-                    className="alignleft flex flex-nowrap"
-                    onClick={handleMove(MAILBOX_LABEL_IDS.INBOX)}
-                >
-                    <Icon name="nospam" className="mr0-5 mt0-25" />
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Not a spam`}</span>
-                </DropdownMenuButton>
-            ) : (
-                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleMove(MAILBOX_LABEL_IDS.SPAM)}>
-                    <Icon name="spam" className="mr0-5 mt0-25" />
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Mark as spam`}</span>
-                </DropdownMenuButton>
-            )}
-            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handlePhishing}>
-                <Icon name="phishing" className="mr0-5 mt0-25" />
-                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Report phishing`}</span>
-            </DropdownMenuButton>
-            {!sourceMode && (
-                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={() => onSourceMode(true)}>
-                    <Icon name="view-source-code" className="mr0-5 mt0-25" />
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View source code`}</span>
-                </DropdownMenuButton>
-            )}
-            {sourceMode && (
-                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={() => onSourceMode(false)}>
-                    <Icon name="view-html-code" className="mr0-5 mt0-25" />
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View rendered HTML`}</span>
-                </DropdownMenuButton>
-            )}
-            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleHeaders}>
-                <Icon name="view-headers" className="mr0-5 mt0-25" />
-                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View headers`}</span>
-            </DropdownMenuButton>
-            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleExport}>
-                <Icon name="export" className="mr0-5 mt0-25" />
-                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Export`}</span>
-            </DropdownMenuButton>
-            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handlePrint}>
-                <Icon name="print" className="mr0-5 mt0-25" />
-                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Print`}</span>
-            </DropdownMenuButton>
-        </DropdownMenu>
+        <Group className="mr1">
+            <ButtonGroup disabled={!messageLoaded} icon="unread" onClick={handleUnread} />
+            {isInInbox && <ButtonGroup disabled={!messageLoaded} icon="trash" onClick={handleMove(TRASH, INBOX)} />}
+            {isInTrash && <ButtonGroup disabled={!messageLoaded} icon="inbox" onClick={handleMove(INBOX, TRASH)} />}
+
+            <HeaderDropdown
+                disabled={!messageLoaded}
+                className="pm-button pm-button--for-icon pm-group-button"
+                autoClose={true}
+            >
+                {({ onClose }) => {
+                    closeDropdown.current = onClose;
+                    return (
+                        <DropdownMenu>
+                            {isSpam ? (
+                                <DropdownMenuButton
+                                    className="alignleft flex flex-nowrap"
+                                    onClick={handleMove(INBOX, SPAM)}
+                                >
+                                    <Icon name="nospam" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Not a spam`}</span>
+                                </DropdownMenuButton>
+                            ) : (
+                                <DropdownMenuButton
+                                    className="alignleft flex flex-nowrap"
+                                    onClick={handleMove(SPAM, INBOX)}
+                                >
+                                    <Icon name="spam" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Mark as spam`}</span>
+                                </DropdownMenuButton>
+                            )}
+                            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handlePhishing}>
+                                <Icon name="phishing" className="mr0-5 mt0-25" />
+                                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Report phishing`}</span>
+                            </DropdownMenuButton>
+                            {!sourceMode && (
+                                <DropdownMenuButton
+                                    className="alignleft flex flex-nowrap"
+                                    onClick={() => onSourceMode(true)}
+                                >
+                                    <Icon name="view-source-code" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                        .t`View source code`}</span>
+                                </DropdownMenuButton>
+                            )}
+                            {sourceMode && (
+                                <DropdownMenuButton
+                                    className="alignleft flex flex-nowrap"
+                                    onClick={() => onSourceMode(false)}
+                                >
+                                    <Icon name="view-html-code" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                        .t`View rendered HTML`}</span>
+                                </DropdownMenuButton>
+                            )}
+                            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleHeaders}>
+                                <Icon name="view-headers" className="mr0-5 mt0-25" />
+                                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View headers`}</span>
+                            </DropdownMenuButton>
+                            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleExport}>
+                                <Icon name="export" className="mr0-5 mt0-25" />
+                                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Export`}</span>
+                            </DropdownMenuButton>
+                            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handlePrint}>
+                                <Icon name="print" className="mr0-5 mt0-25" />
+                                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Print`}</span>
+                            </DropdownMenuButton>
+                        </DropdownMenu>
+                    );
+                }}
+            </HeaderDropdown>
+        </Group>
     );
 };
 
