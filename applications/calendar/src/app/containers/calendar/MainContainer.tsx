@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
-import { useCalendars, useCalendarUserSettings, useUser } from 'react-components';
+import { useCalendars, useCalendarUserSettings, useDelinquent, useUser } from 'react-components';
+import { UserModel } from 'proton-shared/lib/interfaces';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 
 import SettingsContainer from '../settings/SettingsContainer';
 import CalendarContainer from './CalendarContainer';
@@ -8,8 +10,6 @@ import { getSetupType, SETUP_TYPE } from '../setup/setupHelper';
 import { DEFAULT_USER_SETTINGS } from '../../settingsConstants';
 import FreeContainer from '../setup/FreeContainer';
 import WelcomeContainer from '../setup/WelcomeContainer';
-import { UserModel } from 'proton-shared/lib/interfaces';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import ResetContainer from '../setup/ResetContainer';
 
 interface Props {
@@ -49,6 +49,7 @@ const MainContainerSetup = ({ calendars = [], user }: Props) => {
 const MainContainer = () => {
     const [calendars] = useCalendars();
     const [user] = useUser();
+    useDelinquent();
 
     const [setupType, setSetupType] = useState(() => getSetupType(calendars));
 
