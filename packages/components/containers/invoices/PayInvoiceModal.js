@@ -11,6 +11,7 @@ import {
     PayPalButton,
     useApiResult,
     useModals,
+    useNotifications,
     useApi,
     useLoading
 } from 'react-components';
@@ -24,6 +25,7 @@ import { handlePaymentToken } from '../payments/paymentTokenHelper';
 
 const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
     const { createModal } = useModals();
+    const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const api = useApi();
     const { result = {}, loading: loadingCheck } = useApiResult(() => checkInvoice(invoice.ID), []);
@@ -38,6 +40,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
         await api(payInvoice(invoice.ID, requestBody));
         fetchInvoices();
         rest.onClose();
+        createNotification({ text: c('Success').t`Invoice paid` });
     };
 
     const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
@@ -47,14 +50,11 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
     });
 
     const submit =
-        AmountDue > 0 ? (
-            method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-                <PayPalButton paypal={paypal} type="invoice" className="pm-button--primary" amount={AmountDue}>{c(
-                    'Action'
-                ).t`Continue`}</PayPalButton>
-            ) : canPay ? (
-                c('Action').t`Pay`
-            ) : null
+        method === PAYMENT_METHOD_TYPES.PAYPAL ? (
+            <PayPalButton paypal={paypal} type="invoice" className="pm-button--primary" amount={AmountDue}>{c('Action')
+                .t`Continue`}</PayPalButton>
+        ) : canPay ? (
+            c('Action').t`Pay`
         ) : null;
 
     return (
