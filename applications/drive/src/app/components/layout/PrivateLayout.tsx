@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Sidebar, AppsSidebar, useToggle, StorageSpaceStatus, Href } from 'react-components';
+import { Sidebar, AppsSidebar, useToggle, StorageSpaceStatus, Href, useDelinquent } from 'react-components';
 import Header from './PrivateHeader';
 import UploadButton from '../uploads/UploadButton';
 import TransfersInfo from '../TransfersInfo/TransfersInfo';
@@ -26,6 +26,7 @@ interface Props {
 
 const PrivateLayout = ({ children }: Props) => {
     const { state: isHeaderExpanded, toggle: toggleHeaderExpanded } = useToggle();
+    useDelinquent();
 
     return (
         <div className="flex flex-nowrap no-scroll">
