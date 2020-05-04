@@ -17,6 +17,7 @@ RUN sed -i \
         -e 's/^#\(LoadModule .*mod_proxy_http.so\)/\1/' \
         -e 's/^#\(LoadModule .*mod_rewrite.so\)/\1/' \
         -e 's/^#\(LoadModule .*mod_unique_id.so\)/\1/' \
+        -e 's/^#\(LoadModule .*mod_substitute.so\)/\1/' \
         conf/httpd.conf
 RUN echo 'Include conf/extra/custom.conf' >> conf/httpd.conf
 
