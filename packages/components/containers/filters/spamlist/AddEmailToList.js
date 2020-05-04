@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Input, Label } from 'react-components';
-import { REGEX_EMAIL } from 'proton-shared/lib/constants';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 
 function AddEmailToList({ onChange }) {
     const handleChange = ({ target }) => {
-        if (REGEX_EMAIL.test(target.value || '')) {
+        if (validateEmailAddress(target.value || '')) {
             onChange(target.value);
         }
     };

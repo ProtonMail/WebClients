@@ -1,3 +1,5 @@
+import { RECIPIENT_TYPES } from 'proton-shared/lib/constants';
+import { normalizeInternalEmail } from 'proton-shared/lib/helpers/string';
 import { useCallback } from 'react';
 import { useAddresses, useApi, useGetAddressKeys, useGetUserKeys, useMailSettings } from '../index';
 import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
@@ -21,7 +23,9 @@ const useGetEncryptionPreferences = () => {
 
     return useCallback(
         async (emailAddress: string) => {
-            const selfAddress = addresses.find(({ Email }) => Email === emailAddress);
+            const selfAddress = addresses.find(
+                ({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(emailAddress)
+            );
             let selfSend;
             let apiKeysConfig;
             let pinnedKeysConfig;
@@ -34,10 +38,9 @@ const useGetEncryptionPreferences = () => {
                 pinnedKeysConfig = { pinnedKeys: [], isContactSignatureVerified: false };
             } else {
                 const { publicKeys } = splitKeys(await getUserKeys());
-                [apiKeysConfig, pinnedKeysConfig] = await Promise.all([
-                    getPublicKeysEmailHelper(api, emailAddress),
-                    getPublicKeysVcardHelper(api, emailAddress, publicKeys)
-                ]);
+                apiKeysConfig = await getPublicKeysEmailHelper(api, emailAddress);
+                const isInternal = apiKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
+                pinnedKeysConfig = await getPublicKeysVcardHelper(api, emailAddress, publicKeys, isInternal);
             }
             const publicKeyModel = await getPublicKeyModel({
                 emailAddress,
