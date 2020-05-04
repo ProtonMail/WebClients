@@ -34,7 +34,7 @@ const useGetEncryptionPreferences = () => {
                 const selfPublicKey = (await getAddressKeys(selfAddress.ID))[0]?.publicKey;
                 selfSend = { address: selfAddress, publicKey: selfPublicKey };
                 // For own addresses, we use the decrypted keys in selfSend and do not fetch any data from the API
-                apiKeysConfig = { Keys: [], publicKeys: [] };
+                apiKeysConfig = { Keys: [], publicKeys: [], RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL };
                 pinnedKeysConfig = { pinnedKeys: [], isContactSignatureVerified: false };
             } else {
                 const { publicKeys } = splitKeys(await getUserKeys());
