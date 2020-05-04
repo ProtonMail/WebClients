@@ -4,6 +4,7 @@ import { CRYPTO_PROCESSING_TYPES } from '../../contacts/constants';
 import { readSigned } from '../../contacts/decrypt';
 import { getKeyInfoFromProperties } from '../../contacts/keyProperties';
 import { parse } from '../../contacts/vcard';
+import { normalizeEmail } from '../../helpers/string';
 
 import { Api, PinnedKeysConfig } from '../../interfaces';
 import { Contact, ContactEmail } from '../../interfaces/contacts';
@@ -15,12 +16,13 @@ import { getContact, queryContactEmails } from '../contacts';
  */
 const getPublicKeysVcardHelper = async (
     api: Api,
-    Email: string,
-    publicKeys: OpenPGPKey[]
+    emailAddress: string,
+    publicKeys: OpenPGPKey[],
+    isInternal?: boolean
 ): Promise<PinnedKeysConfig> => {
     try {
         const { ContactEmails = [] } = await api<{ ContactEmails: ContactEmail[] }>(
-            queryContactEmails({ Email } as any)
+            queryContactEmails({ Email: emailAddress } as any)
         );
         if (!ContactEmails.length) {
             return { pinnedKeys: [], isContactSignatureVerified: false };
@@ -36,7 +38,9 @@ const getPublicKeysVcardHelper = async (
         const isContactSignatureVerified = type === CRYPTO_PROCESSING_TYPES.SUCCESS;
         const properties = parse(signedVcard);
         const emailProperty = properties.find(
-            ({ field, value }) => field === 'email' && (value as string).toLowerCase() === Email.toLowerCase()
+            ({ field, value }) =>
+                field === 'email' &&
+                normalizeEmail(value as string, isInternal) === normalizeEmail(emailAddress, isInternal)
         );
         if (!emailProperty || !emailProperty.group) {
             throw new Error('Invalid vcard');

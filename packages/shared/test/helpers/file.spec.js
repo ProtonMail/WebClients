@@ -74,17 +74,25 @@ describe('splitExtension', () => {
         const split = splitExtension('');
         expect(split).toEqual(['', '']);
     });
+
     it('should split files with no extension', () => {
         const split = splitExtension('myFile');
         expect(split).toEqual(['myFile', '']);
     });
+
     it('should split properly files with strange characters', () => {
         const split = splitExtension('a-terrible.name/for_a.File.txt');
         expect(split).toEqual(['a-terrible.name/for_a.File', 'txt']);
     });
+
     it('should split files as expected', () => {
         const fileNames = ['myFile0.c', 'myFile1.py', 'myFile2.txt', 'myFile3.jpeg'];
-        const expected = [['myFile0', 'c'], ['myFile1', 'py'], ['myFile2', 'txt'], ['myFile3', 'jpeg']];
+        const expected = [
+            ['myFile0', 'c'],
+            ['myFile1', 'py'],
+            ['myFile2', 'txt'],
+            ['myFile3', 'jpeg']
+        ];
         expect(fileNames.map(splitExtension)).toEqual(expected);
     });
 });
