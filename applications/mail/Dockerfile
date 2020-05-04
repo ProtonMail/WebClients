@@ -20,16 +20,14 @@ RUN sed -i \
         conf/httpd.conf
 RUN echo 'Include conf/extra/custom.conf' >> conf/httpd.conf
 
-COPY httpd/custom.conf conf/extra/custom.conf
+COPY httpd/custom.conf conf/extra/
 ADD webapp-bundle.tar.gz htdocs/
 
-# This must end with a /
-ENV API_ENDPOINT="https://mail.protonmail.com/api/"
-# These must NOT end with a /
-ENV CALENDAR_ENDPOINT="https://beta.protonmail.com/calendar"
-ENV CONTACTS_ENDPOINT="https://beta.protonmail.com/contacts"
-ENV SETTINGS_ENDPOINT="https://beta.protonmail.com/settings"
-RUN httpd -M
+COPY entrypoint.sh /usr/local/bin/entrypoint
+RUN entrypoint httpd -M
 
 EXPOSE 80
 EXPOSE 443
+
+ENTRYPOINT ["entrypoint"]
+CMD ["httpd-foreground"]
