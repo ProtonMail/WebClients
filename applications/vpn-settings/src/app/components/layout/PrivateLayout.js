@@ -9,7 +9,8 @@ import {
     usePermissions,
     useUser,
     ErrorBoundary,
-    AppVersion
+    AppVersion,
+    useDelinquent
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 
@@ -22,6 +23,7 @@ import PaymentsContainer from '../../containers/PaymentsContainer';
 
 const PrivateLayout = ({ location }) => {
     const [user] = useUser();
+    useDelinquent();
     const mainAreaRef = useRef();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const userPermissions = usePermissions();
