@@ -32,6 +32,10 @@
 	.pm-modalContent {
 		@extend .reset4print;
 	}
+	.pm-modalContentInner::before,
+	.pm-modalContentInner::after {
+		content: none;
+	}
   }
 
   body {
@@ -49,7 +53,8 @@
 	.pm-modalHeader,
 	.pm-modalFooter,
 	.pm-modalContentInnerTopShadow,
-	.pm-modalContentInnerBottomShadow {
+	.pm-modalContentInnerBottomShadow,
+	.item-icon {
 		@extend .noprint;
 	}
   }

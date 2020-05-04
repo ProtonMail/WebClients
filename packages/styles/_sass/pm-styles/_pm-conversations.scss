@@ -228,48 +228,12 @@ $conversation-icon-size: 3.2rem !default;
 .message-header {
   background-color: var(--bgcolor-item-column-list, $pm-global-light);
   border-radius: $global-border-radius; // Can't overflow 'cause of ::before, so repeat radius
-  @extend .p1;
-  @extend .relative;
-
-  &::before {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: -1px;
-    width: 23px;
-    height: 17px;
-
-    border-top: 1px solid var(--bordercolor-input, $pm-global-border);
-    background-color: var(--bgcolor-item-column-list, $pm-global-light);
-  }
-
-  &.is-inbound::before {
-    left: -1px;
-    transform: skewX(50deg) translateX(-10px);
-    border-left: 1px solid var(--bordercolor-input, $pm-global-border);
-  }
-
-  &.is-outbound::before {
-    right: -1px;
-    transform: skewX(-50deg) translateX(10px);
-    border-right: 1px solid var(--bordercolor-input, $pm-global-border);
-  }
-
+  padding: .6em;
 
   &.unread {
     background: var(--bgcolor-unread-item-column-list, $white);
-
-    &.is-inbound,
-    &.is-outbound {
-      &::before {
-        background: var(--bgcolor-unread-item-column-list, $white);
-      }
-    }
   }
 
-  &-expanded {
-    padding: 0;
-  }
 }
 
 /* states classes */
@@ -293,8 +257,6 @@ $conversation-icon-size: 3.2rem !default;
 }
 
 .message-attachments {
-  @extend .p1;
-  border-top: 1px solid var(--bordercolor-input, $pm-global-border);
   font-size: 1.4rem;
 }
 
