@@ -37,8 +37,6 @@ import HeaderExpandedDetails from './HeaderExpandedDetails';
 import HeaderRecipientType from './HeaderRecipientType';
 import HeaderRecipientItem from './HeaderRecipientItem';
 
-import './MessageHeader.scss';
-
 // Hacky override of the typing
 const ButtonGroup = OriginalButtonGroup as ({
     children,
@@ -171,7 +169,7 @@ const HeaderExpanded = ({
                             contactGroups={contactGroups}
                         />
                     )}
-                    <a onClick={toggleDetails} className="bold message-show-hide-link pb0-25 flex-item-noshrink">
+                    <a onClick={toggleDetails} className="bold message-show-hide-link flex-item-noshrink">
                         {showDetails ? c('Action').t`Hide details` : c('Action').t`Show details`}
                     </a>
                 </div>
