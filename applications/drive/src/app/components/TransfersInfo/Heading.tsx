@@ -91,9 +91,10 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
                     type="button"
                     className="pd-transfers-headingButton p0-5 flex"
                     onClick={() => {
-                        minimizeRef.current?.blur();
                         onToggleMinimize();
+                        minimizeRef.current?.blur();
                     }}
+                    onTouchEnd={() => minimizeRef.current?.blur()}
                     aria-expanded={!minimized}
                 >
                     <Icon className={classnames([minimized && 'rotateX-180'])} name="minimize" />
