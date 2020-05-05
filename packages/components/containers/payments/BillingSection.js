@@ -247,7 +247,7 @@ const BillingSection = ({ permission }) => {
                                 </div>
                             </div>
                         ) : null}
-                        {covid ? (
+                        {covid && mailPlan ? (
                             <div className="flex-autogrid w100 mb1">
                                 <div className="flex-autogrid-item">
                                     {c('Label').t`Bonus storage`}
