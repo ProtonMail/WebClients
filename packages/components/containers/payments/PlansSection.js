@@ -70,7 +70,7 @@ const PlansSection = () => {
             return createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
         }
         await new Promise((resolve, reject) => {
-            createModal(<DowngradeModal onConfirm={resolve} onClose={reject} />);
+            createModal(<DowngradeModal user={user} onConfirm={resolve} onClose={reject} />);
         });
         if (isLoyal(organization) || hasCovid(organization)) {
             await new Promise((resolve, reject) => {

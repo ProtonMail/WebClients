@@ -51,7 +51,7 @@ const UnsubscribeButton = ({ className, children }) => {
         }
 
         await new Promise((resolve, reject) => {
-            createModal(<DowngradeModal onConfirm={resolve} onClose={reject} />);
+            createModal(<DowngradeModal user={user} onConfirm={resolve} onClose={reject} />);
         });
 
         if (isLoyal(organization) || hasCovid(organization)) {
