@@ -55,7 +55,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     return (
         <div className="flex-item-fluid aligncenter p2">
             {checkeds === 0 && labelName && (
-                <h3 className="bold ellipsis" title={labelName}>
+                <h3 className="bold lh-standard ellipsis" title={labelName}>
                     {labelName}
                 </h3>
             )}
