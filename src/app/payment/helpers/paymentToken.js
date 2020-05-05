@@ -96,10 +96,12 @@ export const process = ({ Token, paymentApi, ReturnHost, ApprovalURL }) => {
     });
 };
 
-export const toParams = ({ Amount, Currency }, Token) => {
+export const toParams = (params, Token) => {
+    // Remove PaymentMethodID
+    const { PaymentMethodID, ...rest } = params;
+    // rest can contains Amount, Currency, Cycle, Codes, PlanIDs, GiftCode
     return {
-        Amount,
-        Currency,
+        ...rest,
         Payment: {
             Type: 'token',
             Details: {
@@ -114,6 +116,10 @@ export const handlePaymentToken = async ({ params, paymentApi, paymentVerificati
     const { Type } = Payment || {};
 
     if (['cash', 'bitcoin', 'token'].includes(Type)) {
+        return params;
+    }
+
+    if (Amount === 0) {
         return params;
     }
 
