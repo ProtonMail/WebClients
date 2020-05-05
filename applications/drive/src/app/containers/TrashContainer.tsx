@@ -29,7 +29,7 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
         <Page title={c('Title').t`Trash`}>
             <TrashContentProvider shareId={shareId}>
                 <TrashToolbar shareId={shareId} />
-                <PageMainArea hasToolbar className="flex flex-column">
+                <PageMainArea hasToolbar className="flex flex-column flex-nowrap">
                     <StickyHeader>
                         <div className="pt0-5 pb0-5 pl0-25 pr0-25 strong">{c('Info').t`Trash`}</div>
                     </StickyHeader>

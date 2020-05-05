@@ -1,49 +1,10 @@
-$checkbox-cell-width: calc(#{em(32)} + 1.6rem);
-
 .pd-fb-table {
-    @extend .mb0;
-    @extend .pb2;
-    @extend .w100;
-    @extend .noborder;
-    @extend .min-w35e;
-    border-collapse: separate;
-    border-spacing: 0;
-    table-layout: fixed;
-
-    th {
-        text-align: left;
-        font-weight: normal;
-        color: rgba($pm-global-grey, 0.5);
-        border-top: 1px solid $pm-global-border;
-        padding: em(10) em(16) em(10) 0;
-    }
-
-    td {
-        padding: em(16) em(16) em(16) 0;
-    }
-
     td,
     th {
-        position: relative;
-        border-bottom: 1px solid $pm-global-border;
-        &:first-of-type {
-            padding-left: em(16);
-            width: $checkbox-cell-width;
+        &:first-of-type { // Checkbox cell
+            position: relative; // Because of .increase-surface-click
+            padding-left: 1em; padding-right: 1em;
+            width: calc(1.6rem + 2em);
         }
     }
-}
-
-.pd-fb-table-heading-name {
-    padding-left: 25px;
-}
-
-.pd-fb-table-row-name {
-    @extend .ellipsis;
-    white-space: pre;
-}
-
-.pd-fb-table-row:hover,
-.pd-fb-table-row:focus {
-    background-color: $pm-global-light;
-    cursor: pointer;
 }

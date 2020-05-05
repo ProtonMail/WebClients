@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import { c } from 'ttag';
 
 import { useMainArea } from 'react-components';
 
@@ -32,6 +33,7 @@ function Trash({ shareId }: Props) {
     ) : (
         <FileBrowser
             isTrash
+            caption={c('Title').t`Trash`}
             shareId={shareId}
             loading={loading}
             contents={contents}

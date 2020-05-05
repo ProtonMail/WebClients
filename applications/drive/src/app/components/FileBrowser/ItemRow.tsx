@@ -67,7 +67,7 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
         </div>,
         <div key="filename" className="flex flex-items-center flex-nowrap">
             <MimeIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MimeType} />
-            <span title={item.Name} className="pd-fb-table-row-name">
+            <span title={item.Name} className="ellipsis">
                 {item.Name}
             </span>
         </div>,
@@ -83,7 +83,7 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
 
     return (
         <TableRow
-            className="pd-fb-table-row"
+            className="cursor-pointer"
             onMouseDown={() => document.getSelection()?.removeAllRanges()}
             onClick={handleRowClick}
             onTouchStart={handleTouchStart}
