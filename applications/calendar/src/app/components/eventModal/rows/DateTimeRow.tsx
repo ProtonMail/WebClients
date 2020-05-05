@@ -1,5 +1,4 @@
 import React from 'react';
-import { c } from 'ttag';
 import { DateInput, Label, Row, TimeInput, classnames } from 'react-components';
 import {
     convertUTCDateTimeToZone,
@@ -35,8 +34,7 @@ const DateTimeRow = ({
     setModel,
     displayWeekNumbers,
     weekStartsOn,
-    endError,
-    isNarrow
+    endError
 }: Props) => {
     const { isAllDay, start, end } = model;
 
@@ -175,31 +173,6 @@ const DateTimeRow = ({
             max={MAXIMUM_DATE}
         />
     );
-
-    if (isNarrow) {
-        return (
-            <>
-                <Row collapseOnMobile={collapseOnMobile}>
-                    <Label htmlFor="startDate">{c('Label').t`From`}</Label>
-                    <div className="flex-item-fluid">
-                        <div className="flex flex-nowrap">
-                            {startDateInput}
-                            {startTimeInput}
-                        </div>
-                    </div>
-                </Row>
-                <Row collapseOnMobile={collapseOnMobile}>
-                    <Label htmlFor="endDate">{c('Label').t`To`}</Label>
-                    <div className="flex-item-fluid">
-                        <div className="flex flex-nowrap mb0-5">
-                            {endDateInput}
-                            {endTimeInput}
-                        </div>
-                    </div>
-                </Row>
-            </>
-        );
-    }
 
     return (
         <Row collapseOnMobile={collapseOnMobile}>
