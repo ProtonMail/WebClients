@@ -59,7 +59,7 @@ const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay }: EventMo
         }
         if (frequency === FREQUENCY.WEEKLY) {
             // weekly.days may include repeated days (cf. function getFrequencyModelChange)
-            const weeklyDays = unique(weekly.days);
+            const weeklyDays = unique(weekly.days).sort();
             if (!weeklyDays.length || !weeklyDays.includes(startDate.getDay())) {
                 throw new Error('Inconsistent weekly rrule');
             }

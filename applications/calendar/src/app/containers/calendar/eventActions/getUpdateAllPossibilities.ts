@@ -1,22 +1,15 @@
 import { getDateOrDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
-import { VcalRruleProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
+import { getIsRruleEqual } from './rruleEqual';
 
 export enum UpdateAllPossibilities {
     KEEP_SINGLE_EDITS,
     KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
     USE_NEW_START_DATE
 }
-
-const getHasChangedRrule = (oldRrule: VcalRruleProperty, newRrule?: VcalRruleProperty) => {
-    if (!newRrule) {
-        return true;
-    }
-    return !isDeepEqual(oldRrule, newRrule);
-};
 
 const getUpdateAllPossibilities = (
     originalVeventComponent: VcalVeventComponent,
@@ -47,10 +40,14 @@ const getUpdateAllPossibilities = (
     const oldLocalStartDate = toUTCDate(oldStartProperty.value);
     const newLocalStartDate = toUTCDate(newStartProperty.value);
 
+    // Try to guess if the user wants to update the first event in the occurrence.
+    // If the day is the same, and the RRULE hasn't changed, then it's assumed that
+    // the first occurrence should change. A better approach is probably to let the user
+    // pick which event in the occurrence should be changed before we arrive here.
     if (
         isSameDay(oldLocalStartDate, newLocalStartDate) &&
         originalVeventComponent.rrule &&
-        !getHasChangedRrule(originalVeventComponent.rrule, newVeventComponent.rrule)
+        getIsRruleEqual(originalVeventComponent.rrule, newVeventComponent.rrule)
     ) {
         return UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME;
     }

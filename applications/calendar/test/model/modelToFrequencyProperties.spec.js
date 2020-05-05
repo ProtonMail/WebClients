@@ -256,7 +256,7 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
             frequency: FREQUENCY.WEEKLY,
             weekly: {
                 type: WEEKLY_TYPE.ON_DAYS,
-                days: [1, 6]
+                days: [6, 1]
             },
             ends: {
                 type: END_TYPE.UNTIL,

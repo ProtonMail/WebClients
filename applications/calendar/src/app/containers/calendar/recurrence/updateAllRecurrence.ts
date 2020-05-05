@@ -1,16 +1,16 @@
 import { omit } from 'proton-shared/lib/helpers/object';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getSafeRruleUntil } from './helper';
 import { getStartDateTimeMerged, getEndDateTimeMerged } from './getDateTimeMerged';
 import { UpdateAllPossibilities } from '../eventActions/getUpdateAllPossibilities';
+import { getIsRruleEqual } from '../eventActions/rruleEqual';
 
 const getComponentWithUpdatedRrule = (component: VcalVeventComponent) => {
     const { rrule } = component;
     const { rrule: originalRrule } = component;
 
     // If the user has edited the RRULE, we'll use that.
-    if (!rrule || !isDeepEqual(rrule, originalRrule)) {
+    if (!rrule || !getIsRruleEqual(rrule, originalRrule)) {
         if (!rrule) {
             return omit(component, ['rrule']);
         }
