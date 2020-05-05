@@ -244,6 +244,6 @@ function keysModel(dispatchers) {
         clear();
     });
 
-    return { storeKeys, getPublicKeys, getPrivateKeys, hasKey, signedKeyList, clearAddressKeys };
+    return { storeKeys, getAllKeys, getPublicKeys, getPrivateKeys, hasKey, signedKeyList, clearAddressKeys };
 }
 export default keysModel;

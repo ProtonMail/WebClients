@@ -1,12 +1,14 @@
-import { KEY_VERSION } from '../../constants';
+import { KEY_VERSION, MAIN_KEY } from '../../constants';
 
 /* @ngInject */
-function checkKeysFormat($injector) {
+function checkKeysFormat($injector, keysModel) {
     return (user) => {
-        for (let i = 0; i < user.Keys.length; i++) {
-            const key = user.Keys[i];
+        const userKeys = keysModel.getAllKeys(MAIN_KEY);
 
-            if (key.Version < KEY_VERSION && key.decrypted) {
+        for (let i = 0; i < userKeys.length; i++) {
+            const { key, pkg } = userKeys[i];
+
+            if (key.Version < KEY_VERSION && pkg) {
                 return false;
             }
         }
@@ -14,12 +16,12 @@ function checkKeysFormat($injector) {
         const addresses = $injector.get('addressesModel').getByUser(user);
 
         for (let i = 0; i < addresses.length; i++) {
-            const addressKeys = addresses[i].Keys;
+            const addressKeys = keysModel.getAllKeys(addresses[i].ID);
 
             for (let j = 0; j < addressKeys.length; j++) {
-                const key = addressKeys[j];
+                const { key, pkg } = addressKeys[j];
 
-                if (key.Version < KEY_VERSION && key.decrypted) {
+                if (key.Version < KEY_VERSION && pkg) {
                     return false;
                 }
             }

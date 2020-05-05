@@ -93,7 +93,7 @@ function authentication(
             if (plainMailboxPass && !user.OrganizationPrivateKey && !checkKeysFormat(user)) {
                 AppModel.set('upgradingKeys', true);
                 await upgradeKeys({
-                    mailboxPassword: plainMailboxPass,
+                    plainMailboxPass,
                     oldSaltedPassword: api.getPassword(),
                     user
                 });
