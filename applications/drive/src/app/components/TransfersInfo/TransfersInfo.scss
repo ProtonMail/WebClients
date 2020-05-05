@@ -1,7 +1,7 @@
 .pd-transfers {
     position: fixed;
     right: 0;
-    bottom: 0;
+    bottom: 1rem;
     z-index: 30;
     box-shadow: 0 0 1.5rem 0.3rem rgba(0, 0, 0, 0.16);
     color: var(--color-main-area, $pm-global-grey);
@@ -56,6 +56,10 @@
         @include respond-to(640, 'height') {
             max-height: 35vh;
         }
+    }
+
+    &--minimized {
+        bottom: 0.25rem;
     }
 
     &--minimized &-list {
