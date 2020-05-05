@@ -80,6 +80,11 @@ describe('splitExtension', () => {
         expect(split).toEqual(['myFile', '']);
     });
 
+    it('should split files with no extension and a dot', () => {
+        const split = splitExtension('myFile.');
+        expect(split).toEqual(['myFile', '']);
+    });
+
     it('should split properly files with strange characters', () => {
         const split = splitExtension('a-terrible.name/for_a.File.txt');
         expect(split).toEqual(['a-terrible.name/for_a.File', 'txt']);

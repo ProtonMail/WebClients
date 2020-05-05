@@ -92,11 +92,9 @@ export const readDataUrl = (url = '') => {
  * Split a filename into [name, extension]
  */
 export const splitExtension = (filename = '') => {
-    if (!filename.includes('.')) {
+    const endIdx = filename.lastIndexOf('.');
+    if (endIdx === -1) {
         return [filename, ''];
     }
-    const parts = filename.split('.');
-    const ext = parts.pop();
-
-    return [parts.join('.'), ext];
+    return [filename.slice(0, endIdx), filename.slice(endIdx + 1)];
 };

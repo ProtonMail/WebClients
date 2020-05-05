@@ -208,7 +208,7 @@ const getEmailParts = (email: string): string[] => {
     if (endIdx === -1) {
         return [email, ''];
     }
-    return [email.slice(0, endIdx) || '', email.slice(endIdx + 1) || ''];
+    return [email.slice(0, endIdx), email.slice(endIdx + 1)];
 };
 
 /**
