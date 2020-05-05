@@ -45,7 +45,7 @@ const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerCl
             <Popper
                 divRef={setPopperEl}
                 id={uid}
-                isOpen={isOpen}
+                isOpen={!!title && isOpen}
                 style={position}
                 className={classnames(['tooltip', `tooltip--${placement}`])}
             >
