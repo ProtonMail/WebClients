@@ -40,8 +40,33 @@
 
   body {
     padding: .5em;
-    overflow: auto;
+	overflow: auto;
+
+	/* put back normal mode for print :) */
+	--bgcolor-item-column-list: initial;
+	--bgcolor-unread-item-column-list: initial;
+	--bgcolor-view-column-detail: initial;
+	--bgcolor-main-area: initial;
+	--bgcolor-subnav: initial;
+	--bgcolor-toolbar: initial;
+	--color-subnav-link: initial;
+	--color-main-area: initial;
+	--fillcolor-icons: initial;
+	--bgcolor-disabled-checkboxes-radios: initial;
+	--bgcolor-item-column-active: initial;
+	--bordercolor-input: initial;
+	--bgcolor-input: initial;
+	--bgcolor-highlight: initial;
+	--color-input: initial;
+
+	.pm-button:not(.pm-button--primary):not(.pm-button--link), .pm-button--info {
+		border-color: $pm-global-border;
+		background: $white;
+		color: $pm-global-grey;
+	}
+
   }
+
 
   /* hide unnecessary elements */
   .noprint {
