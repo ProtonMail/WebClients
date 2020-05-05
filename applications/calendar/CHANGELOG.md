@@ -1,3 +1,28 @@
+# [4.0.0-beta.2] - 2020-05-13
+
+## Added
+- Update recurring events:
+    * Add option to delete all events of a series
+    * Add edit one occurrence of a series
+    * Add edit selected and all future occurrences of a series
+    * Add edit all occurrences of a series 
+- Display push notification state in settings
+- Set reminders before, after or at the same time of the event
+
+## Updated
+- Increase limit of events description to 3000 characters 
+- Update of events lazy load state
+- Allow calendar name length starting from 1 character
+- Suffix event UID with proton domain
+
+## Fixed
+- Remove fields populated with whitespaces in event display
+- Close only selected event when list of events is displayed
+- Take into account DST changes for event reminders      
+- Load the user-selected default view after calendar creation
+
+___
+
 # [4.0.0-beta.1] - 2020-03-11
 
 ## Added
