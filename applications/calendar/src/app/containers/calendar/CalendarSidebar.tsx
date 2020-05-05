@@ -7,9 +7,8 @@ import {
     useEventManager,
     useApi,
     useLoading,
-    MobileNavServices,
-    MobileNavLink,
-    Info
+    Info,
+    MobileAppsLinks
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
@@ -44,12 +43,6 @@ const CalendarSidebar = ({
         await api(updateCalendar(calendarID, { Display: +checked }));
         await call();
     };
-
-    const mobileLinks = [
-        { to: '/inbox', icon: 'protonmail', external: true, current: false },
-        { to: '/contacts', icon: 'protoncontacts', external: true, current: false },
-        { to: '/calendar', icon: 'protoncalendar', external: false, current: true }
-    ].filter(Boolean);
 
     return (
         <div className="sidebar flex flex-nowrap flex-column noprint" data-expanded={expanded}>
@@ -122,11 +115,7 @@ const CalendarSidebar = ({
                 </nav>
             </div>
             <CalendarSidebarVersion />
-            <MobileNavServices>
-                {mobileLinks.map(({ to, icon, external, current }) => {
-                    return <MobileNavLink key={icon} to={to} icon={icon} external={external} current={current} />;
-                })}
-            </MobileNavServices>
+            <MobileAppsLinks />
         </div>
     );
 };
