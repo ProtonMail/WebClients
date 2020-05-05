@@ -109,7 +109,7 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
         new webpack.DefinePlugin({
             PM_OPENPGP: JSON.stringify(definition),
             PL_IS_STANDALONE: appMode === 'standalone',
-            FEATURE_FLAGS: JSON.stringify(featureFlags)
+            WEBPACK_FEATURE_FLAGS: JSON.stringify(featureFlags)
         }),
 
         new ScriptExtHtmlWebpackPlugin({
