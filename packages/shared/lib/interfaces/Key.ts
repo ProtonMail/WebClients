@@ -86,4 +86,5 @@ export interface PublicKeyModel {
     isPGPExternalWithoutWKDKeys: boolean;
     pgpAddressDisabled: boolean;
     isContactSignatureVerified: boolean;
+    emailAddressWarnings?: string[];
 }

@@ -106,7 +106,8 @@ describe('extractEncryptionPreferences for an internal user', () => {
             hasApiKeys: true,
             hasPinnedKeys: false,
             warnings: [],
-            isContactSignatureVerified: true
+            isContactSignatureVerified: true,
+            emailAddressWarnings: undefined
         });
     });
 
@@ -135,7 +136,8 @@ describe('extractEncryptionPreferences for an internal user', () => {
             hasApiKeys: true,
             hasPinnedKeys: true,
             warnings: [],
-            isContactSignatureVerified: true
+            isContactSignatureVerified: true,
+            emailAddressWarnings: undefined
         });
     });
 
@@ -252,7 +254,8 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             hasApiKeys: true,
             hasPinnedKeys: false,
             warnings: [],
-            isContactSignatureVerified: true
+            isContactSignatureVerified: true,
+            emailAddressWarnings: undefined
         });
     });
 
@@ -281,7 +284,8 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             hasApiKeys: true,
             hasPinnedKeys: true,
             warnings: [],
-            isContactSignatureVerified: true
+            isContactSignatureVerified: true,
+            emailAddressWarnings: undefined
         });
     });
 
@@ -368,7 +372,8 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isInternal: false,
             hasApiKeys: false,
             hasPinnedKeys: false,
-            isContactSignatureVerified: true
+            isContactSignatureVerified: true,
+            emailAddressWarnings: undefined
         });
     });
 
@@ -395,7 +400,8 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             hasApiKeys: false,
             hasPinnedKeys: true,
             warnings: [],
-            isContactSignatureVerified: true
+            isContactSignatureVerified: true,
+            emailAddressWarnings: undefined
         });
     });
 
@@ -442,7 +448,8 @@ describe('extractEncryptionPreferences for an own address', () => {
         isPGPExternalWithWKDKeys: false,
         isPGPExternalWithoutWKDKeys: false,
         pgpAddressDisabled: false,
-        isContactSignatureVerified: true
+        isContactSignatureVerified: true,
+        emailAddressWarnings: undefined
     };
 
     it('should not pick the public key from the keys in selfSend.address', () => {
@@ -468,7 +475,8 @@ describe('extractEncryptionPreferences for an own address', () => {
             hasApiKeys: true,
             hasPinnedKeys: false,
             warnings: [],
-            isContactSignatureVerified: true
+            isContactSignatureVerified: true,
+            emailAddressWarnings: undefined
         });
     });
 

@@ -207,6 +207,7 @@ export const getPublicKeyModel = async ({
         isPGPExternalWithWKDKeys: isExternalUser && !!apiKeys.length,
         isPGPExternalWithoutWKDKeys: isExternalUser && !apiKeys.length,
         pgpAddressDisabled: isDisabledUser(apiKeysConfig),
-        isContactSignatureVerified
+        isContactSignatureVerified,
+        emailAddressWarnings: apiKeysConfig.Warnings
     };
 };
