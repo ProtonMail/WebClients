@@ -636,3 +636,7 @@ export const ROOT_FOLDER = 0;
 export const USER_SCOPES = {
     DRIVE: 68719476736
 };
+
+// This is a definition coming from webpack. Hide behind typeof for the test env.
+declare const WEBPACK_FEATURE_FLAGS: string;
+export const FEATURE_FLAGS = typeof WEBPACK_FEATURE_FLAGS === 'undefined' ? '' : WEBPACK_FEATURE_FLAGS;
