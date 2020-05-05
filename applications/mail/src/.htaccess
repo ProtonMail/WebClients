@@ -1,9 +1,10 @@
 RewriteEngine On
 
-# Redirect to https if coming from http, except if going to /assets/... because that is used by HTTP health checks
-<If "(%{REQUEST_SCHEME} != 'https') && (%{REQUEST_URI} !~ m#^/assets/#)">
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</If>
+# Redirect to https if not coming from https && not forwarded from https && not curl nor any health check user-agent
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Redirect nothing to app
 RewriteRule ^$ /index.html [NC,L]
@@ -19,7 +20,7 @@ RewriteRule ^.*$ - [NC,L]
 RewriteRule ^(.*) /index.html [NC,L]
 
 # Error pages
-ErrorDocument 403   /assets/errors/403.html
+ErrorDocument 403 /assets/errors/403.html
 
 <Files ~ "(index.html|version.json)">
     FileETag None

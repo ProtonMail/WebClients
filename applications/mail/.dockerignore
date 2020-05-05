@@ -1,7 +1,8 @@
 .git/
 node_modules/
 .npm/
-/src/
+/src/app/
+/src/assets/
 /po/
 
 # dist files come directly from webapp-bundle.tar.gz
