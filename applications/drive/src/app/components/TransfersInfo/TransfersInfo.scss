@@ -2,10 +2,10 @@
     position: fixed;
     right: 0;
     bottom: 0;
-    z-index: 12;
-    box-shadow: 0 0 1.5rem .3rem rgba(0, 0, 0, 0.16);
+    z-index: 30;
+    box-shadow: 0 0 1.5rem 0.3rem rgba(0, 0, 0, 0.16);
     color: var(--color-main-area, $pm-global-grey);
-    transition: .15s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
 
     @include respond-to($breakpoint-small, 'max') {
         left: 0;
@@ -39,10 +39,10 @@
     &-headingButton {
         &:hover,
         &:focus {
-            background-color: rgba(white, .05);
+            background-color: rgba(white, 0.05);
         }
         &[disabled] {
-            opacity: .25;
+            opacity: 0.25;
             pointer-events: none;
         }
     }
@@ -72,7 +72,7 @@
     }
 
     &-listItemTypeIcon {
-        opacity: .5;
+        opacity: 0.5;
     }
 
     &-listItemStats {
@@ -113,6 +113,6 @@
     }
 
     &-controls &-controlButton {
-        padding: .25em;
+        padding: 0.25em;
     }
 }
