@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ReactNodeArray } from 'prop-types';
 
-import { APPS, USER_SCOPES } from 'proton-shared/lib/constants';
-import { hasScope } from 'proton-shared/lib/helpers/scope';
+import { APPS } from 'proton-shared/lib/constants';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 
-import { useUserScopes } from '../../hooks/useUserScopes';
 import useConfig from '../config/useConfig';
 import Tooltip from '../../components/tooltip/Tooltip';
 import Link from '../../components/link/Link';
@@ -18,15 +18,8 @@ interface Props {
 
 const AppsSidebar = ({ items = [] }: Props) => {
     const { APP_NAME } = useConfig();
-    const [userScopes, loadingUserScopes] = useUserScopes();
 
-    const driveApp = {
-        appNames: [PROTONDRIVE],
-        icon: 'protondrive',
-        title: 'ProtonDrive',
-        link: '/drive'
-    };
-    const initialApps = [
+    const apps = [
         { appNames: [PROTONMAIL, PROTONMAIL_SETTINGS], icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
         { appNames: [PROTONCONTACTS], icon: 'protoncontacts', title: 'ProtonContacts', link: '/contacts' },
         {
@@ -34,16 +27,14 @@ const AppsSidebar = ({ items = [] }: Props) => {
             icon: 'protoncalendar',
             title: 'ProtonCalendar',
             link: '/calendar'
+        },
+        FEATURE_FLAGS.includes('drive') && {
+            appNames: [PROTONDRIVE],
+            icon: 'protondrive',
+            title: 'ProtonDrive',
+            link: '/drive'
         }
-    ].filter(Boolean);
-
-    const [apps, setApps] = useState(initialApps);
-
-    useEffect(() => {
-        if (!loadingUserScopes && hasScope(userScopes, USER_SCOPES.DRIVE)) {
-            setApps([...initialApps, driveApp].filter(Boolean));
-        }
-    }, [userScopes, loadingUserScopes]);
+    ].filter(isTruthy);
 
     return (
         <aside className="aside noprint nomobile" id="aside-bar">
