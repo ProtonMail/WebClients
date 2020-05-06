@@ -46,13 +46,12 @@ const extractEncryptionPreferencesOwnAddress = (
         emailAddress,
         scheme,
         mimeType,
-        pgpAddressDisabled,
         isContactSignatureVerified,
         emailAddressWarnings
     } = publicKeyModel;
     const { address, publicKey } = selfSend;
     const hasApiKeys = !!address.HasKeys;
-    const canAddressReceive = !!address.Receive && !pgpAddressDisabled;
+    const canAddressReceive = !!address.Receive;
     const result = {
         encrypt: true,
         sign: true,
