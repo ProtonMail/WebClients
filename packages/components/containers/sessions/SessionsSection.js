@@ -53,8 +53,8 @@ const getClientsI18N = () => ({
     macOSVPN: c('Badge').t`ProtonVPN for macOS`,
     macOSImportExport: c('Badge').t`ProtonMail import-export for macOS`,
     macOSBridge: c('Badge').t`ProtonMail Bridge for macOS`,
-    LinuxImportExport: c('Badge').t`ProtonMail import-export for Linux`,
-    LinuxBridge: c('Badge').t`ProtonMail Bridge for Linux`
+    LinuxImportExport: c('Badge').t`ProtonMail import-export for GNU/Linux`,
+    LinuxBridge: c('Badge').t`ProtonMail Bridge for GNU/Linux`
 });
 
 const SessionsSection = () => {
