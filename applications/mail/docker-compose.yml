@@ -7,11 +7,12 @@ services:
     build:
       context: .
     environment:
-      API_ENDPOINT: "${API_ENDPOINT:-https://protontech.dev/api/}"
-      BASE_OTHER_FE_APPS: "${BASE_OTHER_FE_APPS:-https://protontech.dev/}"
-      # Feel free to change those values on your local .env file. These should work, too:
-      # API_ENDPOINT: 'https://protonmail.blue/api/'
-      # BASE_OTHER_FE_APPS: 'https://protonmail.blue/'
+      # Feel free to change any of these values on your local .env file
+      API_ENDPOINT:
+      BASE_OTHER_FE_APPS:
+      CALENDAR_ENDPOINT:
+      CONTACTS_ENDPOINT:
+      SETTINGS_ENDPOINT:
     ports:
       - 80:80
       - 443:443
