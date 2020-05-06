@@ -196,7 +196,11 @@ export const useResignContact = (localID: string) => {
     return useCallback(async () => {
         const messageFromCache = messageCache.get(localID) as MessageExtended;
         const message = await loadMessage(messageFromCache, api);
-        const { isContactSignatureVerified } = await getEncryptionPreferences(message.data.Sender?.Address);
+        const address = message.data.Sender?.Address;
+        if (!address) {
+            return;
+        }
+        const { isContactSignatureVerified } = await getEncryptionPreferences(address);
         updateMessageCache(messageCache, localID, {
             senderVerified: isContactSignatureVerified
         });
