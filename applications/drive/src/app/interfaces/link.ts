@@ -32,6 +32,7 @@ interface DriveLink {
     Hash: string;
     Created: number;
     Modified: number;
+    Trashed: number | null;
     State: number;
     NodeKey: string;
     NodePassphrase: string;

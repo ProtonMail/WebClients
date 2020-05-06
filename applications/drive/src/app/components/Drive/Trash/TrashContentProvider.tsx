@@ -3,23 +3,11 @@ import React, { useState, createContext, useEffect, useContext, useRef, useCallb
 import { useSortedList } from 'react-components';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
-import { LinkMeta } from '../../../interfaces/link';
 import { FileBrowserItem } from '../../FileBrowser/FileBrowser';
 import useFileBrowser from '../../FileBrowser/useFileBrowser';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import useTrash from '../../../hooks/useTrash';
-
-export const mapLinksToChildren = (decryptedLinks: LinkMeta[]): FileBrowserItem[] => {
-    return decryptedLinks.map(({ LinkID, Type, Name, Modified, Size, MimeType, ParentLinkID }) => ({
-        Name,
-        LinkID,
-        Type,
-        Modified,
-        Size,
-        MimeType,
-        ParentLinkID
-    }));
-};
+import { mapLinksToChildren } from '../helpers';
 
 interface TrashContentProviderState {
     contents: FileBrowserItem[];

@@ -80,7 +80,7 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
         isFolder ? c('Label').t`Folder` : c('Label').t`File`,
         isDesktop && (
             <Time key="dateModified" format="PPp">
-                {item.Modified}
+                {item.Trashed ?? item.Modified}
             </Time>
         ),
         item.Size ? humanSize(item.Size) : '-'
