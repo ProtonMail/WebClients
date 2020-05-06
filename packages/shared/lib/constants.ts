@@ -637,6 +637,17 @@ export const USER_SCOPES = {
     DRIVE: 68719476736
 };
 
+export const MAJOR_DOMAINS = [
+    'protonmail.com',
+    'protonmail.ch',
+    'pm.me',
+    'gmail.com',
+    'hotmail.com',
+    'live.com',
+    'yahoo.com',
+    'outlook.com'
+];
+
 // This is a definition coming from webpack. Hide behind typeof for the test env.
 declare const WEBPACK_FEATURE_FLAGS: string;
 export const FEATURE_FLAGS = typeof WEBPACK_FEATURE_FLAGS === 'undefined' ? '' : WEBPACK_FEATURE_FLAGS;
