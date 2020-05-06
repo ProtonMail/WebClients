@@ -76,7 +76,7 @@ const Description = ({ planName, setModel, model, plans, organization }) => {
                     })
                 })
             }
-        >{c('Link').t`upgrade to ProtonVPN Plus`}</a>
+        >{c('Link').t`Upgrade to ProtonVPN Plus`}</a>
     );
 
     const DESCRIPTION = {
