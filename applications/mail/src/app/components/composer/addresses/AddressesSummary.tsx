@@ -1,3 +1,4 @@
+import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 import React, { Fragment } from 'react';
 import { c } from 'ttag';
 import { Label, LinkButton, classnames } from 'react-components';
@@ -6,7 +7,7 @@ import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
 import { MessageExtended } from '../../../models/message';
 import { Recipient, recipientTypes } from '../../../models/address';
 import { getRecipients } from '../../../helpers/message/messages';
-import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel, validateAddress } from '../../../helpers/addresses';
+import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 
@@ -43,7 +44,7 @@ const AddressesSummary = ({ message: { data }, mapSendInfo, contacts, contactGro
                                 )}
                                 {recipientOrGroups.map((recipientOrGroup, i) => {
                                     const Address = recipientOrGroup.recipient?.Address as string;
-                                    const valid = validateAddress(Address);
+                                    const valid = validateEmailAddress(Address);
                                     const icon = mapSendInfo[Address]?.sendIcon;
                                     const cannotSend = !valid || icon?.fill === STATUS_ICONS_FILLS.FAIL;
                                     return (

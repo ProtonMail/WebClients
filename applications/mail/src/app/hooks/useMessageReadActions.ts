@@ -1,16 +1,19 @@
+import { arrayToBinaryString, getKeys } from 'pmcrypto';
+import { splitExtension } from 'proton-shared/lib/helpers/file';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { useCallback } from 'react';
 import { useApi, useEventManager, useGetEncryptionPreferences, useMailSettings } from 'react-components';
 import { getMessage } from 'proton-shared/lib/api/messages';
 import { getMatchingKey } from 'pmcrypto/lib/key/utils';
 
-import { VERIFICATION_STATUS } from '../constants';
+import { LARGE_KEY_SIZE, VERIFICATION_STATUS } from '../constants';
+import { get } from '../helpers/attachment/attachmentLoader';
 import { MessageExtended, Message, MessageErrors, MessageExtendedWithData } from '../models/message';
 import { loadMessage, markAsRead } from '../helpers/message/messageRead';
 import { useMessageKeys } from './useMessageKeys';
 import { decryptMessage } from '../helpers/message/messageDecrypt';
 import { useAttachmentCache } from '../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../containers/MessageProvider';
-import { getVerificationStatus } from '../helpers/signatures';
 import { transformEmbedded } from '../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../helpers/transforms/transformRemote';
 import { prepareMailDocument } from '../helpers/transforms/transforms';
@@ -49,7 +52,7 @@ export const useMarkAsRead = (localID: string) => {
 export const useInitializeMessage = (localID: string) => {
     const api = useApi();
     const messageCache = useMessageCache();
-    const getKeys = useMessageKeys();
+    const getMessageKeys = useMessageKeys();
     const attachmentsCache = useAttachmentCache();
     const { call } = useEventManager();
     const base64Cache = useBase64Cache();
@@ -74,6 +77,7 @@ export const useInitializeMessage = (localID: string) => {
             userKeys,
             decryption,
             signingPublicKey,
+            attachedPublicKeys,
             verificationStatus,
             preparation,
             data;
@@ -82,10 +86,12 @@ export const useInitializeMessage = (localID: string) => {
             message = await loadMessage(messageFromCache, api);
             // const { apiKeys, pinnedKeys, isContactSignatureVerified } = await getEncryptionPreferences(
             encryptionPreferences = await getEncryptionPreferences(message.data.Sender.Address as string);
-
-            const allSenderPublicKeys = [...encryptionPreferences.pinnedKeys, ...encryptionPreferences.apiKeys];
-
-            userKeys = await getKeys(message);
+            userKeys = await getMessageKeys(message);
+            const messageWithKeys = {
+                ...message,
+                publicKeys: encryptionPreferences.pinnedKeys,
+                privateKeys: userKeys.privateKeys
+            };
 
             // To verify the signature of the message, we just need to take into account pinned keys
             // API keys could always be forged by the server to verify the signature
@@ -95,6 +101,32 @@ export const useInitializeMessage = (localID: string) => {
                 userKeys.privateKeys,
                 attachmentsCache
             );
+            const mimeAttachments = decryption.Attachments || [];
+            const allAttachments = [...message.data.Attachments, ...mimeAttachments];
+            data = { ...message.data, Attachments: allAttachments, NumAttachments: allAttachments.length };
+            const keyAttachments =
+                allAttachments.filter(
+                    ({ Name, Size }) => splitExtension(Name)[1] === 'asc' && (Size || 0) < LARGE_KEY_SIZE
+                ) || [];
+            attachedPublicKeys = (
+                await Promise.all(
+                    keyAttachments.map(async (attachment) => {
+                        try {
+                            const { data } = await get(attachment, messageWithKeys, attachmentsCache, api);
+                            const [key] = await getKeys(arrayToBinaryString(data));
+                            return key;
+                        } catch (e) {
+                            return;
+                        }
+                    })
+                )
+            ).filter(isTruthy);
+
+            const allSenderPublicKeys = [
+                ...encryptionPreferences.pinnedKeys,
+                ...encryptionPreferences.apiKeys,
+                ...attachedPublicKeys
+            ];
 
             if (decryption.errors) {
                 Object.assign(errors, decryption.errors);
@@ -105,24 +137,17 @@ export const useInitializeMessage = (localID: string) => {
                 signed && decryption.signature
                     ? await getMatchingKey(decryption.signature, allSenderPublicKeys)
                     : undefined;
-            verificationStatus = getVerificationStatus(decryption.verified, encryptionPreferences.pinnedKeys);
+            verificationStatus = decryption.verified;
 
             await markAsRead(message, api, call);
 
             preparation = await prepareMailDocument(
-                {
-                    ...message,
-                    decryptedBody: decryption.decryptedBody,
-                    publicKeys: encryptionPreferences.pinnedKeys,
-                    privateKeys: userKeys.privateKeys
-                },
+                { ...messageWithKeys, decryptedBody: decryption.decryptedBody },
                 base64Cache,
                 attachmentsCache,
                 api,
                 mailSettings
             );
-
-            data = decryption.Attachments ? { ...message.data, Attachments: decryption.Attachments } : message.data;
         } catch (error) {
             if (isApiError(error)) {
                 errors.network = error;
@@ -135,6 +160,7 @@ export const useInitializeMessage = (localID: string) => {
                 document: preparation?.document,
                 senderPinnedKeys: encryptionPreferences?.pinnedKeys,
                 signingPublicKey,
+                attachedPublicKeys,
                 senderVerified: encryptionPreferences?.isContactSignatureVerified,
                 publicKeys: userKeys?.publicKeys,
                 privateKeys: userKeys?.privateKeys,

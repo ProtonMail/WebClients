@@ -42,13 +42,6 @@ import { VERIFICATION_STATUS } from '../constants';
 
 const { SIGNED_AND_VALID, SIGNED_AND_INVALID, NOT_VERIFIED, NOT_SIGNED, SIGNED_NO_PUB_KEY } = VERIFICATION_STATUS;
 
-export const getVerificationStatus = (verified, pinnedKeys) => {
-    if (verified === SIGNED_AND_INVALID && !pinnedKeys.length) {
-        return SIGNED_NO_PUB_KEY;
-    }
-    return verified;
-};
-
 /**
  * Retrieve the verification status from the cache.
  * @param {String} Attachment.ID

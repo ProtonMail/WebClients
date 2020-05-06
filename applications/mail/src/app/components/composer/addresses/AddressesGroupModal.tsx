@@ -109,6 +109,7 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
                 return {
                     contactID,
                     emailAddress,
+                    isInternal: encryptionPreferences.isInternal,
                     bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey
                 };
             }
@@ -123,7 +124,7 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
                 loadSendIcon({ emailAddress: Email, contactID: ContactID, abortController, checkForFailure })
             );
             // the routes called in requests support 100 calls every 10 seconds
-            const contactsKeyPinning: ContactWithBePinnedPublicKey[] = (
+            const contactsKeyPinning: Required<ContactWithBePinnedPublicKey>[] = (
                 await processApiRequestsSafe(requests, 100, 10 * 1000)
             ).filter(isTruthy);
             if (contactsKeyPinning.length) {

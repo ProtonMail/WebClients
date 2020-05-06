@@ -5,17 +5,12 @@ import { Recipient, RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Message } from '../models/message';
 import { getContactsOfGroup } from './contacts';
 import { Address, Key } from 'proton-shared/lib/interfaces';
-import { REGEX_EMAIL } from 'proton-shared/lib/constants';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { isMessage } from './elements';
 import { Element } from '../models/element';
 import { Conversation } from '../models/conversation';
 
 export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
-
-export const validateAddress = (address = '') => REGEX_EMAIL.test(address);
-
-export const validateAddresses = (addresses: string[]) => addresses.every(validateAddress);
 
 /**
  * Transform value to be normalized (lowercase)

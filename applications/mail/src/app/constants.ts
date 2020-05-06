@@ -4,6 +4,7 @@ import { c } from 'ttag';
 export const MAX_EXPIRATION_TIME = 672; // hours
 export const PAGE_SIZE = 50;
 export const ATTACHMENT_MAX_SIZE = 25000000; // bytes -> 25MB
+export const LARGE_KEY_SIZE = 50 * 1024;
 
 export const ELEMENT_TYPES = {
     MESSAGE: 'message',
