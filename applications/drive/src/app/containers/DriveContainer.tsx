@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { c } from 'ttag';
 import { Toolbar } from 'react-components';
@@ -30,21 +30,17 @@ function DriveContainer({
     history
 }: RouteComponentProps<{ shareId?: string; type?: LinkURLType; linkId?: string }>) {
     const cache = useDriveCache();
-    const { folder, setFolder } = useDriveActiveFolder();
     const [, setError] = useState();
+    const { setFolder } = useDriveActiveFolder();
 
-    const navigateToLink = (shareId: string, linkId: string, type: LinkType) => {
-        history.push(`/drive/${shareId}/${toLinkURLType(type)}/${linkId}`);
-    };
-
-    useEffect(() => {
+    const folder = useMemo(() => {
         const { shareId, type, linkId } = match.params;
 
         if (!shareId && !type && !linkId) {
             const meta = cache.get.defaultShareMeta();
 
             if (meta) {
-                setFolder({ shareId: meta.ShareID, linkId: meta.LinkID });
+                return { shareId: meta.ShareID, linkId: meta.LinkID };
             } else {
                 setError(() => {
                     throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
@@ -55,14 +51,22 @@ function DriveContainer({
                 throw new Error('Missing parameters, should be none or shareId/type/linkId');
             });
         } else if (type === LinkURLType.FOLDER) {
-            setFolder({ shareId, linkId });
+            return { shareId, linkId };
         }
     }, [match.params]);
+
+    useEffect(() => {
+        setFolder(folder);
+    }, [folder]);
+
+    const navigateToLink = (shareId: string, linkId: string, type: LinkType) => {
+        history.push(`/drive/${shareId}/${toLinkURLType(type)}/${linkId}`);
+    };
 
     // TODO: change toolbar props to optional children in react-components
     return (
         <Page title={c('Title').t`My files`}>
-            <DriveContentProvider>
+            <DriveContentProvider folder={folder}>
                 {folder ? <DriveToolbar activeFolder={folder} openLink={navigateToLink} /> : <Toolbar>{null}</Toolbar>}
                 <PageMainArea hasToolbar className="flex flex-column flex-nowrap">
                     <div className="pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
