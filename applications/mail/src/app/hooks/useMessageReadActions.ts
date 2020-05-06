@@ -4,7 +4,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { useCallback } from 'react';
 import { useApi, useEventManager, useGetEncryptionPreferences, useMailSettings } from 'react-components';
 import { getMessage } from 'proton-shared/lib/api/messages';
-import { getMatchingKeys } from 'pmcrypto';
+import { getMatchingKey } from 'pmcrypto';
 
 import { LARGE_KEY_SIZE, VERIFICATION_STATUS } from '../constants';
 import { get } from '../helpers/attachment/attachmentLoader';
@@ -135,7 +135,7 @@ export const useInitializeMessage = (localID: string) => {
             const signed = decryption.verified !== VERIFICATION_STATUS.NOT_SIGNED;
             signingPublicKey =
                 signed && decryption.signature
-                    ? await getMatchingKeys(decryption.signature, allSenderPublicKeys)
+                    ? await getMatchingKey(decryption.signature, allSenderPublicKeys)
                     : undefined;
             verificationStatus = decryption.verified;
 
