@@ -20,6 +20,9 @@ const { promises: fs, constants: FS_CONSTANTS } = require('fs');
 
 const semver = require('semver');
 
+const ARGS = process.argv.slice(2);
+const IS_VERBOSE = ARGS.includes('--verbose');
+
 const identity = (a) => a;
 const booleanAnswerCb = (defaultValue = 'y') => (answer) => {
     // default press enter = empty string
@@ -50,8 +53,8 @@ async function hasFile(file, isFull) {
  * @param  {String} value UserInput value
  */
 function validInput(type, value) {
-    if (type === 'type' && !/^(a|b|c)$/i.test(value)) {
-        throw new Error('Invalid input value. It must be either a or b or c');
+    if (type === 'type' && !value) {
+        throw new Error('Invalid input value. You must set a value');
     }
 
     if (type === 'version' && !/major|minor|patch|premajor|preminor|prepatch|prerelease/.test(value)) {
@@ -152,7 +155,7 @@ async function flowStandard(newVersion) {
 async function flowAB({ arg1, arg2: input }, version) {
     const arg2 =
         input ||
-        (await question('Which version you want to create? [a/b/c default:a]:', (answer) => {
+        (await question('Which flavor you want to create? [default:a]:', (answer) => {
             // default press enter = empty string
             const value = answer.trim() || 'a';
             return value;
@@ -160,26 +163,38 @@ async function flowAB({ arg1, arg2: input }, version) {
 
     validInput('type', arg2);
 
-    const newVersion = `v${semver.inc(version, arg1)}+${arg2}`;
+    const newVersion = `v${semver.inc(version, arg1)}-${arg2}`;
 
     if (!semver.valid(newVersion)) {
         throw new Error(`Invalid version ${newVersion}`);
     }
 
-    const confirmCreation = await question(`Confirm new tag ${newVersion} [Yy/Nn]:`);
+    const doIncrement = await question(
+        [
+            '',
+            `[1]: We increment the tag from v${version} to ${newVersion}`,
+            `[2]: We only add the A/B version marker to the tag v${version} to v${version}+${arg2}`,
+            '',
+            'What is your choice [default: 1]:'
+        ].join('\n'),
+        booleanAnswerCb('1')
+    );
+
+    const newTag = doIncrement ? newVersion : `v${version}+${arg2}`;
+    const confirmCreation = await question(`Confirm new tag ${newTag} [Yy/Nn default: y]:`);
 
     if (!confirmCreation) {
-        return;
+        return console.log('[run] ciao');
     }
 
-    console.log('[run] create new tag', newVersion);
+    console.log('[run] create new tag', newTag);
 
     await writeVersion(newVersion);
     process.exit(0);
 }
 
 async function validateCommand() {
-    const [ arg1 ] = Array.from(JSON.parse(process.env.npm_config_argv).original);
+    const [ arg1 ] = Array.from(JSON.parse(process.env.npm_config_argv || '{}').original || []);
 
     if (arg1 !== 'run') {
 
@@ -209,7 +224,7 @@ async function main() {
     await hasFile('package-lock.json');
     await validateCurrentBranch(); // We don't want to tag from develop
 
-    const [arg1 = 'patch', arg2] = process.argv.slice(2);
+    const [arg1 = 'patch', arg2] = ARGS.filter((arg) => !arg.startsWith('--'));
     validInput('version', arg1);
 
     const isStandardVersion = arg2 ? false : await question(
@@ -234,11 +249,18 @@ async function main() {
 }
 
 main().catch((e) => {
+
+    if (IS_VERBOSE) {
+        console.error(e);
+        console.log('');
+        process.exit(1);
+    }
+
     if (e.message !== 'STOP') {
         console.log('');
         console.error(`🔴 ${e.toString()}`);
         e.about && console.log(`\n${e.about}\n\n`);
-        process.exit(1);
         console.log('');
+        process.exit(1);
     }
 });
