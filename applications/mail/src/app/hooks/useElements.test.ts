@@ -68,7 +68,7 @@ describe('useElements', () => {
     });
 
     describe('elements memo', () => {
-        it('should order by label context time', async () => {
+        it.only('should order by label context time', async () => {
             const result = await setup({ elements: [element1, element2] });
             const [, elements] = result.result.current;
             expect(elements).toEqual([element2, element1]);

@@ -80,7 +80,7 @@ export const getSize = ({ Size = 0 }: Element) => Size;
 
 export const sort = (elements: Element[], sort: Sort, labelID: string) => {
     const getValue = {
-        Time: getDate,
+        Time: (element: Element, labelID: string) => getDate(element, labelID).getTime(),
         Size: getSize
     }[sort.sort] as any;
     const compare = (a: Element, b: Element) => {

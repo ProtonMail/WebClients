@@ -57,6 +57,6 @@ describe('messageExpandable', () => {
     it('should return empty for a conversation with only a draft', () => {
         const labelID = 'custom';
         const messages = [{ ConversationID: '', Flags: MESSAGE_FLAGS.FLAG_REPLIED }] as Message[];
-        expect(findMessageToExpand(labelID, messages)).toEqual({});
+        expect(findMessageToExpand(labelID, messages)).toBeUndefined();
     });
 });

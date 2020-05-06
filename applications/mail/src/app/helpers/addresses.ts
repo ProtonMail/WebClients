@@ -103,7 +103,12 @@ export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: stri
 export const getRecipientLabel = (recipient?: Recipient) => {
     const { Name, Address } = recipient || {};
     if (!Name || Name === Address) {
-        return Address?.substring(0, Address.indexOf('@'));
+        const index = Address?.indexOf('@') || -1;
+        if (index === -1) {
+            return Address;
+        } else {
+            return Address?.substring(0, Address.indexOf('@'));
+        }
     }
     if (Name) {
         return Name;
