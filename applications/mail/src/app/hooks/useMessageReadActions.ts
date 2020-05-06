@@ -188,6 +188,21 @@ export const useTrustSigningPublicKey = (localID: string) => {
     }, [localID]);
 };
 
+export const useResignContact = (localID: string) => {
+    const getEncryptionPreferences = useGetEncryptionPreferences();
+    const messageCache = useMessageCache();
+    const api = useApi();
+
+    return useCallback(async () => {
+        const messageFromCache = messageCache.get(localID) as MessageExtended;
+        const message = await loadMessage(messageFromCache, api);
+        const { isContactSignatureVerified } = await getEncryptionPreferences(message.data.Sender?.Address);
+        updateMessageCache(messageCache, localID, {
+            senderVerified: isContactSignatureVerified
+        });
+    }, [localID]);
+};
+
 export const useLoadRemoteImages = (localID: string) => {
     const messageCache = useMessageCache();
     const [mailSettings] = useMailSettings();

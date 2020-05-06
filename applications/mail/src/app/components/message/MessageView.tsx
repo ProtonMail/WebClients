@@ -17,7 +17,8 @@ import {
     useLoadRemoteImages,
     useLoadEmbeddedImages,
     useMarkAsRead,
-    useTrustSigningPublicKey
+    useTrustSigningPublicKey,
+    useResignContact
 } from '../../hooks/useMessageReadActions';
 import { isUnread } from '../../helpers/elements';
 
@@ -59,6 +60,7 @@ const MessageView = ({
     const loadRemoteImages = useLoadRemoteImages(localID);
     const loadEmbeddedImages = useLoadEmbeddedImages(localID);
     const markAsRead = useMarkAsRead(localID);
+    const resignContact = useResignContact(localID);
 
     const messageLoaded = !!message.data?.Subject;
     const bodyLoaded = !!message.initialized;
@@ -111,6 +113,10 @@ const MessageView = ({
         await addAction(loadRemoteImages);
     };
 
+    const handleResignContact = async () => {
+        await addAction(resignContact);
+    };
+
     const handleLoadEmbeddedImages = async () => {
         await addAction(loadEmbeddedImages);
     };
@@ -137,6 +143,7 @@ const MessageView = ({
                         onTrustKey={handleTrustSigningPublicKey}
                         onLoadRemoteImages={handleLoadRemoteImages}
                         onLoadEmbeddedImages={handleLoadEmbeddedImages}
+                        onResignContact={handleResignContact}
                         labels={labels}
                         mailSettings={mailSettings}
                         onCollapse={handleExpand(false)}
