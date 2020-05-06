@@ -1,22 +1,11 @@
 import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
-import { LinkMeta } from '../../interfaces/link';
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import useFileBrowser from '../FileBrowser/useFileBrowser';
 import useDrive from '../../hooks/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder, DriveFolder } from './DriveFolderProvider';
+import { mapLinksToChildren } from './helpers';
 
-export const mapLinksToChildren = (decryptedLinks: LinkMeta[]): FileBrowserItem[] => {
-    return decryptedLinks.map(({ LinkID, Type, Name, Modified, Size, MimeType, ParentLinkID }) => ({
-        Name,
-        LinkID,
-        Type,
-        Modified,
-        Size,
-        MimeType,
-        ParentLinkID
-    }));
-};
 interface DriveContentProviderState {
     contents: FileBrowserItem[];
     loadNextPage: () => void;

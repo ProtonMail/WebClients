@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { LinkButton } from 'react-components';
 
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
-import { LinkType } from '../../interfaces/link';
+import { LinkType, LinkMeta } from '../../interfaces/link';
 
 export const getNotificationTextForItemList = (
     itemList: FileBrowserItem[],
@@ -35,4 +35,17 @@ export const getNotificationTextForItemList = (
     }
 
     return notificationText;
+};
+
+export const mapLinksToChildren = (decryptedLinks: LinkMeta[]): FileBrowserItem[] => {
+    return decryptedLinks.map(({ LinkID, Type, Name, Modified, Size, MimeType, ParentLinkID, Trashed }) => ({
+        Name,
+        LinkID,
+        Type,
+        Modified,
+        Size,
+        MimeType,
+        ParentLinkID,
+        Trashed
+    }));
 };
