@@ -2,6 +2,8 @@ version: "3.7"
 
 services:
   web:
+    # You can either pull or rebuild if you generate a webapp-bundle.tar.gz first
+    image: gcr.io/proton-dev-ops/web/mail/proton-mail:branch-develop
     build:
       context: .
     environment:
