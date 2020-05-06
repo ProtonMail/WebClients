@@ -29,7 +29,7 @@ const getClientsI18N = () => ({
     VPN: c('Badge').t`ProtonVPN for Windows`,
     WebVPN: c('Badge').t`ProtonVPN for web`,
     Admin: c('Badge').t`Admin`,
-    ImportExport: c('Badge').t`ProtonMail import-export`,
+    ImportExport: c('Badge').t`ProtonMail Import-Export`,
     Bridge: c('Badge').t`ProtonMail Bridge`,
     iOS: c('Badge').t`ProtonMail for iOS`,
     Android: c('Badge').t`ProtonMail for Android`,
@@ -48,12 +48,12 @@ const getClientsI18N = () => ({
     AndroidVPN: c('Badge').t`ProtonVPN for Android`,
     AndroidCalendar: c('Badge').t`ProtonCalendar for Android`,
     WindowsVPN: c('Badge').t`ProtonVPN for Windows`,
-    WindowsImportExport: c('Badge').t`ProtonMail import-export for Windows`,
+    WindowsImportExport: c('Badge').t`ProtonMail Import-Export for Windows`,
     WindowsBridge: c('Badge').t`ProtonMail Bridge for Windows`,
     macOSVPN: c('Badge').t`ProtonVPN for macOS`,
-    macOSImportExport: c('Badge').t`ProtonMail import-export for macOS`,
+    macOSImportExport: c('Badge').t`ProtonMail Import-Export for macOS`,
     macOSBridge: c('Badge').t`ProtonMail Bridge for macOS`,
-    LinuxImportExport: c('Badge').t`ProtonMail import-export for GNU/Linux`,
+    LinuxImportExport: c('Badge').t`ProtonMail Import-Export for GNU/Linux`,
     LinuxBridge: c('Badge').t`ProtonMail Bridge for GNU/Linux`
 });
 
