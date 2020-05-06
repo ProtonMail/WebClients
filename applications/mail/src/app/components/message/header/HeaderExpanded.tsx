@@ -58,6 +58,7 @@ interface Props {
     messageLoaded: boolean;
     sourceMode: boolean;
     onTrustKey: () => void;
+    onResignContact: () => void;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
     onCollapse: () => void;
@@ -75,6 +76,7 @@ const HeaderExpanded = ({
     messageLoaded,
     sourceMode,
     onTrustKey,
+    onResignContact,
     onLoadRemoteImages,
     onLoadEmbeddedImages,
     mailSettings,
@@ -194,6 +196,7 @@ const HeaderExpanded = ({
                 message={message}
                 sourceMode={sourceMode}
                 onTrustKey={onTrustKey}
+                onResignContact={onResignContact}
                 onLoadRemoteImages={onLoadRemoteImages}
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
             />
