@@ -1,3 +1,4 @@
+import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 import React, { SyntheticEvent, useState, useEffect, useRef } from 'react';
 import { classnames, Icon, useGetEncryptionPreferences, useLoading, useModals } from 'react-components';
 import { c } from 'ttag';
@@ -6,7 +7,7 @@ import { OpenPGPKey } from 'pmcrypto';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { noop } from 'proton-shared/lib/helpers/function';
 import getSendPreferences from '../../../helpers/message/getSendPreferences';
-import { validateAddress, recipientToInput, inputToRecipient } from '../../../helpers/addresses';
+import { recipientToInput, inputToRecipient } from '../../../helpers/addresses';
 import { getSendStatusIcon } from '../../../helpers/message/icon';
 
 import { Recipient } from '../../../models/address';
@@ -31,7 +32,7 @@ const validate = (emailAddress?: string | null): boolean => {
         return false;
     }
     const recipient = inputToRecipient(emailAddress);
-    return validateAddress(recipient.Address);
+    return validateEmailAddress(recipient.Address || '');
 };
 
 const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, onRemove, ...rest }: Props) => {
@@ -43,7 +44,7 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading(!icon);
     const editableRef = useRef<HTMLSpanElement | null>(null);
-    const [valid, setValid] = useState<boolean>(validateAddress(recipient.Address));
+    const [valid, setValid] = useState<boolean>(validateEmailAddress(recipient.Address));
 
     const handleChange = (event: SyntheticEvent) => {
         if (!editableRef.current) {
@@ -80,6 +81,7 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
                         {
                             contactID: recipient.ContactID,
                             emailAddress,
+                            isInternal: encryptionPreferences.isInternal,
                             bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey
                         }
                     ];

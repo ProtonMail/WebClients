@@ -141,6 +141,11 @@ export interface MessageExtended {
     signingPublicKey?: OpenPGPKey;
 
     /**
+     * Attached public key, if the message contains any
+     */
+    attachedPublicKeys?: OpenPGPKey[];
+
+    /**
      * Address private keys of the user (used for decryption)
      */
     privateKeys?: OpenPGPKey[];

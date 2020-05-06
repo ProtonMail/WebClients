@@ -36,6 +36,7 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
                 className="mr0-5 flex-item-noshrink"
                 publicKey={publicKey}
                 emailAddress={contact.emailAddress}
+                isInternal={contact.isInternal}
             />
             <span className="flex-item-fluid ellipsis">{fingerprint}</span>
         </div>

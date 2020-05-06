@@ -1,37 +1,30 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { getContact, updateContact } from 'proton-shared/lib/api/contacts';
 import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
-import { pinKey } from 'proton-shared/lib/contacts/keyPinning';
+import { pinKeyUpdateContact } from 'proton-shared/lib/contacts/keyPinning';
 import { Api } from 'proton-shared/lib/interfaces';
 import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import React from 'react';
 import { Alert, classnames, FormModal, useApi, useLoading, useNotifications, useUserKeys } from 'react-components';
 import { c, msgid } from 'ttag';
-
-interface Props {
-    contacts: ContactWithBePinnedPublicKey[];
-    onSubmit: () => void;
-    onClose: () => void;
-    onNotTrust: () => void;
-    onError: () => void;
-}
+import { RequireSome } from '../../../models/utils';
 
 interface Params {
-    contact: ContactWithBePinnedPublicKey;
+    contact: RequireSome<ContactWithBePinnedPublicKey, 'contactID'>;
     api: Api;
     publicKeys: OpenPGPKey[];
     privateKeys: OpenPGPKey[];
 }
-
 const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }: Params) => {
-    const { contactID, emailAddress, bePinnedPublicKey } = contact;
+    const { contactID, isInternal, emailAddress, bePinnedPublicKey } = contact;
     const {
         Contact: { Cards: contactCards }
     } = await api(getContact(contactID));
-    const updatedContactCards = await pinKey({
+    const updatedContactCards = await pinKeyUpdateContact({
         contactCards,
         emailAddress,
+        isInternal,
         bePinnedPublicKey,
         publicKeys,
         privateKeys
@@ -39,6 +32,13 @@ const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }
     await api(updateContact(contactID, { Cards: updatedContactCards }));
 };
 
+interface Props {
+    contacts: RequireSome<ContactWithBePinnedPublicKey, 'contactID'>[];
+    onSubmit: () => void;
+    onClose: () => void;
+    onNotTrust: () => void;
+    onError: () => void;
+}
 const AskForKeyPinningModal = ({ contacts, onSubmit, onClose, onNotTrust, onError, ...rest }: Props) => {
     const api = useApi();
     const [userKeysList, loadingUserKeys] = useUserKeys();

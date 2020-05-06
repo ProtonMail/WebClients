@@ -365,10 +365,17 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
                 return { ...result, fill: WARNING, text: warningsText };
             }
             if (verificationStatus === SIGNED_AND_INVALID) {
+                if (hasPinnedKeys) {
+                    return {
+                        ...result,
+                        fill: WARNING,
+                        text: c('Signature verification warning').t`Sender verification failed`
+                    };
+                }
                 return {
                     ...result,
-                    fill: WARNING,
-                    text: c('Signature verification warning').t`Sender verification failed`
+                    fill: PLAIN,
+                    text: c('Received email icon').t`PGP-encrypted and signed message`
                 };
             }
             if (verificationStatus === SIGNED_AND_VALID) {
