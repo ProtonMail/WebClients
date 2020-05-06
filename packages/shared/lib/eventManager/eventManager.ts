@@ -2,57 +2,65 @@ import { INTERVAL_EVENT_TIMER } from '../constants';
 import { getEvents } from '../api/events';
 import { onceWithQueue } from '../helpers/onceWithQueue';
 import createListeners from '../helpers/listeners';
+import { Api } from '../interfaces';
 
 const FIBONACCI = [1, 1, 2, 3, 5, 8];
 
+interface EventResponse {
+    EventID: string;
+    More: 0 | 1;
+}
+
+interface EventManagerConfig {
+    /** Function to call the API */
+    api: Api;
+    /** Initial event ID to begin from */
+    eventID: string;
+    /** Maximum interval time to wait between each call */
+    interval?: number;
+    /** Event polling endpoint override */
+    query?: (eventID: string) => object;
+}
+
 /**
  * Create the event manager process.
- *
- *    `api` - Function to call the API.
- *    `initialEventID` - Initial event ID to begin from.
- *    `interval` - Maximum interval time to wait between each call.
- *    `query` - Event polling endpoint override.
- *
- * @param {{ api: Function, eventID: String, interval?: Number, query?: Function }} config
  */
-export default ({ api, eventID: initialEventID, interval = INTERVAL_EVENT_TIMER, query = getEvents }) => {
+export default ({
+    api,
+    eventID: initialEventID,
+    interval = INTERVAL_EVENT_TIMER,
+    query = getEvents
+}: EventManagerConfig) => {
     const listeners = createListeners();
 
     if (!initialEventID) {
         throw new Error('eventID must be provided.');
     }
 
-    let STATE = {
+    let STATE: {
+        retryIndex: number;
+        lastEventID?: string;
+        timeoutHandle?: any;
+        abortController?: AbortController;
+    } = {
+        retryIndex: 0,
         lastEventID: initialEventID,
         timeoutHandle: undefined,
-        retryIndex: 0,
         abortController: undefined
     };
 
-    /**
-     * @param {String} eventID
-     */
-    const setEventID = (eventID) => {
+    const setEventID = (eventID: string) => {
         STATE.lastEventID = eventID;
     };
 
-    /**
-     * @return {String}
-     */
     const getEventID = () => {
         return STATE.lastEventID;
     };
 
-    /**
-     * @param {Number} index
-     */
-    const setRetryIndex = (index) => {
+    const setRetryIndex = (index: number) => {
         STATE.retryIndex = index;
     };
 
-    /**
-     * @return {number}
-     */
     const getRetryIndex = () => {
         return STATE.retryIndex;
     };
@@ -102,13 +110,12 @@ export default ({ api, eventID: initialEventID, interval = INTERVAL_EVENT_TIMER,
      */
     const reset = () => {
         stop();
-        STATE = {};
+        STATE = { retryIndex: 0 };
         listeners.clear();
     };
 
     /**
      * Call the event manager. Either does it immediately, or queues the call until after the current call has finished.
-     * @return {Promise}
      */
     const call = onceWithQueue(async () => {
         try {
@@ -124,7 +131,7 @@ export default ({ api, eventID: initialEventID, interval = INTERVAL_EVENT_TIMER,
                     throw new Error('EventID undefined');
                 }
 
-                const result = await api({
+                const result = await api<EventResponse>({
                     ...query(eventID),
                     signal: abortController.signal,
                     silence: true

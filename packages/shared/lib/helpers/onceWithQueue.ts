@@ -6,11 +6,12 @@
  * after the previous promise has resolved. The returned promise resolves after
  * the queued promise resolves.
  *
- * @param {Function} fn
- * @return {Function}
  */
-export const onceWithQueue = (fn) => {
-    let STATE = {};
+export const onceWithQueue = <R>(fn: () => Promise<R>): (() => Promise<R>) => {
+    let STATE: {
+        promise?: Promise<R>;
+        queued?: Promise<R>;
+    } = {};
 
     const clear = () => {
         STATE = {};
@@ -20,23 +21,20 @@ export const onceWithQueue = (fn) => {
         STATE.promise = undefined;
     };
 
-    const next = () => {
-        const { args } = STATE;
+    const next = (): Promise<R> => {
         clear();
         // eslint-disable-next-line
-        return run(...args);
+        return run();
     };
 
-    const run = (...args) => {
+    const run = () => {
         // If a queue has already been set up, update the arguments.
         if (STATE.queued) {
-            STATE.args = args;
             return STATE.queued;
         }
 
         // If a promise is running, set up the queue.
         if (STATE.promise) {
-            STATE.args = args;
             STATE.queued = STATE.promise.then(next);
             return STATE.queued;
         }

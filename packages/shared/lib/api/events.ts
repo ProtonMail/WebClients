@@ -3,7 +3,7 @@ export const getLatestID = () => ({
     method: 'get'
 });
 
-export const getEvents = (eventID) => ({
+export const getEvents = (eventID: string) => ({
     url: `v4/events/${eventID}`,
     method: 'get'
 });
