@@ -1,6 +1,9 @@
 import { OpenPGPKey, signMessage } from 'pmcrypto';
 import { c } from 'ttag';
 import { CONTACT_CARD_TYPE } from '../constants';
+import isTruthy from '../helpers/isTruthy';
+import { normalizeEmail } from '../helpers/string';
+import { generateProtonWebUID } from '../helpers/uid';
 import { ContactCard, ContactProperty } from '../interfaces/contacts';
 import { CRYPTO_PROCESSING_TYPES } from './constants';
 import { readSigned } from './decrypt';
@@ -12,23 +15,25 @@ import { parse, toICAL } from './vcard';
  * Public keys need to be passed to check signature validity of signed contact cards
  * Private keys (typically only the primary one) need to be passed to sign the new contact card with the new pinned key
  */
-interface Params {
+interface ParamsUpdate {
     contactCards: ContactCard[];
     emailAddress: string;
+    isInternal: boolean;
     bePinnedPublicKey: OpenPGPKey;
     publicKeys: OpenPGPKey[];
     privateKeys: OpenPGPKey[];
 }
-export const pinKey = async ({
+export const pinKeyUpdateContact = async ({
     contactCards,
     emailAddress,
+    isInternal,
     bePinnedPublicKey,
     publicKeys,
     privateKeys
-}: Params): Promise<ContactCard[]> => {
+}: ParamsUpdate): Promise<ContactCard[]> => {
     // get the signed card of the contact that contains the key properties. Throw if there are errors
     const [signedCard, ...otherCards] = contactCards.reduce<ContactCard[]>((acc, card) => {
-        if (card.Type === CONTACT_CARD_TYPE.SIGNED && card.Data.includes(emailAddress)) {
+        if (card.Type === CONTACT_CARD_TYPE.SIGNED) {
             acc.unshift(card);
         } else {
             acc.push(card);
@@ -43,7 +48,11 @@ export const pinKey = async ({
 
     // get the key properties that correspond to the email address
     const signedProperties = parse(signedVcard);
-    const emailProperty = signedProperties.find(({ field, value }) => field === 'email' && value === emailAddress);
+    const emailProperty = signedProperties.find(
+        ({ field, value }) =>
+            field === 'email' &&
+            normalizeEmail(value as string, isInternal) === normalizeEmail(emailAddress, isInternal)
+    );
     const emailGroup = emailProperty?.group as string;
     const keyProperties =
         emailGroup &&
@@ -67,15 +76,46 @@ export const pinKey = async ({
 
     // sign the new properties
     const toSignVcard = toICAL(newSignedProperties).toString();
-    const newSignedCard = await signMessage({ data: toSignVcard, privateKeys, armor: true, detached: true }).then(
-        ({ signature: Signature }) => {
-            const card: ContactCard = {
-                Type: CONTACT_CARD_TYPE.SIGNED,
-                Data: toSignVcard,
-                Signature
-            };
-            return card;
-        }
-    );
+    const { signature } = await signMessage({ data: toSignVcard, privateKeys, armor: true, detached: true });
+    const newSignedCard = {
+        Type: CONTACT_CARD_TYPE.SIGNED,
+        Data: toSignVcard,
+        Signature: signature
+    };
     return [newSignedCard, ...otherCards];
+};
+
+/**
+ * Create a contact with a pinned key. Set encrypt flag to true
+ * Private keys (typically only the primary one) need to be passed to sign the new contact card with the new pinned key
+ */
+interface ParamsCreate {
+    emailAddress: string;
+    isInternal: boolean;
+    bePinnedPublicKey: OpenPGPKey;
+    privateKeys: OpenPGPKey[];
+}
+export const pinKeyCreateContact = async ({
+    emailAddress,
+    isInternal,
+    bePinnedPublicKey,
+    privateKeys
+}: ParamsCreate): Promise<ContactCard[]> => {
+    const properties: ContactProperty[] = [
+        { field: 'fn', value: emailAddress },
+        { field: 'uid', value: generateProtonWebUID() },
+        { field: 'email', value: emailAddress, group: 'item1' },
+        !isInternal && { field: 'x-pm-encrypt', value: 'true', group: 'item1' },
+        !isInternal && { field: 'x-pm-sign', value: 'true', group: 'item1' },
+        toKeyProperty({ publicKey: bePinnedPublicKey, group: 'item1', index: 0 })
+    ].filter(isTruthy);
+    // sign the properties
+    const toSignVcard = toICAL(properties).toString();
+    const { signature } = await signMessage({ data: toSignVcard, privateKeys, armor: true, detached: true });
+    const newSignedCard = {
+        Type: CONTACT_CARD_TYPE.SIGNED,
+        Data: toSignVcard,
+        Signature: signature
+    };
+    return [newSignedCard];
 };
