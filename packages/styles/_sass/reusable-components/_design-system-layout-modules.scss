@@ -175,6 +175,14 @@ svg {
   transform: translate(-50%, -50%);
 }
 
+.covered-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 /* to top right */
 .top-right {
   top: 0;
