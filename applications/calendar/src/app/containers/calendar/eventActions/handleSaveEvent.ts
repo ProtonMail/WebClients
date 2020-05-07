@@ -16,7 +16,8 @@ import { RECURRING_TYPES } from '../../../constants';
 import { EventPersonalMap } from '../../../interfaces/EventPersonalMap';
 import handleSaveSingleEvent from './handleSaveSingleEvent';
 import handleSaveRecurringEvent from './handleSaveRecurringEvent';
-import withVeventRruleWkst from './rruleWkst';
+import withVeventRruleWkst, { withRruleWkst } from './rruleWkst';
+import { withRruleUntil } from './rruleUntil';
 
 interface Arguments {
     temporaryEvent: any; // todo
@@ -137,9 +138,17 @@ const handleSaveEvent = async ({
         recurrence ||
         getSingleEditRecurringData(originalEventData.mainVeventComponent, oldEventData.mainVeventComponent);
 
-    // Warning: Single edits do not have the RRULE currently. Mutate the model directly with the old RRULE.
-    if (newVeventComponent['recurrence-id']) {
-        newVeventComponent.rrule = originalEventData.mainVeventComponent.rrule;
+    if (newVeventComponent['recurrence-id'] && originalEventData.mainVeventComponent.rrule) {
+        // Since single edits are not allowed to edit the RRULE, append the old one here. Take into account when
+        // a part day is changed into full day with the until rule.
+        const singleEditWithRrule = {
+            ...newVeventComponent,
+            rrule: withRruleUntil(
+                withRruleWkst(originalEventData.mainVeventComponent.rrule, weekStartsOn),
+                newVeventComponent.dtstart
+            )
+        };
+        newEventData.veventComponent = singleEditWithRrule;
     }
 
     return handleSaveRecurringEvent({

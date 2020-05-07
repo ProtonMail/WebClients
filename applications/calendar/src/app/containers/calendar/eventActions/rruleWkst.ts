@@ -9,7 +9,7 @@ import { omit } from 'proton-shared/lib/helpers/object';
  * in a YEARLY "RRULE" when a BYWEEKNO rule part is specified. The
  * default value is MO. From rfc5545
  */
-const withRruleWkst = (rrule: VcalRruleProperty, wkst = VcalDays.MO): VcalRruleProperty => {
+export const withRruleWkst = (rrule: VcalRruleProperty, wkst = VcalDays.MO): VcalRruleProperty => {
     if (wkst !== VcalDays.MO) {
         const isWeeklySignificant =
             rrule.value?.freq === FREQUENCY.WEEKLY &&

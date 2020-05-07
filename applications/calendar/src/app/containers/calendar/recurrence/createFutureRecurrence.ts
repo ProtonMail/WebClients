@@ -1,5 +1,4 @@
 import { omit } from 'proton-shared/lib/helpers/object';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { getSafeRruleCount, getSafeRruleUntil } from './helper';
@@ -26,37 +25,30 @@ const getComponentWithUpdatedRrule = (
         throw new Error('Original RRULE undefined');
     }
 
-    // If the user has edited the RRULE, we'll use that.
-    if (!newRrule || !isDeepEqual(newRrule, originalRrule)) {
-        if (!newRrule) {
-            return omit(component, ['rrule']);
-        }
-        return {
-            ...component,
-            rrule: newRrule
-        };
+    if (!newRrule) {
+        return omit(component, ['rrule']);
     }
 
-    // Otherwise, we'll update the original RRULE based on this occurrence
-    if (originalRrule.value.count) {
-        const newCount = originalRrule.value.count - (recurrence.occurrenceNumber - 1);
-        const safeRrule = getSafeRruleCount(originalRrule, newCount);
+    // Count was not changed, so set a new count based on this occurrence
+    if (newRrule.value.count && originalRrule.value.count === newRrule.value.count) {
+        const newCount = newRrule.value.count - (recurrence.occurrenceNumber - 1);
+        const safeRrule = getSafeRruleCount(newRrule, newCount);
         if (!safeRrule) {
             return omit(component, ['rrule']);
         }
         return { ...component, rrule: safeRrule };
     }
 
-    if (originalRrule.value.until) {
+    if (newRrule.value.until) {
         return {
             ...component,
-            rrule: getSafeRruleUntil(originalRrule, component)
+            rrule: getSafeRruleUntil(newRrule, component)
         };
     }
 
     return {
         ...component,
-        rrule: originalRrule
+        rrule: newRrule
     };
 };
 

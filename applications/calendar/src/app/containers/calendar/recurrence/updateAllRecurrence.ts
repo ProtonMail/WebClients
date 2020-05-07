@@ -3,21 +3,12 @@ import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalM
 import { getSafeRruleUntil } from './helper';
 import { getStartDateTimeMerged, getEndDateTimeMerged } from './getDateTimeMerged';
 import { UpdateAllPossibilities } from '../eventActions/getUpdateAllPossibilities';
-import { getIsRruleEqual } from '../eventActions/rruleEqual';
 
 const getComponentWithUpdatedRrule = (component: VcalVeventComponent) => {
     const { rrule } = component;
-    const { rrule: originalRrule } = component;
 
-    // If the user has edited the RRULE, we'll use that.
-    if (!rrule || !getIsRruleEqual(rrule, originalRrule)) {
-        if (!rrule) {
-            return omit(component, ['rrule']);
-        }
-        return {
-            ...component,
-            rrule
-        };
+    if (!rrule) {
+        return omit(component, ['rrule']);
     }
 
     // Otherwise it's using the original rrule and we'll set a safer until value just in case the event got moved
@@ -56,7 +47,6 @@ const updateAllRecurrence = ({ component, originalComponent, mode }: Arguments) 
         // If single edits are to be kept, the start time can not change, shouldn't get here if not but just to be sure
         veventWithOldUID.dtstart = originalComponent.dtstart;
         veventWithOldUID.dtend = getEndDateTimeMerged(component.dtstart, component.dtend, veventWithOldUID.dtstart);
-        veventWithOldUID.rrule = originalComponent.rrule;
 
         return veventWithOldUID;
     }
@@ -70,7 +60,6 @@ const updateAllRecurrence = ({ component, originalComponent, mode }: Arguments) 
 
         veventWithOldUID.dtstart = mergedDtstart;
         veventWithOldUID.dtend = mergedDtend;
-        veventWithOldUID.rrule = originalComponent.rrule;
 
         return veventWithOldUID;
     }

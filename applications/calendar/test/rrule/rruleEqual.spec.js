@@ -84,6 +84,77 @@ describe('rrule equal', () => {
             },
             true
         ),
+        getTest(
+            {
+                until: {
+                    year: 2020,
+                    month: 1,
+                    day: 1
+                }
+            },
+            {
+                until: {
+                    year: 2020,
+                    month: 1,
+                    day: 1,
+                    hours: 12,
+                    minutes: 59,
+                    seconds: 59
+                }
+            },
+            true
+        ),
+        getTest(
+            {},
+            {
+                until: {
+                    year: 2020,
+                    month: 1,
+                    day: 1,
+                    hours: 12,
+                    minutes: 59,
+                    seconds: 59
+                }
+            },
+            false
+        ),
+        getTest(
+            {
+                until: {
+                    year: 2020,
+                    month: 1,
+                    day: 1,
+                    hours: 12,
+                    minutes: 59,
+                    seconds: 59
+                }
+            },
+            {},
+            false
+        ),
+        getTest(
+            {
+                until: {
+                    year: 2020,
+                    month: 1,
+                    day: 1,
+                    hours: 12,
+                    minutes: 59,
+                    seconds: 59
+                }
+            },
+            {
+                until: {
+                    year: 2020,
+                    month: 1,
+                    day: 2,
+                    hours: 12,
+                    minutes: 59,
+                    seconds: 59
+                }
+            },
+            false
+        ),
         getTest({ bymonth: [1, 3, 2] }, { bymonth: [3, 2, 1] }, true),
         getTest({}, { bymonth: [1, 3, 2] }, false)
     ].forEach(({ a, b, result }, i) => {
