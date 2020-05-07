@@ -13,6 +13,7 @@ import NumMessages from '../conversation/NumMessages';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { Element } from '../../models/element';
 import { Message } from '../../models/message';
+import ItemExpiration from './ItemExpiration';
 
 interface Props {
     labels?: Label[];
@@ -45,6 +46,7 @@ const ItemRowLayout = ({
                 {displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
             </div>
             <div className="flex-item-fluid flex mauto">
+                <ItemExpiration element={element} />
                 {showIcon && <ItemLocation message={element as Message} mailSettings={mailSettings} />}
                 {isConversation && (
                     <NumMessages className={classnames(['mr0-25', unread && 'bold'])} conversation={element} />

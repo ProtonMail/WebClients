@@ -54,3 +54,26 @@ export const useSubscribeEventManager = (handler: Handler) => {
 
     useEffect(() => subscribe(actualHandler), []);
 };
+
+/**
+ * Run a handler at a defined interval
+ * Returns a function to abort the interval before the component is unmount
+ * Using an interval 0 will prevent the interval to be used
+ */
+export const useInterval = (interval: number, handler: Handler) => {
+    const actualHandler: Handler & Abortable = useHandler(handler);
+
+    useEffect(() => {
+        if (interval > 0) {
+            const intervalID = window.setInterval(actualHandler, interval);
+
+            actualHandler();
+
+            actualHandler.abort = () => clearInterval(intervalID);
+
+            return actualHandler.abort;
+        }
+    }, []);
+
+    return () => actualHandler.abort?.();
+};

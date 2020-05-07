@@ -153,6 +153,18 @@ const MailboxContainer = ({
 
     const handleUncheckAll = () => handleCheck([], true, true);
 
+    /**
+     * Move out of an element which has been removed from the cache
+     */
+    useEffect(() => {
+        if (!loading && elementID) {
+            const contained = elements.some((element) => element.ID === elementID);
+            if (!contained) {
+                handleBack();
+            }
+        }
+    }, [elementID, loading, elements]);
+
     return (
         <>
             <Toolbar

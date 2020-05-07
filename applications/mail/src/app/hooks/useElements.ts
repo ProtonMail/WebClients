@@ -19,6 +19,7 @@ import {
     LabelIDsChanges
 } from '../models/event';
 import { useSubscribeEventManager } from './useHandler';
+import { useExpirationCheck } from './useExpiration';
 
 interface Options {
     conversationMode: boolean;
@@ -62,6 +63,7 @@ export const useElements = ({
 }: Options): [string, Conversation[], boolean, number] => {
     const api = useApi();
     const [loading, setLoading] = useState(false);
+    const [beforeFirstLoad, setBeforeFirstLoad] = useState(true);
     const [localCache, setLocalCache] = useState<Cache>(
         emptyCache(page, {
             labelID,
@@ -70,6 +72,18 @@ export const useElements = ({
             ...search
         })
     );
+
+    // Remove from cache expired elements
+    useExpirationCheck(Object.values(localCache.elements), (element) => {
+        const elements = Object.keys(localCache.elements).reduce<{ [ID: string]: Element }>((acc, cacheID) => {
+            if (element.ID !== cacheID) {
+                acc[cacheID] = localCache.elements[cacheID];
+            }
+            return acc;
+        }, {});
+
+        setLocalCache({ ...localCache, elements });
+    });
 
     // Compute the conversations list from the cache
     const elements = useMemo(() => {
@@ -205,6 +219,7 @@ export const useElements = ({
         shouldResetCache() && resetCache();
         shouldSendRequest() && load();
         shouldUpdatePage() && updatePage();
+        setBeforeFirstLoad(false);
     }, [
         labelID,
         page,
@@ -294,5 +309,5 @@ export const useElements = ({
         }
     );
 
-    return [localCache.params.labelID, elements, loading, localCache.page.total];
+    return [localCache.params.labelID, elements, beforeFirstLoad || loading, localCache.page.total];
 };
