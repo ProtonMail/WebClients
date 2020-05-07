@@ -1,4 +1,4 @@
-type Listener<A extends any[], R> = (...args: A) => Promise<R>;
+type Listener<A extends any[], R> = (...args: A) => R;
 
 const createListeners = <A extends any[], R>() => {
     let listeners: Listener<A, R>[] = [];
