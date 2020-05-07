@@ -1,7 +1,9 @@
-import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC } from '../../lib/date/timezone';
+import { listTimeZones } from 'timezone-support';
+import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, getSupportedTimezone } from '../../lib/date/timezone';
+import { OUTLOOK_TIMEZONE_LINKS, unsupportedTimezoneLinks } from '../../lib/date/timezoneDatabase';
 
 describe('convert utc', () => {
-    const obj = (year, month, day, hours = 0, minutes = 0, seconds = 0) => ({
+    const obj = (year: number, month: number, day: number, hours = 0, minutes = 0, seconds = 0) => ({
         year,
         month,
         day,
@@ -58,5 +60,53 @@ describe('convert utc', () => {
         expect(convertUTCDateTimeToZone(obj(2019, 10, 27, 0), 'Europe/Zurich')).toEqual(obj(2019, 10, 27, 2));
         expect(convertUTCDateTimeToZone(obj(2019, 10, 27, 1), 'Europe/Zurich')).toEqual(obj(2019, 10, 27, 2));
         expect(convertUTCDateTimeToZone(obj(2019, 10, 27, 2), 'Europe/Zurich')).toEqual(obj(2019, 10, 27, 3));
+    });
+});
+
+describe('getSupportedTimezone', () => {
+    it('should filter non-supported canonical timezones', () => {
+        const canonical = listTimeZones();
+        const results = canonical.map((tzid) => getSupportedTimezone(tzid));
+        const expected = canonical.map((tzid) => unsupportedTimezoneLinks[tzid] || tzid);
+        expect(results).toEqual(expected);
+    });
+
+    it('should return the supported canonical timezone for alias timezones', () => {
+        const alias = [
+            'Africa/Bujumbura',
+            'Africa/Freetown',
+            'America/Antigua',
+            'America/Indianapolis',
+            'Asia/Macao',
+            'Asia/Istanbul',
+            'Europe/Skopje',
+            'GB-Eire'
+        ];
+        const canonical = [
+            'Africa/Maputo',
+            'Africa/Abidjan',
+            'America/Port_of_Spain',
+            'America/New_York',
+            'Asia/Macau',
+            'Europe/Istanbul',
+            'Europe/Belgrade',
+            'Europe/London'
+        ];
+        const results = alias.map((tzid) => getSupportedTimezone(tzid));
+        expect(results).toEqual(canonical);
+    });
+
+    it('should convert Outlook timezones', () => {
+        const outlook = Object.keys(OUTLOOK_TIMEZONE_LINKS);
+        const results = outlook.map((tzid) => getSupportedTimezone(tzid));
+        const expected = Object.values(OUTLOOK_TIMEZONE_LINKS);
+        expect(results).toEqual(expected);
+    });
+
+    it('should return undefined for unknown timezones', () => {
+        const unknown = ['Chamorro Standard Time'];
+        const results = unknown.map((tzid) => getSupportedTimezone(tzid));
+        const expected = unknown.map(() => undefined);
+        expect(results).toEqual(expected);
     });
 });
