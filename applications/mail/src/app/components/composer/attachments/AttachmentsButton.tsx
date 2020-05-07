@@ -1,5 +1,5 @@
 import React, { ChangeEvent, ReactNode } from 'react';
-import { Button, classnames } from 'react-components';
+import { classnames, Icon } from 'react-components';
 
 interface Props {
     className?: string;
@@ -8,7 +8,7 @@ interface Props {
     children?: ReactNode;
 }
 
-const AttachmentsButton = ({ onAddAttachments, children, disabled, className }: Props) => {
+const AttachmentsButton = ({ onAddAttachments, disabled, className }: Props) => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const input = event.target;
         if (input.files) {
@@ -19,15 +19,17 @@ const AttachmentsButton = ({ onAddAttachments, children, disabled, className }: 
 
     return (
         <div className="composer-attachments-button-wrapper flex">
-            <input type="file" multiple onChange={handleChange} data-testid="composer-attachments-button" />
-            <Button
-                type="button"
-                className={classnames(['inline-flex flex-items-center', className])}
-                icon={!children && 'attach'}
-                disabled={disabled}
+            <label
+                role="button"
+                className={classnames([
+                    'pm-button pm-button--for-icon inline-flex flex-items-center',
+                    disabled && 'is-disabled',
+                    className
+                ])}
             >
-                {children}
-            </Button>
+                <Icon name="attach" />
+                <input type="file" multiple onChange={handleChange} data-testid="composer-attachments-button" />
+            </label>
         </div>
     );
 };
