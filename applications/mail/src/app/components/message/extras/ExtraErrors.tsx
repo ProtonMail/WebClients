@@ -45,7 +45,7 @@ const ExtraErrors = ({ message }: Props) => {
                         <span className="pl0-5 pr0-5 flex-item-fluid">{getTranslations(errorType)}</span>
                         {showButton && (
                             <span className="flex-item-noshrink flex">
-                                <InlineLinkButton onClick={handleReload} className="bold color-currentColor">
+                                <InlineLinkButton onClick={handleReload} className="underline color-currentColor">
                                     {c('Action').t`Try again`}
                                 </InlineLinkButton>
                             </span>

@@ -44,13 +44,13 @@ const ExtraAskResign = ({ message, onResignContact }: Props) => {
             <span className="pl0-5 pr0-5 flex-item-fluid flex-self-vcenter">
                 {c('Info').t`We could not verify the sender's trusted keys`}
                 <Href
-                    className="bold mr1 pl0-5 pr0-5"
+                    className="mr1 pl0-5 pr0-5"
                     href="https://protonmail.com/support/knowledge-base/address-verification/"
                 >
                     {c('Info').t`Learn more`}
                 </Href>
             </span>
-            <LinkButton className="bold" onClick={handleClick}>{c('Action').t`Verify`}</LinkButton>
+            <LinkButton className="underline" onClick={handleClick}>{c('Action').t`Verify`}</LinkButton>
         </div>
     );
 };

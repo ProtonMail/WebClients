@@ -156,12 +156,12 @@ const ExtraPinKey = ({ message, onTrustKey }: Props) => {
             ])}
         >
             <div className="flex flex-nowrap mr1">
-                {<Icon name="key" className="mtauto mbauto mr0-5" />}
+                {<Icon name="key" className="mtauto mbauto mr0-5 flex-item-noshrink" />}
                 <div>
                     <span className="mr0-5">{getBannerMessage(promptKeyPinningType)}</span>
                     {promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
                         <InlineLinkButton
-                            className="bold"
+                            className="underline"
                             disabled={loadingDisablePromptPin}
                             onClick={() => withLoadingDisablePromptPin(handleDisablePromptPin())}
                         >
@@ -172,7 +172,7 @@ const ExtraPinKey = ({ message, onTrustKey }: Props) => {
                     )}
                 </div>
             </div>
-            <span className="flex-items-center">
+            <span className="flex-items-center flex-item-noshrink">
                 <Button onClick={handleTrustKey} disabled={loading}>
                     {c('Action').t`Trust key`}
                 </Button>

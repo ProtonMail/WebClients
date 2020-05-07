@@ -20,10 +20,7 @@ const ExtraAutoReply = ({ message }: Props) => {
             <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info')
                 .t`This message is automatically generated as a response to a previous message.`}</span>
             <span className="flex-item-noshrink flex">
-                <Href
-                    className="bold mr1 pl0-5 pr0-5"
-                    href="https://protonmail.com/support/knowledge-base/autoresponder/"
-                >
+                <Href className="underline" href="https://protonmail.com/support/knowledge-base/autoresponder/">
                     {c('Info').t`Learn more`}
                 </Href>
             </span>

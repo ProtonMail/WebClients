@@ -126,13 +126,10 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             <Icon name="email" className="flex-item-noshrink mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info').t`This message is from a mailing list.`}</span>
             <span className="flex-item-noshrink flex">
-                <Href
-                    className="bold mr1 pl0-5 pr0-5"
-                    href="https://protonmail.com/support/knowledge-base/auto-unsubscribe"
-                >
+                <Href className="mr1 pl0-5 pr0-5" href="https://protonmail.com/support/knowledge-base/auto-unsubscribe">
                     {c('Info').t`Learn more`}
                 </Href>
-                <InlineLinkButton disabled={loading} className="bold" onClick={() => withLoading(handleClick())}>
+                <InlineLinkButton disabled={loading} className="underline" onClick={() => withLoading(handleClick())}>
                     {loading ? c('Action').t`Unsubscribing` : c('Action').t`Unsubscribe`}
                 </InlineLinkButton>
             </span>
