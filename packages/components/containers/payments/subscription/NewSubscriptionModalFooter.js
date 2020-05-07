@@ -80,7 +80,8 @@ const NewSubscriptionModalFooter = ({ submit, step, model, plans, onClose, metho
             ),
         step === SUBSCRIPTION_STEPS.CUSTOMIZATION &&
             hasAddresses &&
-            (model.coupon === COUPON_CODES.BUNDLE || isVisionary) && (
+            model.coupon === COUPON_CODES.BUNDLE &&
+            !isVisionary && (
                 <div key="upsell-5" className="nomobile flex flex-nowrap flex-items-center pl1 pr1">
                     <TickIcon />
                     <span className="flex-item-fluid">
