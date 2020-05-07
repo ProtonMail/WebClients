@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint, TableRowSticky } from 'react-components';
 import { c } from 'ttag';
 import ItemRow from './ItemRow';
@@ -18,6 +18,7 @@ export interface FileBrowserItem {
 
 interface Props {
     loading?: boolean;
+    scrollAreaRef: React.RefObject<HTMLDivElement>;
     shareId: string;
     caption: string;
     contents: FileBrowserItem[];
@@ -35,6 +36,7 @@ const FileBrowser = ({
     caption,
     contents,
     shareId,
+    scrollAreaRef,
     selectedItems,
     isTrash = false,
     onToggleItemSelected,
@@ -43,7 +45,6 @@ const FileBrowser = ({
     onEmptyAreaClick,
     onShiftClick
 }: Props) => {
-    const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { isDesktop } = useActiveBreakpoint();
 
     const allSelected = !!contents.length && contents.length === selectedItems.length;

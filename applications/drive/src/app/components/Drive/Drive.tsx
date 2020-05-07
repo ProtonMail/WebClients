@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
-import { useMainArea } from 'react-components';
+import React, { useCallback, useEffect, useRef } from 'react';
 import useFiles from '../../hooks/useFiles';
 import useOnScrollEnd from '../../hooks/useOnScrollEnd';
 import FileBrowser, { FileBrowserItem } from '../FileBrowser/FileBrowser';
@@ -27,7 +26,7 @@ interface Props {
 }
 
 function Drive({ activeFolder, openLink }: Props) {
-    const mainAreaRef = useMainArea();
+    const scrollAreaRef = useRef<HTMLDivElement>(null);
     const cache = useDriveCache();
     const { getLinkMeta } = useDrive();
     const { startFileTransfer } = useFiles();
@@ -52,7 +51,7 @@ function Drive({ activeFolder, openLink }: Props) {
     }, [initialized, complete, loadNextPage]);
 
     // On content change, check scroll end (does not rebind listeners)
-    useOnScrollEnd(handleScrollEnd, mainAreaRef, 0.9, [contents]);
+    useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents]);
 
     const handleClick = async (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
@@ -74,6 +73,7 @@ function Drive({ activeFolder, openLink }: Props) {
         <EmptyFolder />
     ) : (
         <FileBrowser
+            scrollAreaRef={scrollAreaRef}
             caption={folderName}
             shareId={shareId}
             loading={loading}
