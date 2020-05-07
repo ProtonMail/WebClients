@@ -88,7 +88,7 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
 
     return (
         <TableRow
-            className={classnames(['cursor-pointer', isSelected && 'bg-global-light'])}
+            className={classnames(['cursor-pointer', isSelected && 'bg-global-highlight'])}
             onMouseDown={() => document.getSelection()?.removeAllRanges()}
             onClick={handleRowClick}
             onTouchStart={handleTouchStart}
