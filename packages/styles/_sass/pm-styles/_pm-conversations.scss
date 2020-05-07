@@ -260,6 +260,11 @@ $conversation-icon-size: 3.2rem !default;
         }
     }
 }
+.message-detailed-header-extra {
+	.item-date {
+		font-size: 1.4rem;
+	}
+}
 
 /* states classes */
 .message-container.is-opened {
