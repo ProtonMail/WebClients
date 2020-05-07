@@ -10,6 +10,9 @@ import { ConversationResult } from '../hooks/useConversation';
 import { Api } from 'proton-shared/lib/interfaces';
 import { getConversation } from 'proton-shared/lib/api/conversations';
 import { parseLabelIDsInEvent } from '../helpers/elements';
+import { useExpirationCheck } from '../hooks/useExpiration';
+import { identity } from 'proton-shared/lib/helpers/function';
+import { Conversation } from '../models/conversation';
 
 export type ConversationCache = Cache<ConversationResult>;
 
@@ -64,6 +67,17 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
     };
 };
 
+/**
+ * Check constantly for expired message in the cache
+ */
+const useConversationExpirationCheck = (cache: ConversationCache) => {
+    const conversations = Object.values(cache.toObject())
+        .map((conversationResult) => conversationResult?.Conversation)
+        .filter(identity) as Conversation[];
+
+    useExpirationCheck(conversations, (element) => cache.delete(element.ID || ''));
+};
+
 interface Props {
     children?: ReactNode;
     cache?: ConversationCache; // Only for testing purposes
@@ -83,6 +97,8 @@ const ConversationProvider = ({ children, cache: testCache }: Props) => {
     const cache = testCache || realCache;
 
     useEffect(() => subscribe(conversationListener(cache, api)), []);
+
+    useConversationExpirationCheck(cache);
 
     return <ConversationContext.Provider value={cache}>{children}</ConversationContext.Provider>;
 };

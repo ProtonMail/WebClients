@@ -7,10 +7,12 @@ import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 
 import { Event } from '../models/event';
 import { Cache } from '../models/utils';
-import { MessageExtended, PartialMessageExtended } from '../models/message';
+import { MessageExtended, PartialMessageExtended, Message } from '../models/message';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { mergeMessages } from '../helpers/message/messages';
 import { DRAFT_ID_PREFIX } from '../helpers/message/messageDraft';
+import { useExpirationCheck } from '../hooks/useExpiration';
+import { identity } from 'proton-shared/lib/helpers/function';
 
 export type MessageCache = Cache<MessageExtended>;
 
@@ -125,6 +127,17 @@ const messageCacheListener = (cache: MessageCache) => async (changedMessageID: s
     }
 };
 
+/**
+ * Check constantly for expired message in the cache
+ */
+const useMessageExpirationCheck = (cache: MessageCache) => {
+    const messages = Object.values(cache.toObject())
+        .map((messageExtended) => messageExtended?.data)
+        .filter(identity) as Message[];
+
+    useExpirationCheck(messages, (element) => cache.delete(element.ID || ''));
+};
+
 interface Props {
     children?: ReactNode;
     cache?: MessageCache; // Only for testing purposes
@@ -145,6 +158,8 @@ const MessageProvider = ({ children, cache: testCache }: Props) => {
     useEffect(() => subscribe(messageEventListener(cache)), []);
 
     useEffect(() => cache.subscribe(messageCacheListener(cache)), []);
+
+    useMessageExpirationCheck(cache);
 
     return <MessageContext.Provider value={cache}>{children}</MessageContext.Provider>;
 };

@@ -1,41 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { Icon, Tooltip } from 'react-components';
 import { c } from 'ttag';
 
 import { Element } from '../../models/element';
-
-const EXPIRATION_INTERVAL = 1000;
+import { fromUnixTime } from 'date-fns';
+import { formatFullDate } from '../../helpers/date';
 
 interface Props {
-    element: Element;
+    element?: Element;
 }
 
-const ItemExpiration = ({ element }: Props) => {
-    const { ExpirationTime = 0 } = element;
-    const [willExpireIn, setWillExpireIn] = useState(false);
+const ItemExpiration = ({ element = {} }: Props) => {
+    const { ExpirationTime } = element;
 
-    useEffect(() => {
-        const intervalID = setInterval(() => {
-            const now = ~~(Date.now() / 1000); // unix timestamp
+    const tooltipMessage = useMemo(() => {
+        const date = fromUnixTime(ExpirationTime || 0);
+        return c('Info').t`This message will expire ${formatFullDate(date)}`;
+    }, [ExpirationTime]);
 
-            if (ExpirationTime) {
-                setWillExpireIn(ExpirationTime < now);
-            }
-        }, EXPIRATION_INTERVAL);
-
-        return () => clearInterval(intervalID);
-    }, []);
-
-    if (!willExpireIn) {
+    if (!ExpirationTime) {
         return null;
     }
 
-    const value = +ExpirationTime * 1000;
-    const expiration = new Date(value || Date.now()).toISOString();
-    const title = c('Info').t`This message will expire in ${expiration}`;
-
     return (
-        <Tooltip title={title}>
+        <Tooltip title={tooltipMessage}>
             <Icon name="expiration" className="color-global-warning" />
         </Tooltip>
     );

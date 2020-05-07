@@ -12,6 +12,7 @@ import { MessageViewIcons } from '../../../helpers/message/icon';
 import { MessageExtended } from '../../../models/message';
 import HeaderRecipientItem from './HeaderRecipientItem';
 import { OnCompose } from '../../../containers/ComposerContainer';
+import ItemExpiration from '../../list/ItemExpiration';
 
 interface Props {
     message: MessageExtended;
@@ -53,13 +54,14 @@ const HeaderCollapsed = ({
             ])}
             onClick={handleClick}
         >
-            <div className="flex flex-item-fluid flex-nowrap pr0-5">
+            <div className="flex flex-item-fluid flex-nowrap flex-items-center pr0-5">
                 <HeaderRecipientItem
                     recipientOrGroup={{ recipient: message.data?.Sender }}
                     globalIcon={messageViewIcons?.globalIcon}
                     showAddress={false}
                     onCompose={onCompose}
                 />
+                <ItemExpiration element={message.data} />
             </div>
             <div className="flex flex-items-center flex-item-noshrink">
                 {isDraftMessage && <span className="badgeLabel-success">{c('Info').t`Draft`}</span>}
