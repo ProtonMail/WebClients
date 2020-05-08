@@ -1,3 +1,5 @@
+import { BASE_SIZE } from 'proton-shared/lib/constants';
+
 export const DEFAULT_CALENDAR = {
     name: 'My calendar',
     color: '#657ee4',
@@ -99,6 +101,7 @@ export const MAX_LENGTHS = {
 };
 
 export const MAX_DEFAULT_NOTIFICATIONS = 5;
+export const MAX_NOTIFICATIONS = 10;
 
 export enum SAVE_CONFIRMATION_TYPES {
     SINGLE = 1,
@@ -127,3 +130,8 @@ export const MAXIMUM_DATE = new Date(2037, 11, 31);
 export const MAXIMUM_DATE_UTC = new Date(
     Date.UTC(MAXIMUM_DATE.getFullYear(), MAXIMUM_DATE.getMonth(), MAXIMUM_DATE.getDate())
 );
+
+export const MAX_IMPORT_EVENTS = 15000;
+export const MAX_IMPORT_EVENTS_STRING = "15'000";
+export const MAX_IMPORT_FILE_SIZE = 10 * BASE_SIZE ** 2;
+export const MAX_IMPORT_FILE_SIZE_STRING = '10 MB';

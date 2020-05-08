@@ -1,5 +1,15 @@
+import { getProbablyActiveCalendars } from 'proton-shared/lib/calendar/calendar';
 import React, { useEffect, useRef } from 'react';
-import { useToggle, useActiveBreakpoint, AppsSidebar, Sidebar, StorageSpaceStatus, Href } from 'react-components';
+import {
+    useToggle,
+    useActiveBreakpoint,
+    useModals,
+    AppsSidebar,
+    Sidebar,
+    StorageSpaceStatus,
+    Href,
+    Info
+} from 'react-components';
 import { Redirect, Route, Switch } from 'react-router';
 import { c } from 'ttag';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
@@ -8,6 +18,7 @@ import PrivateHeader from '../../components/layout/PrivateHeader';
 import GeneralPage from './SettingsGeneralPage';
 import CalendarsPage from './SettingsCalendarPage';
 import CalendarSidebarVersion from '../calendar/CalendarSidebarVersion';
+import ImportModal from '../../components/import/ImportModal';
 
 interface Props {
     calendars: Calendar[];
@@ -17,6 +28,9 @@ const SettingsContainer = ({ calendars, calendarUserSettings }: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
+    const { createModal } = useModals();
+    const activeCalendars = getProbablyActiveCalendars(calendars);
+    const hasActiveCalendars = !!activeCalendars.length;
 
     useEffect(() => {
         setExpand(false);
@@ -31,7 +45,34 @@ const SettingsContainer = ({ calendars, calendarUserSettings }: Props) => {
 
     const list = [
         { link: '/calendar/settings/general', icon: 'settings-master', text: c('Link').t`General` },
-        { link: '/calendar/settings/calendars', icon: 'calendar', text: c('Link').t`Calendars` }
+        { link: '/calendar/settings/calendars', icon: 'calendar', text: c('Link').t`Calendars` },
+        hasActiveCalendars
+            ? {
+                  type: 'button',
+                  className: 'alignleft',
+                  icon: 'import',
+                  onClick() {
+                      createModal(
+                          <ImportModal calendars={activeCalendars} calendarUserSettings={calendarUserSettings} />
+                      );
+                  },
+                  text: c('Action').t`Import`
+              }
+            : {
+                  type: 'button',
+                  className: 'alignleft',
+                  icon: 'import',
+                  text: (
+                      <>
+                          {c('Action').t`Import`}
+                          <Info
+                              buttonClass="ml0-5 inline-flex"
+                              title={c('Disabled import')
+                                  .t`You need to have an active calendar before importing your events.`}
+                          />
+                      </>
+                  )
+              }
     ];
 
     return (
