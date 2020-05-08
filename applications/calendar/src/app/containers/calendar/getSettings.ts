@@ -28,7 +28,7 @@ export const getDefaultCalendarID = (calendarUserSettings: CalendarUserSettings)
     return calendarUserSettings?.DefaultCalendarID || undefined;
 };
 
-export const getTzid = (calendarUserSettings: CalendarUserSettings, defaultTimezone: string) => {
+export const getDefaultTzid = (calendarUserSettings: CalendarUserSettings, defaultTimezone: string) => {
     const primaryTimezone = calendarUserSettings?.PrimaryTimezone;
     return primaryTimezone || defaultTimezone;
 };

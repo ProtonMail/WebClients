@@ -41,7 +41,7 @@ import { Calendar, CalendarSettings } from 'proton-shared/lib/interfaces/calenda
 
 interface Props {
     calendar?: Calendar;
-    calendars?: Calendar[];
+    activeCalendars?: Calendar[];
     defaultCalendarID?: string;
     defaultColor?: boolean;
     onClose?: () => void;
@@ -49,7 +49,7 @@ interface Props {
 
 const CalendarModal = ({
     calendar: initialCalendar,
-    calendars = [],
+    activeCalendars = [],
     defaultCalendarID = '',
     defaultColor = false,
     ...rest
@@ -158,7 +158,7 @@ const CalendarModal = ({
                 if (defaultCalendarID) {
                     return;
                 }
-                const newDefaultCalendarID = calendars.length ? calendars[0].ID : newCalendarID;
+                const newDefaultCalendarID = activeCalendars.length ? activeCalendars[0].ID : newCalendarID;
                 return api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
             })()
         ]);

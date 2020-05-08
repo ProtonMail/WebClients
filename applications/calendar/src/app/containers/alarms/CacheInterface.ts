@@ -1,16 +1,16 @@
 import { CalendarAlarm } from 'proton-shared/lib/interfaces/calendar';
 
-export interface CacheRecord {
+export interface CalendarAlarmCacheRecord {
     result?: CalendarAlarm[];
     promise?: Promise<void>;
 }
 
-export interface CacheMap {
-    [key: string]: CacheRecord;
+export interface CalendarAlarmCache {
+    [id: string]: CalendarAlarmCacheRecord;
 }
 
-export interface CalendarAlarmsCache {
-    cache: CacheMap;
+export interface CalendarsAlarmsCache {
+    calendarsCache: CalendarAlarmCache;
     end: Date;
     start: Date;
     promise?: Promise<void[]>;

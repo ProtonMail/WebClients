@@ -41,7 +41,7 @@ export type DecryptedEventRecord = [
 export type RecurringEventsCache = Map<string, RecurringCache>;
 export type EventsCache = Map<string, CalendarEventStoreRecord>;
 export type DecryptedEventsCache = Map<string, DecryptedEventRecord>;
-export interface CalendarCache {
+export interface CalendarEventCache {
     dateRanges: Date[][];
     events: EventsCache;
     recurringEvents: RecurringEventsCache;
@@ -53,7 +53,8 @@ export interface CalendarsEventsCache {
     ref: number;
     isUnmounted: boolean;
     calendars: {
-        [key: string]: CalendarCache;
+        [key: string]: CalendarEventCache;
     };
+    getCachedEvent: (calendarID: string, eventID: string) => CalendarEvent | undefined;
     rerender?: () => void;
 }

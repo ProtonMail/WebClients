@@ -1,18 +1,9 @@
-import { getProbablyActiveCalendars } from 'proton-shared/lib/calendar/calendar';
 import React, { useEffect, useRef } from 'react';
-import {
-    useToggle,
-    useActiveBreakpoint,
-    useModals,
-    AppsSidebar,
-    Sidebar,
-    StorageSpaceStatus,
-    Href,
-    Info
-} from 'react-components';
+import { useToggle, useModals, AppsSidebar, Sidebar, StorageSpaceStatus, Href, Info } from 'react-components';
 import { Redirect, Route, Switch } from 'react-router';
 import { c } from 'ttag';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
+import { Address } from 'proton-shared/lib/interfaces';
 
 import PrivateHeader from '../../components/layout/PrivateHeader';
 import GeneralPage from './SettingsGeneralPage';
@@ -21,15 +12,27 @@ import CalendarSidebarVersion from '../calendar/CalendarSidebarVersion';
 import ImportModal from '../../components/import/ImportModal';
 
 interface Props {
+    isNarrow: boolean;
+    addresses: Address[];
     calendars: Calendar[];
+    activeCalendars: Calendar[];
+    disabledCalendars: Calendar[];
+    defaultCalendar?: Calendar;
     calendarUserSettings: CalendarUserSettings;
 }
-const SettingsContainer = ({ calendars, calendarUserSettings }: Props) => {
+const SettingsContainer = ({
+    isNarrow,
+    addresses,
+    calendars,
+    disabledCalendars,
+    defaultCalendar,
+    activeCalendars,
+    calendarUserSettings
+}: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
-    const { isNarrow } = useActiveBreakpoint();
     const { createModal } = useModals();
-    const activeCalendars = getProbablyActiveCalendars(calendars);
+
     const hasActiveCalendars = !!activeCalendars.length;
 
     useEffect(() => {
@@ -46,15 +49,13 @@ const SettingsContainer = ({ calendars, calendarUserSettings }: Props) => {
     const list = [
         { link: '/calendar/settings/general', icon: 'settings-master', text: c('Link').t`General` },
         { link: '/calendar/settings/calendars', icon: 'calendar', text: c('Link').t`Calendars` },
-        hasActiveCalendars
+        hasActiveCalendars && defaultCalendar
             ? {
                   type: 'button',
                   className: 'alignleft',
                   icon: 'import',
                   onClick() {
-                      createModal(
-                          <ImportModal calendars={activeCalendars} calendarUserSettings={calendarUserSettings} />
-                      );
+                      createModal(<ImportModal defaultCalendar={defaultCalendar} calendars={activeCalendars} />);
                   },
                   text: c('Action').t`Import`
               }
@@ -113,8 +114,11 @@ const SettingsContainer = ({ calendars, calendarUserSettings }: Props) => {
                                 render={() => {
                                     return (
                                         <CalendarsPage
+                                            addresses={addresses}
                                             calendars={calendars}
-                                            calendarUserSettings={calendarUserSettings}
+                                            activeCalendars={activeCalendars}
+                                            disabledCalendars={disabledCalendars}
+                                            defaultCalendar={defaultCalendar}
                                         />
                                     );
                                 }}

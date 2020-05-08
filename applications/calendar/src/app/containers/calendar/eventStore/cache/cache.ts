@@ -12,12 +12,12 @@ import {
 } from './recurringCache';
 import { getRecurrenceId, getUid } from '../../event/getEventHelper';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { CalendarCache, CalendarEventStoreRecord, IntervalTree } from '../interface';
+import { CalendarEventCache, CalendarEventStoreRecord, IntervalTree } from '../interface';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 export const removeEventFromCache = (
     EventID: string,
-    { tree, events, decryptedEvents, recurringEvents }: CalendarCache
+    { tree, events, decryptedEvents, recurringEvents }: CalendarEventCache
 ) => {
     const oldEvent = events.get(EventID);
     if (oldEvent) {
@@ -61,7 +61,7 @@ export const setEventInTree = ({ oldEvent, isOldRecurring, start, end, EventID, 
 
 export const setEventInCache = (
     Event: CalendarEvent,
-    { tree, events, recurringEvents, decryptedEvents }: CalendarCache,
+    { tree, events, recurringEvents, decryptedEvents }: CalendarEventCache,
     isInitialFetch = false
 ) => {
     try {

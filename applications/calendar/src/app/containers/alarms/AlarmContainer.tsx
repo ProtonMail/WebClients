@@ -1,19 +1,20 @@
 import React, { MutableRefObject } from 'react';
 import AlarmWatcher from './AlarmWatcher';
 import useCalendarsAlarms from './useCalendarsAlarms';
-import { Calendar, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { CalendarAlarmsCache } from './CacheInterface';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarsAlarmsCache } from './CacheInterface';
+import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 
 interface Props {
     calendars: Calendar[];
     tzid: string;
-    getCachedEvent: (calendarID: string, eventID: string) => CalendarEvent | undefined;
-    cacheRef: MutableRefObject<CalendarAlarmsCache>;
+    calendarsAlarmsCacheRef: MutableRefObject<CalendarsAlarmsCache>;
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
 }
 
-const AlarmContainer = ({ calendars, tzid, getCachedEvent, cacheRef }: Props) => {
-    const alarms = useCalendarsAlarms(calendars, cacheRef);
-    return <AlarmWatcher alarms={alarms} tzid={tzid} getCachedEvent={getCachedEvent} />;
+const AlarmContainer = ({ calendars, tzid, calendarsAlarmsCacheRef, calendarsEventsCacheRef }: Props) => {
+    const alarms = useCalendarsAlarms(calendars, calendarsAlarmsCacheRef);
+    return <AlarmWatcher alarms={alarms} tzid={tzid} calendarsEventsCacheRef={calendarsEventsCacheRef} />;
 };
 
 export default AlarmContainer;

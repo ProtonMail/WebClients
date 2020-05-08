@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { MutableRefObject, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 import { useApi } from 'react-components';
 import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
@@ -12,6 +12,7 @@ import notificationIcon from '../../../assets/notification.gif';
 import useGetCalendarEventRaw from '../../containers/calendar/eventStore/useGetCalendarEventRaw';
 import { getAlarmMessage } from '../../helpers/alarms';
 import { MINUTE } from '../../constants';
+import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 
 const MIN_CUTOFF = -MINUTE * 1000;
 
@@ -35,9 +36,9 @@ const getFirstUnseenAlarm = (alarms: CalendarAlarm[] = [], set: Set<string>) => 
 interface Props {
     alarms: CalendarAlarm[];
     tzid: string;
-    getCachedEvent: (calendarID: string, eventID: string) => CalendarEvent | undefined;
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
 }
-const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }: Props) => {
+const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => {
     const api = useApi();
     const getEventRaw = useGetCalendarEventRaw();
     const cacheRef = useRef<Set<string>>();
@@ -74,7 +75,7 @@ const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }: Props) => {
             const delay = Math.max(diff, 0);
 
             const getEvent = () => {
-                const cachedEvent = getCachedEvent(CalendarID, EventID);
+                const cachedEvent = calendarsEventsCacheRef.current.getCachedEvent(CalendarID, EventID);
                 if (cachedEvent) {
                     return Promise.resolve(cachedEvent);
                 }

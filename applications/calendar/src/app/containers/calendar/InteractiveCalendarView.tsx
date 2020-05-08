@@ -79,8 +79,8 @@ interface Props extends SharedViewProps {
     onInteraction: (active: boolean) => void;
     activeCalendars: Calendar[];
     addresses: Address[];
-    defaultCalendar: Calendar;
-    defaultCalendarBootstrap: CalendarBootstrap;
+    defaultCalendar?: Calendar;
+    defaultCalendarBootstrap?: CalendarBootstrap;
     containerRef: HTMLDivElement | null;
     timeGridViewRef: Ref<TimeGridRef>;
     interactiveRef: Ref<InteractiveRef>;
@@ -189,6 +189,10 @@ const InteractiveCalendarView = ({
     };
 
     const getCreateModel = (isAllDay: boolean) => {
+        if (!defaultCalendar || !defaultCalendarBootstrap) {
+            return;
+        }
+
         const initialDate = getInitialDate();
 
         const { Members = [], CalendarSettings } = defaultCalendarBootstrap;
@@ -357,7 +361,7 @@ const InteractiveCalendarView = ({
         }
 
         if (originalAction === ACTIONS.CREATE_DOWN) {
-            if (!defaultCalendarBootstrap) {
+            if (!defaultCalendar || !defaultCalendarBootstrap) {
                 return;
             }
 
@@ -539,6 +543,9 @@ const InteractiveCalendarView = ({
     };
 
     const handleCreateEvent = () => {
+        if (!defaultCalendar) {
+            return;
+        }
         const startModel = getCreateModel(false);
         if (!startModel) {
             throw new Error('Unable to get create model');

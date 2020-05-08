@@ -6,19 +6,22 @@ import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 
 import { DAY } from '../../constants';
 import getCalendarsAlarmsCached from './getCalendarsAlarmsCached';
-import { CalendarAlarmsCache } from './CacheInterface';
+import { CalendarsAlarmsCache } from './CacheInterface';
 
 const PADDING = 60 * 1000 * 2;
 
-export const getInitialCalendarsAlarmsCache = () => ({
-    cache: {},
-    start: new Date(2000, 1, 1),
-    end: new Date(2000, 1, 1)
+export const getCalendarsAlarmsCache = ({
+    start = new Date(2000, 1, 1),
+    end = new Date(2000, 1, 1)
+} = {}): CalendarsAlarmsCache => ({
+    calendarsCache: {},
+    start,
+    end
 });
 
 const useCalendarsAlarms = (
     calendars: tsCalendar[],
-    cacheRef: MutableRefObject<CalendarAlarmsCache>,
+    cacheRef: MutableRefObject<CalendarsAlarmsCache>,
     lookAhead = 2 * DAY * 1000
 ) => {
     const api = useApi();
@@ -35,17 +38,16 @@ const useCalendarsAlarms = (
 
             // Cache is invalid
             if (+cacheRef.current.end - PADDING <= +now) {
-                cacheRef.current = {
-                    cache: {},
+                cacheRef.current = getCalendarsAlarmsCache({
                     start: now,
-                    end: addMilliseconds(now, lookAhead),
-                    rerender: () => setForceRefresh({})
-                };
+                    end: addMilliseconds(now, lookAhead)
+                });
+                cacheRef.current.rerender = () => setForceRefresh({});
             }
 
             const promise = (cacheRef.current.promise = getCalendarsAlarmsCached(
                 api,
-                cacheRef.current.cache,
+                cacheRef.current.calendarsCache,
                 calendarIDs,
                 [cacheRef.current.start, cacheRef.current.end]
             ));
@@ -79,10 +81,10 @@ const useCalendarsAlarms = (
     }, [calendarIDs]);
 
     return useMemo(() => {
-        const { cache } = cacheRef.current;
+        const { calendarsCache } = cacheRef.current;
         return calendarIDs
             .map((calendarID) => {
-                return cache[calendarID]?.result ?? [];
+                return calendarsCache[calendarID]?.result ?? [];
             })
             .flat()
             .sort((a, b) => {

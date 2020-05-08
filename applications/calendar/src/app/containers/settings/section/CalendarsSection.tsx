@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
     useApi,
-    useAddresses,
     useEventManager,
     useNotifications,
     SubTitle,
@@ -12,39 +11,33 @@ import {
     Alert
 } from 'react-components';
 import { c } from 'ttag';
+import { updateCalendarUserSettings, removeCalendar } from 'proton-shared/lib/api/calendars';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { Address } from 'proton-shared/lib/interfaces';
 
 import CalendarsTable from './CalendarsTable';
 import CalendarModal from '../CalendarModal';
-import { updateCalendarUserSettings, removeCalendar } from 'proton-shared/lib/api/calendars';
 import { MAX_CALENDARS_PER_USER } from '../../../constants';
-import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
-import {
-    getProbablyActiveCalendars,
-    getDefaultCalendar,
-    getIsCalendarDisabled
-} from 'proton-shared/lib/calendar/calendar';
-import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
 
 interface Props {
+    addresses: Address[];
     calendars: Calendar[];
-    calendarUserSettings: CalendarUserSettings;
+    disabledCalendars: Calendar[];
+    activeCalendars: Calendar[];
+    defaultCalendar?: Calendar;
 }
-const CalendarsSection = ({ calendars, calendarUserSettings }: Props) => {
+const CalendarsSection = ({ addresses, calendars, defaultCalendar, disabledCalendars, activeCalendars }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const [loadingMap, setLoadingMap] = useState({});
-    const [addresses, loadingAddresses] = useAddresses();
 
-    const activeAddresses = getActiveAddresses(addresses);
-    const activeCalendars = getProbablyActiveCalendars(calendars);
-    const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
     const defaultCalendarID = defaultCalendar ? defaultCalendar.ID : undefined;
-    const hasDisabledCalendar = calendars.some(getIsCalendarDisabled);
+    const hasDisabledCalendar = disabledCalendars.length > 0;
 
     const handleCreate = () => {
-        createModal(<CalendarModal calendars={calendars} defaultCalendarID={defaultCalendarID} />);
+        createModal(<CalendarModal activeCalendars={activeCalendars} defaultCalendarID={defaultCalendarID} />);
     };
 
     const handleEdit = (calendar: Calendar) => {
@@ -94,7 +87,11 @@ const CalendarsSection = ({ calendars, calendarUserSettings }: Props) => {
             );
         });
         try {
-            setLoadingMap((old) => ({ ...old, [newDefaultCalendarID]: true, [ID]: true }));
+            setLoadingMap((old) => ({
+                ...old,
+                [newDefaultCalendarID || '']: true,
+                [ID]: true
+            }));
             await api(removeCalendar(ID));
             // null is a valid default calendar id
             if (newDefaultCalendarID !== undefined) {
@@ -103,11 +100,11 @@ const CalendarsSection = ({ calendars, calendarUserSettings }: Props) => {
             await call();
             createNotification({ text: c('Success').t`Calendar removed` });
         } finally {
-            setLoadingMap((old) => ({ ...old, [newDefaultCalendarID]: false, [ID]: false }));
+            setLoadingMap((old) => ({ ...old, [newDefaultCalendarID || '']: false, [ID]: false }));
         }
     };
 
-    const canAddCalendar = !loadingAddresses && activeAddresses.length > 0 && calendars.length < MAX_CALENDARS_PER_USER;
+    const canAddCalendar = addresses.length > 0 && calendars.length < MAX_CALENDARS_PER_USER;
 
     return (
         <>

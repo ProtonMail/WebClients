@@ -1,10 +1,10 @@
 import { MutableRefObject, useEffect } from 'react';
-import { CalendarAlarmsCache } from './CacheInterface';
+import { CalendarsAlarmsCache } from './CacheInterface';
 import { useEventManager } from 'react-components';
 import { CalendarAlarmEventManager, CalendarEventManager } from '../../interfaces/EventManager';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 
-export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<CalendarAlarmsCache>) => {
+export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<CalendarsAlarmsCache>) => {
     const { subscribe } = useEventManager();
 
     useEffect(() => {
@@ -22,13 +22,13 @@ export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<Cale
 
                 let actions = 0;
 
-                const { cache, end } = cacheRef.current;
+                const { calendarsCache, end } = cacheRef.current;
                 const now = new Date();
 
                 Calendars.forEach(({ ID: CalendarID, Action }) => {
                     if (Action === EVENT_ACTIONS.DELETE) {
-                        if (cache[CalendarID]) {
-                            delete cache[CalendarID];
+                        if (calendarsCache[CalendarID]) {
+                            delete calendarsCache[CalendarID];
                             actions++;
                         }
                     }
@@ -42,7 +42,7 @@ export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<Cale
 
                     const { Occurrence, CalendarID } = CalendarAlarmChange.Alarm;
 
-                    const hasCalendarInCache = !!cache[CalendarID];
+                    const hasCalendarInCache = !!calendarsCache[CalendarID];
                     const occurrenceInMs = Occurrence > 0 ? Occurrence * 1000 : -1;
                     const isAlarmInRange = Occurrence !== -1 && occurrenceInMs >= +now && occurrenceInMs <= +end;
 
@@ -54,8 +54,8 @@ export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<Cale
                         const { ID: AlarmID } = CalendarAlarmChange;
                         let index = -1;
 
-                        const calendarID = Object.keys(cache).find((calendarID) => {
-                            const result = cache[calendarID]?.result;
+                        const calendarID = Object.keys(calendarsCache).find((calendarID) => {
+                            const result = calendarsCache[calendarID]?.result;
                             if (!result) {
                                 return false;
                             }
@@ -64,7 +64,7 @@ export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<Cale
                         });
 
                         if (calendarID && index >= 0) {
-                            const result = cache[calendarID]?.result;
+                            const result = calendarsCache[calendarID]?.result;
                             if (result) {
                                 result.splice(index, 1);
                                 actions++;
@@ -78,7 +78,7 @@ export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<Cale
                             Alarm: { CalendarID }
                         } = CalendarAlarmChange;
 
-                        const result = cache[CalendarID]?.result;
+                        const result = calendarsCache[CalendarID]?.result;
                         if (result) {
                             result.push(Alarm);
                             actions++;
@@ -92,7 +92,7 @@ export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<Cale
                             Alarm: { ID: AlarmID, CalendarID }
                         } = CalendarAlarmChange;
 
-                        const result = cache[CalendarID]?.result;
+                        const result = calendarsCache[CalendarID]?.result;
                         if (result) {
                             const index = result.findIndex(({ ID: otherID }) => otherID === AlarmID);
                             if (index >= 0) {

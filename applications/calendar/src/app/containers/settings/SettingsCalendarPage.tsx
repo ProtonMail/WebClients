@@ -1,17 +1,27 @@
 import React from 'react';
-import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
+import { Address } from 'proton-shared/lib/interfaces';
 
 import CalendarsSection from './section/CalendarsSection';
 import Main from '../../components/Main';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 
 interface Props {
+    addresses: Address[];
     calendars: Calendar[];
-    calendarUserSettings: CalendarUserSettings;
+    disabledCalendars: Calendar[];
+    activeCalendars: Calendar[];
+    defaultCalendar?: Calendar;
 }
-const SettingsCalendarPage = ({ calendars, calendarUserSettings }: Props) => {
+const SettingsCalendarPage = ({ addresses, calendars, disabledCalendars, activeCalendars, defaultCalendar }: Props) => {
     return (
         <Main className="p2">
-            <CalendarsSection calendars={calendars} calendarUserSettings={calendarUserSettings} />
+            <CalendarsSection
+                addresses={addresses}
+                calendars={calendars}
+                activeCalendars={activeCalendars}
+                disabledCalendars={disabledCalendars}
+                defaultCalendar={defaultCalendar}
+            />
         </Main>
     );
 };

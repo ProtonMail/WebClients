@@ -1,8 +1,8 @@
 import { Api } from 'proton-shared/lib/interfaces';
 import getPaginatedAlarms from './getPaginatedAlarms';
-import { CacheMap } from './CacheInterface';
+import { CalendarAlarmCache } from './CacheInterface';
 
-const getCalendarsAlarmsCached = (api: Api, cache: CacheMap, calendarIDs: string[], dateRange: Date[]) => {
+const getCalendarsAlarmsCached = (api: Api, cache: CalendarAlarmCache, calendarIDs: string[], dateRange: Date[]) => {
     const promises = calendarIDs.map((calendarID) => {
         if (cache[calendarID] && cache[calendarID].promise) {
             return cache[calendarID].promise;

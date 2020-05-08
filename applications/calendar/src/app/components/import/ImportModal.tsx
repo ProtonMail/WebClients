@@ -1,7 +1,6 @@
-import { getDefaultCalendar } from 'proton-shared/lib/calendar/calendar';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import React, { ChangeEvent, useState } from 'react';
 import { FormModal, PrimaryButton, useEventManager } from 'react-components';
 import { c } from 'ttag';
@@ -16,13 +15,12 @@ import ImportSummaryModalContent from './ImportSummaryModalContent';
 import WarningModalContent from './WarningModalContent';
 
 interface Props {
+    defaultCalendar: Calendar;
     calendars: Calendar[];
-    calendarUserSettings: CalendarUserSettings;
     onClose?: () => void;
 }
-const ImportModal = ({ calendars, calendarUserSettings, ...rest }: Props) => {
+const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
     const { call } = useEventManager();
-    const defaultCalendar = getDefaultCalendar(calendars, calendarUserSettings.DefaultCalendarID);
     const [model, setModel] = useState<ImportCalendarModel>({
         step: IMPORT_STEPS.ATTACHING,
         calendar: defaultCalendar,

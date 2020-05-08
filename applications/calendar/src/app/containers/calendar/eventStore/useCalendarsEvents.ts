@@ -9,7 +9,7 @@ import useGetCalendarEventPersonal from './useGetCalendarEventPersonal';
 import { setEventInCache } from './cache/cache';
 import getPaginatedEvents from './getPaginatedEvents';
 import { getRecurringEvents } from './cache/getRecurringEvents';
-import { CalendarsEventsCache, DecryptedEventRecord, DecryptedTupleResult } from './interface';
+import { CalendarEventCache, CalendarsEventsCache, DecryptedEventRecord, DecryptedTupleResult } from './interface';
 import { CalendarViewEvent } from '../interface';
 
 const DAY_IN_MILLISECONDS = 86400000;
@@ -20,11 +20,36 @@ const contains = (range: Date[], otherRanges: Date[][]) => {
     });
 };
 
-export const getInitialCalendarEventCache = () => {
+const getCalendarEventCache = (): CalendarEventCache => {
     return {
-        ref: 0,
-        isUnmounted: false,
-        calendars: {}
+        events: new Map(),
+        recurringEvents: new Map(),
+        decryptedEvents: new Map(),
+        tree: createIntervalTree(),
+        dateRanges: []
+    };
+};
+
+export const getCalendarsEventCache = (): CalendarsEventsCache => {
+    const calendarsCache: { [key: string]: CalendarEventCache } = {};
+
+    const getCachedEvent = (calendarID: string, eventID: string) => {
+        const calendarCache = calendarsCache[calendarID];
+        if (!calendarCache) {
+            return;
+        }
+        const cachedEvent = calendarCache.events.get(eventID);
+        return cachedEvent?.Event;
+    };
+
+    const ref = 0;
+    const isUnmounted = false;
+
+    return {
+        ref,
+        isUnmounted,
+        calendars: calendarsCache,
+        getCachedEvent
     };
 };
 
@@ -53,13 +78,7 @@ const useCalendarsEvents = (
     useEffect(() => {
         const toFetch = requestedCalendars.filter(({ ID: CalendarID }) => {
             if (!cacheRef.current.calendars[CalendarID]) {
-                cacheRef.current.calendars[CalendarID] = {
-                    events: new Map(),
-                    recurringEvents: new Map(),
-                    decryptedEvents: new Map(),
-                    tree: createIntervalTree(),
-                    dateRanges: []
-                };
+                cacheRef.current.calendars[CalendarID] = getCalendarEventCache();
             }
 
             const { dateRanges: calendarDateRanges } = cacheRef.current.calendars[CalendarID];
@@ -145,14 +164,6 @@ const useCalendarsEvents = (
         const record: DecryptedEventRecord = [undefined, promise, undefined];
         decryptedEvents.set(EventID, record);
         return record;
-    }, []);
-
-    const getCachedEvent = useCallback((calendarID: string, eventID: string) => {
-        if (!cacheRef.current || !cacheRef.current.calendars || !cacheRef.current.calendars[calendarID]) {
-            return;
-        }
-        const cachedEvent = cacheRef.current.calendars[calendarID].events.get(eventID);
-        return cachedEvent?.Event;
     }, []);
 
     return useMemo(() => {
@@ -267,7 +278,6 @@ const useCalendarsEvents = (
         return {
             calendarsEvents: events,
             loadingEvents: loading,
-            getCachedEvent,
             getDecryptedEvent
         };
     }, [rerender, tzid, loading, requestedCalendars, utcDateRange]);
