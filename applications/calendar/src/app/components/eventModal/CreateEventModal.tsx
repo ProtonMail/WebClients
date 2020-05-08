@@ -8,11 +8,12 @@ import validateEventModel from './eventForm/validateEventModel';
 import EventForm from './EventForm';
 import { useForm } from './useForm';
 import { EventModel } from '../../interfaces/EventModel';
+import { WeekStartsOn } from '../../containers/calendar/interface';
 
 interface Props {
     isNarrow: boolean;
     displayWeekNumbers: boolean;
-    weekStartsOn: number;
+    weekStartsOn: WeekStartsOn;
     isCreateEvent: boolean;
     model: EventModel;
     onSave: (value: EventModel) => Promise<void>;

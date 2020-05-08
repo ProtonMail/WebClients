@@ -16,11 +16,11 @@ import handleSaveRecurringEvent from './handleSaveRecurringEvent';
 import withVeventRruleWkst, { withRruleWkst } from './rruleWkst';
 import { withRruleUntil } from './rruleUntil';
 import { GetDecryptedEventCb } from '../eventStore/interface';
-import { OnSaveConfirmationCb } from '../interface';
+import { CalendarViewEventTemporaryEvent, OnSaveConfirmationCb, WeekStartsOn } from '../interface';
 
 interface Arguments {
-    temporaryEvent: any; // todo
-    weekStartsOn: number;
+    temporaryEvent: CalendarViewEventTemporaryEvent;
+    weekStartsOn: WeekStartsOn;
 
     addresses: Address[];
     calendars: Calendar[];
@@ -96,7 +96,7 @@ const handleSaveEvent = async ({
 
     const oldEventData = getEditEventData({
         Event: oldEvent,
-        eventResult: readEvent(oldEvent.CalendarID, oldEvent.ID)?.[0],
+        eventResult: readEvent?.(oldEvent.CalendarID, oldEvent.ID)?.[0],
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEvent.Author)
     });
 

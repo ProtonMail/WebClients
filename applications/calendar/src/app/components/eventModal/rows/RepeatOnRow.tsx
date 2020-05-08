@@ -1,19 +1,20 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import { Row } from 'react-components';
-
-import DayCheckbox from '../inputs/DayCheckbox';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { dateLocale } from 'proton-shared/lib/i18n';
+
+import DayCheckbox from '../inputs/DayCheckbox';
 import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
 import { WEEKLY_TYPE } from '../../../constants';
+import { WeekStartsOn } from '../../../containers/calendar/interface';
 
 const DAYS = Array.from({ length: 7 }, (a, i) => i);
 
 interface Props {
     frequencyModel: FrequencyModel;
     start: DateTimeModel;
-    weekStartsOn: number;
+    weekStartsOn: WeekStartsOn;
     onChange: (value: FrequencyModel) => void;
     collapseOnMobile?: boolean;
 }

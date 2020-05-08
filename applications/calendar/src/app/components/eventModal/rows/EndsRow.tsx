@@ -6,6 +6,7 @@ import { isValid } from 'date-fns';
 import { END_TYPE, FREQUENCY_COUNT_MAX, MAXIMUM_DATE } from '../../../constants';
 
 import { DateTimeModel, EventModelErrors, FrequencyModel } from '../../../interfaces/EventModel';
+import { WeekStartsOn } from '../../../containers/calendar/interface';
 
 const { NEVER, UNTIL, AFTER_N_TIMES } = END_TYPE;
 
@@ -16,7 +17,7 @@ interface Props {
     frequencyModel: FrequencyModel;
     start: DateTimeModel;
     displayWeekNumbers?: boolean;
-    weekStartsOn: number;
+    weekStartsOn: WeekStartsOn;
     errors: EventModelErrors;
     isSubmitted: boolean;
     onChange: (value: FrequencyModel) => void;

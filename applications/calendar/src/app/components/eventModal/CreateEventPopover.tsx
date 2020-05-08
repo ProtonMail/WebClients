@@ -8,11 +8,12 @@ import PopoverContent from '../events/PopoverContent';
 import { useForm } from './useForm';
 import MinimalEventForm from './MinimalEventForm';
 import { EventModel } from '../../interfaces/EventModel';
+import { WeekStartsOn } from '../../containers/calendar/interface';
 
 interface Props {
     isNarrow: boolean;
     displayWeekNumbers: boolean;
-    weekStartsOn: number;
+    weekStartsOn: WeekStartsOn;
     isCreateEvent: boolean;
     model: EventModel;
     onSave: (value: EventModel) => Promise<void>;

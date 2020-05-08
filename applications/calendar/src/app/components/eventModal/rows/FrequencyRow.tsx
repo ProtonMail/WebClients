@@ -5,13 +5,14 @@ import FrequencyInput from '../inputs/FrequencyInput';
 import CustomFrequencySelector from '../inputs/CustomFrequencySelector';
 import { FREQUENCY } from '../../../constants';
 import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
+import { WeekStartsOn } from '../../../containers/calendar/interface';
 
 interface Props {
     label: React.ReactNode;
     frequencyModel: FrequencyModel;
     start: DateTimeModel;
     displayWeekNumbers: boolean;
-    weekStartsOn: number;
+    weekStartsOn: WeekStartsOn;
     errors: object;
     isSubmitted: boolean;
     onChange: (model: FrequencyModel) => void;

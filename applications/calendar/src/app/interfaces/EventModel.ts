@@ -65,6 +65,10 @@ export interface EventModel extends EventModelView {
     type: 'event' | 'alarm' | 'task';
     calendar: CalendarModel;
     calendars: CalendarsModel[];
+    member: {
+        memberID: string;
+        addressID: string;
+    };
     //attendees: AttendeeModel[];
     attendees?: any;
     isAllDay: boolean;

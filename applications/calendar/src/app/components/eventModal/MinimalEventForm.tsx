@@ -11,12 +11,13 @@ import TitleRow from './rows/TitleRow';
 import FrequencyRow from './rows/FrequencyRow';
 import { getAllDayCheck } from './eventForm/stateActions';
 import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
+import { WeekStartsOn } from '../../containers/calendar/interface';
 
 interface Props {
     isSubmitted: boolean;
     isNarrow: boolean;
     displayWeekNumbers: boolean;
-    weekStartsOn: number;
+    weekStartsOn: WeekStartsOn;
     errors: EventModelErrors;
     model: EventModel;
     setModel: (value: EventModel) => void;

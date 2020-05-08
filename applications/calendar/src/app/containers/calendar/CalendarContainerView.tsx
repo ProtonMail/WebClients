@@ -24,6 +24,7 @@ import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '../../constants';
 import { fromUTCDate, toLocalDate } from 'proton-shared/lib/date/timezone';
 import getDateDiff from './getDateDiff';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { WeekStartsOn } from './interface';
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
@@ -37,7 +38,7 @@ interface Props {
     isNarrow?: boolean;
     isBlurred?: boolean;
     displayWeekNumbers?: boolean;
-    weekStartsOn?: number;
+    weekStartsOn?: WeekStartsOn;
     tzid: string;
     setTzid: (tzid: string) => void;
     range?: number;

@@ -5,12 +5,13 @@ import RepeatEveryRow from '../rows/RepeatEveryRow';
 import RepeatOnRow from '../rows/RepeatOnRow';
 import EndsRow from '../rows/EndsRow';
 import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
+import { WeekStartsOn } from '../../../containers/calendar/interface';
 
 interface Props {
     frequencyModel: FrequencyModel;
     start: DateTimeModel;
     displayWeekNumbers: boolean;
-    weekStartsOn: number;
+    weekStartsOn: WeekStartsOn;
     errors: object;
     isSubmitted: boolean;
     onChange: (value: FrequencyModel) => void;

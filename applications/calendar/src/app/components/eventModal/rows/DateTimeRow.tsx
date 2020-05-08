@@ -7,6 +7,7 @@ import {
     toUTCDate
 } from 'proton-shared/lib/date/timezone';
 import { MILLISECONDS_IN_MINUTE, startOfDay } from 'proton-shared/lib/date-fns-utc';
+import { WeekStartsOn } from '../../../containers/calendar/interface';
 
 import { addDays, isValid } from 'date-fns';
 import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
@@ -22,8 +23,8 @@ interface Props {
     model: EventModel;
     setModel: (value: EventModel) => void;
     displayWeekNumbers: boolean;
-    weekStartsOn: number;
-    endError: any;
+    weekStartsOn: WeekStartsOn;
+    endError?: string;
     isNarrow?: boolean;
 }
 

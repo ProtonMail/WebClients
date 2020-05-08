@@ -2,13 +2,14 @@ import { format, getDaysInMonth } from 'date-fns';
 import { c, msgid } from 'ttag';
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../constants';
 import { FrequencyModel } from '../interfaces/EventModel';
+import { WeekStartsOn } from '../containers/calendar/interface';
 
 interface GetTimezonedFrequencyStringOptions {
     date: Date;
     startTzid: string;
     currentTzid: string;
     locale: Locale;
-    weekStartsOn: number;
+    weekStartsOn: WeekStartsOn;
 }
 // NOTE: due to the different grammar of different languages, to allow for a proper translation,
 // win general e need to expand all possible cases so there will be quite a bit of duplicated code
@@ -203,7 +204,7 @@ const getWeekdayString = (weekday: number) => {
 
 const getCustomWeeklyString = (
     { interval = 0, weekly: { days }, ends: { type: endType, until, count } }: FrequencyModel,
-    weekStartsOn: number,
+    weekStartsOn: WeekStartsOn,
     locale: Locale
 ) => {
     // sort weekly days depending on the day the week starts
