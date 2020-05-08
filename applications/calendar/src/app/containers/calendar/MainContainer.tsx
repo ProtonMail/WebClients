@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import { useCalendars, useCalendarUserSettings, useDelinquent, useUser } from 'react-components';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, SETTINGS_TIME_FORMAT } from 'proton-shared/lib/interfaces/calendar';
+import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 
 import SettingsContainer from '../settings/SettingsContainer';
 import CalendarContainer from './CalendarContainer';
@@ -22,6 +23,10 @@ interface Props {
 }
 const MainContainerSetup = ({ calendars = [] }: Props) => {
     const [calendarUserSettings = DEFAULT_USER_SETTINGS] = useCalendarUserSettings();
+
+    useEffect(() => {
+        updateLongLocale({ displayAMPM: calendarUserSettings.TimeFormat === SETTINGS_TIME_FORMAT.H12 });
+    }, [calendarUserSettings]);
 
     const calendarsEventsCacheRef = useRef<CalendarsEventsCache>(getInitialCalendarEventCache());
     useCalendarsEventsEventListener(calendarsEventsCacheRef);
