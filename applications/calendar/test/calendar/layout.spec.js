@@ -1,4 +1,5 @@
-import { layout, sortEvents } from '../../src/app/components/calendar/layout';
+import { layout } from '../../src/app/components/calendar/layout';
+import { sortEvents } from '../../src/app/components/calendar/sortLayout';
 
 const getDate = (minutes) => new Date(2000, 0, 1, 0, minutes);
 
