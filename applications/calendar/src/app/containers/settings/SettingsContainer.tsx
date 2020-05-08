@@ -34,12 +34,6 @@ const SettingsContainer = ({ calendars, calendarUserSettings }: Props) => {
         { link: '/calendar/settings/calendars', icon: 'calendar', text: c('Link').t`Calendars` }
     ];
 
-    const mobileLinks = [
-        { to: '/inbox', icon: 'protonmail', external: true, current: false },
-        { to: '/contacts', icon: 'protoncontacts', external: true, current: false },
-        { to: '/calendar', icon: 'protoncalendar', external: false, current: true }
-    ].filter(Boolean);
-
     return (
         <div className="flex flex-nowrap no-scroll">
             <AppsSidebar
@@ -69,7 +63,6 @@ const SettingsContainer = ({ calendars, calendarUserSettings }: Props) => {
                         list={list}
                         expanded={expanded}
                         onToggleExpand={onToggleExpand}
-                        mobileLinks={mobileLinks}
                         version={<CalendarSidebarVersion />}
                     />
                     <div className="main flex-item-fluid main-area main-area--paddingFix" ref={mainAreaRef}>
