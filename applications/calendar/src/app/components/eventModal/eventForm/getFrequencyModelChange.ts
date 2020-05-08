@@ -1,4 +1,5 @@
 import { replace } from 'proton-shared/lib/helpers/array';
+import { isBefore } from 'date-fns';
 import { MONTHLY_TYPE, WEEKLY_TYPE } from '../../../constants';
 import { getNegativeSetpos, getPositiveSetpos } from '../../../helpers/rrule';
 import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
@@ -45,6 +46,17 @@ const getFrequencyModelChange = (
 
     if (changeToMinusNthDay) {
         return { ...newFrequencyModel, monthly: { type: MONTHLY_TYPE.ON_MINUS_NTH_DAY } };
+    }
+
+    const {
+        ends: { until: oldRecurringUntil }
+    } = frequencyModel;
+
+    if (oldRecurringUntil && isBefore(oldRecurringUntil, newStart.date)) {
+        newFrequencyModel.ends = {
+            ...frequencyModel.ends,
+            until: newStart.date
+        };
     }
 
     return newFrequencyModel;
