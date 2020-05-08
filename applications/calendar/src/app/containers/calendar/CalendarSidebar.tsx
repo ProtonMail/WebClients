@@ -23,7 +23,7 @@ interface Props {
     activeCalendars: Calendar[];
     disabledCalendars: Calendar[];
     miniCalendar: ReactNode;
-    onCreateEvent: () => void;
+    onCreateEvent?: () => void;
 }
 
 const CalendarSidebar = ({
@@ -57,7 +57,7 @@ const CalendarSidebar = ({
                     data-test-id="calendar-view:new-event-button"
                     className="pm-button--large bold mt0-25 w100"
                     disabled={!onCreateEvent}
-                    onClick={() => onCreateEvent()}
+                    onClick={onCreateEvent}
                 >{c('Action').t`New event`}</PrimaryButton>
             </div>
             <div className="flex-item-fluid flex-nowrap flex flex-column scroll-if-needed customScrollBar-container pb1">

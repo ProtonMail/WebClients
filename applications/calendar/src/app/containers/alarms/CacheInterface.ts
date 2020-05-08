@@ -9,9 +9,10 @@ export interface CacheMap {
     [key: string]: CacheRecord;
 }
 
-export interface Cache {
+export interface CalendarAlarmsCache {
     cache: CacheMap;
     end: Date;
     start: Date;
     promise?: Promise<void[]>;
+    rerender?: () => void;
 }

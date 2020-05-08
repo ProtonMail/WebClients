@@ -1,76 +1,15 @@
-import { isSameDay } from 'proton-shared/lib/date-fns-utc';
-
-const isAllDayPrio = (a, b) => {
-    // If a is an all day event,
-    // b is a part day event,
-    // and the all day event starts on the same day that b ends and (b does not span multiple days)
-    // The last check is needed because a part day event can span on 2 days without being seen
-    // as a an all day event
-    return a.isAllDay && !b.isAllDay && isSameDay(a.start, b.end) && isSameDay(b.start, b.end);
-};
-
-export const sortEvents = (events) => {
-    return events.sort((a, b) => {
-        // Sort all day (and cross day events) events before
-        if (isAllDayPrio(a, b)) {
-            return -1;
-        }
-        if (isAllDayPrio(b, a)) {
-            return 1;
-        }
-        return a.start - b.start || b.end - a.end;
-    });
-};
-
-const removeById = (arr, id) => {
-    const targetIdx = arr.findIndex((a) => {
-        return a.id === id;
-    });
-    // Should never happen
-    if (targetIdx !== -1) {
-        // Fine to mutate it.
-        arr.splice(targetIdx, 1);
-    }
-};
-
-export const sortWithTemporaryEvent = (events, temporaryEvent) => {
-    const eventsCopy = events.concat();
-    if (!temporaryEvent) {
-        return sortEvents(eventsCopy);
-    }
-
-    // When dragging an event, remove the original event
-    if (temporaryEvent.targetId) {
-        removeById(eventsCopy, temporaryEvent.targetId);
-    }
-
-    if (!temporaryEvent.isAllDay) {
-        return sortEvents([temporaryEvent, ...eventsCopy]);
-    }
-
-    // For all day events, push the event before any event that is overlapping
-    const sortedEvents = sortEvents(eventsCopy);
-
-    const idx = sortedEvents.findIndex((a) => {
-        return a.end >= temporaryEvent.start;
-    });
-
-    sortedEvents.splice(idx === -1 ? sortedEvents.length : idx, 0, temporaryEvent);
-    return sortedEvents;
-};
-
 export const getCollisionGroups = (events) => {
     let maxEnd = -1;
     let tmp = [];
 
     return events.reduce((acc, event, i, arr) => {
         const { start, end } = event;
-        const isIntersect = start < maxEnd;
+        const isIntersect = +start < maxEnd;
 
         // This event is intersecting with the current intersection group.
         if (isIntersect) {
             // The max length of this intersection group.
-            maxEnd = Math.max(maxEnd, end);
+            maxEnd = Math.max(maxEnd, +end);
             tmp.push(event);
         } else {
             // Push the previous intersection group to the result
@@ -78,7 +17,7 @@ export const getCollisionGroups = (events) => {
                 acc.push(tmp);
             }
 
-            maxEnd = event.end;
+            maxEnd = +event.end;
             tmp = [event];
         }
 

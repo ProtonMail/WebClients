@@ -64,7 +64,7 @@ export interface EventModel {
     start: DateTimeModel;
     end: DateTimeModel;
     isAllDay: boolean;
-    rest: any;
+    rest?: any;
     defaultPartDayNotification: NotificationModel;
     defaultFullDayNotification: NotificationModel;
     fullDayNotifications: NotificationModel[];
@@ -72,6 +72,7 @@ export interface EventModel {
     initialDate: Date;
     initialTzid: string;
     defaultEventDuration: number;
+    hasMoreOptions?: boolean;
     hasCalendarRow: boolean;
     hasFrequencyRow: boolean;
     hasModifiedNotifications: {

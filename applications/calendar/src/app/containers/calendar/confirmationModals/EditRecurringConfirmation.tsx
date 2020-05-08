@@ -7,6 +7,7 @@ import SelectRecurringType from './SelectRecurringType';
 interface Props {
     types: RECURRING_TYPES[];
     onConfirm: (type: RECURRING_TYPES) => void;
+    onClose: () => void;
 }
 
 const getAlertText = (types: RECURRING_TYPES[]) => {

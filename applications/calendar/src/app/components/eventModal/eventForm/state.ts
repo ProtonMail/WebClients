@@ -33,7 +33,7 @@ export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
     DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
     hasModifiedNotifications = { partDay: false, fullDay: false }
-}): Partial<EventModel> => {
+}) => {
     return {
         defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
@@ -140,7 +140,7 @@ export const getInitialModel = ({
     Address,
     isAllDay,
     tzid
-}: GetInitialModelArguments) => {
+}: GetInitialModelArguments): EventModel => {
     const { DefaultEventDuration: defaultEventDuration = DEFAULT_EVENT_DURATION } = CalendarSettings;
     const dateTimeModel = getInitialDateTimeModel(initialDate, defaultEventDuration, tzid);
     const frequencyModel = getInitialFrequencyModel(dateTimeModel.start.date);
@@ -149,6 +149,7 @@ export const getInitialModel = ({
     const calendarsModel = getCalendarsModel(Calendar, Calendars);
 
     return {
+        type: 'event',
         title: '',
         location: '',
         description: '',
@@ -168,10 +169,14 @@ export const getInitialModel = ({
 
 interface GetExistingEventArguments {
     veventComponent: VcalVeventComponent;
-    veventValarmComponent: VcalVeventComponent;
+    veventValarmComponent?: VcalVeventComponent;
     tzid: string;
 }
-export const getExistingEvent = ({ veventComponent, veventValarmComponent, tzid }: GetExistingEventArguments) => {
+export const getExistingEvent = ({
+    veventComponent,
+    veventValarmComponent,
+    tzid
+}: GetExistingEventArguments): Partial<EventModel> => {
     const isAllDay = isIcalAllDay(veventComponent);
     const isRecurring = isIcalRecurring(veventComponent);
     const recurrenceId = getIcalRecurrenceId(veventComponent);

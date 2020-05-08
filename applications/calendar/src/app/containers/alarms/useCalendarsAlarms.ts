@@ -1,29 +1,27 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { useApi, useEventManager } from 'react-components';
+import { MutableRefObject, useEffect, useMemo, useState } from 'react';
+import { useApi } from 'react-components';
 
 import { addMilliseconds } from 'proton-shared/lib/date-fns-utc';
-import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 
 import { DAY } from '../../constants';
-import { CalendarAlarmEventManager, CalendarEventManager } from '../../interfaces/EventManager';
 import getCalendarsAlarmsCached from './getCalendarsAlarmsCached';
-import { Cache } from './CacheInterface';
-
-const { DELETE, CREATE, UPDATE } = EVENT_ACTIONS;
+import { CalendarAlarmsCache } from './CacheInterface';
 
 const PADDING = 60 * 1000 * 2;
 
-const dummyCache = {
+export const getInitialCalendarsAlarmsCache = () => ({
     cache: {},
     start: new Date(2000, 1, 1),
     end: new Date(2000, 1, 1)
-};
+});
 
-const useCalendarsAlarms = (calendars: tsCalendar[], lookAhead = 2 * DAY * 1000) => {
-    const { subscribe } = useEventManager();
+const useCalendarsAlarms = (
+    calendars: tsCalendar[],
+    cacheRef: MutableRefObject<CalendarAlarmsCache>,
+    lookAhead = 2 * DAY * 1000
+) => {
     const api = useApi();
-    const cacheRef = useRef<Cache>(dummyCache);
     const [forceRefresh, setForceRefresh] = useState<any>();
 
     const calendarIDs = useMemo(() => calendars.map(({ ID }) => ID), [calendars]);
@@ -36,11 +34,12 @@ const useCalendarsAlarms = (calendars: tsCalendar[], lookAhead = 2 * DAY * 1000)
             const now = new Date();
 
             // Cache is invalid
-            if (!cacheRef.current || +cacheRef.current.end - PADDING <= +now) {
+            if (+cacheRef.current.end - PADDING <= +now) {
                 cacheRef.current = {
                     cache: {},
                     start: now,
-                    end: addMilliseconds(now, lookAhead)
+                    end: addMilliseconds(now, lookAhead),
+                    rerender: () => setForceRefresh({})
                 };
             }
 
@@ -71,121 +70,15 @@ const useCalendarsAlarms = (calendars: tsCalendar[], lookAhead = 2 * DAY * 1000)
 
         update();
 
+        cacheRef.current.rerender = () => setForceRefresh({});
         return () => {
+            cacheRef.current.rerender = undefined;
             unmounted = true;
-            if (timeoutHandle) {
-                clearTimeout(timeoutHandle);
-            }
+            clearTimeout(timeoutHandle);
         };
     }, [calendarIDs]);
 
-    useEffect(() => {
-        return subscribe(
-            ({
-                CalendarAlarms = [],
-                Calendars = []
-            }: {
-                CalendarAlarms?: CalendarAlarmEventManager[];
-                Calendars?: CalendarEventManager[];
-            }) => {
-                if (!cacheRef.current) {
-                    return;
-                }
-
-                let actions = 0;
-
-                const { cache, end } = cacheRef.current;
-                const now = new Date();
-
-                Calendars.forEach(({ ID: CalendarID, Action }) => {
-                    if (Action === DELETE) {
-                        if (cache[CalendarID]) {
-                            delete cache[CalendarID];
-                            actions++;
-                        }
-                    }
-                });
-
-                const calendarAlarmChangesToTreat = CalendarAlarms.filter((CalendarAlarmChange) => {
-                    // If it's delete we'll fallback to search later
-                    if (CalendarAlarmChange.Action === DELETE) {
-                        return true;
-                    }
-
-                    const { Occurrence, CalendarID } = CalendarAlarmChange.Alarm;
-
-                    const hasCalendarInCache = !!cache[CalendarID];
-                    const occurrenceInMs = Occurrence > 0 ? Occurrence * 1000 : -1;
-                    const isAlarmInRange = Occurrence !== -1 && occurrenceInMs >= +now && occurrenceInMs <= +end;
-
-                    return hasCalendarInCache && isAlarmInRange;
-                });
-
-                for (const CalendarAlarmChange of calendarAlarmChangesToTreat) {
-                    if (CalendarAlarmChange.Action === DELETE) {
-                        const { ID: AlarmID } = CalendarAlarmChange;
-                        let index = -1;
-
-                        const calendarID = Object.keys(cache).find((calendarID) => {
-                            const result = cache[calendarID]?.result;
-                            if (!result) {
-                                return false;
-                            }
-                            index = result.findIndex(({ ID: otherID }) => otherID === AlarmID);
-                            return index !== -1;
-                        });
-
-                        if (calendarID && index >= 0) {
-                            const result = cache[calendarID]?.result;
-                            if (result) {
-                                result.splice(index, 1);
-                                actions++;
-                            }
-                        }
-                    }
-
-                    if (CalendarAlarmChange.Action === CREATE) {
-                        const {
-                            Alarm,
-                            Alarm: { CalendarID }
-                        } = CalendarAlarmChange;
-
-                        const result = cache[CalendarID]?.result;
-                        if (result) {
-                            result.push(Alarm);
-                            actions++;
-                        }
-                    }
-
-                    // This case only happens when the user changes timezone
-                    if (CalendarAlarmChange.Action === UPDATE) {
-                        const {
-                            Alarm,
-                            Alarm: { ID: AlarmID, CalendarID }
-                        } = CalendarAlarmChange;
-
-                        const result = cache[CalendarID]?.result;
-                        if (result) {
-                            const index = result.findIndex(({ ID: otherID }) => otherID === AlarmID);
-                            if (index >= 0) {
-                                result.splice(index, 1, Alarm);
-                                actions++;
-                            }
-                        }
-                    }
-                }
-
-                if (actions) {
-                    setForceRefresh({});
-                }
-            }
-        );
-    }, []);
-
     return useMemo(() => {
-        if (!cacheRef.current) {
-            return [];
-        }
         const { cache } = cacheRef.current;
         return calendarIDs
             .map((calendarID) => {

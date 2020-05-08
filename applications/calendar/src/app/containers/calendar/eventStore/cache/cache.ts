@@ -9,10 +9,16 @@ import {
     setEventInRecurrenceInstances,
     removeEventFromRecurringCache,
     setEventInRecurringCache
-} from '../cache/recurringCache';
-import { getRecurrenceId, getUid } from '../event/getEventHelper';
+} from './recurringCache';
+import { getRecurrenceId, getUid } from '../../event/getEventHelper';
+import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarCache, CalendarEventStoreRecord, IntervalTree } from '../interface';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
-export const removeEventFromCache = (EventID, { tree, events, decryptedEvents, recurringEvents }) => {
+export const removeEventFromCache = (
+    EventID: string,
+    { tree, events, decryptedEvents, recurringEvents }: CalendarCache
+) => {
     const oldEvent = events.get(EventID);
     if (oldEvent) {
         const { start, end, isRecurring, component } = oldEvent;
@@ -22,9 +28,9 @@ export const removeEventFromCache = (EventID, { tree, events, decryptedEvents, r
         const recurrenceId = getRecurrenceId(component);
 
         if (recurrenceId) {
-            removeEventFromRecurrenceInstances({ uid, recurrenceId, recurringEvents });
+            removeEventFromRecurrenceInstances(recurringEvents, uid, +recurrenceId);
         } else if (isRecurring) {
-            removeEventFromRecurringCache({ uid, recurringEvents });
+            removeEventFromRecurringCache(recurringEvents, uid);
         }
 
         events.delete(EventID);
@@ -32,7 +38,15 @@ export const removeEventFromCache = (EventID, { tree, events, decryptedEvents, r
     decryptedEvents.delete(EventID);
 };
 
-export const setEventInTree = ({ oldEvent, isOldRecurring, start, end, EventID, tree }) => {
+interface SetEventInTreeArguments {
+    oldEvent?: CalendarEventStoreRecord;
+    isOldRecurring: boolean;
+    start: Date;
+    end: Date;
+    EventID: string;
+    tree: IntervalTree;
+}
+export const setEventInTree = ({ oldEvent, isOldRecurring, start, end, EventID, tree }: SetEventInTreeArguments) => {
     if (!oldEvent || isOldRecurring) {
         tree.insert(+start, +end, EventID);
         return;
@@ -45,7 +59,11 @@ export const setEventInTree = ({ oldEvent, isOldRecurring, start, end, EventID, 
     }
 };
 
-export const setEventInCache = (Event, { tree, events, recurringEvents, decryptedEvents, isInitialFetch }) => {
+export const setEventInCache = (
+    Event: CalendarEvent,
+    { tree, events, recurringEvents, decryptedEvents }: CalendarCache,
+    isInitialFetch = false
+) => {
     try {
         const { ID: EventID, SharedEvents } = Event;
 
@@ -58,8 +76,11 @@ export const setEventInCache = (Event, { tree, events, recurringEvents, decrypte
             return;
         }
 
-        const { Data = '' } = SharedEvents.find(({ Type }) => Type === 2);
-        const component = parse(unwrap(Data));
+        const signedPart = SharedEvents.find(({ Type }) => Type === 2);
+        if (!signedPart) {
+            return;
+        }
+        const component = parse(unwrap(signedPart.Data)) as VcalVeventComponent;
 
         if (component.component !== 'vevent') {
             return;
@@ -72,7 +93,7 @@ export const setEventInCache = (Event, { tree, events, recurringEvents, decrypte
         const recurrenceId = getRecurrenceId(component);
         const uid = getUid(component);
         const oldUid = oldEvent ? getUid(oldEvent.component) : undefined;
-        const isOldRecurring = oldEvent && oldEvent.isRecurring;
+        const isOldRecurring = oldEvent?.isRecurring ?? false;
 
         if (!uid || (oldEvent && oldUid !== uid)) {
             throw new Error('Event with incorrect UID');
@@ -95,10 +116,10 @@ export const setEventInCache = (Event, { tree, events, recurringEvents, decrypte
             }
 
             setEventInRecurrenceInstances({
-                EventID,
-                oldRecurrenceId,
-                recurrenceId,
                 recurringEvents,
+                EventID,
+                oldRecurrenceId: oldRecurrenceId ? +oldRecurrenceId : undefined,
+                recurrenceId: +recurrenceId,
                 uid
             });
 
@@ -115,7 +136,7 @@ export const setEventInCache = (Event, { tree, events, recurringEvents, decrypte
                 tree.remove(+oldEvent.start, +oldEvent.end, EventID);
             }
 
-            setEventInRecurringCache({ EventID, uid, recurringEvents });
+            setEventInRecurringCache(recurringEvents, EventID, uid);
         } else {
             if (isOldRecurring) {
                 recurringEvents.delete(uid);

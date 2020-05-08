@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import { useCalendars, useCalendarUserSettings, useDelinquent, useUser } from 'react-components';
-import { UserModel } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 
 import SettingsContainer from '../settings/SettingsContainer';
@@ -11,13 +10,24 @@ import { DEFAULT_USER_SETTINGS } from '../../settingsConstants';
 import FreeContainer from '../setup/FreeContainer';
 import WelcomeContainer from '../setup/WelcomeContainer';
 import ResetContainer from '../setup/ResetContainer';
+import { CalendarsEventsCache } from './eventStore/interface';
+import { getInitialCalendarEventCache } from './eventStore/useCalendarsEvents';
+import { CalendarAlarmsCache } from '../alarms/CacheInterface';
+import useCalendarsAlarmsEventListeners from '../alarms/useCalendarAlarmsEventListener';
+import { getInitialCalendarsAlarmsCache } from '../alarms/useCalendarsAlarms';
+import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
 
 interface Props {
     calendars: Calendar[];
-    user: UserModel;
 }
-const MainContainerSetup = ({ calendars = [], user }: Props) => {
+const MainContainerSetup = ({ calendars = [] }: Props) => {
     const [calendarUserSettings = DEFAULT_USER_SETTINGS] = useCalendarUserSettings();
+
+    const calendarsEventsCacheRef = useRef<CalendarsEventsCache>(getInitialCalendarEventCache());
+    useCalendarsEventsEventListener(calendarsEventsCacheRef);
+
+    const calendarAlarmsCacheRef = useRef<CalendarAlarmsCache>(getInitialCalendarsAlarmsCache());
+    useCalendarsAlarmsEventListeners(calendarAlarmsCacheRef);
 
     return (
         <Switch>
@@ -32,7 +42,8 @@ const MainContainerSetup = ({ calendars = [], user }: Props) => {
                 render={({ history, location }) => {
                     return (
                         <CalendarContainer
-                            user={user}
+                            calendarsEventsCacheRef={calendarsEventsCacheRef}
+                            calendarsAlarmsCacheRef={calendarAlarmsCacheRef}
                             calendars={calendars}
                             calendarUserSettings={calendarUserSettings}
                             history={history}
@@ -65,7 +76,7 @@ const MainContainer = () => {
         return <ResetContainer calendars={calendars} onDone={() => setSetupType(SETUP_TYPE.DONE)} />;
     }
 
-    return <MainContainerSetup calendars={calendars} user={user} />;
+    return <MainContainerSetup calendars={calendars} />;
 };
 
 export default MainContainer;

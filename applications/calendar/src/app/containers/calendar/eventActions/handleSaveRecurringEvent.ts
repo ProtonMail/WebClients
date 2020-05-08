@@ -12,6 +12,7 @@ import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import { getHasFutureOption } from './recurringHelper';
 import getUpdateAllPossibilities from './getUpdateAllPossibilities';
+import { OnSaveConfirmationCb } from '../interface';
 
 interface Arguments {
     originalEventData: EventOldData;
@@ -19,7 +20,7 @@ interface Arguments {
     newEventData: EventNewData;
 
     canOnlySaveAll: boolean;
-    onSaveConfirmation: (data: any) => Promise<RECURRING_TYPES>;
+    onSaveConfirmation: OnSaveConfirmationCb;
 
     recurrence: CalendarEventRecurring;
     recurrences: CalendarEvent[];
@@ -58,7 +59,9 @@ const handleSaveRecurringEvent = async ({
 
     const saveTypes = canOnlySaveAll
         ? [RECURRING_TYPES.ALL]
-        : [RECURRING_TYPES.SINGLE, isFutureAllowed && RECURRING_TYPES.FUTURE, RECURRING_TYPES.ALL].filter(isTruthy);
+        : [RECURRING_TYPES.SINGLE, isFutureAllowed ? RECURRING_TYPES.FUTURE : undefined, RECURRING_TYPES.ALL].filter(
+              isTruthy
+          );
 
     const saveType = await onSaveConfirmation({
         type: SAVE_CONFIRMATION_TYPES.RECURRING,

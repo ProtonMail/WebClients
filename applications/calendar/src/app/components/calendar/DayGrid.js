@@ -16,6 +16,7 @@ export const getEvent = (idx, eventsInRow, events) => {
     return events[eventIdx];
 };
 
+/** @type any **/
 const DayGrid = ({
     tzid,
     now,

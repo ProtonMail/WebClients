@@ -47,7 +47,7 @@ interface Props {
     utcDate: Date;
     utcDateRange: Date[];
     utcDateRangeInTimezone?: Date[];
-    onCreateEvent: () => void;
+    onCreateEvent?: () => void;
     onClickToday: () => void;
     onChangeView: (view: VIEWS) => void;
     onChangeDate: (date: Date) => void;

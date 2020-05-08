@@ -1,7 +1,7 @@
 import { convertZonedDateTimeToUTC, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { DateTimeModel } from '../../../interfaces/EventModel';
 
-export const getDateTimeState = (utcDate: Date, tzid: string) => {
+export const getDateTimeState = (utcDate: Date, tzid: string): DateTimeModel => {
     return {
         // These should be local dates since the mini calendar and time input uses that.
         date: new Date(utcDate.getUTCFullYear(), utcDate.getUTCMonth(), utcDate.getUTCDate(), 0, 0),

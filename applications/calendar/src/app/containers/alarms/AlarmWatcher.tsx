@@ -9,7 +9,7 @@ import { CalendarAlarm, CalendarEvent } from 'proton-shared/lib/interfaces/calen
 import { getNextEventTime } from '../../helpers/alarms';
 
 import notificationIcon from '../../../assets/notification.gif';
-import useGetCalendarEventRaw from '../../containers/calendar/useGetCalendarEventRaw';
+import useGetCalendarEventRaw from '../../containers/calendar/eventStore/useGetCalendarEventRaw';
 import { getAlarmMessage } from '../../helpers/alarms';
 import { MINUTE } from '../../constants';
 
@@ -35,7 +35,7 @@ const getFirstUnseenAlarm = (alarms: CalendarAlarm[] = [], set: Set<string>) => 
 interface Props {
     alarms: CalendarAlarm[];
     tzid: string;
-    getCachedEvent: (calendarID: string, eventID: string) => Promise<CalendarEvent>;
+    getCachedEvent: (calendarID: string, eventID: string) => CalendarEvent | undefined;
 }
 const AlarmWatcher = ({ alarms = [], tzid, getCachedEvent }: Props) => {
     const api = useApi();

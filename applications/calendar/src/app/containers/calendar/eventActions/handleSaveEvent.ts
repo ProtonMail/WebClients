@@ -2,7 +2,6 @@ import { c } from 'ttag';
 import { useGetAddressKeys } from 'react-components';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { Calendar, CalendarBootstrap } from 'proton-shared/lib/interfaces/calendar';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
@@ -12,12 +11,12 @@ import getEditEventData from '../event/getEditEventData';
 import getAllEventsByUID from '../getAllEventsByUID';
 import { getOriginalEvent } from './recurringHelper';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
-import { RECURRING_TYPES } from '../../../constants';
-import { EventPersonalMap } from '../../../interfaces/EventPersonalMap';
 import handleSaveSingleEvent from './handleSaveSingleEvent';
 import handleSaveRecurringEvent from './handleSaveRecurringEvent';
 import withVeventRruleWkst, { withRruleWkst } from './rruleWkst';
 import { withRruleUntil } from './rruleUntil';
+import { GetDecryptedEventCb } from '../eventStore/interface';
+import { OnSaveConfirmationCb } from '../interface';
 
 interface Arguments {
     temporaryEvent: any; // todo
@@ -26,14 +25,14 @@ interface Arguments {
     addresses: Address[];
     calendars: Calendar[];
 
-    onSaveConfirmation: (data: any) => Promise<RECURRING_TYPES>;
+    onSaveConfirmation: OnSaveConfirmationCb;
 
     api: Api;
     call: () => Promise<void>;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
     getCalendarKeys: ReturnType<typeof useGetAddressKeys>;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
-    getDecryptedEvent: (Event: CalendarEvent) => Promise<undefined | [VcalVeventComponent, EventPersonalMap]>;
+    getDecryptedEvent: GetDecryptedEventCb;
     createNotification: (data: any) => void;
 }
 

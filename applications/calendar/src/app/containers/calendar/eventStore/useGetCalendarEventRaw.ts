@@ -8,6 +8,7 @@ import {
 import { useCallback } from 'react';
 import { readCalendarEvent, readSessionKeys } from 'proton-shared/lib/calendar/deserialize';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 
 const useGetCalendarEventRaw = () => {
     const getCalendarBootstrap = useGetCalendarBootstrap();
@@ -17,14 +18,14 @@ const useGetCalendarEventRaw = () => {
     const getAddressKeys = useGetAddressKeys();
 
     return useCallback(
-        async (Event) => {
+        async (Event: CalendarEvent) => {
             const getAuthorPublicKeys = async () => {
                 const addresses = await getAddresses();
                 const ownAddress = addresses.find(({ Email }) => Email === Event.Author);
 
                 if (ownAddress) {
                     const result = await getAddressKeys(ownAddress.ID);
-                    return splitKeys(result, false).publicKeys;
+                    return splitKeys(result).publicKeys;
                 }
 
                 const { publicKeys = [] } = await getPublicKeys(Event.Author);
@@ -33,7 +34,7 @@ const useGetCalendarEventRaw = () => {
 
             const [calendarKeys, authorPublicKeys] = await Promise.all([
                 getCalendarKeys(Event.CalendarID),
-                getAuthorPublicKeys(Event.Author)
+                getAuthorPublicKeys()
             ]);
             const [sharedSessionKey, calendarSessionKey] = await readSessionKeys(
                 Event,

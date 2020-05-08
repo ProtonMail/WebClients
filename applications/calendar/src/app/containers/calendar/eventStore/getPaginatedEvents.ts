@@ -1,4 +1,4 @@
-import parseMainEventData from './event/parseMainEventData';
+import parseMainEventData from '../event/parseMainEventData';
 import { getUnixTime } from 'date-fns';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { queryEvents } from 'proton-shared/lib/api/calendars';

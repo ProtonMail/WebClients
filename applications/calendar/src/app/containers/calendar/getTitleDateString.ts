@@ -2,14 +2,14 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import { format } from 'proton-shared/lib/date-fns-utc';
 import { VIEWS } from '../../constants';
 
-const getTitleDateString = (view: VIEWS, range: number, utcDateRange: Date[], utcDate: Date) => {
+const getTitleDateString = (view: VIEWS, range: number | undefined, utcDateRange: Date[], utcDate: Date) => {
     const formatOptions = { locale: dateLocale };
 
     if (view === VIEWS.DAY) {
         return format(utcDate, 'PPPP', formatOptions);
     }
 
-    if (view === VIEWS.WEEK || range > 0) {
+    if (view === VIEWS.WEEK || (range && range > 0)) {
         const [utcFrom, utcTo] = utcDateRange;
 
         if (utcFrom.getUTCMonth() === utcTo.getUTCMonth()) {

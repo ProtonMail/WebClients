@@ -1,15 +1,14 @@
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { Address } from 'proton-shared/lib/interfaces';
 import { Member } from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import parseMainEventData from './parseMainEventData';
 import { getRecurrenceId } from './getEventHelper';
-import { EventPersonalMap } from '../../../interfaces/EventPersonalMap';
 import { getComponentWithPersonalPart } from '../../../helpers/event';
+import { DecryptedTupleResult } from '../eventStore/interface';
 
 interface GetEditEventDataArguments {
     Event: CalendarEvent;
-    eventResult?: [VcalVeventComponent, EventPersonalMap];
+    eventResult?: DecryptedTupleResult;
     memberResult: [Member, Address];
 }
 

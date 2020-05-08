@@ -9,6 +9,7 @@ import getSyncMultipleEventsPayload from '../getSyncMultipleEventsPayload';
 import { getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
 import { getHasFutureOption } from './recurringHelper';
 import { EventOldData } from '../../../interfaces/EventData';
+import { OnDeleteConfirmationCb } from '../interface';
 
 interface Arguments {
     originalEventData: EventOldData;
@@ -18,7 +19,7 @@ interface Arguments {
     recurrences: CalendarEvent[];
     canOnlyDeleteAll: boolean;
 
-    onDeleteConfirmation: (data: any) => Promise<RECURRING_TYPES>;
+    onDeleteConfirmation: OnDeleteConfirmationCb;
     api: Api;
     call: () => Promise<void>;
     createNotification: (data: any) => void;
@@ -45,7 +46,9 @@ const handleDeleteRecurringEvent = async ({
             ? [RECURRING_TYPES.ALL]
             : [
                   RECURRING_TYPES.SINGLE,
-                  getHasFutureOption(originalEventData.veventComponent, recurrence) && RECURRING_TYPES.FUTURE,
+                  getHasFutureOption(originalEventData.veventComponent, recurrence)
+                      ? RECURRING_TYPES.FUTURE
+                      : undefined,
                   RECURRING_TYPES.ALL
               ].filter(isTruthy);
 

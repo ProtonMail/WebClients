@@ -1,24 +1,40 @@
-import { getOccurrences, getOccurrencesBetween } from 'proton-shared/lib/calendar/recurring';
+import { getOccurrences, getOccurrencesBetween, RecurringResult } from 'proton-shared/lib/calendar/recurring';
+import { EventsCache, RecurringEventsCache } from '../interface';
 
-export const getRecurringEvents = (events, recurringEvents, searchStart, searchEnd) => {
-    const result = [];
+interface Result {
+    id: string;
+    eventOccurrences: RecurringResult[];
+    isSingleOccurrence: boolean;
+}
+
+export const getRecurringEvents = (
+    events: EventsCache,
+    recurringEvents: RecurringEventsCache,
+    searchStart: number,
+    searchEnd: number
+) => {
+    const result: Result[] = [];
 
     for (const uid of recurringEvents.keys()) {
-        const { parentEventID, recurrenceInstances, cache } = recurringEvents.get(uid);
+        const recurringEventsCacheRecord = recurringEvents.get(uid);
+        if (!recurringEventsCacheRecord) {
+            continue;
+        }
+        const { parentEventID, recurrenceInstances, cache } = recurringEventsCacheRecord;
 
         // If just a recurrence-id was received, without a link to any parent
         if (!parentEventID) {
             continue;
         }
 
-        if (!events.has(parentEventID)) {
+        const parentEventCacheRecord = events.get(parentEventID);
+        if (!parentEventCacheRecord) {
             continue;
         }
 
-        const { component } = events.get(parentEventID);
+        const { component } = parentEventCacheRecord;
 
         let eventOccurrences = getOccurrencesBetween(component, searchStart, searchEnd, cache);
-
         if (!eventOccurrences.length) {
             continue;
         }

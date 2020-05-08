@@ -16,7 +16,6 @@ interface Props {
     isCreateEvent: boolean;
     model: EventModel;
     onSave: (value: EventModel) => Promise<void>;
-    onDelete: () => Promise<void>;
     onClose: () => void;
     onEdit: (value: EventModel) => void;
     style: object;

@@ -1,5 +1,4 @@
-import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef, MutableRefObject } from 'react';
 import { useCalendarBootstrap, useAddresses, useActiveBreakpoint, useModals } from 'react-components';
 import {
     convertUTCDateTimeToZone,
@@ -11,9 +10,9 @@ import {
     getTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
 import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
-import { SETTINGS_VIEW } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
 import { VIEWS, MINIMUM_DATE_UTC, MAXIMUM_DATE_UTC } from '../../constants';
-import useCalendarsEvents from './useCalendarsEvents';
+import useCalendarsEvents from './eventStore/useCalendarsEvents';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
 import AlarmContainer from '../alarms/AlarmContainer';
@@ -26,55 +25,27 @@ import {
     getIsCalendarDisabled,
     getProbablyActiveCalendars
 } from 'proton-shared/lib/calendar/calendar';
+import * as H from 'history';
+import {
+    getAutoDetectPrimaryTimezone,
+    getDefaultCalendarID,
+    getDefaultView,
+    getDisplaySecondaryTimezone,
+    getDisplayWeekNumbers,
+    getSecondaryTimezone,
+    getTzid,
+    getWeekStartsOn
+} from './getSettings';
+import { fromUrlParams, toUrlParams } from './getUrlHelper';
+import { InteractiveRef, TimeGridRef } from './interface';
+import { CalendarsEventsCache } from './eventStore/interface';
+import { CalendarAlarmsCache } from '../alarms/CacheInterface';
 
 const { DAY, WEEK, MONTH } = VIEWS;
 
-const URL_PARAMS_VIEWS_CONVERSION = {
-    //'year': YEAR,
-    month: MONTH,
-    week: WEEK,
-    day: DAY
-};
-const VIEW_URL_PARAMS_VIEWS_CONVERSION = {
-    //'year': YEAR,
-    [MONTH]: 'month',
-    [WEEK]: 'week',
-    [DAY]: 'day'
-};
-
-const SETTINGS_VIEW_CONVERSION = {
-    //[SETTINGS_VIEW.YEAR]: YEAR,
-    [SETTINGS_VIEW.MONTH]: MONTH,
-    [SETTINGS_VIEW.WEEK]: WEEK,
-    [SETTINGS_VIEW.DAY]: DAY
-};
-
 const SUPPORTED_VIEWS = [MONTH, WEEK, DAY];
 
-const getDefaultView = ({ ViewPreference } = {}) => {
-    return SETTINGS_VIEW_CONVERSION[ViewPreference] || WEEK;
-};
-
-const getUrlView = (urlView) => {
-    if (urlView && URL_PARAMS_VIEWS_CONVERSION[urlView]) {
-        return URL_PARAMS_VIEWS_CONVERSION[urlView];
-    }
-};
-
-const getUrlDate = (urlYear, urlMonth, urlDay) => {
-    const year = parseInt(urlYear, 10);
-    const month = parseInt(urlMonth, 10);
-    const day = parseInt(urlDay, 10);
-
-    if (year >= 0 && year <= 9999 && month >= 1 && month <= 12 && day >= 1 && day <= 31) {
-        const wantedDate = new Date(Date.UTC(year, month - 1, day));
-        if (wantedDate >= MINIMUM_DATE_UTC && wantedDate <= MAXIMUM_DATE_UTC) {
-            return wantedDate;
-        }
-    }
-};
-
-const getRange = (view, range) => {
+const getRange = (view: VIEWS, range: number) => {
     if (!range) {
         return;
     }
@@ -85,63 +56,11 @@ const getRange = (view, range) => {
     return Math.min(max, 5);
 };
 
-const getDefaultCalendarID = ({ DefaultCalendarID } = {}) => {
-    // DefaultCalendarID is either null or a string
-    return DefaultCalendarID || undefined;
-};
-
-const getWeekStartsOn = ({ WeekStart = 0 } = {}) => {
-    // Sunday should be 0, not 7
-    return WeekStart % 7;
-};
-
-const getAutoDetectPrimaryTimezone = ({ AutoDetectPrimaryTimezone = false } = {}) => {
-    return !!AutoDetectPrimaryTimezone;
-};
-
-const getDisplaySecondaryTimezone = ({ DisplaySecondaryTimezone } = {}) => {
-    return !!DisplaySecondaryTimezone;
-};
-
-const getSecondaryTimezone = ({ SecondaryTimezone } = {}) => {
-    return SecondaryTimezone;
-};
-
-const getDisplayWeekNumbers = ({ DisplayWeekNumber } = {}) => {
-    return !!DisplayWeekNumber;
-};
-
-const formatAbbreviation = (abbreviation, offset) => {
+const formatAbbreviation = (offset: number) => {
     return `GMT${formatTimezoneOffset(offset)}`;
 };
 
-export const getTzid = ({ PrimaryTimezone } = {}, defaultTimezone) => {
-    if (PrimaryTimezone) {
-        return PrimaryTimezone;
-    }
-    return defaultTimezone;
-};
-
-const fromUrlParams = (pathname) => {
-    const [, , ...rest] = pathname.split('/');
-    return {
-        view: getUrlView(rest[0]),
-        range: parseInt(rest[4], 10) || undefined,
-        date: getUrlDate(rest[1], rest[2], rest[3])
-    };
-};
-
-const toUrlParams = ({ date, defaultDate, view, defaultView, range }) => {
-    const dateParams =
-        !range && isSameDay(date, defaultDate)
-            ? undefined
-            : [date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()];
-    const viewParam = !dateParams && view === defaultView ? undefined : VIEW_URL_PARAMS_VIEWS_CONVERSION[view];
-    const result = [viewParam, ...(dateParams || []), range];
-    return ['/calendar', ...result].filter(Boolean).join('/');
-};
-
-const customReducer = (oldState, newState) => {
+const customReducer = (oldState: { [key: string]: any }, newState: { [key: string]: any }) => {
     const keys = Object.keys(newState);
     for (const key of keys) {
         // If there is a difference in any of the keys, return a new object.
@@ -156,16 +75,30 @@ const customReducer = (oldState, newState) => {
     return oldState;
 };
 
-/** @type any **/
-const CalendarContainer = ({ calendars, calendarUserSettings, history, location }) => {
+interface Props {
+    calendars: Calendar[];
+    calendarUserSettings: CalendarUserSettings;
+    history: H.History;
+    location: H.Location;
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
+    calendarsAlarmsCacheRef: MutableRefObject<CalendarAlarmsCache>;
+}
+const CalendarContainer = ({
+    calendars,
+    calendarUserSettings,
+    history,
+    location,
+    calendarsEventsCacheRef,
+    calendarsAlarmsCacheRef
+}: Props) => {
     const [addresses, loadingAddresses] = useAddresses();
     const [disableCreate, setDisableCreate] = useState(false);
     const { isNarrow } = useActiveBreakpoint();
 
     const { createModal } = useModals();
 
-    const interactiveRef = useRef();
-    const timeGridViewRef = useRef();
+    const interactiveRef = useRef<InteractiveRef>(null);
+    const timeGridViewRef = useRef<TimeGridRef>(null);
 
     const [activeCalendars, disabledCalendars, visibleCalendars] = useMemo(() => {
         return [
@@ -205,7 +138,7 @@ const CalendarContainer = ({ calendars, calendarUserSettings, history, location 
     }, [urlDate, urlView, urlRange]);
 
     const [localTzid] = useState(() => getTimezone());
-    const [customTzid, setCustomTzid] = useState();
+    const [customTzid, setCustomTzid] = useState('');
     const savedTzid = getTzid(calendarUserSettings, localTzid);
     const tzid = customTzid || savedTzid;
 
@@ -226,7 +159,7 @@ const CalendarContainer = ({ calendars, calendarUserSettings, history, location 
         return toUTCDate(convertUTCDateTimeToZone(fromUTCDate(nowDate), tzid));
     }, [nowDate, tzid]);
 
-    const utcDefaultDateRef = useRef();
+    const utcDefaultDateRef = useRef<{ prev: Date; value: Date }>();
     // A ref is used to avoid falling on the cache purging of react
     if (
         !utcDefaultDateRef.current ||
@@ -272,14 +205,11 @@ const CalendarContainer = ({ calendars, calendarUserSettings, history, location 
 
     const timezoneInformation = useMemo(() => {
         const [startDate] = utcDateRangeInTimezone;
-        const { abbreviation, offset } = getTimezoneOffset(startDate, tzid);
-        const { abbreviation: secondaryAbbreviaton, offset: secondaryOffset } = getTimezoneOffset(
-            startDate,
-            secondaryTzid || tzid
-        );
+        const { offset } = getTimezoneOffset(startDate, tzid);
+        const { offset: secondaryOffset } = getTimezoneOffset(startDate, secondaryTzid || tzid);
         return {
-            primaryTimezone: `${formatAbbreviation(abbreviation, offset)}`,
-            secondaryTimezone: `${formatAbbreviation(secondaryAbbreviaton, secondaryOffset)}`,
+            primaryTimezone: `${formatAbbreviation(offset)}`,
+            secondaryTimezone: `${formatAbbreviation(secondaryOffset)}`,
             secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE
         };
     }, [utcDateRangeInTimezone, secondaryTzid, tzid]);
@@ -298,17 +228,16 @@ const CalendarContainer = ({ calendars, calendarUserSettings, history, location 
         document.title = [titleDateString, 'ProtonCalendar'].filter(Boolean).join(' - ');
     }, [view, range, utcDate, utcDateRange]);
 
-    const [calendarsEvents, loadingEvents, getCachedEvent, getDecryptedEvent] = useCalendarsEvents(
+    const { calendarsEvents, loadingEvents, getCachedEvent, getDecryptedEvent } = useCalendarsEvents(
         visibleCalendars,
         utcDateRangeInTimezone,
-        tzid
+        tzid,
+        calendarsEventsCacheRef
     );
 
     const scrollToNow = useCallback(() => {
         setTimeout(() => {
-            if (timeGridViewRef.current) {
-                timeGridViewRef.current.scrollToNow();
-            }
+            timeGridViewRef.current?.scrollToNow?.();
         }, 10);
     }, []);
 
@@ -364,7 +293,7 @@ const CalendarContainer = ({ calendars, calendarUserSettings, history, location 
         defaultCalendar ? defaultCalendar.ID : undefined
     );
 
-    const [containerRef, setContainerRef] = useState();
+    const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null);
 
     const isLoading = loadingCalendarBootstrap || loadingEvents || loadingAddresses;
 
@@ -411,7 +340,7 @@ const CalendarContainer = ({ calendars, calendarUserSettings, history, location 
                 events={calendarsEvents}
                 onClickDate={isNarrow ? handleChangeDate : handleClickDateWeekView}
                 onChangeDate={handleChangeDate}
-                onInteraction={(active) => setDisableCreate(active)}
+                onInteraction={(active: boolean) => setDisableCreate(active)}
                 addresses={addresses}
                 activeCalendars={activeCalendars}
                 defaultCalendar={defaultCalendar}
@@ -420,15 +349,14 @@ const CalendarContainer = ({ calendars, calendarUserSettings, history, location 
                 containerRef={containerRef}
                 timeGridViewRef={timeGridViewRef}
             />
-            <AlarmContainer calendars={visibleCalendars} tzid={tzid} getCachedEvent={getCachedEvent} />
+            <AlarmContainer
+                calendars={visibleCalendars}
+                tzid={tzid}
+                getCachedEvent={getCachedEvent}
+                cacheRef={calendarsAlarmsCacheRef}
+            />
         </CalendarContainerView>
     );
-};
-
-CalendarContainer.propTypes = {
-    calendars: PropTypes.array,
-    history: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired
 };
 
 export default CalendarContainer;

@@ -10,19 +10,9 @@ import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/even
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
 import { EventModel } from '../../interfaces/EventModel';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
 
-const modelToEventProperties = (oldTemporaryEvent: any, { start, end, isAllDay }: EventModel, tzid: string) => {
-    // If unrelevant things were changed, like title or description
-    if (
-        oldTemporaryEvent &&
-        oldTemporaryEvent.tmpData &&
-        oldTemporaryEvent.tmpData.start === start &&
-        oldTemporaryEvent.tmpData.end === end &&
-        oldTemporaryEvent.tmpData.isAllDay === isAllDay
-    ) {
-        return;
-    }
-
+export const getCalendarViewEventProperties = ({ start, end, isAllDay }: EventModel, tzid: string) => {
     const utcStart = getTimeInUtc(start, isAllDay);
     const utcEnd = getTimeInUtc(end, isAllDay);
 
@@ -34,33 +24,67 @@ const modelToEventProperties = (oldTemporaryEvent: any, { start, end, isAllDay }
         start: calendarStart,
         end: max(calendarStart, calendarEnd),
         isAllDay: isAllDay || isAllPartDay,
-        isAllPartDay
+        isAllPartDay,
+        isRecurring: false
     };
 };
 
-export const getCreateTemporaryEvent = (Calendar: tsCalendar) => {
+const modelToEventProperties = (
+    oldTemporaryEvent: CalendarViewEventTemporaryEvent | undefined,
+    model: EventModel,
+    tzid: string
+) => {
+    // If unrelevant things were changed, like title or description
+    if (
+        oldTemporaryEvent &&
+        oldTemporaryEvent.tmpData &&
+        oldTemporaryEvent.tmpData.start === model.start &&
+        oldTemporaryEvent.tmpData.end === model.end &&
+        oldTemporaryEvent.tmpData.isAllDay === model.isAllDay
+    ) {
+        return;
+    }
+    return getCalendarViewEventProperties(model, tzid);
+};
+
+export const getCreateTemporaryEvent = (
+    Calendar: tsCalendar,
+    model: EventModel,
+    tzid: string
+): CalendarViewEventTemporaryEvent => {
     return {
         id: 'tmp',
         data: {
             Calendar
-        }
+        },
+        ...getCalendarViewEventProperties(model, tzid),
+        tmpData: model,
+        tmpDataOriginal: model
     };
 };
 
-export const getEditTemporaryEvent = (targetEvent: any, model: EventModel, tzid: string) => {
-    const { id, targetId, data } = targetEvent;
+export const getEditTemporaryEvent = (
+    targetEvent: CalendarViewEventTemporaryEvent | CalendarViewEvent,
+    model: EventModel,
+    tzid: string
+): CalendarViewEventTemporaryEvent => {
+    const { id, data } = targetEvent;
     return {
         id: 'tmp',
-        targetId: targetId || id,
+        targetId: (targetEvent as CalendarViewEventTemporaryEvent).targetId || id,
         data,
-        ...modelToEventProperties({}, model, tzid),
+        ...getCalendarViewEventProperties(model, tzid),
         tmpData: model,
         tmpDataOriginal: model,
         tmpOriginalTarget: targetEvent
     };
 };
 
-export const getTemporaryEvent = (temporaryEvent: any, model: EventModel, tzid: string) => {
+export const getTemporaryEvent = (
+    temporaryEvent: CalendarViewEventTemporaryEvent,
+    model: EventModel,
+    tzid: string
+): CalendarViewEventTemporaryEvent => {
     const tmpDataOriginal = temporaryEvent.tmpDataOriginal || model;
     return {
         ...temporaryEvent,
@@ -84,7 +108,7 @@ interface GetUpdateDateTimeArguments {
 export const getUpdatedDateTime = (
     oldModel: EventModel,
     { start, end, isAllDay, tzid: fromTzid }: GetUpdateDateTimeArguments
-) => {
+): EventModel => {
     const tzStart = oldModel.start.tzid;
     const tzEnd = oldModel.end.tzid;
 

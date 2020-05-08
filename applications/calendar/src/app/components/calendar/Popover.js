@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { useRect } from '../../hooks/useRect';
 
+/** @type any **/
 const Popover = ({ targetRef, containerRef, children, isOpen, once = false, when }) => {
     const [popoverRef, setPopoverRef] = useState();
 

@@ -2,17 +2,35 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
 import { propertiesToModel } from '../eventModal/eventForm/propertiesToModel';
 import { propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToNotificationModel';
+import { CalendarViewEventData } from '../../containers/calendar/interface';
+import { DecryptedTupleResult } from '../../containers/calendar/eventStore/interface';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { EventPersonalMap } from '../../interfaces/EventPersonalMap';
 
-export const useReadEvent = (value, tzid) => {
+const DEFAULT_VEVENT: VcalVeventComponent = {
+    component: 'vevent',
+    uid: { value: '123' },
+    dtstart: {
+        value: { year: 1970, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: true }
+    },
+    dtend: {
+        value: { year: 1970, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: true }
+    },
+    dtstamp: {
+        value: { year: 1970, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: true }
+    }
+};
+
+export const useReadEvent = (value: DecryptedTupleResult, tzid: string) => {
     return useMemo(() => {
-        const [veventComponent = {}, alarmMap = {}] = value || [];
+        const [veventComponent = DEFAULT_VEVENT, alarmMap = {}]: [VcalVeventComponent, EventPersonalMap] = value || [];
         const isAllDay = isIcalAllDay(veventComponent);
         const model = propertiesToModel(veventComponent, isAllDay, tzid);
         const notifications = Object.keys(alarmMap)
             .map((key) => {
                 return propertiesToNotificationModel(alarmMap[key], isAllDay);
             })
-            .flat();
+            .flat(1);
 
         return {
             ...model,
@@ -22,14 +40,17 @@ export const useReadEvent = (value, tzid) => {
     }, [value, tzid]);
 };
 
-export const useReadCalendarEvent = ({ readEvent, counter, Calendar, Event } = {}) => {
-    const eventCounterRef = useRef();
-    const unmountedRef = useRef();
+export type ReadCalendarEventResult = [DecryptedTupleResult | undefined, boolean, Error | undefined];
+export const useReadCalendarEvent = (calendarViewEventData?: CalendarViewEventData) => {
+    const { readEvent, counter, Calendar, Event } = calendarViewEventData || {};
 
-    const [state, setState] = useState(() => {
-        if (!readEvent) {
+    const eventCounterRef = useRef(0);
+    const unmountedRef = useRef(false);
+
+    const [state, setState] = useState<ReadCalendarEventResult>(() => {
+        if (!readEvent || !Calendar || !Event) {
             // Temporary events
-            return [undefined, false];
+            return [undefined, false, undefined];
         }
 
         const [newValue, promise, error] = readEvent(Calendar.ID, Event.ID);
@@ -37,11 +58,13 @@ export const useReadCalendarEvent = ({ readEvent, counter, Calendar, Event } = {
     });
 
     useEffect(() => {
-        return () => (unmountedRef.current = true);
+        return () => {
+            unmountedRef.current = true;
+        };
     }, []);
 
     useEffect(() => {
-        if (!readEvent) {
+        if (!readEvent || !Calendar || !Event || typeof counter === 'undefined') {
             // Temporary events
             setState([undefined, false, undefined]);
             return;

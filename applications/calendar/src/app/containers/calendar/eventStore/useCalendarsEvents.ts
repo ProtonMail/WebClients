@@ -1,109 +1,56 @@
-import { useRef, useEffect, useState, useMemo, useCallback } from 'react';
-import { useApi, useEventManager } from 'react-components';
-import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
-import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
+import { useEffect, useState, useMemo, useCallback, MutableRefObject } from 'react';
+import { useApi } from 'react-components';
 import createIntervalTree from 'interval-tree';
+import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
+import { Calendar as tsCalendar, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import useGetCalendarEventRaw from './useGetCalendarEventRaw';
 import useGetCalendarEventPersonal from './useGetCalendarEventPersonal';
-import { removeEventFromCache, setEventInCache } from './cache/cache';
+import { setEventInCache } from './cache/cache';
 import getPaginatedEvents from './getPaginatedEvents';
 import { getRecurringEvents } from './cache/getRecurringEvents';
-
-const { DELETE, CREATE, UPDATE } = EVENT_ACTIONS;
+import { CalendarsEventsCache, DecryptedEventRecord, DecryptedTupleResult } from './interface';
+import { CalendarViewEvent } from '../interface';
 
 const DAY_IN_MILLISECONDS = 86400000;
 
-const contains = (range, otherRanges) => {
+const contains = (range: Date[], otherRanges: Date[][]) => {
     return otherRanges.some((otherRange) => {
-        return otherRange && otherRange[1] >= range[1] && otherRange[0] <= range[0];
+        return otherRange && +otherRange[1] >= +range[1] && +otherRange[0] <= +range[0];
     });
 };
 
-/**
- * @param {Array} requestedCalendars
- * @param {Array} utcDateRange - Date range in UTC time
- * @param {String} tzid - Timezone to view the events in
- */
-const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
+export const getInitialCalendarEventCache = () => {
+    return {
+        ref: 0,
+        isUnmounted: false,
+        calendars: {}
+    };
+};
+
+const useCalendarsEvents = (
+    requestedCalendars: tsCalendar[],
+    utcDateRange: Date[],
+    tzid: string,
+    cacheRef: MutableRefObject<CalendarsEventsCache>
+) => {
     const [loading, setLoading] = useState(false);
-    const cacheRef = useRef();
-    const [rerender, setRerender] = useState(0);
-    const { subscribe } = useEventManager();
+    const [rerender, setRerender] = useState<any>();
     const api = useApi();
 
     const getEventRaw = useGetCalendarEventRaw();
     const getEventPersonal = useGetCalendarEventPersonal();
 
     useEffect(() => {
-        return subscribe(({ CalendarEvents = [], Calendars = [] }) => {
-            if (!cacheRef.current) {
-                return;
-            }
-
-            const calendars = cacheRef.current.calendars;
-
-            let actions = 0;
-
-            Calendars.forEach(({ ID: CalendarID, Action }) => {
-                if (Action === DELETE) {
-                    if (calendars[CalendarID]) {
-                        delete cacheRef.current.calendars[CalendarID];
-                        actions++;
-                    }
-                }
-            });
-
-            CalendarEvents.forEach(({ ID: EventID, Action, Event }) => {
-                if (Action === DELETE) {
-                    // The API does not send the calendar id to which this event belongs, so find it
-                    const calendarID = Object.keys(calendars).find((calendarID) => {
-                        return cacheRef.current.calendars[calendarID].events.has(EventID);
-                    });
-                    if (!calendarID) {
-                        return;
-                    }
-                    removeEventFromCache(EventID, cacheRef.current.calendars[calendarID]);
-                    // TODO: Only increment count if this event happened in the date range we are currently interested in
-                    actions++;
-                }
-
-                if (Action === UPDATE || Action === CREATE) {
-                    const { CalendarID } = Event;
-
-                    const calendarCache = cacheRef.current.calendars[CalendarID];
-                    if (!calendarCache) {
-                        return;
-                    }
-                    setEventInCache(Event, calendarCache);
-                    // TODO: Only increment count if this event happened in the date range we are currently interested in
-                    actions++;
-                }
-            });
-
-            if (actions > 0) {
-                setRerender((old) => ++old);
-            }
-        });
-    }, []);
-
-    useEffect(() => {
+        cacheRef.current.isUnmounted = false;
+        cacheRef.current.rerender = () => setRerender({});
         return () => {
-            if (!cacheRef.current) {
-                return;
-            }
+            cacheRef.current.rerender = undefined;
             cacheRef.current.isUnmounted = true;
         };
     }, []);
 
     useEffect(() => {
-        if (!cacheRef.current) {
-            cacheRef.current = {
-                ref: 0,
-                isUnmounted: false,
-                calendars: {}
-            };
-        }
-
         const toFetch = requestedCalendars.filter(({ ID: CalendarID }) => {
             if (!cacheRef.current.calendars[CalendarID]) {
                 cacheRef.current.calendars[CalendarID] = {
@@ -133,20 +80,11 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                 toFetch.map(async ({ ID: CalendarID }) => {
                     const Events = await getPaginatedEvents(api, CalendarID, utcDateRange, tzid);
 
-                    const { dateRanges, tree, events, recurringEvents, decryptedEvents } = cacheRef.current.calendars[
-                        CalendarID
-                    ];
-
-                    dateRanges.push([utcDateRange[0], utcDateRange[1]]);
+                    const calendarCache = cacheRef.current.calendars[CalendarID];
+                    calendarCache.dateRanges.push([utcDateRange[0], utcDateRange[1]]);
 
                     Events.forEach((Event) => {
-                        setEventInCache(Event, {
-                            tree,
-                            events,
-                            recurringEvents,
-                            decryptedEvents,
-                            isInitialFetch: true
-                        });
+                        setEventInCache(Event, calendarCache, true);
                     });
                 })
             );
@@ -168,53 +106,57 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
         });
     }, [requestedCalendars, utcDateRange]);
 
-    const getDecryptedEvent = (Event) => {
+    const getDecryptedEvent = (Event: CalendarEvent): Promise<DecryptedTupleResult> => {
         return Promise.all([getEventRaw(Event), getEventPersonal(Event)]);
     };
 
-    const readEvent = useCallback((CalendarID, EventID) => {
+    const readEvent = useCallback((CalendarID: string, EventID: string): DecryptedEventRecord => {
         if (!cacheRef.current || !cacheRef.current.calendars[CalendarID]) {
             return [undefined, undefined, new Error('Non-existing event')];
         }
 
         const { decryptedEvents, events } = cacheRef.current.calendars[CalendarID];
-        if (decryptedEvents.has(EventID)) {
-            return decryptedEvents.get(EventID);
+        const cachedDecryptedRecord = decryptedEvents.get(EventID);
+        if (cachedDecryptedRecord) {
+            return cachedDecryptedRecord;
         }
 
-        if (!events.has(EventID)) {
+        const cachedEventRecord = events.get(EventID);
+        if (!cachedEventRecord) {
             return [undefined, undefined, new Error('Non-existing event')];
         }
-        const { Event: cachedEvent } = events.get(EventID);
+        const { Event: cachedEvent } = cachedEventRecord;
 
         const promise = getDecryptedEvent(cachedEvent)
-            .then((result) => {
-                return [result, undefined, undefined];
-            })
-            .catch((error) => {
-                return [undefined, undefined, error];
-            })
-            .then((record) => {
+            .then(
+                (result): DecryptedEventRecord => {
+                    return [result, undefined, undefined];
+                }
+            )
+            .catch(
+                (error: Error): DecryptedEventRecord => {
+                    return [undefined, undefined, error];
+                }
+            )
+            .then((record: DecryptedEventRecord) => {
                 decryptedEvents.set(EventID, record);
                 return record;
             });
-        const record = [undefined, promise, undefined];
+        const record: DecryptedEventRecord = [undefined, promise, undefined];
         decryptedEvents.set(EventID, record);
         return record;
     }, []);
 
-    const getCachedEvent = useCallback((calendarID, eventID) => {
+    const getCachedEvent = useCallback((calendarID: string, eventID: string) => {
         if (!cacheRef.current || !cacheRef.current.calendars || !cacheRef.current.calendars[calendarID]) {
             return;
         }
         const cachedEvent = cacheRef.current.calendars[calendarID].events.get(eventID);
-        if (cachedEvent && cachedEvent.Event) {
-            return cachedEvent.Event;
-        }
+        return cachedEvent?.Event;
     }, []);
 
     return useMemo(() => {
-        const events = requestedCalendars
+        const events: CalendarViewEvent[] = requestedCalendars
             .map((Calendar) => {
                 const { ID } = Calendar;
                 if (!cacheRef.current || !cacheRef.current.calendars[ID]) {
@@ -235,30 +177,41 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                 const searchStart = +utcDateRange[0] - DAY_IN_MILLISECONDS;
                 const searchEnd = +utcDateRange[1] + DAY_IN_MILLISECONDS;
 
-                const results = tree.search(searchStart, searchEnd).map(([, , id]) => {
-                    const { Event, isAllDay, isAllPartDay, isRecurring, start, end, counter } = events.get(id);
+                const results = tree
+                    .search(searchStart, searchEnd)
+                    .map(([, , id]) => {
+                        const cachedRecord = events.get(id);
+                        if (!cachedRecord) {
+                            return;
+                        }
+                        const { Event, isAllDay, isAllPartDay, isRecurring, start, end, counter } = cachedRecord;
 
-                    const data = {
-                        Event,
-                        Calendar,
-                        readEvent,
-                        counter
-                    };
+                        const data = {
+                            Event,
+                            Calendar,
+                            readEvent,
+                            counter
+                        };
 
-                    return {
-                        id,
-                        isAllDay,
-                        isAllPartDay,
-                        isRecurring,
-                        start,
-                        end,
-                        data
-                    };
-                });
+                        return {
+                            id,
+                            isAllDay,
+                            isAllPartDay,
+                            isRecurring,
+                            start,
+                            end,
+                            data
+                        };
+                    })
+                    .filter(isTruthy);
 
                 const recurringResults = getRecurringEvents(events, recurringEvents, searchStart, searchEnd)
                     .map(({ id, eventOccurrences, isSingleOccurrence }) => {
-                        const { Event, isAllDay, isAllPartDay, isRecurring, counter } = events.get(id);
+                        const cachedRecord = events.get(id);
+                        if (!cachedRecord) {
+                            return [];
+                        }
+                        const { Event, isAllDay, isAllPartDay, isRecurring, counter } = cachedRecord;
 
                         const data = {
                             Event,
@@ -288,7 +241,7 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
                             };
                         });
                     })
-                    .flat();
+                    .flat(1);
 
                 return results
                     .concat(recurringResults)
@@ -311,7 +264,12 @@ const useCalendarsEvents = (requestedCalendars, utcDateRange, tzid) => {
             })
             .flat();
 
-        return [events, loading, getCachedEvent, getDecryptedEvent];
+        return {
+            calendarsEvents: events,
+            loadingEvents: loading,
+            getCachedEvent,
+            getDecryptedEvent
+        };
     }, [rerender, tzid, loading, requestedCalendars, utcDateRange]);
 };
 
