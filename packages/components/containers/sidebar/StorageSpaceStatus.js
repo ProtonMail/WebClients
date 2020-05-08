@@ -27,12 +27,7 @@ const StorageSpaceStatus = ({ upgradeButton }) => {
     const usedPercent = Math.round((UsedSpace / MaxSpace) * 10000) / 100;
     const maxSpaceFormatted = humanSize(MaxSpace);
     const usedSpaceFormatted = humanSize(UsedSpace);
-    const color =
-        usedPercent < 60
-            ? 'circle-bar--global-success'
-            : usedPercent < 80
-            ? 'circle-bar--global-attention'
-            : 'circle-bar--global-warning';
+    const color = usedPercent < 60 ? 'circle-bar--low' : usedPercent < 80 ? 'circle-bar--medium' : 'circle-bar--full';
 
     return (
         <>
