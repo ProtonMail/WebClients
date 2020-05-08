@@ -50,21 +50,24 @@ export interface CalendarsModel {
     color: string;
 }
 
-export interface EventModel {
-    type: 'event' | 'alarm' | 'task';
+export interface EventModelView {
     uid?: string;
     frequencyModel: FrequencyModel;
     title: string;
     location: string;
     description: string;
+    start: DateTimeModel;
+    end: DateTimeModel;
+    rest?: any;
+}
+
+export interface EventModel extends EventModelView {
+    type: 'event' | 'alarm' | 'task';
     calendar: CalendarModel;
     calendars: CalendarsModel[];
     //attendees: AttendeeModel[];
     attendees?: any;
-    start: DateTimeModel;
-    end: DateTimeModel;
     isAllDay: boolean;
-    rest?: any;
     defaultPartDayNotification: NotificationModel;
     defaultFullDayNotification: NotificationModel;
     fullDayNotifications: NotificationModel[];
@@ -87,4 +90,9 @@ export interface EventModelErrors {
     interval?: string;
     until?: string;
     count?: string;
+}
+
+export interface EventModelReadView extends EventModelView {
+    notifications: NotificationModel[];
+    isAllDay: boolean;
 }

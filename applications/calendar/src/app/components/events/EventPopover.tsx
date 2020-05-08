@@ -1,6 +1,5 @@
 import React from 'react';
 import { SmallButton, PrimaryButton, Loader, useLoading, Alert, Icon, classnames } from 'react-components';
-import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { c } from 'ttag';
@@ -12,7 +11,21 @@ import PopoverHeader from './PopoverHeader';
 import PopoverFooter from './PopoverFooter';
 import PopoverContent from './PopoverContent';
 import { getEventErrorMessage } from './error';
+import { CalendarViewEvent, CalendarViewEventTemporaryEvent, WeekStartsOn } from '../../containers/calendar/interface';
+import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 
+interface Props {
+    formatTime: (date: Date) => string;
+    onEdit: (event: CalendarEvent) => void;
+    onDelete: (event: CalendarEvent) => Promise<void>;
+    onClose: () => void;
+    style: any;
+    popoverRef: any;
+    event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
+    tzid: string;
+    weekStartsOn: WeekStartsOn;
+    isNarrow: boolean;
+}
 const EventPopover = ({
     formatTime,
     onEdit,
@@ -24,11 +37,11 @@ const EventPopover = ({
     tzid,
     weekStartsOn,
     isNarrow
-}) => {
+}: Props) => {
     const [loadingAction, withLoadingAction] = useLoading();
 
     const targetEventData = (targetEvent && targetEvent.data) || {};
-    const { Calendar, Event, title: tmpTitle } = targetEventData;
+    const { Calendar, Event } = targetEventData;
 
     const isCalendarDisabled = getIsCalendarDisabled(Calendar);
 
@@ -36,14 +49,11 @@ const EventPopover = ({
     const model = useReadEvent(value, tzid);
 
     const handleDelete = () => {
-        if (!Event) {
-            return;
-        }
-        withLoadingAction(onDelete(Event));
+        Event && withLoadingAction(onDelete(Event));
     };
 
     const handleEdit = () => {
-        onEdit(Event);
+        Event && onEdit(Event);
     };
 
     const deleteButton = (
@@ -106,7 +116,6 @@ const EventPopover = ({
                     weekStartsOn={weekStartsOn}
                     model={model}
                     formatTime={formatTime}
-                    tmpTitle={tmpTitle}
                 />
             </PopoverContent>
             <PopoverFooter>
@@ -122,18 +131,6 @@ const EventPopover = ({
             </PopoverFooter>
         </div>
     );
-};
-
-EventPopover.propTypes = {
-    tzid: PropTypes.string,
-    formatTime: PropTypes.func,
-    style: PropTypes.object.isRequired,
-    onClose: PropTypes.func.isRequired,
-    onEdit: PropTypes.func,
-    onDelete: PropTypes.func,
-    event: PropTypes.object,
-    weekStartsOn: PropTypes.number,
-    layout: PropTypes.object
 };
 
 export default EventPopover;

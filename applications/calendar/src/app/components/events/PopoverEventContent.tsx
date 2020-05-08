@@ -1,28 +1,39 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
 import { Icon, Info } from 'react-components';
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { truncate } from 'proton-shared/lib/helpers/string';
 
 import PopoverNotification from './PopoverNotification';
 import CalendarIcon from '../CalendarIcon';
 import { getTimezonedFrequencyString } from '../../helpers/rrule';
+import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarViewEvent, CalendarViewEventTemporaryEvent, WeekStartsOn } from '../../containers/calendar/interface';
+import { EventModelReadView } from '../../interfaces/EventModel';
 
+interface Props {
+    Calendar: tsCalendar;
+    isCalendarDisabled: boolean;
+    event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
+    tzid: string;
+    weekStartsOn: WeekStartsOn;
+    model: EventModelReadView;
+    formatTime: (date: Date) => string;
+}
 const PopoverEventContent = ({
-    Calendar = {},
+    Calendar,
     isCalendarDisabled,
-    event: { start, end, isAllDay, isAllPartDay } = {},
+    event: { start, end, isAllDay, isAllPartDay },
     tzid,
     weekStartsOn,
     model,
     formatTime
-}) => {
+}: Props) => {
     const { Name: calendarName, Color } = Calendar;
-    const trimmedLocation = typeof model.location === 'string' ? model.location.trim() : '';
-    const trimmedDescription = typeof model.description === 'string' ? model.description.trim() : '';
+
+    const trimmedLocation = model.location.trim();
+    const trimmedDescription = model.description.trim();
 
     const dateString = useMemo(() => {
         const dateStart = formatUTC(start, 'PP', { locale: dateLocale });
@@ -35,10 +46,6 @@ const PopoverEventContent = ({
         return `${dateStart} - ${dateEnd}`;
     }, [start, end]);
 
-    const [weekdays] = useMemo(() => {
-        return ['cccc'].map((format) => getFormattedWeekdays(format, { locale: dateLocale }));
-    }, [dateLocale]);
-
     const timeString = useMemo(() => {
         const timeStart = formatTime(start);
         const timeEnd = formatTime(end);
@@ -50,11 +57,10 @@ const PopoverEventContent = ({
             date: model.start.date,
             startTzid: model.start.tzid,
             currentTzid: tzid,
-            weekdays,
             weekStartsOn,
             locale: dateLocale
         });
-    }, [model.frequencyModel, weekdays, start]);
+    }, [model.frequencyModel, start]);
 
     const calendarString = useMemo(() => {
         if (isCalendarDisabled) {
@@ -91,7 +97,7 @@ const PopoverEventContent = ({
             ) : null}
             {trimmedLocation ? (
                 <div className={wrapClassName}>
-                    <Icon title={c('Title').t`Location`} name="address" className={iconClassName} />
+                    <Icon name="address" className={iconClassName} />
                     <span className="break">{trimmedLocation}</span>
                 </div>
             ) : null}
@@ -105,7 +111,7 @@ const PopoverEventContent = ({
             ) : null}
             {trimmedDescription ? (
                 <div className={wrapClassName}>
-                    <Icon title={c('Title').t`Description`} name="note" className={iconClassName} />
+                    <Icon name="note" className={iconClassName} />
                     <p className="break mt0 mb0 pre-wrap">{trimmedDescription}</p>
                 </div>
             ) : null}
@@ -121,16 +127,6 @@ const PopoverEventContent = ({
             ) : null}
         </>
     );
-};
-
-PopoverEventContent.propTypes = {
-    Calendar: PropTypes.object,
-    isCalendarDisabled: PropTypes.bool,
-    event: PropTypes.object,
-    tzid: PropTypes.string,
-    weekStartsOn: PropTypes.number,
-    model: PropTypes.object,
-    formatTime: PropTypes.func
 };
 
 export default PopoverEventContent;

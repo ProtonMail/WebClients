@@ -53,9 +53,8 @@ export interface InteractiveRef {
     createEvent: () => void;
 }
 
-export interface CalendarViewEventTemporaryEvent extends Omit<CalendarViewEvent, 'data'> {
+export interface CalendarViewEventTemporaryEvent extends CalendarViewEvent {
     targetId?: string;
-    data: CalendarViewEventData;
     tmpData: EventModel;
     tmpDataOriginal: EventModel;
     tmpOriginalTarget?: CalendarViewEvent | CalendarViewEventTemporaryEvent;

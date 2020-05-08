@@ -6,6 +6,7 @@ import { CalendarViewEventData } from '../../containers/calendar/interface';
 import { DecryptedTupleResult } from '../../containers/calendar/eventStore/interface';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { EventPersonalMap } from '../../interfaces/EventPersonalMap';
+import { EventModelReadView } from '../../interfaces/EventModel';
 
 const DEFAULT_VEVENT: VcalVeventComponent = {
     component: 'vevent',
@@ -21,9 +22,12 @@ const DEFAULT_VEVENT: VcalVeventComponent = {
     }
 };
 
-export const useReadEvent = (value: DecryptedTupleResult, tzid: string) => {
+export const useReadEvent = (value: DecryptedTupleResult | undefined, tzid: string): EventModelReadView => {
     return useMemo(() => {
-        const [veventComponent = DEFAULT_VEVENT, alarmMap = {}]: [VcalVeventComponent, EventPersonalMap] = value || [];
+        const [veventComponent = DEFAULT_VEVENT, alarmMap = {}]: [VcalVeventComponent, EventPersonalMap] = value || [
+            DEFAULT_VEVENT,
+            {}
+        ];
         const isAllDay = isIcalAllDay(veventComponent);
         const model = propertiesToModel(veventComponent, isAllDay, tzid);
         const notifications = Object.keys(alarmMap)
