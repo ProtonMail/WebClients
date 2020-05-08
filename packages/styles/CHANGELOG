@@ -24,6 +24,7 @@
 - added new conversation styles and moved some CSS stuff here
 - added new `.pm-simple-table--isHoverable` flag to enable row hovering effect
 - added new `.pm-simple-table-stickyRow` flag settable on any table row to enable itself to stick the top when scrolling
+- added `covered-absolute` helper
 
 
 ## Updated/fixes
@@ -45,6 +46,7 @@
 - fixed dark mode notification links
 - fixed print version in dark mode
 - fixed date size in mail extra-details
+- updated `circle-bar--` modifiers class names
 
 
 # [1.8.2] - 2019-03-19

@@ -15,13 +15,13 @@ $stroke-width: 3px !default; // be careful to udpate SVG if you want to update t
   stroke-width: $stroke-width;
   fill: transparent;
   animation: circle-chart-fill 2s reverse;
-  transform: rotate(-90deg); 
+  transform: rotate(-90deg);
   transform-origin: center;
 }
-.circle-bar--global-attention .circle-chart__circle {
+.circle-bar--medium .circle-chart__circle {
    stroke: $pm-global-attention;
 }
-.circle-bar--global-warning .circle-chart__circle {
+.circle-bar--full .circle-chart__circle {
   stroke: $pm-global-warning;
 }
 .circle-chart__percent {
