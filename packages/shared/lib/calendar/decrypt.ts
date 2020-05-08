@@ -12,6 +12,7 @@ import {
 
 import { deserializeUint8Array } from '../helpers/serialization';
 import { CALENDAR_CARD_TYPE } from './constants';
+import { CalendarEventDataMap } from '../interfaces/calendar';
 
 export const getDecryptedSessionKey = async (data: Uint8Array, privateKeys: OpenPGPKey | OpenPGPKey[]) => {
     return decryptSessionKey({ message: await getMessage(data), privateKeys });
@@ -42,13 +43,13 @@ export const decryptCard = async (
     dataToDecrypt: Uint8Array,
     signature: string,
     publicKeys: OpenPGPKey | OpenPGPKey[],
-    sessionKey: SessionKey
+    sessionKey?: SessionKey
 ) => {
     const { data: decryptedData, verified } = await decryptMessage({
         message: await getMessage(dataToDecrypt),
         publicKeys,
         signature: await getSignature(signature),
-        sessionKeys: [sessionKey]
+        sessionKeys: sessionKey ? [sessionKey] : undefined
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -64,9 +65,9 @@ export const decryptAndVerifyPart = (
     {
         [CALENDAR_CARD_TYPE.SIGNED]: signed,
         [CALENDAR_CARD_TYPE.ENCRYPTED_AND_SIGNED]: encryptedAndSigned
-    }: { [key: number]: { Data: string; Signature: string } },
+    }: CalendarEventDataMap,
     publicKeys: OpenPGPKey | OpenPGPKey[],
-    sessionKey: SessionKey
+    sessionKey: SessionKey | undefined
 ) => {
     return Promise.all([
         signed && verifySignedCard(signed.Data, signed.Signature, publicKeys),

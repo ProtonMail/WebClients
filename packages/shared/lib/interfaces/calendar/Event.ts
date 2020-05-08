@@ -6,8 +6,14 @@ export interface CalendarEventData {
     Signature: string;
 }
 
+export type CalendarEventDataMap = { [key in CalendarEventDataType]?: CalendarEventData };
+
 export interface CalendarPersonalEventData extends CalendarEventData {
     MemberID: string;
+    Author: string;
+    Data: string;
+    Signature: string;
+    Type: CalendarEventDataType;
 }
 
 export interface Attendee {
@@ -26,7 +32,7 @@ export interface CalendarEvent {
     CalendarEvents: CalendarEventData[];
     SharedKeyPacket: string;
     SharedEvents: CalendarEventData[];
-    PersonalEvents: CalendarPersonalEventData;
+    PersonalEvent: CalendarPersonalEventData[];
     AttendeesEvent: CalendarEventData;
     Attendees: Attendee[];
 }
