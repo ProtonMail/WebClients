@@ -3,33 +3,33 @@ import { VIEWS } from '../../constants';
 import { WeekStartsOn } from './interface';
 
 export const getWeekStartsOn = (calendarUserSettings: CalendarUserSettings): WeekStartsOn => {
-    const weekStart = calendarUserSettings?.WeekStart ?? 0;
+    const weekStart = calendarUserSettings.WeekStart;
     return (weekStart % 7) as WeekStartsOn;
 };
 
 export const getAutoDetectPrimaryTimezone = (calendarUserSettings: CalendarUserSettings) => {
-    return !!calendarUserSettings?.AutoDetectPrimaryTimezone;
+    return !!calendarUserSettings.AutoDetectPrimaryTimezone;
 };
 
 export const getDisplaySecondaryTimezone = (calendarUserSettings: CalendarUserSettings) => {
-    return !!calendarUserSettings?.DisplaySecondaryTimezone;
+    return !!calendarUserSettings.DisplaySecondaryTimezone;
 };
 
 export const getSecondaryTimezone = (calendarUserSettings: CalendarUserSettings) => {
-    return calendarUserSettings?.SecondaryTimezone;
+    return calendarUserSettings.SecondaryTimezone;
 };
 
 export const getDisplayWeekNumbers = (calendarUserSettings: CalendarUserSettings) => {
-    return !!calendarUserSettings?.DisplayWeekNumber;
+    return !!calendarUserSettings.DisplayWeekNumber;
 };
 
 export const getDefaultCalendarID = (calendarUserSettings: CalendarUserSettings) => {
     // DefaultCalendarID is either null or a string
-    return calendarUserSettings?.DefaultCalendarID || undefined;
+    return calendarUserSettings.DefaultCalendarID || undefined;
 };
 
 export const getDefaultTzid = (calendarUserSettings: CalendarUserSettings, defaultTimezone: string) => {
-    const primaryTimezone = calendarUserSettings?.PrimaryTimezone;
+    const primaryTimezone = calendarUserSettings.PrimaryTimezone;
     return primaryTimezone || defaultTimezone;
 };
 

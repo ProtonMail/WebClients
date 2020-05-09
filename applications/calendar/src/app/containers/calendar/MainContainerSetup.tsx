@@ -34,7 +34,7 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
 
     useEffect(() => {
         updateLongLocale({ displayAMPM: calendarUserSettings.TimeFormat === SETTINGS_TIME_FORMAT.H12 });
-    }, [calendarUserSettings]);
+    }, [calendarUserSettings.TimeFormat]);
 
     const calendarsEventsCacheRef = useRef<CalendarsEventsCache>(getCalendarsEventCache());
     useCalendarsEventsEventListener(calendarsEventsCacheRef);
