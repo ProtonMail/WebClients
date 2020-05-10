@@ -1,11 +1,11 @@
-const eachDayOfInterval = (start, end) => {
+const eachDayOfInterval = (start: Date, end: Date) => {
     const endTime = end.getTime();
 
     if (!(start.getTime() <= endTime)) {
         throw new RangeError('Invalid interval');
     }
 
-    const dates = [];
+    const dates: Date[] = [];
 
     const currentDate = new Date(start);
     currentDate.setUTCHours(0, 0, 0, 0);

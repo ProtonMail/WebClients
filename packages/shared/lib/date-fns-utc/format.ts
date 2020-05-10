@@ -1,6 +1,11 @@
-import longFormatters from 'date-fns/_lib/format/longFormatters/index';
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
+import longFormatters from 'date-fns/_lib/format/longFormatters';
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
 import formatters from 'date-fns/_lib/format/formatters/index';
 import defaultLocale from 'date-fns/locale/en-US';
+import { WeekStartsOn } from './interface';
 
 /**
  * We copy here (with some refactor) the code for the format function from the 'date-fns' library.
@@ -26,11 +31,15 @@ const formattingTokensRegExp = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|
 const longFormattingTokensRegExp = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g;
 const unescapedLatinCharacterRegExp = /[a-zA-Z]/;
 
-const cleanEscapedString = (input) => {
-    return input.match(escapedStringRegExp)[1].replace(doubleQuoteRegExp, "'");
+const cleanEscapedString = (input: string) => {
+    const matcherResult = input.match(escapedStringRegExp);
+    if (!matcherResult) {
+        return '';
+    }
+    return matcherResult[1].replace(doubleQuoteRegExp, "'");
 };
 
-const toInteger = (dirtyNumber) => {
+const toInteger = (dirtyNumber: any) => {
     if (dirtyNumber === null || dirtyNumber === true || dirtyNumber === false) {
         return NaN;
     }
@@ -44,27 +53,36 @@ const toInteger = (dirtyNumber) => {
     return number < 0 ? Math.ceil(number) : Math.floor(number);
 };
 
+export interface Options {
+    locale?: Locale;
+    weekStartsOn?: WeekStartsOn;
+    firstWeekContainsDate?: number;
+    useAdditionalWeekYearTokens?: boolean;
+    useAdditionalDayOfYearTokens?: boolean;
+}
 /**
  * Same as the format function from date-fns, but formats in the "UTC timezone"
- * @param {Date} utcDate
- * @param {String} formatString
- * @param {Object} options
- * @returns {String}
  */
-const formatUTC = (utcDate, formatString, options = {}) => {
+const formatUTC = (utcDate: Date, formatString: string, options: Options = {}) => {
     const locale = options.locale || defaultLocale;
-    const localeFirstWeekContainsDate = locale && locale.options && locale.options.firstWeekContainsDate;
+    const localeFirstWeekContainsDate = locale.options?.firstWeekContainsDate;
     const defaultFirstWeekContainsDate =
-        localeFirstWeekContainsDate == null ? 1 : toInteger(localeFirstWeekContainsDate);
+        localeFirstWeekContainsDate === undefined ? 1 : toInteger(localeFirstWeekContainsDate);
     const firstWeekContainsDate =
-        options.firstWeekContainsDate == null ? defaultFirstWeekContainsDate : toInteger(options.firstWeekContainsDate);
-    const localeWeekStartsOn = locale.options && locale.options.weekStartsOn;
-    const defaultWeekStartsOn = localeWeekStartsOn === null ? 0 : toInteger(localeWeekStartsOn);
-    const weekStartsOn = options.weekStartsOn === null ? defaultWeekStartsOn : toInteger(options.weekStartsOn);
+        options.firstWeekContainsDate === undefined
+            ? defaultFirstWeekContainsDate
+            : toInteger(options.firstWeekContainsDate);
+    const localeWeekStartsOn = locale?.options?.weekStartsOn;
+    const defaultWeekStartsOn = localeWeekStartsOn === undefined ? 0 : toInteger(localeWeekStartsOn);
+    const weekStartsOn = options.weekStartsOn === undefined ? defaultWeekStartsOn : toInteger(options.weekStartsOn);
     const formatterOptions = { firstWeekContainsDate, weekStartsOn, locale, _originalDate: utcDate };
 
-    const result = formatString
-        .match(longFormattingTokensRegExp)
+    const longFormatMatchResult = formatString.match(longFormattingTokensRegExp);
+    if (!longFormatMatchResult) {
+        return '';
+    }
+
+    const formattingTokensMatchResult = longFormatMatchResult
         .map((substring) => {
             const firstCharacter = substring[0];
             if (firstCharacter === 'p' || firstCharacter === 'P') {
@@ -74,7 +92,13 @@ const formatUTC = (utcDate, formatString, options = {}) => {
             return substring;
         })
         .join('')
-        .match(formattingTokensRegExp)
+        .match(formattingTokensRegExp);
+
+    if (!formattingTokensMatchResult) {
+        return '';
+    }
+
+    return formattingTokensMatchResult
         .map((substring) => {
             // Replace two single quote characters with one single quote character
             if (substring === "''") {
@@ -100,8 +124,6 @@ const formatUTC = (utcDate, formatString, options = {}) => {
             return substring;
         })
         .join('');
-
-    return result;
 };
 
 export default formatUTC;

@@ -2,7 +2,7 @@ import startOfDay from './startOfDay';
 
 const MILLISECONDS_IN_DAY = 86400000;
 
-const differenceInCalendarDays = (left, right) => {
+const differenceInCalendarDays = (left: Date, right: Date) => {
     const startOfDayLeft = startOfDay(left);
     const startOfDayRight = startOfDay(right);
 

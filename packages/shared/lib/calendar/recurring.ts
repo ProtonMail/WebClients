@@ -165,7 +165,7 @@ const getOccurrenceSetup = (component: VcalVeventComponent) => {
     const safeRrule = getModifiedUntilRrule(internalRrule || DEFAULT_RRULE, getPropertyTzid(internalDtstart));
 
     const utcStart = propertyToUTCDate(internalDtstart);
-    let eventDuration;
+    let eventDuration: number;
 
     if (isAllDay) {
         const rawEnd = propertyToUTCDate(internalDtEnd);
@@ -178,7 +178,7 @@ const getOccurrenceSetup = (component: VcalVeventComponent) => {
         const utcStart = propertyToUTCDate(internalDtstart);
         const utcEnd = propertyToUTCDate(internalDtEnd);
 
-        eventDuration = max(+utcEnd - +utcStart, 0);
+        eventDuration = Math.max(+utcEnd - +utcStart, 0);
     }
 
     return {

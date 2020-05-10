@@ -1,6 +1,6 @@
 const MILLISECONDS_IN_WEEK = 604800000;
 
-const getWeekNumber = (date) => {
+const getWeekNumber = (date: Date) => {
     const start = new Date(date);
     start.setUTCHours(0, 0, 0, 0);
 

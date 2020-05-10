@@ -1,4 +1,9 @@
-const startOfWeek = (date, options) => {
+import { WeekStartsOn } from './interface';
+
+interface Options {
+    weekStartsOn: WeekStartsOn;
+}
+const startOfWeek = (date: Date, options?: Options) => {
     const weekStartsOn = !options || typeof options.weekStartsOn === 'undefined' ? 0 : options.weekStartsOn;
 
     const result = new Date(+date);
