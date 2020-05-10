@@ -2,8 +2,12 @@ import { useState, useEffect, useMemo } from 'react';
 import { debounce } from 'proton-shared/lib/helpers/function';
 
 const getBreakpoint = () => {
+    const bodyEl = document.querySelector('body');
+    if (!bodyEl) {
+        return '';
+    }
     return window
-        .getComputedStyle(document.querySelector('body'), ':before')
+        .getComputedStyle(bodyEl, ':before')
         .getPropertyValue('content')
         .replace(/['"]+/g, '');
 };
