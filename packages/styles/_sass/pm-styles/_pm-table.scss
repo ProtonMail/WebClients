@@ -40,9 +40,11 @@
 	}
 
 	&--isHoverable tbody tr {
-		&:hover,
-		&:focus-within {
-			background-color: var(--bgcolor-input, $pm-global-light);
+		@media (hover: hover) {
+			&:hover,
+			&:focus-within {
+				background-color: var(--bgcolor-input, $pm-global-light);
+			}
 		}
 	}
 
