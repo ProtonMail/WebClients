@@ -238,7 +238,7 @@ const NewSubscriptionModal = ({
 
     useEffect(() => {
         withLoadingCheck(check());
-    }, [model.cycle, model.planIDs]);
+    }, [model.cycle, model.currency, model.planIDs]);
 
     return (
         <FormModal
