@@ -9,7 +9,7 @@ const { debug } = require('../helpers/log')('proton-bundler');
 
 function main({
     argv,
-    config: { appMode, isRemoteBuild, PKG },
+    config: { buildMode, isRemoteBuild, PKG },
     hookPreTasks,
     customConfigSetup,
     hookPostTaskBuild,
@@ -63,8 +63,13 @@ function main({
             title: 'Build the application',
             async task(ctx = {}) {
                 const args = process.argv.slice(2);
-                if (appMode === 'standalone') {
+                if (buildMode === 'standalone') {
                     const output = await bash('npm', ['run', 'build:standalone', '--', ...args]);
+                    ctx.outputBuild = output;
+                    return true;
+                }
+                if (buildMode === 'standalone-with-prefix-path') {
+                    const output = await bash('npm', ['run', 'build:standalone', '--', '$npm_package_config_publicPathFlag', ...args]);
                     ctx.outputBuild = output;
                     return true;
                 }

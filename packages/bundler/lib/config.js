@@ -5,7 +5,7 @@ const {
     customBundler: { tasks: customTasks, config: customConfig },
     getCustomHooks
 } = require('./custom');
-const { debug, about } = require('./helpers/log')('proton-bundler');
+const { warn, debug, about } = require('./helpers/log')('proton-bundler');
 
 const PKG = require(path.join(process.cwd(), 'package.json'));
 
@@ -37,11 +37,17 @@ function getExternalFiles({ EXTERNAL_FILES = ['.htaccess'] } = customConfig) {
 async function get(argv) {
     const flowType = argv.flow;
     const appMode = argv.appMode;
+    const buildMode = argv.buildMode || appMode;
     const isRemoteBuild = argv.source === 'remote';
     const branch = extractArgument(argv.branch) || '';
     const featureFlags = extractArgument(argv.featureFlags) || '';
     const isDeployGit = argv.git;
     const isOnlyDeployGit = argv['only-git'];
+
+    if (appMode) {
+        warn('--appMode is deprecated as it can be confused with its namesake in proton-pack. For proton-bundler, use --buildMode instead.');
+    }
+
     debug({ customConfig, argv, branch }, 'configuration deploy');
 
     if (!branch && (isOnlyDeployGit || isDeployGit)) {
@@ -59,6 +65,7 @@ async function get(argv) {
         isDeployGit,
         ...(!isOnlyDeployGit && {
             appMode,
+            buildMode,
             apiUrl,
             isRemoteBuild,
             featureFlags,
@@ -69,6 +76,7 @@ async function get(argv) {
     return {
         branch,
         appMode,
+        buildMode,
         flowType,
         isDeployGit,
         isOnlyDeployGit,

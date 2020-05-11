@@ -4,7 +4,7 @@ const deployProcess = require('./deploy');
 
 function getTasks({
     argv,
-    config: { branch, flowType = 'single', appMode, isRemoteBuild, featureFlags, isDeployGit, isOnlyDeployGit }
+    config: { branch, flowType = 'single', appMode, buildMode, isRemoteBuild, featureFlags, isDeployGit, isOnlyDeployGit }
 }) {
     const PKG = getPackage();
     const { getCustomHooks, customTasks } = getHooks();
@@ -26,6 +26,7 @@ function getTasks({
         argv,
         config: {
             appMode,
+            buildMode,
             isRemoteBuild,
             PKG
         },

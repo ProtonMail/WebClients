@@ -25,13 +25,13 @@ ex:
 
 ```sh
 $ npm i -D github:ProtonMail/proton-bundler.git#semver:^2.0.0
-``` 
+```
 
 ## Commands
 
 ```sh
 $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--appMode> <--default-branch>
-``` 
+```
 
 ### Actions
 
@@ -42,11 +42,12 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--appMode> <--de
 
 ### flags
 - `--remote`: Build the current app from master via a git clone
-- `--branch`: **Mandatory** ex: deploy-settings 
+- `--branch`: **Mandatory** ex: deploy-settings
 - `--api`: Typeof branch to deploy (dev/beta/build/etc.)
 - `--flow`: Type of flow (_Usefull only for WebClient_)
 - `--no-lint`: Ignore lint task on deploy
-- `--appMode`: Type of bundle for the app (ex: standalone is an option for protonmail-settings)
+- `--appMode`: Deprecated in favor or `--buildMode`
+- `--buildMode`: Type of bundle npm task to run for the app (ex: "standalone" translates into `npm run bundle:standalone`)
 - `--default-branch`: Default master, What's the default branch on your repository (usually master, usefull for the package-lock update)
 - `--git`: At the end of the bundle we're going to commit and deploy to the branch `--branch`
 - `--only-git`: We commit and deploy and existing directory `dist` to the branch `--branch`
