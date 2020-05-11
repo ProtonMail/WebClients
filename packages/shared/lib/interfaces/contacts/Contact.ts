@@ -52,6 +52,7 @@ export interface ContactGroup {
 export interface ContactOrGroup {
     contact?: ContactEmail;
     group?: ContactGroup;
+    major?: string;
 }
 
 export interface ContactProperty {
