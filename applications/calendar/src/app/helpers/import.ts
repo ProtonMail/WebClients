@@ -359,7 +359,7 @@ export const filterNonSupported = ({
     return components.reduce<{ events: VcalVeventComponent[]; discarded: EventFailure[] }>(
         (acc, vcalComponent) => {
             const { uid } = vcalComponent;
-            const shortUID = truncate(uid.value, MAX_UID_CHARS_DISPLAY);
+            const shortUID = truncate(uid?.value, MAX_UID_CHARS_DISPLAY);
             if (getIsTodoComponent(vcalComponent)) {
                 acc.discarded.push({
                     idMessage: c('Error importing event').t`Todo ${shortUID}`,
