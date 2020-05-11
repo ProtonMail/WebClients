@@ -40,6 +40,9 @@ export async function upload(
 
     return new Promise<void>((resolve, reject) => {
         let lastLoaded = 0;
+        const formData = new FormData();
+
+        formData.append('Block', new Blob([content]));
 
         if (signal) {
             signal.onabort = function() {
@@ -55,9 +58,8 @@ export async function upload(
         xhr.onload = () => resolve();
         xhr.upload.onerror = reject;
         xhr.onerror = reject;
-        xhr.open('post', url);
-        xhr.setRequestHeader('Content-Type', 'application/x-binary');
-        xhr.send(new Blob([content]));
+        xhr.open('POST', url);
+        xhr.send(formData);
     });
 }
 
