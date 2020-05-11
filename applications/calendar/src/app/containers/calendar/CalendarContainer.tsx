@@ -73,6 +73,7 @@ interface Props {
     setCustomTzid: (tzid: string) => void;
     isNarrow: boolean;
     addresses: Address[];
+    activeAddresses: Address[];
     visibleCalendars: Calendar[];
     activeCalendars: Calendar[];
     disabledCalendars: Calendar[];
@@ -87,6 +88,7 @@ const CalendarContainer = ({
     setCustomTzid,
     isNarrow,
     addresses,
+    activeAddresses,
     activeCalendars,
     disabledCalendars,
     visibleCalendars,
@@ -334,6 +336,7 @@ const CalendarContainer = ({
                 onChangeDate={handleChangeDate}
                 onInteraction={(active: boolean) => setDisableCreate(active)}
                 addresses={addresses}
+                activeAddresses={activeAddresses}
                 activeCalendars={activeCalendars}
                 defaultCalendar={defaultCalendar}
                 defaultCalendarBootstrap={defaultCalendarBootstrap}

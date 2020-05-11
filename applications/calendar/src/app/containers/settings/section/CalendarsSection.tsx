@@ -20,13 +20,19 @@ import CalendarModal from '../CalendarModal';
 import { MAX_CALENDARS_PER_USER } from '../../../constants';
 
 interface Props {
-    addresses: Address[];
+    activeAddresses: Address[];
     calendars: Calendar[];
     disabledCalendars: Calendar[];
     activeCalendars: Calendar[];
     defaultCalendar?: Calendar;
 }
-const CalendarsSection = ({ addresses, calendars, defaultCalendar, disabledCalendars, activeCalendars }: Props) => {
+const CalendarsSection = ({
+    activeAddresses,
+    calendars,
+    defaultCalendar,
+    disabledCalendars,
+    activeCalendars
+}: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -104,7 +110,7 @@ const CalendarsSection = ({ addresses, calendars, defaultCalendar, disabledCalen
         }
     };
 
-    const canAddCalendar = addresses.length > 0 && calendars.length < MAX_CALENDARS_PER_USER;
+    const canAddCalendar = activeAddresses.length > 0 && calendars.length < MAX_CALENDARS_PER_USER;
 
     return (
         <>

@@ -13,7 +13,7 @@ import ImportModal from '../../components/import/ImportModal';
 
 interface Props {
     isNarrow: boolean;
-    addresses: Address[];
+    activeAddresses: Address[];
     calendars: Calendar[];
     activeCalendars: Calendar[];
     disabledCalendars: Calendar[];
@@ -22,7 +22,7 @@ interface Props {
 }
 const SettingsContainer = ({
     isNarrow,
-    addresses,
+    activeAddresses,
     calendars,
     disabledCalendars,
     defaultCalendar,
@@ -114,7 +114,7 @@ const SettingsContainer = ({
                                 render={() => {
                                     return (
                                         <CalendarsPage
-                                            addresses={addresses}
+                                            activeAddresses={activeAddresses}
                                             calendars={calendars}
                                             activeCalendars={activeCalendars}
                                             disabledCalendars={disabledCalendars}

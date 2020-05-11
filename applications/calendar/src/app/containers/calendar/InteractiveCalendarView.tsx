@@ -79,6 +79,7 @@ interface Props extends SharedViewProps {
     onInteraction: (active: boolean) => void;
     activeCalendars: Calendar[];
     addresses: Address[];
+    activeAddresses: Address[];
     defaultCalendar?: Calendar;
     defaultCalendarBootstrap?: CalendarBootstrap;
     containerRef: HTMLDivElement | null;
@@ -108,8 +109,10 @@ const InteractiveCalendarView = ({
     onChangeDate,
     onInteraction,
 
-    activeCalendars,
     addresses,
+    activeAddresses,
+
+    activeCalendars,
     defaultCalendar,
     defaultCalendarBootstrap,
 
@@ -197,7 +200,7 @@ const InteractiveCalendarView = ({
 
         const { Members = [], CalendarSettings } = defaultCalendarBootstrap;
         const [Member] = Members;
-        const Address = addresses.find(({ Email }) => Member?.Email === Email);
+        const Address = activeAddresses.find(({ Email }) => Member?.Email === Email);
         if (!Member || !Address) {
             return;
         }
@@ -206,7 +209,7 @@ const InteractiveCalendarView = ({
             CalendarSettings,
             Calendar: defaultCalendar,
             Calendars: activeCalendars,
-            Addresses: addresses,
+            Addresses: activeAddresses,
             Members,
             Member,
             Address,
@@ -227,14 +230,14 @@ const InteractiveCalendarView = ({
         const initialDate = getInitialDate();
 
         const { Members = [], CalendarSettings } = readCalendarBootstrap(Calendar.ID);
-        const [Member, Address] = getMemberAndAddress(addresses, Members, Event.Author);
+        const [Member, Address] = getMemberAndAddress(activeAddresses, Members, Event.Author);
 
         const createResult = getInitialModel({
             initialDate,
             CalendarSettings,
             Calendar,
             Calendars: activeCalendars,
-            Addresses: addresses,
+            Addresses: activeAddresses,
             Members,
             Member,
             Address,

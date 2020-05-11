@@ -10,6 +10,7 @@ import {
     getProbablyActiveCalendars
 } from 'proton-shared/lib/calendar/calendar';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
+import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 
 import { DEFAULT_USER_SETTINGS } from '../../settingsConstants';
 import { CalendarsEventsCache } from './eventStore/interface';
@@ -51,6 +52,10 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
         };
     }, [calendars]);
 
+    const activeAddresses = useMemo(() => {
+        return getActiveAddresses(addresses);
+    }, [addresses]);
+
     const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
 
     const [localTzid] = useState(() => getTimezone());
@@ -67,7 +72,7 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
                         return (
                             <SettingsContainer
                                 isNarrow={isNarrow}
-                                addresses={addresses}
+                                activeAddresses={activeAddresses}
                                 calendars={calendars}
                                 activeCalendars={activeCalendars}
                                 disabledCalendars={disabledCalendars}
@@ -86,6 +91,7 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
                                 setCustomTzid={setCustomTzid}
                                 isNarrow={isNarrow}
                                 addresses={addresses}
+                                activeAddresses={activeAddresses}
                                 visibleCalendars={visibleCalendars}
                                 activeCalendars={activeCalendars}
                                 disabledCalendars={disabledCalendars}

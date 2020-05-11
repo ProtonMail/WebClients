@@ -6,17 +6,23 @@ import Main from '../../components/Main';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 
 interface Props {
-    addresses: Address[];
+    activeAddresses: Address[];
     calendars: Calendar[];
     disabledCalendars: Calendar[];
     activeCalendars: Calendar[];
     defaultCalendar?: Calendar;
 }
-const SettingsCalendarPage = ({ addresses, calendars, disabledCalendars, activeCalendars, defaultCalendar }: Props) => {
+const SettingsCalendarPage = ({
+    activeAddresses,
+    calendars,
+    disabledCalendars,
+    activeCalendars,
+    defaultCalendar
+}: Props) => {
     return (
         <Main className="p2">
             <CalendarsSection
-                addresses={addresses}
+                activeAddresses={activeAddresses}
                 calendars={calendars}
                 activeCalendars={activeCalendars}
                 disabledCalendars={disabledCalendars}

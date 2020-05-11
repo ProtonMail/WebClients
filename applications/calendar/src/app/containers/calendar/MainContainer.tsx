@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useAddresses, useCalendars, useDelinquent, useUser } from 'react-components';
-import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 
 import { getSetupType, SETUP_TYPE } from '../setup/setupHelper';
 import FreeContainer from '../setup/FreeContainer';
@@ -13,8 +12,6 @@ const MainContainer = () => {
     const [calendars] = useCalendars();
     const [user] = useUser();
     useDelinquent();
-
-    const activeAddresses = getActiveAddresses(addresses);
 
     const [setupType, setSetupType] = useState(() => getSetupType(calendars));
 
@@ -30,7 +27,7 @@ const MainContainer = () => {
         return <ResetContainer calendars={calendars} onDone={() => setSetupType(SETUP_TYPE.DONE)} />;
     }
 
-    return <MainContainerSetup addresses={activeAddresses} calendars={calendars} />;
+    return <MainContainerSetup addresses={addresses} calendars={calendars} />;
 };
 
 export default MainContainer;
