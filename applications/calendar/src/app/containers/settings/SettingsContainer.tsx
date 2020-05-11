@@ -55,7 +55,13 @@ const SettingsContainer = ({
                   className: 'alignleft',
                   icon: 'import',
                   onClick() {
-                      createModal(<ImportModal defaultCalendar={defaultCalendar} calendars={activeCalendars} />);
+                      createModal(
+                          <ImportModal
+                              defaultCalendar={defaultCalendar}
+                              calendars={activeCalendars}
+                              calendarUserSettings={calendarUserSettings}
+                          />
+                      );
                   },
                   text: c('Action').t`Import`
               }

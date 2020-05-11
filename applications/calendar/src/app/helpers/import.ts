@@ -12,12 +12,15 @@ import {
     MAX_IMPORT_EVENTS,
     MAX_LENGTHS,
     MAX_NOTIFICATIONS,
+    MAX_UID_CHARS_DISPLAY,
     MAXIMUM_DATE,
     MAXIMUM_DATE_UTC,
     MINIMUM_DATE_UTC,
     NOTIFICATION_UNITS,
     NOTIFICATION_UNITS_MAX
 } from '../constants';
+import { withRruleWkst } from '../containers/calendar/eventActions/rruleWkst';
+import { WeekStartsOn } from '../containers/calendar/interface';
 import { EventFailure, IMPORT_ERROR_TYPE, ImportFailure } from '../interfaces/Import';
 import {
     VcalCalendarComponent,
@@ -28,23 +31,14 @@ import {
     VcalVcalendar,
     VcalVeventComponent
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { getIsFreebusyComponent, getIsJournalComponent, getIsTodoComponent, getIsVeventComponent } from './event';
 
-const SUPPORTED_VEVENT_PROPERTIES: (keyof VcalVeventComponent)[] = [
-    'uid',
-    'dtstamp',
-    'dtstart',
-    'dtend',
-    'rrule',
-    'exdate',
-    'description',
-    'summary',
-    'location'
-];
 const SUPPORTED_RRULE_PROPERTIES: (keyof VcalRrulePropertyValue)[] = [
     'freq',
     'count',
     'interval',
     'until',
+    'wkst',
     'bysetpos',
     'byday',
     'bymonthday',
@@ -56,6 +50,7 @@ const SUPPORTED_RRULE_PROPERTIES_WEEKLY: (keyof VcalRrulePropertyValue)[] = [
     'count',
     'interval',
     'until',
+    'wkst',
     'byday'
 ];
 const SUPPORTED_RRULE_PROPERTIES_MONTHLY: (keyof VcalRrulePropertyValue)[] = [
@@ -63,6 +58,7 @@ const SUPPORTED_RRULE_PROPERTIES_MONTHLY: (keyof VcalRrulePropertyValue)[] = [
     'count',
     'interval',
     'until',
+    'wkst',
     'bymonthday',
     'byday',
     'bysetpos'
@@ -73,6 +69,7 @@ const SUPPORTED_RRULE_PROPERTIES_YEARLY: (keyof VcalRrulePropertyValue)[] = [
     'count',
     'interval',
     'until',
+    'wkst',
     'bymonthday',
     'bymonth'
 ];
@@ -233,33 +230,48 @@ const getIsDateOutOfBounds = (property: VcalDateOrDateTimeProperty) => {
     return +dateUTC < +MINIMUM_DATE_UTC || +dateUTC > +MAXIMUM_DATE_UTC;
 };
 
-export const validateEvent = (component: VcalVeventComponent) => {
+export const validateEvent = (veventComponent: VcalVeventComponent, wkst?: WeekStartsOn) => {
     try {
         const validated = {} as any;
-        validated.component = component.component;
-        validated.components = component.components;
-        SUPPORTED_VEVENT_PROPERTIES.forEach((key) => {
-            if (component[key]) {
-                validated[key] = component[key];
-            }
-        });
+        const {
+            component,
+            components,
+            uid,
+            dtstamp,
+            dtstart,
+            dtend,
+            rrule,
+            exdate,
+            description,
+            summary,
+            location
+        } = veventComponent;
+        validated.component = component;
+        validated.uid = { ...uid };
+        validated.dtstamp = { ...dtstamp };
 
-        if (validated.summary) {
-            validated.summary.value = truncate(validated.summary.value, MAX_LENGTHS.TITLE);
+        if (exdate) {
+            validated.exdate = { ...exdate };
         }
-        if (validated.description) {
+        validated.summary = {
+            ...summary,
+            value: truncate(summary?.value || '', MAX_LENGTHS.TITLE)
+        };
+        if (description) {
+            validated.description = {
+                ...description,
+                value: truncate(description.value, MAX_LENGTHS.TITLE)
+            };
             validated.description.value = truncate(validated.description.value, MAX_LENGTHS.EVENT_DESCRIPTION);
         }
-        if (validated.location) {
-            validated.location.value = truncate(validated.location.value, MAX_LENGTHS.LOCATION);
+        if (location) {
+            validated.location = {
+                ...location,
+                value: truncate(location.value, MAX_LENGTHS.TITLE)
+            };
         }
 
-        const { dtstart, dtend, rrule } = validated;
-        // TODO create dtend
-        if (!dtend) {
-            return { error: c('Error importing event').t`Missing end time` };
-        }
-
+        validated.dtstart = { ...dtstart };
         if (!isIcalPropertyAllDay(dtstart)) {
             if (!getIsWellFormedDateTime(dtstart)) {
                 return { error: c('Error importing event').t`Malformed start time` };
@@ -272,7 +284,16 @@ export const validateEvent = (component: VcalVeventComponent) => {
                 validated.dtstart.parameters.tzid = timezone;
             }
         }
-        if (dtend && !isIcalPropertyAllDay(dtend)) {
+        if (getIsDateOutOfBounds(dtstart)) {
+            return { error: c('Error importing event').t`Start time out of bounds` };
+        }
+
+        // TODO create dtend
+        if (!dtend) {
+            return { error: c('Error importing event').t`Missing end time` };
+        }
+        validated.dtend = { ...dtend };
+        if (!isIcalPropertyAllDay(dtend)) {
             if (!getIsWellFormedDateTime(dtend)) {
                 return { error: c('Error importing event').t`Malformed end time` };
             }
@@ -284,34 +305,33 @@ export const validateEvent = (component: VcalVeventComponent) => {
                 validated.dtend.parameters.tzid = timezone;
             }
         }
-        if (dtend) {
-            const startDateUTC = propertyToUTCDate(dtstart);
-            const endDateUTC = propertyToUTCDate(dtend);
-            if (+startDateUTC > +endDateUTC) {
-                return { error: c('Error importing event').t`Negative duration` };
-            }
-        }
-        if (getIsDateOutOfBounds(dtstart)) {
-            return { error: c('Error importing event').t`Start time out of bounds` };
+        const startDateUTC = propertyToUTCDate(dtstart);
+        const endDateUTC = propertyToUTCDate(dtend);
+        if (+startDateUTC > +endDateUTC) {
+            return { error: c('Error importing event').t`Negative duration` };
         }
         // TODO cf. create dtend
         if (dtend && getIsDateOutOfBounds(dtend)) {
             return { error: c('Error importing event').t`End time out of bounds` };
         }
+
         // TODO cf. create dtend
-        if (rrule && dtend && !getIsRruleConsistent(rrule.value, dtstart, dtend)) {
-            return { error: c('Error importing event').t`Recurring rule inconsistent` };
-        }
-        if (rrule && !getIsRruleValid(rrule.value)) {
-            return { error: c('Error importing event').t`Recurring rule not supported` };
+        if (rrule) {
+            if (dtend && !getIsRruleConsistent(rrule.value, dtstart, dtend)) {
+                return { error: c('Error importing event').t`Recurring rule inconsistent` };
+            }
+            if (!getIsRruleValid(rrule.value)) {
+                return { error: c('Error importing event').t`Recurring rule not supported` };
+            }
+            validated.rrule = withRruleWkst(rrule, wkst);
         }
 
-        const alarms = component.components
-            ?.filter(({ component }) => component === 'valarm')
-            .slice(0, MAX_NOTIFICATIONS);
-
-        if (alarms?.some((alarm) => !getIsValidAlarm(alarm))) {
-            return { error: c('Error importing event').t`Notification out of bounds` };
+        const alarms = components?.filter(({ component }) => component === 'valarm').slice(0, MAX_NOTIFICATIONS);
+        if (alarms?.length) {
+            if (alarms?.some((alarm) => !getIsValidAlarm(alarm))) {
+                return { error: c('Error importing event').t`Notification out of bounds` };
+            }
+            validated.components = alarms;
         }
 
         return { event: validated as VcalVeventComponent };
@@ -321,15 +341,14 @@ export const validateEvent = (component: VcalVeventComponent) => {
     }
 };
 
-/**
- *
- */
 export const filterNonSupported = ({
     components,
-    calscale
+    calscale,
+    wkst
 }: {
     components: VcalCalendarComponent[];
     calscale?: string;
+    wkst: WeekStartsOn;
 }) => {
     if (calscale && calscale.toLowerCase() !== 'gregorian') {
         return {
@@ -339,24 +358,25 @@ export const filterNonSupported = ({
     }
     return components.reduce<{ events: VcalVeventComponent[]; discarded: EventFailure[] }>(
         (acc, vcalComponent) => {
-            const { component, uid } = vcalComponent;
-            if (component.toLowerCase() === 'vtodo') {
+            const { uid } = vcalComponent;
+            const shortUID = truncate(uid.value, MAX_UID_CHARS_DISPLAY);
+            if (getIsTodoComponent(vcalComponent)) {
                 acc.discarded.push({
-                    idMessage: c('Error importing event').t`Todo ${uid?.value}`,
+                    idMessage: c('Error importing event').t`Todo ${shortUID}`,
                     errorMessage: c('Error importing event').t`Todo format`
                 });
                 return acc;
             }
-            if (component.toLowerCase() === 'vjournal') {
+            if (getIsJournalComponent(vcalComponent)) {
                 acc.discarded.push({
-                    idMessage: c('Error importing event').t`Journal ${uid?.value}`,
+                    idMessage: c('Error importing event').t`Journal ${shortUID}`,
                     errorMessage: c('Error importing event').t`Journal format`
                 });
                 return acc;
             }
-            if (component.toLowerCase() === 'vfreebusy') {
+            if (getIsFreebusyComponent(vcalComponent)) {
                 acc.discarded.push({
-                    idMessage: c('Error importing event').t`Free-busy ${uid?.value}`,
+                    idMessage: c('Error importing event').t`Free-busy ${shortUID}`,
                     errorMessage: c('Error importing event').t`Free-busy format`
                 });
                 return acc;
@@ -367,13 +387,13 @@ export const filterNonSupported = ({
             //         errorMessage: c('Error importing event').t`Timezone format`
             //     })
             // }
-            if (component.toLowerCase() === 'vevent') {
-                const { event, error } = validateEvent(vcalComponent as VcalVeventComponent);
+            if (getIsVeventComponent(vcalComponent)) {
+                const { event, error } = validateEvent(vcalComponent, wkst);
                 if (!error && !!event) {
                     acc.events.push(event);
                 } else {
                     acc.discarded.push({
-                        idMessage: c('Error importing event').t`Event ${uid?.value}`,
+                        idMessage: c('Error importing event').t`Event ${shortUID}`,
                         errorMessage: error || ''
                     });
                 }

@@ -1,4 +1,5 @@
 import { wait } from 'proton-shared/lib/helpers/promise';
+import { truncate } from 'proton-shared/lib/helpers/string';
 import React, { useEffect, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 import {
@@ -14,6 +15,7 @@ import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { CachedKey } from 'proton-shared/lib/interfaces';
+import { MAX_UID_CHARS_DISPLAY } from '../../constants';
 import getCreationKeys from '../../containers/calendar/getCreationKeys';
 import getMemberAndAddress, { getMemberAndAddressID } from '../../helpers/getMemberAndAddress';
 import useUnload from '../../hooks/useUnload';
@@ -91,10 +93,13 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
             const encrypted = results.filter(({ error }) => !error).map(({ uid, data }) => ({ uid, data }));
             const notEncrypted = results
                 .filter(({ error }) => !!error)
-                .map(({ uid }) => ({
-                    idMessage: c('Error importing event').t`Event ${uid} could not be encrypted`,
-                    errorMessage: c('Error importing event').t`Encryption error`
-                }));
+                .map(({ uid }) => {
+                    const shortUID = truncate(uid, MAX_UID_CHARS_DISPLAY);
+                    return {
+                        idMessage: c('Error importing event').t`Event ${shortUID} could not be encrypted`,
+                        errorMessage: c('Error importing event').t`Encryption error`
+                    };
+                });
             setModelWithAbort(
                 (model) => ({
                     ...model,
@@ -140,10 +145,13 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 .map(({ Index }) => ({ uid: events[Index].uid }));
             const notImported = responses
                 .filter(({ Code }) => Code !== SINGLE_SUCCESS)
-                .map(({ Index, Error }) => ({
-                    idMessage: c('Error importing event').t`Event ${events[Index].uid} could not be imported`,
-                    errorMessage: Error || ''
-                }));
+                .map(({ Index, Error }) => {
+                    const shortUID = truncate(events[Index].uid, MAX_UID_CHARS_DISPLAY);
+                    return {
+                        idMessage: c('Error importing event').t`Event ${shortUID} could not be imported`,
+                        errorMessage: Error || ''
+                    };
+                });
             setModelWithAbort(
                 (model) => ({
                     ...model,

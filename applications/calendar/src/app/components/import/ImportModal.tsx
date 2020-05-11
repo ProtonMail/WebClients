@@ -1,11 +1,12 @@
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
 import React, { ChangeEvent, useState } from 'react';
 import { FormModal, PrimaryButton, useEventManager } from 'react-components';
 import { c } from 'ttag';
 
 import { MAX_IMPORT_FILE_SIZE } from '../../constants';
+import { getWeekStartsOn } from '../../containers/calendar/getSettings';
 import { filterNonSupported, parseIcs } from '../../helpers/import';
 import { IMPORT_ERROR_TYPE, IMPORT_STEPS, ImportCalendarModel } from '../../interfaces/Import';
 
@@ -17,9 +18,10 @@ import WarningModalContent from './WarningModalContent';
 interface Props {
     defaultCalendar: Calendar;
     calendars: Calendar[];
+    calendarUserSettings: CalendarUserSettings;
     onClose?: () => void;
 }
-const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
+const ImportModal = ({ calendars, defaultCalendar, calendarUserSettings, ...rest }: Props) => {
     const { call } = useEventManager();
     const [model, setModel] = useState<ImportCalendarModel>({
         step: IMPORT_STEPS.ATTACHING,
@@ -31,6 +33,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
         eventsImported: [],
         eventsNotImported: []
     });
+    const wkst = getWeekStartsOn(calendarUserSettings);
 
     const { content, ...modalProps } = (() => {
         if (model.step <= IMPORT_STEPS.ATTACHED) {
@@ -77,7 +80,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     });
                     return;
                 }
-                const { events, discarded } = filterNonSupported({ components, calscale });
+                const { events, discarded } = filterNonSupported({ components, calscale, wkst });
                 const step = discarded.length || !events.length ? IMPORT_STEPS.WARNING : IMPORT_STEPS.IMPORTING;
                 setModel({
                     ...model,
