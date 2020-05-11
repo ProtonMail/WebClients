@@ -230,7 +230,13 @@ const getIsDateOutOfBounds = (property: VcalDateOrDateTimeProperty) => {
     return +dateUTC < +MINIMUM_DATE_UTC || +dateUTC > +MAXIMUM_DATE_UTC;
 };
 
-export const validateEvent = (veventComponent: VcalVeventComponent, wkst?: WeekStartsOn) => {
+export const validateEvent = (
+    veventComponent: VcalVeventComponent,
+    wkst?: WeekStartsOn
+): {
+    event?: VcalVeventComponent;
+    error?: string;
+} => {
     try {
         const validated = {} as any;
         const {
@@ -253,21 +259,22 @@ export const validateEvent = (veventComponent: VcalVeventComponent, wkst?: WeekS
         if (exdate) {
             validated.exdate = { ...exdate };
         }
-        validated.summary = {
-            ...summary,
-            value: truncate(summary?.value || '', MAX_LENGTHS.TITLE)
-        };
+        if (summary) {
+            validated.summary = {
+                ...summary,
+                value: truncate(summary.value, MAX_LENGTHS.TITLE)
+            };
+        }
         if (description) {
             validated.description = {
                 ...description,
-                value: truncate(description.value, MAX_LENGTHS.TITLE)
+                value: truncate(description.value, MAX_LENGTHS.EVENT_DESCRIPTION)
             };
-            validated.description.value = truncate(validated.description.value, MAX_LENGTHS.EVENT_DESCRIPTION);
         }
         if (location) {
             validated.location = {
                 ...location,
-                value: truncate(location.value, MAX_LENGTHS.TITLE)
+                value: truncate(location.value, MAX_LENGTHS.LOCATION)
             };
         }
 
@@ -334,7 +341,7 @@ export const validateEvent = (veventComponent: VcalVeventComponent, wkst?: WeekS
             validated.components = alarms;
         }
 
-        return { event: validated as VcalVeventComponent };
+        return { event: validated };
     } catch (e) {
         console.log(e);
         return { error: c('Error importing event').t`Event validation failed` };
