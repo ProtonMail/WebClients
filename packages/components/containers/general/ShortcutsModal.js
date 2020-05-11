@@ -173,6 +173,7 @@ const ShortcutsModal = (props) => {
                     </div>
                 </div>
             </Details>
+            {/*
             <Details className="bordered-container mb1">
                 <Summary className="bold h3">{c('Title').t`Contacts`}</Summary>
                 <div className="flex-autogrid onmobile-flex-column">
@@ -207,6 +208,7 @@ const ShortcutsModal = (props) => {
                     </div>
                 </div>
             </Details>
+            */}
         </FormModal>
     );
 };
