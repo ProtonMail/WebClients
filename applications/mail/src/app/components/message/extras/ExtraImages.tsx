@@ -27,7 +27,7 @@ const ExtraImages = ({
                     ? c('Action').t`This message contains remote content`
                     : c('Action').t`This message contains embedded images`}
             </span>
-            <a onClick={onLoadImages} className="bold">
+            <a onClick={onLoadImages} className="underline">
                 {c('Action').t`Load`}
             </a>
         </div>

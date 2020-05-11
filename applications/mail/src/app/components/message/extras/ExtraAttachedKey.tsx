@@ -24,15 +24,15 @@ const ExtraAttachedKey = ({ message }: Props) => {
 
     return (
         <div className="bg-white-dm rounded bordered-container p0-5 mb0-5 flex flex-nowrap flex-items-center flex-spacebetween">
-            <div className="flex">
-                <Icon name="key" className="mtauto mbauto mr0-5" />
-                <div className="mr0-5">{c('Info').t`An unknown public key has been detected for this recipient.`}</div>
-                <div>
+            <div className="flex flex-nowrap">
+                <Icon name="key" className="mtauto mbauto mr0-5 flex-item-noshrink" />
+                <div className="mr0-5">
+                    {c('Info').t`An unknown public key has been detected for this recipient.`}{' '}
                     <LearnMore url="https://protonmail.com/support/knowledge-base/address-verification/" />
                 </div>
             </div>
-            <span className="flex-items-center">
-                <Button onClick={handleTrustKey} className="flex flex-no-wrap">
+            <span className="flex-items-center flex-item-noshrink">
+                <Button onClick={handleTrustKey} className="flex flex-nowrap">
                     {c('Action').t`Trust key`}
                 </Button>
             </span>

@@ -32,9 +32,11 @@ const ExtraReadReceipt = ({ message }: Props) => {
             <Icon name="notifications-enabled" className="flex-item-noshrink mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info').t`The sender has requested a read receipt`}</span>
             <span className="flex-item-noshrink flex">
-                <InlineLinkButton onClick={() => withLoading(handleClick())} disabled={loading} className="bold">{c(
-                    'Action'
-                ).t`Send receipt`}</InlineLinkButton>
+                <InlineLinkButton
+                    onClick={() => withLoading(handleClick())}
+                    disabled={loading}
+                    className="color-currentColor underline"
+                >{c('Action').t`Send receipt`}</InlineLinkButton>
             </span>
         </div>
     );
