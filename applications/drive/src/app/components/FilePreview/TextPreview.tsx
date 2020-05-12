@@ -1,5 +1,4 @@
 import React from 'react';
-import { arrayToBinaryString } from 'proton-shared/lib/helpers/string';
 import { mergeUint8Arrays } from '../../utils/array';
 
 interface Props {
@@ -7,9 +6,11 @@ interface Props {
 }
 
 const TextPreview = ({ contents = [] }: Props) => {
+    const string = new TextDecoder().decode(mergeUint8Arrays(contents));
+
     return (
         <div className="pd-file-preview-container">
-            <div className="pd-file-preview-text">{arrayToBinaryString(mergeUint8Arrays(contents))}</div>
+            <div className="pd-file-preview-text">{string}</div>
         </div>
     );
 };
