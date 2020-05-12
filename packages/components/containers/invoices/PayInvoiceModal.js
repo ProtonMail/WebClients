@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import {
     Input,
     FormModal,
+    PrimaryButton,
     Row,
     Label,
     Field,
@@ -53,9 +54,9 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
         method === PAYMENT_METHOD_TYPES.PAYPAL ? (
             <PayPalButton paypal={paypal} type="invoice" className="pm-button--primary" amount={AmountDue}>{c('Action')
                 .t`Continue`}</PayPalButton>
-        ) : canPay ? (
-            c('Action').t`Pay`
-        ) : null;
+        ) : (
+            <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action').t`Pay`}</PrimaryButton>
+        );
 
     return (
         <FormModal

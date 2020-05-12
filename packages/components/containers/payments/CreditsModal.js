@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import {
     FormModal,
+    Price,
+    PrimaryButton,
     Alert,
     PaymentInfo,
     AmountRow,
@@ -46,6 +48,11 @@ const CreditsModal = (props) => {
     const [amount, setAmount] = useState(DEFAULT_CREDITS_AMOUNT);
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
+    const minAmount = (
+        <Price key="min" currency={currency}>
+            {MIN_CREDIT_AMOUNT}
+        </Price>
+    );
 
     const handleSubmit = async (params) => {
         const requestBody = await handlePaymentToken({
@@ -64,14 +71,16 @@ const CreditsModal = (props) => {
         currency,
         onPay: handleSubmit
     });
+
     const submit =
         amount >= MIN_CREDIT_AMOUNT ? (
             method === PAYMENT_METHOD_TYPES.PAYPAL ? (
                 <PayPalButton paypal={paypal} className="pm-button--primary" amount={amount}>{c('Action')
                     .t`Continue`}</PayPalButton>
-            ) : canPay ? (
-                c('Action').t`Top up`
-            ) : null
+            ) : (
+                <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action')
+                    .t`Top up`}</PrimaryButton>
+            )
         ) : null;
 
     return (
@@ -102,18 +111,22 @@ const CreditsModal = (props) => {
                 currency={currency}
                 onChangeCurrency={setCurrency}
             />
-            <Payment
-                type="credit"
-                method={method}
-                amount={amount}
-                currency={currency}
-                card={card}
-                onMethod={setMethod}
-                onCard={setCard}
-                errors={errors}
-                paypal={paypal}
-                paypalCredit={paypalCredit}
-            />
+            {amount >= MIN_CREDIT_AMOUNT ? (
+                <Payment
+                    type="credit"
+                    method={method}
+                    amount={amount}
+                    currency={currency}
+                    card={card}
+                    onMethod={setMethod}
+                    onCard={setCard}
+                    errors={errors}
+                    paypal={paypal}
+                    paypalCredit={paypalCredit}
+                />
+            ) : (
+                <Alert type="error">{c('Error').jt`Amount below minimum: ${minAmount}`}</Alert>
+            )}
         </FormModal>
     );
 };
