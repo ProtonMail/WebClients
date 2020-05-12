@@ -265,7 +265,7 @@ const SubscriptionCustomization = ({
             <SubscriptionFeatureRow key="address" icon="email-address" feature={c('Feature').t`50 email addresses`} />,
             <SubscriptionFeatureRow key="domain" icon="domains" feature={c('Feature').t`10 custom domains`} />,
             <SubscriptionFeatureRow key="vpn" icon="vpn-connx" feature={c('Feature').t`10 VPN connections`} />,
-            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All visionary features`} />
+            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All Visionary features`} />
         ],
         [VPNFREE]: [
             <SubscriptionFeatureRow key="connection" icon="vpn-connx" feature={c('Feature').t`1 VPN connection`} />,
