@@ -96,6 +96,8 @@ function authentication(
                     plainMailboxPass,
                     oldSaltedPassword: api.getPassword(),
                     user
+                }).catch((e) => {
+                    console.error(e);
                 });
             }
 

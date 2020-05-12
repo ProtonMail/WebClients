@@ -64,7 +64,7 @@ function keysModel(dispatchers) {
      * @param {String} addressID
      * @return {Array<Object>} [{ key, pkg }]
      */
-    const getAllKeys = (addressID) => Object.keys(CACHE[addressID]).map((keyID) => CACHE[addressID][keyID]);
+    const getAllKeys = (addressID) => Object.keys(CACHE[addressID] || {}).map((keyID) => CACHE[addressID][keyID]);
 
     /**
      * Return the activated public keys available for a specific address ID
