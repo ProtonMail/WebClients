@@ -54,7 +54,11 @@ const ItemColumnLayout = ({
             <div className="flex flex-items-center item-secondline mw100">
                 <div className="flex-item-fluid flex w0 pr1 flex-nowrap item-sender--smaller">
                     <ItemExpiration element={element} />
-                    {showIcon && <ItemLocation message={element as Message} mailSettings={mailSettings} />}
+                    {showIcon && (
+                        <span className="mr0-25 inline-flex flex-self-end">
+                            <ItemLocation message={element as Message} mailSettings={mailSettings} />
+                        </span>
+                    )}
                     {isConversation && (
                         <NumMessages
                             className={classnames(['mr0-25 flex-item-noshrink', unread && 'bold'])}
