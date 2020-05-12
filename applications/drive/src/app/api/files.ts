@@ -26,7 +26,7 @@ export const queryRequestUpload = (data: {
     return {
         method: 'post',
         url: 'drive/blocks',
-        data: { ...data, V2: true }
+        data
     };
 };
 
