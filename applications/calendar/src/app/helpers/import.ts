@@ -19,8 +19,6 @@ import {
     NOTIFICATION_UNITS,
     NOTIFICATION_UNITS_MAX
 } from '../constants';
-import { withRruleWkst } from '../containers/calendar/eventActions/rruleWkst';
-import { WeekStartsOn } from '../containers/calendar/interface';
 import { EventFailure, IMPORT_ERROR_TYPE, ImportFailure } from '../interfaces/Import';
 import {
     VcalCalendarComponent,
@@ -231,8 +229,7 @@ const getIsDateOutOfBounds = (property: VcalDateOrDateTimeProperty) => {
 };
 
 export const validateEvent = (
-    veventComponent: VcalVeventComponent,
-    wkst?: WeekStartsOn
+    veventComponent: VcalVeventComponent
 ): {
     event?: VcalVeventComponent;
     error?: string;
@@ -330,7 +327,7 @@ export const validateEvent = (
             if (!getIsRruleValid(rrule.value)) {
                 return { error: c('Error importing event').t`Recurring rule not supported` };
             }
-            validated.rrule = withRruleWkst(rrule, wkst);
+            validated.rrule = rrule;
         }
 
         const alarms = components?.filter(({ component }) => component === 'valarm').slice(0, MAX_NOTIFICATIONS);
@@ -350,12 +347,10 @@ export const validateEvent = (
 
 export const filterNonSupported = ({
     components,
-    calscale,
-    wkst
+    calscale
 }: {
     components: VcalCalendarComponent[];
     calscale?: string;
-    wkst: WeekStartsOn;
 }) => {
     if (calscale && calscale.toLowerCase() !== 'gregorian') {
         return {
@@ -395,7 +390,7 @@ export const filterNonSupported = ({
             //     })
             // }
             if (getIsVeventComponent(vcalComponent)) {
-                const { event, error } = validateEvent(vcalComponent, wkst);
+                const { event, error } = validateEvent(vcalComponent);
                 if (!error && !!event) {
                     acc.events.push(event);
                 } else {
