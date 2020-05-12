@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, Input, Label, Row, Field, ColorSelector } from 'react-components';
+import { Alert, Input, Label, Row, Field, ColorPicker } from 'react-components';
 import { LABEL_TYPE } from 'proton-shared/lib/constants';
 
 import ParentFolderSelector from './ParentFolderSelector';
@@ -34,7 +34,7 @@ function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID }) 
                 <Row>
                     <Label htmlFor="accountType">{c('New Label form').t`Color`} </Label>
                     <Field>
-                        <ColorSelector selected={label.Color} onChange={onChangeColor} />
+                        <ColorPicker color={label.Color} onChange={onChangeColor} />
                     </Field>
                 </Row>
             ) : null}
