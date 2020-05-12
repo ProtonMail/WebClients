@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import {
-    FormModal,
-    Price,
-    Alert,
-    PrimaryButton,
-    useNotifications,
-    useApi,
-    useLoading,
-    useModals
-} from 'react-components';
+import { FormModal, PrimaryButton, useNotifications, useApi, useLoading, useModals } from 'react-components';
 import { donate } from 'proton-shared/lib/api/payments';
 import {
     DEFAULT_CURRENCY,
@@ -34,11 +25,6 @@ const DonateModal = ({ ...rest }) => {
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
     const [amount, setAmount] = useState(DEFAULT_DONATION_AMOUNT);
     const { createModal } = useModals();
-    const minAmount = (
-        <Price key="min" currency={currency}>
-            {MIN_DONATION_AMOUNT}
-        </Price>
-    );
 
     const handleSubmit = async (params) => {
         const requestBody = await handlePaymentToken({
@@ -89,22 +75,18 @@ const DonateModal = ({ ...rest }) => {
                 currency={currency}
                 onChangeCurrency={setCurrency}
             />
-            {amount >= MIN_DONATION_AMOUNT ? (
-                <Payment
-                    type="donation"
-                    method={method}
-                    amount={amount}
-                    currency={currency}
-                    card={card}
-                    onMethod={setMethod}
-                    onCard={setCard}
-                    errors={errors}
-                    paypal={paypal}
-                    paypalCredit={paypalCredit}
-                />
-            ) : (
-                <Alert type="error">{c('Error').jt`Amount below minimum: ${minAmount}`}</Alert>
-            )}
+            <Payment
+                type="donation"
+                method={method}
+                amount={amount}
+                currency={currency}
+                card={card}
+                onMethod={setMethod}
+                onCard={setCard}
+                errors={errors}
+                paypal={paypal}
+                paypalCredit={paypalCredit}
+            />
         </FormModal>
     );
 };

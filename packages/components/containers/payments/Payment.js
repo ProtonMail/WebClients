@@ -42,7 +42,7 @@ const Payment = ({
     useEffect(() => {
         const { value } = options.find(({ disabled }) => !disabled);
         onMethod(value);
-    }, [methods.length]);
+    }, [options.length]);
 
     if (type === 'donation' && amount < MIN_DONATION_AMOUNT) {
         const price = (
