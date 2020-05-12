@@ -27,11 +27,12 @@ export interface DownloadControls {
 
 export interface DownloadCallbacks {
     onStart: (stream: ReadableStream<Uint8Array>) => Promise<DriveFileBlock[] | Uint8Array[]>;
+    onFinish?: () => void;
     onProgress?: (bytes: number) => void;
     transformBlockStream?: StreamTransformer;
 }
 
-export const initDownload = ({ onStart, onProgress, transformBlockStream }: DownloadCallbacks) => {
+export const initDownload = ({ onStart, onProgress, onFinish, transformBlockStream }: DownloadCallbacks) => {
     const id = generateUID('drive-transfers');
     const abortController = new AbortController();
     const fileStream = new ObserverStream();
@@ -132,8 +133,9 @@ export const initDownload = ({ onStart, onProgress, transformBlockStream }: Down
 
         // Wait for stream to be flushed
         await fsWriter.ready;
+        await fsWriter.close();
 
-        return fsWriter.close();
+        onFinish?.();
     };
 
     const cancel = () => {

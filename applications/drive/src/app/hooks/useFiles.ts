@@ -1,7 +1,13 @@
 import { useCallback } from 'react';
 import { useApi, useEventManager, useUser, useNotifications } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
-import { DriveFileRevisionResult, CreateFileResult, FileRevisionState, RequestUploadResult } from '../interfaces/file';
+import {
+    DriveFileRevisionResult,
+    CreateFileResult,
+    FileRevisionState,
+    RequestUploadResult,
+    NestedFileStream
+} from '../interfaces/file';
 import { decryptMessage, encryptMessage } from 'pmcrypto';
 import { c } from 'ttag';
 import { lookup } from 'mime-types';
@@ -33,17 +39,20 @@ import useDrive from './useDrive';
 import useDebouncedPromise from './useDebouncedPromise';
 import { FILE_CHUNK_SIZE } from '../constants';
 import useQueuedFunction from './useQueuedFunction';
+import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
+import { getMetaForTransfer } from '../components/Drive/Drive';
 
 const HASH_CHECK_AMOUNT = 10;
 
 function useFiles() {
     const api = useApi();
+    const cache = useDriveCache();
     const debouncedRequest = useDebouncedPromise();
     const queuedFunction = useQueuedFunction();
     const { createNotification } = useNotifications();
     const { getPrimaryAddressKey, sign } = useDriveCrypto();
-    const { getLinkMeta, getLinkKeys, events } = useDrive();
-    const { addToDownloadQueue } = useDownloadProvider();
+    const { getLinkMeta, getLinkKeys, events, fetchAllFolderPages } = useDrive();
+    const { addToDownloadQueue, addFolderToDownloadQueue } = useDownloadProvider();
     const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses } = useUploadProvider();
     const [{ MaxSpace, UsedSpace }] = useUser();
     const { call } = useEventManager();
@@ -258,7 +267,7 @@ function useFiles() {
                 const uploadedChunksSize = progresses[upload.id] - (progresses[upload.id] % FILE_CHUNK_SIZE);
                 return [TransferState.Initializing, TransferState.Pending, TransferState.Progress].includes(
                     upload.state
-                )
+                ) && upload.meta.size
                     ? sum + upload.meta.size - uploadedChunksSize
                     : sum;
             }, 0);
@@ -372,8 +381,66 @@ function useFiles() {
         });
     };
 
+    const startFolderTransfer = async (
+        filename: string,
+        shareId: string,
+        linkId: string,
+        cb: {
+            onStartFileTransfer: (file: NestedFileStream) => void;
+            onStartFolderTransfer: (path: string) => void;
+            onCancel: (reason: any) => void;
+        }
+    ) => {
+        const { addDownload, startDownloads } = addFolderToDownloadQueue(filename, cb);
+        const fileStreamPromises: Promise<ReadableStream<Uint8Array>>[] = [];
+
+        const downloadFolder = async (linkId: string, filePath = ''): Promise<void> => {
+            const isComplete = cache.get.childrenComplete(shareId, linkId);
+            const listed = cache.get.listedChildLinks(shareId, linkId);
+            if (!isComplete && !listed?.length) {
+                await fetchAllFolderPages(shareId, linkId);
+            }
+
+            const children = cache.get.childLinkMetas(shareId, linkId);
+
+            if (!children) {
+                return;
+            }
+
+            const promises = children.map((child) => {
+                const path = `${filePath}/${child.Name}`;
+                if (child.Type === LinkType.FILE) {
+                    const promise = new Promise<ReadableStream<Uint8Array>>((resolve) => {
+                        addDownload(getMetaForTransfer(child), {
+                            transformBlockStream: decryptBlockStream(shareId, child.LinkID),
+                            onStart: async (stream) => {
+                                resolve(stream);
+                                cb.onStartFileTransfer({
+                                    stream,
+                                    path
+                                });
+                                return getFileBlocks(shareId, child.LinkID);
+                            }
+                        });
+                    });
+                    fileStreamPromises.push(promise);
+                } else {
+                    cb.onStartFolderTransfer(path);
+                    return downloadFolder(child.LinkID, path);
+                }
+            });
+
+            await Promise.all(promises);
+        };
+
+        await downloadFolder(linkId);
+        startDownloads();
+        await Promise.all(fileStreamPromises);
+    };
+
     return {
         startFileTransfer,
+        startFolderTransfer,
         uploadDriveFile,
         uploadDriveFiles,
         downloadDriveFile,

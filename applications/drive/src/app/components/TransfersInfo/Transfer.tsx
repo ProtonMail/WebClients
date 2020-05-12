@@ -35,17 +35,18 @@ type Props = (DownloadProps | UploadProps) & {
 };
 
 const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) => {
-    const fileSize = transfer.meta.size;
-    const percentageDone = fileSize ? Math.floor(100 * (stats.progress / fileSize)) : 100;
-
     const isProgress = transfer.state === TransferState.Progress;
     const isError = transfer.state === TransferState.Canceled || transfer.state === TransferState.Error;
     const isDone = transfer.state === TransferState.Done;
     const isInitializing = transfer.state === TransferState.Initializing;
-    const isCanceled = transfer.state === TransferState.Canceled;
+    const isFinished = isError || isDone;
 
-    // If file size is 0, progress and file size are changed to 1/1, so that the bar is complete
-    const progress = fileSize === 0 ? 1 : stats.progress;
+    const fileSize = transfer.meta.size;
+    const progressLimit = fileSize || 1;
+    const percentageDone = Math.floor(100 * (stats.progress / progressLimit));
+
+    // If file size is 0 when finished, progress is 1/1, so that the bar is complete
+    const progress = !fileSize && isFinished ? 1 : stats.progress;
     const speed = humanSize(stats.speed);
     const hasControls = type === TransferType.Download || isError || isDone;
 
@@ -75,7 +76,9 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
                 </div>
 
                 <div className="pd-transfers-listItemStats flex-item-noshrink flex flex-spacebetween flex-nowrap">
-                    <span className="pd-transfers-listItemStat alignright notinymobile">{humanSize(fileSize)}</span>
+                    <span className="pd-transfers-listItemStat alignright notinymobile">
+                        {fileSize !== undefined && humanSize(fileSize)}
+                    </span>
                     {isProgress && (
                         <span className="pd-transfers-listItemStat alignright notinymobile">{c('Info')
                             .t`${speed}/s`}</span>
@@ -85,10 +88,10 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
                 </div>
             </div>
             <ProgressBar
-                status={isError || isCanceled ? ProgressBarStatus.Error : ProgressBarStatus.Success}
+                status={isError ? ProgressBarStatus.Error : ProgressBarStatus.Success}
                 aria-describedby={transfer.id}
                 value={progress}
-                max={fileSize || 1}
+                max={progressLimit}
             />
         </div>
     );

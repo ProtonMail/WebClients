@@ -1,21 +1,34 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
-import { TransferState, TransferProgresses, TransferMeta } from '../../interfaces/transfer';
+import { TransferState, TransferProgresses, TransferMeta, TransferCancel } from '../../interfaces/transfer';
 import { initDownload, DownloadControls, DownloadCallbacks } from './download';
-import { useApi } from 'react-components';
+import { useApi, generateUID } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 
 const MAX_ACTIVE_DOWNLOADS = 3;
 
-export interface Download {
+type PartialDownload = {
+    id: string;
+    partOf: string;
+    state: TransferState;
+};
+
+export type Download = {
     id: string;
     meta: TransferMeta;
     state: TransferState;
     startDate: Date;
-}
+};
 
 interface DownloadProviderState {
     downloads: Download[];
     addToDownloadQueue: (meta: TransferMeta, handlers: DownloadCallbacks) => Promise<ReadableStream<Uint8Array>>;
+    addFolderToDownloadQueue: (
+        filename: string,
+        cb?: { onCancel: (reason: any) => void }
+    ) => {
+        addDownload(meta: TransferMeta, { onProgress, ...rest }: DownloadCallbacks): void;
+        startDownloads(): void;
+    };
     getDownloadsProgresses: () => TransferProgresses;
     clearDownloads: () => void;
     cancelDownload: (id: string) => void;
@@ -33,18 +46,43 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     const controls = useRef<{ [id: string]: DownloadControls }>({});
     const progresses = useRef<TransferProgresses>({});
 
-    const [downloads, setDownloads] = useState<Download[]>([]);
+    const [downloads, setDownloads] = useState<(Download | PartialDownload)[]>([]);
 
-    const updateDownloadState = (id: string, state: TransferState) => {
+    const updateDownloadState = (id: string | string[], state: TransferState) => {
+        const ids = Array.isArray(id) ? id : [id];
         setDownloads((downloads) =>
             downloads.map((download) =>
-                download.id === id &&
+                ids.includes(download.id) &&
                 download.state !== state &&
                 (download.state !== TransferState.Canceled || state !== TransferState.Error)
                     ? { ...download, state }
                     : download
             )
         );
+    };
+
+    const getPartialsOf = (id: string) =>
+        downloads.filter((download) => 'partOf' in download && download.partOf === id).map(({ id }) => id);
+
+    const getDownloadsProgresses = () => ({ ...progresses.current });
+
+    const clearDownloads = () => {
+        // TODO: cancel pending downloads when implementing reject
+        setDownloads([]);
+    };
+
+    const cancelDownload = (id: string) => {
+        const partials = getPartialsOf(id);
+
+        updateDownloadState([id, ...partials], TransferState.Canceled);
+
+        partials.forEach((id) => controls.current[id].cancel());
+        controls.current[id].cancel();
+    };
+
+    const removeDownload = (id: string) => {
+        const partials = getPartialsOf(id);
+        setDownloads((downloads) => downloads.filter((download) => download.id !== id && !partials.includes(id)));
     };
 
     useEffect(() => {
@@ -59,10 +97,10 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
             controls.current[id]
                 .start(api)
                 .then(() => {
-                    // Update download progress to 100% (for empty files, of transfer from buffer)
+                    // Update download progress to 100% (for empty files, or transfers from buffer)
                     const download = downloads.find((download) => download.id === id);
-                    if (download) {
-                        progresses.current[id] = download.meta.size;
+                    if (download && 'meta' in download) {
+                        progresses.current[id] = download.meta.size ?? 0;
                     }
                     updateDownloadState(id, TransferState.Done);
                 })
@@ -77,13 +115,10 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         }
     }, [downloads]);
 
-    const addToDownloadQueue = async (
-        meta: TransferMeta,
-        { transformBlockStream, onStart, onProgress }: DownloadCallbacks
-    ) => {
+    const addToDownloadQueue = async (meta: TransferMeta, { onStart, onProgress, ...rest }: DownloadCallbacks) => {
         return new Promise<ReadableStream<Uint8Array>>((resolve) => {
             const { id, downloadControls } = initDownload({
-                transformBlockStream,
+                ...rest,
                 onProgress(bytes) {
                     progresses.current[id] += bytes;
                     onProgress?.(bytes);
@@ -109,31 +144,101 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         });
     };
 
-    const getDownloadsProgresses = () => ({ ...progresses.current });
+    const addFolderToDownloadQueue = (filename: string, cb?: { onCancel: (reason: any) => void }) => {
+        const files: { [id: string]: TransferMeta } = {};
+        const groupId = generateUID('drive-transfers');
+        const partialsPromises: Promise<void>[] = [];
 
-    const clearDownloads = () => {
-        // TODO: cancel pending downloads when implementing reject
-        setDownloads([]);
+        setDownloads((downloads) => [
+            ...downloads,
+            {
+                id: groupId,
+                meta: { filename, mimeType: 'Folder' },
+                state: TransferState.Initializing,
+                startDate: new Date()
+            }
+        ]);
+
+        return {
+            addDownload(meta: TransferMeta, { onProgress, ...rest }: DownloadCallbacks) {
+                const promise = new Promise<void>((resolve) => {
+                    const { id, downloadControls } = initDownload({
+                        ...rest,
+                        onProgress(bytes) {
+                            progresses.current[id] += bytes;
+                            progresses.current[groupId] += bytes;
+                            onProgress?.(bytes);
+                        },
+                        onFinish() {
+                            resolve();
+                        }
+                    });
+                    progresses.current[id] = 0;
+                    controls.current[id] = downloadControls;
+
+                    files[id] = meta;
+                });
+                partialsPromises.push(promise);
+            },
+            startDownloads() {
+                setDownloads((downloads) => {
+                    progresses.current[groupId] = 0;
+                    controls.current[groupId] = {
+                        cancel: () => {
+                            cb?.onCancel(new TransferCancel(groupId));
+                        },
+                        start: async () => {
+                            // Partials are `Initializing` until Folder download is started, then partials are set to Pending
+                            setDownloads((downloads) =>
+                                downloads.map((download) => {
+                                    if (download.id in files) {
+                                        return {
+                                            ...download,
+                                            state: TransferState.Pending
+                                        };
+                                    }
+                                    return download;
+                                })
+                            );
+                            await Promise.all(partialsPromises);
+                        }
+                    };
+
+                    let size = 0;
+                    return [
+                        ...downloads.filter(({ id }) => id !== groupId),
+                        ...Object.entries(files).map(([id, meta]) => {
+                            size += meta.size ?? 0;
+                            return {
+                                id,
+                                partOf: groupId,
+                                state: TransferState.Initializing
+                            };
+                        }),
+                        {
+                            id: groupId,
+                            meta: { filename, size, mimeType: 'Folder' },
+                            state: TransferState.Pending,
+                            startDate: new Date()
+                        }
+                    ];
+                });
+            }
+        };
     };
 
-    const cancelDownload = (id: string) => {
-        updateDownloadState(id, TransferState.Canceled);
-        return controls.current[id].cancel();
-    };
-
-    const removeDownload = (id: string) => {
-        setDownloads((downloads) => downloads.filter((download) => download.id !== id));
-    };
+    const visibleDownloads = downloads.filter((download): download is Download => !('partOf' in download));
 
     return (
         <DownloadContext.Provider
             value={{
                 addToDownloadQueue,
-                downloads,
+                downloads: visibleDownloads,
                 getDownloadsProgresses,
                 clearDownloads,
                 cancelDownload,
-                removeDownload
+                removeDownload,
+                addFolderToDownloadQueue
             }}
         >
             {children}

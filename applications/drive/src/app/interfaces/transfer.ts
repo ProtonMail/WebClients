@@ -14,7 +14,7 @@ export interface TransferProgresses {
 export interface TransferMeta {
     filename: string;
     mimeType: string;
-    size: number;
+    size?: number;
 }
 
 export class TransferCancel extends Error {

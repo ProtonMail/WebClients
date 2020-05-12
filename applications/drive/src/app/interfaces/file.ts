@@ -1,3 +1,5 @@
+import { ReadableStream } from 'web-streams-polyfill';
+
 export enum FileRevisionState {
     Draft = 0,
     Active = 1,
@@ -67,4 +69,9 @@ export interface DriveFileRevision {
 
 export interface DriveFileRevisionResult {
     Revision: DriveFileRevision;
+}
+
+export interface NestedFileStream {
+    stream: ReadableStream<Uint8Array>;
+    path: string;
 }

@@ -28,7 +28,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
     const { createNotification } = useNotifications();
     const { fileBrowserControls } = useDriveContent();
     const { getLinkMeta, createNewFolder, renameLink, events } = useDrive();
-    const { startFileTransfer } = useFiles();
+    const { startFileTransfer, startFolderTransfer } = useFiles();
     const { trashLinks, restoreLinks } = useTrash();
     const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
     const cache = useDriveCache();
@@ -59,9 +59,22 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
     const handleDownloadClick = () => {
         selectedItems.forEach(async (item) => {
-            const meta = getMetaForTransfer(item);
-            const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
-            FileSaver.saveViaDownload(fileStream, meta);
+            if (item.Type === LinkType.FILE) {
+                const meta = getMetaForTransfer(item);
+                const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
+                FileSaver.saveViaDownload(fileStream, meta);
+            } else {
+                const zipSaver = await FileSaver.saveViaZip(`${item.Name}.zip`);
+
+                if (zipSaver) {
+                    await startFolderTransfer(item.Name, shareId, item.LinkID, {
+                        onStartFileTransfer: zipSaver.addFile,
+                        onStartFolderTransfer: zipSaver.addFolder,
+                        onCancel: zipSaver.abort
+                    });
+                    zipSaver.close();
+                }
+            }
         });
     };
 
@@ -180,12 +193,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                     icon="read"
                     onClick={handlePreview}
                 />
-                <ToolbarButton
-                    disabled={hasFoldersSelected}
-                    title={c('Action').t`Download`}
-                    icon="download"
-                    onClick={handleDownloadClick}
-                />
+                <ToolbarButton title={c('Action').t`Download`} icon="download" onClick={handleDownloadClick} />
                 <ToolbarButton
                     disabled={isMultiSelect}
                     title={c('Action').t`Rename`}

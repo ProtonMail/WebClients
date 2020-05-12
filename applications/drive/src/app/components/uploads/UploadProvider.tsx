@@ -111,7 +111,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                     // Update upload progress to 100%
                     const upload = uploads.find((upload) => upload.id === id);
                     if (upload) {
-                        progresses.current[id] = upload.meta.size;
+                        progresses.current[id] = upload.meta.size ?? 0;
                     }
                     updateUploadState(id, TransferState.Done);
                 })

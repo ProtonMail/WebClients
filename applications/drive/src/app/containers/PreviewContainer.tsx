@@ -18,7 +18,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
     const { setFolder } = useDriveActiveFolder();
     const cache = useDriveCache();
-    const { getLinkMeta } = useDrive();
+    const { getLinkMeta, fetchAllFolderPages } = useDrive();
     const { downloadDriveFile, saveFileTransferFromBuffer, startFileTransfer } = useFiles();
     const [loading, withLoading] = useLoading(true);
     const [contents, setContents] = useState<Uint8Array[]>();
@@ -40,6 +40,9 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
                 }
 
                 setFolder({ shareId, linkId: ParentLinkID });
+
+                fetchAllFolderPages(shareId, ParentLinkID);
+
                 if (isPreviewAvailable(MimeType)) {
                     const { contents, controls } = await downloadDriveFile(shareId, linkId);
                     downloadControls.current = controls;

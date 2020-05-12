@@ -2,7 +2,6 @@
 import registerServiceWorker from 'service-worker-loader!./downloadSW';
 import { isSafari, isEdge, isEdgeChromium } from 'proton-shared/lib/helpers/browser';
 import { WritableStream } from 'web-streams-polyfill';
-import { TransferMeta } from '../../interfaces/transfer';
 
 /**
  * Safari and Edge don't support returning stream as a response.
@@ -51,7 +50,17 @@ export async function initDownloadSW() {
     serviceWorkerKeepAlive();
 }
 
-export async function openDownloadStream(meta: TransferMeta, { onCancel }: { onCancel: () => void }) {
+/**
+ * Opens download stream into service worker. Use abort signal when pipeTo can't close the download stream.
+ */
+export async function openDownloadStream(
+    meta: {
+        filename: string;
+        mimeType?: string;
+        size?: number;
+    },
+    { onCancel, abortSignal }: { onCancel: () => void; abortSignal?: AbortSignal }
+) {
     const channel = new MessageChannel();
     const stream = new WritableStream({
         write(block: Uint8Array) {
@@ -64,6 +73,12 @@ export async function openDownloadStream(meta: TransferMeta, { onCancel }: { onC
             channel.port1.postMessage({ action: 'abort', reason });
         }
     });
+
+    if (abortSignal) {
+        abortSignal.onabort = function() {
+            channel.port1.postMessage({ action: 'abort', reason: 'Download stream aborted' });
+        };
+    }
 
     const worker = await wakeUpServiceWorker();
 
