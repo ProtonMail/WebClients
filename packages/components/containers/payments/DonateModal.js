@@ -68,7 +68,6 @@ const DonateModal = ({ ...rest }) => {
         >
             <PaymentInfo method={method} />
             <AmountRow
-                type="donation"
                 method={method}
                 amount={amount}
                 onChangeAmount={setAmount}
