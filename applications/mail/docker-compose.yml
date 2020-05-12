@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  web:
+    image: gcr.io/proton-dev-ops/web/mail/proton-mail:branch-develop
+    environment:
+      # Feel free to change any of these values on your local .env file
+      API_ENDPOINT:
+      CALENDAR_ENDPOINT:
+      CONTACTS_ENDPOINT:
+      SETTINGS_ENDPOINT:
+    ports:
+      - 80:80
+      - 443:443
