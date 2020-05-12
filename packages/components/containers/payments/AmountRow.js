@@ -4,8 +4,8 @@ import { Row, Label, Field, PaymentSelector } from 'react-components';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
-const AmountRow = ({ method, amount, onChangeAmount, currency, onChangeCurrency }) => {
-    if ([PAYMENT_METHOD_TYPES.BITCOIN, PAYMENT_METHOD_TYPES.CASH].includes(method)) {
+const AmountRow = ({ method, type, amount, onChangeAmount, currency, onChangeCurrency }) => {
+    if ((method === PAYMENT_METHOD_TYPES.BITCOIN && type === 'donation') || method === PAYMENT_METHOD_TYPES.CASH) {
         return null;
     }
 
@@ -25,6 +25,7 @@ const AmountRow = ({ method, amount, onChangeAmount, currency, onChangeCurrency 
 };
 
 AmountRow.propTypes = {
+    type: PropTypes.string.isRequired,
     method: PropTypes.string.isRequired,
     amount: PropTypes.number.isRequired,
     onChangeAmount: PropTypes.func.isRequired,

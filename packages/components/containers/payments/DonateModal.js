@@ -66,6 +66,14 @@ const DonateModal = ({ ...rest }) => {
             {...rest}
         >
             <PaymentInfo method={method} />
+            <AmountRow
+                type="donation"
+                method={method}
+                amount={amount}
+                onChangeAmount={setAmount}
+                currency={currency}
+                onChangeCurrency={setCurrency}
+            />
             <Payment
                 type="donation"
                 method={method}
@@ -77,13 +85,6 @@ const DonateModal = ({ ...rest }) => {
                 errors={errors}
                 paypal={paypal}
                 paypalCredit={paypalCredit}
-            />
-            <AmountRow
-                method={method}
-                amount={amount}
-                onChangeAmount={setAmount}
-                currency={currency}
-                onChangeCurrency={setCurrency}
             />
         </FormModal>
     );

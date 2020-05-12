@@ -94,6 +94,14 @@ const CreditsModal = (props) => {
                 }
             >{c('Info')
                 .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}</Alert>
+            <AmountRow
+                type="credit"
+                method={method}
+                amount={amount}
+                onChangeAmount={setAmount}
+                currency={currency}
+                onChangeCurrency={setCurrency}
+            />
             <Payment
                 type="credit"
                 method={method}
@@ -105,13 +113,6 @@ const CreditsModal = (props) => {
                 errors={errors}
                 paypal={paypal}
                 paypalCredit={paypalCredit}
-            />
-            <AmountRow
-                method={method}
-                amount={amount}
-                onChangeAmount={setAmount}
-                currency={currency}
-                onChangeCurrency={setCurrency}
             />
         </FormModal>
     );
