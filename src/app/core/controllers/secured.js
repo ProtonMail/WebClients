@@ -53,7 +53,7 @@ function SecuredController(
     hotkeys.init(mailSettingsModel.get('Hotkeys') === 1);
 
     eventManager.initialize();
-    if (!isDelinquent()) {
+    if (!isDelinquent.getIsDelinquent()) {
         // Initialize counters for conversation (total and unread)
         cacheCounters.query();
     }

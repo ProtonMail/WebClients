@@ -903,7 +903,7 @@ export default angular
                 },
                 resolve: {
                     delinquent(user, isDelinquent) {
-                        return isDelinquent();
+                        return isDelinquent.testAndRedirect();
                     }
                 },
                 views: {
@@ -944,7 +944,7 @@ export default angular
                 views,
                 resolve: {
                     delinquent(user, isDelinquent) {
-                        return isDelinquent();
+                        return isDelinquent.testAndRedirect();
                     }
                 },
                 onEnter(AppModel) {
