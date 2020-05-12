@@ -15,6 +15,13 @@ const NewSubscriptionSubmitButton = ({ className, paypal, canPay, step, loading,
         );
     }
 
+    if (!checkResult.AmountDue) {
+        return (
+            <PrimaryButton className={className} loading={loading} disabled={!canPay} type="submit">{c('Action')
+                .t`Confirm`}</PrimaryButton>
+        );
+    }
+
     if (method === PAYMENT_METHOD_TYPES.PAYPAL) {
         return (
             <PayPalButton
@@ -29,13 +36,6 @@ const NewSubscriptionSubmitButton = ({ className, paypal, canPay, step, loading,
         return (
             <PrimaryButton className={className} loading={loading} onClick={onClose}>{c('Action')
                 .t`Done`}</PrimaryButton>
-        );
-    }
-
-    if (!checkResult.AmountDue) {
-        return (
-            <PrimaryButton className={className} loading={loading} disabled={!canPay} type="submit">{c('Action')
-                .t`Confirm`}</PrimaryButton>
         );
     }
 
