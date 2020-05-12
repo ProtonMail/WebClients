@@ -56,7 +56,9 @@ function DriveContainer({
     }, [match.params]);
 
     useEffect(() => {
-        setFolder(folder);
+        if (folder) {
+            setFolder(folder);
+        }
     }, [folder]);
 
     const navigateToLink = (shareId: string, linkId: string, type: LinkType) => {

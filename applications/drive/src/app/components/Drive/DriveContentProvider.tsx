@@ -3,7 +3,7 @@ import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import useFileBrowser from '../FileBrowser/useFileBrowser';
 import useDrive from '../../hooks/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
-import { DriveFolder } from './DriveFolderProvider';
+import { DriveFolder, useDriveActiveFolder } from './DriveFolderProvider';
 import { mapLinksToChildren } from './helpers';
 
 interface DriveContentProviderState {
@@ -113,8 +113,12 @@ const DriveContentProviderInner = ({
  * Exposes functions to (re)load open folder contents.
  */
 const DriveContentProvider = ({ children, folder }: { children: React.ReactNode; folder?: DriveFolder }) => {
-    return folder ? (
-        <DriveContentProviderInner activeFolder={folder}>{children}</DriveContentProviderInner>
+    const { folder: activeFolder } = useDriveActiveFolder();
+
+    const currentFolder = folder || activeFolder;
+
+    return currentFolder ? (
+        <DriveContentProviderInner activeFolder={currentFolder}>{children}</DriveContentProviderInner>
     ) : (
         <>{children}</>
     );

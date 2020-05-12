@@ -228,6 +228,13 @@ function useDrive() {
         cache.set.childLinkMetas(decryptedLinks, shareId, linkId, Links.length < PageSize ? 'complete' : 'incremental');
     };
 
+    const fetchAllFolderPages = async (shareId: string, linkId: string) => {
+        if (!cache.get.childrenComplete(shareId, linkId)) {
+            await fetchNextFolderContents(shareId, linkId);
+            await fetchAllFolderPages(shareId, linkId);
+        }
+    };
+
     const renameLink = async (
         shareId: string,
         linkId: string,
@@ -367,6 +374,7 @@ function useDrive() {
         getShareMeta,
         renameLink,
         createNewFolder,
+        fetchAllFolderPages,
         events
     };
 }

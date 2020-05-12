@@ -1,5 +1,13 @@
 import { contentType } from 'mime-types';
 
+interface DownloadConfig {
+    stream: ReadableStream<Uint8Array>;
+    port: string;
+    filename?: string;
+    mimeType?: string;
+    size?: number;
+}
+
 /**
  * Open a stream of data passed over MessageChannel.
  * Every download has it's own stream from app to SW.
@@ -31,7 +39,7 @@ function createDownloadStream(port: MessagePort) {
  * and generates a unique link for downloading the data as a file stream.
  */
 class DownloadServiceWorker {
-    pendingDownloads = new Map();
+    pendingDownloads = new Map<string, DownloadConfig>();
 
     constructor() {
         self.addEventListener('install', this.onInstall);
@@ -69,14 +77,15 @@ class DownloadServiceWorker {
         this.pendingDownloads.delete(url);
 
         const headers = new Headers({
-            'Content-Length': `${size}`,
-            'Content-Type': `${contentType(mimeType)}`,
-            'Content-Disposition': 'attachment; filename=' + `"${encodeURI(filename)}"`,
+            ...(size ? { 'Content-Length': `${size}` } : {}),
+            'Content-Type': `${contentType(mimeType || 'application/octet-stream')}`,
+            'Content-Disposition': 'attachment; filename=' + `"${encodeURI(filename || 'file')}"`,
             'Content-Security-Policy': "default-src 'none'",
             'X-Content-Security-Policy': "default-src 'none'",
             'X-WebKit-CSP': "default-src 'none'",
             'X-XSS-Protection': '1; mode=block'
         });
+
         event.respondWith(new Response(stream, { headers }));
     };
 
