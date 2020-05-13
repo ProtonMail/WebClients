@@ -8,7 +8,7 @@ interface Props {
 }
 const CalendarIcon = ({ color, className }: Props) => {
     const colorModel = tinycolor(color);
-    const iconColor = colorModel?.isValid() ? colorModel?.toHexString() : '';
+    const iconColor = colorModel?.isValid() ? colorModel?.toHexString(false) : '';
     if (!iconColor) {
         return null;
     }

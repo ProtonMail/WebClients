@@ -1,7 +1,6 @@
 import { useGetAddressKeys } from 'react-components';
 import { Api } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
 import { RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from '../../../constants';
@@ -57,11 +56,15 @@ const handleSaveRecurringEvent = async ({
         recurrence
     );
 
-    const saveTypes = canOnlySaveAll
-        ? [RECURRING_TYPES.ALL]
-        : [RECURRING_TYPES.SINGLE, isFutureAllowed ? RECURRING_TYPES.FUTURE : undefined, RECURRING_TYPES.ALL].filter(
-              isTruthy
-          );
+    let saveTypes;
+
+    if (canOnlySaveAll) {
+        saveTypes = [RECURRING_TYPES.ALL];
+    } else if (isFutureAllowed) {
+        saveTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.FUTURE, RECURRING_TYPES.ALL];
+    } else {
+        saveTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.ALL];
+    }
 
     const saveType = await onSaveConfirmation({
         type: SAVE_CONFIRMATION_TYPES.RECURRING,

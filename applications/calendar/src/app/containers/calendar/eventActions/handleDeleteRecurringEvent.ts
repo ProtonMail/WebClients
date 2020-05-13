@@ -1,6 +1,5 @@
 import { useGetAddressKeys } from 'react-components';
 import { Api } from 'proton-shared/lib/interfaces';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES } from '../../../constants';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
@@ -41,16 +40,14 @@ const handleDeleteRecurringEvent = async ({
     getAddressKeys,
     getCalendarKeys
 }: Arguments) => {
-    const deleteTypes =
-        canOnlyDeleteAll || !originalEventData.veventComponent
-            ? [RECURRING_TYPES.ALL]
-            : [
-                  RECURRING_TYPES.SINGLE,
-                  getHasFutureOption(originalEventData.veventComponent, recurrence)
-                      ? RECURRING_TYPES.FUTURE
-                      : undefined,
-                  RECURRING_TYPES.ALL
-              ].filter(isTruthy);
+    let deleteTypes;
+    if (canOnlyDeleteAll || !originalEventData.veventComponent) {
+        deleteTypes = [RECURRING_TYPES.ALL];
+    } else if (getHasFutureOption(originalEventData.veventComponent, recurrence)) {
+        deleteTypes = [RECURRING_TYPES.ALL, RECURRING_TYPES.FUTURE, RECURRING_TYPES.ALL];
+    } else {
+        deleteTypes = [RECURRING_TYPES.ALL, RECURRING_TYPES.ALL];
+    }
 
     const deleteType = await onDeleteConfirmation({
         type: DELETE_CONFIRMATION_TYPES.RECURRING,

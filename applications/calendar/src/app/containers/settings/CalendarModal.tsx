@@ -257,17 +257,7 @@ const CalendarModal = ({
     })();
 
     return (
-        <FormModal
-            title={''}
-            className="pm-modal--shorterLabels w100"
-            close={null}
-            onClose={noop}
-            onSubmit={noop}
-            submit={c('Action').t`Continue`}
-            hasClose={false}
-            {...modalProps}
-            {...rest}
-        >
+        <FormModal className="pm-modal--shorterLabels w100" close={null} onClose={noop} {...modalProps} {...rest}>
             {section}
         </FormModal>
     );

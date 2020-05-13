@@ -108,10 +108,10 @@ export const modelToVeventComponent = (model: EventModel) => {
     const components = [...valarmComponents];
 
     return withRequiredProperties({
-        component: 'vevent',
-        components,
         ...generalProperties,
         ...frequencyProperties,
-        ...dateProperties
+        ...dateProperties,
+        component: 'vevent',
+        components
     });
 };
