@@ -46,8 +46,8 @@ function TransfersInfo() {
     React.useEffect(() => {
         updateStats();
 
-        const activeUploads = uploads.filter(({ state }) => state !== TransferState.Done);
-        const activeDownloads = downloads.filter(({ state }) => state !== TransferState.Done);
+        const activeUploads = uploads.filter(({ state }) => state === TransferState.Progress);
+        const activeDownloads = downloads.filter(({ state }) => state === TransferState.Progress);
 
         if (!activeUploads.length && !activeDownloads.length) {
             return;

@@ -47,26 +47,27 @@ class FileSaver {
     async saveViaZip(filename: string) {
         try {
             const abortController = new AbortController();
-            const mimeType = lookup(filename) || undefined;
-            const zipMeta = { filename, mimeType };
             const { readable, writable } = new ZipWriter();
             const writer = writable.getWriter();
 
             const files: NestedFileStream[] = [];
 
             if (this.useBlobFallback) {
-                return this.saveViaBuffer(readable, filename);
+                this.saveViaBuffer(readable, filename);
+            } else {
+                const mimeType = lookup(filename) || undefined;
+                const zipMeta = { filename, mimeType };
+
+                const saveStream = await openDownloadStream(zipMeta, {
+                    onCancel: () => {
+                        files.forEach(({ stream }) => stream.cancel('user canceled'));
+                    },
+                    abortSignal: abortController.signal
+                });
+
+                // This creates it's own streams that are not aborted, hence the abort signal
+                readable.pipeTo(saveStream);
             }
-
-            const saveStream = await openDownloadStream(zipMeta, {
-                onCancel: () => {
-                    files.forEach(({ stream }) => stream.cancel('user canceled'));
-                },
-                abortSignal: abortController.signal
-            });
-
-            // This creates it's own streams that are not aborted, hence the abort signal
-            readable.pipeTo(saveStream);
 
             return {
                 addFile: (file: NestedFileStream) => {

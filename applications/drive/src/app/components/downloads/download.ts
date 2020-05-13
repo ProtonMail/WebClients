@@ -53,7 +53,9 @@ export const initDownload = ({ onStart, onProgress, onFinish, transformBlockStre
                 await fsWriter.write(buffer as Uint8Array);
             }
             await fsWriter.ready;
-            return fsWriter.close();
+            await fsWriter.close();
+            onFinish?.();
+            return;
         }
 
         const orderedBlocks: DriveFileBlock[] = orderBy(blocksOrBuffer, 'Index');
