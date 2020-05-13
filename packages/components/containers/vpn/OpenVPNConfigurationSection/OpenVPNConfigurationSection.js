@@ -40,7 +40,7 @@ const PROTOCOL = {
 };
 
 const OpenVPNConfigurationSection = () => {
-    const [platform, setPlatform] = useState(PLATFORM.MACOS);
+    const [platform, setPlatform] = useState(PLATFORM.ANDROID);
     const [protocol, setProtocol] = useState(PROTOCOL.UDP);
     const [category, setCategory] = useState(CATEGORY.SECURE_CORE);
     const { request } = useApiWithoutResult(getVPNServerConfig);
@@ -114,11 +114,11 @@ const OpenVPNConfigurationSection = () => {
                     value={platform}
                     onChange={setPlatform}
                     options={[
-                        { value: PLATFORM.MACOS, label: c('Option').t`MacOS` },
-                        { value: PLATFORM.LINUX, label: c('Option').t`GNU/Linux` },
-                        { value: PLATFORM.WINDOWS, label: c('Option').t`Windows` },
                         { value: PLATFORM.ANDROID, label: c('Option').t`Android` },
                         { value: PLATFORM.IOS, label: c('Option').t`iOS` },
+                        { value: PLATFORM.WINDOWS, label: c('Option').t`Windows` },
+                        { value: PLATFORM.MACOS, label: c('Option').t`MacOS` },
+                        { value: PLATFORM.LINUX, label: c('Option').t`GNU/Linux` },
                         { value: PLATFORM.ROUTER, label: c('Option').t`Router` }
                     ]}
                 />
