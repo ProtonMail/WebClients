@@ -17,9 +17,17 @@ interface Props {
     max?: number;
     onUnlabel?: (labelID: string) => void;
     className?: string;
+    isCollapsed?: boolean;
 }
 
-const ItemLabels = ({ element = {}, onUnlabel = noop, max = 99, labels = [], className = '' }: Props) => {
+const ItemLabels = ({
+    element = {},
+    onUnlabel = noop,
+    max = 99,
+    labels = [],
+    className = '',
+    isCollapsed = true
+}: Props) => {
     const labelIDs = getLabelIDs(element) || [];
     const labelsMap = toMap(labels);
     const labelsObjects = labelIDs.map((ID) => labelsMap[ID]).filter(isTruthy);
@@ -30,17 +38,19 @@ const ItemLabels = ({ element = {}, onUnlabel = noop, max = 99, labels = [], cla
         <div
             className={classnames([
                 'inline-flex flew-row flex-items-center pm-badgeLabel-container stop-propagation',
+                isCollapsed && 'pm-badgeLabel-container--collapsed',
                 className
             ])}
+            role="list"
         >
             {labelsToShow.map(({ ID = '', Name = '', Color = '' }) => (
                 <span
-                    className="badgeLabel flex flex-row flex-items-center ml0-25"
+                    className="badgeLabel flex flex-row flex-items-center"
                     style={{
-                        backgroundColor: Color,
-                        borderColor: Color
+                        color: Color
                     }}
                     key={ID}
+                    role="listitem"
                 >
                     <Link
                         to={`/${ID}`}
@@ -56,7 +66,7 @@ const ItemLabels = ({ element = {}, onUnlabel = noop, max = 99, labels = [], cla
                             onClick={() => onUnlabel(ID)}
                             title={c('Action').t`Remove this label`}
                         >
-                            <Icon name="off" size={12} color="white" />
+                            <Icon name="off" size={11} color="white" />
                             <span className="sr-only">{c('Action').t`Remove this label`}</span>
                         </button>
                     ) : null}

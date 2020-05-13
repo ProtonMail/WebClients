@@ -102,7 +102,13 @@ const HeaderExpandedDetails = ({ labels, message, messageViewIcons, mailSettings
                         <Icon name="label" className="mauto" alt={c('Label').t`Labels:`} />
                     </span>
                     <span className="flex-self-vcenter mr0-5 ellipsis">
-                        <ItemLabels max={4} element={message.data} labels={labels} onUnlabel={handleRemoveLabel} />
+                        <ItemLabels
+                            max={4}
+                            isCollapsed={false}
+                            element={message.data}
+                            labels={labels}
+                            onUnlabel={handleRemoveLabel}
+                        />
                     </span>
                 </div>
             )}
