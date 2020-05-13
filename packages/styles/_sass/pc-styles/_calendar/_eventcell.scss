@@ -89,7 +89,7 @@
 .calendar-eventcell {
 	opacity: var(--opacity);
 	transition: all 50ms ease-out, opacity .5s ease-out, background-color .15s ease-in-out;
-	animation: loadingEvent 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) infinite alternate;
+	animation: loadingEvent 1s easing(easeInQuint) infinite alternate;
 
 	&--isLoaded {
 		background-color: var(--background);
