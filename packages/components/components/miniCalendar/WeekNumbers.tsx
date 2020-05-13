@@ -1,9 +1,13 @@
 import React, { useMemo } from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { getISOWeek } from 'date-fns';
 
-const getMonday = (days, start, end) => {
+export interface Props {
+    days: Date[];
+    numberOfWeeks: number;
+}
+
+const getMonday = (days: Date[], start: number, end: number) => {
     for (let i = start; i < end; ++i) {
         const day = days[i];
         if (day && day.getDay() === 1) {
@@ -12,7 +16,7 @@ const getMonday = (days, start, end) => {
     }
 };
 
-const WeekNumbers = ({ days, numberOfWeeks }) => {
+const WeekNumbers = ({ days, numberOfWeeks }: Props) => {
     const style = {
         '--minicalendar-weeknumbers-numberOfWeeks': numberOfWeeks + 1
     };
@@ -38,12 +42,6 @@ const WeekNumbers = ({ days, numberOfWeeks }) => {
             {weekNumberLabels}
         </div>
     );
-};
-
-WeekNumbers.propTypes = {
-    days: PropTypes.array.isRequired,
-    numberOfWeeks: PropTypes.number.isRequired,
-    weekStartsOn: PropTypes.number.isRequired
 };
 
 export default WeekNumbers;

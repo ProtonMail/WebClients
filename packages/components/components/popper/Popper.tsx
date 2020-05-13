@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import Portal from '../portal/Portal';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
@@ -6,7 +6,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     role?: string;
     isOpen?: boolean;
     children: React.ReactNode;
-    style?: object;
+    style?: CSSProperties;
 }
 
 const Popper = ({ children, isOpen = false, divRef, role = 'tooltip', ...rest }: Props) => {

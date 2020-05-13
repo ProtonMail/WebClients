@@ -1,3 +1,6 @@
+import './typings/index.d';
+import './typings/css.d';
+
 export { default as Autocomplete } from './components/autocomplete/Autocomplete';
 export { default as AutocompleteSelection } from './components/autocomplete/AutocompleteSelection';
 export { default as useAutocomplete } from './components/autocomplete/useAutocomplete';

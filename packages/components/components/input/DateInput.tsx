@@ -25,7 +25,7 @@ const DEFAULT_MAX = new Date(2200, 0, 1);
 
 interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
     displayWeekNumbers?: boolean;
-    weekStartsOn?: number;
+    weekStartsOn?: 0 | 2 | 1 | 6 | 5 | 4 | 3;
     value?: Date;
     placeholder?: string;
     defaultDate?: Date;

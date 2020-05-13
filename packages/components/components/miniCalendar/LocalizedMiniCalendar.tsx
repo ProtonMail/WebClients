@@ -4,9 +4,11 @@ import { getFormattedMonths, getFormattedWeekdays, getWeekStartsOn } from 'proto
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { format } from 'date-fns';
 
-import MiniCalendar from './MiniCalendar';
+import MiniCalendar, { Props as MiniCalProps } from './MiniCalendar';
 
-const LocalizedMiniCalendar = (props) => {
+export type Props = MiniCalProps;
+
+const LocalizedMiniCalendar = (props: Props) => {
     const weekdaysLong = useMemo(() => {
         return getFormattedWeekdays('cccc', { locale: dateLocale });
     }, [dateLocale]);
@@ -33,7 +35,6 @@ const LocalizedMiniCalendar = (props) => {
             weekdaysLong={weekdaysLong}
             weekdaysShort={weekdaysShort}
             months={months}
-            dateFnLocale={dateLocale}
             weekStartsOn={props.weekStartsOn || getWeekStartsOn(dateLocale)}
             formatDay={formatDay}
             {...props}

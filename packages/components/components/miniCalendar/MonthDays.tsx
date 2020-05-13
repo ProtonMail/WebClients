@@ -1,8 +1,31 @@
 import { isBefore, isAfter, isSameDay, isSameMonth, isWithinInterval } from 'date-fns';
 import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 
 import { classnames } from '../../helpers/component';
+import { DateTuple } from '.';
+
+const getTargetDate = (target: any, days: Date[]) => {
+    const idx = parseInt(target?.dataset?.i || '', 10);
+    if (idx >= 0 && idx < days.length) {
+        return days[idx];
+    }
+};
+
+export interface Props {
+    days: Date[];
+    markers: { [ts: string]: boolean };
+    onSelectDate: (a1: Date) => void;
+    onSelectDateRange: (a1: DateTuple) => void;
+    now: Date;
+    selectedDate?: Date;
+    activeDate: Date;
+    dateRange?: DateTuple;
+    min?: Date;
+    max?: Date;
+    formatDay: (a1: Date) => string;
+    numberOfDays: number;
+    numberOfWeeks: number;
+}
 
 const MonthDays = ({
     days,
@@ -18,30 +41,21 @@ const MonthDays = ({
     activeDate,
     numberOfDays,
     numberOfWeeks
-}) => {
-    const [temporaryDateRange, setTemporaryDateRange] = useState();
-    const rangeStartRef = useRef();
-    const rangeEndRef = useRef();
+}: Props) => {
+    const [temporaryDateRange, setTemporaryDateRange] = useState<[Date, Date | undefined] | undefined>(undefined);
+    const rangeStartRef = useRef<Date | undefined>(undefined);
+    const rangeEndRef = useRef<Date | undefined>(undefined);
 
     const style = {
         '--minicalendar-days-numberOfDays': numberOfDays,
         '--minicalendar-days-numberOfWeeks': numberOfWeeks
     };
 
-    const getDate = (el) => {
-        return days[el.dataset.i];
-    };
-
-    const handleMouseDown = ({ target }) => {
-        if (typeof target.dataset.i === 'undefined') {
+    const handleMouseDown = ({ target }: React.MouseEvent<HTMLUListElement>) => {
+        const targetDate = getTargetDate(target, days);
+        if (rangeStartRef.current || !targetDate || !onSelectDateRange) {
             return;
         }
-
-        if (rangeStartRef.current) {
-            return;
-        }
-
-        const targetDate = getDate(target);
 
         setTemporaryDateRange([targetDate, undefined]);
         rangeStartRef.current = targetDate;
@@ -55,7 +69,7 @@ const MonthDays = ({
                 );
             }
 
-            setTemporaryDateRange();
+            setTemporaryDateRange(undefined);
             rangeStartRef.current = undefined;
             rangeEndRef.current = undefined;
 
@@ -65,16 +79,11 @@ const MonthDays = ({
         document.addEventListener('mouseup', handleMouseUp);
     };
 
-    const handleMouseOver = ({ target }) => {
-        if (typeof target.dataset.i === 'undefined') {
+    const handleMouseOver = ({ target }: React.MouseEvent<HTMLUListElement>) => {
+        const overDate = getTargetDate(target, days);
+        if (!rangeStartRef.current || !overDate || !onSelectDateRange) {
             return;
         }
-
-        if (!rangeStartRef.current) {
-            return;
-        }
-
-        const overDate = getDate(target);
         rangeEndRef.current = overDate;
 
         setTemporaryDateRange(
@@ -84,11 +93,11 @@ const MonthDays = ({
         );
     };
 
-    const handleClick = ({ target }) => {
-        if (typeof target.dataset.i === 'undefined') {
-            return;
+    const handleClick = ({ target }: React.MouseEvent<HTMLUListElement>) => {
+        const value = getTargetDate(target, days);
+        if (value) {
+            onSelectDate(value);
         }
-        onSelectDate(getDate(target));
     };
 
     const [rangeStart, rangeEnd] = temporaryDateRange || dateRange || [];
@@ -98,8 +107,8 @@ const MonthDays = ({
             className="unstyled m0 aligncenter minicalendar-days"
             style={style}
             onClick={handleClick}
-            onMouseDown={onSelectDateRange ? handleMouseDown : null}
-            onMouseOver={onSelectDateRange ? handleMouseOver : null}
+            onMouseDown={handleMouseDown}
+            onMouseOver={handleMouseOver}
         >
             {days.map((dayDate, i) => {
                 const isBeforeMin = min ? isBefore(dayDate, min) : false;
@@ -110,15 +119,17 @@ const MonthDays = ({
                 const isInterval =
                     (rangeStart && rangeEnd && isWithinInterval(dayDate, { start: rangeStart, end: rangeEnd })) ||
                     (rangeStart && isSameDay(rangeStart, dayDate));
-                const isIntervalBound = isSameDay(rangeStart, dayDate) || isSameDay(rangeEnd, dayDate);
-                const isPressed = isSameDay(selectedDate, dayDate) || isInterval;
+                const isIntervalBound =
+                    rangeStart && rangeEnd ? isSameDay(rangeStart, dayDate) || isSameDay(rangeEnd, dayDate) : false;
+                const isPressed = selectedDate ? isSameDay(selectedDate, dayDate) || isInterval : false;
 
                 // only for CSS layout: beginning/end of week OR beginning/end of interval in week
                 const isIntervalBoundBegin =
-                    (isInterval && i % numberOfDays === 0) || (isInterval && isSameDay(rangeStart, dayDate));
+                    (isInterval && i % numberOfDays === 0) ||
+                    (isInterval && rangeStart && isSameDay(rangeStart, dayDate));
                 const isIntervalBoundEnd =
                     (isInterval && i % numberOfDays === numberOfDays - 1) ||
-                    (isInterval && isSameDay(rangeEnd, dayDate)) ||
+                    (isInterval && rangeEnd && isSameDay(rangeEnd, dayDate)) ||
                     (!rangeEnd && isIntervalBoundBegin);
 
                 const hasMarker = markers[dayDate.getTime()];
@@ -152,22 +163,6 @@ const MonthDays = ({
             })}
         </ul>
     );
-};
-
-MonthDays.propTypes = {
-    markers: PropTypes.object,
-    days: PropTypes.arrayOf(PropTypes.instanceOf(Date)).isRequired,
-    dateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
-    formatDay: PropTypes.func.isRequired,
-    onSelectDate: PropTypes.func.isRequired,
-    onSelectDateRange: PropTypes.func,
-    numberOfDays: PropTypes.number.isRequired,
-    numberOfWeeks: PropTypes.number.isRequired,
-    now: PropTypes.instanceOf(Date),
-    min: PropTypes.instanceOf(Date),
-    max: PropTypes.instanceOf(Date),
-    selectedDate: PropTypes.instanceOf(Date),
-    activeDate: PropTypes.instanceOf(Date)
 };
 
 export default React.memo(MonthDays);
