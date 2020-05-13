@@ -1,4 +1,4 @@
-import React, { Ref, useRef } from 'react';
+import React, { CSSProperties, Ref, useRef } from 'react';
 import { useCombinedRefs, SmallButton, PrimaryButton, classnames } from 'react-components';
 import { c } from 'ttag';
 import validateEventModel from './eventForm/validateEventModel';
@@ -19,7 +19,7 @@ interface Props {
     onSave: (value: EventModel) => Promise<void>;
     onClose: () => void;
     onEdit: (value: EventModel) => void;
-    style: object;
+    style: CSSProperties;
     popoverRef: Ref<HTMLFormElement>;
     setModel: (value: EventModel) => void;
 }

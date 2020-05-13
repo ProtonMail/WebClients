@@ -93,7 +93,7 @@ const CalendarContainerView = ({
         return new Date(utcDate.getUTCFullYear(), utcDate.getUTCMonth(), utcDate.getUTCDate());
     }, [utcDate]);
 
-    const localDateRange = useMemo(() => {
+    const localDateRange = useMemo((): [Date, Date] => {
         const [utcStart, utcEnd] = utcDateRange;
         return [toLocalDate(fromUTCDate(utcStart)), toLocalDate(fromUTCDate(utcEnd))];
     }, [utcDateRange]);
