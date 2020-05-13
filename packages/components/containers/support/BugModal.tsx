@@ -91,7 +91,7 @@ const BugModal = ({ onClose = noop, username: Username = '', location, addresses
         ...collectInfo(),
         Title: '',
         Description: '',
-        Email: '',
+        Email,
         Username
     });
     const { state: showDetails, toggle: toggleDetails } = useToggle(false);
@@ -112,12 +112,10 @@ const BugModal = ({ onClose = noop, username: Username = '', location, addresses
 
         return {
             ...imageBlobs,
+            ...model,
             Client,
             ClientVersion: APP_VERSION,
             ClientType: CLIENT_TYPE,
-            Username,
-            Email,
-            ...model,
             Title
         };
     };

@@ -170,7 +170,6 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
         <FormModal
             title={c('Title').t`Import key`}
             close={c('Action').t`Close`}
-            submit={c('Action').t`Submit`}
             onClose={onClose}
             onSubmit={onClose}
             {...stepProps}
