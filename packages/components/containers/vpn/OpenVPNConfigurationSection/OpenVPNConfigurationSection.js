@@ -4,6 +4,7 @@ import {
     Alert,
     ButtonGroup,
     Group,
+    Href,
     useApiResult,
     SubTitle,
     useApiWithoutResult,
@@ -13,6 +14,7 @@ import {
     Tooltip,
     useSortedList,
     useUserVPN,
+    Radio,
     RadioGroup
 } from 'react-components';
 import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
@@ -109,23 +111,57 @@ const OpenVPNConfigurationSection = () => {
 
             <h3 className="mt2">{c('Title').t`1. Select platform`}</h3>
             <div className="flex onmobile-flex-column mb1">
-                <RadioGroup
-                    name="platform"
-                    value={platform}
-                    onChange={setPlatform}
-                    options={[
-                        { value: PLATFORM.ANDROID, label: c('Option').t`Android` },
-                        { value: PLATFORM.IOS, label: c('Option').t`iOS` },
-                        { value: PLATFORM.WINDOWS, label: c('Option').t`Windows` },
-                        { value: PLATFORM.MACOS, label: c('Option').t`MacOS` },
-                        { value: PLATFORM.LINUX, label: c('Option').t`GNU/Linux` },
-                        { value: PLATFORM.ROUTER, label: c('Option').t`Router` }
-                    ]}
-                />
+                {[
+                    {
+                        value: PLATFORM.ANDROID,
+                        link: 'https://protonvpn.com/support/android-vpn-setup/',
+                        label: c('Option').t`Android`
+                    },
+                    {
+                        value: PLATFORM.IOS,
+                        link: 'https://protonvpn.com/support/ios-vpn-setup/',
+                        label: c('Option').t`iOS`
+                    },
+                    {
+                        value: PLATFORM.WINDOWS,
+                        link: 'https://protonvpn.com/support/openvpn-windows-setup/',
+                        label: c('Option').t`Windows`
+                    },
+                    {
+                        value: PLATFORM.MACOS,
+                        link: 'https://protonvpn.com/support/mac-vpn-setup/',
+                        label: c('Option').t`MacOS`
+                    },
+                    {
+                        value: PLATFORM.LINUX,
+                        link: 'https://protonvpn.com/support/linux-vpn-setup/',
+                        label: c('Option').t`GNU/Linux`
+                    },
+                    {
+                        value: PLATFORM.ROUTER,
+                        link: 'https://protonvpn.com/support/?s=router&ht-kb-search=1',
+                        label: c('Option').t`Router`
+                    }
+                ].map(({ value, label, link }) => {
+                    return (
+                        <div key={value} className="mr2">
+                            <Radio
+                                onChange={() => setPlatform(value)}
+                                checked={platform === value}
+                                name="platform"
+                                className="flex inline-flex-vcenter mb0-5"
+                            >
+                                {label}
+                            </Radio>
+                            <Href url={link} className="small m0 bl" style={{ paddingLeft: '2.1rem' }}>{c('Link')
+                                .t`View guide`}</Href>
+                        </div>
+                    );
+                })}
             </div>
 
             <h3 className="mt2">{c('Title').t`2. Select protocol`}</h3>
-            <div className="flex onmobile-flex-column mb1">
+            <div className="flex onmobile-flex-column mb0-5">
                 <RadioGroup
                     name="protocol"
                     value={protocol}
@@ -135,6 +171,10 @@ const OpenVPNConfigurationSection = () => {
                         { value: PROTOCOL.TCP, label: c('Option').t`TCP` }
                     ]}
                 />
+            </div>
+            <div className="mb1">
+                <Href url="https://protonvpn.com/support/udp-tcp/" className="small m0">{c('Link')
+                    .t`What is the difference between UDP and TCP protocols?`}</Href>
             </div>
 
             <h3 className="mt2">{c('Title').t`3. Select connection and download`}</h3>
