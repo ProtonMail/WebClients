@@ -12,7 +12,7 @@ button[aria-busy="true"] {
 }
 
 tr[aria-busy="true"] {
-    height: 5rem;
+    height: $l-h * 1em + em(9) * 2; // line-height + vertical paddings
 }
 
 td[aria-busy="true"] {
