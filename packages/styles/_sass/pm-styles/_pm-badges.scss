@@ -1,6 +1,7 @@
 /*
  * badges/labels
  */
+$border-width: 2px !default;
 [class*="badgeLabel"]:not([class*="pm-badgeLabel-"]) {
   @extend .uppercase;
   @extend .color-white;
@@ -9,30 +10,127 @@
   padding: 0 em(2) em(1);
   line-height: 1;
   border-radius: $global-border-radius;
-  border-width: 2px;
+  border-width: $border-width;
   border-style: solid;
-  //max-width: 15em;
 }
 
 // only for labels in conversations
+$badges-border-radius: 1rem !default;
+$badges-max-width: 15em !default;
 .pm-badgeLabel-container  {
-  [class*="badgeLabel"] {
-    border-radius: 1rem;
-	padding: .1rem .2rem;
-	max-width: 15rem;
-	flex-wrap: nowrap;
-  }
-}
-.pm-badgeLabel-link,
-.pm-badgeLabel-link:active,
-.pm-badgeLabel-link:hover,
-.pm-badgeLabel-link:focus {
-  color: $white;
-  text-decoration: none;
+	[class*="badgeLabel"] {
+		border-radius: $badges-border-radius;
+		padding: .1rem .2rem;
+		max-width: $badges-max-width;
+		flex-wrap: nowrap;
+		min-width: 1em; // if really short label ^^
+		border-color: currentColor;
+		border-width: $border-width;
+		font-size: rem(12);
+	}
+	.badgeLabel {
+		background: currentColor;
+		color: currentColor;
+		margin-left: .25em;
+		padding-bottom: .2rem;
+	}
+  	.pm-badgeLabel-link,
+	.pm-badgeLabel-link:active,
+	.pm-badgeLabel-link:hover,
+	.pm-badgeLabel-link:focus {
+		height: 1.4rem;
+		color: $white;
+		text-decoration: none;
+		text-align: center;
 
-  &:not(:last-child) {
-    padding-right: .4rem;
-  }
+		&:not(:last-child) {
+			padding-right: .4rem;
+		}
+	}
+}
+// collapsed version
+$label-border-width: 2px !default;
+$label-border-color: var(--bgcolor-view-column-detail, $white) !default;
+.pm-badgeLabel-container--collapsed {
+	.badgeLabel {
+		position: relative;
+		margin-left: 0;
+		border: $border-width solid $label-border-color;
+
+		&:not(:first-child) {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+
+			&::before {
+				content: '';
+				background: currentColor;
+				position: absolute;
+				top: -$label-border-width;
+				bottom: -$label-border-width;
+				border-top-width: $label-border-width;
+				border-bottom-width: $label-border-width;
+				border-style: solid;
+				border-color: $label-border-color;
+				border-left: 0;
+				border-right: 0;
+				left: calc(-0.2rem - 1rem);
+				width: 1em;
+			}
+			> * {
+				position: relative;
+				overflow: hidden;
+				max-width: 0;
+				transition: max-width .5s ease, min-width .5s ease;
+				transition-delay: 0s, 0s, .5s;
+				min-width: 0;
+				padding-right: 0;
+			}
+			&:hover,
+			&:focus,
+			&:focus-within,
+			&:active {
+				> * {
+					max-width: $badges-max-width;
+					min-width: 1rem; // if really short label ^^
+					transition-delay: 0s;
+				}
+				> .pm-badgeLabel-link {
+					padding-right: .4rem;
+				}
+			}
+		}
+		@for $i from 1 through 20 {
+			&:nth-child(#{$i}) {
+			  z-index: #{20 - $i};
+			}
+		}
+	}
+
+}
+.item-container.read,
+.message-header-expanded {
+		.pm-badgeLabel-container--collapsed {
+			.badgeLabel {
+				border-color: var(--bgcolor-item-column-list, $pm-global-muted);
+				&:not(:first-child) {
+					&::before {
+						border-color: var(--bgcolor-item-column-list, $pm-global-muted);
+					}
+				}
+			}
+		}
+	&.item-is-selected {
+		.pm-badgeLabel-container--collapsed {
+			.badgeLabel {
+				border-color: var(--bgcolor-item-column-active, #b2bef1); // ???
+				&:not(:first-child) {
+					&::before {
+						border-color: var(--bgcolor-item-column-active, #b2bef1); // ???
+					}
+				}
+			}
+		}
+	}
 }
 
 .badgeLabel-success {
