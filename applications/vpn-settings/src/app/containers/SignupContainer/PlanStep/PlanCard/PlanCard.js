@@ -43,12 +43,6 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
                         {plan.description}
                     </strong>
                 )}
-                {plan.additionalFeatures && (
-                    <>
-                        <div>{plan.additionalFeatures}</div>
-                        <strong className="color-primary">+</strong>
-                    </>
-                )}
                 {plan.features && (
                     <ul className="mt0 mb2 unstyled">
                         {plan.features.map((feature, i) => (
@@ -73,7 +67,6 @@ PlanCard.propTypes = {
         planName: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
-        additionalFeatures: PropTypes.string,
         features: PropTypes.arrayOf(PropTypes.node),
         highlights: PropTypes.arrayOf(PropTypes.string),
         isBest: PropTypes.bool

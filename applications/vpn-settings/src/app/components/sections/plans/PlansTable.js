@@ -122,13 +122,17 @@ const PlansTable = ({
                         .t`Speed`}</th>
                     <td className="aligncenter">{c('Plan details').t`Medium`}</td>
                     <td className="aligncenter">{c('Plan details').t`High`}</td>
-                    <td className="aligncenter">{c('Plan details').t`Highest`}</td>
-                    <td className="aligncenter">{c('Plan details').t`Highest`}</td>
+                    <td className="aligncenter">{c('Plan details').t`Highest speed (10Gbps)`}</td>
+                    <td className="aligncenter">{c('Plan details').t`Highest speed (10Gbps)`}</td>
                 </tr>
 
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
-                        <span className="mr0-5">{c('Header').t`P2P support (BitTorrent, etc.)`}</span>
+                        <span className="mr0-5">{c('Header').t`P2P filesharing/BitTorrent support`}</span>
+                        <Info
+                            title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                            url="https://protonvpn.com/support/p2p-vpn-redirection/"
+                        />
                     </th>
                     <td className="aligncenter">
                         <Icon name="off" />
@@ -147,6 +151,11 @@ const PlansTable = ({
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
                         <span className="mr0-5">{c('Header').t`Tor over VPN`}</span>
+                        <Info
+                            title={c('Info')
+                                .t`Route your Internet traffic through the Tor network with a single click.`}
+                            url="https://protonvpn.com/support/tor-vpn/"
+                        />
                     </th>
                     <td className="aligncenter">
                         <Icon name="off" />
@@ -164,7 +173,7 @@ const PlansTable = ({
 
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
-                        <span className="mr0-5">{c('Header').t`Secure core`}</span>
+                        <span className="mr0-5">{c('Header').t`Secure Core VPN`}</span>
                         <Info
                             title={c('Tooltip')
                                 .t`Provides additional protection against VPN server compromise by routing connections through our Secure Core network`}
@@ -287,7 +296,12 @@ const PlansTable = ({
                 {state ? (
                     <tr>
                         <th scope="row" className="pm-simple-table-row-th alignleft bg-global-highlight">
-                            <span className="mr0-5">{c('Header').t`Stream geo-blocked content`}</span>
+                            <span className="mr0-5">{c('Header').t`Access blocked content`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                                url="https://protonvpn.com/support/streaming-guide/"
+                            />
                         </th>
                         <td className="aligncenter">
                             <Icon name="off" />

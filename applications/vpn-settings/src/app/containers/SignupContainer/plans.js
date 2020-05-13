@@ -45,21 +45,48 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
             },
             features: [
                 c('Plan Feature').ngettext(
-                    msgid`${maxConnections} simultaneous VPN connection`,
-                    `${maxConnections} simultaneous VPN connections`,
+                    msgid`${maxConnections} VPN connection`,
+                    `${maxConnections} VPN connections`,
                     maxConnections
                 ),
                 c('Plan Feature').t`Servers in ${countries.free.length} countries`,
                 c('Plan Feature').t`Medium speed`,
-                c('Plan Feature').t`No logs policy`,
-                c('Plan Feature').t`No data limit`,
-                c('Plan Feature').t`No ads`
+                c('Plan Feature').t`No logs/No ads`,
+                <>
+                    <del className="opacity-50 mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</del>
+                    <Info
+                        title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                        url="https://protonvpn.com/support/p2p-vpn-redirection/"
+                    />
+                </>,
+                <>
+                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
+                    <Info
+                        title={c('Info')
+                            .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
+                        url="https://protonvpn.com/support/secure-core-vpn/"
+                    />
+                </>,
+                <>
+                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Tor over VPN`}</del>
+                    <Info
+                        title={c('Info').t`Route your Internet traffic through the Tor network with a single click.`}
+                        url="https://protonvpn.com/support/tor-vpn/"
+                    />
+                </>,
+                <>
+                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Access blocked content`}</del>
+                    <Info
+                        title={c('Info')
+                            .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                        url="https://protonvpn.com/support/streaming-guide/"
+                    />
+                </>
             ]
         },
         [PLAN.BASIC]: {
             image: <img width={60} src={basicPlanSvg} alt={`${PLAN_NAMES[PLAN.BASIC]} plan image`} />,
             description: c('Plan Description').t`Basic privacy features`,
-            additionalFeatures: c('Plan feature').t`All ${PLAN_NAMES[PLAN.FREE]} plan features`,
             upsell: {
                 planName: PLAN.PLUS,
                 features: [
@@ -70,79 +97,160 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
             },
             features: [
                 c('Plan Feature').ngettext(
-                    msgid`${maxConnections} simultaneous VPN connection`,
-                    `${maxConnections} simultaneous VPN connections`,
+                    msgid`${maxConnections} VPN connection`,
+                    `${maxConnections} VPN connections`,
                     maxConnections
                 ),
                 c('Plan Feature').t`Servers in ${countries.basic.length} countries`,
-                c('Plan Feature').t`High speed servers`,
+                c('Plan Feature').t`High speed`,
+                c('Plan Feature').t`No logs/No ads`,
                 <>
-                    <span className="mr0-5">{c('Plan Feature').t`Filesharing/P2P support`}</span>
-                    <Info title={c('Tooltip').t`Support for file sharing protocols such as Bittorrent.`} />
+                    <span className="mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</span>
+                    <Info
+                        title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                        url="https://protonvpn.com/support/p2p-vpn-redirection/"
+                    />
                 </>,
-                c('Plan Feature').t`No logs policy`
+                <>
+                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
+                    <Info
+                        title={c('Info')
+                            .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
+                        url="https://protonvpn.com/support/secure-core-vpn/"
+                    />
+                </>,
+                <>
+                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Tor over VPN`}</del>
+                    <Info
+                        title={c('Info').t`Route your Internet traffic through the Tor network with a single click.`}
+                        url="https://protonvpn.com/support/tor-vpn/"
+                    />
+                </>,
+                <>
+                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Access blocked content`}</del>
+                    <Info
+                        title={c('Info')
+                            .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                        url="https://protonvpn.com/support/streaming-guide/"
+                    />
+                </>
             ]
         },
         [PLAN.PLUS]: {
             image: <img width={60} src={plusPlanSvg} alt={`${PLAN_NAMES[PLAN.PLUS]} plan image`} />,
             isBest: true,
             description: c('Plan Description').t`Advanced security features`,
-            additionalFeatures: c('Plan feature').t`All ${PLAN_NAMES[PLAN.BASIC]} plan features`,
             features: [
                 c('Plan Feature').ngettext(
-                    msgid`${maxConnections} simultaneous VPN connection`,
-                    `${maxConnections} simultaneous VPN connections`,
+                    msgid`${maxConnections} VPN connection`,
+                    `${maxConnections} VPN connections`,
                     maxConnections
                 ),
-                countries.basic.length !== countries.all.length &&
-                    c('Plan Feature').t`Servers in ${countries.all.length} countries`,
-                c('Plan Feature').t`Secure Core`,
-                c('Plan Feature').t`Highest speeds`,
+                c('Plan Feature').t`Servers in ${countries.all.length} countries`,
+                c('Plan Feature').t`Highest speed (10Gbps)`,
+                c('Plan Feature').t`No logs/No ads`,
                 <>
-                    <span className="mr0-5">{c('Plan Feature').t`Access blocked content`}</span>
+                    <span className="mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</span>
                     <Info
-                        title={c('Tooltip')
-                            .t`Access content (Netflix, Amazon Prime, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                        title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                        url="https://protonvpn.com/support/p2p-vpn-redirection/"
                     />
                 </>,
-                c('Plan Feature').t`All advanced security features`
+                <>
+                    <span className="mr0-5">{c('Plan feature').t`Secure Core VPN`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
+                        url="https://protonvpn.com/support/secure-core-vpn/"
+                    />
+                </>,
+                <>
+                    <span className="mr0-5">{c('Plan feature').t`Tor over VPN`}</span>
+                    <Info
+                        title={c('Info').t`Route your Internet traffic through the Tor network with a single click.`}
+                        url="https://protonvpn.com/support/tor-vpn/"
+                    />
+                </>,
+                <>
+                    <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                        url="https://protonvpn.com/support/streaming-guide/"
+                    />
+                </>
             ]
         },
         [PLAN.VISIONARY]: {
             image: <img width={100} src={visionaryPlanSvg} alt={`${PLAN_NAMES[PLAN.VISIONARY]} plan image`} />,
             description: c('Plan Description').t`The complete privacy suite`,
-            additionalFeatures: c('Plan feature').t`All ${PLAN_NAMES[PLAN.PLUS]} plan features`,
             features: [
+                c('Plan feature').t`All Plus plan features`,
                 c('Plan Feature').ngettext(
-                    msgid`${maxConnections} simultaneous VPN connection`,
-                    `${maxConnections} simultaneous VPN connections`,
+                    msgid`${maxConnections} VPN connection`,
+                    `${maxConnections} VPN connections`,
                     maxConnections
                 ),
-                c('Plan Feature').t`ProtonMail Visionary account`
+                <>
+                    <span className="mr0-5">{c('Plan Feature').t`ProtonMail Visionary account`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.`}
+                        url="https://protonmail.com"
+                    />
+                </>
             ]
         },
         [PLAN.BUNDLE_PLUS]: {
             image: <img width={100} src={visionaryPlanSvg} alt={`${PLAN_NAMES[PLAN.VISIONARY]} plan image`} />,
             description: c('Plan Description').t`Bundle plan`,
-            additionalFeatures: c('Plan feature').t`ProtonMail Plus plan included`,
             features: [
                 c('Plan Feature').ngettext(
-                    msgid`${maxConnections} simultaneous VPN connection`,
-                    `${maxConnections} simultaneous VPN connections`,
+                    msgid`${maxConnections} VPN connection`,
+                    `${maxConnections} VPN connections`,
                     maxConnections
                 ),
-                countries.basic.length !== countries.all.length &&
-                    c('Plan Feature').t`Servers in ${countries.all.length} countries`,
-                c('Plan Feature').t`Secure Core`,
-                c('Plan Feature').t`Highest speeds`,
+                c('Plan Feature').t`Servers in ${countries.all.length} countries`,
+                c('Plan Feature').t`Highest speed (10Gbps)`,
+                c('Plan Feature').t`No logs/No ads`,
                 <>
-                    <span className="mr0-5">{c('Plan Feature').t`Access blocked content`}</span>
+                    <span className="mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</span>
                     <Info
-                        title={c('Tooltip')
-                            .t`Access content (Netflix, Amazon Prime, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                        title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                        url="https://protonvpn.com/support/p2p-vpn-redirection/"
                     />
                 </>,
-                c('Plan Feature').t`All advanced security features`
+                <>
+                    <span className="mr0-5">{c('Plan feature').t`Secure Core VPN`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
+                        url="https://protonvpn.com/support/secure-core-vpn/"
+                    />
+                </>,
+                <>
+                    <span className="mr0-5">{c('Plan feature').t`Tor over VPN`}</span>
+                    <Info
+                        title={c('Info').t`Route your Internet traffic through the Tor network with a single click.`}
+                        url="https://protonvpn.com/support/tor-vpn/"
+                    />
+                </>,
+                <>
+                    <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                        url="https://protonvpn.com/support/streaming-guide/"
+                    />
+                </>,
+                <>
+                    <span className="mr0-5">{c('Plan Feature').t`ProtonMail Plus account`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.`}
+                        url="https://protonmail.com"
+                    />
+                </>
             ]
         }
     }[plan]);
