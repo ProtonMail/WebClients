@@ -6,6 +6,7 @@ import { range } from 'proton-shared/lib/helpers/array';
 import { MessageExtended } from '../../models/message';
 import ComposerInnerModal from './ComposerInnerModal';
 import { MAX_EXPIRATION_TIME } from '../../constants';
+import { MessageChange } from './Composer';
 
 const initValues = ({ expiresIn = 0 }: Partial<MessageExtended> = {}) => {
     const deltaHours = expiresIn / 3600;
@@ -29,7 +30,7 @@ const optionRange = (size: number) =>
 interface Props {
     message?: MessageExtended;
     onClose: () => void;
-    onChange: (message: Partial<MessageExtended>) => void;
+    onChange: MessageChange;
 }
 
 const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {

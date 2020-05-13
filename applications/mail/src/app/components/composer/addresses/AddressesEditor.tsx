@@ -4,9 +4,10 @@ import { Label, generateUID, LinkButton } from 'react-components';
 
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { MapSendInfo } from '../../../models/crypto';
-import { MessageExtended, PartialMessageExtended } from '../../../models/message';
+import { MessageExtended } from '../../../models/message';
 import AddressesInput from './AddressesInput';
 import { RecipientType, Recipient } from '../../../models/address';
+import { MessageChange } from '../Composer';
 
 interface Props {
     message: MessageExtended;
@@ -14,7 +15,7 @@ interface Props {
     contactGroups: ContactGroup[];
     mapSendInfo: MapSendInfo;
     setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>;
-    onChange: (message: PartialMessageExtended) => void;
+    onChange: MessageChange;
     expanded: boolean;
     toggleExpanded: () => void;
     inputFocusRef: MutableRefObject<() => void>;

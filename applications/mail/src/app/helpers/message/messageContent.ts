@@ -2,14 +2,14 @@ import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { isPlainText } from './messages';
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, PartialMessageExtended } from '../../models/message';
 import { toText } from '../parserHtml';
 import { findSender } from '../addresses';
 import { Address } from 'proton-shared/lib/interfaces';
 import { textToHtml } from '../textToHtml';
 import { parseInDiv } from '../dom';
 
-export const getPlainTextContent = (message: Partial<MessageExtended>) => {
+export const getPlainTextContent = (message: PartialMessageExtended) => {
     return message.plainText || '';
 };
 
@@ -21,7 +21,7 @@ export const getDocumentContent = (document: Element | undefined) => {
 /**
  * Get current processed message document html content
  */
-export const getContent = (message: Partial<MessageExtended>) => {
+export const getContent = (message: PartialMessageExtended) => {
     if (isPlainText(message.data)) {
         return getPlainTextContent(message);
     }

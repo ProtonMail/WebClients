@@ -3,7 +3,7 @@ import { useCache, useMailSettings, useAddresses, generateUID } from 'react-comp
 import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
 import { MESSAGE_ACTIONS } from '../constants';
 import { useEffect, useCallback } from 'react';
-import { MessageExtended, MessageExtendedWithData } from '../models/message';
+import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../models/message';
 import { useMessageCache } from '../containers/MessageProvider';
 
 const CACHE_KEY = 'Draft';
@@ -26,7 +26,7 @@ export const useDraft = () => {
     }, [cache, mailSettings, addresses]);
 
     const createDraft = useCallback(
-        (action: MESSAGE_ACTIONS, referenceMessage?: Partial<MessageExtended>) => {
+        (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageExtended) => {
             let message: MessageExtended;
 
             if (action === MESSAGE_ACTIONS.NEW && cache.has(CACHE_KEY) && referenceMessage === undefined) {

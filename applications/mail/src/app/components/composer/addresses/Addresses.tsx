@@ -2,18 +2,19 @@ import React, { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef } 
 import { useToggle, useContactEmails, useContactGroups } from 'react-components';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { MapSendInfo } from '../../../models/crypto';
 
+import { MapSendInfo } from '../../../models/crypto';
 import { MessageExtended } from '../../../models/message';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
+import { MessageChange } from '../Composer';
 
 interface Props {
     message: MessageExtended;
     mapSendInfo: MapSendInfo;
     setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>;
     disabled: boolean;
-    onChange: (message: Partial<MessageExtended>) => void;
+    onChange: MessageChange;
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
 }

@@ -15,6 +15,7 @@ import { getContent } from '../../../helpers/message/messageContent';
 import { useHandler } from '../../../hooks/useHandler';
 import { removeEmbeddedHTML } from '../../../helpers/embedded/embeddedParser';
 import { Attachment } from '../../../models/attachment';
+import { MessageChange } from '../Composer';
 
 interface ExternalEditorActions {
     insertEmbedded: (embeddeds: EmbeddedMap) => void;
@@ -28,7 +29,7 @@ interface Props {
     document?: Element;
     disabled: boolean;
     onReady: () => void;
-    onChange: (message: Partial<MessageExtended>) => void;
+    onChange: MessageChange;
     onChangeContent: (content: string) => void;
     onChangeFlag: (changes: Map<number, boolean>) => void;
     onFocus: () => void;

@@ -27,12 +27,13 @@ import EditorToolbarMoreDropdown from './EditorToolbarMoreDropdown';
 import { MessageExtended } from '../../../models/message';
 import { isPlainText as testIsPlainText } from '../../../helpers/message/messages';
 import { useHandler } from '../../../hooks/useHandler';
+import { MessageChange } from '../Composer';
 
 interface Props {
     message: MessageExtended;
     squireRef: MutableRefObject<SquireType>;
     editorReady: boolean;
-    onChange: (message: Partial<MessageExtended>) => void;
+    onChange: MessageChange;
     onChangeFlag: (changes: Map<number, boolean>) => void;
     onAddAttachments: (files: File[]) => void;
 }

@@ -4,13 +4,7 @@ import { setBit } from 'proton-shared/lib/helpers/bitset';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 
-import {
-    Message,
-    MessageExtended,
-    EmbeddedMap,
-    MessageExtendedWithData,
-    PartialMessageExtended
-} from '../../models/message';
+import { Message, EmbeddedMap, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { Recipient } from '../../models/address';
 import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 import { findSender } from '../addresses';
@@ -121,7 +115,7 @@ const forward = (
 
 export const handleActions = (
     action: MESSAGE_ACTIONS,
-    referenceMessage: Partial<MessageExtended> = {},
+    referenceMessage: PartialMessageExtended = {},
     addresses: Address[] = []
 ): Partial<Message> => {
     // TODO: I would prefere manage a confirm modal from elsewhere
@@ -144,7 +138,7 @@ export const handleActions = (
 /**
  * Generate blockquote of the referenced message to the content of the new mail
  */
-const generateBlockquote = (referenceMessage: Partial<MessageExtended>) => {
+const generateBlockquote = (referenceMessage: PartialMessageExtended) => {
     const date = formatFullDate(getDate(referenceMessage?.data));
     const sender = recipientToInput(referenceMessage?.data?.Sender);
     const previously = c('Message').t`On ${date}, ${sender} wrote:`;

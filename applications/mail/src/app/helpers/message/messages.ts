@@ -3,7 +3,7 @@ import { hasBit, setBit, clearBit, toggleBit } from 'proton-shared/lib/helpers/b
 import { identity } from 'proton-shared/lib/helpers/function';
 
 import { MESSAGE_FLAGS, SIGNATURE_START } from '../../constants';
-import { Message, MessageExtended } from '../../models/message';
+import { Message, MessageExtended, PartialMessageExtended } from '../../models/message';
 import { setContent, getContent } from './messageContent';
 
 const {
@@ -28,7 +28,7 @@ const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', '
 /**
  * Check if a message has a mime type
  */
-const hasMimeType = (type: MIME_TYPES) => (message?: Message) => message?.MIMEType === type;
+const hasMimeType = (type: MIME_TYPES) => (message?: Partial<Message>) => message?.MIMEType === type;
 
 export const isMIME = hasMimeType(MIME);
 export const isPlainText = hasMimeType(PLAINTEXT);
@@ -245,10 +245,7 @@ export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
 /**
  * Apply updates from the message model to the message in state
  */
-export const mergeMessages = (
-    messageState: MessageExtended,
-    messageModel: Partial<MessageExtended>
-): MessageExtended => {
+export const mergeMessages = (messageState: MessageExtended, messageModel: PartialMessageExtended): MessageExtended => {
     if (messageState.document && messageModel.document) {
         setContent(messageState, getContent(messageModel));
     }

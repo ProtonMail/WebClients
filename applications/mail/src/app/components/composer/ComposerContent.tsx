@@ -11,14 +11,13 @@ import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
 import EditorEmbeddedModal from './editor/EditorEmbeddedModal';
 import { isDragFile } from '../../helpers/dom';
 import { PendingUpload } from '../../hooks/useAttachments';
-
-import 'design-system/_sass/react-styles/quill/_snow.scss';
+import { MessageChange } from './Composer';
 
 interface Props {
     message: MessageExtended;
     disabled: boolean;
     onEditorReady: () => void;
-    onChange: (message: Partial<MessageExtended>) => void;
+    onChange: MessageChange;
     onChangeContent: (content: string) => void;
     onChangeFlag: (changes: Map<number, boolean>) => void;
     onFocus: () => void;
