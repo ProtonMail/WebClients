@@ -41,10 +41,28 @@ export const readFileAsBuffer = (file: File) => {
 };
 
 /**
- * Read the content of a blob and returns its value as a string.
+ * Read the content of a blob and returns its value as a text string
+ */
+export const readFileAsString = (file: File, encoding?: string) => {
+    return new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = ({ target }) => {
+            if (!target?.result) {
+                return reject(new Error('Invalid file'));
+            }
+            resolve(target.result as string);
+        };
+        reader.onerror = reject;
+        reader.onabort = reject;
+        reader.readAsText(file, encoding);
+    });
+};
+
+/**
+ * Read the content of a blob and returns its value as a binary string.
  * Not using readAsBinaryString because it's deprecated.
  */
-export const readFileAsString = async (file: File) => {
+export const readFileAsBinaryString = async (file: File) => {
     const arrayBuffer = await readFileAsBuffer(file);
     // eslint-disable-next-line new-cap
     return arrayToBinaryString(new Uint8Array(arrayBuffer));

@@ -28,6 +28,6 @@ export const parseKeys = (filesAsStrings: string[] = []) => {
 };
 
 export const parseKeyFiles = async (files: File[] = []) => {
-    const filesAsStrings = await Promise.all(files.map(readFileAsString)).catch(() => []);
+    const filesAsStrings = await Promise.all(files.map((file) => readFileAsString(file))).catch(() => []);
     return parseKeys(filesAsStrings);
 };

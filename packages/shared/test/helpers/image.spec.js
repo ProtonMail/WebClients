@@ -1,5 +1,5 @@
 import { resizeImage, toBlob, toFile, formatImage } from '../../lib/helpers/image';
-import img from './file.data'; // width: 300 px, height: 200 px
+import { img } from './file.data'; // width: 300 px, height: 200 px
 
 const MIMETYPE_REGEX = /data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+).*,.*/;
 const fileName = 'proton';
