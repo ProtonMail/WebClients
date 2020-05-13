@@ -204,23 +204,23 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                         }
                     };
 
-                    let size = 0;
+                    const size = Object.entries(files).reduce((acc, [, meta]) => acc + (meta.size ?? 0), 0);
+
                     return [
-                        ...downloads.filter(({ id }) => id !== groupId),
-                        ...Object.entries(files).map(([id, meta]) => {
-                            size += meta.size ?? 0;
-                            return {
-                                id,
-                                partOf: groupId,
-                                state: TransferState.Initializing
-                            };
-                        }),
-                        {
-                            id: groupId,
-                            meta: { filename, size, mimeType: 'Folder' },
-                            state: TransferState.Pending,
-                            startDate: new Date()
-                        }
+                        ...downloads.map((download) =>
+                            download.id === groupId
+                                ? {
+                                      ...download,
+                                      meta: { filename, size, mimeType: 'Folder' },
+                                      state: TransferState.Pending
+                                  }
+                                : download
+                        ),
+                        ...Object.entries(files).map(([id]) => ({
+                            id,
+                            partOf: groupId,
+                            state: TransferState.Initializing
+                        }))
                     ];
                 });
             }
