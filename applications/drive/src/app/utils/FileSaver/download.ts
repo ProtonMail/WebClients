@@ -1,5 +1,6 @@
+// TODO: remove publicPath when they fix https://github.com/mohsen1/service-worker-loader/issues/143
 // eslint-disable-next-line import/no-unresolved
-import registerServiceWorker from 'service-worker-loader!./downloadSW';
+import registerServiceWorker from 'service-worker-loader?publicPath=/drive/!./downloadSW';
 import { isSafari, isEdge, isEdgeChromium } from 'proton-shared/lib/helpers/browser';
 import { WritableStream } from 'web-streams-polyfill';
 
@@ -26,7 +27,7 @@ async function wakeUpServiceWorker() {
     if (worker) {
         worker.postMessage({ action: 'ping' });
     } else {
-        const url = location.href.substr(0, location.href.indexOf('/')) + '/sw/ping';
+        const url = location.href.substr(0, location.href.indexOf('/')) + '/drive/sw/ping';
         const res = await fetch(url);
         const body = await res.text();
         if (!res.ok || body !== 'pong') {
@@ -46,7 +47,7 @@ export async function initDownloadSW() {
     if (isUnsupported()) {
         throw new Error('Saving file via download is unsupported by this browser');
     }
-    await registerServiceWorker({ scope: '/' });
+    await registerServiceWorker({ scope: '/drive/' });
     serviceWorkerKeepAlive();
 }
 

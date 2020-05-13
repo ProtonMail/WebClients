@@ -8,7 +8,7 @@ declare module '*.png' {
     export default src;
 }
 
-declare module 'service-worker-loader!*' {
+declare module 'service-worker-loader*' {
     import {
         ServiceWorkerRegister,
         ScriptUrl as scriptUrl,

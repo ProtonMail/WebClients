@@ -14,7 +14,7 @@ const getSidebar = () => {
         },
         {
             text: c('Link').t`Trash`,
-            link: '/trash',
+            link: '/drive/trash',
             icon: 'trash'
         }
     ];
