@@ -53,7 +53,7 @@ const computeStyle = (
     if (minimized) {
         return {
             ...inputStyle,
-            height: 'auto'
+            height: 35
         };
     }
     if (maximized) {
@@ -311,9 +311,9 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
     return (
         <div
             className={classnames([
-                'composer flex flex-column p0-5',
-                !focus && 'composer-blur',
-                minimized && 'composer-minimized pb0'
+                'composer flex flex-column',
+                !focus && 'composer--is-blur',
+                minimized && 'composer--is-minimized'
             ])}
             style={style}
             onFocus={onFocus}
@@ -327,78 +327,76 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
                 toggleMaximized={toggleMaximized}
                 onClose={handleClose}
             />
-            {!minimized && (
-                <div className="flex flex-column flex-item-fluid relative mw100">
-                    {innerModal === ComposerInnerModal.Password && (
-                        <ComposerPasswordModal
-                            message={modelMessage.data}
-                            onClose={handleCloseInnerModal}
-                            onChange={handleChange}
-                        />
-                    )}
-                    {innerModal === ComposerInnerModal.Expiration && (
-                        <ComposerExpirationModal
-                            message={modelMessage}
-                            onClose={handleCloseInnerModal}
-                            onChange={handleChange}
-                        />
-                    )}
-                    <div
-                        className={classnames([
-                            'flex-column flex-item-fluid mw100',
-                            // Only hide the editor not to unload it each time a modal is on top
-                            innerModal === ComposerInnerModal.None ? 'flex' : 'hidden'
-                        ])}
-                    >
-                        <ComposerMeta
-                            message={modelMessage}
-                            addresses={addresses}
-                            mailSettings={mailSettings}
-                            mapSendInfo={mapSendInfo}
-                            setMapSendInfo={setMapSendInfo}
-                            disabled={!editorReady}
-                            onChange={handleChange}
-                            addressesBlurRef={addressesBlurRef}
-                            addressesFocusRef={addressesFocusRef}
-                        />
-                        <ComposerContent
-                            message={modelMessage}
-                            disabled={!editorReady}
-                            onEditorReady={() => setEditorReady(true)}
-                            onChange={handleChange}
-                            onChangeContent={handleChangeContent}
-                            onChangeFlag={handleChangeFlag}
-                            onFocus={handleContentFocus}
-                            onAddAttachments={handleAddAttachmentsStart}
-                            onAddEmbeddedImages={handleAddEmbeddedImages}
-                            onCancelAddAttachment={handleCancelAddAttachment}
-                            onRemoveAttachment={handleRemoveAttachment}
-                            onRemoveUpload={handleRemoveUpload}
-                            pendingFiles={pendingFiles}
-                            pendingUploads={pendingUploads}
-                            onSelectEmbedded={handleAddAttachmentsUpload}
-                            contentFocusRef={contentFocusRef}
-                            editorActionsRef={editorActionsRef}
-                        />
-                        <ComposerActions
-                            message={modelMessage}
-                            date={getDate(syncedMessage.data)}
-                            lock={actionBarLocked}
-                            sending={sending}
-                            closing={closing}
-                            syncInProgress={syncInProgress}
-                            syncStatus={syncStatus}
-                            onAddAttachments={handleAddAttachmentsStart}
-                            onExpiration={handleExpiration}
-                            onPassword={handlePassword}
-                            onSave={handleManualSave}
-                            onSend={handleSend}
-                            onDelete={handleDelete}
-                            addressesBlurRef={addressesBlurRef}
-                        />
-                    </div>
+            <div className="composer-container flex flex-column flex-item-fluid relative w100 p0-5">
+                {innerModal === ComposerInnerModal.Password && (
+                    <ComposerPasswordModal
+                        message={modelMessage.data}
+                        onClose={handleCloseInnerModal}
+                        onChange={handleChange}
+                    />
+                )}
+                {innerModal === ComposerInnerModal.Expiration && (
+                    <ComposerExpirationModal
+                        message={modelMessage}
+                        onClose={handleCloseInnerModal}
+                        onChange={handleChange}
+                    />
+                )}
+                <div
+                    className={classnames([
+                        'composer-blur-container flex-column flex-item-fluid mw100',
+                        // Only hide the editor not to unload it each time a modal is on top
+                        innerModal === ComposerInnerModal.None ? 'flex' : 'hidden'
+                    ])}
+                >
+                    <ComposerMeta
+                        message={modelMessage}
+                        addresses={addresses}
+                        mailSettings={mailSettings}
+                        mapSendInfo={mapSendInfo}
+                        setMapSendInfo={setMapSendInfo}
+                        disabled={!editorReady}
+                        onChange={handleChange}
+                        addressesBlurRef={addressesBlurRef}
+                        addressesFocusRef={addressesFocusRef}
+                    />
+                    <ComposerContent
+                        message={modelMessage}
+                        disabled={!editorReady}
+                        onEditorReady={() => setEditorReady(true)}
+                        onChange={handleChange}
+                        onChangeContent={handleChangeContent}
+                        onChangeFlag={handleChangeFlag}
+                        onFocus={handleContentFocus}
+                        onAddAttachments={handleAddAttachmentsStart}
+                        onAddEmbeddedImages={handleAddEmbeddedImages}
+                        onCancelAddAttachment={handleCancelAddAttachment}
+                        onRemoveAttachment={handleRemoveAttachment}
+                        onRemoveUpload={handleRemoveUpload}
+                        pendingFiles={pendingFiles}
+                        pendingUploads={pendingUploads}
+                        onSelectEmbedded={handleAddAttachmentsUpload}
+                        contentFocusRef={contentFocusRef}
+                        editorActionsRef={editorActionsRef}
+                    />
+                    <ComposerActions
+                        message={modelMessage}
+                        date={getDate(syncedMessage.data)}
+                        lock={actionBarLocked}
+                        sending={sending}
+                        closing={closing}
+                        syncInProgress={syncInProgress}
+                        syncStatus={syncStatus}
+                        onAddAttachments={handleAddAttachmentsStart}
+                        onExpiration={handleExpiration}
+                        onPassword={handlePassword}
+                        onSave={handleManualSave}
+                        onSend={handleSend}
+                        onDelete={handleDelete}
+                        addressesBlurRef={addressesBlurRef}
+                    />
                 </div>
-            )}
+            </div>
         </div>
     );
 };

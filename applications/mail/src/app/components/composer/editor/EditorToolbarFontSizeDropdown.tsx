@@ -9,9 +9,10 @@ interface Props {
     squireRef: MutableRefObject<SquireType>;
     editorReady: boolean;
     className?: string;
+    title?: string;
 }
 
-const EditorToolbarFontSizeDropdown = ({ squireRef, editorReady, className }: Props) => {
+const EditorToolbarFontSizeDropdown = ({ squireRef, editorReady, className, title }: Props) => {
     const [value, setValue] = useState(14);
 
     useEffect(
@@ -28,7 +29,7 @@ const EditorToolbarFontSizeDropdown = ({ squireRef, editorReady, className }: Pr
     };
 
     return (
-        <EditorToolbarDropdown size="narrow" content={value} className={className}>
+        <EditorToolbarDropdown content={value} className={className} title={title}>
             <DropdownMenu>
                 {Object.values(FONT_SIZES).map((size) => (
                     <DropdownMenuButton

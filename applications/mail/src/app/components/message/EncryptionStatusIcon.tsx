@@ -13,7 +13,7 @@ interface Props extends Partial<StatusIcon> {
 
 const EncryptionStatusIcon = ({ colorClassName, isEncrypted, fill, text, loading, useTooltip = true }: Props) => {
     if (loading) {
-        return <Loader className="icon-18p mauto flex" />;
+        return <Loader className="icon-16p mauto flex" />;
     }
 
     const href = getSendIconHref({ isEncrypted, fill });
@@ -23,7 +23,7 @@ const EncryptionStatusIcon = ({ colorClassName, isEncrypted, fill, text, loading
         <Href href={href} className="flex mauto">
             <Icon
                 viewBox={iconName === 'circle' ? '0 0 16 16' : '0 0 18 18'}
-                size={18}
+                size={16}
                 name={iconName}
                 className={colorClassName}
             />

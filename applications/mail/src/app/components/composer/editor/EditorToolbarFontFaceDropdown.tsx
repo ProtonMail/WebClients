@@ -8,9 +8,10 @@ import { listenToCursor, getFontFaceAtCursor, getFontLabel } from '../../../help
 interface Props {
     squireRef: MutableRefObject<SquireType>;
     editorReady: boolean;
+    title?: string;
 }
 
-const EditorToolbarFontFaceDropdown = ({ squireRef, editorReady }: Props) => {
+const EditorToolbarFontFaceDropdown = ({ squireRef, editorReady, title }: Props) => {
     const [value, setValue] = useState(FONT_FACE.Arial);
 
     useEffect(
@@ -28,7 +29,8 @@ const EditorToolbarFontFaceDropdown = ({ squireRef, editorReady }: Props) => {
 
     return (
         <EditorToolbarDropdown
-            className="composer-toolbar-fontDropDown alignright flex"
+            className="composer-toolbar-fontDropDown alignright flex no-scroll"
+            title={title}
             content={
                 <span className="ellipsis mw100" style={{ fontFamily: value.toString() }}>
                     {getFontLabel(value)}
@@ -42,6 +44,7 @@ const EditorToolbarFontFaceDropdown = ({ squireRef, editorReady }: Props) => {
                         disabled={font === value}
                         className="alignleft"
                         onClick={handleClick(font)}
+                        style={{ fontFamily: font.toString() }}
                     >
                         {getFontLabel(font)}
                     </DropdownMenuButton>

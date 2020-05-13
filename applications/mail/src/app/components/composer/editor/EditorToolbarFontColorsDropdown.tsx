@@ -10,9 +10,10 @@ interface Props {
     squireRef: MutableRefObject<SquireType>;
     editorReady: boolean;
     className?: string;
+    title?: string;
 }
 
-const EditorToolbarFontColorsDropdown = ({ squireRef, className }: Props) => {
+const EditorToolbarFontColorsDropdown = ({ squireRef, className, title }: Props) => {
     const [fontColor, setFontColor] = useState(DEFAULT_FONT_COLOR);
     const [bgColor, setBgColor] = useState(DEFAULT_BACKGROUND);
 
@@ -38,6 +39,7 @@ const EditorToolbarFontColorsDropdown = ({ squireRef, className }: Props) => {
             noMaxSize={true}
             content={<Icon name="font-color" />}
             className={className}
+            title={title}
         >
             <div className="flex flex-row flex-nowrap">
                 <div className="flex flex-column m0-5">

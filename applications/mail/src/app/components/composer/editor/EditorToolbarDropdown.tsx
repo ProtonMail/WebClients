@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react';
-import { classnames, usePopperAnchor, DropdownButton, Dropdown, generateUID } from 'react-components';
+import { usePopperAnchor, DropdownButton, Dropdown, generateUID, Tooltip } from 'react-components';
 
 interface Props {
     autoClose?: boolean;
@@ -37,19 +37,21 @@ const EditorToolbarDropdown = ({
 
     return (
         <>
-            <DropdownButton
-                title={title}
-                buttonRef={anchorRef}
-                isOpen={isOpen}
-                onClick={handleClick}
-                hasCaret={true}
-                disabled={disabled}
-                caretClassName="editor-toolbar-icon"
-                className={classnames(['editor-toolbar-button editor-toolbar-button--dropdown', className])}
-                {...rest}
-            >
-                {content}
-            </DropdownButton>
+            <Tooltip title={title} className={className}>
+                <DropdownButton
+                    // title={title}
+                    buttonRef={anchorRef}
+                    isOpen={isOpen}
+                    onClick={handleClick}
+                    hasCaret={true}
+                    disabled={disabled}
+                    caretClassName="editor-toolbar-icon"
+                    className="editor-toolbar-button composer-toolbar-fontDropDown mw100"
+                    {...rest}
+                >
+                    {content}
+                </DropdownButton>
+            </Tooltip>
             <Dropdown
                 id={uid}
                 autoClose={autoClose}

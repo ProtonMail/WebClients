@@ -113,7 +113,7 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
     return (
         <div
             className={classnames([
-                'composer-addresses-item bordered-container mb0-5 mr0-5 flex flex-nowrap flex-row mw80 stop-propagation',
+                'composer-addresses-item bordered-container mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row mw80 stop-propagation',
                 !valid && 'invalid',
                 cannotSend && 'color-global-warning'
             ])}
@@ -135,7 +135,7 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
             />
             <button
                 type="button"
-                className="composer-addresses-item-remove flex-item-noshrink inline-flex pl0-5 pr0-5 no-pointer-events-children h100"
+                className="composer-addresses-item-remove pm-button flex flex-item-noshrink"
                 onClick={handleRemove}
                 title={c('Action').t`Remove`}
             >

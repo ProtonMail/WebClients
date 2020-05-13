@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { classnames } from 'react-components';
+import { Tooltip } from 'react-components';
 
 interface Props {
     disabled?: boolean;
@@ -10,16 +10,26 @@ interface Props {
     [rest: string]: any;
 }
 
-const EditorToolbarButton = ({ children, loading = false, disabled = false, className = '', ...rest }: Props) => {
+const EditorToolbarButton = ({
+    children,
+    loading = false,
+    disabled = false,
+    className = '',
+    title,
+    ...rest
+}: Props) => {
     return (
-        <button
-            type="button"
-            disabled={disabled || loading}
-            className={classnames(['editor-toolbar-button m0 flex', className])}
-            {...rest}
-        >
-            {children}
-        </button>
+        <Tooltip className={className} title={title}>
+            <button
+                type="button"
+                // title={title}
+                disabled={disabled || loading}
+                className="editor-toolbar-button m0 flex"
+                {...rest}
+            >
+                {children}
+            </button>
+        </Tooltip>
     );
 };
 

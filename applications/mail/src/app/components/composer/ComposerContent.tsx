@@ -82,7 +82,7 @@ const ComposerContent = ({
     return (
         <section
             className={classnames([
-                'flex-item-fluid w100 mb0-5 flex flex-column flex-nowrap relative pr0-5',
+                'flex-item-fluid w100 mb0-5 flex flex-column flex-nowrap relative mb0-5 pl0-5 pr0-5',
                 attachments?.length > 0 && 'composer-content--has-attachments'
             ])}
             onDrop={handleDrop}
@@ -112,6 +112,16 @@ const ComposerContent = ({
                         onSelect={onSelectEmbedded}
                     />
                 )}
+                {fileHover && (
+                    <div
+                        onDragLeave={handleHover(false)}
+                        className="composer-editor-dropzone covered-absolute flex flex-justify-center flex-items-center"
+                    >
+                        <span className="composer-editor-dropzone-text no-pointer-events">
+                            {c('Info').t`Drop a file here to upload`}
+                        </span>
+                    </div>
+                )}
             </div>
             {showAttachements && (
                 <AttachmentsList
@@ -120,14 +130,6 @@ const ComposerContent = ({
                     onRemoveAttachment={onRemoveAttachment}
                     onRemoveUpload={onRemoveUpload}
                 />
-            )}
-            {fileHover && (
-                <div
-                    onDragLeave={handleHover(false)}
-                    className="composer-editor-dropzone absolute w100 h100 flex flex-justify-center flex-items-center"
-                >
-                    <span className="no-pointer-events">{c('Info').t`Drop a file here to upload`}</span>
-                </div>
             )}
         </section>
     );

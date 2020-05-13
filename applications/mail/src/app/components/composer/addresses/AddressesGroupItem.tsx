@@ -54,7 +54,7 @@ const AddressesGroupItem = ({ recipientGroup, contacts, messageSendInfo, onChang
                     {...getModal(modalID)}
                 />
             )}
-            <div className="composer-addresses-item mb0-5 mr0-5 bordered-container flex flex-nowrap flex-row mw80 stop-propagation">
+            <div className="composer-addresses-item mt0-25 mb0-25 mr0-5 bordered-container flex flex-nowrap flex-row mw80 stop-propagation">
                 <span className="inline-flex composer-addresses-item-icon pl0-5 pr0-5 no-pointer-events-children h100">
                     <Icon name="contacts-groups" size={12} color={recipientGroup?.group?.Color} className="mauto" />
                 </span>

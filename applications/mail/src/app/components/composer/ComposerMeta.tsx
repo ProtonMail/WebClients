@@ -53,8 +53,8 @@ const ComposerMeta = ({
 
     return (
         <div className="composer-meta w100">
-            <div className="flex flex-row flex-nowrap flex-items-center pl0-5 pr0-5 mb0-5">
-                <Label htmlFor={`from-${uid}`} className="composer-meta-label bold">
+            <div className="flex flex-row flex-nowrap flex-items-center mt0-5 mb0-5 pl0-5 pr0-5">
+                <Label htmlFor={`from-${uid}`} className="composer-meta-label pt0 bold">
                     {c('Info').t`From`}
                 </Label>
                 <Select
@@ -75,7 +75,7 @@ const ComposerMeta = ({
                 addressesBlurRef={addressesBlurRef}
                 addressesFocusRef={addressesFocusRef}
             />
-            <div className="flex flex-row flex-nowrap flex-items-center pl0-5 pr0-5 mb0-5">
+            <div className="flex flex-row flex-nowrap flex-items-center mt0-5 mb0-5 pl0-5 pr0-5">
                 <Label htmlFor={`subject-${uid}`} className="composer-meta-label pt0 bold">
                     {c('Info').t`Subject`}
                 </Label>

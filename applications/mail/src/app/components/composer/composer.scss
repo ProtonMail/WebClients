@@ -2,52 +2,73 @@
 
 .composer {
     position: absolute;
-    bottom: 1rem;
+    bottom: 0;
     z-index: 300;
 
     height: 520px;
     width: 600px;
-
-    background: var(--bgcolor-main-area, $white);
-    box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
-    color: var(--color-main-area, $pm-global-grey);
-}
-
-.composer-blur * {
-    opacity: 0.8;
-}
-
-.composer-title-bar {
-    width: calc(100% + 1em);
-    padding: 0.5em;
-    margin-top: -0.5em;
-    margin-bottom: 0.5em;
-    margin-left: -0.5em;
+    overflow: hidden;
 
     background: var(--bgcolor-main-area, $pm-global-altgrey);
-    color: $white;
+    box-shadow: 0 0 16px 3px rgba(black, .16);
+    border-radius: $global-border-radius $global-border-radius 0 0;
+    color: var(--color-main-area, $pm-global-grey);
+
+    transition: .15s easing(easeOutQuint);
 }
 
-.composer-minimized {
-    bottom: 0;
+.composer--is-blur {
+    --blur-opacity: .25;
+
+    box-shadow: 0 0 5px 3px rgba(black, .16);
+
     .composer-title-bar {
-        margin-bottom: 0;
+        background: var(--bg-color-main-area, $pm-global-grey);
+
+        & > * {
+            opacity: var(--blur-opacity);
+        }
+    }
+
+    .composer-blur-container {
+        opacity: var(--blur-opacity);
+        pointer-events: none;
     }
 }
 
-.pm-button.composer-title-bar-button {
-    padding: 0 0.5em;
-    background: unset;
-    border: unset;
-    border-radius: unset;
-
-    display: flex;
-    color: $white;
+.composer--is-minimized {
+    height: 2.5em; // title bar height
 }
 
-.pm-button.composer-title-bar-button:hover,
-.pm-button.composer-title-bar-button:active {
-    box-shadow: unset;
+.composer-title-bar {
+    background: var(--bgcolor-main-area, $pm-global-altgrey);
+    transition: background .15s ease-out;
+
+    & > * {
+        transition: opacity .15s ease-out;
+    }
+}
+
+.composer-title-bar-tooltip {
+    align-self: stretch;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.composer-title-bar-button {
+    &:hover,
+    &:focus {
+        background-color: rgba(white, 0.05);
+    }
+}
+
+.composer-container {
+    overflow: hidden;
+    background: var(--bgcolor-main-area, $white);
+}
+
+.composer-blur-container {
+    transition: opacity .15s ease-out;
 }
 
 .composer-meta-label,
@@ -56,18 +77,10 @@
     width: 15%;
 }
 
-.composer-meta-label .pm-label {
-    padding-top: 7px;
-    padding-bottom: 7px;
-
-    &:not(:first-child) {
-        margin-top: 7px;
-    }
-}
-
 .composer-meta .composer-addresses-fakefield {
     min-height: 3.5rem;
     max-height: 2.5em;
+    padding-right: 4.5em;
 }
 .composer-addresses-fakefield-inner {
     max-width: calc(100% - 5em);
@@ -80,16 +93,15 @@
 .composer-addresses-container {
     display: flex;
     flex-wrap: wrap;
-    min-height: 2.6rem;
-    vertical-align: middle;
     width: 100%;
     position: relative;
     max-height: 100px;
     overflow-y: auto;
     overflow-x: hidden;
 
-    padding-top: 6px;
-    padding-bottom: 1px;
+    &.pm-field {
+        padding: .25em .5em;
+    }
 
     &::after {
         // trick to keep space in case of loooooooong email with scroll and last one
@@ -123,7 +135,7 @@
         margin: 0 0 0 20px;
         padding: 0;
 
-        max-height: 40rem;
+        max-height: 20rem;
         overflow-y: auto;
     }
 
@@ -146,11 +158,16 @@
     }
 }
 
+.composer-addresses-input-container {
+    // Here I tried to keep pm-field height only with margin calculations
+    margin: calc(#{em(6)} - .25em) 0.5em calc(#{em(6)} - .25em) calc(#{em(16)} - .5em);
+}
+
 .composer-addresses-item {
     background-color: var(--bgcolor-item-column-list, $pm-global-light);
     text-shadow: none;
     + .composer-addresses-input-container {
-        margin: 0 0.5em 0.5em 0;
+        margin-left: 0; margin-top: calc(.25em + 1px); margin-bottom: calc(.25em + 1px);
     }
 }
 
@@ -168,11 +185,18 @@
     border-right: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
+.composer-addresses-item-remove {
+    &.pm-button {
+        padding: 0 .5em;
+        border: none;
+    }
+}
+
 .composer-addresses-ccbcc {
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 1em;
+    right: .5em;
 }
 
 .addresses-contacts-table {
@@ -295,10 +319,14 @@
 }
 
 .composer-editor-dropzone {
-    background: var(--bgcolor-main-area, #f5f5f5);
-    color: var(--color-main-area, #505061);
+    border: 5px dashed var(--bordercolor-input, $pm-global-border);
+    background: var(--bgcolor-main-area, $white);
+    opacity: .85;
 
-    // TODO: Something more sexy? :)
+    &-text {
+        font-size: 2em;
+        opacity: .75;
+    }
 }
 
 .editor-toolbar-button {

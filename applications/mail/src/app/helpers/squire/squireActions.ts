@@ -122,7 +122,11 @@ export const getFontLabel = (font: FONT_FACE) => Object.entries(FONT_FACE).find(
 
 export const getFontFaceAtCursor = (squire: SquireType) => {
     const { family = 'arial' } = squire.getFontInfo();
-    const first = family.split(',')[0].trim();
+    const first = family
+        .split(',')[0]
+        .replace(/"/g, '')
+        .trim();
+    console.log(family, first);
     return Object.entries(FONT_FACE).find(([, value]) => value.includes(first))?.[1] || DEFAULT_FONT_FACE;
 };
 

@@ -1,5 +1,6 @@
 import React, { MutableRefObject, useEffect, useState } from 'react';
 import { useModals, Icon } from 'react-components';
+import { c } from 'ttag';
 
 import EditorImageModal from './EditorImageModal';
 import EditorLinkModal from './EditorLinkModal';
@@ -83,24 +84,31 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag
                 <div className="flex-item-fluid" />
             ) : (
                 <>
-                    <EditorToolbarFontFaceDropdown squireRef={squireRef} editorReady={editorReady} />
+                    <EditorToolbarFontFaceDropdown
+                        squireRef={squireRef}
+                        editorReady={editorReady}
+                        title={c('Action').t`Font face`}
+                    />
                     <EditorToolbarSeparator />
                     <EditorToolbarFontSizeDropdown
                         squireRef={squireRef}
                         editorReady={editorReady}
                         className="flex-item-noshrink"
+                        title={c('Action').t`Size`}
                     />
                     <EditorToolbarSeparator />
                     <EditorToolbarFontColorsDropdown
                         squireRef={squireRef}
                         editorReady={editorReady}
                         className="flex-item-noshrink"
+                        title={c('Action').t`Color`}
                     />
                     <EditorToolbarSeparator />
                     <EditorToolbarButton
                         onClick={handleBold}
                         aria-pressed={squireInfos.bold}
                         className="flex-item-noshrink"
+                        title={c('Action').t`Bold`}
                     >
                         <Icon name="text-bold" className="mauto" />
                     </EditorToolbarButton>
@@ -108,6 +116,7 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag
                         onClick={handleItalic}
                         aria-pressed={squireInfos.italic}
                         className="flex-item-noshrink"
+                        title={c('Action').t`Italic`}
                     >
                         <Icon name="text-italic" className="mauto" />
                     </EditorToolbarButton>
@@ -115,6 +124,7 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag
                         onClick={handleUnderline}
                         aria-pressed={squireInfos.underline}
                         className="flex-item-noshrink"
+                        title={c('Action').t`Underline`}
                     >
                         <Icon name="text-underline" className="mauto" />
                     </EditorToolbarButton>
@@ -123,12 +133,14 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag
                         squireRef={squireRef}
                         pathInfos={squireInfos}
                         className="flex-item-noshrink"
+                        title={c('Action').t`Alignment`}
                     />
                     <EditorToolbarSeparator />
                     <EditorToolbarButton
                         onClick={handleUnorderedList}
                         aria-pressed={squireInfos.unorderedList}
                         className="flex-item-noshrink"
+                        title={c('Action').t`Unordered list`}
                     >
                         <Icon name="bullet-points" className="mauto" />
                     </EditorToolbarButton>
@@ -136,6 +148,7 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag
                         onClick={handleOrderedList}
                         aria-pressed={squireInfos.orderedList}
                         className="flex-item-noshrink"
+                        title={c('Action').t`Ordered list`}
                     >
                         <Icon name="ordered-list" className="mauto" />
                     </EditorToolbarButton>
@@ -144,17 +157,30 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag
                         onClick={handleBlockquote}
                         aria-pressed={squireInfos.blockquote}
                         className="flex-item-noshrink"
+                        title={c('Action').t`Quote`}
                     >
                         <Icon name="text-quote" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarSeparator />
-                    <EditorToolbarButton onClick={handleLink} className="flex-item-noshrink">
+                    <EditorToolbarButton
+                        onClick={handleLink}
+                        className="flex-item-noshrink"
+                        title={c('Action').t`Insert link`}
+                    >
                         <Icon name="link" className="mauto" />
                     </EditorToolbarButton>
-                    <EditorToolbarButton onClick={handleImage} className="flex-item-noshrink">
+                    <EditorToolbarButton
+                        onClick={handleImage}
+                        className="flex-item-noshrink"
+                        title={c('Action').t`Insert image`}
+                    >
                         <Icon name="file-image" className="mauto" />
                     </EditorToolbarButton>
-                    <EditorToolbarButton onClick={handleClearFormatting} className="flex-item-noshrink">
+                    <EditorToolbarButton
+                        onClick={handleClearFormatting}
+                        className="flex-item-noshrink"
+                        title={c('Action').t`Clear all formatting`}
+                    >
                         <Icon name="remove-text-formatting" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarSeparator />
@@ -165,6 +191,7 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag
                 squireRef={squireRef}
                 onChange={onChange}
                 onChangeFlag={onChangeFlag}
+                title={c('Action').t`More`}
             />
         </div>
     );

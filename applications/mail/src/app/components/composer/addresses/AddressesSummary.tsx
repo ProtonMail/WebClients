@@ -21,7 +21,7 @@ interface Props {
 
 const AddressesSummary = ({ message: { data }, mapSendInfo, contacts, contactGroups, onFocus }: Props) => {
     return (
-        <div className="flex flex-row flex-nowrap flex-items-center pl0-5 pr0-5 mb0-5" onClick={onFocus}>
+        <div className="flex flex-row flex-nowrap flex-items-center mt0-5 mb0-5 pl0-5 pr0-5" onClick={onFocus}>
             <Label htmlFor={null} className="composer-meta-label pr0-5 pt0 bold">
                 {c('Title').t`To`}
             </Label>
@@ -38,9 +38,18 @@ const AddressesSummary = ({ message: { data }, mapSendInfo, contacts, contactGro
                         const recipientOrGroups = recipientsToRecipientOrGroup(recipients, contactGroups);
                         return (
                             <Fragment key={type}>
-                                {type === 'CCList' && <span className="mr0-5 color-primary">{c('Title').t`CC`}:</span>}
+                                {type === 'CCList' && (
+                                    <span className="mr0-5 color-primary" title={c('Title').t`Carbon Copy`}>
+                                        {c('Title').t`CC`}:
+                                    </span>
+                                )}
                                 {type === 'BCCList' && (
-                                    <span className="mr0-5 inline-flex color-primary">{c('Title').t`BCC`}:</span>
+                                    <span
+                                        className="mr0-5 inline-flex color-primary"
+                                        title={c('Title').t`Blind Carbon Copy`}
+                                    >
+                                        {c('Title').t`BCC`}:
+                                    </span>
                                 )}
                                 {recipientOrGroups.map((recipientOrGroup, i) => {
                                     const Address = recipientOrGroup.recipient?.Address as string;
@@ -69,7 +78,10 @@ const AddressesSummary = ({ message: { data }, mapSendInfo, contacts, contactGro
                         );
                     })}
                 </span>
-                <LinkButton className="composer-addresses-ccbcc nodecoration strong">
+                <LinkButton
+                    className="composer-addresses-ccbcc nodecoration strong"
+                    title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
+                >
                     {c('Action').t`CC, BCC`}
                 </LinkButton>
             </div>

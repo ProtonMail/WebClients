@@ -27,9 +27,10 @@ interface Props {
     squireRef: MutableRefObject<SquireType>;
     onChange: (message: PartialMessageExtended) => void;
     onChangeFlag: (changes: Map<number, boolean>) => void;
+    title?: string;
 }
 
-const EditorToolbarMoreDropdown = ({ message, squireRef, onChange, onChangeFlag }: Props) => {
+const EditorToolbarMoreDropdown = ({ message, squireRef, onChange, onChangeFlag, title }: Props) => {
     const [mailSettings] = useMailSettings() as [MailSettings, boolean, Error];
     const [addresses] = useAddresses() as [Address[], boolean, Error];
 
@@ -82,7 +83,7 @@ const EditorToolbarMoreDropdown = ({ message, squireRef, onChange, onChangeFlag 
     const handleToggleReceiptRequest = () => onChangeFlag(new Map([[FLAG_RECEIPT_REQUEST, !isReceiptRequest]]));
 
     return (
-        <EditorToolbarDropdown className="mlauto">
+        <EditorToolbarDropdown className="flex-item-noshrink mlauto" title={title}>
             <DropdownMenu className="editor-toolbar-more-menu flex-item-noshrink">
                 {!isPlainText && [
                     // Fragment breaks the DropdownMenu flow, an array works

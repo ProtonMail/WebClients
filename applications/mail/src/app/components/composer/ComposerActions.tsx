@@ -1,6 +1,6 @@
 import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
-import { Button, useModals, ConfirmModal, Alert, classnames } from 'react-components';
+import { Button, useModals, ConfirmModal, Alert, classnames, Tooltip } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { formatSimpleDate } from '../../helpers/date';
@@ -79,57 +79,67 @@ const ComposerActions = ({
 
     return (
         <footer
-            className="composer-actions flex flex-row flex-spacebetween w100 pr0-5"
+            className="composer-actions flex flex-row flex-spacebetween w100 mb0-5 pl0-5 pr0-5"
             onClick={addressesBlurRef.current}
         >
             <div className="flex">
-                <AttachmentsButton
-                    className={classnames([isAttachments && 'pm-button-blueborder'])}
-                    disabled={lock}
-                    onAddAttachments={onAddAttachments}
-                />
-                <Button
-                    icon="expiration"
-                    className={classnames([
-                        'ml0-5 inline-flex flex-items-center pm-button--for-icon',
-                        isExpiration && 'pm-button-blueborder'
-                    ])}
-                    onClick={onExpiration}
-                    disabled={lock}
-                >
-                    <span className="sr-only">{c('Action').t`Expiration time`}</span>
-                </Button>
-                <Button
-                    icon="lock"
-                    className={classnames([
-                        'ml0-5 inline-flex flex-items-center pm-button--for-icon',
-                        isPassword && 'pm-button-blueborder'
-                    ])}
-                    onClick={onPassword}
-                    disabled={lock}
-                >
-                    <span className="sr-only">{c('Action').t`Encryption`}</span>
-                </Button>
+                <Tooltip title={c('Action').t`Attachments`} className="flex">
+                    <AttachmentsButton
+                        className={classnames([isAttachments && 'pm-button-blueborder'])}
+                        disabled={lock}
+                        onAddAttachments={onAddAttachments}
+                    />
+                </Tooltip>
+                <Tooltip title={c('Action').t`Expiration time`} className="flex ml0-5">
+                    <Button
+                        icon="expiration"
+                        className={classnames([
+                            'inline-flex flex-items-center pm-button--for-icon',
+                            isExpiration && 'pm-button-blueborder'
+                        ])}
+                        onClick={onExpiration}
+                        disabled={lock}
+                    >
+                        <span className="sr-only">{c('Action').t`Expiration time`}</span>
+                    </Button>
+                </Tooltip>
+                <Tooltip title={c('Action').t`Encryption`} className="flex ml0-5">
+                    <Button
+                        icon="lock-alone"
+                        className={classnames([
+                            'inline-flex flex-items-center pm-button--for-icon',
+                            isPassword && 'pm-button-blueborder'
+                        ])}
+                        onClick={onPassword}
+                        disabled={lock}
+                    >
+                        <span className="sr-only">{c('Action').t`Encryption`}</span>
+                    </Button>
+                </Tooltip>
             </div>
             <div className="flex flex-self-vcenter">
                 <span className="mr0-5 mtauto mbauto">{dateMessage}</span>
-                <Button
-                    className="mr0-5 inline-flex flex-items-center pm-button--for-icon"
-                    icon="trash"
-                    disabled={lock}
-                    onClick={handleDelete}
-                >
-                    <span className="sr-only">{c('Action').t`Delete draft`}</span>
-                </Button>
-                <Button
-                    className="mr0-5 inline-flex flex-items-center pm-button--for-icon"
-                    icon="save"
-                    disabled={lock}
-                    onClick={() => onSave()}
-                >
-                    <span className="sr-only">{c('Action').t`Save`}</span>
-                </Button>
-                <Button className="pm-button-blue composer-send-button" loading={lock} onClick={onSend}>
+                <Tooltip title={c('Action').t`Delete draft`} className="flex mr0-5">
+                    <Button
+                        className="inline-flex flex-items-center pm-button--for-icon"
+                        icon="trash"
+                        disabled={lock}
+                        onClick={handleDelete}
+                    >
+                        <span className="sr-only">{c('Action').t`Delete draft`}</span>
+                    </Button>
+                </Tooltip>
+                <Tooltip title={c('Action').t`Save`} className="flex mr0-5">
+                    <Button
+                        className="inline-flex flex-items-center pm-button--for-icon"
+                        icon="save"
+                        disabled={lock}
+                        onClick={() => onSave()}
+                    >
+                        <span className="sr-only">{c('Action').t`Save`}</span>
+                    </Button>
+                </Tooltip>
+                <Button className="pm-button--primary composer-send-button" loading={lock} onClick={onSend}>
                     <span className="pl1 pr1">{buttonSendLabel}</span>
                 </Button>
             </div>

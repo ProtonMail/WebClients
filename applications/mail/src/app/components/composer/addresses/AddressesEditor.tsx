@@ -1,6 +1,6 @@
 import React, { useState, MutableRefObject, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
-import { Label, generateUID, LinkButton } from 'react-components';
+import { Label, generateUID, LinkButton, classnames } from 'react-components';
 
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { MapSendInfo } from '../../../models/crypto';
@@ -58,8 +58,8 @@ const AddressesEditor = ({
     // };
 
     return (
-        <div className="flex flex-column flex-nowrap flex-items-start pl0-5 pr0-5 mb0-5">
-            <div className="flex flex-row w100 mb0-5 relative">
+        <div className="flex flex-column flex-nowrap flex-items-start mt0-5 mb0-5 pl0-5 pr0-5">
+            <div className={classnames(['flex flex-row w100 relative', expanded && 'mb0-5'])}>
                 <Label htmlFor={`to-${uid}`} className="composer-meta-label bold">
                     {/* <Tooltip title={c('Title').t`Add contacts`}> */}
                     {/* <a onClick={handleContactModal('ToList')}>{c('Title').t`To`}</a> */}
@@ -77,7 +77,11 @@ const AddressesEditor = ({
                     placeholder={c('Placeholder').t`Email address`}
                 />
                 {!expanded && (
-                    <LinkButton className="composer-addresses-ccbcc nodecoration strong" onClick={toggleExpanded}>
+                    <LinkButton
+                        className="composer-addresses-ccbcc nodecoration strong"
+                        title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
+                        onClick={toggleExpanded}
+                    >
                         {c('Action').t`CC, BCC`}
                     </LinkButton>
                 )}
@@ -85,7 +89,11 @@ const AddressesEditor = ({
             {expanded && (
                 <>
                     <div className="flex flex-row w100 mb0-5">
-                        <Label htmlFor={`cc-${uid}`} className="composer-meta-label bold">
+                        <Label
+                            htmlFor={`cc-${uid}`}
+                            className="composer-meta-label bold"
+                            title={c('Label').t`Carbon Copy`}
+                        >
                             {/* <Tooltip title={c('Title').t`Add contacts`}> */}
                             {/* <a onClick={handleContactModal('CCList')}>{c('Title').t`CC`}</a> */}
                             {c('Label').t`CC`}
@@ -102,7 +110,11 @@ const AddressesEditor = ({
                         />
                     </div>
                     <div className="flex flex-row w100">
-                        <Label htmlFor={`bcc-${uid}`} className="composer-meta-label bold">
+                        <Label
+                            htmlFor={`bcc-${uid}`}
+                            className="composer-meta-label bold"
+                            title={c('Label').t`Blind Carbon Copy`}
+                        >
                             {/* <Tooltip title={c('Title').t`Add contacts`}> */}
                             {/* <a onClick={handleContactModal('BCCList')}>{c('Title').t`BCC`}</a> */}
                             {c('Label').t`BCC`}
