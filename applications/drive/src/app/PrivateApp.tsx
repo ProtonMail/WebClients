@@ -51,11 +51,15 @@ const PrivateApp = ({ onLogout, history, location }: Props) => {
                                             <AppErrorBoundary>
                                                 <Switch>
                                                     <Route
+                                                        path="/drive/trash/:shareId?"
+                                                        exact
+                                                        component={TrashContainer}
+                                                    />
+                                                    <Route
                                                         path={`/drive/:shareId?/:type?/:linkId?`}
                                                         exact
                                                         component={DriveContainer}
                                                     />
-                                                    <Route path="/trash/:shareId?" exact component={TrashContainer} />
                                                     <Redirect to="/drive" />
                                                 </Switch>
 
