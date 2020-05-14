@@ -1,7 +1,7 @@
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../../../constants';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { convertZonedDateTimeToUTC, fromLocalDate } from 'proton-shared/lib/date/timezone';
-import { getPositiveSetpos, getNegativeSetpos } from '../../../helpers/rrule';
+import { getNegativeSetpos, getPositiveSetpos } from '../../../helpers/rrule';
 import { EventModel } from '../../../interfaces/EventModel';
 import { VcalDateOrDateTimeValue, VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { numericDayToDay } from 'proton-shared/lib/calendar/vcalConverter';

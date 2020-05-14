@@ -1,18 +1,14 @@
-import { format, getDaysInMonth } from 'date-fns';
-import { c, msgid } from 'ttag';
-import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../constants';
-import { FrequencyModel } from '../interfaces/EventModel';
-import { WeekStartsOn } from '../containers/calendar/interface';
-
-interface GetTimezonedFrequencyStringOptions {
-    date: Date;
-    startTzid: string;
-    currentTzid: string;
-    locale: Locale;
-    weekStartsOn: WeekStartsOn;
-}
-// NOTE: due to the different grammar of different languages, to allow for a proper translation,
-// win general e need to expand all possible cases so there will be quite a bit of duplicated code
+import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
+import { getDaysInMonth } from 'proton-shared/lib/date-fns-utc';
+import { toLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
+import {
+    VcalDateOrDateTimeValue,
+    VcalDateTimeValue,
+    VcalDaysKeys,
+    VcalRrulePropertyValue,
+    VcalVeventComponent
+} from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { FREQUENCY, FREQUENCY_COUNT_MAX, FREQUENCY_INTERVALS_MAX, MAXIMUM_DATE, MAXIMUM_DATE_UTC } from '../constants';
 
 export const getPositiveSetpos = (date: Date) => {
     const shiftedMonthDay = date.getDate() - 1;
@@ -27,546 +23,225 @@ export const getNegativeSetpos = (date: Date) => {
     return Math.ceil((monthDay - daysInMonth) / 7) - 1;
 };
 
-export const getOnDayString = (date: Date, monthlyType: MONTHLY_TYPE) => {
-    const monthday = date.getDate();
-    const day = date.getDay();
-
-    if (monthlyType === MONTHLY_TYPE.ON_NTH_DAY) {
-        const setPos = getPositiveSetpos(date);
-        if (setPos === 1) {
-            if (day === 0) {
-                return c('Monthly recurring event, repeats on').t`on the first Sunday`;
-            }
-            if (day === 1) {
-                return c('Monthly recurring event, repeats on').t`on the first Monday`;
-            }
-            if (day === 2) {
-                return c('Monthly recurring event, repeats on').t`on the first Tuesday`;
-            }
-            if (day === 3) {
-                return c('Monthly recurring event, repeats on').t`on the first Wednesday`;
-            }
-            if (day === 4) {
-                return c('Monthly recurring event, repeats on').t`on the first Thursday`;
-            }
-            if (day === 5) {
-                return c('Monthly recurring event, repeats on').t`on the first Friday`;
-            }
-            if (day === 6) {
-                return c('Monthly recurring event, repeats on').t`on the first Saturday`;
-            }
-        }
-        if (setPos === 2) {
-            if (day === 0) {
-                return c('Monthly recurring event, repeats on').t`on the second Sunday`;
-            }
-            if (day === 1) {
-                return c('Monthly recurring event, repeats on').t`on the second Monday`;
-            }
-            if (day === 2) {
-                return c('Monthly recurring event, repeats on').t`on the second Tuesday`;
-            }
-            if (day === 3) {
-                return c('Monthly recurring event, repeats on').t`on the second Wednesday`;
-            }
-            if (day === 4) {
-                return c('Monthly recurring event, repeats on').t`on the second Thursday`;
-            }
-            if (day === 5) {
-                return c('Monthly recurring event, repeats on').t`on the second Friday`;
-            }
-            if (day === 6) {
-                return c('Monthly recurring event, repeats on').t`on the second Saturday`;
-            }
-        }
-        if (setPos === 3) {
-            if (day === 0) {
-                return c('Monthly recurring event, repeats on').t`on the third Sunday`;
-            }
-            if (day === 1) {
-                return c('Monthly recurring event, repeats on').t`on the third Monday`;
-            }
-            if (day === 2) {
-                return c('Monthly recurring event, repeats on').t`on the third Tuesday`;
-            }
-            if (day === 3) {
-                return c('Monthly recurring event, repeats on').t`on the third Wednesday`;
-            }
-            if (day === 4) {
-                return c('Monthly recurring event, repeats on').t`on the third Thursday`;
-            }
-            if (day === 5) {
-                return c('Monthly recurring event, repeats on').t`on the third Friday`;
-            }
-            if (day === 6) {
-                return c('Monthly recurring event, repeats on').t`on the third Saturday`;
-            }
-        }
-        if (setPos === 4) {
-            if (day === 0) {
-                return c('Monthly recurring event, repeats on').t`on the fourth Sunday`;
-            }
-            if (day === 1) {
-                return c('Monthly recurring event, repeats on').t`on the fourth Monday`;
-            }
-            if (day === 2) {
-                return c('Monthly recurring event, repeats on').t`on the fourth Tuesday`;
-            }
-            if (day === 3) {
-                return c('Monthly recurring event, repeats on').t`on the fourth Wednesday`;
-            }
-            if (day === 4) {
-                return c('Monthly recurring event, repeats on').t`on the fourth Thursday`;
-            }
-            if (day === 5) {
-                return c('Monthly recurring event, repeats on').t`on the fourth Friday`;
-            }
-            if (day === 6) {
-                return c('Monthly recurring event, repeats on').t`on the fourth Saturday`;
-            }
-        }
-    }
-    if (monthlyType === MONTHLY_TYPE.ON_MINUS_NTH_DAY) {
-        if (day === 0) {
-            return c('Monthly recurring event, repeats on').t`on the last Sunday`;
-        }
-        if (day === 1) {
-            return c('Monthly recurring event, repeats on').t`on the last Monday`;
-        }
-        if (day === 2) {
-            return c('Monthly recurring event, repeats on').t`on the last Tuesday`;
-        }
-        if (day === 3) {
-            return c('Monthly recurring event, repeats on').t`on the last Wednesday`;
-        }
-        if (day === 4) {
-            return c('Monthly recurring event, repeats on').t`on the last Thursday`;
-        }
-        if (day === 5) {
-            return c('Monthly recurring event, repeats on').t`on the last Friday`;
-        }
-        if (day === 6) {
-            return c('Monthly recurring event, repeats on').t`on the last Saturday`;
-        }
-    }
-    return c('Monthly recurring event, repeats on').t`on day ${monthday}`;
+export const getIsDateTimeValue = (value: VcalDateOrDateTimeValue): value is VcalDateTimeValue => {
+    return (value as VcalDateTimeValue).isUTC !== undefined;
 };
 
-const getCustomDailyString = (
-    { interval = 0, ends: { type: endType, until, count } }: FrequencyModel,
-    locale: Locale
-) => {
-    if (endType === END_TYPE.NEVER) {
-        return c('Daily recurring event, frequency').ngettext(msgid`Daily`, `Every ${interval} days`, interval);
-    }
-
-    if (endType === END_TYPE.AFTER_N_TIMES) {
-        return c('Daily recurring event, frequency').ngettext(
-            msgid`Daily, ${count} times`,
-            `Every ${interval} days, ${count} times`,
-            interval
-        );
-    }
-
-    if (endType === END_TYPE.UNTIL && until) {
-        const dateString = format(until, 'd MMM yyyy', { locale });
-        return c('Daily recurring event, frequency').ngettext(
-            msgid`Daily, until ${dateString}`,
-            `Every ${interval} days, until ${dateString}`,
-            interval
-        );
-    }
-};
-const getWeekdayString = (weekday: number) => {
-    if (weekday === 0) {
-        return c('Weekly recurring event, repeats on (multiple days), frequency').t`Sunday`;
-    }
-    if (weekday === 1) {
-        return c('Weekly recurring event, repeats on (multiple days), frequency').t`Monday`;
-    }
-    if (weekday === 2) {
-        return c('Weekly recurring event, repeats on (multiple days), frequency').t`Tuesday`;
-    }
-    if (weekday === 3) {
-        return c('Weekly recurring event, repeats on (multiple days), frequency').t`Wednesday`;
-    }
-    if (weekday === 4) {
-        return c('Weekly recurring event, repeats on (multiple days), frequency').t`Thursday`;
-    }
-    if (weekday === 5) {
-        return c('Weekly recurring event, repeats on (multiple days), frequency').t`Friday`;
-    }
-    if (weekday === 6) {
-        return c('Weekly recurring event, repeats on (multiple days), frequency').t`Saturday`;
-    }
-    throw new Error('Unknown weekday');
+export const getIsStandardByday = (byday = ''): byday is VcalDaysKeys => {
+    return /^(SU|MO|TU|WE|TH|FR|SA)$/.test(byday);
 };
 
-const getCustomWeeklyString = (
-    { interval = 0, weekly: { days }, ends: { type: endType, until, count } }: FrequencyModel,
-    weekStartsOn: WeekStartsOn,
-    locale: Locale
-) => {
-    // sort weekly days depending on the day the week starts
-    const sortedWeekDays = days.slice().sort((a: number, b: number) => {
-        // shift days. Get a positive modulus
-        const A = (a - weekStartsOn + 7) % 7;
-        const B = (b - weekStartsOn + 7) % 7;
-        return A - B;
-    });
-    const multipleDaysString = sortedWeekDays.map(getWeekdayString).join(', ');
-
-    if (endType === END_TYPE.NEVER) {
-        if (days.length === 7) {
-            return c('Weekly recurring event, frequency').ngettext(
-                msgid`Weekly on all days`,
-                `Every ${interval} weeks on all days`,
-                interval
-            );
-        }
-        if (days.length == 1) {
-            const startDate = days[0];
-            if (startDate === 0) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Sunday`,
-                    `Every ${interval} weeks on Sunday`,
-                    interval
-                );
-            }
-            if (startDate === 1) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Monday`,
-                    `Every ${interval} weeks on Monday`,
-                    interval
-                );
-            }
-            if (startDate === 2) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Tuesday`,
-                    `Every ${interval} weeks on Tuesday`,
-                    interval
-                );
-            }
-            if (startDate === 3) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Wednesday`,
-                    `Every ${interval} weeks on Wednesday`,
-                    interval
-                );
-            }
-            if (startDate === 4) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Thursday`,
-                    `Every ${interval} weeks on Thursday`,
-                    interval
-                );
-            }
-            if (startDate === 5) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Friday`,
-                    `Every ${interval} weeks on Friday`,
-                    interval
-                );
-            }
-            if (startDate === 6) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Saturday`,
-                    `Every ${interval} weeks on Saturday`,
-                    interval
-                );
-            }
-        }
-        return c('Weekly recurring event, frequency').ngettext(
-            msgid`Weekly on ${multipleDaysString}`,
-            `Every ${interval} weeks on ${multipleDaysString}`,
-            interval
-        );
-    }
-    if (endType === END_TYPE.AFTER_N_TIMES) {
-        if (days.length === 7) {
-            return c('Weekly recurring event, frequency').ngettext(
-                msgid`Weekly on all days, ${count} times`,
-                `Every ${interval} weeks on all days, ${count} times`,
-                interval
-            );
-        }
-        if (days.length == 1) {
-            const startDate = days[0];
-            if (startDate === 0) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Sunday, ${count} times`,
-                    `Every ${interval} weeks on Sunday, ${count} times`,
-                    interval
-                );
-            }
-            if (startDate === 1) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Monday, ${count} times`,
-                    `Every ${interval} weeks on Monday, ${count} times`,
-                    interval
-                );
-            }
-            if (startDate === 2) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Tuesday, ${count} times`,
-                    `Every ${interval} weeks on Tuesday, ${count} times`,
-                    interval
-                );
-            }
-            if (startDate === 3) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Wednesday, ${count} times`,
-                    `Every ${interval} weeks on Wednesday, ${count} times`,
-                    interval
-                );
-            }
-            if (startDate === 4) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Thursday, ${count} times`,
-                    `Every ${interval} weeks on Thursday, ${count} times`,
-                    interval
-                );
-            }
-            if (startDate === 5) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Friday, ${count} times`,
-                    `Every ${interval} weeks on Friday, ${count} times`,
-                    interval
-                );
-            }
-            if (startDate === 6) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Saturday, ${count} times`,
-                    `Every ${interval} weeks on Saturday, ${count} times`,
-                    interval
-                );
-            }
-        }
-        return c('Weekly recurring event, frequency').ngettext(
-            msgid`Weekly on ${multipleDaysString}, ${count} times`,
-            `Every ${interval} weeks on ${multipleDaysString}, ${count} times`,
-            interval
-        );
-    }
-    if (endType === END_TYPE.UNTIL && until) {
-        const dateString = format(until, 'd MMM yyyy', { locale });
-        if (days.length === 7) {
-            return c('Weekly recurring event, frequency').ngettext(
-                msgid`Weekly on all days, until ${dateString}`,
-                `Every ${interval} weeks on all days, until ${dateString}`,
-                interval
-            );
-        }
-        if (days.length == 1) {
-            const startDate = days[0];
-            if (startDate === 0) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Sunday, until ${dateString}`,
-                    `Every ${interval} weeks on Sunday, until ${dateString}`,
-                    interval
-                );
-            }
-            if (startDate === 1) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Monday, until ${dateString}`,
-                    `Every ${interval} weeks on Monday, until ${dateString}`,
-                    interval
-                );
-            }
-            if (startDate === 2) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Tuesday, until ${dateString}`,
-                    `Every ${interval} weeks on Tuesday, until ${dateString}`,
-                    interval
-                );
-            }
-            if (startDate === 3) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Wednesday, until ${dateString}`,
-                    `Every ${interval} weeks on Wednesday, until ${dateString}`,
-                    interval
-                );
-            }
-            if (startDate === 4) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Thursday, until ${dateString}`,
-                    `Every ${interval} weeks on Thursday, until ${dateString}`,
-                    interval
-                );
-            }
-            if (startDate === 5) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Friday, until ${dateString}`,
-                    `Every ${interval} weeks on Friday, until ${dateString}`,
-                    interval
-                );
-            }
-            if (startDate === 6) {
-                return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Saturday, until ${dateString}`,
-                    `Every ${interval} weeks on Saturday, until ${dateString}`,
-                    interval
-                );
-            }
-        }
-        return c('Weekly recurring event, frequency').ngettext(
-            msgid`Weekly on ${multipleDaysString}, until ${dateString}`,
-            `Every ${interval} weeks on ${multipleDaysString}, until ${dateString}`,
-            interval
-        );
-    }
+export const getIsStandardBydayArray = (byday: (string | undefined)[]): byday is VcalDaysKeys[] => {
+    return !byday.some((day) => !getIsStandardByday(day));
 };
 
-const getCustomMonthlyString = (
-    { interval = 0, monthly, ends: { type: endType, until, count } }: FrequencyModel,
-    date: Date,
-    locale: Locale
-) => {
-    const onDayString = date ? getOnDayString(date, monthly.type) : '';
-    if (endType === END_TYPE.NEVER) {
-        return c('Monthly recurring event, frequency').ngettext(
-            msgid`Monthly ${onDayString}`,
-            `Every ${interval} months ${onDayString}`,
-            interval
-        );
+export const getDayAndSetpos = (byday?: string, bysetpos?: number) => {
+    if (byday) {
+        const alternativeBydayMatch = /^([-+]?\d{1})(SU|MO|TU|WE|TH|FR|SA$)/.exec(byday);
+        if (alternativeBydayMatch) {
+            const [, pos, day] = alternativeBydayMatch;
+            return { day, setpos: +pos };
+        }
     }
-    if (endType === END_TYPE.AFTER_N_TIMES) {
-        return c('Monthly recurring event, frequency').ngettext(
-            msgid`Monthly ${onDayString}, ${count} times`,
-            `Every ${interval} months ${onDayString}, ${count} times`,
-            interval
-        );
-    }
-    if (endType === END_TYPE.UNTIL && until) {
-        const dateString = format(until, 'd MMM yyyy', { locale });
-        return c('Monthly recurring event, frequency').ngettext(
-            msgid`Monthly ${onDayString}, until ${dateString}`,
-            `Every ${interval} months ${onDayString}, until ${dateString}`,
-            interval
-        );
-    }
+    return { day: byday, setpos: bysetpos };
 };
 
-const getCustomYearlyString = (
-    { interval = 0, ends: { type: endType, until, count } }: FrequencyModel,
-    locale: Locale
-) => {
-    if (endType === END_TYPE.NEVER) {
-        return c('Yearly recurring event, frequency').ngettext(msgid`Yearly`, `Every ${interval} years`, interval);
-    }
-    if (endType === END_TYPE.AFTER_N_TIMES) {
-        return c('Yearly recurring event, frequency').ngettext(
-            msgid`Yearly, ${count} times`,
-            `Every ${interval} years, ${count} times`,
-            interval
-        );
-    }
-    if (endType === END_TYPE.UNTIL && until) {
-        const dateString = format(until, 'd MMM yyyy', { locale });
-        return c('Yearly recurring event, frequency').ngettext(
-            msgid`Yearly, until ${dateString}`,
-            `Every ${interval} years, until ${dateString}`,
-            interval
-        );
-    }
+export const SUPPORTED_RRULE_PROPERTIES: (keyof VcalRrulePropertyValue)[] = [
+    'freq',
+    'count',
+    'interval',
+    'until',
+    'wkst',
+    'bysetpos',
+    'byday',
+    'bymonthday',
+    'bymonth',
+    'byyearday'
+];
+export const SUPPORTED_RRULE_PROPERTIES_DAILY: (keyof VcalRrulePropertyValue)[] = [
+    'freq',
+    'count',
+    'interval',
+    'until'
+];
+export const SUPPORTED_RRULE_PROPERTIES_WEEKLY: (keyof VcalRrulePropertyValue)[] = [
+    'freq',
+    'count',
+    'interval',
+    'until',
+    'wkst',
+    'byday'
+];
+export const SUPPORTED_RRULE_PROPERTIES_MONTHLY: (keyof VcalRrulePropertyValue)[] = [
+    'freq',
+    'count',
+    'interval',
+    'until',
+    'wkst',
+    'bymonthday',
+    'byday',
+    'bysetpos'
+];
+export const SUPPORTED_RRULE_PROPERTIES_YEARLY: (keyof VcalRrulePropertyValue)[] = [
+    'freq',
+    'count',
+    'interval',
+    'until',
+    'wkst',
+    'bymonthday',
+    'bymonth',
+    'byyearday'
+];
+const ALLOWED_BYSETPOS = [-1, 1, 2, 3, 4];
+
+export const getIsSupportedSetpos = (setpos: number) => {
+    return ALLOWED_BYSETPOS.includes(setpos);
 };
 
-const getFrequencyString = (
-    frequencyModel: FrequencyModel,
-    { date, weekStartsOn, locale }: GetTimezonedFrequencyStringOptions
-) => {
-    const { type, frequency, weekly, monthly } = frequencyModel;
-    const startDay = weekly.days[0];
-
-    if (type === FREQUENCY.DAILY) {
-        return c('Info').t`Daily`;
+/**
+ * Given an rrule property, return true if it's one of our custom rules.
+ * If the event is not recurring or the rrule is not supported, return false.
+ */
+export const getIsRruleCustom = (rrule: Partial<VcalRrulePropertyValue>): boolean => {
+    const nonEmptyFields = Object.entries(rrule)
+        .filter(([, value]) => value !== undefined)
+        .map(([field]) => field) as (keyof VcalRrulePropertyValue)[];
+    const { freq, count, interval, until, bysetpos, byday, bymonth, bymonthday, byyearday } = rrule;
+    const hasUnsupportedFields = nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES.includes(field));
+    if (!freq || count === 1 || hasUnsupportedFields) {
+        return false;
     }
-    if (type === FREQUENCY.WEEKLY) {
-        if (startDay === 0) {
-            return c('Weekly recurring event, frequency').t`Weekly on Sunday`;
-        }
-        if (startDay === 1) {
-            return c('Weekly recurring event, frequency').t`Weekly on Monday`;
-        }
-        if (startDay === 2) {
-            return c('Weekly recurring event, frequency').t`Weekly on Tuesday`;
-        }
-        if (startDay === 3) {
-            return c('Weekly recurring event, frequency').t`Weekly on Wednesday`;
-        }
-        if (startDay === 4) {
-            return c('Weekly recurring event, frequency').t`Weekly on Thursday`;
-        }
-        if (startDay === 5) {
-            return c('Weekly recurring event, frequency').t`Weekly on Friday`;
-        }
-        if (startDay === 6) {
-            return c('Weekly recurring event, frequency').t`Weekly on Saturday`;
-        }
-    }
-    if (type === FREQUENCY.MONTHLY) {
-        const onDayString = date ? getOnDayString(date, monthly.type) : '';
-        return c('Info').t`Monthly ${onDayString}`;
-    }
-    if (type === FREQUENCY.YEARLY) {
-        return c('Info').t`Yearly`;
-    }
-    if (type === FREQUENCY.CUSTOM) {
-        if (frequency === FREQUENCY.DAILY) {
-            return getCustomDailyString(frequencyModel, locale);
-        }
-        if (frequency === FREQUENCY.WEEKLY) {
-            return getCustomWeeklyString(frequencyModel, weekStartsOn, locale);
-        }
-        if (frequency === FREQUENCY.MONTHLY) {
-            return getCustomMonthlyString(frequencyModel, date, locale);
-        }
-        if (frequency === FREQUENCY.YEARLY) {
-            return getCustomYearlyString(frequencyModel, locale);
-        }
-    }
-    return '';
-};
-
-export const getTimezonedFrequencyString = (
-    frequencyModel: FrequencyModel,
-    options: GetTimezonedFrequencyStringOptions
-) => {
-    const {
-        type,
-        frequency,
-        weekly: { days },
-        ends: { type: endType }
-    } = frequencyModel;
-    const { startTzid, currentTzid } = options;
-
-    if (!startTzid || startTzid === currentTzid) {
-        return getFrequencyString(frequencyModel, options);
-    }
-
-    const isTimezoneStringNeeded = (() => {
-        if (type === FREQUENCY.ONCE) {
+    const isBasicCustom = (interval && interval > 1) || !!until;
+    if (freq === FREQUENCY.DAILY) {
+        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_DAILY.includes(field))) {
             return false;
         }
-        if ([FREQUENCY.DAILY, FREQUENCY.YEARLY].includes(frequency)) {
-            return type === FREQUENCY.CUSTOM && endType === END_TYPE.UNTIL;
+        return isBasicCustom;
+    }
+    if (freq === FREQUENCY.WEEKLY) {
+        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_WEEKLY.includes(field))) {
+            return false;
         }
-        if (frequency === FREQUENCY.WEEKLY) {
-            const isStandardWeekly = type === FREQUENCY.WEEKLY;
-            const hasCustomUntil = type === FREQUENCY.CUSTOM && endType === END_TYPE.UNTIL;
-            const hasDays = isStandardWeekly || days.length !== 7;
+        return Array.isArray(byday) || isBasicCustom;
+    }
+    if (freq === FREQUENCY.MONTHLY) {
+        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_MONTHLY.includes(field))) {
+            return false;
+        }
+        if (Array.isArray(byday) || Array.isArray(bymonthday) || Array.isArray(bysetpos)) {
+            return false;
+        }
+        const { setpos } = getDayAndSetpos(byday, bysetpos);
+        return (setpos && !!byday) || isBasicCustom;
+    }
+    if (freq === FREQUENCY.YEARLY) {
+        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_YEARLY.includes(field))) {
+            return false;
+        }
+        if (Array.isArray(bymonthday) || Array.isArray(bymonth) || Array.isArray(byyearday)) {
+            return false;
+        }
+        return isBasicCustom;
+    }
+    return false;
+};
 
-            return isStandardWeekly || hasCustomUntil || hasDays;
+export const getIsRruleConsistent = (vevent: VcalVeventComponent) => {
+    // UNTIL and DTSTART must have the same value type
+    const { dtstart, rrule } = vevent;
+    if (rrule?.value.until) {
+        const isDtstartDateTime = getIsDateTimeValue(dtstart.value);
+        const isUntilDateTime = getIsDateTimeValue(rrule.value.until);
+        return !(+isDtstartDateTime ^ +isUntilDateTime);
+    }
+    // DTSTART must match the pattern of the recurring series
+    const [first] = getOccurrences({ component: vevent, maxCount: 1 });
+    if (!first) {
+        return false;
+    }
+    if (+first.localStart !== +toUTCDate(vevent.dtstart.value)) {
+        return false;
+    }
+    return true;
+};
+
+export const getIsRruleValid = (rruleProperty: VcalRrulePropertyValue) => {
+    const rruleProperties = Object.keys(rruleProperty) as (keyof VcalRrulePropertyValue)[];
+    if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES.includes(property))) {
+        return false;
+    }
+    const { freq, interval = 1, count, until, byday, bysetpos, bymonthday, bymonth, byyearday } = rruleProperty;
+    if (count) {
+        if (count > FREQUENCY_COUNT_MAX) {
+            return false;
         }
-        // if (frequency === FREQUENCY.YEARLY) {
-        //     return true;
-        // }
-        if (frequency === FREQUENCY.MONTHLY) {
+        if (count === 1) {
             return true;
         }
-        return false;
-    })();
-
-    const timezoneString = isTimezoneStringNeeded ? ` (${startTzid})` : '';
-    return getFrequencyString(frequencyModel, options) + timezoneString;
+    }
+    if (until) {
+        if ('isUTC' in until && until.isUTC) {
+            if (+toUTCDate(until) > +MAXIMUM_DATE_UTC) {
+                return false;
+            }
+        }
+        if (+toLocalDate(until) > +MAXIMUM_DATE) {
+            return false;
+        }
+    }
+    if (freq === 'DAILY') {
+        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
+            return false;
+        }
+        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_DAILY.includes(property))) {
+            return false;
+        }
+        return true;
+    }
+    if (freq === 'WEEKLY') {
+        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
+            return false;
+        }
+        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_WEEKLY.includes(property))) {
+            return false;
+        }
+        return true;
+    }
+    if (freq === 'MONTHLY') {
+        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
+            return false;
+        }
+        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_MONTHLY.includes(property))) {
+            return false;
+        }
+        if (Array.isArray(byday) || Array.isArray(bysetpos) || Array.isArray(bymonthday)) {
+            return false;
+        }
+        // byday and bysetpos must both be absent or both present. If they are present, bymonthday should not be present
+        const { setpos, day } = getDayAndSetpos(byday, bysetpos);
+        if (!!day && !!setpos) {
+            return getIsStandardByday(day) && getIsSupportedSetpos(setpos) && !bymonthday;
+        }
+        if (+!!day ^ +!!setpos) {
+            return false;
+        }
+        return true;
+    }
+    if (freq === 'YEARLY') {
+        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
+            return false;
+        }
+        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_YEARLY.includes(property))) {
+            return false;
+        }
+        if (Array.isArray(bymonthday) || Array.isArray(bymonth) || Array.isArray(byyearday)) {
+            return false;
+        }
+        // bymonth and bymonthday must both be absent or both present
+        if (+rruleProperties.includes('bymonth') ^ +rruleProperties.includes('bymonthday')) {
+            return false;
+        }
+        return true;
+    }
+    return false;
 };

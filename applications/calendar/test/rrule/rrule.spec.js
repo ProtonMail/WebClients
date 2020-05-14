@@ -1,630 +1,224 @@
-import { enUS } from 'date-fns/locale';
-import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
-import { getTimezonedFrequencyString } from '../../src/app/helpers/rrule';
-import { END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE } from '../../src/app/constants';
-import { getInitialFrequencyModel } from '../../src/app/components/eventModal/eventForm/state';
+import {
+    getDayAndSetpos,
+    getIsRruleCustom,
+    getIsRruleConsistent,
+    getIsRruleValid,
+    getIsStandardByday
+} from '../../src/app/helpers/rrule';
+import { FREQUENCY } from '../../src/app/constants';
+import { parse } from 'proton-shared/lib/calendar/vcal';
 
-const weekdays = getFormattedWeekdays('cccc', { locale: enUS });
-const options = { weekdays, locale: enUS };
-
-const dummyStart = { date: new Date(2020, 0, 20), tzid: 'Europe/Athens' };
-const dummyFrequencyModel = getInitialFrequencyModel(dummyStart.date);
-
-describe('getTimezonedFrequencyString should produce the expected string for daily recurring events', () => {
-    test('for a standard daily recurring event', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.DAILY,
-            frequency: FREQUENCY.DAILY
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Daily');
+describe('getIsStandardByday', () => {
+    test('returns true for standard BYDAY strings', () => {
+        const bydays = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
+        expect(bydays.map(getIsStandardByday)).toEqual(bydays.map(() => true));
     });
 
-    test('for a custom daily recurring event that is actually standard', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.DAILY
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Daily');
-    });
-
-    test('for a custom daily recurring event happening every 2 days', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.DAILY,
-            interval: 2
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 2 days');
-    });
-
-    test('for a custom daily recurring event happening every three days, lasting 5 times', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.DAILY,
-            interval: 3,
-            ends: {
-                type: END_TYPE.AFTER_N_TIMES,
-                count: 5
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 3 days, 5 times');
-    });
-
-    test('for a custom daily recurring event, until 20th February 2020', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.DAILY,
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Daily, until 20 Feb 2020');
-    });
-
-    test('for a custom daily recurring event happening every two days, lasting 2 times on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.DAILY,
-            interval: 2,
-            ends: {
-                type: END_TYPE.AFTER_N_TIMES,
-                count: 2
-            }
-        };
-        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual('Every 2 days, 2 times');
-    });
-
-    test('for a custom daily event, until 20th February 2020 on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.DAILY,
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Daily, until 20 Feb 2020 (Pacific/Tahiti)'
-        );
-    });
-
-    test('for a custom daily event happening every two days, until 20th February 2020 on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.DAILY,
-            interval: 2,
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Every 2 days, until 20 Feb 2020 (Pacific/Tahiti)'
-        );
+    test('returns false for non-standard BYDAY strings', () => {
+        const bydays = ['1SU', 'SUN', 'S', 'DO', ''];
+        expect(bydays.map(getIsStandardByday)).toEqual(bydays.map(() => false));
     });
 });
 
-describe('getTimezonedFrequencyString should produce the expected string for weekly recurring events', () => {
-    test('for a standard weekly recurring event', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.WEEKLY,
-            frequency: FREQUENCY.WEEKLY,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [2]
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Weekly on Tuesday');
-    });
-
-    test('for a standard weekly recurring event, on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.WEEKLY,
-            frequency: FREQUENCY.WEEKLY,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [2]
-            }
-        };
-        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Weekly on Tuesday (Pacific/Tahiti)'
-        );
-    });
-
-    test('for a custom weekly recurring event that is actually standard', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.WEEKLY,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [2]
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Weekly on Tuesday');
-    });
-
-    test('for a custom weekly recurring event happening every 2 weeks', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.WEEKLY,
-            interval: 2,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [2]
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 2 weeks on Tuesday');
-    });
-
-    test('for a custom weekly recurring event happening every 2 weeks, on Monday and Tuesday', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.WEEKLY,
-            interval: 2,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [1, 2]
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 2 weeks on Monday, Tuesday');
-    });
-
-    test('for a custom weekly recurring event happening on all days of the week', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.WEEKLY,
-            interval: 1,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [0, 1, 2, 3, 4, 5, 6]
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Weekly on all days');
-    });
-
-    test('for a custom weekly recurring event happening every three weeks, on all days of the week, lasting 5 times', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.WEEKLY,
-            interval: 3,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [0, 1, 2, 3, 4, 5, 6]
-            },
-            ends: {
-                type: END_TYPE.AFTER_N_TIMES,
-                count: 5
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 3 weeks on all days, 5 times');
-    });
-
-    test('for a custom weekly recurring event happening every three weeks, on all days of the week, until 20th February 2020', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.WEEKLY,
-            interval: 3,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [0, 1, 2, 3, 4, 5, 6]
-            },
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual(
-            'Every 3 weeks on all days, until 20 Feb 2020'
-        );
-    });
-
-    test('for a custom weekly recurring event happening on Monday and Wednesday, until 20th February 2020', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.WEEKLY,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [1, 3]
-            },
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual(
-            'Weekly on Monday, Wednesday, until 20 Feb 2020'
-        );
-    });
-
-    test('for a custom weekly recurring event happening every 2 weeks on Monday and Wednesday, until 20th February 2020', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.WEEKLY,
-            interval: 2,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [1, 3]
-            },
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual(
-            'Every 2 weeks on Monday, Wednesday, until 20 Feb 2020'
-        );
-    });
-
-    test('for a custom weekly recurring event happening weekly on Tuesday, on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.WEEKLY,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [2]
-            },
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Weekly on Tuesday, until 20 Feb 2020 (Pacific/Tahiti)'
-        );
-    });
-
-    test('for a custom weekly recurring event happening every 2 weeks on all days, until 20th February 2020 on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.WEEKLY,
-            interval: 2,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [0, 1, 2, 3, 4, 5, 6]
-            },
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Every 2 weeks on all days, until 20 Feb 2020 (Pacific/Tahiti)'
-        );
-    });
-
-    test('for a custom weekly recurring event happening every 2 weeks on all days, 2 times on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.WEEKLY,
-            interval: 2,
-            weekly: {
-                type: WEEKLY_TYPE.ON_DAYS,
-                days: [0, 1, 2, 3, 4, 5, 6]
-            },
-            ends: {
-                type: END_TYPE.AFTER_N_TIMES,
-                count: 2
-            }
-        };
-        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Every 2 weeks on all days, 2 times'
-        );
+describe('getDayAndSetpos', () => {
+    test('gets the day and setpos correctly', () => {
+        const bydays = ['1SU', '+2MO', '-1FR', 'WE'];
+        const results = [{ setpos: 1, day: 'SU' }, { setpos: 2, day: 'MO' }, { setpos: -1, day: 'FR' }, { day: 'WE' }];
+        expect(bydays.map((byday) => getDayAndSetpos(byday))).toEqual(results);
     });
 });
 
-describe('getTimezonedFrequencyString should produce the expected string for monthly recurring events', () => {
-    const dummyOptions = { ...options, ...dummyStart };
-
-    test('for a standard monthly recurring event', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.MONTHLY,
-            frequency: FREQUENCY.MONTHLY
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, dummyOptions)).toEqual('Monthly on day 20');
-    });
-
-    test('for a standard monthly recurring event, on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.MONTHLY,
-            frequency: FREQUENCY.MONTHLY
-        };
-        const extendedOptions = { ...dummyOptions, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Monthly on day 20 (Pacific/Tahiti)'
-        );
-    });
-
-    test('for a custom monthly recurring event that is actually standard', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.MONTHLY
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, dummyOptions)).toEqual('Monthly on day 20');
-    });
-
-    test('for a custom monthly recurring event happening every 2 months', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.MONTHLY,
-            interval: 2
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, dummyOptions)).toEqual('Every 2 months on day 20');
-    });
-
-    test('for a custom monthly recurring event happening every 2 months, on the fourth Thursday', () => {
-        const fourthThursdayStart = { date: new Date(2020, 0, 23) };
-        const frequencyModel = {
-            ...getInitialFrequencyModel(fourthThursdayStart.date),
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.MONTHLY,
-            interval: 2,
-            monthly: {
-                type: MONTHLY_TYPE.ON_NTH_DAY
-            }
-        };
-        const extendedOptions = { ...dummyOptions, ...fourthThursdayStart };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Every 2 months on the fourth Thursday'
-        );
-    });
-
-    test('for a custom monthly recurring event, on the first Monday, different timezone', () => {
-        const firstMondayStart = { date: new Date(2020, 0, 6) };
-        const frequencyModel = {
-            ...getInitialFrequencyModel(firstMondayStart.date),
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.MONTHLY,
-            monthly: {
-                type: MONTHLY_TYPE.ON_NTH_DAY
-            }
-        };
-        const extendedOptions = {
-            ...dummyOptions,
-            ...firstMondayStart,
-            currentTzid: 'Europe/Athens',
-            startTzid: 'Pacific/Tahiti'
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Monthly on the first Monday (Pacific/Tahiti)'
-        );
-    });
-
-    test('for a custom monthly recurring event happening every 2 months, on the last Wednesday, lasting 3 times', () => {
-        const lastWednesdayStart = { date: new Date(2020, 0, 29) };
-        const frequencyModel = {
-            ...getInitialFrequencyModel(lastWednesdayStart.date),
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.MONTHLY,
-            interval: 2,
-            monthly: {
-                type: MONTHLY_TYPE.ON_MINUS_NTH_DAY
+describe('getIsRruleCustom', () => {
+    test('returns false for non-recurring or simple recurring events', () => {
+        const rrules = [
+            {
+                freq: FREQUENCY.DAILY,
+                count: 1,
+                interval: 2,
+                byday: ['MO', 'SU']
             },
-            ends: {
-                type: END_TYPE.AFTER_N_TIMES,
-                count: 3
+            {
+                freq: FREQUENCY.WEEKLY,
+                interval: 1,
+                byday: 'SA'
             }
-        };
-        const extendedOptions = { ...dummyOptions, ...lastWednesdayStart };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Every 2 months on the last Wednesday, 3 times'
-        );
+        ];
+        expect(rrules.map(getIsRruleCustom)).toEqual(rrules.map(() => false));
     });
 
-    test('for a custom monthly recurring event happening on a fifth and last Thursday, until 20th February 2020', () => {
-        const lastThursdayStart = { date: new Date(2020, 0, 30) };
-        const frequencyModel = {
-            ...getInitialFrequencyModel(lastThursdayStart.date),
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.MONTHLY,
-            monthly: {
-                type: MONTHLY_TYPE.ON_MINUS_NTH_DAY
+    test('returns true for supported custom-recurring events', () => {
+        const rrules = [
+            {
+                freq: FREQUENCY.DAILY,
+                count: 3,
+                interval: 2
             },
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
+            {
+                freq: FREQUENCY.WEEKLY,
+                byday: ['SA', 'FR']
+            },
+            {
+                freq: FREQUENCY.WEEKLY,
+                until: { year: 2020, month: 5, day: 10 }
+            },
+            {
+                freq: FREQUENCY.MONTHLY,
+                bysetpos: 2,
+                byday: 'WE'
+            },
+            {
+                freq: FREQUENCY.MONTHLY,
+                byday: '-1WE'
+            },
+            {
+                freq: FREQUENCY.YEARLY,
+                interval: 2
             }
-        };
-        const extendedOptions = { ...dummyOptions, ...lastThursdayStart };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Monthly on the last Thursday, until 20 Feb 2020'
-        );
+        ];
+        expect(rrules.map(getIsRruleCustom)).toEqual(rrules.map(() => true));
     });
 
-    test('for a custom monthly recurring event happening every three months on a fifth and last Thursday, until 20th February 2020', () => {
-        const lastThursdayStart = { date: new Date(2020, 0, 30) };
-        const frequencyModel = {
-            ...getInitialFrequencyModel(lastThursdayStart.date),
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.MONTHLY,
-            interval: 3,
-            monthly: {
-                type: MONTHLY_TYPE.ON_MINUS_NTH_DAY
+    test('returns false for non-supported custom-recurring events', () => {
+        const rrules = [
+            {
+                freq: FREQUENCY.DAILY,
+                count: 3,
+                interval: 2,
+                byday: ['TU', 'TH']
             },
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        const extendedOptions = { ...dummyOptions, ...lastThursdayStart };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Every 3 months on the last Thursday, until 20 Feb 2020'
-        );
-    });
-
-    test('for a custom monthly recurring event happening on a fifth and last Thursday, until 20th February 2020 on a different timezone', () => {
-        const lastThursdayStart = { date: new Date(2020, 0, 30) };
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.MONTHLY,
-            monthly: {
-                type: MONTHLY_TYPE.ON_MINUS_NTH_DAY
+            {
+                freq: FREQUENCY.WEEKLY,
+                byday: ['SA', 'FR'],
+                bymonth: 1,
+                count: 2
             },
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
+            {
+                freq: FREQUENCY.WEEKLY,
+                until: { year: 2020, month: 5, day: 10 },
+                bysetpos: 3
+            },
+            {
+                freq: FREQUENCY.MONTHLY,
+                bysetpos: 2
+            },
+            {
+                freq: FREQUENCY.MONTHLY,
+                byday: 'SU'
             }
-        };
-        const extendedOptions = {
-            ...dummyOptions,
-            ...lastThursdayStart,
-            currentTzid: 'Europe/Athens',
-            startTzid: 'Pacific/Tahiti'
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Monthly on the last Thursday, until 20 Feb 2020 (Pacific/Tahiti)'
-        );
+        ];
+        expect(rrules.map(getIsRruleCustom)).toEqual(rrules.map(() => false));
     });
 });
 
-describe('getTimezonedFrequencyString should produce the expected string for yearly recurring events', () => {
-    test('for a standard yearly recurring event', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.YEARLY,
-            frequency: FREQUENCY.YEARLY
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Yearly');
+describe('getIsRruleValid', () => {
+    test('should accept non-recurring events with RRULE', () => {
+        const vevents = [
+            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;COUNT=1;INTERVAL=2;BYDAY=1SU\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=WEEKLY;COUNT=1;BYDAY=WE,TH,FR;BYMONTH=2,3\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;COUNT=1,BYMONTHDAY=8;WKST=SA\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;COUNT=1;BYYEARDAY=23,300;BYDAY=SU\r\nEND:VEVENT`
+        ];
+        const rrules = vevents.map((vevent) => {
+            const { rrule } = parse(vevent);
+            return rrule.value;
+        });
+        expect(rrules.map(getIsRruleValid)).toEqual(vevents.map(() => true));
     });
 
-    test('for a custom yearly recurring event that is actually standard', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.YEARLY
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Yearly');
+    test('should accept events with monthly recurring rules of the form BYDAY=+/-nDD', () => {
+        const vevents = [
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=1SU\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=+2WE\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=4MO\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=-1SA\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=TH;BYSETPOS=-1\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=TU;BYSETPOS=3\r\nEND:VEVENT`
+        ];
+        const rrules = vevents.map((vevent) => {
+            const { rrule } = parse(vevent);
+            return rrule.value;
+        });
+        expect(rrules.map(getIsRruleValid)).toEqual(vevents.map(() => true));
     });
 
-    test('for a custom yearly recurring event happening every 2 years', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.YEARLY,
-            interval: 2
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 2 years');
+    test('should accept events with valid yearly recurring rules', () => {
+        const vevents = [
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;UNTIL=20200330T150000Z;INTERVAL=1;BYMONTHDAY=30;BYMONTH=3\r\nEND:VEVENT`
+        ];
+        const rrules = vevents.map((vevent) => {
+            const { rrule } = parse(vevent);
+            return rrule.value;
+        });
+        expect(rrules.map(getIsRruleValid)).toEqual(vevents.map(() => true));
     });
 
-    test('for a custom yearly recurring event happening every three years, lasting 5 times', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.YEARLY,
-            interval: 3,
-            ends: {
-                type: END_TYPE.AFTER_N_TIMES,
-                count: 5
+    test('should refuse events with invalid monthly recurring rules', () => {
+        const vevents = [
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=1SU,2MO\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=-2WE\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=5TH\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=FR\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=FR;BYSETPOS=5\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=TU;BYSETPOS=-2\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;INTERVAL=2;BYMONTHDAY=10,13,14\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;INTERVAL=1;BYSETPOS=1;BYDAY=SU,MO,TU,WE,TH,FR,SA\r\nEND:VEVENT`
+        ];
+        const rrules = vevents.map((vevent) => {
+            const { rrule } = parse(vevent);
+            return rrule.value;
+        });
+        expect(rrules.map(getIsRruleValid)).toEqual(vevents.map(() => false));
+    });
+    test('should refuse events with invalid yearly recurring rules', () => {
+        const vevents = [
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=1;BYMONTH=1,2,3,4,5,6,7,8,9,10,11,12\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=11,22\r\nEND:VEVENT`
+        ];
+        const rrules = vevents.map((vevent) => {
+            const { rrule } = parse(vevent);
+            return rrule.value;
+        });
+        expect(rrules.map(getIsRruleValid)).toEqual(vevents.map(() => false));
+    });
+});
+
+describe('getIsConsistentRrule', () => {
+    test('should refuse inconsistent rrules', () => {
+        const dtstart = {
+            value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+        };
+        const dtend = {
+            value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 30, seconds: 0, isUTC: true }
+        };
+        const rrules = [
+            {
+                freq: 'MONTHLY',
+                byday: '1MO'
+            },
+            {
+                freq: 'MONTHLY',
+                byday: '-2MO'
+            },
+            {
+                freq: 'MONTHLY',
+                byday: 'SU'
+            },
+            {
+                freq: 'MONTHLY',
+                byday: 'MO',
+                bysetpos: 3
+            },
+            {
+                freq: 'MONTHLY',
+                bymonthday: 11,
+                until: {
+                    year: 2020,
+                    month: 10,
+                    day: 29
+                }
             }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 3 years, 5 times');
-    });
-
-    test('for a custom yearly recurring event, until 20th February 2020', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.YEARLY,
-            interval: 1,
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Yearly, until 20 Feb 2020');
-    });
-
-    test('for a custom weekly recurring event happening every year, lasting 8 times on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.YEARLY,
-            ends: {
-                type: END_TYPE.AFTER_N_TIMES,
-                count: 8
-            }
-        };
-        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual('Yearly, 8 times');
-    });
-
-    test('for a custom weekly recurring event happening every two years, lasting 2 times on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.YEARLY,
-            interval: 2,
-            ends: {
-                type: END_TYPE.AFTER_N_TIMES,
-                count: 2
-            }
-        };
-        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual('Every 2 years, 2 times');
-    });
-
-    test('for a custom yearly event, until 20th February 2020 on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.YEARLY,
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Yearly, until 20 Feb 2020 (Pacific/Tahiti)'
-        );
-    });
-
-    test('for a custom yearly event happening every ten years until 20th February 2020 on a different timezone', () => {
-        const frequencyModel = {
-            ...dummyFrequencyModel,
-            type: FREQUENCY.CUSTOM,
-            frequency: FREQUENCY.YEARLY,
-            interval: 10,
-            ends: {
-                type: END_TYPE.UNTIL,
-                until: new Date(2020, 1, 20)
-            }
-        };
-        const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
-            'Every 10 years, until 20 Feb 2020 (Pacific/Tahiti)'
-        );
+        ];
+        const vevents = rrules.map((rrule) => ({ dtstart, dtend, rrule: { value: rrule } }));
+        expect(vevents.map((vevent) => getIsRruleConsistent(vevent))).toEqual(vevents.map(() => false));
     });
 });

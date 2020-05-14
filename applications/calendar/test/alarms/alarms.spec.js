@@ -44,7 +44,6 @@ describe('getAlarmMessage', () => {
     test('it should display the right notification for events happening tomorrow', () => {
         const fakeZonedNow = { ...testFakeZonedDate, day: 12 };
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
-        console.log(now);
         expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
             'test alarm will start tomorrow at 8:00 PM'
         );

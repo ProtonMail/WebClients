@@ -78,6 +78,34 @@ END:VEVENT`;
         });
     });
 
+    test('should catch inconsistent rrules', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTART;TZID=Europe/Vilnius:20200503T150000
+DTEND;TZID=Europe/Vilnius:20200503T160000
+RRULE:FREQ=MONTHLY;BYDAY=1MO
+DTSTAMP:20200508T121218Z
+UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(validateEvent(event)).toMatchObject({
+            error: 'Recurring rule inconsistent'
+        });
+    });
+
+    test('should catch non-supported rrules', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTART;TZID=Europe/Vilnius:20200518T150000
+DTEND;TZID=Europe/Vilnius:20200518T160000
+RRULE:FREQ=MONTHLY;BYDAY=-2MO
+DTSTAMP:20200508T121218Z
+UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(validateEvent(event)).toMatchObject({
+            error: 'Recurring rule not supported'
+        });
+    });
+
     test('should support Outlook timezones', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z

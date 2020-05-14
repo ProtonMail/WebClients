@@ -1,76 +1,31 @@
-import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { isIcalPropertyAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
-import { getSupportedTimezone, toLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
+import { getSupportedTimezone } from 'proton-shared/lib/date/timezone';
 import { readFileAsString } from 'proton-shared/lib/helpers/file';
 import { truncate } from 'proton-shared/lib/helpers/string';
+import {
+    VcalCalendarComponent,
+    VcalDateOrDateTimeProperty,
+    VcalDateTimeProperty,
+    VcalValarmComponent,
+    VcalVcalendar,
+    VcalVeventComponent
+} from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { c } from 'ttag';
 
 import {
-    FREQUENCY_COUNT_MAX,
-    FREQUENCY_INTERVALS_MAX,
     MAX_IMPORT_EVENTS,
     MAX_LENGTHS,
     MAX_NOTIFICATIONS,
     MAX_UID_CHARS_DISPLAY,
-    MAXIMUM_DATE,
     MAXIMUM_DATE_UTC,
     MINIMUM_DATE_UTC,
     NOTIFICATION_UNITS,
     NOTIFICATION_UNITS_MAX
 } from '../constants';
 import { EventFailure, IMPORT_ERROR_TYPE, ImportFailure } from '../interfaces/Import';
-import {
-    VcalCalendarComponent,
-    VcalDateOrDateTimeProperty,
-    VcalDateTimeProperty,
-    VcalRrulePropertyValue,
-    VcalValarmComponent,
-    VcalVcalendar,
-    VcalVeventComponent
-} from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getIsFreebusyComponent, getIsJournalComponent, getIsTodoComponent, getIsVeventComponent } from './event';
-
-const SUPPORTED_RRULE_PROPERTIES: (keyof VcalRrulePropertyValue)[] = [
-    'freq',
-    'count',
-    'interval',
-    'until',
-    'wkst',
-    'bysetpos',
-    'byday',
-    'bymonthday',
-    'bymonth'
-];
-const SUPPORTED_RRULE_PROPERTIES_DAILY: (keyof VcalRrulePropertyValue)[] = ['freq', 'count', 'interval', 'until'];
-const SUPPORTED_RRULE_PROPERTIES_WEEKLY: (keyof VcalRrulePropertyValue)[] = [
-    'freq',
-    'count',
-    'interval',
-    'until',
-    'wkst',
-    'byday'
-];
-const SUPPORTED_RRULE_PROPERTIES_MONTHLY: (keyof VcalRrulePropertyValue)[] = [
-    'freq',
-    'count',
-    'interval',
-    'until',
-    'wkst',
-    'bymonthday',
-    'byday',
-    'bysetpos'
-];
-const ALLOWED_BYSETPOS = [-1, 1, 2, 3, 4];
-const SUPPORTED_RRULE_PROPERTIES_YEARLY: (keyof VcalRrulePropertyValue)[] = [
-    'freq',
-    'count',
-    'interval',
-    'until',
-    'wkst',
-    'bymonthday',
-    'bymonth'
-];
+import { getIsRruleConsistent, getIsRruleValid } from './rrule';
 
 export const parseIcs = async (
     ics: File
@@ -105,98 +60,6 @@ export const parseIcs = async (
 
 const getIsWellFormedDateTime = (property: VcalDateTimeProperty) => {
     return property.value.isUTC || !!property.parameters!.tzid;
-};
-
-const getIsRruleConsistent = (
-    rrule: VcalRrulePropertyValue,
-    dtstart: VcalDateOrDateTimeProperty,
-    dtend: VcalDateOrDateTimeProperty
-) => {
-    const component = ({
-        dtstart,
-        dtend,
-        rrule: { value: rrule }
-    } as unknown) as VcalVeventComponent;
-    const [first] = getOccurrences({ component, maxCount: 1 });
-    if (!first) {
-        return false;
-    }
-    if (+first.localStart !== +toUTCDate(component.dtstart.value)) {
-        return false;
-    }
-    return true;
-};
-
-const getIsRruleValid = (rruleProperty: VcalRrulePropertyValue) => {
-    const rruleProperties = Object.keys(rruleProperty) as (keyof VcalRrulePropertyValue)[];
-    if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES.includes(property))) {
-        return false;
-    }
-    const { freq, interval = 1, count, until, bysetpos } = rruleProperty;
-    if (count && count > FREQUENCY_COUNT_MAX) {
-        return false;
-    }
-    if (until) {
-        if ('isUTC' in until && until.isUTC) {
-            if (+toUTCDate(until) > +MAXIMUM_DATE_UTC) {
-                return false;
-            }
-        }
-        if (+toLocalDate(until) > +MAXIMUM_DATE) {
-            return false;
-        }
-    }
-    if (freq === 'DAILY') {
-        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
-            return false;
-        }
-        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_DAILY.includes(property))) {
-            return false;
-        }
-        return true;
-    }
-    if (freq === 'WEEKLY') {
-        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
-            return false;
-        }
-        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_WEEKLY.includes(property))) {
-            return false;
-        }
-        return true;
-    }
-    if (freq === 'MONTHLY') {
-        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
-            return false;
-        }
-        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_MONTHLY.includes(property))) {
-            return false;
-        }
-        if (bysetpos && !ALLOWED_BYSETPOS.includes(bysetpos)) {
-            return false;
-        }
-        // byday and bysetpos must both be absent or both present. If they are present, bymonthday should not be present
-        if (+rruleProperties.includes('byday') ^ +rruleProperties.includes('bysetpos')) {
-            return false;
-        }
-        if (rruleProperties.includes('bymonthday')) {
-            return !rruleProperties.includes('byday') && !rruleProperties.includes('bysetpos');
-        }
-        return true;
-    }
-    if (freq === 'YEARLY') {
-        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
-            return false;
-        }
-        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_YEARLY.includes(property))) {
-            return false;
-        }
-        // byday and bymonthday must both be absent or both present
-        if (+rruleProperties.includes('byday') ^ +rruleProperties.includes('bymonthday')) {
-            return false;
-        }
-        return true;
-    }
-    return false;
 };
 
 const getIsValidAlarm = (alarm: VcalValarmComponent) => {
@@ -247,8 +110,13 @@ export const validateEvent = (
             exdate,
             description,
             summary,
-            location
+            location,
+            'recurrence-id': recurrenceId
         } = veventComponent;
+        const trimmedSummaryValue = summary?.value.trim();
+        const trimmedDescriptionValue = description?.value.trim();
+        const trimmedLocationValue = location?.value.trim();
+
         validated.component = component;
         validated.uid = { ...uid };
         validated.dtstamp = { ...dtstamp };
@@ -256,22 +124,25 @@ export const validateEvent = (
         if (exdate) {
             validated.exdate = { ...exdate };
         }
-        if (summary) {
+        if (recurrenceId) {
+            validated['recurrence-id'] = recurrenceId;
+        }
+        if (trimmedSummaryValue) {
             validated.summary = {
                 ...summary,
-                value: truncate(summary.value, MAX_LENGTHS.TITLE)
+                value: truncate(trimmedSummaryValue, MAX_LENGTHS.TITLE)
             };
         }
-        if (description) {
+        if (trimmedDescriptionValue) {
             validated.description = {
                 ...description,
-                value: truncate(description.value, MAX_LENGTHS.EVENT_DESCRIPTION)
+                value: truncate(trimmedDescriptionValue, MAX_LENGTHS.EVENT_DESCRIPTION)
             };
         }
-        if (location) {
+        if (trimmedLocationValue) {
             validated.location = {
                 ...location,
-                value: truncate(location.value, MAX_LENGTHS.LOCATION)
+                value: truncate(trimmedLocationValue, MAX_LENGTHS.LOCATION)
             };
         }
 
@@ -321,7 +192,7 @@ export const validateEvent = (
 
         // TODO cf. create dtend
         if (rrule) {
-            if (dtend && !getIsRruleConsistent(rrule.value, dtstart, dtend)) {
+            if (dtend && !getIsRruleConsistent(veventComponent)) {
                 return { error: c('Error importing event').t`Recurring rule inconsistent` };
             }
             if (!getIsRruleValid(rrule.value)) {

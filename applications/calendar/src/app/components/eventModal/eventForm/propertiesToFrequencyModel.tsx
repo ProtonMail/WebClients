@@ -1,16 +1,16 @@
-import { DAILY_TYPE, END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE, YEARLY_TYPE } from '../../../constants';
 import { dayToNumericDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { convertUTCDateTimeToZone, fromUTCDate } from 'proton-shared/lib/date/timezone';
-import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
+import { unique } from 'proton-shared/lib/helpers/array';
 import {
-    VcalDaysKeys,
     VcalDateOrDateTimeValue,
     VcalDateTimeValue,
+    VcalDays,
     VcalRruleFreqValue,
-    VcalRruleProperty,
-    VcalDays
+    VcalRruleProperty
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { unique } from 'proton-shared/lib/helpers/array';
+import { DAILY_TYPE, END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE, YEARLY_TYPE } from '../../../constants';
+import { getDayAndSetpos, getIsRruleCustom, getIsStandardBydayArray } from '../../../helpers/rrule';
+import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
 
 const getEndType = (count?: number, until?: VcalDateOrDateTimeValue) => {
     // count and until cannot occur at the same time (see https://tools.ietf.org/html/rfc5545#page-37)
@@ -23,9 +23,12 @@ const getEndType = (count?: number, until?: VcalDateOrDateTimeValue) => {
     return END_TYPE.NEVER;
 };
 
-const getMonthType = (bysetpos?: number, byday?: VcalDaysKeys | VcalDaysKeys[]) => {
-    if (bysetpos && byday) {
-        return bysetpos > 0 ? MONTHLY_TYPE.ON_NTH_DAY : MONTHLY_TYPE.ON_MINUS_NTH_DAY;
+const getMonthType = (byday?: string | string[], bysetpos?: number | number[]) => {
+    if (typeof byday === 'string' && !Array.isArray(bysetpos)) {
+        const { setpos } = getDayAndSetpos(byday, bysetpos);
+        if (setpos) {
+            return setpos > 0 ? MONTHLY_TYPE.ON_NTH_DAY : MONTHLY_TYPE.ON_MINUS_NTH_DAY;
+        }
     }
     return MONTHLY_TYPE.ON_MONTH_DAY;
 };
@@ -43,14 +46,12 @@ const getUntilDate = (until?: VcalDateOrDateTimeValue, startTzid?: string) => {
     return new Date(localDate.year, localDate.month - 1, localDate.day);
 };
 
-const getWeeklyDays = (startDate: Date, byday?: VcalDaysKeys | VcalDaysKeys[]) => {
+const getWeeklyDays = (startDate: Date, byday?: string | string[]) => {
     const DEFAULT = [startDate.getDay()];
-
-    if (!byday) {
+    const bydayArray = Array.isArray(byday) ? byday : [byday];
+    if (!getIsStandardBydayArray(bydayArray)) {
         return DEFAULT;
     }
-
-    const bydayArray = Array.isArray(byday) ? byday : [byday];
     const bydayArraySafe = bydayArray.map(dayToNumericDay).filter((value): value is VcalDays => value !== undefined);
     // Ensure the start date is included in the list
     return unique([...DEFAULT].concat(bydayArraySafe));
@@ -82,13 +83,12 @@ export const propertiesToFrequencyModel = (
     { value: frequencyProperty }: Partial<VcalRruleProperty> = {},
     { date: startDate, tzid: startTzid }: DateTimeModel
 ): FrequencyModel => {
-    const { freq, count, interval, until, bysetpos, byday, bymonthday, bymonth } = frequencyProperty || {};
-    const isCustom = !!(count || interval || until || bysetpos || byday || bymonthday || bymonth);
-
+    const { freq, count, interval, until, bysetpos, byday } = frequencyProperty || {};
+    const isCustom = getIsRruleCustom(frequencyProperty || {});
     const type = getType(isCustom, freq);
     const frequency = getFrequency(freq);
     const endType = getEndType(count, until);
-    const monthType = getMonthType(bysetpos, byday);
+    const monthType = getMonthType(byday, bysetpos);
     const untilDate = getUntilDate(until, startTzid);
     const weeklyDays = getWeeklyDays(startDate, byday);
 

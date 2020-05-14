@@ -7,7 +7,7 @@ import { truncate } from 'proton-shared/lib/helpers/string';
 
 import PopoverNotification from './PopoverNotification';
 import CalendarIcon from '../CalendarIcon';
-import { getTimezonedFrequencyString } from '../../helpers/rrule';
+import { getTimezonedFrequencyString } from '../../helpers/frequencyString';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent, WeekStartsOn } from '../../containers/calendar/interface';
 import { EventModelReadView } from '../../interfaces/EventModel';
