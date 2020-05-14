@@ -90,37 +90,39 @@ const PrivateHeader = ({
                 </>
             )}
             <TopNavbar>
-                {!showBackButton && (
-                    <>
-                        {hasPaidMail ? null : <UpgradeButton external={true} />}
-                        {!breakpoints.isNarrow && (
-                            <TopNavbarLink
-                                to="/inbox"
-                                icon="mailbox"
-                                className="topnav-link"
-                                text={c('Title').t`Mailbox`}
-                                aria-current={true}
-                            />
-                        )}
-                        {breakpoints.isNarrow ? (
-                            <AdvancedSearchDropdown
-                                labelID={labelID}
-                                keyword={value}
-                                location={location}
-                                history={history}
-                                isNarrow={breakpoints.isNarrow}
-                            />
-                        ) : null}
+                {!showBackButton && [
+                    // Array is necessary instead of a fragment because TopNavbar expect a list of child
+                    !hasPaidMail && <UpgradeButton key="upgrade" external={true} />,
+                    !breakpoints.isNarrow && (
                         <TopNavbarLink
-                            external={true}
-                            to="/settings"
-                            icon="settings-master"
-                            text={c('Title').t`Settings`}
+                            key="inbox"
+                            to="/inbox"
+                            icon="mailbox"
                             className="topnav-link"
+                            text={c('Title').t`Mailbox`}
+                            aria-current={true}
                         />
-                        <SupportDropdown className="topnav-link" />
-                    </>
-                )}
+                    ),
+                    breakpoints.isNarrow && (
+                        <AdvancedSearchDropdown
+                            key="search"
+                            labelID={labelID}
+                            keyword={value}
+                            location={location}
+                            history={history}
+                            isNarrow={breakpoints.isNarrow}
+                        />
+                    ),
+                    <TopNavbarLink
+                        key="settings"
+                        external={true}
+                        to="/settings"
+                        icon="settings-master"
+                        text={c('Title').t`Settings`}
+                        className="topnav-link"
+                    />,
+                    <SupportDropdown key="support" className="topnav-link" />
+                ]}
             </TopNavbar>
         </header>
     );
