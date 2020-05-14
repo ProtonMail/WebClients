@@ -1,6 +1,5 @@
-// TODO: remove publicPath when they fix https://github.com/mohsen1/service-worker-loader/issues/143
 // eslint-disable-next-line import/no-unresolved
-import registerServiceWorker from 'service-worker-loader?publicPath=/drive/!./downloadSW';
+import registerServiceWorker from 'service-worker-loader!./downloadSW';
 import { isSafari, isEdge, isEdgeChromium } from 'proton-shared/lib/helpers/browser';
 import { WritableStream } from 'web-streams-polyfill';
 
