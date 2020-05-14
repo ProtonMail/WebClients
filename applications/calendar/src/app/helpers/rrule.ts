@@ -237,10 +237,6 @@ export const getIsRruleValid = (rruleProperty: VcalRrulePropertyValue) => {
         if (Array.isArray(bymonthday) || Array.isArray(bymonth) || Array.isArray(byyearday)) {
             return false;
         }
-        // bymonth and bymonthday must both be absent or both present
-        if (+rruleProperties.includes('bymonth') ^ +rruleProperties.includes('bymonthday')) {
-            return false;
-        }
         return true;
     }
     return false;
