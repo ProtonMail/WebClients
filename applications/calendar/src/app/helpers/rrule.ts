@@ -111,7 +111,7 @@ export const getIsRruleCustom = (rrule: Partial<VcalRrulePropertyValue>): boolea
     if (!freq || count === 1 || hasUnsupportedFields) {
         return false;
     }
-    const isBasicCustom = (interval && interval > 1) || !!until;
+    const isBasicCustom = (interval && interval > 1) || (count && count > 1) || !!until;
     if (freq === FREQUENCY.DAILY) {
         if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_DAILY.includes(field))) {
             return false;
