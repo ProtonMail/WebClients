@@ -53,9 +53,11 @@ const ItemColumnLayout = ({
             </div>
             <div className="flex flex-items-center item-secondline mw100">
                 <div className="flex-item-fluid flex w0 pr1 flex-nowrap item-sender--smaller">
-                    <ItemExpiration element={element} />
+                    <span className="flex-item-noshrink">
+                        <ItemExpiration element={element} />
+                    </span>
                     {showIcon && (
-                        <span className="mr0-25 inline-flex flex-self-end">
+                        <span className="mr0-25 inline-flex flex-self-end flex-item-noshrink">
                             <ItemLocation message={element as Message} mailSettings={mailSettings} />
                         </span>
                     )}
@@ -67,7 +69,7 @@ const ItemColumnLayout = ({
                     )}
                     <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
                 </div>
-                <div className="item-icons ml0-5">
+                <div className="item-icons ml0-5 flex-item-noshrink">
                     <ItemLabels max={4} labels={labels} element={element} />
                     <ItemAttachmentIcon element={element} className="ml0-5 flex-self-vcenter" />
                 </div>
