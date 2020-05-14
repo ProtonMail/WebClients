@@ -44,9 +44,9 @@ const handleDeleteRecurringEvent = async ({
     if (canOnlyDeleteAll || !originalEventData.veventComponent) {
         deleteTypes = [RECURRING_TYPES.ALL];
     } else if (getHasFutureOption(originalEventData.veventComponent, recurrence)) {
-        deleteTypes = [RECURRING_TYPES.ALL, RECURRING_TYPES.FUTURE, RECURRING_TYPES.ALL];
+        deleteTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.FUTURE, RECURRING_TYPES.ALL];
     } else {
-        deleteTypes = [RECURRING_TYPES.ALL, RECURRING_TYPES.ALL];
+        deleteTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.ALL];
     }
 
     const deleteType = await onDeleteConfirmation({
