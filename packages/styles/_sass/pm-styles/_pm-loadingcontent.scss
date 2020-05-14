@@ -12,9 +12,16 @@ button[aria-busy="true"] {
 }
 
 tr[aria-busy="true"] {
-    height: $l-h * 1em + em(9) * 2; // line-height + vertical paddings
+  background-image: none;
+
+  td::after {
+	  content: '\00a0'; // Force a height with default line height
+	  pointer-events: none;
+	  visibility: hidden;
+  }
 }
 
+tr[aria-busy="true"] td,
 td[aria-busy="true"] {
   position: relative;
   background-image: none;
