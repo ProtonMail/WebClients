@@ -55,18 +55,23 @@ class FileSaver {
             if (this.useBlobFallback) {
                 this.saveViaBuffer(readable, filename);
             } else {
-                const mimeType = lookup(filename) || undefined;
-                const zipMeta = { filename, mimeType };
+                try {
+                    const mimeType = lookup(filename) || undefined;
+                    const zipMeta = { filename, mimeType };
 
-                const saveStream = await openDownloadStream(zipMeta, {
-                    onCancel: () => {
-                        files.forEach(({ stream }) => stream.cancel('user canceled'));
-                    },
-                    abortSignal: abortController.signal
-                });
+                    const saveStream = await openDownloadStream(zipMeta, {
+                        onCancel: () => {
+                            files.forEach(({ stream }) => stream.cancel('user canceled'));
+                        },
+                        abortSignal: abortController.signal
+                    });
 
-                // This creates it's own streams that are not aborted, hence the abort signal
-                readable.pipeTo(saveStream);
+                    // This creates it's own streams that are not aborted, hence the abort signal
+                    readable.pipeTo(saveStream);
+                } catch (err) {
+                    console.error('Failed to save zip via download, falling back to in-memory download:', err);
+                    this.saveViaBuffer(readable, filename);
+                }
             }
 
             return {
