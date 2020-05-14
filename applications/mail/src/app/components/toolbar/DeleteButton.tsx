@@ -19,25 +19,33 @@ import { c, msgid } from 'ttag';
 import ToolbarButton from './ToolbarButton';
 import { getCurrentType } from '../../helpers/elements';
 import { ELEMENT_TYPES } from '../../constants';
+import { MailSettings } from 'proton-shared/lib/interfaces';
+import { Breakpoints } from '../../models/utils';
+import { labelIncludes } from '../../helpers/labels';
 
 const { TRASH, SPAM, DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
-    mailSettings: any;
+    mailSettings: MailSettings;
+    breakpoints: Breakpoints;
     selectedIDs: string[];
     location: Location;
 }
 
-const DeleteButton = ({ labelID = '', mailSettings = {}, selectedIDs = [], location }: Props) => {
+const DeleteButton = ({ labelID = '', mailSettings, breakpoints, selectedIDs = [], location }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
     const api = useApi();
     const [loading, withLoading] = useLoading();
-    const displayDelete = [TRASH, SPAM, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT].includes(labelID as MAILBOX_LABEL_IDS);
-    const displayEmpty = ![INBOX, SENT, ALL_SENT, ARCHIVE, ALL_MAIL].includes(labelID as MAILBOX_LABEL_IDS);
     const type = getCurrentType({ mailSettings, labelID, location });
+
+    const displayDelete =
+        labelIncludes(labelID, TRASH, SPAM, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT) &&
+        (!breakpoints.isNarrow || !labelIncludes(labelID, SENT, ALL_SENT));
+
+    const displayEmpty = !breakpoints.isNarrow && !labelIncludes(labelID, INBOX, SENT, ALL_SENT, ARCHIVE, ALL_MAIL);
 
     const handleDelete = async () => {
         await new Promise((resolve, reject) => {

@@ -1,6 +1,14 @@
 import React, { useLayoutEffect } from 'react';
-import { ErrorBoundary, useMailSettings, useUserSettings, Loader, useEventManager, useLabels, useFolders } from 'react-components';
 import { Redirect } from 'react-router-dom';
+import {
+    ErrorBoundary,
+    useMailSettings,
+    useUserSettings,
+    Loader,
+    useEventManager,
+    useLabels,
+    useFolders
+} from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
@@ -11,12 +19,14 @@ import { RouteProps } from '../PrivateApp';
 import { Event } from '../models/event';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { setPathInUrl } from '../helpers/mailboxUrl';
+import { Breakpoints } from '../models/utils';
 
 interface Props extends RouteProps {
+    breakpoints: Breakpoints;
     onCompose: OnCompose;
 }
 
-const PageContainer = ({ match, location, history, onCompose }: Props) => {
+const PageContainer = ({ match, location, history, breakpoints, onCompose }: Props) => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const { subscribe } = useEventManager();
@@ -44,7 +54,14 @@ const PageContainer = ({ match, location, history, onCompose }: Props) => {
     }
 
     return (
-        <PrivateLayout labelID={labelID} location={location} history={history} onCompose={onCompose}>
+        <PrivateLayout
+            labelID={labelID}
+            elementID={elementID}
+            location={location}
+            history={history}
+            breakpoints={breakpoints}
+            onCompose={onCompose}
+        >
             <ErrorBoundary>
                 {loadingMailSettings || loadingUserSettings ? (
                     <Loader />
@@ -53,6 +70,7 @@ const PageContainer = ({ match, location, history, onCompose }: Props) => {
                         labelID={labelID}
                         userSettings={userSettings}
                         mailSettings={mailSettings}
+                        breakpoints={breakpoints}
                         elementID={elementID}
                         location={location}
                         history={history}

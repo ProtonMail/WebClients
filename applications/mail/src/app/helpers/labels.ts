@@ -139,3 +139,6 @@ export const getCurrentFolders = (
             };
         });
 };
+
+export const labelIncludes = (labelID: string, ...labels: (MAILBOX_LABEL_IDS | string)[]) =>
+    labels.includes(labelID as MAILBOX_LABEL_IDS);

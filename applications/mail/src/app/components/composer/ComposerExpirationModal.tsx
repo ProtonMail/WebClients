@@ -89,27 +89,29 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                 <br />
                 <Href url="https://protonmail.com/support/knowledge-base/expiration/">{c('Info').t`Learn more`}</Href>
             </Alert>
-            <div className="flex flex-nowrap mt2 flex-items-center">
+            <div className="flex flex-nowrap mt2 flex-items-center onmobile-flex-column">
                 <Label>{c('Info').t`This message will expire in`}</Label>
-                <select
-                    id={`composer-expiration-days-${uid}`}
-                    className="pm-field mr0-25"
-                    value={days}
-                    onChange={handleChange(setDays)}
-                    placeholder={c('Info').t`Days`}
-                >
-                    {optionRange(7 * 4)}
-                </select>
-                <label htmlFor={`composer-expiration-days-${uid}`} className="mr0-5">{c('Info').t`Days`}</label>
-                <select
-                    id={`composer-expiration-hours-${uid}`}
-                    className="pm-field mr0-25"
-                    value={hours}
-                    onChange={handleChange(setHours)}
-                >
-                    {optionRange(24)}
-                </select>
-                <label htmlFor={`composer-expiration-hours-${uid}`}>{c('Info').t`Hours`}</label>
+                <span>
+                    <select
+                        id={`composer-expiration-days-${uid}`}
+                        className="pm-field mr0-25"
+                        value={days}
+                        onChange={handleChange(setDays)}
+                        placeholder={c('Info').t`Days`}
+                    >
+                        {optionRange(7 * 4)}
+                    </select>
+                    <label htmlFor={`composer-expiration-days-${uid}`} className="mr0-5">{c('Info').t`Days`}</label>
+                    <select
+                        id={`composer-expiration-hours-${uid}`}
+                        className="pm-field mr0-25"
+                        value={hours}
+                        onChange={handleChange(setHours)}
+                    >
+                        {optionRange(24)}
+                    </select>
+                    <label htmlFor={`composer-expiration-hours-${uid}`}>{c('Info').t`Hours`}</label>
+                </span>{' '}
             </div>
         </ComposerInnerModal>
     );

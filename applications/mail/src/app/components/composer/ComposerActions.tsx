@@ -118,7 +118,7 @@ const ComposerActions = ({
                 </Tooltip>
             </div>
             <div className="flex flex-self-vcenter">
-                <span className="mr0-5 mtauto mbauto">{dateMessage}</span>
+                <span className="mr0-5 mtauto mbauto nomobile">{dateMessage}</span>
                 <Tooltip title={c('Action').t`Delete draft`} className="flex mr0-5">
                     <Button
                         className="inline-flex flex-items-center pm-button--for-icon"

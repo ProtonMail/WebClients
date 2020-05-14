@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Loader, classnames } from 'react-components';
+import { Loader, classnames, Button } from 'react-components';
 import { History, Location } from 'history';
 import { DENSITY } from 'proton-shared/lib/constants';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
@@ -29,17 +29,19 @@ import ConversationView from '../components/conversation/ConversationView';
 import PlaceholderView from '../components/view/PlaceholderView';
 import MessageOnlyView from '../components/message/MessageOnlyView';
 import { OnCompose } from './ComposerContainer';
-import { PAGE_SIZE } from '../constants';
+import { PAGE_SIZE, MESSAGE_ACTIONS } from '../constants';
 import { isMessage } from '../helpers/elements';
 import { isDraft } from '../helpers/message/messages';
-
-import './main-area.scss';
 import { Message } from '../models/message';
+import { Breakpoints } from '../models/utils';
+
+import './MailboxContainer.scss';
 
 interface Props {
     labelID: string;
     userSettings: UserSettings;
     mailSettings: MailSettings;
+    breakpoints: Breakpoints;
     elementID?: string;
     location: Location;
     history: History;
@@ -50,12 +52,16 @@ const MailboxContainer = ({
     labelID: inputLabelID,
     userSettings,
     mailSettings,
+    breakpoints,
     elementID: inputElementID,
     location,
     history,
     onCompose
 }: Props) => {
-    const columnMode = isColumnMode(mailSettings);
+    const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
+    const columnModeSetting = isColumnMode(mailSettings);
+    const columnMode = columnModeSetting && !forceRowMode;
+    const columnLayout = columnModeSetting || forceRowMode;
 
     // Page state is hybrid: page number is handled by the url, total computed in useElements, size and limit are constants
     // Yet, it is simpler to co-localize all these data in one object
@@ -153,6 +159,10 @@ const MailboxContainer = ({
 
     const handleUncheckAll = () => handleCheck([], true, true);
 
+    const handleCompose = () => {
+        onCompose({ action: MESSAGE_ACTIONS.NEW });
+    };
+
     /**
      * Move out of an element which has been removed from the cache
      */
@@ -165,31 +175,44 @@ const MailboxContainer = ({
         }
     }, [elementID, loading, elements]);
 
+    const showToolbar = !breakpoints.isNarrow || !inputElementID;
+    const showList = columnMode || !inputElementID;
+    const showContentView = columnMode || inputElementID;
+    const showPlaceholder = !breakpoints.isNarrow && !elementID;
+    const showMobileCompose = breakpoints.isNarrow;
+
     return (
         <>
-            <Toolbar
-                location={location}
-                labelID={labelID}
-                elementID={elementID}
-                selectedIDs={selectedIDs}
-                elements={elements}
-                mailSettings={mailSettings}
-                onCheck={handleCheck}
-                page={page}
-                onPage={handlePage}
-                sort={sort}
-                onSort={handleSort}
-                filter={filter}
-                onFilter={handleFilter}
-                onBack={handleBack}
-            />
+            {showMobileCompose && (
+                <Button className="pm-button--primary mobile-compose" icon="compose" onClick={handleCompose} />
+            )}
+            {showToolbar && (
+                <Toolbar
+                    location={location}
+                    labelID={labelID}
+                    elementID={elementID}
+                    selectedIDs={selectedIDs}
+                    elements={elements}
+                    mailSettings={mailSettings}
+                    columnMode={columnMode}
+                    breakpoints={breakpoints}
+                    onCheck={handleCheck}
+                    page={page}
+                    onPage={handlePage}
+                    sort={sort}
+                    onSort={handleSort}
+                    filter={filter}
+                    onFilter={handleFilter}
+                    onBack={handleBack}
+                />
+            )}
             <div
                 className={classnames([
                     'main-area--withToolbar flex-item-fluid flex reset4print',
                     !columnMode && 'main-area--rowMode'
                 ])}
             >
-                {(columnMode || !elementID) && (
+                {showList && (
                     <div
                         className={classnames([
                             'items-column-list scroll-if-needed scroll-smooth-touch',
@@ -205,6 +228,7 @@ const MailboxContainer = ({
                                 <List
                                     location={location}
                                     labelID={labelID}
+                                    columnLayout={columnLayout}
                                     mailSettings={mailSettings}
                                     elementID={elementID}
                                     elements={elements}
@@ -217,33 +241,31 @@ const MailboxContainer = ({
                         </div>
                     </div>
                 )}
-                {(columnMode || elementID) && (
+                {showContentView && (
                     <section className="view-column-detail flex flex-column flex-item-fluid no-scroll">
-                        {elementID ? (
-                            conversationMode ? (
-                                <ConversationView
-                                    labelID={labelID}
-                                    mailSettings={mailSettings}
-                                    conversationID={elementID}
-                                    onBack={handleBack}
-                                    onCompose={onCompose}
-                                />
-                            ) : (
-                                <MessageOnlyView
-                                    labelID={labelID}
-                                    mailSettings={mailSettings}
-                                    messageID={elementID}
-                                    onBack={handleBack}
-                                    onCompose={onCompose}
-                                />
-                            )
-                        ) : (
+                        {showPlaceholder ? (
                             <PlaceholderView
                                 location={location}
                                 labelID={labelID}
                                 mailSettings={mailSettings}
                                 checkedIDs={checkedIDs}
                                 onUncheckAll={handleUncheckAll}
+                            />
+                        ) : conversationMode ? (
+                            <ConversationView
+                                labelID={labelID}
+                                mailSettings={mailSettings}
+                                conversationID={inputElementID as string}
+                                onBack={handleBack}
+                                onCompose={onCompose}
+                            />
+                        ) : (
+                            <MessageOnlyView
+                                labelID={labelID}
+                                mailSettings={mailSettings}
+                                messageID={inputElementID as string}
+                                onBack={handleBack}
+                                onCompose={onCompose}
                             />
                         )}
                     </section>

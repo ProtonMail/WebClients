@@ -42,13 +42,14 @@ const ComposerTitleBar = ({ message, minimized, maximized, toggleMinimized, togg
             <span className="flex-item-fluid p0-5 pr1 ellipsis">{title}</span>
             <TitleBarButton
                 iconName="minimize"
-                className={classnames([minimized && 'rotateX-180'])}
+                className={classnames(['nomobile', minimized && 'rotateX-180'])}
                 title={minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
                 onClick={toggleMinimized}
             />
             <TitleBarButton
                 iconName={maximized ? 'contract-window' : 'expand'}
                 title={maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
+                className="nomobile"
                 onClick={toggleMaximized}
             />
             <TitleBarButton iconName="close" title={c('Action').t`Close composer`} onClick={onClose} />

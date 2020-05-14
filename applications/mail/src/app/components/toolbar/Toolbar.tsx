@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { Location } from 'history';
 import { Icon } from 'react-components';
 import { identity } from 'proton-shared/lib/helpers/function';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import ToolbarSeparator from './ToolbarSeparator';
 import ReadUnreadButtons from './ReadUnreadButtons';
@@ -16,11 +17,11 @@ import MoveDropdown from '../dropdown/MoveDropdown';
 import LabelDropdown from '../dropdown/LabelDropdown';
 import BackButton from './BackButton';
 import PagingControls from './PagingControls';
-import { isColumnMode } from '../../helpers/mailSettings';
 import { Page, Sort, Filter } from '../../models/tools';
 import { Element } from '../../models/element';
 
 import './Toolbar.scss';
+import { Breakpoints } from '../../models/utils';
 
 interface Props {
     location: Location;
@@ -30,7 +31,9 @@ interface Props {
     elementID?: string;
     elements: Element[];
     selectedIDs: string[];
-    mailSettings: any;
+    mailSettings: MailSettings;
+    columnMode: boolean;
+    breakpoints: Breakpoints;
     page: Page;
     onPage: (page: number) => void;
     sort: Sort;
@@ -46,7 +49,9 @@ const Toolbar = ({
     elementID,
     elements,
     onCheck,
-    mailSettings = {},
+    mailSettings,
+    columnMode,
+    breakpoints,
     selectedIDs = [],
     loading = false,
     onSort,
@@ -57,8 +62,6 @@ const Toolbar = ({
     page,
     onPage
 }: Props) => {
-    const columnMode = isColumnMode(mailSettings);
-
     const selectedElements = useMemo(
         () =>
             selectedIDs
@@ -86,12 +89,14 @@ const Toolbar = ({
                 <MoveButtons
                     labelID={labelID}
                     mailSettings={mailSettings}
+                    breakpoints={breakpoints}
                     selectedIDs={selectedIDs}
                     location={location}
                 />
                 <DeleteButton
                     labelID={labelID}
                     mailSettings={mailSettings}
+                    breakpoints={breakpoints}
                     selectedIDs={selectedIDs}
                     location={location}
                 />
@@ -120,10 +125,14 @@ const Toolbar = ({
                 </ToolbarDropdown>
             </div>
             <div className="flex">
-                <FilterDropdown loading={loading} filter={filter} onFilter={onFilter} />
-                <SortDropdown loading={loading} sort={sort} onSort={onSort} />
-                <LayoutDropdown mailSettings={mailSettings} />
-                <ToolbarSeparator />
+                {breakpoints.isDesktop && (
+                    <>
+                        <FilterDropdown loading={loading} filter={filter} onFilter={onFilter} />
+                        <SortDropdown loading={loading} sort={sort} onSort={onSort} />
+                        <LayoutDropdown mailSettings={mailSettings} />
+                        <ToolbarSeparator />
+                    </>
+                )}
                 <PagingControls loading={loading} page={page} onPage={onPage} />
             </div>
         </nav>

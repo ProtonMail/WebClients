@@ -16,6 +16,7 @@ import { useHandler } from '../../../hooks/useHandler';
 import { removeEmbeddedHTML } from '../../../helpers/embedded/embeddedParser';
 import { Attachment } from '../../../models/attachment';
 import { MessageChange } from '../Composer';
+import { Breakpoints } from '../../../models/utils';
 
 interface ExternalEditorActions {
     insertEmbedded: (embeddeds: EmbeddedMap) => void;
@@ -28,6 +29,7 @@ interface Props {
     message: MessageExtended;
     document?: Element;
     disabled: boolean;
+    breakpoints: Breakpoints;
     onReady: () => void;
     onChange: MessageChange;
     onChangeContent: (content: string) => void;
@@ -43,6 +45,7 @@ interface Props {
 const Editor = ({
     message,
     disabled,
+    breakpoints,
     onReady,
     onChange,
     onChangeContent,
@@ -150,6 +153,7 @@ const Editor = ({
         <div className={classnames(['editor w100 h100 rounded flex flex-column', disabled && 'editor--disabled'])}>
             <EditorToolbar
                 message={message}
+                breakpoints={breakpoints}
                 squireRef={squireRef}
                 editorReady={editorReady}
                 onChange={onChange}

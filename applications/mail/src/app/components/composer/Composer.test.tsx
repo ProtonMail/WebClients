@@ -6,15 +6,20 @@ import { fireEvent } from '@testing-library/react';
 import { clearAll, render, tick, messageCache } from '../../helpers/test/helper';
 import Composer from './Composer';
 import { MessageExtended } from '../../models/message';
+import { Breakpoints } from '../../models/utils';
 
 const ID = 'ID';
 
 const png = new File([], 'file.png', { type: 'image/png' });
 
 const props = {
+    index: 0,
+    count: 1,
     focus: true,
     message: {},
     mailSettings: {} as MailSettings,
+    windowSize: { width: 1000, height: 1000 },
+    breakpoints: {} as Breakpoints,
     addresses: [],
     onFocus: jest.fn(),
     onChange: jest.fn(),

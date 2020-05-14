@@ -126,7 +126,6 @@ export const getFontFaceAtCursor = (squire: SquireType) => {
         .split(',')[0]
         .replace(/"/g, '')
         .trim();
-    console.log(family, first);
     return Object.entries(FONT_FACE).find(([, value]) => value.includes(first))?.[1] || DEFAULT_FONT_FACE;
 };
 

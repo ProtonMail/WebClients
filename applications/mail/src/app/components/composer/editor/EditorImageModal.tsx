@@ -69,7 +69,7 @@ const EditorImageModal = ({ onAddUrl, onAddAttachments, onClose, ...rest }: Prop
             }
             {...rest}
         >
-            <div className="flex flex-nowrap mb1">
+            <div className="flex flex-nowrap mb1 onmobile-flex-column">
                 <Label htmlFor={`editor-image-address-${uid}`}>{c('Info').t`Web address`}</Label>
                 <div className="flex-item-fluid">
                     <Input
@@ -81,7 +81,7 @@ const EditorImageModal = ({ onAddUrl, onAddAttachments, onClose, ...rest }: Prop
                     />
                 </div>
             </div>
-            <div className="flex flex-nowrap mb1">
+            <div className="flex flex-nowrap mb1 onmobile-flex-column">
                 <Label htmlFor={`editor-image-preview-${uid}`}>{c('Info').t`Image preview`}</Label>
                 <div className="flex-item-fluid">
                     <EditorReactiveImage

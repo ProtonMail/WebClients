@@ -29,9 +29,11 @@ import { MessageExtended } from '../../../models/message';
 import { isPlainText as testIsPlainText } from '../../../helpers/message/messages';
 import { useHandler } from '../../../hooks/useHandler';
 import { MessageChange } from '../Composer';
+import { Breakpoints } from '../../../models/utils';
 
 interface Props {
     message: MessageExtended;
+    breakpoints: Breakpoints;
     squireRef: MutableRefObject<SquireType>;
     editorReady: boolean;
     onChange: MessageChange;
@@ -39,7 +41,15 @@ interface Props {
     onAddAttachments: (files: File[]) => void;
 }
 
-const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag, onAddAttachments }: Props) => {
+const EditorToolbar = ({
+    message,
+    breakpoints,
+    squireRef,
+    editorReady,
+    onChange,
+    onChangeFlag,
+    onAddAttachments
+}: Props) => {
     const [squireInfos, setSquireInfos] = useState<{ [test: string]: boolean }>({});
 
     const { createModal } = useModals();
@@ -78,32 +88,38 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag
         squireRef.current.removeAllFormatting();
     };
 
+    const { isNarrow } = breakpoints;
+
     return (
         <div className="editor-toolbar flex flex-nowrap">
             {isPlainText ? (
                 <div className="flex-item-fluid" />
             ) : (
                 <>
-                    <EditorToolbarFontFaceDropdown
-                        squireRef={squireRef}
-                        editorReady={editorReady}
-                        title={c('Action').t`Font face`}
-                    />
-                    <EditorToolbarSeparator />
-                    <EditorToolbarFontSizeDropdown
-                        squireRef={squireRef}
-                        editorReady={editorReady}
-                        className="flex-item-noshrink"
-                        title={c('Action').t`Size`}
-                    />
-                    <EditorToolbarSeparator />
-                    <EditorToolbarFontColorsDropdown
-                        squireRef={squireRef}
-                        editorReady={editorReady}
-                        className="flex-item-noshrink"
-                        title={c('Action').t`Color`}
-                    />
-                    <EditorToolbarSeparator />
+                    {!isNarrow && (
+                        <>
+                            <EditorToolbarFontFaceDropdown
+                                squireRef={squireRef}
+                                editorReady={editorReady}
+                                title={c('Action').t`Font face`}
+                            />
+                            <EditorToolbarSeparator />
+                            <EditorToolbarFontSizeDropdown
+                                squireRef={squireRef}
+                                editorReady={editorReady}
+                                className="flex-item-noshrink"
+                                title={c('Action').t`Size`}
+                            />
+                            <EditorToolbarSeparator />
+                            <EditorToolbarFontColorsDropdown
+                                squireRef={squireRef}
+                                editorReady={editorReady}
+                                className="flex-item-noshrink"
+                                title={c('Action').t`Color`}
+                            />
+                            <EditorToolbarSeparator />
+                        </>
+                    )}
                     <EditorToolbarButton
                         onClick={handleBold}
                         aria-pressed={squireInfos.bold}
@@ -153,15 +169,19 @@ const EditorToolbar = ({ message, squireRef, editorReady, onChange, onChangeFlag
                         <Icon name="ordered-list" className="mauto" />
                     </EditorToolbarButton>
                     <EditorToolbarSeparator />
-                    <EditorToolbarButton
-                        onClick={handleBlockquote}
-                        aria-pressed={squireInfos.blockquote}
-                        className="flex-item-noshrink"
-                        title={c('Action').t`Quote`}
-                    >
-                        <Icon name="text-quote" className="mauto" />
-                    </EditorToolbarButton>
-                    <EditorToolbarSeparator />
+                    {!isNarrow && (
+                        <>
+                            <EditorToolbarButton
+                                onClick={handleBlockquote}
+                                aria-pressed={squireInfos.blockquote}
+                                className="flex-item-noshrink"
+                                title={c('Action').t`Quote`}
+                            >
+                                <Icon name="text-quote" className="mauto" />
+                            </EditorToolbarButton>
+                            <EditorToolbarSeparator />
+                        </>
+                    )}
                     <EditorToolbarButton
                         onClick={handleLink}
                         className="flex-item-noshrink"

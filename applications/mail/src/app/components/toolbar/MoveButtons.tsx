@@ -1,25 +1,29 @@
 import React from 'react';
 import { Location } from 'history';
+import { c, msgid } from 'ttag';
 import { Icon, useLoading, useNotifications, useEventManager, useApi } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { labelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations } from 'proton-shared/lib/api/conversations';
-import { c, msgid } from 'ttag';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import ToolbarButton from './ToolbarButton';
 import { getCurrentType } from '../../helpers/elements';
 import { ELEMENT_TYPES } from '../../constants';
+import { Breakpoints } from '../../models/utils';
+import { labelIncludes } from '../../helpers/labels';
 
 const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
-    mailSettings: any;
+    mailSettings: MailSettings;
+    breakpoints: Breakpoints;
     selectedIDs: string[];
     location: Location;
 }
 
-const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [], location }: Props) => {
+const MoveButtons = ({ labelID = '', mailSettings, breakpoints, selectedIDs = [], location }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -38,10 +42,14 @@ const MoveButtons = ({ labelID = '', mailSettings = {}, selectedIDs = [], locati
         });
     };
 
-    const displayTrash = ![DRAFTS, ALL_DRAFTS, TRASH].includes(labelID as MAILBOX_LABEL_IDS);
-    const displayInbox = ![SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
-    const displayArchive = ![DRAFTS, ALL_DRAFTS, ARCHIVE].includes(labelID as MAILBOX_LABEL_IDS);
-    const displaySpam = ![SENT, ALL_SENT, SPAM].includes(labelID as MAILBOX_LABEL_IDS);
+    const displayTrash =
+        !labelIncludes(labelID, DRAFTS, ALL_DRAFTS, TRASH) && (!breakpoints.isNarrow || !labelIncludes(labelID, SPAM));
+
+    const displayInbox = !breakpoints.isNarrow && !labelIncludes(labelID, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS);
+
+    const displayArchive = !breakpoints.isNarrow && !labelIncludes(labelID, DRAFTS, ALL_DRAFTS, ARCHIVE);
+
+    const displaySpam = !breakpoints.isNarrow && !labelIncludes(labelID, SENT, ALL_SENT, SPAM);
 
     return (
         <>

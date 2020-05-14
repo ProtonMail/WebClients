@@ -18,6 +18,7 @@ interface Props {
     elementID?: string;
     userSettings: UserSettings;
     mailSettings: MailSettings;
+    columnLayout: boolean;
     elements?: Element[];
     checkedIDs?: string[];
     onCheck: (ID: string[], checked: boolean, replace: boolean) => void;
@@ -30,6 +31,7 @@ const List = ({
     elementID,
     userSettings,
     mailSettings,
+    columnLayout,
     elements = [],
     checkedIDs = [],
     onCheck,
@@ -140,6 +142,7 @@ const List = ({
                         labels={labels}
                         labelID={labelID}
                         key={element.ID}
+                        columnLayout={columnLayout}
                         elementID={elementID}
                         element={element}
                         checked={checkedIDs.includes(element.ID || '')}

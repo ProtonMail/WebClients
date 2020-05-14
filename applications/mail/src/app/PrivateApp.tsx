@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteChildrenProps } from 'react-router';
 import { Route } from 'react-router-dom';
-import { StandardPrivateApp } from 'react-components';
+import { StandardPrivateApp, useActiveBreakpoint } from 'react-components';
 
 import {
     UserModel,
@@ -29,6 +29,8 @@ interface Props {
 }
 
 const PrivateApp = ({ onLogout }: Props) => {
+    const breakpoints = useActiveBreakpoint();
+
     return (
         <StandardPrivateApp
             fallback={false}
@@ -51,12 +53,16 @@ const PrivateApp = ({ onLogout }: Props) => {
             <MessageProvider>
                 <ConversationProvider>
                     <AttachmentProvider>
-                        <ComposerContainer>
+                        <ComposerContainer breakpoints={breakpoints}>
                             {({ onCompose }) => (
                                 <Route
                                     path="/:labelID?/:elementID?"
                                     render={(routeProps: RouteProps) => (
-                                        <PageContainer {...routeProps} onCompose={onCompose} />
+                                        <PageContainer
+                                            {...routeProps}
+                                            breakpoints={breakpoints}
+                                            onCompose={onCompose}
+                                        />
                                     )}
                                 />
                             )}

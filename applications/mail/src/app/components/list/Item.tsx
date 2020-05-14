@@ -2,7 +2,7 @@ import React, { ChangeEvent, MouseEvent, DragEvent } from 'react';
 import { Location } from 'history';
 import { classnames, Checkbox } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
-import { MAILBOX_LABEL_IDS, VIEW_LAYOUT, DENSITY } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, DENSITY } from 'proton-shared/lib/constants';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
@@ -28,6 +28,7 @@ interface Props {
     elementID?: string;
     userSettings: UserSettings;
     mailSettings: MailSettings;
+    columnLayout: boolean;
     element: Element;
     checked?: boolean;
     contacts: ContactEmail[];
@@ -45,6 +46,7 @@ const Item = ({
     labels,
     element,
     elementID,
+    columnLayout,
     userSettings,
     mailSettings,
     checked = false,
@@ -73,9 +75,7 @@ const Item = ({
         getRecipientOrGroupLabel(recipientOrGroup, contacts)
     );
 
-    const { ViewLayout = VIEW_LAYOUT.COLUMN } = mailSettings;
-    const isColumnMode = ViewLayout === VIEW_LAYOUT.COLUMN;
-    const ItemLayout = isColumnMode ? ItemColumnLayout : ItemRowLayout;
+    const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element);
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
@@ -111,7 +111,7 @@ const Item = ({
             onDragEnd={handleDragEnd}
             className={classnames([
                 'flex flex-nowrap flex-items-center cursor-pointer',
-                isColumnMode ? 'item-container' : 'item-container-row',
+                columnLayout ? 'item-container' : 'item-container-row',
                 elementID === ID && 'item-is-selected',
                 !unread && 'read',
                 dragged && 'item-dragging'

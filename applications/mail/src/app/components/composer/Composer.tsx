@@ -1,5 +1,5 @@
-import React, { useState, useEffect, CSSProperties, useRef } from 'react';
-import { classnames, useToggle, useWindowSize, useNotifications, useMailSettings } from 'react-components';
+import React, { useState, useEffect, useRef } from 'react';
+import { classnames, useToggle, useNotifications, useMailSettings } from 'react-components';
 import { c } from 'ttag';
 import { Address } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -11,14 +11,6 @@ import ComposerTitleBar from './ComposerTitleBar';
 import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
 import ComposerActions from './ComposerActions';
-import {
-    COMPOSER_GUTTER,
-    COMPOSER_VERTICAL_GUTTER,
-    APP_BAR_WIDTH,
-    HEADER_HEIGHT,
-    COMPOSER_HEIGHT,
-    COMPOSER_SWITCH_MODE
-} from '../../containers/ComposerContainer';
 import { getRecipients, mergeMessages } from '../../helpers/message/messages';
 import { EditorActionsRef } from './editor/Editor';
 import { setContent } from '../../helpers/message/messageContent';
@@ -32,6 +24,8 @@ import { useSendMessage } from '../../hooks/useSendMessage';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { useAttachments } from '../../hooks/useAttachments';
 import { getDate } from '../../helpers/elements';
+import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
+import { WindowSize, Breakpoints } from '../../models/utils';
 
 enum ComposerInnerModal {
     None,
@@ -43,42 +37,31 @@ export interface MessageChange {
     (message: PartialMessageExtended | ((message: MessageExtended) => PartialMessageExtended)): void;
 }
 
-const computeStyle = (
-    inputStyle: CSSProperties,
-    minimized: boolean,
-    maximized: boolean,
-    width: number,
-    height: number
-): CSSProperties => {
-    if (minimized) {
-        return {
-            ...inputStyle,
-            height: 35
-        };
-    }
-    if (maximized) {
-        return {
-            ...inputStyle,
-            right: COMPOSER_GUTTER,
-            width: width - COMPOSER_GUTTER - APP_BAR_WIDTH,
-            height: height - COMPOSER_VERTICAL_GUTTER * 2
-        };
-    }
-    return inputStyle;
-};
-
 interface Props {
-    style?: CSSProperties;
+    index: number;
+    count: number;
     focus: boolean;
     messageID: string;
     addresses: Address[];
+    windowSize: WindowSize;
+    breakpoints: Breakpoints;
     onFocus: () => void;
     onClose: () => void;
 }
 
-const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus, onClose: inputOnClose }: Props) => {
+const Composer = ({
+    index,
+    count,
+    focus,
+    messageID,
+    addresses,
+    windowSize,
+    breakpoints,
+    onFocus,
+    onClose: inputOnClose
+}: Props) => {
     const [mailSettings] = useMailSettings();
-    const [width, height] = useWindowSize();
+    // const [width, height] = useWindowSize();
     const { createNotification } = useNotifications();
 
     // Minimized status of the composer
@@ -164,14 +147,14 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
         }
     }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID]);
 
+    // Automatic maximize if height too small
     useEffect(() => {
-        if (!maximized && height - COMPOSER_VERTICAL_GUTTER - HEADER_HEIGHT < COMPOSER_HEIGHT - COMPOSER_SWITCH_MODE) {
+        const shouldMaximized = shouldBeMaximized(windowSize.height);
+
+        if ((!maximized && shouldMaximized) || (maximized && !shouldMaximized)) {
             toggleMaximized();
         }
-        if (maximized && height - COMPOSER_VERTICAL_GUTTER - HEADER_HEIGHT > COMPOSER_HEIGHT + COMPOSER_SWITCH_MODE) {
-            toggleMaximized();
-        }
-    }, [height]);
+    }, [windowSize.height]);
 
     // Manage focus at opening
     useEffect(() => {
@@ -306,7 +289,7 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
         onFocus(); // Events on the main div will not fire because/ the editor is in an iframe
     };
 
-    const style = computeStyle(inputStyle, minimized, maximized, width, height);
+    const style = computeComposerStyle(index, count, focus, minimized, maximized, breakpoints.isNarrow, windowSize);
 
     return (
         <div
@@ -363,6 +346,7 @@ const Composer = ({ style: inputStyle = {}, focus, messageID, addresses, onFocus
                     <ComposerContent
                         message={modelMessage}
                         disabled={!editorReady}
+                        breakpoints={breakpoints}
                         onEditorReady={() => setEditorReady(true)}
                         onChange={handleChange}
                         onChangeContent={handleChangeContent}

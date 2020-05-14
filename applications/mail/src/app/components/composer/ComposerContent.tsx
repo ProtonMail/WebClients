@@ -12,10 +12,14 @@ import EditorEmbeddedModal from './editor/EditorEmbeddedModal';
 import { isDragFile } from '../../helpers/dom';
 import { PendingUpload } from '../../hooks/useAttachments';
 import { MessageChange } from './Composer';
+import { Breakpoints } from '../../models/utils';
+
+import 'design-system/_sass/react-styles/quill/_snow.scss';
 
 interface Props {
     message: MessageExtended;
     disabled: boolean;
+    breakpoints: Breakpoints;
     onEditorReady: () => void;
     onChange: MessageChange;
     onChangeContent: (content: string) => void;
@@ -36,6 +40,7 @@ interface Props {
 const ComposerContent = ({
     message,
     disabled,
+    breakpoints,
     onEditorReady,
     onChange,
     onChangeContent,
@@ -94,6 +99,7 @@ const ComposerContent = ({
                     message={message}
                     document={message.document}
                     disabled={disabled}
+                    breakpoints={breakpoints}
                     onReady={onEditorReady}
                     onChange={onChange}
                     onChangeContent={onChangeContent}

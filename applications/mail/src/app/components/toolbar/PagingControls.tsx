@@ -28,6 +28,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
                 disabled={page.page <= 0}
                 title={c('Action').t`Previous`}
                 onClick={handlePrevious}
+                className="notablet nomobile"
             >
                 <Icon className="toolbar-icon rotateZ-90 mauto" name="caret" />
             </ToolbarButton>
@@ -57,6 +58,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
                 disabled={page.page >= count - 1}
                 title={c('Action').t`Next`}
                 onClick={handleNext}
+                className="notablet nomobile"
             >
                 <Icon className="toolbar-icon rotateZ-270 mauto" name="caret" />
             </ToolbarButton>
