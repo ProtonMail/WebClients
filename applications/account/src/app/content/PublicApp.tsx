@@ -1,36 +1,27 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import {
-  StandardPublicApp,
-  LoginForm,
-  SignupContainer,
-  ModalsChildren
-} from "react-components";
-import locales from "../locales";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { StandardPublicApp, LoginForm, SignupContainer, ModalsChildren } from 'react-components';
+import locales from '../locales';
 
 interface Props {
-  onLogin: () => void;
+    onLogin: () => void;
 }
 
 const PublicApp = ({ onLogin }: Props) => {
-  return (
-    <StandardPublicApp locales={locales}>
-      <ModalsChildren />
-      <Switch>
-        <Route
-          path="/signup"
-          render={({ location, history }) => (
-            <SignupContainer
-              location={location}
-              history={history}
-              onLogin={onLogin}
-            />
-          )}
-        />
-        <Route path="/login" render={() => <LoginForm onLogin={onLogin} />} />
-      </Switch>
-    </StandardPublicApp>
-  );
+    return (
+        <StandardPublicApp locales={locales}>
+            <ModalsChildren />
+            <Switch>
+                <Route
+                    path="/signup"
+                    render={({ location, history }) => (
+                        <SignupContainer location={location} history={history} onLogin={onLogin} locales={locales} />
+                    )}
+                />
+                <Route path="/login" render={() => <LoginForm onLogin={onLogin} />} />
+            </Switch>
+        </StandardPublicApp>
+    );
 };
 
 export default PublicApp;
