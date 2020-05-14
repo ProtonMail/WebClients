@@ -4,6 +4,7 @@ import { generateUID, classnames } from '../../helpers/component';
 import Icon from '../icon/Icon';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
+import useTooltipHandlers from '../tooltip/useTooltipHandlers';
 
 interface Props {
     originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
@@ -42,6 +43,8 @@ const Info = ({
         url && window.open(url);
     };
 
+    const tooltipHandlers = useTooltipHandlers(open, close, isOpen);
+
     return (
         <>
             <button
@@ -49,10 +52,7 @@ const Info = ({
                 className={buttonClass}
                 onClick={handleClick}
                 ref={anchorRef}
-                onMouseEnter={open}
-                onMouseLeave={close}
-                onFocus={open}
-                onBlur={close}
+                {...tooltipHandlers}
                 aria-describedby={uid}
                 type="button"
             >

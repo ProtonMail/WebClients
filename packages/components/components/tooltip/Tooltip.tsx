@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { generateUID, classnames } from '../../helpers/component';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
+import useTooltipHandlers from './useTooltipHandlers';
 
 interface Props {
     children: React.ReactNode;
@@ -28,18 +29,11 @@ const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerCl
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
         scrollContainerClass
     });
+    const tooltipHandlers = useTooltipHandlers(open, close, isOpen);
 
     return (
         <>
-            <span
-                ref={anchorRef}
-                onMouseEnter={open}
-                onMouseLeave={close}
-                onFocus={open}
-                onBlur={close}
-                aria-describedby={uid}
-                className={className}
-            >
+            <span ref={anchorRef} {...tooltipHandlers} aria-describedby={uid} className={className}>
                 {children}
             </span>
             <Popper
