@@ -48,7 +48,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const startingPrice = <strong key="starting-price">$4/month</strong>;
 
     return (
-        <div className="flex-item-fluid aligncenter p2">
+        <div className="flex-item-fluid aligncenter p2 mw100">
             <h1>
                 {user.DisplayName ? c('Title').t`Welcome, ${capitalize(user.DisplayName)}!` : c('Title').t`Welcome!`}
             </h1>
