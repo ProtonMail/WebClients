@@ -97,6 +97,7 @@ const PrivateHeader = ({
                             <TopNavbarLink
                                 to="/inbox"
                                 icon="mailbox"
+                                className="topnav-link"
                                 text={c('Title').t`Mailbox`}
                                 aria-current={true}
                             />
