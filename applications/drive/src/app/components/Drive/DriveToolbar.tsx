@@ -12,11 +12,13 @@ import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import CreateFolderModal from '../CreateFolderModal';
 import RenameModal from '../RenameModal';
 import DetailsModal from '../DetailsModal';
+import MoveToFolderModal from '../MoveToFolderModal';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getNotificationTextForItemList } from './helpers';
 import { DriveFolder } from './DriveFolderProvider';
 import { LinkType } from '../../interfaces/link';
 import { isPreviewAvailable } from '../FilePreview/FilePreview';
+import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -27,8 +29,16 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { fileBrowserControls } = useDriveContent();
-    const { getLinkMeta, createNewFolder, renameLink, events } = useDrive();
     const { startFileTransfer, startFolderTransfer } = useFiles();
+    const {
+        getFoldersOnlyMetas,
+        getShareMeta,
+        getLinkMeta,
+        createNewFolder,
+        renameLink,
+        moveLink,
+        events
+    } = useDrive();
     const { trashLinks, restoreLinks } = useTrash();
     const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
     const cache = useDriveCache();
@@ -172,6 +182,46 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
         await events.call(shareId);
     };
 
+    const moveToFolder = () => {
+        const toMove = selectedItems;
+
+        createModal(
+            <MoveToFolderModal
+                activeFolder={activeFolder}
+                selectedItems={toMove}
+                getShareMeta={getShareMeta}
+                getLinkMeta={getLinkMeta}
+                getFoldersOnlyMetas={getFoldersOnlyMetas}
+                isChildrenComplete={(LinkID: string) => !!cache.get.foldersOnlyComplete(shareId, LinkID)}
+                moveLinksToFolder={async (parentFolderId: string) => {
+                    const movedLinks = (
+                        await Promise.allSettled(
+                            toMove.map((link) => moveLink(shareId, parentFolderId, link.LinkID, link.Name))
+                        )
+                    ).reduce(
+                        (items: FileBrowserItem[], result: { status: string }, i: number) =>
+                            result.status === 'fulfilled' ? [...items, toMove[i]] : items,
+                        []
+                    );
+
+                    const movedLinksCount = movedLinks.length;
+                    const [{ Name: firstItemName }] = movedLinks;
+                    const notificationMessage = c('Notification').ngettext(
+                        msgid`"${firstItemName}" successfully moved`,
+                        `${movedLinksCount} files successfully moved`,
+                        movedLinksCount
+                    );
+                    createNotification({
+                        type: 'success',
+                        text: notificationMessage
+                    });
+
+                    await events.call(shareId);
+                }}
+            />
+        );
+    };
+
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
             return <ToolbarButton icon="folder-new" title={c('Action').t`New Folder`} onClick={handleCreateFolder} />;
@@ -214,6 +264,12 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                     title={c('Action').t`Move to Trash`}
                     icon="trash"
                     onClick={() => withMoveToTrashLoading(moveToTrash())}
+                />
+                <ToolbarButton
+                    disabled={hasFoldersSelected}
+                    title={c('Action').t`Move to Folder`}
+                    icon="arrow-cross"
+                    onClick={() => moveToFolder()}
                 />
             </>
         );

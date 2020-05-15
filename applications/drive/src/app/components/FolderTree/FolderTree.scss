@@ -1,0 +1,15 @@
+.pd-folder-tree {
+    @extend .bordered-container;
+    @extend .scroll-if-needed;
+
+    border-radius: $global-border-radius;
+    height: 20em;
+
+    &-listItem-button {
+        @extend .pm-button;
+        @extend .pm-button--for-icon;
+
+        display: flex;
+        padding: 0.25em;
+    }
+}
