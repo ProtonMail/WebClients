@@ -220,7 +220,11 @@ const loginContainer = (
                 track(
                     handleLogin(username, password).catch((e) => {
                         state = {};
-                        console.log(e);
+                        // Api error, already shown
+                        if (e.status) {
+                            return;
+                        }
+                        notification.error(e.message);
                     })
                 );
             };
