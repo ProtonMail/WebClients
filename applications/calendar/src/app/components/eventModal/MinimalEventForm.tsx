@@ -50,7 +50,7 @@ const MinimalEventForm = ({
             collapseOnMobile={false}
             label={
                 <>
-                    <Icon name="calendar-repeat" />
+                    <Icon name="repeat" />
                     <span className="sr-only">{c('Label').t`Frequency`}</span>
                 </>
             }
