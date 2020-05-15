@@ -23,38 +23,36 @@ import {
     NOTIFICATION_UNITS,
     NOTIFICATION_UNITS_MAX
 } from '../constants';
-import { EventFailure, IMPORT_ERROR_TYPE, ImportFailure } from '../interfaces/Import';
+import { EventFailure, IMPORT_ERROR_TYPE } from '../interfaces/Import';
 import { getIsFreebusyComponent, getIsJournalComponent, getIsTodoComponent, getIsVeventComponent } from './event';
 import { getIsRruleConsistent, getIsRruleValid } from './rrule';
+import { ImportFileError } from '../components/import/ImportFileError';
 
-export const parseIcs = async (
-    ics: File
-): Promise<{
-    components: VcalCalendarComponent[];
-    calscale?: string;
-    failure?: ImportFailure;
-}> => {
+export const parseIcs = async (ics: File) => {
+    const filename = ics.name;
     try {
         const icsAsString = await readFileAsString(ics);
         if (!icsAsString) {
-            return { failure: { type: IMPORT_ERROR_TYPE.FILE_EMPTY }, components: [] };
+            throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_EMPTY, filename);
         }
         const parsedVcalendar = parse(icsAsString) as VcalVcalendar;
         if (parsedVcalendar.component !== 'vcalendar') {
-            return { failure: { type: IMPORT_ERROR_TYPE.INVALID_CALENDAR }, components: [] };
+            throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_CALENDAR, filename);
         }
         const calscale = parsedVcalendar.calscale ? parsedVcalendar.calscale[0].value : undefined;
         const components = parsedVcalendar.components;
         if (!components?.length) {
-            return { failure: { type: IMPORT_ERROR_TYPE.NO_EVENTS }, components: [] };
+            throw new ImportFileError(IMPORT_ERROR_TYPE.NO_EVENTS, filename);
         }
         if (components.length > MAX_IMPORT_EVENTS) {
-            return { failure: { type: IMPORT_ERROR_TYPE.TOO_MANY_EVENTS }, components: [] };
+            throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_EVENTS, filename);
         }
         return { components, calscale };
-    } catch (error) {
-        console.error(error);
-        return { failure: { type: IMPORT_ERROR_TYPE.FILE_CORRUPTED, error }, components: [] };
+    } catch (e) {
+        if (e instanceof ImportFileError) {
+            throw e;
+        }
+        throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_CORRUPTED, filename);
     }
 };
 

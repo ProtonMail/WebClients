@@ -136,3 +136,4 @@ export const MAX_IMPORT_EVENTS_STRING = "15'000";
 export const MAX_IMPORT_FILE_SIZE = 10 * BASE_SIZE ** 2;
 export const MAX_IMPORT_FILE_SIZE_STRING = '10 MB';
 export const MAX_UID_CHARS_DISPLAY = 50;
+export const MAX_FILENAME_CHARS_DISPLAY = 100;

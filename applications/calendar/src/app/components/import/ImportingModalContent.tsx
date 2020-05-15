@@ -19,17 +19,12 @@ import { MAX_UID_CHARS_DISPLAY } from '../../constants';
 import getCreationKeys from '../../containers/calendar/getCreationKeys';
 import getMemberAndAddress, { getMemberAndAddressID } from '../../helpers/getMemberAndAddress';
 import useUnload from '../../hooks/useUnload';
-import {
-    IMPORT_ERROR_TYPE,
-    IMPORT_STEPS,
-    ImportCalendarModel,
-    SyncMultipleApiResponse,
-    Unwrap
-} from '../../interfaces/Import';
+import { IMPORT_STEPS, ImportCalendarModel, SyncMultipleApiResponse, Unwrap } from '../../interfaces/Import';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { API_CODES } from 'proton-shared/lib/constants';
 
 import DynamicProgress from './DynamicProgress';
+import { ImportFatalError } from './ImportFileError';
 
 const { SINGLE_SUCCESS } = API_CODES;
 const BATCH_SIZE = 10;
@@ -199,10 +194,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                         eventsNotEncrypted: [],
                         eventsImported: [],
                         eventsNotImported: [],
-                        failure: {
-                            type: IMPORT_ERROR_TYPE.UNEXPECTED_ERROR,
-                            error
-                        }
+                        failure: new ImportFatalError(error)
                     }),
                     signal
                 );

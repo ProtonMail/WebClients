@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { formatData } from 'proton-shared/lib/calendar/serialize';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { ImportFatalError, ImportFileError } from '../components/import/ImportFileError';
 
 export enum IMPORT_STEPS {
     ATTACHING,
@@ -19,13 +20,7 @@ export enum IMPORT_ERROR_TYPE {
     FILE_CORRUPTED,
     INVALID_CALENDAR,
     NO_EVENTS,
-    TOO_MANY_EVENTS,
-    UNEXPECTED_ERROR
-}
-
-export interface ImportFailure {
-    type: IMPORT_ERROR_TYPE;
-    error?: Error;
+    TOO_MANY_EVENTS
 }
 
 export interface DetailError {
@@ -52,7 +47,7 @@ export interface ImportCalendarModel {
     eventsNotEncrypted: EventFailure[];
     eventsImported: Pick<EncryptedEvent, 'uid'>[];
     eventsNotImported: EventFailure[];
-    failure?: ImportFailure;
+    failure?: ImportFileError | ImportFatalError | Error;
     calendar: Calendar;
 }
 

@@ -13,6 +13,7 @@ import AttachingModalContent from './AttachingModalContent';
 import ImportingModalContent from './ImportingModalContent';
 import ImportSummaryModalContent from './ImportSummaryModalContent';
 import WarningModalContent from './WarningModalContent';
+import { ImportFileError } from './ImportFileError';
 
 interface Props {
     defaultCalendar: Calendar;
@@ -41,26 +42,36 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
             );
 
             const handleClear = () => {
-                setModel({ ...model, step: IMPORT_STEPS.ATTACHING, fileAttached: undefined, failure: undefined });
+                setModel({
+                    step: IMPORT_STEPS.ATTACHING,
+                    calendar: model.calendar,
+                    eventsParsed: [],
+                    eventsNotParsed: [],
+                    eventsEncrypted: [],
+                    eventsNotEncrypted: [],
+                    eventsImported: [],
+                    eventsNotImported: []
+                });
             };
 
             const handleAttach = ({ target }: ChangeEvent<HTMLInputElement>) => {
-                if (!target.files) {
-                    setModel({ ...model, failure: { type: IMPORT_ERROR_TYPE.NO_FILE_SELECTED } });
-                    return;
+                try {
+                    if (!target.files) {
+                        throw new ImportFileError(IMPORT_ERROR_TYPE.NO_FILE_SELECTED);
+                    }
+                    const [file] = target.files;
+                    const [filename, extension] = splitExtension(file.name);
+                    const fileAttached = extension.toLowerCase() === 'ics' ? file : null;
+                    if (!fileAttached) {
+                        throw new ImportFileError(IMPORT_ERROR_TYPE.NO_ICS_FILE, filename);
+                    }
+                    if (fileAttached.size > MAX_IMPORT_FILE_SIZE) {
+                        throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_TOO_BIG, filename);
+                    }
+                    setModel({ ...model, step: IMPORT_STEPS.ATTACHED, fileAttached, failure: undefined });
+                } catch (e) {
+                    setModel({ ...model, failure: e });
                 }
-                const [file] = target.files;
-                const [, extension] = splitExtension(file.name);
-                const fileAttached = extension.toLowerCase() === 'ics' ? file : null;
-                if (!fileAttached) {
-                    setModel({ ...model, failure: { type: IMPORT_ERROR_TYPE.NO_ICS_FILE } });
-                    return;
-                }
-                if (fileAttached.size > MAX_IMPORT_FILE_SIZE) {
-                    setModel({ ...model, failure: { type: IMPORT_ERROR_TYPE.FILE_TOO_BIG } });
-                    return;
-                }
-                setModel({ ...model, step: IMPORT_STEPS.ATTACHED, fileAttached, failure: undefined });
             };
 
             const handleSelectCalendar = (calendar: Calendar) => {
@@ -68,24 +79,34 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
             };
 
             const handleSubmit = async () => {
-                const { components, calscale, failure } = await parseIcs(model.fileAttached as File);
-                if (failure) {
+                const { fileAttached } = model;
+                if (!fileAttached) {
+                    throw new Error('No file');
+                }
+                try {
+                    const { components, calscale } = await parseIcs(fileAttached);
+                    const { events, discarded } = filterNonSupported({ components, calscale });
+                    const step = discarded.length || !events.length ? IMPORT_STEPS.WARNING : IMPORT_STEPS.IMPORTING;
                     setModel({
                         ...model,
-                        step: IMPORT_STEPS.ATTACHING,
-                        failure
+                        step,
+                        eventsParsed: events,
+                        eventsNotParsed: discarded,
+                        failure: undefined
                     });
-                    return;
+                } catch (e) {
+                    setModel({
+                        step: IMPORT_STEPS.ATTACHING,
+                        calendar: model.calendar,
+                        eventsParsed: [],
+                        eventsNotParsed: [],
+                        eventsEncrypted: [],
+                        eventsNotEncrypted: [],
+                        eventsImported: [],
+                        eventsNotImported: [],
+                        failure: e
+                    });
                 }
-                const { events, discarded } = filterNonSupported({ components, calscale });
-                const step = discarded.length || !events.length ? IMPORT_STEPS.WARNING : IMPORT_STEPS.IMPORTING;
-                setModel({
-                    ...model,
-                    step,
-                    eventsParsed: events,
-                    eventsNotParsed: discarded,
-                    failure: undefined
-                });
             };
 
             return {
