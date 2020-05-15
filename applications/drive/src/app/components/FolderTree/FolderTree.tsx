@@ -41,7 +41,7 @@ const FolderTree = ({ folders, selectedFolderId, onSelect, loadChildren }: Props
 
     return (
         <div className="pd-folder-tree">
-            <table className="pm-simple-table pm-simple-table--isHoverable">
+            <table className="pd-folder-tree-table pm-simple-table pm-simple-table--isHoverable ">
                 <tbody>{rows}</tbody>
             </table>
         </div>

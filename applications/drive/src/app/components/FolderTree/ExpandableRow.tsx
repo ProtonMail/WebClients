@@ -84,7 +84,7 @@ const ExpandableRow = ({
                     </div>
                     {isSelected && (
                         <div className="flex-item-noshrink pl0-5 pr0-5">
-                            <Icon name="check-circle" />
+                            <Icon name="check-circle" size={20} />
                         </div>
                     )}
                 </td>
