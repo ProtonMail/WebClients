@@ -53,7 +53,14 @@
     &w25         { width: 25%; }
     &w100        { width: 100%; }
     &mw100       { max-width: 100%; }
-    &wauto       { width: auto; }
+	&wauto       { width: auto; }
+	@for $i from 2 through 3 {
+		&hideTd#{$i} {
+			td:nth-child(#{$i}) {
+				display: none;
+			}
+		}
+	}
   }
 
   /**
@@ -145,7 +152,14 @@
     }
     &static {
       position: static;
-    }
+	}
+	@for $i from 2 through 4 {
+		&hideTd#{$i} {
+			td:nth-child(#{$i}) {
+				display: none;
+			}
+		}
+	}
   }
 
 
@@ -192,14 +206,19 @@
         width: 100%;
         flex-basis: auto;
       }
-    }
+	}
+	&hideTd3 {
+		td:nth-child(3) {
+			display: none;
+		}
+	}
   }
   /* margins */
   //$list-margins-tinymobile: m, mt, mr, mb, ml;
   //$list-margins-tinymobile-values: 0, 1, 2; // specify 2.5 if needed
 
   $list-margins-tinymobile: m, mt, mr, mb, ml;
-  $list-margins-tinymobile-values: 1;
+  $list-margins-tinymobile-values: 0, 1;
 
   @include margin-generator($list-margins-tinymobile, $list-margins-tinymobile-values, "ontinymobile-");
 
