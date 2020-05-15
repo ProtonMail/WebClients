@@ -1,7 +1,9 @@
 import React from 'react';
-import noContentSvg from './no-contents.svg';
 import { c } from 'ttag';
+
 import { IllustrationPlaceholder } from 'react-components';
+
+import noContentSvg from './no-contents.svg';
 import UploadButton from '../uploads/UploadButton';
 
 const EmptyFolder = () => (

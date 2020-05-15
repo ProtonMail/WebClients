@@ -71,3 +71,12 @@ export interface LinkChildrenResult {
 export interface HashCheckResult {
     AvailableHashes: string[];
 }
+
+export interface MoveLink {
+    Name: string;
+    Hash: string;
+    ParentLinkID: string;
+    NodePassphrase: string;
+    NodePassphraseSignature: string;
+    SignatureAddressID: string;
+}
