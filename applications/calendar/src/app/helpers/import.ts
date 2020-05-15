@@ -25,7 +25,7 @@ import {
 } from '../constants';
 import { EventFailure, IMPORT_ERROR_TYPE } from '../interfaces/Import';
 import { getIsFreebusyComponent, getIsJournalComponent, getIsTodoComponent, getIsVeventComponent } from './event';
-import { getIsRruleConsistent, getIsRruleValid } from './rrule';
+import { getIsRruleConsistent, getIsRruleSupported } from './rrule';
 import { ImportFileError } from '../components/import/ImportFileError';
 
 export const parseIcs = async (ics: File) => {
@@ -193,7 +193,7 @@ export const validateEvent = (
             if (dtend && !getIsRruleConsistent(veventComponent)) {
                 return { error: c('Error importing event').t`Recurring rule inconsistent` };
             }
-            if (!getIsRruleValid(rrule.value)) {
+            if (!getIsRruleSupported(rrule.value)) {
                 return { error: c('Error importing event').t`Recurring rule not supported` };
             }
             validated.rrule = rrule;

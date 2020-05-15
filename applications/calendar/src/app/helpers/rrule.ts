@@ -108,10 +108,10 @@ export const getIsRruleCustom = (rrule: Partial<VcalRrulePropertyValue>): boolea
         .map(([field]) => field) as (keyof VcalRrulePropertyValue)[];
     const { freq, count, interval, until, bysetpos, byday, bymonth, bymonthday, byyearday } = rrule;
     const hasUnsupportedFields = nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES.includes(field));
-    if (!freq || count === 1 || hasUnsupportedFields) {
+    if (!freq || hasUnsupportedFields) {
         return false;
     }
-    const isBasicCustom = (interval && interval > 1) || (count && count > 1) || !!until;
+    const isBasicCustom = (interval && interval > 1) || (count && count >= 1) || !!until;
     if (freq === FREQUENCY.DAILY) {
         if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_DAILY.includes(field))) {
             return false;
@@ -165,7 +165,7 @@ export const getIsRruleConsistent = (vevent: VcalVeventComponent) => {
     return true;
 };
 
-export const getIsRruleValid = (rruleProperty: VcalRrulePropertyValue) => {
+export const getIsRruleSupported = (rruleProperty: VcalRrulePropertyValue) => {
     const rruleProperties = Object.keys(rruleProperty) as (keyof VcalRrulePropertyValue)[];
     if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES.includes(property))) {
         return false;
@@ -174,9 +174,6 @@ export const getIsRruleValid = (rruleProperty: VcalRrulePropertyValue) => {
     if (count) {
         if (count > FREQUENCY_COUNT_MAX) {
             return false;
-        }
-        if (count === 1) {
-            return true;
         }
     }
     if (until) {

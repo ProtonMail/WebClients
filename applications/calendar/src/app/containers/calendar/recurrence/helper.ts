@@ -24,7 +24,7 @@ export const toExdate = (dateObject: DateTimeValue, isAllDay: boolean, tzid = 'U
 };
 
 export const getSafeRruleCount = (rrule: VcalRruleProperty, newCount: number) => {
-    if (newCount <= 1) {
+    if (newCount < 1) {
         return;
     }
 

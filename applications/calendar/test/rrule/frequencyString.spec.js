@@ -66,7 +66,7 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
         expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Daily, until 20 Feb 2020');
     });
 
-    test('for a custom daily recurring event happening every two days, lasting 2 times on a different timezone', () => {
+    test('for a custom daily recurring event happening every two days, lasting 1 time on a different timezone', () => {
         const frequencyModel = {
             ...dummyFrequencyModel,
             type: FREQUENCY.CUSTOM,
@@ -74,11 +74,11 @@ describe('getTimezonedFrequencyString should produce the expected string for dai
             interval: 2,
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 2
+                count: 1
             }
         };
         const extendedOptions = { ...options, currentTzid: 'Europe/Athens', startTzid: 'Pacific/Tahiti' };
-        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual('Every 2 days, 2 times');
+        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual('Every 2 days, 1 time');
     });
 
     test('for a custom daily event, until 20th February 2020 on a different timezone', () => {
@@ -172,7 +172,7 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
         expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 2 weeks on Tuesday');
     });
 
-    test('for a custom weekly recurring event happening every 2 weeks, on Monday and Tuesday', () => {
+    test('for a custom weekly recurring event happening every 2 weeks, on Monday and Tuesday, lasting 1 time', () => {
         const frequencyModel = {
             ...dummyFrequencyModel,
             type: FREQUENCY.CUSTOM,
@@ -181,9 +181,15 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
             weekly: {
                 type: WEEKLY_TYPE.ON_DAYS,
                 days: [1, 2]
+            },
+            ends: {
+                type: END_TYPE.AFTER_N_TIMES,
+                count: 1
             }
         };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 2 weeks on Monday, Tuesday');
+        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual(
+            'Every 2 weeks on Monday, Tuesday, 1 time'
+        );
     });
 
     test('for a custom weekly recurring event happening on all days of the week', () => {
@@ -442,6 +448,27 @@ describe('getTimezonedFrequencyString should produce the expected string for mon
         );
     });
 
+    test('for a custom monthly recurring event happening every 2 months, on the last Wednesday, lasting 1 time', () => {
+        const lastWednesdayStart = { date: new Date(2020, 0, 29) };
+        const frequencyModel = {
+            ...getInitialFrequencyModel(lastWednesdayStart.date),
+            type: FREQUENCY.CUSTOM,
+            frequency: FREQUENCY.MONTHLY,
+            interval: 2,
+            monthly: {
+                type: MONTHLY_TYPE.ON_MINUS_NTH_DAY
+            },
+            ends: {
+                type: END_TYPE.AFTER_N_TIMES,
+                count: 1
+            }
+        };
+        const extendedOptions = { ...dummyOptions, ...lastWednesdayStart };
+        expect(getTimezonedFrequencyString(frequencyModel, extendedOptions)).toEqual(
+            'Every 2 months on the last Wednesday, 1 time'
+        );
+    });
+
     test('for a custom monthly recurring event happening on a fifth and last Thursday, until 20th February 2020', () => {
         const lastThursdayStart = { date: new Date(2020, 0, 30) };
         const frequencyModel = {
@@ -528,14 +555,18 @@ describe('getTimezonedFrequencyString should produce the expected string for yea
         expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Yearly');
     });
 
-    test('for a custom yearly recurring event happening every 2 years', () => {
+    test('for a custom yearly recurring event happening every 2 years, lasting 1 time', () => {
         const frequencyModel = {
             ...dummyFrequencyModel,
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.YEARLY,
-            interval: 2
+            interval: 2,
+            ends: {
+                type: END_TYPE.AFTER_N_TIMES,
+                count: 1
+            }
         };
-        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 2 years');
+        expect(getTimezonedFrequencyString(frequencyModel, options)).toEqual('Every 2 years, 1 time');
     });
 
     test('for a custom yearly recurring event happening every three years, lasting 5 times', () => {

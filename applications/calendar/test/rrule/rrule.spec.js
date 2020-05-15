@@ -2,7 +2,7 @@ import {
     getDayAndSetpos,
     getIsRruleCustom,
     getIsRruleConsistent,
-    getIsRruleValid,
+    getIsRruleSupported,
     getIsStandardByday
 } from '../../src/app/helpers/rrule';
 import { FREQUENCY } from '../../src/app/constants';
@@ -29,18 +29,31 @@ describe('getDayAndSetpos', () => {
 });
 
 describe('getIsRruleCustom', () => {
-    test('returns false for non-recurring or simple recurring events', () => {
+    test('returns false for simple recurring events', () => {
         const rrules = [
             {
                 freq: FREQUENCY.DAILY,
-                count: 1,
-                interval: 2,
-                byday: ['MO', 'SU']
+                interval: 1
             },
             {
                 freq: FREQUENCY.WEEKLY,
                 interval: 1,
                 byday: 'SA'
+            },
+            {
+                freq: FREQUENCY.MONTHLY,
+                interval: 1,
+                bymonthday: 23
+            },
+            {
+                freq: FREQUENCY.YEARLY,
+                interval: 1,
+                bymonth: 5
+            },
+            {
+                freq: FREQUENCY.YEARLY,
+                interval: 1,
+                bymonthday: 23
             }
         ];
         expect(rrules.map(getIsRruleCustom)).toEqual(rrules.map(() => false));
@@ -59,6 +72,11 @@ describe('getIsRruleCustom', () => {
             },
             {
                 freq: FREQUENCY.WEEKLY,
+                byday: ['SA', 'FR'],
+                count: 1
+            },
+            {
+                freq: FREQUENCY.WEEKLY,
                 until: { year: 2020, month: 5, day: 10 }
             },
             {
@@ -68,11 +86,16 @@ describe('getIsRruleCustom', () => {
             },
             {
                 freq: FREQUENCY.MONTHLY,
-                byday: '-1WE'
+                byday: '-1WE',
+                until: { year: 2020, month: 5, day: 10 }
             },
             {
                 freq: FREQUENCY.YEARLY,
                 interval: 2
+            },
+            {
+                freq: FREQUENCY.YEARLY,
+                count: 1
             }
         ];
         expect(rrules.map(getIsRruleCustom)).toEqual(rrules.map(() => true));
@@ -111,34 +134,20 @@ describe('getIsRruleCustom', () => {
 });
 
 describe('getIsRruleValid', () => {
-    test('should accept non-recurring events with RRULE', () => {
-        const vevents = [
-            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;COUNT=1;INTERVAL=2;BYDAY=1SU\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=WEEKLY;COUNT=1;BYDAY=WE,TH,FR;BYMONTH=2,3\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;COUNT=1,BYMONTHDAY=8;WKST=SA\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;COUNT=1;BYYEARDAY=23,300;BYDAY=SU\r\nEND:VEVENT`
-        ];
-        const rrules = vevents.map((vevent) => {
-            const { rrule } = parse(vevent);
-            return rrule.value;
-        });
-        expect(rrules.map(getIsRruleValid)).toEqual(vevents.map(() => true));
-    });
-
     test('should accept events with monthly recurring rules of the form BYDAY=+/-nDD', () => {
         const vevents = [
             `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=1SU\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=+2WE\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=4MO\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;COUNT=1;BYDAY=4MO\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=-1SA\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=TH;BYSETPOS=-1\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;COUNT=3;INTERVAL=2;BYDAY=TH;BYSETPOS=-1\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=TU;BYSETPOS=3\r\nEND:VEVENT`
         ];
         const rrules = vevents.map((vevent) => {
             const { rrule } = parse(vevent);
             return rrule.value;
         });
-        expect(rrules.map(getIsRruleValid)).toEqual(vevents.map(() => true));
+        expect(rrules.map(getIsRruleSupported)).toEqual(vevents.map(() => true));
     });
 
     test('should accept events with valid yearly recurring rules', () => {
@@ -151,7 +160,7 @@ describe('getIsRruleValid', () => {
             const { rrule } = parse(vevent);
             return rrule.value;
         });
-        expect(rrules.map(getIsRruleValid)).toEqual(vevents.map(() => true));
+        expect(rrules.map(getIsRruleSupported)).toEqual(vevents.map(() => true));
     });
 
     test('should refuse events with invalid monthly recurring rules', () => {
@@ -169,7 +178,7 @@ describe('getIsRruleValid', () => {
             const { rrule } = parse(vevent);
             return rrule.value;
         });
-        expect(rrules.map(getIsRruleValid)).toEqual(vevents.map(() => false));
+        expect(rrules.map(getIsRruleSupported)).toEqual(vevents.map(() => false));
     });
     test('should refuse events with invalid yearly recurring rules', () => {
         const vevents = [
@@ -180,7 +189,7 @@ describe('getIsRruleValid', () => {
             const { rrule } = parse(vevent);
             return rrule.value;
         });
-        expect(rrules.map(getIsRruleValid)).toEqual(vevents.map(() => false));
+        expect(rrules.map(getIsRruleSupported)).toEqual(vevents.map(() => false));
     });
 });
 

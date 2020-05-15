@@ -45,7 +45,7 @@ const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay }: EventMo
     }
 
     if (type === FREQUENCY.CUSTOM) {
-        if (ends.type === END_TYPE.AFTER_N_TIMES && ends.count && ends.count <= 1) {
+        if (ends.type === END_TYPE.AFTER_N_TIMES && ends.count && ends.count < 1) {
             return;
         }
         const rrule = {
