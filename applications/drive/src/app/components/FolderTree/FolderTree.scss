@@ -3,7 +3,14 @@
     @extend .scroll-if-needed;
 
     border-radius: $global-border-radius;
-    height: 20em;
+    min-height: 15em;
+    max-height: 35em;
+
+    &-table {
+        width: auto;
+        min-width: 100%;
+        max-width: initial;
+    }
 
     &-listItem-button {
         @extend .pm-button;
