@@ -300,6 +300,21 @@ export const fromIcalComponent = (component) => {
     };
 };
 
+export const fromIcalComponentWithErrors = (component) => {
+    const components = component.getAllSubcomponents().map((subcomponent) => {
+        try {
+            return fromIcalComponent(subcomponent);
+        } catch (error) {
+            return { error, component: subcomponent };
+        }
+    });
+    return {
+        component: component.name,
+        ...(components.length && { components }),
+        ...fromIcalProperties(component ? component.getAllProperties() : undefined)
+    };
+};
+
 /**
  * Parse vCalendar String and return a component
  * @param {String} vcal
@@ -310,6 +325,16 @@ export const parse = (vcal = '') => {
         return {};
     }
     return fromIcalComponent(new ICAL.Component(ICAL.parse(vcal)));
+};
+
+/**
+ * Same as the parse function, but catching errors
+ */
+export const parseWithErrors = (vcal = '') => {
+    if (!vcal) {
+        return {};
+    }
+    return fromIcalComponentWithErrors(new ICAL.Component(ICAL.parse(vcal)));
 };
 
 /**
