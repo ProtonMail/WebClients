@@ -91,18 +91,20 @@ export const pinKeyUpdateContact = async ({
  */
 interface ParamsCreate {
     emailAddress: string;
+    name?: string;
     isInternal: boolean;
     bePinnedPublicKey: OpenPGPKey;
     privateKeys: OpenPGPKey[];
 }
 export const pinKeyCreateContact = async ({
     emailAddress,
+    name,
     isInternal,
     bePinnedPublicKey,
     privateKeys
 }: ParamsCreate): Promise<ContactCard[]> => {
     const properties: ContactProperty[] = [
-        { field: 'fn', value: emailAddress },
+        { field: 'fn', value: name || emailAddress },
         { field: 'uid', value: generateProtonWebUID() },
         { field: 'email', value: emailAddress, group: 'item1' },
         !isInternal && { field: 'x-pm-encrypt', value: 'true', group: 'item1' },

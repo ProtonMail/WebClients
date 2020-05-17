@@ -33,6 +33,7 @@ export interface Contact {
 export interface ContactWithBePinnedPublicKey {
     contactID?: string;
     emailAddress: string;
+    name?: string;
     isInternal: boolean;
     bePinnedPublicKey: OpenPGPKey;
 }
