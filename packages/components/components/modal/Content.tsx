@@ -1,13 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactNode, FormEvent } from 'react';
+
 import { noop } from 'proton-shared/lib/helpers/function';
 import { classnames } from '../../helpers/component';
 
-const Content = ({ children, className = '', onSubmit = noop, onReset = noop, autoComplete = 'off', ...rest }) => {
-    const handleSubmit = (event) => {
+interface Props {
+    children: ReactNode;
+    className?: string;
+    onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+    onReset: (event: FormEvent<HTMLFormElement>) => void;
+    autoComplete?: string;
+}
+
+const Content = ({
+    children,
+    className = '',
+    onSubmit = noop,
+    onReset = noop,
+    autoComplete = 'off',
+    ...rest
+}: Props) => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         onSubmit(event);
     };
+
     return (
         <form
             onSubmit={handleSubmit}
@@ -19,14 +35,6 @@ const Content = ({ children, className = '', onSubmit = noop, onReset = noop, au
             {children}
         </form>
     );
-};
-
-Content.propTypes = {
-    children: PropTypes.node.isRequired,
-    className: PropTypes.string,
-    onSubmit: PropTypes.func,
-    onReset: PropTypes.func,
-    autoComplete: PropTypes.string
 };
 
 export default Content;
