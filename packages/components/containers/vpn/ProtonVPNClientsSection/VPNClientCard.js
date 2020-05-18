@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 const VPNClientCard = ({ title, link, icon }) => {
     return (
-        <Bordered className="ml0-5 mr0-5 aligncenter relative">
+        <Bordered className="mr1 aligncenter relative">
             <div>
                 <Icon size={24} name={icon} />
             </div>

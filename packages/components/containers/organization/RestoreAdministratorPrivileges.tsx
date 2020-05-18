@@ -31,12 +31,12 @@ const RestoreAdministratorPrivileges = () => {
                 </ul>
             </Alert>
             <PrimaryButton
-                className="mr1"
+                className="mr1 mb0-5"
                 onClick={() => createModal(<ReactivateOrganizationKeysModal mode={MODES.REACTIVATE} />)}
             >
                 {c('Action').t`Restore administrator privileges`}
             </PrimaryButton>
-            <LearnMore url="https://protonmail.com/support/knowledge-base/business/" />
+            <LearnMore className="inbl" url="https://protonmail.com/support/knowledge-base/business/" />
         </Block>
     );
 };

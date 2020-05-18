@@ -22,10 +22,10 @@ const KeysTable = ({
     onSetNotObsolete
 }: Props) => {
     const headerCells = [
-        { node: c('Title header for keys table').t`Fingerprint`, className: 'w50' },
-        { node: c('Title header for keys table').t`Key type` },
-        { node: c('Title header for keys table').t`Status` },
-        { node: c('Title header for keys table').t`Actions` }
+        { node: c('Title header for keys table').t`Fingerprint`, className: 'ellipsis' },
+        { node: c('Title header for keys table').t`Key type`, className: 'w15 nomobile' },
+        { node: c('Title header for keys table').t`Status`, className: 'w10e notinymobile' },
+        { node: c('Title header for keys table').t`Actions`, className: 'w10e' }
     ].map(({ node, className = '' }, i) => {
         return (
             <TableCell key={i.toString()} className={className} type="header">
@@ -46,8 +46,11 @@ const KeysTable = ({
                             key={ID}
                             cells={[
                                 <div key={1} className="flex flex-row flex-nowrap flex-items-center">
-                                    <Copy value={fingerprint} className="pm-button--small" />
-                                    <code className="ml1 mw100 inbl ellipsis" title={fingerprint}>
+                                    <Copy
+                                        value={fingerprint}
+                                        className="pm-button--small flex-item-noshrink notinymobile mr1 onmobile-mr0-5 ontinymobile-m0"
+                                    />
+                                    <code className="mw100 inbl ellipsis" title={fingerprint}>
                                         {fingerprint}
                                     </code>
                                 </div>,
@@ -72,6 +75,7 @@ const KeysTable = ({
                                     onSetNotObsolete={permissions.canSetNotObsolete ? onSetNotObsolete : undefined}
                                 />
                             ]}
+                            className="onmobile-hideTd2 ontinymobile-hideTd3"
                         />
                     );
                 })}

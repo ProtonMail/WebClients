@@ -62,7 +62,7 @@ function SpamFiltersSection() {
                 <SearchEmailIntoList onChange={handleSearchChange} />
             </div>
 
-            <div className="flex-autogrid pl0-5 pr0-5">
+            <div className="flex onmobile-flex-column">
                 <SpamListItem
                     list={whiteList}
                     type="whitelist"
@@ -74,7 +74,7 @@ function SpamFiltersSection() {
                     list={blackList}
                     type="blacklist"
                     dest="whitelist"
-                    className="ml1"
+                    className="ml1 onmobile-ml0"
                     loading={loader.black}
                     onAction={handleAction}
                 />

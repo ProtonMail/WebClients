@@ -82,7 +82,7 @@ const IdentitySection = () => {
                         {address.DisplayName}
                     </div>
                 </Field>
-                <span className="ml1">
+                <span className="ml1 onmobile-ml0 onmobile-mt0-5">
                     <Button className="pm-button--primary" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
                 </span>
             </Row>
@@ -98,7 +98,7 @@ const IdentitySection = () => {
                         <div className="pl1 pr1 pt0-5 pb0-5">{c('Info').t`Not set`}</div>
                     )}
                 </Field>
-                <span className="ml1">
+                <span className="ml1 onmobile-ml0 onmobile-mt0-5">
                     <Button className="pm-button--primary" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
                 </span>
             </Row>

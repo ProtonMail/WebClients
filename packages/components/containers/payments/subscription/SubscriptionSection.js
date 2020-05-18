@@ -140,7 +140,7 @@ const SubscriptionSection = ({ permission }) => {
             <Alert>{c('Info')
                 .t`To manage your subscription, including billing frequency and currency, or to switch to another plan, click on Manage subscription.`}</Alert>
             <div className="shadow-container mb1">
-                <div className="border-bottom pt1 pl1 pr1">
+                <div className="border-bottom pt1 pl1 pr1 onmobile-pb1">
                     <div className="flex-autogrid flex-items-center onmobile-flex-column w100 mb1">
                         <div className="flex-autogrid-item">ProtonMail plan</div>
                         <div className="flex-autogrid-item">

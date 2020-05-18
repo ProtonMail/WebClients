@@ -50,7 +50,7 @@ const PMSignatureField = ({ id }) => {
                     dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }}
                 />
             </Field>
-            <div className="ml1">
+            <div className="ml1 onmobile-ml0">
                 <Toggle loading={loading} id={id} checked={state} onChange={handleChange} />
             </div>
         </>

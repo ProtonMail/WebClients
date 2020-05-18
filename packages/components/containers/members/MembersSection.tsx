@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import {
     Table,
-    TableHeader,
+    TableCell,
     Info,
     SubTitle,
     Block,
@@ -121,6 +121,57 @@ const MembersSection = () => {
         return <Loader />;
     }
 
+    const headerCells = [
+        { node: c('Title header for members table').t`Name` },
+        {
+            node: (
+                <>
+                    <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
+                    <span className="nomobile">
+                        <Info url="https://protonmail.com/support/knowledge-base/member-roles/" />
+                    </span>
+                </>
+            )
+        },
+        {
+            node: (
+                <>
+                    <span className="mr0-5">{c('Title header for members table').t`Private`}</span>
+                    <Info url="https://protonmail.com/support/knowledge-base/private-members/" />
+                </>
+            ),
+            className: 'notablet nomobile'
+        },
+        {
+            node: (
+                <>
+                    <span
+                        className="ellipsis inbl alignbottom mw100"
+                        title={c('Title header for members table').t`Addresses`}
+                    >{c('Title header for members table').t`Addresses`}</span>
+                </>
+            )
+        },
+        {
+            node: (
+                <>
+                    <span
+                        className="ellipsis inbl alignbottom mw100"
+                        title={c('Title header for members table').t`Features`}
+                    >{c('Title header for members table').t`Features`}</span>
+                </>
+            ),
+            className: 'nomobile'
+        },
+        { node: c('Title').t`Action` }
+    ].map(({ node, className = '' }, i) => {
+        return (
+            <TableCell key={i.toString()} className={className} type="header">
+                {node}
+            </TableCell>
+        );
+    });
+
     return (
         <>
             <RestoreAdministratorPrivileges />
@@ -131,6 +182,7 @@ const MembersSection = () => {
                 <PrimaryButton
                     disabled={loadingOrganization || loadingDomains || loadingDomainAddresses || loadingOrganizationKey}
                     onClick={handleAddUser}
+                    className="onmobile-mb0-5"
                 >
                     {c('Action').t`Add user`}
                 </PrimaryButton>
@@ -144,22 +196,9 @@ const MembersSection = () => {
                 </div>
             </Block>
             <Table className="pm-simple-table--has-actions">
-                <TableHeader
-                    cells={[
-                        c('Title header for members table').t`Name`,
-                        <>
-                            <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
-                            <Info url="https://protonmail.com/support/knowledge-base/member-roles/" />
-                        </>,
-                        <>
-                            <span className="mr0-5">{c('Title header for members table').t`Private`}</span>
-                            <Info url="https://protonmail.com/support/knowledge-base/private-members/" />
-                        </>,
-                        c('Title header for members table').t`Addresses`,
-                        c('Title header for members table').t`Features`,
-                        c('Title header for members table').t`Actions`
-                    ]}
-                />
+                <thead>
+                    <tr>{headerCells}</tr>
+                </thead>
                 <TableBody loading={membersLoading || loadingMemberAddresses} colSpan={6}>
                     {membersSelected.map((member) => {
                         const key = member.ID;
@@ -182,6 +221,7 @@ const MembersSection = () => {
                                         organization={organization}
                                     />
                                 ]}
+                                className="ontablet-hideTd3 onmobile-hideTd5"
                             />
                         );
                     })}

@@ -109,9 +109,9 @@ const LogsSection = () => {
             <SubTitle>{c('Title').t`Authentication logs`}</SubTitle>
             <Alert>{c('Info')
                 .t`Logs includes authentication attempts for all Proton services that use your Proton credentials.`}</Alert>
-            <Block className="flex flex-spacebetween">
-                <div>
-                    <Group className="mr1">
+            <Block className="flex flex-spacebetween flex-items-center">
+                <div className="flex flex-items-center">
+                    <Group className="mr1 mb0-5">
                         <ButtonGroup
                             className={logAuth === DISABLE ? 'is-active' : ''}
                             onClick={handleLogAuth(DISABLE)}
@@ -124,21 +124,31 @@ const LogsSection = () => {
                             onClick={handleLogAuth(ADVANCED)}
                         >{c('Log preference').t`Advanced`}</ButtonGroup>
                     </Group>
-                    <Button icon="reload" className="mr1" onClick={requestQueryLogs} title={c('Action').t`Refresh`} />
-                    {logs.length ? <WipeLogsButton className="mr1" onWipe={handleWipe} /> : null}
-                    {logs.length ? (
-                        <Button onClick={handleDownload} loading={requestDownload.loading}>{c('Action')
-                            .t`Download`}</Button>
-                    ) : null}
+                    <span className="flex-item-noshrink">
+                        <Button
+                            icon="reload"
+                            className="mr1 mb0-5"
+                            onClick={requestQueryLogs}
+                            title={c('Action').t`Refresh`}
+                        />
+                        {logs.length ? <WipeLogsButton className="mr1 mb0-5" onWipe={handleWipe} /> : null}
+                        {logs.length ? (
+                            <Button className="mb0-5 mr1" onClick={handleDownload} loading={requestDownload.loading}>{c(
+                                'Action'
+                            ).t`Download`}</Button>
+                        ) : null}
+                    </span>
                 </div>
-                <Pagination
-                    onNext={onNext}
-                    onPrevious={onPrevious}
-                    onSelect={onSelect}
-                    total={total}
-                    page={page}
-                    limit={ELEMENTS_PER_PAGE}
-                />
+                <div className="mb0-5">
+                    <Pagination
+                        onNext={onNext}
+                        onPrevious={onPrevious}
+                        onSelect={onSelect}
+                        total={total}
+                        page={page}
+                        limit={ELEMENTS_PER_PAGE}
+                    />
+                </div>
             </Block>
             <LogsTable logs={logs} logAuth={logAuth} loading={loading} />
         </>

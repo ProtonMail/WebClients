@@ -8,7 +8,7 @@ import ParentFolderSelector from './ParentFolderSelector';
 
 function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID }) {
     return (
-        <div className="w90 center flex-item-fluid">
+        <div className="center flex-item-fluid">
             <Row>
                 <Label htmlFor="accountName">
                     {label.Type === LABEL_TYPE.MESSAGE_FOLDER

@@ -9,7 +9,7 @@ import {
     Button,
     Table,
     MozillaInfoPanel,
-    TableHeader,
+    TableCell,
     TableBody,
     Pagination,
     usePaginationAsync,
@@ -76,6 +76,20 @@ const InvoicesSection = () => {
             </>
         );
     }
+    const headerCells = [
+        { node: 'ID', className: 'ellipsis' },
+        { node: c('Title').t`Amount` },
+        { node: c('Title').t`Type`, className: 'notablet nomobile' },
+        { node: c('Title').t`Status`, className: 'nomobile' },
+        { node: c('Title').t`Date`, className: 'nomobile' },
+        { node: c('Title').t`Action` }
+    ].map(({ node, className = '' }, i) => {
+        return (
+            <TableCell key={i.toString()} className={className} type="header">
+                {node}
+            </TableCell>
+        );
+    });
 
     return (
         <>
@@ -109,17 +123,10 @@ const InvoicesSection = () => {
                     onSelect={onSelect}
                 />
             </Block>
-            <Table className="pm-simple-table--has-actions min-w35e">
-                <TableHeader
-                    cells={[
-                        'ID',
-                        c('Title').t`Amount`,
-                        c('Title').t`Type`,
-                        c('Title').t`Status`,
-                        c('Title').t`Date`,
-                        c('Title').t`Action`
-                    ]}
-                />
+            <Table className="pm-simple-table--has-actions">
+                <thead>
+                    <tr>{headerCells}</tr>
+                </thead>
                 <TableBody loading={loading} colSpan={6}>
                     {invoices.map((invoice, index) => {
                         const key = index.toString();
@@ -134,6 +141,7 @@ const InvoicesSection = () => {
                                     <Time key={key}>{invoice.CreateTime}</Time>,
                                     <InvoiceActions key={key} invoice={invoice} fetchInvoices={request} />
                                 ]}
+                                className="ontablet-hideTd3 onmobile-hideTd4 onmobile-hideTd5"
                             />
                         );
                     })}

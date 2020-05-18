@@ -12,7 +12,7 @@ function AddEmailToList({ onChange }) {
     };
 
     return (
-        <div className="w90 center flex-item-fluid">
+        <div className="center flex-item-fluid mw100">
             <div className="flex flex-nowrap onmobile-flex-column mb1">
                 <Label htmlFor="email">{c('Label').t`Email`}</Label>
                 <Input

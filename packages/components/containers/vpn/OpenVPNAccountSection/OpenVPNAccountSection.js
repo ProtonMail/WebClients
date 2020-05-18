@@ -37,8 +37,8 @@ const OpenVPNAccountSection = () => {
             <Row>
                 <Label>{c('Label').t`OpenVPN / IKEv2 username`}</Label>
                 <Field>
-                    <div className="pt0-5">
-                        <code>{Name}</code>
+                    <div className="pt0-5 ellipsis mw100">
+                        <code title={Name}>{Name}</code>
                     </div>
                 </Field>
                 <div className="ml1 flex-item-noshrink onmobile-ml0 onmobile-mt0-5">
@@ -48,7 +48,7 @@ const OpenVPNAccountSection = () => {
             <Row>
                 <Label>{c('Label').t`OpenVPN / IKEv2 password`}</Label>
                 <Field>
-                    <div className="mb1 pt0-5">
+                    <div className="mb1 pt0-5 ellipsis mw100">
                         <code>{show ? Password : '••••••••••••••••••••'}</code>
                     </div>
                     <PrimaryButton disabled={!Name || !Password} onClick={handleEditCredentials}>{c('Action')

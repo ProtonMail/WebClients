@@ -11,13 +11,11 @@ const FilterSortableList = ({ items, ...rest }) => (
         <OrderableTableHeader>
             <tr>
                 <th scope="col" className="w5" />
-                <th scope="col" className="w45">
-                    {c('Settings/filters - table').t`Name`}
-                </th>
-                <th scope="col" className="w15">
+                <th scope="col">{c('Settings/filters - table').t`Name`}</th>
+                <th scope="col" className="w8e nomobile">
                     {c('Settings/filters - table').t`Status`}
                 </th>
-                <th scope="col" className="w30">
+                <th scope="col" className="w8e">
                     {c('Settings/filters - table').t`Action`}
                 </th>
             </tr>

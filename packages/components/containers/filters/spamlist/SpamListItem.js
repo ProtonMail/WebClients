@@ -21,8 +21,8 @@ function SpamListItem({ list, type, dest, onAction = noop, className, loading })
     };
 
     return (
-        <Bordered className={classnames(['flex-autogrid-item', className])}>
-            <header className="mt1 flex flex-spacebetween flex-items-center">
+        <Bordered className={classnames(['flex-item-fluid', className])}>
+            <header className="flex flex-spacebetween flex-items-center">
                 <h3 className="mb0">{I18N[type]}</h3>
                 <div>
                     <AddEmailFilterListButton type={type} onAdd={onAction('create')} />
@@ -57,7 +57,7 @@ function SpamListItem({ list, type, dest, onAction = noop, className, loading })
                     })}
                 </ul>
             )}
-            {!list.length && !loading && <Alert className="m1">{I18N.empty(type)}</Alert>}
+            {!list.length && !loading && <Alert>{I18N.empty(type)}</Alert>}
         </Bordered>
     );
 }

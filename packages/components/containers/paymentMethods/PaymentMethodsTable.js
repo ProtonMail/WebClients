@@ -18,7 +18,14 @@ const PaymentMethodsTable = ({ methods, loading }) => {
             case PAYMENT_METHOD_TYPES.CARD:
                 return `${method.Details.Brand} (•••• ${method.Details.Last4})`;
             case PAYMENT_METHOD_TYPES.PAYPAL:
-                return `PayPal ${method.Details.Payer}`;
+                return (
+                    <>
+                        <span className="mr0-5">PayPal</span>
+                        <span className="autotablet ellipsis mw100" title={method.Details.Payer}>
+                            {method.Details.Payer}
+                        </span>
+                    </>
+                );
             default:
                 return '';
         }

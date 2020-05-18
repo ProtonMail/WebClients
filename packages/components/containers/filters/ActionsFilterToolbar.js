@@ -13,8 +13,9 @@ function ActionsFilterToolbar() {
 
     return (
         <>
-            <PrimaryButton onClick={handleClickAdd()}>{c('Action').t`Add Filter`}</PrimaryButton>
-            <Button onClick={handleClickAdd('complex')} className="ml1">
+            <PrimaryButton onClick={handleClickAdd()} className="onmobile-mb0-5 mr1">{c('Action')
+                .t`Add Filter`}</PrimaryButton>
+            <Button onClick={handleClickAdd('complex')} className="onmobile-mb0-5">
                 {c('Action').t`Add sieve filter`}
             </Button>
         </>

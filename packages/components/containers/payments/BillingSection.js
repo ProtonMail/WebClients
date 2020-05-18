@@ -138,7 +138,7 @@ const BillingSection = ({ permission }) => {
             <Alert>{c('Info').t`We always use credits before charging your saved payment method.`}</Alert>
             <div className="shadow-container">
                 {hasPaidMail ? (
-                    <div className="border-bottom pt1 pl1 pr1">
+                    <div className="border-bottom pt1 pl1 pr1 onmobile-pb1">
                         {mailPlan ? (
                             <div className="flex-autogrid flex-items-center w100 mb1">
                                 <div className="flex-autogrid-item">
@@ -297,7 +297,7 @@ const BillingSection = ({ permission }) => {
                     </div>
                 ) : null}
                 {hasPaidVpn && !hasVisionary(subscription) ? (
-                    <div className="border-bottom pt1 pl1 pr1">
+                    <div className="border-bottom pt1 pl1 pr1 onmobile-pb1">
                         {vpnPlan ? (
                             <div className="flex-autogrid w100 mb1">
                                 <div className="flex-autogrid-item">
@@ -373,7 +373,7 @@ const BillingSection = ({ permission }) => {
                     </div>
                 ) : null}
                 {CouponCode || [YEARLY, TWO_YEARS].includes(Cycle) ? (
-                    <div className="border-bottom pt1 pl1 pr1">
+                    <div className="border-bottom pt1 pl1 pr1 onmobile-pb1">
                         <div className="flex-autogrid w100 mb1">
                             <div className="flex-autogrid-item h4 mb0">{c('Label').t`Subtotal`}</div>
                             <div className="flex-autogrid-item h4 mb0 bold alignright">
