@@ -381,18 +381,20 @@ function useFiles() {
         });
     };
 
+    /**
+     * Starts folder download, resolves when all files have been downloaded or rejects on error
+     */
     const startFolderTransfer = async (
         filename: string,
         shareId: string,
         linkId: string,
         cb: {
-            onStartFileTransfer: (file: NestedFileStream) => void;
-            onStartFolderTransfer: (path: string) => void;
-            onCancel: (reason: any) => void;
+            onStartFileTransfer: (file: NestedFileStream) => Promise<void>;
+            onStartFolderTransfer: (path: string) => Promise<void>;
         }
     ) => {
-        const { addDownload, startDownloads } = addFolderToDownloadQueue(filename, cb);
-        const fileStreamPromises: Promise<ReadableStream<Uint8Array>>[] = [];
+        const { addDownload, startDownloads } = addFolderToDownloadQueue(filename);
+        const fileStreamPromises: Promise<void>[] = [];
 
         const downloadFolder = async (linkId: string, filePath = ''): Promise<void> => {
             const isComplete = cache.get.childrenComplete(shareId, linkId);
@@ -410,22 +412,27 @@ function useFiles() {
             const promises = children.map((child) => {
                 const path = `${filePath}/${child.Name}`;
                 if (child.Type === LinkType.FILE) {
-                    const promise = new Promise<ReadableStream<Uint8Array>>((resolve) => {
+                    const promise = new Promise<void>((resolve, reject) => {
                         addDownload(getMetaForTransfer(child), {
                             transformBlockStream: decryptBlockStream(shareId, child.LinkID),
                             onStart: async (stream) => {
-                                resolve(stream);
                                 cb.onStartFileTransfer({
                                     stream,
                                     path
-                                });
+                                }).catch((err) => reject(err));
                                 return getFileBlocks(shareId, child.LinkID);
+                            },
+                            onFinish: () => {
+                                resolve();
+                            },
+                            onError(err) {
+                                reject(err);
                             }
                         });
                     });
                     fileStreamPromises.push(promise);
                 } else {
-                    cb.onStartFolderTransfer(path);
+                    cb.onStartFolderTransfer(path).catch((err) => console.error(`Failed to zip empty folder ${err}`));
                     return downloadFolder(child.LinkID, path);
                 }
             });
