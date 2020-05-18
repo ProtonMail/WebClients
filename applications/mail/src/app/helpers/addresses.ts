@@ -94,6 +94,11 @@ export const contactToRecipient = (contact: Partial<ContactEmail> = {}, groupPat
     Group: groupPath
 });
 
+export const majorToRecipient = (email: string) => ({
+    Name: email,
+    Address: email
+});
+
 export const contactToInput = (contact: Partial<ContactEmail> = {}): string =>
     recipientToInput(contactToRecipient(contact));
 

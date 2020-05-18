@@ -1,6 +1,7 @@
 import React, {
     useState,
     useEffect,
+    useMemo,
     ChangeEvent,
     MutableRefObject,
     useRef,
@@ -11,6 +12,7 @@ import React, {
 import { Input } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { MAJOR_DOMAINS } from 'proton-shared/lib/constants';
 
 import { MapSendInfo } from '../../../models/crypto';
 import { MessageExtended } from '../../../models/message';
@@ -19,6 +21,7 @@ import AddressesRecipientItem from './AddressesRecipientItem';
 import {
     inputToRecipient,
     contactToRecipient,
+    majorToRecipient,
     recipientsWithoutGroup,
     recipientsToRecipientOrGroup
 } from '../../../helpers/addresses';
@@ -55,8 +58,18 @@ const AddressesInput = ({
 }: Props) => {
     const [inputModel, setInputModel] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
-
     const recipientsOrGroups = recipientsToRecipientOrGroup(recipients, contactGroups);
+
+    const majorDomains = useMemo(() => {
+        if (!inputModel.includes('@')) {
+            return [];
+        }
+        const [localPart = ''] = inputModel.split('@');
+        if (!localPart) {
+            return [];
+        }
+        return MAJOR_DOMAINS.map((domain) => `${localPart}@${domain}`);
+    }, [inputModel]);
 
     const confirmInput = () => {
         onChange([...recipients, inputToRecipient(inputModel)]);
@@ -128,15 +141,16 @@ const AddressesInput = ({
         }
     };
 
-    const handleAutocompleteSelect = ({ contact, group }: ContactOrGroup) => {
+    const handleAutocompleteSelect = ({ contact, group, major }: ContactOrGroup) => {
         if (contact) {
             onChange([...recipients, contactToRecipient(contact)]);
-        }
-        if (group) {
+        } else if (group) {
             const groupContacts = contacts
                 .filter((contact) => contact.LabelIDs?.includes(group.ID || ''))
                 .map((contact) => contactToRecipient(contact, group.Path));
             onChange([...recipients, ...groupContacts]);
+        } else if (major) {
+            onChange([...recipients, majorToRecipient(major)]);
         }
         setInputModel('');
     };
@@ -148,6 +162,7 @@ const AddressesInput = ({
             autoComplete="no"
             contacts={contacts}
             contactGroups={contactGroups}
+            majorDomains={majorDomains}
             onSelect={handleAutocompleteSelect}
             currentValue={recipients}
         >
