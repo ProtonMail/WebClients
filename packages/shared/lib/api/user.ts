@@ -36,6 +36,9 @@ export const deleteUser = (data: {
     ClientProof: string;
     SRPSession: string;
     TwoFactorCode: number;
+    Reason?: string;
+    Feedback?: string;
+    Email?: string;
 }) => ({
     url: 'users/delete',
     method: 'put',
@@ -59,13 +62,15 @@ export const getHumanVerificationMethods = () => ({
 
 export const queryVerificationCode = (
     Type: 'email' | 'sms',
-    Destination: {
-        Address: string;
-        Phone?: never;
-    } | {
-        Address?: never;
-        Phone: string;
-    }
+    Destination:
+        | {
+              Address: string;
+              Phone?: never;
+          }
+        | {
+              Address?: never;
+              Phone: string;
+          }
 ) => ({
     url: 'users/code',
     method: 'post',
