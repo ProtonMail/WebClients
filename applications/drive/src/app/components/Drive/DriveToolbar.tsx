@@ -72,17 +72,20 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
             if (item.Type === LinkType.FILE) {
                 const meta = getMetaForTransfer(item);
                 const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
-                FileSaver.saveViaDownload(fileStream, meta);
+                FileSaver.saveAsFile(fileStream, meta);
             } else {
-                const zipSaver = await FileSaver.saveViaZip(`${item.Name}.zip`);
+                const zipSaver = await FileSaver.saveAsZip(`${item.Name}.zip`);
 
                 if (zipSaver) {
-                    await startFolderTransfer(item.Name, shareId, item.LinkID, {
-                        onStartFileTransfer: zipSaver.addFile,
-                        onStartFolderTransfer: zipSaver.addFolder,
-                        onCancel: zipSaver.abort
-                    });
-                    zipSaver.close();
+                    try {
+                        await startFolderTransfer(item.Name, shareId, item.LinkID, {
+                            onStartFileTransfer: zipSaver.addFile,
+                            onStartFolderTransfer: zipSaver.addFolder
+                        });
+                        zipSaver.close();
+                    } catch (e) {
+                        zipSaver.abort(e);
+                    }
                 }
             }
         });

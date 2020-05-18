@@ -46,7 +46,7 @@ export async function initDownloadSW() {
     if (isUnsupported()) {
         throw new Error('Saving file via download is unsupported by this browser');
     }
-    await registerServiceWorker({ scope: '/drive/' });
+    await registerServiceWorker({ scope: '/drive' });
     serviceWorkerKeepAlive();
 }
 

@@ -1,4 +1,5 @@
 import React, { ReactNode, useState, useCallback, SyntheticEvent } from 'react';
+import { MB } from '../../../constants';
 import { c } from 'ttag';
 
 import dragdropImageSvg from 'design-system/assets/img/pd-images/drag-and-drop.svg';
@@ -6,11 +7,9 @@ import dragdropImageSvg from 'design-system/assets/img/pd-images/drag-and-drop.s
 import useFiles from '../../../hooks/useFiles';
 import { useDriveActiveFolder } from '../../Drive/DriveFolderProvider';
 
-const MEGABYTE_SIZE = 1048576;
-
 const isFile = async (blob: File) => {
     return new Promise<boolean>((resolve) => {
-        if (blob.size > MEGABYTE_SIZE) {
+        if (blob.size > MB) {
             resolve(true);
         }
 
