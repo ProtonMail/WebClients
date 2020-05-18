@@ -214,10 +214,10 @@ function useDrive() {
     };
 
     const fetchNextFoldersOnlyContents = async (shareId: string, linkId: string) => {
-        const linkMetas = cache.get.foldersOnlyLinkMetas(shareId, linkId) || [];
+        const listedFolders = cache.get.listedFoldersOnlyLinks(shareId, linkId) || [];
 
         const PageSize = FOLDER_PAGE_SIZE;
-        const Page = Math.floor(linkMetas.length / PageSize);
+        const Page = Math.floor(listedFolders.length / PageSize);
         const FoldersOnly = 1;
 
         const { Links } = await debouncedRequest<LinkChildrenResult>(
@@ -235,16 +235,13 @@ function useDrive() {
     };
 
     const getFoldersOnlyMetas = async (shareId: string, linkId: string, fetchNextPage = false) => {
-        let linkMetas = cache.get.foldersOnlyLinkMetas(shareId, linkId) || [];
-        if (cache.get.foldersOnlyComplete(shareId, linkId)) {
-            return linkMetas;
-        }
-
-        if (!linkMetas.length || fetchNextPage) {
+        const listedFolders = cache.get.listedFoldersOnlyLinks(shareId, linkId) || [];
+        const complete = cache.get.foldersOnlyComplete(shareId, linkId);
+        if ((!complete && listedFolders.length === 0) || fetchNextPage) {
             await fetchNextFoldersOnlyContents(shareId, linkId);
-            linkMetas = cache.get.foldersOnlyLinkMetas(shareId, linkId) || [];
         }
 
+        const linkMetas = cache.get.foldersOnlyLinkMetas(shareId, linkId) || [];
         return linkMetas;
     };
 

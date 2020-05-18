@@ -136,6 +136,16 @@ const useDriveCacheState = () => {
         return undefined;
     };
 
+    const getListedFoldersOnlyLinks = (shareId: string, linkId: string) => {
+        const link = cacheRef.current[shareId].links[linkId];
+
+        if (link && isCachedFolderLink(link)) {
+            return link.foldersOnly.list;
+        }
+
+        return undefined;
+    };
+
     const setChildLinkMetas = (
         metas: LinkMeta[],
         shareId: string,
@@ -375,6 +385,7 @@ const useDriveCacheState = () => {
             childLinks: getChildLinks,
             listedChildLinks: getListedChildLinks,
             foldersOnlyLinkMetas: getFoldersOnlyLinkMetas,
+            listedFoldersOnlyLinks: getListedFoldersOnlyLinks,
             foldersOnlyComplete: getfoldersOnlyComplete,
             linkMeta: getLinkMeta,
             linkKeys: getLinkKeys,
