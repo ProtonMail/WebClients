@@ -24,25 +24,25 @@ const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
             .t`An error occurred uploading your file ${formattedFilename}. Only .ics file formats are allowed.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.FILE_EMPTY) {
-        return c('Error importing calendar').t`The ICS file ${formattedFilename} is empty.`;
+        return c('Error importing calendar').t`Your file ${formattedFilename} is empty.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.FILE_TOO_BIG) {
         return c('Error importing calendar')
             .t`An error occurred uploading your file ${formattedFilename}. Maximum file size is ${MAX_IMPORT_FILE_SIZE_STRING}.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.INVALID_CALENDAR) {
-        return c('Error importing calendar').t`The ICS file ${formattedFilename} is not a calendar.`;
+        return c('Error importing calendar').t`Your file ${formattedFilename} is not a calendar.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.NO_EVENTS) {
-        return c('Error importing calendar').t`The file ${formattedFilename} has no events to be imported.`;
+        return c('Error importing calendar').t`Your file ${formattedFilename} has no events to be imported.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.TOO_MANY_EVENTS) {
         return c('Error importing calendar')
-            .t`The ICS file ${formattedFilename} contains more than ${MAX_IMPORT_EVENTS_STRING} events.`;
+            .t`Your file ${formattedFilename} contains more than ${MAX_IMPORT_EVENTS_STRING} events.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.FILE_CORRUPTED) {
         return c('Error importing calendar')
-            .t`An error occurred reading the file ${formattedFilename}. File doesn't have the right format.`;
+            .t`An error occurred reading your file ${formattedFilename}. File doesn't have the right format.`;
     }
 };
 
