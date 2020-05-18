@@ -12,11 +12,12 @@ const SOURCE_FILE_INDEX = "find dist -maxdepth 1 -type f -name 'index*.js'";
  * @param  {Array} flags flags used to bundle
  * @return {Object}       app's config
  */
-async function getNewConfig(api, flags = process.argv.slice(3)) {
+async function getNewConfig(api, flags = process.argv.slice(3), isCurrent = false) {
     if (isWebClientLegacy()) {
-        const { stdout = '' } = await bash('./tasks/setupConfig.js', [
+        const branch = !isCurrent ? api.replace('+proxy', '') : 'dev';
+        const { stdout = '' } = await bash('NODE_ENV=dist ./tasks/setupConfig.js', [
             '--print-config',
-            `--branch deploy-${api.replace('+proxy', '')}`,
+            `--branch deploy-${branch}`,
             ...flags
         ]);
         debug(stdout, 'stdout config angular');
@@ -41,7 +42,7 @@ async function writeNewConfig(api) {
     const {
         sentry: { dsn: currentSentryDSN },
         secureUrl: currentSecureURL
-    } = await getNewConfig(api, ['--api proxy']);
+    } = await getNewConfig(api, ['--api proxy'], true);
     const {
         apiUrl,
         sentry: { dsn: newSentryDSN },
