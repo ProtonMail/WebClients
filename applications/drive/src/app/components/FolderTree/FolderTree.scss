@@ -3,8 +3,7 @@
     @extend .scroll-if-needed;
 
     border-radius: $global-border-radius;
-    min-height: 15em;
-    max-height: 35em;
+    height: 28em;
 
     &-table {
         width: auto;

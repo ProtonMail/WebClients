@@ -1,5 +1,6 @@
 import React from 'react';
 import ExpandableRow from './ExpandableRow';
+import { TableRowBusy } from 'react-components';
 
 export interface FolderTreeItem {
     linkId: string;
@@ -10,11 +11,12 @@ export interface FolderTreeItem {
 interface Props {
     folders: FolderTreeItem[];
     selectedFolderId?: string;
+    loading?: boolean;
     onSelect: (LinkID: string) => void;
     loadChildren: (LinkID: string, loadNextPage?: boolean) => Promise<void>;
 }
 
-const FolderTree = ({ folders, selectedFolderId, onSelect, loadChildren }: Props) => {
+const FolderTree = ({ folders, selectedFolderId, loading = false, onSelect, loadChildren }: Props) => {
     const generateRows = (folders: FolderTreeItem[], depth = 0) => {
         const rows = folders.map(({ linkId, name, children }: FolderTreeItem) => {
             const childrenRows = children.list.length ? generateRows(children.list, depth + 1) : null;
@@ -25,6 +27,7 @@ const FolderTree = ({ folders, selectedFolderId, onSelect, loadChildren }: Props
                     name={name}
                     depth={depth}
                     isSelected={selectedFolderId === linkId}
+                    isExpanded={depth === 0}
                     onSelect={onSelect}
                     loadChildren={loadChildren}
                     childrenComplete={children.complete}
@@ -42,7 +45,7 @@ const FolderTree = ({ folders, selectedFolderId, onSelect, loadChildren }: Props
     return (
         <div className="pd-folder-tree">
             <table className="pd-folder-tree-table pm-simple-table pm-simple-table--isHoverable ">
-                <tbody>{rows}</tbody>
+                <tbody>{loading ? <TableRowBusy /> : rows}</tbody>
             </table>
         </div>
     );
