@@ -179,7 +179,7 @@ const TrashToolbar = ({ shareId }: Props) => {
                     <ToolbarButton
                         disabled={!selectedItems.length || restoreLoading}
                         title={c('Action').t`Restore from Trash`}
-                        icon="calendar-repeat"
+                        icon="repeat"
                         onClick={() => withRestoreLoading(restoreFromTrash())}
                     />
                     <ToolbarSeparator />
