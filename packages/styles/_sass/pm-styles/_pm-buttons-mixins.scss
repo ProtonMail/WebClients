@@ -2,11 +2,19 @@
 @import "../reusable-components/design-system-config";
 
 
-@mixin button-disabled-state (){
-  background-color: $pm-global-muted;
-  color: rgba( $pm-global-grey, .3 );
-    border-color: $pm-global-border;
+@mixin button-disabled-state ($color: null){
   pointer-events: none;
+
+  @if $color == null {
+    background-color: $pm-global-muted;
+    border-color: $pm-global-border;
+    color: rgba( $pm-global-grey, .3 );
+  }
+  @else {
+    background-color: rgba($color, .2);
+    border-color: rgba($color, .25);
+    color: rgba($color, .5);
+  }
 }
 
 @mixin button-disabled-state-dm() {
@@ -14,7 +22,7 @@
   color: rgba( $pm-global-muted, .3 );
   pointer-events: none;
   border-color: rgba( $pm-global-muted, .3 );
-  & svg { 
+  & svg {
     fill: rgba( $pm-global-muted, .3 );
   }
 }

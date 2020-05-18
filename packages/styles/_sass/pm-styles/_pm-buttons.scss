@@ -85,7 +85,7 @@
   }
   &[disabled],
   &.is-disabled {
-    @include button-disabled-state;
+    @include button-disabled-state($pm-primary);
   }
   /* just to cancel examples  */
   &.is-hover:hover {
@@ -146,7 +146,7 @@
   }
   &[disabled],
   &.is-disabled {
-    @include button-disabled-state;
+    @include button-disabled-state($pv-green);
   }
   /* just to cancel examples  */
   &.is-hover:hover {
@@ -341,6 +341,10 @@
     background-color: $pm-global-warning;
     border-color: $pm-global-warning;
   }
+  &[disabled],
+  &.is-disabled {
+    @include button-disabled-state($pm-global-warning);
+  }
 }
 .pm-button--warning,
 .pm-button.pm-button--warning {
@@ -352,6 +356,10 @@
   &:not(div):active { // not div is here for a specificity issue for another fix
     background-color: $pm-global-attention;
     border-color: $pm-global-attention;
+  }
+  &[disabled],
+  &.is-disabled {
+    @include button-disabled-state($pm-global-attention);
   }
 }
 .pm-button--info {
