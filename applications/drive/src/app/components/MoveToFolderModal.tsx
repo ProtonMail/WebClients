@@ -158,7 +158,7 @@ const MoveToFolderModal = ({
 
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
-            <HeaderModal modalTitleID={modalTitleID} onClose={onClose}>
+            <HeaderModal modalTitleID={modalTitleID} hasClose={!loading} onClose={onClose}>
                 {modalContents.title}
             </HeaderModal>
             <ContentModal
