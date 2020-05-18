@@ -10,6 +10,7 @@ interface Props {
     name: string;
     depth: number;
     isSelected: boolean;
+    isExpanded?: boolean;
     onSelect: (LinkID: string) => void;
     loadChildren: (LinkID: string, loadNextPage?: boolean) => Promise<void>;
     childrenComplete: boolean;
@@ -21,12 +22,13 @@ const ExpandableRow = ({
     name,
     depth,
     isSelected,
+    isExpanded = false,
     onSelect,
     loadChildren,
     childrenComplete,
     children
 }: Props) => {
-    const [expanded, setExpanded] = useState(false);
+    const [expanded, setExpanded] = useState(isExpanded);
     const [loadingChildren, withLoadingChildren] = useLoading();
 
     const handleExpand = (linkId: string) => {

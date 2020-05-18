@@ -221,6 +221,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
                     await events.call(shareId);
                 }}
+                openCreateFolderModal={handleCreateFolder}
             />
         );
     };
