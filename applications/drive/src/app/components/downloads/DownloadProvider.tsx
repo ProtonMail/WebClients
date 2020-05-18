@@ -3,12 +3,14 @@ import { TransferState, TransferProgresses, TransferMeta } from '../../interface
 import { initDownload, DownloadControls, DownloadCallbacks } from './download';
 import { useApi, generateUID } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
+import { FILE_CHUNK_SIZE } from '../../constants';
 
-const MAX_ACTIVE_DOWNLOADS = 3;
+const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
 
 type PartialDownload = {
     id: string;
     partOf: string;
+    meta: TransferMeta;
     state: TransferState;
 };
 
@@ -90,8 +92,12 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     useEffect(() => {
         const activeDownloads = downloads.filter(({ state }) => state === TransferState.Progress);
         const nextPending = downloads.find(({ state }) => state === TransferState.Pending);
+        const downloadLoad = activeDownloads.reduce(
+            (load, download) => load + Math.floor((download.meta.size ?? 0) / FILE_CHUNK_SIZE) + 1,
+            0
+        );
 
-        if (activeDownloads.length < MAX_ACTIVE_DOWNLOADS && nextPending) {
+        if (downloadLoad < MAX_DOWNLOAD_LOAD && nextPending) {
             const { id } = nextPending;
 
             updateDownloadState(id, TransferState.Progress);
@@ -101,7 +107,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                 .then(() => {
                     // Update download progress to 100% (for empty files, or transfers from buffer)
                     const download = downloads.find((download) => download.id === id);
-                    if (download && 'meta' in download) {
+                    if (download) {
                         progresses.current[id] = download.meta.size ?? 0;
                     }
                     updateDownloadState(id, TransferState.Done);
@@ -240,8 +246,9 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                               }
                             : download
                     ),
-                    ...Object.entries(files).map(([id]) => ({
+                    ...Object.entries(files).map(([id, { meta }]) => ({
                         id,
+                        meta,
                         partOf: groupId,
                         state: TransferState.Initializing
                     }))
