@@ -9,6 +9,7 @@ interface Props {
     linkId: string;
     name: string;
     depth: number;
+    disabled?: boolean;
     isSelected: boolean;
     isExpanded?: boolean;
     onSelect: (LinkID: string) => void;
@@ -21,6 +22,7 @@ const ExpandableRow = ({
     linkId,
     name,
     depth,
+    disabled = false,
     isSelected,
     isExpanded = false,
     onSelect,
@@ -44,6 +46,9 @@ const ExpandableRow = ({
     };
 
     const handleSelect = (linkId: string) => () => {
+        if (disabled) {
+            return;
+        }
         onSelect(linkId);
     };
 
@@ -68,6 +73,7 @@ const ExpandableRow = ({
                 <td style={{ paddingLeft }} className="flex flex-items-center flex-nowrap m0">
                     <div className="flex-item-noshrink pl0-5 pr0-5">
                         <Button
+                            disabled={disabled}
                             className="pd-folder-tree-listItem-button"
                             onClick={(e) => {
                                 e.stopPropagation();

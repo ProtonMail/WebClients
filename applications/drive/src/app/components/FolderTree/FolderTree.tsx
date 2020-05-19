@@ -10,15 +10,17 @@ export interface FolderTreeItem {
 
 interface Props {
     folders: FolderTreeItem[];
+    itemsToMove: string[];
     selectedFolderId?: string;
     loading?: boolean;
     onSelect: (LinkID: string) => void;
     loadChildren: (LinkID: string, loadNextPage?: boolean) => Promise<void>;
 }
 
-const FolderTree = ({ folders, selectedFolderId, loading = false, onSelect, loadChildren }: Props) => {
+const FolderTree = ({ folders, itemsToMove, selectedFolderId, loading = false, onSelect, loadChildren }: Props) => {
     const generateRows = (folders: FolderTreeItem[], depth = 0) => {
         const rows = folders.map(({ linkId, name, children }: FolderTreeItem) => {
+            const disabled = itemsToMove.includes(linkId);
             const childrenRows = children.list.length ? generateRows(children.list, depth + 1) : null;
             return (
                 <ExpandableRow
@@ -28,6 +30,7 @@ const FolderTree = ({ folders, selectedFolderId, loading = false, onSelect, load
                     depth={depth}
                     isSelected={selectedFolderId === linkId}
                     isExpanded={depth === 0}
+                    disabled={disabled}
                     onSelect={onSelect}
                     loadChildren={loadChildren}
                     childrenComplete={children.complete}

@@ -6,8 +6,23 @@ import { LinkButton } from 'react-components';
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import { LinkType, LinkMeta } from '../../interfaces/link';
 
+export const selectMessageForItemList = (
+    types: LinkType[],
+    messages: {
+        allFiles: string;
+        allFolders: string;
+        mixed: string;
+    }
+) => {
+    const allFiles = types.every((type) => type === LinkType.FILE);
+    const allFolders = types.every((type) => type === LinkType.FOLDER);
+    const message = (allFiles && messages.allFiles) || (allFolders && messages.allFolders) || messages.mixed;
+
+    return message;
+};
+
 export const getNotificationTextForItemList = (
-    itemList: FileBrowserItem[],
+    types: LinkType[],
     messages: {
         allFiles: string;
         allFolders: string;
@@ -15,9 +30,7 @@ export const getNotificationTextForItemList = (
     },
     undoAction?: () => void
 ) => {
-    const allFiles = itemList.every(({ Type }) => Type === LinkType.FILE);
-    const allFolders = itemList.every(({ Type }) => Type === LinkType.FOLDER);
-    const notificationText = (allFiles && messages.allFiles) || (allFolders && messages.allFolders) || messages.mixed;
+    const notificationText = selectMessageForItemList(types, messages);
 
     if (undoAction) {
         return (
