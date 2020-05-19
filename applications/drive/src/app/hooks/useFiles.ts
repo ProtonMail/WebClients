@@ -149,7 +149,7 @@ function useFiles() {
                 getPrimaryAddressKey()
             ]);
 
-            const { NodeKey, privateKey, NodePassphrase, signature: NodePassphraseSignature } = await generateNodeKeys(
+            const { NodeKey, privateKey, NodePassphrase, NodePassphraseSignature } = await generateNodeKeys(
                 parentKeys.privateKey,
                 addressKeyInfo.privateKey
             );

@@ -18,7 +18,6 @@ import { getNotificationTextForItemList } from './helpers';
 import { DriveFolder } from './DriveFolderProvider';
 import { LinkType } from '../../interfaces/link';
 import { isPreviewAvailable } from '../FilePreview/FilePreview';
-import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -197,27 +196,49 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                 getFoldersOnlyMetas={getFoldersOnlyMetas}
                 isChildrenComplete={(LinkID: string) => !!cache.get.foldersOnlyComplete(shareId, LinkID)}
                 moveLinksToFolder={async (parentFolderId: string) => {
-                    const movedLinks = (
-                        await Promise.allSettled(
-                            toMove.map((link) => moveLink(shareId, parentFolderId, link.LinkID, link.Name))
-                        )
-                    ).reduce(
-                        (items: FileBrowserItem[], result: { status: string }, i: number) =>
-                            result.status === 'fulfilled' ? [...items, toMove[i]] : items,
-                        []
+                    const [movedLinks, failedMoves] = (
+                        await Promise.allSettled(toMove.map((link) => moveLink(shareId, parentFolderId, link.LinkID)))
+                    ).reduce<[string[], string[]]>(
+                        ([successful, failed], result, i: number) => {
+                            if (result.status === 'fulfilled') {
+                                successful.push(result.value);
+                            } else {
+                                failed.push(toMove[i].Name);
+                                console.error(`Failed to move file "${toMove[i].Name}": ${result.reason}`);
+                            }
+                            return [successful, failed];
+                        },
+                        [[], []]
                     );
 
                     const movedLinksCount = movedLinks.length;
-                    const [{ Name: firstItemName }] = movedLinks;
-                    const notificationMessage = c('Notification').ngettext(
-                        msgid`"${firstItemName}" successfully moved`,
-                        `${movedLinksCount} files successfully moved`,
-                        movedLinksCount
-                    );
-                    createNotification({
-                        type: 'success',
-                        text: notificationMessage
-                    });
+                    const failedMovesCount = failedMoves.length;
+
+                    if (movedLinksCount > 0) {
+                        const [firstItemName] = movedLinks;
+                        const notificationMessage = c('Notification').ngettext(
+                            msgid`"${firstItemName}" successfully moved`,
+                            `${movedLinksCount} files successfully moved`,
+                            movedLinksCount
+                        );
+                        createNotification({
+                            type: 'success',
+                            text: notificationMessage
+                        });
+                    }
+
+                    if (failedMovesCount > 0) {
+                        const [firstItemName] = failedMoves;
+                        const notificationMessage = c('Notification').ngettext(
+                            msgid`"${firstItemName}" failed to be moved`,
+                            `${failedMovesCount} files failed to be moved`,
+                            failedMovesCount
+                        );
+                        createNotification({
+                            type: 'error',
+                            text: notificationMessage
+                        });
+                    }
 
                     await events.call(shareId);
                 }}
