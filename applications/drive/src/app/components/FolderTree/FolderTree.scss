@@ -18,4 +18,12 @@
         display: flex;
         padding: 0.25em;
     }
+
+    &-listItem-name {
+        min-width: 10em;
+    }
+
+    &-listItem-selected {
+        min-width: 3em;
+    }
 }
