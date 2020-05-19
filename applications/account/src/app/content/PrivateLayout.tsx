@@ -11,6 +11,7 @@ import MembersContainer from '../containers/MembersContainer';
 import SubscriptionContainer from '../containers/SubscriptionContainer';
 import AccountContainer from '../containers/AccountContainer';
 import GeneralContainer from '../containers/GeneralContainer';
+import SecurityContainer from '../containers/SecurityContainer';
 import SidebarVersion from './SidebarVersion';
 
 const PrivateLayout = ({ location }: RouteComponentProps) => {
@@ -70,11 +71,7 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
                             <MainAreaContext.Provider value={mainAreaRef}>
                                 <ErrorBoundary key={location.pathname}>
                                     <Switch>
-                                        {/* <Route
-                                            path="/settings"
-                                            exact
-                                            render={({ history }) => <OverviewContainer history={history} />}
-                                        /> */}
+                                        <Route path="/settings" exact render={() => 'Overview'} />
                                         <Route
                                             path="/settings/account"
                                             render={() => <AccountContainer setActiveSection={setActiveSection} />}
@@ -94,6 +91,10 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
                                         <Route
                                             path="/settings/general"
                                             render={() => <GeneralContainer setActiveSection={setActiveSection} />}
+                                        />
+                                        <Route
+                                            path="/settings/security"
+                                            render={() => <SecurityContainer setActiveSection={setActiveSection} />}
                                         />
                                         <Redirect to="/settings" />
                                     </Switch>
