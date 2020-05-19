@@ -1,15 +1,17 @@
 // eslint-disable-next-line import/no-unresolved
 import registerServiceWorker from 'service-worker-loader!./downloadSW';
-import { isSafari, isEdge, isEdgeChromium } from 'proton-shared/lib/helpers/browser';
+import { isSafari, isEdge, isEdgeChromium, isIos } from 'proton-shared/lib/helpers/browser';
 import { WritableStream } from 'web-streams-polyfill';
 
 /**
  * Safari and Edge don't support returning stream as a response.
  * Safari - has everything but fails to stream a response from SW.
- * Edge - doesn't support ReadableStream() constructor, will support it in chromium version.
+ * Edge - doesn't support ReadableStream() constructor, but supports it in chromium version.
+ * IOS - forces all browsers to use webkit, so same problems as safari in all browsers.
  * For them download is done in-memory using blob response.
  */
-export const isUnsupported = () => !('serviceWorker' in navigator) || isSafari() || (isEdge() && !isEdgeChromium());
+export const isUnsupported = () =>
+    !('serviceWorker' in navigator) || isSafari() || (isEdge() && !isEdgeChromium()) || isIos();
 
 function createDownloadIframe(src: string) {
     const iframe = document.createElement('iframe');

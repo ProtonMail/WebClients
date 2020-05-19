@@ -1,5 +1,5 @@
 import React from 'react';
-import { isSafari } from 'proton-shared/lib/helpers/browser';
+import { isSafari, hasPDFSupport } from 'proton-shared/lib/helpers/browser';
 import { c } from 'ttag';
 import Header from './Header';
 import ImagePreview from './ImagePreview';
@@ -31,7 +31,7 @@ export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mim
 
 // Will include more rules in the future
 export const isPreviewAvailable = (mimeType: string) =>
-    isSupportedImage(mimeType) || isSupportedText(mimeType) || isPDF(mimeType);
+    isSupportedImage(mimeType) || isSupportedText(mimeType) || (hasPDFSupport() && isPDF(mimeType));
 
 interface Props {
     loading: boolean;
