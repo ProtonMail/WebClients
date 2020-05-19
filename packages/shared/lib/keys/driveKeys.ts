@@ -124,7 +124,7 @@ export const generateNodeKeys = async (parentKey: OpenPGPKey, addressKey: OpenPG
     const [
         { NodePassphrase, NodePassphraseSignature },
         { privateKey, privateKeyArmored: NodeKey }
-    ] = await Promise.all([encryptPassphrase(parentKey, addressKey), generateDriveKey(rawPassphrase)]);
+    ] = await Promise.all([encryptPassphrase(parentKey, addressKey, rawPassphrase), generateDriveKey(rawPassphrase)]);
 
     return { privateKey, NodeKey, NodePassphrase, NodePassphraseSignature };
 };
