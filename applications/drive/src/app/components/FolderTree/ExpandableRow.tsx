@@ -78,14 +78,14 @@ const ExpandableRow = ({
                             <Icon size={12} name="caret" className={expanded ? 'rotateX-180' : undefined} />
                         </Button>
                     </div>
-                    <div key="Name" className="flex flex-items-center flex-nowrap w100">
+                    <div key="Name" className="pd-folder-tree-listItem-name flex flex-items-center flex-nowrap w100">
                         <MimeIcon mimeType="Folder" />
                         <span className="ellipsis" title={name}>
                             {name}
                         </span>
                     </div>
                     {isSelected && (
-                        <div className="flex-item-noshrink pl0-5 pr0-5">
+                        <div className="pd-folder-tree-listItem-selected flex-item-noshrink pl0-5 pr0-5">
                             <Icon name="check-circle" size={20} />
                         </div>
                     )}
