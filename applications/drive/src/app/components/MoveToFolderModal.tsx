@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ReactNode } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import {
     useLoading,
@@ -18,6 +18,7 @@ import { LinkMeta } from '../interfaces/link';
 import { ShareMeta } from '../interfaces/share';
 import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import HasNoFolders from './HasNoFolders/HasNoFolders';
+import { selectMessageForItemList } from './Drive/helpers';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -127,13 +128,27 @@ const MoveToFolderModal = ({
     };
 
     const modalTitleID = 'MoveToFolderId';
+    const itemsToMove = selectedItems.map((item) => item.LinkID);
+    const itemsToMoveCount = itemsToMove.length;
+    const messages = {
+        allFiles: c('Notification').ngettext(msgid`Move 1 file`, `Move ${itemsToMoveCount} files`, itemsToMoveCount),
+        allFolders: c('Notification').ngettext(
+            msgid`Move 1 folder`,
+            `Move ${itemsToMoveCount} folders`,
+            itemsToMoveCount
+        ),
+        mixed: c('Notification').ngettext(msgid`Move 1 item`, `Move ${itemsToMoveCount} items`, itemsToMoveCount)
+    };
 
     let modalContents = {
-        title:
-            selectedItems.length === 1 ? c('Title').t`Move 1 file` : c('Title').t`Move ${selectedItems.length} files`,
+        title: selectMessageForItemList(
+            selectedItems.map((item) => item.Type),
+            messages
+        ),
         content: (
             <FolderTree
                 folders={folders}
+                itemsToMove={itemsToMove}
                 selectedFolderId={selectedFolder}
                 loading={initializing}
                 onSelect={onSelect}

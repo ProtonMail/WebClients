@@ -385,7 +385,7 @@ function useDrive() {
         };
 
         await debouncedRequest(queryMoveLink(shareId, linkId, data));
-        return meta.Name;
+        return { Type: meta.Type, Name: meta.Name };
     };
 
     const events = {

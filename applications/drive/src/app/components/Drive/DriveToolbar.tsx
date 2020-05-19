@@ -153,7 +153,10 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                 )
             };
 
-            const notificationText = getNotificationTextForItemList(toTrash, notificationMessages);
+            const notificationText = getNotificationTextForItemList(
+                toTrash.map((item) => item.Type),
+                notificationMessages
+            );
             createNotification({ text: notificationText });
             await events.call(shareId);
         };
@@ -176,7 +179,11 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
             )
         };
 
-        const movedToTrashText = getNotificationTextForItemList(toTrash, notificationMessages, undoAction);
+        const movedToTrashText = getNotificationTextForItemList(
+            toTrash.map((item) => item.Type),
+            notificationMessages,
+            undoAction
+        );
         createNotification({
             type: 'success',
             text: movedToTrashText
@@ -198,12 +205,12 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                 moveLinksToFolder={async (parentFolderId: string) => {
                     const [movedLinks, failedMoves] = (
                         await Promise.allSettled(toMove.map((link) => moveLink(shareId, parentFolderId, link.LinkID)))
-                    ).reduce<[string[], string[]]>(
+                    ).reduce<[{ Name: string; Type: LinkType }[], { Name: string; Type: LinkType }[]]>(
                         ([successful, failed], result, i: number) => {
                             if (result.status === 'fulfilled') {
                                 successful.push(result.value);
-                            } else {
-                                failed.push(toMove[i].Name);
+                            } else if (result.reason?.name === 'Error') {
+                                failed.push({ Name: toMove[i].Name, Type: toMove[i].Type });
                                 console.error(`Failed to move file "${toMove[i].Name}": ${result.reason}`);
                             }
                             return [successful, failed];
@@ -215,12 +222,29 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                     const failedMovesCount = failedMoves.length;
 
                     if (movedLinksCount > 0) {
-                        const [firstItemName] = movedLinks;
-                        const notificationMessage = c('Notification').ngettext(
-                            msgid`"${firstItemName}" successfully moved`,
-                            `${movedLinksCount} files successfully moved`,
-                            movedLinksCount
+                        const [{ Name: firstItemName }] = movedLinks;
+                        const notificationMessages = {
+                            allFiles: c('Notification').ngettext(
+                                msgid`"${firstItemName}" successfully moved`,
+                                `${movedLinksCount} files successfully moved`,
+                                movedLinksCount
+                            ),
+                            allFolders: c('Notification').ngettext(
+                                msgid`"${firstItemName}" successfully moved`,
+                                `${movedLinksCount} folders successfully moved`,
+                                movedLinksCount
+                            ),
+                            mixed: c('Notification').ngettext(
+                                msgid`"${firstItemName}" successfully moved`,
+                                `${movedLinksCount} items successfully moved`,
+                                movedLinksCount
+                            )
+                        };
+                        const notificationMessage = getNotificationTextForItemList(
+                            movedLinks.map((item) => item.Type),
+                            notificationMessages
                         );
+
                         createNotification({
                             type: 'success',
                             text: notificationMessage
@@ -228,11 +252,28 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                     }
 
                     if (failedMovesCount > 0) {
-                        const [firstItemName] = failedMoves;
-                        const notificationMessage = c('Notification').ngettext(
-                            msgid`"${firstItemName}" failed to be moved`,
-                            `${failedMovesCount} files failed to be moved`,
-                            failedMovesCount
+                        const [{ Name: firstItemName }] = failedMoves;
+                        const notificationMessages = {
+                            allFiles: c('Notification').ngettext(
+                                msgid`"${firstItemName}" failed to be moved`,
+                                `${failedMovesCount} files failed to be moved`,
+                                failedMovesCount
+                            ),
+                            allFolders: c('Notification').ngettext(
+                                msgid`"${firstItemName}" failed to be moved`,
+                                `${failedMovesCount} folders failed to be moved`,
+                                failedMovesCount
+                            ),
+                            mixed: c('Notification').ngettext(
+                                msgid`"${failedMovesCount}" failed to be moved`,
+                                `${failedMovesCount} items failed to be moved`,
+                                failedMovesCount
+                            )
+                        };
+
+                        const notificationMessage = getNotificationTextForItemList(
+                            failedMoves.map((item) => item.Type),
+                            notificationMessages
                         );
                         createNotification({
                             type: 'error',
@@ -291,7 +332,6 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                     onClick={() => withMoveToTrashLoading(moveToTrash())}
                 />
                 <ToolbarButton
-                    disabled={hasFoldersSelected}
                     title={c('Action').t`Move to Folder`}
                     icon="arrow-cross"
                     onClick={() => moveToFolder()}
