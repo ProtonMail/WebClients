@@ -104,18 +104,29 @@ export const generateNodeHashKey = async (publicKey: OpenPGPKey) => {
     return { NodeHashKey };
 };
 
-export const generateNodeKeys = async (parentKey: OpenPGPKey, addressKey: OpenPGPKey = parentKey) => {
-    const rawPassphrase = generatePassphrase();
-    const { privateKey, privateKeyArmored: NodeKey } = await generateDriveKey(rawPassphrase);
-
-    const { data: NodePassphrase, signature } = await encryptMessage({
+export const encryptPassphrase = async (
+    parentKey: OpenPGPKey,
+    addressKey: OpenPGPKey = parentKey,
+    rawPassphrase = generatePassphrase()
+) => {
+    const { data: NodePassphrase, signature: NodePassphraseSignature } = await encryptMessage({
         data: rawPassphrase,
         privateKeys: addressKey,
         publicKeys: parentKey.toPublic(),
         detached: true
     });
 
-    return { privateKey, NodeKey, NodePassphrase, rawPassphrase, signature };
+    return { NodePassphrase, NodePassphraseSignature, rawPassphrase };
+};
+
+export const generateNodeKeys = async (parentKey: OpenPGPKey, addressKey: OpenPGPKey = parentKey) => {
+    const rawPassphrase = generatePassphrase();
+    const [
+        { NodePassphrase, NodePassphraseSignature },
+        { privateKey, privateKeyArmored: NodeKey }
+    ] = await Promise.all([encryptPassphrase(parentKey, addressKey), generateDriveKey(rawPassphrase)]);
+
+    return { privateKey, NodeKey, NodePassphrase, NodePassphraseSignature };
 };
 
 export const generateContentHash = async (content: Uint8Array) => {
@@ -136,14 +147,14 @@ export const generateDriveBootstrap = async (addressPrivateKey: OpenPGPKey) => {
         NodeKey: ShareKey,
         NodePassphrase: SharePassphrase,
         privateKey: sharePrivateKey,
-        signature: SharePassphraseSignature
+        NodePassphraseSignature: SharePassphraseSignature
     } = await generateNodeKeys(addressPrivateKey);
 
     const {
         NodeKey: FolderKey,
         NodePassphrase: FolderPassphrase,
         privateKey: folderPrivateKey,
-        signature: FolderPassphraseSignature
+        NodePassphraseSignature: FolderPassphraseSignature
     } = await generateNodeKeys(sharePrivateKey, addressPrivateKey);
 
     const FolderName = await encryptUnsigned({
