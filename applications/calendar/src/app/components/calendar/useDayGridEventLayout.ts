@@ -1,10 +1,11 @@
-import { useMemo } from 'react';
+import { CSSProperties, useMemo } from 'react';
 
 import { toPercent } from './mouseHelpers/mathHelpers';
 import { splitDayEventsInInterval } from './splitDayEventsInInterval';
 import { layout } from './layout';
+import { CalendarViewEvent } from '../../containers/calendar/interface';
 
-const getIsAllSingle = (eventsInRowSummary, start, end) => {
+const getIsAllSingle = (eventsInRowSummary: EventsInRowSummary, start: number, end: number) => {
     for (let i = start; i < end; ++i) {
         if (eventsInRowSummary[i].more !== 1) {
             return false;
@@ -13,7 +14,25 @@ const getIsAllSingle = (eventsInRowSummary, start, end) => {
     return true;
 };
 
-const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
+export interface DayGridResult {
+    more: number;
+    events: number[];
+}
+export interface EventsStyleResult {
+    idx: number;
+    type: 'event' | 'more';
+    style: CSSProperties;
+}
+
+export interface EventsInRowSummary {
+    [key: number]: DayGridResult;
+}
+const useDayGridEventLayout = (
+    rows: Date[][],
+    events: CalendarViewEvent[],
+    numberOfRows: number,
+    dayEventHeight: number
+) => {
     return useMemo(() => {
         return rows.map((row) => {
             const columns = row.length;
@@ -28,7 +47,7 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
 
             let maxRows = 0;
 
-            const eventsInRowSummary = eventsLaidOut.reduce((acc, { column: eventRow }, i) => {
+            const eventsInRowSummary = eventsLaidOut.reduce<EventsInRowSummary>((acc, { column: eventRow }, i) => {
                 const { start, end } = eventsInRow[i];
 
                 maxRows = Math.max(maxRows, eventRow + 1);
@@ -45,7 +64,7 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
                 return acc;
             }, {});
 
-            const eventsInRowStyles = eventsLaidOut.reduce((acc, { column: eventRow }, i) => {
+            const eventsInRowStyles = eventsLaidOut.reduce<EventsStyleResult[]>((acc, { column: eventRow }, i) => {
                 const { start, end } = eventsInRow[i];
 
                 const isHidden = eventRow >= numberOfRows;
@@ -78,8 +97,8 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
                 return acc;
             }, []);
 
-            const moreDays = Object.keys(eventsInRowSummary).reduce((acc, dayIndex) => {
-                if (eventsInRowSummary[dayIndex].more <= 0) {
+            const moreDays = Object.keys(eventsInRowSummary).reduce<EventsStyleResult[]>((acc, dayIndex) => {
+                if (eventsInRowSummary[+dayIndex].more <= 0) {
                     return acc;
                 }
                 acc.push({
@@ -87,7 +106,7 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
                     type: 'more',
                     style: {
                         top: `${numberOfRows * dayEventHeight}px`,
-                        left: toPercent(dayIndex / columns),
+                        left: toPercent(+dayIndex / columns),
                         height: `${dayEventHeight}px`,
                         width: toPercent(1 / columns),
                     },

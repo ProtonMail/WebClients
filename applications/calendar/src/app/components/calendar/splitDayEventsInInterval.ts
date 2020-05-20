@@ -1,7 +1,18 @@
 import { differenceInCalendarDays, startOfDay, endOfDay, min, max } from 'proton-shared/lib/date-fns-utc';
+import { CalendarViewEvent } from '../../containers/calendar/interface';
+import { LayoutEvent } from './layout';
 
-export const splitDayEventsInInterval = ({ events = [], min: minDate, max: maxDate }) => {
-    return events.reduce((acc, { start, end, isAllDay, isAllPartDay }, i) => {
+interface SplitDayEventsInIntervalArguments {
+    events: CalendarViewEvent[];
+    min: Date;
+    max: Date;
+}
+export const splitDayEventsInInterval = ({
+    events = [],
+    min: minDate,
+    max: maxDate,
+}: SplitDayEventsInIntervalArguments) => {
+    return events.reduce<LayoutEvent[]>((acc, { start, end, isAllDay, isAllPartDay }, i) => {
         const startDate = startOfDay(max(start, minDate));
         const endDate = endOfDay(min(end, maxDate));
 

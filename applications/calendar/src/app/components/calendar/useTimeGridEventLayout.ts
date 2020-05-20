@@ -3,8 +3,15 @@ import { useMemo } from 'react';
 import { toPercent } from './mouseHelpers/mathHelpers';
 import { splitTimeGridEventsPerDay } from './splitTimeGridEventsPerDay';
 import { layout } from './layout';
+import { CalendarViewEvent } from '../../containers/calendar/interface';
 
-const useTimeGridEventLayout = (events, days, totalMinutes) => {
+export interface EventStyleResult {
+    top: string;
+    left: string;
+    height: string;
+    width: string;
+}
+const useTimeGridEventLayout = (events: CalendarViewEvent[], days: Date[], totalMinutes: number) => {
     return useMemo(() => {
         const eventsPerDay = splitTimeGridEventsPerDay({
             events,
@@ -13,7 +20,7 @@ const useTimeGridEventLayout = (events, days, totalMinutes) => {
             totalMinutes,
         });
 
-        const eventsLaidOut = Object.keys(eventsPerDay).reduce((acc, key) => {
+        const eventsLaidOut = Object.keys(eventsPerDay).reduce<{ [key: string]: EventStyleResult[] }>((acc, key) => {
             const eventsInDay = eventsPerDay[key];
 
             acc[key] = layout(eventsInDay).map(({ column, columns }, i) => {

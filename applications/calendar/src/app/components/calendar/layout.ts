@@ -1,8 +1,8 @@
-export const getCollisionGroups = (events) => {
+export const getCollisionGroups = (events: LayoutEvent[]) => {
     let maxEnd = -1;
-    let tmp = [];
+    let tmp: LayoutEvent[] = [];
 
-    return events.reduce((acc, event, i, arr) => {
+    return events.reduce<LayoutEvent[][]>((acc, event, i, arr) => {
         const { start, end } = event;
         const isIntersect = +start < maxEnd;
 
@@ -30,15 +30,19 @@ export const getCollisionGroups = (events) => {
     }, []);
 };
 
-export const getColumns = (group) => {
-    return group.reduce((columns, event, i) => {
+interface ColumnsResult {
+    indices: number[];
+    end: number;
+}
+export const getColumns = (group: LayoutEvent[]) => {
+    return group.reduce<ColumnsResult[]>((columns, event, i) => {
         for (let j = 0; j < columns.length; ++j) {
             const column = columns[j];
-            const isIntersect = event.start < column.end;
+            const isIntersect = +event.start < +column.end;
 
             if (!isIntersect) {
                 column.indices.push(i);
-                column.end = Math.max(column.end, event.end);
+                column.end = Math.max(column.end, +event.end);
                 return columns;
             }
         }
@@ -52,9 +56,19 @@ export const getColumns = (group) => {
     }, []);
 };
 
-export const layout = (events = []) => {
+export interface LayoutEvent {
+    idx: number;
+    start: number;
+    end: number;
+}
+export interface LayoutResult {
+    column: number;
+    columns: number;
+}
+
+export const layout = (events: LayoutEvent[] = []) => {
     const groups = getCollisionGroups(events);
-    return groups.reduce((acc, group) => {
+    return groups.reduce<LayoutResult[]>((acc, group) => {
         const columns = getColumns(group);
 
         group.forEach((event, j) => {

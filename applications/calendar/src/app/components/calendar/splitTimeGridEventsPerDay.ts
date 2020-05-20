@@ -1,6 +1,8 @@
 import { isSameDay, eachDayOfInterval, startOfDay, endOfDay, min, max } from 'proton-shared/lib/date-fns-utc';
+import { CalendarViewEvent } from '../../containers/calendar/interface';
+import { LayoutEvent } from './layout';
 
-export const getKey = (date) => {
+export const getKey = (date: Date) => {
     const year = date.getUTCFullYear();
     const month = date.getUTCMonth();
     const day = date.getUTCDate();
@@ -8,20 +10,26 @@ export const getKey = (date) => {
     return `${year}-${month}-${day}`;
 };
 
-export const toUTCMinutes = (date) => {
+export const toUTCMinutes = (date: Date) => {
     return date.getUTCHours() * 60 + date.getUTCMinutes();
 };
 
+interface SplitTimeGridEventsPerDay {
+    events: CalendarViewEvent[];
+    min: Date;
+    max: Date;
+    totalMinutes: number;
+}
 /**
  * Splits the events per day, all times must be local times.
- * @param {Array} events
- * @param {Date} min
- * @param {Date} max
- * @param {Number} totalMinutes
- * @return {*}
  */
-export const splitTimeGridEventsPerDay = ({ events = [], min: minDate, max: maxDate, totalMinutes }) => {
-    return events.reduce((acc, { start, end }, i) => {
+export const splitTimeGridEventsPerDay = ({
+    events = [],
+    min: minDate,
+    max: maxDate,
+    totalMinutes,
+}: SplitTimeGridEventsPerDay) => {
+    return events.reduce<{ [key: string]: LayoutEvent[] }>((acc, { start, end }, i) => {
         const startDate = startOfDay(max(start, minDate));
         const endDate = endOfDay(min(end, maxDate));
 
