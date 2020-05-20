@@ -1,7 +1,8 @@
 import React from 'react';
-import { endOfDay, isSameDay } from 'proton-shared/lib/date-fns-utc';
+import { endOfDay } from 'proton-shared/lib/date-fns-utc';
 import { getEvent } from './helper';
 import { TYPE } from '../interactions/constants';
+import getIsBeforeNow from '../getIsBeforeNow';
 
 const RowEvents = ({
     FullDayEvent,
@@ -53,7 +54,7 @@ const RowEvents = ({
 
         const eventRef = isThisSelected ? targetEventRef : undefined;
 
-        const isBeforeNow = now > event.end && !isSameDay(now, event.end);
+        const isBeforeNow = getIsBeforeNow(event, now);
 
         return (
             <FullDayEvent

@@ -1,6 +1,5 @@
 import React, { CSSProperties, Ref } from 'react';
 import { classnames } from 'react-components';
-import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 
 import FullDayEvent from './FullDayEvent';
 import PopoverHeader from './PopoverHeader';
@@ -12,6 +11,7 @@ import {
     CalendarViewEventTemporaryEvent,
     TargetEventData,
 } from '../../containers/calendar/interface';
+import getIsBeforeNow from '../calendar/getIsBeforeNow';
 
 interface Props {
     isNarrow: boolean;
@@ -61,7 +61,7 @@ const MorePopoverEvent = ({
                         targetEventData.idx === date.getUTCDate() &&
                         targetEventData.type === TYPE.MORE;
 
-                    const isBeforeNow = now > event.end && !isSameDay(now, event.end);
+                    const isBeforeNow = getIsBeforeNow(event, now);
 
                     return (
                         <FullDayEvent

@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { layout } from '../layout';
 import { toPercent } from '../mouseHelpers/mathHelpers';
+import getIsBeforeNow from '../getIsBeforeNow';
 
 const MIN_DURATION = 30; // In minutes
 
@@ -50,7 +51,7 @@ const DayEvents = ({
 
         const eventRef = isThisSelected ? targetEventRef : undefined;
 
-        const isBeforeNow = now > event.end;
+        const isBeforeNow = getIsBeforeNow(event, now);
 
         return (
             <Component
