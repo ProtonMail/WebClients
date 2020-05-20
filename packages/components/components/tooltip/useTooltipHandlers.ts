@@ -98,7 +98,8 @@ const useTooltipHandlers = (open: () => void, close: () => void, isOpen: boolean
         onMouseDown: handleMouseDown,
         onMouseEnter: handleMouseEnter,
         onMouseLeave: handleMouseLeave,
-        onFocus: handleFocus
+        onFocus: handleFocus,
+        onBlur: handleCloseTooltip
     };
 };
 
