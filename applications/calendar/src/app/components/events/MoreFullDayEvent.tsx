@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { CSSProperties, Ref } from 'react';
 import { classnames } from 'react-components';
 
+interface Props {
+    style: CSSProperties;
+    more: number;
+    eventRef: Ref<HTMLDivElement>;
+    isSelected: boolean;
+}
 // NOTE: Can not be a button to satisfy auto close, and to be the same as the normal events
-const MoreFullDayEvent = ({ style, more, eventRef, isSelected }) => {
+const MoreFullDayEvent = ({ style, more, eventRef, isSelected }: Props) => {
     return (
         <div
             style={style}

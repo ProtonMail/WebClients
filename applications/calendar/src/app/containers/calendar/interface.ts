@@ -63,7 +63,7 @@ export interface CalendarViewEventTemporaryEvent extends CalendarViewEvent {
 export interface TargetEventData {
     id: string;
     idx?: number;
-    type: string;
+    type: number;
 }
 
 export interface TargetMoreData {

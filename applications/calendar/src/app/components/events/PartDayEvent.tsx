@@ -1,24 +1,31 @@
-import React, { useMemo } from 'react';
+import React, { CSSProperties, Ref, useMemo } from 'react';
 import { classnames, Icon } from 'react-components';
 
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 import { getConstrastingColor } from '../../helpers/color';
 import { getEventErrorMessage, getEventLoadingMessage } from './error';
+import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
 
-const PartDayEvent = ({
-    style,
-    formatTime,
-    event: { start, end, data: { Calendar } = {}, data: targetEventData, tmpData, isAllDay },
-    isSelected,
-    isBeforeNow,
-    eventRef,
-    tzid,
-}) => {
+interface Props {
+    style: CSSProperties;
+    formatTime: (date: Date) => string;
+    event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
+    isSelected: boolean;
+    isBeforeNow: boolean;
+    eventRef: Ref<HTMLDivElement>;
+    tzid: string;
+}
+const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, eventRef, tzid }: Props) => {
+    const { start, end, data: targetEventData, isAllDay } = event;
+    const { Calendar } = targetEventData;
+
     const [value, loading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value, tzid);
 
-    const calendarColor = (tmpData && tmpData.calendar.color) || Calendar.Color;
-    const safeTitle = (tmpData && tmpData.title) || model.title || '';
+    const tmpData = getIsTemporaryViewEvent(event) ? event.tmpData : undefined;
+    const calendarColor = tmpData?.calendar.color || Calendar.Color;
+    const safeTitle = tmpData?.title || model.title || '';
 
     const eventStyle = useMemo(() => {
         const background = calendarColor;
@@ -55,7 +62,7 @@ const PartDayEvent = ({
         return `${timeStart} - ${timeEnd}`;
     }, [start, end]);
 
-    const isLessThanOneHour = end - start < 3600000;
+    const isLessThanOneHour = +end - +start < 3600000;
     const shouldHideTime = loading || (isLessThanOneHour && titleString);
 
     const content = (() => {

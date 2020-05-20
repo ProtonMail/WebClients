@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties, Ref } from 'react';
 import { classnames } from 'react-components';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 
@@ -7,7 +7,26 @@ import PopoverHeader from './PopoverHeader';
 import PopoverContent from './PopoverContent';
 import { TYPE } from '../calendar/interactions/constants';
 import { DAY_EVENT_HEIGHT } from '../calendar/constants';
+import {
+    CalendarViewEvent,
+    CalendarViewEventTemporaryEvent,
+    TargetEventData,
+} from '../../containers/calendar/interface';
 
+interface Props {
+    isNarrow: boolean;
+    date: Date;
+    now: Date;
+    onClose: () => void;
+    formatTime: (date: Date) => string;
+    style: CSSProperties;
+    events: (CalendarViewEvent | CalendarViewEventTemporaryEvent)[];
+    popoverRef: Ref<HTMLDivElement>;
+    onClickEvent: (data: TargetEventData) => void;
+    targetEventRef: Ref<HTMLDivElement>;
+    targetEventData?: TargetEventData;
+    tzid: string;
+}
 const MorePopoverEvent = ({
     isNarrow,
     date,
@@ -21,7 +40,7 @@ const MorePopoverEvent = ({
     targetEventRef,
     targetEventData,
     tzid,
-}) => {
+}: Props) => {
     return (
         <div
             style={isNarrow ? undefined : style}
@@ -29,28 +48,18 @@ const MorePopoverEvent = ({
             ref={popoverRef}
         >
             <PopoverHeader onClose={onClose}>
-                <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={date.getUTCDate()}>
+                <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={`${date.getUTCDate()}`}>
                     {date.getUTCDate()}
                 </h1>
             </PopoverHeader>
             <PopoverContent>
                 {events.map((event) => {
-                    const props = {
-                        onClick: () => onClickEvent({ id: event.id, idx: date.getUTCDate(), type: TYPE.MORE }),
-                        style: {
-                            '--height': `${DAY_EVENT_HEIGHT}px`,
-                        },
-                    };
-                    const isSelected = targetEventData && targetEventData.id === event.id;
+                    const isSelected = targetEventData?.id === event.id;
                     const isThisSelected =
                         targetEventData &&
                         isSelected &&
                         targetEventData.idx === date.getUTCDate() &&
                         targetEventData.type === TYPE.MORE;
-
-                    if (isThisSelected) {
-                        props.eventRef = targetEventRef;
-                    }
 
                     const isBeforeNow = now > event.end && !isSameDay(now, event.end);
 
@@ -63,7 +72,13 @@ const MorePopoverEvent = ({
                             isSelected={isSelected}
                             tzid={tzid}
                             isBeforeNow={isBeforeNow}
-                            {...props}
+                            isOutsideStart={false}
+                            isOutsideEnd={false}
+                            onClick={() => onClickEvent({ id: event.id, idx: date.getUTCDate(), type: TYPE.MORE })}
+                            style={{
+                                '--height': `${DAY_EVENT_HEIGHT}px`,
+                            }}
+                            eventRef={isThisSelected ? targetEventRef : undefined}
                         />
                     );
                 })}
@@ -71,7 +86,5 @@ const MorePopoverEvent = ({
         </div>
     );
 };
-
-MorePopoverEvent.propTypes = {};
 
 export default MorePopoverEvent;

@@ -1,15 +1,30 @@
-import React, { useMemo } from 'react';
+import React, { CSSProperties, Ref, useMemo } from 'react';
 import { Icon, classnames } from 'react-components';
 
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 import { getConstrastingColor } from '../../helpers/color';
 import { getEventErrorMessage, getEventLoadingMessage } from './error';
+import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
 
+interface Props {
+    style: CSSProperties;
+    formatTime: (date: Date) => string;
+    className: string;
+    event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
+    isSelected: boolean;
+    isBeforeNow: boolean;
+    isOutsideStart: boolean;
+    isOutsideEnd: boolean;
+    onClick: () => void;
+    eventRef?: Ref<HTMLDivElement>;
+    tzid: string;
+}
 const FullDayEvent = ({
     style,
     formatTime,
     className = 'calendar-dayeventcell absolute alignleft',
-    event: { start, data: { Calendar } = {}, data: targetEventData, isAllDay, isAllPartDay, tmpData },
+    event,
     isSelected,
     isBeforeNow,
     isOutsideStart,
@@ -17,12 +32,16 @@ const FullDayEvent = ({
     eventRef,
     onClick,
     tzid,
-}) => {
+}: Props) => {
+    const { start, data: targetEventData, isAllDay, isAllPartDay } = event;
+    const { Calendar } = targetEventData;
+
     const [value, loading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value, tzid);
 
-    const calendarColor = (tmpData && tmpData.calendar.color) || Calendar.Color;
-    const safeTitle = (tmpData && tmpData.title) || model.title || '';
+    const tmpData = getIsTemporaryViewEvent(event) ? event.tmpData : undefined;
+    const calendarColor = tmpData?.calendar.color || Calendar.Color;
+    const safeTitle = tmpData?.title || model.title || '';
 
     const eventStyle = useMemo(() => {
         const background = calendarColor;
