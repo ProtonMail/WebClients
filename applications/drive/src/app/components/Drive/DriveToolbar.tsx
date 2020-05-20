@@ -18,6 +18,9 @@ import { getNotificationTextForItemList } from './helpers';
 import { DriveFolder } from './DriveFolderProvider';
 import { LinkType } from '../../interfaces/link';
 import { isPreviewAvailable } from '../FilePreview/FilePreview';
+import runInQueue from '../../utils/runInQueue';
+
+const MAX_THREADS_PER_MOVE = 5;
 
 interface Props {
     activeFolder: DriveFolder;
@@ -203,20 +206,21 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                 getFoldersOnlyMetas={getFoldersOnlyMetas}
                 isChildrenComplete={(LinkID: string) => !!cache.get.foldersOnlyComplete(shareId, LinkID)}
                 moveLinksToFolder={async (parentFolderId: string) => {
-                    const [movedLinks, failedMoves] = (
-                        await Promise.allSettled(toMove.map((link) => moveLink(shareId, parentFolderId, link.LinkID)))
-                    ).reduce<[{ Name: string; Type: LinkType }[], { Name: string; Type: LinkType }[]]>(
-                        ([successful, failed], result, i: number) => {
-                            if (result.status === 'fulfilled') {
-                                successful.push(result.value);
-                            } else if (result.reason?.name === 'Error') {
-                                failed.push({ Name: toMove[i].Name, Type: toMove[i].Type });
-                                console.error(`Failed to move file "${toMove[i].Name}": ${result.reason}`);
-                            }
-                            return [successful, failed];
-                        },
-                        [[], []]
-                    );
+                    const movedLinks: { Name: string; Type: LinkType }[] = [];
+                    const failedMoves: { Name: string; Type: LinkType }[] = [];
+                    const moveQueue = toMove.map((link) => async (i: number) => {
+                        await moveLink(shareId, parentFolderId, link.LinkID)
+                            .then((result) => {
+                                movedLinks.push(result);
+                            })
+                            .catch((error) => {
+                                if (error.name === 'Error') {
+                                    failedMoves.push({ Name: toMove[i].Name, Type: toMove[i].Type });
+                                    console.error(`Failed to move file "${toMove[i].Name}": ${error}`);
+                                }
+                            });
+                    });
+                    await runInQueue(moveQueue, MAX_THREADS_PER_MOVE);
 
                     const movedLinksCount = movedLinks.length;
                     const failedMovesCount = failedMoves.length;
