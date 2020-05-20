@@ -1,8 +1,9 @@
 import { MailSettings } from 'proton-shared/lib/interfaces';
-import { isConversation, isMessage, sort, getCounterMap } from './elements';
+import { isConversation, isMessage, sort, getCounterMap, getDate } from './elements';
 import { Conversation } from '../models/conversation';
 import { Message } from '../models/message';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { Label } from 'proton-shared/lib/interfaces/Label';
 
 describe('elements', () => {
     describe('isConversation / isMessage', () => {
@@ -58,6 +59,33 @@ describe('elements', () => {
             expect(result[MAILBOX_LABEL_IDS.INBOX]?.Unread).toBe(inboxCount.Unread);
             expect(result[MAILBOX_LABEL_IDS.SENT]?.Unread).toBe(sentMessageCount.Unread);
             expect(result[MAILBOX_LABEL_IDS.STARRED]).toBeUndefined();
+        });
+    });
+
+    describe('getDate', () => {
+        const Time = 42;
+        const expected = new Date(Time * 1000);
+
+        it('should not fail for an undefined element', () => {
+            expect(getDate(undefined) instanceof Date).toBe(true);
+        });
+
+        it('should take the Time property of a message', () => {
+            const message = { ConversationID: '', Time };
+            expect(getDate(message)).toEqual(expected);
+        });
+
+        it('should take the ContextTime property of a conversation', () => {
+            const conversation = { ContextTime: Time };
+            expect(getDate(conversation)).toEqual(expected);
+        });
+
+        it('should take the right label ContextTime of a conversation', () => {
+            const LabelID = 'LabelID';
+            const conversation = {
+                Labels: [{ ID: 'something', ContextTime: 43 } as Label, { ID: LabelID, ContextTime: Time } as Label]
+            };
+            expect(getDate(conversation, LabelID)).toEqual(expected);
         });
     });
 });

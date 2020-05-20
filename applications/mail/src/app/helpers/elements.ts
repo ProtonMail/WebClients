@@ -30,10 +30,14 @@ export const isMessage = (element: Element = {}): boolean => typeof (element as 
 export const isConversation = (element: Element = {}): boolean => !isMessage(element);
 
 export const getDate = (element?: Element, labelID?: string) => {
+    if (!element) {
+        return new Date();
+    }
+
     let time;
 
     if (isMessage(element)) {
-        time = element?.Time;
+        time = element.Time;
     } else {
         const conversation = element as Conversation;
         if (conversation.ContextTime) {
