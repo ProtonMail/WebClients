@@ -120,11 +120,11 @@ END:VEVENT`;
         );
     });
 
-    test('should support Outlook timezones', () => {
+    test('should support unofficial timezones in our database', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
-DTSTART;TZID=China Standard Time:20021231T203000
+DTSTART;TZID=Mountain Time (U.S. & Canada):20021230T203000
 DTEND;TZID=W. Europe Standard Time:20030101T003000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
@@ -136,8 +136,8 @@ END:VEVENT`;
                 value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
             },
             dtstart: {
-                value: { year: 2002, month: 12, day: 31, hours: 20, minutes: 30, seconds: 0, isUTC: false },
-                parameters: { tzid: 'Asia/Hong_Kong' },
+                value: { year: 2002, month: 12, day: 30, hours: 20, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/Denver' }
             },
             dtend: {
                 value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
@@ -223,7 +223,7 @@ END:VEVENT`;
         expect(getSupportedEvent({ vcalComponent: event, calendarTzid: tzid, hasXWrTimezone: true })).toEqual(event);
     });
 
-    test('should not support Chamorro timezone', () => {
+    test('should not support other timezones not in our list', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event

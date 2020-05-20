@@ -344,7 +344,7 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
         }
 
         if (rrule) {
-            if (dtend && !getIsRruleConsistent(vevent)) {
+            if (dtend && !getIsRruleConsistent(validated)) {
                 throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_INCONSISTENT, 'vevent', idMessage);
             }
             if (!getIsRruleSupported(rrule.value)) {

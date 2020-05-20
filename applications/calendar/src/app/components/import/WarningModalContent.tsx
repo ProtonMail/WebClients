@@ -27,6 +27,8 @@ const WarningModalContent = ({ model }: Props) => {
     const summary =
         totalEventsDiscarded === totalEvents
             ? c('Import warning').t`No event can be imported. Click for details`
+            : totalEventsDiscarded === 0
+            ? c('Import warning').t`Part of your calendar content is not supported and will not be imported`
             : c('Import warning')
                   .t`${totalEventsDiscarded} out of ${totalEvents} events will not be imported. Click for details`;
 
