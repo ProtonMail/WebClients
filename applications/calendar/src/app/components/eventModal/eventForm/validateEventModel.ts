@@ -1,11 +1,23 @@
 import { modelToGeneralProperties } from './modelToProperties';
 import { c } from 'ttag';
 import { getTimeInUtc } from './time';
-import { END_TYPE, FREQUENCY } from '../../../constants';
+import { END_TYPE, FREQUENCY, MAX_NOTIFICATIONS } from '../../../constants';
 import { isBefore } from 'date-fns';
 import { EventModel, EventModelErrors } from '../../../interfaces/EventModel';
 
-const validateEventModel = ({ start, end, isAllDay, title, frequencyModel }: EventModel) => {
+// returns array of ids exceeding MAX_NOTIFICATIONS
+export const getExcessiveNotificationsIndices = (fields: object[], limit = MAX_NOTIFICATIONS) =>
+    fields.map((_, idx) => (idx + 1 > limit ? idx : undefined)).filter((idx): idx is number => idx !== undefined);
+
+const validateEventModel = ({
+    start,
+    end,
+    isAllDay,
+    title,
+    frequencyModel,
+    partDayNotifications,
+    fullDayNotifications,
+}: EventModel) => {
     const errors: EventModelErrors = {};
 
     const generalProperties = modelToGeneralProperties({ title });
@@ -40,6 +52,14 @@ const validateEventModel = ({ start, end, isAllDay, title, frequencyModel }: Eve
                 errors.count = c('Error').t`Number of occurrences cannot be empty`;
             }
         }
+    }
+
+    const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
+    if (notifications.length > MAX_NOTIFICATIONS) {
+        errors.notifications = {
+            fields: getExcessiveNotificationsIndices(notifications),
+            text: c('Error').t`A maximum of 10 notifications is allowed`,
+        };
     }
 
     return errors;

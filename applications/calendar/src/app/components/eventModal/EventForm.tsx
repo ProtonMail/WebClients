@@ -14,6 +14,7 @@ import TitleRow from './rows/TitleRow';
 import { getAllDayCheck } from './eventForm/stateActions';
 import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
 import { WeekStartsOn } from '../../containers/calendar/interface';
+import { MAX_NOTIFICATIONS } from '../../constants';
 
 interface Props {
     isSubmitted: boolean;
@@ -115,6 +116,8 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                 <div className="flex-item-fluid">
                     {model.isAllDay ? (
                         <Notifications
+                            errors={errors}
+                            canAdd={model.fullDayNotifications.length < MAX_NOTIFICATIONS}
                             notifications={model.fullDayNotifications}
                             defaultNotification={model.defaultFullDayNotification}
                             onChange={(notifications) => {
@@ -130,6 +133,8 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                         />
                     ) : (
                         <Notifications
+                            errors={errors}
+                            canAdd={model.partDayNotifications.length < MAX_NOTIFICATIONS}
                             notifications={model.partDayNotifications}
                             defaultNotification={model.defaultPartDayNotification}
                             onChange={(notifications) => {

@@ -94,6 +94,10 @@ export interface EventModelErrors {
     interval?: string;
     until?: string;
     count?: string;
+    notifications?: {
+        fields: number[];
+        text: string;
+    };
 }
 
 export interface EventModelReadView extends EventModelView {

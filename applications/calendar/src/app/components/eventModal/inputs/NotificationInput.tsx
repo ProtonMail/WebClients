@@ -15,7 +15,7 @@ import {
     getSameDay,
     getSameTime,
     getWeeksAfter,
-    getWeeksBefore
+    getWeeksBefore,
 } from './notificationOptions';
 
 const { EMAIL, DEVICE } = SETTINGS_NOTIFICATION_TYPE;
@@ -26,6 +26,7 @@ interface Props {
     hasWhen?: boolean;
     hasType?: boolean;
     onChange: (model: NotificationModel) => void;
+    error?: string;
 }
 
 const getWhenOptions = (isAllDay: boolean, value = 0) => {
@@ -42,7 +43,7 @@ const getWhenOptions = (isAllDay: boolean, value = 0) => {
         getDaysBefore(value),
         getDaysAfter(value),
         getWeeksBefore(value),
-        getWeeksAfter(value)
+        getWeeksAfter(value),
     ];
 };
 
@@ -51,7 +52,8 @@ const NotificationInput = ({
     notification,
     notification: { isAllDay, type, when, value, at, unit },
     hasType = false,
-    onChange
+    onChange,
+    error,
 }: Props) => {
     const safeValue = value === undefined ? 1 : value;
 
@@ -64,18 +66,20 @@ const NotificationInput = ({
 
     const hasValueInput = value === undefined || value > 0;
 
+    const errorProps = typeof error === 'string' ? { 'aria-invalid': true } : {};
+
     return (
         <div
             className={classnames([
                 'flex flex-nowrap flex-items-center flex-item-fluid',
                 className,
-                isAllDay && 'onmobile-flex-column'
+                isAllDay && 'onmobile-flex-column',
             ])}
         >
             <span
                 className={classnames([
                     'flex flex-nowrap flex-items-center flex-item-fluid',
-                    isAllDay && 'onmobile-mb0-5'
+                    isAllDay && 'onmobile-mb0-5',
                 ])}
             >
                 {hasType ? (
@@ -84,11 +88,12 @@ const NotificationInput = ({
                         value={type}
                         options={[
                             { text: c('Notification type').t`Notification`, value: DEVICE },
-                            { text: c('Notification type').t`Email`, value: EMAIL }
+                            { text: c('Notification type').t`Email`, value: EMAIL },
                         ]}
                         onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
                             onChange({ ...notification, type: +target.value })
                         }
+                        {...errorProps}
                     />
                 ) : null}
                 {hasValueInput ? (
@@ -110,6 +115,7 @@ const NotificationInput = ({
                                     onChange({ ...notification, value: 1 });
                                 }
                             }}
+                            {...errorProps}
                         />
                     </span>
                 ) : null}
@@ -126,9 +132,10 @@ const NotificationInput = ({
                         }
                         onChange({
                             ...notification,
-                            ...option
+                            ...option,
                         });
                     }}
+                    {...errorProps}
                 />
             </span>
             {isAllDay && at ? (
@@ -139,6 +146,7 @@ const NotificationInput = ({
                         className="ml1"
                         value={at}
                         onChange={(at) => onChange({ ...notification, at })}
+                        {...errorProps}
                     />
                 </span>
             ) : null}

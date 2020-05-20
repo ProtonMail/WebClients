@@ -36,7 +36,7 @@ const CreateEventModal = ({
 }: Props) => {
     const errors = validateEventModel(model);
     const { isSubmitted, loadingAction, handleDelete, handleSubmit } = useForm({
-        containerEl: document.body, // Annyoing to get a ref, mostly fine to use this
+        containerEl: document.body, // Annoying to get a ref, mostly fine to use this
         model,
         errors,
         onSave,

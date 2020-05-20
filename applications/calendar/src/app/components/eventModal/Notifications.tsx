@@ -1,11 +1,13 @@
 import React from 'react';
-import { LinkButton } from 'react-components';
+import { LinkButton, ErrorZone } from 'react-components';
 import { c } from 'ttag';
 
 import NotificationInput from './inputs/NotificationInput';
 import { updateItem, removeItem, addItem } from './eventForm/arrayHelper';
 import { NotificationModel } from '../../interfaces/NotificationModel';
+import { EventModelErrors } from '../../interfaces/EventModel';
 
+export const NOTIFICATION_ID = 'notifications';
 interface Props {
     notifications: NotificationModel[];
     hasWhen?: boolean;
@@ -13,9 +15,10 @@ interface Props {
     canAdd?: boolean;
     defaultNotification: NotificationModel;
     onChange: (value: NotificationModel[]) => void;
+    errors?: EventModelErrors;
 }
 
-const Notifications = ({ notifications, hasWhen, hasType, canAdd = true, defaultNotification, onChange }: Props) => {
+const Notifications = ({ notifications, hasWhen, hasType, canAdd = true, defaultNotification, onChange, errors }: Props) => {
     return (
         <div>
             {notifications.map((notification, index) => {
@@ -28,6 +31,7 @@ const Notifications = ({ notifications, hasWhen, hasType, canAdd = true, default
                             hasType={hasType}
                             notification={notification}
                             onChange={(newNotification) => onChange(updateItem(notifications, index, newNotification))}
+                            error={errors?.notifications?.fields.includes(index) ? '' : undefined}
                         />
                         <LinkButton
                             data-test-id="delete-notification"
@@ -46,6 +50,9 @@ const Notifications = ({ notifications, hasWhen, hasType, canAdd = true, default
                     >{c('Action').t`Add notification`}</LinkButton>
                 </div>
             )}
+            <ErrorZone id={NOTIFICATION_ID}>
+                {errors?.notifications?.text || ''}
+            </ErrorZone>
         </div>
     );
 };
