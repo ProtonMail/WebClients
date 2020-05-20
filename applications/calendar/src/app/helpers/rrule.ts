@@ -1,5 +1,5 @@
 import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
-import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import { isIcalPropertyAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { getDaysInMonth } from 'proton-shared/lib/date-fns-utc';
 import { toLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import {
@@ -24,8 +24,8 @@ export const getNegativeSetpos = (date: Date) => {
     return Math.ceil((monthDay - daysInMonth) / 7) - 1;
 };
 
-export const getIsDateTimeValue = (value: VcalDateOrDateTimeValue): value is VcalDateTimeValue => {
-    return (value as VcalDateTimeValue).isUTC !== undefined;
+const getIsDateTimeValue = (value: VcalDateOrDateTimeValue): value is VcalDateTimeValue => {
+    return (value as VcalDateTimeValue).hours !== undefined;
 };
 
 export const getIsStandardByday = (byday = ''): byday is VcalDaysKeys => {
@@ -151,7 +151,7 @@ export const getIsRruleConsistent = (vevent: VcalVeventComponent) => {
     // UNTIL and DTSTART must have the same value type, and UNTIL should not happen before DTSTART
     const { dtstart, rrule } = vevent;
     if (rrule?.value.until) {
-        const isDtstartDateTime = getIsDateTimeValue(dtstart.value);
+        const isDtstartDateTime = !isIcalPropertyAllDay(dtstart);
         const isUntilDateTime = getIsDateTimeValue(rrule.value.until);
         if (+isDtstartDateTime ^ +isUntilDateTime) {
             return false;

@@ -8,6 +8,7 @@ export enum IMPORT_EVENT_TYPE {
     FREEBUSY_FORMAT,
     TIMEZONE_FORMAT,
     UID_MISSING,
+    FLOATING_TIME,
     ALLDAY_INCONSISTENCY,
     DTSTART_MISSING,
     DTSTART_MALFORMED,
@@ -15,6 +16,7 @@ export enum IMPORT_EVENT_TYPE {
     DTEND_MISSING,
     DTEND_MALFORMED,
     DTEND_OUT_OF_BOUNDS,
+    X_WR_TIMEZONE_UNSUPPORTED,
     TZID_UNSUPPORTED,
     NEGATIVE_DURATION,
     RRULE_INCONSISTENT,
@@ -55,6 +57,9 @@ const getErrorMessage = (errorType: IMPORT_EVENT_TYPE) => {
     if (errorType === IMPORT_EVENT_TYPE.DTSTART_MALFORMED) {
         return c('Error importing event').t`Malformed start time`;
     }
+    if (errorType === IMPORT_EVENT_TYPE.FLOATING_TIME) {
+        return c('Error importing event').t`Floating times not supported`;
+    }
     if (errorType === IMPORT_EVENT_TYPE.DTSTART_OUT_OF_BOUNDS) {
         return c('Error importing event').t`Start time out of bounds`;
     }
@@ -67,8 +72,11 @@ const getErrorMessage = (errorType: IMPORT_EVENT_TYPE) => {
     if (errorType === IMPORT_EVENT_TYPE.DTEND_OUT_OF_BOUNDS) {
         return c('Error importing event').t`End time out of bounds`;
     }
+    if (errorType === IMPORT_EVENT_TYPE.X_WR_TIMEZONE_UNSUPPORTED) {
+        return c('Error importing event').t`Calendar timezone not supported`;
+    }
     if (errorType === IMPORT_EVENT_TYPE.TZID_UNSUPPORTED) {
-        return c('Error importing event').t`Unsupported timezone`;
+        return c('Error importing event').t`Timezone not supported`;
     }
     if (errorType === IMPORT_EVENT_TYPE.NEGATIVE_DURATION) {
         return c('Error importing event').t`Negative duration`;

@@ -85,8 +85,8 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     throw new Error('No file');
                 }
                 try {
-                    const { components, calscale } = await parseIcs(fileAttached);
-                    const { events, discarded } = filterNonSupported({ components, calscale });
+                    const { components, calscale, xWrTimezone } = await parseIcs(fileAttached);
+                    const { events, discarded } = filterNonSupported({ components, calscale, xWrTimezone });
                     const step = discarded.length || !events.length ? IMPORT_STEPS.WARNING : IMPORT_STEPS.IMPORTING;
                     setModel({
                         ...model,
