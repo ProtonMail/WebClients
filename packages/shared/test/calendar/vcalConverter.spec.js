@@ -16,7 +16,6 @@ describe('dateTimeToProperty', () => {
         expect(property).toEqual({
             value: { year: 2019, month: 10, day: 1, hours: 1, minutes: 13, seconds: 0, isUTC: false },
             parameters: {
-                type: 'date-time',
                 tzid: 'Etc/UTC'
             }
         });
@@ -34,10 +33,7 @@ describe('dateTimeToProperty', () => {
             true
         );
         expect(property).toEqual({
-            value: { year: 2019, month: 10, day: 1, hours: 1, minutes: 13, seconds: 0, isUTC: true },
-            parameters: {
-                type: 'date-time'
-            }
+            value: { year: 2019, month: 10, day: 1, hours: 1, minutes: 13, seconds: 0, isUTC: true }
         });
     });
 });

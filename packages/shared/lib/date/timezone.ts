@@ -1,6 +1,6 @@
 import { listTimeZones, findTimeZone, getZonedTime, getUTCOffset } from 'timezone-support';
 import { DateTime } from '../interfaces/calendar/Date';
-import { OUTLOOK_TIMEZONE_LINKS, unsupportedTimezoneLinks } from './timezoneDatabase';
+import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from './timezoneDatabase';
 
 export const toLocalDate = ({
     year = 0,
@@ -51,8 +51,12 @@ export const getSupportedTimezone = (tzid: string): string | undefined => {
         const timezone = findTimeZone(tzid).name;
         return unsupportedTimezoneLinks[timezone] || timezone;
     } catch (e) {
-        // try manual conversions (only Outlook for the moment)
-        const timezone = OUTLOOK_TIMEZONE_LINKS[tzid];
+        // try manual conversions
+        const offsetRegex = /^\((?:UTC|GMT).*\) (.*)$|^(.*) \((?:UTC|GMT).*\)/i;
+        const match = offsetRegex.exec(tzid);
+        const strippedTzid = match ? match[1] || match[2] : tzid;
+        const normalizedTzid = strippedTzid.toLowerCase().replace(/\./g, '');
+        const timezone = MANUAL_TIMEZONE_LINKS[normalizedTzid];
         return timezone;
     }
 };

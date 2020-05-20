@@ -1,6 +1,6 @@
 import { listTimeZones } from 'timezone-support';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, getSupportedTimezone } from '../../lib/date/timezone';
-import { OUTLOOK_TIMEZONE_LINKS, unsupportedTimezoneLinks } from '../../lib/date/timezoneDatabase';
+import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from '../../lib/date/timezoneDatabase';
 
 describe('convert utc', () => {
     const obj = (year: number, month: number, day: number, hours = 0, minutes = 0, seconds = 0) => ({
@@ -96,10 +96,17 @@ describe('getSupportedTimezone', () => {
         expect(results).toEqual(canonical);
     });
 
-    it('should convert Outlook timezones', () => {
-        const outlook = Object.keys(OUTLOOK_TIMEZONE_LINKS);
-        const results = outlook.map((tzid) => getSupportedTimezone(tzid));
-        const expected = Object.values(OUTLOOK_TIMEZONE_LINKS);
+    it('should convert manual timezones', () => {
+        const manual = Object.keys(MANUAL_TIMEZONE_LINKS);
+        const results = manual.map((tzid) => getSupportedTimezone(tzid));
+        const expected = Object.values(MANUAL_TIMEZONE_LINKS);
+        expect(results).toEqual(expected);
+    });
+
+    it('should be robust', () => {
+        const tzids = ['Chamorro (UTC+10)', '(GMT-01:00) Azores', 'Mountain Time (U.S. & Canada)'];
+        const expected = ['Pacific/Saipan', 'Atlantic/Azores', 'America/Denver'];
+        const results = tzids.map(getSupportedTimezone);
         expect(results).toEqual(expected);
     });
 

@@ -60,8 +60,7 @@ export const withRequiredProperties = (properties) => {
                 minutes: creationDate.getUTCMinutes(),
                 seconds: creationDate.getUTCSeconds(),
                 isUTC: true
-            },
-            parameters: { type: 'date-time' }
+            }
         },
         ...properties
     };
