@@ -26,7 +26,7 @@ import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants'
 import { sortEvents, sortWithTemporaryEvent } from '../../components/calendar/sortLayout';
 
 import CreateEventModal from '../../components/eventModal/CreateEventModal';
-import Popover from '../../components/calendar/Popover';
+import Popover, { PopoverRenderData } from '../../components/calendar/Popover';
 import CreateEventPopover from '../../components/eventModal/CreateEventPopover';
 import EventPopover from '../../components/events/EventPopover';
 import MorePopoverEvent from '../../components/events/MorePopoverEvent';
@@ -695,15 +695,15 @@ const InteractiveCalendarView = ({
                 isScrollDisabled={isScrollDisabled}
             />
             <Popover
-                containerRef={document.body}
-                targetRef={targetEventRef}
+                containerEl={document.body}
+                targetEl={targetEventRef}
                 isOpen={!!targetEvent}
                 once
                 when={targetEvent ? targetEvent.start : undefined}
             >
-                {({ style, ref }: any) => {
+                {({ style, ref }: PopoverRenderData) => {
                     if (!targetEvent) {
-                        return;
+                        return null;
                     }
                     if (targetEvent.id === 'tmp' && tmpData) {
                         return (
@@ -773,8 +773,8 @@ const InteractiveCalendarView = ({
                     );
                 }}
             </Popover>
-            <Popover containerRef={document.body} targetRef={targetMoreRef} isOpen={!!targetMoreData} once>
-                {({ style, ref }: any) => {
+            <Popover containerEl={document.body} targetEl={targetMoreRef} isOpen={!!targetMoreData} once>
+                {({ style, ref }: PopoverRenderData) => {
                     if (!targetMoreData) {
                         return null;
                     }

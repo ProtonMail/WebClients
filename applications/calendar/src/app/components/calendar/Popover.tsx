@@ -1,23 +1,36 @@
-import { useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import { useRect } from '../../hooks/useRect';
+import { Rect } from '../../hooks/observeRect';
 
-/** @type any * */
-const Popover = ({ targetRef, containerRef, children, isOpen, once = false, when }) => {
-    const [popoverRef, setPopoverRef] = useState();
+export interface PopoverRenderData {
+    ref: (el: HTMLElement | null) => void;
+    style: { left: number; top: number };
+}
 
-    const containerRect = useRect(containerRef, isOpen);
+interface Props {
+    targetEl: HTMLElement | null;
+    containerEl: HTMLElement | null;
+    children: (data: PopoverRenderData) => JSX.Element | null;
+    isOpen: boolean;
+    once: boolean;
+    when?: any;
+}
+const Popover = ({ targetEl, containerEl, children, isOpen, once = false, when }: Props) => {
+    const [popoverEl, setPopoverEl] = useState<HTMLElement | null>(null);
+
+    const containerRect = useRect(containerEl, isOpen);
     const targetRect = useRect(
-        targetRef,
+        targetEl,
         isOpen,
         once,
         useMemo(() => [when, containerRect], [when, containerRect])
     );
-    const popoverRect = useRect(popoverRef, isOpen);
+    const popoverRect = useRect(popoverEl, isOpen);
 
     const value = useMemo(() => {
-        if (!containerRef || !containerRect) {
+        if (!containerEl || !containerRect) {
             return;
         }
 
@@ -34,7 +47,7 @@ const Popover = ({ targetRef, containerRef, children, isOpen, once = false, when
             };
         };
 
-        const alignTargetStyle = ({ left: targetLeft, top: targetTop, width: targetWidth }) => {
+        const alignTargetStyle = ({ left: targetLeft, top: targetTop, width: targetWidth }: Rect) => {
             const diffOverflowY = targetTop + popoverHeight - containerHeight;
 
             const top = diffOverflowY >= 0 ? targetTop - diffOverflowY : Math.max(targetTop, 0);
@@ -66,22 +79,22 @@ const Popover = ({ targetRef, containerRef, children, isOpen, once = false, when
                     left: -9999,
                 };
             }
-            if (targetRect && targetRef) {
+            if (targetRect && targetEl) {
                 return alignTargetStyle(targetRect);
             }
             return alignCenterStyle();
         })();
 
         return {
-            ref: setPopoverRef,
+            ref: setPopoverEl,
             style: {
                 top: Math.round(style.top),
                 left: Math.round(style.left),
             },
         };
-    }, [popoverRef, targetRef, containerRef, containerRect, popoverRect, targetRect]);
+    }, [popoverEl, targetEl, containerEl, containerRect, popoverRect, targetRect]);
 
-    return value && isOpen ? ReactDOM.createPortal(children(value), containerRef) : null;
+    return value && isOpen ? <>{ReactDOM.createPortal(children(value), containerEl)}</> : null;
 };
 
 export default Popover;

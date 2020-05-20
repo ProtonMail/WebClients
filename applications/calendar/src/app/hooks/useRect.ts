@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState } from 'react';
 import observeRect, { Rect } from './observeRect';
 
-export function useRect(nodeRef: HTMLElement, observe = true, once = false, dependency: any) {
+export function useRect(nodeRef: HTMLElement | null, observe = true, once = false, dependency?: any) {
     const [rect, setRect] = useState<Rect | undefined>(undefined);
 
     useLayoutEffect(() => {
