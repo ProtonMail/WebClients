@@ -4,16 +4,16 @@ export const getIncomingDefaults = ({ Location, Page = 0, PageSize = 100, Keywor
     params: { Location, Page, PageSize, Keyword }
 });
 
-export const addIncomingDefault = ({ Email, Location } = {}) => ({
+export const addIncomingDefault = ({ Email, Domain, Location } = {}) => ({
     method: 'post',
     url: 'incomingdefaults',
-    data: { Email, Location }
+    data: { Email, Domain, Location }
 });
 
-export const updateIncomingDefault = (incomingDefaultID, { Location } = {}) => ({
+export const updateIncomingDefault = (incomingDefaultID, { Email, Domain, Location } = {}) => ({
     method: 'put',
     url: `incomingdefaults/${incomingDefaultID}`,
-    data: { Location }
+    data: { Email, Domain, Location }
 });
 
 export const deleteIncomingDefaults = (IDs) => ({
