@@ -1,4 +1,4 @@
-import { arrayToBinaryString, getKeys } from 'pmcrypto';
+import { arrayToBinaryString, getKeys, OpenPGPKey } from 'pmcrypto';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { useCallback } from 'react';
@@ -181,11 +181,33 @@ export const useInitializeMessage = (localID: string) => {
 export const useTrustSigningPublicKey = (localID: string) => {
     const messageCache = useMessageCache();
 
-    return useCallback(async () => {
-        updateMessageCache(messageCache, localID, {
-            verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID
-        });
-    }, [localID]);
+    return useCallback(
+        async (key: OpenPGPKey) => {
+            const pinnedKeys = messageCache.get(localID)?.senderPinnedKeys || [];
+            updateMessageCache(messageCache, localID, {
+                verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
+                senderPinnedKeys: [key, ...pinnedKeys],
+                senderVerified: true
+            });
+        },
+        [localID]
+    );
+};
+
+// if the attached public key signs the message, use the hook above
+export const useTrustAttachedPublicKey = (localID: string) => {
+    const messageCache = useMessageCache();
+
+    return useCallback(
+        async (key: OpenPGPKey) => {
+            const pinnedKeys = messageCache.get(localID)?.senderPinnedKeys || [];
+            updateMessageCache(messageCache, localID, {
+                senderPinnedKeys: [key, ...pinnedKeys],
+                senderVerified: true
+            });
+        },
+        [localID]
+    );
 };
 
 export const useResignContact = (localID: string) => {

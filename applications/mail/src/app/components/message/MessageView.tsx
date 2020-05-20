@@ -1,3 +1,4 @@
+import { OpenPGPKey } from 'pmcrypto';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Loader, classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
@@ -18,7 +19,8 @@ import {
     useLoadEmbeddedImages,
     useMarkAsRead,
     useTrustSigningPublicKey,
-    useResignContact
+    useResignContact,
+    useTrustAttachedPublicKey
 } from '../../hooks/useMessageReadActions';
 import { isUnread } from '../../helpers/elements';
 
@@ -57,6 +59,7 @@ const MessageView = ({
     const load = useLoadMessage(inputMessage);
     const initialize = useInitializeMessage(localID);
     const trustSigningPublicKey = useTrustSigningPublicKey(localID);
+    const trustAttachedPublicKey = useTrustAttachedPublicKey(localID);
     const loadRemoteImages = useLoadRemoteImages(localID);
     const loadEmbeddedImages = useLoadEmbeddedImages(localID);
     const markAsRead = useMarkAsRead(localID);
@@ -105,8 +108,12 @@ const MessageView = ({
         return null;
     }
 
-    const handleTrustSigningPublicKey = async () => {
-        await addAction(trustSigningPublicKey);
+    const handleTrustSigningPublicKey = async (key: OpenPGPKey) => {
+        await addAction(() => trustSigningPublicKey(key));
+    };
+
+    const handleTrustAttachedPublicKey = async (key: OpenPGPKey) => {
+        await addAction(() => trustAttachedPublicKey(key));
     };
 
     const handleLoadRemoteImages = async () => {
@@ -140,7 +147,8 @@ const MessageView = ({
                         messageLoaded={bodyLoaded}
                         isSentMessage={sent}
                         sourceMode={sourceMode}
-                        onTrustKey={handleTrustSigningPublicKey}
+                        onTrustSigningKey={handleTrustSigningPublicKey}
+                        onTrustAttachedKey={handleTrustAttachedPublicKey}
                         onLoadRemoteImages={handleLoadRemoteImages}
                         onLoadEmbeddedImages={handleLoadEmbeddedImages}
                         onResignContact={handleResignContact}

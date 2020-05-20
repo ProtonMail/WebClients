@@ -1,6 +1,7 @@
+import { OpenPGPKey } from 'pmcrypto';
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
-import { normalizeEmail } from 'proton-shared/lib/helpers/string';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/string';
+import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { ContactEmail, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
 import React, { useMemo } from 'react';
 import {
@@ -9,6 +10,7 @@ import {
     Icon,
     InlineLinkButton,
     LearnMore,
+    useAddresses,
     useApi,
     useContactEmails,
     useEventManager,
@@ -34,20 +36,35 @@ enum PROMPT_KEY_PINNING_TYPE {
     PIN_ATTACHED
 }
 
-const getPromptKeyPinningType = (
-    message: MessageExtended,
-    mailSettings: MailSettings
-): PROMPT_KEY_PINNING_TYPE | undefined => {
+interface Params {
+    message: MessageExtended;
+    mailSettings: MailSettings;
+    addresses: Address[];
+    senderAddress: string;
+}
+const getPromptKeyPinningType = ({
+    message,
+    mailSettings,
+    addresses,
+    senderAddress
+}: Params): PROMPT_KEY_PINNING_TYPE | undefined => {
+    if (addresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(senderAddress))) {
+        // Do not pin keys for own addresses
+        return undefined;
+    }
     const { PromptPin } = mailSettings;
     const senderHasPinnedKeys = !!message.senderPinnedKeys?.length;
-    const hasAttachedKeys = !!message.attachedPublicKeys?.length;
+    const firstAttachedPublicKey = message.attachedPublicKeys?.length ? message.attachedPublicKeys[0] : undefined;
     const isSignedByAttachedKey =
         !!message.signingPublicKey &&
         message.attachedPublicKeys?.map((key) => key.armor()).includes(message.signingPublicKey?.armor());
+    const isAttachedKeyPinned =
+        firstAttachedPublicKey &&
+        message.senderPinnedKeys?.map((key) => key.armor()).includes(firstAttachedPublicKey.armor());
 
     if (message.verificationStatus === SIGNED_AND_INVALID) {
         if (!message.signingPublicKey) {
-            if (hasAttachedKeys) {
+            if (firstAttachedPublicKey) {
                 return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
             }
             return;
@@ -63,7 +80,7 @@ const getPromptKeyPinningType = (
         }
     }
     if (message.verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
-        if (!hasAttachedKeys) {
+        if (!firstAttachedPublicKey || isAttachedKeyPinned) {
             return;
         }
         return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
@@ -87,41 +104,48 @@ const getBannerMessage = (promptKeyPinningType: PROMPT_KEY_PINNING_TYPE) => {
 
 interface Props {
     message: MessageExtended;
-    onTrustKey: () => void;
+    onTrustSigningKey: (key: OpenPGPKey) => void;
+    onTrustAttachedKey: (key: OpenPGPKey) => void;
 }
-const ExtraPinKey = ({ message, onTrustKey }: Props) => {
+const ExtraPinKey = ({ message, onTrustSigningKey, onTrustAttachedKey }: Props) => {
     const api = useApi();
     const [mailSettings] = useMailSettings();
+    const [addresses] = useAddresses();
     const [contacts = [], loadingContacts] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [loadingDisablePromptPin, withLoadingDisablePromptPin] = useLoading();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
 
-    const emailAddress = message.data?.Sender?.Address;
+    const senderAddress = message.data?.SenderAddress;
+    const name = message.data?.SenderName;
     const isSenderInternal = isInternal(message.data);
     const messageContactID = message.data?.Sender?.ContactID;
     const contactID = useMemo<string | undefined>(() => {
         if (messageContactID) {
             return messageContactID;
         }
-        if (!emailAddress) {
+        if (!senderAddress) {
             return;
         }
         const preferredContact = contacts.find(
-            ({ Email }) => normalizeEmail(Email, isSenderInternal) === normalizeEmail(emailAddress, isSenderInternal)
+            ({ Email }) => normalizeEmail(Email, isSenderInternal) === normalizeEmail(senderAddress, isSenderInternal)
         );
         return preferredContact?.ContactID;
-    }, [messageContactID, contacts, emailAddress]);
-
-    const promptKeyPinningType = getPromptKeyPinningType(message, mailSettings);
+    }, [messageContactID, contacts, senderAddress]);
+    const promptKeyPinningType = useMemo<PROMPT_KEY_PINNING_TYPE | undefined>(() => {
+        if (!senderAddress) {
+            return undefined;
+        }
+        return getPromptKeyPinningType({ message, mailSettings, addresses, senderAddress });
+    }, [message, mailSettings, addresses, senderAddress]);
     const isPinUnseen = promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN;
     const firstAttachedPublicKey = message.attachedPublicKeys?.length ? message.attachedPublicKeys[0] : undefined;
     const bePinnedPublicKey = message.signingPublicKey || firstAttachedPublicKey;
     const loading =
         loadingContacts ||
         loadingDisablePromptPin ||
-        !emailAddress ||
+        !senderAddress ||
         (isPinUnseen && !contactID) ||
         !bePinnedPublicKey;
     const bannerColorClassName = isPinUnseen ? 'bg-global-attention' : 'bg-global-border';
@@ -136,16 +160,21 @@ const ExtraPinKey = ({ message, onTrustKey }: Props) => {
         createNotification({ text: c('Success').t`Banner permanently hidden` });
     };
     const handleTrustKey = () => {
-        if (loading || !bePinnedPublicKey) {
+        if (loading || !bePinnedPublicKey || !senderAddress) {
             return;
         }
         const contact: ContactWithBePinnedPublicKey = {
-            emailAddress: emailAddress as string,
+            emailAddress: senderAddress,
+            name,
             contactID,
             isInternal: isSenderInternal,
             bePinnedPublicKey
         };
-        return createModal(<TrustPublicKeyModal contact={contact} onSubmit={onTrustKey} />);
+        const handleSubmit =
+            promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED
+                ? () => onTrustAttachedKey(firstAttachedPublicKey as OpenPGPKey)
+                : () => onTrustSigningKey(bePinnedPublicKey);
+        return createModal(<TrustPublicKeyModal contact={contact} onSubmit={handleSubmit} />);
     };
 
     return (

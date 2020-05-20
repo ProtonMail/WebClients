@@ -1,3 +1,4 @@
+import { OpenPGPKey } from 'pmcrypto';
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
 import {
@@ -57,7 +58,8 @@ interface Props {
     isSentMessage: boolean;
     messageLoaded: boolean;
     sourceMode: boolean;
-    onTrustKey: () => void;
+    onTrustSigningKey: (key: OpenPGPKey) => void;
+    onTrustAttachedKey: (key: OpenPGPKey) => void;
     onResignContact: () => void;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
@@ -75,7 +77,8 @@ const HeaderExpanded = ({
     isSentMessage,
     messageLoaded,
     sourceMode,
-    onTrustKey,
+    onTrustSigningKey,
+    onTrustAttachedKey,
     onResignContact,
     onLoadRemoteImages,
     onLoadEmbeddedImages,
@@ -195,7 +198,8 @@ const HeaderExpanded = ({
             <HeaderExtra
                 message={message}
                 sourceMode={sourceMode}
-                onTrustKey={onTrustKey}
+                onTrustSigningKey={onTrustSigningKey}
+                onTrustAttachedKey={onTrustAttachedKey}
                 onResignContact={onResignContact}
                 onLoadRemoteImages={onLoadRemoteImages}
                 onLoadEmbeddedImages={onLoadEmbeddedImages}

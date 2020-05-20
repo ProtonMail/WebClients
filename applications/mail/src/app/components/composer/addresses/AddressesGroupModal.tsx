@@ -23,6 +23,7 @@ import getSendPreferences from '../../../helpers/message/getSendPreferences';
 import { getSendStatusIcon } from '../../../helpers/message/icon';
 import { RecipientGroup } from '../../../models/address';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
+import { RequireSome } from '../../../models/utils';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { MessageSendInfo } from './AddressesInput';
 import AskForKeyPinningModal from './AskForKeyPinningModal';
@@ -124,7 +125,7 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
                 loadSendIcon({ emailAddress: Email, contactID: ContactID, abortController, checkForFailure })
             );
             // the routes called in requests support 100 calls every 10 seconds
-            const contactsKeyPinning: Required<ContactWithBePinnedPublicKey>[] = (
+            const contactsKeyPinning: RequireSome<ContactWithBePinnedPublicKey, 'contactID'>[] = (
                 await processApiRequestsSafe(requests, 100, 10 * 1000)
             ).filter(isTruthy);
             if (contactsKeyPinning.length) {

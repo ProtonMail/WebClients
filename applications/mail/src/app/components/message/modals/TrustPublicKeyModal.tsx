@@ -46,9 +46,10 @@ interface ParamsCreate {
     privateKeys: OpenPGPKey[];
 }
 const createContactPinnedKeys = async ({ contact, api, privateKeys }: ParamsCreate) => {
-    const { emailAddress, isInternal, bePinnedPublicKey } = contact;
+    const { emailAddress, name, isInternal, bePinnedPublicKey } = contact;
     const contactCards = await pinKeyCreateContact({
         emailAddress,
+        name,
         isInternal,
         bePinnedPublicKey,
         privateKeys
