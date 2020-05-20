@@ -54,7 +54,7 @@ interface Props {
     labels?: Label[];
     mailSettings: MailSettings;
     message: MessageExtended;
-    messageViewIcons?: MessageViewIcons;
+    messageViewIcons: MessageViewIcons;
     isSentMessage: boolean;
     messageLoaded: boolean;
     sourceMode: boolean;
@@ -119,7 +119,7 @@ const HeaderExpanded = ({
     const from = (
         <HeaderRecipientItem
             recipientOrGroup={{ recipient: message.data?.Sender }}
-            globalIcon={messageViewIcons?.globalIcon}
+            globalIcon={messageViewIcons.globalIcon}
             contacts={contacts}
             onCompose={onCompose}
         />
@@ -162,7 +162,7 @@ const HeaderExpanded = ({
                     {showDetails ? (
                         <HeaderRecipientsDetails
                             message={message.data}
-                            mapStatusIcons={messageViewIcons?.mapStatusIcon}
+                            mapStatusIcons={messageViewIcons.mapStatusIcon}
                             contacts={contacts}
                             contactGroups={contactGroups}
                             onCompose={onCompose}

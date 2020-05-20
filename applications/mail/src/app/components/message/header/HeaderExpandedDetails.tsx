@@ -20,7 +20,7 @@ interface Props {
     labels?: Label[];
     mailSettings: MailSettings;
     message: MessageExtended;
-    messageViewIcons?: MessageViewIcons;
+    messageViewIcons: MessageViewIcons;
 }
 
 const HeaderExpandedDetails = ({ labels, message, messageViewIcons, mailSettings }: Props) => {
@@ -33,7 +33,7 @@ const HeaderExpandedDetails = ({ labels, message, messageViewIcons, mailSettings
         await call();
     };
 
-    const icon = messageViewIcons?.globalIcon;
+    const icon = messageViewIcons.globalIcon;
 
     const folders = getCurrentFolders(message.data, customFolders, mailSettings);
     const locationText = folders.map((folder) => folder.name).join(', ');

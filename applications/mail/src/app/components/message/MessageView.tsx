@@ -70,12 +70,12 @@ const MessageView = ({
     const sent = isSent(message.data);
     const unread = isUnread(message.data);
 
-    const messageViewIcons = useMemo<MessageViewIcons | undefined>(() => {
+    const messageViewIcons = useMemo<MessageViewIcons>(() => {
         if (sent) {
             return getSentStatusIconInfo(message);
         }
         // else it's a received message
-        return { globalIcon: getReceivedStatusIcon(message) };
+        return { globalIcon: getReceivedStatusIcon(message), mapStatusIcon: {} };
     }, [message]);
 
     const prepareMessage = async () => {

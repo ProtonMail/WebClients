@@ -23,16 +23,25 @@ const {
     INTERNAL,
     EXTERNAL,
     END_TO_END,
+    ON_COMPOSE,
     ON_DELIVERY
 } = X_PM_HEADERS;
 
 export interface MessageViewIcons {
     globalIcon?: StatusIcon;
-    mapStatusIcon?: MapStatusIcons;
+    mapStatusIcon: MapStatusIcons;
 }
 
-const getMapEmailHeaders = (headers: string): { [key: string]: X_PM_HEADERS } => {
-    const splitHeaders = headers.split(';').map((str) => str.replace('%40', '@').trim());
+const getMapEmailHeaders = (headers?: string): { [key: string]: X_PM_HEADERS } => {
+    if (!headers) {
+        return {};
+    }
+    const splitHeaders = headers.split(';').map((str) =>
+        str
+            .replace('%40', '@')
+            .replace(/%2B|%2b/g, '+')
+            .trim()
+    );
     return splitHeaders.reduce<{ [key: string]: X_PM_HEADERS }>((acc, header) => {
         const match = header.match(/(.*)=(.*)/);
         if (!match) {
@@ -116,42 +125,57 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
 interface Params {
     mapAuthentication: { [key: string]: X_PM_HEADERS };
     mapEncryption: { [key: string]: X_PM_HEADERS };
+    contentEncryption: X_PM_HEADERS;
     emailAddress?: string;
 }
 
 export const getSentStatusIcon = ({
     mapAuthentication,
     mapEncryption,
+    contentEncryption,
     emailAddress
 }: Params): StatusIcon | undefined => {
     if (!emailAddress) {
         // we return the aggregated send icon in this case
         const encryptions = Object.values(mapEncryption);
-        if (!encryptions.length) {
-            return;
-        }
-        const allPinned = encryptions.every((encryption) =>
-            [PGP_PM_PINNED, PGP_MIME_PINNED, PGP_INLINE_PINNED].includes(encryption)
-        );
-        const allEncrypted = !encryptions.some((encryption) => encryption === NONE);
+        const hasHeaderInfo = !!encryptions.length;
+        const allExternal =
+            hasHeaderInfo && !encryptions.some((encryption) => [PGP_PM, PGP_PM_PINNED, PGP_EO].includes(encryption));
+        const allPinned =
+            hasHeaderInfo &&
+            !encryptions.some(
+                (encryption) => ![PGP_PM_PINNED, PGP_MIME_PINNED, PGP_INLINE_PINNED].includes(encryption)
+            );
+        const allEncrypted = hasHeaderInfo && !encryptions.some((encryption) => encryption === NONE);
         if (allPinned) {
+            const text =
+                contentEncryption === END_TO_END
+                    ? c('Sent email icon').ngettext(
+                          msgid`Sent by you with end-to-end encryption to verified recipient`,
+                          `Sent by you with end-to-end encryption to verified recipients`,
+                          encryptions.length
+                      )
+                    : c('Sent email icon').ngettext(
+                          msgid`Sent by ProtonMail with zero-access encryption to verified recipient`,
+                          `Sent by ProtonMail with zero-access encryption to verified recipients`,
+                          encryptions.length
+                      );
             return {
-                colorClassName: 'color-global-blue',
+                colorClassName: allExternal ? 'color-global-success' : 'color-pm-blue',
                 isEncrypted: true,
                 fill: CHECKMARK,
-                text: c('Sent email icon').ngettext(
-                    msgid`Sent by you with end-to-end encryption to verified recipient`,
-                    `Sent by you with end-to-end encryption to verified recipients`,
-                    encryptions.length
-                )
+                text
             };
         }
         if (allEncrypted) {
             return {
-                colorClassName: 'color-global-blue',
+                colorClassName: allExternal ? 'color-global-success' : 'color-pm-blue',
                 isEncrypted: true,
                 fill: PLAIN,
-                text: c('Sent email icon').t`Sent by you with end-to-end encryption`
+                text:
+                    contentEncryption === END_TO_END
+                        ? c('Sent email icon').t`Sent by you with end-to-end encryption`
+                        : c('Sent email icon').t`Sent by ProtonMail with zero-access encryption`
             };
         }
         return {
@@ -163,117 +187,87 @@ export const getSentStatusIcon = ({
     }
 
     const [authentication, encryption] = [mapAuthentication[emailAddress], mapEncryption[emailAddress]];
-
-    if (authentication === NONE) {
-        if (encryption !== NONE) {
+    if (encryption === NONE && [PGP_INLINE, PGP_MIME].includes(authentication)) {
+        if (contentEncryption !== ON_COMPOSE) {
             return;
         }
         return {
-            colorClassName: 'color-global-grey-dm',
-            isEncrypted: true,
-            fill: PLAIN,
-            text: c('Sent email icon').t`Stored with zero-access encryption`
+            colorClassName: 'color-global-success',
+            isEncrypted: false,
+            fill: SIGN,
+            text: c('Sent email icon').t`PGP-signed`
         };
     }
-    if (authentication === PGP_INLINE) {
-        if (encryption === NONE) {
-            return {
-                colorClassName: 'color-global-success',
-                isEncrypted: false,
-                fill: SIGN,
-                text: c('Sent email icon').t`Sent by you with authentication`
-            };
-        }
-        if (encryption === PGP_INLINE) {
-            return {
-                colorClassName: 'color-global-success',
-                isEncrypted: true,
-                fill: PLAIN,
-                text: c('Sent email icon').t`Sent by you with end-to-end encryption`
-            };
-        }
-        if (encryption === PGP_INLINE_PINNED) {
-            return {
-                colorClassName: 'color-global-success',
-                isEncrypted: true,
-                fill: CHECKMARK,
-                text: c('Sent email icon').t`Sent by you with end-to-end encryption to verified recipient`
-            };
-        }
+    if ([PGP_INLINE, PGP_MIME].includes(encryption) && [NONE, PGP_INLINE, PGP_MIME].includes(authentication)) {
+        return {
+            colorClassName: 'color-global-success',
+            isEncrypted: true,
+            fill: PLAIN,
+            text:
+                contentEncryption === END_TO_END
+                    ? c('Sent email icon').t`End-to-end encrypted to PGP recipient`
+                    : c('Sent email icon').t`Encrypted by ProtonMail to PGP recipient`
+        };
     }
-    if (authentication === PGP_MIME) {
-        if (encryption === NONE) {
-            return {
-                colorClassName: 'color-global-success',
-                isEncrypted: false,
-                fill: SIGN,
-                text: c('Sent email icon').t`Sent by you with authentication`
-            };
-        }
-        if (encryption === PGP_MIME) {
-            return {
-                colorClassName: 'color-global-success',
-                isEncrypted: true,
-                fill: PLAIN,
-                text: c('Sent email icon').t`Sent by you with end-to-end encryption`
-            };
-        }
-        if (encryption === PGP_MIME_PINNED) {
-            return {
-                colorClassName: 'color-global-success',
-                isEncrypted: true,
-                fill: CHECKMARK,
-                text: c('Sent email icon').t`Sent by you with end-to-end encryption to verified recipient`
-            };
-        }
-        return;
+    if (
+        [PGP_INLINE_PINNED, PGP_MIME_PINNED].includes(encryption) &&
+        [NONE, PGP_INLINE, PGP_MIME].includes(authentication)
+    ) {
+        return {
+            colorClassName: 'color-global-success',
+            isEncrypted: true,
+            fill: CHECKMARK,
+            text:
+                contentEncryption === END_TO_END
+                    ? c('Sent email icon').t`End-to-end encrypted to verified PGP recipient`
+                    : c('Sent email icon').t`Encrypted by ProtonMail to verified PGP recipient`
+        };
     }
-    if (authentication === PGP_EO) {
-        if (encryption !== PGP_EO) {
-            return;
-        }
+    if (authentication === PGP_EO && encryption === PGP_EO) {
         return {
             colorClassName: 'color-pm-blue',
             isEncrypted: true,
             fill: PLAIN,
-            text: c('Sent email icon').t`Sent by you with end-to-end encryption`
+            text:
+                contentEncryption === END_TO_END
+                    ? c('Sent email icon').t`End-to-end encrypted`
+                    : c('Sent email icon').t`Encrypted by ProtonMail`
         };
     }
-    if (authentication === PGP_PM) {
-        if (encryption === PGP_PM) {
-            return {
-                colorClassName: 'color-pm-blue',
-                isEncrypted: true,
-                fill: PLAIN,
-                text: c('Sent email icon').t`Sent by you with end-to-end encryption`
-            };
-        }
-        if (encryption === PGP_PM_PINNED) {
-            return {
-                colorClassName: 'color-pm-blue',
-                isEncrypted: true,
-                fill: CHECKMARK,
-                text: c('Sent email icon').t`Sent by you with end-to-end encryption to verified recipient`
-            };
-        }
+    if (encryption === PGP_PM && [NONE, PGP_PM].includes(authentication)) {
+        return {
+            colorClassName: 'color-pm-blue',
+            isEncrypted: true,
+            fill: PLAIN,
+            text:
+                contentEncryption === END_TO_END
+                    ? c('Sent email icon').t`End-to-end encrypted`
+                    : c('Sent email icon').t`Encrypted by ProtonMail`
+        };
     }
-    return {
-        colorClassName: 'color-global-grey-dm',
-        isEncrypted: true,
-        fill: PLAIN,
-        text: c('Sent email icon').t`Stored with zero-access encryption`
-    };
+    if (encryption === PGP_PM_PINNED && [NONE, PGP_PM].includes(authentication)) {
+        return {
+            colorClassName: 'color-pm-blue',
+            isEncrypted: true,
+            fill: CHECKMARK,
+            text:
+                contentEncryption === END_TO_END
+                    ? c('Sent email icon').t`End-to-end encrypted to verified recipient`
+                    : c('Sent email icon').t`Encrypted by ProtonMail to verified recipient`
+        };
+    }
 };
 
-export const getSentStatusIconInfo = (message: MessageExtended): MessageViewIcons | undefined => {
+export const getSentStatusIconInfo = (message: MessageExtended): MessageViewIcons => {
     if (!message.data?.ParsedHeaders) {
-        return;
+        return { mapStatusIcon: {} };
     }
     const mapAuthentication = getMapEmailHeaders(message.data.ParsedHeaders['X-Pm-Recipient-Authentication']);
     const mapEncryption = getMapEmailHeaders(message.data.ParsedHeaders['X-Pm-Recipient-Encryption']);
-    const globalIcon = getSentStatusIcon({ mapAuthentication, mapEncryption });
+    const contentEncryption = message.data.ParsedHeaders['X-Pm-Content-Encryption'];
+    const globalIcon = getSentStatusIcon({ mapAuthentication, mapEncryption, contentEncryption });
     const mapStatusIcon = Object.keys(mapAuthentication).reduce<MapStatusIcons>((acc, emailAddress) => {
-        acc[emailAddress] = getSentStatusIcon({ mapAuthentication, mapEncryption, emailAddress });
+        acc[emailAddress] = getSentStatusIcon({ mapAuthentication, mapEncryption, contentEncryption, emailAddress });
         return acc;
     }, {});
     return { globalIcon, mapStatusIcon };
@@ -344,7 +338,7 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
             return {
                 ...result,
                 fill: PLAIN,
-                text: c('Received email icon').t`Sent by Protonmail with zero-access encryption`
+                text: c('Received email icon').t`Sent by ProtonMail with zero-access encryption`
             };
         }
     }

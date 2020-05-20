@@ -39,6 +39,7 @@ export enum X_PM_HEADERS {
     INTERNAL = 'internal',
     EXTERNAL = 'external',
     END_TO_END = 'end-to-end',
+    ON_COMPOSE = 'on-compose',
     ON_DELIVERY = 'on-delivery'
 }
 
