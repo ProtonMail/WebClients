@@ -231,7 +231,9 @@ $conversation-icon-size: 3.2rem !default;
   padding: .6em;
 
   &.unread {
-    background: var(--bgcolor-unread-item-column-list, $white);
+	background: var(--bgcolor-unread-item-column-list, $white);
+	box-shadow: 2px 2px 3px 0px $input-shadow-color;
+	font-weight: bold;
   }
 
 }
