@@ -36,7 +36,6 @@ export default angular
                 'begin',
                 'end',
                 'attachments',
-                'wildcard',
                 'starred',
                 'reload',
                 'welcome'

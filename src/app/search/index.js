@@ -1,7 +1,6 @@
 import btnAdvancedSearch from './directives/btnAdvancedSearch';
 import searchContact from './directives/searchContact';
 import searchForm from './directives/searchForm';
-import wildcardCheckbox from './directives/wildcardCheckbox';
 import searchModel from './factories/searchModel';
 import wildcardModel from './factories/wildcardModel';
 import searchValue from './services/searchValue';
@@ -12,7 +11,6 @@ export default angular
     .directive('btnAdvancedSearch', btnAdvancedSearch)
     .directive('searchContact', searchContact)
     .directive('searchForm', searchForm)
-    .directive('wildcardCheckbox', wildcardCheckbox)
     .factory('searchModel', searchModel)
     .factory('wildcardModel', wildcardModel)
     .factory('searchValue', searchValue).name;

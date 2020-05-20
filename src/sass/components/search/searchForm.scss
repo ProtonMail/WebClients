@@ -133,14 +133,10 @@
 .searchForm-advanced-main {
     display: flex;
     flex-direction: column;
-    padding: 1rem 1rem 0rem 1rem;
+    padding: 1rem;
     background: $white;
     position: relative;
     box-shadow: 0 4px 4px -4px rgba(0,0,0,0.1);
-}
-
-.searchForm-advanced-wildcard-container {
-    cursor: pointer;
 }
 
 .searchFrom-advanced-radio { line-height: 33px }

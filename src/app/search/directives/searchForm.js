@@ -1,16 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function searchForm(
-    dispatchers,
-    $state,
-    $stateParams,
-    authentication,
-    searchModel,
-    searchValue,
-    dateUtils,
-    mailSettingsModel
-) {
+function searchForm(dispatchers, $state, $stateParams, searchModel, searchValue, dateUtils) {
     const CLASS_OPEN = 'searchForm-container-adv';
 
     /**
@@ -42,14 +33,11 @@ function searchForm(
 
                 const dispatchHelper = (type, data = {}) => dispatcher.advancedSearch(type, data);
 
-                const { AutoWildcardSearch } = mailSettingsModel.get();
-
                 let folders = searchModel.getFolderList();
                 const addresses = searchModel.getAddresses();
                 const $input = el[0].querySelector('.search-form-fieldset-input');
 
                 scope.model = {
-                    wildcard: Boolean(AutoWildcardSearch),
                     folder: folders[0],
                     address: addresses[0],
                     attachments: '2'
