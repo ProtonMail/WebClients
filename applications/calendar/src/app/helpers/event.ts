@@ -1,11 +1,12 @@
+import { EventPersonalMap } from '../interfaces/EventPersonalMap';
 import {
     VcalCalendarComponent,
     VcalVeventComponent,
     VcalVfreebusyComponent,
     VcalVjournalComponent,
+    VcalVtimezoneComponent,
     VcalVtodoComponent
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { EventPersonalMap } from '../interfaces/EventPersonalMap';
 
 interface GetComponentArguments {
     component: VcalVeventComponent;
@@ -21,7 +22,7 @@ export const getComponentWithPersonalPart = ({ component, personalMap = {}, memb
     };
 };
 
-export const getIsVeventComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVeventComponent => {
+export const getIsEventComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVeventComponent => {
     return vcalComponent.component.toLowerCase() === 'vevent';
 };
 
@@ -37,4 +38,10 @@ export const getIsFreebusyComponent = (
     vcalComponent: VcalCalendarComponent
 ): vcalComponent is VcalVfreebusyComponent => {
     return vcalComponent.component.toLowerCase() === 'vfreebusy';
+};
+
+export const getIsTimezoneComponent = (
+    vcalComponent: VcalCalendarComponent
+): vcalComponent is VcalVtimezoneComponent => {
+    return vcalComponent.component.toLowerCase() === 'vtimezone';
 };

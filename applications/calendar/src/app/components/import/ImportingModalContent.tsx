@@ -1,29 +1,29 @@
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { truncate } from 'proton-shared/lib/helpers/string';
-import React, { useEffect, Dispatch, SetStateAction } from 'react';
-import { c } from 'ttag';
-import {
-    useApi,
-    useGetCalendarKeys,
-    useGetAddressKeys,
-    useGetAddresses,
-    useGetCalendarBootstrap,
-    Alert
-} from 'react-components';
 import { syncMultipleEvents } from 'proton-shared/lib/api/calendars';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
+import { API_CODES } from 'proton-shared/lib/constants';
 import { chunk } from 'proton-shared/lib/helpers/array';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { wait } from 'proton-shared/lib/helpers/promise';
+import { truncate } from 'proton-shared/lib/helpers/string';
 import { CachedKey } from 'proton-shared/lib/interfaces';
-import { MAX_UID_CHARS_DISPLAY } from '../../constants';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import React, { Dispatch, SetStateAction, useEffect } from 'react';
+import {
+    Alert,
+    useApi,
+    useGetAddresses,
+    useGetAddressKeys,
+    useGetCalendarBootstrap,
+    useGetCalendarKeys
+} from 'react-components';
+import { c } from 'ttag';
+import { HOUR, MAX_UID_CHARS_DISPLAY } from '../../constants';
 import getCreationKeys from '../../containers/calendar/getCreationKeys';
 import getMemberAndAddress, { getMemberAndAddressID } from '../../helpers/getMemberAndAddress';
 import useUnload from '../../hooks/useUnload';
-import { IMPORT_STEPS, ImportCalendarModel, SyncMultipleApiResponse, Unwrap } from '../../interfaces/Import';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { API_CODES } from 'proton-shared/lib/constants';
+import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel, SyncMultipleApiResponse } from '../../interfaces/Import';
 
 import DynamicProgress from './DynamicProgress';
+import { IMPORT_EVENT_TYPE, ImportEventError, ImportEventGeneralError } from './ImportEventError';
 import { ImportFatalError } from './ImportFileError';
 
 const { SINGLE_SUCCESS } = API_CODES;
@@ -70,8 +70,9 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 });
                 return { uid, data };
             } catch (error) {
-                console.log(error);
-                return { uid, error };
+                const shortUID = truncate(uid, MAX_UID_CHARS_DISPLAY);
+                const idMessage = c('Error importing event').t`Event ${shortUID} could not be encrypted`;
+                return new ImportEventError(IMPORT_EVENT_TYPE.ENCRYPTION_ERROR, 'vevent', idMessage);
             }
         };
 
@@ -85,16 +86,8 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 return [];
             }
             const results = await Promise.all(events.map((event) => encryptEvent(event, addressKeys, calendarKeys)));
-            const encrypted = results.filter(({ error }) => !error).map(({ uid, data }) => ({ uid, data }));
-            const notEncrypted = results
-                .filter(({ error }) => !!error)
-                .map(({ uid }) => {
-                    const shortUID = truncate(uid, MAX_UID_CHARS_DISPLAY);
-                    return {
-                        idMessage: c('Error importing event').t`Event ${shortUID} could not be encrypted`,
-                        errorMessage: c('Error importing event').t`Encryption error`
-                    };
-                });
+            const encrypted = results.filter((e): e is EncryptedEvent => !(e instanceof ImportEventError));
+            const notEncrypted = results.filter((e): e is ImportEventError => e instanceof ImportEventError);
             setModelWithAbort(
                 (model) => ({
                     ...model,
@@ -107,13 +100,13 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
         };
 
         const submitEvents = async (
-            encryptedEvents: Unwrap<typeof encryptEvent>[],
+            encryptedEvents: (EncryptedEvent | ImportEventError)[],
             memberID: string,
             batchIndex: number,
             signal: AbortSignal
         ) => {
             // filter out events that failed at encryption
-            const events = encryptedEvents.filter(isTruthy);
+            const events = encryptedEvents.filter((e): e is EncryptedEvent => !(e instanceof ImportEventError));
             if (!events.length) {
                 return;
             }
@@ -122,9 +115,11 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
             // submit the data
             const responses: { Code: number; Index: number; Error?: string }[] = [];
             try {
-                const { Responses } = await apiWithAbort<SyncMultipleApiResponse>(
-                    syncMultipleEvents(model.calendar.ID, { MemberID: memberID, Events })
-                );
+                const { Responses } = await apiWithAbort<SyncMultipleApiResponse>({
+                    ...syncMultipleEvents(model.calendar.ID, { MemberID: memberID, Events }),
+                    timeout: HOUR * 1000,
+                    silence: true
+                });
                 Responses.forEach(({ Index, Response: { Code, Error } }) => {
                     responses.push({ Code, Index, Error });
                 });
@@ -140,12 +135,11 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 .map(({ Index }) => ({ uid: events[Index].uid }));
             const notImported = responses
                 .filter(({ Code }) => Code !== SINGLE_SUCCESS)
-                .map(({ Index, Error }) => {
+                .map(({ Index, Error: errorMessage }) => {
+                    const error = new Error(errorMessage);
                     const shortUID = truncate(events[Index].uid, MAX_UID_CHARS_DISPLAY);
-                    return {
-                        idMessage: c('Error importing event').t`Event ${shortUID} could not be imported`,
-                        errorMessage: Error || ''
-                    };
+                    const idMessage = c('Error importing event').t`Event ${shortUID} could not be imported`;
+                    return new ImportEventGeneralError(error, 'vevent', idMessage);
                 });
             setModelWithAbort(
                 (model) => ({

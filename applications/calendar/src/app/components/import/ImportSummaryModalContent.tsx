@@ -16,20 +16,18 @@ const ImportSummaryModalContent = ({ model }: Props) => {
     const success = imported === total;
     const partialSuccess = imported > 0 && !success;
 
-    const errors = [...model.eventsNotEncrypted, ...model.eventsNotImported].map(
-        ({ idMessage, errorMessage }, index) => {
-            const error = (
-                <span key={index} className="color-global-warning">
-                    {errorMessage}
-                </span>
-            );
-            const message = idMessage ? c('Error importing event').jt`${idMessage}. ${error}` : error;
-            return {
-                index,
-                message
-            };
-        }
-    );
+    const errors = [...model.eventsNotEncrypted, ...model.eventsNotImported].map((e, index) => {
+        const error = (
+            <span key={index} className="color-global-warning">
+                {e.message}
+            </span>
+        );
+        const message = e.idMessage ? c('Error importing event').jt`${e.idMessage}. ${error}` : error;
+        return {
+            index,
+            message
+        };
+    });
 
     const alertMessage = success
         ? c('Import calendar').ngettext(

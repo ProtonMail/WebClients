@@ -10,10 +10,10 @@ interface Props {
 }
 
 const WarningModalContent = ({ model }: Props) => {
-    const totalParsed = model.eventsParsed?.length || 0;
-    const totalDiscarded = model.eventsNotParsed?.length || 0;
-    const totalEvents = totalParsed + totalDiscarded;
-    const errors = model.eventsNotParsed?.map(({ idMessage, errorMessage }, index) => {
+    const totalParsed = model.eventsParsed.length;
+    const totalEventsDiscarded = model.eventsNotParsed.filter(({ component }) => component === 'vevent').length;
+    const totalEvents = totalParsed + totalEventsDiscarded;
+    const errors = model.eventsNotParsed.map(({ idMessage, message: errorMessage }, index) => {
         const error = (
             <span key={index} className="color-global-warning">
                 {errorMessage}
@@ -29,10 +29,10 @@ const WarningModalContent = ({ model }: Props) => {
     const learnMore = model.failure ? '' : 'TODO_URL';
     const forNow = <span key="for-now" className="bold">{c('Import calendar warning').t`for now`}</span>;
     const summary =
-        totalDiscarded === totalEvents
+        totalEventsDiscarded === totalEvents
             ? c('Import warning').t`No event can be imported. Click for details`
             : c('Import warning')
-                  .t`${totalDiscarded} out of ${totalEvents} events will not be imported. Click for details`;
+                  .t`${totalEventsDiscarded} out of ${totalEvents} events will not be imported. Click for details`;
 
     return (
         <>
@@ -41,9 +41,9 @@ const WarningModalContent = ({ model }: Props) => {
                 <ul>
                     <li>{c('Import calendar warning').t`Attendees`}</li>
                     <li>{c('Import calendar warning').t`Complex recurring rules`}</li>
-                    <li>{c('Import calendar warning').t`Todo's`}</li>
+                    <li>{c('Import calendar warning').t`To-do's`}</li>
                     <li>{c('Import calendar warning').t`Journals`}</li>
-                    <li>{c('Import calendar warning').t`Unofficial timezones`}</li>
+                    <li>{c('Import calendar warning').t`Unofficial or custom timezones`}</li>
                     <li>{c('Import calendar warning').t`Non-Gregorian calendars`}</li>
                 </ul>
             </Alert>

@@ -7,13 +7,13 @@ import { c } from 'ttag';
 
 import { MAX_IMPORT_FILE_SIZE } from '../../constants';
 import { filterNonSupported, parseIcs } from '../../helpers/import';
-import { IMPORT_ERROR_TYPE, IMPORT_STEPS, ImportCalendarModel } from '../../interfaces/Import';
+import { IMPORT_STEPS, ImportCalendarModel } from '../../interfaces/Import';
 
 import AttachingModalContent from './AttachingModalContent';
 import ImportingModalContent from './ImportingModalContent';
 import ImportSummaryModalContent from './ImportSummaryModalContent';
 import WarningModalContent from './WarningModalContent';
-import { ImportFileError } from './ImportFileError';
+import { IMPORT_ERROR_TYPE, ImportFileError } from './ImportFileError';
 
 interface Props {
     defaultCalendar: Calendar;
@@ -60,7 +60,8 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_FILE_SELECTED);
                     }
                     const [file] = target.files;
-                    const [filename, extension] = splitExtension(file.name);
+                    const filename = file.name;
+                    const [, extension] = splitExtension(filename);
                     const fileAttached = extension.toLowerCase() === 'ics' ? file : null;
                     if (!fileAttached) {
                         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_ICS_FILE, filename);
@@ -151,8 +152,8 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
             );
 
             const handleFinish = async () => {
-                await call();
                 setModel((model) => ({ ...model, step: IMPORT_STEPS.FINISHED }));
+                await call();
             };
 
             return {

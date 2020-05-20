@@ -93,6 +93,7 @@ export const COLORS = {
 };
 
 export const MAX_LENGTHS = {
+    UID: 191,
     CALENDAR_NAME: 100,
     CALENDAR_DESCRIPTION: 255,
     TITLE: 255,

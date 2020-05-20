@@ -193,7 +193,7 @@ describe('getIsRruleValid', () => {
     });
 });
 
-describe('getIsConsistentRrule', () => {
+describe('getIsRruleConsistent', () => {
     test('should refuse inconsistent rrules', () => {
         const dtstart = {
             value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 0, seconds: 0, isUTC: true }
@@ -222,11 +222,11 @@ describe('getIsConsistentRrule', () => {
             {
                 freq: 'MONTHLY',
                 bymonthday: 11,
-                until: {
-                    year: 2020,
-                    month: 10,
-                    day: 29
-                }
+                until: { year: 2020, month: 10, day: 29 }
+            },
+            {
+                freq: 'WEEKLY',
+                until: { year: 2020, month: 5, day: 11, hours: 11, minutes: 59, seconds: 59, isUTC: true }
             }
         ];
         const vevents = rrules.map((rrule) => ({ dtstart, dtend, rrule: { value: rrule } }));

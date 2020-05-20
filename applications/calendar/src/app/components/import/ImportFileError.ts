@@ -1,8 +1,18 @@
-import { c } from 'ttag';
 import { truncate } from 'proton-shared/lib/helpers/string';
+import { c } from 'ttag';
 
-import { IMPORT_ERROR_TYPE } from '../../interfaces/Import';
 import { MAX_FILENAME_CHARS_DISPLAY, MAX_IMPORT_EVENTS_STRING, MAX_IMPORT_FILE_SIZE_STRING } from '../../constants';
+
+export enum IMPORT_ERROR_TYPE {
+    NO_FILE_SELECTED,
+    NO_ICS_FILE,
+    FILE_EMPTY,
+    FILE_TOO_BIG,
+    FILE_CORRUPTED,
+    INVALID_CALENDAR,
+    NO_EVENTS,
+    TOO_MANY_EVENTS
+}
 
 const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
     const formattedFilename = `"${truncate(filename, MAX_FILENAME_CHARS_DISPLAY)}"`;

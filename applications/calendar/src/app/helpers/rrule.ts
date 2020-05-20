@@ -1,4 +1,5 @@
 import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
+import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { getDaysInMonth } from 'proton-shared/lib/date-fns-utc';
 import { toLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import {
@@ -147,12 +148,19 @@ export const getIsRruleCustom = (rrule: Partial<VcalRrulePropertyValue>): boolea
 };
 
 export const getIsRruleConsistent = (vevent: VcalVeventComponent) => {
-    // UNTIL and DTSTART must have the same value type
+    // UNTIL and DTSTART must have the same value type, and UNTIL should not happen before DTSTART
     const { dtstart, rrule } = vevent;
     if (rrule?.value.until) {
         const isDtstartDateTime = getIsDateTimeValue(dtstart.value);
         const isUntilDateTime = getIsDateTimeValue(rrule.value.until);
-        return !(+isDtstartDateTime ^ +isUntilDateTime);
+        if (+isDtstartDateTime ^ +isUntilDateTime) {
+            return false;
+        }
+        const startDateUTC = propertyToUTCDate(dtstart);
+        const untilDateUTC = toUTCDate(rrule.value.until);
+        if (+startDateUTC > +untilDateUTC) {
+            return false;
+        }
     }
     // DTSTART must match the pattern of the recurring series
     const [first] = getOccurrences({ component: vevent, maxCount: 1 });

@@ -1,7 +1,8 @@
-import { ReactNode } from 'react';
 import { formatData } from 'proton-shared/lib/calendar/serialize';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { VcalCalendarComponent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { ReactNode } from 'react';
+import { ImportEventError, ImportEventGeneralError } from '../components/import/ImportEventError';
 import { ImportFatalError, ImportFileError } from '../components/import/ImportFileError';
 
 export enum IMPORT_STEPS {
@@ -12,25 +13,9 @@ export enum IMPORT_STEPS {
     FINISHED
 }
 
-export enum IMPORT_ERROR_TYPE {
-    NO_FILE_SELECTED,
-    NO_ICS_FILE,
-    FILE_EMPTY,
-    FILE_TOO_BIG,
-    FILE_CORRUPTED,
-    INVALID_CALENDAR,
-    NO_EVENTS,
-    TOO_MANY_EVENTS
-}
-
 export interface DetailError {
     index: number;
     message: ReactNode;
-}
-
-export interface EventFailure {
-    idMessage: string;
-    errorMessage: string;
 }
 
 export interface EncryptedEvent {
@@ -42,11 +27,11 @@ export interface ImportCalendarModel {
     step: IMPORT_STEPS;
     fileAttached?: File;
     eventsParsed: VcalVeventComponent[];
-    eventsNotParsed: EventFailure[];
+    eventsNotParsed: ImportEventError[];
     eventsEncrypted: EncryptedEvent[];
-    eventsNotEncrypted: EventFailure[];
+    eventsNotEncrypted: ImportEventError[];
     eventsImported: Pick<EncryptedEvent, 'uid'>[];
-    eventsNotImported: EventFailure[];
+    eventsNotImported: ImportEventGeneralError[];
     failure?: ImportFileError | ImportFatalError | Error;
     calendar: Calendar;
 }
@@ -70,3 +55,5 @@ export interface SyncMultipleApiResponse {
         };
     }[];
 }
+
+export type VcalCalendarComponentOrError = VcalCalendarComponent | { error: Error };
