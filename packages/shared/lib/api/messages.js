@@ -71,10 +71,10 @@ export const createDraft = ({ Message, ParentID, Action, AttachmentKeyPackets })
     data: { Message, ParentID, Action, AttachmentKeyPackets }
 });
 
-export const updateDraft = (messageID, Message) => ({
+export const updateDraft = (messageID, Message, AttachmentKeyPackets) => ({
     method: 'put',
     url: `messages/${messageID}`,
-    data: { Message }
+    data: { Message, AttachmentKeyPackets }
 });
 
 export const readReceipt = (messageID) => ({
