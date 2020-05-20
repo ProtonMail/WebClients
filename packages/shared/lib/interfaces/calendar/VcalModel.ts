@@ -43,6 +43,13 @@ export interface VcalDateProperty {
     value: VcalDateValue;
 }
 
+export interface VcalFloatingDateTimeProperty {
+    parameters?: {
+        type?: 'date-time';
+    };
+    value: VcalDateTimeValue;
+}
+
 export type VcalDateOrDateTimeProperty = VcalDateProperty | VcalDateTimeProperty;
 
 export type VcalRruleFreqValue = 'DAILY' | 'WEEKLY' | 'MONTHLY' | 'YEARLY' | undefined | string;
@@ -103,10 +110,6 @@ export interface VcalStringArrayProperty {
     value: string[];
 }
 
-export interface VcalNumberProperty {
-    value: number;
-}
-
 export interface VcalStringWithParamsProperty {
     value: string;
     params?: { [key: string]: string };
@@ -132,8 +135,8 @@ export interface VcalVeventComponent {
     location?: VcalStringProperty;
     geo?: VcalGeoProperty;
     class?: VcalStringProperty;
-    priority?: VcalNumberProperty;
-    sequence?: VcalNumberProperty;
+    priority?: VcalStringProperty;
+    sequence?: VcalStringProperty;
     status?: VcalStringProperty;
     created?: VcalDateTimeProperty;
     'last-modified'?: VcalDateTimeProperty;
@@ -167,11 +170,17 @@ export interface VcalVfreebusyComponent {
     uid: VcalUidProperty;
 }
 
+export interface VcalVtimezoneComponent {
+    component: 'vtimezone';
+    tzid: VcalStringProperty[];
+}
+
 export type VcalCalendarComponent =
     | VcalVeventComponent
     | VcalVtodoComponent
     | VcalVjournalComponent
-    | VcalVfreebusyComponent;
+    | VcalVfreebusyComponent
+    | VcalVtimezoneComponent;
 
 export interface VcalVcalendar {
     component: string;
@@ -180,4 +189,5 @@ export interface VcalVcalendar {
     version: VcalStringProperty;
     calscale?: VcalStringProperty[];
     method?: VcalStringProperty;
+    'x-wr-timezone'?: VcalStringProperty[];
 }
