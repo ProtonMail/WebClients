@@ -344,13 +344,13 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
         }
 
         if (rrule) {
+            validated.rrule = rrule;
             if (dtend && !getIsRruleConsistent(validated)) {
                 throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_INCONSISTENT, 'vevent', idMessage);
             }
             if (!getIsRruleSupported(rrule.value)) {
                 throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_UNSUPPORTED, 'vevent', idMessage);
             }
-            validated.rrule = rrule;
         }
 
         const alarms = components?.filter(({ component }) => component === 'valarm').slice(0, MAX_NOTIFICATIONS);

@@ -167,7 +167,7 @@ export const getIsRruleConsistent = (vevent: VcalVeventComponent) => {
     if (!first) {
         return false;
     }
-    if (+first.localStart !== +toUTCDate(vevent.dtstart.value)) {
+    if (+first.localStart !== +toUTCDate(dtstart.value)) {
         return false;
     }
     return true;
