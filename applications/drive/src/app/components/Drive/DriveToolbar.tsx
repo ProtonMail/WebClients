@@ -12,6 +12,7 @@ import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import CreateFolderModal from '../CreateFolderModal';
 import RenameModal from '../RenameModal';
 import DetailsModal from '../DetailsModal';
+import MoveToFolderModal from '../MoveToFolderModal';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getNotificationTextForItemList } from './helpers';
 import { DriveFolder } from './DriveFolderProvider';
@@ -27,8 +28,16 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { fileBrowserControls } = useDriveContent();
-    const { getLinkMeta, createNewFolder, renameLink, events } = useDrive();
     const { startFileTransfer, startFolderTransfer } = useFiles();
+    const {
+        getFoldersOnlyMetas,
+        getShareMeta,
+        getLinkMeta,
+        createNewFolder,
+        renameLink,
+        moveLink,
+        events
+    } = useDrive();
     const { trashLinks, restoreLinks } = useTrash();
     const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
     const cache = useDriveCache();
@@ -62,17 +71,20 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
             if (item.Type === LinkType.FILE) {
                 const meta = getMetaForTransfer(item);
                 const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
-                FileSaver.saveViaDownload(fileStream, meta);
+                FileSaver.saveAsFile(fileStream, meta);
             } else {
-                const zipSaver = await FileSaver.saveViaZip(`${item.Name}.zip`);
+                const zipSaver = await FileSaver.saveAsZip(`${item.Name}.zip`);
 
                 if (zipSaver) {
-                    await startFolderTransfer(item.Name, shareId, item.LinkID, {
-                        onStartFileTransfer: zipSaver.addFile,
-                        onStartFolderTransfer: zipSaver.addFolder,
-                        onCancel: zipSaver.abort
-                    });
-                    zipSaver.close();
+                    try {
+                        await startFolderTransfer(item.Name, shareId, item.LinkID, {
+                            onStartFileTransfer: zipSaver.addFile,
+                            onStartFolderTransfer: zipSaver.addFolder
+                        });
+                        zipSaver.close();
+                    } catch (e) {
+                        zipSaver.abort(e);
+                    }
                 }
             }
         });
@@ -141,7 +153,10 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                 )
             };
 
-            const notificationText = getNotificationTextForItemList(toTrash, notificationMessages);
+            const notificationText = getNotificationTextForItemList(
+                toTrash.map((item) => item.Type),
+                notificationMessages
+            );
             createNotification({ text: notificationText });
             await events.call(shareId);
         };
@@ -164,12 +179,113 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
             )
         };
 
-        const movedToTrashText = getNotificationTextForItemList(toTrash, notificationMessages, undoAction);
+        const movedToTrashText = getNotificationTextForItemList(
+            toTrash.map((item) => item.Type),
+            notificationMessages,
+            undoAction
+        );
         createNotification({
             type: 'success',
             text: movedToTrashText
         });
         await events.call(shareId);
+    };
+
+    const moveToFolder = () => {
+        const toMove = selectedItems;
+
+        createModal(
+            <MoveToFolderModal
+                activeFolder={activeFolder}
+                selectedItems={toMove}
+                getShareMeta={getShareMeta}
+                getLinkMeta={getLinkMeta}
+                getFoldersOnlyMetas={getFoldersOnlyMetas}
+                isChildrenComplete={(LinkID: string) => !!cache.get.foldersOnlyComplete(shareId, LinkID)}
+                moveLinksToFolder={async (parentFolderId: string) => {
+                    const [movedLinks, failedMoves] = (
+                        await Promise.allSettled(toMove.map((link) => moveLink(shareId, parentFolderId, link.LinkID)))
+                    ).reduce<[{ Name: string; Type: LinkType }[], { Name: string; Type: LinkType }[]]>(
+                        ([successful, failed], result, i: number) => {
+                            if (result.status === 'fulfilled') {
+                                successful.push(result.value);
+                            } else if (result.reason?.name === 'Error') {
+                                failed.push({ Name: toMove[i].Name, Type: toMove[i].Type });
+                                console.error(`Failed to move file "${toMove[i].Name}": ${result.reason}`);
+                            }
+                            return [successful, failed];
+                        },
+                        [[], []]
+                    );
+
+                    const movedLinksCount = movedLinks.length;
+                    const failedMovesCount = failedMoves.length;
+
+                    if (movedLinksCount > 0) {
+                        const [{ Name: firstItemName }] = movedLinks;
+                        const notificationMessages = {
+                            allFiles: c('Notification').ngettext(
+                                msgid`"${firstItemName}" successfully moved`,
+                                `${movedLinksCount} files successfully moved`,
+                                movedLinksCount
+                            ),
+                            allFolders: c('Notification').ngettext(
+                                msgid`"${firstItemName}" successfully moved`,
+                                `${movedLinksCount} folders successfully moved`,
+                                movedLinksCount
+                            ),
+                            mixed: c('Notification').ngettext(
+                                msgid`"${firstItemName}" successfully moved`,
+                                `${movedLinksCount} items successfully moved`,
+                                movedLinksCount
+                            )
+                        };
+                        const notificationMessage = getNotificationTextForItemList(
+                            movedLinks.map((item) => item.Type),
+                            notificationMessages
+                        );
+
+                        createNotification({
+                            type: 'success',
+                            text: notificationMessage
+                        });
+                    }
+
+                    if (failedMovesCount > 0) {
+                        const [{ Name: firstItemName }] = failedMoves;
+                        const notificationMessages = {
+                            allFiles: c('Notification').ngettext(
+                                msgid`"${firstItemName}" failed to be moved`,
+                                `${failedMovesCount} files failed to be moved`,
+                                failedMovesCount
+                            ),
+                            allFolders: c('Notification').ngettext(
+                                msgid`"${firstItemName}" failed to be moved`,
+                                `${failedMovesCount} folders failed to be moved`,
+                                failedMovesCount
+                            ),
+                            mixed: c('Notification').ngettext(
+                                msgid`"${failedMovesCount}" failed to be moved`,
+                                `${failedMovesCount} items failed to be moved`,
+                                failedMovesCount
+                            )
+                        };
+
+                        const notificationMessage = getNotificationTextForItemList(
+                            failedMoves.map((item) => item.Type),
+                            notificationMessages
+                        );
+                        createNotification({
+                            type: 'error',
+                            text: notificationMessage
+                        });
+                    }
+
+                    await events.call(shareId);
+                }}
+                openCreateFolderModal={handleCreateFolder}
+            />
+        );
     };
 
     const renderSelectionActions = () => {
@@ -214,6 +330,11 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                     title={c('Action').t`Move to Trash`}
                     icon="trash"
                     onClick={() => withMoveToTrashLoading(moveToTrash())}
+                />
+                <ToolbarButton
+                    title={c('Action').t`Move to Folder`}
+                    icon="arrow-cross"
+                    onClick={() => moveToFolder()}
                 />
             </>
         );

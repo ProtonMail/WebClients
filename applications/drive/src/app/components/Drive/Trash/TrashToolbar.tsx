@@ -98,7 +98,10 @@ const TrashToolbar = ({ shareId }: Props) => {
                 )
             };
 
-            const notificationText = getNotificationTextForItemList(toRestore, notificationMessages);
+            const notificationText = getNotificationTextForItemList(
+                toRestore.map((item) => item.Type),
+                notificationMessages
+            );
             createNotification({ text: notificationText, type: 'success' });
         }
 
@@ -152,7 +155,10 @@ const TrashToolbar = ({ shareId }: Props) => {
                 )
             };
 
-            const notificationText = getNotificationTextForItemList(toDelete, notificationMessages);
+            const notificationText = getNotificationTextForItemList(
+                toDelete.map((item) => item.Type),
+                notificationMessages
+            );
             createNotification({ text: notificationText });
             await Promise.allSettled([events.call(shareId), call()]);
         });
@@ -179,7 +185,7 @@ const TrashToolbar = ({ shareId }: Props) => {
                     <ToolbarButton
                         disabled={!selectedItems.length || restoreLoading}
                         title={c('Action').t`Restore from Trash`}
-                        icon="calendar-repeat"
+                        icon="repeat"
                         onClick={() => withRestoreLoading(restoreFromTrash())}
                     />
                     <ToolbarSeparator />

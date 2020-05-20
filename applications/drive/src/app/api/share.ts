@@ -1,4 +1,5 @@
 import { FOLDER_PAGE_SIZE } from '../constants';
+import { MoveLink } from '../interfaces/link';
 
 export const queryUserShares = () => ({
     method: 'get',
@@ -27,6 +28,12 @@ export const queryTrashList = (
     method: 'get',
     url: `drive/shares/${shareID}/trash`,
     params: { Page, PageSize }
+});
+
+export const queryMoveLink = (shareID: string, linkID: string, data: MoveLink) => ({
+    method: 'put',
+    url: `drive/shares/${shareID}/links/${linkID}/move`,
+    data
 });
 
 export const queryEvents = (shareID: string, eventID: string) => ({

@@ -6,6 +6,7 @@ import { openDownloadStream, initDownloadSW } from './download';
 import { TransferMeta } from '../../interfaces/transfer';
 import { streamToBuffer } from '../stream';
 import { NestedFileStream } from '../../interfaces/file';
+import { MEMORY_DOWNLOAD_LIMIT } from '../../constants';
 
 class FileSaver {
     private useBlobFallback = false;
@@ -17,7 +18,7 @@ class FileSaver {
         });
     }
 
-    async saveViaDownload(stream: ReadableStream<Uint8Array>, meta: TransferMeta) {
+    private async saveViaDownload(stream: ReadableStream<Uint8Array>, meta: TransferMeta) {
         if (this.useBlobFallback) {
             return this.saveViaBuffer(stream, meta.filename);
         }
@@ -33,70 +34,76 @@ class FileSaver {
         }
     }
 
-    async saveViaBuffer(stream: ReadableStream<Uint8Array>, filename: string) {
+    private async saveViaBuffer(stream: ReadableStream<Uint8Array>, filename: string) {
         try {
             const chunks = await streamToBuffer(stream);
             downloadFile(new Blob(chunks, { type: 'application/octet-stream; charset=utf-8' }), filename);
         } catch (err) {
             if (err.name !== 'TransferCancel' && err.name !== 'AbortError') {
-                throw err;
+                console.error(`File download for ${filename} failed: ${err}`);
             }
         }
     }
 
-    async saveViaZip(filename: string) {
-        try {
-            const abortController = new AbortController();
-            const mimeType = lookup(filename) || undefined;
-            const zipMeta = { filename, mimeType };
-            const { readable, writable } = new ZipWriter();
-            const writer = writable.getWriter();
-
-            const files: NestedFileStream[] = [];
-
-            if (this.useBlobFallback) {
-                return this.saveViaBuffer(readable, filename);
-            }
-
-            const saveStream = await openDownloadStream(zipMeta, {
-                onCancel: () => {
-                    files.forEach(({ stream }) => stream.cancel('user canceled'));
-                },
-                abortSignal: abortController.signal
-            });
-
-            // This creates it's own streams that are not aborted, hence the abort signal
-            readable.pipeTo(saveStream);
-
-            return {
-                addFile: (file: NestedFileStream) => {
-                    writer.write({
-                        name: file.path,
-                        lastModified: new Date(),
-                        stream: () => file.stream
-                    });
-                    files.push(file);
-                },
-                addFolder: (path: string) => {
-                    writer.write({
-                        directory: true,
-                        name: path
-                    });
-                },
-                close: () => {
-                    writer.close();
-                },
-                abort: async (reason: any) => {
-                    abortController.abort();
-                    writer.abort(reason);
-                }
-            };
-        } catch (err) {
-            if (err.name !== 'TransferCancel' && err.name !== 'AbortError') {
-                throw err;
-            }
-            return undefined;
+    async saveAsFile(stream: ReadableStream<Uint8Array>, meta: TransferMeta) {
+        if (meta.size && meta.size < MEMORY_DOWNLOAD_LIMIT) {
+            return this.saveViaBuffer(stream, meta.filename);
         }
+        return this.saveViaDownload(stream, meta);
+    }
+
+    async saveAsZip(filename: string) {
+        const files: NestedFileStream[] = [];
+
+        const abortController = new AbortController();
+        const { readable, writable } = new ZipWriter();
+        const writer = writable.getWriter();
+
+        if (this.useBlobFallback) {
+            this.saveViaBuffer(readable, filename);
+        } else {
+            try {
+                const mimeType = lookup(filename) || undefined;
+                const zipMeta = { filename, mimeType };
+
+                const saveStream = await openDownloadStream(zipMeta, {
+                    onCancel: () => {
+                        files.forEach(({ stream }) => stream.cancel('user canceled'));
+                    },
+                    abortSignal: abortController.signal
+                });
+
+                // ZipWriter creates it's own streams that are not aborted, using abort signal to force cancel manually
+                readable.pipeTo(saveStream);
+            } catch (err) {
+                console.error('Failed to save zip via download, falling back to in-memory download:', err);
+                this.saveViaBuffer(readable, filename);
+            }
+        }
+
+        return {
+            addFile: async (file: NestedFileStream) => {
+                files.push(file);
+                await writer.write({
+                    name: file.path,
+                    lastModified: new Date(),
+                    stream: () => file.stream
+                });
+            },
+            addFolder: async (path: string) => {
+                await writer.write({
+                    directory: true,
+                    name: path
+                });
+            },
+            close: () => {
+                writer.close();
+            },
+            abort: async (reason: any) => {
+                abortController.abort();
+                writer.abort(reason);
+            }
+        };
     }
 }
 

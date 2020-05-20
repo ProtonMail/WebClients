@@ -96,7 +96,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
             ? saveFileTransferFromBuffer(contents, transferMeta)
             : startFileTransfer(shareId, linkId, transferMeta));
 
-        FileSaver.saveViaDownload(fileStream, transferMeta);
+        FileSaver.saveAsFile(fileStream, transferMeta);
     }, [meta, contents, shareId, linkId]);
 
     return (

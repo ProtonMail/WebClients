@@ -27,6 +27,11 @@ interface CachedFolderLink {
         unlisted: string[];
         complete: boolean;
     };
+    foldersOnly: {
+        list: string[];
+        unlisted: string[];
+        complete: boolean;
+    };
     keys?: FolderLinkKeys;
 }
 
@@ -75,7 +80,8 @@ const useDriveCacheState = () => {
                 links[meta.LinkID] = isFolderLinkMeta(meta)
                     ? {
                           meta,
-                          children: { complete: false, list: [], unlisted: [] }
+                          children: { complete: false, list: [], unlisted: [] },
+                          foldersOnly: { complete: false, list: [], unlisted: [] }
                       }
                     : { meta };
             }
@@ -120,6 +126,26 @@ const useDriveCacheState = () => {
         return cacheRef.current[shareId].trash.list;
     };
 
+    const getFoldersOnlyLinks = (shareId: string, linkId: string) => {
+        const link = cacheRef.current[shareId].links[linkId];
+
+        if (link && isCachedFolderLink(link)) {
+            return [...link.foldersOnly.list, ...link.foldersOnly.unlisted];
+        }
+
+        return undefined;
+    };
+
+    const getListedFoldersOnlyLinks = (shareId: string, linkId: string) => {
+        const link = cacheRef.current[shareId].links[linkId];
+
+        if (link && isCachedFolderLink(link)) {
+            return link.foldersOnly.list;
+        }
+
+        return undefined;
+    };
+
     const setChildLinkMetas = (
         metas: LinkMeta[],
         shareId: string,
@@ -146,7 +172,7 @@ const useDriveCacheState = () => {
                     ...linkIds.filter((id) => !parent.children.list.includes(id))
                 ];
                 parent.children.unlisted = parent.children.unlisted.filter((id) => !linkIds.includes(id));
-                parent.children.complete = method === 'complete' ?? parent.children.complete;
+                parent.children.complete = method === 'complete' || parent.children.complete;
             }
         }
 
@@ -172,12 +198,51 @@ const useDriveCacheState = () => {
         } else {
             trash.list = [...trash.list, ...linkIds.filter((id) => !trash.list.includes(id))];
             trash.unlisted = trash.unlisted.filter((id) => !linkIds.includes(id));
-            trash.complete = method === 'complete' ?? trash.complete;
+            trash.complete = method === 'complete' || trash.complete;
         }
 
         cacheRef.current[shareId] = {
             ...cacheRef.current[shareId],
             trash,
+            links
+        };
+
+        setRerender((old) => ++old);
+    };
+
+    const setFoldersOnlyLinkMetas = (
+        metas: LinkMeta[],
+        shareId: string,
+        linkId: string,
+        method: 'unlisted' | 'complete' | 'incremental'
+    ) => {
+        const links = cacheRef.current[shareId].links;
+        const parent = links[linkId];
+        const folderMetas = metas.filter(isFolderLinkMeta);
+
+        setLinkMeta(folderMetas, shareId);
+
+        if (isCachedFolderLink(parent)) {
+            const existing = getFoldersOnlyLinks(shareId, linkId) || [];
+            const linkIds = folderMetas.map(({ LinkID }) => LinkID);
+
+            if (method === 'unlisted') {
+                parent.foldersOnly.unlisted = [
+                    ...parent.foldersOnly.unlisted,
+                    ...linkIds.filter((id) => !existing.includes(id))
+                ];
+            } else {
+                parent.foldersOnly.list = [
+                    ...parent.foldersOnly.list,
+                    ...linkIds.filter((id) => !parent.foldersOnly.list.includes(id))
+                ];
+                parent.foldersOnly.unlisted = parent.foldersOnly.unlisted.filter((id) => !linkIds.includes(id));
+                parent.foldersOnly.complete = method === 'complete' || parent.foldersOnly.complete;
+            }
+        }
+
+        cacheRef.current[shareId] = {
+            ...cacheRef.current[shareId],
             links
         };
 
@@ -212,6 +277,15 @@ const useDriveCacheState = () => {
 
         return undefined;
     };
+    const getfoldersOnlyComplete = (shareId: string, linkId: string) => {
+        const link = cacheRef.current[shareId].links[linkId];
+
+        if (link && isCachedFolderLink(link)) {
+            return link.foldersOnly.complete;
+        }
+
+        return undefined;
+    };
 
     const getChildLinkMetas = (shareId: string, linkId: string) => {
         const links = getChildLinks(shareId, linkId);
@@ -221,6 +295,11 @@ const useDriveCacheState = () => {
     const getTrashMetas = (shareId: string) => {
         const links = getTrashLinks(shareId);
         return links.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
+    };
+
+    const getFoldersOnlyLinkMetas = (shareId: string, linkId: string) => {
+        const links = getFoldersOnlyLinks(shareId, linkId);
+        return links?.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
     };
 
     const setShareKeys = (keys: ShareKeys, shareID: string) => {
@@ -261,6 +340,8 @@ const useDriveCacheState = () => {
                 if (parent && isCachedFolderLink(parent)) {
                     parent.children.list = parent.children.list.filter((id) => meta.LinkID !== id);
                     parent.children.unlisted = parent.children.unlisted.filter((id) => meta.LinkID !== id);
+                    parent.foldersOnly.list = parent.foldersOnly.list.filter((id) => meta.LinkID !== id);
+                    parent.foldersOnly.unlisted = parent.foldersOnly.unlisted.filter((id) => meta.LinkID !== id);
                 }
 
                 trash.list = trash.list.filter((id) => meta.LinkID !== id);
@@ -287,6 +368,7 @@ const useDriveCacheState = () => {
         set: {
             trashLinkMetas: setTrashLinkMetas,
             childLinkMetas: setChildLinkMetas,
+            foldersOnlyLinkMetas: setFoldersOnlyLinkMetas,
             linkMeta: setLinkMeta,
             linkKeys: setLinkKeys,
             shareMeta: setShareMeta,
@@ -302,6 +384,9 @@ const useDriveCacheState = () => {
             childLinkMetas: getChildLinkMetas,
             childLinks: getChildLinks,
             listedChildLinks: getListedChildLinks,
+            foldersOnlyLinkMetas: getFoldersOnlyLinkMetas,
+            listedFoldersOnlyLinks: getListedFoldersOnlyLinks,
+            foldersOnlyComplete: getfoldersOnlyComplete,
             linkMeta: getLinkMeta,
             linkKeys: getLinkKeys,
             shareMeta: getShareMeta,

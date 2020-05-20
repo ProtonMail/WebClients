@@ -64,7 +64,7 @@ function Drive({ activeFolder, openLink }: Props) {
             } else {
                 const meta = getMetaForTransfer(item);
                 const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
-                FileSaver.saveViaDownload(fileStream, meta);
+                FileSaver.saveAsFile(fileStream, meta);
             }
         }
     };

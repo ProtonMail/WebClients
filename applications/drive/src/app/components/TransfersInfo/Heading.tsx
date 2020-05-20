@@ -94,7 +94,6 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
                         onToggleMinimize();
                         minimizeRef.current?.blur();
                     }}
-                    onTouchEnd={() => minimizeRef.current?.blur()}
                     aria-expanded={!minimized}
                 >
                     <Icon className={classnames([minimized && 'rotateX-180'])} name="minimize" />

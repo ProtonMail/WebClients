@@ -1,0 +1,29 @@
+.pd-folder-tree {
+    @extend .bordered-container;
+    @extend .scroll-if-needed;
+
+    border-radius: $global-border-radius;
+    height: 28em;
+
+    &-table {
+        width: auto;
+        min-width: 100%;
+        max-width: initial;
+    }
+
+    &-listItem-button {
+        @extend .pm-button;
+        @extend .pm-button--for-icon;
+
+        display: flex;
+        padding: 0.25em;
+    }
+
+    &-listItem-name {
+        min-width: 10em;
+    }
+
+    &-listItem-selected {
+        min-width: 3em;
+    }
+}
