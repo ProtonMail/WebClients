@@ -13,7 +13,7 @@ import {
     useGetAddresses,
     useGetAddressKeys,
     useGetCalendarBootstrap,
-    useGetCalendarKeys
+    useGetCalendarKeys,
 } from 'react-components';
 import { c } from 'ttag';
 import { HOUR, MAX_UID_CHARS_DISPLAY } from '../../constants';
@@ -23,8 +23,9 @@ import useUnload from '../../hooks/useUnload';
 import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel, SyncMultipleApiResponse } from '../../interfaces/Import';
 
 import DynamicProgress from './DynamicProgress';
-import { IMPORT_EVENT_TYPE, ImportEventError, ImportEventGeneralError } from './ImportEventError';
-import { ImportFatalError } from './ImportFileError';
+import { IMPORT_EVENT_TYPE, ImportEventError } from './ImportEventError';
+import { ImportEventGeneralError } from './ImportEventGeneralError';
+import { ImportFatalError } from './ImportFatalError';
 
 const { SINGLE_SUCCESS } = API_CODES;
 const BATCH_SIZE = 10;
@@ -66,7 +67,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 const data = await createCalendarEvent({
                     eventComponent,
                     isSwitchCalendar: false,
-                    ...(await getCreationKeys({ addressKeys, newCalendarKeys: calendarKeys }))
+                    ...(await getCreationKeys({ addressKeys, newCalendarKeys: calendarKeys })),
                 });
                 return { uid, data };
             } catch (error) {
@@ -92,7 +93,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 (model) => ({
                     ...model,
                     eventsEncrypted: [...model.eventsEncrypted, ...encrypted],
-                    eventsNotEncrypted: [...model.eventsNotEncrypted, ...notEncrypted]
+                    eventsNotEncrypted: [...model.eventsNotEncrypted, ...notEncrypted],
                 }),
                 signal
             );
@@ -118,7 +119,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 const { Responses } = await apiWithAbort<SyncMultipleApiResponse>({
                     ...syncMultipleEvents(model.calendar.ID, { MemberID: memberID, Events }),
                     timeout: HOUR * 1000,
-                    silence: true
+                    silence: true,
                 });
                 Responses.forEach(({ Index, Response: { Code, Error } }) => {
                     responses.push({ Code, Index, Error });
@@ -145,7 +146,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 (model) => ({
                     ...model,
                     eventsImported: [...model.eventsImported, ...imported],
-                    eventsNotImported: [...model.eventsNotImported, ...notImported]
+                    eventsNotImported: [...model.eventsNotImported, ...notImported],
                 }),
                 signal
             );
@@ -156,7 +157,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
             const [memberID, addressID] = getMemberAndAddressID(getMemberAndAddress(Addresses, Members));
             const [addressKeys, calendarKeys] = await Promise.all([
                 getAddressKeys(addressID),
-                getCalendarKeys(calendarID)
+                getCalendarKeys(calendarID),
             ]);
             return { memberID, addressKeys, calendarKeys };
         };
@@ -173,7 +174,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     // We play it safe by enforcing a 100ms minimum wait between API calls. During this wait we encrypt the events
                     const [encryptedEvents] = await Promise.all([
                         encryptEvents(batches[i], addressKeys, calendarKeys, signal),
-                        wait(100)
+                        wait(100),
                     ]);
                     submitEvents(encryptedEvents, memberID, i, signal);
                 }
@@ -188,7 +189,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                         eventsNotEncrypted: [],
                         eventsImported: [],
                         eventsNotImported: [],
-                        failure: new ImportFatalError(error)
+                        failure: new ImportFatalError(error),
                     }),
                     signal
                 );
@@ -224,7 +225,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 value={encrypted + imported}
                 display={c('Import calendar').t`Encrypting and adding events to your calendar: ${imported}/${total}`}
                 max={2 * total} // count encryption and submission equivalently for the progress
-                loading={true}
+                loading
             />
         </>
     );

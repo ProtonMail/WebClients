@@ -1,8 +1,8 @@
-import { modelToGeneralProperties } from './modelToProperties';
 import { c } from 'ttag';
+import { isBefore } from 'date-fns';
+import { modelToGeneralProperties } from './modelToProperties';
 import { getTimeInUtc } from './time';
 import { END_TYPE, FREQUENCY, MAX_NOTIFICATIONS } from '../../../constants';
-import { isBefore } from 'date-fns';
 import { EventModel, EventModelErrors } from '../../../interfaces/EventModel';
 
 // returns array of ids exceeding MAX_NOTIFICATIONS

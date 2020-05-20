@@ -1,9 +1,9 @@
-import parseMainEventData from '../event/parseMainEventData';
 import { getUnixTime } from 'date-fns';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { queryEvents } from 'proton-shared/lib/api/calendars';
 import { Api } from 'proton-shared/lib/interfaces';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
+import parseMainEventData from '../event/parseMainEventData';
 
 const MAX_FETCH_ITERATIONS = 10;
 
@@ -26,7 +26,7 @@ const getPaginatedEvents = async (api: Api, calendarID: string, dateRange: Date[
         End: Math.max(0, getUnixTime(dateRange[1])),
         Timezone: tzid,
         PageSize,
-        Page: 0
+        Page: 0,
     };
 
     let lastStart: number | undefined = Math.max(0, getUnixTime(dateRange[0]));

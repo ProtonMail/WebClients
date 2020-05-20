@@ -40,7 +40,7 @@ const CreateEventModal = ({
         model,
         errors,
         onSave,
-        onDelete
+        onDelete,
     });
 
     // Can't use default close button in FormModal because button type reset resets selects

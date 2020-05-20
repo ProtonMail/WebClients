@@ -21,10 +21,10 @@ const ViewPreferenceSelector = ({
     const options = [
         { text: c('Calendar view').t`Day`, value: SETTINGS_VIEW.DAY },
         { text: c('Calendar view').t`Week`, value: SETTINGS_VIEW.WEEK },
-        { text: c('Calendar view').t`Month`, value: SETTINGS_VIEW.MONTH }
+        { text: c('Calendar view').t`Month`, value: SETTINGS_VIEW.MONTH },
         // not activated for beta
-        //{ text: c('Calendar view').t`Year`, value: YEAR },
-        //{ text: c('Calendar view').t`Agenda`, value: PLANNING },
+        // { text: c('Calendar view').t`Year`, value: YEAR },
+        // { text: c('Calendar view').t`Agenda`, value: PLANNING },
     ].filter(Boolean);
 
     return (

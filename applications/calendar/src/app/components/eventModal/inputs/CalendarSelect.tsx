@@ -29,8 +29,8 @@ const CalendarSelect = ({ withIcon = false, model, setModel, ...rest }: Props) =
         const {
             CalendarSettings: {
                 DefaultPartDayNotifications: oldDefaultPartDayNotificationsSettings,
-                DefaultFullDayNotifications: oldDefaultFullDayNotificationsSettings
-            }
+                DefaultFullDayNotifications: oldDefaultFullDayNotificationsSettings,
+            },
         } = await getCalendarBootstrap(id);
 
         const oldDefaultPartDayNotifications = getDeviceNotifications(
@@ -46,8 +46,8 @@ const CalendarSelect = ({ withIcon = false, model, setModel, ...rest }: Props) =
             CalendarSettings: {
                 DefaultEventDuration: defaultEventDuration,
                 DefaultPartDayNotifications,
-                DefaultFullDayNotifications
-            }
+                DefaultFullDayNotifications,
+            },
         } = await getCalendarBootstrap(newId);
         const Addresses = await getAddresses();
 
@@ -81,7 +81,7 @@ const CalendarSelect = ({ withIcon = false, model, setModel, ...rest }: Props) =
             ...getInitialMemberModel(Addresses, Members, Member, Address),
             defaultEventDuration,
             partDayNotifications,
-            fullDayNotifications
+            fullDayNotifications,
         });
     };
 

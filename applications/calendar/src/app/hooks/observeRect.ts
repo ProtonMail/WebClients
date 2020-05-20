@@ -50,7 +50,7 @@ export default (node: HTMLElement, cb: Callback) => {
         observedNodes.set(node, {
             rect: undefined,
             hasRectChanged: false,
-            callbacks: [cb]
+            callbacks: [cb],
         });
     }
     if (wasEmpty) {

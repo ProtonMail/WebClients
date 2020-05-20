@@ -6,7 +6,7 @@ import {
     Calendar as tsCalendar,
     CalendarSettings as tsCalendarSettings,
     Member as tsMember,
-    SETTINGS_NOTIFICATION_TYPE
+    SETTINGS_NOTIFICATION_TYPE,
 } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
@@ -20,7 +20,7 @@ import {
     FREQUENCY,
     MONTHLY_TYPE,
     WEEKLY_TYPE,
-    YEARLY_TYPE
+    YEARLY_TYPE,
 } from '../../../constants';
 import { DEFAULT_FULL_DAY_NOTIFICATIONS, DEFAULT_PART_DAY_NOTIFICATIONS } from '../../../settingsConstants';
 import { DEFAULT_FULL_DAY_NOTIFICATION, DEFAULT_PART_DAY_NOTIFICATION } from '../../../modelConstants';
@@ -32,14 +32,14 @@ import { EventModel, FrequencyModel } from '../../../interfaces/EventModel';
 export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
     DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
-    hasModifiedNotifications = { partDay: false, fullDay: false }
+    hasModifiedNotifications = { partDay: false, fullDay: false },
 }) => {
     return {
         defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
         partDayNotifications: getDeviceNotifications(notificationsToModel(DefaultPartDayNotifications, false)),
         fullDayNotifications: getDeviceNotifications(notificationsToModel(DefaultFullDayNotifications, true)),
-        hasModifiedNotifications
+        hasModifiedNotifications,
     };
 };
 
@@ -71,7 +71,7 @@ export const getInitialDateTimeModel = (initialDate: Date, defaultEventDuration:
 
     return {
         start: getDateTimeState(start, tzid),
-        end: getDateTimeState(end, tzid)
+        end: getDateTimeState(end, tzid),
     };
 };
 
@@ -84,7 +84,7 @@ export const getInitialFrequencyModel = (startDate: Date): FrequencyModel => {
         weekly: { type: WEEKLY_TYPE.ON_DAYS, days: [startDate.getDay()] },
         monthly: { type: MONTHLY_TYPE.ON_MONTH_DAY },
         yearly: { type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY },
-        ends: { type: END_TYPE.NEVER, count: 2 }
+        ends: { type: END_TYPE.NEVER, count: 2 },
     };
 };
 
@@ -99,8 +99,8 @@ export const getInitialMemberModel = (
     return {
         member: {
             addressID,
-            memberID
-        }
+            memberID,
+        },
     };
 };
 
@@ -112,8 +112,8 @@ const getCalendarsModel = (Calendar: tsCalendar, Calendars: tsCalendar[] = []) =
         calendars: Calendars.map(({ ID, Name, Color }) => ({ text: Name, value: ID, color: Color })),
         calendar: {
             id: Calendar.ID,
-            color: Calendar.Color
-        }
+            color: Calendar.Color,
+        },
     };
 };
 
@@ -139,7 +139,7 @@ export const getInitialModel = ({
     Addresses,
     Address,
     isAllDay,
-    tzid
+    tzid,
 }: GetInitialModelArguments): EventModel => {
     const { DefaultEventDuration: defaultEventDuration = DEFAULT_EVENT_DURATION } = CalendarSettings;
     const dateTimeModel = getInitialDateTimeModel(initialDate, defaultEventDuration, tzid);
@@ -163,7 +163,7 @@ export const getInitialModel = ({
         ...notificationModel,
         ...memberModel,
         ...dateTimeModel,
-        ...calendarsModel
+        ...calendarsModel,
     };
 };
 
@@ -175,7 +175,7 @@ interface GetExistingEventArguments {
 export const getExistingEvent = ({
     veventComponent,
     veventValarmComponent,
-    tzid
+    tzid,
 }: GetExistingEventArguments): Partial<EventModel> => {
     const isAllDay = isIcalAllDay(veventComponent);
     const isRecurring = isIcalRecurring(veventComponent);
@@ -199,10 +199,10 @@ export const getExistingEvent = ({
         hasCalendarRow: !isRecurring && !recurrenceId,
         ...(isAllDay
             ? {
-                  fullDayNotifications: newNotifications
+                  fullDayNotifications: newNotifications,
               }
             : {
-                  partDayNotifications: newNotifications
-              })
+                  partDayNotifications: newNotifications,
+              }),
     };
 };

@@ -38,7 +38,7 @@ const handleDeleteRecurringEvent = async ({
     call,
     createNotification,
     getAddressKeys,
-    getCalendarKeys
+    getCalendarKeys,
 }: Arguments) => {
     let deleteTypes;
     if (canOnlyDeleteAll || !originalEventData.veventComponent) {
@@ -51,7 +51,7 @@ const handleDeleteRecurringEvent = async ({
 
     const deleteType = await onDeleteConfirmation({
         type: DELETE_CONFIRMATION_TYPES.RECURRING,
-        data: deleteTypes
+        data: deleteTypes,
     });
 
     const sync = getDeleteRecurringEventActions({
@@ -59,13 +59,13 @@ const handleDeleteRecurringEvent = async ({
         recurrence,
         recurrences,
         originalEventData,
-        oldEventData
+        oldEventData,
     });
 
     const payload = await getSyncMultipleEventsPayload({
         getAddressKeys,
         getCalendarKeys,
-        sync
+        sync,
     });
     await api(payload);
     await call();

@@ -3,7 +3,7 @@ import {
     getDateOrDateTimeProperty,
     getDateProperty,
     getDateTimeProperty,
-    isIcalPropertyAllDay
+    isIcalPropertyAllDay,
 } from 'proton-shared/lib/calendar/vcalConverter';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 
@@ -21,7 +21,7 @@ export const getStartDateTimeMerged = (
             day: originalProperty.value.day,
             hours: newProperty.value.hours,
             minutes: newProperty.value.minutes,
-            seconds: 0
+            seconds: 0,
         },
         newProperty.parameters?.tzid || 'UTC'
     );

@@ -18,7 +18,15 @@ interface Props {
     errors?: EventModelErrors;
 }
 
-const Notifications = ({ notifications, hasWhen, hasType, canAdd = true, defaultNotification, onChange, errors }: Props) => {
+const Notifications = ({
+    notifications,
+    hasWhen,
+    hasType,
+    canAdd = true,
+    defaultNotification,
+    onChange,
+    errors,
+}: Props) => {
     return (
         <div>
             {notifications.map((notification, index) => {
@@ -50,9 +58,7 @@ const Notifications = ({ notifications, hasWhen, hasType, canAdd = true, default
                     >{c('Action').t`Add notification`}</LinkButton>
                 </div>
             )}
-            <ErrorZone id={NOTIFICATION_ID}>
-                {errors?.notifications?.text || ''}
-            </ErrorZone>
+            <ErrorZone id={NOTIFICATION_ID}>{errors?.notifications?.text || ''}</ErrorZone>
         </div>
     );
 };

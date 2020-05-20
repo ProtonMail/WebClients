@@ -1,8 +1,8 @@
 import { c } from 'ttag';
-import { RECURRING_TYPES } from '../../../constants';
 import { Radio, Row } from 'react-components';
 import React from 'react';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { RECURRING_TYPES } from '../../../constants';
 
 interface Props {
     types: RECURRING_TYPES[];
@@ -15,16 +15,16 @@ const SelectRecurringType = ({ types, type, setType, 'data-test-id': dataTestId 
     const radios = [
         types.includes(RECURRING_TYPES.SINGLE) && {
             label: c('Option').t`This event`,
-            value: RECURRING_TYPES.SINGLE
+            value: RECURRING_TYPES.SINGLE,
         },
         types.includes(RECURRING_TYPES.FUTURE) && {
             label: c('Option').t`This and future events`,
-            value: RECURRING_TYPES.FUTURE
+            value: RECURRING_TYPES.FUTURE,
         },
         types.includes(RECURRING_TYPES.ALL) && {
             label: c('Option').t`All events`,
-            value: RECURRING_TYPES.ALL
-        }
+            value: RECURRING_TYPES.ALL,
+        },
     ].filter(isTruthy);
 
     return (
@@ -32,7 +32,7 @@ const SelectRecurringType = ({ types, type, setType, 'data-test-id': dataTestId 
             {radios.map(({ label, value }, i) => {
                 const id = i.toString();
                 return (
-                    <Row key={i}>
+                    <Row key={label}>
                         <Radio
                             className="flex-nowrap"
                             data-test-id={dataTestId}

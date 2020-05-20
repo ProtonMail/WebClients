@@ -7,7 +7,7 @@ import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 import {
     getDefaultCalendar,
     getIsCalendarDisabled,
-    getProbablyActiveCalendars
+    getProbablyActiveCalendars,
 } from 'proton-shared/lib/calendar/calendar';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
@@ -48,7 +48,7 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
             calendars,
             activeCalendars: getProbablyActiveCalendars(calendars),
             disabledCalendars: calendars.filter((calendar) => getIsCalendarDisabled(calendar)),
-            visibleCalendars: calendars.filter(({ Display }) => !!Display)
+            visibleCalendars: calendars.filter(({ Display }) => !!Display),
         };
     }, [calendars]);
 

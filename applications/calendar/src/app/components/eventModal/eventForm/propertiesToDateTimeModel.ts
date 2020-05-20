@@ -1,8 +1,8 @@
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import { addDays } from 'proton-shared/lib/date-fns-utc';
-import { getDateTimeState } from './time';
 import { VcalDateOrDateTimeProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getPropertyTzid } from 'proton-shared/lib/calendar/vcalConverter';
+import { getDateTimeState } from './time';
 
 const propertiesToDateTimeModel = (
     dtstart: VcalDateOrDateTimeProperty,
@@ -19,7 +19,7 @@ const propertiesToDateTimeModel = (
 
         return {
             start: getDateTimeState(localStart, tzid),
-            end: getDateTimeState(modifiedEnd, tzid)
+            end: getDateTimeState(modifiedEnd, tzid),
         };
     }
 
@@ -28,7 +28,7 @@ const propertiesToDateTimeModel = (
 
     return {
         start: getDateTimeState(localStart, tzStart),
-        end: getDateTimeState(localEnd, tzEnd)
+        end: getDateTimeState(localEnd, tzEnd),
     };
 };
 

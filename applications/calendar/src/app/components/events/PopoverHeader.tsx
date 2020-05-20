@@ -1,5 +1,5 @@
-import PopoverCloseButton from './PopoverCloseButton';
 import React from 'react';
+import PopoverCloseButton from './PopoverCloseButton';
 
 interface Props {
     children?: React.ReactNode;

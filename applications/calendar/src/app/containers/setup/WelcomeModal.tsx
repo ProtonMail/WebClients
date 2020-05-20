@@ -11,7 +11,7 @@ import {
     useGetAddressKeys,
     useNotifications,
     GenericError,
-    Button
+    Button,
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { createCalendar, updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
@@ -20,22 +20,23 @@ import { getTimezone } from 'proton-shared/lib/date/timezone';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 
-import { DEFAULT_CALENDAR } from '../../constants';
-import CalendarModal from '../../containers/settings/CalendarModal';
-import CalendarCreating from './CalendarCreating';
-import CalendarReady from './CalendarReady';
-import { setupCalendarKey } from './reset/setupCalendarKeys';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 import { Calendar, SETTINGS_TIME_FORMAT } from 'proton-shared/lib/interfaces/calendar';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { CalendarUserSettingsModel } from 'proton-shared/lib/models';
+import { DEFAULT_CALENDAR } from '../../constants';
+import CalendarModal from '../settings/CalendarModal';
+import CalendarCreating from './CalendarCreating';
+import CalendarReady from './CalendarReady';
+import { setupCalendarKey } from './reset/setupCalendarKeys';
 
 interface Props {
     onClose?: () => void;
     onExit?: () => void;
+    [key: string]: any;
 }
 
-const WelcomeModal = (props: Props) => {
+const WelcomeModal = ({ onClose, ...rest }: Props) => {
     const calendarRef = useRef<Calendar>();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -53,8 +54,8 @@ const WelcomeModal = (props: Props) => {
         if (!calendarRef.current) {
             return;
         }
-        props.onClose?.();
-        createModal(<CalendarModal calendar={calendarRef.current} defaultColor={true} />);
+        onClose?.();
+        createModal(<CalendarModal calendar={calendarRef.current} defaultColor />);
     };
 
     const setup = async () => {
@@ -74,7 +75,7 @@ const WelcomeModal = (props: Props) => {
             Color: DEFAULT_CALENDAR.color,
             Description: DEFAULT_CALENDAR.description,
             Display: 1,
-            AddressID: addressID
+            AddressID: addressID,
         };
 
         const { Calendar } = await api<{ Calendar: Calendar }>(createCalendar(calendarPayload));
@@ -87,15 +88,15 @@ const WelcomeModal = (props: Props) => {
                 updateCalendarUserSettings({
                     PrimaryTimezone: getTimezone(),
                     AutoDetectPrimaryTimezone: 1,
-                    TimeFormat: defaultTimeFormat
+                    TimeFormat: defaultTimeFormat,
                 })
             ),
             setupCalendarKey({
                 api,
                 calendarID: Calendar.ID,
                 addresses: activeAddresses,
-                getAddressKeys
-            })
+                getAddressKeys,
+            }),
         ]);
 
         // After a calendar has been created, it's possible to load the user settings model
@@ -134,10 +135,10 @@ const WelcomeModal = (props: Props) => {
                 )
             }
             submit={error ? null : c('Action').t`Continue`}
-            onSubmit={isLoading || error ? noop : props.onClose}
-            {...props}
-            onClose={isLoading || error ? noop : props.onClose}
-            small={true}
+            onSubmit={isLoading || error ? noop : onClose}
+            {...rest}
+            onClose={isLoading || error ? noop : onClose}
+            small
         >
             {error ? <GenericError /> : isLoading ? <CalendarCreating /> : <CalendarReady />}
         </FormModal>

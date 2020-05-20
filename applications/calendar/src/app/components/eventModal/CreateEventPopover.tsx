@@ -34,7 +34,7 @@ const CreateEventPopover = ({
     popoverRef,
     displayWeekNumbers,
     weekStartsOn,
-    isNarrow
+    isNarrow,
 }: Props) => {
     const errors = validateEventModel(model);
     const formRef = useRef<HTMLFormElement>(null);
@@ -42,7 +42,7 @@ const CreateEventPopover = ({
         containerEl: formRef.current,
         model,
         errors,
-        onSave
+        onSave,
     });
 
     const handleMore = () => {

@@ -23,7 +23,7 @@ const DynamicProgress = ({
     const { icon, progressClassname } = loading
         ? {
               icon: <Loader />,
-              progressClassname: 'progress-contact'
+              progressClassname: 'progress-contact',
           }
         : success
         ? {
@@ -32,7 +32,7 @@ const DynamicProgress = ({
                       <Icon name="on" color="white" size={24} />
                   </span>
               ),
-              progressClassname: 'progress-contact progress-contact--success'
+              progressClassname: 'progress-contact progress-contact--success',
           }
         : partialSuccess
         ? {
@@ -41,7 +41,7 @@ const DynamicProgress = ({
                       <Icon name="off" color="white" size={24} />
                   </span>
               ),
-              progressClassname: 'progress-contact progress-contact--warning'
+              progressClassname: 'progress-contact progress-contact--warning',
           }
         : {
               icon: (
@@ -49,7 +49,7 @@ const DynamicProgress = ({
                       <Icon name="off" color="white" size={24} />
                   </span>
               ),
-              progressClassname: 'progress-contact progress-contact--error'
+              progressClassname: 'progress-contact progress-contact--error',
           };
 
     return (

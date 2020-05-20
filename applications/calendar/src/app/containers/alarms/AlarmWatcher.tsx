@@ -6,11 +6,11 @@ import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { CalendarAlarm, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { getNextEventTime } from '../../helpers/alarms';
+import { getNextEventTime, getAlarmMessage } from '../../helpers/alarms';
 
 import notificationIcon from '../../../assets/notification.gif';
-import useGetCalendarEventRaw from '../../containers/calendar/eventStore/useGetCalendarEventRaw';
-import { getAlarmMessage } from '../../helpers/alarms';
+import useGetCalendarEventRaw from '../calendar/eventStore/useGetCalendarEventRaw';
+
 import { MINUTE } from '../../constants';
 import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 
@@ -23,7 +23,7 @@ export const displayNotification = ({ title = c('Title').t`Calendar alarm`, text
         onClick() {
             window.focus();
         },
-        ...rest
+        ...rest,
     });
 };
 

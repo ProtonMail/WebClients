@@ -29,7 +29,7 @@ const DeleteRecurringConfirmModal = ({ types, onConfirm, ...rest }: Props) => {
         <ConfirmModal
             confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
             title={c('Info').t`Delete recurring event`}
-            cancel={<ResetButton autoFocus={true}>{c('Action').t`Cancel`}</ResetButton>}
+            cancel={<ResetButton autoFocus>{c('Action').t`Cancel`}</ResetButton>}
             {...rest}
             onConfirm={() => onConfirm(type)}
         >

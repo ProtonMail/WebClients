@@ -5,10 +5,10 @@ import { getSafeRruleCount, getSafeRruleUntil } from './helper';
 
 const getRecurrenceOffsetID = (date: Date) => {
     const dateString = [date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()]
-        .map((n) => ('' + n).padStart(2, '0'))
+        .map((n) => `${n}`.padStart(2, '0'))
         .join('');
     const timeString = [date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds()]
-        .map((n) => ('' + n).padStart(2, '0'))
+        .map((n) => `${n}`.padStart(2, '0'))
         .join('');
     return `R${dateString}T${timeString}`;
 };
@@ -42,13 +42,13 @@ const getComponentWithUpdatedRrule = (
     if (newRrule.value.until) {
         return {
             ...component,
-            rrule: getSafeRruleUntil(newRrule, component)
+            rrule: getSafeRruleUntil(newRrule, component),
         };
     }
 
     return {
         ...component,
-        rrule: newRrule
+        rrule: newRrule,
     };
 };
 
@@ -70,7 +70,7 @@ const createFutureRecurrence = (
 ) => {
     const veventWithNewUID = {
         ...component,
-        uid: { value: getFutureRecurrenceUID(originalComponent.uid.value, recurrence.localStart) }
+        uid: { value: getFutureRecurrenceUID(originalComponent.uid.value, recurrence.localStart) },
     } as VcalVeventComponent;
 
     const veventStripped = omit(veventWithNewUID, ['recurrence-id', 'exdate']);

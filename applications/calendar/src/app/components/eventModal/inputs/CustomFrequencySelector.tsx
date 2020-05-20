@@ -25,7 +25,7 @@ const CustomFrequencySelector = ({
     errors,
     onChange,
     isSubmitted,
-    collapseOnMobile
+    collapseOnMobile,
 }: Props) => {
     return (
         <div className="w100">

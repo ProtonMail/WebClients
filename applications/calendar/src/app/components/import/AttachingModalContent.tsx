@@ -20,7 +20,9 @@ const AttachingModalContent = ({ model, calendars, onSelectCalendar, onAttach, o
     const options = calendars.map(({ Name, ID }) => ({ text: Name, value: ID }));
     const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => {
         const calendar = calendars.find(({ ID }) => ID === target.value);
-        calendar && onSelectCalendar(calendar);
+        if (calendar) {
+            onSelectCalendar(calendar);
+        }
     };
 
     const alert = model.failure ? (

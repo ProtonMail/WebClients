@@ -1,6 +1,6 @@
 import { Label, Row } from 'react-components';
-import CalendarSelect, { Props as CalendarSelectProps } from '../inputs/CalendarSelect';
 import React from 'react';
+import CalendarSelect, { Props as CalendarSelectProps } from '../inputs/CalendarSelect';
 
 interface Props extends CalendarSelectProps {
     label: React.ReactNode;

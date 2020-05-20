@@ -30,7 +30,7 @@ const MinimalEventForm = ({
     weekStartsOn,
     errors,
     model,
-    setModel
+    setModel,
 }: Props) => {
     const allDayRow = (
         <Row collapseOnMobile={false}>
@@ -75,7 +75,7 @@ const MinimalEventForm = ({
             }
             model={model}
             setModel={setModel}
-            withIcon={true}
+            withIcon
             disabled={!model.hasCalendarRow}
         />
     ) : null;

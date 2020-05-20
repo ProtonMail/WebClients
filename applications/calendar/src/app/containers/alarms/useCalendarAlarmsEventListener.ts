@@ -1,8 +1,8 @@
 import { MutableRefObject, useEffect } from 'react';
-import { CalendarsAlarmsCache } from './CacheInterface';
 import { useEventManager } from 'react-components';
-import { CalendarAlarmEventManager, CalendarEventManager } from '../../interfaces/EventManager';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
+import { CalendarsAlarmsCache } from './CacheInterface';
+import { CalendarAlarmEventManager, CalendarEventManager } from '../../interfaces/EventManager';
 
 export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<CalendarsAlarmsCache>) => {
     const { subscribe } = useEventManager();
@@ -11,7 +11,7 @@ export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<Cale
         return subscribe(
             ({
                 CalendarAlarms = [],
-                Calendars = []
+                Calendars = [],
             }: {
                 CalendarAlarms?: CalendarAlarmEventManager[];
                 Calendars?: CalendarEventManager[];
@@ -75,7 +75,7 @@ export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<Cale
                     if (CalendarAlarmChange.Action === EVENT_ACTIONS.CREATE) {
                         const {
                             Alarm,
-                            Alarm: { CalendarID }
+                            Alarm: { CalendarID },
                         } = CalendarAlarmChange;
 
                         const result = calendarsCache[CalendarID]?.result;
@@ -89,7 +89,7 @@ export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<Cale
                     if (CalendarAlarmChange.Action === EVENT_ACTIONS.UPDATE) {
                         const {
                             Alarm,
-                            Alarm: { ID: AlarmID, CalendarID }
+                            Alarm: { ID: AlarmID, CalendarID },
                         } = CalendarAlarmChange;
 
                         const result = calendarsCache[CalendarID]?.result;

@@ -46,7 +46,7 @@ const handleSaveRecurringEvent = async ({
     createNotification,
     getAddressKeys,
     getCalendarKeys,
-    calendars
+    calendars,
 }: Arguments) => {
     const isFutureAllowed = getHasFutureOption(originalEventData.mainVeventComponent, recurrence);
     const updateAllPossibilities = getUpdateAllPossibilities(
@@ -68,12 +68,12 @@ const handleSaveRecurringEvent = async ({
 
     const saveType = await onSaveConfirmation({
         type: SAVE_CONFIRMATION_TYPES.RECURRING,
-        data: saveTypes
+        data: saveTypes,
     });
 
     if (saveType === RECURRING_TYPES.ALL || saveType === RECURRING_TYPES.FUTURE) {
         await onSaveConfirmation({
-            type: SAVE_CONFIRMATION_TYPES.RECURRING_MATCH_WARNING
+            type: SAVE_CONFIRMATION_TYPES.RECURRING_MATCH_WARNING,
         });
     }
 
@@ -84,7 +84,7 @@ const handleSaveRecurringEvent = async ({
         oldEventData,
         newEventData,
         recurrence,
-        updateAllPossibilities
+        updateAllPossibilities,
     });
 
     await Promise.all(
@@ -92,7 +92,7 @@ const handleSaveRecurringEvent = async ({
             const payload = await getSyncMultipleEventsPayload({
                 getAddressKeys,
                 getCalendarKeys,
-                sync
+                sync,
             });
             return api(payload);
         })

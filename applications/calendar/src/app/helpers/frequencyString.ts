@@ -219,7 +219,7 @@ const getCustomWeeklyString = (
                 interval
             );
         }
-        if (days.length == 1) {
+        if (days.length === 1) {
             const startDate = days[0];
             if (startDate === 0) {
                 return c('Weekly recurring event, frequency').ngettext(
@@ -291,7 +291,7 @@ const getCustomWeeklyString = (
                       count
                   );
         }
-        if (days.length == 1) {
+        if (days.length === 1) {
             const startDate = days[0];
             if (startDate === 0) {
                 return interval === 1
@@ -406,7 +406,7 @@ const getCustomWeeklyString = (
                 interval
             );
         }
-        if (days.length == 1) {
+        if (days.length === 1) {
             const startDate = days[0];
             if (startDate === 0) {
                 return c('Weekly recurring event, frequency').ngettext(
@@ -597,7 +597,7 @@ export const getTimezonedFrequencyString = (
         type,
         frequency,
         weekly: { days },
-        ends: { type: endType }
+        ends: { type: endType },
     } = frequencyModel;
     const { startTzid, currentTzid } = options;
 

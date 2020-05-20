@@ -4,6 +4,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { c } from 'ttag';
 
+import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 
 import PopoverEventContent from './PopoverEventContent';
@@ -12,7 +13,6 @@ import PopoverFooter from './PopoverFooter';
 import PopoverContent from './PopoverContent';
 import { getEventErrorMessage } from './error';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent, WeekStartsOn } from '../../containers/calendar/interface';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 
 interface Props {
     formatTime: (date: Date) => string;
@@ -36,7 +36,7 @@ const EventPopover = ({
     event: targetEvent,
     tzid,
     weekStartsOn,
-    isNarrow
+    isNarrow,
 }: Props) => {
     const [loadingAction, withLoadingAction] = useLoading();
 
@@ -49,11 +49,15 @@ const EventPopover = ({
     const model = useReadEvent(value, tzid);
 
     const handleDelete = () => {
-        Event && withLoadingAction(onDelete(Event));
+        if (Event) {
+            withLoadingAction(onDelete(Event)).catch(noop);
+        }
     };
 
     const handleEdit = () => {
-        Event && onEdit(Event);
+        if (Event) {
+            onEdit(Event);
+        }
     };
 
     const deleteButton = (

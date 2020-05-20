@@ -12,7 +12,7 @@ const PartDayEvent = ({
     isSelected,
     isBeforeNow,
     eventRef,
-    tzid
+    tzid,
 }) => {
     const [value, loading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value, tzid);
@@ -25,7 +25,7 @@ const PartDayEvent = ({
         return {
             ...style,
             '--background': background,
-            '--foreground': getConstrastingColor(background)
+            '--foreground': getConstrastingColor(background),
         };
     }, [calendarColor, style, isAllDay, isSelected]);
 
@@ -82,12 +82,14 @@ const PartDayEvent = ({
 
     return (
         <div
+            role="button"
+            tabIndex={0}
             style={eventStyle}
             className={classnames([
                 'calendar-eventcell no-scroll pl0-5 pr0-5',
                 !loading && 'calendar-eventcell--isLoaded',
                 isBeforeNow && 'calendar-eventcell--isBefore',
-                isSelected && 'calendar-eventcell--isSelected'
+                isSelected && 'calendar-eventcell--isSelected',
             ])}
             ref={eventRef}
             title={expandableTitleString}

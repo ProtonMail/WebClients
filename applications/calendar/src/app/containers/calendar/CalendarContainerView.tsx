@@ -7,11 +7,13 @@ import {
     LocalizedMiniCalendar,
     StorageSpaceStatus,
     useToggle,
-    TextLoader
+    TextLoader,
 } from 'react-components';
 import { c } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
 
+import { fromUTCDate, toLocalDate } from 'proton-shared/lib/date/timezone';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import PrivateHeader from '../../components/layout/PrivateHeader';
 import CalendarSidebar from './CalendarSidebar';
 import Main from '../../components/Main';
@@ -21,9 +23,7 @@ import ViewSelector from '../../components/ViewSelector';
 import TimezoneSelector from '../../components/TimezoneSelector';
 
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '../../constants';
-import { fromUTCDate, toLocalDate } from 'proton-shared/lib/date/timezone';
 import getDateDiff from './getDateDiff';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { WeekStartsOn } from './interface';
 
 /**
@@ -81,7 +81,7 @@ const CalendarContainerView = ({
     onChangeDateRange,
 
     children,
-    containerRef
+    containerRef,
 }: Props) => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
 
@@ -118,7 +118,7 @@ const CalendarContainerView = ({
 
     useEffect(() => {
         setExpand(false);
-    }, [location.pathname]);
+    }, [window.location.pathname]);
 
     return (
         <div className={classnames(['flex flex-nowrap no-scroll', isBlurred && 'filter-blur'])} ref={containerRef}>
@@ -131,7 +131,7 @@ const CalendarContainerView = ({
                                 {c('Action').t`Upgrade`}
                             </Href>
                         }
-                    />
+                    />,
                 ]}
             />
             <div className="content flex-item-fluid reset4print">
@@ -160,7 +160,7 @@ const CalendarContainerView = ({
                                 displayWeekNumbers={displayWeekNumbers}
                                 dateRange={range > 0 ? localDateRange : undefined}
                                 weekStartsOn={weekStartsOn}
-                                displayedOnDarkBackground={true}
+                                displayedOnDarkBackground
                             />
                         }
                         activeCalendars={activeCalendars}

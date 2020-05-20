@@ -27,7 +27,7 @@ const SettingsContainer = ({
     disabledCalendars,
     defaultCalendar,
     activeCalendars,
-    calendarUserSettings
+    calendarUserSettings,
 }: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -40,7 +40,7 @@ const SettingsContainer = ({
         if (mainAreaRef.current) {
             mainAreaRef.current.scrollTop = 0;
         }
-    }, [location.pathname]);
+    }, [window.location.pathname]);
 
     useEffect(() => {
         document.title = c('Page title').t`Calendar settings - ProtonCalendar`;
@@ -57,7 +57,7 @@ const SettingsContainer = ({
                   onClick() {
                       createModal(<ImportModal defaultCalendar={defaultCalendar} calendars={activeCalendars} />);
                   },
-                  text: c('Action').t`Import`
+                  text: c('Action').t`Import`,
               }
             : {
                   type: 'button',
@@ -72,8 +72,8 @@ const SettingsContainer = ({
                                   .t`You need to have an active calendar before importing your events.`}
                           />
                       </>
-                  )
-              }
+                  ),
+              },
     ];
 
     return (
@@ -87,13 +87,13 @@ const SettingsContainer = ({
                                 {c('Action').t`Upgrade`}
                             </Href>
                         }
-                    />
+                    />,
                 ]}
             />
             <div className="content flex-item-fluid reset4print">
                 <PrivateHeader
                     url="/calendar"
-                    inSettings={true}
+                    inSettings
                     title={c('Title').t`Settings`}
                     expanded={expanded}
                     onToggleExpand={onToggleExpand}

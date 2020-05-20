@@ -8,7 +8,7 @@ import {
     ErrorButton,
     useModals,
     ConfirmModal,
-    Alert
+    Alert,
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendarUserSettings, removeCalendar } from 'proton-shared/lib/api/calendars';
@@ -31,7 +31,7 @@ const CalendarsSection = ({
     calendars,
     defaultCalendar,
     disabledCalendars,
-    activeCalendars
+    activeCalendars,
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -96,7 +96,7 @@ const CalendarsSection = ({
             setLoadingMap((old) => ({
                 ...old,
                 [newDefaultCalendarID || '']: true,
-                [ID]: true
+                [ID]: true,
             }));
             await api(removeCalendar(ID));
             // null is a valid default calendar id

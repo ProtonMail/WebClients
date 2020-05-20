@@ -3,6 +3,7 @@ import { useApi } from 'react-components';
 
 import { addMilliseconds } from 'proton-shared/lib/date-fns-utc';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 import { DAY } from '../../constants';
 import getCalendarsAlarmsCached from './getCalendarsAlarmsCached';
@@ -12,11 +13,11 @@ const PADDING = 60 * 1000 * 2;
 
 export const getCalendarsAlarmsCache = ({
     start = new Date(2000, 1, 1),
-    end = new Date(2000, 1, 1)
+    end = new Date(2000, 1, 1),
 } = {}): CalendarsAlarmsCache => ({
     calendarsCache: {},
     start,
-    end
+    end,
 });
 
 const useCalendarsAlarms = (
@@ -40,17 +41,16 @@ const useCalendarsAlarms = (
             if (+cacheRef.current.end - PADDING <= +now) {
                 cacheRef.current = getCalendarsAlarmsCache({
                     start: now,
-                    end: addMilliseconds(now, lookAhead)
+                    end: addMilliseconds(now, lookAhead),
                 });
                 cacheRef.current.rerender = () => setForceRefresh({});
             }
 
-            const promise = (cacheRef.current.promise = getCalendarsAlarmsCached(
-                api,
-                cacheRef.current.calendarsCache,
-                calendarIDs,
-                [cacheRef.current.start, cacheRef.current.end]
-            ));
+            const promise = getCalendarsAlarmsCached(api, cacheRef.current.calendarsCache, calendarIDs, [
+                cacheRef.current.start,
+                cacheRef.current.end,
+            ]);
+            cacheRef.current.promise = promise;
 
             if (timeoutHandle) {
                 clearTimeout(timeoutHandle);
@@ -65,12 +65,14 @@ const useCalendarsAlarms = (
 
             const delay = Math.max(0, +cacheRef.current.end - PADDING - Date.now());
 
-            timeoutHandle = window.setTimeout(update, delay);
+            timeoutHandle = window.setTimeout(() => {
+                update().catch(noop);
+            }, delay);
 
             setForceRefresh({});
         };
 
-        update();
+        update().catch(noop);
 
         cacheRef.current.rerender = () => setForceRefresh({});
         return () => {

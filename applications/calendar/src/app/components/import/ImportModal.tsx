@@ -30,7 +30,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
         eventsEncrypted: [],
         eventsNotEncrypted: [],
         eventsImported: [],
-        eventsNotImported: []
+        eventsNotImported: [],
     });
 
     const { content, ...modalProps } = (() => {
@@ -50,7 +50,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     eventsEncrypted: [],
                     eventsNotEncrypted: [],
                     eventsImported: [],
-                    eventsNotImported: []
+                    eventsNotImported: [],
                 });
             };
 
@@ -76,7 +76,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
             };
 
             const handleSelectCalendar = (calendar: Calendar) => {
-                setModel({ ...model, calendar: calendar });
+                setModel({ ...model, calendar });
             };
 
             const handleSubmit = async () => {
@@ -93,7 +93,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                         step,
                         eventsParsed: events,
                         eventsNotParsed: discarded,
-                        failure: undefined
+                        failure: undefined,
                     });
                 } catch (e) {
                     setModel({
@@ -105,7 +105,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                         eventsNotEncrypted: [],
                         eventsImported: [],
                         eventsNotImported: [],
-                        failure: e
+                        failure: e,
                     });
                 }
             };
@@ -121,7 +121,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     />
                 ),
                 submit,
-                onSubmit: handleSubmit
+                onSubmit: handleSubmit,
             };
         }
 
@@ -140,13 +140,13 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                 title: c('Title').t`Warning`,
                 content: <WarningModalContent model={model} />,
                 submit,
-                onSubmit: handleSubmit
+                onSubmit: handleSubmit,
             };
         }
 
         if (model.step === IMPORT_STEPS.IMPORTING) {
             const submit = (
-                <PrimaryButton disabled={true} type="submit">
+                <PrimaryButton disabled type="submit">
                     {c('Action').t`Continue`}
                 </PrimaryButton>
             );
@@ -159,7 +159,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
             return {
                 content: <ImportingModalContent model={model} setModel={setModel} onFinish={handleFinish} />,
                 submit,
-                onSubmit: noop
+                onSubmit: noop,
             };
         }
         // model.step === IMPORT_STEPS.FINISHED at this stage
@@ -169,7 +169,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
             content: <ImportSummaryModalContent model={model} />,
             submit,
             close: null,
-            onSubmit: rest.onClose
+            onSubmit: rest.onClose,
         };
     })();
 

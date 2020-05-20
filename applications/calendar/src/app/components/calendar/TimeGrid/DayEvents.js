@@ -14,7 +14,7 @@ const DayEvents = ({
     targetEventData,
     targetEventRef,
     formatTime,
-    dayIndex
+    dayIndex,
 }) => {
     const eventsLaidOut = useMemo(() => {
         return layout(eventsInDay).map(({ column, columns }, i) => {
@@ -30,7 +30,7 @@ const DayEvents = ({
                 top: toPercent(top),
                 left: toPercent(left),
                 height: toPercent(height),
-                width: toPercent(width)
+                width: toPercent(width),
             };
         });
     }, [eventsInDay, totalMinutes]);

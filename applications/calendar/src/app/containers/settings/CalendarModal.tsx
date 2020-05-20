@@ -12,32 +12,32 @@ import {
     useGetAddresses,
     useGetAddressKeys,
     useCache,
-    GenericError
+    GenericError,
 } from 'react-components';
 
 import {
     createCalendar,
     updateCalendarSettings,
     updateCalendar,
-    updateCalendarUserSettings
+    updateCalendarUserSettings,
 } from 'proton-shared/lib/api/calendars';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 
-import CalendarSettingsTab from './CalendarSettingsTab';
-import EventSettingsTab from './EventSettingsTab';
-import { setupCalendarKey } from '../setup/reset/setupCalendarKeys';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { CalendarsModel } from 'proton-shared/lib/models';
+import { Calendar, CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
 import {
     getCalendarModel,
     getCalendarPayload,
     getCalendarSettingsPayload,
     getDefaultModel,
-    validate
+    validate,
 } from './calendarModalState';
-import { Calendar, CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
+import { setupCalendarKey } from '../setup/reset/setupCalendarKeys';
+import EventSettingsTab from './EventSettingsTab';
+import CalendarSettingsTab from './CalendarSettingsTab';
 
 interface Props {
     calendar?: Calendar;
@@ -80,7 +80,7 @@ const CalendarModal = ({
             setModel((prev) => ({
                 ...prev,
                 addressID: activeAdresses[0].ID,
-                addressOptions: activeAdresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email }))
+                addressOptions: activeAdresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
             }));
         };
 
@@ -91,7 +91,7 @@ const CalendarModal = ({
 
             const [{ Members, CalendarSettings }, Addresses] = await Promise.all([
                 getCalendarBootstrap(initialCalendar.ID),
-                getAddresses()
+                getAddresses(),
             ]);
 
             const [{ Email: memberEmail } = { Email: '' }] = Members;
@@ -104,7 +104,7 @@ const CalendarModal = ({
 
             setModel((prev) => ({
                 ...prev,
-                ...getCalendarModel({ Calendar: initialCalendar, CalendarSettings, Addresses, AddressID })
+                ...getCalendarModel({ Calendar: initialCalendar, CalendarSettings, Addresses, AddressID }),
             }));
         };
 
@@ -134,7 +134,7 @@ const CalendarModal = ({
         const { Calendar, Calendar: { ID: newCalendarID } = {} } = await api<{ Calendar: Calendar }>(
             createCalendar({
                 ...calendarPayload,
-                AddressID: addressID
+                AddressID: addressID,
             })
         );
 
@@ -142,7 +142,7 @@ const CalendarModal = ({
             api,
             calendarID: Calendar.ID,
             addresses,
-            getAddressKeys
+            getAddressKeys,
         }).catch((e: Error) => {
             // Hard failure if the keys fail to setup. Force the user to reload.
             setError(true);
@@ -160,7 +160,7 @@ const CalendarModal = ({
                 }
                 const newDefaultCalendarID = activeCalendars.length ? activeCalendars[0].ID : newCalendarID;
                 return api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
-            })()
+            })(),
         ]);
 
         // Refresh the calendar model in order to ensure flags are correct
@@ -179,7 +179,7 @@ const CalendarModal = ({
     ) => {
         await Promise.all([
             api(updateCalendar(calendar.ID, calendarPayload)),
-            api(updateCalendarSettings(calendar.ID, calendarSettingsPayload))
+            api(updateCalendarSettings(calendar.ID, calendarSettingsPayload)),
         ]);
         // Case: Calendar has been created, and keys have been setup, but one of the calendar settings call failed in the creation.
         // Here we are in create -> edit mode. So we have to fetch the calendar model again.
@@ -196,7 +196,7 @@ const CalendarModal = ({
     const formattedModel = {
         ...model,
         name: model.name.trim(),
-        description: model.description.trim()
+        description: model.description.trim(),
     };
 
     const errors = validate(formattedModel);
@@ -219,7 +219,7 @@ const CalendarModal = ({
                 section: <GenericError />,
                 onSubmit() {
                     window.location.reload();
-                }
+                },
             };
         }
 
@@ -228,14 +228,14 @@ const CalendarModal = ({
                 title: c('Header').t`Calendar settings`,
                 content: (
                     <CalendarSettingsTab isSubmitted={isSubmitted} errors={errors} model={model} setModel={setModel} />
-                )
+                ),
             },
             {
                 title: c('Header').t`Event settings`,
                 content: (
                     <EventSettingsTab isSubmitted={isSubmitted} errors={errors} model={model} setModel={setModel} />
-                )
-            }
+                ),
+            },
         ];
 
         const isEdit = !!initialCalendar;
@@ -252,7 +252,7 @@ const CalendarModal = ({
                     return;
                 }
                 withLoadingAction(handleProcessCalendar());
-            }
+            },
         };
     })();
 

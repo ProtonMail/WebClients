@@ -14,15 +14,11 @@ const WarningModalContent = ({ model }: Props) => {
     const totalEventsDiscarded = model.eventsNotParsed.filter(({ component }) => component === 'vevent').length;
     const totalEvents = totalParsed + totalEventsDiscarded;
     const errors = model.eventsNotParsed.map(({ idMessage, message: errorMessage }, index) => {
-        const error = (
-            <span key={index} className="color-global-warning">
-                {errorMessage}
-            </span>
-        );
+        const error = <span className="color-global-warning">{errorMessage}</span>;
         const message = idMessage ? (c('Error importing event').jt`${idMessage}. ${error}` as ReactNode) : error;
         return {
             index,
-            message
+            message,
         };
     });
 

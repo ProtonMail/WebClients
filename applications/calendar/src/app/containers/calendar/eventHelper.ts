@@ -2,14 +2,14 @@ import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
     fromUTCDate,
-    toUTCDate
+    toUTCDate,
 } from 'proton-shared/lib/date/timezone';
 import { differenceInHours } from 'date-fns';
 import { max } from 'proton-shared/lib/date-fns-utc';
+import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
 import { EventModel } from '../../interfaces/EventModel';
-import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
 
 export const getCalendarViewEventProperties = ({ start, end, isAllDay }: EventModel, tzid: string) => {
@@ -25,7 +25,7 @@ export const getCalendarViewEventProperties = ({ start, end, isAllDay }: EventMo
         end: max(calendarStart, calendarEnd),
         isAllDay: isAllDay || isAllPartDay,
         isAllPartDay,
-        isRecurring: false
+        isRecurring: false,
     };
 };
 
@@ -55,11 +55,11 @@ export const getCreateTemporaryEvent = (
     return {
         id: 'tmp',
         data: {
-            Calendar
+            Calendar,
         },
         ...getCalendarViewEventProperties(model, tzid),
         tmpData: model,
-        tmpDataOriginal: model
+        tmpDataOriginal: model,
     };
 };
 
@@ -76,7 +76,7 @@ export const getEditTemporaryEvent = (
         ...getCalendarViewEventProperties(model, tzid),
         tmpData: model,
         tmpDataOriginal: model,
-        tmpOriginalTarget: targetEvent
+        tmpOriginalTarget: targetEvent,
     };
 };
 
@@ -90,7 +90,7 @@ export const getTemporaryEvent = (
         ...temporaryEvent,
         ...modelToEventProperties(temporaryEvent, model, tzid),
         tmpData: model,
-        tmpDataOriginal
+        tmpDataOriginal,
     };
 };
 
@@ -123,6 +123,6 @@ export const getUpdatedDateTime = (
         isAllDay,
         start: newStart,
         end: newEnd,
-        frequencyModel: getFrequencyModelChange(oldModel.start, newStart, oldModel.frequencyModel)
+        frequencyModel: getFrequencyModelChange(oldModel.start, newStart, oldModel.frequencyModel),
     };
 };

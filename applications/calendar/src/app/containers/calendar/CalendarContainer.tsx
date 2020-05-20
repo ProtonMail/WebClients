@@ -7,7 +7,7 @@ import {
     toUTCDate,
     getTimezone,
     formatTimezoneOffset,
-    getTimezoneOffset
+    getTimezoneOffset,
 } from 'proton-shared/lib/date/timezone';
 import * as H from 'history';
 import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
@@ -28,7 +28,7 @@ import {
     getDisplayWeekNumbers,
     getSecondaryTimezone,
     getDefaultTzid,
-    getWeekStartsOn
+    getWeekStartsOn,
 } from './getSettings';
 import { fromUrlParams, toUrlParams } from './getUrlHelper';
 import { InteractiveRef, TimeGridRef } from './interface';
@@ -60,7 +60,7 @@ const customReducer = (oldState: { [key: string]: any }, newState: { [key: strin
         if (oldState[key] !== newState[key]) {
             return {
                 ...oldState,
-                ...newState
+                ...newState,
             };
         }
     }
@@ -96,7 +96,7 @@ const CalendarContainer = ({
     calendarUserSettings,
     history,
     location,
-    calendarsEventsCacheRef
+    calendarsEventsCacheRef,
 }: Props) => {
     const [disableCreate, setDisableCreate] = useState(false);
 
@@ -121,7 +121,7 @@ const CalendarContainer = ({
     }, []);
 
     const { view: urlView, range: urlRange, date: urlDate } = useMemo(() => fromUrlParams(location.pathname), [
-        location.pathname
+        location.pathname,
     ]);
 
     // In the same to get around setStates not being batched in the range selector callback.
@@ -172,7 +172,7 @@ const CalendarContainer = ({
                     utcNowDateInTimezone.getUTCMonth(),
                     utcNowDateInTimezone.getUTCDate()
                 )
-            )
+            ),
         };
     }
     const utcDefaultDate = utcDefaultDateRef.current.value;
@@ -196,7 +196,7 @@ const CalendarContainer = ({
     const utcDateRangeInTimezone = useMemo(
         () => [
             toUTCDate(convertZonedDateTimeToUTC(fromUTCDate(utcDateRange[0]), tzid)),
-            toUTCDate(convertZonedDateTimeToUTC(fromUTCDate(utcDateRange[1]), tzid))
+            toUTCDate(convertZonedDateTimeToUTC(fromUTCDate(utcDateRange[1]), tzid)),
         ],
         [utcDateRange, tzid]
     );
@@ -208,7 +208,7 @@ const CalendarContainer = ({
         return {
             primaryTimezone: `${formatAbbreviation(offset)}`,
             secondaryTimezone: `${formatAbbreviation(secondaryOffset)}`,
-            secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE
+            secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE,
         };
     }, [utcDateRangeInTimezone, secondaryTzid, tzid]);
 
@@ -265,14 +265,14 @@ const CalendarContainer = ({
             setCustom({
                 view: MONTH,
                 range: Math.floor(numberOfDays / 7),
-                date: newDate
+                date: newDate,
             });
             return;
         }
         setCustom({
             view: WEEK,
             range: numberOfDays,
-            date: newDate
+            date: newDate,
         });
     }, []);
 

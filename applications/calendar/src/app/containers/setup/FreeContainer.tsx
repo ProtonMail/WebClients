@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import CalendarContainerViewBlurred from '../calendar/CalendarContainerViewBlurred';
 import { useModals } from 'react-components';
+import CalendarContainerViewBlurred from '../calendar/CalendarContainerViewBlurred';
 import FreeModal from './FreeModal';
 
 const FreeContainer = () => {

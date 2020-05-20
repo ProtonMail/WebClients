@@ -38,7 +38,7 @@ const SETTINGS_VIEW_CONVERSION = {
     [SETTINGS_VIEW.PLANNING]: VIEWS.WEEK,
     [SETTINGS_VIEW.MONTH]: VIEWS.MONTH,
     [SETTINGS_VIEW.WEEK]: VIEWS.WEEK,
-    [SETTINGS_VIEW.DAY]: VIEWS.DAY
+    [SETTINGS_VIEW.DAY]: VIEWS.DAY,
 };
 
 export const getDefaultView = (calendarUserSettings: CalendarUserSettings) => {

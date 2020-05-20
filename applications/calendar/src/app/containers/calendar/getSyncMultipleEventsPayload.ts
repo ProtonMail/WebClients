@@ -9,7 +9,7 @@ import getCreationKeys from './getCreationKeys';
 export enum SyncOperationTypes {
     DELETE,
     UPDATE,
-    CREATE
+    CREATE,
 }
 
 interface SyncMultipleEventsOperation {
@@ -36,7 +36,7 @@ interface SyncMultipleEventsArguments {
 const getRequiredKeys = ({
     sync: { operations, calendarID, addressID },
     getCalendarKeys,
-    getAddressKeys
+    getAddressKeys,
 }: SyncMultipleEventsArguments) => {
     const allCalendarIDs = operations.reduce<Set<string>>((acc, { type, data: { Event } }) => {
         // No key needed for delete.
@@ -79,7 +79,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                 throw new Error('Missing Event');
             }
             return {
-                ID: Event.ID
+                ID: Event.ID,
             };
         }
 
@@ -98,12 +98,12 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
         const data = await createCalendarEvent({
             eventComponent: veventComponent,
             isSwitchCalendar,
-            ...(await getCreationKeys({ Event, addressKeys, newCalendarKeys, oldCalendarKeys }))
+            ...(await getCreationKeys({ Event, addressKeys, newCalendarKeys, oldCalendarKeys })),
         });
 
         const dataComplete = {
             Permissions: 3,
-            ...data
+            ...data,
         };
 
         if (isUpdateEvent) {
@@ -112,18 +112,18 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
             }
             return {
                 ID: Event.ID,
-                Event: dataComplete
+                Event: dataComplete,
             };
         }
 
         return {
-            Event: dataComplete
+            Event: dataComplete,
         };
     });
 
     return syncMultipleEventsRoute(calendarID, {
         MemberID: memberID,
-        Events: await Promise.all(payloadPromise)
+        Events: await Promise.all(payloadPromise),
     });
 };
 

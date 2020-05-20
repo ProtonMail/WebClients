@@ -4,7 +4,7 @@ import {
     getAllCalendarKeys,
     getPassphrases,
     queryMembers,
-    reactivateCalendarKey
+    reactivateCalendarKey,
 } from 'proton-shared/lib/api/calendars';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
@@ -30,12 +30,12 @@ const reactivateCalendarKeys = async ({
     api,
     ID: CalendarID,
     getAddressKeys,
-    addresses
+    addresses,
 }: ReactivateCalendarKeysArguments) => {
     const [{ Keys = [] }, { Passphrases = [] }, { Members = [] }] = await Promise.all([
         api<{ Keys: Key[] }>(getAllCalendarKeys(CalendarID)),
         api<{ Passphrases: Passphrase[] }>(getPassphrases(CalendarID)),
-        api<{ Members: Member[] }>(queryMembers(CalendarID))
+        api<{ Members: Member[] }>(queryMembers(CalendarID)),
     ]);
 
     const { Member: selfMember, Address: selfAddress } = getMemberAddressWithAdminPermissions(Members, addresses);
@@ -57,7 +57,7 @@ const reactivateCalendarKeys = async ({
             armoredPassphrase: Passphrase,
             armoredSignature: Signature,
             privateKeys,
-            publicKeys
+            publicKeys,
         });
     })();
 
@@ -80,7 +80,7 @@ const reactivateCalendarKeys = async ({
                     armoredPassphrase: Passphrase,
                     armoredSignature: Signature,
                     privateKeys,
-                    publicKeys
+                    publicKeys,
                 });
                 const privateKey = await decryptPrivateKey(PrivateKey, decryptedPassphrase);
                 const armoredEncryptedKey = await encryptPrivateKey(privateKey, decryptedPrimaryPassphrase);
@@ -96,7 +96,7 @@ export const reactivateCalendarsKeys = async ({
     api,
     calendars,
     getAddressKeys,
-    addresses
+    addresses,
 }: ReactivateCalendarsKeysArguments) => {
     return Promise.all(
         calendars.map(({ ID }) => {
@@ -104,7 +104,7 @@ export const reactivateCalendarsKeys = async ({
                 api,
                 ID,
                 getAddressKeys,
-                addresses
+                addresses,
             });
         })
     );

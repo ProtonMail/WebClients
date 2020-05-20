@@ -1,8 +1,8 @@
 import { Alert } from 'react-components';
 import { c } from 'ttag';
 import React from 'react';
-import CalendarTableRows from './CalendarTableRows';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import CalendarTableRows from './CalendarTableRows';
 
 interface Props {
     calendarsToReset: Calendar[];

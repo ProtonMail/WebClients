@@ -11,7 +11,7 @@ export enum IMPORT_ERROR_TYPE {
     FILE_CORRUPTED,
     INVALID_CALENDAR,
     NO_EVENTS,
-    TOO_MANY_EVENTS
+    TOO_MANY_EVENTS,
 }
 
 const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
@@ -50,14 +50,5 @@ export class ImportFileError extends Error {
     constructor(errorType: IMPORT_ERROR_TYPE, filename?: string) {
         super(getErrorMessage(errorType, filename));
         Object.setPrototypeOf(this, ImportFileError.prototype);
-    }
-}
-
-export class ImportFatalError extends Error {
-    error: Error;
-    constructor(error: Error) {
-        super(c('Error importing calendar').t`An unexpected error occurred. Import must be restarted.`);
-        this.error = error;
-        Object.setPrototypeOf(this, ImportFatalError.prototype);
     }
 }

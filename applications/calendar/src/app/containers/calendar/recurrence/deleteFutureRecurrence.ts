@@ -2,8 +2,8 @@ import { getPropertyTzid, isIcalPropertyAllDay } from 'proton-shared/lib/calenda
 import { fromUTCDate } from 'proton-shared/lib/date/timezone';
 import { addDays } from 'proton-shared/lib/date-fns-utc';
 import { omit } from 'proton-shared/lib/helpers/object';
-import { getUntilProperty } from '../../../components/eventModal/eventForm/modelToFrequencyProperties';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { getUntilProperty } from '../../../components/eventModal/eventForm/modelToFrequencyProperties';
 import { getSafeRruleCount } from './helper';
 
 const deleteFutureRecurrence = (
@@ -39,9 +39,9 @@ const deleteFutureRecurrence = (
             ...rrule,
             value: {
                 ...rrule.value,
-                until
-            }
-        }
+                until,
+            },
+        },
     };
 };
 

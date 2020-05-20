@@ -36,8 +36,8 @@ const getFrequencyModelChange = (
         ...frequencyModel,
         weekly: {
             type: WEEKLY_TYPE.ON_DAYS,
-            days: newDays
-        }
+            days: newDays,
+        },
     };
 
     if (changeToNthDay) {
@@ -49,13 +49,13 @@ const getFrequencyModelChange = (
     }
 
     const {
-        ends: { until: oldRecurringUntil }
+        ends: { until: oldRecurringUntil },
     } = frequencyModel;
 
     if (oldRecurringUntil && isBefore(oldRecurringUntil, newStart.date)) {
         newFrequencyModel.ends = {
             ...frequencyModel.ends,
-            until: newStart.date
+            until: newStart.date,
         };
     }
 

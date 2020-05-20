@@ -1,7 +1,7 @@
 import {
     VcalDateOrDateTimeValue,
     VcalRruleProperty,
-    VcalRrulePropertyValue
+    VcalRrulePropertyValue,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { shallowEqual } from 'proton-shared/lib/helpers/array';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
@@ -17,7 +17,7 @@ const maybeArrayComparisonKeys: (keyof VcalRrulePropertyValue)[] = [
     'byminute',
     'byhour',
     'byyearday',
-    'byweekno'
+    'byweekno',
 ];
 
 const isMaybeArrayEqual = (oldValue: any | any[], newValue: any | any[]) => {

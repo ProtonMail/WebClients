@@ -8,13 +8,13 @@ import {
     useApi,
     useLoading,
     Info,
-    MobileAppsLinks
+    MobileAppsLinks,
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import CalendarSidebarList from './CalendarSidebarList';
 import CalendarSidebarVersion from './CalendarSidebarVersion';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 
 interface Props {
     expanded?: boolean;
@@ -33,7 +33,7 @@ const CalendarSidebar = ({
     activeCalendars = [],
     disabledCalendars = [],
     miniCalendar,
-    onCreateEvent
+    onCreateEvent,
 }: Props) => {
     const { call } = useEventManager();
     const api = useApi();
@@ -71,8 +71,8 @@ const CalendarSidebar = ({
                             {
                                 icon: 'general',
                                 text: c('Header').t`Calendars`,
-                                link: '/calendar/settings/calendars'
-                            }
+                                link: '/calendar/settings/calendars',
+                            },
                         ]}
                         className="mb0"
                     />
@@ -98,8 +98,8 @@ const CalendarSidebar = ({
                                                 />
                                             </>
                                         ),
-                                        link: '/calendar/settings/calendars'
-                                    }
+                                        link: '/calendar/settings/calendars',
+                                    },
                                 ]}
                                 className="mb0"
                             />

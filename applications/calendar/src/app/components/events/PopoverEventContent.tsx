@@ -5,10 +5,10 @@ import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { truncate } from 'proton-shared/lib/helpers/string';
 
+import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import PopoverNotification from './PopoverNotification';
 import CalendarIcon from '../CalendarIcon';
 import { getTimezonedFrequencyString } from '../../helpers/frequencyString';
-import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent, WeekStartsOn } from '../../containers/calendar/interface';
 import { EventModelReadView } from '../../interfaces/EventModel';
 
@@ -28,7 +28,7 @@ const PopoverEventContent = ({
     tzid,
     weekStartsOn,
     model,
-    formatTime
+    formatTime,
 }: Props) => {
     const { Name: calendarName, Color } = Calendar;
 
@@ -58,7 +58,7 @@ const PopoverEventContent = ({
             startTzid: model.start.tzid,
             currentTzid: tzid,
             weekStartsOn,
-            locale: dateLocale
+            locale: dateLocale,
         });
     }, [model.frequencyModel, start]);
 
@@ -115,12 +115,15 @@ const PopoverEventContent = ({
                     <p className="break mt0 mb0 pre-wrap">{trimmedDescription}</p>
                 </div>
             ) : null}
-            {model.notifications && Array.isArray(model.notifications) && model.notifications.length ? (
+            {Array.isArray(model.notifications) && model.notifications.length ? (
                 <div className={wrapClassName}>
                     <Icon name="notifications-enabled" className={iconClassName} />
                     <div className="flex flex-column">
                         {model.notifications.map((notification, i) => {
-                            return <PopoverNotification key={i} notification={notification} formatTime={formatTime} />;
+                            const key = `${i}`;
+                            return (
+                                <PopoverNotification key={key} notification={notification} formatTime={formatTime} />
+                            );
                         })}
                     </div>
                 </div>

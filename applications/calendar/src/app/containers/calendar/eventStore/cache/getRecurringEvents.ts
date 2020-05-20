@@ -52,7 +52,7 @@ export const getRecurringEvents = (
         result.push({
             id: parentEventID,
             eventOccurrences,
-            isSingleOccurrence
+            isSingleOccurrence,
         });
     }
 

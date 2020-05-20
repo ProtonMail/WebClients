@@ -3,7 +3,7 @@ export const CLOSE_STATES = {
     CLOSE_ALLOWED: 2,
     CLOSE_DISALLOWED: 3,
     CLOSE_WAITING: 4,
-    CLOSE_IGNORE: 5
+    CLOSE_IGNORE: 5,
 };
 
 export const ACTIONS = {
@@ -16,11 +16,11 @@ export const ACTIONS = {
     EVENT_MOVE_UP: 7,
     EVENT_UP: 8,
     MORE_DOWN: 9,
-    MORE_UP: 10
+    MORE_UP: 10,
 };
 
 export const TYPE = {
     DAYGRID: 0,
     TIMEGRID: 1,
-    MORE: 2
+    MORE: 2,
 };

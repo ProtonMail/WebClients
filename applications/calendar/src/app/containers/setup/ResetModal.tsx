@@ -9,23 +9,23 @@ import {
     GenericError,
     Loader,
     useLoading,
-    useCache
+    useCache,
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { CALENDAR_FLAGS } from 'proton-shared/lib/calendar/constants';
+import { hasBit } from 'proton-shared/lib/helpers/bitset';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { process } from './reset/resetHelper';
 import CalendarCreating from './CalendarCreating';
 import CalendarReady from './CalendarReady';
 import CalendarResetSection from './CalendarResetSection';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import CalendarReactivateSection from './CalendarReactivateSection';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 
 enum STEPS {
     LOADING,
     RESET_CALENDARS,
     SETUP_CALENDARS,
-    REACTIVATE_CALENDARS
+    REACTIVATE_CALENDARS,
 }
 
 interface FilteredCalendars {
@@ -62,7 +62,7 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
             {
                 calendarsToSetup: [],
                 calendarsToReset: [],
-                calendarsToReactivate: []
+                calendarsToReactivate: [],
             } as FilteredCalendars
         );
     });
@@ -93,7 +93,7 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
                 getAddresses,
                 calendarsToReset,
                 calendarsToSetup,
-                calendarsToReactivate
+                calendarsToReactivate,
             })
         );
     };
@@ -116,13 +116,13 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
                 section: <GenericError />,
                 onSubmit() {
                     window.location.reload();
-                }
+                },
             };
         }
 
         if (step === STEPS.LOADING) {
             return {
-                section: <Loader />
+                section: <Loader />,
             };
         }
 
@@ -143,7 +143,7 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
                             console.log(e);
                             setError(true);
                         });
-                }
+                },
             };
         }
 
@@ -161,7 +161,7 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
                             console.log(e);
                             setError(true);
                         });
-                }
+                },
             };
         }
 
@@ -170,7 +170,7 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
                 loading: isLoading,
                 title: isLoading ? c('Title').t`Preparing your calendar` : c('Title').t`Welcome to ProtonCalendar`,
                 section: isLoading ? <CalendarCreating /> : <CalendarReady />,
-                onSubmit: isLoading ? noop : onClose
+                onSubmit: isLoading ? noop : onClose,
             };
         }
 
@@ -179,7 +179,7 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
 
     return (
         <FormModal
-            title={''}
+            title=""
             close={null}
             onClose={noop}
             onSubmit={noop}

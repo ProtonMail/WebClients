@@ -18,6 +18,7 @@ const ImportSummaryModalContent = ({ model }: Props) => {
 
     const errors = [...model.eventsNotEncrypted, ...model.eventsNotImported].map((e, index) => {
         const error = (
+            // eslint-disable-next-line react/no-array-index-key
             <span key={index} className="color-global-warning">
                 {e.message}
             </span>
@@ -25,7 +26,7 @@ const ImportSummaryModalContent = ({ model }: Props) => {
         const message = e.idMessage ? c('Error importing event').jt`${e.idMessage}. ${error}` : error;
         return {
             index,
-            message
+            message,
         };
     });
 

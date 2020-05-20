@@ -22,11 +22,11 @@ const getAutoScrollOptions = (titleEl) => {
     const margin = 7;
     return {
         marginTop: titleElRect.height + margin,
-        marginBottom: margin
+        marginBottom: margin,
     };
 };
 
-const getType = (/*position, offset*/) => {
+const getType = (/* position, offset */) => {
     /*
     // Support removed for this because the handle needs to be stable
     if (position <= offset) {
@@ -50,7 +50,7 @@ const createDragCreateMouseDown = ({
     onMouseDown,
     scrollEl,
     timeGridEl,
-    titleEl
+    titleEl,
 }) => {
     const startDate = days[targetDate];
     let endTargetDate = targetDate;
@@ -63,8 +63,8 @@ const createDragCreateMouseDown = ({
         action: ACTIONS.CREATE_DOWN,
         payload: {
             type: TYPE.TIMEGRID,
-            idx: startDate
-        }
+            idx: startDate,
+        },
     });
 
     // Not allowed, abort
@@ -104,7 +104,7 @@ const createDragCreateMouseDown = ({
         }
 
         // Only allow d&d on the same day
-        //endTargetDate = newEndTargetDate;
+        // endTargetDate = newEndTargetDate;
         endTargetDate = targetDate;
         endTargetMinutes = newEndTargetMinutes;
 
@@ -116,12 +116,12 @@ const createDragCreateMouseDown = ({
             const newEnd = Math.min(totalMinutes, endTargetMinutes + interval);
             result = {
                 start: getNewTime(startDate, targetMinutes),
-                end: getNewTime(endDate, newEnd)
+                end: getNewTime(endDate, newEnd),
             };
         } else {
             result = {
                 start: getNewTime(endDate, endTargetMinutes),
-                end: getNewTime(startDate, targetMinutes)
+                end: getNewTime(startDate, targetMinutes),
             };
         }
 
@@ -130,8 +130,8 @@ const createDragCreateMouseDown = ({
             payload: {
                 type: TYPE.TIMEGRID,
                 idx: endTargetDate,
-                result
-            }
+                result,
+            },
         });
     };
 
@@ -150,8 +150,8 @@ const createDragCreateMouseDown = ({
                 payload: {
                     type: TYPE.TIMEGRID,
                     idx: endTargetDate,
-                    result
-                }
+                    result,
+                },
             });
         } else {
             // No d&d, just a click on the timegrid.
@@ -165,9 +165,9 @@ const createDragCreateMouseDown = ({
                     idx: endTargetDate,
                     result: {
                         start,
-                        end: start
-                    }
-                }
+                        end: start,
+                    },
+                },
             });
 
             e.preventDefault();
@@ -194,7 +194,7 @@ const createDragMoveEvent = ({
     onMouseDown,
     scrollEl,
     timeGridEl,
-    titleEl
+    titleEl,
 }) => {
     const { start, end } = event;
 
@@ -212,8 +212,8 @@ const createDragMoveEvent = ({
         payload: {
             type: TYPE.TIMEGRID,
             event,
-            idx: targetDate
-        }
+            idx: targetDate,
+        },
     });
 
     // Move was not allowed, abort
@@ -236,8 +236,8 @@ const createDragMoveEvent = ({
             payload: {
                 type: TYPE.TIMEGRID,
                 result,
-                day
-            }
+                day,
+            },
         });
     };
 
@@ -265,7 +265,7 @@ const createDragMoveEvent = ({
 
             result = {
                 start: newStart,
-                end: newEnd
+                end: newEnd,
             };
 
             handleMove(e, result, currentTargetDate);
@@ -273,7 +273,7 @@ const createDragMoveEvent = ({
 
         if (type === DRAG_EVENT_TIME_UP || type === DRAG_EVENT_TIME_DOWN) {
             // Only allow d&d on the same day
-            //const diffDate = currentTargetDate - targetDate;
+            // const diffDate = currentTargetDate - targetDate;
             const diffDate = 0;
             const diffMinutes = currentTargetMinutes - targetMinutes;
 
@@ -285,13 +285,13 @@ const createDragMoveEvent = ({
                     const diffTimeWithPadding = addMinutes(diffTime, extra);
                     result = {
                         start: end,
-                        end: diffTimeWithPadding
+                        end: diffTimeWithPadding,
                     };
                 } else {
                     const diffTimeWithPadding = addMinutes(diffTime, -extra);
                     result = {
                         start: diffTimeWithPadding,
-                        end
+                        end,
                     };
                 }
             } else {
@@ -302,13 +302,13 @@ const createDragMoveEvent = ({
                     const diffTimeWithPadding = addMinutes(diffTime, extra);
                     result = {
                         start,
-                        end: diffTimeWithPadding
+                        end: diffTimeWithPadding,
                     };
                 } else {
                     const diffTimeWithPadding = addMinutes(diffTime, -extra);
                     result = {
                         start: diffTimeWithPadding,
-                        end: start
+                        end: start,
                     };
                 }
             }
@@ -332,8 +332,8 @@ const createDragMoveEvent = ({
                 payload: {
                     type: TYPE.TIMEGRID,
                     result,
-                    idx: currentTargetDate
-                }
+                    idx: currentTargetDate,
+                },
             });
         } else {
             // Click on the event
@@ -344,8 +344,8 @@ const createDragMoveEvent = ({
                 action: ACTIONS.EVENT_UP,
                 payload: {
                     type: TYPE.TIMEGRID,
-                    idx: targetDate
-                }
+                    idx: targetDate,
+                },
             });
         }
 
@@ -368,7 +368,7 @@ export default ({
     days,
     timeGridEl,
     scrollEl,
-    titleEl
+    titleEl,
 }) => {
     const { target } = e;
 
@@ -392,7 +392,7 @@ export default ({
             onMouseDown,
             scrollEl,
             timeGridEl,
-            titleEl
+            titleEl,
         });
 
         return true;
@@ -443,7 +443,7 @@ export default ({
         onMouseDown,
         scrollEl,
         timeGridEl,
-        titleEl
+        titleEl,
     });
 
     return true;

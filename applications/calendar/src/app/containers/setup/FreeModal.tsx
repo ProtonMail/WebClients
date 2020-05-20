@@ -17,7 +17,7 @@ const FreeModal = (props: any) => {
             {...props}
             onSubmit={goBack}
             onClose={goBack}
-            small={true}
+            small
         >
             <div className="aligncenter">
                 <img src={betaSvg} alt="Beta" />

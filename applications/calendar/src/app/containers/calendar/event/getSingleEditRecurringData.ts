@@ -1,7 +1,7 @@
 import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
 import { addMilliseconds } from 'proton-shared/lib/date-fns-utc';
-import { getRecurrenceId } from './getEventHelper';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { getRecurrenceId } from './getEventHelper';
 
 const getSingleEditRecurringData = (originalEvent: VcalVeventComponent, occurrenceEvent: VcalVeventComponent) => {
     // If it's a single edition, the recurrence ID exists on the occurrence
@@ -15,12 +15,12 @@ const getSingleEditRecurringData = (originalEvent: VcalVeventComponent, occurren
     const occurrencesUntilDate = getOccurrences({
         component: originalEvent,
         maxCount: 10000000,
-        maxStart
+        maxStart,
     });
 
     const twoOccurrences = getOccurrences({
         component: originalEvent,
-        maxCount: 2
+        maxCount: 2,
     });
 
     // If no occurrences was found, it assumes that the recurrence-id is invalid.
@@ -31,7 +31,7 @@ const getSingleEditRecurringData = (originalEvent: VcalVeventComponent, occurren
 
     return {
         ...occurrences[occurrences.length - 1],
-        isSingleOccurrence
+        isSingleOccurrence,
     };
 };
 

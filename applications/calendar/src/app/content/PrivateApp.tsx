@@ -7,7 +7,7 @@ import {
     CalendarsModel,
     CalendarUserSettingsModel,
     AddressesModel,
-    MailSettingsModel
+    MailSettingsModel,
 } from 'proton-shared/lib/models';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
@@ -22,7 +22,7 @@ const EVENT_MODELS = [
     MailSettingsModel,
     CalendarsModel,
     CalendarUserSettingsModel,
-    AddressesModel
+    AddressesModel,
 ];
 
 const PRELOAD_MODELS = [UserModel, UserSettingsModel, MailSettingsModel, AddressesModel];

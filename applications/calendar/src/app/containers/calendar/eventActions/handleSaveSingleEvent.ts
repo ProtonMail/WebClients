@@ -1,14 +1,14 @@
 import { useGetAddressKeys } from 'react-components';
 import { Api } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
 import {
     getEventCreatedText,
     getEventUpdatedText,
-    getRecurringEventCreatedText
+    getRecurringEventCreatedText,
 } from '../../../components/eventModal/eventForm/i18n';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import handleSaveSingleEventHelper from './handleSaveSingleEventHelper';
-import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
 
 interface Arguments {
     oldEventData?: EventOldData;
@@ -29,7 +29,7 @@ const getSingleEventText = (oldEventData: EventOldData | undefined, newEventData
     if (isCreate && isRecurring) {
         const twoOccurrences = getOccurrences({
             component: newEventData.veventComponent,
-            maxCount: 2
+            maxCount: 2,
         });
         if (twoOccurrences.length === 1) {
             return getEventCreatedText();
@@ -51,7 +51,7 @@ const handleSaveSingleEvent = async ({
     call,
     getAddressKeys,
     getCalendarKeys,
-    createNotification
+    createNotification,
 }: Arguments) => {
     await handleSaveSingleEventHelper({
         oldEventData,
@@ -59,7 +59,7 @@ const handleSaveSingleEvent = async ({
         api,
         getAddressKeys,
         getCalendarKeys,
-        calendars
+        calendars,
     });
     await call();
     createNotification({ text: getSingleEventText(oldEventData, newEventData) });

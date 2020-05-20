@@ -22,7 +22,7 @@ export const splitDayEventsInInterval = ({ events = [], min: minDate, max: maxDa
         acc.push({
             idx: i,
             start: startIndex,
-            end: startIndex + calendarDaysDifference + 1
+            end: startIndex + calendarDaysDifference + 1,
         });
 
         return acc;

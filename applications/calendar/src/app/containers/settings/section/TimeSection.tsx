@@ -1,5 +1,4 @@
 import React, { ChangeEvent, useState } from 'react';
-import PropTypes from 'prop-types';
 import {
     Info,
     SubTitle,
@@ -11,7 +10,7 @@ import {
     useNotifications,
     useApi,
     useLoading,
-    Checkbox
+    Checkbox,
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
@@ -30,8 +29,8 @@ const TimeSection = ({
         DisplaySecondaryTimezone,
         TimeFormat,
         PrimaryTimezone,
-        SecondaryTimezone
-    }
+        SecondaryTimezone,
+    },
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -78,7 +77,7 @@ const TimeSection = ({
                         value={TimeFormat}
                         options={[
                             { text: '12h', value: SETTINGS_TIME_FORMAT.H12 },
-                            { text: '24h', value: SETTINGS_TIME_FORMAT.H24 }
+                            { text: '24h', value: SETTINGS_TIME_FORMAT.H24 },
                         ]}
                     />
                 </Field>
@@ -97,7 +96,7 @@ const TimeSection = ({
                                     handleChange({
                                         AutoDetectPrimaryTimezone: +target.checked,
                                         // Set a timezone if it's the first time
-                                        PrimaryTimezone: !PrimaryTimezone ? primaryTimezoneValue : undefined
+                                        PrimaryTimezone: !PrimaryTimezone ? primaryTimezoneValue : undefined,
                                     })
                                 )
                             }
@@ -136,7 +135,7 @@ const TimeSection = ({
                                     handleChange({
                                         DisplaySecondaryTimezone: +target.checked,
                                         // Set a timezone if it's the first time
-                                        SecondaryTimezone: !SecondaryTimezone ? secondaryTimezoneValue : undefined
+                                        SecondaryTimezone: !SecondaryTimezone ? secondaryTimezoneValue : undefined,
                                     })
                                 )
                             }
@@ -157,11 +156,6 @@ const TimeSection = ({
             </Row>
         </>
     );
-};
-
-TimeSection.propTypes = {
-    calendarUserSettings: PropTypes.object,
-    keepTimezone: PropTypes.bool
 };
 
 export default TimeSection;

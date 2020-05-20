@@ -69,7 +69,7 @@ export interface EventModel extends EventModelView {
         memberID: string;
         addressID: string;
     };
-    //attendees: AttendeeModel[];
+    // attendees: AttendeeModel[];
     attendees?: any;
     isAllDay: boolean;
     defaultPartDayNotification: NotificationModel;

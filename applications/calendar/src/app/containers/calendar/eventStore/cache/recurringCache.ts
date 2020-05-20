@@ -16,7 +16,7 @@ export const removeEventFromRecurrenceInstances = (
     }
 
     const newRecurrenceInstances = {
-        ...oldRecurrenceInstances
+        ...oldRecurrenceInstances,
     };
 
     if (recurrenceId) {
@@ -25,7 +25,7 @@ export const removeEventFromRecurrenceInstances = (
 
     recurringEvents.set(uid, {
         ...oldRecurringEvent,
-        recurrenceInstances: newRecurrenceInstances
+        recurrenceInstances: newRecurrenceInstances,
     });
 };
 
@@ -41,7 +41,7 @@ export const setEventInRecurrenceInstances = ({
     EventID,
     oldRecurrenceId,
     recurrenceId,
-    uid
+    uid,
 }: SetEventInRecurrenceInstances) => {
     // Get the parent recurring event (if any)
     const oldRecurringEvent = recurringEvents.get(uid) || {};
@@ -49,7 +49,7 @@ export const setEventInRecurrenceInstances = ({
 
     // Update the recurrence id in the recurrence id map
     const newRecurrenceInstances = {
-        ...oldRecurrenceInstances
+        ...oldRecurrenceInstances,
     };
     if (oldRecurrenceId) {
         delete newRecurrenceInstances[+oldRecurrenceId];
@@ -58,7 +58,7 @@ export const setEventInRecurrenceInstances = ({
 
     recurringEvents.set(uid, {
         ...oldRecurringEvent,
-        recurrenceInstances: newRecurrenceInstances
+        recurrenceInstances: newRecurrenceInstances,
     });
 };
 
@@ -68,7 +68,7 @@ export const setEventInRecurringCache = (recurringEvents: RecurringEventsCache, 
     recurringEvents.set(uid, {
         ...oldRecurringEvent,
         parentEventID: EventID,
-        cache: {}
+        cache: {},
     });
 };
 

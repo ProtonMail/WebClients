@@ -6,7 +6,7 @@ const CloseConfirmationModal = (props: any) => {
     return (
         <ConfirmModal
             title={c('Info').t`Discard changes?`}
-            close={<ResetButton autoFocus={true}>{c('Action').t`Cancel`}</ResetButton>}
+            close={<ResetButton autoFocus>{c('Action').t`Cancel`}</ResetButton>}
             confirm={c('Action').t`Discard`}
             {...props}
         >

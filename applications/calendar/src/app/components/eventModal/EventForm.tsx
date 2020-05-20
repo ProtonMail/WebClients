@@ -28,7 +28,7 @@ interface Props {
 
 const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, errors, model, setModel }: Props) => {
     const allDayRow = (
-        <Row collapseOnMobile={true}>
+        <Row collapseOnMobile>
             <span className="pm-label" />
             <div className="flex-item-fluid">
                 <AllDayCheckbox
@@ -126,8 +126,8 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                                     fullDayNotifications: notifications,
                                     hasModifiedNotifications: {
                                         ...model.hasModifiedNotifications,
-                                        fullDay: true
-                                    }
+                                        fullDay: true,
+                                    },
                                 });
                             }}
                         />
@@ -143,8 +143,8 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                                     partDayNotifications: notifications,
                                     hasModifiedNotifications: {
                                         ...model.hasModifiedNotifications,
-                                        partDay: true
-                                    }
+                                        partDay: true,
+                                    },
                                 });
                             }}
                         />

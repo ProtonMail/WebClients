@@ -1,9 +1,9 @@
 import React from 'react';
 import { Address } from 'proton-shared/lib/interfaces';
 
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import CalendarsSection from './section/CalendarsSection';
 import Main from '../../components/Main';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 
 interface Props {
     activeAddresses: Address[];
@@ -17,7 +17,7 @@ const SettingsCalendarPage = ({
     calendars,
     disabledCalendars,
     activeCalendars,
-    defaultCalendar
+    defaultCalendar,
 }: Props) => {
     return (
         <Main className="p2">

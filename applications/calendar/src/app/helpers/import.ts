@@ -11,10 +11,11 @@ import {
     VcalUidProperty,
     VcalValarmComponent,
     VcalVcalendar,
-    VcalVeventComponent
+    VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { c } from 'ttag';
-import { IMPORT_EVENT_TYPE, ImportEventError, ImportEventGeneralError } from '../components/import/ImportEventError';
+import { IMPORT_EVENT_TYPE, ImportEventError } from '../components/import/ImportEventError';
+import { ImportEventGeneralError } from '../components/import/ImportEventGeneralError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from '../components/import/ImportFileError';
 
 import {
@@ -25,7 +26,7 @@ import {
     MAXIMUM_DATE_UTC,
     MINIMUM_DATE_UTC,
     NOTIFICATION_UNITS,
-    NOTIFICATION_UNITS_MAX
+    NOTIFICATION_UNITS_MAX,
 } from '../constants';
 import { VcalCalendarComponentOrError } from '../interfaces/Import';
 
@@ -34,7 +35,7 @@ import {
     getIsFreebusyComponent,
     getIsJournalComponent,
     getIsTimezoneComponent,
-    getIsTodoComponent
+    getIsTodoComponent,
 } from './event';
 import { getIsRruleConsistent, getIsRruleSupported } from './rrule';
 
@@ -54,7 +55,7 @@ export const parseIcs = async (ics: File) => {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_CALENDAR, filename);
         }
         const calscale = parsedVcalendar.calscale ? parsedVcalendar.calscale[0].value : undefined;
-        const components = parsedVcalendar.components;
+        const { components } = parsedVcalendar;
         if (!components?.length) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.NO_EVENTS, filename);
         }
@@ -122,7 +123,7 @@ const getSupportedDateTimeProperty = (property: VcalDateTimeProperty, component:
         }
         return {
             ...property,
-            parameters: { ...property.parameters, tzid: timezone }
+            parameters: { ...property.parameters, tzid: timezone },
         };
     }
     return { ...property };
@@ -142,8 +143,8 @@ const getIsValidAlarm = (alarm: VcalValarmComponent) => {
     }
     const {
         trigger: {
-            value: { minutes, hours, days, weeks }
-        }
+            value: { minutes, hours, days, weeks },
+        },
     } = alarm;
     if (minutes > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.MINUTES]) {
         return false;
@@ -205,7 +206,7 @@ const getEventWithRequiredProperties = (
     const { dtstamp } = veventComponent;
     return {
         ...veventComponent,
-        dtstamp: dtstamp?.value ? { ...dtstamp } : { value: { ...fromUTCDate(new Date(Date.now())), isUTC: true } }
+        dtstamp: dtstamp?.value ? { ...dtstamp } : { value: { ...fromUTCDate(new Date(Date.now())), isUTC: true } },
     };
 };
 
@@ -237,7 +238,7 @@ export const getSupportedEvent = (vcalComponent: VcalCalendarComponent) => {
             description,
             summary,
             location,
-            'recurrence-id': recurrenceId
+            'recurrence-id': recurrenceId,
         } = vevent;
         const trimmedSummaryValue = summary?.value.trim();
         const trimmedDescriptionValue = description?.value.trim();
@@ -245,11 +246,11 @@ export const getSupportedEvent = (vcalComponent: VcalCalendarComponent) => {
 
         const validated: VcalVeventComponent &
             Required<Pick<VcalVeventComponent, 'uid' | 'dtstamp' | 'dtstart' | 'dtend'>> = {
-            component: component,
+            component,
             uid: getSupportedUID(uid),
             dtstamp: { ...dtstamp },
             dtstart: { ...dtstart },
-            dtend: { ...dtend }
+            dtend: { ...dtend },
         };
 
         if (exdate) {
@@ -261,19 +262,19 @@ export const getSupportedEvent = (vcalComponent: VcalCalendarComponent) => {
         if (trimmedSummaryValue) {
             validated.summary = {
                 ...summary,
-                value: truncate(trimmedSummaryValue, MAX_LENGTHS.TITLE)
+                value: truncate(trimmedSummaryValue, MAX_LENGTHS.TITLE),
             };
         }
         if (trimmedDescriptionValue) {
             validated.description = {
                 ...description,
-                value: truncate(trimmedDescriptionValue, MAX_LENGTHS.EVENT_DESCRIPTION)
+                value: truncate(trimmedDescriptionValue, MAX_LENGTHS.EVENT_DESCRIPTION),
             };
         }
         if (trimmedLocationValue) {
             validated.location = {
                 ...location,
-                value: truncate(trimmedLocationValue, MAX_LENGTHS.LOCATION)
+                value: truncate(trimmedLocationValue, MAX_LENGTHS.LOCATION),
             };
         }
 
@@ -347,7 +348,7 @@ export const filterNonSupported = ({ components, calscale }: FilterArgs) => {
     if (calscale && calscale.toLowerCase() !== 'gregorian') {
         return {
             events: [],
-            discarded: [new ImportEventError(IMPORT_EVENT_TYPE.NON_GREGORIAN, '', '')]
+            discarded: [new ImportEventError(IMPORT_EVENT_TYPE.NON_GREGORIAN, '', '')],
         };
     }
     return components.reduce<{ events: VcalVeventComponent[]; discarded: ImportEventError[] }>(

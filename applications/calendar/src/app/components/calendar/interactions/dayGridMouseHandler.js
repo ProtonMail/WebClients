@@ -2,11 +2,11 @@ import { getTargetIndex } from '../mouseHelpers/mathHelpers';
 import { getDiffTime, getNewTime } from '../mouseHelpers/dateHelpers';
 import { blockClick, findContainingParent, findUpwards, createRafUpdater } from '../mouseHelpers/domHelpers';
 
+import { ACTIONS, TYPE } from './constants';
+
 const CREATE_SENSITIVITY = 20; // In pixels
 const CREATE_STATE_INIT = -1;
 const CREATE_STATE_ACTIVE = -2;
-
-import { ACTIONS, TYPE } from './constants';
 
 const createDragCreateEvent = ({
     e,
@@ -15,7 +15,7 @@ const createDragCreateEvent = ({
     rows,
     eventsPerRows,
     dayGridEl,
-    onMouseDown
+    onMouseDown,
 }) => {
     let endTargetDate;
     let oldMouseX = -1;
@@ -27,8 +27,8 @@ const createDragCreateEvent = ({
         action: ACTIONS.CREATE_DOWN,
         payload: {
             type: TYPE.DAYGRID,
-            idx: targetRow
-        }
+            idx: targetRow,
+        },
     });
 
     // Not allowed, abort
@@ -72,12 +72,12 @@ const createDragCreateEvent = ({
         if (isAfter) {
             result = {
                 start: getNewTime(startTargetDate, 0),
-                end: getNewTime(endTargetDate, 0)
+                end: getNewTime(endTargetDate, 0),
             };
         } else {
             result = {
                 start: getNewTime(endTargetDate, 0),
-                end: getNewTime(startTargetDate, 0)
+                end: getNewTime(startTargetDate, 0),
             };
         }
 
@@ -86,8 +86,8 @@ const createDragCreateEvent = ({
             payload: {
                 type: TYPE.DAYGRID,
                 idx: currentTargetRow,
-                result
-            }
+                result,
+            },
         });
     };
 
@@ -104,22 +104,22 @@ const createDragCreateEvent = ({
                 payload: {
                     type: TYPE.DAYGRID,
                     idx: currentTargetRow,
-                    result
-                }
+                    result,
+                },
             });
         } else {
             // No range created, just a simple click
             result = {
                 start: getNewTime(startTargetDate, 0),
-                end: getNewTime(startTargetDate, 0)
+                end: getNewTime(startTargetDate, 0),
             };
             callback({
                 action: ACTIONS.CREATE_UP,
                 payload: {
                     type: TYPE.DAYGRID,
                     idx: targetRow,
-                    result
-                }
+                    result,
+                },
             });
         }
 
@@ -147,8 +147,8 @@ const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, event
         payload: {
             type: TYPE.DAYGRID,
             idx: targetRow,
-            event
-        }
+            event,
+        },
     });
 
     if (!initialCallback) {
@@ -181,7 +181,7 @@ const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, event
 
         result = {
             start: getDiffTime(start, differenceInDays, 0),
-            end: getDiffTime(end, differenceInDays, 0)
+            end: getDiffTime(end, differenceInDays, 0),
         };
 
         callback({
@@ -189,8 +189,8 @@ const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, event
             payload: {
                 type: TYPE.DAYGRID,
                 idx: currentTargetRow,
-                result
-            }
+                result,
+            },
         });
     };
 
@@ -207,8 +207,8 @@ const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, event
                 payload: {
                     type: TYPE.DAYGRID,
                     idx: currentTargetRow,
-                    result
-                }
+                    result,
+                },
             });
         } else {
             callback({
@@ -216,8 +216,8 @@ const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, event
                 payload: {
                     type: TYPE.DAYGRID,
                     idx: targetRow,
-                    event
-                }
+                    event,
+                },
             });
         }
 
@@ -249,7 +249,7 @@ export default ({ e, onMouseDown, rows, eventsPerRows, events, dayGridEl }) => {
     }
 
     const targetRow = parseInt(rowElement.dataset.row, 10);
-    if (isNaN(targetRow)) {
+    if (Number.isNaN(targetRow)) {
         return;
     }
     const days = rows[targetRow];
@@ -267,7 +267,7 @@ export default ({ e, onMouseDown, rows, eventsPerRows, events, dayGridEl }) => {
             rows,
             eventsPerRows,
             dayGridEl,
-            onMouseDown
+            onMouseDown,
         });
     }
 
@@ -294,8 +294,8 @@ export default ({ e, onMouseDown, rows, eventsPerRows, events, dayGridEl }) => {
                 date: targetDate,
                 events: moreEvents,
                 idx: eventStyle.idx,
-                row: targetRow
-            }
+                row: targetRow,
+            },
         });
         if (!callback) {
             return;
@@ -318,6 +318,6 @@ export default ({ e, onMouseDown, rows, eventsPerRows, events, dayGridEl }) => {
         daysPerRow: days.length,
         dayGridEl,
         eventsPerRows,
-        onMouseDown
+        onMouseDown,
     });
 };

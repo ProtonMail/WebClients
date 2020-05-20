@@ -30,16 +30,16 @@ const getSaveRecurringEventActions = ({
         calendarID: originalCalendarID,
         addressID: originalAddressID,
         memberID: originalMemberID,
-        veventComponent: originalVeventComponent
+        veventComponent: originalVeventComponent,
     },
     newEventData: {
         calendarID: newCalendarID,
         addressID: newAddressID,
         memberID: newMemberID,
-        veventComponent: newVeventComponent
+        veventComponent: newVeventComponent,
     },
     recurrence,
-    updateAllPossibilities
+    updateAllPossibilities,
 }: SaveRecurringArguments) => {
     const isSingleEdit = oldEvent.ID !== originalEvent.ID;
 
@@ -53,16 +53,16 @@ const getSaveRecurringEventActions = ({
                 type: SyncOperationTypes.UPDATE,
                 data: {
                     Event: oldEvent,
-                    veventComponent: updateSingleRecurrence(newVeventComponent)
-                }
+                    veventComponent: updateSingleRecurrence(newVeventComponent),
+                },
             };
             return [
                 {
                     calendarID: originalCalendarID,
                     addressID: originalAddressID,
                     memberID: originalMemberID,
-                    operations: [updateOperation]
-                }
+                    operations: [updateOperation],
+                },
             ];
         }
 
@@ -74,8 +74,8 @@ const getSaveRecurringEventActions = ({
                     newVeventComponent,
                     originalVeventComponent,
                     recurrence.localStart
-                )
-            }
+                ),
+            },
         };
 
         return [
@@ -83,8 +83,8 @@ const getSaveRecurringEventActions = ({
                 calendarID: originalCalendarID,
                 addressID: originalAddressID,
                 memberID: originalMemberID,
-                operations: [createOperation]
-            }
+                operations: [createOperation],
+            },
         ];
     }
 
@@ -100,8 +100,8 @@ const getSaveRecurringEventActions = ({
         const deleteOperations = singleEditRecurrencesAfter.map((Event) => ({
             type: SyncOperationTypes.DELETE,
             data: {
-                Event
-            }
+                Event,
+            },
         }));
 
         const updatedOriginalVeventComponent = deleteFutureRecurrence(
@@ -113,16 +113,16 @@ const getSaveRecurringEventActions = ({
             type: SyncOperationTypes.UPDATE,
             data: {
                 Event: originalEvent,
-                veventComponent: updatedOriginalVeventComponent
-            }
+                veventComponent: updatedOriginalVeventComponent,
+            },
         };
 
         const createOperation = {
             type: SyncOperationTypes.CREATE,
             data: {
                 Event: undefined,
-                veventComponent: createFutureRecurrence(newVeventComponent, originalVeventComponent, recurrence)
-            }
+                veventComponent: createFutureRecurrence(newVeventComponent, originalVeventComponent, recurrence),
+            },
         };
 
         return [
@@ -130,8 +130,8 @@ const getSaveRecurringEventActions = ({
                 calendarID: originalCalendarID,
                 addressID: originalAddressID,
                 memberID: originalMemberID,
-                operations: [...deleteOperations, updateOperation, createOperation]
-            }
+                operations: [...deleteOperations, updateOperation, createOperation],
+            },
         ];
     }
 
@@ -142,8 +142,8 @@ const getSaveRecurringEventActions = ({
         const deleteOperations = singleEditRecurrences.map((Event) => ({
             type: SyncOperationTypes.DELETE,
             data: {
-                Event
-            }
+                Event,
+            },
         }));
 
         const updateOperation = {
@@ -154,9 +154,9 @@ const getSaveRecurringEventActions = ({
                     component: newVeventComponent,
                     originalComponent: originalVeventComponent,
                     mode: updateAllPossibilities,
-                    isSingleEdit
-                })
-            }
+                    isSingleEdit,
+                }),
+            },
         };
 
         // First delete from the old calendar, then add to the new...
@@ -166,14 +166,14 @@ const getSaveRecurringEventActions = ({
                     calendarID: originalCalendarID,
                     addressID: originalAddressID,
                     memberID: originalMemberID,
-                    operations: deleteOperations
+                    operations: deleteOperations,
                 },
                 {
                     calendarID: newCalendarID,
                     addressID: newAddressID,
                     memberID: newMemberID,
-                    operations: [updateOperation]
-                }
+                    operations: [updateOperation],
+                },
             ];
         }
 
@@ -182,8 +182,8 @@ const getSaveRecurringEventActions = ({
                 calendarID: newCalendarID,
                 addressID: newAddressID,
                 memberID: newMemberID,
-                operations: [...deleteOperations, updateOperation]
-            }
+                operations: [...deleteOperations, updateOperation],
+            },
         ];
     }
 

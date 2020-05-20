@@ -21,7 +21,7 @@ const deleteSingleRecurrence = (component: VcalVeventComponent, localStartToExcl
 
     return {
         ...component,
-        exdate: newExdates
+        exdate: newExdates,
     } as VcalVeventComponent;
 };
 

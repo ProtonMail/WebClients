@@ -2,13 +2,13 @@ import { useGetAddressKeys } from 'react-components';
 import {
     getCreateCalendarEvent,
     getSwitchCalendarEvent,
-    getUpdateCalendarEvent
+    getUpdateCalendarEvent,
 } from 'proton-shared/lib/calendar/integration/createOrUpdateEvent';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
-import getCreationKeys from '../getCreationKeys';
 import { Api } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import getCreationKeys from '../getCreationKeys';
 import { EventOldData, EventNewData } from '../../../interfaces/EventData';
 
 interface SaveEventHelperArguments {
@@ -27,12 +27,12 @@ const handleSaveSingleEventHelper = async ({
         calendarID: newCalendarID,
         addressID: newAddressID,
         memberID: newMemberID,
-        veventComponent: newVeventComponent
+        veventComponent: newVeventComponent,
     },
     api,
     getAddressKeys,
     getCalendarKeys,
-    calendars
+    calendars,
 }: SaveEventHelperArguments) => {
     const oldEvent = oldEventData?.Event;
     const oldCalendarID = oldEventData?.calendarID;
@@ -43,12 +43,12 @@ const handleSaveSingleEventHelper = async ({
     const [addressKeys, newCalendarKeys, oldCalendarKeys] = await Promise.all([
         getAddressKeys(newAddressID),
         getCalendarKeys(newCalendarID),
-        isSwitchCalendar && oldCalendarID ? getCalendarKeys(oldCalendarID) : undefined
+        isSwitchCalendar && oldCalendarID ? getCalendarKeys(oldCalendarID) : undefined,
     ]);
     const data = await createCalendarEvent({
         eventComponent: newVeventComponent,
         isSwitchCalendar,
-        ...(await getCreationKeys({ Event: oldEvent, addressKeys, newCalendarKeys, oldCalendarKeys }))
+        ...(await getCreationKeys({ Event: oldEvent, addressKeys, newCalendarKeys, oldCalendarKeys })),
     });
 
     if (isSwitchCalendar) {
@@ -57,7 +57,7 @@ const handleSaveSingleEventHelper = async ({
                 calendarID: newCalendarID,
                 memberID: newMemberID,
                 data,
-                UID: newVeventComponent.uid.value
+                UID: newVeventComponent.uid.value,
             })
         );
     } else if (isUpdateEvent) {

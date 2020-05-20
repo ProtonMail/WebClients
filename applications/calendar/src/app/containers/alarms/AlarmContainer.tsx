@@ -1,7 +1,7 @@
 import React, { MutableRefObject } from 'react';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import AlarmWatcher from './AlarmWatcher';
 import useCalendarsAlarms from './useCalendarsAlarms';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarsAlarmsCache } from './CacheInterface';
 import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 

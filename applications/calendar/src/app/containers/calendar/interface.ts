@@ -1,5 +1,5 @@
-import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES, SAVE_CONFIRMATION_TYPES, VIEWS } from '../../constants';
 import { CalendarEvent, Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES, SAVE_CONFIRMATION_TYPES, VIEWS } from '../../constants';
 import { ReadEventCb } from './eventStore/interface';
 import { EventModel } from '../../interfaces/EventModel';
 

@@ -17,7 +17,7 @@ const ViewSelector = ({ range, loading = false, disabled = false, view, onChange
     const options = [
         { text: c('Calendar view').t`Day`, value: DAY },
         { text: c('Calendar view').t`Week`, value: WEEK },
-        { text: c('Calendar view').t`Month`, value: MONTH }
+        { text: c('Calendar view').t`Month`, value: MONTH },
         // { text: c('Calendar view').t`Year`, value: YEAR },
         // { text: c('Calendar view').t`Agenda`, value: AGENDA },
     ];

@@ -33,7 +33,7 @@ const getMemberAndAddress = (
 
 export const getMemberAndAddressID = ([{ ID: memberID }, { ID: addressID }]: [MemberInterface, AddressInterface]) => [
     memberID,
-    addressID
+    addressID,
 ];
 
 export default getMemberAndAddress;

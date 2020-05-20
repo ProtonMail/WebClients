@@ -14,7 +14,7 @@ export const getAllDayCheck = (oldModel: EventModel, isAllDay: boolean) => {
     ) {
         const {
             start: { date: startDate, time: startTime },
-            end: { date: endDate, time: endTime }
+            end: { date: endDate, time: endTime },
         } = getInitialDateTimeModel(oldModel.initialDate, oldModel.defaultEventDuration, '');
 
         const newStartDate = oldModel.start.date;
@@ -24,11 +24,11 @@ export const getAllDayCheck = (oldModel: EventModel, isAllDay: boolean) => {
         return {
             isAllDay,
             start: { tzid: oldModel.initialTzid, date: newStartDate, time: startTime },
-            end: { tzid: oldModel.initialTzid, date: newEndDate, time: endTime }
+            end: { tzid: oldModel.initialTzid, date: newEndDate, time: endTime },
         };
     }
 
     return {
-        isAllDay
+        isAllDay,
     };
 };

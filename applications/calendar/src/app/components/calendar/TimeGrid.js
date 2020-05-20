@@ -1,8 +1,7 @@
 import React, { useMemo, useRef, useState, useCallback, useImperativeHandle, useLayoutEffect, useEffect } from 'react';
-import { eachDayOfInterval, format } from 'proton-shared/lib/date-fns-utc';
+import { eachDayOfInterval, format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 
 import handleTimeGridMouseDown from './interactions/timeGridMouseHandler';
 import handleDayGridMouseDown from './interactions/dayGridMouseHandler';
@@ -50,7 +49,7 @@ const TimeGrid = React.forwardRef(
             targetEventRef,
             targetEventData,
             targetMoreRef,
-            targetMoreData
+            targetMoreData,
         },
         ref
     ) => {
@@ -107,7 +106,7 @@ const TimeGrid = React.forwardRef(
                 events: timeEvents,
                 min: days[0],
                 max: days[days.length - 1],
-                totalMinutes
+                totalMinutes,
             });
         }, [timeEvents, days, totalMinutes]);
 
@@ -125,13 +124,13 @@ const TimeGrid = React.forwardRef(
                     if (!scrollRef.current || !timeGridRef.current) {
                         return;
                     }
-                    //const nowTop = nowRef.current.offsetTop;
+                    // const nowTop = nowRef.current.offsetTop;
                     const timeRect = timeGridRef.current.getBoundingClientRect();
                     const nowTopOffset = timeRect.height * nowTop;
                     const titleRect = titleRef.current.getBoundingClientRect();
                     const scrollRect = scrollRef.current.getBoundingClientRect();
                     scrollRef.current.scrollTop = nowTopOffset - scrollRect.height / 2 + titleRect.height / 2;
-                }
+                },
             }),
             [ref, nowTop]
         );
@@ -146,7 +145,7 @@ const TimeGrid = React.forwardRef(
                     rows: daysRows,
                     events: dayEvents,
                     eventsPerRows,
-                    dayGridEl: dayGridRef.current
+                    dayGridEl: dayGridRef.current,
                 })
             ) {
                 return;
@@ -158,23 +157,19 @@ const TimeGrid = React.forwardRef(
                 return;
             }
 
-            if (
-                handleTimeGridMouseDown({
-                    e,
-                    onMouseDown,
-                    totalDays: normalizedDays.length,
-                    totalMinutes,
-                    interval: 30,
-                    events: timeEvents,
-                    eventsPerDay,
-                    days: normalizedDays,
-                    timeGridEl: timeGridRef.current,
-                    scrollEl: scrollRef.current,
-                    titleEl: titleRef.current
-                })
-            ) {
-                return;
-            }
+            handleTimeGridMouseDown({
+                e,
+                onMouseDown,
+                totalDays: normalizedDays.length,
+                totalMinutes,
+                interval: 30,
+                events: timeEvents,
+                eventsPerDay,
+                days: normalizedDays,
+                timeGridEl: timeGridRef.current,
+                scrollEl: scrollRef.current,
+                titleEl: titleRef.current,
+            });
         };
 
         useEffect(() => {
@@ -225,7 +220,7 @@ const TimeGrid = React.forwardRef(
                         ref={titleRef}
                         className={classnames([
                             'sticky-title sticky-title--noPadding onmobile-remain-sticky',
-                            !scrollTop && 'sticky-title--onTop'
+                            !scrollTop && 'sticky-title--onTop',
                         ])}
                     >
                         <div
@@ -252,13 +247,13 @@ const TimeGrid = React.forwardRef(
                         </div>
 
                         <div className="flex calendar-fullday-row">
-                            {displaySecondaryTimezone ? <div className="calendar-aside"></div> : null}
-                            <div className="calendar-aside calendar-aside-weekNumber aligncenter"></div>
+                            {displaySecondaryTimezone ? <div className="calendar-aside" /> : null}
+                            <div className="calendar-aside calendar-aside-weekNumber aligncenter" />
                             <div className="flex-item-fluid relative">
                                 <DayLines days={daysRows[0]} />
                                 <div
                                     className="calendar-time-fullday"
-                                    style={{ height: actualRows * dayEventHeight + 'px' }}
+                                    style={{ height: `${actualRows * dayEventHeight}px` }}
                                     data-row="0"
                                     ref={dayGridRef}
                                 >

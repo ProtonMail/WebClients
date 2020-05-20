@@ -36,8 +36,8 @@ export const setupCalendarKey = async ({ calendarID, api, addresses, getAddressK
         addressID: selfAddress.ID,
         privateKey: primaryAddressKey,
         memberPublicKeys: getKeysMemberMap(Members, {
-            [selfMember.Email]: primaryAddressPublicKey
-        })
+            [selfMember.Email]: primaryAddressPublicKey,
+        }),
     });
 
     return api(setupCalendar(calendarID, calendarKeyPayload));

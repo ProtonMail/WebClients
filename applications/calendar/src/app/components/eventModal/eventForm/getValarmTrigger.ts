@@ -8,7 +8,7 @@ const getValarmTriggerUnit = (unit: NOTIFICATION_UNITS) => {
             [NOTIFICATION_UNITS.WEEK]: 'weeks',
             [NOTIFICATION_UNITS.DAY]: 'days',
             [NOTIFICATION_UNITS.HOURS]: 'hours',
-            [NOTIFICATION_UNITS.MINUTES]: 'minutes'
+            [NOTIFICATION_UNITS.MINUTES]: 'minutes',
         }[unit] || 'days'
     );
 };
@@ -17,7 +17,7 @@ const getAllDayValarmTrigger = ({
     isNegative,
     unit,
     value = 0,
-    at
+    at,
 }: {
     isNegative: boolean;
     unit: NOTIFICATION_UNITS;
@@ -50,14 +50,14 @@ const getAllDayValarmTrigger = ({
         hours,
         minutes,
         seconds: 0,
-        isNegative
+        isNegative,
     };
 };
 
 const getPartDayValarmTrigger = ({
     isNegative,
     unit,
-    value = 0
+    value = 0,
 }: {
     isNegative: boolean;
     unit: NOTIFICATION_UNITS;
@@ -70,7 +70,7 @@ const getPartDayValarmTrigger = ({
         minutes: 0,
         seconds: 0,
         [getValarmTriggerUnit(unit)]: value,
-        isNegative
+        isNegative,
     };
 };
 

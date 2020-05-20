@@ -26,7 +26,7 @@ const EventSettingsTab = ({ model, setModel }: Props) => {
                             { text: c('Duration').t`30 minutes`, value: 30 },
                             { text: c('Duration').t`60 minutes`, value: 60 },
                             { text: c('Duration').t`90 minutes`, value: 90 },
-                            { text: c('Duration').t`120 minutes`, value: 120 }
+                            { text: c('Duration').t`120 minutes`, value: 120 },
                         ]}
                         onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
                             setModel({ ...model, duration: +target.value })
@@ -44,7 +44,7 @@ const EventSettingsTab = ({ model, setModel }: Props) => {
                         onChange={(notifications) => {
                             setModel({
                                 ...model,
-                                partDayNotifications: notifications
+                                partDayNotifications: notifications,
                             });
                         }}
                     />
@@ -63,7 +63,7 @@ const EventSettingsTab = ({ model, setModel }: Props) => {
                         onChange={(notifications) => {
                             setModel({
                                 ...model,
-                                fullDayNotifications: notifications
+                                fullDayNotifications: notifications,
                             });
                         }}
                     />

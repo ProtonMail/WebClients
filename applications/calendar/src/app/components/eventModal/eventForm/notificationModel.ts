@@ -1,7 +1,7 @@
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
+import { VcalTriggerValue } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
-import { VcalTriggerValue } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { transformBeforeAt } from './trigger';
 
 const getInt = (value: any) => parseInt(value, 10) || 0;
@@ -41,7 +41,7 @@ const allDayTriggerToModel = ({ type, when, weeks, days, hours, minutes }: Trigg
         when,
         value,
         at: modifiedAt,
-        isAllDay: true
+        isAllDay: true,
     };
 };
 
@@ -64,7 +64,7 @@ const partDayTriggerToModel = ({ type, when, weeks, days, hours, minutes }: Trig
         type,
         when,
         value,
-        isAllDay: false
+        isAllDay: false,
     };
 };
 
@@ -78,13 +78,13 @@ export const triggerToModel = ({
     isAllDay,
     type,
     // eslint-disable-next-line no-unused-vars
-    trigger: { weeks = 0, days = 0, hours = 0, minutes = 0, isNegative = false }
+    trigger: { weeks = 0, days = 0, hours = 0, minutes = 0, isNegative = false },
 }: TriggerToModel): NotificationModel => {
     const parsedTrigger = {
         weeks: getInt(weeks),
         days: getInt(days),
         hours: getInt(hours),
-        minutes: getInt(minutes)
+        minutes: getInt(minutes),
     };
     const when = isNegative ? NOTIFICATION_WHEN.BEFORE : NOTIFICATION_WHEN.AFTER;
     if (isAllDay) {

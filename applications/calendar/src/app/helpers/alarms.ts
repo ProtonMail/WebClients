@@ -2,9 +2,9 @@ import { getMillisecondsFromTriggerString } from 'proton-shared/lib/calendar/vca
 import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { toUTCDate, fromUTCDate, convertUTCDateTimeToZone, getTimezoneOffset } from 'proton-shared/lib/date/timezone';
 import { truncate } from 'proton-shared/lib/helpers/string';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { MINUTE } from '../constants';
 import getAlarmMessageText from './getAlarmMessageText';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 /**
  * Given a raw event, (optionally) its starting date, the date now and a timezone id,
@@ -33,7 +33,7 @@ export const getAlarmMessage = ({ component, start, now, tzid, formatOptions }: 
         isAllDay,
         startFakeUTCDate,
         nowFakeUTCDate,
-        formatOptions
+        formatOptions,
     });
 };
 

@@ -4,8 +4,8 @@ import { getPersonalPartMap, readPersonalPart } from 'proton-shared/lib/calendar
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { getAddressesMembersMap } from 'proton-shared/lib/keys/calendarKeys';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { DecryptedEventPersonalMap } from './interface';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { DecryptedEventPersonalMap } from './interface';
 
 const useGetCalendarEventPersonal = () => {
     const getCalendarBootstrap = useGetCalendarBootstrap();
@@ -16,7 +16,7 @@ const useGetCalendarEventPersonal = () => {
         async (Event: CalendarEvent) => {
             const [Addresses, { Members }] = await Promise.all([
                 getAddresses(),
-                getCalendarBootstrap(Event.CalendarID)
+                getCalendarBootstrap(Event.CalendarID),
             ]);
 
             const addressesMembersMap = getAddressesMembersMap(Members, Addresses);

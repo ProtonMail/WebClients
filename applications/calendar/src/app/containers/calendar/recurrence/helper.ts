@@ -3,17 +3,17 @@ import {
     getDateTimeProperty,
     getPropertyTzid,
     isIcalAllDay,
-    propertyToUTCDate
+    propertyToUTCDate,
 } from 'proton-shared/lib/calendar/vcalConverter';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
-import { DateTimeValue } from '../../../interfaces/DateTime';
 import {
     VcalDateOrDateTimeProperty,
     VcalDateProperty,
     VcalDateTimeProperty,
     VcalRruleProperty,
-    VcalVeventComponent
+    VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { DateTimeValue } from '../../../interfaces/DateTime';
 import { getUntilProperty } from '../../../components/eventModal/eventForm/modelToFrequencyProperties';
 
 export const toExdate = (dateObject: DateTimeValue, isAllDay: boolean, tzid = 'UTC'): VcalDateOrDateTimeProperty => {
@@ -32,8 +32,8 @@ export const getSafeRruleCount = (rrule: VcalRruleProperty, newCount: number) =>
         ...rrule,
         value: {
             ...rrule.value,
-            count: newCount
-        }
+            count: newCount,
+        },
     };
 };
 
@@ -54,8 +54,8 @@ export const getSafeRruleUntil = (rrule: VcalRruleProperty, component: VcalVeven
             ...rrule,
             value: {
                 ...rrule.value,
-                until
-            }
+                until,
+            },
         };
     }
 

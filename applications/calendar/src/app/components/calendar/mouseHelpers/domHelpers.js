@@ -75,9 +75,7 @@ export const createAutoScroll = (container, { marginTop = 5, marginBottom = 5, s
         };
     };
 
-    const onMouseMove = (e) => {
-        const pageY = e.pageY;
-
+    const onMouseMove = ({ pageY }) => {
         if (pageY <= rect.top + marginTop) {
             if (!stopScrolling) {
                 stopScrolling = startScrolling(-1);
@@ -105,7 +103,7 @@ export const createAutoScroll = (container, { marginTop = 5, marginBottom = 5, s
 
     return {
         onMouseMove,
-        onMouseUp
+        onMouseUp,
     };
 };
 

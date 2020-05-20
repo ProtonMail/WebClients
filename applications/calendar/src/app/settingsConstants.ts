@@ -3,7 +3,7 @@ import {
     SETTINGS_NOTIFICATION_TYPE,
     SETTINGS_TIME_FORMAT,
     SETTINGS_VIEW,
-    SETTINGS_WEEK_START
+    SETTINGS_WEEK_START,
 } from 'proton-shared/lib/interfaces/calendar';
 
 export const DEFAULT_USER_SETTINGS = {
@@ -16,19 +16,19 @@ export const DEFAULT_USER_SETTINGS = {
     PrimaryTimezone: 'Europe/Zurich',
     DisplaySecondaryTimezone: 0,
     SecondaryTimezone: null,
-    ViewPreference: SETTINGS_VIEW.WEEK
+    ViewPreference: SETTINGS_VIEW.WEEK,
 };
 
 export const DEFAULT_PART_DAY_NOTIFICATIONS = [
     {
         Type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
-        Trigger: '-PT15M'
-    }
+        Trigger: '-PT15M',
+    },
 ];
 
 export const DEFAULT_FULL_DAY_NOTIFICATIONS = [
     {
         Type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
-        Trigger: '-PT15H'
-    }
+        Trigger: '-PT15H',
+    },
 ];

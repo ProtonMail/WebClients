@@ -2,17 +2,17 @@ import { withRequiredProperties } from 'proton-shared/lib/calendar/veventHelper'
 import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { addDays } from 'date-fns';
 
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import modelToFrequencyProperties from './modelToFrequencyProperties';
 import { MAX_LENGTHS } from '../../../constants';
 import { modelToValarmComponent } from './modelToValarm';
 import { DateTimeModel, EventModel } from '../../../interfaces/EventModel';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 const modelToDateProperty = ({ date, time, tzid }: DateTimeModel, isAllDay: boolean) => {
     const dateObject = {
         year: date.getFullYear(),
         month: date.getMonth() + 1,
-        day: date.getDate()
+        day: date.getDate(),
     };
 
     if (isAllDay) {
@@ -23,7 +23,7 @@ const modelToDateProperty = ({ date, time, tzid }: DateTimeModel, isAllDay: bool
         ...dateObject,
         hours: time.getHours(),
         minutes: time.getMinutes(),
-        seconds: 0
+        seconds: 0,
     };
 
     return getDateTimeProperty(dateTimeObject, tzid);
@@ -38,7 +38,7 @@ const modelToDateProperties = ({ start, end, isAllDay }: EventModel) => {
 
     return {
         dtstart,
-        dtend
+        dtend,
     };
 };
 
@@ -48,10 +48,10 @@ export const modelToGeneralProperties = ({
     location,
     description,
     attendees,
-    rest
+    rest,
 }: Partial<EventModel>): VcalVeventComponent => {
     const properties = {
-        ...rest
+        ...rest,
     };
 
     if (title) {
@@ -82,12 +82,12 @@ export const modelToGeneralProperties = ({
         properties.attendee = attendees.map(({ name, email, permissions, rsvp }) => ({
             value: email,
             parameters: {
-                //cutype: 'INDIVIDUAL',
+                // cutype: 'INDIVIDUAL',
                 cn: name,
-                //role: rsvp ? 'REQ-PARTICIPANT' : 'NON-PARTICIPANT',
+                // role: rsvp ? 'REQ-PARTICIPANT' : 'NON-PARTICIPANT',
                 rsvp: rsvp ? 'TRUE' : 'FALSE',
-                'x-pm-permissions': permissions
-            }
+                'x-pm-permissions': permissions,
+            },
         }));
     }
 
@@ -112,6 +112,6 @@ export const modelToVeventComponent = (model: EventModel) => {
         ...frequencyProperties,
         ...dateProperties,
         component: 'vevent',
-        components
+        components,
     });
 };

@@ -26,7 +26,7 @@ const getCalendarEventCache = (): CalendarEventCache => {
         recurringEvents: new Map(),
         decryptedEvents: new Map(),
         tree: createIntervalTree(),
-        dateRanges: []
+        dateRanges: [],
     };
 };
 
@@ -49,7 +49,7 @@ export const getCalendarsEventCache = (): CalendarsEventsCache => {
         ref,
         isUnmounted,
         calendars: calendarsCache,
-        getCachedEvent
+        getCachedEvent,
     };
 };
 
@@ -201,7 +201,7 @@ const useCalendarsEvents = (
                             Event,
                             Calendar,
                             readEvent,
-                            counter
+                            counter,
                         };
 
                         return {
@@ -211,7 +211,7 @@ const useCalendarsEvents = (
                             isRecurring,
                             start,
                             end,
-                            data
+                            data,
                         };
                     })
                     .filter(isTruthy);
@@ -228,7 +228,7 @@ const useCalendarsEvents = (
                             Event,
                             Calendar,
                             readEvent,
-                            counter
+                            counter,
                         };
 
                         return eventOccurrences.map(({ utcStart, utcEnd, localStart, localEnd, occurrenceNumber }) => {
@@ -236,7 +236,7 @@ const useCalendarsEvents = (
                                 occurrenceNumber,
                                 localStart,
                                 localEnd,
-                                isSingleOccurrence
+                                isSingleOccurrence,
                             };
                             return {
                                 id: `${id}-${occurrenceNumber}`,
@@ -247,8 +247,8 @@ const useCalendarsEvents = (
                                 end: utcEnd,
                                 data: {
                                     ...data,
-                                    recurrence
-                                }
+                                    recurrence,
+                                },
                             };
                         });
                     })
@@ -269,7 +269,7 @@ const useCalendarsEvents = (
                             isRecurring,
                             start,
                             end,
-                            data
+                            data,
                         };
                     });
             })
@@ -278,7 +278,7 @@ const useCalendarsEvents = (
         return {
             calendarsEvents: events,
             loadingEvents: loading,
-            getDecryptedEvent
+            getDecryptedEvent,
         };
     }, [rerender, tzid, loading, requestedCalendars, utcDateRange]);
 };

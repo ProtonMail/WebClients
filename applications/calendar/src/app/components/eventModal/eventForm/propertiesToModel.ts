@@ -1,11 +1,11 @@
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { EventModelView } from '../../../interfaces/EventModel';
 
 const DEFAULT_TIME = {
     value: { year: 1970, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: true },
-    parameters: { tzid: 'UTC' }
+    parameters: { tzid: 'UTC' },
 };
 
 export const propertiesToModel = (component: VcalVeventComponent, isAllDay: boolean, tzid: string): EventModelView => {
@@ -17,7 +17,7 @@ export const propertiesToModel = (component: VcalVeventComponent, isAllDay: bool
         dtstart = DEFAULT_TIME,
         dtend = DEFAULT_TIME,
         rrule,
-        //attendee,
+        // attendee,
         ...rest
     } = component;
 
@@ -43,6 +43,6 @@ export const propertiesToModel = (component: VcalVeventComponent, isAllDay: bool
          */
         start,
         end,
-        rest
+        rest,
     };
 };

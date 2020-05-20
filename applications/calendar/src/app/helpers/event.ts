@@ -1,12 +1,12 @@
-import { EventPersonalMap } from '../interfaces/EventPersonalMap';
 import {
     VcalCalendarComponent,
     VcalVeventComponent,
     VcalVfreebusyComponent,
     VcalVjournalComponent,
     VcalVtimezoneComponent,
-    VcalVtodoComponent
+    VcalVtodoComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { EventPersonalMap } from '../interfaces/EventPersonalMap';
 
 interface GetComponentArguments {
     component: VcalVeventComponent;
@@ -18,7 +18,7 @@ export const getComponentWithPersonalPart = ({ component, personalMap = {}, memb
     const { components: valarmComponents = [] } = personalMap[memberID] || {};
     return {
         ...component,
-        components: valarmComponents
+        components: valarmComponents,
     };
 };
 

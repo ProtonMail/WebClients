@@ -15,4 +15,4 @@ export const getTargetIndex = (pagePosition, elementPosition, elementSize, total
     return normalizeIndex(Math.floor(getRelativePosition(pagePosition, elementPosition, elementSize) * total), total);
 };
 
-export const toPercent = (float) => float * 100 + '%';
+export const toPercent = (float) => `${float * 100}%`;

@@ -1,7 +1,7 @@
-import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES } from '../../../constants';
 import { deleteEvent } from 'proton-shared/lib/api/calendars';
-import { getEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
 import { Api } from 'proton-shared/lib/interfaces';
+import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES } from '../../../constants';
+import { getEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
 
 interface Arguments {
     oldCalendarID: string;
@@ -20,7 +20,7 @@ const handleDeleteSingleEvent = async ({
     onDeleteConfirmation,
     api,
     call,
-    createNotification
+    createNotification,
 }: Arguments) => {
     await onDeleteConfirmation({ type: DELETE_CONFIRMATION_TYPES.SINGLE });
     await api(deleteEvent(oldCalendarID, oldEventID));

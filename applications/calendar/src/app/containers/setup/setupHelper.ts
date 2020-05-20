@@ -6,7 +6,7 @@ const RESET_MASK = CALENDAR_FLAGS.RESET_NEEDED | CALENDAR_FLAGS.INCOMPLETE_SETUP
 export enum SETUP_TYPE {
     DONE,
     WELCOME,
-    RESET
+    RESET,
 }
 
 export const getSetupType = (calendars: Calendar[] = []) => {

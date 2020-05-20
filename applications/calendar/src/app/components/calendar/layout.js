@@ -45,7 +45,7 @@ export const getColumns = (group) => {
 
         columns.push({
             indices: [i],
-            end: event.end
+            end: event.end,
         });
 
         return columns;
@@ -61,7 +61,7 @@ export const layout = (events = []) => {
             const columnIndex = columns.findIndex(({ indices }) => indices.indexOf(j) !== -1);
             acc.push({
                 column: columnIndex,
-                columns: columns.length
+                columns: columns.length,
             });
         });
 

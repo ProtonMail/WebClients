@@ -20,7 +20,7 @@ const MorePopoverEvent = ({
     onClickEvent,
     targetEventRef,
     targetEventData,
-    tzid
+    tzid,
 }) => {
     return (
         <div
@@ -38,8 +38,8 @@ const MorePopoverEvent = ({
                     const props = {
                         onClick: () => onClickEvent({ id: event.id, idx: date.getUTCDate(), type: TYPE.MORE }),
                         style: {
-                            '--height': `${DAY_EVENT_HEIGHT}px`
-                        }
+                            '--height': `${DAY_EVENT_HEIGHT}px`,
+                        },
                     };
                     const isSelected = targetEventData && targetEventData.id === event.id;
                     const isThisSelected =

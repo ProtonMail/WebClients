@@ -15,13 +15,13 @@ const getComponentWithUpdatedRrule = (component: VcalVeventComponent) => {
     if (rrule.value.until) {
         return {
             ...component,
-            rrule: getSafeRruleUntil(rrule, component)
+            rrule: getSafeRruleUntil(rrule, component),
         };
     }
 
     return {
         ...component,
-        rrule
+        rrule,
     };
 };
 
@@ -35,7 +35,7 @@ const updateAllRecurrence = ({ component, originalComponent, mode }: Arguments) 
     // Have to set the old UID (this won't be necessary until we merge chains)
     const veventWithOldUID = {
         ...component,
-        uid: { value: originalComponent.uid.value }
+        uid: { value: originalComponent.uid.value },
     } as VcalVeventComponent;
 
     // Strip any RECURRENCE-ID when updating all events

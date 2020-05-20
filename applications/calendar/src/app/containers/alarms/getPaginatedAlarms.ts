@@ -12,7 +12,7 @@ const getPaginatedAlarms = async (api: Api, calendarID: string, dateRange: Date[
 
     const params = {
         End: getUnixTime(dateRange[1]),
-        PageSize
+        PageSize,
     };
 
     let lastStart: number | undefined = getUnixTime(dateRange[0]);

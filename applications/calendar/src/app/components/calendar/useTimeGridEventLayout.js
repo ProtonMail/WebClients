@@ -7,10 +7,10 @@ import { layout } from './layout';
 const useTimeGridEventLayout = (events, days, totalMinutes) => {
     return useMemo(() => {
         const eventsPerDay = splitTimeGridEventsPerDay({
-            events: events,
+            events,
             min: days[0],
             max: days[days.length - 1],
-            totalMinutes
+            totalMinutes,
         });
 
         const eventsLaidOut = Object.keys(eventsPerDay).reduce((acc, key) => {
@@ -29,7 +29,7 @@ const useTimeGridEventLayout = (events, days, totalMinutes) => {
                     top: toPercent(top),
                     left: toPercent(left),
                     height: toPercent(height),
-                    width: toPercent(width)
+                    width: toPercent(width),
                 };
             });
 

@@ -8,7 +8,7 @@ import { getIsRruleEqual } from './rruleEqual';
 export enum UpdateAllPossibilities {
     KEEP_SINGLE_EDITS,
     KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
-    USE_NEW_START_DATE
+    USE_NEW_START_DATE,
 }
 
 const getUpdateAllPossibilities = (

@@ -15,7 +15,7 @@ const handleValidation = (errors: EventModelErrors, containerEl: HTMLElement | n
             ['title', TITLE_INPUT_ID],
             ['until', UNTIL_ID],
             ['count', COUNT_ID],
-            ['notifications', NOTIFICATION_ID]
+            ['notifications', NOTIFICATION_ID],
         ]) {
             if (errors[errorId as keyof EventModelErrors]) {
                 focusInput(containerEl, formId);
@@ -57,6 +57,6 @@ export const useForm = ({ containerEl, model, errors, onSave, onDelete }: Argume
         isSubmitted,
         loadingAction,
         handleDelete,
-        handleSubmit
+        handleSubmit,
     };
 };

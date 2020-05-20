@@ -6,7 +6,7 @@ import {
     VcalDateTimeValue,
     VcalDays,
     VcalRruleFreqValue,
-    VcalRruleProperty
+    VcalRruleProperty,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { DAILY_TYPE, END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE, YEARLY_TYPE } from '../../../constants';
 import { getDayAndSetpos, getIsRruleCustom, getIsStandardBydayArray } from '../../../helpers/rrule';
@@ -97,22 +97,22 @@ export const propertiesToFrequencyModel = (
         frequency,
         interval: interval || 1, // INTERVAL=1 is ignored when parsing a recurring rule
         daily: {
-            type: DAILY_TYPE.ALL_DAYS
+            type: DAILY_TYPE.ALL_DAYS,
         },
         weekly: {
             type: WEEKLY_TYPE.ON_DAYS,
-            days: weeklyDays
+            days: weeklyDays,
         },
         monthly: {
-            type: monthType
+            type: monthType,
         },
         yearly: {
-            type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY
+            type: YEARLY_TYPE.BY_MONTH_ON_MONTH_DAY,
         },
         ends: {
             type: endType,
             count: count || 2,
-            until: untilDate
-        }
+            until: untilDate,
+        },
     };
 };

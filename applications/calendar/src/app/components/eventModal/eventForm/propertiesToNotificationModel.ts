@@ -1,6 +1,6 @@
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
-import { triggerToModel } from './notificationModel';
 import { VcalValarmComponent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { triggerToModel } from './notificationModel';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
 
 export const propertiesToNotificationModel = (
@@ -17,7 +17,7 @@ export const propertiesToNotificationModel = (
             return triggerToModel({
                 trigger: trigger ? trigger.value : {},
                 type,
-                isAllDay
+                isAllDay,
             });
         });
 };

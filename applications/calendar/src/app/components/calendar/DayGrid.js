@@ -1,6 +1,5 @@
 import React, { useMemo, useState, useRef, useLayoutEffect, useEffect } from 'react';
 import { chunk } from 'proton-shared/lib/helpers/array';
-import PropTypes from 'prop-types';
 import { eachDayOfInterval, isSameMonth } from 'proton-shared/lib/date-fns-utc';
 import { getISOWeek } from 'date-fns';
 
@@ -11,12 +10,7 @@ import RowEvents from './DayGrid/RowEvents';
 import DayButtons from './DayGrid/DayButtons';
 import { DAY_EVENT_HEIGHT } from './constants';
 
-export const getEvent = (idx, eventsInRow, events) => {
-    const { idx: eventIdx } = eventsInRow[idx];
-    return events[eventIdx];
-};
-
-/** @type any **/
+/** @type any * */
 const DayGrid = ({
     tzid,
     now,
@@ -35,7 +29,7 @@ const DayGrid = ({
     formatTime,
     formatDate,
     onClickDate,
-    weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 }) => {
     const rowsWrapperRef = useRef();
     const firstRowRef = useRef();
@@ -66,7 +60,7 @@ const DayGrid = ({
             eventsPerRows,
             rows,
             dayGridEl: rowsWrapperRef.current,
-            onMouseDown
+            onMouseDown,
         });
     };
 
@@ -143,6 +137,7 @@ const DayGrid = ({
                         {rows.map((days, rowIndex) => {
                             const { eventsInRow, eventsInRowStyles, eventsInRowSummary } = eventsPerRows[rowIndex];
                             return (
+                                // eslint-disable-next-line react/no-array-index-key
                                 <div key={rowIndex} className="flex-item-fluid flex flex-column h100 w100 relative">
                                     <div
                                         data-test-id="calendar-month-view:week-row"
@@ -198,10 +193,6 @@ const DayGrid = ({
             </div>
         </div>
     );
-};
-
-DayGrid.propTypes = {
-    children: PropTypes.func
 };
 
 export default DayGrid;

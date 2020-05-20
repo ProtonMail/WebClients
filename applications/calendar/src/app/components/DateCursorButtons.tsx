@@ -34,7 +34,7 @@ const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, 
         [MONTH]: c('Action').t`Previous month`,
         [AGENDA]: c('Action').t`Previous month`,
         [CUSTOM]: c('Action').t`Previous month`,
-        [YEAR]: c('Action').t`Previous year`
+        [YEAR]: c('Action').t`Previous year`,
     }[view];
 
     const next = {
@@ -43,7 +43,7 @@ const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, 
         [MONTH]: c('Action').t`Next month`,
         [AGENDA]: c('Action').t`Next month`,
         [CUSTOM]: c('Action').t`Next month`,
-        [YEAR]: c('Action').t`Next year`
+        [YEAR]: c('Action').t`Next year`,
     }[view];
 
     return (

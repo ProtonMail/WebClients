@@ -1,16 +1,16 @@
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
+import { VcalValarmComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getValarmTrigger } from './getValarmTrigger';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
-import { VcalValarmComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 export const modelToValarmComponent = (notificationModel: NotificationModel): VcalValarmComponent => {
     return {
         component: 'valarm',
         trigger: {
-            value: getValarmTrigger(notificationModel)
+            value: getValarmTrigger(notificationModel),
         },
         action: {
-            value: notificationModel.type === SETTINGS_NOTIFICATION_TYPE.EMAIL ? 'EMAIL' : 'DISPLAY'
-        }
+            value: notificationModel.type === SETTINGS_NOTIFICATION_TYPE.EMAIL ? 'EMAIL' : 'DISPLAY',
+        },
     };
 };

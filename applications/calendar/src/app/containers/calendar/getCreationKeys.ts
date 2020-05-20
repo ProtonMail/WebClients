@@ -17,7 +17,7 @@ export const getCreationKeys = async ({
     Event,
     addressKeys,
     newCalendarKeys,
-    oldCalendarKeys
+    oldCalendarKeys,
 }: GetCreationKeysArguments) => {
     const primaryAddressKey = getPrimaryKey(addressKeys);
     const primaryPrivateAddressKey = primaryAddressKey ? primaryAddressKey.privateKey : undefined;
@@ -42,7 +42,7 @@ export const getCreationKeys = async ({
         publicKey: publicCalendarKey,
         signingKey: primaryPrivateAddressKey,
         sharedSessionKey,
-        calendarSessionKey
+        calendarSessionKey,
     };
 };
 

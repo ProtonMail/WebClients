@@ -1,9 +1,9 @@
 import { c } from 'ttag';
-import { DEFAULT_CALENDAR, DEFAULT_EVENT_DURATION } from '../../constants';
 import { LABEL_COLORS } from 'proton-shared/lib/constants';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { Address } from 'proton-shared/lib/interfaces';
 import { Calendar, CalendarSettings, SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
+import { DEFAULT_CALENDAR, DEFAULT_EVENT_DURATION } from '../../constants';
 import { DEFAULT_FULL_DAY_NOTIFICATIONS, DEFAULT_PART_DAY_NOTIFICATIONS } from '../../settingsConstants';
 import { notificationsToModel } from '../../helpers/notificationsToModel';
 import { DEFAULT_FULL_DAY_NOTIFICATION, DEFAULT_PART_DAY_NOTIFICATION } from '../../modelConstants';
@@ -20,12 +20,12 @@ export const getCalendarModel = ({
     Calendar,
     CalendarSettings,
     Addresses,
-    AddressID
+    AddressID,
 }: GetCalendarModelArguments): Partial<CalendarModel> => {
     const {
         DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
         DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
-        DefaultEventDuration = DEFAULT_EVENT_DURATION
+        DefaultEventDuration = DEFAULT_EVENT_DURATION,
     } = CalendarSettings;
 
     const partDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
@@ -58,7 +58,7 @@ export const getCalendarModel = ({
         partDayNotifications: devicePartDayNotifications,
         fullDayNotifications: deviceFullDayNotifications,
         _emailPartDayNotifications: emailPartDayNotifications,
-        _emailFullDayNotifications: emailFullDayNotifications
+        _emailFullDayNotifications: emailFullDayNotifications,
     };
 };
 
@@ -77,7 +77,7 @@ export const getDefaultModel = (defaultColor: boolean): CalendarModel => {
         partDayNotifications: notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false),
         fullDayNotifications: notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true),
         _emailPartDayNotifications: [],
-        _emailFullDayNotifications: []
+        _emailFullDayNotifications: [],
     };
 };
 
@@ -96,7 +96,7 @@ export const getCalendarPayload = (model: CalendarModel) => {
         Name: model.name,
         Color: model.color,
         Display: +model.display,
-        Description: model.description
+        Description: model.description,
     };
 };
 
@@ -106,12 +106,12 @@ export const getCalendarSettingsPayload = (model: CalendarModel) => {
         fullDayNotifications,
         partDayNotifications,
         _emailPartDayNotifications = [],
-        _emailFullDayNotifications = []
+        _emailFullDayNotifications = [],
     } = model;
 
     return {
         DefaultEventDuration: +duration,
         DefaultFullDayNotifications: modelToNotifications(fullDayNotifications.concat(_emailFullDayNotifications)),
-        DefaultPartDayNotifications: modelToNotifications(partDayNotifications.concat(_emailPartDayNotifications))
+        DefaultPartDayNotifications: modelToNotifications(partDayNotifications.concat(_emailPartDayNotifications)),
     };
 };

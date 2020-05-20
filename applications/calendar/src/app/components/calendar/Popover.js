@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { useRect } from '../../hooks/useRect';
 
-/** @type any **/
+/** @type any * */
 const Popover = ({ targetRef, containerRef, children, isOpen, once = false, when }) => {
     const [popoverRef, setPopoverRef] = useState();
 
@@ -30,7 +30,7 @@ const Popover = ({ targetRef, containerRef, children, isOpen, once = false, when
 
             return {
                 top,
-                left
+                left,
             };
         };
 
@@ -55,7 +55,7 @@ const Popover = ({ targetRef, containerRef, children, isOpen, once = false, when
 
             return {
                 top,
-                left
+                left,
             };
         };
 
@@ -63,7 +63,7 @@ const Popover = ({ targetRef, containerRef, children, isOpen, once = false, when
             if (!popoverRect) {
                 return {
                     top: -9999,
-                    left: -9999
+                    left: -9999,
                 };
             }
             if (targetRect && targetRef) {
@@ -76,8 +76,8 @@ const Popover = ({ targetRef, containerRef, children, isOpen, once = false, when
             ref: setPopoverRef,
             style: {
                 top: Math.round(style.top),
-                left: Math.round(style.left)
-            }
+                left: Math.round(style.left),
+            },
         };
     }, [popoverRef, targetRef, containerRef, containerRect, popoverRect, targetRect]);
 

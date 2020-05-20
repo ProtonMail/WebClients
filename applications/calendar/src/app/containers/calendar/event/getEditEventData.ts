@@ -29,7 +29,7 @@ const getEditEventData = ({ Event, eventResult, memberResult: [member, address] 
         ? getComponentWithPersonalPart({
               component: eventResult[0],
               personalMap: eventResult[1],
-              memberID: member.ID
+              memberID: member.ID,
           })
         : undefined;
 
@@ -41,7 +41,7 @@ const getEditEventData = ({ Event, eventResult, memberResult: [member, address] 
         mainVeventComponent,
         veventComponent: veventComponentFull,
         uid,
-        recurrenceID
+        recurrenceID,
     };
 };
 

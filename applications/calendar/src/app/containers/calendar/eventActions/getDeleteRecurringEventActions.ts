@@ -25,9 +25,9 @@ export const getDeleteRecurringEventActions = ({
         Event: originalEvent,
         calendarID: originalCalendarID,
         addressID: originalAddressID,
-        memberID: originalMemberID
+        memberID: originalMemberID,
     },
-    oldEventData: { Event: oldEvent }
+    oldEventData: { Event: oldEvent },
 }: DeleteRecurringArguments): SyncMultipleEventsOperations => {
     if (type === RECURRING_TYPES.SINGLE) {
         if (!originalVeventComponent) {
@@ -41,8 +41,8 @@ export const getDeleteRecurringEventActions = ({
             ? {
                   type: SyncOperationTypes.DELETE,
                   data: {
-                      Event: oldEvent
-                  }
+                      Event: oldEvent,
+                  },
               }
             : undefined;
 
@@ -50,15 +50,15 @@ export const getDeleteRecurringEventActions = ({
             type: SyncOperationTypes.UPDATE,
             data: {
                 Event: originalEvent,
-                veventComponent: updatedVeventComponent
-            }
+                veventComponent: updatedVeventComponent,
+            },
         };
 
         return {
             calendarID: originalCalendarID,
             addressID: originalAddressID,
             memberID: originalMemberID,
-            operations: [singleDeleteOperation, originalExdateOperation].filter(isTruthy)
+            operations: [singleDeleteOperation, originalExdateOperation].filter(isTruthy),
         };
     }
 
@@ -82,23 +82,23 @@ export const getDeleteRecurringEventActions = ({
         const deleteOperations = singleEditRecurrencesAfter.map((Event) => ({
             type: SyncOperationTypes.DELETE,
             data: {
-                Event
-            }
+                Event,
+            },
         }));
 
         const updateOperation = {
             type: SyncOperationTypes.UPDATE,
             data: {
                 Event: originalEvent,
-                veventComponent: updatedVeventComponent
-            }
+                veventComponent: updatedVeventComponent,
+            },
         };
 
         return {
             calendarID: originalCalendarID,
             addressID: originalAddressID,
             memberID: originalMemberID,
-            operations: [...deleteOperations, updateOperation]
+            operations: [...deleteOperations, updateOperation],
         };
     }
 
@@ -110,15 +110,15 @@ export const getDeleteRecurringEventActions = ({
         const deleteOperations = recurrences.map((Event) => ({
             type: SyncOperationTypes.DELETE,
             data: {
-                Event
-            }
+                Event,
+            },
         }));
 
         return {
             calendarID: originalCalendarID,
             addressID: originalAddressID,
             memberID: originalMemberID,
-            operations: deleteOperations
+            operations: deleteOperations,
         };
     }
 

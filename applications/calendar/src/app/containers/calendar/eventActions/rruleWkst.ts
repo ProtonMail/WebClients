@@ -1,7 +1,7 @@
 import { VcalDays, VcalRruleProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { numericDayToDay } from 'proton-shared/lib/calendar/vcalConverter';
-import { FREQUENCY } from '../../../constants';
 import { omit } from 'proton-shared/lib/helpers/object';
+import { FREQUENCY } from '../../../constants';
 
 /**
  * WKST is significant when a WEEKLY "RRULE" has an interval greater than 1,
@@ -23,8 +23,8 @@ export const withRruleWkst = (rrule: VcalRruleProperty, wkst = VcalDays.MO): Vca
                 ...rrule,
                 value: {
                     ...rrule.value,
-                    wkst: numericDayToDay(wkst)
-                }
+                    wkst: numericDayToDay(wkst),
+                },
             };
         }
     }
@@ -35,7 +35,7 @@ export const withRruleWkst = (rrule: VcalRruleProperty, wkst = VcalDays.MO): Vca
 
     return {
         ...rrule,
-        value: omit(rrule.value, ['wkst'])
+        value: omit(rrule.value, ['wkst']),
     };
 };
 
@@ -45,7 +45,7 @@ const withVeventRruleWkst = (vevent: VcalVeventComponent, wkst: VcalDays): VcalV
     }
     return {
         ...vevent,
-        rrule: withRruleWkst(vevent.rrule, wkst)
+        rrule: withRruleWkst(vevent.rrule, wkst),
     };
 };
 

@@ -8,7 +8,7 @@ import {
     useGetAddressKeys,
     useGetCalendarKeys,
     useModals,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 
@@ -17,6 +17,9 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 
+import { omit } from 'proton-shared/lib/helpers/object';
+import { Calendar, CalendarBootstrap } from 'proton-shared/lib/interfaces/calendar';
+import { Address } from 'proton-shared/lib/interfaces';
 import { getExistingEvent, getInitialModel } from '../../components/eventModal/eventForm/state';
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
@@ -35,11 +38,16 @@ import { findUpwards } from '../../components/calendar/mouseHelpers/domHelpers';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
 import DeleteConfirmModal from './confirmationModals/DeleteConfirmModal';
 import DeleteRecurringConfirmModal from './confirmationModals/DeleteRecurringConfirmModal';
-import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, RECURRING_TYPES } from '../../constants';
-import { DELETE_CONFIRMATION_TYPES, SAVE_CONFIRMATION_TYPES } from '../../constants';
+import {
+    MAXIMUM_DATE_UTC,
+    MINIMUM_DATE_UTC,
+    RECURRING_TYPES,
+    DELETE_CONFIRMATION_TYPES,
+    SAVE_CONFIRMATION_TYPES,
+} from '../../constants';
+
 import getMemberAndAddress from '../../helpers/getMemberAndAddress';
 import EditRecurringConfirmModal from './confirmationModals/EditRecurringConfirmation';
-import { omit } from 'proton-shared/lib/helpers/object';
 import handleSaveEventHelper from './eventActions/handleSaveEvent';
 import handleDeleteEventHelper from './eventActions/handleDeleteEvent';
 import { getHasDoneChanges } from '../../components/eventModal/eventForm/getHasEdited';
@@ -54,10 +62,8 @@ import {
     SharedViewProps,
     TargetEventData,
     TimeGridRef,
-    WeekStartsOn
+    WeekStartsOn,
 } from './interface';
-import { Calendar, CalendarBootstrap } from 'proton-shared/lib/interfaces/calendar';
-import { Address } from 'proton-shared/lib/interfaces';
 import { DateTimeModel, EventModel } from '../../interfaces/EventModel';
 import { GetDecryptedEventCb } from './eventStore/interface';
 
@@ -119,7 +125,7 @@ const InteractiveCalendarView = ({
     interactiveRef,
     containerRef,
     timeGridViewRef,
-    getDecryptedEvent
+    getDecryptedEvent,
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -145,7 +151,7 @@ const InteractiveCalendarView = ({
     const isScrollDisabled = !!interactiveData && !temporaryEvent;
 
     useEffect(() => {
-        onInteraction && onInteraction(!!temporaryEvent);
+        onInteraction?.(!!temporaryEvent);
     }, [!!temporaryEvent]);
 
     useUnload(isInTemporaryBlocking ? c('Alert').t`By leaving now, you will lose your event.` : '');
@@ -175,7 +181,7 @@ const InteractiveCalendarView = ({
 
         setInteractiveData({
             ...interactiveData,
-            temporaryEvent: newTemporaryEvent
+            temporaryEvent: newTemporaryEvent,
         });
     };
 
@@ -214,7 +220,7 @@ const InteractiveCalendarView = ({
             Member,
             Address,
             isAllDay,
-            tzid
+            tzid,
         });
     };
 
@@ -222,7 +228,7 @@ const InteractiveCalendarView = ({
         Calendar,
         Event,
         readEvent,
-        recurrence
+        recurrence,
     }: CalendarViewEventData): EventModel | undefined => {
         if (!Event || !readEvent) {
             return;
@@ -242,7 +248,7 @@ const InteractiveCalendarView = ({
             Member,
             Address,
             isAllDay: false,
-            tzid
+            tzid,
         });
         const [[veventComponent, personalMap] = [], promise, error] = readEvent(Calendar.ID, Event.ID);
         if (!veventComponent || !personalMap || promise || error) {
@@ -254,11 +260,11 @@ const InteractiveCalendarView = ({
         const eventResult = getExistingEvent({
             veventComponent: originalOrOccurrenceEvent,
             veventValarmComponent: personalMap[Member.ID],
-            tzid
+            tzid,
         });
         return {
             ...createResult,
-            ...eventResult
+            ...eventResult,
         };
     };
 
@@ -290,7 +296,7 @@ const InteractiveCalendarView = ({
 
                     setInteractiveData({
                         temporaryEvent: temporaryEvent && event.id === 'tmp' ? temporaryEvent : undefined,
-                        targetEventData: { id: event.id, idx, type }
+                        targetEventData: { id: event.id, idx, type },
                     });
                     return;
                 }
@@ -313,7 +319,7 @@ const InteractiveCalendarView = ({
                 }
 
                 const {
-                    result: { start, end }
+                    result: { start, end },
                 } = payload;
 
                 const isBeforeMinBoundary = start < MINIMUM_DATE_UTC;
@@ -325,7 +331,7 @@ const InteractiveCalendarView = ({
                     createNotification({
                         text: c('Error')
                             .t`It is only possible to move events between ${minDateString} - ${maxDateString}`,
-                        type: 'error'
+                        type: 'error',
                     });
                     setInteractiveData(undefined);
                     return;
@@ -343,13 +349,13 @@ const InteractiveCalendarView = ({
                     isAllDay: newTemporaryModel.isAllDay,
                     start: normalizedStart,
                     end: normalizedEnd,
-                    tzid
+                    tzid,
                 });
                 newTemporaryEvent = getTemporaryEvent(newTemporaryEvent, newTemporaryModel, tzid);
 
                 if (action === ACTIONS.EVENT_MOVE) {
                     setInteractiveData({
-                        temporaryEvent: newTemporaryEvent
+                        temporaryEvent: newTemporaryEvent,
                     });
                 }
                 if (action === ACTIONS.EVENT_MOVE_UP) {
@@ -357,7 +363,7 @@ const InteractiveCalendarView = ({
 
                     setInteractiveData({
                         temporaryEvent: newTemporaryEvent,
-                        targetEventData: { id: 'tmp', idx, type }
+                        targetEventData: { id: 'tmp', idx, type },
                     });
                 }
             };
@@ -397,7 +403,7 @@ const InteractiveCalendarView = ({
             return ({ action, payload }: any /* todo */) => {
                 const {
                     result: { start, end },
-                    idx
+                    idx,
                 } = payload;
 
                 const isBeforeMinBoundary = start < MINIMUM_DATE_UTC;
@@ -409,7 +415,7 @@ const InteractiveCalendarView = ({
                     createNotification({
                         text: c('Error')
                             .t`It is only possible to create events between ${minDateString} - ${maxDateString}`,
-                        type: 'error'
+                        type: 'error',
                     });
                     setInteractiveData(undefined);
                     return;
@@ -430,7 +436,7 @@ const InteractiveCalendarView = ({
                     isAllDay: isFromAllDay,
                     start: normalizedStart,
                     end: normalizedEnd,
-                    tzid
+                    tzid,
                 });
                 newTemporaryEvent = getTemporaryEvent(newTemporaryEvent, newTemporaryModel, tzid);
 
@@ -440,7 +446,7 @@ const InteractiveCalendarView = ({
                 if (action === ACTIONS.CREATE_UP || action === ACTIONS.CREATE_MOVE_UP) {
                     setInteractiveData({
                         temporaryEvent: newTemporaryEvent,
-                        targetEventData: { id: 'tmp', idx, type }
+                        targetEventData: { id: 'tmp', idx, type },
                     });
                 }
             };
@@ -458,7 +464,7 @@ const InteractiveCalendarView = ({
             return ({ action }: any /* todo */) => {
                 if (action === ACTIONS.MORE_UP) {
                     setInteractiveData({
-                        targetMoreData: { idx, row, events, date }
+                        targetMoreData: { idx, row, events, date },
                     });
                 }
             };
@@ -468,7 +474,7 @@ const InteractiveCalendarView = ({
     const handleClickEvent = ({ id, idx, type }: TargetEventData) => {
         setInteractiveData({
             ...interactiveData,
-            targetEventData: { id, idx, type }
+            targetEventData: { id, idx, type },
         });
     };
 
@@ -480,7 +486,7 @@ const InteractiveCalendarView = ({
 
     const handleSaveConfirmation = ({
         type,
-        data
+        data,
     }: {
         type: SAVE_CONFIRMATION_TYPES;
         data?: RECURRING_TYPES[];
@@ -498,7 +504,7 @@ const InteractiveCalendarView = ({
 
     const handleDeleteConfirmation = ({
         type,
-        data
+        data,
     }: {
         type: DELETE_CONFIRMATION_TYPES;
         data?: RECURRING_TYPES[];
@@ -577,7 +583,7 @@ const InteractiveCalendarView = ({
             getCalendarKeys,
             getDecryptedEvent,
             getCalendarBootstrap: readCalendarBootstrap,
-            createNotification
+            createNotification,
         });
     };
 
@@ -595,14 +601,14 @@ const InteractiveCalendarView = ({
             getCalendarKeys,
             getDecryptedEvent,
             getCalendarBootstrap: readCalendarBootstrap,
-            createNotification
+            createNotification,
         });
     };
 
     useImperativeHandle(interactiveRef, () => ({
         createEvent: () => {
             handleCreateEvent();
-        }
+        },
     }));
 
     const [targetEventRef, setTargetEventRef] = useState<HTMLDivElement | null>(null);
@@ -617,9 +623,7 @@ const InteractiveCalendarView = ({
 
     const autoCloseRef = useRef<({ ask }: { ask: boolean }) => void>();
     autoCloseRef.current = ({ ask }) => {
-        handleConfirmDeleteTemporary({ ask })
-            .then(closeAllPopovers)
-            .catch(noop);
+        handleConfirmDeleteTemporary({ ask }).then(closeAllPopovers).catch(noop);
     };
 
     useEffect(() => {
@@ -694,7 +698,7 @@ const InteractiveCalendarView = ({
                 containerRef={document.body}
                 targetRef={targetEventRef}
                 isOpen={!!targetEvent}
-                once={true}
+                once
                 when={targetEvent ? targetEvent.start : undefined}
             >
                 {({ style, ref }: any) => {
@@ -715,9 +719,7 @@ const InteractiveCalendarView = ({
                                     if (!temporaryEvent) {
                                         return Promise.reject(new Error('Undefined behavior'));
                                     }
-                                    return handleSaveEvent(temporaryEvent)
-                                        .then(closeAllPopovers)
-                                        .catch(noop);
+                                    return handleSaveEvent(temporaryEvent).then(closeAllPopovers).catch(noop);
                                 }}
                                 onEdit={() => {
                                     if (!temporaryEvent) {
@@ -771,7 +773,7 @@ const InteractiveCalendarView = ({
                     );
                 }}
             </Popover>
-            <Popover containerRef={document.body} targetRef={targetMoreRef} isOpen={!!targetMoreData} once={true}>
+            <Popover containerRef={document.body} targetRef={targetMoreRef} isOpen={!!targetMoreData} once>
                 {({ style, ref }: any) => {
                     if (!targetMoreData) {
                         return null;
@@ -797,9 +799,7 @@ const InteractiveCalendarView = ({
             <Prompt
                 message={(location) => {
                     if (isInTemporaryBlocking && location.pathname.includes('settings')) {
-                        handleConfirmDeleteTemporary({ ask: true })
-                            .then(closeAllPopovers)
-                            .catch(noop);
+                        handleConfirmDeleteTemporary({ ask: true }).then(closeAllPopovers).catch(noop);
                         return false;
                     }
                     return true;

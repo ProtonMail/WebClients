@@ -9,7 +9,7 @@ import {
     useApi,
     useLoading,
     useEventManager,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';

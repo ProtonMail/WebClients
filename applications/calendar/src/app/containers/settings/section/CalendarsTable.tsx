@@ -28,17 +28,17 @@ const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, on
                     const list = [
                         {
                             text: c('Action').t`Edit`,
-                            onClick: () => onEdit(calendar)
+                            onClick: () => onEdit(calendar),
                         },
                         !isDisabled &&
                             !isDefault && {
                                 text: c('Action').t`Set as default`,
-                                onClick: () => onSetDefault(ID)
+                                onClick: () => onSetDefault(ID),
                             },
                         {
                             text: c('Action').t`Delete`,
-                            onClick: () => onDelete(calendar)
-                        }
+                            onClick: () => onDelete(calendar),
+                        },
                     ].filter(isTruthy);
 
                     return (
@@ -61,7 +61,7 @@ const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, on
                                     key="actions"
                                     list={list}
                                     loading={!!loadingMap[ID]}
-                                />
+                                />,
                             ]}
                         />
                     );

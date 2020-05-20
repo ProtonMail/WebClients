@@ -14,7 +14,7 @@ const DescriptionInput = ({ onChange, ...rest }: Props) => {
     return (
         <TextArea
             minRows={2}
-            autoGrow={true}
+            autoGrow
             placeholder={c('Placeholder').t`Add a description`}
             onChange={({ target }: React.ChangeEvent<HTMLTextAreaElement>) => onChange(target.value)}
             maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}

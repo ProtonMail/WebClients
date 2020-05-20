@@ -32,7 +32,7 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, ...rest }: Props) => {
             onClose={handleClose}
             onSubmit={() => withLoading(handleUpdateTimezone(localTzid))}
             title={c('Modal title').t`Time zone changed`}
-            close={<Button onClick={handleClose} autoFocus={true}>{c('Action').t`Cancel`}</Button>}
+            close={<Button onClick={handleClose} autoFocus>{c('Action').t`Cancel`}</Button>}
             submit={c('Action').t`Update`}
             small
             loading={loading}

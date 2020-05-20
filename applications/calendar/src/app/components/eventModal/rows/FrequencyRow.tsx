@@ -28,7 +28,7 @@ const FrequencyRow = ({
     errors,
     isSubmitted,
     onChange,
-    collapseOnMobile
+    collapseOnMobile,
 }: Props) => {
     const show = frequencyModel.type === FREQUENCY.CUSTOM;
 

@@ -1,10 +1,10 @@
-import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../../../constants';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { convertZonedDateTimeToUTC, fromLocalDate } from 'proton-shared/lib/date/timezone';
-import { getNegativeSetpos, getPositiveSetpos } from '../../../helpers/rrule';
-import { EventModel } from '../../../interfaces/EventModel';
 import { VcalDateOrDateTimeValue, VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { numericDayToDay } from 'proton-shared/lib/calendar/vcalConverter';
+import { getNegativeSetpos, getPositiveSetpos } from '../../../helpers/rrule';
+import { EventModel } from '../../../interfaces/EventModel';
+import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../../../constants';
 
 export interface UntilDateArgument {
     year: number;
@@ -22,7 +22,7 @@ export const getUntilProperty = (
         return {
             year: untilDateTime.year,
             month: untilDateTime.month,
-            day: untilDateTime.day
+            day: untilDateTime.day,
         };
     }
     // Pick end of day in the event start date timezone
@@ -37,10 +37,10 @@ const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay }: EventMo
 
     if ([FREQUENCY.DAILY, FREQUENCY.WEEKLY, FREQUENCY.MONTHLY, FREQUENCY.YEARLY].includes(type)) {
         const rrule = {
-            value: { freq: type }
+            value: { freq: type },
         };
         return {
-            rrule
+            rrule,
         };
     }
 
@@ -50,8 +50,8 @@ const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay }: EventMo
         }
         const rrule = {
             value: {
-                freq: frequency
-            }
+                freq: frequency,
+            },
         } as VcalRruleProperty;
 
         if (interval && interval > 1) {
@@ -88,7 +88,7 @@ const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay }: EventMo
             rrule.value.until = getUntilProperty(fromLocalDate(ends.until), isAllDay, tzid);
         }
         return {
-            rrule
+            rrule,
         };
     }
 };

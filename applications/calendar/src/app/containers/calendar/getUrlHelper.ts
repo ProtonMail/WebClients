@@ -4,7 +4,7 @@ import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '../../constants';
 const URL_PARAMS_VIEWS_CONVERSION: { [key: string]: VIEWS } = {
     month: VIEWS.MONTH,
     week: VIEWS.WEEK,
-    day: VIEWS.DAY
+    day: VIEWS.DAY,
 };
 const VIEW_URL_PARAMS_VIEWS_CONVERSION = {
     [VIEWS.YEAR]: 'year',
@@ -12,7 +12,7 @@ const VIEW_URL_PARAMS_VIEWS_CONVERSION = {
     [VIEWS.CUSTOM]: 'custom',
     [VIEWS.MONTH]: 'month',
     [VIEWS.WEEK]: 'week',
-    [VIEWS.DAY]: 'day'
+    [VIEWS.DAY]: 'day',
 };
 
 export const getUrlView = (urlView: string) => {
@@ -40,7 +40,7 @@ export const fromUrlParams = (pathname: string) => {
     return {
         view: getUrlView(rest[0]),
         range: parseInt(rest[4], 10) || undefined,
-        date: getUrlDate(rest[1], rest[2], rest[3])
+        date: getUrlDate(rest[1], rest[2], rest[3]),
     };
 };
 

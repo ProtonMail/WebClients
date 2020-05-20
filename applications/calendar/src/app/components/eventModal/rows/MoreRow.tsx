@@ -18,7 +18,7 @@ const MoreRow = ({
     lessText = c('Action').t`Fewer options`,
     collapseOnMobile,
     hasMore,
-    onChange
+    onChange,
 }: Props) => {
     return (
         <Row collapseOnMobile={collapseOnMobile}>

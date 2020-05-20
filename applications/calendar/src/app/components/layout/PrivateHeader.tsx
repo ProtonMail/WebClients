@@ -6,7 +6,7 @@ import {
     Hamburger,
     TopNavbar,
     TopNavbarLink,
-    FloatingButton
+    FloatingButton,
 } from 'react-components';
 import { c } from 'ttag';
 
@@ -28,7 +28,7 @@ const PrivateHeader = ({ title, url, inSettings, onCreateEvent, expanded, onTogg
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
             {title && isNarrow ? <span className="big lh-standard mtauto mbauto ellipsis">{title}</span> : null}
             <TopNavbar>
-                {hasPaidMail || isNarrow ? null : <UpgradeButton external={true} />}
+                {hasPaidMail || isNarrow ? null : <UpgradeButton external />}
                 {isNarrow && !inSettings ? null : (
                     <TopNavbarLink
                         data-test-id="calendar-view:calendar-icon-top-bar"

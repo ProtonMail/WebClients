@@ -61,7 +61,7 @@ export const resetCalendarKeys = async ({ api, calendars, getAddressKeys, addres
             const memberPublicKeys = parsedMemberPublicKeys.reduce((acc, publicKey, i) => {
                 return {
                     ...acc,
-                    [memberPublicKeyIDs[i]]: publicKey
+                    [memberPublicKeyIDs[i]]: publicKey,
                 };
             }, {});
 
@@ -70,8 +70,8 @@ export const resetCalendarKeys = async ({ api, calendars, getAddressKeys, addres
                 privateKey: primaryAddressKey,
                 memberPublicKeys: {
                     ...memberPublicKeys,
-                    [selfMember.ID]: primaryAddressPublicKey
-                }
+                    [selfMember.ID]: primaryAddressPublicKey,
+                },
             });
         })
     );
@@ -79,13 +79,13 @@ export const resetCalendarKeys = async ({ api, calendars, getAddressKeys, addres
     const resetPayload = calendars.reduce((acc, { ID: calendarID }, i) => {
         return {
             ...acc,
-            [calendarID]: calendarsResult[i]
+            [calendarID]: calendarsResult[i],
         };
     }, {});
 
     return api(
         resetCalendarGroup({
-            CalendarKeys: resetPayload
+            CalendarKeys: resetPayload,
         })
     );
 };

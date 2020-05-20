@@ -4,16 +4,16 @@ import { unwrap } from 'proton-shared/lib/calendar/helper';
 import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
 import { addDays, max } from 'proton-shared/lib/date-fns-utc';
+import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import {
     removeEventFromRecurrenceInstances,
     setEventInRecurrenceInstances,
     removeEventFromRecurringCache,
-    setEventInRecurringCache
+    setEventInRecurringCache,
 } from './recurringCache';
 import { getRecurrenceId, getUid } from '../../event/getEventHelper';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarEventCache, CalendarEventStoreRecord, IntervalTree } from '../interface';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 export const removeEventFromCache = (
     EventID: string,
@@ -120,7 +120,7 @@ export const setEventInCache = (
                 EventID,
                 oldRecurrenceId: oldRecurrenceId ? +oldRecurrenceId : undefined,
                 recurrenceId: +recurrenceId,
-                uid
+                uid,
             });
 
             setEventInTree({
@@ -129,7 +129,7 @@ export const setEventInCache = (
                 start: utcStart,
                 end: utcEnd,
                 EventID,
-                tree
+                tree,
             });
         } else if (isRecurring) {
             if (oldEvent && !oldEvent.isRecurring) {
@@ -148,7 +148,7 @@ export const setEventInCache = (
                 start: utcStart,
                 end: utcEnd,
                 EventID,
-                tree
+                tree,
             });
         }
 
@@ -163,7 +163,7 @@ export const setEventInCache = (
             start: utcStart,
             end: utcEnd,
 
-            counter: ((oldEvent && oldEvent.counter) || 0) + 1
+            counter: ((oldEvent && oldEvent.counter) || 0) + 1,
         };
 
         events.set(EventID, record);

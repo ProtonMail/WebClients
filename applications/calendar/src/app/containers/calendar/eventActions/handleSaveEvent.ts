@@ -51,7 +51,7 @@ const handleSaveEvent = async ({
     getCalendarKeys,
     getDecryptedEvent,
     getCalendarBootstrap,
-    createNotification
+    createNotification,
 }: Arguments) => {
     const {
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
@@ -60,8 +60,8 @@ const handleSaveEvent = async ({
         tmpData,
         tmpData: {
             calendar: { id: newCalendarID },
-            member: { memberID: newMemberID, addressID: newAddressID }
-        }
+            member: { memberID: newMemberID, addressID: newAddressID },
+        },
     } = temporaryEvent;
 
     // All updates will remove any existing exdates since they would be more complicated to normalize
@@ -72,7 +72,7 @@ const handleSaveEvent = async ({
         veventComponent: newVeventComponent,
         calendarID: newCalendarID,
         memberID: newMemberID,
-        addressID: newAddressID
+        addressID: newAddressID,
     };
 
     // Creation
@@ -85,7 +85,7 @@ const handleSaveEvent = async ({
             call,
             getAddressKeys,
             getCalendarKeys,
-            createNotification
+            createNotification,
         });
     }
 
@@ -97,7 +97,7 @@ const handleSaveEvent = async ({
     const oldEventData = getEditEventData({
         Event: oldEvent,
         eventResult: readEvent?.(oldEvent.CalendarID, oldEvent.ID)?.[0],
-        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEvent.Author)
+        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEvent.Author),
     });
 
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
@@ -111,7 +111,7 @@ const handleSaveEvent = async ({
             call,
             getAddressKeys,
             getCalendarKeys,
-            createNotification
+            createNotification,
         });
     }
 
@@ -122,7 +122,7 @@ const handleSaveEvent = async ({
     if (!originalEvent || !originalEventResult?.[0]) {
         createNotification({
             text: c('Recurring update').t`Cannot save a recurring event without the original event`,
-            type: 'error'
+            type: 'error',
         });
         throw new Error('Original event not found');
     }
@@ -130,7 +130,7 @@ const handleSaveEvent = async ({
     const originalEventData = getEditEventData({
         Event: originalEvent,
         eventResult: originalEventResult,
-        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, originalEvent.Author)
+        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, originalEvent.Author),
     });
 
     const actualRecurrence =
@@ -145,7 +145,7 @@ const handleSaveEvent = async ({
             rrule: withRruleUntil(
                 withRruleWkst(originalEventData.mainVeventComponent.rrule, weekStartsOn),
                 newVeventComponent.dtstart
-            )
+            ),
         };
         newEventData.veventComponent = singleEditWithRrule;
     }
@@ -165,7 +165,7 @@ const handleSaveEvent = async ({
         createNotification,
         getAddressKeys,
         getCalendarKeys,
-        calendars
+        calendars,
     });
 };
 

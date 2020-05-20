@@ -31,7 +31,7 @@ const EndsRow = ({
     errors,
     isSubmitted,
     onChange,
-    collapseOnMobile
+    collapseOnMobile,
 }: Props) => {
     const handleChangeEndType = (type: END_TYPE) => {
         onChange({ ...frequencyModel, ends: { ...frequencyModel.ends, type } });
@@ -94,7 +94,7 @@ const EndsRow = ({
                         max={MAXIMUM_DATE}
                     />
                 </span>
-                <span></span>
+                <span />
 
                 <span className="flex flex-item-noshrink">
                     <Radio

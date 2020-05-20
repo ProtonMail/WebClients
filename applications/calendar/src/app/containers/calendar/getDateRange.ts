@@ -8,7 +8,7 @@ import {
     startOfYear,
     endOfYear,
     addDays,
-    addWeeks
+    addWeeks,
 } from 'proton-shared/lib/date-fns-utc';
 
 import { VIEWS } from '../../constants';

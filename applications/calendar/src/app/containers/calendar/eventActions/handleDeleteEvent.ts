@@ -31,7 +31,7 @@ interface Arguments {
 
 const handleDeleteEvent = async ({
     targetEvent: {
-        data: { Event: oldEvent, Calendar: oldCalendar, recurrence, readEvent }
+        data: { Event: oldEvent, Calendar: oldCalendar, recurrence, readEvent },
     },
 
     addresses,
@@ -44,7 +44,7 @@ const handleDeleteEvent = async ({
     getCalendarKeys,
     getDecryptedEvent,
     getCalendarBootstrap,
-    createNotification
+    createNotification,
 }: Arguments) => {
     const calendarBootstrap = getCalendarBootstrap(oldCalendar.ID);
     if (!calendarBootstrap) {
@@ -54,7 +54,7 @@ const handleDeleteEvent = async ({
     const oldEventData = getEditEventData({
         Event: oldEvent,
         eventResult: readEvent(oldEvent.CalendarID, oldEvent.ID)?.[0],
-        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEvent.Author)
+        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEvent.Author),
     });
 
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
@@ -66,7 +66,7 @@ const handleDeleteEvent = async ({
             onDeleteConfirmation,
             api,
             call,
-            createNotification
+            createNotification,
         });
     }
 
@@ -82,7 +82,7 @@ const handleDeleteEvent = async ({
         originalEventData = getEditEventData({
             Event: originalEvent,
             eventResult: originalEventResult,
-            memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, originalEvent.Author)
+            memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, originalEvent.Author),
         });
     }
 
@@ -107,7 +107,7 @@ const handleDeleteEvent = async ({
         call,
         createNotification,
         getAddressKeys,
-        getCalendarKeys
+        getCalendarKeys,
     });
 };
 

@@ -27,7 +27,7 @@ export const process = async ({
     getAddressKeys,
     calendarsToReset,
     calendarsToReactivate,
-    calendarsToSetup
+    calendarsToSetup,
 }: ProcessArguments) => {
     const addresses = await getAddresses();
     if (!addresses.length) {
@@ -39,7 +39,7 @@ export const process = async ({
             api,
             calendars: calendarsToSetup,
             getAddressKeys,
-            addresses
+            addresses,
         });
     }
 
@@ -48,7 +48,7 @@ export const process = async ({
             api,
             calendars: calendarsToReset,
             getAddressKeys,
-            addresses
+            addresses,
         });
     }
 
@@ -57,7 +57,7 @@ export const process = async ({
             api,
             calendars: calendarsToReactivate,
             getAddressKeys,
-            addresses
+            addresses,
         });
     }
 

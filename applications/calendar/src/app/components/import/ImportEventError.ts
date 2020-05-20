@@ -21,7 +21,7 @@ export enum IMPORT_EVENT_TYPE {
     RRULE_UNSUPPORTED,
     NOTIFICATION_OUT_OF_BOUNDS,
     VALIDATION_ERROR,
-    ENCRYPTION_ERROR
+    ENCRYPTION_ERROR,
 }
 
 const getErrorMessage = (errorType: IMPORT_EVENT_TYPE) => {
@@ -92,24 +92,13 @@ const getErrorMessage = (errorType: IMPORT_EVENT_TYPE) => {
 
 export class ImportEventError extends Error {
     component: string;
+
     idMessage: string;
+
     constructor(errorType: IMPORT_EVENT_TYPE, component: string, idMessage: string) {
         super(getErrorMessage(errorType));
         this.component = component;
         this.idMessage = idMessage;
         Object.setPrototypeOf(this, ImportEventError.prototype);
-    }
-}
-
-export class ImportEventGeneralError extends Error {
-    error: Error;
-    component: string;
-    idMessage: string;
-    constructor(error: Error, component: string, idMessage: string) {
-        super(error.message);
-        this.error = error;
-        this.component = component;
-        this.idMessage = idMessage;
-        Object.setPrototypeOf(this, ImportEventGeneralError.prototype);
     }
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Checkbox } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { getConstrastingColor } from '../../helpers/color';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { getConstrastingColor } from '../../helpers/color';
 
 interface Props {
     calendars?: Calendar[];

@@ -1,6 +1,6 @@
-import { MORE_BITS } from './constants';
 import { useMemo } from 'react';
-import { getEvent } from './DayGrid';
+import { MORE_BITS } from './constants';
+import { getEvent } from './DayGrid/helper';
 
 const useMore = (moreDateIdx, rows, eventsPerRows, events) => {
     return useMemo(() => {

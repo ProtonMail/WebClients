@@ -16,6 +16,6 @@ export const getMemberAddressWithAdminPermissions = (Members: MemberInterface[],
     }
     return {
         Member,
-        Address
+        Address,
     };
 };

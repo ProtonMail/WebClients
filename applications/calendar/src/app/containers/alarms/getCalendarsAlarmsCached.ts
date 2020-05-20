@@ -14,7 +14,7 @@ const getCalendarsAlarmsCached = (api: Api, cache: CalendarAlarmCache, calendarI
         const promise = getPaginatedAlarms(api, calendarID, dateRange)
             .then((result) => {
                 cache[calendarID] = {
-                    result
+                    result,
                 };
             })
             .catch(() => {
@@ -22,7 +22,7 @@ const getCalendarsAlarmsCached = (api: Api, cache: CalendarAlarmCache, calendarI
             });
 
         cache[calendarID] = {
-            promise
+            promise,
         };
 
         return promise;

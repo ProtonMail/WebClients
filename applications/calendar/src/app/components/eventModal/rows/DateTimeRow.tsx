@@ -4,12 +4,12 @@ import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
     fromUTCDate,
-    toUTCDate
+    toUTCDate,
 } from 'proton-shared/lib/date/timezone';
 import { MILLISECONDS_IN_MINUTE, startOfDay } from 'proton-shared/lib/date-fns-utc';
+import { addDays, isValid } from 'date-fns';
 import { WeekStartsOn } from '../../../containers/calendar/interface';
 
-import { addDays, isValid } from 'date-fns';
 import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
 import { MAXIMUM_DATE, MINIMUM_DATE } from '../../../constants';
@@ -35,7 +35,7 @@ const DateTimeRow = ({
     setModel,
     displayWeekNumbers,
     weekStartsOn,
-    endError
+    endError,
 }: Props) => {
     const { isAllDay, start, end } = model;
 
@@ -65,7 +65,7 @@ const DateTimeRow = ({
 
         return {
             start: newStart,
-            end: newEnd
+            end: newEnd,
         };
     };
 
@@ -91,7 +91,7 @@ const DateTimeRow = ({
         setModel({
             ...model,
             frequencyModel: getFrequencyModelChange(start, newStart, model.frequencyModel),
-            ...getStartChange(newStart)
+            ...getStartChange(newStart),
         });
     };
 
@@ -100,8 +100,8 @@ const DateTimeRow = ({
             ...model,
             ...getStartChange({
                 ...start,
-                time: newTime
-            })
+                time: newTime,
+            }),
         });
     };
 
@@ -112,7 +112,7 @@ const DateTimeRow = ({
         }
         setModel({
             ...model,
-            end: newEnd
+            end: newEnd,
         });
     };
 
@@ -122,7 +122,7 @@ const DateTimeRow = ({
         }
         handleEndUpdate({
             ...end,
-            date: newDate
+            date: newDate,
         });
     };
 

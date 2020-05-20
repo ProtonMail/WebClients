@@ -7,7 +7,7 @@ import {
     VcalDateTimeValue,
     VcalDaysKeys,
     VcalRrulePropertyValue,
-    VcalVeventComponent
+    VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { FREQUENCY, FREQUENCY_COUNT_MAX, FREQUENCY_INTERVALS_MAX, MAXIMUM_DATE, MAXIMUM_DATE_UTC } from '../constants';
 
@@ -57,13 +57,13 @@ export const SUPPORTED_RRULE_PROPERTIES: (keyof VcalRrulePropertyValue)[] = [
     'byday',
     'bymonthday',
     'bymonth',
-    'byyearday'
+    'byyearday',
 ];
 export const SUPPORTED_RRULE_PROPERTIES_DAILY: (keyof VcalRrulePropertyValue)[] = [
     'freq',
     'count',
     'interval',
-    'until'
+    'until',
 ];
 export const SUPPORTED_RRULE_PROPERTIES_WEEKLY: (keyof VcalRrulePropertyValue)[] = [
     'freq',
@@ -71,7 +71,7 @@ export const SUPPORTED_RRULE_PROPERTIES_WEEKLY: (keyof VcalRrulePropertyValue)[]
     'interval',
     'until',
     'wkst',
-    'byday'
+    'byday',
 ];
 export const SUPPORTED_RRULE_PROPERTIES_MONTHLY: (keyof VcalRrulePropertyValue)[] = [
     'freq',
@@ -81,7 +81,7 @@ export const SUPPORTED_RRULE_PROPERTIES_MONTHLY: (keyof VcalRrulePropertyValue)[
     'wkst',
     'bymonthday',
     'byday',
-    'bysetpos'
+    'bysetpos',
 ];
 export const SUPPORTED_RRULE_PROPERTIES_YEARLY: (keyof VcalRrulePropertyValue)[] = [
     'freq',
@@ -91,7 +91,7 @@ export const SUPPORTED_RRULE_PROPERTIES_YEARLY: (keyof VcalRrulePropertyValue)[]
     'wkst',
     'bymonthday',
     'bymonth',
-    'byyearday'
+    'byyearday',
 ];
 const ALLOWED_BYSETPOS = [-1, 1, 2, 3, 4];
 

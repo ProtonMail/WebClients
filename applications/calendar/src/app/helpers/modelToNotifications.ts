@@ -5,6 +5,6 @@ import { getValarmTrigger } from '../components/eventModal/eventForm/getValarmTr
 export const modelToNotifications = (notifications: NotificationModel[] = []) => {
     return notifications.map((notificationModel) => ({
         Type: notificationModel.type,
-        Trigger: toTriggerString(getValarmTrigger(notificationModel))
+        Trigger: toTriggerString(getValarmTrigger(notificationModel)),
     }));
 };

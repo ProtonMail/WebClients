@@ -13,7 +13,7 @@ const CalendarTableRow = ({ Name, Color }: Calendar) => {
                     <span className="ellipsis" title={Name}>
                         {Name}
                     </span>
-                </div>
+                </div>,
             ]}
         />
     );

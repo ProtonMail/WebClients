@@ -15,7 +15,7 @@ const { DAY, WEEK, MONTH } = VIEWS;
 const components = {
     FullDayEvent,
     PartDayEvent,
-    MoreFullDayEvent
+    MoreFullDayEvent,
 };
 
 interface Props extends SharedViewProps {
@@ -62,7 +62,7 @@ const CalendarView = ({
 
     weekdaysLong,
     formatTime,
-    formatDate
+    formatDate,
 }: Props) => {
     const week = c('Label').t`Week`;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { endOfDay, isSameDay } from 'proton-shared/lib/date-fns-utc';
-import { getEvent } from '../DayGrid';
+import { getEvent } from './helper';
 import { TYPE } from '../interactions/constants';
 
 const RowEvents = ({
@@ -22,7 +22,7 @@ const RowEvents = ({
     targetMoreRef,
 
     targetEventRef,
-    targetEventData
+    targetEventData,
 }) => {
     const startWindow = days[0];
     const lastWindow = endOfDay(days[days.length - 1]);

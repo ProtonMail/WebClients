@@ -10,7 +10,7 @@ const FORMATS = {
     [MONTH]: 'MMM yyyy',
     [YEAR]: 'yyyy',
     [AGENDA]: 'MMM yyyy',
-    [CUSTOM]: 'PP'
+    [CUSTOM]: 'PP',
 };
 
 const getDateRangeText = (view: VIEWS, range: number, currentDate: Date, dateRange: Date[]) => {

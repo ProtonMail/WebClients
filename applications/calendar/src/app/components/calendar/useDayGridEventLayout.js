@@ -19,9 +19,9 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
             const columns = row.length;
 
             const eventsInRow = splitDayEventsInInterval({
-                events: events,
+                events,
                 min: row[0],
-                max: row[columns - 1]
+                max: row[columns - 1],
             });
 
             const eventsLaidOut = layout(eventsInRow);
@@ -71,8 +71,8 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
                         top: `${top * dayEventHeight}px`,
                         left: toPercent(left),
                         '--height': `${dayEventHeight}px`,
-                        width: toPercent(width)
-                    }
+                        width: toPercent(width),
+                    },
                 });
 
                 return acc;
@@ -89,8 +89,8 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
                         top: `${numberOfRows * dayEventHeight}px`,
                         left: toPercent(dayIndex / columns),
                         height: `${dayEventHeight}px`,
-                        width: toPercent(1 / columns)
-                    }
+                        width: toPercent(1 / columns),
+                    },
                 });
                 return acc;
             }, []);
@@ -99,7 +99,7 @@ const useDayGridEventLayout = (rows, events, numberOfRows, dayEventHeight) => {
                 eventsInRow,
                 eventsInRowStyles: eventsInRowStyles.concat(moreDays),
                 eventsInRowSummary,
-                maxRows
+                maxRows,
             };
         });
     }, [rows, events, numberOfRows]);

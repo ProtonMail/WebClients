@@ -25,7 +25,7 @@ const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, model, setModel }
         setModel({
             ...model,
             start: newStart,
-            frequencyModel: newFrequencyModel
+            frequencyModel: newFrequencyModel,
         });
     };
 
@@ -35,7 +35,7 @@ const TimezoneRow = ({ collapseOnMobile, startLabel, endLabel, model, setModel }
 
         setModel({
             ...model,
-            end: getDateTimeState(newEndUtcDate, tzid)
+            end: getDateTimeState(newEndUtcDate, tzid),
         });
     };
 

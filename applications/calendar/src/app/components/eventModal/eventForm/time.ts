@@ -7,7 +7,7 @@ export const getDateTimeState = (utcDate: Date, tzid: string): DateTimeModel => 
         date: new Date(utcDate.getUTCFullYear(), utcDate.getUTCMonth(), utcDate.getUTCDate(), 0, 0),
         // Assuming there is no timezone that has a DST shift at this date
         time: new Date(2000, 0, 1, utcDate.getUTCHours(), utcDate.getUTCMinutes()),
-        tzid
+        tzid,
     };
 };
 
@@ -20,7 +20,7 @@ export const getTimeInUtc = ({ date, time, tzid }: DateTimeModel, isAllDay: bool
         return toUTCDate({
             year: date.getFullYear(),
             month: date.getMonth() + 1,
-            day: date.getDate()
+            day: date.getDate(),
         });
     }
     return toUTCDate(
@@ -31,7 +31,7 @@ export const getTimeInUtc = ({ date, time, tzid }: DateTimeModel, isAllDay: bool
                 day: date.getDate(),
                 hours: time.getHours(),
                 minutes: time.getMinutes(),
-                seconds: 0
+                seconds: 0,
             },
             tzid
         )

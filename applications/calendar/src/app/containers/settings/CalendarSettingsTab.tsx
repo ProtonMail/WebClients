@@ -32,7 +32,7 @@ const CalendarSettingsTab = ({ isSubmitted, errors, model, setModel }: Props) =>
                         onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
                             setModel({ ...model, name: target.value })
                         }
-                        autoFocus={true}
+                        autoFocus
                     />
                 </Field>
             </Row>
@@ -79,7 +79,7 @@ const CalendarSettingsTab = ({ isSubmitted, errors, model, setModel }: Props) =>
                 <Label htmlFor="calendar-description-textarea">{c('Label').t`Description`}</Label>
                 <Field>
                     <TextArea
-                        autoGrow={true}
+                        autoGrow
                         id="calendar-description-textarea"
                         value={model.description}
                         placeholder={c('Placeholder').t`Add a calendar description`}

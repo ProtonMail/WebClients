@@ -16,7 +16,7 @@ const FullDayEvent = ({
     isOutsideEnd,
     eventRef,
     onClick,
-    tzid
+    tzid,
 }) => {
     const [value, loading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value, tzid);
@@ -28,7 +28,7 @@ const FullDayEvent = ({
         const background = calendarColor;
         return {
             '--background': background,
-            '--foreground': getConstrastingColor(background)
+            '--foreground': getConstrastingColor(background),
         };
     }, [calendarColor, isAllDay, isSelected]);
 
@@ -86,18 +86,20 @@ const FullDayEvent = ({
                 className,
                 isBeforeNow && 'calendar-dayeventcell--isBefore',
                 isOutsideStart && 'calendar-dayeventcell--isOutsideStart',
-                isOutsideEnd && 'calendar-dayeventcell--isOutsideEnd'
+                isOutsideEnd && 'calendar-dayeventcell--isOutsideEnd',
             ])}
             data-ignore-create="1"
         >
             <div
                 onClick={onClick}
                 title={expandableTitleString}
+                role="button"
+                tabIndex={0}
                 className={classnames([
                     'calendar-dayeventcell-inner alignleft flex',
                     !isAllDay && 'calendar-dayeventcell-inner--isNotAllDay',
                     !loading && 'calendar-dayeventcell-inner--isLoaded',
-                    isSelected && 'calendar-dayeventcell-inner--isSelected'
+                    isSelected && 'calendar-dayeventcell-inner--isSelected',
                 ])}
                 style={eventStyle}
                 ref={eventRef}
