@@ -18,6 +18,7 @@ export const MAX_ADDRESS_ADDON = 10;
 export const MAX_SPACE_ADDON = 16;
 
 export const DOMAIN_PLACEHOLDER = 'domain.com';
+export const EXTERNAL_EMAIL_PLACEHOLDER = 'john.doe@domain.com';
 
 export enum APPS {
     PROTONMAIL = 'proton-mail',
