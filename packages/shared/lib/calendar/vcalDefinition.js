@@ -24,5 +24,12 @@ export const PROPERTIES = {
     dtstart: UNIQUE,
     dtend: UNIQUE,
     duration: UNIQUE,
-    due: UNIQUE
+    due: UNIQUE,
+
+    prodid: UNIQUE,
+    'x-wr-calname': UNIQUE,
+    'x-wr-timezone': UNIQUE,
+    version: UNIQUE,
+    calscale: UNIQUE,
+    method: UNIQUE
 };

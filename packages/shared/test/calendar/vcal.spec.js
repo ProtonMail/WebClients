@@ -197,6 +197,38 @@ URL:http://www.example.com/calendar/busytime/jsmith.ifb
 END:VFREEBUSY`;
 
 describe('calendar', () => {
+    it('should parse vcalendar', () => {
+        const result = parse(`BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Daily
+X-WR-TIMEZONE:Europe/Vilnius
+END:VCALENDAR`);
+        expect(result).toEqual({
+            component: 'vcalendar',
+            version: {
+                value: '2.0'
+            },
+            prodid: {
+                value: '-//Google Inc//Google Calendar 70.9054//EN'
+            },
+            calscale: {
+                value: 'GREGORIAN'
+            },
+            method: {
+                value: 'PUBLISH'
+            },
+            'x-wr-timezone': {
+                value: 'Europe/Vilnius'
+            },
+            'x-wr-calname': {
+                value: 'Daily'
+            }
+        });
+    });
+
     it('should parse vevent', () => {
         const result = parse(vevent);
 

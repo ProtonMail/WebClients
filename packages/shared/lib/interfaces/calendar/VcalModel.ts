@@ -187,7 +187,7 @@ export interface VcalVcalendar {
     components?: VcalCalendarComponent[];
     prodid: VcalStringProperty;
     version: VcalStringProperty;
-    calscale?: VcalStringProperty[];
+    calscale?: VcalStringProperty;
     method?: VcalStringProperty;
-    'x-wr-timezone'?: VcalStringProperty[];
+    'x-wr-timezone'?: VcalStringProperty;
 }
