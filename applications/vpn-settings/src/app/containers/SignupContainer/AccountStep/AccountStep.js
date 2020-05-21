@@ -11,11 +11,11 @@ import LoginPanel from '../LoginPanel';
 const AccountStep = ({ onContinue, model, children }) => {
     const { createModal } = useModals();
 
-    const handleSubmit = ({ email, username, password }) => {
+    const handleSubmit = ({ email, username, password, payload }) => {
         if (hasProtonDomain(email)) {
             createModal(<LoginPromptModal email={email} />);
         } else {
-            onContinue({ ...model, email, username, password });
+            onContinue({ ...model, email, username, password, payload });
         }
     };
 

@@ -223,7 +223,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
 
     const signup = async (model, signupToken) => {
         const { Token, TokenType } = getToken(signupToken);
-        const { planName, password, email, username, currency, cycle } = model;
+        const { planName, password, email, username, currency, cycle, payload } = model;
         const selectedPlan = getPlanByName(planName, cycle);
 
         await srpVerify({
@@ -234,7 +234,8 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
                 TokenType,
                 Type: CLIENT_TYPE,
                 Email: email,
-                Username: username
+                Username: username,
+                Payload: payload
             })
         });
 
