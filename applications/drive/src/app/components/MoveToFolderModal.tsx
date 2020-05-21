@@ -77,7 +77,7 @@ const MoveToFolderModal = ({
     }, [activeFolder.shareId]);
 
     const onSelect = (linkId: string) => {
-        if (activeFolder.linkId !== linkId) {
+        if (activeFolder.linkId !== linkId && !loading) {
             setSelectedFolder(linkId);
         }
     };
