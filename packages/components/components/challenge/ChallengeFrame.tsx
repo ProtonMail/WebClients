@@ -196,7 +196,7 @@ const ChallengeFrame = ({
             return;
         }
         renderEl.className = innerClassName;
-        ReactDOM.render(children, renderEl, () => {
+        ReactDOM.render(children as any, renderEl, () => {
             normalizeSelectOptions(renderEl);
             contentWindow.postMessage(
                 {
