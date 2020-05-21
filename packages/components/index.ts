@@ -121,6 +121,8 @@ export { default as PreviewPDFModal } from './components/modal/PreviewPDFModal';
 export { default as FooterModal } from './components/modal/Footer';
 export { default as MiniCalendar } from './components/miniCalendar/MiniCalendar';
 export { default as LocalizedMiniCalendar } from './components/miniCalendar/LocalizedMiniCalendar';
+export { default as Challenge } from './components/challenge/Challenge';
+export { default as ChallengeFrame } from './components/challenge/ChallengeFrame';
 export { default as Price } from './components/price/Price';
 export { default as Progress } from './components/progress/Progress';
 export { default as CircularProgress } from './components/progress/CircularProgress';
