@@ -410,8 +410,8 @@ const getCustomWeeklyString = (
             const startDate = days[0];
             if (startDate === 0) {
                 return c('Weekly recurring event, frequency').ngettext(
-                    msgid`Weekly on Wednesday, until ${dateString}`,
-                    `Every ${interval} weeks on Wednesday, until ${dateString}`,
+                    msgid`Weekly on Sunday, until ${dateString}`,
+                    `Every ${interval} weeks on Sunday, until ${dateString}`,
                     interval
                 );
             }
