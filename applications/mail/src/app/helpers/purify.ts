@@ -144,7 +144,6 @@ export const protonizer = (input: string, attachHooks: boolean): Element => {
 
 /**
  * Sanitize input and returns the whole document
-
  */
 export const content = clean('content') as (input: string) => Node;
 

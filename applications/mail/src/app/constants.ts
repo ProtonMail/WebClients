@@ -95,3 +95,14 @@ export enum MESSAGE_ACTIONS {
 }
 
 export const DRAG_ELEMENT_KEY = 'drag-element';
+
+export const PROTON_DOMAINS = [
+    'protonmail.com',
+    'protonmail.ch',
+    'protonvpn.com',
+    'protonstatus.com',
+    'gdpr.eu',
+    'protonvpn.net',
+    'pm.me',
+    'protonirockerxow.onion'
+];

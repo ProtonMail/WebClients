@@ -20,6 +20,7 @@ import { Event } from '../models/event';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { setPathInUrl } from '../helpers/mailboxUrl';
 import { Breakpoints } from '../models/utils';
+import { useLinkHandler } from '../hooks/useLinkHandler';
 
 interface Props extends RouteProps {
     breakpoints: Breakpoints;
@@ -35,6 +36,8 @@ const PageContainer = ({ match, location, history, breakpoints, onCompose }: Pro
     const labelIDs = [...labels, ...folders].map(({ ID }: Label) => ID);
     const { elementID, labelID: currentLabelID = '' } = (match || {}).params || {};
     const labelID = HUMAN_TO_LABEL_IDS[currentLabelID] || (labelIDs.includes(currentLabelID) && currentLabelID);
+
+    useLinkHandler(onCompose);
 
     // Detect if the element in URL has been deleted and come back to the label if so
     useLayoutEffect(
