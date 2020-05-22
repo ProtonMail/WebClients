@@ -94,7 +94,11 @@ const Popover = ({ targetEl, containerEl, children, isOpen, once = false, when }
         };
     }, [popoverEl, targetEl, containerEl, containerRect, popoverRect, targetRect]);
 
-    return value && isOpen ? <>{ReactDOM.createPortal(children(value), containerEl)}</> : null;
+    if (value && containerEl && isOpen) {
+        return <>{ReactDOM.createPortal(children(value), containerEl)}</>;
+    }
+
+    return null;
 };
 
 export default Popover;
