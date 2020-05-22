@@ -5,7 +5,7 @@ import { Label, LinkButton, classnames } from 'react-components';
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
 
 import { MessageExtended } from '../../../models/message';
-import { Recipient, recipientTypes } from '../../../models/address';
+import { Recipient, recipientTypes, RecipientOrGroup } from '../../../models/address';
 import { getRecipients } from '../../../helpers/message/messages';
 import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
@@ -51,10 +51,10 @@ const AddressesSummary = ({ message: { data }, mapSendInfo, contacts, contactGro
                                         {c('Title').t`BCC`}:
                                     </span>
                                 )}
-                                {recipientOrGroups.map((recipientOrGroup, i) => {
-                                    const Address = recipientOrGroup.recipient?.Address as string;
-                                    const valid = validateEmailAddress(Address);
-                                    const icon = mapSendInfo[Address]?.sendIcon;
+                                {recipientOrGroups.map((recipientOrGroup: RecipientOrGroup, i) => {
+                                    const Address = recipientOrGroup.recipient?.Address;
+                                    const valid = Address ? validateEmailAddress(Address) : true;
+                                    const icon = Address ? mapSendInfo[Address]?.sendIcon : undefined;
                                     const cannotSend = !valid || icon?.fill === STATUS_ICONS_FILLS.FAIL;
                                     return (
                                         <span
