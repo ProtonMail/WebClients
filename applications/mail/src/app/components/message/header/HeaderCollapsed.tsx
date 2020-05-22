@@ -13,6 +13,7 @@ import { MessageExtended } from '../../../models/message';
 import HeaderRecipientItem from './HeaderRecipientItem';
 import { OnCompose } from '../../../containers/ComposerContainer';
 import ItemExpiration from '../../list/ItemExpiration';
+import ItemAction from '../../list/ItemAction';
 
 interface Props {
     message: MessageExtended;
@@ -61,7 +62,8 @@ const HeaderCollapsed = ({
                     showAddress={false}
                     onCompose={onCompose}
                 />
-                <ItemExpiration element={message.data} />
+                <ItemExpiration element={message.data} className="ml0-5" />
+                <ItemAction element={message.data} className="ml0-5" />
             </div>
             <div className="flex flex-items-center flex-item-noshrink">
                 {isDraftMessage && <span className="badgeLabel-success">{c('Info').t`Draft`}</span>}

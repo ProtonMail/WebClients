@@ -37,6 +37,7 @@ import HeaderMoreDropdown from './HeaderMoreDropdown';
 import HeaderExpandedDetails from './HeaderExpandedDetails';
 import HeaderRecipientType from './HeaderRecipientType';
 import HeaderRecipientItem from './HeaderRecipientItem';
+import ItemAction from '../../list/ItemAction';
 
 // Hacky override of the typing
 const ButtonGroup = OriginalButtonGroup as ({
@@ -142,6 +143,7 @@ const HeaderExpanded = ({
                     ) : (
                         <div className="flex flex-nowrap pr0-5">{from}</div>
                     )}
+                    <ItemAction element={message.data} className="mtauto mbauto" />
                 </span>
                 <div className="flex-item-noshrink flex">
                     {showDetails ? null : (

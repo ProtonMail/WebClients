@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Icon, Tooltip } from 'react-components';
+import { Icon, Tooltip, classnames } from 'react-components';
 import { c } from 'ttag';
 
 import { Element } from '../../models/element';
@@ -8,9 +8,10 @@ import { formatFullDate } from '../../helpers/date';
 
 interface Props {
     element?: Element;
+    className?: string;
 }
 
-const ItemExpiration = ({ element = {} }: Props) => {
+const ItemExpiration = ({ element = {}, className }: Props) => {
     const { ExpirationTime } = element;
 
     const tooltipMessage = useMemo(() => {
@@ -24,7 +25,7 @@ const ItemExpiration = ({ element = {} }: Props) => {
 
     return (
         <Tooltip title={tooltipMessage}>
-            <Icon name="expiration" className="color-global-warning" />
+            <Icon name="expiration" className={classnames([className, 'color-global-warning'])} />
         </Tooltip>
     );
 };

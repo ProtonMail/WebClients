@@ -13,6 +13,7 @@ import NumMessages from '../conversation/NumMessages';
 import { Element } from '../../models/element';
 import { Message } from '../../models/message';
 import ItemExpiration from './ItemExpiration';
+import ItemAction from './ItemAction';
 
 interface Props {
     labels?: Label[];
@@ -45,6 +46,7 @@ const ItemColumnLayout = ({
                     <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>
                         {displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
                     </span>
+                    <ItemAction element={element} className="ml0-5 mtauto mbauto" />
                 </div>
                 <ItemDate element={element} className={classnames([unread && 'bold'])} />
                 <span className="ml0-5 flex">
