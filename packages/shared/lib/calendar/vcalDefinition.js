@@ -25,7 +25,7 @@ export const PROPERTIES = {
     dtend: UNIQUE,
     duration: UNIQUE,
     due: UNIQUE,
-
+    tzid: UNIQUE,
     prodid: UNIQUE,
     'x-wr-calname': UNIQUE,
     'x-wr-timezone': UNIQUE,
