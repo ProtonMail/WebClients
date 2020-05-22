@@ -139,7 +139,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     const error = new Error(errorMessage);
                     const shortUID = truncate(events[Index].uid, MAX_UID_CHARS_DISPLAY);
                     const idMessage = c('Error importing event').t`Event ${shortUID} could not be imported`;
-                    return new ImportEventError(IMPORT_EVENT_TYPE.GENERAL_ERROR, 'vevent', idMessage, error);
+                    return new ImportEventError(IMPORT_EVENT_TYPE.EXTERNAL_ERROR, 'vevent', idMessage, error);
                 });
             setModelWithAbort(
                 (model) => ({

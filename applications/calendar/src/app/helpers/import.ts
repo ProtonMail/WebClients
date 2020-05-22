@@ -241,7 +241,7 @@ interface GetSupportedEventArgs {
 export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid }: GetSupportedEventArgs) => {
     const idMessage = getIdMessage(vcalComponent);
     if (getParsedComponentHasError(vcalComponent)) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.GENERAL_ERROR, '', idMessage, vcalComponent.error);
+        throw new ImportEventError(IMPORT_EVENT_TYPE.EXTERNAL_ERROR, '', idMessage, vcalComponent.error);
     }
     if (getIsTodoComponent(vcalComponent)) {
         throw new ImportEventError(IMPORT_EVENT_TYPE.TODO_FORMAT, 'vtodo', idMessage);

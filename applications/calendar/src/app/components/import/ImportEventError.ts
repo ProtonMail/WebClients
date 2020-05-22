@@ -25,10 +25,10 @@ export enum IMPORT_EVENT_TYPE {
     NOTIFICATION_OUT_OF_BOUNDS,
     VALIDATION_ERROR,
     ENCRYPTION_ERROR,
-    GENERAL_ERROR,
+    EXTERNAL_ERROR,
 }
 
-const getErrorMessage = (errorType: IMPORT_EVENT_TYPE) => {
+const getErrorMessage = (errorType: IMPORT_EVENT_TYPE, externalError?: Error) => {
     if (errorType === IMPORT_EVENT_TYPE.WRONG_FORMAT) {
         return c('Error importing event').t`Component with wrong format`;
     }
@@ -98,6 +98,10 @@ const getErrorMessage = (errorType: IMPORT_EVENT_TYPE) => {
     if (errorType === IMPORT_EVENT_TYPE.ENCRYPTION_ERROR) {
         return c('Error importing event').t`Encryption failed`;
     }
+    if (errorType === IMPORT_EVENT_TYPE.EXTERNAL_ERROR) {
+        return externalError?.message || '';
+    }
+    return '';
 };
 
 export class ImportEventError extends Error {
@@ -107,14 +111,14 @@ export class ImportEventError extends Error {
 
     type: IMPORT_EVENT_TYPE;
 
-    error?: Error;
+    externalError?: Error;
 
-    constructor(errorType: IMPORT_EVENT_TYPE, component: string, idMessage: string, error?: Error) {
-        super(getErrorMessage(errorType));
+    constructor(errorType: IMPORT_EVENT_TYPE, component: string, idMessage: string, externalError?: Error) {
+        super(getErrorMessage(errorType, externalError));
         this.type = errorType;
         this.component = component;
         this.idMessage = idMessage;
-        this.error = error;
+        this.externalError = externalError;
         Object.setPrototypeOf(this, ImportEventError.prototype);
     }
 }
