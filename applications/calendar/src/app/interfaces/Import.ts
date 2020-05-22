@@ -3,7 +3,6 @@ import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { VcalCalendarComponent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ReactNode } from 'react';
 import { ImportEventError } from '../components/import/ImportEventError';
-import { ImportEventGeneralError } from '../components/import/ImportEventGeneralError';
 import { ImportFileError } from '../components/import/ImportFileError';
 import { ImportFatalError } from '../components/import/ImportFatalError';
 
@@ -33,7 +32,7 @@ export interface ImportCalendarModel {
     eventsEncrypted: EncryptedEvent[];
     eventsNotEncrypted: ImportEventError[];
     eventsImported: Pick<EncryptedEvent, 'uid'>[];
-    eventsNotImported: ImportEventGeneralError[];
+    eventsNotImported: ImportEventError[];
     failure?: ImportFatalError | ImportFileError | Error;
     calendar: Calendar;
 }

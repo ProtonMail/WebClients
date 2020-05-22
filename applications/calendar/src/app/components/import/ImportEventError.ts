@@ -7,6 +7,7 @@ export enum IMPORT_EVENT_TYPE {
     JOURNAL_FORMAT,
     FREEBUSY_FORMAT,
     TIMEZONE_FORMAT,
+    TIMEZONE_IGNORE,
     UID_MISSING,
     FLOATING_TIME,
     ALLDAY_INCONSISTENCY,
@@ -24,6 +25,7 @@ export enum IMPORT_EVENT_TYPE {
     NOTIFICATION_OUT_OF_BOUNDS,
     VALIDATION_ERROR,
     ENCRYPTION_ERROR,
+    GENERAL_ERROR,
 }
 
 const getErrorMessage = (errorType: IMPORT_EVENT_TYPE) => {
@@ -43,7 +45,7 @@ const getErrorMessage = (errorType: IMPORT_EVENT_TYPE) => {
         return c('Error importing event').t`Free-busy format`;
     }
     if (errorType === IMPORT_EVENT_TYPE.TIMEZONE_FORMAT) {
-        return c('Error importing event').t`Timezone format`;
+        return c('Error importing event').t`Custom timezone`;
     }
     if (errorType === IMPORT_EVENT_TYPE.UID_MISSING) {
         return c('Error importing event').t`Missing UID`;
@@ -103,10 +105,16 @@ export class ImportEventError extends Error {
 
     idMessage: string;
 
-    constructor(errorType: IMPORT_EVENT_TYPE, component: string, idMessage: string) {
+    type: IMPORT_EVENT_TYPE;
+
+    error?: Error;
+
+    constructor(errorType: IMPORT_EVENT_TYPE, component: string, idMessage: string, error?: Error) {
         super(getErrorMessage(errorType));
+        this.type = errorType;
         this.component = component;
         this.idMessage = idMessage;
+        this.error = error;
         Object.setPrototypeOf(this, ImportEventError.prototype);
     }
 }

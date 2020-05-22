@@ -24,7 +24,6 @@ import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel, SyncMultipleApiRespo
 
 import DynamicProgress from './DynamicProgress';
 import { IMPORT_EVENT_TYPE, ImportEventError } from './ImportEventError';
-import { ImportEventGeneralError } from './ImportEventGeneralError';
 import { ImportFatalError } from './ImportFatalError';
 
 const { SINGLE_SUCCESS } = API_CODES;
@@ -140,7 +139,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     const error = new Error(errorMessage);
                     const shortUID = truncate(events[Index].uid, MAX_UID_CHARS_DISPLAY);
                     const idMessage = c('Error importing event').t`Event ${shortUID} could not be imported`;
-                    return new ImportEventGeneralError(error, 'vevent', idMessage);
+                    return new ImportEventError(IMPORT_EVENT_TYPE.GENERAL_ERROR, 'vevent', idMessage, error);
                 });
             setModelWithAbort(
                 (model) => ({

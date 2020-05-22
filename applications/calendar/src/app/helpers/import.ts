@@ -11,7 +11,6 @@ import { fromUTCDate, getSupportedTimezone, toLocalDate } from 'proton-shared/li
 import { readFileAsString } from 'proton-shared/lib/helpers/file';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import {
-    VcalCalendarComponent,
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
     VcalFloatingDateTimeProperty,
@@ -22,7 +21,6 @@ import {
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { c } from 'ttag';
 import { IMPORT_EVENT_TYPE, ImportEventError } from '../components/import/ImportEventError';
-import { ImportEventGeneralError } from '../components/import/ImportEventGeneralError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from '../components/import/ImportFileError';
 
 import {
@@ -80,9 +78,12 @@ export const parseIcs = async (ics: File) => {
 /**
  * Get a string that can identify an imported component
  */
-const getIdMessage = (vcalComponent: VcalCalendarComponent) => {
+const getIdMessage = (vcalComponent: VcalCalendarComponentOrError) => {
+    if (getParsedComponentHasError(vcalComponent)) {
+        return c('Error importing event').t`Bad format. Component cannot be read`;
+    }
     if (getIsTimezoneComponent(vcalComponent)) {
-        const tzid = vcalComponent.tzid ? vcalComponent.tzid[0].value : '';
+        const tzid = vcalComponent.tzid.value || '';
         return c('Error importing event').t`Timezone ${tzid}`;
     }
     const shortUID = truncate(vcalComponent.uid?.value, MAX_UID_CHARS_DISPLAY);
@@ -233,12 +234,15 @@ const getEventWithRequiredProperties = (veventComponent: VcalVeventComponent, id
 };
 
 interface GetSupportedEventArgs {
-    vcalComponent: VcalCalendarComponent;
+    vcalComponent: VcalCalendarComponentOrError;
     hasXWrTimezone: boolean;
     calendarTzid?: string;
 }
 export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid }: GetSupportedEventArgs) => {
     const idMessage = getIdMessage(vcalComponent);
+    if (getParsedComponentHasError(vcalComponent)) {
+        throw new ImportEventError(IMPORT_EVENT_TYPE.GENERAL_ERROR, '', idMessage, vcalComponent.error);
+    }
     if (getIsTodoComponent(vcalComponent)) {
         throw new ImportEventError(IMPORT_EVENT_TYPE.TODO_FORMAT, 'vtodo', idMessage);
     }
@@ -249,7 +253,10 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
         throw new ImportEventError(IMPORT_EVENT_TYPE.FREEBUSY_FORMAT, 'vfreebusy', idMessage);
     }
     if (getIsTimezoneComponent(vcalComponent)) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.TIMEZONE_FORMAT, 'vtimezone', idMessage);
+        if (!getSupportedTimezone(vcalComponent.tzid.value)) {
+            throw new ImportEventError(IMPORT_EVENT_TYPE.TIMEZONE_FORMAT, 'vtimezone', idMessage);
+        }
+        throw new ImportEventError(IMPORT_EVENT_TYPE.TIMEZONE_IGNORE, 'vtimezone', idMessage);
     }
     const vevent = getEventWithRequiredProperties(vcalComponent, idMessage);
     try {
@@ -384,16 +391,17 @@ export const filterNonSupported = ({ components, calscale, xWrTimezone }: Filter
     }
     const hasXWrTimezone = !!xWrTimezone;
     const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone) : undefined;
-    return components.reduce<{ events: VcalVeventComponent[]; discarded: ImportEventError[] }>(
+    return components.reduce<{
+        events: VcalVeventComponent[];
+        discarded: ImportEventError[];
+    }>(
         (acc, vcalComponent) => {
-            if (getParsedComponentHasError(vcalComponent)) {
-                const idMessage = c('Error importing event').t`Bad format. Component cannot be read`;
-                acc.discarded.push(new ImportEventGeneralError(vcalComponent.error, '', idMessage));
-                return acc;
-            }
             try {
                 acc.events.push(getSupportedEvent({ vcalComponent, calendarTzid, hasXWrTimezone }));
             } catch (e) {
+                if (e instanceof ImportEventError && e.type === IMPORT_EVENT_TYPE.TIMEZONE_IGNORE) {
+                    return acc;
+                }
                 acc.discarded.push(e);
             }
             return acc;
