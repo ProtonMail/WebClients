@@ -41,7 +41,7 @@ const SelectAll = ({ loading, disabled, elements, selectedIDs, onCheck }: Props)
     return (
         <>
             <Checkbox
-                className="flex pl1"
+                className="flex ml0-5 pm-select-all pl1"
                 checked={checked}
                 disabled={disabled}
                 loading={loading}
