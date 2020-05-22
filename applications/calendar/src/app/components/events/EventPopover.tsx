@@ -5,6 +5,7 @@ import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { c } from 'ttag';
 
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import { getDisplayTitle } from '../../helpers/event';
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 
 import PopoverEventContent from './PopoverEventContent';
@@ -47,6 +48,7 @@ const EventPopover = ({
 
     const [value, isLoading, error] = useReadCalendarEvent(targetEventData);
     const model = useReadEvent(value, tzid);
+    const displayTitle = getDisplayTitle(model.title);
 
     const handleDelete = () => {
         if (Event) {
@@ -106,8 +108,8 @@ const EventPopover = ({
                         color={Calendar.Color}
                         size={16}
                     />
-                    <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={model.title}>
-                        {model.title}
+                    <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={displayTitle}>
+                        {displayTitle}
                     </h1>
                 </div>
             </PopoverHeader>

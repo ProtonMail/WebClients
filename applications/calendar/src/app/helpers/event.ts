@@ -1,3 +1,4 @@
+import { c } from 'ttag';
 import {
     VcalCalendarComponent,
     VcalVeventComponent,
@@ -20,6 +21,10 @@ export const getComponentWithPersonalPart = ({ component, personalMap = {}, memb
         ...component,
         components: valarmComponents,
     };
+};
+
+export const getDisplayTitle = (title = '') => {
+    return title || c('Event title').t`(no title)`;
 };
 
 export const getIsEventComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVeventComponent => {

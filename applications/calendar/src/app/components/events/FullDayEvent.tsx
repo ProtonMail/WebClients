@@ -1,5 +1,6 @@
 import React, { CSSProperties, Ref, useMemo } from 'react';
 import { Icon, classnames } from 'react-components';
+import { getDisplayTitle } from '../../helpers/event';
 
 import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 import { getConstrastingColor } from '../../helpers/color';
@@ -41,7 +42,7 @@ const FullDayEvent = ({
 
     const tmpData = getIsTemporaryViewEvent(event) ? event.tmpData : undefined;
     const calendarColor = tmpData?.calendar.color || Calendar.Color;
-    const safeTitle = tmpData?.title || model.title || '';
+    const safeTitle = getDisplayTitle(tmpData?.title || model.title);
 
     const eventStyle = useMemo(() => {
         const background = calendarColor;

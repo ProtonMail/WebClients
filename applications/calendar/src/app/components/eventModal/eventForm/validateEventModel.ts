@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 import { isBefore } from 'date-fns';
-import { modelToGeneralProperties } from './modelToProperties';
 import { getTimeInUtc } from './time';
 import { END_TYPE, FREQUENCY, MAX_NOTIFICATIONS } from '../../../constants';
 import { EventModel, EventModelErrors } from '../../../interfaces/EventModel';
@@ -13,18 +12,11 @@ const validateEventModel = ({
     start,
     end,
     isAllDay,
-    title,
     frequencyModel,
     partDayNotifications,
     fullDayNotifications,
 }: EventModel) => {
     const errors: EventModelErrors = {};
-
-    const generalProperties = modelToGeneralProperties({ title });
-
-    if (!generalProperties.summary?.value) {
-        errors.title = c('Error').t`Title required`;
-    }
 
     const utcStart = getTimeInUtc(start, isAllDay);
     const utcEnd = getTimeInUtc(end, isAllDay);
