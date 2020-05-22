@@ -26,6 +26,13 @@ import { useAttachments } from '../../hooks/useAttachments';
 import { getDate } from '../../helpers/elements';
 import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
 import { WindowSize, Breakpoints } from '../../models/utils';
+import { getContent } from '../../helpers/message/messageContent';
+import { isHTMLEmpty } from '../../helpers/dom';
+
+const getShouldSave = (initialValue: string, message: PartialMessageExtended) => {
+    const content = getContent(message);
+    return isHTMLEmpty(content) && initialValue !== content;
+};
 
 enum ComposerInnerModal {
     None,
@@ -63,6 +70,9 @@ const Composer = ({
     const [mailSettings] = useMailSettings();
     // const [width, height] = useWindowSize();
     const { createNotification } = useNotifications();
+
+    // Initial value to be tested against to decide if we should autosave or not
+    const [initialValue, setInitialValue] = useState('');
 
     // Minimized status of the composer
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
@@ -180,9 +190,9 @@ const Composer = ({
 
     const autoSave = useHandler(actualSave, { debounce: 2000 });
 
-    // Initial save action intended to create the draft on the server
+    // Save initial value to be checked against to avoid unnecessary empty messages
     useEffect(() => {
-        autoSave(syncedMessage);
+        setInitialValue(getContent(syncedMessage));
     }, []);
 
     const handleChange: MessageChange = (message) => {
@@ -203,7 +213,9 @@ const Composer = ({
         setContent(modelMessage, content);
         const newModelMessage = { ...modelMessage };
         setModelMessage(newModelMessage);
-        autoSave(newModelMessage);
+        if (getShouldSave(initialValue, syncedMessage)) {
+            autoSave(newModelMessage);
+        }
     };
 
     const handleChangeFlag = (changes: Map<number, boolean>) => {
@@ -279,7 +291,9 @@ const Composer = ({
     const handleClose = async () => {
         setClosing(true);
         try {
-            await handleManualSave();
+            if (getShouldSave(initialValue, syncedMessage)) {
+                await handleManualSave();
+            }
         } finally {
             onClose();
         }
