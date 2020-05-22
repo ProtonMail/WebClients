@@ -139,7 +139,7 @@ const OpenVPNConfigurationSection = () => {
                     },
                     {
                         value: PLATFORM.ROUTER,
-                        link: 'https://protonvpn.com/support/?s=router&ht-kb-search=1',
+                        link: 'https://protonvpn.com/support/installing-protonvpn-on-a-router/',
                         label: c('Option').t`Router`
                     }
                 ].map(({ value, label, link }) => {
