@@ -83,7 +83,7 @@ const AskForKeyPinningModal = ({ contacts, onSubmit, onClose, onNotTrust, onErro
                     msgid`You have enabled Address Verification with Trusted Keys for this email address,
                         but no active encryption key has been trusted.
                         You must trust a key valid for sending in order to send a message to this email address.`,
-                    `You have enabled Address Verification with Trusted Keys for email addresses,
+                    `You have enabled Address Verification with Trusted Keys for these email addresses,
                         but no active encryption keys have been trusted.
                         You must trust keys valid for sending in order to send a message to these email addresses.`,
                     totalContacts
