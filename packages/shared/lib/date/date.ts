@@ -21,6 +21,7 @@ export const getFormattedWeekdays = (stringFormat: string, options?: FormatOptio
 export const getFormattedMonths = (stringFormat: string, options?: FormatOptions) => {
     const dummyDate = startOfYear(new Date(0));
     const dummyMonths = Array.from({ length: 12 }).map((_, i) => addMonths(dummyDate, i));
+
     return dummyMonths.map((date) => format(date, stringFormat, options));
 };
 
