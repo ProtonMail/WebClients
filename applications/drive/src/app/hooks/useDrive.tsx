@@ -390,9 +390,8 @@ function useDrive() {
 
     const events = {
         handleEvents: (shareId: string) => async ({ Events = [] }: { Events: ShareEvent[] }) => {
-            // Move changes keys, so new metadata from event needs to be used
-            const deleteEvents = Events.filter(({ EventType }) => [DELETE, MOVE].includes(EventType));
-            const softDeleteEvents = Events.filter(({ EventType }) => [TRASH, RESTORE].includes(EventType));
+            const deleteEvents = Events.filter(({ EventType }) => EventType === DELETE);
+            const softDeleteEvents = Events.filter(({ EventType }) => [TRASH, RESTORE, MOVE].includes(EventType));
 
             cache.delete.links(
                 shareId,
