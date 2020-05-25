@@ -130,9 +130,9 @@ const PlansSection = () => {
         if (loadingPlans || loadingSubscription) {
             return;
         }
-        const [{ Currency, Cycle } = {}] = plans;
+        const [{ Currency } = {}] = plans;
         setCurrency(subscription.Currency || Currency);
-        setCycle(subscription.Cycle || Cycle);
+        setCycle(subscription.Cycle || DEFAULT_CYCLE);
     }, [loadingSubscription, loadingPlans]);
 
     if (subscription.isManagedByMozilla) {
