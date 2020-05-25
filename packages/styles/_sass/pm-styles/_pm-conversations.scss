@@ -1,6 +1,7 @@
 /*
  * items (conversations/contacts lists)
  */
+$container-to-width: 3em !default;
 
 .items-column-list {
   width: calc( (100% + var(--width-sidebar, #{$width-sidebar}) ) * #{$conversations-column-width/1%/100} );
@@ -25,6 +26,11 @@
 
 .view-column-detail {
   background: var(--bgcolor-view-column-detail, $white);
+}
+.main-area:not(.main-area--withToolbar) {
+	.view-column-detail {
+		height: calc(100vh - #{$header-height} );
+	}
 }
 
 .item-container,
@@ -243,16 +249,39 @@ $conversation-icon-size: 3.2rem !default;
     display: none;
 }
 
+// when expanded but no full details
+.message-header-expanded {
+	padding: .6em .6em 0 .6em;
+	@include respond-to($breakpoint-small) {
+		.message-show-hide-link,
+		.message-header-expanded-label-container {
+			padding-left: $container-to-width;
+		}
+	}
+}
+
 // alignements when expanded/details
 .message-header--showDetails {
     .message-show-hide-link {
-       align-self: flex-end;
-       padding-bottom: .4em;
-    }
+		padding: .25em 0 .4em $container-to-width*2;
+		margin-top: .5em;
+	}
+	// show/hide details should go below otherwise it will be strangely place depending of recipients
+	.message-header-recipients {
+		flex-direction: column;
+		& > * {
+			width: 100%;
+			flex-basis: auto;
+		}
+	}
 
     > :not(.message-detailed-header-extra) {
         .container-to:not(.container-to--item) {
-            margin-top: .35em;
+			margin-top: .35em;
+			@include respond-to($breakpoint-small) {
+				margin-top: .6em;
+			}
+
         }
     }
     .message-recipient-item-expanded {
@@ -322,7 +351,7 @@ $conversation-icon-size: 3.2rem !default;
 }
 
 .container-to {
-  min-width: 3em;
+  min-width: $container-to-width;
 }
 
 

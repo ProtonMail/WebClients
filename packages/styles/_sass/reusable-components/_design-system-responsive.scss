@@ -135,6 +135,15 @@
         align-self: center;
       }
 	}
+	&flex-item-fluid {
+		flex: 1 1 0px;
+	}
+	&no-flex {
+		flex: 0 0 auto;
+	}
+	&flex-shrink {
+		flex-shrink: 1;
+	}
     &wauto {
       width: auto;
     }

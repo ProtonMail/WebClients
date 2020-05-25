@@ -1,7 +1,12 @@
 /*
  * toolbar
  */
- .toolbar {
+:root {
+	--padding-toolbar-button: #{em(16, $base-font)};
+	--padding-toolbar-button-dropdown: #{em(12, $base-font)};
+}
+
+.toolbar {
   position: relative;
   z-index: 1;
   height: $toolbar-height;
@@ -18,8 +23,8 @@
   border: unset;
   border-radius: unset;
 
-  padding-left: em(16, $base-font);
-  padding-right: em(16, $base-font);
+  padding-left: var(--padding-toolbar-button);
+  padding-right: var(--padding-toolbar-button);
   display: flex; // alignment fix on Chrome
 
   &:hover {
@@ -39,8 +44,8 @@
   }
 }
 .toolbar-button--dropdown {
-  padding-left: em(12, $base-font);
-  padding-right: em(12, $base-font);
+  padding-left: var(--padding-toolbar-button-dropdown);
+  padding-right: var(--padding-toolbar-button-dropdown);
 }
 .toolbar-icon,
 .expand-caret.toolbar-icon {
@@ -74,6 +79,45 @@
 
 	}
 }
+
+
+.toolbar--heavy {
+	@include respond-to(1100) {
+		--padding-toolbar-button: #{em(12, $base-font)};
+		--padding-toolbar-button-dropdown: #{em(10, $base-font)};
+	}
+	// use the forceps Luke ^^
+	@include respond-to(980) {
+		--padding-toolbar-button: #{em(11, $base-font)};
+		--padding-toolbar-button-dropdown: #{em(8, $base-font)};
+	}
+
+	@include respond-to($breakpoint-medium) {
+		--padding-toolbar-button: #{em(16, $base-font)};
+		--padding-toolbar-button-dropdown: #{em(12, $base-font)};
+	}
+
+	@include respond-to(750) {
+		--padding-toolbar-button: #{em(12, $base-font)};
+		--padding-toolbar-button-dropdown: #{em(8, $base-font)};
+	}
+
+	@include respond-to($breakpoint-small) {
+		--padding-toolbar-button: #{em(16, $base-font)};
+		--padding-toolbar-button-dropdown: #{em(12, $base-font)};
+	}
+
+	@include respond-to($breakpoint-tiny) {
+		--padding-toolbar-button: #{em(14, $base-font)};
+		--padding-toolbar-button-dropdown: #{em(10, $base-font)};
+	}
+	@include respond-to(320) {
+		--padding-toolbar-button: #{em(12, $base-font)};
+		--padding-toolbar-button-dropdown: #{em(6, $base-font)};
+	}
+
+}
+
 
 
 

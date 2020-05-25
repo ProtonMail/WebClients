@@ -99,3 +99,11 @@
     height: 24px;
   }
 }
+
+@include respond-to($breakpoint-tiny) {
+  .topnav-link {
+	padding-left: .5rem;
+	padding-right: .5rem;
+  }
+}
+

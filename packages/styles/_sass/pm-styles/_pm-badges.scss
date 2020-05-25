@@ -133,6 +133,13 @@ $label-border-color: var(--bgcolor-view-column-detail, $white) !default;
 	}
 }
 
+// when several labels can wrap (in conversations/show details/several labels/tiny viewport
+.pm-badgeLabel-container--groupMayWrap {
+	.badgeLabel {
+		margin-bottom: .25em;
+	}
+}
+
 .badgeLabel-success {
   @extend .bg-global-success;
   border-color: $pm-global-success;
