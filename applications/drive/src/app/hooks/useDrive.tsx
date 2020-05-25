@@ -204,7 +204,7 @@ function useDrive() {
             : await getShareKeys(shareId);
 
         const meta = await decryptLink(Link, privateKey);
-        cache.set.linkMeta(meta, shareId, !config.preventRerenders);
+        cache.set.linkMeta(meta, shareId, { rerender: !config.preventRerenders });
 
         return meta;
     };
@@ -335,7 +335,7 @@ function useDrive() {
 
         const { NodeHashKey: NodeHashKey } = await generateNodeHashKey(privateKey.toPublic());
 
-        await debouncedRequest(
+        return debouncedRequest<{ Folder: { ID: string } }>(
             queryCreateFolder(shareId, {
                 Hash,
                 NodeHashKey,
@@ -417,8 +417,9 @@ function useDrive() {
                     if (EventType === TRASH) {
                         cache.set.trashLinkMetas([meta], shareId, 'unlisted');
                     } else {
-                        cache.set.childLinkMetas([meta], shareId, Link.ParentLinkID, 'unlisted');
-                        cache.set.foldersOnlyLinkMetas([meta], shareId, Link.ParentLinkID, 'unlisted');
+                        const method = EventType === CREATE ? 'unlisted_create' : 'unlisted';
+                        cache.set.childLinkMetas([meta], shareId, Link.ParentLinkID, method);
+                        cache.set.foldersOnlyLinkMetas([meta], shareId, Link.ParentLinkID, method);
                     }
                 })
             );

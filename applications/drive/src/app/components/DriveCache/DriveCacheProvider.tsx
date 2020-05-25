@@ -63,14 +63,18 @@ const useDriveCacheState = () => {
     const cacheRef = useRef<DriveCacheState>({});
     const [, setRerender] = useState(0);
 
-    const setLinkMeta = (metas: LinkMeta | LinkMeta[], shareId: string, rerender = true) => {
+    const setLinkMeta = (
+        metas: LinkMeta | LinkMeta[],
+        shareId: string,
+        { isNew = false, rerender = true }: { isNew?: boolean; rerender?: boolean } = {}
+    ) => {
         const links = cacheRef.current[shareId].links;
         const linkMetas = Array.isArray(metas) ? metas : [metas];
 
         linkMetas.forEach((meta) => {
             if (links[meta.LinkID]) {
                 // Special case for active revision: children don't have active revision
-                // So keep it if it's arlready loaded (until file edit at least)
+                // So keep it if it's already loaded (until file edit at least)
                 const revision = links[meta.LinkID].meta.FileProperties?.ActiveRevision;
                 if (!isFolderLinkMeta(meta) && !meta.FileProperties.ActiveRevision && revision) {
                     meta.FileProperties.ActiveRevision = revision;
@@ -80,8 +84,8 @@ const useDriveCacheState = () => {
                 links[meta.LinkID] = isFolderLinkMeta(meta)
                     ? {
                           meta,
-                          children: { complete: false, list: [], unlisted: [] },
-                          foldersOnly: { complete: false, list: [], unlisted: [] }
+                          children: { complete: isNew, list: [], unlisted: [] },
+                          foldersOnly: { complete: isNew, list: [], unlisted: [] }
                       }
                     : { meta };
             }
@@ -150,18 +154,18 @@ const useDriveCacheState = () => {
         metas: LinkMeta[],
         shareId: string,
         linkId: string,
-        method: 'unlisted' | 'complete' | 'incremental'
+        method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create'
     ) => {
         const links = cacheRef.current[shareId].links;
         const parent = links[linkId];
 
-        setLinkMeta(metas, shareId);
+        setLinkMeta(metas, shareId, { rerender: false, isNew: method === 'unlisted_create' });
 
         if (isCachedFolderLink(parent)) {
             const existing = getChildLinks(shareId, linkId) || [];
             const linkIds = metas.map(({ LinkID }) => LinkID);
 
-            if (method === 'unlisted') {
+            if (['unlisted', 'unlisted_create'].includes(method)) {
                 parent.children.unlisted = [
                     ...parent.children.unlisted,
                     ...linkIds.filter((id) => !existing.includes(id))
@@ -188,7 +192,7 @@ const useDriveCacheState = () => {
         const links = cacheRef.current[shareId].links;
         const trash = cacheRef.current[shareId].trash;
 
-        setLinkMeta(metas, shareId);
+        setLinkMeta(metas, shareId, { rerender: false });
 
         const existing = getTrashLinks(shareId);
         const linkIds = metas.map(({ LinkID }) => LinkID);
@@ -214,19 +218,19 @@ const useDriveCacheState = () => {
         metas: LinkMeta[],
         shareId: string,
         linkId: string,
-        method: 'unlisted' | 'complete' | 'incremental'
+        method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create'
     ) => {
         const links = cacheRef.current[shareId].links;
         const parent = links[linkId];
         const folderMetas = metas.filter(isFolderLinkMeta);
 
-        setLinkMeta(folderMetas, shareId);
+        setLinkMeta(folderMetas, shareId, { rerender: false, isNew: method === 'unlisted_create' });
 
         if (isCachedFolderLink(parent)) {
             const existing = getFoldersOnlyLinks(shareId, linkId) || [];
             const linkIds = folderMetas.map(({ LinkID }) => LinkID);
 
-            if (method === 'unlisted') {
+            if (['unlisted', 'unlisted_create'].includes(method)) {
                 parent.foldersOnly.unlisted = [
                     ...parent.foldersOnly.unlisted,
                     ...linkIds.filter((id) => !existing.includes(id))

@@ -51,7 +51,7 @@ function useFiles() {
     const queuedFunction = useQueuedFunction();
     const { createNotification } = useNotifications();
     const { getPrimaryAddressKey, sign } = useDriveCrypto();
-    const { getLinkMeta, getLinkKeys, events, fetchAllFolderPages } = useDrive();
+    const { getLinkMeta, getLinkKeys, events, fetchAllFolderPages, createNewFolder } = useDrive();
     const { addToDownloadQueue, addFolderToDownloadQueue } = useDownloadProvider();
     const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses } = useUploadProvider();
     const [{ MaxSpace, UsedSpace }] = useUser();
@@ -259,7 +259,7 @@ function useFiles() {
         );
     };
 
-    const checkHasEnoughSpace = async (files: FileList | File[]) => {
+    const checkHasEnoughSpace = async (files: FileList | File[] | { path: string; file?: File }[]) => {
         const calculateRemainingUploadBytes = () => {
             const uploads = getUploadsImmediate();
             const progresses = getUploadsProgresses();
@@ -275,7 +275,8 @@ function useFiles() {
 
         let totalFileListSize = 0;
         for (let i = 0; i < files.length; i++) {
-            totalFileListSize += files[i].size;
+            const entry = files[i];
+            totalFileListSize += 'path' in entry ? entry.file?.size || 0 : entry.size;
         }
 
         const remaining = calculateRemainingUploadBytes();
@@ -284,9 +285,14 @@ function useFiles() {
         return { result, total: totalFileListSize };
     };
 
+    /**
+     * Accepts either a file list to upload to the parent folder or `{ path, file }` objects, where `path` is
+     * a folder path relative to the parent folder (missing folders will be created before upload). Uploads without file
+     * will create empty folders.
+     */
     const uploadDriveFiles = queuedFunction(
         'uploadDriveFiles',
-        async (shareId: string, ParentLinkID: string, files: FileList | File[]) => {
+        async (shareId: string, ParentLinkID: string, files: FileList | File[] | { path: string; file?: File }[]) => {
             const { result, total } = await checkHasEnoughSpace(files);
             const formattedRemaining = humanSize(total);
             if (!result) {
@@ -297,8 +303,51 @@ function useFiles() {
                 throw new Error('Insufficient storage left');
             }
 
+            const folderPromises: { [path: string]: ReturnType<typeof createNewFolder> } = {};
+
             for (let i = 0; i < files.length; i++) {
-                uploadDriveFile(shareId, ParentLinkID, files[i]);
+                const entry = files[i];
+
+                if ('path' in entry) {
+                    const file = entry.file;
+                    const folders = entry.path.split('/').filter(isTruthy);
+
+                    folders.forEach((folder, j) => {
+                        const parent = folders.slice(0, j).join('/');
+                        const path = parent ? [parent, folder].join('/') : folder;
+
+                        if (folderPromises[path]) {
+                            return;
+                        }
+
+                        // File upload must wait for the folder to be created
+                        folderPromises[path] = parent
+                            ? folderPromises[parent].then(({ Folder: { ID } }) => createNewFolder(shareId, ID, folder))
+                            : findAvailableName(shareId, ParentLinkID, folder).then(({ filename: adjustedName }) =>
+                                  createNewFolder(shareId, ParentLinkID, adjustedName)
+                              );
+
+                        // Fetch events to get keys required for further name checks in the new folder
+                        folderPromises[path] = folderPromises[path].then(async (args) => {
+                            await events.call(shareId);
+                            return args;
+                        });
+                    });
+
+                    if (!file) {
+                        continue; // No file to upload
+                    }
+
+                    if (folders.length) {
+                        folderPromises[folders.join('/')].then(({ Folder: { ID } }) => {
+                            uploadDriveFile(shareId, ID, file);
+                        });
+                    } else {
+                        uploadDriveFile(shareId, ParentLinkID, file);
+                    }
+                } else {
+                    uploadDriveFile(shareId, ParentLinkID, entry);
+                }
             }
         }
     );
