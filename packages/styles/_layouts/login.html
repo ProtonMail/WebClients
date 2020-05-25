@@ -11,11 +11,11 @@
     {% else %}
     <link rel="stylesheet" href="/assets/css/styles-pm.css" />
     {% endif %}
-    
+
     <title>{{ page.title }}</title>
 
     {% include metas.html %}
-    
+
   </head>
   <body class="login">
     <div class="body flex flex-nowrap no-scroll">
@@ -51,16 +51,17 @@
                     <div class="nomobile flex-item-fluid alignright"><a href="#" class="bold nodecoration primary-link">Sign up for free</a></div>
                 </div>
                 <h1 class="flex-item-noshrink aligncenter color-primary">{{ page.title }}</h1>
-                    
+
                   {{ content }}
 
-                  {% include sprite-icons.svg %}
-            
+				  {% include sprite-icons.svg %}
+				  {% include mime-icons.svg %}
+
           </main>
     </div>
 
   </div>
-  
+
   {% if site.environment == "prod" %}
   <script src="/assets/js/main_{{ site.time | date: "%s" }}.js"></script>
   {% else %}

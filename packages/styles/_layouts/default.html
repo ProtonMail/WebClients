@@ -11,11 +11,11 @@
     {% else %}
     <link rel="stylesheet" href="/assets/css/styles-pm.css" />
     {% endif %}
-    
+
     <title>{{ page.title }}</title>
 
     {% include metas.html %}
-    
+
   </head>
   <body>
     <div class="body flex flex-nowrap no-scroll">
@@ -73,7 +73,7 @@
     <div class="content flex-item-fluid reset4print">
 
       {% include header.html %}
-        
+
         <div class="flex flex-nowrap">
           <div class="sidebar flex js-sidebar nomobile noprint">
 
@@ -84,15 +84,15 @@
             </div>
 
           </div>
-            
+
           <div class="main flex-item-fluid">
-            
-            {% include toolbar.html %}   
+
+            {% include toolbar.html %}
 
             <div class="main-area--withToolbar js-main-area {% if page.pageId == 'conversations' %} no-scroll {% endif %} reset4print scroll-smooth-touch"><!-- can't apply flex on it directly, otherwise, stick will fail -->
               <div class="flex flex-reverse">
 
-                {% include sub-nav.html %}                
+                {% include sub-nav.html %}
 
                 <main class="main-area-content relative {% if page.subsection %} {% elsif page.pageId <> 'conversations' %}p2{% endif %} flex-item-fluid" title="{{ page.subsection }}">
 
@@ -101,12 +101,14 @@
                   {% if page.intro %}
                   <a href="/" class="right ml1 mb1">Back to home</a>
                   {% endif %}
-                    
+
                   {{ content }}
 
                   {% if page.pageId <> 'icons-tests' %}
 
-                    {% include sprite-icons.svg %}
+					{% include sprite-icons.svg %}
+
+					{% include mime-icons.svg %}
 
                   {% endif %}
 
@@ -115,7 +117,7 @@
               </div>
 
             </div>
-            
+
           </div>
         </div>
 
@@ -127,7 +129,7 @@
   <div class="notifications-container js-notifications-containers flex flex-column flex-items-center">
 
   </div>
-  
+
   {% if site.environment == "prod" %}
   <script src="/assets/js/main_{{ site.time | date: "%s" }}.js"></script>
   {% else %}
