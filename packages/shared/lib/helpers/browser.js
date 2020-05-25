@@ -92,12 +92,13 @@ export const getActiveXObject = (name) => {
     } catch (error) {
         // eslint-disable-next-line no-console
         console.error(error);
+        return undefined;
     }
 };
 
 export const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-export const hasAcrobatInstalled = () => getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl');
-export const hasPDFSupport = () => navigator.mimeTypes['application/pdf'] || hasAcrobatInstalled() || isIos();
+export const hasAcrobatInstalled = () => !!(getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl'));
+export const hasPDFSupport = () => navigator.mimeTypes['application/pdf'] || isIos() || hasAcrobatInstalled();
 export const redirectTo = (url = '') => document.location.replace(`${document.location.origin}${url}`);
 
 /**
