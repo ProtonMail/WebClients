@@ -95,7 +95,7 @@ const SECURE_URL = ENV_CONFIG.secure;
  * @param  {String|Array} api
  * @return {String}
  */
-const getApi = (api) => {
+const getApi = (api = 'proxy') => {
     if (!Array.isArray(api)) {
         return api;
     }
