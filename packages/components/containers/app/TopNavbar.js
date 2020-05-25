@@ -10,7 +10,7 @@ const TopNavbar = ({ children, className = '' }) => {
     return (
         <div
             className={classnames([
-                'flex flex-justify-end topnav-container flex-item-centered-vert flex-item-fluid',
+                'flex flex-justify-end topnav-container onmobile-no-flex flex-item-centered-vert flex-item-fluid',
                 className
             ])}
         >
