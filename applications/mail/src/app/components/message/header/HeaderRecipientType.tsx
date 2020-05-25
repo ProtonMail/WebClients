@@ -6,7 +6,11 @@ interface Props {
     children: ReactNode;
 }
 
-const HeaderRecipientType = ({ label, className = 'flex message-recipient-item-expanded', children }: Props) => {
+const HeaderRecipientType = ({
+    label,
+    className = 'flex flex-nowrap message-recipient-item-expanded mw100',
+    children
+}: Props) => {
     return (
         <span className={className}>
             <span className="container-to">{label}</span>

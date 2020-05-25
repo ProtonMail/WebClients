@@ -65,7 +65,7 @@ const PrivateHeader = ({
             {showHamburger && (
                 <>
                     <Hamburger expanded={expanded} onToggle={onToggleExpand} />
-                    <span className="h3 mb0 ellipsis">{labelName}</span>
+                    <span className="h3 onmobile-flex-item-fluid lh-standard mb0 ellipsis">{labelName}</span>
                 </>
             )}
             {!breakpoints.isNarrow && (

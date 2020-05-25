@@ -110,7 +110,7 @@ const HeaderMoreDropdown = ({ message, messageLoaded, sourceMode, onBack, onColl
     const isInTrash = messageLabelIDs.includes(TRASH);
 
     return (
-        <Group className="mr1">
+        <Group className="mr1 mb0-5">
             <ButtonGroup disabled={!messageLoaded} icon="unread" onClick={handleUnread} />
             {isInInbox && <ButtonGroup disabled={!messageLoaded} icon="trash" onClick={handleMove(TRASH, INBOX)} />}
             {isInTrash && <ButtonGroup disabled={!messageLoaded} icon="inbox" onClick={handleMove(INBOX, TRASH)} />}

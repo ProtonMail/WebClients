@@ -7,7 +7,8 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     Icon,
-    useNotifications
+    useNotifications,
+    classnames
 } from 'react-components';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { getInitial } from 'proton-shared/lib/helpers/string';
@@ -95,13 +96,19 @@ const HeaderRecipientItem = ({
                     </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
-            {label}
-            {showAddress && <span className="opacity-50 ml0-5 ellipsis">&lt;{recipient.Address}&gt;</span>}
-            {showLockIcon && icon && (
-                <span className="flex pl0-25 pr0-25 flex-item-noshrink">
-                    <EncryptionStatusIcon {...icon} />
+            <span className={classnames(['flex flex-nowrap', showAddress && 'onmobile-flex-column'])}>
+                <span className="ellipsis">{label}</span>
+                <span className="flex flex-nowrap">
+                    {showAddress && (
+                        <span className="opacity-50 ml0-5 onmobile-ml0 ellipsis">&lt;{recipient.Address}&gt;</span>
+                    )}
+                    {showLockIcon && icon && (
+                        <span className="flex pl0-25 pr0-25 flex-item-noshrink">
+                            <EncryptionStatusIcon {...icon} />
+                        </span>
+                    )}
                 </span>
-            )}
+            </span>
         </span>
     );
 };

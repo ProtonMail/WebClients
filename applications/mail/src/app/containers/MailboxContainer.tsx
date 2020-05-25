@@ -208,8 +208,9 @@ const MailboxContainer = ({
             )}
             <div
                 className={classnames([
-                    'main-area--withToolbar flex-item-fluid flex reset4print',
-                    !columnMode && 'main-area--rowMode'
+                    'flex-item-fluid flex reset4print',
+                    !columnMode && 'main-area--rowMode',
+                    showToolbar ? 'main-area--withToolbar' : 'main-area'
                 ])}
             >
                 {showList && (

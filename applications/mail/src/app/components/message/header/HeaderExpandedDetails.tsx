@@ -97,11 +97,11 @@ const HeaderExpandedDetails = ({ labels, message, messageViewIcons, mailSettings
                 </div>
             )}
             {labelIDs.length > 0 && (
-                <div className="mb0-5 flex flex-nowrap">
-                    <span className="container-to flex">
+                <div className="flex flex-nowrap">
+                    <span className="container-to flex pb0-25">
                         <Icon name="label" className="mauto" alt={c('Label').t`Labels:`} />
                     </span>
-                    <span className="flex-self-vcenter mr0-5 ellipsis">
+                    <span className="flex-self-vcenter mr0-5 ellipsis pm-badgeLabel-container--groupMayWrap">
                         <ItemLabels
                             max={4}
                             isCollapsed={false}

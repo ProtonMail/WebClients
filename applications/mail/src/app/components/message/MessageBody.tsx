@@ -26,7 +26,7 @@ const MessageBody = ({ message: { document, data: message }, showBlockquote = tr
     const [content, blockquote] = useMemo(() => locateBlockquote(document), [document?.innerHTML]);
 
     return (
-        <div className={classnames(['message-content bodyDecrypted', plain && 'plain'])}>
+        <div className={classnames(['message-content scroll-horizontal-if-needed bodyDecrypted', plain && 'plain'])}>
             <div dangerouslySetInnerHTML={{ __html: showBlockquote ? content : content + blockquote }} />
             {showBlockquote && blockquote !== '' && (
                 <>

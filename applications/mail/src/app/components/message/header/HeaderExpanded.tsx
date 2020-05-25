@@ -157,8 +157,13 @@ const HeaderExpanded = ({
                     </span>
                 </div>
             </div>
-            <div className={classnames(['flex flex-nowrap flex-items-start mb0-5', !showDetails && 'mt0-5'])}>
-                <div className="flex-item-fluid flex flex-nowrap pr1">
+            <div
+                className={classnames([
+                    'flex flex-nowrap flex-items-start mb0-5 onmobile-flex-wrap',
+                    !showDetails && 'mt0-5'
+                ])}
+            >
+                <div className="flex-item-fluid flex flex-nowrap pr1 message-header-recipients">
                     {showDetails ? (
                         <HeaderRecipientsDetails
                             message={message.data}
@@ -179,7 +184,7 @@ const HeaderExpanded = ({
                     </a>
                 </div>
                 {!showDetails && (
-                    <div className="flex-item-noshrink">
+                    <div className="flex-item-noshrink onmobile-w100 onmobile-mt0-5 message-header-expanded-label-container">
                         <ItemAttachmentIcon element={message.data} />
                         <ItemLabels max={4} element={message.data} labels={labels} onUnlabel={handleRemoveLabel} />
                     </div>
@@ -206,7 +211,7 @@ const HeaderExpanded = ({
             />
 
             <div className="pt0-5 flex flex-spacebetween border-top">
-                <div className="flex flex-nowrap">
+                <div className="flex">
                     <HeaderMoreDropdown
                         message={message}
                         messageLoaded={messageLoaded}
@@ -216,7 +221,7 @@ const HeaderExpanded = ({
                         onSourceMode={onSourceMode}
                     />
 
-                    <Group className="mr1">
+                    <Group className="mr1 mb0-5">
                         <HeaderDropdown
                             autoClose={false}
                             content={<Icon name="filter" />}
@@ -250,23 +255,23 @@ const HeaderExpanded = ({
                     </Group>
                 </div>
 
-                <Group>
+                <Group className="mb0-5">
                     <ButtonGroup
                         disabled={!messageLoaded}
                         icon="reply"
-                        className="pm-button--primary"
+                        className="pm-button--primary flex flex-items-center"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                     />
                     <ButtonGroup
                         disabled={!messageLoaded}
                         icon="reply-all"
-                        className="pm-button--primary"
+                        className="pm-button--primary flex flex-items-center"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                     />
                     <ButtonGroup
                         disabled={!messageLoaded}
                         icon="forward"
-                        className="pm-button--primary"
+                        className="pm-button--primary flex flex-items-center"
                         onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                     />
                 </Group>

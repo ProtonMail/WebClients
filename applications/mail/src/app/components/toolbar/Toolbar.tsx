@@ -71,7 +71,7 @@ const Toolbar = ({
     );
 
     return (
-        <nav className="toolbar flex noprint flex-spacebetween">
+        <nav className="toolbar toolbar--heavy flex noprint flex-spacebetween">
             <div className="flex">
                 {columnMode || !elementID ? (
                     <SelectAll elements={elements} selectedIDs={selectedIDs} onCheck={onCheck} loading={loading} />

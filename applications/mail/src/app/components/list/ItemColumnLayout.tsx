@@ -52,7 +52,7 @@ const ItemColumnLayout = ({
                 </span>
             </div>
             <div className="flex flex-items-center item-secondline mw100">
-                <div className="flex-item-fluid flex w0 pr1 flex-nowrap item-sender--smaller">
+                <div className="flex-item-fluid flex w0 pr1 flex-nowrap">
                     <span className="flex-item-noshrink">
                         <ItemExpiration element={element} />
                     </span>
