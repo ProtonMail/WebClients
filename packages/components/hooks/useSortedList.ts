@@ -42,7 +42,11 @@ const useSortedList = <T>(list: T[], initialConfig?: Config<T>) => {
         }
     };
 
-    return { sortedList, toggleSort, sortConfig: config };
+    const setSort = (key: keyof T, direction: SORT_DIRECTION) => {
+        setConfig({ key, direction });
+    };
+
+    return { sortConfig: config, sortedList, setSort, toggleSort };
 };
 
 /**
