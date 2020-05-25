@@ -7,6 +7,7 @@ import { Element } from '../../models/element';
 import { isUnread, isStarred } from '../../helpers/elements';
 
 interface Props {
+    labelID: string;
     loading?: boolean;
     disabled?: boolean;
     elements: Element[];
@@ -14,7 +15,7 @@ interface Props {
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
 }
 
-const SelectAll = ({ loading, disabled, elements, selectedIDs, onCheck }: Props) => {
+const SelectAll = ({ labelID, loading, disabled, elements, selectedIDs, onCheck }: Props) => {
     const checked = elements.length === selectedIDs.length;
 
     const handleAll = (checked: boolean) => () =>
@@ -26,7 +27,7 @@ const SelectAll = ({ loading, disabled, elements, selectedIDs, onCheck }: Props)
 
     const handleRead = (read: boolean) => () =>
         onCheck(
-            elements.filter((element) => read === !isUnread(element)).map(({ ID = '' }) => ID),
+            elements.filter((element) => read === !isUnread(element, labelID)).map(({ ID = '' }) => ID),
             true,
             true
         );

@@ -267,7 +267,12 @@ const Composer = ({
             await addAction(() => sendMessage(cleanMessage, mapSendPrefs));
             createNotification({ text: c('Success').t`Message sent` });
             onClose();
-        } catch {
+        } catch (error) {
+            createNotification({
+                text: c('Error').t`Error while sending the message. Message is not sent`,
+                type: 'error'
+            });
+            console.error('Error while sending the message.', error);
             setSending(false);
         }
     };
@@ -379,7 +384,7 @@ const Composer = ({
                     />
                     <ComposerActions
                         message={modelMessage}
-                        date={getDate(syncedMessage.data)}
+                        date={getDate(syncedMessage.data, '')}
                         lock={actionBarLocked}
                         sending={sending}
                         closing={closing}

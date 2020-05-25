@@ -151,7 +151,7 @@ const HeaderExpanded = ({
                             <span className="ml0-5 inline-flex">
                                 <ItemLocation message={message.data} mailSettings={mailSettings} />
                             </span>
-                            <ItemDate className="ml0-5" element={message.data || {}} />
+                            <ItemDate className="ml0-5" element={message.data} labelID={labelID} />
                         </>
                     )}
                     <span className="ml0-5 inline-flex">
@@ -195,6 +195,7 @@ const HeaderExpanded = ({
 
             {showDetails && (
                 <HeaderExpandedDetails
+                    labelID={labelID}
                     message={message}
                     messageViewIcons={messageViewIcons}
                     labels={labels}
@@ -215,6 +216,7 @@ const HeaderExpanded = ({
             <div className="pt0-5 flex flex-spacebetween border-top">
                 <div className="flex">
                     <HeaderMoreDropdown
+                        labelID={labelID}
                         message={message}
                         messageLoaded={messageLoaded}
                         sourceMode={sourceMode}

@@ -16,11 +16,12 @@ import './MessagePrint.scss';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 interface Props {
+    labelID: string;
     message: MessageExtendedWithData;
     onClose?: () => void;
 }
 
-const MessagePrintModal = ({ message, onClose, ...rest }: Props) => {
+const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
     const [contacts] = useContactEmails() as [ContactEmail[], boolean, Error];
     const [contactGroups = []] = useContactGroups();
     const sender = getSender(message.data);
@@ -59,7 +60,7 @@ const MessagePrintModal = ({ message, onClose, ...rest }: Props) => {
                         onCompose={noop}
                     />
                     <HeaderRecipientType label={c('Label').t`Date:`}>
-                        <ItemDate element={message.data} mode="full" />
+                        <ItemDate element={message.data} labelID={labelID} mode="full" />
                     </HeaderRecipientType>
                 </div>
                 <MessageBody message={message} showBlockquote={false} />

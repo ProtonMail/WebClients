@@ -76,7 +76,7 @@ const Item = ({
     );
 
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
-    const unread = isUnread(element);
+    const unread = isUnread(element, labelID);
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
@@ -119,6 +119,7 @@ const Item = ({
         >
             {itemCheckboxType}
             <ItemLayout
+                labelID={labelID}
                 labels={labels}
                 element={element}
                 mailSettings={mailSettings}

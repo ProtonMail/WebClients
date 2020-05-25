@@ -139,7 +139,7 @@ export const handleActions = (
  * Generate blockquote of the referenced message to the content of the new mail
  */
 const generateBlockquote = (referenceMessage: PartialMessageExtended) => {
-    const date = formatFullDate(getDate(referenceMessage?.data));
+    const date = formatFullDate(getDate(referenceMessage?.data, ''));
     const sender = recipientToInput(referenceMessage?.data?.Sender);
     const previously = c('Message').t`On ${date}, ${sender} wrote:`;
 

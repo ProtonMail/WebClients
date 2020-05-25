@@ -29,7 +29,12 @@ export const getCurrentType = ({ labelID, mailSettings, location }: TypeParams) 
 export const isMessage = (element: Element = {}): boolean => typeof (element as Message).ConversationID === 'string';
 export const isConversation = (element: Element = {}): boolean => !isMessage(element);
 
-export const getDate = (element?: Element, labelID?: string) => {
+/**
+ * Get the date of an element.
+ * @param element
+ * @param labelID is only used for a conversation. Yet mandatory not to forget to consider its use.
+ */
+export const getDate = (element: Element | undefined, labelID: string | undefined) => {
     if (!element) {
         return new Date();
     }
@@ -40,10 +45,12 @@ export const getDate = (element?: Element, labelID?: string) => {
         time = element.Time;
     } else {
         const conversation = element as Conversation;
-        if (conversation.ContextTime) {
+        const labelTime = conversation.Labels?.find((label) => label.ID === labelID)?.ContextTime;
+        if (labelTime) {
+            time = labelTime;
+        }
+        if (!time && conversation.ContextTime) {
             time = conversation.ContextTime;
-        } else {
-            time = conversation.Labels?.find((label) => label.ID === labelID)?.ContextTime;
         }
     }
 
@@ -55,19 +62,39 @@ export const getDate = (element?: Element, labelID?: string) => {
  * @param element.Time
  * @return Jan 17, 2016
  */
-export const getReadableTime = (element: Element = {}) => formatRelative(getDate(element), new Date());
+export const getReadableTime = (element: Element | undefined, labelID: string | undefined) =>
+    formatRelative(getDate(element, labelID), new Date());
 
-export const getReadableFullTime = (element: Element = {}) => format(getDate(element), 'Ppp');
+export const getReadableFullTime = (element: Element | undefined, labelID: string | undefined) =>
+    format(getDate(element, labelID), 'Ppp');
 
-export const isUnread = (element: Element = {}) => {
-    if ('ContextNumUnread' in element) {
-        // Conversation
-        return (element as Conversation).ContextNumUnread !== 0;
+/**
+ * Return if the element is to be considered in read or unread status
+ * @param element
+ * @param labelID is only used for a conversation. Yet mandatory not to forget to consider its use.
+ */
+export const isUnread = (element: Element | undefined, labelID: string | undefined) => {
+    if (!element) {
+        return false;
     }
-    if ('Unread' in element) {
-        // Message
-        return element.Unread !== 0;
+
+    if (isMessage(element)) {
+        return (element as Message).Unread !== 0;
+    } else {
+        const conversation = element as Conversation;
+
+        if (conversation.NumUnread !== undefined) {
+            return conversation.NumUnread !== 0;
+        }
+        const labelUnread = conversation.Labels?.find((label) => label.ID === labelID)?.ContextNumUnread;
+        if (labelUnread !== undefined) {
+            return labelUnread !== 0;
+        }
+        if (conversation.ContextNumUnread !== undefined && conversation.ContextNumUnread !== 0) {
+            return conversation.ContextNumUnread !== 0;
+        }
     }
+
     return false;
 };
 

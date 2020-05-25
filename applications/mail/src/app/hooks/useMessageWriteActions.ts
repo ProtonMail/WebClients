@@ -51,9 +51,7 @@ export const useSaveDraft = () => {
     return useCallback(async (message: MessageExtendedWithData) => {
         const messageFromCache = messageCache.get(message.localID) as MessageExtended;
         const senderHasChanged = messageFromCache.data?.Sender.Address !== message.data?.Sender.Address;
-        const messageKeys = senderHasChanged
-            ? await getMessageKeys({ ...message, publicKeys: undefined, privateKeys: undefined })
-            : {};
+        const messageKeys = await getMessageKeys(message, senderHasChanged);
         const messageToSave = mergeMessages(messageFromCache, { ...message, ...messageKeys });
         const newMessage = await updateMessage(
             messageToSave,

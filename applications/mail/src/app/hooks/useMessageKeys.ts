@@ -6,7 +6,8 @@ import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { MessageExtendedWithData } from '../models/message';
 
 type UseMessageKeys = () => (
-    message: MessageExtendedWithData
+    message: MessageExtendedWithData,
+    forceRefresh?: boolean
 ) => Promise<{ publicKeys: OpenPGPKey[]; privateKeys: OpenPGPKey[] }>;
 
 /**
@@ -17,12 +18,15 @@ export const useMessageKeys: UseMessageKeys = () => {
     const getAddressKeys = useGetAddressKeys();
 
     return useCallback(
-        async ({
-            data: message,
-            publicKeys: existingPublicKeys,
-            privateKeys: existingPrivateKeys
-        }: MessageExtendedWithData) => {
-            if (existingPublicKeys !== undefined && existingPrivateKeys !== undefined) {
+        async (
+            {
+                data: message,
+                publicKeys: existingPublicKeys,
+                privateKeys: existingPrivateKeys
+            }: MessageExtendedWithData,
+            forceRefresh = false
+        ) => {
+            if (!forceRefresh && existingPublicKeys !== undefined && existingPrivateKeys !== undefined) {
                 return { publicKeys: existingPublicKeys, privateKeys: existingPrivateKeys };
             }
             const { publicKeys } = splitKeys(await getUserKeys());

@@ -32,6 +32,7 @@ import SendWithWarningsModal from '../components/composer/addresses/SendWithWarn
 import { createMessage, updateMessage } from '../helpers/message/messageExport';
 import { noop } from 'proton-shared/lib/helpers/function';
 import SendWithExpirationModal from '../components/composer/addresses/SendWithExpirationModal';
+import { useMessageKeys } from './useMessageKeys';
 
 export const useSendVerifications = () => {
     const { createModal } = useModals();
@@ -167,19 +168,23 @@ export const useSendMessage = () => {
     const { call } = useEventManager();
     const messageCache = useMessageCache();
     const auth = useAuthentication();
+    const getMessageKeys = useMessageKeys();
 
     return useCallback(
         async (inputMessage: MessageExtendedWithData, mapSendPrefs: MapSendPreferences) => {
             const emails = unique(getRecipientsAddresses(inputMessage.data));
 
+            const messageFromCache = messageCache.get(inputMessage.localID);
+            const senderHasChanged = messageFromCache?.data?.Sender.Address !== inputMessage.data?.Sender.Address;
+            const messageKeys = await getMessageKeys(inputMessage, senderHasChanged);
+            const messageToSave = { ...inputMessage, ...messageKeys };
+
             // Prepare and save draft
             let Message;
             if (inputMessage.data.ID) {
-                const messageFromCache = messageCache.get(inputMessage.localID);
-                const senderHasChanged = messageFromCache?.data?.Sender.Address !== inputMessage.data?.Sender.Address;
-                Message = await updateMessage(inputMessage, senderHasChanged, api, noop);
+                Message = await updateMessage(messageToSave, senderHasChanged, api, noop);
             } else {
-                Message = await createMessage(inputMessage, api, noop);
+                Message = await createMessage(messageToSave, api, noop);
             }
 
             const Attachments: Attachment[] = isAttachPublicKey(Message)

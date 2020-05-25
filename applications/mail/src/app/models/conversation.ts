@@ -1,5 +1,3 @@
-import { Label } from 'proton-shared/lib/interfaces/Label';
-
 import { Recipient } from './address';
 
 export interface Conversation {
@@ -13,10 +11,19 @@ export interface Conversation {
     Senders?: Recipient[];
     Recipients?: Recipient[];
     ContextNumUnread?: number;
-    Labels?: Label[];
+    Labels?: ConversationLabel[];
     LabelIDs?: string[];
     Order?: number;
     NumAttachments?: number;
     ContextNumAttachments?: number;
     ExpirationTime?: number;
+}
+
+export interface ConversationLabel {
+    ID: string;
+    ContextNumMessages: number;
+    ContextNumUnread: number;
+    ContextTime: number;
+    ContextSize: number;
+    ContextNumAttachments: number;
 }

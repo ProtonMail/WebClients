@@ -1,9 +1,8 @@
 import { MailSettings } from 'proton-shared/lib/interfaces';
-import { isConversation, isMessage, sort, getCounterMap, getDate } from './elements';
-import { Conversation } from '../models/conversation';
+import { isConversation, isMessage, sort, getCounterMap, getDate, isUnread } from './elements';
+import { Conversation, ConversationLabel } from '../models/conversation';
 import { Message } from '../models/message';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { Label } from 'proton-shared/lib/interfaces/Label';
 
 describe('elements', () => {
     describe('isConversation / isMessage', () => {
@@ -64,28 +63,83 @@ describe('elements', () => {
 
     describe('getDate', () => {
         const Time = 42;
+        const WrongTime = 43;
         const expected = new Date(Time * 1000);
 
         it('should not fail for an undefined element', () => {
-            expect(getDate(undefined) instanceof Date).toBe(true);
+            expect(getDate(undefined, '') instanceof Date).toBe(true);
         });
 
         it('should take the Time property of a message', () => {
             const message = { ConversationID: '', Time };
-            expect(getDate(message)).toEqual(expected);
-        });
-
-        it('should take the ContextTime property of a conversation', () => {
-            const conversation = { ContextTime: Time };
-            expect(getDate(conversation)).toEqual(expected);
+            expect(getDate(message, '')).toEqual(expected);
         });
 
         it('should take the right label ContextTime of a conversation', () => {
             const LabelID = 'LabelID';
             const conversation = {
-                Labels: [{ ID: 'something', ContextTime: 43 } as Label, { ID: LabelID, ContextTime: Time } as Label]
+                Labels: [
+                    { ID: 'something', ContextTime: WrongTime } as ConversationLabel,
+                    { ID: LabelID, ContextTime: Time } as ConversationLabel
+                ]
             };
             expect(getDate(conversation, LabelID)).toEqual(expected);
+        });
+
+        it('should take the ContextTime property of a conversation', () => {
+            const conversation = { ContextTime: Time };
+            expect(getDate(conversation, '')).toEqual(expected);
+        });
+
+        it('should take the label time in priority for a conversation', () => {
+            const LabelID = 'LabelID';
+            const conversation = {
+                ContextTime: WrongTime,
+                Labels: [{ ID: LabelID, ContextTime: Time } as ConversationLabel]
+            };
+            expect(getDate(conversation, LabelID)).toEqual(expected);
+        });
+    });
+
+    describe('isUnread', () => {
+        it('should not fail for an undefined element', () => {
+            expect(isUnread(undefined, '')).toBe(false);
+        });
+
+        it('should take the Unread property of a message', () => {
+            const message = { ConversationID: '', Unread: 0 } as Message;
+            expect(isUnread(message, '')).toBe(false);
+        });
+
+        it('should take the right label ContextNumUnread of a conversation', () => {
+            const LabelID = 'LabelID';
+            const conversation = {
+                Labels: [
+                    { ID: 'something', ContextNumUnread: 1 } as ConversationLabel,
+                    { ID: LabelID, ContextNumUnread: 0 } as ConversationLabel
+                ]
+            };
+            expect(isUnread(conversation, LabelID)).toBe(false);
+        });
+
+        it('should take the ContextNumUnread property of a conversation', () => {
+            const conversation = { ContextNumUnread: 0 };
+            expect(isUnread(conversation, '')).toBe(false);
+        });
+
+        it('should take the NumUnread property of a conversation', () => {
+            const conversation = { NumUnread: 0 };
+            expect(isUnread(conversation, '')).toBe(false);
+        });
+
+        it('should take the right label ContextNumUnread of a conversation', () => {
+            const LabelID = 'LabelID';
+            const conversation = {
+                ContextNumUnread: 1,
+                NumUnread: 0,
+                Labels: [{ ID: LabelID, ContextNumUnread: 1 } as ConversationLabel]
+            };
+            expect(isUnread(conversation, LabelID)).toBe(false);
         });
     });
 });

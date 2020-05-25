@@ -17,13 +17,14 @@ import { getSize, getLabelIDs } from '../../../helpers/elements';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 
 interface Props {
+    labelID: string;
     labels?: Label[];
     mailSettings: MailSettings;
     message: MessageExtended;
     messageViewIcons: MessageViewIcons;
 }
 
-const HeaderExpandedDetails = ({ labels, message, messageViewIcons, mailSettings }: Props) => {
+const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mailSettings }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [customFolders = []] = useFolders();
@@ -69,7 +70,7 @@ const HeaderExpandedDetails = ({ labels, message, messageViewIcons, mailSettings
                     <Icon name="calendar" className="mauto" alt={c('Label').t`Date:`} />
                 </span>
                 <span className="flex-self-vcenter mr0-5 ellipsis">
-                    <ItemDate element={message.data || {}} mode="full" />
+                    <ItemDate element={message.data} labelID={labelID} mode="full" />
                 </span>
             </div>
             <div className="mb0-5 flex flex-nowrap">

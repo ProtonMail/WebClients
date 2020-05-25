@@ -68,7 +68,7 @@ const MessageView = ({
     const messageLoaded = !!message.data?.Subject;
     const bodyLoaded = !!message.initialized;
     const sent = isSent(message.data);
-    const unread = isUnread(message.data);
+    const unread = isUnread(message.data, labelID);
 
     const messageViewIcons = useMemo<MessageViewIcons>(() => {
         if (sent) {
@@ -174,6 +174,7 @@ const MessageView = ({
                 </>
             ) : (
                 <HeaderCollapsed
+                    labelID={labelID}
                     message={message}
                     messageViewIcons={messageViewIcons}
                     mailSettings={mailSettings}

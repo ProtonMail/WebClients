@@ -16,6 +16,7 @@ import { Message } from '../../models/message';
 import ItemExpiration from './ItemExpiration';
 
 interface Props {
+    labelID: string;
     labels?: Label[];
     element: Element;
     mailSettings: any;
@@ -27,6 +28,7 @@ interface Props {
 }
 
 const ItemRowLayout = ({
+    labelID,
     labels,
     element,
     mailSettings = {},
@@ -57,7 +59,7 @@ const ItemRowLayout = ({
             </div>
             <span className="mtauto mbauto mr1 ml1 ng-binding">{size}</span>
             <span className="mauto">
-                <ItemDate element={element} className={unread ? 'bold' : undefined} />
+                <ItemDate element={element} labelID={labelID} className={unread ? 'bold' : undefined} />
             </span>
             <div className="mtauto mbauto ml0-5">
                 <ItemStar element={element} />

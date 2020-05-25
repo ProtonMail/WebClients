@@ -18,18 +18,19 @@ const FORMATERS = {
 // TODO: Update with a setInterval?
 
 interface Props {
-    element?: Element;
+    element: Element | undefined;
+    labelID: string;
     className?: string;
     mode?: FormaterType;
 }
 
-const ItemDate = ({ element = {}, className, mode = 'simple' }: Props) => {
+const ItemDate = ({ element, labelID, className, mode = 'simple' }: Props) => {
     const [formattedDate, setFormattedDate] = useState('');
 
     const formater = FORMATERS[mode] || FORMATERS.distance;
 
     useEffect(() => {
-        const update = () => setFormattedDate(formater(getDate(element)));
+        const update = () => setFormattedDate(formater(getDate(element, labelID)));
 
         update();
 

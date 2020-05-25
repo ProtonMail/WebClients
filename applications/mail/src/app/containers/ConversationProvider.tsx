@@ -35,7 +35,7 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
         cache.set(ID, result);
     };
 
-    return ({ Conversations }: Event) => {
+    return ({ Conversations, Messages }: Event) => {
         if (!Array.isArray(Conversations)) {
             return;
         }
@@ -48,18 +48,49 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
             if (Action === EVENT_ACTIONS.DELETE) {
                 cache.delete(ID);
             }
-            if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-                console.warn('Event type UPDATE_DRAFT on Conversation not supported', Conversations);
-            }
-            if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+            if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
                 const currentValue = cache.get(ID) as ConversationResult;
 
-                cache.set(ID, {
-                    Conversation: parseLabelIDsInEvent(currentValue.Conversation, Conversation),
-                    Messages: currentValue.Messages
-                });
+                // Try to update the conversation from event data without reloading it
+                try {
+                    const updatedConversation: Conversation = parseLabelIDsInEvent(
+                        currentValue.Conversation,
+                        Conversation
+                    );
+                    const updatedMessages = currentValue.Messages || [];
 
-                if (Conversation.NumMessages !== currentValue.Messages?.length) {
+                    Messages?.forEach(({ ID, Action, Message }) => {
+                        const index = updatedMessages.findIndex((currentMessage) => currentMessage.ID === ID);
+                        if (Action === EVENT_ACTIONS.DELETE && index !== -1) {
+                            updatedMessages.splice(index, 1);
+                        }
+                        if (
+                            Action === EVENT_ACTIONS.CREATE &&
+                            Message.ConversationID === currentValue.Conversation.ID
+                        ) {
+                            updatedMessages.push(Message);
+                        }
+                        if (
+                            (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) &&
+                            index !== -1
+                        ) {
+                            updatedMessages[index] = {
+                                ...updatedMessages[index],
+                                ...parseLabelIDsInEvent(updatedMessages[index], Message)
+                            };
+                        }
+                    });
+
+                    if (updatedConversation.NumMessages !== updatedMessages.length) {
+                        reloadConversation(ID);
+                    } else {
+                        cache.set(ID, {
+                            Conversation: updatedConversation,
+                            Messages: updatedMessages
+                        });
+                    }
+                } catch (error) {
+                    console.warn('Something went wrong on updating a conversation from an event.', error);
                     reloadConversation(ID);
                 }
             }

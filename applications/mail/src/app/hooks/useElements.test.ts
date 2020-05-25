@@ -1,12 +1,12 @@
 import { RenderHookResult } from '@testing-library/react-hooks';
 import { range } from 'proton-shared/lib/helpers/array';
-import { Label } from 'proton-shared/lib/interfaces/Label';
 import { queryConversations } from 'proton-shared/lib/api/conversations';
 
 import { useElements } from './useElements';
 import { Element } from '../models/element';
 import { Page, Sort, Filter, SearchParameters } from '../models/tools';
 import { renderHook, clearAll, addApiMock, api } from '../helpers/test/helper';
+import { ConversationLabel } from '../models/conversation';
 
 interface SetupArgs {
     elements?: Element[];
@@ -32,7 +32,7 @@ describe('useElements', () => {
     const getElements = (count: number, label = labelID): Element[] =>
         range(0, count).map((i) => ({
             ID: `id${i}`,
-            Labels: [{ ID: label, ContextTime: i }] as Label[],
+            Labels: [{ ID: label, ContextTime: i }] as ConversationLabel[],
             LabelIDs: [label]
         }));
 

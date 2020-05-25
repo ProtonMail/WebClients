@@ -16,6 +16,7 @@ import ItemExpiration from './ItemExpiration';
 import ItemAction from './ItemAction';
 
 interface Props {
+    labelID: string;
     labels?: Label[];
     element: Element;
     mailSettings: any;
@@ -27,6 +28,7 @@ interface Props {
 }
 
 const ItemColumnLayout = ({
+    labelID,
     labels,
     element,
     mailSettings = {},
@@ -48,7 +50,7 @@ const ItemColumnLayout = ({
                     </span>
                     <ItemAction element={element} className="ml0-5 mtauto mbauto" />
                 </div>
-                <ItemDate element={element} className={classnames([unread && 'bold'])} />
+                <ItemDate element={element} labelID={labelID} className={classnames([unread && 'bold'])} />
                 <span className="ml0-5 flex">
                     <ItemStar element={element} />
                 </span>

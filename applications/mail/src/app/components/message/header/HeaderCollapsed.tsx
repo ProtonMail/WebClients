@@ -16,6 +16,7 @@ import ItemExpiration from '../../list/ItemExpiration';
 import ItemAction from '../../list/ItemAction';
 
 interface Props {
+    labelID: string;
     message: MessageExtended;
     messageViewIcons?: MessageViewIcons;
     mailSettings: MailSettings;
@@ -27,6 +28,7 @@ interface Props {
 }
 
 const HeaderCollapsed = ({
+    labelID,
     message,
     messageViewIcons,
     mailSettings,
@@ -75,7 +77,7 @@ const HeaderCollapsed = ({
                 <span className="ml0-5 inline-flex">
                     <ItemLocation message={message.data} mailSettings={mailSettings} />
                 </span>
-                <ItemDate className="ml0-5" element={message.data || {}} />
+                <ItemDate className="ml0-5" element={message.data} labelID={labelID} />
                 <span className="ml0-5 inline-flex">
                     <ItemStar element={message.data} />
                 </span>

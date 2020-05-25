@@ -33,6 +33,7 @@ import { getStandardFolders } from '../../../helpers/labels';
 const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
 interface Props {
+    labelID: string;
     message: MessageExtended;
     messageLoaded: boolean;
     sourceMode: boolean;
@@ -41,7 +42,15 @@ interface Props {
     onSourceMode: (sourceMode: boolean) => void;
 }
 
-const HeaderMoreDropdown = ({ message, messageLoaded, sourceMode, onBack, onCollapse, onSourceMode }: Props) => {
+const HeaderMoreDropdown = ({
+    labelID,
+    message,
+    messageLoaded,
+    sourceMode,
+    onBack,
+    onCollapse,
+    onSourceMode
+}: Props) => {
     const api = useApi();
     const attachmentsCache = useAttachmentCache();
     const { call } = useEventManager();
@@ -94,14 +103,14 @@ const HeaderMoreDropdown = ({ message, messageLoaded, sourceMode, onBack, onColl
     const handleExport = async () => {
         // Angular/src/app/message/directives/actionMessage.js
         const { Subject = '' } = message.data || {};
-        const time = formatFileNameDate(getDate(message.data));
+        const time = formatFileNameDate(getDate(message.data, labelID));
         const blob = await exportBlob(message, attachmentsCache, api);
         const filename = `${Subject} ${time}.eml`;
         downloadFile(blob, filename);
     };
 
     const handlePrint = async () => {
-        createModal(<MessagePrintModal message={message as MessageExtendedWithData} />);
+        createModal(<MessagePrintModal message={message as MessageExtendedWithData} labelID={labelID} />);
     };
 
     const messageLabelIDs = message.data?.LabelIDs || [];
