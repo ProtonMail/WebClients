@@ -1,7 +1,10 @@
 $stroke-width: 3px !default; // be careful to udpate SVG if you want to update this value
 
+// this component is used for VPN
+// and for the moment on Angular/React sidebar
 .circle-chart__background {
-  stroke: var(--bgcolor-aside-link, rgba($white,.2));
+  stroke: var(--color-main-area, $pm-global-grey);
+  opacity: .2;
   stroke-width: $stroke-width;
   fill: transparent;
 }
@@ -25,8 +28,27 @@ $stroke-width: 3px !default; // be careful to udpate SVG if you want to update t
   stroke: $pm-global-warning;
 }
 .circle-chart__percent {
-  fill: var(--color-standard-text, $white);
+  fill: var(--color-main-area, rgba($pm-global-grey, .5) );
 }
+
+// dirty override => to remove when we remove sidebar and Angular
+.aside {
+	.circle-chart__background {
+		stroke: var(--bgcolor-aside-link, rgba($white,.2));
+		opacity: 1;
+	}
+	.circle-bar--medium .circle-chart__circle {
+		stroke: $pm-global-attention;
+	}
+	.circle-bar--full .circle-chart__circle {
+		stroke: $pm-global-warning;
+	}
+
+	.circle-chart__percent {
+		fill: var(--color-standard-text, $white);
+	}
+}
+
 .circle-chart-info {
   color: var(--color-standard-text, $pm-global-light);
 }
