@@ -1,20 +1,19 @@
-import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
-import React, { SyntheticEvent, useState, useEffect, useRef } from 'react';
-import { classnames, Icon, useGetEncryptionPreferences, useLoading, useModals } from 'react-components';
+import React, { SyntheticEvent, useEffect, useRef } from 'react';
+import { classnames, Icon, useGetEncryptionPreferences, useLoading, useModals, Tooltip } from 'react-components';
 import { c } from 'ttag';
-
 import { OpenPGPKey } from 'pmcrypto';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
+
 import getSendPreferences from '../../../helpers/message/getSendPreferences';
 import { recipientToInput, inputToRecipient } from '../../../helpers/addresses';
 import { getSendStatusIcon } from '../../../helpers/message/icon';
-
 import { Recipient } from '../../../models/address';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import { MessageSendInfo } from './AddressesInput';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
-import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
 import AskForKeyPinningModal from './AskForKeyPinningModal';
 
 const { INTERNAL_USER_PRIMARY_NOT_PINNED, WKD_USER_PRIMARY_NOT_PINNED } = EncryptionPreferencesFailureTypes;
@@ -27,24 +26,18 @@ interface Props {
     onRemove: () => void;
 }
 
-const validate = (emailAddress?: string | null): boolean => {
-    if (!emailAddress) {
-        return false;
-    }
-    const recipient = inputToRecipient(emailAddress);
-    return validateEmailAddress(recipient.Address || '');
-};
-
 const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, onRemove, ...rest }: Props) => {
     const emailAddress = recipient.Address;
-    const icon = messageSendInfo?.mapSendInfo[emailAddress]?.sendIcon;
+    const sendInfo = messageSendInfo?.mapSendInfo[emailAddress];
+    const icon = sendInfo?.sendIcon;
     const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL;
 
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading(!icon);
     const editableRef = useRef<HTMLSpanElement | null>(null);
-    const [valid, setValid] = useState<boolean>(validateEmailAddress(recipient.Address));
+
+    const valid = (sendInfo?.emailValidation && !sendInfo?.emailAddressWarnings?.length) || loading; // Loading to not show in red during validation
 
     const handleChange = (event: SyntheticEvent) => {
         if (!editableRef.current) {
@@ -56,7 +49,6 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
         if (!editableRef.current) {
             return;
         }
-        setValid(validate(editableRef.current.textContent));
         onChange(inputToRecipient(editableRef.current.textContent as string));
     };
     const handleRemove = () => {
@@ -69,7 +61,8 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
 
     useEffect(() => {
         const updateRecipientIcon = async (): Promise<void> => {
-            if (!emailAddress || !valid || icon || !messageSendInfo || !!messageSendInfo.mapSendInfo[emailAddress]) {
+            const emailValidation = validateEmailAddress(emailAddress);
+            if (!emailValidation || icon || !messageSendInfo || messageSendInfo.mapSendInfo[emailAddress]) {
                 return;
             }
             const { message, setMapSendInfo } = messageSendInfo;
@@ -98,8 +91,16 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
                 return await updateRecipientIcon();
             }
             const sendIcon = getSendStatusIcon(sendPreferences);
-            setMapSendInfo((mapSendInfo) => ({ ...mapSendInfo, [emailAddress]: { sendPreferences, sendIcon } }));
-            return;
+
+            setMapSendInfo((mapSendInfo) => ({
+                ...mapSendInfo,
+                [emailAddress]: {
+                    sendPreferences,
+                    sendIcon,
+                    emailValidation,
+                    emailAddressWarnings: encryptionPreferences.emailAddressWarnings || []
+                }
+            }));
         };
 
         const value = recipientToInput(recipient);
@@ -125,14 +126,16 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
                     <EncryptionStatusIcon loading={loading} {...icon} />
                 </span>
             )}
-            <span
-                className="composer-addresses-item-label mtauto mbauto pl0-5 ellipsis pr0-5"
-                contentEditable={onChange !== noop}
-                onKeyUp={handleChange}
-                onPaste={handleChange}
-                onBlur={handleBlur}
-                ref={editableRef}
-            />
+            <Tooltip title={sendInfo?.emailAddressWarnings?.join(', ')}>
+                <span
+                    className="composer-addresses-item-label mtauto mbauto pl0-5 ellipsis pr0-5"
+                    contentEditable={onChange !== noop}
+                    onKeyUp={handleChange}
+                    onPaste={handleChange}
+                    onBlur={handleBlur}
+                    ref={editableRef}
+                />
+            </Tooltip>
             <button
                 type="button"
                 className="composer-addresses-item-remove pm-button flex flex-item-noshrink"

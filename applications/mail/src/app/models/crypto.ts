@@ -57,6 +57,8 @@ export interface MapStatusIcons {
 export interface SendInfo {
     sendPreferences: SendPreferences;
     sendIcon?: StatusIcon;
+    emailValidation: boolean;
+    emailAddressWarnings?: string[];
 }
 
 export interface MapSendInfo {

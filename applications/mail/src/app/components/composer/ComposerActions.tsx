@@ -7,7 +7,7 @@ import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
 
 import AttachmentsButton from './attachments/AttachmentsButton';
-import { hasFlag, getAttachments } from '../../helpers/message/messages';
+import { hasFlag, getAttachments, getRecipients } from '../../helpers/message/messages';
 import { MESSAGE_FLAGS } from '../../constants';
 
 interface Props {
@@ -56,6 +56,7 @@ const ComposerActions = ({
     const isAttachments = getAttachments(message.data).length > 0;
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && message.data?.Password;
     const isExpiration = !!message.expiresIn;
+    const hasRecipients = getRecipients(message.data).length > 0;
 
     let dateMessage = '';
     if (syncInProgress) {
@@ -139,7 +140,12 @@ const ComposerActions = ({
                         <span className="sr-only">{c('Action').t`Save`}</span>
                     </Button>
                 </Tooltip>
-                <Button className="pm-button--primary composer-send-button" loading={lock} onClick={onSend}>
+                <Button
+                    className="pm-button--primary composer-send-button"
+                    disabled={!hasRecipients}
+                    loading={lock}
+                    onClick={onSend}
+                >
                     <span className="pl1 pr1">{buttonSendLabel}</span>
                 </Button>
             </div>

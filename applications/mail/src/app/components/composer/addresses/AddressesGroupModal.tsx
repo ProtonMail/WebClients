@@ -27,6 +27,7 @@ import { RequireSome } from '../../../models/utils';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { MessageSendInfo } from './AddressesInput';
 import AskForKeyPinningModal from './AskForKeyPinningModal';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 
 const { INTERNAL_USER_PRIMARY_NOT_PINNED, WKD_USER_PRIMARY_NOT_PINNED } = EncryptionPreferencesFailureTypes;
 const primaryKeyNotPinnedFailureTypes = [INTERNAL_USER_PRIMARY_NOT_PINNED, WKD_USER_PRIMARY_NOT_PINNED] as any[];
@@ -90,7 +91,9 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
         const loadSendIcon = async ({ emailAddress, contactID, abortController, checkForFailure }: Params) => {
             const { signal } = abortController;
             const icon = messageSendInfo?.mapSendInfo[emailAddress]?.sendIcon;
+            const emailValidation = validateEmailAddress(emailAddress);
             if (
+                !emailValidation ||
                 !emailAddress ||
                 icon ||
                 !messageSendInfo ||
@@ -104,7 +107,15 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
             const sendIcon = getSendStatusIcon(sendPreferences);
             !signal.aborted &&
-                setMapSendInfo((mapSendInfo) => ({ ...mapSendInfo, [emailAddress]: { sendPreferences, sendIcon } }));
+                setMapSendInfo((mapSendInfo) => ({
+                    ...mapSendInfo,
+                    [emailAddress]: {
+                        sendPreferences,
+                        sendIcon,
+                        emailValidation,
+                        emailAddressWarnings: encryptionPreferences.emailAddressWarnings || []
+                    }
+                }));
             !signal.aborted && setMapLoading((loadingMap) => ({ ...loadingMap, [emailAddress]: false }));
             if (checkForFailure && primaryKeyNotPinnedFailureTypes.includes(sendPreferences.failure?.type)) {
                 return {

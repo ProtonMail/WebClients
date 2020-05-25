@@ -18,9 +18,9 @@ import { openNewTab } from 'proton-shared/lib/helpers/browser';
 import performRequest from 'proton-shared/lib/fetch/fetch';
 
 import { getListUnsubscribe, getListUnsubscribePost, getOriginalTo } from '../../../helpers/message/messages';
-import { MessageExtended, PartialMessageExtended } from '../../../models/message';
+import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from '../../../models/message';
 import { useMessage } from '../../../hooks/useMessage';
-import { useSendMessage } from '../../../hooks/useSendMessage';
+import { useSendMessage, useSendVerifications } from '../../../hooks/useSendMessage';
 import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
 import { getSearchParams } from '../../../helpers/url';
 import { removeEmailAlias } from '../../../helpers/addresses';
@@ -37,6 +37,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const { createModal } = useModals();
     const [addresses] = useAddresses();
     const { addAction } = useMessage(message.localID);
+    const sendVerification = useSendVerifications();
     const sendMessage = useSendMessage();
     const messageCache = useMessageCache();
     const [loading, withLoading] = useLoading();
@@ -74,7 +75,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             const [value] = matches;
 
             if (value.startsWith('mailto:')) {
-                const [toAddress = '', search = ''] = value.replace('mailto:', '').split('?');
+                const [toAddress, search = ''] = value.replace('mailto:', '').split('?');
                 const { subject = 'Unsubscribe', body = 'Please, unsubscribe me' } = getSearchParams({
                     search
                 } as Location);
@@ -83,19 +84,21 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                     ParentID: message.data?.ID,
                     localID: generateUID('unsubscribe'),
                     plainText: body,
+                    publicKeys: message.publicKeys,
+                    privateKeys: message.privateKeys,
                     data: {
                         AddressID: address.ID,
                         Subject: subject,
-                        Sender: { Address: toAddress, Name: address.DisplayName },
-                        ToList: [{ Address: senderAddress, Name: senderName ? senderName : senderAddress }],
+                        Sender: { Address: address.Email, Name: address.DisplayName },
+                        ToList: [{ Address: toAddress, Name: toAddress }],
                         CCList: [],
                         BCCList: [],
                         MIMEType: MIME_TYPES.PLAINTEXT
                     }
                 };
-                await addAction(() =>
-                    sendMessage(inputMessage as MessageExtended & Required<Pick<MessageExtended, 'data'>>)
-                );
+
+                const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageExtendedWithData);
+                await addAction(() => sendMessage(cleanMessage, mapSendPrefs));
             } else if (value.startsWith('http')) {
                 if (oneClick) {
                     // NOTE Exist with MailChimp but has CORS issue

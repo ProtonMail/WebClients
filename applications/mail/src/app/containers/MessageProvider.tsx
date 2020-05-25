@@ -34,7 +34,7 @@ export const updateMessageCache = (
     localID: string,
     data: PartialMessageExtended
 ): MessageExtended => {
-    const existingMessage = messageCache.get(localID) as MessageExtended;
+    const existingMessage = messageCache.get(localID);
     const newMessage = mergeMessages(existingMessage, data);
     messageCache.set(localID, newMessage);
     return newMessage;

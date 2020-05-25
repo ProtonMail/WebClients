@@ -20,7 +20,7 @@ import { useHandler } from '../../hooks/useHandler';
 import { useMessage } from '../../hooks/useMessage';
 import { useInitializeMessage } from '../../hooks/useMessageReadActions';
 import { useCreateDraft, useSaveDraft, useDeleteDraft } from '../../hooks/useMessageWriteActions';
-import { useSendMessage } from '../../hooks/useSendMessage';
+import { useSendMessage, useSendVerifications } from '../../hooks/useSendMessage';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { useAttachments } from '../../hooks/useAttachments';
 import { getDate } from '../../helpers/elements';
@@ -118,6 +118,7 @@ const Composer = ({
     const initialize = useInitializeMessage(syncedMessage.localID);
     const createDraft = useCreateDraft();
     const saveDraft = useSaveDraft();
+    const sendVerifications = useSendVerifications();
     const sendMessage = useSendMessage();
     const deleteDraft = useDeleteDraft(syncedMessage);
 
@@ -260,11 +261,10 @@ const Composer = ({
     };
     const handleSend = async () => {
         setSending(true);
-        autoSave.abort?.();
         try {
-            await addAction(() =>
-                sendMessage(modelMessage as MessageExtended & Required<Pick<MessageExtended, 'data'>>)
-            );
+            const { cleanMessage, mapSendPrefs } = await sendVerifications(modelMessage as MessageExtendedWithData);
+            autoSave.abort?.();
+            await addAction(() => sendMessage(cleanMessage, mapSendPrefs));
             createNotification({ text: c('Success').t`Message sent` });
             onClose();
         } catch {

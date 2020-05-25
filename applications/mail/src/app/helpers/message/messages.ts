@@ -245,14 +245,17 @@ export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
 /**
  * Apply updates from the message model to the message in state
  */
-export const mergeMessages = (messageState: MessageExtended, messageModel: PartialMessageExtended): MessageExtended => {
-    if (messageState.document && messageModel.document) {
+export const mergeMessages = (
+    messageState: MessageExtended | undefined,
+    messageModel: PartialMessageExtended
+): MessageExtended => {
+    if (messageState?.document && messageModel.document) {
         setContent(messageState, getContent(messageModel));
     }
     return {
         ...messageState,
         ...messageModel,
-        data: { ...messageState.data, ...messageModel.data } as Message,
-        errors: { ...messageState.errors, ...messageModel.errors }
-    };
+        data: { ...messageState?.data, ...messageModel.data } as Message,
+        errors: { ...messageState?.errors, ...messageModel.errors }
+    } as MessageExtended;
 };
