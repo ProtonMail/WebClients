@@ -241,19 +241,31 @@ function useDrive() {
         return linkMetas;
     };
 
-    const fetchNextFolderContents = async (shareId: string, linkId: string) => {
-        const listedChildren = cache.get.listedChildLinks(shareId, linkId) || [];
+    const fetchNextFolderContents = async (
+        shareId: string,
+        linkId: string,
+        sortParams?: { sortField: string; sortOrder: string }
+    ) => {
+        const listedChildren = cache.get.listedChildLinks(shareId, linkId, sortParams) || [];
 
         const PageSize = FOLDER_PAGE_SIZE;
         const Page = Math.floor(listedChildren.length / PageSize);
+        const SortField = sortParams?.sortField;
+        const SortOrder = sortParams?.sortOrder;
 
         const { Links } = await debouncedRequest<LinkChildrenResult>(
-            queryFolderChildren(shareId, linkId, { Page, PageSize })
+            queryFolderChildren(shareId, linkId, { Page, PageSize, SortField, SortOrder })
         );
         const { privateKey } = linkId ? await getLinkKeys(shareId, linkId) : await getShareKeys(shareId);
 
         const decryptedLinks = await Promise.all(Links.map((link) => decryptLink(link, privateKey)));
-        cache.set.childLinkMetas(decryptedLinks, shareId, linkId, Links.length < PageSize ? 'complete' : 'incremental');
+        cache.set.childLinkMetas(
+            decryptedLinks,
+            shareId,
+            linkId,
+            Links.length < PageSize ? 'complete' : 'incremental',
+            sortParams
+        );
     };
 
     const fetchAllFolderPages = async (shareId: string, linkId: string) => {

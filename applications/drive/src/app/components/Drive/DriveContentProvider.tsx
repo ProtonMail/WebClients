@@ -1,14 +1,22 @@
 import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
+
+import { useSortedList } from 'react-components';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import useFileBrowser from '../FileBrowser/useFileBrowser';
 import useDrive from '../../hooks/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder, useDriveActiveFolder } from './DriveFolderProvider';
 import { mapLinksToChildren } from './helpers';
+import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../../constants';
+
+export type SortKeys = keyof Pick<FileBrowserItem, 'MimeType' | 'Modified' | 'Size'>;
 
 interface DriveContentProviderState {
     contents: FileBrowserItem[];
     loadNextPage: () => void;
+    setSorting: (sortField: SortKeys, sortOrder: SORT_DIRECTION) => void;
     fileBrowserControls: ReturnType<typeof useFileBrowser>;
     loading: boolean;
     initialized: boolean;
@@ -28,11 +36,21 @@ const DriveContentProviderInner = ({
     const { fetchNextFolderContents } = useDrive();
     const [initialized, setInitialized] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [sortParams, setSortParams] = useState({
+        sortField: DEFAULT_SORT_FIELD as SortKeys,
+        sortOrder: DEFAULT_SORT_ORDER
+    });
     const [, setError] = useState();
 
-    const contents = mapLinksToChildren(cache.get.childLinkMetas(shareId, linkId) || []);
-    const complete = cache.get.childrenComplete(shareId, linkId);
-    const fileBrowserControls = useFileBrowser(contents);
+    const list = mapLinksToChildren(cache.get.childLinkMetas(shareId, linkId, sortParams) || []);
+    const complete = cache.get.childrenComplete(shareId, linkId, sortParams);
+
+    const { sortedList, setSort } = useSortedList<FileBrowserItem>(list, {
+        key: sortParams.sortField,
+        direction: sortParams.sortOrder
+    });
+
+    const fileBrowserControls = useFileBrowser(sortedList);
     const abortSignal = useRef<AbortSignal>();
     const contentLoading = useRef(false);
 
@@ -47,14 +65,14 @@ const DriveContentProviderInner = ({
         const signal = abortSignal.current;
 
         try {
-            await fetchNextFolderContents(shareId, linkId);
+            await fetchNextFolderContents(shareId, linkId, sortParams);
             if (!signal?.aborted) {
                 contentLoading.current = false;
                 setLoading(false);
                 setInitialized(true);
             }
         } catch (e) {
-            const children = cache.get.childLinks(shareId, linkId);
+            const children = cache.get.childLinks(shareId, linkId, sortParams);
 
             if (signal?.aborted) {
                 return;
@@ -69,7 +87,12 @@ const DriveContentProviderInner = ({
                 setLoading(false);
             }
         }
-    }, [shareId, linkId]);
+    }, [shareId, linkId, sortParams]);
+
+    const setSorting = async (sortField: SortKeys, sortOrder: SORT_DIRECTION) => {
+        setSortParams({ sortField, sortOrder });
+        setSort(sortField, sortOrder);
+    };
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -97,7 +120,8 @@ const DriveContentProviderInner = ({
                 loading,
                 fileBrowserControls,
                 loadNextPage,
-                contents,
+                setSorting,
+                contents: sortedList,
                 complete,
                 initialized
             }}

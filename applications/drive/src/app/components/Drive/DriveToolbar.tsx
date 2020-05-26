@@ -19,6 +19,7 @@ import { DriveFolder } from './DriveFolderProvider';
 import { LinkType } from '../../interfaces/link';
 import { isPreviewAvailable } from '../FilePreview/FilePreview';
 import runInQueue from '../../utils/runInQueue';
+import SortDropdown from './SortDropdown';
 
 const MAX_THREADS_PER_MOVE = 5;
 
@@ -356,6 +357,8 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
             <ToolbarSeparator />
 
             {renderSelectionActions()}
+
+            <SortDropdown className="mlauto" />
         </Toolbar>
     );
 };
