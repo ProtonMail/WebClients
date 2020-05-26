@@ -1,5 +1,5 @@
 import React, { ReactNode, useState, useCallback, SyntheticEvent } from 'react';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import dragdropImageSvg from 'design-system/assets/img/pd-images/drag-and-drop.svg';
 
@@ -16,7 +16,6 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
     const { folder } = useDriveActiveFolder();
     const { uploadDriveFiles } = useFiles();
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
-    const [fileCount, setFileCount] = useState(0);
 
     const overlayEnabled = !!folder?.shareId && !disabled;
 
@@ -29,14 +28,8 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
             if (overlayIsVisible !== overlayEnabled) {
                 setOverlayIsVisible(overlayEnabled);
             }
-
-            const draggedFileCount = e.dataTransfer.items.length;
-
-            if (fileCount !== draggedFileCount) {
-                setFileCount(draggedFileCount);
-            }
         },
-        [overlayEnabled, overlayIsVisible, fileCount]
+        [overlayEnabled, overlayIsVisible]
     );
 
     const handleDragLeave = useCallback(() => {
@@ -119,13 +112,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                     <section className="pd-drag-drop-infobox p2">
                         <img className="pd-drag-drop-image" src={dragdropImageSvg} alt="" aria-hidden="true" />
                         <h2 className="bold m0">{c('Title').t`Drop to upload`}</h2>
-                        <p className="m0">
-                            {c('Info').ngettext(
-                                msgid`Your file will be encrypted and then saved.`,
-                                `Your files will be encrypted and then saved.`,
-                                fileCount
-                            )}
-                        </p>
+                        <p className="m0">{c('Info').t`Your files will be encrypted and then saved.`}</p>
                     </section>
                 </div>
             )}
