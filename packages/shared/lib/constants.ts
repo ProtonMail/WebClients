@@ -502,8 +502,8 @@ export enum TWO_FA_CONFIG {
 }
 
 export enum SORT_DIRECTION {
-    ASC = 'ascending',
-    DESC = 'descending'
+    ASC = 'ASC',
+    DESC = 'DESC'
 }
 
 export enum SERVER_FEATURES {
