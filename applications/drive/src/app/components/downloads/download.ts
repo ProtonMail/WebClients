@@ -11,8 +11,8 @@ import { areUint8Arrays } from '../../utils/array';
 import { TransferCancel } from '../../interfaces/transfer';
 import runInQueue from '../../utils/runInQueue';
 import { waitUntil } from '../../utils/async';
+import { MAX_THREADS_PER_DOWNLOAD } from '../../constants';
 
-const MAX_THREADS_PER_DOWNLOAD = 3;
 const MAX_TOTAL_BUFFER_SIZE = 10; // number of blocks
 const DOWNLOAD_TIMEOUT = 60000;
 

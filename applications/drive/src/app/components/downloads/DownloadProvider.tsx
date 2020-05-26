@@ -3,7 +3,7 @@ import { TransferState, TransferProgresses, TransferMeta } from '../../interface
 import { initDownload, DownloadControls, DownloadCallbacks } from './download';
 import { useApi, generateUID } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
-import { FILE_CHUNK_SIZE } from '../../constants';
+import { FILE_CHUNK_SIZE, MAX_THREADS_PER_DOWNLOAD } from '../../constants';
 
 const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
 
@@ -92,10 +92,11 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     useEffect(() => {
         const activeDownloads = downloads.filter(({ state }) => state === TransferState.Progress);
         const nextPending = downloads.find(({ state }) => state === TransferState.Pending);
-        const downloadLoad = activeDownloads.reduce(
-            (load, download) => load + Math.floor((download.meta.size ?? 0) / FILE_CHUNK_SIZE) + 1,
-            0
-        );
+        const downloadLoad = activeDownloads.reduce((load, download) => {
+            const chunks = Math.floor((download.meta.size ?? 0) / FILE_CHUNK_SIZE) + 1;
+            const loadIncrease = Math.min(MAX_THREADS_PER_DOWNLOAD, chunks); // At most X threads are active at a time
+            return load + loadIncrease;
+        }, 0);
 
         if (downloadLoad < MAX_DOWNLOAD_LOAD && nextPending) {
             const { id } = nextPending;
