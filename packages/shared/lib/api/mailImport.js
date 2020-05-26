@@ -4,6 +4,11 @@ export const queryMailImport = () => ({
     method: 'get'
 });
 
+export const queryMailImportCurrent = () => ({
+    url: 'mail/import/current',
+    method: 'get'
+});
+
 export const getAuthenticationMethod = (params) => ({
     url: 'mail/import/authinfo',
     method: 'get',
@@ -20,11 +25,6 @@ export const updateMailImport = (importID, data) => ({
     url: `mail/import/${importID}`,
     method: 'put',
     data
-});
-
-export const checkMailImport = (importID) => ({
-    url: `mail/import/${importID}/check`,
-    method: 'get'
 });
 
 export const createJobImport = (importID, data) => ({
