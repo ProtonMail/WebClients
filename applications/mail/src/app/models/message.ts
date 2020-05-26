@@ -28,7 +28,6 @@ export interface Message {
     Size: number;
     NumAttachments: number;
     ExpirationTime?: number;
-    SpamScore?: number;
     AddressID: string;
     ExternalID: string;
     Body: any;

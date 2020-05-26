@@ -76,7 +76,9 @@ export const MESSAGE_FLAGS = {
     // For drafts only
     FLAG_RECEIPT_REQUEST: 65536, // whether to request a read receipt for the message
     FLAG_PUBLIC_KEY: 131072, // whether to attach the public key
-    FLAG_SIGN: 262144 // whether to sign the message
+    FLAG_SIGN: 262144, // whether to sign the message
+    FLAG_PHISHING_AUTO: 1 << 30,
+    FLAG_DMARC_FAIL: 1 << 26
 };
 
 export enum VERIFICATION_STATUS {

@@ -1,28 +1,19 @@
 import React from 'react';
 import { Icon, Href } from 'react-components';
 import { c } from 'ttag';
-import { SPAM_SCORE } from 'proton-shared/lib/constants';
+import { hasBit } from 'proton-shared/lib/helpers/bitset';
 
 import { MessageExtended } from '../../../models/message';
+import { MESSAGE_FLAGS } from '../../../constants';
 
 interface Props {
     message: MessageExtended;
 }
 
 const ExtraSpamScore = ({ message }: Props) => {
-    const { SpamScore } = message.data || {};
+    const { Flags } = message.data || {};
 
-    if (SpamScore === SPAM_SCORE.PM_SPOOFED) {
-        return (
-            <div className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap">
-                <Icon name="spam" className="flex-item-noshrink mtauto mbauto" />
-                <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info')
-                    .t`This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!`}</span>
-            </div>
-        );
-    }
-
-    if (SpamScore === SPAM_SCORE.DMARC_FAILED) {
+    if (hasBit(Flags, MESSAGE_FLAGS.FLAG_DMARC_FAIL)) {
         return (
             <div className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap">
                 <Icon name="spam" className="flex-item-noshrink mtauto mbauto" />
@@ -40,7 +31,7 @@ const ExtraSpamScore = ({ message }: Props) => {
         );
     }
 
-    if (SpamScore === SPAM_SCORE.PHISHING) {
+    if (hasBit(Flags, MESSAGE_FLAGS.FLAG_PHISHING_AUTO)) {
         return (
             <div className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap">
                 <Icon name="spam" className="flex-item-noshrink mtauto mbauto" />
