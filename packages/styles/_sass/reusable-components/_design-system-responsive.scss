@@ -144,20 +144,23 @@
 	&flex-shrink {
 		flex-shrink: 1;
 	}
+	&min-w100 {
+      min-width: 100%;
+    }
     &wauto {
       width: auto;
     }
     &w25{
       width: 25%;
+	}
+	&w100 {
+      width: 100%;
     }
+	&mw95{
+		max-width: 95%;
+	}
     &flex-wrap {
       flex-wrap: wrap;
-    }
-    &min-w100 {
-      min-width: 100%;
-    }
-    &w100 {
-      width: 100%;
     }
     &static {
       position: static;
