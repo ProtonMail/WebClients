@@ -3,15 +3,14 @@ import { enums } from 'openpgp';
 import { c } from 'ttag';
 import { createDraft, updateDraft } from 'proton-shared/lib/api/messages';
 import { Api } from 'proton-shared/lib/interfaces';
-import { MESSAGE_ACTIONS } from '../../constants';
 
+import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageExtended, Message } from '../../models/message';
 import { mutateHTMLCid } from '../embedded/embeddedParser';
 import { find } from '../embedded/embeddedFinder';
 import { isPlainText, getAttachments } from './messages';
 import { getDocumentContent, getPlainTextContent } from './messageContent';
 import { getSessionKey } from '../attachment/attachmentLoader';
-import { wait } from 'proton-shared/lib/helpers/promise';
 import { constructMime } from '../send/sendMimeBuilder';
 import { splitMail, combineHeaders } from '../mail';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
@@ -97,14 +96,17 @@ export const createMessage = async (
 
 export const updateMessage = async (
     message: MessageExtended,
+    senderHasChanged: boolean,
     api: Api,
     updateStatus: (status: string) => void
 ): Promise<Message> => {
     updateStatus(c('Info').t`Encrypting`);
     const { encrypted: Body } = await prepareAndEncryptBody(message);
+    const AttachmentKeyPackets = senderHasChanged ? await encryptAttachmentKeyPackets(message) : undefined;
     updateStatus(c('Info').t`Saving`);
-    await wait(2000);
-    const { Message: updatedMessage } = await api(updateDraft(message.data?.ID, { ...message.data, Body }));
+    const { Message: updatedMessage } = await api(
+        updateDraft(message.data?.ID, { ...message.data, Body }, AttachmentKeyPackets)
+    );
     return updatedMessage;
 };
 

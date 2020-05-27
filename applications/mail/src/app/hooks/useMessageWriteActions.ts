@@ -25,19 +25,18 @@ export const useCreateDraft = () => {
     const api = useApi();
     const messageCache = useMessageCache();
     const { call } = useEventManager();
-    const getKeys = useMessageKeys();
+    const getMessageKeys = useMessageKeys();
 
     return useCallback(async (message: MessageExtendedWithData) => {
-        const { publicKeys, privateKeys } = await getKeys(message);
+        const messageKeys = await getMessageKeys(message);
         const newMessage = await createMessage(
-            { ...message, publicKeys, privateKeys },
+            { ...message, ...messageKeys },
             api,
             getUpdateStatus(messageCache, message.localID)
         );
         updateMessageCache(messageCache, message.localID, {
             data: mergeSavedMessage(message.data, newMessage),
-            publicKeys,
-            privateKeys
+            ...messageKeys
         });
         await call();
     }, []);
@@ -47,11 +46,21 @@ export const useSaveDraft = () => {
     const api = useApi();
     const messageCache = useMessageCache();
     const { call } = useEventManager();
+    const getMessageKeys = useMessageKeys();
 
     return useCallback(async (message: MessageExtendedWithData) => {
         const messageFromCache = messageCache.get(message.localID) as MessageExtended;
-        const messageToSave = mergeMessages(messageFromCache, message);
-        const newMessage = await updateMessage(messageToSave, api, getUpdateStatus(messageCache, message.localID));
+        const senderHasChanged = messageFromCache.data?.Sender.Address !== message.data?.Sender.Address;
+        const messageKeys = senderHasChanged
+            ? await getMessageKeys({ ...message, publicKeys: undefined, privateKeys: undefined })
+            : {};
+        const messageToSave = mergeMessages(messageFromCache, { ...message, ...messageKeys });
+        const newMessage = await updateMessage(
+            messageToSave,
+            senderHasChanged,
+            api,
+            getUpdateStatus(messageCache, message.localID)
+        );
         updateMessageCache(messageCache, message.localID, { data: mergeSavedMessage(message.data, newMessage) });
         await call();
     }, []);

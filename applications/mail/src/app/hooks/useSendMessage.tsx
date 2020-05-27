@@ -175,7 +175,9 @@ export const useSendMessage = () => {
             // Prepare and save draft
             let Message;
             if (inputMessage.data.ID) {
-                Message = await updateMessage(inputMessage, api, noop);
+                const messageFromCache = messageCache.get(inputMessage.localID);
+                const senderHasChanged = messageFromCache?.data?.Sender.Address !== inputMessage.data?.Sender.Address;
+                Message = await updateMessage(inputMessage, senderHasChanged, api, noop);
             } else {
                 Message = await createMessage(inputMessage, api, noop);
             }
