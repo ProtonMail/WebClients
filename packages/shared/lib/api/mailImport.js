@@ -9,10 +9,20 @@ export const queryMailImportCurrent = () => ({
     method: 'get'
 });
 
+export const queryMailImportReport = () => ({
+    url: 'mail/import/report',
+    method: 'get'
+});
+
 export const getAuthenticationMethod = (params) => ({
     url: 'mail/import/authinfo',
     method: 'get',
     params
+});
+
+export const downloadMailImportReport = (reportID) => ({
+    url: `mail/import/report/${reportID}/download`,
+    method: 'get'
 });
 
 export const createMailImport = (data) => ({
@@ -25,6 +35,16 @@ export const updateMailImport = (importID, data) => ({
     url: `mail/import/${importID}`,
     method: 'put',
     data
+});
+
+export const resumeMailImport = (importID) => ({
+    url: `mail/import/${importID}/resume`,
+    method: 'put'
+});
+
+export const cancelMailImport = (importID) => ({
+    url: `mail/import/${importID}/cancel`,
+    method: 'put'
 });
 
 export const createJobImport = (importID, data) => ({
