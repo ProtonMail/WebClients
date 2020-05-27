@@ -28,6 +28,7 @@ import { validateLinkName, ValidationError } from '../utils/validation';
 import { lookup } from 'mime-types';
 import { ShareEvent, useDriveEventManager } from '../components/DriveEventManager/DriveEventManagerProvider';
 import useDebouncedPromise from './useDebouncedPromise';
+import useQueuedFunction from './useQueuedFunction';
 
 interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
@@ -40,6 +41,7 @@ const { CREATE, DELETE, TRASH, UPDATE, UPDATE_CONTENT, RESTORE, MOVE } = EVENT_T
 function useDrive() {
     const cache = useDriveCache();
     const { getShareEventManager, createShareEventManager } = useDriveEventManager();
+    const queuedFunction = useQueuedFunction();
     const { createModal } = useModals();
     const { getPrimaryAddressKey, getVerificationKeys } = useDriveCrypto();
     const debouncedRequest = useDebouncedPromise();
@@ -314,52 +316,56 @@ function useDrive() {
         );
     };
 
-    const createNewFolder = async (shareId: string, ParentLinkID: string, name: string) => {
-        // Name Hash is generated from LC, for case-insensitive duplicate detection
-        const error = validateLinkName(name);
-        const lowerCaseName = name.toLowerCase();
+    const createNewFolder = queuedFunction(
+        'createNewFolder',
+        async (shareId: string, ParentLinkID: string, name: string) => {
+            // Name Hash is generated from LC, for case-insensitive duplicate detection
+            const error = validateLinkName(name);
+            const lowerCaseName = name.toLowerCase();
 
-        if (error) {
-            throw new ValidationError(error);
-        }
+            if (error) {
+                throw new ValidationError(error);
+            }
 
-        const [parentKeys, { privateKey: addressKey, address }] = await Promise.all([
-            getLinkKeys(shareId, ParentLinkID),
-            getPrimaryAddressKey()
-        ]);
+            const [parentKeys, { privateKey: addressKey, address }] = await Promise.all([
+                getLinkKeys(shareId, ParentLinkID),
+                getPrimaryAddressKey()
+            ]);
 
-        if (!('hashKey' in parentKeys)) {
-            throw new Error('Missing hash key on folder link');
-        }
+            if (!('hashKey' in parentKeys)) {
+                throw new Error('Missing hash key on folder link');
+            }
 
-        const [
-            Hash,
-            { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature },
-            encryptedName
-        ] = await Promise.all([
-            generateLookupHash(lowerCaseName, parentKeys.hashKey),
-            generateNodeKeys(parentKeys.privateKey, addressKey),
-            encryptUnsigned({
-                message: name,
-                publicKey: parentKeys.privateKey.toPublic()
-            })
-        ]);
-
-        const { NodeHashKey: NodeHashKey } = await generateNodeHashKey(privateKey.toPublic());
-
-        return debouncedRequest<{ Folder: { ID: string } }>(
-            queryCreateFolder(shareId, {
+            const [
                 Hash,
-                NodeHashKey,
-                Name: encryptedName,
-                NodeKey,
-                NodePassphrase,
-                NodePassphraseSignature,
-                SignatureAddressID: address.ID,
-                ParentLinkID
-            })
-        );
-    };
+                { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature },
+                encryptedName
+            ] = await Promise.all([
+                generateLookupHash(lowerCaseName, parentKeys.hashKey),
+                generateNodeKeys(parentKeys.privateKey, addressKey),
+                encryptUnsigned({
+                    message: name,
+                    publicKey: parentKeys.privateKey.toPublic()
+                })
+            ]);
+
+            const { NodeHashKey: NodeHashKey } = await generateNodeHashKey(privateKey.toPublic());
+
+            return debouncedRequest<{ Folder: { ID: string } }>(
+                queryCreateFolder(shareId, {
+                    Hash,
+                    NodeHashKey,
+                    Name: encryptedName,
+                    NodeKey,
+                    NodePassphrase,
+                    NodePassphraseSignature,
+                    SignatureAddressID: address.ID,
+                    ParentLinkID
+                })
+            );
+        },
+        5
+    );
 
     const moveLink = async (shareId: string, ParentLinkID: string, linkId: string) => {
         // eslint-disable-next-line @typescript-eslint/no-use-before-define

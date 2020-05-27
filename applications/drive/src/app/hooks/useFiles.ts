@@ -57,60 +57,64 @@ function useFiles() {
     const [{ MaxSpace, UsedSpace }] = useUser();
     const { call } = useEventManager();
 
-    const findAvailableName = async (
-        shareId: string,
-        parentLinkID: string,
-        filename: string,
-        start = 0
-    ): Promise<{ filename: string; hash: string }> => {
-        const parentKeys = await getLinkKeys(shareId, parentLinkID);
+    const findAvailableName = queuedFunction(
+        'findAvailableName',
+        async (
+            shareId: string,
+            parentLinkID: string,
+            filename: string,
+            start = 0
+        ): Promise<{ filename: string; hash: string }> => {
+            const parentKeys = await getLinkKeys(shareId, parentLinkID);
 
-        if (!('hashKey' in parentKeys)) {
-            throw Error('Missing hash key on folder link');
-        }
-
-        const [namePart, extension] = splitExtension(filename);
-
-        const adjustName = (i: number) => {
-            if (i === 0) {
-                return filename;
+            if (!('hashKey' in parentKeys)) {
+                throw Error('Missing hash key on folder link');
             }
 
-            if (!namePart) {
-                return [`.${extension}`, `(${i})`].filter(isTruthy).join(' ');
+            const [namePart, extension] = splitExtension(filename);
+
+            const adjustName = (i: number) => {
+                if (i === 0) {
+                    return filename;
+                }
+
+                if (!namePart) {
+                    return [`.${extension}`, `(${i})`].filter(isTruthy).join(' ');
+                }
+
+                const newNamePart = [namePart, `(${i})`].filter(isTruthy).join(' ');
+                return extension ? [newNamePart, extension].join('.') : newNamePart;
+            };
+
+            const hashesToCheck = await Promise.all(
+                range(start, start + HASH_CHECK_AMOUNT).map(async (i) => {
+                    const adjustedFileName = adjustName(i);
+                    return {
+                        filename: adjustedFileName,
+                        hash: await generateLookupHash(adjustedFileName.toLowerCase(), parentKeys.hashKey)
+                    };
+                })
+            );
+
+            const Hashes = hashesToCheck.map(({ hash }) => hash);
+            const { AvailableHashes } = await debouncedRequest<HashCheckResult>(
+                queryCheckAvailableHashes(shareId, parentLinkID, { Hashes })
+            );
+
+            if (!AvailableHashes.length) {
+                return findAvailableName(shareId, parentLinkID, filename, start + HASH_CHECK_AMOUNT);
             }
 
-            const newNamePart = [namePart, `(${i})`].filter(isTruthy).join(' ');
-            return extension ? [newNamePart, extension].join('.') : newNamePart;
-        };
+            const availableName = hashesToCheck.find(({ hash }) => hash === AvailableHashes[0]);
 
-        const hashesToCheck = await Promise.all(
-            range(start, start + HASH_CHECK_AMOUNT).map(async (i) => {
-                const adjustedFileName = adjustName(i);
-                return {
-                    filename: adjustedFileName,
-                    hash: await generateLookupHash(adjustedFileName.toLowerCase(), parentKeys.hashKey)
-                };
-            })
-        );
+            if (!availableName) {
+                throw new Error('Backend returned unexpected hash');
+            }
 
-        const Hashes = hashesToCheck.map(({ hash }) => hash);
-        const { AvailableHashes } = await debouncedRequest<HashCheckResult>(
-            queryCheckAvailableHashes(shareId, parentLinkID, { Hashes })
-        );
-
-        if (!AvailableHashes.length) {
-            return findAvailableName(shareId, parentLinkID, filename, start + HASH_CHECK_AMOUNT);
-        }
-
-        const availableName = hashesToCheck.find(({ hash }) => hash === AvailableHashes[0]);
-
-        if (!availableName) {
-            throw new Error('Backend returned unexpected hash');
-        }
-
-        return availableName;
-    };
+            return availableName;
+        },
+        5
+    );
 
     const generateRootHash = useCallback(
         async (PreviousRootHash: string | null, blockMeta: BlockMeta[]) => {
