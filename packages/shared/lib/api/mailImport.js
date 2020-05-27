@@ -14,6 +14,11 @@ export const queryMailImportReport = () => ({
     method: 'get'
 });
 
+export const getMailImport = (importID) => ({
+    url: `mail/import/${importID}`,
+    method: 'get'
+});
+
 export const getMailImportFolders = (importID) => ({
     url: `mail/import/${importID}/folders`,
     method: 'get'
