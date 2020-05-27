@@ -85,7 +85,7 @@ export const useInitializeMessage = (localID: string) => {
         try {
             message = await loadMessage(messageFromCache, api);
             // const { apiKeys, pinnedKeys, isContactSignatureVerified } = await getEncryptionPreferences(
-            encryptionPreferences = await getEncryptionPreferences(message.data.Sender.Address as string);
+            encryptionPreferences = await getEncryptionPreferences(message.data.Sender.Address as string, true);
             userKeys = await getMessageKeys(message);
             const messageWithKeys = {
                 ...message,
