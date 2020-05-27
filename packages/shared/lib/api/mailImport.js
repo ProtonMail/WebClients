@@ -14,6 +14,11 @@ export const queryMailImportReport = () => ({
     method: 'get'
 });
 
+export const getMailImportFolders = (importID) => ({
+    url: `mail/import/${importID}/folders`,
+    method: 'get'
+});
+
 export const getAuthenticationMethod = (params) => ({
     url: 'mail/import/authinfo',
     method: 'get',
@@ -48,25 +53,9 @@ export const cancelMailImport = (importID) => ({
 });
 
 export const createJobImport = (importID, data) => ({
-    url: `mail/import/${importID}/job`,
+    url: `mail/import/${importID}`,
     method: 'post',
     data
-});
-
-export const getJobImport = (importID, jobID) => ({
-    url: `mail/import/${importID}/job/${jobID}`,
-    method: 'get'
-});
-
-export const updateJobImport = (importID, jobID, data) => ({
-    url: `mail/import/${importID}/job/${jobID}`,
-    method: 'put',
-    data
-});
-
-export const deleteJobImport = (importID, jobID) => ({
-    url: `mail/import/${importID}/job/${jobID}`,
-    method: 'delete'
 });
 
 export const deleteMailImport = (importID) => ({
