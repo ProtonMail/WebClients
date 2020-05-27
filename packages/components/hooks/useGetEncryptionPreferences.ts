@@ -22,7 +22,7 @@ const useGetEncryptionPreferences = () => {
     const [addresses] = useAddresses();
 
     return useCallback(
-        async (emailAddress: string) => {
+        async (emailAddress: string, silence = false) => {
             const selfAddress = addresses.find(
                 ({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(emailAddress)
             );
@@ -38,7 +38,7 @@ const useGetEncryptionPreferences = () => {
                 pinnedKeysConfig = { pinnedKeys: [], isContactSignatureVerified: false };
             } else {
                 const { publicKeys } = splitKeys(await getUserKeys());
-                apiKeysConfig = await getPublicKeysEmailHelper(api, emailAddress);
+                apiKeysConfig = await getPublicKeysEmailHelper(api, emailAddress, silence);
                 const isInternal = apiKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
                 pinnedKeysConfig = await getPublicKeysVcardHelper(api, emailAddress, publicKeys, isInternal);
             }
