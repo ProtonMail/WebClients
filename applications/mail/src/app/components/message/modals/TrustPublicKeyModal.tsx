@@ -1,3 +1,4 @@
+import { API_CODES } from 'proton-shared/lib/constants';
 import React from 'react';
 import {
     Alert,
@@ -54,7 +55,9 @@ const createContactPinnedKeys = async ({ contact, api, privateKeys }: ParamsCrea
         bePinnedPublicKey,
         privateKeys
     });
-    await api(addContacts({ Contacts: [{ Cards: contactCards }], Overwrite: 1, Labels: 0 }));
+    return api<{ Code: number; Responses: { Response: { Code: number } }[] }>(
+        addContacts({ Contacts: [{ Cards: contactCards }], Overwrite: 1, Labels: 0 })
+    );
 };
 
 interface Props {
@@ -86,7 +89,18 @@ const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
     const handleCreateContact = async () => {
         const { privateKeys: allPrivateKeys } = splitKeys(await getUserKeys());
         const privateKeys = [allPrivateKeys[0]];
-        await createContactPinnedKeys({ contact, api, privateKeys });
+        const {
+            Responses: [
+                {
+                    Response: { Code }
+                }
+            ]
+        } = await createContactPinnedKeys({ contact, api, privateKeys });
+        if (Code !== API_CODES.SINGLE_SUCCESS) {
+            createNotification({ text: c('Error').t`Public key could not be trusted`, type: 'error' });
+            rest.onClose?.();
+            return;
+        }
         createNotification({ text: c('Success').t`Public key trusted`, type: 'success' });
         onSubmit?.();
         rest.onClose?.();
