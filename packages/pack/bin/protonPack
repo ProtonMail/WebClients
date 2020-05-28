@@ -5,7 +5,7 @@ const path = require('path');
 const chalk = require('chalk');
 const dedent = require('dedent');
 const argv = require('minimist')(process.argv.slice(2), {
-    string: ['appMode', 'featureFlags'],
+    string: ['appMode', 'featureFlags', 'api'],
     boolean: ['sri'],
     default: {
         sri: true
