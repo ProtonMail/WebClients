@@ -91,8 +91,10 @@ const ExpandableRow = ({
                         </span>
                     </div>
                     {isSelected && (
-                        <div className="pd-folder-tree-listItem-selected flex-item-noshrink pl0-5 pr0-5">
-                            <Icon name="check-circle" size={20} />
+                        <div className="pd-folder-tree-listItem-selected flex flex-item-noshrink">
+                            <span className="inline-flex bg-pm-blue rounded50 p0-25">
+                                <Icon name="on" className="stroke-global-light p0-25" size={16} />
+                            </span>
                         </div>
                     )}
                 </td>
