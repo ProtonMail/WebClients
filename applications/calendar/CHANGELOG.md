@@ -1,3 +1,8 @@
+# [4.0.0-beta.3] - 2020-05-28
+## Fixed
+- Remove reminders after event start time
+
+___
 # [4.0.0-beta.2] - 2020-05-13
 
 ## Added
