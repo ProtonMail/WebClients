@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import {
     Table,
     TableBody,
     TableRow,
     SmallButton,
+    DropdownActions,
     Tooltip,
     TableCell,
     useApiWithoutResult,
+    useNotifications,
     Icon
 } from 'react-components';
 import { c } from 'ttag';
+
 import LoadIndicator from './LoadIndicator';
 import Country from './Country';
 import { getVPNServerConfig } from 'proton-shared/lib/api/vpn';
@@ -58,6 +62,7 @@ const Tor = () => (
 // TODO: Add icons instead of text for p2p and tor when they are ready
 const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isUpgradeRequired }) => {
     const { request } = useApiWithoutResult(getVPNServerConfig);
+    const { createNotification } = useNotifications();
 
     const handleClickDownload = ({ ID, ExitCountry, Domain }) => async () => {
         const buffer = await request({
@@ -76,11 +81,11 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
         <Table className="pm-simple-table--has-actions">
             <thead>
                 <tr>
-                    <TableCell className="w50 onmobile-wauto" type="header">
+                    <TableCell className="w40 onmobile-wauto" type="header">
                         {category === CATEGORY.SERVER ? c('TableHeader').t`Name` : c('TableHeader').t`Country`}
                     </TableCell>
                     <TableCell className="w30 onmobile-wauto" type="header">{c('TableHeader').t`Status`}</TableCell>
-                    <TableCell className="w20 onmobile-wauto" type="header">{c('TableHeader').t`Action`}</TableCell>
+                    <TableCell className="w30 onmobile-wauto" type="header">{c('TableHeader').t`Action`}</TableCell>
                 </tr>
             </thead>
             <TableBody loading={loading} colSpan={3}>
@@ -101,8 +106,30 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                     <SmallButton disabled>{c('Action').t`Download`}</SmallButton>
                                 </Tooltip>
                             ) : (
-                                <SmallButton key="download" onClick={handleClickDownload(server)}>{c('Action')
-                                    .t`Download`}</SmallButton>
+                                <DropdownActions
+                                    key="dropdown"
+                                    className="pm-button--small"
+                                    list={[
+                                        {
+                                            text: c('Action').t`Download`,
+                                            onClick: handleClickDownload(server)
+                                        },
+                                        ...server.Servers.map(({ Domain }) => ({
+                                            text: (
+                                                <div className="flex flex-nowrap flex-items-center flex-spacebetween">
+                                                    <span className="mr0-5">{Domain}</span>
+                                                    <Icon name="clipboard" title={c('Action').t`Copy`} />
+                                                </div>
+                                            ),
+                                            onClick() {
+                                                textToClipboard(Domain);
+                                                createNotification({
+                                                    text: c('Success').t`${Domain} copied in your clipboard`
+                                                });
+                                            }
+                                        }))
+                                    ]}
+                                />
                             )
                         ]}
                     />

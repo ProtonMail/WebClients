@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 import { Info, Button, Group, ButtonGroup } from '../../index';
 
@@ -7,8 +7,11 @@ import DropdownMenuButton from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
 import { classnames } from '../../helpers/component';
 
-const wrapTooltip = (text: string, tooltip?: string) => {
+const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
     if (!tooltip) {
+        return text;
+    }
+    if (typeof text !== 'string') {
         return text;
     }
     return (
@@ -21,7 +24,7 @@ const wrapTooltip = (text: string, tooltip?: string) => {
 
 interface DropdownActionProps {
     key?: string;
-    text: string;
+    text: string | ReactNode;
     tooltip?: string;
     onClick?: () => void;
 }
@@ -63,9 +66,9 @@ const DropdownActions = ({ loading = false, disabled = false, list = [], classNa
                 data-test-id="dropdown:open"
             >
                 <DropdownMenu>
-                    {restList.map(({ text, tooltip, key = text, ...restProps }) => {
+                    {restList.map(({ text, tooltip, ...restProps }, index) => {
                         return (
-                            <DropdownMenuButton className="alignleft" key={key} {...restProps}>
+                            <DropdownMenuButton className="alignleft" key={index} {...restProps}>
                                 {wrapTooltip(text, tooltip)}
                             </DropdownMenuButton>
                         );
