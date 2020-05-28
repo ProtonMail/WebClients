@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
 
-import { useSortedList } from 'react-components';
+import { useSortedList, useCache } from 'react-components';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
@@ -17,6 +17,7 @@ interface DriveContentProviderState {
     contents: FileBrowserItem[];
     loadNextPage: () => void;
     setSorting: (sortField: SortKeys, sortOrder: SORT_DIRECTION) => void;
+    sortParams: { sortField: SortKeys; sortOrder: SORT_DIRECTION };
     fileBrowserControls: ReturnType<typeof useFileBrowser>;
     loading: boolean;
     initialized: boolean;
@@ -32,14 +33,19 @@ const DriveContentProviderInner = ({
     children: React.ReactNode;
     activeFolder: DriveFolder;
 }) => {
+    const sortCacheKey = 'sortParams';
+    const sortCache = useCache();
+    if (!sortCache.has(sortCacheKey)) {
+        sortCache.set(sortCacheKey, {
+            sortField: DEFAULT_SORT_FIELD as SortKeys,
+            sortOrder: DEFAULT_SORT_ORDER
+        });
+    }
     const cache = useDriveCache();
     const { fetchNextFolderContents } = useDrive();
     const [initialized, setInitialized] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [sortParams, setSortParams] = useState({
-        sortField: DEFAULT_SORT_FIELD as SortKeys,
-        sortOrder: DEFAULT_SORT_ORDER
-    });
+    const sortParams = sortCache.get(sortCacheKey);
     const [, setError] = useState();
 
     const list = mapLinksToChildren(cache.get.childLinkMetas(shareId, linkId, sortParams) || []);
@@ -90,7 +96,7 @@ const DriveContentProviderInner = ({
     }, [shareId, linkId, sortParams]);
 
     const setSorting = async (sortField: SortKeys, sortOrder: SORT_DIRECTION) => {
-        setSortParams({ sortField, sortOrder });
+        sortCache.set(sortCacheKey, { sortField, sortOrder });
         setSort(sortField, sortOrder);
     };
 
@@ -121,6 +127,7 @@ const DriveContentProviderInner = ({
                 fileBrowserControls,
                 loadNextPage,
                 setSorting,
+                sortParams,
                 contents: sortedList,
                 complete,
                 initialized
