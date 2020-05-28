@@ -8,7 +8,8 @@ const argv = require('minimist')(process.argv.slice(2), {
     string: ['appMode', 'featureFlags', 'api'],
     boolean: ['sri'],
     default: {
-        sri: true
+        sri: true,
+        api: 'proxy'
     }
 });
 const localIp = require('my-local-ip');

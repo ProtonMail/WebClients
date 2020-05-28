@@ -95,13 +95,17 @@ const SECURE_URL = ENV_CONFIG.secure;
  * @param  {String|Array} api
  * @return {String}
  */
-const getApi = (api = 'proxy') => {
+const getApi = (api) => {
+    if (!API_TARGETS.dev) {
+        return 'prod';
+    }
+
     if (!Array.isArray(api)) {
-        return api;
+        return api || 'proxy';
     }
 
     const { length, [length - 1]: latest } = api.filter(Boolean);
-    return latest;
+    return latest || 'proxy';
 };
 
 function main({ api = 'dev' }) {
