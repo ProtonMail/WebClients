@@ -22,7 +22,7 @@ interface Props {
 const SortDropdown = ({ className }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { setSorting } = useDriveContent();
+    const { sortParams, setSorting } = useDriveContent();
 
     const handleSortClick = (sortField: SortKeys, sortOrder: SORT_DIRECTION) => () => {
         setSorting(sortField, sortOrder);
@@ -67,6 +67,9 @@ const SortDropdown = ({ className }: Props) => {
         }
     ];
 
+    const toolbarButtonIcon =
+        menuItems.find((item) => item.sortField === sortParams.sortField && item.sortOrder === sortParams.sortOrder)
+            ?.icon || 'sort-old-new';
     const dropdownMenuButtons = menuItems.map((item) => (
         <DropdownMenuButton
             key={item.name}
@@ -86,7 +89,7 @@ const SortDropdown = ({ className }: Props) => {
                 ref={anchorRef}
                 aria-expanded={isOpen}
                 onClick={toggle}
-                icon="sort-large-small"
+                icon={toolbarButtonIcon}
             >
                 <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" />
             </ToolbarButton>
