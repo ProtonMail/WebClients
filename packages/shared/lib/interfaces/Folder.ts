@@ -6,7 +6,7 @@ export interface Folder {
     Expanded: number;
     Type: number;
     Order: number;
-    ParentID?: string;
+    ParentID?: string | number;
 }
 
 export type FolderWithSubFolders = Folder & { subfolders?: Folder[] };
