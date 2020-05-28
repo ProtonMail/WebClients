@@ -26,18 +26,18 @@ $meterbar-height: 6px !default;
   }
 
   // &::-webkit-meter-optimum-value {
-  //   background: $pm-primary; 
+  //   background: $pm-primary;
   //   border-radius: #{$meterbar-height/2};
   // }
   &::-webkit-meter-optimum-value {
-    background: $pm-primary; 
+    background: $pm-primary;
     border-radius: #{$meterbar-height/2};
   }
   &:-moz-meter-optimum::-moz-meter-bar {
     border-radius: #{$meterbar-height/2};
     background: $pm-primary;
   }
-  
+
 }
 
 // .spacebar-percent {
@@ -56,7 +56,7 @@ $meterbar-height: 6px !default;
 //   }
 //   .spacebar-gauge {
 //     visibility: visible;
-//   }  
+//   }
 // }
 
 // .spacebar-version {
@@ -71,13 +71,15 @@ $meterbar-height: 6px !default;
   /* autoprefixer: ignore next */
   appearance: none;
   height: 1.5rem;
+  padding: 0;
   background: var(--bordercolor-input, $pm-global-muted);
   box-shadow: 0 3px 6px 0 $input-shadow-color;
 
   &::-webkit-meter-bar {
-    background: none; /* Required to get rid of the default background property */
-    display: inherit;
-    border: 0; // For Edge
+	display: inherit;
+	border: 0; // For Edge
+	height: 1.5rem;
+	border-radius: 0;
   }
   &::-moz-meter-bar {
     display: inherit;
