@@ -43,7 +43,7 @@ function SpamFiltersSection() {
         search(Keyword);
         setLoader({ white: true, black: true });
         try {
-            const { IncomingDefaults = [] } = await reqSearch.request({ Keyword, PageSize: 200 });
+            const { IncomingDefaults = [] } = await reqSearch.request({ Keyword, PageSize: 100 });
             search(Keyword, IncomingDefaults);
             setLoader({ white: false, black: false });
         } catch (e) {
