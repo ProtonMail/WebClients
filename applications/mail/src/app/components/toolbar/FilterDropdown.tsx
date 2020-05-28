@@ -13,7 +13,10 @@ interface Props {
 
 const FilterDropdown = ({ loading, filter = {}, onFilter }: Props) => {
     return (
-        <ToolbarDropdown content={<Icon className="toolbar-icon" name="bullet-points" />}>
+        <ToolbarDropdown
+            content={<Icon className="toolbar-icon" name="bullet-points" />}
+            title={c('Title').t`Advanced options`}
+        >
             {() => (
                 <DropdownMenu>
                     <DropdownMenuButton

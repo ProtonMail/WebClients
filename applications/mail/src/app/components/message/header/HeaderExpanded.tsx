@@ -10,7 +10,8 @@ import {
     useContactGroups,
     ButtonGroup as OriginalButtonGroup,
     useApi,
-    useEventManager
+    useEventManager,
+    Tooltip
 } from 'react-components';
 import { unlabelMessages } from 'proton-shared/lib/api/messages';
 import { Label } from 'proton-shared/lib/interfaces/Label';
@@ -231,6 +232,7 @@ const HeaderExpanded = ({
                             content={<Icon name="filter" />}
                             className="pm-button pm-group-button pm-button--for-icon"
                             dropDownClassName="customFilterDropdown"
+                            title={c('Action').t`Custom filter`}
                         >
                             {() => <CustomFilterDropdown message={message.data as Message} />}
                         </HeaderDropdown>
@@ -240,6 +242,7 @@ const HeaderExpanded = ({
                             content={<Icon name="folder" />}
                             className="pm-button pm-group-button pm-button--for-icon"
                             dropDownClassName="moveDropdown"
+                            title={c('Action').t`Move to`}
                         >
                             {({ onClose, onLock }) => (
                                 <MoveDropdown labelID={labelID} elements={elements} onClose={onClose} onLock={onLock} />
@@ -251,6 +254,7 @@ const HeaderExpanded = ({
                             content={<Icon name="label" />}
                             className="pm-button pm-group-button pm-button--for-icon"
                             dropDownClassName="labelDropdown"
+                            title={c('Action').t`Label as`}
                         >
                             {({ onClose, onLock }) => (
                                 <LabelDropdown elements={elements} onClose={onClose} onLock={onLock} />
@@ -262,22 +266,31 @@ const HeaderExpanded = ({
                 <Group className="mb0-5">
                     <ButtonGroup
                         disabled={!messageLoaded}
-                        icon="reply"
-                        className="pm-button--primary flex flex-items-center"
+                        className="pm-button--for-icon pm-button--primary flex flex-items-center"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
-                    />
+                    >
+                        <Tooltip title={c('Title').t`Reply`} className="flex">
+                            <Icon name="reply" />
+                        </Tooltip>
+                    </ButtonGroup>
                     <ButtonGroup
                         disabled={!messageLoaded}
-                        icon="reply-all"
-                        className="pm-button--primary flex flex-items-center"
+                        className="pm-button--for-icon pm-button--primary flex flex-items-center"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
-                    />
+                    >
+                        <Tooltip title={c('Title').t`Reply all`} className="flex">
+                            <Icon name="reply-all" />
+                        </Tooltip>
+                    </ButtonGroup>
                     <ButtonGroup
                         disabled={!messageLoaded}
-                        icon="forward"
-                        className="pm-button--primary flex flex-items-center"
+                        className=" pm-button--for-icon pm-button--primary flex flex-items-center"
                         onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
-                    />
+                    >
+                        <Tooltip title={c('Title').t`Forward`} className="flex">
+                            <Icon name="forward" />
+                        </Tooltip>
+                    </ButtonGroup>
                 </Group>
             </div>
         </div>

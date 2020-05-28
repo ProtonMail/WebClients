@@ -33,7 +33,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
                 <Icon className="toolbar-icon rotateZ-90 mauto" name="caret" />
             </ToolbarButton>
             <ToolbarDropdown
-                title={c('Action').t`Change layout`}
+                title={c('Action').t`Change page`}
                 content={String(page.page + 1)}
                 disabled={count <= 1}
                 size="narrow"

@@ -29,7 +29,10 @@ interface Props {
 
 const SortDropdown = ({ loading, sort: { sort, desc }, onSort }: Props) => {
     return (
-        <ToolbarDropdown content={<Icon className="toolbar-icon" name={ICONS[sort][desc ? DESC : ASC]} />}>
+        <ToolbarDropdown
+            content={<Icon className="toolbar-icon" name={ICONS[sort][desc ? DESC : ASC]} />}
+            title={c('Title').t`Sort view messages/conversations`}
+        >
             {() => (
                 <DropdownMenu>
                     <DropdownMenuButton

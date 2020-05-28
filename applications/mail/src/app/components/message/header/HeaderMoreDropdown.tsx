@@ -11,7 +11,8 @@ import {
     ConfirmModal,
     Alert,
     Group,
-    ButtonGroup
+    ButtonGroup,
+    Tooltip
 } from 'react-components';
 import { labelMessages, markMessageAsUnread } from 'proton-shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
@@ -120,14 +121,40 @@ const HeaderMoreDropdown = ({
 
     return (
         <Group className="mr1 mb0-5">
-            <ButtonGroup disabled={!messageLoaded} icon="unread" onClick={handleUnread} />
-            {isInInbox && <ButtonGroup disabled={!messageLoaded} icon="trash" onClick={handleMove(TRASH, INBOX)} />}
-            {isInTrash && <ButtonGroup disabled={!messageLoaded} icon="inbox" onClick={handleMove(INBOX, TRASH)} />}
+            <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="pm-button--for-icon">
+                <Tooltip title={c('Title').t`Mark as unread`} className="flex">
+                    <Icon name="unread" />
+                </Tooltip>
+            </ButtonGroup>
+            {isInInbox && (
+                <ButtonGroup
+                    disabled={!messageLoaded}
+                    onClick={handleMove(TRASH, INBOX)}
+                    className="pm-button--for-icon"
+                >
+                    <Tooltip title={c('Title').t`Move to trash`} className="flex">
+                        <Icon name="trash" />
+                    </Tooltip>
+                </ButtonGroup>
+            )}
+            {isInTrash && (
+                <ButtonGroup
+                    disabled={!messageLoaded}
+                    onClick={handleMove(INBOX, TRASH)}
+                    className="pm-button--for-icon"
+                >
+                    <Tooltip title={c('Title').t`Move to inbox`} className="flex">
+                        <Icon name="inbox" />
+                    </Tooltip>
+                </ButtonGroup>
+            )}
 
             <HeaderDropdown
                 disabled={!messageLoaded}
                 className="pm-button pm-button--for-icon pm-group-button"
                 autoClose={true}
+                title={c('Title').t`More`}
+                content=""
             >
                 {({ onClose }) => {
                     closeDropdown.current = onClose;

@@ -1,5 +1,5 @@
 import React, { useState, ReactNode } from 'react';
-import { generateUID, usePopperAnchor, DropdownButton, Dropdown } from 'react-components';
+import { generateUID, usePopperAnchor, DropdownButton, Dropdown, Tooltip } from 'react-components';
 
 interface LockableDropdownProps {
     onClose: () => void;
@@ -9,13 +9,14 @@ interface LockableDropdownProps {
 interface Props {
     dropDownClassName?: string;
     content?: ReactNode;
+    title?: string;
     children: (props: LockableDropdownProps) => ReactNode;
     autoClose?: boolean;
     noMaxSize?: boolean;
     [rest: string]: any;
 }
 
-const HeaderDropdown = ({ content, children, autoClose, noMaxSize, dropDownClassName, ...rest }: Props) => {
+const HeaderDropdown = ({ title, content, children, autoClose, noMaxSize, dropDownClassName, ...rest }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const [lock, setLock] = useState(false);
 
@@ -24,7 +25,7 @@ const HeaderDropdown = ({ content, children, autoClose, noMaxSize, dropDownClass
     return (
         <>
             <DropdownButton {...rest} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret={true}>
-                {content}
+                <Tooltip title={title}>{content}</Tooltip>
             </DropdownButton>
             <Dropdown
                 id={uid}

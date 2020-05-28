@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { c } from 'ttag';
 import { Location } from 'history';
 import { Icon } from 'react-components';
 import { identity } from 'proton-shared/lib/helpers/function';
@@ -113,6 +114,7 @@ const Toolbar = ({
                     disabled={!selectedIDs.length}
                     content={<Icon className="toolbar-icon" name="folder" />}
                     dropDownClassName="moveDropdown"
+                    title={c('Title').t`Move to`}
                 >
                     {({ onClose, onLock }) => (
                         <MoveDropdown labelID={labelID} elements={selectedElements} onClose={onClose} onLock={onLock} />
@@ -124,6 +126,7 @@ const Toolbar = ({
                     disabled={!selectedIDs.length}
                     content={<Icon className="toolbar-icon" name="label" />}
                     dropDownClassName="labelDropdown"
+                    title={c('Title').t`Label as`}
                 >
                     {({ onClose, onLock }) => (
                         <LabelDropdown elements={selectedElements} onClose={onClose} onLock={onLock} />

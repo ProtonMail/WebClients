@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react';
-import { classnames, usePopperAnchor, DropdownButton, Dropdown, generateUID } from 'react-components';
+import { classnames, usePopperAnchor, DropdownButton, Dropdown, generateUID, Tooltip } from 'react-components';
 
 interface LockableDropdownProps {
     onClose: () => void;
@@ -36,19 +36,22 @@ const ToolbarDropdown = ({
 
     return (
         <>
-            <DropdownButton
-                title={title}
-                buttonRef={anchorRef}
-                isOpen={isOpen}
-                onClick={toggle}
-                hasCaret={true}
-                disabled={disabled}
-                caretClassName="toolbar-icon"
-                className={classnames(['flex-item-noshrink toolbar-button toolbar-button--dropdown', className])}
-                {...rest}
-            >
-                {content}
-            </DropdownButton>
+            <Tooltip title={title} className="flex flex-item-noshrink">
+                <DropdownButton
+                    title={title}
+                    buttonRef={anchorRef}
+                    isOpen={isOpen}
+                    onClick={toggle}
+                    hasCaret={true}
+                    disabled={disabled}
+                    caretClassName="toolbar-icon"
+                    className={classnames(['flex-item-noshrink toolbar-button toolbar-button--dropdown', className])}
+                    {...rest}
+                >
+                    {content}
+                </DropdownButton>
+            </Tooltip>
+
             <Dropdown
                 id={uid}
                 originalPlacement="bottom"

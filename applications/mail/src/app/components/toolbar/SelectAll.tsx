@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, DropdownMenu, DropdownMenuButton, Icon } from 'react-components';
+import { Checkbox, DropdownMenu, DropdownMenuButton, Icon, Tooltip } from 'react-components';
 import { c } from 'ttag';
 
 import ToolbarDropdown from './ToolbarDropdown';
@@ -41,19 +41,16 @@ const SelectAll = ({ labelID, loading, disabled, elements, selectedIDs, onCheck 
 
     return (
         <>
-            <Checkbox
-                className="flex ml0-5 pm-select-all pl1"
-                checked={checked}
-                disabled={disabled}
-                loading={loading}
-                onChange={({ target }) => handleAll(target.checked)()}
-            />
-            <ToolbarDropdown
-                disabled={disabled}
-                loading={loading}
-                title={c('Title').t`Open actions dropdown`}
-                content=""
-            >
+            <Tooltip className="flex ml0-5 pl1" title={c('Action').t`Select messages`}>
+                <Checkbox
+                    className="pm-select-all"
+                    checked={checked}
+                    disabled={disabled}
+                    loading={loading}
+                    onChange={({ target }) => handleAll(target.checked)()}
+                />
+            </Tooltip>
+            <ToolbarDropdown disabled={disabled} loading={loading} title={c('Title').t`More selections`} content="">
                 {() => (
                     <DropdownMenu>
                         <DropdownMenuButton className="alignleft" onClick={handleAll(true)}>
