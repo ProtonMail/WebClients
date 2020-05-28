@@ -1,6 +1,6 @@
+import { convertZonedDateTimeToUTC, convertUTCDateTimeToZone, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { enUS } from 'date-fns/locale';
 import { getAlarmMessage } from '../../src/app/helpers/alarms';
-import { convertZonedDateTimeToUTC, convertUTCDateTimeToZone, toUTCDate } from 'proton-shared/lib/date/timezone';
 
 const formatOptions = { locale: enUS };
 
@@ -12,16 +12,16 @@ describe('getAlarmMessage', () => {
     const testComponent = {
         dtstart: {
             value: { ...testFakeZonedDate, isUTC: false },
-            parameters: { tzid: tzidEurope }
+            parameters: { tzid: tzidEurope },
         },
-        summary: { value: 'test alarm' }
+        summary: { value: 'test alarm' },
     };
     const testFulldayComponent = {
         dtstart: {
             value: { ...testFakeZonedDate, isUTC: false },
-            parameters: { tzid: tzidEurope, type: 'date' }
+            parameters: { tzid: tzidEurope, type: 'date' },
         },
-        summary: { value: 'test alarm' }
+        summary: { value: 'test alarm' },
     };
     const start = toUTCDate(convertZonedDateTimeToUTC(testFakeZonedDate, tzidEurope));
 

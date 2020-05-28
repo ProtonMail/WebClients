@@ -6,15 +6,11 @@ import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calenda
 import { NOTIFICATION_UNITS_MAX } from '../../../constants';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
 import {
-    getDaysAfter,
     getDaysBefore,
-    getHoursAfter,
     getHoursBefore,
-    getMinutesAfter,
     getMinutesBefore,
     getSameDay,
     getSameTime,
-    getWeeksAfter,
     getWeeksBefore,
 } from './notificationOptions';
 
@@ -31,20 +27,10 @@ interface Props {
 
 const getWhenOptions = (isAllDay: boolean, value = 0) => {
     if (isAllDay) {
-        return [getSameDay(), getDaysBefore(value), getDaysAfter(value), getWeeksBefore(value), getWeeksAfter(value)];
+        return [getSameDay(), getDaysBefore(value), getWeeksBefore(value)];
     }
 
-    return [
-        getSameTime(),
-        getMinutesBefore(value),
-        getMinutesAfter(value),
-        getHoursBefore(value),
-        getHoursAfter(value),
-        getDaysBefore(value),
-        getDaysAfter(value),
-        getWeeksBefore(value),
-        getWeeksAfter(value),
-    ];
+    return [getSameTime(), getMinutesBefore(value), getHoursBefore(value), getDaysBefore(value), getWeeksBefore(value)];
 };
 
 const NotificationInput = ({

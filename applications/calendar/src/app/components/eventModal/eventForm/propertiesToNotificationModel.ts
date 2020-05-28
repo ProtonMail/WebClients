@@ -1,5 +1,6 @@
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
 import { VcalValarmComponent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { filterFutureNotifications } from '../../../helpers/notifications';
 import { triggerToModel } from './notificationModel';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
 
@@ -7,7 +8,7 @@ export const propertiesToNotificationModel = (
     { components = [] }: Partial<VcalVeventComponent> = {},
     isAllDay: boolean
 ): NotificationModel[] => {
-    return components
+    const modelNotifications = components
         .filter(({ component }) => component === 'valarm')
         .map(({ trigger, action }: VcalValarmComponent) => {
             const type =
@@ -20,4 +21,6 @@ export const propertiesToNotificationModel = (
                 isAllDay,
             });
         });
+    // Filter out future alarms
+    return filterFutureNotifications(modelNotifications);
 };
