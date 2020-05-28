@@ -157,7 +157,7 @@ const ExtraPinKey = ({ message, onTrustSigningKey, onTrustAttachedKey }: Props) 
     const handleDisablePromptPin = async () => {
         await api(updatePromptPin(0));
         await call();
-        createNotification({ text: c('Success').t`Banner permanently hidden` });
+        createNotification({ text: c('Success').t`Address verification disabled` });
     };
     const handleTrustKey = () => {
         if (loading || !bePinnedPublicKey || !senderAddress) {
