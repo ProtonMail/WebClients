@@ -94,7 +94,7 @@ const MoveDropdown = ({ elements, labelID, onClose, onLock }: Props) => {
         const newLabel: Partial<Folder> = {
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
-            ParentID: String(ROOT_FOLDER),
+            ParentID: ROOT_FOLDER,
             Type: LABEL_TYPE.MESSAGE_FOLDER
         };
         createModal(<LabelModal label={newLabel} onClose={() => onLock(false)} />);
