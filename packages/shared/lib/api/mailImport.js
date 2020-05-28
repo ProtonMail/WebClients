@@ -35,6 +35,11 @@ export const downloadMailImportReport = (reportID) => ({
     method: 'get'
 });
 
+export const deleteMailImportReport = (reportID) => ({
+    url: `mail/import/report/${reportID}`,
+    method: 'delete'
+});
+
 export const createMailImport = (data) => ({
     url: 'mail/import',
     method: 'post',
