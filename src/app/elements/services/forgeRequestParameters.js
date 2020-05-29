@@ -1,7 +1,16 @@
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
-function forgeRequestParameters($stateParams, $filter) {
+function forgeRequestParameters($stateParams, $filter, mailSettingsModel) {
+    function getWildCard() {
+        if (angular.isDefined($stateParams.wildcard)) {
+            return $stateParams.wildcard;
+        }
+
+        const { AutoWildcardSearch } = mailSettingsModel.get();
+        return AutoWildcardSearch;
+    }
+
     /**
      * A single ' or " can create an infinite $digest cf #7042
      * @return {String}
@@ -44,6 +53,7 @@ function forgeRequestParameters($stateParams, $filter) {
             params.Begin = $stateParams.begin;
             params.End = $stateParams.end;
             params.Attachments = $stateParams.attachments;
+            params.AutoWildcard = getWildCard();
             return params;
         }
 

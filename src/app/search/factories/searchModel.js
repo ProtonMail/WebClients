@@ -74,6 +74,7 @@ function searchModel(addressesModel, gettextCatalog, labelsModel, translator) {
         begin: undefined,
         end: undefined,
         attachments: undefined,
+        wildcard: undefined,
         starred: undefined,
         reload: undefined
     });
@@ -114,6 +115,7 @@ function searchModel(addressesModel, gettextCatalog, labelsModel, translator) {
     const build = (data = {}) => {
         const model = angular.copy(data);
         const attachments = +model.attachments;
+        const wildcard = +model.wildcard;
         const date = dateInterval({
             begin: extractDate(model.begin),
             end: extractDate(model.end)
@@ -124,6 +126,7 @@ function searchModel(addressesModel, gettextCatalog, labelsModel, translator) {
             to: model.to,
             from: model.from,
             keyword: model.keyword,
+            wildcard: isNaN(wildcard) ? undefined : wildcard,
             attachments: isNaN(attachments) || attachments === 2 ? undefined : attachments,
             address: (model.address || {}).ID,
             label: model.label || getLabel(model.folder),
