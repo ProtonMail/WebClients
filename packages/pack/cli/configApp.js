@@ -96,10 +96,6 @@ const SECURE_URL = ENV_CONFIG.secure;
  * @return {String}
  */
 const getApi = (api) => {
-    if (!API_TARGETS.dev) {
-        return 'prod';
-    }
-
     if (!Array.isArray(api)) {
         return api || 'proxy';
     }
