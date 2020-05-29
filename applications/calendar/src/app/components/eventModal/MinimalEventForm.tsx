@@ -1,17 +1,34 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Icon, Row } from 'react-components';
+import { Icon, Row as LibRow, Label, DateInput, classnames, TimeInput } from 'react-components';
 
 import AllDayCheckbox from './inputs/AllDayCheckbox';
-import CalendarSelectRow from './rows/CalendarSelectRow';
-import LocationRow from './rows/LocationRow';
-import DescriptionRow from './rows/DescriptionRow';
-import DateTimeRow from './rows/DateTimeRow';
-import TitleRow from './rows/TitleRow';
-import FrequencyRow from './rows/FrequencyRow';
 import { getAllDayCheck } from './eventForm/stateActions';
 import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
 import { WeekStartsOn } from '../../containers/calendar/interface';
+import { useFormHandlers, createPropFactory } from './hooks/useFormHandlers';
+import { MINIMUM_DATE, MAXIMUM_DATE } from '../../constants';
+import DescriptionInput from './inputs/DescriptionInput';
+import LocationInput from './inputs/LocationInput';
+import TitleInput from './inputs/TitleInput';
+import CalendarSelect from './inputs/CalendarSelect';
+import { NotificationInfo } from './NotificationInfo';
+
+interface RowProps {
+    children: React.ReactNode;
+    label?: React.ReactChild;
+    className?: string;
+    labelFor?: string;
+}
+
+const Row = ({ children, label = '', className, labelFor }: RowProps) => (
+    <LibRow collapseOnMobile={false}>
+        <Label htmlFor={labelFor}>{label}</Label>
+        <div className={className || 'flex-item-fluid'}>{children}</div>
+    </LibRow>
+);
+
+const EnDash = () => <span className="ml0-5 mr0-5">–</span>;
 
 interface Props {
     isSubmitted: boolean;
@@ -23,114 +40,112 @@ interface Props {
     setModel: (value: EventModel) => void;
 }
 
-const MinimalEventForm = ({
-    isSubmitted,
-    isNarrow,
-    displayWeekNumbers,
-    weekStartsOn,
-    errors,
-    model,
-    setModel,
-}: Props) => {
-    const allDayRow = (
-        <Row collapseOnMobile={false}>
-            <span className="pm-label" />
-            <div className="flex-item-fluid">
-                <AllDayCheckbox
-                    className="mb1"
-                    checked={model.isAllDay}
-                    onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck(model, isAllDay) })}
-                />
-            </div>
-        </Row>
-    );
-
-    const frequencyRow = model.hasFrequencyRow ? (
-        <FrequencyRow
-            collapseOnMobile={false}
-            label={
-                <>
-                    <Icon name="repeat" />
-                    <span className="sr-only">{c('Label').t`Frequency`}</span>
-                </>
-            }
-            frequencyModel={model.frequencyModel}
-            start={model.start}
-            displayWeekNumbers={displayWeekNumbers}
-            weekStartsOn={weekStartsOn}
-            errors={errors}
-            isSubmitted={isSubmitted}
-            onChange={(frequencyModel) => setModel({ ...model, frequencyModel })}
-        />
-    ) : null;
-
-    const calendarRow = model.calendars.length ? (
-        <CalendarSelectRow
-            collapseOnMobile={false}
-            label={
-                <>
-                    <Icon name="calendar" color={model.calendar.color} />
-                    <span className="sr-only">{c('Label').t`Calendar`}</span>
-                </>
-            }
-            model={model}
-            setModel={setModel}
-            withIcon
-            disabled={!model.hasCalendarRow}
-        />
-    ) : null;
+const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, errors, model, setModel }: Props) => {
+    const {
+        handleChangeStartDate,
+        handleChangeStartTime,
+        handleChangeEndTime,
+        isDuration,
+        minEndTime,
+    } = useFormHandlers({ model, setModel });
+    const propsFor = createPropFactory({ model, setModel });
 
     return (
         <>
-            <TitleRow
-                collapseOnMobile={false}
+            <Row
                 label={
                     <>
                         <Icon name="circle" color={model.calendar.color} />
                         <span className="sr-only">{c('Label').t`Title`}</span>
                     </>
                 }
-                type={model.type}
-                value={model.title}
-                error={errors.title}
-                onChange={(value) => setModel({ ...model, title: value })}
-                isSubmitted={isSubmitted}
-            />
-            {allDayRow}
-            <DateTimeRow
-                collapseOnMobile={false}
-                label={<Icon name="clock" />}
-                model={model}
-                setModel={setModel}
-                endError={errors.end}
-                displayWeekNumbers={displayWeekNumbers}
-                weekStartsOn={weekStartsOn}
-                isNarrow={isNarrow}
-            />
-            {frequencyRow}
-            {calendarRow}
-            <LocationRow
-                collapseOnMobile={false}
+                labelFor="event-title-input"
+            >
+                <TitleInput id="event-title-input" type={model.type} isSubmitted={isSubmitted} {...propsFor('title')} />
+            </Row>
+            <Row label={<Icon name="clock" />} className="flex flex-nowrap flex-row flex-items-center w100">
+                <DateInput
+                    id="startDate"
+                    className={classnames([!model.isAllDay && 'mr0-5', 'flex-item-fluid', 'flex-item-grow-2'])}
+                    required
+                    value={model.start.date}
+                    onChange={handleChangeStartDate}
+                    displayWeekNumbers={displayWeekNumbers}
+                    weekStartsOn={weekStartsOn}
+                    min={MINIMUM_DATE}
+                    max={MAXIMUM_DATE}
+                />
+                {!model.isAllDay && (
+                    <>
+                        <TimeInput
+                            className="flex-item-fluid"
+                            id="startTime"
+                            value={model.start.time}
+                            onChange={handleChangeStartTime}
+                        />
+                        <EnDash />
+                        <TimeInput
+                            id="endTime"
+                            className="flex-item-fluid"
+                            value={model.end.time}
+                            onChange={handleChangeEndTime}
+                            aria-invalid={Boolean(errors.end)}
+                            displayDuration={isDuration}
+                            min={minEndTime}
+                        />
+                    </>
+                )}
+            </Row>
+            <Row>
+                <AllDayCheckbox
+                    checked={model.isAllDay}
+                    onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck(model, isAllDay) })}
+                />
+            </Row>
+            {model.calendars.length > 1 ? (
+                <Row
+                    label={
+                        <>
+                            <Icon name="calendar" color={model.calendar.color} />
+                            <span className="sr-only">{c('Label').t`Calendar`}</span>
+                        </>
+                    }
+                    labelFor="event-calendar-select"
+                >
+                    <CalendarSelect
+                        id="event-calendar-select"
+                        withIcon
+                        disabled={!model.hasCalendarRow}
+                        model={model}
+                        setModel={setModel}
+                    />
+                </Row>
+            ) : null}
+            <Row
                 label={
                     <>
                         <Icon name="address" />
                         <span className="sr-only">{c('Label').t`Location`}</span>
                     </>
                 }
-                value={model.location}
-                onChange={(location) => setModel({ ...model, location })}
-            />
-            <DescriptionRow
-                collapseOnMobile={false}
+                labelFor="event-location-input"
+            >
+                <LocationInput id="event-location-input" {...propsFor('location')} />
+            </Row>
+            <Row
                 label={
                     <>
                         <Icon name="note" />
                         <span className="sr-only">{c('Label').t`Description`}</span>
                     </>
                 }
-                value={model.description}
-                onChange={(description) => setModel({ ...model, description })}
-            />
+                labelFor="event-description-input"
+            >
+                <DescriptionInput id="event-description-input" {...propsFor('description')} />
+            </Row>
+            <Row>
+                <NotificationInfo model={model} errors={errors} />
+            </Row>
         </>
     );
 };

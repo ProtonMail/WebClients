@@ -3,7 +3,6 @@ import { classnames } from 'react-components';
 
 import FullDayEvent from './FullDayEvent';
 import PopoverHeader from './PopoverHeader';
-import PopoverContent from './PopoverContent';
 import { TYPE } from '../calendar/interactions/constants';
 import { DAY_EVENT_HEIGHT } from '../calendar/constants';
 import {
@@ -52,37 +51,35 @@ const MorePopoverEvent = ({
                     {date.getUTCDate()}
                 </h1>
             </PopoverHeader>
-            <PopoverContent>
-                {events.map((event) => {
-                    const isSelected = targetEventData?.id === event.id;
-                    const isThisSelected =
-                        targetEventData &&
-                        isSelected &&
-                        targetEventData.idx === date.getUTCDate() &&
-                        targetEventData.type === TYPE.MORE;
+            {events.map((event) => {
+                const isSelected = targetEventData?.id === event.id;
+                const isThisSelected =
+                    targetEventData &&
+                    isSelected &&
+                    targetEventData.idx === date.getUTCDate() &&
+                    targetEventData.type === TYPE.MORE;
 
-                    const isBeforeNow = getIsBeforeNow(event, now);
+                const isBeforeNow = getIsBeforeNow(event, now);
 
-                    return (
-                        <FullDayEvent
-                            formatTime={formatTime}
-                            event={event}
-                            key={event.id}
-                            className="calendar-dayeventcell w100 alignleft"
-                            isSelected={isSelected}
-                            tzid={tzid}
-                            isBeforeNow={isBeforeNow}
-                            isOutsideStart={false}
-                            isOutsideEnd={false}
-                            onClick={() => onClickEvent({ id: event.id, idx: date.getUTCDate(), type: TYPE.MORE })}
-                            style={{
-                                '--height': `${DAY_EVENT_HEIGHT}px`,
-                            }}
-                            eventRef={isThisSelected ? targetEventRef : undefined}
-                        />
-                    );
-                })}
-            </PopoverContent>
+                return (
+                    <FullDayEvent
+                        formatTime={formatTime}
+                        event={event}
+                        key={event.id}
+                        className="calendar-dayeventcell w100 alignleft"
+                        isSelected={isSelected}
+                        tzid={tzid}
+                        isBeforeNow={isBeforeNow}
+                        isOutsideStart={false}
+                        isOutsideEnd={false}
+                        onClick={() => onClickEvent({ id: event.id, idx: date.getUTCDate(), type: TYPE.MORE })}
+                        style={{
+                            '--height': `${DAY_EVENT_HEIGHT}px`,
+                        }}
+                        eventRef={isThisSelected ? targetEventRef : undefined}
+                    />
+                );
+            })}
         </div>
     );
 };

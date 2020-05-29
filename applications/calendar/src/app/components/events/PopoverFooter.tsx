@@ -4,7 +4,7 @@ interface Props {
     children?: React.ReactNode;
 }
 const PopoverFooter = ({ children }: Props) => {
-    return <footer className="flex pb1 flex-nowrap flex-spacebetween">{children}</footer>;
+    return <footer className="flex pb0-5 pt0-5 flex-nowrap flex-spacebetween flex-justify-end">{children}</footer>;
 };
 
 export default PopoverFooter;

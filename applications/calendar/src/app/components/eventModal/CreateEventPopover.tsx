@@ -1,11 +1,10 @@
 import React, { CSSProperties, Ref, useRef } from 'react';
-import { useCombinedRefs, SmallButton, PrimaryButton, classnames } from 'react-components';
+import { useCombinedRefs, Button, PrimaryButton, classnames } from 'react-components';
 import { c } from 'ttag';
 import validateEventModel from './eventForm/validateEventModel';
 import PopoverHeader from '../events/PopoverHeader';
 import PopoverFooter from '../events/PopoverFooter';
-import PopoverContent from '../events/PopoverContent';
-import { useForm } from './useForm';
+import { useForm } from './hooks/useForm';
 import MinimalEventForm from './MinimalEventForm';
 import { EventModel } from '../../interfaces/EventModel';
 import { WeekStartsOn } from '../../containers/calendar/interface';
@@ -56,31 +55,28 @@ const CreateEventPopover = ({
                 e.preventDefault();
                 handleSubmit();
             }}
-            className={classnames(['eventpopover p1 pm-form--iconLabels', isNarrow && 'eventpopover--full-width'])}
+            className={classnames(['eventpopover pm-form--iconLabels', isNarrow && 'eventpopover--full-width'])}
             ref={useCombinedRefs<HTMLFormElement>(formRef, popoverRef)}
         >
             <PopoverHeader onClose={onClose} />
-            <PopoverContent>
-                <MinimalEventForm
-                    isNarrow={isNarrow}
-                    displayWeekNumbers={displayWeekNumbers}
-                    weekStartsOn={weekStartsOn}
-                    isSubmitted={isSubmitted}
-                    errors={errors}
-                    model={model}
-                    setModel={setModel}
-                />
-            </PopoverContent>
+            <MinimalEventForm
+                isNarrow={isNarrow}
+                displayWeekNumbers={displayWeekNumbers}
+                weekStartsOn={weekStartsOn}
+                isSubmitted={isSubmitted}
+                errors={errors}
+                model={model}
+                setModel={setModel}
+            />
             <PopoverFooter>
-                <SmallButton
+                <Button
                     data-test-id="create-event-popover:more-event-options"
                     className="mr1"
                     onClick={handleMore}
-                >{c('Action').t`More options`}</SmallButton>
+                >{c('Action').t`More options`}</Button>
                 <PrimaryButton
                     data-test-id="create-event-popover:save"
                     type="submit"
-                    className="pm-button--small"
                     loading={loadingAction}
                 >
                     {c('Action').t`Save`}

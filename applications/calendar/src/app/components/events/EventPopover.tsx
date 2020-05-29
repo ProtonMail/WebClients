@@ -11,7 +11,6 @@ import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
 import PopoverEventContent from './PopoverEventContent';
 import PopoverHeader from './PopoverHeader';
 import PopoverFooter from './PopoverFooter';
-import PopoverContent from './PopoverContent';
 import { getEventErrorMessage } from './error';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent, WeekStartsOn } from '../../containers/calendar/interface';
 
@@ -82,9 +81,7 @@ const EventPopover = ({
                 <PopoverHeader onClose={onClose}>
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
-                <PopoverContent>
-                    <Alert type="error">{getEventErrorMessage(error)}</Alert>
-                </PopoverContent>
+                <Alert type="error">{getEventErrorMessage(error)}</Alert>
                 <footer>{deleteButton}</footer>
             </div>
         );
@@ -113,17 +110,15 @@ const EventPopover = ({
                     </h1>
                 </div>
             </PopoverHeader>
-            <PopoverContent>
-                <PopoverEventContent
-                    Calendar={Calendar}
-                    isCalendarDisabled={isCalendarDisabled}
-                    event={targetEvent}
-                    tzid={tzid}
-                    weekStartsOn={weekStartsOn}
-                    model={model}
-                    formatTime={formatTime}
-                />
-            </PopoverContent>
+            <PopoverEventContent
+                Calendar={Calendar}
+                isCalendarDisabled={isCalendarDisabled}
+                event={targetEvent}
+                tzid={tzid}
+                weekStartsOn={weekStartsOn}
+                model={model}
+                formatTime={formatTime}
+            />
             <PopoverFooter>
                 {deleteButton}
                 <PrimaryButton

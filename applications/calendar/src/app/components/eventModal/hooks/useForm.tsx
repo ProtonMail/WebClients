@@ -1,9 +1,9 @@
 import { useLoading } from 'react-components';
 import { useState } from 'react';
-import { TITLE_INPUT_ID } from './rows/TitleRow';
-import { COUNT_ID, UNTIL_ID } from './rows/EndsRow';
-import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
-import { NOTIFICATION_ID } from './Notifications';
+import { TITLE_INPUT_ID } from '../rows/TitleRow';
+import { COUNT_ID, UNTIL_ID } from '../rows/EndsRow';
+import { EventModel, EventModelErrors } from '../../../interfaces/EventModel';
+import { NOTIFICATION_ID } from '../Notifications';
 
 const focusInput = (el: HTMLElement | null, id: string) => {
     el?.querySelector<HTMLInputElement>(`#${id}`)?.focus();

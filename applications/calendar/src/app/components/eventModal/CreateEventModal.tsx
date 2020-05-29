@@ -6,7 +6,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import validateEventModel from './eventForm/validateEventModel';
 
 import EventForm from './EventForm';
-import { useForm } from './useForm';
+import { useForm } from './hooks/useForm';
 import { EventModel } from '../../interfaces/EventModel';
 import { WeekStartsOn } from '../../containers/calendar/interface';
 
