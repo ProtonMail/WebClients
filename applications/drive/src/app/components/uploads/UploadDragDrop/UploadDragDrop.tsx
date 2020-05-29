@@ -46,45 +46,72 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 return;
             }
 
-            const filesToUpload: { path: string; file?: File }[] = [];
+            const filesToUpload: { path: string[]; file?: File }[] = [];
 
-            const traverseDirectories = function(item: any, path: string) {
+            const traverseDirectories = async function(item: any, path: string[] = []) {
                 if (item.isFile) {
-                    item.file(
-                        (file: File) => filesToUpload.push({ path, file }),
-                        (error: Error) => console.error(`Unable to get File ${item}: ${error}`)
-                    );
+                    return new Promise((resolve, reject) => {
+                        item.file(
+                            (file: File) => {
+                                filesToUpload.push({ path, file });
+                                resolve();
+                            },
+                            (error: Error) => reject(`Unable to get File ${item}: ${error}`)
+                        );
+                    });
                 } else if (item.isDirectory) {
                     const reader = item.createReader();
+                    const newPath = [...path, item.name];
 
-                    const getEntries = () => {
-                        reader.readEntries(
-                            (entries: any[]) => {
-                                if (entries.length) {
-                                    for (let i = 0; i < entries.length; i++) {
-                                        traverseDirectories(entries[i], item.fullPath);
+                    filesToUpload.push({ path: newPath });
+
+                    // Iterates over folders recursively and puts them into fileToUpload list
+                    const getEntries = async () => {
+                        const promises: Promise<any>[] = [];
+
+                        // Folders are read in batch, need to wait
+                        await new Promise((resolve, reject) => {
+                            reader.readEntries(
+                                (entries: any[]) => {
+                                    if (entries.length) {
+                                        entries.forEach((entry) => promises.push(traverseDirectories(entry, newPath)));
+                                        resolve(getEntries());
+                                    } else {
+                                        resolve();
                                     }
-                                    getEntries();
-                                } else {
-                                    filesToUpload.push({ path: item.fullPath });
-                                }
-                            },
-                            (error: Error) => console.error(`Unable to traverse directory ${item}: ${error}`)
-                        );
-                    };
+                                },
+                                (error: Error) => reject(`Unable to traverse directory ${item}: ${error}`)
+                            );
+                        });
 
-                    getEntries();
+                        return Promise.allSettled(promises);
+                    };
+                    await getEntries();
                 }
             };
 
+            const promises: Promise<any>[] = [];
             for (let i = 0; i < items.length; i++) {
-                const item = items[i].webkitGetAsEntry();
+                const item = (items[i] as any).getAsEntry
+                    ? (items[i] as any).getAsEntry()
+                    : items[i].webkitGetAsEntry();
 
-                if (!item) {
-                    return;
+                if (item) {
+                    promises.push(traverseDirectories(item));
                 }
+            }
 
-                traverseDirectories(item, '/');
+            // Need to wait for all files to have been read
+            const results = await Promise.allSettled(promises);
+            const errors = results.reduce((err, result) => {
+                if (result.status === 'rejected') {
+                    err.push(result.reason);
+                }
+                return err;
+            }, [] as string[]);
+
+            if (errors.length) {
+                console.error(errors);
             }
 
             uploadDriveFiles(folder.shareId, folder.linkId, filesToUpload);

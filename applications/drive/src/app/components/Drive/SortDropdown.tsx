@@ -13,7 +13,8 @@ import {
 } from 'react-components';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
-import { useDriveContent, SortKeys } from './DriveContentProvider';
+import { useDriveContent } from './DriveContentProvider';
+import { SortKeys } from '../../interfaces/link';
 
 interface Props {
     className?: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDriveCache, LinkKeys } from '../components/DriveCache/DriveCacheProvider';
+import { useDriveCache, LinkKeys, DEFAULT_SORT_PARAMS } from '../components/DriveCache/DriveCacheProvider';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { useModals } from 'react-components';
 import useDriveCrypto from './useDriveCrypto';
@@ -243,11 +243,7 @@ function useDrive() {
         return linkMetas;
     };
 
-    const fetchNextFolderContents = async (
-        shareId: string,
-        linkId: string,
-        sortParams?: { sortField: string; sortOrder: string }
-    ) => {
+    const fetchNextFolderContents = async (shareId: string, linkId: string, sortParams = DEFAULT_SORT_PARAMS) => {
         const listedChildren = cache.get.listedChildLinks(shareId, linkId, sortParams) || [];
 
         const PageSize = FOLDER_PAGE_SIZE;
