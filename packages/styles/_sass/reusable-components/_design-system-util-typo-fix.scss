@@ -184,6 +184,12 @@ abbr[title] {
 .capitalize {
   text-transform: capitalize;
 }
+.capitalize-block {
+  text-transform: lowercase;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
 
 b, strong, .strong, .bold {
   font-weight: bold;
