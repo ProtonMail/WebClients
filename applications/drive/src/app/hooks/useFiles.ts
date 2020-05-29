@@ -140,7 +140,12 @@ function useFiles() {
         [sign]
     );
 
-    const uploadDriveFile = async (shareId: string, ParentLinkID: string, file: File) => {
+    const uploadDriveFile = async (
+        shareId: string,
+        parentLinkID: string | Promise<string>,
+        file: File,
+        noNameCheck = false
+    ) => {
         const setupPromise = (async () => {
             const error = validateLinkName(file.name);
 
@@ -148,10 +153,22 @@ function useFiles() {
                 throw new ValidationError(error);
             }
 
+            const ParentLinkID = await parentLinkID;
+
             const [parentKeys, addressKeyInfo] = await Promise.all([
                 getLinkKeys(shareId, ParentLinkID),
                 getPrimaryAddressKey()
             ]);
+
+            const generateNameHash = async () => {
+                if (!('hashKey' in parentKeys)) {
+                    throw Error('Missing hash key on folder link');
+                }
+                return {
+                    filename: file.name,
+                    hash: await generateLookupHash(file.name.toLowerCase(), parentKeys.hashKey)
+                };
+            };
 
             const { NodeKey, privateKey, NodePassphrase, NodePassphraseSignature } = await generateNodeKeys(
                 parentKeys.privateKey,
@@ -164,7 +181,10 @@ function useFiles() {
                 throw new Error('Could not generate ContentKeyPacket');
             }
 
-            const { filename, hash: Hash } = await findAvailableName(shareId, ParentLinkID, file.name);
+            const { filename, hash: Hash } = noNameCheck
+                ? await generateNameHash()
+                : await findAvailableName(shareId, ParentLinkID, file.name);
+
             const blob = new Blob([file], { type: file.type });
 
             const Name = await encryptUnsigned({
@@ -195,13 +215,14 @@ function useFiles() {
                 MimeType,
                 sessionKey,
                 filename,
-                addressKeyInfo
+                addressKeyInfo,
+                ParentLinkID
             };
         })();
 
         addToUploadQueue(
             file,
-            setupPromise.then(({ blob, MimeType, File, filename }) => ({
+            setupPromise.then(({ blob, MimeType, File, filename, ParentLinkID }) => ({
                 meta: {
                     size: blob.size,
                     mimeType: MimeType,
@@ -263,7 +284,7 @@ function useFiles() {
         );
     };
 
-    const checkHasEnoughSpace = async (files: FileList | File[] | { path: string; file?: File }[]) => {
+    const checkHasEnoughSpace = async (files: FileList | File[] | { path: string[]; file?: File }[]) => {
         const calculateRemainingUploadBytes = () => {
             const uploads = getUploadsImmediate();
             const progresses = getUploadsProgresses();
@@ -291,15 +312,15 @@ function useFiles() {
 
     /**
      * Accepts either a file list to upload to the parent folder or `{ path, file }` objects, where `path` is
-     * a folder path relative to the parent folder (missing folders will be created before upload). Uploads without file
-     * will create empty folders.
+     * a folder path relative to the parent folder (parent folder must be earlier in the list). Uploads without file
+     * will only create empty folders.
      */
     const uploadDriveFiles = queuedFunction(
         'uploadDriveFiles',
-        async (shareId: string, ParentLinkID: string, files: FileList | File[] | { path: string; file?: File }[]) => {
+        async (shareId: string, ParentLinkID: string, files: FileList | File[] | { path: string[]; file?: File }[]) => {
             const { result, total } = await checkHasEnoughSpace(files);
-            const formattedRemaining = humanSize(total);
             if (!result) {
+                const formattedRemaining = humanSize(total);
                 createNotification({
                     text: c('Notification').t`Not enough space to upload ${formattedRemaining}`,
                     type: 'error'
@@ -310,48 +331,65 @@ function useFiles() {
             const folderPromises: { [path: string]: ReturnType<typeof createNewFolder> } = {};
 
             for (let i = 0; i < files.length; i++) {
-                const entry = files[i];
+                setTimeout(() => {
+                    const entry = files[i];
 
-                if ('path' in entry) {
-                    const file = entry.file;
-                    const folders = entry.path.split('/').filter(isTruthy);
-
-                    folders.forEach((folder, j) => {
-                        const parent = folders.slice(0, j).join('/');
-                        const path = parent ? [parent, folder].join('/') : folder;
-
-                        if (folderPromises[path]) {
-                            return;
-                        }
-
-                        // File upload must wait for the folder to be created
-                        folderPromises[path] = parent
-                            ? folderPromises[parent].then(({ Folder: { ID } }) => createNewFolder(shareId, ID, folder))
-                            : findAvailableName(shareId, ParentLinkID, folder).then(({ filename: adjustedName }) =>
-                                  createNewFolder(shareId, ParentLinkID, adjustedName)
-                              );
-
-                        // Fetch events to get keys required for further name checks in the new folder
-                        folderPromises[path] = folderPromises[path].then(async (args) => {
-                            await events.call(shareId);
-                            return args;
-                        });
-                    });
-
-                    if (!file) {
-                        continue; // No file to upload
+                    if (!('path' in entry)) {
+                        uploadDriveFile(shareId, ParentLinkID, entry);
+                        return;
                     }
+
+                    const file = entry.file;
+                    const folders = entry.path;
 
                     if (folders.length) {
-                        folderPromises[folders.join('/')].then(({ Folder: { ID } }) => {
-                            uploadDriveFile(shareId, ID, file);
-                        });
-                    } else {
+                        const folder = folders.slice(-1)[0];
+
+                        const parent = folders.slice(0, -1).join('/');
+                        const path = parent ? folders.join('/') : folder;
+
+                        if (!folderPromises[path]) {
+                            let promise: Promise<any>;
+
+                            if (folderPromises[parent]) {
+                                // Wait for parent folders to be created first
+                                promise = folderPromises[parent].then(({ Folder: { ID } }) =>
+                                    createNewFolder(shareId, ID, folder)
+                                );
+                            } else {
+                                // If root folder in a tree, it's name must be checked, all other folders are new ones
+                                promise = parent
+                                    ? createNewFolder(shareId, ParentLinkID, folder)
+                                    : findAvailableName(
+                                          shareId,
+                                          ParentLinkID,
+                                          folder
+                                      ).then(({ filename: adjustedName }) =>
+                                          createNewFolder(shareId, ParentLinkID, adjustedName)
+                                      );
+                            }
+
+                            // Fetch events to get keys required for encryption in the new folder
+                            folderPromises[path] = promise.then(async (args) => {
+                                await events.call(shareId);
+                                return args;
+                            });
+                        }
+
+                        if (!file) {
+                            return; // No file to upload
+                        }
+
+                        uploadDriveFile(
+                            shareId,
+                            folderPromises[path].then(({ Folder: { ID } }) => ID),
+                            file,
+                            true
+                        );
+                    } else if (file) {
                         uploadDriveFile(shareId, ParentLinkID, file);
                     }
-                } else {
-                    uploadDriveFile(shareId, ParentLinkID, entry);
-                }
+                }, 0);
             }
         }
     );

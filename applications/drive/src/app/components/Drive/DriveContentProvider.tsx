@@ -10,8 +10,7 @@ import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder, useDriveActiveFolder } from './DriveFolderProvider';
 import { mapLinksToChildren } from './helpers';
 import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../../constants';
-
-export type SortKeys = keyof Pick<FileBrowserItem, 'MimeType' | 'Modified' | 'Size'>;
+import { SortKeys } from '../../interfaces/link';
 
 interface DriveContentProviderState {
     contents: FileBrowserItem[];

@@ -80,3 +80,5 @@ export interface MoveLink {
     NodePassphraseSignature: string;
     SignatureAddressID: string;
 }
+
+export type SortKeys = keyof Pick<DriveLink, 'MimeType' | 'Modified' | 'Size'>;
