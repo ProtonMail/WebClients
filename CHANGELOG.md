@@ -8,7 +8,6 @@
 
 ## Updates
 - reCAPTCHA verification - adding privacy and terms links
-- Search behavior - removing the exact match option
 - Open PGP 4.10 - adding polyfill for atob
 - Payments - improving token processing
 - Encryption - upgrading keys
