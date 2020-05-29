@@ -12,9 +12,9 @@ const EMAIL_ERRORS = [KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GE
  * Ask the API for public keys for a given email address. The response will contain keys both
  * for internal users and for external users with WKD keys
  */
-const getPublicKeysEmailHelper = async (api: Api, Email: string): Promise<ApiKeysConfig> => {
+const getPublicKeysEmailHelper = async (api: Api, Email: string, silence = false): Promise<ApiKeysConfig> => {
     try {
-        const { Keys = [], ...rest } = await api(getPublicKeys({ Email }));
+        const { Keys = [], ...rest } = await api({ ...getPublicKeys({ Email }), silence });
         const publicKeys = (await Promise.all(
             Keys.map(({ PublicKey }) => {
                 return getKeys(PublicKey)
@@ -30,7 +30,7 @@ const getPublicKeysEmailHelper = async (api: Api, Email: string): Promise<ApiKey
     } catch (error) {
         const { data = {} } = error;
         if (EMAIL_ERRORS.includes(data.Code)) {
-            return { Keys: [], publicKeys: [] };
+            return { Keys: [], publicKeys: [], Warnings: [data.Error] };
         }
         throw error;
     }
