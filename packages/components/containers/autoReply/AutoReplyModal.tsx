@@ -1,9 +1,10 @@
-import React from 'react';
-import { FormModal, useEventManager, useNotifications, useApi, useLoading, RichTextEditor } from 'react-components';
-import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
-import PropTypes from 'prop-types';
+import React, { useRef } from 'react';
 import { c } from 'ttag';
+import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
 import { AutoReplyDuration } from 'proton-shared/lib/constants';
+
+import { FormModal, useEventManager, useNotifications, useApi, useLoading, SimpleSquireEditor } from '../../index';
+import { SquireEditorRef } from '../../components/editor/SquireEditor';
 
 import useAutoReplyForm from './AutoReplyForm/useAutoReplyForm';
 import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';
@@ -13,18 +14,30 @@ import AutoReplyFormWeekly from './AutoReplyForm/AutoReplyFormWeekly';
 import AutoReplyFormPermanent from './AutoReplyForm/AutoReplyFormPermanent';
 import DurationField from './AutoReplyForm/fields/DurationField';
 
-const AutoReplyModal = ({ onClose, autoresponder, ...rest }) => {
+interface Props {
+    onClose: () => void;
+    autoresponder: any;
+}
+
+const AutoReplyModal = ({ onClose, autoresponder, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const api = useApi();
     const { createNotification } = useNotifications();
     const { model, updateModel, toAutoResponder } = useAutoReplyForm(autoresponder);
     const { call } = useEventManager();
+    const editorRef = useRef<SquireEditorRef>(null);
 
     const handleSubmit = async () => {
         await api(updateAutoresponder(toAutoResponder(model)));
         await call();
         onClose();
         createNotification({ text: c('Success').t`Auto-reply updated` });
+    };
+
+    const handleEditorReady = () => {
+        if (editorRef.current) {
+            editorRef.current.value = model.message;
+        }
     };
 
     return (
@@ -44,16 +57,16 @@ const AutoReplyModal = ({ onClose, autoresponder, ...rest }) => {
                     [AutoReplyDuration.MONTHLY]: <AutoReplyFormMonthly model={model} updateModel={updateModel} />,
                     [AutoReplyDuration.WEEKLY]: <AutoReplyFormWeekly model={model} updateModel={updateModel} />,
                     [AutoReplyDuration.PERMANENT]: <AutoReplyFormPermanent model={model} updateModel={updateModel} />
-                }[model.duration]
+                }[model.duration as AutoReplyDuration]
             }
-            <RichTextEditor value={model.message} onChange={updateModel('message')} />
+            <SimpleSquireEditor
+                ref={editorRef}
+                supportImages={false}
+                onReady={handleEditorReady}
+                onChange={updateModel('message')}
+            />
         </FormModal>
     );
-};
-
-AutoReplyModal.propTypes = {
-    onClose: PropTypes.func,
-    autoresponder: PropTypes.object
 };
 
 export default AutoReplyModal;

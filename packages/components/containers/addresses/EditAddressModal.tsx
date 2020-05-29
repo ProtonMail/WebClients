@@ -1,19 +1,20 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useState, useRef } from 'react';
 import { c } from 'ttag';
+import { updateAddress } from 'proton-shared/lib/api/addresses';
+import { Address } from 'proton-shared/lib/interfaces';
 import {
     FormModal,
     Row,
     Field,
     Label,
     Input,
-    RichTextEditor,
+    SimpleSquireEditor,
     useApi,
     useLoading,
     useNotifications,
     useEventManager
 } from '../../index';
-import { updateAddress } from 'proton-shared/lib/api/addresses';
-import { Address } from 'proton-shared/lib/interfaces';
+import { SquireEditorRef } from '../../components/editor/SquireEditor';
 
 const EMPTY_VALUES = [/^(<div><br><\/div>)+$/, /^(<div>\s*<\/div>)+$/];
 
@@ -32,6 +33,13 @@ const EditAddressModal = ({ onClose, address, ...rest }: Props) => {
         signature: address.Signature
     });
     const { createNotification } = useNotifications();
+    const editorRef = useRef<SquireEditorRef>(null);
+
+    const handleReady = () => {
+        if (editorRef.current) {
+            editorRef.current.value = model.signature;
+        }
+    };
 
     const handleDisplayName = ({ target }: ChangeEvent<HTMLInputElement>) =>
         updateModel({ ...model, displayName: target.value });
@@ -71,10 +79,7 @@ const EditAddressModal = ({ onClose, address, ...rest }: Props) => {
                 </Field>
             </Row>
             <Row>
-                <Label>{c('Label').t`Signature`}</Label>
-                <Field className="pm-field-container--full">
-                    <RichTextEditor value={model.signature} onChange={handleSignature} />
-                </Field>
+                <SimpleSquireEditor ref={editorRef} onReady={handleReady} onChange={handleSignature} />
             </Row>
         </FormModal>
     );
