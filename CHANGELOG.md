@@ -1,3 +1,18 @@
+# [3.16.24] - 2020-05-29
+
+## Fixed
+- Bug when using the address option in advanced search
+- Bug when activating a ProtonMail mailbox in some cases
+- Bug when user is signed out upon receiving an internal server error
+- Various bugs related to processing notifications and unread counters
+
+## Updates
+- reCAPTCHA verification - adding privacy and terms links
+- Search behavior - removing the exact match option
+- Open PGP 4.10 - adding polyfill for atob
+- Payments - improving token processing
+- Encryption - upgrading keys
+
 # [3.16.23] - 2020-04-09
 ## Fixed
 - SMS and Email verification bugs during sign up
