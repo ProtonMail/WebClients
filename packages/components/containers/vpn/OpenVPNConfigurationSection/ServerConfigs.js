@@ -41,7 +41,7 @@ const ServerConfigs = ({ servers, ...rest }) => {
             {sortedGroups.map((group) => {
                 const server = group[0];
                 return (
-                    <Details key={server.Country}>
+                    <Details key={server.Country} open={server.open}>
                         <Summary>
                             <div className="ml0-5">
                                 <Country server={group[0]} />

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
 import {
     Alert,
@@ -49,16 +49,15 @@ const OpenVPNConfigurationSection = () => {
     const { loading, result = {} } = useApiResult(queryVPNLogicalServerInfo, []);
     const { result: vpnResult = {}, loading: vpnLoading } = useUserVPN();
     const [{ hasPaidVpn }] = useUser();
-
-    const userVPN = vpnResult.VPN;
-    const isBasicVPN = userVPN && userVPN.PlanName === 'vpnbasic';
+    const { VPN: userVPN = {} } = vpnResult;
+    const isBasicVPN = userVPN.PlanName === 'vpnbasic';
 
     const downloadAllConfigs = async () => {
         const buffer = await request({
-            Category: category,
+            Category: category === CATEGORY.FREE ? CATEGORY.SERVER : category,
             Platform: platform,
             Protocol: protocol,
-            Tier: userVPN.PlanName === 'trial' ? 0 : userVPN && userVPN.MaxTier
+            Tier: userVPN.PlanName === 'trial' || category === CATEGORY.FREE ? 0 : userVPN.MaxTier
         });
         const blob = new Blob([buffer], { type: 'application/zip' });
         downloadFile(blob, 'ProtonVPN_server_configs.zip');
@@ -93,11 +92,20 @@ const OpenVPNConfigurationSection = () => {
         ...minBy(({ Load }) => Number(Load), groups),
         Servers: groups.reduce((acc, { Servers = [] }) => (acc.push(...Servers), acc), [])
     }));
+    const freeServers = allServers.filter(({ Tier }) => Tier === 0).map((server) => ({ ...server, open: true }));
 
-    const isUpgradeRequiredForSecureCore = () => !userVPN || !hasPaidVpn || isBasicVPN;
-    const isUpgradeRequiredForCountries = () => !userVPN || !hasPaidVpn;
+    const isUpgradeRequiredForSecureCore = () => !Object.keys(userVPN).length || !hasPaidVpn || isBasicVPN;
+    const isUpgradeRequiredForCountries = () => !Object.keys(userVPN).length || !hasPaidVpn;
     const isUpgradeRequiredForDownloadAll =
-        !userVPN || (!hasPaidVpn && category !== CATEGORY.SERVER) || (isBasicVPN && category === CATEGORY.SECURE_CORE);
+        !Object.keys(userVPN).length ||
+        (!hasPaidVpn && category !== CATEGORY.SERVER) ||
+        (isBasicVPN && category === CATEGORY.SECURE_CORE);
+
+    useEffect(() => {
+        if (!hasPaidVpn || userVPN.PlanName === 'trial') {
+            setCategory(CATEGORY.FREE);
+        }
+    }, [vpnLoading]);
 
     return (
         <>
@@ -190,13 +198,16 @@ const OpenVPNConfigurationSection = () => {
                 <ButtonGroup
                     onClick={handleSelectConfig(CATEGORY.SERVER)}
                     className={category === CATEGORY.SERVER ? 'is-active' : ''}
-                >{c('Tab').t`Server configs`}</ButtonGroup>
+                >{c('Tab').t`Standard server configs`}</ButtonGroup>
+                <ButtonGroup
+                    onClick={handleSelectConfig(CATEGORY.FREE)}
+                    className={category === CATEGORY.FREE ? 'is-active' : ''}
+                >{c('Tab').t`Free server configs`}</ButtonGroup>
             </Group>
 
             <Block>
                 {category === CATEGORY.SECURE_CORE && (
                     <>
-                        <h3>{c('Title').t`Secure core configs`}</h3>
                         <Alert learnMore="https://protonvpn.com/support/secure-core-vpn">
                             {c('Info')
                                 .t`Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.`}
@@ -219,7 +230,6 @@ const OpenVPNConfigurationSection = () => {
                 )}
                 {category === CATEGORY.COUNTRY && (
                     <>
-                        <h3>{c('Title').t`Country configs`}</h3>
                         <Alert>
                             {c('Info')
                                 .t`Install a Country configuration file to connect to a random server in the country of your choice.`}
@@ -240,10 +250,21 @@ const OpenVPNConfigurationSection = () => {
                 )}
                 {category === CATEGORY.SERVER && (
                     <>
-                        <h3>{c('Title').t`Server configs`}</h3>
                         <Alert>{c('Info')
                             .t`Install a Server configuration file to connect to a specific server in the country of your choice.`}</Alert>
                         <ServerConfigs platform={platform} protocol={protocol} loading={loading} servers={allServers} />
+                    </>
+                )}
+                {category === CATEGORY.FREE && (
+                    <>
+                        <Alert>{c('Info')
+                            .t`Install a Free server configuration file to connect to a specific server in one of the three free locations.`}</Alert>
+                        <ServerConfigs
+                            platform={platform}
+                            protocol={protocol}
+                            loading={loading}
+                            servers={freeServers}
+                        />
                     </>
                 )}
                 {isUpgradeRequiredForDownloadAll ? (

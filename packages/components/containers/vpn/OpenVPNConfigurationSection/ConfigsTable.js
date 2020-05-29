@@ -24,7 +24,8 @@ import { isP2PEnabled, isTorEnabled } from './utils';
 export const CATEGORY = {
     SECURE_CORE: 'SecureCore',
     COUNTRY: 'Country',
-    SERVER: 'Server'
+    SERVER: 'Server',
+    FREE: 'Free'
 };
 
 const PlusBadge = () => (
