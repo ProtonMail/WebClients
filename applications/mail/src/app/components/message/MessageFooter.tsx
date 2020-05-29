@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { c, msgid } from 'ttag';
-import { Icon, useApi, classnames } from 'react-components';
+import { Icon, classnames } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { attachmentsSize, getAttachments, getNumAttachmentByType } from '../../helpers/message/messages';
 import MessageAttachment from './MessageAttachment';
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
-import { downloadAll } from '../../helpers/attachment/attachmentDownloader';
-import { useAttachmentCache } from '../../containers/AttachmentProvider';
+import { useDownloadAll } from '../../hooks/useDownload';
 
 interface Props {
     message: MessageExtended;
@@ -21,10 +20,9 @@ interface Props {
 }
 
 const MessageFooter = ({ message, showActions = true }: Props) => {
-    const cache = useAttachmentCache();
-    const api = useApi();
     const [showLoader, setShowLoader] = useState(false);
     const [showInstant, setShowInstant] = useState(false);
+    const downloadAll = useDownloadAll();
 
     const humanAttachmentsSize = humanSize(attachmentsSize(message.data));
 
@@ -34,9 +32,15 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
 
     const handleDownloadAll = async () => {
         setShowLoader(true);
-        await downloadAll(message as MessageExtendedWithData, cache, api);
-        setShowLoader(false);
-        setShowInstant(true);
+        try {
+            await downloadAll(message as MessageExtendedWithData);
+        } catch (error) {
+            // Notification is handled by the hook
+            console.log('errro', error);
+        } finally {
+            setShowLoader(false);
+            setShowInstant(true);
+        }
     };
 
     return (

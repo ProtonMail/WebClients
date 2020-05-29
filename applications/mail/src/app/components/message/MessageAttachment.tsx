@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { Icon, classnames, useApi } from 'react-components';
+import { Icon, classnames } from 'react-components';
+
 import { MessageExtended } from '../../models/message';
 import { Attachment } from '../../models/attachment';
-import { download } from '../../helpers/attachment/attachmentDownloader';
-import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { isEmbeddedLocal } from '../../helpers/embedded/embeddeds';
+import { useDownload } from '../../hooks/useDownload';
 
 // Reference: Angular/src/templates/attachments/attachmentElement.tpl.html
 
@@ -41,10 +41,9 @@ interface Props {
 }
 
 const MessageAttachment = ({ attachment, message }: Props) => {
-    const cache = useAttachmentCache();
-    const api = useApi();
     const [showLoader, setShowLoader] = useState(false);
     const [showInstant, setShowInstant] = useState(false);
+    const download = useDownload();
 
     const humanAttachmentSize = humanSize(attachment.Size);
 
@@ -60,9 +59,14 @@ const MessageAttachment = ({ attachment, message }: Props) => {
 
     const clickHandler = async () => {
         setShowLoader(true);
-        await download(attachment, message, cache, api);
-        setShowLoader(false);
-        setShowInstant(true);
+        try {
+            await download(message, attachment);
+        } catch {
+            // Notification is handled by the hook
+        } finally {
+            setShowLoader(false);
+            setShowInstant(true);
+        }
     };
 
     const icon = showLoader ? '' : showInstant ? 'download' : outerIcon;

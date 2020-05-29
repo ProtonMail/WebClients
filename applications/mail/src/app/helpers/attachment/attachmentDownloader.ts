@@ -17,7 +17,7 @@ interface Download {
 /**
  * Format attachment for the download
  */
-const formatDownload = async (
+export const formatDownload = async (
     attachment: Attachment,
     message: MessageExtended,
     cache: AttachmentsCache,
@@ -29,27 +29,27 @@ const formatDownload = async (
             attachment,
             data: data as Uint8Array
         };
-    } catch (e) {
+    } catch (error) {
         // If the decryption fails we download the encrypted version
-        if (e.data) {
+        if (error.data) {
             return {
                 attachment: {
                     Name: `${attachment.Name}.pgp`,
                     MIMEType: 'application/pgp',
                     ID: attachment.ID
                 },
-                data: e.data,
+                data: error.binary,
                 isError: true
             };
         }
-        throw e;
+        throw error;
     }
 };
 
 /**
  * Generate a download for an attachment
  */
-const generateDownload = async (download: Download /*, message: MessageExtended*/) => {
+export const generateDownload = async (download: Download /*, message: MessageExtended*/) => {
     // TODO: uncomment
     // try {
     //     await checkAllSignatures(message, [attachment]);
@@ -62,31 +62,14 @@ const generateDownload = async (download: Download /*, message: MessageExtended*
 };
 
 /**
- * Download an attachment
- */
-export const download = async (
-    attachment: Attachment,
-    message: MessageExtended,
-    cache: AttachmentsCache,
-    api: Api
-): Promise<void> => {
-    const download = await formatDownload(attachment, message, cache, api);
-
-    // TODO: uncomment
-    // if (download.isError) {
-    //     if (!(await allowDownloadBrokenAtt())) {
-    //         return; // We don't want to download it
-    //     }
-    // }
-
-    return generateDownload(download);
-};
-
-/**
  * The attachment's Name is not unique we need a unique name in order to make the zip.
  * The lib doesn't allow duplicates
  */
-const formatDownloadAll = async (message: MessageExtended, cache: AttachmentsCache, api: Api): Promise<Download[]> => {
+export const formatDownloadAll = async (
+    message: MessageExtended,
+    cache: AttachmentsCache,
+    api: Api
+): Promise<Download[]> => {
     const { Attachments = [] } = message.data || {};
     const { list }: { list: Attachment[] } = Attachments.reduce(
         (acc: any, att) => {
@@ -111,15 +94,9 @@ const formatDownloadAll = async (message: MessageExtended, cache: AttachmentsCac
 const getZipAttachmentName = (message: Message) => `Attachments-${message.Subject}.zip`;
 
 /**
- * Download all attachments as a zipfile
+ * Zip and trigger download of a list of download objects
  */
-export const downloadAll = async (
-    message: MessageExtendedWithData,
-    cache: AttachmentsCache,
-    api: Api
-): Promise<void> => {
-    const list = await formatDownloadAll(message, cache, api);
-
+export const generateDownloadAll = async (message: MessageExtendedWithData, list: Download[]) => {
     // TODO: uncomment
     // try {
     //     await checkAllSignatures(message, list);
@@ -128,16 +105,10 @@ export const downloadAll = async (
     //     return;
     // }
 
-    // TODO: uncomment
-    // // Detect if we have at least one error
-    // if (list.some(({ isError }) => isError)) {
-    //     if (!(await allowDownloadBrokenAtt())) {
-    //         return; // We don't want to download it
-    //     }
-    // }
-
     const zip = new JSZip();
     list.forEach(({ attachment: { Name = '' }, data }) => zip.file(Name, data));
     const content = await zip.generateAsync({ type: 'blob' });
-    downloadFile(content, getZipAttachmentName(message.data));
+    const name = getZipAttachmentName(message.data);
+
+    downloadFile(content, name);
 };
