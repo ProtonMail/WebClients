@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
 import { AutoReplyDuration } from 'proton-shared/lib/constants';
 
 import { FormModal, useEventManager, useNotifications, useApi, useLoading, SimpleSquireEditor } from '../../index';
-import { SquireEditorRef } from '../../components/editor/SquireEditor';
 
 import useAutoReplyForm from './AutoReplyForm/useAutoReplyForm';
 import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';
@@ -14,18 +14,13 @@ import AutoReplyFormWeekly from './AutoReplyForm/AutoReplyFormWeekly';
 import AutoReplyFormPermanent from './AutoReplyForm/AutoReplyFormPermanent';
 import DurationField from './AutoReplyForm/fields/DurationField';
 
-interface Props {
-    onClose: () => void;
-    autoresponder: any;
-}
-
-const AutoReplyModal = ({ onClose, autoresponder, ...rest }: Props) => {
+const AutoReplyModal = ({ onClose, autoresponder, ...rest }) => {
     const [loading, withLoading] = useLoading();
     const api = useApi();
     const { createNotification } = useNotifications();
     const { model, updateModel, toAutoResponder } = useAutoReplyForm(autoresponder);
     const { call } = useEventManager();
-    const editorRef = useRef<SquireEditorRef>(null);
+    const editorRef = useRef(null);
 
     const handleSubmit = async () => {
         await api(updateAutoresponder(toAutoResponder(model)));
@@ -57,7 +52,7 @@ const AutoReplyModal = ({ onClose, autoresponder, ...rest }: Props) => {
                     [AutoReplyDuration.MONTHLY]: <AutoReplyFormMonthly model={model} updateModel={updateModel} />,
                     [AutoReplyDuration.WEEKLY]: <AutoReplyFormWeekly model={model} updateModel={updateModel} />,
                     [AutoReplyDuration.PERMANENT]: <AutoReplyFormPermanent model={model} updateModel={updateModel} />
-                }[model.duration as AutoReplyDuration]
+                }[model.duration]
             }
             <SimpleSquireEditor
                 ref={editorRef}
@@ -67,6 +62,11 @@ const AutoReplyModal = ({ onClose, autoresponder, ...rest }: Props) => {
             />
         </FormModal>
     );
+};
+
+AutoReplyModal.propTypes = {
+    onClose: PropTypes.func,
+    autoresponder: PropTypes.object
 };
 
 export default AutoReplyModal;
