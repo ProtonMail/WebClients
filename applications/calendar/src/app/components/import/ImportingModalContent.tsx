@@ -19,6 +19,7 @@ import { c } from 'ttag';
 import { HOUR, MAX_UID_CHARS_DISPLAY } from '../../constants';
 import getCreationKeys from '../../containers/calendar/getCreationKeys';
 import getMemberAndAddress, { getMemberAndAddressID } from '../../helpers/getMemberAndAddress';
+import { splitByRecurrenceId } from '../../helpers/import';
 import useUnload from '../../hooks/useUnload';
 import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel, SyncMultipleApiResponse } from '../../interfaces/Import';
 
@@ -151,6 +152,25 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
             );
         };
 
+        const processInBatches = async (
+            events: VcalVeventComponent[],
+            memberID: string,
+            addressKeys: CachedKey[],
+            calendarKeys: CachedKey[],
+            signal: AbortSignal
+        ) => {
+            const batches = chunk(events, BATCH_SIZE);
+            for (let i = 0; i < batches.length; i++) {
+                // The API requests limit for the submit route are 100 calls per 10 seconds
+                // We play it safe by enforcing a 100ms minimum wait between API calls. During this wait we encrypt the events
+                const [encryptedEvents] = await Promise.all([
+                    encryptEvents(batches[i], addressKeys, calendarKeys, signal),
+                    wait(100),
+                ]);
+                submitEvents(encryptedEvents, memberID, i, signal);
+            }
+        };
+
         const getIdsAndKeys = async (calendarID: string) => {
             const [{ Members }, Addresses] = await Promise.all([getCalendarBootstrap(calendarID), getAddresses()]);
             const [memberID, addressID] = getMemberAndAddressID(getMemberAndAddress(Addresses, Members));
@@ -167,16 +187,10 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
         const process = async (signal: AbortSignal) => {
             try {
                 const { memberID, addressKeys, calendarKeys } = await getIdsAndKeys(model.calendar.ID);
-                const batches = chunk(model.eventsParsed, BATCH_SIZE);
-                for (let i = 0; i < batches.length; i++) {
-                    // The API requests limit for the submit route are 100 calls per 10 seconds
-                    // We play it safe by enforcing a 100ms minimum wait between API calls. During this wait we encrypt the events
-                    const [encryptedEvents] = await Promise.all([
-                        encryptEvents(batches[i], addressKeys, calendarKeys, signal),
-                        wait(100),
-                    ]);
-                    submitEvents(encryptedEvents, memberID, i, signal);
-                }
+                const { withoutRecurrenceID, withRecurrenceID } = splitByRecurrenceId(model.eventsParsed);
+                await processInBatches(withoutRecurrenceID, memberID, addressKeys, calendarKeys, signal);
+                // import events with recurrence id after events without, since the latter refer to the former
+                await processInBatches(withRecurrenceID, memberID, addressKeys, calendarKeys, signal);
             } catch (error) {
                 setModelWithAbort(
                     (model) => ({

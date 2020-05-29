@@ -409,3 +409,20 @@ export const filterNonSupported = ({ components, calscale, xWrTimezone }: Filter
         { events: [], discarded: [] }
     );
 };
+
+/**
+ * Split an array of events into those which have a recurrence id and those which don't
+ */
+export const splitByRecurrenceId = (events: VcalVeventComponent[]) => {
+    return events.reduce<{ withoutRecurrenceID: VcalVeventComponent[]; withRecurrenceID: VcalVeventComponent[] }>(
+        (acc, event) => {
+            if (event['recurrence-id']) {
+                acc.withRecurrenceID.push(event);
+            } else {
+                acc.withoutRecurrenceID.push(event);
+            }
+            return acc;
+        },
+        { withoutRecurrenceID: [], withRecurrenceID: [] }
+    );
+};
