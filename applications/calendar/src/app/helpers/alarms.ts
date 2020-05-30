@@ -143,6 +143,8 @@ export const getIsValidAlarm = (alarm: VcalValarmComponent) => {
     return true;
 };
 
+const ALARM_FIELDS_TO_PICK: (keyof VcalValarmComponent)[] = ['component', 'action', 'description', 'summary'];
+
 /**
  * Given a VALARM component, try to transform it into something that we support.
  * Return undefined otherwise
@@ -175,8 +177,10 @@ export const getSupportedAlarm = (alarm: VcalValarmComponent, dtstart: VcalDateO
         return;
     }
 
+    const existingFieldsToPick = ALARM_FIELDS_TO_PICK.filter((alarmKey) => !!alarm[alarmKey]);
+
     return {
-        ...pick(alarm, ['component', 'action', 'description', 'summary']),
+        ...pick(alarm, existingFieldsToPick),
         trigger: { value: normalizedTrigger },
     };
 };
