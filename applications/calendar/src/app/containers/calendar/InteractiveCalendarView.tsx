@@ -51,7 +51,6 @@ import EditRecurringConfirmModal from './confirmationModals/EditRecurringConfirm
 import handleSaveEventHelper from './eventActions/handleSaveEvent';
 import handleDeleteEventHelper from './eventActions/handleDeleteEvent';
 import { getHasDoneChanges } from '../../components/eventModal/eventForm/getHasEdited';
-import RecurringMatchWarning from './confirmationModals/RecurringMatchWarning';
 import withOccurrenceEvent from './eventActions/occurrenceEvent';
 import {
     CalendarViewEvent,
@@ -489,14 +488,21 @@ const InteractiveCalendarView = ({
         data,
     }: {
         type: SAVE_CONFIRMATION_TYPES;
-        data?: RECURRING_TYPES[];
+        data?: {
+            types: RECURRING_TYPES[];
+            hasSingleModifications: boolean;
+        };
     }): Promise<RECURRING_TYPES> => {
         return new Promise((resolve, reject) => {
             if (type === SAVE_CONFIRMATION_TYPES.RECURRING && data) {
-                return createModal(<EditRecurringConfirmModal types={data} onClose={reject} onConfirm={resolve} />);
-            }
-            if (type === SAVE_CONFIRMATION_TYPES.RECURRING_MATCH_WARNING) {
-                return createModal(<RecurringMatchWarning onClose={reject} onConfirm={resolve} />);
+                return createModal(
+                    <EditRecurringConfirmModal
+                        types={data.types}
+                        hasSingleModifications={data.hasSingleModifications}
+                        onClose={reject}
+                        onConfirm={resolve}
+                    />
+                );
             }
             return reject(new Error('Unknown type'));
         });

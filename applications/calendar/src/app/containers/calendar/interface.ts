@@ -81,7 +81,10 @@ export interface InteractiveState {
 
 export type OnSaveConfirmationCb = (data: {
     type: SAVE_CONFIRMATION_TYPES;
-    data?: RECURRING_TYPES[];
+    data?: {
+        types: RECURRING_TYPES[];
+        hasSingleModifications: boolean;
+    };
 }) => Promise<RECURRING_TYPES>;
 export type OnDeleteConfirmationCb = (data: {
     type: DELETE_CONFIRMATION_TYPES;

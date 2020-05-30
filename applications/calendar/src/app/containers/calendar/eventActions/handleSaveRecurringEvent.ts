@@ -68,14 +68,12 @@ const handleSaveRecurringEvent = async ({
 
     const saveType = await onSaveConfirmation({
         type: SAVE_CONFIRMATION_TYPES.RECURRING,
-        data: saveTypes,
+        data: {
+            types: saveTypes,
+            hasSingleModifications:
+                recurrences.length > 1 || (originalEventData.mainVeventComponent.exdate?.length || 0) >= 1,
+        },
     });
-
-    if (saveType === RECURRING_TYPES.ALL || saveType === RECURRING_TYPES.FUTURE) {
-        await onSaveConfirmation({
-            type: SAVE_CONFIRMATION_TYPES.RECURRING_MATCH_WARNING,
-        });
-    }
 
     const multiActions = await getSaveRecurringEventActions({
         type: saveType,
