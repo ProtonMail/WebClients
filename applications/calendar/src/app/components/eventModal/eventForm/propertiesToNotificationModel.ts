@@ -1,6 +1,6 @@
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
 import { VcalValarmComponent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { filterFutureNotifications } from '../../../helpers/notifications';
+import { filterFutureNotifications } from '../../../helpers/alarms';
 import { triggerToModel } from './notificationModel';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
 

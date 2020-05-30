@@ -24,7 +24,7 @@ export const getNegativeSetpos = (date: Date) => {
     return Math.ceil((monthDay - daysInMonth) / 7) - 1;
 };
 
-const getIsDateTimeValue = (value: VcalDateOrDateTimeValue): value is VcalDateTimeValue => {
+export const getIsDateTimeValue = (value: VcalDateOrDateTimeValue): value is VcalDateTimeValue => {
     return (value as VcalDateTimeValue).hours !== undefined;
 };
 

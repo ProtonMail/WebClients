@@ -75,21 +75,82 @@ END:VEVENT`;
         );
     });
 
-    test('should catch notifications out of bounds', () => {
+    test('should filter out notifications out of bounds', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
 DTSTART;TZID=America/New_York:19990312T083000
 DTEND;TZID=America/New_York:19990312T093000
 BEGIN:VALARM
+ACTION:DISPLAY
 TRIGGER:-PT10000M
 END:VALARM
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Notification out of bounds'
-        );
+        expect(getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 1999, month: 3, day: 12, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            dtend: {
+                value: { year: 1999, month: 3, day: 12, hours: 9, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            location: { value: '1CP Conference Room 4350' },
+        });
+    });
+
+    test('should normalize notifications', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART;VALUE=DATE:19990312
+DTEND;VALUE=DATE:19990313
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;VALUE=DATE-TIME:19960401T005545Z
+END:VALARM
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 1999, month: 3, day: 12 },
+                parameters: { type: 'date' },
+            },
+            dtend: {
+                value: { year: 1999, month: 3, day: 13 },
+                parameters: { type: 'date' },
+            },
+            location: { value: '1CP Conference Room 4350' },
+            components: [
+                {
+                    component: 'valarm',
+                    action: { value: 'DISPLAY' },
+                    trigger: {
+                        value: {
+                            weeks: 0,
+                            days: 1074,
+                            hours: 23,
+                            minutes: 4,
+                            seconds: 0,
+                            isNegative: true,
+                        },
+                    },
+                },
+            ],
+        });
     });
 
     test('should catch inconsistent rrules', () => {
@@ -137,7 +198,7 @@ END:VEVENT`;
             },
             dtstart: {
                 value: { year: 2002, month: 12, day: 30, hours: 20, minutes: 30, seconds: 0, isUTC: false },
-                parameters: { tzid: 'America/Denver' }
+                parameters: { tzid: 'America/Denver' },
             },
             dtend: {
                 value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },

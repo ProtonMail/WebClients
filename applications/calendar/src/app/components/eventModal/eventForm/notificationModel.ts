@@ -1,5 +1,5 @@
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
-import { VcalTriggerValue } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { VcalDurationValue } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
 import { transformBeforeAt } from './trigger';
@@ -71,7 +71,7 @@ const partDayTriggerToModel = ({ type, when, weeks, days, hours, minutes }: Trig
 interface TriggerToModel {
     isAllDay: boolean;
     type: SETTINGS_NOTIFICATION_TYPE;
-    trigger: Partial<VcalTriggerValue>;
+    trigger: Partial<VcalDurationValue>;
 }
 
 export const triggerToModel = ({

@@ -9,6 +9,7 @@ import {
 import { addDays } from 'proton-shared/lib/date-fns-utc';
 import { fromUTCDate, getSupportedTimezone, toLocalDate } from 'proton-shared/lib/date/timezone';
 import { readFileAsString } from 'proton-shared/lib/helpers/file';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import {
     VcalDateOrDateTimeProperty,
@@ -30,10 +31,9 @@ import {
     MAX_UID_CHARS_DISPLAY,
     MAXIMUM_DATE_UTC,
     MINIMUM_DATE_UTC,
-    NOTIFICATION_UNITS,
-    NOTIFICATION_UNITS_MAX,
 } from '../constants';
 import { VcalCalendarComponentOrError } from '../interfaces/Import';
+import { getSupportedAlarm } from './alarms';
 
 import {
     getIsEventComponent,
@@ -169,30 +169,6 @@ const getIsWellFormedDateOrDateTime = (property: VcalDateOrDateTimeProperty) => 
     return isIcalPropertyAllDay(property) || getIsWellFormedDateTime(property);
 };
 
-const getIsValidAlarm = (alarm: VcalValarmComponent) => {
-    if (!alarm.trigger?.value) {
-        return true;
-    }
-    const {
-        trigger: {
-            value: { minutes, hours, days, weeks },
-        },
-    } = alarm;
-    if (minutes > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.MINUTES]) {
-        return false;
-    }
-    if (hours > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.HOURS]) {
-        return false;
-    }
-    if (days > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.DAY]) {
-        return false;
-    }
-    if (weeks > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.WEEK]) {
-        return false;
-    }
-    return true;
-};
-
 const getIsDateOutOfBounds = (property: VcalDateOrDateTimeProperty) => {
     const dateUTC: Date = propertyToUTCDate(property);
     return +dateUTC < +MINIMUM_DATE_UTC || +dateUTC > +MAXIMUM_DATE_UTC;
@@ -231,6 +207,13 @@ const getEventWithRequiredProperties = (veventComponent: VcalVeventComponent, id
         ...veventComponent,
         dtstamp: dtstamp?.value ? { ...dtstamp } : { value: { ...fromUTCDate(new Date(Date.now())), isUTC: true } },
     };
+};
+
+const getSupportedAlarms = (valarms: VcalValarmComponent[], dtstart: VcalDateOrDateTimeProperty) => {
+    return valarms
+        .map((alarm) => getSupportedAlarm(alarm, dtstart))
+        .filter(isTruthy)
+        .slice(0, MAX_NOTIFICATIONS);
 };
 
 interface GetSupportedEventArgs {
@@ -360,12 +343,11 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             }
         }
 
-        const alarms = components?.filter(({ component }) => component === 'valarm').slice(0, MAX_NOTIFICATIONS);
-        if (alarms?.length) {
-            if (alarms?.some((alarm) => !getIsValidAlarm(alarm))) {
-                throw new ImportEventError(IMPORT_EVENT_TYPE.NOTIFICATION_OUT_OF_BOUNDS, 'vevent', idMessage);
-            }
-            validated.components = alarms;
+        const alarms = components?.filter(({ component }) => component === 'valarm') || [];
+        const supportedAlarms = getSupportedAlarms(alarms, dtstart);
+
+        if (supportedAlarms.length) {
+            validated.components = supportedAlarms;
         }
 
         return validated;
