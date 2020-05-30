@@ -1,3 +1,9 @@
+# [3.16.25] - 2020-05-30
+
+## Fixed
+
+- Bug with the scrollbar located in the sidebar
+
 # [3.16.24] - 2020-05-29
 
 ## Fixed
