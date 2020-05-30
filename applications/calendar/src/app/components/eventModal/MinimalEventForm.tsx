@@ -6,7 +6,8 @@ import AllDayCheckbox from './inputs/AllDayCheckbox';
 import { getAllDayCheck } from './eventForm/stateActions';
 import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
 import { WeekStartsOn } from '../../containers/calendar/interface';
-import { useFormHandlers, createPropFactory } from './hooks/useFormHandlers';
+import useDateTimeFormHandlers from './hooks/useDateTimeFormHandlers';
+import createPropFactory from './eventForm/createPropFactory';
 import { MINIMUM_DATE, MAXIMUM_DATE } from '../../constants';
 import DescriptionInput from './inputs/DescriptionInput';
 import LocationInput from './inputs/LocationInput';
@@ -47,7 +48,7 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
         handleChangeEndTime,
         isDuration,
         minEndTime,
-    } = useFormHandlers({ model, setModel });
+    } = useDateTimeFormHandlers({ model, setModel });
     const propsFor = createPropFactory({ model, setModel });
 
     return (
