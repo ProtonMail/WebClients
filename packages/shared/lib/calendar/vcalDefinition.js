@@ -24,6 +24,8 @@ export const PROPERTIES = {
     dtstart: UNIQUE,
     dtend: UNIQUE,
     duration: UNIQUE,
+    repeat: UNIQUE,
+    attach: UNIQUE,
     due: UNIQUE,
     tzid: UNIQUE,
     prodid: UNIQUE,

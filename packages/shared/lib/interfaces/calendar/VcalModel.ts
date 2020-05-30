@@ -74,7 +74,7 @@ export interface VcalRruleProperty {
     value: VcalRrulePropertyValue;
 }
 
-export interface VcalTriggerValue {
+export interface VcalDurationValue {
     weeks: number;
     days: number;
     hours: number;
@@ -82,6 +82,16 @@ export interface VcalTriggerValue {
     seconds: number;
     isNegative: boolean;
 }
+
+export interface VcalTriggerRelativeProperty {
+    value: VcalDurationValue;
+    parameters?: {
+        type?: 'duration';
+        related?: string;
+    };
+}
+
+export type VcalTriggerProperty = VcalTriggerRelativeProperty | VcalDateTimeProperty;
 
 export interface VcalUidProperty {
     value: string;
@@ -93,13 +103,18 @@ export interface VcalGeoProperty {
 
 export interface VcalValarmComponent {
     component: 'valarm';
-    uid?: VcalUidProperty;
-    trigger?: {
-        value: VcalTriggerValue;
+    action: {
+        value: string;
     };
-    action?: {
-        value?: string;
+    trigger: VcalTriggerProperty;
+    duration?: {
+        value: VcalDurationValue;
     };
+    repeat?: VcalStringProperty;
+    description?: VcalStringProperty;
+    summary?: VcalStringProperty;
+    attendee?: VcalAttendeeProperty[];
+    attach?: VcalStringProperty;
 }
 
 export interface VcalStringProperty {
@@ -115,8 +130,22 @@ export interface VcalStringWithParamsProperty {
     params?: { [key: string]: string };
 }
 
-// todo
-export type VcalAttendeeProperty = any;
+export interface VcalAttendeeProperty {
+    value: string;
+    parameters?: {
+        cutype?: string;
+        member?: string;
+        role?: string;
+        partstat?: string;
+        cn?: string;
+        rsvp?: string;
+        dir?: string;
+        language?: string;
+        'sent-by'?: string;
+        'delegated-from'?: string;
+        'delegated-to': string;
+    };
+}
 
 export interface VcalVeventComponent {
     component: 'vevent';
