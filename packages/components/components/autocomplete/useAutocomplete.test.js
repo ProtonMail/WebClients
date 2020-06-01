@@ -1,5 +1,5 @@
 import useAutocomplete from './useAutocomplete';
-import { renderHook, act } from 'react-hooks-testing-library';
+import { renderHook, act } from '@testing-library/react-hooks';
 
 describe('useAutocomplete hook', () => {
     it('should be able to change input value', () => {
