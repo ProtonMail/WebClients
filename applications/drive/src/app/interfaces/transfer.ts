@@ -4,7 +4,8 @@ export enum TransferState {
     Progress = 'progress',
     Done = 'done',
     Canceled = 'canceled',
-    Error = 'error'
+    Error = 'error',
+    Paused = 'paused'
 }
 
 export interface TransferProgresses {

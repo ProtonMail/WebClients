@@ -15,26 +15,31 @@ export enum TransferType {
     Upload = 'upload'
 }
 
-interface DownloadProps {
+export interface DownloadProps {
     transfer: Download;
     type: TransferType.Download;
 }
 
-interface UploadProps {
+export interface UploadProps {
     transfer: Upload;
     type: TransferType.Upload;
 }
 
 export interface TransferStats {
+    state: TransferState;
     progress: number;
     speed: number;
 }
 
 type Props = (DownloadProps | UploadProps) & {
-    stats?: TransferStats;
+    stats: {
+        progress: number;
+        speed: number;
+    };
 };
 
-const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) => {
+const Transfer = ({ stats, ...props }: Props) => {
+    const { transfer, type } = props;
     const isProgress = transfer.state === TransferState.Progress;
     const isError = transfer.state === TransferState.Canceled || transfer.state === TransferState.Error;
     const isDone = transfer.state === TransferState.Done;
@@ -48,7 +53,7 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
     // If file size is 0 when finished, progress is 1/1, so that the bar is complete
     const progress = !fileSize && isFinished ? 1 : stats.progress;
     const speed = humanSize(stats.speed);
-    const hasControls = type === TransferType.Download || isError || isDone;
+    const hasControls = (type === TransferType.Download && !isInitializing) || isFinished;
 
     return (
         <div
@@ -83,12 +88,18 @@ const Transfer = ({ transfer, type, stats = { progress: 0, speed: 0 } }: Props) 
                         <span className="pd-transfers-listItemStat alignright notinymobile">{c('Info')
                             .t`${speed}/s`}</span>
                     )}
-                    {hasControls && <TransferControls transfer={transfer} type={type} />}
+                    {hasControls && <TransferControls {...props} />}
                     <TransferStateIndicator transfer={transfer} percentageDone={percentageDone} />
                 </div>
             </div>
             <ProgressBar
-                status={isError ? ProgressBarStatus.Error : ProgressBarStatus.Success}
+                status={
+                    ({
+                        [TransferState.Canceled]: ProgressBarStatus.Error,
+                        [TransferState.Error]: ProgressBarStatus.Error,
+                        [TransferState.Paused]: ProgressBarStatus.Warning
+                    } as any)[transfer.state] || ProgressBarStatus.Success
+                }
                 aria-describedby={transfer.id}
                 value={progress}
                 max={progressLimit}

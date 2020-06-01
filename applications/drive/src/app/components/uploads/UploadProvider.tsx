@@ -115,8 +115,8 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                     }
                     updateUploadState(id, TransferState.Done);
                 })
-                .catch((err) => {
-                    console.error(err);
+                .catch((error) => {
+                    console.error(`Failed to upload: ${error}`);
                     updateUploadState(id, TransferState.Error);
                 });
         }

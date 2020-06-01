@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useCallback } from 'react';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import Heading from './Heading';
@@ -20,19 +20,27 @@ function TransfersInfo() {
     const { uploads, getUploadsProgresses, clearUploads } = useUploadProvider();
     const [statsHistory, setStatsHistory] = React.useState<TransfersStats[]>([]);
 
+    const getTransfer = useCallback(
+        (id: string) => downloads.find((download) => download.id === id) || uploads.find((upload) => upload.id === id),
+        [downloads, uploads]
+    );
+
     const updateStats = () => {
         const timestamp = new Date();
         const progresses = { ...getUploadsProgresses(), ...getDownloadsProgresses() };
 
         setStatsHistory((prev) => {
+            const lastStats = (id: string) => prev[0]?.stats[id];
             const stats = Object.entries(progresses).reduce(
                 (stats, [id, progress]) => ({
                     ...stats,
                     [id]: {
                         // get speed snapshot based on bytes downloaded since last update
-                        speed: prev[0]?.stats[id]
-                            ? (progresses[id] - prev[0].stats[id].progress) * (1000 / PROGRESS_UPDATE_INTERVAL)
-                            : 0,
+                        speed:
+                            lastStats(id)?.state === TransferState.Progress
+                                ? (progresses[id] - lastStats(id).progress) * (1000 / PROGRESS_UPDATE_INTERVAL)
+                                : 0,
+                        state: getTransfer(id)?.state ?? TransferState.Error,
                         progress
                     }
                 }),
@@ -72,7 +80,17 @@ function TransfersInfo() {
     };
 
     const calculateAverageSpeed = (id: string) => {
-        const sum = statsHistory.reduce((acc, { stats }) => acc + (stats[id]?.speed || 0), 0);
+        let sum = 0;
+
+        for (let i = 0; i < statsHistory.length; i++) {
+            const stats = statsHistory[i].stats[id];
+
+            if (stats?.state !== TransferState.Progress) {
+                break; // Only take most recent progress (e.g. after pause)
+            }
+            sum += stats.speed;
+        }
+
         return sum / statsHistory.length;
     };
 

@@ -34,6 +34,10 @@ const TransferStateIndicator = ({ transfer: { id, state }, percentageDone }: Pro
         [TransferState.Canceled]: {
             text: c('Info').t`Canceled`,
             icon: 'off'
+        },
+        [TransferState.Paused]: {
+            text: c('Info').t`Paused`,
+            icon: 'question'
         }
     }[state];
 
