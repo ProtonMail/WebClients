@@ -97,9 +97,9 @@ export const useLinkHandler = (onCompose: OnCompose) => {
 
         /*
          * We can click on an image inside a link. more informations inside the css, look at:
-         * .message-body-container a *:not(img)
+         * .bodyDecrypted a *:not(img)
          */
-        if (!['A', 'IMG'].includes(target?.nodeName || '')) {
+        if (!['A', 'IMG'].includes(target?.nodeName)) {
             return;
         }
 
@@ -147,7 +147,6 @@ export const useLinkHandler = (onCompose: OnCompose) => {
         if (
             askForConfirmation &&
             isExternal(src.raw) &&
-            hostname &&
             !PROTON_DOMAINS.some((domain) => isSubDomain(hostname, domain))
         ) {
             event.preventDefault();

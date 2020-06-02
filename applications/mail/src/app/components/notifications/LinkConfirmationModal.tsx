@@ -33,16 +33,25 @@ const LinkConfirmationModal = ({ onClose, link = '', ...rest }: Props) => {
         }
     };
 
+    // Not really ellegant but the least bad solution I found to please TS
+    const additionalModalProps = { small: false };
+
     return (
-        <ConfirmModal onConfirm={handleConfirm} onClose={onClose} title={c('Title').t`Link confirmation`} {...rest}>
-            <Alert type="warning">
-                {c('Info').t`You are about to open another browser tab and visit:`}
+        <ConfirmModal
+            onConfirm={handleConfirm}
+            onClose={onClose}
+            title={c('Title').t`Link confirmation`}
+            {...rest}
+            {...additionalModalProps}
+        >
+            <Alert type="warning" className="break">
+                {c('Info').t`You are about to open another browser tab and visit:` + ' '}
                 <span className="bold">{link}</span>
             </Alert>
 
             {punyCodeLink && (
                 <Alert type="warning">
-                    {punyCodeLinkText}
+                    {punyCodeLinkText + ' '}
                     <Href
                         url="https://protonmail.com/support/knowledge-base/homograph-attacks/"
                         title="What are homograph attacks?"

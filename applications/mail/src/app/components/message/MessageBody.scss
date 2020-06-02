@@ -20,6 +20,11 @@
         border-left-width: 3px;
         border-left-style: solid;
     }
+
+    // This is needed by the link handler (useLinkHandler.ts)
+    a *:not(img) {
+        pointer-events: none;
+    }
 }
 
 .bodyDecrypted.plain {
