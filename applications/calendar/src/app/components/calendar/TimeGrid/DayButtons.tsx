@@ -5,11 +5,11 @@ interface Props {
     days: Date[];
     now: Date;
     date: Date;
-    onClickDate: (value: Date) => void;
+    onClickDate?: (value: Date) => void;
     weekdaysLong: string[];
 }
 const DayButtons = ({ days, now, date, onClickDate, weekdaysLong }: Props) => {
-    return days.map((day) => {
+    const result = days.map((day) => {
         return (
             <button
                 className="flex-item-fluid aligncenter calendar-grid-heading p0-5"
@@ -17,7 +17,7 @@ const DayButtons = ({ days, now, date, onClickDate, weekdaysLong }: Props) => {
                 key={day.getUTCDate()}
                 aria-current={isSameDay(day, now) ? 'date' : undefined}
                 aria-pressed={isSameDay(day, date) ? true : undefined}
-                onClick={() => onClickDate(day)}
+                onClick={() => onClickDate?.(day)}
             >
                 <span className="calendar-grid-heading-number mt0-25">
                     <span className="mauto">{day.getUTCDate()}</span>
@@ -33,6 +33,8 @@ const DayButtons = ({ days, now, date, onClickDate, weekdaysLong }: Props) => {
             </button>
         );
     });
+
+    return <>{result}</>;
 };
 
 export default DayButtons;

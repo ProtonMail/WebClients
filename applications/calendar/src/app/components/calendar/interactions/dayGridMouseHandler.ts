@@ -3,11 +3,25 @@ import { getDiffTime, getNewTime } from '../mouseHelpers/dateHelpers';
 import { blockClick, findContainingParent, findUpwards, createRafUpdater } from '../mouseHelpers/domHelpers';
 
 import { ACTIONS, TYPE } from './constants';
+import { CalendarViewEvent } from '../../../containers/calendar/interface';
+import useDayGridEventLayout from '../useDayGridEventLayout';
+import { OnMouseDown, MouseUpAction, StartEndResult } from './interface';
 
 const CREATE_SENSITIVITY = 20; // In pixels
 const CREATE_STATE_INIT = -1;
 const CREATE_STATE_ACTIVE = -2;
 
+interface DayGridMouseHandlerArgsShared {
+    e: MouseEvent;
+    onMouseDown: OnMouseDown;
+    eventsPerRows: ReturnType<typeof useDayGridEventLayout>;
+    dayGridEl: HTMLElement;
+}
+interface CreateDragCreateEventArgs extends DayGridMouseHandlerArgsShared {
+    targetRow: number;
+    targetDate: Date;
+    rows: Date[][];
+}
 const createDragCreateEvent = ({
     e,
     targetRow,
@@ -16,12 +30,12 @@ const createDragCreateEvent = ({
     eventsPerRows,
     dayGridEl,
     onMouseDown,
-}) => {
-    let endTargetDate;
+}: CreateDragCreateEventArgs) => {
+    let endTargetDate: Date;
     let oldMouseX = -1;
 
-    let result;
-    let currentTargetRow;
+    let result: StartEndResult;
+    let currentTargetRow: number;
 
     const initialCallback = onMouseDown({
         action: ACTIONS.CREATE_DOWN,
@@ -37,12 +51,13 @@ const createDragCreateEvent = ({
     }
 
     const updater = createRafUpdater();
-    let callback = (args) => updater(() => initialCallback(args));
+    let callback: undefined | ((args: MouseUpAction) => void) = (args: MouseUpAction) =>
+        updater(() => initialCallback(args));
 
     e.preventDefault();
     e.stopPropagation();
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
 
@@ -81,6 +96,10 @@ const createDragCreateEvent = ({
             };
         }
 
+        if (!callback) {
+            return;
+        }
+
         callback({
             action: ACTIONS.CREATE_MOVE,
             payload: {
@@ -91,12 +110,16 @@ const createDragCreateEvent = ({
         });
     };
 
-    const handleMouseUp = (e) => {
+    const handleMouseUp = (e: MouseEvent) => {
         document.removeEventListener('mouseup', handleMouseUp, true);
         document.removeEventListener('mousemove', handleMouseMove, true);
 
         e.preventDefault();
         e.stopPropagation();
+
+        if (!callback) {
+            return;
+        }
 
         if (result) {
             callback({
@@ -131,14 +154,29 @@ const createDragCreateEvent = ({
     blockClick();
 };
 
-const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, eventsPerRows, dayGridEl, onMouseDown }) => {
+interface CreateDragMoveEventArgs extends DayGridMouseHandlerArgsShared {
+    event: CalendarViewEvent;
+    targetRow: number;
+    targetDay: number;
+    daysPerRow: number;
+}
+const createDragMoveEvent = ({
+    e,
+    event,
+    targetRow,
+    targetDay,
+    daysPerRow,
+    eventsPerRows,
+    dayGridEl,
+    onMouseDown,
+}: CreateDragMoveEventArgs) => {
     let oldIdx = targetRow * daysPerRow + targetDay;
     const initialIdx = oldIdx;
-    let result;
+    let result: StartEndResult;
 
-    let currentTargetRow;
-    let currentTargetDay;
-    let currentIdx;
+    let currentTargetRow: number;
+    let currentTargetDay: number;
+    let currentIdx: number;
 
     const { start, end } = event;
 
@@ -156,12 +194,13 @@ const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, event
     }
 
     const updater = createRafUpdater();
-    let callback = (args) => updater(() => initialCallback(args));
+    let callback: undefined | ((args: MouseUpAction) => void) = (args: MouseUpAction) =>
+        updater(() => initialCallback(args));
 
     e.preventDefault();
     e.stopPropagation();
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
 
@@ -184,6 +223,10 @@ const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, event
             end: getDiffTime(end, differenceInDays, 0),
         };
 
+        if (!callback) {
+            return;
+        }
+
         callback({
             action: ACTIONS.EVENT_MOVE,
             payload: {
@@ -194,12 +237,16 @@ const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, event
         });
     };
 
-    const handleMouseUp = (e) => {
+    const handleMouseUp = (e: MouseEvent) => {
         document.removeEventListener('mouseup', handleMouseUp, true);
         document.removeEventListener('mousemove', handleMouseMove, true);
 
         e.preventDefault();
         e.stopPropagation();
+
+        if (!callback) {
+            return;
+        }
 
         if (result) {
             callback({
@@ -229,8 +276,8 @@ const createDragMoveEvent = ({ e, event, targetRow, targetDay, daysPerRow, event
     blockClick();
 };
 
-const createUpMoreEvent = (cb) => {
-    const handleMouseUp = (e) => {
+const createUpMoreEvent = (cb: () => void) => {
+    const handleMouseUp = (e: MouseEvent) => {
         document.removeEventListener('mouseup', handleMouseUp, true);
         e.preventDefault();
         e.stopPropagation();
@@ -240,7 +287,21 @@ const createUpMoreEvent = (cb) => {
     blockClick();
 };
 
-export default ({ e, onMouseDown, rows, eventsPerRows, events, dayGridEl }) => {
+interface DayGridMouseHandlerArgs extends DayGridMouseHandlerArgsShared {
+    events: CalendarViewEvent[];
+    rows: Date[][];
+}
+const handleDayGridMouseDown = ({
+    e,
+    onMouseDown,
+    rows,
+    eventsPerRows,
+    events,
+    dayGridEl,
+}: DayGridMouseHandlerArgs) => {
+    if (!(e.target instanceof HTMLElement)) {
+        return;
+    }
     const { target } = e;
 
     const rowElement = findUpwards(target, dayGridEl, (el) => typeof el.dataset.row !== 'undefined');
@@ -248,7 +309,7 @@ export default ({ e, onMouseDown, rows, eventsPerRows, events, dayGridEl }) => {
         return;
     }
 
-    const targetRow = parseInt(rowElement.dataset.row, 10);
+    const targetRow = parseInt(rowElement.dataset.row || '', 10);
     if (Number.isNaN(targetRow)) {
         return;
     }
@@ -283,10 +344,11 @@ export default ({ e, onMouseDown, rows, eventsPerRows, events, dayGridEl }) => {
     }
 
     if (eventStyle.type === 'more') {
-        const moreEvents = eventsInRowSummary[eventStyle.idx].events.map((i) => {
+        const moreEvents = eventsInRowSummary[eventStyle.idx].events.reduce<Set<string>>((acc, i) => {
             const { idx: eventIdx } = eventsInRow[i];
-            return events[eventIdx];
-        });
+            acc.add(events[eventIdx].id);
+            return acc;
+        }, new Set());
         const callback = onMouseDown({
             action: ACTIONS.MORE_DOWN,
             payload: {
@@ -321,3 +383,5 @@ export default ({ e, onMouseDown, rows, eventsPerRows, events, dayGridEl }) => {
         onMouseDown,
     });
 };
+
+export default handleDayGridMouseDown;

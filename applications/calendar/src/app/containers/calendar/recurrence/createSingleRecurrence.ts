@@ -18,7 +18,7 @@ const createSingleRecurrence = (
     const veventWithRecurrenceId = {
         ...component,
         'recurrence-id': singleExdate,
-    } as VcalVeventComponent;
+    };
 
     // Strip any RRULE when creating a single occurrence
     return omit(veventWithRecurrenceId, ['rrule', 'exdate']);

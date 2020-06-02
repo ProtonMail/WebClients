@@ -71,7 +71,7 @@ const createFutureRecurrence = (
     const veventWithNewUID = {
         ...component,
         uid: { value: getFutureRecurrenceUID(originalComponent.uid.value, recurrence.localStart) },
-    } as VcalVeventComponent;
+    };
 
     const veventStripped = omit(veventWithNewUID, ['recurrence-id', 'exdate']);
 

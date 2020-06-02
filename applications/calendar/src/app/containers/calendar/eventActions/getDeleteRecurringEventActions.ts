@@ -12,22 +12,22 @@ interface DeleteRecurringArguments {
     type: RECURRING_TYPES;
     recurrence: CalendarEventRecurring;
     recurrences: CalendarEvent[];
-    originalEventData: EventOldData;
-    oldEventData: EventOldData;
+    originalEditEventData: EventOldData;
+    oldEditEventData: EventOldData;
 }
 
 export const getDeleteRecurringEventActions = ({
     type,
     recurrence,
     recurrences,
-    originalEventData: {
+    originalEditEventData: {
         veventComponent: originalVeventComponent,
-        Event: originalEvent,
+        eventData: originalEvent,
         calendarID: originalCalendarID,
         addressID: originalAddressID,
         memberID: originalMemberID,
     },
-    oldEventData: { Event: oldEvent },
+    oldEditEventData: { eventData: oldEvent },
 }: DeleteRecurringArguments): SyncMultipleEventsOperations => {
     if (type === RECURRING_TYPES.SINGLE) {
         if (!originalVeventComponent) {

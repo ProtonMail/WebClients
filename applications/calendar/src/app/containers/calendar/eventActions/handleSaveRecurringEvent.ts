@@ -14,9 +14,9 @@ import getUpdateAllPossibilities from './getUpdateAllPossibilities';
 import { OnSaveConfirmationCb } from '../interface';
 
 interface Arguments {
-    originalEventData: EventOldData;
-    oldEventData: EventOldData;
-    newEventData: EventNewData;
+    originalEditEventData: EventOldData;
+    oldEditEventData: EventOldData;
+    newEditEventData: EventNewData;
 
     canOnlySaveAll: boolean;
     onSaveConfirmation: OnSaveConfirmationCb;
@@ -32,9 +32,9 @@ interface Arguments {
 }
 
 const handleSaveRecurringEvent = async ({
-    originalEventData,
-    newEventData,
-    oldEventData,
+    originalEditEventData,
+    newEditEventData,
+    oldEditEventData,
 
     canOnlySaveAll,
     onSaveConfirmation,
@@ -48,11 +48,11 @@ const handleSaveRecurringEvent = async ({
     getCalendarKeys,
     calendars,
 }: Arguments) => {
-    const isFutureAllowed = getHasFutureOption(originalEventData.mainVeventComponent, recurrence);
+    const isFutureAllowed = getHasFutureOption(originalEditEventData.mainVeventComponent, recurrence);
     const updateAllPossibilities = getUpdateAllPossibilities(
-        originalEventData.mainVeventComponent,
-        oldEventData.mainVeventComponent,
-        newEventData.veventComponent,
+        originalEditEventData.mainVeventComponent,
+        oldEditEventData.mainVeventComponent,
+        newEditEventData.veventComponent,
         recurrence
     );
 
@@ -71,16 +71,16 @@ const handleSaveRecurringEvent = async ({
         data: {
             types: saveTypes,
             hasSingleModifications:
-                recurrences.length > 1 || (originalEventData.mainVeventComponent.exdate?.length || 0) >= 1,
+                recurrences.length > 1 || (originalEditEventData.mainVeventComponent.exdate?.length || 0) >= 1,
         },
     });
 
     const multiActions = await getSaveRecurringEventActions({
         type: saveType,
         recurrences,
-        originalEventData,
-        oldEventData,
-        newEventData,
+        originalEditEventData,
+        oldEditEventData,
+        newEditEventData,
         recurrence,
         updateAllPossibilities,
     });

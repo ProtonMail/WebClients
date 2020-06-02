@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useRef, useLayoutEffect, useEffect } from 'react';
+import React, { useMemo, useState, useRef, useLayoutEffect, useEffect, Ref } from 'react';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import { eachDayOfInterval, isSameMonth } from 'proton-shared/lib/date-fns-utc';
 import { getISOWeek } from 'date-fns';
@@ -9,8 +9,27 @@ import { useRect } from '../../hooks/useRect';
 import RowEvents from './DayGrid/RowEvents';
 import DayButtons from './DayGrid/DayButtons';
 import { DAY_EVENT_HEIGHT } from './constants';
+import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';
 
-/** @type any * */
+interface Props {
+    tzid: string;
+    now: Date;
+    date: Date;
+    dateRange: [Date, Date];
+    displayWeekNumbers?: boolean;
+    isInteractionEnabled?: boolean;
+    events: CalendarViewEvent[];
+    targetEventRef: Ref<HTMLDivElement>;
+    targetMoreData?: TargetMoreData;
+    targetMoreRef: Ref<HTMLDivElement>;
+    targetEventData?: TargetEventData;
+    onMouseDown: (a: any) => any /** todo */;
+    formatTime: (date: Date) => string;
+    formatDate: (date: Date) => string;
+    onClickDate: (date: Date) => void;
+    weekdaysLong: string[];
+}
+
 const DayGrid = ({
     tzid,
     now,
@@ -19,7 +38,6 @@ const DayGrid = ({
     dateRange,
     displayWeekNumbers = false,
     isInteractionEnabled = false,
-    components: { FullDayEvent, MoreFullDayEvent },
     events,
     targetEventRef,
     targetMoreRef,
@@ -30,9 +48,9 @@ const DayGrid = ({
     formatDate,
     onClickDate,
     weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-}) => {
-    const rowsWrapperRef = useRef();
-    const firstRowRef = useRef();
+}: Props) => {
+    const rowsWrapperRef = useRef<HTMLDivElement>(null);
+    const firstRowRef = useRef<HTMLDivElement>(null);
     const firstRowRect = useRect(firstRowRef.current);
     const [numberOfRows, setNumberOfRows] = useState(0);
 
@@ -51,9 +69,12 @@ const DayGrid = ({
         setNumberOfRows(newNumberOfRows - 1);
     }, [firstRowRect, dateRange]);
 
-    const handleMouseDownRef = useRef();
+    const handleMouseDownRef = useRef<(e: MouseEvent) => void>();
 
-    handleMouseDownRef.current = (e) => {
+    handleMouseDownRef.current = (e: MouseEvent) => {
+        if (!rowsWrapperRef.current) {
+            return;
+        }
         createDayGridMouseHandler({
             e,
             events,
@@ -68,11 +89,11 @@ const DayGrid = ({
         if (!isInteractionEnabled) {
             return;
         }
-        const listener = (e) => {
+        const listener = (e: MouseEvent) => {
             if (e.button !== 0) {
                 return;
             }
-            handleMouseDownRef.current(e);
+            handleMouseDownRef.current?.(e);
         };
         document.addEventListener('mousedown', listener, true);
         return () => {
@@ -86,7 +107,7 @@ const DayGrid = ({
         });
     }, [rows, formatDate]);
 
-    const mainRef = useRef();
+    const mainRef = useRef<HTMLDivElement>(null);
 
     return (
         <div className="flex-item-fluid scroll-if-needed view-column-detail is-month-view">
@@ -99,7 +120,7 @@ const DayGrid = ({
                                 className="flex-item-fluid aligncenter calendar-daygrid-day big m0 p0-75 ellipsis"
                                 key={day.getUTCDate()}
                                 aria-current={
-                                    day.getUTCDay() === now.getUTCDay() && isSameMonth(date, now) ? 'true' : null
+                                    day.getUTCDay() === now.getUTCDay() && isSameMonth(date, now) ? 'true' : undefined
                                 }
                             >
                                 <span className="calendar-grid-heading-day-fullname">
@@ -120,6 +141,9 @@ const DayGrid = ({
                         <div className="flex flex-column calendar-daygrid-weeknumber-width">
                             {rows.map((days) => {
                                 const monday = days.find((date) => date.getDay() === 1);
+                                if (!monday) {
+                                    return null;
+                                }
                                 const week = getISOWeek(monday);
                                 return (
                                     <div
@@ -169,8 +193,6 @@ const DayGrid = ({
                                     >
                                         <RowEvents
                                             tzid={tzid}
-                                            FullDayEvent={FullDayEvent}
-                                            MoreFullDayEvent={MoreFullDayEvent}
                                             eventsInRowStyles={eventsInRowStyles}
                                             eventsInRowSummary={eventsInRowSummary}
                                             eventsInRow={eventsInRow}

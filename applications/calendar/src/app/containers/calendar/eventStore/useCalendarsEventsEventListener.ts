@@ -1,8 +1,10 @@
 import { MutableRefObject, useEffect } from 'react';
 import { useEventManager } from 'react-components';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
+import { CalendarEventWithoutBlob } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarsEventsCache } from './interface';
-import { removeEventFromCache, setEventInCache } from './cache/cache';
+import removeCalendarEventStoreRecord from './cache/removeCalendarEventStoreRecord';
+import upsertCalendarApiEventWithoutBlob from './cache/upsertCalendarApiEventWithoutBlobs';
 
 export const useCalendarCacheEventListener = (cacheRef: MutableRefObject<CalendarsEventsCache>) => {
     const { subscribe } = useEventManager();
@@ -20,10 +22,12 @@ export const useCalendarCacheEventListener = (cacheRef: MutableRefObject<Calenda
 
             Calendars.forEach(({ ID: CalendarID, Action }) => {
                 if (Action === EVENT_ACTIONS.DELETE) {
-                    if (calendars[CalendarID]) {
-                        delete cacheRef.current.calendars[CalendarID];
-                        actions++;
+                    const calendarCache = cacheRef.current.calendars[CalendarID];
+                    if (!calendarCache) {
+                        return;
                     }
+                    delete calendarCache[CalendarID];
+                    actions++;
                 }
             });
 
@@ -36,19 +40,20 @@ export const useCalendarCacheEventListener = (cacheRef: MutableRefObject<Calenda
                     if (!calendarID) {
                         return;
                     }
-                    removeEventFromCache(EventID, cacheRef.current.calendars[calendarID]);
+                    removeCalendarEventStoreRecord(EventID, cacheRef.current.calendars[calendarID]);
                     // TODO: Only increment count if this event happened in the date range we are currently interested in
                     actions++;
                 }
 
                 if (Action === EVENT_ACTIONS.UPDATE || Action === EVENT_ACTIONS.CREATE) {
-                    const { CalendarID } = Event;
+                    const eventData = Event as CalendarEventWithoutBlob;
+                    const { CalendarID } = eventData;
 
                     const calendarCache = cacheRef.current.calendars[CalendarID];
                     if (!calendarCache) {
                         return;
                     }
-                    setEventInCache(Event, calendarCache);
+                    upsertCalendarApiEventWithoutBlob(eventData, calendarCache);
                     // TODO: Only increment count if this event happened in the date range we are currently interested in
                     actions++;
                 }

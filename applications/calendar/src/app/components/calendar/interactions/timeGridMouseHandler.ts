@@ -1,10 +1,11 @@
 import { addMinutes } from 'proton-shared/lib/date-fns-utc';
-// eslint-disable-next-line @typescript-eslint/camelcase
-import { getKey } from '../splitTimeGridEventsPerDay';
-import { getRelativePosition, getTargetIndex } from '../mouseHelpers/mathHelpers';
+import { getKey, splitTimeGridEventsPerDay } from '../splitTimeGridEventsPerDay';
+import { getTargetIndex } from '../mouseHelpers/mathHelpers';
 import { getDiffTime, getNewTime, getSnappedDate, getTargetMinutes } from '../mouseHelpers/dateHelpers';
 import { blockClick, createAutoScroll, createRafUpdater, findContainingParent } from '../mouseHelpers/domHelpers';
 import { ACTIONS, TYPE } from './constants';
+import { CalendarViewEvent } from '../../../containers/calendar/interface';
+import { OnMouseDown, MouseUpAction, StartEndResult } from './interface';
 
 const DRAG_EVENT_MOVE = 1;
 const DRAG_EVENT_TIME_UP = 2;
@@ -14,7 +15,17 @@ const CREATE_SENSITIVITY = 20; // In pixels
 const CREATE_STATE_INIT = -1;
 const CREATE_STATE_ACTIVE = -2;
 
-const getAutoScrollOptions = (titleEl) => {
+interface SharedArgs {
+    totalDays: number;
+    totalMinutes: number;
+    interval: number;
+    onMouseDown: OnMouseDown;
+    timeGridEl: HTMLElement;
+    scrollEl: HTMLElement;
+    titleEl: HTMLElement;
+}
+
+const getAutoScrollOptions = (titleEl: HTMLElement) => {
     if (!titleEl) {
         return;
     }
@@ -39,6 +50,12 @@ const getType = (/* position, offset */) => {
     return DRAG_EVENT_MOVE;
 };
 
+interface CreateDragCreateMouseDownArgs extends SharedArgs {
+    e: MouseEvent;
+    targetDate: number;
+    targetMinutes: number;
+    days: Date[];
+}
 const createDragCreateMouseDown = ({
     e,
     targetDate,
@@ -51,13 +68,13 @@ const createDragCreateMouseDown = ({
     scrollEl,
     timeGridEl,
     titleEl,
-}) => {
+}: CreateDragCreateMouseDownArgs) => {
     const startDate = days[targetDate];
     let endTargetDate = targetDate;
-    let endTargetMinutes;
+    let endTargetMinutes: number;
     let oldMouseY = CREATE_STATE_INIT;
 
-    let result;
+    let result: StartEndResult;
 
     const initialCallback = onMouseDown({
         action: ACTIONS.CREATE_DOWN,
@@ -79,9 +96,10 @@ const createDragCreateMouseDown = ({
     const autoScroll = createAutoScroll(scrollEl, options);
 
     const updater = createRafUpdater();
-    let callback = (args) => updater(() => initialCallback(args));
+    let callback: undefined | ((args: MouseUpAction) => void) = (args: MouseUpAction) =>
+        updater(() => initialCallback(args));
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
 
@@ -125,6 +143,10 @@ const createDragCreateMouseDown = ({
             };
         }
 
+        if (!callback) {
+            return;
+        }
+
         callback({
             action: ACTIONS.CREATE_MOVE,
             payload: {
@@ -135,17 +157,17 @@ const createDragCreateMouseDown = ({
         });
     };
 
-    const handleMouseUp = (e) => {
+    const handleMouseUp = (e: MouseEvent) => {
         document.removeEventListener('mouseup', handleMouseUp, true);
         document.removeEventListener('mousemove', handleMouseMove, true);
-        autoScroll.onMouseUp(e);
+        autoScroll.onMouseUp();
 
         // The action was to drag & drop to create an event, a temporary event may or may not already exist.
         if (result) {
             e.preventDefault();
             e.stopPropagation();
 
-            callback({
+            callback?.({
                 action: ACTIONS.CREATE_MOVE_UP,
                 payload: {
                     type: TYPE.TIMEGRID,
@@ -158,7 +180,7 @@ const createDragCreateMouseDown = ({
             // No range created, just a simple click
             const start = getNewTime(startDate, targetMinutes);
 
-            callback({
+            callback?.({
                 action: ACTIONS.CREATE_UP,
                 payload: {
                     type: TYPE.TIMEGRID,
@@ -182,6 +204,13 @@ const createDragCreateMouseDown = ({
     blockClick();
 };
 
+interface CreateDragMoveEventDownArgs extends SharedArgs {
+    e: MouseEvent;
+    event: CalendarViewEvent;
+    targetDate: number;
+    targetMinutes: number;
+    type: number;
+}
 const createDragMoveEvent = ({
     e,
     event,
@@ -195,7 +224,7 @@ const createDragMoveEvent = ({
     scrollEl,
     timeGridEl,
     titleEl,
-}) => {
+}: CreateDragMoveEventDownArgs) => {
     const { start, end } = event;
 
     const snappedStart = getSnappedDate(start, interval);
@@ -203,9 +232,9 @@ const createDragMoveEvent = ({
 
     let oldTargetDate = targetDate;
     let oldTargetMinutes = targetMinutes;
-    let currentTargetDate;
-    let currentTargetMinutes;
-    let result;
+    let currentTargetDate: number;
+    let currentTargetMinutes: number;
+    let result: StartEndResult;
 
     const initialCallback = onMouseDown({
         action: ACTIONS.EVENT_DOWN,
@@ -228,10 +257,11 @@ const createDragMoveEvent = ({
     const autoScroll = createAutoScroll(scrollEl, options);
 
     const updater = createRafUpdater();
-    let callback = (args) => updater(() => initialCallback(args));
+    let callback: undefined | ((args: MouseUpAction) => void) = (args: MouseUpAction) =>
+        updater(() => initialCallback(args));
 
-    const handleMove = (e, result, day) => {
-        callback({
+    const handleMove = (e: MouseEvent, result: StartEndResult, day: number) => {
+        callback?.({
             action: ACTIONS.EVENT_MOVE,
             payload: {
                 type: TYPE.TIMEGRID,
@@ -241,7 +271,7 @@ const createDragMoveEvent = ({
         });
     };
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
         const rect = timeGridEl.getBoundingClientRect();
 
         currentTargetDate = getTargetIndex(e.pageX, rect.left, rect.width, totalDays);
@@ -279,7 +309,7 @@ const createDragMoveEvent = ({
 
             if (type === DRAG_EVENT_TIME_UP) {
                 const diffTime = getDiffTime(snappedStart, diffDate, diffMinutes);
-                const extra = Math.abs((diffTime - end) / 60000) < interval ? interval : 0;
+                const extra = Math.abs((+diffTime - +end) / 60000) < interval ? interval : 0;
 
                 if (diffTime >= end) {
                     const diffTimeWithPadding = addMinutes(diffTime, extra);
@@ -296,7 +326,7 @@ const createDragMoveEvent = ({
                 }
             } else {
                 const diffTime = getDiffTime(snappedEnd, diffDate, diffMinutes);
-                const extra = Math.abs((diffTime - start) / 60000) < interval ? interval : 0;
+                const extra = Math.abs((+diffTime - +start) / 60000) < interval ? interval : 0;
 
                 if (diffTime >= start) {
                     const diffTimeWithPadding = addMinutes(diffTime, extra);
@@ -317,17 +347,17 @@ const createDragMoveEvent = ({
         }
     };
 
-    const handleMouseUp = (e) => {
+    const handleMouseUp = (e: MouseEvent) => {
         document.removeEventListener('mouseup', handleMouseUp, true);
         document.removeEventListener('mousemove', handleMouseMove, true);
-        autoScroll.onMouseUp(e);
+        autoScroll.onMouseUp();
 
         // The action was to drag & drop the event
         if (result) {
             e.preventDefault();
             e.stopPropagation();
 
-            callback({
+            callback?.({
                 action: ACTIONS.EVENT_MOVE_UP,
                 payload: {
                     type: TYPE.TIMEGRID,
@@ -340,7 +370,7 @@ const createDragMoveEvent = ({
             e.preventDefault();
             e.stopPropagation();
 
-            callback({
+            callback?.({
                 action: ACTIONS.EVENT_UP,
                 payload: {
                     type: TYPE.TIMEGRID,
@@ -357,6 +387,12 @@ const createDragMoveEvent = ({
     blockClick();
 };
 
+interface TimeGridMouseHandlerArgs extends SharedArgs {
+    e: MouseEvent;
+    eventsPerDay: ReturnType<typeof splitTimeGridEventsPerDay>;
+    events: CalendarViewEvent[];
+    days: Date[];
+}
 export default ({
     e,
     totalDays,
@@ -369,7 +405,10 @@ export default ({
     timeGridEl,
     scrollEl,
     titleEl,
-}) => {
+}: TimeGridMouseHandlerArgs) => {
+    if (!(e.target instanceof HTMLElement)) {
+        return;
+    }
     const { target } = e;
 
     const rect = timeGridEl.getBoundingClientRect();
@@ -384,7 +423,6 @@ export default ({
             e,
             targetDate,
             targetMinutes,
-            rect,
             totalDays,
             totalMinutes,
             interval,
@@ -418,11 +456,11 @@ export default ({
     if (!event) {
         return;
     }
-    const eventNode = dayContainerNode.childNodes[targetIndex];
-    const eventNodeRect = eventNode.getBoundingClientRect();
-    const eventTargetPosition = getRelativePosition(e.pageY, eventNodeRect.top, eventNodeRect.height);
+    // const eventNode = dayContainerNode.childNodes[targetIndex];
+    // const eventNodeRect = eventNode.getBoundingClientRect();
+    // const eventTargetPosition = getRelativePosition(e.pageY, eventNodeRect.top, eventNodeRect.height);
 
-    const type = getType(eventTargetPosition, 0.2);
+    const type = getType(/* eventTargetPosition, 0.2 */);
 
     const normalizedType =
         (type === DRAG_EVENT_TIME_UP && event.start.getUTCDate() !== day.getUTCDate()) ||
@@ -437,7 +475,6 @@ export default ({
         targetDate,
         targetMinutes,
         type: normalizedType,
-        rect,
         totalDays,
         totalMinutes,
         onMouseDown,

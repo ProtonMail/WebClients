@@ -1,5 +1,5 @@
-export const findUpwards = (target, outOfBoundsElement, cb) => {
-    let current = target;
+export const findUpwards = (target: HTMLElement, outOfBoundsElement: HTMLElement, cb: (el: HTMLElement) => boolean) => {
+    let current: HTMLElement | null = target;
     do {
         if (!current) {
             return;
@@ -15,7 +15,7 @@ export const findUpwards = (target, outOfBoundsElement, cb) => {
     } while (true);
 };
 
-export const findContainingParent = (container, target) => {
+export const findContainingParent = (container: HTMLElement | ChildNode, target: HTMLElement) => {
     for (let i = 0; i < container.childNodes.length; ++i) {
         const node = container.childNodes[i];
         if (node.contains(target)) {
@@ -26,17 +26,14 @@ export const findContainingParent = (container, target) => {
 };
 
 export const blockClick = () => {
-    const block = (e) => {
+    let cancel: () => void;
+
+    const block = (e: MouseEvent) => {
         e.stopPropagation();
         e.preventDefault();
-        // eslint-disable-next-line @typescript-eslint/no-use-before-define
         cancel();
     };
-    const cancel = () => {
-        // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        document.removeEventListener('mouseup', handleMouseUp, true);
-        document.removeEventListener('click', block, true);
-    };
+
     let done = false;
     const handleMouseUp = () => {
         if (done) {
@@ -47,16 +44,23 @@ export const blockClick = () => {
             cancel();
         }, 1);
     };
+
     document.addEventListener('mouseup', handleMouseUp, true);
     document.addEventListener('click', block, true);
+
+    cancel = () => {
+        document.removeEventListener('mouseup', handleMouseUp, true);
+        document.removeEventListener('click', block, true);
+    };
+
     return cancel;
 };
 
-export const createAutoScroll = (container, { marginTop = 5, marginBottom = 5, speed = 5 } = {}) => {
+export const createAutoScroll = (container: HTMLElement, { marginTop = 5, marginBottom = 5, speed = 5 } = {}) => {
     const rect = container.getBoundingClientRect();
-    let stopScrolling;
+    let stopScrolling: (() => void) | undefined;
 
-    const startScrolling = (direction) => {
+    const startScrolling = (direction: 1 | -1) => {
         let stop = false;
         const cb = () => {
             if (stop) {
@@ -75,7 +79,7 @@ export const createAutoScroll = (container, { marginTop = 5, marginBottom = 5, s
         };
     };
 
-    const onMouseMove = ({ pageY }) => {
+    const onMouseMove = ({ pageY }: MouseEvent) => {
         if (pageY <= rect.top + marginTop) {
             if (!stopScrolling) {
                 stopScrolling = startScrolling(-1);
@@ -108,7 +112,7 @@ export const createAutoScroll = (container, { marginTop = 5, marginBottom = 5, s
 };
 
 export const createRafUpdater = () => {
-    let last;
+    let last: (() => void) | undefined;
 
     const run = () => {
         if (last) {
@@ -117,7 +121,7 @@ export const createRafUpdater = () => {
         }
     };
 
-    return (cb) => {
+    return (cb: () => void) => {
         const prevLast = last;
         last = cb;
         // If the prev raf has not been consumed, schedule it to run

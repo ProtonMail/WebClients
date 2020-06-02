@@ -1,23 +1,22 @@
 import React, { CSSProperties, Ref, useMemo } from 'react';
 import { Icon, classnames } from 'react-components';
-import { getDisplayTitle } from '../../helpers/event';
 
-import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
+import useReadEvent from './useReadEvent';
 import { getConstrastingColor } from '../../helpers/color';
 import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
-import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
+import getEventInformation from './getEventInformation';
 
 interface Props {
     style: CSSProperties;
     formatTime: (date: Date) => string;
-    className: string;
+    className?: string;
     event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
     isSelected: boolean;
     isBeforeNow: boolean;
     isOutsideStart: boolean;
     isOutsideEnd: boolean;
-    onClick: () => void;
+    onClick?: () => void;
     eventRef?: Ref<HTMLDivElement>;
     tzid: string;
 }
@@ -35,14 +34,9 @@ const FullDayEvent = ({
     tzid,
 }: Props) => {
     const { start, data: targetEventData, isAllDay, isAllPartDay } = event;
-    const { Calendar } = targetEventData;
 
-    const [value, loading, error] = useReadCalendarEvent(targetEventData);
-    const model = useReadEvent(value, tzid);
-
-    const tmpData = getIsTemporaryViewEvent(event) ? event.tmpData : undefined;
-    const calendarColor = tmpData?.calendar.color || Calendar.Color;
-    const safeTitle = getDisplayTitle(tmpData?.title || model.title);
+    const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
+    const { isEventReadLoading, calendarColor, eventReadError, eventTitleSafe } = getEventInformation(event, model);
 
     const eventStyle = useMemo(() => {
         const background = calendarColor;
@@ -59,26 +53,26 @@ const FullDayEvent = ({
     }, [start, isAllPartDay, isAllDay, formatTime]);
 
     const titleString = (() => {
-        if (error) {
+        if (eventReadError) {
             return '';
         }
-        if (loading) {
+        if (isEventReadLoading) {
             return '…';
         }
         if (startTimeString) {
-            return `${startTimeString} ${safeTitle}`;
+            return `${startTimeString} ${eventTitleSafe}`;
         }
-        return safeTitle;
+        return eventTitleSafe;
     })();
 
     const expandableTitleString = (() => {
-        if (error) {
-            return getEventErrorMessage(error);
+        if (eventReadError) {
+            return getEventErrorMessage(eventReadError);
         }
-        if (loading) {
+        if (isEventReadLoading) {
             return getEventLoadingMessage();
         }
-        return safeTitle;
+        return eventTitleSafe;
     })();
 
     const content = (
@@ -89,7 +83,7 @@ const FullDayEvent = ({
 
             {isOutsideStart ? <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-90" /> : null}
 
-            {error ? <Icon name="lock" className="calendar-dayeventcell-lock-icon" /> : null}
+            {eventReadError ? <Icon name="lock" className="calendar-dayeventcell-lock-icon" /> : null}
 
             <span data-test-id="calendar-view:all-day-event" className="flex-item-fluid ellipsis">
                 {titleString}
@@ -118,7 +112,7 @@ const FullDayEvent = ({
                 className={classnames([
                     'calendar-dayeventcell-inner alignleft flex',
                     !isAllDay && 'calendar-dayeventcell-inner--isNotAllDay',
-                    !loading && 'calendar-dayeventcell-inner--isLoaded',
+                    !isEventReadLoading && 'calendar-dayeventcell-inner--isLoaded',
                     isSelected && 'calendar-dayeventcell-inner--isSelected',
                 ])}
                 style={eventStyle}

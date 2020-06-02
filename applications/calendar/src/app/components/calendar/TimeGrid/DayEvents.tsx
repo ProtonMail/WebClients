@@ -1,12 +1,24 @@
-import React, { useMemo } from 'react';
-import { layout } from '../layout';
+import React, { Ref, useMemo } from 'react';
+import { layout, LayoutEvent } from '../layout';
 import { toPercent } from '../mouseHelpers/mathHelpers';
 import getIsBeforeNow from '../getIsBeforeNow';
+import PartDayEvent from '../../events/PartDayEvent';
+import { CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
 
 const MIN_DURATION = 30; // In minutes
 
+interface Props {
+    tzid: string;
+    now: Date;
+    events: CalendarViewEvent[];
+    eventsInDay: LayoutEvent[];
+    totalMinutes: number;
+    targetEventData?: TargetEventData;
+    targetEventRef?: Ref<HTMLDivElement>;
+    formatTime: (date: Date) => string;
+    dayIndex: number;
+}
 const DayEvents = ({
-    Component,
     tzid,
     now,
     events,
@@ -16,7 +28,7 @@ const DayEvents = ({
     targetEventRef,
     formatTime,
     dayIndex,
-}) => {
+}: Props) => {
     const eventsLaidOut = useMemo(() => {
         return layout(eventsInDay).map(({ column, columns }, i) => {
             const { start, end } = eventsInDay[i];
@@ -40,21 +52,22 @@ const DayEvents = ({
         return null;
     }
 
-    return eventsInDay.map((eventTimeDay, i) => {
+    const result = eventsInDay.map((eventTimeDay, i) => {
         const { idx } = eventTimeDay;
         const event = events[idx];
         const style = eventsLaidOut[i];
 
         const isTemporary = event.id === 'tmp';
-        const isSelected = targetEventData && event.id === targetEventData.id;
-        const isThisSelected = (isSelected && isTemporary) || (isSelected && dayIndex === targetEventData.idx);
+        const isSelected = targetEventData ? event.id === targetEventData.id : false;
+        const isThisSelected =
+            (isSelected && isTemporary) || (isSelected && targetEventData && dayIndex === targetEventData.idx);
 
         const eventRef = isThisSelected ? targetEventRef : undefined;
 
         const isBeforeNow = getIsBeforeNow(event, now);
 
         return (
-            <Component
+            <PartDayEvent
                 event={event}
                 style={style}
                 key={event.id}
@@ -66,6 +79,8 @@ const DayEvents = ({
             />
         );
     });
+
+    return <>{result}</>;
 };
 
 export default DayEvents;

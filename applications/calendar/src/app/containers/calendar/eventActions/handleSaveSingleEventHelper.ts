@@ -12,8 +12,8 @@ import getCreationKeys from '../getCreationKeys';
 import { EventOldData, EventNewData } from '../../../interfaces/EventData';
 
 interface SaveEventHelperArguments {
-    oldEventData?: EventOldData;
-    newEventData: EventNewData;
+    oldEditEventData?: EventOldData;
+    newEditEventData: EventNewData;
 
     api: Api;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
@@ -22,8 +22,8 @@ interface SaveEventHelperArguments {
 }
 
 const handleSaveSingleEventHelper = async ({
-    oldEventData,
-    newEventData: {
+    oldEditEventData,
+    newEditEventData: {
         calendarID: newCalendarID,
         addressID: newAddressID,
         memberID: newMemberID,
@@ -34,8 +34,8 @@ const handleSaveSingleEventHelper = async ({
     getCalendarKeys,
     calendars,
 }: SaveEventHelperArguments) => {
-    const oldEvent = oldEventData?.Event;
-    const oldCalendarID = oldEventData?.calendarID;
+    const oldEvent = oldEditEventData?.eventData;
+    const oldCalendarID = oldEditEventData?.calendarID;
 
     const isUpdateEvent = !!oldEvent;
     const isSwitchCalendar = isUpdateEvent && oldCalendarID !== newCalendarID;
@@ -51,8 +51,9 @@ const handleSaveSingleEventHelper = async ({
         ...(await getCreationKeys({ Event: oldEvent, addressKeys, newCalendarKeys, oldCalendarKeys })),
     });
 
+    let result;
     if (isSwitchCalendar) {
-        await api(
+        result = await api(
             getSwitchCalendarEvent({
                 calendarID: newCalendarID,
                 memberID: newMemberID,
@@ -61,15 +62,17 @@ const handleSaveSingleEventHelper = async ({
             })
         );
     } else if (isUpdateEvent) {
-        await api(getUpdateCalendarEvent({ memberID: newMemberID, data, Event: oldEvent }));
+        result = await api(getUpdateCalendarEvent({ memberID: newMemberID, data, Event: oldEvent }));
     } else {
-        await api(getCreateCalendarEvent({ calendarID: newCalendarID, memberID: newMemberID, data }));
+        result = await api(getCreateCalendarEvent({ calendarID: newCalendarID, memberID: newMemberID, data }));
     }
 
     const calendar = calendars.find(({ ID }) => ID === newCalendarID);
     if (calendar && !calendar.Display) {
         await api(updateCalendar(newCalendarID, { Display: 1 }));
     }
+
+    return result;
 };
 
 export default handleSaveSingleEventHelper;

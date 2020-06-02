@@ -11,10 +11,11 @@ import handleDeleteSingleEvent from './handleDeleteSingleEvent';
 import { getOriginalEvent } from './recurringHelper';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { GetDecryptedEventCb } from '../eventStore/interface';
-import { OnDeleteConfirmationCb } from '../interface';
+import { CalendarViewEvent, OnDeleteConfirmationCb } from '../interface';
+import { getIsCalendarEvent } from '../eventStore/cache/helper';
 
 interface Arguments {
-    targetEvent: any;
+    targetEvent: CalendarViewEvent;
 
     addresses: Address[];
 
@@ -25,13 +26,13 @@ interface Arguments {
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
     getCalendarKeys: ReturnType<typeof useGetAddressKeys>;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
-    getDecryptedEvent: GetDecryptedEventCb;
+    getEventDecrypted: GetDecryptedEventCb;
     createNotification: (data: any) => void;
 }
 
 const handleDeleteEvent = async ({
     targetEvent: {
-        data: { Event: oldEvent, Calendar: oldCalendar, recurrence, readEvent },
+        data: { eventData: oldEventData, calendarData: oldCalendarData, eventRecurrence, eventReadResult },
     },
 
     addresses,
@@ -42,26 +43,29 @@ const handleDeleteEvent = async ({
     call,
     getAddressKeys,
     getCalendarKeys,
-    getDecryptedEvent,
+    getEventDecrypted,
     getCalendarBootstrap,
     createNotification,
 }: Arguments) => {
-    const calendarBootstrap = getCalendarBootstrap(oldCalendar.ID);
+    const calendarBootstrap = getCalendarBootstrap(oldCalendarData.ID);
     if (!calendarBootstrap) {
         throw new Error('Trying to delete event without calendar information');
     }
+    if (!oldEventData || !getIsCalendarEvent(oldEventData)) {
+        throw new Error('Trying to delete event without event information');
+    }
 
-    const oldEventData = getEditEventData({
-        Event: oldEvent,
-        eventResult: readEvent(oldEvent.CalendarID, oldEvent.ID)?.[0],
-        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEvent.Author),
+    const oldEditEventData = getEditEventData({
+        eventData: oldEventData,
+        eventResult: eventReadResult?.result,
+        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
 
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
-    if (!recurrence && !oldEventData.recurrenceID) {
+    if (!eventRecurrence && !oldEditEventData.recurrenceID) {
         return handleDeleteSingleEvent({
-            oldCalendarID: oldCalendar.ID,
-            oldEventID: oldEvent.ID,
+            oldCalendarID: oldCalendarData.ID,
+            oldEventID: oldEventData.ID,
 
             onDeleteConfirmation,
             api,
@@ -70,38 +74,38 @@ const handleDeleteEvent = async ({
         });
     }
 
-    const recurrences = await getAllEventsByUID(api, oldEventData.uid, oldEventData.calendarID);
+    const recurrences = await getAllEventsByUID(api, oldEditEventData.uid, oldEditEventData.calendarID);
 
-    const originalEvent = getOriginalEvent(recurrences);
-    let originalEventData = oldEventData;
+    const originalEventData = getOriginalEvent(recurrences);
+    let originalEditEventData = oldEditEventData;
 
     // If this is a single edit, get the original event data
-    if (originalEvent && originalEvent.ID !== oldEvent.ID) {
-        const originalEventResult = await getDecryptedEvent(originalEvent).catch(noop);
+    if (originalEventData && originalEventData.ID !== oldEventData.ID) {
+        const originalEventResult = await getEventDecrypted(originalEventData).catch(noop);
 
-        originalEventData = getEditEventData({
-            Event: originalEvent,
+        originalEditEventData = getEditEventData({
+            eventData: originalEventData,
             eventResult: originalEventResult,
-            memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, originalEvent.Author),
+            memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, originalEventData.Author),
         });
     }
 
-    const actualRecurrence =
-        recurrence ||
-        getSingleEditRecurringData(originalEventData.mainVeventComponent, oldEventData.mainVeventComponent);
+    const actualEventRecurrence =
+        eventRecurrence ||
+        getSingleEditRecurringData(originalEditEventData.mainVeventComponent, oldEditEventData.mainVeventComponent);
 
     return handleDeleteRecurringEvent({
-        originalEventData,
-        oldEventData,
+        originalEditEventData,
+        oldEditEventData,
 
         canOnlyDeleteAll:
-            !originalEventData.veventComponent ||
-            !oldEventData.veventComponent ||
-            !!getIsCalendarDisabled(oldCalendar) ||
-            actualRecurrence.isSingleOccurrence,
+            !originalEditEventData.veventComponent ||
+            !oldEditEventData.veventComponent ||
+            getIsCalendarDisabled(oldCalendarData) ||
+            actualEventRecurrence.isSingleOccurrence,
         onDeleteConfirmation,
 
-        recurrence: actualRecurrence,
+        recurrence: actualEventRecurrence,
         recurrences,
         api,
         call,

@@ -1,12 +1,11 @@
 import React, { CSSProperties, Ref, useMemo } from 'react';
 import { classnames, Icon } from 'react-components';
-import { getDisplayTitle } from '../../helpers/event';
 
-import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
+import useReadEvent from './useReadEvent';
 import { getConstrastingColor } from '../../helpers/color';
 import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
-import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
+import getEventInformation from './getEventInformation';
 
 interface Props {
     style: CSSProperties;
@@ -14,19 +13,14 @@ interface Props {
     event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
     isSelected: boolean;
     isBeforeNow: boolean;
-    eventRef: Ref<HTMLDivElement>;
+    eventRef?: Ref<HTMLDivElement>;
     tzid: string;
 }
 const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, eventRef, tzid }: Props) => {
     const { start, end, data: targetEventData, isAllDay } = event;
-    const { Calendar } = targetEventData;
+    const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
 
-    const [value, loading, error] = useReadCalendarEvent(targetEventData);
-    const model = useReadEvent(value, tzid);
-
-    const tmpData = getIsTemporaryViewEvent(event) ? event.tmpData : undefined;
-    const calendarColor = tmpData?.calendar.color || Calendar.Color;
-    const safeTitle = getDisplayTitle(tmpData?.title || model.title);
+    const { isEventReadLoading, calendarColor, eventReadError, eventTitleSafe } = getEventInformation(event, model);
 
     const eventStyle = useMemo(() => {
         const background = calendarColor;
@@ -38,20 +32,20 @@ const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, event
     }, [calendarColor, style, isAllDay, isSelected]);
 
     const titleString = (() => {
-        if (error) {
+        if (eventReadError) {
             return '';
         }
-        if (loading) {
+        if (isEventReadLoading) {
             return '…';
         }
-        return safeTitle;
+        return eventTitleSafe;
     })();
 
     const expandableTitleString = (() => {
-        if (error) {
-            return getEventErrorMessage(error);
+        if (eventReadError) {
+            return getEventErrorMessage(eventReadError);
         }
-        if (loading) {
+        if (isEventReadLoading) {
             return getEventLoadingMessage();
         }
         return titleString;
@@ -64,10 +58,10 @@ const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, event
     }, [start, end]);
 
     const isLessThanOneHour = +end - +start < 3600000;
-    const shouldHideTime = loading || (isLessThanOneHour && titleString);
+    const shouldHideTime = isEventReadLoading || (isLessThanOneHour && titleString);
 
     const content = (() => {
-        if (error) {
+        if (eventReadError) {
             return (
                 <div className="flex flex-nowrap flex-items-center">
                     <Icon name="lock" className="calendar-eventcell-lock-icon" />
@@ -95,7 +89,7 @@ const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, event
             style={eventStyle}
             className={classnames([
                 'calendar-eventcell no-scroll pl0-5 pr0-5',
-                !loading && 'calendar-eventcell--isLoaded',
+                !isEventReadLoading && 'calendar-eventcell--isLoaded',
                 isBeforeNow && 'calendar-eventcell--isBefore',
                 isSelected && 'calendar-eventcell--isSelected',
             ])}

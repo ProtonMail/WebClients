@@ -14,7 +14,7 @@ import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 
 import { DEFAULT_USER_SETTINGS } from '../../settingsConstants';
 import { CalendarsEventsCache } from './eventStore/interface';
-import { getCalendarsEventCache } from './eventStore/useCalendarsEvents';
+import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
 import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
 import { CalendarsAlarmsCache } from '../alarms/CacheInterface';
 import { getCalendarsAlarmsCache } from '../alarms/useCalendarsAlarms';

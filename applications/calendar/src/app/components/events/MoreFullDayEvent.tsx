@@ -4,7 +4,7 @@ import { classnames } from 'react-components';
 interface Props {
     style: CSSProperties;
     more: number;
-    eventRef: Ref<HTMLDivElement>;
+    eventRef?: Ref<HTMLDivElement>;
     isSelected: boolean;
 }
 // NOTE: Can not be a button to satisfy auto close, and to be the same as the normal events

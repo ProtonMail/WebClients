@@ -55,7 +55,7 @@ export const getCreateTemporaryEvent = (
     return {
         id: 'tmp',
         data: {
-            Calendar,
+            calendarData: Calendar,
         },
         ...getCalendarViewEventProperties(model, tzid),
         tmpData: model,

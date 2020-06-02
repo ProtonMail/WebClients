@@ -1,32 +1,23 @@
-import React, { Ref } from 'react';
-import { c } from 'ttag';
+import React, { Ref, RefObject } from 'react';
 
 import { VIEWS } from '../../constants';
 
 import TimeGrid from '../../components/calendar/TimeGrid';
 import DayGrid from '../../components/calendar/DayGrid';
-import FullDayEvent from '../../components/events/FullDayEvent';
-import PartDayEvent from '../../components/events/PartDayEvent';
-import MoreFullDayEvent from '../../components/events/MoreFullDayEvent';
 import { SharedViewProps, TargetEventData, TargetMoreData, TimeGridRef } from './interface';
+import { OnMouseDown } from '../../components/calendar/interactions/interface';
 
 const { DAY, WEEK, MONTH } = VIEWS;
 
-const components = {
-    FullDayEvent,
-    PartDayEvent,
-    MoreFullDayEvent,
-};
-
 interface Props extends SharedViewProps {
     isInteractionEnabled?: boolean;
-    onMouseDown: (a: any) => any /** todo */;
+    onMouseDown: OnMouseDown;
     targetEventData?: TargetEventData;
     targetEventRef: Ref<HTMLDivElement>;
     targetMoreData?: TargetMoreData;
     targetMoreRef: Ref<HTMLDivElement>;
     isScrollDisabled: boolean;
-    timeGridViewRef: Ref<TimeGridRef>;
+    timeGridViewRef: RefObject<TimeGridRef>;
     weekdaysLong: string[];
     formatTime: (date: Date) => string;
     formatDate: (date: Date) => string;
@@ -64,8 +55,6 @@ const CalendarView = ({
     formatTime,
     formatDate,
 }: Props) => {
-    const week = c('Label').t`Week`;
-
     if (view === DAY || view === WEEK) {
         return (
             <TimeGrid
@@ -89,9 +78,7 @@ const CalendarView = ({
                 events={events}
                 formatTime={formatTime}
                 onClickDate={onClickDate}
-                components={components}
-                ref={timeGridViewRef}
-                week={week}
+                actionRef={timeGridViewRef}
                 weekdaysLong={weekdaysLong}
             />
         );
@@ -114,35 +101,11 @@ const CalendarView = ({
                 formatTime={formatTime}
                 formatDate={formatDate}
                 onClickDate={onClickDate}
-                components={components}
                 weekdaysLong={weekdaysLong}
             />
         );
     }
     return null;
-    /*
-    if (view === YEAR) {
-        return (
-            <YearView
-                tzid={tzid}
-                calendarIDs={visibleCalendars.map(({ ID }) => ID)}
-                displayWeekNumbers={displayWeekNumbers}
-                currentDate={utcDate}
-                onSelectDate={handleClickDateYearView}
-            />
-        );
-    }
-    if (view === AGENDA) {
-        return (
-            <AgendaView
-                events={calendarsEvents}
-                currentDate={utcDate}
-                dateRange={utcDateRange}
-                onSelectDate={handleClickDateAgendaView}
-            />
-        );
-    }
-     */
 };
 
 export default CalendarView;

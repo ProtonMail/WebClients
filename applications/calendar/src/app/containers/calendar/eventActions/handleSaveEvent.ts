@@ -17,6 +17,7 @@ import withVeventRruleWkst, { withRruleWkst } from './rruleWkst';
 import { withRruleUntil } from './rruleUntil';
 import { GetDecryptedEventCb } from '../eventStore/interface';
 import { CalendarViewEventTemporaryEvent, OnSaveConfirmationCb, WeekStartsOn } from '../interface';
+import { getIsCalendarEvent } from '../eventStore/cache/helper';
 
 interface Arguments {
     temporaryEvent: CalendarViewEventTemporaryEvent;
@@ -32,7 +33,7 @@ interface Arguments {
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
     getCalendarKeys: ReturnType<typeof useGetAddressKeys>;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
-    getDecryptedEvent: GetDecryptedEventCb;
+    getEventDecrypted: GetDecryptedEventCb;
     createNotification: (data: any) => void;
 }
 
@@ -49,14 +50,12 @@ const handleSaveEvent = async ({
     call,
     getAddressKeys,
     getCalendarKeys,
-    getDecryptedEvent,
+    getEventDecrypted,
     getCalendarBootstrap,
     createNotification,
 }: Arguments) => {
     const {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        tmpOriginalTarget: { data: { Event: oldEvent, readEvent, recurrence } } = { data: {} },
+        tmpOriginalTarget: { data: { eventData: oldEventData, eventRecurrence, eventReadResult } } = { data: {} },
         tmpData,
         tmpData: {
             calendar: { id: newCalendarID },
@@ -68,7 +67,7 @@ const handleSaveEvent = async ({
     const modelVeventComponent = modelToVeventComponent(tmpData) as VcalVeventComponent;
     const newVeventComponent = withVeventRruleWkst(omit(modelVeventComponent, ['exdate']), weekStartsOn);
 
-    const newEventData = {
+    const newEditEventData = {
         veventComponent: newVeventComponent,
         calendarID: newCalendarID,
         memberID: newMemberID,
@@ -76,9 +75,9 @@ const handleSaveEvent = async ({
     };
 
     // Creation
-    if (!oldEvent) {
+    if (!oldEventData) {
         return handleSaveSingleEvent({
-            newEventData,
+            newEditEventData,
 
             calendars,
             api,
@@ -89,22 +88,25 @@ const handleSaveEvent = async ({
         });
     }
 
-    const calendarBootstrap = getCalendarBootstrap(oldEvent.CalendarID);
+    const calendarBootstrap = getCalendarBootstrap(oldEventData.CalendarID);
     if (!calendarBootstrap) {
         throw new Error('Trying to update event without a calendar');
     }
+    if (!getIsCalendarEvent(oldEventData) || !eventReadResult?.result) {
+        throw new Error('Trying to edit event without event information');
+    }
 
-    const oldEventData = getEditEventData({
-        Event: oldEvent,
-        eventResult: readEvent?.(oldEvent.CalendarID, oldEvent.ID)?.[0],
-        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEvent.Author),
+    const oldEditEventData = getEditEventData({
+        eventData: oldEventData,
+        eventResult: eventReadResult.result,
+        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
 
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
-    if (!recurrence && !oldEventData.recurrenceID) {
+    if (!eventRecurrence && !oldEditEventData.recurrenceID) {
         return handleSaveSingleEvent({
-            oldEventData,
-            newEventData,
+            oldEditEventData,
+            newEditEventData,
 
             calendars,
             api,
@@ -115,11 +117,11 @@ const handleSaveEvent = async ({
         });
     }
 
-    const recurrences = await getAllEventsByUID(api, oldEventData.uid, oldEventData.calendarID);
+    const recurrences = await getAllEventsByUID(api, oldEditEventData.uid, oldEditEventData.calendarID);
 
-    const originalEvent = getOriginalEvent(recurrences);
-    const originalEventResult = originalEvent ? await getDecryptedEvent(originalEvent).catch(noop) : undefined;
-    if (!originalEvent || !originalEventResult?.[0]) {
+    const originalEventData = getOriginalEvent(recurrences);
+    const originalEventResult = originalEventData ? await getEventDecrypted(originalEventData).catch(noop) : undefined;
+    if (!originalEventData || !originalEventResult?.[0]) {
         createNotification({
             text: c('Recurring update').t`Cannot save a recurring event without the original event`,
             type: 'error',
@@ -127,38 +129,38 @@ const handleSaveEvent = async ({
         throw new Error('Original event not found');
     }
 
-    const originalEventData = getEditEventData({
-        Event: originalEvent,
+    const originalEditEventData = getEditEventData({
+        eventData: originalEventData,
         eventResult: originalEventResult,
-        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, originalEvent.Author),
+        memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, originalEventData.Author),
     });
 
-    const actualRecurrence =
-        recurrence ||
-        getSingleEditRecurringData(originalEventData.mainVeventComponent, oldEventData.mainVeventComponent);
+    const actualEventRecurrence =
+        eventRecurrence ||
+        getSingleEditRecurringData(originalEditEventData.mainVeventComponent, oldEditEventData.mainVeventComponent);
 
-    if (newVeventComponent['recurrence-id'] && originalEventData.mainVeventComponent.rrule) {
+    if (newVeventComponent['recurrence-id'] && originalEditEventData.mainVeventComponent.rrule) {
         // Since single edits are not allowed to edit the RRULE, append the old one here. Take into account when
         // a part day is changed into full day with the until rule.
-        const singleEditWithRrule = {
+        const singleEditWithRrule: VcalVeventComponent = {
             ...newVeventComponent,
             rrule: withRruleUntil(
-                withRruleWkst(originalEventData.mainVeventComponent.rrule, weekStartsOn),
+                withRruleWkst(originalEditEventData.mainVeventComponent.rrule, weekStartsOn),
                 newVeventComponent.dtstart
             ),
         };
-        newEventData.veventComponent = singleEditWithRrule;
+        newEditEventData.veventComponent = singleEditWithRrule;
     }
 
     return handleSaveRecurringEvent({
-        originalEventData,
-        oldEventData,
-        newEventData,
+        originalEditEventData,
+        oldEditEventData,
+        newEditEventData,
 
-        canOnlySaveAll: actualRecurrence.isSingleOccurrence,
+        canOnlySaveAll: actualEventRecurrence.isSingleOccurrence,
         onSaveConfirmation,
 
-        recurrence: actualRecurrence,
+        recurrence: actualEventRecurrence,
         recurrences,
         api,
         call,

@@ -1,9 +1,9 @@
 import { RecurringCache, RecurringEventsCache } from '../interface';
 
 export const removeEventFromRecurrenceInstances = (
-    recurringEvents: RecurringEventsCache,
     uid: string,
-    recurrenceId: number
+    recurrenceId: number,
+    recurringEvents: RecurringEventsCache
 ) => {
     const oldRecurringEvent = recurringEvents.get(uid);
     if (!oldRecurringEvent) {
@@ -30,18 +30,18 @@ export const removeEventFromRecurrenceInstances = (
 };
 
 interface SetEventInRecurrenceInstances {
-    recurringEvents: RecurringEventsCache;
-    EventID: string;
-    oldRecurrenceId?: number;
-    recurrenceId: number;
+    id: string;
     uid: string;
+    recurrenceId: number;
+    recurringEvents: RecurringEventsCache;
+    oldRecurrenceId?: number;
 }
 export const setEventInRecurrenceInstances = ({
-    recurringEvents,
-    EventID,
-    oldRecurrenceId,
-    recurrenceId,
+    id,
     uid,
+    recurrenceId,
+    recurringEvents,
+    oldRecurrenceId,
 }: SetEventInRecurrenceInstances) => {
     // Get the parent recurring event (if any)
     const oldRecurringEvent = recurringEvents.get(uid) || {};
@@ -54,7 +54,7 @@ export const setEventInRecurrenceInstances = ({
     if (oldRecurrenceId) {
         delete newRecurrenceInstances[+oldRecurrenceId];
     }
-    newRecurrenceInstances[+recurrenceId] = EventID;
+    newRecurrenceInstances[+recurrenceId] = id;
 
     recurringEvents.set(uid, {
         ...oldRecurringEvent,
@@ -62,12 +62,12 @@ export const setEventInRecurrenceInstances = ({
     });
 };
 
-export const setEventInRecurringCache = (recurringEvents: RecurringEventsCache, EventID: string, uid: string) => {
+export const setEventInRecurringCache = (recurringEvents: RecurringEventsCache, id: string, uid: string) => {
     const oldRecurringEvent = recurringEvents.get(uid) || {};
 
     recurringEvents.set(uid, {
         ...oldRecurringEvent,
-        parentEventID: EventID,
+        parentEventID: id,
         cache: {},
     });
 };

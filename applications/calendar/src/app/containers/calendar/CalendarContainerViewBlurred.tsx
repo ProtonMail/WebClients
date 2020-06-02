@@ -4,13 +4,15 @@ import { endOfWeek, startOfWeek } from 'proton-shared/lib/date-fns-utc';
 import CalendarContainerView from './CalendarContainerView';
 import { VIEWS } from '../../constants';
 import TimeGrid from '../../components/calendar/TimeGrid';
+import { TimeGridRef } from './interface';
 
 const CalendarContainerViewBlurred = () => {
-    const timeGridViewRef = useRef();
+    const timeGridViewRef = useRef<TimeGridRef>(null);
 
     const now = new Date();
-    const dateRange = [startOfWeek(now), endOfWeek(now)];
+    const dateRange: [Date, Date] = [startOfWeek(now), endOfWeek(now)];
     const containerRef = useRef<HTMLDivElement>(null);
+    const tzid = 'Europe/Zurich';
 
     return (
         <CalendarContainerView
@@ -24,11 +26,18 @@ const CalendarContainerViewBlurred = () => {
             onChangeView={noop}
             onChangeDate={noop}
             onChangeDateRange={noop}
-            tzid="Europe/Zurich"
+            tzid={tzid}
             setTzid={noop}
             containerRef={containerRef}
         >
-            <TimeGrid now={now} date={now} dateRange={dateRange} components={{}} ref={timeGridViewRef} />
+            <TimeGrid
+                tzid={tzid}
+                primaryTimezone={tzid}
+                now={now}
+                date={now}
+                dateRange={dateRange}
+                actionRef={timeGridViewRef}
+            />
         </CalendarContainerView>
     );
 };

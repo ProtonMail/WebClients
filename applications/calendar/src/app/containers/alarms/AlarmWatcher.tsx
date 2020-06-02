@@ -6,6 +6,7 @@ import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { CalendarAlarm, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import { noop } from 'proton-shared/lib/helpers/function';
 import { getNextEventTime, getAlarmMessage } from '../../helpers/alarms';
 
 import notificationIcon from '../../../assets/notification.gif';
@@ -40,7 +41,7 @@ interface Props {
 }
 const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => {
     const api = useApi();
-    const getEventRaw = useGetCalendarEventRaw();
+    const getCalendarEventRaw = useGetCalendarEventRaw();
     const cacheRef = useRef<Set<string>>();
 
     // temporary code for standalone app
@@ -98,7 +99,7 @@ const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => 
                 }
 
                 getEvent()
-                    .then((Event) => getEventRaw(Event))
+                    .then((Event) => getCalendarEventRaw(Event))
                     .then((eventRaw) => {
                         if (unmounted) {
                             return;
@@ -109,8 +110,9 @@ const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => 
                         const now = new Date();
                         const formatOptions = { locale: dateLocale };
                         const text = getAlarmMessage({ component, start, now, tzid, formatOptions });
-                        displayNotification({ text, tag: ID });
-                    });
+                        return displayNotification({ text, tag: ID });
+                    })
+                    .catch(noop);
 
                 window.setTimeout(run, 0);
             }, delay);
@@ -124,7 +126,7 @@ const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => 
                 window.clearTimeout(timeoutHandle);
             }
         };
-    }, [alarms, tzid, getEventRaw]);
+    }, [alarms, tzid, getCalendarEventRaw]);
 
     return null;
 };

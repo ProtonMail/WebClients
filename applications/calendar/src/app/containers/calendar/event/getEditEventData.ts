@@ -4,16 +4,16 @@ import { Member } from 'proton-shared/lib/interfaces/calendar';
 import parseMainEventData from './parseMainEventData';
 import { getRecurrenceId } from './getEventHelper';
 import { getComponentWithPersonalPart } from '../../../helpers/event';
-import { DecryptedTupleResult } from '../eventStore/interface';
+import { DecryptedEventTupleResult } from '../eventStore/interface';
 
 interface GetEditEventDataArguments {
-    Event: CalendarEvent;
-    eventResult?: DecryptedTupleResult;
+    eventData: CalendarEvent;
+    eventResult?: DecryptedEventTupleResult;
     memberResult: [Member, Address];
 }
 
-const getEditEventData = ({ Event, eventResult, memberResult: [member, address] }: GetEditEventDataArguments) => {
-    const mainVeventComponent = parseMainEventData(Event);
+const getEditEventData = ({ eventData, eventResult, memberResult: [member, address] }: GetEditEventDataArguments) => {
+    const mainVeventComponent = parseMainEventData(eventData);
     if (!mainVeventComponent) {
         throw new Error('Unparseable event');
     }
@@ -34,8 +34,8 @@ const getEditEventData = ({ Event, eventResult, memberResult: [member, address] 
         : undefined;
 
     return {
-        Event,
-        calendarID: Event.CalendarID,
+        eventData,
+        calendarID: eventData.CalendarID,
         memberID: member.ID,
         addressID: address.ID,
         mainVeventComponent,

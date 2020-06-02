@@ -32,9 +32,9 @@ export const getRecurringEvents = (
             continue;
         }
 
-        const { component } = parentEventCacheRecord;
+        const { eventComponent } = parentEventCacheRecord;
 
-        let eventOccurrences = getOccurrencesBetween(component, searchStart, searchEnd, cache);
+        let eventOccurrences = getOccurrencesBetween(eventComponent, searchStart, searchEnd, cache);
         if (!eventOccurrences.length) {
             continue;
         }
@@ -47,7 +47,7 @@ export const getRecurringEvents = (
             });
         }
 
-        const isSingleOccurrence = getOccurrences({ component, maxCount: 2, cache }).length === 1;
+        const isSingleOccurrence = getOccurrences({ component: eventComponent, maxCount: 2, cache }).length === 1;
 
         result.push({
             id: parentEventID,

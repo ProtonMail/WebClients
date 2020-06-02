@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { Ref } from 'react';
 import { endOfDay } from 'proton-shared/lib/date-fns-utc';
 import { getEvent } from './helper';
 import { TYPE } from '../interactions/constants';
 import getIsBeforeNow from '../getIsBeforeNow';
+import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../../containers/calendar/interface';
+import FullDayEvent from '../../events/FullDayEvent';
+import MoreFullDayEvent from '../../events/MoreFullDayEvent';
+import { EventsInRowSummary, EventsStyleResult } from '../useDayGridEventLayout';
+import { LayoutEvent } from '../layout';
+
+interface Props {
+    days: Date[];
+    row: number;
+    tzid: string;
+    now: Date;
+    events: CalendarViewEvent[];
+    targetEventRef?: Ref<HTMLDivElement>;
+    targetMoreData?: TargetMoreData;
+    targetMoreRef?: Ref<HTMLDivElement>;
+    targetEventData?: TargetEventData;
+    formatTime: (date: Date) => string;
+    eventsInRowStyles: EventsStyleResult[];
+    eventsInRowSummary: EventsInRowSummary;
+    eventsInRow: LayoutEvent[];
+}
 
 const RowEvents = ({
-    FullDayEvent,
-    MoreFullDayEvent,
-
     eventsInRowStyles,
     eventsInRowSummary,
     eventsInRow,
@@ -24,18 +42,17 @@ const RowEvents = ({
 
     targetEventRef,
     targetEventData,
-}) => {
+}: Props) => {
     const startWindow = days[0];
     const lastWindow = endOfDay(days[days.length - 1]);
 
-    return eventsInRowStyles.map(({ idx, type, style }) => {
+    const result = eventsInRowStyles.map(({ idx, type, style }) => {
         if (type === 'more') {
-            const isSelected = targetMoreData && idx === targetMoreData.idx && row === targetMoreData.row;
+            const isSelected = targetMoreData ? idx === targetMoreData.idx && row === targetMoreData.row : false;
             const eventRef = isSelected ? targetMoreRef : undefined;
             return (
                 <MoreFullDayEvent
                     key={`more${idx}`}
-                    tzid={tzid}
                     style={style}
                     more={eventsInRowSummary[idx].more}
                     eventRef={eventRef}
@@ -47,10 +64,10 @@ const RowEvents = ({
         const event = getEvent(idx, eventsInRow, events);
 
         const isTemporary = event.id === 'tmp';
-        const isSelected = targetEventData && event.id === targetEventData.id;
+        const isSelected = targetEventData ? event.id === targetEventData.id : false;
         const isThisSelected =
             (isSelected && isTemporary) ||
-            (isSelected && targetEventData.idx === row && targetEventData.type === TYPE.DAYGRID);
+            (isSelected && targetEventData && targetEventData.idx === row && targetEventData.type === TYPE.DAYGRID);
 
         const eventRef = isThisSelected ? targetEventRef : undefined;
 
@@ -66,11 +83,13 @@ const RowEvents = ({
                 formatTime={formatTime}
                 isSelected={isSelected}
                 isBeforeNow={isBeforeNow}
-                isOutsideEnd={event.isAllDay && event.end > lastWindow}
-                isOutsideStart={event.isAllDay && event.start < startWindow}
+                isOutsideEnd={event.isAllDay ? event.end > lastWindow : false}
+                isOutsideStart={event.isAllDay ? event.start < startWindow : false}
             />
         );
     });
+
+    return <>{result}</>;
 };
 
 export default RowEvents;

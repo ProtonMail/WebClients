@@ -11,8 +11,8 @@ import { EventOldData } from '../../../interfaces/EventData';
 import { OnDeleteConfirmationCb } from '../interface';
 
 interface Arguments {
-    originalEventData: EventOldData;
-    oldEventData: EventOldData;
+    originalEditEventData: EventOldData;
+    oldEditEventData: EventOldData;
 
     recurrence: CalendarEventRecurring;
     recurrences: CalendarEvent[];
@@ -26,8 +26,8 @@ interface Arguments {
     getCalendarKeys: ReturnType<typeof useGetAddressKeys>;
 }
 const handleDeleteRecurringEvent = async ({
-    originalEventData,
-    oldEventData,
+    originalEditEventData,
+    oldEditEventData,
 
     recurrence,
     recurrences,
@@ -41,9 +41,9 @@ const handleDeleteRecurringEvent = async ({
     getCalendarKeys,
 }: Arguments) => {
     let deleteTypes;
-    if (canOnlyDeleteAll || !originalEventData.veventComponent) {
+    if (canOnlyDeleteAll || !originalEditEventData.veventComponent) {
         deleteTypes = [RECURRING_TYPES.ALL];
-    } else if (getHasFutureOption(originalEventData.veventComponent, recurrence)) {
+    } else if (getHasFutureOption(originalEditEventData.veventComponent, recurrence)) {
         deleteTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.FUTURE, RECURRING_TYPES.ALL];
     } else {
         deleteTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.ALL];
@@ -58,8 +58,8 @@ const handleDeleteRecurringEvent = async ({
         type: deleteType,
         recurrence,
         recurrences,
-        originalEventData,
-        oldEventData,
+        originalEditEventData,
+        oldEditEventData,
     });
 
     const payload = await getSyncMultipleEventsPayload({

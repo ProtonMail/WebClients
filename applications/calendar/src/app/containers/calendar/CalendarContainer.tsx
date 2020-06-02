@@ -194,7 +194,7 @@ const CalendarContainer = ({
     }, [view, utcDate, weekStartsOn, range]);
 
     const utcDateRangeInTimezone = useMemo(
-        () => [
+        (): [Date, Date] => [
             toUTCDate(convertZonedDateTimeToUTC(fromUTCDate(utcDateRange[0]), tzid)),
             toUTCDate(convertZonedDateTimeToUTC(fromUTCDate(utcDateRange[1]), tzid)),
         ],
@@ -226,7 +226,7 @@ const CalendarContainer = ({
         document.title = [titleDateString, 'ProtonCalendar'].filter(Boolean).join(' - ');
     }, [view, range, utcDate, utcDateRange]);
 
-    const { calendarsEvents, loadingEvents, getDecryptedEvent } = useCalendarsEvents(
+    const [calendarsEvents, loadingEvents] = useCalendarsEvents(
         visibleCalendars,
         utcDateRangeInTimezone,
         tzid,
@@ -308,9 +308,7 @@ const CalendarContainer = ({
             utcDate={utcDate}
             utcDateRange={utcDateRange}
             onCreateEvent={
-                disableCreate || !defaultCalendarBootstrap
-                    ? undefined
-                    : () => interactiveRef.current && interactiveRef.current.createEvent()
+                disableCreate || !defaultCalendarBootstrap ? undefined : () => interactiveRef.current?.createEvent()
             }
             onClickToday={handleClickToday}
             onChangeDate={handleChangeDate}
@@ -327,7 +325,6 @@ const CalendarContainer = ({
                 displayWeekNumbers={displayWeekNumbers}
                 displaySecondaryTimezone={displaySecondaryTimezone}
                 weekStartsOn={weekStartsOn}
-                getDecryptedEvent={getDecryptedEvent}
                 now={utcNowDateInTimezone}
                 date={utcDate}
                 dateRange={utcDateRange}

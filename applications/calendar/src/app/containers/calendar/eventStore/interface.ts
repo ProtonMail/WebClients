@@ -1,5 +1,5 @@
 import createIntervalTree from 'interval-tree';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarEvent, CalendarEventWithoutBlob } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { OccurrenceIterationCache } from 'proton-shared/lib/calendar/recurring';
 import { EventPersonalMap } from '../../../interfaces/EventPersonalMap';
@@ -12,41 +12,35 @@ export interface RecurringCache {
     recurrenceInstances?: { [key: number]: string };
 }
 
-export interface CalendarEventStoreRecord {
-    Event: CalendarEvent;
-    component: VcalVeventComponent;
+export type DecryptedEventPersonalMap = EventPersonalMap;
+export type DecryptedEventTupleResult = [VcalVeventComponent, DecryptedEventPersonalMap];
+export type EventReadResult = {
+    result?: DecryptedEventTupleResult;
+    error?: Error;
+};
 
-    isRecurring: boolean;
+export interface CalendarEventStoreRecord {
+    utcStart: Date;
+    utcEnd: Date;
+
     isAllDay: boolean;
     isAllPartDay: boolean;
 
-    start: Date;
-    end: Date;
-
-    counter: number;
+    eventData?: CalendarEvent | CalendarEventWithoutBlob;
+    eventComponent: VcalVeventComponent;
+    eventReadResult?: EventReadResult;
+    eventPromise?: Promise<void>;
 }
-
-export type DecryptedTupleResult = [VcalVeventComponent, DecryptedEventPersonalMap];
-export type DecryptedEventPersonalMap = EventPersonalMap;
-
-export type ReadEventCb = (calendarID: string, eventID: string) => DecryptedEventRecord;
-export type GetDecryptedEventCb = (Event: CalendarEvent) => Promise<DecryptedTupleResult>;
-
-export type DecryptedEventRecord = [
-    DecryptedTupleResult | undefined,
-    Promise<DecryptedEventRecord> | undefined,
-    Error | undefined
-];
 
 export type RecurringEventsCache = Map<string, RecurringCache>;
 export type EventsCache = Map<string, CalendarEventStoreRecord>;
-export type DecryptedEventsCache = Map<string, DecryptedEventRecord>;
+export type FetchCache = Map<string, { promise?: Promise<void>; dateRange: [Date, Date] }>;
 export interface CalendarEventCache {
-    dateRanges: Date[][];
     events: EventsCache;
     recurringEvents: RecurringEventsCache;
-    decryptedEvents: DecryptedEventsCache;
     tree: IntervalTree;
+    fetchTree: IntervalTree;
+    fetchCache: FetchCache;
 }
 
 export interface CalendarsEventsCache {
@@ -58,3 +52,5 @@ export interface CalendarsEventsCache {
     getCachedEvent: (calendarID: string, eventID: string) => CalendarEvent | undefined;
     rerender?: () => void;
 }
+
+export type GetDecryptedEventCb = (Event: CalendarEvent) => Promise<DecryptedEventTupleResult>;

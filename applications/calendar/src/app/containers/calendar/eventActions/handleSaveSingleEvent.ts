@@ -11,8 +11,8 @@ import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import handleSaveSingleEventHelper from './handleSaveSingleEventHelper';
 
 interface Arguments {
-    oldEventData?: EventOldData;
-    newEventData: EventNewData;
+    oldEditEventData?: EventOldData;
+    newEditEventData: EventNewData;
 
     calendars: Calendar[];
     api: Api;
@@ -23,7 +23,7 @@ interface Arguments {
 }
 
 const getSingleEventText = (oldEventData: EventOldData | undefined, newEventData: EventNewData) => {
-    const isCreate = !oldEventData?.Event;
+    const isCreate = !oldEventData?.eventData;
     const isRecurring = newEventData.veventComponent.rrule;
 
     if (isCreate && isRecurring) {
@@ -42,9 +42,25 @@ const getSingleEventText = (oldEventData: EventOldData | undefined, newEventData
     return getEventUpdatedText();
 };
 
+/*
+const wrapEventAction = (promise: Promise) => {
+    createNotification({ text: 'Creating event' });
+    try {
+        setEventInCache(eventToSet, calendarCache);
+        const result = await promise;
+        const eventToSet = getApiEventToSet(result.Event);
+        setEventInCache(eventToSet, calendarCache);
+        createNotification({ text: 'Event created' });
+    } catch (error) {
+        setEventInCache(eventToSet, calendarCache);
+        createNotification({ text: 'Error creating event' });
+    }
+}
+ */
+
 const handleSaveSingleEvent = async ({
-    oldEventData,
-    newEventData,
+    oldEditEventData,
+    newEditEventData,
 
     calendars,
     api,
@@ -53,16 +69,17 @@ const handleSaveSingleEvent = async ({
     getCalendarKeys,
     createNotification,
 }: Arguments) => {
-    await handleSaveSingleEventHelper({
-        oldEventData,
-        newEventData,
+    const promise = handleSaveSingleEventHelper({
+        oldEditEventData,
+        newEditEventData,
         api,
         getAddressKeys,
         getCalendarKeys,
         calendars,
     });
+    await promise;
     await call();
-    createNotification({ text: getSingleEventText(oldEventData, newEventData) });
+    createNotification({ text: getSingleEventText(oldEditEventData, newEditEventData) });
 };
 
 export default handleSaveSingleEvent;

@@ -5,14 +5,15 @@ import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { c } from 'ttag';
 
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { getDisplayTitle } from '../../helpers/event';
-import { useReadCalendarEvent, useReadEvent } from './useReadCalendarEvent';
+import useReadEvent from './useReadEvent';
 
 import PopoverEventContent from './PopoverEventContent';
 import PopoverHeader from './PopoverHeader';
 import PopoverFooter from './PopoverFooter';
 import { getEventErrorMessage } from './error';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent, WeekStartsOn } from '../../containers/calendar/interface';
+import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
+import getEventInformation from './getEventInformation';
 
 interface Props {
     formatTime: (date: Date) => string;
@@ -40,24 +41,23 @@ const EventPopover = ({
 }: Props) => {
     const [loadingAction, withLoadingAction] = useLoading();
 
-    const targetEventData = (targetEvent && targetEvent.data) || {};
-    const { Calendar, Event } = targetEventData;
+    const targetEventData = targetEvent?.data || {};
+    const { eventReadResult, eventData, calendarData } = targetEventData;
 
-    const isCalendarDisabled = getIsCalendarDisabled(Calendar);
+    const isCalendarDisabled = getIsCalendarDisabled(calendarData);
 
-    const [value, isLoading, error] = useReadCalendarEvent(targetEventData);
-    const model = useReadEvent(value, tzid);
-    const displayTitle = getDisplayTitle(model.title);
+    const model = useReadEvent(eventReadResult?.result, tzid);
+    const { eventReadError, isEventReadLoading, eventTitleSafe } = getEventInformation(targetEvent, model);
 
     const handleDelete = () => {
-        if (Event) {
-            withLoadingAction(onDelete(Event)).catch(noop);
+        if (eventData && getIsCalendarEvent(eventData)) {
+            withLoadingAction(onDelete(eventData)).catch(noop);
         }
     };
 
     const handleEdit = () => {
-        if (Event) {
-            onEdit(Event);
+        if (eventData && getIsCalendarEvent(eventData)) {
+            onEdit(eventData);
         }
     };
 
@@ -75,19 +75,19 @@ const EventPopover = ({
     const mergedClassName = classnames(['eventpopover', isNarrow && 'eventpopover--full-width']);
     const mergedStyle = isNarrow ? undefined : style;
 
-    if (error) {
+    if (eventReadError) {
         return (
             <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
                 <PopoverHeader onClose={onClose}>
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
-                <Alert type="error">{getEventErrorMessage(error)}</Alert>
+                <Alert type="error">{getEventErrorMessage(eventReadError)}</Alert>
                 <footer>{deleteButton}</footer>
             </div>
         );
     }
 
-    if (isLoading) {
+    if (isEventReadLoading) {
         return (
             <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
                 <Loader />
@@ -102,16 +102,16 @@ const EventPopover = ({
                     <Icon
                         name="circle"
                         className="mr1 mb1 mt0-75 flex-item-noshrink"
-                        color={Calendar.Color}
+                        color={calendarData.Color}
                         size={16}
                     />
-                    <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={displayTitle}>
-                        {displayTitle}
+                    <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={eventTitleSafe}>
+                        {eventTitleSafe}
                     </h1>
                 </div>
             </PopoverHeader>
             <PopoverEventContent
-                Calendar={Calendar}
+                Calendar={calendarData}
                 isCalendarDisabled={isCalendarDisabled}
                 event={targetEvent}
                 tzid={tzid}

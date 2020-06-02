@@ -14,9 +14,9 @@ import { UpdateAllPossibilities } from './getUpdateAllPossibilities';
 interface SaveRecurringArguments {
     type: RECURRING_TYPES;
     recurrences: CalendarEvent[];
-    originalEventData: EventOldData;
-    oldEventData: EventOldData;
-    newEventData: EventNewData;
+    originalEditEventData: EventOldData;
+    oldEditEventData: EventOldData;
+    newEditEventData: EventNewData;
     recurrence: CalendarEventRecurring;
     updateAllPossibilities: UpdateAllPossibilities;
 }
@@ -24,15 +24,15 @@ interface SaveRecurringArguments {
 const getSaveRecurringEventActions = ({
     type,
     recurrences,
-    oldEventData: { Event: oldEvent },
-    originalEventData: {
-        Event: originalEvent,
+    oldEditEventData: { eventData: oldEvent },
+    originalEditEventData: {
+        eventData: originalEvent,
         calendarID: originalCalendarID,
         addressID: originalAddressID,
         memberID: originalMemberID,
         veventComponent: originalVeventComponent,
     },
-    newEventData: {
+    newEditEventData: {
         calendarID: newCalendarID,
         addressID: newAddressID,
         memberID: newMemberID,
