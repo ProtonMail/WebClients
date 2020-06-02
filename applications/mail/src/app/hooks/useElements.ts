@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { useApi } from 'react-components';
+import { useApi, useCache } from 'react-components';
 import { queryConversations, getConversation } from 'proton-shared/lib/api/conversations';
 import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
@@ -20,6 +20,7 @@ import {
 } from '../models/event';
 import { useSubscribeEventManager } from './useHandler';
 import { useExpirationCheck } from './useExpiration';
+import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/models';
 
 interface Options {
     conversationMode: boolean;
@@ -72,6 +73,9 @@ export const useElements = ({
             ...search
         })
     );
+    // Warning: this hook relies mainly on a localCache, not the globalCache
+    // This import is needed only for a specific use case (message expiration)
+    const globalCache = useCache();
 
     // Remove from cache expired elements
     useExpirationCheck(Object.values(localCache.elements), (element) => {
@@ -83,6 +87,9 @@ export const useElements = ({
         }, {});
 
         setLocalCache({ ...localCache, elements });
+
+        globalCache.delete(ConversationCountsModel.key);
+        globalCache.delete(MessageCountsModel.key);
     });
 
     // Compute the conversations list from the cache

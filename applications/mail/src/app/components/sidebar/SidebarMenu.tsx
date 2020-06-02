@@ -26,13 +26,17 @@ interface Props {
 }
 
 const SidebarMenu = ({ labelID: currentLabelID, location }: Props) => {
-    const [conversationCounts, loadingConversationCounts] = useConversationCounts();
-    const [messageCounts, loadingMessageCounts] = useMessageCounts();
+    const [conversationCounts = [], actualLoadingConversationCounts] = useConversationCounts();
+    const [messageCounts = [], actualLoadingMessageCounts] = useMessageCounts();
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [displayFolders, toggleFolders] = useState(true);
     const [displayLabels, toggleLabels] = useState(true);
     const [labels, loadingLabels] = useLabels();
     const [folders, loadingFolders] = useFolders();
+
+    // We want to show the loader only at inital loading, not on updates
+    const loadingConversationCounts = actualLoadingConversationCounts && conversationCounts.length === 0;
+    const loadingMessageCounts = actualLoadingMessageCounts && messageCounts.length === 0;
 
     const { ShowMoved } = mailSettings || {};
 
