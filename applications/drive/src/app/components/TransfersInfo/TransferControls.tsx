@@ -42,8 +42,8 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
                     className="pd-transfers-controlButton pm-button--info pm-button--for-icon rounded50 flex-item-noshrink flex mr0-25"
                     title={
                         transfer.state === TransferState.Paused
-                            ? c('Action').t`Pause transfer`
-                            : c('Action').t`Resume transfer`
+                            ? c('Action').t`Resume transfer`
+                            : c('Action').t`Pause transfer`
                     }
                 >
                     <Icon size={12} name={transfer.state === TransferState.Paused ? 'resume' : 'pause'} />
