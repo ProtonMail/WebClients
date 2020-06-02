@@ -71,6 +71,13 @@ const SquireIframe = forwardRef(
         const handlePasteEnhanced = useHandler(pasteFileHandler(onAddImages));
         const handlePaste = metadata.supportImages ? handlePasteEnhanced : noop;
 
+        // Pass dragenter and dragleave events to parent document
+        const handlePassDragEvents = useHandler((event: DragEvent) => {
+            const newEvent = new CustomEvent(event.type, { bubbles: true }) as any;
+            newEvent.dataTransfer = event.dataTransfer;
+            iframeRef.current?.dispatchEvent(newEvent);
+        });
+
         useEffect(() => {
             if (squireReady) {
                 const squire = getSquireRef(ref);
@@ -78,10 +85,14 @@ const SquireIframe = forwardRef(
                 squire.addEventListener('focus', handleFocus);
                 squire.addEventListener('input', handleInput);
                 squire.addEventListener('paste', handlePaste);
+                squire.addEventListener('dragenter', handlePassDragEvents);
+                squire.addEventListener('dragleave', handlePassDragEvents);
                 return () => {
                     squire.removeEventListener('focus', handleFocus);
                     squire.removeEventListener('input', handleInput);
                     squire.removeEventListener('paste', handlePaste);
+                    squire.removeEventListener('dragenter', handlePassDragEvents);
+                    squire.removeEventListener('dragleave', handlePassDragEvents);
                 };
             }
         }, [squireReady]);
