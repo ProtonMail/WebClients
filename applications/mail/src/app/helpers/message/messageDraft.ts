@@ -180,7 +180,7 @@ export const createNewDraft = (
 
     const originalTo = getOriginalTo(referenceMessage?.data);
 
-    const senderAddress = findSender(addresses, referenceMessage?.data);
+    const senderAddress = findSender(addresses, referenceMessage?.data, true);
 
     const AddressID = senderAddress?.ID || ''; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
     const Sender = senderAddress ? { Name: senderAddress.DisplayName, Address: senderAddress.Email } : {};

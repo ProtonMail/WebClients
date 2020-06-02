@@ -2,18 +2,7 @@ import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 
 import { formatSubject, handleActions, RE_PREFIX, FW_PREFIX, createNewDraft } from './messageDraft';
-import { insertSignature } from './messageSignature';
-import { findSender } from '../addresses';
 import { MessageExtendedWithData } from '../../models/message';
-
-jest.mock('./messageSignature', () => ({
-    insertSignature: jest.fn()
-}));
-
-jest.mock('../addresses', () => ({
-    findSender: jest.fn(),
-    recipientToInput: jest.fn()
-}));
 
 const ID = 'ID';
 const Time = 0;
@@ -37,13 +26,17 @@ const allActions = [MESSAGE_ACTIONS.NEW, MESSAGE_ACTIONS.REPLY, MESSAGE_ACTIONS.
 const notNewActions = [MESSAGE_ACTIONS.REPLY, MESSAGE_ACTIONS.REPLY_ALL, MESSAGE_ACTIONS.FORWARD];
 const action = MESSAGE_ACTIONS.NEW;
 const mailSettings = {} as MailSettings;
-const addresses: Address[] = [];
+const address = {
+    ID: 'addressid',
+    DisplayName: 'name',
+    Email: 'email',
+    Status: 1,
+    Send: 1,
+    Signature: 'signature'
+} as Address;
+const addresses: Address[] = [address];
 
 describe('messageDraft', () => {
-    afterEach(() => {
-        ([insertSignature, findSender] as jest.Mock[]).forEach((mock) => mock.mockClear());
-    });
-
     describe('formatSubject', () => {
         const listRe = ['Subject', 'Re: Subject', 'Fw: Subject', 'Fw: Re: Subject', 'Re: Fw: Subject'];
 
@@ -182,8 +175,13 @@ describe('messageDraft', () => {
 
     describe('createNewDraft', () => {
         it('should use insertSignature', () => {
-            createNewDraft(action, { data: message } as MessageExtendedWithData, mailSettings, addresses);
-            expect(insertSignature).toHaveBeenCalledWith('', undefined, action, mailSettings);
+            const result = createNewDraft(
+                action,
+                { data: message } as MessageExtendedWithData,
+                mailSettings,
+                addresses
+            );
+            expect(result.document?.innerHTML).toContain(address.Signature);
         });
 
         // TODO: Feature to implement
@@ -197,8 +195,13 @@ describe('messageDraft', () => {
         // });
 
         it('should load the sender', () => {
-            createNewDraft(action, { data: message } as MessageExtendedWithData, mailSettings, addresses);
-            expect(findSender).toHaveBeenCalledWith(addresses, message);
+            const result = createNewDraft(
+                action,
+                { data: message } as MessageExtendedWithData,
+                mailSettings,
+                addresses
+            );
+            expect(result.data?.AddressID).toBe(address.ID);
         });
 
         it('should add ParentID when not a copy', () => {
@@ -246,15 +249,13 @@ describe('messageDraft', () => {
         });
 
         it('should use values from findSender', () => {
-            const address: Partial<Address> = { ID, Email: 'Email', DisplayName: 'DisplayName' };
-            (findSender as jest.Mock).mockReturnValue(address);
             const result = createNewDraft(
                 action,
                 { data: message } as MessageExtendedWithData,
                 mailSettings,
                 addresses
             );
-            expect(result.data?.AddressID).toBe(ID);
+            expect(result.data?.AddressID).toBe(address.ID);
             expect(result.data?.Sender?.Address).toBe(address.Email);
             expect(result.data?.Sender?.Name).toBe(address.DisplayName);
         });

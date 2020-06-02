@@ -78,7 +78,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
         return null;
     }
 
-    const handleCompose = (composeArgs: ComposeArgs) => {
+    const handleCompose = async (composeArgs: ComposeArgs) => {
         if (messageIDs.length >= maxActiveComposer) {
             createNotification({
                 type: 'error',
@@ -105,7 +105,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
         if (composeNew) {
             const { action, referenceMessage } = composeNew;
-            const newMessageID = createDraft(action, referenceMessage);
+            const newMessageID = await createDraft(action, referenceMessage);
             setMessageIDs([...messageIDs, newMessageID]);
             setFocusedMessageID(newMessageID);
         }

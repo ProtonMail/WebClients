@@ -184,7 +184,7 @@ export const getAddressFromPlusAlias = (addresses: Address[], email = ''): Addre
  */
 export const getFromAdresses = (addresses: Address[], originalTo = '') => {
     const result = addresses
-        .filter(({ Status, Receive }) => Status === 1 && Receive === 1)
+        .filter(({ Status, Receive, Send }) => Status === 1 && Receive === 1 && Send === 1)
         .sort((a1, a2) => (a1.Order || 0) - (a2.Order || 0));
 
     const plusAddress = getAddressFromPlusAlias(addresses, originalTo);
@@ -200,9 +200,14 @@ export const getFromAdresses = (addresses: Address[], originalTo = '') => {
 /**
  * Find the current sender for a message
  */
-export const findSender = (addresses: Address[] = [], message?: Partial<Message>): Address | undefined => {
+export const findSender = (
+    addresses: Address[] = [],
+    message?: Partial<Message>,
+    ableToSend = false
+): Address | undefined => {
     const enabledAddresses = addresses
         .filter((address) => address.Status === 1)
+        .filter((address) => (ableToSend ? address.Send === 1 : true))
         .sort((a1, a2) => (a1.Order || 0) - (a2.Order || 0));
 
     if (message?.AddressID) {

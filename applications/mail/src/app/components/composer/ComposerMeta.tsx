@@ -33,7 +33,7 @@ const ComposerMeta = ({
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
 
-    const addressesOptions = getFromAdresses(addresses, message.originalTo).map((address: Address) => ({
+    const addressesOptions = getFromAdresses(addresses, message.originalTo).map((address) => ({
         text: address.Email,
         value: address.ID
     }));

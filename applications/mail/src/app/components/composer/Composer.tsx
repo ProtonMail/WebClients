@@ -200,7 +200,6 @@ const Composer = ({
         setModelMessage((modelMessage) => {
             const messageChanges = message instanceof Function ? message(modelMessage) : message;
             const newModelMessage = mergeMessages(modelMessage, messageChanges);
-            console.log('change', messageChanges.data?.MIMEType, newModelMessage.data?.MIMEType);
             setModelMessage(newModelMessage);
             autoSave(newModelMessage);
             return newModelMessage;
