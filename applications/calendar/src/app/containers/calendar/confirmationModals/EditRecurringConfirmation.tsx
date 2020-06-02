@@ -7,6 +7,7 @@ import SelectRecurringType from './SelectRecurringType';
 interface Props {
     types: RECURRING_TYPES[];
     hasSingleModifications: boolean;
+    hasSingleModificationsAfter: boolean;
     onConfirm: (type: RECURRING_TYPES) => void;
     onClose: () => void;
 }
@@ -23,17 +24,24 @@ const getAlertText = (types: RECURRING_TYPES[]) => {
     return c('Info').t`Which event would you like to update?`;
 };
 
-const getWarningText = (type: RECURRING_TYPES, hasSingleModifications: boolean) => {
-    if ((type === RECURRING_TYPES.ALL || type === RECURRING_TYPES.FUTURE) && hasSingleModifications) {
-        return c('Info').t`Previous modifications on this series will be lost`;
-    }
+const getRecurringWarningText = () => {
+    return c('Info').t`Previous modifications on this series will be lost`;
 };
 
-const EditRecurringConfirmModal = ({ types, hasSingleModifications, onConfirm, ...rest }: Props) => {
+const EditRecurringConfirmModal = ({
+    types,
+    hasSingleModifications,
+    hasSingleModificationsAfter,
+    onConfirm,
+    ...rest
+}: Props) => {
     const [type, setType] = useState(types[0]);
 
     const alertText = getAlertText(types);
-    const warningText = getWarningText(type, hasSingleModifications);
+    const showRecurringWarning =
+        (type === RECURRING_TYPES.ALL && hasSingleModifications) ||
+        (type === RECURRING_TYPES.FUTURE && hasSingleModificationsAfter);
+    const recurringWarningText = showRecurringWarning ? getRecurringWarningText() : '';
 
     return (
         <ConfirmModal
@@ -52,7 +60,7 @@ const EditRecurringConfirmModal = ({ types, hasSingleModifications, onConfirm, .
                     data-test-id="update-recurring-popover:update-option-radio"
                 />
             ) : null}
-            {warningText ? <Alert type="warning">{warningText}</Alert> : null}
+            {recurringWarningText ? <Alert type="warning">{recurringWarningText}</Alert> : null}
         </ConfirmModal>
     );
 };

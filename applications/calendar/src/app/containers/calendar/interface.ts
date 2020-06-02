@@ -83,6 +83,7 @@ export type OnSaveConfirmationCb = (data: {
     data?: {
         types: RECURRING_TYPES[];
         hasSingleModifications: boolean;
+        hasSingleModificationsAfter: boolean;
     };
 }) => Promise<RECURRING_TYPES>;
 export type OnDeleteConfirmationCb = (data: {

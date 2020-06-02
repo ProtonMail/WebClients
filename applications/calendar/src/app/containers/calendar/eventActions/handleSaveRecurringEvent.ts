@@ -9,7 +9,7 @@ import getSyncMultipleEventsPayload from '../getSyncMultipleEventsPayload';
 import { getRecurringEventUpdatedText } from '../../../components/eventModal/eventForm/i18n';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
-import { getHasFutureOption } from './recurringHelper';
+import { getExdatesAfter, getHasFutureOption, getRecurrenceEventsAfter } from './recurringHelper';
 import getUpdateAllPossibilities from './getUpdateAllPossibilities';
 import { OnSaveConfirmationCb } from '../interface';
 
@@ -66,12 +66,20 @@ const handleSaveRecurringEvent = async ({
         saveTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.ALL];
     }
 
+    const singleEditRecurrences = recurrences.filter((event) => {
+        // Not the single edit instance event, and not the original event
+        return event.ID !== oldEditEventData.eventData.ID && event.ID !== originalEditEventData.eventData.ID;
+    });
+    const singleEditRecurrencesAfter = getRecurrenceEventsAfter(singleEditRecurrences, recurrence.localStart);
+    const exdates = originalEditEventData.mainVeventComponent.exdate || [];
+    const exdatesAfter = getExdatesAfter(exdates, recurrence.localStart);
+
     const saveType = await onSaveConfirmation({
         type: SAVE_CONFIRMATION_TYPES.RECURRING,
         data: {
             types: saveTypes,
-            hasSingleModifications:
-                recurrences.length > 1 || (originalEditEventData.mainVeventComponent.exdate?.length || 0) >= 1,
+            hasSingleModifications: singleEditRecurrences.length >= 1 || exdates.length >= 1,
+            hasSingleModificationsAfter: singleEditRecurrencesAfter.length >= 1 || exdatesAfter.length >= 1,
         },
     });
 

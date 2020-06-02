@@ -515,6 +515,7 @@ const InteractiveCalendarView = ({
         data?: {
             types: RECURRING_TYPES[];
             hasSingleModifications: boolean;
+            hasSingleModificationsAfter: boolean;
         };
     }): Promise<RECURRING_TYPES> => {
         return new Promise((resolve, reject) => {
@@ -523,6 +524,7 @@ const InteractiveCalendarView = ({
                     <EditRecurringConfirmModal
                         types={data.types}
                         hasSingleModifications={data.hasSingleModifications}
+                        hasSingleModificationsAfter={data.hasSingleModificationsAfter}
                         onClose={reject}
                         onConfirm={resolve}
                     />
