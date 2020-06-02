@@ -99,6 +99,20 @@ const getInternalUntil = (value) => {
     return value.icaltype === 'date' ? getInternalDateValue(value) : getInternalDateTimeValue(value);
 };
 
+const getInternalRecur = (value) => {
+    if (!value) {
+        return;
+    }
+    const result = {
+        ...value.toJSON()
+    };
+    const until = getInternalUntil(value.until);
+    if (until) {
+        result.until = until;
+    }
+    return result;
+};
+
 /**
  * Convert from ical.js format to an internal format
  * @param {string} type
@@ -135,14 +149,7 @@ export const icalValueToInternalValue = (type, value) => {
         return result;
     }
     if (type === 'recur') {
-        const result = {
-            ...value.toJSON()
-        };
-        const until = getInternalUntil(value.until);
-        if (until) {
-            result.until = until;
-        }
-        return result;
+        return getInternalRecur(value);
     }
     return value.toString();
 };
@@ -335,6 +342,10 @@ export const parseWithErrors = (vcal = '') => {
         return {};
     }
     return fromIcalComponentWithErrors(new ICAL.Component(ICAL.parse(vcal)));
+};
+
+export const fromRruleString = (rrule = '') => {
+    return getInternalRecur(ICAL.Recur.fromString(rrule));
 };
 
 /**

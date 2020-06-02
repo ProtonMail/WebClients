@@ -21,13 +21,7 @@ export interface Attendee {
     Permissions: number;
 }
 
-export interface CalendarEvent {
-    ID: string;
-    CalendarID: string;
-    CreateTime: number;
-    LastEditTime: number;
-    Author: string;
-    Permissions: number;
+export interface CalendarEventBlobData {
     CalendarKeyPacket: string;
     CalendarEvents: CalendarEventData[];
     SharedKeyPacket: string;
@@ -36,3 +30,28 @@ export interface CalendarEvent {
     AttendeesEvent: CalendarEventData;
     Attendees: Attendee[];
 }
+
+interface CalendarEventSharedData {
+    ID: string;
+    CalendarID: string;
+    CreateTime: number;
+    LastEditTime: number;
+    Author: string;
+    Permissions: number;
+}
+
+export interface CalendarEventMetadata {
+    StartTime: number;
+    StartTimezone: string;
+    EndTime: number;
+    EndTimezone: string;
+    FullDay: number;
+    RRule: string;
+    UID: string;
+    RecurrenceID: number;
+    Exdates: number[];
+}
+
+export interface CalendarEvent extends CalendarEventSharedData, CalendarEventBlobData {}
+
+export interface CalendarEventWithoutBlob extends CalendarEventSharedData, CalendarEventMetadata {}

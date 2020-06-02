@@ -155,7 +155,7 @@ export interface VcalVeventComponent {
     dtstart: VcalDateOrDateTimeProperty;
     dtend: VcalDateOrDateTimeProperty;
     rrule?: VcalRruleProperty;
-    'recurrence-id'?: VcalDateTimeProperty;
+    'recurrence-id'?: VcalDateOrDateTimeProperty;
     exdate?: VcalDateOrDateTimeProperty[];
     organizer?: VcalStringWithParamsProperty;
     attendee?: VcalAttendeeProperty[];

@@ -6,9 +6,9 @@ import { parse } from './vcal';
 import { unwrap } from './helper';
 import { toInternalAttendee } from './attendees';
 import {
-    CalendarEvent,
     CalendarEventData,
     CalendarEventDataMap,
+    CalendarEvent,
     CalendarPersonalEventData
 } from '../interfaces/calendar';
 import { VcalVeventComponent } from '../interfaces/calendar/VcalModel';
