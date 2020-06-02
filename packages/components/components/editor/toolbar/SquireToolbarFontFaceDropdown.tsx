@@ -43,7 +43,7 @@ const SquireToolbarFontFaceDropdown = ({ squireRef, editorReady }: Props) => {
                 {Object.values(FONT_FACE).map((font) => (
                     <DropdownMenuButton
                         key={font}
-                        disabled={font === value}
+                        isSelected={font === value}
                         className="alignleft"
                         onClick={handleClick(font)}
                         style={{ fontFamily: font.toString() }}
