@@ -7,7 +7,7 @@ import { isIE11, isEdge } from 'proton-shared/lib/helpers/browser';
 import { useHandler } from './useHandler';
 import { OnCompose } from '../containers/ComposerContainer';
 import { MESSAGE_ACTIONS } from '../constants';
-import { mailtoParser, isExternal, getHostname, isSubDomain } from '../helpers/url';
+import { mailtoParser, isExternal, isSubDomain, getHostname } from '../helpers/url';
 import { PROTON_DOMAINS } from '../constants';
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
 

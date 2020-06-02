@@ -28,14 +28,14 @@ import { isEmail } from 'proton-shared/lib/helpers/validators';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
 import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
+import { changeSearchParams } from 'proton-shared/lib/helpers/url';
 
-import { changeSearchParams } from '../../helpers/url';
+import { Recipient } from '../../models/address';
 import { getHumanLabelID } from '../../helpers/labels';
 import AddressesInput from '../composer/addresses/AddressesInput';
 import { extractSearchParameters, keywordToString } from '../../helpers/mailboxUrl';
 
 import './AdvancedSearchDropdown.scss';
-import { Recipient } from '../../models/address';
 
 interface SearchModel {
     keyword: string;
@@ -117,22 +117,16 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
         const { keyword, address, begin, end, wildcard, from, to, attachments } = reset ? DEFAULT_MODEL : model;
 
         history.push(
-            changeSearchParams(
-                {
-                    ...location,
-                    pathname: `/${getHumanLabelID(model.labelID)}`
-                },
-                {
-                    keyword: reset ? UNDEFINED : isNarrow ? keyword || UNDEFINED : keywordToString(fullInput),
-                    address: address === ALL_ADDRESSES ? UNDEFINED : address,
-                    from: from.length ? formatRecipients(from) : UNDEFINED,
-                    to: to.length ? formatRecipients(to) : UNDEFINED,
-                    begin: begin ? String(getUnixTime(begin)) : UNDEFINED,
-                    end: end ? String(getUnixTime(end)) : UNDEFINED,
-                    attachments: attachments ? String(attachments) : UNDEFINED,
-                    wildcard: wildcard ? String(wildcard) : UNDEFINED
-                }
-            )
+            changeSearchParams(`/${getHumanLabelID(model.labelID)}`, location.search, {
+                keyword: reset ? UNDEFINED : isNarrow ? keyword || UNDEFINED : keywordToString(fullInput),
+                address: address === ALL_ADDRESSES ? UNDEFINED : address,
+                from: from.length ? formatRecipients(from) : UNDEFINED,
+                to: to.length ? formatRecipients(to) : UNDEFINED,
+                begin: begin ? String(getUnixTime(begin)) : UNDEFINED,
+                end: end ? String(getUnixTime(end)) : UNDEFINED,
+                attachments: attachments ? String(attachments) : UNDEFINED,
+                wildcard: wildcard ? String(wildcard) : UNDEFINED
+            })
         );
 
         close();

@@ -6,7 +6,7 @@ import { MessageExtended } from '../../models/message';
 import { getAttachments } from '../../helpers/message/messages';
 import AttachmentsList from './attachments/AttachmentsList';
 import { Attachment } from '../../models/attachment';
-import Editor, { EditorActionsRef } from './editor/Editor';
+import SquireEditorWrapper, { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
 import EditorEmbeddedModal from './editor/EditorEmbeddedModal';
 import { isDragFile } from '../../helpers/dom';
@@ -95,9 +95,8 @@ const ComposerContent = ({
             onDragOver={(event) => event.preventDefault()}
         >
             <div className="flex-item-fluid w100 flex flex-column flex-nowrap relative">
-                <Editor
+                <SquireEditorWrapper
                     message={message}
-                    document={message.document}
                     disabled={disabled}
                     breakpoints={breakpoints}
                     onReady={onEditorReady}

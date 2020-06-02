@@ -10,17 +10,17 @@
     overflow: hidden;
 
     background: var(--bgcolor-main-area, $pm-global-altgrey);
-    box-shadow: 0 0 16px 3px rgba(black, .16);
+    box-shadow: 0 0 16px 3px rgba(black, 0.16);
     border-radius: $global-border-radius $global-border-radius 0 0;
     color: var(--color-main-area, $pm-global-grey);
 
-    transition: .15s easing(easeOutQuint);
+    transition: 0.15s easing(easeOutQuint);
 }
 
 .composer--is-blur {
-    --blur-opacity: .25;
+    --blur-opacity: 0.25;
 
-    box-shadow: 0 0 5px 3px rgba(black, .16);
+    box-shadow: 0 0 5px 3px rgba(black, 0.16);
 
     .composer-title-bar {
         background: var(--bg-color-main-area, $pm-global-grey);
@@ -42,10 +42,10 @@
 
 .composer-title-bar {
     background: var(--bgcolor-main-area, $pm-global-altgrey);
-    transition: background .15s ease-out;
+    transition: background 0.15s ease-out;
 
     & > * {
-        transition: opacity .15s ease-out;
+        transition: opacity 0.15s ease-out;
     }
 }
 
@@ -68,7 +68,7 @@
 }
 
 .composer-blur-container {
-    transition: opacity .15s ease-out;
+    transition: opacity 0.15s ease-out;
 }
 
 .composer-meta-label,
@@ -100,7 +100,7 @@
     overflow-x: hidden;
 
     &.pm-field {
-        padding: .25em .5em;
+        padding: 0.25em 0.5em;
     }
 
     &::after {
@@ -160,14 +160,16 @@
 
 .composer-addresses-input-container {
     // Here I tried to keep pm-field height only with margin calculations
-    margin: calc(#{em(6)} - .25em) 0.5em calc(#{em(6)} - .25em) calc(#{em(16)} - .5em);
+    margin: calc(#{em(6)} - 0.25em) 0.5em calc(#{em(6)} - 0.25em) calc(#{em(16)} - 0.5em);
 }
 
 .composer-addresses-item {
     background-color: var(--bgcolor-item-column-list, $pm-global-light);
     text-shadow: none;
     + .composer-addresses-input-container {
-        margin-left: 0; margin-top: calc(.25em + 1px); margin-bottom: calc(.25em + 1px);
+        margin-left: 0;
+        margin-top: calc(0.25em + 1px);
+        margin-bottom: calc(0.25em + 1px);
     }
 }
 
@@ -187,7 +189,7 @@
 
 .composer-addresses-item-remove {
     &.pm-button {
-        padding: 0 .5em;
+        padding: 0 0.5em;
         border: none;
     }
 }
@@ -196,99 +198,12 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    right: .5em;
+    right: 0.5em;
 }
 
 .addresses-contacts-table {
     th:first-child {
         width: 35px;
-    }
-}
-
-.editor {
-    border: 1px solid var(--bordercolor-input, $pm-global-border);
-    textarea {
-        color: currentColor;
-    }
-    .editor-toolbar-button {
-        padding: 0.3em 0.5em;
-        min-height: 2.1em;
-        &:focus,
-        &:hover,
-        &[aria-pressed='true'] {
-            background-color: var(--bordercolor-input, $pm-global-border);
-        }
-    }
-    .composer-toolbar-fontDropDown {
-        flex-shrink: 1;
-        > span {
-            display: flex;
-            > * {
-                min-width: 0;
-            }
-        }
-    }
-}
-
-.editor-toolbar {
-    border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
-}
-.editor-toolbar-separator {
-    border-left: 1px solid var(--bordercolor-input, $pm-global-border);
-}
-
-.editor-squire-wrapper {
-    .placeholder {
-        margin-top: 1.2em;
-    }
-}
-
-.editor-toolbar-dropdown {
-    ul {
-        margin: 0;
-    }
-
-    button {
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-    }
-
-    button:disabled {
-        opacity: 0.5;
-    }
-}
-
-.editor-toolbar-dropdown .ColorSelector-container {
-    max-width: 21rem;
-}
-
-.editor-toolbar-dropdown .ColorSelector-item {
-    height: 2.8rem;
-    width: 2.8rem;
-    margin: 0 0.2rem 0.2rem 0;
-}
-
-.editor--disabled::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #eeee;
-    border-radius: 3px;
-}
-
-/**
- * Definitely a hacky workaround
- * But react-components doesn't allow (yet) to add classes on the li element of a DropdownMenu
- */
-.editor-toolbar-more-menu {
-    li:nth-child(2) {
-        border-top: none;
-    }
-    li:nth-child(4) {
-        border-top: none;
     }
 }
 
@@ -321,27 +236,11 @@
 .composer-editor-dropzone {
     border: 5px dashed var(--bordercolor-input, $pm-global-border);
     background: var(--bgcolor-main-area, $white);
-    opacity: .85;
+    opacity: 0.85;
 
     &-text {
         font-size: 2em;
-        opacity: .75;
-    }
-}
-
-.editor-toolbar-button {
-    padding: 0.5em;
-    > span {
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        > .mr0-5 {
-            flex: 1 1 0px;
-            text-align: left;
-            display: inline-flex;
-        }
+        opacity: 0.75;
     }
 }
 

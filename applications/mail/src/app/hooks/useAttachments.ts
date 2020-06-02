@@ -16,7 +16,7 @@ import {
 import { MessageExtended } from '../models/message';
 import { Attachment } from '../models/attachment';
 import { removeAttachment } from '../api/attachments';
-import { EditorActionsRef } from '../components/composer/editor/Editor';
+import { EditorActionsRef } from '../components/composer/editor/SquireEditorWrapper';
 import { MessageChange } from '../components/composer/Composer';
 
 export interface PendingUpload {

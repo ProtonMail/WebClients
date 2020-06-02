@@ -1,5 +1,5 @@
 import { uniqID } from '../string';
-import { protonizer as purifyHTML } from '../purify';
+import { protonizer as purifyHTML } from 'proton-shared/lib/sanitize';
 import { parseInDiv } from '../dom';
 
 import { Base64Cache } from '../../hooks/useBase64Cache';

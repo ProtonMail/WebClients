@@ -1,5 +1,7 @@
 import { PM_SIGNATURE } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import { message } from 'proton-shared/lib/sanitize';
+
 import { MESSAGE_ACTIONS } from '../../constants';
 import {
     insertSignature,
@@ -8,17 +10,9 @@ import {
     CLASSNAME_SIGNATURE_EMPTY
 } from './messageSignature';
 
-import * as string from '../string';
-import * as purify from '../purify';
-
-jest.spyOn(string, 'replaceLineBreaks');
-jest.spyOn(purify, 'message');
-
-const { replaceLineBreaks } = string;
-const { message } = purify;
-
 const content = '<p>test</p>';
-const signature = '<strong>signature</strong>';
+const signature = `
+<strong>>signature</strong>`;
 const mailSettings = { PMSignature: 0 } as MailSettings;
 
 describe('signature', () => {
@@ -29,13 +23,13 @@ describe('signature', () => {
     describe('insertSignature', () => {
         describe('rules', () => {
             it('should remove line breaks', () => {
-                insertSignature(content, signature, MESSAGE_ACTIONS.NEW, mailSettings, false);
-                expect(replaceLineBreaks).toHaveBeenCalledTimes(2);
+                const result = insertSignature(content, signature, MESSAGE_ACTIONS.NEW, mailSettings, false);
+                expect(result).toContain('<br><strong>');
             });
 
             it('should try to clean the signature', () => {
-                insertSignature(content, signature, MESSAGE_ACTIONS.NEW, mailSettings, false);
-                expect(message).toHaveBeenCalledTimes(1);
+                const result = insertSignature(content, signature, MESSAGE_ACTIONS.NEW, mailSettings, false);
+                expect(result).toContain('&gt;');
             });
 
             it('should add empty line before the signature', () => {
@@ -87,13 +81,13 @@ describe('signature', () => {
                 let result = insertSignature(content, '', MESSAGE_ACTIONS.NEW, mailSettings, false);
                 expect(result).toContain(`${CLASSNAME_SIGNATURE_USER} ${CLASSNAME_SIGNATURE_EMPTY}`);
                 result = insertSignature(content, signature, MESSAGE_ACTIONS.NEW, mailSettings, false);
-                expect(result).toContain(signature);
+                expect(result).toContain('signature');
                 let messagePosition = result.indexOf(content);
                 let signaturePosition = result.indexOf(signature);
                 expect(messagePosition).toBeGreaterThan(signaturePosition);
                 result = insertSignature(content, signature, MESSAGE_ACTIONS.NEW, mailSettings, true);
                 messagePosition = result.indexOf(content);
-                signaturePosition = result.indexOf(signature);
+                signaturePosition = result.indexOf('signature');
                 expect(messagePosition).toBeLessThan(signaturePosition);
             });
         });

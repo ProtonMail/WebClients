@@ -11,7 +11,6 @@ import { useMailboxPageTitle } from '../hooks/useMailboxPageTitle';
 import { useElements } from '../hooks/useElements';
 
 import { isColumnMode, isConversationMode } from '../helpers/mailSettings';
-import { getSearchParams } from '../helpers/url';
 import {
     pageFromUrl,
     sortFromUrl,
@@ -36,6 +35,7 @@ import { Message } from '../models/message';
 import { Breakpoints } from '../models/utils';
 
 import './MailboxContainer.scss';
+import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
 interface Props {
     labelID: string;
@@ -73,7 +73,7 @@ const MailboxContainer = ({
     });
 
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
-    const searchParams = getSearchParams(location);
+    const searchParams = getSearchParams(location.search);
     const conversationMode = isConversationMode(inputLabelID, mailSettings, location);
     const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [
         searchParams.address,

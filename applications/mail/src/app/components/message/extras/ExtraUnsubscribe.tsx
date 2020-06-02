@@ -1,5 +1,4 @@
 import React from 'react';
-import { Location } from 'history';
 import {
     Icon,
     Href,
@@ -22,8 +21,8 @@ import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from
 import { useMessage } from '../../../hooks/useMessage';
 import { useSendMessage, useSendVerifications } from '../../../hooks/useSendMessage';
 import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
-import { getSearchParams } from '../../../helpers/url';
 import { removeEmailAlias } from '../../../helpers/addresses';
+import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
 interface Props {
     message: MessageExtended;
@@ -76,9 +75,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
 
             if (value.startsWith('mailto:')) {
                 const [toAddress, search = ''] = value.replace('mailto:', '').split('?');
-                const { subject = 'Unsubscribe', body = 'Please, unsubscribe me' } = getSearchParams({
-                    search
-                } as Location);
+                const { subject = 'Unsubscribe', body = 'Please, unsubscribe me' } = getSearchParams(search);
 
                 const inputMessage: PartialMessageExtended = {
                     ParentID: message.data?.ID,

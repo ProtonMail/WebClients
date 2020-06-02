@@ -1,8 +1,9 @@
+import { isNumber } from 'proton-shared/lib/helpers/validators';
+import { getSearchParams, changeSearchParams } from 'proton-shared/lib/helpers/url';
+
 import { Sort, Filter, SearchParameters } from '../models/tools';
-import { getSearchParams, changeSearchParams } from './url';
 import { Location } from 'history';
 import { getHumanLabelID } from './labels';
-import { isNumber } from 'proton-shared/lib/helpers/validators';
 
 export const setPathInUrl = (location: Location, labelID: string, elementID?: string): Location => {
     const urlFragment = elementID === undefined ? '' : `/${elementID}`;
@@ -65,14 +66,14 @@ export const keywordToString = (keyword: string): string | undefined => {
     return trimmed ? trimmed : undefined;
 };
 
-export const pageFromUrl = (location: Location) => stringToPage(getSearchParams(location).page);
+export const pageFromUrl = (location: Location) => stringToPage(getSearchParams(location.search).page);
 
-export const sortFromUrl = (location: Location) => stringToSort(getSearchParams(location).sort);
+export const sortFromUrl = (location: Location) => stringToSort(getSearchParams(location.search).sort);
 
-export const filterFromUrl = (location: Location) => stringToFilter(getSearchParams(location).filter);
+export const filterFromUrl = (location: Location) => stringToFilter(getSearchParams(location.search).filter);
 
 export const extractSearchParameters = (location: Location): SearchParameters => {
-    const { address, from, to, keyword, begin, end, attachments, wildcard } = getSearchParams(location);
+    const { address, from, to, keyword, begin, end, attachments, wildcard } = getSearchParams(location.search);
     return {
         address,
         from,
@@ -86,13 +87,13 @@ export const extractSearchParameters = (location: Location): SearchParameters =>
 };
 
 export const setPageInUrl = (location: Location, page: number) =>
-    changeSearchParams(location, { page: page === 0 ? undefined : String(page + 1) });
+    changeSearchParams(location.pathname, location.search, { page: page === 0 ? undefined : String(page + 1) });
 
 export const setSortInUrl = (location: Location, sort: Sort) =>
-    changeSearchParams(location, { sort: sortToString(sort) });
+    changeSearchParams(location.pathname, location.search, { sort: sortToString(sort) });
 
 export const setFilterInUrl = (location: Location, filter: Filter) =>
-    changeSearchParams(location, { filter: filterToString(filter) });
+    changeSearchParams(location.pathname, location.search, { filter: filterToString(filter) });
 
 export const setKeywordInUrl = (location: Location, keyword: string) =>
-    changeSearchParams(location, { keyword: keywordToString(keyword) });
+    changeSearchParams(location.pathname, location.search, { keyword: keywordToString(keyword) });

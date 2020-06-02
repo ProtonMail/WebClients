@@ -12,7 +12,6 @@ import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
 import ComposerActions from './ComposerActions';
 import { getRecipients, mergeMessages } from '../../helpers/message/messages';
-import { EditorActionsRef } from './editor/Editor';
 import { setContent } from '../../helpers/message/messageContent';
 import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
@@ -28,6 +27,7 @@ import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerP
 import { WindowSize, Breakpoints } from '../../models/utils';
 import { getContent } from '../../helpers/message/messageContent';
 import { isHTMLEmpty } from '../../helpers/dom';
+import { EditorActionsRef } from './editor/SquireEditorWrapper';
 
 const getShouldSave = (initialValue: string, message: PartialMessageExtended) => {
     const content = getContent(message);
@@ -197,26 +197,25 @@ const Composer = ({
     }, []);
 
     const handleChange: MessageChange = (message) => {
-        if (message instanceof Function) {
-            setModelMessage((modelMessage) => {
-                const newModelMessage = mergeMessages(modelMessage, message(modelMessage));
-                autoSave(newModelMessage);
-                return newModelMessage;
-            });
-        } else {
-            const newModelMessage = mergeMessages(modelMessage, message);
+        setModelMessage((modelMessage) => {
+            const messageChanges = message instanceof Function ? message(modelMessage) : message;
+            const newModelMessage = mergeMessages(modelMessage, messageChanges);
+            console.log('change', messageChanges.data?.MIMEType, newModelMessage.data?.MIMEType);
             setModelMessage(newModelMessage);
             autoSave(newModelMessage);
-        }
+            return newModelMessage;
+        });
     };
 
     const handleChangeContent = (content: string) => {
-        setContent(modelMessage, content);
-        const newModelMessage = { ...modelMessage };
-        setModelMessage(newModelMessage);
-        if (getShouldSave(initialValue, syncedMessage)) {
-            autoSave(newModelMessage);
-        }
+        setModelMessage((modelMessage) => {
+            setContent(modelMessage, content);
+            const newModelMessage = { ...modelMessage };
+            if (getShouldSave(initialValue, syncedMessage)) {
+                autoSave(newModelMessage);
+            }
+            return newModelMessage;
+        });
     };
 
     const handleChangeFlag = (changes: Map<number, boolean>) => {

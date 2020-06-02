@@ -1,10 +1,10 @@
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { PM_SIGNATURE } from 'proton-shared/lib/constants';
-import { MESSAGE_ACTIONS } from '../../constants';
+import { message } from 'proton-shared/lib/sanitize';
 
+import { MESSAGE_ACTIONS } from '../../constants';
 import { dedentTpl } from '../dedent';
 import { replaceLineBreaks } from '../string';
-import { message } from '../purify';
 import { parseInDiv, isHTMLEmpty } from '../dom';
 
 export const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
