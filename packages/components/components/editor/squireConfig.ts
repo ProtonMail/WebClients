@@ -139,17 +139,54 @@ export const insertCustomStyle = (document: Document) => {
     const style = document.createElement('style');
 
     const css = `
+        // custom scroll
+        body:not(.isDarkMode) {
+            --scrollbar-thumb-color: rgba(0, 0, 0, 0.35);
+            --scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.5);
+        }
+
+        body.isDarkMode {
+            --scrollbar-thumb-color: rgba(255, 255, 255, 0.2);
+            --scrollbar-thumb-hover-color: rgba(255, 255, 255, 0.5);
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--scrollbar-thumb-color) transparent;
+        }
+        *::-webkit-scrollbar {
+            width: 1rem;
+            height: 1rem;
+        }
+        *::-webkit-scrollbar-thumb {
+            border: .2rem solid transparent;
+            background-clip: padding-box;
+            border-radius: .5rem;
+            background-color: var(--scrollbar-thumb-color);
+        }
+        *::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+        *::-webkit-scrollbar-thumb:horizontal:hover,
+        *::-webkit-scrollbar-thumb:vertical:hover {
+            background-color: var(--scrollbar-thumb-hover-color);
+        }
+        *::-webkit-scrollbar-corner {
+            visibility: hidden;
+        }
+
        html {
-           height: 100%
+           height: 100%;
+           font-size: 62.5%;
        }
 
        body {
            height: 100%;
            box-sizing: border-box;
-           padding: 1rem 10px 1rem 10px;
+           padding: 1.6rem 1rem;
            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-           font-size: 14px;
-           line-height: 1.65em;
+           font-size: 1.4rem;
+           line-height: 1.65;
            color: ${getLightOrDark('#222', '#fff')};
            background: ${getLightOrDark('#fff', '#3c414e')};
            /* to fix, CSS var are not passing through the iframe */
@@ -162,7 +199,7 @@ export const insertCustomStyle = (document: Document) => {
        }
 
        blockquote {
-           padding: 0 0 0 1rem;
+           padding: 0 0 0 1.6rem;
            margin: 0;
            border-left: 4px solid #e5e5e5;
        }
