@@ -209,7 +209,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                 moveLinksToFolder={async (parentFolderId: string) => {
                     const movedLinks: { Name: string; Type: LinkType }[] = [];
                     const failedMoves: { Name: string; Type: LinkType }[] = [];
-                    const moveQueue = toMove.map((link) => async (i: number) => {
+                    const moveQueue = toMove.map((link, i) => async () => {
                         await moveLink(shareId, parentFolderId, link.LinkID)
                             .then((result) => {
                                 movedLinks.push(result);

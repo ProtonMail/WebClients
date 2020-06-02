@@ -3,12 +3,12 @@ import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDelete
 import { LinkMeta, FolderLinkMeta } from '../interfaces/link';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import useDrive from './useDrive';
-import useDebouncedPromise from './useDebouncedPromise';
+import useDebouncedRequest from './useDebouncedRequest';
 import { FOLDER_PAGE_SIZE } from '../constants';
 import { RestoreFromTrashResult } from '../interfaces/restore';
 
 function useTrash() {
-    const debouncedRequest = useDebouncedPromise();
+    const debouncedRequest = useDebouncedRequest();
     const cache = useDriveCache();
     const { getLinkKeys, decryptLink, getShareKeys } = useDrive();
 
