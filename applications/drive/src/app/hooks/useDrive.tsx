@@ -27,7 +27,7 @@ import OnboardingModal from '../components/OnboardingModal/OnboardingModal';
 import { validateLinkName, ValidationError } from '../utils/validation';
 import { lookup } from 'mime-types';
 import { ShareEvent, useDriveEventManager } from '../components/DriveEventManager/DriveEventManagerProvider';
-import useDebouncedPromise from './useDebouncedPromise';
+import useDebouncedRequest from './useDebouncedRequest';
 import useQueuedFunction from './useQueuedFunction';
 
 interface FetchLinkConfig {
@@ -44,7 +44,7 @@ function useDrive() {
     const queuedFunction = useQueuedFunction();
     const { createModal } = useModals();
     const { getPrimaryAddressKey, getVerificationKeys } = useDriveCrypto();
-    const debouncedRequest = useDebouncedPromise();
+    const debouncedRequest = useDebouncedRequest();
 
     const createVolume = async () => {
         const { address, privateKey } = await getPrimaryAddressKey();

@@ -36,7 +36,7 @@ import { queryCheckAvailableHashes } from '../api/link';
 import { ValidationError, validateLinkName } from '../utils/validation';
 import useDriveCrypto from './useDriveCrypto';
 import useDrive from './useDrive';
-import useDebouncedPromise from './useDebouncedPromise';
+import useDebouncedRequest from './useDebouncedRequest';
 import { FILE_CHUNK_SIZE } from '../constants';
 import useQueuedFunction from './useQueuedFunction';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
@@ -47,7 +47,7 @@ const HASH_CHECK_AMOUNT = 10;
 function useFiles() {
     const api = useApi();
     const cache = useDriveCache();
-    const debouncedRequest = useDebouncedPromise();
+    const debouncedRequest = useDebouncedRequest();
     const queuedFunction = useQueuedFunction();
     const { createNotification } = useNotifications();
     const { getPrimaryAddressKey, sign } = useDriveCrypto();

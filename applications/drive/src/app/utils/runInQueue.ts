@@ -1,14 +1,19 @@
-async function runInQueue<T>(queue: ((index: number) => Promise<T>)[], maxProcessing: number): Promise<T[]> {
+/**
+ *  Executes functions sequentially, at most `maxProcessing` functions at once.
+ * @param queue functions to execute
+ * @param maxProcessing number of "threads"
+ */
+async function runInQueue<T>(functions: (() => Promise<T>)[], maxProcessing = 1): Promise<T[]> {
     const results: T[] = [];
     let resultIndex = 0;
 
     const runNext = (): Promise<any> => {
-        const executor = queue.shift();
         const index = resultIndex;
+        const executor = functions[index];
         resultIndex += 1;
 
         if (executor) {
-            return executor(index).then((result) => {
+            return executor().then((result) => {
                 results[index] = result;
                 return runNext();
             });
@@ -21,7 +26,6 @@ async function runInQueue<T>(queue: ((index: number) => Promise<T>)[], maxProces
         promises.push(runNext());
     }
     await Promise.all(promises);
-
     return results;
 }
 
