@@ -91,14 +91,14 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         controls.current[id].cancel();
     };
 
-    const pauseDownload = (id: string) => {
+    const pauseDownload = async (id: string) => {
+        await controls.current[id].pause();
         updateDownloadState(id, TransferState.Paused);
-        controls.current[id].pause();
     };
 
     const resumeDownload = (id: string) => {
-        updateDownloadState(id, ({ resumeState }) => resumeState || TransferState.Progress);
         controls.current[id].resume();
+        updateDownloadState(id, ({ resumeState }) => resumeState || TransferState.Progress);
     };
 
     const removeDownload = (id: string) => {
@@ -235,8 +235,8 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                             ({ resumeState }) => resumeState || TransferState.Progress
                         );
                     },
-                    pause: () => {
-                        Object.values(files).forEach(({ controls }) => controls.pause());
+                    pause: async () => {
+                        await Promise.all(Object.values(files).map(({ controls }) => controls.pause()));
                         updateDownloadState(Object.keys(files), TransferState.Paused);
                     },
                     cancel: () => {
