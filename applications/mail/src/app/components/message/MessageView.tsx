@@ -90,8 +90,12 @@ const MessageView = ({
     };
 
     useEffect(() => {
-        if (message.data?.Subject === undefined) {
+        if (!messageLoaded) {
             addAction(load);
+        }
+
+        if (messageLoaded && !draft && initialExpand && !expanded) {
+            setExpanded(true);
         }
 
         if (!draft && !bodyLoaded && expanded) {
@@ -102,7 +106,7 @@ const MessageView = ({
         if (!draft && bodyLoaded && unread && expanded) {
             addAction(markAsRead);
         }
-    }, [draft, bodyLoaded, expanded]);
+    }, [draft, messageLoaded, bodyLoaded, expanded]);
 
     if (!messageLoaded) {
         return null;
