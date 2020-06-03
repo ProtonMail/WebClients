@@ -60,21 +60,28 @@ const SquireToolbar = ({
 
     const { createModal } = useModals();
 
-    const handleCursor = useHandler(() => setSquireInfos(getPathInfo(squireRef.current)), { debounce: 500 });
+    const handleCursor = useHandler(() => setSquireInfos(getPathInfo(squireRef.current)));
+    const handleCursorDebounced = useHandler(handleCursor, { debounce: 500 });
 
-    useEffect(() => listenToCursor(squireRef.current, handleCursor), [editorReady]);
-
-    const handleBold = () => toggleBold(squireRef.current);
-    const handleItalic = () => toggleItalic(squireRef.current);
-    const handleUnderline = () => toggleUnderline(squireRef.current);
-
-    const handleAlignment = (alignment: ALIGNMENT) => () => {
-        squireRef.current.setTextAlignment(alignment);
+    const forceRefresh = (action: () => void) => () => {
+        action();
+        handleCursor();
     };
 
-    const handleOrderedList = () => toggleOrderedList(squireRef.current);
-    const handleUnorderedList = () => toggleUnorderedList(squireRef.current);
-    const handleBlockquote = () => toggleBlockquote(squireRef.current);
+    useEffect(() => listenToCursor(squireRef.current, handleCursorDebounced), [editorReady]);
+
+    const handleBold = forceRefresh(() => toggleBold(squireRef.current));
+    const handleItalic = forceRefresh(() => toggleItalic(squireRef.current));
+    const handleUnderline = forceRefresh(() => toggleUnderline(squireRef.current));
+
+    const handleAlignment = (alignment: ALIGNMENT) =>
+        forceRefresh(() => {
+            squireRef.current.setTextAlignment(alignment);
+        });
+
+    const handleOrderedList = forceRefresh(() => toggleOrderedList(squireRef.current));
+    const handleUnorderedList = forceRefresh(() => toggleUnorderedList(squireRef.current));
+    const handleBlockquote = forceRefresh(() => toggleBlockquote(squireRef.current));
 
     const handleAddLink = (link: LinkData) => {
         makeLink(squireRef.current, link);

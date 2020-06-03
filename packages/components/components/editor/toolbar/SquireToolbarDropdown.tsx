@@ -44,7 +44,6 @@ const SquireToolbarDropdown = ({
         <>
             <Tooltip title={title} className={className}>
                 <DropdownButton
-                    // title={title}
                     buttonRef={anchorRef}
                     isOpen={isOpen}
                     onClick={handleClick}

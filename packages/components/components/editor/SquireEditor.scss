@@ -96,4 +96,7 @@
             display: inline-flex;
         }
     }
+    .editor-toolbar-icon {
+        color: var(--color-mail-area, $pm-global-grey);
+    }
 }
