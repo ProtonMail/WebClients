@@ -27,9 +27,7 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, isConversation
                         className="mr0-5 navigation__icon flex-item-noshrink"
                         name={folder.subfolders?.length ? 'parent-folder' : 'folder'}
                     />
-                    <span className="ellipsis pr0-5" title={folder.Name}>
-                        {formatFolderName(level, folder.Name)}
-                    </span>
+                    <span className="ellipsis pr0-5">{formatFolderName(level, folder.Name)}</span>
                     {folder.subfolders?.length ? (
                         <button
                             type="button"

@@ -90,6 +90,7 @@ const SidebarItem = ({
                 <SidebarItemContent
                     icon={icon}
                     iconColor={color}
+                    title={text}
                     text={content}
                     aside={<LocationAside count={count} active={active} refreshing={refresh} />}
                 />
