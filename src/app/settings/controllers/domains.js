@@ -87,13 +87,13 @@ function DomainsController(
         }
     });
 
-    $scope.goodSetup = ({ DomainName = '', VerifyState, Addresses = [], MxState, SpfState, DkimState, DmarcState }) => {
+    $scope.goodSetup = ({ DomainName = '', VerifyState, Addresses = [], MxState, SpfState, DKIM, DmarcState }) => {
         const domainDefined = DomainName.length;
         const goodVerify = VerifyState === 2;
         const hasAddress = Addresses.length;
         const goodMx = MxState === 3;
         const goodSpf = SpfState === 3;
-        const goodDkim = DkimState === 4;
+        const goodDkim = DKIM.State === 4;
         const goodDmarc = DmarcState === 3;
 
         return domainDefined && goodVerify && hasAddress && goodMx && goodSpf && goodDkim && goodDmarc;
@@ -126,7 +126,7 @@ function DomainsController(
             $scope.mx(domain);
         } else if (domain.SpfState !== 3) {
             $scope.spf(domain);
-        } else if (domain.DkimState !== 4) {
+        } else if (domain.DKIM.State !== 4) {
             $scope.dkim(domain);
         } else if (domain.DmarcState !== 3) {
             $scope.dmarc(domain);
