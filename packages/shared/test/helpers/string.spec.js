@@ -8,7 +8,8 @@ import {
     decodeBase64URL,
     normalizeEmail,
     normalizeInternalEmail,
-    validateEmailAddress
+    validateEmailAddress,
+    truncateMore
 } from '../../lib/helpers/string';
 
 describe('string', () => {
@@ -78,6 +79,27 @@ describe('string', () => {
             expect(truncate('abcd', 4)).toEqual('abcd');
             expect(truncate('abcde', 4)).toEqual('a...');
             expect(truncate('abcde', 8)).toEqual('abcde');
+        });
+    });
+
+    describe('truncateMore', () => {
+        it('should truncate', () => {
+            expect(truncateMore({ string: '', charsToDisplayStart: 1 })).toEqual('');
+            expect(truncateMore({ string: 'a', charsToDisplayStart: 1 })).toEqual('a');
+            expect(truncateMore({ string: 'ab', charsToDisplayStart: 1 })).toEqual('ab');
+            expect(truncateMore({ string: 'abc', charsToDisplayStart: 4 })).toEqual('abc');
+            expect(truncateMore({ string: 'abcd', charsToDisplayStart: 1 })).toEqual('abcd');
+            expect(truncateMore({ string: 'abcde', charsToDisplayStart: 1 })).toEqual('a...');
+            expect(truncateMore({ string: '', charsToDisplayEnd: 1 })).toEqual('');
+            expect(truncateMore({ string: 'a', charsToDisplayEnd: 1 })).toEqual('a');
+            expect(truncateMore({ string: 'ab', charsToDisplayEnd: 1 })).toEqual('ab');
+            expect(truncateMore({ string: 'abc', charsToDisplayEnd: 4 })).toEqual('abc');
+            expect(truncateMore({ string: 'abcd', charsToDisplayEnd: 1 })).toEqual('abcd');
+            expect(truncateMore({ string: 'abcde', charsToDisplayEnd: 1 })).toEqual('...e');
+            expect(truncateMore({ string: '12345', charsToDisplayStart: 2, charsToDisplayEnd: 2 })).toEqual('12345');
+            expect(truncateMore({ string: '123456789', charsToDisplayStart: 2, charsToDisplayEnd: 3 })).toEqual(
+                '12...789'
+            );
         });
     });
 

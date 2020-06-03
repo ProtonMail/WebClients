@@ -67,6 +67,22 @@ export const truncate = (str = '', charsToDisplay = 50, omission = '...') => {
 };
 
 /**
+ * Given a maximum number of characters to capture from a string at the start and end of it,
+ * truncate the string by adding omission if too long
+ */
+export const truncateMore = ({ string = '', charsToDisplayStart = 0, charsToDisplayEnd = 0, omission = '...' }) => {
+    if (string.length === 0) {
+        return string;
+    }
+    if (string.length <= charsToDisplayStart + charsToDisplayEnd + omission.length) {
+        return string;
+    }
+    const strBegin = string.substring(0, charsToDisplayStart);
+    const strEnd = string.substring(string.length - charsToDisplayEnd, string.length);
+    return strBegin + omission + strEnd;
+};
+
+/**
  * Extract 2 first initials
  */
 export const getInitial = (value = '') => {
