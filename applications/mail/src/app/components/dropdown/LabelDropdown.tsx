@@ -4,7 +4,6 @@ import {
     SearchInput,
     Icon,
     Mark,
-    useLabels,
     useModals,
     PrimaryButton,
     LabelModal,
@@ -14,13 +13,14 @@ import {
     generateUID
 } from 'react-components';
 import { normalize } from 'proton-shared/lib/helpers/string';
-import { LABEL_COLORS, LABEL_TYPE } from 'proton-shared/lib/constants';
+import { LABEL_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import { Element } from '../../models/element';
 import { hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
-import { useApplyLabels } from '../../hooks/useApplyLabels';
+import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
+import { getStandardFolders } from '../../helpers/labels';
 
 import './LabelDropdown.scss';
 
@@ -44,26 +44,29 @@ const getInitialState = (labels: Label[] = [], elements: Element[] = []) => {
 
 interface Props {
     elements: Element[];
+    labels?: Label[];
+    labelID: string;
     onClose: () => void;
     onLock: (lock: boolean) => void;
 }
 
-const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
+const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Props) => {
+    const labelIDs = labels.map(({ ID }) => ID);
     const [uid] = useState(generateUID('label-dropdown'));
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
-    const [labels = [], labelsLoading] = useLabels();
     const [search, updateSearch] = useState('');
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
     const [alsoArchive, updateAlsoArchive] = useState(false);
     const [selectedLabelIDs, updateSelectedLabelIDs] = useState<SelectionState>({});
     const applyLabels = useApplyLabels();
+    const moveToFolder = useMoveToFolder();
 
     useEffect(() => {
         updateSelectedLabelIDs(getInitialState(labels, elements));
     }, [elements, labels.length]);
 
-    if (!elements || !elements.length || labelsLoading) {
+    if (!elements || !elements.length) {
         return null;
     }
 
@@ -89,7 +92,13 @@ const LabelDropdown = ({ elements, onClose, onLock }: Props) => {
             }
             return acc;
         }, {} as { [labelID: string]: boolean });
-        await applyLabels(isMessage, elementIDs, changes);
+        const promises = [applyLabels(isMessage, elementIDs, changes)];
+        if (alsoArchive) {
+            const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
+            const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_IDENTIFIERS.inbox : labelID;
+            promises.push(moveToFolder(isMessage, elementIDs, MAILBOX_IDENTIFIERS.archive, folderName, fromLabelID));
+        }
+        await Promise.all(promises);
         onClose();
     };
 

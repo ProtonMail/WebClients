@@ -258,7 +258,13 @@ const HeaderExpanded = ({
                             title={c('Action').t`Label as`}
                         >
                             {({ onClose, onLock }) => (
-                                <LabelDropdown elements={elements} onClose={onClose} onLock={onLock} />
+                                <LabelDropdown
+                                    labelID={labelID}
+                                    labels={labels}
+                                    elements={elements}
+                                    onClose={onClose}
+                                    onLock={onLock}
+                                />
                             )}
                         </HeaderDropdown>
                     </Group>

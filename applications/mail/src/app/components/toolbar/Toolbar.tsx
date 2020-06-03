@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
-import { Icon } from 'react-components';
+import { Icon, useLabels } from 'react-components';
 import { identity } from 'proton-shared/lib/helpers/function';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
@@ -63,6 +63,7 @@ const Toolbar = ({
     page,
     onPage
 }: Props) => {
+    const [labels] = useLabels();
     const selectedElements = useMemo(
         () =>
             selectedIDs
@@ -129,7 +130,13 @@ const Toolbar = ({
                     title={c('Title').t`Label as`}
                 >
                     {({ onClose, onLock }) => (
-                        <LabelDropdown elements={selectedElements} onClose={onClose} onLock={onLock} />
+                        <LabelDropdown
+                            labelID={labelID}
+                            labels={labels}
+                            elements={selectedElements}
+                            onClose={onClose}
+                            onLock={onLock}
+                        />
                     )}
                 </ToolbarDropdown>
             </div>
