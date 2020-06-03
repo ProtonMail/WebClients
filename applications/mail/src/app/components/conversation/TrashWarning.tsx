@@ -1,5 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
+import { InlineLinkButton, Icon } from 'react-components';
 
 interface Props {
     inTrash: boolean;
@@ -9,21 +10,24 @@ interface Props {
 
 const TrashWarning = ({ inTrash, filter, onToggle }: Props) => {
     return (
-        <div className="containsMessage flex flex-column">
-            <p className="bordered-container flex pt0-5 pb0-5 pl1 pr1">
-                {inTrash
-                    ? c('Info').t`This conversation contains non-trashed messages.`
-                    : c('Info').t`This conversation contains trashed messages.`}
-                <a onClick={onToggle} className="ml0-5">
+        <div className="bordered-container m0-5 mb1 p1 flex flex-nowrap flex-items-center flex-spacebetween bg-global-light">
+            <div className="flex flex-nowrap flex-items-center">
+                <Icon name="trash" className="mr1" />
+                <span>
                     {inTrash
-                        ? filter
-                            ? c('Action').t`Show non-trashed messages`
-                            : c('Action').t`Hide non-trashed messages`
-                        : filter
-                        ? c('Action').t`Show trashed messages`
-                        : c('Action').t`Hide trashed messages`}
-                </a>
-            </p>
+                        ? c('Info').t`This conversation contains non-trashed messages.`
+                        : c('Info').t`This conversation contains trashed messages.`}
+                </span>
+            </div>
+            <InlineLinkButton onClick={onToggle} className="ml0-5">
+                {inTrash
+                    ? filter
+                        ? c('Action').t`Show messages`
+                        : c('Action').t`Hide messages`
+                    : filter
+                    ? c('Action').t`Show messages`
+                    : c('Action').t`Hide messages`}
+            </InlineLinkButton>
         </div>
     );
 };

@@ -81,10 +81,9 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
                         <ItemLabels labels={labels} max={4} element={conversation} onUnlabel={handleRemoveLabel} />
                     </div>
                 </div>
-
-                {showTrashWarning && <TrashWarning inTrash={inTrash} filter={filter} onToggle={toggleFilter} />}
             </header>
             <div className="scroll-if-needed flex-item-fluid pt0-5 mw100">
+                {showTrashWarning && <TrashWarning inTrash={inTrash} filter={filter} onToggle={toggleFilter} />}
                 {messagesToShow.map((message, index) => (
                     <MessageView
                         labelID={labelID}
