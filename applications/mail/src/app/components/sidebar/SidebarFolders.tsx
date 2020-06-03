@@ -38,14 +38,14 @@ const SidebarFolders = ({ currentLabelID, isConversation }: Props) => {
 
         // Update view
         setFoldersUI(
-            foldersUI.map((folder: Folder) => {
-                if (folder.ID === folder.ID) {
+            foldersUI.map((folderItem: Folder) => {
+                if (folderItem.ID === folder.ID) {
                     return {
-                        ...folder,
+                        ...folderItem,
                         Expanded: newExpanded
                     };
                 }
-                return folder;
+                return folderItem;
             })
         );
 
