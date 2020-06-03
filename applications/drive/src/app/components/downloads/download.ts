@@ -41,6 +41,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
 
     let abortController = new AbortController();
     let paused = false;
+    let progressReverted = false;
 
     const start = async (api: Api) => {
         if (abortController.signal.aborted) {
@@ -157,7 +158,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
                     onProgress(-progressToRevert);
                 }
                 buffers.clear();
-
+                progressReverted = true;
                 await waitUntil(() => paused === false);
                 await startDownload(getBlockQueue(activeIndex));
             }
@@ -175,9 +176,11 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
         fsWriter.abort(new TransferCancel(id));
     };
 
-    const pause = () => {
+    const pause = async () => {
         paused = true;
+        progressReverted = false;
         abortController.abort();
+        return waitUntil(() => progressReverted);
     };
 
     const resume = () => {

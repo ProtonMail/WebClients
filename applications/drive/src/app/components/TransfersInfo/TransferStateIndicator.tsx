@@ -13,6 +13,7 @@ interface Props {
 const TransferStateIndicator = ({ transfer: { id, state }, percentageDone }: Props) => {
     const isSuccess = state === TransferState.Done;
     const isError = state === TransferState.Canceled || state === TransferState.Error;
+    const isPaused = state === TransferState.Paused;
     const statusInfo = {
         [TransferState.Initializing]: {
             text: c('Info').t`Initializing`
@@ -37,7 +38,7 @@ const TransferStateIndicator = ({ transfer: { id, state }, percentageDone }: Pro
         },
         [TransferState.Paused]: {
             text: c('Info').t`Paused`,
-            icon: 'question'
+            icon: 'pause'
         }
     }[state];
 
@@ -46,7 +47,8 @@ const TransferStateIndicator = ({ transfer: { id, state }, percentageDone }: Pro
             className={classnames([
                 'pd-transfers-listItemTransferStateIndicator flex-item-fluid flex flex-nowrap flex-justify-end flex-items-center',
                 isSuccess && 'color-global-success',
-                isError && 'color-global-warning'
+                isError && 'color-global-warning',
+                isPaused && 'color-global-attention'
             ])}
             aria-atomic="true"
             aria-live="polite"
