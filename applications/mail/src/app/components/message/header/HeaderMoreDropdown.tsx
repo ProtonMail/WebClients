@@ -15,10 +15,11 @@ import {
     Tooltip
 } from 'react-components';
 import { labelMessages, markMessageAsUnread } from 'proton-shared/lib/api/messages';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { reportPhishing } from 'proton-shared/lib/api/reports';
+import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
@@ -35,6 +36,7 @@ const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
+    labels?: Label[];
     message: MessageExtended;
     messageLoaded: boolean;
     sourceMode: boolean;
@@ -45,6 +47,7 @@ interface Props {
 
 const HeaderMoreDropdown = ({
     labelID,
+    labels,
     message,
     messageLoaded,
     sourceMode,
@@ -59,6 +62,7 @@ const HeaderMoreDropdown = ({
     const { createModal } = useModals();
     const closeDropdown = useRef<() => void>();
     const moveToFolder = useMoveToFolder();
+    const labelIDs = (labels || []).map(({ ID }) => ID);
 
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
@@ -116,9 +120,10 @@ const HeaderMoreDropdown = ({
 
     const messageLabelIDs = message.data?.LabelIDs || [];
     const isSpam = messageLabelIDs.includes(SPAM);
-    const isInInbox = messageLabelIDs.includes(INBOX);
     const isInTrash = messageLabelIDs.includes(TRASH);
-
+    const [fromFolderID = INBOX] =
+        messageLabelIDs.filter((labelID) => !labelIDs.includes(labelID) && labelID !== MAILBOX_IDENTIFIERS.allmail) ||
+        [];
     return (
         <Group className="mr1 mb0-5">
             <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="pm-button--for-icon">
@@ -126,18 +131,7 @@ const HeaderMoreDropdown = ({
                     <Icon name="unread" />
                 </Tooltip>
             </ButtonGroup>
-            {isInInbox && (
-                <ButtonGroup
-                    disabled={!messageLoaded}
-                    onClick={handleMove(TRASH, INBOX)}
-                    className="pm-button--for-icon"
-                >
-                    <Tooltip title={c('Title').t`Move to trash`} className="flex">
-                        <Icon name="trash" />
-                    </Tooltip>
-                </ButtonGroup>
-            )}
-            {isInTrash && (
+            {isInTrash ? (
                 <ButtonGroup
                     disabled={!messageLoaded}
                     onClick={handleMove(INBOX, TRASH)}
@@ -145,6 +139,16 @@ const HeaderMoreDropdown = ({
                 >
                     <Tooltip title={c('Title').t`Move to inbox`} className="flex">
                         <Icon name="inbox" />
+                    </Tooltip>
+                </ButtonGroup>
+            ) : (
+                <ButtonGroup
+                    disabled={!messageLoaded}
+                    onClick={handleMove(TRASH, fromFolderID)}
+                    className="pm-button--for-icon"
+                >
+                    <Tooltip title={c('Title').t`Move to trash`} className="flex">
+                        <Icon name="trash" />
                     </Tooltip>
                 </ButtonGroup>
             )}
@@ -171,7 +175,7 @@ const HeaderMoreDropdown = ({
                             ) : (
                                 <DropdownMenuButton
                                     className="alignleft flex flex-nowrap"
-                                    onClick={handleMove(SPAM, INBOX)}
+                                    onClick={handleMove(SPAM, fromFolderID)}
                                 >
                                     <Icon name="spam" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Mark as spam`}</span>

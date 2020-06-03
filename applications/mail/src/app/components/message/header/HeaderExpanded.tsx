@@ -218,6 +218,7 @@ const HeaderExpanded = ({
                 <div className="flex">
                     <HeaderMoreDropdown
                         labelID={labelID}
+                        labels={labels}
                         message={message}
                         messageLoaded={messageLoaded}
                         sourceMode={sourceMode}
