@@ -9,7 +9,7 @@ import { TransferState } from '../../interfaces/transfer';
 const PROGRESS_UPDATE_INTERVAL = 500;
 const SPEED_SNAPSHOTS = 10; // How many snapshots should the speed be average of
 
-interface TransfersStats {
+export interface TransfersStats {
     timestamp: Date;
     stats: { [id: string]: TransferStats };
 }
@@ -133,6 +133,7 @@ function TransfersInfo() {
             <Heading
                 downloads={downloads}
                 uploads={uploads}
+                latestStats={latestStats}
                 minimized={minimized}
                 onToggleMinimize={toggleMinimized}
                 onClose={handleCloseClick}

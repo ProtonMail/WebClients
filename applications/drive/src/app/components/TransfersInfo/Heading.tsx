@@ -1,9 +1,12 @@
-import React, { useRef } from 'react';
-import { c, msgid } from 'ttag';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
+import { c } from 'ttag';
+
 import { Icon, Tooltip, classnames } from 'react-components';
+
 import { Download } from '../downloads/DownloadProvider';
 import { Upload } from '../uploads/UploadProvider';
 import { TransferState } from '../../interfaces/transfer';
+import { TransfersStats } from './TransfersInfo';
 
 const isTransferActive = ({ state }: Upload | Download) =>
     state === TransferState.Pending || state === TransferState.Progress || state === TransferState.Initializing;
@@ -14,67 +17,110 @@ const isTransferCanceled = ({ state }: Upload | Download) => state === TransferS
 interface Props {
     downloads: Download[];
     uploads: Upload[];
+    latestStats: TransfersStats;
     minimized: boolean;
     onToggleMinimize: () => void;
     onClose: () => void;
 }
 
-const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = false }: Props) => {
+const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, minimized = false }: Props) => {
+    const [currentUploads, setCurrentUploads] = useState<Upload[]>([]);
+    const [currentDownloads, setCurrentDownloads] = useState<Download[]>([]);
+
     const minimizeRef = useRef<HTMLButtonElement>(null);
     const transfers = [...downloads, ...uploads];
-    const activeUploads = uploads.filter(isTransferActive);
-    const activeDownloads = downloads.filter(isTransferActive);
-    const doneTransfers = transfers.filter(isTransferDone);
-    const failedTransfers = transfers.filter(isTransferFailed);
-    const canceledTransfers = transfers.filter(isTransferCanceled);
+
+    const activeUploads = useMemo(() => uploads.filter(isTransferActive), [uploads]);
+    const activeDownloads = useMemo(() => downloads.filter(isTransferActive), [downloads]);
+
+    const doneUploads = useMemo(() => uploads.filter(isTransferDone), [uploads]);
+    const doneDownloads = useMemo(() => downloads.filter(isTransferDone), [downloads]);
+
+    const failedTransfers = useMemo(() => transfers.filter(isTransferFailed), [transfers]);
+    const canceledTransfers = useMemo(() => transfers.filter(isTransferCanceled), [transfers]);
+
+    const activeUploadsCount = activeUploads.length;
+    const activeDownloadsCount = activeDownloads.length;
+
+    useEffect(() => {
+        if (activeUploadsCount) {
+            const currentUploadsIds = currentUploads.map((upload) => upload.id);
+            const newUploads = activeUploads.filter((upload) => !currentUploadsIds.includes(upload.id));
+            if (newUploads.length) {
+                setCurrentUploads([...currentUploads, ...newUploads]);
+            }
+        } else {
+            setCurrentUploads([]);
+        }
+    }, [activeUploads]);
+
+    useEffect(() => {
+        if (activeDownloadsCount) {
+            const currentDownloadsIds = currentDownloads.map((download) => download.id);
+            const newDownloads = activeDownloads.filter((download) => !currentDownloadsIds.includes(download.id));
+            if (newDownloads.length) {
+                setCurrentDownloads([...currentDownloads, ...newDownloads]);
+            }
+        } else {
+            setCurrentDownloads([]);
+        }
+    }, [activeDownloads]);
 
     const getHeadingText = () => {
-        let headingText = '';
-        const activeCount = activeUploads.length + activeDownloads.length;
+        const headingElements: string[] = [];
+
+        const activeCount = activeUploadsCount + activeDownloadsCount;
+        const doneUploadsCount = doneUploads.length;
+        const doneDownloadsCount = doneDownloads.length;
+        const doneCount = doneUploadsCount + doneDownloadsCount;
+
         const errorCount = failedTransfers.length;
         const canceledCount = canceledTransfers.length;
-        const doneCount = doneTransfers.length;
 
-        if (uploads.length && downloads.length) {
-            headingText =
-                activeUploads.length || activeDownloads.length
-                    ? c('Info').ngettext(
-                          msgid`Transferring ${activeCount} file`,
-                          `Transferring ${activeCount} files`,
-                          activeCount
-                      )
-                    : c('Info').ngettext(
-                          msgid`Transferred ${doneCount} file`,
-                          `Transferred ${doneCount} files`,
-                          doneCount
-                      );
-        } else if (downloads.length) {
-            headingText = activeDownloads.length
-                ? c('Info').ngettext(
-                      msgid`Downloading ${activeCount} file`,
-                      `Downloading ${activeCount} files`,
-                      activeCount
-                  )
-                : c('Info').ngettext(msgid`Downloaded ${doneCount} file`, `Downloaded ${doneCount} files`, doneCount);
-        } else {
-            headingText = activeUploads.length
-                ? c('Info').ngettext(
-                      msgid`Uploading ${activeCount} file`,
-                      `Uploading ${activeCount} files`,
-                      activeCount
-                  )
-                : c('Info').ngettext(msgid`Uploaded ${doneCount} file`, `Uploaded ${doneCount} files`, doneCount);
+        const calculateProgress = (transfers: (Upload | Download)[]) => {
+            const result = transfers.reduce(
+                (result, transfer) => {
+                    result.size += transfer.meta.size || 0;
+                    result.progress += latestStats.stats[transfer.id]?.progress || 0;
+                    return result;
+                },
+                { size: 0, progress: 0 }
+            );
+
+            return Math.floor(100 * (result.progress / (result.size || 1)));
+        };
+
+        if (!activeCount) {
+            if (doneUploadsCount && doneDownloadsCount) {
+                headingElements.push(c('Info').t`${doneCount} Finished`);
+            } else {
+                if (doneUploadsCount) {
+                    headingElements.push(c('Info').t`${doneUploadsCount} Uploaded`);
+                }
+                if (doneDownloadsCount) {
+                    headingElements.push(c('Info').t`${doneDownloadsCount} Downloaded`);
+                }
+            }
+        }
+
+        if (activeUploadsCount) {
+            const uploadProgress = calculateProgress(currentUploads);
+            headingElements.push(c('Info').t`${activeUploadsCount} Uploading ${uploadProgress}%`);
+        }
+        if (activeDownloadsCount) {
+            const downloadProgress = calculateProgress(currentDownloads);
+            headingElements.push(c('Info').t`${activeDownloadsCount} Downloading ${downloadProgress}%`);
         }
 
         if (canceledCount) {
-            headingText += `, ${c('Info').t`${canceledCount} canceled`}`;
+            headingElements.push(c('Info').t`${canceledCount} Canceled`);
         }
 
         if (errorCount) {
-            headingText += `, ${c('Info').ngettext(msgid`${errorCount} error`, `${errorCount} errors`, errorCount)}`;
+            headingElements.push(c('Info').t`${errorCount} Failed`);
         }
 
-        return headingText;
+        return headingElements.join(', ');
     };
 
     const minMaxTitle = minimized ? c('Action').t`Maximize transfers` : c('Action').t`Minimize transfers`;
