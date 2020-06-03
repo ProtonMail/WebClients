@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, classnames } from 'react-components';
+import { Icon } from 'react-components';
 import { c } from 'ttag';
 
 import { Element } from '../../models/element';
@@ -18,29 +18,17 @@ const ItemAction = ({ element = {}, className }: Props) => {
 
     const message = element as Message;
 
-    const icon = message.IsReplied
-        ? 'reply'
-        : message.IsRepliedAll
-        ? 'reply-all'
-        : message.IsForwarded
-        ? 'reply'
-        : undefined;
-
-    const alt = message.IsReplied
-        ? c('Alt').t`Is replied`
-        : message.IsRepliedAll
-        ? c('Alt').t`Is replied to all`
-        : message.IsForwarded
-        ? c('Alt').t`Is transfered`
-        : undefined;
-
-    const classNameToAdd = message.IsForwarded ? 'mirror' : undefined;
-
-    if (!icon) {
+    if (!message.IsReplied && !message.IsRepliedAll && !message.IsForwarded) {
         return null;
     }
 
-    return <Icon name={icon} className={classnames([className, classNameToAdd])} alt={alt} />;
+    return (
+        <div className={className}>
+            {!!message.IsReplied && <Icon name="reply" alt={c('Alt').t`Is replied`} />}
+            {!!message.IsRepliedAll && <Icon name="reply-all" alt={c('Alt').t`Is replied to all`} />}
+            {!!message.IsForwarded && <Icon name="reply" className="mirror" alt={c('Alt').t`Is transfered`} />}
+        </div>
+    );
 };
 
 export default ItemAction;
