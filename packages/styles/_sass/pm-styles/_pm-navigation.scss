@@ -23,7 +23,7 @@ $padding-left-link: 2rem !default;
 }
 
 .navigation__icon {
-  fill: var(--fillcolor-icons, $navigation-fillcolor-icons);
+  color: var(--fillcolor-icons, $navigation-fillcolor-icons);
 }
 
 .navigation__refresh {
@@ -36,7 +36,7 @@ $padding-left-link: 2rem !default;
   color: var(--color-nav-link, $pm-global-light);
   text-decoration: none;
   .navigation__icon:not(.navigation__icon--expand) {
-    fill: var(--fillcolor-icons, $white);
+    color: var(--fillcolor-icons, $white);
   }
 }
 [aria-current="page"].navigation__link {
@@ -46,7 +46,7 @@ $padding-left-link: 2rem !default;
 
   &:hover .navigation__icon:not(.navigation__icon--expand),
   .navigation__icon {
-    fill: var(--color-nav-active, $pm-primary);
+    color: var(--color-nav-active, $pm-primary);
   }
 
   .navigation__refresh {
@@ -59,13 +59,13 @@ $padding-left-link: 2rem !default;
 .navigation__link--groupHeader-link {
   color: var(--color-nav-link, $white);
   .navigation__icon--expand {
-    fill: var(--fillcolor-icons, $navigation-fillcolor-icons);
+    color: var(--fillcolor-icons, $navigation-fillcolor-icons);
   }
   //&:focus, // gimme focus-visible !!!!
   &:hover {
     color: var(--color-nav-link, $pm-global-light);
     .navigation__icon {
-      fill: var(--fillcolor-icons, $white);
+		color: var(--fillcolor-icons, $white);
     }
   }
 }
@@ -79,7 +79,7 @@ $padding-left-link: 2rem !default;
 //.navigation__link--groupHeader-link:focus,
 .navigation__link--groupHeader-link:hover {
   .navigation__icon--expand {
-    fill: var(--fillcolor-icons, $white);
+    color: var(--fillcolor-icons, $white);
   }
 }
 
