@@ -26,11 +26,9 @@ const SPF_TYPES = {
 
 const DKIM_TYPES = {
     [DKIM_STATE.DKIM_STATE_DEFAULT]: 'origin',
-    [DKIM_STATE.DKIM_STATE_ONE]: 'error',
-    [DKIM_STATE.DKIM_STATE_MULT]: 'error',
-    [DKIM_STATE.DKIM_STATE_CHECK]: 'error',
+    [DKIM_STATE.DKIM_STATE_ERROR]: 'error',
     [DKIM_STATE.DKIM_STATE_GOOD]: 'success',
-    [DKIM_STATE.DKIM_STATE_OFF]: 'origin'
+    [DKIM_STATE.DKIM_STATE_WARNING]: 'warning'
 };
 
 const DMARC_TYPES = {
@@ -51,7 +49,7 @@ const DomainStatus = ({ domain, domainAddresses }) => {
         },
         { text: 'MX', type: MX_TYPES[domain.MxState] },
         { text: 'SPF', type: SPF_TYPES[domain.SpfState] },
-        { text: 'DKIM', type: DKIM_TYPES[domain.DkimState] },
+        { text: 'DKIM', type: DKIM_TYPES[domain.DKIM.State] },
         { text: 'DMARC', type: DMARC_TYPES[domain.DmarcState] }
     ];
 

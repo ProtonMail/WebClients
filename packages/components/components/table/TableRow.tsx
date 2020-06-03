@@ -2,15 +2,14 @@ import React from 'react';
 import TableCell from './TableCell';
 
 interface Props extends React.HTMLAttributes<HTMLTableRowElement> {
-    cells: React.ReactNode[];
+    cells?: React.ReactNode[];
+    children?: React.ReactNode;
 }
 
-const TableRow = ({ cells = [], ...rest }: Props) => {
+const TableRow = ({ cells = [], children, ...rest }: Props) => {
     return (
         <tr {...rest}>
-            {cells.map((cell, index) => (
-                <TableCell key={index.toString()}>{cell}</TableCell>
-            ))}
+            {children || cells.map((cell, index) => <TableCell key={index.toString()}>{cell}</TableCell>)}
         </tr>
     );
 };

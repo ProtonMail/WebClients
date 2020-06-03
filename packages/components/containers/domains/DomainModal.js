@@ -6,7 +6,9 @@ import {
     Group,
     ButtonGroup,
     RoundedIcon,
+    Tooltip,
     useLoading,
+    Icon,
     useApi,
     useStep,
     useNotifications,
@@ -51,6 +53,7 @@ const verifyDomain = ({ VerifyState }) => {
 const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, staticContext, ...rest }) => {
     const [domains, loadingDomains] = useDomains();
     const [domainModel, setDomain] = useState(() => ({ ...domain }));
+
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [domainName, updateDomainName] = useState(domainModel.DomainName);
@@ -60,6 +63,40 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
     const handleRedirect = (route) => {
         onClose();
         history.push(route);
+    };
+
+    const renderDKIMIcon = () => {
+        const {
+            DKIM: { State }
+        } = domainModel;
+        const { DKIM_STATE_ERROR, DKIM_STATE_GOOD, DKIM_STATE_WARNING } = DKIM_STATE;
+
+        let title, type, name, icon;
+
+        switch (State) {
+            case DKIM_STATE_ERROR:
+                title = c('Tooltip')
+                    .t`We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.`;
+                type = 'error';
+                name = 'off';
+                break;
+            case DKIM_STATE_GOOD:
+                title = c('Tooltip').t`Your DKIM signing is working.`;
+                type = 'success';
+                name = 'on';
+                break;
+            case DKIM_STATE_WARNING:
+                title = c('Tooltip')
+                    .t`We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.`;
+                type = 'warning';
+                icon = <Icon size={25} className="mr0-5" name="attention-plain" />;
+                break;
+        }
+        return (
+            <Tooltip title={title}>
+                {icon || <RoundedIcon className="mr0-5" key="dkim-icon" type={type} name={name} />}
+            </Tooltip>
+        );
     };
 
     const breadcrumbLabels = [
@@ -73,7 +110,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
     ];
 
     const breadcrumbIcons = [
-        domainModel.State === DOMAIN_STATE.DOMAIN_STATE_DEFAULT ? null : (
+        !domainModel.State || domainModel.State === DOMAIN_STATE.DOMAIN_STATE_DEFAULT ? null : (
             <RoundedIcon
                 className="mr0-5"
                 key="domain-icon"
@@ -81,7 +118,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
                 name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'on' : 'off'}
             />
         ),
-        domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT ? null : (
+        !domainModel.VerifyState || domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT ? null : (
             <RoundedIcon
                 className="mr0-5"
                 key="verify-icon"
@@ -89,7 +126,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
                 name={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'on' : 'off'}
             />
         ),
-        domainModel.MxState === MX_STATE.MX_STATE_DEFAULT ? null : (
+        !domainModel.MxState || domainModel.MxState === MX_STATE.MX_STATE_DEFAULT ? null : (
             <RoundedIcon
                 className="mr0-5"
                 key="mx-icon"
@@ -97,7 +134,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
                 name={domainModel.MxState === MX_STATE.MX_STATE_GOOD ? 'on' : 'off'}
             />
         ),
-        domainModel.SpfState === SPF_STATE.SPF_STATE_DEFAULT ? null : (
+        !domainModel.SpfState || domainModel.SpfState === SPF_STATE.SPF_STATE_DEFAULT ? null : (
             <RoundedIcon
                 className="mr0-5"
                 key="spf-icon"
@@ -105,20 +142,12 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
                 name={domainModel.SpfState === SPF_STATE.SPF_STATE_GOOD ? 'on' : 'off'}
             />
         ),
-        [DKIM_STATE.DKIM_STATE_CHECK, DKIM_STATE.DKIM_STATE_GOOD].includes(domainModel.DkimState) ? (
-            <RoundedIcon
-                className="mr0-5"
-                key="dkim-icon"
-                title={
-                    domainModel.DkimState === DKIM_STATE.DKIM_STATE_GOOD
-                        ? c('Tooltip').t`Your DKIM signing is working.`
-                        : c('Tooltip').t`There is a problem with your DKIM setup. Please check below.`
-                }
-                type={domainModel.DkimState === DKIM_STATE.DKIM_STATE_GOOD ? 'success' : 'error'}
-                name={domainModel.DkimState === DKIM_STATE.DKIM_STATE_GOOD ? 'on' : 'off'}
-            />
-        ) : null,
-        domainModel.DmarcState === DMARC_STATE.DMARC_STATE_DEFAULT ? null : (
+        [DKIM_STATE.DKIM_STATE_ERROR, DKIM_STATE.DKIM_STATE_GOOD, DKIM_STATE.DKIM_STATE_WARNING].includes(
+            domainModel.DKIM?.State
+        )
+            ? renderDKIMIcon()
+            : null,
+        !domainModel.DmarcState || domainModel.DmarcState === DMARC_STATE.DMARC_STATE_DEFAULT ? null : (
             <RoundedIcon
                 className="mr0-5"
                 key="dmarc-icon"
