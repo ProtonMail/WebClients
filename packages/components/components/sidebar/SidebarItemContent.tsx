@@ -6,12 +6,13 @@ interface Props {
     icon?: string;
     iconColor?: string;
     text?: ReactNode;
+    title?: string;
     aside?: ReactNode;
 }
 
-const SidebarItemContent = ({ icon, iconColor, text, aside }: Props) => {
+const SidebarItemContent = ({ icon, iconColor, title, text, aside }: Props) => {
     return (
-        <span className="flex flex-nowrap w100 flex-items-center">
+        <span className="flex flex-nowrap w100 flex-items-center" title={title}>
             {icon && (
                 <Icon
                     color={iconColor}
