@@ -7,7 +7,12 @@ import {
     propertyToUTCDate,
 } from 'proton-shared/lib/calendar/vcalConverter';
 import { addDays } from 'proton-shared/lib/date-fns-utc';
-import { fromUTCDate, getSupportedTimezone, toLocalDate } from 'proton-shared/lib/date/timezone';
+import {
+    convertUTCDateTimeToZone,
+    fromUTCDate,
+    getSupportedTimezone,
+    toLocalDate,
+} from 'proton-shared/lib/date/timezone';
 import { readFileAsString } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { truncate } from 'proton-shared/lib/helpers/string';
@@ -141,7 +146,14 @@ const getSupportedDateOrDateTimeProperty = ({
     }
 
     const partDayProperty = property;
-    const partDayPropertyTzid = getPropertyTzid(property);
+
+    // account for non-standard Google Calendar exports
+    // namely localize UTC date-times with x-wr-timezone if present and accepted by us
+    if (partDayProperty.value.isUTC && hasXWrTimezone && calendarTzid) {
+        const localizedDateTime = convertUTCDateTimeToZone(partDayProperty.value, calendarTzid);
+        return getDateTimeProperty(localizedDateTime, calendarTzid);
+    }
+    const partDayPropertyTzid = getPropertyTzid(partDayProperty);
 
     // A floating date-time property
     if (!partDayPropertyTzid) {

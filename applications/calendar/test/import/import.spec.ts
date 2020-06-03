@@ -208,6 +208,35 @@ END:VEVENT`;
         });
     });
 
+    test('should localize Zulu times in the presence of a calendar timezone', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART:20110613T150000Z
+DTEND:20110613T160000Z
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(
+            getSupportedEvent({ vcalComponent: event, hasXWrTimezone: true, calendarTzid: 'Europe/Zurich' })
+        ).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2011, month: 6, day: 13, hours: 17, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+            dtend: {
+                value: { year: 2011, month: 6, day: 13, hours: 18, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+            location: { value: '1CP Conference Room 4350' },
+        });
+    });
+
     test('should reject events with floating times if no global timezone has been specified', () => {
         const vevent = `
 BEGIN:VEVENT
