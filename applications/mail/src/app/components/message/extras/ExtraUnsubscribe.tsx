@@ -21,7 +21,7 @@ import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from
 import { useMessage } from '../../../hooks/useMessage';
 import { useSendMessage, useSendVerifications } from '../../../hooks/useSendMessage';
 import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
-import { removeEmailAlias } from '../../../helpers/addresses';
+import { removeEmailAlias, findSender } from '../../../helpers/addresses';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
 interface Props {
@@ -76,6 +76,8 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             if (value.startsWith('mailto:')) {
                 const [toAddress, search = ''] = value.replace('mailto:', '').split('?');
                 const { subject = 'Unsubscribe', body = 'Please, unsubscribe me' } = getSearchParams(search);
+                // "address" by default, but will default to another address if this address cant send message
+                const from = findSender(addresses, { AddressID: address.ID }, true);
 
                 const inputMessage: PartialMessageExtended = {
                     ParentID: message.data?.ID,
@@ -84,9 +86,9 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                     publicKeys: message.publicKeys,
                     privateKeys: message.privateKeys,
                     data: {
-                        AddressID: address.ID,
+                        AddressID: from?.ID,
                         Subject: subject,
-                        Sender: { Address: address.Email, Name: address.DisplayName },
+                        Sender: { Address: from?.Email, Name: from?.DisplayName },
                         ToList: [{ Address: toAddress, Name: toAddress }],
                         CCList: [],
                         BCCList: [],
