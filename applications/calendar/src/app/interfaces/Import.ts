@@ -35,6 +35,7 @@ export interface ImportCalendarModel {
     eventsNotImported: ImportEventError[];
     failure?: ImportFatalError | ImportFileError | Error;
     calendar: Calendar;
+    loading: boolean;
 }
 
 export type Unwrap<T> = T extends Promise<infer U>

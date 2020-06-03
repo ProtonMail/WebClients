@@ -108,7 +108,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
         ) => {
             // filter out events that failed at encryption
             const events = encryptedEvents.filter((e): e is EncryptedEvent => !(e instanceof ImportEventError));
-            if (!events.length) {
+            if (!events.length || signal.aborted) {
                 return;
             }
             // prepare the events data in the way the API wants it
@@ -160,6 +160,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
             signal: AbortSignal
         ) => {
             const batches = chunk(events, BATCH_SIZE);
+            const promises = [];
             for (let i = 0; i < batches.length; i++) {
                 // The API requests limit for the submit route are 100 calls per 10 seconds
                 // We play it safe by enforcing a 100ms minimum wait between API calls. During this wait we encrypt the events
@@ -167,8 +168,9 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     encryptEvents(batches[i], addressKeys, calendarKeys, signal),
                     wait(100),
                 ]);
-                submitEvents(encryptedEvents, memberID, i, signal);
+                promises.push(submitEvents(encryptedEvents, memberID, i, signal));
             }
+            await Promise.all(promises);
         };
 
         const getIdsAndKeys = async (calendarID: string) => {
@@ -203,6 +205,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                         eventsImported: [],
                         eventsNotImported: [],
                         failure: new ImportFatalError(error),
+                        loading: false,
                     }),
                     signal
                 );

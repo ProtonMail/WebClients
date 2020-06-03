@@ -31,12 +31,13 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
         eventsNotEncrypted: [],
         eventsImported: [],
         eventsNotImported: [],
+        loading: false,
     });
 
     const { content, ...modalProps } = (() => {
         if (model.step <= IMPORT_STEPS.ATTACHED) {
             const submit = (
-                <PrimaryButton disabled={model.step === IMPORT_STEPS.ATTACHING} type="submit">
+                <PrimaryButton disabled={model.step === IMPORT_STEPS.ATTACHING} loading={model.loading} type="submit">
                     {c('Action').t`Import`}
                 </PrimaryButton>
             );
@@ -51,6 +52,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     eventsNotEncrypted: [],
                     eventsImported: [],
                     eventsNotImported: [],
+                    loading: false,
                 });
             };
 
@@ -85,6 +87,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     throw new Error('No file');
                 }
                 try {
+                    setModel({ ...model, loading: true });
                     const { components, calscale, xWrTimezone } = await parseIcs(fileAttached);
                     const { events, discarded } = filterNonSupported({ components, calscale, xWrTimezone });
                     if (!events.length && !discarded.length) {
@@ -97,6 +100,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                         eventsParsed: events,
                         eventsNotParsed: discarded,
                         failure: undefined,
+                        loading: false,
                     });
                 } catch (e) {
                     setModel({
@@ -109,6 +113,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                         eventsImported: [],
                         eventsNotImported: [],
                         failure: e,
+                        loading: false,
                     });
                 }
             };
