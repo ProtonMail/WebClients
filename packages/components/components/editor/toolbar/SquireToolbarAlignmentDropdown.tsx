@@ -22,6 +22,7 @@ const SquireToolbarAlignmentDropdown = ({ handleAlignment, squireInfos }: Props)
             <DropdownMenu>
                 <DropdownMenuButton
                     className="alignleft flex flex-nowrap"
+                    isSelected={squireInfos.alignLeft}
                     aria-pressed={squireInfos.alignLeft}
                     onClick={handleAlignment(ALIGNMENT.Left)}
                 >
@@ -30,6 +31,7 @@ const SquireToolbarAlignmentDropdown = ({ handleAlignment, squireInfos }: Props)
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     className="alignleft flex flex-nowrap"
+                    isSelected={squireInfos.alignCenter}
                     aria-pressed={squireInfos.alignCenter}
                     onClick={handleAlignment(ALIGNMENT.Center)}
                 >
@@ -38,6 +40,7 @@ const SquireToolbarAlignmentDropdown = ({ handleAlignment, squireInfos }: Props)
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     className="alignleft flex flex-nowrap"
+                    isSelected={squireInfos.alignRight}
                     aria-pressed={squireInfos.alignRight}
                     onClick={handleAlignment(ALIGNMENT.Right)}
                 >
@@ -46,6 +49,7 @@ const SquireToolbarAlignmentDropdown = ({ handleAlignment, squireInfos }: Props)
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     className="alignleft flex flex-nowrap"
+                    isSelected={squireInfos.alignJustify}
                     aria-pressed={squireInfos.alignJustify}
                     onClick={handleAlignment(ALIGNMENT.Justify)}
                 >
