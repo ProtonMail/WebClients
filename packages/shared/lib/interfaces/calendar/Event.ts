@@ -31,7 +31,7 @@ export interface CalendarEventBlobData {
     Attendees: Attendee[];
 }
 
-interface CalendarEventSharedData {
+export interface CalendarEventSharedData {
     ID: string;
     CalendarID: string;
     CreateTime: number;
