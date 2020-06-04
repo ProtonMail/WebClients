@@ -15,11 +15,8 @@ export enum LinkURLType {
 }
 
 export enum EVENT_TYPES {
+    DELETE = 0,
     CREATE = 1,
     UPDATE = 2,
-    UPDATE_CONTENT = 3,
-    TRASH = 4,
-    RESTORE = 5,
-    MOVE = 6,
-    DELETE = 7
+    UPDATE_METADATA = 3
 }

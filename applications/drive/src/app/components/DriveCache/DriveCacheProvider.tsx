@@ -355,6 +355,10 @@ const useDriveCacheState = () => {
         setRerender((old) => ++old);
     };
 
+    /**
+     * @param softDelete should remove reference in parent link when location changes (move, trash, restore)
+     * @param rerender false when called recursively (should not rerender after every delete) otherwise true
+     */
     const deleteLinks = (shareId: string, linkIds: string[], softDelete = false, rerender = true) => {
         linkIds.forEach((id) => {
             const meta = getLinkMeta(shareId, id);
