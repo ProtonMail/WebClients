@@ -93,7 +93,7 @@ export const render = async (component: JSX.Element): Promise<RenderResult> => {
     return result;
 };
 
-export const renderHook = (callback: () => void) => {
+export const renderHook = (callback: (props: any) => any) => {
     minimalCache();
     return originalRenderHook<any, any>(callback, { wrapper: TestProvider as any });
 };

@@ -1,9 +1,9 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
+import { useInterval, useHandler } from 'react-components';
 import { fromUnixTime, isAfter, differenceInSeconds } from 'date-fns';
 
 import { Element } from '../models/element';
-import { useInterval } from './useHandler';
 import { EXPIRATION_CHECK_FREQUENCY } from '../constants';
 
 export const formatDelay = (nowDate: Date, expirationDate: Date): string => {
@@ -49,19 +49,32 @@ export const formatDelay = (nowDate: Date, expirationDate: Date): string => {
 export const useExpiration = ({ ExpirationTime }: Element): [boolean, string] => {
     const [delayMessage, setDelayMessage] = useState('');
 
-    const expirationDate = useMemo(() => fromUnixTime(ExpirationTime || 0), []);
+    const expirationDate = useMemo(() => fromUnixTime(ExpirationTime || 0), [ExpirationTime]);
 
-    const abort = useInterval(ExpirationTime ? 1000 : 0, () => {
+    const handler = useHandler(() => {
+        if (!ExpirationTime) {
+            setDelayMessage('');
+            return;
+        }
+
         const nowDate = new Date();
 
         if (isAfter(nowDate, expirationDate)) {
             setDelayMessage(c('Info').t`This message is expired!`);
-            abort();
             return;
         }
 
         setDelayMessage(c('Info').t`This message will expire in ${formatDelay(nowDate, expirationDate)}`);
     });
+
+    useEffect(() => {
+        handler();
+
+        if (ExpirationTime) {
+            const intervalID = window.setInterval(handler, 1000);
+            return () => clearInterval(intervalID);
+        }
+    }, [ExpirationTime]);
 
     return [delayMessage !== '', delayMessage];
 };
