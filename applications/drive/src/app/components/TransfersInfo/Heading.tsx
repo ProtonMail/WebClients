@@ -44,11 +44,10 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
 
     useEffect(() => {
         if (activeUploadsCount) {
-            const currentUploadsIds = currentUploads.map((upload) => upload.id);
-            const newUploads = activeUploads.filter((upload) => !currentUploadsIds.includes(upload.id));
-            if (newUploads.length) {
-                setCurrentUploads([...currentUploads, ...newUploads]);
-            }
+            setCurrentUploads((currentUploads) => [
+                ...currentUploads.filter((upload) => activeUploads.every(({ id }) => id !== upload.id)),
+                ...activeUploads
+            ]);
         } else {
             setCurrentUploads([]);
         }
@@ -56,11 +55,10 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
 
     useEffect(() => {
         if (activeDownloadsCount) {
-            const currentDownloadsIds = currentDownloads.map((download) => download.id);
-            const newDownloads = activeDownloads.filter((download) => !currentDownloadsIds.includes(download.id));
-            if (newDownloads.length) {
-                setCurrentDownloads([...currentDownloads, ...newDownloads]);
-            }
+            setCurrentDownloads((currentDownloads) => [
+                ...currentDownloads.filter((download) => activeDownloads.every(({ id }) => id !== download.id)),
+                ...activeDownloads
+            ]);
         } else {
             setCurrentDownloads([]);
         }
