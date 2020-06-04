@@ -1,4 +1,4 @@
-import { CalendarEvent, CalendarEventWithoutBlob, Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarEvent, Calendar, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
 import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES, SAVE_CONFIRMATION_TYPES, VIEWS } from '../../constants';
 import { EventReadResult } from './eventStore/interface';
 import { EventModel } from '../../interfaces/EventModel';
@@ -13,7 +13,7 @@ export interface CalendarViewEventDataRecurring {
 
 export interface CalendarViewEventData {
     calendarData: Calendar;
-    eventData?: CalendarEvent | CalendarEventWithoutBlob;
+    eventData?: CalendarEvent | CalendarEventSharedData;
     eventRecurrence?: CalendarViewEventDataRecurring;
     eventReadResult?: EventReadResult;
 }

@@ -1,15 +1,11 @@
-import {
-    VcalDateOrDateTimeValue,
-    VcalRruleProperty,
-    VcalRrulePropertyValue,
-} from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { VcalDateOrDateTimeValue, VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { shallowEqual } from 'proton-shared/lib/helpers/array';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 
-const maybeArrayComparisonKeys: (keyof VcalRrulePropertyValue)[] = [
+const maybeArrayComparisonKeys = [
     'byday',
     'bymonthday',
     'bymonth',
@@ -18,7 +14,7 @@ const maybeArrayComparisonKeys: (keyof VcalRrulePropertyValue)[] = [
     'byhour',
     'byyearday',
     'byweekno',
-];
+] as const;
 
 const isMaybeArrayEqual = (oldValue: any | any[], newValue: any | any[]) => {
     if (Array.isArray(oldValue) && Array.isArray(newValue)) {
@@ -32,7 +28,7 @@ const isUntilEqual = (oldUntil?: VcalDateOrDateTimeValue, newUntil?: VcalDateOrD
         return true;
     }
     // If changing an all-day event into a part-day event the until adds the time part, so ignore that here.
-    return !!(oldUntil && newUntil && isSameDay(toUTCDate(oldUntil), toUTCDate(newUntil)));
+    return oldUntil && newUntil && isSameDay(toUTCDate(oldUntil), toUTCDate(newUntil));
 };
 
 export const getIsRruleEqual = (oldRrule: VcalRruleProperty, newRrule?: VcalRruleProperty) => {

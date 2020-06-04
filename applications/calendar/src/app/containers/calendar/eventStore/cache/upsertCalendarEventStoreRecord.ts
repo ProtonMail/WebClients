@@ -1,6 +1,6 @@
 import { addDays, max } from 'proton-shared/lib/date-fns-utc';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { CalendarEvent, CalendarEventWithoutBlob } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarEvent, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
 import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
 import { differenceInHours } from 'date-fns';
@@ -11,7 +11,7 @@ import { getRecurrenceId, getUid } from '../../event/getEventHelper';
 
 export const getCalendarEventStoreRecord = (
     eventComponent: VcalVeventComponent,
-    eventData: CalendarEvent | CalendarEventWithoutBlob
+    eventData: CalendarEvent | CalendarEventSharedData
 ): CalendarEventStoreRecord => {
     const utcStart = propertyToUTCDate(eventComponent.dtstart);
     const unsafeEnd = propertyToUTCDate(eventComponent.dtend);

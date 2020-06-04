@@ -1,5 +1,5 @@
 import createIntervalTree from 'interval-tree';
-import { CalendarEvent, CalendarEventWithoutBlob } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarEvent, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { OccurrenceIterationCache } from 'proton-shared/lib/calendar/recurring';
 import { EventPersonalMap } from '../../../interfaces/EventPersonalMap';
@@ -26,7 +26,7 @@ export interface CalendarEventStoreRecord {
     isAllDay: boolean;
     isAllPartDay: boolean;
 
-    eventData?: CalendarEvent | CalendarEventWithoutBlob;
+    eventData?: CalendarEvent | CalendarEventSharedData;
     eventComponent: VcalVeventComponent;
     eventReadResult?: EventReadResult;
     eventPromise?: Promise<void>;

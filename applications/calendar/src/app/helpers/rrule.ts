@@ -42,7 +42,7 @@ export const getDayAndSetpos = (byday?: string, bysetpos?: number) => {
     return { day: byday, setpos: bysetpos };
 };
 
-export const SUPPORTED_RRULE_PROPERTIES: (keyof VcalRrulePropertyValue)[] = [
+export const SUPPORTED_RRULE_PROPERTIES = [
     'freq',
     'count',
     'interval',

@@ -6,7 +6,7 @@ import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './u
 import { getIsCalendarEvent } from './helper';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
 
-const FIELDS_TO_KEEP: (keyof CalendarEvent)[] = [
+const FIELDS_TO_KEEP = [
     'ID',
     'CalendarID',
     'CreateTime',
@@ -21,7 +21,7 @@ const FIELDS_TO_KEEP: (keyof CalendarEvent)[] = [
     'PersonalEvent',
     'AttendeesEvent',
     'Attendees',
-];
+] as const;
 
 const upsertCalendarApiEvent = (Event: CalendarEvent, calendarEventCache: CalendarEventCache) => {
     const oldEventRecord = calendarEventCache.events.get(Event.ID);
