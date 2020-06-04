@@ -4,8 +4,9 @@ import { Icon, Info } from 'react-components';
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { truncate } from 'proton-shared/lib/helpers/string';
-
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
+
+import { sanitizeDescription } from '../../helpers/sanitize';
 import PopoverNotification from './PopoverNotification';
 import CalendarIcon from '../CalendarIcon';
 import { getTimezonedFrequencyString } from '../../helpers/frequencyString';
@@ -33,7 +34,9 @@ const PopoverEventContent = ({
     const { Name: calendarName, Color } = Calendar;
 
     const trimmedLocation = model.location.trim();
-    const trimmedDescription = model.description.trim();
+    const htmlString = useMemo(() => {
+        return sanitizeDescription(model.description.trim());
+    }, [model.description]);
 
     const dateString = useMemo(() => {
         const dateStart = formatUTC(start, 'PP', { locale: dateLocale });
@@ -109,10 +112,10 @@ const PopoverEventContent = ({
                     </span>
                 </div>
             ) : null}
-            {trimmedDescription ? (
+            {htmlString ? (
                 <div className={wrapClassName}>
                     <Icon name="note" className={iconClassName} />
-                    <p className="break mt0 mb0 pre-wrap">{trimmedDescription}</p>
+                    <div className="break mt0 mb0 pre-wrap" dangerouslySetInnerHTML={{ __html: htmlString }} />
                 </div>
             ) : null}
             {Array.isArray(model.notifications) && model.notifications.length ? (

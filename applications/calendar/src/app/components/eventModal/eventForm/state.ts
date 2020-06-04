@@ -28,6 +28,7 @@ import { getDeviceNotifications } from './notificationModel';
 import { notificationsToModel } from '../../../helpers/notificationsToModel';
 import { propertiesToNotificationModel } from './propertiesToNotificationModel';
 import { EventModel, FrequencyModel } from '../../../interfaces/EventModel';
+import { stripAllTags } from '../../../helpers/sanitize';
 
 export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
@@ -182,6 +183,7 @@ export const getExistingEvent = ({
     const recurrenceId = getIcalRecurrenceId(veventComponent);
 
     const newModel = propertiesToModel(veventComponent, isAllDay, tzid);
+    const strippedDescription = stripAllTags(newModel.description);
 
     const hasDifferingTimezone = newModel.start.tzid !== tzid || newModel.end.tzid !== tzid;
 
@@ -192,6 +194,7 @@ export const getExistingEvent = ({
 
     return {
         ...newModel,
+        description: strippedDescription,
         isAllDay,
         // TODO: In the latest design we are not using hasMoreOptions, nor the MoreRow component. If the design sticks, we should remove them
         hasMoreOptions: isRecurring || hasDifferingTimezone,
