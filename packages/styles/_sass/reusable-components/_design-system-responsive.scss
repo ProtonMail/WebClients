@@ -103,7 +103,7 @@
 
   /* paddings */
   $list-paddings-mobile: p, pt, pr, pb, pl;
-  $list-paddings-mobile-values: 0, 1, 2; // specify 2.5 if needed
+  $list-paddings-mobile-values: 0, 0.5, 1, 2; // specify 2.5 if needed
 
   @include padding-generator($list-paddings-mobile, $list-paddings-mobile-values, "onmobile-");
 
@@ -143,6 +143,9 @@
 	}
 	&flex-shrink {
 		flex-shrink: 1;
+	}
+	&flex-self-start {
+		align-self: start;
 	}
 	&min-w100 {
       min-width: 100%;
