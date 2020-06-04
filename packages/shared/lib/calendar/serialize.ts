@@ -1,4 +1,4 @@
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import { OpenPGPKey, OpenPGPSignature, SessionKey } from 'pmcrypto';
 import { serializeUint8Array } from '../helpers/serialization';
 
 import { getVeventParts } from './veventHelper';
@@ -10,6 +10,9 @@ import isTruthy from '../helpers/isTruthy';
 import { getIsEventComponent } from './vcalHelper';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR } = CALENDAR_CARD_TYPE;
+
+// Wrong typings in openpgp.d.ts...
+const getArmoredSignatureString = (signature: OpenPGPSignature) => (signature.armor() as unknown) as string;
 
 /**
  * Format the data into what the API expects.
@@ -43,12 +46,12 @@ export const formatData = ({
             {
                 Type: SIGNED,
                 Data: sharedSignedPart.data,
-                Signature: sharedSignedPart.signature.armor()
+                Signature: getArmoredSignatureString(sharedSignedPart.signature)
             },
             {
                 Type: ENCRYPTED_AND_SIGNED,
                 Data: serializeUint8Array(sharedEncryptedPart.dataPacket),
-                Signature: sharedEncryptedPart.signature.armor()
+                Signature: getArmoredSignatureString(sharedEncryptedPart.signature)
             }
         ],
         CalendarKeyPacket:
@@ -60,12 +63,12 @@ export const formatData = ({
                       calendarSignedPart && {
                           Type: SIGNED,
                           Data: calendarSignedPart.data,
-                          Signature: calendarSignedPart.signature.armor()
+                          Signature: getArmoredSignatureString(calendarSignedPart.signature)
                       },
                       calendarEncryptedPart && {
                           Type: ENCRYPTED_AND_SIGNED,
                           Data: serializeUint8Array(calendarEncryptedPart.dataPacket),
-                          Signature: calendarEncryptedPart.signature.armor()
+                          Signature: getArmoredSignatureString(calendarEncryptedPart.signature)
                       }
                   ].filter(isTruthy)
                 : undefined,
@@ -74,14 +77,14 @@ export const formatData = ({
             ? {
                   Type: SIGNED,
                   Data: personalSignedPart.data,
-                  Signature: personalSignedPart.signature.armor()
+                  Signature: getArmoredSignatureString(personalSignedPart.signature)
               }
             : undefined,
         AttendeesEventContent: attendeesEncryptedPart
             ? {
                   Type: ENCRYPTED_AND_SIGNED,
                   Data: serializeUint8Array(attendeesEncryptedPart.dataPacket),
-                  Signature: attendeesEncryptedPart.signature.armor()
+                  Signature: getArmoredSignatureString(attendeesEncryptedPart.signature)
               }
             : undefined,
         Attendees: attendeesClearPart

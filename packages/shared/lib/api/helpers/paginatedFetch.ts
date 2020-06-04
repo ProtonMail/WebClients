@@ -8,7 +8,7 @@ const paginatedFetch = async <T>(
     max = MAX_ITERATIONS
 ) => {
     const pageSize = 100;
-    let pageNumber = 1;
+    let pageNumber = 0;
     let result: T[] = [];
 
     while (pageNumber < max) {

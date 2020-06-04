@@ -37,7 +37,7 @@ export enum SETTINGS_TIME_FORMAT {
 }
 
 export interface CalendarUserSettings {
-    DefaultCalendarID: string;
+    DefaultCalendarID: string | null;
     WeekStart: SETTINGS_WEEK_START;
     WeekLength: number;
     DisplayWeekNumber: number;
