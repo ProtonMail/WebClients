@@ -29,6 +29,7 @@ import { lookup } from 'mime-types';
 import { ShareEvent, useDriveEventManager } from '../components/DriveEventManager/DriveEventManagerProvider';
 import useDebouncedRequest from './useDebouncedRequest';
 import useQueuedFunction from './useQueuedFunction';
+import { getSuccessfulSettled, logSettledErrors } from '../utils/async';
 
 interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
@@ -36,7 +37,7 @@ interface FetchLinkConfig {
     skipCache?: boolean;
 }
 
-const { CREATE, DELETE, TRASH, UPDATE, UPDATE_CONTENT, RESTORE, MOVE } = EVENT_TYPES;
+const { CREATE, DELETE, UPDATE_METADATA } = EVENT_TYPES;
 
 function useDrive() {
     const cache = useDriveCache();
@@ -404,39 +405,84 @@ function useDrive() {
 
     const events = {
         handleEvents: (shareId: string) => async ({ Events = [] }: { Events: ShareEvent[] }) => {
-            const deleteEvents = Events.filter(({ EventType }) => EventType === DELETE);
-            const softDeleteEvents = Events.filter(({ EventType }) => [TRASH, RESTORE, MOVE].includes(EventType));
+            const isTrashedRestoredOrMoved = ({ LinkID, ParentLinkID, Trashed }: LinkMeta) => {
+                const existing = cache.get.linkMeta(shareId, LinkID);
+                return existing && (existing.Trashed !== Trashed || existing.ParentLinkID !== ParentLinkID);
+            };
 
-            cache.delete.links(
-                shareId,
-                deleteEvents.map(({ Link: { LinkID } }) => LinkID)
-            );
-
-            cache.delete.links(
-                shareId,
-                softDeleteEvents.map(({ Link: { LinkID } }) => LinkID),
-                true
-            );
-
-            await Promise.allSettled(
-                Events.filter(({ EventType }) =>
-                    [CREATE, UPDATE, UPDATE_CONTENT, TRASH, RESTORE, MOVE].includes(EventType)
-                ).map(async ({ EventType, Link }) => {
-                    const { privateKey } = Link.ParentLinkID
-                        ? await getLinkKeys(shareId, Link.ParentLinkID)
-                        : await getShareKeys(shareId);
-
-                    const meta = await decryptLink(Link, privateKey);
-
-                    if (EventType === TRASH) {
-                        cache.set.trashLinkMetas([meta], shareId, 'unlisted');
-                    } else {
-                        const method = EventType === CREATE ? 'unlisted_create' : 'unlisted';
-                        cache.set.childLinkMetas([meta], shareId, Link.ParentLinkID, method);
-                        cache.set.foldersOnlyLinkMetas([meta], shareId, Link.ParentLinkID, method);
+            const actions = Events.reduce(
+                (actions, { EventType, Link }) => {
+                    if (EventType === DELETE) {
+                        actions.delete.push(Link.LinkID);
+                        return actions;
                     }
-                })
+
+                    if (isTrashedRestoredOrMoved(Link)) {
+                        actions.softDelete.push(Link.LinkID);
+                    }
+
+                    const decryptedLinkPromise = (async () => {
+                        const { privateKey } = Link.ParentLinkID
+                            ? await getLinkKeys(shareId, Link.ParentLinkID)
+                            : await getShareKeys(shareId);
+
+                        return decryptLink(Link, privateKey);
+                    })();
+
+                    if (EventType === CREATE) {
+                        actions.create[Link.ParentLinkID] = [
+                            ...(actions.create[Link.ParentLinkID] ?? []),
+                            decryptedLinkPromise
+                        ];
+                    }
+
+                    if (EventType === UPDATE_METADATA) {
+                        if (Link.Trashed) {
+                            actions.trash.push(decryptedLinkPromise);
+                        } else {
+                            actions.update[Link.ParentLinkID] = [
+                                ...(actions.update[Link.ParentLinkID] ?? []),
+                                decryptedLinkPromise
+                            ];
+                        }
+                    }
+
+                    return actions;
+                },
+                {
+                    delete: [] as string[],
+                    softDelete: [] as string[],
+                    trash: [] as Promise<LinkMeta>[],
+                    create: {} as { [parentId: string]: Promise<LinkMeta>[] },
+                    update: {} as { [parentId: string]: Promise<LinkMeta>[] }
+                }
             );
+
+            cache.delete.links(shareId, actions.delete);
+            cache.delete.links(shareId, actions.softDelete, true);
+
+            const trashPromise = Promise.allSettled(actions.trash)
+                .then(getSuccessfulSettled)
+                .then((trashMetas) => cache.set.trashLinkMetas(trashMetas, shareId, 'unlisted'))
+                .catch((e) => console.error(e));
+
+            const createPromises = Object.entries(actions.create).map(async ([parentId, promises]) => {
+                const metas = await Promise.allSettled(promises).then(getSuccessfulSettled);
+                cache.set.childLinkMetas(metas, shareId, parentId, 'unlisted_create');
+                cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted_create');
+            });
+
+            const updatePromises = Object.entries(actions.update).map(async ([parentId, promises]) => {
+                const metas = await Promise.allSettled(promises).then(getSuccessfulSettled);
+                cache.set.childLinkMetas(metas, shareId, parentId, 'unlisted');
+                cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted');
+            });
+
+            return Promise.allSettled([
+                trashPromise,
+                Promise.allSettled(createPromises).then(logSettledErrors),
+                Promise.allSettled(updatePromises).then(logSettledErrors)
+            ]);
         },
 
         subscribe: async (shareId: string) => {
