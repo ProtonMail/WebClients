@@ -148,7 +148,7 @@ const ExtraPinKey = ({ message, onTrustSigningKey, onTrustAttachedKey }: Props) 
         !senderAddress ||
         (isPinUnseen && !contactID) ||
         !bePinnedPublicKey;
-    const bannerColorClassName = isPinUnseen ? 'bg-global-attention' : 'bg-global-border';
+    const bannerColorClassName = isPinUnseen ? 'bg-global-attention' : 'bg-white-dm';
 
     if (promptKeyPinningType === undefined) {
         return null;
