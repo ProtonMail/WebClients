@@ -95,6 +95,10 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
         const oldCalendarKeys = isSwitchCalendar && oldCalendarID ? calendarKeysMap[oldCalendarID] : undefined;
         const addressKeys = addressKeysMap[addressID];
 
+        if (!veventComponent) {
+            throw new Error('Missing vevent component');
+        }
+
         const data = await createCalendarEvent({
             eventComponent: veventComponent,
             isSwitchCalendar,

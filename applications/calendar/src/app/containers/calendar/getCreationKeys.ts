@@ -25,9 +25,9 @@ export const getCreationKeys = async ({
         throw new Error(c('Error').t`Address primary private key not found`);
     }
 
-    const { privateKey: primaryPrivateCalendarKey, publicKey: publicCalendarKey } =
+    const { privateKey: primaryPrivateCalendarKey, publicKey: primaryPublicCalendarKey } =
         newCalendarKeys.find(({ Key: { Flags } }) => hasBit(Flags, KeyFlags.PRIMARY)) || {};
-    if (!primaryPrivateCalendarKey) {
+    if (!primaryPrivateCalendarKey || !primaryPublicCalendarKey) {
         throw new Error(c('Error').t`Calendar primary private key is not decrypted`);
     }
 
@@ -39,7 +39,7 @@ export const getCreationKeys = async ({
 
     return {
         privateKey: primaryPrivateCalendarKey,
-        publicKey: publicCalendarKey,
+        publicKey: primaryPublicCalendarKey,
         signingKey: primaryPrivateAddressKey,
         sharedSessionKey,
         calendarSessionKey,

@@ -1,9 +1,10 @@
 import { differenceInMinutes } from 'date-fns';
 import { getMillisecondsFromTriggerString } from 'proton-shared/lib/calendar/vcal';
-import { isIcalAllDay, isIcalPropertyAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { pick } from 'proton-shared/lib/helpers/object';
 import { truncate } from 'proton-shared/lib/helpers/string';
+import { getIsIcalPropertyAllDay, getIsDateTimeValue } from 'proton-shared/lib/calendar/vcalHelper';
 import {
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
@@ -16,7 +17,6 @@ import { DAY, HOUR, MINUTE, NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICA
 import { DateTimeValue } from '../interfaces/DateTime';
 import { NotificationModel } from '../interfaces/NotificationModel';
 import getAlarmMessageText from './getAlarmMessageText';
-import { getIsDateTimeValue } from './rrule';
 
 /**
  * Given a raw event, (optionally) its starting date, the date now and a timezone id,
@@ -99,7 +99,7 @@ const normalizeDurationToUnit = (duration: Partial<VcalDurationValue>, unit: num
 export const normalizeTrigger = (trigger: VcalTriggerProperty, dtstart: VcalDateOrDateTimeProperty) => {
     const duration = isAbsoluteTrigger(trigger) ? absoluteToRelative(trigger, dtstart) : trigger.value;
     const { weeks, days } = duration;
-    if (isIcalPropertyAllDay(dtstart)) {
+    if (getIsIcalPropertyAllDay(dtstart)) {
         // the API admits all trigger components for all-day events,
         // but we do not support arbitrary combinations non-zero values for weeks and days
         const mustNormalize = duration.isNegative ? weeks > 0 && days !== 6 : weeks > 0 && days !== 0;
@@ -163,7 +163,7 @@ export const getSupportedAlarm = (alarm: VcalValarmComponent, dtstart: VcalDateO
     const normalizedTrigger = normalizeTrigger(trigger, dtstart);
     const triggerDurationInSeconds = normalizeDurationToUnit(normalizedTrigger, 1);
 
-    const inFuture = isIcalPropertyAllDay(dtstart)
+    const inFuture = getIsIcalPropertyAllDay(dtstart)
         ? !normalizedTrigger.isNegative && triggerDurationInSeconds >= DAY
         : !normalizedTrigger.isNegative && triggerDurationInSeconds !== 0;
     const nonSupportedTrigger =

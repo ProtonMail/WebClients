@@ -3,9 +3,16 @@ import {
     getDateProperty,
     getDateTimeProperty,
     getPropertyTzid,
-    isIcalPropertyAllDay,
     propertyToUTCDate,
 } from 'proton-shared/lib/calendar/vcalConverter';
+import {
+    getIsIcalPropertyAllDay,
+    getIsEventComponent,
+    getIsFreebusyComponent,
+    getIsJournalComponent,
+    getIsTimezoneComponent,
+    getIsTodoComponent,
+} from 'proton-shared/lib/calendar/vcalHelper';
 import { addDays } from 'proton-shared/lib/date-fns-utc';
 import {
     convertUTCDateTimeToZone,
@@ -40,13 +47,7 @@ import {
 import { VcalCalendarComponentOrError } from '../interfaces/Import';
 import { getSupportedAlarm } from './alarms';
 
-import {
-    getIsEventComponent,
-    getIsFreebusyComponent,
-    getIsJournalComponent,
-    getIsTimezoneComponent,
-    getIsTodoComponent,
-} from './event';
+import {} from './event';
 import { getIsRruleConsistent, getIsRruleSupported } from './rrule';
 
 const getParsedComponentHasError = (component: VcalCalendarComponentOrError): component is { error: Error } => {
@@ -141,7 +142,7 @@ const getSupportedDateOrDateTimeProperty = ({
     hasXWrTimezone,
     calendarTzid,
 }: GetSupportedDateOrDateTimePropertyArgs) => {
-    if (isIcalPropertyAllDay(property)) {
+    if (getIsIcalPropertyAllDay(property)) {
         return getDateProperty(property.value);
     }
 
@@ -178,7 +179,7 @@ const getIsWellFormedDateTime = (property: VcalDateTimeProperty) => {
 };
 
 const getIsWellFormedDateOrDateTime = (property: VcalDateOrDateTimeProperty) => {
-    return isIcalPropertyAllDay(property) || getIsWellFormedDateTime(property);
+    return getIsIcalPropertyAllDay(property) || getIsWellFormedDateTime(property);
 };
 
 const getIsDateOutOfBounds = (property: VcalDateOrDateTimeProperty) => {
@@ -307,8 +308,8 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             };
         }
 
-        const isAllDayStart = isIcalPropertyAllDay(validated.dtstart);
-        const isAllDayEnd = isIcalPropertyAllDay(validated.dtend);
+        const isAllDayStart = getIsIcalPropertyAllDay(validated.dtstart);
+        const isAllDayEnd = getIsIcalPropertyAllDay(validated.dtend);
         if (+isAllDayStart ^ +isAllDayEnd) {
             throw new ImportEventError(IMPORT_EVENT_TYPE.ALLDAY_INCONSISTENCY, 'vevent', idMessage);
         }
