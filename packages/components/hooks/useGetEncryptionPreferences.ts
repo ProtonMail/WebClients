@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 import { useAddresses, useApi, useGetAddressKeys, useGetUserKeys, useMailSettings } from '../index';
 import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
 import getPublicKeysEmailHelper from 'proton-shared/lib/api/helpers/getPublicKeysEmailHelper';
-import { getPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
+import { getContactPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
 import extractEncryptionPreferences from 'proton-shared/lib/mail/encryptionPreferences';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 
@@ -42,13 +42,12 @@ const useGetEncryptionPreferences = () => {
                 const isInternal = apiKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
                 pinnedKeysConfig = await getPublicKeysVcardHelper(api, emailAddress, publicKeys, isInternal);
             }
-            const publicKeyModel = await getPublicKeyModel({
+            const publicKeyModel = await getContactPublicKeyModel({
                 emailAddress,
                 apiKeysConfig,
-                pinnedKeysConfig,
-                mailSettings
+                pinnedKeysConfig
             });
-            return extractEncryptionPreferences(publicKeyModel, selfSend);
+            return extractEncryptionPreferences(publicKeyModel, mailSettings, selfSend);
         },
         [api, getAddressKeys, mailSettings, addresses]
     );
