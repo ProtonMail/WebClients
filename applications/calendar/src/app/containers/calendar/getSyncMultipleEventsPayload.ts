@@ -3,7 +3,12 @@ import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { CachedKey } from 'proton-shared/lib/interfaces';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
-import { syncMultipleEvents as syncMultipleEventsRoute } from 'proton-shared/lib/api/calendars';
+import {
+    CreateCalendarEventSyncData,
+    DeleteCalendarEventSyncData,
+    syncMultipleEvents as syncMultipleEventsRoute,
+    UpdateCalendarEventSyncData,
+} from 'proton-shared/lib/api/calendars';
 import getCreationKeys from './getCreationKeys';
 
 export enum SyncOperationTypes {
@@ -73,57 +78,62 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
 
     const { operations, calendarID, memberID, addressID } = sync;
 
-    const payloadPromise = operations.map(async ({ type, data: { Event, veventComponent } }) => {
-        if (type === SyncOperationTypes.DELETE) {
-            if (!Event) {
-                throw new Error('Missing Event');
+    const payloadPromise = operations.map(
+        async ({
+            type,
+            data: { Event, veventComponent },
+        }): Promise<DeleteCalendarEventSyncData | CreateCalendarEventSyncData | UpdateCalendarEventSyncData> => {
+            if (type === SyncOperationTypes.DELETE) {
+                if (!Event) {
+                    throw new Error('Missing Event');
+                }
+                return {
+                    ID: Event.ID,
+                };
             }
-            return {
-                ID: Event.ID,
+
+            const oldCalendarID = Event?.CalendarID;
+            const isUpdateEvent = !!Event;
+            const isSwitchCalendar = isUpdateEvent && oldCalendarID !== calendarID;
+
+            if (isSwitchCalendar) {
+                throw new Error('Can currently not change calendar with the sync operation');
+            }
+
+            const newCalendarKeys = calendarKeysMap[calendarID];
+            const oldCalendarKeys = isSwitchCalendar && oldCalendarID ? calendarKeysMap[oldCalendarID] : undefined;
+            const addressKeys = addressKeysMap[addressID];
+
+            if (!veventComponent) {
+                throw new Error('Missing vevent component');
+            }
+
+            const data = await createCalendarEvent({
+                eventComponent: veventComponent,
+                isSwitchCalendar,
+                ...(await getCreationKeys({ Event, addressKeys, newCalendarKeys, oldCalendarKeys })),
+            });
+
+            const dataComplete = {
+                Permissions: 3,
+                ...data,
             };
-        }
 
-        const oldCalendarID = Event?.CalendarID;
-        const isUpdateEvent = !!Event;
-        const isSwitchCalendar = isUpdateEvent && oldCalendarID !== calendarID;
-
-        if (isSwitchCalendar) {
-            throw new Error('Can currently not change calendar with the sync operation');
-        }
-
-        const newCalendarKeys = calendarKeysMap[calendarID];
-        const oldCalendarKeys = isSwitchCalendar && oldCalendarID ? calendarKeysMap[oldCalendarID] : undefined;
-        const addressKeys = addressKeysMap[addressID];
-
-        if (!veventComponent) {
-            throw new Error('Missing vevent component');
-        }
-
-        const data = await createCalendarEvent({
-            eventComponent: veventComponent,
-            isSwitchCalendar,
-            ...(await getCreationKeys({ Event, addressKeys, newCalendarKeys, oldCalendarKeys })),
-        });
-
-        const dataComplete = {
-            Permissions: 3,
-            ...data,
-        };
-
-        if (isUpdateEvent) {
-            if (!Event) {
-                throw new Error('Missing event');
+            if (isUpdateEvent) {
+                if (!Event) {
+                    throw new Error('Missing event');
+                }
+                return {
+                    ID: Event.ID,
+                    Event: dataComplete,
+                };
             }
+
             return {
-                ID: Event.ID,
                 Event: dataComplete,
             };
         }
-
-        return {
-            Event: dataComplete,
-        };
-    });
+    );
 
     return syncMultipleEventsRoute(calendarID, {
         MemberID: memberID,

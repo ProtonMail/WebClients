@@ -1,4 +1,4 @@
-import { syncMultipleEvents } from 'proton-shared/lib/api/calendars';
+import { CreateCalendarEventSyncData, syncMultipleEvents } from 'proton-shared/lib/api/calendars';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { API_CODES } from 'proton-shared/lib/constants';
 import { chunk } from 'proton-shared/lib/helpers/array';
@@ -112,7 +112,9 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 return;
             }
             // prepare the events data in the way the API wants it
-            const Events = events.map((event) => ({ Event: { Permissions: 3, ...event.data } }));
+            const Events = events.map(
+                (event): CreateCalendarEventSyncData => ({ Event: { Permissions: 3, ...event.data } })
+            );
             // submit the data
             const responses: { Code: number; Index: number; Error?: string }[] = [];
             try {

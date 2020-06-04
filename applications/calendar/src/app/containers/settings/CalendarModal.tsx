@@ -20,6 +20,7 @@ import {
     updateCalendarSettings,
     updateCalendar,
     updateCalendarUserSettings,
+    CalendarCreateData,
 } from 'proton-shared/lib/api/calendars';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 
@@ -119,7 +120,7 @@ const CalendarModal = ({
 
     const handleCreateCalendar = async (
         addressID: string,
-        calendarPayload: Partial<Calendar>,
+        calendarPayload: CalendarCreateData,
         calendarSettingsPayload: Partial<CalendarSettings>
     ) => {
         const [addresses, addressKeys] = await Promise.all([getAddresses(), getAddressKeys(addressID)]);
@@ -131,7 +132,10 @@ const CalendarModal = ({
             throw new Error('Missing primary key');
         }
 
-        const { Calendar, Calendar: { ID: newCalendarID } = {} } = await api<{ Calendar: Calendar }>(
+        const {
+            Calendar,
+            Calendar: { ID: newCalendarID },
+        } = await api<{ Calendar: Calendar }>(
             createCalendar({
                 ...calendarPayload,
                 AddressID: addressID,
@@ -140,7 +144,7 @@ const CalendarModal = ({
 
         await setupCalendarKey({
             api,
-            calendarID: Calendar.ID,
+            calendarID: newCalendarID,
             addresses,
             getAddressKeys,
         }).catch((e: Error) => {
