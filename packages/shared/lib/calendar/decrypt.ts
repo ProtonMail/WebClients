@@ -58,6 +58,10 @@ export const decryptCard = async (
         throw error;
     }
 
+    if (typeof decryptedData !== 'string') {
+        throw new Error('Unknown data');
+    }
+
     return decryptedData;
 };
 

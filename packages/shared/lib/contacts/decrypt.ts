@@ -48,7 +48,10 @@ export const decrypt = async (
     }
 
     try {
-        const { data }: { data: string } = await decryptMessage({ message, privateKeys });
+        const { data } = await decryptMessage({ message, privateKeys });
+        if (data && typeof data !== 'string') {
+            throw new Error('Unknown data');
+        }
         return { type: SUCCESS, data };
     } catch (error) {
         return { type: FAIL_TO_DECRYPT, error };
@@ -100,6 +103,10 @@ export const decryptSigned = async (
             publicKeys,
             signature
         });
+
+        if (data && typeof data !== 'string') {
+            throw new Error('Unknown data');
+        }
 
         if (verified !== 1) {
             return { data, type: SIGNATURE_NOT_VERIFIED, error: new Error(c('Error').t`Signature not verified`) };

@@ -24,7 +24,7 @@ export const fromBitmap = (value: number, keys: string[] = []) =>
  * @param properties Properties to omit.
  * @retuns Returns a new object.
  */
-export const omit = <T extends object, K extends keyof T>(model: T, properties: K[] = []): Omit<T, K> => {
+export const omit = <T extends object, K extends keyof T>(model: T, properties: ReadonlyArray<K> = []): Omit<T, K> => {
     const result = { ...model };
     for (let i = 0; i < properties.length; ++i) {
         delete result[properties[i]];
@@ -38,11 +38,13 @@ export const omit = <T extends object, K extends keyof T>(model: T, properties: 
  * @param properties Properties to keep.
  * @return Returns a new object.
  */
-export const pick = <T extends object, K extends keyof T>(model: T, properties: K[] = []) => {
+export const pick = <T extends object, K extends keyof T>(model: T, properties: ReadonlyArray<K> = []) => {
     const result: Pick<T, K> = {} as any;
     for (let i = 0; i < properties.length; ++i) {
         const key = properties[i];
-        result[key] = model[key];
+        if (key in model) {
+            result[key] = model[key];
+        }
     }
     return result;
 };

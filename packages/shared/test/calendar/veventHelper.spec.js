@@ -18,6 +18,7 @@ LOCATION:asd
 END:VEVENT
 `);
         const result = getVeventParts(y);
+
         expect(result).toEqual({
             sharedPart: {
                 [SIGNED]: toCRLF(`BEGIN:VCALENDAR
@@ -40,7 +41,7 @@ END:VCALENDAR`)
             },
             calendarPart: { [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
             personalPart: { [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
-            attendeesPart: { [CLEAR]: undefined, [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined }
+            attendeesPart: { [CLEAR]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined }
         });
     });
 
@@ -118,7 +119,7 @@ END:VEVENT
 END:VCALENDAR`),
                 [ENCRYPTED_AND_SIGNED]: undefined
             },
-            attendeesPart: { [CLEAR]: undefined, [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined }
+            attendeesPart: { [CLEAR]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined }
         });
     });
 });

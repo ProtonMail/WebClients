@@ -9,6 +9,7 @@ import {
     VcalVeventComponent
 } from '../interfaces/calendar/VcalModel';
 import { mod } from '../helpers/math';
+import { getIsIcalPropertyAllDay } from './vcalHelper';
 
 export const dateToProperty = ({
     year = 1,
@@ -53,30 +54,26 @@ export const getDateTimeProperty = (zonelessTime: DateTime, tzid = '') => {
     return dateTimeToProperty(zonelessTime, isUTC, isUTC ? undefined : tzid);
 };
 
-export const isIcalPropertyAllDay = (property: VcalDateOrDateTimeProperty): property is VcalDateProperty => {
-    return property.parameters?.type === 'date' ?? false;
-};
-
 export const getPropertyTzid = (property: VcalDateOrDateTimeProperty) => {
-    if (isIcalPropertyAllDay(property)) {
+    if (getIsIcalPropertyAllDay(property)) {
         return;
     }
     return property.value.isUTC ? 'UTC' : property.parameters?.tzid;
 };
 
 export const getDateOrDateTimeProperty = (property: VcalDateOrDateTimeProperty, start: Date) => {
-    if (isIcalPropertyAllDay(property)) {
+    if (getIsIcalPropertyAllDay(property)) {
         return getDateProperty(fromUTCDate(start));
     }
     return getDateTimeProperty(fromUTCDate(start), getPropertyTzid(property));
 };
 
 export const isIcalAllDay = ({ dtstart, dtend }: VcalVeventComponent) => {
-    return (dtstart && isIcalPropertyAllDay(dtstart)) || (dtend && isIcalPropertyAllDay(dtend));
+    return (dtstart && getIsIcalPropertyAllDay(dtstart)) || (dtend && getIsIcalPropertyAllDay(dtend));
 };
 
 export const propertyToUTCDate = (property: VcalDateOrDateTimeProperty) => {
-    if (isIcalPropertyAllDay(property) || property.value.isUTC || !property.parameters?.tzid) {
+    if (getIsIcalPropertyAllDay(property) || property.value.isUTC || !property.parameters?.tzid) {
         return toUTCDate(property.value);
     }
     // For dates with a timezone, convert the relative date time to UTC time

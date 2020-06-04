@@ -72,8 +72,8 @@ export const readCalendarEvent = async ({
     ]);
 
     return {
-        ...parse(unwrap(sharedEncryptedResult)),
-        ...parse(unwrap(sharedSignedResult)),
+        ...(sharedEncryptedResult && parse(unwrap(sharedEncryptedResult))),
+        ...(sharedSignedResult && parse(unwrap(sharedSignedResult))),
         ...(calendarEncryptedResult && parse(unwrap(calendarEncryptedResult))),
         ...(calendarSignedResult && parse(unwrap(calendarSignedResult))),
         ...(attendeesResult && toInternalAttendee(parse(unwrap(attendeesResult)), Attendees))

@@ -130,21 +130,22 @@ export interface VcalStringWithParamsProperty {
     params?: { [key: string]: string };
 }
 
+export interface VcalAttendeePropertyParameters {
+    cutype?: string;
+    member?: string;
+    role?: string;
+    partstat?: string;
+    cn?: string;
+    rsvp?: string;
+    dir?: string;
+    language?: string;
+    'sent-by'?: string;
+    'delegated-from'?: string;
+    'delegated-to': string;
+}
 export interface VcalAttendeeProperty {
     value: string;
-    parameters?: {
-        cutype?: string;
-        member?: string;
-        role?: string;
-        partstat?: string;
-        cn?: string;
-        rsvp?: string;
-        dir?: string;
-        language?: string;
-        'sent-by'?: string;
-        'delegated-from'?: string;
-        'delegated-to': string;
-    };
+    parameters?: VcalAttendeePropertyParameters;
 }
 
 export interface VcalVeventComponent {

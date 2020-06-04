@@ -14,8 +14,7 @@ const generateAttendeeToken = () => {
 /**
  * Internally permissions are stored as x-pm-permissions in the vevent,
  * but stripped for the api.
- * @param {Object}
- * @returns {Object}
+ * @type any
  */
 export const fromInternalAttendee = ({
     parameters: {
