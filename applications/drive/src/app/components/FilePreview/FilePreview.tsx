@@ -27,6 +27,7 @@ export const isSupportedImage = (mimeType: string) =>
         .includes(mimeType);
 
 export const isSupportedText = (mimeType: string) => mimeType.startsWith('text/');
+export const isVideo = (mimeType: string) => mimeType.startsWith('video/');
 export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mimeType === 'x-pdf';
 
 // Will include more rules in the future

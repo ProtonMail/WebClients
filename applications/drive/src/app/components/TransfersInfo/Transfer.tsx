@@ -8,7 +8,7 @@ import ProgressBar, { ProgressBarStatus } from './ProgressBar';
 import { TransferState } from '../../interfaces/transfer';
 import TransferStateIndicator from './TransferStateIndicator';
 import TransferControls from './TransferControls';
-import FileIcon from '../FileIcon';
+import FileIcon from '../FileIcon/FileIcon';
 
 export enum TransferType {
     Download = 'download',
