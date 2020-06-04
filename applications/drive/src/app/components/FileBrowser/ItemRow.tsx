@@ -8,7 +8,7 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { LinkType } from '../../interfaces/link';
 import { FileBrowserItem } from './FileBrowser';
-import MimeIcon from '../FileIcon';
+import FileIcon from '../FileIcon/FileIcon';
 import LocationCell from './LocationCell';
 
 interface Props {
@@ -75,7 +75,7 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
             />
         </div>,
         <div key="filename" className="flex flex-items-center flex-nowrap">
-            <MimeIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MimeType} />
+            <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MimeType} />
             <span title={item.Name} className="ellipsis">
                 {item.Name}
             </span>

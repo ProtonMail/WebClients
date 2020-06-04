@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { Icon, useLoading, Button, LinkButton, classnames, TableRowBusy } from 'react-components';
 
-import MimeIcon from '../FileIcon';
+import FileIcon from '../FileIcon/FileIcon';
 
 interface Props {
     linkId: string;
@@ -85,7 +85,7 @@ const ExpandableRow = ({
                         </Button>
                     </div>
                     <div key="Name" className="pd-folder-tree-listItem-name flex flex-items-center flex-nowrap w100">
-                        <MimeIcon mimeType="Folder" />
+                        <FileIcon mimeType="Folder" />
                         <span className="ellipsis" title={name}>
                             {name}
                         </span>
