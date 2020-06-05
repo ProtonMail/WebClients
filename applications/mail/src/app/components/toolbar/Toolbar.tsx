@@ -11,6 +11,7 @@ import ToolbarDropdown from './ToolbarDropdown';
 import LayoutDropdown from './LayoutDropdown';
 import MoveButtons from './MoveButtons';
 import DeleteButton from './DeleteButton';
+import EmptyButton from './EmptyButton';
 import SortDropdown from './SortDropdown';
 import FilterDropdown from './FilterDropdown';
 import SelectAll from './SelectAll';
@@ -139,6 +140,7 @@ const Toolbar = ({
                         />
                     )}
                 </ToolbarDropdown>
+                <EmptyButton labelID={labelID} breakpoints={breakpoints} elements={elements} />
             </div>
             <div className="flex">
                 {breakpoints.isDesktop && (

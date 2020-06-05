@@ -42,27 +42,17 @@ const MoveButtons = ({ labelID = '', mailSettings, breakpoints, selectedIDs = []
         });
     };
 
-    const displayTrash =
-        !labelIncludes(labelID, DRAFTS, ALL_DRAFTS, TRASH) && (!breakpoints.isNarrow || !labelIncludes(labelID, SPAM));
+    const displayInbox = !breakpoints.isNarrow && !labelIncludes(labelID, INBOX, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS);
 
-    const displayInbox = !breakpoints.isNarrow && !labelIncludes(labelID, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS);
+    const displayTrash = !labelIncludes(labelID, TRASH) && (!breakpoints.isNarrow || !labelIncludes(labelID, SPAM));
 
-    const displayArchive = !breakpoints.isNarrow && !labelIncludes(labelID, DRAFTS, ALL_DRAFTS, ARCHIVE);
+    const displayArchive =
+        !breakpoints.isNarrow && !labelIncludes(labelID, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, ARCHIVE);
 
-    const displaySpam = !breakpoints.isNarrow && !labelIncludes(labelID, SENT, ALL_SENT, SPAM);
+    const displaySpam = !breakpoints.isNarrow && !labelIncludes(labelID, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SPAM);
 
     return (
         <>
-            {displayTrash ? (
-                <ToolbarButton
-                    loading={loading}
-                    title={c('Action').t`Move to trash`}
-                    onClick={() => withLoading(handleMove(TRASH))}
-                    disabled={!selectedIDs.length}
-                >
-                    <Icon className="toolbar-icon mauto" name="trash" />
-                </ToolbarButton>
-            ) : null}
             {displayInbox ? (
                 <ToolbarButton
                     loading={loading}
@@ -91,6 +81,16 @@ const MoveButtons = ({ labelID = '', mailSettings, breakpoints, selectedIDs = []
                     disabled={!selectedIDs.length}
                 >
                     <Icon className="toolbar-icon mauto" name="spam" />
+                </ToolbarButton>
+            ) : null}
+            {displayTrash ? (
+                <ToolbarButton
+                    loading={loading}
+                    title={c('Action').t`Move to trash`}
+                    onClick={() => withLoading(handleMove(TRASH))}
+                    disabled={!selectedIDs.length}
+                >
+                    <Icon className="toolbar-icon mauto" name="trash" />
                 </ToolbarButton>
             ) : null}
         </>
