@@ -47,7 +47,7 @@ const CalendarSidebar = ({
     return (
         <div className="sidebar flex flex-nowrap flex-column noprint" data-expanded={expanded}>
             <div className="nodesktop notablet flex-item-noshrink">
-                <div className="flex flex-spacebetween flex-items-center">
+                <div className="flex flex-spacebetween flex-items-center pl1 pr1">
                     <MainLogo url={url} />
                     <Hamburger expanded={expanded} onToggle={onToggleExpand} />
                 </div>

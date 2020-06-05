@@ -1,14 +1,5 @@
 import React, { ReactNode, Ref, useCallback, useEffect, useMemo } from 'react';
-import {
-    AppsSidebar,
-    classnames,
-    Href,
-    FullLoader,
-    LocalizedMiniCalendar,
-    StorageSpaceStatus,
-    useToggle,
-    TextLoader,
-} from 'react-components';
+import { classnames, FullLoader, LocalizedMiniCalendar, useToggle, TextLoader } from 'react-components';
 import { c } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
 
@@ -122,18 +113,6 @@ const CalendarContainerView = ({
 
     return (
         <div className={classnames(['flex flex-nowrap no-scroll', isBlurred && 'filter-blur'])} ref={containerRef}>
-            <AppsSidebar
-                items={[
-                    <StorageSpaceStatus
-                        key="storage"
-                        upgradeButton={
-                            <Href url="/settings/subscription" target="_self" className="pm-button pm-button--primary">
-                                {c('Action').t`Upgrade`}
-                            </Href>
-                        }
-                    />,
-                ]}
-            />
             <div className="content flex-item-fluid reset4print">
                 <PrivateHeader
                     url="/calendar"

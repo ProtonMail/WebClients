@@ -1,5 +1,5 @@
 import React from 'react';
-import { classnames, Icon, Loader } from 'react-components';
+import { classnames, Icon, Loader, Progress } from 'react-components';
 
 interface Props {
     id: string;
@@ -20,10 +20,9 @@ const DynamicProgress = ({
     partialSuccess,
     ...rest
 }: Props) => {
-    const { icon, progressClassname } = loading
+    const { icon, progressClassname = '' } = loading
         ? {
               icon: <Loader />,
-              progressClassname: 'progress-contact',
           }
         : success
         ? {
@@ -32,7 +31,7 @@ const DynamicProgress = ({
                       <Icon name="on" color="white" size={24} />
                   </span>
               ),
-              progressClassname: 'progress-contact progress-contact--success',
+              progressClassname: 'progressbar--success',
           }
         : partialSuccess
         ? {
@@ -41,7 +40,7 @@ const DynamicProgress = ({
                       <Icon name="off" color="white" size={24} />
                   </span>
               ),
-              progressClassname: 'progress-contact progress-contact--warning',
+              progressClassname: 'progressbar--warning',
           }
         : {
               icon: (
@@ -49,14 +48,14 @@ const DynamicProgress = ({
                       <Icon name="off" color="white" size={24} />
                   </span>
               ),
-              progressClassname: 'progress-contact progress-contact--error',
+              progressClassname: 'progressbar--error',
           };
 
     return (
         <div className="aligncenter">
             {icon}
-            <progress
-                className={classnames(['w100 mt1', progressClassname])}
+            <Progress
+                className={classnames(['mt1', progressClassname])}
                 aria-describedby={id}
                 value={value}
                 max={max}

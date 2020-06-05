@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useToggle, useModals, AppsSidebar, Sidebar, StorageSpaceStatus, Href, Info } from 'react-components';
+import { useToggle, useModals, Sidebar, Info } from 'react-components';
 import { Redirect, Route, Switch } from 'react-router';
 import { c } from 'ttag';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
@@ -78,18 +78,6 @@ const SettingsContainer = ({
 
     return (
         <div className="flex flex-nowrap no-scroll">
-            <AppsSidebar
-                items={[
-                    <StorageSpaceStatus
-                        key="storage"
-                        upgradeButton={
-                            <Href url="/settings/subscription" target="_self" className="pm-button pm-button--primary">
-                                {c('Action').t`Upgrade`}
-                            </Href>
-                        }
-                    />,
-                ]}
-            />
             <div className="content flex-item-fluid reset4print">
                 <PrivateHeader
                     url="/calendar"

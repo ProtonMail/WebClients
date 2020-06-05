@@ -7,6 +7,7 @@ import {
     TopNavbar,
     TopNavbarLink,
     FloatingButton,
+    AppsDropdown,
 } from 'react-components';
 import { c } from 'ttag';
 
@@ -24,7 +25,10 @@ const PrivateHeader = ({ title, url, inSettings, onCreateEvent, expanded, onTogg
     const [{ hasPaidMail }] = useUser();
     return (
         <header className="header flex flex-nowrap reset4print">
-            <MainLogo url={url} className="nomobile" />
+            <div className="logo-container flex flex-spacebetween flex-items-center flex-nowrap nomobile">
+                <MainLogo url={url} />
+                <AppsDropdown />
+            </div>
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
             {title && isNarrow ? <span className="big lh-standard mtauto mbauto ellipsis">{title}</span> : null}
             <TopNavbar>
