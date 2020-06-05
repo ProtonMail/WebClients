@@ -1670,7 +1670,7 @@ if ( stickyTitle ) {
 
 
 function updateFakeProgress() {
-  var progressBar = document.body.querySelector('.progress-contact');
+  var progressBar = document.body.querySelector('.progressbar');
   var progressText = document.body.querySelector('.js-fakeprogress');
 
   progressBarValue = Number(progressBar.getAttribute('value'));
@@ -1684,14 +1684,14 @@ function updateFakeProgress() {
   }
 }
 
-var progressBar = document.body.querySelector('.progress-contact');
+var progressBar = document.body.querySelector('.progressbar');
 
 if ( progressBar ) {
   setInterval(updateFakeProgress, 3000 );
 }
 
 function resetProgress() {
-  var progressBar = document.body.querySelector('.progress-contact');
+  var progressBar = document.body.querySelector('.progressbar');
   var progressText = document.body.querySelector('.js-fakeprogress');
 
   progressBar.setAttribute('value', 0);

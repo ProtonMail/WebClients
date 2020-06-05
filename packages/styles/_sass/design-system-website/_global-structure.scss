@@ -33,7 +33,6 @@ body {
   min-height: calc(100vh - #{$header-height});
   max-height: calc(100vh - #{$header-height});
   width: var(--width-sidebar, $width-sidebar);
-  max-width: 22rem; // design request
   visibility: visible;
   transition: visibility 0s ease, transform 1s ease, width .6s ease , opacity 1s ease ;
   transition-delay: 0s;
@@ -41,22 +40,35 @@ body {
 }
 
 .logo-container {
-  padding-left: 2rem;
+  padding: 0 1em;
   width: var(--width-sidebar, #{$width-sidebar});
-  max-width: 22rem; // design request
+}
+.logo-link {
+  position: relative;
+  padding: .625em .5em .875em;
+  box-sizing: initial;
+  border-radius: $global-border-radius;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(white, .05);
+    color: inherit;
+  }
+
+  .plan {
+    position: absolute;
+    bottom: .125em;
+    left: 3rem;
+	font-size: 1rem;
+	line-height: 1;
+  }
 }
 .logo {
-  width: 148px;
-  height: 48px;
-}
-.logo--withoutPlan {
-  height: 37px;
+  width: auto;
+  height: 1.5em;
 }
 .logo g {
   fill: var(--fillcolor-logo, $pm-global-light);
-}
-.logo .plan {
-  font-size: 1rem;
 }
 
 
@@ -64,20 +76,18 @@ body {
 
 
 .main {
-  border-radius: 4px 4px 0 0;
-  margin-right: 20px;
+  overflow: hidden;
+  border-top-left-radius: 4px;
   z-index: 1; // in case of drop shadow
   box-shadow: var(--boxshadow-main, none);
-}
-@if $rtl-option == true {
-  [dir="rtl"] {
-    .main {
-      margin-right: 0;
-      margin-left: 20px;
+
+  @if $rtl-option == true {
+    [dir="rtl"] & {
+      border-top-left-radius: 0;
+      border-top-right-radius: 4px;
     }
   }
 }
-
 
 .main-area {
   background: var(--bgcolor-main-area, $white);
@@ -85,7 +95,7 @@ body {
   height: calc(100vh - #{$header-height} );
   max-height: calc(100vh - #{$header-height} );
   overflow: auto;
-  border-radius: 4px 4px 0 0;
+  border-top-left-radius: 4px;
 
   &.no-scroll {
     overflow: hidden;

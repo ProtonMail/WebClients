@@ -1,0 +1,71 @@
+---
+layout: default
+lang: en
+pageId: meter
+title: Meter bar
+description: Meter bar component
+keywords: meter, numeric values, examples, code
+section: components
+---
+
+<p>The <code>&lt;meter&gt;</code> element &mdash; or <code>&lt;Meter&gt;</code> react component &mdash; must only be used for a visual rendering of a graduated and limited value, <strong>not for a progression</strong>. For a progression value, see <code>progress</code> bars in <a href="/loading-content/">Loading content</a>.</p>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+	<div class="w49 pt0-5">
+		<span id="desc1">2 of 10 emails</span><br>
+		<meter min="0" max="10" low="5" high="8" optimum="0" value="2" class="meterbar w100" aria-describedby="desc1">You shall not fill! 🧙</meter>
+		<br><br>
+		<span id="desc2">6 of 10 emails</span><br>
+		<meter min="0" max="10" low="5" high="8" optimum="0" value="6" class="meterbar w100" aria-describedby="desc2">You shall not fill! 🧙</meter>
+		<br><br>
+		<span id="desc3">9 of 10 emails</span><br>
+		<meter min="0" max="10" low="5" high="8" optimum="0" value="9" class="meterbar w100" aria-describedby="desc3">You shall not fill! 🧙</meter>
+		<br><br>
+		<span id="desc4">11 of 10 emails</span><br>
+		<meter min="0" max="10" low="5" high="8" optimum="0" value="11" class="meterbar w100" aria-describedby="desc4">You shall not fill! 🧙</meter>
+	</div>
+	<div class="w49 aligncenter">
+		<pre class="language-markup"><code>&lt;span id="desc1"&gt;2 of 10 emails&lt;/span&gt;&lt;br&gt;
+&lt;meter <strong>min="0" max="10" low="5" high="8" optimum="0" value="2"</strong> class="<strong>meterbar</strong> w100" <strong>aria-describedby="desc1"</strong>&gt;&lt;/meter&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;span id="desc2"&gt;6 of 10 emails&lt;/span&gt;&lt;br&gt;
+&lt;meter min="0" max="10" low="5" high="8" optimum="0" <strong>value="6"</strong> class="meterbar w100" aria-describedby="desc2"&gt;&lt;/meter&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;span id="desc3"&gt;9 of 10 emails&lt;/span&gt;&lt;br&gt;
+&lt;meter min="0" max="10" low="5" high="8" optimum="0" <strong>value="9"</strong> class="meterbar w100" aria-describedby="desc3"&gt;&lt;/meter&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;span id="desc4"&gt;11 of 10 emails&lt;/span&gt;&lt;br&gt;
+&lt;meter min="0" max="10" low="5" high="8" optimum="0" <strong>value="11"</strong> class="meterbar w100" aria-describedby="desc4"&gt;&lt;/meter&gt;
+</code></pre>
+	</div>
+</div>
+
+<p>Set properties values as following:</p>
+<ul>
+	<li><strong><code>min</code></strong> to the minimum value of your data, lower than <code>max</code></li>
+	<li><strong><code>max</code></strong> to the maximum value of your data, higher than <code>min</code></li>
+	<li><strong><code>low</code></strong> to a value of your data that can be understood as low, within the range of <code>min</code> and <code>max</code></li>
+	<li><strong><code>high</code></strong> to a value of your data that can be understood as high, within the range of <code>min</code> and <code>max</code></li>
+	<li><strong><code>optimum</code></strong> to the optimal value of your data, within the range of <code>min</code> and <code>max</code>. This will influent the behaviour of <code>low</code> and <code>high</code>: it gives an indication where along the range is considered preferable. For example, if it is between the <code>min</code> attribute and the <code>low</code> attribute, then the lower range is considered preferred.</li>
+</ul>
+
+<p>Further explanations:</p>
+<ul>
+	<li>If the <code>optimum</code> value is lower than <code>low</code> value, it indicates that the lower values are optimum, so lower values will be <strong>green</strong>, between <code>low</code> and <code>high</code> will be <strong>yellow</strong>, and <strong>red</strong> higher than <code>high</code></li>
+	<li>If the <code>optimum</code> value is higher than <code>high</code> value, it indicates that the higher values are optimum, so lower values will be <strong>red</strong>, between <code>low</code> and <code>high</code> will be <strong>yellow</strong>, and <strong>green</strong> higher than <code>high</code></li>
+	<li>If the <code>optimum</code> value is between <code>low</code> and <code>high</code> values, it indicates that extremes values aren't the best, so they will be <strong>yellow</strong>, and values between <code>low</code> and <code>high</code> will be <strong>green</strong></li>
+</ul>
+
+<p>For simplicity, we have set default parameters of the <code>&lt;Meter&gt;</code> react component as if you would use a percentage, so they are <code>min="0" max="100" low="50" high="80" optimum="0"</code>. With those default values, since <code>optimum</code> value is lower than <code>low</code> value, you will have:</p>
+<ul>
+	<li>Green between <code>0</code> and <code>50</code></li>
+	<li>Yellow between <code>50</code> and <code>80</code></li>
+	<li>Red above <code>80</code>, including higher than <code>100</code></li>
+</ul>
+<p>Finally, for a better screen reader rendering, please do not fill numeric values inside <code>&lt;meter&gt;</code> tag. Link it to its description id via <code>aria-describedby</code> instead.</p>

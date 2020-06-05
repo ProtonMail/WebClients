@@ -7,7 +7,7 @@
  * BIGGER than large breakpoint
  */
 
- @include respond-to(1800, 'min') { 
+ @include respond-to(1800, 'min') {
 
   // :root {
   //   --body-fontsize: 1.6rem;
@@ -19,7 +19,7 @@
 }
 
 
-@include respond-to($breakpoint-large, 'min') { 
+@include respond-to($breakpoint-large, 'min') {
 
   :root {
     --width-sidebar: 15vw;
@@ -35,18 +35,18 @@
 /**
  * large breakpoint
  */
- @include respond-to($breakpoint-large) { 
-   
+ @include respond-to($breakpoint-large) {
+
   /**
    * global structure adaptation (page / skip links / header / main content / footer)
    */
 
-  
+
   /**
    * inside content (other styles for pages)
    */
-  
-  
+
+
   .colortile { width: 50%; }
 
   /* color rules */
@@ -62,8 +62,8 @@
 /**
  * large breakpoint
  */
- @include respond-to(1050) { 
-  
+ @include respond-to(1050) {
+
   /**
    * inside content (other styles for pages)
    */
@@ -77,8 +77,8 @@
 /**
  * medium/tablet breakpoint
  */
-@include respond-to($breakpoint-medium) { 
-   
+@include respond-to($breakpoint-medium) {
+
   /**
    * global structure adaptation (page / skip links / header / main content / footer)
    */
@@ -88,7 +88,7 @@
        -moz-column-count: 1;
             column-count: 1;
   }
-  
+
   /**
    * inside content (other styles for pages)
    */
@@ -106,7 +106,7 @@
 /**
  * small/mobile breakpoint
  */
-@include respond-to($breakpoint-small) { 
+@include respond-to($breakpoint-small) {
 
   /**
    * global structure adaptation (page / skip links / header / main content / footer)
@@ -116,10 +116,7 @@
     //margin-right: 0;
     border-radius: 0;
   }
-  .aside:not(.aside-noBurger) {
-    padding-top: .25em;
-  }
-  
+
   /**
    * inside content (other styles for pages)
    */
@@ -151,7 +148,7 @@
 /**
  * tiny/small mobile breakpoint
  */
-@include respond-to($breakpoint-tiny) { 
+@include respond-to($breakpoint-tiny) {
 
   /**
    * global structure adaptation (page / skip links / header / main content / footer)

@@ -4,10 +4,6 @@
  * ONCE TESTED, PLEASE UPDATE CSS FILES ACCORDINGLY
  */
 
-.aside {
-  background: var(--main-bg-color, $pm-global-grey);
-}
-
 .logo g {
   fill: var(--fillcolor-logo, $pm-global-light);
 }
@@ -17,7 +13,7 @@
 }
 
 .content {
-  background-image: -webkit-linear-gradient(top, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) ); 
+  background-image: -webkit-linear-gradient(top, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
   background-image: linear-gradient(to bottom, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
 }
 
@@ -39,16 +35,15 @@
   background: linear-gradient(to top, var(--main-bg-color, rgba(0, 0, 0, .4) ) 0, rgba($black, 0) 2em);
 }
 
-.aside-link {
-  background: var(--bgcolor-aside-link, $pm-global-altgrey);
-}
-
 .searchbox-field[type="search"] {
   background-color: var(--bgcolor-searchbox-field, $black);
   border-color: var(--main-bg-color, $black);
   background-image: var(--img-searchbox-path, url(#{$path-images}sprite-for-css-only.svg#css-search-white));
 }
 
+.aside-link {
+  background: var(--bgcolor-aside-link, $pm-global-altgrey);
+}
 
 .spacebar {
   background: var(--bgcolor-spacebar, $black);
@@ -56,7 +51,7 @@
 .spacebar {
   &::-webkit-meter-bar {
     background: var(--bgcolor-spacebar, $black);
-  }  
+  }
 }
 
 .topnav-link {
@@ -67,7 +62,7 @@
   &:active,
   &[aria-current="true"] {
     color: var(--color-nav-active, $pm-blue);
-    
+
     > .topnav-icon {
        fill: var(--color-nav-active, $pm-blue);
     }

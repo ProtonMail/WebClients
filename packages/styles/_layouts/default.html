@@ -20,56 +20,6 @@
   <body>
     <div class="body flex flex-nowrap no-scroll">
 
-    <aside class="aside flex flex-column noprint" id="aside-bar">
-
-      <ul class="unstyled flex flex-column flex-item-fluid m0 aligncenter">
-        <li class="mb0-5 nodesktop notablet ">
-          <button type="button" class="togglemenu w100 center color-global-light js-togglemenu aside-link" title="Navigation">
-            <svg viewBox="0 0 16 16" class="aside-linkIcon fill-global-light" role="img" focusable="false" aria-hidden="true">
-              <use xlink:href="#shape-burger"></use>
-            </svg>
-            <span class="sr-only">navigation</span>
-          </button>
-        </li>
-        <li class="mb0-5">
-          <a href="/" class="center flex aside-link" title="ProtonMail" {% if page.pageId <> 'settings' %} aria-current="true"{% endif %}>
-            <svg viewBox="0 0 16 16" class="aside-linkIcon mauto fill-global-light" role="img" focusable="false" aria-hidden="true">
-              <use xlink:href="#shape-protonmail"></use>
-            </svg>
-            <span class="sr-only">ProtonMail</span>
-          </a>
-        </li>
-        <li class="mb0-5">
-          <a class="center flex aside-link js-notyet" title="Contacts">
-            <svg viewBox="0 0 16 16" class="aside-linkIcon mauto fill-global-light" role="img" focusable="false" aria-hidden="true">
-              <use xlink:href="#shape-protoncontacts"></use>
-            </svg>
-            <span class="sr-only">Contacts</span>
-          </a>
-        </li>
-        <li class="mb0-5">
-          <a href="https://beta.protonmail.com/" class="center flex aside-link" title="Calendar">
-            <svg viewBox="0 0 16 16" class="aside-linkIcon mauto fill-global-light" role="img" focusable="false" aria-hidden="true">
-              <use xlink:href="#shape-protoncalendar"></use>
-            </svg>
-            <span class="sr-only">Calendar</span>
-          </a>
-        </li>
-        <li class="mtauto">
-            <svg class="circle-chart" viewbox="0 0 35.83098862 35.83098862" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-              <circle class="circle-chart__background" cx="17.91549431" cy="17.91549431" r="15.91549431" />
-              <circle class="circle-chart__circle" stroke-dasharray="30,100" stroke-linecap="butt" cx="17.91549431" cy="17.91549431" r="15.91549431" />
-              <g class="circle-chart__info">
-                  <rect x="17" y="14" width="1.55" height="9.1" class="circle-chart__percent fill-white"/>
-                  <rect x="17" y="11" width="1.55" height="1.53" class="circle-chart__percent fill-white"/>
-              </g>
-            </svg>
-            <span class="smallest mt0 mb0-5 lh100 circle-chart-info opacity-40 bl">1.3GB</span>
-        </li>
-      </ul>
-
-    </aside>
-
     <div class="content flex-item-fluid reset4print">
 
       {% include header.html %}

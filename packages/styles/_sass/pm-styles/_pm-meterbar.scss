@@ -1,116 +1,83 @@
-/*
- * Space remaining bar
- */
-$meterbar-height: 6px !default;
+@mixin meterbar-size($size: 1.5rem) {
+	height: $size;
+	border-radius: #{$size/2};
 
-.spacebar-container {
-  padding: 1rem 2rem;
-  color: var(--color-standard-text, $white);
+	&::-moz-meter-bar {
+		border-radius: #{$size/2};
+	}
+
+	&::-webkit-meter-bar {
+		height: $size; // Chrome 83 does not make meter and its bar the same height -_-v
+	}
+
+	&::-webkit-meter-optimum-value {
+		border-radius: #{$size/2};
+	}
+
+	&::-webkit-meter-suboptimum-value {
+		border-radius: #{$size/2};
+	}
+
+	&::-webkit-meter-even-less-good-value {
+		border-radius: #{$size/2};
+	}
 }
 
-.spacebar {
-  /* Reset the default appearance */
-  //-webkit-appearance: none; // well, because Chrome.
-  -moz-appearance: none;
-  //-ms-appearance: none;
-  /* autoprefixer: ignore next */
-  appearance: none;
+.meterbar {
+	@include meterbar-size;
 
-  height: $meterbar-height;
-  border-radius: #{$meterbar-height/2};
-  background: var(--bgcolor-spacebar, $black);
+	width: 100%;
+	background: var(--bgcolor-spacebar, $pm-global-muted);
+	appearance: none;
 
-  &::-webkit-meter-bar {
-    background: var(--bgcolor-spacebar, $black);
-    border-radius: #{$meterbar-height/2};
-  }
+	&::-webkit-meter-bar {
+		border: none;
+		background: none;
+	}
 
-  // &::-webkit-meter-optimum-value {
-  //   background: $pm-primary;
-  //   border-radius: #{$meterbar-height/2};
-  // }
-  &::-webkit-meter-optimum-value {
-    background: $pm-primary;
-    border-radius: #{$meterbar-height/2};
-  }
-  &:-moz-meter-optimum::-moz-meter-bar {
-    border-radius: #{$meterbar-height/2};
-    background: $pm-primary;
-  }
+	&::-moz-meter-bar {
+		display: inherit;
+	}
 
-}
+	&:not(#{&}--primary) {
+		&::-webkit-meter-optimum-value {
+			background: $pm-global-success;
+		}
+		&::-webkit-meter-suboptimum-value {
+			background: $pm-global-attention;
+		}
+		&::-webkit-meter-even-less-good-value {
+			background: $pm-global-warning;
+		}
 
-// .spacebar-percent {
-//   border-radius: 3px;
-//   background: $pm-primary;
-//   height: 6px;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// }
+		&:-moz-meter-optimum::-moz-meter-bar {
+			background: $pm-global-success;
+		}
+		&:-moz-meter-sub-optimum::-moz-meter-bar {
+			background: $pm-global-attention;
+		}
+		&:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+			background: $pm-global-warning;
+		}
+	}
 
-/* to target IE/EDGE: hack */
-// _:-ms-input-placeholder, :root {
-//   .spacebar {
-//     visibility: hidden;
-//   }
-//   .spacebar-gauge {
-//     visibility: visible;
-//   }
-// }
+	&--primary {
+		&::-webkit-meter-optimum-value {
+			background: $pm-primary;
+		}
+		&::-webkit-meter-suboptimum-value {
+			background: $pm-primary;
+		}
+		&::-webkit-meter-even-less-good-value {
+			background: $pm-primary;
+		}
 
-// .spacebar-version {
-//   color: rgba($white, .3);
-// }
+		&::-moz-meter-bar {
+			background: $pm-primary;
+		}
+	}
 
-
-.setting-meterbar {
-  //-webkit-appearance: none;
-  -moz-appearance: none;
-  //-ms-appearance: none;
-  /* autoprefixer: ignore next */
-  appearance: none;
-  height: 1.5rem;
-  padding: 0;
-  background: var(--bordercolor-input, $pm-global-muted);
-  box-shadow: 0 3px 6px 0 $input-shadow-color;
-
-  &::-webkit-meter-bar {
-	display: inherit;
-	border: 0; // For Edge
-	height: 1.5rem;
-	border-radius: 0;
-  }
-  &::-moz-meter-bar {
-    display: inherit;
-  }
-  &::-webkit-meter-optimum-value {
-    background: $pm-global-success;
-  }
-  &::-webkit-meter-suboptimum-value {
-    background: $pm-global-attention;
-  }
-  &::-webkit-meter-even-less-good-value {
-    background: $pm-global-warning;
-  }
-
-  &:-moz-meter-optimum::-moz-meter-bar {
-    background: $pm-global-success;
-  }
-  &:-moz-meter-sub-optimum::-moz-meter-bar {
-    background: $pm-global-attention;
-  }
-  &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
-    background: $pm-global-warning;
-  }
-
-}
-
-.setting-meterbar--high {
-  &::-webkit-meter-suboptimum-value {
-    background: $pm-global-warning;
-  }
-  &:-moz-meter-sub-optimum::-moz-meter-bar {
-    background-color: $pm-global-warning;
-  }
+	&.is-thin {
+		@include meterbar-size(.25em);
+	}
 }

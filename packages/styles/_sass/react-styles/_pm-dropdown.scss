@@ -1,4 +1,6 @@
 .dropDown {
+	--dropdown-border-color: var(--bordercolor-input, transparent);
+
 	position: fixed;
 	z-index: 666;
 	color: var(--color-main-area, $pm-global-grey);
@@ -51,7 +53,7 @@
 		left: calc(var(--left) * 1px);
 		transform: scale(1);
 		border-radius: $global-border-radius;
-		box-shadow: 0 0 1.5rem .3rem $input-shadow-color;
+		box-shadow: 0 .5rem 1.5rem 0 var(--dropdown-box-shadow, $input-shadow-color);
 		background: var(--bgcolor-main-area, $white);
 		animation-name: dropdownInLarge;
 
@@ -64,6 +66,21 @@
 				transform: scale(1);
 				opacity: 1;
 			}
+		}
+
+		// Add border in a layer under the dropdown in order to deal with arrow easily
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -2;
+			margin: -1px;
+			border: 1px solid var(--dropdown-border-color);
+			border-radius: $global-border-radius;
+			pointer-events: none;
 		}
 
 		// Out animation
@@ -129,7 +146,8 @@
 
 	/* Scrollable insides of the dropdown */
 	&-content {
-		min-height: 1em; overflow: auto;
+		min-height: 1em;
+		overflow: auto;
 		border-radius: $global-border-radius;
 		background: var(--bgcolor-main-area, $white) no-repeat;
 		background-image:
@@ -150,7 +168,7 @@
 			position: relative;
 			z-index: 1;
 			width: 100%;
-			box-shadow: 0 0 5rem 0 rgba(black, .3);
+			box-shadow: 0 0 5rem 0 rgba(black, .3); // Same as popins
 			transition: transform .1s ease-out;
 		}
 
@@ -235,6 +253,7 @@
 			}
 		}
 
+		& [aria-current='true']
 		& &--isSelected { // Specificity -_-v
 			&,
 			&:hover,
@@ -266,7 +285,9 @@
 			width: var(--size);
 			height: var(--size);
 			transform: rotate(45deg);
+			border: 1px solid var(--dropdown-border-color);
 			background-color: var(--bgcolor-main-area, $white);
+			pointer-events: none;
 		}
 
 		&--top,
