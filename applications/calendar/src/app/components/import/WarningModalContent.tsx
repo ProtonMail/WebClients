@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { Alert } from 'react-components';
 import { ImportCalendarModel } from '../../interfaces/Import';
@@ -13,18 +13,7 @@ const WarningModalContent = ({ model }: Props) => {
     const totalParsed = model.eventsParsed.length;
     const totalEventsDiscarded = model.eventsNotParsed.filter(({ component }) => component === 'vevent').length;
     const totalEvents = totalParsed + totalEventsDiscarded;
-    const errors = model.eventsNotParsed.map(({ idMessage, message: errorMessage }, index) => {
-        const error = (
-            <span key="error" className="color-global-warning">
-                {errorMessage}
-            </span>
-        );
-        const message = idMessage ? (c('Error importing event').jt`${idMessage}. ${error}` as ReactNode) : error;
-        return {
-            index,
-            message,
-        };
-    });
+    const errors = model.eventsNotParsed;
 
     const learnMore = model.failure ? '' : 'TODO_URL';
     const forNow = <span key="for-now" className="bold">{c('Import calendar warning').t`for now`}</span>;

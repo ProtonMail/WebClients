@@ -1,11 +1,59 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Details, Summary, Bordered } from 'react-components';
-import { DetailError } from '../../interfaces/Import';
+import { Bordered, Details, Summary } from 'react-components';
+import { truncateMore } from 'proton-shared/lib/helpers/string';
+import { ImportEventError } from './ImportEventError';
+import { MAX_UID_CHARS_DISPLAY } from '../../constants';
+
+const getComponentText = (component: string) => {
+    if (component === '') {
+        return c('Error importing event').t`Bad format. Component can not be read.`;
+    }
+    if (component === 'vcalendar') {
+        return '';
+    }
+    if (component === 'vtimezone') {
+        return c('Error importing event').t`Timezone`;
+    }
+    if (component === 'vtodo') {
+        return c('Error importing event').t`Todo`;
+    }
+    if (component === 'vevent') {
+        return c('Error importing event').t`Event`;
+    }
+    if (component === 'vjournal') {
+        return c('Error importing event').t`Journal`;
+    }
+    if (component === 'vfreebusy') {
+        return c('Error importing event').t`Free-busy`;
+    }
+    if (component === 'vevent') {
+        return c('Error importing event').t`Event`;
+    }
+    return c('Error importing event').t`Unknown`;
+};
+
+const getErrorIdentifierText = (error: ImportEventError) => {
+    const halfUidCharsToDisplay = Math.floor((MAX_UID_CHARS_DISPLAY - 3) / 2);
+    const shortUID = truncateMore({
+        string: error.componentId,
+        charsToDisplayStart: halfUidCharsToDisplay,
+        charsToDisplayEnd: halfUidCharsToDisplay,
+    });
+    return `${getComponentText(error.component)} ${shortUID}`;
+};
+
+const ErrorDetail = ({ error }: { error: ImportEventError }) => {
+    return (
+        <div className="color-global-warning">
+            {getErrorIdentifierText(error)}: {error.message}
+        </div>
+    );
+};
 
 interface Props {
     summary?: string;
-    errors: DetailError[];
+    errors: ImportEventError[];
 }
 
 const ErrorDetails = ({ errors, summary = c('Info on errors').t`Click for details` }: Props) => {
@@ -16,11 +64,9 @@ const ErrorDetails = ({ errors, summary = c('Info on errors').t`Click for detail
         <Details>
             <Summary>{summary}</Summary>
             <Bordered>
-                {errors
-                    .sort(({ index: index1 }, { index: index2 }) => index1 - index2)
-                    .map(({ index, message }) => (
-                        <div key={index}>{message}</div>
-                    ))}
+                {errors.map((error) => (
+                    <ErrorDetail error={error} />
+                ))}
             </Bordered>
         </Details>
     );

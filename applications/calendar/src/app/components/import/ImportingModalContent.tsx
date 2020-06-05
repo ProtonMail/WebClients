@@ -3,7 +3,6 @@ import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { API_CODES } from 'proton-shared/lib/constants';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import { wait } from 'proton-shared/lib/helpers/promise';
-import { truncate } from 'proton-shared/lib/helpers/string';
 import { CachedKey } from 'proton-shared/lib/interfaces';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import React, { Dispatch, SetStateAction, useEffect } from 'react';
@@ -16,7 +15,7 @@ import {
     useGetCalendarKeys,
 } from 'react-components';
 import { c } from 'ttag';
-import { HOUR, MAX_UID_CHARS_DISPLAY } from '../../constants';
+import { HOUR } from '../../constants';
 import getCreationKeys from '../../containers/calendar/getCreationKeys';
 import getMemberAndAddress, { getMemberAndAddressID } from '../../helpers/getMemberAndAddress';
 import { splitByRecurrenceId } from '../../helpers/import';
@@ -71,9 +70,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 });
                 return { uid, data };
             } catch (error) {
-                const shortUID = truncate(uid, MAX_UID_CHARS_DISPLAY);
-                const idMessage = c('Error importing event').t`Event ${shortUID} could not be encrypted`;
-                return new ImportEventError(IMPORT_EVENT_TYPE.ENCRYPTION_ERROR, 'vevent', idMessage);
+                return new ImportEventError(IMPORT_EVENT_TYPE.ENCRYPTION_ERROR, uid, 'vevent');
             }
         };
 
@@ -140,9 +137,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 .filter(({ Code }) => Code !== SINGLE_SUCCESS)
                 .map(({ Index, Error: errorMessage }) => {
                     const error = new Error(errorMessage);
-                    const shortUID = truncate(events[Index].uid, MAX_UID_CHARS_DISPLAY);
-                    const idMessage = c('Error importing event').t`Event ${shortUID} could not be imported`;
-                    return new ImportEventError(IMPORT_EVENT_TYPE.EXTERNAL_ERROR, 'vevent', idMessage, error);
+                    return new ImportEventError(IMPORT_EVENT_TYPE.EXTERNAL_ERROR, 'vevent', events[Index].uid, error);
                 });
             setModelWithAbort(
                 (model) => ({

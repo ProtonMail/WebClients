@@ -16,19 +16,7 @@ const ImportSummaryModalContent = ({ model }: Props) => {
     const success = imported === total;
     const partialSuccess = imported > 0 && !success;
 
-    const errors = [...model.eventsNotEncrypted, ...model.eventsNotImported].map((e, index) => {
-        const error = (
-            // eslint-disable-next-line react/no-array-index-key
-            <span key={index} className="color-global-warning">
-                {e.message}
-            </span>
-        );
-        const message = e.idMessage ? c('Error importing event').jt`${e.idMessage}. ${error}` : error;
-        return {
-            index,
-            message,
-        };
-    });
+    const errors = [...model.eventsNotEncrypted, ...model.eventsNotImported];
 
     const alertMessage = success
         ? c('Import calendar').ngettext(

@@ -107,17 +107,17 @@ const getErrorMessage = (errorType: IMPORT_EVENT_TYPE, externalError?: Error) =>
 export class ImportEventError extends Error {
     component: string;
 
-    idMessage: string;
+    componentId: string;
 
     type: IMPORT_EVENT_TYPE;
 
     externalError?: Error;
 
-    constructor(errorType: IMPORT_EVENT_TYPE, component: string, idMessage: string, externalError?: Error) {
+    constructor(errorType: IMPORT_EVENT_TYPE, component: string, componentId: string, externalError?: Error) {
         super(getErrorMessage(errorType, externalError));
         this.type = errorType;
         this.component = component;
-        this.idMessage = idMessage;
+        this.componentId = componentId;
         this.externalError = externalError;
         Object.setPrototypeOf(this, ImportEventError.prototype);
     }
