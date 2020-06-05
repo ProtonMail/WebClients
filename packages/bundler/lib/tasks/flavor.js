@@ -21,7 +21,24 @@ async function getNewConfig(api, flags = process.argv.slice(3), isCurrent = fals
             ...flags
         ]);
         debug(stdout, 'stdout config angular');
-        return JSON.parse(stdout);
+
+        /*
+            We need to rename the key sentry.sentry to sentry.dsn to match new config format from proton-pack
+            because only Legacy Angular is with this weird format.
+         */
+        const { sentry = {}, ...json } = JSON.parse(stdout);
+        const { sentry: dsn } = sentry;
+        const newConfig = {
+            ...json,
+            sentry: {
+                ...sentry,
+                dsn
+            }
+        };
+
+        debug(newConfig, 'new config angular with right dsn');
+
+        return newConfig;
     }
 
     // we don't use npx as for the CI we cached it so it's faster
@@ -48,6 +65,17 @@ async function writeNewConfig(api) {
         sentry: { dsn: newSentryDSN },
         secureUrl: newSecureURL
     } = await getNewConfig(api);
+
+    debug({
+        current: {
+            currentSentryDSN,
+            currentSecureURL
+        },
+        newConfig: {
+            newSentryDSN,
+            newSecureURL
+        }
+    });
 
     if (isWebClientLegacy()) {
         await sed(`s#apiUrl:"/api"#apiUrl:"${apiUrl}"#;`, SOURCE_FILE_INDEX);
