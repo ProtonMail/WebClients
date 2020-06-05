@@ -43,10 +43,11 @@ const getErrorIdentifierText = (error: ImportEventError) => {
     return `${getComponentText(error.component)} ${shortUID}`;
 };
 
-const ErrorDetail = ({ error }: { error: ImportEventError }) => {
+const ErrorDetail = ({ error, ...rest }: { error: ImportEventError }) => {
     return (
-        <div className="color-global-warning">
-            {getErrorIdentifierText(error)}: {error.message}
+        <div {...rest}>
+            <span>{`${getErrorIdentifierText(error)}: `}</span>
+            <span className="color-global-warning">{error.message}</span>
         </div>
     );
 };
@@ -65,7 +66,7 @@ const ErrorDetails = ({ errors, summary = c('Info on errors').t`Click for detail
             <Summary>{summary}</Summary>
             <Bordered>
                 {errors.map((error) => (
-                    <ErrorDetail error={error} />
+                    <ErrorDetail error={error} key={error.componentId} />
                 ))}
             </Bordered>
         </Details>
