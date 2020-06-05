@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Icon, DateInput, classnames, TimeInput } from 'react-components';
+import { isSameDay } from 'date-fns';
 
 import AllDayCheckbox from './inputs/AllDayCheckbox';
 import { getAllDayCheck } from './eventForm/stateActions';
@@ -32,11 +33,60 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
     const {
         handleChangeStartDate,
         handleChangeStartTime,
+        handleChangeEndDate,
         handleChangeEndTime,
         isDuration,
         minEndTime,
     } = useDateTimeFormHandlers({ model, setModel });
     const propsFor = createPropFactory({ model, setModel });
+    const endsOnSameDay = isSameDay(model.start.date, model.end.date);
+
+    const startDateInput = (
+        <DateInput
+            id="startDate"
+            className={classnames([!model.isAllDay && 'mr0-5', 'flex-item-fluid', 'flex-item-grow-2'])}
+            required
+            value={model.start.date}
+            onChange={handleChangeStartDate}
+            displayWeekNumbers={displayWeekNumbers}
+            weekStartsOn={weekStartsOn}
+            min={MINIMUM_DATE}
+            max={MAXIMUM_DATE}
+        />
+    );
+    const endDateInput = (
+        <DateInput
+            id="endDate"
+            className={classnames([!model.isAllDay && 'mr0-5', 'flex-item-fluid', 'flex-item-grow-2'])}
+            required
+            value={model.end.date}
+            onChange={handleChangeEndDate}
+            displayWeekNumbers={displayWeekNumbers}
+            weekStartsOn={weekStartsOn}
+            min={MINIMUM_DATE}
+            max={MAXIMUM_DATE}
+        />
+    );
+
+    const startTimeInput = (
+        <TimeInput
+            className="flex-item-fluid"
+            id="startTime"
+            value={model.start.time}
+            onChange={handleChangeStartTime}
+        />
+    );
+    const endTimeInput = (
+        <TimeInput
+            id="endTime"
+            className="flex-item-fluid"
+            value={model.end.time}
+            onChange={handleChangeEndTime}
+            aria-invalid={Boolean(errors.end)}
+            displayDuration={isDuration}
+            min={minEndTime}
+        />
+    );
 
     return (
         <>
@@ -52,38 +102,31 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
                 <TitleInput id="event-title-input" type={model.type} isSubmitted={isSubmitted} {...propsFor('title')} />
             </MinimalEventRow>
             <MinimalEventRow label={<Icon name="clock" />} className="flex flex-nowrap flex-row flex-items-center w100">
-                <DateInput
-                    id="startDate"
-                    className={classnames([!model.isAllDay && 'mr0-5', 'flex-item-fluid', 'flex-item-grow-2'])}
-                    required
-                    value={model.start.date}
-                    onChange={handleChangeStartDate}
-                    displayWeekNumbers={displayWeekNumbers}
-                    weekStartsOn={weekStartsOn}
-                    min={MINIMUM_DATE}
-                    max={MAXIMUM_DATE}
-                />
+                {startDateInput}
+                {model.isAllDay && !endsOnSameDay && (
+                    <>
+                        <EnDash />
+                        {endDateInput}
+                    </>
+                )}
                 {!model.isAllDay && (
                     <>
-                        <TimeInput
-                            className="flex-item-fluid"
-                            id="startTime"
-                            value={model.start.time}
-                            onChange={handleChangeStartTime}
-                        />
-                        <EnDash />
-                        <TimeInput
-                            id="endTime"
-                            className="flex-item-fluid"
-                            value={model.end.time}
-                            onChange={handleChangeEndTime}
-                            aria-invalid={Boolean(errors.end)}
-                            displayDuration={isDuration}
-                            min={minEndTime}
-                        />
+                        {startTimeInput}
+                        {endsOnSameDay && (
+                            <>
+                                <EnDash />
+                                {endTimeInput}
+                            </>
+                        )}
                     </>
                 )}
             </MinimalEventRow>
+            {!endsOnSameDay && !model.isAllDay && (
+                <MinimalEventRow className="flex flex-nowrap flex-row flex-items-center w100">
+                    {endDateInput}
+                    {endTimeInput}
+                </MinimalEventRow>
+            )}
             <MinimalEventRow>
                 <AllDayCheckbox
                     checked={model.isAllDay}
