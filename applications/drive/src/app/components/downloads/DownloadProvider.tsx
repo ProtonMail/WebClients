@@ -191,10 +191,11 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         });
     };
 
-    const addFolderToDownloadQueue = (filename: string) => {
+    const addFolderToDownloadQueue = (folderName: string) => {
         const files: { [id: string]: { meta: TransferMeta; controls: DownloadControls } } = {};
         const groupId = generateUID('drive-transfers');
         const partialsPromises: Promise<void>[] = [];
+        const folderMeta = { filename: `${folderName}.zip`, mimeType: 'application/zip' };
 
         const abortDownload = (groupId: string) => {
             Object.values(files).forEach(({ controls }) => controls.cancel());
@@ -205,7 +206,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
             ...downloads,
             {
                 id: groupId,
-                meta: { filename, mimeType: 'Folder' },
+                meta: folderMeta,
                 state: TransferState.Initializing,
                 startDate: new Date(),
                 type: LinkType.FOLDER
@@ -274,7 +275,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                         download.id === groupId
                             ? {
                                   ...download,
-                                  meta: { filename, size, mimeType: 'Folder' },
+                                  meta: { ...folderMeta, size },
                                   state: TransferState.Pending
                               }
                             : download
