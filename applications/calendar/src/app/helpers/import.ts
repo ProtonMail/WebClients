@@ -197,7 +197,6 @@ interface GetSupportedEventArgs {
     vcalComponent: VcalCalendarComponentOrError;
     hasXWrTimezone: boolean;
     calendarTzid?: string;
-    discardedUids?: string[];
 }
 export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid }: GetSupportedEventArgs) => {
     const componentId = getComponentIdentifier(vcalComponent);
