@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Icon, Row as LibRow, Label, DateInput, classnames, TimeInput } from 'react-components';
+import { Icon, DateInput, classnames, TimeInput } from 'react-components';
 
 import AllDayCheckbox from './inputs/AllDayCheckbox';
 import { getAllDayCheck } from './eventForm/stateActions';
@@ -13,21 +13,8 @@ import DescriptionInput from './inputs/DescriptionInput';
 import LocationInput from './inputs/LocationInput';
 import TitleInput from './inputs/TitleInput';
 import CalendarSelect from './inputs/CalendarSelect';
-import { NotificationInfo } from './NotificationInfo';
-
-interface RowProps {
-    children: React.ReactNode;
-    label?: React.ReactChild;
-    className?: string;
-    labelFor?: string;
-}
-
-const Row = ({ children, label = '', className, labelFor }: RowProps) => (
-    <LibRow collapseOnMobile={false}>
-        <Label htmlFor={labelFor}>{label}</Label>
-        <div className={className || 'flex-item-fluid'}>{children}</div>
-    </LibRow>
-);
+import MinimalErrowRow from './MinimalErrorRow';
+import MinimalEventRow from './MinimalEventRow';
 
 const EnDash = () => <span className="ml0-5 mr0-5">–</span>;
 
@@ -53,7 +40,7 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
 
     return (
         <>
-            <Row
+            <MinimalEventRow
                 label={
                     <>
                         <Icon name="circle" color={model.calendar.color} />
@@ -63,8 +50,8 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
                 labelFor="event-title-input"
             >
                 <TitleInput id="event-title-input" type={model.type} isSubmitted={isSubmitted} {...propsFor('title')} />
-            </Row>
-            <Row label={<Icon name="clock" />} className="flex flex-nowrap flex-row flex-items-center w100">
+            </MinimalEventRow>
+            <MinimalEventRow label={<Icon name="clock" />} className="flex flex-nowrap flex-row flex-items-center w100">
                 <DateInput
                     id="startDate"
                     className={classnames([!model.isAllDay && 'mr0-5', 'flex-item-fluid', 'flex-item-grow-2'])}
@@ -96,15 +83,15 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
                         />
                     </>
                 )}
-            </Row>
-            <Row>
+            </MinimalEventRow>
+            <MinimalEventRow>
                 <AllDayCheckbox
                     checked={model.isAllDay}
                     onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck(model, isAllDay) })}
                 />
-            </Row>
+            </MinimalEventRow>
             {model.calendars.length > 1 ? (
-                <Row
+                <MinimalEventRow
                     label={
                         <>
                             <Icon name="calendar" color={model.calendar.color} />
@@ -120,9 +107,9 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
                         model={model}
                         setModel={setModel}
                     />
-                </Row>
+                </MinimalEventRow>
             ) : null}
-            <Row
+            <MinimalEventRow
                 label={
                     <>
                         <Icon name="address" />
@@ -132,8 +119,8 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
                 labelFor="event-location-input"
             >
                 <LocationInput id="event-location-input" {...propsFor('location')} />
-            </Row>
-            <Row
+            </MinimalEventRow>
+            <MinimalEventRow
                 label={
                     <>
                         <Icon name="note" />
@@ -143,10 +130,8 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
                 labelFor="event-description-input"
             >
                 <DescriptionInput id="event-description-input" {...propsFor('description')} />
-            </Row>
-            <Row>
-                <NotificationInfo model={model} errors={errors} />
-            </Row>
+            </MinimalEventRow>
+            <MinimalErrowRow errors={errors} />
         </>
     );
 };
