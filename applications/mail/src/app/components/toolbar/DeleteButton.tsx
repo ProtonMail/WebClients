@@ -77,7 +77,7 @@ const DeleteButton = ({ labelID = '', mailSettings, breakpoints, selectedIDs = [
     return (
         <ToolbarButton
             loading={loading}
-            title={c('Action').t`Delete`}
+            title={c('Action').t`Delete permanently`}
             onClick={() => withLoading(handleDelete())}
             disabled={!selectedIDs.length}
         >
