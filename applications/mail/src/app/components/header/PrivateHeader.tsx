@@ -12,7 +12,8 @@ import {
     useUser,
     Icon,
     useLabels,
-    useFolders
+    useFolders,
+    AppsDropdown
 } from 'react-components';
 
 import AdvancedSearchDropdown from './AdvancedSearchDropdown';
@@ -70,7 +71,10 @@ const PrivateHeader = ({
             )}
             {!breakpoints.isNarrow && (
                 <>
-                    <MainLogo url="/inbox" />
+                    <div className="logo-container flex flex-spacebetween flex-items-center flex-nowrap nomobile">
+                        <MainLogo url="/inbox" />
+                        <AppsDropdown />
+                    </div>
                     <Searchbox
                         delay={0}
                         placeholder={c('Placeholder').t`Search messages`}

@@ -26,7 +26,7 @@ const PrivateSidebar = ({ labelID, expanded = false, location, breakpoints, onTo
     return (
         <div className="sidebar flex flex-column noprint" data-expanded={expanded}>
             <div className="nodesktop notablet flex-item-noshrink">
-                <div className="flex flex-spacebetween flex-items-center">
+                <div className="flex flex-spacebetween flex-items-center pl1 pr1">
                     <MainLogo url="/inbox" />
                     <Hamburger expanded={expanded} onToggle={onToggleExpand} />
                 </div>

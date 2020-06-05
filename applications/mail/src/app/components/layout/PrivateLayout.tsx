@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect, ReactNode } from 'react';
-import { c } from 'ttag';
-import { AppsSidebar, StorageSpaceStatus, MainAreaContext, Href, useDelinquent } from 'react-components';
+import { MainAreaContext, useDelinquent } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import PrivateHeader from '../header/PrivateHeader';
@@ -38,22 +37,6 @@ const PrivateLayout = ({ children, location, history, breakpoints, labelID, elem
 
     return (
         <div className="flex flex-nowrap no-scroll">
-            <AppsSidebar
-                items={[
-                    <StorageSpaceStatus
-                        key="storage"
-                        upgradeButton={
-                            <Href
-                                url="/settings/subscription"
-                                target="_self"
-                                className="pm-button pm-button--primary pm-button--small"
-                            >
-                                {c('Action').t`Upgrade`}
-                            </Href>
-                        }
-                    ></StorageSpaceStatus>
-                ]}
-            />
             <div className="content flex-item-fluid reset4print">
                 <PrivateHeader
                     labelID={labelID}
