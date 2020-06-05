@@ -143,11 +143,7 @@ const MoveDropdown = ({ elements, labelID, onClose, onLock }: Props) => {
                         );
                     })}
                     {list.length === 0 && (
-                        <li
-                            key="empty"
-                            className="w100 flex flex-nowrap flex-items-center pt0-5 pb0-5 pl1 pr1 border-top"
-                        >
-                            <Icon name="attention" className="mr0-5" />
+                        <li key="empty" className="dropDown-item w100 pt0-5 pb0-5 pl1 pr1">
                             {c('Info').t`No folder found`}
                         </li>
                     )}
