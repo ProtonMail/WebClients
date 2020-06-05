@@ -33,7 +33,7 @@ const getErrorMessage = (errorType: IMPORT_EVENT_TYPE, externalError?: Error) =>
         return c('Error importing event').t`Component with wrong format`;
     }
     if (errorType === IMPORT_EVENT_TYPE.NON_GREGORIAN) {
-        return c('Error importing event').t`Non-Gregorian calendar`;
+        return c('Error importing event').t`Non-Gregorian`;
     }
     if (errorType === IMPORT_EVENT_TYPE.TODO_FORMAT) {
         return c('Error importing event').t`To-do format`;

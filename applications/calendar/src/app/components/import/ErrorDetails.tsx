@@ -10,7 +10,7 @@ const getComponentText = (component: string) => {
         return c('Error importing event').t`Bad format. Component can not be read.`;
     }
     if (component === 'vcalendar') {
-        return '';
+        return c('Error importing event').t`Calendar`;
     }
     if (component === 'vtimezone') {
         return c('Error importing event').t`Timezone`;
