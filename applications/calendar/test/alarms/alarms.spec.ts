@@ -4,6 +4,12 @@ import { enUS } from 'date-fns/locale';
 import { pick } from 'proton-shared/lib/helpers/object';
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import {
+    VcalDateProperty,
+    VcalTriggerProperty,
+    VcalValarmComponent,
+    VcalVeventComponent,
+} from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { WEEK, DAY, HOUR, MINUTE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../src/app/constants';
 import {
     filterFutureNotifications,
@@ -26,14 +32,14 @@ describe('getAlarmMessage', () => {
             parameters: { tzid: tzidEurope },
         },
         summary: { value: 'test alarm' },
-    };
+    } as VcalVeventComponent;
     const testFulldayComponent = {
         dtstart: {
             value: pick(testFakeZonedDate, ['year', 'month', 'day']),
             parameters: { type: 'date' },
         },
         summary: { value: 'test alarm' },
-    };
+    } as VcalVeventComponent;
     const start = toUTCDate(convertZonedDateTimeToUTC(testFakeZonedDate, tzidEurope));
 
     test('it should display the right notification for events happening today', () => {
@@ -392,9 +398,9 @@ describe('getIsValidAlarm', () => {
     const baseTriggerValue = { weeks: 0, days: 1, hours: 0, minutes: 0, seconds: 0, isNegative: true };
     const baseAlarm = {
         component: 'valarm',
-        action: { value: 'AUDIO' },
+        action: { value: 'DISPLAY' },
         trigger: { value: baseTriggerValue },
-    };
+    } as VcalValarmComponent;
 
     test('it reject alarms with unknown action', () => {
         const alarm = { ...baseAlarm, action: { value: 'WHATEVER' } };
@@ -413,7 +419,7 @@ describe('getIsValidAlarm', () => {
                 value: { year: 2020, month: 5, day: 2 },
                 parameters: { type: 'date-time' },
             },
-        };
+        } as VcalValarmComponent;
         expect(getIsValidAlarm(alarm)).toEqual(false);
     });
 });
@@ -422,13 +428,16 @@ describe('getSupportedAlarm', () => {
     const dtstartPartDay = {
         value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 30, seconds: 0, isUTC: true },
     };
-    const dtstartAllDay = { value: { year: 2020, month: 5, day: 11 }, parameters: { type: 'date' } };
+    const dtstartAllDay = {
+        value: { year: 2020, month: 5, day: 11 },
+        parameters: { type: 'date' },
+    } as VcalDateProperty;
     const baseTriggerValue = { weeks: 0, days: 1, hours: 0, minutes: 0, seconds: 0, isNegative: true };
     const baseAlarm = {
         component: 'valarm',
-        action: { value: 'AUDIO' },
+        action: { value: 'DISPLAY' },
         trigger: { value: baseTriggerValue },
-    };
+    } as VcalValarmComponent;
 
     test('it should filter out alarms with trigger related to end time', () => {
         const alarm = {
@@ -441,7 +450,7 @@ describe('getSupportedAlarm', () => {
         expect(getSupportedAlarm(alarm, dtstartPartDay)).toEqual(undefined);
     });
 
-    test('it should filter out attendees', () => {
+    test('it should filter out attendees, description and summary', () => {
         const alarm = {
             ...baseAlarm,
             action: { value: 'EMAIL' },
@@ -452,7 +461,14 @@ describe('getSupportedAlarm', () => {
                 value: { ...baseTriggerValue },
             },
         };
-        expect(getSupportedAlarm(alarm, dtstartPartDay)).toEqual({ ...alarm, attendee: undefined });
+        const expected = {
+            ...baseAlarm,
+            action: { value: 'EMAIL' },
+            trigger: {
+                value: { ...baseTriggerValue },
+            },
+        };
+        expect(getSupportedAlarm(alarm, dtstartPartDay)).toEqual(expected);
     });
 
     test('it should filter out future notifications', () => {
@@ -467,7 +483,7 @@ describe('getSupportedAlarm', () => {
     });
 
     test('it should normalize triggers for part-day events', () => {
-        const alarms = [
+        const alarms: VcalValarmComponent[] = [
             {
                 ...baseAlarm,
                 trigger: {
@@ -501,7 +517,7 @@ describe('getSupportedAlarm', () => {
     });
 
     test('it should normalize triggers for all-day events', () => {
-        const alarms = [
+        const alarms: VcalValarmComponent[] = [
             {
                 ...baseAlarm,
                 trigger: {
@@ -535,7 +551,7 @@ describe('getSupportedAlarm', () => {
     });
 
     test('it should filter out notifications out of bounds for part-day events', () => {
-        const alarms = [
+        const alarms: VcalValarmComponent[] = [
             {
                 ...baseAlarm,
                 trigger: {
@@ -556,7 +572,7 @@ describe('getSupportedAlarm', () => {
     });
 
     test('it should filter out notifications out of bounds for all-day events', () => {
-        const alarms = [
+        const alarms: VcalValarmComponent[] = [
             {
                 ...baseAlarm,
                 trigger: {
@@ -581,7 +597,10 @@ describe('normalizeTrigger', () => {
     const dtstartPartDay = {
         value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 30, seconds: 0, isUTC: true },
     };
-    const dtstartAllDay = { value: { year: 2020, month: 5, day: 11 }, parameters: { type: 'date' } };
+    const dtstartAllDay = {
+        value: { year: 2020, month: 5, day: 11 },
+        parameters: { type: 'date' },
+    } as VcalDateProperty;
     const utcStartPartDay = propertyToUTCDate(dtstartPartDay);
 
     test('should keep just one component for part-day events with relative triggers', () => {
@@ -665,7 +684,7 @@ describe('normalizeTrigger', () => {
             const trigger = {
                 value: triggerValue,
                 parameters: { type: 'date-time' },
-            };
+            } as VcalTriggerProperty;
             return normalizeTrigger(trigger, dtstartPartDay);
         });
         expect(results).toEqual(expected);
@@ -709,7 +728,7 @@ describe('normalizeTrigger', () => {
             const trigger = {
                 value: triggerValue,
                 parameters: { type: 'date-time' },
-            };
+            } as VcalTriggerProperty;
             return normalizeTrigger(trigger, dtstartAllDay);
         });
         expect(results).toEqual(expected);

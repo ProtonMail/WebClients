@@ -2,7 +2,6 @@ import { differenceInMinutes } from 'date-fns';
 import { getMillisecondsFromTriggerString } from 'proton-shared/lib/calendar/vcal';
 import { isIcalAllDay, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from 'proton-shared/lib/date/timezone';
-import { pick } from 'proton-shared/lib/helpers/object';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { getIsIcalPropertyAllDay, getIsDateTimeValue } from 'proton-shared/lib/calendar/vcalHelper';
 import {
@@ -143,13 +142,14 @@ export const getIsValidAlarm = (alarm: VcalValarmComponent) => {
     return true;
 };
 
-const ALARM_FIELDS_TO_PICK = ['component', 'action', 'description', 'summary'] as const;
-
 /**
  * Given a VALARM component, try to transform it into something that we support.
  * Return undefined otherwise
  */
-export const getSupportedAlarm = (alarm: VcalValarmComponent, dtstart: VcalDateOrDateTimeProperty) => {
+export const getSupportedAlarm = (
+    alarm: VcalValarmComponent,
+    dtstart: VcalDateOrDateTimeProperty
+): VcalValarmComponent | undefined => {
     if (!getIsValidAlarm(alarm)) {
         return;
     }
@@ -160,6 +160,7 @@ export const getSupportedAlarm = (alarm: VcalValarmComponent, dtstart: VcalDateO
         return;
     }
 
+    const actionValue = alarm.action.value === 'EMAIL' ? 'EMAIL' : 'DISPLAY';
     const normalizedTrigger = normalizeTrigger(trigger, dtstart);
     const triggerDurationInSeconds = normalizeDurationToUnit(normalizedTrigger, 1);
 
@@ -178,7 +179,8 @@ export const getSupportedAlarm = (alarm: VcalValarmComponent, dtstart: VcalDateO
     }
 
     return {
-        ...pick(alarm, ALARM_FIELDS_TO_PICK),
+        component: 'valarm',
+        action: { value: actionValue },
         trigger: { value: normalizedTrigger },
     };
 };
