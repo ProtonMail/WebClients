@@ -20,6 +20,7 @@ import { LinkType } from '../../interfaces/link';
 import { isPreviewAvailable } from '../FilePreview/FilePreview';
 import runInQueue from '../../utils/runInQueue';
 import SortDropdown from './SortDropdown';
+import usePreventLeave from '../../hooks/usePreventLeave';
 
 const MAX_THREADS_PER_MOVE = 5;
 
@@ -32,6 +33,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { fileBrowserControls } = useDriveContent();
+    const { preventLeave } = usePreventLeave();
     const { startFileTransfer, startFolderTransfer } = useFiles();
     const {
         getFoldersOnlyMetas,
@@ -221,7 +223,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                                 }
                             });
                     });
-                    await runInQueue(moveQueue, MAX_THREADS_PER_MOVE);
+                    await preventLeave(runInQueue(moveQueue, MAX_THREADS_PER_MOVE));
 
                     const movedLinksCount = movedLinks.length;
                     const failedMovesCount = failedMoves.length;

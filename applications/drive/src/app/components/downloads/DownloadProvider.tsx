@@ -5,6 +5,7 @@ import { useApi, generateUID } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import { FILE_CHUNK_SIZE, MAX_THREADS_PER_DOWNLOAD } from '../../constants';
 import { LinkType } from '../../interfaces/link';
+import usePreventLeave from '../../hooks/usePreventLeave';
 
 const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
 
@@ -59,6 +60,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     const api = useApi();
     const controls = useRef<{ [id: string]: DownloadControls }>({});
     const progresses = useRef<TransferProgresses>({});
+    const { preventLeave } = usePreventLeave();
 
     const [downloads, setDownloads] = useState<(Download | PartialDownload)[]>([]);
 
@@ -136,24 +138,26 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
 
             updateDownloadState(id, TransferState.Progress);
 
-            controls.current[id]
-                .start(api)
-                .then(() => {
-                    // Update download progress to 100% (for empty files, or transfers from buffer)
-                    const download = downloads.find((download) => download.id === id);
-                    if (download) {
-                        progresses.current[id] = download.meta.size ?? 0;
-                    }
-                    updateDownloadState(id, TransferState.Done);
-                })
-                .catch((err) => {
-                    if (err.name === 'TransferCancel' || err.name === 'AbortError') {
-                        updateDownloadState(id, TransferState.Canceled);
-                    } else {
-                        console.error(`Download ${id} failed: ${err}`);
-                        updateDownloadState(id, TransferState.Error);
-                    }
-                });
+            preventLeave(
+                controls.current[id]
+                    .start(api)
+                    .then(() => {
+                        // Update download progress to 100% (for empty files, or transfers from buffer)
+                        const download = downloads.find((download) => download.id === id);
+                        if (download) {
+                            progresses.current[id] = download.meta.size ?? 0;
+                        }
+                        updateDownloadState(id, TransferState.Done);
+                    })
+                    .catch((err) => {
+                        if (err.name === 'TransferCancel' || err.name === 'AbortError') {
+                            updateDownloadState(id, TransferState.Canceled);
+                        } else {
+                            console.error(`Download ${id} failed: ${err}`);
+                            updateDownloadState(id, TransferState.Error);
+                        }
+                    })
+            );
         }
     }, [downloads]);
 

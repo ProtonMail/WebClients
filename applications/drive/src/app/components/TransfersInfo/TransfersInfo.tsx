@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
-import { useDownloadProvider, Download } from '../downloads/DownloadProvider';
-import { useUploadProvider, Upload } from '../uploads/UploadProvider';
+import { useDownloadProvider } from '../downloads/DownloadProvider';
+import { useUploadProvider } from '../uploads/UploadProvider';
 import Heading from './Heading';
 import Transfer, { TransferType, TransferStats } from './Transfer';
 import { useToggle, classnames } from 'react-components';
@@ -8,9 +8,6 @@ import { TransferState } from '../../interfaces/transfer';
 
 const PROGRESS_UPDATE_INTERVAL = 500;
 const SPEED_SNAPSHOTS = 10; // How many snapshots should the speed be average of
-
-const isTransferActive = ({ state }: Download | Upload) =>
-    [TransferState.Initializing, TransferState.Pending, TransferState.Progress, TransferState.Paused].includes(state);
 
 export interface TransfersStats {
     timestamp: Date;
@@ -53,25 +50,6 @@ function TransfersInfo() {
             return [{ stats, timestamp }, ...prev.slice(0, SPEED_SNAPSHOTS - 1)];
         });
     };
-
-    const hasActiveTransfers = downloads.some(isTransferActive) || uploads.some(isTransferActive);
-
-    useEffect(() => {
-        if (!hasActiveTransfers) {
-            return;
-        }
-
-        const unloadCallback = (e: BeforeUnloadEvent) => {
-            e.preventDefault();
-            e.returnValue = '';
-        };
-
-        window.addEventListener('beforeunload', unloadCallback);
-
-        return () => {
-            window.removeEventListener('beforeunload', unloadCallback);
-        };
-    }, [hasActiveTransfers]);
 
     useEffect(() => {
         updateStats();

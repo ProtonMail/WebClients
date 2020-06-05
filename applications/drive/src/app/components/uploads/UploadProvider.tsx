@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useRef, useEffect } from 'r
 import { initUpload, UploadCallbacks, UploadControls } from './upload';
 import { TransferState, TransferProgresses, TransferMeta } from '../../interfaces/transfer';
 import { useNotifications } from 'react-components';
+import usePreventLeave from '../../hooks/usePreventLeave';
 
 export interface BlockMeta {
     Index: number;
@@ -50,6 +51,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     // Keeping ref in case we need to immediatelly get uploads without waiting for rerender
     const uploadsRef = useRef<Upload[]>([]);
     const { createNotification } = useNotifications();
+    const { preventLeave } = usePreventLeave();
     const [uploads, setUploads] = useState<Upload[]>([]);
     const controls = useRef<{ [id: string]: UploadControls }>({});
     const progresses = useRef<TransferProgresses>({});
@@ -105,20 +107,22 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
             updateUploadState(id, TransferState.Progress);
 
-            controls.current[id]
-                .start(info)
-                .then(() => {
-                    // Update upload progress to 100%
-                    const upload = uploads.find((upload) => upload.id === id);
-                    if (upload) {
-                        progresses.current[id] = upload.meta.size ?? 0;
-                    }
-                    updateUploadState(id, TransferState.Done);
-                })
-                .catch((error) => {
-                    console.error(`Failed to upload: ${error}`);
-                    updateUploadState(id, TransferState.Error);
-                });
+            preventLeave(
+                controls.current[id]
+                    .start(info)
+                    .then(() => {
+                        // Update upload progress to 100%
+                        const upload = uploads.find((upload) => upload.id === id);
+                        if (upload) {
+                            progresses.current[id] = upload.meta.size ?? 0;
+                        }
+                        updateUploadState(id, TransferState.Done);
+                    })
+                    .catch((error) => {
+                        console.error(`Failed to upload: ${error}`);
+                        updateUploadState(id, TransferState.Error);
+                    })
+            );
         }
     }, [uploads]);
 
