@@ -110,7 +110,7 @@ const getSupportedUID = (uid: VcalUidProperty) => {
 interface GetSupportedDateOrDateTimePropertyArgs {
     property: VcalDateOrDateTimeProperty | VcalFloatingDateTimeProperty;
     component: string;
-    eventIdentifier: string;
+    componentId: string;
     hasXWrTimezone: boolean;
     calendarTzid?: string;
 }
