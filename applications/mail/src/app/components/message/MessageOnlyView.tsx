@@ -44,11 +44,11 @@ const MessageOnlyView = ({ labelID, messageID, mailSettings, onBack, onCompose }
                 <div className="flex flex-nowrap">
                     <div className="flex-item-fluid flex flex-items-center pr1">
                         <span className="mr1 flex flex-items-center flex-item-noshrink">
-                            <Icon name="email-address" alt={c('label').t`Number of messages:`} />
+                            <Icon name="email-address" className="opacity-50" alt={c('label').t`Number of messages:`} />
                             <span className="ml0-25">1</span>
                         </span>
                         <span className="mr1 flex flex-items-center flex-item-noshrink">
-                            <Icon name="contact" alt={c('label').t`Number of participants:`} />
+                            <Icon name="contact" className="opacity-50" alt={c('label').t`Number of participants:`} />
                             <span className="ml0-25">{numParticipants}</span>
                         </span>
                     </div>
