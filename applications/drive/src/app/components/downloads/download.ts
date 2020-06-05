@@ -112,7 +112,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
 
                 await untilStreamEnd(transformedContentStream, async (data) => {
                     if (abortController.signal.aborted) {
-                        return;
+                        throw new TransferCancel(id);
                     }
                     const buffer = buffers.get(Index);
                     if (buffer) {
