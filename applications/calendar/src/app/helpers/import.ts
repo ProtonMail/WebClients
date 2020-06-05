@@ -113,6 +113,7 @@ interface GetSupportedDateOrDateTimePropertyArgs {
     componentId: string;
     hasXWrTimezone: boolean;
     calendarTzid?: string;
+    isRecurring?: boolean;
 }
 const getSupportedDateOrDateTimeProperty = ({
     property,
@@ -120,6 +121,7 @@ const getSupportedDateOrDateTimeProperty = ({
     componentId,
     hasXWrTimezone,
     calendarTzid,
+    isRecurring = false,
 }: GetSupportedDateOrDateTimePropertyArgs) => {
     if (getIsIcalPropertyAllDay(property)) {
         return getDateProperty(property.value);
@@ -127,9 +129,9 @@ const getSupportedDateOrDateTimeProperty = ({
 
     const partDayProperty = property;
 
-    // account for non-standard Google Calendar exports
-    // namely localize UTC date-times with x-wr-timezone if present and accepted by us
-    if (partDayProperty.value.isUTC && hasXWrTimezone && calendarTzid) {
+    // account for non-RFC-compliant Google Calendar exports
+    // namely localize Zulu date-times for non-recurring events with x-wr-timezone if present and accepted by us
+    if (partDayProperty.value.isUTC && !isRecurring && hasXWrTimezone && calendarTzid) {
         const localizedDateTime = convertUTCDateTimeToZone(partDayProperty.value, calendarTzid);
         return getDateTimeProperty(localizedDateTime, calendarTzid);
     }
@@ -195,6 +197,7 @@ interface GetSupportedEventArgs {
     vcalComponent: VcalCalendarComponentOrError;
     hasXWrTimezone: boolean;
     calendarTzid?: string;
+    discardedUids?: string[];
 }
 export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid }: GetSupportedEventArgs) => {
     const componentId = getComponentIdentifier(vcalComponent);
@@ -247,6 +250,7 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
         const trimmedSummaryValue = summary?.value.trim();
         const trimmedDescriptionValue = description?.value.trim();
         const trimmedLocationValue = location?.value.trim();
+        const isRecurring = !!rrule || !!recurrenceId;
 
         const validated: VcalVeventComponent &
             Required<Pick<VcalVeventComponent, 'uid' | 'dtstamp' | 'dtstart' | 'dtend'>> = {
@@ -261,7 +265,14 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             validated.exdate = [...exdate];
         }
         if (recurrenceId) {
-            validated['recurrence-id'] = recurrenceId;
+            validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
+                property: recurrenceId,
+                component: 'vevent',
+                componentId,
+                hasXWrTimezone,
+                calendarTzid,
+                isRecurring,
+            });
         }
         if (trimmedSummaryValue) {
             validated.summary = {
@@ -293,6 +304,7 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             componentId,
             hasXWrTimezone,
             calendarTzid,
+            isRecurring,
         });
         if (!getIsWellFormedDateOrDateTime(validated.dtstart)) {
             throw new ImportEventError(IMPORT_EVENT_TYPE.DTSTART_MALFORMED, 'vevent', componentId);
@@ -306,6 +318,7 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             componentId,
             hasXWrTimezone,
             calendarTzid,
+            isRecurring,
         });
         if (!getIsWellFormedDateOrDateTime(validated.dtend)) {
             throw new ImportEventError(IMPORT_EVENT_TYPE.DTEND_MALFORMED, 'vevent', componentId);

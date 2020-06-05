@@ -187,6 +187,7 @@ DTSTAMP:19980309T231000Z
 UID:test-event
 DTSTART;TZID=Mountain Time (U.S. & Canada):20021230T203000
 DTEND;TZID=W. Europe Standard Time:20030101T003000
+RECURRENCE-ID;TZID=Sarajevo, Skopje, Sofija, Vilnius, Warsaw, Zagreb:20030102T003000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
@@ -204,11 +205,15 @@ END:VEVENT`;
                 value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
                 parameters: { tzid: 'Europe/Berlin' },
             },
+            'recurrence-id': {
+                value: { year: 2003, month: 1, day: 2, hours: 0, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Sarajevo' },
+            },
             location: { value: '1CP Conference Room 4350' },
         });
     });
 
-    test('should localize Zulu times in the presence of a calendar timezone', () => {
+    test('should localize Zulu times in the presence of a calendar timezone for non-recurring events', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
@@ -237,6 +242,37 @@ END:VEVENT`;
         });
     });
 
+    test('should not localize Zulu times in the presence of a calendar timezone for recurring events', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART:20110613T150000Z
+DTEND:20110613T160000Z
+RECURRENCE-ID:20110618T150000Z
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(
+            getSupportedEvent({ vcalComponent: event, hasXWrTimezone: true, calendarTzid: 'Europe/Zurich' })
+        ).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2011, month: 6, day: 13, hours: 15, minutes: 0, seconds: 0, isUTC: true },
+            },
+            dtend: {
+                value: { year: 2011, month: 6, day: 13, hours: 16, minutes: 0, seconds: 0, isUTC: true },
+            },
+            'recurrence-id': {
+                value: { year: 2011, month: 6, day: 18, hours: 15, minutes: 0, seconds: 0, isUTC: true },
+            },
+            location: { value: '1CP Conference Room 4350' },
+        });
+    });
+
     test('should reject events with floating times if no global timezone has been specified', () => {
         const vevent = `
 BEGIN:VEVENT
@@ -244,6 +280,7 @@ DTSTAMP:19980309T231000Z
 UID:test-event
 DTSTART:20021231T203000
 DTEND:20030101T003000
+RECURRENCE-ID:20030102T003000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
