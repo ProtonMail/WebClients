@@ -1,5 +1,5 @@
 import React from 'react';
-import { classnames } from 'react-components';
+import { classnames, Progress } from 'react-components';
 
 export enum ProgressBarStatus {
     Success = 'success',
@@ -7,12 +7,14 @@ export enum ProgressBarStatus {
     Error = 'error'
 }
 
-interface Props extends React.ProgressHTMLAttributes<HTMLProgressElement> {
+interface Props {
     status?: ProgressBarStatus;
+    value?: number;
+    max?: number;
 }
 
 const ProgressBar = ({ status = ProgressBarStatus.Success, ...rest }: Props) => (
-    <progress className={classnames(['progress-contact w100 mt1', `progress-contact--${status}`])} {...rest} />
+    <Progress className={classnames(['mt1', `progress--${status}`])} {...rest} />
 );
 
 export default ProgressBar;
