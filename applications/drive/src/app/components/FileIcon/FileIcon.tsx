@@ -22,7 +22,7 @@ const iconsMap: { [mimeType: string]: { name: string; colorClass?: string } } = 
         name: 'file-xslx',
         colorClass: 'pd-icon-green'
     },
-    'application/x-xliff+xml': { name: 'file-xliff' },
+    'application/xliff+xml': { name: 'file-xliff' },
     'application/xml': { name: 'file-xml' }
 };
 
