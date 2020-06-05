@@ -16,6 +16,7 @@ import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { omit } from 'proton-shared/lib/helpers/object';
 import { Calendar, CalendarBootstrap, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
@@ -700,6 +701,21 @@ const InteractiveCalendarView = ({
         return getFormattedWeekdays('cccc', { locale: dateLocale });
     }, [dateLocale]);
 
+    const targetMoreEvents = useMemo(() => {
+        const eventsSet = targetMoreData?.events;
+        if (!eventsSet) {
+            return [];
+        }
+        // Do this to respect the order in which they were inserted
+        const latestEvents = events
+            .filter(({ id }) => eventsSet.has(id))
+            .reduce<{ [key: string]: CalendarViewEvent }>((acc, result) => {
+                acc[result.id] = result;
+                return acc;
+            }, {});
+        return [...eventsSet.keys()].map((eventId) => latestEvents[eventId]).filter(isTruthy);
+    }, [targetMoreData?.events]);
+
     return (
         <>
             <CalendarView
@@ -820,7 +836,7 @@ const InteractiveCalendarView = ({
                             popoverRef={ref}
                             now={now}
                             date={targetMoreData.date}
-                            events={events.filter(({ id }) => targetMoreData?.events.has(id))}
+                            events={targetMoreEvents}
                             targetEventRef={setTargetEventRef}
                             targetEventData={targetEventData}
                             formatTime={formatTime}
