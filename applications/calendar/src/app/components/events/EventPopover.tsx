@@ -1,5 +1,5 @@
 import React from 'react';
-import { SmallButton, PrimaryButton, Loader, useLoading, Alert, Icon, classnames } from 'react-components';
+import { PrimaryButton, Loader, useLoading, Alert, Icon, classnames, Button } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { c } from 'ttag';
@@ -62,14 +62,14 @@ const EventPopover = ({
     };
 
     const deleteButton = (
-        <SmallButton
+        <Button
             data-test-id="event-popover:delete"
             onClick={loadingAction ? noop : handleDelete}
             loading={loadingAction}
             className="mr1"
         >
             {c('Action').t`Delete`}
-        </SmallButton>
+        </Button>
     );
 
     const mergedClassName = classnames(['eventpopover', isNarrow && 'eventpopover--full-width']);
@@ -123,7 +123,6 @@ const EventPopover = ({
                 {deleteButton}
                 <PrimaryButton
                     data-test-id="event-popover:edit"
-                    className="pm-button--small"
                     onClick={handleEdit}
                     disabled={loadingAction || isCalendarDisabled}
                 >
