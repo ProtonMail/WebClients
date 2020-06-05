@@ -1,12 +1,15 @@
-import { RenderHookResult } from '@testing-library/react-hooks';
+import { RenderHookResult, act } from '@testing-library/react-hooks';
 import { range } from 'proton-shared/lib/helpers/array';
 import { queryConversations } from 'proton-shared/lib/api/conversations';
+import { wait } from 'proton-shared/lib/helpers/promise';
+import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 
 import { useElements } from './useElements';
 import { Element } from '../models/element';
 import { Page, Sort, Filter, SearchParameters } from '../models/tools';
-import { renderHook, clearAll, addApiMock, api } from '../helpers/test/helper';
-import { ConversationLabel } from '../models/conversation';
+import { renderHook, clearAll, addApiMock, api, triggerEvent } from '../helpers/test/helper';
+import { ConversationLabel, Conversation } from '../models/conversation';
+import { Event } from '../models/event';
 
 interface SetupArgs {
     elements?: Element[];
@@ -28,6 +31,8 @@ describe('useElements', () => {
         Labels: [{ ID: 'otherLabelID', ContextTime: 3 }],
         LabelIDs: ['otherLabelID']
     } as Element;
+    const defaultSort = { sort: 'Time', desc: true } as Sort;
+    const defaultFilter = {};
 
     const getElements = (count: number, label = labelID): Element[] =>
         range(0, count).map((i) => ({
@@ -43,8 +48,8 @@ describe('useElements', () => {
         conversationMode = true,
         inputLabelID = labelID,
         page = { page: 0, size: 50, limit: 50, total: elements.length },
-        sort = { sort: 'Time', desc: true },
-        filter = {},
+        sort = defaultSort,
+        filter = defaultFilter,
         search = {}
     }: SetupArgs = {}) => {
         addApiMock('conversations', () => ({ Total: page.total, Conversations: elements }));
@@ -61,9 +66,15 @@ describe('useElements', () => {
         return renderHookResult;
     };
 
+    const sendEvent = async (event: Event) => {
+        await act(async () => {
+            triggerEvent(event);
+            await wait(0);
+        });
+    };
+
     afterEach(() => {
         renderHookResult = null;
-        // [(useApi as jest.Mock, api)].forEach((mock) => mock.mockClear());
         clearAll();
     });
 
@@ -88,26 +99,26 @@ describe('useElements', () => {
         });
 
         it('should returns the current page', async () => {
-            const page: Page = { page: 0, size: 5, limit: 5, total: 7 };
-            const allElements = getElements(page.total);
+            const page1: Page = { page: 0, size: 5, limit: 5, total: 7 };
+            const page2: Page = { ...page1, page: 1 };
+            const allElements = getElements(page1.total);
 
-            const result = await setup({ elements: allElements.slice(0, page.size), page });
+            const hook = await setup({ elements: allElements.slice(0, page1.size), page: page1 });
+            await setup({ elements: allElements.slice(page2.size), page: page2 });
 
-            page.page = 1;
-            await setup({ elements: allElements.slice(page.size), page });
-
-            const [, elements] = result.result.current;
-            expect(elements.length).toBe(page.total - page.size);
+            const [, elements] = hook.result.current;
+            expect(elements.length).toBe(page1.total - page1.size);
         });
 
         it('should returns elements sorted', async () => {
             const elements = [element1, element2];
-            const sort: Sort = { sort: 'Size', desc: false };
-            let result = await setup({ elements, sort });
+            const sort1: Sort = { sort: 'Size', desc: false };
+            const sort2: Sort = { sort: 'Size', desc: true };
+
+            let result = await setup({ elements, sort: sort1 });
             expect(result.result.current[1]).toEqual([element2, element1]);
 
-            sort.desc = true;
-            result = await setup({ elements, sort });
+            result = await setup({ elements, sort: sort2 });
             expect(result.result.current[1]).toEqual([element1, element2]);
         });
     });
@@ -132,6 +143,138 @@ describe('useElements', () => {
             expect(elements.length).toBe(page.size);
             expect(loading).toBe(false);
             expect(total).toBe(page.total);
+        });
+    });
+
+    describe('event handling', () => {
+        it('should add to the cache a message which is not existing yet', async () => {
+            // Usefull to receive incoming mail or draft without having to reload the list
+
+            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const hook = await setup({ elements: getElements(page.total), page });
+
+            const element = { ID: 'id3', Labels: [{ ID: labelID }], LabelIDs: [labelID] };
+            await sendEvent({
+                Conversations: [{ ID: element.ID, Action: EVENT_ACTIONS.CREATE, Conversation: element as Conversation }]
+            });
+            expect(hook.result.current[1].length).toBe(4);
+        });
+
+        it('should not add to the cache a message which is not existing when a search is active', async () => {
+            // When a search is active, all the cache will be shown, we can't accept any updated message
+            // But we will refresh the request each time
+
+            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const search = { keyword: 'test' } as SearchParameters;
+            const hook = await setup({ elements: getElements(page.total), page, search });
+
+            const element = { ID: 'id3', Labels: [{ ID: labelID }], LabelIDs: [labelID] };
+            await sendEvent({
+                Conversations: [{ ID: element.ID, Action: EVENT_ACTIONS.CREATE, Conversation: element as Conversation }]
+            });
+            expect(hook.result.current[1].length).toBe(3);
+            expect(api.mock.calls.length).toBe(2);
+        });
+
+        it('should reload the list on an update event if a filter is active', async () => {
+            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const filter = { Unread: 1 } as Filter;
+            const hook = await setup({ elements: getElements(page.total), page, filter });
+
+            const ID = 'id0';
+            await sendEvent({
+                Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }]
+            });
+            expect(hook.result.current[1].length).toBe(3);
+            expect(api.mock.calls.length).toBe(2);
+        });
+
+        it('should not reload the list on an update event if has list from start', async () => {
+            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const hook = await setup({ elements: getElements(page.total), page });
+
+            const ID = 'id0';
+            await sendEvent({
+                Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }]
+            });
+            expect(hook.result.current[1].length).toBe(3);
+            expect(api.mock.calls.length).toBe(1);
+        });
+
+        it('should reload the list on an update event if has not list from start', async () => {
+            const page: Page = { page: 2, size: 5, limit: 5, total: 32 };
+            const hook = await setup({ elements: getElements(page.size), page });
+
+            const ID = 'id0';
+            await sendEvent({
+                Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }]
+            });
+            expect(hook.result.current[1].length).toBe(5);
+            expect(api.mock.calls.length).toBe(2);
+        });
+
+        it('should reload the list on an delete event if a search is active', async () => {
+            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const search = { keyword: 'test' } as SearchParameters;
+            const hook = await setup({ elements: getElements(page.total), page, search });
+
+            const ID = 'id10';
+            await sendEvent({
+                Conversations: [{ ID, Action: EVENT_ACTIONS.DELETE, Conversation: { ID } as Conversation }]
+            });
+            expect(hook.result.current[1].length).toBe(3);
+            expect(api.mock.calls.length).toBe(2);
+        });
+
+        it('should reload the list on count event and expected length not matched', async () => {
+            // The updated counter should trigger a check on the expected length
+
+            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const elements = getElements(page.total);
+            await setup({ elements, page });
+
+            await sendEvent({
+                ConversationCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }]
+            });
+
+            expect(api.mock.calls.length).toBe(2);
+        });
+
+        it('should not reload the list on count event when a search is active', async () => {
+            // If a search is active, the expected length computation has no meaning
+
+            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const search = { keyword: 'test' } as SearchParameters;
+            const elements = getElements(page.total);
+            await setup({ elements, page, search });
+
+            await sendEvent({
+                ConversationCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }]
+            });
+
+            expect(api.mock.calls.length).toBe(1);
+        });
+
+        it('should reload the list if the last element has been updated', async () => {
+            // If the last element of the list has been updated by an event
+            // We're not sure that the sort is good so the cache has to be reset
+
+            const setTime = (element: Element, time: number) => {
+                ((element as Conversation).Labels as ConversationLabel[])[0].ContextTime = time;
+                return element;
+            };
+
+            const page: Page = { page: 0, size: 5, limit: 5, total: 5 };
+            const elements = getElements(page.total);
+            elements.forEach((element, i) => setTime(element, i + 10));
+            await setup({ elements, page });
+
+            const element = setTime({ ...elements[4] }, 0);
+            await sendEvent({
+                Conversations: [{ ID: element.ID || '', Action: EVENT_ACTIONS.UPDATE_FLAGS, Conversation: element }]
+            });
+
+            expect(api.mock.calls.length).toBe(2);
         });
     });
 });

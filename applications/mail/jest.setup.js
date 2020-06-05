@@ -11,11 +11,18 @@ jest.mock('react-components/containers/paymentMethods/PaymentMethodDetails.js', 
 jest.mock('react-components/containers/vpn/OpenVPNConfigurationSection/Country.js', () => ({}));
 
 // Globally mocked react-components modules
-jest.mock('react-components/containers/eventManager/useEventManager.js', () => () => {
-    return {
-        subscribe: jest.fn(),
-        call: jest.fn()
+jest.mock('react-components/containers/eventManager/useEventManager.js', () => {
+    const subscribe = jest.fn();
+    const call = jest.fn();
+
+    const result = () => {
+        return { subscribe, call };
     };
+
+    result.subscribe = subscribe;
+    result.call = call;
+
+    return result;
 });
 
 // Globally mocked upload helper (standard requests are mocked through context)

@@ -29,7 +29,7 @@ import PlaceholderView from '../components/view/PlaceholderView';
 import MessageOnlyView from '../components/message/MessageOnlyView';
 import { OnCompose } from './ComposerContainer';
 import { PAGE_SIZE, MESSAGE_ACTIONS } from '../constants';
-import { isMessage } from '../helpers/elements';
+import { isMessage, isSearch as testIsSearch } from '../helpers/elements';
 import { isDraft } from '../helpers/message/messages';
 import { Message } from '../models/message';
 import { Breakpoints } from '../models/utils';
@@ -85,6 +85,7 @@ const MailboxContainer = ({
         searchParams.attachments,
         searchParams.wildcard
     ]);
+    const isSearch = testIsSearch(searchParameters);
     const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
 
@@ -163,18 +164,6 @@ const MailboxContainer = ({
         onCompose({ action: MESSAGE_ACTIONS.NEW });
     };
 
-    /**
-     * Move out of an element which has been removed from the cache
-     */
-    useEffect(() => {
-        if (!loading && elementID) {
-            const contained = elements.some((element) => element.ID === elementID);
-            if (!contained) {
-                handleBack();
-            }
-        }
-    }, [elementID, loading, elements]);
-
     const showToolbar = !breakpoints.isNarrow || !inputElementID;
     const showList = columnMode || !inputElementID;
     const showContentView = columnMode || inputElementID;
@@ -237,6 +226,7 @@ const MailboxContainer = ({
                                     onCheck={handleCheck}
                                     onClick={handleElement}
                                     userSettings={userSettings}
+                                    isSearch={isSearch}
                                 />
                             )}
                         </div>

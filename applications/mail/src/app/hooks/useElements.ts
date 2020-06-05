@@ -6,7 +6,7 @@ import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
 
 import { Conversation } from '../models/conversation';
-import { sort as sortElements, hasLabel, parseLabelIDsInEvent } from '../helpers/elements';
+import { sort as sortElements, hasLabel, parseLabelIDsInEvent, isSearch, isFilter } from '../helpers/elements';
 import { Element } from '../models/element';
 import { Page, Filter, Sort, SearchParameters } from '../models/tools';
 import { expectedPageLength } from '../helpers/paging';
@@ -50,9 +50,16 @@ interface Cache {
     page: Page;
     pages: number[];
     elements: { [ID: string]: Element };
+    updatedElements: string[];
 }
 
-const emptyCache = (page: Page, params: CacheParams): Cache => ({ params, page, elements: {}, pages: [] });
+const emptyCache = (page: Page, params: CacheParams): Cache => ({
+    params,
+    page,
+    elements: {},
+    pages: [],
+    updatedElements: []
+});
 
 export const useElements = ({
     conversationMode,
@@ -64,6 +71,7 @@ export const useElements = ({
 }: Options): [string, Conversation[], boolean, number] => {
     const api = useApi();
     const [loading, setLoading] = useState(false);
+    const [invalidated, setInvalidated] = useState(false);
     const [beforeFirstLoad, setBeforeFirstLoad] = useState(true);
     const [localCache, setLocalCache] = useState<Cache>(
         emptyCache(page, {
@@ -132,9 +140,20 @@ export const useElements = ({
     const pageIsConsecutive = () =>
         localCache.pages.some((p) => p === page.page || p === page.page - 1 || p === page.page + 1);
 
-    const isExpectedLength = () => elements.length === expectedPageLength({ ...page, total });
+    const hasListFromTheStart = () => localCache.pages.includes(0);
 
-    const shouldResetCache = () => !loading && (paramsChanged() || !pageIsConsecutive());
+    const lastHasBeenUpdated = () =>
+        elements.length === page.size &&
+        page.page === Math.max.apply(null, localCache.pages) &&
+        localCache.updatedElements.includes(elements[elements.length - 1].ID || '');
+
+    // Live cache means we listen to events from event manager without refreshing the list every time
+    const isLiveCache = () => !isSearch(search) && !isFilter(filter) && hasListFromTheStart();
+
+    const isExpectedLength = () => !isLiveCache() || elements.length === expectedPageLength({ ...page, total });
+
+    const shouldResetCache = () =>
+        !loading && (invalidated || paramsChanged() || !pageIsConsecutive() || lastHasBeenUpdated());
 
     const shouldSendRequest = () => !loading && (shouldResetCache() || !pageCached() || !isExpectedLength());
 
@@ -199,10 +218,13 @@ export const useElements = ({
         setLoading(true);
         try {
             const { Total, Elements } = await queryElements();
+            const elementsMap = toMap(Elements, 'ID');
+            const updatedElements = localCache.updatedElements.filter((elementID) => !elementsMap[elementID]);
+            setInvalidated(false);
             setLocalCache(
                 (localCache: Cache): Cache => {
                     return {
-                        ...localCache,
+                        params: localCache.params,
                         page: {
                             ...localCache.page,
                             page: page.page,
@@ -211,8 +233,9 @@ export const useElements = ({
                         pages: [...localCache.pages, page.page],
                         elements: {
                             ...localCache.elements,
-                            ...(toMap(Elements, 'ID') as { [ID: string]: Element })
-                        }
+                            ...elementsMap
+                        },
+                        updatedElements
                     };
                 }
             );
@@ -239,7 +262,9 @@ export const useElements = ({
         search.begin,
         search.end,
         search.attachments,
-        search.wildcard
+        search.wildcard,
+        invalidated,
+        localCache.updatedElements
     ]);
 
     // Listen to event manager and update de cache
@@ -247,6 +272,11 @@ export const useElements = ({
         async ({ Conversations = [], Messages = [], ConversationCounts = [], MessageCounts = [] }: Event) => {
             const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
             const Counts: ElementCountEvent[] = conversationMode ? ConversationCounts : MessageCounts;
+
+            if (!isLiveCache() && Elements.length) {
+                setInvalidated(true);
+                return;
+            }
 
             const count = Counts.find((count) => count.LabelID === labelID);
 
@@ -256,6 +286,7 @@ export const useElements = ({
                     const Element = conversationMode
                         ? (event as ConversationEvent).Conversation
                         : (event as MessageEvent).Message;
+
                     switch (Action) {
                         case EVENT_ACTIONS.DELETE:
                             acc.toDelete.push(ID);
@@ -304,13 +335,16 @@ export const useElements = ({
                     delete newElements[elementID];
                 });
 
+                const updatedElements = [...localCache.updatedElements, ...Object.keys(newReplacements), ...toDelete];
+
                 return {
                     ...localCache,
                     elements: newElements,
                     page: {
                         ...localCache.page,
                         total: count ? count.Total : localCache.page.total
-                    }
+                    },
+                    updatedElements
                 };
             });
         }

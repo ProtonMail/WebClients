@@ -41,7 +41,7 @@ interface Props {
     messageLoaded: boolean;
     sourceMode: boolean;
     onBack: () => void;
-    onCollapse: () => void;
+    onForceCollapse: () => void;
     onSourceMode: (sourceMode: boolean) => void;
 }
 
@@ -52,7 +52,7 @@ const HeaderMoreDropdown = ({
     messageLoaded,
     sourceMode,
     onBack,
-    onCollapse,
+    onForceCollapse,
     onSourceMode
 }: Props) => {
     const api = useApi();
@@ -68,13 +68,14 @@ const HeaderMoreDropdown = ({
         closeDropdown.current?.();
         const folderName = getStandardFolders()[folderID].name;
         moveToFolder(true, [message.data?.ID || ''], folderID, folderName, fromFolderID);
+        onBack();
     };
 
     const handleUnread = async () => {
         closeDropdown.current?.();
         await api(markMessageAsUnread([message.data?.ID]));
         await call();
-        onCollapse();
+        onForceCollapse();
     };
 
     // Reference: Angular/src/app/bugReport/factories/bugReportModel.js

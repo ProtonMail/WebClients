@@ -49,6 +49,9 @@ const MessageView = ({
 
     const [expanded, setExpanded] = useState(initialExpand && !draft);
 
+    // Used for mark as unread, prevent an automatic opening
+    const [forcedCollapse, setForcedCollapse] = useState(false);
+
     const [sourceMode, setSourceMode] = useState(false);
 
     const elementRef = useRef<HTMLElement>(null);
@@ -94,7 +97,7 @@ const MessageView = ({
             addAction(load);
         }
 
-        if (messageLoaded && !draft && initialExpand && !expanded) {
+        if (messageLoaded && !draft && initialExpand && !expanded && !forcedCollapse) {
             setExpanded(true);
         }
 
@@ -106,7 +109,14 @@ const MessageView = ({
         if (!draft && bodyLoaded && unread && expanded) {
             addAction(markAsRead);
         }
-    }, [draft, messageLoaded, bodyLoaded, expanded]);
+    }, [draft, messageLoaded, bodyLoaded, expanded, message.data?.ID]);
+
+    // Re-initialize context if message is changed without disposing the component
+    useEffect(() => {
+        setExpanded(initialExpand && !draft);
+        setForcedCollapse(false);
+        setSourceMode(false);
+    }, [message.data?.ID]);
 
     if (!messageLoaded) {
         return null;
@@ -140,6 +150,11 @@ const MessageView = ({
         }
     };
 
+    const handleForceCollapsed = () => {
+        setForcedCollapse(true);
+        setExpanded(false);
+    };
+
     return (
         <article ref={elementRef} className={classnames(['message-container m0-5 mb1', expanded && 'is-opened'])}>
             {expanded ? (
@@ -159,6 +174,7 @@ const MessageView = ({
                         labels={labels}
                         mailSettings={mailSettings}
                         onCollapse={handleExpand(false)}
+                        onForceCollapse={handleForceCollapsed}
                         onBack={onBack}
                         onCompose={onCompose}
                         onSourceMode={setSourceMode}

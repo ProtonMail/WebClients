@@ -1,6 +1,6 @@
 import React from 'react';
-import { CacheProvider, NotificationsProvider, ModalsProvider } from 'react-components';
-import { render as originalRender, act, RenderResult } from '@testing-library/react';
+import { CacheProvider, NotificationsProvider, ModalsProvider, useEventManager } from 'react-components';
+import { render as originalRender, RenderResult, act } from '@testing-library/react';
 import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
 import ApiContext from 'react-components/containers/api/apiContext';
 import createCache from 'proton-shared/lib/helpers/cache';
@@ -9,6 +9,7 @@ import { STATUS } from 'proton-shared/lib/models/cache';
 import AuthenticationProvider from 'react-components/containers/authentication/Provider';
 import MessageProvider, { MessageCache } from '../../containers/MessageProvider';
 import ConversationProvider, { ConversationCache } from '../../containers/ConversationProvider';
+import { Event } from '../../models/event';
 
 type ApiMock = {
     [url: string]: (...arg: any[]) => any;
@@ -51,11 +52,15 @@ export const minimalCache = () => {
     addToCache('Addresses', []);
 };
 
+export const eventManagerListeners: ((...args: any[]) => any)[] = [];
+
 export const clearAll = () => {
+    api.mockClear();
     clearApiMocks();
     clearCache();
     messageCache.reset();
     conversationCache.reset();
+    eventManagerListeners.splice(0, eventManagerListeners.length);
 };
 
 interface Props {
@@ -96,4 +101,12 @@ export const render = async (component: JSX.Element): Promise<RenderResult> => {
 export const renderHook = (callback: (props: any) => any) => {
     minimalCache();
     return originalRenderHook<any, any>(callback, { wrapper: TestProvider as any });
+};
+
+((useEventManager as any).subscribe as jest.Mock).mockImplementation((listener) => {
+    eventManagerListeners.push(listener);
+});
+
+export const triggerEvent = (event: Event) => {
+    eventManagerListeners.forEach((listener) => listener(event));
 };

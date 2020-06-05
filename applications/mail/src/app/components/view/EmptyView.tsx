@@ -10,12 +10,12 @@ import noResultInboxSvgDark from 'design-system/assets/img/shared/no-result-inbo
 
 interface Props {
     labelID: string;
+    isSearch: boolean;
 }
 
-const EmptyView = ({ labelID }: Props) => {
+const EmptyView = ({ labelID, isSearch }: Props) => {
     const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX;
-    const isFolder = !isInbox;
-    const isSearch = false; // TODO: when the search will be implemented
+    const isFolder = !isInbox && !isSearch;
     const noResultSearchSvg = getLightOrDark(noResultSearchSvgLight, noResultSearchSvgDark);
     const noResultInboxSvg = getLightOrDark(noResultInboxSvgLight, noResultInboxSvgDark);
 
@@ -37,7 +37,7 @@ const EmptyView = ({ labelID }: Props) => {
                     <p data-if="folder">
                         {isSearch
                             ? // TODO: Add a link on clear it when search will work
-                              c('Info').t`Search - no results: You can either update your search query or clear it`
+                              c('Info').t`You can either update your search query or clear it`
                             : isFolder
                             ? c('Info').t`You do not have any messages here`
                             : c('Info').t`Seems like you are all caught up for now`}

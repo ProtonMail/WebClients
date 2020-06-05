@@ -8,7 +8,7 @@ import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
-import { Sort } from '../models/tools';
+import { Sort, SearchParameters, Filter } from '../models/tools';
 import { Message } from '../models/message';
 import { isConversationMode } from './mailSettings';
 import { hasAttachments as messageHasAttachments } from './message/messages';
@@ -154,3 +154,15 @@ export const parseLabelIDsInEvent = (element: Element, changes: Element & LabelI
     const LabelIDs = diff(element.LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || []);
     return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']), LabelIDs };
 };
+
+export const isSearch = (searchParams: SearchParameters) =>
+    !!searchParams.address ||
+    !!searchParams.attachments ||
+    !!searchParams.begin ||
+    !!searchParams.end ||
+    !!searchParams.from ||
+    !!searchParams.keyword ||
+    !!searchParams.to ||
+    !!searchParams.wildcard;
+
+export const isFilter = (filter: Filter) => Object.keys(filter).length > 0;

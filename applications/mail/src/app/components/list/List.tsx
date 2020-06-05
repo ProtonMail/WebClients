@@ -24,6 +24,7 @@ interface Props {
     onCheck: (ID: string[], checked: boolean, replace: boolean) => void;
     onClick: (element: Element) => void;
     location: Location;
+    isSearch: boolean;
 }
 
 const List = ({
@@ -36,7 +37,8 @@ const List = ({
     checkedIDs = [],
     onCheck,
     onClick,
-    location
+    location,
+    isSearch
 }: Props) => {
     const [contacts = [], loadingContacts] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [contactGroups = [], loadingGroups] = useContactGroups();
@@ -132,7 +134,7 @@ const List = ({
     };
 
     return elements.length === 0 ? (
-        <EmptyView labelID={labelID} />
+        <EmptyView labelID={labelID} isSearch={isSearch} />
     ) : (
         <>
             {elements.map((element) => {

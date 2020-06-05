@@ -79,10 +79,7 @@ const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
         if (Action === EVENT_ACTIONS.DELETE) {
             cache.delete(localID);
         }
-        if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-            console.warn('Event type UPDATE_DRAFT on Message not supported', Messages);
-        }
-        if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+        if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
             const currentValue = cache.get(localID) as MessageExtended;
 
             if (currentValue.data) {
