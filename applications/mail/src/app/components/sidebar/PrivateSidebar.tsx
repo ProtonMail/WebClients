@@ -33,7 +33,7 @@ const PrivateSidebar = ({ labelID, expanded = false, location, breakpoints, onTo
             </div>
             {!breakpoints.isNarrow && (
                 <div className="pl1 pr1 mb1">
-                    <PrimaryButton className="w100 bold" onClick={handleCompose}>{c('Action')
+                    <PrimaryButton className="pm-button--large w100 bold" onClick={handleCompose}>{c('Action')
                         .t`Compose`}</PrimaryButton>
                 </div>
             )}
