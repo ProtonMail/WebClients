@@ -4,10 +4,10 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 
 import Href from './Href';
 
-const Link = ({ to, external = false, children, ...rest }) => {
+const Link = ({ to, external = false, target = '_self', children, ...rest }) => {
     if (external) {
         return (
-            <Href url={to} target="_self" {...rest}>
+            <Href url={to} target={target} {...rest}>
                 {children}
             </Href>
         );
@@ -23,6 +23,7 @@ const Link = ({ to, external = false, children, ...rest }) => {
 Link.propTypes = {
     to: PropType.string.isRequired,
     external: PropType.bool,
+    target: PropType.string,
     children: PropType.node.isRequired
 };
 

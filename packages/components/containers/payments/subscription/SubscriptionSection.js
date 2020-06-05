@@ -8,7 +8,7 @@ import {
     Href,
     Loader,
     MozillaInfoPanel,
-    Progress,
+    Meter,
     useModals,
     useSubscription,
     useOrganization,
@@ -35,7 +35,7 @@ const AddonRow = ({ label, used, max, format = identity }) => {
                 </strong>
             </div>
             <div className="flex-autogrid-item">
-                {Number.isInteger((used * 100) / max) ? <Progress value={(used * 100) / max} /> : null}
+                {Number.isInteger((used * 100) / max) ? <Meter value={(used * 100) / max} /> : null}
             </div>
         </div>
     );

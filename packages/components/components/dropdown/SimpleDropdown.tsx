@@ -10,9 +10,18 @@ interface Props extends DropdownButtonProps {
     children?: React.ReactNode;
     originalPlacement?: string;
     autoClose?: boolean;
+    dropdownClassName?: string;
 }
 
-const SimpleDropdown = ({ content, children, originalPlacement, autoClose, hasCaret = true, ...rest }: Props) => {
+const SimpleDropdown = ({
+    content,
+    children,
+    originalPlacement,
+    autoClose,
+    hasCaret = true,
+    dropdownClassName,
+    ...rest
+}: Props) => {
     const [uid] = useState(generateUID('dropdown'));
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -29,6 +38,7 @@ const SimpleDropdown = ({ content, children, originalPlacement, autoClose, hasCa
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={close}
+                className={dropdownClassName}
             >
                 {children}
             </Dropdown>
