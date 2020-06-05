@@ -68,7 +68,7 @@ const PaymentMethodActions = ({ method, methods, index }) => {
             onClick: () => {
                 createModal(
                     <ConfirmModal onConfirm={deleteMethod} title={c('Confirmation title').t`Delete payment method`}>
-                        <Alert>{c('Confirmation message to delete payment method')
+                        <Alert type="warning">{c('Confirmation message to delete payment method')
                             .t`Are you sure you want to delete this payment method?`}</Alert>
                     </ConfirmModal>
                 );

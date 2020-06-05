@@ -38,7 +38,7 @@ function ActionsLabel({ label, onChange }) {
         return new Promise((resolve, reject) => {
             createModal(
                 <ConfirmModal onConfirm={resolve} onClose={reject} title={I18N[Type].title}>
-                    <Alert>{I18N[Type].content}</Alert>
+                    <Alert type="warning">{I18N[Type].content}</Alert>
                 </ConfirmModal>
             );
         });

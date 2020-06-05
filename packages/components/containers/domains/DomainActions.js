@@ -42,7 +42,7 @@ const DomainActions = ({ domain, domainAddresses }) => {
             onClick: () => {
                 createModal(
                     <ConfirmModal onConfirm={handleConfirmDelete} title={c('Title').t`Delete domain`}>
-                        <Alert>{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
+                        <Alert type="warning">{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
                     </ConfirmModal>
                 );
             }
