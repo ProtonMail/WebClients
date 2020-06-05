@@ -61,7 +61,7 @@ const handleSaveSingleEventHelper = async ({
                 UID: newVeventComponent.uid.value,
             })
         );
-    } else if (isUpdateEvent) {
+    } else if (isUpdateEvent && oldEvent) {
         result = await api(getUpdateCalendarEvent({ memberID: newMemberID, data, Event: oldEvent }));
     } else {
         result = await api(getCreateCalendarEvent({ calendarID: newCalendarID, memberID: newMemberID, data }));
