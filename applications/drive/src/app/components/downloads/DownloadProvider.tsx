@@ -92,7 +92,16 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     };
 
     const pauseDownload = async (id: string) => {
-        await controls.current[id].pause();
+        const download = downloads.find((download) => download.id === id);
+
+        if (!download) {
+            return;
+        }
+
+        if (download.state !== TransferState.Pending) {
+            await controls.current[id].pause();
+        }
+
         updateDownloadState(id, TransferState.Paused);
     };
 
