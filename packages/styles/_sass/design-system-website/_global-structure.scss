@@ -4,8 +4,7 @@ body {
 }
 /* === page === */
 .content {
-  background-image: -webkit-linear-gradient(top, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
-  background-image: linear-gradient(to bottom, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
+  background-color: var(--main-bg-color, $pm-global-grey);
   /*display: grid;
   grid-template-areas:
       "header header"
