@@ -48,7 +48,7 @@ const ComposerActions = ({
     const handleDelete = () => {
         return createModal(
             <ConfirmModal onConfirm={onDelete} onClose={noop} title={c('Title').t`Delete`}>
-                <Alert>{c('Info').t`Permanently delete this draft?`}</Alert>
+                <Alert type="warning">{c('Info').t`Permanently delete this draft?`}</Alert>
             </ConfirmModal>
         );
     };
