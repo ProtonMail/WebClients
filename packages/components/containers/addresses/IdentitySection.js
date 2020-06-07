@@ -22,7 +22,6 @@ const IdentitySection = () => {
     const [addresses, loading] = useAddresses();
     const [addressIndex, setAddressIndex] = useState(0);
     const { createModal } = useModals();
-
     const title = <SubTitle>{c('Title').t`Display name & signature`}</SubTitle>;
 
     if (loading && !Array.isArray(addresses)) {
@@ -34,7 +33,14 @@ const IdentitySection = () => {
         );
     }
 
-    if (!addresses.length) {
+    const filtered = addresses.filter(
+        ({ Status, Receive, Send }) =>
+            Status === ADDRESS_STATUS.STATUS_ENABLED &&
+            Receive === RECEIVE_ADDRESS.RECEIVE_YES &&
+            Send === SEND_ADDRESS.SEND_YES
+    );
+
+    if (!filtered.length) {
         return (
             <>
                 <Alert>{c('Info').t`No addresses exist`}</Alert>
@@ -42,24 +48,10 @@ const IdentitySection = () => {
         );
     }
 
-    const address = addresses[addressIndex];
-
-    const options = addresses
-        .filter(
-            ({ Status, Receive, Send }) =>
-                Status === ADDRESS_STATUS.STATUS_ENABLED &&
-                Receive === RECEIVE_ADDRESS.RECEIVE_YES &&
-                Send === SEND_ADDRESS.SEND_YES
-        )
-        .map(({ Email: text }, i) => ({ text, value: i }));
-
-    const handleChange = ({ target }) => {
-        setAddressIndex(target.value);
-    };
-
-    const handleOpenModal = () => {
-        createModal(<EditAddressModal address={address} />);
-    };
+    const address = filtered[addressIndex];
+    const options = filtered.map(({ Email: text }, index) => ({ text, value: index }));
+    const handleChange = ({ target }) => setAddressIndex(target.value);
+    const handleOpenModal = () => createModal(<EditAddressModal address={address} />);
 
     return (
         <>
