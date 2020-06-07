@@ -66,7 +66,7 @@ const AppsDropdown = () => {
                         </li>
                     );
                 })}
-                <li className="dropDown-item appsDropdown-item">
+                <li hidden className="dropDown-item appsDropdown-item">
                     <Link
                         to="/account"
                         target="_blank"
