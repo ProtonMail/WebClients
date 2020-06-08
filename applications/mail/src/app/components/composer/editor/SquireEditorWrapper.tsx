@@ -65,6 +65,7 @@ const SquireEditorWrapper = ({
     const [documentReady, setDocumentReady] = useState(false);
     const [blockquoteExpanded, setBlockquoteExpanded] = useState(true);
     const [blockquoteSaved, setBlockquoteSaved] = useState('');
+    const skipNextInputRef = useRef(false); // Had trouble by using a state here
 
     // Keep track of the containing CIDs to detect deletion
     const [cids, setCIDs] = useState<string[]>([]);
@@ -106,8 +107,8 @@ const SquireEditorWrapper = ({
                 setBlockquoteExpanded(blockquote === '');
             }
 
+            skipNextInputRef.current = true;
             squireEditorRef.current.value = content;
-
             onReady();
         }
     }, [editorReady, documentReady, isPlainText]);
@@ -140,7 +141,13 @@ const SquireEditorWrapper = ({
 
     // Handle input considering blockquote
     const handleInput = (content: string) => {
+        if (skipNextInputRef.current) {
+            skipNextInputRef.current = false;
+            return;
+        }
+
         checkImageDeletion();
+
         if (!blockquoteExpanded) {
             onChangeContent(content + blockquoteSaved);
         } else {

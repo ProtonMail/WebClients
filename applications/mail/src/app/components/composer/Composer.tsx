@@ -25,15 +25,8 @@ import { useAttachments } from '../../hooks/useAttachments';
 import { getDate } from '../../helpers/elements';
 import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
 import { WindowSize, Breakpoints } from '../../models/utils';
-import { getContent } from '../../helpers/message/messageContent';
-import { isHTMLEmpty } from '../../helpers/dom';
 import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
-
-const getShouldSave = (initialValue: string, message: PartialMessageExtended) => {
-    const content = getContent(message);
-    return isHTMLEmpty(content) && initialValue !== content;
-};
 
 enum ComposerInnerModal {
     None,
@@ -73,9 +66,6 @@ const Composer = ({
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVertialScroll] = useHasScroll(bodyRef);
-
-    // Initial value to be tested against to decide if we should autosave or not
-    const [initialValue, setInitialValue] = useState('');
 
     // Minimized status of the composer
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
@@ -194,11 +184,6 @@ const Composer = ({
 
     const autoSave = useHandler(actualSave, { debounce: 2000 });
 
-    // Save initial value to be checked against to avoid unnecessary empty messages
-    useEffect(() => {
-        setInitialValue(getContent(syncedMessage));
-    }, []);
-
     const handleChange: MessageChange = (message) => {
         setModelMessage((modelMessage) => {
             const messageChanges = message instanceof Function ? message(modelMessage) : message;
@@ -213,9 +198,7 @@ const Composer = ({
         setModelMessage((modelMessage) => {
             setContent(modelMessage, content);
             const newModelMessage = { ...modelMessage };
-            if (getShouldSave(initialValue, syncedMessage)) {
-                autoSave(newModelMessage);
-            }
+            autoSave(newModelMessage);
             return newModelMessage;
         });
     };
@@ -281,7 +264,9 @@ const Composer = ({
         setClosing(true);
         autoSave.abort?.();
         try {
-            await addAction(deleteDraft);
+            if (syncedMessage.data?.ID) {
+                await addAction(deleteDraft);
+            }
             createNotification({ text: c('Info').t`Message discarded` });
         } finally {
             onClose();
@@ -296,8 +281,9 @@ const Composer = ({
     };
     const handleClose = async () => {
         setClosing(true);
+        autoSave.abort?.();
         try {
-            if (getShouldSave(initialValue, syncedMessage)) {
+            if (syncedMessage.data?.ID) {
                 await handleManualSave();
             }
         } finally {
