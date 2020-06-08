@@ -253,7 +253,7 @@
 			}
 		}
 
-		& [aria-current='true']
+		& [aria-current='true'],
 		& &--isSelected { // Specificity -_-v
 			&,
 			&:hover,
