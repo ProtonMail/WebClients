@@ -19,7 +19,7 @@ import { getRecipientLabel, recipientsToRecipientOrGroup, getRecipientOrGroupLab
 import { isCustomLabel } from '../../helpers/labels';
 import { Message } from '../../models/message';
 
-const { SENT, ALL_SENT, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
+const { SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
 
 interface Props {
     location: Location;
@@ -59,7 +59,7 @@ const Item = ({
     dragged
 }: Props) => {
     const { ID = '' } = element;
-    const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
+    const displayRecipients = [SENT, ALL_SENT].includes(labelID as MAILBOX_LABEL_IDS);
     const type = getCurrentType({ mailSettings, labelID, location });
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
