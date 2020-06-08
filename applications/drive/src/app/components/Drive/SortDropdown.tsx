@@ -33,25 +33,25 @@ const SortDropdown = ({ className }: Props) => {
         {
             name: c('Action').t`Modified Date: New to Old`,
             icon: 'sort-new-old',
-            sortField: 'Modified',
+            sortField: 'ModifyTime',
             sortOrder: SORT_DIRECTION.DESC
         },
         {
             name: c('Action').t`Modified Date: Old to New`,
             icon: 'sort-old-new',
-            sortField: 'Modified',
+            sortField: 'ModifyTime',
             sortOrder: SORT_DIRECTION.ASC
         },
         {
             name: c('Action').t`Type: A to Z`,
             icon: 'arrow-down',
-            sortField: 'MimeType',
+            sortField: 'MIMEType',
             sortOrder: SORT_DIRECTION.ASC
         },
         {
             name: c('Action').t`Type: Z to A`,
             icon: 'arrow-up',
-            sortField: 'MimeType',
+            sortField: 'MIMEType',
             sortOrder: SORT_DIRECTION.DESC
         },
         {

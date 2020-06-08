@@ -12,9 +12,9 @@ export interface CreateDriveFile {
     ParentLinkID: string;
     NodePassphrase: string;
     NodePassphraseSignature: string;
-    SignatureAddressID: string;
+    SignatureAddress: string;
     NodeKey: string;
-    MimeType: string;
+    MIMEType: string;
     ContentKeyPacket: string;
 }
 
@@ -31,7 +31,7 @@ export interface UpdateFileRevision {
     BlockList: { Index: number; Token: string }[];
     RootHash: string;
     RootHashSignature: string;
-    AuthorAddressID: string;
+    SignatureAddress: string;
 }
 
 export interface CreateFileResult {
@@ -57,13 +57,13 @@ export interface DriveFileBlock {
 
 export interface DriveFileRevision {
     ID: string;
-    Created: number;
+    CreateTime: number;
     Size: number;
     Hash: string;
     State: number;
     RootHash: string;
     RootHashSignature: string;
-    AuthorAddressID: string;
+    SignatureAddress: string;
     Blocks: DriveFileBlock[];
 }
 

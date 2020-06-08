@@ -4,7 +4,7 @@ export interface CreateNewFolder {
     ParentLinkID: string;
     NodePassphrase: string;
     NodePassphraseSignature: string;
-    SignatureAddressID: string;
+    SignatureAddress: string;
     NodeKey: string;
     NodeHashKey: string;
 }

@@ -15,7 +15,7 @@ import useDrive from '../../hooks/useDrive';
 export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
     return {
         filename: item.Name,
-        mimeType: item.MimeType,
+        mimeType: item.MIMEType,
         size: item.Size
     };
 };
@@ -59,7 +59,7 @@ function Drive({ activeFolder, openLink }: Props) {
         if (item.Type === LinkType.FOLDER) {
             openLink(shareId, item.LinkID, item.Type);
         } else if (item.Type === LinkType.FILE) {
-            if (item.MimeType && isPreviewAvailable(item.MimeType)) {
+            if (item.MIMEType && isPreviewAvailable(item.MIMEType)) {
                 openLink(shareId, item.LinkID, item.Type);
             } else {
                 const meta = getMetaForTransfer(item);
