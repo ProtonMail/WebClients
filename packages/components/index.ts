@@ -411,6 +411,7 @@ export { useHandler, useEventListener, useSubscribeEventManager, useInterval } f
 
 export { default as ErrorBoundary } from './containers/app/ErrorBoundary';
 export { default as ProtonApp } from './containers/app/ProtonApp';
+export { default as TopBanners } from './containers/app/TopBanners';
 export { default as StandardPrivateApp } from './containers/app/StandardPrivateApp';
 export { default as StandardPublicApp } from './containers/app/StandardPublicApp';
 export { default as AppsDropdown } from './containers/app/AppsDropdown';
