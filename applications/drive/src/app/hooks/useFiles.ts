@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import { useApi, useEventManager, useUser, useNotifications } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import {
@@ -17,16 +16,14 @@ import {
     generateContentKeys,
     encryptUnsigned,
     generateLookupHash,
-    getStreamMessage,
-    generateContentHash
+    getStreamMessage
 } from 'proton-shared/lib/keys/driveKeys';
-import { binaryStringToArray } from 'proton-shared/lib/helpers/string';
 import { range } from 'proton-shared/lib/helpers/array';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { useUploadProvider, BlockMeta } from '../components/uploads/UploadProvider';
+import { useUploadProvider } from '../components/uploads/UploadProvider';
 import { TransferMeta, TransferState } from '../interfaces/transfer';
 import { useDownloadProvider } from '../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../components/downloads/download';
@@ -114,30 +111,6 @@ function useFiles() {
             return availableName;
         },
         5
-    );
-
-    const generateRootHash = useCallback(
-        async (PreviousRootHash: string | null, blockMeta: BlockMeta[]) => {
-            const BlockHashes = blockMeta.map(({ Index, Hash }) => ({
-                Index,
-                Hash
-            }));
-            const { BlockHash: RootHash } = await generateContentHash(
-                binaryStringToArray(
-                    JSON.stringify({
-                        PreviousRootHash,
-                        BlockHashes
-                    })
-                )
-            );
-
-            const {
-                signature: RootHashSignature,
-                address: { Email: SignatureAddress }
-            } = await sign(RootHash);
-            return { RootHash, RootHashSignature, SignatureAddress };
-        },
-        [sign]
     );
 
     const uploadDriveFile = async (
@@ -247,15 +220,23 @@ function useFiles() {
                     });
                     return res.message.packets.write() as Uint8Array;
                 },
-                requestUpload: async (BlockList) => {
+                requestUpload: async (Blocks) => {
                     const { File, addressKeyInfo } = await setupPromise;
-                    const { signature, address } = await sign(JSON.stringify(BlockList), addressKeyInfo);
+
+                    const getBlockWithSignature = async (block: { Hash: string; Size: number; Index: number }) => {
+                        const { signature } = await sign(block.Hash);
+                        return {
+                            Signature: signature,
+                            ...block
+                        };
+                    };
+
+                    const BlockList = await Promise.all(Blocks.map(getBlockWithSignature));
 
                     const { UploadLinks } = await debouncedRequest<RequestUploadResult>(
                         queryRequestUpload({
                             BlockList,
-                            AddressID: address.ID,
-                            Signature: signature,
+                            AddressID: addressKeyInfo.address.ID,
                             LinkID: File.ID,
                             RevisionID: File.RevisionID,
                             ShareID: shareId
@@ -263,16 +244,25 @@ function useFiles() {
                     );
                     return UploadLinks;
                 },
-                finalize: async (blockMeta) => {
-                    const [{ File }, rootHash] = await Promise.all([setupPromise, generateRootHash(null, blockMeta)]);
+                finalize: async (blockMetas) => {
+                    let contentHashes = '';
+                    const BlockList = blockMetas.map(({ Index, Token, Hash }) => {
+                        contentHashes += Hash;
+                        return {
+                            Index,
+                            Token
+                        };
+                    });
+                    const { File } = await setupPromise;
+                    const { signature, address } = await sign(contentHashes);
+                    const SignatureAddress = address.Email;
+
                     await debouncedRequest(
                         queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
                             State: FileRevisionState.Active,
-                            BlockList: blockMeta.map(({ Index, Token }) => ({
-                                Index,
-                                Token
-                            })),
-                            ...rootHash
+                            BlockList,
+                            ManifestSignature: signature,
+                            SignatureAddress
                         })
                     );
 

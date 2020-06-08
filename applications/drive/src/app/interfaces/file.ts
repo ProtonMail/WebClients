@@ -29,8 +29,7 @@ export interface RevisionManifest {
 export interface UpdateFileRevision {
     State: FileRevisionState;
     BlockList: { Index: number; Token: string }[];
-    RootHash: string;
-    RootHashSignature: string;
+    ManifestSignature: string;
     SignatureAddress: string;
 }
 
