@@ -35,7 +35,7 @@ const TrashContentProvider = ({ children, shareId }: { children: React.ReactNode
     const trashLinks = cache.get.trashMetas(shareId);
     const complete = cache.get.trashComplete(shareId);
     const { sortedList } = useSortedList(mapLinksToChildren(trashLinks), {
-        key: 'Modified',
+        key: 'ModifyTime',
         direction: SORT_DIRECTION.ASC
     });
     const fileBrowserControls = useFileBrowser(sortedList);

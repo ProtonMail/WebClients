@@ -89,7 +89,6 @@ function useDrive() {
 
         const Share = await debouncedRequest<ShareMeta>(queryShareMeta(shareId));
         cache.set.shareMeta(Share);
-
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
         await events.subscribe(shareId);
 
@@ -117,8 +116,7 @@ function useDrive() {
         }
 
         const meta = await getShareMeta(shareId);
-
-        const { privateKeys, publicKeys } = await getVerificationKeys(meta.AddressID);
+        const { privateKeys, publicKeys } = await getVerificationKeys(meta.Creator);
         const decryptedSharePassphrase = await decryptPassphrase({
             armoredPassphrase: meta.Passphrase,
             armoredSignature: meta.PassphraseSignature,
@@ -146,7 +144,7 @@ function useDrive() {
         const [{ privateKey: parentKey }, { publicKeys }] = await Promise.all([
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             meta.ParentLinkID ? await getLinkKeys(shareId, meta.ParentLinkID, config) : await getShareKeys(shareId),
-            getVerificationKeys(meta.SignatureAddressID)
+            getVerificationKeys(meta.SignatureAddress)
         ]);
 
         return decryptPassphrase({
@@ -288,7 +286,7 @@ function useDrive() {
         }
 
         const lowerCaseName = newName.toLowerCase();
-        const MimeType = type === LinkType.FOLDER ? 'Folder' : lookup(newName) || 'application/octet-stream';
+        const MIMEType = type === LinkType.FOLDER ? 'Folder' : lookup(newName) || 'application/octet-stream';
 
         const parentKeys = await getLinkKeys(shareId, parentLinkID);
 
@@ -307,7 +305,7 @@ function useDrive() {
         await debouncedRequest(
             queryRenameLink(shareId, linkId, {
                 Name: encryptedName,
-                MimeType,
+                MIMEType,
                 Hash
             })
         );
@@ -356,7 +354,7 @@ function useDrive() {
                     NodeKey,
                     NodePassphrase,
                     NodePassphraseSignature,
-                    SignatureAddressID: address.ID,
+                    SignatureAddress: address.Email,
                     ParentLinkID
                 })
             );
@@ -396,7 +394,7 @@ function useDrive() {
             ParentLinkID,
             NodePassphrase,
             NodePassphraseSignature,
-            SignatureAddressID: address.ID
+            SignatureAddress: address.Email
         };
 
         await debouncedRequest(queryMoveLink(shareId, linkId, data));

@@ -33,8 +33,14 @@ function useDriveCrypto() {
     }, [getAddresses]);
 
     const getVerificationKeys = useCallback(
-        async (addressId: string) => {
-            return splitKeys(await getAddressKeys(addressId));
+        async (email: string) => {
+            const addresses = await getAddresses();
+            const ownAddress = addresses.find(({ Email }) => Email === email);
+            if (!ownAddress) {
+                // Should never happen
+                throw new Error('Adress was not found.');
+            }
+            return splitKeys(await getAddressKeys(ownAddress.ID));
         },
         [getAddressKeys]
     );

@@ -133,9 +133,9 @@ function useFiles() {
 
             const {
                 signature: RootHashSignature,
-                address: { ID: AuthorAddressID }
+                address: { Email: SignatureAddress }
             } = await sign(RootHash);
-            return { RootHash, RootHashSignature, AuthorAddressID };
+            return { RootHash, RootHashSignature, SignatureAddress };
         },
         [sign]
     );
@@ -192,18 +192,18 @@ function useFiles() {
                 publicKey: parentKeys.privateKey.toPublic()
             });
 
-            const MimeType = lookup(filename) || 'application/octet-stream';
+            const MIMEType = lookup(filename) || 'application/octet-stream';
 
             const { File } = await debouncedRequest<CreateFileResult>(
                 queryCreateFile(shareId, {
                     Name,
-                    MimeType,
+                    MIMEType,
                     Hash,
                     ParentLinkID,
                     NodeKey,
                     NodePassphrase,
                     NodePassphraseSignature,
-                    SignatureAddressID: addressKeyInfo.address.ID,
+                    SignatureAddress: addressKeyInfo.address.Email,
                     ContentKeyPacket
                 })
             );
@@ -212,7 +212,7 @@ function useFiles() {
                 File,
                 blob,
                 Name,
-                MimeType,
+                MIMEType,
                 sessionKey,
                 filename,
                 addressKeyInfo,
@@ -222,10 +222,10 @@ function useFiles() {
 
         addToUploadQueue(
             file,
-            setupPromise.then(({ blob, MimeType, File, filename, ParentLinkID }) => ({
+            setupPromise.then(({ blob, MIMEType, File, filename, ParentLinkID }) => ({
                 meta: {
                     size: blob.size,
-                    mimeType: MimeType,
+                    mimeType: MIMEType,
                     filename
                 },
                 info: {

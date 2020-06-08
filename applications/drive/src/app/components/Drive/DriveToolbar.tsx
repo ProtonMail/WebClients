@@ -305,8 +305,8 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
         const isPreviewDisabled =
             isMultiSelect ||
             hasFoldersSelected ||
-            !selectedItems[0].MimeType ||
-            !isPreviewAvailable(selectedItems[0].MimeType);
+            !selectedItems[0].MIMEType ||
+            !isPreviewAvailable(selectedItems[0].MIMEType);
 
         return (
             <>

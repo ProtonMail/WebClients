@@ -75,7 +75,7 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
             />
         </div>,
         <div key="filename" className="flex flex-items-center flex-nowrap">
-            <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MimeType} />
+            <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} />
             <span title={item.Name} className="ellipsis">
                 {item.Name}
             </span>
@@ -85,10 +85,10 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
         isDesktop && (
             <div
                 className="ellipsis"
-                title={readableTime(item.Trashed ?? item.Modified, 'PPp', { locale: dateLocale })}
+                title={readableTime(item.Trashed ?? item.ModifyTime, 'PPp', { locale: dateLocale })}
             >
                 <Time key="dateModified" format="PPp">
-                    {item.Trashed ?? item.Modified}
+                    {item.Trashed ?? item.ModifyTime}
                 </Time>
             </div>
         ),

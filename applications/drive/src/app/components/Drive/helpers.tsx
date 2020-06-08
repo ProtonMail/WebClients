@@ -51,13 +51,13 @@ export const getNotificationTextForItemList = (
 };
 
 export const mapLinksToChildren = (decryptedLinks: LinkMeta[]): FileBrowserItem[] => {
-    return decryptedLinks.map(({ LinkID, Type, Name, Modified, Size, MimeType, ParentLinkID, Trashed }) => ({
+    return decryptedLinks.map(({ LinkID, Type, Name, ModifyTime, Size, MIMEType, ParentLinkID, Trashed }) => ({
         Name,
         LinkID,
         Type,
-        Modified,
+        ModifyTime,
         Size,
-        MimeType,
+        MIMEType,
         ParentLinkID,
         Trashed
     }));

@@ -97,7 +97,7 @@ const useDriveCacheState = () => {
                     ? {
                           meta,
                           children: {
-                              sorted: ['MimeType', 'Modified', 'Size'].reduce((sorted, sortKey) => {
+                              sorted: ['MIMEType', 'ModifyTime', 'Size'].reduce((sorted, sortKey) => {
                                   sorted[sortKey as SortKeys] = {
                                       ASC: { list: [], complete: isNew },
                                       DESC: { list: [], complete: isNew }
