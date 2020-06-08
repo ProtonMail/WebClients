@@ -4,10 +4,13 @@ import CalendarContainerViewBlurred from '../calendar/CalendarContainerViewBlurr
 import FreeModal from './FreeModal';
 
 const FreeContainer = () => {
-    const { createModal } = useModals();
+    const { createModal, hideModal } = useModals();
 
     useEffect(() => {
-        createModal(<FreeModal />);
+        const id = createModal(<FreeModal />);
+        return () => {
+            hideModal(id);
+        };
     }, []);
 
     return <CalendarContainerViewBlurred />;
