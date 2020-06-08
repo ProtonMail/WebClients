@@ -1,5 +1,5 @@
 import React, { ReactNode, Ref, useCallback, useEffect, useMemo } from 'react';
-import { classnames, FullLoader, LocalizedMiniCalendar, useToggle, TextLoader } from 'react-components';
+import { classnames, FullLoader, LocalizedMiniCalendar, useToggle, TextLoader, TopBanners } from 'react-components';
 import { c } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
 
@@ -112,8 +112,12 @@ const CalendarContainerView = ({
     }, [window.location.pathname]);
 
     return (
-        <div className={classnames(['flex flex-nowrap no-scroll', isBlurred && 'filter-blur'])} ref={containerRef}>
-            <div className="content flex-item-fluid reset4print">
+        <div
+            className={classnames(['flex flex-column flex-nowrap no-scroll', isBlurred && 'filter-blur'])}
+            ref={containerRef}
+        >
+            <TopBanners />
+            <div className="content flex-item-fluid-auto reset4print">
                 <PrivateHeader
                     url="/calendar"
                     inSettings={false}

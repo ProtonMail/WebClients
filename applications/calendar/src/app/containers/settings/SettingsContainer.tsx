@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useToggle, Sidebar, Info } from 'react-components';
+import { useToggle, Sidebar, Info, TopBanners } from 'react-components';
 import { Redirect, Route, Switch } from 'react-router';
 import { c } from 'ttag';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
@@ -60,8 +60,9 @@ const SettingsContainer = ({
     ];
 
     return (
-        <div className="flex flex-nowrap no-scroll">
-            <div className="content flex-item-fluid reset4print">
+        <div className="flex flex-column flex-nowrap no-scroll">
+            <TopBanners />
+            <div className="content flex-item-fluid-auto reset4print">
                 <PrivateHeader
                     url="/calendar"
                     inSettings

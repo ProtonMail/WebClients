@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAddresses, useCalendars, useDelinquent, useUser } from 'react-components';
+import { useAddresses, useCalendars, useUser } from 'react-components';
 
 import { getSetupType, SETUP_TYPE } from '../setup/setupHelper';
 import FreeContainer from '../setup/FreeContainer';
@@ -11,7 +11,6 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [calendars] = useCalendars();
     const [user] = useUser();
-    useDelinquent();
 
     const [setupType, setSetupType] = useState(() => getSetupType(calendars));
 
