@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, ReactNode } from 'react';
-import { MainAreaContext, useDelinquent } from 'react-components';
+import { MainAreaContext, TopBanners } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import PrivateHeader from '../header/PrivateHeader';
@@ -23,7 +23,6 @@ interface Props {
 const PrivateLayout = ({ children, location, history, breakpoints, labelID, elementID, onCompose }: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const [expanded, setExpand] = useState(false);
-    useDelinquent();
 
     const handleSearch = (keyword = '', labelID = MAILBOX_LABEL_IDS.ALL_MAIL as string) => {
         history.push(setKeywordInUrl({ ...location, pathname: `/${getHumanLabelID(labelID)}` }, keyword));
@@ -37,6 +36,7 @@ const PrivateLayout = ({ children, location, history, breakpoints, labelID, elem
 
     return (
         <div className="flex flex-nowrap no-scroll">
+            <TopBanners />
             <div className="content flex-item-fluid reset4print">
                 <PrivateHeader
                     labelID={labelID}
