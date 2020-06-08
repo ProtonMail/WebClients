@@ -11,7 +11,7 @@ const TopBanners = () => {
     const [user] = useUser();
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useState(getItem(IGNORE_STORAGE_LIMIT_KEY) === 'true');
     const upgradeLink = (
-        <Href key="storage-link" className="color-white" url="/settings/subscription" target="_self">{c('Link')
+        <Href key="storage-link" className="color-currentColor" url="/settings/subscription" target="_self">{c('Link')
             .t`Upgrade account`}</Href>
     ); // TODO Update link once we have proton-account
     const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
