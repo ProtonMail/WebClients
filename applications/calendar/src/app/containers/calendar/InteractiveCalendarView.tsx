@@ -714,7 +714,7 @@ const InteractiveCalendarView = ({
                 return acc;
             }, {});
         return [...eventsSet.keys()].map((eventId) => latestEvents[eventId]).filter(isTruthy);
-    }, [targetMoreData?.events]);
+    }, [targetMoreData?.events, events]);
 
     return (
         <>
