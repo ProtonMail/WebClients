@@ -41,7 +41,7 @@ interface Props {
     messageLoaded: boolean;
     sourceMode: boolean;
     onBack: () => void;
-    onForceCollapse: () => void;
+    onCollapse: () => void;
     onSourceMode: (sourceMode: boolean) => void;
 }
 
@@ -52,7 +52,7 @@ const HeaderMoreDropdown = ({
     messageLoaded,
     sourceMode,
     onBack,
-    onForceCollapse,
+    onCollapse,
     onSourceMode
 }: Props) => {
     const api = useApi();
@@ -75,7 +75,7 @@ const HeaderMoreDropdown = ({
         closeDropdown.current?.();
         await api(markMessageAsUnread([message.data?.ID]));
         await call();
-        onForceCollapse();
+        onCollapse();
     };
 
     // Reference: Angular/src/app/bugReport/factories/bugReportModel.js

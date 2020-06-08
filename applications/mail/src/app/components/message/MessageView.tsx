@@ -40,17 +40,15 @@ const MessageView = ({
     labels = [],
     message: inputMessage,
     mailSettings,
-    initialExpand = true,
+    initialExpand: inputInitialExpand = true,
     conversationIndex = 0,
     onBack,
     onCompose
 }: Props) => {
     const draft = isDraft(inputMessage);
 
-    const [expanded, setExpanded] = useState(initialExpand && !draft);
-
-    // Used for mark as unread, prevent an automatic opening
-    const [forcedCollapse, setForcedCollapse] = useState(false);
+    const [expanded, setExpanded] = useState(inputInitialExpand && !draft);
+    const [initialExpand, setInitialExpand] = useState(inputInitialExpand && !draft);
 
     const [sourceMode, setSourceMode] = useState(false);
 
@@ -97,8 +95,9 @@ const MessageView = ({
             addAction(load);
         }
 
-        if (messageLoaded && !draft && initialExpand && !expanded && !forcedCollapse) {
+        if (messageLoaded && !draft && initialExpand) {
             setExpanded(true);
+            setInitialExpand(false);
         }
 
         if (!draft && !bodyLoaded && expanded) {
@@ -113,8 +112,8 @@ const MessageView = ({
 
     // Re-initialize context if message is changed without disposing the component
     useEffect(() => {
-        setExpanded(initialExpand && !draft);
-        setForcedCollapse(false);
+        setExpanded(inputInitialExpand && !draft);
+        setInitialExpand(inputInitialExpand && !draft);
         setSourceMode(false);
     }, [message.data?.ID]);
 
@@ -150,11 +149,6 @@ const MessageView = ({
         }
     };
 
-    const handleForceCollapsed = () => {
-        setForcedCollapse(true);
-        setExpanded(false);
-    };
-
     return (
         <article ref={elementRef} className={classnames(['message-container m0-5 mb1', expanded && 'is-opened'])}>
             {expanded ? (
@@ -174,7 +168,6 @@ const MessageView = ({
                         labels={labels}
                         mailSettings={mailSettings}
                         onCollapse={handleExpand(false)}
-                        onForceCollapse={handleForceCollapsed}
                         onBack={onBack}
                         onCompose={onCompose}
                         onSourceMode={setSourceMode}

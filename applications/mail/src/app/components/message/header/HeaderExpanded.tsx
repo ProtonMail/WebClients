@@ -66,7 +66,6 @@ interface Props {
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
     onCollapse: () => void;
-    onForceCollapse: () => void;
     onBack: () => void;
     onCompose: OnCompose;
     onSourceMode: (sourceMode: boolean) => void;
@@ -87,7 +86,6 @@ const HeaderExpanded = ({
     onLoadEmbeddedImages,
     mailSettings,
     onCollapse,
-    onForceCollapse,
     onBack,
     onCompose,
     onSourceMode
@@ -225,7 +223,7 @@ const HeaderExpanded = ({
                         messageLoaded={messageLoaded}
                         sourceMode={sourceMode}
                         onBack={onBack}
-                        onForceCollapse={onForceCollapse}
+                        onCollapse={onCollapse}
                         onSourceMode={onSourceMode}
                     />
 
