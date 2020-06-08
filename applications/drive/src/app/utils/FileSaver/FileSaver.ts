@@ -52,7 +52,8 @@ class FileSaver {
         return this.saveViaDownload(stream, meta);
     }
 
-    async saveAsZip(filename: string) {
+    async saveAsZip(name: string) {
+        const filename = `${name}.zip`;
         const files: NestedFileStream[] = [];
 
         const abortController = new AbortController();

@@ -476,7 +476,7 @@ function useFiles() {
      * Starts folder download, resolves when all files have been downloaded or rejects on error
      */
     const startFolderTransfer = async (
-        filename: string,
+        folderName: string,
         shareId: string,
         linkId: string,
         cb: {
@@ -484,7 +484,7 @@ function useFiles() {
             onStartFolderTransfer: (path: string) => Promise<void>;
         }
     ) => {
-        const { addDownload, startDownloads } = addFolderToDownloadQueue(filename);
+        const { addDownload, startDownloads } = addFolderToDownloadQueue(folderName);
         const fileStreamPromises: Promise<void>[] = [];
 
         const downloadFolder = async (linkId: string, filePath = ''): Promise<void> => {

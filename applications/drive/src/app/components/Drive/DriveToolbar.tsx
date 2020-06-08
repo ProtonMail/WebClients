@@ -79,7 +79,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                 const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
                 FileSaver.saveAsFile(fileStream, meta);
             } else {
-                const zipSaver = await FileSaver.saveAsZip(`${item.Name}.zip`);
+                const zipSaver = await FileSaver.saveAsZip(item.Name);
 
                 if (zipSaver) {
                     try {
