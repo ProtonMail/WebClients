@@ -9,7 +9,9 @@ const IGNORE_STORAGE_LIMIT_KEY = 'ignore-storage-limit';
 
 const TopBanners = () => {
     const [user] = useUser();
-    const [ignoreStorageLimit, setIgnoreStorageLimit] = useState(getItem(IGNORE_STORAGE_LIMIT_KEY) === 'true');
+    const [ignoreStorageLimit, setIgnoreStorageLimit] = useState(
+        getItem(`${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`) === 'true'
+    );
     const upgradeLink = (
         <Href key="storage-link" className="color-currentColor" url="/settings/subscription" target="_self">{c('Link')
             .t`Upgrade account`}</Href>
@@ -18,7 +20,7 @@ const TopBanners = () => {
 
     useEffect(() => {
         if (ignoreStorageLimit) {
-            setItem(IGNORE_STORAGE_LIMIT_KEY, 'true');
+            setItem(`${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`, 'true');
         }
     }, [ignoreStorageLimit]);
 
