@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Href, useUser } from 'react-components';
 import { getItem, setItem } from 'proton-shared/lib/helpers/storage';
 import { c } from 'ttag';
 
+import { Href, useUser } from '../../index';
 import TopBanner from './TopBanner';
 
 const IGNORE_STORAGE_LIMIT_KEY = 'ignore-storage-limit';

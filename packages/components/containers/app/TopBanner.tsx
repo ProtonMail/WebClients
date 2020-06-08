@@ -1,5 +1,6 @@
 import React from 'react';
-import { Icon, classnames } from 'react-components';
+
+import { Icon, classnames } from '../../index';
 
 interface Props {
     children: React.ReactNode;
