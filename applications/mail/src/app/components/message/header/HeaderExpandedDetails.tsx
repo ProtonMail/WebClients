@@ -60,7 +60,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             {icon && (
                 <div className="mb0-5 flex flex-nowrap">
                     <span className="container-to flex">
-                        <Icon name="locks-closed" className="mauto" alt={c('Label').t`Encryption:`} />
+                        <Icon name="info" className="mauto" alt={c('Label').t`Encryption:`} />
                     </span>
                     <span className="flex-self-vcenter mr0-5 ellipsis">{icon.text}</span>
                 </div>
