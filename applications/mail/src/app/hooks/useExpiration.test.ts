@@ -3,7 +3,7 @@ import { useExpiration } from './useExpiration';
 import { Message } from '../models/message';
 
 describe('useExpiration', () => {
-    const seconds = 10;
+    const seconds = 50;
 
     const setup = (argMessage: Message) =>
         renderHook((rerenderMessage: Message) => useExpiration(rerenderMessage || argMessage));
@@ -22,7 +22,9 @@ describe('useExpiration', () => {
         const ExpirationTime = new Date().getTime() / 1000 + seconds;
         const hook = setup({ ExpirationTime } as Message);
         expect(hook.result.current[0]).toBe(true);
-        expect(hook.result.current[1]).toContain(seconds - 1);
+
+        const value = Number(/\d+/.exec(hook.result.current[1])?.[0]);
+        expect(value).toBeLessThanOrEqual(seconds);
     });
 
     it('should be able to react to new message', () => {
