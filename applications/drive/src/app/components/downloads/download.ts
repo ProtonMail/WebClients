@@ -172,6 +172,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
     };
 
     const cancel = () => {
+        paused = false;
         abortController.abort();
         fsWriter.abort(new TransferCancel(id));
     };
@@ -180,7 +181,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
         paused = true;
         progressReverted = false;
         abortController.abort();
-        return waitUntil(() => progressReverted);
+        await waitUntil(() => progressReverted);
     };
 
     const resume = () => {
