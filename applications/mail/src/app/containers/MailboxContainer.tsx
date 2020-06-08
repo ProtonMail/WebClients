@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Loader, classnames, Button } from 'react-components';
+import { Loader, classnames, Button, PrivateMainArea } from 'react-components';
 import { History, Location } from 'history';
 import { DENSITY } from 'proton-shared/lib/constants';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
@@ -196,13 +196,7 @@ const MailboxContainer = ({
                     onBack={handleBack}
                 />
             )}
-            <div
-                className={classnames([
-                    'flex-item-fluid flex reset4print',
-                    !showContentView && 'main-area--rowMode',
-                    showToolbar ? 'main-area--withToolbar' : 'main-area'
-                ])}
-            >
+            <PrivateMainArea className="flex" hasToolbar={showToolbar} hasRowMode={!showContentView}>
                 {showList && (
                     <div
                         className={classnames([
@@ -262,7 +256,7 @@ const MailboxContainer = ({
                         )}
                     </section>
                 )}
-            </div>
+            </PrivateMainArea>
         </>
     );
 };
