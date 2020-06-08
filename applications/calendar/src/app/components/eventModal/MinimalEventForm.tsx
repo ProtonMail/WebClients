@@ -37,6 +37,7 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
         handleChangeEndTime,
         isDuration,
         minEndTime,
+        minEndDate,
     } = useDateTimeFormHandlers({ model, setModel });
     const propsFor = createPropFactory({ model, setModel });
     const endsOnSameDay = isSameDay(model.start.date, model.end.date);
@@ -61,9 +62,10 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
             required
             value={model.end.date}
             onChange={handleChangeEndDate}
+            aria-invalid={!!errors.end}
             displayWeekNumbers={displayWeekNumbers}
             weekStartsOn={weekStartsOn}
-            min={MINIMUM_DATE}
+            min={minEndDate}
             max={MAXIMUM_DATE}
         />
     );
