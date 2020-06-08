@@ -45,13 +45,13 @@ const SortDropdown = ({ className }: Props) => {
         {
             name: c('Action').t`Type: A to Z`,
             icon: 'arrow-down',
-            sortField: 'MIMEType',
+            sortField: 'Type',
             sortOrder: SORT_DIRECTION.ASC
         },
         {
             name: c('Action').t`Type: Z to A`,
             icon: 'arrow-up',
-            sortField: 'MIMEType',
+            sortField: 'Type',
             sortOrder: SORT_DIRECTION.DESC
         },
         {
