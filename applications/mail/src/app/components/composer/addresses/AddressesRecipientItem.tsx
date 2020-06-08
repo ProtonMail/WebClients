@@ -114,7 +114,7 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
     return (
         <div
             className={classnames([
-                'composer-addresses-item bordered-container mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row mw80 stop-propagation',
+                'composer-addresses-item bordered-container mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row mw100 stop-propagation',
                 !valid && 'invalid',
                 cannotSend && 'color-global-warning'
             ])}
@@ -126,7 +126,7 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
                     <EncryptionStatusIcon loading={loading} {...icon} />
                 </span>
             )}
-            <Tooltip title={sendInfo?.emailAddressWarnings?.join(', ')}>
+            <Tooltip className="flex" title={sendInfo?.emailAddressWarnings?.join(', ')}>
                 <span
                     className="composer-addresses-item-label mtauto mbauto pl0-5 ellipsis pr0-5"
                     contentEditable={onChange !== noop}

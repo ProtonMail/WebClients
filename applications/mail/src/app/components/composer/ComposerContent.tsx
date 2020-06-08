@@ -87,7 +87,7 @@ const ComposerContent = ({
     return (
         <section
             className={classnames([
-                'flex-item-fluid w100 mb0-5 flex flex-column flex-nowrap relative mb0-5 pl0-5 pr0-5',
+                'flex-item-fluid mb0-5 ml1 mr1 flex flex-column flex-nowrap relative composer-content',
                 attachments?.length > 0 && 'composer-content--has-attachments'
             ])}
             onDrop={handleDrop}

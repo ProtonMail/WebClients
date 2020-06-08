@@ -20,7 +20,7 @@ interface Props {
 
 const AddressesSummary = ({ message: { data }, mapSendInfo, contacts, contactGroups, onFocus }: Props) => {
     return (
-        <div className="flex flex-row flex-nowrap flex-items-center mt0-5 mb0-5 pl0-5 pr0-5" onClick={onFocus}>
+        <div className="flex flex-row flex-nowrap flex-items-center m0-5 pl0-5 pr0-5" onClick={onFocus}>
             <Label htmlFor={null} className="composer-meta-label pr0-5 pt0 bold">
                 {c('Title').t`To`}
             </Label>
@@ -67,9 +67,9 @@ const AddressesSummary = ({ message: { data }, mapSendInfo, contacts, contactGro
                                                 cannotSend && 'color-global-warning'
                                             ])}
                                         >
-                                            <span className="inline-flex">
+                                            <span className="inline-flex flex-nowrap">
                                                 {icon && <EncryptionStatusIcon {...icon} />}
-                                                <span className="inline-flex">
+                                                <span className="inline-flex mw100 ellipsis">
                                                     {getRecipientOrGroupLabel(recipientOrGroup, contacts)}
                                                 </span>
                                             </span>

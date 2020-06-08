@@ -14,7 +14,11 @@
     border-radius: $global-border-radius $global-border-radius 0 0;
     color: var(--color-main-area, $pm-global-grey);
 
-    transition: 0.15s easing(easeOutQuint);
+    transition: .15s easing(easeOutQuint);
+
+    .composer-content {
+        min-height: 10em;
+    }
 }
 
 .composer--is-blur {
@@ -75,6 +79,10 @@
 .pm-label.composer-meta-label {
     max-width: 8em;
     width: 15%;
+    @include respond-to($breakpoint-small) {
+        // temporary workaround
+        width: 25%;
+    }
 }
 
 .composer-meta .composer-addresses-fakefield {
@@ -82,9 +90,9 @@
     max-height: 2.5em;
     padding-right: 4.5em;
 }
-.composer-addresses-fakefield-inner {
-    max-width: calc(100% - 5em);
-}
+// .composer-addresses-fakefield-inner {
+//     max-width: calc(100% - 5em);
+// }
 
 .composer-addresses-container-line:not(:first-child) {
     padding-right: 3rem;
@@ -271,12 +279,6 @@
     }
 }
 
-// Keep minimal size when activity label is empty
-.composer-send-button {
-    min-height: 3.4rem;
-    min-width: 4rem;
-}
-
 .composer-content--has-attachments {
     .editor {
         border-bottom-left-radius: 0;
@@ -324,3 +326,25 @@
     height: 90%;
     max-height: 90%;
 }
+
+
+/*
+ * footer = action buttons
+ */
+
+.composer-actions--has-scroll {
+    margin-top: .5em;
+    padding-top: .5em;
+    box-shadow: 0 -5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+// Keep minimal size when activity label is empty
+.composer-send-button {
+    min-height: 3.4rem;
+    min-width: 4rem;
+    @include respond-to($breakpoint-small) {
+        min-width: 0;
+    }
+}
+
+

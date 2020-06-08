@@ -58,7 +58,7 @@ const AddressesEditor = ({
     // };
 
     return (
-        <div className="flex flex-column flex-nowrap flex-items-start mt0-5 mb0-5 pl0-5 pr0-5">
+        <div className="flex flex-column flex-nowrap flex-items-start m0-5 pl0-5 pr0-5">
             <div className={classnames(['flex flex-row w100 relative', expanded && 'mb0-5'])}>
                 <Label htmlFor={`to-${uid}`} className="composer-meta-label bold">
                     {/* <Tooltip title={c('Title').t`Add contacts`}> */}

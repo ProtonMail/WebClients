@@ -27,3 +27,15 @@ jest.mock('react-components/containers/eventManager/useEventManager.js', () => {
 
 // Globally mocked upload helper (standard requests are mocked through context)
 jest.mock('./src/app/helpers/upload');
+
+global.MutationObserver = class {
+    constructor() {
+        // Nothing
+    }
+    disconnect() {
+        // Nothing
+    }
+    observe() {
+        // Nothing
+    }
+};

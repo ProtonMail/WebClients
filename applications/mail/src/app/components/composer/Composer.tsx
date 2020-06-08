@@ -28,6 +28,7 @@ import { WindowSize, Breakpoints } from '../../models/utils';
 import { getContent } from '../../helpers/message/messageContent';
 import { isHTMLEmpty } from '../../helpers/dom';
 import { EditorActionsRef } from './editor/SquireEditorWrapper';
+import { useHasScroll } from '../../hooks/useHasScroll';
 
 const getShouldSave = (initialValue: string, message: PartialMessageExtended) => {
     const content = getContent(message);
@@ -68,8 +69,10 @@ const Composer = ({
     onClose: inputOnClose
 }: Props) => {
     const [mailSettings] = useMailSettings();
-    // const [width, height] = useWindowSize();
     const { createNotification } = useNotifications();
+
+    const bodyRef = useRef<HTMLDivElement>(null);
+    const [hasVertialScroll] = useHasScroll(bodyRef);
 
     // Initial value to be tested against to decide if we should autosave or not
     const [initialValue, setInitialValue] = useState('');
@@ -327,7 +330,7 @@ const Composer = ({
                 toggleMaximized={toggleMaximized}
                 onClose={handleClose}
             />
-            <div className="composer-container flex flex-column flex-item-fluid relative w100 p0-5">
+            <div className="composer-container flex flex-column flex-item-fluid relative w100">
                 {innerModal === ComposerInnerModal.Password && (
                     <ComposerPasswordModal
                         message={modelMessage.data}
@@ -344,43 +347,49 @@ const Composer = ({
                 )}
                 <div
                     className={classnames([
-                        'composer-blur-container flex-column flex-item-fluid mw100',
+                        'composer-blur-container flex flex-column flex-item-fluid mw100',
                         // Only hide the editor not to unload it each time a modal is on top
                         innerModal === ComposerInnerModal.None ? 'flex' : 'hidden'
                     ])}
                 >
-                    <ComposerMeta
-                        message={modelMessage}
-                        addresses={addresses}
-                        mailSettings={mailSettings}
-                        mapSendInfo={mapSendInfo}
-                        setMapSendInfo={setMapSendInfo}
-                        disabled={!editorReady}
-                        onChange={handleChange}
-                        addressesBlurRef={addressesBlurRef}
-                        addressesFocusRef={addressesFocusRef}
-                    />
-                    <ComposerContent
-                        message={modelMessage}
-                        disabled={!editorReady}
-                        breakpoints={breakpoints}
-                        onEditorReady={() => setEditorReady(true)}
-                        onChange={handleChange}
-                        onChangeContent={handleChangeContent}
-                        onChangeFlag={handleChangeFlag}
-                        onFocus={handleContentFocus}
-                        onAddAttachments={handleAddAttachmentsStart}
-                        onAddEmbeddedImages={handleAddEmbeddedImages}
-                        onCancelAddAttachment={handleCancelAddAttachment}
-                        onRemoveAttachment={handleRemoveAttachment}
-                        onRemoveUpload={handleRemoveUpload}
-                        pendingFiles={pendingFiles}
-                        pendingUploads={pendingUploads}
-                        onSelectEmbedded={handleAddAttachmentsUpload}
-                        contentFocusRef={contentFocusRef}
-                        editorActionsRef={editorActionsRef}
-                    />
+                    <div
+                        ref={bodyRef}
+                        className="composer-body-container flex flex-column flex-nowrap flex-item-fluid mw100 scroll-if-needed mt0-5"
+                    >
+                        <ComposerMeta
+                            message={modelMessage}
+                            addresses={addresses}
+                            mailSettings={mailSettings}
+                            mapSendInfo={mapSendInfo}
+                            setMapSendInfo={setMapSendInfo}
+                            disabled={!editorReady}
+                            onChange={handleChange}
+                            addressesBlurRef={addressesBlurRef}
+                            addressesFocusRef={addressesFocusRef}
+                        />
+                        <ComposerContent
+                            message={modelMessage}
+                            disabled={!editorReady}
+                            breakpoints={breakpoints}
+                            onEditorReady={() => setEditorReady(true)}
+                            onChange={handleChange}
+                            onChangeContent={handleChangeContent}
+                            onChangeFlag={handleChangeFlag}
+                            onFocus={handleContentFocus}
+                            onAddAttachments={handleAddAttachmentsStart}
+                            onAddEmbeddedImages={handleAddEmbeddedImages}
+                            onCancelAddAttachment={handleCancelAddAttachment}
+                            onRemoveAttachment={handleRemoveAttachment}
+                            onRemoveUpload={handleRemoveUpload}
+                            pendingFiles={pendingFiles}
+                            pendingUploads={pendingUploads}
+                            onSelectEmbedded={handleAddAttachmentsUpload}
+                            contentFocusRef={contentFocusRef}
+                            editorActionsRef={editorActionsRef}
+                        />
+                    </div>
                     <ComposerActions
+                        className={hasVertialScroll ? 'composer-actions--has-scroll' : undefined}
                         message={modelMessage}
                         date={getDate(syncedMessage.data, '')}
                         lock={actionBarLocked}

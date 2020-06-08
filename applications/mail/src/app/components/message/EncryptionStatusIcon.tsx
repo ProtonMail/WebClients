@@ -20,7 +20,7 @@ const EncryptionStatusIcon = ({ colorClassName, isEncrypted, fill, text, loading
     const iconName = getStatusIconName({ isEncrypted, fill });
 
     const icon = (
-        <Href href={href} className="flex mauto">
+        <Href href={href} className="flex flex-item-noshrink mauto">
             <Icon
                 viewBox={iconName === 'circle' ? '0 0 16 16' : '0 0 18 18'}
                 size={16}
@@ -32,7 +32,7 @@ const EncryptionStatusIcon = ({ colorClassName, isEncrypted, fill, text, loading
 
     if (useTooltip) {
         return (
-            <Tooltip title={text || ''} className="inline-flex mauto alignmiddle">
+            <Tooltip title={text || ''} className="inline-flex flex-item-noshrink mauto alignmiddle">
                 {icon}
             </Tooltip>
         );

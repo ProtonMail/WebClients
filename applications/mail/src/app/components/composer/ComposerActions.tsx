@@ -1,6 +1,6 @@
 import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
-import { Button, useModals, ConfirmModal, Alert, classnames, Tooltip } from 'react-components';
+import { Button, useModals, ConfirmModal, Alert, classnames, Tooltip, Icon } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { formatSimpleDate } from '../../helpers/date';
@@ -11,6 +11,7 @@ import { hasFlag, getAttachments, getRecipients } from '../../helpers/message/me
 import { MESSAGE_FLAGS } from '../../constants';
 
 interface Props {
+    className?: string;
     message: MessageExtended;
     date: Date;
     lock: boolean;
@@ -28,6 +29,7 @@ interface Props {
 }
 
 const ComposerActions = ({
+    className,
     message,
     date,
     lock,
@@ -80,10 +82,10 @@ const ComposerActions = ({
 
     return (
         <footer
-            className="composer-actions flex flex-row flex-spacebetween w100 mb0-5 pl0-5 pr0-5"
+            className={classnames(['composer-actions flex-item-noshrink flex flex-row pl1 pr1', className])}
             onClick={addressesBlurRef.current}
         >
-            <div className="flex">
+            <div className="flex mb0-5">
                 <Tooltip title={c('Action').t`Attachments`} className="flex">
                     <AttachmentsButton
                         className={classnames([isAttachments && 'pm-button-blueborder'])}
@@ -118,7 +120,7 @@ const ComposerActions = ({
                     </Button>
                 </Tooltip>
             </div>
-            <div className="flex flex-self-vcenter">
+            <div className="flex flex-self-vcenter mlauto mb0-5">
                 <span className="mr0-5 mtauto mbauto nomobile">{dateMessage}</span>
                 <Tooltip title={c('Action').t`Delete draft`} className="flex mr0-5">
                     <Button
@@ -146,7 +148,8 @@ const ComposerActions = ({
                     loading={lock}
                     onClick={onSend}
                 >
-                    <span className="pl1 pr1">{buttonSendLabel}</span>
+                    <Icon name="sent" className="nodesktop notablet onmobile-flex"></Icon>
+                    <span className="pl1 pr1 nomobile">{buttonSendLabel}</span>
                 </Button>
             </div>
         </footer>
