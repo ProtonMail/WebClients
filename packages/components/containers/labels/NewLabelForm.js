@@ -39,7 +39,8 @@ function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID }) 
                 </Row>
             ) : null}
             {label.Type === LABEL_TYPE.MESSAGE_FOLDER ? (
-                <>
+                // TODO Once sub-folder available remove <div className="hidden">
+                <div className="hidden">
                     <Alert>{c('Info')
                         .t`Select the parent folder you want to put the new folder in. If no parent folder is selected, the folder will be created as a new top level folder.`}</Alert>
                     <Row>
@@ -53,7 +54,7 @@ function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID }) 
                             />
                         </Field>
                     </Row>
-                </>
+                </div>
             ) : null}
         </div>
     );
