@@ -1,8 +1,8 @@
 import { replace } from 'proton-shared/lib/helpers/array';
 import { isBefore } from 'date-fns';
 import { MONTHLY_TYPE, WEEKLY_TYPE } from '../../../constants';
-import { getNegativeSetpos, getPositiveSetpos } from '../../../helpers/rrule';
 import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
+import { getNegativeSetpos, getPositiveSetpos } from './modelToFrequencyProperties';
 
 const getFrequencyModelChange = (
     oldStart: DateTimeModel,

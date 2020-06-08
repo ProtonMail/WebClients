@@ -38,8 +38,7 @@ import { IMPORT_ERROR_TYPE, ImportFileError } from '../components/import/ImportF
 import { MAX_IMPORT_EVENTS, MAX_LENGTHS, MAX_NOTIFICATIONS, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from '../constants';
 import { VcalCalendarComponentOrError } from '../interfaces/Import';
 import { getSupportedAlarm } from './alarms';
-
-import { getIsRruleConsistent, getIsRruleSupported } from './rrule';
+import { getHasConsistentRrule, getSupportedRrule } from './rrule';
 
 const getParsedComponentHasError = (component: VcalCalendarComponentOrError): component is { error: Error } => {
     return !!(component as { error: Error }).error;
@@ -333,12 +332,13 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
         }
 
         if (rrule) {
-            validated.rrule = rrule;
-            if (dtend && !getIsRruleConsistent(validated)) {
-                throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_INCONSISTENT, 'vevent', componentId);
-            }
-            if (!getIsRruleSupported(rrule.value)) {
+            const supportedRrule = getSupportedRrule({ ...validated, rrule });
+            if (!supportedRrule) {
                 throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_UNSUPPORTED, 'vevent', componentId);
+            }
+            validated.rrule = supportedRrule;
+            if (!getHasConsistentRrule(validated)) {
+                throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_INCONSISTENT, 'vevent', componentId);
             }
         }
 

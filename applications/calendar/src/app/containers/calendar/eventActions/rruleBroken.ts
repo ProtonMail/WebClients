@@ -1,6 +1,6 @@
 import { VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { numericDayToDay } from 'proton-shared/lib/calendar/vcalConverter';
-import { getPositiveSetpos } from '../../../helpers/rrule';
+import { getPositiveSetpos } from '../../../components/eventModal/eventForm/modelToFrequencyProperties';
 
 // If the new RRULE would become broken with the original date
 const getHasBrokenRrule = (startDate: Date, rrule?: VcalRruleProperty) => {

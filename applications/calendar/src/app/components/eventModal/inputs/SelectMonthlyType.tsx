@@ -3,7 +3,7 @@ import { Select } from 'react-components';
 import { capitalize } from 'proton-shared/lib/helpers/string';
 import { getOnDayString } from '../../../helpers/frequencyString';
 import { MONTHLY_TYPE } from '../../../constants';
-import { getNegativeSetpos, getPositiveSetpos } from '../../../helpers/rrule';
+import { getNegativeSetpos, getPositiveSetpos } from '../eventForm/modelToFrequencyProperties';
 
 // Filter out strings since TS creates an inverse mapping
 const MONTHLY_TYPE_VALUES = Object.values(MONTHLY_TYPE).filter((type): type is number => typeof type === 'number');

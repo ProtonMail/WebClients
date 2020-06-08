@@ -1,10 +1,10 @@
 import { format } from 'date-fns';
 import { mod } from 'proton-shared/lib/helpers/math';
 import { c, msgid } from 'ttag';
+import { getPositiveSetpos } from '../components/eventModal/eventForm/modelToFrequencyProperties';
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../constants';
 import { WeekStartsOn } from '../containers/calendar/interface';
 import { FrequencyModel } from '../interfaces/EventModel';
-import { getPositiveSetpos } from './rrule';
 
 interface GetTimezonedFrequencyStringOptions {
     date: Date;

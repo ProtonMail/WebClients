@@ -1,10 +1,10 @@
-import { unique } from 'proton-shared/lib/helpers/array';
-import { convertZonedDateTimeToUTC, fromLocalDate } from 'proton-shared/lib/date/timezone';
-import { VcalDateOrDateTimeValue, VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { numericDayToDay } from 'proton-shared/lib/calendar/vcalConverter';
-import { getNegativeSetpos, getPositiveSetpos } from '../../../helpers/rrule';
-import { EventModel } from '../../../interfaces/EventModel';
+import { getDaysInMonth } from 'proton-shared/lib/date-fns-utc';
+import { convertZonedDateTimeToUTC, fromLocalDate } from 'proton-shared/lib/date/timezone';
+import { unique } from 'proton-shared/lib/helpers/array';
+import { VcalDateOrDateTimeValue, VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../../../constants';
+import { EventModel } from '../../../interfaces/EventModel';
 
 export interface UntilDateArgument {
     year: number;
@@ -29,6 +29,19 @@ export const getUntilProperty = (
     const zonedEndOfDay = { ...untilDateTime, hours: 23, minutes: 59, seconds: 59 };
     const utcEndOfDay = convertZonedDateTimeToUTC(zonedEndOfDay, tzid);
     return { ...utcEndOfDay, isUTC: true };
+};
+
+export const getPositiveSetpos = (date: Date) => {
+    const shiftedMonthDay = date.getDate() - 1;
+    return Math.floor(shiftedMonthDay / 7) + 1;
+};
+
+export const getNegativeSetpos = (date: Date) => {
+    const monthDay = date.getDate();
+    const daysInMonth = getDaysInMonth(date);
+
+    // return -1 if it's the last occurrence in the month
+    return Math.ceil((monthDay - daysInMonth) / 7) - 1;
 };
 
 const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay }: EventModel) => {

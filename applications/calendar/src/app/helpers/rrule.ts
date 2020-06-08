@@ -1,27 +1,15 @@
 import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
-import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
-import { getIsDateTimeValue, getIsIcalPropertyAllDay } from 'proton-shared/lib/calendar/vcalHelper';
-import { getDaysInMonth } from 'proton-shared/lib/date-fns-utc';
+import { getPropertyTzid, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import { getIsIcalPropertyAllDay } from 'proton-shared/lib/calendar/vcalHelper';
 import { toLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import {
     VcalDaysKeys,
+    VcalRruleProperty,
     VcalRrulePropertyValue,
     VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { getUntilProperty } from '../components/eventModal/eventForm/modelToFrequencyProperties';
 import { FREQUENCY, FREQUENCY_COUNT_MAX, FREQUENCY_INTERVALS_MAX, MAXIMUM_DATE, MAXIMUM_DATE_UTC } from '../constants';
-
-export const getPositiveSetpos = (date: Date) => {
-    const shiftedMonthDay = date.getDate() - 1;
-    return Math.floor(shiftedMonthDay / 7) + 1;
-};
-
-export const getNegativeSetpos = (date: Date) => {
-    const monthDay = date.getDate();
-    const daysInMonth = getDaysInMonth(date);
-
-    // return -1 if it's the last occurrence in the month
-    return Math.ceil((monthDay - daysInMonth) / 7) - 1;
-};
 
 export const getIsStandardByday = (byday = ''): byday is VcalDaysKeys => {
     return /^(SU|MO|TU|WE|TH|FR|SA)$/.test(byday);
@@ -142,32 +130,6 @@ export const getIsRruleCustom = (rrule: Partial<VcalRrulePropertyValue>): boolea
     return false;
 };
 
-export const getIsRruleConsistent = (vevent: VcalVeventComponent) => {
-    // UNTIL and DTSTART must have the same value type, and UNTIL should not happen before DTSTART
-    const { dtstart, rrule } = vevent;
-    if (rrule?.value.until) {
-        const isDtstartDateTime = !getIsIcalPropertyAllDay(dtstart);
-        const isUntilDateTime = getIsDateTimeValue(rrule.value.until);
-        if (+isDtstartDateTime ^ +isUntilDateTime) {
-            return false;
-        }
-        const startDateUTC = propertyToUTCDate(dtstart);
-        const untilDateUTC = toUTCDate(rrule.value.until);
-        if (+startDateUTC > +untilDateUTC) {
-            return false;
-        }
-    }
-    // DTSTART must match the pattern of the recurring series
-    const [first] = getOccurrences({ component: vevent, maxCount: 1 });
-    if (!first) {
-        return false;
-    }
-    if (+first.localStart !== +toUTCDate(dtstart.value)) {
-        return false;
-    }
-    return true;
-};
-
 export const getIsRruleSupported = (rruleProperty: VcalRrulePropertyValue) => {
     const rruleProperties = Object.keys(rruleProperty) as (keyof VcalRrulePropertyValue)[];
     if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES.includes(property))) {
@@ -240,4 +202,53 @@ export const getIsRruleSupported = (rruleProperty: VcalRrulePropertyValue) => {
         return true;
     }
     return false;
+};
+
+export const getSupportedRrule = (vevent: VcalVeventComponent): VcalRruleProperty | undefined => {
+    if (!vevent.rrule?.value) {
+        return;
+    }
+    const { dtstart, rrule } = vevent;
+    const { until } = rrule.value;
+    const supportedRrule = { ...rrule };
+
+    if (until) {
+        supportedRrule.value.until = getUntilProperty(
+            until,
+            getIsIcalPropertyAllDay(dtstart),
+            getPropertyTzid(dtstart)
+        );
+    }
+    if (!getIsRruleSupported(rrule.value)) {
+        return;
+    }
+    return supportedRrule;
+};
+
+export const getHasConsistentRrule = (vevent: VcalVeventComponent) => {
+    const { dtstart, rrule } = vevent;
+
+    if (!rrule?.value) {
+        return true;
+    }
+
+    const { until } = rrule.value;
+    if (until) {
+        // UNTIL should happen before DTSTART
+        const startDateUTC = propertyToUTCDate(dtstart);
+        const untilDateUTC = toUTCDate(until);
+        if (+startDateUTC > +untilDateUTC) {
+            return false;
+        }
+    }
+
+    // make sure DTSTART matches the pattern of the recurring series
+    const [first] = getOccurrences({ component: vevent, maxCount: 1 });
+    if (!first) {
+        return false;
+    }
+    if (+first.localStart !== +toUTCDate(vevent.dtstart.value)) {
+        return false;
+    }
+    return true;
 };

@@ -65,8 +65,8 @@ const ErrorDetails = ({ errors, summary = c('Info on errors').t`Click for detail
         <Details>
             <Summary>{summary}</Summary>
             <Bordered>
-                {errors.map((error) => (
-                    <ErrorDetail error={error} key={error.componentId} />
+                {errors.map((error, i) => (
+                    <ErrorDetail error={error} key={error.componentId + i.toString()} />
                 ))}
             </Bordered>
         </Details>

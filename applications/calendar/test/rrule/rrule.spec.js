@@ -1,12 +1,13 @@
+import { parse } from 'proton-shared/lib/calendar/vcal';
 import {
     getDayAndSetpos,
     getIsRruleCustom,
-    getIsRruleConsistent,
+    getSupportedRrule,
     getIsRruleSupported,
-    getIsStandardByday
+    getIsStandardByday,
+    getHasConsistentRrule,
 } from '../../src/app/helpers/rrule';
 import { FREQUENCY } from '../../src/app/constants';
-import { parse } from 'proton-shared/lib/calendar/vcal';
 
 describe('getIsStandardByday', () => {
     test('returns true for standard BYDAY strings', () => {
@@ -33,28 +34,28 @@ describe('getIsRruleCustom', () => {
         const rrules = [
             {
                 freq: FREQUENCY.DAILY,
-                interval: 1
+                interval: 1,
             },
             {
                 freq: FREQUENCY.WEEKLY,
                 interval: 1,
-                byday: 'SA'
+                byday: 'SA',
             },
             {
                 freq: FREQUENCY.MONTHLY,
                 interval: 1,
-                bymonthday: 23
+                bymonthday: 23,
             },
             {
                 freq: FREQUENCY.YEARLY,
                 interval: 1,
-                bymonth: 5
+                bymonth: 5,
             },
             {
                 freq: FREQUENCY.YEARLY,
                 interval: 1,
-                bymonthday: 23
-            }
+                bymonthday: 23,
+            },
         ];
         expect(rrules.map(getIsRruleCustom)).toEqual(rrules.map(() => false));
     });
@@ -64,39 +65,39 @@ describe('getIsRruleCustom', () => {
             {
                 freq: FREQUENCY.DAILY,
                 count: 3,
-                interval: 2
-            },
-            {
-                freq: FREQUENCY.WEEKLY,
-                byday: ['SA', 'FR']
+                interval: 2,
             },
             {
                 freq: FREQUENCY.WEEKLY,
                 byday: ['SA', 'FR'],
-                count: 1
             },
             {
                 freq: FREQUENCY.WEEKLY,
-                until: { year: 2020, month: 5, day: 10 }
+                byday: ['SA', 'FR'],
+                count: 1,
+            },
+            {
+                freq: FREQUENCY.WEEKLY,
+                until: { year: 2020, month: 5, day: 10 },
             },
             {
                 freq: FREQUENCY.MONTHLY,
                 bysetpos: 2,
-                byday: 'WE'
+                byday: 'WE',
             },
             {
                 freq: FREQUENCY.MONTHLY,
                 byday: '-1WE',
-                until: { year: 2020, month: 5, day: 10 }
+                until: { year: 2020, month: 5, day: 10 },
             },
             {
                 freq: FREQUENCY.YEARLY,
-                interval: 2
+                interval: 2,
             },
             {
                 freq: FREQUENCY.YEARLY,
-                count: 1
-            }
+                count: 1,
+            },
         ];
         expect(rrules.map(getIsRruleCustom)).toEqual(rrules.map(() => true));
     });
@@ -107,33 +108,33 @@ describe('getIsRruleCustom', () => {
                 freq: FREQUENCY.DAILY,
                 count: 3,
                 interval: 2,
-                byday: ['TU', 'TH']
+                byday: ['TU', 'TH'],
             },
             {
                 freq: FREQUENCY.WEEKLY,
                 byday: ['SA', 'FR'],
                 bymonth: 1,
-                count: 2
+                count: 2,
             },
             {
                 freq: FREQUENCY.WEEKLY,
                 until: { year: 2020, month: 5, day: 10 },
-                bysetpos: 3
+                bysetpos: 3,
             },
             {
                 freq: FREQUENCY.MONTHLY,
-                bysetpos: 2
+                bysetpos: 2,
             },
             {
                 freq: FREQUENCY.MONTHLY,
-                byday: 'SU'
-            }
+                byday: 'SU',
+            },
         ];
         expect(rrules.map(getIsRruleCustom)).toEqual(rrules.map(() => false));
     });
 });
 
-describe('getIsRruleValid', () => {
+describe('getIsRruleSupported', () => {
     test('should accept events with monthly recurring rules of the form BYDAY=+/-nDD', () => {
         const vevents = [
             `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=1SU\r\nEND:VEVENT`,
@@ -141,7 +142,7 @@ describe('getIsRruleValid', () => {
             `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;COUNT=1;BYDAY=4MO\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=-1SA\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;COUNT=3;INTERVAL=2;BYDAY=TH;BYSETPOS=-1\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=TU;BYSETPOS=3\r\nEND:VEVENT`
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=TU;BYSETPOS=3\r\nEND:VEVENT`,
         ];
         const rrules = vevents.map((vevent) => {
             const { rrule } = parse(vevent);
@@ -154,7 +155,7 @@ describe('getIsRruleValid', () => {
         const vevents = [
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;UNTIL=20200330T150000Z;INTERVAL=1;BYMONTHDAY=30;BYMONTH=3\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYMONTH=5\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYMONTHDAY=17\r\nEND:VEVENT`
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYMONTHDAY=17\r\nEND:VEVENT`,
         ];
         const rrules = vevents.map((vevent) => {
             const { rrule } = parse(vevent);
@@ -172,7 +173,7 @@ describe('getIsRruleValid', () => {
             `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=FR;BYSETPOS=5\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYDAY=TU;BYSETPOS=-2\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;INTERVAL=2;BYMONTHDAY=10,13,14\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;INTERVAL=1;BYSETPOS=1;BYDAY=SU,MO,TU,WE,TH,FR,SA\r\nEND:VEVENT`
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;INTERVAL=1;BYSETPOS=1;BYDAY=SU,MO,TU,WE,TH,FR,SA\r\nEND:VEVENT`,
         ];
         const rrules = vevents.map((vevent) => {
             const { rrule } = parse(vevent);
@@ -180,10 +181,11 @@ describe('getIsRruleValid', () => {
         });
         expect(rrules.map(getIsRruleSupported)).toEqual(vevents.map(() => false));
     });
+
     test('should refuse events with invalid yearly recurring rules', () => {
         const vevents = [
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=1;BYMONTH=1,2,3,4,5,6,7,8,9,10,11,12\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=11,22\r\nEND:VEVENT`
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=11,22\r\nEND:VEVENT`,
         ];
         const rrules = vevents.map((vevent) => {
             const { rrule } = parse(vevent);
@@ -193,43 +195,146 @@ describe('getIsRruleValid', () => {
     });
 });
 
-describe('getIsRruleConsistent', () => {
-    test('should refuse inconsistent rrules', () => {
-        const dtstart = {
-            value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 0, seconds: 0, isUTC: true }
-        };
-        const dtend = {
-            value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 30, seconds: 0, isUTC: true }
-        };
+describe('getSupportedRrule', () => {
+    const dtstartPartDayUTC = {
+        value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 0, seconds: 0, isUTC: true },
+    };
+    const dtstartPartDayZoned = {
+        value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 0, seconds: 0, isUTC: false },
+        parameters: { tzid: 'Antarctica/Troll' },
+    };
+    const dtstartAllDay = {
+        value: { year: 2020, month: 5, day: 11 },
+        parameters: { type: 'date' },
+    };
+    const dtendPartDayUTC = {
+        value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 30, seconds: 0, isUTC: true },
+    };
+    const dtendPartDayZoned = {
+        value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 30, seconds: 0, isUTC: false },
+        parameters: { tzid: 'Antarctica/Troll' },
+    };
+    const dtendAllDay = {
+        value: { year: 2020, month: 5, day: 12 },
+        parameters: { type: 'date' },
+    };
+
+    test('should reformat rrules with a badly formatted UNTIL', () => {
+        const vevents = [
+            {
+                dtstart: dtstartPartDayUTC,
+                dtend: dtendPartDayUTC,
+                rrule: { value: { freq: 'WEEKLY', until: { year: 2020, month: 5, day: 15 } } },
+            },
+            {
+                dtstart: dtstartPartDayZoned,
+                dtend: dtendPartDayZoned,
+                rrule: { value: { freq: 'WEEKLY', until: { year: 2020, month: 5, day: 15 } } },
+            },
+            {
+                dtstart: dtstartAllDay,
+                dtend: dtendAllDay,
+                rrule: {
+                    value: {
+                        freq: 'WEEKLY',
+                        until: { year: 2020, month: 5, day: 15, hours: 12, minutes: 0, seconds: 30, isUTC: false },
+                    },
+                },
+            },
+        ];
+        const expected = [
+            {
+                value: {
+                    freq: 'WEEKLY',
+                    until: { year: 2020, month: 5, day: 15, hours: 23, minutes: 59, seconds: 59, isUTC: true },
+                },
+            },
+            {
+                value: {
+                    freq: 'WEEKLY',
+                    until: { year: 2020, month: 5, day: 15, hours: 21, minutes: 59, seconds: 59, isUTC: true },
+                },
+            },
+            { value: { freq: 'WEEKLY', until: { year: 2020, month: 5, day: 15 } } },
+        ];
+        expect(vevents.map((vevent) => getSupportedRrule(vevent))).toEqual(expected);
+    });
+
+    test('should reformat rrules with UNTIL in the middle of the day', () => {
+        const vevents = [
+            {
+                dtstart: dtstartPartDayUTC,
+                dtend: dtendPartDayUTC,
+                rrule: {
+                    value: {
+                        freq: 'WEEKLY',
+                        until: { year: 2020, month: 5, day: 15, hours: 12, minutes: 0, seconds: 30, isUTC: true },
+                    },
+                },
+            },
+            {
+                dtstart: dtstartPartDayZoned,
+                dtend: dtendPartDayZoned,
+                rrule: {
+                    value: {
+                        freq: 'WEEKLY',
+                        until: { year: 2020, month: 5, day: 15, hours: 12, minutes: 0, seconds: 30, isUTC: true },
+                    },
+                },
+            },
+        ];
+        const expected = [
+            {
+                value: {
+                    freq: 'WEEKLY',
+                    until: { year: 2020, month: 5, day: 15, hours: 23, minutes: 59, seconds: 59, isUTC: true },
+                },
+            },
+            {
+                value: {
+                    freq: 'WEEKLY',
+                    until: { year: 2020, month: 5, day: 15, hours: 21, minutes: 59, seconds: 59, isUTC: true },
+                },
+            },
+        ];
+        expect(vevents.map((vevent) => getSupportedRrule(vevent))).toEqual(expected);
+    });
+});
+
+describe('getHasConsistentRrule', () => {
+    const dtstartPartDayUTC = {
+        value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 0, seconds: 0, isUTC: true },
+    };
+    const dtendPartDayUTC = {
+        value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 30, seconds: 0, isUTC: true },
+    };
+
+    test('should filter out inconsistent rrules', () => {
         const rrules = [
             {
                 freq: 'MONTHLY',
-                byday: '1MO'
+                byday: '1MO',
             },
             {
                 freq: 'MONTHLY',
-                byday: '-2MO'
+                byday: '-2MO',
             },
             {
                 freq: 'MONTHLY',
-                byday: 'SU'
+                byday: 'SU',
             },
             {
                 freq: 'MONTHLY',
                 byday: 'MO',
-                bysetpos: 3
+                bysetpos: 3,
             },
-            {
-                freq: 'MONTHLY',
-                bymonthday: 11,
-                until: { year: 2020, month: 10, day: 29 }
-            },
-            {
-                freq: 'WEEKLY',
-                until: { year: 2020, month: 5, day: 11, hours: 11, minutes: 59, seconds: 59, isUTC: true }
-            }
         ];
-        const vevents = rrules.map((rrule) => ({ dtstart, dtend, rrule: { value: rrule } }));
-        expect(vevents.map((vevent) => getIsRruleConsistent(vevent))).toEqual(vevents.map(() => false));
+        const vevents = rrules.map((rrule) => ({
+            dtstart: dtstartPartDayUTC,
+            dtend: dtendPartDayUTC,
+            rrule: { value: rrule },
+        }));
+        const expected = vevents.map(() => false);
+        expect(vevents.map((vevent) => getHasConsistentRrule(vevent))).toEqual(expected);
     });
 });
