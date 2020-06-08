@@ -1,20 +1,40 @@
 import { DRAFT_MIME_TYPES, PACKAGE_TYPE, PGP_SCHEMES, PGP_SIGN } from '../../constants';
-import { MailSettings } from '../../interfaces';
+import { ContactPublicKeyModel, MailSettings } from '../../interfaces';
 
 /**
- * Extract sign flag from mail settings
+ * Extract sign flag from the contact public key model and mail settings
  */
-export const extractSign = (mailSettings: MailSettings): boolean => mailSettings.Sign === PGP_SIGN;
+export const extractSign = (model: ContactPublicKeyModel, mailSettings: MailSettings): boolean => {
+    const { sign } = model;
+    return sign !== undefined ? sign : mailSettings.Sign === PGP_SIGN;
+};
+
 /**
- * Extract PGP scheme from mail settings
+ * Extract PGP scheme from the contact public key model and mail settings
  */
-export const extractScheme = (mailSettings: MailSettings): PGP_SCHEMES => {
+export const extractScheme = (model: ContactPublicKeyModel, mailSettings: MailSettings): PGP_SCHEMES => {
+    const { scheme } = model;
+    if (scheme === PGP_SCHEMES.PGP_INLINE || scheme === PGP_SCHEMES.PGP_MIME) {
+        return scheme;
+    }
     if (mailSettings.PGPScheme === PACKAGE_TYPE.SEND_PGP_INLINE) {
         return PGP_SCHEMES.PGP_INLINE;
     }
     return PGP_SCHEMES.PGP_MIME;
 };
+
 /**
- * Extract MIME type (for the composer) from mail settings
+ * Extract MIME type (for the composer) from the contact public key model and mail settings
  */
-export const extractDraftMIMEType = (mailSettings: MailSettings): DRAFT_MIME_TYPES => mailSettings.DraftMIMEType;
+export const extractDraftMIMEType = (model: ContactPublicKeyModel, mailSettings: MailSettings): DRAFT_MIME_TYPES => {
+    const { mimeType } = model;
+    const sign = extractSign(model, mailSettings);
+    const scheme = extractScheme(model, mailSettings);
+    if (sign) {
+        return scheme === PGP_SCHEMES.PGP_INLINE ? DRAFT_MIME_TYPES.PLAINTEXT : mailSettings.DraftMIMEType;
+    }
+    if (mimeType === DRAFT_MIME_TYPES.PLAINTEXT) {
+        return mimeType;
+    }
+    return mailSettings.DraftMIMEType;
+};

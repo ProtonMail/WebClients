@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
+import { extractDraftMIMEType, extractScheme, extractSign } from '../api/helpers/mailSettings';
 import { DRAFT_MIME_TYPES, PGP_SCHEMES } from '../constants';
-import { PublicKeyModel, SelfSend } from '../interfaces';
+import { ContactPublicKeyModel, MailSettings, PublicKeyModel, SelfSend } from '../interfaces';
 import { getEmailMismatchWarning, getIsValidForSending } from '../keys/publicKeys';
 
 export enum EncryptionPreferencesFailureTypes {
@@ -273,17 +274,35 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
 /**
  * Extract the encryption preferences from a public-key model corresponding to a certain email address
  */
-const extractEncryptionPreferences = (publicKeyModel: PublicKeyModel, selfSend?: SelfSend): EncryptionPreferences => {
+const extractEncryptionPreferences = (
+    model: ContactPublicKeyModel,
+    mailSettings: MailSettings,
+    selfSend?: SelfSend
+): EncryptionPreferences => {
+    // Determine encrypt and sign flags, plus PGP scheme and MIME type.
+    // Take mail settings into account if they are present
+    const encrypt = !!model.encrypt;
+    const sign = extractSign(model, mailSettings);
+    const scheme = extractScheme(model, mailSettings);
+    const mimeType = extractDraftMIMEType(model, mailSettings);
+
+    const publicKeyModel = {
+        ...model,
+        encrypt,
+        sign: encrypt || sign,
+        scheme,
+        mimeType
+    };
     // case of own address
     if (selfSend) {
         return extractEncryptionPreferencesOwnAddress(publicKeyModel, selfSend);
     }
     // case of internal user
-    if (publicKeyModel.isPGPInternal) {
+    if (model.isPGPInternal) {
         return extractEncryptionPreferencesInternal(publicKeyModel);
     }
     // case of external user with WKD keys
-    if (publicKeyModel.isPGPExternalWithWKDKeys) {
+    if (model.isPGPExternalWithWKDKeys) {
         return extractEncryptionPreferencesExternalWithWKDKeys(publicKeyModel);
     }
     // case of external user without WKD keys

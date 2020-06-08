@@ -1,11 +1,10 @@
-import { c } from 'ttag';
 import { OpenPGPKey, serverTime } from 'pmcrypto';
-import { extractDraftMIMEType, extractScheme, extractSign } from '../api/helpers/mailSettings';
-import { DRAFT_MIME_TYPES, KEY_FLAGS, PGP_SCHEMES, RECIPIENT_TYPES } from '../constants';
+import { c } from 'ttag';
+import { KEY_FLAGS, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
 import isTruthy from '../helpers/isTruthy';
 import { toBitMap } from '../helpers/object';
 import { normalizeEmail } from '../helpers/string';
-import { ApiKeysConfig, PublicKeyConfigs, PublicKeyModel } from '../interfaces/Key';
+import { ApiKeysConfig, ContactPublicKeyModel, PublicKeyConfigs, PublicKeyModel } from '../interfaces/Key';
 
 const { TYPE_INTERNAL } = RECIPIENT_TYPES;
 const { ENABLE_ENCRYPTION } = KEY_FLAGS;
@@ -139,27 +138,26 @@ export const getIsValidForSending = (fingerprint: string, publicKeyModel: Public
 
 /**
  * For a given email address and its corresponding public keys (retrieved from the API and/or the corresponding vCard),
- * construct the public key model taking into account the user preferences in mailSettings.
- * The public key model contains information about public keys that one can use for sending email to an email address
+ * construct the contact public key model, which reflects the content of the vCard.
  */
-export const getPublicKeyModel = async ({
+export const getContactPublicKeyModel = async ({
     emailAddress,
     apiKeysConfig,
-    pinnedKeysConfig,
-    mailSettings
-}: PublicKeyConfigs): Promise<PublicKeyModel> => {
-    // prepare keys retrieved from the vCard
+    pinnedKeysConfig
+}: Omit<PublicKeyConfigs, 'mailSettings'>): Promise<ContactPublicKeyModel> => {
     const {
         pinnedKeys = [],
-        mimeType: vcardMimeType,
-        encrypt: vcardEncrypt,
+        encrypt,
+        sign,
         scheme: vcardScheme,
-        sign: vcardSign,
+        mimeType: vcardMimeType,
         isContactSignatureVerified
     } = pinnedKeysConfig;
     const trustedFingerprints = new Set<string>();
     const expiredFingerprints = new Set<string>();
     const revokedFingerprints = new Set<string>();
+
+    // prepare keys retrieved from the vCard
     await Promise.all(
         pinnedKeys.map(async (publicKey) => {
             const fingerprint = publicKey.getFingerprint();
@@ -183,19 +181,11 @@ export const getPublicKeyModel = async ({
     });
     const orderedApiKeys = sortApiKeys(apiKeys, trustedFingerprints, verifyOnlyFingerprints);
 
-    // Take mail settings into account
-    const encrypt = !!vcardEncrypt;
-    const sign = vcardSign !== undefined ? vcardSign : extractSign(mailSettings);
-    const scheme = vcardScheme !== undefined ? vcardScheme : extractScheme(mailSettings);
-    const mimeType = vcardMimeType !== undefined ? vcardMimeType : extractDraftMIMEType(mailSettings);
-    // remember that when signing messages for external PGP users with the PGP_INLINE scheme, the email format must be plain text
-    const isExternalPGPInline = sign && isExternalUser && !apiKeys.length && scheme === PGP_SCHEMES.PGP_INLINE;
-
     return {
         encrypt,
-        sign: encrypt || sign,
-        scheme,
-        mimeType: isExternalPGPInline ? DRAFT_MIME_TYPES.PLAINTEXT : mimeType,
+        sign,
+        scheme: vcardScheme || PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
+        mimeType: vcardMimeType || MIME_TYPES_MORE.AUTOMATIC,
         emailAddress,
         publicKeys: { apiKeys: orderedApiKeys, pinnedKeys: orderedPinnedKeys },
         trustedFingerprints,

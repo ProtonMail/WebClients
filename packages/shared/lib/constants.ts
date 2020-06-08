@@ -195,6 +195,12 @@ export enum PGP_SCHEMES {
     PGP_MIME = 'pgp-mime'
 }
 
+export enum PGP_SCHEMES_MORE {
+    GLOBAL_DEFAULT = ''
+}
+
+export type CONTACT_PGP_SCHEMES = PGP_SCHEMES | PGP_SCHEMES_MORE;
+
 export enum DRAFT_MIME_TYPES {
     PLAINTEXT = 'text/plain',
     DEFAULT = 'text/html'
@@ -205,6 +211,12 @@ export enum MIME_TYPES {
     PLAINTEXT = 'text/plain',
     DEFAULT = 'text/html'
 }
+
+export enum MIME_TYPES_MORE {
+    AUTOMATIC = ''
+}
+
+export type CONTACT_MIME_TYPES = DRAFT_MIME_TYPES.PLAINTEXT | MIME_TYPES_MORE;
 
 export enum RECIPIENT_TYPES {
     TYPE_INTERNAL = 1,
