@@ -1,3 +1,10 @@
+# [4.0.0-beta.4] - 2020-06-15
+## Updated
+- Update API calls
+- Improvement of recurring events edit warning
+- Redesign of event creation small modal
+
+___
 # [4.0.0-beta.3] - 2020-05-28
 ## Fixed
 - Remove reminders after event start time
