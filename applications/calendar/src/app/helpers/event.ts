@@ -17,5 +17,5 @@ export const getComponentWithPersonalPart = ({ component, personalMap = {}, memb
 };
 
 export const getDisplayTitle = (title = '') => {
-    return title || c('Event title').t`(no title)`;
+    return title.trim() || c('Event title').t`(no title)`;
 };

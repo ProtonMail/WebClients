@@ -15,6 +15,7 @@ import {
 import { DAY, HOUR, MINUTE, NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICATION_WHEN, WEEK } from '../constants';
 import { DateTimeValue } from '../interfaces/DateTime';
 import { NotificationModel } from '../interfaces/NotificationModel';
+import { getDisplayTitle } from './event';
 import getAlarmMessageText from './getAlarmMessageText';
 
 /**
@@ -30,7 +31,7 @@ interface Arguments {
 }
 export const getAlarmMessage = ({ component, start, now, tzid, formatOptions }: Arguments) => {
     const { dtstart, summary } = component;
-    const title = truncate(summary?.value, 100);
+    const title = truncate(getDisplayTitle(summary?.value), 100);
     const utcStartDate = start || propertyToUTCDate(dtstart);
 
     // To determine if the event is happening in timezoned today, tomorrow, this month or this year,
