@@ -20,7 +20,7 @@ const getMaxFrequencyInterval = (frequency: FREQUENCY) => {
     return FREQUENCY_INTERVALS_MAX[frequency];
 };
 
-const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted, collapseOnMobile }: Props) => {
+const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted }: Props) => {
     const isMonthly = frequencyModel.frequency === FREQUENCY.MONTHLY;
     const safeIntervalPlural = frequencyModel.interval || 1; // Can get undefined through the input
     const intervalOptions = [
@@ -44,12 +44,12 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted, 
 
     return (
         <>
-            <Row collapseOnMobile={collapseOnMobile}>
-                <label htmlFor="event-custom-frequency-select">{c('Label').t`Repeat every`}</label>
-            </Row>
             <Row>
+                <div className="mr1 flex flex-items-center">
+                    <label htmlFor="event-custom-frequency-select">{c('Label').t`Repeat every`}</label>
+                </div>
                 <div className="flex flex-wrap flex-item-fluid onmobile-flex-column onpopover-flex-column">
-                    <div className="flex flex-nowrap onmobile-w100 flex-item-fluid mb0-5">
+                    <div className="flex flex-nowrap onmobile-w100 flex-item-fluid">
                         <div className="w6e">
                             <IntegerInput
                                 data-test-id="event-modal/custom-frequency/interval:input"
