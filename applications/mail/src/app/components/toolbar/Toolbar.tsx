@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
-import { Icon, useLabels } from 'react-components';
+import { Icon, useLabels, useFolders } from 'react-components';
 import { identity } from 'proton-shared/lib/helpers/function';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
@@ -65,6 +65,7 @@ const Toolbar = ({
     onPage
 }: Props) => {
     const [labels] = useLabels();
+    const [folders] = useFolders();
     const selectedElements = useMemo(
         () =>
             selectedIDs
@@ -97,10 +98,13 @@ const Toolbar = ({
                 <ToolbarSeparator />
                 <MoveButtons
                     labelID={labelID}
+                    labels={labels}
+                    folders={folders}
                     mailSettings={mailSettings}
                     breakpoints={breakpoints}
                     selectedIDs={selectedIDs}
                     location={location}
+                    onBack={onBack}
                 />
                 <DeleteButton
                     labelID={labelID}

@@ -36,5 +36,5 @@ export const useConversation = (conversationID: string): [ConversationResult | u
         });
     }, [conversationID, api, cache]);
 
-    return [conversation, !conversation || loading];
+    return [conversation, loading];
 };

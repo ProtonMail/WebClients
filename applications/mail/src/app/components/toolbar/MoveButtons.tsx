@@ -1,45 +1,56 @@
 import React from 'react';
 import { Location } from 'history';
-import { c, msgid } from 'ttag';
-import { Icon, useLoading, useNotifications, useEventManager, useApi } from 'react-components';
+import { c } from 'ttag';
+import { Icon, useLoading } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { labelMessages } from 'proton-shared/lib/api/messages';
-import { labelConversations } from 'proton-shared/lib/api/conversations';
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import { Label } from 'proton-shared/lib/interfaces/Label';
+import { Folder } from 'proton-shared/lib/interfaces/Folder';
+import { toMap } from 'proton-shared/lib/helpers/object';
 
 import ToolbarButton from './ToolbarButton';
 import { getCurrentType } from '../../helpers/elements';
 import { ELEMENT_TYPES } from '../../constants';
 import { Breakpoints } from '../../models/utils';
-import { labelIncludes } from '../../helpers/labels';
+import { labelIncludes, getStandardFolders } from '../../helpers/labels';
+import { useMoveToFolder } from '../../hooks/useApplyLabels';
 
 const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
+    labels?: Label[];
+    folders?: Folder[];
     mailSettings: MailSettings;
     breakpoints: Breakpoints;
     selectedIDs: string[];
     location: Location;
+    onBack: () => void;
 }
 
-const MoveButtons = ({ labelID = '', mailSettings, breakpoints, selectedIDs = [], location }: Props) => {
-    const { createNotification } = useNotifications();
-    const { call } = useEventManager();
-    const api = useApi();
+const MoveButtons = ({
+    labelID = '',
+    labels = [],
+    folders = [],
+    mailSettings,
+    breakpoints,
+    selectedIDs = [],
+    location,
+    onBack
+}: Props) => {
     const [loading, withLoading] = useLoading();
     const type = getCurrentType({ mailSettings, labelID, location });
+    const moveToFolder = useMoveToFolder();
     const isTypeMessage = type === ELEMENT_TYPES.MESSAGE;
+    const labelIDs = labels.map(({ ID }) => ID);
+    const foldersMap = toMap(folders);
+    const standardFolders = getStandardFolders();
 
     const handleMove = async (LabelID: string) => {
-        const action = isTypeMessage ? labelMessages : labelConversations;
-        await api(action({ LabelID, IDs: selectedIDs }));
-        await call();
-        createNotification({
-            text: isTypeMessage
-                ? c('Success').ngettext(msgid`Message moved`, `Messages moved`, selectedIDs.length)
-                : c('Success').ngettext(msgid`Conversation moved`, `Conversations moved`, selectedIDs.length)
-        });
+        const folderName = standardFolders[labelID]?.name || foldersMap[labelID].Name;
+        const fromLabelID = labelIDs.includes(labelID) ? INBOX : labelID;
+        await moveToFolder(isTypeMessage, selectedIDs, LabelID, folderName, fromLabelID);
+        onBack();
     };
 
     const displayInbox = !breakpoints.isNarrow && !labelIncludes(labelID, INBOX, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS);

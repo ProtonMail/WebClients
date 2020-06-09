@@ -35,12 +35,12 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
         return <Loader />;
     }
 
-    const { Conversation: conversation, Messages: messages = [] } = conversationData as ConversationResult;
-
-    if (!conversation) {
+    if (!conversationData) {
+        onBack();
         return null;
     }
 
+    const { Conversation: conversation, Messages: messages = [] } = conversationData as ConversationResult;
     const inTrash = labelID === MAILBOX_LABEL_IDS.TRASH;
     const filteredMessages = messages.filter((message) => inTrash === hasLabel(message, MAILBOX_LABEL_IDS.TRASH));
     const messagesToShow = filter ? filteredMessages : messages;

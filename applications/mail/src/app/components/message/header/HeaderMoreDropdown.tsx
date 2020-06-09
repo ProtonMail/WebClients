@@ -67,7 +67,7 @@ const HeaderMoreDropdown = ({
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
         const folderName = getStandardFolders()[folderID].name;
-        moveToFolder(true, [message.data?.ID || ''], folderID, folderName, fromFolderID);
+        await moveToFolder(true, [message.data?.ID || ''], folderID, folderName, fromFolderID);
         onBack();
     };
 
