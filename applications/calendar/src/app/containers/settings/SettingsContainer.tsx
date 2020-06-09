@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useToggle, Sidebar, Info, getSectionConfigProps, PrivateAppContainer } from 'react-components';
+import { useToggle, Sidebar, Info, getSectionConfigProps, PrivateAppContainer, useModals } from 'react-components';
 import { Redirect, Route, Switch } from 'react-router';
 import { c } from 'ttag';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
@@ -9,6 +9,7 @@ import PrivateHeader from '../../components/layout/PrivateHeader';
 import GeneralPage, { getGeneralSettingsPage } from './SettingsGeneralPage';
 import CalendarsPage, { getCalendarSettingsPage } from './SettingsCalendarPage';
 import CalendarSidebarVersion from '../calendar/CalendarSidebarVersion';
+import ImportModal from '../../components/import/ImportModal';
 
 interface Props {
     isNarrow: boolean;
@@ -32,6 +33,9 @@ const SettingsContainer = ({
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const [activeSection, setActiveSection] = useState('');
 
+    const { createModal } = useModals();
+    const hasActiveCalendars = !!activeCalendars.length;
+
     useEffect(() => {
         setExpand(false);
     }, [window.location.pathname]);
@@ -42,17 +46,31 @@ const SettingsContainer = ({
             window.location.pathname,
             activeSection
         ),
-        {
-            type: 'text',
-            className: 'alignleft',
-            icon: 'import',
-            text: (
-                <>
-                    {c('Action').t`Import`}
-                    <Info buttonClass="ml0-5 inline-flex" title={c('Info').t`Feature coming soon`} />
-                </>
-            ),
-        },
+        hasActiveCalendars && defaultCalendar
+            ? {
+                type: 'button',
+                className: 'alignleft',
+                icon: 'import',
+                onClick() {
+                    createModal(<ImportModal defaultCalendar={defaultCalendar} calendars={activeCalendars} />);
+                },
+                text: c('Action').t`Import`,
+            }
+            : {
+                type: 'button',
+                className: 'alignleft',
+                icon: 'import',
+                text: (
+                    <>
+                        {c('Action').t`Import`}
+                        <Info
+                            buttonClass="ml0-5 inline-flex"
+                            title={c('Disabled import')
+                                .t`You need to have an active calendar before importing your events.`}
+                        />
+                    </>
+                ),
+            },
     ];
 
     const header = (
