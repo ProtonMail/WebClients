@@ -138,6 +138,7 @@ const MailboxContainer = ({
         if (isMessage(element) && isDraft(element)) {
             onCompose({ existingDraft: { localID: element.ID as string, data: element as Message } });
         }
+        setCheckedElements({});
     };
     const handleBack = () => history.push(setPathInUrl(location, labelID));
     const handlePage = (pageNumber: number) => history.push(setPageInUrl(location, pageNumber));
