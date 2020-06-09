@@ -53,7 +53,7 @@ export interface ApiKeysConfig {
     RecipientType?: RECIPIENT_TYPES;
     MIMEType?: MIME_TYPES;
     SignedKeyList?: any[];
-    Warnings?: string[];
+    Errors?: string[];
 }
 
 export interface PinnedKeysConfig {
@@ -91,6 +91,7 @@ export interface ContactPublicKeyModel {
     pgpAddressDisabled: boolean;
     isContactSignatureVerified: boolean;
     emailAddressWarnings?: string[];
+    emailAddressErrors?: string[];
 }
 
 export interface PublicKeyModel {
@@ -111,4 +112,5 @@ export interface PublicKeyModel {
     pgpAddressDisabled: boolean;
     isContactSignatureVerified: boolean;
     emailAddressWarnings?: string[];
+    emailAddressErrors?: string[];
 }

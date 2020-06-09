@@ -6,6 +6,7 @@ import { ContactPublicKeyModel, MailSettings, PublicKeyModel, SelfSend } from '.
 import { getEmailMismatchWarning, getIsValidForSending } from '../keys/publicKeys';
 
 export enum EncryptionPreferencesFailureTypes {
+    EMAIL_ADDRESS_ERROR,
     INTERNAL_USER_DISABLED = 0,
     INTERNAL_USER_NO_API_KEY = 1,
     INTERNAL_USER_NO_VALID_API_KEY = 2,
@@ -48,7 +49,8 @@ const extractEncryptionPreferencesOwnAddress = (
         scheme,
         mimeType,
         isContactSignatureVerified,
-        emailAddressWarnings
+        emailAddressWarnings,
+        emailAddressErrors
     } = publicKeyModel;
     const { address, publicKey } = selfSend;
     const hasApiKeys = !!address.HasKeys;
@@ -66,6 +68,16 @@ const extractEncryptionPreferencesOwnAddress = (
         isContactSignatureVerified,
         emailAddressWarnings
     };
+    if (emailAddressErrors?.length) {
+        const errorString = emailAddressErrors[0];
+        return {
+            ...result,
+            failure: {
+                type: EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR,
+                error: new Error(errorString)
+            }
+        };
+    }
     if (!canAddressReceive) {
         return {
             ...result,
@@ -105,7 +117,8 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         mimeType,
         trustedFingerprints,
         isContactSignatureVerified,
-        emailAddressWarnings
+        emailAddressWarnings,
+        emailAddressErrors
     } = publicKeyModel;
     const hasApiKeys = !!apiKeys.length;
     const hasPinnedKeys = !!pinnedKeys.length;
@@ -122,6 +135,16 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         isContactSignatureVerified,
         emailAddressWarnings
     };
+    if (emailAddressErrors?.length) {
+        const errorString = emailAddressErrors[0];
+        return {
+            ...result,
+            failure: {
+                type: EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR,
+                error: new Error(errorString)
+            }
+        };
+    }
     if (!hasApiKeys) {
         return {
             ...result,
@@ -175,7 +198,8 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         mimeType,
         trustedFingerprints,
         isContactSignatureVerified,
-        emailAddressWarnings
+        emailAddressWarnings,
+        emailAddressErrors
     } = publicKeyModel;
     const hasApiKeys = true;
     const hasPinnedKeys = !!pinnedKeys.length;
@@ -192,6 +216,16 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         isContactSignatureVerified,
         emailAddressWarnings
     };
+    if (emailAddressErrors?.length) {
+        const errorString = emailAddressErrors[0];
+        return {
+            ...result,
+            failure: {
+                type: EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR,
+                error: new Error(errorString)
+            }
+        };
+    }
     // WKD keys are ordered in terms of user preference. The primary key (first in the list) will be used for sending
     const [primaryKey] = apiKeys;
     const primaryKeyFingerprint = primaryKey.getFingerprint();
@@ -237,7 +271,8 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         scheme,
         mimeType,
         isContactSignatureVerified,
-        emailAddressWarnings
+        emailAddressWarnings,
+        emailAddressErrors
     } = publicKeyModel;
     const hasPinnedKeys = !!pinnedKeys.length;
     const result = {
@@ -253,6 +288,16 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         isContactSignatureVerified,
         emailAddressWarnings
     };
+    if (emailAddressErrors?.length) {
+        const errorString = emailAddressErrors[0];
+        return {
+            ...result,
+            failure: {
+                type: EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR,
+                error: new Error(errorString)
+            }
+        };
+    }
     if (!hasPinnedKeys) {
         return result;
     }

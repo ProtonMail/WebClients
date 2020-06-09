@@ -30,7 +30,7 @@ const getPublicKeysEmailHelper = async (api: Api, Email: string, silence = false
     } catch (error) {
         const { data = {} } = error;
         if (EMAIL_ERRORS.includes(data.Code)) {
-            return { Keys: [], publicKeys: [], Warnings: [data.Error] };
+            return { Keys: [], publicKeys: [], Errors: [data.Error] };
         }
         throw error;
     }

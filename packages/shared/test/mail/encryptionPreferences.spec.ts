@@ -165,6 +165,20 @@ describe('extractEncryptionPreferences for an internal user', () => {
         expect(result.warnings?.length).toEqual(1);
     });
 
+    it('should give a failure when the API gave emailAddress errors', () => {
+        const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
+        const pinnedKeys = [pinnedFakeKey1];
+        const publicKeyModel = {
+            ...model,
+            publicKeys: { apiKeys, pinnedKeys },
+            verifyOnlyFingerprints: new Set(['fakeKey1']),
+            emailAddressErrors: ['Recipient could not be found']
+        };
+        const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
+
+        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR);
+    });
+
     it('should give a failure when the preferred pinned key is not valid for sending', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
@@ -314,6 +328,18 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
         expect(result.warnings?.length).toEqual(1);
+    });
+
+    it('should give a failure when the API gave emailAddress errors', () => {
+        const publicKeyModel = {
+            ...model,
+            publicKeys: { apiKeys: [fakeKey1, fakeKey2, fakeKey3], pinnedKeys: [pinnedFakeKey1] },
+            verifyOnlyFingerprints: new Set(['fakeKey1']),
+            emailAddressErrors: ['Recipient could not be found']
+        };
+        const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
+
+        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR);
     });
 
     it('should give a failure when the preferred pinned key is not valid for sending', () => {

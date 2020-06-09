@@ -198,6 +198,6 @@ export const getContactPublicKeyModel = async ({
         isPGPExternalWithoutWKDKeys: isExternalUser && !apiKeys.length,
         pgpAddressDisabled: isDisabledUser(apiKeysConfig),
         isContactSignatureVerified,
-        emailAddressWarnings: apiKeysConfig.Warnings
+        emailAddressErrors: apiKeysConfig.Errors
     };
 };
