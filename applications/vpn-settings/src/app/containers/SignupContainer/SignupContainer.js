@@ -199,7 +199,7 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
                                 ))}
                         </div>
                         <div className="onmobile-min-w100 onmobile-aligncenter onmobile-mt0-5">
-                            <Href url={homepageUrl} target="_self">
+                            <Href url={homepageUrl} target="_self" className="w150p inbl">
                                 <VpnLogo className="fill-primary" />
                             </Href>
                         </div>
