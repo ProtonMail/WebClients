@@ -18,7 +18,8 @@ const TopBanners = () => {
             .t`Upgrade account`}</Href>
     );
     const payInvoiceLink = (
-        <Href key="pay-invoices" url="/settings/subscription" target="_self">{c('Link').t`Pay invoice`}</Href>
+        <Href key="pay-invoices" className="color-currentColor" url="/settings/subscription" target="_self">{c('Link')
+            .t`Pay invoice`}</Href>
     );
     const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
 
