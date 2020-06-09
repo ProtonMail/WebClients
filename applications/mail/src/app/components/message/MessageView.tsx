@@ -112,10 +112,12 @@ const MessageView = ({
 
     // Re-initialize context if message is changed without disposing the component
     useEffect(() => {
-        setExpanded(inputInitialExpand && !draft);
-        setInitialExpand(inputInitialExpand && !draft);
-        setSourceMode(false);
-    }, [message.data?.ID]);
+        if (message.data?.ID) {
+            setExpanded(inputInitialExpand && !draft);
+            setInitialExpand(inputInitialExpand && !draft);
+            setSourceMode(false);
+        }
+    }, [draft, message.data?.ID]);
 
     if (!messageLoaded) {
         return null;
