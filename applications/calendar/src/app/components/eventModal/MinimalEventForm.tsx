@@ -114,16 +114,10 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
                 {!model.isAllDay && (
                     <>
                         {startTimeInput}
-                        {endsOnSameDay && (
-                            <>
-                                <EnDash />
-                                {endTimeInput}
-                            </>
-                        )}
                     </>
                 )}
             </MinimalEventRow>
-            {!endsOnSameDay && !model.isAllDay && (
+            {!model.isAllDay && (
                 <MinimalEventRow className="flex flex-nowrap flex-row flex-items-center w100">
                     {endDateInput}
                     {endTimeInput}
