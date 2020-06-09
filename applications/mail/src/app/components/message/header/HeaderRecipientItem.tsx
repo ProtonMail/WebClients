@@ -58,13 +58,15 @@ const HeaderRecipientItem = ({
 
     const recipient = recipientOrGroup.recipient as Recipient;
 
-    const handleCompose = () => {
+    const handleCompose = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation();
         onCompose({
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: [recipientOrGroup.recipient as Recipient] } }
         });
     };
-    const handleCopy = () => {
+    const handleCopy = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation();
         textToClipboard(recipient.Address);
         createNotification({ text: c('Info').t`Copied to clipboard` });
     };
