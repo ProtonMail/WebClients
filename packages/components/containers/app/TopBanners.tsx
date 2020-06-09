@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { getItem, setItem } from 'proton-shared/lib/helpers/storage';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
-import { Href, useUser } from '../../index';
+import { Href, useUser, useConfig } from '../../index';
 import TopBanner from './TopBanner';
 
 const IGNORE_STORAGE_LIMIT_KEY = 'ignore-storage-limit';
 
 const TopBanners = () => {
     const [user] = useUser();
+    const { CLIENT_TYPE } = useConfig();
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useState(
         getItem(`${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`) === 'true'
     );
+    const dashboardUrl = CLIENT_TYPE === CLIENT_TYPES.VPN ? '/dashboard' : '/settings/subscription';
     // TODO Update links once we have proton-account
     const upgradeLink = (
-        <Href key="storage-link" className="color-currentColor" url="/settings/subscription" target="_self">{c('Link')
+        <Href key="storage-link" className="color-currentColor" url={dashboardUrl} target="_self">{c('Link')
             .t`Upgrade account`}</Href>
     );
     const payInvoiceLink = (
-        <Href key="pay-invoices" className="color-currentColor" url="/settings/subscription" target="_self">{c('Link')
+        <Href key="pay-invoices" className="color-currentColor" url={dashboardUrl} target="_self">{c('Link')
             .t`Pay invoice`}</Href>
     );
     const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
