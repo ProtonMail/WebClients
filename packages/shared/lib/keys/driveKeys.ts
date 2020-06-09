@@ -16,6 +16,7 @@ import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
 import { generatePassphrase } from './calendarKeys';
 import { createSessionKey, getEncryptedSessionKey } from '../calendar/encrypt';
 import { serializeUint8Array } from '../helpers/serialization';
+import { arrayToBinaryString } from '../helpers/string';
 
 const toPolyfillReadable = createReadableStreamWrapper(PolyfillReadableStream);
 
@@ -131,7 +132,7 @@ export const generateNodeKeys = async (parentKey: OpenPGPKey, addressKey: OpenPG
 
 export const generateContentHash = async (content: Uint8Array) => {
     const data = await SHA256(content);
-    return { HashType: 'sha256', BlockHash: arrayToHexString(data) };
+    return { HashType: 'sha256', BlockHash: arrayToBinaryString(data) };
 };
 
 export const generateContentKeys = async (nodeKey: OpenPGPKey) => {
