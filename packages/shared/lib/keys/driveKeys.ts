@@ -16,7 +16,6 @@ import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
 import { generatePassphrase } from './calendarKeys';
 import { createSessionKey, getEncryptedSessionKey } from '../calendar/encrypt';
 import { serializeUint8Array } from '../helpers/serialization';
-import { arrayToBinaryString } from '../helpers/string';
 
 const toPolyfillReadable = createReadableStreamWrapper(PolyfillReadableStream);
 
@@ -25,7 +24,7 @@ interface UnsignedEncryptionPayload {
     publicKey: OpenPGPKey;
 }
 
-export const sign = async (data: string, privateKeys: OpenPGPKey | OpenPGPKey[]) => {
+export const sign = async (data: string | Uint8Array, privateKeys: OpenPGPKey | OpenPGPKey[]) => {
     const { signature } = await signMessage({
         data,
         privateKeys,
@@ -132,7 +131,7 @@ export const generateNodeKeys = async (parentKey: OpenPGPKey, addressKey: OpenPG
 
 export const generateContentHash = async (content: Uint8Array) => {
     const data = await SHA256(content);
-    return { HashType: 'sha256', BlockHash: arrayToBinaryString(data) };
+    return { HashType: 'sha256', BlockHash: data };
 };
 
 export const generateContentKeys = async (nodeKey: OpenPGPKey) => {
