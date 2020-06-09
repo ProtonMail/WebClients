@@ -12,7 +12,7 @@ interface Server {
 }
 
 export interface VPNServer {
-    City: string;
+    City: string | null;
     Country: string;
     Domain: string;
     EntryCountry: string;
