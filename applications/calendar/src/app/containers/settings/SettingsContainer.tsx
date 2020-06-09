@@ -46,10 +46,9 @@ const SettingsContainer = ({
         { link: '/calendar/settings/general', icon: 'settings-master', text: c('Link').t`General` },
         { link: '/calendar/settings/calendars', icon: 'calendar', text: c('Link').t`Calendars` },
         {
-            type: 'button',
+            type: 'text',
             className: 'alignleft',
             icon: 'import',
-            disabled: true,
             text: (
                 <>
                     {c('Action').t`Import`}
