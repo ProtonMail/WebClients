@@ -22,7 +22,7 @@ const useGetEncryptionPreferences = () => {
     const [addresses] = useAddresses();
 
     return useCallback(
-        async (emailAddress: string, silence = false) => {
+        async (emailAddress: string, silence = true) => {
             const selfAddress = addresses.find(
                 ({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(emailAddress)
             );
