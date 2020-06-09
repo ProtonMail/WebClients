@@ -16,6 +16,7 @@ input[type="submit"][disabled],
 input[type="button"][disabled],
 input[type="reset"][disabled] {
   cursor: default;
+  pointer-events: none;
 }
 
 /* for field texts */
