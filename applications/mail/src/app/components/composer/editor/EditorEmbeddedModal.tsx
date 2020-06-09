@@ -13,28 +13,32 @@ const EditorEmbeddedModal = ({ files, onClose, onSelect }: Props) => {
     return (
         <div className="composer-editor-embedded absolute w100 h100 flex flex-justify-center flex-items-center">
             <div className="pm-modal pm-modal--smaller">
-                <HeaderModal
-                    modalTitleID=""
-                    closeTextModal={c('Action').t`Cancel`}
-                    closeTextVisible={true}
-                    onClose={onClose}
-                >
-                    {c('Info').ngettext(
-                        msgid`${files.length} image detected`,
-                        `${files.length} images detected`,
-                        files.length
-                    )}
+                <HeaderModal modalTitleID="" hasClose={false} onClose={onClose}>
+                    {c('Info').ngettext(msgid`Insert image as`, `Insert images as`, files.length)}
                 </HeaderModal>
-                <footer className="p2 pt0 flex flex-column">
-                    <span className="mb0-5 w100">{c('Info').t`Insert images as:`}</span>
-                    <span className="mb0-5 w100">
-                        <Button className="pm-button--primary" onClick={() => onSelect(ATTACHMENT_ACTION.ATTACHMENT)}>
-                            {c('Action').t`Attachment`}
+                <footer className="p2 pt0 flex flex-column flex-nowrap">
+                    <span className="mb0-5 w100 flex flex-row flex-items-center autotinymobile">
+                        <span className="flex-item-fluid autotinymobile">
+                            <Button
+                                className="pm-button--primary w100"
+                                onClick={() => onSelect(ATTACHMENT_ACTION.ATTACHMENT)}
+                            >
+                                {c('Action').t`Attachment`}
+                            </Button>
+                        </span>
+                        <span className="ml1 mr1 w5e autotinymobile ontinymobile-mt1 ontinymobile-mb1">{c('Info')
+                            .t`or`}</span>
+                        <span className="flex-item-fluid autotinymobile">
+                            <Button
+                                className="pm-button--primary w100"
+                                onClick={() => onSelect(ATTACHMENT_ACTION.INLINE)}
+                            >{c('Action').t`Inline`}</Button>
+                        </span>
+                    </span>
+                    <span className="w100">
+                        <Button className="pm-button--link nodecoration" onClick={onClose}>
+                            {c('Action').t`Cancel action`}
                         </Button>
-                        <span className="ml1 mr1">{c('Info').t`or`}</span>
-                        <Button className="pm-button--primary" onClick={() => onSelect(ATTACHMENT_ACTION.INLINE)}>{c(
-                            'Action'
-                        ).t`Inline`}</Button>
                     </span>
                 </footer>
             </div>
