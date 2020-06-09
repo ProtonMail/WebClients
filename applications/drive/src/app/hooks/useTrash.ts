@@ -1,14 +1,18 @@
-import { queryTrashList } from '../api/share';
+import { chunk } from 'proton-shared/lib/helpers/array';
 import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteLinks } from '../api/link';
 import { LinkMeta, FolderLinkMeta } from '../interfaces/link';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
+import { FOLDER_PAGE_SIZE, BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '../constants';
+import { RestoreFromTrashResult, RESTORE_STATUS_CODE, RestoreResponse } from '../interfaces/restore';
+import { queryTrashList } from '../api/share';
+import runInQueue from '../utils/runInQueue';
 import useDrive from './useDrive';
 import useDebouncedRequest from './useDebouncedRequest';
-import { FOLDER_PAGE_SIZE } from '../constants';
-import { RestoreFromTrashResult } from '../interfaces/restore';
+import usePreventLeave from './usePreventLeave';
 
 function useTrash() {
     const debouncedRequest = useDebouncedRequest();
+    const { preventLeave } = usePreventLeave();
     const cache = useDriveCache();
     const { getLinkKeys, decryptLink, getShareKeys } = useDrive();
 
@@ -45,15 +49,71 @@ function useTrash() {
     };
 
     const trashLinks = async (shareId: string, parentLinkID: string, linkIds: string[]) => {
-        return debouncedRequest(queryTrashLinks(shareId, parentLinkID, linkIds));
+        const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
+
+        const trashQueue = batches.map((batch, i) => () =>
+            debouncedRequest(queryTrashLinks(shareId, parentLinkID, batch))
+                .then(() => batch)
+                .catch((error): string[] => {
+                    console.error(`Failed to trash #${i} batch of links: `, error);
+                    return [];
+                })
+        );
+
+        const trashed = await preventLeave(runInQueue(trashQueue, MAX_THREADS_PER_REQUEST));
+        return ([] as string[]).concat(...trashed);
     };
 
-    const restoreLinks = async (shareId: string, linkIds: string[]): Promise<RestoreFromTrashResult> => {
-        return debouncedRequest(queryRestoreLinks(shareId, linkIds));
+    const restoreLinks = async (shareId: string, linkIds: string[]) => {
+        const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
+
+        const restoreQueue = batches.map((batch, i) => () =>
+            debouncedRequest<RestoreFromTrashResult>(queryRestoreLinks(shareId, batch)).catch((error) => {
+                console.error(`Failed to restore #${i} batch of links: `, error);
+                return { Responses: [] };
+            })
+        );
+        const responses = await preventLeave(runInQueue(restoreQueue, MAX_THREADS_PER_REQUEST));
+        const results = responses.reduce(
+            (acc, { Responses }) => acc.concat(...Responses),
+            [] as {
+                Response: RestoreResponse;
+            }[]
+        );
+
+        return results.reduce(
+            (results, { Response }, index) => {
+                if (!Response.Error) {
+                    results.restored.push(linkIds[index]);
+                    return results;
+                }
+
+                if (Response.Code === RESTORE_STATUS_CODE.ALREADY_EXISTS) {
+                    results.alreadyExisting.push(linkIds[index]);
+                } else {
+                    results.otherErrors.push(Response.Error);
+                }
+
+                return results;
+            },
+            { restored: [] as string[], alreadyExisting: [] as string[], otherErrors: [] as string[] }
+        );
     };
 
     const deleteLinks = async (shareId: string, linkIds: string[]) => {
-        return debouncedRequest(queryDeleteLinks(shareId, linkIds));
+        const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
+
+        const deleteQueue = batches.map((batch, i) => () =>
+            debouncedRequest(queryDeleteLinks(shareId, batch))
+                .then(() => batch)
+                .catch((error): string[] => {
+                    console.error(`Failed to delete #${i} batch of links: `, error);
+                    return [];
+                })
+        );
+
+        const trashed = await preventLeave(runInQueue(deleteQueue, MAX_THREADS_PER_REQUEST));
+        return ([] as string[]).concat(...trashed);
     };
 
     const emptyTrash = async (shareId: string) => {

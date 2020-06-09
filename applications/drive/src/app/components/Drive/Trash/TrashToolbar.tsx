@@ -1,5 +1,5 @@
 import React from 'react';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import {
     Toolbar,
@@ -16,10 +16,8 @@ import useDrive from '../../../hooks/useDrive';
 import useTrash from '../../../hooks/useTrash';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import ConfirmDeleteModal from '../../ConfirmDeleteModal';
-import { getNotificationTextForItemList } from '../helpers';
+import { useListNotifications } from '../helpers';
 import { useTrashContent } from './TrashContentProvider';
-import { RestoreFromTrashResult, RestoreResponse, RESTORE_STATUS_CODE } from '../../../interfaces/restore';
-import { FileBrowserItem } from '../../FileBrowser/FileBrowser';
 
 interface Props {
     shareId: string;
@@ -28,6 +26,7 @@ interface Props {
 const TrashToolbar = ({ shareId }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
+    const { createRestoredLinksNotifications, createDeleteLinksNotifications } = useListNotifications();
     const { events } = useDrive();
     const { restoreLinks, deleteLinks, emptyTrash } = useTrash();
     const [restoreLoading, withRestoreLoading] = useLoading();
@@ -55,66 +54,11 @@ const TrashToolbar = ({ shareId }: Props) => {
 
     const restoreFromTrash = async () => {
         const toRestore = selectedItems;
-
-        const result: RestoreFromTrashResult = await restoreLinks(
+        const result = await restoreLinks(
             shareId,
-            toRestore.map(({ LinkID }) => LinkID)
+            selectedItems.map(({ LinkID }) => LinkID)
         );
-
-        const restoredItems: FileBrowserItem[] = [];
-        const alreadyExistingItems: FileBrowserItem[] = [];
-        const otherErrors: string[] = [];
-        result.Responses.forEach((r: { Response: RestoreResponse }, index: number) => {
-            if (!r.Response.Error) {
-                restoredItems.push(toRestore[index]);
-                return;
-            }
-
-            if (r.Response.Code === RESTORE_STATUS_CODE.ALREADY_EXISTS) {
-                alreadyExistingItems.push(toRestore[index]);
-            } else {
-                otherErrors.push(r.Response.Error);
-            }
-        });
-
-        const restoredItemsCount = restoredItems.length;
-        if (restoredItemsCount) {
-            const [{ Name: firstItemName }] = restoredItems;
-            const notificationMessages = {
-                allFiles: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash`,
-                    `${restoredItemsCount} files restored from Trash`,
-                    restoredItemsCount
-                ),
-                allFolders: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash`,
-                    `${restoredItemsCount} folders restored from Trash`,
-                    restoredItemsCount
-                ),
-                mixed: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash`,
-                    `${restoredItemsCount} items restored from Trash`,
-                    restoredItemsCount
-                )
-            };
-
-            const notificationText = getNotificationTextForItemList(
-                toRestore.map((item) => item.Type),
-                notificationMessages
-            );
-            createNotification({ text: notificationText, type: 'success' });
-        }
-
-        alreadyExistingItems.forEach((item) => {
-            const notificationText = c('Notification')
-                .t`An item with the name "${item.Name}" already exists in the current folder`;
-            createNotification({ text: notificationText, type: 'error' });
-        });
-
-        otherErrors.forEach((error) => {
-            createNotification({ text: error, type: 'error' });
-        });
-
+        createRestoredLinksNotifications(toRestore, result);
         await events.call(shareId);
     };
 
@@ -126,40 +70,12 @@ const TrashToolbar = ({ shareId }: Props) => {
         const message = c('Info').t`permanently delete selected item(s) from Trash`;
 
         openConfirmModal(title, confirm, message, async () => {
-            await deleteLinks(
+            const deleted = await deleteLinks(
                 shareId,
                 toDelete.map(({ LinkID }) => LinkID)
             );
 
-            const deletedItemsCount = toDelete.length;
-            if (!deletedItemsCount) {
-                return;
-            }
-
-            const [{ Name: firstItemName }] = toDelete;
-            const notificationMessages = {
-                allFiles: c('Notification').ngettext(
-                    msgid`"${firstItemName}" deleted permanently from Trash`,
-                    `${deletedItemsCount} files deleted permanently from Trash`,
-                    deletedItemsCount
-                ),
-                allFolders: c('Notification').ngettext(
-                    msgid`"${firstItemName}" deleted permanently from Trash`,
-                    `${deletedItemsCount} folders deleted permanently from Trash`,
-                    deletedItemsCount
-                ),
-                mixed: c('Notification').ngettext(
-                    msgid`"${firstItemName}" deleted permanently from Trash`,
-                    `${deletedItemsCount} items deleted permanently from Trash`,
-                    deletedItemsCount
-                )
-            };
-
-            const notificationText = getNotificationTextForItemList(
-                toDelete.map((item) => item.Type),
-                notificationMessages
-            );
-            createNotification({ text: notificationText });
+            createDeleteLinksNotifications(toDelete, deleted);
             await Promise.allSettled([events.call(shareId), call()]);
         });
     };

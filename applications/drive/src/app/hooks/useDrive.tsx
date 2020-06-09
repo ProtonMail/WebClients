@@ -18,7 +18,7 @@ import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
 import { LinkMetaResult, isFolderLinkMeta, LinkChildrenResult, LinkMeta, LinkType } from '../interfaces/link';
 import { queryGetLink } from '../api/link';
 import { queryFolderChildren, queryCreateFolder } from '../api/folder';
-import { FOLDER_PAGE_SIZE, EVENT_TYPES } from '../constants';
+import { FOLDER_PAGE_SIZE, EVENT_TYPES, MAX_THREADS_PER_REQUEST } from '../constants';
 import { ShareMeta, UserShareResult } from '../interfaces/share';
 import { queryShareMeta, queryUserShares, queryRenameLink, queryMoveLink } from '../api/share';
 import { CreatedDriveVolumeResult } from '../interfaces/volume';
@@ -30,6 +30,8 @@ import { ShareEvent, useDriveEventManager } from '../components/DriveEventManage
 import useDebouncedRequest from './useDebouncedRequest';
 import useQueuedFunction from './useQueuedFunction';
 import { getSuccessfulSettled, logSettledErrors } from '../utils/async';
+import usePreventLeave from './usePreventLeave';
+import runInQueue from '../utils/runInQueue';
 
 interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
@@ -46,6 +48,7 @@ function useDrive() {
     const { createModal } = useModals();
     const { getPrimaryAddressKey, getVerificationKeys } = useDriveCrypto();
     const debouncedRequest = useDebouncedRequest();
+    const { preventLeave } = usePreventLeave();
 
     const createVolume = async () => {
         const { address, privateKey } = await getPrimaryAddressKey();
@@ -401,6 +404,25 @@ function useDrive() {
         return { Type: meta.Type, Name: meta.Name };
     };
 
+    const moveLinks = async (shareId: string, parentFolderId: string, linkIds: string[]) => {
+        const moved: { Name: string; Type: LinkType }[] = [];
+        const failed: string[] = [];
+        const moveQueue = linkIds.map((linkId) => async () => {
+            await moveLink(shareId, parentFolderId, linkId)
+                .then((result) => {
+                    moved.push(result);
+                })
+                .catch((error) => {
+                    if (error.name === 'Error') {
+                        failed.push(linkId);
+                        console.error(`Failed to move link ${linkId}: ${error}`);
+                    }
+                });
+        });
+        await preventLeave(runInQueue(moveQueue, MAX_THREADS_PER_REQUEST));
+        return { moved, failed };
+    };
+
     const events = {
         handleEvents: (shareId: string) => async ({ Events = [] }: { Events: ShareEvent[] }) => {
             const isTrashedRestoredOrMoved = ({ LinkID, ParentLinkID, Trashed }: LinkMeta) => {
@@ -506,6 +528,7 @@ function useDrive() {
         createNewFolder,
         fetchAllFolderPages,
         moveLink,
+        moveLinks,
         events
     };
 }

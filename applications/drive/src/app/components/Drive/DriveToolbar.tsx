@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
-import { ToolbarSeparator, Toolbar, ToolbarButton, useModals, useNotifications, useLoading } from 'react-components';
+import { ToolbarSeparator, Toolbar, ToolbarButton, useModals, useLoading } from 'react-components';
 
 import { getMetaForTransfer } from './Drive';
 import { useDriveContent } from './DriveContentProvider';
@@ -14,15 +14,11 @@ import RenameModal from '../RenameModal';
 import DetailsModal from '../DetailsModal';
 import MoveToFolderModal from '../MoveToFolderModal';
 import FileSaver from '../../utils/FileSaver/FileSaver';
-import { getNotificationTextForItemList } from './helpers';
+import { useListNotifications } from './helpers';
 import { DriveFolder } from './DriveFolderProvider';
 import { LinkType } from '../../interfaces/link';
 import { isPreviewAvailable } from '../FilePreview/FilePreview';
-import runInQueue from '../../utils/runInQueue';
 import SortDropdown from './SortDropdown';
-import usePreventLeave from '../../hooks/usePreventLeave';
-
-const MAX_THREADS_PER_MOVE = 5;
 
 interface Props {
     activeFolder: DriveFolder;
@@ -31,9 +27,12 @@ interface Props {
 
 const DriveToolbar = ({ activeFolder, openLink }: Props) => {
     const { createModal } = useModals();
-    const { createNotification } = useNotifications();
+    const {
+        createRestoredLinksNotifications,
+        createTrashLinksNotifications,
+        createMoveLinksNotifications
+    } = useListNotifications();
     const { fileBrowserControls } = useDriveContent();
-    const { preventLeave } = usePreventLeave();
     const { startFileTransfer, startFolderTransfer } = useFiles();
     const {
         getFoldersOnlyMetas,
@@ -41,7 +40,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
         getLinkMeta,
         createNewFolder,
         renameLink,
-        moveLink,
+        moveLinks,
         events
     } = useDrive();
     const { trashLinks, restoreLinks } = useTrash();
@@ -126,74 +125,23 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
     const moveToTrash = async () => {
         const toTrash = selectedItems;
-        await trashLinks(
+        const trashed = await trashLinks(
             shareId,
             linkId,
             toTrash.map(({ LinkID }) => LinkID)
         );
 
-        const trashedLinksCount = toTrash.length;
-        const [{ Name: firstItemName }] = toTrash;
-
         const undoAction = async () => {
-            await restoreLinks(
+            const result = await restoreLinks(
                 shareId,
                 toTrash.map(({ LinkID }) => LinkID)
             );
-
-            const notificationMessages = {
-                allFiles: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash`,
-                    `${trashedLinksCount} files restored from Trash`,
-                    trashedLinksCount
-                ),
-                allFolders: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash`,
-                    `${trashedLinksCount} folders restored from Trash`,
-                    trashedLinksCount
-                ),
-                mixed: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash`,
-                    `${trashedLinksCount} items restored from Trash`,
-                    trashedLinksCount
-                )
-            };
-
-            const notificationText = getNotificationTextForItemList(
-                toTrash.map((item) => item.Type),
-                notificationMessages
-            );
-            createNotification({ text: notificationText });
+            createRestoredLinksNotifications(toTrash, result);
             await events.call(shareId);
         };
 
-        const notificationMessages = {
-            allFiles: c('Notification').ngettext(
-                msgid`"${firstItemName}" moved to Trash`,
-                `${trashedLinksCount} files moved to Trash`,
-                trashedLinksCount
-            ),
-            allFolders: c('Notification').ngettext(
-                msgid`"${firstItemName}" moved to Trash`,
-                `${trashedLinksCount} folders moved to Trash`,
-                trashedLinksCount
-            ),
-            mixed: c('Notification').ngettext(
-                msgid`"${firstItemName}" moved to Trash`,
-                `${trashedLinksCount} items moved to Trash`,
-                trashedLinksCount
-            )
-        };
+        createTrashLinksNotifications(toTrash, trashed, undoAction);
 
-        const movedToTrashText = getNotificationTextForItemList(
-            toTrash.map((item) => item.Type),
-            notificationMessages,
-            undoAction
-        );
-        createNotification({
-            type: 'success',
-            text: movedToTrashText
-        });
         await events.call(shareId);
     };
 
@@ -209,84 +157,13 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                 getFoldersOnlyMetas={getFoldersOnlyMetas}
                 isChildrenComplete={(LinkID: string) => !!cache.get.foldersOnlyComplete(shareId, LinkID)}
                 moveLinksToFolder={async (parentFolderId: string) => {
-                    const movedLinks: { Name: string; Type: LinkType }[] = [];
-                    const failedMoves: { Name: string; Type: LinkType }[] = [];
-                    const moveQueue = toMove.map((link, i) => async () => {
-                        await moveLink(shareId, parentFolderId, link.LinkID)
-                            .then((result) => {
-                                movedLinks.push(result);
-                            })
-                            .catch((error) => {
-                                if (error.name === 'Error') {
-                                    failedMoves.push({ Name: toMove[i].Name, Type: toMove[i].Type });
-                                    console.error(`Failed to move file "${toMove[i].Name}": ${error}`);
-                                }
-                            });
-                    });
-                    await preventLeave(runInQueue(moveQueue, MAX_THREADS_PER_MOVE));
+                    const result = await moveLinks(
+                        shareId,
+                        parentFolderId,
+                        toMove.map(({ LinkID }) => LinkID)
+                    );
 
-                    const movedLinksCount = movedLinks.length;
-                    const failedMovesCount = failedMoves.length;
-
-                    if (movedLinksCount > 0) {
-                        const [{ Name: firstItemName }] = movedLinks;
-                        const notificationMessages = {
-                            allFiles: c('Notification').ngettext(
-                                msgid`"${firstItemName}" successfully moved`,
-                                `${movedLinksCount} files successfully moved`,
-                                movedLinksCount
-                            ),
-                            allFolders: c('Notification').ngettext(
-                                msgid`"${firstItemName}" successfully moved`,
-                                `${movedLinksCount} folders successfully moved`,
-                                movedLinksCount
-                            ),
-                            mixed: c('Notification').ngettext(
-                                msgid`"${firstItemName}" successfully moved`,
-                                `${movedLinksCount} items successfully moved`,
-                                movedLinksCount
-                            )
-                        };
-                        const notificationMessage = getNotificationTextForItemList(
-                            movedLinks.map((item) => item.Type),
-                            notificationMessages
-                        );
-
-                        createNotification({
-                            type: 'success',
-                            text: notificationMessage
-                        });
-                    }
-
-                    if (failedMovesCount > 0) {
-                        const [{ Name: firstItemName }] = failedMoves;
-                        const notificationMessages = {
-                            allFiles: c('Notification').ngettext(
-                                msgid`"${firstItemName}" failed to be moved`,
-                                `${failedMovesCount} files failed to be moved`,
-                                failedMovesCount
-                            ),
-                            allFolders: c('Notification').ngettext(
-                                msgid`"${firstItemName}" failed to be moved`,
-                                `${failedMovesCount} folders failed to be moved`,
-                                failedMovesCount
-                            ),
-                            mixed: c('Notification').ngettext(
-                                msgid`"${failedMovesCount}" failed to be moved`,
-                                `${failedMovesCount} items failed to be moved`,
-                                failedMovesCount
-                            )
-                        };
-
-                        const notificationMessage = getNotificationTextForItemList(
-                            failedMoves.map((item) => item.Type),
-                            notificationMessages
-                        );
-                        createNotification({
-                            type: 'error',
-                            text: notificationMessage
-                        });
-                    }
+                    createMoveLinksNotifications(toMove, result);
 
                     await events.call(shareId);
                 }}
