@@ -152,10 +152,10 @@ export const useElements = ({
 
     const isExpectedLength = () => !isLiveCache() || elements.length === expectedPageLength({ ...page, total });
 
-    const shouldResetCache = () =>
-        !loading && (invalidated || paramsChanged() || !pageIsConsecutive() || lastHasBeenUpdated());
+    const shouldResetCache = () => !loading && (paramsChanged() || !pageIsConsecutive() || lastHasBeenUpdated());
 
-    const shouldSendRequest = () => !loading && (shouldResetCache() || !pageCached() || !isExpectedLength());
+    const shouldSendRequest = () =>
+        !loading && (invalidated || shouldResetCache() || !pageCached() || !isExpectedLength());
 
     const shouldUpdatePage = () => pageChanged() && pageCached();
 
@@ -220,7 +220,6 @@ export const useElements = ({
             const { Total, Elements } = await queryElements();
             const elementsMap = toMap(Elements, 'ID');
             const updatedElements = localCache.updatedElements.filter((elementID) => !elementsMap[elementID]);
-            setInvalidated(false);
             setLocalCache(
                 (localCache: Cache): Cache => {
                     return {
@@ -241,6 +240,7 @@ export const useElements = ({
             );
         } finally {
             setLoading(false);
+            setInvalidated(false);
         }
     };
 
@@ -350,5 +350,5 @@ export const useElements = ({
         }
     );
 
-    return [localCache.params.labelID, elements, beforeFirstLoad || loading, localCache.page.total];
+    return [localCache.params.labelID, elements, (beforeFirstLoad || loading) && !invalidated, localCache.page.total];
 };

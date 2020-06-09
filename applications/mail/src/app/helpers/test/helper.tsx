@@ -6,6 +6,8 @@ import ApiContext from 'react-components/containers/api/apiContext';
 import createCache from 'proton-shared/lib/helpers/cache';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { STATUS } from 'proton-shared/lib/models/cache';
+import { noop } from 'proton-shared/lib/helpers/function';
+
 import AuthenticationProvider from 'react-components/containers/authentication/Provider';
 import MessageProvider, { MessageCache } from '../../containers/MessageProvider';
 import ConversationProvider, { ConversationCache } from '../../containers/ConversationProvider';
@@ -31,6 +33,16 @@ export const api = jest.fn<Promise<any>, any>(async (args: any) => {
 
 export const addApiMock = (url: string, handler: (...arg: any[]) => any) => {
     apiMocks[url] = handler;
+};
+
+export const addApiResolver = (url: string) => {
+    let resolveLastPromise: (result: any) => void = noop;
+    const resolve = (value: any) => resolveLastPromise(value);
+    apiMocks[url] = () =>
+        new Promise((resolve) => {
+            resolveLastPromise = resolve;
+        });
+    return resolve;
 };
 
 export const clearApiMocks = () => {

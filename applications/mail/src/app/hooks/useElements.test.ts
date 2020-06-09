@@ -7,7 +7,7 @@ import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { useElements } from './useElements';
 import { Element } from '../models/element';
 import { Page, Sort, Filter, SearchParameters } from '../models/tools';
-import { renderHook, clearAll, addApiMock, api, triggerEvent } from '../helpers/test/helper';
+import { renderHook, clearAll, addApiMock, api, triggerEvent, addApiResolver } from '../helpers/test/helper';
 import { ConversationLabel, Conversation } from '../models/conversation';
 import { Event } from '../models/event';
 
@@ -33,6 +33,7 @@ describe('useElements', () => {
     } as Element;
     const defaultSort = { sort: 'Time', desc: true } as Sort;
     const defaultFilter = {};
+    const defaultSearch = {};
 
     const getElements = (count: number, label = labelID): Element[] =>
         range(0, count).map((i) => ({
@@ -50,7 +51,7 @@ describe('useElements', () => {
         page = { page: 0, size: 50, limit: 50, total: elements.length },
         sort = defaultSort,
         filter = defaultFilter,
-        search = {}
+        search = defaultSearch
     }: SetupArgs = {}) => {
         addApiMock('conversations', () => ({ Total: page.total, Conversations: elements }));
 
@@ -275,6 +276,97 @@ describe('useElements', () => {
             });
 
             expect(api.mock.calls.length).toBe(2);
+        });
+
+        it('should not show the loader if not live cache but params has not changed', async () => {
+            const resolve = addApiResolver('conversations');
+
+            const page: Page = { page: 0, size: 5, limit: 5, total: 5 };
+            const search = { keyword: 'test' } as SearchParameters;
+            const elements = getElements(page.total);
+
+            const hook = renderHook((props: any = {}) =>
+                useElements({
+                    conversationMode: true,
+                    labelID,
+                    page,
+                    sort: defaultSort,
+                    filter: defaultFilter,
+                    search,
+                    ...props
+                })
+            );
+
+            // First load pending
+            expect(hook.result.current[2]).toBe(true);
+
+            resolve({ Total: page.total, Conversations: elements });
+
+            await hook.waitForNextUpdate();
+
+            // First load finished
+            expect(hook.result.current[2]).toBe(false);
+
+            const element = elements[0];
+            await sendEvent({
+                Conversations: [{ ID: element.ID || '', Action: EVENT_ACTIONS.UPDATE_FLAGS, Conversation: element }]
+            });
+
+            // Event triggered a reload, load is pending but it's hidded to the user
+            expect(hook.result.current[2]).toBe(false);
+            expect(hook.result.current[1].length).toBe(5);
+
+            await act(async () => {
+                resolve({ Total: page.total, Conversations: elements });
+                await wait(0);
+            });
+
+            // Load finished
+            expect(hook.result.current[2]).toBe(false);
+        });
+
+        it('should show the loader if not live cache and params has changed', async () => {
+            const resolve = addApiResolver('conversations');
+
+            const page: Page = { page: 0, size: 5, limit: 5, total: 5 };
+            const search = { keyword: 'test' } as SearchParameters;
+            const elements = getElements(page.total);
+
+            const hook = renderHook((props: any = {}) =>
+                useElements({
+                    conversationMode: true,
+                    labelID,
+                    page,
+                    sort: defaultSort,
+                    filter: defaultFilter,
+                    search,
+                    ...props
+                })
+            );
+
+            // First load pending
+            expect(hook.result.current[2]).toBe(true);
+
+            resolve({ Total: page.total, Conversations: elements });
+
+            await hook.waitForNextUpdate();
+
+            // First load finished
+            expect(hook.result.current[2]).toBe(false);
+
+            hook.rerender({ search: { keyword: 'changed' } as SearchParameters });
+
+            // Params has changed, cache is reseted
+            expect(hook.result.current[2]).toBe(true);
+            expect(hook.result.current[1].length).toBe(0);
+
+            await act(async () => {
+                resolve({ Total: page.total, Conversations: elements });
+                await wait(0);
+            });
+
+            // Load finished
+            expect(hook.result.current[2]).toBe(false);
         });
     });
 });
