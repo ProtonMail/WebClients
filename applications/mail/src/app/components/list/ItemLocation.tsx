@@ -8,11 +8,22 @@ import { getCurrentFolders } from '../../helpers/labels';
 interface Props {
     message?: Message;
     mailSettings: MailSettings;
+    shouldStack?: boolean;
 }
 
-const ItemLocation = ({ message, mailSettings }: Props) => {
+const ItemLocation = ({ message, mailSettings, shouldStack = false }: Props) => {
     const [customFolders = []] = useFolders();
-    const infos = getCurrentFolders(message, customFolders, mailSettings);
+    let infos = getCurrentFolders(message, customFolders, mailSettings);
+
+    if (infos.length > 1 && shouldStack) {
+        infos = [
+            {
+                to: infos.map((info) => info.to).join(','),
+                name: infos.map((info) => info.name).join(', '),
+                icon: 'parent-folder'
+            }
+        ];
+    }
 
     return (
         <>

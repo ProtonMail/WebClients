@@ -76,7 +76,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             <div className="mb0-5 flex flex-nowrap">
                 <span className="container-to flex">
                     <span className="mauto flex">
-                        <ItemLocation message={message.data} mailSettings={mailSettings} />
+                        <ItemLocation message={message.data} mailSettings={mailSettings} shouldStack />
                     </span>
                 </span>
                 <span className="flex-self-vcenter mr0-5 ellipsis">{locationText}</span>
