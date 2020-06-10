@@ -90,6 +90,7 @@ const OpenVPNConfigurationSection = () => {
         allServers.filter(({ Tier }) => Tier === 1)
     ).map((groups) => ({
         ...minBy(({ Load }) => Number(Load), groups),
+        Domain: `${groups[0].EntryCountry.toLowerCase()}.protonvpn.com`, // Forging domain
         Servers: groups.reduce((acc, { Servers = [] }) => (acc.push(...Servers), acc), [])
     }));
     const freeServers = allServers.filter(({ Tier }) => Tier === 0).map((server) => ({ ...server, open: true }));

@@ -115,20 +115,23 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                             text: c('Action').t`Download`,
                                             onClick: handleClickDownload(server)
                                         },
-                                        ...server.Servers.map(({ Domain }) => ({
-                                            text: (
-                                                <div className="flex flex-nowrap flex-items-center flex-spacebetween">
-                                                    <span className="mr0-5">{Domain}</span>
-                                                    <Icon name="clipboard" title={c('Action').t`Copy`} />
-                                                </div>
-                                            ),
-                                            onClick() {
-                                                textToClipboard(Domain);
-                                                createNotification({
-                                                    text: c('Success').t`${Domain} copied in your clipboard`
-                                                });
-                                            }
-                                        }))
+                                        ...(category === CATEGORY.SECURE_CORE
+                                            ? {}
+                                            : {
+                                                  text: (
+                                                      <div className="flex flex-nowrap flex-items-center flex-spacebetween">
+                                                          <span className="mr0-5">{server.Domain}</span>
+                                                          <Icon name="clipboard" title={c('Action').t`Copy`} />
+                                                      </div>
+                                                  ),
+                                                  onClick() {
+                                                      textToClipboard(server.Domain);
+                                                      createNotification({
+                                                          text: c('Success')
+                                                              .t`${server.Domain} copied in your clipboard`
+                                                      });
+                                                  }
+                                              })
                                     ]}
                                 />
                             )
