@@ -54,7 +54,9 @@
 	}
 
 	&-item.dropDown-item {
-		& + & {
+		--bordercolor-input: #{$pm-tertiary-grey};
+
+		& + &:not(:last-child) {
 			border: none;
 		}
 	}
