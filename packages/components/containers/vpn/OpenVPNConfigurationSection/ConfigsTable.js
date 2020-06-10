@@ -20,6 +20,7 @@ import Country from './Country';
 import { getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { isP2PEnabled, isTorEnabled } from './utils';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 export const CATEGORY = {
     SECURE_CORE: 'SecureCore',
@@ -115,24 +116,21 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                             text: c('Action').t`Download`,
                                             onClick: handleClickDownload(server)
                                         },
-                                        ...(category === CATEGORY.SECURE_CORE
-                                            ? {}
-                                            : {
-                                                  text: (
-                                                      <div className="flex flex-nowrap flex-items-center flex-spacebetween">
-                                                          <span className="mr0-5">{server.Domain}</span>
-                                                          <Icon name="clipboard" title={c('Action').t`Copy`} />
-                                                      </div>
-                                                  ),
-                                                  onClick() {
-                                                      textToClipboard(server.Domain);
-                                                      createNotification({
-                                                          text: c('Success')
-                                                              .t`${server.Domain} copied in your clipboard`
-                                                      });
-                                                  }
-                                              })
-                                    ]}
+                                        category !== CATEGORY.SECURE_CORE && {
+                                            text: (
+                                                <div className="flex flex-nowrap flex-items-center flex-spacebetween">
+                                                    <span className="mr0-5">{server.Domain}</span>
+                                                    <Icon name="clipboard" title={c('Action').t`Copy`} />
+                                                </div>
+                                            ),
+                                            onClick() {
+                                                textToClipboard(server.Domain);
+                                                createNotification({
+                                                    text: c('Success').t`${server.Domain} copied in your clipboard`
+                                                });
+                                            }
+                                        }
+                                    ].filter(isTruthy)}
                                 />
                             )
                         ]}
