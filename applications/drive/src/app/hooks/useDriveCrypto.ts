@@ -46,7 +46,7 @@ function useDriveCrypto() {
     );
 
     const sign = useCallback(
-        async (payload: string, keys?: { privateKey: OpenPGPKey; address: Address }) => {
+        async (payload: string | Uint8Array, keys?: { privateKey: OpenPGPKey; address: Address }) => {
             const { privateKey, address } = keys || (await getPrimaryAddressKey());
             const signature = await signMessage(payload, [privateKey]);
             return { signature, address };
