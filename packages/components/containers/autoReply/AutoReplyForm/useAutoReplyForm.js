@@ -76,7 +76,7 @@ const toDateTimes = (unixTimestamp, timezone, repeat) => {
 export const getMatchingValues = ({ Zone, Repeat }) => {
     const duration = getDurationOptions().find(({ value }) => value === Repeat);
     const timezones = getTimeZoneOptions();
-    const matchingTimezone = getMatchingTimezone(Zone, timezones) || getTimezone();
+    const matchingTimezone = getMatchingTimezone(Zone, timezones) || getMatchingTimezone(getTimezone(), timezones);
     return {
         timezone: matchingTimezone,
         duration
