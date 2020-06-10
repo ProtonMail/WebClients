@@ -64,11 +64,14 @@ const HeaderRecipientItem = ({
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: [recipientOrGroup.recipient as Recipient] } }
         });
+        close();
     };
+
     const handleCopy = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
         textToClipboard(recipient.Address);
         createNotification({ text: c('Info').t`Copied to clipboard` });
+        close();
     };
 
     const icon = globalIcon ? globalIcon : mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined;
