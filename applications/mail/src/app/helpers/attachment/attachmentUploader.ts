@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import { encryptMessage, splitMessage, OpenPGPKey } from 'pmcrypto';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { getAttachments } from '../message/messages';
 import { readFileAsBuffer } from '../file';
 import { uploadAttachment } from '../../api/attachments';
@@ -87,7 +87,7 @@ const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], p
  */
 const uploadFile = (
     file: File,
-    message: MessageExtended,
+    message: MessageExtendedWithData,
     inline: boolean,
     uid: string,
     cid = ''
@@ -106,7 +106,7 @@ const uploadFile = (
 
         return uploadAttachment({
             Filename: packets.Filename || filename,
-            MessageID: message.data?.ID || '',
+            MessageID: message.data.ID,
             ContentID,
             MIMEType: packets.MIMEType,
             KeyPackets: new Blob([packets.keys] as any),
@@ -133,7 +133,7 @@ const uploadFile = (
  */
 export const upload = (
     files: File[] = [],
-    message: MessageExtended,
+    message: MessageExtendedWithData,
     action = ATTACHMENT_ACTION.ATTACHMENT,
     uid: string,
     cid = ''

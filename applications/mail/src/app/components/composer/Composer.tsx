@@ -212,6 +212,11 @@ const Composer = ({
         handleChange({ data: { Flags } });
     };
 
+    const handleSaveBeforeAttachFile = (message: MessageExtended) => {
+        autoSave.abort?.();
+        return actualSave(message);
+    };
+
     const {
         pendingFiles,
         pendingUploads,
@@ -221,7 +226,7 @@ const Composer = ({
         handleCancelAddAttachment,
         handleRemoveAttachment,
         handleRemoveUpload
-    } = useAttachments(modelMessage, handleChange, editorActionsRef);
+    } = useAttachments(modelMessage, handleChange, handleSaveBeforeAttachFile, editorActionsRef);
 
     const handlePassword = () => {
         setInnerModal(ComposerInnerModal.Password);

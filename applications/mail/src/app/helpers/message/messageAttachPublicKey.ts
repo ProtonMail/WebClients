@@ -1,7 +1,7 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { keyInfo } from 'pmcrypto/lib/pmcrypto';
 
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { upload, ATTACHMENT_ACTION } from '../attachment/attachmentUploader';
 import { Attachment } from '../../models/attachment';
 
@@ -35,7 +35,7 @@ const fileFromKeyInfo = (message: MessageExtended, { publicKeyArmored, fingerpri
 /**
  * Attaches the senders public key to the message
  */
-export const attachPublicKey = async (message: MessageExtended, uid: string) => {
+export const attachPublicKey = async (message: MessageExtendedWithData, uid: string) => {
     const attachments = message.data?.Attachments || [];
 
     const privateKeys = message.privateKeys?.[0] as OpenPGPKey;

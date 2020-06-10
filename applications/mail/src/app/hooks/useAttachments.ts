@@ -13,11 +13,12 @@ import {
     createEmbeddedInfo,
     cloneEmbedddedMap
 } from '../helpers/embedded/embeddeds';
-import { MessageExtended } from '../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../models/message';
 import { Attachment } from '../models/attachment';
 import { removeAttachment } from '../api/attachments';
 import { EditorActionsRef } from '../components/composer/editor/SquireEditorWrapper';
 import { MessageChange } from '../components/composer/Composer';
+import { useMessageCache } from '../containers/MessageProvider';
 
 export interface PendingUpload {
     file: File;
@@ -27,11 +28,13 @@ export interface PendingUpload {
 export const useAttachments = (
     message: MessageExtended,
     onChange: MessageChange,
+    onSave: (message: MessageExtended) => Promise<void>,
     editorActionsRef: EditorActionsRef
 ) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const auth = useAuthentication();
+    const messageCache = useMessageCache();
 
     // Pending files to upload
     const [pendingFiles, setPendingFiles] = useState<File[]>();
@@ -93,7 +96,12 @@ export const useAttachments = (
     const handleAddAttachmentsUpload = async (action: ATTACHMENT_ACTION, files = pendingFiles || []) => {
         setPendingFiles(undefined);
 
-        const uploads = upload(files, message, action, auth.UID);
+        if (!message.data?.ID) {
+            await onSave(message);
+        }
+        // Message from cache has data because we just saved it if not
+        const messageFromCache = messageCache.get(message.localID) as MessageExtendedWithData;
+        const uploads = upload(files, messageFromCache, action, auth.UID);
         const pendingUploads = files?.map((file, i) => ({ file, upload: uploads[i] }));
         setPendingUploads(pendingUploads);
 
