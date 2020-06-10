@@ -45,7 +45,12 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
     const valueInHours = computeHours({ days, hours });
 
     const handleChange = (setter: (value: number) => void) => (event: ChangeEvent<HTMLSelectElement>) => {
-        setter(Number(event.target.value));
+        const value = Number(event.target.value);
+        setter(value);
+
+        if (setter === setDays && value === 28) {
+            setHours(0);
+        }
     };
 
     const handleSubmit = () => {
@@ -99,7 +104,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                         onChange={handleChange(setDays)}
                         placeholder={c('Info').t`Days`}
                     >
-                        {optionRange(7 * 4)}
+                        {optionRange(7 * 4 + 1)}
                     </select>
                     <label htmlFor={`composer-expiration-days-${uid}`} className="mr0-5">{c('Info').t`Days`}</label>
                     <select
@@ -107,6 +112,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                         className="pm-field mr0-25"
                         value={hours}
                         onChange={handleChange(setHours)}
+                        disabled={days === 28}
                     >
                         {optionRange(24)}
                     </select>
