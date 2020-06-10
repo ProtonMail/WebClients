@@ -2,9 +2,9 @@ import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { Table, TableHeader, Checkbox, TableRow, TableBody, FormModal, SearchInput } from 'react-components';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { MessageSendInfo } from './AddressesInput';
 import AddressesRecipientItem from './AddressesRecipientItem';
 import { Recipient } from '../../../models/address';
+import { MessageSendInfo } from '../../../hooks/useSendInfo';
 
 interface Props {
     inputValue?: Recipient[];

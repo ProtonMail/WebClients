@@ -1,4 +1,3 @@
-import { omit } from 'proton-shared/lib/helpers/object';
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import { Icon, useModals } from 'react-components';
@@ -8,7 +7,7 @@ import AddressesGroupModal from './AddressesGroupModal';
 import { getRecipientGroupLabel } from '../../../helpers/addresses';
 import { RecipientGroup } from '../../../models/address';
 import { getContactsOfGroup } from '../../../helpers/contacts';
-import { MessageSendInfo } from './AddressesInput';
+import { useUpdateGroupSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
 
 interface Props {
     recipientGroup: RecipientGroup;
@@ -23,20 +22,13 @@ const AddressesGroupItem = ({ recipientGroup, contacts, messageSendInfo, onChang
     const [modalID, setModalID] = useState<any>();
 
     const contactsInGroup = getContactsOfGroup(contacts, recipientGroup?.group?.ID);
-    const emailsInGroup = contacts.map(({ Email }) => Email);
     const label = getRecipientGroupLabel(recipientGroup, contactsInGroup.length);
 
     const handleGroupModal = () => {
         setModalID(createModal());
     };
 
-    const handleRemove = () => {
-        if (messageSendInfo) {
-            const { setMapSendInfo } = messageSendInfo;
-            setMapSendInfo((mapSendInfo) => omit(mapSendInfo, emailsInGroup));
-        }
-        onRemove();
-    };
+    const { mapLoading, handleRemove } = useUpdateGroupSendInfo(messageSendInfo, contactsInGroup, onRemove);
 
     return (
         <>
@@ -45,6 +37,7 @@ const AddressesGroupItem = ({ recipientGroup, contacts, messageSendInfo, onChang
                     recipientGroup={recipientGroup}
                     contacts={contactsInGroup}
                     messageSendInfo={messageSendInfo}
+                    mapLoading={mapLoading}
                     onSubmit={onChange}
                     onClose={() => hideModal(modalID)}
                     onExit={() => {

@@ -1,23 +1,13 @@
-import React, { SyntheticEvent, useEffect, useRef } from 'react';
-import { classnames, Icon, useGetEncryptionPreferences, useLoading, useModals, Tooltip } from 'react-components';
+import React, { useEffect, useRef } from 'react';
+import { classnames, Icon, Tooltip } from 'react-components';
 import { c } from 'ttag';
-import { OpenPGPKey } from 'pmcrypto';
-import { omit } from 'proton-shared/lib/helpers/object';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 
-import getSendPreferences from '../../../helpers/message/getSendPreferences';
 import { recipientToInput, inputToRecipient } from '../../../helpers/addresses';
-import { getSendStatusIcon } from '../../../helpers/message/icon';
 import { Recipient } from '../../../models/address';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
-import { MessageSendInfo } from './AddressesInput';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
-import AskForKeyPinningModal from './AskForKeyPinningModal';
-
-const { INTERNAL_USER_PRIMARY_NOT_PINNED, WKD_USER_PRIMARY_NOT_PINNED } = EncryptionPreferencesFailureTypes;
-const primaryKeyNotPinnedFailureTypes = [INTERNAL_USER_PRIMARY_NOT_PINNED, WKD_USER_PRIMARY_NOT_PINNED] as any[];
+import { useUpdateRecipientSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
 
 interface Props {
     recipient: Required<Pick<Recipient, 'Address' | 'ContactID'>>;
@@ -32,84 +22,27 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
     const icon = sendInfo?.sendIcon;
     const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL;
 
-    const getEncryptionPreferences = useGetEncryptionPreferences();
-    const { createModal } = useModals();
-    const [loading, withLoading] = useLoading(!icon);
     const editableRef = useRef<HTMLSpanElement | null>(null);
 
-    const valid = (sendInfo?.emailValidation && !sendInfo?.emailAddressWarnings?.length) || loading; // Loading to not show in red during validation
+    const { loading, handleRemove } = useUpdateRecipientSendInfo(messageSendInfo, recipient, onRemove);
 
-    const handleChange = (event: SyntheticEvent) => {
-        if (!editableRef.current) {
-            return;
-        }
-        editableRef.current.textContent = (event.target as HTMLSpanElement).textContent || '';
-    };
+    // Hide invalid when no send info or while loading
+    const valid = !sendInfo || loading || (sendInfo?.emailValidation && !sendInfo?.emailAddressWarnings?.length);
+
     const handleBlur = () => {
         if (!editableRef.current) {
             return;
         }
         onChange(inputToRecipient(editableRef.current.textContent as string));
     };
-    const handleRemove = () => {
-        if (messageSendInfo) {
-            const { setMapSendInfo } = messageSendInfo;
-            setMapSendInfo((mapSendInfo) => omit(mapSendInfo, [emailAddress]));
-        }
-        onRemove();
-    };
 
     useEffect(() => {
-        const updateRecipientIcon = async (): Promise<void> => {
-            const emailValidation = validateEmailAddress(emailAddress);
-            if (!emailValidation || icon || !messageSendInfo || messageSendInfo.mapSendInfo[emailAddress]) {
-                return;
-            }
-            const { message, setMapSendInfo } = messageSendInfo;
-            const encryptionPreferences = await getEncryptionPreferences(emailAddress);
-            const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
-            if (primaryKeyNotPinnedFailureTypes.includes(sendPreferences.failure?.type)) {
-                await new Promise((resolve, reject) => {
-                    const contacts = [
-                        {
-                            contactID: recipient.ContactID,
-                            emailAddress,
-                            isInternal: encryptionPreferences.isInternal,
-                            bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey
-                        }
-                    ];
-                    createModal(
-                        <AskForKeyPinningModal
-                            contacts={contacts}
-                            onSubmit={resolve}
-                            onClose={reject}
-                            onNotTrust={handleRemove}
-                            onError={handleRemove}
-                        />
-                    );
-                });
-                return await updateRecipientIcon();
-            }
-            const sendIcon = getSendStatusIcon(sendPreferences);
-
-            setMapSendInfo((mapSendInfo) => ({
-                ...mapSendInfo,
-                [emailAddress]: {
-                    sendPreferences,
-                    sendIcon,
-                    emailValidation,
-                    emailAddressWarnings: encryptionPreferences.emailAddressWarnings || []
-                }
-            }));
-        };
-
         const value = recipientToInput(recipient);
 
         if (editableRef.current) {
             editableRef.current.textContent = value;
         }
-        withLoading(updateRecipientIcon());
-    }, [emailAddress]);
+    }, []);
 
     return (
         <div
@@ -130,8 +63,6 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
                 <span
                     className="composer-addresses-item-label mtauto mbauto pl0-5 ellipsis pr0-5"
                     contentEditable={onChange !== noop}
-                    onKeyUp={handleChange}
-                    onPaste={handleChange}
                     onBlur={handleBlur}
                     ref={editableRef}
                 />

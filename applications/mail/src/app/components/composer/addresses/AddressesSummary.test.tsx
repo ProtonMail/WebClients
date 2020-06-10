@@ -7,7 +7,7 @@ import { getRecipientLabel } from '../../../helpers/addresses';
 import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
 const message = {} as MessageExtended;
-const props = { message, mapSendInfo: {}, contacts: [], contactGroups: [], onFocus: noop };
+const props = { message, contacts: [], contactGroups: [], onFocus: noop };
 const recipient = { Name: 'RecipientName', Address: 'Address' };
 const recipientLabel = getRecipientLabel(recipient) || '';
 const recipientGroup = { Name: 'RecipientName', Address: 'Address', Group: 'GroupPath' };

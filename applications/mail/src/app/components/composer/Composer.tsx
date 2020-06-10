@@ -5,7 +5,6 @@ import { Address } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 
-import { MapSendInfo } from '../../models/crypto';
 import { MessageExtended, Message, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import ComposerTitleBar from './ComposerTitleBar';
 import ComposerMeta from './ComposerMeta';
@@ -27,6 +26,7 @@ import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerP
 import { WindowSize, Breakpoints } from '../../models/utils';
 import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
+import { useMessageSendInfo } from '../../hooks/useSendInfo';
 
 enum ComposerInnerModal {
     None,
@@ -102,7 +102,7 @@ const Composer = ({
     });
 
     // Map of send preferences and send icons for each recipient
-    const [mapSendInfo, setMapSendInfo] = useState<MapSendInfo>({});
+    const messageSendInfo = useMessageSendInfo(modelMessage);
 
     // Synced with server version of the edited message
     const { message: syncedMessage, addAction } = useMessage(messageID);
@@ -346,8 +346,7 @@ const Composer = ({
                             message={modelMessage}
                             addresses={addresses}
                             mailSettings={mailSettings}
-                            mapSendInfo={mapSendInfo}
-                            setMapSendInfo={setMapSendInfo}
+                            messageSendInfo={messageSendInfo}
                             disabled={!editorReady}
                             onChange={handleChange}
                             addressesBlurRef={addressesBlurRef}

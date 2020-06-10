@@ -1,21 +1,9 @@
-import React, {
-    useState,
-    useEffect,
-    useMemo,
-    ChangeEvent,
-    MutableRefObject,
-    useRef,
-    MouseEvent,
-    Dispatch,
-    SetStateAction
-} from 'react';
+import React, { useState, useEffect, useMemo, ChangeEvent, MutableRefObject, useRef, MouseEvent } from 'react';
 import { Input } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { MAJOR_DOMAINS } from 'proton-shared/lib/constants';
 
-import { MapSendInfo } from '../../../models/crypto';
-import { MessageExtended } from '../../../models/message';
 import { ContactEmail, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
 import AddressesRecipientItem from './AddressesRecipientItem';
 import {
@@ -28,12 +16,7 @@ import {
 import AddressesAutocomplete from './AddressesAutocomplete';
 import AddressesGroupItem from './AddressesGroupItem';
 import { RecipientGroup, Recipient } from '../../../models/address';
-
-export interface MessageSendInfo {
-    message: MessageExtended;
-    mapSendInfo: MapSendInfo;
-    setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>;
-}
+import { MessageSendInfo } from '../../../hooks/useSendInfo';
 
 interface Props {
     id: string;

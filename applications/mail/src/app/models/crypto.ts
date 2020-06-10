@@ -55,12 +55,12 @@ export interface MapStatusIcons {
 }
 
 export interface SendInfo {
-    sendPreferences: SendPreferences;
+    sendPreferences?: SendPreferences;
     sendIcon?: StatusIcon;
     emailValidation: boolean;
     emailAddressWarnings?: string[];
 }
 
 export interface MapSendInfo {
-    [key: string]: SendInfo;
+    [key: string]: SendInfo | undefined;
 }

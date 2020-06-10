@@ -14,7 +14,7 @@ interface Props {
 }
 
 const EmptyView = ({ labelID, isSearch }: Props) => {
-    const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX;
+    const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX && !isSearch;
     const isFolder = !isInbox && !isSearch;
     const noResultSearchSvg = getLightOrDark(noResultSearchSvgLight, noResultSearchSvgDark);
     const noResultInboxSvg = getLightOrDark(noResultInboxSvgLight, noResultInboxSvgDark);

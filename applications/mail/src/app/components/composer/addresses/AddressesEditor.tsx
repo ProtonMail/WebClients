@@ -1,20 +1,19 @@
-import React, { useState, MutableRefObject, Dispatch, SetStateAction } from 'react';
+import React, { useState, MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { Label, generateUID, LinkButton, classnames } from 'react-components';
 
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { MapSendInfo } from '../../../models/crypto';
 import { MessageExtended } from '../../../models/message';
 import AddressesInput from './AddressesInput';
 import { RecipientType, Recipient } from '../../../models/address';
 import { MessageChange } from '../Composer';
+import { MessageSendInfo } from '../../../hooks/useSendInfo';
 
 interface Props {
     message: MessageExtended;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
-    mapSendInfo: MapSendInfo;
-    setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>;
+    messageSendInfo: MessageSendInfo;
     onChange: MessageChange;
     expanded: boolean;
     toggleExpanded: () => void;
@@ -25,8 +24,7 @@ const AddressesEditor = ({
     message,
     contacts,
     contactGroups,
-    mapSendInfo,
-    setMapSendInfo,
+    messageSendInfo,
     onChange,
     expanded,
     toggleExpanded,
@@ -34,7 +32,6 @@ const AddressesEditor = ({
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
     // const { createModal } = useModals();
-    const messageSendInfo = { message, mapSendInfo, setMapSendInfo };
 
     const handleChange = (type: RecipientType) => (value: Partial<Recipient>[]) => {
         onChange({ data: { [type]: value } });

@@ -1,20 +1,19 @@
-import React, { useState, ChangeEvent, MutableRefObject, SetStateAction, Dispatch } from 'react';
+import React, { useState, ChangeEvent, MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { Label, Select, Input, generateUID } from 'react-components';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
-import { MapSendInfo } from '../../models/crypto';
 
 import ComposerAddresses from './addresses/Addresses';
 import { MessageExtended } from '../../models/message';
 import { getFromAdresses } from '../../helpers/addresses';
 import { MessageChange } from './Composer';
+import { MessageSendInfo } from '../../hooks/useSendInfo';
 
 interface Props {
     message: MessageExtended;
     addresses: Address[];
     mailSettings: MailSettings;
-    mapSendInfo: MapSendInfo;
-    setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>;
+    messageSendInfo: MessageSendInfo;
     disabled: boolean;
     onChange: MessageChange;
     addressesBlurRef: MutableRefObject<() => void>;
@@ -24,8 +23,7 @@ interface Props {
 const ComposerMeta = ({
     message,
     addresses,
-    mapSendInfo,
-    setMapSendInfo,
+    messageSendInfo,
     disabled,
     onChange,
     addressesBlurRef,
@@ -68,8 +66,7 @@ const ComposerMeta = ({
             </div>
             <ComposerAddresses
                 message={message}
-                mapSendInfo={mapSendInfo}
-                setMapSendInfo={setMapSendInfo}
+                messageSendInfo={messageSendInfo}
                 disabled={disabled}
                 onChange={onChange}
                 addressesBlurRef={addressesBlurRef}
