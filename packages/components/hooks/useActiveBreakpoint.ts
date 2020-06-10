@@ -16,14 +16,14 @@ const useActiveBreakpoint = () => {
     const [breakpoint, setBreakpoint] = useState(() => getBreakpoint());
 
     useEffect(() => {
-        const onResize = debounce(() => {
-            setBreakpoint(getBreakpoint());
-        }, 250);
+        const onResize = () => setBreakpoint(getBreakpoint());
+        const onResizeDebounced = debounce(onResize, 250);
 
-        window.addEventListener('resize', onResize);
+        window.addEventListener('load', onResize);
+        window.addEventListener('resize', onResizeDebounced);
 
         return () => {
-            window.removeEventListener('resize', onResize);
+            window.removeEventListener('resize', onResizeDebounced);
         };
     }, []);
 
