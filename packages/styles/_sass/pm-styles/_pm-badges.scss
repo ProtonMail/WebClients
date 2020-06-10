@@ -107,7 +107,7 @@ $label-border-color: var(--bgcolor-view-column-detail, $white) !default;
 	}
 
 }
-.item-container.read,
+.item-container,
 .message-header-expanded {
 		.pm-badgeLabel-container--collapsed {
 			.badgeLabel {
