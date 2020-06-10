@@ -38,6 +38,8 @@ import { FILE_CHUNK_SIZE } from '../constants';
 import useQueuedFunction from './useQueuedFunction';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { getMetaForTransfer } from '../components/Drive/Drive';
+import { serializeUint8Array } from 'proton-shared/lib/helpers/serialization';
+import { mergeUint8Arrays } from '../utils/array';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -223,11 +225,13 @@ function useFiles() {
                 requestUpload: async (Blocks) => {
                     const { File, addressKeyInfo } = await setupPromise;
 
-                    const getBlockWithSignature = async (block: { Hash: string; Size: number; Index: number }) => {
+                    const getBlockWithSignature = async (block: { Hash: Uint8Array; Size: number; Index: number }) => {
                         const { signature } = await sign(block.Hash);
                         return {
                             Signature: signature,
-                            ...block
+                            Hash: serializeUint8Array(block.Hash),
+                            Size: block.Size,
+                            Index: block.Index
                         };
                     };
 
@@ -245,14 +249,15 @@ function useFiles() {
                     return UploadLinks;
                 },
                 finalize: async (blockMetas) => {
-                    let contentHashes = '';
+                    const hashes: Uint8Array[] = [];
                     const BlockList = blockMetas.map(({ Index, Token, Hash }) => {
-                        contentHashes += Hash;
+                        hashes.push(Hash);
                         return {
                             Index,
                             Token
                         };
                     });
+                    const contentHashes = mergeUint8Arrays(hashes);
                     const { File } = await setupPromise;
                     const { signature, address } = await sign(contentHashes);
                     const SignatureAddress = address.Email;

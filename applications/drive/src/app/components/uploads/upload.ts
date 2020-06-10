@@ -12,7 +12,7 @@ const MAX_CHUNKS_READ = 10;
 const MAX_THREADS_PER_UPLOAD = 3;
 
 type BlockList = {
-    Hash: string;
+    Hash: Uint8Array;
     Size: number;
     Index: number;
 }[];

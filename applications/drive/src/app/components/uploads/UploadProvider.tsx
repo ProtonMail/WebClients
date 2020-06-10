@@ -6,7 +6,7 @@ import usePreventLeave from '../../hooks/usePreventLeave';
 
 export interface BlockMeta {
     Index: number;
-    Hash: string;
+    Hash: Uint8Array;
     Token: string;
 }
 
