@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-const getTextAreaRows = ({ el, minRows, maxRows }) => {
+const getTextAreaRows = ({ el, minRows, maxRows }: { el: HTMLTextAreaElement; minRows: number; maxRows: number }) => {
     const textAreaLineHeight = +getComputedStyle(el).lineHeight.replace('px', '');
 
     const previousRows = el.rows;

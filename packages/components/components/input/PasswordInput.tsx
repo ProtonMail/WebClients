@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
-import { Icon } from 'react-components';
 
-import Input from './Input';
+import Icon from '../icon/Icon';
+import Input, { Props } from './Input';
 
-const PasswordInput = ({ disabled = false, ...rest }) => {
+const PasswordInput = ({ disabled = false, ...rest }: Props) => {
     const [type, setType] = useState('password');
-
     const toggle = () => {
         setType(type === 'password' ? 'text' : 'password');
     };
-
     return (
         <Input
             type={type}
@@ -20,7 +17,7 @@ const PasswordInput = ({ disabled = false, ...rest }) => {
                 <button
                     title={type === 'password' ? c('Label').t`Reveal password` : c('Label').t`Hide password`}
                     className="inline-flex flex-item-noshrink"
-                    tabIndex="-1"
+                    tabIndex={-1}
                     disabled={disabled}
                     type="button"
                     onClick={toggle}
@@ -31,10 +28,6 @@ const PasswordInput = ({ disabled = false, ...rest }) => {
             {...rest}
         />
     );
-};
-
-PasswordInput.propTypes = {
-    disabled: PropTypes.bool
 };
 
 export default PasswordInput;

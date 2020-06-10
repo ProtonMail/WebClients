@@ -97,7 +97,9 @@ const BugModal = ({ onClose = noop, username: Username = '', location, addresses
     const { state: showDetails, toggle: toggleDetails } = useToggle(false);
     const [images, setImages] = useState([]);
     const link = <Href key="linkClearCache" url={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
-    const handleChange = (key: string) => ({ target }: ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+    const handleChange = (key: string) => ({
+        target
+    }: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
         update({ ...model, [key]: target.value });
 
     const getParameters = () => {
