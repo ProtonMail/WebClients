@@ -1,33 +1,36 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers/component';
 
-const label = (key) => {
-    const I18N = {
-        on: c('Toggle button').t`On`,
-        off: c('Toggle button').t`Off`
-    };
-
+const label = (key: string) => {
+    const alt = key === 'on' ? c('Toggle button').t`On` : c('Toggle button').t`Off`;
     return (
         <span className="pm-toggle-label-text">
-            <Icon name={key} alt={I18N[key]} className="pm-toggle-label-img" />
+            <Icon name={key} alt={alt} className="pm-toggle-label-img" />
         </span>
     );
 };
 
-/**
- * @type any
- */
-const Toggle = ({ id = 'toggle', className = '', checked = false, loading, onChange, disabled, ...rest }) => {
-    const handleChange = (event) => {
+export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+    loading?: boolean;
+}
+
+const Toggle = ({
+    id = 'toggle',
+    className = '',
+    checked = false,
+    loading = false,
+    onChange,
+    disabled,
+    ...rest
+}: Props) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (!disabled && onChange) {
             onChange(event);
         }
     };
-
     return (
         <>
             <input
@@ -46,15 +49,6 @@ const Toggle = ({ id = 'toggle', className = '', checked = false, loading, onCha
             </label>
         </>
     );
-};
-
-Toggle.propTypes = {
-    id: PropTypes.string,
-    checked: PropTypes.bool,
-    onChange: PropTypes.func.isRequired,
-    className: PropTypes.string,
-    disabled: PropTypes.bool,
-    loading: PropTypes.bool
 };
 
 export default Toggle;
