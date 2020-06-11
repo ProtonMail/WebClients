@@ -214,28 +214,27 @@ function useFiles() {
             {
                 transform: async (data) => {
                     const { sessionKey } = await setupPromise;
+                    const { privateKey } = await getPrimaryAddressKey();
 
-                    const res = await encryptMessage({
+                    const { message, signature } = await encryptMessage({
                         data,
                         sessionKey,
-                        armor: false
+                        privateKeys: privateKey,
+                        armor: false,
+                        detached: true
                     });
-                    return res.message.packets.write() as Uint8Array;
+
+                    return {
+                        encryptedData: message.packets.write(),
+                        signature: signature.armor()
+                    };
                 },
                 requestUpload: async (Blocks) => {
                     const { File, addressKeyInfo } = await setupPromise;
 
-                    const getBlockWithSignature = async (block: { Hash: Uint8Array; Size: number; Index: number }) => {
-                        const { signature } = await sign(block.Hash);
-                        return {
-                            Signature: signature,
-                            Hash: serializeUint8Array(block.Hash),
-                            Size: block.Size,
-                            Index: block.Index
-                        };
-                    };
-
-                    const BlockList = await Promise.all(Blocks.map(getBlockWithSignature));
+                    const BlockList = await Promise.all(
+                        Blocks.map(({ Hash, ...block }) => ({ ...block, Hash: serializeUint8Array(Hash) }))
+                    );
 
                     const { UploadLinks } = await debouncedRequest<RequestUploadResult>(
                         queryRequestUpload({

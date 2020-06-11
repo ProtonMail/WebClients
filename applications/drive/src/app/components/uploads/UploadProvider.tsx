@@ -4,12 +4,6 @@ import { TransferState, TransferProgresses, TransferMeta } from '../../interface
 import { useNotifications } from 'react-components';
 import usePreventLeave from '../../hooks/usePreventLeave';
 
-export interface BlockMeta {
-    Index: number;
-    Hash: Uint8Array;
-    Token: string;
-}
-
 export interface UploadInfo {
     blob: Blob;
     LinkID: string;
