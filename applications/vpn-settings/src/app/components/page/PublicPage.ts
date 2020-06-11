@@ -1,4 +1,5 @@
-import { useEffect, ReactNode } from 'react';
+import { ReactNode } from 'react';
+import { useAppTitle } from 'react-components';
 
 type Props = {
     children: ReactNode;
@@ -6,10 +7,7 @@ type Props = {
 };
 
 const PublicPage = ({ children, title }: Props) => {
-    useEffect(() => {
-        document.title = `${title} - ProtonVPN`;
-    }, [title]);
-
+    useAppTitle(title, 'ProtonVPN');
     return children;
 };
 

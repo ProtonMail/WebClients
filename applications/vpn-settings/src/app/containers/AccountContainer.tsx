@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
     UsernameSection,
     PasswordsSection,
@@ -7,18 +6,19 @@ import {
     NewsSection,
     DeleteSection,
     EmailSection,
-    OpenVPNAccountSection
+    OpenVPNAccountSection,
+    SettingsPropsShared
 } from 'react-components';
 import { c } from 'ttag';
 
-import Page from '../components/page/Page';
+import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';
 
 export const getAccountPage = () => {
     return {
         text: c('Title').t`Account`,
-        route: '/account',
+        link: '/account',
         icon: 'account',
-        sections: [
+        subsections: [
             {
                 text: c('Title').t`Username`,
                 id: 'username'
@@ -51,9 +51,13 @@ export const getAccountPage = () => {
     };
 };
 
-const AccountContainer = ({ setActiveSection }) => {
+const AccountContainer = ({ setActiveSection, location }: SettingsPropsShared) => {
     return (
-        <Page config={getAccountPage()} setActiveSection={setActiveSection}>
+        <PrivateMainSettingsAreaWithPermissions
+            location={location}
+            config={getAccountPage()}
+            setActiveSection={setActiveSection}
+        >
             <UsernameSection />
             <PasswordsSection />
             <TwoFactorSection />
@@ -61,12 +65,8 @@ const AccountContainer = ({ setActiveSection }) => {
             <EmailSection />
             <NewsSection />
             <DeleteSection />
-        </Page>
+        </PrivateMainSettingsAreaWithPermissions>
     );
-};
-
-AccountContainer.propTypes = {
-    setActiveSection: PropTypes.func
 };
 
 export default AccountContainer;

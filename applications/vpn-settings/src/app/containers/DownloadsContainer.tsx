@@ -1,16 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
+import { ProtonVPNClientsSection, OpenVPNConfigurationSection, SettingsPropsShared } from 'react-components';
 
-import Page from '../components/page/Page';
-import { ProtonVPNClientsSection, OpenVPNConfigurationSection } from 'react-components';
+import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';
 
 export const getDownloadsPage = () => {
     return {
         text: c('Title').t`Downloads`,
-        route: '/downloads',
+        link: '/downloads',
         icon: 'download',
-        sections: [
+        subsections: [
             {
                 text: c('Title').t`ProtonVPN clients`,
                 id: 'protonvpn-clients'
@@ -23,17 +22,17 @@ export const getDownloadsPage = () => {
     };
 };
 
-const DownloadsContainer = ({ setActiveSection }) => {
+const DownloadsContainer = ({ setActiveSection, location }: SettingsPropsShared) => {
     return (
-        <Page config={getDownloadsPage()} setActiveSection={setActiveSection}>
+        <PrivateMainSettingsAreaWithPermissions
+            location={location}
+            config={getDownloadsPage()}
+            setActiveSection={setActiveSection}
+        >
             <ProtonVPNClientsSection />
             <OpenVPNConfigurationSection />
-        </Page>
+        </PrivateMainSettingsAreaWithPermissions>
     );
-};
-
-DownloadsContainer.propTypes = {
-    setActiveSection: PropTypes.func
 };
 
 export default DownloadsContainer;

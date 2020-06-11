@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
     MainLogo,
     TopNavbar,
@@ -8,8 +7,15 @@ import {
     VPNBlackFridayModal,
     AppsDropdown
 } from 'react-components';
+import * as H from 'history';
 
-const PrivateHeader = ({ location, expanded, onToggleExpand }) => {
+interface Props {
+    location: H.Location;
+    expanded: boolean;
+    onToggleExpand: () => void;
+}
+
+const PrivateHeader = ({ location, expanded, onToggleExpand }: Props) => {
     return (
         <header className="header flex flex-nowrap reset4print">
             <div className="logo-container flex flex-spacebetween flex-items-center flex-nowrap nomobile">
@@ -24,19 +30,11 @@ const PrivateHeader = ({ location, expanded, onToggleExpand }) => {
                 <BlackFridayNavbarLink
                     to="/dashboard"
                     location={location}
-                    getModal={({ plans, onSelect }) => <VPNBlackFridayModal plans={plans} onSelect={onSelect} />}
+                    getModal={({ plans, onSelect }: any) => <VPNBlackFridayModal plans={plans} onSelect={onSelect} />}
                 />
             </TopNavbar>
         </header>
     );
-};
-
-PrivateHeader.propTypes = {
-    expanded: PropTypes.bool,
-    onToggleExpand: PropTypes.func,
-    location: PropTypes.shape({
-        pathname: PropTypes.string
-    })
 };
 
 export default PrivateHeader;

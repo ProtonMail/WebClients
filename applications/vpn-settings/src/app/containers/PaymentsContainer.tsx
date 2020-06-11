@@ -1,20 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { InvoicesSection, PaymentMethodsSection } from 'react-components';
+import { InvoicesSection, PaymentMethodsSection, SettingsPropsShared } from 'react-components';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
-import Page from '../components/page/Page';
+import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';
 
 const { UPGRADER } = PERMISSIONS;
 
 export const getPaymentsPage = () => {
     return {
         text: c('Title').t`Payments`,
-        route: '/payments',
+        link: '/payments',
         icon: 'payments',
         permissions: [UPGRADER],
-        sections: [
+        subsections: [
             {
                 text: c('Title').t`Payment methods`,
                 id: 'payment-methods'
@@ -26,18 +25,17 @@ export const getPaymentsPage = () => {
         ]
     };
 };
-
-const PaymentsContainer = ({ setActiveSection }) => {
+const PaymentsContainer = ({ setActiveSection, location }: SettingsPropsShared) => {
     return (
-        <Page config={getPaymentsPage()} setActiveSection={setActiveSection}>
+        <PrivateMainSettingsAreaWithPermissions
+            location={location}
+            config={getPaymentsPage()}
+            setActiveSection={setActiveSection}
+        >
             <PaymentMethodsSection />
             <InvoicesSection />
-        </Page>
+        </PrivateMainSettingsAreaWithPermissions>
     );
-};
-
-PaymentsContainer.propTypes = {
-    setActiveSection: PropTypes.func
 };
 
 export default PaymentsContainer;
