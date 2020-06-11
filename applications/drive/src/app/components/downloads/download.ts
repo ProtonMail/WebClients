@@ -22,7 +22,7 @@ export type StreamTransformer = (stream: ReadableStream<Uint8Array>) => Promise<
 export interface DownloadControls {
     start: (api: (query: any) => any) => Promise<void>;
     cancel: () => void;
-    pause: () => void;
+    pause: () => Promise<void>;
     resume: () => void;
 }
 
@@ -39,9 +39,9 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
     const fileStream = new ObserverStream();
     const fsWriter = fileStream.writable.getWriter();
 
+    const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
     let abortController = new AbortController();
     let paused = false;
-    let progressReverted = false;
 
     const start = async (api: Api) => {
         if (abortController.signal.aborted) {
@@ -61,8 +61,6 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
             await fsWriter.close();
             return;
         }
-
-        const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
 
         const flushBuffer = async (Index: number) => {
             const currentBuffer = buffers.get(Index);
@@ -88,44 +86,46 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
             }
             activeIndex = blockQueue[0].Index;
             const downloadQueue = blockQueue.map(({ URL, Index }) => async () => {
-                await waitUntil(() => buffers.size < MAX_TOTAL_BUFFER_SIZE || abortController.signal.aborted);
+                if (!buffers.get(Index)?.done) {
+                    await waitUntil(() => buffers.size < MAX_TOTAL_BUFFER_SIZE || abortController.signal.aborted);
 
-                if (abortController.signal.aborted) {
-                    throw new TransferCancel(id);
-                }
-
-                const blockStream = toPolyfillReadable(
-                    await api({
-                        ...queryFileBlock(URL),
-                        timeout: DOWNLOAD_TIMEOUT,
-                        signal: abortController.signal
-                    })
-                ) as ReadableStream<Uint8Array>;
-
-                const progressStream = new ObserverStream((value) => onProgress?.(value.length));
-                const rawContentStream = blockStream.pipeThrough(progressStream);
-
-                // Decrypt the file block content using streaming decryption
-                const transformedContentStream = transformBlockStream
-                    ? await transformBlockStream(rawContentStream)
-                    : rawContentStream;
-
-                await untilStreamEnd(transformedContentStream, async (data) => {
                     if (abortController.signal.aborted) {
                         throw new TransferCancel(id);
                     }
-                    const buffer = buffers.get(Index);
-                    if (buffer) {
-                        buffer.chunks.push(data);
-                    } else {
-                        buffers.set(Index, { done: false, chunks: [data] });
+
+                    const blockStream = toPolyfillReadable(
+                        await api({
+                            ...queryFileBlock(URL),
+                            timeout: DOWNLOAD_TIMEOUT,
+                            signal: abortController.signal
+                        })
+                    ) as ReadableStream<Uint8Array>;
+
+                    const progressStream = new ObserverStream((value) => onProgress?.(value.length));
+                    const rawContentStream = blockStream.pipeThrough(progressStream);
+
+                    // Decrypt the file block content using streaming decryption
+                    const transformedContentStream = transformBlockStream
+                        ? await transformBlockStream(rawContentStream)
+                        : rawContentStream;
+
+                    await untilStreamEnd(transformedContentStream, async (data) => {
+                        if (abortController.signal.aborted) {
+                            throw new TransferCancel(id);
+                        }
+                        const buffer = buffers.get(Index);
+                        if (buffer) {
+                            buffer.chunks.push(data);
+                        } else {
+                            buffers.set(Index, { done: false, chunks: [data] });
+                        }
+                    });
+
+                    const currentBuffer = buffers.get(Index);
+
+                    if (currentBuffer) {
+                        currentBuffer.done = true;
                     }
-                });
-
-                const currentBuffer = buffers.get(Index);
-
-                if (currentBuffer) {
-                    currentBuffer.done = true;
                 }
 
                 if (Index === activeIndex) {
@@ -152,13 +152,14 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
                 if (onProgress) {
                     // Revert current block progress
                     let progressToRevert = 0;
-                    buffers.forEach((buffer) => {
-                        buffer.chunks.forEach((chunk) => (progressToRevert += chunk.byteLength));
+                    buffers.forEach((buffer, Index) => {
+                        if (!buffer.done) {
+                            buffer.chunks.forEach((chunk) => (progressToRevert += chunk.byteLength));
+                            buffers.delete(Index);
+                        }
                     });
                     onProgress(-progressToRevert);
                 }
-                buffers.clear();
-                progressReverted = true;
                 await waitUntil(() => paused === false);
                 await startDownload(getBlockQueue(activeIndex));
             }
@@ -179,9 +180,19 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
 
     const pause = async () => {
         paused = true;
-        progressReverted = false;
         abortController.abort();
-        await waitUntil(() => progressReverted);
+
+        // Wait for download to reset progress or be flushed
+        const allDownloadsStopped = () => {
+            for (const [, buffer] of buffers) {
+                if (!buffer.done) {
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        await waitUntil(allDownloadsStopped);
     };
 
     const resume = () => {

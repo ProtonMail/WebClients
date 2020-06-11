@@ -39,7 +39,7 @@ interface DownloadProviderState {
     getDownloadsProgresses: () => TransferProgresses;
     clearDownloads: () => void;
     cancelDownload: (id: string) => void;
-    pauseDownload: (id: string) => void;
+    pauseDownload: (id: string) => Promise<void>;
     resumeDownload: (id: string) => void;
     removeDownload: (id: string) => void;
 }
@@ -100,10 +100,9 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
             return;
         }
 
-        if (download.state !== TransferState.Pending) {
+        if (download.state === TransferState.Progress) {
             await controls.current[id].pause();
         }
-
         updateDownloadState(id, TransferState.Paused);
     };
 
@@ -250,8 +249,8 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                         );
                     },
                     pause: async () => {
-                        await Promise.all(Object.values(files).map(({ controls }) => controls.pause()));
                         updateDownloadState(Object.keys(files), TransferState.Paused);
+                        await Promise.all(Object.values(files).map(({ controls }) => controls.pause()));
                     },
                     cancel: () => {
                         abortDownload(groupId);
