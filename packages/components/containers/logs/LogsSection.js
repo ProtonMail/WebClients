@@ -9,7 +9,6 @@ import {
     Block,
     Pagination,
     usePaginationAsync,
-    SubTitle,
     useUserSettings,
     useApiResult,
     useApiWithoutResult,
@@ -106,7 +105,6 @@ const LogsSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Authentication logs`}</SubTitle>
             <Alert>{c('Info')
                 .t`Logs includes authentication attempts for all Proton services that use your Proton credentials.`}</Alert>
             <Block className="flex flex-spacebetween flex-items-center">

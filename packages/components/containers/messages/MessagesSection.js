@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { SubTitle, Row, Field, Label, Info, useMailSettings } from 'react-components';
+import { Row, Field, Label, Info, useMailSettings } from 'react-components';
 
 import RemoteToggle from './RemoteToggle';
 import EmbeddedToggle from './EmbeddedToggle';
@@ -14,7 +14,6 @@ const MessagesSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Messages`}</SubTitle>
             <Row>
                 <Label htmlFor="remoteToggle">
                     <span className="mr0-5">{c('Label').t`Auto-load remote content`}</span>

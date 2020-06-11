@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SubTitle, Label, Row, Field, Href, Loader, useUser, useAddresses, useConfig } from 'react-components';
+import { Label, Row, Field, Href, Loader, useUser, useAddresses, useConfig } from 'react-components';
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
 const { VPN } = CLIENT_TYPES;
@@ -13,7 +13,6 @@ const UsernameSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Username`}</SubTitle>
             <Row>
                 <Label>{c('Label').t`Name`}</Label>
                 <Field className="pt0-5">

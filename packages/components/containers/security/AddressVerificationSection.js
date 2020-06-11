@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
 import {
     Alert,
-    SubTitle,
     Row,
     Field,
     Label,
@@ -31,7 +30,6 @@ const AddressVerificationSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Address verification`}</SubTitle>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/address-verification/">
                 {c('Info')
                     .t`Address verification is an advanced security feature. Only turn this on if you know what it does.`}

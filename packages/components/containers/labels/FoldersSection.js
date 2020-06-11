@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Loader, SubTitle, Alert, PrimaryButton, useFolders, useModals } from 'react-components';
+import { Loader, Alert, PrimaryButton, useFolders, useModals } from 'react-components';
 
 import FolderTreeViewList from './FolderTreeViewList';
 import EditLabelModal from './modals/Edit';
@@ -10,17 +10,11 @@ function LabelsSection() {
     const { createModal } = useModals();
 
     if (loadingFolders) {
-        return (
-            <>
-                <SubTitle>{c('LabelSettings').t`Folders`}</SubTitle>
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     return (
         <>
-            <SubTitle>{c('LabelSettings').t`Folders`}</SubTitle>
             <Alert
                 type="info"
                 className="mt1 mb1"

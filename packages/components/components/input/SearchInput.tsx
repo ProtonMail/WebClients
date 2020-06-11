@@ -1,5 +1,4 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
-import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import Input, { Props as InputProps } from './Input';
@@ -31,12 +30,6 @@ const SearchInput = ({ delay = 200, onChange = noop, value = '', ...rest }: Prop
     }, [value]);
 
     return <Input value={keywords} onChange={handleChange} type="search" {...rest} />;
-};
-
-SearchInput.propTypes = {
-    delay: PropTypes.number,
-    onChange: PropTypes.func,
-    value: PropTypes.string
 };
 
 export default SearchInput;

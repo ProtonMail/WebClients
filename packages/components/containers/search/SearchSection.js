@@ -1,7 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
 import {
-    SubTitle,
     Row,
     Label,
     Info,
@@ -21,7 +20,6 @@ const SearchSection = () => {
     const [loading, withLoading] = useLoading();
     return (
         <>
-            <SubTitle>{c('Title').t`Search`}</SubTitle>
             <Row>
                 <Label htmlFor="exactMatchToggle">
                     <span className="mr0-5">{c('Label').t`Require exact match`}</span>

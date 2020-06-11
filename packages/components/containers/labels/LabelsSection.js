@@ -1,15 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import {
-    Loader,
-    SubTitle,
-    Alert,
-    PrimaryButton,
-    useLabels,
-    useEventManager,
-    useModals,
-    useApi
-} from 'react-components';
+import { Loader, Alert, PrimaryButton, useLabels, useEventManager, useModals, useApi } from 'react-components';
 import { arrayMove } from 'react-sortable-hoc';
 import { orderLabels } from 'proton-shared/lib/api/labels';
 
@@ -41,17 +32,11 @@ function LabelsSection() {
     const getScrollContainer = () => document.querySelector('.main-area');
 
     if (loadingLabels) {
-        return (
-            <>
-                <SubTitle>{c('LabelSettings').t`Labels`}</SubTitle>
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     return (
         <>
-            <SubTitle>{c('LabelSettings').t`Labels`}</SubTitle>
             <Alert
                 type="info"
                 className="mt1 mb1"

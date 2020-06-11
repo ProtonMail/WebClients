@@ -5,7 +5,6 @@ import {
     useEventManager,
     useApi,
     useLoading,
-    SubTitle,
     Alert,
     ThemeCards,
     useModals,
@@ -76,7 +75,6 @@ const ThemesSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Themes`}</SubTitle>
             <Alert>{c('Info').t`Choose the look and feel of your mailbox.`}</Alert>
             <Alert type="warning">{c('Info')
                 .t`Selecting another mode will override your current mode and any customization will be lost.`}</Alert>

@@ -38,8 +38,6 @@ export { default as Tabs } from './components/container/Tabs';
 export { default as SimpleTabs } from './components/container/SimpleTabs';
 export { default as Field } from './components/container/Field';
 export { default as Information } from './components/container/Information';
-export { default as ObserverSection } from './components/container/ObserverSection';
-export { default as ObserverSections } from './components/container/ObserverSections';
 export { default as Tooltip } from './components/tooltip/Tooltip';
 export { default as TreeViewContainer } from './components/treeview/TreeViewContainer';
 export { default as TreeViewItem } from './components/treeview/TreeViewItem';
@@ -361,7 +359,6 @@ export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonV
 
 export { default as usePayPal } from './hooks/usePayPal';
 export { useUser, useGetUser } from './hooks/useUser';
-export { default as useDelinquent } from './hooks/useDelinquent';
 export { default as useUserVPN } from './hooks/useUserVPN';
 export { default as useBlackFriday } from './hooks/useBlackFriday';
 export { default as useCachedModelResult } from './hooks/useCachedModelResult';
@@ -383,6 +380,7 @@ export { useLabels, useFolders, useContactGroups } from './hooks/useCategories';
 export { default as useFilters } from './hooks/useFilters';
 export { default as usePaymentMethods } from './hooks/usePaymentMethods';
 export { default as useForceRefresh } from './containers/forceRefresh/useForceRefresh';
+export { default as useAppTitle } from './hooks/useAppTitle';
 export { default as useOrganization } from './hooks/useOrganization';
 export { default as useSubscription } from './hooks/useSubscription';
 export { default as useUserSettings } from './hooks/userSettingsModel';
@@ -427,3 +425,5 @@ export { default as SquireEditor } from './components/editor/SquireEditor';
 export { default as SimpleSquireEditor } from './components/editor/SimpleSquireEditor';
 
 export * from './helpers/component';
+
+export * from './components/layout';

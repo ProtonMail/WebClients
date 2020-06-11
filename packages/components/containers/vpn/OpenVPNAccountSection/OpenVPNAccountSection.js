@@ -1,16 +1,5 @@
 import React, { useState } from 'react';
-import {
-    Button,
-    SubTitle,
-    Alert,
-    Row,
-    Field,
-    Label,
-    Copy,
-    PrimaryButton,
-    useUserVPN,
-    useModals
-} from 'react-components';
+import { Button, Alert, Row, Field, Label, Copy, PrimaryButton, useUserVPN, useModals } from 'react-components';
 import { c } from 'ttag';
 
 import OpenVPNCredentialsModal from './OpenVPNCredentialsModal';
@@ -28,7 +17,6 @@ const OpenVPNAccountSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`OpenVPN / IKEv2 username`}</SubTitle>
             <Alert learnMore="https://protonvpn.com/support/vpn-login/">
                 {c('Info')
                     .t`Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on MacOS, OpenVPN on GNU/Linux.

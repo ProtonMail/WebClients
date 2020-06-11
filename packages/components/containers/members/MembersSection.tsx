@@ -4,7 +4,6 @@ import {
     Table,
     TableCell,
     Info,
-    SubTitle,
     Block,
     Loader,
     Alert,
@@ -175,7 +174,6 @@ const MembersSection = () => {
     return (
         <>
             <RestoreAdministratorPrivileges />
-            <SubTitle>{c('Title').t`Users`}</SubTitle>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/user-roles/">{c('Info for members section')
                 .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more.`}</Alert>
             <Block className="flex flex-spacebetween">

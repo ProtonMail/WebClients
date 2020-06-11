@@ -5,7 +5,6 @@ import {
     Block,
     Loader,
     PrimaryButton,
-    SubTitle,
     Table,
     TableBody,
     TableHeader,
@@ -32,25 +31,13 @@ const OrganizationSection = () => {
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const displayOrganizationKey = useDisplayOrganizationKey(organizationKey);
 
-    const title = <SubTitle>{c('Title').t`Password & key`}</SubTitle>;
-
     if (loadingOrganizationKey || loadingOrganization || loadingMembers) {
-        return (
-            <>
-                {title}
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     // Organization is not setup.
     if (!organization.HasKeys) {
-        return (
-            <>
-                {title}
-                <Alert type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>
-            </>
-        );
+        return <Alert type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>;
     }
 
     const { hasOrganizationKey, isOrganizationKeyActive, isOrganizationKeyInactive } = getOrganizationKeyInfo(
@@ -96,7 +83,6 @@ const OrganizationSection = () => {
 
     return (
         <>
-            {title}
             <Alert learnMore="https://protonmail.com/support/knowledge-base/organization-key">{c('Info')
                 .t`Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.`}</Alert>
             <Block>

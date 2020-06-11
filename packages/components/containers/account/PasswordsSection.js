@@ -2,7 +2,6 @@ import React from 'react';
 import { c } from 'ttag';
 import {
     PrimaryButton,
-    SubTitle,
     Loader,
     Toggle,
     Info,
@@ -20,15 +19,8 @@ const PasswordsSection = () => {
     const [addresses, loadingAddresses] = useAddresses();
     const { createModal } = useModals();
 
-    const title = <SubTitle>{c('Title').t`Passwords`}</SubTitle>;
-
     if (loadingUserSettings || loadingAddresses) {
-        return (
-            <>
-                {title}
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     // VPN users are by default in two password mode, even if they don't have any addresses. Don't allow them to change two-password mode.
@@ -43,7 +35,6 @@ const PasswordsSection = () => {
 
     return (
         <>
-            {title}
             <Row>
                 <Label htmlFor="passwordChange">{passwordLabel}</Label>
                 <Field>

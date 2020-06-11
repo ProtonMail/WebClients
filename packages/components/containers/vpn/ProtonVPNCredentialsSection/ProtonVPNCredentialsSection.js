@@ -1,5 +1,5 @@
 import React from 'react';
-import { SubTitle, Row, Label, Field, Alert, Href, useUser } from 'react-components';
+import { Row, Label, Field, Alert, Href, useUser } from 'react-components';
 import { c } from 'ttag';
 
 const ProtonVPNCredentialsSection = () => {
@@ -14,7 +14,6 @@ const ProtonVPNCredentialsSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`ProtonVPN credentials`}</SubTitle>
             <Alert>{c('Info').jt`Use the following credentials to log into the ${downloadLink}.`}</Alert>
             <Row>
                 <Label>{c('Label').t`Proton username`}</Label>

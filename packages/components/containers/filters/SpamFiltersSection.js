@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { Alert, SubTitle, useApiResult, useApiWithoutResult } from 'react-components';
+import { Alert, useApiResult, useApiWithoutResult } from 'react-components';
 import { getIncomingDefaults } from 'proton-shared/lib/api/incomingDefaults';
 import { MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
 
@@ -53,7 +53,6 @@ function SpamFiltersSection() {
 
     return (
         <>
-            <SubTitle>{c('FilterSettings').t`Spam Filters`}</SubTitle>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/spam-filtering/">
                 {c('FilterSettings')
                     .t`Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds it to the Whitelist.`}

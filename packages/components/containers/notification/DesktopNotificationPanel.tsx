@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import { Badge, Field, SmallButton } from '../../index';
 import { create, getStatus, request, Status } from 'proton-shared/lib/helpers/desktopNotification';
+import { PushNotification } from 'push.js';
 
 const testDefaultNotification = () => {
     return create(c('Info').t`You have a new email`, {
@@ -13,7 +14,10 @@ const testDefaultNotification = () => {
     });
 };
 
-const DesktopNotificationPanel = ({ onTest = testDefaultNotification }) => {
+export interface Props {
+    onTest?: () => Promise<PushNotification | undefined>;
+}
+const DesktopNotificationPanel = ({ onTest = testDefaultNotification }: Props) => {
     const [status, setStatus] = useState<Status>(getStatus());
 
     const handleEnable = () => {

@@ -1,11 +1,10 @@
 import React from 'react';
-import { SubTitle, Row, Label, Field, Href } from 'react-components';
+import { Row, Label, Field, Href } from 'react-components';
 import { c } from 'ttag';
 
 const ProtonVPNResourcesSection = () => {
     return (
         <>
-            <SubTitle>{c('Title').t`ProtonVPN resources`}</SubTitle>
             <Row>
                 <Label>{c('Label').t`Download ProtonVPN`}</Label>
                 <Field>

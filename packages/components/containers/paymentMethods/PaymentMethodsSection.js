@@ -1,7 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
 import {
-    SubTitle,
     PrimaryButton,
     Alert,
     Block,
@@ -27,21 +26,11 @@ const PaymentMethodsSection = () => {
     const { createModal } = useModals();
 
     if (loadingPaymentMethods || loadingSubscription) {
-        return (
-            <>
-                <SubTitle>{c('Title').t`Payment methods`}</SubTitle>
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     if (isManagedByMozilla) {
-        return (
-            <>
-                <SubTitle>{c('Title').t`Payment methods`}</SubTitle>
-                <MozillaInfoPanel />
-            </>
-        );
+        return <MozillaInfoPanel />;
     }
 
     const handleCard = () => {
@@ -56,7 +45,6 @@ const PaymentMethodsSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Payment methods`}</SubTitle>
             <Alert
                 learnMore={
                     CLIENT_TYPE === VPN

@@ -15,7 +15,6 @@ import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
 import { unique } from 'proton-shared/lib/helpers/array';
 import {
     Alert,
-    SubTitle,
     Price,
     Loader,
     MozillaInfoPanel,
@@ -75,7 +74,6 @@ const BillingSection = ({ permission }) => {
     if (!permission) {
         return (
             <>
-                <SubTitle>{c('Title').t`Billing details`}</SubTitle>
                 <Alert>{c('Info').t`There are no billing details available for your current subscription.`}</Alert>
                 <div className="shadow-container bg-global-highlight mb1 pt1 pl1 pr1">
                     <div className="flex-autogrid onmobile-flex-column w100 mb1">
@@ -106,21 +104,11 @@ const BillingSection = ({ permission }) => {
     }
 
     if (loadingSubscription || loadingPlans || loadingOrganization) {
-        return (
-            <>
-                <SubTitle>{c('Title').t`Billing details`}</SubTitle>
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     if (subscription.ManagedByMozilla) {
-        return (
-            <>
-                <SubTitle>{c('Title').t`Billing details`}</SubTitle>
-                <MozillaInfoPanel />
-            </>
-        );
+        return <MozillaInfoPanel />;
     }
 
     const { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd } = subscription;
@@ -134,7 +122,6 @@ const BillingSection = ({ permission }) => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Billing details`}</SubTitle>
             <Alert>{c('Info').t`We always use credits before charging your saved payment method.`}</Alert>
             <div className="shadow-container">
                 {hasPaidMail ? (

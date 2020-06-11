@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import {
     ConfirmModal,
     Alert,
-    SubTitle,
     Row,
     Field,
     Label,
@@ -73,7 +72,6 @@ const ExternalPGPSettingsSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`External PGP settings (optional)`}</SubTitle>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">
                 {c('Info').t`Only change these settings if you are using PGP with non-ProtonMail recipients.`}
             </Alert>

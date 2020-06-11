@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import {
-    SubTitle,
     Alert,
     CurrencySelector,
     CycleSelector,
@@ -136,26 +135,15 @@ const PlansSection = () => {
     }, [loadingSubscription, loadingPlans]);
 
     if (subscription.isManagedByMozilla) {
-        return (
-            <>
-                <SubTitle>{c('Title').t`Plans`}</SubTitle>
-                <MozillaInfoPanel />
-            </>
-        );
+        return <MozillaInfoPanel />;
     }
 
     if (loadingSubscription || loadingPlans || loadingOrganization) {
-        return (
-            <>
-                <SubTitle>{c('Title').t`Plans`}</SubTitle>
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     return (
         <>
-            <SubTitle>{c('Title').t`Plans`}</SubTitle>
             <div className="flex flew-nowrap onmobile-flex-column">
                 <Alert
                     className="flex-item-fluid"

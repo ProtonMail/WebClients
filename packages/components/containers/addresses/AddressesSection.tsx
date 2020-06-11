@@ -1,6 +1,6 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Block, Loader, SubTitle, useOrganization, useUser } from '../../index';
+import { Block, Loader, useOrganization, useUser } from '../../index';
 
 import AddressesWithMembers from './AddressesWithMembers';
 import AddressesWithUser from './AddressesWithUser';
@@ -17,7 +17,6 @@ const AddressesSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Addresses`}</SubTitle>
             {user.isAdmin ? (
                 <AddressesWithMembers user={user} organization={organization} />
             ) : (

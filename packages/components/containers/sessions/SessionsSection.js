@@ -10,7 +10,6 @@ import {
     Pagination,
     Alert,
     Block,
-    SubTitle,
     ConfirmModal,
     useApi,
     useAuthentication,
@@ -94,7 +93,6 @@ const SessionsSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Sessions`}</SubTitle>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/">{c('Info')
                 .t`Unless you explicitly logout or change your password, sessions can last for up to 6 months. Sessions expire after 2 weeks of inactivity.`}</Alert>
             <Block className="flex flex-spacebetween">

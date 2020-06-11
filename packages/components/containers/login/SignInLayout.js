@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
@@ -6,6 +6,7 @@ import { Title, Href, VpnLogo, MailLogo, FooterDetails, SupportDropdown, useConf
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
 import PublicHeader from './PublicHeader';
+import useAppTitle from '../../hooks/useAppTitle';
 
 const { VPN } = CLIENT_TYPES;
 
@@ -15,9 +16,7 @@ const SignInLayout = ({ children, title }) => {
     const domain = isVPN ? 'protonvpn.com' : 'protonmail.com';
     const staticURL = `https://${domain}`;
 
-    useEffect(() => {
-        document.title = `${title} - ${isVPN ? 'ProtonVPN' : 'ProtonMail'}`;
-    }, []);
+    useAppTitle(title, isVPN ? 'ProtonVPN' : 'ProtonMail');
 
     return (
         <div className="pt1 pb1 pl2 pr2">

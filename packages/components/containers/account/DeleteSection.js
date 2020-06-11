@@ -2,7 +2,6 @@ import React from 'react';
 import { c } from 'ttag';
 import {
     Href,
-    SubTitle,
     Alert,
     MozillaInfoPanel,
     ErrorButton,
@@ -30,8 +29,6 @@ const DeleteSection = () => {
         return <Loader />;
     }
 
-    const subTitle = <SubTitle>{c('Title').t`Delete account`}</SubTitle>;
-
     if (CLIENT_TYPE === VPN && addresses.length) {
         const loginLink = (
             <Href key="0" url="https://mail.protonmail.com/login">
@@ -40,11 +37,8 @@ const DeleteSection = () => {
         );
 
         return (
-            <>
-                {subTitle}
-                <Alert>{c('Info')
-                    .jt`Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${loginLink} and delete your account there.`}</Alert>
-            </>
+            <Alert>{c('Info')
+                .jt`Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${loginLink} and delete your account there.`}</Alert>
         );
     }
 
@@ -53,17 +47,11 @@ const DeleteSection = () => {
     }
 
     if (isManagedByMozilla) {
-        return (
-            <>
-                {subTitle}
-                <MozillaInfoPanel />
-            </>
-        );
+        return <MozillaInfoPanel />;
     }
 
     return (
         <>
-            {subTitle}
             <Alert type="error">
                 {addresses.length
                     ? c('Info')

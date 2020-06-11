@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SubTitle, Alert, Row, Loader, Field, Label, PrimaryButton, useModals, useOrganization } from '../../index';
+import { Alert, Row, Loader, Field, Label, PrimaryButton, useModals, useOrganization } from '../../index';
 
 import RestoreAdministratorPrivileges from './RestoreAdministratorPrivileges';
 import OrganizationNameModal from './OrganizationNameModal';
@@ -18,7 +18,6 @@ const OrganizationSection = () => {
     if (!organization.HasKeys) {
         return (
             <>
-                <SubTitle>{c('Title').t`Multi-user support`}</SubTitle>
                 <Alert learnMore="https://protonmail.com/support/knowledge-base/business/">{c('Info')
                     .t`Create and manage sub-accounts and assign them email addresses on your custom domain.`}</Alert>
                 <ActivateOrganizationButton />
@@ -29,7 +28,6 @@ const OrganizationSection = () => {
     return (
         <>
             <RestoreAdministratorPrivileges />
-            <SubTitle>{c('Title').t`Organization`}</SubTitle>
             <Alert>{c('Info').t`The name will be visible to your users while they are logged in.`}</Alert>
             <Row>
                 <Label>{c('Label').t`Organization name`}</Label>

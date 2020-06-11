@@ -1,5 +1,9 @@
 import React from 'react';
+import { classnames } from '../../helpers/component';
 
-const ToolbarSeparator = () => <span className="toolbar-separator" />;
+interface Props {
+    className?: string;
+}
+const ToolbarSeparator = ({ className }: Props) => <span className={classnames(['toolbar-separator', className])} />;
 
 export default ToolbarSeparator;

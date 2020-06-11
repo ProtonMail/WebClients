@@ -4,7 +4,6 @@ import {
     AuthModal,
     Toggle,
     Alert,
-    SubTitle,
     Label,
     Row,
     Field,
@@ -59,7 +58,6 @@ const EmailSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Recovery & notification`}</SubTitle>
             <Alert>{c('Info')
                 .t`The selected method can be used to recover an account in the event you forget your password and to be notified about missed emails.`}</Alert>
             <Row className="flex-items-center">

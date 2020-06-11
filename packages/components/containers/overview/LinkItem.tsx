@@ -1,12 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Tooltip, Icon } from 'react-components';
+import { Tooltip, Icon } from '../../index';
 import { c } from 'ttag';
 
-const LinkItem = ({ route, text, permission }) => {
+interface Props {
+    to: string;
+    text: string;
+    permission: boolean;
+}
+const LinkItem = ({ to, text, permission }: Props) => {
     return (
-        <Link to={route}>
+        <Link to={to}>
             <span className="mr0-5">{text}</span>
             {permission ? null : (
                 <Tooltip title={c('Tag').t`Premium feature`}>
@@ -15,12 +19,6 @@ const LinkItem = ({ route, text, permission }) => {
             )}
         </Link>
     );
-};
-
-LinkItem.propTypes = {
-    route: PropTypes.object,
-    permission: PropTypes.bool,
-    text: PropTypes.string
 };
 
 export default LinkItem;

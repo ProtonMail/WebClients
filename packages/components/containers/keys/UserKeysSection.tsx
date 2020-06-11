@@ -5,7 +5,6 @@ import {
     Button,
     Block,
     Loader,
-    SubTitle,
     useUser,
     useModals,
     useUserKeys,
@@ -33,25 +32,13 @@ const UserKeysSections = () => {
     const [userKeysList, loadingUserKeys] = useUserKeys();
     const userKeysDisplay = useDisplayKeys({ keys: userKeysList, User });
 
-    const title = <SubTitle>{c('Title').t`Contact encryption keys`}</SubTitle>;
-
     if (loadingUserKeys && !Array.isArray(userKeysList)) {
-        return (
-            <>
-                {title}
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     // E.g. vpn user
     if (!userKeysList.length) {
-        return (
-            <>
-                {title}
-                <Alert>{c('Info').t`No contact encryption keys exist`}</Alert>
-            </>
-        );
+        return <Alert>{c('Info').t`No contact encryption keys exist`}</Alert>;
     }
 
     const { Name: userName } = User;
@@ -113,7 +100,6 @@ const UserKeysSections = () => {
 
     return (
         <>
-            {title}
             {canExportPrimaryPrivateKey && (
                 <Block>
                     <Button

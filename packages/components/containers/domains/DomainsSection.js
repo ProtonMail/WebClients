@@ -4,7 +4,6 @@ import {
     useEventManager,
     useOrganization,
     useDomains,
-    SubTitle,
     Alert,
     PrimaryButton,
     Button,
@@ -43,7 +42,6 @@ const DomainsSection = () => {
     return (
         <>
             <RestoreAdministratorPrivileges />
-            <SubTitle>{c('Title').t`Custom domains`}</SubTitle>
             <Alert learnMore="https://protonmail.com/support/categories/custom-domains/">
                 {c('Message')
                     .t`Add a domain to receive emails to your custom email addresses and to add more users to your organization (Visionary and Professional accounts only).`}

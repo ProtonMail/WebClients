@@ -1,18 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import {
-    Alert,
-    Button,
-    SubTitle,
-    Label,
-    Select,
-    Info,
-    Row,
-    Field,
-    Loader,
-    useAddresses,
-    useModals
-} from 'react-components';
+import { Alert, Button, Label, Select, Info, Row, Field, Loader, useAddresses, useModals } from 'react-components';
 import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from 'proton-shared/lib/constants';
 
 import EditAddressModal from './EditAddressModal';
@@ -22,15 +10,9 @@ const IdentitySection = () => {
     const [addresses, loading] = useAddresses();
     const [addressIndex, setAddressIndex] = useState(0);
     const { createModal } = useModals();
-    const title = <SubTitle>{c('Title').t`Display name & signature`}</SubTitle>;
 
     if (loading && !Array.isArray(addresses)) {
-        return (
-            <>
-                {title}
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     const filtered = addresses.filter(
@@ -41,11 +23,7 @@ const IdentitySection = () => {
     );
 
     if (!filtered.length) {
-        return (
-            <>
-                <Alert>{c('Info').t`No addresses exist`}</Alert>
-            </>
-        );
+        return <Alert>{c('Info').t`No addresses exist`}</Alert>;
     }
 
     const address = filtered[addressIndex];
@@ -55,7 +33,6 @@ const IdentitySection = () => {
 
     return (
         <>
-            {title}
             <Alert learnMore="https://protonmail.com/support/knowledge-base/display-name-and-signature/">{c('Info')
                 .t`Click the Edit button to personalize your email address. Your Display Name appears in the From field when people receive an email from you. Your Signature is appended at the bottom of your messages. Or leave each field empty for more privacy.`}</Alert>
             <Row>

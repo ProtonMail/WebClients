@@ -6,7 +6,6 @@ import {
     Loader,
     PrimaryButton,
     Select,
-    SubTitle,
     useAddresses,
     useAddressesKeys,
     useApi,
@@ -76,33 +75,16 @@ const AddressKeysSection = () => {
         }
     }, [addressIndex, Addresses]);
 
-    const title = <SubTitle>{c('Title').t`Email encryption keys`}</SubTitle>;
-
     if (addressIndex === -1 || loadingAddresses) {
-        return (
-            <>
-                {title}
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     if (!Array.isArray(Addresses) || !Addresses.length) {
-        return (
-            <>
-                {title}
-                <Alert>{c('Info').t`No addresses exist`}</Alert>
-            </>
-        );
+        return <Alert>{c('Info').t`No addresses exist`}</Alert>;
     }
 
     if (loadingAddressesKeys && !Array.isArray(addressKeys)) {
-        return (
-            <>
-                {title}
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     const isLoadingKey = loadingKeyID !== '';
@@ -355,7 +337,6 @@ const AddressKeysSection = () => {
 
     return (
         <>
-            {title}
             <Alert learnMore="https://protonmail.com/support/knowledge-base/pgp-key-management/">
                 {c('Info')
                     .t`Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.`}

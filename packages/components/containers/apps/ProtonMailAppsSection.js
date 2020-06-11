@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Table, TableHeader, TableBody, TableRow, Href, SubTitle } from 'react-components';
+import { Table, TableHeader, TableBody, TableRow, Href } from 'react-components';
 
 const ProtonMailAppsSection = () => {
     const clients = [
@@ -21,7 +21,6 @@ const ProtonMailAppsSection = () => {
 
     return (
         <>
-            <SubTitle>ProtonMail apps</SubTitle>
             <Table className="pm-simple-table--has-actions">
                 <TableHeader
                     cells={[

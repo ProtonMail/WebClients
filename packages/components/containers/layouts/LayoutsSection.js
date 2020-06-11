@@ -1,7 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
 import {
-    SubTitle,
     Alert,
     Row,
     Field,
@@ -43,8 +42,6 @@ const LayoutsSection = () => {
     const [loadingStickyLabels, withLoadingStickyLabels] = useLoading();
     const [loadingDraftType, withLoadingDraftType] = useLoading();
     const [loadingRightToLeft, withLoadingRightToLeft] = useLoading();
-
-    const subTitle = <SubTitle>{c('Title').t`Layouts`}</SubTitle>;
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
@@ -89,7 +86,6 @@ const LayoutsSection = () => {
 
     return (
         <>
-            {subTitle}
             <Alert learnMore="https://protonmail.com/support/knowledge-base/change-inbox-layout/">{c('Info')
                 .t`Choose the look and feel of your mailbox.`}</Alert>
             <Row>

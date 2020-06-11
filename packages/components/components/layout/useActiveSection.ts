@@ -1,35 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useState, useEffect } from 'react';
 import 'intersection-observer';
 
-import ObserverSection from './ObserverSection';
-
-/** @type any */
-const ObserverSections = ({ children, setActiveSection }) => {
-    React.Children.forEach(children, (child) => {
-        if (!child.props.id) throw new Error('All sections to be observed need an id');
-    });
-    const [observer, setObserver] = useState();
+const useActiveSection = (setActiveSection: (section: string) => void) => {
+    const [observer, setObserver] = useState<IntersectionObserver | undefined>();
 
     useEffect(() => {
         if (!setActiveSection) {
             return;
         }
 
-        const map = {};
-        const keys = [];
+        const map: { [key: string]: number } = {};
+        const keys: string[] = [];
 
-        const handleIntersect = (elements) => {
+        const handleIntersect = (elements: IntersectionObserverEntry[]) => {
             elements.forEach((element) => {
                 const { target, intersectionRatio } = element;
+                if (!(target instanceof HTMLElement)) {
+                    return;
+                }
                 const id = target.dataset.targetId;
+                if (!id) {
+                    return;
+                }
                 if (!map[id]) {
                     keys.push(id);
                 }
                 map[id] = intersectionRatio;
             });
 
-            const { id } = keys.reduce(
+            const { id } = keys.reduce<{ value: number; id: string }>(
                 (cur, id) => {
                     const otherValue = map[id];
                     if (otherValue > cur.value) {
@@ -58,20 +57,9 @@ const ObserverSections = ({ children, setActiveSection }) => {
         return () => {
             observer.disconnect();
         };
-    }, []);
+    }, [setActiveSection]);
 
-    return React.Children.map(children, (child) => {
-        return (
-            <ObserverSection id={child.props.id} observer={observer}>
-                {child}
-            </ObserverSection>
-        );
-    });
+    return observer;
 };
 
-ObserverSections.propTypes = {
-    children: PropTypes.node.isRequired,
-    setActiveSection: PropTypes.func
-};
-
-export default ObserverSections;
+export default useActiveSection;

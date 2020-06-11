@@ -2,7 +2,6 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import {
-    SubTitle,
     Row,
     Field,
     Label,
@@ -50,23 +49,20 @@ const LanguageSection = ({ locales = {} }) => {
     };
 
     return (
-        <>
-            <SubTitle>{c('Title').t`Language`}</SubTitle>
-            <Row>
-                <Label htmlFor="languageSelect">{c('Label').t`Default language`}</Label>
-                <Field>
-                    <Select
-                        disabled={loading}
-                        value={Locale}
-                        id="languageSelect"
-                        options={options}
-                        onChange={(e) => {
-                            withLoading(handleChange(e));
-                        }}
-                    />
-                </Field>
-            </Row>
-        </>
+        <Row>
+            <Label htmlFor="languageSelect">{c('Label').t`Default language`}</Label>
+            <Field>
+                <Select
+                    disabled={loading}
+                    value={Locale}
+                    id="languageSelect"
+                    options={options}
+                    onChange={(e) => {
+                        withLoading(handleChange(e));
+                    }}
+                />
+            </Field>
+        </Row>
     );
 };
 

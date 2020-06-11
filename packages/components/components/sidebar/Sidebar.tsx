@@ -12,8 +12,6 @@ interface Props {
     onToggleExpand: () => void;
     children?: ReactNode;
     version?: ReactNode;
-    // Can be removed after consumers update.
-    mobileLinks?: any[];
 }
 
 const Sidebar = ({ expanded = false, onToggleExpand, list = [], url = '', children, version }: Props) => {

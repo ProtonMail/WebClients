@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
     Alert,
-    SubTitle,
     LinkButton,
     Href,
     Loader,
@@ -56,35 +55,18 @@ const SubscriptionSection = ({ permission }) => {
     const [organization, loadingOrganization] = useOrganization();
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
 
-    const subTitle = <SubTitle>{c('Title').t`Subscription`}</SubTitle>;
-
     if (!permission) {
-        return (
-            <>
-                {subTitle}
-                <Alert>{c('Info').t`No subscription yet`}</Alert>
-            </>
-        );
+        return <Alert>{c('Info').t`No subscription yet`}</Alert>;
     }
 
     if (loadingSubscription || loadingOrganization || loadingAddresses) {
-        return (
-            <>
-                {subTitle}
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     const { Plans = [], Cycle, CouponCode, Currency, isManagedByMozilla } = subscription;
 
     if (isManagedByMozilla) {
-        return (
-            <>
-                {subTitle}
-                <MozillaInfoPanel />
-            </>
-        );
+        return <MozillaInfoPanel />;
     }
 
     const {
@@ -136,7 +118,6 @@ const SubscriptionSection = ({ permission }) => {
 
     return (
         <>
-            {subTitle}
             <Alert>{c('Info')
                 .t`To manage your subscription, including billing frequency and currency, or to switch to another plan, click on Manage subscription.`}</Alert>
             <div className="shadow-container mb1">

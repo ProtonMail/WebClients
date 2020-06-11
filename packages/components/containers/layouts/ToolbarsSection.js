@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    SubTitle,
     Group,
     Row,
     Label,
@@ -35,7 +34,6 @@ const ToolbarsSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Toolbars`}</SubTitle>
             <Row>
                 <Label>{c('Label').t`Read/unread order`}</Label>
                 <Field>

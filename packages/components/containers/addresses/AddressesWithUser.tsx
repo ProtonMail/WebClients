@@ -1,5 +1,4 @@
 import React, { useCallback, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
     useApi,
@@ -94,10 +93,6 @@ const AddressesUser = ({ user }: Props) => {
             </OrderableTableBody>
         </OrderableTable>
     );
-};
-
-AddressesUser.propTypes = {
-    user: PropTypes.object.isRequired
 };
 
 export default AddressesUser;

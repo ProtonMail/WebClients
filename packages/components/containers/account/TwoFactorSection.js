@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SubTitle, Row, Label, Info, Field, Toggle, useConfig, useModals, useUserSettings } from 'react-components';
+import { Row, Label, Info, Field, Toggle, useConfig, useModals, useUserSettings } from 'react-components';
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
 import EnableTwoFactorModal from './EnableTwoFactorModal';
@@ -25,18 +25,15 @@ const TwoFactorSection = () => {
             : 'https://protonmail.com/support/knowledge-base/two-factor-authentication';
 
     return (
-        <>
-            <SubTitle>{c('Title').t`Two-factor authentication`}</SubTitle>
-            <Row>
-                <Label htmlFor="twoFactorToggle">
-                    <span className="mr0-5">{c('Label').t`Two-factor authentication`}</span>
-                    <Info url={twoFactorAuthLink} />
-                </Label>
-                <Field>
-                    <Toggle checked={!!Enabled} id="twoFactorToggle" onChange={handleChange} />
-                </Field>
-            </Row>
-        </>
+        <Row>
+            <Label htmlFor="twoFactorToggle">
+                <span className="mr0-5">{c('Label').t`Two-factor authentication`}</span>
+                <Info url={twoFactorAuthLink} />
+            </Label>
+            <Field>
+                <Toggle checked={!!Enabled} id="twoFactorToggle" onChange={handleChange} />
+            </Field>
+        </Row>
     );
 };
 
