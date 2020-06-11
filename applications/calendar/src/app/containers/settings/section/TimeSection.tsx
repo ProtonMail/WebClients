@@ -1,7 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import {
     Info,
-    SubTitle,
     Row,
     Label,
     Field,
@@ -64,7 +63,6 @@ const TimeSection = ({
 
     return (
         <>
-            <SubTitle>{c('Title').t`Region & time zone`}</SubTitle>
             <Row>
                 <Label htmlFor="time-format-select">{c('Label').t`Time format`}</Label>
                 <Field>

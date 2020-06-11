@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    SubTitle,
     Row,
     Info,
     Label,
@@ -38,7 +37,6 @@ const LayoutSection = ({ calendarUserSettings: { WeekStart, ViewPreference, Disp
 
     return (
         <>
-            <SubTitle>{c('Title').t`Layout`}</SubTitle>
             <Row>
                 <Label htmlFor="view-select">
                     {c('Label').t`Default view`}{' '}

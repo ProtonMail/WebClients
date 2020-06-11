@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef, MutableRefObject } from 'react';
-import { useCalendarBootstrap, useModals } from 'react-components';
+import { useAppTitle, useCalendarBootstrap, useModals } from 'react-components';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -221,10 +221,11 @@ const CalendarContainer = ({
         // Intentionally not listening to everything to only trigger URL updates when these variables change.
     }, [view, range, utcDate]);
 
-    useEffect(() => {
-        const titleDateString = getTitleDateString(view, range, utcDateRange, utcDate);
-        document.title = [titleDateString, 'ProtonCalendar'].filter(Boolean).join(' - ');
+    const calendarTitle = useMemo(() => {
+        return getTitleDateString(view, range, utcDateRange, utcDate);
     }, [view, range, utcDate, utcDateRange]);
+
+    useAppTitle(calendarTitle, 'ProtonCalendar');
 
     const [calendarsEvents, loadingEvents] = useCalendarsEvents(
         visibleCalendars,

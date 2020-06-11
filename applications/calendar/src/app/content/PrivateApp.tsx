@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { StandardPrivateApp, ErrorBoundary, LoaderPage, useApi, useCache } from 'react-components';
+import React from 'react';
+import { StandardPrivateApp, ErrorBoundary, LoaderPage, useApi, useCache, useAppTitle } from 'react-components';
 import { c } from 'ttag';
 import {
     UserModel,
@@ -34,9 +34,7 @@ const PrivateApp = ({ onLogout }: Props) => {
     const api = useApi();
     const cache = useCache();
 
-    useEffect(() => {
-        document.title = 'ProtonCalendar';
-    }, []);
+    useAppTitle('', 'ProtonCalendar');
 
     return (
         <StandardPrivateApp

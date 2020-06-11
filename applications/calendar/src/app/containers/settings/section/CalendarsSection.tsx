@@ -3,7 +3,6 @@ import {
     useApi,
     useEventManager,
     useNotifications,
-    SubTitle,
     PrimaryButton,
     ErrorButton,
     useModals,
@@ -114,7 +113,6 @@ const CalendarsSection = ({
 
     return (
         <>
-            <SubTitle>{c('Title').t`Calendars`}</SubTitle>
             <div className="mb1">
                 <PrimaryButton
                     data-test-id="calendar-setting-page:add-calendar"

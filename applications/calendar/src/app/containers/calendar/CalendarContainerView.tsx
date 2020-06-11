@@ -1,5 +1,12 @@
 import React, { ReactNode, Ref, useCallback, useEffect, useMemo } from 'react';
-import { classnames, FullLoader, LocalizedMiniCalendar, useToggle, TextLoader, TopBanners } from 'react-components';
+import {
+    FullLoader,
+    LocalizedMiniCalendar,
+    useToggle,
+    TextLoader,
+    PrivateMainArea,
+    PrivateAppContainer,
+} from 'react-components';
 import { c } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
 
@@ -7,7 +14,6 @@ import { fromUTCDate, toLocalDate } from 'proton-shared/lib/date/timezone';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import PrivateHeader from '../../components/layout/PrivateHeader';
 import CalendarSidebar from './CalendarSidebar';
-import Main from '../../components/Main';
 import CalendarToolbar from './CalendarToolbar';
 import DateCursorButtons from '../../components/DateCursorButtons';
 import ViewSelector from '../../components/ViewSelector';
@@ -46,6 +52,7 @@ interface Props {
     onChangeDateRange: (date: Date, range: number) => void;
     containerRef: Ref<HTMLDivElement>;
 }
+
 const CalendarContainerView = ({
     activeCalendars = [],
     disabledCalendars = [],
@@ -111,94 +118,87 @@ const CalendarContainerView = ({
         setExpand(false);
     }, [window.location.pathname]);
 
-    return (
-        <div
-            className={classnames(['flex flex-column flex-nowrap no-scroll', isBlurred && 'filter-blur'])}
-            ref={containerRef}
-        >
-            <TopBanners />
-            <div className="content flex-item-fluid-auto reset4print">
-                <PrivateHeader
-                    url="/calendar"
-                    inSettings={false}
-                    title={c('Title').t`Calendar`}
-                    expanded={expanded}
-                    onToggleExpand={onToggleExpand}
-                    onCreateEvent={onCreateEvent}
-                    isNarrow={isNarrow}
+    const header = (
+        <PrivateHeader
+            url="/calendar"
+            inSettings={false}
+            title={c('Title').t`Calendar`}
+            expanded={expanded}
+            onToggleExpand={onToggleExpand}
+            onCreateEvent={onCreateEvent}
+            isNarrow={isNarrow}
+        />
+    );
+
+    const sidebar = (
+        <CalendarSidebar
+            expanded={expanded}
+            onToggleExpand={onToggleExpand}
+            onCreateEvent={onCreateEvent}
+            miniCalendar={
+                <LocalizedMiniCalendar
+                    min={MINIMUM_DATE}
+                    max={MAXIMUM_DATE}
+                    onSelectDateRange={handleSelectDateRange}
+                    onSelectDate={handleClickLocalDate}
+                    date={localDate}
+                    now={localNowDate}
+                    displayWeekNumbers={displayWeekNumbers}
+                    dateRange={range > 0 ? localDateRange : undefined}
+                    weekStartsOn={weekStartsOn}
+                    displayedOnDarkBackground
                 />
-                <div className="flex flex-nowrap">
-                    <CalendarSidebar
-                        expanded={expanded}
-                        onToggleExpand={onToggleExpand}
-                        onCreateEvent={onCreateEvent}
-                        miniCalendar={
-                            <LocalizedMiniCalendar
-                                min={MINIMUM_DATE}
-                                max={MAXIMUM_DATE}
-                                onSelectDateRange={handleSelectDateRange}
-                                onSelectDate={handleClickLocalDate}
-                                date={localDate}
-                                now={localNowDate}
-                                displayWeekNumbers={displayWeekNumbers}
-                                dateRange={range > 0 ? localDateRange : undefined}
-                                weekStartsOn={weekStartsOn}
-                                displayedOnDarkBackground
-                            />
-                        }
-                        activeCalendars={activeCalendars}
-                        disabledCalendars={disabledCalendars}
-                    />
-                    {isLoading ? (
-                        <div className="calendar-loader-container aligncenter p1">
-                            <FullLoader size={60} />
-                            <TextLoader className="m0">{c('Info').t`Loading events`}</TextLoader>
-                        </div>
-                    ) : null}
-                    <div className="main flex-item-fluid">
-                        <Main>
-                            <div className="flex flex-column">
-                                <CalendarToolbar
-                                    dateCursorButtons={
-                                        <DateCursorButtons
-                                            view={view}
-                                            range={range}
-                                            dateRange={localDateRange}
-                                            currentDate={localDate}
-                                            now={localNowDate}
-                                            onToday={onClickToday}
-                                            onNext={handleClickNext}
-                                            onPrev={handleClickPrev}
-                                        />
-                                    }
-                                    viewSelector={
-                                        <ViewSelector
-                                            data-test-id="calendar-view:view-options"
-                                            view={view}
-                                            range={range}
-                                            onChange={onChangeView}
-                                        />
-                                    }
-                                    timezoneSelector={
-                                        <TimezoneSelector
-                                            data-test-id="calendar-view:time-zone-dropdown"
-                                            className="toolbar-select nomobile notablet"
-                                            date={utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate}
-                                            timezone={tzid}
-                                            onChange={setTzid}
-                                        />
-                                    }
-                                />
-                                <div data-test-id="calendar-view:events-area" className="flex main-area--withToolbar">
-                                    {children}
-                                    <div className="w50p nomobile hidden" />
-                                </div>
-                            </div>
-                        </Main>
-                    </div>
-                </div>
-            </div>
+            }
+            activeCalendars={activeCalendars}
+            disabledCalendars={disabledCalendars}
+        />
+    );
+
+    const loader = isLoading ? (
+        <div className="calendar-loader-container aligncenter p1">
+            <FullLoader size={60} />
+            <TextLoader className="m0">{c('Info').t`Loading events`}</TextLoader>
         </div>
+    ) : null;
+
+    return (
+        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred} containerRef={containerRef}>
+            {loader}
+            <CalendarToolbar
+                dateCursorButtons={
+                    <DateCursorButtons
+                        view={view}
+                        range={range}
+                        dateRange={localDateRange}
+                        currentDate={localDate}
+                        now={localNowDate}
+                        onToday={onClickToday}
+                        onNext={handleClickNext}
+                        onPrev={handleClickPrev}
+                    />
+                }
+                viewSelector={
+                    <ViewSelector
+                        data-test-id="calendar-view:view-options"
+                        view={view}
+                        range={range}
+                        onChange={onChangeView}
+                    />
+                }
+                timezoneSelector={
+                    <TimezoneSelector
+                        data-test-id="calendar-view:time-zone-dropdown"
+                        className="toolbar-select nomobile notablet"
+                        date={utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate}
+                        timezone={tzid}
+                        onChange={setTzid}
+                    />
+                }
+            />
+            <PrivateMainArea hasToolbar data-test-id="calendar-view:events-area">
+                {children}
+            </PrivateMainArea>
+        </PrivateAppContainer>
     );
 };
 

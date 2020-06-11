@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { Toolbar, ToolbarSeparator } from 'react-components';
 
 interface Props {
     dateCursorButtons: ReactNode;
@@ -8,13 +9,13 @@ interface Props {
 
 const CalendarToolbar = ({ dateCursorButtons, timezoneSelector, viewSelector }: Props) => {
     return (
-        <div className="toolbar flex flex-nowrap noprint no-scroll">
+        <Toolbar>
             {dateCursorButtons}
-            <span className="mlauto toolbar-separator" />
+            <ToolbarSeparator className="mlauto" />
             {timezoneSelector}
-            <span className="toolbar-separator notablet nomobile" />
+            <ToolbarSeparator className="notablet nomobile" />
             <span className="nomobile flex flex-item-noshrink">{viewSelector}</span>
-        </div>
+        </Toolbar>
     );
 };
 
