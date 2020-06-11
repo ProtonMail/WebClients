@@ -58,7 +58,7 @@ const AppsDropdown = () => {
                                 className="appsDropdown-link big m0 p1 pt0-75 pb0-75 flex flex-nowrap flex-items-center"
                                 external={!isCurrent}
                                 aria-current={isCurrent}
-                                title={title}
+                                title={c('Apps dropdown').t`Go to ${title}`}
                             >
                                 <Icon name={icon} size={20} className="mr0-5" />
                                 <span>{title}</span>
@@ -66,17 +66,17 @@ const AppsDropdown = () => {
                         </li>
                     );
                 })}
-                <li hidden className="dropDown-item appsDropdown-item">
+                <li className="dropDown-item appsDropdown-item">
                     <Link
-                        to="/account"
-                        target="_blank"
+                        to="/settings/subscription"
+                        target="_self"
                         external={true}
                         className="appsDropdown-link big m0 bl p1 pt0-75 pb0-25"
-                        title={c('Apps dropdown').t`Your account`}
+                        title={c('Apps dropdown').t`Add storage space`}
                     >
                         <span className="flex flex-nowrap flex-items-center">
-                            <Icon name="account" size={20} className="mr0-5" />
-                            <span>{c('Apps dropdown').t`Account`}</span>
+                            <Icon name="user-storage" size={20} className="mr0-5" />
+                            <span>{c('Apps dropdown').t`Storage capacity`}</span>
                         </span>
                         <div className="ml1-5">
                             <Meter className="is-thin bl mt0-25" value={spacePercentage} />
