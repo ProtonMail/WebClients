@@ -34,7 +34,6 @@ const getPaginatedEvents = async (api: Api, calendarID: string, dateRange: Date[
 
     while (lastStart !== undefined && iterations < MAX_FETCH_ITERATIONS) {
         // https://github.com/microsoft/TypeScript/issues/36687
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
         const { Events = [] } = await api<{ Events: CalendarEvent[] }>(
             queryEvents(calendarID, { ...params, Start: lastStart })

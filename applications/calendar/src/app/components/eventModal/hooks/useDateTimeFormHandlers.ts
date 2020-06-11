@@ -12,12 +12,12 @@ import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 
 const DEFAULT_MIN_TIME = new Date(Date.UTC(2000, 0, 1, 0, 0));
 
-interface useDateTimeFormHandlersArgs {
+interface UseDateTimeFormHandlersArgs {
     model: EventModel;
     setModel: (value: EventModel) => void;
 }
 
-const useDateTimeFormHandlers = ({ model, setModel }: useDateTimeFormHandlersArgs) => {
+const useDateTimeFormHandlers = ({ model, setModel }: UseDateTimeFormHandlersArgs) => {
     const { isAllDay, start, end } = model;
 
     const startUtcDate = getTimeInUtc(start, false);

@@ -7,7 +7,6 @@ module.exports = {
         developerName: 'Proton Technologies AG',
         developerURL: 'https: //github.com/ProtonMail/proton-calendar',
         background: '#262a33',
-        // eslint-disable-next-line @typescript-eslint/camelcase
-        theme_color: '#262a33'
-    }
+        theme_color: '#262a33',
+    },
 };

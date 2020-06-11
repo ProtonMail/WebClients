@@ -18,8 +18,6 @@ export interface CalendarModel {
     defaultFullDayNotification: NotificationModel;
     partDayNotifications: NotificationModel[];
     fullDayNotifications: NotificationModel[];
-    _emailPartDayNotifications: NotificationModel[];
-    _emailFullDayNotifications: NotificationModel[];
 }
 
 export interface CalendarErrors {

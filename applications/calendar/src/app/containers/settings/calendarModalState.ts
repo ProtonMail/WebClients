@@ -39,13 +39,6 @@ export const getCalendarModel = ({
         ({ type }) => type === SETTINGS_NOTIFICATION_TYPE.DEVICE
     );
 
-    const emailPartDayNotifications = partDayNotifications.filter(
-        ({ type }) => type === SETTINGS_NOTIFICATION_TYPE.EMAIL
-    );
-    const emailFullDayNotifications = fullDayNotifications.filter(
-        ({ type }) => type === SETTINGS_NOTIFICATION_TYPE.EMAIL
-    );
-
     return {
         calendarID: Calendar.ID,
         name: Calendar.Name,
@@ -57,8 +50,6 @@ export const getCalendarModel = ({
         duration: DefaultEventDuration,
         partDayNotifications: devicePartDayNotifications,
         fullDayNotifications: deviceFullDayNotifications,
-        _emailPartDayNotifications: emailPartDayNotifications,
-        _emailFullDayNotifications: emailFullDayNotifications,
     };
 };
 
@@ -76,8 +67,6 @@ export const getDefaultModel = (defaultColor: boolean): CalendarModel => {
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
         partDayNotifications: notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false),
         fullDayNotifications: notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true),
-        _emailPartDayNotifications: [],
-        _emailFullDayNotifications: [],
     };
 };
 
@@ -101,17 +90,11 @@ export const getCalendarPayload = (model: CalendarModel) => {
 };
 
 export const getCalendarSettingsPayload = (model: CalendarModel) => {
-    const {
-        duration,
-        fullDayNotifications,
-        partDayNotifications,
-        _emailPartDayNotifications = [],
-        _emailFullDayNotifications = [],
-    } = model;
+    const { duration, fullDayNotifications, partDayNotifications } = model;
 
     return {
         DefaultEventDuration: +duration,
-        DefaultFullDayNotifications: modelToNotifications(fullDayNotifications.concat(_emailFullDayNotifications)),
-        DefaultPartDayNotifications: modelToNotifications(partDayNotifications.concat(_emailPartDayNotifications)),
+        DefaultFullDayNotifications: modelToNotifications(fullDayNotifications),
+        DefaultPartDayNotifications: modelToNotifications(partDayNotifications),
     };
 };
