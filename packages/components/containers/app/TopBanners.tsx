@@ -3,12 +3,14 @@ import { getItem, setItem } from 'proton-shared/lib/helpers/storage';
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
-import { Href, useUser, useConfig } from '../../index';
+import { Href, useUser, useConfig, useOnline } from '../../index';
 import TopBanner from './TopBanner';
 
 const IGNORE_STORAGE_LIMIT_KEY = 'ignore-storage-limit';
 
 const TopBanners = () => {
+    const onlineStatus = useOnline();
+    const [backOnline, setBackOnline] = useState(false);
     const [user] = useUser();
     const { CLIENT_TYPE } = useConfig();
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useState(
@@ -32,6 +34,20 @@ const TopBanners = () => {
         }
     }, [ignoreStorageLimit]);
 
+    useEffect(() => {
+        if (!onlineStatus) {
+            setBackOnline(true);
+        }
+
+        if (onlineStatus) {
+            const timeout = window.setTimeout(() => {
+                setBackOnline(false);
+            }, 2000);
+            return () => window.clearTimeout(timeout);
+
+        }
+    }, [onlineStatus]);
+
     return (
         <>
             {!isNaN(spacePercentage) && spacePercentage >= 100 ? (
@@ -49,6 +65,13 @@ const TopBanners = () => {
             {user.isDelinquent && user.isMember ? (
                 <TopBanner className="bg-global-warning">{c('Info')
                     .t`Account access restricted due to unpaid invoices. Please contact your administrator.`}</TopBanner>
+            ) : null}
+            {onlineStatus ? null : (
+                <TopBanner className="bg-global-warning">{c('Info')
+                    .t`Internet connection lost. Please check your device's connectivity.`}</TopBanner>
+            )}
+            {onlineStatus && backOnline ? (
+                <TopBanner className="bg-global-success">{c('Info').t`Internet connection restored.`}</TopBanner>
             ) : null}
         </>
     );

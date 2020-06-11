@@ -314,6 +314,7 @@ export { default as InternalServerError } from './containers/error/InternalServe
 export { default as NotFoundError } from './containers/error/NotFoundError';
 export { default as AccessDeniedError } from './containers/error/AccessDeniedError';
 export { default as useStep } from './hooks/useStep';
+export { default as useOnline } from './hooks/useOnline';
 export { default as useApiWithoutResult } from './hooks/useApiWithoutResult';
 export { default as useEventManager } from './containers/eventManager/useEventManager';
 export { default as useNotifications } from './containers/notifications/useNotifications';
