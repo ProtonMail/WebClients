@@ -2,13 +2,12 @@ import React from 'react';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { c } from 'ttag';
 import { Icon, classnames } from 'react-components';
-import { Download } from '../downloads/DownloadProvider';
-import { Upload } from '../uploads/UploadProvider';
 import ProgressBar, { ProgressBarStatus } from './ProgressBar';
-import { TransferState } from '../../interfaces/transfer';
+import { TransferState, Download, Upload } from '../../interfaces/transfer';
 import TransferStateIndicator from './TransferStateIndicator';
 import TransferControls from './TransferControls';
 import FileIcon from '../FileIcon/FileIcon';
+import { isTransferProgress, isTransferInitializing, isTransferFinished } from '../../utils/transfer';
 
 export enum TransferType {
     Download = 'download',
@@ -40,11 +39,9 @@ type Props = (DownloadProps | UploadProps) & {
 
 const Transfer = ({ stats, ...props }: Props) => {
     const { transfer, type } = props;
-    const isProgress = transfer.state === TransferState.Progress;
-    const isError = transfer.state === TransferState.Canceled || transfer.state === TransferState.Error;
-    const isDone = transfer.state === TransferState.Done;
-    const isInitializing = transfer.state === TransferState.Initializing;
-    const isFinished = isError || isDone;
+    const isProgress = isTransferProgress(transfer);
+    const isInitializing = isTransferInitializing(transfer);
+    const isFinished = isTransferFinished(transfer);
 
     const fileSize = transfer.meta.size;
     const progressLimit = fileSize || 1;

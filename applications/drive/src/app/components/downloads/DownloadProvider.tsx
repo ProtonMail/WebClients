@@ -1,11 +1,12 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
-import { TransferState, TransferProgresses, TransferMeta } from '../../interfaces/transfer';
+import { TransferState, TransferProgresses, TransferMeta, Download } from '../../interfaces/transfer';
 import { initDownload, DownloadControls, DownloadCallbacks } from './download';
 import { useApi, generateUID } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import { FILE_CHUNK_SIZE, MAX_THREADS_PER_DOWNLOAD } from '../../constants';
 import { LinkType } from '../../interfaces/link';
 import usePreventLeave from '../../hooks/usePreventLeave';
+import { isTransferFailed, isTransferPaused, isTransferProgress, isTransferPending } from '../../utils/transfer';
 
 const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
 
@@ -16,15 +17,6 @@ type PartialDownload = {
     state: TransferState;
     resumeState?: TransferState;
     type: LinkType;
-};
-
-export type Download = {
-    id: string;
-    meta: TransferMeta;
-    state: TransferState;
-    resumeState?: TransferState;
-    type: LinkType;
-    startDate: Date;
 };
 
 interface DownloadProviderState {
@@ -72,10 +64,8 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         setDownloads((downloads) =>
             downloads.map((download) => {
                 const state = typeof nextState === 'function' ? nextState(download) : nextState;
-                return ids.includes(download.id) &&
-                    download.state !== state &&
-                    (download.state !== TransferState.Canceled || state !== TransferState.Error)
-                    ? { ...download, state, resumeState: state === TransferState.Paused ? download.state : undefined }
+                return ids.includes(download.id) && download.state !== state && !isTransferFailed({ state })
+                    ? { ...download, state, resumeState: isTransferPaused({ state }) ? download.state : undefined }
                     : download;
             })
         );
@@ -100,7 +90,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
             return;
         }
 
-        if (download.state === TransferState.Progress) {
+        if (isTransferProgress(download)) {
             await controls.current[id].pause();
         }
         updateDownloadState(id, TransferState.Paused);
@@ -121,9 +111,9 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     };
 
     useEffect(() => {
-        const activeDownloads = downloads.filter(({ state }) => state === TransferState.Progress);
-        const nextPending = downloads.find(({ state }) => state === TransferState.Pending);
-        const downloadLoad = activeDownloads.reduce((load, download) => {
+        const downloading = downloads.filter(isTransferProgress);
+        const nextPending = downloads.find(isTransferPending);
+        const downloadLoad = downloading.reduce((load, download) => {
             if (download.type === LinkType.FOLDER) {
                 return load;
             }

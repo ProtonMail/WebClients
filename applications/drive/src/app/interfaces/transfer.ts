@@ -1,3 +1,5 @@
+import { LinkType } from './link';
+
 export enum TransferState {
     Initializing = 'initializing',
     Pending = 'pending',
@@ -24,3 +26,30 @@ export class TransferCancel extends Error {
         this.name = 'TransferCancel';
     }
 }
+
+export interface UploadInfo {
+    blob: Blob;
+    LinkID: string;
+    ShareID: string;
+    RevisionID: string;
+    ParentLinkID: string;
+}
+
+export interface Upload {
+    id: string;
+    meta: TransferMeta;
+    info?: UploadInfo;
+    state: TransferState;
+    startDate: Date;
+}
+
+export type Download = {
+    id: string;
+    meta: TransferMeta;
+    state: TransferState;
+    resumeState?: TransferState;
+    type: LinkType;
+    startDate: Date;
+};
+
+export type Transfer = Upload | Download;

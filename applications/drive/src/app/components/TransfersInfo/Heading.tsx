@@ -3,16 +3,15 @@ import { c } from 'ttag';
 
 import { Icon, Tooltip, classnames } from 'react-components';
 
-import { Download } from '../downloads/DownloadProvider';
-import { Upload } from '../uploads/UploadProvider';
-import { TransferState } from '../../interfaces/transfer';
+import { Transfer, Download, Upload } from '../../interfaces/transfer';
 import { TransfersStats } from './TransfersInfo';
-
-const isTransferActive = ({ state }: Upload | Download) =>
-    state === TransferState.Pending || state === TransferState.Progress || state === TransferState.Initializing;
-const isTransferDone = ({ state }: Upload | Download) => state === TransferState.Done;
-const isTransferFailed = ({ state }: Upload | Download) => state === TransferState.Error;
-const isTransferCanceled = ({ state }: Upload | Download) => state === TransferState.Canceled;
+import {
+    isTransferActive,
+    isTransferDone,
+    isTransferPaused,
+    isTransferError,
+    isTransferCanceled
+} from '../../utils/transfer';
 
 interface Props {
     downloads: Download[];
@@ -36,7 +35,8 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
     const doneUploads = useMemo(() => uploads.filter(isTransferDone), [uploads]);
     const doneDownloads = useMemo(() => downloads.filter(isTransferDone), [downloads]);
 
-    const failedTransfers = useMemo(() => transfers.filter(isTransferFailed), [transfers]);
+    const pausedTransfers = useMemo(() => transfers.filter(isTransferPaused), [transfers]);
+    const failedTransfers = useMemo(() => transfers.filter(isTransferError), [transfers]);
     const canceledTransfers = useMemo(() => transfers.filter(isTransferCanceled), [transfers]);
 
     const activeUploadsCount = activeUploads.length;
@@ -74,8 +74,9 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
 
         const errorCount = failedTransfers.length;
         const canceledCount = canceledTransfers.length;
+        const pausedCount = pausedTransfers.length;
 
-        const calculateProgress = (transfers: (Upload | Download)[]) => {
+        const calculateProgress = (transfers: Transfer[]) => {
             const result = transfers.reduce(
                 (result, transfer) => {
                     result.size += transfer.meta.size || 0;
@@ -108,6 +109,10 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
         if (activeDownloadsCount) {
             const downloadProgress = calculateProgress(currentDownloads);
             headingElements.push(c('Info').t`${activeDownloadsCount} Downloading ${downloadProgress}%`);
+        }
+
+        if (pausedCount) {
+            headingElements.push(c('Info').t`${pausedCount} Paused`);
         }
 
         if (canceledCount) {

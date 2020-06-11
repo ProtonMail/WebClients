@@ -5,6 +5,7 @@ import { TransferState } from '../../interfaces/transfer';
 import { c } from 'ttag';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import { TransferType, UploadProps, DownloadProps } from './Transfer';
+import { isTransferPaused } from '../../utils/transfer';
 
 function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
     const { cancelDownload, removeDownload, pauseDownload, resumeDownload } = useDownloadProvider();
@@ -27,7 +28,7 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
     };
 
     const togglePause = () => {
-        if (transfer.state === TransferState.Paused) {
+        if (isTransferPaused(transfer)) {
             resumeDownload(transfer.id);
         } else {
             withPauseInProgress(pauseDownload(transfer.id));
@@ -42,13 +43,9 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
                     onClick={togglePause}
                     disabled={pauseInProgress}
                     className="pd-transfers-controlButton pm-button--info pm-button--for-icon rounded50 flex-item-noshrink flex mr0-25"
-                    title={
-                        transfer.state === TransferState.Paused
-                            ? c('Action').t`Resume transfer`
-                            : c('Action').t`Pause transfer`
-                    }
+                    title={isTransferPaused(transfer) ? c('Action').t`Resume transfer` : c('Action').t`Pause transfer`}
                 >
-                    <Icon size={12} name={transfer.state === TransferState.Paused ? 'resume' : 'pause'} />
+                    <Icon size={12} name={isTransferPaused(transfer) ? 'resume' : 'pause'} />
                 </button>
             )}
             <button
