@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { RouteComponentProps } from 'react-router';
+import { Toolbar, PrivateMainArea, useAppTitle } from 'react-components';
 import { c } from 'ttag';
-import { Toolbar } from 'react-components';
 import Drive from '../components/Drive/Drive';
-import Page, { PageMainArea } from '../components/Page';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
 import DriveContentProvider from '../components/Drive/DriveContentProvider';
 import DriveToolbar from '../components/Drive/DriveToolbar';
@@ -65,20 +64,21 @@ function DriveContainer({
         history.push(`/drive/${shareId}/${toLinkURLType(type)}/${linkId}`);
     };
 
+    useAppTitle(c('Title').t`My files`, 'ProtonDrive');
+
     // TODO: change toolbar props to optional children in react-components
     return (
-        <Page title={c('Title').t`My files`}>
-            <DriveContentProvider folder={folder}>
-                {folder ? <DriveToolbar activeFolder={folder} openLink={navigateToLink} /> : <Toolbar>{null}</Toolbar>}
-                <PageMainArea hasToolbar className="flex flex-column flex-nowrap">
-                    <div className="pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
-                        {folder && <DriveBreadcrumbs activeFolder={folder} openLink={navigateToLink} />}
-                    </div>
+        <DriveContentProvider folder={folder}>
+            {folder ? <DriveToolbar activeFolder={folder} openLink={navigateToLink} /> : <Toolbar>{null}</Toolbar>}
 
-                    {folder && <Drive activeFolder={folder} openLink={navigateToLink} />}
-                </PageMainArea>
-            </DriveContentProvider>
-        </Page>
+            <PrivateMainArea hasToolbar className="flex flex-column">
+                <div className="pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
+                    {folder && <DriveBreadcrumbs activeFolder={folder} openLink={navigateToLink} />}
+                </div>
+
+                {folder && <Drive activeFolder={folder} openLink={navigateToLink} />}
+            </PrivateMainArea>
+        </DriveContentProvider>
     );
 }
 
