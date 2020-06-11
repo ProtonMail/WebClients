@@ -6,6 +6,8 @@
 - add `swipe`, `pause`, `resume` icon
 - added helper `onmobile-flex-self-start` and `onmobile-p0-5/pl0-5/pt0-5/etc.` stuff
 - new app switcher!
+- new tab switcher component
+- global structure change (for banners)
 
 ## Updated/fixes
 
@@ -18,7 +20,7 @@
 - hotfixed and reworked meter and progress elements next to Chrome 83 update
 - remove gradient in navigation
 - remove pointer-events on disabled buttons
-- fix selected in dropDown
+- fix selected/last element border in dropDown
 - fix unread message selected
 
 
