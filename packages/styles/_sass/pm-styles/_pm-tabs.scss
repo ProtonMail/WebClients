@@ -3,41 +3,70 @@
   padding: 0;
   @extend .unstyled;
   @extend .flex;
-  border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+  @extend .relative;
+  white-space: nowrap;
 }
 
 .tabs-list-item {
   margin-right: 1rem;
+  color: var(--text-sub-header, $text-sub-header);
+  min-width: auto;
 }
 
 .tabs-list-link {
   @extend .flex;
-  color: var(--color-main-area, $pm-global-grey);
-  border-bottom: 2px solid var(--bordercolor-input, $pm-global-border); 
+  color: inherit;
+  border-bottom: 2px solid transparent;
   padding: .5em;
   @extend .nodecoration;
   @extend .relative;
   top: 1px;
+  transition: color 0.15s ease-out, border-bottom 0.15s ease-out;
   &:focus,
   &:hover {
-    color: var(--color-main-area, $pm-global-grey);
-    font-weight: bold;
     @extend .nodecoration;
+    color: var(--color-main-area, $pm-global-grey);
+    border-bottom: 2px solid var(--bordercolor-input, $pm-global-border);
   }
   &[disabled] {
     opacity: .4;
     cursor: default;
     pointer-events: none;
-    &:focus,
-    &:hover {
-      font-weight: normal;
-    } 
   }
 }
 
 [aria-selected="true"].tabs-list-link {
-  font-weight: bold;
   border-bottom: 2px solid $pm-primary;
+  color: var(--color-main-area, $pm-global-grey);
 }
 
+.tabs-container {
+  border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+}
+
+.tabs-indicator {
+  position: absolute;
+  border-bottom: 2px solid $pm-primary;
+  content: "";
+  height: 0;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  transform-origin: left center;
+  transition: transform .15s ease-out;
+  transform: translateX(var(--translate)) scaleX(var(--scale));
+}
+
+.tabs--extended {
+  margin: 0 var(--margin-modal--negative, -$modal-margin);
+  .tabs-container {
+    padding-left: var(--margin-modal, $modal-margin);
+  }
+  .tabs-tabcontent {
+    padding-left: var(--margin-modal, $modal-margin);
+    padding-right: var(--margin-modal, $modal-margin);
+    background-color: var(--bgcolor-subnav, $pm-input-background);
+    border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+  }
+}
 /* hidden state for content is not necessary for React, added in exception for Design system website */
