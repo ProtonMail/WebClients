@@ -8,6 +8,7 @@
 - new app switcher!
 - new tab switcher component
 - global structure change (for banners)
+- added new minor breakpoint (medium-landscape, ~1100, will be documented soon)
 
 ## Updated/fixes
 
@@ -23,6 +24,8 @@
 - fix selected/last element border in dropDown
 - fix unread message selected
 - fix - unread item in row mode
+- fix - limitated modal full-width for very big screens.
+- fix - some missing `!default`
 
 
 # [1.8.3] - 2019-05-18

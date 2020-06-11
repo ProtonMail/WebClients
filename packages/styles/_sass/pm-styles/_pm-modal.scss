@@ -15,6 +15,7 @@ $modal-wider-width: 70% !default;
 $modal-wider-max-width: 100rem !default;
 
 $modal-full-dimension: 98% !default;
+$modal-full-max-width: 150rem !default;
 
 $modal-smaller-width: 28em !default;
 
@@ -281,3 +282,10 @@ $pm-label-shorter-width: 10em !default;
 }
 
 
+@media (min-width: $breakpoint-large) {
+	.pm-modal--full {
+		max-width: $modal-full-max-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
