@@ -11,8 +11,27 @@ import {
     VcalVtodoComponent
 } from '../interfaces/calendar/VcalModel';
 
-export const getIsIcalPropertyAllDay = (property: VcalDateOrDateTimeProperty): property is VcalDateProperty => {
+export const getIsPropertyAllDay = (property: VcalDateOrDateTimeProperty): property is VcalDateProperty => {
     return property.parameters?.type === 'date' ?? false;
+};
+
+export const getPropertyTzid = (property: VcalDateOrDateTimeProperty) => {
+    if (getIsPropertyAllDay(property)) {
+        return;
+    }
+    return property.value.isUTC ? 'UTC' : property.parameters?.tzid;
+};
+
+export const getIsAllDay = ({ dtstart }: VcalVeventComponent) => {
+    return getIsPropertyAllDay(dtstart);
+};
+
+export const getIsRecurring = ({ rrule }: VcalVeventComponent) => {
+    return !!rrule;
+};
+
+export const getRecurrenceId = ({ 'recurrence-id': recurrenceId }: VcalVeventComponent) => {
+    return recurrenceId;
 };
 
 export const getIsDateTimeValue = (value: VcalDateOrDateTimeValue): value is VcalDateTimeValue => {
@@ -41,4 +60,22 @@ export const getIsTimezoneComponent = (
     vcalComponent: VcalCalendarComponent
 ): vcalComponent is VcalVtimezoneComponent => {
     return vcalComponent.component.toLowerCase() === 'vtimezone';
+};
+
+export const getHasUid = (
+    vevent: VcalVeventComponent
+): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'uid'>> => {
+    return !!vevent.uid?.value;
+};
+
+export const getHasDtStart = (
+    vevent: VcalVeventComponent
+): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtstart'>> => {
+    return !!vevent.dtstart?.value;
+};
+
+export const getHasDtend = (
+    vevent: VcalVeventComponent
+): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>> => {
+    return !!vevent.dtend;
 };

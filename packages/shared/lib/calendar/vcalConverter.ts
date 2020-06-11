@@ -1,3 +1,4 @@
+import { addDays } from '../date-fns-utc';
 import { convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
 import { DateTime } from '../interfaces/calendar/Date';
 import {
@@ -5,11 +6,10 @@ import {
     VcalDateProperty,
     VcalDateTimeProperty,
     VcalDaysKeys,
-    VcalDays,
-    VcalVeventComponent
+    VcalDays
 } from '../interfaces/calendar/VcalModel';
 import { mod } from '../helpers/math';
-import { getIsIcalPropertyAllDay } from './vcalHelper';
+import { getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
 
 export const dateToProperty = ({
     year = 1,
@@ -54,30 +54,34 @@ export const getDateTimeProperty = (zonelessTime: DateTime, tzid = '') => {
     return dateTimeToProperty(zonelessTime, isUTC, isUTC ? undefined : tzid);
 };
 
-export const getPropertyTzid = (property: VcalDateOrDateTimeProperty) => {
-    if (getIsIcalPropertyAllDay(property)) {
-        return;
-    }
-    return property.value.isUTC ? 'UTC' : property.parameters?.tzid;
-};
-
 export const getDateOrDateTimeProperty = (property: VcalDateOrDateTimeProperty, start: Date) => {
-    if (getIsIcalPropertyAllDay(property)) {
+    if (getIsPropertyAllDay(property)) {
         return getDateProperty(fromUTCDate(start));
     }
     return getDateTimeProperty(fromUTCDate(start), getPropertyTzid(property));
 };
 
-export const isIcalAllDay = ({ dtstart, dtend }: VcalVeventComponent) => {
-    return (dtstart && getIsIcalPropertyAllDay(dtstart)) || (dtend && getIsIcalPropertyAllDay(dtend));
-};
-
 export const propertyToUTCDate = (property: VcalDateOrDateTimeProperty) => {
-    if (getIsIcalPropertyAllDay(property) || property.value.isUTC || !property.parameters?.tzid) {
+    if (getIsPropertyAllDay(property) || property.value.isUTC || !property.parameters?.tzid) {
         return toUTCDate(property.value);
     }
     // For dates with a timezone, convert the relative date time to UTC time
     return toUTCDate(convertZonedDateTimeToUTC(property.value, property.parameters.tzid));
+};
+
+interface GetDtendPropertyArgs {
+    dtstart: VcalDateOrDateTimeProperty;
+    dtend?: VcalDateOrDateTimeProperty;
+}
+export const getDtendProperty = ({ dtstart, dtend }: GetDtendPropertyArgs) => {
+    if (dtend) {
+        return dtend;
+    }
+    if (getIsPropertyAllDay(dtstart)) {
+        const utcEnd = addDays(toUTCDate(dtstart.value), 1);
+        return getDateProperty(fromUTCDate(utcEnd));
+    }
+    return getDateTimeProperty(dtstart.value, getPropertyTzid(dtstart));
 };
 
 export const dayToNumericDay = (day: VcalDaysKeys): VcalDays | undefined => {
