@@ -21,20 +21,11 @@ describe('getFormattedWeekdays', () => {
             'vendredi',
             'samedi'
         ]);
-        expect(getFormattedWeekdays('cccc', { locale: fr, weekStartsOn: 1 })).toEqual([
-            'dimanche',
-            'lundi',
-            'mardi',
-            'mercredi',
-            'jeudi',
-            'vendredi',
-            'samedi'
-        ]);
     });
 });
 
 describe('getFormattedMonths', () => {
-    it('should get a list with the names of the days of the week according to current locale', () => {
+    it('should get a list with the names of the months of the year according to current locale', () => {
         expect(getFormattedMonths('MMMM', { locale: enUS })).toEqual([
             'January',
             'February',
@@ -67,7 +58,7 @@ describe('getFormattedMonths', () => {
 });
 
 describe('getWeekStartsOn', () => {
-    it('should get a list with the names of the days of the week according to current locale', () => {
+    it('should get a index from 0 (Sunday) to 6 (Saturday) of the first day of week of a given locale', () => {
         expect(getWeekStartsOn(enUS)).toEqual(0);
         expect(getWeekStartsOn(fr)).toEqual(1);
     });

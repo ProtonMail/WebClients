@@ -2,7 +2,6 @@ import { eachDayOfInterval, startOfWeek, endOfWeek, startOfYear, format, addMont
 
 interface FormatOptions {
     locale?: Locale;
-    weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 /**
