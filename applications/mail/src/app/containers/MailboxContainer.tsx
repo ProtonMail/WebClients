@@ -167,7 +167,7 @@ const MailboxContainer = ({
 
     const showToolbar = !breakpoints.isNarrow || !inputElementID;
     const showList = columnMode || !inputElementID;
-    const showContentView = columnMode || inputElementID;
+    const showContentView = (columnMode && (loading || elements.length)) || inputElementID;
     const showPlaceholder = !breakpoints.isNarrow && !elementID;
     const showMobileCompose = breakpoints.isNarrow;
 
@@ -199,7 +199,7 @@ const MailboxContainer = ({
             <div
                 className={classnames([
                     'flex-item-fluid flex reset4print',
-                    !columnMode && 'main-area--rowMode',
+                    !showContentView && 'main-area--rowMode',
                     showToolbar ? 'main-area--withToolbar' : 'main-area'
                 ])}
             >
