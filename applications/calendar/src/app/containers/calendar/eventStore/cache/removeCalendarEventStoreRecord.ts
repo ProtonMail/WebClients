@@ -1,6 +1,7 @@
-import { isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
+import { getIsRecurring } from 'proton-shared/lib/calendar/vcalHelper';
+
 import { CalendarEventCache } from '../interface';
-import { getRecurrenceId, getUid } from '../../event/getEventHelper';
+import { getRecurrenceIdDate, getUid } from '../../event/getEventHelper';
 import { removeEventFromRecurrenceInstances, removeEventFromRecurringCache } from './recurringCache';
 
 export const removeCalendarEventStoreRecord = (
@@ -16,8 +17,8 @@ export const removeCalendarEventStoreRecord = (
     tree.remove(+utcStart, +utcEnd, EventID);
 
     const uid = getUid(eventComponent);
-    const recurrenceId = getRecurrenceId(eventComponent);
-    const isRecurring = isIcalRecurring(eventComponent);
+    const recurrenceId = getRecurrenceIdDate(eventComponent);
+    const isRecurring = getIsRecurring(eventComponent);
 
     if (recurrenceId) {
         removeEventFromRecurrenceInstances(uid, +recurrenceId, recurringEvents);

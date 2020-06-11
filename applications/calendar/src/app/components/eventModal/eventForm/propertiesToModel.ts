@@ -1,3 +1,4 @@
+import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
@@ -15,13 +16,12 @@ export const propertiesToModel = (component: VcalVeventComponent, isAllDay: bool
         description,
         summary,
         dtstart = DEFAULT_TIME,
-        dtend = DEFAULT_TIME,
         rrule,
         // attendee,
         ...rest
     } = component;
 
-    const { start, end } = propertiesToDateTimeModel(dtstart, dtend, isAllDay, tzid);
+    const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(component), isAllDay, tzid);
 
     return {
         uid: uid ? uid.value : undefined,

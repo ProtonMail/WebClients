@@ -2,7 +2,7 @@ import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { Address } from 'proton-shared/lib/interfaces';
 import { Member } from 'proton-shared/lib/interfaces/calendar';
 import parseMainEventData from './parseMainEventData';
-import { getRecurrenceId } from './getEventHelper';
+import { getRecurrenceIdDate } from './getEventHelper';
 import { getComponentWithPersonalPart } from '../../../helpers/event';
 import { DecryptedEventTupleResult } from '../eventStore/interface';
 
@@ -23,7 +23,7 @@ const getEditEventData = ({ eventData, eventResult, memberResult: [member, addre
         throw new Error('Event without UID');
     }
 
-    const recurrenceID = getRecurrenceId(mainVeventComponent);
+    const recurrenceID = getRecurrenceIdDate(mainVeventComponent);
 
     const veventComponentFull = eventResult
         ? getComponentWithPersonalPart({

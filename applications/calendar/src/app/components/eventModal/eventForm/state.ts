@@ -1,6 +1,5 @@
-import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
+import { getRecurrenceId, getIsAllDay, getIsRecurring } from 'proton-shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
-import { getIcalRecurrenceId, isIcalRecurring } from 'proton-shared/lib/calendar/recurring';
 import { Address as tsAddress } from 'proton-shared/lib/interfaces';
 import {
     Calendar as tsCalendar,
@@ -178,9 +177,9 @@ export const getExistingEvent = ({
     veventValarmComponent,
     tzid,
 }: GetExistingEventArguments): Partial<EventModel> => {
-    const isAllDay = isIcalAllDay(veventComponent);
-    const isRecurring = isIcalRecurring(veventComponent);
-    const recurrenceId = getIcalRecurrenceId(veventComponent);
+    const isAllDay = getIsAllDay(veventComponent);
+    const isRecurring = getIsRecurring(veventComponent);
+    const recurrenceId = getRecurrenceId(veventComponent);
 
     const newModel = propertiesToModel(veventComponent, isAllDay, tzid);
     const strippedDescription = stripAllTags(newModel.description);

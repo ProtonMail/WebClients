@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
+import { getIsAllDay } from 'proton-shared/lib/calendar/vcalHelper';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { propertiesToModel } from '../eventModal/eventForm/propertiesToModel';
 import { propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToNotificationModel';
@@ -26,7 +26,7 @@ const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string
             DEFAULT_VEVENT,
             {},
         ];
-        const isAllDay = isIcalAllDay(veventComponent);
+        const isAllDay = getIsAllDay(veventComponent);
         const model = propertiesToModel(veventComponent, isAllDay, tzid);
         const notifications = Object.keys(alarmMap)
             .map((key) => {

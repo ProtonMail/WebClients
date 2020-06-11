@@ -1,7 +1,9 @@
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
-import { getIcalRecurrenceId, getOccurrences } from 'proton-shared/lib/calendar/recurring';
+import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import { VcalDateOrDateTimeProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
+
 import parseMainEventData from '../event/parseMainEventData';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
@@ -12,7 +14,7 @@ export const getOriginalEvent = (recurrences: CalendarEvent[]) => {
         if (!component) {
             return false;
         }
-        return !getIcalRecurrenceId(component);
+        return !getRecurrenceId(component);
     });
 };
 
@@ -36,7 +38,7 @@ export const getRecurrenceEventsAfter = (recurrences: CalendarEvent[], date: Dat
         if (!component) {
             return false;
         }
-        const rawRecurrenceId = getIcalRecurrenceId(component);
+        const rawRecurrenceId = getRecurrenceId(component);
         if (!rawRecurrenceId || !rawRecurrenceId.value) {
             return false;
         }

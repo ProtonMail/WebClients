@@ -1,6 +1,6 @@
 import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
-import { getPropertyTzid, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
-import { getIsIcalPropertyAllDay } from 'proton-shared/lib/calendar/vcalHelper';
+import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import { getIsPropertyAllDay, getPropertyTzid } from 'proton-shared/lib/calendar/vcalHelper';
 import { toLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import {
     VcalDaysKeys,
@@ -213,11 +213,7 @@ export const getSupportedRrule = (vevent: VcalVeventComponent): VcalRrulePropert
     const supportedRrule = { ...rrule };
 
     if (until) {
-        supportedRrule.value.until = getUntilProperty(
-            until,
-            getIsIcalPropertyAllDay(dtstart),
-            getPropertyTzid(dtstart)
-        );
+        supportedRrule.value.until = getUntilProperty(until, getIsPropertyAllDay(dtstart), getPropertyTzid(dtstart));
     }
     if (!getIsRruleSupported(rrule.value)) {
         return;

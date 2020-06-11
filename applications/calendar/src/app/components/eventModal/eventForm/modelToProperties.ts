@@ -1,6 +1,8 @@
 import { withRequiredProperties } from 'proton-shared/lib/calendar/veventHelper';
-import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
+import { getDateProperty, getDateTimeProperty, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { addDays } from 'date-fns';
+import { isSameDay } from 'proton-shared/lib/date-fns-utc';
+import { omit } from 'proton-shared/lib/helpers/object';
 
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import modelToFrequencyProperties from './modelToFrequencyProperties';
@@ -35,11 +37,11 @@ const modelToDateProperties = ({ start, end, isAllDay }: EventModel) => {
     // All day events date ranges are stored non-inclusively, so add a full day from the selected date to the end date
     const modifiedEnd = isAllDay ? { ...end, date: addDays(end.date, 1) } : end;
     const dtend = modelToDateProperty(modifiedEnd, isAllDay);
+    const ignoreDtend = isAllDay
+        ? isSameDay(start.date, end.date)
+        : +propertyToUTCDate(dtstart) === +propertyToUTCDate(dtend);
 
-    return {
-        dtstart,
-        dtend,
-    };
+    return ignoreDtend ? { dtstart } : { dtstart, dtend };
 };
 
 export const modelToGeneralProperties = ({
@@ -49,10 +51,8 @@ export const modelToGeneralProperties = ({
     description,
     attendees,
     rest,
-}: Partial<EventModel>): VcalVeventComponent => {
-    const properties = {
-        ...rest,
-    };
+}: Partial<EventModel>): Omit<VcalVeventComponent, 'dtstart' | 'dtend'> => {
+    const properties = omit(rest, ['dtstart', 'dtend']);
 
     if (title) {
         properties.summary = { value: title.trim().slice(0, MAX_LENGTHS.TITLE) };

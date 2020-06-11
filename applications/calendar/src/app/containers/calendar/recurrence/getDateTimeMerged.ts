@@ -4,14 +4,14 @@ import {
     getDateProperty,
     getDateTimeProperty,
 } from 'proton-shared/lib/calendar/vcalConverter';
-import { getIsIcalPropertyAllDay } from 'proton-shared/lib/calendar/vcalHelper';
+import { getIsPropertyAllDay } from 'proton-shared/lib/calendar/vcalHelper';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 
 export const getStartDateTimeMerged = (
     newProperty: VcalDateOrDateTimeProperty,
     originalProperty: VcalDateOrDateTimeProperty
 ): VcalDateOrDateTimeProperty => {
-    if (getIsIcalPropertyAllDay(newProperty)) {
+    if (getIsPropertyAllDay(newProperty)) {
         return getDateProperty(originalProperty.value);
     }
     return getDateTimeProperty(

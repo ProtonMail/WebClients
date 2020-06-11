@@ -1,10 +1,5 @@
-import {
-    getDateProperty,
-    getDateTimeProperty,
-    getPropertyTzid,
-    isIcalAllDay,
-    propertyToUTCDate,
-} from 'proton-shared/lib/calendar/vcalConverter';
+import { getDateProperty, getDateTimeProperty, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import { getIsAllDay, getPropertyTzid } from 'proton-shared/lib/calendar/vcalHelper';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import {
     VcalDateOrDateTimeProperty,
@@ -49,7 +44,7 @@ export const getSafeRruleUntil = (rrule: VcalRruleProperty, component: VcalVeven
 
     // If the event was moved after the until date, fixup the until
     if (newStartTime > originalUntilDateTime) {
-        const until = getUntilProperty(dtstart.value, isIcalAllDay(component), getPropertyTzid(dtstart));
+        const until = getUntilProperty(dtstart.value, getIsAllDay(component), getPropertyTzid(dtstart));
         return {
             ...rrule,
             value: {

@@ -1,3 +1,4 @@
+import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getSafeRruleUntil } from './helper';
@@ -46,7 +47,11 @@ const updateAllRecurrence = ({ component, originalComponent, mode }: Arguments) 
         veventWithOldUID.exdate = originalComponent.exdate;
         // If single edits are to be kept, the start time can not change, shouldn't get here if not but just to be sure
         veventWithOldUID.dtstart = originalComponent.dtstart;
-        veventWithOldUID.dtend = getEndDateTimeMerged(component.dtstart, component.dtend, veventWithOldUID.dtstart);
+        veventWithOldUID.dtend = getEndDateTimeMerged(
+            component.dtstart,
+            getDtendProperty(component),
+            veventWithOldUID.dtstart
+        );
 
         return veventWithOldUID;
     }
@@ -56,7 +61,7 @@ const updateAllRecurrence = ({ component, originalComponent, mode }: Arguments) 
         delete veventWithOldUID.exdate;
 
         const mergedDtstart = getStartDateTimeMerged(component.dtstart, originalComponent.dtstart);
-        const mergedDtend = getEndDateTimeMerged(component.dtstart, component.dtend, mergedDtstart);
+        const mergedDtend = getEndDateTimeMerged(component.dtstart, getDtendProperty(component), mergedDtstart);
 
         veventWithOldUID.dtstart = mergedDtstart;
         veventWithOldUID.dtend = mergedDtend;

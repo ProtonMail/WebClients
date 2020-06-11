@@ -75,6 +75,20 @@ END:VEVENT`;
         );
     });
 
+    test('should catch events whose duration is specified through the DURATION field', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART;TZID=America/New_York:20020312T083000
+DURATION:PT1H0M0S
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(() => getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toThrowError(
+            'Event duration not supported'
+        );
+    });
+
     test('should filter out notifications out of bounds', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
@@ -314,7 +328,7 @@ DTEND:20030101T003000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const tzid = 'Europe/Brussels';
-        const event = parse(vevent) as VcalVeventComponent;
+        const event = parse(vevent) as VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>>;
         expect(getSupportedEvent({ vcalComponent: event, calendarTzid: tzid, hasXWrTimezone: true })).toEqual({
             ...event,
             dtstart: { value: event.dtstart.value, parameters: { tzid } },

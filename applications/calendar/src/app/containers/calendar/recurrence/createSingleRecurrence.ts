@@ -1,4 +1,4 @@
-import { getPropertyTzid, isIcalAllDay } from 'proton-shared/lib/calendar/vcalConverter';
+import { getIsAllDay, getPropertyTzid } from 'proton-shared/lib/calendar/vcalHelper';
 import { fromUTCDate } from 'proton-shared/lib/date/timezone';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
@@ -11,7 +11,7 @@ const createSingleRecurrence = (
 ): VcalVeventComponent => {
     const singleExdate = toExdate(
         fromUTCDate(localStartToExclude),
-        isIcalAllDay(originalComponent),
+        getIsAllDay(originalComponent),
         getPropertyTzid(originalComponent.dtstart)
     );
 
