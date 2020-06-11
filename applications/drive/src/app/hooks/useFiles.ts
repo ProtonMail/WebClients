@@ -58,12 +58,7 @@ function useFiles() {
 
     const findAvailableName = queuedFunction(
         'findAvailableName',
-        async (
-            shareId: string,
-            parentLinkID: string,
-            filename: string,
-            start = 0
-        ): Promise<{ filename: string; hash: string }> => {
+        async (shareId: string, parentLinkID: string, filename: string) => {
             const parentKeys = await getLinkKeys(shareId, parentLinkID);
 
             if (!('hashKey' in parentKeys)) {
@@ -85,32 +80,36 @@ function useFiles() {
                 return extension ? [newNamePart, extension].join('.') : newNamePart;
             };
 
-            const hashesToCheck = await Promise.all(
-                range(start, start + HASH_CHECK_AMOUNT).map(async (i) => {
-                    const adjustedFileName = adjustName(i);
-                    return {
-                        filename: adjustedFileName,
-                        hash: await generateLookupHash(adjustedFileName.toLowerCase(), parentKeys.hashKey)
-                    };
-                })
-            );
+            const findAdjustedName = async (
+                start = 0
+            ): Promise<{
+                filename: string;
+                hash: string;
+            }> => {
+                const hashesToCheck = await Promise.all(
+                    range(start, start + HASH_CHECK_AMOUNT).map(async (i) => {
+                        const adjustedFileName = adjustName(i);
+                        return {
+                            filename: adjustedFileName,
+                            hash: await generateLookupHash(adjustedFileName.toLowerCase(), parentKeys.hashKey)
+                        };
+                    })
+                );
 
-            const Hashes = hashesToCheck.map(({ hash }) => hash);
-            const { AvailableHashes } = await debouncedRequest<HashCheckResult>(
-                queryCheckAvailableHashes(shareId, parentLinkID, { Hashes })
-            );
-
-            if (!AvailableHashes.length) {
-                return findAvailableName(shareId, parentLinkID, filename, start + HASH_CHECK_AMOUNT);
-            }
-
-            const availableName = hashesToCheck.find(({ hash }) => hash === AvailableHashes[0]);
-
-            if (!availableName) {
-                throw new Error('Backend returned unexpected hash');
-            }
-
-            return availableName;
+                const Hashes = hashesToCheck.map(({ hash }) => hash);
+                const { AvailableHashes } = await debouncedRequest<HashCheckResult>(
+                    queryCheckAvailableHashes(shareId, parentLinkID, { Hashes })
+                );
+                if (!AvailableHashes.length) {
+                    return findAdjustedName(start + HASH_CHECK_AMOUNT);
+                }
+                const availableName = hashesToCheck.find(({ hash }) => hash === AvailableHashes[0]);
+                if (!availableName) {
+                    throw new Error('Backend returned unexpected hash');
+                }
+                return availableName;
+            };
+            return findAdjustedName();
         },
         5
     );
