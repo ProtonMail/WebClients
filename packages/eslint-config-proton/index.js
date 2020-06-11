@@ -35,6 +35,25 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "warn",
     "@typescript-eslint/no-for-in-array": "error",
     "@typescript-eslint/no-misused-promises": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"]
+      },
+      {
+        "selector": "function",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "enum",
+        "format": ["PascalCase", "UPPER_CASE"]
+      }
+    ],
     "consistent-return": "off",
     "import/default": 2,
     "import/export": 2,
