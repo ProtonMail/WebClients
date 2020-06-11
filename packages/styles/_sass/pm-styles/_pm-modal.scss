@@ -281,8 +281,7 @@ $pm-label-shorter-width: 10em !default;
   }
 }
 
-
-@media (min-width: $breakpoint-large) {
+@include respond-to($breakpoint-large, 'min') {
 	.pm-modal--full {
 		max-width: $modal-full-max-width;
 		margin-left: auto;
