@@ -1,24 +1,9 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
 import { initUpload, UploadCallbacks, UploadControls } from './upload';
-import { TransferState, TransferProgresses, TransferMeta } from '../../interfaces/transfer';
+import { TransferState, TransferProgresses, TransferMeta, Upload, UploadInfo } from '../../interfaces/transfer';
 import { useNotifications } from 'react-components';
 import usePreventLeave from '../../hooks/usePreventLeave';
-
-export interface UploadInfo {
-    blob: Blob;
-    LinkID: string;
-    ShareID: string;
-    RevisionID: string;
-    ParentLinkID: string;
-}
-
-export interface Upload {
-    id: string;
-    meta: TransferMeta;
-    info?: UploadInfo;
-    state: TransferState;
-    startDate: Date;
-}
+import { isTransferProgress, isTransferPending } from '../../utils/transfer';
 
 interface UploadProviderState {
     uploads: Upload[];
@@ -86,10 +71,10 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     const updateUploadState = (id: string, state: TransferState) => updateUploadByID(id, { state });
 
     useEffect(() => {
-        const activeUploads = uploads.filter(({ state }) => state === TransferState.Progress);
-        const nextPending = uploads.find(({ state }) => state === TransferState.Pending);
+        const uploading = uploads.filter(isTransferProgress);
+        const nextPending = uploads.find(isTransferPending);
 
-        if (activeUploads.length < MAX_ACTIVE_UPLOADS && nextPending) {
+        if (uploading.length < MAX_ACTIVE_UPLOADS && nextPending) {
             const { id, info } = nextPending;
 
             if (!info) {

@@ -5,6 +5,7 @@ import Heading from './Heading';
 import Transfer, { TransferType, TransferStats } from './Transfer';
 import { useToggle, classnames } from 'react-components';
 import { TransferState } from '../../interfaces/transfer';
+import { isTransferProgress } from '../../utils/transfer';
 
 const PROGRESS_UPDATE_INTERVAL = 500;
 const SPEED_SNAPSHOTS = 10; // How many snapshots should the speed be average of
@@ -30,16 +31,15 @@ function TransfersInfo() {
         const progresses = { ...getUploadsProgresses(), ...getDownloadsProgresses() };
 
         setStatsHistory((prev) => {
-            const lastStats = (id: string) => prev[0]?.stats[id];
+            const lastStats = (id: string) => prev[0]?.stats[id] || {};
             const stats = Object.entries(progresses).reduce(
                 (stats, [id, progress]) => ({
                     ...stats,
                     [id]: {
                         // get speed snapshot based on bytes downloaded since last update
-                        speed:
-                            lastStats(id)?.state === TransferState.Progress
-                                ? (progresses[id] - lastStats(id).progress) * (1000 / PROGRESS_UPDATE_INTERVAL)
-                                : 0,
+                        speed: isTransferProgress(lastStats(id))
+                            ? (progresses[id] - lastStats(id).progress) * (1000 / PROGRESS_UPDATE_INTERVAL)
+                            : 0,
                         state: getTransfer(id)?.state ?? TransferState.Error,
                         progress
                     }
@@ -54,10 +54,10 @@ function TransfersInfo() {
     useEffect(() => {
         updateStats();
 
-        const activeUploads = uploads.filter(({ state }) => state === TransferState.Progress);
-        const activeDownloads = downloads.filter(({ state }) => state === TransferState.Progress);
+        const uploading = uploads.filter(isTransferProgress);
+        const downloading = downloads.filter(isTransferProgress);
 
-        if (!activeUploads.length && !activeDownloads.length) {
+        if (!uploading.length && !downloading.length) {
             return;
         }
 
@@ -124,9 +124,7 @@ function TransfersInfo() {
         )
     }));
 
-    const transfers = [...downloadTransfers, ...uploadTransfers]
-        .sort((a, b) => b.transfer.startDate.getTime() - a.transfer.startDate.getTime())
-        .map(({ component }) => component);
+    const transfers = [...downloadTransfers, ...uploadTransfers].map(({ component }) => component);
 
     return (
         <div className={classnames(['pd-transfers', minimized && 'pd-transfers--minimized'])}>

@@ -1,9 +1,8 @@
-import { UploadInfo } from './UploadProvider';
 import { generateUID } from 'react-components';
 import { generateContentHash } from 'proton-shared/lib/keys/driveKeys';
 import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
-import { TransferCancel } from '../../interfaces/transfer';
+import { TransferCancel, UploadInfo } from '../../interfaces/transfer';
 import runInQueue from '../../utils/runInQueue';
 import { FILE_CHUNK_SIZE } from '../../constants';
 

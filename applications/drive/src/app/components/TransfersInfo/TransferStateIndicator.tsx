@@ -1,19 +1,15 @@
 import React from 'react';
-import { TransferState } from '../../interfaces/transfer';
+import { TransferState, Upload, Download } from '../../interfaces/transfer';
 import { Icon, classnames } from 'react-components';
 import { c } from 'ttag';
-import { Download } from '../downloads/DownloadProvider';
-import { Upload } from '../uploads/UploadProvider';
+import { isTransferDone, isTransferFailed, isTransferPaused } from '../../utils/transfer';
 
 interface Props {
     transfer: Upload | Download;
     percentageDone: number;
 }
 
-const TransferStateIndicator = ({ transfer: { id, state }, percentageDone }: Props) => {
-    const isSuccess = state === TransferState.Done;
-    const isError = state === TransferState.Canceled || state === TransferState.Error;
-    const isPaused = state === TransferState.Paused;
+const TransferStateIndicator = ({ transfer, percentageDone }: Props) => {
     const statusInfo = {
         [TransferState.Initializing]: {
             text: c('Info').t`Initializing`
@@ -40,19 +36,19 @@ const TransferStateIndicator = ({ transfer: { id, state }, percentageDone }: Pro
             text: c('Info').t`Paused`,
             icon: 'pause'
         }
-    }[state];
+    }[transfer.state];
 
     return (
         <strong
             className={classnames([
                 'pd-transfers-listItemTransferStateIndicator flex-item-fluid flex flex-nowrap flex-justify-end flex-items-center',
-                isSuccess && 'color-global-success',
-                isError && 'color-global-warning',
-                isPaused && 'color-global-attention'
+                isTransferDone(transfer) && 'color-global-success',
+                isTransferFailed(transfer) && 'color-global-warning',
+                isTransferPaused(transfer) && 'color-global-attention'
             ])}
             aria-atomic="true"
             aria-live="polite"
-            id={id}
+            id={transfer.id}
         >
             {statusInfo.icon && <Icon name={statusInfo.icon} className="mr0-25 flex-item-noshrink" />}
             {statusInfo.text}

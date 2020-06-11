@@ -14,7 +14,7 @@ interface Props {
 }
 
 const ProgressBar = ({ status = ProgressBarStatus.Success, ...rest }: Props) => (
-    <Progress className={classnames(['mt1', `progress--${status}`])} {...rest} />
+    <Progress className={classnames(['mt1', `progressbar--${status}`])} {...rest} />
 );
 
 export default ProgressBar;
