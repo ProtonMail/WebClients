@@ -21,17 +21,13 @@ $container-to-width: 3em !default;
 .items-column-list,
 .items-column-list--mobile,
 .view-column-detail {
-  height: calc(100vh - #{$header-height} - #{$toolbar-height} );
+  height: 100%;
 }
 
 .view-column-detail {
   background: var(--bgcolor-view-column-detail, $white);
 }
-.main-area:not(.main-area--withToolbar) {
-	.view-column-detail {
-		height: calc(100vh - #{$header-height} );
-	}
-}
+
 
 .item-container,
 .item-container-row {

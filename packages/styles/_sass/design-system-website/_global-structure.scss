@@ -1,8 +1,15 @@
 /* fix bug on Chrome */
 body {
   @extend .no-scroll;
+  height: 100%;
 }
 /* === page === */
+.content-container {
+	max-height: 100vh;
+	min-height: 100vh;
+}
+
+
 .content {
   background-color: var(--main-bg-color, $pm-global-grey);
   /*display: grid;
@@ -17,6 +24,7 @@ body {
 .header {
   padding: 1rem 2rem 1rem 0;
   height: $header-height;
+  flex-shrink: 0;
 }
 
 @if $rtl-option == true {
@@ -29,8 +37,6 @@ body {
 }
 
 .sidebar {
-  min-height: calc(100vh - #{$header-height});
-  max-height: calc(100vh - #{$header-height});
   width: var(--width-sidebar, $width-sidebar);
   visibility: visible;
   transition: visibility 0s ease, transform 1s ease, width .6s ease , opacity 1s ease ;
@@ -91,8 +97,6 @@ body {
 .main-area {
   background: var(--bgcolor-main-area, $white);
   color: var(--color-main-area, $pm-global-grey);
-  height: calc(100vh - #{$header-height} );
-  max-height: calc(100vh - #{$header-height} );
   overflow: auto;
   border-top-left-radius: 4px;
 
@@ -102,13 +106,11 @@ body {
 }
 // only for Angular
 .content-wrapper {
-  height: calc(100vh - #{$header-height} );
-  max-height: calc(100vh - #{$header-height} );
+//   height: calc(100vh - #{$header-height} );
+//   max-height: calc(100vh - #{$header-height} );
 }
 .main-area--withToolbar { // only for Angular this one
   @extend .main-area;
-  height: calc(100vh - #{$header-height} - #{$toolbar-height} );
-  max-height: calc(100vh - #{$header-height} - #{$toolbar-height} );
   border-radius: 0;
 }
 
@@ -146,13 +148,6 @@ $height-for-mobile: 8em !default;
 }
 .main-area--withToolbar--noHeader {
   @extend .main-area--withToolbar;
-  height: calc(100vh - #{$toolbar-height} );
-  max-height: calc(100vh - #{$toolbar-height} );
-
-  .view-column-detail {
-    height: calc(100vh - #{$toolbar-height} );
-    max-height: calc(100vh - #{$toolbar-height} );
-  }
 }
 
 .main-area-content {

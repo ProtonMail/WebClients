@@ -78,6 +78,12 @@
    max-height: 150px;
 }
 
+// I will find later, for the moment, dirty fix because it is late
+.view-column-detail,
+.items-column-list {
+	height: calc(100vh - #{$header-height} - #{$toolbar-height} );
+}
+
 
 .bg-colors {
   background-color: $pm-global-border;

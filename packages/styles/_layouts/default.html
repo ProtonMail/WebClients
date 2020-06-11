@@ -18,13 +18,13 @@
 
   </head>
   <body>
-    <div class="body flex flex-nowrap no-scroll">
+    <div class="content-container body flex flex-nowrap no-scroll">
 
-    <div class="content flex-item-fluid reset4print">
+    <div class="content flex flex-nowrap flex-column flex-item-fluid reset4print">
 
       {% include header.html %}
 
-        <div class="flex flex-nowrap">
+        <div class="flex flex-nowrap flex-item-fluid">
           <div class="sidebar flex js-sidebar nomobile noprint">
 
             <div class="flex w100 no-scroll flex-column flex-nowrap js-sidebar-container">
@@ -35,16 +35,15 @@
 
           </div>
 
-          <div class="main flex-item-fluid">
+          <div class="main flex flex-column flex-nowrap flex-item-fluid">
 
             {% include toolbar.html %}
 
-            <div class="main-area--withToolbar js-main-area {% if page.pageId == 'conversations' %} no-scroll {% endif %} reset4print scroll-smooth-touch"><!-- can't apply flex on it directly, otherwise, stick will fail -->
-              <div class="flex flex-reverse">
-
+            <div class="main-area--withToolbar flex-item-fluid js-main-area {% if page.pageId == 'conversations' %} no-scroll {% endif %} reset4print scroll-smooth-touch"><!-- can't apply flex on it directly, otherwise, stick will fail -->
+              <div class="flex flex-reverse flex-item-fluid">
                 {% include sub-nav.html %}
 
-                <main class="main-area-content relative {% if page.subsection %} {% elsif page.pageId <> 'conversations' %}p2{% endif %} flex-item-fluid" title="{{ page.subsection }}">
+                <main class="main-area-content relative flex-nowrap {% if page.pageId == 'conversations' %} flex {% endif %} {% if page.subsection %} {% elsif page.pageId <> 'conversations' %}p2{% endif %} flex-item-fluid" title="{{ page.subsection }}">
 
                   <h1 class="{% if page.pageId == 'conversations' %}sr-only{% endif %}{% if page.subsection %} sticky-title {% endif %}">{{ page.title }}</h1>
 
