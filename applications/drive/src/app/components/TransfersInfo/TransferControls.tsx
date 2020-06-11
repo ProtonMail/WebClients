@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
-import { Icon } from 'react-components';
+import { Icon, useLoading } from 'react-components';
 import { TransferState } from '../../interfaces/transfer';
 import { c } from 'ttag';
 import { useUploadProvider } from '../uploads/UploadProvider';
@@ -10,6 +10,7 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
     const { cancelDownload, removeDownload, pauseDownload, resumeDownload } = useDownloadProvider();
     const { removeUpload } = useUploadProvider();
     const isFinished = [TransferState.Done, TransferState.Error, TransferState.Canceled].includes(transfer.state);
+    const [pauseInProgress, withPauseInProgress] = useLoading();
 
     const handleClick = () => {
         switch (type) {
@@ -29,7 +30,7 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
         if (transfer.state === TransferState.Paused) {
             resumeDownload(transfer.id);
         } else {
-            pauseDownload(transfer.id);
+            withPauseInProgress(pauseDownload(transfer.id));
         }
     };
 
@@ -39,6 +40,7 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
                 <button
                     type="button"
                     onClick={togglePause}
+                    disabled={pauseInProgress}
                     className="pd-transfers-controlButton pm-button--info pm-button--for-icon rounded50 flex-item-noshrink flex mr0-25"
                     title={
                         transfer.state === TransferState.Paused
