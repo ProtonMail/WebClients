@@ -7,7 +7,7 @@ import {
     useApi,
     useNotifications,
     Loader,
-    SimpleTabs,
+    Tabs,
     useGetCalendarBootstrap,
     useGetAddresses,
     useGetAddressKeys,
@@ -248,7 +248,7 @@ const CalendarModal = ({
             submit: isEdit ? c('Action').t`Update` : c('Action').t`Create`,
             close: c('Action').t`Cancel`,
             loading: loadingSetup || loadingAction,
-            section: loadingSetup ? <Loader /> : <SimpleTabs tabs={tabs} />,
+            section: loadingSetup ? <Loader /> : <Tabs tabs={tabs} />,
             hasClose: true,
             onSubmit: () => {
                 setIsSubmitted(true);
