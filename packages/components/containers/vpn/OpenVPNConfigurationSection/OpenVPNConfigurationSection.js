@@ -22,7 +22,7 @@ import { isSecureCoreEnabled } from './utils';
 import { groupWith } from 'proton-shared/lib/helpers/array';
 import ServerConfigs from './ServerConfigs';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { getCountryByAbbr } from 'react-components/helpers/countries';
+import { getCountryByAbbr, correctAbbr } from 'react-components/helpers/countries';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { Link } from 'react-router-dom';
 
@@ -67,15 +67,9 @@ const OpenVPNConfigurationSection = () => {
     const servers = useMemo(
         () =>
             (result.LogicalServers || []).map((server) => {
-                // Server returns UK instead of GB
-                const correctAbbr = (abbr) => (abbr === 'UK' ? 'GB' : abbr);
-                const ExitCountry = correctAbbr(server.ExitCountry);
-                const EntryCountry = correctAbbr(server.EntryCountry);
                 return {
                     ...server,
-                    Country: getCountryByAbbr(ExitCountry),
-                    ExitCountry,
-                    EntryCountry
+                    Country: getCountryByAbbr(correctAbbr(server.ExitCountry))
                 };
             }),
         [result.LogicalServers]

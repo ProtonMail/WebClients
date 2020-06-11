@@ -245,6 +245,7 @@ const COUNTRIES = [
 const countriesByAbbr = COUNTRIES.reduce((list, country) => ({ ...list, [country.value]: country.label }), {});
 
 export const getCountryByAbbr = (abbr) => countriesByAbbr[abbr];
+export const correctAbbr = (abbr) => (abbr === 'UK' ? 'GB' : abbr);
 export const getFullList = () => TOP_COUNTRIES.concat([DEFAULT_SEPARATOR], COUNTRIES);
 export const getList = () => COUNTRIES;
 export const getFirstTop = () => TOP_COUNTRIES[0];
