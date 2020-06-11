@@ -20,7 +20,7 @@ import {
 import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import { isSecureCoreEnabled } from './utils';
-import { groupWith, minBy } from 'proton-shared/lib/helpers/array';
+import { groupWith } from 'proton-shared/lib/helpers/array';
 import ServerConfigs from './ServerConfigs';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { getCountryByAbbr } from 'react-components/helpers/countries';
@@ -88,11 +88,17 @@ const OpenVPNConfigurationSection = () => {
     const countryServers = groupWith(
         (a, b) => a.ExitCountry === b.ExitCountry,
         allServers.filter(({ Tier }) => Tier === 1)
-    ).map((groups) => ({
-        ...minBy(({ Load }) => Number(Load), groups),
-        Domain: `${groups[0].EntryCountry.toLowerCase()}.protonvpn.com`, // Forging domain
-        Servers: groups.reduce((acc, { Servers = [] }) => (acc.push(...Servers), acc), [])
-    }));
+    ).map((groups) => {
+        const [first] = groups;
+        const activeServers = groups.filter(({ Status }) => Status === 1);
+        const load = activeServers.reduce((acc, { Load }) => acc + Load, 0) / activeServers.length;
+        return {
+            ...first,
+            Load: isNaN(load) ? 0 : Math.round(load),
+            Domain: `${first.EntryCountry.toLowerCase()}.protonvpn.com`, // Forging domain
+            Servers: groups.reduce((acc, { Servers = [] }) => (acc.push(...Servers), acc), [])
+        };
+    });
     const freeServers = allServers.filter(({ Tier }) => Tier === 0).map((server) => ({ ...server, open: true }));
 
     const isUpgradeRequiredForSecureCore = () => !Object.keys(userVPN).length || !hasPaidVpn || isBasicVPN;
