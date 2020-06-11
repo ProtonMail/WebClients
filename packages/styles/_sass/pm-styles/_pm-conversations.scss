@@ -75,7 +75,8 @@ $container-to-width: 3em !default;
   background: var(--bgcolor-item-column-active, $conversation-selected-bg);
 }
 
-.item-container:not(.item-is-selected):not(.read):not(.active) {
+.item-container:not(.item-is-selected):not(.read):not(.active),
+.item-container-row:not(.item-is-selected):not(.read):not(.active) {
   background: var(--bgcolor-unread-item-column-list, $white);
 }
 
