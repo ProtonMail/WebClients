@@ -16,7 +16,7 @@ export const useApplyLabels = () => {
     const [labels = []] = useLabels();
 
     const applyLabels = useCallback(
-        async (isMessage: boolean, elementIDs: string[], changes: { [labelID: string]: boolean }) => {
+        async (isMessage: boolean, elementIDs: string[], changes: { [labelID: string]: boolean }, silent = false) => {
             const labelAction = isMessage ? labelMessages : labelConversations;
             const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
             const changesKeys = Object.keys(changes);
@@ -93,14 +93,16 @@ export const useApplyLabels = () => {
                 }
             }
 
-            createNotification({
-                text: (
-                    <>
-                        {notificationText} <UndoButton onUndo={handleUndo} />
-                    </>
-                ),
-                expiration: EXPIRATION
-            });
+            if (!silent) {
+                createNotification({
+                    text: (
+                        <>
+                            {notificationText} <UndoButton onUndo={handleUndo} />
+                        </>
+                    ),
+                    expiration: EXPIRATION
+                });
+            }
         },
         []
     );
@@ -114,7 +116,14 @@ export const useMoveToFolder = () => {
     const { createNotification } = useNotifications();
 
     const moveToFolder = useCallback(
-        async (isMessage: boolean, elementIDs: string[], folderID: string, folderName: string, fromLabelID: string) => {
+        async (
+            isMessage: boolean,
+            elementIDs: string[],
+            folderID: string,
+            folderName: string,
+            fromLabelID: string,
+            silent = false
+        ) => {
             const action = isMessage ? labelMessages : labelConversations;
 
             const handleUndo = async () => {
@@ -137,17 +146,35 @@ export const useMoveToFolder = () => {
                       elementIDs.length
                   );
 
-            createNotification({
-                text: (
-                    <>
-                        {notificationText} <UndoButton onUndo={handleUndo} />
-                    </>
-                ),
-                expiration: EXPIRATION
-            });
+            if (!silent) {
+                createNotification({
+                    text: (
+                        <>
+                            {notificationText} <UndoButton onUndo={handleUndo} />
+                        </>
+                    ),
+                    expiration: EXPIRATION
+                });
+            }
         },
         []
     );
 
     return moveToFolder;
+};
+
+export const useStar = () => {
+    const api = useApi();
+    const { call } = useEventManager();
+
+    const star = useCallback(async (isMessage: boolean, elementIDs: string[], value: boolean) => {
+        const labelAction = isMessage ? labelMessages : labelConversations;
+        const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
+        const action = value ? labelAction : unlabelAction;
+
+        await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elementIDs }));
+        await call();
+    }, []);
+
+    return star;
 };

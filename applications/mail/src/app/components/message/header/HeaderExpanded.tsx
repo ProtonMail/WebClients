@@ -9,11 +9,8 @@ import {
     useContactEmails,
     useContactGroups,
     ButtonGroup as OriginalButtonGroup,
-    useApi,
-    useEventManager,
     Tooltip
 } from 'react-components';
-import { unlabelMessages } from 'proton-shared/lib/api/messages';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { MailSettings } from 'proton-shared/lib/interfaces';
@@ -93,8 +90,6 @@ const HeaderExpanded = ({
     const [contacts = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [contactGroups = []] = useContactGroups();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
-    const api = useApi();
-    const { call } = useEventManager();
 
     const elements = [message.data || {}];
 
@@ -111,11 +106,6 @@ const HeaderExpanded = ({
             action,
             referenceMessage: message
         });
-    };
-
-    const handleRemoveLabel = async (labelID: string) => {
-        await api(unlabelMessages({ LabelID: labelID, IDs: [message.data?.ID] }));
-        await call();
     };
 
     const from = (
@@ -189,7 +179,7 @@ const HeaderExpanded = ({
                 {!showDetails && (
                     <div className="flex-item-noshrink onmobile-w100 onmobile-mt0-5 message-header-expanded-label-container">
                         <ItemAttachmentIcon element={message.data} />
-                        <ItemLabels max={4} element={message.data} labels={labels} onUnlabel={handleRemoveLabel} />
+                        <ItemLabels max={4} element={message.data} labels={labels} showUnlabel />
                     </div>
                 )}
             </div>

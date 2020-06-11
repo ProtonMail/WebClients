@@ -1,7 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Loader, useLabels, useToggle, useApi, useEventManager, Icon } from 'react-components';
-import { unlabelConversations } from 'proton-shared/lib/api/conversations';
+import { Loader, useLabels, useToggle, Icon } from 'react-components';
 
 import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
@@ -28,8 +27,6 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
     const [labels = []] = useLabels();
     const [conversationData, loading] = useConversation(conversationID);
     const { state: filter, toggle: toggleFilter } = useToggle(true);
-    const api = useApi();
-    const { call } = useEventManager();
 
     if (loading) {
         return <Loader />;
@@ -48,11 +45,6 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
     const numParticipants = getNumParticipants(conversation);
 
     const initialExpand = findMessageToExpand(labelID, messagesToShow)?.ID;
-
-    const handleRemoveLabel = async (labelID: string) => {
-        await api(unlabelConversations({ LabelID: labelID, IDs: [conversation.ID] }));
-        await call();
-    };
 
     return (
         <>
@@ -78,7 +70,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
                         </span>
                     </div>
                     <div className="flex-item-noshrink">
-                        <ItemLabels labels={labels} max={4} element={conversation} onUnlabel={handleRemoveLabel} />
+                        <ItemLabels labels={labels} max={4} element={conversation} showUnlabel />
                     </div>
                 </div>
             </header>

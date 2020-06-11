@@ -4,35 +4,40 @@ import { Link } from 'react-router-dom';
 import { Icon, classnames } from 'react-components';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { orderBy } from 'proton-shared/lib/helpers/array';
-import { noop } from 'proton-shared/lib/helpers/function';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import { c } from 'ttag';
 import { Element } from '../../models/element';
-import { getLabelIDs } from '../../helpers/elements';
+import { getLabelIDs, isMessage } from '../../helpers/elements';
+import { useApplyLabels } from '../../hooks/useApplyLabels';
 
 interface Props {
     element?: Element;
     labels?: Label[];
     max?: number;
-    onUnlabel?: (labelID: string) => void;
+    showUnlabel?: boolean;
     className?: string;
     isCollapsed?: boolean;
 }
 
 const ItemLabels = ({
     element = {},
-    onUnlabel = noop,
+    showUnlabel = false,
     max = 99,
     labels = [],
     className = '',
     isCollapsed = true
 }: Props) => {
+    const applyLabels = useApplyLabels();
+
     const labelIDs = getLabelIDs(element) || [];
     const labelsMap = toMap(labels);
     const labelsObjects = labelIDs.map((ID) => labelsMap[ID]).filter(isTruthy);
     const labelsSorted = orderBy(labelsObjects, 'Order') as Label[];
     const labelsToShow = labelsSorted.slice(0, max);
+
+    const handleUnlabel = (labelID: string) =>
+        applyLabels(isMessage(element), [element.ID || ''], { [labelID]: false });
 
     return (
         <div
@@ -59,17 +64,17 @@ const ItemLabels = ({
                     >
                         {Name}
                     </Link>
-                    {onUnlabel !== noop ? (
+                    {showUnlabel && (
                         <button
                             type="button"
                             className="flex pm-badgeLabel-button flex-item-noshrink"
-                            onClick={() => onUnlabel(ID)}
+                            onClick={() => handleUnlabel(ID)}
                             title={c('Action').t`Remove this label`}
                         >
                             <Icon name="off" size={11} color="white" />
                             <span className="sr-only">{c('Action').t`Remove this label`}</span>
                         </button>
-                    ) : null}
+                    )}
                 </span>
             ))}
         </div>

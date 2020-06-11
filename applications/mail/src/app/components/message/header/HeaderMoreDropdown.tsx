@@ -14,7 +14,7 @@ import {
     ButtonGroup,
     Tooltip
 } from 'react-components';
-import { labelMessages, markMessageAsUnread } from 'proton-shared/lib/api/messages';
+import { markMessageAsUnread } from 'proton-shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS, MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
@@ -87,8 +87,8 @@ const HeaderMoreDropdown = ({
                 Body: message.decryptedBody
             })
         );
-        await api(labelMessages({ LabelID: SPAM, IDs: [message.data?.ID] }));
-        await call();
+
+        await moveToFolder(true, [message.data?.ID || ''], SPAM, '', '', true);
         createNotification({ text: c('Success').t`Phishing reported` });
         onBack();
     };

@@ -1,8 +1,7 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Icon, useApi, useEventManager, useFolders } from 'react-components';
+import { Icon, useFolders } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { unlabelMessages } from 'proton-shared/lib/api/messages';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
@@ -25,14 +24,7 @@ interface Props {
 }
 
 const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mailSettings }: Props) => {
-    const api = useApi();
-    const { call } = useEventManager();
     const [customFolders = []] = useFolders();
-
-    const handleRemoveLabel = async (labelID: string) => {
-        await api(unlabelMessages({ LabelID: labelID, IDs: [message.data?.ID] }));
-        await call();
-    };
 
     const icon = messageViewIcons.globalIcon;
 
@@ -103,13 +95,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                         <Icon name="label" className="mauto" alt={c('Label').t`Labels:`} />
                     </span>
                     <span className="flex-self-vcenter mr0-5 ellipsis pm-badgeLabel-container--groupMayWrap">
-                        <ItemLabels
-                            max={4}
-                            isCollapsed={false}
-                            element={message.data}
-                            labels={labels}
-                            onUnlabel={handleRemoveLabel}
-                        />
+                        <ItemLabels max={4} isCollapsed={false} element={message.data} labels={labels} showUnlabel />
                     </span>
                 </div>
             )}
