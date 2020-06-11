@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { Route, Switch, withRouter, RouteComponentProps } from 'react-router-dom';
 import { Redirect } from 'react-router';
-import { Sidebar, MainAreaContext, ErrorBoundary, useToggle, useUser, useDelinquent } from 'react-components';
+import { Sidebar, MainAreaContext, ErrorBoundary, useToggle, useUser } from 'react-components';
 
 import { getPages } from '../pages';
 import PrivateHeader from './PrivateHeader';
@@ -16,7 +16,6 @@ import SidebarVersion from './SidebarVersion';
 
 const PrivateLayout = ({ location }: RouteComponentProps) => {
     const [user] = useUser();
-    useDelinquent();
     const mainAreaRef = useRef<HTMLDivElement>();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const [activeSection, setActiveSection] = useState('');
