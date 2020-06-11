@@ -21,9 +21,10 @@ import BackButton from './BackButton';
 import PagingControls from './PagingControls';
 import { Page, Sort, Filter } from '../../models/tools';
 import { Element } from '../../models/element';
+import { Breakpoints } from '../../models/utils';
+import NavigationControls from './NavigationControls';
 
 import './Toolbar.scss';
-import { Breakpoints } from '../../models/utils';
 
 interface Props {
     location: Location;
@@ -35,6 +36,7 @@ interface Props {
     selectedIDs: string[];
     mailSettings: MailSettings;
     columnMode: boolean;
+    conversationMode: boolean;
     breakpoints: Breakpoints;
     page: Page;
     onPage: (page: number) => void;
@@ -43,6 +45,7 @@ interface Props {
     filter: Filter;
     onFilter: (filter: Filter) => void;
     onBack: () => void;
+    onElement: (element: Element) => void;
 }
 
 const Toolbar = ({
@@ -53,6 +56,7 @@ const Toolbar = ({
     onCheck,
     mailSettings,
     columnMode,
+    conversationMode,
     breakpoints,
     selectedIDs = [],
     loading = false,
@@ -62,7 +66,8 @@ const Toolbar = ({
     filter,
     onBack,
     page,
-    onPage
+    onPage,
+    onElement
 }: Props) => {
     const [labels] = useLabels();
     const [folders] = useFolders();
@@ -73,11 +78,12 @@ const Toolbar = ({
                 .filter(identity),
         [elements, selectedIDs]
     );
+    const listInView = columnMode || !elementID;
 
     return (
         <nav className="toolbar toolbar--heavy flex noprint flex-spacebetween">
             <div className="flex">
-                {columnMode || !elementID ? (
+                {listInView ? (
                     <SelectAll
                         labelID={labelID}
                         elements={elements}
@@ -149,13 +155,32 @@ const Toolbar = ({
             <div className="flex">
                 {breakpoints.isDesktop && (
                     <>
-                        <FilterDropdown loading={loading} filter={filter} onFilter={onFilter} />
-                        <SortDropdown loading={loading} sort={sort} onSort={onSort} />
+                        {listInView && (
+                            <>
+                                <FilterDropdown loading={loading} filter={filter} onFilter={onFilter} />
+                                <SortDropdown
+                                    loading={loading}
+                                    conversationMode={conversationMode}
+                                    sort={sort}
+                                    onSort={onSort}
+                                />
+                            </>
+                        )}
                         <LayoutDropdown mailSettings={mailSettings} />
                         <ToolbarSeparator />
                     </>
                 )}
-                <PagingControls loading={loading} page={page} onPage={onPage} />
+                {listInView ? (
+                    <PagingControls loading={loading} page={page} onPage={onPage} />
+                ) : (
+                    <NavigationControls
+                        loading={loading}
+                        conversationMode={conversationMode}
+                        elementID={elementID}
+                        elements={elements}
+                        onElement={onElement}
+                    />
+                )}
             </div>
         </nav>
     );

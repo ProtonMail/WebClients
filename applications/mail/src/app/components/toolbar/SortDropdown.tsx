@@ -23,15 +23,16 @@ const ICONS = {
 
 interface Props {
     loading?: boolean;
+    conversationMode: boolean;
     sort: Sort;
     onSort: (sort: Sort) => void;
 }
 
-const SortDropdown = ({ loading, sort: { sort, desc }, onSort }: Props) => {
+const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort }: Props) => {
     return (
         <ToolbarDropdown
             content={<Icon className="toolbar-icon" name={ICONS[sort][desc ? DESC : ASC]} />}
-            title={c('Title').t`Sort view messages/conversations`}
+            title={conversationMode ? c('Title').t`Sort view conversations` : c('Title').t`Sort view messages`}
         >
             {() => (
                 <DropdownMenu>

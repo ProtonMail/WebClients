@@ -26,7 +26,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
             <ToolbarButton
                 loading={loading}
                 disabled={page.page <= 0}
-                title={c('Action').t`Previous`}
+                title={c('Action').t`Previous page`}
                 onClick={handlePrevious}
                 className="notablet nomobile"
             >
@@ -56,7 +56,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
             <ToolbarButton
                 loading={loading}
                 disabled={page.page >= count - 1}
-                title={c('Action').t`Next`}
+                title={c('Action').t`Next page`}
                 onClick={handleNext}
                 className="notablet nomobile"
             >

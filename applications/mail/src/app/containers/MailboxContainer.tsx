@@ -185,6 +185,7 @@ const MailboxContainer = ({
                     elements={elements}
                     mailSettings={mailSettings}
                     columnMode={columnMode}
+                    conversationMode={conversationMode}
                     breakpoints={breakpoints}
                     onCheck={handleCheck}
                     page={page}
@@ -194,6 +195,7 @@ const MailboxContainer = ({
                     filter={filter}
                     onFilter={handleFilter}
                     onBack={handleBack}
+                    onElement={handleElement}
                 />
             )}
             <PrivateMainArea className="flex" hasToolbar={showToolbar} hasRowMode={!showContentView}>
