@@ -63,9 +63,15 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         const ids = Array.isArray(id) ? id : [id];
         setDownloads((downloads) =>
             downloads.map((download) => {
-                const state = typeof nextState === 'function' ? nextState(download) : nextState;
-                return ids.includes(download.id) && download.state !== state && !isTransferFailed({ state })
-                    ? { ...download, state, resumeState: isTransferPaused({ state }) ? download.state : undefined }
+                const newState = typeof nextState === 'function' ? nextState(download) : nextState;
+                return ids.includes(download.id) &&
+                    download.state !== newState &&
+                    !isTransferFailed({ state: download.state })
+                    ? {
+                          ...download,
+                          state: newState,
+                          resumeState: isTransferPaused({ state: newState }) ? download.state : undefined
+                      }
                     : download;
             })
         );
