@@ -57,7 +57,6 @@ const AppsDropdown = () => {
                                 to={link}
                                 className="appsDropdown-link big m0 p1 pt0-75 pb0-75 flex flex-nowrap flex-items-center"
                                 external={!isCurrent}
-                                aria-current={isCurrent}
                                 title={c('Apps dropdown').t`Go to ${title}`}
                             >
                                 <Icon name={icon} size={20} className="mr0-5" />
@@ -69,7 +68,6 @@ const AppsDropdown = () => {
                 <li className="dropDown-item appsDropdown-item">
                     <Link
                         to="/settings/subscription"
-                        target="_self"
                         external={true}
                         className="appsDropdown-link big m0 bl p1 pt0-75 pb0-25"
                         title={c('Apps dropdown').t`Add storage space`}
