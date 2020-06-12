@@ -10,6 +10,7 @@ interface Props {
     cancel?: ReactNode;
     confirm?: ReactNode;
     loading?: boolean;
+    small?: boolean;
 }
 const Confirm = ({
     onClose,
@@ -18,6 +19,7 @@ const Confirm = ({
     title = c('Action').t`Confirm`,
     cancel = c('Action').t`Cancel`,
     confirm = c('Action').t`Confirm`,
+    small = true,
     ...rest
 }: Props) => {
     return (
@@ -30,7 +32,7 @@ const Confirm = ({
             title={title}
             close={cancel}
             submit={confirm}
-            small
+            small={small}
             {...rest}
         >
             {children}
