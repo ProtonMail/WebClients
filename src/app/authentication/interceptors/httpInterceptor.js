@@ -10,7 +10,7 @@ const {
 } = API_CUSTOM_ERROR_CODES;
 
 /* @ngInject */
-function httpInterceptor($q, $injector, AppModel, networkUtils) {
+function httpInterceptor($q, $injector, AppModel, networkUtils, loggedOutSessions) {
     const STATE = {};
 
     const buildNotifs = () => {
@@ -44,6 +44,10 @@ function httpInterceptor($q, $injector, AppModel, networkUtils) {
     const notifyError = (error, message, options) => {
         // Disable the notification. Used for the SRP because we don't want to refactor it now.
         if (error.config && error.config.noNotify) {
+            return;
+        }
+        // Hide error from logged out sessions
+        if (error.config && loggedOutSessions.hasUID(error.config.headers['x-pm-uid'])) {
             return;
         }
         // Set no notify for the network activity tracker to not display errors twice.

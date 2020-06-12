@@ -9,6 +9,7 @@ function authentication(
     $state,
     $injector,
     authApi,
+    loggedOutSessions,
     checkKeysFormat,
     keysModel,
     networkActivityTracker,
@@ -173,6 +174,7 @@ function authentication(
             const uid = authenticationStore.getUID();
             const process = () => {
                 this.clearData();
+                loggedOutSessions.addUID(uid);
 
                 if (redirect === true) {
                     $state.go('login');

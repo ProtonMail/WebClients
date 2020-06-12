@@ -20,6 +20,7 @@ import handle9001 from './services/handle9001';
 import handle10003 from './services/handle10003';
 import handleTryAgain from './services/handleTryAgain';
 import logoutManager from './services/logoutManager';
+import loggedOutSessions from './services/loggedOutSessions';
 import srp from './services/srp';
 import tryAgainModel from './factories/tryAgainModel';
 import activeSessionsModel from './factories/activeSessionsModel';
@@ -43,6 +44,7 @@ export default angular
     .factory('oldPasswordModal', oldPasswordModal)
     .factory('loginPasswordModal', loginPasswordModal)
     .factory('logoutManager', logoutManager)
+    .factory('loggedOutSessions', loggedOutSessions)
     .factory('authentication', auth)
     .factory('authApi', authApi)
     .factory('compatApi', compatApi)
