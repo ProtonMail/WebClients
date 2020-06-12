@@ -200,7 +200,7 @@ svg {
 .right-icon {
   top: 0;
   right: .5em;
-  height: 3.5rem; // height of field
+  height: $default-height-fields; // height of field
 }
 @if $rtl-option == true {
   [dir="rtl"] {

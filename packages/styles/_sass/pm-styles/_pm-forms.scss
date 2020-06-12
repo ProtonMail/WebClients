@@ -94,7 +94,7 @@ select.pm-field {
   background: var(--bgcolor-input, $pm-input-background) url("#{$path-images}sprite-for-css-only.svg#css-caret") calc(100% - 6px) 50% no-repeat;
   background-size: 1.5rem;
   padding-left: 1em;
-  height: 3.5rem;
+  height: $default-height-fields;
   padding-right: 20px;
   text-overflow: ellipsis;
   &::-ms-expand {
