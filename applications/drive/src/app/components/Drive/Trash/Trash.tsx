@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import FileBrowser from '../../FileBrowser/FileBrowser';
 import EmptyTrash from '../../FileBrowser/EmptyTrash';
-import useOnScrollEnd from '../../../hooks/useOnScrollEnd';
+import useOnScrollEnd from '../../../hooks/util/useOnScrollEnd';
 import { useTrashContent } from './TrashContentProvider';
 
 interface Props {

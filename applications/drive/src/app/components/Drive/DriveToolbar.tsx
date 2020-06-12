@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { ToolbarSeparator, Toolbar } from 'react-components';
 
-import useDrive from '../../hooks/useDrive';
+import useDrive from '../../hooks/drive/useDrive';
 import { useDriveContent } from './DriveContentProvider';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder } from './DriveFolderProvider';

@@ -4,10 +4,10 @@ import { c } from 'ttag';
 import { ToolbarButton, useLoading } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
-import useTrash from '../../../hooks/useTrash';
-import useDrive from '../../../hooks/useDrive';
+import useTrash from '../../../hooks/drive/useTrash';
+import useDrive from '../../../hooks/drive/useDrive';
+import useListNotifications from '../../../hooks/util/useListNotifications';
 import { DriveFolder } from '../DriveFolderProvider';
-import { useListNotifications } from '../helpers';
 
 interface Props {
     activeFolder: DriveFolder;

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import dragdropImageSvg from 'design-system/assets/img/pd-images/drag-and-drop.svg';
 
-import useFiles from '../../../hooks/useFiles';
+import useFiles from '../../../hooks/drive/useFiles';
 import { useDriveActiveFolder } from '../../Drive/DriveFolderProvider';
 
 interface UploadDragDropProps {

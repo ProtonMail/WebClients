@@ -5,7 +5,7 @@ import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import useFileBrowser from '../FileBrowser/useFileBrowser';
-import useDrive from '../../hooks/useDrive';
+import useDrive from '../../hooks/drive/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder, useDriveActiveFolder } from './DriveFolderProvider';
 import { mapLinksToChildren } from './helpers';

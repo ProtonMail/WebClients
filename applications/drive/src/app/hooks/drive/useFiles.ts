@@ -6,11 +6,11 @@ import {
     FileRevisionState,
     RequestUploadResult,
     NestedFileStream
-} from '../interfaces/file';
+} from '../../interfaces/file';
 import { decryptMessage, encryptMessage } from 'pmcrypto';
 import { c } from 'ttag';
 import { lookup } from 'mime-types';
-import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../api/files';
+import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../../api/files';
 import {
     generateNodeKeys,
     generateContentKeys,
@@ -23,23 +23,23 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { useUploadProvider } from '../components/uploads/UploadProvider';
-import { TransferMeta, TransferState } from '../interfaces/transfer';
-import { useDownloadProvider } from '../components/downloads/DownloadProvider';
-import { initDownload, StreamTransformer } from '../components/downloads/download';
-import { streamToBuffer } from '../utils/stream';
-import { HashCheckResult, LinkType } from '../interfaces/link';
-import { queryCheckAvailableHashes } from '../api/link';
-import { ValidationError, validateLinkName } from '../utils/validation';
+import { useUploadProvider } from '../../components/uploads/UploadProvider';
+import { TransferMeta, TransferState } from '../../interfaces/transfer';
+import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
+import { initDownload, StreamTransformer } from '../../components/downloads/download';
+import { streamToBuffer } from '../../utils/stream';
+import { HashCheckResult, LinkType } from '../../interfaces/link';
+import { queryCheckAvailableHashes } from '../../api/link';
+import { ValidationError, validateLinkName } from '../../utils/validation';
 import useDriveCrypto from './useDriveCrypto';
 import useDrive from './useDrive';
-import useDebouncedRequest from './useDebouncedRequest';
-import { FILE_CHUNK_SIZE } from '../constants';
-import useQueuedFunction from './useQueuedFunction';
-import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
-import { getMetaForTransfer } from '../components/Drive/Drive';
+import useDebouncedRequest from '../util/useDebouncedRequest';
+import { FILE_CHUNK_SIZE } from '../../constants';
+import useQueuedFunction from '../util/useQueuedFunction';
+import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
+import { getMetaForTransfer } from '../../components/Drive/Drive';
 import { serializeUint8Array } from 'proton-shared/lib/helpers/serialization';
-import { mergeUint8Arrays } from '../utils/array';
+import { mergeUint8Arrays } from '../../utils/array';
 
 const HASH_CHECK_AMOUNT = 10;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDriveCache, LinkKeys, DEFAULT_SORT_PARAMS } from '../components/DriveCache/DriveCacheProvider';
+import { useDriveCache, LinkKeys, DEFAULT_SORT_PARAMS } from '../../components/DriveCache/DriveCacheProvider';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { useModals } from 'react-components';
 import useDriveCrypto from './useDriveCrypto';
@@ -15,23 +15,23 @@ import {
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
-import { LinkMetaResult, isFolderLinkMeta, LinkChildrenResult, LinkMeta, LinkType } from '../interfaces/link';
-import { queryGetLink } from '../api/link';
-import { queryFolderChildren, queryCreateFolder } from '../api/folder';
-import { FOLDER_PAGE_SIZE, EVENT_TYPES, MAX_THREADS_PER_REQUEST } from '../constants';
-import { ShareMeta, UserShareResult } from '../interfaces/share';
-import { queryShareMeta, queryUserShares, queryRenameLink, queryMoveLink } from '../api/share';
-import { CreatedDriveVolumeResult } from '../interfaces/volume';
-import { queryCreateDriveVolume } from '../api/volume';
-import OnboardingModal from '../components/OnboardingModal/OnboardingModal';
-import { validateLinkName, ValidationError } from '../utils/validation';
+import { LinkMetaResult, isFolderLinkMeta, LinkChildrenResult, LinkMeta, LinkType } from '../../interfaces/link';
+import { queryGetLink } from '../../api/link';
+import { queryFolderChildren, queryCreateFolder } from '../../api/folder';
+import { FOLDER_PAGE_SIZE, EVENT_TYPES, MAX_THREADS_PER_REQUEST } from '../../constants';
+import { ShareMeta, UserShareResult } from '../../interfaces/share';
+import { queryShareMeta, queryUserShares, queryRenameLink, queryMoveLink } from '../../api/share';
+import { CreatedDriveVolumeResult } from '../../interfaces/volume';
+import { queryCreateDriveVolume } from '../../api/volume';
+import OnboardingModal from '../../components/OnboardingModal/OnboardingModal';
+import { validateLinkName, ValidationError } from '../../utils/validation';
 import { lookup } from 'mime-types';
-import { ShareEvent, useDriveEventManager } from '../components/DriveEventManager/DriveEventManagerProvider';
-import useDebouncedRequest from './useDebouncedRequest';
-import useQueuedFunction from './useQueuedFunction';
-import { getSuccessfulSettled, logSettledErrors } from '../utils/async';
-import usePreventLeave from './usePreventLeave';
-import runInQueue from '../utils/runInQueue';
+import { ShareEvent, useDriveEventManager } from '../../components/DriveEventManager/DriveEventManagerProvider';
+import useDebouncedRequest from '../util/useDebouncedRequest';
+import useQueuedFunction from '../util/useQueuedFunction';
+import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
+import usePreventLeave from '../util/usePreventLeave';
+import runInQueue from '../../utils/runInQueue';
 
 interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;

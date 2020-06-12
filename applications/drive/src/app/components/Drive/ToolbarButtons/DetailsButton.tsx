@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { ToolbarButton, useModals } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
-import useDrive from '../../../hooks/useDrive';
+import useDrive from '../../../hooks/drive/useDrive';
 import DetailsModal from '../../DetailsModal';
 import { DriveFolder } from '../DriveFolderProvider';
 

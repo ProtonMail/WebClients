@@ -1,6 +1,6 @@
 import React, { useRef, ChangeEvent } from 'react';
 import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
-import useFiles from '../../hooks/useFiles';
+import useFiles from '../../hooks/drive/useFiles';
 import { LargeButton } from 'react-components';
 import { c } from 'ttag';
 

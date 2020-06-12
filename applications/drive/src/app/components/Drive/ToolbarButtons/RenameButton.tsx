@@ -5,7 +5,7 @@ import { ToolbarButton, useModals } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
 import RenameModal from '../../RenameModal';
-import useDrive from '../../../hooks/useDrive';
+import useDrive from '../../../hooks/drive/useDrive';
 
 interface Props {
     shareId: string;
