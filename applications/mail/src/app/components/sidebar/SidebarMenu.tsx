@@ -120,7 +120,13 @@ const SidebarMenu = ({ labelID: currentLabelID, location }: Props) => {
                 editText={c('Info').t`Manage your folders`}
                 onEdit={() => redirectTo('/settings/labels')}
             />
-            {displayFolders && <SidebarFolders currentLabelID={currentLabelID} isConversation={isConversation} />}
+            {displayFolders && (
+                <SidebarFolders
+                    currentLabelID={currentLabelID}
+                    isConversation={isConversation}
+                    counterMap={counterMap}
+                />
+            )}
             <SidebarGroupHeader
                 toggled={displayLabels}
                 onToggle={() => toggleLabels(!displayLabels)}
@@ -128,7 +134,13 @@ const SidebarMenu = ({ labelID: currentLabelID, location }: Props) => {
                 editText={c('Info').t`Manage your labels`}
                 onEdit={() => redirectTo('/settings/labels')}
             />
-            {displayLabels && <SidebarLabels currentLabelID={currentLabelID} isConversation={isConversation} />}
+            {displayLabels && (
+                <SidebarLabels
+                    currentLabelID={currentLabelID}
+                    isConversation={isConversation}
+                    counterMap={counterMap}
+                />
+            )}
         </CommonSidebarMenu>
     );
 };

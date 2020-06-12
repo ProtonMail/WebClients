@@ -3,17 +3,19 @@ import { useFolders } from 'react-components';
 import { buildTreeview } from 'proton-shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 import { setItem, getItem } from 'proton-shared/lib/helpers/storage';
+import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 
 import SidebarFolder from './SidebarFolder';
 
 interface Props {
     currentLabelID: string;
     isConversation: boolean;
+    counterMap: { [labelID: string]: LabelCount | undefined };
 }
 
 const formatFolderID = (folderID: string): string => `folder_expanded_state_${folderID}`;
 
-const SidebarFolders = ({ currentLabelID, isConversation }: Props) => {
+const SidebarFolders = ({ currentLabelID, isConversation, counterMap }: Props) => {
     const [folders, loadingFolders] = useFolders();
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
 
@@ -62,6 +64,7 @@ const SidebarFolders = ({ currentLabelID, isConversation }: Props) => {
                 folder={folder}
                 level={level}
                 onToggle={handleToggleFolder(folder)}
+                count={counterMap[folder.ID]}
             />
         );
 

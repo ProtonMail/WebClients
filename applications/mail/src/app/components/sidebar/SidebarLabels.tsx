@@ -1,13 +1,16 @@
 import React from 'react';
 import { useLabels } from 'react-components';
+import { LabelCount } from 'proton-shared/lib/interfaces/Label';
+
 import SidebarItem from './SidebarItem';
 
 interface Props {
     currentLabelID: string;
     isConversation: boolean;
+    counterMap: { [labelID: string]: LabelCount | undefined };
 }
 
-const SidebarLabels = ({ currentLabelID, isConversation }: Props) => {
+const SidebarLabels = ({ currentLabelID, isConversation, counterMap }: Props) => {
     const [labels = []] = useLabels();
 
     return (
@@ -22,6 +25,7 @@ const SidebarLabels = ({ currentLabelID, isConversation }: Props) => {
                     color={label.Color}
                     isFolder={false}
                     isConversation={isConversation}
+                    count={counterMap[label.ID]}
                 />
             ))}
         </>

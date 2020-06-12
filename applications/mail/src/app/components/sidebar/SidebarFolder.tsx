@@ -2,6 +2,7 @@ import React, { MouseEvent } from 'react';
 import { classnames, Icon } from 'react-components';
 import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 import { formatFolderName } from 'proton-shared/lib/helpers/folder';
+import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 
 import SidebarItem from './SidebarItem';
 
@@ -11,9 +12,10 @@ interface Props {
     folder: FolderWithSubFolders;
     level: number;
     onToggle: (event: MouseEvent) => void;
+    count?: LabelCount;
 }
 
-const SidebarFolder = ({ currentLabelID, folder, level, onToggle, isConversation }: Props) => {
+const SidebarFolder = ({ currentLabelID, folder, level, onToggle, isConversation, count }: Props) => {
     return (
         <SidebarItem
             currentLabelID={currentLabelID}
@@ -21,6 +23,7 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, isConversation
             isFolder={true}
             isConversation={isConversation}
             text={folder.Name}
+            count={count}
             content={
                 <div className="flex flex-nowrap" data-level={level}>
                     <Icon
