@@ -2,7 +2,7 @@
 @import "../reusable-components/design-system-config";
 
 
-@mixin button-disabled-state ($color: null){
+@mixin button-disabled-state ($color: null) {
   pointer-events: none;
 
   @if $color == null {

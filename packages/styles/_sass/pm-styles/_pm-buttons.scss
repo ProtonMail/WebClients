@@ -367,10 +367,17 @@
 }
 
 /* other aliases requested */
-.pm-button--redborder.pm-button--redborder { // for darkmode... again
-  @extend .pm-button;
-  border-color: $pm-global-warning;
-  color: $pm-global-warning;
+.pm-button--redborder,
+.pm-button.pm-button--redborder {
+	@extend .pm-button;
+	border-color: $pm-global-warning;
+	color: $pm-global-warning;
+  	&:focus,
+	&:hover,
+	&:not(div):active,
+	&:active {
+		color: $pm-global-warning;
+	}
 }
 .pm-button--whiteborder,
 .pm-button--primary.pm-button.pm-button--whiteborder {
