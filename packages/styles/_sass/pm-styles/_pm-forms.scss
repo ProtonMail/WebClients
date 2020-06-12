@@ -449,3 +449,11 @@ $pm-label-icon-width: 2em !default;
   }
 }
 /* end special case */
+
+
+/* special stupid case for signup iframe challenge... not using same styles for the moment */
+.signLayout-container {
+	.pm-field {
+        padding: em(10) em(16); // design want 42px height (actually 41 to avoid .5px)
+    }
+}
