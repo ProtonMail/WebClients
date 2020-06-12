@@ -453,7 +453,7 @@ $pm-label-icon-width: 2em !default;
 
 /* special stupid case for signup iframe challenge... not using same styles for the moment */
 .signLayout-container {
-	.pm-field {
+	.pm-field--username {
         padding: em(10) em(16); // design want 42px height (actually 41 to avoid .5px)
     }
 }
