@@ -39,7 +39,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
     const fileStream = new ObserverStream();
     const fsWriter = fileStream.writable.getWriter();
 
-    const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
+    const incompleteProgress = new Map<number, number>();
     let abortController = new AbortController();
     let paused = false;
 
@@ -48,6 +48,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
             throw new TransferCancel(id);
         }
 
+        const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
         const blocksOrBuffer = await onStart(fileStream.readable);
 
         await fsWriter.ready;
@@ -101,7 +102,13 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
                         })
                     ) as ReadableStream<Uint8Array>;
 
-                    const progressStream = new ObserverStream((value) => onProgress?.(value.length));
+                    const progressStream = new ObserverStream((value) => {
+                        if (abortController.signal.aborted) {
+                            throw new TransferCancel(id);
+                        }
+                        incompleteProgress.set(Index, (incompleteProgress.get(Index) ?? 0) + value.length);
+                        onProgress?.(value.length);
+                    });
                     const rawContentStream = blockStream.pipeThrough(progressStream);
 
                     // Decrypt the file block content using streaming decryption
@@ -132,6 +139,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
                     let nextIndex = activeIndex;
                     // Flush buffers for subsequent complete blocks too
                     while (buffers.get(nextIndex)?.done) {
+                        incompleteProgress.delete(nextIndex);
                         await flushBuffer(nextIndex);
                         nextIndex++;
                     }
@@ -150,14 +158,18 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
                 }
 
                 if (onProgress) {
-                    // Revert current block progress
-                    let progressToRevert = 0;
+                    // Revert progress of blacks that weren't finished
                     buffers.forEach((buffer, Index) => {
                         if (!buffer.done) {
-                            buffer.chunks.forEach((chunk) => (progressToRevert += chunk.byteLength));
                             buffers.delete(Index);
                         }
                     });
+
+                    let progressToRevert = 0;
+                    incompleteProgress.forEach((progress) => {
+                        progressToRevert += progress;
+                    });
+                    incompleteProgress.clear();
                     onProgress(-progressToRevert);
                 }
                 await waitUntil(() => paused === false);
@@ -183,16 +195,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
         abortController.abort();
 
         // Wait for download to reset progress or be flushed
-        const allDownloadsStopped = () => {
-            for (const [, buffer] of buffers) {
-                if (!buffer.done) {
-                    return false;
-                }
-            }
-            return true;
-        };
-
-        await waitUntil(allDownloadsStopped);
+        await waitUntil(() => !incompleteProgress.size);
     };
 
     const resume = () => {
