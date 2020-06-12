@@ -14,8 +14,8 @@ interface Props {
 }
 
 const SquireToolbarFontColorsDropdown = ({ squireRef, editorReady }: Props) => {
-    const [fontColor, setFontColor] = useState(DEFAULT_FONT_COLOR);
-    const [bgColor, setBgColor] = useState(DEFAULT_BACKGROUND);
+    const [fontColor, setFontColor] = useState(DEFAULT_FONT_COLOR());
+    const [bgColor, setBgColor] = useState(DEFAULT_BACKGROUND());
 
     useEffect(
         () =>

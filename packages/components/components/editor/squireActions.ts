@@ -147,7 +147,7 @@ export const getFontSizeAtCursor = (squire: SquireType) => {
  */
 export const getColorsAtCursor = (squire: SquireType) => {
     const { color, backgroundColor } = squire.getFontInfo();
-    return { font: rgbToHex(color, DEFAULT_FONT_COLOR), bg: rgbToHex(backgroundColor, DEFAULT_BACKGROUND) };
+    return { font: rgbToHex(color, DEFAULT_FONT_COLOR()), bg: rgbToHex(backgroundColor, DEFAULT_BACKGROUND()) };
 };
 
 /**
