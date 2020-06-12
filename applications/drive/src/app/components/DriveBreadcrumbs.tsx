@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { DriveFolder } from './Drive/DriveFolderProvider';
 import { c } from 'ttag';
 import Breadcrumbs, { BreadcrumbInfo } from './Breadcrumbs/Breadcrumbs';
-import useDrive from '../hooks/useDrive';
+import useDrive from '../hooks/drive/useDrive';
 import { LinkType } from '../interfaces/link';
 
 interface Props {

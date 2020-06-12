@@ -5,11 +5,11 @@ import { ToolbarButton, useModals } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
 import { DriveFolder } from '../DriveFolderProvider';
-import { useListNotifications } from '../helpers';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import CreateFolderModal from '../../CreateFolderModal';
 import MoveToFolderModal from '../../MoveToFolderModal';
-import useDrive from '../../../hooks/useDrive';
+import useDrive from '../../../hooks/drive/useDrive';
+import useListNotifications from '../../../hooks/util/useListNotifications';
 
 interface Props {
     activeFolder: DriveFolder;

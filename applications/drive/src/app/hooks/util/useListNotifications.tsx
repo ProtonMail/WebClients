@@ -1,27 +1,13 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
 
-import { LinkButton, useNotifications } from 'react-components';
+import { useNotifications, LinkButton } from 'react-components';
 
-import { FileBrowserItem } from '../FileBrowser/FileBrowser';
-import { LinkType, LinkMeta } from '../../interfaces/link';
+import { LinkType } from '../../interfaces/link';
+import { FileBrowserItem } from '../../components/FileBrowser/FileBrowser';
+import { selectMessageForItemList } from '../../components/Drive/helpers';
 
-export const selectMessageForItemList = (
-    types: LinkType[],
-    messages: {
-        allFiles: string;
-        allFolders: string;
-        mixed: string;
-    }
-) => {
-    const allFiles = types.every((type) => type === LinkType.FILE);
-    const allFolders = types.every((type) => type === LinkType.FOLDER);
-    const message = (allFiles && messages.allFiles) || (allFolders && messages.allFolders) || messages.mixed;
-
-    return message;
-};
-
-export const getNotificationTextForItemList = (
+const getNotificationTextForItemList = (
     types: LinkType[],
     messages: {
         allFiles: string;
@@ -50,20 +36,7 @@ export const getNotificationTextForItemList = (
     return notificationText;
 };
 
-export const mapLinksToChildren = (decryptedLinks: LinkMeta[]): FileBrowserItem[] => {
-    return decryptedLinks.map(({ LinkID, Type, Name, ModifyTime, Size, MIMEType, ParentLinkID, Trashed }) => ({
-        Name,
-        LinkID,
-        Type,
-        ModifyTime,
-        Size,
-        MIMEType,
-        ParentLinkID,
-        Trashed
-    }));
-};
-
-export const useListNotifications = () => {
+const useListNotifications = () => {
     const { createNotification } = useNotifications();
 
     const createDeleteLinksNotifications = (toDelete: FileBrowserItem[], deletedIds: string[]) => {
@@ -280,3 +253,5 @@ export const useListNotifications = () => {
         createDeleteLinksNotifications
     };
 };
+
+export default useListNotifications;

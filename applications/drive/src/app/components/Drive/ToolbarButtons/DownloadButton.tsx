@@ -6,7 +6,7 @@ import { ToolbarButton } from 'react-components';
 import { useDriveContent } from '../DriveContentProvider';
 import { LinkType } from '../../../interfaces/link';
 import { getMetaForTransfer } from '../Drive';
-import useFiles from '../../../hooks/useFiles';
+import useFiles from '../../../hooks/drive/useFiles';
 import FileSaver from '../../../utils/FileSaver/FileSaver';
 
 interface Props {

@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useRef, useEffect } from 'r
 import { initUpload, UploadCallbacks, UploadControls } from './upload';
 import { TransferState, TransferProgresses, TransferMeta, Upload, UploadInfo } from '../../interfaces/transfer';
 import { useNotifications } from 'react-components';
-import usePreventLeave from '../../hooks/usePreventLeave';
+import usePreventLeave from '../../hooks/util/usePreventLeave';
 import { isTransferProgress, isTransferPending } from '../../utils/transfer';
 
 interface UploadProviderState {

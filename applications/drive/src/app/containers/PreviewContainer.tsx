@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import useFiles from '../hooks/useFiles';
+import useFiles from '../hooks/drive/useFiles';
 import { RouteComponentProps } from 'react-router-dom';
 import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
 import { useLoading } from 'react-components';
@@ -8,7 +8,7 @@ import { LinkURLType } from '../constants';
 import { LinkMeta } from '../interfaces/link';
 import { getMetaForTransfer } from '../components/Drive/Drive';
 import { DownloadControls } from '../components/downloads/download';
-import useDrive from '../hooks/useDrive';
+import useDrive from '../hooks/drive/useDrive';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
 

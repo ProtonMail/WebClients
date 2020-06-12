@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { ToolbarButton, useModals } from 'react-components';
 
-import useDrive from '../../../hooks/useDrive';
+import useDrive from '../../../hooks/drive/useDrive';
 import CreateFolderModal from '../../CreateFolderModal';
 import { DriveFolder } from '../DriveFolderProvider';
 

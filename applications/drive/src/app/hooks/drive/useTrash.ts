@@ -1,14 +1,14 @@
 import { chunk } from 'proton-shared/lib/helpers/array';
-import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteLinks } from '../api/link';
-import { LinkMeta, FolderLinkMeta } from '../interfaces/link';
-import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
-import { FOLDER_PAGE_SIZE, BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '../constants';
-import { RestoreFromTrashResult, RESTORE_STATUS_CODE, RestoreResponse } from '../interfaces/restore';
-import { queryTrashList } from '../api/share';
-import runInQueue from '../utils/runInQueue';
+import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteLinks } from '../../api/link';
+import { LinkMeta, FolderLinkMeta } from '../../interfaces/link';
+import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
+import { FOLDER_PAGE_SIZE, BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '../../constants';
+import { RestoreFromTrashResult, RESTORE_STATUS_CODE, RestoreResponse } from '../../interfaces/restore';
+import { queryTrashList } from '../../api/share';
+import runInQueue from '../../utils/runInQueue';
 import useDrive from './useDrive';
-import useDebouncedRequest from './useDebouncedRequest';
-import usePreventLeave from './usePreventLeave';
+import useDebouncedRequest from '../util/useDebouncedRequest';
+import usePreventLeave from '../util/usePreventLeave';
 
 function useTrash() {
     const debouncedRequest = useDebouncedRequest();

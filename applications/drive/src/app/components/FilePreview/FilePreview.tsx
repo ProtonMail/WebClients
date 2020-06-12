@@ -8,7 +8,7 @@ import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import NavigationControl from './NavigationControl';
 import { LinkMeta } from '../../interfaces/link';
-import useKeyPress from '../../hooks/useKeyPress';
+import useKeyPress from '../../hooks/util/useKeyPress';
 import PDFPreview from './PDFPreview';
 
 export const isSupportedImage = (mimeType: string) =>

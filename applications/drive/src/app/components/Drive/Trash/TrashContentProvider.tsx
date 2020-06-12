@@ -6,7 +6,7 @@ import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { FileBrowserItem } from '../../FileBrowser/FileBrowser';
 import useFileBrowser from '../../FileBrowser/useFileBrowser';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import useTrash from '../../../hooks/useTrash';
+import useTrash from '../../../hooks/drive/useTrash';
 import { mapLinksToChildren } from '../helpers';
 
 interface TrashContentProviderState {

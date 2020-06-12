@@ -5,7 +5,7 @@ import { useApi, generateUID } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import { FILE_CHUNK_SIZE, MAX_THREADS_PER_DOWNLOAD } from '../../constants';
 import { LinkType } from '../../interfaces/link';
-import usePreventLeave from '../../hooks/usePreventLeave';
+import usePreventLeave from '../../hooks/util/usePreventLeave';
 import { isTransferFailed, isTransferPaused, isTransferProgress, isTransferPending } from '../../utils/transfer';
 
 const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
