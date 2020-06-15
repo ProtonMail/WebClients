@@ -28,6 +28,7 @@ export interface UploadCallbacks {
     requestUpload: (blockList: BlockList) => Promise<UploadLink[]>;
     finalize: (blocklist: BlockMeta[]) => Promise<void>;
     onProgress?: (bytes: number) => void;
+    onError?: (error: Error) => void;
 }
 
 export interface UploadControls {
@@ -69,7 +70,7 @@ export async function upload(
     });
 }
 
-export function initUpload({ requestUpload, transform, onProgress, finalize }: UploadCallbacks) {
+export function initUpload({ requestUpload, transform, onProgress, finalize, onError }: UploadCallbacks) {
     const id = generateUID('drive-transfers');
     const abortController = new AbortController();
 
@@ -142,7 +143,11 @@ export function initUpload({ requestUpload, transform, onProgress, finalize }: U
     };
 
     const uploadControls: UploadControls = {
-        start,
+        start: (...args) =>
+            start(...args).catch((err) => {
+                onError?.(err);
+                throw err;
+            }),
         cancel
     };
 
