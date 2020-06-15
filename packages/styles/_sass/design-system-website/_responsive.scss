@@ -2,16 +2,13 @@
  * BIGGER than large breakpoint
  */
 
- @include respond-to(1800, 'min') {
+//@include respond-to(1800, 'min') {
 
   // it will be back, so left in comment :-]
   // :root {
   //   --body-fontsize: 1.6rem;
   // }
-  .container-section-sticky {
-    max-width: 65em;
-  }
-}
+// }
 
 
 
@@ -28,7 +25,7 @@
   }
 
   .container-section-sticky {
-    max-width: 55vw;
+    max-width: 75vw;
   }
 }
 //  @include respond-to($breakpoint-large) {
