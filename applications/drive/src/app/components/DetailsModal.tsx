@@ -58,7 +58,7 @@ const DetailsModal = ({ activeFolder, getLinkMeta, item, onClose, ...rest }: Pro
 
     const modalTitleID = 'details-modal';
     const isFolder = item.Type === LinkType.FOLDER;
-    const folderFields = ['Name', 'Uploaded by', 'Location', 'Modified'];
+    const folderFields = ['Name', 'Uploaded by', 'Location', 'ModifyTime'];
     const fileFields = [...folderFields, 'Extension', 'Size'];
     const fieldsToRender = isFolder ? folderFields : fileFields;
     const title = isFolder ? c('Title').t`Folder Details` : c('Title').t`File Details`;
@@ -71,14 +71,14 @@ const DetailsModal = ({ activeFolder, getLinkMeta, item, onClose, ...rest }: Pro
                 return <span title={Name}>{Name}</span>;
             case 'Location':
                 return <span title={location}>{location}</span>;
-            case 'Modified':
+            case 'ModifyTime':
                 return (
                     <Time key="dateModified" format="PPp">
-                        {item.Modified}
+                        {item.ModifyTime}
                     </Time>
                 );
             case 'Extension':
-                return <span title={item.MimeType}>{item.MimeType}</span>;
+                return <span title={item.MIMEType}>{item.MIMEType}</span>;
             case 'Size':
                 return humanSize(item.Size);
             default:

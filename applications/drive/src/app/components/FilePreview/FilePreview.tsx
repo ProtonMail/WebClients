@@ -8,7 +8,7 @@ import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import NavigationControl from './NavigationControl';
 import { LinkMeta } from '../../interfaces/link';
-import useKeyPress from '../../hooks/useKeyPress';
+import useKeyPress from '../../hooks/util/useKeyPress';
 import PDFPreview from './PDFPreview';
 
 export const isSupportedImage = (mimeType: string) =>
@@ -27,6 +27,7 @@ export const isSupportedImage = (mimeType: string) =>
         .includes(mimeType);
 
 export const isSupportedText = (mimeType: string) => mimeType.startsWith('text/');
+export const isVideo = (mimeType: string) => mimeType.startsWith('video/');
 export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mimeType === 'x-pdf';
 
 // Will include more rules in the future
@@ -65,7 +66,7 @@ const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onC
     );
 
     const renderPreview = () => {
-        if (!meta || !isPreviewAvailable(meta.MimeType)) {
+        if (!meta || !isPreviewAvailable(meta.MIMEType)) {
             return <UnsupportedPreview onSave={onSave} />;
         }
 
@@ -73,18 +74,18 @@ const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onC
             throw new Error(c('Error').t`File has not contents to preview`);
         }
 
-        if (isSupportedImage(meta.MimeType)) {
-            return <ImagePreview contents={contents} mimeType={meta.MimeType} onSave={onSave} />;
-        } else if (isSupportedText(meta.MimeType)) {
+        if (isSupportedImage(meta.MIMEType)) {
+            return <ImagePreview contents={contents} mimeType={meta.MIMEType} onSave={onSave} />;
+        } else if (isSupportedText(meta.MIMEType)) {
             return <TextPreview contents={contents} />;
-        } else if (isPDF(meta.MimeType)) {
+        } else if (isPDF(meta.MIMEType)) {
             return <PDFPreview contents={contents} filename={meta.Name} />;
         }
     };
 
     return (
         <div className="pd-file-preview">
-            <Header mimeType={meta?.MimeType} name={meta?.Name} onClose={onClose} onSave={onSave}>
+            <Header mimeType={meta?.MIMEType} name={meta?.Name} onClose={onClose} onSave={onSave}>
                 {totalAvailable > 0 && onOpen && currentOpenIndex !== -1 && (
                     <NavigationControl
                         current={currentOpenIndex + 1}

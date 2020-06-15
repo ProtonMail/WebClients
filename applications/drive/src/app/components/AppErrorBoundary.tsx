@@ -5,7 +5,8 @@ import {
     generateUID,
     InternalServerError,
     NotFoundError,
-    AccessDeniedError
+    AccessDeniedError,
+    PrivateMainArea
 } from 'react-components';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { useDriveActiveFolder } from './Drive/DriveFolderProvider';
@@ -59,7 +60,7 @@ const AppErrorBoundary = ({ children, location }: Props) => {
         <ErrorBoundary
             key={state.id}
             onError={handleError}
-            component={<div className="p2 main-area">{renderError()}</div>}
+            component={<PrivateMainArea>{renderError()}</PrivateMainArea>}
         >
             {children}
         </ErrorBoundary>

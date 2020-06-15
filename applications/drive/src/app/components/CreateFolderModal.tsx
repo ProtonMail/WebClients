@@ -66,7 +66,7 @@ const CreateFolderModal = ({ onClose, createNewFolder, ...rest }: Props) => {
                         id="folder-name"
                         autoFocus
                         value={folderName}
-                        placeholder={c('Placeholder').t`New folder`}
+                        placeholder={c('Placeholder').t`Enter a new folder name`}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         error={validationError}

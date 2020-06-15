@@ -1,10 +1,14 @@
 import React, { useRef } from 'react';
-import { TableRow, Checkbox, Time, useActiveBreakpoint, classnames } from 'react-components';
 import { c } from 'ttag';
+
+import { TableRow, Checkbox, Time, useActiveBreakpoint, classnames } from 'react-components';
+import readableTime from 'proton-shared/lib/helpers/readableTime';
+import { dateLocale } from 'proton-shared/lib/i18n';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+
 import { LinkType } from '../../interfaces/link';
 import { FileBrowserItem } from './FileBrowser';
-import MimeIcon from '../FileIcon';
+import FileIcon from '../FileIcon/FileIcon';
 import LocationCell from './LocationCell';
 
 interface Props {
@@ -71,7 +75,7 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
             />
         </div>,
         <div key="filename" className="flex flex-items-center flex-nowrap">
-            <MimeIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MimeType} />
+            <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} />
             <span title={item.Name} className="ellipsis">
                 {item.Name}
             </span>
@@ -79,11 +83,22 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
         showLocation && <LocationCell shareId={shareId} item={item} />,
         isFolder ? c('Label').t`Folder` : c('Label').t`File`,
         isDesktop && (
-            <Time key="dateModified" format="PPp">
-                {item.Trashed ?? item.Modified}
-            </Time>
+            <div
+                className="ellipsis"
+                title={readableTime(item.Trashed ?? item.ModifyTime, 'PPp', { locale: dateLocale })}
+            >
+                <Time key="dateModified" format="PPp">
+                    {item.Trashed ?? item.ModifyTime}
+                </Time>
+            </div>
         ),
-        item.Size ? humanSize(item.Size) : '-'
+        item.Size ? (
+            <div className="ellipsis" title={humanSize(item.Size)}>
+                {humanSize(item.Size)}
+            </div>
+        ) : (
+            '-'
+        )
     ].filter(Boolean);
 
     return (

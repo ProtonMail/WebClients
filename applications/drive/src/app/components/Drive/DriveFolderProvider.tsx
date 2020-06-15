@@ -1,7 +1,7 @@
 import React, { useState, createContext, useEffect, useContext } from 'react';
 import { c } from 'ttag';
 import { useLoading, LoaderPage } from 'react-components';
-import useDrive from '../../hooks/useDrive';
+import useDrive from '../../hooks/drive/useDrive';
 
 export type DriveFolder = { shareId: string; linkId: string };
 

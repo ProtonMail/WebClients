@@ -1,80 +1,129 @@
-import React, { useRef } from 'react';
-import { c, msgid } from 'ttag';
-import { Icon, Tooltip, classnames } from 'react-components';
-import { Download } from '../downloads/DownloadProvider';
-import { Upload } from '../uploads/UploadProvider';
-import { TransferState } from '../../interfaces/transfer';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
+import { c } from 'ttag';
 
-const isTransferActive = ({ state }: Upload | Download) =>
-    state === TransferState.Pending || state === TransferState.Progress || state === TransferState.Initializing;
-const isTransferDone = ({ state }: Upload | Download) => state === TransferState.Done;
-const isTransferFailed = ({ state }: Upload | Download) => state === TransferState.Error;
-const isTransferCanceled = ({ state }: Upload | Download) => state === TransferState.Canceled;
+import { Icon, Tooltip, classnames } from 'react-components';
+
+import { Transfer, Download, Upload } from '../../interfaces/transfer';
+import { TransfersStats } from './TransfersInfo';
+import {
+    isTransferActive,
+    isTransferDone,
+    isTransferPaused,
+    isTransferError,
+    isTransferCanceled
+} from '../../utils/transfer';
 
 interface Props {
     downloads: Download[];
     uploads: Upload[];
+    latestStats: TransfersStats;
     minimized: boolean;
     onToggleMinimize: () => void;
     onClose: () => void;
 }
 
-const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = false }: Props) => {
+const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, minimized = false }: Props) => {
+    const [currentUploads, setCurrentUploads] = useState<Upload[]>([]);
+    const [currentDownloads, setCurrentDownloads] = useState<Download[]>([]);
+
     const minimizeRef = useRef<HTMLButtonElement>(null);
     const transfers = [...downloads, ...uploads];
-    const activeUploads = uploads.filter(isTransferActive);
-    const activeDownloads = downloads.filter(isTransferActive);
-    const doneTransfers = transfers.filter(isTransferDone);
-    const failedTransfers = transfers.filter(isTransferFailed);
-    const canceledTransfers = transfers.filter(isTransferCanceled);
+
+    const activeUploads = useMemo(() => uploads.filter(isTransferActive), [uploads]);
+    const activeDownloads = useMemo(() => downloads.filter(isTransferActive), [downloads]);
+
+    const doneUploads = useMemo(() => uploads.filter(isTransferDone), [uploads]);
+    const doneDownloads = useMemo(() => downloads.filter(isTransferDone), [downloads]);
+
+    const pausedTransfers = useMemo(() => transfers.filter(isTransferPaused), [transfers]);
+    const failedTransfers = useMemo(() => transfers.filter(isTransferError), [transfers]);
+    const canceledTransfers = useMemo(() => transfers.filter(isTransferCanceled), [transfers]);
+
+    const activeUploadsCount = activeUploads.length;
+    const activeDownloadsCount = activeDownloads.length;
+
+    useEffect(() => {
+        if (activeUploadsCount) {
+            setCurrentUploads((currentUploads) => [
+                ...currentUploads.filter((upload) => activeUploads.every(({ id }) => id !== upload.id)),
+                ...activeUploads
+            ]);
+        } else {
+            setCurrentUploads([]);
+        }
+    }, [activeUploads]);
+
+    useEffect(() => {
+        if (activeDownloadsCount) {
+            setCurrentDownloads((currentDownloads) => [
+                ...currentDownloads.filter((download) => activeDownloads.every(({ id }) => id !== download.id)),
+                ...activeDownloads
+            ]);
+        } else {
+            setCurrentDownloads([]);
+        }
+    }, [activeDownloads]);
 
     const getHeadingText = () => {
-        let headingText = '';
-        const activeCount = activeUploads.length + activeDownloads.length;
+        const headingElements: string[] = [];
+
+        const activeCount = activeUploadsCount + activeDownloadsCount;
+        const doneUploadsCount = doneUploads.length;
+        const doneDownloadsCount = doneDownloads.length;
+        const doneCount = doneUploadsCount + doneDownloadsCount;
+
         const errorCount = failedTransfers.length;
         const canceledCount = canceledTransfers.length;
-        const doneCount = doneTransfers.length;
+        const pausedCount = pausedTransfers.length;
 
-        if (uploads.length && downloads.length) {
-            headingText =
-                activeUploads.length || activeDownloads.length
-                    ? c('Info').ngettext(
-                          msgid`Transferring ${activeCount} file`,
-                          `Transferring ${activeCount} files`,
-                          activeCount
-                      )
-                    : c('Info').ngettext(
-                          msgid`Transferred ${doneCount} file`,
-                          `Transferred ${doneCount} files`,
-                          doneCount
-                      );
-        } else if (downloads.length) {
-            headingText = activeDownloads.length
-                ? c('Info').ngettext(
-                      msgid`Downloading ${activeCount} file`,
-                      `Downloading ${activeCount} files`,
-                      activeCount
-                  )
-                : c('Info').ngettext(msgid`Downloaded ${doneCount} file`, `Downloaded ${doneCount} files`, doneCount);
-        } else {
-            headingText = activeUploads.length
-                ? c('Info').ngettext(
-                      msgid`Uploading ${activeCount} file`,
-                      `Uploading ${activeCount} files`,
-                      activeCount
-                  )
-                : c('Info').ngettext(msgid`Uploaded ${doneCount} file`, `Uploaded ${doneCount} files`, doneCount);
+        const calculateProgress = (transfers: Transfer[]) => {
+            const result = transfers.reduce(
+                (result, transfer) => {
+                    result.size += transfer.meta.size || 0;
+                    result.progress += latestStats.stats[transfer.id]?.progress || 0;
+                    return result;
+                },
+                { size: 0, progress: 0 }
+            );
+
+            return Math.floor(100 * (result.progress / (result.size || 1)));
+        };
+
+        if (!activeCount) {
+            if (doneUploadsCount && doneDownloadsCount) {
+                headingElements.push(c('Info').t`${doneCount} Finished`);
+            } else {
+                if (doneUploadsCount) {
+                    headingElements.push(c('Info').t`${doneUploadsCount} Uploaded`);
+                }
+                if (doneDownloadsCount) {
+                    headingElements.push(c('Info').t`${doneDownloadsCount} Downloaded`);
+                }
+            }
+        }
+
+        if (activeUploadsCount) {
+            const uploadProgress = calculateProgress(currentUploads);
+            headingElements.push(c('Info').t`${activeUploadsCount} Uploading ${uploadProgress}%`);
+        }
+        if (activeDownloadsCount) {
+            const downloadProgress = calculateProgress(currentDownloads);
+            headingElements.push(c('Info').t`${activeDownloadsCount} Downloading ${downloadProgress}%`);
+        }
+
+        if (pausedCount) {
+            headingElements.push(c('Info').t`${pausedCount} Paused`);
         }
 
         if (canceledCount) {
-            headingText += `, ${c('Info').t`${canceledCount} canceled`}`;
+            headingElements.push(c('Info').t`${canceledCount} Canceled`);
         }
 
         if (errorCount) {
-            headingText += `, ${c('Info').ngettext(msgid`${errorCount} error`, `${errorCount} errors`, errorCount)}`;
+            headingElements.push(c('Info').t`${errorCount} Failed`);
         }
 
-        return headingText;
+        return headingElements.join(', ');
     };
 
     const minMaxTitle = minimized ? c('Action').t`Maximize transfers` : c('Action').t`Minimize transfers`;
@@ -82,7 +131,12 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
 
     return (
         <div className="pd-transfers-heading flex flex-items-center flex-nowrap pl0-5 pr0-5 color-global-light">
-            <div className="flex-item-fluid p0-5" onClick={minimized ? onToggleMinimize : undefined}>
+            <div
+                className="flex-item-fluid p0-5"
+                aria-atomic="true"
+                aria-live="polite"
+                onClick={minimized ? onToggleMinimize : undefined}
+            >
                 {getHeadingText()}
             </div>
             <Tooltip title={minMaxTitle} className="pd-transfers-headingTooltip flex-item-noshrink flex">
@@ -96,7 +150,7 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
                     }}
                     aria-expanded={!minimized}
                 >
-                    <Icon className={classnames([minimized && 'rotateX-180'])} name="minimize" />
+                    <Icon className={classnames(['mauto', minimized && 'rotateX-180'])} name="minimize" />
                     <span className="sr-only">{minMaxTitle}</span>
                 </button>
             </Tooltip>
@@ -114,7 +168,7 @@ const Heading = ({ downloads, uploads, onClose, onToggleMinimize, minimized = fa
                     className="pd-transfers-headingButton flex p0-5"
                     onClick={onClose}
                 >
-                    <Icon name="off" />
+                    <Icon className="mauto" name="off" />
                     <span className="sr-only">{closeTitle}</span>
                 </button>
             </Tooltip>

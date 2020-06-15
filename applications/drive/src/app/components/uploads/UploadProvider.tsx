@@ -1,29 +1,9 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
 import { initUpload, UploadCallbacks, UploadControls } from './upload';
-import { TransferState, TransferProgresses, TransferMeta } from '../../interfaces/transfer';
+import { TransferState, TransferProgresses, TransferMeta, Upload, UploadInfo } from '../../interfaces/transfer';
 import { useNotifications } from 'react-components';
-
-export interface BlockMeta {
-    Index: number;
-    Hash: string;
-    Token: string;
-}
-
-export interface UploadInfo {
-    blob: Blob;
-    LinkID: string;
-    ShareID: string;
-    RevisionID: string;
-    ParentLinkID: string;
-}
-
-export interface Upload {
-    id: string;
-    meta: TransferMeta;
-    info?: UploadInfo;
-    state: TransferState;
-    startDate: Date;
-}
+import usePreventLeave from '../../hooks/util/usePreventLeave';
+import { isTransferProgress, isTransferPending } from '../../utils/transfer';
 
 interface UploadProviderState {
     uploads: Upload[];
@@ -50,6 +30,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     // Keeping ref in case we need to immediatelly get uploads without waiting for rerender
     const uploadsRef = useRef<Upload[]>([]);
     const { createNotification } = useNotifications();
+    const { preventLeave } = usePreventLeave();
     const [uploads, setUploads] = useState<Upload[]>([]);
     const controls = useRef<{ [id: string]: UploadControls }>({});
     const progresses = useRef<TransferProgresses>({});
@@ -90,10 +71,10 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     const updateUploadState = (id: string, state: TransferState) => updateUploadByID(id, { state });
 
     useEffect(() => {
-        const activeUploads = uploads.filter(({ state }) => state === TransferState.Progress);
-        const nextPending = uploads.find(({ state }) => state === TransferState.Pending);
+        const uploading = uploads.filter(isTransferProgress);
+        const nextPending = uploads.find(isTransferPending);
 
-        if (activeUploads.length < MAX_ACTIVE_UPLOADS && nextPending) {
+        if (uploading.length < MAX_ACTIVE_UPLOADS && nextPending) {
             const { id, info } = nextPending;
 
             if (!info) {
@@ -105,20 +86,22 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
             updateUploadState(id, TransferState.Progress);
 
-            controls.current[id]
-                .start(info)
-                .then(() => {
-                    // Update upload progress to 100%
-                    const upload = uploads.find((upload) => upload.id === id);
-                    if (upload) {
-                        progresses.current[id] = upload.meta.size ?? 0;
-                    }
-                    updateUploadState(id, TransferState.Done);
-                })
-                .catch((err) => {
-                    console.error(err);
-                    updateUploadState(id, TransferState.Error);
-                });
+            preventLeave(
+                controls.current[id]
+                    .start(info)
+                    .then(() => {
+                        // Update upload progress to 100%
+                        const upload = uploads.find((upload) => upload.id === id);
+                        if (upload) {
+                            progresses.current[id] = upload.meta.size ?? 0;
+                        }
+                        updateUploadState(id, TransferState.Done);
+                    })
+                    .catch((error) => {
+                        console.error(`Failed to upload: ${error}`);
+                        updateUploadState(id, TransferState.Error);
+                    })
+            );
         }
     }, [uploads]);
 

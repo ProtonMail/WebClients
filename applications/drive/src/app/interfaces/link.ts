@@ -8,12 +8,12 @@ interface FileProperties {
     ContentKeyPacket: string;
     ActiveRevision: {
         ID: number;
-        Created: number;
+        CreateTime: number;
         Size: number;
         Hash: string;
         RootHash: string;
         RootHashSignature: string;
-        AuthorAddressID: string;
+        SignatureAddress: string;
         State: FileRevisionState;
     } | null;
 }
@@ -28,16 +28,16 @@ interface DriveLink {
     Type: LinkType;
     Name: string;
     Size: number;
-    MimeType: string;
+    MIMEType: string;
     Hash: string;
-    Created: number;
-    Modified: number;
+    CreateTime: number;
+    ModifyTime: number;
     Trashed: number | null;
     State: number;
     NodeKey: string;
     NodePassphrase: string;
     NodePassphraseSignature: string;
-    SignatureAddressID: string;
+    SignatureAddress: string;
     Attributes: number;
     Permissions: number;
     FileProperties: FileProperties | null;
@@ -78,5 +78,7 @@ export interface MoveLink {
     ParentLinkID: string;
     NodePassphrase: string;
     NodePassphraseSignature: string;
-    SignatureAddressID: string;
+    SignatureAddress: string;
 }
+
+export type SortKeys = keyof Pick<DriveLink, 'Type' | 'ModifyTime' | 'Size'>;
