@@ -10,10 +10,10 @@ export enum EncryptionPreferencesFailureTypes {
     INTERNAL_USER_DISABLED = 0,
     INTERNAL_USER_NO_API_KEY = 1,
     INTERNAL_USER_NO_VALID_API_KEY = 2,
-    INTERNAL_USER_PRIMARY_NOT_PINNED = 3,
+    PRIMARY_NOT_PINNED = 3,
     WKD_USER_NO_VALID_WKD_KEY = 4,
-    WKD_USER_PRIMARY_NOT_PINNED = 5,
-    EXTERNAL_USER_NO_VALID_PINNED_KEY = 6
+    EXTERNAL_USER_NO_VALID_PINNED_KEY = 6,
+    CONTACT_SIGNATURE_NOT_VERIFIED
 }
 
 export interface EncryptionPreferencesFailure {
@@ -24,8 +24,8 @@ export interface EncryptionPreferencesFailure {
 export interface EncryptionPreferences {
     encrypt: boolean;
     sign: boolean;
-    mimeType: DRAFT_MIME_TYPES;
     scheme: PGP_SCHEMES;
+    mimeType: DRAFT_MIME_TYPES;
     sendKey?: OpenPGPKey;
     isSendKeyPinned?: boolean;
     apiKeys: OpenPGPKey[];
@@ -33,7 +33,8 @@ export interface EncryptionPreferences {
     isInternal: boolean;
     hasApiKeys: boolean;
     hasPinnedKeys: boolean;
-    isContactSignatureVerified: boolean;
+    isContact: boolean;
+    isContactSignatureVerified?: boolean;
     warnings?: string[];
     failure?: EncryptionPreferencesFailure;
     emailAddressWarnings?: string[];
@@ -48,6 +49,7 @@ const extractEncryptionPreferencesOwnAddress = (
         emailAddress,
         scheme,
         mimeType,
+        isContact,
         isContactSignatureVerified,
         emailAddressWarnings,
         emailAddressErrors
@@ -65,6 +67,7 @@ const extractEncryptionPreferencesOwnAddress = (
         pinnedKeys: [],
         hasApiKeys,
         hasPinnedKeys: false,
+        isContact,
         isContactSignatureVerified,
         emailAddressWarnings
     };
@@ -116,6 +119,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         scheme,
         mimeType,
         trustedFingerprints,
+        isContact,
         isContactSignatureVerified,
         emailAddressWarnings,
         emailAddressErrors
@@ -132,6 +136,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         isInternal: true,
         hasApiKeys,
         hasPinnedKeys,
+        isContact,
         isContactSignatureVerified,
         emailAddressWarnings
     };
@@ -142,6 +147,15 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             failure: {
                 type: EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR,
                 error: new Error(errorString)
+            }
+        };
+    }
+    if (isContact && !isContactSignatureVerified) {
+        return {
+            ...result,
+            failure: {
+                type: EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED,
+                error: new Error(c('Error').t`Contact signature could not be verified`)
             }
         };
     }
@@ -179,7 +193,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             ...result,
             sendKey: validApiSendKey,
             failure: {
-                type: EncryptionPreferencesFailureTypes.INTERNAL_USER_PRIMARY_NOT_PINNED,
+                type: EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED,
                 error: new Error(c('Error').t`Trusted keys are not valid for sending`)
             }
         };
@@ -197,6 +211,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         scheme,
         mimeType,
         trustedFingerprints,
+        isContact,
         isContactSignatureVerified,
         emailAddressWarnings,
         emailAddressErrors
@@ -213,6 +228,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         isInternal: false,
         hasApiKeys,
         hasPinnedKeys,
+        isContact,
         isContactSignatureVerified,
         emailAddressWarnings
     };
@@ -223,6 +239,15 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
             failure: {
                 type: EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR,
                 error: new Error(errorString)
+            }
+        };
+    }
+    if (isContact && !isContactSignatureVerified) {
+        return {
+            ...result,
+            failure: {
+                type: EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED,
+                error: new Error(c('Error').t`Contact signature could not be verified`)
             }
         };
     }
@@ -251,7 +276,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
             ...result,
             sendKey: validApiSendKey,
             failure: {
-                type: EncryptionPreferencesFailureTypes.WKD_USER_PRIMARY_NOT_PINNED,
+                type: EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED,
                 error: new Error(c('Error').t`Trusted keys are not valid for sending`)
             }
         };
@@ -270,6 +295,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         sign,
         scheme,
         mimeType,
+        isContact,
         isContactSignatureVerified,
         emailAddressWarnings,
         emailAddressErrors
@@ -285,6 +311,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         isInternal: false,
         hasApiKeys: false,
         hasPinnedKeys,
+        isContact,
         isContactSignatureVerified,
         emailAddressWarnings
     };
@@ -295,6 +322,15 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
             failure: {
                 type: EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR,
                 error: new Error(errorString)
+            }
+        };
+    }
+    if (isContact && !isContactSignatureVerified) {
+        return {
+            ...result,
+            failure: {
+                type: EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED,
+                error: new Error(c('Error').t`Contact signature could not be verified`)
             }
         };
     }

@@ -34,7 +34,7 @@ const getMimeTypeVcard = (mimeType: string): MimeTypeVcard | undefined => {
 export const getKeyInfoFromProperties = async (
     properties: ContactProperties,
     emailGroup: string
-): Promise<Omit<PinnedKeysConfig, 'isContactSignatureVerified'>> => {
+): Promise<Omit<PinnedKeysConfig, 'isContactSignatureVerified' | 'isContact'>> => {
     const { pinnedKeyPromises, mimeType, encrypt, scheme, sign } = properties
         .filter(({ field, group }) => VCARD_KEY_FIELDS.includes(field) && group === emailGroup)
         .reduce<{

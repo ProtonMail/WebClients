@@ -85,6 +85,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         isPGPExternalWithWKDKeys: false,
         isPGPExternalWithoutWKDKeys: false,
         pgpAddressDisabled: false,
+        isContact: true,
         isContactSignatureVerified: true
     };
     const mailSettings = {
@@ -92,6 +93,38 @@ describe('extractEncryptionPreferences for an internal user', () => {
         PGPScheme: PACKAGE_TYPE.SEND_PGP_MIME,
         DraftMIMEType: DRAFT_MIME_TYPES.DEFAULT
     } as MailSettings;
+
+    it('should extract the primary API key when the email address does not belong to any contact', () => {
+        const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
+        const pinnedKeys = [] as OpenPGPKey[];
+        const publicKeyModel = {
+            ...model,
+            isContact: false,
+            isContactSignatureVerified: undefined,
+            publicKeys: { apiKeys, pinnedKeys },
+            expiredFingerprints: new Set(['fakeKey2']),
+            verifyOnlyFingerprints: new Set(['fakeKey3'])
+        };
+        const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
+
+        expect(result).toEqual({
+            encrypt: true,
+            sign: true,
+            mimeType: DRAFT_MIME_TYPES.DEFAULT,
+            scheme: PGP_SCHEMES.PGP_MIME,
+            sendKey: fakeKey1,
+            isSendKeyPinned: false,
+            apiKeys,
+            pinnedKeys,
+            isInternal: true,
+            hasApiKeys: true,
+            hasPinnedKeys: false,
+            warnings: [],
+            isContact: false,
+            isContactSignatureVerified: undefined,
+            emailAddressWarnings: undefined
+        });
+    });
 
     it('should extract the primary API key when there are no pinned keys', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
@@ -117,6 +150,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             hasApiKeys: true,
             hasPinnedKeys: false,
             warnings: [],
+            isContact: true,
             isContactSignatureVerified: true,
             emailAddressWarnings: undefined
         });
@@ -147,6 +181,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             hasApiKeys: true,
             hasPinnedKeys: true,
             warnings: [],
+            isContact: true,
             isContactSignatureVerified: true,
             emailAddressWarnings: undefined
         });
@@ -189,7 +224,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.INTERNAL_USER_PRIMARY_NOT_PINNED);
+        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED);
     });
 
     it('should give a failure when the preferred pinned key is not among the keys returned by the API', () => {
@@ -202,7 +237,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.INTERNAL_USER_PRIMARY_NOT_PINNED);
+        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED);
     });
 
     it('should give a failure if the API returned no keys', () => {
@@ -233,6 +268,19 @@ describe('extractEncryptionPreferences for an internal user', () => {
 
         expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.INTERNAL_USER_NO_VALID_API_KEY);
     });
+
+    it('should give a failure if there are pinned keys but the contact signature could not be verified', () => {
+        const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
+        const pinnedKeys = [pinnedFakeKey1];
+        const publicKeyModel = {
+            ...model,
+            isContactSignatureVerified: false,
+            publicKeys: { apiKeys, pinnedKeys }
+        };
+        const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
+
+        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED);
+    });
 });
 
 describe('extractEncryptionPreferences for an external user with WKD keys', () => {
@@ -250,6 +298,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         isPGPExternalWithWKDKeys: true,
         isPGPExternalWithoutWKDKeys: false,
         pgpAddressDisabled: false,
+        isContact: true,
         isContactSignatureVerified: true
     };
     const mailSettings = {
@@ -257,6 +306,38 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         PGPScheme: PACKAGE_TYPE.SEND_PGP_MIME,
         DraftMIMEType: DRAFT_MIME_TYPES.DEFAULT
     } as MailSettings;
+
+    it('should extract the primary API key when the email address does not belong to any contact', () => {
+        const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
+        const pinnedKeys = [] as OpenPGPKey[];
+        const publicKeyModel = {
+            ...model,
+            isContact: false,
+            isContactSignatureVerified: undefined,
+            publicKeys: { apiKeys, pinnedKeys },
+            expiredFingerprints: new Set(['fakeKey2']),
+            verifyOnlyFingerprints: new Set(['fakeKey3'])
+        };
+        const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
+
+        expect(result).toEqual({
+            encrypt: true,
+            sign: true,
+            mimeType: DRAFT_MIME_TYPES.PLAINTEXT,
+            scheme: PGP_SCHEMES.PGP_INLINE,
+            sendKey: fakeKey1,
+            isSendKeyPinned: false,
+            apiKeys,
+            pinnedKeys,
+            isInternal: false,
+            hasApiKeys: true,
+            hasPinnedKeys: false,
+            warnings: [],
+            isContact: false,
+            isContactSignatureVerified: undefined,
+            emailAddressWarnings: undefined
+        });
+    });
 
     it('should extract the primary API key when there are no pinned keys', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
@@ -282,6 +363,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             hasApiKeys: true,
             hasPinnedKeys: false,
             warnings: [],
+            isContact: true,
             isContactSignatureVerified: true,
             emailAddressWarnings: undefined
         });
@@ -312,6 +394,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             hasApiKeys: true,
             hasPinnedKeys: true,
             warnings: [],
+            isContact: true,
             isContactSignatureVerified: true,
             emailAddressWarnings: undefined
         });
@@ -350,7 +433,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.WKD_USER_PRIMARY_NOT_PINNED);
+        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED);
     });
 
     it('should give a failure when the preferred pinned key is not among the keys returned by the API', () => {
@@ -361,7 +444,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.WKD_USER_PRIMARY_NOT_PINNED);
+        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED);
     });
 
     it('should give a failure if the API returned no keys valid for sending', () => {
@@ -376,6 +459,19 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
         expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.WKD_USER_NO_VALID_WKD_KEY);
+    });
+
+    it('should give a failure if there are pinned keys but the contact signature could not be verified', () => {
+        const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
+        const pinnedKeys = [pinnedFakeKey1];
+        const publicKeyModel = {
+            ...model,
+            isContactSignatureVerified: false,
+            publicKeys: { apiKeys, pinnedKeys }
+        };
+        const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
+
+        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED);
     });
 });
 
@@ -396,6 +492,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         isPGPExternalWithWKDKeys: false,
         isPGPExternalWithoutWKDKeys: true,
         pgpAddressDisabled: false,
+        isContact: true,
         isContactSignatureVerified: true
     };
     const mailSettings = {
@@ -418,7 +515,34 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isInternal: false,
             hasApiKeys: false,
             hasPinnedKeys: false,
+            isContact: true,
             isContactSignatureVerified: true,
+            emailAddressWarnings: undefined
+        });
+    });
+
+    it('should pick no key when the email address does not belong to any contact', () => {
+        const result = extractEncryptionPreferences(
+            {
+                ...model,
+                isContact: false,
+                isContactSignatureVerified: undefined
+            },
+            mailSettings
+        );
+
+        expect(result).toEqual({
+            encrypt: false,
+            sign: false,
+            mimeType: DRAFT_MIME_TYPES.PLAINTEXT,
+            scheme: PGP_SCHEMES.PGP_MIME,
+            apiKeys: [],
+            pinnedKeys: [],
+            isInternal: false,
+            hasApiKeys: false,
+            hasPinnedKeys: false,
+            isContact: false,
+            isContactSignatureVerified: undefined,
             emailAddressWarnings: undefined
         });
     });
@@ -436,6 +560,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isInternal: false,
             hasApiKeys: false,
             hasPinnedKeys: false,
+            isContact: true,
             isContactSignatureVerified: true,
             emailAddressWarnings: undefined
         });
@@ -464,6 +589,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             hasApiKeys: false,
             hasPinnedKeys: true,
             warnings: [],
+            isContact: true,
             isContactSignatureVerified: true,
             emailAddressWarnings: undefined
         });
@@ -491,6 +617,17 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
 
         expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.EXTERNAL_USER_NO_VALID_PINNED_KEY);
     });
+
+    it('should give a failure if there are pinned keys but the contact signature could not be verified', () => {
+        const publicKeyModel = {
+            ...model,
+            isContactSignatureVerified: false,
+            publicKeys: { apiKeys: [], pinnedKeys: [pinnedFakeKey1, pinnedFakeKey2] }
+        };
+        const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
+
+        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED);
+    });
 });
 
 describe('extractEncryptionPreferences for an own address', () => {
@@ -510,7 +647,7 @@ describe('extractEncryptionPreferences for an own address', () => {
         isPGPExternalWithWKDKeys: false,
         isPGPExternalWithoutWKDKeys: false,
         pgpAddressDisabled: false,
-        isContactSignatureVerified: true,
+        isContact: false,
         emailAddressWarnings: undefined
     };
     const mailSettings = {
@@ -542,7 +679,8 @@ describe('extractEncryptionPreferences for an own address', () => {
             hasApiKeys: true,
             hasPinnedKeys: false,
             warnings: [],
-            isContactSignatureVerified: true,
+            isContact: false,
+            isContactSignatureVerified: undefined,
             emailAddressWarnings: undefined
         });
     });

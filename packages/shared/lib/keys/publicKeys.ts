@@ -151,6 +151,7 @@ export const getContactPublicKeyModel = async ({
         sign,
         scheme: vcardScheme,
         mimeType: vcardMimeType,
+        isContact,
         isContactSignatureVerified
     } = pinnedKeysConfig;
     const trustedFingerprints = new Set<string>();
@@ -197,6 +198,7 @@ export const getContactPublicKeyModel = async ({
         isPGPExternalWithWKDKeys: isExternalUser && !!apiKeys.length,
         isPGPExternalWithoutWKDKeys: isExternalUser && !apiKeys.length,
         pgpAddressDisabled: isDisabledUser(apiKeysConfig),
+        isContact,
         isContactSignatureVerified,
         emailAddressErrors: apiKeysConfig.Errors
     };

@@ -20,19 +20,22 @@ const getPublicKeysVcardHelper = async (
     publicKeys: OpenPGPKey[],
     isInternal?: boolean
 ): Promise<PinnedKeysConfig> => {
+    let isContact = false;
     try {
         const { ContactEmails = [] } = await api<{ ContactEmails: ContactEmail[] }>(
             queryContactEmails({ Email: emailAddress } as any)
         );
         if (!ContactEmails.length) {
-            return { pinnedKeys: [], isContactSignatureVerified: false };
+            return { pinnedKeys: [], isContact };
         }
+        isContact = true;
         // pick the first contact with the desired email. The API returns them ordered by decreasing priority already
         const { Contact } = await api<{ Contact: Contact }>(getContact(ContactEmails[0].ContactID));
         // all the info we need is in the signed part
         const signedCard = Contact.Cards.find(({ Type, Data }) => Type === CONTACT_CARD_TYPE.SIGNED);
         if (!signedCard) {
-            throw new Error('Contact lacks signed card');
+            // contacts created by the server are not signed
+            return { pinnedKeys: [], isContact: !!Contact.Cards.length, isContactSignatureVerified: true };
         }
         const { type, data: signedVcard } = await readSigned(signedCard, { publicKeys });
         const isContactSignatureVerified = type === CRYPTO_PROCESSING_TYPES.SUCCESS;
@@ -45,9 +48,13 @@ const getPublicKeysVcardHelper = async (
         if (!emailProperty || !emailProperty.group) {
             throw new Error('Invalid vcard');
         }
-        return { ...(await getKeyInfoFromProperties(properties, emailProperty.group)), isContactSignatureVerified };
+        return {
+            ...(await getKeyInfoFromProperties(properties, emailProperty.group)),
+            isContact,
+            isContactSignatureVerified
+        };
     } catch (error) {
-        return { pinnedKeys: [], isContactSignatureVerified: false, error };
+        return { pinnedKeys: [], isContact, isContactSignatureVerified: false, error };
     }
 };
 
