@@ -7,79 +7,126 @@ import {
     useApi,
     useLoading,
     useGetUserKeys,
-    PrimaryButton
+    PrimaryButton,
+    useNotifications
 } from 'react-components';
+import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
 import { resignCards } from 'proton-shared/lib/contacts/resign';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { updateContact } from 'proton-shared/lib/api/contacts';
 import { getContact } from 'proton-shared/lib/api/contacts';
 import { ContactEmail, ContactCard } from 'proton-shared/lib/interfaces/contacts';
 import { c } from 'ttag';
-
-import { MessageExtended } from '../../../models/message';
+import { MapLoading } from '../../../models/utils';
 
 interface Props {
-    message: MessageExtended;
-    contactID: string;
-    onResignContact: () => void;
+    title: string;
+    contacts: { contactID: string }[];
+    children: React.ReactNode;
+    submit?: string;
+    onResign: () => void;
+    onNotResign?: () => void;
+    onError?: () => void;
     onClose?: () => void;
 }
-
-const ContactResignModal = ({ contactID, message, onResignContact, onClose, ...rest }: Props) => {
-    const { Name } = message.data?.Sender || {};
+const ContactResignModal = ({
+    title,
+    contacts,
+    children,
+    submit = c('Action').t`Re-sign`,
+    onResign,
+    onNotResign,
+    onError,
+    onClose,
+    ...rest
+}: Props) => {
     const getUserKeys = useGetUserKeys();
-    const [contactFingerprintsByEmailMap, setContactFingerprintsByEmailMap] = useState<{
-        [key: string]: string[];
+    const { createNotification } = useNotifications();
+    const [mapContactFingerprintsByEmail, setMapContactFingerprintsByEmail] = useState<{
+        [key: string]: string[] | undefined;
     }>({});
-    const [contactCards, setContactCards] = useState<ContactCard[]>([]);
-    const [loadingContact, withLoadingContact] = useLoading(true);
+    const [mapContactCards, setMapContactCards] = useState<{ [key: string]: ContactCard[] | undefined }>({});
+    const [mapLoading, setMapLoading] = useState<MapLoading>(
+        contacts.reduce<{ [key: string]: boolean }>((acc, { contactID }) => {
+            acc[contactID] = true;
+            return acc;
+        }, {})
+    );
     const [loadingResign, withLoadingResign] = useLoading();
 
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const api = useApi();
 
     useEffect(() => {
-        const getContactFingerprintsByEmailMap = async () => {
+        const getMapContactFingerprintsByEmail = async (contactID: string) => {
             const {
                 Contact: { Cards, ContactEmails }
             } = await api(getContact(contactID));
 
-            const fingerprintsByEmail: { [key: string]: string[] } = {};
+            const fingerprintsByEmail: { [key: string]: string[] | undefined } = {};
 
             await Promise.all(
                 ContactEmails.map(async ({ Email }: ContactEmail) => {
                     const { pinnedKeys } = await getEncryptionPreferences(Email);
                     const fingerprints = pinnedKeys.map((key) => key.getFingerprint());
-                    fingerprintsByEmail[Email] = fingerprints;
+                    if (fingerprints.length) {
+                        fingerprintsByEmail[Email] = fingerprints;
+                    }
                 })
             );
 
-            setContactFingerprintsByEmailMap(fingerprintsByEmail);
-            setContactCards(Cards);
+            setMapContactFingerprintsByEmail((fingerprintsByEmailMap) => ({
+                ...fingerprintsByEmailMap,
+                ...fingerprintsByEmail
+            }));
+            setMapContactCards((map) => ({ ...map, [contactID]: Cards }));
+            setMapLoading((map) => ({ ...map, [contactID]: false }));
         };
 
-        withLoadingContact(getContactFingerprintsByEmailMap());
+        Promise.all(contacts.map(({ contactID }) => getMapContactFingerprintsByEmail(contactID)));
     }, []);
 
     const handleSubmit = async () => {
-        const { privateKeys } = splitKeys(await getUserKeys());
-
-        if (!contactCards || loadingContact) {
-            return;
+        try {
+            const { privateKeys } = splitKeys(await getUserKeys());
+            const resignedCardsMap: { [key: string]: ContactCard[] } = {};
+            await Promise.all(
+                contacts.map(async ({ contactID }) => {
+                    const contactCards = mapContactCards[contactID];
+                    if (!contactCards || mapLoading[contactID]) {
+                        return;
+                    }
+                    const resignedCards = await resignCards({
+                        contactCards,
+                        privateKeys: [privateKeys[0]]
+                    });
+                    resignedCardsMap[contactID] = resignedCards;
+                })
+            );
+            const requests = contacts.map(({ contactID }) => () =>
+                api(updateContact(contactID, { Cards: resignedCardsMap[contactID] }))
+            );
+            // the routes called in requests support 100 calls every 10 seconds
+            await processApiRequestsSafe(requests, 100, 10 * 1000);
+            onResign();
+        } catch (error) {
+            createNotification({ text: error.message, type: 'error' });
+            onError?.();
+        } finally {
+            onClose?.();
         }
-
-        const resignedCards = await resignCards({
-            contactCards,
-            privateKeys: [privateKeys[0]]
-        });
-
-        await api(updateContact(contactID, { Cards: resignedCards }));
-        onResignContact();
+    };
+    const handleClose = () => {
+        onNotResign?.();
         onClose?.();
     };
 
     const renderEmailRow = (email: string) => {
-        const fingerprints = contactFingerprintsByEmailMap[email];
+        const fingerprints = mapContactFingerprintsByEmail[email];
+
+        if (!fingerprints) {
+            return null;
+        }
 
         return (
             <li key={email}>
@@ -97,40 +144,42 @@ const ContactResignModal = ({ contactID, message, onResignContact, onClose, ...r
         );
     };
 
+    const loadingContacts = Object.values(mapLoading).some((loading) => loading === true);
+    const emailsWithKeys = Object.values(mapContactFingerprintsByEmail);
     const renderSubmit = (
-        <PrimaryButton disabled={loadingContact || !contactCards.length} loading={loadingResign} type="submit">
-            {c('Action').t`Trust`}
+        <PrimaryButton disabled={loadingContacts} loading={loadingResign} type="submit">
+            {submit}
         </PrimaryButton>
     );
-
-    return (
-        <FormModal
-            title={c('Info').t`Trust pinned keys?`}
-            onSubmit={() => withLoadingResign(handleSubmit())}
-            onClose={onClose}
-            loading={loadingResign}
-            submit={renderSubmit}
-            {...rest}
-        >
-            <Alert type="info">
-                {c('Info')
-                    .t`When you enabled trusted keys for ${Name}, the public keys were added to the contact details.`}
-            </Alert>
-            <Alert type="error">
-                {c('Info')
-                    .t`There has been an error with the signature used to verify the contact details, which may be the result of a password reset.`}
-            </Alert>
+    const content = emailsWithKeys.length ? (
+        <>
             <Alert type="info">
                 {c('Info')
                     .t`Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?`}
             </Alert>
-            {loadingContact ? (
+            {loadingContacts ? (
                 <Loader />
             ) : (
                 <div>
-                    <ul>{Object.keys(contactFingerprintsByEmailMap).map(renderEmailRow)}</ul>
+                    <ul>{Object.keys(mapContactFingerprintsByEmail).map(renderEmailRow)}</ul>
                 </div>
             )}
+        </>
+    ) : (
+        <Alert type="info">{c('Info').t`Do you want to re-sign the contact details?`}</Alert>
+    );
+
+    return (
+        <FormModal
+            title={title}
+            onSubmit={() => withLoadingResign(handleSubmit())}
+            onClose={handleClose}
+            loading={loadingResign}
+            submit={renderSubmit}
+            {...rest}
+        >
+            {children}
+            {content}
         </FormModal>
     );
 };

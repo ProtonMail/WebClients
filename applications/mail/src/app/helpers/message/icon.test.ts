@@ -52,7 +52,7 @@ describe('icon', () => {
                 hasPinnedKeys: true,
                 isPublicKeyPinned: false,
                 failure: {
-                    type: EncryptionPreferencesFailureTypes.INTERNAL_USER_PRIMARY_NOT_PINNED,
+                    type: EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED,
                     error: Error('test error')
                 }
             };
@@ -110,7 +110,7 @@ describe('icon', () => {
                 hasPinnedKeys: true,
                 isPublicKeyPinned: false,
                 failure: {
-                    type: EncryptionPreferencesFailureTypes.WKD_USER_PRIMARY_NOT_PINNED,
+                    type: EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED,
                     error: Error('test error')
                 }
             };

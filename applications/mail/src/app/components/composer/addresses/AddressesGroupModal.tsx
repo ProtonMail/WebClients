@@ -6,8 +6,9 @@ import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { contactToInput } from '../../../helpers/addresses';
 import { RecipientGroup } from '../../../models/address';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
+import { MapLoading } from '../../../models/utils';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
-import { MapLoading, MessageSendInfo } from '../../../hooks/useSendInfo';
+import { MessageSendInfo } from '../../../hooks/useSendInfo';
 
 interface Props {
     recipientGroup: RecipientGroup;

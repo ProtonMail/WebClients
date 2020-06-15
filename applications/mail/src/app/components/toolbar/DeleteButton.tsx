@@ -54,7 +54,7 @@ const DeleteButton = ({ labelID = '', mailSettings, breakpoints, selectedIDs = [
                     onConfirm={resolve}
                     onClose={reject}
                 >
-                    <Alert type="warning">
+                    <Alert type="error">
                         {c('Info').ngettext(
                             msgid`This action will permanently delete the selected email. Are you sure you want to delete this email?`,
                             `This action will permanently delete the selected emails. Are you sure you want to delete these emails?`,

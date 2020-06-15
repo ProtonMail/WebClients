@@ -3,7 +3,7 @@ import { getContact, updateContact } from 'proton-shared/lib/api/contacts';
 import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
 import { pinKeyUpdateContact } from 'proton-shared/lib/contacts/keyPinning';
 import { Api } from 'proton-shared/lib/interfaces';
-import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
+import { ContactCard, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import React from 'react';
 import { Alert, classnames, FormModal, useApi, useLoading, useNotifications, useUserKeys } from 'react-components';
@@ -20,7 +20,7 @@ const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }
     const { contactID, isInternal, emailAddress, bePinnedPublicKey } = contact;
     const {
         Contact: { Cards: contactCards }
-    } = await api(getContact(contactID));
+    } = await api<{ Contact: { Cards: ContactCard[] } }>(getContact(contactID));
     const updatedContactCards = await pinKeyUpdateContact({
         contactCards,
         emailAddress,
@@ -34,12 +34,12 @@ const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }
 
 interface Props {
     contacts: RequireSome<ContactWithBePinnedPublicKey, 'contactID'>[];
-    onSubmit: () => void;
+    onTrust: () => void;
     onClose: () => void;
     onNotTrust: () => void;
     onError: () => void;
 }
-const AskForKeyPinningModal = ({ contacts, onSubmit, onClose, onNotTrust, onError, ...rest }: Props) => {
+const AskForKeyPinningModal = ({ contacts, onTrust, onClose, onNotTrust, onError, ...rest }: Props) => {
     const api = useApi();
     const [userKeysList, loadingUserKeys] = useUserKeys();
     const [loading, withLoading] = useLoading(false);
@@ -56,7 +56,7 @@ const AskForKeyPinningModal = ({ contacts, onSubmit, onClose, onNotTrust, onErro
             );
             // the routes called in requests support 100 calls every 10 seconds
             await processApiRequestsSafe(requests, 100, 10 * 1000);
-            onSubmit();
+            onTrust();
         } catch (error) {
             createNotification({ text: error.message, type: 'error' });
             onError();

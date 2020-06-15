@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Href, useContactEmails, useModals, LinkButton } from 'react-components';
+import { Icon, Href, useContactEmails, useModals, LinkButton, Alert } from 'react-components';
 import { c } from 'ttag';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
@@ -28,13 +28,24 @@ const ExtraAskResign = ({ message, onResignContact }: Props) => {
         if (loadingContacts || !contactEmail) {
             return;
         }
+        const contact = { contactID: contactEmail.ContactID };
 
         createModal(
             <ContactResignModal
-                onResignContact={onResignContact}
-                contactID={contactEmail.ContactID}
-                message={message}
-            />
+                title={c('Title').t`Trust pinned keys?`}
+                submit={c('Action').t`Trust`}
+                onResign={onResignContact}
+                contacts={[contact]}
+            >
+                <Alert type="info">
+                    {c('Info')
+                        .t`When you enabled trusted keys for ${message.data?.SenderName}, the public keys were added to the contact details.`}
+                </Alert>
+                <Alert type="error">
+                    {c('Info')
+                        .t`There has been an error with the signature used to verify the contact details, which may be the result of a password reset.`}
+                </Alert>
+            </ContactResignModal>
         );
     };
 
