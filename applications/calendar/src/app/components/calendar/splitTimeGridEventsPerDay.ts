@@ -2,6 +2,8 @@ import { isSameDay, eachDayOfInterval, startOfDay, endOfDay, min, max } from 'pr
 import { CalendarViewEvent } from '../../containers/calendar/interface';
 import { LayoutEvent } from './layout';
 
+const MIN_DURATION = 30; // In minutes
+
 export const getKey = (date: Date) => {
     const year = date.getUTCFullYear();
     const month = date.getUTCMonth();
@@ -53,7 +55,12 @@ export const splitTimeGridEventsPerDay = ({
                 acc[key] = [];
             }
 
-            acc[key].push({ idx: i, start: startTime, end: endTime });
+            const startTimeWithMinDuration =
+                totalMinutes - startTime < MIN_DURATION ? totalMinutes - MIN_DURATION : startTime;
+            const endTimeWithMinDuration =
+                endTime - startTimeWithMinDuration < MIN_DURATION ? startTimeWithMinDuration + MIN_DURATION : endTime;
+
+            acc[key].push({ idx: i, start: startTimeWithMinDuration, end: endTimeWithMinDuration });
         });
 
         return acc;

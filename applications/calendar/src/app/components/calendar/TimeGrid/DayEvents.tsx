@@ -5,8 +5,6 @@ import getIsBeforeNow from '../getIsBeforeNow';
 import PartDayEvent from '../../events/PartDayEvent';
 import { CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
 
-const MIN_DURATION = 30; // In minutes
-
 interface Props {
     tzid: string;
     now: Date;
@@ -34,7 +32,7 @@ const DayEvents = ({
             const { start, end } = eventsInDay[i];
 
             const top = start / totalMinutes;
-            const height = Math.max(MIN_DURATION, end - start) / totalMinutes;
+            const height = (end - start) / totalMinutes;
 
             const width = 1 / columns;
             const left = column * width;
