@@ -56,17 +56,4 @@
   transition: transform .15s ease-out;
   transform: translateX(var(--translate)) scaleX(var(--scale));
 }
-
-.tabs--extended {
-  margin: 0 var(--margin-modal--negative, -$modal-margin);
-  .tabs-container {
-    padding-left: var(--margin-modal, $modal-margin);
-  }
-  .tabs-tabcontent {
-    padding-left: var(--margin-modal, $modal-margin);
-    padding-right: var(--margin-modal, $modal-margin);
-    background-color: var(--bgcolor-subnav, $pm-input-background);
-    border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
-  }
-}
 /* hidden state for content is not necessary for React, added in exception for Design system website */
