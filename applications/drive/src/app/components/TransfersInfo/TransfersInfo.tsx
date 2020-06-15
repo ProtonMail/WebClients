@@ -102,7 +102,7 @@ function TransfersInfo() {
                 transfer={download}
                 type={TransferType.Download}
                 stats={{
-                    progress: latestStats.stats[download.id]?.progress,
+                    progress: latestStats.stats[download.id]?.progress ?? 0,
                     speed: calculateAverageSpeed(download.id)
                 }}
             />
@@ -117,7 +117,7 @@ function TransfersInfo() {
                 transfer={upload}
                 type={TransferType.Upload}
                 stats={{
-                    progress: latestStats.stats[upload.id]?.progress,
+                    progress: latestStats.stats[upload.id]?.progress ?? 0,
                     speed: calculateAverageSpeed(upload.id)
                 }}
             />
