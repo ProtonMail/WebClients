@@ -1,9 +1,8 @@
-import { BlockMeta, UploadInfo } from './UploadProvider';
 import { generateUID } from 'react-components';
 import { generateContentHash } from 'proton-shared/lib/keys/driveKeys';
 import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
-import { TransferCancel } from '../../interfaces/transfer';
+import { TransferCancel, UploadInfo } from '../../interfaces/transfer';
 import runInQueue from '../../utils/runInQueue';
 import { FILE_CHUNK_SIZE } from '../../constants';
 
@@ -12,13 +11,20 @@ const MAX_CHUNKS_READ = 10;
 const MAX_THREADS_PER_UPLOAD = 3;
 
 type BlockList = {
-    Hash: string;
+    Signature: string;
+    Hash: Uint8Array;
     Size: number;
     Index: number;
 }[];
 
+export interface BlockMeta {
+    Index: number;
+    Hash: Uint8Array;
+    Token: string;
+}
+
 export interface UploadCallbacks {
-    transform: (buffer: Uint8Array) => Promise<Uint8Array>;
+    transform: (buffer: Uint8Array) => Promise<{ encryptedData: Uint8Array; signature: string }>;
     requestUpload: (blockList: BlockList) => Promise<UploadLink[]>;
     finalize: (blocklist: BlockMeta[]) => Promise<void>;
     onProgress?: (bytes: number) => void;
@@ -70,9 +76,10 @@ export function initUpload({ requestUpload, transform, onProgress, finalize }: U
     const uploadChunks = async (chunks: Uint8Array[], startIndex: number): Promise<BlockMeta[]> => {
         const encryptedChunks = await Promise.all(chunks.map(transform));
         const BlockList = await Promise.all(
-            encryptedChunks.map(async (chunk, i) => ({
-                Hash: (await generateContentHash(chunk)).BlockHash,
-                Size: chunk.byteLength,
+            encryptedChunks.map(async ({ encryptedData, signature }, i) => ({
+                Signature: signature,
+                Hash: (await generateContentHash(encryptedData)).BlockHash,
+                Size: encryptedData.byteLength,
                 Index: startIndex + i
             }))
         );
@@ -86,7 +93,7 @@ export function initUpload({ requestUpload, transform, onProgress, finalize }: U
             upload(
                 id,
                 URL,
-                encryptedChunks[i],
+                encryptedChunks[i].encryptedData,
                 (relativeIncrement) => {
                     onProgress?.(Math.ceil(chunks[i].length * relativeIncrement));
                 },

@@ -8,9 +8,9 @@ export interface FileBrowserItem {
     Name: string;
     LinkID: string;
     Type: LinkType;
-    Modified: number;
+    ModifyTime: number;
     Trashed: number | null;
-    MimeType: string;
+    MIMEType: string;
     Size: number;
     ParentLinkID: string;
     Location?: string;

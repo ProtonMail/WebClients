@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { c } from 'ttag';
-import { Sidebar, AppsSidebar, useToggle, StorageSpaceStatus, Href, useDelinquent } from 'react-components';
+import { Sidebar, useToggle, PrivateAppContainer } from 'react-components';
 import Header from './PrivateHeader';
 import UploadButton from '../uploads/UploadButton';
 import TransfersInfo from '../TransfersInfo/TransfersInfo';
@@ -25,41 +25,27 @@ interface Props {
 }
 
 const PrivateLayout = ({ children }: Props) => {
-    const { state: isHeaderExpanded, toggle: toggleHeaderExpanded } = useToggle();
-    useDelinquent();
+    const { state: isHeaderExpanded, toggle: toggleHeaderExpanded, set: setExpand } = useToggle();
+
+    useEffect(() => {
+        setExpand(false);
+    }, [window.location.pathname]);
+
+    const header = (
+        <Header expanded={isHeaderExpanded} onToggleExpand={toggleHeaderExpanded} title={c('Title').t`Drive`} />
+    );
+
+    const sidebar = (
+        <Sidebar url="/drive" expanded={isHeaderExpanded} onToggleExpand={toggleHeaderExpanded} list={getSidebar()}>
+            <UploadButton />
+        </Sidebar>
+    );
 
     return (
-        <div className="flex flex-nowrap no-scroll">
-            <AppsSidebar
-                items={[
-                    <StorageSpaceStatus
-                        key="storage"
-                        upgradeButton={
-                            <Href url="/settings/subscription" target="_self" className="pm-button pm-button--primary">
-                                {c('Action').t`Upgrade`}
-                            </Href>
-                        }
-                    />
-                ]}
-            />
-            <div className="content flex-item-fluid reset4print">
-                <Header expanded={isHeaderExpanded} onToggleExpand={toggleHeaderExpanded} title={c('Title').t`Drive`} />
-                <div className="flex flex-nowrap">
-                    <Sidebar
-                        url="/drive"
-                        expanded={isHeaderExpanded}
-                        onToggleExpand={toggleHeaderExpanded}
-                        list={getSidebar()}
-                    >
-                        <UploadButton />
-                    </Sidebar>
-                    <main className="main flex-item-fluid">
-                        {children}
-                        <TransfersInfo />
-                    </main>
-                </div>
-            </div>
-        </div>
+        <PrivateAppContainer header={header} sidebar={sidebar}>
+            {children}
+            <TransfersInfo />
+        </PrivateAppContainer>
     );
 };
 

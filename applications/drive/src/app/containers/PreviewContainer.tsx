@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import useFiles from '../hooks/useFiles';
+import useFiles from '../hooks/drive/useFiles';
 import { RouteComponentProps } from 'react-router-dom';
 import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
 import { useLoading } from 'react-components';
@@ -8,7 +8,7 @@ import { LinkURLType } from '../constants';
 import { LinkMeta } from '../interfaces/link';
 import { getMetaForTransfer } from '../components/Drive/Drive';
 import { DownloadControls } from '../components/downloads/download';
-import useDrive from '../hooks/useDrive';
+import useDrive from '../hooks/drive/useDrive';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
 
@@ -26,14 +26,14 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
     const meta = cache.get.linkMeta(shareId, linkId);
     const links = (meta && cache.get.childLinkMetas(shareId, meta.ParentLinkID)) || [];
-    const linksAvailableForPreview = links.filter(({ MimeType }) => isPreviewAvailable(MimeType));
+    const linksAvailableForPreview = links.filter(({ MIMEType }) => isPreviewAvailable(MIMEType));
 
     useEffect(() => {
         let canceled = false;
 
         const preloadFile = async () => {
             try {
-                const { ParentLinkID, MimeType } = meta ?? (await getLinkMeta(shareId, linkId));
+                const { ParentLinkID, MIMEType } = meta ?? (await getLinkMeta(shareId, linkId));
 
                 if (canceled) {
                     return;
@@ -43,7 +43,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
                 fetchAllFolderPages(shareId, ParentLinkID);
 
-                if (isPreviewAvailable(MimeType)) {
+                if (isPreviewAvailable(MIMEType)) {
                     const { contents, controls } = await downloadDriveFile(shareId, linkId);
                     downloadControls.current = controls;
                     setContents(await contents);

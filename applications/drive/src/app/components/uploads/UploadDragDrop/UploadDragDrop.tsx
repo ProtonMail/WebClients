@@ -1,28 +1,10 @@
 import React, { ReactNode, useState, useCallback, SyntheticEvent } from 'react';
-import { MB } from '../../../constants';
 import { c } from 'ttag';
 
 import dragdropImageSvg from 'design-system/assets/img/pd-images/drag-and-drop.svg';
 
-import useFiles from '../../../hooks/useFiles';
+import useFiles from '../../../hooks/drive/useFiles';
 import { useDriveActiveFolder } from '../../Drive/DriveFolderProvider';
-
-const isFile = async (blob: File) => {
-    return new Promise<boolean>((resolve) => {
-        if (blob.size > MB) {
-            resolve(true);
-        }
-
-        const reader = new FileReader();
-        reader.onload = function() {
-            resolve(true);
-        };
-        reader.onerror = function() {
-            resolve(false);
-        };
-        reader.readAsArrayBuffer(blob);
-    });
-};
 
 interface UploadDragDropProps {
     children: ReactNode;
@@ -37,11 +19,18 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
 
     const overlayEnabled = !!folder?.shareId && !disabled;
 
-    const handleDragOver = useCallback(() => {
-        if (overlayIsVisible !== overlayEnabled) {
-            setOverlayIsVisible(overlayEnabled);
-        }
-    }, [overlayEnabled]);
+    const handleDragOver = useCallback(
+        (e: React.DragEvent<HTMLDivElement>) => {
+            if (!e.dataTransfer.types.includes('Files')) {
+                return;
+            }
+
+            if (overlayIsVisible !== overlayEnabled) {
+                setOverlayIsVisible(overlayEnabled);
+            }
+        },
+        [overlayEnabled, overlayIsVisible]
+    );
 
     const handleDragLeave = useCallback(() => {
         setOverlayIsVisible(false);
@@ -51,22 +40,79 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
         async (e: React.DragEvent<HTMLDivElement>) => {
             e.preventDefault();
             setOverlayIsVisible(false);
+            const items = e.dataTransfer.items;
 
-            const filesList = e.dataTransfer?.files;
-            if (!folder || !filesList) {
+            if (!folder || !items) {
                 return;
             }
 
-            const actualFiles: Promise<boolean>[] = [];
-            for (let i = 0; i < filesList.length; i++) {
-                actualFiles.push(isFile(filesList[i]));
+            const filesToUpload: { path: string[]; file?: File }[] = [];
+
+            const traverseDirectories = async function(item: any, path: string[] = []) {
+                if (item.isFile) {
+                    return new Promise((resolve, reject) => {
+                        item.file(
+                            (file: File) => {
+                                filesToUpload.push({ path, file });
+                                resolve();
+                            },
+                            (error: Error) => reject(`Unable to get File ${item}: ${error}`)
+                        );
+                    });
+                } else if (item.isDirectory) {
+                    const reader = item.createReader();
+                    const newPath = [...path, item.name];
+
+                    filesToUpload.push({ path: newPath });
+
+                    // Iterates over folders recursively and puts them into fileToUpload list
+                    const getEntries = async () => {
+                        const promises: Promise<any>[] = [];
+
+                        // Folders are read in batch, need to wait
+                        await new Promise((resolve, reject) => {
+                            reader.readEntries(
+                                (entries: any[]) => {
+                                    if (entries.length) {
+                                        entries.forEach((entry) => promises.push(traverseDirectories(entry, newPath)));
+                                        resolve(getEntries());
+                                    } else {
+                                        resolve();
+                                    }
+                                },
+                                (error: Error) => reject(`Unable to traverse directory ${item}: ${error}`)
+                            );
+                        });
+
+                        return Promise.allSettled(promises);
+                    };
+                    await getEntries();
+                }
+            };
+
+            const promises: Promise<any>[] = [];
+            for (let i = 0; i < items.length; i++) {
+                const item = (items[i] as any).getAsEntry
+                    ? (items[i] as any).getAsEntry()
+                    : items[i].webkitGetAsEntry();
+
+                if (item) {
+                    promises.push(traverseDirectories(item));
+                }
             }
 
-            const filesToUpload = (await Promise.allSettled(actualFiles)).reduce(
-                (files, result, i) =>
-                    result.status === 'fulfilled' && result.value ? [...files, filesList[i]] : files,
-                [] as File[]
-            );
+            // Need to wait for all files to have been read
+            const results = await Promise.allSettled(promises);
+            const errors = results.reduce((err, result) => {
+                if (result.status === 'rejected') {
+                    err.push(result.reason);
+                }
+                return err;
+            }, [] as string[]);
+
+            if (errors.length) {
+                console.error(errors);
+            }
 
             uploadDriveFiles(folder.shareId, folder.linkId, filesToUpload);
         },
@@ -93,7 +139,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                     <section className="pd-drag-drop-infobox p2">
                         <img className="pd-drag-drop-image" src={dragdropImageSvg} alt="" aria-hidden="true" />
                         <h2 className="bold m0">{c('Title').t`Drop to upload`}</h2>
-                        <p className="m0">{c('Info').t`Your file will be encrypted and then saved.`}</p>
+                        <p className="m0">{c('Info').t`Your files will be encrypted and then saved.`}</p>
                     </section>
                 </div>
             )}

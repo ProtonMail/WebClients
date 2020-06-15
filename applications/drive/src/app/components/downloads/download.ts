@@ -3,7 +3,6 @@ import { orderBy } from 'proton-shared/lib/helpers/array';
 import { ReadableStream } from 'web-streams-polyfill';
 import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
 import { Api } from 'proton-shared/lib/interfaces';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { DriveFileBlock } from '../../interfaces/file';
 import { queryFileBlock } from '../../api/files';
 import { ObserverStream, untilStreamEnd } from '../../utils/stream';
@@ -11,8 +10,8 @@ import { areUint8Arrays } from '../../utils/array';
 import { TransferCancel } from '../../interfaces/transfer';
 import runInQueue from '../../utils/runInQueue';
 import { waitUntil } from '../../utils/async';
+import { MAX_THREADS_PER_DOWNLOAD } from '../../constants';
 
-const MAX_THREADS_PER_DOWNLOAD = 3;
 const MAX_TOTAL_BUFFER_SIZE = 10; // number of blocks
 const DOWNLOAD_TIMEOUT = 60000;
 
@@ -23,6 +22,8 @@ export type StreamTransformer = (stream: ReadableStream<Uint8Array>) => Promise<
 export interface DownloadControls {
     start: (api: (query: any) => any) => Promise<void>;
     cancel: () => void;
+    pause: () => Promise<void>;
+    resume: () => void;
 }
 
 export interface DownloadCallbacks {
@@ -35,15 +36,19 @@ export interface DownloadCallbacks {
 
 export const initDownload = ({ onStart, onProgress, onFinish, onError, transformBlockStream }: DownloadCallbacks) => {
     const id = generateUID('drive-transfers');
-    const abortController = new AbortController();
     const fileStream = new ObserverStream();
     const fsWriter = fileStream.writable.getWriter();
+
+    const incompleteProgress = new Map<number, number>();
+    let abortController = new AbortController();
+    let paused = false;
 
     const start = async (api: Api) => {
         if (abortController.signal.aborted) {
             throw new TransferCancel(id);
         }
 
+        const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
         const blocksOrBuffer = await onStart(fileStream.readable);
 
         await fsWriter.ready;
@@ -58,80 +63,121 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
             return;
         }
 
-        const orderedBlocks: DriveFileBlock[] = orderBy(blocksOrBuffer, 'Index');
-
-        let activeIndex = 0;
-        const buffers: ({ done: boolean; chunks: Uint8Array[] } | undefined)[] = [];
-
-        const flushBuffer = async (index: number) => {
-            const currentBuffer = buffers[index];
+        const flushBuffer = async (Index: number) => {
+            const currentBuffer = buffers.get(Index);
             if (currentBuffer?.chunks.length) {
                 for (const chunk of currentBuffer.chunks) {
+                    await fsWriter.ready;
                     await fsWriter.write(chunk);
                 }
-                buffers[index] = undefined;
+                buffers.delete(Index);
             }
         };
 
+        const getBlockQueue = (startIndex = 1) =>
+            orderBy(blocksOrBuffer, 'Index').filter(({ Index }) => Index >= startIndex);
+
+        let activeIndex = 1;
+
         // Downloads several blocks at once, but streams sequentially only one block at a time
         // Other blocks are put into buffer until previous blocks have finished downloading
-        const downloadQueue = orderedBlocks.map((block) => async (index: number) => {
-            const blockStream = toPolyfillReadable(
-                await api({
-                    ...queryFileBlock(block.URL),
-                    timeout: DOWNLOAD_TIMEOUT,
-                    signal: abortController.signal
-                })
-            ) as ReadableStream<Uint8Array>;
+        const startDownload = async (blockQueue: DriveFileBlock[]) => {
+            if (!blockQueue.length) {
+                return [];
+            }
+            activeIndex = blockQueue[0].Index;
+            const downloadQueue = blockQueue.map(({ URL, Index }) => async () => {
+                if (!buffers.get(Index)?.done) {
+                    await waitUntil(() => buffers.size < MAX_TOTAL_BUFFER_SIZE || abortController.signal.aborted);
 
-            const progressStream = new ObserverStream((value) => onProgress?.(value.length));
-            const rawContentStream = blockStream.pipeThrough(progressStream);
+                    if (abortController.signal.aborted) {
+                        throw new TransferCancel(id);
+                    }
 
-            // Decrypt the file block content using streaming decryption
-            const transformedContentStream = transformBlockStream
-                ? await transformBlockStream(rawContentStream)
-                : rawContentStream;
+                    const blockStream = toPolyfillReadable(
+                        await api({
+                            ...queryFileBlock(URL),
+                            timeout: DOWNLOAD_TIMEOUT,
+                            signal: abortController.signal
+                        })
+                    ) as ReadableStream<Uint8Array>;
 
-            await waitUntil(
-                () => buffers.filter(isTruthy).length < MAX_TOTAL_BUFFER_SIZE || abortController.signal.aborted
-            );
+                    const progressStream = new ObserverStream((value) => {
+                        if (abortController.signal.aborted) {
+                            throw new TransferCancel(id);
+                        }
+                        incompleteProgress.set(Index, (incompleteProgress.get(Index) ?? 0) + value.length);
+                        onProgress?.(value.length);
+                    });
+                    const rawContentStream = blockStream.pipeThrough(progressStream);
 
-            await untilStreamEnd(transformedContentStream, async (data) => {
-                if (index === activeIndex) {
-                    await flushBuffer(index);
-                    await fsWriter.write(data);
-                } else if (buffers[index]) {
-                    buffers[index]?.chunks.push(data);
-                } else {
-                    buffers[index] = { done: false, chunks: [data] };
+                    // Decrypt the file block content using streaming decryption
+                    const transformedContentStream = transformBlockStream
+                        ? await transformBlockStream(rawContentStream)
+                        : rawContentStream;
+
+                    await untilStreamEnd(transformedContentStream, async (data) => {
+                        if (abortController.signal.aborted) {
+                            throw new TransferCancel(id);
+                        }
+                        const buffer = buffers.get(Index);
+                        if (buffer) {
+                            buffer.chunks.push(data);
+                        } else {
+                            buffers.set(Index, { done: false, chunks: [data] });
+                        }
+                    });
+
+                    const currentBuffer = buffers.get(Index);
+
+                    if (currentBuffer) {
+                        currentBuffer.done = true;
+                    }
+                }
+
+                if (Index === activeIndex) {
+                    let nextIndex = activeIndex;
+                    // Flush buffers for subsequent complete blocks too
+                    while (buffers.get(nextIndex)?.done) {
+                        incompleteProgress.delete(nextIndex);
+                        await flushBuffer(nextIndex);
+                        nextIndex++;
+                    }
+                    // Assign next incomplete block as new active block
+                    activeIndex = nextIndex;
                 }
             });
 
-            const currentBuffer = buffers[index];
-
-            if (index === activeIndex) {
-                // If finished uploading active block, flush buffer for next blocks too
-                for (let i = activeIndex + 1; i < orderedBlocks.length; i++) {
-                    if (buffers[i]?.done) {
-                        await flushBuffer(i);
-                    } else {
-                        // Assign next incomplete block as new active block
-                        activeIndex = i;
-                        return;
-                    }
+            try {
+                await runInQueue(downloadQueue, MAX_THREADS_PER_DOWNLOAD);
+            } catch (e) {
+                if (!paused) {
+                    abortController.abort();
+                    fsWriter.abort(e);
+                    throw e;
                 }
-            } else if (currentBuffer) {
-                currentBuffer.done = true;
-            }
-        });
 
-        try {
-            await runInQueue(downloadQueue, MAX_THREADS_PER_DOWNLOAD);
-        } catch (e) {
-            abortController.abort();
-            fsWriter.abort(e);
-            throw e;
-        }
+                if (onProgress) {
+                    // Revert progress of blacks that weren't finished
+                    buffers.forEach((buffer, Index) => {
+                        if (!buffer.done) {
+                            buffers.delete(Index);
+                        }
+                    });
+
+                    let progressToRevert = 0;
+                    incompleteProgress.forEach((progress) => {
+                        progressToRevert += progress;
+                    });
+                    incompleteProgress.clear();
+                    onProgress(-progressToRevert);
+                }
+                await waitUntil(() => paused === false);
+                await startDownload(getBlockQueue(activeIndex));
+            }
+        };
+
+        await startDownload(getBlockQueue());
 
         // Wait for stream to be flushed
         await fsWriter.ready;
@@ -139,8 +185,22 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
     };
 
     const cancel = () => {
+        paused = false;
         abortController.abort();
         fsWriter.abort(new TransferCancel(id));
+    };
+
+    const pause = async () => {
+        paused = true;
+        abortController.abort();
+
+        // Wait for download to reset progress or be flushed
+        await waitUntil(() => !incompleteProgress.size);
+    };
+
+    const resume = () => {
+        abortController = new AbortController();
+        paused = false;
     };
 
     const downloadControls: DownloadControls = {
@@ -153,7 +213,9 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
                     onError?.(err);
                     throw err;
                 }),
-        cancel
+        cancel,
+        pause,
+        resume
     };
 
     return { id, downloadControls };

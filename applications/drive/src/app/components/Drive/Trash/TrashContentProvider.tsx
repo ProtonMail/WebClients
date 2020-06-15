@@ -6,7 +6,7 @@ import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { FileBrowserItem } from '../../FileBrowser/FileBrowser';
 import useFileBrowser from '../../FileBrowser/useFileBrowser';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import useTrash from '../../../hooks/useTrash';
+import useTrash from '../../../hooks/drive/useTrash';
 import { mapLinksToChildren } from '../helpers';
 
 interface TrashContentProviderState {
@@ -35,7 +35,7 @@ const TrashContentProvider = ({ children, shareId }: { children: React.ReactNode
     const trashLinks = cache.get.trashMetas(shareId);
     const complete = cache.get.trashComplete(shareId);
     const { sortedList } = useSortedList(mapLinksToChildren(trashLinks), {
-        key: 'Modified',
+        key: 'ModifyTime',
         direction: SORT_DIRECTION.ASC
     });
     const fileBrowserControls = useFileBrowser(sortedList);

@@ -33,14 +33,20 @@ function useDriveCrypto() {
     }, [getAddresses]);
 
     const getVerificationKeys = useCallback(
-        async (addressId: string) => {
-            return splitKeys(await getAddressKeys(addressId));
+        async (email: string) => {
+            const addresses = await getAddresses();
+            const ownAddress = addresses.find(({ Email }) => Email === email);
+            if (!ownAddress) {
+                // Should never happen
+                throw new Error('Adress was not found.');
+            }
+            return splitKeys(await getAddressKeys(ownAddress.ID));
         },
         [getAddressKeys]
     );
 
     const sign = useCallback(
-        async (payload: string, keys?: { privateKey: OpenPGPKey; address: Address }) => {
+        async (payload: string | Uint8Array, keys?: { privateKey: OpenPGPKey; address: Address }) => {
             const { privateKey, address } = keys || (await getPrimaryAddressKey());
             const signature = await signMessage(payload, [privateKey]);
             return { signature, address };

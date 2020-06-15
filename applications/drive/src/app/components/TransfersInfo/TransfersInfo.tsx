@@ -1,15 +1,16 @@
-import * as React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import Heading from './Heading';
 import Transfer, { TransferType, TransferStats } from './Transfer';
 import { useToggle, classnames } from 'react-components';
 import { TransferState } from '../../interfaces/transfer';
+import { isTransferProgress } from '../../utils/transfer';
 
 const PROGRESS_UPDATE_INTERVAL = 500;
 const SPEED_SNAPSHOTS = 10; // How many snapshots should the speed be average of
 
-interface TransfersStats {
+export interface TransfersStats {
     timestamp: Date;
     stats: { [id: string]: TransferStats };
 }
@@ -20,19 +21,26 @@ function TransfersInfo() {
     const { uploads, getUploadsProgresses, clearUploads } = useUploadProvider();
     const [statsHistory, setStatsHistory] = React.useState<TransfersStats[]>([]);
 
+    const getTransfer = useCallback(
+        (id: string) => downloads.find((download) => download.id === id) || uploads.find((upload) => upload.id === id),
+        [downloads, uploads]
+    );
+
     const updateStats = () => {
         const timestamp = new Date();
         const progresses = { ...getUploadsProgresses(), ...getDownloadsProgresses() };
 
         setStatsHistory((prev) => {
+            const lastStats = (id: string) => prev[0]?.stats[id] || {};
             const stats = Object.entries(progresses).reduce(
                 (stats, [id, progress]) => ({
                     ...stats,
                     [id]: {
                         // get speed snapshot based on bytes downloaded since last update
-                        speed: prev[0]?.stats[id]
-                            ? (progresses[id] - prev[0].stats[id].progress) * (1000 / PROGRESS_UPDATE_INTERVAL)
+                        speed: isTransferProgress(lastStats(id))
+                            ? (progresses[id] - lastStats(id).progress) * (1000 / PROGRESS_UPDATE_INTERVAL)
                             : 0,
+                        state: getTransfer(id)?.state ?? TransferState.Error,
                         progress
                     }
                 }),
@@ -43,13 +51,13 @@ function TransfersInfo() {
         });
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         updateStats();
 
-        const activeUploads = uploads.filter(({ state }) => state === TransferState.Progress);
-        const activeDownloads = downloads.filter(({ state }) => state === TransferState.Progress);
+        const uploading = uploads.filter(isTransferProgress);
+        const downloading = downloads.filter(isTransferProgress);
 
-        if (!activeUploads.length && !activeDownloads.length) {
+        if (!uploading.length && !downloading.length) {
             return;
         }
 
@@ -72,7 +80,17 @@ function TransfersInfo() {
     };
 
     const calculateAverageSpeed = (id: string) => {
-        const sum = statsHistory.reduce((acc, { stats }) => acc + (stats[id]?.speed || 0), 0);
+        let sum = 0;
+
+        for (let i = 0; i < statsHistory.length; i++) {
+            const stats = statsHistory[i].stats[id];
+
+            if (stats?.state !== TransferState.Progress) {
+                break; // Only take most recent progress (e.g. after pause)
+            }
+            sum += stats.speed;
+        }
+
         return sum / statsHistory.length;
     };
 
@@ -115,6 +133,7 @@ function TransfersInfo() {
             <Heading
                 downloads={downloads}
                 uploads={uploads}
+                latestStats={latestStats}
                 minimized={minimized}
                 onToggleMinimize={toggleMinimized}
                 onClose={handleCloseClick}

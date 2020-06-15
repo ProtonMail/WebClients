@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import useFiles from '../../hooks/useFiles';
-import useOnScrollEnd from '../../hooks/useOnScrollEnd';
+import useFiles from '../../hooks/drive/useFiles';
+import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
 import FileBrowser, { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import { DriveFolder } from './DriveFolderProvider';
 import { TransferMeta } from '../../interfaces/transfer';
@@ -10,12 +10,12 @@ import { useDriveContent } from './DriveContentProvider';
 import EmptyFolder from '../FileBrowser/EmptyFolder';
 import { LinkMeta, LinkType } from '../../interfaces/link';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
-import useDrive from '../../hooks/useDrive';
+import useDrive from '../../hooks/drive/useDrive';
 
 export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
     return {
         filename: item.Name,
-        mimeType: item.MimeType,
+        mimeType: item.MIMEType,
         size: item.Size
     };
 };
@@ -59,7 +59,7 @@ function Drive({ activeFolder, openLink }: Props) {
         if (item.Type === LinkType.FOLDER) {
             openLink(shareId, item.LinkID, item.Type);
         } else if (item.Type === LinkType.FILE) {
-            if (item.MimeType && isPreviewAvailable(item.MimeType)) {
+            if (item.MIMEType && isPreviewAvailable(item.MIMEType)) {
                 openLink(shareId, item.LinkID, item.Type);
             } else {
                 const meta = getMetaForTransfer(item);

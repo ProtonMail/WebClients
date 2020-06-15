@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDriveCache, LinkKeys } from '../components/DriveCache/DriveCacheProvider';
+import { useDriveCache, LinkKeys, DEFAULT_SORT_PARAMS } from '../../components/DriveCache/DriveCacheProvider';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { useModals } from 'react-components';
 import useDriveCrypto from './useDriveCrypto';
@@ -15,19 +15,23 @@ import {
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
-import { LinkMetaResult, isFolderLinkMeta, LinkChildrenResult, LinkMeta, LinkType } from '../interfaces/link';
-import { queryGetLink } from '../api/link';
-import { queryFolderChildren, queryCreateFolder } from '../api/folder';
-import { FOLDER_PAGE_SIZE, EVENT_TYPES } from '../constants';
-import { ShareMeta, UserShareResult } from '../interfaces/share';
-import { queryShareMeta, queryUserShares, queryRenameLink, queryMoveLink } from '../api/share';
-import { CreatedDriveVolumeResult } from '../interfaces/volume';
-import { queryCreateDriveVolume } from '../api/volume';
-import OnboardingModal from '../components/OnboardingModal/OnboardingModal';
-import { validateLinkName, ValidationError } from '../utils/validation';
+import { LinkMetaResult, isFolderLinkMeta, LinkChildrenResult, LinkMeta, LinkType } from '../../interfaces/link';
+import { queryGetLink } from '../../api/link';
+import { queryFolderChildren, queryCreateFolder } from '../../api/folder';
+import { FOLDER_PAGE_SIZE, EVENT_TYPES, MAX_THREADS_PER_REQUEST } from '../../constants';
+import { ShareMeta, UserShareResult } from '../../interfaces/share';
+import { queryShareMeta, queryUserShares, queryRenameLink, queryMoveLink } from '../../api/share';
+import { CreatedDriveVolumeResult } from '../../interfaces/volume';
+import { queryCreateDriveVolume } from '../../api/volume';
+import OnboardingModal from '../../components/OnboardingModal/OnboardingModal';
+import { validateLinkName, ValidationError } from '../../utils/validation';
 import { lookup } from 'mime-types';
-import { ShareEvent, useDriveEventManager } from '../components/DriveEventManager/DriveEventManagerProvider';
-import useDebouncedPromise from './useDebouncedPromise';
+import { ShareEvent, useDriveEventManager } from '../../components/DriveEventManager/DriveEventManagerProvider';
+import useDebouncedRequest from '../util/useDebouncedRequest';
+import useQueuedFunction from '../util/useQueuedFunction';
+import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
+import usePreventLeave from '../util/usePreventLeave';
+import runInQueue from '../../utils/runInQueue';
 
 interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
@@ -35,14 +39,16 @@ interface FetchLinkConfig {
     skipCache?: boolean;
 }
 
-const { CREATE, DELETE, TRASH, UPDATE, UPDATE_CONTENT, RESTORE, MOVE } = EVENT_TYPES;
+const { CREATE, DELETE, UPDATE_METADATA } = EVENT_TYPES;
 
 function useDrive() {
     const cache = useDriveCache();
     const { getShareEventManager, createShareEventManager } = useDriveEventManager();
+    const queuedFunction = useQueuedFunction();
     const { createModal } = useModals();
     const { getPrimaryAddressKey, getVerificationKeys } = useDriveCrypto();
-    const debouncedRequest = useDebouncedPromise();
+    const debouncedRequest = useDebouncedRequest();
+    const { preventLeave } = usePreventLeave();
 
     const createVolume = async () => {
         const { address, privateKey } = await getPrimaryAddressKey();
@@ -86,7 +92,6 @@ function useDrive() {
 
         const Share = await debouncedRequest<ShareMeta>(queryShareMeta(shareId));
         cache.set.shareMeta(Share);
-
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
         await events.subscribe(shareId);
 
@@ -114,8 +119,7 @@ function useDrive() {
         }
 
         const meta = await getShareMeta(shareId);
-
-        const { privateKeys, publicKeys } = await getVerificationKeys(meta.AddressID);
+        const { privateKeys, publicKeys } = await getVerificationKeys(meta.Creator);
         const decryptedSharePassphrase = await decryptPassphrase({
             armoredPassphrase: meta.Passphrase,
             armoredSignature: meta.PassphraseSignature,
@@ -143,7 +147,7 @@ function useDrive() {
         const [{ privateKey: parentKey }, { publicKeys }] = await Promise.all([
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             meta.ParentLinkID ? await getLinkKeys(shareId, meta.ParentLinkID, config) : await getShareKeys(shareId),
-            getVerificationKeys(meta.SignatureAddressID)
+            getVerificationKeys(meta.SignatureAddress)
         ]);
 
         return decryptPassphrase({
@@ -204,7 +208,7 @@ function useDrive() {
             : await getShareKeys(shareId);
 
         const meta = await decryptLink(Link, privateKey);
-        cache.set.linkMeta(meta, shareId, !config.preventRerenders);
+        cache.set.linkMeta(meta, shareId, { rerender: !config.preventRerenders });
 
         return meta;
     };
@@ -241,19 +245,27 @@ function useDrive() {
         return linkMetas;
     };
 
-    const fetchNextFolderContents = async (shareId: string, linkId: string) => {
-        const listedChildren = cache.get.listedChildLinks(shareId, linkId) || [];
+    const fetchNextFolderContents = async (shareId: string, linkId: string, sortParams = DEFAULT_SORT_PARAMS) => {
+        const listedChildren = cache.get.listedChildLinks(shareId, linkId, sortParams) || [];
 
         const PageSize = FOLDER_PAGE_SIZE;
         const Page = Math.floor(listedChildren.length / PageSize);
+        const SortField = sortParams?.sortField;
+        const SortOrder = sortParams?.sortOrder;
 
         const { Links } = await debouncedRequest<LinkChildrenResult>(
-            queryFolderChildren(shareId, linkId, { Page, PageSize })
+            queryFolderChildren(shareId, linkId, { Page, PageSize, SortField, SortOrder })
         );
         const { privateKey } = linkId ? await getLinkKeys(shareId, linkId) : await getShareKeys(shareId);
 
         const decryptedLinks = await Promise.all(Links.map((link) => decryptLink(link, privateKey)));
-        cache.set.childLinkMetas(decryptedLinks, shareId, linkId, Links.length < PageSize ? 'complete' : 'incremental');
+        cache.set.childLinkMetas(
+            decryptedLinks,
+            shareId,
+            linkId,
+            Links.length < PageSize ? 'complete' : 'incremental',
+            sortParams
+        );
     };
 
     const fetchAllFolderPages = async (shareId: string, linkId: string) => {
@@ -277,7 +289,7 @@ function useDrive() {
         }
 
         const lowerCaseName = newName.toLowerCase();
-        const MimeType = type === LinkType.FOLDER ? 'Folder' : lookup(newName) || 'application/octet-stream';
+        const MIMEType = type === LinkType.FOLDER ? 'Folder' : lookup(newName) || 'application/octet-stream';
 
         const parentKeys = await getLinkKeys(shareId, parentLinkID);
 
@@ -296,58 +308,62 @@ function useDrive() {
         await debouncedRequest(
             queryRenameLink(shareId, linkId, {
                 Name: encryptedName,
-                MimeType,
+                MIMEType,
                 Hash
             })
         );
     };
 
-    const createNewFolder = async (shareId: string, ParentLinkID: string, name: string) => {
-        // Name Hash is generated from LC, for case-insensitive duplicate detection
-        const error = validateLinkName(name);
-        const lowerCaseName = name.toLowerCase();
+    const createNewFolder = queuedFunction(
+        'createNewFolder',
+        async (shareId: string, ParentLinkID: string, name: string) => {
+            // Name Hash is generated from LC, for case-insensitive duplicate detection
+            const error = validateLinkName(name);
+            const lowerCaseName = name.toLowerCase();
 
-        if (error) {
-            throw new ValidationError(error);
-        }
+            if (error) {
+                throw new ValidationError(error);
+            }
 
-        const [parentKeys, { privateKey: addressKey, address }] = await Promise.all([
-            getLinkKeys(shareId, ParentLinkID),
-            getPrimaryAddressKey()
-        ]);
+            const [parentKeys, { privateKey: addressKey, address }] = await Promise.all([
+                getLinkKeys(shareId, ParentLinkID),
+                getPrimaryAddressKey()
+            ]);
 
-        if (!('hashKey' in parentKeys)) {
-            throw new Error('Missing hash key on folder link');
-        }
+            if (!('hashKey' in parentKeys)) {
+                throw new Error('Missing hash key on folder link');
+            }
 
-        const [
-            Hash,
-            { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature },
-            encryptedName
-        ] = await Promise.all([
-            generateLookupHash(lowerCaseName, parentKeys.hashKey),
-            generateNodeKeys(parentKeys.privateKey, addressKey),
-            encryptUnsigned({
-                message: name,
-                publicKey: parentKeys.privateKey.toPublic()
-            })
-        ]);
-
-        const { NodeHashKey: NodeHashKey } = await generateNodeHashKey(privateKey.toPublic());
-
-        await debouncedRequest(
-            queryCreateFolder(shareId, {
+            const [
                 Hash,
-                NodeHashKey,
-                Name: encryptedName,
-                NodeKey,
-                NodePassphrase,
-                NodePassphraseSignature,
-                SignatureAddressID: address.ID,
-                ParentLinkID
-            })
-        );
-    };
+                { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature },
+                encryptedName
+            ] = await Promise.all([
+                generateLookupHash(lowerCaseName, parentKeys.hashKey),
+                generateNodeKeys(parentKeys.privateKey, addressKey),
+                encryptUnsigned({
+                    message: name,
+                    publicKey: parentKeys.privateKey.toPublic()
+                })
+            ]);
+
+            const { NodeHashKey: NodeHashKey } = await generateNodeHashKey(privateKey.toPublic());
+
+            return debouncedRequest<{ Folder: { ID: string } }>(
+                queryCreateFolder(shareId, {
+                    Hash,
+                    NodeHashKey,
+                    Name: encryptedName,
+                    NodeKey,
+                    NodePassphrase,
+                    NodePassphraseSignature,
+                    SignatureAddress: address.Email,
+                    ParentLinkID
+                })
+            );
+        },
+        5
+    );
 
     const moveLink = async (shareId: string, ParentLinkID: string, linkId: string) => {
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -381,48 +397,112 @@ function useDrive() {
             ParentLinkID,
             NodePassphrase,
             NodePassphraseSignature,
-            SignatureAddressID: address.ID
+            SignatureAddress: address.Email
         };
 
         await debouncedRequest(queryMoveLink(shareId, linkId, data));
         return { Type: meta.Type, Name: meta.Name };
     };
 
+    const moveLinks = async (shareId: string, parentFolderId: string, linkIds: string[]) => {
+        const moved: { Name: string; Type: LinkType }[] = [];
+        const failed: string[] = [];
+        const moveQueue = linkIds.map((linkId) => async () => {
+            await moveLink(shareId, parentFolderId, linkId)
+                .then((result) => {
+                    moved.push(result);
+                })
+                .catch((error) => {
+                    if (error.name === 'Error') {
+                        failed.push(linkId);
+                        console.error(`Failed to move link ${linkId}: ${error}`);
+                    }
+                });
+        });
+        await preventLeave(runInQueue(moveQueue, MAX_THREADS_PER_REQUEST));
+        return { moved, failed };
+    };
+
     const events = {
         handleEvents: (shareId: string) => async ({ Events = [] }: { Events: ShareEvent[] }) => {
-            // Move changes keys, so new metadata from event needs to be used
-            const deleteEvents = Events.filter(({ EventType }) => [DELETE, MOVE].includes(EventType));
-            const softDeleteEvents = Events.filter(({ EventType }) => [TRASH, RESTORE].includes(EventType));
+            const isTrashedRestoredOrMoved = ({ LinkID, ParentLinkID, Trashed }: LinkMeta) => {
+                const existing = cache.get.linkMeta(shareId, LinkID);
+                return existing && (existing.Trashed !== Trashed || existing.ParentLinkID !== ParentLinkID);
+            };
 
-            cache.delete.links(
-                shareId,
-                deleteEvents.map(({ Link: { LinkID } }) => LinkID)
-            );
-
-            cache.delete.links(
-                shareId,
-                softDeleteEvents.map(({ Link: { LinkID } }) => LinkID),
-                true
-            );
-
-            await Promise.allSettled(
-                Events.filter(({ EventType }) =>
-                    [CREATE, UPDATE, UPDATE_CONTENT, TRASH, RESTORE, MOVE].includes(EventType)
-                ).map(async ({ EventType, Link }) => {
-                    const { privateKey } = Link.ParentLinkID
-                        ? await getLinkKeys(shareId, Link.ParentLinkID)
-                        : await getShareKeys(shareId);
-
-                    const meta = await decryptLink(Link, privateKey);
-
-                    if (EventType === TRASH) {
-                        cache.set.trashLinkMetas([meta], shareId, 'unlisted');
-                    } else {
-                        cache.set.childLinkMetas([meta], shareId, Link.ParentLinkID, 'unlisted');
-                        cache.set.foldersOnlyLinkMetas([meta], shareId, Link.ParentLinkID, 'unlisted');
+            const actions = Events.reduce(
+                (actions, { EventType, Link }) => {
+                    if (EventType === DELETE) {
+                        actions.delete.push(Link.LinkID);
+                        return actions;
                     }
-                })
+
+                    if (isTrashedRestoredOrMoved(Link)) {
+                        actions.softDelete.push(Link.LinkID);
+                    }
+
+                    const decryptedLinkPromise = (async () => {
+                        const { privateKey } = Link.ParentLinkID
+                            ? await getLinkKeys(shareId, Link.ParentLinkID)
+                            : await getShareKeys(shareId);
+
+                        return decryptLink(Link, privateKey);
+                    })();
+
+                    if (EventType === CREATE) {
+                        actions.create[Link.ParentLinkID] = [
+                            ...(actions.create[Link.ParentLinkID] ?? []),
+                            decryptedLinkPromise
+                        ];
+                    }
+
+                    if (EventType === UPDATE_METADATA) {
+                        if (Link.Trashed) {
+                            actions.trash.push(decryptedLinkPromise);
+                        } else {
+                            actions.update[Link.ParentLinkID] = [
+                                ...(actions.update[Link.ParentLinkID] ?? []),
+                                decryptedLinkPromise
+                            ];
+                        }
+                    }
+
+                    return actions;
+                },
+                {
+                    delete: [] as string[],
+                    softDelete: [] as string[],
+                    trash: [] as Promise<LinkMeta>[],
+                    create: {} as { [parentId: string]: Promise<LinkMeta>[] },
+                    update: {} as { [parentId: string]: Promise<LinkMeta>[] }
+                }
             );
+
+            cache.delete.links(shareId, actions.delete);
+            cache.delete.links(shareId, actions.softDelete, true);
+
+            const trashPromise = Promise.allSettled(actions.trash)
+                .then(getSuccessfulSettled)
+                .then((trashMetas) => cache.set.trashLinkMetas(trashMetas, shareId, 'unlisted'))
+                .catch((e) => console.error(e));
+
+            const createPromises = Object.entries(actions.create).map(async ([parentId, promises]) => {
+                const metas = await Promise.allSettled(promises).then(getSuccessfulSettled);
+                cache.set.childLinkMetas(metas, shareId, parentId, 'unlisted_create');
+                cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted_create');
+            });
+
+            const updatePromises = Object.entries(actions.update).map(async ([parentId, promises]) => {
+                const metas = await Promise.allSettled(promises).then(getSuccessfulSettled);
+                cache.set.childLinkMetas(metas, shareId, parentId, 'unlisted');
+                cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted');
+            });
+
+            return Promise.allSettled([
+                trashPromise,
+                Promise.allSettled(createPromises).then(logSettledErrors),
+                Promise.allSettled(updatePromises).then(logSettledErrors)
+            ]);
         },
 
         subscribe: async (shareId: string) => {
@@ -448,6 +528,7 @@ function useDrive() {
         createNewFolder,
         fetchAllFolderPages,
         moveLink,
+        moveLinks,
         events
     };
 }

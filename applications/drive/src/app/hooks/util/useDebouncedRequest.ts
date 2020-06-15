@@ -1,7 +1,7 @@
 import { useCache, useApi } from 'react-components';
 import { Api } from 'proton-shared/lib/interfaces';
 
-const useDebouncedPromise = () => {
+const useDebouncedRequest = () => {
     const api = useApi();
     const cache = useCache();
 
@@ -27,4 +27,4 @@ const useDebouncedPromise = () => {
     return debouncedRequest;
 };
 
-export default useDebouncedPromise;
+export default useDebouncedRequest;

@@ -1,8 +1,15 @@
 import React, { createContext, useContext, useRef, useState } from 'react';
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
-import { FolderLinkMeta, FileLinkMeta, LinkMeta, isFolderLinkMeta } from '../../interfaces/link';
+import { FolderLinkMeta, FileLinkMeta, LinkMeta, isFolderLinkMeta, SortKeys } from '../../interfaces/link';
 import { ShareMeta } from '../../interfaces/share';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../../constants';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+
+export const DEFAULT_SORT_PARAMS: { sortField: SortKeys; sortOrder: SORT_DIRECTION } = {
+    sortField: DEFAULT_SORT_FIELD,
+    sortOrder: DEFAULT_SORT_ORDER
+};
 
 interface FileLinkKeys {
     privateKey: OpenPGPKey;
@@ -20,12 +27,17 @@ interface ShareKeys {
     privateKey: OpenPGPKey;
 }
 
+type SortedChildren = {
+    [sortKey in SortKeys]: {
+        [direction in SORT_DIRECTION]: { list: string[]; complete: boolean };
+    };
+};
+
 interface CachedFolderLink {
     meta: FolderLinkMeta;
     children: {
-        list: string[];
+        sorted: SortedChildren;
         unlisted: string[];
-        complete: boolean;
     };
     foldersOnly: {
         list: string[];
@@ -63,14 +75,18 @@ const useDriveCacheState = () => {
     const cacheRef = useRef<DriveCacheState>({});
     const [, setRerender] = useState(0);
 
-    const setLinkMeta = (metas: LinkMeta | LinkMeta[], shareId: string, rerender = true) => {
+    const setLinkMeta = (
+        metas: LinkMeta | LinkMeta[],
+        shareId: string,
+        { isNew = false, rerender = true }: { isNew?: boolean; rerender?: boolean } = {}
+    ) => {
         const links = cacheRef.current[shareId].links;
         const linkMetas = Array.isArray(metas) ? metas : [metas];
 
         linkMetas.forEach((meta) => {
             if (links[meta.LinkID]) {
                 // Special case for active revision: children don't have active revision
-                // So keep it if it's arlready loaded (until file edit at least)
+                // So keep it if it's already loaded (until file edit at least)
                 const revision = links[meta.LinkID].meta.FileProperties?.ActiveRevision;
                 if (!isFolderLinkMeta(meta) && !meta.FileProperties.ActiveRevision && revision) {
                     meta.FileProperties.ActiveRevision = revision;
@@ -80,8 +96,17 @@ const useDriveCacheState = () => {
                 links[meta.LinkID] = isFolderLinkMeta(meta)
                     ? {
                           meta,
-                          children: { complete: false, list: [], unlisted: [] },
-                          foldersOnly: { complete: false, list: [], unlisted: [] }
+                          children: {
+                              sorted: ['Type', 'ModifyTime', 'Size'].reduce((sorted, sortKey) => {
+                                  sorted[sortKey as SortKeys] = {
+                                      ASC: { list: [], complete: isNew },
+                                      DESC: { list: [], complete: isNew }
+                                  };
+                                  return sorted;
+                              }, {} as SortedChildren),
+                              unlisted: []
+                          },
+                          foldersOnly: { complete: isNew, list: [], unlisted: [] }
                       }
                     : { meta };
             }
@@ -97,11 +122,12 @@ const useDriveCacheState = () => {
         }
     };
 
-    const getChildLinks = (shareId: string, linkId: string) => {
+    const getChildLinks = (shareId: string, linkId: string, { sortField, sortOrder } = DEFAULT_SORT_PARAMS) => {
         const link = cacheRef.current[shareId].links[linkId];
 
         if (link && isCachedFolderLink(link)) {
-            return [...link.children.list, ...link.children.unlisted];
+            const list = link.children.sorted[sortField][sortOrder].list;
+            return [...list, ...link.children.unlisted.filter((item) => !list.includes(item))];
         }
 
         return undefined;
@@ -112,11 +138,11 @@ const useDriveCacheState = () => {
         return [...trash.list, ...trash.unlisted];
     };
 
-    const getListedChildLinks = (shareId: string, linkId: string) => {
+    const getListedChildLinks = (shareId: string, linkId: string, { sortField, sortOrder } = DEFAULT_SORT_PARAMS) => {
         const link = cacheRef.current[shareId].links[linkId];
 
         if (link && isCachedFolderLink(link)) {
-            return link.children.list;
+            return link.children.sorted[sortField][sortOrder].list;
         }
 
         return undefined;
@@ -150,29 +176,30 @@ const useDriveCacheState = () => {
         metas: LinkMeta[],
         shareId: string,
         linkId: string,
-        method: 'unlisted' | 'complete' | 'incremental'
+        method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create',
+        sortParams = DEFAULT_SORT_PARAMS
     ) => {
         const links = cacheRef.current[shareId].links;
         const parent = links[linkId];
 
-        setLinkMeta(metas, shareId);
+        setLinkMeta(metas, shareId, { rerender: false, isNew: method === 'unlisted_create' });
 
         if (isCachedFolderLink(parent)) {
-            const existing = getChildLinks(shareId, linkId) || [];
+            const existing = getChildLinks(shareId, linkId, sortParams) || [];
             const linkIds = metas.map(({ LinkID }) => LinkID);
 
-            if (method === 'unlisted') {
+            if (['unlisted', 'unlisted_create'].includes(method)) {
                 parent.children.unlisted = [
                     ...parent.children.unlisted,
                     ...linkIds.filter((id) => !existing.includes(id))
                 ];
             } else {
-                parent.children.list = [
-                    ...parent.children.list,
-                    ...linkIds.filter((id) => !parent.children.list.includes(id))
-                ];
-                parent.children.unlisted = parent.children.unlisted.filter((id) => !linkIds.includes(id));
-                parent.children.complete = method === 'complete' || parent.children.complete;
+                const { sortField, sortOrder } = sortParams;
+                const folder = parent.children.sorted[sortField][sortOrder];
+                parent.children.sorted[sortField][sortOrder] = {
+                    list: [...folder.list.filter((id) => !linkIds.includes(id)), ...linkIds],
+                    complete: method === 'complete' || folder.complete
+                };
             }
         }
 
@@ -188,7 +215,7 @@ const useDriveCacheState = () => {
         const links = cacheRef.current[shareId].links;
         const trash = cacheRef.current[shareId].trash;
 
-        setLinkMeta(metas, shareId);
+        setLinkMeta(metas, shareId, { rerender: false });
 
         const existing = getTrashLinks(shareId);
         const linkIds = metas.map(({ LinkID }) => LinkID);
@@ -214,19 +241,19 @@ const useDriveCacheState = () => {
         metas: LinkMeta[],
         shareId: string,
         linkId: string,
-        method: 'unlisted' | 'complete' | 'incremental'
+        method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create'
     ) => {
         const links = cacheRef.current[shareId].links;
         const parent = links[linkId];
         const folderMetas = metas.filter(isFolderLinkMeta);
 
-        setLinkMeta(folderMetas, shareId);
+        setLinkMeta(folderMetas, shareId, { rerender: false, isNew: method === 'unlisted_create' });
 
         if (isCachedFolderLink(parent)) {
             const existing = getFoldersOnlyLinks(shareId, linkId) || [];
             const linkIds = folderMetas.map(({ LinkID }) => LinkID);
 
-            if (method === 'unlisted') {
+            if (['unlisted', 'unlisted_create'].includes(method)) {
                 parent.foldersOnly.unlisted = [
                     ...parent.foldersOnly.unlisted,
                     ...linkIds.filter((id) => !existing.includes(id))
@@ -268,11 +295,11 @@ const useDriveCacheState = () => {
     const getLinkMeta = (shareId: string, linkId: string) => cacheRef.current[shareId].links[linkId]?.meta;
     const getLinkKeys = (shareId: string, linkId: string) => cacheRef.current[shareId].links[linkId]?.keys;
     const getTrashComplete = (shareId: string) => cacheRef.current[shareId].trash.complete;
-    const getChildrenComplete = (shareId: string, linkId: string) => {
+    const getChildrenComplete = (shareId: string, linkId: string, { sortField, sortOrder } = DEFAULT_SORT_PARAMS) => {
         const link = cacheRef.current[shareId].links[linkId];
 
         if (link && isCachedFolderLink(link)) {
-            return link.children.complete;
+            return link.children.sorted[sortField][sortOrder].complete;
         }
 
         return undefined;
@@ -287,8 +314,8 @@ const useDriveCacheState = () => {
         return undefined;
     };
 
-    const getChildLinkMetas = (shareId: string, linkId: string) => {
-        const links = getChildLinks(shareId, linkId);
+    const getChildLinkMetas = (shareId: string, linkId: string, sortParams = DEFAULT_SORT_PARAMS) => {
+        const links = getChildLinks(shareId, linkId, sortParams);
         return links?.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
     };
 
@@ -328,6 +355,10 @@ const useDriveCacheState = () => {
         setRerender((old) => ++old);
     };
 
+    /**
+     * @param softDelete should remove reference in parent link when location changes (move, trash, restore)
+     * @param rerender false when called recursively (should not rerender after every delete) otherwise true
+     */
     const deleteLinks = (shareId: string, linkIds: string[], softDelete = false, rerender = true) => {
         linkIds.forEach((id) => {
             const meta = getLinkMeta(shareId, id);
@@ -338,7 +369,13 @@ const useDriveCacheState = () => {
                 const trash = cacheRef.current[shareId].trash;
 
                 if (parent && isCachedFolderLink(parent)) {
-                    parent.children.list = parent.children.list.filter((id) => meta.LinkID !== id);
+                    Object.entries(parent.children.sorted).forEach(([sortKey, listsByDirection]) => {
+                        Object.entries(listsByDirection).forEach(([direction, { list }]) => {
+                            parent.children.sorted[sortKey as SortKeys][direction as SORT_DIRECTION].list = list.filter(
+                                (id) => meta.LinkID !== id
+                            );
+                        });
+                    });
                     parent.children.unlisted = parent.children.unlisted.filter((id) => meta.LinkID !== id);
                     parent.foldersOnly.list = parent.foldersOnly.list.filter((id) => meta.LinkID !== id);
                     parent.foldersOnly.unlisted = parent.foldersOnly.unlisted.filter((id) => meta.LinkID !== id);
