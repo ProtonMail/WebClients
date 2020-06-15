@@ -83,10 +83,16 @@ const ContactResignModal = ({ contactID, message, onResignContact, onClose, ...r
 
         return (
             <li key={email}>
-                <strong>{`${email}: `}</strong>
-                {fingerprints.map((f: string, i: number) => (
-                    <span key={f}>{`${f}${i + 1 !== fingerprints.length ? ',' : ''}`}</span>
-                ))}
+                <span className="flex mw100 flex-nowrap onmobile-flex-column">
+                    <strong className="mr0-25">{`${email}:`}</strong>
+                    <span className="flex-item-fluid">
+                        {fingerprints.map((f: string, i: number) => (
+                            <span className="ellipsis inbl mw100" title={f} key={f}>
+                                {`${f}${i + 1 !== fingerprints.length ? ', ' : ''}`}
+                            </span>
+                        ))}
+                    </span>
+                </span>
             </li>
         );
     };
