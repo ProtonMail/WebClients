@@ -14,10 +14,10 @@ import DescriptionInput from './inputs/DescriptionInput';
 import LocationInput from './inputs/LocationInput';
 import TitleInput from './inputs/TitleInput';
 import CalendarSelect from './inputs/CalendarSelect';
+import { EnDash } from '../EnDash';
 import MinimalErrowRow from './MinimalErrorRow';
 import MinimalEventRow from './MinimalEventRow';
 
-const EnDash = () => <span className="ml0-5 mr0-5">–</span>;
 
 interface Props {
     isSubmitted: boolean;

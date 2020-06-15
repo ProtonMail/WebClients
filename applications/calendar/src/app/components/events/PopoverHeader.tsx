@@ -4,11 +4,12 @@ import PopoverCloseButton from './PopoverCloseButton';
 interface Props {
     children?: React.ReactNode;
     onClose: () => void;
+    className?: string;
 }
 
-const PopoverHeader = ({ children, onClose }: Props) => {
+const PopoverHeader = ({ children, onClose, ...rest }: Props) => {
     return (
-        <header>
+        <header {...rest}>
             {children}
             <PopoverCloseButton onClose={onClose} />
         </header>

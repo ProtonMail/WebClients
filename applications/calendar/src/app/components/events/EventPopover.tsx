@@ -1,9 +1,11 @@
-import React from 'react';
-import { PrimaryButton, Loader, useLoading, Alert, Icon, classnames, Button } from 'react-components';
+import React, { useMemo } from 'react';
+import { Button, Loader, useLoading, Alert, classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { c } from 'ttag';
 
+import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
+import { dateLocale } from 'proton-shared/lib/i18n';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import useReadEvent from './useReadEvent';
 
@@ -14,6 +16,7 @@ import { getEventErrorMessage } from './error';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent, WeekStartsOn } from '../../containers/calendar/interface';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import getEventInformation from './getEventInformation';
+import { EnDash } from '../EnDash';
 
 interface Props {
     formatTime: (date: Date) => string;
@@ -35,6 +38,7 @@ const EventPopover = ({
     style,
     popoverRef,
     event: targetEvent,
+    event: { start, end, isAllDay },
     tzid,
     weekStartsOn,
     isNarrow,
@@ -61,6 +65,39 @@ const EventPopover = ({
         }
     };
 
+    const dateHeader = useMemo(() => {
+        const [dateStart, dateEnd] = [start, end].map((date) => formatUTC(date, 'cccc PPP', { locale: dateLocale }));
+        const timeStart = formatTime(start);
+        const timeEnd = formatTime(end);
+
+        if (isAllDay) {
+            if (dateStart === dateEnd) return dateStart;
+            return (
+                <>
+                    {dateStart}
+                    <EnDash />
+                    {dateEnd}
+                </>
+            );
+        }
+        if (dateStart === dateEnd) {
+            return (
+                <>
+                    {dateStart} | {timeStart}
+                    <EnDash />
+                    {timeEnd}
+                </>
+            );
+        }
+        return (
+            <>
+                {dateStart} {timeStart}
+                <EnDash />
+                {dateEnd} {timeEnd}
+            </>
+        );
+    }, [start, end, isAllDay]);
+
     const deleteButton = (
         <Button
             data-test-id="event-popover:delete"
@@ -82,7 +119,7 @@ const EventPopover = ({
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
                 <Alert type="error">{getEventErrorMessage(eventReadError)}</Alert>
-                <footer>{deleteButton}</footer>
+                <PopoverFooter>{deleteButton}</PopoverFooter>
             </div>
         );
     }
@@ -90,25 +127,18 @@ const EventPopover = ({
     if (isEventReadLoading) {
         return (
             <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
-                <Loader />
+                <Loader className="center flex mb2 mt2 pb2" />
             </div>
         );
     }
 
     return (
         <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
-            <PopoverHeader onClose={onClose}>
-                <div className="flex flex-nowrap">
-                    <Icon
-                        name="circle"
-                        className="mr1 mb1 mt0-75 flex-item-noshrink"
-                        color={calendarData.Color}
-                        size={16}
-                    />
-                    <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={eventTitleSafe}>
-                        {eventTitleSafe}
-                    </h1>
-                </div>
+            <PopoverHeader className="ml0-5" onClose={onClose}>
+                <div className="color-subheader">{dateHeader}</div>
+                <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut mb0-5" title={eventTitleSafe}>
+                    {eventTitleSafe}
+                </h1>
             </PopoverHeader>
             <PopoverEventContent
                 Calendar={calendarData}
@@ -121,13 +151,13 @@ const EventPopover = ({
             />
             <PopoverFooter>
                 {deleteButton}
-                <PrimaryButton
+                <Button
                     data-test-id="event-popover:edit"
                     onClick={handleEdit}
                     disabled={loadingAction || isCalendarDisabled}
                 >
                     {c('Action').t`Edit`}
-                </PrimaryButton>
+                </Button>
             </PopoverFooter>
         </div>
     );
