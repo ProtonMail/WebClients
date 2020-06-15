@@ -32,7 +32,7 @@ td[aria-busy="true"] {
     right: 0;
     left: 0;
     bottom: 0;
-    background: $white url(#{$path-images}loading-atom-smaller.svg) 50% 50% no-repeat;
+    background: var(--bgcolor-main-area, white) url(#{$path-images}loading-atom-smaller.svg) 50% 50% no-repeat;
   }
 }
 

@@ -137,13 +137,28 @@ button[aria-busy="true"] {
 
 
 
+tr[aria-busy="true"] td,
 td[aria-busy="true"] {
-  position: relative;
-  background-image: none;
   &::before {
     background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
   }
 }
+
+.progressive[aria-busy="true"] {
+  &::before {
+    animation-name: backgroundLoading-dark;
+  }
+}
+
+@keyframes backgroundLoading-dark {
+  0% {
+    background-color: $pm-secondary-grey;
+  }
+  100% {
+    background-color: lighten($pm-secondary-grey, 10%);
+  }
+}
+
 
 // others
 details {
