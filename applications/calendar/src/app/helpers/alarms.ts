@@ -85,7 +85,7 @@ const absoluteToRelative = (trigger: VcalDateTimeProperty, dtstart: VcalDateOrDa
     return { weeks, days, hours, minutes, seconds: 0, isNegative: durationInMinutes >= 0 };
 };
 
-const normalizeDurationToUnit = (duration: Partial<VcalDurationValue>, unit: number) => {
+export const normalizeDurationToUnit = (duration: Partial<VcalDurationValue>, unit: number) => {
     const normalizedUnits = [
         Math.floor(((duration.weeks || 0) * WEEK) / unit),
         Math.floor(((duration.days || 0) * DAY) / unit),

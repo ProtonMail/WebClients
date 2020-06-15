@@ -12,6 +12,7 @@ import CalendarIcon from '../CalendarIcon';
 import { getTimezonedFrequencyString } from '../../helpers/frequencyString';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent, WeekStartsOn } from '../../containers/calendar/interface';
 import { EventModelReadView } from '../../interfaces/EventModel';
+import { sortNotifications } from '../../containers/calendar/sortNotifications';
 
 interface Props {
     Calendar: tsCalendar;
@@ -122,7 +123,7 @@ const PopoverEventContent = ({
                 <div className={wrapClassName}>
                     <Icon name="notifications-enabled" className={iconClassName} />
                     <div className="flex flex-column">
-                        {model.notifications.map((notification, i) => {
+                        {sortNotifications(model.notifications).map((notification, i) => {
                             const key = `${i}`;
                             return (
                                 <PopoverNotification key={key} notification={notification} formatTime={formatTime} />
