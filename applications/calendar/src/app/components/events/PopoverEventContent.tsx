@@ -69,7 +69,7 @@ const PopoverEventContent = ({
         <Tabs
             tabs={[
                 {
-                    title: 'Event details',
+                    title: c('Title').t`Event details`,
                     content: (
                         <>
                             {frequencyString ? (
