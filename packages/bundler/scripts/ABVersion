@@ -238,7 +238,6 @@ async function main() {
         return flowAB({ arg1, arg2 }, version);
     }
 
-
     const newVersion = `v${semver.inc(version, arg1)}`;
 
     if (!semver.valid(newVersion)) {

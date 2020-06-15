@@ -68,7 +68,9 @@ function getRelease {
     echo "$(getBranch)-$(getVersion)-$(git log -n 1 --format=%h)";
 }
 function getLocales {
-    cat node_modules/proton-translations/.version;
+    if [ -d "node_modules/proton-translations" ]; then
+        cat node_modules/proton-translations/.version;
+    fi
 }
 
 function toJSON {
@@ -81,6 +83,7 @@ function toJSON {
     local depReactComponents="$(getVersionDep 'react-components')";
     local depProtonShared="$(getVersionDep 'proton-shared')";
     local depPmcrypto="$(getVersionDep 'pmcrypto')";
+    local depDesignSystem="$(getVersionDep 'design-system')";
 
 cat <<EOT
 {
@@ -93,6 +96,7 @@ cat <<EOT
     "dependencies": {
         "react-components": "${depReactComponents}",
         "proton-shared": "${depProtonShared}",
+        "design-system": "${depDesignSystem}",
         "pmcrypto": "${depPmcrypto}"
     }
 }
