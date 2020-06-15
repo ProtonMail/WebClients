@@ -1,25 +1,37 @@
-.progressbar {
-	$size: .5em;
-
+@mixin progressbar-size($size: .5em) {
 	height: $size;
 	border-radius: #{$size/2};
+
+	&::-webkit-progress-bar {
+		border-radius: #{$size/2};
+	}
+
+	&::-webkit-progress-value {
+		border-radius: #{$size/2};
+	}
+
+	&::-moz-progress-bar {
+		border-radius: #{$size/2};
+	}
+}
+
+.progressbar {
+	@include progressbar-size();
+
 	background: var(--bordercolor-input, $pm-global-border);
 	color: $pm-primary;
 	appearance: none;
 
 	&::-webkit-progress-bar {
 		background-color: var(--bordercolor-input, $pm-global-border);
-		border-radius: #{$size/2};
 	}
 
 	&::-webkit-progress-value {
-		border-radius: #{$size/2};
 		background: $pm-primary;
 		transition: .25s width easing(easeInOutQuint);
 	}
 
 	&::-moz-progress-bar {
-		border-radius: #{$size/2};
 		background: $pm-primary;
 		transition: .25s width easing(easeInOutQuint);
 	}
@@ -29,9 +41,11 @@
 	}
 
 	@each $variant, $color in (
-		success: $pm-global-success,
-		warning: $pm-global-attention,
-		error  : $pm-global-warning
+		disabled : darken($pm-global-muted, 25%),
+		running  : $pm-global-info,
+		success  : $pm-global-success,
+		warning  : $pm-global-attention,
+		error    : $pm-global-warning
 	) {
 		&--#{$variant} {
 			color: $color;
@@ -44,5 +58,9 @@
 				background: $color;
 			}
 		}
+	}
+
+	&.is-thin {
+		@include progressbar-size(.25em);
 	}
 }
