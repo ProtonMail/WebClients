@@ -79,7 +79,6 @@ export interface EventModel extends EventModelView {
     initialDate: Date;
     initialTzid: string;
     defaultEventDuration: number;
-    hasMoreOptions?: boolean;
     hasCalendarRow: boolean;
     hasFrequencyRow: boolean;
     hasModifiedNotifications: {

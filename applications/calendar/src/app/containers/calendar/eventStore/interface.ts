@@ -35,12 +35,14 @@ export interface CalendarEventStoreRecord {
 export type RecurringEventsCache = Map<string, RecurringCache>;
 export type EventsCache = Map<string, CalendarEventStoreRecord>;
 export type FetchCache = Map<string, { promise?: Promise<void>; dateRange: [Date, Date] }>;
+export type FetchUidCache = Map<string, { promise?: Promise<void> }>;
 export interface CalendarEventCache {
     events: EventsCache;
     recurringEvents: RecurringEventsCache;
     tree: IntervalTree;
     fetchTree: IntervalTree;
     fetchCache: FetchCache;
+    fetchUidCache: FetchUidCache;
 }
 
 export interface CalendarsEventsCache {
@@ -50,6 +52,7 @@ export interface CalendarsEventsCache {
         [key: string]: CalendarEventCache;
     };
     getCachedEvent: (calendarID: string, eventID: string) => CalendarEvent | undefined;
+    getCachedRecurringEvent: (calendarID: string, uid: string) => RecurringCache | undefined;
     rerender?: () => void;
 }
 

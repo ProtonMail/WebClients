@@ -26,8 +26,9 @@ import { DEFAULT_FULL_DAY_NOTIFICATION, DEFAULT_PART_DAY_NOTIFICATION } from '..
 import { getDeviceNotifications } from './notificationModel';
 import { notificationsToModel } from '../../../helpers/notificationsToModel';
 import { propertiesToNotificationModel } from './propertiesToNotificationModel';
-import { EventModel, FrequencyModel } from '../../../interfaces/EventModel';
+import { DateTimeModel, EventModel, FrequencyModel } from '../../../interfaces/EventModel';
 import { stripAllTags } from '../../../helpers/sanitize';
+import getFrequencyModelChange from './getFrequencyModelChange';
 
 export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
@@ -129,6 +130,7 @@ interface GetInitialModelArguments {
     isAllDay: boolean;
     tzid: string;
 }
+
 export const getInitialModel = ({
     initialDate = toUTCDate(fromLocalDate(new Date())), // Needs to be in fake utc time
     CalendarSettings,
@@ -167,14 +169,30 @@ export const getInitialModel = ({
     };
 };
 
+const getParentMerge = (
+    veventComponentParentPartial: VcalVeventComponent,
+    recurrenceStart: DateTimeModel,
+    tzid: string
+) => {
+    const isAllDay = getIsAllDay(veventComponentParentPartial);
+    const parentModel = propertiesToModel(veventComponentParentPartial, isAllDay, tzid);
+    const { frequencyModel, start } = parentModel;
+    return {
+        frequencyModel: getFrequencyModelChange(start, recurrenceStart, frequencyModel),
+    };
+};
+
 interface GetExistingEventArguments {
     veventComponent: VcalVeventComponent;
     veventValarmComponent?: VcalVeventComponent;
+    veventComponentParentPartial?: VcalVeventComponent;
     tzid: string;
 }
+
 export const getExistingEvent = ({
     veventComponent,
     veventValarmComponent,
+    veventComponentParentPartial,
     tzid,
 }: GetExistingEventArguments): Partial<EventModel> => {
     const isAllDay = getIsAllDay(veventComponent);
@@ -184,21 +202,23 @@ export const getExistingEvent = ({
     const newModel = propertiesToModel(veventComponent, isAllDay, tzid);
     const strippedDescription = stripAllTags(newModel.description);
 
-    const hasDifferingTimezone = newModel.start.tzid !== tzid || newModel.end.tzid !== tzid;
-
     // Email notifications are not supported atm.
     const newNotifications = propertiesToNotificationModel(veventValarmComponent, isAllDay).filter(
         ({ type }) => type === SETTINGS_NOTIFICATION_TYPE.DEVICE
     );
 
+    const parentMerge =
+        veventComponentParentPartial && recurrenceId
+            ? getParentMerge(veventComponentParentPartial, newModel.start, tzid)
+            : {};
+
     return {
         ...newModel,
         description: strippedDescription,
         isAllDay,
-        // TODO: In the latest design we are not using hasMoreOptions, nor the MoreRow component. If the design sticks, we should remove them
-        hasMoreOptions: isRecurring || hasDifferingTimezone,
-        hasFrequencyRow: !recurrenceId,
+        hasFrequencyRow: true,
         hasCalendarRow: !isRecurring && !recurrenceId,
+        ...parentMerge,
         ...(isAllDay
             ? {
                   fullDayNotifications: newNotifications,

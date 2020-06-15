@@ -1,7 +1,16 @@
 import { c } from 'ttag';
 import { Prompt } from 'react-router';
 import { noop } from 'proton-shared/lib/helpers/function';
-import React, { RefObject, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import React, {
+    MutableRefObject,
+    RefObject,
+    useCallback,
+    useEffect,
+    useImperativeHandle,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 import {
     useApi,
     useEventManager,
@@ -11,16 +20,15 @@ import {
     useNotifications,
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
-
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-
 import { omit } from 'proton-shared/lib/helpers/object';
 import { Calendar, CalendarBootstrap, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { Address } from 'proton-shared/lib/interfaces';
+
 import { getExistingEvent, getInitialModel } from '../../components/eventModal/eventForm/state';
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
@@ -65,7 +73,7 @@ import {
     WeekStartsOn,
 } from './interface';
 import { DateTimeModel, EventModel } from '../../interfaces/EventModel';
-import { DecryptedEventTupleResult } from './eventStore/interface';
+import { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
 import {
     isCreateDownAction,
     isEventDownAction,
@@ -75,6 +83,7 @@ import {
 } from '../../components/calendar/interactions/interface';
 import useGetCalendarEventPersonal from './eventStore/useGetCalendarEventPersonal';
 import useGetCalendarEventRaw from './eventStore/useGetCalendarEventRaw';
+import getComponentFromCalendarEvent from './eventStore/cache/getComponentFromCalendarEvent';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
     if (!isAllDay) {
@@ -99,6 +108,7 @@ interface Props extends SharedViewProps {
     containerRef: HTMLDivElement | null;
     timeGridViewRef: RefObject<TimeGridRef>;
     interactiveRef: RefObject<InteractiveRef>;
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
 }
 const InteractiveCalendarView = ({
     view,
@@ -133,6 +143,7 @@ const InteractiveCalendarView = ({
     interactiveRef,
     containerRef,
     timeGridViewRef,
+    calendarsEventsCacheRef,
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -238,6 +249,18 @@ const InteractiveCalendarView = ({
         });
     };
 
+    const getVeventComponentParent = (uid: string, calendarID: string) => {
+        const recurrenceCache = calendarsEventsCacheRef.current.getCachedRecurringEvent(calendarID, uid);
+        const parentEventID = recurrenceCache?.parentEventID;
+        const parentEvent = parentEventID
+            ? calendarsEventsCacheRef.current.getCachedEvent(calendarID, parentEventID)
+            : undefined;
+        if (!parentEvent) {
+            throw new Error('Missing parent event');
+        }
+        return getComponentFromCalendarEvent(parentEvent);
+    };
+
     const getUpdateModel = ({
         calendarData,
         eventData,
@@ -252,6 +275,12 @@ const InteractiveCalendarView = ({
         const { Members = [], CalendarSettings } = readCalendarBootstrap(calendarData.ID);
         const [Member, Address] = getMemberAndAddress(activeAddresses, Members, eventData.Author);
 
+        const [veventComponent, personalMap] = eventReadResult.result;
+
+        const veventComponentParentPartial = veventComponent['recurrence-id']
+            ? getVeventComponentParent(veventComponent.uid.value, eventData.CalendarID)
+            : undefined;
+
         const createResult = getInitialModel({
             initialDate,
             CalendarSettings,
@@ -264,13 +293,13 @@ const InteractiveCalendarView = ({
             isAllDay: false,
             tzid,
         });
-        const [veventComponent, personalMap] = eventReadResult.result;
         const originalOrOccurrenceEvent = eventRecurrence
             ? withOccurrenceEvent(veventComponent, eventRecurrence)
             : veventComponent;
         const eventResult = getExistingEvent({
             veventComponent: originalOrOccurrenceEvent,
             veventValarmComponent: personalMap[Member.ID],
+            veventComponentParentPartial,
             tzid,
         });
         return {

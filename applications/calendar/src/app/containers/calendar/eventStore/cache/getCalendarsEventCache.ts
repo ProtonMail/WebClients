@@ -14,6 +14,14 @@ const getCalendarsEventCache = (): CalendarsEventsCache => {
         return eventData && getIsCalendarEvent(eventData) ? eventData : undefined;
     };
 
+    const getCachedRecurringEvent = (calendarID: string, uid: string) => {
+        const calendarCache = calendarsCache[calendarID];
+        if (!calendarCache) {
+            return;
+        }
+        return calendarCache.recurringEvents.get(uid);
+    };
+
     const ref = 0;
     const isUnmounted = false;
 
@@ -22,6 +30,7 @@ const getCalendarsEventCache = (): CalendarsEventsCache => {
         isUnmounted,
         calendars: calendarsCache,
         getCachedEvent,
+        getCachedRecurringEvent,
     };
 };
 

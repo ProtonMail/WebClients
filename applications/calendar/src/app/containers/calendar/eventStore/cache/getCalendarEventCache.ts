@@ -7,6 +7,7 @@ const getCalendarEventCache = (): CalendarEventCache => {
         recurringEvents: new Map(),
         tree: createIntervalTree(),
         fetchCache: new Map(),
+        fetchUidCache: new Map(),
         fetchTree: createIntervalTree(),
     };
 };

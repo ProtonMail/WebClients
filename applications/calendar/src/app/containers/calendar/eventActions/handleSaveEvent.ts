@@ -13,8 +13,7 @@ import { getOriginalEvent } from './recurringHelper';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import handleSaveSingleEvent from './handleSaveSingleEvent';
 import handleSaveRecurringEvent from './handleSaveRecurringEvent';
-import withVeventRruleWkst, { withRruleWkst } from './rruleWkst';
-import { withRruleUntil } from './rruleUntil';
+import withVeventRruleWkst from './rruleWkst';
 import { GetDecryptedEventCb } from '../eventStore/interface';
 import { CalendarViewEventTemporaryEvent, OnSaveConfirmationCb, WeekStartsOn } from '../interface';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
@@ -138,19 +137,6 @@ const handleSaveEvent = async ({
     const actualEventRecurrence =
         eventRecurrence ||
         getSingleEditRecurringData(originalEditEventData.mainVeventComponent, oldEditEventData.mainVeventComponent);
-
-    if (newVeventComponent['recurrence-id'] && originalEditEventData.mainVeventComponent.rrule) {
-        // Since single edits are not allowed to edit the RRULE, append the old one here. Take into account when
-        // a part day is changed into full day with the until rule.
-        const singleEditWithRrule: VcalVeventComponent = {
-            ...newVeventComponent,
-            rrule: withRruleUntil(
-                withRruleWkst(originalEditEventData.mainVeventComponent.rrule, weekStartsOn),
-                newVeventComponent.dtstart
-            ),
-        };
-        newEditEventData.veventComponent = singleEditWithRrule;
-    }
 
     return handleSaveRecurringEvent({
         originalEditEventData,

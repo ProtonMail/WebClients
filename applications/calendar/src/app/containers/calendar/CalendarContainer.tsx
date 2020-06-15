@@ -341,6 +341,7 @@ const CalendarContainer = ({
                 interactiveRef={interactiveRef}
                 containerRef={containerRef}
                 timeGridViewRef={timeGridViewRef}
+                calendarsEventsCacheRef={calendarsEventsCacheRef}
             />
         </CalendarContainerView>
     );
