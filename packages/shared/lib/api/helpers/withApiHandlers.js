@@ -38,9 +38,9 @@ const retryHandler = (e) => {
         response: { headers }
     } = e;
 
-    const retryAfterSeconds = parseInt(headers.get('retry-after'), 10);
+    const retryAfterSeconds = parseInt(headers.get('retry-after') || 0, 10);
 
-    if (!retryAfterSeconds || retryAfterSeconds <= 0 || retryAfterSeconds >= RETRY_DELAY_MAX) {
+    if (retryAfterSeconds < 0 || retryAfterSeconds >= RETRY_DELAY_MAX) {
         return Promise.reject(RetryError());
     }
 

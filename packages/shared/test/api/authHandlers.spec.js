@@ -70,22 +70,6 @@ describe('auth handlers', () => {
         expect(handleError).toHaveBeenCalledTimes(1);
     });
 
-    it('should not retry when its undefined', async () => {
-        const call = jasmine
-            .createSpy('call')
-            .and.returnValues(
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => undefined } } }))
-            );
-        const handleError = jasmine.createSpy('error').and.callFake((e) => {
-            throw e;
-        });
-        const api = withApiHandlers({ call, onError: handleError });
-        const error = await api({}).catch((e) => e);
-        expect(error.status).toBe(429);
-        expect(call).toHaveBeenCalledTimes(1);
-        expect(handleError).toHaveBeenCalledTimes(1);
-    });
-
     it('should not handle retry when its greater than 10', async () => {
         const call = jasmine
             .createSpy('call')
