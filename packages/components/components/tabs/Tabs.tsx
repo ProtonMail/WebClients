@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
 import { useIndicator } from './useIndicator';
-import { classnames } from '../../helpers/component';
 import { Tab } from './index';
 
 const toKey = (index: number, prefix = '') => `${prefix}${index}`;
 
 interface Props {
-    tabs: Tab[];
+    tabs?: Tab[];
+    children?: Tab[];
     preselectedTab?: number;
-    fullWidth?: boolean;
 }
 
-const Tabs = ({ tabs = [], preselectedTab = 0, fullWidth }: Props) => {
+const Tabs = ({ children, tabs, preselectedTab = 0 }: Props) => {
     const [selectedTab, updateSelectedTab] = useState(preselectedTab);
     const key = toKey(selectedTab, 'key_');
     const label = toKey(selectedTab, 'label_');
-    const { content } = tabs[selectedTab];
+    const tabList = tabs || children || [];
+    const content = tabList[selectedTab]?.content;
 
-    const { ref: containerRef, scale, translate } = useIndicator(tabs, selectedTab);
+    const { ref: containerRef, scale, translate } = useIndicator(tabList, selectedTab);
 
     return (
-        <div className={classnames(['tabs', fullWidth && 'tabs--extended'])}>
+        <div className="tabs">
             <nav className="tabs-container">
                 <ul
                     className="tabs-list"
@@ -28,7 +28,7 @@ const Tabs = ({ tabs = [], preselectedTab = 0, fullWidth }: Props) => {
                     ref={containerRef}
                     style={{ '--translate': translate, '--scale': scale }}
                 >
-                    {tabs.map(({ title }, index) => {
+                    {tabList.map(({ title }, index) => {
                         const key = toKey(index, 'key_');
                         const label = toKey(index, 'label_');
                         return (
