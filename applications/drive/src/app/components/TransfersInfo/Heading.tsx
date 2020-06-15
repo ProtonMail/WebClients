@@ -131,7 +131,12 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
 
     return (
         <div className="pd-transfers-heading flex flex-items-center flex-nowrap pl0-5 pr0-5 color-global-light">
-            <div className="flex-item-fluid p0-5" onClick={minimized ? onToggleMinimize : undefined}>
+            <div
+                className="flex-item-fluid p0-5"
+                aria-atomic="true"
+                aria-live="polite"
+                onClick={minimized ? onToggleMinimize : undefined}
+            >
                 {getHeadingText()}
             </div>
             <Tooltip title={minMaxTitle} className="pd-transfers-headingTooltip flex-item-noshrink flex">
@@ -145,7 +150,7 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
                     }}
                     aria-expanded={!minimized}
                 >
-                    <Icon className={classnames([minimized && 'rotateX-180'])} name="minimize" />
+                    <Icon className={classnames(['mauto', minimized && 'rotateX-180'])} name="minimize" />
                     <span className="sr-only">{minMaxTitle}</span>
                 </button>
             </Tooltip>
@@ -163,7 +168,7 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
                     className="pd-transfers-headingButton flex p0-5"
                     onClick={onClose}
                 >
-                    <Icon name="off" />
+                    <Icon className="mauto" name="off" />
                     <span className="sr-only">{closeTitle}</span>
                 </button>
             </Tooltip>

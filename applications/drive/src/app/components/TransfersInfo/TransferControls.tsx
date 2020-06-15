@@ -1,17 +1,22 @@
 import React from 'react';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { Icon, useLoading } from 'react-components';
-import { TransferState } from '../../interfaces/transfer';
 import { c } from 'ttag';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import { TransferType, UploadProps, DownloadProps } from './Transfer';
-import { isTransferPaused } from '../../utils/transfer';
+import { isTransferInitializing, isTransferPaused, isTransferFinished } from '../../utils/transfer';
 
 function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
     const { cancelDownload, removeDownload, pauseDownload, resumeDownload } = useDownloadProvider();
     const { removeUpload } = useUploadProvider();
-    const isFinished = [TransferState.Done, TransferState.Error, TransferState.Canceled].includes(transfer.state);
     const [pauseInProgress, withPauseInProgress] = useLoading();
+    const isInitializing = isTransferInitializing(transfer);
+    const isFinished = isTransferFinished(transfer);
+
+    const pauseText = type === TransferType.Download ? c('Action').t`Pause download` : c('Action').t`Pause upload`;
+    const resumeText = type === TransferType.Download ? c('Action').t`Resume download` : c('Action').t`Resume upload`;
+    const cancelText = type === TransferType.Download ? c('Action').t`Cancel download` : c('Action').t`Cancel upload`;
+    const removeText = c('Action').t`Remove from this list`;
 
     const handleClick = () => {
         switch (type) {
@@ -36,27 +41,29 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
     };
 
     return (
-        <span className="pd-transfers-controls flex-item-fluid flex flex-nowrap flex-justify-end">
-            {!isFinished && (
+        <div className="pd-transfers-listItem-controls flex flex-nowrap flex-justify-end">
+            {type === TransferType.Download && !isInitializing && !isFinished && (
                 <button
                     type="button"
                     onClick={togglePause}
                     disabled={pauseInProgress}
-                    className="pd-transfers-controlButton pm-button--info pm-button--for-icon rounded50 flex-item-noshrink flex mr0-25"
-                    title={isTransferPaused(transfer) ? c('Action').t`Resume transfer` : c('Action').t`Pause transfer`}
+                    className="pd-transfers-listItem-controls-button pm-button pm-button--for-icon flex flex-item-noshrink"
+                    title={isTransferPaused(transfer) ? resumeText : pauseText}
                 >
                     <Icon size={12} name={isTransferPaused(transfer) ? 'resume' : 'pause'} />
                 </button>
             )}
-            <button
-                type="button"
-                onClick={handleClick}
-                className="pd-transfers-controlButton pm-button--info pm-button--for-icon rounded50 flex-item-noshrink flex"
-                title={isFinished ? c('Action').t`Remove from this list` : c('Action').t`Cancel transfer`}
-            >
-                <Icon size={12} name="off" />
-            </button>
-        </span>
+            {!(type === TransferType.Upload && !isFinished) && (
+                <button
+                    type="button"
+                    onClick={handleClick}
+                    className="pd-transfers-listItem-controls-button pm-button pm-button--for-icon flex flex-item-noshrink"
+                    title={isFinished ? removeText : cancelText}
+                >
+                    <Icon size={12} name={isFinished ? 'swipe' : 'off'} />
+                </button>
+            )}
+        </div>
     );
 }
 

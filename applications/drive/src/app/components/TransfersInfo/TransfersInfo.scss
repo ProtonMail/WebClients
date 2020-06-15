@@ -14,7 +14,7 @@
 
     @include respond-to($breakpoint-small, 'min') {
         width: 60%;
-        max-width: 43em;
+        max-width: 50em;
         margin-right: inherit;
     }
 
@@ -48,7 +48,7 @@
     }
 
     &-list {
-        max-height: 22em; // 4x listItem
+        max-height: 20em; // 4x listItem
         overflow-y: auto;
         background-color: var(--bgcolor-input, $pm-global-light);
         transition: inherit;
@@ -64,55 +64,66 @@
     }
 
     &-listItem {
-        height: 5.5em; // To avoid height blinking on status changing
+        display: grid;
+        grid-template-rows: 1fr auto;
+        grid-template-areas: "name size status controls" "progress progress progress progress";
+        column-gap: 1em;
+        row-gap: 1em;
+        align-items: center;
+        height: 5em; // To avoid height blinking on status changing
+
+        @include respond-to($breakpoint-small, 'max') {
+            grid-template-columns: 4fr minmax(5em, 2fr) 1.5em minmax(5em, 1fr);
+        }
+
+        @include respond-to($breakpoint-small, 'min') {
+            grid-template-columns: 4fr 2.5fr minmax(6em, 2fr) minmax(5em, 1fr);
+        }
 
         &:not(:last-child) {
             @extend .border-bottom;
         }
-    }
 
-    &-listItemTypeIcon {
-        opacity: 0.5;
-    }
+        @each $place in (name, size, status, controls, progress) {
+            &-#{$place} {
+                grid-area: $place;
+            }
 
-    &-listItemStats {
-        position: relative; // For controls in hidden state
-
-        @include respond-to($breakpoint-tiny, 'min') {
-            width: 16em;
+            @if $place != controls and $place != progress {
+                &--canceled &-#{$place} {
+                    opacity: .5;
+                }
+            }
         }
-    }
 
-    &-listItemStat {
-        width: 6em; // Magic number, based on value 999.99_MB/s
-        white-space: nowrap;
-        font-variant-numeric: tabular-nums;
-    }
-
-    &-listItemTransferStateIndicator {
-        @include respond-to($breakpoint-tiny, 'max') {
-            margin-left: 1em;
+        &-icon {
+            @include respond-to(420, 'max') {
+                display: none;
+            }
         }
-    }
 
-    &-controls {
-        position: absolute;
-        right: 0;
-        opacity: 0;
-    }
+        &-status {
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
 
-    &--hasControls:hover &-controls,
-    &--hasControls &-controls:focus-within {
-        position: static;
-        opacity: 1;
-    }
+            @include respond-to($breakpoint-small, 'max') {
+                svg {
+                    margin: 0;
+                }
+            }
+        }
 
-    &--hasControls:hover &-listItemTransferStateIndicator,
-    &--hasControls &-controls:focus-within + &-listItemTransferStateIndicator {
-        display: none;
-    }
+        &-size {
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
 
-    &-controls &-controlButton {
-        padding: 0.25em;
+        &-controls-button {
+            padding: .375em;
+
+            & + & {
+                margin-left: .5em;
+            }
+        }
     }
 }
