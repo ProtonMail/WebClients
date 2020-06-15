@@ -2,7 +2,6 @@ import React, { createContext, useContext, useState, useRef, useEffect } from 'r
 import { initUpload, UploadCallbacks, UploadControls } from './upload';
 import { TransferState, TransferProgresses, TransferMeta, Upload, UploadInfo } from '../../interfaces/transfer';
 import { useNotifications } from 'react-components';
-import usePreventLeave from '../../hooks/util/usePreventLeave';
 import { isTransferProgress, isTransferPending } from '../../utils/transfer';
 
 interface UploadProviderState {
@@ -11,7 +10,7 @@ interface UploadProviderState {
         file: File,
         metadataPromise: Promise<{ meta: TransferMeta; info: UploadInfo }>,
         callbacks: UploadCallbacks
-    ) => void;
+    ) => Promise<void>;
     getUploadsProgresses: () => TransferProgresses;
     getUploadsImmediate: () => Upload[];
     clearUploads: () => void;
@@ -30,7 +29,6 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     // Keeping ref in case we need to immediatelly get uploads without waiting for rerender
     const uploadsRef = useRef<Upload[]>([]);
     const { createNotification } = useNotifications();
-    const { preventLeave } = usePreventLeave();
     const [uploads, setUploads] = useState<Upload[]>([]);
     const controls = useRef<{ [id: string]: UploadControls }>({});
     const progresses = useRef<TransferProgresses>({});
@@ -86,22 +84,20 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
             updateUploadState(id, TransferState.Progress);
 
-            preventLeave(
-                controls.current[id]
-                    .start(info)
-                    .then(() => {
-                        // Update upload progress to 100%
-                        const upload = uploads.find((upload) => upload.id === id);
-                        if (upload) {
-                            progresses.current[id] = upload.meta.size ?? 0;
-                        }
-                        updateUploadState(id, TransferState.Done);
-                    })
-                    .catch((error) => {
-                        console.error(`Failed to upload: ${error}`);
-                        updateUploadState(id, TransferState.Error);
-                    })
-            );
+            controls.current[id]
+                .start(info)
+                .then(() => {
+                    // Update upload progress to 100%
+                    const upload = uploads.find((upload) => upload.id === id);
+                    if (upload) {
+                        progresses.current[id] = upload.meta.size ?? 0;
+                    }
+                    updateUploadState(id, TransferState.Done);
+                })
+                .catch((error) => {
+                    console.error(`Failed to upload: ${error}`);
+                    updateUploadState(id, TransferState.Error);
+                });
         }
     }, [uploads]);
 
@@ -109,39 +105,50 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         file: File,
         metadataPromise: Promise<{ meta: TransferMeta; info: UploadInfo }>,
         callbacks: UploadCallbacks
-    ) => {
-        const { id, uploadControls } = initUpload({
-            ...callbacks,
-            onProgress: (bytes) => {
-                progresses.current[id] += bytes;
-                callbacks.onProgress?.(bytes);
-            }
-        });
-
-        controls.current[id] = uploadControls;
-        progresses.current[id] = 0;
-
-        addNewUpload(id, file);
-
-        try {
-            const { meta, info } = await metadataPromise;
-
-            updateUploadByID(id, {
-                meta,
-                info,
-                state: TransferState.Pending
+    ) =>
+        new Promise<void>((resolve, reject) => {
+            const { id, uploadControls } = initUpload({
+                ...callbacks,
+                finalize: async (...args) => {
+                    await callbacks.finalize(...args);
+                    resolve();
+                },
+                onProgress: (bytes) => {
+                    progresses.current[id] += bytes;
+                    callbacks.onProgress?.(bytes);
+                },
+                onError: (err) => {
+                    callbacks.onError?.(err);
+                    reject(err);
+                }
             });
-        } catch (err) {
-            updateUploadState(id, TransferState.Error);
 
-            if (err.name === 'ValidationError') {
-                createNotification({
-                    text: err.message,
-                    type: 'error'
+            controls.current[id] = uploadControls;
+            progresses.current[id] = 0;
+
+            addNewUpload(id, file);
+
+            metadataPromise
+                .then(({ meta, info }) => {
+                    updateUploadByID(id, {
+                        meta,
+                        info,
+                        state: TransferState.Pending
+                    });
+                })
+                .catch((err) => {
+                    updateUploadState(id, TransferState.Error);
+
+                    if (err.name === 'ValidationError') {
+                        createNotification({
+                            text: err.message,
+                            type: 'error'
+                        });
+                    }
+
+                    reject(err);
                 });
-            }
-        }
-    };
+        });
 
     const getUploadsProgresses = () => ({ ...progresses.current });
 
