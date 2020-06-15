@@ -124,7 +124,9 @@ function TransfersInfo() {
         )
     }));
 
-    const transfers = [...downloadTransfers, ...uploadTransfers].map(({ component }) => component);
+    const transfers = [...downloadTransfers, ...uploadTransfers]
+        .sort((a, b) => b.transfer.startDate.getTime() - a.transfer.startDate.getTime())
+        .map(({ component }) => component);
 
     return (
         <div className={classnames(['pd-transfers', minimized && 'pd-transfers--minimized'])}>
