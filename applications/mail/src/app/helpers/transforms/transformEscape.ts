@@ -1,6 +1,5 @@
 import { uniqID } from '../string';
 import { protonizer as purifyHTML } from 'proton-shared/lib/sanitize';
-import { parseInDiv } from '../dom';
 
 import { Base64Cache } from '../../hooks/useBase64Cache';
 
@@ -50,8 +49,8 @@ const removeBase64 = (input: string, cache?: Base64Cache): string => {
  * then replace them by the valid SRC for the base64.
  * @return HTML
  */
-export const attachBase64Parser = (node: Element, cache: Base64Cache): string => {
-    const nodes = [...node.querySelectorAll('[data-proton-replace-base]')];
+export const attachBase64 = (element: Element, cache: Base64Cache) => {
+    const nodes = [...element.querySelectorAll('[data-proton-replace-base]')];
     nodes.forEach((node) => {
         const hash = node.getAttribute('data-proton-replace-base');
 
@@ -63,18 +62,6 @@ export const attachBase64Parser = (node: Element, cache: Base64Cache): string =>
         src && node.setAttribute('src', src);
         node.removeAttribute('data-proton-replace-base');
     });
-    return node.innerHTML;
-};
-
-/**
- * Attach escaped base64 to the dom if the input is a txt
- * @param input HTML
- * @param cache
- * @return HTML
- */
-export const attachBase64 = (input: string, cache: Base64Cache): string => {
-    const div = parseInDiv(input);
-    return attachBase64Parser(div, cache);
 };
 
 const escapeSVG = (input = '') => input.replace(REGEXP_SVG_BREAK, '$1proton-$2');

@@ -1,4 +1,4 @@
-import { transformEscape } from './transformEscape';
+import { transformEscape, attachBase64 } from './transformEscape';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { transformBase } from './transformBase';
 import { transformLinks } from './transformLinks';
@@ -35,6 +35,8 @@ export const prepareMailDocument = async (
     transformStylesheet(document);
 
     const { showRemoteImages } = transformRemote({ ...message, document }, mailSettings);
+
+    attachBase64(document, base64Cache);
 
     return { document, showRemoteImages, showEmbeddedImages, embeddeds };
 };
