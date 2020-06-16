@@ -11,6 +11,7 @@ import { DownloadControls } from '../components/downloads/download';
 import useDrive from '../hooks/drive/useDrive';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
+import usePreventLeave from '../hooks/util/usePreventLeave';
 
 const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
@@ -20,6 +21,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
     const cache = useDriveCache();
     const { getLinkMeta, fetchAllFolderPages } = useDrive();
     const { downloadDriveFile, saveFileTransferFromBuffer, startFileTransfer } = useFiles();
+    const { preventLeave } = usePreventLeave();
     const [loading, withLoading] = useLoading(true);
     const [contents, setContents] = useState<Uint8Array[]>();
     const [, setError] = useState();
@@ -96,7 +98,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
             ? saveFileTransferFromBuffer(contents, transferMeta)
             : startFileTransfer(shareId, linkId, transferMeta));
 
-        FileSaver.saveAsFile(fileStream, transferMeta);
+        preventLeave(FileSaver.saveAsFile(fileStream, transferMeta));
     }, [meta, contents, shareId, linkId]);
 
     return (

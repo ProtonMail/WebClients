@@ -80,16 +80,13 @@ const Transfer = ({ stats, ...props }: Props) => {
                     {transfer.meta.filename}
                 </span>
             </div>
-
             <div className="pd-transfers-listItem-size alignright ellipsis" title={`${percentageDone}%`}>
                 {(isProgress || isPaused) && <span className="notablet nomobile">{humanSize(progress)} / </span>}
                 {fileSize !== undefined && humanSize(fileSize)}
             </div>
-
             <div className="pd-transfers-listItem-status flex flex-nowrap flex-items-center flex-justify-end ellipsis">
                 <TransferStateIndicator transfer={transfer} type={type} speed={speed} />
             </div>
-
             <TransferControls {...props} />
 
             <ProgressBar
