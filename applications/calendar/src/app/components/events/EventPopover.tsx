@@ -38,7 +38,7 @@ const EventPopover = ({
     style,
     popoverRef,
     event: targetEvent,
-    event: { start, end, isAllDay },
+    event: { start, end, isAllDay, isAllPartDay },
     tzid,
     weekStartsOn,
     isNarrow,
@@ -70,7 +70,7 @@ const EventPopover = ({
         const timeStart = formatTime(start);
         const timeEnd = formatTime(end);
 
-        if (isAllDay) {
+        if (isAllDay && !isAllPartDay) {
             if (dateStart === dateEnd) return dateStart;
             return (
                 <>
