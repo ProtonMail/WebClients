@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
 
-import { useSortedList, useCache } from 'react-components';
+import { useMultiSortedList, useCache } from 'react-components';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 import { FileBrowserItem } from '../FileBrowser/FileBrowser';
@@ -50,10 +50,16 @@ const DriveContentProviderInner = ({
     const list = mapLinksToChildren(cache.get.childLinkMetas(shareId, linkId, sortParams) || []);
     const complete = cache.get.childrenComplete(shareId, linkId, sortParams);
 
-    const { sortedList, setSort } = useSortedList<FileBrowserItem>(list, {
-        key: sortParams.sortField,
-        direction: sortParams.sortOrder
-    });
+    const { sortedList, setConfigs } = useMultiSortedList(list, [
+        {
+            key: sortParams.sortField,
+            direction: sortParams.sortOrder
+        },
+        {
+            key: 'Name',
+            direction: SORT_DIRECTION.ASC
+        }
+    ]);
 
     const fileBrowserControls = useFileBrowser(sortedList);
     const abortSignal = useRef<AbortSignal>();
@@ -96,7 +102,13 @@ const DriveContentProviderInner = ({
 
     const setSorting = async (sortField: SortKeys, sortOrder: SORT_DIRECTION) => {
         sortCache.set(sortCacheKey, { sortField, sortOrder });
-        setSort(sortField, sortOrder);
+        setConfigs([
+            { key: sortField, direction: sortOrder },
+            {
+                key: 'Name',
+                direction: SORT_DIRECTION.ASC
+            }
+        ]);
     };
 
     useEffect(() => {
