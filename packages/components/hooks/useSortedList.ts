@@ -7,46 +7,69 @@ interface Config<T> {
 }
 
 /**
- * Handles sorting logic for lists.
+ * Handles multi-parameter sorting logic for lists
  */
-const useSortedList = <T>(list: T[], initialConfig?: Config<T>) => {
-    const [config, setConfig] = useState(initialConfig);
+export const useMultiSortedList = <T>(list: T[], initialConfig: Config<T>[] = []) => {
+    const [configs, setConfigs] = useState(initialConfig);
 
     const sortedList = useMemo(() => {
-        if (!config) {
+        if (!configs.length) {
             return list;
         }
 
         const comparator = (a: T, b: T) => {
-            if (a[config.key] < b[config.key]) {
-                return -1;
-            }
-            if (a[config.key] > b[config.key]) {
-                return 1;
+            const compare = (key: keyof T, a: T, b: T) => {
+                if (a[key] < b[key]) {
+                    return -1;
+                }
+                if (a[key] > b[key]) {
+                    return 1;
+                }
+                return 0;
+            };
+
+            for (let i = 0; i < configs.length; i++) {
+                const result =
+                    configs[i].direction === SORT_DIRECTION.ASC
+                        ? compare(configs[i].key, a, b)
+                        : compare(configs[i].key, b, a);
+                if (result !== 0) {
+                    return result;
+                }
             }
             return 0;
         };
-        return config.direction === SORT_DIRECTION.ASC
-            ? [...list].sort(comparator)
-            : [...list].sort((a, b) => comparator(b, a));
-    }, [config, list]);
+
+        return [...list].sort(comparator);
+    }, [configs, list]);
+
+    return { sortConfigs: configs, sortedList, setConfigs };
+};
+
+/**
+ * Handles sorting logic for lists.
+ */
+const useSortedList = <T>(list: T[], initialConfig?: Config<T>) => {
+    const { setConfigs, sortConfigs, sortedList } = useMultiSortedList(list, initialConfig && [initialConfig]);
 
     const toggleSort = (key: keyof T) => {
-        if (key === config?.key) {
-            setConfig((config) => ({
-                key,
-                direction: config?.direction === SORT_DIRECTION.ASC ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC
-            }));
+        if (key === sortConfigs[0]?.key) {
+            setConfigs((configs) => [
+                {
+                    key,
+                    direction: configs[0]?.direction === SORT_DIRECTION.ASC ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC
+                }
+            ]);
         } else {
-            setConfig({ key, direction: SORT_DIRECTION.ASC });
+            setConfigs([{ key, direction: SORT_DIRECTION.ASC }]);
         }
     };
 
     const setSort = (key: keyof T, direction: SORT_DIRECTION) => {
-        setConfig({ key, direction });
+        setConfigs([{ key, direction }]);
     };
 
-    return { sortConfig: config, sortedList, setSort, toggleSort };
+    return { sortConfig: sortConfigs[0], sortedList, setSort, toggleSort };
 };
 
 /**
