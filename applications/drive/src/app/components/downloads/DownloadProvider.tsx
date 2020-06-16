@@ -193,6 +193,8 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
             updateDownloadState([groupId, ...Object.keys(files)], TransferState.Canceled);
         };
 
+        progresses.current[groupId] = 0;
+
         setDownloads((downloads) => [
             ...downloads,
             {
@@ -231,7 +233,6 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                 partialsPromises.push(promise);
             },
             startDownloads() {
-                progresses.current[groupId] = 0;
                 controls.current[groupId] = {
                     resume: () => {
                         Object.values(files).forEach(({ controls }) => controls.resume());
