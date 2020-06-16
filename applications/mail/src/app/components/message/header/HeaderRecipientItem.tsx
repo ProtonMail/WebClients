@@ -86,7 +86,13 @@ const HeaderRecipientItem = ({
                     onClick={toggle}
                     className="item-icon flex-item-noshrink rounded50 bg-white inline-flex stop-propagation mr0-5"
                 >
-                    <span className="mauto item-abbr">{initial}</span>
+                    <span className="mauto item-abbr" aria-hidden="true">
+                        {initial}
+                    </span>
+                    <span className="mauto item-caret hidden" aria-hidden="true">
+                        <Icon name="caret"></Icon>
+                    </span>
+                    <span className="sr-only">{c('Action').t`Address options`}</span>
                 </button>
             </span>
             <Dropdown id={uid} originalPlacement="bottom" isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
