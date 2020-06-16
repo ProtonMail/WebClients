@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Alert } from 'react-components';
+import { IMPORT_CALENDAR_FAQ_URL } from '../../constants';
 import { ImportCalendarModel } from '../../interfaces/Import';
 
 import ErrorDetails from './ErrorDetails';
@@ -15,7 +16,7 @@ const WarningModalContent = ({ model }: Props) => {
     const totalEvents = totalParsed + totalEventsDiscarded;
     const errors = model.eventsNotParsed;
 
-    const learnMore = model.failure ? '' : 'TODO_URL';
+    const learnMore = model.failure ? '' : IMPORT_CALENDAR_FAQ_URL;
     const forNow = <span key="for-now" className="bold">{c('Import calendar warning').t`for now`}</span>;
     const summary =
         totalEventsDiscarded === totalEvents
