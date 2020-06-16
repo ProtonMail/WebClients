@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
-import { TransferState, TransferProgresses, TransferMeta, Download } from '../../interfaces/transfer';
+import { TransferState, TransferProgresses, TransferMeta, Download, PartialDownload } from '../../interfaces/transfer';
 import { initDownload, DownloadControls, DownloadCallbacks } from './download';
 import { useApi, generateUID } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
@@ -8,15 +8,6 @@ import { LinkType } from '../../interfaces/link';
 import { isTransferFailed, isTransferPaused, isTransferProgress, isTransferPending } from '../../utils/transfer';
 
 const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
-
-type PartialDownload = {
-    id: string;
-    partOf: string;
-    meta: TransferMeta;
-    state: TransferState;
-    resumeState?: TransferState;
-    type: LinkType;
-};
 
 interface DownloadProviderState {
     downloads: Download[];
@@ -68,7 +59,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                     ? {
                           ...download,
                           state: newState,
-                          resumeState: isTransferPaused({ state: newState }) ? download.state : undefined
+                          resumeState: isTransferPaused(download) ? newState : download.state
                       }
                     : download;
             })
