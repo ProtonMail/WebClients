@@ -500,14 +500,14 @@ function useFiles() {
             const promises = children.map((child) => {
                 const path = `${filePath}/${child.Name}`;
                 if (child.Type === LinkType.FILE) {
-                    const promise = new Promise<void>((resolve, reject) => {
+                    const promise = new Promise<void>((resolve, reject) =>
                         addDownload(getMetaForTransfer(child), {
                             transformBlockStream: decryptBlockStream(shareId, child.LinkID),
                             onStart: async (stream) => {
                                 cb.onStartFileTransfer({
                                     stream,
                                     path
-                                }).catch((err) => reject(err));
+                                }).catch(reject);
                                 return getFileBlocks(shareId, child.LinkID);
                             },
                             onFinish: () => {
@@ -516,8 +516,8 @@ function useFiles() {
                             onError(err) {
                                 reject(err);
                             }
-                        });
-                    });
+                        }).catch(reject)
+                    );
                     fileStreamPromises.push(promise);
                 } else {
                     cb.onStartFolderTransfer(path).catch((err) => console.error(`Failed to zip empty folder ${err}`));
@@ -529,7 +529,7 @@ function useFiles() {
         };
 
         await downloadFolder(linkId);
-        startDownloads();
+        await startDownloads();
         await Promise.all(fileStreamPromises);
     };
 
