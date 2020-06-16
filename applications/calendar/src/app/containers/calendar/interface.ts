@@ -78,14 +78,16 @@ export interface InteractiveState {
     targetMoreData?: TargetMoreData;
 }
 
-export type OnSaveConfirmationCb = (data: {
+export interface OnSaveConfirmationArgs {
     type: SAVE_CONFIRMATION_TYPES;
     data?: {
         types: RECURRING_TYPES[];
         hasSingleModifications: boolean;
         hasSingleModificationsAfter: boolean;
+        hasRruleModification: boolean;
     };
-}) => Promise<RECURRING_TYPES>;
+}
+export type OnSaveConfirmationCb = (data: OnSaveConfirmationArgs) => Promise<RECURRING_TYPES>;
 export type OnDeleteConfirmationCb = (data: {
     type: DELETE_CONFIRMATION_TYPES;
     data?: RECURRING_TYPES[];

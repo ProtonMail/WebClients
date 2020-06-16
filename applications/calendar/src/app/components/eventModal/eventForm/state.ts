@@ -33,14 +33,12 @@ import getFrequencyModelChange from './getFrequencyModelChange';
 export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
     DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
-    hasModifiedNotifications = { partDay: false, fullDay: false },
 }) => {
     return {
         defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
         partDayNotifications: getDeviceNotifications(notificationsToModel(DefaultPartDayNotifications, false)),
         fullDayNotifications: getDeviceNotifications(notificationsToModel(DefaultFullDayNotifications, true)),
-        hasModifiedNotifications,
     };
 };
 
@@ -160,7 +158,9 @@ export const getInitialModel = ({
         isAllDay,
         defaultEventDuration,
         frequencyModel,
+        hasModifiedRrule: false,
         ...notificationModel,
+        hasModifiedNotifications: { partDay: false, fullDay: false },
         ...memberModel,
         ...dateTimeModel,
         ...calendarsModel,

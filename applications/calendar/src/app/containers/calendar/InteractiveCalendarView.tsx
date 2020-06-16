@@ -67,6 +67,7 @@ import {
     CalendarViewEventTemporaryEvent,
     InteractiveRef,
     InteractiveState,
+    OnSaveConfirmationArgs,
     SharedViewProps,
     TargetEventData,
     TimeGridRef,
@@ -541,17 +542,7 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSaveConfirmation = ({
-        type,
-        data,
-    }: {
-        type: SAVE_CONFIRMATION_TYPES;
-        data?: {
-            types: RECURRING_TYPES[];
-            hasSingleModifications: boolean;
-            hasSingleModificationsAfter: boolean;
-        };
-    }): Promise<RECURRING_TYPES> => {
+    const handleSaveConfirmation = ({ type, data }: OnSaveConfirmationArgs): Promise<RECURRING_TYPES> => {
         return new Promise((resolve, reject) => {
             if (type === SAVE_CONFIRMATION_TYPES.RECURRING && data) {
                 return createModal(
@@ -559,6 +550,7 @@ const InteractiveCalendarView = ({
                         types={data.types}
                         hasSingleModifications={data.hasSingleModifications}
                         hasSingleModificationsAfter={data.hasSingleModificationsAfter}
+                        hasRruleModification={data.hasRruleModification}
                         onClose={reject}
                         onConfirm={resolve}
                     />

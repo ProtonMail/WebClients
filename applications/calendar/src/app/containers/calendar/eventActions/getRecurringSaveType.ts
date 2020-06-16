@@ -10,9 +10,9 @@ interface Arguments {
     oldEditEventData: EventOldData;
     canOnlySaveAll: boolean;
     onSaveConfirmation: OnSaveConfirmationCb;
-
     recurrence: CalendarEventRecurring;
     recurrences: CalendarEvent[];
+    hasModifiedRrule: boolean;
 }
 
 const getRecurringSaveType = async ({
@@ -22,6 +22,7 @@ const getRecurringSaveType = async ({
     onSaveConfirmation,
     recurrences,
     recurrence,
+    hasModifiedRrule,
 }: Arguments) => {
     const isFutureAllowed = getHasFutureOption(originalEditEventData.mainVeventComponent, recurrence);
     let saveTypes;
@@ -48,6 +49,7 @@ const getRecurringSaveType = async ({
             types: saveTypes,
             hasSingleModifications: singleEditRecurrences.length >= 1 || exdates.length >= 1,
             hasSingleModificationsAfter: singleEditRecurrencesAfter.length >= 1 || exdatesAfter.length >= 1,
+            hasRruleModification: hasModifiedRrule,
         },
     });
 };

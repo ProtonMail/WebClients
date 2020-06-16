@@ -8,6 +8,7 @@ interface Props {
     types: RECURRING_TYPES[];
     hasSingleModifications: boolean;
     hasSingleModificationsAfter: boolean;
+    hasRruleModification: boolean;
     onConfirm: (type: RECURRING_TYPES) => void;
     onClose: () => void;
 }
@@ -28,10 +29,15 @@ const getRecurringWarningText = () => {
     return c('Info').t`Previous modifications on this series will be lost`;
 };
 
+const getRruleWarningText = () => {
+    return c('Info').t`Frequency modifications will be lost`;
+};
+
 const EditRecurringConfirmModal = ({
     types,
     hasSingleModifications,
     hasSingleModificationsAfter,
+    hasRruleModification,
     onConfirm,
     ...rest
 }: Props) => {
@@ -42,6 +48,9 @@ const EditRecurringConfirmModal = ({
         (type === RECURRING_TYPES.ALL && hasSingleModifications) ||
         (type === RECURRING_TYPES.FUTURE && hasSingleModificationsAfter);
     const recurringWarningText = showRecurringWarning ? getRecurringWarningText() : '';
+
+    const showRruleWarning = type === RECURRING_TYPES.SINGLE && hasRruleModification;
+    const rruleWarningText = showRruleWarning ? getRruleWarningText() : '';
 
     return (
         <ConfirmModal
@@ -61,6 +70,7 @@ const EditRecurringConfirmModal = ({
                 />
             ) : null}
             {recurringWarningText ? <Alert type="warning">{recurringWarningText}</Alert> : null}
+            {rruleWarningText ? <Alert type="warning">{rruleWarningText}</Alert> : null}
         </ConfirmModal>
     );
 };

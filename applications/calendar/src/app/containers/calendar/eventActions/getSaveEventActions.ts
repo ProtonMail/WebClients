@@ -3,6 +3,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { CalendarBootstrap } from 'proton-shared/lib/interfaces/calendar';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import getMemberAndAddress from '../../../helpers/getMemberAndAddress';
@@ -123,11 +124,17 @@ const getSaveEventActions = async ({
         newEditEventData.veventComponent,
         actualEventRecurrence
     );
-    const hasChangedCalendar = originalEditEventData.calendarID !== newEditEventData.calendarID;
+
+    const hasModifiedCalendar = originalEditEventData.calendarID !== newEditEventData.calendarID;
+    const hasModifiedRrule =
+        tmpData.hasModifiedRrule &&
+        !isDeepEqual(originalEditEventData.mainVeventComponent.rrule, newEditEventData.veventComponent.rrule);
+
     const saveType = await getRecurringSaveType({
         originalEditEventData,
         oldEditEventData,
-        canOnlySaveAll: actualEventRecurrence.isSingleOccurrence || hasChangedCalendar,
+        canOnlySaveAll: actualEventRecurrence.isSingleOccurrence || hasModifiedCalendar,
+        hasModifiedRrule,
         onSaveConfirmation,
         recurrence: actualEventRecurrence,
         recurrences,

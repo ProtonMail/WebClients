@@ -79,6 +79,7 @@ export interface EventModel extends EventModelView {
     initialDate: Date;
     initialTzid: string;
     defaultEventDuration: number;
+    hasModifiedRrule: boolean;
     hasModifiedNotifications: {
         partDay: boolean;
         fullDay: boolean;
