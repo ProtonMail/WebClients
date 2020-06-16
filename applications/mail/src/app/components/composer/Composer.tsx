@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { classnames, useToggle, useNotifications, useMailSettings } from 'react-components';
 import { c } from 'ttag';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 
@@ -27,6 +27,7 @@ import { WindowSize, Breakpoints } from '../../models/utils';
 import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import { useMessageSendInfo } from '../../hooks/useSendInfo';
+import { COMPOSER_MODE } from 'proton-shared/lib/constants';
 
 enum ComposerInnerModal {
     None,
@@ -61,7 +62,7 @@ const Composer = ({
     onFocus,
     onClose: inputOnClose
 }: Props) => {
-    const [mailSettings] = useMailSettings();
+    const [mailSettings] = useMailSettings() as [MailSettings, boolean, Error];
     const { createNotification } = useNotifications();
 
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -71,7 +72,9 @@ const Composer = ({
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
 
     // Maximized status of the composer
-    const { state: maximized, toggle: toggleMaximized } = useToggle(false);
+    const { state: maximized, toggle: toggleMaximized } = useToggle(
+        mailSettings.ComposerMode === COMPOSER_MODE.MAXIMIZED
+    );
 
     // Indicates that the composer is in its initial opening
     // Needed to be able to force focus only at first time
@@ -155,7 +158,7 @@ const Composer = ({
     useEffect(() => {
         const shouldMaximized = shouldBeMaximized(windowSize.height);
 
-        if ((!maximized && shouldMaximized) || (maximized && !shouldMaximized)) {
+        if (!maximized && shouldMaximized) {
             toggleMaximized();
         }
     }, [windowSize.height]);
