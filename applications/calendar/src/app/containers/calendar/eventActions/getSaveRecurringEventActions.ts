@@ -124,7 +124,7 @@ const getSaveRecurringEventActions = ({
         );
 
         if (originalCalendarID !== newCalendarID) {
-            const deleteOriginalOperation = getDeleteSyncOperation(oldEvent);
+            const deleteOriginalOperation = getDeleteSyncOperation(originalEvent);
             return [
                 {
                     calendarID: newCalendarID,
