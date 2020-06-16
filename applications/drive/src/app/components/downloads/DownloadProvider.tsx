@@ -15,8 +15,8 @@ interface DownloadProviderState {
     addFolderToDownloadQueue: (
         filename: string
     ) => {
-        addDownload(meta: TransferMeta, { onProgress, ...rest }: DownloadCallbacks): void;
-        startDownloads(): void;
+        addDownload(meta: TransferMeta, { onProgress, ...rest }: DownloadCallbacks): Promise<void>;
+        startDownloads(): Promise<void>;
     };
     getDownloadsProgresses: () => TransferProgresses;
     clearDownloads: () => void;
@@ -178,13 +178,38 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         const groupId = generateUID('drive-transfers');
         const partialsPromises: Promise<void>[] = [];
         const folderMeta = { filename: `${folderName}.zip`, mimeType: 'application/zip' };
+        let aborted = false;
 
         const abortDownload = (groupId: string) => {
+            aborted = true;
             Object.values(files).forEach(({ controls }) => controls.cancel());
             updateDownloadState([groupId, ...Object.keys(files)], TransferState.Canceled);
         };
 
         progresses.current[groupId] = 0;
+        controls.current[groupId] = {
+            resume: () => {
+                Object.values(files).forEach(({ controls }) => controls.resume());
+                updateDownloadState(Object.keys(files), ({ resumeState }) => resumeState || TransferState.Progress);
+            },
+            pause: async () => {
+                updateDownloadState(Object.keys(files), TransferState.Paused);
+                await Promise.all(Object.values(files).map(({ controls }) => controls.pause()));
+            },
+            cancel: () => {
+                abortDownload(groupId);
+            },
+            start: async () => {
+                try {
+                    // Partials are `Initializing` until Folder download is started, then partials are set to Pending
+                    updateDownloadState(Object.keys(files), TransferState.Pending);
+                    await Promise.all(partialsPromises);
+                } catch (err) {
+                    abortDownload(groupId);
+                    throw err;
+                }
+            }
+        };
 
         setDownloads((downloads) => [
             ...downloads,
@@ -198,7 +223,11 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         ]);
 
         return {
-            addDownload(meta: TransferMeta, { onProgress, onError, onFinish, ...rest }: DownloadCallbacks) {
+            async addDownload(meta: TransferMeta, { onProgress, onError, onFinish, ...rest }: DownloadCallbacks) {
+                if (aborted) {
+                    throw new Error(`Parent download (${groupId}) is already canceled`);
+                }
+
                 const promise = new Promise<void>((resolve, reject) => {
                     const { id, downloadControls } = initDownload({
                         ...rest,
@@ -223,33 +252,10 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                 });
                 partialsPromises.push(promise);
             },
-            startDownloads() {
-                controls.current[groupId] = {
-                    resume: () => {
-                        Object.values(files).forEach(({ controls }) => controls.resume());
-                        updateDownloadState(
-                            Object.keys(files),
-                            ({ resumeState }) => resumeState || TransferState.Progress
-                        );
-                    },
-                    pause: async () => {
-                        updateDownloadState(Object.keys(files), TransferState.Paused);
-                        await Promise.all(Object.values(files).map(({ controls }) => controls.pause()));
-                    },
-                    cancel: () => {
-                        abortDownload(groupId);
-                    },
-                    start: async () => {
-                        try {
-                            // Partials are `Initializing` until Folder download is started, then partials are set to Pending
-                            updateDownloadState(Object.keys(files), TransferState.Pending);
-                            await Promise.all(partialsPromises);
-                        } catch (err) {
-                            abortDownload(groupId);
-                            throw err;
-                        }
-                    }
-                };
+            async startDownloads() {
+                if (aborted) {
+                    throw new Error(`Parent download (${groupId}) is already canceled`);
+                }
 
                 const size = Object.values(files).reduce((acc, { meta }) => acc + (meta.size ?? 0), 0);
 
