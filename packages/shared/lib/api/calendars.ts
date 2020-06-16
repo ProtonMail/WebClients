@@ -182,16 +182,6 @@ export const updateEvent = (calendarID: string, eventID: string, data: CreateSin
     data
 });
 
-interface CreateCalendarSharedEventData extends CreateSingleCalendarEventData {
-    UID: string;
-    Overwrite: number;
-}
-export const addSharedEvent = (calendarID: string, data: CreateCalendarSharedEventData) => ({
-    url: `${CALENDAR_V1}/${calendarID}/shared/events`,
-    method: 'post',
-    data
-});
-
 export const deleteEvent = (calendarID: string, eventID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/${eventID}`,
     method: 'delete'
@@ -256,9 +246,19 @@ export interface UpdateCalendarEventSyncData {
     ID: string;
     Event?: CreateCalendarEventData;
 }
+export interface CreateLinkedCalendarEventsSyncData {
+    UID: string;
+    SharedEventID: string;
+    Event: CreateCalendarEventData;
+}
 interface SyncMultipleEventsData {
     MemberID: string;
-    Events: (CreateCalendarEventSyncData | DeleteCalendarEventSyncData | UpdateCalendarEventSyncData)[];
+    Events: (
+        | CreateCalendarEventSyncData
+        | CreateLinkedCalendarEventsSyncData
+        | DeleteCalendarEventSyncData
+        | UpdateCalendarEventSyncData
+    )[];
 }
 export const syncMultipleEvents = (calendarID: string, data: SyncMultipleEventsData) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/sync`,

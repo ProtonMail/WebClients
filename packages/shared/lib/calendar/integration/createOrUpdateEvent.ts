@@ -1,21 +1,5 @@
-import { addSharedEvent, CreateCalendarEventBlobData, createEvent, updateEvent } from '../../api/calendars';
+import { CreateCalendarEventBlobData, createEvent, updateEvent } from '../../api/calendars';
 import { CalendarEventSharedData } from '../../interfaces/calendar';
-
-interface SwitchArguments {
-    calendarID: string;
-    UID: string;
-    memberID: string;
-    data: CreateCalendarEventBlobData;
-}
-export const getSwitchCalendarEvent = ({ calendarID, data, UID, memberID }: SwitchArguments) => {
-    return addSharedEvent(calendarID, {
-        ...data,
-        UID,
-        Overwrite: 1,
-        MemberID: memberID,
-        Permissions: 3 // TODO what?
-    });
-};
 
 interface UpdateArguments {
     memberID: string;
