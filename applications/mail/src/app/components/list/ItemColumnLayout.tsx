@@ -61,7 +61,7 @@ const ItemColumnLayout = ({
                         <ItemExpiration element={element} />
                     </span>
                     {showIcon && (
-                        <span className="mr0-25 inline-flex flex-self-end flex-item-noshrink">
+                        <span className="mr0-25 inline-flex flex-self-end alignbaseline flex-item-noshrink">
                             <ItemLocation message={element as Message} mailSettings={mailSettings} />
                         </span>
                     )}

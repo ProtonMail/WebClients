@@ -43,13 +43,17 @@ const ItemRowLayout = ({
     const size = humanSize(Size);
 
     return (
-        <div className="flex-item-fluid flex flex-nowrap flex-row flex-spacebetween item-titlesender">
+        <div className="flex-item-fluid flex flex-items-center flex-nowrap flex-row flex-spacebetween item-titlesender">
             <div className={classnames(['w20 flex mauto pr1', unread && 'bold'])}>
                 {displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
             </div>
             <div className="flex-item-fluid flex mauto">
                 <ItemExpiration element={element} />
-                {showIcon && <ItemLocation message={element as Message} mailSettings={mailSettings} />}
+                {showIcon && (
+                    <span className="mr0-25 inline-flex flex-self-end alignbaseline flex-item-noshrink">
+                        <ItemLocation message={element as Message} mailSettings={mailSettings} />
+                    </span>
+                )}
                 {isConversation && (
                     <NumMessages className={classnames(['mr0-25', unread && 'bold'])} conversation={element} />
                 )}
