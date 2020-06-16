@@ -349,6 +349,15 @@ $conversation-icon-size: 3.2rem !default;
 
 .container-to {
   min-width: $container-to-width;
+  &:focus,
+  &:hover {
+	  .item-abbr {
+		  display: none;
+	  }
+	  .item-caret {
+		  display: block;
+	  }
+  }
 }
 
 
