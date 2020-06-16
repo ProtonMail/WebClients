@@ -5,7 +5,10 @@ import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 
 const getAllEventsByUID = async (api: Api, UID: string, CalendarID: string) => {
     return paginatedFetch(api, async (Page, PageSize) => {
-        const { Events = [] } = await api<{ Events: CalendarEvent[] }>(getEventByUIDRoute({ UID, PageSize, Page }));
+        const { Events = [] } = await api<{ Events: CalendarEvent[] }>({
+            ...getEventByUIDRoute({ UID, PageSize, Page }),
+            silence: true,
+        });
         return Events.filter((event) => event.CalendarID === CalendarID);
     });
 };

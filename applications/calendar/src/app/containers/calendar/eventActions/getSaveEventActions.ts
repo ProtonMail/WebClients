@@ -1,57 +1,42 @@
-import { c } from 'ttag';
-import { useGetAddressKeys } from 'react-components';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { Calendar, CalendarBootstrap } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarBootstrap } from 'proton-shared/lib/interfaces/calendar';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
+import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import getMemberAndAddress from '../../../helpers/getMemberAndAddress';
 import getEditEventData from '../event/getEditEventData';
 import getAllEventsByUID from '../getAllEventsByUID';
 import { getOriginalEvent } from './recurringHelper';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
-import handleSaveSingleEvent from './handleSaveSingleEvent';
-import handleSaveRecurringEvent from './handleSaveRecurringEvent';
 import withVeventRruleWkst from './rruleWkst';
 import { GetDecryptedEventCb } from '../eventStore/interface';
 import { CalendarViewEventTemporaryEvent, OnSaveConfirmationCb, WeekStartsOn } from '../interface';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
+import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
+import getSaveRecurringEventActions from './getSaveRecurringEventActions';
+import getSaveSingleEventActions from './getSaveSingleEventActions';
+import getRecurringSaveType from './getRecurringSaveType';
 
 interface Arguments {
     temporaryEvent: CalendarViewEventTemporaryEvent;
     weekStartsOn: WeekStartsOn;
-
     addresses: Address[];
-    calendars: Calendar[];
-
     onSaveConfirmation: OnSaveConfirmationCb;
-
     api: Api;
-    call: () => Promise<void>;
-    getAddressKeys: ReturnType<typeof useGetAddressKeys>;
-    getCalendarKeys: ReturnType<typeof useGetAddressKeys>;
-    getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
     getEventDecrypted: GetDecryptedEventCb;
-    createNotification: (data: any) => void;
+    getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
 }
 
-const handleSaveEvent = async ({
+const getSaveEventActions = async ({
     temporaryEvent,
     weekStartsOn,
-
     addresses,
-    calendars,
-
     onSaveConfirmation,
-
     api,
-    call,
-    getAddressKeys,
-    getCalendarKeys,
     getEventDecrypted,
     getCalendarBootstrap,
-    createNotification,
 }: Arguments) => {
     const {
         tmpOriginalTarget: { data: { eventData: oldEventData, eventRecurrence, eventReadResult } } = { data: {} },
@@ -75,16 +60,14 @@ const handleSaveEvent = async ({
 
     // Creation
     if (!oldEventData) {
-        return handleSaveSingleEvent({
-            newEditEventData,
-
-            calendars,
-            api,
-            call,
-            getAddressKeys,
-            getCalendarKeys,
-            createNotification,
-        });
+        const multiActions = getSaveSingleEventActions({ newEditEventData });
+        const successText = getSingleEventText(undefined, newEditEventData);
+        return {
+            actions: multiActions,
+            texts: {
+                success: successText,
+            },
+        };
     }
 
     const calendarBootstrap = getCalendarBootstrap(oldEventData.CalendarID);
@@ -103,17 +86,17 @@ const handleSaveEvent = async ({
 
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
     if (!eventRecurrence && !oldEditEventData.recurrenceID) {
-        return handleSaveSingleEvent({
+        const multiActions = getSaveSingleEventActions({
             oldEditEventData,
             newEditEventData,
-
-            calendars,
-            api,
-            call,
-            getAddressKeys,
-            getCalendarKeys,
-            createNotification,
         });
+        const successText = getSingleEventText(oldEditEventData, newEditEventData);
+        return {
+            actions: multiActions,
+            texts: {
+                success: successText,
+            },
+        };
     }
 
     const recurrences = await getAllEventsByUID(api, oldEditEventData.uid, oldEditEventData.calendarID);
@@ -121,10 +104,6 @@ const handleSaveEvent = async ({
     const originalEventData = getOriginalEvent(recurrences);
     const originalEventResult = originalEventData ? await getEventDecrypted(originalEventData).catch(noop) : undefined;
     if (!originalEventData || !originalEventResult?.[0]) {
-        createNotification({
-            text: c('Recurring update').t`Cannot save a recurring event without the original event`,
-            type: 'error',
-        });
         throw new Error('Original event not found');
     }
 
@@ -138,23 +117,37 @@ const handleSaveEvent = async ({
         eventRecurrence ||
         getSingleEditRecurringData(originalEditEventData.mainVeventComponent, oldEditEventData.mainVeventComponent);
 
-    return handleSaveRecurringEvent({
+    const updateAllPossibilities = getRecurringUpdateAllPossibilities(
+        originalEditEventData.mainVeventComponent,
+        oldEditEventData.mainVeventComponent,
+        newEditEventData.veventComponent,
+        actualEventRecurrence
+    );
+    const hasChangedCalendar = originalEditEventData.calendarID !== newEditEventData.calendarID;
+    const saveType = await getRecurringSaveType({
+        originalEditEventData,
+        oldEditEventData,
+        canOnlySaveAll: actualEventRecurrence.isSingleOccurrence || hasChangedCalendar,
+        onSaveConfirmation,
+        recurrence: actualEventRecurrence,
+        recurrences,
+    });
+    const multiActions = getSaveRecurringEventActions({
+        type: saveType,
+        recurrences,
         originalEditEventData,
         oldEditEventData,
         newEditEventData,
-
-        canOnlySaveAll: actualEventRecurrence.isSingleOccurrence,
-        onSaveConfirmation,
-
         recurrence: actualEventRecurrence,
-        recurrences,
-        api,
-        call,
-        createNotification,
-        getAddressKeys,
-        getCalendarKeys,
-        calendars,
+        updateAllPossibilities,
     });
+    const successText = getRecurringEventUpdatedText(saveType);
+    return {
+        actions: multiActions,
+        texts: {
+            success: successText,
+        },
+    };
 };
 
-export default handleSaveEvent;
+export default getSaveEventActions;

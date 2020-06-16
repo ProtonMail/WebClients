@@ -1,12 +1,12 @@
-import updateAllRecurrence from '../../src/app/containers/calendar/recurrence/updateAllRecurrence';
 import { parse, serialize } from 'proton-shared/lib/calendar/vcal';
 import { getDateOrDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
-import { UpdateAllPossibilities } from '../../src/app/containers/calendar/eventActions/getUpdateAllPossibilities';
+import updateAllRecurrence from '../../src/app/containers/calendar/recurrence/updateAllRecurrence';
+import { UpdateAllPossibilities } from '../../src/app/containers/calendar/eventActions/getRecurringUpdateAllPossibilities';
 
 const getRecurrence = (start, end) => {
     return {
         localStart: start,
-        localEnd: end
+        localEnd: end,
     };
 };
 
@@ -14,7 +14,7 @@ const c = (component, start, end) => {
     return {
         ...component,
         dtstart: getDateOrDateTimeProperty(component.dtstart, start),
-        dtend: getDateOrDateTimeProperty(component.dtend, end)
+        dtend: getDateOrDateTimeProperty(component.dtend, end),
     };
 };
 
@@ -50,7 +50,7 @@ describe('update all recurrence', () => {
             originalComponent: ALL_DAY_COMPONENT,
             recurrence,
             isSingleEdit: false,
-            mode: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME
+            mode: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
         });
         expectCompare(
             updatedComponent,
@@ -73,7 +73,7 @@ END:VEVENT`
             originalComponent: ALL_DAY_COMPONENT,
             recurrence,
             mode: UpdateAllPossibilities.USE_NEW_START_DATE,
-            isSingleEdit: false
+            isSingleEdit: false,
         });
 
         expectCompare(
@@ -101,7 +101,7 @@ END:VEVENT`
             originalComponent: PART_DAY_COMPONENT,
             recurrence,
             isSingleEdit: false,
-            mode: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME
+            mode: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
         });
 
         expectCompare(
@@ -125,7 +125,7 @@ END:VEVENT`
             originalComponent: ALL_DAY_COMPONENT,
             recurrence,
             isSingleEdit: false,
-            mode: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME
+            mode: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
         });
 
         expectCompare(

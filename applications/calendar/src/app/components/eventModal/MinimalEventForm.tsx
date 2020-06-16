@@ -18,7 +18,6 @@ import { EnDash } from '../EnDash';
 import MinimalErrowRow from './MinimalErrorRow';
 import MinimalEventRow from './MinimalEventRow';
 
-
 interface Props {
     isSubmitted: boolean;
     isNarrow: boolean;
@@ -111,11 +110,7 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
                         {endDateInput}
                     </>
                 )}
-                {!model.isAllDay && (
-                    <>
-                        {startTimeInput}
-                    </>
-                )}
+                {!model.isAllDay && <>{startTimeInput}</>}
             </MinimalEventRow>
             {!model.isAllDay && (
                 <MinimalEventRow className="flex flex-nowrap flex-row flex-items-center w100">
@@ -139,13 +134,7 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
                     }
                     labelFor="event-calendar-select"
                 >
-                    <CalendarSelect
-                        id="event-calendar-select"
-                        withIcon
-                        disabled={!model.hasCalendarRow}
-                        model={model}
-                        setModel={setModel}
-                    />
+                    <CalendarSelect id="event-calendar-select" withIcon model={model} setModel={setModel} />
                 </MinimalEventRow>
             ) : null}
             <MinimalEventRow

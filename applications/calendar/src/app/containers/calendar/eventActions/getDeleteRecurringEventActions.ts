@@ -3,7 +3,11 @@ import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import deleteSingleRecurrence from '../recurrence/deleteSingleRecurrence';
 import { RECURRING_TYPES } from '../../../constants';
-import { SyncMultipleEventsOperations, SyncOperationTypes } from '../getSyncMultipleEventsPayload';
+import {
+    getDeleteSyncOperation,
+    getUpdateSyncOperation,
+    SyncEventActionOperations,
+} from '../getSyncMultipleEventsPayload';
 import { getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventOldData } from '../../../interfaces/EventData';
@@ -28,7 +32,7 @@ export const getDeleteRecurringEventActions = ({
         memberID: originalMemberID,
     },
     oldEditEventData: { eventData: oldEvent },
-}: DeleteRecurringArguments): SyncMultipleEventsOperations => {
+}: DeleteRecurringArguments): SyncEventActionOperations => {
     if (type === RECURRING_TYPES.SINGLE) {
         if (!originalVeventComponent) {
             throw new Error('Can not delete single occurrence without original event');
@@ -37,22 +41,9 @@ export const getDeleteRecurringEventActions = ({
         const isSingleEdit = oldEvent.ID !== originalEvent.ID;
         const updatedVeventComponent = deleteSingleRecurrence(originalVeventComponent, recurrence.localStart);
 
-        const singleDeleteOperation = isSingleEdit
-            ? {
-                  type: SyncOperationTypes.DELETE,
-                  data: {
-                      Event: oldEvent,
-                  },
-              }
-            : undefined;
+        const singleDeleteOperation = isSingleEdit ? getDeleteSyncOperation(oldEvent) : undefined;
 
-        const originalExdateOperation = {
-            type: SyncOperationTypes.UPDATE,
-            data: {
-                Event: originalEvent,
-                veventComponent: updatedVeventComponent,
-            },
-        };
+        const originalExdateOperation = getUpdateSyncOperation(updatedVeventComponent, originalEvent);
 
         return {
             calendarID: originalCalendarID,
@@ -79,20 +70,8 @@ export const getDeleteRecurringEventActions = ({
         // Any single edits after the date in the recurrence chain.
         const singleEditRecurrencesAfter = getRecurrenceEventsAfter(singleEditRecurrences, recurrence.localStart);
 
-        const deleteOperations = singleEditRecurrencesAfter.map((Event) => ({
-            type: SyncOperationTypes.DELETE,
-            data: {
-                Event,
-            },
-        }));
-
-        const updateOperation = {
-            type: SyncOperationTypes.UPDATE,
-            data: {
-                Event: originalEvent,
-                veventComponent: updatedVeventComponent,
-            },
-        };
+        const deleteOperations = singleEditRecurrencesAfter.map(getDeleteSyncOperation);
+        const updateOperation = getUpdateSyncOperation(updatedVeventComponent, originalEvent);
 
         return {
             calendarID: originalCalendarID,
@@ -106,14 +85,7 @@ export const getDeleteRecurringEventActions = ({
         if (!recurrences.length) {
             throw new Error('Can not delete all events without any recurrences');
         }
-
-        const deleteOperations = recurrences.map((Event) => ({
-            type: SyncOperationTypes.DELETE,
-            data: {
-                Event,
-            },
-        }));
-
+        const deleteOperations = recurrences.map(getDeleteSyncOperation);
         return {
             calendarID: originalCalendarID,
             addressID: originalAddressID,

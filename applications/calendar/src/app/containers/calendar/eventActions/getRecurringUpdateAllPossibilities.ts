@@ -11,7 +11,7 @@ export enum UpdateAllPossibilities {
     USE_NEW_START_DATE,
 }
 
-const getUpdateAllPossibilities = (
+const getRecurringUpdateAllPossibilities = (
     originalVeventComponent: VcalVeventComponent,
     oldVeventComponent: VcalVeventComponent,
     newVeventComponent: VcalVeventComponent,
@@ -55,4 +55,4 @@ const getUpdateAllPossibilities = (
     return UpdateAllPossibilities.USE_NEW_START_DATE;
 };
 
-export default getUpdateAllPossibilities;
+export default getRecurringUpdateAllPossibilities;

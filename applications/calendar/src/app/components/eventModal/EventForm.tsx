@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Row, Label, Info } from 'react-components';
+import { Row, Label } from 'react-components';
 
 import Notifications from './Notifications';
 import AllDayCheckbox from './inputs/AllDayCheckbox';
@@ -40,7 +40,7 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
         </Row>
     );
 
-    const frequencyRow = model.hasFrequencyRow ? (
+    const frequencyRow = (
         <FrequencyRow
             label={c('Label').t`Frequency`}
             frequencyModel={model.frequencyModel}
@@ -51,7 +51,7 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
             isSubmitted={isSubmitted}
             onChange={(frequencyModel) => setModel({ ...model, frequencyModel })}
         />
-    ) : null;
+    );
 
     const timezoneRows = !model.isAllDay ? (
         <TimezoneRow
@@ -62,20 +62,8 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
         />
     ) : null;
 
-    const calendarDisabledWhy = !model.hasCalendarRow ? (
-        <Info title={c('Label').t`Calendar cannot be changed for recurring events`} />
-    ) : null;
     const calendarRow = model.calendars.length ? (
-        <CalendarSelectRow
-            label={
-                <>
-                    {c('Label').t`Calendar`} {calendarDisabledWhy}
-                </>
-            }
-            model={model}
-            setModel={setModel}
-            disabled={!model.hasCalendarRow}
-        />
+        <CalendarSelectRow label={c('Label').t`Calendar`} model={model} setModel={setModel} />
     ) : null;
 
     return (

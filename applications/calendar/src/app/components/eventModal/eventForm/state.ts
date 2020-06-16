@@ -1,4 +1,4 @@
-import { getRecurrenceId, getIsAllDay, getIsRecurring } from 'proton-shared/lib/calendar/vcalHelper';
+import { getRecurrenceId, getIsAllDay } from 'proton-shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { Address as tsAddress } from 'proton-shared/lib/interfaces';
 import {
@@ -160,8 +160,6 @@ export const getInitialModel = ({
         isAllDay,
         defaultEventDuration,
         frequencyModel,
-        hasFrequencyRow: true,
-        hasCalendarRow: true,
         ...notificationModel,
         ...memberModel,
         ...dateTimeModel,
@@ -196,7 +194,6 @@ export const getExistingEvent = ({
     tzid,
 }: GetExistingEventArguments): Partial<EventModel> => {
     const isAllDay = getIsAllDay(veventComponent);
-    const isRecurring = getIsRecurring(veventComponent);
     const recurrenceId = getRecurrenceId(veventComponent);
 
     const newModel = propertiesToModel(veventComponent, isAllDay, tzid);
@@ -216,8 +213,6 @@ export const getExistingEvent = ({
         ...newModel,
         description: strippedDescription,
         isAllDay,
-        hasFrequencyRow: true,
-        hasCalendarRow: !isRecurring && !recurrenceId,
         ...parentMerge,
         ...(isAllDay
             ? {

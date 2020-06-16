@@ -8,6 +8,7 @@ import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
 
 const FIELDS_TO_KEEP = [
     'ID',
+    'SharedEventID',
     'CalendarID',
     'CreateTime',
     'LastEditTime',

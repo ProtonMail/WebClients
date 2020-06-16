@@ -1,4 +1,3 @@
-import { useGetAddressKeys } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { Address, Api } from 'proton-shared/lib/interfaces';
@@ -6,46 +5,34 @@ import { CalendarBootstrap } from 'proton-shared/lib/interfaces/calendar';
 import getMemberAndAddress from '../../../helpers/getMemberAndAddress';
 import getEditEventData from '../event/getEditEventData';
 import getAllEventsByUID from '../getAllEventsByUID';
-import handleDeleteRecurringEvent from './handleDeleteRecurringEvent';
-import handleDeleteSingleEvent from './handleDeleteSingleEvent';
 import { getOriginalEvent } from './recurringHelper';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { GetDecryptedEventCb } from '../eventStore/interface';
 import { CalendarViewEvent, OnDeleteConfirmationCb } from '../interface';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
+import { getEventDeletedText, getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
+import { getDeleteSyncOperation, SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
+import { getDeleteRecurringEventActions } from './getDeleteRecurringEventActions';
+import getRecurringDeleteType from './getRecurringDeleteType';
 
 interface Arguments {
     targetEvent: CalendarViewEvent;
-
     addresses: Address[];
-
     onDeleteConfirmation: OnDeleteConfirmationCb;
-
     api: Api;
-    call: () => Promise<void>;
-    getAddressKeys: ReturnType<typeof useGetAddressKeys>;
-    getCalendarKeys: ReturnType<typeof useGetAddressKeys>;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
     getEventDecrypted: GetDecryptedEventCb;
-    createNotification: (data: any) => void;
 }
 
-const handleDeleteEvent = async ({
+const getDeleteEventActions = async ({
     targetEvent: {
         data: { eventData: oldEventData, calendarData: oldCalendarData, eventRecurrence, eventReadResult },
     },
-
     addresses,
-
     onDeleteConfirmation,
-
     api,
-    call,
-    getAddressKeys,
-    getCalendarKeys,
     getEventDecrypted,
     getCalendarBootstrap,
-    createNotification,
 }: Arguments) => {
     const calendarBootstrap = getCalendarBootstrap(oldCalendarData.ID);
     if (!calendarBootstrap) {
@@ -63,15 +50,22 @@ const handleDeleteEvent = async ({
 
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
     if (!eventRecurrence && !oldEditEventData.recurrenceID) {
-        return handleDeleteSingleEvent({
-            oldCalendarID: oldCalendarData.ID,
-            oldEventID: oldEventData.ID,
-
-            onDeleteConfirmation,
-            api,
-            call,
-            createNotification,
-        });
+        const deleteOperation = getDeleteSyncOperation(oldEventData);
+        const multiActions: SyncEventActionOperations[] = [
+            {
+                calendarID: oldEditEventData.calendarID,
+                memberID: oldEditEventData.memberID,
+                addressID: oldEditEventData.addressID,
+                operations: [deleteOperation],
+            },
+        ];
+        const successText = getEventDeletedText();
+        return {
+            actions: multiActions,
+            texts: {
+                success: successText,
+            },
+        };
     }
 
     const recurrences = await getAllEventsByUID(api, oldEditEventData.uid, oldEditEventData.calendarID);
@@ -94,25 +88,30 @@ const handleDeleteEvent = async ({
         eventRecurrence ||
         getSingleEditRecurringData(originalEditEventData.mainVeventComponent, oldEditEventData.mainVeventComponent);
 
-    return handleDeleteRecurringEvent({
+    const deleteType = await getRecurringDeleteType({
         originalEditEventData,
-        oldEditEventData,
-
         canOnlyDeleteAll:
             !originalEditEventData.veventComponent ||
             !oldEditEventData.veventComponent ||
             getIsCalendarDisabled(oldCalendarData) ||
             actualEventRecurrence.isSingleOccurrence,
         onDeleteConfirmation,
-
+        recurrence: actualEventRecurrence,
+    });
+    const multiActions = getDeleteRecurringEventActions({
+        type: deleteType,
         recurrence: actualEventRecurrence,
         recurrences,
-        api,
-        call,
-        createNotification,
-        getAddressKeys,
-        getCalendarKeys,
+        originalEditEventData,
+        oldEditEventData,
     });
+    const successText = getRecurringEventDeletedText(deleteType);
+    return {
+        actions: [multiActions],
+        texts: {
+            success: successText,
+        },
+    };
 };
 
-export default handleDeleteEvent;
+export default getDeleteEventActions;

@@ -3,7 +3,7 @@ import { omit } from 'proton-shared/lib/helpers/object';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getSafeRruleUntil } from './helper';
 import { getStartDateTimeMerged, getEndDateTimeMerged } from './getDateTimeMerged';
-import { UpdateAllPossibilities } from '../eventActions/getUpdateAllPossibilities';
+import { UpdateAllPossibilities } from '../eventActions/getRecurringUpdateAllPossibilities';
 
 const getComponentWithUpdatedRrule = (component: VcalVeventComponent) => {
     const { rrule } = component;

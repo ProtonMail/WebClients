@@ -22,12 +22,14 @@ import {
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
+import { API_CODES } from 'proton-shared/lib/constants';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { Calendar, CalendarBootstrap, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { Address } from 'proton-shared/lib/interfaces';
+import { updateCalendar } from 'proton-shared/lib/api/calendars';
 
 import { getExistingEvent, getInitialModel } from '../../components/eventModal/eventForm/state';
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
@@ -57,8 +59,6 @@ import {
 
 import getMemberAndAddress from '../../helpers/getMemberAndAddress';
 import EditRecurringConfirmModal from './confirmationModals/EditRecurringConfirmation';
-import handleSaveEventHelper from './eventActions/handleSaveEvent';
-import handleDeleteEventHelper from './eventActions/handleDeleteEvent';
 import { getHasDoneChanges } from '../../components/eventModal/eventForm/getHasEdited';
 import withOccurrenceEvent from './eventActions/occurrenceEvent';
 import {
@@ -84,6 +84,10 @@ import {
 import useGetCalendarEventPersonal from './eventStore/useGetCalendarEventPersonal';
 import useGetCalendarEventRaw from './eventStore/useGetCalendarEventRaw';
 import getComponentFromCalendarEvent from './eventStore/cache/getComponentFromCalendarEvent';
+import getSyncMultipleEventsPayload, { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
+import { SyncMultipleApiResponse } from '../../interfaces/Import';
+import getSaveEventActions from './eventActions/getSaveEventActions';
+import getDeleteEventActions from './eventActions/getDeleteEventActions';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
     if (!isAllDay) {
@@ -629,42 +633,82 @@ const InteractiveCalendarView = ({
         handleEditEvent(newTemporaryEvent);
     };
 
-    const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent) => {
-        return handleSaveEventHelper({
-            temporaryEvent,
-            weekStartsOn,
+    const handleSyncActions = async ({
+        actions: multiActions,
+        texts,
+    }: {
+        actions: SyncEventActionOperations[];
+        texts: { success: string };
+    }) => {
+        const multiResponses: SyncMultipleApiResponse[] = [];
+        for (const actions of multiActions) {
+            const payload = await getSyncMultipleEventsPayload({
+                getAddressKeys,
+                getCalendarKeys,
+                sync: actions,
+            });
+            const result = await api<SyncMultipleApiResponse>({ ...payload, silence: true });
+            const { Responses: responses } = result;
+            const errorResponses = responses.filter(({ Response }) => {
+                return 'Error' in Response || Response.Code !== API_CODES.SINGLE_SUCCESS;
+            });
+            if (errorResponses.length > 0) {
+                const firstError = errorResponses[0].Response;
+                throw new Error(firstError.Error || 'Unknown error');
+            }
+            multiResponses.push(result);
+        }
 
-            addresses,
-            calendars: activeCalendars,
-
-            onSaveConfirmation: handleSaveConfirmation,
-
-            api,
-            call,
-            getAddressKeys,
-            getCalendarKeys,
-            getEventDecrypted,
-            getCalendarBootstrap: readCalendarBootstrap,
-            createNotification,
+        const hiddenCalendars = multiActions.filter(({ calendarID }) => {
+            const calendar = activeCalendars.find(({ ID }) => ID === calendarID);
+            return !calendar?.Display;
         });
+
+        await Promise.all(
+            hiddenCalendars.map(({ calendarID }) => {
+                return api({
+                    ...updateCalendar(calendarID, { Display: 1 }),
+                    silence: true,
+                });
+            })
+        );
+
+        await call();
+
+        createNotification({ text: texts.success });
+    };
+
+    const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent) => {
+        try {
+            const syncActions = await getSaveEventActions({
+                temporaryEvent,
+                weekStartsOn,
+                addresses,
+                api,
+                onSaveConfirmation: handleSaveConfirmation,
+                getEventDecrypted,
+                getCalendarBootstrap: readCalendarBootstrap,
+            });
+            await handleSyncActions(syncActions);
+        } catch (e) {
+            createNotification({ text: e.message, type: 'error' });
+        }
     };
 
     const handleDeleteEvent = async (targetEvent: CalendarViewEvent) => {
-        return handleDeleteEventHelper({
-            targetEvent,
-
-            addresses,
-
-            onDeleteConfirmation: handleDeleteConfirmation,
-
-            api,
-            call,
-            getAddressKeys,
-            getCalendarKeys,
-            getEventDecrypted,
-            getCalendarBootstrap: readCalendarBootstrap,
-            createNotification,
-        });
+        try {
+            const syncActions = await getDeleteEventActions({
+                targetEvent,
+                addresses,
+                onDeleteConfirmation: handleDeleteConfirmation,
+                api,
+                getEventDecrypted,
+                getCalendarBootstrap: readCalendarBootstrap,
+            });
+            await handleSyncActions(syncActions);
+        } catch (e) {
+            createNotification({ text: e.message, type: 'error' });
+        }
     };
 
     useImperativeHandle(interactiveRef, () => ({

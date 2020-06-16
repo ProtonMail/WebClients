@@ -4,12 +4,17 @@ import createSingleRecurrence from '../recurrence/createSingleRecurrence';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import createFutureRecurrence from '../recurrence/createFutureRecurrence';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import { SyncOperationTypes } from '../getSyncMultipleEventsPayload';
+import {
+    getCreateSyncOperation,
+    getDeleteSyncOperation,
+    getUpdateSyncOperation,
+    SyncEventActionOperations,
+} from '../getSyncMultipleEventsPayload';
 import { getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import updateSingleRecurrence from '../recurrence/updateSingleRecurrence';
 import updateAllRecurrence from '../recurrence/updateAllRecurrence';
-import { UpdateAllPossibilities } from './getUpdateAllPossibilities';
+import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
 
 interface SaveRecurringArguments {
     type: RECURRING_TYPES;
@@ -40,22 +45,16 @@ const getSaveRecurringEventActions = ({
     },
     recurrence,
     updateAllPossibilities,
-}: SaveRecurringArguments) => {
+}: SaveRecurringArguments): SyncEventActionOperations[] => {
     const isSingleEdit = oldEvent.ID !== originalEvent.ID;
 
     if (!originalVeventComponent) {
-        throw new Error('Original component neeed');
+        throw new Error('Original component missing');
     }
 
     if (type === RECURRING_TYPES.SINGLE) {
         if (isSingleEdit) {
-            const updateOperation = {
-                type: SyncOperationTypes.UPDATE,
-                data: {
-                    Event: oldEvent,
-                    veventComponent: updateSingleRecurrence(newVeventComponent),
-                },
-            };
+            const updateOperation = getUpdateSyncOperation(updateSingleRecurrence(newVeventComponent), oldEvent);
             return [
                 {
                     calendarID: originalCalendarID,
@@ -66,17 +65,9 @@ const getSaveRecurringEventActions = ({
             ];
         }
 
-        const createOperation = {
-            type: SyncOperationTypes.CREATE,
-            data: {
-                Event: undefined,
-                veventComponent: createSingleRecurrence(
-                    newVeventComponent,
-                    originalVeventComponent,
-                    recurrence.localStart
-                ),
-            },
-        };
+        const createOperation = getCreateSyncOperation(
+            createSingleRecurrence(newVeventComponent, originalVeventComponent, recurrence.localStart)
+        );
 
         return [
             {
@@ -97,33 +88,14 @@ const getSaveRecurringEventActions = ({
 
         // These occurrences have to be deleted, even if the time was not changed, because a new chain with a new UID is created
         // So potentially instead of deleting, we could update all the events to be linked to the new UID but this is easier
-        const deleteOperations = singleEditRecurrencesAfter.map((Event) => ({
-            type: SyncOperationTypes.DELETE,
-            data: {
-                Event,
-            },
-        }));
-
-        const updatedOriginalVeventComponent = deleteFutureRecurrence(
-            originalVeventComponent,
-            recurrence.localStart,
-            recurrence.occurrenceNumber
+        const deleteOperations = singleEditRecurrencesAfter.map(getDeleteSyncOperation);
+        const updateOperation = getUpdateSyncOperation(
+            deleteFutureRecurrence(originalVeventComponent, recurrence.localStart, recurrence.occurrenceNumber),
+            originalEvent
         );
-        const updateOperation = {
-            type: SyncOperationTypes.UPDATE,
-            data: {
-                Event: originalEvent,
-                veventComponent: updatedOriginalVeventComponent,
-            },
-        };
-
-        const createOperation = {
-            type: SyncOperationTypes.CREATE,
-            data: {
-                Event: undefined,
-                veventComponent: createFutureRecurrence(newVeventComponent, originalVeventComponent, recurrence),
-            },
-        };
+        const createOperation = getCreateSyncOperation(
+            createFutureRecurrence(newVeventComponent, originalVeventComponent, recurrence)
+        );
 
         return [
             {
@@ -139,40 +111,32 @@ const getSaveRecurringEventActions = ({
         // Any single edits in the recurrence chain.
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
 
-        const deleteOperations = singleEditRecurrences.map((Event) => ({
-            type: SyncOperationTypes.DELETE,
-            data: {
-                Event,
-            },
-        }));
+        const deleteOperations = singleEditRecurrences.map(getDeleteSyncOperation);
 
-        const updateOperation = {
-            type: SyncOperationTypes.UPDATE,
-            data: {
-                Event: originalEvent,
-                veventComponent: updateAllRecurrence({
-                    component: newVeventComponent,
-                    originalComponent: originalVeventComponent,
-                    mode: updateAllPossibilities,
-                    isSingleEdit,
-                }),
-            },
-        };
+        const updateOperation = getUpdateSyncOperation(
+            updateAllRecurrence({
+                component: newVeventComponent,
+                originalComponent: originalVeventComponent,
+                mode: updateAllPossibilities,
+                isSingleEdit,
+            }),
+            originalEvent
+        );
 
-        // First delete from the old calendar, then add to the new...
         if (originalCalendarID !== newCalendarID) {
+            const deleteOriginalOperation = getDeleteSyncOperation(oldEvent);
             return [
-                {
-                    calendarID: originalCalendarID,
-                    addressID: originalAddressID,
-                    memberID: originalMemberID,
-                    operations: deleteOperations,
-                },
                 {
                     calendarID: newCalendarID,
                     addressID: newAddressID,
                     memberID: newMemberID,
                     operations: [updateOperation],
+                },
+                {
+                    calendarID: originalCalendarID,
+                    addressID: originalAddressID,
+                    memberID: originalMemberID,
+                    operations: [...deleteOperations, deleteOriginalOperation],
                 },
             ];
         }

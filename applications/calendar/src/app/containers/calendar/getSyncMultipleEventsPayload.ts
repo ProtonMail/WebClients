@@ -5,6 +5,7 @@ import { CachedKey } from 'proton-shared/lib/interfaces';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import {
     CreateCalendarEventSyncData,
+    CreateLinkedCalendarEventsSyncData,
     DeleteCalendarEventSyncData,
     syncMultipleEvents as syncMultipleEventsRoute,
     UpdateCalendarEventSyncData,
@@ -17,45 +18,88 @@ export enum SyncOperationTypes {
     CREATE,
 }
 
-interface SyncMultipleEventsOperation {
-    type: SyncOperationTypes;
+export interface DeleteEventActionOperation {
+    type: SyncOperationTypes.DELETE;
     data: {
-        Event?: CalendarEvent;
-        veventComponent?: VcalVeventComponent;
+        Event: CalendarEvent;
     };
 }
 
-export interface SyncMultipleEventsOperations {
-    memberID: string;
-    addressID: string;
+export interface CreateEventActionOperation {
+    type: SyncOperationTypes.CREATE;
+    data: {
+        veventComponent: VcalVeventComponent;
+    };
+}
+export interface UpdateEventActionOperation {
+    type: SyncOperationTypes.UPDATE;
+    data: {
+        Event: CalendarEvent;
+        veventComponent: VcalVeventComponent;
+    };
+}
+export type SyncEventActionOperation =
+    | CreateEventActionOperation
+    | UpdateEventActionOperation
+    | DeleteEventActionOperation;
+
+export interface SyncEventActionOperations {
     calendarID: string;
-    operations: SyncMultipleEventsOperation[];
+    addressID: string;
+    memberID: string;
+    operations: SyncEventActionOperation[];
 }
 
 interface SyncMultipleEventsArguments {
-    sync: SyncMultipleEventsOperations;
+    sync: SyncEventActionOperations;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
 }
+
+export const getIsDeleteSyncOperation = (
+    operation: SyncEventActionOperation
+): operation is DeleteEventActionOperation => operation.type === SyncOperationTypes.DELETE;
+export const getIsUpdateSyncOperation = (
+    operation: SyncEventActionOperation
+): operation is UpdateEventActionOperation => operation.type === SyncOperationTypes.UPDATE;
+export const getIsCreateSyncOperation = (
+    operation: SyncEventActionOperation
+): operation is CreateEventActionOperation => operation.type === SyncOperationTypes.CREATE;
+
+export const getCreateSyncOperation = (veventComponent: VcalVeventComponent): CreateEventActionOperation => ({
+    type: SyncOperationTypes.CREATE,
+    data: { veventComponent },
+});
+export const getUpdateSyncOperation = (
+    veventComponent: VcalVeventComponent,
+    Event: CalendarEvent
+): UpdateEventActionOperation => ({
+    type: SyncOperationTypes.UPDATE,
+    data: { veventComponent, Event },
+});
+export const getDeleteSyncOperation = (Event: CalendarEvent): DeleteEventActionOperation => ({
+    type: SyncOperationTypes.DELETE,
+    data: { Event },
+});
 
 const getRequiredKeys = ({
     sync: { operations, calendarID, addressID },
     getCalendarKeys,
     getAddressKeys,
 }: SyncMultipleEventsArguments) => {
-    const allCalendarIDs = operations.reduce<Set<string>>((acc, { type, data: { Event } }) => {
+    const allCalendarIDs = operations.reduce<Set<string>>((acc, operation) => {
         // No key needed for delete.
-        if (type === SyncOperationTypes.DELETE) {
+        if (getIsDeleteSyncOperation(operation)) {
             return acc;
         }
-
-        const oldCalendarID = Event?.CalendarID;
-        const isSwitchCalendar = !!Event && oldCalendarID !== calendarID;
-
-        if (isSwitchCalendar && oldCalendarID) {
-            acc.add(oldCalendarID);
+        if (getIsUpdateSyncOperation(operation)) {
+            const oldCalendarID = operation.data.Event.CalendarID;
+            const isSwitchCalendar = oldCalendarID !== calendarID;
+            if (isSwitchCalendar && oldCalendarID) {
+                acc.add(oldCalendarID);
+            }
         }
-
+        acc.add(calendarID);
         return acc;
     }, new Set([calendarID]));
 
@@ -79,59 +123,78 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
     const { operations, calendarID, memberID, addressID } = sync;
 
     const payloadPromise = operations.map(
-        async ({
-            type,
-            data: { Event, veventComponent },
-        }): Promise<DeleteCalendarEventSyncData | CreateCalendarEventSyncData | UpdateCalendarEventSyncData> => {
-            if (type === SyncOperationTypes.DELETE) {
-                if (!Event) {
-                    throw new Error('Missing Event');
-                }
+        async (
+            operation
+        ): Promise<
+            | DeleteCalendarEventSyncData
+            | CreateCalendarEventSyncData
+            | UpdateCalendarEventSyncData
+            | CreateLinkedCalendarEventsSyncData
+        > => {
+            if (getIsDeleteSyncOperation(operation)) {
+                return { ID: operation.data.Event.ID };
+            }
+
+            const { veventComponent } = operation.data;
+
+            const newCalendarKeys = calendarKeysMap[calendarID];
+            const addressKeys = addressKeysMap[addressID];
+
+            const permissionData = {
+                Permissions: 3,
+            };
+
+            if (getIsCreateSyncOperation(operation)) {
+                const data = await createCalendarEvent({
+                    eventComponent: veventComponent,
+                    isSwitchCalendar: false,
+                    ...(await getCreationKeys({ addressKeys, newCalendarKeys })),
+                });
+
+                const dataComplete = {
+                    ...permissionData,
+                    ...data,
+                };
+
                 return {
-                    ID: Event.ID,
+                    Event: dataComplete,
                 };
             }
 
-            const oldCalendarID = Event?.CalendarID;
-            const isUpdateEvent = !!Event;
-            const isSwitchCalendar = isUpdateEvent && oldCalendarID !== calendarID;
+            if (getIsUpdateSyncOperation(operation)) {
+                const { Event } = operation.data;
 
-            if (isSwitchCalendar) {
-                throw new Error('Can currently not change calendar with the sync operation');
-            }
+                const oldCalendarID = Event.CalendarID;
+                const isSwitchCalendar = oldCalendarID !== calendarID;
 
-            const newCalendarKeys = calendarKeysMap[calendarID];
-            const oldCalendarKeys = isSwitchCalendar && oldCalendarID ? calendarKeysMap[oldCalendarID] : undefined;
-            const addressKeys = addressKeysMap[addressID];
+                const oldCalendarKeys = isSwitchCalendar && oldCalendarID ? calendarKeysMap[oldCalendarID] : undefined;
 
-            if (!veventComponent) {
-                throw new Error('Missing vevent component');
-            }
+                const data = await createCalendarEvent({
+                    eventComponent: veventComponent,
+                    isSwitchCalendar,
+                    ...(await getCreationKeys({ Event, addressKeys, newCalendarKeys, oldCalendarKeys })),
+                });
 
-            const data = await createCalendarEvent({
-                eventComponent: veventComponent,
-                isSwitchCalendar,
-                ...(await getCreationKeys({ Event, addressKeys, newCalendarKeys, oldCalendarKeys })),
-            });
+                const dataComplete = {
+                    ...permissionData,
+                    ...data,
+                };
 
-            const dataComplete = {
-                Permissions: 3,
-                ...data,
-            };
-
-            if (isUpdateEvent) {
-                if (!Event) {
-                    throw new Error('Missing event');
+                if (isSwitchCalendar) {
+                    return {
+                        Event: dataComplete,
+                        UID: veventComponent.uid.value,
+                        SharedEventID: Event.SharedEventID,
+                    };
                 }
+
                 return {
                     ID: Event.ID,
                     Event: dataComplete,
                 };
             }
 
-            return {
-                Event: dataComplete,
-            };
+            throw new Error('Unknown operation');
         }
     );
 
