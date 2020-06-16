@@ -47,9 +47,10 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
         }
     };
 
-    const handleTouchEnd = () => {
+    const handleTouchEnd = (e: React.TouchEvent<HTMLTableRowElement>) => {
         if (touchStarted.current) {
             onClick?.(item);
+            e.preventDefault();
         }
         touchStarted.current = false;
     };
