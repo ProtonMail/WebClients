@@ -40,6 +40,7 @@ import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { getMetaForTransfer } from '../../components/Drive/Drive';
 import { serializeUint8Array } from 'proton-shared/lib/helpers/serialization';
 import { mergeUint8Arrays } from '../../utils/array';
+import usePreventLeave from '../util/usePreventLeave';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -54,6 +55,7 @@ function useFiles() {
     const { addToDownloadQueue, addFolderToDownloadQueue } = useDownloadProvider();
     const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses } = useUploadProvider();
     const [{ MaxSpace, UsedSpace }] = useUser();
+    const { preventLeave } = usePreventLeave();
     const { call } = useEventManager();
 
     const findAvailableName = queuedFunction(
@@ -194,7 +196,7 @@ function useFiles() {
             };
         })();
 
-        addToUploadQueue(
+        return addToUploadQueue(
             file,
             setupPromise.then(({ blob, MIMEType, File, filename, ParentLinkID }) => ({
                 meta: {
@@ -328,7 +330,7 @@ function useFiles() {
                     const entry = files[i];
 
                     if (!('path' in entry)) {
-                        uploadDriveFile(shareId, ParentLinkID, entry);
+                        preventLeave(uploadDriveFile(shareId, ParentLinkID, entry));
                         return;
                     }
 
@@ -373,14 +375,16 @@ function useFiles() {
                             return; // No file to upload
                         }
 
-                        uploadDriveFile(
-                            shareId,
-                            folderPromises[path].then(({ Folder: { ID } }) => ID),
-                            file,
-                            true
+                        preventLeave(
+                            uploadDriveFile(
+                                shareId,
+                                folderPromises[path].then(({ Folder: { ID } }) => ID),
+                                file,
+                                true
+                            )
                         );
                     } else if (file) {
-                        uploadDriveFile(shareId, ParentLinkID, file);
+                        preventLeave(uploadDriveFile(shareId, ParentLinkID, file));
                     }
                 }, 0);
             }

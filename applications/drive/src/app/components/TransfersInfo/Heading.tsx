@@ -10,7 +10,8 @@ import {
     isTransferDone,
     isTransferPaused,
     isTransferError,
-    isTransferCanceled
+    isTransferCanceled,
+    isTransferFinished
 } from '../../utils/transfer';
 
 interface Props {
@@ -27,10 +28,11 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
     const [currentDownloads, setCurrentDownloads] = useState<Download[]>([]);
 
     const minimizeRef = useRef<HTMLButtonElement>(null);
-    const transfers = [...downloads, ...uploads];
+    const transfers = useMemo(() => [...downloads, ...uploads], [uploads, downloads]);
 
     const activeUploads = useMemo(() => uploads.filter(isTransferActive), [uploads]);
     const activeDownloads = useMemo(() => downloads.filter(isTransferActive), [downloads]);
+    const allTransfersFinished = useMemo(() => transfers.every(isTransferFinished), [transfers]);
 
     const doneUploads = useMemo(() => uploads.filter(isTransferDone), [uploads]);
     const doneDownloads = useMemo(() => downloads.filter(isTransferDone), [downloads]);
@@ -158,13 +160,12 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
                 title={closeTitle}
                 className={classnames([
                     'pd-transfers-headingTooltip flex-item-noshrink flex',
-                    (activeUploads.length > 0 || activeDownloads.length > 0) &&
-                        'pd-transfers-headingTooltip--isDisabled'
+                    !allTransfersFinished && 'pd-transfers-headingTooltip--isDisabled'
                 ])}
             >
                 <button
                     type="button"
-                    disabled={activeUploads.length > 0 || activeDownloads.length > 0}
+                    disabled={!allTransfersFinished}
                     className="pd-transfers-headingButton flex p0-5"
                     onClick={onClose}
                 >

@@ -11,6 +11,7 @@ import EmptyFolder from '../FileBrowser/EmptyFolder';
 import { LinkMeta, LinkType } from '../../interfaces/link';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import useDrive from '../../hooks/drive/useDrive';
+import usePreventLeave from '../../hooks/util/usePreventLeave';
 
 export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
     return {
@@ -31,6 +32,7 @@ function Drive({ activeFolder, openLink }: Props) {
     const { getLinkMeta } = useDrive();
     const { startFileTransfer } = useFiles();
     const { loadNextPage, fileBrowserControls, loading, contents, complete, initialized } = useDriveContent();
+    const { preventLeave } = usePreventLeave();
 
     const { linkId, shareId } = activeFolder;
     const { clearSelections, selectedItems, toggleSelectItem, toggleAllSelected, selectRange } = fileBrowserControls;
@@ -64,7 +66,7 @@ function Drive({ activeFolder, openLink }: Props) {
             } else {
                 const meta = getMetaForTransfer(item);
                 const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
-                FileSaver.saveAsFile(fileStream, meta);
+                preventLeave(FileSaver.saveAsFile(fileStream, meta));
             }
         }
     };
