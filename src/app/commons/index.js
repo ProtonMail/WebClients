@@ -24,6 +24,7 @@ import errorReporter from './services/errorReporter';
 import i18nLoader from './services/i18nLoader';
 import networkActivityTracker from './services/networkActivityTracker';
 import networkUtils from './services/networkUtils';
+import loggedOutSessions from './services/loggedOutSessions';
 import authenticationStore from './services/authenticationStore';
 import secureSessionStorage from './services/secureSessionStorage';
 import eoStore from './services/eoStore';
@@ -62,6 +63,7 @@ export default angular
     .factory('i18nLoader', i18nLoader)
     .factory('networkActivityTracker', networkActivityTracker)
     .factory('networkUtils', networkUtils)
+    .factory('loggedOutSessions', loggedOutSessions)
     .factory('secureSessionStorage', secureSessionStorage)
     .factory('authenticationStore', authenticationStore)
     .factory('eoStore', eoStore)
