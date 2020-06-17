@@ -310,7 +310,7 @@ function messageModel(
             };
 
             return getPubKeys(sender)
-                .then((list) => {
+                .then((list = []) => {
                     const pubKeys = list.reduce((acc, { key, compromised }) => {
                         !compromised && acc.push(key);
                         return acc;
