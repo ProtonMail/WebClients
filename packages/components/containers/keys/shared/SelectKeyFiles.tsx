@@ -7,12 +7,12 @@ import { FileInputHandle } from '../../../components/input/FileInput';
 
 interface Props {
     onFiles: (files: OpenPGPKey[]) => void;
-    autoClick: boolean;
+    autoClick?: boolean;
     multiple: boolean;
-    className: string;
+    className?: string;
 }
 const SelectKeyFiles = forwardRef<FileInputHandle, Props>(
-    ({ onFiles, autoClick, multiple = false, className }: Props, ref) => {
+    ({ onFiles, autoClick = false, multiple = false, className = '' }: Props, ref) => {
         const fileRef = useRef<HTMLInputElement>(null);
 
         const handleFileImport = ({ target }: ChangeEvent<HTMLInputElement>) => {

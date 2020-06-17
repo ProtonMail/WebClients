@@ -37,6 +37,7 @@ const DateInput = ({
     value,
     defaultDate,
     placeholder,
+    autoFocus,
     onChange,
     onFocus,
     onBlur,
@@ -147,6 +148,7 @@ const DateInput = ({
                 value={showTemporary ? temporaryInput : currentInput}
                 onChange={handleInputChange}
                 placeholder={placeholder !== undefined ? placeholder : placeholderInLocale}
+                autoFocus={autoFocus}
                 {...rest}
             />
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} autoClose={false}>

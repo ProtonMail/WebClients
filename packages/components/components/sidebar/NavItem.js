@@ -26,11 +26,9 @@ const NavItem = ({
     const content = (
         <span className="flex flex-nowrap w100 flex-items-center">
             {icon && (
-                <Icon
-                    name={icon}
-                    color={color}
-                    className="flex-item-noshrink navigation__icon mr0-5 flex-item-centered-vert"
-                />
+                <span className="navigation__icon" style={{ color }}>
+                    <Icon name={icon} className="flex-item-noshrink mr0-5 flex-item-centered-vert" />
+                </span>
             )}
             <span className="flex-item-fluid ellipsis mw100">{text}</span>
             {aside && <span className="flex flex-items-center">{aside}</span>}

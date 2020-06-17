@@ -12,6 +12,7 @@ interface Props {
     title?: string;
     buttonClass?: string;
     scrollContainerClass?: string;
+    className?: string;
 }
 const Info = ({
     url,
@@ -19,6 +20,7 @@ const Info = ({
     originalPlacement = 'top',
     scrollContainerClass = 'main',
     buttonClass = 'inline-flex color-currentColor',
+    className = '',
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
@@ -56,7 +58,7 @@ const Info = ({
                 aria-describedby={uid}
                 type="button"
             >
-                <Icon className="icon-16p color-primary" name="info" {...rest} />
+                <Icon className={classnames(['icon-16p color-primary', className])} name="info" {...rest} />
             </button>
             {title && isOpen ? (
                 <Popper

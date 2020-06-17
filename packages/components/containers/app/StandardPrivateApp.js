@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { EventManagerProvider, ModalsChildren, ThemeInjector } from '../../index';
+import { EventManagerProvider, ModalsChildren, ThemeInjector, ContactProvider } from '../../index';
 import { UserModel, UserSettingsModel } from 'proton-shared/lib/models';
 import { unique } from 'proton-shared/lib/helpers/array';
 import loadLocale from 'proton-shared/lib/i18n/loadLocale';
@@ -79,11 +79,13 @@ const StandardPrivateApp = ({
 
     return (
         <EventManagerProvider eventManager={eventManagerRef.current}>
-            <EventModelListener models={eventModels} />
-            <EventNotices />
-            <ThemeInjector />
-            <ModalsChildren />
-            <ForceRefreshProvider>{children}</ForceRefreshProvider>
+            <ContactProvider>
+                <EventModelListener models={eventModels} />
+                <EventNotices />
+                <ThemeInjector />
+                <ModalsChildren />
+                <ForceRefreshProvider>{children}</ForceRefreshProvider>
+            </ContactProvider>
         </EventManagerProvider>
     );
 };

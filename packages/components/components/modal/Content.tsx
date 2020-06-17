@@ -9,6 +9,7 @@ interface Props {
     onSubmit: (event: FormEvent<HTMLFormElement>) => void;
     onReset: (event: FormEvent<HTMLFormElement>) => void;
     autoComplete?: string;
+    noValidate?: boolean;
 }
 
 const Content = ({
@@ -17,6 +18,7 @@ const Content = ({
     onSubmit = noop,
     onReset = noop,
     autoComplete = 'off',
+    noValidate = false,
     ...rest
 }: Props) => {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -30,6 +32,7 @@ const Content = ({
             onReset={onReset}
             autoComplete={autoComplete}
             className={classnames(['pm-modalContent', className])}
+            noValidate={noValidate}
             {...rest}
         >
             {children}
