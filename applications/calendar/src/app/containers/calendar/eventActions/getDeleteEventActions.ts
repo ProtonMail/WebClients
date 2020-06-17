@@ -14,6 +14,7 @@ import { getEventDeletedText, getRecurringEventDeletedText } from '../../../comp
 import { getDeleteSyncOperation, SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
 import { getDeleteRecurringEventActions } from './getDeleteRecurringEventActions';
 import getRecurringDeleteType from './getRecurringDeleteType';
+import { DELETE_CONFIRMATION_TYPES } from '../../../constants';
 
 interface Arguments {
     targetEvent: CalendarViewEvent;
@@ -50,6 +51,7 @@ const getDeleteEventActions = async ({
 
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
     if (!eventRecurrence && !oldEditEventData.recurrenceID) {
+        await onDeleteConfirmation({ type: DELETE_CONFIRMATION_TYPES.SINGLE });
         const deleteOperation = getDeleteSyncOperation(oldEventData);
         const multiActions: SyncEventActionOperations[] = [
             {

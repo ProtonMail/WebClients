@@ -112,7 +112,6 @@ export enum SAVE_CONFIRMATION_TYPES {
 export enum DELETE_CONFIRMATION_TYPES {
     SINGLE = 1,
     RECURRING,
-    ALL_RECURRING,
 }
 
 export enum RECURRING_TYPES {
