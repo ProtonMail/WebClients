@@ -251,7 +251,7 @@ export const pasteFileHandler = (onAddImages: (files: File[]) => void) => (event
     const clipboardData = event.clipboardData;
     // Edge needs items as files is undefined
     const files = Array.from(clipboardData?.files || ((clipboardData?.items as any) as FileList) || []);
-    if (files.every((file) => EMBEDDABLE_TYPES.includes(file.type))) {
+    if (files.length && files.every((file) => EMBEDDABLE_TYPES.includes(file.type))) {
         onAddImages(files);
     }
 };
