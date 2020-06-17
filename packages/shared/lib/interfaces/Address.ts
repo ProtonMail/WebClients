@@ -25,3 +25,10 @@ export interface AddressKey {
         Signature: string;
     };
 }
+
+export interface Recipient {
+    Name?: string;
+    Address?: string;
+    ContactID?: string;
+    Group?: string;
+}
