@@ -85,9 +85,9 @@ const AddressesContactsModal = ({
             </Table>
             {value.length > 0 && (
                 <div className="composer-addresses-container flex-item-fluid bordered-container pl1-25 pr1-25">
-                    {value.map((recipient, i) => (
+                    {value.map((recipient) => (
                         <AddressesRecipientItem
-                            key={i}
+                            key={recipient.Address}
                             recipient={recipient as Required<Pick<Recipient, 'Address' | 'ContactID'>>}
                             messageSendInfo={messageSendInfo}
                             onRemove={handleRemove(recipient)}

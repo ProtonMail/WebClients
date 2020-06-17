@@ -153,10 +153,10 @@ const AddressesInput = ({
                 className="composer-addresses-container pm-field flex-item-fluid bordered-container"
                 onClick={handleClick}
             >
-                {recipientsOrGroups.map((recipientsOrGroup, i) =>
+                {recipientsOrGroups.map((recipientsOrGroup) =>
                     recipientsOrGroup.recipient ? (
                         <AddressesRecipientItem
-                            key={i}
+                            key={recipientsOrGroup.recipient.Address}
                             recipient={
                                 recipientsOrGroup.recipient as Required<Pick<Recipient, 'Address' | 'ContactID'>>
                             }
@@ -166,7 +166,7 @@ const AddressesInput = ({
                         />
                     ) : (
                         <AddressesGroupItem
-                            key={i}
+                            key={recipientsOrGroup.group?.group?.ID}
                             recipientGroup={recipientsOrGroup.group as RecipientGroup}
                             messageSendInfo={messageSendInfo}
                             contacts={contacts}
