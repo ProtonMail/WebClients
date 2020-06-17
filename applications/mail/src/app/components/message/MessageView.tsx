@@ -49,7 +49,6 @@ const MessageView = ({
 
     const [expanded, setExpanded] = useState(inputInitialExpand && !draft);
     const [initialExpand, setInitialExpand] = useState(inputInitialExpand && !draft);
-
     const [sourceMode, setSourceMode] = useState(false);
 
     const elementRef = useRef<HTMLElement>(null);
@@ -70,6 +69,7 @@ const MessageView = ({
     const bodyLoaded = !!message.initialized;
     const sent = isSent(message.data);
     const unread = isUnread(message.data, labelID);
+    const encryptedMode = messageLoaded && message.errors?.decryption;
 
     const messageViewIcons = useMemo<MessageViewIcons>(() => {
         if (sent) {
@@ -176,8 +176,10 @@ const MessageView = ({
                     />
                     {bodyLoaded ? (
                         <>
-                            {sourceMode ? (
-                                <pre className="ml1 mr1">{message.decryptedBody}</pre>
+                            {sourceMode || encryptedMode ? (
+                                <pre className="ml1 mr1">
+                                    {encryptedMode ? message.data?.Body : sourceMode ? message.decryptedBody : null}
+                                </pre>
                             ) : (
                                 <MessageBody message={message} />
                             )}
