@@ -63,7 +63,7 @@ export interface PinnedKeysConfig {
     scheme?: PGP_SCHEMES;
     mimeType?: MimeTypeVcard;
     error?: Error;
-    isContact?: boolean;
+    isContact: boolean;
     isContactSignatureVerified?: boolean;
 }
 
@@ -90,7 +90,7 @@ export interface ContactPublicKeyModel {
     isPGPExternalWithWKDKeys: boolean;
     isPGPExternalWithoutWKDKeys: boolean;
     pgpAddressDisabled: boolean;
-    isContact?: boolean;
+    isContact: boolean;
     isContactSignatureVerified?: boolean;
     emailAddressWarnings?: string[];
     emailAddressErrors?: string[];
