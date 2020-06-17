@@ -63,7 +63,7 @@ export interface PinnedKeysConfig {
     scheme?: PGP_SCHEMES;
     mimeType?: MimeTypeVcard;
     error?: Error;
-    isContact: boolean;
+    isContact?: boolean;
     isContactSignatureVerified?: boolean;
 }
 
