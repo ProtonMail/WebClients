@@ -116,38 +116,33 @@ const SquireToolbar = ({
                     <SquireToolbarSeparator />
                     <SquireToolbarFontColorsDropdown squireRef={squireRef} editorReady={editorReady} />
                     <SquireToolbarSeparator />
+                    <SquireToolbarButton
+                        onClick={handleBold}
+                        aria-pressed={squireInfos.bold}
+                        className="flex-item-noshrink"
+                        title={c('Action').t`Bold`}
+                    >
+                        <Icon name="text-bold" className="mauto" />
+                    </SquireToolbarButton>
+                    <SquireToolbarButton
+                        onClick={handleItalic}
+                        aria-pressed={squireInfos.italic}
+                        className="flex-item-noshrink"
+                        title={c('Action').t`Italic`}
+                    >
+                        <Icon name="text-italic" className="mauto" />
+                    </SquireToolbarButton>
+                    <SquireToolbarButton
+                        onClick={handleUnderline}
+                        aria-pressed={squireInfos.underline}
+                        className="flex-item-noshrink"
+                        title={c('Action').t`Underline`}
+                    >
+                        <Icon name="text-underline" className="mauto" />
+                    </SquireToolbarButton>
+                    <SquireToolbarSeparator />
                     {!isNarrow && (
                         <>
-                            <SquireToolbarButton
-                                onClick={handleBold}
-                                aria-pressed={squireInfos.bold}
-                                className="flex-item-noshrink"
-                                title={c('Action').t`Bold`}
-                            >
-                                <Icon name="text-bold" className="mauto" />
-                            </SquireToolbarButton>
-                            <SquireToolbarButton
-                                onClick={handleItalic}
-                                aria-pressed={squireInfos.italic}
-                                className="flex-item-noshrink"
-                                title={c('Action').t`Italic`}
-                            >
-                                <Icon name="text-italic" className="mauto" />
-                            </SquireToolbarButton>
-                            <SquireToolbarButton
-                                onClick={handleUnderline}
-                                aria-pressed={squireInfos.underline}
-                                className="flex-item-noshrink"
-                                title={c('Action').t`Underline`}
-                            >
-                                <Icon name="text-underline" className="mauto" />
-                            </SquireToolbarButton>
-                            <SquireToolbarSeparator />
-                            <SquireToolbarAlignmentDropdown
-                                handleAlignment={handleAlignment}
-                                squireInfos={squireInfos}
-                            />
-                            <SquireToolbarSeparator />
                             <SquireToolbarButton
                                 onClick={handleUnorderedList}
                                 aria-pressed={squireInfos.unorderedList}
@@ -165,6 +160,11 @@ const SquireToolbar = ({
                                 <Icon name="ordered-list" className="mauto" />
                             </SquireToolbarButton>
                             <SquireToolbarSeparator />
+                            <SquireToolbarAlignmentDropdown
+                                handleAlignment={handleAlignment}
+                                squireInfos={squireInfos}
+                            />
+                            <SquireToolbarSeparator />
                             <SquireToolbarButton
                                 onClick={handleBlockquote}
                                 aria-pressed={squireInfos.blockquote}
@@ -173,35 +173,35 @@ const SquireToolbar = ({
                             >
                                 <Icon name="text-quote" className="mauto" />
                             </SquireToolbarButton>
+                            <SquireToolbarButton
+                                onClick={handleLink}
+                                className="flex-item-noshrink"
+                                title={c('Action').t`Insert link`}
+                            >
+                                <Icon name="link" className="mauto" />
+                            </SquireToolbarButton>
+                            <SquireToolbarButton
+                                onClick={handleClearFormatting}
+                                className="flex-item-noshrink"
+                                title={c('Action').t`Clear all formatting`}
+                            >
+                                <Icon name="remove-text-formatting" className="mauto" />
+                            </SquireToolbarButton>
                             <SquireToolbarSeparator />
+                            {metadata.supportImages && (
+                                <>
+                                    <SquireToolbarButton
+                                        onClick={handleImage}
+                                        className="flex-item-noshrink"
+                                        title={c('Action').t`Insert image`}
+                                    >
+                                        <Icon name="file-image" className="mauto" />
+                                    </SquireToolbarButton>
+                                    <SquireToolbarSeparator />
+                                </>
+                            )}
                         </>
                     )}
-                    <SquireToolbarButton
-                        onClick={handleLink}
-                        className="flex-item-noshrink"
-                        title={c('Action').t`Insert link`}
-                    >
-                        <Icon name="link" className="mauto" />
-                    </SquireToolbarButton>
-                    {metadata.supportImages && (
-                        <SquireToolbarButton
-                            onClick={handleImage}
-                            className="flex-item-noshrink"
-                            title={c('Action').t`Insert image`}
-                        >
-                            <Icon name="file-image" className="mauto" />
-                        </SquireToolbarButton>
-                    )}
-                    {!isNarrow && (
-                        <SquireToolbarButton
-                            onClick={handleClearFormatting}
-                            className="flex-item-noshrink"
-                            title={c('Action').t`Clear all formatting`}
-                        >
-                            <Icon name="remove-text-formatting" className="mauto" />
-                        </SquireToolbarButton>
-                    )}
-                    <SquireToolbarSeparator />
                 </>
             )}
             {(metadata.supportRightToLeft || metadata.supportPlainText || moreDropdownExtension || isNarrow) && (
@@ -212,13 +212,13 @@ const SquireToolbar = ({
                     isNarrow={isNarrow}
                     squireInfos={squireInfos}
                     squireActions={{
-                        handleBold,
-                        handleItalic,
-                        handleUnderline,
                         handleAlignment,
                         handleUnorderedList,
                         handleOrderedList,
-                        handleBlockquote
+                        handleBlockquote,
+                        handleLink,
+                        handleClearFormatting,
+                        handleImage
                     }}
                 >
                     {moreDropdownExtension}
