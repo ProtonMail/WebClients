@@ -2,6 +2,24 @@
 set -eo pipefail
 
 function main {
+
+    ##
+    # Extract all the files we need to parse to get the translations
+    #   - react-components
+    #   - proton-shared
+    #   - app sources
+    #
+    # We remove as much files a possible so it's faster
+    getFileList() {
+        find ./i18n-js \
+            -type f \
+            -iregex '.*\.\(js\|jsx\|ts\|tsx\)$' \
+            -not -path "*/pmcrypto/*" \
+            -not -path "*/core-js/*" \
+            -not -path "*/dist/openpgp.*" | grep -E '(webpack:\/src|react-components|proton-shared)'
+    }
+
+
     if [ ! -d "/tmp/sourcemapper" ]; then
         git clone --depth 1 https://github.com/dhoko/sourcemapper.git "/tmp/sourcemapper";
     else
@@ -18,8 +36,7 @@ function main {
     fi;
 
 
-    for file in $(find ./dist/ -type f -name "*.js.map");
-    do
+    for file in $(find ./dist/ -type f -name "*.js.map"); do
         echo "[Parsing] $file";
         if [[ "$OSTYPE" = "darwin"* ]]; then
             /tmp/sourcemapper/bin/isourcemapper --input "$file" --output 'i18n-js' &
@@ -29,9 +46,7 @@ function main {
     done;
 
     wait;
-
-    # ignore pmcrypto as it contains mailparser :/
-    npx ttag extract $(find ./i18n-js -type f -name '*.js' -not -path "*/pmcrypto/*" -not -path "*/core-js/*") -o "$1";
+    npx ttag extract $(getFileList) -o "$1";
 
     # Remove useless path
     if [[ "$OSTYPE" = "darwin"* ]]; then
