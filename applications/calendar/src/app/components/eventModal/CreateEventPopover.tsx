@@ -55,7 +55,10 @@ const CreateEventPopover = ({
                 e.preventDefault();
                 handleSubmit();
             }}
-            className={classnames(['eventpopover pm-form--iconLabels', isNarrow && 'eventpopover--full-width'])}
+            className={classnames([
+                'eventpopover pm-form--iconLabels pt2 pl1-5 pr1-5 pb1',
+                isNarrow && 'eventpopover--full-width',
+            ])}
             ref={useCombinedRefs<HTMLFormElement>(formRef, popoverRef)}
         >
             <PopoverHeader onClose={onClose} />
@@ -69,16 +72,10 @@ const CreateEventPopover = ({
                 setModel={setModel}
             />
             <PopoverFooter>
-                <Button
-                    data-test-id="create-event-popover:more-event-options"
-                    className="mr1"
-                    onClick={handleMore}
-                >{c('Action').t`More options`}</Button>
-                <PrimaryButton
-                    data-test-id="create-event-popover:save"
-                    type="submit"
-                    loading={loadingAction}
-                >
+                <Button data-test-id="create-event-popover:more-event-options" className="mr1" onClick={handleMore}>{c(
+                    'Action'
+                ).t`More options`}</Button>
+                <PrimaryButton data-test-id="create-event-popover:save" type="submit" loading={loadingAction}>
                     {c('Action').t`Save`}
                 </PrimaryButton>
             </PopoverFooter>

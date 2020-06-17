@@ -109,13 +109,16 @@ const EventPopover = ({
         </Button>
     );
 
-    const mergedClassName = classnames(['eventpopover', isNarrow && 'eventpopover--full-width']);
+    const mergedClassName = classnames([
+        'eventpopover pt2 pl1-5 pr1-5 pb1 flex flex-column flex-nowrap',
+        isNarrow && 'eventpopover--full-width',
+    ]);
     const mergedStyle = isNarrow ? undefined : style;
 
     if (eventReadError) {
         return (
             <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
-                <PopoverHeader onClose={onClose}>
+                <PopoverHeader onClose={onClose} className="flex-item-noshrink">
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
                 <Alert type="error">{getEventErrorMessage(eventReadError)}</Alert>
@@ -126,30 +129,32 @@ const EventPopover = ({
 
     if (isEventReadLoading) {
         return (
-            <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
-                <Loader className="center flex mb2 mt2 pb2" />
+            <div style={mergedStyle} className="eventpopover p1" ref={popoverRef}>
+                <Loader />
             </div>
         );
     }
 
     return (
         <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
-            <PopoverHeader className="ml0-5" onClose={onClose}>
+            <PopoverHeader className="ml0-5 flex-item-noshrink" onClose={onClose}>
                 <div className="color-subheader">{dateHeader}</div>
                 <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut mb0-5" title={eventTitleSafe}>
                     {eventTitleSafe}
                 </h1>
             </PopoverHeader>
-            <PopoverEventContent
-                Calendar={calendarData}
-                isCalendarDisabled={isCalendarDisabled}
-                event={targetEvent}
-                tzid={tzid}
-                weekStartsOn={weekStartsOn}
-                model={model}
-                formatTime={formatTime}
-            />
-            <PopoverFooter>
+            <div className="scroll-if-needed mb1">
+                <PopoverEventContent
+                    Calendar={calendarData}
+                    isCalendarDisabled={isCalendarDisabled}
+                    event={targetEvent}
+                    tzid={tzid}
+                    weekStartsOn={weekStartsOn}
+                    model={model}
+                    formatTime={formatTime}
+                />
+            </div>
+            <PopoverFooter className="flex-item-noshrink">
                 {deleteButton}
                 <Button
                     data-test-id="event-popover:edit"
