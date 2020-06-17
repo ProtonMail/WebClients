@@ -28,6 +28,7 @@ import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import { useMessageSendInfo } from '../../hooks/useSendInfo';
 import { COMPOSER_MODE } from 'proton-shared/lib/constants';
+import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
 
 enum ComposerInnerModal {
     None,
@@ -185,7 +186,7 @@ const Composer = ({
         return addAction(() => createDraft(message as MessageExtendedWithData));
     };
 
-    const autoSave = useHandler(actualSave, { debounce: 2000 });
+    const [pendingSave, autoSave] = useDebouncedHandler(actualSave, 2000);
 
     const handleChange: MessageChange = (message) => {
         setModelMessage((modelMessage) => {
@@ -299,9 +300,8 @@ const Composer = ({
     };
     const handleClose = async () => {
         setClosing(true);
-        autoSave.abort?.();
         try {
-            if (syncedMessage.data?.ID) {
+            if (pendingSave) {
                 await handleManualSave();
             }
         } finally {
