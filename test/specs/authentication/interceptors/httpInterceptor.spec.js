@@ -21,7 +21,8 @@ describe('http interceptor', () => {
     let instance;
 
     const config = {
-        url: 'api/users'
+        url: 'api/users',
+        headers: {}
     };
 
     beforeEach(() => {
@@ -102,7 +103,8 @@ describe('http interceptor', () => {
 
     describe('http status', () => {
         const config = {
-            url: 'api/users'
+            url: 'api/users',
+            headers: {}
         };
 
         [400, 402, 404, 500, 0, -1, -2].forEach((status) => {
