@@ -1,3 +1,12 @@
+# [4.0.0-beta.5] - 2020-06-24
+## Added
+- Import of calendars from a .ics file
+- Change the calendar for all the events of a recurring event
+
+## Updated
+- Redesign of event details popover
+
+___
 # [4.0.0-beta.4] - 2020-06-15
 ## Updated
 - Update API calls
