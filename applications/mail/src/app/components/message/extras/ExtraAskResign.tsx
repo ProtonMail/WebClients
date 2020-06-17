@@ -29,6 +29,7 @@ const ExtraAskResign = ({ message, onResignContact }: Props) => {
             return;
         }
         const contact = { contactID: contactEmail.ContactID };
+        const senderName = message.data?.SenderName || ''; // No optional in translations
 
         createModal(
             <ContactResignModal
@@ -39,7 +40,7 @@ const ExtraAskResign = ({ message, onResignContact }: Props) => {
             >
                 <Alert type="info">
                     {c('Info')
-                        .t`When you enabled trusted keys for ${message.data?.SenderName}, the public keys were added to the contact details.`}
+                        .t`When you enabled trusted keys for ${senderName}, the public keys were added to the contact details.`}
                 </Alert>
                 <Alert type="error">
                     {c('Info')
