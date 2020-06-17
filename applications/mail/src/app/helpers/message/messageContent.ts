@@ -8,6 +8,7 @@ import { findSender } from '../addresses';
 import { Address } from 'proton-shared/lib/interfaces';
 import { textToHtml } from '../textToHtml';
 import { parseInDiv } from '../dom';
+import { templateBuilder } from './messageSignature';
 
 export const getPlainTextContent = (message: PartialMessageExtended) => {
     return message.plainText || '';
@@ -91,4 +92,31 @@ export const plainTextToHTML = (message: MessageExtended, mailSettings: MailSett
     const content = getContent(message);
 
     return textToHtml(content, sender?.Signature || '', mailSettings);
+};
+
+/**
+ * Return the content of the message with the signature switched from the old one to the new one
+ */
+export const changeSignature = (
+    message: MessageExtended,
+    mailSettings: MailSettings,
+    oldSignature: string,
+    newSignature: string
+) => {
+    const oldTemplate = templateBuilder(oldSignature, mailSettings, false, true);
+    const newTemplate = templateBuilder(newSignature, mailSettings, false, true);
+
+    if (isPlainText(message.data)) {
+        const content = getPlainTextContent(message);
+        const oldSignatureText = toText(oldTemplate, true, true)
+            .replace(/\u200B/g, '')
+            .trim();
+        const newSignatureText = toText(newTemplate, true, true)
+            .replace(/\u200B/g, '')
+            .trim();
+        return content.replace(oldSignatureText, newSignatureText);
+    } else {
+        const content = getDocumentContent(message.document);
+        return content.replace(oldTemplate, newTemplate);
+    }
 };

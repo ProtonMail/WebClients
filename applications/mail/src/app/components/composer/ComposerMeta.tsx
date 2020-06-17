@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, MutableRefObject } from 'react';
 import { c } from 'ttag';
-import { Label, Select, Input, generateUID } from 'react-components';
+import { Label, Select, Input, generateUID, useMailSettings } from 'react-components';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 
 import ComposerAddresses from './addresses/Addresses';
@@ -8,6 +8,7 @@ import { MessageExtended } from '../../models/message';
 import { getFromAdresses } from '../../helpers/addresses';
 import { MessageChange } from './Composer';
 import { MessageSendInfo } from '../../hooks/useSendInfo';
+import { changeSignature } from '../../helpers/message/messageContent';
 
 interface Props {
     message: MessageExtended;
@@ -16,6 +17,7 @@ interface Props {
     messageSendInfo: MessageSendInfo;
     disabled: boolean;
     onChange: MessageChange;
+    onChangeContent: (content: string, refreshContent: boolean) => void;
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
 }
@@ -26,10 +28,12 @@ const ComposerMeta = ({
     messageSendInfo,
     disabled,
     onChange,
+    onChangeContent,
     addressesBlurRef,
     addressesFocusRef
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
+    const [mailSettings] = useMailSettings();
 
     const addressesOptions = getFromAdresses(addresses, message.originalTo).map((address) => ({
         text: address.Email,
@@ -39,9 +43,14 @@ const ComposerMeta = ({
     const handleFromChange = (event: ChangeEvent) => {
         const select = event.target as HTMLSelectElement;
         const AddressID = select.value;
+        const currentAddress = addresses.find((address: Address) => address.Email === message.data?.Sender.Address);
         const address = addresses.find((address: Address) => address.ID === AddressID);
         const Sender = address ? { Name: address.DisplayName, Address: address.Email } : undefined;
         onChange({ data: { AddressID, Sender } });
+        onChangeContent(
+            changeSignature(message, mailSettings, currentAddress?.Signature || '', address?.Signature || ''),
+            true
+        );
     };
 
     const handleSubjectChange = (event: ChangeEvent) => {

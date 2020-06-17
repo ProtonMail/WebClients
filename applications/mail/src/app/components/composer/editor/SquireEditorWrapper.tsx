@@ -23,6 +23,7 @@ import EditorToolbarExtension from './EditorToolbarExtension';
 import { findCIDsInContent } from '../../../helpers/embedded/embeddedFinder';
 
 interface ExternalEditorActions {
+    setContent: (content: string) => void;
     insertEmbedded: (embeddeds: EmbeddedMap) => void;
     removeEmbedded: (attachments: Attachment[]) => void;
 }
@@ -90,12 +91,19 @@ const SquireEditorWrapper = ({
         }
     }, [message.document?.innerHTML]);
 
+    const handleSetContent = (content: string) => {
+        skipNextInputRef.current = true;
+        if (squireEditorRef.current) {
+            squireEditorRef.current.value = content;
+        }
+    };
+
     // Initialize Squire (or textarea) content at (and only) startup
     useEffect(() => {
         if (isPlainText) {
             setEditorReady(false);
         }
-        if (documentReady && squireEditorRef.current && (isPlainText || editorReady)) {
+        if (documentReady && (isPlainText || editorReady)) {
             let content;
 
             if (isPlainText) {
@@ -107,8 +115,7 @@ const SquireEditorWrapper = ({
                 setBlockquoteExpanded(blockquote === '');
             }
 
-            skipNextInputRef.current = true;
-            squireEditorRef.current.value = content;
+            handleSetContent(content);
             onReady();
         }
     }, [editorReady, documentReady, isPlainText]);
@@ -199,6 +206,7 @@ const SquireEditorWrapper = ({
     });
     useEffect(() => {
         editorActionsRef.current = {
+            setContent: handleSetContent,
             insertEmbedded: handleInsertEmbedded,
             removeEmbedded: handleRemoveEmbedded
         };

@@ -197,13 +197,16 @@ const Composer = ({
         });
     };
 
-    const handleChangeContent = (content: string) => {
+    const handleChangeContent = (content: string, refreshEditor = false) => {
         setModelMessage((modelMessage) => {
             setContent(modelMessage, content);
             const newModelMessage = { ...modelMessage };
             autoSave(newModelMessage);
             return newModelMessage;
         });
+        if (refreshEditor) {
+            editorActionsRef.current?.setContent(content);
+        }
     };
 
     const handleChangeFlag = (changes: Map<number, boolean>) => {
@@ -357,6 +360,7 @@ const Composer = ({
                             messageSendInfo={messageSendInfo}
                             disabled={!editorReady}
                             onChange={handleChange}
+                            onChangeContent={handleChangeContent}
                             addressesBlurRef={addressesBlurRef}
                             addressesFocusRef={addressesFocusRef}
                         />
