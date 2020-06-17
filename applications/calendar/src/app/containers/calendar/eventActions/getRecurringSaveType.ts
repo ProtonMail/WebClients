@@ -2,7 +2,7 @@ import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from '../../../constants';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventOldData } from '../../../interfaces/EventData';
-import { getExdatesAfter, getHasFutureOption, getRecurrenceEventsAfter } from './recurringHelper';
+import { getExdatesAfter, getHasFutureOption, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { OnSaveConfirmationCb } from '../interface';
 
 interface Arguments {
@@ -35,20 +35,27 @@ const getRecurringSaveType = async ({
         saveTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.ALL];
     }
 
-    const singleEditRecurrences = recurrences.filter((event) => {
-        // Not the single edit instance event, and not the original event
-        return event.ID !== oldEditEventData.eventData.ID && event.ID !== originalEditEventData.eventData.ID;
+    const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEditEventData.eventData);
+    const singleEditRecurrencesWithoutSelf = singleEditRecurrences.filter((event) => {
+        return event.ID !== oldEditEventData.eventData.ID;
     });
-    const singleEditRecurrencesAfter = getRecurrenceEventsAfter(singleEditRecurrences, recurrence.localStart);
+    // Since this is inclusive, ignore this single edit instance event since that would always become the new start
+    const singleEditRecurrencesAfter = getRecurrenceEventsAfter(
+        singleEditRecurrencesWithoutSelf,
+        recurrence.localStart
+    );
     const exdates = originalEditEventData.mainVeventComponent.exdate || [];
     const exdatesAfter = getExdatesAfter(exdates, recurrence.localStart);
+
+    const hasSingleModifications = singleEditRecurrences.length >= 1 || exdates.length >= 1;
+    const hasSingleModificationsAfter = singleEditRecurrencesAfter.length >= 1 || exdatesAfter.length >= 1;
 
     return onSaveConfirmation({
         type: SAVE_CONFIRMATION_TYPES.RECURRING,
         data: {
             types: saveTypes,
-            hasSingleModifications: singleEditRecurrences.length >= 1 || exdates.length >= 1,
-            hasSingleModificationsAfter: singleEditRecurrencesAfter.length >= 1 || exdatesAfter.length >= 1,
+            hasSingleModifications,
+            hasSingleModificationsAfter,
             hasRruleModification: hasModifiedRrule,
         },
     });
