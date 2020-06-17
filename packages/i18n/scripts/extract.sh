@@ -26,15 +26,17 @@ function main {
         echo "we have a cache"
     fi;
 
-    # Inside the CI we have a cache
-    if [ -z "$CI_PROJECT_DIR" ]; then
-        rm -rf ./dist;
-        npm run build;
-    else
+    # Cache for the CI so we're faster
+    if [ -s 'webapp-bundle.tar.gz' ]; then
+        echo "we extract the bundle"
+        rm -rf dist || true
         mkdir dist
         tar xzf webapp-bundle.tar.gz -C dist;
-    fi;
-
+    else
+        echo "we create the bundle"
+        rm -rf ./dist;
+        npm run build;
+    fi
 
     for file in $(find ./dist/ -type f -name "*.js.map"); do
         echo "[Parsing] $file";
