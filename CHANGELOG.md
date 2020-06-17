@@ -1,3 +1,14 @@
+# [3.16.26] - 2020-06-17
+
+## Fixed
+
+- "Invalid access token" error appearing under some specific conditions
+- Wrong Android app link in the welcome modal
+
+## Updates
+
+- DKIM automatic key rotation
+
 # [3.16.25] - 2020-05-30
 
 ## Fixed
