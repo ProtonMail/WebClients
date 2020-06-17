@@ -15,7 +15,7 @@ describe('http interceptor', () => {
     const appModelMock = {};
     const networkUtilsMock = {};
     const loggedOutSessions = {
-        hasUID: jasmine.any(Function)
+        hasUID() {}
     };
 
     let instance;
