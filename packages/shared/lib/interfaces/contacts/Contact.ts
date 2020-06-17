@@ -30,6 +30,11 @@ export interface Contact {
     Cards: ContactCard[];
 }
 
+export interface ContactFormatted extends Contact {
+    emails: string[];
+    isChecked: boolean;
+}
+
 export interface ContactWithBePinnedPublicKey {
     contactID?: string;
     emailAddress: string;
@@ -57,6 +62,7 @@ export interface ContactOrGroup {
 }
 
 export interface ContactProperty {
+    uid?: string;
     pref?: number;
     field: string;
     value: string | string[];
@@ -65,6 +71,12 @@ export interface ContactProperty {
 }
 
 export type ContactProperties = ContactProperty[];
+
+export type ContactPropertyChange = {
+    uid?: string;
+    value: string | string[];
+    key?: string;
+};
 
 export type ContactCache = Map<string, Contact>;
 

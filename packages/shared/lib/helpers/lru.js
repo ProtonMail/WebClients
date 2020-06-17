@@ -1,7 +1,8 @@
 /**
  * https://github.com/dominictarr/hashlru with Map
- * @param {number} max
- * @param {function} [onDispose]
+ * @param {Object} params
+ * @param {number} params.max
+ * @param {function} [params.onDispose]
  * @return {{set, get, clear, has, delete}}
  */
 const createLRU = ({ max, onDispose }) => {
