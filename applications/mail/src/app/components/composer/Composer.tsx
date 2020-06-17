@@ -256,8 +256,15 @@ const Composer = ({
     };
     const handleSend = async () => {
         setSending(true);
+        let verificationResults;
         try {
-            const { cleanMessage, mapSendPrefs } = await sendVerifications(modelMessage as MessageExtendedWithData);
+            verificationResults = await sendVerifications(modelMessage as MessageExtendedWithData);
+        } catch {
+            setSending(false);
+            return;
+        }
+        try {
+            const { cleanMessage, mapSendPrefs } = verificationResults;
             autoSave.abort?.();
             await addAction(() => sendMessage(cleanMessage, mapSendPrefs));
             createNotification({ text: c('Success').t`Message sent` });
