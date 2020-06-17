@@ -47,7 +47,7 @@ const MoveButtons = ({
     const standardFolders = getStandardFolders();
 
     const handleMove = async (LabelID: string) => {
-        const folderName = standardFolders[labelID]?.name || foldersMap[labelID].Name;
+        const folderName = standardFolders[LabelID]?.name || foldersMap[LabelID].Name;
         const fromLabelID = labelIDs.includes(labelID) ? INBOX : labelID;
         await moveToFolder(isTypeMessage, selectedIDs, LabelID, folderName, fromLabelID);
         onBack();
