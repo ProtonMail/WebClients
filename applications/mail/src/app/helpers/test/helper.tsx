@@ -62,6 +62,7 @@ export const clearCache = () => cache.reset();
 export const minimalCache = () => {
     addToCache('User', {});
     addToCache('Addresses', []);
+    addToCache('MailSettings', {});
 };
 
 export const eventManagerListeners: ((...args: any[]) => any)[] = [];
