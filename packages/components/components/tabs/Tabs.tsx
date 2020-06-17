@@ -53,7 +53,7 @@ const Tabs = ({ children, tabs, preselectedTab = 0 }: Props) => {
                     <li className="tabs-indicator" aria-hidden />
                 </ul>
             </nav>
-            <div id={key} className="tabs-tabcontent pt1 pb1" role="tabpanel" aria-labelledby={label}>
+            <div id={key} className="tabs-tabcontent pt1" role="tabpanel" aria-labelledby={label}>
                 {content}
             </div>
         </div>
