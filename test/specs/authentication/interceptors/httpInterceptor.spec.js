@@ -14,6 +14,9 @@ describe('http interceptor', () => {
     };
     const appModelMock = {};
     const networkUtilsMock = {};
+    const loggedOutSessions = {
+        hasUID: jasmine.any(Function)
+    };
 
     let instance;
 
@@ -43,7 +46,7 @@ describe('http interceptor', () => {
             .and
             .callFake((arg) => Promise.reject(arg));
 
-        instance = service($qMock, $injectorMock, appModelMock, networkUtilsMock);
+        instance = service($qMock, $injectorMock, appModelMock, networkUtilsMock, loggedOutSessions);
     });
 
     describe('offline', () => {
