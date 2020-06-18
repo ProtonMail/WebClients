@@ -323,7 +323,7 @@ function useFiles() {
                 throw new Error('Insufficient storage left');
             }
 
-            const folderPromises: { [path: string]: ReturnType<typeof createNewFolder> } = {};
+            const folderPromises = new Map<string, ReturnType<typeof createNewFolder>>();
 
             for (let i = 0; i < files.length; i++) {
                 setTimeout(() => {
@@ -343,12 +343,13 @@ function useFiles() {
                         const parent = folders.slice(0, -1).join('/');
                         const path = parent ? folders.join('/') : folder;
 
-                        if (!folderPromises[path]) {
+                        if (!folderPromises.get(path)) {
                             let promise: Promise<any>;
+                            const parentFolderPromise = folderPromises.get(parent);
 
-                            if (folderPromises[parent]) {
+                            if (parentFolderPromise) {
                                 // Wait for parent folders to be created first
-                                promise = folderPromises[parent].then(({ Folder: { ID } }) =>
+                                promise = parentFolderPromise.then(({ Folder: { ID } }) =>
                                     createNewFolder(shareId, ID, folder)
                                 );
                             } else {
@@ -365,20 +366,25 @@ function useFiles() {
                             }
 
                             // Fetch events to get keys required for encryption in the new folder
-                            folderPromises[path] = promise.then(async (args) => {
-                                await events.call(shareId);
-                                return args;
-                            });
+                            folderPromises.set(
+                                path,
+                                promise.then(async (args) => {
+                                    await events.call(shareId);
+                                    return args;
+                                })
+                            );
                         }
 
-                        if (!file) {
+                        const folderPromise = folderPromises.get(path);
+
+                        if (!file || !folderPromise) {
                             return; // No file to upload
                         }
 
                         preventLeave(
                             uploadDriveFile(
                                 shareId,
-                                folderPromises[path].then(({ Folder: { ID } }) => ID),
+                                folderPromise.then(({ Folder: { ID } }) => ID),
                                 file,
                                 true
                             )

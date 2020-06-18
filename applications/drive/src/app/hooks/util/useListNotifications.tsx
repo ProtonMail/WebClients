@@ -156,8 +156,9 @@ const useListNotifications = () => {
 
         alreadyExisting.forEach((linkId) => {
             const item = toRestore.find(({ LinkID }) => LinkID === linkId);
+            const name = item?.Name;
             const notificationText = c('Notification')
-                .t`An item with the name "${item?.Name}" already exists in the current folder`;
+                .t`An item with the name "${name}" already exists in the current folder`;
             createNotification({ text: notificationText, type: 'error' });
         });
 
