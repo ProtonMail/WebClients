@@ -132,10 +132,18 @@ export const removeMember = (calendarID: string, memberID: string) => ({
     method: 'delete'
 });
 
+export enum CalendarEventsQueryType {
+    PartDayInsideWindow = 0,
+    PartDayBeforeWindow = 1,
+    FullDayInsideWindow = 2,
+    FullDayBeforeWindow = 3,
+}
+
 interface CalendarEventsQuery extends PaginationParams {
     Start: number;
     End: number;
     Timezone: string;
+    Type: CalendarEventsQueryType;
 }
 export const queryEvents = (calendarID: string, params: CalendarEventsQuery) => ({
     url: `${CALENDAR_V1}/${calendarID}/events`,
