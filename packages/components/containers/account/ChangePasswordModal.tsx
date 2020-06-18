@@ -68,7 +68,7 @@ const DEFAULT_ERRORS = {
 
 const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const { call, stop, start } = useEventManager();
     const authentication = useAuthentication();
     const { createNotification } = useNotifications();
     const getOrganizationKey = useGetOrganizationKeyRaw();
@@ -216,6 +216,9 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 },
                 async onSubmit() {
                     try {
+                        // Stop the event manager to prevent race conditions
+                        stop();
+
                         const [userKeysList, addressesKeysMap, organizationKey] = await Promise.all([
                             getUserKeys(),
                             getAddressesKeys(),
@@ -245,6 +248,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                     } catch (e) {
                         setLoading(false);
                         checkFatalError(e);
+                    } finally {
+                        start();
                     }
                 }
             };
@@ -252,6 +257,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
 
         const onSubmit = async () => {
             try {
+                stop();
+
                 const [userKeysList, addressesKeysMap, organizationKey] = await Promise.all([
                     getUserKeys(),
                     getAddressesKeys(),
@@ -311,6 +318,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 setLoading(false);
                 checkFatalError(e);
                 checkLoginError(e);
+            } finally {
+                start();
             }
         };
 
