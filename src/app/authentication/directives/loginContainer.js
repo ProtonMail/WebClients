@@ -217,6 +217,9 @@ const loginContainer = (
             scope.onCancel = handleCancel;
 
             scope.onSubmitLogin = async ({ username, password }) => {
+                if (networkActivityTracker.loading()) {
+                    return;
+                }
                 track(
                     handleLogin(username, password).catch((e) => {
                         state = {};
@@ -230,6 +233,9 @@ const loginContainer = (
             };
 
             scope.onSubmitTotp = async ({ totp }) => {
+                if (networkActivityTracker.loading()) {
+                    return;
+                }
                 track(
                     handleTotp(totp).catch((e) => {
                         if (!e.canRetryTOTP) {
@@ -240,6 +246,9 @@ const loginContainer = (
             };
 
             scope.onSubmitUnlock = async ({ password }) => {
+                if (networkActivityTracker.loading()) {
+                    return;
+                }
                 track(
                     handleUnlock(password).catch((e) => {
                         console.log(e);
