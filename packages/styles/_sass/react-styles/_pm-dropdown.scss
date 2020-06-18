@@ -146,6 +146,7 @@
 
 	/* Scrollable insides of the dropdown */
 	&-content {
+		height: calc(var(--height) * 1px);
 		min-height: 1em;
 		overflow: auto;
 		border-radius: $global-border-radius;
@@ -173,6 +174,8 @@
 		}
 
 		@include respond-to($breakpoint-small, 'min') {
+			width: calc(var(--width) * 1px);
+
 			&#{&}--noMaxSize {
 				min-width: 1.5em;
 			}
@@ -191,6 +194,7 @@
 			z-index: 1;
 			display: block;
 			height: .3rem;
+			flex: 0 0 .3rem;
 			background: var(--bgcolor-main-area, $white);
 		}
 
