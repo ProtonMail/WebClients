@@ -71,7 +71,7 @@ const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onC
         }
 
         if (!contents) {
-            throw new Error(c('Error').t`File has not contents to preview`);
+            throw new Error(c('Error').t`File has no contents to preview`);
         }
 
         if (isSupportedImage(meta.MIMEType)) {
