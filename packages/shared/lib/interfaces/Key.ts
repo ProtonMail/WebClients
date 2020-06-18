@@ -29,7 +29,7 @@ export interface KeyPair {
     publicKey: OpenPGPKey;
 }
 
-export interface KeyPairs {
+export interface KeysPair {
     privateKeys: OpenPGPKey[];
     publicKeys: OpenPGPKey[];
 }

@@ -7,7 +7,7 @@ import {
     VERIFICATION_STATUS
 } from 'pmcrypto';
 import { c } from 'ttag';
-import { KeyPairs } from '../interfaces';
+import { KeysPair } from '../interfaces';
 import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts';
 import { merge, parse } from './vcard';
 import { sanitizeProperties } from './properties';
@@ -38,7 +38,7 @@ interface ContactSignedData {
 
 export const decrypt = async (
     { Data }: ContactCard,
-    { privateKeys }: Pick<KeyPairs, 'privateKeys'>
+    { privateKeys }: Pick<KeysPair, 'privateKeys'>
 ): Promise<ContactClearTextData> => {
     let message;
     try {
@@ -60,7 +60,7 @@ export const decrypt = async (
 
 export const readSigned = async (
     { Data, Signature = '' }: ContactCard,
-    { publicKeys }: Pick<KeyPairs, 'publicKeys'>
+    { publicKeys }: Pick<KeysPair, 'publicKeys'>
 ): Promise<ContactSignedData> => {
     try {
         if (!Signature) {
@@ -88,7 +88,7 @@ export const readSigned = async (
 
 export const decryptSigned = async (
     { Data, Signature }: ContactCard,
-    { publicKeys, privateKeys }: KeyPairs
+    { publicKeys, privateKeys }: KeysPair
 ): Promise<ContactClearTextData> => {
     try {
         if (!Signature) {
@@ -129,7 +129,7 @@ const ACTIONS: { [index: number]: any } = {
 
 export const prepareContact = async (
     contact: Contact,
-    { publicKeys, privateKeys }: KeyPairs
+    { publicKeys, privateKeys }: KeysPair
 ): Promise<{ properties: ContactProperties; errors: CryptoProcessingError[] }> => {
     const { Cards } = contact;
 
