@@ -50,7 +50,7 @@ export const resetCalendarKeys = async ({ api, calendars, getAddressKeys, addres
             const resetCalendar = ResetCalendars.find(({ ID }) => ID === calendarID);
 
             if (!resetCalendar) {
-                throw new Error(c('Error').t`Reset calendar not found`);
+                throw new Error('Reset calendar not found');
             }
             const { Members: MemberPublicKeys } = resetCalendar;
 
