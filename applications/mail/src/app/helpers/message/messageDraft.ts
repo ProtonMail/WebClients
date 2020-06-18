@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { setBit } from 'proton-shared/lib/helpers/bitset';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 import { Message, EmbeddedMap, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
-import { Recipient } from '../../models/address';
 import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 import { findSender } from '../addresses';
 import { Attachment } from '../../models/attachment';

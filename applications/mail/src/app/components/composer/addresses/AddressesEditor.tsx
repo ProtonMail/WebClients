@@ -1,13 +1,24 @@
 import React, { useState, MutableRefObject } from 'react';
 import { c } from 'ttag';
-import { Label, generateUID, LinkButton, classnames } from 'react-components';
+import {
+    Label,
+    generateUID,
+    LinkButton,
+    classnames,
+    Tooltip,
+    ContactListModal,
+    useModals,
+    InlineLinkButton
+} from 'react-components';
 
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
+
 import { MessageExtended } from '../../../models/message';
-import AddressesInput from './AddressesInput';
-import { RecipientType, Recipient } from '../../../models/address';
+import { RecipientType } from '../../../models/address';
 import { MessageChange } from '../Composer';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
+import AddressesInput from './AddressesInput';
 
 interface Props {
     message: MessageExtended;
@@ -31,37 +42,31 @@ const AddressesEditor = ({
     inputFocusRef
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
-    // const { createModal } = useModals();
+    const { createModal } = useModals();
 
     const handleChange = (type: RecipientType) => (value: Partial<Recipient>[]) => {
         onChange({ data: { [type]: value } });
     };
 
-    // const handleContactModal = (type: RecipientType) => async () => {
-    //     const recipients = await new Promise((resolve) => {
-    //         createModal(
-    //             <AddressesContactsModal
-    //                 message={message}
-    //                 inputValue={message.data?.[type]}
-    //                 allContacts={contacts}
-    //                 mapSendInfo={mapSendInfo}
-    //                 setMapSendInfo={setMapSendInfo}
-    //                 onSubmit={resolve}
-    //             />
-    //         );
-    //     });
-    //
-    //     onChange({ data: { [type]: recipients } });
-    // };
+    const handleContactModal = (type: RecipientType) => async () => {
+        const recipients: Recipient[] = await new Promise((resolve, reject) => {
+            createModal(<ContactListModal onSubmit={resolve} onClose={reject} inputValue={message.data?.[type]} />);
+        });
+
+        const currentRecipients = message.data && message.data[type] ? message.data[type] : [];
+        // the contacts being handled in the modal
+        const currentNonContacts = currentRecipients.filter((r) => !r.ContactID);
+
+        onChange({ data: { [type]: [...currentNonContacts, ...recipients] } });
+    };
 
     return (
         <div className="flex flex-column flex-nowrap flex-items-start m0-5 pl0-5 pr0-5">
             <div className={classnames(['flex flex-row w100 relative', expanded && 'mb0-5'])}>
                 <Label htmlFor={`to-${uid}`} className="composer-meta-label bold">
-                    {/* <Tooltip title={c('Title').t`Add contacts`}> */}
-                    {/* <a onClick={handleContactModal('ToList')}>{c('Title').t`To`}</a> */}
-                    {c('Label').t`To`}
-                    {/* </Tooltip> */}
+                    <Tooltip title={c('Title').t`Add contacts`}>
+                        <InlineLinkButton onClick={handleContactModal('ToList')}>{c('Title').t`To`}</InlineLinkButton>
+                    </Tooltip>
                 </Label>
                 <AddressesInput
                     id={`to-${uid}`}
@@ -91,10 +96,11 @@ const AddressesEditor = ({
                             className="composer-meta-label bold"
                             title={c('Label').t`Carbon Copy`}
                         >
-                            {/* <Tooltip title={c('Title').t`Add contacts`}> */}
-                            {/* <a onClick={handleContactModal('CCList')}>{c('Title').t`CC`}</a> */}
-                            {c('Label').t`CC`}
-                            {/* </Tooltip> */}
+                            <Tooltip title={c('Title').t`Add contacts`}>
+                                <InlineLinkButton onClick={handleContactModal('CCList')}>
+                                    {c('Title').t`CC`}
+                                </InlineLinkButton>
+                            </Tooltip>
                         </Label>
                         <AddressesInput
                             id={`cc-${uid}`}
@@ -112,10 +118,11 @@ const AddressesEditor = ({
                             className="composer-meta-label bold"
                             title={c('Label').t`Blind Carbon Copy`}
                         >
-                            {/* <Tooltip title={c('Title').t`Add contacts`}> */}
-                            {/* <a onClick={handleContactModal('BCCList')}>{c('Title').t`BCC`}</a> */}
-                            {c('Label').t`BCC`}
-                            {/* </Tooltip> */}
+                            <Tooltip title={c('Title').t`Add contacts`}>
+                                <InlineLinkButton onClick={handleContactModal('BCCList')}>
+                                    {c('Title').t`BCC`}
+                                </InlineLinkButton>
+                            </Tooltip>
                         </Label>
                         <AddressesInput
                             id={`bcc-${uid}`}

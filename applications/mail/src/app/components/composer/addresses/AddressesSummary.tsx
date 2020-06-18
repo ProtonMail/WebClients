@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 import { c } from 'ttag';
 import { Label, LinkButton, classnames } from 'react-components';
-import { STATUS_ICONS_FILLS } from '../../../models/crypto';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
+import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import { MessageExtended } from '../../../models/message';
-import { Recipient, recipientTypes } from '../../../models/address';
+import { recipientTypes } from '../../../models/address';
 import { getRecipients } from '../../../helpers/message/messages';
 import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 

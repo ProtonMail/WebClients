@@ -1,7 +1,7 @@
 import { parseURL } from 'proton-shared/lib/helpers/browser';
 import { sanitizeString, message as purifyMessage } from 'proton-shared/lib/sanitize';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
-import { Recipient } from '../models/address';
 import { Message, PartialMessageExtended } from '../models/message';
 
 export const isSubDomain = (hostname: string, domain: string) => {

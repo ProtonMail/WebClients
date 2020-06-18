@@ -1,4 +1,4 @@
-import { Recipient } from './address';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 export interface Conversation {
     ID?: string;

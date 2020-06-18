@@ -12,7 +12,9 @@ import {
     LabelsModel,
     AddressesModel,
     ConversationCountsModel,
-    MessageCountsModel
+    MessageCountsModel,
+    ContactsModel,
+    ContactEmailsModel
 } from 'proton-shared/lib/models';
 
 import locales from './locales';
@@ -47,7 +49,9 @@ const PrivateApp = ({ onLogout }: Props) => {
                 UserSettingsModel,
                 LabelsModel,
                 SubscriptionModel,
-                OrganizationModel
+                OrganizationModel,
+                ContactsModel,
+                ContactEmailsModel
             ]}
         >
             <MessageProvider>

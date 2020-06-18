@@ -1,4 +1,4 @@
-import { Recipient } from '../../models/address';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { Message } from '../../models/message';
 
 /**

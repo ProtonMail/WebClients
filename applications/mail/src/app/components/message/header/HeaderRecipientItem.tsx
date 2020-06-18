@@ -1,24 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, MouseEvent } from 'react';
 import { c } from 'ttag';
 import {
     usePopperAnchor,
     generateUID,
+    ContactModal,
+    ContactDetailsModal,
     Dropdown,
     DropdownMenu,
     DropdownMenuButton,
     Icon,
     useNotifications,
-    classnames
+    classnames,
+    useModals
 } from 'react-components';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
-import { RecipientOrGroup, Recipient } from '../../../models/address';
+import { RecipientOrGroup } from '../../../models/address';
 import { getRecipientLabel, getRecipientGroupLabel } from '../../../helpers/addresses';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { getContactsOfGroup } from '../../../helpers/contacts';
+import { normalizeEmail } from '../../../helpers/addresses';
 import { OnCompose } from '../../../containers/ComposerContainer';
 import { MESSAGE_ACTIONS } from '../../../constants';
 
@@ -44,6 +49,7 @@ const HeaderRecipientItem = ({
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { createNotification } = useNotifications();
+    const { createModal } = useModals();
 
     if (recipientOrGroup.group) {
         return (
@@ -57,6 +63,8 @@ const HeaderRecipientItem = ({
     }
 
     const recipient = recipientOrGroup.recipient as Recipient;
+    const contact = contacts?.find(({ Email }) => normalizeEmail(Email) === normalizeEmail(recipient.Address));
+    const { ContactID } = contact || {};
 
     const handleCompose = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
@@ -72,6 +80,24 @@ const HeaderRecipientItem = ({
         textToClipboard(recipient.Address);
         createNotification({ text: c('Info').t`Copied to clipboard` });
         close();
+    };
+
+    const handleClickContact = (e: MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+
+        if (ContactID) {
+            createModal(<ContactDetailsModal contactID={ContactID} />);
+            return;
+        }
+
+        createModal(
+            <ContactModal
+                properties={[
+                    { field: 'email', value: recipient.Address || '' },
+                    { field: 'fn', value: recipient.Name || '' }
+                ]}
+            />
+        );
     };
 
     const icon = globalIcon ? globalIcon : mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined;
@@ -105,6 +131,17 @@ const HeaderRecipientItem = ({
                         <Icon name="copy" className="mr0-5 mt0-25" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy address`}</span>
                     </DropdownMenuButton>
+                    {ContactID ? (
+                        <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleClickContact}>
+                            <Icon name="contact" className="mr0-5 mt0-25" />
+                            <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View contact details`}</span>
+                        </DropdownMenuButton>
+                    ) : (
+                        <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleClickContact}>
+                            <Icon name="contact-add" className="mr0-5 mt0-25" />
+                            <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Create new contact`}</span>
+                        </DropdownMenuButton>
+                    )}
                 </DropdownMenu>
             </Dropdown>
             <span className={classnames(['flex flex-nowrap', showAddress && 'onmobile-flex-column'])}>

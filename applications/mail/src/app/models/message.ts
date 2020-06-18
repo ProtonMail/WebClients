@@ -1,9 +1,9 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 import { Attachment } from './attachment';
 import { MESSAGE_ACTIONS, VERIFICATION_STATUS } from '../constants';
-import { Recipient } from './address';
 import { RequireSome } from './utils';
 
 export interface Message {

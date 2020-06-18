@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { Recipient, RecipientGroup, RecipientOrGroup } from '../models/address';
+import { RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Message } from '../models/message';
 import { getContactsOfGroup } from './contacts';
 import { Address, Key } from 'proton-shared/lib/interfaces';

@@ -1,10 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
-import { MapStatusIcons } from '../../../models/crypto';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
 import { Message } from '../../../models/message';
-import { Recipient } from '../../../models/address';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { MapStatusIcons } from '../../../models/crypto';
 import { recipientsToRecipientOrGroup } from '../../../helpers/addresses';
 import HeaderRecipientType from './HeaderRecipientType';
 import HeaderRecipientItem from './HeaderRecipientItem';

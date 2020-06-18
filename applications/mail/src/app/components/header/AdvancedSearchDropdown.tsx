@@ -29,8 +29,8 @@ import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
 import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 import { changeSearchParams } from 'proton-shared/lib/helpers/url';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
-import { Recipient } from '../../models/address';
 import { getHumanLabelID } from '../../helpers/labels';
 import AddressesInput from '../composer/addresses/AddressesInput';
 import { extractSearchParameters, keywordToString } from '../../helpers/mailboxUrl';

@@ -1,8 +1,8 @@
 import { range } from 'proton-shared/lib/helpers/array';
 import { Address } from 'proton-shared/lib/interfaces';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 import { findSender, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from './addresses';
-import { Recipient } from '../models/address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { Message } from '../models/message';
 

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useMemo, ChangeEvent, MutableRefObject, useRef, MouseEvent } from 'react';
 import { Input } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { ContactGroup, ContactEmail, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { MAJOR_DOMAINS } from 'proton-shared/lib/constants';
 
-import { ContactEmail, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
 import AddressesRecipientItem from './AddressesRecipientItem';
 import {
     inputToRecipient,
@@ -15,7 +15,7 @@ import {
 } from '../../../helpers/addresses';
 import AddressesAutocomplete from './AddressesAutocomplete';
 import AddressesGroupItem from './AddressesGroupItem';
-import { RecipientGroup, Recipient } from '../../../models/address';
+import { RecipientGroup } from '../../../models/address';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 
 interface Props {

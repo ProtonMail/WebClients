@@ -1,4 +1,7 @@
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
+
 import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
@@ -6,14 +9,13 @@ import { omit } from 'proton-shared/lib/helpers/object';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
+
 import { Alert, useGetEncryptionPreferences, useLoading, useModals } from 'react-components';
-import { c, msgid } from 'ttag';
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import getSendPreferences from '../helpers/message/getSendPreferences';
 import { getSendStatusIcon } from '../helpers/message/icon';
-import { Recipient } from '../models/address';
 
 import { MapSendInfo } from '../models/crypto';
 import { MessageExtended } from '../models/message';

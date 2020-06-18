@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import { classnames, Icon, Tooltip } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 import { recipientToInput, inputToRecipient } from '../../../helpers/addresses';
-import { Recipient } from '../../../models/address';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { useUpdateRecipientSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';

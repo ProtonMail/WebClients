@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
-import { classnames } from 'react-components';
+import { classnames, useContactEmails } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import ItemStar from '../../list/ItemStar';
@@ -37,6 +37,8 @@ const HeaderCollapsed = ({
     onExpand,
     onCompose
 }: Props) => {
+    const [contacts = []] = useContactEmails();
+
     const handleClick = (event: MouseEvent) => {
         if ((event.target as HTMLElement).closest('.stop-propagation')) {
             event.stopPropagation();
@@ -63,6 +65,7 @@ const HeaderCollapsed = ({
                     globalIcon={messageViewIcons?.globalIcon}
                     showAddress={false}
                     onCompose={onCompose}
+                    contacts={contacts}
                 />
                 <ItemExpiration element={message.data} className="ml0-5" />
                 <ItemAction element={message.data} className="ml0-5" />
