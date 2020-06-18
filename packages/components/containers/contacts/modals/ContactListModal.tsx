@@ -63,6 +63,7 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
         initialCheckedContactEmailsMap
     );
     const [checkedContactEmails, setCheckedContactEmails] = useState<ContactEmail[]>([]);
+    const totalChecked = checkedContactEmails.length;
 
     const loading = loadingContactEmails || loadingUserSettings || loadingContactGroups;
 
@@ -162,12 +163,8 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
             onSubmit={handleSubmit}
             submit={
                 contactEmails.length ? (
-                    <PrimaryButton loading={loading} type="submit" disabled={!checkedContactEmails.length}>
-                        {c('Action').ngettext(
-                            msgid`Insert contact`,
-                            `Insert ${checkedContactEmails.length} contacts`,
-                            checkedContactEmails.length | 1
-                        )}
+                    <PrimaryButton loading={loading} type="submit" disabled={!totalChecked}>
+                        {c('Action').ngettext(msgid`Insert contact`, `Insert ${totalChecked} contacts`, totalChecked)}
                     </PrimaryButton>
                 ) : null
             }
