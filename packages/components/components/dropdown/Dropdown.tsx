@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { classnames } from '../../helpers/component';
@@ -62,6 +62,9 @@ const Dropdown = ({
         }
     };
 
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [contentRect, setContentRect] = useState<DOMRect>();
+
     useEffect(() => {
         if (!isOpen) {
             return;
@@ -106,18 +109,29 @@ const Dropdown = ({
         className
     ]);
 
+    if (isClosed) {
+        return null;
+    }
+
     const varPosition = {
         '--top': position.top,
         '--left': position.left
     } as any;
 
-    if (isClosed) {
-        return null;
-    }
+    const varSize = contentRect
+        ? {
+              '--width': '' + contentRect.width,
+              '--height': '' + contentRect.height
+          }
+        : {};
 
     const handleAnimationEnd = ({ animationName }: React.AnimationEvent) => {
         if (animationName.includes('dropdownOut') && isClosing) {
             setIsClosed();
+            setContentRect(undefined);
+        }
+        if (animationName.includes('dropdownIn') && isOpen && contentRef.current && !contentRect) {
+            setContentRect(contentRef.current.getBoundingClientRect());
         }
     };
 
@@ -125,7 +139,7 @@ const Dropdown = ({
         <Portal>
             <div
                 ref={setPopperEl}
-                style={varPosition}
+                style={{ ...varPosition, ...varSize }}
                 role="dialog"
                 className={popperClassName}
                 onClick={handleClickContent}
@@ -137,6 +151,7 @@ const Dropdown = ({
                     <span className="sr-only">{c('Action').t`Close`}</span>
                 </button>
                 <div
+                    ref={contentRef}
                     className={classnames(['dropDown-content', noMaxSize && 'dropDown-content--noMaxSize'])}
                     {...contentProps}
                 >
