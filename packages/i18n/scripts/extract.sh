@@ -11,9 +11,13 @@ function main {
     #
     # We remove as much files a possible so it's faster
     getFileList() {
+         # can't use the iregex flag, it doesn't work on PopOS 20.04 (wtf) and on MacOS as the find utility is too old. -> can't even run find --version
         find ./i18n-js \
             -type f \
-            -iregex '.*\.\(js\|jsx\|ts\|tsx\)$' \
+            -o -name "*.js" \
+            -o -name "*.ts" \
+            -o -name "*.jsx" \
+            -o -name "*.tsx" \
             -not -path "*/pmcrypto/*" \
             -not -path "*/core-js/*" \
             -not -path "*/dist/openpgp.*" | grep -E '(webpack:\/src|react-components|proton-shared)'
