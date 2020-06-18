@@ -2,13 +2,15 @@
 
 .labelDropdown {
     .dropDown-content {
-        @include respond-to($breakpoint-small, 'max') {
-            display: flex;
-            flex-flow: column nowrap;
-        }
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
     }
 
     &-list-container {
+        flex: 1 1 auto;
+
         @include respond-to($breakpoint-small, 'min') {
             max-width: 20em;
             max-height: 12em;
