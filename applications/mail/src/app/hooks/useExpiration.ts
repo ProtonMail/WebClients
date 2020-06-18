@@ -63,8 +63,9 @@ export const useExpiration = ({ ExpirationTime }: Element): [boolean, string] =>
             setDelayMessage(c('Info').t`This message is expired!`);
             return;
         }
+        const formattedDelay = formatDelay(nowDate, expirationDate);
 
-        setDelayMessage(c('Info').t`This message will expire in ${formatDelay(nowDate, expirationDate)}`);
+        setDelayMessage(c('Info').t`This message will expire in ${formattedDelay}`);
     });
 
     useEffect(() => {

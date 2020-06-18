@@ -19,6 +19,22 @@ const useShowConfirmModal = () => {
     return useCallback(
         () =>
             new Promise((resolve, reject) => {
+                const lineBreak = (
+                    <Fragment key={1}>
+                        <br />
+                        <br />
+                    </Fragment>
+                );
+                const gnuPG = (
+                    <Href
+                        key={2}
+                        href="https://www.gnupg.org/"
+                        target="_blank"
+                        title={c('Title').t`GnuPG is a free implementation of OpenPGP`}
+                    >
+                        {c('Title').t`GPG`}
+                    </Href>
+                );
                 createModal(
                     <ConfirmModal
                         onConfirm={resolve}
@@ -28,23 +44,8 @@ const useShowConfirmModal = () => {
                     >
                         <Alert type="warning">
                             {c('Error').jt`
-                                The attachment will be downloaded but it will still be encrypted.
-                                ${(
-                                    <Fragment key={1}>
-                                        <br />
-                                        <br />
-                                    </Fragment>
-                                )}
-                                You can decrypt the file with a program such as ${(
-                                    <Href
-                                        key={2}
-                                        href="https://www.gnupg.org/"
-                                        target="_blank"
-                                        title={c('Title').t`GnuPG is a free implementation of OpenPGP`}
-                                    >
-                                        {c('Title').t`GPG`}
-                                    </Href>
-                                )}
+                                The attachment will be downloaded but it will still be encrypted.${lineBreak}
+                                You can decrypt the file with a program such as ${gnuPG}
                                 if you have the corresponding private key.
                             `}
                         </Alert>

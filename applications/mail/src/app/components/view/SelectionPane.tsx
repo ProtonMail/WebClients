@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Button, useLabels, useFolders } from 'react-components';
-import { c, ngettext, msgid } from 'ttag';
+import { c, msgid } from 'ttag';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { Location } from 'history';
 
@@ -43,9 +43,11 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const count = checkeds ? checkeds : total;
 
     const strongText = conversationMode ? (
-        <strong key="conversation">{ngettext(msgid`${count} conversation`, `${count} conversations`, count)}</strong>
+        <strong key="conversation">
+            {c('Info').ngettext(msgid`${count} conversation`, `${count} conversations`, count)}
+        </strong>
     ) : (
-        <strong key="email">{ngettext(msgid`${count} email`, `${count} emails`, count)}</strong>
+        <strong key="email">{c('Info').ngettext(msgid`${count} email`, `${count} emails`, count)}</strong>
     );
 
     const text = checkeds

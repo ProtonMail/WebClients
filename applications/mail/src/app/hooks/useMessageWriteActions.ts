@@ -59,7 +59,10 @@ export const useSaveDraft = () => {
             api,
             getUpdateStatus(messageCache, message.localID)
         );
-        updateMessageCache(messageCache, message.localID, { data: mergeSavedMessage(message.data, newMessage) });
+        updateMessageCache(messageCache, message.localID, {
+            ...messageKeys,
+            data: mergeSavedMessage(message.data, newMessage)
+        });
         await call();
     }, []);
 };

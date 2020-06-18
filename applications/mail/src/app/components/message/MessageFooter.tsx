@@ -36,7 +36,7 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
             await downloadAll(message as MessageExtendedWithData);
         } catch (error) {
             // Notification is handled by the hook
-            console.log('errro', error);
+            console.log('error', error);
         } finally {
             setShowLoader(false);
             setShowInstant(true);

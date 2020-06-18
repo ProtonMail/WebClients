@@ -16,7 +16,8 @@ const ItemExpiration = ({ element = {}, className }: Props) => {
 
     const tooltipMessage = useMemo(() => {
         const date = fromUnixTime(ExpirationTime || 0);
-        return c('Info').t`This message will expire ${formatFullDate(date)}`;
+        const formattedDate = formatFullDate(date);
+        return c('Info').t`This message will expire ${formattedDate}`;
     }, [ExpirationTime]);
 
     if (!ExpirationTime) {

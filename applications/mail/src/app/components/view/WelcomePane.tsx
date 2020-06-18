@@ -1,6 +1,6 @@
 import React from 'react';
 import { useUser, useModals, InlineLinkButton, AuthenticatedBugModal, Href } from 'react-components';
-import { c, ngettext, msgid } from 'ttag';
+import { c, msgid } from 'ttag';
 import { Location } from 'history';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
@@ -29,14 +29,15 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     const Unread = labelCount.Unread || 0;
     const unreadEmailsSvg = getLightOrDark(unreadEmailsSvgLight, unreadEmailsSvgDark);
+    const userName = capitalize(user.DisplayName);
 
     const unreadsLabel = conversationMode ? (
         <strong key="unreads-label">
-            {ngettext(msgid`${Unread} unread conversation`, `${Unread} unread conversations`, Unread)}
+            {c('Info').ngettext(msgid`${Unread} unread conversation`, `${Unread} unread conversations`, Unread)}
         </strong>
     ) : (
         <strong key="unreads-label">
-            {ngettext(msgid`${Unread} unread message`, `${Unread} unread messages`, Unread)}
+            {c('Info').ngettext(msgid`${Unread} unread message`, `${Unread} unread messages`, Unread)}
         </strong>
     );
 
@@ -49,9 +50,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     return (
         <div className="flex-item-fluid aligncenter p2 mw100">
-            <h1>
-                {user.DisplayName ? c('Title').t`Welcome, ${capitalize(user.DisplayName)}!` : c('Title').t`Welcome!`}
-            </h1>
+            <h1>{user.DisplayName ? c('Title').t`Welcome, ${userName}!` : c('Title').t`Welcome!`}</h1>
             {Unread ? <p>{c('Info').jt`You have ${unreadsLabel} in your inbox.`}</p> : null}
             {user.hasPaidMail ? (
                 <>

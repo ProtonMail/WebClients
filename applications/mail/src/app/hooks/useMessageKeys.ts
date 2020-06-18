@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { OpenPGPKey } from 'pmcrypto';
-import { useGetAddressKeys, useGetUserKeys } from 'react-components';
+import { useGetAddressKeys } from 'react-components';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 
 import { MessageExtendedWithData } from '../models/message';
@@ -14,25 +14,13 @@ type UseMessageKeys = () => (
  * Add user public and private keys to the MessageExtended if not already there
  */
 export const useMessageKeys: UseMessageKeys = () => {
-    const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
 
     return useCallback(
-        async (
-            {
-                data: message,
-                publicKeys: existingPublicKeys,
-                privateKeys: existingPrivateKeys
-            }: MessageExtendedWithData,
-            forceRefresh = false
-        ) => {
-            if (!forceRefresh && existingPublicKeys !== undefined && existingPrivateKeys !== undefined) {
-                return { publicKeys: existingPublicKeys, privateKeys: existingPrivateKeys };
-            }
-            const { publicKeys } = splitKeys(await getUserKeys());
-            const { privateKeys } = splitKeys(await getAddressKeys(message.AddressID || ''));
+        async (message: MessageExtendedWithData) => {
+            const { publicKeys, privateKeys } = splitKeys(await getAddressKeys(message.data.AddressID || ''));
             return { publicKeys, privateKeys };
         },
-        [getUserKeys, getAddressKeys]
+        [getAddressKeys]
     );
 };

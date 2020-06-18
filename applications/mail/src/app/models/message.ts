@@ -120,7 +120,7 @@ export interface MessageExtended {
     verificationErrors?: Error[];
 
     /**
-     * User public keys (used for encrypting drafts and attachments)
+     * Address public keys of the user (used for encrypting drafts and attachments)
      */
     publicKeys?: OpenPGPKey[];
 
