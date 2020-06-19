@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
 import { initUpload, UploadCallbacks, UploadControls } from './upload';
 import { TransferState, TransferProgresses, TransferMeta, Upload, UploadInfo } from '../../interfaces/transfer';
-import { useNotifications } from 'react-components';
 import { isTransferProgress, isTransferPending } from '../../utils/transfer';
 
 interface UploadProviderState {
@@ -28,7 +27,6 @@ interface UserProviderProps {
 export const UploadProvider = ({ children }: UserProviderProps) => {
     // Keeping ref in case we need to immediatelly get uploads without waiting for rerender
     const uploadsRef = useRef<Upload[]>([]);
-    const { createNotification } = useNotifications();
     const [uploads, setUploads] = useState<Upload[]>([]);
     const controls = useRef<{ [id: string]: UploadControls }>({});
     const progresses = useRef<TransferProgresses>({});
@@ -66,7 +64,8 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         setUploads(uploadsRef.current);
     };
 
-    const updateUploadState = (id: string, state: TransferState) => updateUploadByID(id, { state });
+    const updateUploadState = (id: string, state: TransferState, { error }: { error?: Error } = {}) =>
+        updateUploadByID(id, { state, error });
 
     useEffect(() => {
         const uploading = uploads.filter(isTransferProgress);
@@ -96,7 +95,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                 })
                 .catch((error) => {
                     console.error(`Failed to upload: ${error}`);
-                    updateUploadState(id, TransferState.Error);
+                    updateUploadState(id, TransferState.Error, { error });
                 });
         }
     }, [uploads]);
@@ -136,17 +135,10 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                         state: TransferState.Pending
                     });
                 })
-                .catch((err) => {
-                    updateUploadState(id, TransferState.Error);
+                .catch((error) => {
+                    updateUploadState(id, TransferState.Error, { error });
 
-                    if (err.name === 'ValidationError') {
-                        createNotification({
-                            text: err.message,
-                            type: 'error'
-                        });
-                    }
-
-                    reject(err);
+                    reject(error);
                 });
         });
 

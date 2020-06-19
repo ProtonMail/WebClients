@@ -46,11 +46,11 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     const [downloads, setDownloads] = useState<Download[]>([]);
     const [partialDownloads, setPartialDownloads] = useState<PartialDownload[]>([]);
 
-    const getUpdateDownloadStates = (ids: string[], nextState: TransferStateUpdater) => <
-        T extends PartialDownload | Download
-    >(
-        downloads: T[]
-    ) =>
+    const getUpdateDownloadStates = (
+        ids: string[],
+        nextState: TransferStateUpdater,
+        { error }: { error?: Error } = {}
+    ) => <T extends PartialDownload | Download>(downloads: T[]) =>
         downloads.map((download) => {
             const newState = typeof nextState === 'function' ? nextState(download) : nextState;
             return ids.includes(download.id) &&
@@ -59,19 +59,28 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                 ? {
                       ...download,
                       state: newState,
-                      resumeState: isTransferPaused(download) ? newState : download.state
+                      resumeState: isTransferPaused(download) ? newState : download.state,
+                      error
                   }
                 : download;
         });
 
-    const updateDownloadState = (id: string | string[], nextState: TransferStateUpdater) => {
+    const updateDownloadState = (
+        id: string | string[],
+        nextState: TransferStateUpdater,
+        info: { error?: Error } = {}
+    ) => {
         const ids = Array.isArray(id) ? id : [id];
-        setDownloads(getUpdateDownloadStates(ids, nextState));
+        setDownloads(getUpdateDownloadStates(ids, nextState, info));
     };
 
-    const updatePartialDownloadState = (id: string | string[], nextState: TransferStateUpdater) => {
+    const updatePartialDownloadState = (
+        id: string | string[],
+        nextState: TransferStateUpdater,
+        info: { error?: Error } = {}
+    ) => {
         const ids = Array.isArray(id) ? id : [id];
-        setPartialDownloads(getUpdateDownloadStates(ids, nextState));
+        setPartialDownloads(getUpdateDownloadStates(ids, nextState, info));
     };
 
     const getDownloadsProgresses = () => ({ ...progresses.current });
@@ -142,12 +151,12 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                     }
                     updateState(id, TransferState.Done);
                 })
-                .catch((err) => {
-                    if (err.name === 'TransferCancel' || err.name === 'AbortError') {
+                .catch((error: Error) => {
+                    if (error.name === 'TransferCancel' || error.name === 'AbortError') {
                         updateState(id, TransferState.Canceled);
                     } else {
-                        console.error(`Download ${id} failed: ${err}`);
-                        updateState(id, TransferState.Error);
+                        console.error(`Download ${id} failed: ${error}`);
+                        updateState(id, TransferState.Error, { error });
                     }
                 });
         }
@@ -292,7 +301,8 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                         meta,
                         partOf: groupId,
                         state: TransferState.Initializing,
-                        type: LinkType.FILE
+                        type: LinkType.FILE,
+                        startDate: new Date()
                     }))
                 ]);
             }

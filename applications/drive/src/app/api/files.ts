@@ -4,6 +4,7 @@ export const queryCreateFile = (shareId: string, data: CreateDriveFile) => {
     return {
         method: 'post',
         url: `drive/shares/${shareId}/files`,
+        silence: true,
         data
     };
 };
@@ -11,7 +12,8 @@ export const queryCreateFile = (shareId: string, data: CreateDriveFile) => {
 export const queryFileRevision = (shareId: string, linkId: string, revisionId: number) => {
     return {
         method: 'get',
-        url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}`
+        url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}`,
+        silence: true
     };
 };
 
@@ -55,6 +57,7 @@ export const queryUpdateFileRevision = (
     return {
         method: 'put',
         url: `drive/shares/${shareID}/files/${linkID}/revisions/${revisionID}`,
+        silence: true,
         data
     };
 };
