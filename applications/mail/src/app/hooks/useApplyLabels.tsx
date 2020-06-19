@@ -21,20 +21,6 @@ export const useApplyLabels = () => {
             const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
             const changesKeys = Object.keys(changes);
 
-            const handleUndo = async () => {
-                await Promise.all(
-                    changesKeys.map((LabelID) => {
-                        if (changes[LabelID]) {
-                            return api(unlabelAction({ LabelID, IDs: elementIDs }));
-                        } else {
-                            return api(labelAction({ LabelID, IDs: elementIDs }));
-                        }
-                    })
-                );
-
-                await call();
-            };
-
             await Promise.all(
                 changesKeys.map((LabelID) => {
                     if (changes[LabelID]) {
@@ -95,11 +81,7 @@ export const useApplyLabels = () => {
 
             if (!silent) {
                 createNotification({
-                    text: (
-                        <>
-                            {notificationText} <UndoButton onUndo={handleUndo} />
-                        </>
-                    ),
+                    text: notificationText,
                     expiration: EXPIRATION
                 });
             }
@@ -114,6 +96,8 @@ export const useMoveToFolder = () => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
+    const [labels = []] = useLabels();
+    const labelIDs = labels.map(({ ID }) => ID);
 
     const moveToFolder = useCallback(
         async (
@@ -125,7 +109,17 @@ export const useMoveToFolder = () => {
             silent = false
         ) => {
             const action = isMessage ? labelMessages : labelConversations;
-
+            const canUndo = isMessage
+                ? true
+                : ![
+                      ...labelIDs,
+                      MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                      MAILBOX_LABEL_IDS.DRAFTS,
+                      MAILBOX_LABEL_IDS.ALL_SENT,
+                      MAILBOX_LABEL_IDS.SENT,
+                      MAILBOX_LABEL_IDS.STARRED,
+                      MAILBOX_LABEL_IDS.ALL_MAIL
+                  ].includes(fromLabelID);
             const handleUndo = async () => {
                 await api(action({ LabelID: fromLabelID, IDs: elementIDs }));
                 await call();
@@ -150,7 +144,8 @@ export const useMoveToFolder = () => {
                 createNotification({
                     text: (
                         <>
-                            {notificationText} <UndoButton onUndo={handleUndo} />
+                            <span className="mr1">{notificationText}</span>
+                            {canUndo ? <UndoButton onUndo={handleUndo} /> : null}
                         </>
                     ),
                     expiration: EXPIRATION
