@@ -263,29 +263,29 @@ const HeaderExpanded = ({
                 <Group className="mb0-5">
                     <ButtonGroup
                         disabled={!messageLoaded}
-                        className="pm-button--for-icon pm-button--primary flex flex-items-center"
+                        className="pm-button--for-icon pm-button--primary flex flex-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                     >
-                        <Tooltip title={c('Title').t`Reply`} className="flex">
-                            <Icon name="reply" />
+                        <Tooltip title={c('Title').t`Reply`} className="flex increase-surface-click">
+                            <Icon name="reply" size={20} />
                         </Tooltip>
                     </ButtonGroup>
                     <ButtonGroup
                         disabled={!messageLoaded}
-                        className="pm-button--for-icon pm-button--primary flex flex-items-center"
+                        className="pm-button--for-icon pm-button--primary flex flex-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                     >
-                        <Tooltip title={c('Title').t`Reply all`} className="flex">
-                            <Icon name="reply-all" />
+                        <Tooltip title={c('Title').t`Reply all`} className="flex increase-surface-click">
+                            <Icon name="reply-all" size={20} />
                         </Tooltip>
                     </ButtonGroup>
                     <ButtonGroup
                         disabled={!messageLoaded}
-                        className=" pm-button--for-icon pm-button--primary flex flex-items-center"
+                        className=" pm-button--for-icon pm-button--primary flex flex-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                     >
-                        <Tooltip title={c('Title').t`Forward`} className="flex">
-                            <Icon name="forward" />
+                        <Tooltip title={c('Title').t`Forward`} className="flex increase-surface-click">
+                            <Icon name="forward" size={20} />
                         </Tooltip>
                     </ButtonGroup>
                 </Group>

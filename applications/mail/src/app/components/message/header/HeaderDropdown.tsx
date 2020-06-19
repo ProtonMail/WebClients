@@ -1,5 +1,5 @@
 import React, { useState, ReactNode } from 'react';
-import { generateUID, usePopperAnchor, DropdownButton, Dropdown, Tooltip } from 'react-components';
+import { generateUID, usePopperAnchor, DropdownButton, Dropdown, Tooltip, classnames } from 'react-components';
 
 interface LockableDropdownProps {
     onClose: () => void;
@@ -10,13 +10,23 @@ interface Props {
     dropDownClassName?: string;
     content?: ReactNode;
     title?: string;
+    className?: string;
     children: (props: LockableDropdownProps) => ReactNode;
     autoClose?: boolean;
     noMaxSize?: boolean;
     [rest: string]: any;
 }
 
-const HeaderDropdown = ({ title, content, children, autoClose, noMaxSize, dropDownClassName, ...rest }: Props) => {
+const HeaderDropdown = ({
+    title,
+    content,
+    children,
+    autoClose,
+    noMaxSize,
+    className,
+    dropDownClassName,
+    ...rest
+}: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const [lock, setLock] = useState(false);
 
@@ -24,8 +34,17 @@ const HeaderDropdown = ({ title, content, children, autoClose, noMaxSize, dropDo
 
     return (
         <>
-            <DropdownButton {...rest} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret={true}>
-                <Tooltip title={title}>{content}</Tooltip>
+            <DropdownButton
+                className={classnames(['relative', className])}
+                buttonRef={anchorRef}
+                isOpen={isOpen}
+                onClick={toggle}
+                hasCaret={true}
+                {...rest}
+            >
+                <Tooltip className="increase-surface-click" title={title}>
+                    {content}
+                </Tooltip>
             </DropdownButton>
             <Dropdown
                 id={uid}

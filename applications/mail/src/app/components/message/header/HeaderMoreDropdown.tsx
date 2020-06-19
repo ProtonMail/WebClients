@@ -127,8 +127,8 @@ const HeaderMoreDropdown = ({
         [];
     return (
         <Group className="mr1 mb0-5">
-            <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="pm-button--for-icon">
-                <Tooltip title={c('Title').t`Mark as unread`} className="flex">
+            <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="pm-button--for-icon relative">
+                <Tooltip title={c('Title').t`Mark as unread`} className="flex increase-surface-click">
                     <Icon name="unread" />
                 </Tooltip>
             </ButtonGroup>
@@ -136,9 +136,9 @@ const HeaderMoreDropdown = ({
                 <ButtonGroup
                     disabled={!messageLoaded}
                     onClick={handleMove(INBOX, TRASH)}
-                    className="pm-button--for-icon"
+                    className="pm-button--for-icon relative"
                 >
-                    <Tooltip title={c('Title').t`Move to inbox`} className="flex">
+                    <Tooltip title={c('Title').t`Move to inbox`} className="flex increase-surface-click">
                         <Icon name="inbox" />
                     </Tooltip>
                 </ButtonGroup>
@@ -146,9 +146,9 @@ const HeaderMoreDropdown = ({
                 <ButtonGroup
                     disabled={!messageLoaded}
                     onClick={handleMove(TRASH, fromFolderID)}
-                    className="pm-button--for-icon"
+                    className="pm-button--for-icon relative"
                 >
-                    <Tooltip title={c('Title').t`Move to trash`} className="flex">
+                    <Tooltip title={c('Title').t`Move to trash`} className="flex increase-surface-click">
                         <Icon name="trash" />
                     </Tooltip>
                 </ButtonGroup>
@@ -159,7 +159,8 @@ const HeaderMoreDropdown = ({
                 className="pm-button pm-button--for-icon pm-group-button"
                 autoClose={true}
                 title={c('Title').t`More`}
-                content=""
+                content={<Icon name="caret" className="caret-like" />}
+                hasCaret={false}
             >
                 {({ onClose }) => {
                     closeDropdown.current = onClose;
