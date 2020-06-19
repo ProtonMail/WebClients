@@ -32,6 +32,7 @@ import useQueuedFunction from '../util/useQueuedFunction';
 import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
 import usePreventLeave from '../util/usePreventLeave';
 import runInQueue from '../../utils/runInQueue';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
@@ -250,11 +251,11 @@ function useDrive() {
 
         const PageSize = FOLDER_PAGE_SIZE;
         const Page = Math.floor(listedChildren.length / PageSize);
-        const SortField = sortParams?.sortField;
-        const SortOrder = sortParams?.sortOrder;
+        const Sort = sortParams?.sortField;
+        const Desc = sortParams?.sortOrder === SORT_DIRECTION.DESC ? 1 : 0;
 
         const { Links } = await debouncedRequest<LinkChildrenResult>(
-            queryFolderChildren(shareId, linkId, { Page, PageSize, SortField, SortOrder })
+            queryFolderChildren(shareId, linkId, { Page, PageSize, Sort, Desc })
         );
         const { privateKey } = linkId ? await getLinkKeys(shareId, linkId) : await getShareKeys(shareId);
 
