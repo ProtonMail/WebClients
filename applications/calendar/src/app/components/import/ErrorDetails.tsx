@@ -7,7 +7,7 @@ import { MAX_UID_CHARS_DISPLAY } from '../../constants';
 
 const getComponentText = (component: string) => {
     if (component === '') {
-        return c('Error importing event').t`Bad format. Component can not be read.`;
+        return c('Error importing event').t`Bad format. Component cannot be read.`;
     }
     if (component === 'vcalendar') {
         return c('Error importing event').t`Calendar`;

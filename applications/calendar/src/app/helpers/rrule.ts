@@ -2,6 +2,7 @@ import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { getIsPropertyAllDay, getPropertyTzid } from 'proton-shared/lib/calendar/vcalHelper';
 import { toLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
+import { omit } from 'proton-shared/lib/helpers/object';
 import {
     VcalDaysKeys,
     VcalRruleProperty,
@@ -239,7 +240,7 @@ export const getHasConsistentRrule = (vevent: VcalVeventComponent) => {
     }
 
     // make sure DTSTART matches the pattern of the recurring series
-    const [first] = getOccurrences({ component: vevent, maxCount: 1 });
+    const [first] = getOccurrences({ component: omit(vevent, ['exdate']), maxCount: 1 });
     if (!first) {
         return false;
     }

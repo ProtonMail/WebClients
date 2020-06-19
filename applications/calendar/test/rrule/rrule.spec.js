@@ -337,4 +337,34 @@ describe('getHasConsistentRrule', () => {
         const expected = vevents.map(() => false);
         expect(vevents.map((vevent) => getHasConsistentRrule(vevent))).toEqual(expected);
     });
+
+    test('should exclude exdate when checking consistency', () => {
+        const vevent = {
+            dtstart: {
+                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+                parameters: {
+                    tzid: 'Europe/Paris',
+                },
+            },
+            dtend: {
+                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 35, seconds: 0, isUTC: false },
+                parameters: {
+                    tzid: 'Europe/Paris',
+                },
+            },
+            rrule: {
+                value: {
+                    freq: 'DAILY',
+                    until: { year: 2015, month: 8, day: 26, hours: 16, minutes: 29, seconds: 59, isUTC: true },
+                },
+            },
+            exdate: {
+                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+                parameters: {
+                    tzid: 'Europe/Paris',
+                },
+            },
+        };
+        expect(getHasConsistentRrule(vevent)).toEqual(true);
+    });
 });

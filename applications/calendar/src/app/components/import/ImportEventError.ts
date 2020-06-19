@@ -19,7 +19,6 @@ export enum IMPORT_EVENT_TYPE {
     VEVENT_DURATION,
     X_WR_TIMEZONE_UNSUPPORTED,
     TZID_UNSUPPORTED,
-    NEGATIVE_DURATION,
     RRULE_INCONSISTENT,
     RRULE_UNSUPPORTED,
     NOTIFICATION_OUT_OF_BOUNDS,
@@ -79,9 +78,6 @@ const getErrorMessage = (errorType: IMPORT_EVENT_TYPE, externalError?: Error) =>
     }
     if (errorType === IMPORT_EVENT_TYPE.TZID_UNSUPPORTED) {
         return c('Error importing event').t`Timezone not supported`;
-    }
-    if (errorType === IMPORT_EVENT_TYPE.NEGATIVE_DURATION) {
-        return c('Error importing event').t`Negative duration`;
     }
     if (errorType === IMPORT_EVENT_TYPE.RRULE_INCONSISTENT) {
         return c('Error importing event').t`Recurring rule inconsistent`;

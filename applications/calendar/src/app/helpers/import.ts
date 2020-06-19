@@ -1,3 +1,4 @@
+import { c } from 'ttag';
 import { parseWithErrors } from 'proton-shared/lib/calendar/vcal';
 import { getDateProperty, getDateTimeProperty, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import {
@@ -28,7 +29,6 @@ import {
     VcalVcalendar,
     VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { c } from 'ttag';
 
 import { IMPORT_EVENT_TYPE, ImportEventError } from '../components/import/ImportEventError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from '../components/import/ImportFileError';
@@ -287,7 +287,7 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             throw new ImportEventError(IMPORT_EVENT_TYPE.DTSTART_OUT_OF_BOUNDS, 'vevent', componentId);
         }
         if (dtend) {
-            validated.dtend = getSupportedDateOrDateTimeProperty({
+            const supportedDtend = getSupportedDateOrDateTimeProperty({
                 property: dtend,
                 component: 'vevent',
                 componentId,
@@ -295,17 +295,21 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
                 calendarTzid,
                 isRecurring,
             });
-            if (!getIsWellFormedDateOrDateTime(validated.dtend)) {
+            if (!getIsWellFormedDateOrDateTime(supportedDtend)) {
                 throw new ImportEventError(IMPORT_EVENT_TYPE.DTEND_MALFORMED, 'vevent', componentId);
             }
-            if (getIsDateOutOfBounds(validated.dtend)) {
+            if (getIsDateOutOfBounds(supportedDtend)) {
                 throw new ImportEventError(IMPORT_EVENT_TYPE.DTEND_OUT_OF_BOUNDS, 'vevent', componentId);
             }
             const startDateUTC = propertyToUTCDate(validated.dtstart);
-            const endDateUTC = propertyToUTCDate(validated.dtend);
-            const modifiedEndDateUTC = isAllDayEnd ? addDays(endDateUTC, -1) : endDateUTC;
-            if (+startDateUTC > +modifiedEndDateUTC) {
-                throw new ImportEventError(IMPORT_EVENT_TYPE.NEGATIVE_DURATION, 'vevent', componentId);
+            const endDateUTC = propertyToUTCDate(supportedDtend);
+            // allow a non-RFC-compliant all-day event with DTSTART = DTEND
+            const modifiedEndDateUTC =
+                !isAllDayEnd || +startDateUTC === +endDateUTC ? endDateUTC : addDays(endDateUTC, -1);
+            const duration = +modifiedEndDateUTC - +startDateUTC;
+
+            if (duration > 0) {
+                validated.dtend = supportedDtend;
             }
         } else if (duration) {
             throw new ImportEventError(IMPORT_EVENT_TYPE.VEVENT_DURATION, 'vevent', componentId);

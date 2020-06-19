@@ -1,6 +1,7 @@
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { omit } from 'proton-shared/lib/helpers/object';
 import { MAX_LENGTHS } from '../../src/app/constants';
 import { getSupportedEvent } from '../../src/app/helpers/import';
 
@@ -61,18 +62,73 @@ END:VEVENT`;
         );
     });
 
-    test('should catch events with negative duration', () => {
+    test('should accept (and re-format) events with negative duration', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
 DTSTART;TZID=America/New_York:20020312T083000
-DTEND;TZID=America/New_York:20010312T083000
+DTEND;TZID=America/New_York:20020312T082959
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Negative duration'
-        );
+        expect(getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 3, day: 12, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            location: { value: '1CP Conference Room 4350' },
+        });
+    });
+
+    test('should drop DTEND for part-day events with zero duration', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART;TZID=America/New_York:20020312T083000
+DTEND;TZID=America/New_York:20020312T083000
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 3, day: 12, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            location: { value: '1CP Conference Room 4350' },
+        });
+    });
+
+    test('should drop DTEND for all-day events with zero duration', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART;VALUE=DATE:20020312
+DTEND;VALUE=DATE:20020312
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 3, day: 12 },
+                parameters: { type: 'date' },
+            },
+            location: { value: '1CP Conference Room 4350' },
+        });
     });
 
     test('should catch events whose duration is specified through the DURATION field', () => {
@@ -141,10 +197,6 @@ END:VEVENT`;
             },
             dtstart: {
                 value: { year: 1999, month: 3, day: 12 },
-                parameters: { type: 'date' },
-            },
-            dtend: {
-                value: { year: 1999, month: 3, day: 13 },
                 parameters: { type: 'date' },
             },
             location: { value: '1CP Conference Room 4350' },
@@ -356,7 +408,7 @@ BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
 DTSTART;VALUE=DATE:20200518
-DTEND;VALUE=DATE:20200519
+DTEND;VALUE=DATE:20200520
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const tzid = 'Europe/Brussels';
@@ -396,7 +448,7 @@ END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
         expect(croppedUID.length === MAX_LENGTHS.UID);
         expect(getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toEqual({
-            ...event,
+            ...omit(event, ['dtend']),
             uid: { value: croppedUID },
             summary: { value: truncate(loremIpsum, MAX_LENGTHS.TITLE) },
             location: { value: truncate(loremIpsum, MAX_LENGTHS.LOCATION) },
