@@ -94,13 +94,13 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
         if (!activeCount) {
             if (doneUploadsCount && doneDownloadsCount) {
                 headingElements.push(
-                    c('Info').ngettext(msgid`"${doneCount}" Finished`, `${doneCount} Finished`, doneCount)
+                    c('Info').ngettext(msgid`${doneCount} Finished`, `${doneCount} Finished`, doneCount)
                 );
             } else {
                 if (doneUploadsCount) {
                     headingElements.push(
                         c('Info').ngettext(
-                            msgid`"${doneUploadsCount}" Uploaded`,
+                            msgid`${doneUploadsCount} Uploaded`,
                             `${doneUploadsCount} Uploaded`,
                             doneUploadsCount
                         )
@@ -109,7 +109,7 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
                 if (doneDownloadsCount) {
                     headingElements.push(
                         c('Info').ngettext(
-                            msgid`"${doneDownloadsCount}" Downloaded`,
+                            msgid`${doneDownloadsCount} Downloaded`,
                             `${doneDownloadsCount} Downloaded`,
                             doneDownloadsCount
                         )
@@ -122,7 +122,7 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
             const uploadProgress = calculateProgress(currentUploads);
             headingElements.push(
                 c('Info').ngettext(
-                    msgid`"${activeUploadsCount}" Uploading ${uploadProgress}%`,
+                    msgid`${activeUploadsCount} Uploading ${uploadProgress}%`,
                     `${activeUploadsCount} Uploading ${uploadProgress}%`,
                     activeUploadsCount
                 )
@@ -132,7 +132,7 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
             const downloadProgress = calculateProgress(currentDownloads);
             headingElements.push(
                 c('Info').ngettext(
-                    msgid`"${activeDownloadsCount}" Downloading ${downloadProgress}%`,
+                    msgid`${activeDownloadsCount} Downloading ${downloadProgress}%`,
                     `${activeDownloadsCount} Downloading ${downloadProgress}%`,
                     activeDownloadsCount
                 )
@@ -141,18 +141,18 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
 
         if (pausedCount) {
             headingElements.push(
-                c('Info').ngettext(msgid`"${pausedCount}" Paused`, `${pausedCount} Paused`, pausedCount)
+                c('Info').ngettext(msgid`${pausedCount} Paused`, `${pausedCount} Paused`, pausedCount)
             );
         }
 
         if (canceledCount) {
             headingElements.push(
-                c('Info').ngettext(msgid`"${canceledCount}" Canceled`, `${canceledCount} Canceled`, canceledCount)
+                c('Info').ngettext(msgid`${canceledCount} Canceled`, `${canceledCount} Canceled`, canceledCount)
             );
         }
 
         if (errorCount) {
-            headingElements.push(c('Info').ngettext(msgid`"${errorCount}" Failed`, `${errorCount} Failed`, errorCount));
+            headingElements.push(c('Info').ngettext(msgid`${errorCount} Failed`, `${errorCount} Failed`, errorCount));
         }
 
         return headingElements.join(', ');
