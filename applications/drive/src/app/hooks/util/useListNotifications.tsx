@@ -231,7 +231,7 @@ const useListNotifications = () => {
                 failedMovesCount
             ),
             mixed: c('Notification').ngettext(
-                msgid`"${failedMovesCount}" failed to be moved`,
+                msgid`"${firstItemName}" failed to be moved`,
                 `${failedMovesCount} items failed to be moved`,
                 failedMovesCount
             )
