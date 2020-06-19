@@ -69,7 +69,7 @@ export const getAllFieldLabels = () => ({
     n: c('Contact field label').t`Compact name`,
     nickname: c('Contact field label').t`Nickname`,
     email: c('Contact field label').t`Email`,
-    tel: c('Contact field label').t`Phone`,
+    tel: c('Contact field label').t`Phone number`,
     adr: c('Contact field label').t`Address`,
     photo: c('Contact field label').t`Photo`,
     org: c('Contact field label').t`Organization`,
