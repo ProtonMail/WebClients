@@ -11,6 +11,7 @@ import useModals from '../../containers/modals/useModals';
 import Icon from '../icon/Icon';
 import { OrderableHandle } from '../orderable';
 import DropdownActions from '../dropdown/DropdownActions';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 
 interface Props {
     property: ContactProperty;
@@ -20,6 +21,7 @@ interface Props {
 }
 
 const ContactModalRow = ({ property, onChange, onRemove, isOrderable = false }: Props) => {
+    const { isNarrow } = useActiveBreakpoint();
     const { createModal } = useModals();
     const { field, uid, value } = property;
     const type = clearType(getType(property.type));
@@ -73,9 +75,11 @@ const ContactModalRow = ({ property, onChange, onRemove, isOrderable = false }: 
                 </div>
             )}
             <div className="flex flex-nowrap flex-items-center onmobile-flex-column w95">
-                <span className="w30 contact-modal-select flex flex-nowrap flex-items-center mb1 onmobile-mb0-5 onmobile-flex-self-start">
-                    <ContactModalLabel field={field} type={type} uid={property.uid} onChange={onChange} />
-                </span>
+                {field && !(isNarrow && field === 'fn') && (
+                    <span className="w30 contact-modal-select flex flex-nowrap flex-items-center mb1 onmobile-mb0-5 onmobile-flex-self-start">
+                        <ContactModalLabel field={field} type={type} uid={property.uid} onChange={onChange} />
+                    </span>
+                )}
                 <div className="flex flex-nowrap flex-items-center flex-item-noshrink">
                     <span className="flex-item-fluid mb1">
                         <div className="pr1 w100 onmobile-pr0-5">
