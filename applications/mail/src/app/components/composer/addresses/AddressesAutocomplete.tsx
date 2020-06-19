@@ -39,7 +39,7 @@ const AddressesAutocomplete = ({
             inputRef.current as HTMLElement,
             {
                 container: () => containerRef.current as HTMLElement,
-                minChars: 0,
+                minChars: 1,
                 maxItems: Infinity,
                 autoFirst: true,
                 sort: false
@@ -105,12 +105,6 @@ const AddressesAutocomplete = ({
     };
 
     useEventListener(inputRef, 'awesomplete-selectcomplete', handleSelect);
-
-    useEventListener(inputRef, 'click', () => {
-        if (awesomplete) {
-            awesomplete.open();
-        }
-    });
 
     return (
         <div className="composer-addresses-autocomplete w100 flex-item-fluid relative" ref={containerRef}>
