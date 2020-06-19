@@ -192,7 +192,6 @@ const Composer = ({
         setModelMessage((modelMessage) => {
             const messageChanges = message instanceof Function ? message(modelMessage) : message;
             const newModelMessage = mergeMessages(modelMessage, messageChanges);
-            setModelMessage(newModelMessage);
             autoSave(newModelMessage);
             return newModelMessage;
         });
@@ -328,6 +327,7 @@ const Composer = ({
         >
             <ComposerTitleBar
                 message={modelMessage}
+                closing={closing}
                 minimized={minimized}
                 maximized={maximized}
                 toggleMinimized={toggleMinimized}

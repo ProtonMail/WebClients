@@ -1,13 +1,12 @@
 import React, { ReactNode, useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { useAddresses, useWindowSize, useNotifications } from 'react-components';
+import { useAddresses, useWindowSize, useNotifications, useHandler } from 'react-components';
 
 import Composer from '../components/composer/Composer';
 import { MESSAGE_ACTIONS } from '../constants';
 import { MessageExtended, PartialMessageExtended } from '../models/message';
 import { useDraft } from '../hooks/useDraft';
 import { useMessageCache } from './MessageProvider';
-import { useHandler } from '../hooks/useHandler';
 import { Breakpoints, WindowSize } from '../models/utils';
 import { MAX_ACTIVE_COMPOSER_MOBILE, MAX_ACTIVE_COMPOSER_DESKTOP } from '../helpers/composerPositioning';
 
@@ -74,11 +73,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
     useEffect(() => messageCache.subscribe(messageDeletionListener), [messageCache]);
 
-    if (loadingAddresses) {
-        return null;
-    }
-
-    const handleCompose = async (composeArgs: ComposeArgs) => {
+    const handleCompose = useHandler(async (composeArgs: ComposeArgs) => {
         if (messageIDs.length >= maxActiveComposer) {
             createNotification({
                 type: 'error',
@@ -109,11 +104,15 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
             setMessageIDs([...messageIDs, newMessageID]);
             setFocusedMessageID(newMessageID);
         }
-    };
+    });
 
     const handleFocus = (messageID: string) => () => {
         setFocusedMessageID(messageID);
     };
+
+    if (loadingAddresses) {
+        return null;
+    }
 
     return (
         <>

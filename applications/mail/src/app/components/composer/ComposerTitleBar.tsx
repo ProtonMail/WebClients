@@ -8,15 +8,17 @@ interface ButtonProps {
     iconName: string;
     className?: string;
     title?: string;
+    disabled?: boolean;
 }
 
-const TitleBarButton = ({ onClick, iconName, className = '', title }: ButtonProps) => {
+const TitleBarButton = ({ onClick, iconName, className = '', title, disabled = false }: ButtonProps) => {
     return (
         <Tooltip title={title} className="composer-title-bar-tooltip flex-item-noshrink flex">
             <button
                 type="button"
                 className={classnames(['composer-title-bar-button flex p0-5', className])}
                 onClick={onClick}
+                disabled={disabled}
             >
                 <Icon className="mauto" name={iconName} />
                 <span className="sr-only">{title}</span>
@@ -27,6 +29,7 @@ const TitleBarButton = ({ onClick, iconName, className = '', title }: ButtonProp
 
 interface Props {
     message: MessageExtended;
+    closing: boolean;
     minimized: boolean;
     maximized: boolean;
     toggleMinimized: () => void;
@@ -34,7 +37,15 @@ interface Props {
     onClose: () => void;
 }
 
-const ComposerTitleBar = ({ message, minimized, maximized, toggleMinimized, toggleMaximized, onClose }: Props) => {
+const ComposerTitleBar = ({
+    message,
+    closing,
+    minimized,
+    maximized,
+    toggleMinimized,
+    toggleMaximized,
+    onClose
+}: Props) => {
     const title = message.data?.Subject || c('Title').t`New message`;
 
     return (
@@ -52,7 +63,12 @@ const ComposerTitleBar = ({ message, minimized, maximized, toggleMinimized, togg
                 className="nomobile"
                 onClick={toggleMaximized}
             />
-            <TitleBarButton iconName="close" title={c('Action').t`Close composer`} onClick={onClose} />
+            <TitleBarButton
+                iconName="close"
+                title={c('Action').t`Close composer`}
+                onClick={onClose}
+                disabled={closing}
+            />
         </header>
     );
 };
