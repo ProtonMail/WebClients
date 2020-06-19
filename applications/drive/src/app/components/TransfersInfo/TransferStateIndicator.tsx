@@ -1,9 +1,10 @@
 import React from 'react';
 import { TransferState, Upload, Download } from '../../interfaces/transfer';
 import { TransferType } from './Transfer';
-import { Icon, classnames } from 'react-components';
+import { Icon, classnames, Tooltip } from 'react-components';
 import { c } from 'ttag';
 import { isTransferPaused, isTransferProgress, isTransferDone, isTransferError } from '../../utils/transfer';
+import { getErrorText } from 'react-components/containers/login/helper';
 
 interface Props {
     transfer: Upload | Download;
@@ -44,6 +45,8 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
         }
     }[transfer.state];
 
+    const errorText = transfer.error && getErrorText(transfer.error);
+
     return (
         <div
             className={classnames([
@@ -56,10 +59,19 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             title={isTransferProgress(transfer) ? progressTitle : statusInfo.text}
         >
             {statusInfo.icon && !isTransferProgress(transfer) && (
-                <Icon name={statusInfo.icon} className="flex-item-noshrink mr0-25 nodesktop notablet" />
+                <Tooltip title={errorText} originalPlacement="top">
+                    <Icon name={statusInfo.icon} className="flex-item-noshrink mr0-25 nodesktop notablet" />
+                </Tooltip>
             )}
 
-            <span className="nomobile">{statusInfo.text}</span>
+            <span className="nomobile flex flex-items-center">
+                {errorText && (
+                    <Tooltip title={errorText} originalPlacement="top" className="flex mr0-5">
+                        <Icon name="info" />
+                    </Tooltip>
+                )}
+                {statusInfo.text}
+            </span>
 
             <span className="sr-only" aria-atomic="true" aria-live="assertive">
                 {transfer.meta.filename} {isTransferProgress(transfer) ? progressTitle : statusInfo.text}

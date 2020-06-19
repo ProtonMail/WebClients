@@ -98,7 +98,8 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
                         await api({
                             ...queryFileBlock(URL),
                             timeout: DOWNLOAD_TIMEOUT,
-                            signal: abortController.signal
+                            signal: abortController.signal,
+                            silence: true
                         })
                     ) as ReadableStream<Uint8Array>;
 

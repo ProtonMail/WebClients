@@ -60,7 +60,7 @@ function useFiles() {
 
     const findAvailableName = queuedFunction(
         'findAvailableName',
-        async (shareId: string, parentLinkID: string, filename: string) => {
+        async (shareId: string, parentLinkID: string, filename: string, suppressErrors = false) => {
             const parentKeys = await getLinkKeys(shareId, parentLinkID);
 
             if (!('hashKey' in parentKeys)) {
@@ -100,7 +100,7 @@ function useFiles() {
 
                 const Hashes = hashesToCheck.map(({ hash }) => hash);
                 const { AvailableHashes } = await debouncedRequest<HashCheckResult>(
-                    queryCheckAvailableHashes(shareId, parentLinkID, { Hashes })
+                    queryCheckAvailableHashes(shareId, parentLinkID, { Hashes }, suppressErrors)
                 );
                 if (!AvailableHashes.length) {
                     return findAdjustedName(start + HASH_CHECK_AMOUNT);
