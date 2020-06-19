@@ -8,7 +8,7 @@ const OnboardingStepInfo = () => {
     return (
         <Alert>
             {c('Info')
-                .jt`${betaText} - the end to end encrypted and privacy focused cloud storage solution brought to you by Proton. Start storing your files securely today!`}
+                .jt`${betaText} - the end-to-end encrypted and privacy focused cloud storage solution brought to you by Proton. Start storing your files securely today!`}
         </Alert>
     );
 };
