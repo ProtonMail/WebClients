@@ -10,7 +10,7 @@ interface Props {
 
 const TopBanner = ({ children, className, onClose }: Props) => {
     return (
-        <div className={classnames(['aligncenter p0-5 relative', className])}>
+        <div className={classnames(['aligncenter p0-5 relative bold', className])}>
             {children}
             {onClose ? (
                 <button type="button" className="right" onClick={onClose}>
