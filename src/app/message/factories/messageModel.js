@@ -303,7 +303,7 @@ function messageModel(
                 // Sender can be empty
                 // if so, do not look up public key
                 if (!sender) {
-                    return Promise.resolve(null);
+                    return Promise.resolve([]);
                 }
 
                 return publicKeyStore.get([sender]).then(({ [sender]: list }) => list);
