@@ -27,6 +27,7 @@ const TopBanners = () => {
             .t`Pay invoice`}</Href>
     );
     const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
+    const spaceDisplayed = isNaN(spacePercentage) ? 0 : Math.round(spacePercentage);
 
     useEffect(() => {
         if (ignoreStorageLimit) {
@@ -44,19 +45,18 @@ const TopBanners = () => {
                 setBackOnline(false);
             }, 2000);
             return () => window.clearTimeout(timeout);
-
         }
     }, [onlineStatus]);
 
     return (
         <>
-            {!isNaN(spacePercentage) && spacePercentage >= 100 ? (
+            {spaceDisplayed >= 100 ? (
                 <TopBanner className="bg-global-warning">{c('Info')
                     .jt`You reached 100% of your storage capacity. You cannot send or receive new emails. Free up some space or add more storage space. ${upgradeLink}`}</TopBanner>
             ) : null}
-            {!ignoreStorageLimit && !isNaN(spacePercentage) && spacePercentage >= 90 && spacePercentage < 100 ? (
+            {!ignoreStorageLimit && spaceDisplayed >= 90 && spaceDisplayed < 100 ? (
                 <TopBanner className="bg-global-attention" onClose={() => setIgnoreStorageLimit(true)}>{c('Info')
-                    .jt`You reached 90% of your storage capacity. Free up some space or add more storage space. ${upgradeLink}`}</TopBanner>
+                    .jt`You reached ${spaceDisplayed}% of your storage capacity. Free up some space or add more storage space. ${upgradeLink}`}</TopBanner>
             ) : null}
             {user.isDelinquent && user.canPay ? (
                 <TopBanner className="bg-global-warning">{c('Info')
