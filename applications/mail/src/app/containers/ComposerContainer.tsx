@@ -1,6 +1,16 @@
 import React, { ReactNode, useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { useAddresses, useWindowSize, useNotifications, useHandler } from 'react-components';
+import { redirectTo } from 'proton-shared/lib/helpers/browser';
+import {
+    ConfirmModal,
+    Alert,
+    useAddresses,
+    useWindowSize,
+    useNotifications,
+    useHandler,
+    useUser,
+    useModals
+} from 'react-components';
 
 import Composer from '../components/composer/Composer';
 import { MESSAGE_ACTIONS } from '../constants';
@@ -45,7 +55,7 @@ interface Props {
 
 const ComposerContainer = ({ breakpoints, children }: Props) => {
     const [addresses, loadingAddresses] = useAddresses();
-
+    const [user] = useUser();
     const [messageIDs, setMessageIDs] = useState<string[]>([]);
     const [focusedMessageID, setFocusedMessageID] = useState<string>();
     const [width, height] = useWindowSize();
@@ -53,6 +63,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const { createNotification } = useNotifications();
     const createDraft = useDraft();
     const messageCache = useMessageCache();
+    const { createModal } = useModals();
 
     const maxActiveComposer = breakpoints.isNarrow ? MAX_ACTIVE_COMPOSER_MOBILE : MAX_ACTIVE_COMPOSER_DESKTOP;
 
@@ -74,6 +85,29 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     useEffect(() => messageCache.subscribe(messageDeletionListener), [messageCache]);
 
     const handleCompose = useHandler(async (composeArgs: ComposeArgs) => {
+        const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
+
+        if (!isNaN(spacePercentage) && spacePercentage >= 100) {
+            createModal(
+                <ConfirmModal
+                    title={c('Title').t`Storage capacity warning`}
+                    confirm={c('Action').t`Upgrade`}
+                    cancel={c('Action').t`Close`}
+                    onConfirm={() => {
+                        // TODO change link once we have ProtonAccount
+                        redirectTo('/settings/subscription');
+                    }}
+                >
+                    <Alert
+                        learnMore="https://protonmail.com/support/knowledge-base/increase-my-storage-space/"
+                        type="warning"
+                    >{c('Info')
+                        .t`You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.`}</Alert>
+                </ConfirmModal>
+            );
+            return;
+        }
+
         if (messageIDs.length >= maxActiveComposer) {
             createNotification({
                 type: 'error',
