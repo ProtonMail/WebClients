@@ -122,7 +122,7 @@ function useFiles() {
         file: File,
         noNameCheck = false
     ) => {
-        const setupPromise = (async () => {
+        const setupPromise = queuedFunction(`upload_setup:${file.name.toLowerCase()}`, async () => {
             const error = validateLinkName(file.name);
 
             if (error) {
