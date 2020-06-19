@@ -55,6 +55,10 @@
   &.p0 {
     padding: 0;
   }
+
+  &[aria-expanded="true"] .caret-like {
+	@extend .rotateX-180;
+  }
 }
 
 
