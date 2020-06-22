@@ -14,6 +14,7 @@ function manageUser(
     gettextCatalog,
     notification,
     decryptKeys,
+    activateKeys,
     translator
 ) {
     const { dispatcher, on } = dispatchers(['organizationChange', 'updateUser']);
@@ -141,9 +142,10 @@ function manageUser(
                 ? await decryptPrivateKey(organizationPrivateKey, mailboxPassword)
                 : undefined;
 
+            const addresses = addressesModel.get();
             const { dirtyAddresses, keys } = await decryptKeys({
                 user: User,
-                addresses: addressesModel.get(),
+                addresses,
                 organizationKey,
                 mailboxPassword,
                 isSubUser
@@ -161,6 +163,9 @@ function manageUser(
             }
 
             keysModel.storeKeys(keys);
+
+            await activateKeys(addresses, mailboxPassword);
+
             mergeUser(User, keys, dirtyAddresses);
         } catch (e) {
             e && $exceptionHandler(e);

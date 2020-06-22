@@ -1,4 +1,4 @@
-import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
+import { decryptPrivateKey } from 'pmcrypto';
 
 import { MAIN_KEY } from '../../constants';
 import { decryptAddressKeyToken, getKeyInfo } from '../../../helpers/key';
@@ -14,27 +14,6 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog, tr
             );
         }
     }));
-
-    /**
-     * Activate newly-provisioned member key
-     * @param  {Object} options.key                    the key object
-     * @param  {Object} options.pkg                    decrypted private key
-     * @param  {String} options.mailboxPassword        the mailbox password
-     * @param  {Object} options.address
-     * @return {Promise<Object>}
-     */
-    const activateKey = async ({ key, pkg, mailboxPassword, address }) => {
-        const encryptedPrivateKey = await encryptPrivateKey(pkg, mailboxPassword);
-        const SignedKeyList = await keysModel.signedKeyList(address.ID, {
-            mode: 'create',
-            decryptedPrivateKey: pkg,
-            encryptedPrivateKey
-        });
-
-        await Key.activate(key.ID, { PrivateKey: encryptedPrivateKey, SignedKeyList });
-
-        return pkg;
-    };
 
     /**
      * Add additional parameters to keys before storing them
@@ -55,13 +34,15 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog, tr
      * @param  {int} index                     index of key for address (0 = primary key)
      * @return {Object}
      */
-    const skipKey = ({ key, address, index }) => {
+    const skipKey = ({ key, address, index, ignore = false }) => {
         key.decrypted = false; // This key is not decrypted
         return getKeyInfo(key).then((key) => {
             // If the primary (first) key for address does not decrypt, display error.
             if (index === 0) {
                 address.disabled = true; // This address cannot be used
-                notification.error(I18N.errorPrimaryKey(address));
+                if (!ignore) {
+                    notification.error(I18N.errorPrimaryKey(address));
+                }
             }
             return { address, key, pkg: null };
         });
@@ -126,13 +107,7 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog, tr
                                 .then((pkg) => formatKey({ key, pkg, address }));
                         }
                         if (Activation) {
-                            const signingKey = primaryKeys.length
-                                ? primaryKeys[0].pkg
-                                : keysModel.getPrivateKeys(MAIN_KEY)[0];
-                            return setupKeys
-                                .decryptMemberKey(key, signingKey)
-                                .then((pkg) => activateKey({ key, pkg, mailboxPassword, address }))
-                                .then((pkg) => formatKey({ key, pkg, address }));
+                            return skipKey({ key, address, index, ignore: true });
                         }
                         return decryptPrivateKey(PrivateKey, mailboxPassword).then(
                             (pkg) => formatKey({ key, pkg, address }),

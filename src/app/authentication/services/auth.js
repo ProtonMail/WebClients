@@ -21,7 +21,8 @@ function authentication(
     AppModel,
     tempStorage,
     upgradeKeys,
-    decryptKeys
+    decryptKeys,
+    activateKeys
 ) {
     const { dispatcher } = dispatchers(['setUser']);
 
@@ -61,6 +62,8 @@ function authentication(
         });
 
         await keysModel.storeKeys(keys);
+
+        await activateKeys(addresses, mailboxPassword);
 
         return user;
     };

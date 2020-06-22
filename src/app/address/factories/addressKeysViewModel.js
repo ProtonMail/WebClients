@@ -72,9 +72,9 @@ function addressKeysViewModel(keysModel) {
                 bitSize,
                 publicKey: keyObject.toPublic().armor(),
                 keys: Keys.map((key) => ({
-                    decrypted: fingerprints.some((fingerprint) => fingerprint === key.fingerprint),
+                    ...key,
                     algType: describe(key),
-                    ...key
+                    decrypted: fingerprints.some((fingerprint) => fingerprint === key.fingerprint)
                 }))
             };
 
