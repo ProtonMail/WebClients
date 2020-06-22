@@ -12,10 +12,9 @@ import { DriveFolder } from '../DriveFolderProvider';
 interface Props {
     activeFolder: DriveFolder;
     disabled?: boolean;
-    className?: string;
 }
 
-const MoveToTrashButton = ({ activeFolder, disabled, className }: Props) => {
+const MoveToTrashButton = ({ activeFolder, disabled }: Props) => {
     const { events } = useDrive();
     const { trashLinks, restoreLinks } = useTrash();
     const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
@@ -54,7 +53,6 @@ const MoveToTrashButton = ({ activeFolder, disabled, className }: Props) => {
     return (
         <ToolbarButton
             disabled={disabled || moveToTrashLoading}
-            className={className}
             title={c('Action').t`Move to Trash`}
             icon="trash"
             onClick={() => withMoveToTrashLoading(moveToTrash())}

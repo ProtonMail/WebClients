@@ -9,11 +9,10 @@ import { LinkType } from '../../../interfaces/link';
 interface Props {
     shareId: string;
     disabled?: boolean;
-    className?: string;
     openLink: (shareId: string, linkId: string, type: LinkType) => void;
 }
 
-const PreviewButton = ({ shareId, disabled, className, openLink }: Props) => {
+const PreviewButton = ({ shareId, disabled, openLink }: Props) => {
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
 
@@ -29,7 +28,6 @@ const PreviewButton = ({ shareId, disabled, className, openLink }: Props) => {
     return (
         <ToolbarButton
             disabled={disabled}
-            className={className}
             title={c('Action').t`Preview`}
             icon="read"
             onClick={handlePreview}

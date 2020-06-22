@@ -16,11 +16,7 @@ import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { useDriveContent } from '../DriveContentProvider';
 import { SortKeys } from '../../../interfaces/link';
 
-interface Props {
-    className?: string;
-}
-
-const SortDropdown = ({ className }: Props) => {
+const SortDropdown = () => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { sortParams, setSorting } = useDriveContent();
@@ -85,7 +81,6 @@ const SortDropdown = ({ className }: Props) => {
     return (
         <>
             <ToolbarButton
-                className={className}
                 aria-describedby={uid}
                 ref={anchorRef}
                 aria-expanded={isOpen}

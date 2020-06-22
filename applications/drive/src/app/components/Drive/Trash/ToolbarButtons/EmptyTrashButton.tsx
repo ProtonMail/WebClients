@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { classnames, ToolbarButton, useNotifications, useEventManager } from 'react-components';
+import { ToolbarButton, useNotifications, useEventManager } from 'react-components';
 
 import useDrive from '../../../../hooks/drive/useDrive';
 import useTrash from '../../../../hooks/drive/useTrash';
@@ -10,10 +10,9 @@ import useConfirm from '../../../../hooks/util/useConfirm';
 interface Props {
     shareId: string;
     disabled?: boolean;
-    className?: string;
 }
 
-const EmptyTrashButton = ({ shareId, disabled, className }: Props) => {
+const EmptyTrashButton = ({ shareId, disabled }: Props) => {
     const { call } = useEventManager();
     const { events } = useDrive();
     const { emptyTrash } = useTrash();
@@ -37,7 +36,6 @@ const EmptyTrashButton = ({ shareId, disabled, className }: Props) => {
 
     return (
         <ToolbarButton
-            className={classnames(['mlauto', className])}
             disabled={disabled}
             title={c('Action').t`Empty Trash`}
             onClick={handleEmptyTrashClick}
