@@ -83,7 +83,9 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
             <ToolbarSeparator />
 
             {renderSelectionActions()}
-            <SortDropdown className="mlauto" />
+            <span className="mlauto flex">
+                <SortDropdown />
+            </span>
         </Toolbar>
     );
 };

@@ -13,10 +13,9 @@ import usePreventLeave from '../../../hooks/util/usePreventLeave';
 interface Props {
     shareId: string;
     disabled?: boolean;
-    className?: string;
 }
 
-const DownloadButton = ({ shareId, disabled, className }: Props) => {
+const DownloadButton = ({ shareId, disabled }: Props) => {
     const { startFileTransfer, startFolderTransfer } = useFiles();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
@@ -51,10 +50,10 @@ const DownloadButton = ({ shareId, disabled, className }: Props) => {
     return (
         <ToolbarButton
             disabled={disabled}
-            className={className}
             title={c('Action').t`Download`}
             icon="download"
             onClick={handleDownloadClick}
+            data-testid="toolbar-download"
         />
     );
 };

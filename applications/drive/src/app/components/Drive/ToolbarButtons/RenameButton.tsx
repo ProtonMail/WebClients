@@ -10,10 +10,9 @@ import useDrive from '../../../hooks/drive/useDrive';
 interface Props {
     shareId: string;
     disabled?: boolean;
-    className?: string;
 }
 
-const RenameButton = ({ shareId, disabled, className }: Props) => {
+const RenameButton = ({ shareId, disabled }: Props) => {
     const { createModal } = useModals();
     const { renameLink, events } = useDrive();
     const { fileBrowserControls } = useDriveContent();
@@ -39,10 +38,10 @@ const RenameButton = ({ shareId, disabled, className }: Props) => {
     return (
         <ToolbarButton
             disabled={disabled}
-            className={className}
             title={c('Action').t`Rename`}
             icon="file-edit"
             onClick={handleRename}
+            data-testid="toolbar-rename"
         />
     );
 };

@@ -11,10 +11,9 @@ import { DriveFolder } from '../DriveFolderProvider';
 interface Props {
     activeFolder: DriveFolder;
     disabled?: boolean;
-    className?: string;
 }
 
-const DetailsButton = ({ activeFolder, disabled, className }: Props) => {
+const DetailsButton = ({ activeFolder, disabled }: Props) => {
     const { createModal } = useModals();
     const { getLinkMeta } = useDrive();
     const { fileBrowserControls } = useDriveContent();
@@ -31,10 +30,10 @@ const DetailsButton = ({ activeFolder, disabled, className }: Props) => {
     return (
         <ToolbarButton
             disabled={disabled}
-            className={className}
             title={c('Action').t`Details`}
             icon="info"
             onClick={handleDetailsClick}
+            data-testid="toolbar-details"
         />
     );
 };
