@@ -62,7 +62,12 @@ const UploadFolderButton = ({ activeFolder }: Props) => {
     return (
         <>
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
-            <ToolbarButton icon="folder-upload" title={c('Action').t`New Folder`} onClick={handleUploadFolder} />
+            <ToolbarButton
+                data-testid="toolbar-upload-folder"
+                icon="folder-upload"
+                title={c('Action').t`Upload Folder`}
+                onClick={handleUploadFolder}
+            />
         </>
     );
 };

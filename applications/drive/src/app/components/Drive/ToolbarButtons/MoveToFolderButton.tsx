@@ -17,7 +17,7 @@ interface Props {
     className?: string;
 }
 
-const MoveToFolderButton = ({ activeFolder, disabled, className }: Props) => {
+const MoveToFolderButton = ({ activeFolder, disabled }: Props) => {
     const { createModal } = useModals();
     const { createMoveLinksNotifications } = useListNotifications();
     const { createNewFolder, getShareMeta, getLinkMeta, getFoldersOnlyMetas, moveLinks, events } = useDrive();
@@ -71,10 +71,10 @@ const MoveToFolderButton = ({ activeFolder, disabled, className }: Props) => {
     return (
         <ToolbarButton
             disabled={disabled}
-            className={className}
             title={c('Action').t`Move to Folder`}
             icon="arrow-cross"
             onClick={() => moveToFolder()}
+            data-testid="toolbar-move"
         />
     );
 };

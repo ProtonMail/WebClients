@@ -10,10 +10,9 @@ import { DriveFolder } from '../DriveFolderProvider';
 interface Props {
     activeFolder: DriveFolder;
     disabled?: boolean;
-    className?: string;
 }
 
-const CreateNewFolderButton = ({ activeFolder, disabled, className }: Props) => {
+const CreateNewFolderButton = ({ activeFolder, disabled }: Props) => {
     const { createModal } = useModals();
     const { createNewFolder, events } = useDrive();
 
@@ -33,10 +32,10 @@ const CreateNewFolderButton = ({ activeFolder, disabled, className }: Props) => 
     return (
         <ToolbarButton
             disabled={disabled}
-            className={className}
             icon="folder-new"
             title={c('Action').t`New Folder`}
             onClick={handleCreateFolder}
+            data-testid="toolbar-new-folder"
         />
     );
 };
