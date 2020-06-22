@@ -58,6 +58,7 @@ const MoveToTrashButton = ({ activeFolder, disabled, className }: Props) => {
             title={c('Action').t`Move to Trash`}
             icon="trash"
             onClick={() => withMoveToTrashLoading(moveToTrash())}
+            data-testid="toolbar-trash"
         />
     );
 };

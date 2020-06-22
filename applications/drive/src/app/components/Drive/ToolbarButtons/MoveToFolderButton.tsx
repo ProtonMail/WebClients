@@ -75,6 +75,7 @@ const MoveToFolderButton = ({ activeFolder, disabled, className }: Props) => {
             title={c('Action').t`Move to Folder`}
             icon="arrow-cross"
             onClick={() => moveToFolder()}
+            data-testid="toolbar-move"
         />
     );
 };

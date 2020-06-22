@@ -55,6 +55,7 @@ const DeletePermanentlyButton = ({ shareId, disabled, className }: Props) => {
             title={c('Action').t`Delete permanently`}
             icon="trash"
             onClick={handleDeleteClick}
+            data-testid="toolbar-delete"
         />
     );
 };

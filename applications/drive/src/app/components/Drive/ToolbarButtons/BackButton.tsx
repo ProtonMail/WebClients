@@ -25,6 +25,7 @@ const BackButton = ({ shareId, parentLinkId, disabled, className, openLink }: Pr
             title={c('Action').t`Back`}
             onClick={handleBackClick}
             icon="arrow-left"
+            data-testid="toolbar-back"
         />
     );
 };

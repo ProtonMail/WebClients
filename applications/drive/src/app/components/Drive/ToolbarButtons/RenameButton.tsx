@@ -43,6 +43,7 @@ const RenameButton = ({ shareId, disabled, className }: Props) => {
             title={c('Action').t`Rename`}
             icon="file-edit"
             onClick={handleRename}
+            data-testid="toolbar-rename"
         />
     );
 };

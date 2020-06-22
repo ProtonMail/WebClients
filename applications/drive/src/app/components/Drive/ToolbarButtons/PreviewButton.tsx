@@ -33,6 +33,7 @@ const PreviewButton = ({ shareId, disabled, className, openLink }: Props) => {
             title={c('Action').t`Preview`}
             icon="read"
             onClick={handlePreview}
+            data-testid="toolbar-preview"
         />
     );
 };

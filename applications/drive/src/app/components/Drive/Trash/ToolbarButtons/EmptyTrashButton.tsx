@@ -42,6 +42,7 @@ const EmptyTrashButton = ({ shareId, disabled, className }: Props) => {
             title={c('Action').t`Empty Trash`}
             onClick={handleEmptyTrashClick}
             icon="delete"
+            data-testid="toolbar-empty-trash"
         />
     );
 };

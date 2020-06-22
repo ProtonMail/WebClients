@@ -91,6 +91,7 @@ const SortDropdown = ({ className }: Props) => {
                 aria-expanded={isOpen}
                 onClick={toggle}
                 icon={toolbarButtonIcon}
+                data-testid="toolbar-sort"
             >
                 <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" />
             </ToolbarButton>

@@ -55,6 +55,7 @@ const DownloadButton = ({ shareId, disabled, className }: Props) => {
             title={c('Action').t`Download`}
             icon="download"
             onClick={handleDownloadClick}
+            data-testid="toolbar-download"
         />
     );
 };
