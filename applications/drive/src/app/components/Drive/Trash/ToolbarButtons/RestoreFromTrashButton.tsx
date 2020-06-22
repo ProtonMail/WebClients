@@ -11,10 +11,9 @@ import useListNotifications from '../../../../hooks/util/useListNotifications';
 interface Props {
     shareId: string;
     disabled?: boolean;
-    className?: string;
 }
 
-const RestoreFromTrashButton = ({ shareId, disabled, className }: Props) => {
+const RestoreFromTrashButton = ({ shareId, disabled }: Props) => {
     const { events } = useDrive();
     const { restoreLinks } = useTrash();
     const [restoreLoading, withRestoreLoading] = useLoading();
@@ -40,7 +39,6 @@ const RestoreFromTrashButton = ({ shareId, disabled, className }: Props) => {
     return (
         <ToolbarButton
             disabled={disabled || restoreLoading}
-            className={className}
             title={c('Action').t`Restore from Trash`}
             icon="repeat"
             onClick={() => withRestoreLoading(restoreFromTrash())}

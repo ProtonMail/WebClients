@@ -18,14 +18,12 @@ const TrashToolbar = ({ shareId }: Props) => {
 
     return (
         <Toolbar>
-            {
-                <>
-                    <RestoreFromTrashButton shareId={shareId} disabled={!selectedItems.length} />
-                    <ToolbarSeparator />
-                    <DeletePermanentlyButton shareId={shareId} disabled={!selectedItems.length} />
-                </>
-            }
-            {<EmptyTrashButton shareId={shareId} disabled={!trashItems.length} />}
+            <RestoreFromTrashButton shareId={shareId} disabled={!selectedItems.length} />
+            <ToolbarSeparator />
+            <DeletePermanentlyButton shareId={shareId} disabled={!selectedItems.length} />
+            <span className="mlauto flex">
+                <EmptyTrashButton shareId={shareId} disabled={!trashItems.length} />
+            </span>
         </Toolbar>
     );
 };
