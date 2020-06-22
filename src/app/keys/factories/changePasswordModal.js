@@ -28,12 +28,16 @@ function changePasswordModal(
             self.confirmPassword = '';
             self.submit = () => {
                 const next = phase === 1;
+                eventManager.stop();
                 const promise = promises[type]()
                     .then(() => (next ? Promise.resolve() : User.lock()))
                     .then(() => eventManager.call())
                     .then(() => {
                         notification.success(gettextCatalog.getString('Password updated', null, 'Success'));
                         params.close(next);
+                    })
+                    .finally(() => {
+                        eventManager.start();
                     });
                 networkActivityTracker.track(promise);
             };
