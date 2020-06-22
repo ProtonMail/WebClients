@@ -2,7 +2,9 @@ import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { Checkbox, FormModal, generateUID, Label, classnames, PrimaryButton } from 'react-components';
 
+import { noop } from 'proton-shared/lib/helpers/function';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+
 import { contactToInput } from '../../../helpers/addresses';
 import { RecipientGroup } from '../../../models/address';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
@@ -15,7 +17,7 @@ interface Props {
     contacts: ContactEmail[];
     messageSendInfo?: MessageSendInfo;
     mapLoading?: MapLoading;
-    onClose: () => void;
+    onClose?: () => void;
     onSubmit: (recipientGroup: RecipientGroup) => void;
 }
 
@@ -25,7 +27,7 @@ const AddressesGroupModal = ({
     messageSendInfo,
     mapLoading,
     onSubmit,
-    onClose,
+    onClose = noop,
     ...rest
 }: Props) => {
     const [uid] = useState<string>(generateUID('addresses-group-modal'));

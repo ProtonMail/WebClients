@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { Icon, useModals } from 'react-components';
 
@@ -18,35 +18,27 @@ interface Props {
 }
 
 const AddressesGroupItem = ({ recipientGroup, contacts, messageSendInfo, onChange, onRemove }: Props) => {
-    const { createModal, getModal, hideModal, removeModal } = useModals();
-    const [modalID, setModalID] = useState<any>();
+    const { createModal } = useModals();
 
     const contactsInGroup = getContactsOfGroup(contacts, recipientGroup?.group?.ID);
     const label = getRecipientGroupLabel(recipientGroup, contactsInGroup.length);
 
-    const handleGroupModal = () => {
-        setModalID(createModal());
-    };
-
     const { mapLoading, handleRemove } = useUpdateGroupSendInfo(messageSendInfo, contactsInGroup, onRemove);
+
+    const handleGroupModal = () => {
+        createModal(
+            <AddressesGroupModal
+                recipientGroup={recipientGroup}
+                contacts={contactsInGroup}
+                messageSendInfo={messageSendInfo}
+                mapLoading={mapLoading}
+                onSubmit={onChange}
+            />
+        );
+    };
 
     return (
         <>
-            {modalID && (
-                <AddressesGroupModal
-                    recipientGroup={recipientGroup}
-                    contacts={contactsInGroup}
-                    messageSendInfo={messageSendInfo}
-                    mapLoading={mapLoading}
-                    onSubmit={onChange}
-                    onClose={() => hideModal(modalID)}
-                    onExit={() => {
-                        removeModal(modalID);
-                        setModalID(null);
-                    }}
-                    {...getModal(modalID)}
-                />
-            )}
             <div className="composer-addresses-item mt0-25 mb0-25 mr0-5 bordered-container flex flex-nowrap flex-row mw100 stop-propagation">
                 <span className="inline-flex composer-addresses-item-icon pl0-5 pr0-5 no-pointer-events-children h100">
                     <Icon name="contacts-groups" size={12} color={recipientGroup?.group?.Color} className="mauto" />
