@@ -44,6 +44,7 @@ const RestoreFromTrashButton = ({ shareId, disabled, className }: Props) => {
             title={c('Action').t`Restore from Trash`}
             icon="repeat"
             onClick={() => withRestoreLoading(restoreFromTrash())}
+            data-testid="toolbar-restore"
         />
     );
 };

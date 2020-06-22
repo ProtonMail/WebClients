@@ -35,6 +35,7 @@ const DetailsButton = ({ activeFolder, disabled, className }: Props) => {
             title={c('Action').t`Details`}
             icon="info"
             onClick={handleDetailsClick}
+            data-testid="toolbar-details"
         />
     );
 };

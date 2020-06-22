@@ -37,6 +37,7 @@ const CreateNewFolderButton = ({ activeFolder, disabled, className }: Props) => 
             icon="folder-new"
             title={c('Action').t`New Folder`}
             onClick={handleCreateFolder}
+            data-testid="toolbar-new-folder"
         />
     );
 };
