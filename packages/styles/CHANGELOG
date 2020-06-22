@@ -12,6 +12,7 @@
 - add Sass variable for default height fields
 - added “initial hover over circle” styles (Mail)
 - added `shape-file-txt` mime icon
+- added `.caret-like` helper for icons inside buttons
 
 ## Updated/fixes
 
@@ -36,6 +37,9 @@
 - updated container sticky behaviour/values
 - fix - event modal redesign
 - fix - icon alignment
+- fix dropdown sizes on search
+- fix - remove Safari padding-fix on Calendar
+- fix - calendar popover tweaks
 
 
 # [1.8.3] - 2019-05-18
