@@ -1,8 +1,14 @@
-export const queryCheckAvailableHashes = (shareId: string, linkId: string, data: { Hashes: string[] }) => {
+export const queryCheckAvailableHashes = (
+    shareId: string,
+    linkId: string,
+    data: { Hashes: string[] },
+    suppressErrors = false
+) => {
     return {
         method: 'post',
         timeout: 60000,
         url: `drive/shares/${shareId}/links/${linkId}/checkAvailableHashes`,
+        suppress: suppressErrors,
         data
     };
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon, classnames } from 'react-components';
-import { isSupportedImage, isVideo } from '../FilePreview/FilePreview';
+import { isSupportedImage, isVideo, isSupportedText } from '../FilePreview/FilePreview';
 
 const iconsMap: { [mimeType: string]: { name: string; colorClass?: string } } = {
     Folder: { name: 'folder' },
@@ -31,6 +31,8 @@ const getIconName = (mimeType: string) => {
 
     if (isSupportedImage(mimeType)) {
         name = 'file-image';
+    } else if (isSupportedText(mimeType)) {
+        name = 'file-txt';
     } else if (isVideo(mimeType)) {
         name = 'file-video';
     } else if (iconsMap[mimeType]) {

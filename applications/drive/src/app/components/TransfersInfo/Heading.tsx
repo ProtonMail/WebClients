@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Icon, Tooltip, classnames } from 'react-components';
 
@@ -93,36 +93,66 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
 
         if (!activeCount) {
             if (doneUploadsCount && doneDownloadsCount) {
-                headingElements.push(c('Info').t`${doneCount} Finished`);
+                headingElements.push(
+                    c('Info').ngettext(msgid`${doneCount} Finished`, `${doneCount} Finished`, doneCount)
+                );
             } else {
                 if (doneUploadsCount) {
-                    headingElements.push(c('Info').t`${doneUploadsCount} Uploaded`);
+                    headingElements.push(
+                        c('Info').ngettext(
+                            msgid`${doneUploadsCount} Uploaded`,
+                            `${doneUploadsCount} Uploaded`,
+                            doneUploadsCount
+                        )
+                    );
                 }
                 if (doneDownloadsCount) {
-                    headingElements.push(c('Info').t`${doneDownloadsCount} Downloaded`);
+                    headingElements.push(
+                        c('Info').ngettext(
+                            msgid`${doneDownloadsCount} Downloaded`,
+                            `${doneDownloadsCount} Downloaded`,
+                            doneDownloadsCount
+                        )
+                    );
                 }
             }
         }
 
         if (activeUploadsCount) {
             const uploadProgress = calculateProgress(currentUploads);
-            headingElements.push(c('Info').t`${activeUploadsCount} Uploading ${uploadProgress}%`);
+            headingElements.push(
+                c('Info').ngettext(
+                    msgid`${activeUploadsCount} Uploading ${uploadProgress}%`,
+                    `${activeUploadsCount} Uploading ${uploadProgress}%`,
+                    activeUploadsCount
+                )
+            );
         }
         if (activeDownloadsCount) {
             const downloadProgress = calculateProgress(currentDownloads);
-            headingElements.push(c('Info').t`${activeDownloadsCount} Downloading ${downloadProgress}%`);
+            headingElements.push(
+                c('Info').ngettext(
+                    msgid`${activeDownloadsCount} Downloading ${downloadProgress}%`,
+                    `${activeDownloadsCount} Downloading ${downloadProgress}%`,
+                    activeDownloadsCount
+                )
+            );
         }
 
         if (pausedCount) {
-            headingElements.push(c('Info').t`${pausedCount} Paused`);
+            headingElements.push(
+                c('Info').ngettext(msgid`${pausedCount} Paused`, `${pausedCount} Paused`, pausedCount)
+            );
         }
 
         if (canceledCount) {
-            headingElements.push(c('Info').t`${canceledCount} Canceled`);
+            headingElements.push(
+                c('Info').ngettext(msgid`${canceledCount} Canceled`, `${canceledCount} Canceled`, canceledCount)
+            );
         }
 
         if (errorCount) {
-            headingElements.push(c('Info').t`${errorCount} Failed`);
+            headingElements.push(c('Info').ngettext(msgid`${errorCount} Failed`, `${errorCount} Failed`, errorCount));
         }
 
         return headingElements.join(', ');
