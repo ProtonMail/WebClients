@@ -1,6 +1,7 @@
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { FOLDER_PAGE_SIZE, DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../constants';
 import { CreateNewFolder } from '../interfaces/folder';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 export const queryFolderChildren = (
     shareID: string,

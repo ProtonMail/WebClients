@@ -39,13 +39,13 @@ const OnboardingModal = ({ modalTitleID = 'onboardingModal', onClose = noop, ...
     const steps: Step[] = [
         {
             image: welcomeImage,
-            info: <OnboardingStepInfo />
+            info: <OnboardingStepInfo />,
         },
         {
             image: feedbackImage,
             info: <OnboardingCompleteInfo />,
-            header: c('Title').t`Like the product?`
-        }
+            header: c('Title').t`Like the product?`,
+        },
     ];
 
     const isFirstStep = currentStep === 0;
