@@ -20,3 +20,14 @@
 		}
 	}
 }
+
+// hide the thing on desktop devices supporting media query 4 spec
+@media (pointer: fine) {
+	.is-day-view,
+	.is-week-view,
+	.is-month-view {
+		&::after {
+			content: none;
+		}
+	}
+}
