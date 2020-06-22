@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDriveCache, LinkKeys, DEFAULT_SORT_PARAMS } from '../../components/DriveCache/DriveCacheProvider';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-import { useModals } from 'react-components';
+import { useModals, useUser } from 'react-components';
 import useDriveCrypto from './useDriveCrypto';
 import {
     decryptUnsigned,
@@ -32,6 +32,7 @@ import useQueuedFunction from '../util/useQueuedFunction';
 import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
 import usePreventLeave from '../util/usePreventLeave';
 import runInQueue from '../../utils/runInQueue';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
@@ -43,6 +44,7 @@ const { CREATE, DELETE, UPDATE_METADATA } = EVENT_TYPES;
 
 function useDrive() {
     const cache = useDriveCache();
+    const [{ MaxSpace }] = useUser();
     const { getShareEventManager, createShareEventManager } = useDriveEventManager();
     const queuedFunction = useQueuedFunction();
     const { createModal } = useModals();
@@ -61,7 +63,7 @@ function useDrive() {
                 VolumeName: 'MainVolume',
                 ShareName: 'MainShare',
                 FolderHashKey,
-                VolumeMaxSpace: 1000000000, // TODO: this will be controlled dynamically
+                VolumeMaxSpace: MaxSpace,
                 ...bootstrap
             })
         );
@@ -250,11 +252,11 @@ function useDrive() {
 
         const PageSize = FOLDER_PAGE_SIZE;
         const Page = Math.floor(listedChildren.length / PageSize);
-        const SortField = sortParams?.sortField;
-        const SortOrder = sortParams?.sortOrder;
+        const Sort = sortParams?.sortField;
+        const Desc = sortParams?.sortOrder === SORT_DIRECTION.DESC ? 1 : 0;
 
         const { Links } = await debouncedRequest<LinkChildrenResult>(
-            queryFolderChildren(shareId, linkId, { Page, PageSize, SortField, SortOrder })
+            queryFolderChildren(shareId, linkId, { Page, PageSize, Sort, Desc })
         );
         const { privateKey } = linkId ? await getLinkKeys(shareId, linkId) : await getShareKeys(shareId);
 

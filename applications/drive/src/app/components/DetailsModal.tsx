@@ -90,7 +90,7 @@ const DetailsModal = ({ activeFolder, getLinkMeta, item, onClose, ...rest }: Pro
         const fieldValue = extractFieldValue(field, item);
         return (
             <Row key={field}>
-                <Label>{c('Label').t`${field}`}</Label>
+                <Label>{field}</Label>
                 <Field className="ellipsis">
                     <b>{fieldValue}</b>
                 </Field>

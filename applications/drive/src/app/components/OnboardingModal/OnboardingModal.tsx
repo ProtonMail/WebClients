@@ -76,7 +76,17 @@ const OnboardingModal = ({ modalTitleID = 'modalTitle', onClose = noop, ...rest 
             <div className="pm-modalContent">
                 <InnerModal>
                     {step.info}
-                    <img className="w100" src={step.image} alt="placeholder" />
+                    <figure className="bordered-container no-scroll">
+                        <img
+                            className="w100"
+                            src={step.image}
+                            alt={
+                                isFirstStep
+                                    ? c('info').t`Protont Drive interface`
+                                    : c('info').t`Location of report bug button`
+                            }
+                        />
+                    </figure>
                 </InnerModal>
                 <FooterModal>
                     <Button onClick={handleBackClick}>

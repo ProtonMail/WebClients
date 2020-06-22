@@ -41,24 +41,21 @@ export interface Upload {
     info?: UploadInfo;
     state: TransferState;
     startDate: Date;
+    error?: Error;
 }
 
 export interface Download {
     id: string;
     meta: TransferMeta;
     state: TransferState;
-    resumeState?: TransferState;
     type: LinkType;
     startDate: Date;
+    resumeState?: TransferState;
+    error?: Error;
 }
 
-export interface PartialDownload {
-    id: string;
+export interface PartialDownload extends Download {
     partOf: string;
-    meta: TransferMeta;
-    state: TransferState;
-    resumeState?: TransferState;
-    type: LinkType;
 }
 
 export type Transfer = Upload | Download;

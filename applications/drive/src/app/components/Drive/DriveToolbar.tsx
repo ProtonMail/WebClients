@@ -19,6 +19,7 @@ import {
     BackButton,
     CreateNewFolderButton
 } from './ToolbarButtons';
+import UploadFolderButton from './ToolbarButtons/UploadFolderButton';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -43,7 +44,13 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
-            return <CreateNewFolderButton activeFolder={activeFolder} />;
+            return (
+                <>
+                    <CreateNewFolderButton activeFolder={activeFolder} />
+                    <ToolbarSeparator />
+                    <UploadFolderButton activeFolder={activeFolder} />
+                </>
+            );
         }
 
         const isMultiSelect = selectedItems.length > 1;
