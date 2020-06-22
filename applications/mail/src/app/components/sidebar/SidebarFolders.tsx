@@ -1,4 +1,5 @@
 import React, { useState, useEffect, ReactNode, MouseEvent } from 'react';
+
 import { useFolders } from 'react-components';
 import { buildTreeview } from 'proton-shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
@@ -6,6 +7,7 @@ import { setItem, getItem } from 'proton-shared/lib/helpers/storage';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 
 import SidebarFolder from './SidebarFolder';
+import EmptyFolders from './EmptyFolders';
 
 interface Props {
     currentLabelID: string;
@@ -28,7 +30,7 @@ const SidebarFolders = ({ currentLabelID, isConversation, counterMap }: Props) =
                 }))
             );
         }
-    }, [loadingFolders]);
+    }, [loadingFolders, folders]);
 
     const treeview = buildTreeview(foldersUI) as FolderWithSubFolders[];
 
@@ -75,7 +77,9 @@ const SidebarFolders = ({ currentLabelID, isConversation, counterMap }: Props) =
         return acc;
     };
 
-    return (
+    return !loadingFolders && !folders?.length ? (
+        <EmptyFolders />
+    ) : (
         <>{treeview.reduce((acc, folder: FolderWithSubFolders) => treeviewReducer(acc, folder), [] as ReactNode[])}</>
     );
 };
