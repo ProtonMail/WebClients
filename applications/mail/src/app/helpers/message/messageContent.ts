@@ -1,4 +1,3 @@
-import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { isPlainText } from './messages';
@@ -55,16 +54,11 @@ export const setContent = (message: MessageExtended, content: string) => {
     }
 };
 
-export const exportPlainText = (message: MessageExtended) => {
-    const content = getContent(message);
-
+export const exportPlainText = (content: string) => {
     /*
      * The replace removes any characters that are produced by the copying process (like zero width characters)
      * See: http://www.berklix.org/help/majordomo/#quoted we want to avoid sending unnecessary quoted printable encodings
      */
-    if (message.data?.MIMEType !== MIME_TYPES.DEFAULT) {
-        return content.replace(/\u200B/g, '');
-    }
     return toText(content, true, true).replace(/\u200B/g, '');
 };
 
@@ -81,7 +75,7 @@ export const getPlainText = (message: MessageExtended, downconvert: boolean) => 
         return undefined;
     }
 
-    return exportPlainText(message);
+    return exportPlainText(getContent(message));
 };
 
 /**
@@ -108,12 +102,8 @@ export const changeSignature = (
 
     if (isPlainText(message.data)) {
         const content = getPlainTextContent(message);
-        const oldSignatureText = toText(oldTemplate, true, true)
-            .replace(/\u200B/g, '')
-            .trim();
-        const newSignatureText = toText(newTemplate, true, true)
-            .replace(/\u200B/g, '')
-            .trim();
+        const oldSignatureText = exportPlainText(oldTemplate).trim();
+        const newSignatureText = exportPlainText(newTemplate).trim();
         return content.replace(oldSignatureText, newSignatureText);
     } else {
         const content = getDocumentContent(message.document);

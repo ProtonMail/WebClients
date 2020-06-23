@@ -57,6 +57,7 @@ const SquireEditorWrapper = ({
     onAddAttachments,
     onRemoveAttachment,
     onFocus,
+    contentFocusRef,
     editorActionsRef
 }: Props) => {
     const [mailSettings] = useMailSettings();
@@ -86,10 +87,13 @@ const SquireEditorWrapper = ({
 
     // Detect document ready
     useEffect(() => {
-        if (message.document?.innerHTML) {
+        if (isPlainText && message.plainText !== undefined) {
             setDocumentReady(true);
         }
-    }, [message.document?.innerHTML]);
+        if (!isPlainText && message.document?.innerHTML) {
+            setDocumentReady(true);
+        }
+    }, [isPlainText, message.plainText, message.document?.innerHTML]);
 
     const handleSetContent = (content: string) => {
         skipNextInputRef.current = true;
@@ -102,6 +106,7 @@ const SquireEditorWrapper = ({
     useEffect(() => {
         if (isPlainText) {
             setEditorReady(false);
+            onReady();
         }
         if (documentReady && (isPlainText || editorReady)) {
             let content;
@@ -164,7 +169,7 @@ const SquireEditorWrapper = ({
 
     const switchToPlainText = () => {
         const MIMEType = MIME_TYPES.PLAINTEXT;
-        const plainText = exportPlainText(message);
+        const plainText = exportPlainText(getContent(message));
         const embeddeds = createEmbeddedMap();
         onChange({ plainText, data: { MIMEType }, embeddeds });
     };
@@ -209,6 +214,9 @@ const SquireEditorWrapper = ({
             setContent: handleSetContent,
             insertEmbedded: handleInsertEmbedded,
             removeEmbedded: handleRemoveEmbedded
+        };
+        contentFocusRef.current = () => {
+            squireEditorRef.current?.focus();
         };
     }, []);
 

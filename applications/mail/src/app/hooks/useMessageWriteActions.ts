@@ -39,7 +39,9 @@ const useCreateDraft = () => {
         updateMessageCache(messageCache, message.localID, {
             data: { ...mergeSavedMessage(message.data, newMessage), Attachments: newMessage.Attachments },
             ...messageKeys,
-            embeddeds: createEquivalentEmbeddeds(message.embeddeds, newMessage.Attachments)
+            embeddeds: createEquivalentEmbeddeds(message.embeddeds, newMessage.Attachments),
+            document: message.document,
+            plainText: message.plainText
         });
         await call();
     }, []);
@@ -64,7 +66,9 @@ const useUpdateDraft = () => {
         );
         updateMessageCache(messageCache, message.localID, {
             ...messageKeys,
-            data: mergeSavedMessage(message.data, newMessage)
+            data: mergeSavedMessage(message.data, newMessage),
+            document: message.document,
+            plainText: message.plainText
         });
         await call();
     }, []);

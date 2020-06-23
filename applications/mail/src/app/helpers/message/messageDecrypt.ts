@@ -7,6 +7,7 @@ import { VERIFICATION_STATUS } from '../../constants';
 import { getDate, getSender, isMIME } from './messages';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { Attachment } from '../../models/attachment';
+import { MIME_TYPES } from 'proton-shared/lib/constants';
 
 const { NOT_SIGNED } = VERIFICATION_STATUS;
 
@@ -41,7 +42,8 @@ const decryptMimeMessage = async (
         };
     }
 
-    const { body: decryptedBody = c('Message empty').t`Message content if empty` } = (await result.getBody()) || {};
+    const { body: decryptedBody = c('Message empty').t`Message content if empty`, mimetype = MIME_TYPES.PLAINTEXT } =
+        (await result.getBody()) || {};
 
     const verified = await result.verify();
     const errors = await result.errors();
@@ -56,7 +58,8 @@ const decryptMimeMessage = async (
         verified,
         decryptedSubject,
         verificationErrors: errors,
-        signature
+        signature,
+        mimetype: mimetype as MIME_TYPES
     };
 };
 
@@ -103,6 +106,7 @@ export const decryptMessage = async (
     signature?: OpenPGPSignature;
     errors?: MessageErrors;
     verificationErrors?: Error[];
+    mimetype?: MIME_TYPES;
 }> => {
     if (isMIME(message)) {
         return decryptMimeMessage(message, publicKeys, privateKeys, attachmentsCache);

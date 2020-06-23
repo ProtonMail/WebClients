@@ -19,6 +19,7 @@ import { transformRemote } from '../helpers/transforms/transformRemote';
 import { prepareMailDocument } from '../helpers/transforms/transforms';
 import { isApiError } from '../helpers/errors';
 import { useBase64Cache } from './useBase64Cache';
+import { isPlainText } from '../helpers/message/messages';
 
 export const useLoadMessage = (inputMessage: Message) => {
     const api = useApi();
@@ -84,7 +85,11 @@ export const useInitializeMessage = (localID: string) => {
 
         try {
             message = await loadMessage(messageFromCache, api);
-            encryptionPreferences = await getEncryptionPreferences(message.data.Sender.Address as string);
+
+            // Message data will be modified, don't refer to message.data anymore below!
+            data = { ...message.data } as Message;
+
+            encryptionPreferences = await getEncryptionPreferences(data.Sender.Address as string);
             userKeys = await getMessageKeys(message);
             const messageWithKeys = {
                 ...message,
@@ -95,14 +100,17 @@ export const useInitializeMessage = (localID: string) => {
             // To verify the signature of the message, we just need to take into account pinned keys
             // API keys could always be forged by the server to verify the signature
             decryption = await decryptMessage(
-                message.data,
+                data,
                 encryptionPreferences.pinnedKeys,
                 userKeys.privateKeys,
                 attachmentsCache
             );
+            if (decryption.mimetype) {
+                data = { ...data, MIMEType: decryption.mimetype };
+            }
             const mimeAttachments = decryption.Attachments || [];
-            const allAttachments = [...message.data.Attachments, ...mimeAttachments];
-            data = { ...message.data, Attachments: allAttachments, NumAttachments: allAttachments.length };
+            const allAttachments = [...data.Attachments, ...mimeAttachments];
+            data = { ...data, Attachments: allAttachments, NumAttachments: allAttachments.length };
             const keyAttachments =
                 allAttachments.filter(
                     ({ Name, Size }) => splitExtension(Name)[1] === 'asc' && (Size || 0) < LARGE_KEY_SIZE
@@ -139,15 +147,17 @@ export const useInitializeMessage = (localID: string) => {
             verificationStatus = decryption.verified;
 
             await markAsRead(message, api, call);
-            data = { ...message.data, Unread: 0 };
+            data = { ...data, Unread: 0 };
 
-            preparation = await prepareMailDocument(
-                { ...messageWithKeys, decryptedBody: decryption.decryptedBody },
-                base64Cache,
-                attachmentsCache,
-                api,
-                mailSettings
-            );
+            preparation = isPlainText(data)
+                ? ({ plainText: decryption.decryptedBody } as any)
+                : await prepareMailDocument(
+                      { ...messageWithKeys, decryptedBody: decryption.decryptedBody },
+                      base64Cache,
+                      attachmentsCache,
+                      api,
+                      mailSettings
+                  );
         } catch (error) {
             if (isApiError(error)) {
                 errors.network = error;
@@ -158,6 +168,7 @@ export const useInitializeMessage = (localID: string) => {
             updateMessageCache(messageCache, localID, {
                 data,
                 document: preparation?.document,
+                plainText: preparation?.plainText,
                 senderPinnedKeys: encryptionPreferences?.pinnedKeys,
                 signingPublicKey,
                 attachedPublicKeys,

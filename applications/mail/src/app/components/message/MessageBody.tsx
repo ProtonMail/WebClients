@@ -18,12 +18,15 @@ interface Props {
     showBlockquote?: boolean;
 }
 
-const MessageBody = ({ message: { document, data: message }, showBlockquote = true }: Props) => {
+const MessageBody = ({ message: { document, plainText, data: message }, showBlockquote = true }: Props) => {
     const { state: expand, toggle } = useToggle();
 
     const plain = isPlainText(message);
 
-    const [content, blockquote] = useMemo(() => locateBlockquote(document), [document?.innerHTML]);
+    const [content, blockquote] = useMemo(() => (plain ? [plainText as string, ''] : locateBlockquote(document)), [
+        document?.innerHTML,
+        plain
+    ]);
 
     return (
         <div className={classnames(['message-content scroll-horizontal-if-needed bodyDecrypted', plain && 'plain'])}>

@@ -13,8 +13,8 @@ import { insertSignature } from './messageSignature';
 import { formatFullDate } from '../date';
 import { recipientToInput } from '../addresses';
 import { getDate } from '../elements';
-import { isSent, isSentAndReceived, getOriginalTo } from './messages';
-import { getContent } from './messageContent';
+import { isSent, isSentAndReceived, getOriginalTo, isPlainText } from './messages';
+import { getContent, exportPlainText } from './messageContent';
 import { parseInDiv } from '../dom';
 import { generateUID } from 'react-components';
 import { createEmbeddedMap } from '../embedded/embeddeds';
@@ -167,13 +167,6 @@ const generateBlockquote = (referenceMessage: PartialMessageExtended) => {
     const sender = recipientToInput(referenceMessage?.data?.Sender);
     const previously = c('Message').t`On ${date}, ${sender} wrote:`;
 
-    // TODO
-    // const newContent =
-    //     referenceMessage.data?.MIMEType === MIME_TYPES.PLAINTEXT ? textToHtmlMail.parse(content) : content;
-    // TODO: To check... Should use transformations from useMessage
-    // newContent = prepareContent(content, referenceMessage, ['*'], action);
-    // const newContent = referenceMessage.content;
-
     return `<div class="protonmail_quote">
         ${ORIGINAL_MESSAGE}<br>
         ${previously}<br>
@@ -216,7 +209,10 @@ export const createNewDraft = (
 
     let content = action === MESSAGE_ACTIONS.NEW ? '' : generateBlockquote(referenceMessage || {});
     content = insertSignature(content, senderAddress?.Signature, action, mailSettings);
-    const document = parseInDiv(content);
+
+    const plain = isPlainText({ MIMEType });
+    const document = plain ? undefined : parseInDiv(content);
+    const plainText = plain ? exportPlainText(content) : undefined;
 
     return {
         localID: generateUID(DRAFT_ID_PREFIX),
@@ -236,6 +232,7 @@ export const createNewDraft = (
         },
         ParentID,
         document,
+        plainText,
         action,
         expiresIn: 0,
         originalTo,
