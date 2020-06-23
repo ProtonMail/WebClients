@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDriveCache, LinkKeys, DEFAULT_SORT_PARAMS } from '../../components/DriveCache/DriveCacheProvider';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-import { useModals, useUser } from 'react-components';
+import { useModals } from 'react-components';
 import useDriveCrypto from './useDriveCrypto';
 import {
     decryptUnsigned,
@@ -44,7 +44,6 @@ const { CREATE, DELETE, UPDATE_METADATA } = EVENT_TYPES;
 
 function useDrive() {
     const cache = useDriveCache();
-    const [{ MaxSpace }] = useUser();
     const { getShareEventManager, createShareEventManager } = useDriveEventManager();
     const queuedFunction = useQueuedFunction();
     const { createModal } = useModals();
@@ -63,7 +62,6 @@ function useDrive() {
                 VolumeName: 'MainVolume',
                 ShareName: 'MainShare',
                 FolderHashKey,
-                VolumeMaxSpace: MaxSpace,
                 ...bootstrap
             })
         );
