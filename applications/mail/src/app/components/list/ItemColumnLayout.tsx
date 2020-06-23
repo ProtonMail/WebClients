@@ -50,7 +50,7 @@ const ItemColumnLayout = ({
                     </span>
                     <ItemAction element={element} className="ml0-5 mtauto mbauto" />
                 </div>
-                <ItemDate element={element} labelID={labelID} className={classnames([unread && 'bold'])} />
+                <ItemDate element={element} labelID={labelID} className={classnames([unread && 'bold', 'item-date'])} />
                 <span className="ml0-5 flex">
                     <ItemStar element={element} />
                 </span>

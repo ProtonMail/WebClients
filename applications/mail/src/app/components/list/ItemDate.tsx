@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { classnames } from 'react-components';
 
 import { getDate } from '../../helpers/elements';
 import { formatSimpleDate, formatFullDate, formatDistanceToNow } from '../../helpers/date';
@@ -40,7 +39,7 @@ const ItemDate = ({ element, labelID, className, mode = 'simple' }: Props) => {
         }
     }, [element, mode]);
 
-    return <span className={classnames(['item-date', className])}>{formattedDate}</span>;
+    return <span className={className}>{formattedDate}</span>;
 };
 
 export default ItemDate;

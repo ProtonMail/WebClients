@@ -43,14 +43,19 @@ const ItemRowLayout = ({
     const size = humanSize(Size);
 
     return (
-        <div className="flex-item-fluid flex flex-items-center flex-nowrap flex-row flex-spacebetween item-titlesender">
-            <div className={classnames(['w20 flex mauto pr1', unread && 'bold'])}>
-                {displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
+        <div className="flex-item-fluid flex flex-items-center flex-nowrap flex-row item-titlesender">
+            <div className="mtauto mbauto flex mr0-5">
+                <ItemStar element={element} />
             </div>
-            <div className="flex-item-fluid flex mauto">
+            <div className={classnames(['w20 flex mauto pr1', unread && 'bold'])}>
+                <span className="mw100 ellipsis">
+                    {displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
+                </span>
+            </div>
+            <div className="flex-item-fluid flex flex-items-center flex-nowrap mauto">
                 <ItemExpiration element={element} />
                 {showIcon && (
-                    <span className="mr0-25 inline-flex flex-self-end alignbaseline flex-item-noshrink">
+                    <span className="mr0-25 inline-flex flex-item-noshrink">
                         <ItemLocation message={element as Message} mailSettings={mailSettings} />
                     </span>
                 )}
@@ -58,16 +63,13 @@ const ItemRowLayout = ({
                     <NumMessages className={classnames(['mr0-25', unread && 'bold'])} conversation={element} />
                 )}
                 <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
-                <ItemLabels max={4} labels={labels} element={element} />
+                <ItemLabels max={4} labels={labels} element={element} className="mlauto flex flex-nowrap" />
                 <ItemAttachmentIcon element={element} className="ml0-5 flex-self-vcenter" />
             </div>
             <span className="mtauto mbauto mr1 ml1 ng-binding">{size}</span>
-            <span className="mauto">
+            <span className="mauto w10e alignright">
                 <ItemDate element={element} labelID={labelID} className={unread ? 'bold' : undefined} />
             </span>
-            <div className="mtauto mbauto ml0-5">
-                <ItemStar element={element} />
-            </div>
         </div>
     );
 };
