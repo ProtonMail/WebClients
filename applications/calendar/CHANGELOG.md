@@ -1,4 +1,5 @@
-# [4.0.0-beta.5] - 2020-06-24
+# [4.0.0-beta.5] - 2020-06-30
+
 ## Added
 - Import of calendars from a .ics file
 - Change the calendar for all the events of a recurring event
@@ -7,18 +8,23 @@
 - Redesign of event details popover
 
 ___
+
 # [4.0.0-beta.4] - 2020-06-15
+
 ## Updated
 - Update API calls
 - Improvement of recurring events edit warning
 - Redesign of event creation small modal
 
 ___
+
 # [4.0.0-beta.3] - 2020-05-28
+
 ## Fixed
 - Remove reminders after event start time
 
 ___
+
 # [4.0.0-beta.2] - 2020-05-13
 
 ## Added
@@ -41,7 +47,6 @@ ___
 - Close only selected event when list of events is displayed
 - Take into account DST changes for event reminders      
 - Load the user-selected default view after calendar creation
-
 ___
 
 # [4.0.0-beta.1] - 2020-03-11
@@ -60,7 +65,6 @@ ___
 
 ## Fixed
 - Design fix on Safari and for responsive displays
-
 ___
 
 # Beta launch [4.0.0-beta.0] - 2019-12-30
