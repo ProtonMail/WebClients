@@ -20,8 +20,8 @@
  @include respond-to($breakpoint-large, 'min') {
 
   :root {
-    --width-sidebar: 15vw;
-    --width-subnav: 15vw;
+    --width-sidebar: 25rem;
+    --width-subnav: 25rem;
   }
 
   .container-section-sticky {

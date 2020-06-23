@@ -32,21 +32,18 @@ $padding-left-link: 2rem !default;
 
 .navigation__link:focus,
 .navigation__link:hover {
-  background: rgba(255,255,255,.05);
+  background: $navigation-hover-bg-color;
   color: var(--color-nav-link, $pm-global-light);
   text-decoration: none;
-  .navigation__icon:not(.navigation__icon--expand) {
-    color: var(--fillcolor-icons, $white);
-  }
 }
 [aria-current="page"].navigation__link {
-  background: var(--main-bg-color, $pm-global-grey);
-  color: var(--color-nav-active, $pm-primary);
+  background: $navigation-hover-bg-color;
+  color: var(--color-nav-active, $white);
   font-weight: bold;
 
   &:hover .navigation__icon:not(.navigation__icon--expand),
   .navigation__icon {
-    color: var(--color-nav-active, $pm-primary);
+    color: var(--color-nav-active, $white);
   }
 
   .navigation__refresh {
@@ -85,10 +82,14 @@ $padding-left-link: 2rem !default;
 
 /* items counters */
 .navigation__counterItem {
-  background: rgba($white, 0.1);
+  background: $pm-primary;
+  color: $white;
   font-size: 1.1rem;
-  padding: .1em em(6, 11) .2em;
-  font-weight: normal;
+  padding: 0.2rem .4em 0; // em value for top gives non rounded value, so rem
+  border-radius: 1.1rem;
+  line-height: 1;
+  height: 1.6rem;
+  font-variant: tabular-nums;
   &:empty {
       display: none; // removes a bug on Webkit
   }
@@ -139,15 +140,15 @@ $padding-left-link: 2rem !default;
   color:  var(--color-nav-link, $white);
   &:focus,
   &:hover {
-    background: rgba(255,255,255,.05);
+    background: $navigation-hover-bg-color;
     color:  var(--color-nav-link, $pm-global-light);
     text-decoration: none;
   }
   &:hover {
-    border-left: 2px solid var(--color-nav-link, $pm-global-light);
+    border-left: 2px solid var(--color-nav-link, rgba($pm-global-light, .5));
   }
   &[aria-current="true"] {
-    border-left: 2px solid var(--color-nav-active, $pm-primary);
+    border-left: 2px solid var(--color-nav-active, $white);
     font-weight: bold;
   }
 }

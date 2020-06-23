@@ -29,7 +29,7 @@
 }
 .animated-expandmore__button:focus,
 .animated-expandmore__button:hover {
-  background: rgba(255,255,255,.05);
+  background: $navigation-hover-bg-color;
 }
 [aria-expanded="true"].animated-expandmore__button,
 .animated-expandmore__button:active {

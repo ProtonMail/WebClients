@@ -33,7 +33,7 @@
 		&:hover,
 		&:focus,
 		&[aria-expanded="true"] {
-			background-color: rgba(white, .05);
+			background-color: $navigation-hover-bg-color;
 		}
 		& &-icon { // override icon-16p
 			width: 1em;
