@@ -87,6 +87,7 @@ const SortDropdown = () => {
                 onClick={toggle}
                 icon={toolbarButtonIcon}
                 data-testid="toolbar-sort"
+                title={c('Title').t`Sort files/folders`}
             >
                 <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" />
             </ToolbarButton>
