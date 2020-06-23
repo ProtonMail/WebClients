@@ -2,7 +2,7 @@
 
 ## Fixed
 
-- Display verification error
+- Display verification error when attempting to verify account with existing email or username
 - Race condition when changing password
 - Handle non-existing sender
 - Member key list signature verification for key activation
