@@ -10,6 +10,9 @@ export const MAX_THREADS_PER_DOWNLOAD = 3;
 export const MAX_THREADS_PER_REQUEST = 5;
 export const DEFAULT_SORT_FIELD = 'ModifyTime';
 export const DEFAULT_SORT_ORDER = SORT_DIRECTION.ASC;
+export const UPLOAD_TIMEOUT = 60000;
+export const DOWNLOAD_TIMEOUT = 60000;
+export const EXPENSIVE_REQUEST_TIMEOUT = 60000;
 
 export enum LinkURLType {
     FOLDER = 'folder',

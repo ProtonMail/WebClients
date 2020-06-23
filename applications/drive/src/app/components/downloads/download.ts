@@ -10,10 +10,9 @@ import { areUint8Arrays } from '../../utils/array';
 import { TransferCancel } from '../../interfaces/transfer';
 import runInQueue from '../../utils/runInQueue';
 import { waitUntil } from '../../utils/async';
-import { MAX_THREADS_PER_DOWNLOAD } from '../../constants';
+import { MAX_THREADS_PER_DOWNLOAD, DOWNLOAD_TIMEOUT } from '../../constants';
 
 const MAX_TOTAL_BUFFER_SIZE = 10; // number of blocks
-const DOWNLOAD_TIMEOUT = 60000;
 
 const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
