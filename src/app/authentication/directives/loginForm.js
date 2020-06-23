@@ -17,7 +17,9 @@ const loginForm = (helpLoginModal, gettextCatalog, translator, notification) => 
             loading: '<'
         },
         link(scope, $el) {
-            _rAF(() => $el[0].querySelector(scope.username.length ? '#password' : '#username').focus());
+            _rAF(() =>
+                $el[0].querySelector(scope.username && scope.username.length ? '#password' : '#username').focus()
+            );
 
             const onSubmit = (e) => {
                 e.preventDefault();
