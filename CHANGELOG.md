@@ -1,3 +1,12 @@
+# [3.16.27] - 2020-06-23
+
+## Fixed
+
+- Display verification error
+- Race condition when changing password
+- Handle non-existing sender
+- Member key list signature verification for key activation
+
 # [3.16.26] - 2020-06-17
 
 ## Fixed
