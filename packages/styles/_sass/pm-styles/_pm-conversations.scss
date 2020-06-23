@@ -194,7 +194,7 @@ $conversation-icon-size: 3.2rem !default;
 }
 
 .starbutton {
-  color: var(--fillcolor-icons, $pm-global-grey);
+  color: var(--color-main-area, $pm-global-grey);
   width: 1.6rem;
   height: 1.6rem;
   opacity: .5;
