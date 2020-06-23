@@ -16,7 +16,7 @@ interface DownloadProviderState {
     addFolderToDownloadQueue: (
         filename: string
     ) => {
-        addDownload(meta: TransferMeta, { onProgress, ...rest }: DownloadCallbacks): Promise<void>;
+        addDownload(meta: TransferMeta, { onProgress, ...rest }: DownloadCallbacks): void;
         startDownloads(): Promise<void>;
     };
     getDownloadsProgresses: () => TransferProgresses;
@@ -246,11 +246,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         ]);
 
         return {
-            async addDownload(meta: TransferMeta, { onProgress, onError, onFinish, ...rest }: DownloadCallbacks) {
-                if (aborted) {
-                    throw new Error(`Parent download (${groupId}) is already canceled`);
-                }
-
+            addDownload(meta: TransferMeta, { onProgress, onError, onFinish, ...rest }: DownloadCallbacks) {
                 const promise = new Promise<void>((resolve, reject) => {
                     const { id, downloadControls } = initDownload({
                         ...rest,

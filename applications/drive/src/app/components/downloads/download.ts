@@ -187,7 +187,9 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
     const cancel = () => {
         paused = false;
         abortController.abort();
-        fsWriter.abort(new TransferCancel(id));
+        const error = new TransferCancel(id);
+        fsWriter.abort(error);
+        onError?.(error);
     };
 
     const pause = async () => {

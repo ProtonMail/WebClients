@@ -147,7 +147,7 @@ function useFiles() {
                     }
                     return {
                         filename: file.name,
-                        hash: await generateLookupHash(file.name.toLowerCase(), parentKeys.hashKey)
+                        hash: await generateLookupHash(lowercaseName, parentKeys.hashKey)
                     };
                 };
 
@@ -501,7 +501,7 @@ function useFiles() {
         const { addDownload, startDownloads } = addFolderToDownloadQueue(folderName);
         const fileStreamPromises: Promise<void>[] = [];
 
-        const downloadFolder = async (linkId: string, filePath = ''): Promise<void> => {
+        const downloadFolder = async (linkId: string, filePath = ''): Promise<any> => {
             const isComplete = cache.get.childrenComplete(shareId, linkId);
             const listed = cache.get.listedChildLinks(shareId, linkId);
             if (!isComplete && !listed?.length) {
@@ -514,7 +514,7 @@ function useFiles() {
                 return;
             }
 
-            const promises = children.map((child) => {
+            const promises = children.map(async (child) => {
                 const path = `${filePath}/${child.Name}`;
                 if (child.Type === LinkType.FILE) {
                     const promise = new Promise<void>((resolve, reject) =>
@@ -533,12 +533,12 @@ function useFiles() {
                             onError(err) {
                                 reject(err);
                             }
-                        }).catch(reject)
+                        })
                     );
                     fileStreamPromises.push(promise);
                 } else {
                     cb.onStartFolderTransfer(path).catch((err) => console.error(`Failed to zip empty folder ${err}`));
-                    return downloadFolder(child.LinkID, path);
+                    await downloadFolder(child.LinkID, path);
                 }
             });
 
