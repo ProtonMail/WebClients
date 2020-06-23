@@ -27,12 +27,12 @@ const ItemStar = ({ element = {} }: Props) => {
             disabled={loading}
             type="button"
             className={classnames([
-                'starbutton item-star inline-flex stop-propagation',
+                'starbutton relative item-star inline-flex stop-propagation',
                 isStarred && 'starbutton--is-starred'
             ])}
             onClick={handleClick}
         >
-            <Icon name={iconName} />
+            <Icon name={iconName} className="starbutton-icon-star" />
         </button>
     );
 };
