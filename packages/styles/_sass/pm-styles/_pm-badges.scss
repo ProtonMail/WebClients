@@ -107,8 +107,23 @@ $label-border-color: var(--bgcolor-view-column-detail, $white) !default;
 	}
 
 }
+
+// email list
 .item-container,
-.message-header-expanded {
+.item-container-row {
+	&:not(.read) {
+		.pm-badgeLabel-container--collapsed {
+			.badgeLabel {
+				border-color: var(--bgcolor-unread-item-column-list, $white);
+				&:not(:first-child) {
+					&::before {
+						border-color: var(--bgcolor-unread-item-column-list, $white);
+					}
+				}
+			}
+		}
+	}
+	&.read {
 		.pm-badgeLabel-container--collapsed {
 			.badgeLabel {
 				border-color: var(--bgcolor-item-column-list, $pm-global-muted);
@@ -119,18 +134,35 @@ $label-border-color: var(--bgcolor-view-column-detail, $white) !default;
 				}
 			}
 		}
-	&.item-is-selected {
+	}
+	&.item-is-selected,
+	&.item-is-selected.read {
 		.pm-badgeLabel-container--collapsed {
 			.badgeLabel {
-				border-color: var(--bgcolor-item-column-active, #b2bef1); // ???
+				border-color: var(--bgcolor-item-column-active, #b2bef1); // $conversation-selected-bg is using rgba, does not work
 				&:not(:first-child) {
 					&::before {
-						border-color: var(--bgcolor-item-column-active, #b2bef1); // ???
+						border-color: var(--bgcolor-item-column-active, #b2bef1); // $conversation-selected-bg is using rgba, does not work
 					}
 				}
 			}
 		}
 	}
+}
+
+// in conversation display
+.message-header-expanded {
+		.pm-badgeLabel-container--collapsed {
+			.badgeLabel {
+				border-color: var(--bgcolor-item-column-list, $pm-global-light);
+				&:not(:first-child) {
+					&::before {
+						border-color: var(--bgcolor-item-column-list, $pm-global-light);
+					}
+				}
+			}
+		}
+
 }
 
 // when several labels can wrap (in conversations/show details/several labels/tiny viewport
