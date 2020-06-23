@@ -12,6 +12,7 @@ function signupUserProcess(
     authentication,
     attachSignupSubscription,
     lazyLoader,
+    notification,
     Address,
     authApi,
     $state,
@@ -37,6 +38,10 @@ function signupUserProcess(
             ) {
                 dispatch('creating', { value: false });
                 dispatch('chech.humanity', { value: true });
+
+                if (data.Code === API_CUSTOM_ERROR_CODES.ALREADY_EXISTS) {
+                    notification.error(data.Error);
+                }
             }
 
             throw e;
