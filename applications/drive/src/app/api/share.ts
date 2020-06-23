@@ -1,4 +1,4 @@
-import { FOLDER_PAGE_SIZE } from '../constants';
+import { FOLDER_PAGE_SIZE, EXPENSIVE_REQUEST_TIMEOUT } from '../constants';
 import { MoveLink } from '../interfaces/link';
 
 export const queryUserShares = () => ({
@@ -37,6 +37,7 @@ export const queryMoveLink = (shareID: string, linkID: string, data: MoveLink) =
 });
 
 export const queryEvents = (shareID: string, eventID: string) => ({
+    timeout: EXPENSIVE_REQUEST_TIMEOUT,
     url: `drive/shares/${shareID}/events/${eventID}`,
     method: 'get'
 });

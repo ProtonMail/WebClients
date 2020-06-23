@@ -1,3 +1,5 @@
+import { EXPENSIVE_REQUEST_TIMEOUT } from '../constants';
+
 export const queryCheckAvailableHashes = (
     shareId: string,
     linkId: string,
@@ -6,7 +8,7 @@ export const queryCheckAvailableHashes = (
 ) => {
     return {
         method: 'post',
-        timeout: 60000,
+        timeout: EXPENSIVE_REQUEST_TIMEOUT,
         url: `drive/shares/${shareId}/links/${linkId}/checkAvailableHashes`,
         suppress: suppressErrors,
         data
