@@ -71,12 +71,11 @@ const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
     }
 
     for (const { ID, Action, Message } of Messages) {
-        let localID = ID;
+        const localID = getLocalID(cache, ID);
 
         // Ignore updates for non-fetched messages.
         if (!cache.has(localID)) {
-            // Search in cache for new draft with this ID
-            localID = getLocalID(cache, ID);
+            return;
         }
         if (Action === EVENT_ACTIONS.DELETE) {
             cache.delete(localID);

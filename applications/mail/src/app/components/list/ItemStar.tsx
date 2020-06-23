@@ -1,4 +1,5 @@
 import React, { MouseEvent } from 'react';
+import { c } from 'ttag';
 import { Icon, useLoading, classnames } from 'react-components';
 
 import { Element } from '../../models/element';
@@ -15,7 +16,6 @@ const ItemStar = ({ element = {} }: Props) => {
 
     const isMessage = testIsMessage(element);
     const isStarred = testIsStarred(element);
-    const iconName = isStarred ? 'starfull' : 'star';
 
     const handleClick = async (event: MouseEvent) => {
         event.stopPropagation();
@@ -32,7 +32,9 @@ const ItemStar = ({ element = {} }: Props) => {
             ])}
             onClick={handleClick}
         >
-            <Icon name={iconName} className="starbutton-icon-star" />
+            <Icon name="star" className="starbutton-icon-star" />
+            <Icon name="starfull" className="starbutton-icon-starred" />
+            <span className="sr-only">{isStarred ? c('Alt').t`Unstar element` : c('Alt').t`Star element`}</span>
         </button>
     );
 };
