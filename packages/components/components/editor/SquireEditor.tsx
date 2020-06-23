@@ -123,6 +123,7 @@ const SquireEditor = forwardRef(
                 focus: () => {
                     if (metadata.isPlainText) {
                         textareaRef.current?.focus();
+                        textareaRef.current?.setSelectionRange(0, 0);
                     } else {
                         squireRef.current?.focus();
                     }
