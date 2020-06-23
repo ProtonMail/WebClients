@@ -64,10 +64,10 @@ describe('messageDraft', () => {
     describe('handleActions', () => {
         it('should return empty values on copy empty input', () => {
             const result = handleActions(MESSAGE_ACTIONS.NEW);
-            expect(result.Subject).toEqual('');
-            expect(result.ToList).toEqual([]);
-            expect(result.CCList).toEqual([]);
-            expect(result.BCCList).toEqual([]);
+            expect(result.data?.Subject).toEqual('');
+            expect(result.data?.ToList).toEqual([]);
+            expect(result.data?.CCList).toEqual([]);
+            expect(result.data?.BCCList).toEqual([]);
         });
 
         it('should copy values', () => {
@@ -79,10 +79,10 @@ describe('messageDraft', () => {
                     BCCList: [recipient3]
                 }
             } as MessageExtendedWithData);
-            expect(result.Subject).toEqual(Subject);
-            expect(result.ToList).toEqual([recipient1]);
-            expect(result.CCList).toEqual([recipient2]);
-            expect(result.BCCList).toEqual([recipient3]);
+            expect(result.data?.Subject).toEqual(Subject);
+            expect(result.data?.ToList).toEqual([recipient1]);
+            expect(result.data?.CCList).toEqual([recipient2]);
+            expect(result.data?.BCCList).toEqual([recipient3]);
         });
 
         it('should prepare a reply for received message', () => {
@@ -93,8 +93,8 @@ describe('messageDraft', () => {
                 }
             } as MessageExtendedWithData);
 
-            expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
-            expect(result.ToList).toEqual([recipient4]);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.ToList).toEqual([recipient4]);
         });
 
         it('should prepare a reply for sent message', () => {
@@ -105,8 +105,8 @@ describe('messageDraft', () => {
                 }
             } as MessageExtendedWithData);
 
-            expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
-            expect(result.ToList).toEqual([recipient1]);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.ToList).toEqual([recipient1]);
         });
 
         it('should prepare a reply for received and sent message', () => {
@@ -117,8 +117,8 @@ describe('messageDraft', () => {
                 }
             } as MessageExtendedWithData);
 
-            expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
-            expect(result.ToList).toEqual([recipient1]);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.ToList).toEqual([recipient1]);
         });
 
         it('should prepare a reply all for received message', () => {
@@ -129,10 +129,10 @@ describe('messageDraft', () => {
                 }
             } as MessageExtendedWithData);
 
-            expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
-            expect(result.ToList).toEqual([recipient4]);
-            expect(result.CCList).toEqual([recipient1, recipient2]);
-            expect(result.BCCList).toEqual(undefined);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.ToList).toEqual([recipient4]);
+            expect(result.data?.CCList).toEqual([recipient1, recipient2]);
+            expect(result.data?.BCCList).toEqual(undefined);
         });
 
         it('should prepare a reply all for sent message', () => {
@@ -143,10 +143,10 @@ describe('messageDraft', () => {
                 }
             } as MessageExtendedWithData);
 
-            expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
-            expect(result.ToList).toEqual([recipient1]);
-            expect(result.CCList).toEqual([recipient2]);
-            expect(result.BCCList).toEqual([recipient3]);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.ToList).toEqual([recipient1]);
+            expect(result.data?.CCList).toEqual([recipient2]);
+            expect(result.data?.BCCList).toEqual([recipient3]);
         });
 
         it('should prepare a reply all for received and sent message', () => {
@@ -157,19 +157,19 @@ describe('messageDraft', () => {
                 }
             } as MessageExtendedWithData);
 
-            expect(result.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
-            expect(result.ToList).toEqual([recipient1]);
-            expect(result.CCList).toEqual([recipient2]);
-            expect(result.BCCList).toEqual([recipient3]);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.ToList).toEqual([recipient1]);
+            expect(result.data?.CCList).toEqual([recipient2]);
+            expect(result.data?.BCCList).toEqual([recipient3]);
         });
 
         it('should prepare a forward', () => {
             const result = handleActions(MESSAGE_ACTIONS.FORWARD, { data: message } as MessageExtendedWithData);
 
-            expect(result.Subject).toEqual(`${FW_PREFIX} ${Subject}`);
-            expect(result.ToList).toEqual([]);
-            expect(result.CCList).toEqual(undefined);
-            expect(result.BCCList).toEqual(undefined);
+            expect(result.data?.Subject).toEqual(`${FW_PREFIX} ${Subject}`);
+            expect(result.data?.ToList).toEqual([]);
+            expect(result.data?.CCList).toEqual(undefined);
+            expect(result.data?.BCCList).toEqual(undefined);
         });
     });
 

@@ -1,14 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 import { MessageExtended, MessageAction } from '../models/message';
-import { useMessageCache } from '../containers/MessageProvider';
+import { useMessageCache, getLocalID } from '../containers/MessageProvider';
 
 interface UseMessage {
-    (localID: string): { message: MessageExtended; addAction: <T>(action: MessageAction<T>) => Promise<T> };
+    (localID: string): {
+        message: MessageExtended;
+        addAction: <T>(action: MessageAction<T>) => Promise<T>;
+    };
 }
 
-export const useMessage: UseMessage = (localID: string) => {
+export const useMessage: UseMessage = (inputLocalID: string) => {
     const cache = useMessageCache();
+
+    const localID = useMemo(() => getLocalID(cache, inputLocalID), [inputLocalID]);
 
     // Main subject of the hook
     // Will be updated based on an effect listening on the event manager

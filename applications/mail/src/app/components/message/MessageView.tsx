@@ -29,7 +29,7 @@ interface Props {
     labels: Label[];
     message: Message;
     mailSettings: any;
-    initialExpand?: boolean;
+    expand?: boolean;
     conversationIndex?: number;
     onBack: () => void;
     onCompose: OnCompose;
@@ -40,31 +40,32 @@ const MessageView = ({
     labels = [],
     message: inputMessage,
     mailSettings,
-    initialExpand: inputInitialExpand = true,
+    expand: inputExpand = true,
     conversationIndex = 0,
     onBack,
     onCompose
 }: Props) => {
-    const draft = isDraft(inputMessage);
+    // Actual expanded state
+    const [expanded, setExpanded] = useState(inputExpand && !isDraft(inputMessage));
 
-    const [expanded, setExpanded] = useState(inputInitialExpand && !draft);
-    const [initialExpand, setInitialExpand] = useState(inputInitialExpand && !draft);
+    // Whether or not the focus has already been made
+    const [hasBeenFocused, setHasBeenFocused] = useState(false);
+
     const [sourceMode, setSourceMode] = useState(false);
 
     const elementRef = useRef<HTMLElement>(null);
 
-    const localID = inputMessage.ID || '';
-
-    const { message, addAction } = useMessage(localID);
+    const { message, addAction } = useMessage(inputMessage.ID);
     const load = useLoadMessage(inputMessage);
-    const initialize = useInitializeMessage(localID);
-    const trustSigningPublicKey = useTrustSigningPublicKey(localID);
-    const trustAttachedPublicKey = useTrustAttachedPublicKey(localID);
-    const loadRemoteImages = useLoadRemoteImages(localID);
-    const loadEmbeddedImages = useLoadEmbeddedImages(localID);
-    const markAsRead = useMarkAsRead(localID);
-    const resignContact = useResignContact(localID);
+    const initialize = useInitializeMessage(message.localID);
+    const trustSigningPublicKey = useTrustSigningPublicKey(message.localID);
+    const trustAttachedPublicKey = useTrustAttachedPublicKey(message.localID);
+    const loadRemoteImages = useLoadRemoteImages(message.localID);
+    const loadEmbeddedImages = useLoadEmbeddedImages(message.localID);
+    const markAsRead = useMarkAsRead(message.localID);
+    const resignContact = useResignContact(message.localID);
 
+    const draft = isDraft(message.data);
     const messageLoaded = !!message.data?.Subject;
     const bodyLoaded = !!message.initialized;
     const sent = isSent(message.data);
@@ -79,42 +80,40 @@ const MessageView = ({
         return { globalIcon: getReceivedStatusIcon(message), mapStatusIcon: {} };
     }, [message]);
 
-    const prepareMessage = async () => {
-        if (typeof message?.initialized === 'undefined') {
-            await addAction(initialize);
-        }
-
-        // Don't scroll if it's the first message of the conversation and only on the first automatic expand
-        if (conversationIndex !== 0 && initialExpand) {
-            elementRef.current && elementRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    };
-
+    // Manage loading the message
     useEffect(() => {
         if (!messageLoaded) {
             addAction(load);
         }
+    }, [messageLoaded]);
 
-        if (messageLoaded && !draft && initialExpand) {
-            setExpanded(true);
-            setInitialExpand(false);
+    // Manage preparing the content of the message
+    useEffect(() => {
+        if (expanded && message.initialized === undefined) {
+            addAction(initialize);
         }
+    }, [expanded, message.initialized]);
 
-        if (!draft && !bodyLoaded && expanded) {
-            prepareMessage();
+    // Manage the focus to the message
+    useEffect(() => {
+        if (!hasBeenFocused && inputExpand && bodyLoaded && conversationIndex !== 0) {
+            elementRef.current && elementRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setHasBeenFocused(true);
         }
+    }, [inputExpand, bodyLoaded, hasBeenFocused, conversationIndex]);
 
-        // This particular combination can appear when a message is loaded then marked as unread
-        if (!draft && bodyLoaded && unread && expanded) {
+    // Mark as read a message already loaded (when user marked as unread)
+    useEffect(() => {
+        if (expanded && unread && bodyLoaded && !message.actionStatus) {
             addAction(markAsRead);
         }
-    }, [draft, messageLoaded, bodyLoaded, expanded, message.data?.ID]);
+    }, [expanded, unread, bodyLoaded, message.actionStatus]);
 
     // Re-initialize context if message is changed without disposing the component
     useEffect(() => {
         if (message.data?.ID) {
-            setExpanded(inputInitialExpand && !draft);
-            setInitialExpand(inputInitialExpand && !draft);
+            setExpanded(inputExpand && !draft);
+            setHasBeenFocused(false);
             setSourceMode(false);
         }
     }, [draft, message.data?.ID]);

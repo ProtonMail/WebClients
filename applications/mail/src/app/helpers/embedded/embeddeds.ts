@@ -122,3 +122,25 @@ export const isEmbeddedLocal = ({
 }: Attachment = {}) => {
     return disposition === 'inline' || Number(embedded) === 1;
 };
+
+export const compareEmbeddedAttachment = (a: Attachment, b: Attachment) => readCID(a) === readCID(b);
+
+export const createEquivalentEmbeddeds = (source: EmbeddedMap | undefined, attachments: Attachment[]) => {
+    if (!source) {
+        return;
+    }
+
+    const result = createEmbeddedMap();
+
+    source.forEach((embeddedInfo) => {
+        const attachment = attachments.find((attachment) =>
+            compareEmbeddedAttachment(attachment, embeddedInfo.attachment)
+        );
+
+        if (attachment) {
+            result.set(readCID(attachment), { attachment, url: embeddedInfo.url });
+        }
+    });
+
+    return result;
+};

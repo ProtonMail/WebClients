@@ -5,7 +5,7 @@ import { unique } from 'proton-shared/lib/helpers/array';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
-import { Message, EmbeddedMap, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
+import { EmbeddedMap, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 import { findSender } from '../addresses';
 import { Attachment } from '../../models/attachment';
@@ -15,9 +15,9 @@ import { recipientToInput } from '../addresses';
 import { getDate } from '../elements';
 import { isSent, isSentAndReceived, getOriginalTo } from './messages';
 import { getContent } from './messageContent';
-import { EmbeddedInfo } from '../../models/message';
 import { parseInDiv } from '../dom';
 import { generateUID } from 'react-components';
+import { createEmbeddedMap } from '../embedded/embeddeds';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -36,6 +36,25 @@ export const formatSubject = (subject = '', prefix = '') => {
 };
 
 /**
+ * Copy embeddeds images from the reference message
+ */
+export const keepEmbeddeds = (refEmbeddeds?: EmbeddedMap) => {
+    if (!refEmbeddeds) {
+        return {};
+    }
+
+    const Attachments: Attachment[] = [];
+    const embeddeds: EmbeddedMap = createEmbeddedMap();
+
+    refEmbeddeds.forEach((value, key) => {
+        embeddeds.set(key, value);
+        Attachments.push(value.attachment);
+    });
+
+    return { Attachments, embeddeds };
+};
+
+/**
  * Format and build a new message
  * TODO: Define if referenceMessage could ever be defined
  */
@@ -45,19 +64,16 @@ const newCopy = (
         decryptedSubject = ''
     }: PartialMessageExtended = {},
     useEncrypted = false
-): Partial<Message> => {
+): PartialMessageExtended => {
     return {
-        Subject: useEncrypted ? decryptedSubject : Subject,
-        ToList,
-        CCList,
-        BCCList
+        data: { Subject: useEncrypted ? decryptedSubject : Subject, ToList, CCList, BCCList }
     };
 };
 
 /**
  * Format and build a reply
  */
-const reply = (referenceMessage: PartialMessageExtended, useEncrypted = false): Partial<Message> => {
+const reply = (referenceMessage: PartialMessageExtended, useEncrypted = false): PartialMessageExtended => {
     const Subject = formatSubject(
         useEncrypted ? referenceMessage.decryptedSubject : referenceMessage.data?.Subject,
         RE_PREFIX
@@ -67,9 +83,11 @@ const reply = (referenceMessage: PartialMessageExtended, useEncrypted = false): 
             ? referenceMessage.data?.ToList
             : referenceMessage.data?.ReplyTos;
 
+    const { Attachments, embeddeds } = keepEmbeddeds(referenceMessage.embeddeds);
+
     return {
-        Subject,
-        ToList
+        data: { Subject, ToList, Attachments },
+        embeddeds
     };
 };
 
@@ -80,13 +98,18 @@ const replyAll = (
     referenceMessage: PartialMessageExtended,
     useEncrypted = false,
     addresses: Address[]
-): Partial<Message> => {
+): PartialMessageExtended => {
     const { data = {}, decryptedSubject = '' } = referenceMessage;
 
     const Subject = formatSubject(useEncrypted ? decryptedSubject : data.Subject, RE_PREFIX);
 
+    const { Attachments, embeddeds } = keepEmbeddeds(referenceMessage.embeddeds);
+
     if (isSent(referenceMessage.data) || isSentAndReceived(referenceMessage.data)) {
-        return { Subject, ToList: data.ToList, CCList: data.CCList, BCCList: data.BCCList };
+        return {
+            data: { Subject, ToList: data.ToList, CCList: data.CCList, BCCList: data.BCCList, Attachments },
+            embeddeds
+        };
     }
 
     const ToList = data.ReplyTos;
@@ -98,26 +121,27 @@ const replyAll = (
         ({ Address = '' }) => !userAddresses.includes(Address.toLowerCase())
     );
 
-    return { Subject, ToList, CCList };
+    return { data: { Subject, ToList, CCList, Attachments }, embeddeds };
 };
 
 /**
  * Format and build a forward
  */
 const forward = (
-    { data = {}, decryptedSubject = '' }: PartialMessageExtended,
+    { data, decryptedSubject = '' }: PartialMessageExtended,
     useEncrypted = false
-): Partial<Message> => {
-    const Subject = formatSubject(useEncrypted ? decryptedSubject : data.Subject, FW_PREFIX);
+): PartialMessageExtended => {
+    const Subject = formatSubject(useEncrypted ? decryptedSubject : data?.Subject, FW_PREFIX);
+    const Attachments = data?.Attachments;
 
-    return { Subject, ToList: [] };
+    return { data: { Subject, ToList: [], Attachments } };
 };
 
 export const handleActions = (
     action: MESSAGE_ACTIONS,
     referenceMessage: PartialMessageExtended = {},
     addresses: Address[] = []
-): Partial<Message> => {
+): PartialMessageExtended => {
     // TODO: I would prefere manage a confirm modal from elsewhere
     // const useEncrypted = !!referenceMessage.encryptedSubject && (await promptEncryptedSubject(currentMsg));
     const useEncrypted = !!referenceMessage?.decryptedSubject;
@@ -176,7 +200,10 @@ export const createNewDraft = (
         Flags = setBit(Flags, MESSAGE_FLAGS.FLAG_SIGN);
     }
 
-    const { Subject = '', ToList = [], CCList = [], BCCList = [] } = handleActions(action, referenceMessage, addresses);
+    const {
+        data: { Subject = '', ToList = [], CCList = [], BCCList = [], Attachments = [] } = {},
+        embeddeds
+    } = handleActions(action, referenceMessage, addresses);
 
     const originalTo = getOriginalTo(referenceMessage?.data);
 
@@ -184,14 +211,6 @@ export const createNewDraft = (
 
     const AddressID = senderAddress?.ID || ''; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
     const Sender = senderAddress ? { Name: senderAddress.DisplayName, Address: senderAddress.Email } : {};
-
-    const embeddeds: EmbeddedMap = new Map<string, EmbeddedInfo>();
-    const Attachments: Attachment[] = [];
-
-    referenceMessage?.embeddeds?.forEach((value, key) => {
-        embeddeds.set(key, value);
-        Attachments.push(value.attachment);
-    });
 
     const ParentID = action === MESSAGE_ACTIONS.NEW ? undefined : referenceMessage?.data?.ID;
 

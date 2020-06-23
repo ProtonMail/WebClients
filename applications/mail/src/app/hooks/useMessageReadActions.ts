@@ -84,7 +84,6 @@ export const useInitializeMessage = (localID: string) => {
 
         try {
             message = await loadMessage(messageFromCache, api);
-            // const { apiKeys, pinnedKeys, isContactSignatureVerified } = await getEncryptionPreferences(
             encryptionPreferences = await getEncryptionPreferences(message.data.Sender.Address as string);
             userKeys = await getMessageKeys(message);
             const messageWithKeys = {
@@ -140,6 +139,7 @@ export const useInitializeMessage = (localID: string) => {
             verificationStatus = decryption.verified;
 
             await markAsRead(message, api, call);
+            data = { ...message.data, Unread: 0 };
 
             preparation = await prepareMailDocument(
                 { ...messageWithKeys, decryptedBody: decryption.decryptedBody },

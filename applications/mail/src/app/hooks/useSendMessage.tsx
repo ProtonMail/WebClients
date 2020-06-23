@@ -29,10 +29,8 @@ import { attachPublicKey } from '../helpers/message/messageAttachPublicKey';
 import { Attachment } from '../models/attachment';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 import SendWithWarningsModal from '../components/composer/addresses/SendWithWarningsModal';
-import { createMessage, updateMessage } from '../helpers/message/messageExport';
-import { noop } from 'proton-shared/lib/helpers/function';
 import SendWithExpirationModal from '../components/composer/addresses/SendWithExpirationModal';
-import { useMessageKeys } from './useMessageKeys';
+import { useSaveDraft } from './useMessageWriteActions';
 
 export const useSendVerifications = () => {
     const { createModal } = useModals();
@@ -168,36 +166,28 @@ export const useSendMessage = () => {
     const { call } = useEventManager();
     const messageCache = useMessageCache();
     const auth = useAuthentication();
-    const getMessageKeys = useMessageKeys();
+    const saveDraft = useSaveDraft();
 
     return useCallback(
         async (inputMessage: MessageExtendedWithData, mapSendPrefs: MapSendPreferences) => {
-            const emails = unique(getRecipientsAddresses(inputMessage.data));
-
-            const messageFromCache = messageCache.get(inputMessage.localID);
-            const senderHasChanged = messageFromCache?.data?.Sender.Address !== inputMessage.data?.Sender.Address;
-            const messageKeys = await getMessageKeys(inputMessage, senderHasChanged);
-            const messageToSave = { ...inputMessage, ...messageKeys };
-
-            // Prepare and save draft
-            let Message;
-            if (inputMessage.data.ID) {
-                Message = await updateMessage(messageToSave, senderHasChanged, api, noop);
-            } else {
-                Message = await createMessage(messageToSave, api, noop);
-            }
-
-            const Attachments: Attachment[] = isAttachPublicKey(Message)
-                ? await attachPublicKey({ ...inputMessage, data: Message }, auth.UID)
-                : Message.Attachments;
+            // Add public key if selected
+            const Attachments: Attachment[] = isAttachPublicKey(inputMessage.data)
+                ? await attachPublicKey(inputMessage, auth.UID)
+                : inputMessage.data.Attachments;
 
             // Processed message representing what we send
-            const message: MessageExtendedWithData = {
+            const messageToSave: MessageExtendedWithData = {
                 ...inputMessage,
-                data: { ...Message, Attachments }
+                data: { ...inputMessage.data, Attachments }
             };
 
+            await saveDraft(messageToSave);
+
+            const message = messageCache.get(messageToSave.localID) as MessageExtendedWithData;
+
             // TODO: handleAttachmentSigs ?
+
+            const emails = unique(getRecipientsAddresses(inputMessage.data));
 
             let packages = await generateTopPackages(message, mapSendPrefs, attachmentCache, api);
             packages = await attachSubPackages(packages, message, emails, mapSendPrefs);

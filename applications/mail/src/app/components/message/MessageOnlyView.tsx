@@ -62,7 +62,6 @@ const MessageOnlyView = ({ labelID, messageID, mailSettings, onBack, onCompose }
                 <MessageView
                     labelID={labelID}
                     message={data}
-                    initialExpand={true}
                     labels={labels}
                     mailSettings={mailSettings}
                     onBack={onBack}

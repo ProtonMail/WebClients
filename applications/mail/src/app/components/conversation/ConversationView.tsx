@@ -44,7 +44,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
     const showTrashWarning = filteredMessages.length !== messages.length;
     const numParticipants = getNumParticipants(conversation);
 
-    const initialExpand = findMessageToExpand(labelID, messagesToShow)?.ID;
+    const expand = findMessageToExpand(labelID, messagesToShow)?.ID;
 
     return (
         <>
@@ -81,7 +81,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
                         labelID={labelID}
                         key={message.ID}
                         message={message}
-                        initialExpand={message.ID === initialExpand}
+                        expand={message.ID === expand}
                         labels={labels}
                         mailSettings={mailSettings}
                         conversationIndex={index}

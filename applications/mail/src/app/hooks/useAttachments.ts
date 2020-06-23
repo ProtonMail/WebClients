@@ -28,7 +28,7 @@ export interface PendingUpload {
 export const useAttachments = (
     message: MessageExtended,
     onChange: MessageChange,
-    onSave: (message: MessageExtended) => Promise<void>,
+    onSaveNow: () => Promise<void>,
     editorActionsRef: EditorActionsRef
 ) => {
     const api = useApi();
@@ -45,6 +45,12 @@ export const useAttachments = (
     const removePendingUpload = (pendingUpload: PendingUpload) => {
         const newPendingUploads = pendingUploads?.filter((aPendingUpload) => aPendingUpload !== pendingUpload);
         setPendingUploads(newPendingUploads);
+    };
+
+    const ensureMessageIsCreated = async () => {
+        await onSaveNow();
+        // Message from cache has data because we just saved it if not
+        return messageCache.get(message.localID) as MessageExtendedWithData;
     };
 
     /**
@@ -96,11 +102,7 @@ export const useAttachments = (
     const handleAddAttachmentsUpload = async (action: ATTACHMENT_ACTION, files = pendingFiles || []) => {
         setPendingFiles(undefined);
 
-        if (!message.data?.ID) {
-            await onSave(message);
-        }
-        // Message from cache has data because we just saved it if not
-        const messageFromCache = messageCache.get(message.localID) as MessageExtendedWithData;
+        const messageFromCache = await ensureMessageIsCreated();
         const uploads = upload(files, messageFromCache, action, auth.UID);
         const pendingUploads = files?.map((file, i) => ({ file, upload: uploads[i] }));
         setPendingUploads(pendingUploads);

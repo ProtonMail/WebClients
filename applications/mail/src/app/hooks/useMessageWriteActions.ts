@@ -7,6 +7,7 @@ import { useMessageKeys } from './useMessageKeys';
 import { mergeMessages } from '../helpers/message/messages';
 import { useMessageCache, updateMessageCache, updateMessageStatus, MessageCache } from '../containers/MessageProvider';
 import { createMessage, updateMessage } from '../helpers/message/messageExport';
+import { createEquivalentEmbeddeds } from '../helpers/embedded/embeddeds';
 
 /**
  * Only takes technical stuff from the updated message
@@ -21,7 +22,7 @@ export const mergeSavedMessage = (messageSaved: Message, messageReturned: Messag
 const getUpdateStatus = (messageCache: MessageCache, localID: string) => (status: string) =>
     updateMessageStatus(messageCache, localID, status);
 
-export const useCreateDraft = () => {
+const useCreateDraft = () => {
     const api = useApi();
     const messageCache = useMessageCache();
     const { call } = useEventManager();
@@ -34,15 +35,17 @@ export const useCreateDraft = () => {
             api,
             getUpdateStatus(messageCache, message.localID)
         );
+
         updateMessageCache(messageCache, message.localID, {
-            data: mergeSavedMessage(message.data, newMessage),
-            ...messageKeys
+            data: { ...mergeSavedMessage(message.data, newMessage), Attachments: newMessage.Attachments },
+            ...messageKeys,
+            embeddeds: createEquivalentEmbeddeds(message.embeddeds, newMessage.Attachments)
         });
         await call();
     }, []);
 };
 
-export const useSaveDraft = () => {
+const useUpdateDraft = () => {
     const api = useApi();
     const messageCache = useMessageCache();
     const { call } = useEventManager();
@@ -64,6 +67,22 @@ export const useSaveDraft = () => {
             data: mergeSavedMessage(message.data, newMessage)
         });
         await call();
+    }, []);
+};
+
+export const useSaveDraft = () => {
+    const messageCache = useMessageCache();
+    const updateDraft = useUpdateDraft();
+    const createDraft = useCreateDraft();
+
+    return useCallback(async (message: MessageExtendedWithData) => {
+        const messageFromCache = messageCache.get(message.localID) as MessageExtended;
+
+        if (messageFromCache.data?.ID) {
+            await updateDraft(message);
+        } else {
+            await createDraft(message);
+        }
     }, []);
 };
 

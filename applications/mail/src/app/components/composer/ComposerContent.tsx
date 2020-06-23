@@ -14,8 +14,6 @@ import { PendingUpload } from '../../hooks/useAttachments';
 import { MessageChange } from './Composer';
 import { Breakpoints } from '../../models/utils';
 
-import 'design-system/_sass/react-styles/quill/_snow.scss';
-
 interface Props {
     message: MessageExtended;
     disabled: boolean;

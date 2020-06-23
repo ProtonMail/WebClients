@@ -17,7 +17,7 @@ import ComposerExpirationModal from './ComposerExpirationModal';
 import { useHandler } from '../../hooks/useHandler';
 import { useMessage } from '../../hooks/useMessage';
 import { useInitializeMessage } from '../../hooks/useMessageReadActions';
-import { useCreateDraft, useSaveDraft, useDeleteDraft } from '../../hooks/useMessageWriteActions';
+import { useSaveDraft, useDeleteDraft } from '../../hooks/useMessageWriteActions';
 import { useSendMessage, useSendVerifications } from '../../hooks/useSendMessage';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { useAttachments } from '../../hooks/useAttachments';
@@ -36,8 +36,10 @@ enum ComposerInnerModal {
     Expiration
 }
 
+export type MessageUpdate = PartialMessageExtended | ((message: MessageExtended) => PartialMessageExtended);
+
 export interface MessageChange {
-    (message: PartialMessageExtended | ((message: MessageExtended) => PartialMessageExtended)): void;
+    (update: MessageUpdate): void;
 }
 
 interface Props {
@@ -113,7 +115,6 @@ const Composer = ({
 
     // All message actions
     const initialize = useInitializeMessage(syncedMessage.localID);
-    const createDraft = useCreateDraft();
     const saveDraft = useSaveDraft();
     const sendVerifications = useSendVerifications();
     const sendMessage = useSendMessage();
@@ -122,7 +123,8 @@ const Composer = ({
     // Computed composer status
     const syncInProgress = syncedMessage.actionStatus !== undefined;
     const syncStatus = syncedMessage.actionStatus || '';
-    const actionBarLocked = !editorReady || manualSaving || sending || closing;
+    const contentLocked = opening || sending || closing;
+    const actionBarLocked = opening || manualSaving || sending || closing;
 
     // Manage focus from the container yet keeping logic in each component
     const addressesBlurRef = useRef<() => void>(noop);
@@ -136,6 +138,7 @@ const Composer = ({
     // Input onClose ref can change in the meantime
     const onClose = useHandler(inputOnClose);
 
+    // Manage existing draft initialization
     useEffect(() => {
         if (
             !syncInProgress &&
@@ -144,16 +147,38 @@ const Composer = ({
         ) {
             addAction(initialize);
         }
+    }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID, syncedMessage.initialized]);
 
+    // Manage populating the model from the server
+    useEffect(() => {
         if (modelMessage.document === undefined || modelMessage.data?.ID !== syncedMessage.data?.ID) {
             setModelMessage({
                 ...syncedMessage,
                 ...modelMessage,
-                data: { ...syncedMessage.data, ...modelMessage.data } as Message,
-                document: syncedMessage.document
+                data: {
+                    ...syncedMessage.data,
+                    ...modelMessage.data,
+                    // Attachments are updated by the draft creation request
+                    Attachments: syncedMessage.data?.Attachments
+                } as Message,
+                document: syncedMessage.document,
+                embeddeds: syncedMessage.embeddeds
             });
         }
     }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID]);
+
+    // Manage opening
+    useEffect(() => {
+        const attachmentToCreate = !syncedMessage.data?.ID && !!syncedMessage.data?.Attachments?.length;
+
+        if (!syncInProgress && attachmentToCreate) {
+            addAction(() => saveDraft(syncedMessage as MessageExtendedWithData));
+        }
+
+        if (editorReady && !syncInProgress && !attachmentToCreate) {
+            setOpening(false);
+        }
+    }, [editorReady, syncInProgress, syncedMessage.data, syncedMessage.actionStatus]);
 
     // Automatic maximize if height too small
     useEffect(() => {
@@ -166,31 +191,34 @@ const Composer = ({
 
     // Manage focus at opening
     useEffect(() => {
-        if (!opening || !editorReady) {
-            return;
+        let timeout: number | undefined;
+
+        if (!opening) {
+            timeout = setTimeout(() => {
+                if (getRecipients(syncedMessage.data).length === 0) {
+                    addressesFocusRef.current();
+                } else {
+                    contentFocusRef.current();
+                }
+            });
         }
-        setTimeout(() => {
-            if (getRecipients(syncedMessage.data).length === 0) {
-                addressesFocusRef.current();
-            } else {
-                contentFocusRef.current();
+
+        return () => {
+            if (timeout) {
+                clearTimeout(timeout);
             }
-        });
-        setOpening(false);
-    }, [editorReady]);
+        };
+    }, [opening]);
 
     const actualSave = (message: MessageExtended) => {
-        if (message.data?.ID) {
-            return addAction(() => saveDraft(message as MessageExtendedWithData));
-        }
-        return addAction(() => createDraft(message as MessageExtendedWithData));
+        return addAction(() => saveDraft(message as MessageExtendedWithData));
     };
 
     const [pendingSave, autoSave] = useDebouncedHandler(actualSave, 2000);
 
-    const handleChange: MessageChange = (message) => {
+    const handleChange: MessageChange = (update) => {
         setModelMessage((modelMessage) => {
-            const messageChanges = message instanceof Function ? message(modelMessage) : message;
+            const messageChanges = update instanceof Function ? update(modelMessage) : update;
             const newModelMessage = mergeMessages(modelMessage, messageChanges);
             autoSave(newModelMessage);
             return newModelMessage;
@@ -218,9 +246,14 @@ const Composer = ({
         handleChange({ data: { Flags } });
     };
 
-    const handleSaveBeforeAttachFile = (message: MessageExtended) => {
-        autoSave.abort?.();
-        return actualSave(message);
+    /**
+     * Ensure the draft is saved before continue
+     */
+    const handleSaveNow = async () => {
+        if (!modelMessage.data?.ID) {
+            autoSave.abort?.();
+            return actualSave(modelMessage);
+        }
     };
 
     const {
@@ -232,7 +265,7 @@ const Composer = ({
         handleCancelAddAttachment,
         handleRemoveAttachment,
         handleRemoveUpload
-    } = useAttachments(modelMessage, handleChange, handleSaveBeforeAttachFile, editorActionsRef);
+    } = useAttachments(modelMessage, handleChange, handleSaveNow, editorActionsRef);
 
     const handlePassword = () => {
         setInnerModal(ComposerInnerModal.Password);
@@ -244,11 +277,11 @@ const Composer = ({
         setInnerModal(ComposerInnerModal.None);
     };
 
-    const handleManualSave = async (messageToSave = modelMessage) => {
+    const handleManualSave = async () => {
         setManualSaving(true);
         autoSave.abort?.();
         try {
-            await actualSave(messageToSave);
+            await actualSave(modelMessage);
             createNotification({ text: c('Info').t`Message saved` });
         } finally {
             setManualSaving(false);
@@ -373,7 +406,7 @@ const Composer = ({
                         />
                         <ComposerContent
                             message={modelMessage}
-                            disabled={!editorReady}
+                            disabled={contentLocked}
                             breakpoints={breakpoints}
                             onEditorReady={() => setEditorReady(true)}
                             onChange={handleChange}

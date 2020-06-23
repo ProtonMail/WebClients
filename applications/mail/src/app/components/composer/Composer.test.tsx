@@ -42,7 +42,7 @@ describe('Composer', () => {
 
         messageCache.set(ID, message);
 
-        const { getByTestId, getByText, queryByText } = await render(<Composer {...props} messageID={ID} />);
+        const { getByTestId, findByText, queryByText } = await render(<Composer {...props} messageID={ID} />);
 
         const inputAttachment = getByTestId('composer-attachments-button') as HTMLInputElement;
 
@@ -53,6 +53,6 @@ describe('Composer', () => {
         const embeddedModal = queryByText('0 image detected');
         expect(embeddedModal).toBe(null);
 
-        getByText('1 file attached');
+        findByText('1 file attached');
     });
 });

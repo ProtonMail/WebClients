@@ -12,11 +12,18 @@ interface Props {
 }
 
 const AttachmentItem = ({ name, progression = 0, onRemove }: Props) => {
+    const [removed, setRemoved] = useState(false);
+
     const blue = '#657ee4';
     const value = Math.round(progression * 100);
     const progressionHappening = progression !== 0;
     const backgroundImage =
         progression === 0 ? 'none' : `linear-gradient(to right, ${blue} 0%,  ${blue} ${value}%, transparent ${value}%)`;
+
+    const handleRemove = () => {
+        setRemoved(true);
+        onRemove();
+    };
 
     return (
         <div className="composer-attachments-item">
@@ -36,8 +43,9 @@ const AttachmentItem = ({ name, progression = 0, onRemove }: Props) => {
                 <button
                     type="button"
                     className="inline-flex p0-5 no-pointer-events-children h100 flex-item-noshrink border-left composer-attachments-item-deleteButton"
-                    onClick={onRemove}
+                    onClick={handleRemove}
                     title={c('Action').t`Remove`}
+                    disabled={removed}
                 >
                     <Icon name="off" size={12} />
                     <span className="sr-only">{c('Action').t`Remove`}</span>

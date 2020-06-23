@@ -73,9 +73,9 @@ const HeaderMoreDropdown = ({
 
     const handleUnread = async () => {
         closeDropdown.current?.();
+        onCollapse();
         await api(markMessageAsUnread([message.data?.ID]));
         await call();
-        onCollapse();
     };
 
     // Reference: Angular/src/app/bugReport/factories/bugReportModel.js
