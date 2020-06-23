@@ -1,5 +1,5 @@
 import { formatData } from 'proton-shared/lib/calendar/serialize';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { VcalCalendarComponent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ReactNode } from 'react';
 import { ImportEventError } from '../components/import/ImportEventError';
@@ -46,16 +46,18 @@ export type Unwrap<T> = T extends Promise<infer U>
     ? U
     : T;
 
+export interface SyncMultipleApiResponses {
+    Index: number;
+    Response: {
+        Code: number;
+        Event?: CalendarEvent;
+        Error?: string;
+    };
+}
+
 export interface SyncMultipleApiResponse {
     Code: number;
-    Responses: {
-        Index: number;
-        Response: {
-            Code: number;
-            Event?: object;
-            Error?: string;
-        };
-    }[];
+    Responses: SyncMultipleApiResponses[];
 }
 
 export type VcalCalendarComponentOrError = VcalCalendarComponent | { error: Error };

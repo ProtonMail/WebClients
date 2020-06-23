@@ -89,6 +89,8 @@ import getSyncMultipleEventsPayload, { SyncEventActionOperations } from './getSy
 import { SyncMultipleApiResponse } from '../../interfaces/Import';
 import getSaveEventActions from './eventActions/getSaveEventActions';
 import getDeleteEventActions from './eventActions/getDeleteEventActions';
+import upsertMultiActionsResponses from './eventStore/cache/upsertResponsesArray';
+import { getIsCalendarEvent } from './eventStore/cache/helper';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
     if (!isAllDay) {
@@ -272,7 +274,13 @@ const InteractiveCalendarView = ({
         eventReadResult,
         eventRecurrence,
     }: CalendarViewEventData): EventModel | undefined => {
-        if (!eventData || !eventReadResult || eventReadResult.error || !eventReadResult.result) {
+        if (
+            !eventData ||
+            !eventReadResult ||
+            eventReadResult.error ||
+            !eventReadResult.result ||
+            !getIsCalendarEvent(eventData)
+        ) {
             return;
         }
         const initialDate = getInitialDate();
@@ -651,21 +659,30 @@ const InteractiveCalendarView = ({
             multiResponses.push(result);
         }
 
+        const calendarsEventCache = calendarsEventsCacheRef.current;
+        if (calendarsEventCache) {
+            upsertMultiActionsResponses(multiActions, multiResponses, calendarsEventCache);
+        }
+
         const hiddenCalendars = multiActions.filter(({ calendarID }) => {
             const calendar = activeCalendars.find(({ ID }) => ID === calendarID);
             return !calendar?.Display;
         });
 
-        await Promise.all(
-            hiddenCalendars.map(({ calendarID }) => {
-                return api({
-                    ...updateCalendar(calendarID, { Display: 1 }),
-                    silence: true,
-                });
-            })
-        );
+        // TODO: Remove when optimistic
+        if (hiddenCalendars.length > 0) {
+            await Promise.all(
+                hiddenCalendars.map(({ calendarID }) => {
+                    return api({
+                        ...updateCalendar(calendarID, { Display: 1 }),
+                        silence: true,
+                    });
+                })
+            );
+            await call();
+        }
 
-        await call();
+        calendarsEventCache.rerender?.();
 
         createNotification({ text: texts.success });
     };

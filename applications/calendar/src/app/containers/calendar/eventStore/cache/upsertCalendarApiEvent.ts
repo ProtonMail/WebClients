@@ -3,7 +3,6 @@ import { pick } from 'proton-shared/lib/helpers/object';
 import { CalendarEventCache } from '../interface';
 import getComponentFromCalendarEvent from './getComponentFromCalendarEvent';
 import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';
-import { getIsCalendarEvent } from './helper';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
 
 const FIELDS_TO_KEEP = [
@@ -11,7 +10,7 @@ const FIELDS_TO_KEEP = [
     'SharedEventID',
     'CalendarID',
     'CreateTime',
-    'LastEditTime',
+    'ModifyTime',
     'Author',
     'Permissions',
 
@@ -25,36 +24,14 @@ const FIELDS_TO_KEEP = [
 ] as const;
 
 const upsertCalendarApiEvent = (Event: CalendarEvent, calendarEventCache: CalendarEventCache) => {
-    const oldEventRecord = calendarEventCache.events.get(Event.ID);
-
+    const eventID = Event.ID;
     try {
         const eventComponent = getComponentFromCalendarEvent(Event);
         const eventData = pick(Event, FIELDS_TO_KEEP);
-
         const newCalendarEventStoreRecord = getCalendarEventStoreRecord(eventComponent, eventData);
-
-        const oldEventData = oldEventRecord?.eventData;
-        const isOldEventDataFull = oldEventData && getIsCalendarEvent(oldEventData);
-
-        const oldLastEditTime = oldEventData?.LastEditTime || 0;
-        const newLastEditTime = eventData.LastEditTime || 0;
-
-        const isNewEventLastEditTime =
-            newLastEditTime > oldLastEditTime || (newLastEditTime === oldLastEditTime && !isOldEventDataFull);
-
-        const isNewEvent = !oldEventRecord || !oldEventData;
-        const shouldUpsert = isNewEvent || isNewEventLastEditTime;
-
-        if (!shouldUpsert) {
-            return false;
-        }
-
-        upsertCalendarEventStoreRecord(eventData.ID, newCalendarEventStoreRecord, calendarEventCache);
-        return true;
+        return upsertCalendarEventStoreRecord(eventID, newCalendarEventStoreRecord, calendarEventCache);
     } catch (error) {
-        if (oldEventRecord) {
-            removeCalendarEventStoreRecord(Event.ID, calendarEventCache);
-        }
+        removeCalendarEventStoreRecord(eventID, calendarEventCache);
         return false;
     }
 };

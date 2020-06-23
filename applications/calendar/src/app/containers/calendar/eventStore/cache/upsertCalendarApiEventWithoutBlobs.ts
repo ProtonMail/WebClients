@@ -5,30 +5,17 @@ import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './u
 import getComponentFromCalendarEventWithoutBlob from './getComponentFromCalendarEventWithoutBlob';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
 
-const FIELDS_TO_KEEP = [
-    'ID',
-    'SharedEventID',
-    'CalendarID',
-    'CreateTime',
-    'LastEditTime',
-    'Author',
-    'Permissions',
-] as const;
+const FIELDS_TO_KEEP = ['ID', 'SharedEventID', 'CalendarID', 'CreateTime', 'ModifyTime', 'Permissions'] as const;
 
 const upsertCalendarApiEventWithoutBlob = (Event: CalendarEventWithoutBlob, calendarEventCache: CalendarEventCache) => {
-    const oldEventRecord = calendarEventCache.events.get(Event.ID);
+    const eventID = Event.ID;
     try {
         const eventComponent = getComponentFromCalendarEventWithoutBlob(Event);
         const eventData = pick(Event, FIELDS_TO_KEEP);
-
         const newCalendarEventStoreRecord = getCalendarEventStoreRecord(eventComponent, eventData);
-        upsertCalendarEventStoreRecord(eventData.ID, newCalendarEventStoreRecord, calendarEventCache);
-
-        return true;
+        return upsertCalendarEventStoreRecord(eventID, newCalendarEventStoreRecord, calendarEventCache);
     } catch {
-        if (oldEventRecord) {
-            removeCalendarEventStoreRecord(Event.ID, calendarEventCache);
-        }
+        removeCalendarEventStoreRecord(eventID, calendarEventCache);
         return false;
     }
 };

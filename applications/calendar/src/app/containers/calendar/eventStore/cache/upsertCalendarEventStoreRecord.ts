@@ -9,6 +9,7 @@ import { setEventInRecurrenceInstances, setEventInRecurringCache } from './recur
 import upsertCalendarEventInTree from './upsertCalendarEventInTree';
 import { CalendarEventCache, CalendarEventStoreRecord } from '../interface';
 import { getRecurrenceIdDate, getUid } from '../../event/getEventHelper';
+import { getIsCalendarEvent } from './helper';
 
 export const getCalendarEventStoreRecord = (
     eventComponent: VcalVeventComponent,
@@ -39,7 +40,7 @@ export const getCalendarEventStoreRecord = (
 };
 
 const DEFAULT = {};
-export const upsertCalendarEventStoreRecord = (
+const upsertCalendarEventStoreRecordHelper = (
     calendarEventID: string,
     calendarEventStoreRecord: CalendarEventStoreRecord,
     { tree, events, recurringEvents }: CalendarEventCache
@@ -112,4 +113,32 @@ export const upsertCalendarEventStoreRecord = (
     }
 
     events.set(calendarEventID, calendarEventStoreRecord);
+};
+
+export const upsertCalendarEventStoreRecord = (
+    eventID: string,
+    calendarEventStoreRecord: CalendarEventStoreRecord,
+    calendarEventCache: CalendarEventCache
+) => {
+    const oldEventRecord = calendarEventCache.events.get(eventID);
+
+    const oldEventData = oldEventRecord?.eventData;
+    const newEventData = calendarEventStoreRecord?.eventData;
+    const isOldEventDataFull = oldEventData && getIsCalendarEvent(oldEventData);
+
+    const oldModifyTime = oldEventData?.ModifyTime || 0;
+    const newModifyTime = newEventData?.ModifyTime || 0;
+
+    const isNewEventLastEditTime =
+        newModifyTime > oldModifyTime || (newModifyTime === oldModifyTime && !isOldEventDataFull);
+
+    const isNewEvent = !oldEventRecord || !oldEventData;
+    const shouldUpsert = isNewEvent || isNewEventLastEditTime;
+
+    if (!shouldUpsert) {
+        return false;
+    }
+
+    upsertCalendarEventStoreRecordHelper(eventID, calendarEventStoreRecord, calendarEventCache);
+    return true;
 };
