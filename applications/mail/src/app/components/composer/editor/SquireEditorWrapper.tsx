@@ -125,14 +125,14 @@ const SquireEditorWrapper = ({
         }
     }, [editorReady, documentReady, isPlainText]);
 
-    // Handle show blockquote
-    const handleShowBlockquote = () => {
-        if (squireEditorRef.current) {
-            setBlockquoteExpanded(true);
+    // Insert the blockquote in the editor
+    // In an effect and not an handler to have blockquoteExpanded value updated on the handleInput
+    useEffect(() => {
+        if (blockquoteExpanded && blockquoteSaved !== '' && squireEditorRef.current) {
             const content = squireEditorRef.current.value;
             squireEditorRef.current.value = content + blockquoteSaved;
         }
-    };
+    }, [blockquoteExpanded]);
 
     // Watch for image deletion
     // Angular/src/app/squire/services/removeInlineWatcher.js
@@ -231,7 +231,7 @@ const SquireEditorWrapper = ({
             onChangeMetadata={handleChangeMetadata}
             onFocus={onFocus}
             showEllipseButton={!blockquoteExpanded}
-            onEllipseClick={handleShowBlockquote}
+            onEllipseClick={() => setBlockquoteExpanded(true)}
             onReady={() => setEditorReady(true)}
             onAddImages={onAddAttachments}
             toolbarMoreDropdownExtension={<EditorToolbarExtension message={message} onChangeFlag={onChangeFlag} />}
