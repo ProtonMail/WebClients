@@ -63,6 +63,7 @@ export const minimalCache = () => {
     addToCache('User', {});
     addToCache('Addresses', []);
     addToCache('MailSettings', {});
+    addToCache('ContactEmails', []);
 };
 
 export const eventManagerListeners: ((...args: any[]) => any)[] = [];
