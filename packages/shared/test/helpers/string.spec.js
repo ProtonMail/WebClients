@@ -157,10 +157,11 @@ describe('string', () => {
     });
 
     describe('normalizeEmail', () => {
-        it('should leave external emails the same', () => {
+        it('should lower case external emails', () => {
             const emails = ['testing@myDomain', 'TeS.--TinG@MYDOMAIN', 'ABC;;@cde', 'bad@email@this.is'];
-            expect(emails.map((email) => normalizeEmail(email))).toEqual(emails);
-            expect(emails.map((email) => normalizeEmail(email, false))).toEqual(emails);
+            const expected = emails.map((email) => email.toLowerCase());
+            expect(emails.map((email) => normalizeEmail(email))).toEqual(expected);
+            expect(emails.map((email) => normalizeEmail(email, false))).toEqual(expected);
         });
 
         it('should normalize internal emails properly', () => {

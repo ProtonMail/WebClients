@@ -248,12 +248,12 @@ export const normalizeInternalEmail = (email: string) => {
 
 /**
  * Normalize an external email. This is needed to compare when two external emails should be considered equivalent.
- * Basically we just check email validity
+ * Ideally we should have a set of normalization rules per provider. Until we have that, we simply lower case the
+ * email address, as most providers are case-insensitive
  * See documentation at https://confluence.protontech.ch/display/MAILFE/Email+normalization for more information
  */
 export const normalizeExternalEmail = (email: string) => {
-    const [localPart, domain] = getEmailParts(email);
-    return `${localPart}@${domain}`;
+    return email.toLowerCase();
 };
 
 /**
