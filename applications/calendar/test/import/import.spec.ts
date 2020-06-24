@@ -247,7 +247,97 @@ END:VEVENT`;
         );
     });
 
-    test('should support unofficial timezones in our database', () => {
+    test('should normalize exdate', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART;TZID=W. Europe Standard Time:20021230T203000
+RRULE:FREQ=DAILY
+EXDATE;TZID=W. Europe Standard Time:20200610T170000,20200611T170000
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 12, day: 30, hours: 20, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Berlin' },
+            },
+            exdate: [
+                {
+                    parameters: {
+                        tzid: 'Europe/Berlin',
+                    },
+                    value: {
+                        day: 10,
+                        hours: 17,
+                        isUTC: false,
+                        minutes: 0,
+                        month: 6,
+                        seconds: 0,
+                        year: 2020,
+                    },
+                },
+                {
+                    parameters: {
+                        tzid: 'Europe/Berlin',
+                    },
+                    value: {
+                        day: 11,
+                        hours: 17,
+                        isUTC: false,
+                        minutes: 0,
+                        month: 6,
+                        seconds: 0,
+                        year: 2020,
+                    },
+                },
+            ],
+            rrule: {
+                value: {
+                    freq: 'DAILY',
+                },
+            },
+        });
+    });
+
+    test('should reformat some invalid exdates', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART;VALUE=DATE:20021230
+RRULE:FREQ=DAILY
+EXDATE;TZID=W. Europe Standard Time:20200610T170000,20200611T170000
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 12, day: 30 },
+                parameters: { type: 'date' },
+            },
+            exdate: [
+                {
+                    parameters: { type: 'date' },
+                    value: { day: 10, month: 6, year: 2020 },
+                },
+                {
+                    parameters: { type: 'date' },
+                    value: { day: 11, month: 6, year: 2020 },
+                },
+            ],
+            rrule: { value: { freq: 'DAILY' } },
+        });
+    });
+
+    test('should support unofficial timezones in our database and normalize recurrence-id', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event

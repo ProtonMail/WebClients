@@ -1,13 +1,19 @@
-import { c } from 'ttag';
+import { getEventByUID } from 'proton-shared/lib/api/calendars';
 import { parseWithErrors } from 'proton-shared/lib/calendar/vcal';
-import { getDateProperty, getDateTimeProperty, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import {
+    getDateProperty,
+    getDateTimeProperty,
+    propertyToUTCDate,
+    getDateTimePropertyInDifferentTimezone,
+} from 'proton-shared/lib/calendar/vcalConverter';
 import {
     getHasDtStart,
+    getHasRecurrenceId,
     getHasUid,
     getIsEventComponent,
     getIsFreebusyComponent,
-    getIsPropertyAllDay,
     getIsJournalComponent,
+    getIsPropertyAllDay,
     getIsTimezoneComponent,
     getIsTodoComponent,
     getPropertyTzid,
@@ -16,10 +22,13 @@ import { withDtstamp } from 'proton-shared/lib/calendar/veventHelper';
 import { addDays } from 'proton-shared/lib/date-fns-utc';
 import formatUTC from 'proton-shared/lib/date-fns-utc/format';
 import { convertUTCDateTimeToZone, getSupportedTimezone, toUTCDate } from 'proton-shared/lib/date/timezone';
+import { unique } from 'proton-shared/lib/helpers/array';
 import { readFileAsString } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { dateLocale } from 'proton-shared/lib/i18n';
+import { Api } from 'proton-shared/lib/interfaces';
+import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import {
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
@@ -29,12 +38,14 @@ import {
     VcalVcalendar,
     VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { c } from 'ttag';
 
 import { IMPORT_EVENT_TYPE, ImportEventError } from '../components/import/ImportEventError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from '../components/import/ImportFileError';
 
 import { MAX_IMPORT_EVENTS, MAX_LENGTHS, MAX_NOTIFICATIONS, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from '../constants';
-import { VcalCalendarComponentOrError } from '../interfaces/Import';
+import getComponentFromCalendarEvent from '../containers/calendar/eventStore/cache/getComponentFromCalendarEvent';
+import { EncryptedEvent, VcalCalendarComponentOrError } from '../interfaces/Import';
 import { getSupportedAlarm } from './alarms';
 import { getHasConsistentRrule, getSupportedRrule } from './rrule';
 
@@ -152,6 +163,37 @@ const getSupportedDateOrDateTimeProperty = ({
     return getDateTimeProperty(partDayProperty.value, supportedTzid);
 };
 
+interface GetLinkedDateTimePropertyArgs {
+    property: VcalDateOrDateTimeProperty;
+    component: string;
+    componentId: string;
+    isAllDay: boolean;
+    tzid?: string;
+}
+const getLinkedDateTimeProperty = ({
+    property,
+    component,
+    isAllDay,
+    tzid,
+    componentId,
+}: GetLinkedDateTimePropertyArgs): VcalDateOrDateTimeProperty => {
+    if (isAllDay) {
+        return getDateProperty(property.value);
+    }
+    if (getIsPropertyAllDay(property)) {
+        throw new ImportEventError(IMPORT_EVENT_TYPE.ALLDAY_INCONSISTENCY, component, componentId);
+    }
+    const supportedTzid = getPropertyTzid(property);
+    if (!supportedTzid || !tzid) {
+        throw new ImportEventError(IMPORT_EVENT_TYPE.FLOATING_TIME, component, componentId);
+    }
+    if (tzid !== supportedTzid) {
+        // the linked date-time property should have the same tzid as dtstart
+        return getDateTimePropertyInDifferentTimezone(property, tzid, isAllDay);
+    }
+    return getDateTimeProperty(property.value, tzid);
+};
+
 const getIsWellFormedDateTime = (property: VcalDateTimeProperty) => {
     return property.value.isUTC || !!property.parameters!.tzid;
 };
@@ -235,19 +277,6 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             dtstart: { ...dtstart },
         };
 
-        if (exdate) {
-            validated.exdate = [...exdate];
-        }
-        if (recurrenceId) {
-            validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
-                property: recurrenceId,
-                component: 'vevent',
-                componentId,
-                hasXWrTimezone,
-                calendarTzid,
-                isRecurring,
-            });
-        }
         if (trimmedSummaryValue) {
             validated.summary = {
                 ...summary,
@@ -285,6 +314,37 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
         }
         if (getIsDateOutOfBounds(validated.dtstart)) {
             throw new ImportEventError(IMPORT_EVENT_TYPE.DTSTART_OUT_OF_BOUNDS, 'vevent', componentId);
+        }
+        if (exdate) {
+            const supportedExdate = exdate.map((property) =>
+                getSupportedDateOrDateTimeProperty({
+                    property,
+                    component: 'vevent',
+                    componentId,
+                    hasXWrTimezone,
+                    calendarTzid,
+                    isRecurring,
+                })
+            );
+            validated.exdate = supportedExdate.map((property) =>
+                getLinkedDateTimeProperty({
+                    property,
+                    component: 'vevent',
+                    componentId,
+                    isAllDay: getIsPropertyAllDay(validated.dtstart),
+                    tzid: getPropertyTzid(validated.dtstart),
+                })
+            );
+        }
+        if (recurrenceId) {
+            validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
+                property: recurrenceId,
+                component: 'vevent',
+                componentId,
+                hasXWrTimezone,
+                calendarTzid,
+                isRecurring,
+            });
         }
         if (dtend) {
             const supportedDtend = getSupportedDateOrDateTimeProperty({
@@ -342,52 +402,137 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
     }
 };
 
-interface FilterArgs {
+interface GetSupportedEventsArgs {
     components: VcalCalendarComponentOrError[];
     calscale?: string;
     xWrTimezone?: string;
 }
-export const filterNonSupported = ({ components, calscale, xWrTimezone }: FilterArgs) => {
+export const getSupportedEvents = ({ components, calscale, xWrTimezone }: GetSupportedEventsArgs) => {
     if (calscale && calscale.toLowerCase() !== 'gregorian') {
-        return {
-            events: [],
-            discarded: [new ImportEventError(IMPORT_EVENT_TYPE.NON_GREGORIAN, 'vcalendar', '')],
-        };
+        return [new ImportEventError(IMPORT_EVENT_TYPE.NON_GREGORIAN, 'vcalendar', '')];
     }
     const hasXWrTimezone = !!xWrTimezone;
     const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone) : undefined;
-    return components.reduce<{
-        events: VcalVeventComponent[];
-        discarded: ImportEventError[];
-    }>(
-        (acc, vcalComponent) => {
+    return components
+        .map((vcalComponent) => {
             try {
-                acc.events.push(getSupportedEvent({ vcalComponent, calendarTzid, hasXWrTimezone }));
+                return getSupportedEvent({ vcalComponent, calendarTzid, hasXWrTimezone });
             } catch (e) {
                 if (e instanceof ImportEventError && e.type === IMPORT_EVENT_TYPE.TIMEZONE_IGNORE) {
-                    return acc;
+                    return;
                 }
-                acc.discarded.push(e);
+                return e;
             }
-            return acc;
-        },
-        { events: [], discarded: [] }
-    );
+        })
+        .filter(isTruthy);
 };
 
 /**
  * Split an array of events into those which have a recurrence id and those which don't
  */
 export const splitByRecurrenceId = (events: VcalVeventComponent[]) => {
-    return events.reduce<{ withoutRecurrenceID: VcalVeventComponent[]; withRecurrenceID: VcalVeventComponent[] }>(
+    return events.reduce<{
+        withoutRecurrenceId: VcalVeventComponent[];
+        withRecurrenceId: (VcalVeventComponent & Required<Pick<VcalVeventComponent, 'recurrence-id'>>)[];
+    }>(
         (acc, event) => {
-            if (event['recurrence-id']) {
-                acc.withRecurrenceID.push(event);
+            if (!getHasRecurrenceId(event)) {
+                acc.withoutRecurrenceId.push(event);
             } else {
-                acc.withoutRecurrenceID.push(event);
+                acc.withRecurrenceId.push(event);
             }
             return acc;
         },
-        { withoutRecurrenceID: [], withRecurrenceID: [] }
+        { withoutRecurrenceId: [], withRecurrenceId: [] }
     );
+};
+
+export const splitErrors = <T>(events: (T | ImportEventError)[]) => {
+    return events.reduce<{ errors: ImportEventError[]; rest: T[] }>(
+        (acc, event) => {
+            if (event instanceof ImportEventError) {
+                acc.errors.push(event);
+            } else {
+                acc.rest.push(event);
+            }
+            return acc;
+        },
+        { errors: [], rest: [] }
+    );
+};
+
+const getParentEventFromApi = async (uid: string, api: Api) => {
+    try {
+        const {
+            Events: [parentEvent],
+        } = await api<{ Events: CalendarEvent[] }>({
+            ...getEventByUID({
+                UID: uid,
+                Page: 0,
+                PageSize: 1,
+            }),
+            silence: true,
+        });
+        if (!parentEvent) {
+            return;
+        }
+        const parentComponent = getComponentFromCalendarEvent(parentEvent);
+        if (getHasRecurrenceId(parentComponent)) {
+            // it wouldn't be a parent then
+            return;
+        }
+        return parentComponent;
+    } catch {
+        return undefined;
+    }
+};
+
+export const getSupportedEventsWithRecurrenceId = async (
+    eventsWithRecurrenceId: (VcalVeventComponent & Required<Pick<VcalVeventComponent, 'recurrence-id'>>)[],
+    parentEvents: (EncryptedEvent | ImportEventError)[],
+    api: Api
+) => {
+    // map uid -> parent event
+    const mapParentEvents = parentEvents.reduce<{
+        [key: string]: VcalVeventComponent | undefined;
+    }>((acc, event) => {
+        if (event instanceof ImportEventError) {
+            return acc;
+        }
+        const { component } = event;
+        acc[component.uid.value] = component;
+        return acc;
+    }, {});
+    // complete the map with parent events in the DB
+    const uidsToFetch = unique(
+        eventsWithRecurrenceId.filter(({ uid }) => !mapParentEvents[uid.value]).map(({ uid }) => uid.value)
+    );
+    const result = await Promise.all(uidsToFetch.map((uid) => getParentEventFromApi(uid, api)));
+    result.forEach((parentEvent, i) => {
+        mapParentEvents[uidsToFetch[i]] = parentEvent;
+    });
+
+    return eventsWithRecurrenceId.map((event) => {
+        const uid = event.uid.value;
+        if (!mapParentEvents[uid]) {
+            return new ImportEventError(IMPORT_EVENT_TYPE.PARENT_EVENT_MISSING, 'vevent', uid);
+        }
+        const recurrenceId = event['recurrence-id'];
+        try {
+            const parentDtstart = (mapParentEvents[uid] as VcalVeventComponent).dtstart;
+            const supportedRecurrenceId = getLinkedDateTimeProperty({
+                property: recurrenceId,
+                component: 'vevent',
+                isAllDay: getIsPropertyAllDay(parentDtstart),
+                tzid: getPropertyTzid(parentDtstart),
+                componentId: uid,
+            });
+            return { ...event, 'recurrence-id': supportedRecurrenceId };
+        } catch (e) {
+            if (e instanceof ImportEventError) {
+                return e;
+            }
+            return new ImportEventError(IMPORT_EVENT_TYPE.VALIDATION_ERROR, 'vevent', uid);
+        }
+    });
 };

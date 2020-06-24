@@ -4,53 +4,50 @@ import { Alert } from 'react-components';
 import { ImportCalendarModel } from '../../interfaces/Import';
 
 import DynamicProgress from './DynamicProgress';
+import { extractTotals } from './encryptAndSubmit';
 import ErrorDetails from './ErrorDetails';
 
 interface Props {
     model: ImportCalendarModel;
 }
 const ImportSummaryModalContent = ({ model }: Props) => {
-    const total = model.eventsParsed.length;
-    const encrypted = model.eventsEncrypted.length;
-    const imported = model.eventsImported.length;
-    const success = imported === total;
-    const partialSuccess = imported > 0 && !success;
+    const { totalToImport, totalToProcess, totalImported, totalProcessed } = extractTotals(model);
+    const isSuccess = totalImported === totalToImport;
+    const isPartialSuccess = totalImported > 0 && !isSuccess;
 
-    const errors = [...model.eventsNotEncrypted, ...model.eventsNotImported];
-
-    const alertMessage = success
+    const alertMessage = isSuccess
         ? c('Import calendar').ngettext(
               msgid`Event successfully imported. The imported event will now appear in your calendar.`,
               `Events successfully imported. The imported events will now appear in your calendar.`,
-              imported
+              totalImported
           )
-        : partialSuccess
+        : isPartialSuccess
         ? c('Import calendar')
-              .t`An error occurred while encrypting and adding your events. ${imported} out of ${total} events successfully imported.`
+              .t`An error occurred while encrypting and adding your events. ${totalImported} out of ${totalToImport} events successfully imported.`
         : c('Import calendar').ngettext(
               msgid`An error occurred while encrypting and adding your event. No event could be imported.`,
               `An error occurred while encrypting and adding your events. No event could be imported.`,
-              total
+              totalToImport
           );
     const displayMessage = c('Import calendar').ngettext(
-        msgid`${imported}/${total} event encrypted and added to your calendar`,
-        `${imported}/${total} events encrypted and added to your calendar`,
-        total
+        msgid`${totalImported}/${totalToImport} event encrypted and added to your calendar`,
+        `${totalImported}/${totalToImport} events encrypted and added to your calendar`,
+        totalToImport
     );
 
     return (
         <>
-            <Alert type={success ? 'info' : partialSuccess ? 'warning' : 'error'}>{alertMessage}</Alert>
+            <Alert type={isSuccess ? 'info' : isPartialSuccess ? 'warning' : 'error'}>{alertMessage}</Alert>
             <DynamicProgress
                 id="progress-import-calendar"
-                value={encrypted + imported}
+                value={totalProcessed}
                 display={displayMessage}
-                max={2 * total} // count encryption and submission equivalently for the progress
+                max={totalToProcess}
                 loading={false}
-                success={success}
-                partialSuccess={partialSuccess}
+                success={isSuccess}
+                partialSuccess={isPartialSuccess}
             />
-            <ErrorDetails errors={errors} />
+            <ErrorDetails errors={model.errors} />
         </>
     );
 };

@@ -6,7 +6,7 @@ import { FormModal, PrimaryButton, useEventManager } from 'react-components';
 import { c } from 'ttag';
 
 import { MAX_IMPORT_FILE_SIZE } from '../../constants';
-import { filterNonSupported, parseIcs } from '../../helpers/import';
+import { getSupportedEvents, parseIcs, splitErrors } from '../../helpers/import';
 import { IMPORT_STEPS, ImportCalendarModel } from '../../interfaces/Import';
 
 import AttachingModalContent from './AttachingModalContent';
@@ -26,11 +26,9 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
         step: IMPORT_STEPS.ATTACHING,
         calendar: defaultCalendar,
         eventsParsed: [],
-        eventsNotParsed: [],
-        eventsEncrypted: [],
-        eventsNotEncrypted: [],
-        eventsImported: [],
-        eventsNotImported: [],
+        totalEncrypted: 0,
+        totalImported: 0,
+        errors: [],
         loading: false,
     });
 
@@ -47,11 +45,9 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     step: IMPORT_STEPS.ATTACHING,
                     calendar: model.calendar,
                     eventsParsed: [],
-                    eventsNotParsed: [],
-                    eventsEncrypted: [],
-                    eventsNotEncrypted: [],
-                    eventsImported: [],
-                    eventsNotImported: [],
+                    totalEncrypted: 0,
+                    totalImported: 0,
+                    errors: [],
                     loading: false,
                 });
             };
@@ -89,16 +85,18 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                 try {
                     setModel({ ...model, loading: true });
                     const { components, calscale, xWrTimezone } = await parseIcs(fileAttached);
-                    const { events, discarded } = filterNonSupported({ components, calscale, xWrTimezone });
-                    if (!events.length && !discarded.length) {
+                    const { errors, rest: parsed } = splitErrors(
+                        getSupportedEvents({ components, calscale, xWrTimezone })
+                    );
+                    if (!parsed.length && !errors.length) {
                         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_EVENTS, fileAttached.name);
                     }
-                    const step = discarded.length || !events.length ? IMPORT_STEPS.WARNING : IMPORT_STEPS.IMPORTING;
+                    const step = errors.length || !parsed.length ? IMPORT_STEPS.WARNING : IMPORT_STEPS.IMPORTING;
                     setModel({
                         ...model,
                         step,
-                        eventsParsed: events,
-                        eventsNotParsed: discarded,
+                        eventsParsed: parsed,
+                        errors,
                         failure: undefined,
                         loading: false,
                     });
@@ -107,11 +105,9 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                         step: IMPORT_STEPS.ATTACHING,
                         calendar: model.calendar,
                         eventsParsed: [],
-                        eventsNotParsed: [],
-                        eventsEncrypted: [],
-                        eventsNotEncrypted: [],
-                        eventsImported: [],
-                        eventsNotImported: [],
+                        totalEncrypted: 0,
+                        totalImported: 0,
+                        errors: [],
                         failure: e,
                         loading: false,
                     });
@@ -141,7 +137,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
             );
 
             const handleSubmit = () => {
-                setModel({ ...model, step: IMPORT_STEPS.IMPORTING });
+                setModel({ ...model, step: IMPORT_STEPS.IMPORTING, errors: [] });
             };
 
             return {

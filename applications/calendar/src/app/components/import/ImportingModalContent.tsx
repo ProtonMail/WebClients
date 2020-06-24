@@ -1,10 +1,3 @@
-import { CreateCalendarEventSyncData, syncMultipleEvents } from 'proton-shared/lib/api/calendars';
-import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
-import { API_CODES } from 'proton-shared/lib/constants';
-import { chunk } from 'proton-shared/lib/helpers/array';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { CachedKey } from 'proton-shared/lib/interfaces';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import React, { Dispatch, SetStateAction, useEffect } from 'react';
 import {
     Alert,
@@ -15,19 +8,15 @@ import {
     useGetCalendarKeys,
 } from 'react-components';
 import { c } from 'ttag';
-import { HOUR } from '../../constants';
-import getCreationKeys from '../../containers/calendar/getCreationKeys';
 import getMemberAndAddress, { getMemberAndAddressID } from '../../helpers/getMemberAndAddress';
-import { splitByRecurrenceId } from '../../helpers/import';
+import { getSupportedEventsWithRecurrenceId, splitByRecurrenceId, splitErrors } from '../../helpers/import';
 import useUnload from '../../hooks/useUnload';
-import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel, SyncMultipleApiResponse } from '../../interfaces/Import';
+import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel } from '../../interfaces/Import';
 
 import DynamicProgress from './DynamicProgress';
-import { IMPORT_EVENT_TYPE, ImportEventError } from './ImportEventError';
+import { extractTotals, processInBatches } from './encryptAndSubmit';
+import { ImportEventError } from './ImportEventError';
 import { ImportFatalError } from './ImportFatalError';
-
-const { SINGLE_SUCCESS } = API_CODES;
-const BATCH_SIZE = 10;
 
 interface Props {
     model: ImportCalendarModel;
@@ -41,133 +30,20 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const getCalendarKeys = useGetCalendarKeys();
     const getAddressKeys = useGetAddressKeys();
 
-    const setModelWithAbort = (set: (model: ImportCalendarModel) => ImportCalendarModel, signal: AbortSignal) => {
-        if (signal.aborted) {
-            return;
-        }
-        setModel(set);
-    };
-
     useUnload(c('Alert').t`By leaving now, some events may not be imported`);
 
     useEffect(() => {
         // Prepare api for allowing cancellation in the middle of the import
         const abortController = new AbortController();
-        const apiWithAbort: <T>(config: object) => Promise<T> = (config) =>
-            api({ ...config, signal: abortController.signal });
+        const { signal } = abortController;
 
-        const encryptEvent = async (
-            eventComponent: VcalVeventComponent,
-            addressKeys: CachedKey[],
-            calendarKeys: CachedKey[]
-        ) => {
-            const uid = eventComponent.uid.value;
-            try {
-                const data = await createCalendarEvent({
-                    eventComponent,
-                    isSwitchCalendar: false,
-                    ...(await getCreationKeys({ addressKeys, newCalendarKeys: calendarKeys })),
-                });
-                return { uid, data };
-            } catch (error) {
-                return new ImportEventError(IMPORT_EVENT_TYPE.ENCRYPTION_ERROR, uid, 'vevent');
-            }
-        };
+        const apiWithAbort: <T>(config: object) => Promise<T> = (config) => api({ ...config, signal });
 
-        const encryptEvents = async (
-            events: VcalVeventComponent[],
-            addressKeys: CachedKey[],
-            calendarKeys: CachedKey[],
-            signal: AbortSignal
-        ) => {
+        const setModelWithAbort = (set: (model: ImportCalendarModel) => ImportCalendarModel) => {
             if (signal.aborted) {
-                return [];
-            }
-            const results = await Promise.all(events.map((event) => encryptEvent(event, addressKeys, calendarKeys)));
-            const encrypted = results.filter((e): e is EncryptedEvent => !(e instanceof ImportEventError));
-            const notEncrypted = results.filter((e): e is ImportEventError => e instanceof ImportEventError);
-            setModelWithAbort(
-                (model) => ({
-                    ...model,
-                    eventsEncrypted: [...model.eventsEncrypted, ...encrypted],
-                    eventsNotEncrypted: [...model.eventsNotEncrypted, ...notEncrypted],
-                }),
-                signal
-            );
-            return encrypted;
-        };
-
-        const submitEvents = async (
-            encryptedEvents: (EncryptedEvent | ImportEventError)[],
-            memberID: string,
-            batchIndex: number,
-            signal: AbortSignal
-        ) => {
-            // filter out events that failed at encryption
-            const events = encryptedEvents.filter((e): e is EncryptedEvent => !(e instanceof ImportEventError));
-            if (!events.length || signal.aborted) {
                 return;
             }
-            // prepare the events data in the way the API wants it
-            const Events = events.map(
-                (event): CreateCalendarEventSyncData => ({ Event: { Permissions: 3, ...event.data } })
-            );
-            // submit the data
-            const responses: { Code: number; Index: number; Error?: string }[] = [];
-            try {
-                const { Responses } = await apiWithAbort<SyncMultipleApiResponse>({
-                    ...syncMultipleEvents(model.calendar.ID, { MemberID: memberID, Events }),
-                    timeout: HOUR * 1000,
-                    silence: true,
-                });
-                Responses.forEach(({ Index, Response: { Code, Error } }) => {
-                    responses.push({ Code, Index, Error });
-                });
-            } catch (error) {
-                events.forEach((event, index) => {
-                    responses.push({ Code: 0, Index: index, Error: error });
-                });
-            }
-
-            // update the model according to the responses
-            const imported = responses
-                .filter(({ Code }) => Code === SINGLE_SUCCESS)
-                .map(({ Index }) => ({ uid: events[Index].uid }));
-            const notImported = responses
-                .filter(({ Code }) => Code !== SINGLE_SUCCESS)
-                .map(({ Index, Error: errorMessage }) => {
-                    const error = new Error(errorMessage);
-                    return new ImportEventError(IMPORT_EVENT_TYPE.EXTERNAL_ERROR, 'vevent', events[Index].uid, error);
-                });
-            setModelWithAbort(
-                (model) => ({
-                    ...model,
-                    eventsImported: [...model.eventsImported, ...imported],
-                    eventsNotImported: [...model.eventsNotImported, ...notImported],
-                }),
-                signal
-            );
-        };
-
-        const processInBatches = async (
-            events: VcalVeventComponent[],
-            memberID: string,
-            addressKeys: CachedKey[],
-            calendarKeys: CachedKey[],
-            signal: AbortSignal
-        ) => {
-            const batches = chunk(events, BATCH_SIZE);
-            const promises = [];
-            for (let i = 0; i < batches.length; i++) {
-                // The API requests limit for the submit route are 100 calls per 10 seconds
-                // We play it safe by enforcing a 100ms minimum wait between API calls. During this wait we encrypt the events
-                const [encryptedEvents] = await Promise.all([
-                    encryptEvents(batches[i], addressKeys, calendarKeys, signal),
-                    wait(100),
-                ]);
-                promises.push(submitEvents(encryptedEvents, memberID, i, signal));
-            }
-            await Promise.all(promises);
+            setModel(set);
         };
 
         const getIdsAndKeys = async (calendarID: string) => {
@@ -180,53 +56,66 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
             return { memberID, addressKeys, calendarKeys };
         };
 
-        /**
-         * All steps of the import process
-         */
-        const process = async (signal: AbortSignal) => {
+        const handleImportProgress = (
+            encrypted: EncryptedEvent[],
+            imported: EncryptedEvent[],
+            errors: ImportEventError[]
+        ) => {
+            setModelWithAbort((model) => ({
+                ...model,
+                totalEncrypted: model.totalEncrypted + encrypted.length,
+                totalImported: model.totalImported + imported.length,
+                errors: [...model.errors, ...errors],
+            }));
+        };
+
+        const process = async () => {
             try {
                 const { memberID, addressKeys, calendarKeys } = await getIdsAndKeys(model.calendar.ID);
-                const { withoutRecurrenceID, withRecurrenceID } = splitByRecurrenceId(model.eventsParsed);
-                await processInBatches(withoutRecurrenceID, memberID, addressKeys, calendarKeys, signal);
-                // import events with recurrence id after events without, since the latter refer to the former
-                await processInBatches(withRecurrenceID, memberID, addressKeys, calendarKeys, signal);
-            } catch (error) {
-                setModelWithAbort(
-                    (model) => ({
-                        step: IMPORT_STEPS.ATTACHING,
-                        calendar: model.calendar,
-                        eventsParsed: [],
-                        eventsNotParsed: [],
-                        eventsEncrypted: [],
-                        eventsNotEncrypted: [],
-                        eventsImported: [],
-                        eventsNotImported: [],
-                        failure: new ImportFatalError(error),
-                        loading: false,
-                    }),
-                    signal
+                const { withoutRecurrenceId, withRecurrenceId } = splitByRecurrenceId(model.eventsParsed);
+                const processData = {
+                    events: withoutRecurrenceId,
+                    calendarID: model.calendar.ID,
+                    memberID,
+                    addressKeys,
+                    calendarKeys,
+                    api: apiWithAbort,
+                    signal,
+                    onProgress: handleImportProgress,
+                };
+                const importedEvents = await processInBatches(processData);
+                const formattedEventsWithRecurrenceId = await getSupportedEventsWithRecurrenceId(
+                    withRecurrenceId,
+                    importedEvents,
+                    apiWithAbort
                 );
+                const { errors, rest: supportedEventsWithRecurrenceID } = splitErrors(formattedEventsWithRecurrenceId);
+                handleImportProgress([], [], errors);
+                await processInBatches({ ...processData, events: supportedEventsWithRecurrenceID });
+            } catch (error) {
+                setModelWithAbort((model) => ({
+                    step: IMPORT_STEPS.ATTACHING,
+                    calendar: model.calendar,
+                    eventsParsed: [],
+                    totalEncrypted: 0,
+                    totalImported: 0,
+                    errors: [],
+                    failure: new ImportFatalError(error),
+                    loading: false,
+                }));
+            } finally {
+                onFinish();
             }
         };
 
-        process(abortController.signal);
+        process();
 
         return () => {
             abortController.abort();
         };
     }, []);
 
-    const total = model.eventsParsed.length;
-    const encrypted = model.eventsEncrypted.length;
-    const imported = model.eventsImported.length;
-    const notImported = model.eventsNotEncrypted.length + model.eventsNotImported.length;
-    const hasFinished = imported + notImported === total;
-
-    useEffect(() => {
-        if (hasFinished) {
-            onFinish();
-        }
-    }, [hasFinished]);
+    const { totalToImport, totalToProcess, totalImported, totalProcessed } = extractTotals(model);
 
     return (
         <>
@@ -235,9 +124,10 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
             </Alert>
             <DynamicProgress
                 id="progress-import-calendar"
-                value={encrypted + imported}
-                display={c('Import calendar').t`Encrypting and adding events to your calendar: ${imported}/${total}`}
-                max={2 * total} // count encryption and submission equivalently for the progress
+                value={totalProcessed}
+                display={c('Import calendar')
+                    .t`Encrypting and adding events to your calendar: ${totalImported}/${totalToImport}`}
+                max={totalToProcess}
                 loading
             />
         </>

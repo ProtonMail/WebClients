@@ -24,6 +24,7 @@ export enum IMPORT_EVENT_TYPE {
     NOTIFICATION_OUT_OF_BOUNDS,
     VALIDATION_ERROR,
     ENCRYPTION_ERROR,
+    PARENT_EVENT_MISSING,
     EXTERNAL_ERROR,
 }
 
@@ -93,6 +94,9 @@ const getErrorMessage = (errorType: IMPORT_EVENT_TYPE, externalError?: Error) =>
     }
     if (errorType === IMPORT_EVENT_TYPE.ENCRYPTION_ERROR) {
         return c('Error importing event').t`Encryption failed`;
+    }
+    if (errorType === IMPORT_EVENT_TYPE.PARENT_EVENT_MISSING) {
+        return c('Error importing event').t`Original recurring event could not be found`;
     }
     if (errorType === IMPORT_EVENT_TYPE.EXTERNAL_ERROR) {
         return externalError?.message || '';

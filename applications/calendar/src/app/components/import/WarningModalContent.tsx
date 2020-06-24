@@ -11,10 +11,10 @@ interface Props {
 }
 
 const WarningModalContent = ({ model }: Props) => {
-    const totalParsed = model.eventsParsed.length;
-    const totalEventsDiscarded = model.eventsNotParsed.filter(({ component }) => component === 'vevent').length;
-    const totalEvents = totalParsed + totalEventsDiscarded;
-    const errors = model.eventsNotParsed;
+    const eventsDiscarded = model.errors.filter((e) => e.component === 'vevent');
+    const totalSupported = model.eventsParsed.length;
+    const totalEventsDiscarded = eventsDiscarded.length;
+    const totalEvents = totalSupported + totalEventsDiscarded;
 
     const learnMore = model.failure ? '' : IMPORT_CALENDAR_FAQ_URL;
     const forNow = <span key="for-now" className="bold">{c('Import calendar warning').t`for now`}</span>;
@@ -39,7 +39,7 @@ const WarningModalContent = ({ model }: Props) => {
                     <li>{c('Import calendar warning').t`Non-Gregorian calendars`}</li>
                 </ul>
             </Alert>
-            <ErrorDetails summary={summary} errors={errors} />
+            <ErrorDetails summary={summary} errors={model.errors} />
         </>
     );
 };
