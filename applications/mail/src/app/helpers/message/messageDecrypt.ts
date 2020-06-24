@@ -42,7 +42,7 @@ const decryptMimeMessage = async (
         };
     }
 
-    const { body: decryptedBody = c('Message empty').t`Message content if empty`, mimetype = MIME_TYPES.PLAINTEXT } =
+    const { body: decryptedBody = c('Message empty').t`Message content is empty`, mimetype = MIME_TYPES.PLAINTEXT } =
         (await result.getBody()) || {};
 
     const verified = await result.verify();
