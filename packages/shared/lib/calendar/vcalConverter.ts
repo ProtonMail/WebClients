@@ -1,5 +1,5 @@
 import { addDays } from '../date-fns-utc';
-import { convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
+import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
 import { DateTime } from '../interfaces/calendar/Date';
 import {
     VcalDateOrDateTimeProperty,
@@ -93,4 +93,17 @@ export const numericDayToDay = (number: VcalDays): VcalDaysKeys => {
         return VcalDays[number] as VcalDaysKeys;
     }
     return VcalDays[mod(number, 7)] as VcalDaysKeys;
+};
+
+export const getDateTimePropertyInDifferentTimezone = (
+    property: VcalDateOrDateTimeProperty,
+    tzid: string,
+    isAllDay?: boolean
+) => {
+    if (isAllDay === true || getIsPropertyAllDay(property)) {
+        return getDateProperty(property.value);
+    }
+    const utcDate = propertyToUTCDate(property);
+    const zonedDate = convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid);
+    return getDateTimeProperty(zonedDate, tzid);
 };

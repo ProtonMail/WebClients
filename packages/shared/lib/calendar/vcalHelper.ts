@@ -79,3 +79,9 @@ export const getHasDtend = (
 ): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>> => {
     return !!vevent.dtend;
 };
+
+export const getHasRecurrenceId = (
+    vevent: VcalVeventComponent
+): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'recurrence-id'>> => {
+    return !!vevent['recurrence-id'];
+};
