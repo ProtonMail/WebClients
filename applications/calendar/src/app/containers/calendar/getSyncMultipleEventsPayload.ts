@@ -1,8 +1,3 @@
-import { useGetCalendarKeys, useGetAddressKeys } from 'react-components';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { CachedKey } from 'proton-shared/lib/interfaces';
-import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
@@ -10,6 +5,12 @@ import {
     syncMultipleEvents as syncMultipleEventsRoute,
     UpdateCalendarEventSyncData,
 } from 'proton-shared/lib/api/calendars';
+import { OVERWRITE_EVENT } from 'proton-shared/lib/calendar/constants';
+import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
+import { CachedKey } from 'proton-shared/lib/interfaces';
+import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { useGetAddressKeys, useGetCalendarKeys } from 'react-components';
 import getCreationKeys from './getCreationKeys';
 
 export enum SyncOperationTypes {
@@ -157,6 +158,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                 };
 
                 return {
+                    Overwrite: OVERWRITE_EVENT.NO,
                     Event: dataComplete,
                 };
             }

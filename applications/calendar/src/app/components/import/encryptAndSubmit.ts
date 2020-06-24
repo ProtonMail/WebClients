@@ -1,4 +1,5 @@
 import { CreateCalendarEventSyncData, syncMultipleEvents } from 'proton-shared/lib/api/calendars';
+import { OVERWRITE_EVENT } from 'proton-shared/lib/calendar/constants';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { API_CODES } from 'proton-shared/lib/constants';
 import { chunk } from 'proton-shared/lib/helpers/array';
@@ -34,7 +35,12 @@ export const encryptEvent = async (
 
 export const submitEvents = async (events: EncryptedEvent[], calendarID: string, memberID: string, api: Api) => {
     // prepare the events data in the way the API wants it
-    const Events = events.map((event): CreateCalendarEventSyncData => ({ Event: { Permissions: 3, ...event.data } }));
+    const Events = events.map(
+        (event): CreateCalendarEventSyncData => ({
+            Overwrite: OVERWRITE_EVENT.YES,
+            Event: { Permissions: 3, ...event.data },
+        })
+    );
     // submit the data
     const responses: { Code: number; Index: number; Error?: string }[] = [];
     try {
