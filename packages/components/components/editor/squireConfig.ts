@@ -187,8 +187,8 @@ export const insertCustomStyle = (document: Document) => {
            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
            font-size: 1.4rem;
            line-height: 1.65;
-           color: ${getLightOrDark('#222', '#fff')};
-           background: ${getLightOrDark('#fff', '#3c414e')};
+           color: #222;
+           background: #fff;
            /* to fix, CSS var are not passing through the iframe */
            word-wrap: break-word;
            margin: 0;
