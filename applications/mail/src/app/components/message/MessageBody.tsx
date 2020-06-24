@@ -29,7 +29,12 @@ const MessageBody = ({ message: { document, plainText, data: message }, showBloc
     ]);
 
     return (
-        <div className={classnames(['message-content scroll-horizontal-if-needed bodyDecrypted', plain && 'plain'])}>
+        <div
+            className={classnames([
+                'message-content scroll-horizontal-if-needed relative bodyDecrypted',
+                plain && 'plain'
+            ])}
+        >
             <div dangerouslySetInnerHTML={{ __html: showBlockquote ? content : content + blockquote }} />
             {showBlockquote && blockquote !== '' && (
                 <>
