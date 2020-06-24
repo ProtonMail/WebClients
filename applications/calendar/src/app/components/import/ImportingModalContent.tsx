@@ -104,7 +104,9 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     loading: false,
                 }));
             } finally {
-                onFinish();
+                if (!signal.aborted) {
+                    onFinish();
+                }
             }
         };
 
