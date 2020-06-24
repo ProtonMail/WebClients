@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
-import { Icon, Button, classnames, Tooltip } from '../../index';
+import { Icon, Button, Tooltip, useNotifications } from '../../index';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 
 interface Props {
@@ -10,34 +10,20 @@ interface Props {
 }
 
 const Copy = ({ value, className = '', onCopy }: Props) => {
-    const [copied, setCopied] = useState(false);
-    const timeoutRef = useRef<number>();
+    const { createNotification } = useNotifications();
 
-    const handleClick = () => {
+    const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
         textToClipboard(value);
         onCopy && onCopy();
-
-        if (!copied) {
-            setCopied(true);
-            timeoutRef.current = window.setTimeout(() => {
-                setCopied(false);
-            }, 2000);
-        }
+        createNotification({ text: c('Notification').t`Copied to the clipboard` });
     };
 
-    useEffect(() => {
-        return () => {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
-            }
-        };
-    }, []);
-
     return (
-        <Button onClick={handleClick} className={classnames([className, copied && 'copied'])}>
-            <Tooltip className="flex" title={copied ? c('Label').t`Copied` : c('Label').t`Copy`}>
+        <Button onClick={handleClick} className={className}>
+            <Tooltip className="flex" title={c('Label').t`Copy`}>
                 <Icon name="clipboard" />
-                <span className="sr-only">{copied ? c('Label').t`Copied` : c('Label').t`Copy`}</span>
+                <span className="sr-only">{c('Label').t`Copy`}</span>
             </Tooltip>
         </Button>
     );
