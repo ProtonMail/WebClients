@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { classnames, useToggle, Button } from 'react-components';
 
 import { isPlainText } from '../../helpers/message/messages';
+import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { MessageExtended } from '../../models/message';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 
@@ -32,7 +33,8 @@ const MessageBody = ({ message: { document, plainText, data: message }, showBloc
         <div
             className={classnames([
                 'message-content scroll-horizontal-if-needed relative bodyDecrypted',
-                plain && 'plain'
+                plain && 'plain',
+                getLightOrDark('', 'bg-white color-global-grey')
             ])}
         >
             <div dangerouslySetInnerHTML={{ __html: showBlockquote ? content : content + blockquote }} />
