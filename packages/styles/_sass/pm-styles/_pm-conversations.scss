@@ -306,6 +306,8 @@ $conversation-icon-size: 3.2rem !default;
 
 .message-content {
   @extend .p1;
+  // rules coming from Angular
+  box-sizing: content-box; // to avoid problems in some emails
 }
 
 .message-expand {
