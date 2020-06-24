@@ -308,6 +308,12 @@ $conversation-icon-size: 3.2rem !default;
   @extend .p1;
   // rules coming from Angular
   box-sizing: content-box; // to avoid problems in some emails
+
+  // remove reset margins
+  blockquote, dl, ol, p, pre, td, th, ul {
+	margin-top: 0;
+	margin-bottom: 0;
+  }
 }
 
 .message-expand {
