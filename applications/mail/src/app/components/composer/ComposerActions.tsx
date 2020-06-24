@@ -16,7 +16,6 @@ interface Props {
     date: Date;
     lock: boolean;
     sending: boolean;
-    closing: boolean;
     syncInProgress: boolean;
     syncStatus: string;
     onAddAttachments: (files: File[]) => void;
@@ -34,7 +33,6 @@ const ComposerActions = ({
     date,
     lock,
     sending,
-    closing,
     syncInProgress,
     syncStatus,
     onAddAttachments,
@@ -62,11 +60,11 @@ const ComposerActions = ({
 
     let dateMessage = '';
     if (syncInProgress) {
-        dateMessage = c('Action').t`Saving`;
+        dateMessage = c('Action').t`Saving...`;
     } else {
         if (date.getTime() !== 0) {
             const dateString = formatSimpleDate(date);
-            dateMessage = c('Info').t`Saved at ${dateString}`;
+            dateMessage = c('Info').t`Saved on ${dateString}`;
         } else {
             dateMessage = c('Action').t`Not saved`;
         }
@@ -75,9 +73,6 @@ const ComposerActions = ({
     let buttonSendLabel = c('Action').t`Send`;
     if (sending) {
         buttonSendLabel = syncStatus;
-    }
-    if (closing) {
-        buttonSendLabel = c('Action').t`Saving`;
     }
 
     return (

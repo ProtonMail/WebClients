@@ -431,7 +431,6 @@ const Composer = ({
                         date={getDate(syncedMessage.data, '')}
                         lock={actionBarLocked}
                         sending={sending}
-                        closing={closing}
                         syncInProgress={syncInProgress}
                         syncStatus={syncStatus}
                         onAddAttachments={handleAddAttachmentsStart}
