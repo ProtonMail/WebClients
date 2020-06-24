@@ -5,7 +5,7 @@ import { UserDropdown } from 'react-components';
 import { classnames } from '../../helpers/component';
 
 const TopNavbar = ({ children, className = '' }) => {
-    const navIcons = React.Children.count(children);
+    const navIcons = React.Children.toArray(children).filter((child) => React.isValidElement(child)).length;
 
     return (
         <div
@@ -17,13 +17,13 @@ const TopNavbar = ({ children, className = '' }) => {
             <ul
                 className={classnames([
                     'topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap flex-items-center',
-                    navIcons === 4 && 'topnav-list--four-elements'
+                    navIcons >= 4 && 'topnav-list--four-elements'
                 ])}
             >
                 {React.Children.map(children, (child) => {
                     return (
                         child && (
-                            <li className="mr1 flex-item-noshrink">
+                            <li className="flex-item-noshrink">
                                 {React.cloneElement(child, {
                                     className: 'topnav-link inline-flex flex-nowrap nodecoration'
                                 })}

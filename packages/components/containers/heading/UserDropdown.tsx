@@ -10,7 +10,6 @@ import {
     useApi,
     Icon,
     Dropdown,
-    AuthenticatedBugModal,
     DonateModal,
     generateUID,
     PrimaryButton,
@@ -39,10 +38,6 @@ const UserDropdown = ({ ...rest }) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const planName = getPlanName(subscription) as PLANS;
-
-    const handleBugReportClick = () => {
-        createModal(<AuthenticatedBugModal />);
-    };
 
     const handleSupportUsClick = () => {
         createModal(<DonateModal />);
@@ -102,31 +97,6 @@ const UserDropdown = ({ ...rest }) => {
                             )}
                         </li>
                     )}
-                    <li className="dropDown-item">
-                        <a
-                            className="w100 flex dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
-                            href={
-                                CLIENT_TYPE === VPN
-                                    ? 'https://protonvpn.com/support/'
-                                    : 'https://protonmail.com/support/'
-                            }
-                            // eslint-disable-next-line react/jsx-no-target-blank
-                            target="_blank"
-                        >
-                            <Icon className="mt0-25 mr0-5" name="what-is-this" />
-                            {c('Action').t`I have a question`}
-                        </a>
-                    </li>
-                    <li className="dropDown-item">
-                        <button
-                            type="button"
-                            className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
-                            onClick={handleBugReportClick}
-                        >
-                            <Icon className="mt0-25 mr0-5" name="report-bug" />
-                            {c('Action').t`Report bug`}
-                        </button>
-                    </li>
                     <li className="dropDown-item">
                         <a
                             className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"

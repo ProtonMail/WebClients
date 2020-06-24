@@ -18,7 +18,7 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }: Props) => {
     return (
         <button
             type="button"
-            className="flex flex-items-center flex-nowrap dropDown-logout-button"
+            className="flex flex-items-center flex-nowrap p0-5 dropDown-logout-button"
             aria-expanded={isOpen}
             ref={buttonRef}
             {...rest}
@@ -30,7 +30,7 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }: Props) => {
                 ) : null}
             </span>
 
-            <span className="mtauto mbauto bordered rounded50 p0-5 inbl dropDown-logout-initials relative flex flex-item-noshrink">
+            <span className="mtauto mbauto bordered rounded p0-25 inbl dropDown-logout-initials relative flex flex-item-noshrink">
                 <span className="dropDown-logout-text center">{initials}</span>
                 <DropdownCaret isOpen={isOpen} className="icon-12p expand-caret mauto" />
             </span>
