@@ -70,7 +70,7 @@ const ContactModal = ({
     const { call } = useEventManager();
     const [userKeysList, loadingUserKeys] = useUserKeys();
     const [properties, setProperties] = useState<ContactProperties>(formatModel(initialProperties));
-    const title = contactID ? c('Title').t`Edit contact details` : c('Title').t`Add new contact`;
+    const title = contactID ? c('Title').t`Edit contact details` : c('Title').t`Create contact`;
 
     const handleRemove = (propertyUID: string) => {
         setProperties(properties.filter(({ uid }: ContactProperty) => uid !== propertyUID));

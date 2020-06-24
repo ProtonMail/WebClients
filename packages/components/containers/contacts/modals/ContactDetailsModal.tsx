@@ -56,7 +56,7 @@ const ContactDetailsModal = ({ contactID, onClose = noop, ...rest }: Props) => {
         <FormModal
             title={c(`Title`).t`Contact details`}
             loading={isLoading}
-            close={c('Action').t`Cancel`}
+            close={c('Action').t`Close`}
             submit={c('Action').t`Edit`}
             disabled
             onSubmit={openContactModal}
