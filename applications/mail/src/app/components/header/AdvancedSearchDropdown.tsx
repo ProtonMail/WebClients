@@ -24,7 +24,7 @@ import {
     Input
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
-import { isEmail } from 'proton-shared/lib/helpers/validators';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
 import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
@@ -74,7 +74,7 @@ const DEFAULT_MODEL: SearchModel = {
 const getRecipients = (value = '') =>
     value
         .split(',')
-        .filter(isEmail)
+        .filter(validateEmailAddress)
         .map((Address) => ({ Address, Name: '' }));
 const formatRecipients = (recipients: Recipient[] = []) => recipients.map(({ Address }) => Address).join(',');
 
