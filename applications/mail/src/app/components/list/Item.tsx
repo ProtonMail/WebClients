@@ -98,7 +98,11 @@ const Item = ({
     const itemCheckboxType = isCompactView ? (
         <Checkbox className="item-icon-compact mr0-75 stop-propagation" checked={checked} onChange={onCheck} />
     ) : (
-        <ItemCheckbox className="mr0-6 ml0-1 item-checkbox" checked={checked} onChange={onCheck}>
+        <ItemCheckbox
+            className={classnames(['ml0-1 item-checkbox-label', columnLayout ? 'mr0-6' : 'mr0-5'])}
+            checked={checked}
+            onChange={onCheck}
+        >
             {getInitial(displayRecipients ? recipientsLabels[0] : sendersLabels[0])}
         </ItemCheckbox>
     );
