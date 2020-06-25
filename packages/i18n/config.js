@@ -19,9 +19,11 @@ const getPackageApp = () => {
 
 const PROTON_DEPENDENCIES = {
     app: ['src/app'].concat(
-        ['react-components/{co*,helpers}', 'proton-shared/lib'].map((name) => `node_modules/${name}`)
+        ['react-components/{components,containers,helpers,hooks}', 'proton-shared/lib'].map(
+            (name) => `node_modules/${name}`
+        )
     ),
-    reactComponents: ['{co*,helpers}'],
+    reactComponents: ['{components,containers,helpers,hooks}'],
     shared: ['lib']
 };
 
