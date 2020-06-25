@@ -1,3 +1,5 @@
+import { message as sanitize } from 'proton-shared/lib/sanitize';
+
 import { transformEscape, attachBase64 } from './transformEscape';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { transformBase } from './transformBase';
@@ -9,6 +11,7 @@ import { Api, MailSettings } from 'proton-shared/lib/interfaces';
 import { transformWelcome } from './transformWelcome';
 import { transformStylesheet } from './transformStylesheet';
 import { transformRemote } from './transformRemote';
+import { inlineCss } from '../dom';
 
 export const prepareMailDocument = async (
     message: MessageExtended,
@@ -17,7 +20,9 @@ export const prepareMailDocument = async (
     api: Api,
     mailSettings: MailSettings
 ) => {
-    const document = transformEscape(message.decryptedBody, base64Cache);
+    const body = inlineCss(sanitize(message.decryptedBody || ''));
+
+    const document = transformEscape(body, base64Cache);
 
     transformBase(document);
 

@@ -1,15 +1,19 @@
 import { DragEvent } from 'react';
+import declassify from 'declassify';
+import juice from 'juice/client';
 
-// const JUICE_OPTIONS = {
-//     applyAttributesTableElements: false
-// };
+import { BLOCKQUOTE_SELECTORS } from './message/messageBlockquote';
 
-// const DECLASSIFY_OPTIONS = {
-//     ignore: BLOCKQUOTE_SELECTORS.filter((selector) => selector.startsWith('.'))
-//         .map((selector) => selector.replace('.', ''))
-//         .concat(/proton-.*/)
-//         .concat(/protonmail.*/)
-// };
+const JUICE_OPTIONS = {
+    applyAttributesTableElements: false
+};
+
+const DECLASSIFY_OPTIONS = {
+    ignore: BLOCKQUOTE_SELECTORS.filter((selector) => selector.startsWith('.'))
+        .map((selector) => selector.replace('.', ''))
+        .concat(/proton-.*/ as any)
+        .concat(/protonmail.*/ as any)
+};
 
 /**
  * Iterates through all parent nodes (including current), comparing against cb.
@@ -33,26 +37,15 @@ import { DragEvent } from 'react';
 
 /**
  * Inline css into an element and remove all obsolete class names.
- * @param {String} html
- * @returns {String}
  */
-// export const inlineCss = (html = '') => {
-//     try {
-//         return declassify.process(juice(html, JUICE_OPTIONS), DECLASSIFY_OPTIONS);
-//     } catch (err) {
-//         console.error(err);
-//         return html;
-//     }
-// };
-
-/**
- * Set an element to be hidden.
- * @param {DOMNode} el
- * @param {Boolean} value Hidden or shown
- */
-// export const setHidden = (el, value = false) => {
-//     el.style.display = value ? 'none' : '';
-// };
+export const inlineCss = (html = '') => {
+    try {
+        return declassify.process(juice(html, JUICE_OPTIONS), DECLASSIFY_OPTIONS);
+    } catch (err) {
+        console.error(err);
+        return html;
+    }
+};
 
 /**
  * Force redraw of an element.

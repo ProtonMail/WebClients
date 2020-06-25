@@ -1,4 +1,4 @@
-const BLOCKQUOTE_SELECTORS = [
+export const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote',
     '.gmail_quote',
     '.yahoo_quoted',
