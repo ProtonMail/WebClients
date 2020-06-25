@@ -3,6 +3,7 @@ import { useApi } from 'react-components';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { c } from 'ttag';
 
 import upsertCalendarApiEvent from './cache/upsertCalendarApiEvent';
@@ -11,7 +12,6 @@ import useGetCalendarEventPersonal from './useGetCalendarEventPersonal';
 import useGetCalendarEventRaw from './useGetCalendarEventRaw';
 import { CalendarViewEvent } from '../interface';
 import { CalendarEventCache, CalendarsEventsCache, DecryptedEventTupleResult } from './interface';
-import getComponentFromCalendarEvent from './cache/getComponentFromCalendarEvent';
 import getAllEventsByUID from '../getAllEventsByUID';
 
 const SLOW_EVENT_BYPASS = {};
@@ -66,28 +66,44 @@ const useCalendarsEventsReader = (
 
         // Single edits are not always tied to the parent. Ensure that the parent exists in the cache before viewing it.
         const getRecurringEventAndUpsert = (
+            eventComponent: VcalVeventComponent,
             eventData: CalendarEvent,
             calendarEventCache: CalendarEventCache
         ): Promise<void> | undefined => {
-            const eventComponent = getComponentFromCalendarEvent(eventData);
             if (!eventComponent['recurrence-id'] || !eventComponent.uid) {
                 return;
             }
+
+            const cache = cacheRef.current;
             const uid = eventComponent.uid.value;
             const calendarID = eventData.CalendarID;
-            const recurringEventsCache = cacheRef.current.getCachedRecurringEvent(calendarID, uid);
-            if (recurringEventsCache?.parentEventID) {
+
+            const getParentEvent = () => {
+                const recurringEventsCache = cache.getCachedRecurringEvent(calendarID, uid);
+                const parentEventID = recurringEventsCache?.parentEventID;
+                if (!parentEventID) {
+                    return;
+                }
+                return cache.getCachedEvent(calendarID, parentEventID);
+            };
+
+            if (getParentEvent()) {
                 return;
             }
+
             const oldFetchPromise = calendarEventCache.fetchUidCache.get(uid);
             if (oldFetchPromise?.promise) {
                 return oldFetchPromise.promise;
             }
+
             const newFetchPromise = getAllEventsByUID(api, uid, calendarID)
                 .then((eventOccurrences) => {
                     eventOccurrences.forEach((eventOccurrence) => {
                         upsertCalendarApiEvent(eventOccurrence, calendarEventCache);
                     });
+                    if (!getParentEvent()) {
+                        throw new Error(c('Error').t`Failed to get original occurrence in series`);
+                    }
                 })
                 .catch(() => {
                     throw new Error(c('Error').t`Failed to get original occurrence in series`);
@@ -123,7 +139,11 @@ const useCalendarsEventsReader = (
                 if (getIsCalendarEvent(eventRecord.eventData)) {
                     promise = Promise.all([
                         getDecryptedEvent(eventRecord.eventData),
-                        getRecurringEventAndUpsert(eventRecord.eventData, calendarEventCache),
+                        getRecurringEventAndUpsert(
+                            eventRecord.eventComponent,
+                            eventRecord.eventData,
+                            calendarEventCache
+                        ),
                     ]).then(([eventDecrypted]) => {
                         return eventDecrypted;
                     });
