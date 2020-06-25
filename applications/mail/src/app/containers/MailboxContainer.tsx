@@ -206,7 +206,7 @@ const MailboxContainer = ({
                             isCompactView && 'is-compact'
                         ])}
                     >
-                        <div className="items-column-list-inner">
+                        <div className="items-column-list-inner flex flex-nowrap flex-column">
                             {loading ? (
                                 <div className="flex flex-justify-center h100">
                                     <Loader />
