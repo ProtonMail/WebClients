@@ -21,7 +21,7 @@ const upsertMultiActionsResponses = (
         const responsesArray = responses?.Responses;
         const calendarEventCache = calendarsEventsCache.calendars[actions.calendarID];
 
-        if (!Array.isArray(responsesArray)) {
+        if (!Array.isArray(responsesArray) || !calendarEventCache) {
             continue;
         }
 
