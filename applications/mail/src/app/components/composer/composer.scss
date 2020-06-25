@@ -263,6 +263,10 @@
     }
 }
 
+.composer-body-container textarea {
+    resize: none;
+}
+
 .composer-attachments-button-wrapper {
     position: relative;
     overflow: hidden;
