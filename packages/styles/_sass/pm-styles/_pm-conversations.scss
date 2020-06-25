@@ -17,6 +17,9 @@ $container-to-width: 3em !default;
 .items-column-list--mobile {
   width: 100%;
 }
+.isDarkMode .items-column-list-inner {
+	border-left: 1px solid var(--bordercolor-input, $pm-global-border);
+}
 
 .items-column-list,
 .items-column-list--mobile,
