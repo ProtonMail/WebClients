@@ -41,5 +41,5 @@ export const useMailboxPageTitle = (labelID: string, location: Location) => {
             const address = user.Email;
             document.title = `${unreadString}${labelName} | ${address} | ProtonMail`;
         }
-    }, [labelID, ...loadings]);
+    }, [labelID, conversationCounts, messageCounts, ...loadings]);
 };
