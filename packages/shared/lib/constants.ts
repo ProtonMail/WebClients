@@ -241,7 +241,8 @@ export enum KEY_FLAGS {
 export enum SHOW_IMAGES {
     NONE = 0,
     REMOTE = 1,
-    EMBEDDED = 2
+    EMBEDDED = 2,
+    ALL = 3
 }
 
 export enum COMPOSER_MODE {
