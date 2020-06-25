@@ -3,7 +3,6 @@ import { useApi } from 'react-components';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { c } from 'ttag';
 
 import upsertCalendarApiEvent from './cache/upsertCalendarApiEvent';
@@ -11,7 +10,12 @@ import { getIsCalendarEvent } from './cache/helper';
 import useGetCalendarEventPersonal from './useGetCalendarEventPersonal';
 import useGetCalendarEventRaw from './useGetCalendarEventRaw';
 import { CalendarViewEvent } from '../interface';
-import { CalendarEventCache, CalendarsEventsCache, DecryptedEventTupleResult } from './interface';
+import {
+    CalendarEventCache,
+    CalendarsEventsCache,
+    DecryptedEventTupleResult,
+    SharedVcalVeventComponent,
+} from './interface';
 import getAllEventsByUID from '../getAllEventsByUID';
 
 const SLOW_EVENT_BYPASS = {};
@@ -66,7 +70,7 @@ const useCalendarsEventsReader = (
 
         // Single edits are not always tied to the parent. Ensure that the parent exists in the cache before viewing it.
         const getRecurringEventAndUpsert = (
-            eventComponent: VcalVeventComponent,
+            eventComponent: SharedVcalVeventComponent,
             eventData: CalendarEvent,
             calendarEventCache: CalendarEventCache
         ): Promise<void> | undefined => {

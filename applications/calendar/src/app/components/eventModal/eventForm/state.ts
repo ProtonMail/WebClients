@@ -29,6 +29,7 @@ import { propertiesToNotificationModel } from './propertiesToNotificationModel';
 import { DateTimeModel, EventModel, FrequencyModel } from '../../../interfaces/EventModel';
 import { stripAllTags } from '../../../helpers/sanitize';
 import getFrequencyModelChange from './getFrequencyModelChange';
+import { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';
 
 export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
@@ -168,7 +169,7 @@ export const getInitialModel = ({
 };
 
 const getParentMerge = (
-    veventComponentParentPartial: VcalVeventComponent,
+    veventComponentParentPartial: SharedVcalVeventComponent,
     recurrenceStart: DateTimeModel,
     tzid: string
 ) => {
@@ -183,7 +184,7 @@ const getParentMerge = (
 interface GetExistingEventArguments {
     veventComponent: VcalVeventComponent;
     veventValarmComponent?: VcalVeventComponent;
-    veventComponentParentPartial?: VcalVeventComponent;
+    veventComponentParentPartial?: SharedVcalVeventComponent;
     tzid: string;
 }
 

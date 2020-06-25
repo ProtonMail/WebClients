@@ -10,6 +10,6 @@ export const getRecurrenceIdDate = (component: VcalVeventComponent) => {
     return toUTCDate(rawRecurrenceId.value);
 };
 
-export const getUid = (component: VcalVeventComponent) => {
+export const getUidValue = (component: VcalVeventComponent) => {
     return component.uid.value;
 };

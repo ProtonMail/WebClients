@@ -1,12 +1,13 @@
 import { fromUnixTime } from 'date-fns';
 import { CalendarEventWithoutBlob } from 'proton-shared/lib/interfaces/calendar';
-import { VcalRrulePropertyValue, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { VcalRrulePropertyValue } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { convertUTCDateTimeToZone, fromUTCDate } from 'proton-shared/lib/date/timezone';
 import { fromRruleString } from 'proton-shared/lib/calendar/vcal';
+import { MetadataVcalVeventComponent } from '../interface';
 import { toExdate } from '../../recurrence/helper';
 
-const getComponentFromCalendarEventWithoutBlob = (eventData: CalendarEventWithoutBlob): VcalVeventComponent => {
+const getComponentFromCalendarEventWithoutBlob = (eventData: CalendarEventWithoutBlob): MetadataVcalVeventComponent => {
     const { FullDay, StartTime, StartTimezone, EndTime, EndTimezone, RRule, RecurrenceID, Exdates } = eventData;
     const isAllDay = FullDay === 1;
 

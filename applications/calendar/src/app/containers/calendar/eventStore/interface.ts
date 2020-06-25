@@ -2,6 +2,8 @@ import createIntervalTree from 'interval-tree';
 import { CalendarEvent, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { OccurrenceIterationCache } from 'proton-shared/lib/calendar/recurring';
+import { SHARED_SIGNED_FIELDS } from 'proton-shared/lib/calendar/veventHelper';
+import { pick } from 'proton-shared/lib/helpers/object';
 import { EventPersonalMap } from '../../../interfaces/EventPersonalMap';
 
 export type IntervalTree = ReturnType<typeof createIntervalTree>;
@@ -19,6 +21,14 @@ export type EventReadResult = {
     error?: Error;
 };
 
+// Just to get picked types
+const sharedPick = (x: VcalVeventComponent) => pick(x, [...SHARED_SIGNED_FIELDS, 'component']);
+export type SharedVcalVeventComponent = ReturnType<typeof sharedPick>;
+export type MetadataVcalVeventComponent = Pick<
+    VcalVeventComponent,
+    'uid' | 'dtstamp' | 'component' | 'dtstart' | 'dtend' | 'recurrence-id' | 'exdate' | 'rrule'
+>;
+
 export interface CalendarEventStoreRecord {
     utcStart: Date;
     utcEnd: Date;
@@ -27,7 +37,7 @@ export interface CalendarEventStoreRecord {
     isAllPartDay: boolean;
 
     eventData?: CalendarEvent | CalendarEventSharedData;
-    eventComponent: VcalVeventComponent;
+    eventComponent: SharedVcalVeventComponent | MetadataVcalVeventComponent;
     eventReadResult?: EventReadResult;
     eventPromise?: Promise<void>;
 }

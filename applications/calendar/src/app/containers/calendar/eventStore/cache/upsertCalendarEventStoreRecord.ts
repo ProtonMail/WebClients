@@ -1,5 +1,4 @@
 import { addDays, max } from 'proton-shared/lib/date-fns-utc';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { CalendarEvent, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
 import { getDtendProperty, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { getIsAllDay, getIsRecurring } from 'proton-shared/lib/calendar/vcalHelper';
@@ -7,12 +6,12 @@ import { differenceInHours } from 'date-fns';
 
 import { setEventInRecurrenceInstances, setEventInRecurringCache } from './recurringCache';
 import upsertCalendarEventInTree from './upsertCalendarEventInTree';
-import { CalendarEventCache, CalendarEventStoreRecord } from '../interface';
-import { getRecurrenceIdDate, getUid } from '../../event/getEventHelper';
+import { CalendarEventCache, CalendarEventStoreRecord, SharedVcalVeventComponent } from '../interface';
+import { getRecurrenceIdDate, getUidValue } from '../../event/getEventHelper';
 import { getIsCalendarEvent } from './helper';
 
 export const getCalendarEventStoreRecord = (
-    eventComponent: VcalVeventComponent,
+    eventComponent: SharedVcalVeventComponent,
     eventData: CalendarEvent | CalendarEventSharedData
 ): CalendarEventStoreRecord => {
     const utcStart = propertyToUTCDate(eventComponent.dtstart);
@@ -57,11 +56,11 @@ const upsertCalendarEventStoreRecordHelper = (
 
     const isRecurring = getIsRecurring(newVeventComponent);
     const recurrenceId = getRecurrenceIdDate(newVeventComponent);
-    const uid = getUid(newVeventComponent);
+    const uid = getUidValue(newVeventComponent);
 
     const isOldRecurring = oldEventComponent ? getIsRecurring(oldEventComponent) : false;
     const oldRecurrenceId = oldEventComponent ? getRecurrenceIdDate(oldEventComponent) : undefined;
-    const oldUid = oldEventComponent ? getUid(newVeventComponent) : undefined;
+    const oldUid = oldEventComponent ? getUidValue(newVeventComponent) : undefined;
 
     if (oldCalendarEventStoreRecord && oldUid !== uid) {
         throw new Error('Event with incorrect UID');
