@@ -84,11 +84,12 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     onProgress: handleImportProgress,
                 };
                 const importedEvents = await processInBatches(processData);
-                const formattedEventsWithRecurrenceId = await getSupportedEventsWithRecurrenceId(
-                    withRecurrenceId,
-                    importedEvents,
-                    apiWithAbort
-                );
+                const formattedEventsWithRecurrenceId = await getSupportedEventsWithRecurrenceId({
+                    eventsWithRecurrenceId: withRecurrenceId,
+                    parentEvents: importedEvents,
+                    calendarId: model.calendar.ID,
+                    api: apiWithAbort,
+                });
                 const { errors, rest: supportedEventsWithRecurrenceID } = splitErrors(formattedEventsWithRecurrenceId);
                 handleImportProgress([], [], errors);
                 await processInBatches({ ...processData, events: supportedEventsWithRecurrenceID });

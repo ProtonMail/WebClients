@@ -43,7 +43,14 @@ import { c } from 'ttag';
 import { IMPORT_EVENT_TYPE, ImportEventError } from '../components/import/ImportEventError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from '../components/import/ImportFileError';
 
-import { MAX_IMPORT_EVENTS, MAX_LENGTHS, MAX_NOTIFICATIONS, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from '../constants';
+import {
+    MAX_CALENDARS_PER_USER,
+    MAX_IMPORT_EVENTS,
+    MAX_LENGTHS,
+    MAX_NOTIFICATIONS,
+    MAXIMUM_DATE_UTC,
+    MINIMUM_DATE_UTC,
+} from '../constants';
 import getComponentFromCalendarEvent from '../containers/calendar/eventStore/cache/getComponentFromCalendarEvent';
 import { EncryptedEvent, VcalCalendarComponentOrError } from '../interfaces/Import';
 import { getSupportedAlarm } from './alarms';
@@ -461,18 +468,17 @@ export const splitErrors = <T>(events: (T | ImportEventError)[]) => {
     );
 };
 
-const getParentEventFromApi = async (uid: string, api: Api) => {
+const getParentEventFromApi = async (uid: string, api: Api, calendarId: string) => {
     try {
-        const {
-            Events: [parentEvent],
-        } = await api<{ Events: CalendarEvent[] }>({
+        const { Events } = await api<{ Events: CalendarEvent[] }>({
             ...getEventByUID({
                 UID: uid,
                 Page: 0,
-                PageSize: 1,
+                PageSize: MAX_CALENDARS_PER_USER,
             }),
             silence: true,
         });
+        const [parentEvent] = Events.filter(({ CalendarID }) => CalendarID === calendarId);
         if (!parentEvent) {
             return;
         }
@@ -487,11 +493,18 @@ const getParentEventFromApi = async (uid: string, api: Api) => {
     }
 };
 
-export const getSupportedEventsWithRecurrenceId = async (
-    eventsWithRecurrenceId: (VcalVeventComponent & Required<Pick<VcalVeventComponent, 'recurrence-id'>>)[],
-    parentEvents: (EncryptedEvent | ImportEventError)[],
-    api: Api
-) => {
+interface GetSupportedEventsWithRecurrenceIdArgs {
+    eventsWithRecurrenceId: (VcalVeventComponent & Required<Pick<VcalVeventComponent, 'recurrence-id'>>)[];
+    parentEvents: (EncryptedEvent | ImportEventError)[];
+    calendarId: string;
+    api: Api;
+}
+export const getSupportedEventsWithRecurrenceId = async ({
+    eventsWithRecurrenceId,
+    parentEvents,
+    api,
+    calendarId,
+}: GetSupportedEventsWithRecurrenceIdArgs) => {
     // map uid -> parent event
     const mapParentEvents = parentEvents.reduce<{
         [key: string]: VcalVeventComponent | undefined;
@@ -507,7 +520,7 @@ export const getSupportedEventsWithRecurrenceId = async (
     const uidsToFetch = unique(
         eventsWithRecurrenceId.filter(({ uid }) => !mapParentEvents[uid.value]).map(({ uid }) => uid.value)
     );
-    const result = await Promise.all(uidsToFetch.map((uid) => getParentEventFromApi(uid, api)));
+    const result = await Promise.all(uidsToFetch.map((uid) => getParentEventFromApi(uid, api, calendarId)));
     result.forEach((parentEvent, i) => {
         mapParentEvents[uidsToFetch[i]] = parentEvent;
     });
