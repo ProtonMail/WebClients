@@ -3,6 +3,7 @@ import {
     getDayAndSetpos,
     getIsRruleCustom,
     getSupportedRrule,
+    getSupportedUntil,
     getIsRruleSupported,
     getIsStandardByday,
     getHasConsistentRrule,
@@ -26,6 +27,34 @@ describe('getDayAndSetpos', () => {
         const bydays = ['1SU', '+2MO', '-1FR', 'WE'];
         const results = [{ setpos: 1, day: 'SU' }, { setpos: 2, day: 'MO' }, { setpos: -1, day: 'FR' }, { day: 'WE' }];
         expect(bydays.map((byday) => getDayAndSetpos(byday))).toEqual(results);
+    });
+});
+
+describe('getSupportedUntil', () => {
+    test('should keep the date for all-day events', () => {
+        const tzid = 'Pacific/Niue';
+        const until = { year: 2020, month: 6, day: 27, hours: 10, minutes: 59, seconds: 59, isUTC: true };
+        const expected = { year: 2020, month: 6, day: 27 };
+        expect(getSupportedUntil(until, true, tzid)).toEqual(expected);
+    });
+
+    test('should always return the same until if it was at the end of the day already', () => {
+        const tzid = 'Pacific/Niue';
+        const until = { year: 2020, month: 6, day: 27, hours: 10, minutes: 59, seconds: 59, isUTC: true };
+        expect(getSupportedUntil(until, false, tzid)).toEqual(until);
+    });
+
+    test('should always return an until at the end of the day', () => {
+        const tzid = 'Pacific/Niue';
+        const untils = [
+            { year: 2020, month: 6, day: 27, hours: 15, minutes: 14, isUTC: true },
+            { year: 2020, month: 6, day: 27 },
+        ];
+        const expected = [
+            { year: 2020, month: 6, day: 28, hours: 10, minutes: 59, seconds: 59, isUTC: true },
+            { year: 2020, month: 6, day: 27, hours: 10, minutes: 59, seconds: 59, isUTC: true },
+        ];
+        expect(untils.map((until) => getSupportedUntil(until, false, tzid))).toEqual(expected);
     });
 });
 

@@ -1,15 +1,20 @@
 import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
-import { getIsPropertyAllDay, getPropertyTzid } from 'proton-shared/lib/calendar/vcalHelper';
-import { toLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
-import { omit } from 'proton-shared/lib/helpers/object';
+import { getIsDateTimeValue, getIsPropertyAllDay, getPropertyTzid } from 'proton-shared/lib/calendar/vcalHelper';
 import {
+    convertUTCDateTimeToZone,
+    convertZonedDateTimeToUTC,
+    toLocalDate,
+    toUTCDate,
+} from 'proton-shared/lib/date/timezone';
+import { omit, pick } from 'proton-shared/lib/helpers/object';
+import {
+    VcalDateOrDateTimeValue,
     VcalDaysKeys,
     VcalRruleProperty,
     VcalRrulePropertyValue,
     VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { getUntilProperty } from '../components/eventModal/eventForm/modelToFrequencyProperties';
 import { FREQUENCY, FREQUENCY_COUNT_MAX, FREQUENCY_INTERVALS_MAX, MAXIMUM_DATE, MAXIMUM_DATE_UTC } from '../constants';
 
 export const getIsStandardByday = (byday = ''): byday is VcalDaysKeys => {
@@ -205,6 +210,26 @@ export const getIsRruleSupported = (rruleProperty: VcalRrulePropertyValue) => {
     return false;
 };
 
+export const getSupportedUntil = (until: VcalDateOrDateTimeValue, isAllDay: boolean, tzid = 'UTC') => {
+    // According to the RFC, we should use UTC dates if and only if the event is not all-day.
+    if (isAllDay) {
+        // we should use a floating date in this case
+        return {
+            year: until.year,
+            month: until.month,
+            day: until.day,
+        };
+    }
+    const zonedUntilDateTime = getIsDateTimeValue(until)
+        ? pick(until, ['year', 'month', 'day', 'hours', 'minutes', 'seconds'])
+        : { ...pick(until, ['year', 'month', 'day']), hours: 0, minutes: 0, seconds: 0 };
+    const zonedUntil = convertUTCDateTimeToZone(zonedUntilDateTime, tzid);
+    // Pick end of day in the event start date timezone
+    const zonedEndOfDay = { ...zonedUntil, hours: 23, minutes: 59, seconds: 59 };
+    const utcEndOfDay = convertZonedDateTimeToUTC(zonedEndOfDay, tzid);
+    return { ...utcEndOfDay, isUTC: true };
+};
+
 export const getSupportedRrule = (vevent: VcalVeventComponent): VcalRruleProperty | undefined => {
     if (!vevent.rrule?.value) {
         return;
@@ -214,7 +239,8 @@ export const getSupportedRrule = (vevent: VcalVeventComponent): VcalRrulePropert
     const supportedRrule = { ...rrule };
 
     if (until) {
-        supportedRrule.value.until = getUntilProperty(until, getIsPropertyAllDay(dtstart), getPropertyTzid(dtstart));
+        const supportedUntil = getSupportedUntil(until, getIsPropertyAllDay(dtstart), getPropertyTzid(dtstart));
+        supportedRrule.value.until = supportedUntil;
     }
     if (!getIsRruleSupported(rrule.value)) {
         return;
