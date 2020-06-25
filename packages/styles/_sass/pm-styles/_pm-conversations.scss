@@ -31,16 +31,17 @@ $container-to-width: 3em !default;
   background: var(--bgcolor-view-column-detail, $white);
 }
 
-
+$item-container-height: 6.4rem !default;
+$item-container-padding-top-bottom: em(8.5) !default;
 .item-container,
 .item-container-row {
-  padding: em(8.5) em(12); // design wants ~64 height
+  padding: $item-container-padding-top-bottom em(12); // design wants ~64 height
   border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
   background: var(--bgcolor-item-column-list, $pm-global-muted);
 }
 
 .item-container {
-	height: 6.4rem;
+	height: $item-container-height;
 }
 
 .item-firstline,
@@ -107,6 +108,17 @@ $conversation-icon-size: 3.2rem !default;
 }
 
 .item-checkbox {
+
+  // for allowing hovering larger than fake circle
+  &:after {
+	  content: '';
+	  position: absolute;
+	  top: -#{($item-container-height - $conversation-icon-size)/2};
+	  bottom: -#{($item-container-height - $conversation-icon-size)/2};
+	  left: em(-12);
+	  right: em(-6);
+  }
+
   // hidden fake check by default
   & + .item-icon > .item-icon-fakecheck {
     display: none;
@@ -129,6 +141,7 @@ $conversation-icon-size: 3.2rem !default;
   // }
 
   // hover state of checkbox
+  &:hover + .item-icon,
   & + .item-icon:hover {
     background-color: var(--bgcolor-input, $white);
     border-color: var(--bordercolor-input, $pm-global-border);
@@ -161,6 +174,16 @@ $conversation-icon-size: 3.2rem !default;
     }
 
   }
+}
+
+// fix pseudo element for row layout
+.item-container-row {
+	.item-checkbox {
+		&:after {
+			top: -#{$item-container-padding-top-bottom};
+			bottom: -#{$item-container-padding-top-bottom};
+		}
+	}
 }
 
 /* day checkboxes (Calendar) */
