@@ -22,15 +22,15 @@ export const getPropertyTzid = (property: VcalDateOrDateTimeProperty) => {
     return property.value.isUTC ? 'UTC' : property.parameters?.tzid;
 };
 
-export const getIsAllDay = ({ dtstart }: VcalVeventComponent) => {
+export const getIsAllDay = ({ dtstart }: Pick<VcalVeventComponent, 'dtstart'>) => {
     return getIsPropertyAllDay(dtstart);
 };
 
-export const getIsRecurring = ({ rrule }: VcalVeventComponent) => {
+export const getIsRecurring = ({ rrule }: Pick<VcalVeventComponent, 'rrule'>) => {
     return !!rrule;
 };
 
-export const getRecurrenceId = ({ 'recurrence-id': recurrenceId }: VcalVeventComponent) => {
+export const getRecurrenceId = ({ 'recurrence-id': recurrenceId }: Pick<VcalVeventComponent, 'recurrence-id'>) => {
     return recurrenceId;
 };
 

@@ -38,6 +38,8 @@ export interface OccurrenceIterationCache {
     };
 }
 
+type RequiredVcalVeventComponent = Pick<VcalVeventComponent, 'dtstart' | 'rrule' | 'exdate'>;
+
 const YEAR_IN_MS = Date.UTC(1971, 0, 1);
 
 const isInInterval = (a1: number, a2: number, b1: number, b2: number) => a1 <= b2 && a2 >= b1;
@@ -143,7 +145,7 @@ const getModifiedUntilRrule = (internalRrule: VcalRruleProperty, startTzid: stri
     };
 };
 
-const getOccurrenceSetup = (component: VcalVeventComponent) => {
+const getOccurrenceSetup = (component: RequiredVcalVeventComponent) => {
     const { dtstart: internalDtstart, rrule: internalRrule, exdate: internalExdate } = component;
     const internalDtEnd = getDtendProperty(component);
 
@@ -186,7 +188,7 @@ const getOccurrenceSetup = (component: VcalVeventComponent) => {
 };
 
 interface GetOccurrences {
-    component: VcalVeventComponent;
+    component: RequiredVcalVeventComponent;
     maxStart?: Date;
     maxCount?: number;
     cache?: Partial<OccurrenceIterationCache>;
@@ -232,7 +234,7 @@ export const getOccurrences = ({
 };
 
 export const getOccurrencesBetween = (
-    component: VcalVeventComponent,
+    component: Pick<VcalVeventComponent, 'dtstart' | 'rrule' | 'exdate'>,
     start: number,
     end: number,
     cache: Partial<OccurrenceIterationCache> = {}
