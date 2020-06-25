@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import { Icon, Info, Tabs } from 'react-components';
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { truncate } from 'proton-shared/lib/helpers/string';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 
 import { sanitizeDescription } from '../../helpers/sanitize';
@@ -49,17 +48,25 @@ const PopoverEventContent = ({
 
     const calendarString = useMemo(() => {
         if (isCalendarDisabled) {
-            const truncatedCalendarName = truncate(calendarName, 32);
             const disabledText = <span className="italic">({c('Disabled calendar').t`Disabled`})</span>;
             const tooltipText = c('Disabled calendar')
                 .t`The event belongs to a disabled calendar and you cannot modify it. Please enable your email address again to enable the calendar.`;
             return (
                 <>
-                    {truncatedCalendarName} {disabledText} <Info title={tooltipText} />
+                    <span className="ellipsis flex-item-fluid-auto flex-item-nogrow mr0-5" title={calendarName}>
+                        {calendarName}
+                    </span>
+                    <span className="no-wrap flex-item-noshrink">
+                        {disabledText} <Info title={tooltipText} />
+                    </span>
                 </>
             );
         }
-        return calendarName;
+        return (
+            <span className="ellipsis" title={calendarName}>
+                {calendarName}
+            </span>
+        );
     }, [calendarName, isCalendarDisabled]);
 
     const wrapClassName = 'flex flex-nowrap mb0-75 ml0-25 mr0-25';
@@ -82,9 +89,7 @@ const PopoverEventContent = ({
             {calendarString ? (
                 <div className={wrapClassName}>
                     <Icon name="circle" color={Color} className={iconClassName} />
-                    <span className="ellipsis" title={calendarName}>
-                        {calendarString}
-                    </span>
+                    {calendarString}
                 </div>
             ) : null}
             {htmlString ? (
