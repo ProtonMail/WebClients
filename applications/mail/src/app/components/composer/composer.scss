@@ -211,7 +211,7 @@
 
 .addresses-contacts-table {
     th:first-child {
-        width: 35px;
+        width: 3.5rem;
     }
 }
 
@@ -236,7 +236,14 @@
 
     .pm-modal {
         z-index: 667;
+        footer {
+            padding-bottom: .5em;
+        }
     }
+    .pm-modalHeader {
+        padding-top: .5em;
+    }
+
 
     .pm-modalTitle {
         padding-right: 0;
@@ -292,6 +299,7 @@
 .composer-attachments-expand {
     overflow: auto;
     border-top: 1px solid var(--bordercolor-input, $pm-global-border);
+    max-height: 6.5em;
 }
 
 .composer-attachments-list {
@@ -315,6 +323,10 @@
     }
     &:nth-child(odd) {
         padding-right: 0.5em;
+    }
+    // fix on last only if there are more than 4
+    &:nth-child(n+5):last-child {
+        padding-bottom: .5em;
     }
 
     &--uploadInProgress {
