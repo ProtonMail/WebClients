@@ -21,9 +21,9 @@ export const removeCalendarEventStoreRecord = (
     const isRecurring = getIsRecurring(eventComponent);
 
     if (recurrenceId) {
-        removeEventFromRecurrenceInstances(uid, +recurrenceId, recurringEvents);
+        removeEventFromRecurrenceInstances(uid, +recurrenceId, recurringEvents, EventID);
     } else if (isRecurring) {
-        removeEventFromRecurringCache(recurringEvents, uid);
+        removeEventFromRecurringCache(recurringEvents, uid, EventID);
     }
 
     events.delete(EventID);

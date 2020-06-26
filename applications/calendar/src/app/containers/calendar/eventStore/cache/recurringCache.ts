@@ -3,7 +3,8 @@ import { RecurringCache, RecurringEventsCache } from '../interface';
 export const removeEventFromRecurrenceInstances = (
     uid: string,
     recurrenceId: number,
-    recurringEvents: RecurringEventsCache
+    recurringEvents: RecurringEventsCache,
+    eventID: string
 ) => {
     const oldRecurringEvent = recurringEvents.get(uid);
     if (!oldRecurringEvent) {
@@ -15,13 +16,16 @@ export const removeEventFromRecurrenceInstances = (
         return;
     }
 
+    const oldEventID = oldRecurrenceInstances[recurrenceId];
+    if (oldEventID !== eventID) {
+        return;
+    }
+
     const newRecurrenceInstances = {
         ...oldRecurrenceInstances,
     };
 
-    if (recurrenceId) {
-        delete newRecurrenceInstances[+recurrenceId];
-    }
+    delete newRecurrenceInstances[recurrenceId];
 
     recurringEvents.set(uid, {
         ...oldRecurringEvent,
@@ -51,10 +55,13 @@ export const setEventInRecurrenceInstances = ({
     const newRecurrenceInstances = {
         ...oldRecurrenceInstances,
     };
-    if (oldRecurrenceId) {
-        delete newRecurrenceInstances[+oldRecurrenceId];
+    if (oldRecurrenceId !== undefined) {
+        const oldEventID = newRecurrenceInstances[recurrenceId];
+        if (oldEventID === id) {
+            delete newRecurrenceInstances[oldRecurrenceId];
+        }
     }
-    newRecurrenceInstances[+recurrenceId] = id;
+    newRecurrenceInstances[recurrenceId] = id;
 
     recurringEvents.set(uid, {
         ...oldRecurringEvent,
@@ -72,6 +79,25 @@ export const setEventInRecurringCache = (recurringEvents: RecurringEventsCache, 
     });
 };
 
-export const removeEventFromRecurringCache = (recurringEvents: Map<string, RecurringCache>, uid: string) => {
-    recurringEvents.delete(uid);
+export const removeEventFromRecurringCache = (
+    recurringEvents: Map<string, RecurringCache>,
+    uid: string,
+    eventID: string
+) => {
+    const oldRecurringEvent = recurringEvents.get(uid) || {};
+
+    if (oldRecurringEvent.parentEventID !== eventID) {
+        return;
+    }
+
+    if (!oldRecurringEvent.recurrenceInstances || !Object.keys(oldRecurringEvent.recurrenceInstances).length) {
+        recurringEvents.delete(uid);
+        return;
+    }
+
+    recurringEvents.set(uid, {
+        ...oldRecurringEvent,
+        parentEventID: undefined,
+        cache: {},
+    });
 };
