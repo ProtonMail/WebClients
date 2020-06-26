@@ -1,5 +1,4 @@
 import { CreateCalendarEventSyncData, syncMultipleEvents } from 'proton-shared/lib/api/calendars';
-import { OVERWRITE_EVENT } from 'proton-shared/lib/calendar/constants';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import { wait } from 'proton-shared/lib/helpers/promise';
@@ -45,7 +44,7 @@ export const submitEvents = async (events: EncryptedEvent[], calendarID: string,
     // prepare the events data in the way the API wants it
     const Events = events.map(
         (event): CreateCalendarEventSyncData => ({
-            Overwrite: OVERWRITE_EVENT.YES,
+            Overwrite: 1,
             Event: { Permissions: 3, ...event.data },
         })
     );
@@ -53,7 +52,7 @@ export const submitEvents = async (events: EncryptedEvent[], calendarID: string,
     let responses: SyncMultipleApiResponses[] = [];
     try {
         const { Responses } = await api<SyncMultipleApiResponse>({
-            ...syncMultipleEvents(calendarID, { MemberID: memberID, Events }),
+            ...syncMultipleEvents(calendarID, { MemberID: memberID, IsImport: 1, Events }),
             timeout: HOUR * 1000,
             silence: true,
         });

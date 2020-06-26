@@ -5,7 +5,6 @@ import {
     syncMultipleEvents as syncMultipleEventsRoute,
     UpdateCalendarEventSyncData,
 } from 'proton-shared/lib/api/calendars';
-import { OVERWRITE_EVENT } from 'proton-shared/lib/calendar/constants';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { CachedKey } from 'proton-shared/lib/interfaces';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
@@ -158,7 +157,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                 };
 
                 return {
-                    Overwrite: OVERWRITE_EVENT.NO,
+                    Overwrite: 0,
                     Event: dataComplete,
                 };
             }
