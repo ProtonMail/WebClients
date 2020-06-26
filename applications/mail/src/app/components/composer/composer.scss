@@ -294,8 +294,13 @@
     }
 }
 
+.editor-squire-wrapper {
+    border-bottom-left-radius: $global-border-radius;
+    border-bottom-right-radius: $global-border-radius;
+}
 .composer-content--has-attachments {
-    .editor {
+    .editor,
+    .editor-squire-wrapper {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
