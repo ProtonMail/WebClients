@@ -21,6 +21,7 @@ import { createEmbeddedMap } from '../embedded/embeddeds';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
+export const CLASSNAME_BLOCKQUOTE = 'protonmail_quote';
 export const DRAFT_ID_PREFIX = 'draft';
 export const ORIGINAL_MESSAGE = `‐‐‐‐‐‐‐ Original Message ‐‐‐‐‐‐‐`;
 export const RE_PREFIX = c('Message').t`Re:`;
@@ -167,10 +168,10 @@ const generateBlockquote = (referenceMessage: PartialMessageExtended) => {
     const sender = recipientToInput(referenceMessage?.data?.Sender);
     const previously = c('Message').t`On ${date}, ${sender} wrote:`;
 
-    return `<div class="protonmail_quote">
+    return `<div class="${CLASSNAME_BLOCKQUOTE}">
         ${ORIGINAL_MESSAGE}<br>
         ${previously}<br>
-        <blockquote class="protonmail_quote" type="cite">
+        <blockquote class="${CLASSNAME_BLOCKQUOTE}" type="cite">
             ${getContent(referenceMessage || {})}
         </blockquote><br>
     </div>`;

@@ -7,7 +7,9 @@ import { findSender } from '../addresses';
 import { Address } from 'proton-shared/lib/interfaces';
 import { textToHtml } from '../textToHtml';
 import { parseInDiv } from '../dom';
-import { templateBuilder } from './messageSignature';
+import { templateBuilder, CLASSNAME_SIGNATURE_USER } from './messageSignature';
+import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
+import { replaceLineBreaks } from '../string';
 
 export const getPlainTextContent = (message: PartialMessageExtended) => {
     return message.plainText || '';
@@ -97,16 +99,24 @@ export const changeSignature = (
     oldSignature: string,
     newSignature: string
 ) => {
-    const oldTemplate = templateBuilder(oldSignature, mailSettings, false, true);
-    const newTemplate = templateBuilder(newSignature, mailSettings, false, true);
-
     if (isPlainText(message.data)) {
+        const oldTemplate = templateBuilder(oldSignature, mailSettings, false, true);
+        const newTemplate = templateBuilder(newSignature, mailSettings, false, true);
         const content = getPlainTextContent(message);
         const oldSignatureText = exportPlainText(oldTemplate).trim();
         const newSignatureText = exportPlainText(newTemplate).trim();
         return content.replace(oldSignatureText, newSignatureText);
     } else {
-        const content = getDocumentContent(message.document);
-        return content.replace(oldTemplate, newTemplate);
+        const document = message.document as Element;
+
+        const userSignature = [...document.querySelectorAll(`.${CLASSNAME_SIGNATURE_USER}`)].find(
+            (element) => element.closest(`.${CLASSNAME_BLOCKQUOTE}`) === null
+        );
+
+        if (userSignature) {
+            userSignature.innerHTML = replaceLineBreaks(newSignature);
+        }
+
+        return document.innerHTML;
     }
 };
