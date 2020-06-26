@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { Location, History } from 'history';
 import {
@@ -47,6 +47,9 @@ const PrivateHeader = ({
     const [value, updateValue] = useState(keyword);
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
+
+    // Update the search input field when the keyword in the url is changed
+    useEffect(() => updateValue(keyword), [keyword]);
 
     const handleBack = () => history.push(setPathInUrl(location, labelID));
 
