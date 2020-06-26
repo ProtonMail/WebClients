@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { newFilter } from 'proton-shared/lib/filters/factory';
 import { computeTree } from 'proton-shared/lib/filters/sieve';
+import { identity } from 'proton-shared/lib/helpers/function';
 
 import { Message } from '../../models/message';
 
@@ -117,6 +118,8 @@ const CustomFilterDropdown = ({ message }: Props) => {
         createModal(<AddFilterModal filter={filter} type="simple" />);
     };
 
+    const buttonDisabled = !Object.values(filtersState).some(identity);
+
     return (
         <>
             <div className="m1">
@@ -141,7 +144,7 @@ const CustomFilterDropdown = ({ message }: Props) => {
                 ))}
             </ul>
             <div className="m1">
-                <PrimaryButton className="w100" onClick={handleNext}>
+                <PrimaryButton className="w100" onClick={handleNext} disabled={buttonDisabled}>
                     {c('CustomFilter').t`Next`}
                 </PrimaryButton>
             </div>

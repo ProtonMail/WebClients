@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useEffect } from 'react';
+import React, { useState, ChangeEvent, useEffect, useMemo } from 'react';
 import { c } from 'ttag';
 import {
     SearchInput,
@@ -16,6 +16,7 @@ import { normalize } from 'proton-shared/lib/helpers/string';
 import { LABEL_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { Label } from 'proton-shared/lib/interfaces/Label';
+import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 
 import { Element } from '../../models/element';
 import { hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
@@ -62,9 +63,9 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
     const applyLabels = useApplyLabels();
     const moveToFolder = useMoveToFolder();
 
-    useEffect(() => {
-        updateSelectedLabelIDs(getInitialState(labels, elements));
-    }, [elements, labels.length]);
+    const initialState = useMemo(() => getInitialState(labels, elements), [elements, labels.length]);
+
+    useEffect(() => updateSelectedLabelIDs(initialState), [elements, labels.length]);
 
     if (!elements || !elements.length) {
         return null;
@@ -144,6 +145,7 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
     const searchInputID = `${uid}-search`;
     const archiveCheckID = `${uid}-archive`;
     const labelCheckID = (ID: string) => `${uid}-${ID}`;
+    const applyDisabled = isDeepEqual(initialState, selectedLabelIDs);
 
     return (
         <>
@@ -208,7 +210,12 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                 </label>
             </div>
             <div className="m1">
-                <PrimaryButton className="w100" loading={loading} onClick={() => withLoading(handleApply())}>
+                <PrimaryButton
+                    className="w100"
+                    loading={loading}
+                    onClick={() => withLoading(handleApply())}
+                    disabled={applyDisabled}
+                >
                     {c('Action').t`Apply`}
                 </PrimaryButton>
             </div>
