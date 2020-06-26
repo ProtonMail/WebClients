@@ -30,12 +30,12 @@ import HeaderRecipientsDetails from './HeaderRecipientsDetails';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended, Message } from '../../../models/message';
 import HeaderDropdown from './HeaderDropdown';
-import { OnCompose } from '../../../containers/ComposerContainer';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
 import HeaderExpandedDetails from './HeaderExpandedDetails';
 import HeaderRecipientType from './HeaderRecipientType';
 import HeaderRecipientItem from './HeaderRecipientItem';
 import ItemAction from '../../list/ItemAction';
+import { OnCompose } from '../../../hooks/useCompose';
 
 // Hacky override of the typing
 const ButtonGroup = OriginalButtonGroup as ({

@@ -14,13 +14,13 @@ import { Label } from 'proton-shared/lib/interfaces/Label';
 import PrivateLayout from '../components/layout/PrivateLayout';
 import MailboxContainer from './MailboxContainer';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
-import { OnCompose } from './ComposerContainer';
 import { RouteProps } from '../PrivateApp';
 import { Event } from '../models/event';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { setPathInUrl } from '../helpers/mailboxUrl';
 import { Breakpoints } from '../models/utils';
 import { useLinkHandler } from '../hooks/useLinkHandler';
+import { OnCompose } from '../hooks/useCompose';
 
 interface Props extends RouteProps {
     breakpoints: Breakpoints;

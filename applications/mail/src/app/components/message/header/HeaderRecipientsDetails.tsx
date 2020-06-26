@@ -8,7 +8,7 @@ import { MapStatusIcons } from '../../../models/crypto';
 import { recipientsToRecipientOrGroup } from '../../../helpers/addresses';
 import HeaderRecipientType from './HeaderRecipientType';
 import HeaderRecipientItem from './HeaderRecipientItem';
-import { OnCompose } from '../../../containers/ComposerContainer';
+import { OnCompose } from '../../../hooks/useCompose';
 
 interface Props {
     message?: Message;

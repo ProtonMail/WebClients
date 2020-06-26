@@ -24,8 +24,8 @@ import { getRecipientLabel, getRecipientGroupLabel } from '../../../helpers/addr
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { getContactsOfGroup } from '../../../helpers/contacts';
 import { normalizeEmail } from '../../../helpers/addresses';
-import { OnCompose } from '../../../containers/ComposerContainer';
 import { MESSAGE_ACTIONS } from '../../../constants';
+import { OnCompose } from '../../../hooks/useCompose';
 
 interface Props {
     recipientOrGroup: RecipientOrGroup;

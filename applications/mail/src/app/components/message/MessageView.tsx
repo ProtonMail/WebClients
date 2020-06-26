@@ -11,7 +11,6 @@ import HeaderExpanded from './header/HeaderExpanded';
 import MessageFooter from './MessageFooter';
 import { Message } from '../../models/message';
 import { useMessage } from '../../hooks/useMessage';
-import { OnCompose } from '../../containers/ComposerContainer';
 import {
     useInitializeMessage,
     useLoadMessage,
@@ -23,6 +22,7 @@ import {
     useTrustAttachedPublicKey
 } from '../../hooks/useMessageReadActions';
 import { isUnread } from '../../helpers/elements';
+import { OnCompose } from '../../hooks/useCompose';
 
 interface Props {
     labelID: string;

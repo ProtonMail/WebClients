@@ -1,52 +1,13 @@
 import React, { ReactNode, useState, useEffect } from 'react';
-import { c } from 'ttag';
-import { redirectTo } from 'proton-shared/lib/helpers/browser';
-import {
-    ConfirmModal,
-    Alert,
-    useAddresses,
-    useWindowSize,
-    useNotifications,
-    useHandler,
-    useUser,
-    useModals
-} from 'react-components';
+import { useAddresses, useWindowSize, useHandler } from 'react-components';
 
 import Composer from '../components/composer/Composer';
-import { MESSAGE_ACTIONS } from '../constants';
-import { MessageExtended, PartialMessageExtended } from '../models/message';
-import { useDraft } from '../hooks/useDraft';
 import { useMessageCache } from './MessageProvider';
 import { Breakpoints, WindowSize } from '../models/utils';
 import { MAX_ACTIVE_COMPOSER_MOBILE, MAX_ACTIVE_COMPOSER_DESKTOP } from '../helpers/composerPositioning';
+import { useCompose, OnCompose } from '../hooks/useCompose';
 
 import '../components/composer/composer.scss';
-
-export interface ComposeExisting {
-    existingDraft: MessageExtended;
-}
-
-export interface ComposeNew {
-    action: MESSAGE_ACTIONS;
-    referenceMessage?: PartialMessageExtended;
-}
-
-export type ComposeArgs = ComposeExisting | ComposeNew;
-
-export const getComposeExisting = (composeArgs: ComposeArgs) =>
-    (composeArgs as ComposeExisting).existingDraft ? (composeArgs as ComposeExisting) : undefined;
-
-export const getComposeNew = (composeArgs: ComposeArgs) =>
-    typeof (composeArgs as ComposeNew).action === 'number' ? (composeArgs as ComposeNew) : undefined;
-
-export const getComposeArgs = (composeArgs: ComposeArgs) => ({
-    composeExisting: getComposeExisting(composeArgs),
-    composeNew: getComposeNew(composeArgs)
-});
-
-export interface OnCompose {
-    (args: ComposeArgs): void;
-}
 
 interface Props {
     breakpoints: Breakpoints;
@@ -55,15 +16,11 @@ interface Props {
 
 const ComposerContainer = ({ breakpoints, children }: Props) => {
     const [addresses, loadingAddresses] = useAddresses();
-    const [user] = useUser();
     const [messageIDs, setMessageIDs] = useState<string[]>([]);
     const [focusedMessageID, setFocusedMessageID] = useState<string>();
     const [width, height] = useWindowSize();
     const windowSize: WindowSize = { width, height };
-    const { createNotification } = useNotifications();
-    const createDraft = useDraft();
     const messageCache = useMessageCache();
-    const { createModal } = useModals();
 
     const maxActiveComposer = breakpoints.isNarrow ? MAX_ACTIVE_COMPOSER_MOBILE : MAX_ACTIVE_COMPOSER_DESKTOP;
 
@@ -84,61 +41,12 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
     useEffect(() => messageCache.subscribe(messageDeletionListener), [messageCache]);
 
-    const handleCompose = useHandler(async (composeArgs: ComposeArgs) => {
-        const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
-
-        if (!isNaN(spacePercentage) && spacePercentage >= 100) {
-            createModal(
-                <ConfirmModal
-                    title={c('Title').t`Storage capacity warning`}
-                    confirm={c('Action').t`Upgrade`}
-                    cancel={c('Action').t`Close`}
-                    onConfirm={() => {
-                        // TODO change link once we have ProtonAccount
-                        redirectTo('/settings/subscription');
-                    }}
-                >
-                    <Alert
-                        learnMore="https://protonmail.com/support/knowledge-base/increase-my-storage-space/"
-                        type="warning"
-                    >{c('Info')
-                        .t`You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.`}</Alert>
-                </ConfirmModal>
-            );
-            return;
-        }
-
-        if (messageIDs.length >= maxActiveComposer) {
-            createNotification({
-                type: 'error',
-                text: c('Error').t`Maximum composer reached`
-            });
-            return;
-        }
-
-        const { composeExisting, composeNew } = getComposeArgs(composeArgs);
-
-        if (composeExisting) {
-            const { existingDraft } = composeExisting;
-
-            const existingMessageID = messageIDs.find((id) => id === existingDraft.localID);
-            if (existingMessageID) {
-                setFocusedMessageID(existingMessageID);
-                return;
-            }
-
-            setMessageIDs([...messageIDs, existingDraft.localID]);
-            setFocusedMessageID(existingDraft.localID);
-            return;
-        }
-
-        if (composeNew) {
-            const { action, referenceMessage } = composeNew;
-            const newMessageID = await createDraft(action, referenceMessage);
-            setMessageIDs([...messageIDs, newMessageID]);
-            setFocusedMessageID(newMessageID);
-        }
-    });
+    const handleCompose = useCompose(
+        messageIDs,
+        (messageID) => setMessageIDs([...messageIDs, messageID]),
+        setFocusedMessageID,
+        maxActiveComposer
+    );
 
     const handleFocus = (messageID: string) => () => {
         setFocusedMessageID(messageID);

@@ -11,8 +11,8 @@ import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import TrashWarning from './TrashWarning';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { hasLabel } from '../../helpers/elements';
-import { OnCompose } from '../../containers/ComposerContainer';
 import { getNumParticipants } from '../../helpers/addresses';
+import { OnCompose } from '../../hooks/useCompose';
 
 interface Props {
     labelID: string;

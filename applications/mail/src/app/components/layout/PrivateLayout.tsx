@@ -5,10 +5,10 @@ import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import PrivateHeader from '../header/PrivateHeader';
 import PrivateSidebar from '../sidebar/PrivateSidebar';
 import { Location, History } from 'history';
-import { OnCompose } from '../../containers/ComposerContainer';
 import { getHumanLabelID } from '../../helpers/labels';
 import { setKeywordInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
+import { OnCompose } from '../../hooks/useCompose';
 
 interface Props {
     children: ReactNode;

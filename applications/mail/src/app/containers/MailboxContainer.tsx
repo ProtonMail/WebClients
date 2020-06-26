@@ -27,7 +27,6 @@ import List from '../components/list/List';
 import ConversationView from '../components/conversation/ConversationView';
 import PlaceholderView from '../components/view/PlaceholderView';
 import MessageOnlyView from '../components/message/MessageOnlyView';
-import { OnCompose } from './ComposerContainer';
 import { PAGE_SIZE, MESSAGE_ACTIONS } from '../constants';
 import { isMessage, isSearch as testIsSearch } from '../helpers/elements';
 import { isDraft } from '../helpers/message/messages';
@@ -36,6 +35,7 @@ import { Breakpoints } from '../models/utils';
 
 import './MailboxContainer.scss';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
+import { OnCompose } from '../hooks/useCompose';
 
 interface Props {
     labelID: string;

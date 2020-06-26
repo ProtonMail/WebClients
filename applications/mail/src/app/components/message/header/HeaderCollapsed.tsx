@@ -11,9 +11,9 @@ import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import { MessageExtended } from '../../../models/message';
 import HeaderRecipientItem from './HeaderRecipientItem';
-import { OnCompose } from '../../../containers/ComposerContainer';
 import ItemExpiration from '../../list/ItemExpiration';
 import ItemAction from '../../list/ItemAction';
+import { OnCompose } from '../../../hooks/useCompose';
 
 interface Props {
     labelID: string;

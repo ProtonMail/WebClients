@@ -10,6 +10,7 @@ import { unique } from 'proton-shared/lib/helpers/array';
 import { isMessage } from './elements';
 import { Element } from '../models/element';
 import { Conversation } from '../models/conversation';
+import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 
 export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
 
@@ -58,6 +59,8 @@ export const getByEmail = (addresses: Address[], email = '') => {
  */
 export const isFallbackAddress = (address?: Address, keys: Key[] = []) =>
     !!address && !address.Receive && !!keys.length;
+
+export const isDirtyAddress = ({ Keys, Status }: Address) => !Keys.length || Status === ADDRESS_STATUS.STATUS_DISABLED;
 
 export const isOwnAddress = (address?: Address, keys: Key[] = []) => !!address && !isFallbackAddress(address, keys);
 

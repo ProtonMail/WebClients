@@ -4,10 +4,10 @@ import { Location } from 'history';
 import { MainLogo, PrimaryButton, MobileAppsLinks, Hamburger } from 'react-components';
 
 import { MESSAGE_ACTIONS } from '../../constants';
-import { OnCompose } from '../../containers/ComposerContainer';
 import SidebarMenu from './SidebarMenu';
 import SidebarVersion from './SidebarVersion';
 import { Breakpoints } from '../../models/utils';
+import { OnCompose } from '../../hooks/useCompose';
 
 interface Props {
     labelID: string;

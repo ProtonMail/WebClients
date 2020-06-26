@@ -6,10 +6,10 @@ import { MailSettings } from 'proton-shared/lib/interfaces';
 import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
 import ItemLabels from '../list/ItemLabels';
-import { OnCompose } from '../../containers/ComposerContainer';
 import { useMessage } from '../../hooks/useMessage';
 import { getNumParticipants } from '../../helpers/addresses';
 import { Message } from '../../models/message';
+import { OnCompose } from '../../hooks/useCompose';
 
 interface Props {
     labelID: string;
