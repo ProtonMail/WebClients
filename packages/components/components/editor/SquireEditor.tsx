@@ -187,7 +187,7 @@ const SquireEditor = forwardRef(
                             onAddImages={onAddImages}
                         />
                         {showEllipseButton && (
-                            <div className="m0-5">
+                            <div className="p0-5 bg-white color-global-grey">
                                 <Button className="pm-button--small" onClick={onEllipseClick}>
                                     ...
                                 </Button>

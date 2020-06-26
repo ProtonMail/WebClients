@@ -98,7 +98,7 @@ const SquireIframe = forwardRef(
         }, [squireReady]);
 
         return (
-            <div className="editor-squire-wrapper fill w100 scroll-if-needed flex-item-fluid rounded relative">
+            <div className="editor-squire-wrapper fill w100 scroll-if-needed flex-item-fluid relative">
                 {placeholder && isEmpty && (
                     <div className="absolute ml1 no-pointer-events placeholder">{placeholder}</div>
                 )}
