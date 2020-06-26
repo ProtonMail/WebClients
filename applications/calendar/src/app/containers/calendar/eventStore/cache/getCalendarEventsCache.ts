@@ -1,7 +1,7 @@
 import createIntervalTree from 'interval-tree';
-import { CalendarEventCache } from '../interface';
+import { CalendarEventsCache } from '../interface';
 
-const getCalendarEventCache = (): CalendarEventCache => {
+const getCalendarEventsCache = (): CalendarEventsCache => {
     return {
         events: new Map(),
         recurringEvents: new Map(),
@@ -12,4 +12,4 @@ const getCalendarEventCache = (): CalendarEventCache => {
     };
 };
 
-export default getCalendarEventCache;
+export default getCalendarEventsCache;

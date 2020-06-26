@@ -1,12 +1,12 @@
 import { getIsRecurring } from 'proton-shared/lib/calendar/vcalHelper';
 
-import { CalendarEventCache } from '../interface';
+import { CalendarEventsCache } from '../interface';
 import { getRecurrenceIdDate, getUidValue } from '../../event/getEventHelper';
 import { removeEventFromRecurrenceInstances, removeEventFromRecurringCache } from './recurringCache';
 
 export const removeCalendarEventStoreRecord = (
     EventID: string,
-    { tree, events, recurringEvents }: CalendarEventCache
+    { tree, events, recurringEvents }: CalendarEventsCache
 ) => {
     const oldCalendarEventStoreRecord = events.get(EventID);
     if (!oldCalendarEventStoreRecord) {

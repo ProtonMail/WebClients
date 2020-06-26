@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { CalendarCreateData } from 'proton-shared/lib/api/calendars';
 import { LABEL_COLORS } from 'proton-shared/lib/constants';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { Address } from 'proton-shared/lib/interfaces';
@@ -80,11 +81,11 @@ export const validate = ({ name }: CalendarModel): CalendarErrors => {
     return errors;
 };
 
-export const getCalendarPayload = (model: CalendarModel) => {
+export const getCalendarPayload = (model: CalendarModel): CalendarCreateData => {
     return {
         Name: model.name,
         Color: model.color,
-        Display: +model.display,
+        Display: model.display ? 1 : 0,
         Description: model.description,
     };
 };

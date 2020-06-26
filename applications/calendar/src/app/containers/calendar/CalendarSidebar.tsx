@@ -40,7 +40,7 @@ const CalendarSidebar = ({
     const [loadingAction, withLoadingAction] = useLoading();
 
     const handleChangeVisibility = async (calendarID: string, checked: boolean) => {
-        await api(updateCalendar(calendarID, { Display: +checked }));
+        await api(updateCalendar(calendarID, { Display: checked ? 1 : 0 }));
         await call();
     };
 

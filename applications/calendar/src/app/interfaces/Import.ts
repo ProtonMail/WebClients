@@ -18,6 +18,10 @@ export interface EncryptedEvent {
     data: ReturnType<typeof formatData>;
 }
 
+export interface StoredEncryptedEvent extends EncryptedEvent {
+    response: SyncMultipleApiResponses;
+}
+
 export interface ImportCalendarModel {
     step: IMPORT_STEPS;
     fileAttached?: File;

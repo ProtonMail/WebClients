@@ -1,6 +1,6 @@
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { pick } from 'proton-shared/lib/helpers/object';
-import { CalendarEventCache } from '../interface';
+import { CalendarEventsCache } from '../interface';
 import getComponentFromCalendarEvent from './getComponentFromCalendarEvent';
 import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
@@ -23,15 +23,15 @@ const FIELDS_TO_KEEP = [
     'Attendees',
 ] as const;
 
-const upsertCalendarApiEvent = (Event: CalendarEvent, calendarEventCache: CalendarEventCache) => {
+const upsertCalendarApiEvent = (Event: CalendarEvent, calendarEventsCache: CalendarEventsCache) => {
     const eventID = Event.ID;
     try {
         const eventComponent = getComponentFromCalendarEvent(Event);
         const eventData = pick(Event, FIELDS_TO_KEEP);
         const newCalendarEventStoreRecord = getCalendarEventStoreRecord(eventComponent, eventData);
-        return upsertCalendarEventStoreRecord(eventID, newCalendarEventStoreRecord, calendarEventCache);
+        return upsertCalendarEventStoreRecord(eventID, newCalendarEventStoreRecord, calendarEventsCache);
     } catch (error) {
-        removeCalendarEventStoreRecord(eventID, calendarEventCache);
+        removeCalendarEventStoreRecord(eventID, calendarEventsCache);
         return false;
     }
 };

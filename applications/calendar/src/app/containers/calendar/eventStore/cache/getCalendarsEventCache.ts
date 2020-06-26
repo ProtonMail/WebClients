@@ -1,8 +1,8 @@
-import { CalendarEventCache, CalendarsEventsCache } from '../interface';
+import { CalendarEventsCache, CalendarsEventsCache } from '../interface';
 import { getIsCalendarEvent } from './helper';
 
 const getCalendarsEventCache = (): CalendarsEventsCache => {
-    const calendarsCache: { [key: string]: CalendarEventCache } = {};
+    const calendarsCache: { [key: string]: CalendarEventsCache } = {};
 
     const getCachedEvent = (calendarID: string, eventID: string) => {
         const calendarCache = calendarsCache[calendarID];

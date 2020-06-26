@@ -495,7 +495,7 @@ const getParentEventFromApi = async (uid: string, api: Api, calendarId: string) 
 
 interface GetSupportedEventsWithRecurrenceIdArgs {
     eventsWithRecurrenceId: (VcalVeventComponent & Required<Pick<VcalVeventComponent, 'recurrence-id'>>)[];
-    parentEvents: (EncryptedEvent | ImportEventError)[];
+    parentEvents: EncryptedEvent[];
     calendarId: string;
     api: Api;
 }
@@ -509,9 +509,6 @@ export const getSupportedEventsWithRecurrenceId = async ({
     const mapParentEvents = parentEvents.reduce<{
         [key: string]: VcalVeventComponent | undefined;
     }>((acc, event) => {
-        if (event instanceof ImportEventError) {
-            return acc;
-        }
         const { component } = event;
         acc[component.uid.value] = component;
         return acc;

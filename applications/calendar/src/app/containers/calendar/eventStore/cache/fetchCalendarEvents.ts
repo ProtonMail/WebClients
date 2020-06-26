@@ -1,6 +1,6 @@
 import { generateUID } from 'proton-shared/lib/calendar/helper';
 import { Api } from 'proton-shared/lib/interfaces';
-import { CalendarEventCache } from '../interface';
+import { CalendarEventsCache } from '../interface';
 import getPaginatedEvents from '../getPaginatedEvents';
 import upsertCalendarApiEvent from './upsertCalendarApiEvent';
 
@@ -8,7 +8,7 @@ const getIsContained = (range: [Date, Date], otherRange: [Date, Date]) => {
     return otherRange && +otherRange[1] >= +range[1] && +otherRange[0] <= +range[0];
 };
 
-export const getExistingFetch = (dateRange: [Date, Date], { fetchTree, fetchCache }: CalendarEventCache) => {
+export const getExistingFetch = (dateRange: [Date, Date], { fetchTree, fetchCache }: CalendarEventsCache) => {
     const existingFetches = fetchTree.search(+dateRange[0], +dateRange[1]).map(([, , id]) => fetchCache.get(id));
 
     return existingFetches.find((otherFetch) => {
@@ -18,14 +18,14 @@ export const getExistingFetch = (dateRange: [Date, Date], { fetchTree, fetchCach
 
 export const fetchCalendarEvents = (
     dateRange: [Date, Date],
-    calendarEventCache: CalendarEventCache,
+    calendarEventsCache: CalendarEventsCache,
     api: Api,
     calendarID: string,
     tzid: string
 ) => {
-    const existingFetch = getExistingFetch(dateRange, calendarEventCache);
+    const existingFetch = getExistingFetch(dateRange, calendarEventsCache);
 
-    const { fetchCache, fetchTree } = calendarEventCache;
+    const { fetchCache, fetchTree } = calendarEventsCache;
 
     if (!existingFetch) {
         const fetchId = generateUID();
@@ -35,7 +35,7 @@ export const fetchCalendarEvents = (
                     return;
                 }
                 Events.forEach((Event) => {
-                    upsertCalendarApiEvent(Event, calendarEventCache);
+                    upsertCalendarApiEvent(Event, calendarEventsCache);
                 });
                 fetchCache.set(fetchId, { dateRange });
             })

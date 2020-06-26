@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { MutableRefObject, useEffect, useState } from 'react';
 import { useToggle, Sidebar, Info, getSectionConfigProps, PrivateAppContainer, useModals } from 'react-components';
 import { Redirect, Route, Switch } from 'react-router';
 import { c } from 'ttag';
@@ -10,6 +10,7 @@ import GeneralPage, { getGeneralSettingsPage } from './SettingsGeneralPage';
 import CalendarsPage, { getCalendarSettingsPage } from './SettingsCalendarPage';
 import CalendarSidebarVersion from '../calendar/CalendarSidebarVersion';
 import ImportModal from '../../components/import/ImportModal';
+import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 
 interface Props {
     isNarrow: boolean;
@@ -19,6 +20,7 @@ interface Props {
     disabledCalendars: Calendar[];
     defaultCalendar?: Calendar;
     calendarUserSettings: CalendarUserSettings;
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
 }
 
 const SettingsContainer = ({
@@ -29,6 +31,7 @@ const SettingsContainer = ({
     defaultCalendar,
     activeCalendars,
     calendarUserSettings,
+    calendarsEventsCacheRef,
 }: Props) => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const [activeSection, setActiveSection] = useState('');
@@ -48,29 +51,35 @@ const SettingsContainer = ({
         ),
         hasActiveCalendars && defaultCalendar
             ? {
-                type: 'button',
-                className: 'alignleft',
-                icon: 'import',
-                onClick() {
-                    createModal(<ImportModal defaultCalendar={defaultCalendar} calendars={activeCalendars} />);
-                },
-                text: c('Action').t`Import`,
-            }
+                  type: 'button',
+                  className: 'alignleft',
+                  icon: 'import',
+                  onClick() {
+                      createModal(
+                          <ImportModal
+                              defaultCalendar={defaultCalendar}
+                              calendars={activeCalendars}
+                              calendarsEventsCacheRef={calendarsEventsCacheRef}
+                          />
+                      );
+                  },
+                  text: c('Action').t`Import`,
+              }
             : {
-                type: 'button',
-                className: 'alignleft',
-                icon: 'import',
-                text: (
-                    <>
-                        {c('Action').t`Import`}
-                        <Info
-                            buttonClass="ml0-5 inline-flex"
-                            title={c('Disabled import')
-                                .t`You need to have an active calendar before importing your events.`}
-                        />
-                    </>
-                ),
-            },
+                  type: 'button',
+                  className: 'alignleft',
+                  icon: 'import',
+                  text: (
+                      <>
+                          {c('Action').t`Import`}
+                          <Info
+                              buttonClass="ml0-5 inline-flex"
+                              title={c('Disabled import')
+                                  .t`You need to have an active calendar before importing your events.`}
+                          />
+                      </>
+                  ),
+              },
     ];
 
     const header = (

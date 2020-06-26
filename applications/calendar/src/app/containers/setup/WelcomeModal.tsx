@@ -70,15 +70,15 @@ const WelcomeModal = ({ onClose, ...rest }: Props) => {
             throw new Error(c('Error').t`Primary address key is not decrypted.`);
         }
 
-        const calendarPayload = {
-            Name: DEFAULT_CALENDAR.name,
-            Color: DEFAULT_CALENDAR.color,
-            Description: DEFAULT_CALENDAR.description,
-            Display: 1,
-            AddressID: addressID,
-        };
-
-        const { Calendar } = await api<{ Calendar: Calendar }>(createCalendar(calendarPayload));
+        const { Calendar } = await api<{ Calendar: Calendar }>(
+            createCalendar({
+                Name: DEFAULT_CALENDAR.name,
+                Color: DEFAULT_CALENDAR.color,
+                Description: DEFAULT_CALENDAR.description,
+                Display: 1,
+                AddressID: addressID,
+            })
+        );
 
         // Improve guessing
         const defaultTimeFormat = SETTINGS_TIME_FORMAT.H24;

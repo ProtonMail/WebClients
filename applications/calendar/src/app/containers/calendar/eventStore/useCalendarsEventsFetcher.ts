@@ -3,7 +3,7 @@ import { useApi } from 'react-components';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { CalendarsEventsCache } from './interface';
-import getCalendarEventCache from './cache/getCalendarEventCache';
+import getCalendarEventsCache from './cache/getCalendarEventsCache';
 import { fetchCalendarEvents } from './cache/fetchCalendarEvents';
 
 const useCalendarsEventsFetcher = (
@@ -19,10 +19,10 @@ const useCalendarsEventsFetcher = (
         const calendarFetchPromises = requestedCalendars
             .map(({ ID: CalendarID }) => {
                 if (!cacheRef.current.calendars[CalendarID]) {
-                    cacheRef.current.calendars[CalendarID] = getCalendarEventCache();
+                    cacheRef.current.calendars[CalendarID] = getCalendarEventsCache();
                 }
-                const calendarEventCache = cacheRef.current.calendars[CalendarID];
-                return fetchCalendarEvents(utcDateRange, calendarEventCache, api, CalendarID, tzid);
+                const calendarEventsCache = cacheRef.current.calendars[CalendarID];
+                return fetchCalendarEvents(utcDateRange, calendarEventsCache, api, CalendarID, tzid);
             })
             .filter(isTruthy);
 

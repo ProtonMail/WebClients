@@ -19,9 +19,9 @@ const upsertMultiActionsResponses = (
         const responses = multiResponses[i];
 
         const responsesArray = responses?.Responses;
-        const calendarEventCache = calendarsEventsCache.calendars[actions.calendarID];
+        const calendarEventsCache = calendarsEventsCache.calendars[actions.calendarID];
 
-        if (!Array.isArray(responsesArray) || !calendarEventCache) {
+        if (!Array.isArray(responsesArray) || !calendarEventsCache) {
             continue;
         }
 
@@ -31,7 +31,7 @@ const upsertMultiActionsResponses = (
 
             if (getIsDeleteSyncOperation(operation)) {
                 if (!matchingResponse || matchingResponse.Response.Code === API_CODES.SINGLE_SUCCESS) {
-                    removeCalendarEventStoreRecord(operation.data.Event.ID, calendarEventCache);
+                    removeCalendarEventStoreRecord(operation.data.Event.ID, calendarEventsCache);
                 }
                 continue;
             }
@@ -39,7 +39,7 @@ const upsertMultiActionsResponses = (
             if (matchingResponse) {
                 const matchingEvent = matchingResponse.Response.Event;
                 if (matchingEvent && matchingResponse.Response.Code === API_CODES.SINGLE_SUCCESS) {
-                    upsertCalendarApiEvent(matchingEvent, calendarEventCache);
+                    upsertCalendarApiEvent(matchingEvent, calendarEventsCache);
                 }
             }
         }

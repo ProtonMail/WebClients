@@ -11,7 +11,7 @@ import useGetCalendarEventPersonal from './useGetCalendarEventPersonal';
 import useGetCalendarEventRaw from './useGetCalendarEventRaw';
 import { CalendarViewEvent } from '../interface';
 import {
-    CalendarEventCache,
+    CalendarEventsCache,
     CalendarsEventsCache,
     DecryptedEventTupleResult,
     SharedVcalVeventComponent,
@@ -50,7 +50,7 @@ const useCalendarsEventsReader = (
         const getEventAndUpsert = async (
             calendarID: string,
             eventID: string,
-            calendarEventCache: CalendarEventCache
+            calendarEventsCache: CalendarEventsCache
         ): Promise<void> => {
             try {
                 const { Event } = await api<{ Event: CalendarEvent }>({
@@ -58,7 +58,7 @@ const useCalendarsEventsReader = (
                     silence: true,
                     signal,
                 });
-                upsertCalendarApiEvent(Event, calendarEventCache);
+                upsertCalendarApiEvent(Event, calendarEventsCache);
             } catch (error) {
                 throw new Error(c('Error').t`Failed to get event`);
             }
@@ -72,7 +72,7 @@ const useCalendarsEventsReader = (
         const getRecurringEventAndUpsert = (
             eventComponent: SharedVcalVeventComponent,
             eventData: CalendarEvent,
-            calendarEventCache: CalendarEventCache
+            calendarEventsCache: CalendarEventsCache
         ): Promise<void> | undefined => {
             if (!eventComponent['recurrence-id'] || !eventComponent.uid) {
                 return;
@@ -95,7 +95,7 @@ const useCalendarsEventsReader = (
                 return;
             }
 
-            const oldFetchPromise = calendarEventCache.fetchUidCache.get(uid);
+            const oldFetchPromise = calendarEventsCache.fetchUidCache.get(uid);
             if (oldFetchPromise?.promise) {
                 return oldFetchPromise.promise;
             }
@@ -103,7 +103,7 @@ const useCalendarsEventsReader = (
             const newFetchPromise = getAllEventsByUID(api, uid, calendarID)
                 .then((eventOccurrences) => {
                     eventOccurrences.forEach((eventOccurrence) => {
-                        upsertCalendarApiEvent(eventOccurrence, calendarEventCache);
+                        upsertCalendarApiEvent(eventOccurrence, calendarEventsCache);
                     });
                     if (!getParentEvent()) {
                         throw new Error(c('Error').t`Failed to get original occurrence in series`);
@@ -112,7 +112,7 @@ const useCalendarsEventsReader = (
                 .catch(() => {
                     throw new Error(c('Error').t`Failed to get original occurrence in series`);
                 });
-            calendarEventCache.fetchUidCache.set(uid, { promise: newFetchPromise });
+            calendarEventsCache.fetchUidCache.set(uid, { promise: newFetchPromise });
             return newFetchPromise;
         };
 
@@ -124,9 +124,9 @@ const useCalendarsEventsReader = (
             }
 
             const { calendarData, eventData } = calendarViewEvent.data;
-            const calendarEventCache = cacheRef.current?.calendars[calendarData.ID];
-            const eventRecord = calendarEventCache?.events.get(eventData?.ID || 'undefined');
-            if (!calendarEventCache || !eventRecord || eventRecord.eventReadResult || seen.has(eventRecord)) {
+            const calendarEventsCache = cacheRef.current?.calendars[calendarData.ID];
+            const eventRecord = calendarEventsCache?.events.get(eventData?.ID || 'undefined');
+            if (!calendarEventsCache || !eventRecord || eventRecord.eventReadResult || seen.has(eventRecord)) {
                 return acc;
             }
 
@@ -146,13 +146,13 @@ const useCalendarsEventsReader = (
                         getRecurringEventAndUpsert(
                             eventRecord.eventComponent,
                             eventRecord.eventData,
-                            calendarEventCache
+                            calendarEventsCache
                         ),
                     ]).then(([eventDecrypted]) => {
                         return eventDecrypted;
                     });
                 } else {
-                    promise = getEventAndUpsert(calendarData.ID, eventRecord.eventData.ID, calendarEventCache).then(
+                    promise = getEventAndUpsert(calendarData.ID, eventRecord.eventData.ID, calendarEventsCache).then(
                         () => {
                             // Relies on a re-render happening which would make this error never show up
                             throw new Error('Outdated event');

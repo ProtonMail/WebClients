@@ -41,11 +41,11 @@ const useCalendarsEvents = (
                     return [];
                 }
 
-                const calendarEventCache = cacheRef.current.calendars[ID];
+                const calendarEventsCache = cacheRef.current.calendars[ID];
 
                 // If this date range is not contained in the result, we don't return anything because we can't trust the recurring events
                 // until we have complete data fetched for this range because of single editions
-                const existingFetch = getExistingFetch(utcDateRange, calendarEventCache);
+                const existingFetch = getExistingFetch(utcDateRange, calendarEventsCache);
                 if (!existingFetch || existingFetch.promise) {
                     return [];
                 }
@@ -54,10 +54,10 @@ const useCalendarsEvents = (
                 const searchStart = +utcDateRange[0] - DAY_IN_MILLISECONDS;
                 const searchEnd = +utcDateRange[1] + DAY_IN_MILLISECONDS;
 
-                const results = calendarEventCache.tree
+                const results = calendarEventsCache.tree
                     .search(searchStart, searchEnd)
                     .map(([, , id]): CalendarViewEvent | undefined => {
-                        const cachedRecord = calendarEventCache.events.get(id);
+                        const cachedRecord = calendarEventsCache.events.get(id);
                         if (!cachedRecord) {
                             return;
                         }
@@ -81,13 +81,13 @@ const useCalendarsEvents = (
                     .filter(isTruthy);
 
                 const recurringResults = getRecurringEvents(
-                    calendarEventCache.events,
-                    calendarEventCache.recurringEvents,
+                    calendarEventsCache.events,
+                    calendarEventsCache.recurringEvents,
                     searchStart,
                     searchEnd
                 )
                     .map(({ id, eventOccurrences, isSingleOccurrence }) => {
-                        const cachedRecord = calendarEventCache.events.get(id);
+                        const cachedRecord = calendarEventsCache.events.get(id);
                         if (!cachedRecord) {
                             return [];
                         }

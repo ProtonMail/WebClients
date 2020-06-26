@@ -1,36 +1,43 @@
+import { updateCalendar } from 'proton-shared/lib/api/calendars';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import React, { ChangeEvent, useState } from 'react';
-import { FormModal, PrimaryButton, useEventManager } from 'react-components';
+import React, { ChangeEvent, MutableRefObject, useState } from 'react';
+import { FormModal, PrimaryButton, useApi, useEventManager } from 'react-components';
 import { c } from 'ttag';
 
 import { MAX_IMPORT_FILE_SIZE } from '../../constants';
 import { getSupportedEvents, parseIcs, splitErrors } from '../../helpers/import';
-import { IMPORT_STEPS, ImportCalendarModel } from '../../interfaces/Import';
+import { IMPORT_STEPS, ImportCalendarModel, StoredEncryptedEvent } from '../../interfaces/Import';
 
 import AttachingModalContent from './AttachingModalContent';
+import { upsertImportedEvents } from './encryptAndSubmit';
 import ImportingModalContent from './ImportingModalContent';
 import ImportSummaryModalContent from './ImportSummaryModalContent';
 import WarningModalContent from './WarningModalContent';
 import { IMPORT_ERROR_TYPE, ImportFileError } from './ImportFileError';
+import { CalendarsEventsCache } from '../../containers/calendar/eventStore/interface';
 
 interface Props {
     defaultCalendar: Calendar;
     calendars: Calendar[];
     onClose?: () => void;
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
 }
-const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
+
+const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
+    step: IMPORT_STEPS.ATTACHING,
+    calendar,
+    eventsParsed: [],
+    totalEncrypted: 0,
+    totalImported: 0,
+    errors: [],
+    loading: false,
+});
+const ImportModal = ({ calendars, defaultCalendar, calendarsEventsCacheRef, ...rest }: Props) => {
+    const api = useApi();
     const { call } = useEventManager();
-    const [model, setModel] = useState<ImportCalendarModel>({
-        step: IMPORT_STEPS.ATTACHING,
-        calendar: defaultCalendar,
-        eventsParsed: [],
-        totalEncrypted: 0,
-        totalImported: 0,
-        errors: [],
-        loading: false,
-    });
+    const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
 
     const { content, ...modalProps } = (() => {
         if (model.step <= IMPORT_STEPS.ATTACHED) {
@@ -41,15 +48,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
             );
 
             const handleClear = () => {
-                setModel({
-                    step: IMPORT_STEPS.ATTACHING,
-                    calendar: model.calendar,
-                    eventsParsed: [],
-                    totalEncrypted: 0,
-                    totalImported: 0,
-                    errors: [],
-                    loading: false,
-                });
+                setModel(getInitialState(model.calendar));
             };
 
             const handleAttach = ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -102,14 +101,8 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     });
                 } catch (e) {
                     setModel({
-                        step: IMPORT_STEPS.ATTACHING,
-                        calendar: model.calendar,
-                        eventsParsed: [],
-                        totalEncrypted: 0,
-                        totalImported: 0,
-                        errors: [],
+                        ...getInitialState(model.calendar),
                         failure: e,
-                        loading: false,
                     });
                 }
             };
@@ -155,8 +148,16 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                 </PrimaryButton>
             );
 
-            const handleFinish = async () => {
+            const handleFinish = async (importedEvents: StoredEncryptedEvent[]) => {
                 setModel((model) => ({ ...model, step: IMPORT_STEPS.FINISHED }));
+                if (!importedEvents.length) {
+                    return;
+                }
+                const { Display, ID: calendarID } = model.calendar;
+                if (!Display) {
+                    await api(updateCalendar(calendarID, { Display: 1 }));
+                }
+                upsertImportedEvents(importedEvents, calendarsEventsCacheRef.current.calendars[calendarID]);
                 await call();
             };
 

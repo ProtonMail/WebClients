@@ -78,6 +78,7 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
                                 disabledCalendars={disabledCalendars}
                                 defaultCalendar={defaultCalendar}
                                 calendarUserSettings={calendarUserSettings}
+                                calendarsEventsCacheRef={calendarsEventsCacheRef}
                             />
                         );
                     }}

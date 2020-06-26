@@ -1,21 +1,24 @@
 import { pick } from 'proton-shared/lib/helpers/object';
 import { CalendarEventWithoutBlob } from 'proton-shared/lib/interfaces/calendar';
-import { CalendarEventCache } from '../interface';
+import { CalendarEventsCache } from '../interface';
 import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';
 import getComponentFromCalendarEventWithoutBlob from './getComponentFromCalendarEventWithoutBlob';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
 
 const FIELDS_TO_KEEP = ['ID', 'SharedEventID', 'CalendarID', 'CreateTime', 'ModifyTime', 'Permissions'] as const;
 
-const upsertCalendarApiEventWithoutBlob = (Event: CalendarEventWithoutBlob, calendarEventCache: CalendarEventCache) => {
+const upsertCalendarApiEventWithoutBlob = (
+    Event: CalendarEventWithoutBlob,
+    calendarEventsCache: CalendarEventsCache
+) => {
     const eventID = Event.ID;
     try {
         const eventComponent = getComponentFromCalendarEventWithoutBlob(Event);
         const eventData = pick(Event, FIELDS_TO_KEEP);
         const newCalendarEventStoreRecord = getCalendarEventStoreRecord(eventComponent, eventData);
-        return upsertCalendarEventStoreRecord(eventID, newCalendarEventStoreRecord, calendarEventCache);
+        return upsertCalendarEventStoreRecord(eventID, newCalendarEventStoreRecord, calendarEventsCache);
     } catch {
-        removeCalendarEventStoreRecord(eventID, calendarEventCache);
+        removeCalendarEventStoreRecord(eventID, calendarEventsCache);
         return false;
     }
 };

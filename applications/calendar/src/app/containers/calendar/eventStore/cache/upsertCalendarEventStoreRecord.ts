@@ -6,7 +6,7 @@ import { differenceInHours } from 'date-fns';
 
 import { setEventInRecurrenceInstances, setEventInRecurringCache } from './recurringCache';
 import upsertCalendarEventInTree from './upsertCalendarEventInTree';
-import { CalendarEventCache, CalendarEventStoreRecord, SharedVcalVeventComponent } from '../interface';
+import { CalendarEventsCache, CalendarEventStoreRecord, SharedVcalVeventComponent } from '../interface';
 import { getRecurrenceIdDate, getUidValue } from '../../event/getEventHelper';
 import { getIsCalendarEvent } from './helper';
 
@@ -42,7 +42,7 @@ const DEFAULT = {};
 const upsertCalendarEventStoreRecordHelper = (
     calendarEventID: string,
     calendarEventStoreRecord: CalendarEventStoreRecord,
-    { tree, events, recurringEvents }: CalendarEventCache
+    { tree, events, recurringEvents }: CalendarEventsCache
 ) => {
     const oldCalendarEventStoreRecord = events.get(calendarEventID);
 
@@ -117,9 +117,9 @@ const upsertCalendarEventStoreRecordHelper = (
 export const upsertCalendarEventStoreRecord = (
     eventID: string,
     calendarEventStoreRecord: CalendarEventStoreRecord,
-    calendarEventCache: CalendarEventCache
+    calendarEventsCache: CalendarEventsCache
 ) => {
-    const oldEventRecord = calendarEventCache.events.get(eventID);
+    const oldEventRecord = calendarEventsCache.events.get(eventID);
 
     const oldEventData = oldEventRecord?.eventData;
     const newEventData = calendarEventStoreRecord?.eventData;
@@ -138,6 +138,6 @@ export const upsertCalendarEventStoreRecord = (
         return false;
     }
 
-    upsertCalendarEventStoreRecordHelper(eventID, calendarEventStoreRecord, calendarEventCache);
+    upsertCalendarEventStoreRecordHelper(eventID, calendarEventStoreRecord, calendarEventsCache);
     return true;
 };

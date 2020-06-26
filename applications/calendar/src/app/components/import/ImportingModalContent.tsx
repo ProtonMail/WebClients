@@ -11,7 +11,7 @@ import { c } from 'ttag';
 import getMemberAndAddress, { getMemberAndAddressID } from '../../helpers/getMemberAndAddress';
 import { getSupportedEventsWithRecurrenceId, splitByRecurrenceId, splitErrors } from '../../helpers/import';
 import useUnload from '../../hooks/useUnload';
-import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel } from '../../interfaces/Import';
+import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel, StoredEncryptedEvent } from '../../interfaces/Import';
 
 import DynamicProgress from './DynamicProgress';
 import { extractTotals, processInBatches } from './encryptAndSubmit';
@@ -21,7 +21,7 @@ import { ImportFatalError } from './ImportFatalError';
 interface Props {
     model: ImportCalendarModel;
     setModel: Dispatch<SetStateAction<ImportCalendarModel>>;
-    onFinish: () => void;
+    onFinish: (result: StoredEncryptedEvent[]) => void;
 }
 const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
@@ -92,7 +92,14 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 });
                 const { errors, rest: supportedEventsWithRecurrenceID } = splitErrors(formattedEventsWithRecurrenceId);
                 handleImportProgress([], [], errors);
-                await processInBatches({ ...processData, events: supportedEventsWithRecurrenceID });
+                const recurrenceImportedEvents = await processInBatches({
+                    ...processData,
+                    events: supportedEventsWithRecurrenceID,
+                });
+                if (signal.aborted) {
+                    return;
+                }
+                onFinish([...importedEvents, ...recurrenceImportedEvents]);
             } catch (error) {
                 setModelWithAbort((model) => ({
                     step: IMPORT_STEPS.ATTACHING,
@@ -104,10 +111,10 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     failure: new ImportFatalError(error),
                     loading: false,
                 }));
-            } finally {
-                if (!signal.aborted) {
-                    onFinish();
+                if (signal.aborted) {
+                    return;
                 }
+                onFinish([]);
             }
         };
 

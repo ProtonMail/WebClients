@@ -1,16 +1,24 @@
 import { CreateCalendarEventSyncData, syncMultipleEvents } from 'proton-shared/lib/api/calendars';
 import { OVERWRITE_EVENT } from 'proton-shared/lib/calendar/constants';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
-import { API_CODES } from 'proton-shared/lib/constants';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { Api, CachedKey } from 'proton-shared/lib/interfaces';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { HOUR } from '../../constants';
+import { API_CODES } from 'proton-shared/lib/constants';
+import upsertCalendarApiEvent from '../../containers/calendar/eventStore/cache/upsertCalendarApiEvent';
+import { CalendarEventsCache } from '../../containers/calendar/eventStore/interface';
 import getCreationKeys from '../../containers/calendar/getCreationKeys';
 import { splitErrors } from '../../helpers/import';
-import { EncryptedEvent, ImportCalendarModel, SyncMultipleApiResponse } from '../../interfaces/Import';
+import {
+    EncryptedEvent,
+    ImportCalendarModel,
+    StoredEncryptedEvent,
+    SyncMultipleApiResponse,
+    SyncMultipleApiResponses,
+} from '../../interfaces/Import';
 import { IMPORT_EVENT_TYPE, ImportEventError } from './ImportEventError';
+import { HOUR } from '../../constants';
 
 const { SINGLE_SUCCESS } = API_CODES;
 const BATCH_SIZE = 10;
@@ -42,25 +50,31 @@ export const submitEvents = async (events: EncryptedEvent[], calendarID: string,
         })
     );
     // submit the data
-    const responses: { Code: number; Index: number; Error?: string }[] = [];
+    let responses: SyncMultipleApiResponses[] = [];
     try {
         const { Responses } = await api<SyncMultipleApiResponse>({
             ...syncMultipleEvents(calendarID, { MemberID: memberID, Events }),
             timeout: HOUR * 1000,
             silence: true,
         });
-        Responses.forEach(({ Index, Response: { Code, Error } }) => {
-            responses.push({ Code, Index, Error });
-        });
+        responses = Responses;
     } catch (error) {
-        events.forEach((event, index) => {
-            responses.push({ Code: 0, Index: index, Error: error });
-        });
+        responses = events.map((event, index) => ({
+            Index: index,
+            Response: { Code: 0, Error: `${error}`, Index: index },
+        }));
     }
 
-    return responses.map(({ Code, Index, Error: errorMessage }) => {
+    return responses.map((response): StoredEncryptedEvent | ImportEventError => {
+        const {
+            Index,
+            Response: { Error: errorMessage, Code },
+        } = response;
         if (Code === SINGLE_SUCCESS) {
-            return events[Index];
+            return {
+                ...events[Index],
+                response,
+            };
         }
         const error = new Error(errorMessage);
         const uid = events[Index]?.component.uid.value;
@@ -90,7 +104,8 @@ export const processInBatches = async ({
 }: ProcessData) => {
     const batches = chunk(events, BATCH_SIZE);
     const promises = [];
-    const imported: EncryptedEvent[][] = [];
+    const imported: StoredEncryptedEvent[][] = [];
+
     for (let i = 0; i < batches.length; i++) {
         // The API requests limit for the submit route are 100 calls per 10 seconds
         // We play it safe by enforcing a 100ms minimum wait between API calls. During this wait we encrypt the events
@@ -109,10 +124,10 @@ export const processInBatches = async ({
         onProgress(encrypted, [], errors);
         if (encrypted.length) {
             const promise = submitEvents(encrypted, calendarID, memberID, api).then(
-                (result: (EncryptedEvent | ImportEventError)[]) => {
-                    const { errors, rest: submitted } = splitErrors(result);
-                    imported.push(submitted);
-                    onProgress([], submitted, errors);
+                (result: (StoredEncryptedEvent | ImportEventError)[]) => {
+                    const { errors, rest: importedSuccess } = splitErrors(result);
+                    imported.push(importedSuccess);
+                    onProgress([], importedSuccess, errors);
                 }
             );
             promises.push(promise);
@@ -131,3 +146,17 @@ export const extractTotals = (model: ImportCalendarModel) => {
     const totalProcessed = totalEncrypted + totalImported + totalErrors;
     return { totalToImport, totalToProcess, totalImported, totalProcessed };
 };
+
+export const upsertImportedEvents = (events: StoredEncryptedEvent[], calendarEventsCache: CalendarEventsCache) =>
+    events.forEach(
+        ({
+            response: {
+                Response: { Code, Event },
+            },
+        }) => {
+            if (!Event || Code !== API_CODES.SINGLE_SUCCESS) {
+                return;
+            }
+            upsertCalendarApiEvent(Event, calendarEventsCache);
+        }
+    );
