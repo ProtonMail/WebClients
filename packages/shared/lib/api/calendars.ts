@@ -1,5 +1,4 @@
 import { Calendar, CalendarEventData, CalendarSettings, CalendarUserSettings } from '../interfaces/calendar';
-import { OVERWRITE_EVENT } from '../calendar/constants';
 
 const CALENDAR_V1 = 'calendar/v1';
 
@@ -238,7 +237,7 @@ export const getCalendarAlarm = (calendarID: string, alarmID: string) => ({
 });
 
 export interface CreateCalendarEventSyncData {
-    Overwrite: OVERWRITE_EVENT;
+    Overwrite: 0 | 1;
     Event: CreateCalendarEventData;
 }
 export interface DeleteCalendarEventSyncData {
@@ -255,6 +254,7 @@ export interface CreateLinkedCalendarEventsSyncData {
 }
 interface SyncMultipleEventsData {
     MemberID: string;
+    IsImport?: 0 | 1;
     Events: (
         | CreateCalendarEventSyncData
         | CreateLinkedCalendarEventsSyncData

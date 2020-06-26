@@ -23,8 +23,3 @@ export enum CALENDAR_FLAGS {
     SELF_DISABLED = 32,
     SUPER_OWNER_DISABLED = 64
 }
-
-export enum OVERWRITE_EVENT {
-    NO = 0,
-    YES = 1
-}
