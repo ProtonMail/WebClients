@@ -94,7 +94,7 @@ const HeaderExpanded = ({
     const elements = [message.data || {}];
 
     const handleClick = (event: MouseEvent) => {
-        if ((event.target as HTMLElement).closest('.stop-propagation')) {
+        if ((event.target as HTMLElement).closest('.stop-propagation') || window.getSelection()?.toString().length) {
             event.stopPropagation();
             return;
         }
