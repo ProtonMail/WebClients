@@ -2,11 +2,9 @@ import { useRef } from 'react';
 
 /**
  * Use ref with callback support.
- * @param {function} fn
- * @returns {any}
  */
-const useInstance = (fn) => {
-    const ref = useRef();
+const useInstance = <T>(fn: () => T): T => {
+    const ref = useRef<T>();
     if (!ref.current) {
         ref.current = fn();
     }

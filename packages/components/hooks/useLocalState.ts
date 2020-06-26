@@ -5,7 +5,7 @@ const useLocalState = (defaultValue: any, key: string) => {
     const [value, setValue] = useState(() => {
         const stickyValue = getItem(key);
 
-        return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
+        return stickyValue !== null && stickyValue !== undefined ? JSON.parse(stickyValue) : defaultValue;
     });
 
     useEffect(() => {
