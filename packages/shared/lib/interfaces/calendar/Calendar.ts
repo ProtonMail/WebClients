@@ -6,7 +6,7 @@ export interface Calendar {
     ID: string;
     Name: string;
     Description: string;
-    Display: number;
+    Display: 0 | 1;
     Color: string;
     Flags: number;
 }
