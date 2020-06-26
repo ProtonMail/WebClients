@@ -19,6 +19,7 @@ interface Props {
     isFolder: boolean;
     isConversation: boolean;
     icon?: string;
+    iconSize?: number;
     text: string;
     content?: ReactNode;
     color?: string;
@@ -29,6 +30,7 @@ const SidebarItem = ({
     currentLabelID,
     labelID,
     icon,
+    iconSize,
     text,
     content = text,
     color,
@@ -90,6 +92,7 @@ const SidebarItem = ({
                 <SidebarItemContent
                     icon={icon}
                     iconColor={color}
+                    iconSize={iconSize}
                     title={text}
                     text={content}
                     aside={<LocationAside count={count} active={active} refreshing={refresh} />}

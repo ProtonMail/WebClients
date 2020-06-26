@@ -23,7 +23,8 @@ const SidebarLabels = ({ currentLabelID, isConversation, counterMap }: Props) =>
                         key={label.ID}
                         currentLabelID={currentLabelID}
                         labelID={label.ID}
-                        icon="label"
+                        icon="circle"
+                        iconSize={12}
                         text={label.Name}
                         color={label.Color}
                         isFolder={false}

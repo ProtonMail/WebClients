@@ -185,7 +185,12 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                                 title={Name}
                                 className="flex flex-nowrap flex-items-center flex-item-fluid"
                             >
-                                <Icon name="label" color={Color} className="flex-item-noshrink mr0-5" />
+                                <Icon
+                                    name="circle"
+                                    size="12"
+                                    color={Color}
+                                    className="flex-item-noshrink ml0-25 mr0-5"
+                                />
                                 <span className="ellipsis">
                                     <Mark value={search}>{Name}</Mark>
                                 </span>
