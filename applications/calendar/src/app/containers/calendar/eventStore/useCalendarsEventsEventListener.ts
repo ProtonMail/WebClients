@@ -11,22 +11,17 @@ export const useCalendarCacheEventListener = (cacheRef: MutableRefObject<Calenda
 
     useEffect(() => {
         return subscribe(({ CalendarEvents = [], Calendars = [] }) => {
-            if (!cacheRef.current) {
+            const cache = cacheRef.current;
+            if (!cache) {
                 return;
             }
-            const cache = cacheRef.current;
-
             const { calendars } = cache;
 
             let actions = 0;
 
             Calendars.forEach(({ ID: CalendarID, Action }) => {
                 if (Action === EVENT_ACTIONS.DELETE) {
-                    const calendarCache = cacheRef.current.calendars[CalendarID];
-                    if (!calendarCache) {
-                        return;
-                    }
-                    delete calendarCache[CalendarID];
+                    delete calendars[CalendarID];
                     actions++;
                 }
             });
@@ -35,12 +30,13 @@ export const useCalendarCacheEventListener = (cacheRef: MutableRefObject<Calenda
                 if (Action === EVENT_ACTIONS.DELETE) {
                     // The API does not send the calendar id to which this event belongs, so find it
                     const calendarID = Object.keys(calendars).find((calendarID) => {
-                        return cacheRef.current.calendars[calendarID].events.has(EventID);
+                        return calendars[calendarID]?.events.has(EventID);
                     });
-                    if (!calendarID) {
+                    const calendarsEventsCache = calendars[calendarID || 'undefined'];
+                    if (!calendarsEventsCache) {
                         return;
                     }
-                    removeCalendarEventStoreRecord(EventID, cacheRef.current.calendars[calendarID]);
+                    removeCalendarEventStoreRecord(EventID, calendarsEventsCache);
                     // TODO: Only increment count if this event happened in the date range we are currently interested in
                     actions++;
                 }
@@ -49,18 +45,18 @@ export const useCalendarCacheEventListener = (cacheRef: MutableRefObject<Calenda
                     const eventData = Event as CalendarEventWithoutBlob;
                     const { CalendarID } = eventData;
 
-                    const calendarCache = cacheRef.current.calendars[CalendarID];
-                    if (!calendarCache) {
+                    const calendarsEventsCache = calendars[CalendarID];
+                    if (!calendarsEventsCache) {
                         return;
                     }
-                    upsertCalendarApiEventWithoutBlob(eventData, calendarCache);
+                    upsertCalendarApiEventWithoutBlob(eventData, calendarsEventsCache);
                     // TODO: Only increment count if this event happened in the date range we are currently interested in
                     actions++;
                 }
             });
 
             if (actions > 0) {
-                cacheRef.current.rerender?.();
+                cache.rerender?.();
             }
         });
     }, []);

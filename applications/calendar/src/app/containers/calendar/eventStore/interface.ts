@@ -59,7 +59,7 @@ export interface CalendarsEventsCache {
     ref: number;
     isUnmounted: boolean;
     calendars: {
-        [key: string]: CalendarEventsCache;
+        [key: string]: CalendarEventsCache | undefined;
     };
     getCachedEvent: (calendarID: string, eventID: string) => CalendarEvent | undefined;
     getCachedRecurringEvent: (calendarID: string, uid: string) => RecurringCache | undefined;

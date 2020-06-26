@@ -37,11 +37,10 @@ const useCalendarsEvents = (
         return requestedCalendars
             .map((Calendar) => {
                 const { ID } = Calendar;
-                if (!cacheRef.current || !cacheRef.current.calendars[ID]) {
+                const calendarEventsCache = cacheRef.current?.calendars[ID];
+                if (!calendarEventsCache) {
                     return [];
                 }
-
-                const calendarEventsCache = cacheRef.current.calendars[ID];
 
                 // If this date range is not contained in the result, we don't return anything because we can't trust the recurring events
                 // until we have complete data fetched for this range because of single editions

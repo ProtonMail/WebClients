@@ -18,10 +18,11 @@ const useCalendarsEventsFetcher = (
     useEffect(() => {
         const calendarFetchPromises = requestedCalendars
             .map(({ ID: CalendarID }) => {
-                if (!cacheRef.current.calendars[CalendarID]) {
-                    cacheRef.current.calendars[CalendarID] = getCalendarEventsCache();
+                let calendarEventsCache = cacheRef.current.calendars[CalendarID];
+                if (!calendarEventsCache) {
+                    calendarEventsCache = getCalendarEventsCache();
+                    cacheRef.current.calendars[CalendarID] = calendarEventsCache;
                 }
-                const calendarEventsCache = cacheRef.current.calendars[CalendarID];
                 return fetchCalendarEvents(utcDateRange, calendarEventsCache, api, CalendarID, tzid);
             })
             .filter(isTruthy);
