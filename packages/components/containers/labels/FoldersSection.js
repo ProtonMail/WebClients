@@ -20,7 +20,7 @@ function LabelsSection() {
                 className="mt1 mb1"
                 learnMore="https://protonmail.com/support/knowledge-base/creating-folders/"
             >
-                {c('LabelSettings').t`A message can only be in filed in a single Folder at a time.`}
+                {c('LabelSettings').t`A message can only be filed in a single Folder at a time.`}
             </Alert>
             <div className="mb1">
                 <PrimaryButton onClick={() => createModal(<EditLabelModal type="folder" />)}>
