@@ -92,6 +92,7 @@ interface ProcessData {
     signal: AbortSignal;
     onProgress: (encrypted: EncryptedEvent[], imported: EncryptedEvent[], errors: ImportEventError[]) => void;
 }
+
 export const processInBatches = async ({
     events,
     calendarID,
@@ -147,7 +148,10 @@ export const extractTotals = (model: ImportCalendarModel) => {
     return { totalToImport, totalToProcess, totalImported, totalProcessed };
 };
 
-export const upsertImportedEvents = (events: StoredEncryptedEvent[], calendarEventsCache: CalendarEventsCache) =>
+export const upsertImportedEvents = (events: StoredEncryptedEvent[], calendarEventsCache?: CalendarEventsCache) => {
+    if (!calendarEventsCache) {
+        return;
+    }
     events.forEach(
         ({
             response: {
@@ -160,3 +164,4 @@ export const upsertImportedEvents = (events: StoredEncryptedEvent[], calendarEve
             upsertCalendarApiEvent(Event, calendarEventsCache);
         }
     );
+};
