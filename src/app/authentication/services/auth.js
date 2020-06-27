@@ -150,9 +150,14 @@ function authentication(
         user: {},
         setUID,
         getUID,
-        setPassword,
+        setPassword(password) {
+            // Never save mailbox password changes if sub user
+            if (this.user && this.user.OrganizationPrivateKey) {
+                return;
+            }
+            setPassword(password);
+        },
         getPassword,
-
         detectAuthenticationState: initialize,
         existingSession: hasSession,
         isLoggedIn: hasSession,
