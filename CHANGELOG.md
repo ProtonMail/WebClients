@@ -1,3 +1,9 @@
+# [3.16.28] - 2020-06-27
+
+## Fixed
+
+- Fix decryption error for certain users on login
+
 # [3.16.27] - 2020-06-23
 
 ## Fixed
