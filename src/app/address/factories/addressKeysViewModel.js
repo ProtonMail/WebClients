@@ -14,7 +14,7 @@ function addressKeysViewModel(keysModel) {
     const getDecryptedKeys = (ID) => {
         const addressID = ID === 'contact-keys' ? MAIN_KEY : ID;
 
-        if (!keysModel.hasKey(ID)) {
+        if (!keysModel.hasKey(addressID)) {
             return [];
         }
 
