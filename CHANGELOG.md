@@ -1,3 +1,9 @@
+# [3.16.29] - 2020-06-27
+
+## Fixed
+
+- Fix contact keys showing as inactive
+
 # [3.16.28] - 2020-06-27
 
 ## Fixed
