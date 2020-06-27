@@ -53,6 +53,7 @@ function authentication(
             $injector.get('contactEmails').load()
         ]);
 
+        const isSubUser = user.subuser;
         const { keys } = await decryptKeys({
             user,
             addresses,
@@ -63,7 +64,9 @@ function authentication(
 
         await keysModel.storeKeys(keys);
 
-        await activateKeys(addresses, mailboxPassword);
+        if (!isSubUser) {
+            await activateKeys(addresses, mailboxPassword);
+        }
 
         return user;
     };

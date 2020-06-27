@@ -164,7 +164,9 @@ function manageUser(
 
             keysModel.storeKeys(keys);
 
-            await activateKeys(addresses, mailboxPassword);
+            if (!isSubUser) {
+                await activateKeys(addresses, mailboxPassword);
+            }
 
             mergeUser(User, keys, dirtyAddresses);
         } catch (e) {
