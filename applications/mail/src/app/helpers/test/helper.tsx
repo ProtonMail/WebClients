@@ -9,9 +9,11 @@ import { STATUS } from 'proton-shared/lib/models/cache';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import AuthenticationProvider from 'react-components/containers/authentication/Provider';
-import MessageProvider, { MessageCache } from '../../containers/MessageProvider';
-import ConversationProvider, { ConversationCache } from '../../containers/ConversationProvider';
+import MessageProvider from '../../containers/MessageProvider';
+import ConversationProvider from '../../containers/ConversationProvider';
 import { Event } from '../../models/event';
+import { MessageExtended } from '../../models/message';
+import { ConversationResult } from '../../hooks/useConversation';
 
 type ApiMock = {
     [url: string]: (...arg: any[]) => any;
@@ -50,14 +52,14 @@ export const clearApiMocks = () => {
 };
 
 export const cache = createCache();
-export const messageCache = createCache() as MessageCache;
-export const conversationCache = createCache() as ConversationCache;
+export const messageCache = createCache<string, MessageExtended>();
+export const conversationCache = createCache<string, ConversationResult>();
 
 export const addToCache = (key: string, value: any) => {
     cache.set(key, { status: STATUS.RESOLVED, value });
 };
 
-export const clearCache = () => cache.reset();
+export const clearCache = () => cache.clear();
 
 export const minimalCache = () => {
     addToCache('User', {});
@@ -72,8 +74,8 @@ export const clearAll = () => {
     api.mockClear();
     clearApiMocks();
     clearCache();
-    messageCache.reset();
-    conversationCache.reset();
+    messageCache.clear();
+    conversationCache.clear();
     eventManagerListeners.splice(0, eventManagerListeners.length);
 };
 

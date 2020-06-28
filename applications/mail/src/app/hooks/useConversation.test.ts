@@ -28,7 +28,9 @@ describe('useConversation', () => {
         expect(hook.result.current[0]).toBe(reference1);
 
         const reference2 = { Conversation: {} };
-        await act(async () => conversationCache.set(ID, reference2));
+        await act(async () => {
+            conversationCache.set(ID, reference2);
+        });
         expect(hook.result.current[0]).toBe(reference2);
     });
 

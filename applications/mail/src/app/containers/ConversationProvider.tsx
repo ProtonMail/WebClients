@@ -1,11 +1,10 @@
 import React, { useEffect, createContext, ReactNode, useContext } from 'react';
 import { useInstance, useEventManager, useApi } from 'react-components';
-import createCache from 'proton-shared/lib/helpers/cache';
+import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
 import createLRU from 'proton-shared/lib/helpers/lru';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 
 import { Event } from '../models/event';
-import { Cache } from '../models/utils';
 import { ConversationResult } from '../hooks/useConversation';
 import { Api } from 'proton-shared/lib/interfaces';
 import { getConversation } from 'proton-shared/lib/api/conversations';
@@ -14,7 +13,7 @@ import { useExpirationCheck } from '../hooks/useExpiration';
 import { identity } from 'proton-shared/lib/helpers/function';
 import { Conversation } from '../models/conversation';
 
-export type ConversationCache = Cache<ConversationResult>;
+export type ConversationCache = Cache<string, ConversationResult>;
 
 /**
  * Conversation context containing the Conversation cache
@@ -110,7 +109,7 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
  * Check constantly for expired message in the cache
  */
 const useConversationExpirationCheck = (cache: ConversationCache) => {
-    const conversations = Object.values(cache.toObject())
+    const conversations = [...cache.values()]
         .map((conversationResult) => conversationResult?.Conversation)
         .filter(identity) as Conversation[];
 
@@ -130,7 +129,9 @@ const ConversationProvider = ({ children, cache: testCache }: Props) => {
     const api = useApi();
 
     const realCache: ConversationCache = useInstance(() => {
-        return createCache(createLRU({ max: 50 } as any));
+        return createCache(
+            createLRU<string, ConversationResult>({ max: 50 })
+        );
     });
 
     const cache = testCache || realCache;

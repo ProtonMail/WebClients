@@ -1,17 +1,16 @@
 import React, { useEffect, createContext, ReactNode, useContext } from 'react';
 import { useInstance, useEventManager } from 'react-components';
 import { c } from 'ttag';
-import createCache from 'proton-shared/lib/helpers/cache';
+import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 
 import { Event } from '../models/event';
-import { Cache } from '../models/utils';
 import { MessageExtended, PartialMessageExtended } from '../models/message';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { mergeMessages } from '../helpers/message/messages';
 import { DRAFT_ID_PREFIX } from '../helpers/message/messageDraft';
 
-export type MessageCache = Cache<MessageExtended>;
+export type MessageCache = Cache<string, MessageExtended>;
 
 /**
  * Message context containing the Message cache
@@ -55,7 +54,7 @@ export const updateMessageStatus = (
  * Get existing localID in cache for a message ID
  */
 export const getLocalID = (cache: MessageCache, messageID: string) => {
-    const localID = Object.keys(cache.toObject())
+    const localID = [...cache.keys()]
         .filter((key) => key.startsWith(DRAFT_ID_PREFIX))
         .find((key) => cache.get(key)?.data?.ID === messageID);
 

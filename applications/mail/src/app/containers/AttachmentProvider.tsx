@@ -1,8 +1,7 @@
 import React, { createContext, ReactNode, useContext } from 'react';
 import { useInstance } from 'react-components';
-import createCache from 'proton-shared/lib/helpers/cache';
+import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
 import createLRU from 'proton-shared/lib/helpers/lru';
-import { Cache } from '../models/utils';
 import { Attachment } from '../models/attachment';
 import { DecryptResultPmcrypto } from 'pmcrypto';
 
@@ -12,7 +11,7 @@ export interface BlobInfo {
     attachment: Attachment;
 }
 
-export type AttachmentsCache = Cache<DecryptResultPmcrypto>;
+export type AttachmentsCache = Cache<string, DecryptResultPmcrypto>;
 
 /**
  * Attachment context containing the Attachment cache
@@ -29,7 +28,9 @@ export const useAttachmentCache = () => useContext(AttachmentContext);
  */
 const AttachmentProvider = ({ children }: { children?: ReactNode }) => {
     const cache: AttachmentsCache = useInstance(() => {
-        return createCache(createLRU({ max: 50 } as any));
+        return createCache(
+            createLRU<string, DecryptResultPmcrypto>({ max: 50 })
+        );
     });
 
     return <AttachmentContext.Provider value={cache}>{children}</AttachmentContext.Provider>;

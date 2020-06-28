@@ -1,11 +1,9 @@
 import { useCache } from 'react-components';
-import createCache from 'proton-shared/lib/helpers/cache';
-
-import { Cache } from '../models/utils';
+import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
 
 const CACHE_KEY = 'Base64';
 
-export type Base64Cache = Cache<string>;
+export type Base64Cache = Cache<string, string>;
 
 export const useBase64Cache = (): Base64Cache => {
     const globalCache = useCache();
