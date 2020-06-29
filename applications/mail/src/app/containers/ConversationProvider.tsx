@@ -36,8 +36,6 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
     };
 
     return ({ Conversations = [], Messages = [] }: Event) => {
-        console.log('Event', Conversations, Messages);
-
         for (const { ID, Action, Message } of Messages) {
             const data = cache.get(Message.ConversationID);
 
