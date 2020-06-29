@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { c } from 'ttag';
 import { Sidebar, useToggle, PrivateAppContainer } from 'react-components';
+import { match as Match } from 'react-router-dom';
+import { Location } from 'history';
 import Header from './PrivateHeader';
 import UploadButton from '../uploads/UploadButton';
 import TransfersInfo from '../TransfersInfo/TransfersInfo';
@@ -10,6 +12,7 @@ const getSidebar = () => {
         {
             text: c('Link').t`My files`,
             link: '/drive',
+            isActive: (match: Match, location: Location) => match.isExact || !location.pathname.includes('trash'),
             icon: 'inbox'
         },
         {
