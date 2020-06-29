@@ -5,7 +5,7 @@
 @import "./pm-buttons-mixins";
 
 // forms/buttons
-.pm-button:not(.pm-button--primary):not(.pm-button--link):not(.pm-button--error):not(.pm-button--warning):not(.pm-button--redborder),
+.pm-button:not(.pm-button-blue):not(.pv-button-green):not(.pm-button--primary):not(.pm-button--link):not(.pm-button--error):not(.pm-button--warning):not(.pm-button--redborder),
 .pm-button--info {
   @include pm-button-dark;
 }
@@ -14,25 +14,6 @@
 }
 .pv-button-greenborder {
   @include pv-button-greenborder-dark;
-}
-
-// standalone button
-.pm-button-blue,
-.pm-button.pm-button-blue,
-.pv-button-green,
-.pm-button.pv-button-green {
-  &[disabled],
-  &.is-disabled {
-    @include button-disabled-state-dm;
-  }
-}
-
-
-.pm-button.pm-button--primary {
-  &[disabled],
-  &.is-disabled {
-    @include button-disabled-state-dm;
-  }
 }
 
 .pm-button--redborder,
