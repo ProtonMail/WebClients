@@ -25,7 +25,7 @@ const LocationCell = ({ item, shareId }: Props) => {
         };
 
         getLocationItems(shareId, item.ParentLinkID)
-            .then((items: string[]) => `\\${items.join('\\')}`)
+            .then((items: string[]) => `/${items.join('/')}`)
             .then(setLocation);
     }, []);
 

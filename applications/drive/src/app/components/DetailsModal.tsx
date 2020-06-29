@@ -47,7 +47,7 @@ const DetailsModal = ({ activeFolder, getLinkMeta, item, onClose, ...rest }: Pro
 
         getLocationItems(activeFolder.linkId).then((items) => {
             if (!canceled) {
-                setLocation(`\\${items.join('\\')}`);
+                setLocation(`/${items.join('/')}`);
             }
         });
 
