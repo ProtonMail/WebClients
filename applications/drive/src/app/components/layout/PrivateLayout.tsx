@@ -12,7 +12,8 @@ const getSidebar = () => {
         {
             text: c('Link').t`My files`,
             link: '/drive',
-            isActive: (match: Match, location: Location) => match.isExact || !location.pathname.includes('trash'),
+            isActive: (match: Match, location: Location) =>
+                !!match && (match.isExact || !location.pathname.includes('trash')),
             icon: 'inbox'
         },
         {
