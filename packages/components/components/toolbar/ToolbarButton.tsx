@@ -22,9 +22,9 @@ const ToolbarButton = React.forwardRef<HTMLButtonElement, Props>(
                 {...rest}
             >
                 {typeof icon === 'string' ? (
-                    <Icon name={icon} className="toolbar-icon mauto" />
+                    <Icon alt={title} name={icon} className="toolbar-icon mauto" />
                 ) : (
-                    <Icon {...icon} className={classnames([icon.className, 'toolbar-icon mauto'])} />
+                    <Icon alt={title} {...icon} className={classnames([icon.className, 'toolbar-icon mauto'])} />
                 )}
                 {children}
             </button>
