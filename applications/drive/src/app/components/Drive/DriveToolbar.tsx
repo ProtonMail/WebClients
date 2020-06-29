@@ -20,6 +20,7 @@ import {
     CreateNewFolderButton
 } from './ToolbarButtons';
 import UploadFolderButton from './ToolbarButtons/UploadFolderButton';
+import { isMobile } from 'proton-shared/lib/helpers/browser';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -47,8 +48,12 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
             return (
                 <>
                     <CreateNewFolderButton activeFolder={activeFolder} />
-                    <ToolbarSeparator />
-                    <UploadFolderButton activeFolder={activeFolder} />
+                    {!isMobile() && (
+                        <>
+                            <ToolbarSeparator />
+                            <UploadFolderButton activeFolder={activeFolder} />
+                        </>
+                    )}
                 </>
             );
         }
