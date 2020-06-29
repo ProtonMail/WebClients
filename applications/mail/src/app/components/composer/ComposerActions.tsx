@@ -1,5 +1,6 @@
 import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
+import { isToday, isYesterday } from 'date-fns';
 import { Button, useModals, ConfirmModal, Alert, classnames, Tooltip, Icon } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
@@ -64,7 +65,13 @@ const ComposerActions = ({
     } else {
         if (date.getTime() !== 0) {
             const dateString = formatSimpleDate(date);
-            dateMessage = c('Info').t`Saved on ${dateString}`;
+            if (isToday(date)) {
+                dateMessage = c('Info').t`Saved at ${dateString}`;
+            } else if (isYesterday(date)) {
+                dateMessage = c('Info').t`Saved ${dateString}`;
+            } else {
+                dateMessage = c('Info').t`Saved on ${dateString}`;
+            }
         } else {
             dateMessage = c('Action').t`Not saved`;
         }
