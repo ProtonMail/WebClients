@@ -11,7 +11,7 @@ import {
     isTransferProgress,
     isTransferPaused,
     isTransferCanceled,
-    isTransferFinished
+    isTransferDone
 } from '../../utils/transfer';
 
 export enum TransferType {
@@ -48,14 +48,14 @@ const Transfer = ({ stats, ...props }: Props) => {
     const isProgress = isTransferProgress(transfer);
     const isPaused = isTransferPaused(transfer);
     const isCanceled = isTransferCanceled(transfer);
-    const isFinished = isTransferFinished(transfer);
+    const isDone = isTransferDone(transfer);
 
     const fileSize = transfer.meta.size;
     const progressLimit = fileSize || 1;
     const percentageDone = Math.floor(100 * (stats.progress / progressLimit));
 
     // If file size is 0 when finished, progress is 1/1, so that the bar is complete
-    const progress = !fileSize && isFinished ? 1 : stats.progress;
+    const progress = !fileSize && isDone ? 1 : stats.progress;
     const speed = humanSize(stats.speed);
 
     return (
