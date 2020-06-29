@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react';
+import React, { useState, ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Icon, useLoading, Button, LinkButton, classnames, TableRowBusy } from 'react-components';
@@ -11,7 +11,7 @@ interface Props {
     depth: number;
     disabled?: boolean;
     isSelected: boolean;
-    isExpanded?: boolean;
+    isExpanded: boolean;
     onSelect: (LinkID: string) => void;
     loadChildren: (LinkID: string, loadNextPage?: boolean) => Promise<void>;
     childrenComplete: boolean;
@@ -24,7 +24,7 @@ const ExpandableRow = ({
     depth,
     disabled = false,
     isSelected,
-    isExpanded = false,
+    isExpanded,
     onSelect,
     loadChildren,
     childrenComplete,
@@ -49,8 +49,15 @@ const ExpandableRow = ({
         if (disabled) {
             return;
         }
+
         onSelect(linkId);
     };
+
+    useEffect(() => {
+        if (isExpanded && !expanded) {
+            handleExpand(linkId);
+        }
+    }, [isExpanded]);
 
     const paddingLeft = `${depth * 1.5}em`;
     const viewMorePadding = { paddingLeft: `${(depth + 1) * 1.5}em` };
@@ -92,7 +99,7 @@ const ExpandableRow = ({
                     </div>
                     {isSelected && (
                         <div className="pd-folder-tree-listItem-selected flex flex-item-noshrink">
-                            <span className="inline-flex bg-pm-blue rounded50 p0-25">
+                            <span className="inline-flex bg-pm-blue rounded50 pd-folder-tree-listItem-selected-check">
                                 <Icon name="on" className="stroke-global-light p0-25" size={16} />
                             </span>
                         </div>

@@ -26,5 +26,9 @@
     &-listItem-selected {
         justify-content: center;
         min-width: 3em;
+
+        &-check {
+            padding: 0.15em;
+        }
     }
 }

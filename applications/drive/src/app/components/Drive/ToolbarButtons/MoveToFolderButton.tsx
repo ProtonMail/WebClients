@@ -25,14 +25,15 @@ const MoveToFolderButton = ({ activeFolder, disabled }: Props) => {
     const cache = useDriveCache();
 
     const { selectedItems } = fileBrowserControls;
-    const { linkId, shareId } = activeFolder;
+    const { shareId } = activeFolder;
 
-    const handleCreateFolder = async () => {
+    const handleCreateFolder = async (parentFolderId: string, callback?: (newFolderId: string) => void) => {
         createModal(
             <CreateFolderModal
                 createNewFolder={async (name) => {
-                    await createNewFolder(shareId, linkId, name);
-                    events.call(shareId);
+                    const { Folder } = await createNewFolder(shareId, parentFolderId, name);
+                    await events.call(shareId);
+                    callback?.(Folder.ID);
                 }}
             />
         );
