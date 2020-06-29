@@ -9,7 +9,8 @@ import {
     ContentModal,
     InnerModal,
     FooterModal,
-    ResetButton
+    ResetButton,
+    LinkButton
 } from 'react-components';
 
 import FolderTree, { FolderTreeItem } from './FolderTree/FolderTree';
@@ -28,7 +29,7 @@ interface Props {
     getFoldersOnlyMetas: (shareId: string, linkId: string, fetchNextPage?: boolean) => Promise<LinkMeta[]>;
     isChildrenComplete: (linkId: string) => boolean;
     moveLinksToFolder: (folderId: string) => Promise<void>;
-    openCreateFolderModal: () => Promise<void>;
+    openCreateFolderModal: (parentFolderId: string, callback?: (newFolderId: string) => void) => void;
     onClose?: () => void;
 }
 
@@ -47,6 +48,7 @@ const MoveToFolderModal = ({
     const [loading, withLoading] = useLoading();
     const [initializing, withInitialize] = useLoading(true);
     const [folders, setFolders] = useState<FolderTreeItem[]>([]);
+    const [initiallyExpandedFolders, setInitiallyExpandedFolders] = useState<string[]>([]);
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const [hasNoChildren, setHasNoChildren] = useState(false);
 
@@ -69,6 +71,7 @@ const MoveToFolderModal = ({
             const children = await fetchChildrenData(LinkID);
             const rootFolder = { linkId: meta.LinkID, name: 'My Files', children };
 
+            setInitiallyExpandedFolders([LinkID]);
             setHasNoChildren(children.list.length === 0);
             setFolders([rootFolder]);
         };
@@ -77,14 +80,13 @@ const MoveToFolderModal = ({
     }, [activeFolder.shareId]);
 
     const onSelect = (linkId: string) => {
-        if (activeFolder.linkId !== linkId && !loading) {
+        if (!loading) {
             setSelectedFolder(linkId);
         }
     };
 
     const loadChildren = async (linkId: string, loadNextPage = false) => {
         let appended = false;
-
         const addSubfolders = (
             parentId: string,
             current: FolderTreeItem,
@@ -122,11 +124,6 @@ const MoveToFolderModal = ({
         }
     };
 
-    const handleCreateClick = () => {
-        onClose?.();
-        openCreateFolderModal();
-    };
-
     const modalTitleID = 'MoveToFolderId';
     const itemsToMove = selectedItems.map((item) => item.LinkID);
     const itemsToMoveCount = itemsToMove.length;
@@ -139,6 +136,8 @@ const MoveToFolderModal = ({
         ),
         mixed: c('Notification').ngettext(msgid`Move 1 item`, `Move ${itemsToMoveCount} items`, itemsToMoveCount)
     };
+    const moveIsDisabled =
+        !selectedFolder || itemsToMove.includes(selectedFolder) || activeFolder.linkId === selectedFolder;
 
     let modalContents = {
         title: selectMessageForItemList(
@@ -149,6 +148,7 @@ const MoveToFolderModal = ({
             <FolderTree
                 folders={folders}
                 itemsToMove={itemsToMove}
+                initiallyExpandedFolders={initiallyExpandedFolders}
                 selectedFolderId={selectedFolder}
                 loading={initializing}
                 onSelect={onSelect}
@@ -157,18 +157,49 @@ const MoveToFolderModal = ({
         ),
         footer: (
             <FooterModal>
-                <ResetButton disabled={loading} autoFocus={true}>
-                    {c('Action').t`Close`}
-                </ResetButton>
-                <PrimaryButton loading={loading} type="submit" disabled={!selectedFolder}>
-                    {c('Action').t`Move`}
-                </PrimaryButton>
+                <div className="flex flex-spacebetween w100 flex-nowrap">
+                    <LinkButton
+                        disabled={loading || !selectedFolder}
+                        onClick={async () => {
+                            if (selectedFolder) {
+                                const createCallback = async (newFolderId: string) => {
+                                    await loadChildren(selectedFolder);
+                                    setInitiallyExpandedFolders([...initiallyExpandedFolders, selectedFolder]);
+                                    onSelect(newFolderId);
+                                };
+
+                                openCreateFolderModal(selectedFolder, createCallback);
+                            }
+                        }}
+                    >
+                        {c('Action').t`Create New Folder`}
+                    </LinkButton>
+                    <div>
+                        <ResetButton disabled={loading} autoFocus={true}>
+                            {c('Action').t`Close`}
+                        </ResetButton>
+                        <PrimaryButton className="ml1" loading={loading} type="submit" disabled={moveIsDisabled}>
+                            {c('Action').t`Move`}
+                        </PrimaryButton>
+                    </div>
+                </div>
             </FooterModal>
         ) as ReactNode
     };
 
     if (hasNoChildren) {
-        modalContents = { content: <HasNoFolders onCreate={handleCreateClick} />, title: '', footer: null };
+        modalContents = {
+            content: (
+                <HasNoFolders
+                    onCreate={() => {
+                        onClose?.();
+                        openCreateFolderModal(folders[0].linkId);
+                    }}
+                />
+            ),
+            title: '',
+            footer: null
+        };
     }
 
     return (
