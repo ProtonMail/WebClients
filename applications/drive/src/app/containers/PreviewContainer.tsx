@@ -2,10 +2,10 @@ import React, { useEffect, useState, useCallback, useRef } from 'react';
 import useFiles from '../hooks/drive/useFiles';
 import { RouteComponentProps } from 'react-router-dom';
 import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
-import { useLoading } from 'react-components';
+import { useLoading, useCache } from 'react-components';
 import FileSaver from '../utils/FileSaver/FileSaver';
-import { LinkURLType } from '../constants';
-import { LinkMeta } from '../interfaces/link';
+import { LinkURLType, DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../constants';
+import { LinkMeta, SortKeys } from '../interfaces/link';
 import { getMetaForTransfer } from '../components/Drive/Drive';
 import { DownloadControls } from '../components/downloads/download';
 import useDrive from '../hooks/drive/useDrive';
@@ -16,7 +16,15 @@ import usePreventLeave from '../hooks/util/usePreventLeave';
 const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
     const downloadControls = useRef<DownloadControls>();
-
+    const sortCacheKey = 'sortParams';
+    const sortCache = useCache();
+    if (!sortCache.has(sortCacheKey)) {
+        sortCache.set(sortCacheKey, {
+            sortField: DEFAULT_SORT_FIELD as SortKeys,
+            sortOrder: DEFAULT_SORT_ORDER
+        });
+    }
+    const sortParams = sortCache.get(sortCacheKey);
     const { setFolder } = useDriveActiveFolder();
     const cache = useDriveCache();
     const { getLinkMeta, fetchAllFolderPages } = useDrive();
@@ -27,7 +35,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
     const [, setError] = useState();
 
     const meta = cache.get.linkMeta(shareId, linkId);
-    const links = (meta && cache.get.childLinkMetas(shareId, meta.ParentLinkID)) || [];
+    const links = (meta && cache.get.childLinkMetas(shareId, meta.ParentLinkID, sortParams)) || [];
     const linksAvailableForPreview = links.filter(({ MIMEType }) => isPreviewAvailable(MIMEType));
 
     useEffect(() => {
