@@ -1,4 +1,4 @@
-import React, { useState, MutableRefObject } from 'react';
+import React, { useState, MutableRefObject, MouseEvent } from 'react';
 import { c } from 'ttag';
 import {
     Label,
@@ -27,7 +27,7 @@ interface Props {
     messageSendInfo: MessageSendInfo;
     onChange: MessageChange;
     expanded: boolean;
-    toggleExpanded: () => void;
+    toggleExpanded: (e: MouseEvent<HTMLButtonElement>) => void;
     inputFocusRef: MutableRefObject<() => void>;
 }
 

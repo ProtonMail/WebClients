@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, MouseEvent } from 'react';
 import { c } from 'ttag';
 import { Label, LinkButton, classnames } from 'react-components';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
@@ -18,9 +18,17 @@ interface Props {
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
     onFocus: () => void;
+    toggleExpanded: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const AddressesSummary = ({ message: { data }, messageSendInfo, contacts, contactGroups, onFocus }: Props) => {
+const AddressesSummary = ({
+    message: { data },
+    messageSendInfo,
+    contacts,
+    contactGroups,
+    toggleExpanded,
+    onFocus
+}: Props) => {
     return (
         <div className="flex flex-row flex-nowrap flex-items-center m0-5 pl0-5 pr0-5" onClick={onFocus}>
             <Label htmlFor={null} className="composer-meta-label pr0-5 pt0 bold">
@@ -86,6 +94,7 @@ const AddressesSummary = ({ message: { data }, messageSendInfo, contacts, contac
                 <LinkButton
                     className="composer-addresses-ccbcc nodecoration strong"
                     title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
+                    onClick={toggleExpanded}
                 >
                     {c('Action').t`CC, BCC`}
                 </LinkButton>

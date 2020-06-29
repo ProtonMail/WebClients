@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef } from 'react';
+import React, { MutableRefObject, useEffect, useRef, MouseEvent } from 'react';
 import { useToggle, useContactEmails, useContactGroups } from 'react-components';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -27,7 +27,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
     const { state: editor, set: setEditor } = useToggle(false);
 
     // CC and BCC visible in expanded mode
-    const { state: expanded, set: setExpanded, toggle: toggleExpanded } = useToggle(false);
+    const { state: expanded, set: setExpanded } = useToggle(false);
 
     useEffect(() => {
         addressesBlurRef.current = () => setEditor(false);
@@ -47,8 +47,14 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         }
 
         setEditor(true);
-        setExpanded(true);
+        setExpanded(false);
         setTimeout(() => addressesFocusRef.current());
+    };
+
+    const handleToggleExpanded = (e: MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        setEditor(true);
+        setExpanded(true);
     };
 
     return editor ? (
@@ -59,7 +65,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
             messageSendInfo={messageSendInfo}
             onChange={onChange}
             expanded={expanded}
-            toggleExpanded={toggleExpanded}
+            toggleExpanded={handleToggleExpanded}
             inputFocusRef={inputFocusRef}
         />
     ) : (
@@ -69,6 +75,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
             contacts={contacts}
             contactGroups={contactGroups}
             onFocus={handleFocus}
+            toggleExpanded={handleToggleExpanded}
         />
     );
 };
