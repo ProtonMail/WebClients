@@ -68,7 +68,6 @@ const HeaderMoreDropdown = ({
         closeDropdown.current?.();
         const folderName = getStandardFolders()[folderID].name;
         await moveToFolder(true, [message.data?.ID || ''], folderID, folderName, fromFolderID);
-        onBack();
     };
 
     const handleUnread = async () => {

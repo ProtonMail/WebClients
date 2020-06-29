@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { c } from 'ttag';
 import { useLabels, Icon } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
@@ -10,6 +10,10 @@ import { useMessage } from '../../hooks/useMessage';
 import { getNumParticipants } from '../../helpers/addresses';
 import { Message } from '../../models/message';
 import { OnCompose } from '../../hooks/useCompose';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { hasLabel } from '../../helpers/elements';
+
+const { TRASH } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
@@ -25,6 +29,15 @@ const MessageOnlyView = ({ labelID, messageID, mailSettings, onBack, onCompose }
     // There is only reading on the message here, no actions
     // MessageView will be in charge to trigger all messages actions
     const { message } = useMessage(messageID);
+
+    const isTrashed = hasLabel(message.data || {}, TRASH);
+
+    // Move out of trashed message
+    useEffect(() => {
+        if (labelID !== TRASH && isTrashed) {
+            onBack();
+        }
+    }, [labelID, isTrashed]);
 
     // Message content could be undefined
     const data = message.data || ({ ID: messageID } as Message);

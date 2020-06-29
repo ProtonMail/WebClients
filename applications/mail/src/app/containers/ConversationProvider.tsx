@@ -35,13 +35,42 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
         cache.set(ID, result);
     };
 
-    return ({ Conversations, Messages }: Event) => {
-        if (!Array.isArray(Conversations)) {
-            return;
+    return ({ Conversations = [], Messages = [] }: Event) => {
+        console.log('Event', Conversations, Messages);
+
+        for (const { ID, Action, Message } of Messages) {
+            const data = cache.get(Message.ConversationID);
+
+            // Ignore updates for non-fetched conversations
+            if (!data || !data.Messages) {
+                continue;
+            }
+
+            const messages = data.Messages || [];
+            const index = messages.findIndex((currentMessage) => currentMessage.ID === ID);
+
+            // Ignore updates for not found message
+            if (index === -1) {
+                continue;
+            }
+            if (Action === EVENT_ACTIONS.DELETE) {
+                messages.splice(index, 1);
+            }
+            if (Action === EVENT_ACTIONS.CREATE) {
+                messages.push(Message);
+            }
+            if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+                messages[index] = {
+                    ...messages[index],
+                    ...parseLabelIDsInEvent(messages[index], Message)
+                };
+            }
+
+            cache.set(Message.ConversationID, { Conversation: data?.Conversation || {}, Messages: messages });
         }
 
         for (const { ID, Action, Conversation } of Conversations) {
-            // Ignore updates for non-fetched messages.
+            // Ignore updates for non-fetched conversations.
             if (!cache.has(ID)) {
                 continue;
             }
@@ -57,36 +86,13 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
                         currentValue.Conversation,
                         Conversation
                     );
-                    const updatedMessages = currentValue.Messages || [];
 
-                    Messages?.forEach(({ ID, Action, Message }) => {
-                        const index = updatedMessages.findIndex((currentMessage) => currentMessage.ID === ID);
-                        if (Action === EVENT_ACTIONS.DELETE && index !== -1) {
-                            updatedMessages.splice(index, 1);
-                        }
-                        if (
-                            Action === EVENT_ACTIONS.CREATE &&
-                            Message.ConversationID === currentValue.Conversation.ID
-                        ) {
-                            updatedMessages.push(Message);
-                        }
-                        if (
-                            (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) &&
-                            index !== -1
-                        ) {
-                            updatedMessages[index] = {
-                                ...updatedMessages[index],
-                                ...parseLabelIDsInEvent(updatedMessages[index], Message)
-                            };
-                        }
-                    });
-
-                    if (updatedConversation.NumMessages !== updatedMessages.length) {
+                    if (updatedConversation.NumMessages !== currentValue.Messages?.length) {
                         reloadConversation(ID);
                     } else {
                         cache.set(ID, {
                             Conversation: updatedConversation,
-                            Messages: updatedMessages
+                            Messages: currentValue.Messages
                         });
                     }
                 } catch (error) {

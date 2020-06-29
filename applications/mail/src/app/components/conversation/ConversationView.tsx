@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { c } from 'ttag';
 import { Loader, useLabels, useToggle, Icon } from 'react-components';
 
@@ -14,6 +14,8 @@ import { hasLabel } from '../../helpers/elements';
 import { getNumParticipants } from '../../helpers/addresses';
 import { OnCompose } from '../../hooks/useCompose';
 
+const { TRASH } = MAILBOX_LABEL_IDS;
+
 interface Props {
     labelID: string;
     conversationID: string;
@@ -28,6 +30,18 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
     const [conversationData, loading] = useConversation(conversationID);
     const { state: filter, toggle: toggleFilter } = useToggle(true);
 
+    const { Conversation: conversation = {}, Messages: messages = [] } = (conversationData || {}) as ConversationResult;
+    const inTrash = labelID === MAILBOX_LABEL_IDS.TRASH;
+    const numTrashedMessages = conversation.Labels?.find((label) => label.ID === TRASH)?.ContextNumMessages || 0;
+    const isTrashed = numTrashedMessages > 0 && numTrashedMessages === messages?.length;
+
+    // Move out of trashed conversation
+    useEffect(() => {
+        if (labelID !== TRASH && isTrashed) {
+            onBack();
+        }
+    }, [labelID, isTrashed]);
+
     if (loading) {
         return <Loader />;
     }
@@ -37,9 +51,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
         return null;
     }
 
-    const { Conversation: conversation, Messages: messages = [] } = conversationData as ConversationResult;
-    const inTrash = labelID === MAILBOX_LABEL_IDS.TRASH;
-    const filteredMessages = messages.filter((message) => inTrash === hasLabel(message, MAILBOX_LABEL_IDS.TRASH));
+    const filteredMessages = messages.filter((message) => inTrash === hasLabel(message, TRASH));
     const messagesToShow = filter ? filteredMessages : messages;
     const showTrashWarning = filteredMessages.length !== messages.length;
     const numParticipants = getNumParticipants(conversation);
