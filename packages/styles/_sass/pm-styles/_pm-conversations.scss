@@ -250,12 +250,15 @@ $conversation-icon-size: 3.2rem !default;
 /*
  * view messages
  */
+.trashed-messages,
+.message-header {
+	background-color: var(--bgcolor-item-column-list, $pm-global-light);
+}
 .message-container {
   border: 1px solid var(--bordercolor-input, $pm-global-border);
   border-radius: $global-border-radius;
 }
 .message-header {
-  background-color: var(--bgcolor-item-column-list, $pm-global-light);
   border-radius: $global-border-radius; // Can't overflow 'cause of ::before, so repeat radius
   padding: .6em;
 
