@@ -35,7 +35,11 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
         const preloadFile = async () => {
             try {
-                const { ParentLinkID, MIMEType } = meta ?? (await getLinkMeta(shareId, linkId));
+                const { ParentLinkID, MIMEType, Trashed } = meta ?? (await getLinkMeta(shareId, linkId));
+
+                if (Trashed) {
+                    throw new Error('Link is trashed.');
+                }
 
                 if (canceled) {
                     return;
