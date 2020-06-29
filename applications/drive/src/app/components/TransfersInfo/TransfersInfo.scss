@@ -2,7 +2,7 @@
     position: fixed;
     right: 0;
     bottom: 0;
-    z-index: 30;
+    z-index: 80;
     box-shadow: 0 0 1.5rem 0.3rem rgba(0, 0, 0, 0.16);
     color: var(--color-main-area, $pm-global-grey);
     transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
@@ -66,7 +66,7 @@
     &-listItem {
         display: grid;
         grid-template-rows: 1fr auto;
-        grid-template-areas: "name size status controls" "progress progress progress progress";
+        grid-template-areas: 'name size status controls' 'progress progress progress progress';
         column-gap: 1em;
         row-gap: 1em;
         align-items: center;
@@ -91,7 +91,7 @@
 
             @if $place != controls and $place != progress {
                 &--canceled &-#{$place} {
-                    opacity: .5;
+                    opacity: 0.5;
                 }
             }
         }
@@ -119,10 +119,10 @@
         }
 
         &-controls-button {
-            padding: .375em;
+            padding: 0.375em;
 
             & + & {
-                margin-left: .5em;
+                margin-left: 0.5em;
             }
         }
     }
