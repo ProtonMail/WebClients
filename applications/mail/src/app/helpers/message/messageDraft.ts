@@ -4,8 +4,9 @@ import { setBit } from 'proton-shared/lib/helpers/bitset';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { generateUID } from 'react-components';
 
-import { EmbeddedMap, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
+import { EmbeddedMap, MessageExtendedWithData, PartialMessageExtended, MessageExtended } from '../../models/message';
 import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
 import { findSender } from '../addresses';
 import { Attachment } from '../../models/attachment';
@@ -14,9 +15,8 @@ import { formatFullDate } from '../date';
 import { recipientToInput } from '../addresses';
 import { getDate } from '../elements';
 import { isSent, isSentAndReceived, getOriginalTo, isPlainText } from './messages';
-import { getContent, exportPlainText } from './messageContent';
+import { exportPlainText, plainTextToHTML, getDocumentContent } from './messageContent';
 import { parseInDiv } from '../dom';
-import { generateUID } from 'react-components';
 import { createEmbeddedMap } from '../embedded/embeddeds';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
@@ -163,16 +163,23 @@ export const handleActions = (
 /**
  * Generate blockquote of the referenced message to the content of the new mail
  */
-const generateBlockquote = (referenceMessage: PartialMessageExtended) => {
+const generateBlockquote = (
+    referenceMessage: PartialMessageExtended,
+    mailSettings: MailSettings,
+    addresses: Address[]
+) => {
     const date = formatFullDate(getDate(referenceMessage?.data, ''));
     const sender = recipientToInput(referenceMessage?.data?.Sender);
     const previously = c('Message').t`On ${date}, ${sender} wrote:`;
+    const previousContent = isPlainText(referenceMessage.data)
+        ? plainTextToHTML(referenceMessage as MessageExtended, mailSettings, addresses)
+        : getDocumentContent(referenceMessage.document);
 
     return `<div class="${CLASSNAME_BLOCKQUOTE}">
         ${ORIGINAL_MESSAGE}<br>
         ${previously}<br>
         <blockquote class="${CLASSNAME_BLOCKQUOTE}" type="cite">
-            ${getContent(referenceMessage || {})}
+            ${previousContent}
         </blockquote><br>
     </div>`;
 };
@@ -208,7 +215,8 @@ export const createNewDraft = (
 
     const ParentID = action === MESSAGE_ACTIONS.NEW ? undefined : referenceMessage?.data?.ID;
 
-    let content = action === MESSAGE_ACTIONS.NEW ? '' : generateBlockquote(referenceMessage || {});
+    let content =
+        action === MESSAGE_ACTIONS.NEW ? '' : generateBlockquote(referenceMessage || {}, mailSettings, addresses);
     content = insertSignature(content, senderAddress?.Signature, action, mailSettings);
 
     const plain = isPlainText({ MIMEType });
