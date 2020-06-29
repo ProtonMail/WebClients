@@ -122,79 +122,86 @@ function useFiles() {
         file: File,
         noNameCheck = false
     ) => {
-        const setupPromise = queuedFunction(`upload_setup:${file.name.toLowerCase()}`, async () => {
-            const error = validateLinkName(file.name);
+        const lowercaseName = file.name.toLowerCase();
+        // Queue for files with same name, to not duplicate names
+        // Another queue for uploads in general so that they don't timeout
+        const setupPromise = queuedFunction(
+            'upload_setup',
+            queuedFunction(`upload_setup:${lowercaseName}`, async () => {
+                const error = validateLinkName(file.name);
 
-            if (error) {
-                throw new ValidationError(error);
-            }
-
-            const ParentLinkID = await parentLinkID;
-
-            const [parentKeys, addressKeyInfo] = await Promise.all([
-                getLinkKeys(shareId, ParentLinkID),
-                getPrimaryAddressKey()
-            ]);
-
-            const generateNameHash = async () => {
-                if (!('hashKey' in parentKeys)) {
-                    throw Error('Missing hash key on folder link');
+                if (error) {
+                    throw new ValidationError(error);
                 }
-                return {
-                    filename: file.name,
-                    hash: await generateLookupHash(file.name.toLowerCase(), parentKeys.hashKey)
+
+                const ParentLinkID = await parentLinkID;
+
+                const [parentKeys, addressKeyInfo] = await Promise.all([
+                    getLinkKeys(shareId, ParentLinkID),
+                    getPrimaryAddressKey()
+                ]);
+
+                const generateNameHash = async () => {
+                    if (!('hashKey' in parentKeys)) {
+                        throw Error('Missing hash key on folder link');
+                    }
+                    return {
+                        filename: file.name,
+                        hash: await generateLookupHash(lowercaseName, parentKeys.hashKey)
+                    };
                 };
-            };
 
-            const { NodeKey, privateKey, NodePassphrase, NodePassphraseSignature } = await generateNodeKeys(
-                parentKeys.privateKey,
-                addressKeyInfo.privateKey
-            );
+                const { NodeKey, privateKey, NodePassphrase, NodePassphraseSignature } = await generateNodeKeys(
+                    parentKeys.privateKey,
+                    addressKeyInfo.privateKey
+                );
 
-            const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
+                const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
 
-            if (!ContentKeyPacket) {
-                throw new Error('Could not generate ContentKeyPacket');
-            }
+                if (!ContentKeyPacket) {
+                    throw new Error('Could not generate ContentKeyPacket');
+                }
 
-            const { filename, hash: Hash } = noNameCheck
-                ? await generateNameHash()
-                : await findAvailableName(shareId, ParentLinkID, file.name);
+                const { filename, hash: Hash } = noNameCheck
+                    ? await generateNameHash()
+                    : await findAvailableName(shareId, ParentLinkID, file.name);
 
-            const blob = new Blob([file], { type: file.type });
+                const blob = new Blob([file], { type: file.type });
 
-            const Name = await encryptUnsigned({
-                message: filename,
-                publicKey: parentKeys.privateKey.toPublic()
-            });
+                const Name = await encryptUnsigned({
+                    message: filename,
+                    publicKey: parentKeys.privateKey.toPublic()
+                });
 
-            const MIMEType = lookup(filename) || 'application/octet-stream';
+                const MIMEType = lookup(filename) || 'application/octet-stream';
 
-            const { File } = await debouncedRequest<CreateFileResult>(
-                queryCreateFile(shareId, {
+                const { File } = await debouncedRequest<CreateFileResult>(
+                    queryCreateFile(shareId, {
+                        Name,
+                        MIMEType,
+                        Hash,
+                        ParentLinkID,
+                        NodeKey,
+                        NodePassphrase,
+                        NodePassphraseSignature,
+                        SignatureAddress: addressKeyInfo.address.Email,
+                        ContentKeyPacket
+                    })
+                );
+
+                return {
+                    File,
+                    blob,
                     Name,
                     MIMEType,
-                    Hash,
-                    ParentLinkID,
-                    NodeKey,
-                    NodePassphrase,
-                    NodePassphraseSignature,
-                    SignatureAddress: addressKeyInfo.address.Email,
-                    ContentKeyPacket
-                })
-            );
-
-            return {
-                File,
-                blob,
-                Name,
-                MIMEType,
-                sessionKey,
-                filename,
-                addressKeyInfo,
-                ParentLinkID
-            };
-        })();
+                    sessionKey,
+                    filename,
+                    addressKeyInfo,
+                    ParentLinkID
+                };
+            }),
+            5
+        )();
 
         return addToUploadQueue(
             file,
@@ -248,33 +255,37 @@ function useFiles() {
                     );
                     return UploadLinks;
                 },
-                finalize: async (blockMetas) => {
-                    const hashes: Uint8Array[] = [];
-                    const BlockList = blockMetas.map(({ Index, Token, Hash }) => {
-                        hashes.push(Hash);
-                        return {
-                            Index,
-                            Token
-                        };
-                    });
-                    const contentHashes = mergeUint8Arrays(hashes);
-                    const { File } = await setupPromise;
-                    const { signature, address } = await sign(contentHashes);
-                    const SignatureAddress = address.Email;
+                finalize: queuedFunction(
+                    'upload_finalize',
+                    async (blockMetas) => {
+                        const hashes: Uint8Array[] = [];
+                        const BlockList = blockMetas.map(({ Index, Token, Hash }) => {
+                            hashes.push(Hash);
+                            return {
+                                Index,
+                                Token
+                            };
+                        });
+                        const contentHashes = mergeUint8Arrays(hashes);
+                        const { File } = await setupPromise;
+                        const { signature, address } = await sign(contentHashes);
+                        const SignatureAddress = address.Email;
 
-                    await debouncedRequest(
-                        queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
-                            State: FileRevisionState.Active,
-                            BlockList,
-                            ManifestSignature: signature,
-                            SignatureAddress
-                        })
-                    );
+                        await debouncedRequest(
+                            queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
+                                State: FileRevisionState.Active,
+                                BlockList,
+                                ManifestSignature: signature,
+                                SignatureAddress
+                            })
+                        );
 
-                    // Update quota metrics and drive links
-                    call();
-                    events.call(shareId);
-                }
+                        // Update quota metrics and drive links
+                        call();
+                        events.call(shareId);
+                    },
+                    5
+                )
             }
         );
     };
@@ -490,7 +501,7 @@ function useFiles() {
         const { addDownload, startDownloads } = addFolderToDownloadQueue(folderName);
         const fileStreamPromises: Promise<void>[] = [];
 
-        const downloadFolder = async (linkId: string, filePath = ''): Promise<void> => {
+        const downloadFolder = async (linkId: string, filePath = ''): Promise<any> => {
             const isComplete = cache.get.childrenComplete(shareId, linkId);
             const listed = cache.get.listedChildLinks(shareId, linkId);
             if (!isComplete && !listed?.length) {
@@ -503,7 +514,7 @@ function useFiles() {
                 return;
             }
 
-            const promises = children.map((child) => {
+            const promises = children.map(async (child) => {
                 const path = `${filePath}/${child.Name}`;
                 if (child.Type === LinkType.FILE) {
                     const promise = new Promise<void>((resolve, reject) =>
@@ -522,12 +533,12 @@ function useFiles() {
                             onError(err) {
                                 reject(err);
                             }
-                        }).catch(reject)
+                        })
                     );
                     fileStreamPromises.push(promise);
                 } else {
                     cb.onStartFolderTransfer(path).catch((err) => console.error(`Failed to zip empty folder ${err}`));
-                    return downloadFolder(child.LinkID, path);
+                    await downloadFolder(child.LinkID, path);
                 }
             });
 

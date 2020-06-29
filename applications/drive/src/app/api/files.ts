@@ -1,8 +1,10 @@
 import { CreateDriveFile, UpdateFileRevision } from '../interfaces/file';
+import { UPLOAD_TIMEOUT } from '../constants';
 
 export const queryCreateFile = (shareId: string, data: CreateDriveFile) => {
     return {
         method: 'post',
+        timeout: UPLOAD_TIMEOUT,
         url: `drive/shares/${shareId}/files`,
         silence: true,
         data
