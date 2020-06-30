@@ -24,13 +24,14 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
     const maxActiveComposer = breakpoints.isNarrow ? MAX_ACTIVE_COMPOSER_MOBILE : MAX_ACTIVE_COMPOSER_DESKTOP;
 
-    const handleClose = (messageID: string) => () => {
-        const newMessageIDs = messageIDs.filter((id) => id !== messageID);
-        setMessageIDs(newMessageIDs);
-        if (newMessageIDs.length > 0) {
-            setFocusedMessageID(newMessageIDs[0]);
-        }
-    };
+    const handleClose = (messageID: string) => () =>
+        setMessageIDs((messageIDs) => {
+            const newMessageIDs = messageIDs.filter((id) => id !== messageID);
+            if (newMessageIDs.length > 0) {
+                setFocusedMessageID(newMessageIDs[0]);
+            }
+            return newMessageIDs;
+        });
 
     // Automatically close draft which has been deleted (could happen through the message list)
     const messageDeletionListener = useHandler((changedMessageID: string) => {
@@ -43,7 +44,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
     const handleCompose = useCompose(
         messageIDs,
-        (messageID) => setMessageIDs([...messageIDs, messageID]),
+        (messageID) => setMessageIDs((messageIDs) => [...messageIDs, messageID]),
         setFocusedMessageID,
         maxActiveComposer
     );

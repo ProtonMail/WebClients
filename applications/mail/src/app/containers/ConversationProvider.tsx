@@ -37,6 +37,10 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
 
     return ({ Conversations = [], Messages = [] }: Event) => {
         for (const { ID, Action, Message } of Messages) {
+            if (!Message || !Message.ConversationID) {
+                continue;
+            }
+
             const data = cache.get(Message.ConversationID);
 
             // Ignore updates for non-fetched conversations
