@@ -151,7 +151,14 @@ const MessageView = ({
     };
 
     return (
-        <article ref={elementRef} className={classnames(['message-container m0-5 mb1', expanded && 'is-opened'])}>
+        <article
+            ref={elementRef}
+            className={classnames([
+                'message-container m0-5 mb1',
+                expanded && 'is-opened',
+                hasAttachments(message.data) && 'message-container--hasAttachment'
+            ])}
+        >
             {expanded ? (
                 <>
                     <HeaderExpanded

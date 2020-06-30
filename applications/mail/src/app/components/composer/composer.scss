@@ -294,17 +294,26 @@
     }
 }
 
-.editor-squire-wrapper {
+.editor-squire-wrapper,
+.editor-ellipsis-button-container {
     border-bottom-left-radius: $global-border-radius;
     border-bottom-right-radius: $global-border-radius;
 }
-.composer-content--has-attachments {
+.composer-content--has-attachments,
+.editor--showEllipsisButton {
     .editor,
     .editor-squire-wrapper {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
 }
+.composer-content--has-attachments {
+    .editor-ellipsis-button-container {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
 .composer-attachments-expand {
     overflow: auto;
     border-top: 1px solid var(--bordercolor-input, $pm-global-border);
