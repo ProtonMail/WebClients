@@ -22,7 +22,7 @@ body {
 }
 
 .header {
-  padding: 1rem 2rem 1rem 0;
+  padding: 1rem 1.5rem 1rem 0;
   height: $header-height;
   flex-shrink: 0;
 }
@@ -50,19 +50,22 @@ body {
 }
 .logo-link {
   position: relative;
-  padding: .625em .5em .875em;
+  padding: .875em .5em 1.125em;
   box-sizing: initial;
   border-radius: $global-border-radius;
 
   &:hover,
   &:focus {
-    background-color: $navigation-hover-bg-color;
     color: inherit;
+  }
+
+  &:focus {
+    background-color: $navigation-hover-bg-color;
   }
 
   .plan {
     position: absolute;
-    bottom: .125em;
+    bottom: .5em;
     left: 3rem;
 	font-size: 1rem;
 	line-height: 1;
