@@ -339,6 +339,7 @@ $conversation-icon-size: 3.2rem !default;
   @extend .p1;
   // rules coming from Angular
   box-sizing: content-box; // to avoid problems in some emails
+  border-radius: 0 0 $global-border-radius $global-border-radius;
 
   // remove reset margins
   blockquote, dl, ol, p, pre, td, th, ul {
@@ -348,6 +349,12 @@ $conversation-icon-size: 3.2rem !default;
   p {
 	  margin-top: 1em;
 	  margin-bottom: 1em;
+  }
+}
+
+.message-container--hasAttachment {
+	.message-content {
+		border-radius: 0;
   }
 }
 
