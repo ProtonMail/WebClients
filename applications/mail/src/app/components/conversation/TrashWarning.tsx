@@ -10,7 +10,7 @@ interface Props {
 
 const TrashWarning = ({ inTrash, filter, onToggle }: Props) => {
     return (
-        <div className="bordered-container m0-5 mb1 p1 flex flex-nowrap flex-items-center flex-spacebetween bg-white-dm">
+        <div className="bordered-container m0-5 mb1 p1 flex flex-nowrap flex-items-center flex-spacebetween trashed-messages">
             <div className="flex flex-nowrap flex-items-center">
                 <Icon name="trash" className="mr1" />
                 <span>
