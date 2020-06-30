@@ -1,6 +1,12 @@
-type Listener<A extends any[], R> = (...args: A) => R;
+export type Listener<A extends any[], R> = (...args: A) => R;
 
-const createListeners = <A extends any[], R>() => {
+export interface Listeners<A extends any[], R> {
+    notify: (...args: A) => R[];
+    subscribe: (listener: Listener<A, R>) => () => void;
+    clear: () => void;
+}
+
+const createListeners = <A extends any[], R>(): Listeners<A, R> => {
     let listeners: Listener<A, R>[] = [];
 
     const notify = (...args: A) => {
