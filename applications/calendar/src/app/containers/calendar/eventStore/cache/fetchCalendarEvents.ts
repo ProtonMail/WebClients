@@ -29,14 +29,13 @@ export const fetchCalendarEvents = (
 
     if (!existingFetch) {
         const fetchId = generateUID();
-        const promise = getPaginatedEvents(api, calendarID, dateRange, tzid)
-            .then((Events) => {
+        const promise = getPaginatedEvents(api, calendarID, dateRange, tzid, (Event) =>
+            upsertCalendarApiEvent(Event, calendarEventsCache)
+        )
+            .then(() => {
                 if (fetchCache.get(fetchId)?.promise !== promise) {
                     return;
                 }
-                Events.forEach((Event) => {
-                    upsertCalendarApiEvent(Event, calendarEventsCache);
-                });
                 fetchCache.set(fetchId, { dateRange });
             })
             .catch((error) => {
