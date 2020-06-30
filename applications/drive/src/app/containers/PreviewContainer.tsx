@@ -1,17 +1,21 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import useFiles from '../hooks/drive/useFiles';
 import { RouteComponentProps } from 'react-router-dom';
-import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
-import { useLoading, useCache } from 'react-components';
+
+import { useLoading, useCache, useMultiSortedList } from 'react-components';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+
+import useFiles from '../hooks/drive/useFiles';
+import useDrive from '../hooks/drive/useDrive';
+import usePreventLeave from '../hooks/util/usePreventLeave';
+
 import FileSaver from '../utils/FileSaver/FileSaver';
 import { LinkURLType, DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../constants';
 import { LinkMeta, SortKeys } from '../interfaces/link';
 import { getMetaForTransfer } from '../components/Drive/Drive';
 import { DownloadControls } from '../components/downloads/download';
-import useDrive from '../hooks/drive/useDrive';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
-import usePreventLeave from '../hooks/util/usePreventLeave';
+import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
 
 const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
@@ -36,7 +40,17 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
     const meta = cache.get.linkMeta(shareId, linkId);
     const links = (meta && cache.get.childLinkMetas(shareId, meta.ParentLinkID, sortParams)) || [];
-    const linksAvailableForPreview = links.filter(({ MIMEType }) => isPreviewAvailable(MIMEType));
+    const { sortedList } = useMultiSortedList(links, [
+        {
+            key: sortParams.sortField,
+            direction: sortParams.sortOrder
+        },
+        {
+            key: 'Name',
+            direction: SORT_DIRECTION.ASC
+        }
+    ]);
+    const linksAvailableForPreview = sortedList.filter(({ MIMEType }) => isPreviewAvailable(MIMEType));
 
     useEffect(() => {
         let canceled = false;
