@@ -19,9 +19,19 @@ interface Props {
     onShiftClick: (item: string) => void;
     onClick?: (item: FileBrowserItem) => void;
     showLocation?: boolean;
+    secondaryActionActive?: boolean;
 }
 
-const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShiftClick, showLocation }: Props) => {
+const ItemRow = ({
+    item,
+    shareId,
+    selectedItems,
+    onToggleSelect,
+    onClick,
+    onShiftClick,
+    showLocation,
+    secondaryActionActive
+}: Props) => {
     const { isDesktop } = useActiveBreakpoint();
     const touchStarted = useRef(false);
 
@@ -104,7 +114,10 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
 
     return (
         <TableRow
-            className={classnames(['cursor-pointer', isSelected && 'bg-global-highlight'])}
+            className={classnames([
+                (onClick || secondaryActionActive) && 'cursor-pointer',
+                isSelected && 'bg-global-highlight'
+            ])}
             onMouseDown={() => document.getSelection()?.removeAllRanges()}
             onClick={handleRowClick}
             onTouchStart={handleTouchStart}
