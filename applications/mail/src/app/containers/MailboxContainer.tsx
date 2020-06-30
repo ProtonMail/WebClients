@@ -36,6 +36,7 @@ import { Breakpoints } from '../models/utils';
 import './MailboxContainer.scss';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
 import { OnCompose } from '../hooks/useCompose';
+import { useWelcomeFlag } from '../hooks/useWelcomeFlag';
 
 interface Props {
     labelID: string;
@@ -46,6 +47,7 @@ interface Props {
     location: Location;
     history: History;
     onCompose: OnCompose;
+    throughLogin: boolean;
 }
 
 const MailboxContainer = ({
@@ -56,7 +58,8 @@ const MailboxContainer = ({
     elementID: inputElementID,
     location,
     history,
-    onCompose
+    onCompose,
+    throughLogin
 }: Props) => {
     const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
     const columnModeSetting = isColumnMode(mailSettings);
@@ -132,6 +135,8 @@ const MailboxContainer = ({
         }
         return [];
     }, [checkedIDs, elementID]);
+
+    const welcomeFlag = useWelcomeFlag(throughLogin, [labelID, selectedIDs.length]);
 
     const handleElement = (element: Element) => {
         history.push(setPathInUrl(location, labelID, element.ID));
@@ -233,9 +238,11 @@ const MailboxContainer = ({
                     <section className="view-column-detail flex flex-column flex-item-fluid no-scroll">
                         {showPlaceholder ? (
                             <PlaceholderView
+                                welcomeFlag={welcomeFlag}
                                 location={location}
                                 labelID={labelID}
                                 mailSettings={mailSettings}
+                                elementID={elementID}
                                 checkedIDs={checkedIDs}
                                 onUncheckAll={handleUncheckAll}
                             />

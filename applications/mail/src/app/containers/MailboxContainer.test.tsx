@@ -16,7 +16,8 @@ const props = {
     elementID: undefined,
     location: {} as Location,
     history: {} as History,
-    onCompose: jest.fn()
+    onCompose: jest.fn(),
+    throughLogin: false
 };
 
 const conversationsResult = {

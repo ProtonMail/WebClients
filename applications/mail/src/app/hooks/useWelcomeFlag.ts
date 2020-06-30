@@ -1,37 +1,20 @@
-import { useMemo, useEffect, DependencyList } from 'react';
-import { useUser } from 'react-components';
-
-// TODO: Export this function in proton-shared and use it
-const hasSessionStorage = () => {
-    // Wrap in try-catch to avoid throwing SecurityError on safari when storage is disabled.
-    try {
-        return !!window.sessionStorage;
-    } catch (e) {
-        return false;
-    }
-};
+import { useEffect, DependencyList, useState } from 'react';
 
 /**
- * Returns true the first time (depending on deps) it's called in session, false every time after
- * Session detection is based on browser sessionStorage time to live
+ * Returns true the first time (depending on deps) it's called after a login, false every time after
  */
-export const useWelcomeFlag = (deps: DependencyList) => {
-    const [user] = useUser();
-    const key = `proton:welcome:${user.ID}`;
+export const useWelcomeFlag = (throughLogin: boolean, deps: DependencyList) => {
+    const [welcomeFlag, setWelcomeFlag] = useState(throughLogin);
+    const [welcomeShown, setWelcomeShown] = useState(false);
 
     useEffect(() => {
-        if (!hasSessionStorage()) {
-            return;
+        if (!welcomeShown && throughLogin) {
+            setWelcomeFlag(true);
+            setWelcomeShown(true);
+        } else {
+            setWelcomeFlag(false);
         }
-
-        window.sessionStorage.setItem(key, 'true');
-    }, []);
-
-    return useMemo(() => {
-        if (!hasSessionStorage()) {
-            return false;
-        }
-
-        return !window.sessionStorage.getItem(key);
     }, deps);
+
+    return welcomeFlag;
 };

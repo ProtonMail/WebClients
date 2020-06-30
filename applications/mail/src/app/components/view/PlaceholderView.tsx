@@ -8,22 +8,28 @@ import WelcomePane from './WelcomePane';
 import SelectionPane from './SelectionPane';
 import { ELEMENT_TYPES } from '../../constants';
 import { getCurrentType } from '../../helpers/elements';
-import { useWelcomeFlag } from '../../hooks/useWelcomeFlag';
 
 interface Props {
+    welcomeFlag: boolean;
     labelID: string;
+    elementID?: string;
     checkedIDs?: string[];
     onUncheckAll: () => void;
     mailSettings: MailSettings;
     location: Location;
 }
 
-const PlaceholderView = ({ labelID = '', checkedIDs = [], onUncheckAll, mailSettings, location }: Props) => {
+const PlaceholderView = ({
+    welcomeFlag,
+    labelID = '',
+    checkedIDs = [],
+    onUncheckAll,
+    mailSettings,
+    location
+}: Props) => {
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
     const type = getCurrentType({ mailSettings, labelID, location });
-
-    const welcomeFlag = useWelcomeFlag([labelID, checkedIDs.length]);
 
     const labelCount: LabelCount = useMemo(() => {
         const counters = type === ELEMENT_TYPES.CONVERSATION ? conversationCounts : messageCounts;

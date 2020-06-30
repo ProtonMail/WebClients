@@ -27,10 +27,11 @@ import AttachmentProvider from './containers/AttachmentProvider';
 export type RouteProps = RouteChildrenProps<{ labelID: string; elementID?: string }>;
 
 interface Props {
+    throughLogin: boolean;
     onLogout: () => void;
 }
 
-const PrivateApp = ({ onLogout }: Props) => {
+const PrivateApp = ({ throughLogin, onLogout }: Props) => {
     const breakpoints = useActiveBreakpoint();
 
     return (
@@ -66,6 +67,7 @@ const PrivateApp = ({ onLogout }: Props) => {
                                             {...routeProps}
                                             breakpoints={breakpoints}
                                             onCompose={onCompose}
+                                            throughLogin={throughLogin}
                                         />
                                     )}
                                 />

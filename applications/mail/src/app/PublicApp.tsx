@@ -1,5 +1,4 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
-import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { Loader, ModalsChildren, ResetPasswordContainer, ForgotUsernameContainer } from 'react-components';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
@@ -9,7 +8,11 @@ import LoginContainer from './containers/LoginContainer';
 import SignupContainer from './containers/SignupContainer';
 import { Redirect } from 'react-router';
 
-const PublicApp = ({ onLogin }) => {
+interface Props {
+    onLogin: () => void;
+}
+
+const PublicApp = ({ onLogin }: Props) => {
     const hasStopRedirect = useRef(false);
     const stopRedirect = () => (hasStopRedirect.current = true);
     const [loading, setLoading] = useState(true);
@@ -24,7 +27,7 @@ const PublicApp = ({ onLogin }) => {
     }, []);
 
     if (error) {
-        return 'OpenPGP failed to load. Handle better.';
+        return <>OpenPGP failed to load. Handle better.</>;
     }
 
     if (loading) {
@@ -83,10 +86,6 @@ const PublicApp = ({ onLogin }) => {
             </PublicLayout>
         </>
     );
-};
-
-PublicApp.propTypes = {
-    onLogin: PropTypes.func.isRequired
 };
 
 export default PublicApp;
