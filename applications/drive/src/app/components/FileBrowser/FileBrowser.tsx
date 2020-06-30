@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint, TableRowSticky } from 'react-components';
 import { c } from 'ttag';
 import ItemRow from './ItemRow';
@@ -45,7 +45,25 @@ const FileBrowser = ({
     onEmptyAreaClick,
     onShiftClick
 }: Props) => {
+    const [secondaryActionActive, setSecondaryActionActive] = useState(false);
     const { isDesktop } = useActiveBreakpoint();
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            const newSecondaryActionIsActive = e.shiftKey || e.metaKey || e.ctrlKey;
+            if (newSecondaryActionIsActive !== secondaryActionActive) {
+                setSecondaryActionActive(newSecondaryActionIsActive);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        window.addEventListener('keyup', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            window.addEventListener('keyup', handleKeyDown);
+        };
+    }, [secondaryActionActive]);
 
     const allSelected = !!contents.length && contents.length === selectedItems.length;
     const modifiedHeader = isTrash ? c('TableHeader').t`Deleted` : c('TableHeader').t`Modified`;
@@ -92,6 +110,7 @@ const FileBrowser = ({
                             onShiftClick={onShiftClick}
                             onClick={onItemClick}
                             showLocation={isTrash}
+                            secondaryActionActive={secondaryActionActive}
                         />
                     ))}
                     {loading && <TableRowBusy colSpan={colSpan} />}
