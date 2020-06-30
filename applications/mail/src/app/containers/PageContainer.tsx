@@ -4,7 +4,6 @@ import {
     ErrorBoundary,
     useMailSettings,
     useUserSettings,
-    Loader,
     useEventManager,
     useLabels,
     useFolders
@@ -29,8 +28,8 @@ interface Props extends RouteProps {
 }
 
 const PageContainer = ({ match, location, history, breakpoints, onCompose, throughLogin }: Props) => {
-    const [mailSettings, loadingMailSettings] = useMailSettings();
-    const [userSettings, loadingUserSettings] = useUserSettings();
+    const [mailSettings] = useMailSettings();
+    const [userSettings] = useUserSettings();
     const { subscribe } = useEventManager();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
@@ -67,21 +66,17 @@ const PageContainer = ({ match, location, history, breakpoints, onCompose, throu
             onCompose={onCompose}
         >
             <ErrorBoundary>
-                {loadingMailSettings || loadingUserSettings ? (
-                    <Loader />
-                ) : (
-                    <MailboxContainer
-                        labelID={labelID}
-                        userSettings={userSettings}
-                        mailSettings={mailSettings}
-                        breakpoints={breakpoints}
-                        elementID={elementID}
-                        location={location}
-                        history={history}
-                        onCompose={onCompose}
-                        throughLogin={throughLogin}
-                    />
-                )}
+                <MailboxContainer
+                    labelID={labelID}
+                    userSettings={userSettings}
+                    mailSettings={mailSettings}
+                    breakpoints={breakpoints}
+                    elementID={elementID}
+                    location={location}
+                    history={history}
+                    onCompose={onCompose}
+                    throughLogin={throughLogin}
+                />
             </ErrorBoundary>
         </PrivateLayout>
     );

@@ -15,7 +15,7 @@ interface Props {
 }
 
 const ComposerContainer = ({ breakpoints, children }: Props) => {
-    const [addresses, loadingAddresses] = useAddresses();
+    const [addresses] = useAddresses();
     const [messageIDs, setMessageIDs] = useState<string[]>([]);
     const [focusedMessageID, setFocusedMessageID] = useState<string>();
     const [width, height] = useWindowSize();
@@ -52,10 +52,6 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const handleFocus = (messageID: string) => () => {
         setFocusedMessageID(messageID);
     };
-
-    if (loadingAddresses) {
-        return null;
-    }
 
     return (
         <>

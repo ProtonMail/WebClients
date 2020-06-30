@@ -40,7 +40,7 @@ const PrivateApp = ({ throughLogin, onLogout }: Props) => {
             openpgpConfig={{}}
             onLogout={onLogout}
             locales={locales}
-            preloadModels={[UserModel, UserSettingsModel, LabelsModel]}
+            preloadModels={[UserModel, UserSettingsModel, LabelsModel, AddressesModel, MailSettingsModel]}
             eventModels={[
                 UserModel,
                 AddressesModel,
