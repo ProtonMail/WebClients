@@ -203,7 +203,7 @@ export const getListUnsubscribePost = (message?: Message) => {
 };
 
 export const getAttachments = (message?: Message) => message?.Attachments || [];
-export const hasAttachments = (message?: Message) => message?.NumAttachments && message?.NumAttachments > 0;
+export const hasAttachments = (message?: Message) => !!(message?.NumAttachments && message?.NumAttachments > 0);
 export const attachmentsSize = (message?: Message) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
 export const getNumAttachmentByType = (message: MessageExtended): [number, number] => {
