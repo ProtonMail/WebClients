@@ -135,6 +135,7 @@ export { default as usePaginationAsync } from './components/pagination/usePagina
 export { default as usePagination } from './components/pagination/usePagination';
 export { default as Pagination } from './components/pagination/Pagination';
 export { default as Label } from './components/label/Label';
+export { default as ScrollShadows } from './components/scroll/ScrollShadows';
 export { default as NavMenu } from './components/sidebar/NavMenu';
 export { default as NavItem } from './components/sidebar/NavItem';
 export { default as Hamburger } from './components/sidebar/Hamburger';
