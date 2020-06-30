@@ -77,7 +77,7 @@ const Transfer = ({ stats, ...props }: Props) => {
                     className={classnames(['ellipsis', isInitializing && 'opacity-50'])}
                     title={transfer.meta.filename}
                 >
-                    {transfer.meta.filename}
+                    <span className="pre">{transfer.meta.filename}</span>
                 </span>
             </div>
             <div className="pd-transfers-listItem-size alignright ellipsis" title={`${percentageDone}%`}>

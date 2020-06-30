@@ -31,7 +31,9 @@ const LocationCell = ({ item, shareId }: Props) => {
 
     return (
         <div key="location" className="ellipsis">
-            <span title={location}>{location}</span>
+            <span className="pre" title={location}>
+                {location}
+            </span>
         </div>
     );
 };
