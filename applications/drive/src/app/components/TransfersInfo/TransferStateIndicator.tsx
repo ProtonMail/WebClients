@@ -60,7 +60,11 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
         >
             {statusInfo.icon && !isTransferProgress(transfer) && (
                 <Tooltip title={errorText} originalPlacement="top">
-                    <Icon name={statusInfo.icon} className="flex-item-noshrink mr0-25 nodesktop notablet" />
+                    <Icon
+                        name={errorText ? 'info' : statusInfo.icon}
+                        className="flex-item-noshrink mr0-25 nodesktop notablet"
+                        alt={statusInfo.text}
+                    />
                 </Tooltip>
             )}
 
