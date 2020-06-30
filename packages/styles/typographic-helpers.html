@@ -177,12 +177,33 @@ and long             spaces</p>
 	</div>
 </div>
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
+	<div class="w49">
+	  <pre class=" language-markup"><code>&lt;p <strong>class="pre"</strong>&gt;A text with  spaces&lt;/p&gt;
+</code></pre>
+	</div>
+	<div class="w49 flex-self-vcenter">
+	  <p class="pre">A text with  spaces</p>
+	</div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
   <div class="w49">
     <pre class=" language-markup"><code>&lt;p <strong>class="no-wrap"</strong>&gt;no wrapping.&lt;/p&gt;
 </code></pre>
   </div>
   <div class="w49 flex-self-vcenter">
     <p class="alignleft">Applies <code>white-space: no-wrap</code>, for some very rare use-cases (better use <code>ellipsis)</code></p>
+  </div>
+</div>
+
+<p>If you want to apply <code>ellipsis</code> and <code>pre</code> classes, you need to wrap your content like this:</p>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="ellipsis"</strong>&gt;&lt;span <strong>class="pre"</strong>&gt;Lorem    ipsum dolor sit amet&lt;/span&gt;&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <span class="ellipsis inbl mw100p"><span class="pre">Lorem    ipsum dolor sit amet</span></span><br>
+    To be used with <code>mw100</code> and <code>inbl</code> (or with flexbox helpers).
   </div>
 </div>
 
