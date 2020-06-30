@@ -93,12 +93,12 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
                 </Time>
             </div>
         ),
-        item.Size ? (
-            <div className="ellipsis" title={humanSize(item.Size)}>
+        isFolder ? (
+            '-'
+        ) : (
+            <div key="size" className="ellipsis" title={humanSize(item.Size)}>
                 {humanSize(item.Size)}
             </div>
-        ) : (
-            '-'
         )
     ].filter(Boolean);
 
