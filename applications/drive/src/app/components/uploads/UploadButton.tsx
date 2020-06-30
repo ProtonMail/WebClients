@@ -1,10 +1,14 @@
 import React, { useRef, ChangeEvent } from 'react';
 import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
 import useFiles from '../../hooks/drive/useFiles';
-import { LargeButton } from 'react-components';
+import { LargeButton, FloatingButton } from 'react-components';
 import { c } from 'ttag';
 
-const UploadButton = () => {
+interface Props {
+    floating?: boolean;
+}
+
+const UploadButton = ({ floating }: Props) => {
     const fileInput = useRef<HTMLInputElement>(null);
     const { folder } = useDriveActiveFolder();
     const { uploadDriveFiles } = useFiles();
@@ -31,11 +35,16 @@ const UploadButton = () => {
     return (
         <>
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
-            <LargeButton
-                className="pm-button--primary ml1 mr1 mt0-25 strong"
-                disabled={!folder?.shareId}
-                onClick={handleClick}
-            >{c('Action').t`Upload`}</LargeButton>
+
+            {floating && folder?.shareId ? (
+                <FloatingButton onClick={handleClick} title={c('Action').t`Upload`} icon="plus" />
+            ) : (
+                <LargeButton
+                    className="pm-button--primary ml1 mr1 mt0-25 strong"
+                    disabled={!folder?.shareId}
+                    onClick={handleClick}
+                >{c('Action').t`Upload`}</LargeButton>
+            )}
         </>
     );
 };
