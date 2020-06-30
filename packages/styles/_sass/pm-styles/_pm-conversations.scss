@@ -33,9 +33,10 @@ $container-to-width: 3em !default;
 
 $item-container-height: 6.4rem !default;
 $item-container-padding-top-bottom: em(8.5) !default;
+$item-container-padding-left-right: em(12) !default;
 .item-container,
 .item-container-row {
-  padding: $item-container-padding-top-bottom em(12); // design wants ~64 height
+  padding: $item-container-padding-top-bottom $item-container-padding-left-right; // design wants ~64 height
   border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
   background: var(--bgcolor-item-column-list, $pm-global-muted);
 }
@@ -116,7 +117,8 @@ $conversation-icon-size: 3.2rem !default;
 	  top: -#{($item-container-height - $conversation-icon-size)/2};
 	  bottom: -#{($item-container-height - $conversation-icon-size)/2};
 	  left: em(-12);
-	  right: em(-6);
+	  width: calc(#{$conversation-icon-size} + #{$item-container-padding-left-right} + .5rem);
+	  // icon size + padding container + tiny margin for comfort
   }
 
   // hidden fake check by default
