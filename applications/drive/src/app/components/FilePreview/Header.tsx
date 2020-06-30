@@ -16,7 +16,9 @@ const Header = ({ mimeType, name, onClose, onSave, children }: Props) => {
         <div className="flex flex-spacebetween flex-items-center p2 relative">
             <div title={name} className="pd-file-preview-filename flex flex-items-center flex-nowrap">
                 {mimeType && <FileIcon mimeType={mimeType} />}
-                <span className="ellipsis">{name}</span>
+                <span className="ellipsis">
+                    <span className="pre">{name}</span>
+                </span>
             </div>
             {children}
             <div className="flex flex-items-center">

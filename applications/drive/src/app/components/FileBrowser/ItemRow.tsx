@@ -78,7 +78,7 @@ const ItemRow = ({ item, shareId, selectedItems, onToggleSelect, onClick, onShif
         <div key="filename" className="flex flex-items-center flex-nowrap">
             <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} />
             <span title={item.Name} className="ellipsis">
-                {item.Name}
+                <span className="pre">{item.Name}</span>
             </span>
         </div>,
         showLocation && <LocationCell shareId={shareId} item={item} />,
