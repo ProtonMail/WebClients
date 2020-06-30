@@ -74,8 +74,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #eeee;
-    border-radius: 3px;
+    background-color: var(--bgcolor-item-column-list, #eeee);
+    border-radius: $global-border-radius;
+}
+.isDarkMode .editor--disabled::after {
+    opacity: .9;
 }
 
 .editor-toolbar-more-menu .dropDown-item.dropDown-item--no-separator {

@@ -155,7 +155,8 @@ const SquireEditor = forwardRef(
                 className={classnames([
                     className,
                     'editor w100 h100 rounded flex flex-column',
-                    disabled && 'editor--disabled'
+                    disabled && 'editor--disabled',
+                    showEllipseButton && 'editor--showEllipsisButton'
                 ])}
             >
                 <EditorToolbar
@@ -187,7 +188,7 @@ const SquireEditor = forwardRef(
                             onAddImages={onAddImages}
                         />
                         {showEllipseButton && (
-                            <div className="p0-5 bg-white color-global-grey">
+                            <div className="editor-ellipsis-button-container p0-5 bg-white color-global-grey">
                                 <Button className="pm-button--small" onClick={onEllipseClick}>
                                     ...
                                 </Button>
