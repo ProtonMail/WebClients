@@ -178,6 +178,7 @@ $modal-smaller-width: 28em !default;
   flex-direction: column;
   flex: 1 1 auto;
   overflow: auto;
+  position: relative;
 }
 
 .pm-modalHeader {
@@ -205,29 +206,14 @@ $modal-smaller-width: 28em !default;
   padding: 0 rem(30);
 
   background: var(--bgcolor-main-area, $white) no-repeat;
-  background-image: radial-gradient(farthest-side at 50% 0,var(--bordercolor-input, #acb0bf),transparent),radial-gradient(farthest-side at 50% 100%,var(--bordercolor-input, #acb0bf),transparent);
-  background-position: 50% 0, 0 100%;
-  background-size: calc(100% - 20px) 3px;
-}
-.pm-modalContentInner {
-  &::before,
-  &::after {
-    content: '';
-    position: relative;
-    display: block;
-    z-index: 1;
-    background: var(--bgcolor-main-area, $white);
-    height: 10px;
+
+  > p:first-child {
+    margin-top: 0;
+  }
+  > p:last-child {
+	margin-bottom: 0;
   }
 }
-.pm-modalContentInner > p:first-child {
-  margin-top: 0;
-}
-.pm-modalContentInner > p:last-child {
-  margin-bottom: 0;
-}
-
-
 
 // adaptation for labels
 $pm-label-shorter-width: 10em !default;
@@ -253,7 +239,6 @@ $pm-label-shorter-width: 10em !default;
     }
   }
 }
-
 
 @media (max-height: $breakpoint-low-height-modal) {
   .pm-modal {

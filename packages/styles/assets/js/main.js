@@ -668,7 +668,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
 
-    return '<div id="' + overlayId + '" class="' + overlayClass + '" ' + MODAL_OVERLAY_BG_ENABLED_ATTR + '="' + overlayBackgroundEnabled + '"><div class="pm-modalContainer"><dialog id="' + id + '" class="' + modalClassName + ' ' + modalAdditionnalClass + '" ' + ATTR_ROLE + '="' + MODAL_ROLE + '" ' + describedById + ' ' + ATTR_OPEN + ' ' + ATTR_LABELLEDBY + '="' + MODAL_TITLE_ID + '"><header class="' + modalHeaderClassName + '">' + button_close + ' ' + title + ' </header>  <div class="' + modalContentClassName + '"><div class="' + modalContentInnerClassName + '" id="' + MODAL_CONTENT_JS_ID + '">' + content + '</div><footer class="' + modalFooterClassName + ' flex flex-spacebetween"><button class="pm-button-blueborder js-modal-close">No</button><button class="pm-button-blue js-modal-close">Yes</button></footer></div></div></dialog></div>';
+    return '<div id="' + overlayId + '" class="' + overlayClass + '" ' + MODAL_OVERLAY_BG_ENABLED_ATTR + '="' + overlayBackgroundEnabled + '"><div class="pm-modalContainer"><dialog id="' + id + '" class="' + modalClassName + ' ' + modalAdditionnalClass + '" ' + ATTR_ROLE + '="' + MODAL_ROLE + '" ' + describedById + ' ' + ATTR_OPEN + ' ' + ATTR_LABELLEDBY + '="' + MODAL_TITLE_ID + '"><header class="' + modalHeaderClassName + '">' + button_close + ' ' + title + ' </header>  <div class="' + modalContentClassName + '"><div class="' + modalContentInnerClassName + 'TopShadow nonvisible"></div><div class="' + modalContentInnerClassName + '" id="' + MODAL_CONTENT_JS_ID + '">' + content + '</div><div class="' + modalContentInnerClassName + 'BottomShadow nonvisible"></div><footer class="' + modalFooterClassName + ' flex flex-spacebetween"><button class="pm-button-blueborder js-modal-close">No</button><button class="pm-button-blue js-modal-close">Yes</button></footer></div></div></dialog></div>';
   };
 
   var closeModal = function closeModal(config) {
@@ -733,7 +733,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     if (addListeners) {
 
       /* listeners */
-      ['click', 'keydown'].forEach(function (eventName) {
+      ['click', 'keydown', 'scroll'].forEach(function (eventName) {
 
         doc.body.addEventListener(eventName, function (e) {
 
@@ -784,7 +784,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             wrapperBody.setAttribute(ATTR_HIDDEN, 'true');
 
             // add class noscroll to body
-            addClass(body, NO_SCROLL_CLASS);
+			addClass(body, NO_SCROLL_CLASS);
+
+			// check scroll
+			checkModalScroll();
 
             // give focus to close button or specified element
             var closeButton = findById(MODAL_BUTTON_JS_ID);
@@ -800,7 +803,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             }
 
             e.preventDefault();
-          }
+		  }
 
           // click on close button or on overlay not blocked
           var parentButton = searchParent(e.target, MODAL_BUTTON_JS_CLASS);
@@ -888,7 +891,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               e.preventDefault();
               $listFocusables[0].focus();
             }
-          }
+		  }
+
+		  if (eventName === 'scroll') {
+			checkModalScroll();
+		  }
+
+
         }, true);
       });
     }
@@ -903,6 +912,39 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
   window.van11yAccessibleModalWindowAria = attach;
 })(document);
+
+
+
+var checkModalScroll = function (){
+
+	var contentModal = document.getElementById('js-modal-content');
+
+	if (!contentModal){
+		return;
+	}
+	var topShadow = document.querySelector('.pm-modalContentInnerTopShadow');
+	var bottomShadow = document.querySelector('.pm-modalContentInnerBottomShadow');
+	var a = contentModal.scrollTop;
+	var b = contentModal.scrollHeight - contentModal.clientHeight;
+
+	if ( a === 0 && b === 0) {
+		return;
+	}
+
+	if ( a === 0 ) {
+		topShadow.classList.add('nonvisible');
+	}
+	else { topShadow.classList.remove('nonvisible'); }
+
+	if ( a < b ) {
+		bottomShadow.classList.remove('nonvisible');
+	}
+	else { bottomShadow.classList.add('nonvisible'); }
+
+
+}
+
+
 
 
 
