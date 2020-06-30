@@ -38,7 +38,11 @@ const ProtonApp = ({ config, children }) => {
         authentication.setUID(newUID);
         authentication.setPassword(keyPassword);
 
-        cacheRef.current.reset();
+        const oldCache = cacheRef.current;
+        if (oldCache) {
+            oldCache.clear();
+            oldCache.clearListeners();
+        }
         const cache = createCache();
 
         // If the user was received from the login call, pre-set it directly.
@@ -60,8 +64,14 @@ const ProtonApp = ({ config, children }) => {
         authentication.setPassword();
 
         tempDataRef.current = {};
-        clearKeyCache(cacheRef.current);
-        cacheRef.current.reset();
+
+        const oldCache = cacheRef.current;
+        if (oldCache) {
+            clearKeyCache(oldCache);
+            oldCache.clear();
+            oldCache.clearListeners();
+        }
+
         cacheRef.current = createCache();
 
         setUID();
