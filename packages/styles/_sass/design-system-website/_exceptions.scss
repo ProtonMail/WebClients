@@ -41,7 +41,7 @@
 
 .navigation__sublink {
 	&[aria-current="page"] {
-	  border-left: 2px solid var(--color-nav-active, $pm-primary);
+	  border-left: 2px solid var(--color-nav-active, $white);
 	  font-weight: bold;
 	}
 }
