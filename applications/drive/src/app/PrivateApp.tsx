@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect, withRouter, RouteComponentProps } from 'react-router-dom';
-import { StandardPrivateApp, ErrorBoundary, GenericError, LoaderPage } from 'react-components';
+import { StandardPrivateApp, ErrorBoundary, GenericError, LoaderPage, ModalsChildren } from 'react-components';
 import { UserModel, AddressesModel } from 'proton-shared/lib/models';
 import { c } from 'ttag';
 
@@ -39,6 +39,7 @@ const PrivateApp = ({ onLogout, history, location }: Props) => {
             preloadModels={[UserModel, AddressesModel]}
             eventModels={[UserModel, AddressesModel]}
             fallback={<LoaderPage text={c('Info').t`Loading ProtonDrive`} />}
+            noModals
         >
             <ErrorBoundary component={<GenericError className="pt2 h100v" />}>
                 <DriveEventManagerProvider>
@@ -46,6 +47,7 @@ const PrivateApp = ({ onLogout, history, location }: Props) => {
                         <DriveFolderProvider>
                             <UploadProvider>
                                 <DownloadProvider>
+                                    <ModalsChildren />
                                     <UploadDragDrop disabled={isPreview}>
                                         <PrivateLayout>
                                             <AppErrorBoundary>

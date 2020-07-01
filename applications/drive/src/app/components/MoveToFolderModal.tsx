@@ -10,7 +10,8 @@ import {
     InnerModal,
     FooterModal,
     ResetButton,
-    LinkButton
+    LinkButton,
+    useModals
 } from 'react-components';
 
 import FolderTree, { FolderTreeItem } from './FolderTree/FolderTree';
@@ -20,6 +21,7 @@ import { ShareMeta } from '../interfaces/share';
 import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import HasNoFolders from './HasNoFolders/HasNoFolders';
 import { selectMessageForItemList } from './Drive/helpers';
+import CreateFolderModal from './CreateFolderModal';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -29,7 +31,6 @@ interface Props {
     getFoldersOnlyMetas: (shareId: string, linkId: string, fetchNextPage?: boolean) => Promise<LinkMeta[]>;
     isChildrenComplete: (linkId: string) => boolean;
     moveLinksToFolder: (folderId: string) => Promise<void>;
-    openCreateFolderModal: (parentFolderId: string, callback?: (newFolderId: string) => void) => void;
     onClose?: () => void;
 }
 
@@ -41,10 +42,10 @@ const MoveToFolderModal = ({
     getFoldersOnlyMetas,
     isChildrenComplete,
     moveLinksToFolder,
-    openCreateFolderModal,
     onClose,
     ...rest
 }: Props) => {
+    const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
     const [initializing, withInitialize] = useLoading(true);
     const [folders, setFolders] = useState<FolderTreeItem[]>([]);
@@ -124,6 +125,19 @@ const MoveToFolderModal = ({
         }
     };
 
+    const handleCreateNewFolderClick = async (parentFolderId: string) => {
+        createModal(
+            <CreateFolderModal
+                folder={{ shareId: activeFolder.shareId, linkId: parentFolderId }}
+                onCreateDone={async (newFolderId) => {
+                    await loadChildren(parentFolderId);
+                    setInitiallyExpandedFolders([...initiallyExpandedFolders, parentFolderId]);
+                    onSelect(newFolderId);
+                }}
+            />
+        );
+    };
+
     const modalTitleID = 'MoveToFolderId';
     const itemsToMove = selectedItems.map((item) => item.LinkID);
     const itemsToMoveCount = itemsToMove.length;
@@ -160,17 +174,7 @@ const MoveToFolderModal = ({
                 <div className="flex flex-spacebetween w100 flex-nowrap">
                     <LinkButton
                         disabled={loading || !selectedFolder}
-                        onClick={async () => {
-                            if (selectedFolder) {
-                                const createCallback = async (newFolderId: string) => {
-                                    await loadChildren(selectedFolder);
-                                    setInitiallyExpandedFolders([...initiallyExpandedFolders, selectedFolder]);
-                                    onSelect(newFolderId);
-                                };
-
-                                openCreateFolderModal(selectedFolder, createCallback);
-                            }
-                        }}
+                        onClick={() => selectedFolder && handleCreateNewFolderClick(selectedFolder)}
                     >
                         {c('Action').t`Create New Folder`}
                     </LinkButton>
@@ -193,7 +197,7 @@ const MoveToFolderModal = ({
                 <HasNoFolders
                     onCreate={() => {
                         onClose?.();
-                        openCreateFolderModal(folders[0].linkId);
+                        handleCreateNewFolderClick(folders[0].linkId);
                     }}
                 />
             ),
