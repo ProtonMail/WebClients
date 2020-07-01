@@ -7,7 +7,7 @@ import { getClosestMatches, getBrowserLocale } from 'proton-shared/lib/i18n/help
 import createEventManager from 'proton-shared/lib/eventManager/eventManager';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { destroyOpenPGP, loadOpenPGP } from 'proton-shared/lib/openpgp';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { Model } from 'proton-shared/lib/interfaces/Model';
 
 import EventModelListener from '../eventManager/EventModelListener';
 import EventNotices from '../eventManager/EventNotices';
@@ -17,20 +17,32 @@ import { useApi, useCache } from '../../index';
 import loadEventID from './loadEventID';
 import StandardLoadError from './StandardLoadError';
 
-/** @type any **/
-const StandardPrivateApp = ({
+interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
+    locales?: any;
+    onInit?: () => void;
+    onLogout: () => void;
+    fallback?: React.ReactNode;
+    openpgpConfig?: object;
+    preloadModels?: M[];
+    eventModels?: EvtM[];
+    noModals?: boolean;
+    children: React.ReactNode;
+}
+
+const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     locales = {},
     onLogout,
-    onInit = noop,
+    onInit,
     fallback,
     openpgpConfig,
     preloadModels = [],
     eventModels = [],
+    noModals = false,
     children
-}) => {
+}: Props<T, M, E, EvtM>) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const eventManagerRef = useRef();
+    const eventManagerRef = useRef<ReturnType<typeof createEventManager>>();
     const api = useApi();
     const cache = useCache();
 
@@ -46,7 +58,7 @@ const StandardPrivateApp = ({
                     locales
                 });
             })
-            .then(() => onInit()); // onInit has to happen after locales have been loaded to allow applications to override it
+            .then(() => onInit?.()); // onInit has to happen after locales have been loaded to allow applications to override it
 
         Promise.all([eventManagerPromise, modelsPromise, loadOpenPGP(openpgpConfig)])
             .then(() => {
@@ -68,7 +80,7 @@ const StandardPrivateApp = ({
         return <StandardLoadError />;
     }
 
-    if (loading) {
+    if (loading || !eventManagerRef.current) {
         return (
             <>
                 <ModalsChildren />
@@ -83,7 +95,7 @@ const StandardPrivateApp = ({
                 <EventModelListener models={eventModels} />
                 <EventNotices />
                 <ThemeInjector />
-                <ModalsChildren />
+                {!noModals && <ModalsChildren />}
                 <ForceRefreshProvider>{children}</ForceRefreshProvider>
             </ContactProvider>
         </EventManagerProvider>

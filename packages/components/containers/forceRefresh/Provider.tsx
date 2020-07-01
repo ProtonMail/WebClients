@@ -1,9 +1,12 @@
 import React, { useState, useCallback, useImperativeHandle } from 'react';
-import PropTypes from 'prop-types';
 
-import Context from './context';
+import Context, { refreshFn } from './context';
 
-const ForceRefreshProvider = React.forwardRef(({ children }, ref) => {
+interface Props {
+    children: React.ReactNode;
+}
+
+const ForceRefreshProvider = React.forwardRef<refreshFn, Props>(({ children }: Props, ref) => {
     const [state, setState] = useState(1);
 
     const refresh = useCallback(() => setState((i) => i + 1), []);
@@ -16,9 +19,5 @@ const ForceRefreshProvider = React.forwardRef(({ children }, ref) => {
         </Context.Provider>
     );
 });
-
-ForceRefreshProvider.propTypes = {
-    children: PropTypes.node.isRequired
-};
 
 export default ForceRefreshProvider;

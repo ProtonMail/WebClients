@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 import EventManagerContext from './context';
+import createEventManager from 'proton-shared/lib/eventManager/eventManager';
 
-const EventManagerProvider = ({ eventManager, children }) => {
+interface Props {
+    eventManager: ReturnType<typeof createEventManager>;
+    children: React.ReactNode;
+}
+
+const EventManagerProvider = ({ eventManager, children }: Props) => {
     useEffect(() => {
         eventManager.start();
         return () => {
@@ -13,11 +18,6 @@ const EventManagerProvider = ({ eventManager, children }) => {
     }, []);
 
     return <EventManagerContext.Provider value={eventManager}>{children}</EventManagerContext.Provider>;
-};
-
-EventManagerProvider.propTypes = {
-    children: PropTypes.node.isRequired,
-    eventManager: PropTypes.object.isRequired
 };
 
 export default EventManagerProvider;
