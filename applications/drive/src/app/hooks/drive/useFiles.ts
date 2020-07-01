@@ -41,6 +41,7 @@ import { getMetaForTransfer } from '../../components/Drive/Drive';
 import { serializeUint8Array } from 'proton-shared/lib/helpers/serialization';
 import { mergeUint8Arrays } from '../../utils/array';
 import usePreventLeave from '../util/usePreventLeave';
+import { isFile } from '../../utils/file';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -323,7 +324,12 @@ function useFiles() {
      */
     const uploadDriveFiles = queuedFunction(
         'uploadDriveFiles',
-        async (shareId: string, ParentLinkID: string, files: FileList | File[] | { path: string[]; file?: File }[]) => {
+        async (
+            shareId: string,
+            ParentLinkID: string,
+            files: FileList | File[] | { path: string[]; file?: File }[],
+            filesOnly = false
+        ) => {
             const { result, total } = await checkHasEnoughSpace(files);
             if (!result) {
                 const formattedRemaining = humanSize(total);
@@ -337,8 +343,12 @@ function useFiles() {
             const folderPromises = new Map<string, ReturnType<typeof createNewFolder>>();
 
             for (let i = 0; i < files.length; i++) {
-                setTimeout(() => {
+                setTimeout(async () => {
                     const entry = files[i];
+
+                    if (filesOnly && !(await isFile(entry))) {
+                        return;
+                    }
 
                     if (!('path' in entry)) {
                         preventLeave(uploadDriveFile(shareId, ParentLinkID, entry));

@@ -56,7 +56,7 @@ const UploadFolderButton = ({ activeFolder }: Props) => {
             }
         }
 
-        uploadDriveFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload);
+        uploadDriveFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload, true);
     };
 
     return (
