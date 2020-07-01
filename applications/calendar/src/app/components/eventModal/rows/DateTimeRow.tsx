@@ -14,7 +14,6 @@ interface Props {
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;
     endError?: string;
-    isNarrow?: boolean;
 }
 
 const DateTimeRow = ({

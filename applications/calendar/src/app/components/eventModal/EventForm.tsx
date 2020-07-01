@@ -18,7 +18,6 @@ import { MAX_NOTIFICATIONS } from '../../constants';
 
 interface Props {
     isSubmitted: boolean;
-    isNarrow: boolean;
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;
     errors: EventModelErrors;
@@ -26,7 +25,7 @@ interface Props {
     setModel: (value: EventModel) => void;
 }
 
-const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, errors, model, setModel }: Props) => {
+const EventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, errors, model, setModel }: Props) => {
     const allDayRow = (
         <Row collapseOnMobile>
             <span className="pm-label" />
@@ -84,7 +83,6 @@ const EventForm = ({ isSubmitted, isNarrow, displayWeekNumbers, weekStartsOn, er
                 endError={errors.end}
                 displayWeekNumbers={displayWeekNumbers}
                 weekStartsOn={weekStartsOn}
-                isNarrow={isNarrow}
             />
             {timezoneRows}
             {frequencyRow}

@@ -4,13 +4,11 @@ import { c } from 'ttag';
 import Notifications from '../../components/eventModal/Notifications';
 
 import { MAX_DEFAULT_NOTIFICATIONS } from '../../constants';
-import { CalendarErrors, CalendarModel } from '../../interfaces/CalendarModel';
+import { CalendarModel } from '../../interfaces/CalendarModel';
 
 interface Props {
     model: CalendarModel;
     setModel: React.Dispatch<React.SetStateAction<CalendarModel>>;
-    isSubmitted: boolean;
-    errors: CalendarErrors;
 }
 
 const EventSettingsTab = ({ model, setModel }: Props) => {

@@ -35,7 +35,6 @@ const CustomFrequencySelector = ({
                 onChange={onChange}
                 errors={errors}
                 isSubmitted={isSubmitted}
-                collapseOnMobile={collapseOnMobile}
             />
             {frequencyModel.frequency === FREQUENCY.WEEKLY && (
                 <RepeatOnRow
@@ -43,7 +42,6 @@ const CustomFrequencySelector = ({
                     start={start}
                     weekStartsOn={weekStartsOn}
                     onChange={onChange}
-                    collapseOnMobile={collapseOnMobile}
                 />
             )}
             <EndsRow

@@ -70,7 +70,6 @@ const CalendarView = ({
                 targetEventRef={targetEventRef}
                 targetMoreRef={targetMoreRef}
                 targetMoreData={targetMoreData}
-                displayWeekNumbers={displayWeekNumbers}
                 displaySecondaryTimezone={displaySecondaryTimezone}
                 now={now}
                 date={date}

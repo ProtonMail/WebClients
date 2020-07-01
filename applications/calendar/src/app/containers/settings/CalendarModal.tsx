@@ -236,9 +236,7 @@ const CalendarModal = ({
             },
             {
                 title: c('Header').t`Event settings`,
-                content: (
-                    <EventSettingsTab isSubmitted={isSubmitted} errors={errors} model={model} setModel={setModel} />
-                ),
+                content: <EventSettingsTab model={model} setModel={setModel} />,
             },
         ];
 

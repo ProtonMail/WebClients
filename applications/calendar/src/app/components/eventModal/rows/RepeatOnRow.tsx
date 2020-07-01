@@ -16,7 +16,6 @@ interface Props {
     start: DateTimeModel;
     weekStartsOn: WeekStartsOn;
     onChange: (value: FrequencyModel) => void;
-    collapseOnMobile?: boolean;
 }
 const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange }: Props) => {
     const [weekdaysLong, weekdaysAbbreviations] = useMemo(() => {
@@ -40,7 +39,9 @@ const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange }: Props) =
     return (
         <>
             <Row>
-                <div className="mr1 flex flex-items-center"><label htmlFor="event-custom-frequency-select">{c('Label').t`Repeat on`}</label></div>
+                <div className="mr1 flex flex-items-center">
+                    <label htmlFor="event-custom-frequency-select">{c('Label').t`Repeat on`}</label>
+                </div>
                 <div className="flex flex-nowrap flex-item-fluid">
                     {DAYS.map((dayIndex) => {
                         const day = (dayIndex + weekStartsOn) % 7;

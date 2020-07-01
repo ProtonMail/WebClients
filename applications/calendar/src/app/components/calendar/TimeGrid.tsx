@@ -50,7 +50,6 @@ interface Props {
     now: Date;
     date: Date;
     dateRange: [Date, Date];
-    displayWeekNumbers?: boolean;
     isInteractionEnabled?: boolean;
     isScrollDisabled?: boolean;
     events?: CalendarViewEvent[];

@@ -864,7 +864,6 @@ const InteractiveCalendarView = ({
                                         .then(closeAllPopovers)
                                         .catch(noop);
                                 }}
-                                isCreateEvent={isCreatingEvent}
                             />
                         );
                     }

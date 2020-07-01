@@ -13,7 +13,6 @@ interface Props {
     isNarrow: boolean;
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;
-    isCreateEvent: boolean;
     model: EventModel;
     onSave: (value: EventModel) => Promise<void>;
     onClose: () => void;

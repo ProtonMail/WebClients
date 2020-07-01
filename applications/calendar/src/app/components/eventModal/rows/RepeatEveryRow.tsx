@@ -13,7 +13,6 @@ interface Props {
     onChange: (value: FrequencyModel) => void;
     errors: EventModelErrors;
     isSubmitted: boolean;
-    collapseOnMobile?: boolean;
 }
 
 const getMaxFrequencyInterval = (frequency: FREQUENCY) => {

@@ -79,7 +79,6 @@ const CreateEventModal = ({
             <EventForm
                 displayWeekNumbers={displayWeekNumbers}
                 weekStartsOn={weekStartsOn}
-                isNarrow={isNarrow}
                 isSubmitted={isSubmitted}
                 errors={errors}
                 model={model}
