@@ -52,7 +52,7 @@ const RenameModal = ({ renameLink, item, onClose, ...rest }: Props) => {
         }
 
         const nameElement = (
-            <span key="name" style={{ whiteSpace: 'pre' }}>
+            <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
                 &quot;{formattedName}&quot;
             </span>
         );

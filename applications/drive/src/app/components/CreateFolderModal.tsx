@@ -35,7 +35,7 @@ const CreateFolderModal = ({ onClose, createNewFolder, ...rest }: Props) => {
         }
 
         const notificationText = (
-            <span key="name" style={{ whiteSpace: 'pre' }}>
+            <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
                 {c('Success').t`"${name}" created successfully`}
             </span>
         );
