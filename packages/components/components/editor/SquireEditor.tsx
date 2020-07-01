@@ -154,20 +154,11 @@ const SquireEditor = forwardRef(
             <div
                 className={classnames([
                     className,
-                    'editor w100 h100 rounded flex flex-column',
+                    'editor w100 h100 rounded flex flex-column-reverse',
                     disabled && 'editor--disabled',
                     showEllipseButton && 'editor--showEllipsisButton'
                 ])}
             >
-                <EditorToolbar
-                    metadata={metadata}
-                    onChangeMetadata={onChangeMetadata}
-                    squireRef={squireRef}
-                    isNarrow={isNarrow}
-                    editorReady={editorReady}
-                    onAddImages={onAddImages}
-                    moreDropdownExtension={toolbarMoreDropdownExtension}
-                />
                 {metadata.isPlainText ? (
                     <textarea
                         className="w100 h100 flex-item-fluid pt1 pb1 pl0-5 pr0-5"
@@ -196,6 +187,15 @@ const SquireEditor = forwardRef(
                         )}
                     </>
                 )}
+                <EditorToolbar
+                    metadata={metadata}
+                    onChangeMetadata={onChangeMetadata}
+                    squireRef={squireRef}
+                    isNarrow={isNarrow}
+                    editorReady={editorReady}
+                    onAddImages={onAddImages}
+                    moreDropdownExtension={toolbarMoreDropdownExtension}
+                />
             </div>
         );
     }
