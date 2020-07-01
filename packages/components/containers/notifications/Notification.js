@@ -30,6 +30,7 @@ const Notification = ({ children, type, isClosing, onClick, onExit }) => {
             className={classnames([
                 'p1',
                 'mb0-5',
+                'break',
                 CLASSES.NOTIFICATION,
                 CLASSES.NOTIFICATION_IN,
                 TYPES_CLASS[type] || TYPES_CLASS.success,
