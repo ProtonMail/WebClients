@@ -29,7 +29,7 @@ const UploadButton = ({ floating }: Props) => {
             return;
         }
 
-        uploadDriveFiles(folder.shareId, folder.linkId, files);
+        uploadDriveFiles(folder.shareId, folder.linkId, files, true);
     };
 
     return (
