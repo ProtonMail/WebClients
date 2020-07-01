@@ -1,4 +1,4 @@
-const updateObject = <T extends object>(model: T, newModel: Partial<T>) => ({
+const updateObject = <T>(model: T, newModel: Partial<T>) => ({
     ...model,
     ...newModel
 });
