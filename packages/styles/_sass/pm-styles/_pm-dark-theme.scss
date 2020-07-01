@@ -18,7 +18,7 @@
 
 .pm-button--redborder,
 .pm-button.pm-button--redborder {
-	background-color: $pm-global-grey;
+	background-color: transparent;
 	&:focus,
 	&:hover,
 	&:not(div):active,

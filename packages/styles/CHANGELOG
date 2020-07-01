@@ -16,6 +16,8 @@
 - added `no-wrap` helper
 - added `pre` helper and example
 - added some mobile helpers
+- better element list with placeholders
+- new design for header links
 
 ## Updated/fixes
 
@@ -51,6 +53,9 @@
 - fix - increase clickable area around list checkbox
 - hotfix - primary button in disabled state in dark mode
 - fix - `.trashed-messages` styles added
+- fix modal scroll shadow! (not yet fixed on Design system website)
+- fix - crazy combination of `.pm-button--redborder` mixed with `.pm-button--link` and `.pm-button`
+- fix some stuff on Design system website, shame on me for not taking care of you, my dear website.
 
 
 # [1.8.3] - 2019-05-18
