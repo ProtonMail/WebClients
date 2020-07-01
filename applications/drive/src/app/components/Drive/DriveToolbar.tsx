@@ -48,7 +48,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
         if (!selectedItems.length) {
             return (
                 <>
-                    <CreateNewFolderButton activeFolder={activeFolder} />
+                    <CreateNewFolderButton />
                     {isDesktop && (
                         <>
                             <ToolbarSeparator />

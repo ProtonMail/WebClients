@@ -6,7 +6,6 @@ import { ToolbarButton, useModals } from 'react-components';
 import { useDriveContent } from '../DriveContentProvider';
 import { DriveFolder } from '../DriveFolderProvider';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import CreateFolderModal from '../../CreateFolderModal';
 import MoveToFolderModal from '../../MoveToFolderModal';
 import useDrive from '../../../hooks/drive/useDrive';
 import useListNotifications from '../../../hooks/util/useListNotifications';
@@ -20,24 +19,12 @@ interface Props {
 const MoveToFolderButton = ({ activeFolder, disabled }: Props) => {
     const { createModal } = useModals();
     const { createMoveLinksNotifications } = useListNotifications();
-    const { createNewFolder, getShareMeta, getLinkMeta, getFoldersOnlyMetas, moveLinks, events } = useDrive();
+    const { getShareMeta, getLinkMeta, getFoldersOnlyMetas, moveLinks, events } = useDrive();
     const { fileBrowserControls } = useDriveContent();
     const cache = useDriveCache();
 
     const { selectedItems } = fileBrowserControls;
     const { shareId } = activeFolder;
-
-    const handleCreateFolder = async (parentFolderId: string, callback?: (newFolderId: string) => void) => {
-        createModal(
-            <CreateFolderModal
-                createNewFolder={async (name) => {
-                    const { Folder } = await createNewFolder(shareId, parentFolderId, name);
-                    await events.call(shareId);
-                    callback?.(Folder.ID);
-                }}
-            />
-        );
-    };
 
     const moveToFolder = () => {
         if (!selectedItems.length) {
@@ -64,7 +51,6 @@ const MoveToFolderButton = ({ activeFolder, disabled }: Props) => {
 
                     await events.call(shareId);
                 }}
-                openCreateFolderModal={handleCreateFolder}
             />
         );
     };

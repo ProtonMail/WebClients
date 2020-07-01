@@ -2,14 +2,20 @@ import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
 import { validateLinkName } from '../utils/validation';
+import useDrive from '../hooks/drive/useDrive';
+import { useDriveActiveFolder, DriveFolder } from './Drive/DriveFolderProvider';
 
 interface Props {
     onClose?: () => void;
-    createNewFolder: (name: string) => Promise<void>;
+    onCreateDone?: (folderId: string) => void;
+    folder?: DriveFolder;
 }
 
-const CreateFolderModal = ({ onClose, createNewFolder, ...rest }: Props) => {
+const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) => {
     const { createNotification } = useNotifications();
+
+    const { folder: activeFolder } = useDriveActiveFolder();
+    const { createNewFolder, events } = useDrive();
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
 
@@ -22,11 +28,21 @@ const CreateFolderModal = ({ onClose, createNewFolder, ...rest }: Props) => {
     };
 
     const handleSubmit = async () => {
+        const parentFolder = folder || activeFolder;
+
+        if (!parentFolder) {
+            return;
+        }
+
+        const { shareId, linkId } = parentFolder;
+
         const name = formatFolderName(folderName);
         setFolderName(name);
 
         try {
-            await createNewFolder(name);
+            const { Folder } = await createNewFolder(shareId, linkId, name);
+            await events.call(shareId);
+            onCreateDone?.(Folder.ID);
         } catch (e) {
             if (e.name === 'ValidationError') {
                 createNotification({ text: e.message, type: 'error' });
