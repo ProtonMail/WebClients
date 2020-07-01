@@ -110,13 +110,13 @@
 
   /* margins */
   $list-margins-mobile: m, mt, mr, mb, ml !default;
-  $list-margins-mobile-values: 0, 0.5, 1, 2 !default; // specify 2.5 if needed
+  $list-margins-mobile-values: 0, 0.25, 0.5, 1, 2 !default; // specify 2.5 if needed
 
   @include margin-generator($list-margins-mobile, $list-margins-mobile-values, "onmobile-");
 
   /* paddings */
   $list-paddings-mobile: p, pt, pr, pb, pl !default;
-  $list-paddings-mobile-values: 0, 0.5, 1, 2 !default; // specify 2.5 if needed
+  $list-paddings-mobile-values: 0, 0.25, 0.5, 1, 2 !default; // specify 2.5 if needed
 
   @include padding-generator($list-paddings-mobile, $list-paddings-mobile-values, "onmobile-");
 
