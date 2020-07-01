@@ -54,7 +54,7 @@ const SidebarFolders = ({ currentLabelID, isConversation, counterMap }: Props) =
         );
 
         // Save expanded state locally
-        setItem(formatFolderID(folder.ID), newExpanded);
+        setItem(formatFolderID(folder.ID), '' + newExpanded);
     };
 
     const treeviewReducer = (acc: ReactNode[], folder: FolderWithSubFolders, level = 0): Array<any> => {
