@@ -14,7 +14,7 @@
 }
 
 .animated-expandmore__button {
-  color:  var(--color-nav-link, $pm-global-light);
+  color: var(--color-nav-link, $white);
   padding: 1.1rem 1rem 1.1rem 2rem;
   width: 100%;
   text-align: left;
@@ -34,7 +34,7 @@
 [aria-expanded="true"].animated-expandmore__button,
 .animated-expandmore__button:active {
   background: var(--main-bg-color, $pm-global-grey);
-  color: var(--color-nav-active, $pm-primary);
+  color: var(--color-nav-active, $white);
   font-weight: bold;
 }
 

@@ -1,6 +1,14 @@
         <header class="header flex flex-nowrap reset4print">
 
-          <div class="logo-container flex flex-item-centered-vert">
+          <div class="logo-container flex flex-nowrap flex-item-centered-vert">
+
+			<button type="button" class="togglemenu nodesktop notablet mr1 color-global-light js-togglemenu" title="Navigation">
+				<svg viewBox="0 0 16 16" class="icon-20p fill-global-light" role="img" focusable="false" aria-hidden="true">
+				<use xlink:href="#shape-burger"></use>
+				</svg>
+				<span class="sr-only">navigation</span>
+			</button>
+
             <a href="/" class="logo-link nodecoration" >
               <svg xmlns="http://www.w3.org/2000/svg" class="logo" aria-labelledby="logo__title plan" viewBox="0 0 92 15.1">
                 <g>
@@ -73,12 +81,12 @@
               </li>
               <li class="mtauto mbauto">
                 <div class="dropDown dropDown--rightArrow flex dropDown-logout">
-                  <button class="navigationUser-button no-pointer-events-children inline-flex flex-items-center flex-nowrap dropDown-logout-button flex increase-surface-click dropdownButton-container js-dropDown-button" type="button" aria-expanded="false">
+                  <button class="navigationUser-button no-pointer-events-children flex flex-items-center flex-nowrap p0-5 dropDown-logout-button increase-surface-click dropdownButton-container js-dropDown-button" type="button" aria-expanded="false">
                     <span class="alignright flex flex-column mr0-5 lh130 nomobile">
                       <span class="inbl mw100 ellipsis dropDown-logout-displayName">Doctor Willy</span>
                       <span class="inbl mw100 ellipsis m0 opacity-30 dropDown-logout-email">willydoctor@protonmail.com</span>
                     </span>
-                    <span class="mtauto mbauto bordered rounded50 p0-5 inbl dropDown-logout-initials flex relative flex-item-noshrink">
+                    <span class="mtauto mbauto bordered rounded p0-25 inbl dropDown-logout-initials relative flex flex-item-noshrink">
                       <span class="dropDown-logout-text center">DW</span>
                       <svg viewBox="0 0 16 16" class="icon-12p expand-caret mauto" role="img" aria-hidden="true" focusable="false">
                         <use xlink:href="#shape-caret"></use>
