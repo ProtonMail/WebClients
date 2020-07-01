@@ -1,13 +1,13 @@
-export default (initialState = {}) => {
+export default (initialState: { [key: string]: any } = {}) => {
     let state = initialState;
 
-    const set = (key, data) => {
+    const set = (key: string, data: any) => {
         state[key] = data;
     };
 
-    const get = (key) => state[key];
+    const get = (key: string) => state[key];
 
-    const remove = (key) => delete state[key];
+    const remove = (key: string) => delete state[key];
 
     const reset = () => {
         state = {};

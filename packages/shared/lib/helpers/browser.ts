@@ -1,4 +1,4 @@
-import UAParser from 'ua-parser-js';
+import { UAParser } from 'ua-parser-js';
 
 const uaParser = new UAParser();
 const ua = uaParser.getResult();
@@ -10,7 +10,7 @@ export const hasModulesSupport = () => {
 
 export const isFileSaverSupported = () => !!new Blob();
 
-export const textToClipboard = (text) => {
+export const textToClipboard = (text = '') => {
     const dummy = document.createElement('textarea');
 
     document.body.appendChild(dummy);
@@ -44,17 +44,11 @@ export const isMobile = () => {
 };
 
 export const doNotTrack = () => {
-    return (
-        navigator.doNotTrack === '1' ||
-        navigator.doNotTrack === 'yes' ||
-        navigator.msDoNotTrack === '1' ||
-        window.doNotTrack === '1'
-    );
+    return navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes' || window.doNotTrack === '1';
 };
 
 /**
  * Do not support window.open event after user interaction
- * @returns {Boolean}
  */
 export const doNotWindowOpen = () => {
     return isDuckDuckGo();
@@ -62,7 +56,7 @@ export const doNotWindowOpen = () => {
 
 export const parseURL = (url = '') => {
     const parser = document.createElement('a');
-    const searchObject = {};
+    const searchObject: { [key: string]: any } = {};
     // Let the browser do the work
     parser.href = url;
     // Convert query string to object
@@ -85,8 +79,10 @@ export const parseURL = (url = '') => {
     };
 };
 
-export const getActiveXObject = (name) => {
+export const getActiveXObject = (name: string) => {
     try {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
         // eslint-disable-next-line no-undef
         return new ActiveXObject(name);
     } catch (error) {
@@ -98,30 +94,30 @@ export const getActiveXObject = (name) => {
 
 export const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 export const hasAcrobatInstalled = () => !!(getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl'));
-export const hasPDFSupport = () => navigator.mimeTypes['application/pdf'] || isIos() || hasAcrobatInstalled();
+export const hasPDFSupport = () => 'application/pdf' in navigator.mimeTypes || isIos() || hasAcrobatInstalled();
 export const redirectTo = (url = '') => document.location.replace(`${document.location.origin}${url}`);
 
 /**
  * Detect browser requiring direct action
  * Like opening a new tab
- * @returns {Boolean}
  */
 export const requireDirectAction = () => isSafari() || isFirefox() || isEdge();
 
 /**
  * Open an URL inside a new tab/window and remove the referrer
  * @links { https://mathiasbynens.github.io/rel-noopener/}
- * @param  {String} url
- * @return {void}
  */
-export const openNewTab = (url) => {
+export const openNewTab = (url: string) => {
     if (isIE11() || isFirefox()) {
-        const win = window.open();
-        win.opener = null;
-        win.location = url;
+        const otherWindow = window.open();
+        if (!otherWindow) {
+            return;
+        }
+        otherWindow.opener = null;
+        otherWindow.location.href = url;
         return;
     }
-    const anchor = document.createElement('A');
+    const anchor = document.createElement('a');
 
     anchor.setAttribute('rel', 'noreferrer nofollow noopener');
     anchor.setAttribute('target', '_blank');

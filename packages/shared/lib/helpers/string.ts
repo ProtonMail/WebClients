@@ -114,10 +114,6 @@ export const arrayToBinaryString = (bytes: Uint8Array): string => {
     return result.join('');
 };
 
-/**
- * @param {String} str
- * @return {Uint8Array}
- */
 export const binaryStringToArray = (str: string) => {
     const result = new Uint8Array(str.length);
     for (let i = 0; i < str.length; i++) {

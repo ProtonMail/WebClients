@@ -1,15 +1,18 @@
 import { runChunksDelayed } from '../../helpers/promise';
 import { chunk } from '../../helpers/array';
 
-/**
- * Query pages throttled to not hit rate limiting.
- * @param {function} requestPage
- * @param {Number} pageSize
- * @param {Number} pagesPerChunk
- * @param {Number} delayPerChunk
- * @returns {Promise<Array>}
- */
-const queryPagesThrottled = async ({ requestPage, pageSize, pagesPerChunk, delayPerChunk }) => {
+interface Arguments<T> {
+    requestPage: (page: number) => Promise<T>;
+    pageSize: number;
+    pagesPerChunk: number;
+    delayPerChunk: number;
+}
+const queryPagesThrottled = async <T extends { Total: number }>({
+    requestPage,
+    pageSize,
+    pagesPerChunk,
+    delayPerChunk
+}: Arguments<T>) => {
     const firstPage = await requestPage(0);
     const n = Math.ceil(firstPage.Total / pageSize) - 1; // First page already loaded
 

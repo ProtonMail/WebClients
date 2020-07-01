@@ -2,6 +2,7 @@ import getRandomValues from 'get-random-values';
 
 // Not using openpgp to allow using this without having to depend on openpgp being loaded
 import { binaryStringToArray, arrayToBinaryString } from './string';
+import { hasStorage as hasSessionStorage } from './sessionStorage';
 
 /**
  * Partially inspired by http://www.thomasfrank.se/sessionvars.html
@@ -36,7 +37,7 @@ import { binaryStringToArray, arrayToBinaryString } from './string';
  * of the data is therefore the smaller lifetime, that of window.name.
  */
 
-const deserialize = (string) => {
+const deserialize = (string: string) => {
     try {
         return JSON.parse(string);
     } catch (e) {
@@ -44,14 +45,9 @@ const deserialize = (string) => {
     }
 };
 
-const serialize = (data) => JSON.stringify(data);
+const serialize = (data: any) => JSON.stringify(data);
 
-/**
- * Deserialize an item
- * @param {string} value
- * @return {Uint8Array}
- */
-const deserializeItem = (value) => {
+const deserializeItem = (value: string) => {
     if (!value) {
         return;
     }
@@ -62,21 +58,11 @@ const deserializeItem = (value) => {
     }
 };
 
-/**
- * Serialize an item
- * @param {Uint8Array} value
- * @return {String}
- */
-const serializeItem = (value) => {
+const serializeItem = (value: Uint8Array) => {
     return btoa(arrayToBinaryString(value));
 };
 
-/**
- * TODO: Replace this with one key when the other apps have been updated.
- * @param {Array} keys
- * @param {Object} data
- */
-const saveSessionStorage = (keys = [], data) => {
+const saveSessionStorage = (keys: string[] = [], data: any) => {
     keys.forEach((key) => {
         const value = data[key];
         if (!value) {
@@ -86,36 +72,16 @@ const saveSessionStorage = (keys = [], data) => {
     }, {});
 };
 
-const hasSessionStorage = () => {
-    // Wrap in try-catch to avoid throwing SecurityError on safari when storage is disabled.
-    try {
-        return !!window.sessionStorage;
-    } catch (e) {
-        return false;
-    }
-};
-
-/**
- * TODO: Replace this with one key when the other apps have been updated.
- * @param {Array} keys
- * @return {Object}
- */
-const readSessionStorage = (keys = []) => {
-    return keys.reduce((acc, key) => {
+const readSessionStorage = (keys: string[] = []) => {
+    return keys.reduce<{ [key: string]: any }>((acc, key) => {
         acc[key] = window.sessionStorage.getItem(key);
         window.sessionStorage.removeItem(key);
         return acc;
     }, {});
 };
 
-/**
- * Parts two parts into an object.
- * @param {Object} share1
- * @param {Object} share2
- * @return {Object}
- */
-export const mergeParts = (share1, share2) =>
-    Object.keys(share1).reduce((acc, key) => {
+export const mergeParts = (share1: any, share2: any) =>
+    Object.keys(share1).reduce<{ [key: string]: string }>((acc, key) => {
         const share1Value = deserializeItem(share1[key]);
         const share2Value = deserializeItem(share2[key]);
 
@@ -123,7 +89,7 @@ export const mergeParts = (share1, share2) =>
             return acc;
         }
 
-        const xored = new Array(share2Value.length);
+        const xored = new Uint8Array(share2Value.length);
 
         for (let j = 0; j < share2Value.length; j++) {
             xored[j] = share2Value[j] ^ share1Value[j];
@@ -139,13 +105,8 @@ export const mergeParts = (share1, share2) =>
         return acc;
     }, {});
 
-/**
- * Separate an object in two parts.
- * @param {Object} data
- * @return {{share1: {}, share2: {}}}
- */
-export const separateParts = (data) =>
-    Object.keys(data).reduce(
+export const separateParts = (data: any) =>
+    Object.keys(data).reduce<{ share1: { [key: string]: any }; share2: { [key: string]: any } }>(
         (acc, key) => {
             const value = data[key];
             if (!value) {
@@ -170,12 +131,7 @@ export const separateParts = (data) =>
         { share1: {}, share2: {} }
     );
 
-/**
- * Save data to name storage and session storage.
- * @param {Array} keys
- * @param {Object} data
- */
-export const save = (keys, data) => {
+export const save = (keys: string[], data: any) => {
     if (!hasSessionStorage()) {
         return;
     }
@@ -186,12 +142,7 @@ export const save = (keys, data) => {
     saveSessionStorage(keys, share2);
 };
 
-/**
- * Load data from name storage and session storage.
- * @param {Array} keys
- * @return {Object}
- */
-export const load = (keys) => {
+export const load = (keys: string[]) => {
     if (!hasSessionStorage()) {
         return {};
     }

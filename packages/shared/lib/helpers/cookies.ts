@@ -1,4 +1,4 @@
-export const getCookies = () => {
+export const getCookies = (): string[] => {
     try {
         return document.cookie.split(';').map((item) => item.trim());
     } catch (e) {
@@ -6,6 +6,6 @@ export const getCookies = () => {
     }
 };
 
-export const checkCookie = (name, value) => {
+export const checkCookie = (name: string, value: string) => {
     return getCookies().some((cookie) => cookie.includes(`${name}=${value}`));
 };

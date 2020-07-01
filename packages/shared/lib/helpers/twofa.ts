@@ -6,6 +6,14 @@ export const generateSharedSecret = (length = 20) => {
     return encode(randomBytes);
 };
 
+interface GetUriArguments {
+    identifier: string;
+    sharedSecret: string;
+    issuer?: string;
+    digits?: number;
+    algorithm?: string;
+    period?: number;
+}
 export const getUri = ({
     identifier,
     sharedSecret,
@@ -13,6 +21,6 @@ export const getUri = ({
     digits = 6,
     algorithm = 'SHA1',
     period = 30
-}) => {
+}: GetUriArguments) => {
     return `otpauth://totp/${identifier}?secret=${sharedSecret}&issuer=${issuer}&algorithm=${algorithm}&digits=${digits}&period=${period}`;
 };
