@@ -46,7 +46,9 @@ const PrivateApp = ({ throughLogin, onLogout }: Props) => {
                 UserSettingsModel as Model<any>,
                 LabelsModel,
                 AddressesModel,
-                MailSettingsModel as Model<any>
+                MailSettingsModel as Model<any>,
+                MessageCountsModel as Model<any>,
+                ConversationCountsModel as Model<any>
             ]}
             eventModels={[
                 UserModel,

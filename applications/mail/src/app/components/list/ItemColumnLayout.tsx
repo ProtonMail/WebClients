@@ -25,6 +25,7 @@ interface Props {
     senders: string;
     unread: boolean;
     displayRecipients: boolean;
+    loading: boolean;
 }
 
 const ItemColumnLayout = ({
@@ -36,30 +37,37 @@ const ItemColumnLayout = ({
     showIcon,
     senders,
     unread,
-    displayRecipients
+    displayRecipients,
+    loading
 }: Props) => {
     const { Subject } = element;
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
 
     return (
-        <div className="flex-item-fluid flex flex-nowrap flex-column flex-spacebetween item-titlesender">
+        <div className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender">
             <div className="flex flex-items-center item-firstline">
-                <div className="flex-item-fluid flex pr1">
+                <div className="item-senders flex-item-fluid flex pr1">
                     <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>
-                        {displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
+                        {!loading && displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
                     </span>
                     <ItemAction element={element} className="ml0-5 mtauto mbauto" />
                 </div>
-                <ItemDate element={element} labelID={labelID} className={classnames([unread && 'bold', 'item-date'])} />
+                <ItemDate
+                    element={element}
+                    labelID={labelID}
+                    className={classnames([unread && 'bold', 'item-senddate-col'])}
+                />
                 <span className="ml0-5 flex">
                     <ItemStar element={element} />
                 </span>
             </div>
             <div className="flex flex-items-center item-secondline mw100">
-                <div className="flex-item-fluid flex w0 pr1 flex-nowrap">
-                    <span className="flex-item-noshrink">
-                        <ItemExpiration element={element} />
-                    </span>
+                <div className="item-subject flex-item-fluid flex w0 pr1 flex-nowrap">
+                    {!!element.ExpirationTime && (
+                        <span className="flex-item-noshrink">
+                            <ItemExpiration element={element} />
+                        </span>
+                    )}
                     {showIcon && (
                         <span className="mr0-25 inline-flex flex-self-end alignbaseline flex-item-noshrink">
                             <ItemLocation message={element as Message} mailSettings={mailSettings} />

@@ -1,11 +1,12 @@
 import { useState, useEffect, useMemo } from 'react';
-import { useApi, useCache } from 'react-components';
+import { useApi, useCache, useConversationCounts, useMessageCounts } from 'react-components';
 import { queryConversations, getConversation } from 'proton-shared/lib/api/conversations';
 import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
+import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/models';
+import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 
-import { Conversation } from '../models/conversation';
 import { sort as sortElements, hasLabel, parseLabelIDsInEvent, isSearch, isFilter } from '../helpers/elements';
 import { Element } from '../models/element';
 import { Page, Filter, Sort, SearchParameters } from '../models/tools';
@@ -20,7 +21,6 @@ import {
 } from '../models/event';
 import { useSubscribeEventManager } from './useHandler';
 import { useExpirationCheck } from './useExpiration';
-import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/models';
 
 interface Options {
     conversationMode: boolean;
@@ -29,6 +29,19 @@ interface Options {
     sort: Sort;
     filter: Filter;
     search: SearchParameters;
+}
+
+interface ReturnValue {
+    labelID: string;
+    elements: Element[];
+    expectedLength: number;
+    pendingRequest: boolean;
+    loading: boolean;
+    total: number;
+}
+
+interface UseElements {
+    (options: Options): ReturnValue;
 }
 
 interface CacheParams {
@@ -53,28 +66,28 @@ interface Cache {
     updatedElements: string[];
 }
 
-const emptyCache = (page: Page, params: CacheParams): Cache => ({
-    params,
-    page,
-    elements: {},
-    pages: [],
-    updatedElements: []
-});
+const emptyCache = (page: Page, labelID: string, counts: LabelCount[], params: CacheParams): Cache => {
+    const total = counts.find((count) => count.LabelID === labelID)?.Total || 0;
 
-export const useElements = ({
-    conversationMode,
-    labelID,
-    search,
-    page,
-    sort,
-    filter
-}: Options): [string, Conversation[], boolean, number] => {
+    return {
+        params,
+        page: { ...page, total },
+        elements: {},
+        pages: [],
+        updatedElements: []
+    };
+};
+
+export const useElements: UseElements = ({ conversationMode, labelID, search, page, sort, filter }) => {
     const api = useApi();
     const [loading, setLoading] = useState(false);
     const [invalidated, setInvalidated] = useState(false);
     const [beforeFirstLoad, setBeforeFirstLoad] = useState(true);
+    const [conversationCounts = []] = useConversationCounts() as [LabelCount[], boolean, Error];
+    const [messageCounts = []] = useMessageCounts() as [LabelCount[], boolean, Error];
+    const counts = conversationMode ? conversationCounts : messageCounts;
     const [localCache, setLocalCache] = useState<Cache>(
-        emptyCache(page, {
+        emptyCache(page, labelID, counts, {
             labelID,
             sort,
             filter,
@@ -118,7 +131,7 @@ export const useElements = ({
         return sorted.slice(startIndex, endIndex);
     }, [localCache]);
 
-    const total = useMemo(() => localCache.page.total, [localCache.page.total]);
+    const expectedLength = useMemo(() => expectedPageLength(localCache.page), [localCache.page]);
 
     const paramsChanged = () =>
         labelID !== localCache.params.labelID ||
@@ -150,12 +163,9 @@ export const useElements = ({
     // Live cache means we listen to events from event manager without refreshing the list every time
     const isLiveCache = () => !isSearch(search) && !isFilter(filter) && hasListFromTheStart();
 
-    const isExpectedLength = () => !isLiveCache() || elements.length === expectedPageLength({ ...page, total });
-
     const shouldResetCache = () => !loading && (paramsChanged() || !pageIsConsecutive() || lastHasBeenUpdated());
 
-    const shouldSendRequest = () =>
-        !loading && (invalidated || shouldResetCache() || !pageCached() || !isExpectedLength());
+    const shouldSendRequest = () => !loading && (invalidated || shouldResetCache() || !pageCached());
 
     const shouldUpdatePage = () => pageChanged() && pageCached();
 
@@ -206,7 +216,7 @@ export const useElements = ({
 
     const resetCache = () =>
         setLocalCache(
-            emptyCache(page, {
+            emptyCache(page, labelID, counts, {
                 labelID,
                 sort,
                 filter,
@@ -267,14 +277,23 @@ export const useElements = ({
         localCache.updatedElements
     ]);
 
+    // Watch for expected length and invalidate the list if wrong
+    useEffect(() => {
+        if (elements.length !== 0 && elements.length !== expectedLength) {
+            setInvalidated(elements.length !== expectedLength);
+        }
+    }, [elements.length, expectedLength]);
+
     // Listen to event manager and update de cache
     useSubscribeEventManager(
         async ({ Conversations = [], Messages = [], ConversationCounts = [], MessageCounts = [] }: Event) => {
             const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
             const Counts: ElementCountEvent[] = conversationMode ? ConversationCounts : MessageCounts;
 
-            if (!isLiveCache() && Elements.length) {
-                setInvalidated(true);
+            if (!isLiveCache()) {
+                if (Elements.length) {
+                    setInvalidated(true);
+                }
                 return;
             }
 
@@ -350,5 +369,12 @@ export const useElements = ({
         }
     );
 
-    return [localCache.params.labelID, elements, (beforeFirstLoad || loading) && !invalidated, localCache.page.total];
+    return {
+        labelID: localCache.params.labelID,
+        elements,
+        expectedLength,
+        pendingRequest: loading,
+        loading: (beforeFirstLoad || loading) && !invalidated,
+        total: localCache.page.total
+    };
 };

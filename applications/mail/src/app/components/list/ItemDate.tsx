@@ -29,7 +29,13 @@ const ItemDate = ({ element, labelID, className, mode = 'simple' }: Props) => {
     const formater = FORMATERS[mode] || FORMATERS.distance;
 
     useEffect(() => {
-        const update = () => setFormattedDate(formater(getDate(element, labelID)));
+        const date = getDate(element, labelID);
+
+        if (date.getTime() === 0) {
+            return;
+        }
+
+        const update = () => setFormattedDate(formater(date));
 
         update();
 

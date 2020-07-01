@@ -25,6 +25,7 @@ interface Props {
     senders: string;
     unread: boolean;
     displayRecipients: boolean;
+    loading: boolean;
 }
 
 const ItemRowLayout = ({
@@ -36,7 +37,8 @@ const ItemRowLayout = ({
     showIcon,
     senders,
     unread,
-    displayRecipients
+    displayRecipients,
+    loading
 }: Props) => {
     const { Subject, Size } = element;
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
@@ -47,13 +49,13 @@ const ItemRowLayout = ({
             <div className="mtauto mbauto flex mr0-5">
                 <ItemStar element={element} />
             </div>
-            <div className={classnames(['w20 flex mauto pr1', unread && 'bold'])}>
+            <div className={classnames(['item-senders w20 flex mauto pr1', unread && 'bold'])}>
                 <span className="mw100 ellipsis">
-                    {displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
+                    {!loading && displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
                 </span>
             </div>
-            <div className="flex-item-fluid flex flex-items-center flex-nowrap mauto">
-                <ItemExpiration element={element} />
+            <div className="item-subject flex-item-fluid flex flex-items-center flex-nowrap mauto">
+                {!!element.ExpirationTime && <ItemExpiration element={element} />}
                 {showIcon && (
                     <span className="mr0-25 inline-flex flex-item-noshrink">
                         <ItemLocation message={element as Message} mailSettings={mailSettings} />
@@ -66,8 +68,8 @@ const ItemRowLayout = ({
                 <ItemLabels max={4} labels={labels} element={element} className="mlauto flex flex-nowrap" />
                 <ItemAttachmentIcon element={element} className="ml0-5 flex-self-vcenter" />
             </div>
-            <span className="mtauto mbauto mr1 ml1 ng-binding">{size}</span>
-            <span className="mauto w10e alignright">
+            <span className="item-weight mtauto mbauto mr1 ml1 ng-binding">{!loading && size}</span>
+            <span className="item-senddate-row mauto w10e alignright">
                 <ItemDate element={element} labelID={labelID} className={unread ? 'bold' : undefined} />
             </span>
         </div>

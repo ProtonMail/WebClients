@@ -7,7 +7,15 @@ import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { useElements } from './useElements';
 import { Element } from '../models/element';
 import { Page, Sort, Filter, SearchParameters } from '../models/tools';
-import { renderHook, clearAll, addApiMock, api, triggerEvent, addApiResolver } from '../helpers/test/helper';
+import {
+    renderHook,
+    clearAll,
+    addApiMock,
+    api,
+    triggerEvent,
+    addApiResolver,
+    addToCache
+} from '../helpers/test/helper';
 import { ConversationLabel, Conversation } from '../models/conversation';
 import { Event } from '../models/event';
 
@@ -53,17 +61,20 @@ describe('useElements', () => {
         filter = defaultFilter,
         search = defaultSearch
     }: SetupArgs = {}) => {
+        const counts = { LabelID: inputLabelID, Total: page.total };
+        addToCache('ConversationCounts', conversationMode ? [counts] : []);
+        addToCache('MessageCounts', conversationMode ? [] : [counts]);
         addApiMock('conversations', () => ({ Total: page.total, Conversations: elements }));
 
         if (renderHookResult === null) {
             renderHookResult = renderHook((props: any = {}) =>
                 useElements({ conversationMode, labelID: inputLabelID, page, sort, filter, search, ...props })
             );
+            await renderHookResult.waitForNextUpdate();
         } else {
             renderHookResult.rerender({ conversationMode, labelID: inputLabelID, page, sort, filter });
         }
 
-        await renderHookResult.waitForNextUpdate();
         return renderHookResult;
     };
 
@@ -81,22 +92,19 @@ describe('useElements', () => {
 
     describe('elements memo', () => {
         it('should order by label context time', async () => {
-            const result = await setup({ elements: [element1, element2] });
-            const [, elements] = result.result.current;
-            expect(elements).toEqual([element2, element1]);
+            const hook = await setup({ elements: [element1, element2] });
+            expect(hook.result.current.elements).toEqual([element2, element1]);
         });
 
         it('should filter message with the right label', async () => {
-            const result = await setup({ elements: [element1, element2, element3] });
-            const [, elements] = result.result.current;
-            expect(elements.length).toBe(2);
+            const hook = await setup({ elements: [element1, element2, element3] });
+            expect(hook.result.current.elements.length).toBe(2);
         });
 
         it('should limit to the page size', async () => {
             const page: Page = { page: 0, size: 5, limit: 5, total: 15 };
-            const result = await setup({ elements: getElements(page.total), page });
-            const [, elements] = result.result.current;
-            expect(elements.length).toBe(page.size);
+            const hook = await setup({ elements: getElements(page.total), page });
+            expect(hook.result.current.elements.length).toBe(page.size);
         });
 
         it('should returns the current page', async () => {
@@ -105,10 +113,10 @@ describe('useElements', () => {
             const allElements = getElements(page1.total);
 
             const hook = await setup({ elements: allElements.slice(0, page1.size), page: page1 });
-            await setup({ elements: allElements.slice(page2.size), page: page2 });
-
-            const [, elements] = hook.result.current;
-            expect(elements.length).toBe(page1.total - page1.size);
+            await act(async () => {
+                await setup({ elements: allElements.slice(page2.size), page: page2 });
+            });
+            expect(hook.result.current.elements.length).toBe(page1.total - page1.size);
         });
 
         it('should returns elements sorted', async () => {
@@ -116,11 +124,13 @@ describe('useElements', () => {
             const sort1: Sort = { sort: 'Size', desc: false };
             const sort2: Sort = { sort: 'Size', desc: true };
 
-            let result = await setup({ elements, sort: sort1 });
-            expect(result.result.current[1]).toEqual([element2, element1]);
+            let hook = await setup({ elements, sort: sort1 });
+            expect(hook.result.current.elements).toEqual([element2, element1]);
 
-            result = await setup({ elements, sort: sort2 });
-            expect(result.result.current[1]).toEqual([element1, element2]);
+            await act(async () => {
+                hook = await setup({ elements, sort: sort2 });
+            });
+            expect(hook.result.current.elements).toEqual([element1, element2]);
         });
     });
 
@@ -138,7 +148,7 @@ describe('useElements', () => {
 
             expect(api).toHaveBeenCalledWith(expectedRequest);
 
-            const [resultLabelID, elements, loading, total] = result.result.current;
+            const { labelID: resultLabelID, elements, loading, total } = result.result.current;
 
             expect(resultLabelID).toBe(labelID);
             expect(elements.length).toBe(page.size);
@@ -158,7 +168,7 @@ describe('useElements', () => {
             await sendEvent({
                 Conversations: [{ ID: element.ID, Action: EVENT_ACTIONS.CREATE, Conversation: element as Conversation }]
             });
-            expect(hook.result.current[1].length).toBe(4);
+            expect(hook.result.current.elements.length).toBe(4);
         });
 
         it('should not add to the cache a message which is not existing when a search is active', async () => {
@@ -173,7 +183,7 @@ describe('useElements', () => {
             await sendEvent({
                 Conversations: [{ ID: element.ID, Action: EVENT_ACTIONS.CREATE, Conversation: element as Conversation }]
             });
-            expect(hook.result.current[1].length).toBe(3);
+            expect(hook.result.current.elements.length).toBe(3);
             expect(api.mock.calls.length).toBe(2);
         });
 
@@ -186,7 +196,7 @@ describe('useElements', () => {
             await sendEvent({
                 Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }]
             });
-            expect(hook.result.current[1].length).toBe(3);
+            expect(hook.result.current.elements.length).toBe(3);
             expect(api.mock.calls.length).toBe(2);
         });
 
@@ -198,7 +208,7 @@ describe('useElements', () => {
             await sendEvent({
                 Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }]
             });
-            expect(hook.result.current[1].length).toBe(3);
+            expect(hook.result.current.elements.length).toBe(3);
             expect(api.mock.calls.length).toBe(1);
         });
 
@@ -210,7 +220,7 @@ describe('useElements', () => {
             await sendEvent({
                 Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }]
             });
-            expect(hook.result.current[1].length).toBe(5);
+            expect(hook.result.current.elements.length).toBe(5);
             expect(api.mock.calls.length).toBe(2);
         });
 
@@ -223,7 +233,7 @@ describe('useElements', () => {
             await sendEvent({
                 Conversations: [{ ID, Action: EVENT_ACTIONS.DELETE, Conversation: { ID } as Conversation }]
             });
-            expect(hook.result.current[1].length).toBe(3);
+            expect(hook.result.current.elements.length).toBe(3);
             expect(api.mock.calls.length).toBe(2);
         });
 
@@ -298,14 +308,14 @@ describe('useElements', () => {
             );
 
             // First load pending
-            expect(hook.result.current[2]).toBe(true);
+            expect(hook.result.current.loading).toBe(true);
 
             resolve({ Total: page.total, Conversations: elements });
 
             await hook.waitForNextUpdate();
 
             // First load finished
-            expect(hook.result.current[2]).toBe(false);
+            expect(hook.result.current.loading).toBe(false);
 
             const element = elements[0];
             await sendEvent({
@@ -313,8 +323,8 @@ describe('useElements', () => {
             });
 
             // Event triggered a reload, load is pending but it's hidded to the user
-            expect(hook.result.current[2]).toBe(false);
-            expect(hook.result.current[1].length).toBe(5);
+            expect(hook.result.current.loading).toBe(false);
+            expect(hook.result.current.elements.length).toBe(5);
 
             await act(async () => {
                 resolve({ Total: page.total, Conversations: elements });
@@ -322,7 +332,7 @@ describe('useElements', () => {
             });
 
             // Load finished
-            expect(hook.result.current[2]).toBe(false);
+            expect(hook.result.current.loading).toBe(false);
         });
 
         it('should show the loader if not live cache and params has changed', async () => {
@@ -345,20 +355,20 @@ describe('useElements', () => {
             );
 
             // First load pending
-            expect(hook.result.current[2]).toBe(true);
+            expect(hook.result.current.loading).toBe(true);
 
             resolve({ Total: page.total, Conversations: elements });
 
             await hook.waitForNextUpdate();
 
             // First load finished
-            expect(hook.result.current[2]).toBe(false);
+            expect(hook.result.current.loading).toBe(false);
 
             hook.rerender({ search: { keyword: 'changed' } as SearchParameters });
 
             // Params has changed, cache is reseted
-            expect(hook.result.current[2]).toBe(true);
-            expect(hook.result.current[1].length).toBe(0);
+            expect(hook.result.current.loading).toBe(true);
+            expect(hook.result.current.elements.length).toBe(0);
 
             await act(async () => {
                 resolve({ Total: page.total, Conversations: elements });
@@ -366,7 +376,7 @@ describe('useElements', () => {
             });
 
             // Load finished
-            expect(hook.result.current[2]).toBe(false);
+            expect(hook.result.current.loading).toBe(false);
         });
     });
 });

@@ -20,7 +20,6 @@ import {
     useAddresses,
     useContactEmails,
     useMailSettings,
-    Loader,
     Input
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
@@ -157,9 +156,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
         }
     }, [isOpen]);
 
-    if (loadingLabels || loadingFolders || loadingAddresses || loadingContactEmails || loadingMailSettings) {
-        return <Loader />;
-    }
+    const loading = loadingLabels || loadingFolders || loadingAddresses || loadingContactEmails || loadingMailSettings;
 
     const treeview: FolderWithSubFolders[] = buildTreeview(folders);
 
@@ -195,6 +192,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                 isOpen={isOpen}
                 onClick={toggle}
                 hasCaret={false}
+                disabled={loading}
             >
                 {isNarrow ? (
                     <Icon name="search" className={classnames(['topnav-icon'])} />

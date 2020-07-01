@@ -1,7 +1,7 @@
-import React, { useState, useEffect, ChangeEvent, DragEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent, DragEvent, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
-import { useLabels, useContactEmails, useContactGroups } from 'react-components';
+import { useLabels, useContactEmails, useContactGroups, generateUID } from 'react-components';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 
 import Item from './Item';
@@ -12,9 +12,12 @@ import { DRAG_ELEMENT_KEY } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 
 import './Drag.scss';
+import { range } from 'proton-shared/lib/helpers/array';
 
 interface Props {
     labelID: string;
+    loading: boolean;
+    expectedLength: number;
     elementID?: string;
     userSettings: UserSettings;
     mailSettings: MailSettings;
@@ -29,24 +32,34 @@ interface Props {
 
 const List = ({
     labelID,
+    loading,
+    expectedLength,
     elementID,
     userSettings,
     mailSettings,
     columnLayout,
-    elements = [],
+    elements: inputElements = [],
     checkedIDs = [],
     onCheck,
     onClick,
     location,
     isSearch
 }: Props) => {
-    const [contacts = [], loadingContacts] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
-    const [contactGroups = [], loadingGroups] = useContactGroups();
+    const [contacts = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
+    const [contactGroups = []] = useContactGroups();
     const [labels] = useLabels();
     const [lastChecked, setLastChecked] = useState<string>(); // Store ID of the last element ID checked
     const [dragElement, setDragElement] = useState<HTMLDivElement>();
     const [draggedIDs, setDraggedIDs] = useState<string[]>([]);
     const [savedCheck, setSavedCheck] = useState<string[]>();
+
+    const elements = useMemo(
+        () =>
+            loading
+                ? range(0, expectedLength).map(() => ({ ID: generateUID('placeholder') } as Element))
+                : inputElements,
+        [loading, inputElements]
+    );
 
     useEffect(() => {
         setDraggedIDs([]);
@@ -58,10 +71,6 @@ const List = ({
             onCheck(filteredCheckedIDs, true, true);
         }
     }, [elements]);
-
-    if (loadingContacts || loadingGroups) {
-        return null;
-    }
 
     const handleCheck = (elementID: string) => (event: ChangeEvent) => {
         const target = event.target as HTMLInputElement;
@@ -137,13 +146,14 @@ const List = ({
         <EmptyView labelID={labelID} isSearch={isSearch} />
     ) : (
         <>
-            {elements.map((element) => {
+            {elements.map((element, index) => {
                 return (
                     <Item
+                        key={element.ID}
                         location={location}
                         labels={labels}
                         labelID={labelID}
-                        key={element.ID}
+                        loading={loading}
                         columnLayout={columnLayout}
                         elementID={elementID}
                         element={element}
@@ -157,6 +167,7 @@ const List = ({
                         onDragStart={handleDragStart(element)}
                         onDragEnd={handleDragEnd}
                         dragged={draggedIDs.includes(element.ID || '')}
+                        index={index}
                     />
                 );
             })}

@@ -25,6 +25,7 @@ interface Props {
     location: Location;
     labels?: Label[];
     labelID: string;
+    loading: boolean;
     elementID?: string;
     userSettings: UserSettings;
     mailSettings: MailSettings;
@@ -38,12 +39,14 @@ interface Props {
     onDragStart: (event: DragEvent) => void;
     onDragEnd: (event: DragEvent) => void;
     dragged: boolean;
+    index: number;
 }
 
 const Item = ({
     location,
     labelID,
     labels,
+    loading,
     element,
     elementID,
     columnLayout,
@@ -56,7 +59,8 @@ const Item = ({
     onClick,
     onDragStart,
     onDragEnd,
-    dragged
+    dragged,
+    index
 }: Props) => {
     const { ID = '' } = element;
     const displayRecipients = [SENT, ALL_SENT].includes(labelID as MAILBOX_LABEL_IDS);
@@ -99,7 +103,7 @@ const Item = ({
         <Checkbox className="item-icon-compact mr0-75 stop-propagation" checked={checked} onChange={onCheck} />
     ) : (
         <ItemCheckbox
-            className={classnames(['ml0-1 item-checkbox-label', columnLayout ? 'mr0-6' : 'mr0-5'])}
+            className={classnames(['item-checkbox-label ml0-1', columnLayout ? 'mr0-6' : 'mr0-5'])}
             checked={checked}
             onChange={onCheck}
         >
@@ -118,8 +122,10 @@ const Item = ({
                 columnLayout ? 'item-container' : 'item-container-row',
                 elementID === ID && 'item-is-selected',
                 !unread && 'read',
-                dragged && 'item-dragging'
+                dragged && 'item-dragging',
+                loading && 'item-is-loading'
             ])}
+            style={{ '--index': index }}
         >
             {itemCheckboxType}
             <ItemLayout
@@ -132,6 +138,7 @@ const Item = ({
                 senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
                 unread={unread}
                 displayRecipients={displayRecipients}
+                loading={loading}
             />
         </div>
     );

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Loader, classnames, Button, PrivateMainArea } from 'react-components';
+import { classnames, Button, PrivateMainArea } from 'react-components';
 import { History, Location } from 'history';
 import { DENSITY } from 'proton-shared/lib/constants';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
@@ -94,7 +94,7 @@ const MailboxContainer = ({
 
     const [checkedElements, setCheckedElements] = useState<{ [ID: string]: boolean }>({});
 
-    const [labelID, elements, loading, total] = useElements({
+    const { labelID, elements, loading, expectedLength, total } = useElements({
         conversationMode,
         labelID: inputLabelID,
         page,
@@ -212,25 +212,21 @@ const MailboxContainer = ({
                         ])}
                     >
                         <div className="items-column-list-inner flex flex-nowrap flex-column">
-                            {loading ? (
-                                <div className="flex flex-justify-center h100">
-                                    <Loader />
-                                </div>
-                            ) : (
-                                <List
-                                    location={location}
-                                    labelID={labelID}
-                                    columnLayout={columnLayout}
-                                    mailSettings={mailSettings}
-                                    elementID={elementID}
-                                    elements={elements}
-                                    checkedIDs={checkedIDs}
-                                    onCheck={handleCheck}
-                                    onClick={handleElement}
-                                    userSettings={userSettings}
-                                    isSearch={isSearch}
-                                />
-                            )}
+                            <List
+                                location={location}
+                                labelID={labelID}
+                                loading={loading}
+                                expectedLength={expectedLength}
+                                columnLayout={columnLayout}
+                                mailSettings={mailSettings}
+                                elementID={elementID}
+                                elements={elements}
+                                checkedIDs={checkedIDs}
+                                onCheck={handleCheck}
+                                onClick={handleElement}
+                                userSettings={userSettings}
+                                isSearch={isSearch}
+                            />
                         </div>
                     </div>
                 )}
