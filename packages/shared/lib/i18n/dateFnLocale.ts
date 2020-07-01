@@ -1,6 +1,14 @@
+import { Locale } from 'date-fns';
 import { enGBLocale, enUSLocale } from './dateFnLocales';
+import { DateFnsLocaleMap } from '../interfaces/Locale';
 
-export const loadDateFnLocale = async ({ locale, longLocale, locales }) => {
+interface Config {
+    locale: string;
+    longLocale: string;
+    locales: DateFnsLocaleMap;
+}
+
+export const loadDateFnLocale = async ({ locale, longLocale, locales }: Config) => {
     const [appDateFnLocale, longDateFnLocale] = await Promise.all([locales[locale](), locales[longLocale]()]);
 
     /**
@@ -19,8 +27,14 @@ export const loadDateFnLocale = async ({ locale, longLocale, locales }) => {
  * Allow to override the long date format.
  * Primarily intended for the calendar application, where a user can override AMPM time.
  */
-export const loadDateFnTimeFormat = ({ dateLocale, displayAMPM = false }) => {
-    const isAMPMLocale = dateLocale.formatLong.time().includes('a');
+export const loadDateFnTimeFormat = ({
+    dateLocale,
+    displayAMPM = false
+}: {
+    dateLocale: Locale;
+    displayAMPM?: boolean;
+}) => {
+    const isAMPMLocale = dateLocale.formatLong?.time().includes('a');
     if ((displayAMPM && isAMPMLocale) || (!displayAMPM && !isAMPMLocale)) {
         return dateLocale;
     }
@@ -29,7 +43,7 @@ export const loadDateFnTimeFormat = ({ dateLocale, displayAMPM = false }) => {
         ...dateLocale,
         formatLong: {
             ...dateLocale.formatLong,
-            time: (displayAMPM ? enUSLocale : enGBLocale).formatLong.time
+            time: (displayAMPM ? enUSLocale : enGBLocale).formatLong?.time
         }
     };
 };
