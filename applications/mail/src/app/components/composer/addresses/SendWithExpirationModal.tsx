@@ -23,7 +23,7 @@ const SendWithExpirationModal = ({ emails, onSubmit, onClose, ...rest }: Props) 
         >
             <Alert>
                 {c('Info')
-                    .t`Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-Protonmail users, please cancel and add password protection to your email.`}
+                    .t`Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.`}
                 <br />
                 <Href url="https://protonmail.com/support/knowledge-base/expiration/">{c('Info').t`Learn more`}</Href>
             </Alert>
