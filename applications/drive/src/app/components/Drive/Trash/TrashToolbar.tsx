@@ -14,7 +14,7 @@ const TrashToolbar = ({ shareId }: Props) => {
     const cache = useDriveCache();
     const { fileBrowserControls } = useTrashContent();
     const { selectedItems } = fileBrowserControls;
-    const trashItems = shareId ? cache.get.trashMetas(shareId) : [];
+    const trashItems = cache.get.trashMetas(shareId);
 
     return (
         <Toolbar>

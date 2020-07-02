@@ -9,23 +9,27 @@ import { getMetaForTransfer } from '../Drive';
 import useFiles from '../../../hooks/drive/useFiles';
 import FileSaver from '../../../utils/FileSaver/FileSaver';
 import usePreventLeave from '../../../hooks/util/usePreventLeave';
+import { useDriveActiveFolder } from '../DriveFolderProvider';
 
 interface Props {
-    shareId: string;
     disabled?: boolean;
 }
 
-const DownloadButton = ({ shareId, disabled }: Props) => {
+const DownloadButton = ({ disabled }: Props) => {
+    const { folder } = useDriveActiveFolder();
     const { startFileTransfer, startFolderTransfer } = useFiles();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
     const { preventLeave } = usePreventLeave();
 
     const handleDownloadClick = () => {
+        if (!folder) {
+            return;
+        }
         selectedItems.forEach(async (item) => {
             if (item.Type === LinkType.FILE) {
                 const meta = getMetaForTransfer(item);
-                const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
+                const fileStream = await startFileTransfer(folder.shareId, item.LinkID, meta);
                 preventLeave(FileSaver.saveAsFile(fileStream, meta));
             } else {
                 const zipSaver = await FileSaver.saveAsZip(item.Name);
@@ -33,7 +37,7 @@ const DownloadButton = ({ shareId, disabled }: Props) => {
                 if (zipSaver) {
                     try {
                         await preventLeave(
-                            startFolderTransfer(item.Name, shareId, item.LinkID, {
+                            startFolderTransfer(item.Name, folder.shareId, item.LinkID, {
                                 onStartFileTransfer: zipSaver.addFile,
                                 onStartFolderTransfer: zipSaver.addFolder
                             })

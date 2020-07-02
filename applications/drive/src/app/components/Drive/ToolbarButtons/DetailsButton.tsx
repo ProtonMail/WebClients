@@ -4,27 +4,25 @@ import { c } from 'ttag';
 import { ToolbarButton, useModals } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
-import useDrive from '../../../hooks/drive/useDrive';
 import DetailsModal from '../../DetailsModal';
-import { DriveFolder } from '../DriveFolderProvider';
+import { useDriveActiveFolder } from '../DriveFolderProvider';
 
 interface Props {
-    activeFolder: DriveFolder;
     disabled?: boolean;
 }
 
-const DetailsButton = ({ activeFolder, disabled }: Props) => {
+const DetailsButton = ({ disabled }: Props) => {
     const { createModal } = useModals();
-    const { getLinkMeta } = useDrive();
+    const { folder: activeFolder } = useDriveActiveFolder();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
 
     const handleDetailsClick = () => {
-        if (!selectedItems.length) {
+        if (!activeFolder || !selectedItems.length) {
             return;
         }
 
-        createModal(<DetailsModal item={selectedItems[0]} activeFolder={activeFolder} getLinkMeta={getLinkMeta} />);
+        createModal(<DetailsModal item={selectedItems[0]} activeFolder={activeFolder} />);
     };
 
     return (

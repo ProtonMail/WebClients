@@ -5,34 +5,25 @@ import { ToolbarButton, useModals } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
 import RenameModal from '../../RenameModal';
-import useDrive from '../../../hooks/drive/useDrive';
+import { useDriveActiveFolder } from '../DriveFolderProvider';
 
 interface Props {
-    shareId: string;
     disabled?: boolean;
 }
 
-const RenameButton = ({ shareId, disabled }: Props) => {
+const RenameButton = ({ disabled }: Props) => {
     const { createModal } = useModals();
-    const { renameLink, events } = useDrive();
     const { fileBrowserControls } = useDriveContent();
+    const { folder } = useDriveActiveFolder();
     const { selectedItems } = fileBrowserControls;
 
     const handleRename = () => {
-        if (!selectedItems.length) {
+        if (!folder || !selectedItems.length) {
             return;
         }
 
         const item = selectedItems[0];
-        createModal(
-            <RenameModal
-                item={item}
-                renameLink={async (name) => {
-                    await renameLink(shareId, item.LinkID, item.ParentLinkID, name, item.Type);
-                    events.call(shareId);
-                }}
-            />
-        );
+        createModal(<RenameModal activeFolder={folder} item={item} />);
     };
 
     return (

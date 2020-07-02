@@ -5,24 +5,25 @@ import { ToolbarButton } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
 import { LinkType } from '../../../interfaces/link';
+import { useDriveActiveFolder } from '../DriveFolderProvider';
 
 interface Props {
-    shareId: string;
     disabled?: boolean;
     openLink: (shareId: string, linkId: string, type: LinkType) => void;
 }
 
-const PreviewButton = ({ shareId, disabled, openLink }: Props) => {
+const PreviewButton = ({ disabled, openLink }: Props) => {
+    const { folder } = useDriveActiveFolder();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
 
     const handlePreview = () => {
-        if (!selectedItems.length) {
+        if (!folder || !selectedItems.length) {
             return;
         }
 
         const item = selectedItems[0];
-        openLink(shareId, item.LinkID, item.Type);
+        openLink(folder.shareId, item.LinkID, item.Type);
     };
 
     return (
