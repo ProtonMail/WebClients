@@ -110,7 +110,9 @@ const MoveToFolderModal = ({
         const rootFolder = [...folders][0];
 
         const appendChildren = (parent: FolderTreeItem) => {
-            parent.children = childrenData;
+            const childrenIds = parent.children.list.map(({ linkId }) => linkId);
+            const newChildren = childrenData.list.filter(({ linkId }) => !childrenIds.includes(linkId));
+            parent.children = { list: [...parent.children.list, ...newChildren], complete: childrenData.complete };
             setFolders([rootFolder]);
             appended = true;
         };
