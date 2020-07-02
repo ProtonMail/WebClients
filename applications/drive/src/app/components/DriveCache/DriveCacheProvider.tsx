@@ -3,13 +3,8 @@ import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import { FolderLinkMeta, FileLinkMeta, LinkMeta, isFolderLinkMeta, SortKeys } from '../../interfaces/link';
 import { ShareMeta } from '../../interfaces/share';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../../constants';
+import { DEFAULT_SORT_PARAMS } from '../../constants';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-
-export const DEFAULT_SORT_PARAMS: { sortField: SortKeys; sortOrder: SORT_DIRECTION } = {
-    sortField: DEFAULT_SORT_FIELD,
-    sortOrder: DEFAULT_SORT_ORDER
-};
 
 interface FileLinkKeys {
     privateKey: OpenPGPKey;
