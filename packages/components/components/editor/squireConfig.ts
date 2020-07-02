@@ -162,7 +162,7 @@ export const insertCustomStyle = (document: Document) => {
             border: .2rem solid transparent;
             background-clip: padding-box;
             border-radius: .5rem;
-            background-color: var(--scrollbar-thumb-color);
+            background-color: var(--scrollbar-thumb-color, rgba(0, 0, 0, 0.35) );
         }
         *::-webkit-scrollbar-track {
             background-color: transparent;
