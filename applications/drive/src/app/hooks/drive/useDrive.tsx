@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDriveCache, LinkKeys, DEFAULT_SORT_PARAMS } from '../../components/DriveCache/DriveCacheProvider';
+import { useDriveCache, LinkKeys } from '../../components/DriveCache/DriveCacheProvider';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { useModals } from 'react-components';
 import useDriveCrypto from './useDriveCrypto';
@@ -18,7 +18,7 @@ import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
 import { LinkMetaResult, isFolderLinkMeta, LinkChildrenResult, LinkMeta, LinkType } from '../../interfaces/link';
 import { queryGetLink } from '../../api/link';
 import { queryFolderChildren, queryCreateFolder } from '../../api/folder';
-import { FOLDER_PAGE_SIZE, EVENT_TYPES, MAX_THREADS_PER_REQUEST } from '../../constants';
+import { FOLDER_PAGE_SIZE, EVENT_TYPES, MAX_THREADS_PER_REQUEST, DEFAULT_SORT_PARAMS } from '../../constants';
 import { ShareMeta, UserShareResult } from '../../interfaces/share';
 import { queryShareMeta, queryUserShares, queryRenameLink, queryMoveLink } from '../../api/share';
 import { CreatedDriveVolumeResult } from '../../interfaces/volume';

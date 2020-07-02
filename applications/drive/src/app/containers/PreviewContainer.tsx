@@ -1,36 +1,27 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
-import { useLoading, useCache, useMultiSortedList } from 'react-components';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { useLoading } from 'react-components';
 
 import useFiles from '../hooks/drive/useFiles';
 import useDrive from '../hooks/drive/useDrive';
 import usePreventLeave from '../hooks/util/usePreventLeave';
 
 import FileSaver from '../utils/FileSaver/FileSaver';
-import { LinkURLType, DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../constants';
-import { LinkMeta, SortKeys } from '../interfaces/link';
+import { LinkURLType } from '../constants';
+import { LinkMeta } from '../interfaces/link';
 import { getMetaForTransfer } from '../components/Drive/Drive';
 import { DownloadControls } from '../components/downloads/download';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
 import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
+import useDriveSorting from '../hooks/drive/useDriveSorting';
 
 const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
-    const downloadControls = useRef<DownloadControls>();
-    const sortCacheKey = 'sortParams';
-    const sortCache = useCache();
-    if (!sortCache.has(sortCacheKey)) {
-        sortCache.set(sortCacheKey, {
-            sortField: DEFAULT_SORT_FIELD as SortKeys,
-            sortOrder: DEFAULT_SORT_ORDER
-        });
-    }
-    const sortParams = sortCache.get(sortCacheKey);
-    const { setFolder } = useDriveActiveFolder();
     const cache = useDriveCache();
+    const downloadControls = useRef<DownloadControls>();
+    const { setFolder } = useDriveActiveFolder();
     const { getLinkMeta, fetchAllFolderPages } = useDrive();
     const { downloadDriveFile, saveFileTransferFromBuffer, startFileTransfer } = useFiles();
     const { preventLeave } = usePreventLeave();
@@ -39,17 +30,10 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
     const [, setError] = useState();
 
     const meta = cache.get.linkMeta(shareId, linkId);
-    const links = (meta && cache.get.childLinkMetas(shareId, meta.ParentLinkID, sortParams)) || [];
-    const { sortedList } = useMultiSortedList(links, [
-        {
-            key: sortParams.sortField,
-            direction: sortParams.sortOrder
-        },
-        {
-            key: 'Name',
-            direction: SORT_DIRECTION.ASC
-        }
-    ]);
+    const { sortedList } = useDriveSorting(
+        (sortParams) => (meta && cache.get.childLinkMetas(shareId, meta.ParentLinkID, sortParams)) || []
+    );
+
     const linksAvailableForPreview = sortedList.filter(({ MIMEType }) => isPreviewAvailable(MIMEType));
 
     useEffect(() => {
