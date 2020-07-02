@@ -82,7 +82,7 @@ const OnboardingModal = ({ modalTitleID = 'onboardingModal', onClose = noop, ...
                             src={step.image}
                             alt={
                                 isFirstStep
-                                    ? c('info').t`Protont Drive interface`
+                                    ? c('info').t`ProtonDrive interface`
                                     : c('info').t`Location of report bug button`
                             }
                         />
