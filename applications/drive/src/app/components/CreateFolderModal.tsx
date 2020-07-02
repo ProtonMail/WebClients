@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { validateLinkName } from '../utils/validation';
 import useDrive from '../hooks/drive/useDrive';
 import { useDriveActiveFolder, DriveFolder } from './Drive/DriveFolderProvider';
+import { MAX_NAME_LENGTH } from '../constants';
 
 interface Props {
     onClose?: () => void;
@@ -81,6 +82,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
                     <Input
                         id="folder-name"
                         autoFocus
+                        maxLength={MAX_NAME_LENGTH}
                         value={folderName}
                         placeholder={c('Placeholder').t`Enter a new folder name`}
                         onChange={handleChange}

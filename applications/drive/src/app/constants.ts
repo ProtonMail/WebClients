@@ -18,6 +18,7 @@ export const DEFAULT_SORT_PARAMS: { sortField: SortKeys; sortOrder: SORT_DIRECTI
 export const UPLOAD_TIMEOUT = 60000;
 export const DOWNLOAD_TIMEOUT = 60000;
 export const EXPENSIVE_REQUEST_TIMEOUT = 60000;
+export const MAX_NAME_LENGTH = 255;
 
 export enum LinkURLType {
     FOLDER = 'folder',

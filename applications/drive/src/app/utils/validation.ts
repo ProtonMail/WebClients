@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { MAX_NAME_LENGTH } from '../constants';
 
 export class ValidationError extends Error {
     constructor(message: string) {
@@ -6,8 +7,6 @@ export class ValidationError extends Error {
         this.name = 'ValidationError';
     }
 }
-
-const MAX_NAME_LENGTH = 255;
 
 export const validateLinkName = (name: string) => {
     // eslint-disable-next-line no-control-regex
@@ -49,7 +48,7 @@ export const validateLinkName = (name: string) => {
         return c('Validation Error').t`Name must not be a system reserved name`;
     }
 
-    if (name.length > 255) {
+    if (name.length > MAX_NAME_LENGTH) {
         return c('Validation Error').t`Name must be ${MAX_NAME_LENGTH} characters long at most`;
     }
 
