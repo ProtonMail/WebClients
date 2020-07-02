@@ -11,7 +11,7 @@ const getTranslations = (key: keyof MessageErrors) => {
         case 'network':
             return c('Error').t`Network error: Please check your connection and try again.`;
         case 'decryption':
-            return c('Error').t`Decryption error: Decryption of this message's encryption content failed.`;
+            return c('Error').t`Decryption error: decryption of this message's encryption content failed.`;
         case 'common':
             return c('Error').t`Message processing error.`;
     }
