@@ -16,6 +16,7 @@ interface Props {
     message: MessageExtended;
     date: Date;
     lock: boolean;
+    opening: boolean;
     sending: boolean;
     syncInProgress: boolean;
     syncStatus: string;
@@ -33,6 +34,7 @@ const ComposerActions = ({
     message,
     date,
     lock,
+    opening,
     sending,
     syncInProgress,
     syncStatus,
@@ -60,7 +62,9 @@ const ComposerActions = ({
     const hasRecipients = getRecipients(message.data).length > 0;
 
     let dateMessage = '';
-    if (syncInProgress) {
+    if (opening) {
+        dateMessage = c('Action').t`Loading...`;
+    } else if (syncInProgress) {
         dateMessage = c('Action').t`Saving...`;
     } else {
         if (date.getTime() !== 0) {
@@ -147,7 +151,7 @@ const ComposerActions = ({
                 <Button
                     className="pm-button--primary composer-send-button"
                     disabled={!hasRecipients}
-                    loading={lock}
+                    loading={sending}
                     onClick={onSend}
                 >
                     <Icon name="sent" className="nodesktop notablet onmobile-flex"></Icon>

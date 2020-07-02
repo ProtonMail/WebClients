@@ -430,6 +430,7 @@ const Composer = ({
                         message={modelMessage}
                         date={getDate(syncedMessage.data, '')}
                         lock={actionBarLocked}
+                        opening={opening}
                         sending={sending}
                         syncInProgress={syncInProgress}
                         syncStatus={syncStatus}
