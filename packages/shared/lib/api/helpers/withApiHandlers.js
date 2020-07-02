@@ -161,21 +161,31 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                 const { code } = getError(e);
 
                 if (code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED) {
-                    const { Details: { Token: token, VerifyMethods: methods = [] } = {} } = e.data || {};
+                    const { ignoreHandler, silence = [] } = options;
+                    if (
+                        Array.isArray(ignoreHandler) &&
+                        ignoreHandler.includes(API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED)
+                    ) {
+                        return onError(e);
+                    }
 
-                    return onVerification({ token, methods }).then(({ token: Token, method: TokenType }) => {
-                        const hasParams = ['get', 'delete'].includes(options.method.toLowerCase());
-                        const key = hasParams ? 'params' : 'data';
+                    const {
+                        Details: { HumanVerificationToken: captchaToken, HumanVerificationMethods: methods = [] } = {}
+                    } = e.data || {};
 
+                    const onVerify = (token, tokenType) => {
                         return call({
                             ...options,
-                            [key]: {
-                                ...options[key],
-                                Token,
-                                TokenType
+                            silence: [...silence, API_CUSTOM_ERROR_CODES.TOKEN_INVALID],
+                            headers: {
+                                ...options.headers,
+                                'x-pm-human-verification-token': token,
+                                'x-pm-human-verification-token-type': tokenType
                             }
                         }).catch(onError);
-                    });
+                    };
+
+                    return onVerification({ token: captchaToken, methods, onVerify });
                 }
 
                 return onError(e);
