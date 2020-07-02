@@ -64,7 +64,7 @@ const ItemRowLayout = ({
                 {isConversation && (
                     <NumMessages className={classnames(['mr0-25', unread && 'bold'])} conversation={element} />
                 )}
-                <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
+                <span className={classnames(['inbl mw100 ellipsis pr1', unread && 'bold'])}>{Subject}</span>
                 <ItemLabels
                     max={4}
                     labels={labels}
