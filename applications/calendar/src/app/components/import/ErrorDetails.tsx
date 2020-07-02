@@ -6,8 +6,8 @@ import { ImportEventError } from './ImportEventError';
 import { MAX_UID_CHARS_DISPLAY } from '../../constants';
 
 const getComponentText = (component: string) => {
-    if (component === '') {
-        return c('Error importing event').t`Bad format. Component cannot be read.`;
+    if (component === 'vevent') {
+        return c('Error importing event').t`Event`;
     }
     if (component === 'vcalendar') {
         return c('Error importing event').t`Calendar`;
@@ -16,19 +16,16 @@ const getComponentText = (component: string) => {
         return c('Error importing event').t`Timezone`;
     }
     if (component === 'vtodo') {
-        return c('Error importing event').t`Todo`;
-    }
-    if (component === 'vevent') {
-        return c('Error importing event').t`Event`;
+        return c('Error importing event').t`Element`;
     }
     if (component === 'vjournal') {
-        return c('Error importing event').t`Journal`;
+        return c('Error importing event').t`Element`;
     }
     if (component === 'vfreebusy') {
-        return c('Error importing event').t`Free-busy`;
+        return c('Error importing event').t`Element`;
     }
-    if (component === 'vevent') {
-        return c('Error importing event').t`Event`;
+    if (component === '') {
+        return c('Error importing event').t`Bad format. Component cannot be read.`;
     }
     return c('Error importing event').t`Unknown`;
 };

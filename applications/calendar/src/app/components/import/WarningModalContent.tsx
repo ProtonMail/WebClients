@@ -33,8 +33,9 @@ const WarningModalContent = ({ model }: Props) => {
                 <ul>
                     <li>{c('Import calendar warning').t`Attendees`}</li>
                     <li>{c('Import calendar warning').t`Complex recurring rules`}</li>
-                    <li>{c('Import calendar warning').t`To-do's`}</li>
-                    <li>{c('Import calendar warning').t`Journals`}</li>
+                    <li>{c('Import calendar warning').t`To-do entries`}</li>
+                    <li>{c('Import calendar warning').t`Journal entries`}</li>
+                    <li>{c('Import calendar warning').t`Free-busy time information`}</li>
                     <li>{c('Import calendar warning').t`Unofficial or custom timezones`}</li>
                     <li>{c('Import calendar warning').t`Non-Gregorian calendars`}</li>
                 </ul>

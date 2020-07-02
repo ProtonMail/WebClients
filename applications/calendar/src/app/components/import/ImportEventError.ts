@@ -36,13 +36,13 @@ const getErrorMessage = (errorType: IMPORT_EVENT_TYPE, externalError?: Error) =>
         return c('Error importing event').t`Non-Gregorian`;
     }
     if (errorType === IMPORT_EVENT_TYPE.TODO_FORMAT) {
-        return c('Error importing event').t`To-do format`;
+        return c('Error importing event').t`To-do entry`;
     }
     if (errorType === IMPORT_EVENT_TYPE.JOURNAL_FORMAT) {
-        return c('Error importing event').t`Journal format`;
+        return c('Error importing event').t`Journal entry`;
     }
     if (errorType === IMPORT_EVENT_TYPE.FREEBUSY_FORMAT) {
-        return c('Error importing event').t`Free-busy format`;
+        return c('Error importing event').t`Free-busy time information`;
     }
     if (errorType === IMPORT_EVENT_TYPE.TIMEZONE_FORMAT) {
         return c('Error importing event').t`Custom timezone`;
