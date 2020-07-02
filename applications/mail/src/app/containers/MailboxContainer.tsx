@@ -149,6 +149,7 @@ const MailboxContainer = ({
     const handlePage = (pageNumber: number) => history.push(setPageInUrl(location, pageNumber));
     const handleSort = (sort: Sort) => history.push(setSortInUrl(location, sort));
     const handleFilter = (filter: Filter) => history.push(setFilterInUrl(location, filter));
+    const handleNavigate = (labelID: string) => history.push(`/${labelID}`);
 
     /**
      * Put *IDs* to *checked* state
@@ -201,6 +202,7 @@ const MailboxContainer = ({
                     onFilter={handleFilter}
                     onBack={handleBack}
                     onElement={handleElement}
+                    onNavigate={handleNavigate}
                 />
             )}
             <PrivateMainArea className="flex" hasToolbar={showToolbar} hasRowMode={!showContentView}>

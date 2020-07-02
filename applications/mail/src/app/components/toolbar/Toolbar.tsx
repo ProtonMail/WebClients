@@ -46,6 +46,7 @@ interface Props {
     onFilter: (filter: Filter) => void;
     onBack: () => void;
     onElement: (element: Element) => void;
+    onNavigate: (labelID: string) => void;
 }
 
 const Toolbar = ({
@@ -67,7 +68,8 @@ const Toolbar = ({
     onBack,
     page,
     onPage,
-    onElement
+    onElement,
+    onNavigate
 }: Props) => {
     const [labels] = useLabels();
     const [folders] = useFolders();
@@ -157,7 +159,13 @@ const Toolbar = ({
                     <>
                         {listInView && (
                             <>
-                                <FilterDropdown loading={loading} filter={filter} onFilter={onFilter} />
+                                <FilterDropdown
+                                    labelID={labelID}
+                                    loading={loading}
+                                    filter={filter}
+                                    onFilter={onFilter}
+                                    onNavigate={onNavigate}
+                                />
                                 <SortDropdown
                                     loading={loading}
                                     conversationMode={conversationMode}
