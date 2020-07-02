@@ -7,6 +7,7 @@ import { LinkType } from '../interfaces/link';
 import { validateLinkName } from '../utils/validation';
 import useDrive from '../hooks/drive/useDrive';
 import { DriveFolder } from './Drive/DriveFolderProvider';
+import { MAX_NAME_LENGTH } from '../constants';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -86,6 +87,7 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
                         id="link-name"
                         value={name}
                         autoFocus
+                        maxLength={MAX_NAME_LENGTH}
                         placeholder={c('Placeholder').t`New name`}
                         onChange={handleChange}
                         onBlur={handleBlur}
