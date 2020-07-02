@@ -7,28 +7,28 @@ import { useDriveContent } from '../DriveContentProvider';
 import useTrash from '../../../hooks/drive/useTrash';
 import useDrive from '../../../hooks/drive/useDrive';
 import useListNotifications from '../../../hooks/util/useListNotifications';
-import { DriveFolder } from '../DriveFolderProvider';
+import { useDriveActiveFolder } from '../DriveFolderProvider';
 
 interface Props {
-    activeFolder: DriveFolder;
     disabled?: boolean;
 }
 
-const MoveToTrashButton = ({ activeFolder, disabled }: Props) => {
+const MoveToTrashButton = ({ disabled }: Props) => {
     const { events } = useDrive();
+    const { folder: activeFolder } = useDriveActiveFolder();
     const { trashLinks, restoreLinks } = useTrash();
     const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
     const { createRestoredLinksNotifications, createTrashLinksNotifications } = useListNotifications();
     const { fileBrowserControls } = useDriveContent();
 
     const { selectedItems } = fileBrowserControls;
-    const { linkId, shareId } = activeFolder;
 
     const moveToTrash = async () => {
-        if (!selectedItems.length) {
+        if (!activeFolder || !selectedItems.length) {
             return;
         }
 
+        const { linkId, shareId } = activeFolder;
         const toTrash = selectedItems;
         const trashed = await trashLinks(
             shareId,

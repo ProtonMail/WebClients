@@ -1,14 +1,11 @@
 import React, { useRef, ChangeEvent, useEffect } from 'react';
 import { ToolbarButton } from 'react-components';
 import { c } from 'ttag';
-import { DriveFolder } from '../DriveFolderProvider';
+import { useDriveActiveFolder } from '../DriveFolderProvider';
 import useFiles from '../../../hooks/drive/useFiles';
 
-interface Props {
-    activeFolder: DriveFolder;
-}
-
-const UploadFolderButton = ({ activeFolder }: Props) => {
+const UploadFolderButton = () => {
+    const { folder: activeFolder } = useDriveActiveFolder();
     const fileInput = useRef<HTMLInputElement>(null);
     const { uploadDriveFiles } = useFiles();
 
@@ -31,7 +28,7 @@ const UploadFolderButton = ({ activeFolder }: Props) => {
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
         const files = e.target.files;
 
-        if (!files) {
+        if (!activeFolder || !files) {
             return;
         }
 

@@ -52,7 +52,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                     {isDesktop && (
                         <>
                             <ToolbarSeparator />
-                            <UploadFolderButton activeFolder={activeFolder} />
+                            <UploadFolderButton />
                         </>
                     )}
                 </>
@@ -69,14 +69,14 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
         return (
             <>
-                <PreviewButton shareId={shareId} disabled={isPreviewDisabled} openLink={openLink} />
-                <DownloadButton shareId={shareId} />
-                <RenameButton shareId={shareId} disabled={isMultiSelect} />
-                <DetailsButton activeFolder={activeFolder} disabled={isMultiSelect} />
+                <PreviewButton disabled={isPreviewDisabled} openLink={openLink} />
+                <DownloadButton />
+                <RenameButton disabled={isMultiSelect} />
+                <DetailsButton disabled={isMultiSelect} />
 
                 <ToolbarSeparator />
 
-                <MoveToTrashButton activeFolder={activeFolder} />
+                <MoveToTrashButton />
                 <MoveToFolderButton />
             </>
         );
