@@ -65,8 +65,13 @@ const ItemRowLayout = ({
                     <NumMessages className={classnames(['mr0-25', unread && 'bold'])} conversation={element} />
                 )}
                 <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
-                <ItemLabels max={4} labels={labels} element={element} className="mlauto flex flex-nowrap" />
-                <ItemAttachmentIcon element={element} className="ml0-5 flex-self-vcenter" />
+                <ItemLabels
+                    max={4}
+                    labels={labels}
+                    element={element}
+                    className="mlauto flex-item-noshrink flex flex-nowrap"
+                />
+                <ItemAttachmentIcon element={element} className="ml0-5 flex-item-noshrink flex-self-vcenter" />
             </div>
             <span className="item-weight mtauto mbauto mr1 ml1 ng-binding">{!loading && size}</span>
             <span className="item-senddate-row mauto w10e alignright">
