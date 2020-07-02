@@ -89,7 +89,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
         if (!image.isSmall) {
             // fit the image in the rounded container as background image
             return (
-                <div className="ratio-container-square" style={style}>
+                <div className="ratio-container-square rounded bordered" style={style}>
                     <span className="inner-ratio-container" />
                 </div>
             );
@@ -98,7 +98,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
         // For a small image, we have to create a smaller rounded container inside the bigger standard one,
         // and fit the image as background inside it. As container width we must pick the smallest dimension
         return (
-            <div className="ratio-container-square mb0">
+            <div className="ratio-container-square mb0 rounded bordered">
                 <span className="inner-ratio-container flex">
                     <div
                         className="mbauto mtauto center"
@@ -114,10 +114,10 @@ const ContactImageSummary = ({ photo, name }: Props) => {
     }
 
     return (
-        <div className="bordered bg-white-dm ratio-container-square mb0">
+        <div className="bordered rounded bg-white-dm ratio-container-square mb0">
             <span className="inner-ratio-container flex">
                 <span className="mauto color-global-border">
-                    <Button onClick={handleClick}>{c('Action').t`Load photo`}</Button>
+                    <Button className="m0-5" onClick={handleClick}>{c('Action').t`Load photo`}</Button>
                 </span>
             </span>
         </div>
