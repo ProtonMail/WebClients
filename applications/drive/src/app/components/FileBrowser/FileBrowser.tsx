@@ -3,6 +3,7 @@ import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint, TableRowSticky 
 import { c } from 'ttag';
 import ItemRow from './ItemRow';
 import { LinkType } from '../../interfaces/link';
+import useDriveDragMove from '../../hooks/drive/useDriveDragMove';
 
 export interface FileBrowserItem {
     Name: string;
@@ -47,6 +48,7 @@ const FileBrowser = ({
 }: Props) => {
     const [secondaryActionActive, setSecondaryActionActive] = useState(false);
     const { isDesktop } = useActiveBreakpoint();
+    const getDragMoveControls = useDriveDragMove(shareId, selectedItems);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -111,6 +113,7 @@ const FileBrowser = ({
                             onClick={onItemClick}
                             showLocation={isTrash}
                             secondaryActionActive={secondaryActionActive}
+                            dragMoveControls={getDragMoveControls(item)}
                         />
                     ))}
                     {loading && <TableRowBusy colSpan={colSpan} />}

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { TableRow, Checkbox, Time, useActiveBreakpoint, classnames } from 'react-components';
 import readableTime from 'proton-shared/lib/helpers/readableTime';
@@ -10,6 +10,9 @@ import { LinkType } from '../../interfaces/link';
 import { FileBrowserItem } from './FileBrowser';
 import FileIcon from '../FileIcon/FileIcon';
 import LocationCell from './LocationCell';
+import useDragMove from '../../hooks/util/useDragMove';
+import { DragMoveControls } from '../../hooks/drive/useDriveDragMove';
+import { selectMessageForItemList } from '../Drive/helpers';
 
 interface Props {
     item: FileBrowserItem;
@@ -20,6 +23,7 @@ interface Props {
     onClick?: (item: FileBrowserItem) => void;
     showLocation?: boolean;
     secondaryActionActive?: boolean;
+    dragMoveControls: DragMoveControls;
 }
 
 const ItemRow = ({
@@ -30,8 +34,11 @@ const ItemRow = ({
     onClick,
     onShiftClick,
     showLocation,
-    secondaryActionActive
+    secondaryActionActive,
+    dragMoveControls
 }: Props) => {
+    const { handleDragOver, handleDrop } = dragMoveControls;
+    const { dragging, handleDragEnd, handleDragStart, DragMoveContent } = useDragMove(dragMoveControls);
     const { isDesktop } = useActiveBreakpoint();
     const touchStarted = useRef(false);
 
@@ -112,20 +119,49 @@ const ItemRow = ({
         )
     ].filter(Boolean);
 
+    const dragMoveItems = selectedItems.some(({ LinkID }) => LinkID === item.LinkID) ? selectedItems : [item];
+    const movingCount = dragMoveItems.length;
+
+    const texts = {
+        allFiles: c('Notification').ngettext(msgid`Move ${movingCount} file`, `Move ${movingCount} files`, movingCount),
+        allFolders: c('Notification').ngettext(
+            msgid`Move ${movingCount} folder`,
+            `Move ${movingCount} folders`,
+            movingCount
+        ),
+        mixed: c('Notification').ngettext(msgid`Move ${movingCount} item`, `Move ${movingCount} items`, movingCount)
+    };
+
+    const moveText = selectMessageForItemList(
+        dragMoveItems.map((item) => item.Type),
+        texts
+    );
+
     return (
-        <TableRow
-            className={classnames([
-                (onClick || secondaryActionActive) && 'cursor-pointer',
-                isSelected && 'bg-global-highlight'
-            ])}
-            onMouseDown={() => document.getSelection()?.removeAllRanges()}
-            onClick={handleRowClick}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchCancel}
-            onTouchCancel={handleTouchCancel}
-            onTouchEnd={handleTouchEnd}
-            cells={cells}
-        />
+        <>
+            <DragMoveContent>
+                <div className="color-black bold bg-white p1 bordered-container rounded">{moveText}</div>
+            </DragMoveContent>
+            <TableRow
+                draggable
+                onDragStart={handleDragStart}
+                onDragEnd={handleDragEnd}
+                onDragOver={handleDragOver}
+                onDrop={handleDrop}
+                className={classnames([
+                    (onClick || secondaryActionActive) && 'cursor-pointer',
+                    isSelected && 'bg-global-highlight',
+                    dragging && 'opacity-50'
+                ])}
+                onMouseDown={() => document.getSelection()?.removeAllRanges()}
+                onClick={handleRowClick}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchCancel}
+                onTouchCancel={handleTouchCancel}
+                onTouchEnd={handleTouchEnd}
+                cells={cells}
+            />
+        </>
     );
 };
 
