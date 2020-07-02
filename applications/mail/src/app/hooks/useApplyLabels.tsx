@@ -66,7 +66,7 @@ export const useApplyLabels = () => {
                     } else {
                         notificationText = isMessage
                             ? c('Success').ngettext(
-                                  msgid`Message added to ${labelName}`,
+                                  msgid`Message added to ${labelName}.`,
                                   `${elementIDs.length} messages added to ${labelName}.`,
                                   elementIDs.length
                               )
