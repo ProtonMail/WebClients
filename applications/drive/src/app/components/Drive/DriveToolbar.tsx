@@ -77,7 +77,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
                 <ToolbarSeparator />
 
                 <MoveToTrashButton activeFolder={activeFolder} />
-                <MoveToFolderButton activeFolder={activeFolder} />
+                <MoveToFolderButton />
             </>
         );
     };

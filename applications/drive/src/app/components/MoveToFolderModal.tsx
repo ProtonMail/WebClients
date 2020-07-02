@@ -16,42 +16,33 @@ import {
 
 import FolderTree, { FolderTreeItem } from './FolderTree/FolderTree';
 import { DriveFolder } from './Drive/DriveFolderProvider';
-import { LinkMeta } from '../interfaces/link';
-import { ShareMeta } from '../interfaces/share';
 import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import HasNoFolders from './HasNoFolders/HasNoFolders';
 import { selectMessageForItemList } from './Drive/helpers';
 import CreateFolderModal from './CreateFolderModal';
+import useDrive from '../hooks/drive/useDrive';
+import useListNotifications from '../hooks/util/useListNotifications';
+import { useDriveCache } from './DriveCache/DriveCacheProvider';
 
 interface Props {
     activeFolder: DriveFolder;
     selectedItems: FileBrowserItem[];
-    getShareMeta: (shareId: string) => Promise<ShareMeta>;
-    getLinkMeta: (shareId: string, linkId: string) => Promise<LinkMeta>;
-    getFoldersOnlyMetas: (shareId: string, linkId: string, fetchNextPage?: boolean) => Promise<LinkMeta[]>;
-    isChildrenComplete: (linkId: string) => boolean;
-    moveLinksToFolder: (folderId: string) => Promise<void>;
     onClose?: () => void;
 }
 
-const MoveToFolderModal = ({
-    activeFolder,
-    selectedItems,
-    getShareMeta,
-    getLinkMeta,
-    getFoldersOnlyMetas,
-    isChildrenComplete,
-    moveLinksToFolder,
-    onClose,
-    ...rest
-}: Props) => {
+const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Props) => {
     const { createModal } = useModals();
+    const cache = useDriveCache();
+    const { getShareMeta, getLinkMeta, getFoldersOnlyMetas, moveLinks, events } = useDrive();
+    const { createMoveLinksNotifications } = useListNotifications();
     const [loading, withLoading] = useLoading();
     const [initializing, withInitialize] = useLoading(true);
     const [folders, setFolders] = useState<FolderTreeItem[]>([]);
     const [initiallyExpandedFolders, setInitiallyExpandedFolders] = useState<string[]>([]);
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const [hasNoChildren, setHasNoChildren] = useState(false);
+
+    const isChildrenComplete = (LinkID: string) => !!cache.get.foldersOnlyComplete(activeFolder.shareId, LinkID);
 
     const fetchChildrenData = async (linkId: string, loadNextPage = false) => {
         const childrenMetas = await getFoldersOnlyMetas(activeFolder.shareId, linkId, loadNextPage);
@@ -65,10 +56,22 @@ const MoveToFolderModal = ({
         return { list, complete };
     };
 
+    const moveLinksToFolder = async (parentFolderId: string) => {
+        const result = await moveLinks(
+            activeFolder.shareId,
+            parentFolderId,
+            selectedItems.map(({ LinkID }) => LinkID)
+        );
+
+        createMoveLinksNotifications(selectedItems, result);
+
+        await events.call(activeFolder.shareId);
+    };
+
     useEffect(() => {
-        const initializeData = async (shareId: string) => {
-            const { LinkID } = await getShareMeta(shareId);
-            const meta = await getLinkMeta(shareId, LinkID);
+        const initializeData = async () => {
+            const { LinkID } = await getShareMeta(activeFolder.shareId);
+            const meta = await getLinkMeta(activeFolder.shareId, LinkID);
             const children = await fetchChildrenData(LinkID);
             const rootFolder = { linkId: meta.LinkID, name: 'My Files', children };
 
@@ -77,7 +80,7 @@ const MoveToFolderModal = ({
             setFolders([rootFolder]);
         };
 
-        withInitialize(initializeData(activeFolder.shareId));
+        withInitialize(initializeData());
     }, [activeFolder.shareId]);
 
     const onSelect = (linkId: string) => {
