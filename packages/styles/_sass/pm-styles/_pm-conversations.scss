@@ -440,24 +440,6 @@ $conversation-icon-size: 3.2rem !default;
 
 }
 
-
-.message-content {
-	@extend .p1;
-	// rules coming from Angular
-	box-sizing: content-box; // to avoid problems in some emails
-	border-radius: 0 0 $global-border-radius $global-border-radius;
-
-	// remove reset margins
-	blockquote, dl, ol, p, pre, td, th, ul {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-	p {
-		margin-top: 1em;
-		margin-bottom: 1em;
-	}
-}
-
 .message-container--hasAttachment {
 	.message-content {
 		border-radius: 0;
@@ -532,6 +514,10 @@ $conversation-icon-size: 3.2rem !default;
 .compose-fab--inBackground {
 	z-index: 0;
 }
+
+
+@import "_pm-reset-display-messages";
+
 
 .protonmail_quote {
 	border-left: 1px solid var(--bordercolor-input, $pm-global-border);

@@ -5,7 +5,6 @@
 /* it depends, it exceeds (french joke) */
 img,
 table,
-td,
 blockquote,
 code,
 pre,
@@ -14,6 +13,10 @@ input,
 svg {
   height: auto;
   max-width: 100%;
+}
+// not height: auto for td, makes failing a lot of emails
+td {
+	max-width: 100%;
 }
 /* no reset on embed, object & video, some players don't like */
 
