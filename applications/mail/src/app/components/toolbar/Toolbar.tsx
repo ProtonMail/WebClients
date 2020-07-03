@@ -125,19 +125,26 @@ const Toolbar = ({
                 <ToolbarDropdown
                     autoClose={false}
                     noMaxSize={true}
-                    disabled={!selectedIDs.length}
+                    disabled={!selectedElements || !selectedElements.length}
                     content={<Icon className="toolbar-icon" name="folder" />}
                     dropDownClassName="moveDropdown"
                     title={c('Title').t`Move to`}
                 >
                     {({ onClose, onLock }) => (
-                        <MoveDropdown labelID={labelID} elements={selectedElements} onClose={onClose} onLock={onLock} />
+                        <MoveDropdown
+                            labelID={labelID}
+                            elements={selectedElements}
+                            conversationMode={conversationMode}
+                            onClose={onClose}
+                            onLock={onLock}
+                            onBack={onBack}
+                        />
                     )}
                 </ToolbarDropdown>
                 <ToolbarDropdown
                     autoClose={false}
                     noMaxSize={true}
-                    disabled={!selectedIDs.length}
+                    disabled={!selectedElements || !selectedElements.length}
                     content={<Icon className="toolbar-icon" name="label" />}
                     dropDownClassName="labelDropdown"
                     title={c('Title').t`Label as`}

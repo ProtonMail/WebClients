@@ -74,6 +74,7 @@ const MessageOnlyView = ({ labelID, messageID, mailSettings, onBack, onCompose }
             <div className="scroll-if-needed flex-item-fluid pt0-5 mw100">
                 <MessageView
                     labelID={labelID}
+                    conversationMode={false}
                     message={data}
                     labels={labels}
                     mailSettings={mailSettings}

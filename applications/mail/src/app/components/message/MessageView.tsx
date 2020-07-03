@@ -26,6 +26,7 @@ import { OnCompose } from '../../hooks/useCompose';
 
 interface Props {
     labelID: string;
+    conversationMode: boolean;
     labels: Label[];
     message: Message;
     mailSettings: any;
@@ -37,6 +38,7 @@ interface Props {
 
 const MessageView = ({
     labelID,
+    conversationMode,
     labels = [],
     message: inputMessage,
     mailSettings,
@@ -163,6 +165,7 @@ const MessageView = ({
                 <>
                     <HeaderExpanded
                         labelID={labelID}
+                        conversationMode={conversationMode}
                         message={message}
                         messageViewIcons={messageViewIcons}
                         messageLoaded={bodyLoaded}

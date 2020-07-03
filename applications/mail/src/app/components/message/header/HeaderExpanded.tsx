@@ -50,6 +50,7 @@ const ButtonGroup = OriginalButtonGroup as ({
 
 interface Props {
     labelID: string;
+    conversationMode: boolean;
     labels?: Label[];
     mailSettings: MailSettings;
     message: MessageExtended;
@@ -70,6 +71,7 @@ interface Props {
 
 const HeaderExpanded = ({
     labelID,
+    conversationMode,
     labels,
     message,
     messageViewIcons,
@@ -236,7 +238,14 @@ const HeaderExpanded = ({
                             title={c('Action').t`Move to`}
                         >
                             {({ onClose, onLock }) => (
-                                <MoveDropdown labelID={labelID} elements={elements} onClose={onClose} onLock={onLock} />
+                                <MoveDropdown
+                                    labelID={labelID}
+                                    elements={elements}
+                                    conversationMode={conversationMode}
+                                    onClose={onClose}
+                                    onLock={onLock}
+                                    onBack={onBack}
+                                />
                             )}
                         </HeaderDropdown>
                         <HeaderDropdown

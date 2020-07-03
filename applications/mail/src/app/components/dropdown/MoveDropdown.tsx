@@ -19,12 +19,12 @@ import { buildTreeview } from 'proton-shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
+import { useMoveToFolder } from '../../hooks/useApplyLabels';
 import { Element } from '../../models/element';
 
-type FolderItem = Folder & { icon: string; level: number };
-
 import './MoveDropdown.scss';
-import { useMoveToFolder } from '../../hooks/useApplyLabels';
+
+type FolderItem = Folder & { icon: string; level: number };
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
@@ -46,23 +46,21 @@ const folderReducer = (acc: FolderItem[], folder: FolderWithSubFolders, level = 
 interface Props {
     elements: Element[];
     labelID: string;
+    conversationMode: boolean;
     onClose: () => void;
     onLock: (lock: boolean) => void;
+    onBack: () => void;
 }
 
-const MoveDropdown = ({ elements, labelID, onClose, onLock }: Props) => {
+const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, onBack }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
 
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
-    const [folders = [], loadingFolders] = useFolders();
+    const [folders = []] = useFolders();
     const [search, updateSearch] = useState('');
     const normSearch = normalize(search);
     const moveToFolder = useMoveToFolder();
-
-    if (!elements || !elements.length || loadingFolders || !Array.isArray(folders)) {
-        return null;
-    }
 
     const treeview = buildTreeview(folders);
 
@@ -87,6 +85,10 @@ const MoveDropdown = ({ elements, labelID, onClose, onLock }: Props) => {
         const elementIDs = elements.map((element) => element.ID || '');
         await moveToFolder(isMessage, elementIDs, folder?.ID || '', folder?.Name || '', labelID);
         onClose();
+
+        if (!isMessage || !conversationMode) {
+            onBack();
+        }
     };
 
     const handleCreate = () => {

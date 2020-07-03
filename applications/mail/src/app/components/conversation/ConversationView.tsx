@@ -91,6 +91,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
                 {messagesToShow.map((message, index) => (
                     <MessageView
                         labelID={labelID}
+                        conversationMode={true}
                         key={message.ID}
                         message={message}
                         expand={message.ID === expand}
