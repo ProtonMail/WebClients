@@ -1,4 +1,4 @@
-import React, { useEffect, createContext, ReactNode, useContext } from 'react';
+import React, { useEffect, createContext, ReactNode, useContext, useLayoutEffect } from 'react';
 import { useInstance, useEventManager } from 'react-components';
 import { c } from 'ttag';
 import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
@@ -140,7 +140,8 @@ const MessageProvider = ({ children, cache: testCache }: Props) => {
 
     useEffect(() => subscribe(messageEventListener(cache)), []);
 
-    useEffect(() => cache.subscribe(messageCacheListener(cache)), []);
+    // useLayoutEffect is mandatory here unless it's possible we listen only too late after the first changes
+    useLayoutEffect(() => cache.subscribe(messageCacheListener(cache)), []);
 
     return <MessageContext.Provider value={cache}>{children}</MessageContext.Provider>;
 };
