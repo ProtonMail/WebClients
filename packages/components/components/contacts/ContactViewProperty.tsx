@@ -25,8 +25,8 @@ import { classnames } from '../../helpers/component';
 import Row from '../container/Row';
 import Icon from '../icon/Icon';
 
-import ContactGroupIcon from './ContactGroupIcon';
 import ContactUpgradeModal from './ContactUpgradeModal';
+import ContactGroupLabels from './ContactGroupLabels';
 
 interface Props {
     property: ContactProperty;
@@ -69,9 +69,7 @@ const ContactViewProperty = ({
                     <a className="mr0-5" href={`mailto:${value}`} title={value}>
                         {value}
                     </a>
-                    {contactGroups.map(({ ID, Name, Color }) => (
-                        <ContactGroupIcon key={ID} name={Name} color={Color} />
-                    ))}
+                    {contactGroups && <ContactGroupLabels contactGroups={contactGroups} />}
                 </>
             );
         }

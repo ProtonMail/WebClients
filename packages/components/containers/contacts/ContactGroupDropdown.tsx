@@ -218,10 +218,14 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
                                             indeterminate={model[ID] === INDETERMINATE}
                                             onChange={handleCheck(ID)}
                                         />
-                                        <label htmlFor={checkboxId} className="flex flex-item-fluid flex-nowrap">
+                                        <label
+                                            htmlFor={checkboxId}
+                                            className="flex flex-items-center flex-item-fluid flex-nowrap"
+                                        >
                                             <Icon
-                                                name="contacts-groups"
-                                                className="mr0-5 flex-item-noshrink"
+                                                name="circle"
+                                                className="ml0-25 mr0-5 flex-item-noshrink"
+                                                size={12}
                                                 color={Color}
                                             />
                                             <span className="flex-item-fluid ellipsis" title={Name}>

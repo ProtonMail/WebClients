@@ -44,7 +44,7 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
 
     const emailsFromInput = inputValue.map((e: any) => e.Address);
-    const contactGroupMap = toMap(contactGroups);
+    const contactGroupsMap = toMap(contactGroups);
 
     const initialCheckedContactEmailsMap = contactEmails.reduce(
         (acc: { [key: string]: boolean }, contactEmail: ContactEmail) => {
@@ -122,7 +122,7 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
         const tokenizedQuery = normalize(searchValue).split(' ');
 
         const groupNameTokens = c.LabelIDs.reduce((acc: string[], labelId) => {
-            const tokenized = normalize(contactGroupMap[labelId].Name).split(' ');
+            const tokenized = normalize(contactGroupsMap[labelId].Name).split(' ');
             return [...acc, ...tokenized];
         }, []);
 
@@ -218,7 +218,7 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
                                         key={filteredContactEmails[index].ID}
                                         contact={filteredContactEmails[index]}
                                         checked={!!checkedContactEmailMap[filteredContactEmails[index].ID]}
-                                        contactGroupMap={contactGroupMap}
+                                        contactGroupsMap={contactGroupsMap}
                                         isNarrow={isNarrow}
                                     />
                                 )}

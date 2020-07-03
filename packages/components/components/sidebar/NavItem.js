@@ -17,6 +17,7 @@ const NavItem = ({
     disabled,
     onClick,
     icon,
+    iconSize,
     list = [],
     color,
     className = '',
@@ -26,8 +27,8 @@ const NavItem = ({
     const content = (
         <span className="flex flex-nowrap w100 flex-items-center">
             {icon && (
-                <span className="navigation__icon" style={{ color }}>
-                    <Icon name={icon} className="flex-item-noshrink mr0-5 flex-item-centered-vert" />
+                <span className="navigation__icon flex" style={{ color }}>
+                    <Icon name={icon} size={iconSize} className="flex-item-noshrink mr0-5 flex-item-centered-vert" />
                 </span>
             )}
             <span className="flex-item-fluid ellipsis mw100">{text}</span>
@@ -95,6 +96,7 @@ NavItem.propTypes = {
     itemClassName: PropTypes.string,
     isActive: PropTypes.func,
     icon: PropTypes.string,
+    iconSize: PropTypes.number,
     color: PropTypes.string,
     disabled: PropTypes.bool,
     onClick: PropTypes.func,

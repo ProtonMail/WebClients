@@ -11,11 +11,13 @@ interface Props {
     onCheck: (e: ChangeEvent<HTMLInputElement>, contactID: string) => void;
     contact: ContactEmail;
     checked: boolean;
-    contactGroupMap?: { [key: string]: ContactGroup };
+    contactGroupsMap?: { [key: string]: ContactGroup };
     isNarrow: boolean;
 }
 
-const ContactModalRow = ({ style, onCheck, contact, checked, contactGroupMap, isNarrow }: Props) => {
+const ContactModalRow = ({ style, onCheck, contact, checked, contactGroupsMap = {}, isNarrow }: Props) => {
+    const contactGroups = contact.LabelIDs.map((ID: string) => contactGroupsMap[ID]);
+
     return (
         <div style={style} className="flex">
             <div
@@ -38,11 +40,9 @@ const ContactModalRow = ({ style, onCheck, contact, checked, contactGroupMap, is
                         <div className="flex-item-fluid flex onmobile-pl1">
                             <span className="inbl ellipsis mw100 pr1">{contact.Email}</span>
                         </div>
-                        {!isNarrow && (
+                        {!isNarrow && contactGroups && (
                             <div className="w25">
-                                {contact.LabelIDs.length ? (
-                                    <ContactGroupLabels contact={contact} contactGroupMap={contactGroupMap} />
-                                ) : null}
+                                <ContactGroupLabels contactGroups={contactGroups} />
                             </div>
                         )}
                     </div>
