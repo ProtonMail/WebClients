@@ -187,7 +187,7 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                             >
                                 <Icon
                                     name="circle"
-                                    size="12"
+                                    size={12}
                                     color={Color}
                                     className="flex-item-noshrink ml0-25 mr0-5"
                                 />
