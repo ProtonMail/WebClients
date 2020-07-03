@@ -53,6 +53,12 @@ const ItemRow = ({
         }
     };
 
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLTableRowElement>) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+            onClick?.(item);
+        }
+    };
+
     const handleTouchStart = (e: React.TouchEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
         touchStarted.current = true;
@@ -144,16 +150,20 @@ const ItemRow = ({
             </DragMoveContent>
             <TableRow
                 draggable
+                tabIndex={0}
+                role="button"
                 onDragStart={handleDragStart}
                 onDragEnd={handleDragEnd}
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
                 className={classnames([
+                    'no-outline',
                     (onClick || secondaryActionActive) && 'cursor-pointer',
                     isSelected && 'bg-global-highlight',
                     dragging && 'opacity-50'
                 ])}
                 onMouseDown={() => document.getSelection()?.removeAllRanges()}
+                onKeyDown={handleKeyDown}
                 onClick={handleRowClick}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchCancel}
