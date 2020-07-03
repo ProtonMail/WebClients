@@ -13,7 +13,7 @@ import { OnCompose } from '../../hooks/useCompose';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { hasLabel } from '../../helpers/elements';
 
-const { TRASH } = MAILBOX_LABEL_IDS;
+const { TRASH, ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
@@ -34,7 +34,7 @@ const MessageOnlyView = ({ labelID, messageID, mailSettings, onBack, onCompose }
 
     // Move out of trashed message
     useEffect(() => {
-        if (labelID !== TRASH && isTrashed) {
+        if (labelID !== TRASH && labelID !== ALL_MAIL && isTrashed) {
             onBack();
         }
     }, [labelID, isTrashed]);

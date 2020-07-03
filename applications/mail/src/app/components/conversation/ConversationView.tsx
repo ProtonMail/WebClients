@@ -14,7 +14,7 @@ import { hasLabel } from '../../helpers/elements';
 import { getNumParticipants } from '../../helpers/addresses';
 import { OnCompose } from '../../hooks/useCompose';
 
-const { TRASH } = MAILBOX_LABEL_IDS;
+const { TRASH, ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
@@ -37,7 +37,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
 
     // Move out of trashed conversation
     useEffect(() => {
-        if (labelID !== TRASH && isTrashed) {
+        if (labelID !== TRASH && labelID !== ALL_MAIL && isTrashed) {
             onBack();
         }
     }, [labelID, isTrashed]);
