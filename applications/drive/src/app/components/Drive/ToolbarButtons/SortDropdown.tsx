@@ -21,11 +21,12 @@ const SortDropdown = () => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { sortParams, setSorting } = useDriveContent();
 
-    const handleSortClick = (sortField: SortKeys, sortOrder: SORT_DIRECTION) => () => {
-        setSorting(sortField, sortOrder);
-    };
-
-    const menuItems: { name: string; icon: string; sortField: SortKeys; sortOrder: SORT_DIRECTION }[] = [
+    const menuItems: {
+        name: string;
+        icon: string;
+        sortField: SortKeys;
+        sortOrder: SORT_DIRECTION;
+    }[] = [
         {
             name: c('Action').t`Modified Date: New to Old`,
             icon: 'sort-new-old',
@@ -71,7 +72,7 @@ const SortDropdown = () => {
         <DropdownMenuButton
             key={item.name}
             className="flex flex-nowrap alignleft"
-            onClick={handleSortClick(item.sortField, item.sortOrder)}
+            onClick={() => setSorting(item.sortField, item.sortOrder)}
         >
             <Icon className="mt0-25 mr0-5" name={item.icon} />
             {item.name}
