@@ -44,6 +44,7 @@ const ItemRow = ({
 
     const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
+
         if (e.shiftKey) {
             onShiftClick(item.LinkID);
         } else if (e.ctrlKey || e.metaKey) {
@@ -56,6 +57,16 @@ const ItemRow = ({
     const handleKeyDown = (e: React.KeyboardEvent<HTMLTableRowElement>) => {
         if (e.key === ' ' || e.key === 'Enter') {
             onClick?.(item);
+        }
+    };
+
+    const handleSelect = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        e.preventDefault();
+
+        onToggleSelect(item.LinkID);
+        if (e.shiftKey) {
+            onShiftClick(item.LinkID);
         }
     };
 
@@ -81,12 +92,7 @@ const ItemRow = ({
     const isFolder = item.Type === LinkType.FOLDER;
     const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
     const cells = [
-        <div
-            key="select"
-            className="flex"
-            onClick={(e) => e.stopPropagation()}
-            onTouchStart={(e) => e.stopPropagation()}
-        >
+        <div key="select" className="flex" onClick={handleSelect} onTouchStart={(e) => e.stopPropagation()}>
             <Checkbox
                 className="increase-surface-click"
                 checked={isSelected}
