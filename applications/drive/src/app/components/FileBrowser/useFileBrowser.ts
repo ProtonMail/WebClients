@@ -3,6 +3,7 @@ import { FileBrowserItem } from './FileBrowser';
 
 const useFileBrowser = (folderChildren: FileBrowserItem[]) => {
     const [selectedItemIds, setSelectedItems] = useState<string[]>([]);
+    const [lastSelectedId, setLastSelectedId] = useState<string>();
 
     useEffect(() => {
         const isItemInFolder = (itemId: string) => folderChildren.some((item) => item.LinkID === itemId);
@@ -17,7 +18,14 @@ const useFileBrowser = (folderChildren: FileBrowserItem[]) => {
         setSelectedItems((ids) => {
             const filtered = ids.filter((itemId) => itemId !== id);
             const selected = filtered.length === ids.length;
-            return selected ? [...ids, id] : filtered;
+
+            if (selected) {
+                setLastSelectedId(id);
+                return [...ids, id];
+            }
+
+            setLastSelectedId(undefined);
+            return filtered;
         });
     };
 
@@ -29,8 +37,9 @@ const useFileBrowser = (folderChildren: FileBrowserItem[]) => {
 
     const selectRange = (selectedItem: string) => {
         // range between item matching selectedItem and lastSelected
-        let matchConditions = selectedItemIds[0] ? [selectedItem, selectedItemIds[0]] : [selectedItem];
-        const selected = [];
+
+        const selected: string[] = [];
+        let matchConditions = lastSelectedId ? [lastSelectedId, selectedItem] : [selectedItem];
         let i = 0;
         while (matchConditions.length) {
             const itemId = folderChildren[i].LinkID;
@@ -42,7 +51,7 @@ const useFileBrowser = (folderChildren: FileBrowserItem[]) => {
             }
             i++;
         }
-        setSelectedItems(selected);
+        setSelectedItems([...selectedItemIds.filter((id) => !selected.includes(id)), ...selected]);
     };
 
     const selectItem = (id: string) => setSelectedItems([id]);
