@@ -1,15 +1,16 @@
 import { useState, useMemo } from 'react';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
-interface Config<T> {
+export interface SortConfig<T> {
     key: keyof T;
     direction: SORT_DIRECTION;
+    compare?: (a: any, b: any) => number;
 }
 
 /**
  * Handles multi-parameter sorting logic for lists
  */
-export const useMultiSortedList = <T>(list: T[], initialConfig: Config<T>[] = []) => {
+export const useMultiSortedList = <T>(list: T[], initialConfig: SortConfig<T>[] = []) => {
     const [configs, setConfigs] = useState(initialConfig);
 
     const sortedList = useMemo(() => {
@@ -18,21 +19,23 @@ export const useMultiSortedList = <T>(list: T[], initialConfig: Config<T>[] = []
         }
 
         const comparator = (a: T, b: T) => {
-            const compare = (key: keyof T, a: T, b: T) => {
-                if (a[key] < b[key]) {
+            const defaultCompare = (a: T[keyof T], b: T[keyof T]) => {
+                if (a < b) {
                     return -1;
                 }
-                if (a[key] > b[key]) {
+                if (a > b) {
                     return 1;
                 }
                 return 0;
             };
 
             for (let i = 0; i < configs.length; i++) {
+                const config = configs[i];
+                const { key } = config;
+                const compare = ('compare' in config && config.compare) || defaultCompare;
                 const result =
-                    configs[i].direction === SORT_DIRECTION.ASC
-                        ? compare(configs[i].key, a, b)
-                        : compare(configs[i].key, b, a);
+                    config.direction === SORT_DIRECTION.ASC ? compare(a[key], b[key]) : compare(b[key], a[key]);
+
                 if (result !== 0) {
                     return result;
                 }
@@ -49,7 +52,7 @@ export const useMultiSortedList = <T>(list: T[], initialConfig: Config<T>[] = []
 /**
  * Handles sorting logic for lists.
  */
-const useSortedList = <T>(list: T[], initialConfig?: Config<T>) => {
+const useSortedList = <T>(list: T[], initialConfig?: SortConfig<T>) => {
     const { setConfigs, sortConfigs, sortedList } = useMultiSortedList(list, initialConfig && [initialConfig]);
 
     const toggleSort = (key: keyof T) => {
@@ -75,6 +78,6 @@ const useSortedList = <T>(list: T[], initialConfig?: Config<T>) => {
 /**
  * Handles sorting logic, when data is async.
  */
-export const useSortedListAsync = <T>(initialConfig: Config<T>) => useSortedList([], initialConfig);
+export const useSortedListAsync = <T>(initialConfig: SortConfig<T>) => useSortedList([], initialConfig);
 
 export default useSortedList;
