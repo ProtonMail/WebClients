@@ -70,6 +70,7 @@ const MoveButtons = ({
                     title={c('Action').t`Move to inbox`}
                     onClick={() => withLoading(handleMove(INBOX))}
                     disabled={!selectedIDs.length}
+                    data-cy="movetoinbox"
                 >
                     <Icon className="toolbar-icon mauto" name="inbox" />
                 </ToolbarButton>
@@ -80,6 +81,7 @@ const MoveButtons = ({
                     title={c('Action').t`Move to archive`}
                     onClick={() => withLoading(handleMove(ARCHIVE))}
                     disabled={!selectedIDs.length}
+                    data-cy="movetoarchive"
                 >
                     <Icon className="toolbar-icon mauto" name="archive" />
                 </ToolbarButton>
@@ -90,6 +92,7 @@ const MoveButtons = ({
                     title={c('Action').t`Move to spam`}
                     onClick={() => withLoading(handleMove(SPAM))}
                     disabled={!selectedIDs.length}
+                    data-cy="movetospam"
                 >
                     <Icon className="toolbar-icon mauto" name="spam" />
                 </ToolbarButton>
@@ -100,6 +103,7 @@ const MoveButtons = ({
                     title={c('Action').t`Move to trash`}
                     onClick={() => withLoading(handleMove(TRASH))}
                     disabled={!selectedIDs.length}
+                    data-cy="movetotrash"
                 >
                     <Icon className="toolbar-icon mauto" name="trash" />
                 </ToolbarButton>

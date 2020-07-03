@@ -129,6 +129,7 @@ const Toolbar = ({
                     content={<Icon className="toolbar-icon" name="folder" />}
                     dropDownClassName="moveDropdown"
                     title={c('Title').t`Move to`}
+                    data-cy="moveto"
                 >
                     {({ onClose, onLock }) => (
                         <MoveDropdown
@@ -148,6 +149,7 @@ const Toolbar = ({
                     content={<Icon className="toolbar-icon" name="label" />}
                     dropDownClassName="labelDropdown"
                     title={c('Title').t`Label as`}
+                    data-cy="labelas"
                 >
                     {({ onClose, onLock }) => (
                         <LabelDropdown

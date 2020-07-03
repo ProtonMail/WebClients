@@ -33,8 +33,13 @@ const PrivateSidebar = ({ labelID, expanded = false, location, breakpoints, onTo
             </div>
             {!breakpoints.isNarrow && (
                 <div className="pl1 pr1 mb1">
-                    <PrimaryButton className="pm-button--large mt0-25 w100 bold" onClick={handleCompose}>{c('Action')
-                        .t`Compose`}</PrimaryButton>
+                    <PrimaryButton
+                        className="pm-button--large mt0-25 w100 bold"
+                        onClick={handleCompose}
+                        data-cy="compose"
+                    >
+                        {c('Action').t`Compose`}
+                    </PrimaryButton>
                 </div>
             )}
             <nav className="navigation mw100 flex-item-fluid customScrollBar-container scroll-if-needed">

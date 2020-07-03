@@ -49,6 +49,7 @@ const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [], location }
             disabled={!selectedIDs.length}
             onClick={() => withLoading(markAs(READ))}
             className="notablet nomobile"
+            data-cy="read"
         >
             <Icon className="toolbar-icon mauto" name="read" />
         </ToolbarButton>,
@@ -58,6 +59,7 @@ const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [], location }
             loading={loading}
             disabled={!selectedIDs.length}
             onClick={() => withLoading(markAs(UNREAD))}
+            data-cy="unread"
         >
             <Icon className="toolbar-icon mauto" name="unread" />
         </ToolbarButton>

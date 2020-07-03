@@ -70,6 +70,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elements }: Props) => {
                 loading={loading}
                 title={c('Action').t`Empty folder`}
                 onClick={() => withLoading(handleEmpty())}
+                data-cy="emptyfolder"
             >
                 <Icon className="toolbar-icon mauto" name="empty-folder" />
             </ToolbarButton>

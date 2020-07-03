@@ -80,6 +80,7 @@ const DeleteButton = ({ labelID = '', mailSettings, breakpoints, selectedIDs = [
             title={c('Action').t`Delete permanently`}
             onClick={() => withLoading(handleDelete())}
             disabled={!selectedIDs.length}
+            data-cy="deletepermanently"
         >
             <Icon className="toolbar-icon mauto" name="delete" />
         </ToolbarButton>

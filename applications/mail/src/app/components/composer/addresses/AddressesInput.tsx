@@ -37,7 +37,8 @@ const AddressesInput = ({
     messageSendInfo,
     onChange,
     inputFocusRef,
-    placeholder
+    placeholder,
+    ...rest
 }: Props) => {
     const [inputModel, setInputModel] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
@@ -185,6 +186,7 @@ const AddressesInput = ({
                         ref={inputRef}
                         placeholder={placeholder}
                         data-testid="composer-addresses-input"
+                        {...rest}
                     />
                 </div>
             </div>

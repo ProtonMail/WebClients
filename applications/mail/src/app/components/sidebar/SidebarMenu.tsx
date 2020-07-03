@@ -68,6 +68,7 @@ const SidebarMenu = ({ labelID: currentLabelID, location }: Props) => {
                 icon="inbox"
                 text={c('Link').t`Inbox`}
                 isFolder={true}
+                data-cy="inbox"
             />
             <SidebarItem
                 {...getCommonProps(
@@ -76,42 +77,49 @@ const SidebarMenu = ({ labelID: currentLabelID, location }: Props) => {
                 icon="drafts"
                 text={c('Link').t`Drafts`}
                 isFolder={true}
+                data-cy="drafts"
             />
             <SidebarItem
                 {...getCommonProps(ShowMoved & SHOW_MOVED.SENT ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT)}
                 icon="sent"
                 text={c('Link').t`Sent`}
                 isFolder={true}
+                data-cy="sent"
             />
             <SidebarItem
                 {...getCommonProps(MAILBOX_LABEL_IDS.STARRED)}
                 icon="star"
                 text={c('Link').t`Starred`}
                 isFolder={false}
+                data-cy="starred"
             />
             <SidebarItem
                 {...getCommonProps(MAILBOX_LABEL_IDS.ARCHIVE)}
                 icon="archive"
                 text={c('Link').t`Archive`}
                 isFolder={true}
+                data-cy="archive"
             />
             <SidebarItem
                 {...getCommonProps(MAILBOX_LABEL_IDS.SPAM)}
                 icon="spam"
                 text={c('Link').t`Spam`}
                 isFolder={true}
+                data-cy="spam"
             />
             <SidebarItem
                 {...getCommonProps(MAILBOX_LABEL_IDS.TRASH)}
                 icon="trash"
                 text={c('Link').t`Trash`}
                 isFolder={true}
+                data-cy="trash"
             />
             <SidebarItem
                 {...getCommonProps(MAILBOX_LABEL_IDS.ALL_MAIL)}
                 icon="all-emails"
                 text={c('Link').t`All mail`}
                 isFolder={true}
+                data-cy="allmail"
             />
             <SidebarGroupHeader
                 toggled={displayFolders}
