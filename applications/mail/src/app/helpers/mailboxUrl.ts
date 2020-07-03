@@ -90,10 +90,10 @@ export const setPageInUrl = (location: Location, page: number) =>
     changeSearchParams(location.pathname, location.search, { page: page === 0 ? undefined : String(page + 1) });
 
 export const setSortInUrl = (location: Location, sort: Sort) =>
-    changeSearchParams(location.pathname, location.search, { sort: sortToString(sort) });
+    changeSearchParams(location.pathname, location.search, { page: undefined, sort: sortToString(sort) });
 
 export const setFilterInUrl = (location: Location, filter: Filter) =>
-    changeSearchParams(location.pathname, location.search, { filter: filterToString(filter) });
+    changeSearchParams(location.pathname, location.search, { page: undefined, filter: filterToString(filter) });
 
 export const setKeywordInUrl = (location: Location, keyword: string) =>
-    changeSearchParams(location.pathname, location.search, { keyword: keywordToString(keyword) });
+    changeSearchParams(location.pathname, location.search, { page: undefined, keyword: keywordToString(keyword) });
