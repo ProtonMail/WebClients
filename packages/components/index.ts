@@ -414,7 +414,7 @@ export {
 export { useGetCalendarKeys } from './hooks/useGetCalendarKeys';
 export { default as useOrganizationKey } from './hooks/useOrganizationKey';
 export { default as useGetOrganizationKeyRaw } from './hooks/useGetOrganizationKeyRaw';
-export { default as useSortedList, useSortedListAsync, useMultiSortedList, SortConfig } from './hooks/useSortedList';
+export { default as useSortedList, useSortedListAsync, useMultiSortedList } from './hooks/useSortedList';
 export { useMainArea, MainAreaContext } from './hooks/useMainArea';
 export { default as useVPNCountries } from './hooks/useVPNCountries';
 export { default as useMessageCounts } from './hooks/useMessageCounts';
