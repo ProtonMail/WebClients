@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { LoginForm, StandardPublicApp } from 'react-components';
+import { MinimalLoginContainer, StandardPublicApp } from 'react-components';
 import PublicLayout from './components/layout/PublicLayout';
 import { openpgpConfig } from './openpgpConfig';
 
@@ -14,7 +14,7 @@ const PublicApp = ({ onLogin }: Props) => {
             <PublicLayout>
                 <Router>
                     <Switch>
-                        <Route render={() => <LoginForm onLogin={onLogin} />} />
+                        <Route render={() => <MinimalLoginContainer onLogin={onLogin} />} />
                     </Switch>
                 </Router>
             </PublicLayout>
