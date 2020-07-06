@@ -52,6 +52,7 @@ const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [], location }
             data-cy="read"
         >
             <Icon className="toolbar-icon mauto" name="read" />
+            <span className="sr-only">{c('Action').t`Mark as read`}</span>
         </ToolbarButton>,
         <ToolbarButton
             key="unread"
@@ -62,6 +63,7 @@ const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [], location }
             data-cy="unread"
         >
             <Icon className="toolbar-icon mauto" name="unread" />
+            <span className="sr-only">{c('Action').t`Mark as unread`}</span>
         </ToolbarButton>
     ];
 

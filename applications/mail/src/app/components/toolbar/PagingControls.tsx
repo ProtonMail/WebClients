@@ -31,6 +31,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
                 className="notablet nomobile"
             >
                 <Icon className="toolbar-icon rotateZ-90 mauto" name="caret" />
+                <span className="sr-only">{c('Action').t`Previous page`}</span>
             </ToolbarButton>
             <ToolbarDropdown
                 title={c('Action').t`Change page`}
@@ -61,6 +62,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
                 className="notablet nomobile"
             >
                 <Icon className="toolbar-icon rotateZ-270 mauto" name="caret" />
+                <span className="sr-only">{c('Action').t`Next page`}</span>
             </ToolbarButton>
         </>
     );

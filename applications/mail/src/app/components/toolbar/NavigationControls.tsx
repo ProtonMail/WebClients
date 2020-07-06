@@ -30,6 +30,9 @@ const NavigationControls = ({ loading, conversationMode, elementID, elements, on
                 className="notablet nomobile"
             >
                 <Icon className="toolbar-icon rotateZ-90 mauto" name="caret" />
+                <span className="sr-only">
+                    {conversationMode ? c('Action').t`Previous conversation` : c('Action').t`Previous message`}
+                </span>
             </ToolbarButton>
             <ToolbarButton
                 loading={loading}
@@ -39,6 +42,9 @@ const NavigationControls = ({ loading, conversationMode, elementID, elements, on
                 className="notablet nomobile"
             >
                 <Icon className="toolbar-icon rotateZ-270 mauto" name="caret" />
+                <span className="sr-only">
+                    {conversationMode ? c('Action').t`Next conversation` : c('Action').t`Next message`}
+                </span>
             </ToolbarButton>
         </>
     );

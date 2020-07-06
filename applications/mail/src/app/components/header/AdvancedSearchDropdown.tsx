@@ -197,10 +197,13 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                 {isNarrow ? (
                     <Icon name="search" className={classnames(['topnav-icon'])} />
                 ) : (
-                    <Icon
-                        name="caret"
-                        className={classnames(['searchbox-advanced-search-icon', isOpen && 'rotateX-180'])}
-                    />
+                    <>
+                        <Icon
+                            name="caret"
+                            className={classnames(['searchbox-advanced-search-icon', isOpen && 'rotateX-180'])}
+                        />
+                        <span className="sr-only">{c('Action').t`Advanced search`}</span>
+                    </>
                 )}
             </DropdownButton>
             <Dropdown
@@ -304,7 +307,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                     </div>
                     <div className="mb2 flex flex-nowrap onmobile-flex-column">
                         <Label className="advancedSearch-label">{c('Label').t`Attachments`}</Label>
-                        <div className="flex-item-fluid">
+                        <div className="flex-item-fluid pt0-25">
                             <Radio
                                 id="advanced-search-attachments-all"
                                 onChange={() => updateModel({ ...model, attachments: UNDEFINED })}

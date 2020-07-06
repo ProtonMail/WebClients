@@ -73,6 +73,7 @@ const MoveButtons = ({
                     data-cy="movetoinbox"
                 >
                     <Icon className="toolbar-icon mauto" name="inbox" />
+                    <span className="sr-only">{c('Action').t`Move to inbox`}</span>
                 </ToolbarButton>
             ) : null}
             {displayArchive ? (
@@ -84,6 +85,7 @@ const MoveButtons = ({
                     data-cy="movetoarchive"
                 >
                     <Icon className="toolbar-icon mauto" name="archive" />
+                    <span className="sr-only">{c('Action').t`Move to archive`}</span>
                 </ToolbarButton>
             ) : null}
             {displaySpam ? (
@@ -95,6 +97,7 @@ const MoveButtons = ({
                     data-cy="movetospam"
                 >
                     <Icon className="toolbar-icon mauto" name="spam" />
+                    <span className="sr-only">{c('Action').t`Move to spam`}</span>
                 </ToolbarButton>
             ) : null}
             {displayTrash ? (
@@ -106,6 +109,7 @@ const MoveButtons = ({
                     data-cy="movetotrash"
                 >
                     <Icon className="toolbar-icon mauto" name="trash" />
+                    <span className="sr-only">{c('Action').t`Move to trash`}</span>
                 </ToolbarButton>
             ) : null}
         </>
