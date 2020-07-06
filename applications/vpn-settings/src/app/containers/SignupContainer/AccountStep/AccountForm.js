@@ -18,6 +18,7 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 
 const AccountForm = ({ model, onSubmit }) => {
     const [challengeLoading, setChallengeLoading] = useState(true);
@@ -47,6 +48,10 @@ const AccountForm = ({ model, onSubmit }) => {
         e.preventDefault();
 
         if (password !== confirmPassword) {
+            return;
+        }
+
+        if (!validateEmailAddress(email)) {
             return;
         }
 
