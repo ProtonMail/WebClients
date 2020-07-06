@@ -2,9 +2,11 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { isSecureCoreEnabled } from './utils';
 import { groupWith, compare } from 'proton-shared/lib/helpers/array';
-import { Details, Summary, useUser, useUserVPN } from 'react-components';
+import { Details, Summary, useUser, useUserVPN, classnames } from 'react-components';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import Country from './Country';
+import ServerNumber from './ServerNumber';
+import CityNumber from './CityNumber';
 
 const getServerNum = (server) => Number(server.Name.replace('-TOR', '').split('#')[1]);
 const getServerRegion = (server) => server.Name.split('#')[0];
@@ -12,7 +14,7 @@ const serverRegionAsc = (a, b) => compare(getServerRegion(a), getServerRegion(b)
 const serverNumAsc = (a, b) => compare(getServerNum(a), getServerNum(b));
 const serverNameAsc = (a, b) => serverRegionAsc(a, b) || serverNumAsc(a, b);
 
-const ServerConfigs = ({ servers, ...rest }) => {
+const ServerConfigs = ({ servers, category, ...rest }) => {
     // Free servers at the top, then sorted by Name#ID
     const sortedGroups = useMemo(() => {
         const groupedServers = groupWith(
@@ -43,14 +45,26 @@ const ServerConfigs = ({ servers, ...rest }) => {
                 return (
                     <Details key={server.Country} open={server.open}>
                         <Summary>
-                            <div className="ml0-5">
-                                <Country server={group[0]} />
+                            <div className="ml0-5 flex flex-nowrap flex-items-center">
+                                <div className={classnames([category === CATEGORY.SERVER ? 'w33' : ''])}>
+                                    <Country server={group[0]} />
+                                </div>
+                                {category === CATEGORY.SERVER ? (
+                                    <div className="w33">
+                                        <ServerNumber group={group} />
+                                    </div>
+                                ) : null}
+                                {category === CATEGORY.SERVER ? (
+                                    <div className="w33">
+                                        <CityNumber group={group} />
+                                    </div>
+                                ) : null}
                             </div>
                         </Summary>
                         <div className="p1">
                             <ConfigsTable
                                 {...rest}
-                                category={CATEGORY.SERVER}
+                                category={category}
                                 isUpgradeRequired={isUpgradeRequired}
                                 servers={group}
                             />

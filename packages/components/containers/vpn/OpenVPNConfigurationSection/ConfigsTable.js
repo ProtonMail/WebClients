@@ -11,7 +11,8 @@ import {
     TableCell,
     useApiWithoutResult,
     useNotifications,
-    Icon
+    Icon,
+    classnames
 } from 'react-components';
 import { c } from 'ttag';
 
@@ -83,19 +84,42 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
         <Table className="pm-simple-table--has-actions">
             <thead>
                 <tr>
-                    <TableCell className="w40 onmobile-wauto" type="header">
-                        {category === CATEGORY.SERVER ? c('TableHeader').t`Name` : c('TableHeader').t`Country`}
+                    <TableCell
+                        className={classnames(['onmobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        type="header"
+                    >
+                        {[CATEGORY.SERVER, CATEGORY.FREE].includes(category)
+                            ? c('TableHeader').t`Name`
+                            : c('TableHeader').t`Country`}
                     </TableCell>
-                    <TableCell className="w30 onmobile-wauto" type="header">{c('TableHeader').t`Status`}</TableCell>
-                    <TableCell className="w30 onmobile-wauto" type="header">{c('TableHeader').t`Action`}</TableCell>
+                    {category === CATEGORY.SERVER ? (
+                        <TableCell className="onmobile-wauto w25" type="header">{c('TableHeader').t`City`}</TableCell>
+                    ) : null}
+                    <TableCell
+                        className={classnames(['onmobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        type="header"
+                    >{c('TableHeader').t`Status`}</TableCell>
+                    <TableCell
+                        className={classnames(['onmobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        type="header"
+                    >{c('TableHeader').t`Action`}</TableCell>
                 </tr>
             </thead>
-            <TableBody loading={loading} colSpan={3}>
+            <TableBody loading={loading} colSpan={4}>
                 {servers.map((server) => (
                     <TableRow
                         key={server.ID}
                         cells={[
-                            category === CATEGORY.SERVER ? server.Name : <Country key="country" server={server} />,
+                            [CATEGORY.SERVER, CATEGORY.FREE].includes(category) ? (
+                                server.Name
+                            ) : (
+                                <Country key="country" server={server} />
+                            ),
+                            category === CATEGORY.SERVER ? (
+                                <div className="inline-flex-vcenter" key="city">
+                                    {server.City}
+                                </div>
+                            ) : null,
                             <div className="inline-flex-vcenter" key="status">
                                 <LoadIndicator server={server} />
                                 {server.Tier === 2 && <PlusBadge />}
@@ -133,7 +157,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                     ].filter(isTruthy)}
                                 />
                             )
-                        ]}
+                        ].filter(isTruthy)}
                     />
                 ))}
             </TableBody>

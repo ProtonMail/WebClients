@@ -257,7 +257,13 @@ const OpenVPNConfigurationSection = () => {
                     <>
                         <Alert>{c('Info')
                             .t`Install a Server configuration file to connect to a specific server in the country of your choice.`}</Alert>
-                        <ServerConfigs platform={platform} protocol={protocol} loading={loading} servers={allServers} />
+                        <ServerConfigs
+                            category={category}
+                            platform={platform}
+                            protocol={protocol}
+                            loading={loading}
+                            servers={allServers}
+                        />
                     </>
                 )}
                 {category === CATEGORY.FREE && (
@@ -265,6 +271,7 @@ const OpenVPNConfigurationSection = () => {
                         <Alert>{c('Info')
                             .t`Install a Free server configuration file to connect to a specific server in one of the three free locations.`}</Alert>
                         <ServerConfigs
+                            category={category}
                             platform={platform}
                             protocol={protocol}
                             loading={loading}

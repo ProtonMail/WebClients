@@ -21,7 +21,7 @@ import {
 } from 'react-components';
 
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, CLIENT_TYPES, PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, CLIENT_TYPES, PLAN_SERVICES } from 'proton-shared/lib/constants';
 import {
     getPlans,
     isBundleEligible,
@@ -156,7 +156,16 @@ const PlansSection = () => {
                     {Plans.length ? <div>{c('Info').t`You are currently subscribed to ${names}.`}</div> : null}
                 </Alert>
                 <div className="flex-noMinChildren flex-nowrap">
-                    <CycleSelector cycle={cycle} onSelect={setCycle} className="mr1 wauto" />
+                    <CycleSelector
+                        cycle={cycle}
+                        onSelect={setCycle}
+                        className="mr1 wauto"
+                        options={[
+                            { text: c('Billing cycle option').t`Monthly`, value: CYCLE.MONTHLY },
+                            { text: c('Billing cycle option').t`Annually SAVE 20%`, value: CYCLE.YEARLY },
+                            { text: c('Billing cycle option').t`Two years SAVE 33%`, value: CYCLE.TWO_YEARS }
+                        ]}
+                    />
                     <CurrencySelector currency={currency} onSelect={setCurrency} className="wauto" />
                 </div>
             </div>

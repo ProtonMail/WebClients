@@ -115,6 +115,11 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                     loading={loading}
                     cycle={model.cycle}
                     onSelect={(newCycle) => setModel({ ...model, cycle: newCycle })}
+                    options={[
+                        { text: c('Billing cycle option').t`Monthly`, value: CYCLE.MONTHLY },
+                        { text: c('Billing cycle option').t`Annually SAVE 20%`, value: CYCLE.YEARLY },
+                        { text: c('Billing cycle option').t`Two years SAVE 33%`, value: CYCLE.TWO_YEARS }
+                    ]}
                 />
                 <CurrencySelector
                     currency={model.currency}
