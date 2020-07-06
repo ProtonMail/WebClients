@@ -16,7 +16,7 @@ const TopBanners = () => {
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useState(
         getItem(`${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`) === 'true'
     );
-    const dashboardUrl = CLIENT_TYPE === CLIENT_TYPES.VPN ? '/dashboard' : '/settings/subscription';
+    const dashboardUrl = CLIENT_TYPE === CLIENT_TYPES.VPN ? '/payments#invoices' : '/settings/subscription#invoices';
     // TODO Update links once we have proton-account
     const upgradeLink = (
         <Href key="storage-link" className="color-currentColor" url={dashboardUrl} target="_self">{c('Link')
