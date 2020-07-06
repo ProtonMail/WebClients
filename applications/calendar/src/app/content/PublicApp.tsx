@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { StandardPublicApp, LoginForm } from 'react-components';
+import { StandardPublicApp, MinimalLoginContainer } from 'react-components';
 import locales from '../locales';
 
 interface Props {
@@ -10,7 +10,7 @@ const PublicApp = ({ onLogin }: Props) => {
     return (
         <StandardPublicApp locales={locales}>
             <Switch>
-                <Route render={() => <LoginForm onLogin={onLogin} />} />
+                <Route render={() => <MinimalLoginContainer onLogin={onLogin} />} />
             </Switch>
         </StandardPublicApp>
     );
