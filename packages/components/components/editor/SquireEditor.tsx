@@ -166,6 +166,7 @@ const SquireEditor = forwardRef(
                         onFocus={onFocus}
                         onChange={handlePlainTextChange}
                         placeholder={placeholder}
+                        data-cy="body"
                     />
                 ) : (
                     <>
@@ -177,6 +178,7 @@ const SquireEditor = forwardRef(
                             onReady={handleReady}
                             onInput={onChange}
                             onAddImages={onAddImages}
+                            data-cy="body"
                         />
                         {showEllipseButton && (
                             <div className="editor-ellipsis-button-container p0-5 bg-white color-global-grey">

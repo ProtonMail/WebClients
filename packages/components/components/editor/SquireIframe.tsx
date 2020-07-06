@@ -24,7 +24,7 @@ interface Props {
  * Uncontrolled components is prefered in this case
  */
 const SquireIframe = forwardRef(
-    ({ placeholder, metadata, onReady, onFocus, onInput, onAddImages }: Props, ref: Ref<SquireType>) => {
+    ({ placeholder, metadata, onReady, onFocus, onInput, onAddImages, ...rest }: Props, ref: Ref<SquireType>) => {
         const [iframeReady, setIframeReady] = useState(false);
         const [squireReady, setSquireReady] = useState(false);
         const [isEmpty, setIsEmpty] = useState(false);
@@ -102,7 +102,7 @@ const SquireIframe = forwardRef(
                 {placeholder && isEmpty && (
                     <div className="absolute ml1 no-pointer-events placeholder">{placeholder}</div>
                 )}
-                <iframe ref={iframeRef} frameBorder="0" className="w100 h100 squireIframe"></iframe>
+                <iframe ref={iframeRef} frameBorder="0" className="w100 h100 squireIframe" {...rest}></iframe>
             </div>
         );
     }
