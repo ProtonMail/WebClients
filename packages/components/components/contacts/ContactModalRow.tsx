@@ -25,9 +25,9 @@ const ContactModalRow = ({ property, onChange, onRemove, isOrderable = false }: 
     const { createModal } = useModals();
     const { field, uid, value } = property;
     const type = clearType(getType(property.type));
+    const isImage = ['photo', 'logo'].includes(field);
     const canDelete = !['fn'].includes(field);
-    const canClear = ['photo', 'logo'].includes(field) && property.value;
-    const canEdit = ['photo', 'logo'].includes(field) && !!value;
+    const canEdit = isImage && !!value;
 
     const handleChangeImage = () => {
         const handleSubmit = (value: string) => onChange({ uid, value });
@@ -38,21 +38,17 @@ const ContactModalRow = ({ property, onChange, onRemove, isOrderable = false }: 
 
     if (canEdit) {
         list.push({
-            text: c('Action').t`Edit`,
+            text: isImage ? c('Action').t`Change` : c('Action').t`Edit`,
             onClick: handleChangeImage
-        });
-    }
-    if (canClear) {
-        list.push({
-            text: c('Action').t`Clear`,
-            onClick: () => {
-                onChange({ uid, value: '' });
-            }
         });
     }
     if (canDelete) {
         list.push({
-            text: <Icon name="trash" className="color-global-warning mauto" alt={c('Action').t`Delete`} />,
+            text: canEdit ? (
+                <span className="color-global-warning">{c('Action').t`Delete`}</span>
+            ) : (
+                <Icon name="trash" className="color-global-warning mauto" alt={c('Action').t`Delete`} />
+            ),
             onClick: () => {
                 if (property.uid) {
                     onRemove(property.uid);

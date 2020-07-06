@@ -13,6 +13,7 @@ const NavItem = ({
     link,
     isActive,
     text,
+    title,
     aside,
     disabled,
     onClick,
@@ -38,7 +39,7 @@ const NavItem = ({
 
     if (type === 'link') {
         return (
-            <li className={itemClassName}>
+            <li className={itemClassName} title={title}>
                 <NavLink
                     className={classnames([linkClassName, className])}
                     isActive={isActive}
@@ -57,7 +58,7 @@ const NavItem = ({
 
     if (type === 'text') {
         return (
-            <li className={itemClassName}>
+            <li className={itemClassName} title={title}>
                 <span className={classnames([linkClassName, className])}>
                     {content}
                     {list.length ? (
@@ -70,7 +71,7 @@ const NavItem = ({
 
     if (type === 'button') {
         return (
-            <li className={itemClassName}>
+            <li className={itemClassName} title={title}>
                 <button
                     type="button"
                     className={classnames(['w100', linkClassName, className])}
