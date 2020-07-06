@@ -50,8 +50,9 @@ const isWebClientLegacy = () => {
  * @return {Boolean}
  */
 const isBetaAngularV4 = () => {
-    const { name, 'version-beta': versionBeta } = getPackageApp();
-    return versionBeta && name === 'protonmail-web';
+    const { name, 'version-beta': versionBeta, version } = getPackageApp();
+    const isV4 = version.startsWith('4') || versionBeta;
+    return isV4 && name === 'protonmail-web';
 };
 
 const isClientV4 = () => isBetaAngularV4() || !isWebClientLegacy();
