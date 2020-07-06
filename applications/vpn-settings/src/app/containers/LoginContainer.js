@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { LoginForm, Href, SimpleDropdown, DropdownMenu, SignInLayout } from 'react-components';
+import { MinimalLoginContainer, Href, SimpleDropdown, DropdownMenu, SignInLayout } from 'react-components';
 import { isMember } from 'proton-shared/lib/user/helpers';
 
 const LoginContainer = ({ stopRedirect, history, onLogin }) => {
@@ -22,7 +22,7 @@ const LoginContainer = ({ stopRedirect, history, onLogin }) => {
     return (
         <SignInLayout title={c('Title').t`Log in`}>
             <h2>{c('Title').t`User log in`}</h2>
-            <LoginForm
+            <MinimalLoginContainer
                 onLogin={handleLogin}
                 needHelp={
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="pm-button--link">
