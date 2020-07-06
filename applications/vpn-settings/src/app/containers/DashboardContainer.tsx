@@ -1,9 +1,21 @@
-import React from 'react';
-import { PlansSection, SubscriptionSection, BillingSection, useUser, SettingsPropsShared } from 'react-components';
-import { PERMISSIONS } from 'proton-shared/lib/constants';
+import React, { useEffect } from 'react';
+import {
+    PlansSection,
+    SubscriptionSection,
+    BillingSection,
+    useUser,
+    SettingsPropsShared,
+    useModals,
+    NewSubscriptionModal,
+    usePlans,
+    useSubscription,
+    useOrganization
+} from 'react-components';
+import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES } from 'proton-shared/lib/constants';
 import { UserModel } from 'proton-shared/lib/interfaces';
 import { c } from 'ttag';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { getPlanIDs, switchPlan } from 'proton-shared/lib/helpers/subscription';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';
 
@@ -36,6 +48,27 @@ export const getDashboardPage = (user: UserModel) => {
 
 const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared) => {
     const [user] = useUser();
+    const { createModal } = useModals();
+    const searchParams = new URLSearchParams(location.search);
+    const plan = searchParams.get('plan');
+    const [plans, loadingPlans] = usePlans();
+    const [subscription, loadingSubscription] = useSubscription();
+    const [organization, loadingOrganization] = useOrganization();
+
+    useEffect(() => {
+        if (plan && !loadingPlans && !loadingSubscription && !loadingOrganization) {
+            const { Cycle = DEFAULT_CYCLE, Currency = plans[0].Currency } = subscription;
+            const { ID } = plans.find(({ Name = '' }) => Name === plan);
+            const planIDs = switchPlan({
+                planIDs: getPlanIDs(subscription),
+                plans,
+                planID: ID,
+                service: PLAN_SERVICES.VPN,
+                organization
+            });
+            createModal(<NewSubscriptionModal planIDs={planIDs} currency={Currency} cycle={Cycle} />);
+        }
+    }, [loadingPlans, loadingSubscription, loadingOrganization]);
 
     return (
         <PrivateMainSettingsAreaWithPermissions
