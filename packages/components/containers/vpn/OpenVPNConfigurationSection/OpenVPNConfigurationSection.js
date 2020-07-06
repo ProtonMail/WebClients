@@ -104,7 +104,7 @@ const OpenVPNConfigurationSection = () => {
     const isUpgradeRequiredForCountries = () => !Object.keys(userVPN).length || !hasPaidVpn;
     const isUpgradeRequiredForDownloadAll =
         !Object.keys(userVPN).length ||
-        (!hasPaidVpn && category !== CATEGORY.SERVER) ||
+        (!hasPaidVpn && ![CATEGORY.SERVER, CATEGORY.FREE].includes(category)) ||
         (isBasicVPN && category === CATEGORY.SECURE_CORE);
 
     useEffect(() => {
