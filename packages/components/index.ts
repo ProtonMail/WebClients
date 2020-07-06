@@ -136,12 +136,7 @@ export { default as usePagination } from './components/pagination/usePagination'
 export { default as Pagination } from './components/pagination/Pagination';
 export { default as Label } from './components/label/Label';
 export { default as ScrollShadows } from './components/scroll/ScrollShadows';
-export { default as NavMenu } from './components/sidebar/NavMenu';
-export { default as NavItem } from './components/sidebar/NavItem';
-export { default as Hamburger } from './components/sidebar/Hamburger';
-export { default as Sidebar } from './components/sidebar/Sidebar';
-export { default as MobileNavServices } from './components/sidebar/MobileNavServices';
-export { default as MobileNavLink } from './components/sidebar/MobileNavLink';
+export * from './components/sidebar';
 export { default as OrderableContainer } from './components/orderable/OrderableContainer';
 export { default as OrderableElement } from './components/orderable/OrderableElement';
 export { default as OrderableHandle } from './components/orderable/OrderableHandle';
@@ -237,9 +232,12 @@ export { default as UsernameSection } from './containers/account/UsernameSection
 export { default as DeleteSection } from './containers/account/DeleteSection';
 export { default as PasswordsSection } from './containers/account/PasswordsSection';
 export { default as TwoFactorSection } from './containers/account/TwoFactorSection';
+
 export { default as UserDropdown } from './containers/heading/UserDropdown';
 export { default as UpgradeButton } from './containers/heading/UpgradeButton';
 export { default as SupportDropdown } from './containers/heading/SupportDropdown';
+export { default as SupportDropdownButton } from './containers/heading/SupportDropdownButton';
+
 export { default as RecoveryEmail } from './containers/notification/RecoveryEmail';
 export { default as EmailSection } from './containers/notification/EmailSection';
 export { default as AddressKeysSection } from './containers/keys/AddressKeysSection';
@@ -433,10 +431,6 @@ export { default as AppsDropdown } from './containers/app/AppsDropdown';
 export { default as MobileAppsLinks } from './components/sidebar/MobileAppsLinks';
 export { default as TopNavbar } from './containers/app/TopNavbar';
 export { default as LoaderPage } from './containers/app/LoaderPage';
-
-export { default as SidebarMenu } from './components/sidebar/SidebarMenu';
-export { default as SidebarItem } from './components/sidebar/SidebarItem';
-export { default as SidebarItemContent } from './components/sidebar/SidebarItemContent';
 
 export { default as SquireEditor } from './components/editor/SquireEditor';
 export { default as SimpleSquireEditor } from './components/editor/SimpleSquireEditor';

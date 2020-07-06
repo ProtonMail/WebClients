@@ -1,7 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const VpnLogo = ({ className = 'logo' }) => {
+interface Props {
+    className?: string;
+}
+const VpnLogo = ({ className = 'logo' }: Props) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,10 +29,6 @@ const VpnLogo = ({ className = 'logo' }) => {
             <title id="logo__title">ProtonVPN</title>
         </svg>
     );
-};
-
-VpnLogo.propTypes = {
-    className: PropTypes.string
 };
 
 export default VpnLogo;

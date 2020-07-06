@@ -1,7 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const ContactsLogo = ({ className = 'logo' }) => {
+interface Props {
+    className?: string;
+}
+const ContactsLogo = ({ className = 'logo' }: Props) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -32,10 +34,6 @@ const ContactsLogo = ({ className = 'logo' }) => {
             <title id="logo__title">ProtonContacts</title>
         </svg>
     );
-};
-
-ContactsLogo.propTypes = {
-    className: PropTypes.string
 };
 
 export default ContactsLogo;

@@ -1,8 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Icon } from 'react-components';
+import Icon from '../icon/Icon';
 
-const Hamburger = ({ sidebarId, expanded = true, onToggle }) => {
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {
+    onToggle?: () => void;
+    expanded?: boolean;
+    sidebarId?: string;
+}
+
+const Hamburger = ({ sidebarId, expanded = true, onToggle, ...rest }: Props) => {
     return (
         <button
             type="button"
@@ -10,16 +15,11 @@ const Hamburger = ({ sidebarId, expanded = true, onToggle }) => {
             aria-expanded={expanded}
             aria-controls={sidebarId}
             onClick={onToggle}
+            {...rest}
         >
             <Icon size={24} name={expanded ? 'off' : 'burger'} />
         </button>
     );
-};
-
-Hamburger.propTypes = {
-    expanded: PropTypes.bool,
-    onToggle: PropTypes.func.isRequired,
-    sidebarId: PropTypes.string
 };
 
 export default Hamburger;

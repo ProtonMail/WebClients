@@ -1,7 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const DriveLogo = ({ className = 'logo' }) => {
+interface Props {
+    className?: string;
+}
+const DriveLogo = ({ className = 'logo' }: Props) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -30,10 +32,6 @@ const DriveLogo = ({ className = 'logo' }) => {
             <title id="logo__title">ProtonDrive</title>
         </svg>
     );
-};
-
-DriveLogo.propTypes = {
-    className: PropTypes.string
 };
 
 export default DriveLogo;

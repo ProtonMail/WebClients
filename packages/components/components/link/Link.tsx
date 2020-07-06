@@ -1,10 +1,14 @@
 import React from 'react';
-import PropType from 'prop-types';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
-import Href from './Href';
+import Href, { Props as HrefProps } from './Href';
 
-const Link = ({ to, external = false, target = '_self', children, ...rest }) => {
+export interface Props extends HrefProps {
+    to: string;
+    external?: boolean;
+}
+
+const Link = ({ to, external, target = '_self', children, ...rest }: Props) => {
     if (external) {
         return (
             <Href url={to} target={target} {...rest}>
@@ -12,19 +16,11 @@ const Link = ({ to, external = false, target = '_self', children, ...rest }) => 
             </Href>
         );
     }
-
     return (
         <ReactRouterLink to={to} {...rest}>
             {children}
         </ReactRouterLink>
     );
-};
-
-Link.propTypes = {
-    to: PropType.string.isRequired,
-    external: PropType.bool,
-    target: PropType.string,
-    children: PropType.node.isRequired
 };
 
 export default Link;

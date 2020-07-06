@@ -13,6 +13,10 @@ export const useGetUserKeysRaw = (): (() => Promise<CachedKey[]>) => {
     return useCallback(async () => {
         const { OrganizationPrivateKey, Keys = [] } = await getUser();
 
+        if (Keys.length === 0) {
+            return [];
+        }
+
         const mailboxPassword = authentication.getPassword();
 
         const organizationKey = OrganizationPrivateKey

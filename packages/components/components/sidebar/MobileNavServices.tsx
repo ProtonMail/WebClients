@@ -1,8 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { useActiveBreakpoint } from 'react-components';
+import { useActiveBreakpoint } from '../../index';
 
-const MobileNavServices = ({ children }) => {
+interface Props {
+    children: React.ReactNode;
+}
+const MobileNavServices = ({ children }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
     if (!isNarrow) {
@@ -10,10 +12,6 @@ const MobileNavServices = ({ children }) => {
     }
 
     return <nav className="p1 flex flex-row flex-spacearound flex-item-noshrink bg-global-grey">{children}</nav>;
-};
-
-MobileNavServices.propTypes = {
-    children: PropTypes.node.isRequired
 };
 
 export default MobileNavServices;
