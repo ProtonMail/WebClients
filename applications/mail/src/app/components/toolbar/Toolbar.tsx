@@ -24,8 +24,6 @@ import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
 import NavigationControls from './NavigationControls';
 
-import './Toolbar.scss';
-
 interface Props {
     location: Location;
     loading?: boolean;
