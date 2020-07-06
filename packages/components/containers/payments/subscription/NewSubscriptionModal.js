@@ -49,6 +49,7 @@ const getCodes = ({ gift, coupon }) => {
     return codes;
 };
 
+/** @type any */
 const NewSubscriptionModal = ({
     expanded = false,
     step: initialStep = SUBSCRIPTION_STEPS.CUSTOMIZATION,
