@@ -12,7 +12,6 @@ import { findSender } from '../addresses';
 import { Attachment } from '../../models/attachment';
 import { insertSignature } from './messageSignature';
 import { formatFullDate } from '../date';
-import { recipientToInput } from '../addresses';
 import { getDate } from '../elements';
 import { isSent, isSentAndReceived, getOriginalTo, isPlainText } from './messages';
 import { exportPlainText, plainTextToHTML, getDocumentContent } from './messageContent';
@@ -169,8 +168,9 @@ const generateBlockquote = (
     addresses: Address[]
 ) => {
     const date = formatFullDate(getDate(referenceMessage?.data, ''));
-    const sender = recipientToInput(referenceMessage?.data?.Sender);
-    const previously = c('Message').t`On ${date}, ${sender} wrote:`;
+    const name = referenceMessage?.data?.Sender?.Name;
+    const address = `&lt;${referenceMessage?.data?.Sender?.Address}&gt;`;
+    const previously = c('Message').t`On ${date}, ${name} ${address} wrote:`;
     const previousContent = isPlainText(referenceMessage.data)
         ? plainTextToHTML(referenceMessage as MessageExtended, mailSettings, addresses)
         : getDocumentContent(referenceMessage.document);
