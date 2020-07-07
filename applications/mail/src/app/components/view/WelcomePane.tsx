@@ -58,7 +58,11 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                         {c('Info')
                             .jt`Having trouble sending or receiving emails? Interested in helping us improve our service? Feel free to ${reportBugButton}.`}
                     </p>
-                    <img src={unreadEmailsSvg} alt={c('Alternative text for welcome image').t`Welcome`} />
+                    <img
+                        className="hauto"
+                        src={unreadEmailsSvg}
+                        alt={c('Alternative text for welcome image').t`Welcome`}
+                    />
                 </>
             ) : (
                 <>
@@ -66,7 +70,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                         .jt`Upgrade to a paid plan starting from ${startingPrice} only and get additional storage capacity and more addresses with ProtonMail Plus.`}</p>
                     <div className="flex flex-nowrap mw50e center mt2">
                         <div className="bordered-container flex-item-fluid flex flex-column aligncenter p1 mr2">
-                            <img className="mb1" src={storageSvg} alt={c('Alt').t`Storage`} />
+                            <img className="mb1 hauto" src={storageSvg} alt={c('Alt').t`Storage`} />
                             <p className="mt0 mb1 bold">{c('Info').t`5GB Storage`}</p>
                             <p className="mt0 mb1">{c('Info')
                                 .t`Get enough storage space to hold on your history of precious communications.`}</p>
@@ -75,7 +79,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                             ).t`Upgrade`}</Href>
                         </div>
                         <div className="bordered-container flex-item-fluid flex flex-column aligncenter p1 mr2">
-                            <img className="mb1" src={mailSvg} alt={c('Alt').t`Mail`} />
+                            <img className="mb1 hauto" src={mailSvg} alt={c('Alt').t`Mail`} />
                             <p className="mt0 mb1 bold">{c('Info').t`5 Email Addresses`}</p>
                             <p className="mt0 mb1">{c('Info')
                                 .t`Set up to 5 email addresses and use them as you deem fit.`}</p>
@@ -84,7 +88,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                             ).t`Upgrade`}</Href>
                         </div>
                         <div className="bordered-container flex-item-fluid flex flex-column aligncenter p1">
-                            <img className="mb1" src={customSvg} alt={c('Alt').t`Customization`} />
+                            <img className="mb1 hauto" src={customSvg} alt={c('Alt').t`Customization`} />
                             <p className="mt0 mb1 bold">{c('Info').t`Customization`}</p>
                             <p className="mt0 mb1">{c('Info')
                                 .t`Folders, Labels, Auto-reply and more ways to tweak ProtonMail to match the way you work.`}</p>

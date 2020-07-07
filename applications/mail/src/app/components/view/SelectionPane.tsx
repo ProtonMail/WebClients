@@ -66,6 +66,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                 <img
                     src={checkeds > 1 ? conversationManySvg : conversationSingleSvg}
                     alt={c('Alternative text for conversation image').t`Conversation`}
+                    className="hauto"
                 />
             </div>
             {checkeds > 0 && <Button onClick={onUncheckAll}>{c('Action').t`Deselect`}</Button>}

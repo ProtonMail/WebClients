@@ -1,5 +1,7 @@
 // redefine specific sass vars here if needed
 $breakpoint-medium: 940;
+$use-height-auto-td: false;
+$use-height-auto-img: false;
 
 // include components that are shared across all Proton Products
 @import '~react-components/styles/index';

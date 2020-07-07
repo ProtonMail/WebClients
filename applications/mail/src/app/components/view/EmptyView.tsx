@@ -22,9 +22,19 @@ const EmptyView = ({ labelID, isSearch }: Props) => {
     return (
         <div className="mauto p1">
             <figure className="flex-item-fluid aligncenter p3">
-                {isSearch && <img src={noResultSearchSvg} alt={c('Search - no results').t`No results found`} />}
-                {isFolder && <img src={noResultSearchSvg} alt={c('Search - no results').t`No messages found`} />}
-                {isInbox && <img src={noResultInboxSvg} alt={c('Search - no results').t`No messages found`} />}
+                {isSearch && (
+                    <img src={noResultSearchSvg} className="hauto" alt={c('Search - no results').t`No results found`} />
+                )}
+                {isFolder && (
+                    <img
+                        src={noResultSearchSvg}
+                        className="hauto"
+                        alt={c('Search - no results').t`No messages found`}
+                    />
+                )}
+                {isInbox && (
+                    <img src={noResultInboxSvg} className="hauto" alt={c('Search - no results').t`No messages found`} />
+                )}
 
                 <figcaption className="mt2">
                     <h3 className="bold">
