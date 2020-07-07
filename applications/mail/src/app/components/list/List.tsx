@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent, DragEvent, useMemo } from 'react';
+import React, { useState, useEffect, ChangeEvent, DragEvent } from 'react';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
 import { useLabels, useContactEmails, useContactGroups, generateUID } from 'react-components';
@@ -31,8 +31,8 @@ interface Props {
 }
 
 const List = ({
-    labelID,
-    loading,
+    labelID: inputLabelID,
+    loading: inputLoading,
     expectedLength,
     elementID,
     userSettings,
@@ -53,13 +53,28 @@ const List = ({
     const [draggedIDs, setDraggedIDs] = useState<string[]>([]);
     const [savedCheck, setSavedCheck] = useState<string[]>();
 
-    const elements = useMemo(
-        () =>
-            loading
-                ? range(0, expectedLength).map(() => ({ ID: generateUID('placeholder') } as Element))
-                : inputElements,
-        [loading, inputElements]
-    );
+    // Delay the loading flag update to be synchronized with the elements list
+    const [labelID, setLabelID] = useState(inputLabelID);
+    const [loading, setLoading] = useState(inputLoading);
+    const [elements, setElements] = useState<Element[]>([]);
+
+    // Set the real elements in the list when loading is finished
+    useEffect(() => {
+        if (!inputLoading) {
+            setElements(inputElements);
+        }
+    }, [inputLoading, inputElements]);
+
+    // Set placeholders in elements list but only once when loading is triggered
+    useEffect(() => {
+        setLoading(inputLoading);
+        if (inputLoading) {
+            setElements(range(0, expectedLength).map(() => ({ ID: generateUID('placeholder') } as Element)));
+        }
+    }, [inputLoading]);
+
+    // Synchronize labelID. Needed to pass through a local state to not update label before loading flag
+    useEffect(() => setLabelID(inputLabelID), [inputLabelID]);
 
     useEffect(() => {
         setDraggedIDs([]);
@@ -142,7 +157,7 @@ const List = ({
         }
     };
 
-    return elements.length === 0 ? (
+    return !loading && elements.length === 0 ? (
         <EmptyView labelID={labelID} isSearch={isSearch} />
     ) : (
         <>

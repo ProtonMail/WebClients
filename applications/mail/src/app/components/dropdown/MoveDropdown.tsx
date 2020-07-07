@@ -82,8 +82,7 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
 
     const handleMove = async (folder?: Folder) => {
         const isMessage = testIsMessage(elements[0]);
-        const elementIDs = elements.map((element) => element.ID || '');
-        await moveToFolder(isMessage, elementIDs, folder?.ID || '', folder?.Name || '', labelID);
+        await moveToFolder(elements, folder?.ID || '', folder?.Name || '', labelID);
         onClose();
 
         if (!isMessage || !conversationMode) {

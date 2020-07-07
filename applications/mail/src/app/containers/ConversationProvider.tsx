@@ -3,14 +3,14 @@ import { useInstance, useEventManager, useApi } from 'react-components';
 import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
 import createLRU from 'proton-shared/lib/helpers/lru';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
+import { Api } from 'proton-shared/lib/interfaces';
+import { getConversation } from 'proton-shared/lib/api/conversations';
+import { identity } from 'proton-shared/lib/helpers/function';
 
 import { Event } from '../models/event';
 import { ConversationResult } from '../hooks/useConversation';
-import { Api } from 'proton-shared/lib/interfaces';
-import { getConversation } from 'proton-shared/lib/api/conversations';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { useExpirationCheck } from '../hooks/useExpiration';
-import { identity } from 'proton-shared/lib/helpers/function';
 import { Conversation } from '../models/conversation';
 
 export type ConversationCache = Cache<string, ConversationResult>;

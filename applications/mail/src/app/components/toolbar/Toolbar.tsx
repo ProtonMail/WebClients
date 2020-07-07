@@ -106,10 +106,8 @@ const Toolbar = ({
                     labelID={labelID}
                     labels={labels}
                     folders={folders}
-                    mailSettings={mailSettings}
                     breakpoints={breakpoints}
                     selectedIDs={selectedIDs}
-                    location={location}
                     onBack={onBack}
                 />
                 <DeleteButton

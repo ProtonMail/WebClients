@@ -85,7 +85,7 @@ describe('useElements', () => {
         });
     };
 
-    afterEach(() => {
+    beforeEach(() => {
         renderHookResult = null;
         clearAll();
     });
@@ -97,7 +97,10 @@ describe('useElements', () => {
         });
 
         it('should filter message with the right label', async () => {
-            const hook = await setup({ elements: [element1, element2, element3] });
+            const hook = await setup({
+                page: { page: 0, size: 50, limit: 50, total: 2 },
+                elements: [element1, element2, element3]
+            });
             expect(hook.result.current.elements.length).toBe(2);
         });
 
@@ -166,6 +169,7 @@ describe('useElements', () => {
 
             const element = { ID: 'id3', Labels: [{ ID: labelID }], LabelIDs: [labelID] };
             await sendEvent({
+                ConversationCounts: [{ LabelID: labelID, Total: page.total + 1, Unread: 0 }],
                 Conversations: [{ ID: element.ID, Action: EVENT_ACTIONS.CREATE, Conversation: element as Conversation }]
             });
             expect(hook.result.current.elements.length).toBe(4);

@@ -6,6 +6,9 @@ import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import UndoButton from '../components/notifications/UndoButton';
+import { useOptimisticApplyLabels } from './useOptimisticChange';
+import { isMessage as testIsMessage } from '../helpers/elements';
+import { Element } from '../models/element';
 
 const EXPIRATION = 7500;
 
@@ -14,24 +17,43 @@ export const useApplyLabels = () => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
+    const optimisticApplyLabels = useOptimisticApplyLabels();
 
     const applyLabels = useCallback(
-        async (isMessage: boolean, elementIDs: string[], changes: { [labelID: string]: boolean }, silent = false) => {
+        async (elements: Element[], changes: { [labelID: string]: boolean }, silent = false) => {
+            if (!elements.length) {
+                return;
+            }
+
+            const isMessage = testIsMessage(elements[0]);
             const labelAction = isMessage ? labelMessages : labelConversations;
             const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
             const changesKeys = Object.keys(changes);
+            const elementIDs = elements.map((element) => element.ID);
+            const rollbacks = {} as { [labelID: string]: () => void };
 
-            await Promise.all(
-                changesKeys.map((LabelID) => {
-                    if (changes[LabelID]) {
-                        return api(labelAction({ LabelID, IDs: elementIDs }));
-                    } else {
-                        return api(unlabelAction({ LabelID, IDs: elementIDs }));
-                    }
-                })
-            );
+            const handleDo = async () => {
+                await Promise.all(
+                    changesKeys.map(async (LabelID) => {
+                        rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
+                        try {
+                            if (changes[LabelID]) {
+                                return await api(labelAction({ LabelID, IDs: elementIDs }));
+                            } else {
+                                return await api(unlabelAction({ LabelID, IDs: elementIDs }));
+                            }
+                        } catch (error) {
+                            rollbacks[LabelID]();
+                            throw error;
+                        }
+                    })
+                );
 
-            await call();
+                await call();
+            };
+
+            // No await ==> optimistic
+            handleDo();
 
             let notificationText = c('Success').t`Labels applied.`;
 
@@ -98,16 +120,15 @@ export const useMoveToFolder = () => {
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
     const labelIDs = labels.map(({ ID }) => ID);
+    const optimisticApplyLabels = useOptimisticApplyLabels();
 
     const moveToFolder = useCallback(
-        async (
-            isMessage: boolean,
-            elementIDs: string[],
-            folderID: string,
-            folderName: string,
-            fromLabelID: string,
-            silent = false
-        ) => {
+        async (elements: Element[], folderID: string, folderName: string, fromLabelID: string, silent = false) => {
+            if (!elements.length) {
+                return;
+            }
+
+            const isMessage = testIsMessage(elements[0]);
             const action = isMessage ? labelMessages : labelConversations;
             const canUndo = isMessage
                 ? true
@@ -120,13 +141,27 @@ export const useMoveToFolder = () => {
                       MAILBOX_LABEL_IDS.STARRED,
                       MAILBOX_LABEL_IDS.ALL_MAIL
                   ].includes(fromLabelID);
+            const elementIDs = elements.map((element) => element.ID);
+
+            const rollback = optimisticApplyLabels(elements, { [folderID]: true }, true);
+
+            const handleDo = async () => {
+                try {
+                    await api(action({ LabelID: folderID, IDs: elementIDs }));
+                } catch (error) {
+                    rollback();
+                }
+                await call();
+            };
+
             const handleUndo = async () => {
+                rollback();
                 await api(action({ LabelID: fromLabelID, IDs: elementIDs }));
                 await call();
             };
 
-            await api(action({ LabelID: folderID, IDs: elementIDs }));
-            await call();
+            // No await ==> optimistic
+            handleDo();
 
             const notificationText = isMessage
                 ? c('Success').ngettext(
@@ -161,13 +196,26 @@ export const useMoveToFolder = () => {
 export const useStar = () => {
     const api = useApi();
     const { call } = useEventManager();
+    const optimisticApplyLabels = useOptimisticApplyLabels();
 
-    const star = useCallback(async (isMessage: boolean, elementIDs: string[], value: boolean) => {
+    const star = useCallback(async (elements: Element[], value: boolean) => {
+        if (!elements.length) {
+            return;
+        }
+
+        const isMessage = testIsMessage(elements[0]);
         const labelAction = isMessage ? labelMessages : labelConversations;
         const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
         const action = value ? labelAction : unlabelAction;
 
-        await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elementIDs }));
+        const rollback = optimisticApplyLabels(elements, { [MAILBOX_LABEL_IDS.STARRED]: value });
+
+        try {
+            await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elements.map((element) => element.ID) }));
+        } catch (error) {
+            rollback();
+            throw error;
+        }
         await call();
     }, []);
 

@@ -2,7 +2,7 @@ import { Location } from 'history';
 import { formatRelative, format } from 'date-fns';
 import { toMap, omit } from 'proton-shared/lib/helpers/object';
 import { Label, LabelCount } from 'proton-shared/lib/interfaces/Label';
-import { diff } from 'proton-shared/lib/helpers/array';
+import { diff, unique } from 'proton-shared/lib/helpers/array';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
@@ -16,6 +16,9 @@ import { hasAttachments as conversationHasAttachments } from './conversation';
 
 import { LabelIDsChanges } from '../models/event';
 import { Conversation } from '../models/conversation';
+import { Folder } from 'proton-shared/lib/interfaces/Folder';
+
+const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
 export interface TypeParams {
     labelID?: string;
@@ -151,7 +154,9 @@ export const hasAttachments = (element: Element) =>
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
  */
 export const parseLabelIDsInEvent = (element: Element, changes: Element & LabelIDsChanges): Element => {
-    const LabelIDs = diff(element.LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || []);
+    const LabelIDs = unique(
+        diff(element.LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || [])
+    );
     return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']), LabelIDs };
 };
 
@@ -166,3 +171,18 @@ export const isSearch = (searchParams: SearchParameters) =>
     !!searchParams.wildcard;
 
 export const isFilter = (filter: Filter) => Object.keys(filter).length > 0;
+
+/**
+ * Get the ID of the folder where the element is currently located
+ */
+export const getCurrentFolderID = (element: Element | undefined, customFoldersList: Folder[]): string => {
+    const labelIDs = getLabelIDs(element);
+    const standardFolders: { [labelID: string]: boolean } = {
+        [INBOX]: true,
+        [TRASH]: true,
+        [SPAM]: true,
+        [ARCHIVE]: true
+    };
+    const customFolders = toMap(customFoldersList, 'ID');
+    return labelIDs.find((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';
+};

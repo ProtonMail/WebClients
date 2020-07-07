@@ -8,11 +8,10 @@ import EmptyLabels from './EmptyLabels';
 
 interface Props {
     currentLabelID: string;
-    isConversation: boolean;
     counterMap: { [labelID: string]: LabelCount | undefined };
 }
 
-const SidebarLabels = ({ currentLabelID, isConversation, counterMap }: Props) => {
+const SidebarLabels = ({ currentLabelID, counterMap }: Props) => {
     const [labels = []] = useLabels();
 
     return (
@@ -28,7 +27,6 @@ const SidebarLabels = ({ currentLabelID, isConversation, counterMap }: Props) =>
                         text={label.Name}
                         color={label.Color}
                         isFolder={false}
-                        isConversation={isConversation}
                         count={counterMap[label.ID]}
                     />
                 ))

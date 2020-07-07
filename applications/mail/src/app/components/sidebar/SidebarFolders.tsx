@@ -11,13 +11,12 @@ import EmptyFolders from './EmptyFolders';
 
 interface Props {
     currentLabelID: string;
-    isConversation: boolean;
     counterMap: { [labelID: string]: LabelCount | undefined };
 }
 
 const formatFolderID = (folderID: string): string => `folder_expanded_state_${folderID}`;
 
-const SidebarFolders = ({ currentLabelID, isConversation, counterMap }: Props) => {
+const SidebarFolders = ({ currentLabelID, counterMap }: Props) => {
     const [folders, loadingFolders] = useFolders();
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
 
@@ -62,7 +61,6 @@ const SidebarFolders = ({ currentLabelID, isConversation, counterMap }: Props) =
             <SidebarFolder
                 key={folder.ID}
                 currentLabelID={currentLabelID}
-                isConversation={isConversation}
                 folder={folder}
                 level={level}
                 onToggle={handleToggleFolder(folder)}

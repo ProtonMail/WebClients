@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, useLoading, classnames } from 'react-components';
 
 import { Element } from '../../models/element';
-import { isMessage as testIsMessage, isStarred as testIsStarred } from '../../helpers/elements';
+import { isStarred as testIsStarred } from '../../helpers/elements';
 import { useStar } from '../../hooks/useApplyLabels';
 
 interface Props {
@@ -14,17 +14,19 @@ const ItemStar = ({ element = {} }: Props) => {
     const [loading, withLoading] = useLoading();
     const star = useStar();
 
-    const isMessage = testIsMessage(element);
     const isStarred = testIsStarred(element);
 
     const handleClick = async (event: MouseEvent) => {
         event.stopPropagation();
-        withLoading(star(isMessage, [element.ID || ''], !isStarred));
+        // Programmatically block the action instead of disabling the action
+        // Perhaps a bit less accessible but prevent to collapse a message on a second click
+        if (!loading) {
+            withLoading(star([element], !isStarred));
+        }
     };
 
     return (
         <button
-            disabled={loading}
             type="button"
             className={classnames([
                 'starbutton relative item-star inline-flex stop-propagation',

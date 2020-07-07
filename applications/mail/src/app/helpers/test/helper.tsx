@@ -14,6 +14,7 @@ import ConversationProvider from '../../containers/ConversationProvider';
 import { Event } from '../../models/event';
 import { MessageExtended } from '../../models/message';
 import { ConversationResult } from '../../hooks/useConversation';
+import { ELEMENTS_CACHE_KEY } from '../../hooks/useElementsCache';
 
 type ApiMock = {
     [url: string]: (...arg: any[]) => any;
@@ -76,6 +77,7 @@ export const clearAll = () => {
     clearCache();
     messageCache.clear();
     conversationCache.clear();
+    cache.delete(ELEMENTS_CACHE_KEY);
     eventManagerListeners.splice(0, eventManagerListeners.length);
 };
 

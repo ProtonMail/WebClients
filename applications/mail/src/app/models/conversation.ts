@@ -21,9 +21,9 @@ export interface Conversation {
 
 export interface ConversationLabel {
     ID: string;
-    ContextNumMessages: number;
-    ContextNumUnread: number;
-    ContextTime: number;
-    ContextSize: number;
-    ContextNumAttachments: number;
+    ContextNumMessages?: number;
+    ContextNumUnread?: number;
+    ContextTime?: number;
+    ContextSize?: number;
+    ContextNumAttachments?: number;
 }

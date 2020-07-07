@@ -8,6 +8,7 @@ import LocationAside from './LocationAside';
 import { LABEL_IDS_TO_HUMAN, DRAG_ELEMENT_KEY } from '../../constants';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { useDragOver } from '../../hooks/useDragOver';
+import { useElementsCache } from '../../hooks/useElementsCache';
 
 const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
 
@@ -17,7 +18,6 @@ interface Props {
     currentLabelID: string;
     labelID: string;
     isFolder: boolean;
-    isConversation: boolean;
     icon?: string;
     iconSize?: number;
     text: string;
@@ -35,10 +35,10 @@ const SidebarItem = ({
     content = text,
     color,
     isFolder,
-    isConversation,
     count
 }: Props) => {
     const { call } = useEventManager();
+    const [elementsCache] = useElementsCache();
 
     const [refresh, setRefresh] = useState(false);
 
@@ -72,10 +72,11 @@ const SidebarItem = ({
     const handleDrop = (event: DragEvent) => {
         dragProps.onDrop();
         const elementIDs = JSON.parse(event.dataTransfer.getData(DRAG_ELEMENT_KEY)) as string[];
+        const elements = elementIDs.map((elementID) => elementsCache.elements[elementID]);
         if (isFolder) {
-            moveToFolder(!isConversation, elementIDs, labelID, text, currentLabelID);
+            moveToFolder(elements, labelID, text, currentLabelID);
         } else {
-            applyLabel(!isConversation, elementIDs, { [labelID]: true });
+            applyLabel(elements, { [labelID]: true });
         }
     };
 

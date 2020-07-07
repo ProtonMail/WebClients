@@ -8,20 +8,18 @@ import SidebarItem from './SidebarItem';
 
 interface Props {
     currentLabelID: string;
-    isConversation: boolean;
     folder: FolderWithSubFolders;
     level: number;
     onToggle: (event: MouseEvent) => void;
     count?: LabelCount;
 }
 
-const SidebarFolder = ({ currentLabelID, folder, level, onToggle, isConversation, count }: Props) => {
+const SidebarFolder = ({ currentLabelID, folder, level, onToggle, count }: Props) => {
     return (
         <SidebarItem
             currentLabelID={currentLabelID}
             labelID={folder.ID}
             isFolder={true}
-            isConversation={isConversation}
             text={folder.Name}
             count={count}
             content={

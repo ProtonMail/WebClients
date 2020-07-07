@@ -1,18 +1,15 @@
 import React from 'react';
-import { Location } from 'history';
 import { c } from 'ttag';
 import { Icon, useLoading } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { MailSettings } from 'proton-shared/lib/interfaces';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 
 import ToolbarButton from './ToolbarButton';
-import { getCurrentType } from '../../helpers/elements';
-import { ELEMENT_TYPES } from '../../constants';
 import { Breakpoints } from '../../models/utils';
 import { labelIncludes, getFolderName } from '../../helpers/labels';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
+import { useElementsCache } from '../../hooks/useElementsCache';
 
 const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT } = MAILBOX_LABEL_IDS;
 
@@ -20,33 +17,22 @@ interface Props {
     labelID: string;
     labels?: Label[];
     folders?: Folder[];
-    mailSettings: MailSettings;
     breakpoints: Breakpoints;
     selectedIDs: string[];
-    location: Location;
     onBack: () => void;
 }
 
-const MoveButtons = ({
-    labelID = '',
-    labels = [],
-    folders = [],
-    mailSettings,
-    breakpoints,
-    selectedIDs = [],
-    location,
-    onBack
-}: Props) => {
+const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, selectedIDs = [], onBack }: Props) => {
     const [loading, withLoading] = useLoading();
-    const type = getCurrentType({ mailSettings, labelID, location });
     const moveToFolder = useMoveToFolder();
-    const isTypeMessage = type === ELEMENT_TYPES.MESSAGE;
     const labelIDs = labels.map(({ ID }) => ID);
+    const [elementsCache] = useElementsCache();
 
     const handleMove = async (LabelID: string) => {
         const folderName = getFolderName(LabelID, folders);
         const fromLabelID = labelIDs.includes(labelID) ? INBOX : labelID;
-        await moveToFolder(isTypeMessage, selectedIDs, LabelID, folderName, fromLabelID);
+        const elements = selectedIDs.map((elementID) => elementsCache.elements[elementID]);
+        await moveToFolder(elements, LabelID, folderName, fromLabelID);
         onBack();
     };
 

@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { Loader, useLabels, useToggle, Icon } from 'react-components';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import MessageView from '../message/MessageView';
 import ItemStar from '../list/ItemStar';
@@ -9,12 +10,12 @@ import ItemLabels from '../list/ItemLabels';
 import { ConversationResult, useConversation } from '../../hooks/useConversation';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import TrashWarning from './TrashWarning';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { hasLabel } from '../../helpers/elements';
 import { getNumParticipants } from '../../helpers/addresses';
 import { OnCompose } from '../../hooks/useCompose';
+import { useShouldMoveOutConversation } from '../../hooks/useShouldMoveOut';
 
-const { TRASH, ALL_MAIL } = MAILBOX_LABEL_IDS;
+const { TRASH } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
@@ -30,17 +31,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
     const [conversationData, loading] = useConversation(conversationID);
     const { state: filter, toggle: toggleFilter } = useToggle(true);
 
-    const { Conversation: conversation = {}, Messages: messages = [] } = (conversationData || {}) as ConversationResult;
-    const inTrash = labelID === MAILBOX_LABEL_IDS.TRASH;
-    const numTrashedMessages = conversation.Labels?.find((label) => label.ID === TRASH)?.ContextNumMessages || 0;
-    const isTrashed = numTrashedMessages > 0 && numTrashedMessages === messages?.length;
-
-    // Move out of trashed conversation
-    useEffect(() => {
-        if (labelID !== TRASH && labelID !== ALL_MAIL && isTrashed) {
-            onBack();
-        }
-    }, [labelID, isTrashed]);
+    useShouldMoveOutConversation(labelID, conversationData, onBack);
 
     if (loading) {
         return <Loader />;
@@ -51,6 +42,8 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
         return null;
     }
 
+    const { Conversation: conversation = {}, Messages: messages = [] } = conversationData as ConversationResult;
+    const inTrash = labelID === TRASH;
     const filteredMessages = messages.filter((message) => inTrash === hasLabel(message, TRASH));
     const messagesToShow = filter ? filteredMessages : messages;
     const showTrashWarning = filteredMessages.length !== messages.length;

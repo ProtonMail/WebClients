@@ -19,7 +19,7 @@ import { Label } from 'proton-shared/lib/interfaces/Label';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 
 import { Element } from '../../models/element';
-import { hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
+import { hasLabel } from '../../helpers/elements';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { getStandardFolders } from '../../helpers/labels';
 
@@ -81,8 +81,6 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
     });
 
     const handleApply = async (selection = selectedLabelIDs) => {
-        const isMessage = testIsMessage(elements[0]);
-        const elementIDs = elements.map((element) => element.ID || '');
         const initialState = getInitialState(labels, elements);
         const changes = Object.keys(selection).reduce((acc, LabelID) => {
             if (selection[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
@@ -93,11 +91,11 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
             }
             return acc;
         }, {} as { [labelID: string]: boolean });
-        const promises = [applyLabels(isMessage, elementIDs, changes)];
+        const promises = [applyLabels(elements, changes)];
         if (alsoArchive) {
             const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
             const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_IDENTIFIERS.inbox : labelID;
-            promises.push(moveToFolder(isMessage, elementIDs, MAILBOX_IDENTIFIERS.archive, folderName, fromLabelID));
+            promises.push(moveToFolder(elements, MAILBOX_IDENTIFIERS.archive, folderName, fromLabelID));
         }
         await Promise.all(promises);
         onClose();

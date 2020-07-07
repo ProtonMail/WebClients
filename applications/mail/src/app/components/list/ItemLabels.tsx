@@ -8,7 +8,7 @@ import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import { c } from 'ttag';
 import { Element } from '../../models/element';
-import { getLabelIDs, isMessage } from '../../helpers/elements';
+import { getLabelIDs } from '../../helpers/elements';
 import { useApplyLabels } from '../../hooks/useApplyLabels';
 
 interface Props {
@@ -36,8 +36,7 @@ const ItemLabels = ({
     const labelsSorted = orderBy(labelsObjects, 'Order') as Label[];
     const labelsToShow = labelsSorted.slice(0, max);
 
-    const handleUnlabel = (labelID: string) =>
-        applyLabels(isMessage(element), [element.ID || ''], { [labelID]: false });
+    const handleUnlabel = (labelID: string) => applyLabels([element], { [labelID]: false });
 
     return (
         <div

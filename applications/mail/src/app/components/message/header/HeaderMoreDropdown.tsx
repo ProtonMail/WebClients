@@ -65,7 +65,7 @@ const HeaderMoreDropdown = ({
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
         const folderName = getFolderName(folderID, folders);
-        await moveToFolder(true, [message.data?.ID || ''], folderID, folderName, fromFolderID);
+        await moveToFolder([message.data || {}], folderID, folderName, fromFolderID);
     };
 
     const handleUnread = async () => {
@@ -85,7 +85,7 @@ const HeaderMoreDropdown = ({
             })
         );
 
-        await moveToFolder(true, [message.data?.ID || ''], SPAM, '', '', true);
+        await moveToFolder([message.data || {}], SPAM, '', '', true);
         createNotification({ text: c('Success').t`Phishing reported` });
         onBack();
     };

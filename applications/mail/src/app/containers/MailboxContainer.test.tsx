@@ -1,10 +1,9 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
 import { Location, History } from 'history';
-import { noop } from 'proton-shared/lib/helpers/function';
 
 import MailboxContainer from './MailboxContainer';
-import { render, addApiMock, clearAll } from '../helpers/test/helper';
+import { render, addApiMock, clearAll, addToCache, addApiResolver } from '../helpers/test/helper';
 import { UserSettings, MailSettings } from 'proton-shared/lib/interfaces';
 import { Breakpoints } from '../models/utils';
 
@@ -29,10 +28,13 @@ const conversationsResult = {
 };
 
 describe('MailboxContainer', () => {
-    afterEach(() => clearAll());
+    beforeEach(() => {
+        clearAll();
+        addToCache('Labels', []);
+    });
 
     it('should show loader instead of list when elements loading', async () => {
-        addApiMock('conversations', () => new Promise(noop));
+        addApiResolver('conversations');
 
         const { container } = await render(<MailboxContainer {...props} />);
 
