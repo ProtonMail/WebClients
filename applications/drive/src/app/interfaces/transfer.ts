@@ -44,9 +44,15 @@ export interface Upload {
     error?: Error;
 }
 
+export interface DownloadInfo {
+    LinkID: string;
+    ShareID: string;
+}
+
 export interface Download {
     id: string;
     meta: TransferMeta;
+    downloadInfo: DownloadInfo;
     state: TransferState;
     type: LinkType;
     startDate: Date;

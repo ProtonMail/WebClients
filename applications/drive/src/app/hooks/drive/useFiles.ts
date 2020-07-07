@@ -24,7 +24,7 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { useUploadProvider } from '../../components/uploads/UploadProvider';
-import { TransferMeta, TransferState } from '../../interfaces/transfer';
+import { TransferMeta, TransferState, DownloadInfo } from '../../interfaces/transfer';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../../components/downloads/download';
 import { streamToBuffer } from '../../utils/stream';
@@ -483,17 +483,21 @@ function useFiles() {
         };
     };
 
-    const saveFileTransferFromBuffer = async (content: Uint8Array[], meta: TransferMeta) => {
-        return addToDownloadQueue(meta, {
+    const saveFileTransferFromBuffer = async (content: Uint8Array[], meta: TransferMeta, info: DownloadInfo) => {
+        return addToDownloadQueue(meta, info, {
             onStart: async () => content
         });
     };
 
     const startFileTransfer = (shareId: string, linkId: string, meta: TransferMeta) => {
-        return addToDownloadQueue(meta, {
-            transformBlockStream: decryptBlockStream(shareId, linkId),
-            onStart: async () => getFileBlocks(shareId, linkId)
-        });
+        return addToDownloadQueue(
+            meta,
+            { ShareID: shareId, LinkID: linkId },
+            {
+                transformBlockStream: decryptBlockStream(shareId, linkId),
+                onStart: async () => getFileBlocks(shareId, linkId)
+            }
+        );
     };
 
     /**
@@ -508,7 +512,10 @@ function useFiles() {
             onStartFolderTransfer: (path: string) => Promise<void>;
         }
     ) => {
-        const { addDownload, startDownloads } = addFolderToDownloadQueue(folderName);
+        const { addDownload, startDownloads } = addFolderToDownloadQueue(folderName, {
+            ShareID: shareId,
+            LinkID: linkId
+        });
         const fileStreamPromises: Promise<void>[] = [];
 
         const downloadFolder = async (linkId: string, filePath = ''): Promise<any> => {
@@ -528,22 +535,26 @@ function useFiles() {
                 const path = `${filePath}/${child.Name}`;
                 if (child.Type === LinkType.FILE) {
                     const promise = new Promise<void>((resolve, reject) =>
-                        addDownload(getMetaForTransfer(child), {
-                            transformBlockStream: decryptBlockStream(shareId, child.LinkID),
-                            onStart: async (stream) => {
-                                cb.onStartFileTransfer({
-                                    stream,
-                                    path
-                                }).catch(reject);
-                                return getFileBlocks(shareId, child.LinkID);
-                            },
-                            onFinish: () => {
-                                resolve();
-                            },
-                            onError(err) {
-                                reject(err);
+                        addDownload(
+                            getMetaForTransfer(child),
+                            { ShareID: shareId, LinkID: linkId },
+                            {
+                                transformBlockStream: decryptBlockStream(shareId, child.LinkID),
+                                onStart: async (stream) => {
+                                    cb.onStartFileTransfer({
+                                        stream,
+                                        path
+                                    }).catch(reject);
+                                    return getFileBlocks(shareId, child.LinkID);
+                                },
+                                onFinish: () => {
+                                    resolve();
+                                },
+                                onError(err) {
+                                    reject(err);
+                                }
                             }
-                        })
+                        ).catch(reject)
                     );
                     fileStreamPromises.push(promise);
                 } else {
@@ -556,7 +567,7 @@ function useFiles() {
         };
 
         await downloadFolder(linkId);
-        await startDownloads();
+        startDownloads();
         await Promise.all(fileStreamPromises);
     };
 
