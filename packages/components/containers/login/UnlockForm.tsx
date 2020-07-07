@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Input, Label } from 'react-components';
+import { Input, Label } from '../..';
 
-const UnlockForm = ({ password, setPassword }) => {
+interface Props {
+    password: string;
+    setPassword: (newPassword: string) => void;
+}
+
+const UnlockForm = ({ password, setPassword }: Props) => {
     return (
         <>
             <Label htmlFor="password">{c('Label').t`Mailbox password`}</Label>
@@ -23,11 +27,6 @@ const UnlockForm = ({ password, setPassword }) => {
             />
         </>
     );
-};
-
-UnlockForm.propTypes = {
-    password: PropTypes.string,
-    setPassword: PropTypes.func
 };
 
 export default UnlockForm;

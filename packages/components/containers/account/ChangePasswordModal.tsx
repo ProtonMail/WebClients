@@ -22,7 +22,7 @@ import {
     useApi
 } from '../../index';
 import { lockSensitiveSettings } from 'proton-shared/lib/api/user';
-import { AuthInfo, Auth2FA } from 'proton-shared/lib/interfaces/Auth';
+import { InfoAuthedResponse, TwoFaResponse } from 'proton-shared/lib/authentication/interface';
 import { getInfo, PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 import {
     handleUnlock,
@@ -79,14 +79,14 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const [{ '2FA': userAuth2FA }, loadingUserSettings] = useUserSettings();
 
     const { isSubUser, isAdmin } = User;
-    const [adminAuthTwoFA, setAdminAuthTwoFA] = useState<Auth2FA>();
+    const [adminAuthTwoFA, setAdminAuthTwoFA] = useState<TwoFaResponse>();
 
     useEffect(() => {
         if (!isSubUser) {
             return;
         }
         (async () => {
-            const infoResult = await api<AuthInfo>(getInfo());
+            const infoResult = await api<InfoAuthedResponse>(getInfo());
             /**
              * There is a special case for admins logged into non-private users. User settings returns two factor
              * information for the non-private user, and not for the admin to which the session actually belongs.

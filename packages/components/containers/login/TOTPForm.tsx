@@ -1,9 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Input, Label } from 'react-components';
 
-const TOTPForm = ({ totp, setTotp }) => {
+import { Input, Label } from '../..';
+
+interface Props {
+    totp: string;
+    setTotp: (newTotp: string) => void;
+}
+
+const TOTPForm = ({ totp, setTotp }: Props) => {
     return (
         <>
             <Label htmlFor="twoFa">{c('Label').t`Two-factor code`}</Label>
@@ -17,17 +22,12 @@ const TOTPForm = ({ totp, setTotp }) => {
                 required
                 value={totp}
                 className="w100 mb1"
-                placeholder={c('Placeholder').t`Two-factor code`}
+                placeholder="123456"
                 onChange={({ target: { value } }) => setTotp(value)}
                 data-cy-login="TOTP"
             />
         </>
     );
-};
-
-TOTPForm.propTypes = {
-    totp: PropTypes.string,
-    setTotp: PropTypes.func
 };
 
 export default TOTPForm;

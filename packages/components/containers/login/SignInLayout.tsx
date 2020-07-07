@@ -1,16 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { Title, Href, VpnLogo, MailLogo, FooterDetails, SupportDropdown, useConfig } from 'react-components';
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
+import { Title, Href, VpnLogo, MailLogo, FooterDetails, SupportDropdown, useConfig } from '../../index';
 import PublicHeader from './PublicHeader';
 import useAppTitle from '../../hooks/useAppTitle';
 
 const { VPN } = CLIENT_TYPES;
 
-const SignInLayout = ({ children, title }) => {
+interface Props {
+    children?: React.ReactNode;
+    title?: string;
+}
+
+const SignInLayout = ({ children, title = '' }: Props) => {
     const { CLIENT_TYPE } = useConfig();
     const isVPN = CLIENT_TYPE === VPN;
     const domain = isVPN ? 'protonvpn.com' : 'protonmail.com';
@@ -61,11 +65,6 @@ const SignInLayout = ({ children, title }) => {
             </div>
         </div>
     );
-};
-
-SignInLayout.propTypes = {
-    children: PropTypes.node.isRequired,
-    title: PropTypes.string.isRequired
 };
 
 export default SignInLayout;

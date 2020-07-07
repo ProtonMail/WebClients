@@ -6,3 +6,5 @@ declare module '*.md';
 declare module 'ical.js';
 
 declare module 'squire-rte';
+
+declare module 'pm-srp';

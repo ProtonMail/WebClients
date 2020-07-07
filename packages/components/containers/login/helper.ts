@@ -3,8 +3,11 @@ import { computeKeyPassword } from 'pm-srp';
 import { getPrimaryKeyWithSalt } from 'proton-shared/lib/keys/keys';
 import { TWO_FA_FLAGS, PASSWORD_MODE } from 'proton-shared/lib/constants';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
+import { KeySalt as tsKeySalt } from 'proton-shared/lib/interfaces/KeySalt';
+import { User as tsUser } from 'proton-shared/lib/interfaces/User';
+import { AuthResponse } from 'proton-shared/lib/authentication/interface';
 
-export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode } = {}) => {
+export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode }: AuthResponse) => {
     return {
         hasTotp: hasBit(Enabled, TWO_FA_FLAGS.TOTP),
         hasU2F: hasBit(Enabled, TWO_FA_FLAGS.U2F),
@@ -12,18 +15,22 @@ export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode } = {}) => {
     };
 };
 
-export const getErrorText = (error) => {
-    if (error.data && error.data.Error) {
+export const getErrorText = (error: any) => {
+    if (error?.data?.Error) {
         return error.data.Error;
     }
     return error.message;
 };
 
-export const handleUnlockKey = async (User, KeySalts, rawKeyPassword) => {
+export const handleUnlockKey = async (User: tsUser, KeySalts: tsKeySalt[], rawKeyPassword: string) => {
     const { KeySalt, PrivateKey } = getPrimaryKeyWithSalt(User.Keys, KeySalts);
 
+    if (!PrivateKey) {
+        throw new Error('Missing private key');
+    }
+
     // Support for versions without a key salt.
-    const keyPassword = KeySalt ? await computeKeyPassword(rawKeyPassword, KeySalt) : rawKeyPassword;
+    const keyPassword = KeySalt ? ((await computeKeyPassword(rawKeyPassword, KeySalt)) as string) : rawKeyPassword;
     const primaryKey = await decryptPrivateKey(PrivateKey, keyPassword);
 
     return { primaryKey, keyPassword };

@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { queryUnlock } from 'proton-shared/lib/api/user';
-import { useApi, FormModal, Row, Label, Field, PasswordInput } from 'react-components';
+import { useApi, FormModal, Row, Label, Field, PasswordInput } from '../../index';
 
-const UnlockModal = ({ onClose, onSuccess, ...rest }) => {
+interface Props {
+    onSuccess?: () => void;
+    onClose?: () => void;
+}
+const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
     const api = useApi();
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -18,8 +21,8 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }) => {
                 credentials: { password },
                 config: queryUnlock()
             });
-            onSuccess();
-            onClose();
+            onSuccess?.();
+            onClose?.();
         } catch (e) {
             setPassword('');
             setLoading(false);
@@ -51,11 +54,6 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }) => {
             </Row>
         </FormModal>
     );
-};
-
-UnlockModal.propTypes = {
-    onSuccess: PropTypes.func.isRequired,
-    onClose: PropTypes.func
 };
 
 export default UnlockModal;
