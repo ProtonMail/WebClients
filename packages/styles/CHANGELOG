@@ -20,6 +20,7 @@
 - new design for header links
 - add 'question-nocircle' icon
 - add scss fragment dedicated to mail reset styles
+- fix - `td` and `img` reset for Mail - added some Sass variables to trigger them or not (Mail is the special case, newsletter compatibility)
 
 ## Updated/fixes
 
@@ -58,7 +59,6 @@
 - fix modal scroll shadow! (not yet fixed on Design system website)
 - fix - crazy combination of `.pm-button--redborder` mixed with `.pm-button--link` and `.pm-button`
 - fix - bgcolor of read messages
-- fix - `td` reset for Mail
 
 
 ## Misc
