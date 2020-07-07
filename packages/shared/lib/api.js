@@ -1,11 +1,4 @@
-export const getUIDHeaders = (UID) => ({
-    'x-pm-uid': UID
-});
-
-export const getAuthHeaders = (UID, AccessToken) => ({
-    'x-pm-uid': UID,
-    Authorization: `Bearer ${AccessToken}`
-});
+import { getUIDHeaders } from './fetch/headers';
 
 const ADD_CLIENT_SECRET = ['auth', 'auth/info'];
 

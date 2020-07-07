@@ -49,21 +49,6 @@ export const createUrl = (urlString, params = {}) => {
 };
 
 /**
- * Merge headers for the request.
- * @param {Object} configHeaders
- * @param {Object} restConfig
- * @param {Object} headers
- * @returns {Object}
- */
-export const mergeHeaders = ({ headers: configHeaders, ...restConfig }, headers) => ({
-    ...restConfig,
-    headers: {
-        ...configHeaders,
-        ...headers
-    }
-});
-
-/**
  * Check the status of the response, and throw if needed.
  * @param {Object} response - Full response
  * @param {Object} config - Used config
