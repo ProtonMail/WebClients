@@ -2,27 +2,33 @@ import { getAuthVersionWithFallback } from 'pm-srp';
 
 import { auth, getInfo, PASSWORD_WRONG_ERROR } from '../api/auth';
 import { srpAuth } from '../srp';
+import { Api } from '../interfaces';
+import { AuthResponse, AuthVersion, InfoResponse } from './interface';
 
 /**
  * Provides authentication with fallback behavior in case the user's auth version is unknown.
- * @param {Function} api
- * @param {Object} srp
- * @param {Object} credentials
- * @param {Object} [initalAuthInfo] - Optional result from /info call
- * @return {Promise<{result, authVersion: number}>}
  */
-const loginWithFallback = async ({ api, credentials, initalAuthInfo }) => {
-    let state = {
-        authInfo: initalAuthInfo,
+interface Arguments {
+    api: Api;
+    credentials: { username: string; password: string };
+    initialAuthInfo?: InfoResponse;
+}
+const loginWithFallback = async ({ api, credentials, initialAuthInfo }: Arguments) => {
+    let state: { authInfo?: InfoResponse; lastAuthVersion?: AuthVersion } = {
+        authInfo: initialAuthInfo,
         lastAuthVersion: undefined
     };
     const { username } = credentials;
     const data = { Username: username };
 
     do {
-        const { authInfo = await api(getInfo(username)), lastAuthVersion } = state;
+        const { authInfo = await api<InfoResponse>(getInfo(username)), lastAuthVersion } = state;
 
-        const { version, done } = getAuthVersionWithFallback(authInfo, username, lastAuthVersion);
+        const { version, done }: { version: AuthVersion; done: boolean } = getAuthVersionWithFallback(
+            authInfo,
+            username,
+            lastAuthVersion
+        );
 
         try {
             // If it's not the last fallback attempt, suppress the wrong password notification from the API.
@@ -31,7 +37,7 @@ const loginWithFallback = async ({ api, credentials, initalAuthInfo }) => {
                 ...auth(data),
                 ...suppress
             };
-            const result = await srpAuth({
+            const result = await srpAuth<AuthResponse>({
                 api,
                 credentials,
                 config: srpConfig,

@@ -1,10 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore - pm-srp does not have typings, todo
 import { getSrp, getRandomSrpVerifier } from 'pm-srp';
 
 import { getInfo, getModulus } from './api/auth';
 import { Api } from './interfaces';
-import { AuthInfo, AuthModulus } from './interfaces/Auth';
+import { InfoResponse, ModulusResponse } from './authentication/interface';
 
 interface Credentials {
     username?: string;
@@ -56,28 +54,22 @@ const callAndValidate = async <T>({
 
 /**
  * Perform an API call with SRP auth.
- * @param api - Api function
- * @param credentials - Credentials entered by the user
- * @param config - Config to pass to the Api function
- * @param [info] - Result from auth/info call
- * @param [version] - Auth version to use
- * @return {Promise} - That resolves to the result of the call
  */
 interface SrpAuthArguments {
     api: Api;
     credentials: Credentials;
     config: Config;
-    info?: AuthInfo;
+    info?: InfoResponse;
     version?: number;
 }
 export const srpAuth = async <T>({ api, credentials, config, info, version }: SrpAuthArguments) => {
-    const authInfo = info || (await api<AuthInfo>(getInfo(credentials.username)));
-    const { expectedServerProof, clientProof, clientEphemeral } = await getSrp(authInfo, credentials, version);
+    const actualInfo = info || (await api<InfoResponse>(getInfo(credentials.username)));
+    const { expectedServerProof, clientProof, clientEphemeral } = await getSrp(actualInfo, credentials, version);
     const authData = {
         ClientProof: clientProof,
         ClientEphemeral: clientEphemeral,
         TwoFactorCode: credentials.totp,
-        SRPSession: authInfo.SRPSession
+        SRPSession: actualInfo.SRPSession
     };
     return callAndValidate<T>({
         api,
@@ -91,7 +83,7 @@ export const srpAuth = async <T>({ api, credentials, config, info, version }: Sr
  * Get initialization parameters for SRP.
  */
 export const srpGetVerify = async ({ api, credentials }: { api: Api; credentials: Credentials }) => {
-    const data = await api<AuthModulus>(getModulus());
+    const data = await api<ModulusResponse>(getModulus());
     const { version, salt, verifier } = await getRandomSrpVerifier(data, credentials);
     const authData = {
         ModulusID: data.ModulusID,
@@ -106,9 +98,6 @@ export const srpGetVerify = async ({ api, credentials }: { api: Api; credentials
 
 /**
  * Perform an SRP call with the random verifier.
- * @param api - Api function
- * @param credentials - Credentials entered by the user
- * @param config - Config to pass to the Api function
  */
 export const srpVerify = async <T>({
     api,
