@@ -1,5 +1,6 @@
 import React, { ReactNode, useState, useEffect } from 'react';
-import { useAddresses, useWindowSize, useHandler } from 'react-components';
+import { useAddresses, useWindowSize, useHandler, useBeforeUnload } from 'react-components';
+import { c } from 'ttag';
 
 import Composer from '../components/composer/Composer';
 import { useMessageCache } from './MessageProvider';
@@ -22,12 +23,18 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const windowSize: WindowSize = { width, height };
     const messageCache = useMessageCache();
 
+    useBeforeUnload(
+        messageIDs.length
+            ? c('Info').t`The data you have entered in the draft may not be saved if you leave the page.`
+            : ''
+    );
+
     const maxActiveComposer = breakpoints.isNarrow ? MAX_ACTIVE_COMPOSER_MOBILE : MAX_ACTIVE_COMPOSER_DESKTOP;
 
     const handleClose = (messageID: string) => () =>
         setMessageIDs((messageIDs) => {
             const newMessageIDs = messageIDs.filter((id) => id !== messageID);
-            if (newMessageIDs.length > 0) {
+            if (newMessageIDs.length) {
                 setFocusedMessageID(newMessageIDs[0]);
             }
             return newMessageIDs;
