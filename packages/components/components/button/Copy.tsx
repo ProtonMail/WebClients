@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
-import { Icon, Button, Tooltip, useNotifications } from '../../index';
+import { Icon, Button, Tooltip } from '../../index';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 
 interface Props {
@@ -10,13 +10,10 @@ interface Props {
 }
 
 const Copy = ({ value, className = '', onCopy }: Props) => {
-    const { createNotification } = useNotifications();
-
     const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         textToClipboard(value);
         onCopy && onCopy();
-        createNotification({ text: c('Notification').t`Copied to the clipboard` });
     };
 
     return (

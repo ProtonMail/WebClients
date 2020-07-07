@@ -13,6 +13,7 @@ import {
     ContactGroup
 } from 'proton-shared/lib/interfaces/contacts/Contact';
 
+import { useNotifications } from '../..';
 import ContactGroupDropdown from '../../containers/contacts/ContactGroupDropdown';
 import ContactLabelProperty from './ContactLabelProperty';
 import ContactEmailSettingsModal from '../../containers/contacts/modals/ContactEmailSettingsModal';
@@ -55,6 +56,7 @@ const ContactViewProperty = ({
 }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const { createModal } = useModals();
+    const { createNotification } = useNotifications();
     const types: { [key: string]: string } = getTypeLabels();
 
     const { field } = property;
@@ -150,14 +152,36 @@ const ContactViewProperty = ({
                                 </Tooltip>
                             </Button>
                         )}
-                        <Copy className="ml0-5 pm-button--for-icon" value={value} />
+                        <Copy
+                            className="ml0-5 pm-button--for-icon"
+                            value={value}
+                            onCopy={() => {
+                                createNotification({ text: c('Success').t`Email address copied to clipboard` });
+                            }}
+                        />
                     </>
                 );
             }
             case 'tel':
-                return <Copy className="ml0-5 pm-button--for-icon" value={value} />;
+                return (
+                    <Copy
+                        className="ml0-5 pm-button--for-icon"
+                        value={value}
+                        onCopy={() => {
+                            createNotification({ text: c('Success').t`Phone number copied to clipboard` });
+                        }}
+                    />
+                );
             case 'adr':
-                return <Copy className="ml0-5 pm-button--for-icon" value={formatAdr(property?.value as string[])} />;
+                return (
+                    <Copy
+                        className="ml0-5 pm-button--for-icon"
+                        value={formatAdr(property?.value as string[])}
+                        onCopy={() => {
+                            createNotification({ text: c('Success').t`Address copied to clipboard` });
+                        }}
+                    />
+                );
             default:
                 return null;
         }
