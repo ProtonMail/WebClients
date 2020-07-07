@@ -10,11 +10,11 @@ import {
     useVPNCountries,
     useNotifications
 } from 'react-components';
+import { c } from 'ttag';
 import { queryCreateUser, queryDirectSignupStatus } from 'proton-shared/lib/api/user';
 import { auth, setCookies } from 'proton-shared/lib/api/auth';
 import { subscribe, setPaymentMethod, verifyPayment, checkSubscription } from 'proton-shared/lib/api/payments';
-import { mergeHeaders } from 'proton-shared/lib/fetch/helpers';
-import { getAuthHeaders } from 'proton-shared/lib/api';
+import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
 import { getRandomString } from 'proton-shared/lib/helpers/string';
 import {
     DEFAULT_CURRENCY,
@@ -25,7 +25,6 @@ import {
     PAYMENT_METHOD_TYPES
 } from 'proton-shared/lib/constants';
 import { getPlan, PLAN, VPN_PLANS, PLAN_BUNDLES } from './plans';
-import { c } from 'ttag';
 
 const firstIn = (array, values) => values.find((value) => value && array.includes(value));
 const toPlanMap = (plans) => plans.reduce((planMap, plan) => ({ ...planMap, [plan.ID]: 1 }), {});
@@ -45,8 +44,6 @@ const getSignupAvailability = (isDirectSignupEnabled, allowedMethods = []) => {
         paid
     };
 };
-
-const withAuthHeaders = (UID, AccessToken, config) => mergeHeaders(config, getAuthHeaders(UID, AccessToken));
 
 /**
  * @param {Function} onLogin - callback after login that is done after registration
