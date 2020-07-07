@@ -22,3 +22,5 @@ export const isTransferInitializing = ({ state }: { state: TransferState }) => s
 export const isTransferPaused = ({ state }: { state: TransferState }) => state === TransferState.Paused;
 
 export const isTransferPending = ({ state }: { state: TransferState }) => state === TransferState.Pending;
+
+export const isTransferCancelError = (error: Error) => error.name === 'TransferCancel' || error.name === 'AbortError';

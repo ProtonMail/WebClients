@@ -5,7 +5,13 @@ import { useApi, generateUID } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import { FILE_CHUNK_SIZE, MAX_THREADS_PER_DOWNLOAD } from '../../constants';
 import { LinkType } from '../../interfaces/link';
-import { isTransferFailed, isTransferPaused, isTransferProgress, isTransferPending } from '../../utils/transfer';
+import {
+    isTransferFailed,
+    isTransferPaused,
+    isTransferProgress,
+    isTransferPending,
+    isTransferCancelError
+} from '../../utils/transfer';
 
 const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
 type TransferStateUpdater = TransferState | ((download: Download | PartialDownload) => TransferState);
@@ -152,7 +158,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                     updateState(id, TransferState.Done);
                 })
                 .catch((error: Error) => {
-                    if (error.name === 'TransferCancel' || error.name === 'AbortError') {
+                    if (isTransferCancelError(error)) {
                         updateState(id, TransferState.Canceled);
                     } else {
                         console.error(`Download ${id} failed: ${error}`);

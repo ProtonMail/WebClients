@@ -8,7 +8,7 @@ import { isTransferInitializing, isTransferPaused, isTransferFinished } from '..
 
 function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
     const { cancelDownload, removeDownload, pauseDownload, resumeDownload } = useDownloadProvider();
-    const { removeUpload } = useUploadProvider();
+    const { removeUpload, cancelUpload } = useUploadProvider();
     const [pauseInProgress, withPauseInProgress] = useLoading();
     const isInitializing = isTransferInitializing(transfer);
     const isFinished = isTransferFinished(transfer);
@@ -29,6 +29,7 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
                 if (isFinished) {
                     return removeUpload(transfer.id);
                 }
+                return cancelUpload(transfer.id);
         }
     };
 
@@ -53,7 +54,7 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
                     <Icon size={12} name={isTransferPaused(transfer) ? 'resume' : 'pause'} />
                 </button>
             )}
-            {!(type === TransferType.Upload && !isFinished) && (
+            {
                 <button
                     type="button"
                     onClick={handleClick}
@@ -62,7 +63,7 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
                 >
                     <Icon size={12} name={isFinished ? 'swipe' : 'off'} />
                 </button>
-            )}
+            }
         </div>
     );
 }
