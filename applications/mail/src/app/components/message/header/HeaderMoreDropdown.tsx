@@ -8,6 +8,7 @@ import {
     useEventManager,
     useNotifications,
     useModals,
+    useFolders,
     ConfirmModal,
     Alert,
     Group,
@@ -15,11 +16,10 @@ import {
     Tooltip
 } from 'react-components';
 import { markMessageAsUnread } from 'proton-shared/lib/api/messages';
-import { MAILBOX_LABEL_IDS, MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { reportPhishing } from 'proton-shared/lib/api/reports';
-import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
@@ -30,13 +30,12 @@ import MessagePrintModal from '../modals/MessagePrintModal';
 import { exportBlob } from '../../../helpers/message/messageExport';
 import HeaderDropdown from './HeaderDropdown';
 import { useMoveToFolder } from '../../../hooks/useApplyLabels';
-import { getStandardFolders } from '../../../helpers/labels';
+import { getFolderName, getCurrentFolderID } from '../../../helpers/labels';
 
 const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
-    labels?: Label[];
     message: MessageExtended;
     messageLoaded: boolean;
     sourceMode: boolean;
@@ -47,7 +46,6 @@ interface Props {
 
 const HeaderMoreDropdown = ({
     labelID,
-    labels,
     message,
     messageLoaded,
     sourceMode,
@@ -62,11 +60,11 @@ const HeaderMoreDropdown = ({
     const { createModal } = useModals();
     const closeDropdown = useRef<() => void>();
     const moveToFolder = useMoveToFolder();
-    const labelIDs = (labels || []).map(({ ID }) => ID);
+    const [folders = []] = useFolders();
 
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
-        const folderName = getStandardFolders()[folderID].name;
+        const folderName = getFolderName(folderID, folders);
         await moveToFolder(true, [message.data?.ID || ''], folderID, folderName, fromFolderID);
     };
 
@@ -121,9 +119,7 @@ const HeaderMoreDropdown = ({
     const messageLabelIDs = message.data?.LabelIDs || [];
     const isSpam = messageLabelIDs.includes(SPAM);
     const isInTrash = messageLabelIDs.includes(TRASH);
-    const [fromFolderID = INBOX] =
-        messageLabelIDs.filter((labelID) => !labelIDs.includes(labelID) && labelID !== MAILBOX_IDENTIFIERS.allmail) ||
-        [];
+    const fromFolderID = getCurrentFolderID(messageLabelIDs, folders);
     return (
         <Group className="mr1 mb0-5">
             <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="pm-button--for-icon relative">

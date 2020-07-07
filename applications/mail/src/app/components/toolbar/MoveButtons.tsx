@@ -6,13 +6,12 @@ import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
-import { toMap } from 'proton-shared/lib/helpers/object';
 
 import ToolbarButton from './ToolbarButton';
 import { getCurrentType } from '../../helpers/elements';
 import { ELEMENT_TYPES } from '../../constants';
 import { Breakpoints } from '../../models/utils';
-import { labelIncludes, getStandardFolders } from '../../helpers/labels';
+import { labelIncludes, getFolderName } from '../../helpers/labels';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
 
 const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT } = MAILBOX_LABEL_IDS;
@@ -43,11 +42,9 @@ const MoveButtons = ({
     const moveToFolder = useMoveToFolder();
     const isTypeMessage = type === ELEMENT_TYPES.MESSAGE;
     const labelIDs = labels.map(({ ID }) => ID);
-    const foldersMap = toMap(folders);
-    const standardFolders = getStandardFolders();
 
     const handleMove = async (LabelID: string) => {
-        const folderName = standardFolders[LabelID]?.name || foldersMap[LabelID].Name;
+        const folderName = getFolderName(LabelID, folders);
         const fromLabelID = labelIDs.includes(labelID) ? INBOX : labelID;
         await moveToFolder(isTypeMessage, selectedIDs, LabelID, folderName, fromLabelID);
         onBack();

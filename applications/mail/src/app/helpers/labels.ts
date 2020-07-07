@@ -140,5 +140,27 @@ export const getCurrentFolders = (
         });
 };
 
+export const getCurrentFolderID = (labelIDs: string[] = [], customFoldersList: Folder[] = []): string => {
+    const allFolderIDs = [
+        MAILBOX_LABEL_IDS.INBOX,
+        MAILBOX_LABEL_IDS.ARCHIVE,
+        MAILBOX_LABEL_IDS.SPAM,
+        MAILBOX_LABEL_IDS.TRASH,
+        MAILBOX_LABEL_IDS.SENT,
+        MAILBOX_LABEL_IDS.DRAFTS,
+        ...customFoldersList.map(({ ID }) => ID)
+    ];
+    return labelIDs.find((labeID) => allFolderIDs.includes(labeID)) || '';
+};
+
+export const getFolderName = (labelID: string, customFoldersList: Folder[] = []): string => {
+    const standardFolders = getStandardFolders();
+    if (standardFolders[labelID]) {
+        return standardFolders[labelID].name;
+    }
+    const { Name = '' } = customFoldersList.find(({ ID }) => ID === labelID) || {};
+    return Name;
+};
+
 export const labelIncludes = (labelID: string, ...labels: (MAILBOX_LABEL_IDS | string)[]) =>
     labels.includes(labelID as MAILBOX_LABEL_IDS);

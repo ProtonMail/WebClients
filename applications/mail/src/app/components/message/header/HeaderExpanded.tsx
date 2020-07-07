@@ -8,6 +8,7 @@ import {
     useToggle,
     useContactEmails,
     useContactGroups,
+    useFolders,
     ButtonGroup as OriginalButtonGroup,
     Tooltip
 } from 'react-components';
@@ -24,6 +25,7 @@ import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import { MessageViewIcons } from '../../../helpers/message/icon';
+import { getCurrentFolderID } from '../../../helpers/labels';
 import HeaderExtra from './HeaderExtra';
 import HeaderRecipientsSimple from './HeaderRecipientsSimple';
 import HeaderRecipientsDetails from './HeaderRecipientsDetails';
@@ -91,9 +93,10 @@ const HeaderExpanded = ({
 }: Props) => {
     const [contacts = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [contactGroups = []] = useContactGroups();
+    const [folders = []] = useFolders();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
-
     const elements = [message.data || {}];
+    const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
 
     const handleClick = (event: MouseEvent) => {
         if ((event.target as HTMLElement).closest('.stop-propagation') || window.getSelection()?.toString().length) {
@@ -103,6 +106,7 @@ const HeaderExpanded = ({
 
         onCollapse();
     };
+
     const handleCompose = (action: MESSAGE_ACTIONS) => () => {
         onCompose({
             action,
@@ -239,7 +243,7 @@ const HeaderExpanded = ({
                         >
                             {({ onClose, onLock }) => (
                                 <MoveDropdown
-                                    labelID={labelID}
+                                    labelID={currentFolderID}
                                     elements={elements}
                                     conversationMode={conversationMode}
                                     onClose={onClose}
