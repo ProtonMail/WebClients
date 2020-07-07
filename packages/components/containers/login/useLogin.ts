@@ -11,13 +11,9 @@ import { getKeySalts } from 'proton-shared/lib/api/keys';
 import { HTTP_ERROR_CODES } from 'proton-shared/lib/errors';
 import { AuthResponse, AuthVersion, InfoResponse } from 'proton-shared/lib/authentication/interface';
 import loginWithFallback from 'proton-shared/lib/authentication/loginWithFallback';
-import { mergeHeaders } from 'proton-shared/lib/fetch/helpers';
-import { getAuthHeaders } from 'proton-shared/lib/api';
+import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
 import { getAuthTypes, handleUnlockKey } from './helper';
 import { useApi } from '../../index';
-
-const withAuthHeaders = (UID: string, AccessToken: string, config: any) =>
-    mergeHeaders(config, getAuthHeaders(UID, AccessToken));
 
 export enum FORM {
     LOGIN,
