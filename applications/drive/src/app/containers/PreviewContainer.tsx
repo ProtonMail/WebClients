@@ -106,7 +106,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
         const transferMeta = getMetaForTransfer(meta);
         const fileStream = await (contents
-            ? saveFileTransferFromBuffer(contents, transferMeta)
+            ? saveFileTransferFromBuffer(contents, transferMeta, { ShareID: shareId, LinkID: linkId })
             : startFileTransfer(shareId, linkId, transferMeta));
 
         preventLeave(FileSaver.saveAsFile(fileStream, transferMeta));
