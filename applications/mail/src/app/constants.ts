@@ -7,6 +7,8 @@ export const PAGE_SIZE = 50;
 export const ATTACHMENT_MAX_SIZE = 25000000; // bytes -> 25MB
 export const LARGE_KEY_SIZE = 50 * 1024;
 
+export const UNDO_SEND_DELAY = 5000;
+
 export const ELEMENT_TYPES = {
     MESSAGE: 'message',
     CONVERSATION: 'conversation'

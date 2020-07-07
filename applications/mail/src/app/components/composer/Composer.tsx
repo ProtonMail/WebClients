@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
+import { COMPOSER_MODE } from 'proton-shared/lib/constants';
 
 import { MessageExtended, Message, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import ComposerTitleBar from './ComposerTitleBar';
@@ -27,8 +28,10 @@ import { WindowSize, Breakpoints } from '../../models/utils';
 import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import { useMessageSendInfo } from '../../hooks/useSendInfo';
-import { COMPOSER_MODE } from 'proton-shared/lib/constants';
 import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
+import UndoButton from '../notifications/UndoButton';
+import { OnCompose } from '../../hooks/useCompose';
+import { UNDO_SEND_DELAY } from '../../constants';
 
 enum ComposerInnerModal {
     None,
@@ -52,6 +55,7 @@ interface Props {
     breakpoints: Breakpoints;
     onFocus: () => void;
     onClose: () => void;
+    onCompose: OnCompose;
 }
 
 const Composer = ({
@@ -63,7 +67,8 @@ const Composer = ({
     windowSize,
     breakpoints,
     onFocus,
-    onClose: inputOnClose
+    onClose: inputOnClose,
+    onCompose
 }: Props) => {
     const [mailSettings] = useMailSettings() as [MailSettings, boolean, Error];
     const { createNotification } = useNotifications();
@@ -287,6 +292,11 @@ const Composer = ({
             setManualSaving(false);
         }
     };
+
+    const onBeforeUnload = () => {
+        return c('Info').t`The message you are sending will not be sent if you leave the page.`;
+    };
+
     const handleSend = async () => {
         setSending(true);
         let verificationResults;
@@ -299,8 +309,33 @@ const Composer = ({
         try {
             const { cleanMessage, mapSendPrefs } = verificationResults;
             autoSave.abort?.();
-            await addAction(() => sendMessage(cleanMessage, mapSendPrefs));
-            createNotification({ text: c('Success').t`Message sent` });
+            window.addEventListener('beforeunload', onBeforeUnload);
+            const timeoutID = setTimeout(async () => {
+                createNotification({ text: c('Info').t`Message sent` });
+                await addAction(() => sendMessage(cleanMessage, mapSendPrefs));
+                window.removeEventListener('beforeunload', onBeforeUnload);
+            }, UNDO_SEND_DELAY);
+            createNotification({
+                text: (
+                    <>
+                        <span className="mr1">{c('Success').t`Sending message...`}</span>
+                        <UndoButton
+                            onUndo={() => {
+                                // Cancel send action
+                                clearTimeout(timeoutID);
+                                // Re-open the message
+                                onCompose({
+                                    existingDraft: {
+                                        localID: syncedMessage.localID,
+                                        data: syncedMessage.data
+                                    }
+                                });
+                            }}
+                        />
+                    </>
+                ),
+                expiration: UNDO_SEND_DELAY
+            });
             onClose();
         } catch (error) {
             createNotification({

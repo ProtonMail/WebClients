@@ -76,6 +76,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
                         breakpoints={breakpoints}
                         onFocus={handleFocus(messageID)}
                         onClose={handleClose(messageID)}
+                        onCompose={handleCompose}
                     />
                 ))}
             </div>

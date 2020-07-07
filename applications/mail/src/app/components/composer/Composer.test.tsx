@@ -23,7 +23,8 @@ const props = {
     addresses: [],
     onFocus: jest.fn(),
     onChange: jest.fn(),
-    onClose: jest.fn()
+    onClose: jest.fn(),
+    onCompose: jest.fn()
 };
 
 describe('Composer', () => {
