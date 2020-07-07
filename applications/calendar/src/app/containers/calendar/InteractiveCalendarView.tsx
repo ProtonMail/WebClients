@@ -18,6 +18,7 @@ import {
     useGetCalendarKeys,
     useModals,
     useNotifications,
+    useBeforeUnload,
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
@@ -44,7 +45,6 @@ import MorePopoverEvent from '../../components/events/MorePopoverEvent';
 
 import { getCreateTemporaryEvent, getEditTemporaryEvent, getTemporaryEvent, getUpdatedDateTime } from './eventHelper';
 import CalendarView from './CalendarView';
-import useUnload from '../../hooks/useUnload';
 import { findUpwards } from '../../components/calendar/mouseHelpers/domHelpers';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
 import DeleteConfirmModal from './confirmationModals/DeleteConfirmModal';
@@ -186,7 +186,7 @@ const InteractiveCalendarView = ({
         onInteraction?.(!!temporaryEvent);
     }, [!!temporaryEvent]);
 
-    useUnload(isInTemporaryBlocking ? c('Alert').t`By leaving now, you will lose your event.` : '');
+    useBeforeUnload(isInTemporaryBlocking ? c('Alert').t`By leaving now, you will lose your event.` : '');
 
     const sortedEvents = useMemo(() => {
         return sortEvents(events.concat());

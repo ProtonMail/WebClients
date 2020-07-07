@@ -6,11 +6,11 @@ import {
     useGetAddressKeys,
     useGetCalendarBootstrap,
     useGetCalendarKeys,
+    useBeforeUnload,
 } from 'react-components';
 import { c } from 'ttag';
 import getMemberAndAddress, { getMemberAndAddressID } from '../../helpers/getMemberAndAddress';
 import { getSupportedEventsWithRecurrenceId, splitByRecurrenceId, splitErrors } from '../../helpers/import';
-import useUnload from '../../hooks/useUnload';
 import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel, StoredEncryptedEvent } from '../../interfaces/Import';
 
 import DynamicProgress from './DynamicProgress';
@@ -30,7 +30,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const getCalendarKeys = useGetCalendarKeys();
     const getAddressKeys = useGetAddressKeys();
 
-    useUnload(c('Alert').t`By leaving now, some events may not be imported`);
+    useBeforeUnload(c('Alert').t`By leaving now, some events may not be imported`);
 
     useEffect(() => {
         // Prepare api for allowing cancellation in the middle of the import
