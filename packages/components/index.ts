@@ -367,6 +367,7 @@ export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPN
 export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection';
 
 export { default as usePayPal } from './hooks/usePayPal';
+export { default as useBeforeUnload } from './hooks/useBeforeUnload';
 export { useUser, useGetUser } from './hooks/useUser';
 export { default as useUserVPN } from './hooks/useUserVPN';
 export { default as useBlackFriday } from './hooks/useBlackFriday';
