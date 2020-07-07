@@ -2,9 +2,6 @@ import { useEffect } from 'react';
 
 const useBeforeUnload = (message: string) => {
     useEffect(() => {
-        if (!message) {
-            return;
-        }
         const handleUnload = (event: BeforeUnloadEvent) => {
             if (event) {
                 event.preventDefault();
@@ -12,6 +9,10 @@ const useBeforeUnload = (message: string) => {
             }
             return message;
         };
+        if (!message) {
+            window.removeEventListener('beforeunload', handleUnload);
+            return;
+        }
         window.addEventListener('beforeunload', handleUnload);
         return () => {
             window.removeEventListener('beforeunload', handleUnload);
