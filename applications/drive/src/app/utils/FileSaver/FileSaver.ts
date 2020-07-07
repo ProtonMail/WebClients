@@ -7,6 +7,7 @@ import { TransferMeta } from '../../interfaces/transfer';
 import { streamToBuffer } from '../stream';
 import { NestedFileStream } from '../../interfaces/file';
 import { MEMORY_DOWNLOAD_LIMIT } from '../../constants';
+import { isTransferCancelError } from '../transfer';
 
 class FileSaver {
     private useBlobFallback = false;
@@ -27,7 +28,7 @@ class FileSaver {
             const saveStream = await openDownloadStream(meta, { onCancel: () => stream.cancel('user canceled') });
             await stream.pipeTo(saveStream, { preventCancel: true });
         } catch (err) {
-            if (err.name !== 'TransferCancel' && err.name !== 'AbortError') {
+            if (!isTransferCancelError(err)) {
                 console.error('Failed to save file via download, falling back to in-memory download:', err);
                 await this.saveViaBuffer(stream, meta.filename);
             }
@@ -39,7 +40,7 @@ class FileSaver {
             const chunks = await streamToBuffer(stream);
             downloadFile(new Blob(chunks, { type: 'application/octet-stream; charset=utf-8' }), filename);
         } catch (err) {
-            if (err.name !== 'TransferCancel' && err.name !== 'AbortError') {
+            if (!isTransferCancelError(err)) {
                 console.error(`File download for ${filename} failed: ${err}`);
             }
         }

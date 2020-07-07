@@ -14,7 +14,7 @@ function usePreventLeave() {
     const preventLeave = <T>(task: Promise<T>) => {
         pendingTasks.add(task);
         const cleanup = () => pendingTasks.delete(task);
-        task.finally(cleanup);
+        task.then(cleanup).catch(cleanup);
         return task;
     };
 

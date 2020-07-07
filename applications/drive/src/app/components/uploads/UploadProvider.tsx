@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
 import { initUpload, UploadCallbacks, UploadControls } from './upload';
 import { TransferState, TransferProgresses, TransferMeta, Upload, UploadInfo } from '../../interfaces/transfer';
-import { isTransferProgress, isTransferPending } from '../../utils/transfer';
+import { isTransferProgress, isTransferPending, isTransferFailed, isTransferCancelError } from '../../utils/transfer';
 
 interface UploadProviderState {
     uploads: Upload[];
@@ -14,6 +14,7 @@ interface UploadProviderState {
     getUploadsImmediate: () => Upload[];
     clearUploads: () => void;
     removeUpload: (id: string) => void;
+    cancelUpload: (id: string) => void;
 }
 
 const MAX_ACTIVE_UPLOADS = 3;
@@ -30,11 +31,6 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     const [uploads, setUploads] = useState<Upload[]>([]);
     const controls = useRef<{ [id: string]: UploadControls }>({});
     const progresses = useRef<TransferProgresses>({});
-
-    const updateUploadByID = (id: string, data: Partial<Upload>) => {
-        uploadsRef.current = uploadsRef.current.map((upload) => (upload.id === id ? { ...upload, ...data } : upload));
-        setUploads(uploadsRef.current);
-    };
 
     const removeUpload = (id: string) => {
         uploadsRef.current = uploadsRef.current.filter((upload) => upload.id !== id);
@@ -64,9 +60,15 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         setUploads(uploadsRef.current);
     };
 
-    const updateUploadState = (id: string, state: TransferState, { error }: { error?: Error } = {}) =>
-        updateUploadByID(id, { state, error });
-
+    const updateUploadState = (id: string, state: TransferState, data: Partial<Upload> = {}) => {
+        const currentUpload = uploadsRef.current.find((upload) => upload.id === id);
+        if (currentUpload && !isTransferFailed(currentUpload)) {
+            uploadsRef.current = uploadsRef.current.map((upload) =>
+                upload.id === id ? { ...upload, ...data, state } : upload
+            );
+            setUploads(uploadsRef.current);
+        }
+    };
     useEffect(() => {
         const uploading = uploads.filter(isTransferProgress);
         const nextPending = uploads.find(isTransferPending);
@@ -94,8 +96,12 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                     updateUploadState(id, TransferState.Done);
                 })
                 .catch((error) => {
-                    console.error(`Failed to upload: ${error}`);
-                    updateUploadState(id, TransferState.Error, { error });
+                    if (isTransferCancelError(error)) {
+                        updateUploadState(id, TransferState.Canceled);
+                    } else {
+                        console.error(`Download ${id} failed: ${error}`);
+                        updateUploadState(id, TransferState.Error, { error });
+                    }
                 });
         }
     }, [uploads]);
@@ -129,18 +135,21 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
             metadataPromise
                 .then(({ meta, info }) => {
-                    updateUploadByID(id, {
+                    updateUploadState(id, TransferState.Pending, {
                         meta,
-                        info,
-                        state: TransferState.Pending
+                        info
                     });
                 })
                 .catch((error) => {
                     updateUploadState(id, TransferState.Error, { error });
-
                     reject(error);
                 });
         });
+
+    const cancelUpload = (id: string) => {
+        updateUploadState(id, TransferState.Canceled);
+        controls.current[id].cancel();
+    };
 
     const getUploadsProgresses = () => ({ ...progresses.current });
 
@@ -156,7 +165,8 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                 addToUploadQueue,
                 getUploadsProgresses,
                 clearUploads,
-                removeUpload
+                removeUpload,
+                cancelUpload
             }}
         >
             {children}

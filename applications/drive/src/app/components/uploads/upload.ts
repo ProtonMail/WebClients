@@ -116,7 +116,7 @@ export function initUpload({ requestUpload, transform, onProgress, finalize, onE
 
     const start = async ({ blob }: UploadInfo) => {
         if (abortController.signal.aborted) {
-            return;
+            throw new TransferCancel(id);
         }
 
         const reader = new ChunkFileReader(blob, FILE_CHUNK_SIZE);
@@ -140,6 +140,7 @@ export function initUpload({ requestUpload, transform, onProgress, finalize, onE
 
     const cancel = () => {
         abortController.abort();
+        onError?.(new TransferCancel(id));
     };
 
     const uploadControls: UploadControls = {

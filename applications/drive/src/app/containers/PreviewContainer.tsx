@@ -16,6 +16,7 @@ import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
 import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
 import useDriveSorting from '../hooks/drive/useDriveSorting';
+import { isTransferCancelError } from '../utils/transfer';
 
 const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
@@ -64,7 +65,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
                     setContents(undefined);
                 }
             } catch (err) {
-                if (err.name !== 'AbortError' && err.name !== 'TransferCancel') {
+                if (!isTransferCancelError(err)) {
                     setError(() => {
                         throw err;
                     });
