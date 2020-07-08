@@ -123,7 +123,7 @@ export const icalValueToInternalValue = (type, value) => {
     if (Array.isArray(value)) {
         return value;
     }
-    if (typeof value === 'string') {
+    if (typeof value === 'string' || type === 'integer') {
         return value;
     }
     if (type === 'date') {
