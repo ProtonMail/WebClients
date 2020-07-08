@@ -11,12 +11,23 @@
         max-width: initial;
     }
 
-    &-listItem-button {
-        @extend .pm-button;
-        @extend .pm-button--for-icon;
+    &-listItem {
+        td {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
 
-        display: flex;
-        padding: 0;
+        &-expand {
+            padding: .85em;
+
+            &-button {
+                @extend .pm-button;
+                @extend .pm-button--for-icon;
+
+                display: flex;
+                padding: 0;
+            }
+        }
     }
 
     &-listItem-name {
