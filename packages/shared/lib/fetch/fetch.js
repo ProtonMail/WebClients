@@ -1,4 +1,5 @@
-import { createUrl, checkStatus, serializeData, createApiError } from './helpers';
+import { createUrl, checkStatus, serializeData } from './helpers';
+import { createOfflineError, createTimeoutError } from './ApiError';
 
 const DEFAULT_TIMEOUT = 30000;
 
@@ -31,11 +32,7 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
     return fetch(url, config)
         .catch((e) => {
             if (isTimeout) {
-                throw createApiError({
-                    name: 'TimeoutError',
-                    response: { status: -1, statusText: 'Request timed out' },
-                    config
-                });
+                throw createTimeoutError(config);
             }
 
             if (e.name === 'AbortError') {
@@ -43,11 +40,7 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
             }
 
             // Assume any other error is offline error.
-            throw createApiError({
-                name: 'OfflineError',
-                response: { status: 0, statusText: 'No network connection' },
-                config
-            });
+            throw createOfflineError(config);
         })
         .then((response) => {
             clearTimeout(timeoutHandle);
