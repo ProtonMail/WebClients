@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useIndicator } from './useIndicator';
 import { Tab } from './index';
 
@@ -7,17 +7,17 @@ const toKey = (index: number, prefix = '') => `${prefix}${index}`;
 interface Props {
     tabs?: Tab[];
     children?: Tab[];
-    preselectedTab?: number;
+    value: number;
+    onChange: (index: number) => void;
 }
 
-const Tabs = ({ children, tabs, preselectedTab = 0 }: Props) => {
-    const [selectedTab, updateSelectedTab] = useState(preselectedTab);
-    const key = toKey(selectedTab, 'key_');
-    const label = toKey(selectedTab, 'label_');
+export const Tabs = ({ value, onChange, tabs, children }: Props) => {
+    const key = toKey(value, 'key_');
+    const label = toKey(value, 'label_');
     const tabList = tabs || children || [];
-    const content = tabList[selectedTab]?.content;
+    const content = tabList[value]?.content;
 
-    const { ref: containerRef, scale, translate } = useIndicator(tabList, selectedTab);
+    const { ref: containerRef, scale, translate } = useIndicator(tabList, value);
 
     return (
         <div className="tabs">
@@ -36,14 +36,14 @@ const Tabs = ({ children, tabs, preselectedTab = 0 }: Props) => {
                                 <button
                                     onClick={(event) => {
                                         event.preventDefault();
-                                        updateSelectedTab(index);
+                                        onChange(index);
                                     }}
                                     className="tabs-list-link"
                                     id={label}
                                     role="tab"
                                     aria-controls={key}
                                     tabIndex={0}
-                                    aria-selected={selectedTab === index}
+                                    aria-selected={value === index}
                                 >
                                     {title}
                                 </button>

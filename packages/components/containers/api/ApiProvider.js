@@ -18,7 +18,7 @@ import ApiContext from './apiContext';
 import useNotifications from '../notifications/useNotifications';
 import useModals from '../modals/useModals';
 import UnlockModal from '../login/UnlockModal';
-import HumanVerificationModal from './HumanVerificationModal';
+import HumanVerificationModal from './humanVerification/HumanVerificationModal';
 import OfflineNotification from './OfflineNotification';
 
 const getSilenced = ({ silence } = {}, code) => {
@@ -120,13 +120,14 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
             });
         };
 
-        const handleVerification = ({ token, methods }) => {
+        const handleVerification = ({ token, methods, onVerify }) => {
             return new Promise((resolve, reject) => {
                 createModal(
                     <HumanVerificationModal
                         token={token}
                         methods={methods}
                         onClose={() => reject(CancelVerificationError())}
+                        onVerify={onVerify}
                         onSuccess={resolve}
                     />
                 );
