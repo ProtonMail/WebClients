@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useApi, useCache, useConversationCounts, useMessageCounts } from 'react-components';
 import { queryConversations, getConversation } from 'proton-shared/lib/api/conversations';
 import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages';
@@ -62,6 +62,7 @@ const emptyCache = (page: Page, labelID: string, counts: LabelCount[], params: E
 
 export const useElements: UseElements = ({ conversationMode, labelID, search, page, sort, filter }) => {
     const api = useApi();
+    const abortControllerRef = useRef<AbortController>();
 
     const [conversationCounts = []] = useConversationCounts() as [LabelCount[], boolean, Error];
     const [messageCounts = []] = useMessageCounts() as [LabelCount[], boolean, Error];
@@ -137,6 +138,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const pageChanged = () => cache.page.page !== page.page;
 
     const pageIsConsecutive = () =>
+        cache.pages.length === 0 ||
         cache.pages.some((p) => p === page.page || p === page.page - 1 || p === page.page + 1);
 
     const hasListFromTheStart = () => cache.pages.includes(0);
@@ -149,12 +151,11 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     // Live cache means we listen to events from event manager without refreshing the list every time
     const isLiveCache = () => !isSearch(search) && !isFilter(filter) && hasListFromTheStart();
 
-    const shouldResetCache = () =>
-        !cache.pendingRequest && (paramsChanged() || !pageIsConsecutive() || lastHasBeenUpdated());
+    const shouldResetCache = () => paramsChanged() || !pageIsConsecutive() || lastHasBeenUpdated();
 
     const shouldSendRequest = () =>
-        !cache.pendingRequest &&
-        (cache.invalidated || expectedLengthMismatch > 0 || shouldResetCache() || !pageCached());
+        shouldResetCache() ||
+        (!cache.pendingRequest && (cache.invalidated || expectedLengthMismatch > 0 || !pageCached()));
 
     const shouldUpdatePage = () => pageChanged() && pageCached();
 
@@ -172,9 +173,11 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     };
 
     const queryElements = async (): Promise<{ Total: number; Elements: Element[] }> => {
+        abortControllerRef.current?.abort();
+        abortControllerRef.current = new AbortController();
         const query = conversationMode ? queryConversations : queryMessageMetadata;
-        const result: any = await api(
-            query({
+        const result: any = await api({
+            ...query({
                 Page: page.page,
                 PageSize: page.size,
                 Limit: page.limit,
@@ -194,8 +197,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 AddressID: search.address,
                 // ID,
                 AutoWildcard: search.wildcard
-            } as any)
-        );
+            } as any),
+            signal: abortControllerRef.current.signal
+        });
 
         return {
             Total: result.Total,

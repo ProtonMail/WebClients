@@ -140,12 +140,15 @@ describe('useElements', () => {
     describe('request effect', () => {
         it('should send request for conversations current page', async () => {
             const page: Page = { page: 0, size: 5, limit: 5, total: 8 };
-            const expectedRequest = queryConversations({
-                LabelID: labelID,
-                Sort: 'Time',
-                Limit: page.limit,
-                PageSize: page.size
-            } as any);
+            const expectedRequest = {
+                ...queryConversations({
+                    LabelID: labelID,
+                    Sort: 'Time',
+                    Limit: page.limit,
+                    PageSize: page.size
+                } as any),
+                signal: new AbortController().signal
+            };
 
             const result = await setup({ elements: getElements(page.size), page });
 
