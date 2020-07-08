@@ -3,13 +3,12 @@ import { classnames, Button, PrivateMainArea } from 'react-components';
 import { History, Location } from 'history';
 import { DENSITY } from 'proton-shared/lib/constants';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
+import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
 import { Element } from '../models/element';
 import { Sort, Filter, Page, SearchParameters } from '../models/tools';
-
 import { useMailboxPageTitle } from '../hooks/useMailboxPageTitle';
 import { useElements } from '../hooks/useElements';
-
 import { isColumnMode, isConversationMode } from '../helpers/mailSettings';
 import {
     pageFromUrl,
@@ -21,7 +20,6 @@ import {
     setPathInUrl,
     extractSearchParameters
 } from '../helpers/mailboxUrl';
-
 import Toolbar from '../components/toolbar/Toolbar';
 import List from '../components/list/List';
 import ConversationView from '../components/conversation/ConversationView';
@@ -32,11 +30,10 @@ import { isMessage, isSearch as testIsSearch } from '../helpers/elements';
 import { isDraft } from '../helpers/message/messages';
 import { Message } from '../models/message';
 import { Breakpoints } from '../models/utils';
-
-import './MailboxContainer.scss';
-import { getSearchParams } from 'proton-shared/lib/helpers/url';
 import { OnCompose } from '../hooks/useCompose';
 import { useWelcomeFlag } from '../hooks/useWelcomeFlag';
+
+import './MailboxContainer.scss';
 
 interface Props {
     labelID: string;
@@ -173,7 +170,7 @@ const MailboxContainer = ({
 
     const showToolbar = !breakpoints.isNarrow || !inputElementID;
     const showList = columnMode || !inputElementID;
-    const showContentView = (columnMode && (loading || elements.length)) || inputElementID;
+    const showContentView = (columnMode && !!expectedLength) || !!inputElementID;
     const showPlaceholder = !breakpoints.isNarrow && !elementID;
     const showMobileCompose = breakpoints.isNarrow;
 

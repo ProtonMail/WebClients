@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ChangeEvent, DragEvent } from 'react';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
-import { useLabels, useContactEmails, useContactGroups, generateUID } from 'react-components';
+import { useLabels, useContactEmails, useContactGroups } from 'react-components';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 
 import Item from './Item';
@@ -10,9 +10,9 @@ import EmptyView from '../view/EmptyView';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { DRAG_ELEMENT_KEY } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
+import { usePlaceholders } from '../../hooks/usePlaceholders';
 
 import './Drag.scss';
-import { range } from 'proton-shared/lib/helpers/array';
 
 interface Props {
     labelID: string;
@@ -31,8 +31,8 @@ interface Props {
 }
 
 const List = ({
-    labelID: inputLabelID,
-    loading: inputLoading,
+    labelID,
+    loading,
     expectedLength,
     elementID,
     userSettings,
@@ -53,28 +53,7 @@ const List = ({
     const [draggedIDs, setDraggedIDs] = useState<string[]>([]);
     const [savedCheck, setSavedCheck] = useState<string[]>();
 
-    // Delay the loading flag update to be synchronized with the elements list
-    const [labelID, setLabelID] = useState(inputLabelID);
-    const [loading, setLoading] = useState(inputLoading);
-    const [elements, setElements] = useState<Element[]>([]);
-
-    // Set the real elements in the list when loading is finished
-    useEffect(() => {
-        if (!inputLoading) {
-            setElements(inputElements);
-        }
-    }, [inputLoading, inputElements]);
-
-    // Set placeholders in elements list but only once when loading is triggered
-    useEffect(() => {
-        setLoading(inputLoading);
-        if (inputLoading) {
-            setElements(range(0, expectedLength).map(() => ({ ID: generateUID('placeholder') } as Element)));
-        }
-    }, [inputLoading]);
-
-    // Synchronize labelID. Needed to pass through a local state to not update label before loading flag
-    useEffect(() => setLabelID(inputLabelID), [inputLabelID]);
+    const elements = usePlaceholders(inputElements, loading, expectedLength);
 
     useEffect(() => {
         setDraggedIDs([]);
@@ -157,7 +136,7 @@ const List = ({
         }
     };
 
-    return !loading && elements.length === 0 ? (
+    return expectedLength === 0 ? (
         <EmptyView labelID={labelID} isSearch={isSearch} />
     ) : (
         <>
