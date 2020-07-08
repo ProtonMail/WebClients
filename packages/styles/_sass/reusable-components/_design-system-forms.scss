@@ -61,6 +61,11 @@ input[type="image"] {
   border: 0;
   width: auto;
 }
+// for components that rely on checkboxes
+input[type="radio"],
+input[type="checkbox"] {
+	opacity: 0;
+}
 
 /* to cancel input sizing or other if needed */
 .auto {

@@ -26,6 +26,14 @@ p, ul, ol, dl, blockquote, pre, td, th {
     font: inherit;
     -webkit-appearance: none;
   }
+  // -webkit-appearance: none makes vocalization failing
+  input[type="checkbox"] {
+	-webkit-appearance: checkbox;
+  }
+  input[type="radio"] {
+	-webkit-appearance: radio;
+  }
+
 }
 
 /* fix display img/iframe */
