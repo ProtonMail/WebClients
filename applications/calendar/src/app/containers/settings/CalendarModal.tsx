@@ -65,6 +65,7 @@ const CalendarModal = ({
     const [loadingAction, withLoadingAction] = useLoading();
     const { createNotification } = useNotifications();
 
+    const [tab, setTab] = useState(0);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState(false);
     const [calendar, setCalendar] = useState(initialCalendar);
@@ -246,7 +247,7 @@ const CalendarModal = ({
             submit: isEdit ? c('Action').t`Update` : c('Action').t`Create`,
             close: c('Action').t`Cancel`,
             loading: loadingSetup || loadingAction,
-            section: loadingSetup ? <Loader /> : <Tabs tabs={tabs} />,
+            section: loadingSetup ? <Loader /> : <Tabs value={tab} onChange={setTab} tabs={tabs} />,
             hasClose: true,
             onSubmit: () => {
                 setIsSubmitted(true);

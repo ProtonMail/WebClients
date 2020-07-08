@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { c } from 'ttag';
 import { Icon, Info, Tabs } from 'react-components';
 import { dateLocale } from 'proton-shared/lib/i18n';
@@ -29,6 +29,7 @@ const PopoverEventContent = ({
     model,
     formatTime,
 }: Props) => {
+    const [tab, setTab] = useState(0);
     const { Name: calendarName, Color } = Calendar;
 
     const trimmedLocation = model.location.trim();
@@ -116,6 +117,8 @@ const PopoverEventContent = ({
 
     return (
         <Tabs
+            value={tab}
+            onChange={setTab}
             tabs={[
                 {
                     title: c('Title').t`Event details`,
