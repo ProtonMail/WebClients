@@ -17,12 +17,11 @@ const CustomThemeModal = ({ onSave, theme: initialTheme = '', ...rest }) => {
             submit={<PrimaryButton type="submit">{c('Action').t`Save`}</PrimaryButton>}
             onSubmit={handleSubmit}
             title={c('Title').t`Custom mode`}
-            small
             {...rest}
         >
             <Alert type="warning">{c('Warning')
                 .t`Custom modes from third parties can potentially betray your privacy. Only use modes from trusted sources.`}</Alert>
-            <Label className="mb1" htmlFor="themeTextarea">{c('Label').t`CSS code`}</Label>
+            <Label className="bl mb0-5" htmlFor="themeTextarea">{c('Label').t`CSS code`}</Label>
             <TextArea
                 className="mb1"
                 id="themeTextarea"
