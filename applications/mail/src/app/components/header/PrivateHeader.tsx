@@ -15,6 +15,7 @@ import {
     useFolders,
     AppsDropdown
 } from 'react-components';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import AdvancedSearchDropdown from './AdvancedSearchDropdown';
 import { extractSearchParameters, setPathInUrl } from '../../helpers/mailboxUrl';
@@ -45,6 +46,7 @@ const PrivateHeader = ({
     const [{ hasPaidMail }] = useUser();
     const { keyword = '' } = extractSearchParameters(location);
     const [value, updateValue] = useState(keyword);
+    const [oldLabelID, setOldLabelID] = useState<string>(MAILBOX_LABEL_IDS.INBOX);
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
 
@@ -81,7 +83,12 @@ const PrivateHeader = ({
                     <Searchbox
                         delay={0}
                         placeholder={c('Placeholder').t`Search messages`}
-                        onSearch={(keyword) => onSearch(keyword, keyword ? undefined : labelID)}
+                        onSearch={(keyword) => {
+                            if (keyword) {
+                                setOldLabelID(labelID);
+                            }
+                            onSearch(keyword, keyword ? undefined : oldLabelID);
+                        }}
                         onChange={updateValue}
                         value={value}
                         advanced={
