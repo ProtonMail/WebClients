@@ -45,10 +45,13 @@ const SelectAll = ({ labelID, loading, disabled, elements, selectedIDs, onCheck 
                 <Checkbox
                     className="pm-select-all"
                     checked={checked}
+                    id="idSelectAll"
                     disabled={disabled}
                     loading={loading}
                     onChange={({ target }) => handleAll(target.checked)()}
-                />
+                >
+                    <span className="sr-only">{c('Action').t`Select messages`}</span>
+                </Checkbox>
             </Tooltip>
             <ToolbarDropdown disabled={disabled} loading={loading} title={c('Title').t`More selections`} content="">
                 {() => (
