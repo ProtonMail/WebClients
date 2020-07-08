@@ -41,7 +41,10 @@ const SelectAll = ({ labelID, loading, disabled, elements, selectedIDs, onCheck 
 
     return (
         <>
-            <Tooltip className="flex ml0-5 pl1" title={c('Action').t`Select messages`}>
+            <Tooltip
+                className="flex ml0-5 pl1"
+                title={checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}
+            >
                 <Checkbox
                     className="pm-select-all"
                     checked={checked}
@@ -50,7 +53,9 @@ const SelectAll = ({ labelID, loading, disabled, elements, selectedIDs, onCheck 
                     loading={loading}
                     onChange={({ target }) => handleAll(target.checked)()}
                 >
-                    <span className="sr-only">{c('Action').t`Select messages`}</span>
+                    <span className="sr-only">
+                        {checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}
+                    </span>
                 </Checkbox>
             </Tooltip>
             <ToolbarDropdown disabled={disabled} loading={loading} title={c('Title').t`More selections`} content="">
