@@ -38,7 +38,7 @@ $item-container-padding-left-right: em(12) !default;
 .item-container-row {
 	padding: $item-container-padding-top-bottom $item-container-padding-left-right; // design wants ~64 height
 	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
-	background-color: var(--bgcolor-item-column-list, $pm-global-light);
+	background-color: var(--bgcolor-item-column-list, $pm-global-muted);
 	animation: itemFadeIn .5s easing(easeOutSine);
 
 	@keyframes itemFadeIn {
@@ -360,7 +360,7 @@ $conversation-icon-size: 3.2rem !default;
  */
 .trashed-messages,
 .message-header {
-	background-color: var(--bgcolor-item-column-list, $pm-global-light);
+	background-color: var(--bgcolor-item-column-list, $pm-global-muted);
 }
 .message-container {
 	border: 1px solid var(--bordercolor-input, $pm-global-border);
