@@ -21,7 +21,7 @@ import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from
 import { useMessage } from '../../../hooks/useMessage';
 import { useSendMessage, useSendVerifications } from '../../../hooks/useSendMessage';
 import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
-import { removeEmailAlias, findSender } from '../../../helpers/addresses';
+import { removeEmailAlias, findSender, normalizeEmail } from '../../../helpers/addresses';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
 interface Props {
@@ -45,7 +45,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const list = getListUnsubscribe(message.data);
     const oneClick = getListUnsubscribePost(message.data) === UNSUBSCRIBE_ONE_CLICK;
     const matches = (list.match(UNSUBSCRIBE_REGEX) || []).map((m: string) => m.replace('<', '').replace('>', ''));
-    const address = addresses.find(({ Email }) => Email === removeEmailAlias(toAddress));
+    const address = addresses.find(({ Email }) => normalizeEmail(Email) === removeEmailAlias(toAddress));
 
     if (message.unsubscribed || !list || !address) {
         return null;
