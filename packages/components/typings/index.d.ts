@@ -8,3 +8,5 @@ declare module 'ical.js';
 declare module 'squire-rte';
 
 declare module 'pm-srp';
+
+declare module 'is-valid-domain';
