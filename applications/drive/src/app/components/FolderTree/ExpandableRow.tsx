@@ -74,14 +74,14 @@ const ExpandableRow = ({
     return (
         <>
             <tr
-                className={classnames(['cursor-pointer', isSelected && 'bg-global-highlight'])}
+                className={classnames(['pd-folder-tree-listItem cursor-pointer', isSelected && 'bg-global-highlight'])}
                 onClick={handleSelect(linkId)}
             >
                 <td style={{ paddingLeft }} className="flex flex-items-center flex-nowrap m0">
-                    <div className="flex-item-noshrink pl0-5 pr0-5">
+                    <div className="pd-folder-tree-listItem-expand flex-item-noshrink relative">
                         <Button
                             disabled={disabled}
-                            className="pd-folder-tree-listItem-button"
+                            className="pd-folder-tree-listItem-expand-button increase-surface-click"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 e.currentTarget.blur();
