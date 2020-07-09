@@ -287,7 +287,8 @@ const useDriveCacheState = () => {
         // Currently there is at most one share, so it's default one
         return Object.values(cacheRef.current)[0]?.meta;
     };
-    const getLinkMeta = (shareId: string, linkId: string) => cacheRef.current[shareId].links[linkId]?.meta;
+    const getLinkMeta = (shareId: string, linkId: string): LinkMeta | undefined =>
+        cacheRef.current[shareId].links[linkId]?.meta;
     const getLinkKeys = (shareId: string, linkId: string) => cacheRef.current[shareId].links[linkId]?.keys;
     const getTrashComplete = (shareId: string) => cacheRef.current[shareId].trash.complete;
     const getChildrenComplete = (shareId: string, linkId: string, { sortField, sortOrder } = DEFAULT_SORT_PARAMS) => {

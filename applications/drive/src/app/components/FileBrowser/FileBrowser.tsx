@@ -9,7 +9,7 @@ interface Props {
     loading?: boolean;
     scrollAreaRef: React.RefObject<HTMLDivElement>;
     shareId: string;
-    caption: string;
+    caption?: string;
     contents: FileBrowserItem[];
     selectedItems: FileBrowserItem[];
     isTrash?: boolean;

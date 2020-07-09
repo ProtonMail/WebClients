@@ -6,44 +6,29 @@ import ImagePreview from './ImagePreview';
 import PreviewLoader from './PreviewLoader';
 import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
-import NavigationControl from './NavigationControl';
-import { LinkMeta } from '../../interfaces/link';
 import PDFPreview from './PDFPreview';
 import { isPreviewAvailable, isSupportedImage, isSupportedText, isPDF } from './helpers';
 
 interface Props {
     loading: boolean;
-    meta?: LinkMeta;
+
+    fileName?: string;
+    mimeType?: string;
+    navigationControls?: React.ReactNode;
     contents?: Uint8Array[];
     onClose?: () => void;
     onSave?: () => void;
-    availableLinks?: LinkMeta[];
-    onOpen?: (link: LinkMeta) => void;
 }
 
-const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onClose, onSave }: Props) => {
-    const totalAvailable = availableLinks.length;
-    const linkId = meta?.LinkID;
-    const currentOpenIndex = availableLinks.findIndex(({ LinkID }) => LinkID === linkId);
-
-    const handleNext = () => currentOpenIndex < totalAvailable - 1 && onOpen?.(availableLinks[currentOpenIndex + 1]);
-    const handlePrev = () => currentOpenIndex > 0 && onOpen?.(availableLinks[currentOpenIndex - 1]);
-
-    useKeyPress(
-        (e) => {
-            if (e.key === 'Escape') {
-                onClose?.();
-            } else if (currentOpenIndex !== -1 && e.key === 'ArrowLeft') {
-                handlePrev();
-            } else if (currentOpenIndex !== -1 && e.key === 'ArrowRight') {
-                handleNext();
-            }
-        },
-        [currentOpenIndex]
-    );
+const FilePreview = ({ contents, fileName, mimeType, loading, navigationControls, onClose, onSave }: Props) => {
+    useKeyPress((e) => {
+        if (e.key === 'Escape') {
+            onClose?.();
+        }
+    }, []);
 
     const renderPreview = () => {
-        if (!meta || !isPreviewAvailable(meta.MIMEType)) {
+        if (!mimeType || !isPreviewAvailable(mimeType)) {
             return <UnsupportedPreview onSave={onSave} />;
         }
 
@@ -51,28 +36,21 @@ const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onC
             throw new Error(c('Error').t`File has no contents to preview`);
         }
 
-        if (isSupportedImage(meta.MIMEType)) {
-            return <ImagePreview contents={contents} mimeType={meta.MIMEType} onSave={onSave} />;
+        if (isSupportedImage(mimeType)) {
+            return <ImagePreview contents={contents} mimeType={mimeType} onSave={onSave} />;
         }
-        if (isSupportedText(meta.MIMEType)) {
+        if (isSupportedText(mimeType)) {
             return <TextPreview contents={contents} />;
         }
-        if (isPDF(meta.MIMEType)) {
-            return <PDFPreview contents={contents} filename={meta.Name} />;
+        if (isPDF(mimeType)) {
+            return <PDFPreview contents={contents} filename={fileName} />;
         }
     };
 
     return (
         <div className="pd-file-preview">
-            <Header mimeType={meta?.MIMEType} name={meta?.Name} onClose={onClose} onSave={onSave}>
-                {totalAvailable > 0 && onOpen && currentOpenIndex !== -1 && (
-                    <NavigationControl
-                        current={currentOpenIndex + 1}
-                        total={totalAvailable}
-                        onPrev={handlePrev}
-                        onNext={handleNext}
-                    />
-                )}
+            <Header mimeType={mimeType} name={fileName} onClose={onClose} onSave={onSave}>
+                {navigationControls}
             </Header>
             {loading ? <PreviewLoader /> : renderPreview()}
         </div>
