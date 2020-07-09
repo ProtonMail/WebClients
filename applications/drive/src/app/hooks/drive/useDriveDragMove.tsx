@@ -7,14 +7,17 @@ import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
 export interface DragMoveControls {
     handleDragOver: ((event: React.DragEvent<HTMLTableRowElement>) => void) | undefined;
     handleDrop: (e: React.DragEvent<HTMLTableRowElement>) => void;
+    handleDragLeave: (e: React.DragEvent<HTMLTableRowElement>) => void;
     dragging: boolean;
     setDragging: (value: boolean) => void;
+    isActiveDropTarget: boolean;
 }
 
 function useDriveDragMove(shareId: string, selectedItems: FileBrowserItem[]) {
     const { moveLinks, events } = useDrive();
     const { createMoveLinksNotifications } = useListNotifications();
     const [allDragging, setAllDragging] = useState<FileBrowserItem[]>([]);
+    const [activeDropTarget, setActiveDropTarget] = useState<FileBrowserItem>();
 
     const getDragMoveControls = (item: FileBrowserItem): DragMoveControls => {
         const dragging = allDragging.some(({ LinkID }) => LinkID === item.LinkID);
@@ -35,14 +38,31 @@ function useDriveDragMove(shareId: string, selectedItems: FileBrowserItem[]) {
             await events.call(shareId);
         };
 
-        const handleDragOver = (event: React.DragEvent<HTMLTableRowElement>) => {
+        const isActiveDropTarget = activeDropTarget?.LinkID === item.LinkID;
+        const handleDragOver = (e: React.DragEvent<HTMLTableRowElement>) => {
             if (item.Type === LinkType.FOLDER && allDragging.every(({ LinkID }) => item.LinkID !== LinkID)) {
-                event.dataTransfer.dropEffect = 'move';
-                event.preventDefault();
+                e.dataTransfer.dropEffect = 'move';
+                e.preventDefault();
+                if (!isActiveDropTarget) {
+                    setActiveDropTarget(item);
+                }
             }
         };
 
-        return { handleDragOver, handleDrop, dragging, setDragging };
+        const handleDragLeave = () => {
+            if (isActiveDropTarget) {
+                setActiveDropTarget(undefined);
+            }
+        };
+
+        return {
+            handleDragOver,
+            handleDrop,
+            handleDragLeave,
+            dragging,
+            setDragging,
+            isActiveDropTarget,
+        };
     };
 
     return getDragMoveControls;

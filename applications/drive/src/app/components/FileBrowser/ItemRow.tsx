@@ -35,7 +35,7 @@ const ItemRow = ({
     secondaryActionActive,
     dragMoveControls,
 }: Props) => {
-    const { handleDragOver, handleDrop } = dragMoveControls;
+    const { handleDragOver, handleDrop, handleDragLeave, isActiveDropTarget } = dragMoveControls;
     const { dragging, handleDragEnd, handleDragStart, DragMoveContent } = useDragMove(dragMoveControls);
     const { isDesktop } = useActiveBreakpoint();
     const touchStarted = useRef(false);
@@ -166,10 +166,11 @@ const ItemRow = ({
                 onDragEnd={handleDragEnd}
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
+                onDragLeave={handleDragLeave}
                 className={classnames([
                     'no-outline',
                     (onClick || secondaryActionActive) && 'cursor-pointer',
-                    isSelected && 'bg-global-highlight',
+                    (isSelected || isActiveDropTarget) && 'bg-global-highlight',
                     dragging && 'opacity-50',
                 ])}
                 onMouseDown={() => document.getSelection()?.removeAllRanges()}
