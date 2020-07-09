@@ -1,3 +1,10 @@
+# [4.0.0-beta.6] - 2020-07-09
+
+## Updated
+- Update of the event fetching flow
+
+___
+
 # [4.0.0-beta.5] - 2020-06-30
 
 ## Added
