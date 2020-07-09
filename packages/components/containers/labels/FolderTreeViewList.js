@@ -118,7 +118,8 @@ const FolderTreeViewList = ({ items = [] }) => {
                                 } else if (pointer > quarter * 3) {
                                     setPosition(AFTER);
                                 } else {
-                                    setPosition(INSIDE);
+                                    // TODO Once sub-folder available uncomment next line
+                                    // setPosition(INSIDE);
                                 }
                             }}
                             onDrop={() => withLoading(handleDrop())}
